@@ -166,49 +166,49 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
         this.leftleg = new AdvancedModelRenderer(this);
         this.leftleg.setRotationPoint(3.25F, -2.3997F, -2.3234F);
         this.body.addChild(leftleg);
-        this.setRotateAngle(leftleg, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg, -0.48F, 0.0F, 0.0F);
         this.leftleg.cubeList.add(new ModelBox(leftleg, 44, 28, -1.0F, -0.4435F, -2.2309F, 3, 7, 5, 0.0F, false));
 
         this.leftleg2 = new AdvancedModelRenderer(this);
         this.leftleg2.setRotationPoint(0.5F, 6.3506F, -2.0704F);
         this.leftleg.addChild(leftleg2);
-        this.setRotateAngle(leftleg2, 0.9163F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg2, 1.0472F, 0.0F, 0.0F);
         this.leftleg2.cubeList.add(new ModelBox(leftleg2, 54, 15, -1.0F, 0.0565F, 0.0191F, 2, 8, 3, 0.0F, false));
 
         this.leftleg3 = new AdvancedModelRenderer(this);
         this.leftleg3.setRotationPoint(0.0F, 7.5543F, 1.6329F);
         this.leftleg2.addChild(leftleg3);
-        this.setRotateAngle(leftleg3, -0.6545F, 0.0F, 0.0F);
-        this.leftleg3.cubeList.add(new ModelBox(leftleg3, 19, 58, -1.0F, -0.3685F, -1.0059F, 2, 5, 2, 0.001F, false));
+        this.setRotateAngle(leftleg3, -0.6109F, 0.0F, 0.0F);
+        this.leftleg3.cubeList.add(new ModelBox(leftleg3, 19, 58, -1.0F, -0.3685F, -1.0059F, 2, 5, 2, 0.01F, false));
 
         this.leftleg4 = new AdvancedModelRenderer(this);
         this.leftleg4.setRotationPoint(0.0F, 3.9767F, -0.5285F);
         this.leftleg3.addChild(leftleg4);
-        this.setRotateAngle(leftleg4, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg4, 0.0436F, 0.0F, 0.0F);
         this.leftleg4.cubeList.add(new ModelBox(leftleg4, 53, 41, -1.5F, 0.0F, -3.0F, 3, 1, 4, 0.0F, false));
 
         this.rightleg = new AdvancedModelRenderer(this);
         this.rightleg.setRotationPoint(-3.25F, -2.3997F, -2.3234F);
         this.body.addChild(rightleg);
-        this.setRotateAngle(rightleg, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg, -0.48F, 0.0F, 0.0F);
         this.rightleg.cubeList.add(new ModelBox(rightleg, 44, 28, -2.0F, -0.4435F, -2.2309F, 3, 7, 5, 0.0F, true));
 
         this.rightleg2 = new AdvancedModelRenderer(this);
         this.rightleg2.setRotationPoint(-0.5F, 6.3506F, -2.0704F);
         this.rightleg.addChild(rightleg2);
-        this.setRotateAngle(rightleg2, 0.9163F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg2, 1.0472F, 0.0F, 0.0F);
         this.rightleg2.cubeList.add(new ModelBox(rightleg2, 54, 15, -1.0F, 0.0565F, 0.0191F, 2, 8, 3, 0.0F, true));
 
         this.rightleg3 = new AdvancedModelRenderer(this);
         this.rightleg3.setRotationPoint(0.0F, 7.5543F, 1.6329F);
         this.rightleg2.addChild(rightleg3);
-        this.setRotateAngle(rightleg3, -0.6545F, 0.0F, 0.0F);
-        this.rightleg3.cubeList.add(new ModelBox(rightleg3, 19, 58, -1.0F, -0.3685F, -1.0059F, 2, 5, 2, 0.001F, true));
+        this.setRotateAngle(rightleg3, -0.6109F, 0.0F, 0.0F);
+        this.rightleg3.cubeList.add(new ModelBox(rightleg3, 19, 58, -1.0F, -0.3685F, -1.0059F, 2, 5, 2, 0.01F, true));
 
         this.rightleg4 = new AdvancedModelRenderer(this);
         this.rightleg4.setRotationPoint(0.0F, 3.9767F, -0.5285F);
         this.rightleg3.addChild(rightleg4);
-        this.setRotateAngle(rightleg4, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg4, 0.0436F, 0.0F, 0.0F);
         this.rightleg4.cubeList.add(new ModelBox(rightleg4, 53, 41, -1.5F, 0.0F, -3.0F, 3, 1, 4, 0.0F, true));
 
         this.upperbody2 = new AdvancedModelRenderer(this);
@@ -232,7 +232,7 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
         this.neck.setRotationPoint(0.0F, 2.1006F, -3.3364F);
         this.upperbody.addChild(neck);
         this.setRotateAngle(neck, -0.3054F, 0.0F, 0.0F);
-        this.neck.cubeList.add(new ModelBox(neck, 20, 28, -2.0F, 0.0F, -7.0F, 4, 5, 7, -0.004F, false));
+        this.neck.cubeList.add(new ModelBox(neck, 20, 28, -2.0F, 0.0F, -7.0F, 4, 5, 7, -0.01F, false));
 
         this.head = new AdvancedModelRenderer(this);
         this.head.setRotationPoint(0.0F, 0.0F, -7.0F);
@@ -464,7 +464,6 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
         this.rightarm2.addChild(rightarm3);
         this.setRotateAngle(rightarm3, 0.0F, 0.0F, -0.4363F);
         this.rightarm3.cubeList.add(new ModelBox(rightarm3, 0, 18, 0.0F, -0.9F, -1.0F, 1, 2, 2, 0.0F, true));
-
 
         updateDefaultPose();
         animator = ModelAnimator.create();
@@ -1025,17 +1024,17 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 10) {
-            xx = 0 + (((tickAnim - 0) / 10) * (-20.25-(0)));
+            xx = 0 + (((tickAnim - 0) / 10) * (-13.5-(0)));
             yy = 0 + (((tickAnim - 0) / 10) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 10) * (0-(0)));
         }
         else if (tickAnim >= 10 && tickAnim < 25) {
-            xx = -20.25 + (((tickAnim - 10) / 15) * (-23.75-(-20.25)));
+            xx = -13.5 + (((tickAnim - 10) / 15) * (-17-(-13.5)));
             yy = 0 + (((tickAnim - 10) / 15) * (0-(0)));
             zz = 0 + (((tickAnim - 10) / 15) * (0-(0)));
         }
         else if (tickAnim >= 25 && tickAnim < 37) {
-            xx = -23.75 + (((tickAnim - 25) / 12) * (8.5-(-23.75)));
+            xx = -17 + (((tickAnim - 25) / 12) * (8.5-(-17)));
             yy = 0 + (((tickAnim - 25) / 12) * (0-(0)));
             zz = 0 + (((tickAnim - 25) / 12) * (0-(0)));
         }
@@ -1054,10 +1053,15 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 37) {
-            xx = 0 + (((tickAnim - 0) / 37) * (6-(0)));
-            yy = 0 + (((tickAnim - 0) / 37) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 37) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 25) {
+            xx = 0 + (((tickAnim - 0) / 25) * (-1.16-(0)));
+            yy = 0 + (((tickAnim - 0) / 25) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 25) * (0-(0)));
+        }
+        else if (tickAnim >= 25 && tickAnim < 37) {
+            xx = -1.16 + (((tickAnim - 25) / 12) * (6-(-1.16)));
+            yy = 0 + (((tickAnim - 25) / 12) * (0-(0)));
+            zz = 0 + (((tickAnim - 25) / 12) * (0-(0)));
         }
         else if (tickAnim >= 37 && tickAnim < 43) {
             xx = 6 + (((tickAnim - 37) / 6) * (0-(6)));
@@ -1075,17 +1079,17 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 10) {
-            xx = 0 + (((tickAnim - 0) / 10) * (-22-(0)));
+            xx = 0 + (((tickAnim - 0) / 10) * (-13.5-(0)));
             yy = 0 + (((tickAnim - 0) / 10) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 10) * (0-(0)));
         }
         else if (tickAnim >= 10 && tickAnim < 25) {
-            xx = -22 + (((tickAnim - 10) / 15) * (-23.75-(-22)));
+            xx = -13.5 + (((tickAnim - 10) / 15) * (-17-(-13.5)));
             yy = 0 + (((tickAnim - 10) / 15) * (0-(0)));
             zz = 0 + (((tickAnim - 10) / 15) * (0-(0)));
         }
         else if (tickAnim >= 25 && tickAnim < 37) {
-            xx = -23.75 + (((tickAnim - 25) / 12) * (8.5-(-23.75)));
+            xx = -17 + (((tickAnim - 25) / 12) * (8.5-(-17)));
             yy = 0 + (((tickAnim - 25) / 12) * (0-(0)));
             zz = 0 + (((tickAnim - 25) / 12) * (0-(0)));
         }
@@ -1103,7 +1107,29 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
 
-        this.setRotateAngle(rightleg2, rightleg2.rotateAngleX + (float) Math.toRadians(0), rightleg2.rotateAngleY + (float) Math.toRadians(0), rightleg2.rotateAngleZ + (float) Math.toRadians(0));
+
+        if (tickAnim >= 0 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 0) / 10) * (-5.25-(0)));
+            yy = 0 + (((tickAnim - 0) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 10) * (0-(0)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 25) {
+            xx = -5.25 + (((tickAnim - 10) / 15) * (-3-(-5.25)));
+            yy = 0 + (((tickAnim - 10) / 15) * (0-(0)));
+            zz = 0 + (((tickAnim - 10) / 15) * (0-(0)));
+        }
+        else if (tickAnim >= 25 && tickAnim < 43) {
+            xx = -3 + (((tickAnim - 25) / 18) * (0-(-3)));
+            yy = 0 + (((tickAnim - 25) / 18) * (0-(0)));
+            zz = 0 + (((tickAnim - 25) / 18) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(rightleg2, rightleg2.rotateAngleX + (float) Math.toRadians(xx), rightleg2.rotateAngleY + (float) Math.toRadians(yy), rightleg2.rotateAngleZ + (float) Math.toRadians(zz));
+
 
 
         this.setRotateAngle(rightleg3, rightleg3.rotateAngleX + (float) Math.toRadians(0), rightleg3.rotateAngleY + (float) Math.toRadians(0), rightleg3.rotateAngleZ + (float) Math.toRadians(0));
@@ -1491,7 +1517,31 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
             zz = 0;
         }
         this.setRotateAngle(rightarm2, rightarm2.rotateAngleX + (float) Math.toRadians(xx), rightarm2.rotateAngleY + (float) Math.toRadians(yy), rightarm2.rotateAngleZ + (float) Math.toRadians(zz));
-        
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 0) / 10) * (-5.25-(0)));
+            yy = 0 + (((tickAnim - 0) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 10) * (0-(0)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 25) {
+            xx = -5.25 + (((tickAnim - 10) / 15) * (-3-(-5.25)));
+            yy = 0 + (((tickAnim - 10) / 15) * (0-(0)));
+            zz = 0 + (((tickAnim - 10) / 15) * (0-(0)));
+        }
+        else if (tickAnim >= 25 && tickAnim < 43) {
+            xx = -3 + (((tickAnim - 25) / 18) * (0-(-3)));
+            yy = 0 + (((tickAnim - 25) / 18) * (0-(0)));
+            zz = 0 + (((tickAnim - 25) / 18) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(leftleg2, leftleg2.rotateAngleX + (float) Math.toRadians(xx), leftleg2.rotateAngleY + (float) Math.toRadians(yy), leftleg2.rotateAngleZ + (float) Math.toRadians(zz));
     }
     public void animEat(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraPsittacosaurus entity = (EntityPrehistoricFloraPsittacosaurus) entitylivingbaseIn;
@@ -1926,17 +1976,17 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 25) {
-            xx = 0 + (((tickAnim - 0) / 25) * (-23-(0)));
+            xx = 0 + (((tickAnim - 0) / 25) * (-9.5-(0)));
             yy = 0 + (((tickAnim - 0) / 25) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 25) * (0-(0)));
         }
         else if (tickAnim >= 25 && tickAnim < 100) {
-            xx = -23 + (((tickAnim - 25) / 75) * (-23-(-23)));
+            xx = -9.5 + (((tickAnim - 25) / 75) * (-9.5-(-9.5)));
             yy = 0 + (((tickAnim - 25) / 75) * (0-(0)));
             zz = 0 + (((tickAnim - 25) / 75) * (0-(0)));
         }
         else if (tickAnim >= 100 && tickAnim < 120) {
-            xx = -23 + (((tickAnim - 100) / 20) * (0-(-23)));
+            xx = -9.5 + (((tickAnim - 100) / 20) * (0-(-9.5)));
             yy = 0 + (((tickAnim - 100) / 20) * (0-(0)));
             zz = 0 + (((tickAnim - 100) / 20) * (0-(0)));
         }
@@ -1951,17 +2001,17 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 25) {
-            xx = 0 + (((tickAnim - 0) / 25) * (-14.75-(0)));
+            xx = 0 + (((tickAnim - 0) / 25) * (-23.75-(0)));
             yy = 0 + (((tickAnim - 0) / 25) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 25) * (0-(0)));
         }
         else if (tickAnim >= 25 && tickAnim < 100) {
-            xx = -14.75 + (((tickAnim - 25) / 75) * (-14.75-(-14.75)));
+            xx = -23.75 + (((tickAnim - 25) / 75) * (-23.75-(-23.75)));
             yy = 0 + (((tickAnim - 25) / 75) * (0-(0)));
             zz = 0 + (((tickAnim - 25) / 75) * (0-(0)));
         }
         else if (tickAnim >= 100 && tickAnim < 120) {
-            xx = -14.75 + (((tickAnim - 100) / 20) * (0-(-14.75)));
+            xx = -23.75 + (((tickAnim - 100) / 20) * (0-(-23.75)));
             yy = 0 + (((tickAnim - 100) / 20) * (0-(0)));
             zz = 0 + (((tickAnim - 100) / 20) * (0-(0)));
         }
@@ -1971,6 +2021,21 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
             zz = 0;
         }
         this.setRotateAngle(leftleg2, leftleg2.rotateAngleX + (float) Math.toRadians(xx), leftleg2.rotateAngleY + (float) Math.toRadians(yy), leftleg2.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+        if (tickAnim >= 25 && tickAnim < 100) {
+            xx = 0 + (((tickAnim - 25) / 75) * (0-(0)));
+            yy = -0.175 + (((tickAnim - 25) / 75) * (-0.175-(-0.175)));
+            zz = 0 + (((tickAnim - 25) / 75) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.leftleg2.rotationPointX = this.leftleg2.rotationPointX + (float)(xx);
+        this.leftleg2.rotationPointY = this.leftleg2.rotationPointY - (float)(yy);
+        this.leftleg2.rotationPointZ = this.leftleg2.rotationPointZ + (float)(zz);
 
 
 
@@ -1986,17 +2051,17 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 8) / 10) * (0-(0)));
         }
         else if (tickAnim >= 18 && tickAnim < 25) {
-            xx = -57.63 + (((tickAnim - 18) / 7) * (-16.25-(-57.63)));
+            xx = -57.63 + (((tickAnim - 18) / 7) * (-4.25-(-57.63)));
             yy = 0 + (((tickAnim - 18) / 7) * (0-(0)));
             zz = 0 + (((tickAnim - 18) / 7) * (0-(0)));
         }
         else if (tickAnim >= 25 && tickAnim < 100) {
-            xx = -16.25 + (((tickAnim - 25) / 75) * (-16.25-(-16.25)));
+            xx = -4.25 + (((tickAnim - 25) / 75) * (-4.25-(-4.25)));
             yy = 0 + (((tickAnim - 25) / 75) * (0-(0)));
             zz = 0 + (((tickAnim - 25) / 75) * (0-(0)));
         }
         else if (tickAnim >= 100 && tickAnim < 110) {
-            xx = -16.25 + (((tickAnim - 100) / 10) * (-55.02-(-16.25)));
+            xx = -4.25 + (((tickAnim - 100) / 10) * (-55.02-(-4.25)));
             yy = 0 + (((tickAnim - 100) / 10) * (0-(0)));
             zz = 0 + (((tickAnim - 100) / 10) * (0-(0)));
         }
@@ -2031,17 +2096,17 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 8) / 10) * (0-(0)));
         }
         else if (tickAnim >= 18 && tickAnim < 25) {
-            xx = 99.67 + (((tickAnim - 18) / 7) * (56.75-(99.67)));
+            xx = 99.67 + (((tickAnim - 18) / 7) * (37.25-(99.67)));
             yy = 0 + (((tickAnim - 18) / 7) * (0-(0)));
             zz = 0 + (((tickAnim - 18) / 7) * (0-(0)));
         }
         else if (tickAnim >= 25 && tickAnim < 100) {
-            xx = 56.75 + (((tickAnim - 25) / 75) * (56.75-(56.75)));
+            xx = 37.25 + (((tickAnim - 25) / 75) * (37.25-(37.25)));
             yy = 0 + (((tickAnim - 25) / 75) * (0-(0)));
             zz = 0 + (((tickAnim - 25) / 75) * (0-(0)));
         }
         else if (tickAnim >= 100 && tickAnim < 110) {
-            xx = 56.75 + (((tickAnim - 100) / 10) * (101-(56.75)));
+            xx = 37.25 + (((tickAnim - 100) / 10) * (101-(37.25)));
             yy = 0 + (((tickAnim - 100) / 10) * (0-(0)));
             zz = 0 + (((tickAnim - 100) / 10) * (0-(0)));
         }
@@ -2075,17 +2140,17 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
         }
         else if (tickAnim >= 18 && tickAnim < 25) {
             xx = 0 + (((tickAnim - 18) / 7) * (0-(0)));
-            yy = 0 + (((tickAnim - 18) / 7) * (0-(0)));
+            yy = 0 + (((tickAnim - 18) / 7) * (0.325-(0)));
             zz = 0 + (((tickAnim - 18) / 7) * (0.55-(0)));
         }
         else if (tickAnim >= 25 && tickAnim < 100) {
             xx = 0 + (((tickAnim - 25) / 75) * (0-(0)));
-            yy = 0 + (((tickAnim - 25) / 75) * (0-(0)));
+            yy = 0.325 + (((tickAnim - 25) / 75) * (0.325-(0.325)));
             zz = 0.55 + (((tickAnim - 25) / 75) * (0.55-(0.55)));
         }
         else if (tickAnim >= 100 && tickAnim < 120) {
             xx = 0 + (((tickAnim - 100) / 20) * (0-(0)));
-            yy = 0 + (((tickAnim - 100) / 20) * (0-(0)));
+            yy = 0.325 + (((tickAnim - 100) / 20) * (0-(0.325)));
             zz = 0.55 + (((tickAnim - 100) / 20) * (0-(0.55)));
         }
         else {
@@ -2474,7 +2539,6 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         this.setRotateAngle(rightarm2, rightarm2.rotateAngleX + (float) Math.toRadians(0), rightarm2.rotateAngleY + (float) Math.toRadians(0), rightarm2.rotateAngleZ + (float) Math.toRadians(0));
-
     }
     public void animIdle(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraPsittacosaurus entity = (EntityPrehistoricFloraPsittacosaurus) entitylivingbaseIn;
@@ -2514,12 +2578,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
         else if (tickAnim >= 5 && tickAnim < 32) {
             xx = 0 + (((tickAnim - 5) / 27) * (0-(0)));
             yy = 0 + (((tickAnim - 5) / 27) * (0-(0)));
-            zz = -0.225 + (((tickAnim - 5) / 27) * (-0.675-(-0.225)));
+            zz = -0.225 + (((tickAnim - 5) / 27) * (0.2-(-0.225)));
         }
         else if (tickAnim >= 32 && tickAnim < 40) {
             xx = 0 + (((tickAnim - 32) / 8) * (0-(0)));
             yy = 0 + (((tickAnim - 32) / 8) * (0-(0)));
-            zz = -0.675 + (((tickAnim - 32) / 8) * (0-(-0.675)));
+            zz = 0.2 + (((tickAnim - 32) / 8) * (0-(0.2)));
         }
         else {
             xx = 0;
@@ -2934,7 +2998,6 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
             zz = 0;
         }
         this.setRotateAngle(rightarm, rightarm.rotateAngleX + (float) Math.toRadians(xx), rightarm.rotateAngleY + (float) Math.toRadians(yy), rightarm.rotateAngleZ + (float) Math.toRadians(zz));
-
     }
     public void animNoise(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraPsittacosaurus entity = (EntityPrehistoricFloraPsittacosaurus) entitylivingbaseIn;
@@ -3410,22 +3473,22 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 10) {
-            xx = 0 + (((tickAnim - 0) / 10) * (-34.25-(0)));
+            xx = 0 + (((tickAnim - 0) / 10) * (-16.75-(0)));
             yy = 0 + (((tickAnim - 0) / 10) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 10) * (0-(0)));
         }
         else if (tickAnim >= 10 && tickAnim < 20) {
-            xx = -34.25 + (((tickAnim - 10) / 10) * (23-(-34.25)));
+            xx = -16.75 + (((tickAnim - 10) / 10) * (23-(-16.75)));
             yy = 0 + (((tickAnim - 10) / 10) * (0-(0)));
             zz = 0 + (((tickAnim - 10) / 10) * (0-(0)));
         }
         else if (tickAnim >= 20 && tickAnim < 30) {
-            xx = 23 + (((tickAnim - 20) / 10) * (-34.25-(23)));
+            xx = 23 + (((tickAnim - 20) / 10) * (-16.75-(23)));
             yy = 0 + (((tickAnim - 20) / 10) * (0-(0)));
             zz = 0 + (((tickAnim - 20) / 10) * (0-(0)));
         }
         else if (tickAnim >= 30 && tickAnim < 40) {
-            xx = -34.25 + (((tickAnim - 30) / 10) * (23-(-34.25)));
+            xx = -16.75 + (((tickAnim - 30) / 10) * (23-(-16.75)));
             yy = 0 + (((tickAnim - 30) / 10) * (0-(0)));
             zz = 0 + (((tickAnim - 30) / 10) * (0-(0)));
         }
@@ -3485,12 +3548,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
         else if (tickAnim >= 5 && tickAnim < 10) {
-            xx = -62.24 + (((tickAnim - 5) / 5) * (18.5-(-62.24)));
+            xx = -62.24 + (((tickAnim - 5) / 5) * (0.75-(-62.24)));
             yy = 0 + (((tickAnim - 5) / 5) * (0-(0)));
             zz = 0 + (((tickAnim - 5) / 5) * (0-(0)));
         }
         else if (tickAnim >= 10 && tickAnim < 20) {
-            xx = 18.5 + (((tickAnim - 10) / 10) * (21.75-(18.5)));
+            xx = 0.75 + (((tickAnim - 10) / 10) * (21.75-(0.75)));
             yy = 0 + (((tickAnim - 10) / 10) * (0-(0)));
             zz = 0 + (((tickAnim - 10) / 10) * (0-(0)));
         }
@@ -3500,12 +3563,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 20) / 6) * (0-(0)));
         }
         else if (tickAnim >= 26 && tickAnim < 30) {
-            xx = -68.9 + (((tickAnim - 26) / 4) * (18.5-(-68.9)));
+            xx = -68.9 + (((tickAnim - 26) / 4) * (0.75-(-68.9)));
             yy = 0 + (((tickAnim - 26) / 4) * (0-(0)));
             zz = 0 + (((tickAnim - 26) / 4) * (0-(0)));
         }
         else if (tickAnim >= 30 && tickAnim < 50) {
-            xx = 18.5 + (((tickAnim - 30) / 20) * (0-(18.5)));
+            xx = 0.75 + (((tickAnim - 30) / 20) * (0-(0.75)));
             yy = 0 + (((tickAnim - 30) / 20) * (0-(0)));
             zz = 0 + (((tickAnim - 30) / 20) * (0-(0)));
         }
@@ -3517,10 +3580,15 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
         this.setRotateAngle(leftleg3, leftleg3.rotateAngleX + (float) Math.toRadians(xx), leftleg3.rotateAngleY + (float) Math.toRadians(yy), leftleg3.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 0) / 10) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 10) * (-0.325-(0)));
+            zz = 0 + (((tickAnim - 0) / 10) * (0-(0)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 20) {
+            xx = 0 + (((tickAnim - 10) / 10) * (0-(0)));
+            yy = -0.325 + (((tickAnim - 10) / 10) * (0-(-0.325)));
+            zz = 0 + (((tickAnim - 10) / 10) * (0-(0)));
         }
         else if (tickAnim >= 20 && tickAnim < 26) {
             xx = 0 + (((tickAnim - 20) / 6) * (0-(0)));
@@ -3529,12 +3597,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
         }
         else if (tickAnim >= 26 && tickAnim < 30) {
             xx = 0 + (((tickAnim - 26) / 4) * (0-(0)));
-            yy = 0.375 + (((tickAnim - 26) / 4) * (0-(0.375)));
+            yy = 0.375 + (((tickAnim - 26) / 4) * (-0.325-(0.375)));
             zz = 0 + (((tickAnim - 26) / 4) * (0-(0)));
         }
         else if (tickAnim >= 30 && tickAnim < 50) {
             xx = 0 + (((tickAnim - 30) / 20) * (0-(0)));
-            yy = 0 + (((tickAnim - 30) / 20) * (0-(0)));
+            yy = -0.325 + (((tickAnim - 30) / 20) * (0-(-0.325)));
             zz = 0 + (((tickAnim - 30) / 20) * (0-(0)));
         }
         else {
@@ -3876,7 +3944,6 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         this.setRotateAngle(rightarm2, rightarm2.rotateAngleX + (float) Math.toRadians(0), rightarm2.rotateAngleY + (float) Math.toRadians(0), rightarm2.rotateAngleZ + (float) Math.toRadians(0));
-
     }
     public void animLay(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraPsittacosaurus entity = (EntityPrehistoricFloraPsittacosaurus) entitylivingbaseIn;
@@ -4111,17 +4178,17 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 15) {
-            xx = 0 + (((tickAnim - 0) / 15) * (-79.25-(0)));
+            xx = 0 + (((tickAnim - 0) / 15) * (-71-(0)));
             yy = 0 + (((tickAnim - 0) / 15) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 15) * (0-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 35) {
-            xx = -79.25 + (((tickAnim - 15) / 20) * (-79.25-(-79.25)));
+            xx = -71 + (((tickAnim - 15) / 20) * (-71-(-71)));
             yy = 0 + (((tickAnim - 15) / 20) * (0-(0)));
             zz = 0 + (((tickAnim - 15) / 20) * (0-(0)));
         }
         else if (tickAnim >= 35 && tickAnim < 50) {
-            xx = -79.25 + (((tickAnim - 35) / 15) * (0-(-79.25)));
+            xx = -71 + (((tickAnim - 35) / 15) * (0-(-71)));
             yy = 0 + (((tickAnim - 35) / 15) * (0-(0)));
             zz = 0 + (((tickAnim - 35) / 15) * (0-(0)));
         }
@@ -4160,12 +4227,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
         if (tickAnim >= 0 && tickAnim < 7) {
             xx = 0 + (((tickAnim - 0) / 7) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 7) * (1.175-(0)));
+            yy = 0 + (((tickAnim - 0) / 7) * (0.725-(0)));
             zz = 0 + (((tickAnim - 0) / 7) * (0-(0)));
         }
         else if (tickAnim >= 7 && tickAnim < 15) {
             xx = 0 + (((tickAnim - 7) / 8) * (0-(0)));
-            yy = 1.175 + (((tickAnim - 7) / 8) * (0-(1.175)));
+            yy = 0.725 + (((tickAnim - 7) / 8) * (0-(0.725)));
             zz = 0 + (((tickAnim - 7) / 8) * (0-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 35) {
@@ -4246,17 +4313,17 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 15) {
-            xx = 0 + (((tickAnim - 0) / 15) * (-79.25-(0)));
+            xx = 0 + (((tickAnim - 0) / 15) * (-71-(0)));
             yy = 0 + (((tickAnim - 0) / 15) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 15) * (0-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 35) {
-            xx = -79.25 + (((tickAnim - 15) / 20) * (-79.25-(-79.25)));
+            xx = -71 + (((tickAnim - 15) / 20) * (-71-(-71)));
             yy = 0 + (((tickAnim - 15) / 20) * (0-(0)));
             zz = 0 + (((tickAnim - 15) / 20) * (0-(0)));
         }
         else if (tickAnim >= 35 && tickAnim < 50) {
-            xx = -79.25 + (((tickAnim - 35) / 15) * (0-(-79.25)));
+            xx = -71 + (((tickAnim - 35) / 15) * (0-(-71)));
             yy = 0 + (((tickAnim - 35) / 15) * (0-(0)));
             zz = 0 + (((tickAnim - 35) / 15) * (0-(0)));
         }
@@ -4295,12 +4362,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
         if (tickAnim >= 0 && tickAnim < 7) {
             xx = 0 + (((tickAnim - 0) / 7) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 7) * (1.2-(0)));
+            yy = 0 + (((tickAnim - 0) / 7) * (0.7-(0)));
             zz = 0 + (((tickAnim - 0) / 7) * (0-(0)));
         }
         else if (tickAnim >= 7 && tickAnim < 15) {
             xx = 0 + (((tickAnim - 7) / 8) * (0-(0)));
-            yy = 1.2 + (((tickAnim - 7) / 8) * (0-(1.2)));
+            yy = 0.7 + (((tickAnim - 7) / 8) * (0-(0.7)));
             zz = 0 + (((tickAnim - 7) / 8) * (0-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 35) {
@@ -4458,7 +4525,6 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         this.setRotateAngle(rightarm, rightarm.rotateAngleX + (float) Math.toRadians(0), rightarm.rotateAngleY + (float) Math.toRadians(0), rightarm.rotateAngleZ + (float) Math.toRadians(0));
-
     }
     public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraPsittacosaurus entity = (EntityPrehistoricFloraPsittacosaurus) entitylivingbaseIn;
@@ -4515,12 +4581,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 3) {
-            xx = -26 + (((tickAnim - 0) / 3) * (-40.25-(-26)));
+            xx = -26 + (((tickAnim - 0) / 3) * (-23.5-(-26)));
             yy = 0 + (((tickAnim - 0) / 3) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 3) * (0-(0)));
         }
         else if (tickAnim >= 3 && tickAnim < 15) {
-            xx = -40.25 + (((tickAnim - 3) / 12) * (17.5-(-40.25)));
+            xx = -23.5 + (((tickAnim - 3) / 12) * (17.5-(-23.5)));
             yy = 0 + (((tickAnim - 3) / 12) * (0-(0)));
             zz = 0 + (((tickAnim - 3) / 12) * (0-(0)));
         }
@@ -4539,17 +4605,17 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
         if (tickAnim >= 0 && tickAnim < 3) {
             xx = 0 + (((tickAnim - 0) / 3) * (0-(0)));
-            yy = 1.175 + (((tickAnim - 0) / 3) * (0.625-(1.175)));
+            yy = 0.5 + (((tickAnim - 0) / 3) * (-0.275-(0.5)));
             zz = -0.2 + (((tickAnim - 0) / 3) * (-0.1-(-0.2)));
         }
         else if (tickAnim >= 3 && tickAnim < 15) {
             xx = 0 + (((tickAnim - 3) / 12) * (0-(0)));
-            yy = 0.625 + (((tickAnim - 3) / 12) * (0-(0.625)));
+            yy = -0.275 + (((tickAnim - 3) / 12) * (0-(-0.275)));
             zz = -0.1 + (((tickAnim - 3) / 12) * (0-(-0.1)));
         }
         else if (tickAnim >= 15 && tickAnim < 22) {
             xx = 0 + (((tickAnim - 15) / 7) * (0-(0)));
-            yy = 0 + (((tickAnim - 15) / 7) * (1.175-(0)));
+            yy = 0 + (((tickAnim - 15) / 7) * (0.5-(0)));
             zz = 0 + (((tickAnim - 15) / 7) * (-0.2-(0)));
         }
         else {
@@ -4565,22 +4631,22 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 3) {
-            xx = -49 + (((tickAnim - 0) / 3) * (1-(-49)));
+            xx = -40.75 + (((tickAnim - 0) / 3) * (1-(-40.75)));
             yy = 0 + (((tickAnim - 0) / 3) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 3) * (0-(0)));
         }
         else if (tickAnim >= 3 && tickAnim < 15) {
-            xx = 1 + (((tickAnim - 3) / 12) * (6.75-(1)));
+            xx = 1 + (((tickAnim - 3) / 12) * (-3-(1)));
             yy = 0 + (((tickAnim - 3) / 12) * (0-(0)));
             zz = 0 + (((tickAnim - 3) / 12) * (0-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 18) {
-            xx = 6.75 + (((tickAnim - 15) / 3) * (-30.13-(6.75)));
+            xx = -3 + (((tickAnim - 15) / 3) * (-30.13-(-3)));
             yy = 0 + (((tickAnim - 15) / 3) * (0-(0)));
             zz = 0 + (((tickAnim - 15) / 3) * (0-(0)));
         }
         else if (tickAnim >= 18 && tickAnim < 22) {
-            xx = -30.13 + (((tickAnim - 18) / 4) * (-49-(-30.13)));
+            xx = -30.13 + (((tickAnim - 18) / 4) * (-40.75-(-30.13)));
             yy = 0 + (((tickAnim - 18) / 4) * (0-(0)));
             zz = 0 + (((tickAnim - 18) / 4) * (0-(0)));
         }
@@ -4592,15 +4658,25 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
         this.setRotateAngle(leftleg3, leftleg3.rotateAngleX + (float) Math.toRadians(xx), leftleg3.rotateAngleY + (float) Math.toRadians(yy), leftleg3.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 18) {
-            xx = 0 + (((tickAnim - 0) / 18) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 18) * (0.225-(0)));
-            zz = 0 + (((tickAnim - 0) / 18) * (0.6-(0)));
+        if (tickAnim >= 0 && tickAnim < 3) {
+            xx = 0 + (((tickAnim - 0) / 3) * (0-(0)));
+            yy = 0.175 + (((tickAnim - 0) / 3) * (0-(0.175)));
+            zz = 0.525 + (((tickAnim - 0) / 3) * (0-(0.525)));
+        }
+        else if (tickAnim >= 3 && tickAnim < 15) {
+            xx = 0 + (((tickAnim - 3) / 12) * (0-(0)));
+            yy = 0 + (((tickAnim - 3) / 12) * (-0.02-(0)));
+            zz = 0 + (((tickAnim - 3) / 12) * (0.345-(0)));
+        }
+        else if (tickAnim >= 15 && tickAnim < 18) {
+            xx = 0 + (((tickAnim - 15) / 3) * (0-(0)));
+            yy = -0.02 + (((tickAnim - 15) / 3) * (0.225-(-0.02)));
+            zz = 0.345 + (((tickAnim - 15) / 3) * (0.6-(0.345)));
         }
         else if (tickAnim >= 18 && tickAnim < 22) {
             xx = 0 + (((tickAnim - 18) / 4) * (0-(0)));
-            yy = 0.225 + (((tickAnim - 18) / 4) * (0-(0.225)));
-            zz = 0.6 + (((tickAnim - 18) / 4) * (0-(0.6)));
+            yy = 0.225 + (((tickAnim - 18) / 4) * (0.175-(0.225)));
+            zz = 0.6 + (((tickAnim - 18) / 4) * (0.525-(0.6)));
         }
         else {
             xx = 0;
@@ -4615,19 +4691,19 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 3) {
-            xx = 111.5 + (((tickAnim - 0) / 3) * (53.5-(111.5)));
-            yy = 0 + (((tickAnim - 0) / 3) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 3) * (0-(0)));
+            xx = 111.5 + (((tickAnim - 0) / 3) * (35.95508-(111.5)));
+            yy = 0 + (((tickAnim - 0) / 3) * (2.02251-(0)));
+            zz = 0 + (((tickAnim - 0) / 3) * (-2.54453-(0)));
         }
         else if (tickAnim >= 3 && tickAnim < 5) {
-            xx = 53.5 + (((tickAnim - 3) / 2) * (30.98-(53.5)));
-            yy = 0 + (((tickAnim - 3) / 2) * (0-(0)));
-            zz = 0 + (((tickAnim - 3) / 2) * (0-(0)));
+            xx = 35.95508 + (((tickAnim - 3) / 2) * (27.18664-(35.95508)));
+            yy = 2.02251 + (((tickAnim - 3) / 2) * (1.43298-(2.02251)));
+            zz = -2.54453 + (((tickAnim - 3) / 2) * (-3.46577-(-2.54453)));
         }
         else if (tickAnim >= 5 && tickAnim < 7) {
-            xx = 30.98 + (((tickAnim - 5) / 2) * (22.23-(30.98)));
-            yy = 0 + (((tickAnim - 5) / 2) * (0-(0)));
-            zz = 0 + (((tickAnim - 5) / 2) * (0-(0)));
+            xx = 27.18664 + (((tickAnim - 5) / 2) * (22.23-(27.18664)));
+            yy = 1.43298 + (((tickAnim - 5) / 2) * (0-(1.43298)));
+            zz = -3.46577 + (((tickAnim - 5) / 2) * (0-(-3.46577)));
         }
         else if (tickAnim >= 7 && tickAnim < 15) {
             xx = 22.23 + (((tickAnim - 7) / 8) * (90.25-(22.23)));
@@ -4659,22 +4735,22 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
         }
         else if (tickAnim >= 3 && tickAnim < 5) {
             xx = 0 + (((tickAnim - 3) / 2) * (0-(0)));
-            yy = 0 + (((tickAnim - 3) / 2) * (1.05-(0)));
-            zz = 0 + (((tickAnim - 3) / 2) * (0-(0)));
+            yy = 0 + (((tickAnim - 3) / 2) * (0.6-(0)));
+            zz = 0 + (((tickAnim - 3) / 2) * (0.2-(0)));
         }
         else if (tickAnim >= 5 && tickAnim < 7) {
             xx = 0 + (((tickAnim - 5) / 2) * (0-(0)));
-            yy = 1.05 + (((tickAnim - 5) / 2) * (1.05-(1.05)));
-            zz = 0 + (((tickAnim - 5) / 2) * (0-(0)));
+            yy = 0.6 + (((tickAnim - 5) / 2) * (0.325-(0.6)));
+            zz = 0.2 + (((tickAnim - 5) / 2) * (0-(0.2)));
         }
         else if (tickAnim >= 7 && tickAnim < 9) {
             xx = 0 + (((tickAnim - 7) / 2) * (0-(0)));
-            yy = 1.05 + (((tickAnim - 7) / 2) * (1.05-(1.05)));
+            yy = 0.325 + (((tickAnim - 7) / 2) * (0.625-(0.325)));
             zz = 0 + (((tickAnim - 7) / 2) * (0-(0)));
         }
         else if (tickAnim >= 9 && tickAnim < 15) {
             xx = 0 + (((tickAnim - 9) / 6) * (0-(0)));
-            yy = 1.05 + (((tickAnim - 9) / 6) * (0-(1.05)));
+            yy = 0.625 + (((tickAnim - 9) / 6) * (0-(0.625)));
             zz = 0 + (((tickAnim - 9) / 6) * (0-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 18) {
@@ -4710,14 +4786,14 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 4) / 8) * (1.05891-(0)));
         }
         else if (tickAnim >= 12 && tickAnim < 15) {
-            xx = -14.06752 + (((tickAnim - 12) / 3) * (-15.1874-(-14.06752)));
-            yy = 1.29604 + (((tickAnim - 12) / 3) * (-3.42725-(1.29604)));
-            zz = 1.05891 + (((tickAnim - 12) / 3) * (-0.56041-(1.05891)));
+            xx = -14.06752 + (((tickAnim - 12) / 3) * (-15.24359-(-14.06752)));
+            yy = 1.29604 + (((tickAnim - 12) / 3) * (-2.40968-(1.29604)));
+            zz = 1.05891 + (((tickAnim - 12) / 3) * (0.5431-(1.05891)));
         }
         else if (tickAnim >= 15 && tickAnim < 22) {
-            xx = -15.1874 + (((tickAnim - 15) / 7) * (11.25-(-15.1874)));
-            yy = -3.42725 + (((tickAnim - 15) / 7) * (0-(-3.42725)));
-            zz = -0.56041 + (((tickAnim - 15) / 7) * (0-(-0.56041)));
+            xx = -15.24359 + (((tickAnim - 15) / 7) * (11.25-(-15.24359)));
+            yy = -2.40968 + (((tickAnim - 15) / 7) * (0-(-2.40968)));
+            zz = 0.5431 + (((tickAnim - 15) / 7) * (0-(0.5431)));
         }
         else {
             xx = 0;
@@ -4740,12 +4816,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 4) / 8) * (0-(0)));
         }
         else if (tickAnim >= 12 && tickAnim < 15) {
-            xx = -26 + (((tickAnim - 12) / 3) * (-40.25-(-26)));
+            xx = -26 + (((tickAnim - 12) / 3) * (-21.5-(-26)));
             yy = 0 + (((tickAnim - 12) / 3) * (0-(0)));
             zz = 0 + (((tickAnim - 12) / 3) * (0-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 22) {
-            xx = -40.25 + (((tickAnim - 15) / 7) * (0.75-(-40.25)));
+            xx = -21.5 + (((tickAnim - 15) / 7) * (0.75-(-21.5)));
             yy = 0 + (((tickAnim - 15) / 7) * (0-(0)));
             zz = 0 + (((tickAnim - 15) / 7) * (0-(0)));
         }
@@ -4769,12 +4845,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
         }
         else if (tickAnim >= 12 && tickAnim < 15) {
             xx = 0 + (((tickAnim - 12) / 3) * (0-(0)));
-            yy = 1.175 + (((tickAnim - 12) / 3) * (0.625-(1.175)));
+            yy = 1.175 + (((tickAnim - 12) / 3) * (-0.125-(1.175)));
             zz = -0.2 + (((tickAnim - 12) / 3) * (-0.1-(-0.2)));
         }
         else if (tickAnim >= 15 && tickAnim < 22) {
             xx = 0 + (((tickAnim - 15) / 7) * (0-(0)));
-            yy = 0.625 + (((tickAnim - 15) / 7) * (0-(0.625)));
+            yy = -0.125 + (((tickAnim - 15) / 7) * (0-(-0.125)));
             zz = -0.1 + (((tickAnim - 15) / 7) * (0-(-0.1)));
         }
         else {
@@ -4790,27 +4866,27 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 4) {
-            xx = 0 + (((tickAnim - 0) / 4) * (6.75-(0)));
+            xx = 0 + (((tickAnim - 0) / 4) * (-6.5-(0)));
             yy = 0 + (((tickAnim - 0) / 4) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 4) * (0-(0)));
         }
         else if (tickAnim >= 4 && tickAnim < 8) {
-            xx = 6.75 + (((tickAnim - 4) / 4) * (-30.13-(6.75)));
+            xx = -6.5 + (((tickAnim - 4) / 4) * (-30.13-(-6.5)));
             yy = 0 + (((tickAnim - 4) / 4) * (0-(0)));
             zz = 0 + (((tickAnim - 4) / 4) * (0-(0)));
         }
         else if (tickAnim >= 8 && tickAnim < 12) {
-            xx = -30.13 + (((tickAnim - 8) / 4) * (-49-(-30.13)));
+            xx = -30.13 + (((tickAnim - 8) / 4) * (-24.25-(-30.13)));
             yy = 0 + (((tickAnim - 8) / 4) * (0-(0)));
             zz = 0 + (((tickAnim - 8) / 4) * (0-(0)));
         }
         else if (tickAnim >= 12 && tickAnim < 15) {
-            xx = -49 + (((tickAnim - 12) / 3) * (1-(-49)));
+            xx = -24.25 + (((tickAnim - 12) / 3) * (-8.75-(-24.25)));
             yy = 0 + (((tickAnim - 12) / 3) * (0-(0)));
             zz = 0 + (((tickAnim - 12) / 3) * (0-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 22) {
-            xx = 1 + (((tickAnim - 15) / 7) * (0-(1)));
+            xx = -8.75 + (((tickAnim - 15) / 7) * (0-(-8.75)));
             yy = 0 + (((tickAnim - 15) / 7) * (0-(0)));
             zz = 0 + (((tickAnim - 15) / 7) * (0-(0)));
         }
@@ -4824,23 +4900,28 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
         if (tickAnim >= 0 && tickAnim < 4) {
             xx = 0 + (((tickAnim - 0) / 4) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 4) * (0.18-(0)));
-            zz = 0.325 + (((tickAnim - 0) / 4) * (0.49-(0.325)));
+            yy = 0 + (((tickAnim - 0) / 4) * (-0.145-(0)));
+            zz = 0.325 + (((tickAnim - 0) / 4) * (0.315-(0.325)));
         }
         else if (tickAnim >= 4 && tickAnim < 8) {
             xx = 0 + (((tickAnim - 4) / 4) * (0-(0)));
-            yy = 0.18 + (((tickAnim - 4) / 4) * (0.225-(0.18)));
-            zz = 0.49 + (((tickAnim - 4) / 4) * (0.6-(0.49)));
+            yy = -0.145 + (((tickAnim - 4) / 4) * (0.225-(-0.145)));
+            zz = 0.315 + (((tickAnim - 4) / 4) * (0.6-(0.315)));
         }
         else if (tickAnim >= 8 && tickAnim < 12) {
             xx = 0 + (((tickAnim - 8) / 4) * (0-(0)));
-            yy = 0.225 + (((tickAnim - 8) / 4) * (0-(0.225)));
-            zz = 0.6 + (((tickAnim - 8) / 4) * (0-(0.6)));
+            yy = 0.225 + (((tickAnim - 8) / 4) * (0.225-(0.225)));
+            zz = 0.6 + (((tickAnim - 8) / 4) * (0.3-(0.6)));
         }
-        else if (tickAnim >= 12 && tickAnim < 22) {
-            xx = 0 + (((tickAnim - 12) / 10) * (0-(0)));
-            yy = 0 + (((tickAnim - 12) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 12) / 10) * (0.325-(0)));
+        else if (tickAnim >= 12 && tickAnim < 15) {
+            xx = 0 + (((tickAnim - 12) / 3) * (0-(0)));
+            yy = 0.225 + (((tickAnim - 12) / 3) * (-0.15-(0.225)));
+            zz = 0.3 + (((tickAnim - 12) / 3) * (0.11-(0.3)));
+        }
+        else if (tickAnim >= 15 && tickAnim < 22) {
+            xx = 0 + (((tickAnim - 15) / 7) * (0-(0)));
+            yy = -0.15 + (((tickAnim - 15) / 7) * (0-(-0.15)));
+            zz = 0.11 + (((tickAnim - 15) / 7) * (0.325-(0.11)));
         }
         else {
             xx = 0;
@@ -4870,12 +4951,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 8) / 4) * (0-(0)));
         }
         else if (tickAnim >= 12 && tickAnim < 15) {
-            xx = 111.5 + (((tickAnim - 12) / 3) * (57-(111.5)));
+            xx = 111.5 + (((tickAnim - 12) / 3) * (46.75-(111.5)));
             yy = 0 + (((tickAnim - 12) / 3) * (0-(0)));
             zz = 0 + (((tickAnim - 12) / 3) * (0-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 18) {
-            xx = 57 + (((tickAnim - 15) / 3) * (19.73-(57)));
+            xx = 46.75 + (((tickAnim - 15) / 3) * (19.73-(46.75)));
             yy = 0 + (((tickAnim - 15) / 3) * (0-(0)));
             zz = 0 + (((tickAnim - 15) / 3) * (0-(0)));
         }
@@ -4909,17 +4990,17 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
         }
         else if (tickAnim >= 12 && tickAnim < 15) {
             xx = 0 + (((tickAnim - 12) / 3) * (0-(0)));
-            yy = 0 + (((tickAnim - 12) / 3) * (0-(0)));
-            zz = 0 + (((tickAnim - 12) / 3) * (0-(0)));
+            yy = 0 + (((tickAnim - 12) / 3) * (-0.65-(0)));
+            zz = 0 + (((tickAnim - 12) / 3) * (0.15-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 18) {
             xx = 0 + (((tickAnim - 15) / 3) * (0-(0)));
-            yy = 0 + (((tickAnim - 15) / 3) * (1.05-(0)));
-            zz = 0 + (((tickAnim - 15) / 3) * (0-(0)));
+            yy = -0.65 + (((tickAnim - 15) / 3) * (0.3-(-0.65)));
+            zz = 0.15 + (((tickAnim - 15) / 3) * (0-(0.15)));
         }
         else if (tickAnim >= 18 && tickAnim < 22) {
             xx = 0 + (((tickAnim - 18) / 4) * (0-(0)));
-            yy = 1.05 + (((tickAnim - 18) / 4) * (0-(1.05)));
+            yy = 0.3 + (((tickAnim - 18) / 4) * (0-(0.3)));
             zz = 0 + (((tickAnim - 18) / 4) * (0-(0)));
         }
         else {
@@ -4980,12 +5061,10 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         this.setRotateAngle(rightarm2, rightarm2.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*333/0.5-180))*-4), rightarm2.rotateAngleY + (float) Math.toRadians(0), rightarm2.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*333-120))*2));
-        
 
     }
     public void animRunning(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
-        EntityPrehistoricFloraPsittacosaurus entity = (EntityPrehistoricFloraPsittacosaurus) entitylivingbaseIn;
-        int animCycle = 14;
+        EntityPrehistoricFloraPsittacosaurus entity = (EntityPrehistoricFloraPsittacosaurus) entitylivingbaseIn;int animCycle = 14;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;
         double yy = 0;
@@ -5038,12 +5117,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 8) {
-            xx = -44 + (((tickAnim - 0) / 8) * (20.5-(-44)));
+            xx = -26.75 + (((tickAnim - 0) / 8) * (20.5-(-26.75)));
             yy = 0 + (((tickAnim - 0) / 8) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
         }
         else if (tickAnim >= 8 && tickAnim < 14) {
-            xx = 20.5 + (((tickAnim - 8) / 6) * (-44-(20.5)));
+            xx = 20.5 + (((tickAnim - 8) / 6) * (-26.75-(20.5)));
             yy = 0 + (((tickAnim - 8) / 6) * (0-(0)));
             zz = 0 + (((tickAnim - 8) / 6) * (0-(0)));
         }
@@ -5057,12 +5136,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
         if (tickAnim >= 0 && tickAnim < 8) {
             xx = 0 + (((tickAnim - 0) / 8) * (0-(0)));
-            yy = 0.975 + (((tickAnim - 0) / 8) * (-0.25-(0.975)));
+            yy = 0.075 + (((tickAnim - 0) / 8) * (-0.25-(0.075)));
             zz = -0.15 + (((tickAnim - 0) / 8) * (0-(-0.15)));
         }
         else if (tickAnim >= 8 && tickAnim < 14) {
             xx = 0 + (((tickAnim - 8) / 6) * (0-(0)));
-            yy = -0.25 + (((tickAnim - 8) / 6) * (0.975-(-0.25)));
+            yy = -0.25 + (((tickAnim - 8) / 6) * (0.075-(-0.25)));
             zz = 0 + (((tickAnim - 8) / 6) * (-0.15-(0)));
         }
         else {
@@ -5078,7 +5157,7 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 8) {
-            xx = 18.75 + (((tickAnim - 0) / 8) * (11.25-(18.75)));
+            xx = 9.75 + (((tickAnim - 0) / 8) * (11.25-(9.75)));
             yy = 0 + (((tickAnim - 0) / 8) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
         }
@@ -5093,7 +5172,7 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 11) / 2) * (0-(0)));
         }
         else if (tickAnim >= 13 && tickAnim < 14) {
-            xx = -64 + (((tickAnim - 13) / 1) * (18.75-(-64)));
+            xx = -64 + (((tickAnim - 13) / 1) * (9.75-(-64)));
             yy = 0 + (((tickAnim - 13) / 1) * (0-(0)));
             zz = 0 + (((tickAnim - 13) / 1) * (0-(0)));
         }
@@ -5107,12 +5186,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
         if (tickAnim >= 0 && tickAnim < 8) {
             xx = 0 + (((tickAnim - 0) / 8) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+            yy = -0.225 + (((tickAnim - 0) / 8) * (0-(-0.225)));
             zz = 0 + (((tickAnim - 0) / 8) * (0.3-(0)));
         }
         else if (tickAnim >= 8 && tickAnim < 14) {
             xx = 0 + (((tickAnim - 8) / 6) * (0-(0)));
-            yy = 0 + (((tickAnim - 8) / 6) * (0-(0)));
+            yy = 0 + (((tickAnim - 8) / 6) * (-0.225-(0)));
             zz = 0.3 + (((tickAnim - 8) / 6) * (0-(0.3)));
         }
         else {
@@ -5128,12 +5207,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 2) {
-            xx = 44 + (((tickAnim - 0) / 2) * (19.61998-(44)));
+            xx = 33.5 + (((tickAnim - 0) / 2) * (12.61998-(33.5)));
             yy = 0 + (((tickAnim - 0) / 2) * (0.94779-(0)));
             zz = 0 + (((tickAnim - 0) / 2) * (-3.62841-(0)));
         }
         else if (tickAnim >= 2 && tickAnim < 3) {
-            xx = 19.61998 + (((tickAnim - 2) / 1) * (3.3-(19.61998)));
+            xx = 12.61998 + (((tickAnim - 2) / 1) * (3.3-(12.61998)));
             yy = 0.94779 + (((tickAnim - 2) / 1) * (0-(0.94779)));
             zz = -3.62841 + (((tickAnim - 2) / 1) * (0-(-3.62841)));
         }
@@ -5153,7 +5232,7 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 11) / 2) * (0-(0)));
         }
         else if (tickAnim >= 13 && tickAnim < 14) {
-            xx = 103.8 + (((tickAnim - 13) / 1) * (44-(103.8)));
+            xx = 103.8 + (((tickAnim - 13) / 1) * (33.5-(103.8)));
             yy = 0 + (((tickAnim - 13) / 1) * (0-(0)));
             zz = 0 + (((tickAnim - 13) / 1) * (0-(0)));
         }
@@ -5168,22 +5247,22 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
         if (tickAnim >= 0 && tickAnim < 1) {
             xx = 0 + (((tickAnim - 0) / 1) * (0-(0)));
             yy = -0.15 + (((tickAnim - 0) / 1) * (1.405-(-0.15)));
-            zz = 0 + (((tickAnim - 0) / 1) * (0-(0)));
+            zz = 0.275 + (((tickAnim - 0) / 1) * (0.425-(0.275)));
         }
         else if (tickAnim >= 1 && tickAnim < 2) {
             xx = 0 + (((tickAnim - 1) / 1) * (0-(0)));
-            yy = 1.405 + (((tickAnim - 1) / 1) * (2.115-(1.405)));
-            zz = 0 + (((tickAnim - 1) / 1) * (0-(0)));
+            yy = 1.405 + (((tickAnim - 1) / 1) * (1.54-(1.405)));
+            zz = 0.425 + (((tickAnim - 1) / 1) * (0-(0.425)));
         }
         else if (tickAnim >= 2 && tickAnim < 3) {
             xx = 0 + (((tickAnim - 2) / 1) * (0-(0)));
-            yy = 2.115 + (((tickAnim - 2) / 1) * (1.335-(2.115)));
-            zz = 0 + (((tickAnim - 2) / 1) * (0-(0)));
+            yy = 1.54 + (((tickAnim - 2) / 1) * (0.885-(1.54)));
+            zz = 0 + (((tickAnim - 2) / 1) * (0.325-(0)));
         }
         else if (tickAnim >= 3 && tickAnim < 8) {
             xx = 0 + (((tickAnim - 3) / 5) * (0-(0)));
-            yy = 1.335 + (((tickAnim - 3) / 5) * (0-(1.335)));
-            zz = 0 + (((tickAnim - 3) / 5) * (0-(0)));
+            yy = 0.885 + (((tickAnim - 3) / 5) * (0-(0.885)));
+            zz = 0.325 + (((tickAnim - 3) / 5) * (0-(0.325)));
         }
         else if (tickAnim >= 8 && tickAnim < 11) {
             xx = 0 + (((tickAnim - 8) / 3) * (0-(0)));
@@ -5198,7 +5277,7 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
         else if (tickAnim >= 13 && tickAnim < 14) {
             xx = 0 + (((tickAnim - 13) / 1) * (0-(0)));
             yy = 0.65 + (((tickAnim - 13) / 1) * (-0.15-(0.65)));
-            zz = -0.15 + (((tickAnim - 13) / 1) * (0-(-0.15)));
+            zz = -0.15 + (((tickAnim - 13) / 1) * (0.275-(-0.15)));
         }
         else {
             xx = 0;
@@ -5238,12 +5317,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 8) {
-            xx = 20.5 + (((tickAnim - 0) / 8) * (-44-(20.5)));
+            xx = 20.5 + (((tickAnim - 0) / 8) * (-21.5-(20.5)));
             yy = 0 + (((tickAnim - 0) / 8) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
         }
         else if (tickAnim >= 8 && tickAnim < 14) {
-            xx = -44 + (((tickAnim - 8) / 6) * (20.5-(-44)));
+            xx = -21.5 + (((tickAnim - 8) / 6) * (20.5-(-21.5)));
             yy = 0 + (((tickAnim - 8) / 6) * (0-(0)));
             zz = 0 + (((tickAnim - 8) / 6) * (0-(0)));
         }
@@ -5257,12 +5336,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
         if (tickAnim >= 0 && tickAnim < 8) {
             xx = 0 + (((tickAnim - 0) / 8) * (0-(0)));
-            yy = -0.25 + (((tickAnim - 0) / 8) * (0.975-(-0.25)));
+            yy = -0.25 + (((tickAnim - 0) / 8) * (-0.1-(-0.25)));
             zz = 0 + (((tickAnim - 0) / 8) * (-0.15-(0)));
         }
         else if (tickAnim >= 8 && tickAnim < 14) {
             xx = 0 + (((tickAnim - 8) / 6) * (0-(0)));
-            yy = 0.975 + (((tickAnim - 8) / 6) * (-0.25-(0.975)));
+            yy = -0.1 + (((tickAnim - 8) / 6) * (-0.25-(-0.1)));
             zz = -0.15 + (((tickAnim - 8) / 6) * (0-(-0.15)));
         }
         else {
@@ -5278,7 +5357,7 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 3) {
-            xx = 11.25 + (((tickAnim - 0) / 3) * (-60.67-(11.25)));
+            xx = -7.75 + (((tickAnim - 0) / 3) * (-60.67-(-7.75)));
             yy = 0 + (((tickAnim - 0) / 3) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 3) * (0-(0)));
         }
@@ -5288,12 +5367,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 3) / 2) * (0-(0)));
         }
         else if (tickAnim >= 5 && tickAnim < 8) {
-            xx = -60.67 + (((tickAnim - 5) / 3) * (18.75-(-60.67)));
+            xx = -60.67 + (((tickAnim - 5) / 3) * (1-(-60.67)));
             yy = 0 + (((tickAnim - 5) / 3) * (0-(0)));
             zz = 0 + (((tickAnim - 5) / 3) * (0-(0)));
         }
         else if (tickAnim >= 8 && tickAnim < 14) {
-            xx = 18.75 + (((tickAnim - 8) / 6) * (11.25-(18.75)));
+            xx = 1 + (((tickAnim - 8) / 6) * (-7.75-(1)));
             yy = 0 + (((tickAnim - 8) / 6) * (0-(0)));
             zz = 0 + (((tickAnim - 8) / 6) * (0-(0)));
         }
@@ -5307,12 +5386,12 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
         if (tickAnim >= 0 && tickAnim < 8) {
             xx = 0 + (((tickAnim - 0) / 8) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (-0.225-(0)));
             zz = 0.375 + (((tickAnim - 0) / 8) * (0-(0.375)));
         }
         else if (tickAnim >= 8 && tickAnim < 14) {
             xx = 0 + (((tickAnim - 8) / 6) * (0-(0)));
-            yy = 0 + (((tickAnim - 8) / 6) * (0-(0)));
+            yy = -0.225 + (((tickAnim - 8) / 6) * (0-(-0.225)));
             zz = 0 + (((tickAnim - 8) / 6) * (0.375-(0)));
         }
         else {
@@ -5338,22 +5417,22 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
             zz = -3.18103 + (((tickAnim - 3) / 2) * (-3.18103-(-3.18103)));
         }
         else if (tickAnim >= 5 && tickAnim < 8) {
-            xx = 109.73226 + (((tickAnim - 5) / 3) * (44-(109.73226)));
+            xx = 109.73226 + (((tickAnim - 5) / 3) * (36.75-(109.73226)));
             yy = -1.56386 + (((tickAnim - 5) / 3) * (0-(-1.56386)));
             zz = -3.18103 + (((tickAnim - 5) / 3) * (0-(-3.18103)));
         }
         else if (tickAnim >= 8 && tickAnim < 9) {
-            xx = 44 + (((tickAnim - 8) / 1) * (18.75216-(44)));
+            xx = 36.75 + (((tickAnim - 8) / 1) * (18.75216-(36.75)));
             yy = 0 + (((tickAnim - 8) / 1) * (-1.31128-(0)));
             zz = 0 + (((tickAnim - 8) / 1) * (5.34187-(0)));
         }
         else if (tickAnim >= 9 && tickAnim < 10) {
-            xx = 18.75216 + (((tickAnim - 9) / 1) * (6.22-(18.75216)));
+            xx = 18.75216 + (((tickAnim - 9) / 1) * (9.47-(18.75216)));
             yy = -1.31128 + (((tickAnim - 9) / 1) * (0-(-1.31128)));
             zz = 5.34187 + (((tickAnim - 9) / 1) * (0-(5.34187)));
         }
         else if (tickAnim >= 10 && tickAnim < 14) {
-            xx = 6.22 + (((tickAnim - 10) / 4) * (107.25-(6.22)));
+            xx = 9.47 + (((tickAnim - 10) / 4) * (107.25-(9.47)));
             yy = 0 + (((tickAnim - 10) / 4) * (0-(0)));
             zz = 0 + (((tickAnim - 10) / 4) * (0-(0)));
         }
@@ -5367,28 +5446,28 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
         if (tickAnim >= 0 && tickAnim < 8) {
             xx = 0 + (((tickAnim - 0) / 8) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 8) * (0.325-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (0.025-(0)));
             zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
         }
         else if (tickAnim >= 8 && tickAnim < 8) {
             xx = 0 + (((tickAnim - 8) / 0) * (0-(0)));
-            yy = 0.325 + (((tickAnim - 8) / 0) * (1.785-(0.325)));
-            zz = 0 + (((tickAnim - 8) / 0) * (0-(0)));
+            yy = 0.025 + (((tickAnim - 8) / 0) * (1.41-(0.025)));
+            zz = 0 + (((tickAnim - 8) / 0) * (0.35-(0)));
         }
         else if (tickAnim >= 8 && tickAnim < 9) {
             xx = 0 + (((tickAnim - 8) / 1) * (0-(0)));
-            yy = 1.785 + (((tickAnim - 8) / 1) * (2.115-(1.785)));
-            zz = 0 + (((tickAnim - 8) / 1) * (0-(0)));
+            yy = 1.41 + (((tickAnim - 8) / 1) * (1.44-(1.41)));
+            zz = 0.35 + (((tickAnim - 8) / 1) * (0.3-(0.35)));
         }
         else if (tickAnim >= 9 && tickAnim < 10) {
             xx = 0 + (((tickAnim - 9) / 1) * (0-(0)));
-            yy = 2.115 + (((tickAnim - 9) / 1) * (1.41-(2.115)));
-            zz = 0 + (((tickAnim - 9) / 1) * (0-(0)));
+            yy = 1.44 + (((tickAnim - 9) / 1) * (0.985-(1.44)));
+            zz = 0.3 + (((tickAnim - 9) / 1) * (0.375-(0.3)));
         }
         else if (tickAnim >= 10 && tickAnim < 14) {
             xx = 0 + (((tickAnim - 10) / 4) * (0-(0)));
-            yy = 1.41 + (((tickAnim - 10) / 4) * (0-(1.41)));
-            zz = 0 + (((tickAnim - 10) / 4) * (0-(0)));
+            yy = 0.985 + (((tickAnim - 10) / 4) * (0-(0.985)));
+            zz = 0.375 + (((tickAnim - 10) / 4) * (0-(0.375)));
         }
         else {
             xx = 0;
@@ -5423,6 +5502,7 @@ public class ModelPsittacosaurus extends ModelBasePalaeopedia {
 
 
         this.setRotateAngle(rightarm2, rightarm2.rotateAngleX + (float) Math.toRadians(1+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*508/0.5-60))*7), rightarm2.rotateAngleY + (float) Math.toRadians(0), rightarm2.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*508-120))*4));
+
 
 
     }
