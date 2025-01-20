@@ -115,7 +115,7 @@ public class BlockFractofusus extends ElementsLepidodendronMod.ModElement {
 			(new WorldGenReed() {
 				@Override
 				public boolean generate(World world, Random random, BlockPos pos) {
-					for (int i = 0; i < 12; ++i) {
+					for (int i = 0; i < 8; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
 						if (blockpos1.getY() > 35 + random.nextInt(3)) {
 							continue;

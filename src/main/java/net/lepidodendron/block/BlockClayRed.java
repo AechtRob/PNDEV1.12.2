@@ -54,6 +54,7 @@ public class BlockClayRed extends ElementsLepidodendronMod.ModElement {
 			setHardness(0.6F);
 			setSoundType(SoundType.GROUND);
 			setTranslationKey("pf_clay_red");
+			setHarvestLevel("shovel", 0);
 			setCreativeTab(TabLepidodendronMisc.tab);
 		}
 

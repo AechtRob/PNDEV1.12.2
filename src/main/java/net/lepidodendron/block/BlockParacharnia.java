@@ -26,6 +26,8 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -51,24 +53,24 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockHylaecullulus extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:hylaecullulus")
+public class BlockParacharnia extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:paracharnia")
 	public static final Block block = null;
-	public BlockHylaecullulus(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.hylaecullulus);
+	public BlockParacharnia(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.paracharnia);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("hylaecullulus"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("paracharnia"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		GameRegistry.registerTileEntity(BlockHylaecullulus.TileEntityCustom.class, "lepidodendron:tileentityhylaecullulus");
-		OreDictionary.registerOre("staticdnaPNlepidodendron:hylaecullulus", BlockHylaecullulus.block);
+		GameRegistry.registerTileEntity(BlockParacharnia.TileEntityCustom.class, "lepidodendron:tileentityparacharnia");
+		OreDictionary.registerOre("staticdnaPNlepidodendron:paracharnia", BlockParacharnia.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
@@ -78,8 +80,8 @@ public class BlockHylaecullulus extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:hylaecullulus", "inventory"));
-		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockHylaecullulus.LEVEL).build());
+				new ModelResourceLocation("lepidodendron:paracharnia", "inventory"));
+		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockParacharnia.LEVEL).build());
 	}
 
 	@Override
@@ -91,7 +93,7 @@ public class BlockHylaecullulus extends ElementsLepidodendronMod.ModElement {
 			return;
 		}
 
-		for (int i = 0; i < (int) 12; i++) {
+		for (int i = 0; i < (int) 36; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))+1);
 			int l14 = chunkZ + random.nextInt(16) + 8;
@@ -103,7 +105,7 @@ public class BlockHylaecullulus extends ElementsLepidodendronMod.ModElement {
 
 		public BlockCustom() {
 			super(Material.WATER);
-			setTranslationKey("pf_hylaecullulus");
+			setTranslationKey("pf_paracharnia");
 			setSoundType(SoundType.PLANT);
 			setHardness(0.0F);
 			setResistance(0.0F);
@@ -117,7 +119,22 @@ public class BlockHylaecullulus extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_HYLAECULLULUS;
+			return ModTriggers.CLICK_PARACHARNIA;
+		}
+
+		@Override
+		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
+			if (Math.random() > 0.9 && (!world.isRemote) && (!player.isCreative())) {
+				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockHoldfast.block, (int) (1)));
+				entityToSpawn.setPickupDelay(10);
+				world.spawnEntity(entityToSpawn);
+			}
+			return super.removedByPlayer(state, world, pos, player, willHarvest);
+		}
+
+		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
 		}
 
 		@Override
@@ -325,13 +342,14 @@ public class BlockHylaecullulus extends ElementsLepidodendronMod.ModElement {
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 
+
 	}
 
 	public static class TileEntityCustom extends TileEntity {
 
 		@Override
 		public AxisAlignedBB getRenderBoundingBox() {
-			return new AxisAlignedBB(pos, pos.add(1, 1, 1));
+			return new AxisAlignedBB(pos.add(-1, 0, -1), pos.add(1, 2, 1));
 		}
 
 		@SideOnly(Side.CLIENT)
@@ -339,6 +357,5 @@ public class BlockHylaecullulus extends ElementsLepidodendronMod.ModElement {
 		public double getMaxRenderDistanceSquared() {
 			return 2304;
 		}
-
 	}
 }

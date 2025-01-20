@@ -297,7 +297,7 @@ public class BlockTaxidermyTable extends ElementsLepidodendronMod.ModElement {
 
 			if (this.isProcessing) {
 				this.processTick ++;
-				//updated = true;
+				updated = true;
 			}
 
 			if (this.isProcessing && !(isItemValidForSlot(0, this.getStackInSlot(0))

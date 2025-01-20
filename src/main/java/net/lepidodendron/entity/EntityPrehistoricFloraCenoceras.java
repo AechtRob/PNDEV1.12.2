@@ -31,7 +31,7 @@ public class EntityPrehistoricFloraCenoceras extends EntityPrehistoricFloraNauti
 
 	public EntityPrehistoricFloraCenoceras(World world) {
 		super(world);
-		setSize(0.324F, 0.375F);
+		setSize(0.325F, 0.375F);
 		minWidth = 0.07F;
 		maxWidth = 0.325F;
 		maxHeight = 0.375F;
@@ -64,7 +64,7 @@ public class EntityPrehistoricFloraCenoceras extends EntityPrehistoricFloraNauti
 
 	@Override
 	public int getAdultAge() {
-		return 0;
+		return -1;
 	}
 
 	@Override

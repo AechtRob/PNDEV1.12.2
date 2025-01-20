@@ -2,7 +2,7 @@
 	"name": "Beltanelliformis",
 	"read_by_default": true,
 	"icon": "lepidodendron:beltanelliformis",
-	"category": "lepidodendron:statics",
+	"category": "lepidodendron:plants",
 	"turnin": "lepidodendron:pf_adv_book_beltanelliformis",
 	"pages": [
 		{

@@ -300,6 +300,16 @@ public class CharniaGenerator extends WorldGenerator
 				dimensionCriteria = false;
 			}
 
+			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
+			)
+					&& this.charnia == BlockParacharnia.block)
+			{
+				dimensionCriteria = true;
+			}
+			else if (this.charnia == BlockParacharnia.block) {
+				dimensionCriteria = false;
+			}
+
 //			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
 //					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")
 //					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
@@ -465,7 +475,15 @@ public class CharniaGenerator extends WorldGenerator
 						|| this.charnia == BlockFrondophyllas.block
 						|| this.charnia == BlockPrimocandelabrum1.block
 						|| this.charnia == BlockPrimocandelabrum2.block
-						|| this.charnia == BlockParviscopa.block)
+						|| this.charnia == BlockParviscopa.block
+						|| this.charnia == BlockGigarimaneta.block
+						|| this.charnia == BlockHylaecullulus.block)
+				) {
+					continue;
+				}
+
+				if (k < 64
+						&& (this.charnia == BlockParacharnia.block)
 				) {
 					continue;
 				}

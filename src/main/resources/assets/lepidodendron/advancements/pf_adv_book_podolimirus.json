@@ -4,17 +4,17 @@
 			"item": "lepidodendron:advancement_placeholder"
 		  },
 		"title": {
-			"translate": "advancements.pf_adv_book_andiva.title"
+			"translate": "advancements.pf_adv_book_podolimirus.title"
 		},
 		"description": {
-			"translate": "advancements.pf_adv_book_andiva.description"
+			"translate": "advancements.pf_adv_book_podolimirus.description"
 		}
 	},
     "parent": "lepidodendron:pf_base_adv_knowledge",
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_andiva"
+			"trigger": "pf_book_podolimirus"
 		}
 	}
 }

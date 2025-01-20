@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:paracharnia",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:paracharnia",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:paracharnia",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:paracharnia",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:paracharnia",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:paracharnia",
+      "y": 0
+    }
+  }
+}

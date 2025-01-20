@@ -258,6 +258,12 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 			if (this.animationTick > 90) {
 				setAnimationTick(90);
 			}
+			if (this.animationTick == 88) {
+				world.notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+			}
+			if (this.animationTick == 89) {
+				world.notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+			}
 		}
 		else {
 			if (this.animationTick > 0) { //4++ seconds
@@ -265,6 +271,12 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 			}
 			if (this.animationTick < 0) {
 				this.animationTick = 0;
+			}
+			if (this.animationTick == 88) {
+				world.notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+			}
+			if (this.animationTick == 89) {
+				world.notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
 			}
 			if (this.getAnimationTick() == 75) { //3.5 seconds (ticks 15 to 85)
 				if (world.getBlockState(this.getPos()).getBlock() != BlockPortalBlockOverworld.block

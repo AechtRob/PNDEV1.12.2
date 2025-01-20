@@ -7057,6 +7057,24 @@ public class RenderHandler {
                 return new RenderKarakhtia(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPodolimirus.class, new IRenderFactory<EntityPrehistoricFloraPodolimirus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPodolimirus> createRenderFor(RenderManager manager) {
+                return new RenderPodolimirus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraWindermeria.class, new IRenderFactory<EntityPrehistoricFloraWindermeria>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraWindermeria> createRenderFor(RenderManager manager) {
+                return new RenderWindermeria(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraProtechiurus.class, new IRenderFactory<EntityPrehistoricFloraProtechiurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraProtechiurus> createRenderFor(RenderManager manager) {
+                return new RenderProtechiurus(manager);
+            }
+        });
         
 
 
@@ -7130,6 +7148,7 @@ public class RenderHandler {
             ClientRegistry.bindTileEntitySpecialRenderer(BlockFrondophyllas.TileEntityCustom.class, new RenderFrondophyllas());
             ClientRegistry.bindTileEntitySpecialRenderer(BlockGigarimaneta.TileEntityCustom.class, new RenderGigarimaneta());
             ClientRegistry.bindTileEntitySpecialRenderer(BlockHylaecullulus.TileEntityCustom.class, new RenderHylaecullulus());
+            ClientRegistry.bindTileEntitySpecialRenderer(BlockParacharnia.TileEntityCustom.class, new RenderParacharnia());
             //Cambrian:
             ClientRegistry.bindTileEntitySpecialRenderer(BlockStromatoveris.TileEntityCustom.class, new RenderStromatoveris());
             ClientRegistry.bindTileEntitySpecialRenderer(BlockThaumaptilon.TileEntityCustom.class, new RenderThaumaptilon());
