@@ -1,7 +1,7 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraKeretsa;
+import net.lepidodendron.entity.EntityPrehistoricFloraUncus;
 import net.lepidodendron.entity.EntityPrehistoricFloraUncus;
 import net.lepidodendron.entity.model.entity.ModelUncus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
@@ -29,7 +29,7 @@ public class RenderUncus extends RenderLivingBaseWithBook<EntityPrehistoricFlora
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 
-    protected void preRenderCallback(EntityPrehistoricFloraKeretsa entity, float f) {
+    protected void preRenderCallback(EntityPrehistoricFloraUncus entity, float f) {
         float scale = this.getScaler();
         if (scale < 0.1f) {
             scale = 0.1f;

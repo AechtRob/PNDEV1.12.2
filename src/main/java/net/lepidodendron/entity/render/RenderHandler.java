@@ -7075,6 +7075,12 @@ public class RenderHandler {
                 return new RenderProtechiurus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPlexus.class, new IRenderFactory<EntityPrehistoricFloraPlexus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPlexus> createRenderFor(RenderManager manager) {
+                return new RenderPlexus(manager);
+            }
+        });
         
 
 

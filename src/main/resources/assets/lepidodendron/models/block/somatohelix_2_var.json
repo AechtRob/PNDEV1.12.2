@@ -1,8 +1,8 @@
 {
-    "parent": "lepidodendron:block/cube_noao",
+	"parent": "lepidodendron:block/cube_noao",
     "textures": {
-        "particle": "lepidodendron:blocks/burykhia_1",
-        "plant": "lepidodendron:blocks/burykhia_1"
+        "particle": "lepidodendron:items/somatohelix_inventory",
+        "plant": "lepidodendron:blocks/somatohelix_2_offset"
     },
     "elements": [
         {   "from": [ 0.8, 0, 8 ],
@@ -22,5 +22,7 @@
                 "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#plant" },
                 "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#plant" }
             }
-        }    ]
+        }
+        
+    ]
 }

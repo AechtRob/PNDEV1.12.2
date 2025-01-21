@@ -1,0 +1,52 @@
+{
+	"name": "Plexus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/plexus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_plexus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_plexus",
+			"title": "Plexus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>incertae sedis"
+		},
+		{
+			"type": "entity",
+			"name": "P. ricei",
+			"entity": "lepidodendron:prehistoric_flora_plexus",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_plexus",
+			"type": "text",
+			"text": "Plexus ricei comes from the Upper Ediacaran, with fossils from the Flinders Ranges, South Austarlia. It is a worm-like lifeform that could grow up to 80 cm in length. It is currently unknown whether Plexus is a bilaterian, or apart of another, perhaps unknown, clade all together."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_plexus",
+			"type": "text",
+			"text": "The generic name derives from the Latin word 'plexus', to mean 'braided'. The specific name derives from the surname of Dennis Rice, a field assistant who helped collect a large amount of the fossil material."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_plexus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_plexus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_plexus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_plexus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_plexus"
+		}
+	]
+}

@@ -1864,6 +1864,8 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_nereocystis_kelp_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_macrocystis_kelp_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_seaweed_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_plexus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_somatohelix_clean", "inventory"),
 
 				new ModelResourceLocation("lepidodendron:fossil_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossil_clean_missing_texture", "inventory")

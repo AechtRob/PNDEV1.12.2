@@ -1,0 +1,45 @@
+{
+	"name": "Somatohelix",
+	"read_by_default": true,
+	"icon": "lepidodendron:somatohelix",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_somatohelix",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_somatohelix",
+			"title": "Somatohelix",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Incertae sedis"
+		},
+		{
+			"type": "multiblock",
+			"name": "S. sinuosus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:somatohelix",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_somatohelix",
+			"type": "text",
+			"text": "Somatohelix sinuosus hails from the Upper Ediacaran, with fossils found in the Ediacara Member, South Australia. It is tubular lifeform and could grow up to 15 cm in height, and possibly partook in filter feeding from the surrounding water. It is the only known tubular lifeform known from South Australia so far."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_somatohelix",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'soma', to mean 'body'; and 'helix', to mean 'helical/coiled'. The specific name derives from directly from the Latin word 'sinuosus', to mean 'winding'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_somatohelix",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

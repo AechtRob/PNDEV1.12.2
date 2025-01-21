@@ -9,18 +9,32 @@
 			"trigger": "lepidodendron:pf_adv_book_arborea",
 			"title": "Arborea",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Arboreomorpha"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/arborea.png"],
-			"title": "Arborea sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "Arborea Arborea",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:arborea",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_arborea",
 			"type": "text",
-			"text": "Arborea is a frondose animal from the Ediacaran that resembled a leaf. However it was actually fleshy and was not a plant and it is one of the earliest animals, living a stationary life."
+			"text": "Arborea comes from the Upper Ediacaran, with fossils found from the Flinders Ranges, South Australia and Dengying Formation, South China. It is a leaf-like lifeform found in shallow waters and could grow up to 10 cm in height, and possibly partook in filter feeding from the surrounding water."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arborea",
+			"type": "text",
+			"text": "Arborea is unique amongst other Petalonamae in that it has a noticeable posterior and anterior, with the latter featuring the classic branching and the former being a smooth backing sheet. The generic name derives from the Latin word 'Arboreus', to mean 'tree-like'."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_arborea",

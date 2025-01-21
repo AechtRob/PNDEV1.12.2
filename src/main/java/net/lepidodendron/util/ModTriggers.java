@@ -947,6 +947,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_XENUSION = new CustomTrigger("pf_book_xenusion");
     public static final CustomTrigger CLICK_YAWUNIK = new CustomTrigger("pf_book_yawunik");
     public static final CustomTrigger CLICK_YILINGIA = new CustomTrigger("pf_book_yilingia");
+    public static final CustomTrigger CLICK_PLEXUS = new CustomTrigger("pf_book_plexus");
+    public static final CustomTrigger CLICK_SOMATOHELIX = new CustomTrigger("pf_book_somatohelix");
     public static final CustomTrigger CLICK_YOHOIA = new CustomTrigger("pf_book_yohoia");
     public static final CustomTrigger CLICK_YORGIA = new CustomTrigger("pf_book_yorgia");
     public static final CustomTrigger CLICK_YUNNANOZOON = new CustomTrigger("pf_book_yunnanozoon");
@@ -2836,6 +2838,8 @@ public class ModTriggers
             CLICK_XINPUSAURUS,
             CLICK_YAWUNIK,
             CLICK_YILINGIA,
+            CLICK_PLEXUS,
+            CLICK_SOMATOHELIX,
             CLICK_YOHOIA,
             CLICK_YORGIA,
             CLICK_YUNGUISAURUS,
