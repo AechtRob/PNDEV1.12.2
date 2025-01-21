@@ -44,7 +44,7 @@ public class ModelHapsidophyllas extends AdvancedModelBase {
     private final AdvancedModelRenderer frond4;
 
     public ModelHapsidophyllas() {
-        textureWidth = 24;
+        textureWidth = 32;
         textureHeight = 16;
 
         bone = new AdvancedModelRenderer(this);

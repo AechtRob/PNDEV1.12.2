@@ -1450,7 +1450,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_NIMBIA = new CustomTrigger("pf_book_nimbia");
     public static final CustomTrigger CLICK_EDIACARIA = new CustomTrigger("pf_book_ediacaria");
     public static final CustomTrigger CLICK_EOPORPITA = new CustomTrigger("pf_book_eoporpita");
-    public static final CustomTrigger CLICK_ICHNUSA = new CustomTrigger("pf_book_eichnusa");
+    public static final CustomTrigger CLICK_ICHNUSA = new CustomTrigger("pf_book_ichnusa");
     public static final CustomTrigger CLICK_CYCLOMEDUSA = new CustomTrigger("pf_book_cyclomedusa");
     public static final CustomTrigger CLICK_BURGESSOMEDUSA = new CustomTrigger("pf_book_burgessomedusa");
     public static final CustomTrigger CLICK_CORDUBIA = new CustomTrigger("pf_book_cordubia");

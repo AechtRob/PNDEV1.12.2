@@ -30,7 +30,7 @@ public class EntityPrehistoricFloraSpriggina extends EntityPrehistoricFloraTrilo
 
 	public EntityPrehistoricFloraSpriggina(World world) {
 		super(world);
-		setSize(0.4F, 0.3F);
+		setSize(0.171F, 0.063F);
 	}
 
 	@Override

@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderEdiacaria extends RenderLivingBaseWithBook<EntityPrehistoricFloraEdiacaria> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ediacaria.png");
 
-    public static float getScaler() {return 0.6F;}
+    public static float getScaler() {return 1.33F;}
 
     public RenderEdiacaria(RenderManager mgr) {
         super(mgr, new ModelPrecambrianJelly(), 0.0f);

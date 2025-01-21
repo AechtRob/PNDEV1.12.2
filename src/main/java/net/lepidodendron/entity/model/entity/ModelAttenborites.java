@@ -66,7 +66,7 @@ public class ModelAttenborites extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.bb_main.offsetY = 0.4F;
+        this.bb_main.offsetY = 0.485F;
         this.bb_main.setScaleX(1.0F);
         this.bb_main.setScaleZ(1.0F);
         this.bb_main.scaleChildren = false;
@@ -91,6 +91,7 @@ public class ModelAttenborites extends ModelBasePalaeopedia {
                 this.bb_main.rotateAngleZ = (float) Math.toRadians(90);
                 this.bb_main.scaleChildren = true;
                 this.bb_main.offsetY = 0.18F;
+                this.bb_main.offsetX = -0.40F;
                 this.bb_main.setScaleX(0.2F);
                 this.bb_main.setScaleZ(1.2F);
             }

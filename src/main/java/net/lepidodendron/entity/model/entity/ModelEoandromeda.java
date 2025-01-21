@@ -107,14 +107,30 @@ public class ModelEoandromeda extends ModelBasePalaeopedia {
         GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
         GlStateManager.color(1.0F, 1.0F, 1.0F, 0.96F);
 
-        this.disk.render(f5 * 0.2F);
+        this.disk.render(f5);
         GlStateManager.disableBlend();
 
     }
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.disk.offsetY = -1.4F;
+        this.disk.offsetX = -0.138F;
+        this.disk.rotateAngleY = (float)Math.toRadians(200);
+        this.disk.rotateAngleX = (float)Math.toRadians(25);
+        this.disk.rotateAngleZ = (float)Math.toRadians(-8);
+        this.disk.scaleChildren = true;
+        float scaler = 4.33F;
+        this.disk.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
+        //End of pose, now render the model:
+        this.disk.render(f);
+        //Reset rotations, positions and sizing:
+        this.disk.setScale(1.0F, 1.0F, 1.0F);
+        this.disk.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -128,7 +144,7 @@ public class ModelEoandromeda extends ModelBasePalaeopedia {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.disk.offsetY = 1.2F;
+        //this.disk.offsetY = 1.2F;
 
         float speed = 0.1F;
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled() && e.isInWater()) {

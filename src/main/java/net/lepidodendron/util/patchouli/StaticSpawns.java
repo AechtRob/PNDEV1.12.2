@@ -394,6 +394,9 @@ public class StaticSpawns {
         if (string.contains("fenestella_giant")) {
             return "fenestella";
         }
+        if (string.contains("tribrachidium")) {
+            return "vaveliksia";
+        }
         return string;
     }
 

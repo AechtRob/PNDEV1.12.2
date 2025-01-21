@@ -12,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderUncus extends RenderLivingBaseWithBook<EntityPrehistoricFloraUncus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/uncus.png");
     public static float getScaler() {
-        return 0.35F;
+        return 0.21F;
     }
 
     public RenderUncus(RenderManager mgr) {

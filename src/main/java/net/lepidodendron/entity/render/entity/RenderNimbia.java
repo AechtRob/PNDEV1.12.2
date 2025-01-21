@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderNimbia extends RenderLivingBaseWithBook<EntityPrehistoricFloraNimbia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/nimbia.png");
 
-    public static float getScaler() {return 0.4F;}
+    public static float getScaler() {return 0.45F;}
 
     public RenderNimbia(RenderManager mgr) {
         super(mgr, new ModelPrecambrianJelly(), 0.0f);

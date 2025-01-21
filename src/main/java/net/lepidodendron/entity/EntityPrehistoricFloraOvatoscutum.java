@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraOvatoscutum extends EntityPrehistoricFloraSli
 
 	public EntityPrehistoricFloraOvatoscutum(World world) {
 		super(world, 40);
-		setSize(0.65F, 0.25F);
+		setSize(0.19F, 0.07F);
 	}
 
 	@Override

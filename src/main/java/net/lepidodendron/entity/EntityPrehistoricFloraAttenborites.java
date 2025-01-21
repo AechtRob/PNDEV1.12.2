@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraAttenborites extends EntityPrehistoricFloraJe
 
     public EntityPrehistoricFloraAttenborites(World world) {
         super(world);
-        setSize(0.2F, 0.2F);
+        setSize(0.11875F, 0.11875F);
     }
 
     @Override

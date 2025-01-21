@@ -1,8 +1,8 @@
 {
 	"ambientocclusion": false,
 	"textures": {
-		"0": "lepidodendron:entities/parviscopa ",
-		"particle": "lepidodendron:entities/parviscopa "
+		"0": "lepidodendron:entities/parviscopa",
+		"particle": "lepidodendron:entities/parviscopa"
 	},
 	"elements": [
 		{

@@ -132,14 +132,14 @@ public class BlockSomatohelix extends ElementsLepidodendronMod.ModElement {
 		int multiplier = 1;
 
 		int minWaterDepth = 2;
-		int maxWaterDepth = 35;
+		int maxWaterDepth = 65;
 		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")) {
-			multiplier = 2;
+			multiplier = 5;
 		}
 
-		for (int i = 0; i < (6 * multiplier); i++) {
+		for (int i = 0; i < (30 * multiplier); i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
@@ -148,10 +148,10 @@ public class BlockSomatohelix extends ElementsLepidodendronMod.ModElement {
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 40; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
-						if (!world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_sparse_sea")) {
+						if (!world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")) {
 							continue;
 						}
-						if (blockpos1.getY() <= 92) {
+						if (blockpos1.getY() <= 62) {
 							continue;
 						}
 						if (Functions.isWater(world, blockpos1)) {

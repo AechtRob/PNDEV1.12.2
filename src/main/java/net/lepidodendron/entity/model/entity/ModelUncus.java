@@ -59,6 +59,28 @@ public class ModelUncus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = -1.2F;
+        this.main.offsetX = 0.7F;
+        this.main.rotateAngleY = (float)Math.toRadians(210);
+        this.main.rotateAngleX = (float)Math.toRadians(29);
+        this.main.rotateAngleZ = (float)Math.toRadians(-8);
+        this.main.scaleChildren = true;
+        float scaler = 4.93F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.bone.rotateAngleY = 0.3F;
+        this.bone2.rotateAngleY = 0.3F;
+        this.bone3.rotateAngleY = -0.3F;
+        this.bone4.rotateAngleY = -0.3F;
+        this.bone5.rotateAngleY = 0.5F;
+
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

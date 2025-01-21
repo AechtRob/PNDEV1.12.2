@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraPodolimirus extends EntityPrehistoricFloraSli
 
 	public EntityPrehistoricFloraPodolimirus(World world) {
 		super(world, 40);
-		setSize(0.65F, 0.25F);
+		setSize(0.3325F, 0.1225F);
 	}
 
 	@Override

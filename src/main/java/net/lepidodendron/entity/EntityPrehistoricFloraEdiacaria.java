@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraEdiacaria extends EntityPrehistoricFloraEoand
 
     public EntityPrehistoricFloraEdiacaria(World world) {
         super(world);
-        setSize(0.2F, 0.12F);
+        setSize(0.49875F, 0.30F);
     }
 
     @Override

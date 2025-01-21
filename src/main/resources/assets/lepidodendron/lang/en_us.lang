@@ -7000,6 +7000,7 @@ tile.pf_chain_link_fence.name=Chain-Link Fence
 tile.pf_chain_link_fence_gate.name=Chain-Link Gate
 tile.pf_chain_link_tile.name=Chain-Link Plate
 tile.pf_charnia.name=Charnia
+tile.pf_paracharnia.name=Paracharnia
 tile.pf_frondophyllas.name=Frondophyllas
 tile.pf_charniodiscus.name=Charniodiscus
 tile.pf_chaunograptus.name=Chaunograptus

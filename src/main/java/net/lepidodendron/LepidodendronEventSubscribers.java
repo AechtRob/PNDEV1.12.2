@@ -968,7 +968,12 @@ public class LepidodendronEventSubscribers {
 					while (z <= entity.posZ + 16) {
 						pos = new BlockPos(x, y, z);
 						if (world.getBlockState(pos).getMaterial() == Material.WATER && world.isAirBlock(pos.up())) {
-							if ((world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs")
+							if ((world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:hadean_craters")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:hadean_lava")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:hadean_smelts")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:hadean_smelts_helper")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_biome")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs")
 									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns")
 									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_creek_wide_rift")
 									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_shrubland_springs"))

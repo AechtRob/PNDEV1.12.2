@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraPlexus extends EntityPrehistoricFloraTrilobit
 
 	public EntityPrehistoricFloraPlexus(World world) {
 		super(world);
-		setSize(0.4F, 0.3F);
+		setSize(0.76F, 0.28F);
 	}
 
 	@Override

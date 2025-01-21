@@ -177,6 +177,23 @@ public class ModelPlexus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.bone.offsetY = -3.2F;
+        this.bone.offsetX = -1.138F;
+        this.bone.rotateAngleY = (float)Math.toRadians(200);
+        this.bone.rotateAngleX = (float)Math.toRadians(25);
+        this.bone.rotateAngleZ = (float)Math.toRadians(-8);
+        this.bone.scaleChildren = true;
+        float scaler = 2.33F;
+        this.bone.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.bone.render(f);
+        //Reset rotations, positions and sizing:
+        this.bone.setScale(1.0F, 1.0F, 1.0F);
+        this.bone.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 
@@ -191,14 +208,14 @@ public class ModelPlexus extends ModelBasePalaeopedia {
         //super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        AdvancedModelRenderer[] BodyF = {this.bone, this.bone2, this.bone3, this.bone4, this.bone5, this.bone6, this.bone7, this.bone8, this.bone9, this.bone10, this.bone11};
-        AdvancedModelRenderer[] BodyB = {this.bone12, this.bone13, this.bone14, this.bone15, this.bone16, this.bone17, this.bone18, this.bone19, this.bone20, this.bone21, this.bone22};
-        AdvancedModelRenderer[] BodyFull = {this.bone, this.bone2, this.bone3, this.bone4, this.bone5, this.bone6, this.bone7, this.bone8, this.bone9, this.bone10, this.bone11, this.bone12, this.bone13, this.bone14, this.bone15, this.bone16, this.bone17, this.bone18, this.bone19, this.bone20, this.bone21, this.bone22};
+        AdvancedModelRenderer[] BodyF = {this.bone22,this.bone21, this.bone20,this.bone19,this.bone18,this.bone17,this.bone16,this.bone15,this.bone14,this.bone13,this.bone12};
+        AdvancedModelRenderer[] BodyB = {this.bone11,this.bone10,this.bone9,this.bone8,this.bone7,this.bone6,this.bone5,this.bone4,this.bone3,this.bone2,this.bone};
+        AdvancedModelRenderer[] BodyFull = {this.bone22,this.bone21, this.bone20,this.bone19,this.bone18,this.bone17,this.bone16,this.bone15,this.bone14,this.bone13,this.bone12,this.bone11,this.bone10,this.bone9,this.bone8,this.bone7,this.bone6,this.bone5,this.bone4,this.bone3,this.bone2,this.bone};
 
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
-            this.chainSwing(BodyFull, 0.2F, -0.015F, -4, f2, 0.4F);
-            this.chainSwing(BodyF, 0.2F, 0.085F, 4, f2, 0.5F);
-            this.chainSwing(BodyB, 0.2F, -0.085F, -4, f2, 0.5F);
+            this.chainSwing(BodyFull, 0.2F, -0.015F, -3, f2, 0.4F);
+            this.chainSwing(BodyF, 0.2F, 0.08F, 3, f2, 0.5F);
+            this.chainSwing(BodyB, 0.2F, -0.08F, -3, f2, 0.5F);
             EntityPrehistoricFloraPlexus ee = (EntityPrehistoricFloraPlexus) e;
             this.bone.scaleChildren = true;
             float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.08F) + 1F;

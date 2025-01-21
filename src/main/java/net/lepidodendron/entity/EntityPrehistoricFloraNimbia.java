@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraNimbia extends EntityPrehistoricFloraSlitheri
 
 	public EntityPrehistoricFloraNimbia(World world) {
 		super(world, 50);
-		setSize(0.18F, 0.1F);
+		setSize(0.19F, 0.07F);
 	}
 
 	@Override

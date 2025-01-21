@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Erniettomorpha"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/swartpuntia.png"],
-			"title": "S. germsi",
-			"text": ""
+			"type": "multiblock",
+			"name": "S. germsi",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:swartpuntia",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_swartpuntia",

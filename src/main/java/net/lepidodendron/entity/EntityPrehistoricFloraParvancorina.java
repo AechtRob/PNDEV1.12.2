@@ -35,7 +35,7 @@ public class EntityPrehistoricFloraParvancorina extends EntityPrehistoricFloraSl
 
 	public EntityPrehistoricFloraParvancorina(World world) {
 		super(world, 20);
-		setSize(0.5F, 0.35F);
+		setSize(0.152F, 0.056F);
 	}
 
 	@Override

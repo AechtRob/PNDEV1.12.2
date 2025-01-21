@@ -16,7 +16,7 @@ public class RenderLobodiscus extends RenderLivingBaseWithBook<EntityPrehistoric
     }
 
     public static float getScaler() {
-        return 0.22F;
+        return 0.170F;
     }
 
     @Override

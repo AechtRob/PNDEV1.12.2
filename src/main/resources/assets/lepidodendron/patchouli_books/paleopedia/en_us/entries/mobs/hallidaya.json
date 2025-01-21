@@ -1,0 +1,52 @@
+{
+	"name": "Hallidaya",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hallidaya_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hallidaya",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hallidaya",
+			"title": "Hallidaya",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Trilobozoa"
+		},
+		{
+			"type": "entity",
+			"name": "H. brueri",
+			"entity": "lepidodendron:prehistoric_flora_hallidaya",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hallidaya",
+			"type": "text",
+			"text": "Hallidaya brueri hails from the Upper Ediacaran, with fossils found in the Flinders Ranges, Southern Australia. It is a small, rounded lifeform, growing up to 5 cm in diameter. It is noted for its 3 bead-like lobe structures, giving it a rare tri-radial symmetry, something not seen in modern phylums."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hallidaya",
+			"type": "text",
+			"text": "The generic name derives from the name of A.L. Halliday, whom discovered the fossil material. The specific name derives from the name of M.M Bruner, whom also discovered the fossil material."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hallidaya"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hallidaya"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hallidaya"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hallidaya"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hallidaya"
+		}
+	]
+}

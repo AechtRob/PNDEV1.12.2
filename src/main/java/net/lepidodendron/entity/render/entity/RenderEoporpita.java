@@ -12,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderEoporpita extends RenderLivingBaseWithBook<EntityPrehistoricFloraEoporpita> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eoporpita.png");
 
-    public static float getScaler() {return 0.6F;}
+    public static float getScaler() {return 0.815F;}
 
     public RenderEoporpita(RenderManager mgr) {
         super(mgr, new ModelEoporpita(), 0.0f);

@@ -40,7 +40,7 @@ public class ModelBomakellia extends AdvancedModelBase {
 
     public ModelBomakellia() {
         textureWidth = 16;
-        textureHeight = 8;
+        textureHeight = 16;
 
         bone = new AdvancedModelRenderer(this);
         bone.setRotationPoint(8.0F, 24.0F, -8.0F);

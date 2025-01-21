@@ -1,0 +1,47 @@
+{
+	"name": "Anfesta",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/anfesta_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_anfesta",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_anfesta",
+			"title": "Anfesta",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Trilobozoa$(br)>Albumaresidae"
+		},
+		{
+			"type": "entity",
+			"name": "A. stankovskii",
+			"entity": "lepidodendron:prehistoric_flora_anfesta",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anfesta",
+			"type": "text",
+			"text": "Anfesta stankovskii hails from the Upper Ediacaran, with fossils found in the White Sea, Russia. It is a small, rounded lifeform, growing up to 2 cm in diameter. It is noted for its 3 large lobe structures, giving it a rare tri-radial symmetry, something not seen in modern phylums. The generic and specific names derive from the name of Anatoliy F. Stankovskii, a Russian geologist."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anfesta"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anfesta"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anfesta"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anfesta"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anfesta"
+		}
+	]
+}

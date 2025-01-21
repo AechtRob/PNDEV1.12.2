@@ -47,8 +47,8 @@ public class RenderPambikalbae extends TileEntitySpecialRenderer<BlockPambikalba
         StackTraceElement[] elements = new Throwable().getStackTrace();
         String callerClass = elements[5].getClassName();
         if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
-            GlStateManager.scale(0.7, 0.7, 0.7);
-            GlStateManager.translate(0,0.9,0);
+            GlStateManager.scale(2.0, 2.0, 2.0);
+            GlStateManager.translate(0,-0.8,0);
         }
         //----End PP Page adjustment
         GlStateManager.disableCull();
@@ -69,8 +69,8 @@ public class RenderPambikalbae extends TileEntitySpecialRenderer<BlockPambikalba
         GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
         //----Start PP Page adjustment
         if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
-            GlStateManager.scale(0.7, 0.7, 0.7);
-            GlStateManager.translate(0,0.9,0);
+            GlStateManager.scale(2.0, 2.0, 2.0);
+            GlStateManager.translate(0,-0.8,0);
         }
         //----End PP Page adjustment
         GlStateManager.disableCull();

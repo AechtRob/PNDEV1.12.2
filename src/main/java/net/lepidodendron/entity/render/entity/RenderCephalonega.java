@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderCephalonega extends RenderLivingBaseWithBook<EntityPrehistoricFloraCephalonega> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Cephalonega.png");
     public static float getScaler() {
-        return 0.35F;
+        return 0.25F;
     }
 
     public RenderCephalonega(RenderManager mgr) {

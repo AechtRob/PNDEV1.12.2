@@ -34,13 +34,13 @@ public class ModelKeretsa extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -1.4F;
-        this.main.offsetX = -0.138F;
+        this.main.offsetY = -1.2F;
+        this.main.offsetX = 0;
         this.main.rotateAngleY = (float)Math.toRadians(200);
         this.main.rotateAngleX = (float)Math.toRadians(25);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 2.33F;
+        float scaler = 3.33F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

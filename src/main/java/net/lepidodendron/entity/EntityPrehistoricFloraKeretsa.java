@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraKeretsa extends EntityPrehistoricFloraSlither
 
 	public EntityPrehistoricFloraKeretsa(World world) {
 		super(world, 40);
-		setSize(0.65F, 0.25F);
+		setSize(0.1425F, 0.0525F);
 	}
 
 	@Override

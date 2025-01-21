@@ -1,37 +1,37 @@
 {
   "variants": {
-    "facing=southdoylealesin_wall=falsedoylealesopen=falsedoylealespowered=true": { "model": "lepidodendron:agathis_fence_gate_closed"doyleales "uvlock": true }doyleales
-    "facing=westdoylealesin_wall=falsedoylealesopen=falsedoylealespowered=true":  { "model": "lepidodendron:agathis_fence_gate_closed"doyleales "uvlock": truedoyleales "y": 90 }doyleales
-    "facing=northdoylealesin_wall=falsedoylealesopen=falsedoylealespowered=true": { "model": "lepidodendron:agathis_fence_gate_closed"doyleales "uvlock": truedoyleales "y": 180 }doyleales
-    "facing=eastdoylealesin_wall=falsedoylealesopen=falsedoylealespowered=true":  { "model": "lepidodendron:agathis_fence_gate_closed"doyleales "uvlock": truedoyleales "y": 270 }doyleales
-    "facing=southdoylealesin_wall=falsedoylealesopen=truedoylealespowered=true": { "model": "lepidodendron:agathis_fence_gate_open"doyleales "uvlock": true }doyleales
-    "facing=westdoylealesin_wall=falsedoylealesopen=truedoylealespowered=true":  { "model": "lepidodendron:agathis_fence_gate_open"doyleales "uvlock": truedoyleales "y": 90 }doyleales
-    "facing=northdoylealesin_wall=falsedoylealesopen=truedoylealespowered=true": { "model": "lepidodendron:agathis_fence_gate_open"doyleales "uvlock": truedoyleales "y": 180 }doyleales
-    "facing=eastdoylealesin_wall=falsedoylealesopen=truedoylealespowered=true":  { "model": "lepidodendron:agathis_fence_gate_open"doyleales "uvlock": truedoyleales "y": 270 }doyleales
-    "facing=southdoylealesin_wall=truedoylealesopen=falsedoylealespowered=true": { "model": "lepidodendron:agathis_wall_gate_closed"doyleales "uvlock": true }doyleales
-    "facing=westdoylealesin_wall=truedoylealesopen=falsedoylealespowered=true":  { "model": "lepidodendron:agathis_wall_gate_closed"doyleales "uvlock": truedoyleales "y": 90 }doyleales
-    "facing=northdoylealesin_wall=truedoylealesopen=falsedoylealespowered=true": { "model": "lepidodendron:agathis_wall_gate_closed"doyleales "uvlock": truedoyleales "y": 180 }doyleales
-    "facing=eastdoylealesin_wall=truedoylealesopen=falsedoylealespowered=true":  { "model": "lepidodendron:agathis_wall_gate_closed"doyleales "uvlock": truedoyleales "y": 270 }doyleales
-    "facing=southdoylealesin_wall=truedoylealesopen=truedoylealespowered=true": { "model": "lepidodendron:agathis_wall_gate_open"doyleales "uvlock": true }doyleales
-    "facing=westdoylealesin_wall=truedoylealesopen=truedoylealespowered=true":  { "model": "lepidodendron:agathis_wall_gate_open"doyleales "uvlock": truedoyleales "y": 90 }doyleales
-    "facing=northdoylealesin_wall=truedoylealesopen=truedoylealespowered=true": { "model": "lepidodendron:agathis_wall_gate_open"doyleales "uvlock": truedoyleales "y": 180 }doyleales
-    "facing=eastdoylealesin_wall=truedoylealesopen=truedoylealespowered=true":  { "model": "lepidodendron:agathis_wall_gate_open"doyleales "uvlock": truedoyleales "y": 270 }doyleales
+    "facing=south,in_wall=false,open=false,powered=true": { "model": "lepidodendron:doyleales_fence_gate_closed", "uvlock": true },
+    "facing=west,in_wall=false,open=false,powered=true":  { "model": "lepidodendron:doyleales_fence_gate_closed", "uvlock": true, "y": 90 },
+    "facing=north,in_wall=false,open=false,powered=true": { "model": "lepidodendron:doyleales_fence_gate_closed", "uvlock": true, "y": 180 },
+    "facing=east,in_wall=false,open=false,powered=true":  { "model": "lepidodendron:doyleales_fence_gate_closed", "uvlock": true, "y": 270 },
+    "facing=south,in_wall=false,open=true,powered=true": { "model": "lepidodendron:doyleales_fence_gate_open", "uvlock": true },
+    "facing=west,in_wall=false,open=true,powered=true":  { "model": "lepidodendron:doyleales_fence_gate_open", "uvlock": true, "y": 90 },
+    "facing=north,in_wall=false,open=true,powered=true": { "model": "lepidodendron:doyleales_fence_gate_open", "uvlock": true, "y": 180 },
+    "facing=east,in_wall=false,open=true,powered=true":  { "model": "lepidodendron:doyleales_fence_gate_open", "uvlock": true, "y": 270 },
+    "facing=south,in_wall=true,open=false,powered=true": { "model": "lepidodendron:doyleales_wall_gate_closed", "uvlock": true },
+    "facing=west,in_wall=true,open=false,powered=true":  { "model": "lepidodendron:doyleales_wall_gate_closed", "uvlock": true, "y": 90 },
+    "facing=north,in_wall=true,open=false,powered=true": { "model": "lepidodendron:doyleales_wall_gate_closed", "uvlock": true, "y": 180 },
+    "facing=east,in_wall=true,open=false,powered=true":  { "model": "lepidodendron:doyleales_wall_gate_closed", "uvlock": true, "y": 270 },
+    "facing=south,in_wall=true,open=true,powered=true": { "model": "lepidodendron:doyleales_wall_gate_open", "uvlock": true },
+    "facing=west,in_wall=true,open=true,powered=true":  { "model": "lepidodendron:doyleales_wall_gate_open", "uvlock": true, "y": 90 },
+    "facing=north,in_wall=true,open=true,powered=true": { "model": "lepidodendron:doyleales_wall_gate_open", "uvlock": true, "y": 180 },
+    "facing=east,in_wall=true,open=true,powered=true":  { "model": "lepidodendron:doyleales_wall_gate_open", "uvlock": true, "y": 270 },
 	
-	"facing=southdoylealesin_wall=falsedoylealesopen=falsedoylealespowered=false": { "model": "lepidodendron:agathis_fence_gate_closed"doyleales "uvlock": true }doyleales
-    "facing=westdoylealesin_wall=falsedoylealesopen=falsedoylealespowered=false":  { "model": "lepidodendron:agathis_fence_gate_closed"doyleales "uvlock": truedoyleales "y": 90 }doyleales
-    "facing=northdoylealesin_wall=falsedoylealesopen=falsedoylealespowered=false": { "model": "lepidodendron:agathis_fence_gate_closed"doyleales "uvlock": truedoyleales "y": 180 }doyleales
-    "facing=eastdoylealesin_wall=falsedoylealesopen=falsedoylealespowered=false":  { "model": "lepidodendron:agathis_fence_gate_closed"doyleales "uvlock": truedoyleales "y": 270 }doyleales
-    "facing=southdoylealesin_wall=falsedoylealesopen=truedoylealespowered=false": { "model": "lepidodendron:agathis_fence_gate_open"doyleales "uvlock": true }doyleales
-    "facing=westdoylealesin_wall=falsedoylealesopen=truedoylealespowered=false":  { "model": "lepidodendron:agathis_fence_gate_open"doyleales "uvlock": truedoyleales "y": 90 }doyleales
-    "facing=northdoylealesin_wall=falsedoylealesopen=truedoylealespowered=false": { "model": "lepidodendron:agathis_fence_gate_open"doyleales "uvlock": truedoyleales "y": 180 }doyleales
-    "facing=eastdoylealesin_wall=falsedoylealesopen=truedoylealespowered=false":  { "model": "lepidodendron:agathis_fence_gate_open"doyleales "uvlock": truedoyleales "y": 270 }doyleales
-    "facing=southdoylealesin_wall=truedoylealesopen=falsedoylealespowered=false": { "model": "lepidodendron:agathis_wall_gate_closed"doyleales "uvlock": true }doyleales
-    "facing=westdoylealesin_wall=truedoylealesopen=falsedoylealespowered=false":  { "model": "lepidodendron:agathis_wall_gate_closed"doyleales "uvlock": truedoyleales "y": 90 }doyleales
-    "facing=northdoylealesin_wall=truedoylealesopen=falsedoylealespowered=false": { "model": "lepidodendron:agathis_wall_gate_closed"doyleales "uvlock": truedoyleales "y": 180 }doyleales
-    "facing=eastdoylealesin_wall=truedoylealesopen=falsedoylealespowered=false":  { "model": "lepidodendron:agathis_wall_gate_closed"doyleales "uvlock": truedoyleales "y": 270 }doyleales
-    "facing=southdoylealesin_wall=truedoylealesopen=truedoylealespowered=false": { "model": "lepidodendron:agathis_wall_gate_open"doyleales "uvlock": true }doyleales
-    "facing=westdoylealesin_wall=truedoylealesopen=truedoylealespowered=false":  { "model": "lepidodendron:agathis_wall_gate_open"doyleales "uvlock": truedoyleales "y": 90 }doyleales
-    "facing=northdoylealesin_wall=truedoylealesopen=truedoylealespowered=false": { "model": "lepidodendron:agathis_wall_gate_open"doyleales "uvlock": truedoyleales "y": 180 }doyleales
-    "facing=eastdoylealesin_wall=truedoylealesopen=truedoylealespowered=false":  { "model": "lepidodendron:agathis_wall_gate_open"doyleales "uvlock": truedoyleales "y": 270 }
+	"facing=south,in_wall=false,open=false,powered=false": { "model": "lepidodendron:doyleales_fence_gate_closed", "uvlock": true },
+    "facing=west,in_wall=false,open=false,powered=false":  { "model": "lepidodendron:doyleales_fence_gate_closed", "uvlock": true, "y": 90 },
+    "facing=north,in_wall=false,open=false,powered=false": { "model": "lepidodendron:doyleales_fence_gate_closed", "uvlock": true, "y": 180 },
+    "facing=east,in_wall=false,open=false,powered=false":  { "model": "lepidodendron:doyleales_fence_gate_closed", "uvlock": true, "y": 270 },
+    "facing=south,in_wall=false,open=true,powered=false": { "model": "lepidodendron:doyleales_fence_gate_open", "uvlock": true },
+    "facing=west,in_wall=false,open=true,powered=false":  { "model": "lepidodendron:doyleales_fence_gate_open", "uvlock": true, "y": 90 },
+    "facing=north,in_wall=false,open=true,powered=false": { "model": "lepidodendron:doyleales_fence_gate_open", "uvlock": true, "y": 180 },
+    "facing=east,in_wall=false,open=true,powered=false":  { "model": "lepidodendron:doyleales_fence_gate_open", "uvlock": true, "y": 270 },
+    "facing=south,in_wall=true,open=false,powered=false": { "model": "lepidodendron:doyleales_wall_gate_closed", "uvlock": true },
+    "facing=west,in_wall=true,open=false,powered=false":  { "model": "lepidodendron:doyleales_wall_gate_closed", "uvlock": true, "y": 90 },
+    "facing=north,in_wall=true,open=false,powered=false": { "model": "lepidodendron:doyleales_wall_gate_closed", "uvlock": true, "y": 180 },
+    "facing=east,in_wall=true,open=false,powered=false":  { "model": "lepidodendron:doyleales_wall_gate_closed", "uvlock": true, "y": 270 },
+    "facing=south,in_wall=true,open=true,powered=false": { "model": "lepidodendron:doyleales_wall_gate_open", "uvlock": true },
+    "facing=west,in_wall=true,open=true,powered=false":  { "model": "lepidodendron:doyleales_wall_gate_open", "uvlock": true, "y": 90 },
+    "facing=north,in_wall=true,open=true,powered=false": { "model": "lepidodendron:doyleales_wall_gate_open", "uvlock": true, "y": 180 },
+    "facing=east,in_wall=true,open=true,powered=false":  { "model": "lepidodendron:doyleales_wall_gate_open", "uvlock": true, "y": 270 }
   }
 }

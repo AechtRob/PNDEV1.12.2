@@ -37,9 +37,8 @@ public class EntityPrehistoricFloraAnfesta extends EntityPrehistoricFloraSlither
 
 	public EntityPrehistoricFloraAnfesta(World world) {
 		super(world, 0);
-		setSize(0.2F, 0.15F);
+		setSize(0.11875F, 0.04375F);
 	}
-
 
 	@Override
 	public EnumCreatureAttributePN getPNCreatureAttribute() {

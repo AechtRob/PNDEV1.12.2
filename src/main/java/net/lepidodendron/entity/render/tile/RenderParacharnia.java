@@ -44,8 +44,8 @@ public class RenderParacharnia extends TileEntitySpecialRenderer<BlockParacharni
         StackTraceElement[] elements = new Throwable().getStackTrace();
         String callerClass = elements[5].getClassName();
         if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
-            GlStateManager.scale(0.7, 0.7, 0.7);
-            GlStateManager.translate(0,0.9,0);
+            GlStateManager.scale(1.0, 1.0, 1.0);
+            GlStateManager.translate(0,0.5,0);
         }
         //----End PP Page adjustment
         GlStateManager.disableCull();

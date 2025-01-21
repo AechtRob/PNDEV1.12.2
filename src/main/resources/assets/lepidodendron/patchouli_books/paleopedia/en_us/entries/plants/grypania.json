@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Paleoproterozoic (Rhyacian - Orosirian - Statherian) - Mesoproterozoic (Calymmian - Ectasian - Stenian) - Neoproterozoic (Tonian - Cryogenian - Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)Domain:$(br)>$(o)incertae sedis"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/grypania.png"],
-			"title": "G. spiralis",
-			"text": ""
+			"type": "multiblock",
+			"name": "G. spiralis",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:grypania",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_grypania",

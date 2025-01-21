@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Animalia"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/namacalathus.png"],
-			"title": "N. hermanastes",
-			"text": ""
+			"type": "multiblock",
+			"name": "N. hermanastes",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:namacalathus",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_namacalathus",

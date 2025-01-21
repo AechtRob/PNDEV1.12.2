@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Bilateria"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/kimberella.png"],
-			"title": "K. quadrata",
-			"text": ""
+			"type": "entity",
+			"name": "K. quadrata",
+			"entity": "lepidodendron:prehistoric_flora_kimberella",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_kimberella",

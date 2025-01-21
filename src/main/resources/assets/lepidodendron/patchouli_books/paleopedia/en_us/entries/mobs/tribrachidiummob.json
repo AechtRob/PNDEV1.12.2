@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Trilobozoa$(br)>Tribrachididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/tribrachidium.png"],
-			"title": "T. heraldicum",
-			"text": ""
+			"type": "entity",
+			"name": "T. heraldicum",
+			"entity": "lepidodendron:prehistoric_flora_tribrachidiummob",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tribrachidiummob",

@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderOvatoscutum extends RenderLivingBaseWithBook<EntityPrehistoricFloraOvatoscutum> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Ovatoscutum.png");
     public static float getScaler() {
-        return 0.35F;
+        return 0.335F;
     }
 
     public RenderOvatoscutum(RenderManager mgr) {

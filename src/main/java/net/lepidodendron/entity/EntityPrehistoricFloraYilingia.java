@@ -34,7 +34,7 @@ public class EntityPrehistoricFloraYilingia extends EntityPrehistoricFloraTrilob
 
 	public EntityPrehistoricFloraYilingia(World world) {
 		super(world);
-		setSize(0.4F, 0.3F);
+		setSize(0.38F, 0.14F);
 	}
 
 	@Override

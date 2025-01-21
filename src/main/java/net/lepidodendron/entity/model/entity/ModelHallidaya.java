@@ -5,8 +5,10 @@ import net.lepidodendron.entity.EntityPrehistoricFloraHallidaya;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import org.lwjgl.opengl.GL11;
 
 public class ModelHallidaya extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
@@ -58,7 +60,23 @@ public class ModelHallidaya extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = -1.4F;
+        this.main.offsetX = -0.138F;
+        this.main.rotateAngleY = (float)Math.toRadians(200);
+        this.main.rotateAngleX = (float)Math.toRadians(25);
+        this.main.rotateAngleZ = (float)Math.toRadians(-8);
+        this.main.scaleChildren = true;
+        float scaler = 4.33F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

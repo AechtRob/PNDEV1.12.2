@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraEoporpita extends EntityPrehistoricFloraEoand
 
     public EntityPrehistoricFloraEoporpita(World world) {
         super(world);
-        setSize(0.2F, 0.12F);
+        setSize(0.38F, 0.38F);
     }
 
     @Override

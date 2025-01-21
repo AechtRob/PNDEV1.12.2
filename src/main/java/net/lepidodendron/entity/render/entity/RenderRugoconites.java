@@ -16,7 +16,7 @@ public class RenderRugoconites extends RenderLivingBaseWithBook<EntityPrehistori
     }
 
     public static float getScaler() {
-        return 0.22F;
+        return 0.230F;
     }
 
     @Override

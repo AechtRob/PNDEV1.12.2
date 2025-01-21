@@ -128,6 +128,23 @@ public class ModelSpriggina extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body1.offsetY = -1.2F;
+        this.body1.offsetX = 0.7F;
+        this.body1.rotateAngleY = (float)Math.toRadians(210);
+        this.body1.rotateAngleX = (float)Math.toRadians(29);
+        this.body1.rotateAngleZ = (float)Math.toRadians(-8);
+        this.body1.scaleChildren = true;
+        float scaler = 4.93F;
+        this.body1.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.body1.render(f);
+        //Reset rotations, positions and sizing:
+        this.body1.setScale(1.0F, 1.0F, 1.0F);
+        this.body1.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

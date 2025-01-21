@@ -12,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderPlexus extends RenderLivingBaseWithBook<EntityPrehistoricFloraPlexus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/plexus.png");
     public static float getScaler() {
-        return 0.35F;
+        return 0.250F;
     }
 
     public RenderPlexus(RenderManager mgr) {

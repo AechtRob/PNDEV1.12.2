@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraProtechiurus extends EntityPrehistoricFloraSl
 
 	public EntityPrehistoricFloraProtechiurus(World world) {
 		super(world, 40);
-		setSize(0.65F, 0.25F);
+		setSize(0.21375F, 0.07875F);
 	}
 
 	@Override

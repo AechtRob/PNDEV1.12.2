@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Calymmian-Tonian$(br2)$(l)Habitat:$() Marine$(br2)>Glomeromycota$(br)>Archaeosporales$(br)>Geosiphonaceae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/horodyskia.png"],
-			"title": "H. moniliformis",
-			"text": ""
+			"type": "multiblock",
+			"name": "H. moniliformis",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:horodyskia",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_horodyskia",

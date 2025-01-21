@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderWindermeria extends RenderLivingBaseWithBook<EntityPrehistoricFloraWindermeria> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/windermeria.png");
     public static float getScaler() {
-        return 0.35F;
+        return 0.265F;
     }
 
     public RenderWindermeria(RenderManager mgr) {
