@@ -191,9 +191,13 @@ public class BlockPteridinium extends ElementsLepidodendronMod.ModElement {
 			return true;
 		}
 
+		@SideOnly(Side.CLIENT)
 		@Override
 		public EnumBlockRenderType getRenderType(IBlockState state) {
-			return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
+			if (LepidodendronConfig.renderAnimations) {
+				return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
+			}
+			return EnumBlockRenderType.MODEL;
 		}
 
 		@Override
