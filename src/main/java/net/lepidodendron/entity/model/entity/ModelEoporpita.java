@@ -202,7 +202,7 @@ public class ModelEoporpita extends ModelBasePalaeopedia {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        main.offsetY = -0.25F;
+        main.offsetY = -0.15F;
 
         float speed = 0.1F;
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled() && e.isInWater()) {
@@ -238,6 +238,7 @@ public class ModelEoporpita extends ModelBasePalaeopedia {
         else {
             this.main.scaleChildren = true;
             this.main.setScale(1.25F, 0.1F, 1.25F);
+            main.offsetY = 0.05F;
         }
 
     }
