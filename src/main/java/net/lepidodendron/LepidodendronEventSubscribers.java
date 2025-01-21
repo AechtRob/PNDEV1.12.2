@@ -54,6 +54,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
@@ -772,6 +773,14 @@ public class LepidodendronEventSubscribers {
 	@SubscribeEvent
 	public void onBlockPreBreak(BlockEvent.BreakEvent event) {
 		if ((!event.getWorld().isRemote)) {
+			//Drop holdfasts from the right blocks:
+			if (event.getWorld().rand.nextInt(10) == 0
+					&& OreDictionary.containsMatch(false,
+					OreDictionary.getOres("holdfastDrops"), new ItemStack(event.getState().getBlock(), 1))) {
+				EntityItem entityToSpawn = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(BlockHoldfast.block, 1));
+				entityToSpawn.setPickupDelay(10);
+				event.getWorld().spawnEntity(entityToSpawn);
+			}
 			if (event.getPlayer() != null) {
 				//Let eggs drop their right items:
 				if (!event.getPlayer().isCreative() && event.getState().getBlock() == BlockEggs.block) {

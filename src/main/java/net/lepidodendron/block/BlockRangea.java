@@ -79,9 +79,8 @@ public class BlockRangea extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:rangea", BlockRangea.block);
+		OreDictionary.registerOre("holdfastDrops", BlockRangea.block);
 	}
-
-
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {

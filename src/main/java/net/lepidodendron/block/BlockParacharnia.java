@@ -71,6 +71,7 @@ public class BlockParacharnia extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockParacharnia.TileEntityCustom.class, "lepidodendron:tileentityparacharnia");
 		OreDictionary.registerOre("staticdnaPNlepidodendron:paracharnia", BlockParacharnia.block);
+		OreDictionary.registerOre("holdfastDrops", BlockParacharnia.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

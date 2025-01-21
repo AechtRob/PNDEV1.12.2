@@ -81,6 +81,7 @@ public class BlockLantianella extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:lantianella", BlockLantianella.block);
 		OreDictionary.registerOre("pndietCrinoid", BlockLantianella.block);
+		OreDictionary.registerOre("holdfastDrops", BlockLantianella.block);
 	}
 
 

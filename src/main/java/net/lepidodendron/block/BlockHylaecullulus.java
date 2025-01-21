@@ -69,6 +69,7 @@ public class BlockHylaecullulus extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockHylaecullulus.TileEntityCustom.class, "lepidodendron:tileentityhylaecullulus");
 		OreDictionary.registerOre("staticdnaPNlepidodendron:hylaecullulus", BlockHylaecullulus.block);
+		OreDictionary.registerOre("holdfastDrops", BlockHylaecullulus.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

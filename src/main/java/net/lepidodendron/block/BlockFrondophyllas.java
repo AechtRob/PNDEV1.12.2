@@ -71,6 +71,7 @@ public class BlockFrondophyllas extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockFrondophyllas.TileEntityCustom.class, "lepidodendron:tileentityfrondophyllas");
 		OreDictionary.registerOre("staticdnaPNlepidodendron:frondophyllas", BlockFrondophyllas.block);
+		OreDictionary.registerOre("holdfastDrops", BlockFrondophyllas.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

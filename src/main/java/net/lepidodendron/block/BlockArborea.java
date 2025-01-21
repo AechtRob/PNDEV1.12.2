@@ -71,6 +71,7 @@ public class BlockArborea extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockArborea.TileEntityCustom.class, "lepidodendron:tileentityarborea");
 		OreDictionary.registerOre("staticdnaPNlepidodendron:arborea", BlockArborea.block);
+		OreDictionary.registerOre("holdfastDrops", BlockArborea.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
@@ -120,16 +121,6 @@ public class BlockArborea extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public CustomTrigger getModTrigger() {
 			return ModTriggers.CLICK_ARBOREA;
-		}
-
-		@Override
-		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
-			if (Math.random() > 0.9 && (!world.isRemote) && (!player.isCreative())) {
-				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockHoldfast.block, (int) (1)));
-				entityToSpawn.setPickupDelay(10);
-				world.spawnEntity(entityToSpawn);
-			}
-			return super.removedByPlayer(state, world, pos, player, willHarvest);
 		}
 
 		@Override

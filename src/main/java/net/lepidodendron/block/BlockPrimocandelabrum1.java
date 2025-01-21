@@ -69,6 +69,7 @@ public class BlockPrimocandelabrum1 extends ElementsLepidodendronMod.ModElement 
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockPrimocandelabrum1.TileEntityCustom.class, "lepidodendron:tileentityprimocandelabrum_1");
 		OreDictionary.registerOre("staticdnaPNlepidodendron:primocandelabrum_1", BlockPrimocandelabrum1.block);
+		OreDictionary.registerOre("holdfastDrops", BlockPrimocandelabrum1.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
