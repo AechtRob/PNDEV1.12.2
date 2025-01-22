@@ -152,6 +152,14 @@
       }
     ]
   },
+  "portal_block_permian": {
+    "sounds": [
+      {
+        "name": "lepidodendron:portal_block_permian",
+        "stream": false
+      }
+    ]
+  },
 
   "open_drawer": {
     "sounds": [

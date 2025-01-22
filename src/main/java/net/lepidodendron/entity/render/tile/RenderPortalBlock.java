@@ -28,6 +28,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
     private static final ResourceLocation TEXTURE_SILURIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_silurian.png");
     private static final ResourceLocation TEXTURE_DEVONIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_devonian.png");
     private static final ResourceLocation TEXTURE_CARBONIFEROUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_carboniferous.png");
+    private static final ResourceLocation TEXTURE_PERMIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_permian.png");
     private final ModelPortalBlockOverworld modelPortalBlockOverworld;
     private final ModelPortalBlockOverworldDecoration modelPortalBlockOverworldDecoration;
     private final ModelPortalBlockPrecambrian modelPortalBlockPrecambrian;
@@ -36,6 +37,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
     private final ModelPortalBlockSilurian modelPortalBlockSilurian;
     private final ModelPortalBlockDevonian modelPortalBlockDevonian;
     private final ModelPortalBlockCarboniferous modelPortalBlockCarboniferous;
+    private final ModelPortalBlockPermian modelPortalBlockPermian;
     public static final PropertyDirection FACING = BlockDirectional.FACING;
 
     public RenderPortalBlock() {
@@ -47,6 +49,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
         this.modelPortalBlockSilurian = new ModelPortalBlockSilurian();
         this.modelPortalBlockDevonian = new ModelPortalBlockDevonian();
         this.modelPortalBlockCarboniferous = new ModelPortalBlockCarboniferous();
+        this.modelPortalBlockPermian = new ModelPortalBlockPermian();
     }
 
     public boolean isVar(TileEntityPortalBlock entity) {
@@ -1663,6 +1666,222 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 colRed = (byte) 77;
                 colGreen = (byte) 255;
                 colBlue = (byte) 120;
+            }
+            //PERMIAN
+            //----------
+            else if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockPermian.block) {
+
+                if (entity.getIsActive()) {
+                    transparency = 1F;
+                }
+                else {
+                    transparency = Math.min((float) (entity.getAnimationTick() + partialTicks) / 90F, 1F);
+                }
+
+                ModelPortalBlockPermian modelPortalBlockPermian = this.modelPortalBlockPermian;
+
+                GlStateManager.pushMatrix();
+                this.bindTexture(TEXTURE_PERMIAN);
+                GlStateManager.enableRescaleNormal();
+                GlStateManager.disableCull();
+
+                GlStateManager.color(1.0F, 1.0F, 1.0F, transparency);
+                GlStateManager.enableNormalize();
+                GlStateManager.enableBlend();
+                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+
+                GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
+                GlStateManager.rotate(180, 0F, 0F, 1F);
+                GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
+                GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                modelPortalBlockPermian.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
+                GlStateManager.disableRescaleNormal();
+
+                GlStateManager.disableBlend();
+                GlStateManager.disableNormalize();
+                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+
+                GlStateManager.enableCull();
+                GlStateManager.popMatrix();
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.UP)) {
+                    if (entity.getIsActive()) {
+                        GlStateManager.pushMatrix();
+                        this.bindTexture(TEXTURE_PERMIAN);
+                        GlStateManager.enableRescaleNormal();
+                        GlStateManager.disableCull();
+                        GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        if (isRotated(entity)) {
+                            GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
+                        } else {
+                            GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
+                        }
+                        GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
+                        GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                        if (isVar(entity)) {
+                            modelPortalBlockPermian.renderDeadBush1(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        else {
+                            modelPortalBlockPermian.renderDeadBush2(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.enableCull();
+                        GlStateManager.popMatrix();
+
+                        if (isVar2(entity)) {
+                            GlStateManager.pushMatrix();
+                            this.bindTexture(TEXTURE_PERMIAN);
+                            GlStateManager.enableRescaleNormal();
+                            GlStateManager.disableCull();
+                            GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            if (isRotated(entity)) {
+                                GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
+                            } else {
+                                GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
+                            }
+                            GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
+                            GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                            if (isVar(entity)) {
+                                modelPortalBlockPermian.renderDeadBush2(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
+                            }
+                            else {
+                                modelPortalBlockPermian.renderDeadBush1(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
+                            }
+                            GlStateManager.disableRescaleNormal();
+                            GlStateManager.enableCull();
+                            GlStateManager.popMatrix();
+                        }
+                    }
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_PERMIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    if (isRotated(entity)) {
+                        GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
+                    }
+                    else {
+                        GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
+                    }
+                    GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    if (isVar(entity)) {
+                        modelPortalBlockPermian.renderBurnedBranch(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
+                    }
+                    else {
+                        modelPortalBlockPermian.renderDroopingBranch(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
+                    }
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.SOUTH)) {
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_PERMIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    if (isRotated(entity)) {
+                        GlStateManager.translate(x + 1.00, y + 1.50, z + 0.50);
+                    }
+                    else {
+                        GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                    }
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    if (isVar(entity)) {
+                        modelPortalBlockPermian.renderBurnedBranch(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
+                    } else {
+                        modelPortalBlockPermian.renderDroopingBranch(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
+                    }
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.NORTH)) {
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_PERMIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    if (isRotated(entity)) {
+                        GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                    }
+                    else {
+                        GlStateManager.translate(x + 0.00, y + 1.50, z + 0.50);
+                    }
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    GlStateManager.rotate(180, 0F, 1F, 0F);
+                    if (isVar(entity)) {
+                        modelPortalBlockPermian.renderBurnedBranch(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    } else {
+                        modelPortalBlockPermian.renderDroopingBranch(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.WEST)) {
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_PERMIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    if (isRotated(entity)) {
+                        GlStateManager.translate(x + 0.50, y + 1.75, z + 0.75);
+                    }
+                    else {
+                        GlStateManager.translate(x + 0.50, y + 1.25, z + 0.75);
+                    }
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    GlStateManager.rotate(90, 0F, 1F, 0F);
+                    if (isVar(entity)) {
+                        modelPortalBlockPermian.renderBurnedBranch(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    } else {
+                        modelPortalBlockPermian.renderDroopingBranch(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.EAST)) {
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_PERMIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    if (isRotated(entity)) {
+                        GlStateManager.translate(x + 0.50, y + 1.75, z + 0.25);
+                    }
+                    else {
+                        GlStateManager.translate(x + 0.50, y + 1.25, z + 0.25);
+                    }
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    GlStateManager.rotate(270, 0F, 1F, 0F);
+                    if (isVar(entity)) {
+                        modelPortalBlockPermian.renderDroopingBranch(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    } else {
+                        modelPortalBlockPermian.renderBurnedBranch(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                colRed = (byte) 153;
+                colGreen = (byte) 42;
+                colBlue = (byte) 25;
             }
         }
 
