@@ -126,7 +126,8 @@ public class BlockRangea extends ElementsLepidodendronMod.ModElement {
 						if (biome instanceof BiomePrecambrian) {
 							era = ((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran;
 						}
-						if (!era) {
+						if ((!era)
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_sparse_sea")) {
 							continue;
 						}
 						if (world.getBlockState(blockpos1).getBlock() == Blocks.WATER) {

@@ -44,8 +44,8 @@ public class ModelHapsidophyllas extends AdvancedModelBase {
     private final AdvancedModelRenderer frond4;
 
     public ModelHapsidophyllas() {
-        textureWidth = 32;
-        textureHeight = 16;
+        textureWidth = 24;
+        textureHeight = 24;
 
         bone = new AdvancedModelRenderer(this);
         bone.setRotationPoint(6.0F, 24.0F, -7.0F);

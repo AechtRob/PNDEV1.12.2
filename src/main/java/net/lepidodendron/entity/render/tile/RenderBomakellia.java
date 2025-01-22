@@ -13,7 +13,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderBomakellia extends TileEntitySpecialRenderer<BlockBomakellia.TileEntityCustom> {
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Bomakellia.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bomakellia.png");
     private final ModelBomakellia modelBomakellia;
     public static final PropertyDirection FACING = BlockDirectional.FACING;
 

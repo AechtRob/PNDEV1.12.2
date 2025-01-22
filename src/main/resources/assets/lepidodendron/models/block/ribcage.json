@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/ribcage",
+    "particle": "lepidodendron:items/ribcage"
+  }
+}

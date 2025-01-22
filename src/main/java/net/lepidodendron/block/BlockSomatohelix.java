@@ -82,7 +82,6 @@ public class BlockSomatohelix extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("staticdnaPNlepidodendron:somatohelix", BlockSomatohelix.block);
 	}
 
-
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 

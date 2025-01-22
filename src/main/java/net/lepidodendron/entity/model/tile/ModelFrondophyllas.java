@@ -52,8 +52,8 @@ public class ModelFrondophyllas extends AdvancedModelBase {
     private final AdvancedModelRenderer bb_main_r20;
 
     public ModelFrondophyllas() {
-        textureWidth = 32;
-        textureHeight = 54;
+        textureWidth = 64;
+        textureHeight = 64;
 
         Frondophyllas = new AdvancedModelRenderer(this);
         Frondophyllas.setRotationPoint(0.0F, 24.4F, 0.5F);
