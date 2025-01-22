@@ -5,9 +5,7 @@ import net.lepidodendron.entity.EntityPrehistoricFloraParvancorina;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
-import org.lwjgl.opengl.GL11;
 
 public class ModelParvancorina extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer bone;

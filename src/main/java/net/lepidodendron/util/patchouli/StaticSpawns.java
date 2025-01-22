@@ -21,6 +21,8 @@ import java.util.List;
 public class StaticSpawns {
 
     public static final String staticsEmpty = "$(br)No static creatures occur here";
+    public static double totalLife = 0;
+    public static double foundLife = 0;
 
     @Nullable
     public static String getSpawnList(String imageid, int index) {
@@ -37,6 +39,7 @@ public class StaticSpawns {
         //type 1: Names/hyperlink texts
         //type 2: One single icon for this reference, but this is also drawn from the spawn list ordering
         //type 3: One single advancement reference, but this is also drawn from the spawn list ordering
+        //type 4: A count of the number of statics
 
         String staticListFinal = "$(br)";
         String[] staticsList = null;

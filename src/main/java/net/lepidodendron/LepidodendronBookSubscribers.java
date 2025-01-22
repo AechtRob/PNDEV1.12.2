@@ -95,6 +95,7 @@ public class LepidodendronBookSubscribers {
 
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void onUseBook(PlayerInteractEvent.RightClickBlock event) {
+
 		// click on blocks:
 		if (!event.getItemStack().getItem().getRegistryName().toString().equalsIgnoreCase("patchouli:guide_book")) {
 			return;

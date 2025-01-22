@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraAttenborites;
 import net.lepidodendron.entity.EntityPrehistoricFloraCyanorus;
 import net.lepidodendron.entity.model.entity.ModelCyanorus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;

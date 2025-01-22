@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraKarakhtia;
 import net.lepidodendron.entity.EntityPrehistoricFloraKimberella;
 import net.lepidodendron.entity.model.entity.ModelKimberella;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;

@@ -221,26 +221,27 @@ public class PlantSpawns {
                 || plantStr.equalsIgnoreCase("protea_1")) {
             return "protea";
         }
-        if (plantStr.equals("green_algae_mat")
-                || plantStr.equals("green_codium_algae")
-                || plantStr.equals("green_crusted_algae")
-                || plantStr.equals("green_leafy_algae")
-                || plantStr.equals("piled_algae")
-                || plantStr.equals("stalked_algae")
-                || plantStr.equals("green_chara_algae")
-                || plantStr.equals("slimy_algae")
-                || plantStr.equals("green_filamentous_algae")
-                || plantStr.equals("green_stemmed_algae")) {
+        if (plantStr.equalsIgnoreCase("green_algae_mat")
+                || plantStr.equalsIgnoreCase("green_codium_algae")
+                || plantStr.equalsIgnoreCase("green_crusted_algae")
+                || plantStr.equalsIgnoreCase("green_leafy_algae")
+                || plantStr.equalsIgnoreCase("piled_algae")
+                || plantStr.equalsIgnoreCase("stalked_algae")
+                || plantStr.equalsIgnoreCase("green_chara_algae")
+                || plantStr.equalsIgnoreCase("green_filamentous_algae_item")
+                || plantStr.equalsIgnoreCase("green_stemmed_algae")
+                || plantStr.equalsIgnoreCase("green_sprouting_algae")
+                || plantStr.equalsIgnoreCase("slimy_algae_item")) {
             return  "algae_green";
         }
-        if (plantStr.equals("red_algae_mat")
-                || plantStr.equals("red_tufted_algae")
-                || plantStr.equals("red_leafy_algae")) {
+        if (plantStr.equalsIgnoreCase("red_algae_mat")
+                || plantStr.equalsIgnoreCase("red_tufted_algae")
+                || plantStr.equalsIgnoreCase("red_leafy_algae")) {
             return "algae_red";
         }
-        if (plantStr.equals("algae_brown_ascending")
-                || plantStr.equals("leafy_brown_algae")
-                || plantStr.equals("stalky_brown_algae")) {
+        if (plantStr.equalsIgnoreCase("algae_brown_ascending")
+                || plantStr.equalsIgnoreCase("leafy_brown_algae")
+                || plantStr.equalsIgnoreCase("stalky_brown_algae")) {
             return "algae_brown";
         }
 
@@ -334,26 +335,27 @@ public class PlantSpawns {
     }
 
     public static String getAmendedAdv(String string) {
-        if (string.equals("green_algae_mat")
-                || string.equals("green_codium_algae")
-                || string.equals("green_crusted_algae")
-                || string.equals("green_leafy_algae")
-                || string.equals("piled_algae")
-                || string.equals("stalked_algae")
-                || string.equals("green_chara_algae")
-                || string.equals("slimy_algae")
-                || string.equals("green_filamentous_algae")
-                || string.equals("green_stemmed_algae")) {
+        if (string.equalsIgnoreCase("green_algae_mat")
+                || string.equalsIgnoreCase("green_codium_algae")
+                || string.equalsIgnoreCase("green_crusted_algae")
+                || string.equalsIgnoreCase("green_leafy_algae")
+                || string.equalsIgnoreCase("piled_algae")
+                || string.equalsIgnoreCase("stalked_algae")
+                || string.equalsIgnoreCase("green_chara_algae")
+                || string.equalsIgnoreCase("green_filamentous_algae_item")
+                || string.equalsIgnoreCase("green_stemmed_algae")
+                || string.equalsIgnoreCase("green_sprouting_algae")
+                || string.equalsIgnoreCase("slimy_algae_item")) {
             string = "algae_green";
         }
-        if (string.equals("red_algae_mat")
-                || string.equals("red_tufted_algae")
-                || string.equals("red_leafy_algae")) {
+        if (string.equalsIgnoreCase("red_algae_mat")
+                || string.equalsIgnoreCase("red_tufted_algae")
+                || string.equalsIgnoreCase("red_leafy_algae")) {
             string = "algae_red";
         }
-        if (string.equals("algae_brown_ascending")
-                || string.equals("leafy_brown_algae")
-                || string.equals("stalky_brown_algae")) {
+        if (string.equalsIgnoreCase("algae_brown_ascending")
+                || string.equalsIgnoreCase("leafy_brown_algae")
+                || string.equalsIgnoreCase("stalky_brown_algae")) {
             string = "algae_brown";
         }
         if (string.contains("sphenophyllales")) {

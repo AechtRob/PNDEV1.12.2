@@ -4,17 +4,17 @@
 			"item": "lepidodendron:red_algae_mat"
 		  },
 		"title": {
-			"translate": "advancements.pf_adv_book_algae.title"
+			"translate": "advancements.pf_adv_book_algae_red.title"
 		},
 		"description": {
-			"translate": "advancements.pf_adv_book_algae.description"
+			"translate": "advancements.pf_adv_book_algae_red.description"
 		}
 	},
 	"parent": "lepidodendron:pf_base_adv_knowledge",
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_algae"
+			"trigger": "pf_book_algae_red"
 		}
 	}
 }

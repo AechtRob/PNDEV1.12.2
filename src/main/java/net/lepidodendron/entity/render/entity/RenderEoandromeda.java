@@ -1,8 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraAttenborites;
-import net.lepidodendron.entity.EntityPrehistoricFloraEoandromeda;
 import net.lepidodendron.entity.EntityPrehistoricFloraEoandromeda;
 import net.lepidodendron.entity.model.entity.ModelEoandromeda;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;

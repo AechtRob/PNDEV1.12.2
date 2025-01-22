@@ -66,7 +66,10 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ARAUCARIOXYLON = new CustomTrigger("pf_book_araucarioxylon");
     public static final CustomTrigger CLICK_ANEMONE = new CustomTrigger("pf_book_anemone");
     public static final CustomTrigger CLICK_DAISY = new CustomTrigger("pf_book_daisy");
-    public static final CustomTrigger CLICK_ALGAE = new CustomTrigger("pf_book_algae");
+    public static final CustomTrigger CLICK_ALGAE_GREEN = new CustomTrigger("pf_book_algae_green");
+    public static final CustomTrigger CLICK_ALGAE_RED = new CustomTrigger("pf_book_algae_red");
+    public static final CustomTrigger CLICK_ALGAE_BROWN = new CustomTrigger("pf_book_algae_brown");
+    public static final CustomTrigger CLICK_ALGAE_CORALLINE = new CustomTrigger("pf_book_coralline_algae");
     public static final CustomTrigger CLICK_EUKARYOTIC_MAT = new CustomTrigger("pf_book_eukaryotic_mat");
     public static final CustomTrigger CLICK_KELP = new CustomTrigger("pf_book_kelp");
     public static final CustomTrigger CLICK_ZINGIBEROPSIS = new CustomTrigger("pf_book_zingiberopsis");
@@ -1834,7 +1837,10 @@ public class ModTriggers
             CLICK_BELTANELLIFORMIS,
             CLICK_ARAUCARIOXYLON,
             CLICK_ANEMONE,
-            CLICK_ALGAE,
+            CLICK_ALGAE_GREEN,
+            CLICK_ALGAE_RED,
+            CLICK_ALGAE_BROWN,
+            CLICK_ALGAE_CORALLINE,
             CLICK_EUKARYOTIC_MAT,
             CLICK_DAISY,
             CLICK_KELP,

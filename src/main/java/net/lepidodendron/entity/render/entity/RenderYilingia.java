@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraYilingia;
-import net.lepidodendron.entity.EntityPrehistoricFloraYorgia;
 import net.lepidodendron.entity.model.entity.ModelYilingia;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;

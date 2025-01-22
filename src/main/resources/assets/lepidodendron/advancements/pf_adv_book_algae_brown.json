@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:leafy_brown_algae"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_algae_brown.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_algae_brown.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_algae_brown"
+		}
+	}
+}

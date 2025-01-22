@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPlexus;
-import net.lepidodendron.entity.EntityPrehistoricFloraPlexus;
 import net.lepidodendron.entity.model.entity.ModelPlexus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
