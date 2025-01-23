@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraBrachiosaurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraBranchiosaur;
 import net.lepidodendron.entity.model.entity.ModelBranchiosaur;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;

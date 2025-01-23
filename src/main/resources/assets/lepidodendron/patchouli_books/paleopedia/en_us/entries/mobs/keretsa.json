@@ -1,0 +1,52 @@
+{
+	"name": "Keretsa",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/keretsa_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_keretsa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_keretsa",
+			"title": "Keretsa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Proarticulata"
+		},
+		{
+			"type": "entity",
+			"name": "K. brutoni",
+			"entity": "lepidodendron:prehistoric_flora_keretsa",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_keretsa",
+			"type": "text",
+			"text": "Keretsa nessovi comes from the Upper Ediacaran, with fossils from the White Sea, Russia. It is a quilted lifeform that was able to move around in order to get food, and could grow up to 2.5 cm in length. It is unqiue from other Proarticulata in that it has a prominent 'head', aswell as a ridge along its back, which has fueled a back and forth on whether it is a Proarticulata or an Arthropod, with the former currently accepted."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_keretsa",
+			"type": "text",
+			"text": "The generic name derives from the place Keretsa River, were the fossils were found. The specific name derives from the surname of David L. Bruton, a Cambrian - Ordovician Palaeontologist."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_keretsa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_keretsa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_keretsa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_keretsa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_keretsa"
+		}
+	]
+}

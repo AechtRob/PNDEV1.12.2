@@ -41,6 +41,28 @@ public class ModelCyclomedusa extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.bone.offsetY = -0.75F;
+        this.bone.offsetX = -0.F;
+        this.bone.rotateAngleY = (float)Math.toRadians(165);
+        this.bone.rotateAngleX = (float)Math.toRadians(22);
+        this.bone.rotateAngleZ = (float)Math.toRadians(-28);
+        this.bone.scaleChildren = true;
+        float scaler = 2.25F;
+        this.bone.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.45F);
+        this.bone.render(f);
+        GlStateManager.disableBlend();
+
+        //Reset rotations, positions and sizing:
+        this.bone.setScale(1.0F, 1.0F, 1.0F);
+        this.bone.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

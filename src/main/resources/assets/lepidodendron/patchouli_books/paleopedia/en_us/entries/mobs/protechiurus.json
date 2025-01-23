@@ -1,0 +1,52 @@
+{
+	"name": "Protechiurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/protechiurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_protechiurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_protechiurus",
+			"title": "Protechiurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Protechiuridae"
+		},
+		{
+			"type": "entity",
+			"name": "P. edmondsi",
+			"entity": "lepidodendron:prehistoric_flora_protechiurus",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_protechiurus",
+			"type": "text",
+			"text": "Protechiurus edmondsi comes from the Upper Ediacaran, with fossils from the Nama Group, Namibia. It is a work-like lifeform that was able to move around in order to get food, and could grow up to 7 cm in length. It is currently unknown whether Protechiurus is related to the Echiura Phylum (Spoon worms), or is a proto-chordate, or is apart of another Phylum entirely."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_protechiurus",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'protos', to mean 'first', and the genus name 'Echiurus'. The specific name derives from the surname of Dr S. J. Edmonds"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_protechiurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_protechiurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_protechiurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_protechiurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_protechiurus"
+		}
+	]
+}

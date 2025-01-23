@@ -81,7 +81,7 @@ public class EntityPrehistoricFloraTurboscinetes extends EntityPrehistoricFloraA
 
 	@Override
 	public int getAdultAge() {
-		return 0;
+		return -1;
 	}
 
 	@Override

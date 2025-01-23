@@ -40,6 +40,23 @@ public class ModelDickinsonia extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Body.offsetY = -0.35F;
+        this.Body.offsetX = 0.0F;
+        this.Body.rotateAngleY = (float)Math.toRadians(200);
+        this.Body.rotateAngleX = (float)Math.toRadians(25);
+        this.Body.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Body.scaleChildren = true;
+        float scaler = 1.33F;
+        this.Body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.Body.render(f);
+        //Reset rotations, positions and sizing:
+        this.Body.setScale(1.0F, 1.0F, 1.0F);
+        this.Body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

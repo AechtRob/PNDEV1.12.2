@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Cryogenian - Cambrian$(br2)>$(o)incertae sedis"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/nimbia.png"],
-			"title": "N. occlusa",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "N. occlusa",
+			"entity": "lepidodendron:prehistoric_flora_nimbia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_nimbia",

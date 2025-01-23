@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraRugoconites extends EntityPrehistoricFloraSli
 
 	public EntityPrehistoricFloraRugoconites(World world) {
 		super(world, 0);
-		setSize(0.2F, 0.15F);
+		setSize(0.19F, 0.07F);
 	}
 
 	@Override

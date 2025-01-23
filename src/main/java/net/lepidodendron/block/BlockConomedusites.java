@@ -80,28 +80,26 @@ public class BlockConomedusites extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("staticdnaPNlepidodendron:conomedusites", BlockConomedusites.block);
 	}
 
-
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
 		boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCrinoid))
 			dimensionCriteria = true;
 		if ((dimID == LepidodendronConfig.dimPrecambrian)
 		) {
-			if (world.getBiome(new BlockPos(chunkX, 0, chunkZ)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
-				dimensionCriteria = true;
-			}
+			dimensionCriteria = true;
 		}
 		if (!dimensionCriteria)
 			return;
 
-		int weight = LepidodendronConfigPlants.weightEdiacaran;
+		int weight = LepidodendronConfigPlants.weightCrinoid;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
 		if (dimID == LepidodendronConfig.dimPrecambrian
-		)
+		) {
 			weight = 100; //Full scale populations in these dims
+		}
 
 		if (Math.random() < ((double) (100 - (double) weight)/100)) {
 			return;
@@ -109,6 +107,7 @@ public class BlockConomedusites extends ElementsLepidodendronMod.ModElement {
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
+		if (!matchBiome(biome, LepidodendronConfigPlants.genCrinoidBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
@@ -117,24 +116,27 @@ public class BlockConomedusites extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
-
-		if (dimID == LepidodendronConfig.dimPrecambrian) {
-			//if (world.getBiome(new BlockPos(chunkX, 0, chunkZ)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")) {
-				biomeCriteria = true;
-			//}
 		}
+		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))
+			biomeCriteria = true;
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")) {
+			biomeCriteria = true;
+		}
 		if (!biomeCriteria)
 			return;
 
-		int multiplier = 3;
+		int multiplier = 1;
 
-
-		int minWaterDepth = 10;
-		int maxWaterDepth = 150;
+		int minWaterDepth = 2;
+		int maxWaterDepth = 65;
 		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
-		for (int i = 0; i < (12 * multiplier); i++) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")) {
+			multiplier = 5;
+		}
+
+		for (int i = 0; i < (30 * multiplier); i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
@@ -146,14 +148,11 @@ public class BlockConomedusites extends ElementsLepidodendronMod.ModElement {
 						if (!world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")) {
 							continue;
 						}
-						if (blockpos1.getY() < Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))
-							&& (Functions.isWater(world, blockpos1))
-							&& !world.isAirBlock(blockpos1.north())
-							&& !world.isAirBlock(blockpos1.south())
-							&& !world.isAirBlock(blockpos1.east())
-							&& !world.isAirBlock(blockpos1.west())
-						)
-						{	boolean waterDepthCheckMax = false;
+						if (blockpos1.getY() <= 62) {
+							continue;
+						}
+						if (Functions.isWater(world, blockpos1)) {
+							boolean waterDepthCheckMax = false;
 							boolean waterDepthCheckMin = true;
 							//find air within the right depth
 							int yy = 1;
@@ -169,11 +168,7 @@ public class BlockConomedusites extends ElementsLepidodendronMod.ModElement {
 							}
 							//Check that at least enough water is over the position:
 							yy = 1;
-							int minChecker = minWaterDepth;
-							if (dimID == LepidodendronConfig.dimPrecambrian) {
-								minChecker = 1;
-							}
-							while (yy <= minChecker && waterDepthCheckMin) {
+							while (yy <= minWaterDepth && waterDepthCheckMin) {
 								if (world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.WATER) {
 									waterDepthCheckMin = false;
 								}
@@ -191,10 +186,10 @@ public class BlockConomedusites extends ElementsLepidodendronMod.ModElement {
 										|| (world.getBlockState(pos1).getMaterial() == Material.CORAL)
 										|| (world.getBlockState(pos1).getMaterial() == Material.CLAY))
 										&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, EnumFacing.UP) == BlockFaceShape.SOLID)) {
-									world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockConomedusites.BlockCustom.FACING, enumfacing), 2);
+									world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockSomatohelix.BlockCustom.FACING, enumfacing), 2);
 									return true;
 								} else {
-									for (EnumFacing enumfacing1 : BlockConomedusites.BlockCustom.FACING.getAllowedValues()) {
+									for (EnumFacing enumfacing1 : BlockSomatohelix.BlockCustom.FACING.getAllowedValues()) {
 										pos1 = blockpos1;
 
 										if (enumfacing1 == EnumFacing.NORTH) {
@@ -219,7 +214,7 @@ public class BlockConomedusites extends ElementsLepidodendronMod.ModElement {
 														|| (world.getBlockState(pos1).getMaterial() == Material.IRON)
 														|| (world.getBlockState(pos1).getMaterial() == Material.WOOD))
 												&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, enumfacing1) == BlockFaceShape.SOLID)) {
-											world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockConomedusites.BlockCustom.FACING, enumfacing1), 2);
+											world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockSomatohelix.BlockCustom.FACING, enumfacing1), 2);
 											return true;
 										}
 									}

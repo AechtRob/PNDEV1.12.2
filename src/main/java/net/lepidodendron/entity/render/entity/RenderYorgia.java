@@ -15,7 +15,7 @@ public class RenderYorgia extends RenderLivingBaseWithBook<EntityPrehistoricFlor
         super(mgr, new ModelYorgia(), 0.0f);
     }
     public static float getScaler() {
-        return 0.32F;
+        return 0.295F;
     }
 
     @Override

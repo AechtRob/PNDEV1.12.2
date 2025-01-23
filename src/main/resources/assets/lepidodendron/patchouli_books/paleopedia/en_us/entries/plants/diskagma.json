@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Rhyacian$(br2)$(l)Habitat:$() Terrestrial$(br2)>Eukariota$(br)>Incertae sedis"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/diskagma.png"],
-			"title": "D. buttonii",
-			"text": ""
+			"type": "multiblock",
+			"name": "D. buttonii",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:diskagma",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_diskagma",

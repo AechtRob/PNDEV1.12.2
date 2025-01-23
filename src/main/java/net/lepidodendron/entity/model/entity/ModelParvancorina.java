@@ -70,8 +70,9 @@ public class ModelParvancorina extends ModelBasePalaeopedia {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.bone.render(f5 * 0.425F);
+        this.bone.render(f5);
     }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
@@ -85,7 +86,23 @@ public class ModelParvancorina extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.bone.offsetY = -1.4F;
+        this.bone.offsetX = -0.138F;
+        this.bone.rotateAngleY = (float)Math.toRadians(200);
+        this.bone.rotateAngleX = (float)Math.toRadians(25);
+        this.bone.rotateAngleZ = (float)Math.toRadians(-8);
+        this.bone.scaleChildren = true;
+        float scaler = 4.33F;
+        this.bone.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
+        //End of pose, now render the model:
+        this.bone.render(f);
+        //Reset rotations, positions and sizing:
+        this.bone.setScale(1.0F, 1.0F, 1.0F);
+        this.bone.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -99,7 +116,7 @@ public class ModelParvancorina extends ModelBasePalaeopedia {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.bone.offsetY = 0.86F;
+        //this.bone.offsetY = 0.86F;
 
         EntityPrehistoricFloraParvancorina ee = (EntityPrehistoricFloraParvancorina) e;
 

@@ -71,6 +71,7 @@ public class BlockCharniodiscus extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockCharniodiscus.TileEntityCustom.class, "lepidodendron:tileentitycharniodiscus");
 		OreDictionary.registerOre("staticdnaPNlepidodendron:charniodiscus", BlockCharniodiscus.block);
+		OreDictionary.registerOre("holdfastDrops", BlockCharniodiscus.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

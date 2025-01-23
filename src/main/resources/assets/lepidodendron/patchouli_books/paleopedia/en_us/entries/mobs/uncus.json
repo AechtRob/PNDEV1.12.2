@@ -1,0 +1,52 @@
+{
+	"name": "Uncus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/uncus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_uncus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_uncus",
+			"title": "Uncus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Ecdysozoa"
+		},
+		{
+			"type": "entity",
+			"name": "U. dzaugisi",
+			"entity": "lepidodendron:prehistoric_flora_uncus",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_uncus",
+			"type": "text",
+			"text": "Uncus dzaugisi comes from the Upper Ediacaran, with fossils from the Flinders Ranges, South Austarlia. It is a worm-like lifeform that could grow up to 3 cm in length. It is possibly the oldest known ecdysozoan, helping to further bridge the gap between the Ediacaran and Cambrian faunas."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_uncus",
+			"type": "text",
+			"text": "The generic name derives directly from the Latin word 'uncus', to mean 'hooked'. The specific name derives from the Latinised surnames of Mary, Matthew and Peter Dzaugis, who have contributed to the site in which Uncus was found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_uncus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_uncus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_uncus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_uncus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_uncus"
+		}
+	]
+}

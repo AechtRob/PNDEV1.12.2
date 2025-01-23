@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderDickinsonia extends RenderLivingBaseWithBook<EntityPrehistoricFloraDickinsonia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dickinsonia.png");
     public static float getScaler() {
-        return 0.75F;
+        return 0.785F;
     }
 
     public RenderDickinsonia(RenderManager mgr) {

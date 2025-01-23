@@ -12,6 +12,7 @@ import net.lepidodendron.item.entities.ItemPNTaxidermyItem;
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.util.patchouli.PercentageCollected;
 import net.lepidodendron.world.WorldOverworldPortal;
 import net.lepidodendron.world.biome.FishingRodDrops;
 import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
@@ -772,6 +773,14 @@ public class LepidodendronEventSubscribers {
 	@SubscribeEvent
 	public void onBlockPreBreak(BlockEvent.BreakEvent event) {
 		if ((!event.getWorld().isRemote)) {
+			//Drop holdfasts from the right blocks:
+			if (event.getWorld().rand.nextInt(10) == 0
+					&& OreDictionary.containsMatch(false,
+					OreDictionary.getOres("holdfastDrops"), new ItemStack(event.getState().getBlock(), 1))) {
+				EntityItem entityToSpawn = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(BlockHoldfast.block, 1));
+				entityToSpawn.setPickupDelay(10);
+				event.getWorld().spawnEntity(entityToSpawn);
+			}
 			if (event.getPlayer() != null) {
 				//Let eggs drop their right items:
 				if (!event.getPlayer().isCreative() && event.getState().getBlock() == BlockEggs.block) {
@@ -959,7 +968,12 @@ public class LepidodendronEventSubscribers {
 					while (z <= entity.posZ + 16) {
 						pos = new BlockPos(x, y, z);
 						if (world.getBlockState(pos).getMaterial() == Material.WATER && world.isAirBlock(pos.up())) {
-							if ((world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs")
+							if ((world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:hadean_craters")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:hadean_lava")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:hadean_smelts")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:hadean_smelts_helper")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_biome")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs")
 									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns")
 									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_creek_wide_rift")
 									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_shrubland_springs"))
@@ -1461,6 +1475,22 @@ public class LepidodendronEventSubscribers {
 				if (event.getItemStack().getTagCompound().toString().contains("lepidodendron:paleopedia")) {
 					List<String> tt = event.getToolTip();
 					tt.add(I18n.translateToLocal("tooltip.palaeopedia.name").trim());
+					if (event.getEntityPlayer() != null) {
+						tt.add(TextFormatting.DARK_RED + "Precambrian" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 0));
+						tt.add(TextFormatting.DARK_GREEN + "Cambrian" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 1));
+						tt.add(TextFormatting.DARK_AQUA + "Ordovician" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 2));
+						tt.add(TextFormatting.AQUA + "Silurian" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 3));
+						tt.add(TextFormatting.GOLD + "Devonian" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 4));
+						tt.add(TextFormatting.DARK_BLUE + "Carboniferous" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 5));
+						tt.add(TextFormatting.RED + "Permian" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 6));
+						tt.add(TextFormatting.DARK_PURPLE + "Triassic" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 7));
+						tt.add(TextFormatting.BLUE + "Jurassic" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 8));
+						tt.add(TextFormatting.GREEN + "Early Cretaceous" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 9));
+						tt.add(TextFormatting.GREEN + "Late Cretaceous" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 10));
+						tt.add(TextFormatting.GOLD + "Paleogene" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 11));
+						tt.add(TextFormatting.YELLOW + "Neogene" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 12));
+						tt.add(TextFormatting.GRAY + "Pleistocene" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 13));
+					}
 				}
 			}
 		}

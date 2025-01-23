@@ -15,32 +15,32 @@ public class ModelAnfesta extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer cube_r3;
 
     public ModelAnfesta() {
-        this.textureWidth = 30;
-        this.textureHeight = 20;
+        textureWidth = 30;
+        textureHeight = 20;
 
-        this.main = new AdvancedModelRenderer(this);
-        this.main.setRotationPoint(0.0F, 24.0F, 1.0F);
-        this.main.cubeList.add(new ModelBox(main, 0, 0, -3.0F, -1.0F, -5.0F, 6, 1, 8, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 15, 10, 3.0F, -1.0F, -4.0F, 1, 1, 6, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 0, 10, -4.0F, -1.0F, -4.0F, 1, 1, 6, 0.0F, false));
+        main = new AdvancedModelRenderer(this);
+        main.setRotationPoint(0.0F, 24.0F, 1.0F);
+        main.cubeList.add(new ModelBox(main, 0, 0, -3.0F, -1.0F, -5.0F, 6, 1, 8, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 15, 10, 3.0F, -1.0F, -4.0F, 1, 1, 6, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 0, 10, -4.0F, -1.0F, -4.0F, 1, 1, 6, 0.0F, false));
 
-        this.cube_r1 = new AdvancedModelRenderer(this);
-        this.cube_r1.setRotationPoint(0.0F, 0.0F, -1.0F);
-        this.main.addChild(cube_r1);
-        this.setRotateAngle(cube_r1, 0.0F, 0.5236F, 0.0F);
-        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 20, 3, 1.3F, -1.0F, -0.5F, 3, 0, 1, 0.0F, false));
+        cube_r1 = new AdvancedModelRenderer(this);
+        cube_r1.setRotationPoint(0.0F, 0.0F, -1.0F);
+        main.addChild(cube_r1);
+        setRotateAngle(cube_r1, 0.0F, 0.5236F, 0.0F);
+        cube_r1.cubeList.add(new ModelBox(cube_r1, 20, 3, 1.3F, -1.025F, -0.5F, 3, 0, 1, 0.0F, false));
 
-        this.cube_r2 = new AdvancedModelRenderer(this);
-        this.cube_r2.setRotationPoint(0.0F, 0.0F, -1.0F);
-        this.main.addChild(cube_r2);
-        this.setRotateAngle(cube_r2, 0.0F, 2.618F, 0.0F);
-        this.cube_r2.cubeList.add(new ModelBox(cube_r2, 20, 3, 1.3F, -1.0F, -0.5F, 3, 0, 1, 0.0F, false));
+        cube_r2 = new AdvancedModelRenderer(this);
+        cube_r2.setRotationPoint(0.0F, 0.0F, -1.0F);
+        main.addChild(cube_r2);
+        setRotateAngle(cube_r2, 0.0F, 2.618F, 0.0F);
+        cube_r2.cubeList.add(new ModelBox(cube_r2, 20, 3, 1.3F, -1.025F, -0.5F, 3, 0, 1, 0.0F, false));
 
-        this.cube_r3 = new AdvancedModelRenderer(this);
-        this.cube_r3.setRotationPoint(0.0F, 0.0F, -1.0F);
-        this.main.addChild(cube_r3);
-        this.setRotateAngle(cube_r3, -1.5708F, -1.5708F, 1.5708F);
-        this.cube_r3.cubeList.add(new ModelBox(cube_r3, 20, 3, 0.7F, -1.0F, -0.5F, 3, 0, 1, 0.0F, false));
+        cube_r3 = new AdvancedModelRenderer(this);
+        cube_r3.setRotationPoint(0.0F, 0.0F, -1.0F);
+        main.addChild(cube_r3);
+        setRotateAngle(cube_r3, -1.5708F, -1.5708F, 1.5708F);
+        cube_r3.cubeList.add(new ModelBox(cube_r3, 20, 3, 0.7F, -1.025F, -0.5F, 3, 0, 1, 0.0F, false));
 
         updateDefaultPose();
     }
@@ -52,7 +52,23 @@ public class ModelAnfesta extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = -1.4F;
+        this.main.offsetX = -0.138F;
+        this.main.rotateAngleY = (float)Math.toRadians(200);
+        this.main.rotateAngleX = (float)Math.toRadians(25);
+        this.main.rotateAngleZ = (float)Math.toRadians(-8);
+        this.main.scaleChildren = true;
+        float scaler = 4.33F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

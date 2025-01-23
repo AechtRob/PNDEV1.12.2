@@ -1,0 +1,40 @@
+{
+	"name": "Palaeophragmodictya",
+	"read_by_default": true,
+	"icon": "lepidodendron:palaeophragmodictya",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_palaeophragmodictya",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeophragmodictya",
+			"title": "Palaeophragmodictya",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Porifera$(br)>Hexactinellida$(br)>Reticulosa"
+		},
+		{
+			"type": "multiblock",
+			"name": "Palaeophragmodictya sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:palaeophragmodictya",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeophragmodictya",
+			"type": "text",
+			"text": "Palaeophragmodictya hails from the Upper Ediacaran, with fossils found in the White Sea, Russia and Flinders Ranges, South Australia. It is a sponge-like lifeform, growing up to 7 cm in diameter, with a 'stalk' rising 10+ cm up into the water column. The generic name derives from the Greek word 'Palaeos', to mean 'ancient', and the species name of 'Phragmodictya', a Carboniferous dictyosponge."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeophragmodictya",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Andiva",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/andiva_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_andiva",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_andiva",
+			"title": "Andiva",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Proarticulata"
+		},
+		{
+			"type": "entity",
+			"name": "A. ivantsovi",
+			"entity": "lepidodendron:prehistoric_flora_andiva",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_andiva",
+			"type": "text",
+			"text": "Andiva ivantsovi comes from the Upper Ediacaran, with fossils found from the White Sea, Russia; and the Flinders Ranges, South Australia. It is a quilted lifeform that was able to move around in order to get food, and could grow up to 10 cm in length. It has been proposed that Andiva beared a 'carapace' at the front of its body, to perhaps protect itself from sharp rocks and stones in the way."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_andiva",
+			"type": "text",
+			"text": "The generic & specific name derives from Andrei Yu. Ivantsov, who is a well known Russian Ediacaran paleontologist, and also aided in collecting the fossil material for the first study of Andiva."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_andiva"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_andiva"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_andiva"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_andiva"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_andiva"
+		}
+	]
+}

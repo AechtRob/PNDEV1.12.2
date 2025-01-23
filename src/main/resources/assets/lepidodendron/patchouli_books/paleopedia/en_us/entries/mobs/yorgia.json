@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Proarticulata$(br)>Cephalozoa$(br)>Yorgiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/yorgia.png"],
-			"title": "Y. waggoneri",
-			"text": ""
+			"type": "entity",
+			"name": "Y. waggoneri",
+			"entity": "lepidodendron:prehistoric_flora_yorgia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_yorgia",

@@ -76,7 +76,7 @@ public class BlockCorallineAlgae extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_ALGAE;
+			return ModTriggers.CLICK_ALGAE_CORALLINE;
 		}
 
 

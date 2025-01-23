@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraCyclomedusa extends EntityPrehistoricFloraSli
 
 	public EntityPrehistoricFloraCyclomedusa(World world) {
 		super(world, 50);
-		setSize(0.18F, 0.1F);
+		setSize(0.3325F, 0.1225F);
 	}
 
 	@Override

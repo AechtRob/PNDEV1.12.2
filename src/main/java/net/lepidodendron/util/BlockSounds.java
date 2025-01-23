@@ -71,7 +71,7 @@ public final class BlockSounds {
     public static final SoundEvent PORTAL_CARBONIFEROUS = createSoundEvent("portal_block_carboniferous");
 
     @GameRegistry.ObjectHolder("portal_block_permian")
-    public static final SoundEvent PORTAL_PERMIANS = createSoundEvent("portal_block_permian");
+    public static final SoundEvent PORTAL_PERMIAN = createSoundEvent("portal_block_permian");
 
     @GameRegistry.ObjectHolder("portal_block_triassic")
     public static final SoundEvent PORTAL_TRIASSIC = createSoundEvent("portal_block_triassic");

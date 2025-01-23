@@ -369,11 +369,53 @@ public class ModelYilingia extends ModelBasePalaeopedia {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.body27.render(f5 * 0.3F);
+        this.body27.render(f5);
     }
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body27.offsetY = -3.2F;
+        this.body27.offsetX = -1.6F;
+        this.body27.rotateAngleY = (float)Math.toRadians(210);
+        this.body27.rotateAngleX = (float)Math.toRadians(29);
+        this.body27.rotateAngleZ = (float)Math.toRadians(-8);
+        this.body27.scaleChildren = true;
+        float scaler = 3.93F;
+        this.body27.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.body2.rotateAngleY = 0.1F;
+        this.body3.rotateAngleY = 0.1F;
+        this.body4.rotateAngleY = 0.1F;
+        this.body5.rotateAngleY = 0.1F;
+        this.body6.rotateAngleY = 0.1F;
+        this.body7.rotateAngleY = 0.1F;
+        this.body8.rotateAngleY = 0.1F;
+        this.body9.rotateAngleY = 0.1F;
+        this.body10.rotateAngleY = 0.1F;
+        this.body11.rotateAngleY = 0.1F;
+        this.body12.rotateAngleY = 0.1F;
+        this.body13.rotateAngleY = 0.1F;
+        this.body14.rotateAngleY = 0.1F;
+        this.body15.rotateAngleY = 0.1F;
+        this.body16.rotateAngleY = 0.1F;
+        this.body17.rotateAngleY = 0.1F;
+        this.body18.rotateAngleY = 0.1F;
+        this.body19.rotateAngleY = 0.1F;
+        this.body20.rotateAngleY = 0.1F;
+        this.body21.rotateAngleY = 0.1F;
+        this.body22.rotateAngleY = -0.1F;
+        this.body23.rotateAngleY = -0.1F;
+        this.body24.rotateAngleY = -0.1F;
+        this.body25.rotateAngleY = -0.1F;
+        this.body26.rotateAngleY = -0.1F;
+
+        //End of pose, now render the model:
+        this.body27.render(f);
+        //Reset rotations, positions and sizing:
+        this.body27.setScale(1.0F, 1.0F, 1.0F);
+        this.body27.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 
@@ -387,7 +429,7 @@ public class ModelYilingia extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         //super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body27.offsetY = 1.06F;
+        //this.body27.offsetY = 1.06F;
         this.body27.offsetZ = -0.15F;
 
         AdvancedModelRenderer[] BodyF = {this.body1, this.body2, this.body3, this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.body11, this.body12, this.body13, this.body14};

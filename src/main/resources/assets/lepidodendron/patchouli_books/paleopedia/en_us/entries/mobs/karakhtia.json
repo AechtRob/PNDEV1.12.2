@@ -1,0 +1,52 @@
+{
+	"name": "Karakhtia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/karakhtia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_karakhtia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_karakhtia",
+			"title": "Karakhtia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Proarticulata$(br)>Vendiamorpha"
+		},
+		{
+			"type": "entity",
+			"name": "K. nessovi",
+			"entity": "lepidodendron:prehistoric_flora_karakhtia",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_karakhtia",
+			"type": "text",
+			"text": "Karakhtia nessovi comes from the Upper Ediacaran, with fossils from the White Sea, Russia. It is a rounded, quilted lifeform that was able to move around in order to get food, and could grow up to 10 cm in length. Karakhtia is unique from the other Proarticulata, in that it has a distinctly frilled edge to it, which has been likened to Haootia."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_karakhtia",
+			"type": "text",
+			"text": "The generic name derives from the place Karakhta River, near to were the fossils were found. The specific name derives from the surname of L.A. Nessov, a Leningrad Palaeontologist."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_karakhtia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_karakhtia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_karakhtia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_karakhtia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_karakhtia"
+		}
+	]
+}

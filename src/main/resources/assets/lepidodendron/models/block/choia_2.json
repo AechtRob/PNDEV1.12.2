@@ -1,5 +1,5 @@
 {
-	"credit": "Made with Blockbench",
+	"parent": "lepidodendron:block/cube_noao",
 	"textures": {
 		"0": "lepidodendron:blocks/choia",
 		"particle": "lepidodendron:blocks/choia"

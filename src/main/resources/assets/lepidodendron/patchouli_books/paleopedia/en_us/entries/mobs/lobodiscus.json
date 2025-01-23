@@ -1,0 +1,52 @@
+{
+	"name": "Lobodiscus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lobodiscus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_lobodiscus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lobodiscus",
+			"title": "Lobodiscus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Trilobozoa"
+		},
+		{
+			"type": "entity",
+			"name": "L. tribrachialis",
+			"entity": "lepidodendron:prehistoric_flora_lobodiscus",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lobodiscus",
+			"type": "text",
+			"text": "Lobodiscus tribrachialis hails from the Upper Ediacaran, with fossils found in the Dengying Formation, South China. It is a small, rounded lifeform, growing up to 4 cm in diameter. It is noted for its 3 long, curved lobe structures, giving it a rare tri-radial symmetry, something not seen in modern phylums. It is also the first possible 'animal' fossil from the Dengying Formation."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lobodiscus",
+			"type": "text",
+			"text": "The generic name derives from the Latin words 'Lobus', to mean 'lobe'; and 'discus', to mean 'disc'. The specific name derives from the Latin words 'tres', to mean 'three'; and 'brachium', to mean 'arm'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lobodiscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lobodiscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lobodiscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lobodiscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lobodiscus"
+		}
+	]
+}

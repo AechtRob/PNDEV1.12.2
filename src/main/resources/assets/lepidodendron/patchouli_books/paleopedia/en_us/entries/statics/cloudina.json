@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Cloudinidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cloudina.png"],
-			"title": "Cloudina sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "Cloudina sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:cloudina",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cloudina",

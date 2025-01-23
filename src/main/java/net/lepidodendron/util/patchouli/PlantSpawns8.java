@@ -3,17 +3,6 @@ package net.lepidodendron.util.patchouli;
 import net.minecraft.client.gui.GuiScreen;
 import vazkii.patchouli.api.IComponentProcessor;
 import vazkii.patchouli.api.IVariableProvider;
-import vazkii.patchouli.client.book.BookPage;
-import vazkii.patchouli.client.book.gui.BookTextRenderer;
-import vazkii.patchouli.client.book.gui.GuiBook;
-import vazkii.patchouli.client.book.gui.GuiBookEntry;
-import vazkii.patchouli.client.book.template.BookTemplate;
-import vazkii.patchouli.client.book.template.TemplateComponent;
-import vazkii.patchouli.client.book.template.component.ComponentImage;
-import vazkii.patchouli.client.book.template.component.ComponentText;
-
-import java.lang.reflect.Field;
-import java.util.List;
 
 public class PlantSpawns8 implements IComponentProcessor {
 

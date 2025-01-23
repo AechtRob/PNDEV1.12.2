@@ -44,8 +44,8 @@ public class RenderCharnia extends TileEntitySpecialRenderer<BlockCharnia.TileEn
         StackTraceElement[] elements = new Throwable().getStackTrace();
         String callerClass = elements[5].getClassName();
         if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
-            GlStateManager.scale(0.7, 0.7, 0.7);
-            GlStateManager.translate(0,0.9,0);
+            GlStateManager.scale(0.7, 0.8, 0.7);
+            GlStateManager.translate(0,1.2,0);
         }
         //----End PP Page adjustment
         GlStateManager.disableCull();

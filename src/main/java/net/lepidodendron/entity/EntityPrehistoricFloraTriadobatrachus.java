@@ -296,7 +296,6 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.TRIADOBATRACHUS_LOOT;
 	}
-
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {

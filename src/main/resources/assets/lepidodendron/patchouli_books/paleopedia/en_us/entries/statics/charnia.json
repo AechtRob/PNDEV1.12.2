@@ -9,30 +9,32 @@
 			"trigger": "lepidodendron:pf_adv_book_charnia",
 			"title": "Charnia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Rangeomorpha$(br)>Charniidae"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Charniidae"
 		},
 		{
 			"type": "multiblock",
-			"name": "C. masoni",
+			"name": "C. Masoni",
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [
+					[ "1" ],
 					[ "0" ]
 				],
 				"mapping": {
-					"0": "lepidodendron:charnia"
+					"1": "lepidodendron:charnia",
+					"0": "minecraft:air"
 				}
 			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_charnia",
 			"type": "text",
-			"text": "Perhaps the animal most often associated with Ediacaran life, Charnia is a large frond-like organism with segmented, leaf like ridges branching alternately from the 'stem.' It is believed to have grown on the sea floor and and fed on nutrients in the water."
+			"text": "Charnia Masoni comes from the Upper Ediacaran, with fossils found from the Charnwood Forest, UK; Flinders Ranges, South Australia and White Sea, Russia. It is a leaf-like lifeform, and can be found in from deep to shallow waters, growing up to 66 cm in height, and possibly partook in filter feeding from the surrounding water."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_charnia",
 			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+			"text": "Charnia claims the title of being the first universally accepted indisputeable lifeform from Precambrian strata, aswell as being the most recongisable to the general public. The generic names derives from the place 'Charnwood Forest', where it was found. The specific name derives from the surname of Roger Mason, a school boy who found the first fossil."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_charnia",

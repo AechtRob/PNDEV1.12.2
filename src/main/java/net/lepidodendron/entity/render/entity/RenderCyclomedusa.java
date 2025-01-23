@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderCyclomedusa extends RenderLivingBaseWithBook<EntityPrehistoricFloraCyclomedusa> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cyclomedusa.png");
 
-    public static float getScaler() {return 0.4F;}
+    public static float getScaler() {return 0.725F;}
 
     public RenderCyclomedusa(RenderManager mgr) {
         super(mgr, new ModelCyclomedusa(), 0.0f);

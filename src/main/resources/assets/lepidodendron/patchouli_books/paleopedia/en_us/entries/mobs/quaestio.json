@@ -1,0 +1,52 @@
+{
+	"name": "Quaestio",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/quaestio_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_quaestio",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_quaestio",
+			"title": "Quaestio",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>incertae sedis"
+		},
+		{
+			"type": "entity",
+			"name": "Q. simpsonorum",
+			"entity": "lepidodendron:prehistoric_flora_quaestio",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_quaestio",
+			"type": "text",
+			"text": "Quaestio simpsonorum comes from the Upper Ediacaran, with fossils from the Flinders Ranges, Australia. It is a circular lifeform with a main ridge in the shape of a question mark (?), that was able to move around in order to get food, and could grow up to 8 cm in diameter. It is the first known lifeform from the Ediacaran to have an asymmetrical bodyplan."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_quaestio",
+			"type": "text",
+			"text": "The generic name derives from the Latin words 'quaestio', to mean 'question'. The specific name derives from the surname of Ant Simpson."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_quaestio"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_quaestio"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_quaestio"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_quaestio"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_quaestio"
+		}
+	]
+}

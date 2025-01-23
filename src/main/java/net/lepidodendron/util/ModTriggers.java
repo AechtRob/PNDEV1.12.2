@@ -11,6 +11,7 @@ public class ModTriggers
 
 {
 
+
     public static final CustomTrigger WELCOME = new CustomTrigger("pf_book_craft_prompt");
     public static final CustomTrigger ENTER_OVERWORLD = new CustomTrigger("enter_pf_overworld");
     public static final CustomTrigger ENTER_PRECAMBRIAN = new CustomTrigger("enter_pf_precambrian");
@@ -65,7 +66,10 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ARAUCARIOXYLON = new CustomTrigger("pf_book_araucarioxylon");
     public static final CustomTrigger CLICK_ANEMONE = new CustomTrigger("pf_book_anemone");
     public static final CustomTrigger CLICK_DAISY = new CustomTrigger("pf_book_daisy");
-    public static final CustomTrigger CLICK_ALGAE = new CustomTrigger("pf_book_algae");
+    public static final CustomTrigger CLICK_ALGAE_GREEN = new CustomTrigger("pf_book_algae_green");
+    public static final CustomTrigger CLICK_ALGAE_RED = new CustomTrigger("pf_book_algae_red");
+    public static final CustomTrigger CLICK_ALGAE_BROWN = new CustomTrigger("pf_book_algae_brown");
+    public static final CustomTrigger CLICK_ALGAE_CORALLINE = new CustomTrigger("pf_book_coralline_algae");
     public static final CustomTrigger CLICK_EUKARYOTIC_MAT = new CustomTrigger("pf_book_eukaryotic_mat");
     public static final CustomTrigger CLICK_KELP = new CustomTrigger("pf_book_kelp");
     public static final CustomTrigger CLICK_ZINGIBEROPSIS = new CustomTrigger("pf_book_zingiberopsis");
@@ -159,6 +163,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CECROPSIS = new CustomTrigger("pf_book_cecropsis");
     public static final CustomTrigger CLICK_RHACOPTERIS = new CustomTrigger("pf_book_rhacopteris");
     public static final CustomTrigger CLICK_CHARNIA = new CustomTrigger("pf_book_charnia");
+    public static final CustomTrigger CLICK_PARACHARNIA = new CustomTrigger("pf_book_paracharnia");
     public static final CustomTrigger CLICK_FRONDOPHYLLAS = new CustomTrigger("pf_book_frondophyllas");
     public static final CustomTrigger CLICK_HYLAECULLULUS = new CustomTrigger("pf_book_hylaecullulus");
     public static final CustomTrigger CLICK_GIGARIMANETA = new CustomTrigger("pf_book_gigarimaneta");
@@ -244,6 +249,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DICTYOPHYLLUM = new CustomTrigger("pf_book_dictyophyllum");
     public static final CustomTrigger CLICK_DINOMISCHUS = new CustomTrigger("pf_book_dinomischus");
     public static final CustomTrigger CLICK_CHOIA = new CustomTrigger("pf_book_choia");
+    public static final CustomTrigger CLICK_PALAEOPHRAGMODICTYA = new CustomTrigger("pf_book_palaeophragmodictya");
     public static final CustomTrigger CLICK_PALAEODIPHASIA = new CustomTrigger("pf_book_palaeodiphasia");
     public static final CustomTrigger CLICK_LANTIANELLA = new CustomTrigger("pf_book_lantianella");
     public static final CustomTrigger CLICK_PIYUANIA = new CustomTrigger("pf_book_piyuania");
@@ -367,6 +373,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_NELUMBO = new CustomTrigger("pf_book_nelumbo");
     public static final CustomTrigger CLICK_MICROVICTORIA = new CustomTrigger("pf_book_microvictoria");
     public static final CustomTrigger CLICK_DISKAGMA = new CustomTrigger("pf_book_diskagma");
+    public static final CustomTrigger CLICK_THUCHOMYCES = new CustomTrigger("pf_book_thuchomyces");
     public static final CustomTrigger CLICK_NUPHAR = new CustomTrigger("pf_book_nuphar");
     public static final CustomTrigger CLICK_NEMATOPHYTA = new CustomTrigger("pf_book_nematophyta");
     public static final CustomTrigger CLICK_LIVERWORT = new CustomTrigger("pf_book_liverwort");
@@ -668,6 +675,19 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DIADECTES = new CustomTrigger("pf_book_diadectes");
     public static final CustomTrigger CLICK_DIANIA = new CustomTrigger("pf_book_diania");
     public static final CustomTrigger CLICK_DICKINSONIA = new CustomTrigger("pf_book_dickinsonia");
+    public static final CustomTrigger CLICK_TEMNOXA = new CustomTrigger("pf_book_temnoxa");
+    public static final CustomTrigger CLICK_WINDERMERIA = new CustomTrigger("pf_book_windermeria");
+    public static final CustomTrigger CLICK_PROTECHIURUS = new CustomTrigger("pf_book_protechiurus");
+    public static final CustomTrigger CLICK_IKARIA = new CustomTrigger("pf_book_ikaria");
+    public static final CustomTrigger CLICK_UNCUS = new CustomTrigger("pf_book_uncus");
+    public static final CustomTrigger CLICK_QUAESTIO = new CustomTrigger("pf_book_quaestio");
+    public static final CustomTrigger CLICK_KERETSA = new CustomTrigger("pf_book_keretsa");
+    public static final CustomTrigger CLICK_KARAKHTIA = new CustomTrigger("pf_book_karakhtia");
+    public static final CustomTrigger CLICK_ANDIVA = new CustomTrigger("pf_book_andiva");
+    public static final CustomTrigger CLICK_PODOLIMIRUS = new CustomTrigger("pf_book_podolimirus");
+    public static final CustomTrigger CLICK_CEPHALONEGA = new CustomTrigger("pf_book_cephalonega");
+    public static final CustomTrigger CLICK_CYANORUS = new CustomTrigger("pf_book_cyanorus");
+    public static final CustomTrigger CLICK_OVATOSCUTUM = new CustomTrigger("pf_book_ovatoscutum");
     public static final CustomTrigger CLICK_ATTENBORITES = new CustomTrigger("pf_book_attenborites");
     public static final CustomTrigger CLICK_DIDYMOGRAPTUS = new CustomTrigger("pf_book_didymograptus");
     public static final CustomTrigger CLICK_DIICTODON = new CustomTrigger("pf_book_diictodon");
@@ -930,6 +950,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_XENUSION = new CustomTrigger("pf_book_xenusion");
     public static final CustomTrigger CLICK_YAWUNIK = new CustomTrigger("pf_book_yawunik");
     public static final CustomTrigger CLICK_YILINGIA = new CustomTrigger("pf_book_yilingia");
+    public static final CustomTrigger CLICK_PLEXUS = new CustomTrigger("pf_book_plexus");
+    public static final CustomTrigger CLICK_SOMATOHELIX = new CustomTrigger("pf_book_somatohelix");
     public static final CustomTrigger CLICK_YOHOIA = new CustomTrigger("pf_book_yohoia");
     public static final CustomTrigger CLICK_YORGIA = new CustomTrigger("pf_book_yorgia");
     public static final CustomTrigger CLICK_YUNNANOZOON = new CustomTrigger("pf_book_yunnanozoon");
@@ -1430,6 +1452,8 @@ public class ModTriggers
 
     public static final CustomTrigger CLICK_NIMBIA = new CustomTrigger("pf_book_nimbia");
     public static final CustomTrigger CLICK_EDIACARIA = new CustomTrigger("pf_book_ediacaria");
+    public static final CustomTrigger CLICK_EOPORPITA = new CustomTrigger("pf_book_eoporpita");
+    public static final CustomTrigger CLICK_ICHNUSA = new CustomTrigger("pf_book_ichnusa");
     public static final CustomTrigger CLICK_CYCLOMEDUSA = new CustomTrigger("pf_book_cyclomedusa");
     public static final CustomTrigger CLICK_BURGESSOMEDUSA = new CustomTrigger("pf_book_burgessomedusa");
     public static final CustomTrigger CLICK_CORDUBIA = new CustomTrigger("pf_book_cordubia");
@@ -1813,7 +1837,10 @@ public class ModTriggers
             CLICK_BELTANELLIFORMIS,
             CLICK_ARAUCARIOXYLON,
             CLICK_ANEMONE,
-            CLICK_ALGAE,
+            CLICK_ALGAE_GREEN,
+            CLICK_ALGAE_RED,
+            CLICK_ALGAE_BROWN,
+            CLICK_ALGAE_CORALLINE,
             CLICK_EUKARYOTIC_MAT,
             CLICK_DAISY,
             CLICK_KELP,
@@ -1907,6 +1934,7 @@ public class ModTriggers
             CLICK_CECROPSIS,
             CLICK_RHACOPTERIS,
             CLICK_CHARNIA,
+            CLICK_PARACHARNIA,
             CLICK_FRONDOPHYLLAS,
             CLICK_HYLAECULLULUS,
             CLICK_GIGARIMANETA,
@@ -1994,6 +2022,7 @@ public class ModTriggers
             CLICK_DICTYOPHYLLUM,
             CLICK_DINOMISCHUS,
             CLICK_CHOIA,
+            CLICK_PALAEOPHRAGMODICTYA,
             CLICK_PALAEODIPHASIA,
             CLICK_LANTIANELLA,
             CLICK_PIYUANIA,
@@ -2115,6 +2144,7 @@ public class ModTriggers
             CLICK_NELUMBO,
             CLICK_MICROVICTORIA,
             CLICK_DISKAGMA,
+            CLICK_THUCHOMYCES,
             CLICK_NUPHAR,
             CLICK_NEMATOPHYTA,
             CLICK_LIVERWORT,
@@ -2446,6 +2476,19 @@ public class ModTriggers
             CLICK_DIADECTES,
             CLICK_DIANIA,
             CLICK_DICKINSONIA,
+            CLICK_TEMNOXA,
+            CLICK_WINDERMERIA,
+            CLICK_PROTECHIURUS,
+            CLICK_IKARIA,
+            CLICK_UNCUS,
+            CLICK_QUAESTIO,
+            CLICK_KERETSA,
+            CLICK_KARAKHTIA,
+            CLICK_ANDIVA,
+            CLICK_PODOLIMIRUS,
+            CLICK_CEPHALONEGA,
+            CLICK_CYANORUS,
+            CLICK_OVATOSCUTUM,
             CLICK_ATTENBORITES,
             CLICK_DIDYMOGRAPTUS,
             CLICK_DIICTODON,
@@ -2801,6 +2844,8 @@ public class ModTriggers
             CLICK_XINPUSAURUS,
             CLICK_YAWUNIK,
             CLICK_YILINGIA,
+            CLICK_PLEXUS,
+            CLICK_SOMATOHELIX,
             CLICK_YOHOIA,
             CLICK_YORGIA,
             CLICK_YUNGUISAURUS,
@@ -3167,6 +3212,8 @@ public class ModTriggers
             CLICK_YIQI,
             CLICK_NIMBIA,
             CLICK_EDIACARIA,
+            CLICK_EOPORPITA,
+            CLICK_ICHNUSA,
             CLICK_CYCLOMEDUSA,
             CLICK_BURGESSOMEDUSA,
             CLICK_CORDUBIA,

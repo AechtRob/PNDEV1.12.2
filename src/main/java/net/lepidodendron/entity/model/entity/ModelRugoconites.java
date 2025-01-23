@@ -14,33 +14,33 @@ public class ModelRugoconites extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer cube_r2;
 
     public ModelRugoconites() {
-        this.textureWidth = 65;
-        this.textureHeight = 30;
+        textureWidth = 65;
+        textureHeight = 30;
 
-        this.main = new AdvancedModelRenderer(this);
-        this.main.setRotationPoint(0.0F, 24.9F, 0.0F);
-        this.main.cubeList.add(new ModelBox(main, 0, 3, 6.0F, -1.9F, -2.0F, 1, 1, 4, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 0, 9, -7.0F, -1.9F, -2.0F, 1, 1, 4, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 17, 19, 5.0F, -1.9F, -4.0F, 1, 1, 8, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 42, 19, -6.0F, -1.9F, -4.0F, 1, 1, 8, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 0, 1, -2.0F, -1.9F, -7.0F, 4, 1, 14, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 0, 17, 2.0F, -1.9F, -6.0F, 2, 1, 12, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 37, 3, -4.0F, -1.9F, -6.0F, 2, 1, 12, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 29, 19, 4.0F, -1.9F, -5.0F, 1, 1, 10, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 23, 3, -5.0F, -1.9F, -5.0F, 1, 1, 10, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 0, 1, 0.25F, -1.95F, -0.5F, 6, 0, 1, 0.0F, false));
+        main = new AdvancedModelRenderer(this);
+        main.setRotationPoint(0.0F, 24.9F, 0.0F);
+        main.cubeList.add(new ModelBox(main, 0, 3, 6.0F, -1.9F, -2.0F, 1, 1, 4, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 0, 9, -7.0F, -1.9F, -2.0F, 1, 1, 4, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 17, 19, 5.0F, -1.9F, -4.0F, 1, 1, 8, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 42, 19, -6.0F, -1.9F, -4.0F, 1, 1, 8, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 0, 1, -2.0F, -1.9F, -7.0F, 4, 1, 14, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 0, 17, 2.0F, -1.9F, -6.0F, 2, 1, 12, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 37, 3, -4.0F, -1.9F, -6.0F, 2, 1, 12, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 29, 19, 4.0F, -1.9F, -5.0F, 1, 1, 10, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 23, 3, -5.0F, -1.9F, -5.0F, 1, 1, 10, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 0, 1, 0.25F, -1.925F, -0.5F, 6, 0, 1, 0.0F, false));
 
-        this.cube_r1 = new AdvancedModelRenderer(this);
-        this.cube_r1.setRotationPoint(0.0F, -0.95F, 0.0F);
-        this.main.addChild(cube_r1);
-        this.setRotateAngle(cube_r1, 0.0F, -2.0944F, 0.0F);
-        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 0, 1, 0.25F, -1.0F, -0.5F, 6, 0, 1, 0.0F, false));
+        cube_r1 = new AdvancedModelRenderer(this);
+        cube_r1.setRotationPoint(0.0F, -0.95F, 0.0F);
+        main.addChild(cube_r1);
+        setRotateAngle(cube_r1, 0.0F, -2.0944F, 0.0F);
+        cube_r1.cubeList.add(new ModelBox(cube_r1, 0, 1, 0.25F, -0.975F, -0.5F, 6, 0, 1, 0.0F, false));
 
-        this.cube_r2 = new AdvancedModelRenderer(this);
-        this.cube_r2.setRotationPoint(0.0F, -0.95F, 0.0F);
-        this.main.addChild(cube_r2);
-        this.setRotateAngle(cube_r2, 0.0F, 2.0944F, 0.0F);
-        this.cube_r2.cubeList.add(new ModelBox(cube_r2, 0, 1, 0.25F, -1.0F, -0.5F, 6, 0, 1, 0.0F, false));
+        cube_r2 = new AdvancedModelRenderer(this);
+        cube_r2.setRotationPoint(0.0F, -0.95F, 0.0F);
+        main.addChild(cube_r2);
+        setRotateAngle(cube_r2, 0.0F, 2.0944F, 0.0F);
+        cube_r2.cubeList.add(new ModelBox(cube_r2, 0, 1, 0.25F, -0.975F, -0.5F, 6, 0, 1, 0.0F, false));
 
         updateDefaultPose();
     }
@@ -52,6 +52,23 @@ public class ModelRugoconites extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = -1.4F;
+        this.main.offsetX = -0.138F;
+        this.main.rotateAngleY = (float)Math.toRadians(200);
+        this.main.rotateAngleX = (float)Math.toRadians(25);
+        this.main.rotateAngleZ = (float)Math.toRadians(-8);
+        this.main.scaleChildren = true;
+        float scaler = 4.33F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

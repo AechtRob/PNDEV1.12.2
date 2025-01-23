@@ -1,0 +1,52 @@
+{
+	"name": "Cyanorus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cyanorus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_cyanorus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cyanorus",
+			"title": "Cyanorus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Proarticulata$(br)>Cephalozoa$(br)>Sprigginidae"
+		},
+		{
+			"type": "entity",
+			"name": "C. singularis",
+			"entity": "lepidodendron:prehistoric_flora_cyanorus",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cyanorus",
+			"type": "text",
+			"text": "Cyanorus singularis comes from the Upper Ediacaran, with fossils found from the White Sea, Russia. It is a elongated Proarticulatan, growing up to 1 cm in overall length. It is currently the only Proarticulatan to be accepted to have internal structures, something very rarely preserved in Precambrain rocks."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cyanorus",
+			"type": "text",
+			"text": "The generic name derives from the English word 'Cyan', which further derives from the Greek word 'kúanos', to mean 'Blue'; and the Greek word 'óros', to mean 'mountain'. The specific name derives from the directly from the Latin word 'singularis', to mean 'singular' or 'peculiar'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cyanorus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cyanorus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cyanorus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cyanorus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cyanorus"
+		}
+	]
+}

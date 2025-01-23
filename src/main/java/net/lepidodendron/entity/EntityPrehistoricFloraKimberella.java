@@ -34,7 +34,7 @@ public class EntityPrehistoricFloraKimberella extends EntityPrehistoricFloraSlit
 
 	public EntityPrehistoricFloraKimberella(World world) {
 		super(world, 40);
-		setSize(0.3F, 0.25F);
+		setSize(0.285F, 0.105F);
 	}
 
 	@Override

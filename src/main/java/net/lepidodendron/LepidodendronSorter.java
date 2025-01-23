@@ -5030,7 +5030,19 @@ public class LepidodendronSorter {
     public static final int frondophyllas = 8049;
     public static final int gigarimaneta = 8050;
     public static final int hylaecullulus = 8051;
-
+    public static final int palaeophragmodictya = 8052;
+    public static final int thuchomyces = 8053;
+    public static final int paracharnia = 8054;
+    public static final int doyleales_bench = 8055;
+    public static final int doyleales_litterbin = 8056;
+    public static final int doyleales_bridge = 8057;
+    public static final int doyleales_planter1 = 8058;
+    public static final int doyleales_planter2 = 8059;
+    public static final int doyleales_planter1_peat = 8060;
+    public static final int doyleales_planter2_peat = 8061;
+    public static final int doyleales_planter1_sand = 8062;
+    public static final int doyleales_planter2_sand = 8063;
+    public static final int somatohelix = 8064;
 
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;

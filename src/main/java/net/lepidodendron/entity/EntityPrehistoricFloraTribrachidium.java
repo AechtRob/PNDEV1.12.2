@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraTribrachidium extends EntityPrehistoricFloraS
 
 	public EntityPrehistoricFloraTribrachidium(World world) {
 		super(world, 0);
-		setSize(0.2F, 0.15F);
+		setSize(0.1615F, 0.0595F);
 	}
 
 	@Override
