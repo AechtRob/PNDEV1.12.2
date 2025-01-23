@@ -16,7 +16,7 @@ public class RenderHallidaya extends RenderLivingBaseWithBook<EntityPrehistoricF
     }
 
     public static float getScaler() {
-        return 0.22F;
+        return 0.210F;
     }
 
     @Override

@@ -37,10 +37,8 @@ public class LepidodendronRecipeFossils {
 		if (ee != null) {
 			EntityLiving entity = (EntityLiving) ee.newInstance(worldIn);
 			if (entity == null) {
-				int y= 0;
-			}
-			if (entity.getCreatureAttribute() == null) {
-				int y= 0;
+				System.err.println("Error constructing mob for recipes: " + resourcelocation);
+				return false;
 			}
 			isArthropod = entity.getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD;
 			if (entity instanceof EntityPrehistoricFloraAgeableBase) {

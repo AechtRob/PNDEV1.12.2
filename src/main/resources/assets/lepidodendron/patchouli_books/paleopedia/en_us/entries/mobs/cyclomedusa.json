@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Tonian - Ediacaran$(br2)>Animalia?"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/cyclomedusa.png"],
-			"title": "C. davidii",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "C. davidii",
+			"entity": "lepidodendron:prehistoric_flora_cyclomedusa",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cyclomedusa",

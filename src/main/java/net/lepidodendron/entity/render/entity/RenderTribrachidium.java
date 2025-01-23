@@ -16,7 +16,7 @@ public class RenderTribrachidium extends RenderLivingBaseWithBook<EntityPrehisto
     }
 
     public static float getScaler() {
-        return 0.22F;
+        return 0.205F;
     }
 
     @Override

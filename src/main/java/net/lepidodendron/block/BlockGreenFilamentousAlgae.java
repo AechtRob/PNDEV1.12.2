@@ -294,7 +294,7 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_ALGAE;
+			return ModTriggers.CLICK_ALGAE_GREEN;
 		}
 
 		@Override

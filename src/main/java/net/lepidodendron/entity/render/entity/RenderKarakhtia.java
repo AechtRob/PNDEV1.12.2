@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderKarakhtia extends RenderLivingBaseWithBook<EntityPrehistoricFloraKarakhtia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/karakhtia.png");
     public static float getScaler() {
-        return 0.35F;
+        return 0.31F;
     }
 
     public RenderKarakhtia(RenderManager mgr) {

@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Animalia"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/arkarua.png"],
-			"title": "A. adami",
-			"text": ""
+			"type": "multiblock",
+			"name": "A. adami",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:arkarua",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_arkarua",

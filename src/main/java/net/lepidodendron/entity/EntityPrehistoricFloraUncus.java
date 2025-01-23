@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraUncus extends EntityPrehistoricFloraTrilobite
 
 	public EntityPrehistoricFloraUncus(World world) {
 		super(world);
-		setSize(0.4F, 0.3F);
+		setSize(0.152F, 0.056F);
 	}
 
 	@Override
@@ -71,7 +71,7 @@ public class EntityPrehistoricFloraUncus extends EntityPrehistoricFloraTrilobite
 
 	@Override
 	protected float getAISpeedTrilobite() {
-		return 0.105f;
+		return 0.085f;
 	}
 
 	@Override

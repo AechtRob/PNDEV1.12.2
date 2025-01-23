@@ -141,7 +141,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_eucritta_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_pholidogaster_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_eoherpeton_clean", "inventory"),
-				new ModelResourceLocation("lepidodendron:fossils/fossil_tealliocaris_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_pygocephalomorpha_tealliocaris_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_caerorhachis_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_eldeceeon_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_silvanerpeton_clean", "inventory"),
@@ -1018,6 +1018,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_ichnusa_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_temnoxa_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_andiva_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_podolimirus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cyanorus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cephalonega_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_ovatoscutum_clean", "inventory"),
@@ -1317,6 +1318,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_nuphar_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_diskagma_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_thuchomyces_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_paracharnia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_nematophyta_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_nemejcopteris_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_neocalamites_item_clean", "inventory"),
@@ -1862,6 +1864,8 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_nereocystis_kelp_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_macrocystis_kelp_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_seaweed_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_plexus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_somatohelix_clean", "inventory"),
 
 				new ModelResourceLocation("lepidodendron:fossil_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossil_clean_missing_texture", "inventory")

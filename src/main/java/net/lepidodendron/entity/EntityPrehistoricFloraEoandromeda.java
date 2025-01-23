@@ -35,7 +35,7 @@ public class EntityPrehistoricFloraEoandromeda extends EntityPrehistoricFloraJel
 
     public EntityPrehistoricFloraEoandromeda(World world) {
         super(world);
-        setSize(0.2F, 0.1F);
+        setSize(0.171F, 0.1F);
     }
 
     @Override

@@ -12,15 +12,29 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Erniettomorpha"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pteridinium.png"],
-			"title": "Pteridinium sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "Pteridinium sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:pteridinium",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pteridinium",
 			"type": "text",
-			"text": "Pteridinium is an Ediacaran organism which had a three lobed body. The animal likely rested on the sediment in the shallow seas and it likely did not actually move. It probably extracted nutrients from the surrounding water."
+			"text": "Pteridinium comes from the Upper Ediacaran, with fossils found in a wide range of formations across the globe, with the first fossils found in Newfoundland, Canada. It is a 3 lobed, boat-shaped lifeform found in shallow waters and could grow up to 20 cm in length, and possibly partook in filter feeding from the surrounding water."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pteridinium",
+			"type": "text",
+			"text": "The generic name derives from the Greek word 'ptÃ©ris', to mean 'fern'. Pteridium was the original generic name, but as this had already been given to an extant brackern fern, the name was altered slightly to what we have today."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pteridinium",

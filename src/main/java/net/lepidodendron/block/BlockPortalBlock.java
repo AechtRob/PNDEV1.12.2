@@ -56,10 +56,15 @@ public abstract class BlockPortalBlock extends Block {
 	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
 	{
 		TileEntity tileEntity = worldIn.getTileEntity(pos);
-		if (tileEntity != null)
+		if (tileEntity != null) {
 			if (tileEntity instanceof TileEntityPortalBlock) {
-				return state.withProperty(ACTIVE, ((TileEntityPortalBlock)tileEntity).getIsActive() && ((TileEntityPortalBlock)tileEntity).getAnimationTick() >= 90);
+				if (((TileEntityPortalBlock) tileEntity).getAnimationTick() >= 89) {
+					return state.withProperty(ACTIVE, true);
+				} else {
+					return state.withProperty(ACTIVE, false);
+				}
 			}
+		}
 		return state;
 	}
 

@@ -37,7 +37,7 @@ public class RenderGigarimaneta extends TileEntitySpecialRenderer<BlockGigariman
         GlStateManager.pushMatrix();
         GlStateManager.enableRescaleNormal();
         GlStateManager.color(1.0F, 1.0F, 1.0F, alpha);
-        GlStateManager.translate(x + 0.5, y + 0.675, z + 0.5);
+        GlStateManager.translate(x + 0.5, y + 0.525, z + 0.5);
         GlStateManager.scale(0.22,0.22,0.22);
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);

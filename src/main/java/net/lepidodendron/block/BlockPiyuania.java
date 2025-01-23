@@ -77,6 +77,7 @@ public class BlockPiyuania extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:piyuania", BlockPiyuania.block);
 		OreDictionary.registerOre("pndietCrinoid", BlockLantianella.block);
+		OreDictionary.registerOre("holdfastDrops", BlockPiyuania.block);
 	}
 
 

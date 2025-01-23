@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>$(o)incertae sedis"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/parvancorina.png"],
-			"title": "P. minchami",
-			"text": ""
+			"type": "entity",
+			"name": "P. minchami",
+			"entity": "lepidodendron:prehistoric_flora_parvancorina",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_parvancorina",

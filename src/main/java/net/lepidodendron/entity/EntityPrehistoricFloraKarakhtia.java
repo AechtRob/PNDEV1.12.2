@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraKarakhtia extends EntityPrehistoricFloraSlith
 
 	public EntityPrehistoricFloraKarakhtia(World world) {
 		super(world, 40);
-		setSize(0.65F, 0.25F);
+		setSize(0.2375F, 0.0875F);
 	}
 
 	@Override

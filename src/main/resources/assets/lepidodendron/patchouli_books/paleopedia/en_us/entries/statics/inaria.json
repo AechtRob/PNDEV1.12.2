@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Animalia$(br)>Cnidaria?$(br)>Anthozoa?"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/inaria.png"],
-			"title": "I. karli",
-			"text": ""
+			"type": "multiblock",
+			"name": "I. karli",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:inaria",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_inaria",

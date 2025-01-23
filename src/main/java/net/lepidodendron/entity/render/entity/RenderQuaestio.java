@@ -19,7 +19,7 @@ public class RenderQuaestio extends RenderLivingBaseWithBook<EntityPrehistoricFl
     }
 
     public static float getScaler() {
-        return 0.22F;
+        return 0.20F;
     }
 
     @Override

@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderTemnoxa extends RenderLivingBaseWithBook<EntityPrehistoricFloraTemnoxa> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/temnoxa.png");
     public static float getScaler() {
-        return 0.35F;
+        return 0.28F;
     }
 
     public RenderTemnoxa(RenderManager mgr) {

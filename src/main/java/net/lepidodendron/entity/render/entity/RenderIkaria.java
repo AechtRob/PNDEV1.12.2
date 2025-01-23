@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderIkaria extends RenderLivingBaseWithBook<EntityPrehistoricFloraIkaria> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ikaria.png");
     public static float getScaler() {
-        return 0.35F;
+        return 0.25F;
     }
 
     public RenderIkaria(RenderManager mgr) {

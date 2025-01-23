@@ -9,18 +9,32 @@
 			"trigger": "lepidodendron:pf_adv_book_coronacollina",
 			"title": "Coronacollina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>incertae sedis"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/coronacollina.png"],
-			"title": "C. acula",
-			"text": ""
+			"type": "multiblock",
+			"name": "C. acula",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:coronacollina",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_coronacollina",
 			"type": "text",
-			"text": "Coronacollina is a multicellular organism from the Ediacaran period. It looks like a mound raised with up to four 'sticks' holding it up. It is unknown where in the classification tree this animal belonged."
+			"text": "Coronacollina acula comes from the Upper Ediacaran, with fossils found from the Flinders Ranges, South Australia. It is a strange, tri-radial cup-like lifeform with 4 spicules radiating from the centre. With this morphology, it has stumped all paleontologist on what its true taxonomic position should be."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_coronacollina",
+			"type": "text",
+			"text": "The generic name derives from the Latin words 'corona', to mean 'rim', and 'collis', to mean 'hill'. The specific name derives from the Latin word 'acula', to mean 'needle'."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_coronacollina",

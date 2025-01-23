@@ -79,9 +79,8 @@ public class BlockRangea extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:rangea", BlockRangea.block);
+		OreDictionary.registerOre("holdfastDrops", BlockRangea.block);
 	}
-
-
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
@@ -127,7 +126,8 @@ public class BlockRangea extends ElementsLepidodendronMod.ModElement {
 						if (biome instanceof BiomePrecambrian) {
 							era = ((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran;
 						}
-						if (!era) {
+						if ((!era)
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_sparse_sea")) {
 							continue;
 						}
 						if (world.getBlockState(blockpos1).getBlock() == Blocks.WATER) {

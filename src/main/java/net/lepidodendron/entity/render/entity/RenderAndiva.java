@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderAndiva extends RenderLivingBaseWithBook<EntityPrehistoricFloraAndiva> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/andiva.png");
     public static float getScaler() {
-        return 0.35F;
+        return 0.270F;
     }
 
     public RenderAndiva(RenderManager mgr) {

@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderKeretsa extends RenderLivingBaseWithBook<EntityPrehistoricFloraKeretsa> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/keretsa.png");
     public static float getScaler() {
-        return 0.35F;
+        return 0.385F;
     }
 
     public RenderKeretsa(RenderManager mgr) {

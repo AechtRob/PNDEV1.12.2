@@ -39,181 +39,181 @@ public class ModelBomakellia extends AdvancedModelBase {
     private final AdvancedModelRenderer cube_r14;
 
     public ModelBomakellia() {
-        this.textureWidth = 16;
-        this.textureHeight = 16;
+        textureWidth = 16;
+        textureHeight = 16;
 
-        this.bone = new AdvancedModelRenderer(this);
-        this.bone.setRotationPoint(8.0F, 24.0F, -8.0F);
-        this.bone.cubeList.add(new ModelBox(bone, 0, 6, -9.0F, -1.0F, 7.0F, 2, 1, 2, 0.0F, false));
+        bone = new AdvancedModelRenderer(this);
+        bone.setRotationPoint(8.0F, 24.0F, -8.0F);
+        bone.cubeList.add(new ModelBox(bone, 0, 0, -9.0F, -1.0F, 7.0F, 2, 1, 2, 0.0F, false));
 
-        this.base = new AdvancedModelRenderer(this);
-        this.base.setRotationPoint(-8.0F, -1.0F, 8.0F);
-        this.bone.addChild(base);
-        this.base.cubeList.add(new ModelBox(base, 0, 12, -0.5F, -1.0F, -0.5F, 1, 1, 1, 0.0F, false));
+        base = new AdvancedModelRenderer(this);
+        base.setRotationPoint(-8.0F, -1.0F, 8.0F);
+        bone.addChild(base);
+        base.cubeList.add(new ModelBox(base, 12, 0, -0.5F, -1.0F, -0.5F, 1, 1, 1, 0.0F, false));
 
-        this.frond = new AdvancedModelRenderer(this);
-        this.frond.setRotationPoint(0.0F, -1.0F, 0.0F);
-        this.base.addChild(frond);
-        this.frond.cubeList.add(new ModelBox(frond, 7, 12, -1.0F, -1.0F, -0.5F, 2, 1, 1, 0.0F, false));
+        frond = new AdvancedModelRenderer(this);
+        frond.setRotationPoint(0.0F, -1.0F, 0.0F);
+        base.addChild(frond);
+        frond.cubeList.add(new ModelBox(frond, 0, 3, -1.0F, -1.0F, -0.5F, 2, 1, 1, 0.0F, false));
 
-        this.frondmain = new AdvancedModelRenderer(this);
-        this.frondmain.setRotationPoint(0.0F, -1.0F, 0.0F);
-        this.frond.addChild(frondmain);
-
-
-        this.frondb = new AdvancedModelRenderer(this);
-        this.frondb.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.frondmain.addChild(frondb);
+        frondmain = new AdvancedModelRenderer(this);
+        frondmain.setRotationPoint(0.0F, -1.0F, 0.0F);
+        frond.addChild(frondmain);
 
 
-        this.cube_r1 = new AdvancedModelRenderer(this);
-        this.cube_r1.setRotationPoint(0.0F, 1.0F, 0.0F);
-        this.frondb.addChild(cube_r1);
-        this.setRotateAngle(cube_r1, 0.0F, 0.3927F, 0.0F);
-        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 8, 6, -1.5F, -2.0F, 0.0F, 3, 1, 0, 0.0F, false));
-
-        this.frondb2 = new AdvancedModelRenderer(this);
-        this.frondb2.setRotationPoint(0.0F, -1.0F, 0.0F);
-        this.frondb.addChild(frondb2);
+        frondb = new AdvancedModelRenderer(this);
+        frondb.setRotationPoint(0.0F, 0.0F, 0.0F);
+        frondmain.addChild(frondb);
 
 
-        this.cube_r2 = new AdvancedModelRenderer(this);
-        this.cube_r2.setRotationPoint(0.0F, 2.0F, 0.0F);
-        this.frondb2.addChild(cube_r2);
-        this.setRotateAngle(cube_r2, 0.0F, 0.3927F, 0.0F);
-        this.cube_r2.cubeList.add(new ModelBox(cube_r2, 8, 5, -1.5F, -3.0F, 0.0F, 3, 1, 0, 0.0F, false));
+        cube_r1 = new AdvancedModelRenderer(this);
+        cube_r1.setRotationPoint(0.0F, 1.0F, 0.0F);
+        frondb.addChild(cube_r1);
+        setRotateAngle(cube_r1, 0.0F, 0.3927F, 0.0F);
+        cube_r1.cubeList.add(new ModelBox(cube_r1, 6, 5, -1.5F, -2.0F, 0.0F, 3, 1, 0, 0.0F, false));
 
-        this.frondb3 = new AdvancedModelRenderer(this);
-        this.frondb3.setRotationPoint(0.0F, -1.0F, 0.0F);
-        this.frondb2.addChild(frondb3);
-
-
-        this.cube_r3 = new AdvancedModelRenderer(this);
-        this.cube_r3.setRotationPoint(0.0F, 3.0F, 0.0F);
-        this.frondb3.addChild(cube_r3);
-        this.setRotateAngle(cube_r3, 0.0F, 0.3927F, 0.0F);
-        this.cube_r3.cubeList.add(new ModelBox(cube_r3, 8, 4, -1.5F, -4.0F, 0.0F, 3, 1, 0, 0.0F, false));
-
-        this.frondb4 = new AdvancedModelRenderer(this);
-        this.frondb4.setRotationPoint(0.0F, -1.0F, 0.0F);
-        this.frondb3.addChild(frondb4);
+        frondb2 = new AdvancedModelRenderer(this);
+        frondb2.setRotationPoint(0.0F, -1.0F, 0.0F);
+        frondb.addChild(frondb2);
 
 
-        this.cube_r4 = new AdvancedModelRenderer(this);
-        this.cube_r4.setRotationPoint(0.0F, 4.0F, 0.0F);
-        this.frondb4.addChild(cube_r4);
-        this.setRotateAngle(cube_r4, 0.0F, 0.3927F, 0.0F);
-        this.cube_r4.cubeList.add(new ModelBox(cube_r4, 8, 3, -1.5F, -5.0F, 0.0F, 3, 1, 0, 0.0F, false));
+        cube_r2 = new AdvancedModelRenderer(this);
+        cube_r2.setRotationPoint(0.0F, 2.0F, 0.0F);
+        frondb2.addChild(cube_r2);
+        setRotateAngle(cube_r2, 0.0F, 0.3927F, 0.0F);
+        cube_r2.cubeList.add(new ModelBox(cube_r2, 6, 4, -1.5F, -3.0F, 0.0F, 3, 1, 0, 0.0F, false));
 
-        this.frondb5 = new AdvancedModelRenderer(this);
-        this.frondb5.setRotationPoint(0.0F, -1.0F, 0.0F);
-        this.frondb4.addChild(frondb5);
-
-
-        this.cube_r5 = new AdvancedModelRenderer(this);
-        this.cube_r5.setRotationPoint(0.0F, 5.0F, 0.0F);
-        this.frondb5.addChild(cube_r5);
-        this.setRotateAngle(cube_r5, 0.0F, 0.3927F, 0.0F);
-        this.cube_r5.cubeList.add(new ModelBox(cube_r5, 8, 2, -1.5F, -6.0F, 0.0F, 3, 1, 0, 0.0F, false));
-
-        this.frondb6 = new AdvancedModelRenderer(this);
-        this.frondb6.setRotationPoint(0.0F, -1.0F, 0.0F);
-        this.frondb5.addChild(frondb6);
+        frondb3 = new AdvancedModelRenderer(this);
+        frondb3.setRotationPoint(0.0F, -1.0F, 0.0F);
+        frondb2.addChild(frondb3);
 
 
-        this.cube_r6 = new AdvancedModelRenderer(this);
-        this.cube_r6.setRotationPoint(0.0F, 6.0F, 0.0F);
-        this.frondb6.addChild(cube_r6);
-        this.setRotateAngle(cube_r6, 0.0F, 0.3927F, 0.0F);
-        this.cube_r6.cubeList.add(new ModelBox(cube_r6, 8, 1, -1.5F, -7.0F, 0.0F, 3, 1, 0, 0.0F, false));
+        cube_r3 = new AdvancedModelRenderer(this);
+        cube_r3.setRotationPoint(0.0F, 3.0F, 0.0F);
+        frondb3.addChild(cube_r3);
+        setRotateAngle(cube_r3, 0.0F, 0.3927F, 0.0F);
+        cube_r3.cubeList.add(new ModelBox(cube_r3, 6, 1, -1.5F, -4.0F, 0.0F, 3, 1, 0, 0.0F, false));
 
-        this.frondb7 = new AdvancedModelRenderer(this);
-        this.frondb7.setRotationPoint(0.0F, -1.0F, 0.0F);
-        this.frondb6.addChild(frondb7);
-
-
-        this.cube_r7 = new AdvancedModelRenderer(this);
-        this.cube_r7.setRotationPoint(0.0F, 7.0F, 0.0F);
-        this.frondb7.addChild(cube_r7);
-        this.setRotateAngle(cube_r7, 0.0F, 0.3927F, 0.0F);
-        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 8, 0, -1.5F, -8.0F, 0.0F, 3, 1, 0, 0.0F, false));
-
-        this.fronda = new AdvancedModelRenderer(this);
-        this.fronda.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.frondmain.addChild(fronda);
+        frondb4 = new AdvancedModelRenderer(this);
+        frondb4.setRotationPoint(0.0F, -1.0F, 0.0F);
+        frondb3.addChild(frondb4);
 
 
-        this.cube_r8 = new AdvancedModelRenderer(this);
-        this.cube_r8.setRotationPoint(0.0F, 1.0F, 0.0F);
-        this.fronda.addChild(cube_r8);
-        this.setRotateAngle(cube_r8, 0.0F, -0.3927F, 0.0F);
-        this.cube_r8.cubeList.add(new ModelBox(cube_r8, 8, 6, -1.5F, -2.0F, 0.0F, 3, 1, 0, 0.0F, false));
+        cube_r4 = new AdvancedModelRenderer(this);
+        cube_r4.setRotationPoint(0.0F, 4.0F, 0.0F);
+        frondb4.addChild(cube_r4);
+        setRotateAngle(cube_r4, 0.0F, 0.3927F, 0.0F);
+        cube_r4.cubeList.add(new ModelBox(cube_r4, 6, 0, -1.5F, -5.0F, 0.0F, 3, 1, 0, 0.0F, false));
 
-        this.fronda2 = new AdvancedModelRenderer(this);
-        this.fronda2.setRotationPoint(0.0F, -1.0F, 0.0F);
-        this.fronda.addChild(fronda2);
-
-
-        this.cube_r9 = new AdvancedModelRenderer(this);
-        this.cube_r9.setRotationPoint(0.0F, 2.0F, 0.0F);
-        this.fronda2.addChild(cube_r9);
-        this.setRotateAngle(cube_r9, 0.0F, -0.3927F, 0.0F);
-        this.cube_r9.cubeList.add(new ModelBox(cube_r9, 8, 5, -1.5F, -3.0F, 0.0F, 3, 1, 0, 0.0F, false));
-
-        this.fronda3 = new AdvancedModelRenderer(this);
-        this.fronda3.setRotationPoint(0.0F, -1.0F, 0.0F);
-        this.fronda2.addChild(fronda3);
+        frondb5 = new AdvancedModelRenderer(this);
+        frondb5.setRotationPoint(0.0F, -1.0F, 0.0F);
+        frondb4.addChild(frondb5);
 
 
-        this.cube_r10 = new AdvancedModelRenderer(this);
-        this.cube_r10.setRotationPoint(0.0F, 3.0F, 0.0F);
-        this.fronda3.addChild(cube_r10);
-        this.setRotateAngle(cube_r10, 0.0F, -0.3927F, 0.0F);
-        this.cube_r10.cubeList.add(new ModelBox(cube_r10, 8, 4, -1.5F, -4.0F, 0.0F, 3, 1, 0, 0.0F, false));
+        cube_r5 = new AdvancedModelRenderer(this);
+        cube_r5.setRotationPoint(0.0F, 5.0F, 0.0F);
+        frondb5.addChild(cube_r5);
+        setRotateAngle(cube_r5, 0.0F, 0.3927F, 0.0F);
+        cube_r5.cubeList.add(new ModelBox(cube_r5, 0, 6, -1.5F, -6.0F, 0.0F, 3, 1, 0, 0.0F, false));
 
-        this.fronda4 = new AdvancedModelRenderer(this);
-        this.fronda4.setRotationPoint(0.0F, -1.0F, 0.0F);
-        this.fronda3.addChild(fronda4);
-
-
-        this.cube_r11 = new AdvancedModelRenderer(this);
-        this.cube_r11.setRotationPoint(0.0F, 4.0F, 0.0F);
-        this.fronda4.addChild(cube_r11);
-        this.setRotateAngle(cube_r11, 0.0F, -0.3927F, 0.0F);
-        this.cube_r11.cubeList.add(new ModelBox(cube_r11, 8, 3, -1.5F, -5.0F, 0.0F, 3, 1, 0, 0.0F, false));
-
-        this.fronda5 = new AdvancedModelRenderer(this);
-        this.fronda5.setRotationPoint(0.0F, -1.0F, 0.0F);
-        this.fronda4.addChild(fronda5);
+        frondb6 = new AdvancedModelRenderer(this);
+        frondb6.setRotationPoint(0.0F, -1.0F, 0.0F);
+        frondb5.addChild(frondb6);
 
 
-        this.cube_r12 = new AdvancedModelRenderer(this);
-        this.cube_r12.setRotationPoint(0.0F, 5.0F, 0.0F);
-        this.fronda5.addChild(cube_r12);
-        this.setRotateAngle(cube_r12, 0.0F, -0.3927F, 0.0F);
-        this.cube_r12.cubeList.add(new ModelBox(cube_r12, 8, 2, -1.5F, -6.0F, 0.0F, 3, 1, 0, 0.0F, false));
+        cube_r6 = new AdvancedModelRenderer(this);
+        cube_r6.setRotationPoint(0.0F, 6.0F, 0.0F);
+        frondb6.addChild(cube_r6);
+        setRotateAngle(cube_r6, 0.0F, 0.3927F, 0.0F);
+        cube_r6.cubeList.add(new ModelBox(cube_r6, 5, 3, -1.5F, -7.0F, 0.0F, 3, 1, 0, 0.0F, false));
 
-        this.fronda6 = new AdvancedModelRenderer(this);
-        this.fronda6.setRotationPoint(0.0F, -1.0F, 0.0F);
-        this.fronda5.addChild(fronda6);
-
-
-        this.cube_r13 = new AdvancedModelRenderer(this);
-        this.cube_r13.setRotationPoint(0.0F, 6.0F, 0.0F);
-        this.fronda6.addChild(cube_r13);
-        this.setRotateAngle(cube_r13, 0.0F, -0.3927F, 0.0F);
-        this.cube_r13.cubeList.add(new ModelBox(cube_r13, 8, 1, -1.5F, -7.0F, 0.0F, 3, 1, 0, 0.0F, false));
-
-        this.fronda7 = new AdvancedModelRenderer(this);
-        this.fronda7.setRotationPoint(0.0F, -1.0F, 0.0F);
-        this.fronda6.addChild(fronda7);
+        frondb7 = new AdvancedModelRenderer(this);
+        frondb7.setRotationPoint(0.0F, -1.0F, 0.0F);
+        frondb6.addChild(frondb7);
 
 
-        this.cube_r14 = new AdvancedModelRenderer(this);
-        this.cube_r14.setRotationPoint(0.0F, 7.0F, 0.0F);
-        this.fronda7.addChild(cube_r14);
-        this.setRotateAngle(cube_r14, 0.0F, -0.3927F, 0.0F);
-        this.cube_r14.cubeList.add(new ModelBox(cube_r14, 8, 0, -1.5F, -8.0F, 0.0F, 3, 1, 0, 0.0F, false));
+        cube_r7 = new AdvancedModelRenderer(this);
+        cube_r7.setRotationPoint(0.0F, 7.0F, 0.0F);
+        frondb7.addChild(cube_r7);
+        setRotateAngle(cube_r7, 0.0F, 0.3927F, 0.0F);
+        cube_r7.cubeList.add(new ModelBox(cube_r7, 0, 5, -1.5F, -8.0F, 0.0F, 3, 1, 0, 0.0F, false));
+
+        fronda = new AdvancedModelRenderer(this);
+        fronda.setRotationPoint(0.0F, 0.0F, 0.0F);
+        frondmain.addChild(fronda);
+
+
+        cube_r8 = new AdvancedModelRenderer(this);
+        cube_r8.setRotationPoint(0.0F, 1.0F, 0.0F);
+        fronda.addChild(cube_r8);
+        setRotateAngle(cube_r8, 0.0F, -0.3927F, 0.0F);
+        cube_r8.cubeList.add(new ModelBox(cube_r8, 6, 5, -1.5F, -2.0F, 0.0F, 3, 1, 0, 0.0F, false));
+
+        fronda2 = new AdvancedModelRenderer(this);
+        fronda2.setRotationPoint(0.0F, -1.0F, 0.0F);
+        fronda.addChild(fronda2);
+
+
+        cube_r9 = new AdvancedModelRenderer(this);
+        cube_r9.setRotationPoint(0.0F, 2.0F, 0.0F);
+        fronda2.addChild(cube_r9);
+        setRotateAngle(cube_r9, 0.0F, -0.3927F, 0.0F);
+        cube_r9.cubeList.add(new ModelBox(cube_r9, 6, 4, -1.5F, -3.0F, 0.0F, 3, 1, 0, 0.0F, false));
+
+        fronda3 = new AdvancedModelRenderer(this);
+        fronda3.setRotationPoint(0.0F, -1.0F, 0.0F);
+        fronda2.addChild(fronda3);
+
+
+        cube_r10 = new AdvancedModelRenderer(this);
+        cube_r10.setRotationPoint(0.0F, 3.0F, 0.0F);
+        fronda3.addChild(cube_r10);
+        setRotateAngle(cube_r10, 0.0F, -0.3927F, 0.0F);
+        cube_r10.cubeList.add(new ModelBox(cube_r10, 6, 1, -1.5F, -4.0F, 0.0F, 3, 1, 0, 0.0F, false));
+
+        fronda4 = new AdvancedModelRenderer(this);
+        fronda4.setRotationPoint(0.0F, -1.0F, 0.0F);
+        fronda3.addChild(fronda4);
+
+
+        cube_r11 = new AdvancedModelRenderer(this);
+        cube_r11.setRotationPoint(0.0F, 4.0F, 0.0F);
+        fronda4.addChild(cube_r11);
+        setRotateAngle(cube_r11, 0.0F, -0.3927F, 0.0F);
+        cube_r11.cubeList.add(new ModelBox(cube_r11, 6, 0, -1.5F, -5.0F, 0.0F, 3, 1, 0, 0.0F, false));
+
+        fronda5 = new AdvancedModelRenderer(this);
+        fronda5.setRotationPoint(0.0F, -1.0F, 0.0F);
+        fronda4.addChild(fronda5);
+
+
+        cube_r12 = new AdvancedModelRenderer(this);
+        cube_r12.setRotationPoint(0.0F, 5.0F, 0.0F);
+        fronda5.addChild(cube_r12);
+        setRotateAngle(cube_r12, 0.0F, -0.3927F, 0.0F);
+        cube_r12.cubeList.add(new ModelBox(cube_r12, 0, 6, -1.5F, -6.0F, 0.0F, 3, 1, 0, 0.0F, false));
+
+        fronda6 = new AdvancedModelRenderer(this);
+        fronda6.setRotationPoint(0.0F, -1.0F, 0.0F);
+        fronda5.addChild(fronda6);
+
+
+        cube_r13 = new AdvancedModelRenderer(this);
+        cube_r13.setRotationPoint(0.0F, 6.0F, 0.0F);
+        fronda6.addChild(cube_r13);
+        setRotateAngle(cube_r13, 0.0F, -0.3927F, 0.0F);
+        cube_r13.cubeList.add(new ModelBox(cube_r13, 5, 3, -1.5F, -7.0F, 0.0F, 3, 1, 0, 0.0F, false));
+
+        fronda7 = new AdvancedModelRenderer(this);
+        fronda7.setRotationPoint(0.0F, -1.0F, 0.0F);
+        fronda6.addChild(fronda7);
+
+
+        cube_r14 = new AdvancedModelRenderer(this);
+        cube_r14.setRotationPoint(0.0F, 7.0F, 0.0F);
+        fronda7.addChild(cube_r14);
+        setRotateAngle(cube_r14, 0.0F, -0.3927F, 0.0F);
+        cube_r14.cubeList.add(new ModelBox(cube_r14, 0, 5, -1.5F, -8.0F, 0.0F, 3, 1, 0, 0.0F, false));
 
         updateDefaultPose();
     }

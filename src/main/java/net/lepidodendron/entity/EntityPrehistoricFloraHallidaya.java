@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraHallidaya extends EntityPrehistoricFloraSlith
 
 	public EntityPrehistoricFloraHallidaya(World world) {
 		super(world, 0);
-		setSize(0.2F, 0.15F);
+		setSize(0.171F, 0.063F);
 	}
 
 	@Override

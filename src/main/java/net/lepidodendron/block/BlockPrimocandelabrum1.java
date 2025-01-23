@@ -69,6 +69,7 @@ public class BlockPrimocandelabrum1 extends ElementsLepidodendronMod.ModElement 
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockPrimocandelabrum1.TileEntityCustom.class, "lepidodendron:tileentityprimocandelabrum_1");
 		OreDictionary.registerOre("staticdnaPNlepidodendron:primocandelabrum_1", BlockPrimocandelabrum1.block);
+		OreDictionary.registerOre("holdfastDrops", BlockPrimocandelabrum1.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
@@ -91,7 +92,7 @@ public class BlockPrimocandelabrum1 extends ElementsLepidodendronMod.ModElement 
 			return;
 		}
 
-		for (int i = 0; i < (int) 7; i++) {
+		for (int i = 0; i < (int) 17; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))+1);
 			int l14 = chunkZ + random.nextInt(16) + 8;

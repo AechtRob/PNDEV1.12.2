@@ -1,0 +1,47 @@
+{
+	"name": "Rugoconites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rugoconites_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_rugoconites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rugoconites",
+			"title": "Rugoconites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Trilobozoa"
+		},
+		{
+			"type": "entity",
+			"name": "Rugoconites sp.",
+			"entity": "lepidodendron:prehistoric_flora_rugoconites",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rugoconites",
+			"type": "text",
+			"text": "Rugoconites hails from the Cryogenian into the Upper Ediacaran, with fossils found in the Flinders Ranges, Southern Australia; and Taoudenni basin, Southern Algeria. It is a small, rounded lifeform, growing up to 6 cm in diameter. It is noted for its 3 thin, long lobe structures, giving it a rare tri-radial symmetry, something not seen in modern phylums. It is also possibly the oldest of the Trilobozoans, with records going into the Cryogenian."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rugoconites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rugoconites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rugoconites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rugoconites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rugoconites"
+		}
+	]
+}

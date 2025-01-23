@@ -1,0 +1,45 @@
+{
+	"name": "Paracharnia",
+	"read_by_default": true,
+	"icon": "lepidodendron:paracharnia",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_paracharnia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_paracharnia",
+			"title": "Paracharnia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Rangeomorpha$(br)>Charniidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "P. denyingensis",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:paracharnia",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_paracharnia",
+			"type": "text",
+			"text": "Paracharnia denyingensis comes from the Upper Ediacaran, with fossils found in the Dengying Formation, South China. It is a leaf-like lifeform found in shallow waters and could grow up to 20 cm in height, and possibly partook in filter feeding from the surrounding water."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_paracharnia",
+			"type": "text",
+			"text": "The generic name derives from the Latin word 'para', to mean 'equal', and the species name 'Charnia'. The specific name derives from the Lantinised placename 'Dengying', where its fossils were found."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_paracharnia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

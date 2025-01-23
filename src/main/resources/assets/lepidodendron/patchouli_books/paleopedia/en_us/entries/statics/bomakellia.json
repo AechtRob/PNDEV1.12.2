@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Animalia$(br)>Charniidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/bomakellia.png"],
-			"title": "B. kelleri",
-			"text": ""
+			"type": "multiblock",
+			"name": "B. kelleri",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bomakellia",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bomakellia",

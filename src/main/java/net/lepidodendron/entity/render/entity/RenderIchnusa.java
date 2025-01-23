@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderIchnusa extends RenderLivingBaseWithBook<EntityPrehistoricFloraIchnusa> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ichnusa.png");
 
-    public static float getScaler() {return 0.6F;}
+    public static float getScaler() {return 0.54F;}
 
     public RenderIchnusa(RenderManager mgr) {
         super(mgr, new ModelIchnusa(), 0.0f);

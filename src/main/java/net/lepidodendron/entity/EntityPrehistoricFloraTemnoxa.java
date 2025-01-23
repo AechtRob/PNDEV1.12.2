@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraTemnoxa extends EntityPrehistoricFloraSlither
 
 	public EntityPrehistoricFloraTemnoxa(World world) {
 		super(world, 40);
-		setSize(0.65F, 0.25F);
+		setSize(0.11875F, 0.04375F);
 	}
 
 	@Override

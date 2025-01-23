@@ -79,6 +79,7 @@ public class BlockBradgatia extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:bradgatia", BlockBradgatia.block);
+		OreDictionary.registerOre("holdfastDrops", BlockBradgatia.block);
 	}
 
 

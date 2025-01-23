@@ -9,18 +9,32 @@
 			"trigger": "lepidodendron:pf_adv_book_pambikalbae",
 			"title": "Pambikalbae",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Rangeomorpha"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria/Petalonamae(?)"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pambikalbae.png"],
-			"title": "P. hasenohrae",
-			"text": ""
+			"type": "multiblock",
+			"name": "P. hasenohrae",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:pambikalbae",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pambikalbae",
 			"type": "text",
-			"text": "Pambikalbae is an Ediacaran rangeomorph. It had a frondose like body composed of many vanes extending from a stem which featured many series of chambers. It was likely a benthic, sessile marine suspension feeder."
+			"text": "Pambikalbae hasenohrae comes from the Upper Ediacaran, with fossils found in the Flinders Ranges, South Australia. It is a frondose lifeform found in shallow waters and could grow up to 30 cm in height, and may have partook in suspension feeding from the surrounding water."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pambikalbae",
+			"type": "text",
+			"text": "It is unknown if Pambikalbae is more closely related to that of the Petalonamae or to that of the Cnidaria, with this being the grounds for much debate over the years. The generic name derives from the Parnkalla words 'pambi', to mean 'small bag/purse', and 'kalbi', to mean 'leaf'. The specific name derives from the surname of Pamela Hasenohr, the discover of the site it was found."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pambikalbae",

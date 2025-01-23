@@ -322,7 +322,7 @@ public class BlockRedLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_ALGAE;
+			return ModTriggers.CLICK_ALGAE_RED;
 		}
 			
 		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }

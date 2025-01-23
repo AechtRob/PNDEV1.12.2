@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraIchnusa extends EntityPrehistoricFloraEoandro
 
     public EntityPrehistoricFloraIchnusa(World world) {
         super(world);
-        setSize(0.2F, 0.12F);
+        setSize(0.152F, 0.152F);
     }
 
     @Override

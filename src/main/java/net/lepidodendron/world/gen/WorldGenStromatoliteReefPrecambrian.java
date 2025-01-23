@@ -48,10 +48,12 @@ public class WorldGenStromatoliteReefPrecambrian extends WorldGenerator
         BlockPos pos;
         //Height calcs:
         int yy = 0;
-        yy = Math.min(position.getY() + 4, Functions.getAdjustedSeaLevel(worldIn, position)+2);
+        yy = Math.min(position.getY() + 4, Functions.getAdjustedSeaLevel(worldIn, position) + 2);
         boolean reef = false;
         //System.err.println("Reef start");
-
+        if (position.getY() <= 60 + rand.nextInt(4)) {
+            return false;
+        }
         //System.err.println("Centre strom at " + position.getX() + " "  + position.getY() + " " + position.getZ());
         while ((layer <= startRadius) && (position.getY() + layer) < yy) {
             reefChance = 0.9D - (((double)layer - 1D) * (0.8D/(double)startRadius));

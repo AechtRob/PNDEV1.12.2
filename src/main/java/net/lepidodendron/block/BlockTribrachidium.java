@@ -76,8 +76,8 @@ public class BlockTribrachidium extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:tribrachidium", BlockTribrachidium.block);
+		OreDictionary.registerOre("holdfastDrops", BlockTribrachidium.block);
 	}
-
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {

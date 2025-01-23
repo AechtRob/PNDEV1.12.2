@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Staurozoa$(br)>Corumbellidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/corumbella.png"],
-			"title": "C. werneri",
-			"text": ""
+			"type": "multiblock",
+			"name": "C. werneri",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:corumbella",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_corumbella",

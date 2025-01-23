@@ -1,8 +1,6 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraEoandromeda;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -168,8 +166,8 @@ public class ModelEoporpita extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.75F;
-        this.main.offsetX = -0.F;
+        this.main.offsetY = -0.52F;
+        this.main.offsetX = -0.1F;
         this.main.rotateAngleY = (float)Math.toRadians(165);
         this.main.rotateAngleX = (float)Math.toRadians(22);
         this.main.rotateAngleZ = (float)Math.toRadians(-28);
@@ -201,6 +199,8 @@ public class ModelEoporpita extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
+
+        main.offsetY = -0.15F;
 
         float speed = 0.1F;
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled() && e.isInWater()) {
@@ -236,6 +236,7 @@ public class ModelEoporpita extends ModelBasePalaeopedia {
         else {
             this.main.scaleChildren = true;
             this.main.setScale(1.25F, 0.1F, 1.25F);
+            main.offsetY = 0.05F;
         }
 
     }
