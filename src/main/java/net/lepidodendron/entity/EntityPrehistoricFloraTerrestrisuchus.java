@@ -72,7 +72,7 @@ public class EntityPrehistoricFloraTerrestrisuchus extends EntityPrehistoricFlor
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 1; //medium
+		return 0; //small
 	}
 
 	public static String getPeriod() {return "Triassic";}
