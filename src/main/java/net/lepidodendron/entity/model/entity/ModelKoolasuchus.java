@@ -664,11 +664,13 @@ public class ModelKoolasuchus extends ModelBasePalaeopedia {
         }
         else {
             //Swimming pose:
-            if(ee.getIsFast()){
-                animSwimFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+            if (ee.getIsMoving()) {
+                if (ee.getIsFast()) {
+                    animSwimFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
 
-            } else {
-                animSwim(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                } else {
+                    animSwim(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                }
             }
 
         }

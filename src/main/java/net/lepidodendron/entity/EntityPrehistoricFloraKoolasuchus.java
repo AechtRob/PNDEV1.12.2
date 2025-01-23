@@ -47,10 +47,10 @@ public class EntityPrehistoricFloraKoolasuchus extends EntityPrehistoricFloraSwi
 
 	public EntityPrehistoricFloraKoolasuchus(World world) {
 		super(world);
-		setSize(0.9F, 0.45F);
+		setSize(0.9F, 0.9F);
 		minWidth = 0.1F;
 		maxWidth = 0.9F;
-		maxHeight = 0.45F;
+		maxHeight = 0.9F;
 		maxHealthAgeable = 30.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
