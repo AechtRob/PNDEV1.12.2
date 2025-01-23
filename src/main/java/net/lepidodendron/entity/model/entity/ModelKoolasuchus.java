@@ -656,7 +656,7 @@ public class ModelKoolasuchus extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
         EntityPrehistoricFloraKoolasuchus ee = (EntityPrehistoricFloraKoolasuchus) entitylivingbaseIn;
 
-        if (!ee.isReallyInWater()) {
+        if (!ee.isInWater()) {
             if (ee.getIsMoving()) {
                 animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
 
