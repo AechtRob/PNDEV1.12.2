@@ -37,7 +37,6 @@ import javax.annotation.Nullable;
 public class EntityPrehistoricFloraRhadinosteus extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter, IWaterSurfaceEggsAmphibian {
 
 	public BlockPos currentTarget;
-	@SideOnly(Side.CLIENT)
 	public Animation STAND_ANIMATION;//blink animation
 	public Animation THREAT_ANIMATION;//threat animation
 	private int standCooldown;
