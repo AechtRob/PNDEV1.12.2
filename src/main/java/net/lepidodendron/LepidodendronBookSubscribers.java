@@ -121,7 +121,27 @@ public class LepidodendronBookSubscribers {
 		}
 		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 9, true).equalsIgnoreCase("true")) {
 			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
-				ModTriggers.COMPLETE_CRETACEOUS_EARLY.trigger((EntityPlayerMP) event.getEntityPlayer());
+				//ModTriggers.COMPLETE_CRETACEOUS_EARLY.trigger((EntityPlayerMP) event.getEntityPlayer());
+			}
+		}
+		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 10, true).equalsIgnoreCase("true")) {
+			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+				//ModTriggers.COMPLETE_CRETACEOUS_LATE.trigger((EntityPlayerMP) event.getEntityPlayer());
+			}
+		}
+		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 11, true).equalsIgnoreCase("true")) {
+			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+				//ModTriggers.COMPLETE_PALEOGENE.trigger((EntityPlayerMP) event.getEntityPlayer());
+			}
+		}
+		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 12, true).equalsIgnoreCase("true")) {
+			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+				//ModTriggers.COMPLETE_NEOGENE.trigger((EntityPlayerMP) event.getEntityPlayer());
+			}
+		}
+		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 13, true).equalsIgnoreCase("true")) {
+			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+				//ModTriggers.COMPLETE_PLEISTOCENE.trigger((EntityPlayerMP) event.getEntityPlayer());
 			}
 		}
 

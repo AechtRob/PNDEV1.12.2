@@ -34,6 +34,10 @@ public class ModTriggers
     public static final CustomTrigger COMPLETE_JURASSIC = new CustomTrigger("complete_pf_jurassic");
     public static final CustomTrigger ENTER_CRETACEOUS_EARLY = new CustomTrigger("enter_pf_cretaceous_early");
     public static final CustomTrigger COMPLETE_CRETACEOUS_EARLY = new CustomTrigger("complete_pf_cretaceous_early");
+    public static final CustomTrigger COMPLETE_CRETACEOUS_LATE = new CustomTrigger("complete_pf_cretaceous_late");
+    public static final CustomTrigger COMPLETE_PALEOGENE = new CustomTrigger("complete_pf_paleogene");
+    public static final CustomTrigger COMPLETE_NEOGENE = new CustomTrigger("complete_pf_neogene");
+    public static final CustomTrigger COMPLETE_PLEISTOCENE = new CustomTrigger("complete_pf_pleistocene");
     public static final CustomTrigger REJUVENATE = new CustomTrigger("pf_rejuvenate");
     public static final CustomTrigger ACID_CLEAN = new CustomTrigger("pf_acid_clean");
     public static final CustomTrigger USE_CAGE = new CustomTrigger("pf_use_cage");
@@ -1815,6 +1819,10 @@ public class ModTriggers
             COMPLETE_TRIASSIC,
             COMPLETE_JURASSIC,
             COMPLETE_CRETACEOUS_EARLY,
+            COMPLETE_CRETACEOUS_LATE,
+            COMPLETE_PALEOGENE,
+            COMPLETE_NEOGENE,
+            COMPLETE_PLEISTOCENE,
             REJUVENATE,
             ACID_CLEAN,
             USE_CAGE,
