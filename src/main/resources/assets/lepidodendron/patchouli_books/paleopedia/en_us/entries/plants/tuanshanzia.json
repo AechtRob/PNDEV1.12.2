@@ -1,0 +1,36 @@
+{
+	"name": "Frondose Archaic Algae",
+	"read_by_default": true,
+	"icon": "lepidodendron:tuanshanzia",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_tuanshanzia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tuanshanzia",
+			"title": "Frondose Archaic Algae",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Paleoproterozoic (Statherian) - Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() under water(br2)$(l)Propagation:$() Craft with a bucket of water.$(br)$(l)Method of Obtaining:$() Shears"
+		},
+		{
+			"type": "multiblock",
+			"name": "Frondose Archaic Algae",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:tuanshanzia",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tuanshanzia",
+			"type": "text",
+			"text": "Frondose Archaic Algae is a genericised version of various braodly tongue-shaped red algae fossils found across the Precambrian, representing forms like the 30 cm tall Tuanshanzia, to the micrometric Rafatazmia, and possible thallophytes from the Ediacaran. This of course means that the Frondose Archaic Algae is the oldest form of Algae that we represent, first appearing near the end of the Paleoproterozoic, before vanishing sometime during the Ediacaran."
+		}
+	]
+}
+

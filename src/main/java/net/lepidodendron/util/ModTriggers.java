@@ -15,15 +15,25 @@ public class ModTriggers
     public static final CustomTrigger WELCOME = new CustomTrigger("pf_book_craft_prompt");
     public static final CustomTrigger ENTER_OVERWORLD = new CustomTrigger("enter_pf_overworld");
     public static final CustomTrigger ENTER_PRECAMBRIAN = new CustomTrigger("enter_pf_precambrian");
+    public static final CustomTrigger COMPLETE_PRECAMBRIAN = new CustomTrigger("complete_pf_precambrian");
     public static final CustomTrigger ENTER_CAMBRIAN = new CustomTrigger("enter_pf_cambrian");
+    public static final CustomTrigger COMPLETE_CAMBRIAN = new CustomTrigger("complete_pf_cambrian");
     public static final CustomTrigger ENTER_ORDOVICIAN = new CustomTrigger("enter_pf_ordovician");
+    public static final CustomTrigger COMPLETE_ORDOVICIAN = new CustomTrigger("complete_pf_ordovician");
     public static final CustomTrigger ENTER_SILURIAN = new CustomTrigger("enter_pf_silurian");
+    public static final CustomTrigger COMPLETE_SILURIAN = new CustomTrigger("complete_pf_silurian");
     public static final CustomTrigger ENTER_DEVONIAN = new CustomTrigger("enter_pf_devonian");
+    public static final CustomTrigger COMPLETE_DEVONIAN = new CustomTrigger("complete_pf_devonian");
     public static final CustomTrigger ENTER_CARBONIFEROUS = new CustomTrigger("enter_pf_carboniferous");
+    public static final CustomTrigger COMPLETE_CARBONIFEROUS = new CustomTrigger("complete_pf_carboniferous");
     public static final CustomTrigger ENTER_PERMIAN = new CustomTrigger("enter_pf_permian");
+    public static final CustomTrigger COMPLETE_PERMIAN = new CustomTrigger("complete_pf_permian");
     public static final CustomTrigger ENTER_TRIASSIC = new CustomTrigger("enter_pf_triassic");
+    public static final CustomTrigger COMPLETE_TRIASSIC = new CustomTrigger("complete_pf_triassic");
     public static final CustomTrigger ENTER_JURASSIC = new CustomTrigger("enter_pf_jurassic");
+    public static final CustomTrigger COMPLETE_JURASSIC = new CustomTrigger("complete_pf_jurassic");
     public static final CustomTrigger ENTER_CRETACEOUS_EARLY = new CustomTrigger("enter_pf_cretaceous_early");
+    public static final CustomTrigger COMPLETE_CRETACEOUS_EARLY = new CustomTrigger("complete_pf_cretaceous_early");
     public static final CustomTrigger REJUVENATE = new CustomTrigger("pf_rejuvenate");
     public static final CustomTrigger ACID_CLEAN = new CustomTrigger("pf_acid_clean");
     public static final CustomTrigger USE_CAGE = new CustomTrigger("pf_use_cage");
@@ -1795,6 +1805,16 @@ public class ModTriggers
             ENTER_TRIASSIC,
             ENTER_JURASSIC,
             ENTER_CRETACEOUS_EARLY,
+            COMPLETE_PRECAMBRIAN,
+            COMPLETE_CAMBRIAN,
+            COMPLETE_ORDOVICIAN,
+            COMPLETE_SILURIAN,
+            COMPLETE_DEVONIAN,
+            COMPLETE_CARBONIFEROUS,
+            COMPLETE_PERMIAN,
+            COMPLETE_TRIASSIC,
+            COMPLETE_JURASSIC,
+            COMPLETE_CRETACEOUS_EARLY,
             REJUVENATE,
             ACID_CLEAN,
             USE_CAGE,

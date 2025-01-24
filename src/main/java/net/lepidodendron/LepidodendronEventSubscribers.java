@@ -1476,20 +1476,20 @@ public class LepidodendronEventSubscribers {
 					List<String> tt = event.getToolTip();
 					tt.add(I18n.translateToLocal("tooltip.palaeopedia.name").trim());
 					if (event.getEntityPlayer() != null) {
-						tt.add(TextFormatting.DARK_RED + "Precambrian" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 0));
-						tt.add(TextFormatting.DARK_GREEN + "Cambrian" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 1));
-						tt.add(TextFormatting.DARK_AQUA + "Ordovician" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 2));
-						tt.add(TextFormatting.AQUA + "Silurian" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 3));
-						tt.add(TextFormatting.GOLD + "Devonian" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 4));
-						tt.add(TextFormatting.DARK_BLUE + "Carboniferous" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 5));
-						tt.add(TextFormatting.RED + "Permian" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 6));
-						tt.add(TextFormatting.DARK_PURPLE + "Triassic" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 7));
-						tt.add(TextFormatting.BLUE + "Jurassic" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 8));
-						tt.add(TextFormatting.GREEN + "Early Cretaceous" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 9));
-						tt.add(TextFormatting.GREEN + "Late Cretaceous" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 10));
-						tt.add(TextFormatting.GOLD + "Paleogene" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 11));
-						tt.add(TextFormatting.YELLOW + "Neogene" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 12));
-						tt.add(TextFormatting.GRAY + "Pleistocene" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 13));
+						tt.add(TextFormatting.DARK_RED + "Precambrian" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 0, false));
+						tt.add(TextFormatting.DARK_GREEN + "Cambrian" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 1, false));
+						tt.add(TextFormatting.DARK_AQUA + "Ordovician" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 2, false));
+						tt.add(TextFormatting.AQUA + "Silurian" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 3, false));
+						tt.add(TextFormatting.GOLD + "Devonian" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 4, false));
+						tt.add(TextFormatting.DARK_BLUE + "Carboniferous" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 5, false));
+						tt.add(TextFormatting.RED + "Permian" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 6, false));
+						tt.add(TextFormatting.DARK_PURPLE + "Triassic" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 7, false));
+						tt.add(TextFormatting.BLUE + "Jurassic" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 8, false));
+						tt.add(TextFormatting.GREEN + "Early Cretaceous" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 9, false));
+						tt.add(TextFormatting.GREEN + "Late Cretaceous" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 10, false));
+						tt.add(TextFormatting.GOLD + "Paleogene" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 11, false));
+						tt.add(TextFormatting.YELLOW + "Neogene" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 12, false));
+						tt.add(TextFormatting.GRAY + "Pleistocene" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 13, false));
 					}
 				}
 			}

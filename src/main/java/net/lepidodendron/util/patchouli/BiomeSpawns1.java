@@ -64,7 +64,9 @@ public class BiomeSpawns1 implements IComponentProcessor {
                 advStr = "lepidodendron:pf_adv_book_" + DimensionSpawns.getAmendedAdv(advStr);
                 bookcomponents.get(i + 14).advancement = advStr;
                 bookcomponents.get(i + 28).advancement = advStr;
-                field.setBoolean(bookcomponents.get(i + 28), true);
+                if (!advStr.equalsIgnoreCase("lepidodendron:pf_adv_book_blank")) {
+                    field.setBoolean(bookcomponents.get(i + 28), true);
+                }
             }
 
         }

@@ -1,0 +1,56 @@
+{
+	"name": "Doyleales",
+	"read_by_default": true,
+	"icon": "lepidodendron:doyleales_sapling",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_doyleales",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_doyleales",
+			"title": "Doyleales",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)$(l)Propagation:$() Drops cones from breaking leaves. Cones can be crafted into seeds.$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
+		},
+		{
+			"type": "multiblock",
+			"name": "Doyleales ord.",
+			"enable_visualize": false,
+			"symmetrical": true,
+			"multiblock": {
+				"pattern": [
+					[ "       ","       ","       ","   D   ", "       ","       ","       " ],
+					[ "       ","       ","   D   ","  DAD  ", "   D   ","       ","       " ],
+					[ "       ","   D   ","  DBD  "," DCACD ", "  DBD  ","   D   ","       " ],
+					[ "       ","   D   ","       "," D A D ", "       ","   D   ","       " ],
+					[ "   D   ","  DBD  "," D B D ","DCCACCD", " D B D ","  DBD  ","   D   " ],
+					[ "       ","       ","       ","   A   ", "       ","       ","       " ],
+					[ "       ","       ","       ","   0   ", "       ","       ","       " ],
+					[ "       ","       ","       ","   A   ", "       ","       ","       " ],
+					[ "       ","       ","       ","   A   ", "       ","       ","       " ]
+				],
+				"mapping": {
+					"D": "lepidodendron:doyleales_leaves",
+					"C": "lepidodendron:doyleales_log[facing=east]",
+					"B": "lepidodendron:doyleales_log[facing=up]",
+					"A": "lepidodendron:doyleales_log[facing=north]",
+					"0": "lepidodendron:doyleales_log[facing=north]"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_doyleales",
+			"type": "text",
+			"text": "Doyleales is an Order of fossils known from the Early Cretaceous northern hemisphere, particularly in North America where there seems to be quite a diversity found in the Apple Bay formation. They are cone fossils, named after the type species, Doylea tetrahedrasperma. This cones show unique features and sometimes preserve cup-shaped seeds, and it is uncertain where these plants sit in terms of their relationships."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_doyleales",
+			"type": "text",
+			"text": "There are several fossils which have been assigned to this Order, under several different genera. Some authors assign them to the Corystosperms (which is the group of plants including Dicroidium, Pachypteris and Komlopteris, amongst others). Other prefer to place this Order as a group within the Pinopsids (along with groups such as Araucariales, Cupressales, Pines, Gnetales, Cheirolepidiaceae, and so on)."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_doyleales",
+			"type": "text",
+			"text": "For our mod we have preferred this latter suggestion and have reconstructed our plant as a small tree, with obvious similarities to pines. We have declined to give this a genus name, and this is a very generalised and speculative example of the Order only."
+		}
+	]
+}

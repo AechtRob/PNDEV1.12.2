@@ -5,7 +5,10 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.base.*;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
+import net.lepidodendron.util.BlockSounds;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.util.patchouli.PercentageCollected;
+import net.minecraft.advancements.AdvancementManager;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -17,6 +20,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
@@ -24,6 +28,8 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
+import net.minecraftforge.event.entity.player.AdvancementEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -33,6 +39,93 @@ import java.text.DecimalFormat;
 import java.util.Locale;
 
 public class LepidodendronBookSubscribers {
+
+	@SubscribeEvent //If we grant an advancement, check if we have just completed a Dimension:
+	public void onGiveAdvancement(AdvancementEvent event) {
+		if (event.getEntityPlayer().getEntityWorld().isRemote) {
+			return;
+		}
+		AdvancementManager mgr = null;
+		if (event.getEntityPlayer().getEntityWorld() instanceof WorldServer) {
+			mgr = ((WorldServer)event.getEntityPlayer().getEntityWorld()).getAdvancementManager();
+		}
+		if (mgr == null) {
+			return;
+		}
+		if (event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_precambrian")
+				|| event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_cambrian")
+				|| event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_ordovician")
+				|| event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_silurian")
+				|| event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_devonian")
+				|| event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_carboniferous")
+				|| event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_permian")
+				|| event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_triassic")
+				|| event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_jurassic")
+				|| event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_cretaceous_early")
+				|| event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_cretaceous_late")
+				|| event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_paleogene")
+				|| event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_neogene")
+				|| event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_pleistocene")) {
+			//Avoid getting stuck in a loop!
+			//But do play the sound for these:
+			for (EntityPlayer player : event.getEntityPlayer().getEntityWorld().playerEntities) {
+				player.getEntityWorld().playSound(null, player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ(), BlockSounds.EXPERT_ADVANCEMENT, SoundCategory.MASTER, 1.0F, 1.0F);
+			}
+			return;
+		}
+
+		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 0, true).equalsIgnoreCase("true")) {
+			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+				ModTriggers.COMPLETE_PRECAMBRIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+			}
+		}
+		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 1, true).equalsIgnoreCase("true")) {
+			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+				ModTriggers.COMPLETE_CAMBRIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+			}
+		}
+		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 2, true).equalsIgnoreCase("true")) {
+			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+				ModTriggers.COMPLETE_ORDOVICIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+			}
+		}
+		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 3, true).equalsIgnoreCase("true")) {
+			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+				ModTriggers.COMPLETE_SILURIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+			}
+		}
+		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 4, true).equalsIgnoreCase("true")) {
+			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+				ModTriggers.COMPLETE_DEVONIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+			}
+		}
+		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 5, true).equalsIgnoreCase("true")) {
+			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+				ModTriggers.COMPLETE_CARBONIFEROUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+			}
+		}
+		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 6, true).equalsIgnoreCase("true")) {
+			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+				ModTriggers.COMPLETE_PERMIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+			}
+		}
+		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 7, true).equalsIgnoreCase("true")) {
+			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+				ModTriggers.COMPLETE_TRIASSIC.trigger((EntityPlayerMP) event.getEntityPlayer());
+			}
+		}
+		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 8, true).equalsIgnoreCase("true")) {
+			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+				ModTriggers.COMPLETE_JURASSIC.trigger((EntityPlayerMP) event.getEntityPlayer());
+			}
+		}
+		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 9, true).equalsIgnoreCase("true")) {
+			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+				ModTriggers.COMPLETE_CRETACEOUS_EARLY.trigger((EntityPlayerMP) event.getEntityPlayer());
+			}
+		}
+
+	}
 
 	protected RayTraceResult rayTrace(World worldIn, EntityPlayer playerIn, boolean useLiquids)
 	{

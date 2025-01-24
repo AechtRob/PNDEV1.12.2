@@ -79,6 +79,15 @@
     ]
   },
 
+  "expert_advancement": {
+    "sounds": [
+      {
+        "name": "lepidodendron:expert_advancement",
+        "stream": false
+      }
+    ]
+  },
+
   "portal_block_initialise": {
     "sounds": [
       {

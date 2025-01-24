@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_thuchomyces",
 			"title": "Thuchomyces",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Archean (Mesoarchean)$(br2)$(l)Habitat:$() Marine$(br2)>Fungi"
+			"text": "$(l)Temporal Range:$() Archean (Mesoarchean)$(br2)$(l)Habitat:$() Terrestrial$(br2)>Fungi(br2)$(l)Propagation:$() Spore/seed collection envelope$(br)$(l)Method of Obtaining:$() Shears"
 		},
 		{
 			"type": "multiblock",
@@ -30,11 +30,6 @@
 			"advancement": "lepidodendron:pf_adv_book_thuchomyces",
 			"type": "text",
 			"text": "Thuchomyces lichenoides comes from the Upper Mesoarchean, with fossils from the Central Rand Group, South Africa. It is a collection of upright tube shapes, and grew up to 3 mm in height. The generic name derives from the mineral name 'thucholite', and the Greek word 'myces', to mean 'fungus'. The specific name derives from the name 'Lichen' and the Latin word 'oid', to mean 'like'."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_thuchomyces",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}
 	]
 }

@@ -1,0 +1,23 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:bone_wand"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_complete_precambrian.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_complete_precambrian.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv",
+    "announce_to_chat": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "complete_pf_precambrian"
+        }
+    },
+    "rewards": {
+        "experience": 50000
+    }
+}

@@ -1,27 +1,36 @@
 package net.lepidodendron.util.patchouli;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.lepidodendron.util.AcidBathOutputPlants;
 import net.lepidodendron.util.AcidBathOutputStatics;
 import net.lepidodendron.world.biome.EntityLists;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientAdvancementManager;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraft.world.WorldServer;
 
 import java.text.DecimalFormat;
 import java.util.Arrays;
 
-@SideOnly(Side.CLIENT)
 public class PercentageCollected {
 
-    public static String getPercentagePerDimension(EntityPlayer player, int dimension) {
+    @SideOnly(Side.CLIENT)
+    public static ClientAdvancementManager getAdvancementManageClient(EntityPlayer player) {
+        return Minecraft.getMinecraft().player.connection.getAdvancementManager();
+    }
+
+    public static String getPercentagePerDimension(EntityPlayer player, int dimension, boolean testComplete) {
 
         if (player == null) {
             return ": no player available!";
         }
+
         double plantCounter = 0;
         double plantCollected = 0;
         double mobCounter = 0;
@@ -117,9 +126,23 @@ public class PercentageCollected {
             advStr = advStr.replace("textures/items/", "");
             advStr = advStr.replace("_icon.png", "");
             advStr = "lepidodendron:pf_adv_book_" + StaticSpawns.getAmendedAdv(advStr);
-            ClientAdvancementManager mgrClient = Minecraft.getMinecraft().player.connection.getAdvancementManager();
-            if (mgrClient.getAdvancementList().getAdvancement(new ResourceLocation(advStr)) != null) {
-                staticCollected++;
+            if ((player instanceof EntityPlayerMP) && (player.world instanceof WorldServer)) {
+                WorldServer worldserver = (WorldServer) player.world;
+                EntityPlayerMP playerMP = (EntityPlayerMP) player;
+                AdvancementManager advancementManager = worldserver.getAdvancementManager();
+                if (advancementManager != null) {
+                    Advancement advancement = advancementManager.getAdvancement(new ResourceLocation(advStr));
+                    if (advancement != null) {
+                        if (playerMP.getAdvancements().getProgress(advancement).isDone()) {
+                            staticCollected++;
+                        }
+                    }
+                }
+            }
+            else if (player.world.isRemote) {
+                if (getAdvancementManageClient(player).getAdvancementList().getAdvancement(new ResourceLocation(advStr)) != null) {
+                    staticCollected++;
+                }
             }
         }
 
@@ -210,9 +233,23 @@ public class PercentageCollected {
             advStr = advStr.replace("textures/items/", "");
             advStr = advStr.replace("_icon.png", "");
             advStr = "lepidodendron:pf_adv_book_" + PlantSpawns.getAmendedAdv(advStr);
-            ClientAdvancementManager mgrClient = Minecraft.getMinecraft().player.connection.getAdvancementManager();
-            if (mgrClient.getAdvancementList().getAdvancement(new ResourceLocation(advStr)) != null) {
-                plantCollected++;
+            if ((player instanceof EntityPlayerMP) && (player.world instanceof WorldServer)) {
+                WorldServer worldserver = (WorldServer) player.world;
+                EntityPlayerMP playerMP = (EntityPlayerMP) player;
+                AdvancementManager advancementManager = worldserver.getAdvancementManager();
+                if (advancementManager != null) {
+                    Advancement advancement = advancementManager.getAdvancement(new ResourceLocation(advStr));
+                    if (advancement != null) {
+                        if (playerMP.getAdvancements().getProgress(advancement).isDone()) {
+                            plantCollected++;
+                        }
+                    }
+                }
+            }
+            else if (player.world.isRemote) {
+                if (getAdvancementManageClient(player).getAdvancementList().getAdvancement(new ResourceLocation(advStr)) != null) {
+                    plantCollected++;
+                }
             }
         }
 
@@ -275,15 +312,32 @@ public class PercentageCollected {
             advStr = advStr.replace("paleopedia:textures/items/", "");
             advStr = advStr.replace("_icon.png", "");
             advStr = "lepidodendron:pf_adv_book_" + DimensionSpawns.getAmendedAdv(advStr);
-            ClientAdvancementManager mgr = Minecraft.getMinecraft().player.connection.getAdvancementManager();
-            if (mgr.getAdvancementList().getAdvancement(new ResourceLocation(advStr)) != null) {
-                mobCollected++;
+            if ((player instanceof EntityPlayerMP) && (player.world instanceof WorldServer)) {
+                WorldServer worldserver = (WorldServer) player.world;
+                EntityPlayerMP playerMP = (EntityPlayerMP) player;
+                AdvancementManager advancementManager = worldserver.getAdvancementManager();
+                if (advancementManager != null) {
+                    Advancement advancement = advancementManager.getAdvancement(new ResourceLocation(advStr));
+                    if (advancement != null) {
+                        if (playerMP.getAdvancements().getProgress(advancement).isDone()) {
+                            mobCollected++;
+                        }
+                    }
+                }
+            }
+            else if (player.world.isRemote) {
+                if (getAdvancementManageClient(player).getAdvancementList().getAdvancement(new ResourceLocation(advStr)) != null) {
+                    mobCollected++;
+                }
             }
         }
 
         DecimalFormat df = new DecimalFormat("##0.00");
         double lifeCounter = plantCounter + staticCounter + mobCounter;
         double lifeCollected = plantCollected + staticCollected + mobCollected;
+        if (testComplete && lifeCollected == lifeCounter) {
+            return "true";
+        }
         return (String)(": " + (int)lifeCollected + " of " + (int)lifeCounter + " (" + df.format(100.00 * ((double)lifeCollected/lifeCounter)) + "%)");
 
     }

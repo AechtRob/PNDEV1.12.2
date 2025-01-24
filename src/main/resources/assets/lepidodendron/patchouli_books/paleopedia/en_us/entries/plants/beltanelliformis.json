@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_beltanelliformis",
 			"title": "Beltanelliformis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>incertae sedis (possibly cyanobacteria)"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>incertae sedis (possibly cyanobacteria)$(br)$(l)Method of Obtaining:$() Shears"
 		},
 		{
 			"type": "multiblock",
@@ -30,11 +30,6 @@
 			"advancement": "lepidodendron:pf_adv_book_beltanelliformis",
 			"type": "text",
 			"text": "Beltanelliformis is an enigmatic discoid organism from the Ediacaran period that is typically found in clusters containing dozens of individuals. It is currently believed to be a macroscopic form of cyanobacteria similar in appearance to the modern algae genus Valonia."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_beltanelliformis",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}
 	]
 }

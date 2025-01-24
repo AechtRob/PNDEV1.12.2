@@ -106,10 +106,10 @@ public class BlockInaria extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		minWaterDepth = 2;
-		maxWaterDepth = 15;
+		maxWaterDepth = 65;
 		startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
-		for (int i = 0; i < 8; i++) {
+		for (int i = 0; i < 18; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;

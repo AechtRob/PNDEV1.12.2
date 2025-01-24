@@ -40,6 +40,9 @@ public final class BlockSounds {
     @GameRegistry.ObjectHolder("submarine_claw")
     public static final SoundEvent SUBMARINE_CLAW = createSoundEvent("submarine_claw");
 
+    @GameRegistry.ObjectHolder("expert_advancement")
+    public static final SoundEvent EXPERT_ADVANCEMENT = createSoundEvent("expert_advancement");
+
     @GameRegistry.ObjectHolder("portal_block_initialise")
     public static final SoundEvent PORTAL_INITIALISE = createSoundEvent("portal_block_initialise");
 
