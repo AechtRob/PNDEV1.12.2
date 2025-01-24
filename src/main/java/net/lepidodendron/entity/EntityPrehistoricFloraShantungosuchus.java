@@ -68,7 +68,7 @@ public class EntityPrehistoricFloraShantungosuchus extends EntityPrehistoricFlor
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 1; //medium
+		return 0; //small
 	}
 
 	public static String getPeriod() {return "Early Cretaceous";}

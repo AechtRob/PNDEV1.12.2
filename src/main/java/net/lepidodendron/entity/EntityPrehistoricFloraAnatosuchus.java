@@ -67,7 +67,7 @@ public class EntityPrehistoricFloraAnatosuchus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 1; //small
+		return 0; //small
 	}
 
 	public static String getPeriod() {return "Early Cretaceous";}
@@ -186,7 +186,7 @@ public class EntityPrehistoricFloraAnatosuchus extends EntityPrehistoricFloraLan
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.MEAT);
+		return ArrayUtils.addAll(DietString.FISH);
 	}
 
 	@Override
