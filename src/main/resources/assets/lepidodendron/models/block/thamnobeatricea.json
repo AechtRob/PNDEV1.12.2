@@ -116,8 +116,7 @@
 			"to": [0, 14, 5],
 			"rotation": {"angle": -22.5, "axis": "y", "origin": [0, 8, 6]},
 			"faces": {
-				"south": {"uv": [2, 0, 0, 12], "texture": "#texture"},
-				"up": {"uv": [0, 0, 2, 0], "texture": "#missing"}
+				"south": {"uv": [2, 0, 0, 12], "texture": "#texture"}
 			}
 		},
 		{

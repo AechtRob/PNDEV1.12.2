@@ -175,15 +175,6 @@
 			}
 		},
 		{
-			"from": [12, 1, 6],
-			"to": [12, 2, 7],
-			"rotation": {"angle": -22.5, "axis": "z", "origin": [12, 1, 6]},
-			"faces": {
-				"up": {"uv": [0, 0, 1, 0], "rotation": 270, "texture": "#missing"},
-				"down": {"uv": [0, 0, 1, 0], "rotation": 270, "texture": "#missing"}
-			}
-		},
-		{
 			"from": [5, 1, 10],
 			"to": [6, 1, 11],
 			"rotation": {"angle": 22.5, "axis": "z", "origin": [5, 1, 10]},
