@@ -4,6 +4,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.boats.EntityPNBoat;
+import net.lepidodendron.entity.boats.EntityRaft;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.render.entity.*;
 import net.lepidodendron.entity.render.tile.*;
@@ -7110,6 +7111,12 @@ public class RenderHandler {
             @Override
             public Render<? super PrehistoricFloraSubmarine> createRenderFor(RenderManager manager) {
                 return new RenderSubmarine(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityRaft.class, new IRenderFactory<EntityRaft>() {
+            @Override
+            public Render<? super EntityRaft> createRenderFor(RenderManager manager) {
+                return new RenderRaft(manager);
             }
         });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBuoy.class, new IRenderFactory<EntityPrehistoricFloraBuoy>() {

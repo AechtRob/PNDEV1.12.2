@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.model.entity.ModelSubmarine;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
@@ -24,7 +23,7 @@ import java.util.List;
 public class RenderSubmarine extends Render<PrehistoricFloraSubmarine> {
 
     private static final ResourceLocation TEXTURE_SUBMARINE = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_submarine.png");
-    protected ModelBase modelBoat = new ModelSubmarine();
+    protected ModelSubmarine modelBoat = new ModelSubmarine();
     private static final DynamicTexture TEXTURE_BRIGHTNESS = new DynamicTexture(16, 16);
     protected FloatBuffer brightnessBuffer = GLAllocation.createDirectFloatBuffer(4);
     protected List<LayerRendererBoat<PrehistoricFloraSubmarine>> layerRenderers = Lists.<LayerRendererBoat<PrehistoricFloraSubmarine>>newArrayList();
@@ -59,6 +58,7 @@ public class RenderSubmarine extends Render<PrehistoricFloraSubmarine> {
             GlStateManager.enableOutlineMode(this.getTeamColor(entity));
         }
 
+        //RenderHelper.enableStandardItemLighting();
         this.modelBoat.render(entity, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
 
         if (this.renderOutlines)
@@ -71,8 +71,8 @@ public class RenderSubmarine extends Render<PrehistoricFloraSubmarine> {
         else {
             this.renderLayers(entity, 0.0F, 0.0F, partialTicks, -0.1F, 0.0F, 0.0F, 0.0625F);
         }
-
         GlStateManager.popMatrix();
+
         super.doRender(entity, x, y, z, entityYaw, partialTicks);
     }
 

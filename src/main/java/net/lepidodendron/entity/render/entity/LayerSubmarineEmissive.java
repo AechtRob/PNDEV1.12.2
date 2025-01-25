@@ -44,7 +44,7 @@ public class LayerSubmarineEmissive implements LayerRendererBoat<PrehistoricFlor
             Minecraft.getMinecraft().entityRenderer.setupFogColor(true);
             this.SubmarineRenderer.modelBoat.setModelAttributes(this.SubmarineRenderer.modelBoat);
             this.SubmarineRenderer.modelBoat.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, submarineIn);
-            this.SubmarineRenderer.modelBoat.render(submarineIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+            this.SubmarineRenderer.modelBoat.renderLayer(submarineIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
             Minecraft.getMinecraft().entityRenderer.setupFogColor(false);
             i = submarineIn.getBrightnessForRender();
             j = i % 65536;

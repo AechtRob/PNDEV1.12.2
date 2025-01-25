@@ -197,7 +197,22 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_algae_green",
 			"type": "text",
-			"text": "Algae is an informal name used for a diverse group of photosynthetic eukaryotic organisms, not necessarily closely related to each other, nor sharing a common ancestor. They range from unicellular to macroscopic and inhabit both marine and freshwater settings, as well as on land in wet places. They are thought to have arisen various times when photosynthesizing cyanobacteria were engulfed by another type of eukaryotic cell, and this event happened multiple times starting somewhere around 1.5 billion year ago. The earliest estimates for green-coloured algae are from the Mesoproterozoic; the earliest estimates for red algae are from earlier, and we have what appear to be red algae fossils from 1.6 billion years ago. Finally, brown algae appear to have arisen comparatively recently, with estimates ranging from 150 to 200 million years ago. Brown algae fossilises less readily, due to a more soft tissue: there are proposed fossils from several periods from the Ordovician onwards, although none have been reliably shown to be brown algae. The earliest fossils with certain-knowledge date only from the Miocene, although there is a more general consensus that macroscopic brown algae existed by the Jurassic period. Green algae are of particular interest in our mod, as it is thought that Chara-like green algae were the organisms which began to give rise to the earliest primitive plants during the late Cambrian or Ordovician."
+			"text": "Algae is an informal name used for a diverse group of photosynthetic eukaryotic organisms, not necessarily closely related to each other, nor sharing a common ancestor. They range from unicellular to macroscopic and inhabit both marine and freshwater settings, as well as on land in wet places. They are thought to have arisen various times when photosynthesizing cyanobacteria were engulfed by another type of eukaryotic cell,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_algae_green",
+			"type": "text",
+			"text": "and this event happened multiple times starting somewhere around 1.5 billion year ago. The earliest estimates for green-coloured algae are from the Mesoproterozoic; the earliest estimates for red algae are from earlier, and we have what appear to be red algae fossils from 1.6 billion years ago. Finally, brown algae appear to have arisen comparatively recently, with estimates ranging from 150 to 200 million years ago. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_algae_green",
+			"type": "text",
+			"text": "Brown algae fossilises less readily, due to a more soft tissue: there are proposed fossils from several periods from the Ordovician onwards, although none have been reliably shown to be brown algae. The earliest fossils with certain-knowledge date only from the Miocene, although there is a more general consensus that macroscopic brown algae existed by the Jurassic period."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_algae_green",
+			"type": "text",
+			"text": "Green algae are of particular interest in our mod, as it is thought that Chara-like green algae were the organisms which began to give rise to the earliest primitive plants during the late Cambrian or Ordovician."
 		}
 	]
 }

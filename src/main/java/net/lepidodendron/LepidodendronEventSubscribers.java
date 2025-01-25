@@ -955,6 +955,7 @@ public class LepidodendronEventSubscribers {
 				(event.player.world.provider.getDimension() == LepidodendronConfig.dimDevonian
 						|| event.player.world.provider.getDimension() == LepidodendronConfig.dimCarboniferous
 						|| event.player.world.provider.getDimension() == LepidodendronConfig.dimCretaceousEarly
+						|| event.player.world.provider.getDimension() == LepidodendronConfig.dimPrecambrian
 				)
 		) {
 			Entity entity = event.player;
