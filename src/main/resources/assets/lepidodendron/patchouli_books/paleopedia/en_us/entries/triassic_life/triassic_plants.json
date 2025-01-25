@@ -1,12 +1,12 @@
 {
-	"name": "Triassic Flora",
+	"name": "Triassic Flora, Fungi, etc.",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
 	"category": "lepidodendron:triassic/triassic_life",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Triassic Flora$(br2)$()Text here..."
+			"text": "$(l)Triassic Flora, Fungi, etc.$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:plantspawns1",

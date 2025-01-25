@@ -1784,6 +1784,9 @@ public class ModTriggers
     public static final CustomTrigger CLICK_LOBODISCUS = new CustomTrigger("pf_book_lobodiscus");
     public static final CustomTrigger CLICK_ANFESTA = new CustomTrigger("pf_book_anfesta");
     public static final CustomTrigger CLICK_DISCOSERRA = new CustomTrigger("pf_book_discoserra");
+    public static final CustomTrigger CLICK_BACTERIAL_CRUST = new CustomTrigger("pf_book_bacterial_crust");
+    public static final CustomTrigger CLICK_MICROBIAL_MAT = new CustomTrigger("pf_book_bacterial_layer");
+    public static final CustomTrigger CLICK_MICROBIAL_MAT_ARCHEAN = new CustomTrigger("pf_book_bacterial_layer_archean");
 
 
 
@@ -3556,7 +3559,10 @@ public class ModTriggers
             CLICK_HALLIDAYA,
             CLICK_LOBODISCUS,
             CLICK_ANFESTA,
-            CLICK_DISCOSERRA
+            CLICK_DISCOSERRA,
+            CLICK_BACTERIAL_CRUST,
+            CLICK_MICROBIAL_MAT,
+            CLICK_MICROBIAL_MAT_ARCHEAN
 
 
 

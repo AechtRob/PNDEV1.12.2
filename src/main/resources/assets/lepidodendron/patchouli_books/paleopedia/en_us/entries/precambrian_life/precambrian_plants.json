@@ -1,12 +1,12 @@
 {
-	"name": "Precambrian Flora",
+	"name": "Precambrian Flora, Fungi, etc.",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_precambrian.png",
 	"category": "lepidodendron:precambrian/precambrian_life",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Precambrian Flora$(br2)$()Text here..."
+			"text": "$(l)Precambrian Flora, Fungi, etc.$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:plantspawns1",

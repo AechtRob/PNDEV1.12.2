@@ -1,12 +1,12 @@
 {
-	"name": "Devonian Flora",
+	"name": "Devonian Flora, Fungi, etc.",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
 	"category": "lepidodendron:devonian/devonian_life",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Devonian Flora$(br2)$()Text here..."
+			"text": "$(l)Devonian Flora, Fungi, etc.$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:plantspawns1",
