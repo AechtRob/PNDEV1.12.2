@@ -7310,6 +7310,8 @@ public class RenderHandler {
         if (LepidodendronConfig.modFlowerpot) {
             ClientRegistry.bindTileEntitySpecialRenderer(BlockFlowerpotPN.TileEntityFlowerPotPN.class, new RenderFlowerPotPN());
         }
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockRhyniaWater.TileEntityRhyniaWater.class, new RenderRhyniaWater());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockRhyniaWaterSpore.TileEntityRhyniaWaterSpore.class, new RenderRhyniaWaterSpore());
 
         //Portal Blocks:
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPortalBlock.class, new RenderPortalBlock());
