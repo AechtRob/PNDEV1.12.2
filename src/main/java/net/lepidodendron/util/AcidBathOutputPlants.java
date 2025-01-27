@@ -328,6 +328,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockGreenLeafyAlgae.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPiledAlgae.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockRedLeafyAlgae.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockThucydia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockRedTuftedAlgae.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockStalkedAlgae.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGreenCharaAlgae.block).toString(),
