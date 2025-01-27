@@ -200,15 +200,8 @@ public class LepidodendronBookSubscribers {
 			if (!event.getItemStack().getTagCompound().toString().contains("lepidodendron:paleopedia")) {
 				return;
 			}
-			RayTraceResult raytraceresult = this.rayTrace(event.getWorld(), event.getEntityPlayer(), true);
-			if (raytraceresult != null && !event.getEntityPlayer().isSneaking()) {
-				event.setCanceled(true);
-				return;
-			}
-			if (!event.getEntityPlayer().isSneaking()) {
-				event.setCanceled(true);
-				return;
-			}
+			event.setCanceled(true);
+			return;
 		}
 	}
 

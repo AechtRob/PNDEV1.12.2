@@ -6445,6 +6445,7 @@ key.lepidodendron.boatup=Steer the Submarine upwards
 key.lepidodendron.boatbucket=Use the Submarine bucketer
 key.lepidodendron.boatarm=Use the Submarine clawed-arm
 key.lepidodendron.seetaxidermy=Hold to view floor taxidermy or fossil hitbox
+key.lepidodendron.palaeopedia=Open the Palaeopedia in your hand
 oredict.cropSeaweed.name=Algae
 oredict.dietEncruster.name=Smaller static water creatures
 oredict.foodCalamaricooked.name=Nautiloids, Cephalopods and similar
@@ -9278,7 +9279,7 @@ tile.pf_zygopteris_sapling.name=Zygopteris Sapling
 icon.pf_zygopteris.name=Zygopteris
 tile.pf_zygopteris_shoot.name=Zygopteris Shoot
 tile.pf_zygopteris_shoot_worldgen.name=Zygopteris Shoot
-tooltip.palaeopedia.name=Shift-right-click to open the book. Normal right-click to use the book on mobs and blocks.
+tooltip.palaeopedia.name=to open the book. Right-click to use the book on mobs and blocks.
 
 
 advancements.pf_adv_book_alienum.description=Unlock the entry for Alienum in the Palaeopedia to gain extra new pages about it!
