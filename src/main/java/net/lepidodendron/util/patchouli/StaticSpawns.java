@@ -255,15 +255,13 @@ public class StaticSpawns {
                 || staticStr.equalsIgnoreCase("fenestella_2")
                 || staticStr.equalsIgnoreCase("fenestella_3")
                 || staticStr.equalsIgnoreCase("fenestella_4")
-                || staticStr.equalsIgnoreCase("fenestella_5")) {
-            return "fenestella";
-        }
-        if (staticStr.equalsIgnoreCase("fenestella_giant_blue")
+                || staticStr.equalsIgnoreCase("fenestella_5")
+                || staticStr.equalsIgnoreCase("fenestella_giant_blue")
                 || staticStr.equalsIgnoreCase("fenestella_giant_green")
                 || staticStr.equalsIgnoreCase("fenestella_giant_orange")
                 || staticStr.equalsIgnoreCase("fenestella_giant_red")
                 || staticStr.equalsIgnoreCase("fenestella_giant_yellow")) {
-            return "fenestella_giant";
+            return "fenestella";
         }
         if (staticStr.equalsIgnoreCase("coral")
                 || staticStr.equalsIgnoreCase("coral_sticky")) {
