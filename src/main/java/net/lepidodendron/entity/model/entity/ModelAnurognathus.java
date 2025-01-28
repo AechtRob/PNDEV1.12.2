@@ -291,6 +291,10 @@ public class ModelAnurognathus extends ModelBasePalaeopedia {
         this.main.render(f5);
     }
 
+    public void renderHeadForJurassicPortal(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+        this.neck.render(f5);
+    }
+
     public void renderStaticSuspended(float f) {
         this.setRotateAngle(upperbody, 0.0F, 0.0436F, 0.0F);
         this.setRotateAngle(tail2, 0.2633F, 0.1289F, 0.0229F);

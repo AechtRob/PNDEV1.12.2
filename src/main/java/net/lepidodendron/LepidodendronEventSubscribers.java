@@ -275,6 +275,17 @@ public class LepidodendronEventSubscribers {
 				}
 			}
 		}
+		if (!Loader.isModLoaded("vintagefix")) {
+			Entity entity = event.getEntity();
+			if (entity instanceof EntityPlayer) {
+				EntityPlayer player = (EntityPlayer) entity;
+				if ((event.getEntity() instanceof EntityPlayerMP) && (entity.world instanceof WorldServer)) {
+					ITextComponent itextcomponent = new TextComponentString("Prehistoric Nature is a big mod and many computers may struggle: we strongly advise you to install the mod VintageFix and its dependency, MixinBooter. Installing this will normally eliminate memory, lag and fps issues while running Prehistoric Nature.");
+					itextcomponent.getStyle().setColor(TextFormatting.RED).setItalic(Boolean.valueOf(true));
+					entity.sendMessage(itextcomponent);
+				}
+			}
+		}
 	}
 
 	@SubscribeEvent //Default to standard attack behaviour

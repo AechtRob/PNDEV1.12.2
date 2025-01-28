@@ -42,6 +42,8 @@ public class VillagerPalaeobotanist {
         palaeoCareer.addTrade(1, new EntityVillager.EmeraldForItems(Items.FLOWER_POT, new EntityVillager.PriceInfo(8, 8)));
         palaeoCareer.addTrade(1, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockHayThatchBundle.block), new EntityVillager.PriceInfo(8, 8)));
 
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockPortalBlockOverworld.block, 1), new EntityVillager.PriceInfo(2, 4)));
+
 //        //Temporary trades:
 //        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemPetrifiedPrototaxites.block, 1), new EntityVillager.PriceInfo(2, 2)));
 //        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemPetrifiedArchaeopterisSapling.block, 1), new EntityVillager.PriceInfo(2, 2)));
