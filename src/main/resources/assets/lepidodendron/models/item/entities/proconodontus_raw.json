@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:items/proconodontus_icon"
+    "layer0": "paleopedia:items/conodont_proconodontus_icon"
   }
 }

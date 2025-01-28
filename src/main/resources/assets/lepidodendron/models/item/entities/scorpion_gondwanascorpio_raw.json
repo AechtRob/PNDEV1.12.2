@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:items/gondwanascorpio_icon"
+    "layer0": "paleopedia:items/scorpion_gondwanascorpio_icon"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/trigonotarbid_cryptomartus_raw"
+    "layer0": "paleopedia:items/trigonotarbid_cryptomartus_icon"
   }
 }
