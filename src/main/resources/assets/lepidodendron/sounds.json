@@ -169,6 +169,14 @@
       }
     ]
   },
+  "portal_block_triassic": {
+    "sounds": [
+      {
+        "name": "lepidodendron:portal_block_triassic",
+        "stream": false
+      }
+    ]
+  },
 
   "open_drawer": {
     "sounds": [
