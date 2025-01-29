@@ -183,19 +183,19 @@ public class EntityPrehistoricFloraEoherpeton extends EntityPrehistoricFloraSwim
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:greererpeton_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:proterogyrinus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:greererpeton_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:proterogyrinus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:greererpeton_death"));
+	            .getObject(new ResourceLocation("lepidodendron:proterogyrinus_death"));
 	}
 
 	@Override

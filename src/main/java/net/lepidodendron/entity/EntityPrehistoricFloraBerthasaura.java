@@ -11,6 +11,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
@@ -41,8 +42,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
-public class EntityPrehistoricFloraBerthasaura extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
+public class EntityPrehistoricFloraBerthasaura extends EntityPrehistoricFloraLandBase implements IScreamer, ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -50,7 +52,8 @@ public class EntityPrehistoricFloraBerthasaura extends EntityPrehistoricFloraLan
 	public int ambientSoundTime;
 	public Animation ALERT_ANIMATION;
 	private int standCooldown;
-
+	private boolean screaming;
+	public int screamAlarmCooldown;
 
 	public EntityPrehistoricFloraBerthasaura(World world) {
 		super(world);
@@ -104,6 +107,10 @@ public class EntityPrehistoricFloraBerthasaura extends EntityPrehistoricFloraLan
 
 	@Override
 	public boolean hasNest() {
+		return true;
+	}
+
+	public boolean hasAlarm() {
 		return true;
 	}
 
@@ -177,6 +184,18 @@ public class EntityPrehistoricFloraBerthasaura extends EntityPrehistoricFloraLan
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
+	}
+
+	public void playAlarmSound()
+	{
+		SoundEvent soundevent = this.getAlarmSound();
+		//System.err.println("looking for alarm sound");
+		if (soundevent != null)
+		{
+			//System.err.println("playing alarm sound");
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			this.screamAlarmCooldown = 20;
+		}
 	}
 
 	@Override
@@ -302,19 +321,24 @@ public class EntityPrehistoricFloraBerthasaura extends EntityPrehistoricFloraLan
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:eocursor_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:berthasaura_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:eocursor_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:berthasaura_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:eocursor_death"));
+	            .getObject(new ResourceLocation("lepidodendron:berthasaura_death"));
+	}
+
+	public SoundEvent getAlarmSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:berthasaura_alarm"));
 	}
 
 	@Override
@@ -349,10 +373,22 @@ public class EntityPrehistoricFloraBerthasaura extends EntityPrehistoricFloraLan
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 
+		if (this.screamAlarmCooldown > 0) {
+			this.screamAlarmCooldown -= 1;
+		}
+		if (this.getScreaming() && screamAlarmCooldown <= 0) {
+			this.playAlarmSound();
+		}
+
 		//Sometimes stand up and look around:
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
+		if ((!this.getScreaming()) && (!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			this.setAnimation(ALERT_ANIMATION);
+			SoundEvent soundevent = this.getAlarmSound();
+			if (soundevent != null)
+			{
+				this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			}
 			this.standCooldown = 2000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
@@ -427,6 +463,30 @@ public class EntityPrehistoricFloraBerthasaura extends EntityPrehistoricFloraLan
 			//System.err.println("set attack");
 		}
 		return false;
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		Entity e = ds.getTrueSource();
+		if (e instanceof EntityLivingBase && this.hasAlarm()) {
+			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
+			List<EntityPrehistoricFloraBerthasaura> Berthasaura = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraBerthasaura.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraBerthasaura currentBerthasaura : Berthasaura) {
+				currentBerthasaura.setRevengeTarget(ee);
+				currentBerthasaura.setAlarmTarget(ee);
+				currentBerthasaura.screamAlarmCooldown = rand.nextInt(20);
+			}
+		}
+		return super.attackEntityFrom(ds, i);
+	}
+
+	public void setScreaming(boolean screaming) {
+		this.screaming = screaming;
+	}
+
+	public boolean getScreaming() {
+		return this.screaming;
 	}
 
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
