@@ -233,11 +233,21 @@ public class ModelKalops extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
+        this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.main.offsetX = -0.04F;
+        this.main.offsetY = -0.2F;
+        this.main.offsetZ = -1.09F;
         this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.2F, 0.0F);
         this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.2F, 0.0F);
         this.main.offsetY = -0.14F;
         this.main.render(0.01F);
         resetToDefaultPose();

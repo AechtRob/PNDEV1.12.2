@@ -550,20 +550,46 @@ public class ModelArcestes extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
-
     public void renderStaticFloor(float f) {
-        this.root.offsetY = 0.15F;
+        this.setRotateAngle(root, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Leg1left, -0.7F, -0.3F, 0.0F);
+        this.setRotateAngle(Leg2left, -0.3F, 0.1F, 0.0F);
+        this.setRotateAngle(Leg3left, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(Leg4left, -0.0F, 1.5F, 0.0F);
+        this.setRotateAngle(Leg1right, -1.5F, 0.3F, -0.4F);
+        this.setRotateAngle(Leg2right, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(Leg3right, 0.0F, -0.8F, 0.0F);
+        this.setRotateAngle(Leg4right, 0.0F, -0.8F, 0.0F);
+        this.root.offsetY = 0.175F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticSuspended(float f) {
-        this.root.offsetY = 0.15F;
-        this.root.render(0.01F);
-        resetToDefaultPose();
-    }
-    public void renderStaticWall(float f) {
+        this.setRotateAngle(root, -0.4F, 0.2F, -0.3F);
+        this.setRotateAngle(Leg1left, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Leg2left, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Leg3left, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Leg4left, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Leg5left, 0.0F, -0.5F, 0.0F);
+        this.setRotateAngle(Leg1right, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Leg2right, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Leg3right, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Leg4right, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Leg5right, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(Tentacle1a, 0.2F, 0.1F, 3.2F);
+        this.setRotateAngle(Tentacle1b, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tentacle2a, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Tentacle2b, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tentacle3a, 0.2F, -0.1F, 0.0F);
+        this.setRotateAngle(Tentacle3b, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tentacle4a, 0.2F, 0.1F, 3.0F);
+        this.setRotateAngle(Tentacle4b, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tentacle5a, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tentacle5b, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tentacle6a, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(Tentacle6b, 0.0F, 0.0F, 0.0F);
         this.root.offsetY = -0.2F;
-        this.root.offsetZ = -0.025F;
+        this.root.offsetX = 0.01F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }

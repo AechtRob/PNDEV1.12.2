@@ -36,7 +36,7 @@ public class ItemCommentryaRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_commentrya@gendered", ItemCommentryaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_commentrya", ItemCommentryaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemCommentryaRaw.block);
 		OreDictionary.registerOre("pnfurnaceFish", ItemCommentryaRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemCommentryaRaw.block);
@@ -50,9 +50,5 @@ public class ItemCommentryaRaw extends ElementsLepidodendronMod.ModElement {
 			setMaxStackSize(64);
 		}
 
-		@Nullable
-		public String getVariantStr() {
-			return "gendered";
-		}
 	}
 }

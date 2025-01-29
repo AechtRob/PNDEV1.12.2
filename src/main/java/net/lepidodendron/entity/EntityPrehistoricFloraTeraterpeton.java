@@ -345,7 +345,7 @@ public class EntityPrehistoricFloraTeraterpeton extends EntityPrehistoricFloraLa
 	public static double upperbacklineoffset(@Nullable String variant) {return 0.0;}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {return 0.0;}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0.0;}
-	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.5;}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.2;}
 	public static double lowerfrontlineoffset(@Nullable String variant) {return 0.0;}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return -1.2;}
 	public static double lowerbacklineoffset(@Nullable String variant) {return 0.0;}

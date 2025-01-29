@@ -36,7 +36,7 @@ public class ItemKalopsRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_kalops@gendered", ItemKalopsRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_kalops", ItemKalopsRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemKalopsRaw.block);
 		OreDictionary.registerOre("pnfurnaceFish", ItemKalopsRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemKalopsRaw.block);
@@ -50,9 +50,5 @@ public class ItemKalopsRaw extends ElementsLepidodendronMod.ModElement {
 			setMaxStackSize(64);
 		}
 
-		@Nullable
-		public String getVariantStr() {
-			return "gendered";
-		}
 	}
 }

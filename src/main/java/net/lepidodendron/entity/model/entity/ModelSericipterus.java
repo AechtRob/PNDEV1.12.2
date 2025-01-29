@@ -472,18 +472,101 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(chest, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(head2, 0.6F, -0.0F, -0.2F);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(leftwing, -0.0F, 0.4F, -0.4F);
+        this.setRotateAngle(leftwing2, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(leftwing3, -1.3F, 0.0F, 0.5F);
+        this.setRotateAngle(leftwing4, 0.0F, -0.5F, 0.0F);
+        this.setRotateAngle(lefthand, 0.0F,-0.0F, 1.5F);
+        this.setRotateAngle(rightwing, 0.0F, -0.4F, 0.4F);
+        this.setRotateAngle(rightwing2, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(rightwing3, -1.3F, 0.0F, -0.5F);
+        this.setRotateAngle(rightwing4, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(righthand, 0.0F,0.0F, 0.0F);
+        this.leftleg.setScale(0,0,0);
+        this.rightleg.setScale(0,0,0);
+        this.leftleg.scaleChildren = true;
+        this.rightleg.scaleChildren = true;
+        this.leftleg.setScale(1,1,1);
+        this.rightleg.setScale(1,1,1);
+        this.root.offsetY = -0.15F;
+        this.root.offsetX = 0.0F;
+        this.root.offsetZ = -0.22F;
+        this.root.render(0.01F);
+        this.leftleg.setScale(1,1,1);
+        this.rightleg.setScale(1,1,1);
+        resetToDefaultPose();
+    }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.root.offsetZ = -0.3F;
-        this.jaw.rotateAngleX = (float) Math.toRadians(25);
-        this.root.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(chest, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, 0.2F, 0.2F, 0.2F);
+        this.setRotateAngle(head2, 0.5F, 0.0F, -0.0F);
+        this.setRotateAngle(jaw, 0.25F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(leftleg2, 0.5F, 0.0F, 0.4F);
+        this.setRotateAngle(leftfoot, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(rightleg2, 0.5F, 0.0F, -0.4F);
+        this.setRotateAngle(rightfoot, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftwing, -0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(leftwing2, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(leftwing3, -1.4F, 0.0F, 0.2F);
+        this.setRotateAngle(leftwing4, 0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(lefthand, 0.0F,0.0F, 1.5F);
+        this.setRotateAngle(rightwing, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(rightwing2, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(rightwing3, -1.4F, 0.0F, -0.2F);
+        this.setRotateAngle(rightwing4, 0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(righthand, 0.0F,0.0F, -1.5F);
+        this.root.offsetY = -0.2F;
+        this.root.offsetZ = 0.03F;
+        this.root.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(chest, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(head2, 0.05F, 0.0F, -0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.0F, 0.1F);
+        this.setRotateAngle(tail3, 0.1F, 0.0F, 0.1F);
+        this.setRotateAngle(tail4, 0.1F, 0.0F, 0.1F);
+        this.setRotateAngle(tail5, 0.2F, 0.0F, 0.2F);
+        this.setRotateAngle(leftleg, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(leftleg2, 1.0F, 0.0F, 0.4F);
+        this.setRotateAngle(leftfoot, 1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(rightleg2, 1.2F, 0.0F, -0.4F);
+        this.setRotateAngle(rightfoot, 1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(leftwing, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(leftwing2, 0.2F, 0.0F, -1.5F);
+        this.setRotateAngle(leftwing3, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(leftwing4, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(lefthand, 0.0F,0.0F, 1.5F);
+        this.setRotateAngle(rightwing, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(rightwing2, -0.2F, 0.0F, 1.5F);
+        this.setRotateAngle(rightwing3, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing4, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(righthand, 0.0F,0.0F, -1.5F);
+        this.root.offsetY = -0.0F;
+        this.root.offsetZ = 0.03F;
+        this.root.render(0.01F);
+        resetToDefaultPose();
     }
 
     @Override
@@ -505,15 +588,6 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
         //Reset rotations, positions and sizing:
         this.root.setScale(1.0F, 1.0F, 1.0F);
         this.root.scaleChildren = false;
-        resetToDefaultPose();
-    }
-    public void renderStaticFloor(float f) {
-        resetToDefaultPose();
-    }
-    public void renderStaticWall(float f) {
-        resetToDefaultPose();
-    }
-    public void renderStaticSuspended(float f) {
         resetToDefaultPose();
     }
 

@@ -430,12 +430,44 @@ public class ModelPholidogaster extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.hip.render(f5);
     }
-    public void renderStaticWall(float f) {
 
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(chest, 0.0F, -0.0F, -0.1F);
+        this.setRotateAngle(head, -0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(armleft, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(armleft2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(armright, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(armright2, 0.0F, 0.0F, 0.0F);
+        this.chest.offsetZ = -0.12F;
+        this.chest.offsetY = -0.01F;
+        this.chest.offsetX = -0.0F;
+        this.chest.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(hip, 0.3F, 0.0F, 0.1F);
+        this.setRotateAngle(body, 0.0F, 0.25F, 0.1F);
+        this.setRotateAngle(body2, -0.1F, -0.15F, -0.05F);
+        this.setRotateAngle(chest, -0.15F, -0.2F, -0.1F);
+        this.setRotateAngle(head, -0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.1F, 0.25F, 0.0F);
+        this.setRotateAngle(tail2, -0.1F, 0.25F, 0.0F);
+        this.setRotateAngle(tail3, -0.0F, 0.25F, 0.0F);
+        this.setRotateAngle(armleft, 0.0F, -1.0F, 0.8F);
+        this.setRotateAngle(armleft2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(armright, 0.0F, 1.0F, -0.8F);
+        this.setRotateAngle(armright2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legleft, 0.0F, -0.8F, 0.8F);
+        this.setRotateAngle(legleft2, 0.0F, -0.4F, 0.5F);
+        this.setRotateAngle(legleft3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legright, 0.0F, 0.8F, -0.8F);
+        this.setRotateAngle(legright2, 0.0F, 0.4F, -0.5F);
+        this.setRotateAngle(legright3, 0.0F, 0.0F, 0.0F);
+        this.hip.offsetY = -0.11F;
+        this.hip.offsetX = 0.025F;
+        this.hip.render(0.01F);
         resetToDefaultPose();
     }
     @Override

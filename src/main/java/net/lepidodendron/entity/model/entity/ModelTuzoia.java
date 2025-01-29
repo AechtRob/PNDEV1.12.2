@@ -416,14 +416,9 @@ public class ModelTuzoia extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5 );
     }
-    public void renderStaticDisplayCase(float f) {
-        this.body.offsetZ = -0.05F;
-        this.body.render(0.01F);
-        resetToDefaultPose();
-    }
     public void renderStaticFloor(float f) {
-        this.body.rotateAngleY = (float) Math.toRadians(90);
-        this.body.offsetY = -0.32F;
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.05F);
+        this.body.offsetY = -0.1F;
         this.body.offsetZ = -0.02F;
         this.body.render(0.01F);
         resetToDefaultPose();

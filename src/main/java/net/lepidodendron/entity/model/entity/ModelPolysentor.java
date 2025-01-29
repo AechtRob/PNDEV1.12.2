@@ -214,7 +214,7 @@ public class ModelPolysentor extends ModelBasePalaeopedia {
     public void renderStaticWall(float f) {
         this.root.rotateAngleY = (float) Math.toRadians(90);
         this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
-        this.root.offsetZ = -1.15F;
+        this.root.offsetZ = -0.88F;
         this.root.offsetY = -0.2F;
         this.root.offsetX = -0.0F;
         this.root.render(0.01F);

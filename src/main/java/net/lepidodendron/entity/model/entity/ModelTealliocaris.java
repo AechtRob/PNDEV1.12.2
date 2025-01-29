@@ -284,15 +284,13 @@ public class ModelTealliocaris extends ModelBasePalaeopedia {
         this.base.render(f5);
     }
     public void renderStaticFloor(float f) {
-        this.base.offsetZ = -0.03F;
-        this.base.offsetY = 0.04F;
-        this.base.offsetX = -0.0F;
+        this.setRotateAngle(base, -0.1F, 0.0F, -0.0F);
+        this.setRotateAngle(body, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.1F, 0.0F, 0.0F);
+        this.base.offsetZ = -0.0F;
+        this.base.offsetY = -0.04F;
         this.base.render(0.01F);
-        resetToDefaultPose();
-    }
-    public void renderStaticDisplayCase(float f) {
-        this.base.offsetZ = 0.030F;
-        this.base.render(0.01f);
         resetToDefaultPose();
     }
     @Override
@@ -307,10 +305,10 @@ public class ModelTealliocaris extends ModelBasePalaeopedia {
         float scaler = 5.0F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(base, -0.2F, 3.0F, -0.05F);
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.05F);
-        this.setRotateAngle(body2, 0.0F, 0.0F, 0.05F);
-        this.setRotateAngle(body3, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(base, -0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, -0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.base.render(f);
         //Reset rotations, positions and sizing:

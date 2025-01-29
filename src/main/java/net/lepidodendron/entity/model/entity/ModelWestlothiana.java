@@ -240,12 +240,19 @@ public class ModelWestlothiana extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.hip.render(f5);
     }
-    public void renderStaticWall(float f) {
-
-        resetToDefaultPose();
-    }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(hip, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(head, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.15F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, -0.4F, 0.0F);
+        this.setRotateAngle(tail3, 0.03F, -0.2F, 0.0F);
+        this.hip.offsetY = 0.17F;
+        this.hip.render(0.01F);
         resetToDefaultPose();
     }
     @Override
