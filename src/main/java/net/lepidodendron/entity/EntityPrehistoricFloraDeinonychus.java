@@ -265,7 +265,7 @@ public class EntityPrehistoricFloraDeinonychus extends EntityPrehistoricFloraLan
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:deinonychus_idle2"));
+				.getObject(new ResourceLocation("lepidodendron:deinonychus_idle"));
 	}
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {

@@ -169,19 +169,19 @@ public class EntityPrehistoricFloraNigerpeton extends EntityPrehistoricFloraSwim
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:metoposaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:eryops_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:metoposaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:eryops_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:metoposaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:eryops_death"));
 	}
 
 	@Override
