@@ -98,8 +98,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
         if (entity.hasWorld()) {
             if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockOverworld.block) {
 
-                if (entity.getIsActive()) {
-                    transparency = Math.min((float) (entity.getAnimationTick() + 5 + partialTicks) / 60F, 1F);
+                if (entity.getIsActive() && entity.getAnimationTick() >= 89) {
+                    transparency = 1F;
                 }
                 else {
                     transparency = Math.min((float) (entity.getAnimationTick() - 30 + partialTicks) / 60F, 1F);
@@ -182,12 +182,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
             //----------
             else if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockPrecambrian.block) {
 
-                if (entity.getIsActive()) {
-                    transparency = Math.min((float) (entity.getAnimationTick() + 5 + partialTicks) / 60F, 1F);
-                }
-                else {
-                    transparency = Math.min((float) (entity.getAnimationTick() - 30 + partialTicks) / 60F, 1F);
-                }
+                transparency = Math.min((float) (entity.getAnimationTick() + partialTicks) / 90F, 1F);
 
                 ModelPortalBlockPrecambrian modelPortalBlockPrecambrian = this.modelPortalBlockPrecambrian;
 
@@ -224,7 +219,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
             else if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockCambrian.block) {
 
                 if (entity.getIsActive()) {
-                    transparency = 1F;
+                    transparency = Math.min((float) (entity.getAnimationTick() + 55F + partialTicks) / 90F, 1F);
                 }
                 else {
                     transparency = Math.min((float) (entity.getAnimationTick() + partialTicks) / 90F, 1F);
@@ -589,7 +584,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
             else if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockOrdovician.block) {
 
                 if (entity.getIsActive()) {
-                    transparency = 1F;
+                    transparency = Math.min((float) (entity.getAnimationTick() + 55F + partialTicks) / 90F, 1F);
                 }
                 else {
                     transparency = Math.min((float) (entity.getAnimationTick() + partialTicks) / 90F, 1F);
@@ -953,10 +948,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
             else if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockSilurian.block) {
 
                 if (entity.getIsActive()) {
-                    transparency = 1F;
+                    transparency = Math.min((float) (entity.getAnimationTick() + 55F + partialTicks) / 90F, 1F);
                 }
                 else {
-                    transparency = Math.min((float) (entity.getAnimationTick() - 30 + partialTicks) / 60F, 1F);
+                    transparency = Math.min((float) (entity.getAnimationTick() + partialTicks) / 90F, 1F);
                 }
 
                 ModelPortalBlockSilurian modelPortalBlockSilurian = this.modelPortalBlockSilurian;
@@ -1259,7 +1254,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
             else if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockDevonian.block) {
 
                 if (entity.getIsActive()) {
-                    transparency = 1F;
+                    transparency = Math.min((float) (entity.getAnimationTick() + 55F + partialTicks) / 90F, 1F);
                 }
                 else {
                     transparency = Math.min((float) (entity.getAnimationTick() + partialTicks) / 90F, 1F);
@@ -1474,18 +1469,36 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
             //----------
             else if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockCarboniferous.block) {
 
+                if (entity.getIsActive()) {
+                    transparency = Math.min((float) (entity.getAnimationTick() + 55F + partialTicks) / 90F, 1F);
+                }
+                else {
+                    transparency = Math.min((float) (entity.getAnimationTick() + partialTicks) / 90F, 1F);
+                }
+
                 ModelPortalBlockCarboniferous modelPortalBlockCarboniferous = this.modelPortalBlockCarboniferous;
 
                 GlStateManager.pushMatrix();
                 this.bindTexture(TEXTURE_CARBONIFEROUS);
                 GlStateManager.enableRescaleNormal();
                 GlStateManager.disableCull();
+
+                GlStateManager.color(1.0F, 1.0F, 1.0F, transparency);
+                GlStateManager.enableNormalize();
+                GlStateManager.enableBlend();
+                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+
                 GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
                 GlStateManager.rotate(180, 0F, 0F, 1F);
                 GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
                 GlStateManager.scale(0.05F, 0.05F, 0.05F);
                 modelPortalBlockCarboniferous.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
                 GlStateManager.disableRescaleNormal();
+
+                GlStateManager.disableBlend();
+                GlStateManager.disableNormalize();
+                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+
                 GlStateManager.enableCull();
                 GlStateManager.popMatrix();
 
@@ -1678,7 +1691,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
             else if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockPermian.block) {
 
                 if (entity.getIsActive()) {
-                    transparency = 1F;
+                    transparency = Math.min((float) (entity.getAnimationTick() + 55F + partialTicks) / 90F, 1F);
                 }
                 else {
                     transparency = Math.min((float) (entity.getAnimationTick() + partialTicks) / 90F, 1F);
@@ -1894,7 +1907,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
             else if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockTriassic.block) {
 
                 if (entity.getIsActive()) {
-                    transparency = 1F;
+                    transparency = Math.min((float) (entity.getAnimationTick() + 55F + partialTicks) / 90F, 1F);
                 }
                 else {
                     transparency = Math.min((float) (entity.getAnimationTick() + partialTicks) / 90F, 1F);
@@ -2309,7 +2322,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
             else if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockJurassic.block) {
 
                 if (entity.getIsActive()) {
-                    transparency = 1F;
+                    transparency = Math.min((float) (entity.getAnimationTick() + 55F + partialTicks) / 90F, 1F);
                 }
                 else {
                     transparency = Math.min((float) (entity.getAnimationTick() + partialTicks) / 90F, 1F);

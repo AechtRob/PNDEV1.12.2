@@ -231,6 +231,7 @@ public class ModelPortalBlockJurassic extends AdvancedModelBase {
     public void renderBase(int animationTick, float f, double partialTicks) {
         resetToDefaultPose();
         animationCycle(animationTick, partialTicks);
+
         root.render(f);
     }
 
