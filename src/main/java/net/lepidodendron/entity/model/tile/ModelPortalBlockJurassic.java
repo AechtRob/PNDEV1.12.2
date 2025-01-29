@@ -47,6 +47,7 @@ public class ModelPortalBlockJurassic extends AdvancedModelBase {
         root.cubeList.add(new ModelBox(root, 0, 0, -8.0F, -8.0F, -8.0F, 16, 16, 16, 0.0F, false));
 
         topplant1 = new AdvancedModelRenderer(this);
+        topplant1.scaleChildren = true;
         topplant1.setRotationPoint(0.0F, 24.0F, 0.0F);
 
 
@@ -63,6 +64,7 @@ public class ModelPortalBlockJurassic extends AdvancedModelBase {
         cube_r2.cubeList.add(new ModelBox(cube_r2, 0, 32, -7.5F, 0.0F, 0.0F, 16, 8, 0, 0.0F, false));
 
         topplant2 = new AdvancedModelRenderer(this);
+        topplant2.scaleChildren = true;
         topplant2.setRotationPoint(0.0F, 24.0F, 0.0F);
 
 
@@ -79,6 +81,7 @@ public class ModelPortalBlockJurassic extends AdvancedModelBase {
         cube_r4.cubeList.add(new ModelBox(cube_r4, 32, 32, -7.5F, 0.0F, 0.0F, 16, 8, 0, 0.0F, false));
 
         topplant3 = new AdvancedModelRenderer(this);
+        topplant3.scaleChildren = true;
         topplant3.setRotationPoint(0.0F, 24.0F, 0.0F);
 
 
@@ -95,6 +98,7 @@ public class ModelPortalBlockJurassic extends AdvancedModelBase {
         cube_r6.cubeList.add(new ModelBox(cube_r6, 0, 40, -7.5F, 0.0F, 0.0F, 16, 8, 0, 0.0F, false));
 
         topplant4 = new AdvancedModelRenderer(this);
+        topplant4.scaleChildren = true;
         topplant4.setRotationPoint(0.0F, 24.0F, 0.0F);
 
 
@@ -111,6 +115,7 @@ public class ModelPortalBlockJurassic extends AdvancedModelBase {
         cube_r8.cubeList.add(new ModelBox(cube_r8, 32, 40, -7.5F, 0.0F, 0.0F, 16, 8, 0, 0.0F, false));
 
         sideplant1 = new AdvancedModelRenderer(this);
+        sideplant1.scaleChildren = true;
         sideplant1.setRotationPoint(-8.0F, 18.0F, 0.0F);
         sideplant1.cubeList.add(new ModelBox(sideplant1, 0, 48, 0.0F, -2.0F, 0.0F, 16, 8, 0, 0.0F, false));
 
@@ -127,6 +132,7 @@ public class ModelPortalBlockJurassic extends AdvancedModelBase {
         cube_r10.cubeList.add(new ModelBox(cube_r10, 0, 48, 0.0F, 0.0F, 0.0F, 16, 8, 0, 0.0F, false));
 
         sideplant2 = new AdvancedModelRenderer(this);
+        sideplant2.scaleChildren = true;
         sideplant2.setRotationPoint(-8.0F, 18.5F, 0.0F);
         setRotateAngle(sideplant2, 0.0F, -0.0873F, 0.0F);
         sideplant2.cubeList.add(new ModelBox(sideplant2, 32, 48, 0.0F, -2.5F, 0.0F, 16, 8, 0, 0.0F, false));
@@ -144,6 +150,7 @@ public class ModelPortalBlockJurassic extends AdvancedModelBase {
         cube_r12.cubeList.add(new ModelBox(cube_r12, 32, 48, 0.0F, 0.0F, 0.0F, 16, 8, 0, 0.0F, false));
 
         sideplant3 = new AdvancedModelRenderer(this);
+        sideplant3.scaleChildren = true;
         sideplant3.setRotationPoint(-8.0F, 22.0F, 0.0F);
         sideplant3.cubeList.add(new ModelBox(sideplant3, 0, 56, 0.0F, -6.0F, 0.0F, 16, 8, 0, 0.0F, false));
 
@@ -160,6 +167,7 @@ public class ModelPortalBlockJurassic extends AdvancedModelBase {
         cube_r14.cubeList.add(new ModelBox(cube_r14, 0, 56, 0.0F, 0.0F, 0.0F, 16, 8, 0, 0.0F, false));
 
         sideplant4 = new AdvancedModelRenderer(this);
+        sideplant4.scaleChildren = true;
         sideplant4.setRotationPoint(-8.0F, 17.0F, 0.0F);
         setRotateAngle(sideplant4, 0.0F, -0.0873F, 0.0F);
         sideplant4.cubeList.add(new ModelBox(sideplant4, 32, 56, 0.0F, -1.0F, 0.0F, 16, 8, 0, 0.0F, false));
@@ -177,11 +185,13 @@ public class ModelPortalBlockJurassic extends AdvancedModelBase {
         cube_r16.cubeList.add(new ModelBox(cube_r16, 32, 56, 0.0F, 0.0F, 0.0F, 16, 8, 0, 0.0F, false));
 
         head1 = new AdvancedModelRenderer(this);
+        head1.scaleChildren = true;
         head1.setRotationPoint(0.0F, 8.17F, -4.0F);
         head1.cubeList.add(new ModelBox(head1, 0, 0, -1.0F, -1.0F, -0.7F, 2, 2, 2, -0.8F, false));
         head1.cubeList.add(new ModelBox(head1, 0, 0, -1.0F, -1.0F, -1.3F, 2, 2, 2, -0.8F, false));
 
         head2 = new AdvancedModelRenderer(this);
+        head2.scaleChildren = true;
         head2.setRotationPoint(0.1021F, 6.3368F, -4.0F);
 
 
