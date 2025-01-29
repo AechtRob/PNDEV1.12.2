@@ -2874,6 +2874,8 @@ public class LepidodendronMod {
 	public static final int ENTITY_WINDERMERIA = 1177;
 	public static final int ENTITY_PROTECHIURUS = 1178;
 	public static final int ENTITY_PLEXUS = 1179;
+	public static final int ENTITY_RAFT = 1180;
+
 
 	public static final int ENTITY_MYRIAPOD = 1015;
 	public static final int GUI_ARCHIVE_SORTER_TOP_ID = 1016;

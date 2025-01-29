@@ -67,6 +67,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
             //Get mob list and pick a mob for this biome:
             boolean TriassicCanyons = false;
             boolean Creeks = false;
+            boolean Stromatolites = false;
             boolean SeaForests = false;
             boolean Deserts = false;
             boolean LowerSpawnBiomes = false;
@@ -85,6 +86,10 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (biome.getRegistryName().toString().startsWith("lepidodendron:")
                     && biome.getRegistryName().toString().indexOf("creek") > 0) {
                     Creeks = true;
+                }
+                if (biome.getRegistryName().toString().equalsIgnoreCase("lepidoendron:ediacaran_stromatolite_pavement")
+                || biome.getRegistryName().toString().equalsIgnoreCase("lepidoendron:ediacaran_shallow_reef")) {
+                    Stromatolites = true;
                 }
                 if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")
@@ -1089,6 +1094,10 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                         //Deal with bumping up creek spawns:
                                                         if (Creeks && locationID != 1) {
                                                             weighter = weighter * 0.225;
+                                                        }
+
+                                                        if (Stromatolites && (locationID == 3 || locationID == 7)) {
+                                                            weighter = 0;
                                                         }
 
                                                         //Deal with bumping up sea forests spawns:

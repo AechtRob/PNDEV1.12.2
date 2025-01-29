@@ -75,11 +75,11 @@ public class EntityPrehistoricFloraPsittacosaurus_sinensis extends EntityPrehist
 		if (e instanceof EntityLivingBase) {
 			EntityLivingBase ee = (EntityLivingBase) e;
 			this.setAlarmTarget(ee);
-			List<EntityPrehistoricFloraPsittacosaurus_sinensis> Yinlong = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraPsittacosaurus_sinensis.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-			for (EntityPrehistoricFloraPsittacosaurus_sinensis currentYinlong : Yinlong) {
-				currentYinlong.setRevengeTarget(ee);
-				currentYinlong.setAlarmTarget(ee);
-				currentYinlong.alarmCooldown = rand.nextInt(20);
+			List<EntityPrehistoricFloraPsittacosaurus_sinensis> Psittacosaurus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraPsittacosaurus_sinensis.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraPsittacosaurus_sinensis currentPsittacosaurus : Psittacosaurus) {
+				currentPsittacosaurus.setRevengeTarget(ee);
+				currentPsittacosaurus.setAlarmTarget(ee);
+				currentPsittacosaurus.alarmCooldown = rand.nextInt(20);
 			}
 		}
 		return super.attackEntityFrom(ds, i);
@@ -251,7 +251,7 @@ public class EntityPrehistoricFloraPsittacosaurus_sinensis extends EntityPrehist
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:psittacosaurus_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:psittacosaurus_idle"));
 	}
 
 	public void playAlarmSound()

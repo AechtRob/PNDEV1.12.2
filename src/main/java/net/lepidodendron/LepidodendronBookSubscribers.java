@@ -52,6 +52,12 @@ public class LepidodendronBookSubscribers {
 		if (mgr == null) {
 			return;
 		}
+		if (event.getAdvancement().getParent() != null) {
+			if ((!event.getAdvancement().getParent().getId().toString().equalsIgnoreCase("lepidodendron:pf_base_adv_knowledge"))
+				&& (!event.getAdvancement().getParent().getId().toString().equalsIgnoreCase("lepidodendron:pf_base_adv"))) {
+				return;
+			}
+		}
 		if (event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_precambrian")
 				|| event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_cambrian")
 				|| event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_ordovician")
@@ -194,15 +200,8 @@ public class LepidodendronBookSubscribers {
 			if (!event.getItemStack().getTagCompound().toString().contains("lepidodendron:paleopedia")) {
 				return;
 			}
-			RayTraceResult raytraceresult = this.rayTrace(event.getWorld(), event.getEntityPlayer(), true);
-			if (raytraceresult != null && !event.getEntityPlayer().isSneaking()) {
-				event.setCanceled(true);
-				return;
-			}
-			if (!event.getEntityPlayer().isSneaking()) {
-				event.setCanceled(true);
-				return;
-			}
+			event.setCanceled(true);
+			return;
 		}
 	}
 

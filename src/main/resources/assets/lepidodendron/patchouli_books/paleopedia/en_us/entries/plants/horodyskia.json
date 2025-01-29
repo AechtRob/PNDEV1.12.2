@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_horodyskia",
 			"title": "Horodyskia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Mesoproterozoic (Calymmian) - Neoproterozoic (Tonian)$(br2)$(l)Habitat:$() Marine$(br2)>Glomeromycota$(br)>Archaeosporales$(br)>Geosiphonaceae$(br)$(l)Method of Obtaining:$() Shears"
+			"text": ">Eukaryota$(br)>Incertae sedis$(br2)$(l)Temporal Range:$() Mesoproterozoic (Calymmian) - Neoproterozoic (Tonian)$(br)$(l)Habitat:$() Marine$(br)$(l)Method of Obtaining:$() Shears"
 		},
 		{
 			"type": "multiblock",

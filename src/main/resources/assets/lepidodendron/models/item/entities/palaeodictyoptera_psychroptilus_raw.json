@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:items/psychroptilus_icon"
+    "layer0": "paleopedia:items/palaeodictyoptera_psychroptilus_icon"
   }
 }

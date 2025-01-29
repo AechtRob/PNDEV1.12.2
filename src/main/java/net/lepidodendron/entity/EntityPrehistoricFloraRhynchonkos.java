@@ -25,6 +25,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -204,21 +205,18 @@ public class EntityPrehistoricFloraRhynchonkos extends EntityPrehistoricFloraLan
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getAmbientSound() {
-	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:balanerpeton_idle"));
+	public SoundEvent getAmbientSound() {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
-	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:balanerpeton_hurt"));
+	public SoundEvent getHurtSound(DamageSource ds) {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getDeathSound() {
-	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:balanerpeton_death"));
+	public SoundEvent getDeathSound() {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
 	}
 
 	@Override

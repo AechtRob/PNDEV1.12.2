@@ -78,6 +78,7 @@ import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.InputEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.ClientTickEvent;
@@ -90,7 +91,13 @@ import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
+import vazkii.patchouli.client.book.ClientBookRegistry;
+import vazkii.patchouli.common.base.PatchouliSounds;
+import vazkii.patchouli.common.book.Book;
+import vazkii.patchouli.common.book.BookRegistry;
+import vazkii.patchouli.common.item.ItemModBook;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -268,6 +275,17 @@ public class LepidodendronEventSubscribers {
 				}
 			}
 		}
+		if (!Loader.isModLoaded("vintagefix")) {
+			Entity entity = event.getEntity();
+			if (entity instanceof EntityPlayer) {
+				EntityPlayer player = (EntityPlayer) entity;
+				if ((event.getEntity() instanceof EntityPlayerMP) && (entity.world instanceof WorldServer)) {
+					ITextComponent itextcomponent = new TextComponentString("Prehistoric Nature is a big mod and many computers may struggle: we strongly advise you to install the mod VintageFix and its dependency, MixinBooter. Installing this will normally eliminate memory, lag and fps issues while running Prehistoric Nature.");
+					itextcomponent.getStyle().setColor(TextFormatting.RED).setItalic(Boolean.valueOf(true));
+					entity.sendMessage(itextcomponent);
+				}
+			}
+		}
 	}
 
 	@SubscribeEvent //Default to standard attack behaviour
@@ -347,6 +365,45 @@ public class LepidodendronEventSubscribers {
 				}
 				((PrehistoricFloraSubmarine) event.getEntityBeingMounted()).grantDamageCapabilityPassenger(player);
 			}
+		}
+	}
+
+	@SideOnly(Side.CLIENT)
+	@SubscribeEvent //Opening the Palaeopedia
+	public void keyPressed(InputEvent.KeyInputEvent event) {
+		if (Keyboard.isKeyDown(ClientProxyLepidodendronMod.keyPalaeopdeiaOpen.getKeyCode())) {
+			if (Minecraft.getMinecraft().player instanceof EntityPlayer) {
+				openPalaeopedia((EntityPlayer)Minecraft.getMinecraft().player);
+			}
+		}
+	}
+
+	public static void openPalaeopedia(EntityPlayer player) {
+		ItemStack stack = player.getHeldItemMainhand();
+		if (stack.getItem().getRegistryName().toString().equalsIgnoreCase("patchouli:guide_book")) {
+			if (stack.getTagCompound() != null) {
+				if (stack.getTagCompound().toString().contains("lepidodendron:paleopedia")) {
+					Book book = getBookFromStack(stack);
+					ClientBookRegistry.INSTANCE.displayBookGui(book.resourceLoc.toString());
+					//NetworkHandler.INSTANCE.sendTo(new MessageOpenBookGui(book.resourceLoc.toString()), (EntityPlayerMP) player);
+					SoundEvent sfx = PatchouliSounds.getSound(book.openSound, PatchouliSounds.book_open);
+					player.playSound(sfx, 1.0F, (float) (0.7 + Math.random() * 0.4));
+				}
+			}
+		}
+	}
+
+	private static Book getBookFromStack(ItemStack stack) {
+		if (stack.getItem() instanceof ItemModBook) {
+			return ItemModBook.getBook(stack);
+		} else {
+			for(Book b : BookRegistry.INSTANCE.books.values()) {
+				if (b.getBookItem().isItemEqual(stack)) {
+					return b;
+				}
+			}
+
+			return null;
 		}
 	}
 
@@ -955,6 +1012,7 @@ public class LepidodendronEventSubscribers {
 				(event.player.world.provider.getDimension() == LepidodendronConfig.dimDevonian
 						|| event.player.world.provider.getDimension() == LepidodendronConfig.dimCarboniferous
 						|| event.player.world.provider.getDimension() == LepidodendronConfig.dimCretaceousEarly
+						|| event.player.world.provider.getDimension() == LepidodendronConfig.dimPrecambrian
 				)
 		) {
 			Entity entity = event.player;
@@ -1474,7 +1532,7 @@ public class LepidodendronEventSubscribers {
 			if (event.getItemStack().getTagCompound() != null) {
 				if (event.getItemStack().getTagCompound().toString().contains("lepidodendron:paleopedia")) {
 					List<String> tt = event.getToolTip();
-					tt.add(I18n.translateToLocal("tooltip.palaeopedia.name").trim());
+					tt.add(ClientProxyLepidodendronMod.keyPalaeopdeiaOpen.getDisplayName() + " " + I18n.translateToLocal("tooltip.palaeopedia.name").trim());
 					if (event.getEntityPlayer() != null) {
 						tt.add(TextFormatting.DARK_RED + "Precambrian" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 0, false));
 						tt.add(TextFormatting.DARK_GREEN + "Cambrian" + PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 1, false));

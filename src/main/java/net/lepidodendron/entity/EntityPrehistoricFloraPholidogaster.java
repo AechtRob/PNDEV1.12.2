@@ -188,19 +188,19 @@ public class EntityPrehistoricFloraPholidogaster extends EntityPrehistoricFloraS
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:whatcheeria_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:pholidogaster_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:whatcheeria_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:pholidogaster_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:whatcheeria_death"));
+	            .getObject(new ResourceLocation("lepidodendron:pholidogaster_death"));
 	}
 
 	@Override

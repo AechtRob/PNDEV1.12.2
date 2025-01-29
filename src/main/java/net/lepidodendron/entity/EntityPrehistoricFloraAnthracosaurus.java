@@ -195,19 +195,19 @@ public class EntityPrehistoricFloraAnthracosaurus extends EntityPrehistoricFlora
 	@Override
 	public net.minecraft.util.SoundEvent getAmbientSound() {
 	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:pholiderpeton_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:anthracosaurus_idle"));
 	}
 
 	@Override
 	public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
 	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:pholiderpeton_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:anthracosaurus_hurt"));
 	}
 
 	@Override
 	public net.minecraft.util.SoundEvent getDeathSound() {
 	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:pholiderpeton_death"));
+	            .getObject(new ResourceLocation("lepidodendron:anthracosaurus_death"));
 	}
 
 	@Override

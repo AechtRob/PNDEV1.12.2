@@ -211,6 +211,28 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 					world.playSound(null, pos, BlockSounds.PORTAL_PERMIAN, SoundCategory.BLOCKS, 0.5F, 1.0F);
 				}
 			}
+			if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockTriassic.block) {
+				IBlockState portalTriassic = Functions.getPortalState(LepidodendronConfig.dimTriassic);
+				if (portalTriassic != null) {
+					if (!isPartOfValidPortal(this.world, this.pos, portalTriassic)) {
+						this.setIsActive(false);
+					}
+				}
+				if (this.getIsActive() && this.getAnimationTick() == 20) {
+					world.playSound(null, pos, BlockSounds.PORTAL_TRIASSIC, SoundCategory.BLOCKS, 0.5F, 1.0F);
+				}
+			}
+			if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockJurassic.block) {
+				IBlockState portalJurassic = Functions.getPortalState(LepidodendronConfig.dimJurassic);
+				if (portalJurassic != null) {
+					if (!isPartOfValidPortal(this.world, this.pos, portalJurassic)) {
+						this.setIsActive(false);
+					}
+				}
+				if (this.getIsActive() && this.getAnimationTick() == 20) {
+					world.playSound(null, pos, BlockSounds.PORTAL_JURASSIC, SoundCategory.BLOCKS, 0.5F, 1.0F);
+				}
+			}
 
 			if (this.animationTick <= 90) { //4++ seconds
 				setAnimationTick(this.animationTick + 1);
@@ -291,7 +313,7 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 			}
 			if (this.getAnimationTick() == 75) { //3.5 seconds (ticks 15 to 85)
 				if (world.getBlockState(this.getPos()).getBlock() != BlockPortalBlockOverworld.block
-					|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockPrecambrian.block) {
+						|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockPrecambrian.block) {
 					//No sound for closing this one
 				}
 				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockCambrian.block
@@ -309,6 +331,19 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 					world.playSound(null, pos, BlockSounds.PORTAL_PERMIAN, SoundCategory.BLOCKS, 0.5F, 1.0F);
 				}
 			}
+
+			if (this.getAnimationTick() == 65) {
+				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockTriassic.block) {
+					world.playSound(null, pos, BlockSounds.PORTAL_TRIASSIC, SoundCategory.BLOCKS, 0.5F, 1.0F);
+				}
+			}
+
+			if (this.getAnimationTick() == 52) {
+				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockJurassic.block) {
+					world.playSound(null, pos, BlockSounds.PORTAL_JURASSIC, SoundCategory.BLOCKS, 0.5F, 1.0F);
+				}
+			}
+
 		}
 	}
 

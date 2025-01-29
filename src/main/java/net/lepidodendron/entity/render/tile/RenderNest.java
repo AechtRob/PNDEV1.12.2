@@ -52,8 +52,15 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityNe
         World world = entity.getWorld();
         if (entity != null && entity.hasWorld() && world.getBlockState(pos).getBlock() == BlockNest.block) {
 
-            if ((world.getBlockState(pos.down()).getMaterial() != Material.LEAVES
-                    && world.getBlockState(pos.down()).getMaterial() != Material.WOOD)) { //i.e. omit birds nest styles:
+            if ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND
+                    || world.getBlockState(pos.down()).getMaterial() == Material.CLAY
+                    || world.getBlockState(pos.down()).getMaterial() == Material.SAND
+                    || world.getBlockState(pos.down()).getMaterial() == Material.ROCK
+                    || world.getBlockState(pos.down()).getMaterial() == Material.CRAFTED_SNOW
+                    || world.getBlockState(pos.down()).getMaterial() == Material.ICE
+                    || world.getBlockState(pos.down()).getMaterial() == Material.PACKED_ICE
+                    || world.getBlockState(pos.down()).getMaterial() == Material.SNOW
+                    || world.getBlockState(pos.down()).getMaterial() == Material.GRASS)) { //i.e. omit birds nest styles:
 
                 Minecraft minecraft = Minecraft.getMinecraft();
                 BlockRendererDispatcher ren = minecraft.getBlockRendererDispatcher();
@@ -63,12 +70,7 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityNe
                 if (pos1 != null) {
                     state = entity.getWorld().getBlockState(pos1);
 
-                    if (state.isFullBlock() &&
-                            (state.getMaterial() == Material.GROUND
-                                    || state.getMaterial() == Material.ROCK
-                                    || state.getMaterial() == Material.SAND
-                                    || state.getMaterial() == Material.CLAY)
-                    ) {
+                    if (state.isFullBlock()) {
                         try {
                             texture = ren.getModelForState(state).getQuads(state, EnumFacing.UP, 0).get(0).getSprite().getIconName();
                         } catch (RuntimeException exception) {

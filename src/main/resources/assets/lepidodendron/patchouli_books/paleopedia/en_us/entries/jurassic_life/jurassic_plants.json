@@ -1,12 +1,12 @@
 {
-	"name": "Jurassic Flora",
+	"name": "Jurassic Flora, Fungi, etc.",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_jurassic.png",
 	"category": "lepidodendron:jurassic/jurassic_life",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Jurassic Flora$(br2)$()Text here..."
+			"text": "$(l)Jurassic Flora, Fungi, etc.$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:plantspawns1",

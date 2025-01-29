@@ -3,8 +3,11 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.armor.ArmorInit;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -55,7 +58,7 @@ public class BlockBacterialLayer extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:bacterial_layer", "inventory"));
 	}
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends Block implements IAdvancementGranter {
 		public BlockCustom() {
 			super(Material.GROUND, MapColor.SAND);
 			setTranslationKey("pf_bacterial_layer");
@@ -82,6 +85,12 @@ public class BlockBacterialLayer extends ElementsLepidodendronMod.ModElement {
 				}
 			}
 			return super.getSlipperiness(state, world, pos, entity);
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_MICROBIAL_MAT;
 		}
 
 	}

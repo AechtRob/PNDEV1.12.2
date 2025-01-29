@@ -4,6 +4,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.boats.EntityPNBoat;
+import net.lepidodendron.entity.boats.EntityRaft;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.render.entity.*;
 import net.lepidodendron.entity.render.tile.*;
@@ -7112,6 +7113,12 @@ public class RenderHandler {
                 return new RenderSubmarine(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityRaft.class, new IRenderFactory<EntityRaft>() {
+            @Override
+            public Render<? super EntityRaft> createRenderFor(RenderManager manager) {
+                return new RenderRaft(manager);
+            }
+        });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBuoy.class, new IRenderFactory<EntityPrehistoricFloraBuoy>() {
             @Override
             public Render<? super EntityPrehistoricFloraBuoy> createRenderFor(RenderManager manager) {
@@ -7303,6 +7310,8 @@ public class RenderHandler {
         if (LepidodendronConfig.modFlowerpot) {
             ClientRegistry.bindTileEntitySpecialRenderer(BlockFlowerpotPN.TileEntityFlowerPotPN.class, new RenderFlowerPotPN());
         }
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockRhyniaWater.TileEntityRhyniaWater.class, new RenderRhyniaWater());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockRhyniaWaterSpore.TileEntityRhyniaWaterSpore.class, new RenderRhyniaWaterSpore());
 
         //Portal Blocks:
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPortalBlock.class, new RenderPortalBlock());

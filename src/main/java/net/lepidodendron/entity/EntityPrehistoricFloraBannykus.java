@@ -117,9 +117,7 @@ public class EntityPrehistoricFloraBannykus extends EntityPrehistoricFloraLandBa
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.47F;
-			speedBase = speedBase / 0.75F;
-			speedBase = 1.18F;
+			speedBase = 1.05F;
 		}
 		return speedBase;
 	}
@@ -284,7 +282,7 @@ public class EntityPrehistoricFloraBannykus extends EntityPrehistoricFloraLandBa
 		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAttackTarget() != null) {
-			if (this.getAnimationTick() == 18) {
+			if (this.getAnimationTick() == 9) {
 				double d1 = this.posX - this.getAttackTarget().posX;
 				double d0;
 				for (d0 = this.posZ -  this.getAttackTarget().posZ; d1 * d1 + d0 * d0 < 1.0E-4D; d0 = (Math.random() - Math.random()) * 0.01D)

@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:bacterial_crust"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_bacterial_crust.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_bacterial_crust.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_bacterial_crust"
+		}
+	}
+}

@@ -5044,6 +5044,7 @@ public class LepidodendronSorter {
     public static final int doyleales_planter2_sand = 8063;
     public static final int somatohelix = 8064;
     public static final int doyleales_seed = 8065;
+    public static final int raft_boat_item = 8066;
 
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;

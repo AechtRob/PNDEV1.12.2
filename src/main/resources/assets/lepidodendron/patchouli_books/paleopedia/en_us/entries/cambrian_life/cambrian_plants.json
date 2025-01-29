@@ -1,12 +1,12 @@
 {
-	"name": "Cambrian Flora",
+	"name": "Cambrian Flora, Fungi, etc.",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_cambrian.png",
 	"category": "lepidodendron:cambrian/cambrian_life",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Cambrian Flora$(br2)$()Text here..."
+			"text": "$(l)Cambrian Flora, Fungi, etc.$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:plantspawns1",

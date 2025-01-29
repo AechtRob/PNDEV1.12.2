@@ -1,12 +1,12 @@
 {
-	"name": "Carboniferous Flora",
+	"name": "Carboniferous Flora, Fungi, etc.",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
 	"category": "lepidodendron:carboniferous/carboniferous_life",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Carboniferous Flora$(br2)$()Text here..."
+			"text": "$(l)Carboniferous Flora, Fungi, etc.$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:plantspawns1",
