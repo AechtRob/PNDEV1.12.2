@@ -370,11 +370,11 @@ public class EntityPrehistoricFloraEocursor extends EntityPrehistoricFloraLandBa
 		if (e instanceof EntityLivingBase && this.hasAlarm()) {
 			EntityLivingBase ee = (EntityLivingBase) e;
 			this.setAlarmTarget(ee);
-			List<EntityPrehistoricFloraBerthasaura> Berthasaura = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraBerthasaura.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-			for (EntityPrehistoricFloraBerthasaura currentBerthasaura : Berthasaura) {
-				currentBerthasaura.setRevengeTarget(ee);
-				currentBerthasaura.setAlarmTarget(ee);
-				currentBerthasaura.screamAlarmCooldown = rand.nextInt(20);
+			List<EntityPrehistoricFloraEocursor> Eocursor = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraEocursor.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraEocursor currentEocursor : Eocursor) {
+				currentEocursor.setRevengeTarget(ee);
+				currentEocursor.setAlarmTarget(ee);
+				currentEocursor.screamAlarmCooldown = rand.nextInt(20);
 			}
 		}
 		return super.attackEntityFrom(ds, i);

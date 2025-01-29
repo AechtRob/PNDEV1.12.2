@@ -33,6 +33,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -84,6 +85,9 @@ public class EntityPrehistoricFloraNigerpeton extends EntityPrehistoricFloraSwim
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
+		if (this.getAttackTarget() != null) {
+			return 0.44F; //is attacking
+		}
 		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed * 1.28F;
 	}
 
@@ -133,10 +137,8 @@ public class EntityPrehistoricFloraNigerpeton extends EntityPrehistoricFloraSwim
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return DietString.MEAT;
+		return ArrayUtils.addAll(DietString.MEAT, DietString.FISH);
 	}
-
-	
 
 	@Override
 	public boolean isAIDisabled() {

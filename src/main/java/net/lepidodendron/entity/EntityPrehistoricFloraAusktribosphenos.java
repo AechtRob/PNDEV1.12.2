@@ -111,7 +111,7 @@ public class EntityPrehistoricFloraAusktribosphenos extends EntityPrehistoricFlo
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.25F;
+			speedBase = speedBase * 3.15F;
 		}
 		return speedBase;
 	}
@@ -221,7 +221,7 @@ public class EntityPrehistoricFloraAusktribosphenos extends EntityPrehistoricFlo
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 1 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
 

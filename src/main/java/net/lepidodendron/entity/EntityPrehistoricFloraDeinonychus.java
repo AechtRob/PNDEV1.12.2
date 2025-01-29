@@ -164,7 +164,7 @@ public class EntityPrehistoricFloraDeinonychus extends EntityPrehistoricFloraLan
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase*2.3F;
+			speedBase = speedBase * 1.7F;
 		}
 		return speedBase;
 	}
@@ -349,7 +349,7 @@ public class EntityPrehistoricFloraDeinonychus extends EntityPrehistoricFloraLan
 		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAttackTarget() != null) {
-			if (this.getAnimationTick() == 18) {
+			if (this.getAnimationTick() == 8) {
 				double d1 = this.posX - this.getAttackTarget().posX;
 				double d0;
 				for (d0 = this.posZ -  this.getAttackTarget().posZ; d1 * d1 + d0 * d0 < 1.0E-4D; d0 = (Math.random() - Math.random()) * 0.01D)

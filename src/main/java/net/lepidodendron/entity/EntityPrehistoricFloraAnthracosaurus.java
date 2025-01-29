@@ -252,8 +252,6 @@ public class EntityPrehistoricFloraAnthracosaurus extends EntityPrehistoricFlora
 		}
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
-		AnimationHandler.INSTANCE.updateAnimations(this);
-
 	}
 
 	@Override

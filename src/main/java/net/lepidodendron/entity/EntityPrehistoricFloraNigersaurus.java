@@ -82,7 +82,7 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 	@Override
 	public float getgetMaxTurnDistancePerTick() {
 		if ((!this.getIsFast()) && (!this.getLaying()) && (!this.isInLove())) {
-			return 1.0F + (19F - (19F * this.getAgeScale()));
+			return 1.0F + (40F - (40F * this.getAgeScale()));
 		}
 		return super.getgetMaxTurnDistancePerTick();
 	}

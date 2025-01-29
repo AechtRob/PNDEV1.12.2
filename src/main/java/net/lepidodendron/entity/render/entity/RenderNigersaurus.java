@@ -30,7 +30,7 @@ public class RenderNigersaurus extends RenderLivingBaseWithBook<EntityPrehistori
     protected void preRenderCallback(EntityPrehistoricFloraNigersaurus entity, float f) {
         float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.15F;
+        this.shadowSize = entity.width * scale * 0.40F;
     }
 
 }

@@ -43,10 +43,10 @@ public class EntityPrehistoricFloraPholidogaster extends EntityPrehistoricFloraS
 
 	public EntityPrehistoricFloraPholidogaster(World world) {
 		super(world);
-		setSize(0.5F, 0.25F);
+		setSize(0.5F, 0.35F);
 		minWidth = 0.12F;
 		maxWidth = 0.5F;
-		maxHeight = 0.25F;
+		maxHeight = 0.35F;
 		maxHealthAgeable = 13.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -100,7 +100,7 @@ public class EntityPrehistoricFloraPholidogaster extends EntityPrehistoricFloraS
 		if (this.isReallyInWater()) {
 			calcSpeed= 0.185f;
 			if(this.getIsFast()){
-				calcSpeed *= 1.4f;
+				calcSpeed *= 1.85f;
 			}
 		}
 		if (this.getTicks() < 0) {
@@ -138,7 +138,7 @@ public class EntityPrehistoricFloraPholidogaster extends EntityPrehistoricFloraS
 		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(5, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 10F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 2.0F, false));
 		//this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		//this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		//this.targetTasks.addTask(2, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -151,7 +151,7 @@ public class EntityPrehistoricFloraPholidogaster extends EntityPrehistoricFloraS
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH);
+		return ArrayUtils.addAll(DietString.MEAT, DietString.FISH);
 	}
 
 	@Override
