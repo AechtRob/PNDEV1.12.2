@@ -177,6 +177,14 @@
       }
     ]
   },
+  "portal_block_jurassic": {
+    "sounds": [
+      {
+        "name": "lepidodendron:portal_block_jurassic",
+        "stream": false
+      }
+    ]
+  },
 
   "open_drawer": {
     "sounds": [

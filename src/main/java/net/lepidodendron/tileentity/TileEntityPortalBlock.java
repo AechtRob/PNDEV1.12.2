@@ -330,14 +330,17 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockPermian.block) {
 					world.playSound(null, pos, BlockSounds.PORTAL_PERMIAN, SoundCategory.BLOCKS, 0.5F, 1.0F);
 				}
-				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockJurassic.block) {
-					world.playSound(null, pos, BlockSounds.PORTAL_JURASSIC, SoundCategory.BLOCKS, 0.5F, 1.0F);
+			}
+
+			if (this.getAnimationTick() == 65) {
+				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockTriassic.block) {
+					world.playSound(null, pos, BlockSounds.PORTAL_TRIASSIC, SoundCategory.BLOCKS, 0.5F, 1.0F);
 				}
 			}
 
-			if (this.getAnimationTick() == 65) { //3.5 seconds (ticks 15 to 85)
-				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockTriassic.block) {
-					world.playSound(null, pos, BlockSounds.PORTAL_TRIASSIC, SoundCategory.BLOCKS, 0.5F, 1.0F);
+			if (this.getAnimationTick() == 52) {
+				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockJurassic.block) {
+					world.playSound(null, pos, BlockSounds.PORTAL_JURASSIC, SoundCategory.BLOCKS, 0.5F, 1.0F);
 				}
 			}
 

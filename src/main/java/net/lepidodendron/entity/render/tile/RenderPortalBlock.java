@@ -30,6 +30,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
     private static final ResourceLocation TEXTURE_CARBONIFEROUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_carboniferous.png");
     private static final ResourceLocation TEXTURE_PERMIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_permian.png");
     private static final ResourceLocation TEXTURE_TRIASSIC = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_triassic.png");
+    private static final ResourceLocation TEXTURE_JURASSIC = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_jurassic.png");
     private final ModelPortalBlockOverworld modelPortalBlockOverworld;
     private final ModelPortalBlockOverworldDecoration modelPortalBlockOverworldDecoration;
     private final ModelPortalBlockPrecambrian modelPortalBlockPrecambrian;
@@ -40,6 +41,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
     private final ModelPortalBlockCarboniferous modelPortalBlockCarboniferous;
     private final ModelPortalBlockPermian modelPortalBlockPermian;
     private final ModelPortalBlockTriassic modelPortalBlockTriassic;
+    private final ModelPortalBlockJurassic modelPortalBlockJurassic;
     public static final PropertyDirection FACING = BlockDirectional.FACING;
 
     public RenderPortalBlock() {
@@ -53,6 +55,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
         this.modelPortalBlockCarboniferous = new ModelPortalBlockCarboniferous();
         this.modelPortalBlockPermian = new ModelPortalBlockPermian();
         this.modelPortalBlockTriassic = new ModelPortalBlockTriassic();
+        this.modelPortalBlockJurassic = new ModelPortalBlockJurassic();
     }
 
     public boolean isVar(TileEntityPortalBlock entity) {
@@ -2300,6 +2303,467 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 colRed = (byte) 124;
                 colGreen = (byte) 60;
                 colBlue = (byte) 136;
+            }
+            //JURASSIC
+            //----------
+            else if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockJurassic.block) {
+
+                if (entity.getIsActive()) {
+                    transparency = 1F;
+                }
+                else {
+                    transparency = Math.min((float) (entity.getAnimationTick() + partialTicks) / 90F, 1F);
+                }
+
+                ModelPortalBlockJurassic modelPortalBlockJurassic = this.modelPortalBlockJurassic;
+
+                GlStateManager.pushMatrix();
+                this.bindTexture(TEXTURE_JURASSIC);
+                GlStateManager.enableRescaleNormal();
+                GlStateManager.disableCull();
+
+                GlStateManager.color(1.0F, 1.0F, 1.0F, transparency);
+                GlStateManager.enableNormalize();
+                GlStateManager.enableBlend();
+                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+
+                GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
+                GlStateManager.rotate(180, 0F, 0F, 1F);
+                GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
+                GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                modelPortalBlockJurassic.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
+                GlStateManager.disableRescaleNormal();
+
+                GlStateManager.disableBlend();
+                GlStateManager.disableNormalize();
+                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+
+                GlStateManager.enableCull();
+                GlStateManager.popMatrix();
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.UP)) {
+                    if (entity.getIsActive()) {
+                        GlStateManager.pushMatrix();
+                        this.bindTexture(TEXTURE_JURASSIC);
+                        GlStateManager.enableRescaleNormal();
+                        GlStateManager.disableCull();
+                        GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        if (isRotated(entity)) {
+                            GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
+                        } else {
+                            GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
+                        }
+                        GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
+                        GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                        if (isVar(entity) && isVar3(entity)) {
+                            modelPortalBlockJurassic.renderTopPlant1(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        else if (isVar(entity) && (!isVar3(entity))) {
+                            modelPortalBlockJurassic.renderTopPlant2(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        else if ((!isVar(entity)) && (!isVar3(entity))) {
+                            modelPortalBlockJurassic.renderTopPlant3(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        else {
+                            modelPortalBlockJurassic.renderTopPlant4(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.enableCull();
+                        GlStateManager.popMatrix();
+
+                        if (isVar2(entity)) {
+                            GlStateManager.pushMatrix();
+                            this.bindTexture(TEXTURE_JURASSIC);
+                            GlStateManager.enableRescaleNormal();
+                            GlStateManager.disableCull();
+                            GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            if (isRotated(entity)) {
+                                GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
+                            } else {
+                                GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
+                            }
+                            GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
+                            GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                            if (isVar(entity) && isVar3(entity)) {
+                                modelPortalBlockJurassic.renderTopPlant4(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
+                            }
+                            else if (isVar(entity) && (!isVar3(entity))) {
+                                modelPortalBlockJurassic.renderTopPlant3(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
+                            }
+                            else if ((!isVar(entity)) && (!isVar3(entity))) {
+                                modelPortalBlockJurassic.renderTopPlant2(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
+                            }
+                            else {
+                                modelPortalBlockJurassic.renderTopPlant1(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
+                            }
+                            GlStateManager.disableRescaleNormal();
+                            GlStateManager.enableCull();
+                            GlStateManager.popMatrix();
+                        }
+                        GlStateManager.pushMatrix();
+                        this.bindTexture(TEXTURE_JURASSIC);
+                        GlStateManager.enableRescaleNormal();
+                        GlStateManager.disableCull();
+                        GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        if (isRotated(entity)) {
+                            GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
+                        } else {
+                            GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
+                        }
+                        GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
+                        GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                        modelPortalBlockJurassic.renderEyes(animTick, 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.enableCull();
+                        GlStateManager.popMatrix();
+
+                        if (isVar2(entity)) {
+                            GlStateManager.pushMatrix();
+                            this.bindTexture(TEXTURE_JURASSIC);
+                            GlStateManager.enableRescaleNormal();
+                            GlStateManager.disableCull();
+                            GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            if (isRotated(entity)) {
+                                GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
+                            } else {
+                                GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
+                            }
+                            GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
+                            GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                            modelPortalBlockJurassic.renderHead(animTick, 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
+                            GlStateManager.disableRescaleNormal();
+                            GlStateManager.enableCull();
+                            GlStateManager.popMatrix();
+                        }
+                    }
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_JURASSIC);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    if (isRotated(entity)) {
+                        GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
+                    }
+                    else {
+                        GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
+                    }
+                    GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    if (isVar(entity) && isVar4(entity)) {
+                        modelPortalBlockJurassic.renderBranch4(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
+                    }
+                    else if (isVar(entity) && (!isVar4(entity))) {
+                        modelPortalBlockJurassic.renderBranch3(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
+                    }
+                    else if ((!isVar(entity)) && (!isVar4(entity))) {
+                        modelPortalBlockJurassic.renderBranch2(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
+                    }
+                    else {
+                        modelPortalBlockJurassic.renderBranch1(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
+                    }
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.SOUTH)) {
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_JURASSIC);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    if (isRotated(entity)) {
+                        GlStateManager.translate(x + 1.00, y + 1.50, z + 0.50);
+                    }
+                    else {
+                        GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                    }
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    if (isVar(entity) && isVar4(entity)) {
+                        modelPortalBlockJurassic.renderBranch4(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
+                    }
+                    else if (isVar(entity) && (!isVar4(entity))) {
+                        modelPortalBlockJurassic.renderBranch3(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
+                    }
+                    else if ((!isVar(entity)) && (!isVar4(entity))) {
+                        modelPortalBlockJurassic.renderBranch2(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
+                    }
+                    else {
+                        modelPortalBlockJurassic.renderBranch1(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
+                    }
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+
+                    if (entity.getIsActive()) {
+                        GlStateManager.pushMatrix();
+                        this.bindTexture(TEXTURE_JURASSIC);
+                        GlStateManager.enableRescaleNormal();
+                        GlStateManager.disableCull();
+                        GlStateManager.translate(x + 0.50, y + 0.50, z + 1.50);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(270, 1F, 0F, 0F);
+                        if (isRotated(entity)) {
+                            GlStateManager.rotate(90, 0F, 1F, 0F);
+                        }
+                        else {
+                            GlStateManager.rotate(270, 0F, 1F, 0F);
+                        }
+                        GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                        modelPortalBlockJurassic.renderEyes(animTick, 1.25f, partialTicks, 1, ((float) getWorld().getTotalWorldTime() + partialTicks), 1F);
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.enableCull();
+                        GlStateManager.popMatrix();
+
+                        if (isVar2(entity)) {
+                            GlStateManager.pushMatrix();
+                            this.bindTexture(TEXTURE_JURASSIC);
+                            GlStateManager.enableRescaleNormal();
+                            GlStateManager.disableCull();
+                            GlStateManager.translate(x + 0.50, y + 0.50, z + 1.50);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                            if (isRotated(entity)) {
+                                GlStateManager.rotate(90, 0F, 1F, 0F);
+                            }
+                            else {
+                                GlStateManager.rotate(270, 0F, 1F, 0F);
+                            }
+                            GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                            modelPortalBlockJurassic.renderHead(animTick, 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
+                            GlStateManager.disableRescaleNormal();
+                            GlStateManager.enableCull();
+                            GlStateManager.popMatrix();
+                        }
+                    }
+                }
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.NORTH)) {
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_JURASSIC);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    if (isRotated(entity)) {
+                        GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                    }
+                    else {
+                        GlStateManager.translate(x + 0.00, y + 1.50, z + 0.50);
+                    }
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    GlStateManager.rotate(180, 0F, 1F, 0F);
+                    if (isVar(entity) && isVar4(entity)) {
+                        modelPortalBlockJurassic.renderBranch4(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    else if (isVar(entity) && (!isVar4(entity))) {
+                        modelPortalBlockJurassic.renderBranch3(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    else if ((!isVar(entity)) && (!isVar4(entity))) {
+                        modelPortalBlockJurassic.renderBranch2(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    else {
+                        modelPortalBlockJurassic.renderBranch1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+
+                    if (entity.getIsActive()) {
+                        GlStateManager.pushMatrix();
+                        this.bindTexture(TEXTURE_JURASSIC);
+                        GlStateManager.enableRescaleNormal();
+                        GlStateManager.disableCull();
+                        GlStateManager.translate(x + 0.50, y + 0.50, z - 0.50);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(90, 1F, 0F, 0F);
+                        if (isRotated(entity)) {
+                            GlStateManager.rotate(270, 0F, 1F, 0F);
+                        }
+                        else {
+                            GlStateManager.rotate(90, 0F, 1F, 0F);
+                        }
+                        GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                        GlStateManager.rotate(180, 0F, 1F, 0F);
+                        modelPortalBlockJurassic.renderEyes(animTick, 1.25f, partialTicks, 10, ((float) getWorld().getTotalWorldTime() + partialTicks), 10F);
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.enableCull();
+                        GlStateManager.popMatrix();
+
+                        if (isVar2(entity)) {
+                            GlStateManager.pushMatrix();
+                            this.bindTexture(TEXTURE_JURASSIC);
+                            GlStateManager.enableRescaleNormal();
+                            GlStateManager.disableCull();
+                            GlStateManager.translate(x + 0.50, y + 0.50, z - 0.50);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                            if (isRotated(entity)) {
+                                GlStateManager.rotate(270, 0F, 1F, 0F);
+                            }
+                            else {
+                                GlStateManager.rotate(90, 0F, 1F, 0F);
+                            }
+                            GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                            GlStateManager.rotate(180, 0F, 1F, 0F);
+                            modelPortalBlockJurassic.renderHead(animTick, 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                            GlStateManager.disableRescaleNormal();
+                            GlStateManager.enableCull();
+                            GlStateManager.popMatrix();
+                        }
+                    }
+                }
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.WEST)) {
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_JURASSIC);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    if (isRotated(entity)) {
+                        GlStateManager.translate(x + 0.50, y + 1.75, z + 0.75);
+                    }
+                    else {
+                        GlStateManager.translate(x + 0.50, y + 1.25, z + 0.75);
+                    }
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    GlStateManager.rotate(90, 0F, 1F, 0F);
+                    if (isVar(entity) && isVar4(entity)) {
+                        modelPortalBlockJurassic.renderBranch4(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    else if (isVar(entity) && (!isVar4(entity))) {
+                        modelPortalBlockJurassic.renderBranch3(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    else if ((!isVar(entity)) && (!isVar4(entity))) {
+                        modelPortalBlockJurassic.renderBranch2(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    else {
+                        modelPortalBlockJurassic.renderBranch1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+
+                    if (entity.getIsActive()) {
+                        GlStateManager.pushMatrix();
+                        this.bindTexture(TEXTURE_JURASSIC);
+                        GlStateManager.enableRescaleNormal();
+                        GlStateManager.disableCull();
+                        GlStateManager.translate(x - 0.50, y + 0.50, z + 0.50);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(90, 1F, 0F, 0F);
+                        GlStateManager.rotate(90, 0F, 0F, 1F);
+                        GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                        if (isRotated(entity)) {
+                            GlStateManager.rotate(180, 0F, 1F, 0F);
+                        }
+                        modelPortalBlockJurassic.renderEyes(animTick, 1.25f, partialTicks, 10, ((float) getWorld().getTotalWorldTime() + partialTicks), 10F);
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.enableCull();
+                        GlStateManager.popMatrix();
+
+                        if (isVar2(entity)) {
+                            GlStateManager.pushMatrix();
+                            this.bindTexture(TEXTURE_JURASSIC);
+                            GlStateManager.enableRescaleNormal();
+                            GlStateManager.disableCull();
+                            GlStateManager.translate(x - 0.50, y + 0.50, z + 0.50);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                            GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                            if (isRotated(entity)) {
+                                GlStateManager.rotate(180, 0F, 1F, 0F);
+                            }
+                            modelPortalBlockJurassic.renderHead(animTick, 1.25f, partialTicks, 3, ((float) getWorld().getTotalWorldTime() + partialTicks), 3F);
+                            GlStateManager.disableRescaleNormal();
+                            GlStateManager.enableCull();
+                            GlStateManager.popMatrix();
+                        }
+                    }
+                }
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.EAST)) {
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_JURASSIC);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    if (isRotated(entity)) {
+                        GlStateManager.translate(x + 0.50, y + 1.75, z + 0.25);
+                    }
+                    else {
+                        GlStateManager.translate(x + 0.50, y + 1.25, z + 0.25);
+                    }
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    GlStateManager.rotate(270, 0F, 1F, 0F);
+                    if (isVar(entity) && isVar4(entity)) {
+                        modelPortalBlockJurassic.renderBranch1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    if (isVar(entity) && (!isVar4(entity))) {
+                        modelPortalBlockJurassic.renderBranch2(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    if ((!isVar(entity)) && (!isVar4(entity))) {
+                        modelPortalBlockJurassic.renderBranch3(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    else {
+                        modelPortalBlockJurassic.renderBranch4(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+
+                    if (entity.getIsActive()) {
+                        GlStateManager.pushMatrix();
+                        this.bindTexture(TEXTURE_JURASSIC);
+                        GlStateManager.enableRescaleNormal();
+                        GlStateManager.disableCull();
+                        GlStateManager.translate(x + 1.50, y + 0.50, z + 0.50);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(90, 1F, 0F, 0F);
+                        GlStateManager.rotate(270, 0F, 0F, 1F);
+                        GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                        if (isRotated(entity)) {
+                            GlStateManager.rotate(180, 0F, 1F, 0F);
+                        }
+                        modelPortalBlockJurassic.renderEyes(animTick, 1.25f, partialTicks, 19, ((float) getWorld().getTotalWorldTime() + partialTicks), 19F);
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.enableCull();
+                        GlStateManager.popMatrix();
+
+                        if (isVar2(entity)) {
+                            GlStateManager.pushMatrix();
+                            this.bindTexture(TEXTURE_JURASSIC);
+                            GlStateManager.enableRescaleNormal();
+                            GlStateManager.disableCull();
+                            GlStateManager.translate(x + 1.50, y + 0.50, z + 0.50);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                            GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                            if (isRotated(entity)) {
+                                GlStateManager.rotate(180, 0F, 1F, 0F);
+                            }
+                            modelPortalBlockJurassic.renderHead(animTick, 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
+                            GlStateManager.disableRescaleNormal();
+                            GlStateManager.enableCull();
+                            GlStateManager.popMatrix();
+                        }
+                    }
+                }
+
+                colRed = (byte) 56;
+                colGreen = (byte) 118;
+                colBlue = (byte) 163;
             }
         }
 
