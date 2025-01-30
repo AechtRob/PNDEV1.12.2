@@ -404,13 +404,58 @@ public class ModelPsittacosaurus_sibiricus extends ModelBasePalaeopedia {
         resetToDefaultPose();
 
     }
-
-    public void renderStaticFloor(float f) {
-        this.body.rotateAngleY = (float) Math.toRadians(90);
-        this.body.offsetY = -0.054F;
-        this.body.render(0.01F);
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(jaw, 0.1F, 0.0F, 0.0F);
+        this.leftarm.setScale(0,0,0);
+        this.rightarm.setScale(0,0,0);
+        this.leftarm.scaleChildren = true;
+        this.rightarm.scaleChildren = true;
+        this.upperbody.offsetX = -0.0F;
+        this.upperbody.offsetY = -0.03F;
+        this.upperbody.offsetZ = -0.02F;
+        this.upperbody.render(0.01F);
+        this.leftarm.setScale(1,1,1);
+        this.rightarm.setScale(1,1,1);
         resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.1F, 0.0F, 0.05F);
+        this.setRotateAngle(upperbody2, 0.2F, 0.1F, 0.05F);
+        this.setRotateAngle(upperbody, 0.1F, -0.1F, -0.1F);
+        this.setRotateAngle(neck, -0.3F, 0.1F, 0.0F);
+        this.setRotateAngle(neck2, -0.4F, 0.1F, 0.0F);
+        this.setRotateAngle(head, 0.6F, 0.1F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.3F, 0.05F, 0.0F);
+        this.setRotateAngle(tail3, -0.3F, 0.05F, 0.0F);
+        this.setRotateAngle(tail4, 0.3F, 0.05F, 0.0F);
+        this.setRotateAngle(tail5, 0.3F, 0.05F, 0.0F);
+        this.setRotateAngle(leftarm, -1.0F, 0.0F, -0.7F);
+        this.setRotateAngle(leftarm2, -0.9F, 0.0F, 0.2F);
+        this.setRotateAngle(leftarm3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightarm, -1.0F, 0.0F, 0.7F);
+        this.setRotateAngle(rightarm2, -0.9F, 0.0F, -0.1F);
+        this.setRotateAngle(rightarm3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg, -0.4F, -0.05F, -0.05F);
+        this.setRotateAngle(leftleg2, 1.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg3, -2.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg4, 1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg, -0.4F, 0.05F, 0.05F);
+        this.setRotateAngle(rightleg2, 1.2F, 0.1F, -0.1F);
+        this.setRotateAngle(rightleg3, -2.2F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg4, 1.5F, 0.0F, 0.0F);
+        this.body.offsetY = -0.08F;
+        this.neck2.offsetZ = 0.007F;
+        this.leftleg2.offsetZ = 0.002F;
+        this.leftleg3.offsetY = 0.004F;
+        this.leftleg4.offsetZ = -0.003F;
+        this.rightleg2.offsetZ = 0.002F;
+        this.rightleg3.offsetY = 0.004F;
+        this.rightleg4.offsetZ = -0.003F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
+
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

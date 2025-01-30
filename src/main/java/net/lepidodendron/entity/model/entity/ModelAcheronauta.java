@@ -278,14 +278,15 @@ public class ModelAcheronauta extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.base.render(f5 );
     }
-    public void renderStaticDisplayCase(float f) {
-        this.base.offsetZ = -0.05F;
-        this.base.render(0.01F);
-        resetToDefaultPose();
-    }
     public void renderStaticFloor(float f) {
-        this.base.rotateAngleY = (float) Math.toRadians(90);
-        this.base.offsetY = -0.32F;
+        this.setRotateAngle(base, 0.0F, 0.0F, 0.1F);
+        this.setRotateAngle(body, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(body4, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(body5, -0.2F, 0.1F, 0.0F);
+        this.base.offsetX = -0.014F;
+        this.base.offsetY = -0.1F;
         this.base.offsetZ = -0.02F;
         this.base.render(0.01F);
         resetToDefaultPose();

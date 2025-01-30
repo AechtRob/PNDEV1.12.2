@@ -292,16 +292,13 @@ public class ModelTariccoia extends ModelBasePalaeopedia {
 
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.body.offsetZ = 0.1F;
-        this.tariccoia.render(0.014F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(tariccoia, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(cephalon, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(pygidium, 0.0F, 0.1F, 0.0F);
+        this.tariccoia.offsetY = 0.31F;
+        this.tariccoia.render(0.01F);
+        this.resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

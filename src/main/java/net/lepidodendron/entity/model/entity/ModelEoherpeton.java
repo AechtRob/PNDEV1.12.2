@@ -390,12 +390,42 @@ public class ModelEoherpeton extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.main.render(f5);
     }
-    public void renderStaticWall(float f) {
 
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(bodyfront, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(upperhead, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(armleft, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(armleft2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(armright, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(armright2, 0.0F, 0.0F, 0.0F);
+        this.bodyfront.offsetZ = -0.02F;
+        this.bodyfront.offsetY = 0.05F;
+        this.bodyfront.offsetX = -0.0F;
+        this.bodyfront.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(main, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(bodyback, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(bodyfront, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(upperhead, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.15F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, -0.4F, 0.0F);
+        this.setRotateAngle(tail3, 0.03F, -0.2F, 0.0F);
+        this.setRotateAngle(armleft, 0.0F, 0.0F, -1.0F);
+        this.setRotateAngle(armleft2, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(armleft3, 1.7F, 0.0F, 0.0F);
+        this.setRotateAngle(legright, 0.05F, -0.2F, 1.0F);
+        this.setRotateAngle(legright2, 0.2F, 0.0F, 0.2F);
+        this.setRotateAngle(legright3, 1.5F, 0.0F, 0.0F);
+        this.armleft3.offsetZ = -0.01F;
+        this.legright3.offsetZ = -0.015F;
+        this.main.offsetY = -0.085F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
     @Override

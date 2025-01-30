@@ -346,14 +346,47 @@ public class ModelNicrosaurus extends ModelBasePalaeopedia {
         resetToDefaultPose();
 
     }
-
     public void renderStaticWall(float f) {
-
+        this.setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.frontLeftLeg.setScale(0,0,0);
+        this.frontRightLeg.setScale(0,0,0);
+        this.frontLeftLeg.scaleChildren = true;
+        this.frontRightLeg.scaleChildren = true;
+        this.body2.offsetX = -0.0F;
+        this.body2.offsetY = -0.02F;
+        this.body2.offsetZ = 0.03F;
+        this.body2.render(0.01F);
+        this.frontLeftLeg.setScale(1,1,1);
+        this.frontRightLeg.setScale(1,1,1);
         resetToDefaultPose();
-
     }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(neck, -0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(neck2, -0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(head, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(jaw, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg, -0.2F, 0.0F, -0.1F);
+        this.setRotateAngle(frontLeftLeg2, -0.25F, 0.0F, 0.1F);
+        this.setRotateAngle(frontLeftLeg3, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg, 0.9F, 0.0F, 0.1F);
+        this.setRotateAngle(frontRightLeg2, -0.6F, 0.0F, -0.1F);
+        this.setRotateAngle(frontRightLeg3, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg2, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg2, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg3, 0.0F, 0.0F, 0.0F);
+        this.hip.offsetY = 0.075F;
+        this.hip.render(0.01f);
         resetToDefaultPose();
 
     }

@@ -218,11 +218,22 @@ public class ModelTristychius extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.base.render(f5);
     }
-    public void renderStaticWall(float f) {
-        resetToDefaultPose();
-    }
+
 
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(upperjaw, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(lowerjaw, -0.25F, 0.2F, 0.0F);
+        this.setRotateAngle(base, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(bodyfront, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(bodylower, 0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(bodylower2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(bodylower3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(pectoralfinleft, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(pectoralfinright, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(pelvicfinleft, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(pelvicfinright, 0.0F, -0.4F, 0.0F);
+        this.base.offsetY = 0.103F;
+        this.base.render(0.01F);
         resetToDefaultPose();
     }
     @Override

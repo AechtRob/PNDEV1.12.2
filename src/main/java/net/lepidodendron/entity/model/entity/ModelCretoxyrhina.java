@@ -583,19 +583,41 @@ public class ModelCretoxyrhina extends ModelBasePalaeopedia {
 
     public void renderStaticWall(float f) {
         this.main.rotateAngleY = (float) Math.toRadians(90);
-        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
-        this.main.offsetY = -0.2F;
-        this.main.offsetX = -0.15F;
-        this.main.offsetZ = -0.4F;
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.main.offsetX = -0.14F;
+        this.main.offsetY = -0.19F;
+        this.main.offsetZ = 0.06F;
         this.main.render(0.01F);
+        this.resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.head.offsetY = 0.139F;
+        this.head.render(0.01f);
         resetToDefaultPose();
     }
-
-    public void renderStaticFloor(float f) {
-        this.main.offsetZ = -0.1F;
-        this.main.offsetY = -0.03F;
-        this.main.offsetX = -0.02F;
-        this.main.render(0.01F);
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(main, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.head.offsetY = 0.139F;
+        this.head.render(0.01f);
         resetToDefaultPose();
     }
 

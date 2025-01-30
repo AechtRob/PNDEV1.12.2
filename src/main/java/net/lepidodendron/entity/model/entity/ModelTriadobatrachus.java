@@ -355,14 +355,20 @@ public class ModelTriadobatrachus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5);
     }
-    public void renderStaticWall(float f) {
 
-        resetToDefaultPose();
-    }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(Hips, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Head, -0.5F, 0.1F, 0.0F);
+        this.setRotateAngle(Lowerjaw, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(Tongue, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, 0.3F, 0.0F, 0.0F);
+        this.Tongue.offsetZ = -0.005F;
+        this.Hips.offsetY = 0.066F;
+        this.Hips.render(0.01f);
         resetToDefaultPose();
     }
+
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:

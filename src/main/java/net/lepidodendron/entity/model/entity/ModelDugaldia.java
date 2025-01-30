@@ -332,12 +332,21 @@ public class ModelDugaldia extends ModelBasePalaeopedia {
         this.head.render(0.01F);
         resetToDefaultPose();
     }
-
     public void renderStaticFloor(float f) {
-        this.head.offsetZ = -0.1F;
-        this.head.offsetY = -0.03F;
-        this.head.offsetX = -0.02F;
-        this.head.render(0.01F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jawleft, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jawright, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(lipleft, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(lipright, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jawcoverleft, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jawcoverright, 0.0F, 0.0F, 0.0F);
+        this.head.offsetY = -0.1F;
+        this.head.render(0.01f);
         resetToDefaultPose();
     }
 

@@ -36,7 +36,7 @@ public class ItemIllinichthysRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_illinichthys@gendered", ItemIllinichthysRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_illinichthys", ItemIllinichthysRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemIllinichthysRaw.block);
 		OreDictionary.registerOre("pnfurnaceFish", ItemIllinichthysRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemIllinichthysRaw.block);
@@ -48,11 +48,6 @@ public class ItemIllinichthysRaw extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("illinichthys_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
-		}
-
-		@Nullable
-		public String getVariantStr() {
-			return "gendered";
 		}
 	}
 }

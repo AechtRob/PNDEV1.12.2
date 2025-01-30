@@ -310,7 +310,7 @@ public class ModelCervifurca extends ModelBasePalaeopedia {
         this.setRotateAngle(root, -1.5F, 3.15F, 0.0F);
         this.root.offsetY = -0.35F;
         this.root.offsetX = 0.0F;
-        this.root.offsetZ = -0.19F;
+        this.root.offsetZ = -0.27F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }

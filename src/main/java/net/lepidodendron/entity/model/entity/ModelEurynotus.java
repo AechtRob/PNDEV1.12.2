@@ -257,12 +257,21 @@ public class ModelEurynotus extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
+        this.head.rotateAngleY = (float) Math.toRadians(90);
+        this.head.offsetX = -0.03F;
+        this.head.offsetY = -0.18F;
+        this.head.offsetZ = -0.35F;
         this.head.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
-        this.head.offsetY = -0.14F;
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.00F);
+        this.setRotateAngle(body, 0.0F, 0.05F, 0.00F);
+        this.setRotateAngle(body2, 0.0F, 0.1F, 0.00F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.00F);
+        this.setRotateAngle(body4, 0.0F, 0.3F, 0.00F);
+        this.head.offsetY = -0.0F;
+        this.head.offsetZ = -0.0F;
         this.head.render(0.01F);
         resetToDefaultPose();
     }

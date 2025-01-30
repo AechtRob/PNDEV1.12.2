@@ -413,19 +413,43 @@ public class ModelHexanchus extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
-        this.main.rotateAngleY = (float) Math.toRadians(90);
         this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
-        this.main.offsetY = -0.2F;
-        this.main.offsetX = -0.15F;
-        this.main.offsetZ = -0.4F;
-        this.main.render(0.01F);
+        this.head.offsetY = 0.08F;
+        this.head.offsetX = -0.0F;
+        this.head.offsetZ = -0.0F;
+        this.head.render(0.01F);
         resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, 0.05F, 0.0F, 0.05F);
+        this.setRotateAngle(head, 0.05F, -0.05F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail6, 0.0F, -0.2F, 0.0F);
+        this.main.offsetZ = -0.0F;
+        this.main.offsetY = -0.28F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(main, -0.2F, 0.1F, 0.05F);
+        this.setRotateAngle(head, -0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, -0.05F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, -0.05F);
+        this.setRotateAngle(tail3, 0.0F, 0.2F, -0.05F);
+        this.setRotateAngle(tail4, 0.0F, 0.2F, -0.05F);
+        this.setRotateAngle(tail5, 0.0F, 0.2F, -0.05F);
+        this.setRotateAngle(tail6, 0.0F, 0.2F, -0.05F);
         this.main.offsetZ = -0.1F;
-        this.main.offsetY = -0.03F;
-        this.main.offsetX = -0.02F;
+        this.main.offsetY = -0.05F;
+        this.main.offsetX = -0.03F;
         this.main.render(0.01F);
         resetToDefaultPose();
     }

@@ -340,13 +340,20 @@ public class ModelDaidal extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.bone.render(f5);
     }
-    public void renderStaticDisplayCase(float f) {
-        this.bone.offsetZ = -0.04F;
-        this.bone.render(0.01F);
-        resetToDefaultPose();
-    }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(bone, -0.1F, 0.0F, 0.05F);
+        this.setRotateAngle(body1, 0.05F, 0.05F, 0.05F);
+        this.setRotateAngle(body2, 0.05F, 0.05F, 0.05F);
+        this.setRotateAngle(body3, 0.05F, 0.05F, 0.05F);
+        this.setRotateAngle(body4, 0.05F, -0.05F, 0.02F);
+        this.setRotateAngle(body5, 0.05F, -0.05F, 0.02F);
+        this.setRotateAngle(body6, -0.05F, -0.1F, 0.02F);
+        this.setRotateAngle(body7, -0.05F, -0.1F, 0.02F);
+        this.setRotateAngle(body9, -0.05F, -0.15F, 0.02F);
+        this.setRotateAngle(body10, -0.05F, -0.15F, 0.02F);
+        this.bone.offsetZ = -0.04F;
+        this.bone.offsetY = -0.12F;
+        this.bone.render(0.01F);
         resetToDefaultPose();
     }
     @Override

@@ -707,9 +707,56 @@ public class ModelAcrocanthosaurus extends ModelBasePalaeopedia {
         this.hips.render(f5);
     }
     public void renderStaticWall(float f) {
+        this.setRotateAngle(neck1, -0.2F, 0.1F, 0.05F);
+        this.setRotateAngle(neck2, -0.4F, 0.1F, 0.05F);
+        this.setRotateAngle(neck3, 0.2F, 0.1F, 0.05F);
+        this.setRotateAngle(head, 0.4F, 0.1F, 0.05F);
+        this.setRotateAngle(jaw, 0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(throat1, 0.0F, -0.08F, 0.0F);
+        this.setRotateAngle(throat2, 0.0F, -0.08F, 0.0F);
+        this.leftArm1.setScale(0,0,0);
+        this.rightArm1.setScale(0,0,0);
+        this.leftArm1.scaleChildren = true;
+        this.rightArm1.scaleChildren = true;
+        this.chest.offsetX = -0.0F;
+        this.chest.offsetY = -0.05F;
+        this.chest.offsetZ = 0.2F;
+        this.chest.render(0.01F);
+        this.leftArm1.setScale(1,1,1);
+        this.rightArm1.setScale(1,1,1);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(hips, -0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.08F, 0.05F, 0.0F);
+        this.setRotateAngle(chest, 0.08F, 0.05F, 0.0F);
+        this.setRotateAngle(neck1, -0.5F, 0.1F, 0.05F);
+        this.setRotateAngle(neck2, -0.3F, 0.1F, 0.05F);
+        this.setRotateAngle(neck3, 0.45F, 0.1F, 0.05F);
+        this.setRotateAngle(head, 0.5F, 0.1F, 0.05F);
+        this.setRotateAngle(jaw, 0.08F, 0.0F, 0.0F);
+        this.setRotateAngle(throat1, 0.0F, -0.08F, 0.0F);
+        this.setRotateAngle(throat2, 0.0F, -0.08F, 0.0F);
+        this.setRotateAngle(tail1, -0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(tail2, 0.15F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, -0.05F, -0.12F, 0.0F);
+        this.setRotateAngle(tail4, -0.1F, -0.14F, 0.0F);
+        this.setRotateAngle(tail5, -0.15F, -0.16F, 0.0F);
+        this.setRotateAngle(tail6, -0.2F, -0.18F, 0.0F);
+        this.setRotateAngle(tail7, -0.25F, -0.2F, 0.0F);
+        this.setRotateAngle(leftLeg1, -0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg2, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg3, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(leftFoot, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(leftToes, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg1, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg2, 0.55F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg3, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(rightFoot, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightToes, 0.0F, 0.0F, 0.0F);
+        this.rightFoot.offsetZ = 0.001F;
+        this.hips.offsetY = -0.16F;
+        this.hips.render(0.01f);
         resetToDefaultPose();
     }
 

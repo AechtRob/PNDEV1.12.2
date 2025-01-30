@@ -204,12 +204,24 @@ public class ModelMicrobrachis extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5);
     }
-    public void renderStaticWall(float f) {
 
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.body.offsetX = -0.0F;
+        this.body.offsetY = -0.23F;
+        this.body.offsetZ = -1.3F;
+        this.body.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(body, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, -0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(tail, -0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(tail2, -0.1F, -0.2F, 0.0F);
+        this.body.offsetY = -0.14F;
+        this.body.offsetZ = -0.04F;
+        this.body.render(0.01F);
         resetToDefaultPose();
     }
     @Override

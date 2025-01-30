@@ -539,16 +539,33 @@ public class ModelDiademodon extends ModelBasePalaeopedia {
         resetToDefaultPose();
 
     }
-
     public void renderStaticWall(float f) {
-
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.3F, 0.0F, 0.0F);
+        this.foreleg1.setScale(0,0,0);
+        this.foreleg4.setScale(0,0,0);
+        this.foreleg1.scaleChildren = true;
+        this.foreleg4.scaleChildren = true;
+        this.chest.offsetX = -0.0F;
+        this.chest.offsetY = -0.02F;
+        this.chest.offsetZ = 0.05F;
+        this.chest.render(0.01F);
+        this.foreleg1.setScale(1,1,1);
+        this.foreleg4.setScale(1,1,1);
         resetToDefaultPose();
-
     }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(hip, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(neck, 0.6F, 0.1F, 0.0F);
+        this.setRotateAngle(head, -0.7F, 0.1F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.4F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.2F, 0.2F, 0.0F);
+        this.hip.offsetY = -0.07F;
+        this.hip.render(0.01f);
         resetToDefaultPose();
-
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

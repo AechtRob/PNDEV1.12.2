@@ -223,12 +223,23 @@ public class ModelIllinichthys extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
+        this.root.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.root.offsetX = -0.02F;
+        this.root.offsetY = -0.2F;
+        this.root.offsetZ = -2.15F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
-        this.root.offsetY = -0.14F;
+        this.setRotateAngle(root, 0.15F, 0.0F, -0.05F);
+        this.setRotateAngle(head, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.2F, 0.0F);
+        this.root.offsetY = -0.01F;
+        this.root.offsetZ = 0.01F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }

@@ -346,10 +346,39 @@ public class ModelKannemeyeria extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.hip.render(f5);
     }
+
     public void renderStaticWall(float f) {
+        this.setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.neck.offsetZ = -0.05F;
+        this.neck.offsetY = -0.04F;
+        this.neck.offsetX = -0.0F;
+        this.neck.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(hip, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.15F, 0.1F, 0.0F);
+        this.setRotateAngle(head, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -1.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg, -0.3F, 0.0F, -0.2F);
+        this.setRotateAngle(frontLeftLeg2, -0.4F, 0.0F, 0.2F);
+        this.setRotateAngle(frontLeftLeg3, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg, 0.9F, 0.0F, 0.2F);
+        this.setRotateAngle(frontRightLeg2, -0.7F, 0.0F, -0.2F);
+        this.setRotateAngle(frontRightLeg3, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg, 0.5F, 0.0F, -0.3F);
+        this.setRotateAngle(backLeftLeg2, 0.5F, 0.0F, 0.2F);
+        this.setRotateAngle(backLeftLeg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg, -0.3F, 0.0F, 0.3F);
+        this.setRotateAngle(backRightLeg2, 0.3F, 0.0F, -0.3F);
+        this.setRotateAngle(backRightLeg3, 0.0F, 0.0F, 0.0F);
+        this.neck.offsetZ = 0.02F;
+        this.hip.offsetY = 0.13F;
+        this.hip.render(0.01F);
         resetToDefaultPose();
     }
 

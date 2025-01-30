@@ -276,9 +276,22 @@ public class ModelRhynchonkos extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
     public void renderStaticFloor(float f) {
-        this.root.offsetY = 0.32F;
-        this.root.render(0.01F);
+        this.setRotateAngle(root, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(bodymiddlefront, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(bodyfront, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(head, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(bodymiddleback, -0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(bodyback, -0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(hips, -0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(tailbase, -0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(tailmiddle, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tailmiddleend, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tailend, 0.0F, 0.2F, 0.0F);
+        this.root.offsetY = 0.198F;
+        this.root.render(0.01f);
         resetToDefaultPose();
     }
 
