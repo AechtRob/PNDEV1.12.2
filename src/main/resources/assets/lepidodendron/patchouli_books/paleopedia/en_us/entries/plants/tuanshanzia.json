@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tuanshanzia",
 			"title": "Frondose Archaic Algae",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Paleoproterozoic (Statherian) - Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() under water(br2)$(l)Propagation:$() Craft with a bucket of water.$(br)$(l)Method of Obtaining:$() Shears"
+			"text": "$(l)Temporal Range:$() Paleoproterozoic (Statherian) - Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() under water$(br2)$(l)Propagation:$() Craft with a bucket of water.$(br)$(l)Method of Obtaining:$() Shears"
 		},
 		{
 			"type": "multiblock",
