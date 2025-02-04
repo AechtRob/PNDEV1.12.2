@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "lepidodendron:items/entities/brachiospongia_inventory",
-    "particle": "lepidodendron:items/entities/brachiospongia_inventory"
+    "cross": "lepidodendron:items/brachiospongia_inventory",
+    "particle": "lepidodendron:items/brachiospongia_inventory"
   }
 }
