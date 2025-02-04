@@ -20,6 +20,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -80,74 +81,132 @@ public class LepidodendronBookSubscribers {
 			return;
 		}
 
-		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 0, true).equalsIgnoreCase("true")) {
-			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
-				ModTriggers.COMPLETE_PRECAMBRIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+		if (event.getEntityPlayer() instanceof EntityPlayerMP && event.getEntityPlayer().world instanceof WorldServer) {
+			if (!((EntityPlayerMP) event.getEntityPlayer()).getAdvancements()
+					.getProgress(((WorldServer) event.getEntityPlayer().world).getAdvancementManager()
+					.getAdvancement(new ResourceLocation("lepidodendron:pf_adv_complete_precambrian"))).isDone()) {
+				if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 0, true).equalsIgnoreCase("true")) {
+					if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+						ModTriggers.COMPLETE_PRECAMBRIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+					}
+				}
 			}
-		}
-		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 1, true).equalsIgnoreCase("true")) {
-			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
-				ModTriggers.COMPLETE_CAMBRIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+			if (!((EntityPlayerMP) event.getEntityPlayer()).getAdvancements()
+					.getProgress(((WorldServer) event.getEntityPlayer().world).getAdvancementManager()
+							.getAdvancement(new ResourceLocation("lepidodendron:pf_adv_complete_cambrian"))).isDone()) {
+				if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 1, true).equalsIgnoreCase("true")) {
+					if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+						ModTriggers.COMPLETE_CAMBRIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+					}
+				}
 			}
-		}
-		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 2, true).equalsIgnoreCase("true")) {
-			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
-				ModTriggers.COMPLETE_ORDOVICIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+			if (!((EntityPlayerMP) event.getEntityPlayer()).getAdvancements()
+					.getProgress(((WorldServer) event.getEntityPlayer().world).getAdvancementManager()
+							.getAdvancement(new ResourceLocation("lepidodendron:pf_adv_complete_ordovician"))).isDone()) {
+				if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 2, true).equalsIgnoreCase("true")) {
+					if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+						ModTriggers.COMPLETE_ORDOVICIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+					}
+				}
 			}
-		}
-		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 3, true).equalsIgnoreCase("true")) {
-			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
-				ModTriggers.COMPLETE_SILURIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+			if (!((EntityPlayerMP) event.getEntityPlayer()).getAdvancements()
+					.getProgress(((WorldServer) event.getEntityPlayer().world).getAdvancementManager()
+							.getAdvancement(new ResourceLocation("lepidodendron:pf_adv_complete_silurian"))).isDone()) {
+				if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 3, true).equalsIgnoreCase("true")) {
+					if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+						ModTriggers.COMPLETE_SILURIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+					}
+				}
 			}
-		}
-		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 4, true).equalsIgnoreCase("true")) {
-			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
-				ModTriggers.COMPLETE_DEVONIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+			if (!((EntityPlayerMP) event.getEntityPlayer()).getAdvancements()
+					.getProgress(((WorldServer) event.getEntityPlayer().world).getAdvancementManager()
+							.getAdvancement(new ResourceLocation("lepidodendron:pf_adv_complete_devonian"))).isDone()) {
+				if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 4, true).equalsIgnoreCase("true")) {
+					if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+						ModTriggers.COMPLETE_DEVONIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+					}
+				}
 			}
-		}
-		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 5, true).equalsIgnoreCase("true")) {
-			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
-				ModTriggers.COMPLETE_CARBONIFEROUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+			if (!((EntityPlayerMP) event.getEntityPlayer()).getAdvancements()
+					.getProgress(((WorldServer) event.getEntityPlayer().world).getAdvancementManager()
+							.getAdvancement(new ResourceLocation("lepidodendron:pf_adv_complete_carboniferous"))).isDone()) {
+				if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 5, true).equalsIgnoreCase("true")) {
+					if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+						ModTriggers.COMPLETE_CARBONIFEROUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+					}
+				}
 			}
-		}
-		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 6, true).equalsIgnoreCase("true")) {
-			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
-				ModTriggers.COMPLETE_PERMIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+			if (!((EntityPlayerMP) event.getEntityPlayer()).getAdvancements()
+					.getProgress(((WorldServer) event.getEntityPlayer().world).getAdvancementManager()
+							.getAdvancement(new ResourceLocation("lepidodendron:pf_adv_complete_permian"))).isDone()) {
+				if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 6, true).equalsIgnoreCase("true")) {
+					if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+						ModTriggers.COMPLETE_PERMIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+					}
+				}
 			}
-		}
-		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 7, true).equalsIgnoreCase("true")) {
-			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
-				ModTriggers.COMPLETE_TRIASSIC.trigger((EntityPlayerMP) event.getEntityPlayer());
+			if (!((EntityPlayerMP) event.getEntityPlayer()).getAdvancements()
+					.getProgress(((WorldServer) event.getEntityPlayer().world).getAdvancementManager()
+							.getAdvancement(new ResourceLocation("lepidodendron:pf_adv_complete_triassic"))).isDone()) {
+				if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 7, true).equalsIgnoreCase("true")) {
+					if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+						ModTriggers.COMPLETE_TRIASSIC.trigger((EntityPlayerMP) event.getEntityPlayer());
+					}
+				}
 			}
-		}
-		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 8, true).equalsIgnoreCase("true")) {
-			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
-				ModTriggers.COMPLETE_JURASSIC.trigger((EntityPlayerMP) event.getEntityPlayer());
+			if (!((EntityPlayerMP) event.getEntityPlayer()).getAdvancements()
+					.getProgress(((WorldServer) event.getEntityPlayer().world).getAdvancementManager()
+							.getAdvancement(new ResourceLocation("lepidodendron:pf_adv_complete_jurassic"))).isDone()) {
+				if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 8, true).equalsIgnoreCase("true")) {
+					if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+						ModTriggers.COMPLETE_JURASSIC.trigger((EntityPlayerMP) event.getEntityPlayer());
+					}
+				}
 			}
-		}
-		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 9, true).equalsIgnoreCase("true")) {
-			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
-				//ModTriggers.COMPLETE_CRETACEOUS_EARLY.trigger((EntityPlayerMP) event.getEntityPlayer());
+			if (!((EntityPlayerMP) event.getEntityPlayer()).getAdvancements()
+					.getProgress(((WorldServer) event.getEntityPlayer().world).getAdvancementManager()
+							.getAdvancement(new ResourceLocation("lepidodendron:pf_adv_complete_cretaceous_early"))).isDone()) {
+				if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 9, true).equalsIgnoreCase("true")) {
+					if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+						//ModTriggers.COMPLETE_CRETACEOUS_EARLY.trigger((EntityPlayerMP) event.getEntityPlayer());
+					}
+				}
 			}
-		}
-		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 10, true).equalsIgnoreCase("true")) {
-			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
-				//ModTriggers.COMPLETE_CRETACEOUS_LATE.trigger((EntityPlayerMP) event.getEntityPlayer());
+			if (!((EntityPlayerMP) event.getEntityPlayer()).getAdvancements()
+					.getProgress(((WorldServer) event.getEntityPlayer().world).getAdvancementManager()
+							.getAdvancement(new ResourceLocation("lepidodendron:pf_adv_complete_cretaceous_late"))).isDone()) {
+				if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 10, true).equalsIgnoreCase("true")) {
+					if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+						//ModTriggers.COMPLETE_CRETACEOUS_LATE.trigger((EntityPlayerMP) event.getEntityPlayer());
+					}
+				}
 			}
-		}
-		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 11, true).equalsIgnoreCase("true")) {
-			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
-				//ModTriggers.COMPLETE_PALEOGENE.trigger((EntityPlayerMP) event.getEntityPlayer());
+			if (!((EntityPlayerMP) event.getEntityPlayer()).getAdvancements()
+					.getProgress(((WorldServer) event.getEntityPlayer().world).getAdvancementManager()
+							.getAdvancement(new ResourceLocation("lepidodendron:pf_adv_complete_paleogene"))).isDone()) {
+				if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 11, true).equalsIgnoreCase("true")) {
+					if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+						//ModTriggers.COMPLETE_PALEOGENE.trigger((EntityPlayerMP) event.getEntityPlayer());
+					}
+				}
 			}
-		}
-		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 12, true).equalsIgnoreCase("true")) {
-			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
-				//ModTriggers.COMPLETE_NEOGENE.trigger((EntityPlayerMP) event.getEntityPlayer());
+			if (!((EntityPlayerMP) event.getEntityPlayer()).getAdvancements()
+					.getProgress(((WorldServer) event.getEntityPlayer().world).getAdvancementManager()
+							.getAdvancement(new ResourceLocation("lepidodendron:pf_adv_complete_neogene"))).isDone()) {
+				if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 12, true).equalsIgnoreCase("true")) {
+					if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+						//ModTriggers.COMPLETE_NEOGENE.trigger((EntityPlayerMP) event.getEntityPlayer());
+					}
+				}
 			}
-		}
-		if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 13, true).equalsIgnoreCase("true")) {
-			if (event.getEntityPlayer() instanceof EntityPlayerMP) {
-				//ModTriggers.COMPLETE_PLEISTOCENE.trigger((EntityPlayerMP) event.getEntityPlayer());
+			if (!((EntityPlayerMP) event.getEntityPlayer()).getAdvancements()
+					.getProgress(((WorldServer) event.getEntityPlayer().world).getAdvancementManager()
+							.getAdvancement(new ResourceLocation("lepidodendron:pf_adv_complete_pleistocene"))).isDone()) {
+				if (PercentageCollected.getPercentagePerDimension(event.getEntityPlayer(), 13, true).equalsIgnoreCase("true")) {
+					if (event.getEntityPlayer() instanceof EntityPlayerMP) {
+						//ModTriggers.COMPLETE_PLEISTOCENE.trigger((EntityPlayerMP) event.getEntityPlayer());
+					}
+				}
 			}
 		}
 

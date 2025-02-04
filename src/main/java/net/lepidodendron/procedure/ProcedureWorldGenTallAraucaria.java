@@ -2,6 +2,7 @@ package net.lepidodendron.procedure;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockTallAraucariaLeaves;
 import net.lepidodendron.block.BlockTallAraucariaLog;
 import net.minecraft.block.material.Material;
@@ -35,6 +36,10 @@ public class ProcedureWorldGenTallAraucaria extends ElementsLepidodendronMod.Mod
 			System.err.println("Failed to load dependency world for procedure WorldGenTallAraucaria!");
 			return;
 		}
+		if (dependencies.get("SaplingSpawn") == null) {
+			System.err.println("Failed to load dependency SaplingSpawn for procedure WorldGenTallAraucaria!");
+			return;
+		}
 		int x = (int) dependencies.get("x");
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
@@ -42,6 +47,7 @@ public class ProcedureWorldGenTallAraucaria extends ElementsLepidodendronMod.Mod
 		int yy = (int) dependencies.get("y");
 		int zz = (int) dependencies.get("z");
 		World world = (World) dependencies.get("world");
+		boolean SaplingSpawn = (boolean) dependencies.get("SaplingSpawn");
 		double TrunkHeight = 0;
 		double counter = 0;
 		Random random = new Random();
@@ -468,7 +474,9 @@ public class ProcedureWorldGenTallAraucaria extends ElementsLepidodendronMod.Mod
 					counter = counter - 1;
 				}
 			}
-			
-			
+
+		ProcedureSpawnNilssoniocladus.executeProcedure(x, y, z, world, LepidodendronConfigPlants.genNilssoniocladusTallAraucaria, SaplingSpawn);
+
+
 	}
 }

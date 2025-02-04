@@ -1,7 +1,7 @@
 {
 	"name": "Promissum",
 	"read_by_default": true,
-	"icon": "lepidodendron:promissum_raw",
+	"icon": "paleopedia:textures/items/conodont_promissum_icon.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_promissum",
 	"pages": [

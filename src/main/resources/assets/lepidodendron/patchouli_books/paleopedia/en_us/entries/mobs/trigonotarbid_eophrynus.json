@@ -1,7 +1,7 @@
 {
 	"name": "Eophrynus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/eophrynus_icon.png",
+	"icon": "paleopedia:textures/items/trigonotarbid_eophrynus_icon.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_trigonotarbid_eophrynus",
 	"pages": [
@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arachnida$(br)>Trigonotarida$(br)>Eophrynidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/eophrynus.png"],
-			"title": "E. prestvicii",
-			"text": ""
+			"type": "entity",
+			"name": "E. prestvicii",
+			"entity": "lepidodendron:prehistoric_flora_trigonotarbid_eophrynus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_trigonotarbid_eophrynus",

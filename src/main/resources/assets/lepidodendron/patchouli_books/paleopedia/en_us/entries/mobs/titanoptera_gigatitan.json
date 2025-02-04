@@ -1,7 +1,7 @@
 {
 	"name": "Gigatitan",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/gigatitan_icon.png",
+	"icon": "paleopedia:textures/items/titanoptera_gigatitan_icon.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_titanoptera_gigatitan",
 	"pages": [

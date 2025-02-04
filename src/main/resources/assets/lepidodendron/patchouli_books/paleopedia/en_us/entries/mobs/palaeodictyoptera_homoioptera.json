@@ -1,7 +1,7 @@
 {
 	"name": "Homoioptera",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/homoioptera_icon.png",
+	"icon": "paleopedia:textures/items/palaeodictyoptera_homoioptera_icon.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera_homoioptera",
 	"pages": [

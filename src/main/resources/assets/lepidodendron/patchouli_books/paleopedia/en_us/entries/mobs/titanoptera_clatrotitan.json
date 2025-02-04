@@ -1,7 +1,7 @@
 {
 	"name": "Clatrotitan",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/clatrotitan_icon.png",
+	"icon": "paleopedia:textures/items/titanoptera_clatrotitan_icon.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_titanoptera_clatrotitan",
 	"pages": [

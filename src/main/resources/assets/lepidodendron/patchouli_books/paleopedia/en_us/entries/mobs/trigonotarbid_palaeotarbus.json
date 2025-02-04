@@ -1,7 +1,7 @@
 {
 	"name": "Palaeotarbus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/palaeotarbus_icon.png",
+	"icon": "paleopedia:textures/items/trigonotarbid_palaeotarbus_icon.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_trigonotarbid_palaeotarbus",
 	"pages": [
@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arachnida$(br)>Trigonotarbida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/palaeotarbus.png"],
-			"title": "P. jerami",
-			"text": ""
+			"type": "entity",
+			"name": "P. jerami",
+			"entity": "lepidodendron:prehistoric_flora_trigonotarbid_palaeotarbus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_trigonotarbid_palaeotarbus",

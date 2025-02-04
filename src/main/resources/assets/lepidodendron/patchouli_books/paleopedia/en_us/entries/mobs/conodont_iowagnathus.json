@@ -1,7 +1,7 @@
 {
 	"name": "Iowagnathus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/iowagnathus_icon.png",
+	"icon": "paleopedia:textures/items/conodont_iowagnathus_icon.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_iowagnathus",
 	"pages": [

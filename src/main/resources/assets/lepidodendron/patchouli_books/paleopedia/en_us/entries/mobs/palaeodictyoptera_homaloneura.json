@@ -1,7 +1,7 @@
 {
 	"name": "Homaloneura",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/homaloneura_icon.png",
+	"icon": "paleopedia:textures/items/palaeodictyoptera_homaloneura_icon.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera_homaloneura",
 	"pages": [

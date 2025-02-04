@@ -1,7 +1,7 @@
 {
 	"name": "Dunbaria",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/dunbaria_icon.png",
+	"icon": "paleopedia:textures/items/palaeodictyoptera_dunbaria_icon.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera_dunbaria",
 	"pages": [

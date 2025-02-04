@@ -1,7 +1,7 @@
 {
 	"name": "Gigantoscorpio",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/gigantoscorpio_icon.png",
+	"icon": "paleopedia:textures/items/scorpion_gigantoscorpio_icon.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_scorpion_gigantoscorpio",
 	"pages": [

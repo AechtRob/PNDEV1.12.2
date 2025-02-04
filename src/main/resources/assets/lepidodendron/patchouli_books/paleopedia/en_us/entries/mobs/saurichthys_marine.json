@@ -1,7 +1,7 @@
 {
 	"name": "Saurichthys (marine)",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/saurichthys_icon.png",
+	"icon": "paleopedia:textures/items/saurichthys_marine_icon.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_saurichthys",
 	"pages": [

@@ -104,6 +104,21 @@ public class AcidBathOutputStatics {
                 }
                 ii = (new Random()).nextInt(getPleistoceneCleanedFossilsStatics().length);
                 return getPleistoceneCleanedFossilsStatics()[ii];
+
+            //Specials for just certain circumstances:
+            case 14: //Early K ONLY
+                if (getCretaceousCleanedFossilsStaticsEarly().length < 1) {
+                    return "";
+                }
+                ii = (new Random()).nextInt(getCretaceousCleanedFossilsStaticsEarly().length);
+                return getCretaceousCleanedFossilsStaticsEarly()[ii];
+
+            case 15: //Early K ONLY
+                if (getCretaceousCleanedFossilsStaticsLate().length < 1) {
+                    return "";
+                }
+                ii = (new Random()).nextInt(getCretaceousCleanedFossilsStaticsLate().length);
+                return getCretaceousCleanedFossilsStaticsLate()[ii];
         }
     }
 
@@ -680,6 +695,7 @@ public class AcidBathOutputStatics {
 
     public static String[] getCretaceousCleanedFossilsStatics() {
         String[] resLoc = ArrayUtils.addAll(getCretaceousCleanedFossilsStaticsEarly(), getCretaceousCleanedFossilsStaticsLate());
+        resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCretaceous);
         return resLoc;
     }
 
@@ -734,7 +750,6 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockSeaPenYellow.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBoneWorm.block).toString()
         };
-        resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCretaceous);
         return resLoc;
     }
 
@@ -789,7 +804,6 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockSeaPenYellow.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBoneWorm.block).toString()
         };
-        resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCretaceous);
         return resLoc;
     }
 

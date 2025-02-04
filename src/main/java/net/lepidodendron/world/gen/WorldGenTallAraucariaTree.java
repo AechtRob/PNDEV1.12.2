@@ -85,7 +85,9 @@ public class WorldGenTallAraucariaTree extends WorldGenAbstractTree
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
-                    if ((worldIn.provider.getDimension() != LepidodendronConfig.dimJurassic)
+                    if (worldIn.provider.getDimension() != LepidodendronConfig.dimJurassic
+                            && worldIn.provider.getDimension() != LepidodendronConfig.dimCretaceousEarly
+                            && worldIn.provider.getDimension() != LepidodendronConfig.dimCretaceousLate
                     ){
                         $_dependencies.put("SaplingSpawn", true); // disables Nilssoniocladus
                     }

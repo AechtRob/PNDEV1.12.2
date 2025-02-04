@@ -1,7 +1,7 @@
 {
 	"name": "Pneumodesmus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/pneumodesmus_icon.png",
+	"icon": "paleopedia:textures/items/myriapod_pneumodesmus_icon.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_pneumodesmus",
 	"pages": [
