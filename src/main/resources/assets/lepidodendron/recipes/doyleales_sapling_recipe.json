@@ -3,7 +3,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "lepidodendron:doyleales_nuts"
+      "item": "lepidodendron:doyleales_seed"
     },
     {
       "type": "forge:ore_dict",

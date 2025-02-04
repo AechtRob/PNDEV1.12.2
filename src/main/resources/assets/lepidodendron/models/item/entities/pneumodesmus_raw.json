@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:items/pneumodesmus_icon"
+    "layer0": "paleopedia:items/myriapod_pneumodesmus_icon"
   }
 }

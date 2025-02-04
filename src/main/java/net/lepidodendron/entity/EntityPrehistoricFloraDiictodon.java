@@ -207,8 +207,6 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 		return true;
 	}
 
-	
-	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;

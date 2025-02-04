@@ -1,0 +1,42 @@
+{
+	"name": "Stromatolite",
+	"read_by_default": true,
+	"icon": "lepidodendron:stromatolite",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_stromatolite",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_stromatolite",
+			"title": "Stromatolite",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Archean onwards$(br2)$(l)Habitat:$() Marine$(br)$(l)Method of Obtaining:$() Silk touch"
+		},
+		{
+			"type": "multiblock",
+			"name": "Stromatolite",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2  " ],
+					[ "102" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:stromatolite[topshoot=true]",
+					"1": "lepidodendron:stromatolite[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stromatolite",
+			"type": "text",
+			"text": "Stromatolites are a form of layered sedimentary formations from the cementation of cyanobacterial colonies known from the Archean onwards, and are usually found in shallow waters, growing up to 1 m or so in size. They differ from Thrombolites in not only their small size, but also form fine layers, unlike Thrombolites which are more messy and randomised."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stromatolite",
+			"type": "text",
+			"text": "Stromatolites represent the oldest forms of 'visible' life from the Early Precambrian, with possible fossilised structures being found in the Archean, and are found in subsequent Eras, with modern examples rare to come by. The name derives from the Greek words 'strôma', to mean 'layer'; and 'líthos', to mean 'stone'."
+		}
+	]
+}
+

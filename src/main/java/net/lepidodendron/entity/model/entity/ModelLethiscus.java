@@ -171,7 +171,19 @@ public class ModelLethiscus extends ModelBasePalaeopedia {
         this.root.render(f5);
     }
     public void renderStaticFloor(float f) {
-        this.root.offsetY = 0.32F;
+        this.setRotateAngle(root, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, -0.2F, 0.05F);
+        this.setRotateAngle(head, 0.0F, -0.2F, 0.05F);
+        this.setRotateAngle(body1, 0.0F, 0.2F, 0.05F);
+        this.setRotateAngle(body2, 0.0F, 0.3F, 0.05F);
+        this.setRotateAngle(body3, 0.0F, 0.4F, 0.05F);
+        this.setRotateAngle(body4, 0.0F, -0.5F, 0.05F);
+        this.setRotateAngle(body5, 0.0F, -0.6F, 0.05F);
+        this.setRotateAngle(body6, 0.0F, -0.8F, 0.05F);
+        this.setRotateAngle(body7, 0.0F, -1.0F, 0.05F);
+        this.root.offsetX = -0.006F;
+        this.root.offsetY = -0.12F;
+        this.root.offsetZ = -0.15F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }

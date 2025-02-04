@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:items/misikella_icon"
+    "layer0": "paleopedia:items/conodont_misikella_icon"
   }
 }

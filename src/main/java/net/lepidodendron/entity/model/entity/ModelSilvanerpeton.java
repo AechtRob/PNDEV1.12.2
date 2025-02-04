@@ -309,11 +309,32 @@ public class ModelSilvanerpeton extends ModelBasePalaeopedia {
         this.hips.render(f5);
     }
     public void renderStaticWall(float f) {
-
+        this.setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.neck.offsetY = -0.0F;
+        this.neck.offsetZ = -0.26F;
+        this.neck.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(hips, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(armright, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(armright2, 0.5F, 0.5F, -1.2F);
+        this.setRotateAngle(armright3, 0.0F, 0.5F, -1.8F);
+        this.setRotateAngle(legleft, 0.4F, 0.0F, -0.2F);
+        this.setRotateAngle(legleft2, 0.0F, 0.0F, 1.2F);
+        this.setRotateAngle(legleft3, 0.0F, -1.8F, 0.8F);
+        this.hips.offsetY = 0.08F;
+        this.hips.render(0.01F);
         resetToDefaultPose();
     }
     @Override

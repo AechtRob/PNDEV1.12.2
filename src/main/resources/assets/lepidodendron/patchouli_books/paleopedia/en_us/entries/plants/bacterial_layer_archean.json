@@ -1,0 +1,35 @@
+{
+	"name": "Archean Microbial Mats",
+	"read_by_default": true,
+	"icon": "lepidodendron:bacterial_layer_archean",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_bacterial_layer_archean",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bacterial_layer_archean",
+			"title": "Archean Microbial Mats",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Archean$(br2)$(l)Habitat:$() Aquatic"
+		},
+		{
+			"type": "multiblock",
+			"name": "Archean Microbial Mats",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bacterial_layer_archean",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bacterial_layer_archean",
+			"type": "text",
+			"text": "Anaerobic bacteria are the earliest known form of life with the oldest confirmed fossils dating to the Paleoarchean era 3.5 billion years ago. The vast majority of them were wiped out as oxygen began to accumulate in the atmosphere at the beginning of the Paleoproterozoic."
+		}
+	]
+}

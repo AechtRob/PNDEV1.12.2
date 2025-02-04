@@ -239,16 +239,13 @@ public class ModelTremaglaspis extends ModelBasePalaeopedia {
 
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.body.offsetZ = 0.1F;
-        this.tremaglaspis.render(0.014F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(tremaglaspis, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(carapace, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(thorax, 0.0F, 0.1F, 0.0F);
+        this.tremaglaspis.offsetY = 0.315F;
+        this.tremaglaspis.render(0.01F);
+        this.resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

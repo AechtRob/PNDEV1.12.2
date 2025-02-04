@@ -334,25 +334,25 @@ public class EntityPrehistoricFloraMuttaburrasaurus extends EntityPrehistoricFlo
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:camptosaurid_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:muttaburrasaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:camptosaurid_idle"));
+				.getObject(new ResourceLocation("lepidodendron:muttaburrasaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:camptosaurid_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:muttaburrasaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:camptosaurid_death"));
+	            .getObject(new ResourceLocation("lepidodendron:muttaburrasaurus_death"));
 	}
 
 	@Override

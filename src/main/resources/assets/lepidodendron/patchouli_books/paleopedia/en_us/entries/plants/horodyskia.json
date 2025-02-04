@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_horodyskia",
 			"title": "Horodyskia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Calymmian-Tonian$(br2)$(l)Habitat:$() Marine$(br2)>Glomeromycota$(br)>Archaeosporales$(br)>Geosiphonaceae"
+			"text": ">Eukaryota$(br)>Incertae sedis$(br2)$(l)Temporal Range:$() Mesoproterozoic (Calymmian) - Neoproterozoic (Tonian)$(br)$(l)Habitat:$() Marine$(br)$(l)Method of Obtaining:$() Shears"
 		},
 		{
 			"type": "multiblock",
@@ -30,11 +30,6 @@
 			"advancement": "lepidodendron:pf_adv_book_horodyskia",
 			"type": "text",
 			"text": "Horodyskia is an enigmatic fossil from the Mesoproterozoic Era that resembles a string of pearls. It has been interepreted as a fungus or possibly a very early animal. Horodyskia fossils have been found in Austraila, China, and in North America."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_horodyskia",
-			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}
 	]
 }

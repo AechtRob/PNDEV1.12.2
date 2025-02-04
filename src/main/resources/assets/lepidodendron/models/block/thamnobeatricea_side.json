@@ -57,7 +57,6 @@
 			"to": [5, 11, 4],
 			"rotation": {"angle": -22.5, "axis": "z", "origin": [0, 10, 6]},
 			"faces": {
-				"south": {"uv": [0, 0, 2, 0], "texture": "#missing"},
 				"up": {"uv": [0, 0, 2, 4], "rotation": 180, "texture": "#texture"},
 				"down": {"uv": [2, 0, 0, 4], "texture": "#texture"}
 			}

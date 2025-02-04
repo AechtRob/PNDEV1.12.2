@@ -207,7 +207,7 @@ public class ModelObruchevodus extends ModelBasePalaeopedia {
     public void renderStaticWall(float f) {
         this.setRotateAngle(body, 0.0F, 1.6F, 0.0F);
         this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
-        this.body.offsetZ = -0.18F;
+        this.body.offsetZ = -0.25F;
         this.body.offsetY = -0.22F;
         this.body.offsetX = -0.03F;
         this.body.render(0.01F);

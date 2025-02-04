@@ -15,15 +15,29 @@ public class ModTriggers
     public static final CustomTrigger WELCOME = new CustomTrigger("pf_book_craft_prompt");
     public static final CustomTrigger ENTER_OVERWORLD = new CustomTrigger("enter_pf_overworld");
     public static final CustomTrigger ENTER_PRECAMBRIAN = new CustomTrigger("enter_pf_precambrian");
+    public static final CustomTrigger COMPLETE_PRECAMBRIAN = new CustomTrigger("complete_pf_precambrian");
     public static final CustomTrigger ENTER_CAMBRIAN = new CustomTrigger("enter_pf_cambrian");
+    public static final CustomTrigger COMPLETE_CAMBRIAN = new CustomTrigger("complete_pf_cambrian");
     public static final CustomTrigger ENTER_ORDOVICIAN = new CustomTrigger("enter_pf_ordovician");
+    public static final CustomTrigger COMPLETE_ORDOVICIAN = new CustomTrigger("complete_pf_ordovician");
     public static final CustomTrigger ENTER_SILURIAN = new CustomTrigger("enter_pf_silurian");
+    public static final CustomTrigger COMPLETE_SILURIAN = new CustomTrigger("complete_pf_silurian");
     public static final CustomTrigger ENTER_DEVONIAN = new CustomTrigger("enter_pf_devonian");
+    public static final CustomTrigger COMPLETE_DEVONIAN = new CustomTrigger("complete_pf_devonian");
     public static final CustomTrigger ENTER_CARBONIFEROUS = new CustomTrigger("enter_pf_carboniferous");
+    public static final CustomTrigger COMPLETE_CARBONIFEROUS = new CustomTrigger("complete_pf_carboniferous");
     public static final CustomTrigger ENTER_PERMIAN = new CustomTrigger("enter_pf_permian");
+    public static final CustomTrigger COMPLETE_PERMIAN = new CustomTrigger("complete_pf_permian");
     public static final CustomTrigger ENTER_TRIASSIC = new CustomTrigger("enter_pf_triassic");
+    public static final CustomTrigger COMPLETE_TRIASSIC = new CustomTrigger("complete_pf_triassic");
     public static final CustomTrigger ENTER_JURASSIC = new CustomTrigger("enter_pf_jurassic");
+    public static final CustomTrigger COMPLETE_JURASSIC = new CustomTrigger("complete_pf_jurassic");
     public static final CustomTrigger ENTER_CRETACEOUS_EARLY = new CustomTrigger("enter_pf_cretaceous_early");
+    public static final CustomTrigger COMPLETE_CRETACEOUS_EARLY = new CustomTrigger("complete_pf_cretaceous_early");
+    public static final CustomTrigger COMPLETE_CRETACEOUS_LATE = new CustomTrigger("complete_pf_cretaceous_late");
+    public static final CustomTrigger COMPLETE_PALEOGENE = new CustomTrigger("complete_pf_paleogene");
+    public static final CustomTrigger COMPLETE_NEOGENE = new CustomTrigger("complete_pf_neogene");
+    public static final CustomTrigger COMPLETE_PLEISTOCENE = new CustomTrigger("complete_pf_pleistocene");
     public static final CustomTrigger REJUVENATE = new CustomTrigger("pf_rejuvenate");
     public static final CustomTrigger ACID_CLEAN = new CustomTrigger("pf_acid_clean");
     public static final CustomTrigger USE_CAGE = new CustomTrigger("pf_use_cage");
@@ -1770,6 +1784,9 @@ public class ModTriggers
     public static final CustomTrigger CLICK_LOBODISCUS = new CustomTrigger("pf_book_lobodiscus");
     public static final CustomTrigger CLICK_ANFESTA = new CustomTrigger("pf_book_anfesta");
     public static final CustomTrigger CLICK_DISCOSERRA = new CustomTrigger("pf_book_discoserra");
+    public static final CustomTrigger CLICK_BACTERIAL_CRUST = new CustomTrigger("pf_book_bacterial_crust");
+    public static final CustomTrigger CLICK_MICROBIAL_MAT = new CustomTrigger("pf_book_bacterial_layer");
+    public static final CustomTrigger CLICK_MICROBIAL_MAT_ARCHEAN = new CustomTrigger("pf_book_bacterial_layer_archean");
 
 
 
@@ -1795,6 +1812,20 @@ public class ModTriggers
             ENTER_TRIASSIC,
             ENTER_JURASSIC,
             ENTER_CRETACEOUS_EARLY,
+            COMPLETE_PRECAMBRIAN,
+            COMPLETE_CAMBRIAN,
+            COMPLETE_ORDOVICIAN,
+            COMPLETE_SILURIAN,
+            COMPLETE_DEVONIAN,
+            COMPLETE_CARBONIFEROUS,
+            COMPLETE_PERMIAN,
+            COMPLETE_TRIASSIC,
+            COMPLETE_JURASSIC,
+            COMPLETE_CRETACEOUS_EARLY,
+            COMPLETE_CRETACEOUS_LATE,
+            COMPLETE_PALEOGENE,
+            COMPLETE_NEOGENE,
+            COMPLETE_PLEISTOCENE,
             REJUVENATE,
             ACID_CLEAN,
             USE_CAGE,
@@ -3528,7 +3559,10 @@ public class ModTriggers
             CLICK_HALLIDAYA,
             CLICK_LOBODISCUS,
             CLICK_ANFESTA,
-            CLICK_DISCOSERRA
+            CLICK_DISCOSERRA,
+            CLICK_BACTERIAL_CRUST,
+            CLICK_MICROBIAL_MAT,
+            CLICK_MICROBIAL_MAT_ARCHEAN
 
 
 

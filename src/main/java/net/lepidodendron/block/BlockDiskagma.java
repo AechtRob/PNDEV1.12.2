@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.SeedSporeBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -71,7 +72,7 @@ public class BlockDiskagma extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("pndietFungus", BlockDiskagma.block);
 	}
 
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
+	public static class BlockCustom extends SeedSporeBlockBase implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 
 		public BlockCustom() {
 			super(Material.VINE);
@@ -241,5 +242,15 @@ public class BlockDiskagma extends ElementsLepidodendronMod.ModElement {
 				tooltip.add("Periods: Paleoproterozoic (Rhyacian)");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
+
+		@Override
+		public Block planted() {
+			return BlockDiskagma.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 }

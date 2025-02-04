@@ -513,11 +513,47 @@ public class ModelLiaoceratops extends ModelBasePalaeopedia {
         resetToDefaultPose();
 
     }
-
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(upperbody, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(head, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.6F, 0.0F, 0.0F);
+        this.leftarm.setScale(0,0,0);
+        this.rightarm.setScale(0,0,0);
+        this.leftarm.scaleChildren = true;
+        this.rightarm.scaleChildren = true;
+        this.upperbody.offsetX = -0.0F;
+        this.upperbody.offsetY = -0.04F;
+        this.upperbody.offsetZ = -0.2F;
+        this.neck.offsetZ = 0.005F;
+        this.upperbody.render(0.01F);
+        this.leftarm.setScale(1,1,1);
+        this.rightarm.setScale(1,1,1);
+        resetToDefaultPose();
+    }
     public void renderStaticFloor(float f) {
-        this.body.rotateAngleY = (float) Math.toRadians(90);
-        this.body.offsetY = -0.054F;
-        this.body.render(0.01F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(upperbody, -0.17F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.19F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.05F, 0.01F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, 0.02F, 0.0F);
+        this.setRotateAngle(tail4, 0.1F, 0.03F, 0.0F);
+        this.setRotateAngle(leftleg, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg2, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg3, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg2, 1.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg3, -1.7F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg4, 2.2F, 0.0F, 0.0F);
+        this.rightleg2.offsetY = -0.001F;
+        this.rightleg2.offsetZ = 0.0015F;
+        this.rightleg3.offsetZ = 0.015F;
+        this.body.offsetY = -0.0F;
+        this.body.render(0.01f);
         resetToDefaultPose();
     }
 

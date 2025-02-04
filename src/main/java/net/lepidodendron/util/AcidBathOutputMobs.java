@@ -102,9 +102,23 @@ public class AcidBathOutputMobs {
                 }
                 ii = (new Random()).nextInt(getPleistoceneCleanedFossilsMobs().length);
                 return getPleistoceneCleanedFossilsMobs()[ii];
+
+            //Specials for just certain circumstances:
+            case 14: //Early K ONLY
+                if (getCretaceousCleanedFossilsMobsEarly().length < 1) {
+                    return "";
+                }
+                ii = (new Random()).nextInt(getCretaceousCleanedFossilsMobsEarly().length);
+                return getCretaceousCleanedFossilsMobsEarly()[ii];
+
+            case 15: //Early K ONLY
+                if (getCretaceousCleanedFossilsMobsLate().length < 1) {
+                    return "";
+                }
+                ii = (new Random()).nextInt(getCretaceousCleanedFossilsMobsLate().length);
+                return getCretaceousCleanedFossilsMobsLate()[ii];
         }
     }
-
 
 
     public static String[] getPrecambrianCleanedFossilsMobs() {

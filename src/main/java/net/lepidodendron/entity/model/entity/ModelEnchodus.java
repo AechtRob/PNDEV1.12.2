@@ -369,17 +369,23 @@ public class ModelEnchodus extends ModelBasePalaeopedia {
 
     public void renderStaticWall(float f) {
         this.head.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
         this.head.offsetX = -0.14F;
         this.head.offsetY = -0.19F;
         this.head.offsetZ = 0.06F;
         this.head.render(0.01F);
         this.resetToDefaultPose();
     }
-
     public void renderStaticFloor(float f) {
-        this.head.offsetY = -0.18F;
-        this.head.render(0.01F);
-        this.resetToDefaultPose();
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.head.offsetY = 0.139F;
+        this.head.render(0.01f);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {

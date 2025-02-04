@@ -1,0 +1,35 @@
+{
+	"name": "Microbial Mats",
+	"read_by_default": true,
+	"icon": "lepidodendron:bacterial_layer",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_bacterial_layer",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bacterial_layer",
+			"title": "Microbial Mats",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Archean - Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Aquatic"
+		},
+		{
+			"type": "multiblock",
+			"name": "Microbial Mats",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bacterial_layer",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bacterial_layer",
+			"type": "text",
+			"text": "Dense mats of cyanobacteria covered large areas of the ocean floor throughout the Precambrian. They were responsible for the buildup of oxygen at the beginning of the Paleoproterozoic, and later on served as the base of the food chain in the Ediacaran period. They largely disappeared in the early Cambrian as a result of burrowing animals, but can still occasionally be found even in the modern world."
+		}
+	]
+}

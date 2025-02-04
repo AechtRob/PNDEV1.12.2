@@ -1,0 +1,30 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ "   ",
+ "3 5",
+ "678"
+ ],
+ "key": {
+ "3": {
+ "item": "minecraft:string"
+ },
+ "5": {
+ "item": "minecraft:string"
+ },
+ "6": {
+ "item": "lepidodendron:stick_bundle"
+ },
+ "7": {
+ "item": "lepidodendron:stick_bundle"
+ },
+ "8": {
+ "item": "lepidodendron:stick_bundle"
+ }
+ },
+ "result": {
+ "item": "lepidodendron:raft_boat_item",
+ "count": 1
+ }
+}

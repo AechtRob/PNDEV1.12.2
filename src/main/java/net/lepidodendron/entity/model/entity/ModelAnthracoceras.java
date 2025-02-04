@@ -377,19 +377,11 @@ public class ModelAnthracoceras extends ModelBasePalaeopedia {
         this.Root.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Root.rotateAngleY = (float) Math.toRadians(90);
-        this.Root.offsetX = -0F;
-        this.Root.offsetY = -0F;
-        this.Root.offsetZ = 0F;
-        this.Root.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.Root.offsetY = 0.18F;
+        this.Root.offsetZ = 0.1F;
+        this.Root.render(0.01f);
+        resetToDefaultPose();
     }
 
     @Override

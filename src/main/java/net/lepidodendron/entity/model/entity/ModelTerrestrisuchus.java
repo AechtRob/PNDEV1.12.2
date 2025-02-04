@@ -354,14 +354,35 @@ public class ModelTerrestrisuchus extends ModelBasePalaeopedia {
     }
 
     public void renderStaticFloor(float f) {
-        this.main.offsetY = 0.055F;
+        this.setRotateAngle(neck, -0.4F, 0.4F, 0.0F);
+        this.setRotateAngle(neck2, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(frontLeftLeg, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg2, -0.4F, 0.0F, 0.0F);
+        this.main.offsetY = 0.139F;
         this.main.render(0.01f);
         resetToDefaultPose();
     }
     public void renderStaticWall(float f) {
-        this.body.offsetZ = -0.05F;
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.frontLeftLeg.setScale(0,0,0);
+        this.frontRightLeg.setScale(0,0,0);
+        this.frontLeftLeg.scaleChildren = true;
+        this.frontRightLeg.scaleChildren = true;
+        this.body.offsetZ = -0.25F;
         this.body.offsetY = -0.02F;
         this.body.render(0.01f);
+        this.frontLeftLeg.setScale(1,1,1);
+        this.frontRightLeg.setScale(1,1,1);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

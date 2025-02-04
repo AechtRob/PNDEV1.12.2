@@ -67,7 +67,7 @@ public class EntityPrehistoricFloraAnatosuchus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 1; //small
+		return 0; //small
 	}
 
 	public static String getPeriod() {return "Early Cretaceous";}
@@ -186,7 +186,7 @@ public class EntityPrehistoricFloraAnatosuchus extends EntityPrehistoricFloraLan
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.MEAT);
+		return ArrayUtils.addAll(DietString.FISH);
 	}
 
 	@Override
@@ -214,20 +214,20 @@ public class EntityPrehistoricFloraAnatosuchus extends EntityPrehistoricFloraLan
 
 	@Override
 	public SoundEvent getAmbientSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:anatosuchus_idle"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:smallcroc_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:anatosuchus_hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:smallcroc_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:anatosuchus_death"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:smallcroc_death"));
 	}
 
 	@Override

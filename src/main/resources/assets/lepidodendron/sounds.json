@@ -79,6 +79,15 @@
     ]
   },
 
+  "expert_advancement": {
+    "sounds": [
+      {
+        "name": "lepidodendron:expert_advancement",
+        "stream": false
+      }
+    ]
+  },
+
   "portal_block_initialise": {
     "sounds": [
       {
@@ -156,6 +165,22 @@
     "sounds": [
       {
         "name": "lepidodendron:portal_block_permian",
+        "stream": false
+      }
+    ]
+  },
+  "portal_block_triassic": {
+    "sounds": [
+      {
+        "name": "lepidodendron:portal_block_triassic",
+        "stream": false
+      }
+    ]
+  },
+  "portal_block_jurassic": {
+    "sounds": [
+      {
+        "name": "lepidodendron:portal_block_jurassic",
         "stream": false
       }
     ]
@@ -11224,6 +11249,1122 @@
       },
       {
         "name": "lepidodendron:archaeothyris_broadcastcall03",
+        "stream": false
+      }
+    ]
+  },
+  
+  "bannykus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:bannykus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:bannykus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:bannykus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:bannykus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:bannykus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:bannykus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:bannykus_living07",
+        "stream": false
+      }
+    ]
+  },
+  "bannykus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:bannykus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:bannykus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:bannykus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "bannykus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:bannykus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "berthasaura_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:berthasaura_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:berthasaura_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:berthasaura_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:berthasaura_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:berthasaura_living05",
+        "stream": false
+      }
+    ]
+  },
+  "berthasaura_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:berthasaura_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:berthasaura_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:berthasaura_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "berthasaura_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:berthasaura_death",
+        "stream": false
+      }
+    ]
+  },
+  "berthasaura_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:berthasaura_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:berthasaura_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:berthasaura_alarm03",
+        "stream": false
+      }
+    ]
+  },
+
+  "eocursor_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eocursor_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eocursor_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eocursor_living03",
+        "stream": false
+      }
+    ]
+  },
+  "eocursor_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eocursor_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eocursor_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eocursor_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "eocursor_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eocursor_death",
+        "stream": false
+      }
+    ]
+  },
+  "eocursor_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eocursor_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eocursor_alarm02",
+        "stream": false
+      }
+    ]
+  },
+
+  "tinycroc_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tinycroc_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tinycroc_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tinycroc_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tinycroc_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tinycroc_living05",
+        "stream": false
+      }
+    ]
+  },
+  "tinycroc_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tinycroc_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tinycroc_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tinycroc_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "tinycroc_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tinycroc_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "smallcroc_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:smallcroc_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:smallcroc_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:smallcroc_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:smallcroc_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:smallcroc_living05",
+        "stream": false
+      }
+    ]
+  },
+  "smallcroc_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:smallcroc_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:smallcroc_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:smallcroc_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "smallcroc_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:smallcroc_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "kannemeyeria_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:kannemeyeria_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kannemeyeria_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kannemeyeria_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kannemeyeria_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kannemeyeria_living05",
+        "stream": false
+      }
+    ]
+  },
+  "kannemeyeria_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:kannemeyeria_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kannemeyeria_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:kannemeyeria_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "kannemeyeria_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:kannemeyeria_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "tropidosuchus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tropidosuchus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tropidosuchus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tropidosuchus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tropidosuchus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tropidosuchus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "tropidosuchus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tropidosuchus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tropidosuchus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tropidosuchus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "tropidosuchus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tropidosuchus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "sericipterus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:sericipterus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sericipterus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sericipterus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sericipterus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sericipterus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sericipterus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sericipterus_living07",
+        "stream": false
+      }
+    ]
+  },
+  "sericipterus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:sericipterus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sericipterus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sericipterus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "sericipterus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:sericipterus_death",
+        "stream": false
+      }
+    ]
+  },
+  "sericipterus_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:sericipterus_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sericipterus_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sericipterus_alarm03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sericipterus_alarm04",
+        "stream": false
+      }
+    ]
+  },
+
+  "sordes_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:sordes_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sordes_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sordes_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sordes_living04",
+        "stream": false
+      }
+    ]
+  },
+  "sordes_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:sordes_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sordes_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sordes_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "sordes_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:sordes_death",
+        "stream": false
+      }
+    ]
+  },
+  "sordes_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:sordes_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sordes_alarm02",
+        "stream": false
+      }
+    ]
+  },
+
+  "psittacosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:psittacosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:psittacosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:psittacosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:psittacosaurus_living04",
+        "stream": false
+      }
+    ]
+  },
+  "psittacosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:psittacosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:psittacosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:psittacosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "psittacosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:psittacosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "anthracosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:anthracosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anthracosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anthracosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anthracosaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anthracosaurus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "anthracosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:anthracosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anthracosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anthracosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "anthracosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:anthracosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "archeria_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:archeria_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archeria_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archeria_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archeria_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archeria_living05",
+        "stream": false
+      }
+    ]
+  },
+  "archeria_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:archeria_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archeria_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archeria_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "archeria_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:archeria_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "muttaburrasaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:muttaburrasaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:muttaburrasaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:muttaburrasaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:muttaburrasaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:muttaburrasaurus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "muttaburrasaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:muttaburrasaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:muttaburrasaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:muttaburrasaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "muttaburrasaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:muttaburrasaurus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "falcarius_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:falcarius_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:falcarius_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:falcarius_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:falcarius_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:falcarius_living05",
+        "stream": false
+      }
+    ]
+  },
+  "falcarius_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:falcarius_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:falcarius_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:falcarius_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "falcarius_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:falcarius_death",
+        "stream": false
+      }
+    ]
+  },
+  "falcarius_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:falcarius_threat01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:falcarius_threat02",
+        "stream": false
+      }
+    ]
+  },
+
+  "nigersaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:nigersaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:nigersaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:nigersaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:nigersaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:nigersaurus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "nigersaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:nigersaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:nigersaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:nigersaurus_hurt03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:nigersaurus_hurt04",
+        "stream": false
+      }
+    ]
+  },
+  "nigersaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:nigersaurus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "deinonychus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:deinonychus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deinonychus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deinonychus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deinonychus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deinonychus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deinonychus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deinonychus_living07",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deinonychus_living08",
+        "stream": false
+      }
+    ]
+  },
+  "deinonychus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:deinonychus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deinonychus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deinonychus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "deinonychus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:deinonychus_death",
+        "stream": false
+      }
+    ]
+  },
+  "deinonychus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:deinonychus_bellow01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deinonychus_bellow02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deinonychus_bellow03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deinonychus_bellow04",
+        "stream": false
+      }
+    ]
+  },
+
+  "eldeceeon_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eldeceeon_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eldeceeon_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eldeceeon_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eldeceeon_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eldeceeon_living05",
+        "stream": false
+      }
+    ]
+  },
+  "eldeceeon_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eldeceeon_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eldeceeon_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eldeceeon_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "eldeceeon_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eldeceeon_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "jinyunpelta_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:jinyunpelta_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:jinyunpelta_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:jinyunpelta_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:jinyunpelta_living04",
+        "stream": false
+      }
+    ]
+  },
+  "jinyunpelta_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:jinyunpelta_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:jinyunpelta_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:jinyunpelta_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "jinyunpelta_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:jinyunpelta_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "pholidogaster_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:pholidogaster_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pholidogaster_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pholidogaster_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pholidogaster_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pholidogaster_living05",
+        "stream": false
+      }
+    ]
+  },
+  "pholidogaster_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:pholidogaster_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pholidogaster_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pholidogaster_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "pholidogaster_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:pholidogaster_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "haliskia_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:haliskia_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:haliskia_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:haliskia_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:haliskia_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:haliskia_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:haliskia_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:haliskia_living07",
+        "stream": false
+      }
+    ]
+  },
+  "haliskia_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:haliskia_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:haliskia_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:haliskia_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "haliskia_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:haliskia_death",
+        "stream": false
+      }
+    ]
+  },
+  "haliskia_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:haliskia_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:haliskia_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:haliskia_alarm03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:haliskia_alarm04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:haliskia_alarm05",
         "stream": false
       }
     ]

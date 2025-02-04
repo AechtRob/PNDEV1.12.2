@@ -550,11 +550,6 @@ public class ModelGoldringia extends ModelBasePalaeopedia {
         this.Root.render(0.01F);
         resetToDefaultPose();
     }
-    public void renderStaticSuspended(float f) {
-        this.Root.offsetY = 0.1F;
-        this.Root.render(0.01F);
-        resetToDefaultPose();
-    }
 
     @Override
     public void renderStaticBook(float f) {

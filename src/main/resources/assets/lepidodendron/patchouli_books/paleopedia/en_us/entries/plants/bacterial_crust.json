@@ -1,0 +1,40 @@
+{
+	"name": "Bacterial Crust",
+	"read_by_default": true,
+	"icon": "lepidodendron:bacterial_crust",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_bacterial_crust",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bacterial_crust",
+			"title": "Bacterial Crust",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Archean - Devonian$(br2)$(l)Habitat:$() Terrestrial$(br)$(l)Method of Obtaining:$() Shears"
+		},
+		{
+			"type": "multiblock",
+			"name": "Bacterial Crust",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bacterial_crust",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bacterial_crust",
+			"type": "text",
+			"text": "Thin sheets of cyanobacteria are the earliest form of life on land, with evidence dating back as far as the Archean. They would eventually be joined by early fungi and algae in turning the land green by the close of the Neoproterozoic."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bacterial_crust",
+			"type": "text",
+			"text": "As more complex life began to colonise land, these crusts were degraded. Bacterial crusts still exist today, although they are very rare, and only occur in undisturbed landscapes."
+		}
+	]
+}

@@ -82,7 +82,7 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 	@Override
 	public float getgetMaxTurnDistancePerTick() {
 		if ((!this.getIsFast()) && (!this.getLaying()) && (!this.isInLove())) {
-			return 1.0F + (19F - (19F * this.getAgeScale()));
+			return 1.0F + (40F - (40F * this.getAgeScale()));
 		}
 		return super.getgetMaxTurnDistancePerTick();
 	}
@@ -380,24 +380,24 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:brachiosaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:nigersaurus_idle"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:brachiosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:nigersaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:brachiosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:nigersaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:brachiosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:nigersaurus_death"));
 	}
 
 	@Override

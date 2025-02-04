@@ -1,12 +1,12 @@
 {
-	"name": "Silurian Flora",
+	"name": "Silurian Flora, Fungi, etc.",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
 	"category": "lepidodendron:silurian/silurian_life",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Silurian Flora$(br2)$()Text here..."
+			"text": "$(l)Silurian Flora, Fungi, etc.$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:plantspawns1",

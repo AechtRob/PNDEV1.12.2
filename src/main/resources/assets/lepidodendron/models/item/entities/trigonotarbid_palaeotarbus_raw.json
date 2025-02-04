@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/trigonotarbid_palaeotarbus_raw"
+    "layer0": "paleopedia:items/trigonotarbid_palaeotarbus_icon"
   }
 }

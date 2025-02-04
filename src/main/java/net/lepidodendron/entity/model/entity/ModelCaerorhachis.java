@@ -411,11 +411,40 @@ public class ModelCaerorhachis extends ModelBasePalaeopedia {
         this.hips.render(f5);
     }
     public void renderStaticWall(float f) {
-
+        this.setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
+        this.neck.offsetY = -0.0F;
+        this.neck.offsetZ = -0.27F;
+        this.neck.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(hips, -0.2F, 0.0F, 0.05F);
+        this.setRotateAngle(body, 0.0F, 0.2F, 0.05F);
+        this.setRotateAngle(chest, 0.0F, 0.2F, 0.05F);
+        this.setRotateAngle(neck, 0.0F, 0.2F, 0.05F);
+        this.setRotateAngle(head, 0.0F, 0.2F, 0.05F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(armleft, 1.2F, -0.9F, 0.0F);
+        this.setRotateAngle(armleft2, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(armleft3, 0.0F, 0.0F, 1.4F);
+        this.setRotateAngle(armright, 1.2F, 0.9F, 0.0F);
+        this.setRotateAngle(armright2, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(armright3, 0.0F, 0.0F, -1.4F);
+        this.setRotateAngle(legleft, 1.2F, -0.5F, 0.2F);
+        this.setRotateAngle(legleft2, 0.0F, 0.0F, -0.3F);
+        this.setRotateAngle(legleft3, 0.0F, 0.0F, 1.0F);
+        this.setRotateAngle(legright, 1.2F, 0.5F, 0.2F);
+        this.setRotateAngle(legright2, 0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(legright3, 0.0F, 0.0F, -1.0F);
+        this.hips.offsetZ = -0.02F;
+        this.hips.offsetY = -0.085F;
+        this.hips.offsetX = 0.01F;
+        this.hips.render(0.01F);
         resetToDefaultPose();
     }
     @Override

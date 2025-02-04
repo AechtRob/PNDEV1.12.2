@@ -1,0 +1,36 @@
+{
+	"name": "Thrombolite",
+	"read_by_default": true,
+	"icon": "lepidodendron:thrombolite",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_thrombolite",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_thrombolite",
+			"title": "Thrombolite",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic onwards$(br2)$(l)Habitat:$() Marine$(br)$(l)Method of Obtaining:$() Silk touch"
+		},
+		{
+			"type": "multiblock",
+			"name": "Thrombolite",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:thrombolite",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thrombolite",
+			"type": "text",
+			"text": "Thrombolites are a form of clotted accretionary structures from the calcification of cyanobacterial colonies know from the Neoproterozoic onwards, and are usually found in shallow waters, growing up to 1 m or more in size. They differ from Stromatolites in not only their greater size, but also do not forms layers like Stromatolites. The name derives from the Greek words 'thrómbos', to mean 'clot'; and 'líthos', to mean 'stone'."
+		}
+	]
+}
+

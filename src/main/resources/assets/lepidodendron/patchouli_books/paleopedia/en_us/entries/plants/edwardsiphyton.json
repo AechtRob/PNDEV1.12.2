@@ -1,0 +1,36 @@
+{
+	"name": "Edwardsiphyton",
+	"read_by_default": true,
+	"icon": "lepidodendron:edwardsiphyton",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_edwardsiphyton",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_edwardsiphyton",
+			"title": "Edwardsiphyton",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Near water$(br2)$(l)Propagation:$() Spore/seed collection envelope$(br)$(l)Method of Obtaining:$() Shears"
+		},
+		{
+			"type": "multiblock",
+			"name": "E. ovatum",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:edwardsiphyton",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_edwardsiphyton",
+			"type": "text",
+			"text": "Edwardsiphyton and Dollyphyton are somewhat contentious fossils found in the Douglas Lake Member of the Lenoir Limestone. The fossil impressions are not easy to interpret but Edwardsiphyton resembles some modern hummock-forming mosses."
+		}
+	]
+}
+

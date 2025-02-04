@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraDiandongosuchus extends EntityPrehistoricFlor
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 1; //small eggs
+		return 0; //small eggs
 	}
 
 	@Override

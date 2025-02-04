@@ -315,24 +315,67 @@ public class ModelSpinophorosaurus extends ModelBasePalaeopedia {
         this.mainbody.render(f5);
     }
 
-    public void renderStaticWall(float f) {
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(mainbody, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(hips, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(neck4, -0.55F, 0.0F, 0.0F);
+        this.setRotateAngle(neck3, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(neck1, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(neckend, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(headbase, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw1, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, -0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, -0.2F, 0.0F);
+        this.setRotateAngle(tail5, 0.05F, -0.2F, 0.0F);
+        this.setRotateAngle(leftArm, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm2, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm2, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm3, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg1, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg3, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg1, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg3, 0.0F, 0.0F, 0.0F);
+        this.mainbody.offsetY = -0.165F;
+        this.mainbody.render(0.01f);
         resetToDefaultPose();
     }
-
-    public void renderStaticFloor(float f) {
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(chest, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck4, -0.5F, 0.1F, 0.0F);
+        this.setRotateAngle(neck3, -0.4F, 0.1F, 0.0F);
+        this.setRotateAngle(neck2, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(neck1, 0.2F, 0.1F, 0.0F);
+        this.leftArm.setScale(0,0,0);
+        this.rightArm.setScale(0,0,0);
+        this.leftArm.scaleChildren = true;
+        this.rightArm.scaleChildren = true;
+        this.chest.offsetZ = 0.2F;
+        this.chest.offsetY = -0.1F;
+        this.chest.render(0.01f);
+        this.leftArm.setScale(1,1,1);
+        this.rightArm.setScale(1,1,1);
         resetToDefaultPose();
     }
 
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.mainbody.offsetY = 0.7F;
-        this.mainbody.offsetX = 0.1F;
-        this.mainbody.rotateAngleY = (float)Math.toRadians(210);
+        this.mainbody.offsetY = -2.0F;
+        this.mainbody.offsetX = -1.338F;
+        this.mainbody.rotateAngleY = (float)Math.toRadians(200);
         this.mainbody.rotateAngleX = (float)Math.toRadians(8);
-        this.mainbody.rotateAngleZ = (float)Math.toRadians(-4);
+        this.mainbody.rotateAngleZ = (float)Math.toRadians(-8);
         this.mainbody.scaleChildren = true;
-        float scaler = 0.575F;
+        float scaler = 1.63F;
         this.mainbody.setScale(scaler, scaler, scaler);
         //Start of pose:
 
@@ -342,6 +385,7 @@ public class ModelSpinophorosaurus extends ModelBasePalaeopedia {
         this.mainbody.setScale(1.0F, 1.0F, 1.0F);
         this.mainbody.scaleChildren = false;
         resetToDefaultPose();
+
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

@@ -174,17 +174,6 @@ public class ModelTriopus extends ModelBasePalaeopedia {
         this.triopus.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.triopus.render(0.019F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
-    }
-
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
@@ -205,6 +194,15 @@ public class ModelTriopus extends ModelBasePalaeopedia {
         this.triopus.scaleChildren = false;
         resetToDefaultPose();
 
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(triopus, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(cephalon, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(thorax, 0.0F, 0.1F, 0.0F);
+        this.triopus.offsetY = 0.316F;
+        this.triopus.render(0.01F);
+        this.resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

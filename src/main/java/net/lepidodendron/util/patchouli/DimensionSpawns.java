@@ -87,7 +87,7 @@ public class DimensionSpawns {
                                     nameSimple = name.substring(name.indexOf(")"));
                                 }
                                 if (!alreadyInList(spawnListInterim, new DimensionSpawns.PPEntry(nameSimple, name, getIconPath(entry)))) {
-                                    spawnListInterim.add(new DimensionSpawns.PPEntry(nameSimple, name, getIconPath(entry)));
+                                    spawnListInterim.add(new DimensionSpawns.PPEntry(nameSimple, name, "paleopedia:textures/items/piranhamesodon_icon.png"));
                                 }
                             }
                         }

@@ -30,6 +30,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -41,9 +42,9 @@ public class EntityPrehistoricFloraArcheria extends EntityPrehistoricFloraSwimmi
 
 	public EntityPrehistoricFloraArcheria(World world) {
 		super(world);
-		setSize(0.9F, 0.40F);
+		setSize(0.725F, 0.40F);
 		minWidth = 0.2F;
-		maxWidth = 0.9F;
+		maxWidth = 0.725F;
 		maxHeight = 0.40F;
 		maxHealthAgeable = 13.0D;
 	}
@@ -80,6 +81,9 @@ public class EntityPrehistoricFloraArcheria extends EntityPrehistoricFloraSwimmi
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
+		}
+		if (this.getAttackTarget() != null) {
+			return 0.4F; //is attacking
 		}
 		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed * 1.28F;
 	}
@@ -130,7 +134,7 @@ public class EntityPrehistoricFloraArcheria extends EntityPrehistoricFloraSwimmi
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return DietString.MEAT;
+		return ArrayUtils.addAll(DietString.MEAT, DietString.FISH);
 	}
 
 	@Override

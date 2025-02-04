@@ -105,6 +105,7 @@ public class ModelMuttaburrasaurus extends ModelBasePalaeopedia {
         this.textureHeight = 150;
 
         this.hips = new AdvancedModelRenderer(this);
+        this.hips.scaleChildren = true;
         this.hips.setRotationPoint(0.0F, -7.225F, 2.0F);
 
 
@@ -484,6 +485,7 @@ public class ModelMuttaburrasaurus extends ModelBasePalaeopedia {
         this.cube_r36.cubeList.add(new ModelBox(cube_r36, 13, 129, -1.0F, 0.0F, -2.0F, 3, 3, 3, 0.003F, false));
 
         this.nasalLeft = new AdvancedModelRenderer(this);
+        this.nasalLeft.scaleChildren = true;
         this.nasalLeft.setRotationPoint(0.2365F, 0.6145F, -6.6353F);
         this.head.addChild(nasalLeft);
         this.setRotateAngle(nasalLeft, -0.5715F, -0.5007F, 0.8686F);
@@ -502,6 +504,7 @@ public class ModelMuttaburrasaurus extends ModelBasePalaeopedia {
         this.cube_r38.cubeList.add(new ModelBox(cube_r38, 104, 54, -0.4268F, -0.6F, -0.6F, 1, 1, 3, -0.01F, false));
 
         this.nasalRight = new AdvancedModelRenderer(this);
+        this.nasalRight.scaleChildren = true;
         this.nasalRight.setRotationPoint(-0.2365F, 0.6145F, -6.6353F);
         this.head.addChild(nasalRight);
         this.setRotateAngle(nasalRight, -0.5715F, 0.5007F, -0.8686F);
@@ -569,6 +572,7 @@ public class ModelMuttaburrasaurus extends ModelBasePalaeopedia {
         this.cube_r46.cubeList.add(new ModelBox(cube_r46, 126, 127, -1.0F, -1.0F, -4.5F, 2, 1, 5, -0.005F, false));
 
         this.eye = new AdvancedModelRenderer(this);
+        this.eye.scaleChildren = true;
         this.eye.setRotationPoint(0.0F, -0.0928F, -3.5552F);
         this.head.addChild(eye);
 

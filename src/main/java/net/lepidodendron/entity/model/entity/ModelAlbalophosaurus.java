@@ -407,11 +407,35 @@ public class ModelAlbalophosaurus extends ModelBasePalaeopedia {
         resetToDefaultPose();
 
     }
-
+    public void renderStaticWall(float f) {
+        this.leftarm.setScale(0,0,0);
+        this.rightarm.setScale(0,0,0);
+        this.leftarm.scaleChildren = true;
+        this.rightarm.scaleChildren = true;
+        this.upperbody.offsetX = -0.0F;
+        this.upperbody.offsetY = -0.03F;
+        this.upperbody.offsetZ = -0.15F;
+        this.upperbody.render(0.01F);
+        this.leftarm.setScale(1,1,1);
+        this.rightarm.setScale(1,1,1);
+        resetToDefaultPose();
+    }
     public void renderStaticFloor(float f) {
-        this.body.rotateAngleY = (float) Math.toRadians(90);
-        this.body.offsetY = -0.054F;
-        this.body.render(0.01F);
+        this.setRotateAngle(upperbody, 0.02F, -0.05F, 0.05F);
+        this.setRotateAngle(upperbody2, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(neck, -0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(head, 0.2F, -0.6F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftarm, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(leftarm2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftarm3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg, -1.0F, -0.1F, 0.0F);
+        this.setRotateAngle(leftleg2, 0.2F, 0.0F, 0.1F);
+        this.setRotateAngle(leftleg3, -0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg4, 1.0F, 0.0F, 0.0F);
+        this.body.offsetY = 0.024F;
+        this.neck.offsetZ = 0.007F;
+        this.body.render(0.01f);
         resetToDefaultPose();
     }
 

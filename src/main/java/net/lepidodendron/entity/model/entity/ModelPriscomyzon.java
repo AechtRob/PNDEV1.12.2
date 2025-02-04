@@ -109,7 +109,7 @@ public class ModelPriscomyzon extends ModelBasePalaeopedia {
         this.setRotateAngle(body3, 0.2F, 0.1F, 0.0F);
         this.setRotateAngle(body4, 0.3F, 0.4F, 0.0F);
         this.setRotateAngle(body5, 0.4F, 0.6F, 0.0F);
-        this.body.offsetY = -0.17F;
+        this.body.offsetY = -0.11F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/edestus_raw"
+    "layer0": "lepidodendron:items/entities/orestiacanthus_female_raw"
   }
 }

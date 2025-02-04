@@ -10,10 +10,7 @@ import net.lepidodendron.block.base.SeedSporeLilyPadBase;
 import net.lepidodendron.item.ItemRhyniaItem;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockLiquid;
-import net.minecraft.block.IGrowable;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
@@ -36,6 +33,7 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -65,7 +63,12 @@ public class BlockRhyniaWaterSpore extends ElementsLepidodendronMod.ModElement {
 	//			new ModelResourceLocation("lepidodendron:archaefructus", "inventory"));
 	//}
 
-	public static class BlockCustom extends SeedSporeLilyPadBase implements IGrowable, net.minecraftforge.common.IShearable, IAdvancementGranter {
+	@Override
+	public void init(FMLInitializationEvent event) {
+		GameRegistry.registerTileEntity(BlockRhyniaWaterSpore.TileEntityRhyniaWaterSpore.class, "lepidodendron:tileentityrhynia_water_spore");
+	}
+
+	public static class BlockCustom extends SeedSporeLilyPadBase implements ITileEntityProvider, IGrowable, net.minecraftforge.common.IShearable, IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -150,12 +153,6 @@ public class BlockRhyniaWaterSpore extends ElementsLepidodendronMod.ModElement {
     }
 
 		@Override
-		@Nullable
-		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
-			return NULL_AABB;
-		}
-
-		@Override
 		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
 			return true;
 		}
@@ -170,9 +167,12 @@ public class BlockRhyniaWaterSpore extends ElementsLepidodendronMod.ModElement {
 			return new AxisAlignedBB(0D, -0.5D, 0D, 1D, 0.5D, 1D);
 		}
 
+		protected static final AxisAlignedBB HALFBLOCK = new AxisAlignedBB(0.0D, -1.0D, 0.0D, 1.0D, -0.5D, 1.0D);
+
 		@Override
-		public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState)
-	    {}
+		public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState) {
+			addCollisionBoxToList(pos, entityBox, collidingBoxes, HALFBLOCK);
+		}
 
 		@Override
 		public boolean isOpaqueCube(IBlockState state) {
@@ -358,5 +358,34 @@ public class BlockRhyniaWaterSpore extends ElementsLepidodendronMod.ModElement {
 		public Item blockItem() {
 			return ItemRhyniaItem.block;
 		}
+
+		@Override
+		public TileEntity createNewTileEntity(World worldIn, int meta) {
+			return new BlockRhyniaWaterSpore.TileEntityRhyniaWaterSpore();
+		}
+
+		@Override
+		public boolean eventReceived(IBlockState state, World worldIn, BlockPos pos, int eventID, int eventParam) {
+			super.eventReceived(state, worldIn, pos, eventID, eventParam);
+			TileEntity tileentity = worldIn.getTileEntity(pos);
+			return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);
+		}
+		@Override
+		public void breakBlock(World world, BlockPos pos, IBlockState state) {
+			TileEntity tileentity = world.getTileEntity(pos);
+			//if (tileentity instanceof TileEntityNest)
+			//InventoryHelper.dropInventoryItems(world, pos, (TileEntityNest) tileentity);
+			world.removeTileEntity(pos);
+			super.breakBlock(world, pos, state);
+		}
+	}
+
+	public static class TileEntityRhyniaWaterSpore extends TileEntity {
+
+		@Override
+		public AxisAlignedBB getRenderBoundingBox() {
+			return new AxisAlignedBB(pos, pos.add(1, -2, 1));
+		}
+
 	}
 }

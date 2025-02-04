@@ -66,7 +66,7 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 1; //medium
+		return 0; //small
 	}
 
 	public static String getPeriod() {return "Triassic";}
@@ -301,7 +301,7 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 4 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
 

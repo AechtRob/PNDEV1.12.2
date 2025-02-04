@@ -149,7 +149,7 @@ public class EntityPrehistoricFloraPsittacosaurus extends EntityPrehistoricFlora
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.335F;
+		float speedBase = 0.45F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -378,7 +378,7 @@ public class EntityPrehistoricFloraPsittacosaurus extends EntityPrehistoricFlora
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:psittacosaurus_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:psittacosaurus_idle"));
 	}
 
 	public void playAlarmSound()

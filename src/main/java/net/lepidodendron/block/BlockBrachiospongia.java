@@ -86,7 +86,7 @@ public class BlockBrachiospongia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:entities/brachiospongia", "inventory"));
+				new ModelResourceLocation("lepidodendron:brachiospongia", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockBrachiospongia.LEVEL).build());
 	}
 

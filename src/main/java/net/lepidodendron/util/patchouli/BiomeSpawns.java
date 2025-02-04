@@ -43,7 +43,7 @@ public class BiomeSpawns {
         if (biome == null) {
             if (from == 0) {
                 if (type == 1) {
-                    return spawnsEmpty;
+                    return biomeMissing;
                 }
                 else {
                     return "";
@@ -145,11 +145,23 @@ public class BiomeSpawns {
                 return spawnListFinal;
             }
             if (from == 0) {
+                if (type == 2) {
+                    return "paleopedia:textures/items/blank_icon.png";
+                }
+                else if (type == 3) {
+                    return "do not show this advancment icon";
+                }
                 return spawnsEmpty;
             }
         }
 
         if (from == 0) {
+            if (type == 2) {
+                return "paleopedia:textures/items/blank_icon.png";
+            }
+            else if (type == 3) {
+                return "do not show this advancment icon";
+            }
             return spawnsEmpty;
         }
         return "";

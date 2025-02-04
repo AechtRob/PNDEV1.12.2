@@ -10,6 +10,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -34,19 +35,20 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
-public class EntityPrehistoricFloraEocursor extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
+public class EntityPrehistoricFloraEocursor extends EntityPrehistoricFloraLandBase implements IScreamer, ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	public int ambientSoundTime;
 
-
 	public Animation STAND_ANIMATION;
 	public Animation ALERT_ANIMATION;
 	private int standCooldown;
-
+	private boolean screaming;
+	public int screamAlarmCooldown;
 
 	public EntityPrehistoricFloraEocursor(World world) {
 		super(world);
@@ -101,6 +103,10 @@ public class EntityPrehistoricFloraEocursor extends EntityPrehistoricFloraLandBa
 
 	@Override
 	public boolean hasNest() {
+		return true;
+	}
+
+	public boolean hasAlarm() {
 		return true;
 	}
 
@@ -176,6 +182,18 @@ public class EntityPrehistoricFloraEocursor extends EntityPrehistoricFloraLandBa
 		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
 	}
 
+	public void playAlarmSound()
+	{
+		SoundEvent soundevent = this.getAlarmSound();
+		//System.err.println("looking for alarm sound");
+		if (soundevent != null)
+		{
+			//System.err.println("playing alarm sound");
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			this.screamAlarmCooldown = 20;
+		}
+	}
+
 	@Override
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.PLANTS));
@@ -224,6 +242,11 @@ public class EntityPrehistoricFloraEocursor extends EntityPrehistoricFloraLandBa
 	            .getObject(new ResourceLocation("lepidodendron:eocursor_death"));
 	}
 
+	public SoundEvent getAlarmSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:eocursor_alarm"));
+	}
+
 	@Override
 	protected float getSoundVolume() {
 		return 1.0F;
@@ -256,8 +279,15 @@ public class EntityPrehistoricFloraEocursor extends EntityPrehistoricFloraLandBa
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 
+		if (this.screamAlarmCooldown > 0) {
+			this.screamAlarmCooldown -= 1;
+		}
+		if (this.getScreaming() && screamAlarmCooldown <= 0) {
+			this.playAlarmSound();
+		}
+
 		//Sometimes stand up and look around:
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
+		if ((!this.getScreaming()) && (!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			int next = rand.nextInt(10);
 			if(next > 5) {
@@ -332,6 +362,30 @@ public class EntityPrehistoricFloraEocursor extends EntityPrehistoricFloraLandBa
 			//System.err.println("set attack");
 		}
 		return false;
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		Entity e = ds.getTrueSource();
+		if (e instanceof EntityLivingBase && this.hasAlarm()) {
+			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
+			List<EntityPrehistoricFloraEocursor> Eocursor = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraEocursor.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraEocursor currentEocursor : Eocursor) {
+				currentEocursor.setRevengeTarget(ee);
+				currentEocursor.setAlarmTarget(ee);
+				currentEocursor.screamAlarmCooldown = rand.nextInt(20);
+			}
+		}
+		return super.attackEntityFrom(ds, i);
+	}
+
+	public void setScreaming(boolean screaming) {
+		this.screaming = screaming;
+	}
+
+	public boolean getScreaming() {
+		return this.screaming;
 	}
 
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {

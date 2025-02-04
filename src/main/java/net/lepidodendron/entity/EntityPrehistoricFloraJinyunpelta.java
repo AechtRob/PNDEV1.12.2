@@ -286,19 +286,19 @@ public class EntityPrehistoricFloraJinyunpelta extends EntityPrehistoricFloraLan
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:mymoorapelta_idle"));
+				.getObject(new ResourceLocation("lepidodendron:jinyunpelta_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:mymoorapelta_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:jinyunpelta_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:mymoorapelta_death"));
+				.getObject(new ResourceLocation("lepidodendron:jinyunpelta_death"));
 	}
 
 	@Override
