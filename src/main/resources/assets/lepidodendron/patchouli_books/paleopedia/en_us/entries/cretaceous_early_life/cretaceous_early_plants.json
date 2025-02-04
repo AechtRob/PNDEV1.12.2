@@ -1,7 +1,7 @@
 {
 	"name": "Early Cretaceous Flora, Fungi, etc.",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/category_icon/icon_cretaceous_early.png",
+	"icon": "paleopedia:textures/category_icon/icon_early_cretaceous.png",
 	"category": "lepidodendron:cretaceous_early/cretaceous_early_life",
 	"pages": [
 		{
