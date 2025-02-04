@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraMecochirus extends EntityPrehistoricFloraTril
 		return true;
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Jurassic - Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

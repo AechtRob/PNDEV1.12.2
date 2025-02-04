@@ -73,7 +73,7 @@ public class EntityPrehistoricFloraElasmodectes extends EntityPrehistoricFloraAg
 		return true;
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Jurassic - early Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
