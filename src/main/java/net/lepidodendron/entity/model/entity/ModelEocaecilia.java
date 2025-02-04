@@ -273,7 +273,17 @@ public class ModelEocaecilia extends ModelBasePalaeopedia {
         this.Root.render(f5);
     }
     public void renderStaticFloor(float f) {
-        this.Root.offsetY = 0.32F;
+        this.setRotateAngle(Root, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body12, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body13, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body14, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body15, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body16, 0.0F, -0.2F, 0.0F);
+        this.Root.offsetY = 0.59F;
         this.Root.render(0.01F);
         resetToDefaultPose();
     }

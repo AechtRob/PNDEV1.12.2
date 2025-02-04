@@ -367,9 +367,9 @@ public class ModelThylacares extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.base.rotateAngleY = (float) Math.toRadians(90);
-        this.base.offsetY = -0.32F;
-        this.base.offsetZ = -0.02F;
+        this.setRotateAngle(base, 0.0F, 0.0F, 0.0F);
+        this.base.offsetY = -0.08F;
+        this.base.offsetZ = -0.01F;
         this.base.render(0.01F);
         resetToDefaultPose();
     }

@@ -220,12 +220,22 @@ public class ModelCommentrya extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
+        this.base.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.base.offsetX = -0.05F;
+        this.base.offsetY = -0.2F;
+        this.base.offsetZ = -1.6F;
         this.base.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(base, -0.1F, 0.0F, 0.01F);
+        this.setRotateAngle(body, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.15F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.2F, 0.0F);
         this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
-        this.base.offsetY = -0.14F;
+        this.base.offsetY = -0.05F;
         this.base.render(0.01F);
         resetToDefaultPose();
     }
