@@ -1,39 +1,6 @@
 {
-  "parent": "lepidodendron:block/birdsnest_fern",
-  "display": {
-    "thirdperson": {
-      "rotation": [
-        10,
-        -45,
-        170
-      ],
-      "translation": [
-        0,
-        1.5,
-        -2.75
-      ],
-      "scale": [
-        0.275,
-        0.275,
-        0.275
-      ]
-    },
-    "gui": {
-      "rotation": [
-        10,
-        -45,
-        170
-      ],
-      "translation": [
-        0,
-        -2.5,
-        -2.75
-      ],
-      "scale": [
-        0.475,
-        0.475,
-        0.475
-      ]
-    }
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "lepidodendron:items/birdsnest_fern_inventory"
   }
 }

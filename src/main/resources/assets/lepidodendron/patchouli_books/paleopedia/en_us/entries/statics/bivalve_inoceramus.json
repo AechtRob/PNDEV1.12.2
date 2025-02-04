@@ -1,7 +1,7 @@
 {
 	"name": "Inoceramus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/inoceramus_icon.png",
+	"icon": "paleopedia:textures/items/bivalve_inoceramus_icon.png",
 	"category": "lepidodendron:statics",
 	"turnin": "lepidodendron:pf_adv_book_bivalve_inoceramus",
 	"pages": [

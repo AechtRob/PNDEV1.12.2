@@ -24,8 +24,6 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -81,6 +79,7 @@ public class BlockHelicolocellus extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:helicolocellus", BlockHelicolocellus.block);
 		OreDictionary.registerOre("pndietCrinoid", BlockHelicolocellus.block);
+		OreDictionary.registerOre("holdfastDrops", BlockHelicolocellus.block);
 	}
 
 
@@ -296,16 +295,6 @@ public class BlockHelicolocellus extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public CustomTrigger getModTrigger() {
 			return ModTriggers.CLICK_HELICOLOCELLUS;
-		}
-
-		@Override
-		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
-			if (Math.random() > 0.9 && (!world.isRemote) && (!player.isCreative())) {
-				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockHoldfast.block, (int) (1)));
-				entityToSpawn.setPickupDelay(10);
-				world.spawnEntity(entityToSpawn);
-			}
-			return super.removedByPlayer(state, world, pos, player, willHarvest);
 		}
 
 		@Override

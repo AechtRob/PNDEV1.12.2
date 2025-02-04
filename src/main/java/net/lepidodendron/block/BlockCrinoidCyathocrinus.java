@@ -82,6 +82,7 @@ public class BlockCrinoidCyathocrinus extends ElementsLepidodendronMod.ModElemen
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:crinoid_cyathocrinus", BlockCrinoidCyathocrinus.block);
 		OreDictionary.registerOre("pndietCrinoid", BlockCrinoidCyathocrinus.block);
+		OreDictionary.registerOre("holdfastDrops", BlockCrinoidCyathocrinus.block);
 	}
 
 
@@ -243,15 +244,7 @@ public class BlockCrinoidCyathocrinus extends ElementsLepidodendronMod.ModElemen
 			return ModTriggers.CLICK_CRINOID_CYATHOCRINUS;
 		}
 
-		@Override
-		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
-			if (Math.random() > 0.9 && (!world.isRemote) && (!player.isCreative())) {
-				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockHoldfast.block, (int) (1)));
-				entityToSpawn.setPickupDelay(10);
-				world.spawnEntity(entityToSpawn);
-			}
-			return super.removedByPlayer(state, world, pos, player, willHarvest);
-		}
+		
 
 		@Override
 		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {

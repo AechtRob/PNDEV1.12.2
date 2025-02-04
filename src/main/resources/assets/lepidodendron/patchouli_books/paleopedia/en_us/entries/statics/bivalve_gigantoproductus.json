@@ -1,7 +1,7 @@
 {
 	"name": "Gigantoproductus Brachiopod",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/gigantoproductus_icon.png",
+	"icon": "paleopedia:textures/items/bivalve_gigantoproductus_icon.png",
 	"category": "lepidodendron:statics",
 	"turnin": "lepidodendron:pf_adv_book_brachiopod_gigantoproductus",
 	"pages": [

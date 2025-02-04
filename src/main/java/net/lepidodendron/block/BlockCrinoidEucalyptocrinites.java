@@ -83,6 +83,7 @@ public class BlockCrinoidEucalyptocrinites extends ElementsLepidodendronMod.ModE
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:crinoid_eucalyptocrinites", BlockCrinoidEucalyptocrinites.block);
 		OreDictionary.registerOre("pndietCrinoid", BlockCrinoidEucalyptocrinites.block);
+		OreDictionary.registerOre("holdfastDrops", BlockCrinoidEucalyptocrinites.block);
 	}
 
 
@@ -223,15 +224,7 @@ public class BlockCrinoidEucalyptocrinites extends ElementsLepidodendronMod.ModE
 			return ModTriggers.CLICK_CRINOID_EUCALYPTOCRINITES;
 		}
 
-		@Override
-		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
-			if (Math.random() > 0.9 && (!world.isRemote) && (!player.isCreative())) {
-				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockHoldfast.block, (int) (1)));
-				entityToSpawn.setPickupDelay(10);
-				world.spawnEntity(entityToSpawn);
-			}
-			return super.removedByPlayer(state, world, pos, player, willHarvest);
-		}
+		
 
 		@Override
 		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {

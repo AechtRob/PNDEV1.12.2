@@ -25,7 +25,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -83,6 +82,7 @@ public class BlockCrinoidEncrinus extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:crinoid_encrinus", BlockCrinoidEncrinus.block);
 		OreDictionary.registerOre("pndietCrinoid", BlockCrinoidEncrinus.block);
+		OreDictionary.registerOre("holdfastDrops", BlockCrinoidEncrinus.block);
 	}
 
 
@@ -260,15 +260,7 @@ public class BlockCrinoidEncrinus extends ElementsLepidodendronMod.ModElement {
 			return ModTriggers.CLICK_CRINOID_ENCRINUS;
 		}
 
-		@Override
-		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
-			if (Math.random() > 0.9 && (!world.isRemote) && (!player.isCreative())) {
-				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockHoldfast.block, (int) (1)));
-				entityToSpawn.setPickupDelay(10);
-				world.spawnEntity(entityToSpawn);
-			}
-			return super.removedByPlayer(state, world, pos, player, willHarvest);
-		}
+
 
 		@Override
 		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
