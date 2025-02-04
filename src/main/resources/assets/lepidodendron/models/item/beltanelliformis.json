@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:blocks/beltanelliformis_1"
+    "layer0": "lepidodendron:items/beltanelliformis_inventory"
   }
 }
