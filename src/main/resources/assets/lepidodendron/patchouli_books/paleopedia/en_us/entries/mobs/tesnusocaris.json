@@ -1,0 +1,47 @@
+{
+	"name": "Tesnusocaris",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tesnusocaris_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tesnusocaris ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tesnusocaris",
+			"title": "Tesnusocaris",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Remipedia$(br)>Enantiopoda"
+		},
+        	{
+            "type": "entity",
+            "name": "T. goldichi",
+            "entity": "lepidodendron:prehistoric_flora_tesnusocaris",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tesnusocaris",
+			"type": "text",
+			"text": "Tesnusocaris goldichi comes from the Upper Carboniferous, with fossils found in the Tesnus Formation, Texas (USA). It is a small enantiopoda, growing up to 10 cm in length, with a full estimated length of 15 cm overall. The generic name derives from the name of the Tenus Formation, which the specimens are found in, and the Greek word 'caris', to mean 'shrimp'. The specific name derives from the surname of Dr. S. S. Goldich, the discoverer of the first specimens."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tesnusocaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tesnusocaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tesnusocaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tesnusocaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tesnusocaris"
+		}
+	]
+}

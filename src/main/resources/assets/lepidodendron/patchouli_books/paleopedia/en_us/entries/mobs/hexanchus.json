@@ -1,0 +1,47 @@
+{
+	"name": "Hexanchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hexanchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hexanchus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hexanchus",
+			"title": "Hexanchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous-Present$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Hexanchiformes$(br)>Hexanchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. griseus",
+            "entity": "lepidodendron:prehistoric_flora_hexanchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hexanchus",
+			"type": "text",
+			"text": "Hexanchus hails from the Late Cretaceous into the Present day, being found in North Eastern Atlantic waters. It is a large elasmobranch, growing up to 8 m in the length, and weigh up to and over 600 kg. They have been recorded at 2,500 m deep scavenging for carrion. 3 extant species are known, with 8 extinct species being known."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hexanchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hexanchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hexanchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hexanchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hexanchus"
+		}
+	]
+}

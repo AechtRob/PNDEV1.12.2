@@ -1,0 +1,52 @@
+{
+	"name": "Hyphalosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hyphalosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hyphalosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hyphalosaurus",
+			"title": "Hyphalosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Choristodera$(br)>Hyphalosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. lingyuanensis",
+            "entity": "lepidodendron:prehistoric_flora_hyphalosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hyphalosaurus",
+			"type": "text",
+			"text": "Hyphalosaurus hails from the Early Cretaceous, with fossils found in the Yixian Formation and Jiufotang Formation, China. It is a small hyphalosauriid, growing up to 80 cm in length. It is the most well known and most studied of the Jehol Biota with hundreds of thousands of specimens, along with one specimen showing the oldest known case of polycephaly (A condition where an individual has more than one head)."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hyphalosaurus",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'hyphalos', to mean 'submerged'; and 'saura', to mean 'Lizard'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hyphalosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hyphalosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hyphalosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hyphalosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hyphalosaurus"
+		}
+	]
+}

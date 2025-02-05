@@ -1,0 +1,52 @@
+{
+	"name": "Ptychodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ptychodus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ptychodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ptychodus",
+			"title": "Ptychodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Lamniformes$(br)>Ptychodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. latissimus",
+            "entity": "lepidodendron:prehistoric_flora_ptychodus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ptychodus",
+			"type": "text",
+			"text": "Ptychodus comes from the Cretaceous, with fossils being found in formations across the world. It is a large ptychodontid, growing up to 10 m in length. Due to only being known from teeth material when first discovered sometime in the 1830s, Ptychodus was originally classified as either a batoid (Rays) or a hybodont (Shark-like fish)."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ptychodus",
+			"type": "text",
+			"text": "This prevailed until 2016, when it was found that it was likely a selachii (True Shark), and in 2024 after the discovery of a complete body fossil, it was finally classified as a lamniforme (Mackerel Shark), ending nearly 200 years of uncertainty. The generic name derives from the Greek words 'ptychos', to mean 'fold'; and 'odon' to mean 'tooth'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ptychodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ptychodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ptychodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ptychodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ptychodus"
+		}
+	]
+}

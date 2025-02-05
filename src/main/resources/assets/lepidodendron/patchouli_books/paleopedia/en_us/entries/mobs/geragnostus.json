@@ -1,0 +1,47 @@
+{
+	"name": "Geragnostus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/geragnostus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_geragnostus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_geragnostus",
+			"title": "Geragnostus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Trilobita(?)$(br)>Agnostida$(br)>Metagnostidae"
+		},
+        	{
+            "type": "entity",
+            "name": "G. sidenbladhi",
+            "entity": "lepidodendron:prehistoric_flora_geragnostus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_geragnostus",
+			"type": "text",
+			"text": "Geragnostus comes from the Ordovician, with fossils found across Eurasia, North America and Argentina. It is a small rounded agnostid, and grew up to 1 cm in length. Unlike most other agnostids, Geragnostus is simple in its overall appearance, omitting even the classic pygidium spines known in most agnostid."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_geragnostus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_geragnostus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_geragnostus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_geragnostus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_geragnostus"
+		}
+	]
+}

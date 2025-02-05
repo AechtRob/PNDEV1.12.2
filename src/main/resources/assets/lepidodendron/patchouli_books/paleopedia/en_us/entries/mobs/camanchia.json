@@ -1,0 +1,52 @@
+{
+	"name": "Camanchia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/camanchia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_camanchia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_camanchia",
+			"title": "Camanchia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Euchelicerata$(br)>Prosomapoda£(br)>Synziphosurina"
+		},
+        	{
+            "type": "entity",
+            "name": "C. grovensis",
+            "entity": "lepidodendron:prehistoric_flora_camanchia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_camanchia",
+			"type": "text",
+			"text": "Camanchia grovensis comes from the Silurian, with fossils found in the Scotch Grove Formation, Iowa (USA). It is a small rounded aynziphosurine, with a sub-triangular carapace that bore no compound eyes on the top, a spiked pre-abdomen like most other aynziphosurines, and grew up to 8 cm in length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_camanchia",
+			"type": "text",
+			"text": "The generic name derives from the place name 'Camanche', near to where the fossils were found. The specific name derives from the place name 'Scotch Grove Formation', where the fossils were found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_camanchia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_camanchia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_camanchia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_camanchia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_camanchia"
+		}
+	]
+}

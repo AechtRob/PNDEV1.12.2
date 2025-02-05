@@ -1,0 +1,47 @@
+{
+	"name": "Wardichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/wardichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_wardichthys ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_wardichthys",
+			"title": "Wardichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Actinopterygii$(br)>Palaeonisciformes"
+		},
+        	{
+            "type": "entity",
+            "name": "W. cyclosoma",
+            "entity": "lepidodendron:prehistoric_flora_wardichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_wardichthys",
+			"type": "text",
+			"text": "Wardichthys cyclosoma comes from the Lower Carboniferous, with fossils found in the Wardie Shales and Cheese Bay, Scotland (United Kingdom). It is a small palaeonisciforme, growing up to 8 cm in length. The generic name derives from the surname of John Ward, a fossil collector, and the Greek word 'ichthy', to mean 'fish'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_wardichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_wardichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_wardichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_wardichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_wardichthys"
+		}
+	]
+}

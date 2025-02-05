@@ -1,0 +1,52 @@
+{
+	"name": "Westlothiana",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/westlothiana_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_westlothiana ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_westlothiana",
+			"title": "Westlothiana",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Tetrapoda"
+		},
+        	{
+            "type": "entity",
+            "name": "W. lizziae",
+            "entity": "lepidodendron:prehistoric_flora_westlothiana",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_westlothiana",
+			"type": "text",
+			"text": "Westlothiana lizziae comes from the Lower Carboniferous, with fossils being found in the East Kirkton Limestone, Scotland (United Kingdom). It is a small tetrapod, growing up to 25 cm in the length. It is currently the oldest known tetrapod, although it is still not a amniote, being an intermediary form."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_westlothiana",
+			"type": "text",
+			"text": "Its classification has been hotly debated since its discovery, from being classed as an amniote, to a reptiliomorpha, which is more accepted but still contested. The generic name derives from the place name 'West Lothian', where the fossils were found. The specific name derives from its old nickname 'Lizzie the lizard'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_westlothiana"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_westlothiana"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_westlothiana"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_westlothiana"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_westlothiana"
+		}
+	]
+}

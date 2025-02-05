@@ -1,0 +1,52 @@
+{
+	"name": "Maiaspondylus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/maiaspondylus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_maiaspondylus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_maiaspondylus",
+			"title": "Maiaspondylus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Ichthyosauria$(br)>Ophthalmosauridae$(br)>Platypterygiinae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. lindoei",
+            "entity": "lepidodendron:prehistoric_flora_maiaspondylus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_maiaspondylus",
+			"type": "text",
+			"text": "Maiaspondylus hails from the Lower Cretaceous, with fossils found in the Loon River and Clearwater Formations, Canada; Cambridge Greensands, England (United Kingdom); and Western European Russia. It is a large platypterygiine, growing up to roughly 3.5 m in length. Originally referred to Platypterygius, recent cladistic studies on it found it to be its own valid genus, although it is still apart of the platypterygiine subfamily."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_maiaspondylus",
+			"type": "text",
+			"text": "One fossil specimen of Maiaspondylus is known for bearing the (Geologically) youngest and smallest known ichthyosaur embryos. The generic name derives from the Greek words 'Maia', to mean 'good mother'; and 'spondylus', to mean 'vertebrae'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_maiaspondylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_maiaspondylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_maiaspondylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_maiaspondylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_maiaspondylus"
+		}
+	]
+}

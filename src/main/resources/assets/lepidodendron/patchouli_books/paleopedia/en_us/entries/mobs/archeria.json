@@ -1,0 +1,47 @@
+{
+	"name": "Archeria",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/archeria_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_archeria ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_archeria",
+			"title": "Archeria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Embolomeri$(br)>Archeriidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. robinsoni",
+            "entity": "lepidodendron:prehistoric_flora_archeria",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archeria",
+			"type": "text",
+			"text": "Archeria comes from the Lower Permian, with fossils found in the Nocona Formation, Texas (USA). It is a medium sized tetrapodomorph, growing up to 2 m in length. It bore teeth that were more chisel-like than its other relatives, which bear fang like teeth, and its skull was thinner and more spade-like."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_archeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_archeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_archeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_archeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_archeria"
+		}
+	]
+}

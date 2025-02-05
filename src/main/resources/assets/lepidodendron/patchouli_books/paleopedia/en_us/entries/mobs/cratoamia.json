@@ -1,0 +1,47 @@
+{
+	"name": "Cratoamia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cratoamia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_cratoamia ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cratoamia",
+			"title": "Cratoamia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Halecomorphi$(br)>Amiiformes$(br)>Amiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Cratoamia sp.",
+            "entity": "lepidodendron:prehistoric_flora_cratoamia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cratoamia",
+			"type": "text",
+			"text": "Cratoamia comes from the Early Cretaceous, with fossils found in the Crato Formation, Brazil. It is a small amiid, growing up to 70 cm in length. The generic name derives from the place name 'Crato Formation', where the fossils were found, and the genus name 'Amia'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cratoamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cratoamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cratoamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cratoamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cratoamia"
+		}
+	]
+}

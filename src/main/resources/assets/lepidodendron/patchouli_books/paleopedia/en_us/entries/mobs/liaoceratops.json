@@ -1,0 +1,52 @@
+{
+	"name": "Liaoceratops",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/liaoceratops_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_liaoceratops ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_liaoceratops",
+			"title": "Liaoceratops",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Neornithischia$(br)>Ceratopsia"
+		},
+        	{
+            "type": "entity",
+            "name": "L. yanzigouensis",
+            "entity": "lepidodendron:prehistoric_flora_liaoceratops",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_liaoceratops",
+			"type": "text",
+			"text": "Liaoceratops yanzigouensis comes from the Early Cretaceous, with fossils being found in the Yixian Formation, China. It is a small ceratopsian, growing up to 50 cm in length, and weighing up to 2 kg."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_liaoceratops",
+			"type": "text",
+			"text": "The generic name derives from the place name 'Liaoning Province', where the fossils were found; and Greek words 'keras', to mean 'horn'; and 'ops', to mean 'face'. The specific name derives from the place name 'Yanzigou', and town in the Sichuan Province."
+		},		
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_liaoceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_liaoceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_liaoceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_liaoceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_liaoceratops"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Ikechaoamia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ikechaoamia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ikechaoamia ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ikechaoamia",
+			"title": "Ikechaoamia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Halecomorphi$(br)>Amiiformes$(br)>Amiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "I. orientalis",
+            "entity": "lepidodendron:prehistoric_flora_ikechaoamia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ikechaoamia",
+			"type": "text",
+			"text": "Ikechaoamia comes from the Early Cretaceous, with fossils found in the Jingchuan Formation, Mongolia. It is a small amiid, growing up to 11 cm in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ikechaoamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ikechaoamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ikechaoamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ikechaoamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ikechaoamia"
+		}
+	]
+}

@@ -21,12 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_alienum",
 			"type": "text",
-			"text": "Alienum velamenus hails from the Upper Ediacaran, with fossils found in the Dengying Formation, South China. It is a small, sail-shaped lifeform, growing up to 2 cm in length. It is a unique lifeform, unlike anything seen in the Ediacaran thus far, with morphological similarites to the Cambrian clade of the Vetulicolians."
+			"text": "Alienum velamenus hails from the Upper Ediacaran, with fossils found in the Dengying Formation, South China. It is a small, sail-shaped lifeform, growing up to 2 cm in length. It is a unique lifeform, unlike anything seen in the Ediacaran thus far, with morphological similarities to the Cambrian clade of the vetulicolians."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_alienum",
 			"type": "text",
-			"text": "Although this put into doubt due to Alienums far simpler and smaller appearance, although this may be due to it being a earlier evolutionary form of the Vetulicolians, with this being supported by the molecular clocks Deuterostomes going back to 571 Ma. The generic name derives from the Latin word 'aliēnus', to mean 'exotic/foreign'. The specific name derives from the Latin word 'velamen', to mean 'veil/sail-like'."
+			"text": "Although this put into doubt due to Alienums far simpler and smaller appearance, although this may be due to it being a earlier evolutionary form of the vetulicolians, with this being supported by the molecular clocks Deuterostomes going back to 571 Ma. The generic name derives from the Latin word 'aliēnus', to mean 'exotic/foreign'. The specific name derives from the Latin word 'velamen', to mean 'veil/sail-like'."
 		},
 		{
 			"type": "lepidodendron:diet",

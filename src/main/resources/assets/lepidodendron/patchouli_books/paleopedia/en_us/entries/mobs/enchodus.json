@@ -1,0 +1,52 @@
+{
+	"name": "Enchodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/enchodus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_enchodus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_enchodus",
+			"title": "Enchodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Aulopiformes$(br)>Enchodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. lewesiensis",
+            "entity": "lepidodendron:prehistoric_flora_enchodus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_enchodus",
+			"type": "text",
+			"text": "Enchodus comes from the Late Cretaceous, with fossils being found across the world, making them a cosmopolitan genus. It is a medium-sized enchodontiid, growing up to 1.7 m in length. They are most well known for their large fangs at the front of their upper and lower jaws, which could grow up to 6 cm in length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_enchodus",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'enchos', to mean 'spear'; and 'odous', to mean 'tooth'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_enchodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_enchodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_enchodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_enchodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_enchodus"
+		}
+	]
+}

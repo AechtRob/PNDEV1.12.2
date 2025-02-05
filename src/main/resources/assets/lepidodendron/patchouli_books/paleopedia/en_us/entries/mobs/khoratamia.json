@@ -1,0 +1,47 @@
+{
+	"name": "Khoratamia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/khoratamia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_khoratamia ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_khoratamia",
+			"title": "Khoratamia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Halecomorphi$(br)>Amiiformes$(br)>Amiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "K. phattharajani",
+            "entity": "lepidodendron:prehistoric_flora_khoratamia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_khoratamia",
+			"type": "text",
+			"text": "Khoratamia phattharajani comes from the Early Cretaceous, with fossils found in the Khok Kruat Formation, Thailand. It is a small amiid, growing up to 40 cm in length. The generic name derives from the place name 'Khorat Plateau', where the fossils were found; and the genus name 'Amia'. The specific name derives from the Latinised middle name of Somdet Phra Phatthara Maharat, a title given to King Bhumibol Adulyadej, who was dedicated to research and support of farming of Nile tilapia in Thailand."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_khoratamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_khoratamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_khoratamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_khoratamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_khoratamia"
+		}
+	]
+}

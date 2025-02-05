@@ -1,0 +1,47 @@
+{
+	"name": "Tribodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tribodus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tribodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tribodus",
+			"title": "Tribodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Hybodontiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "T. limae",
+            "entity": "lepidodendron:prehistoric_flora_tribodus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tribodus",
+			"type": "text",
+			"text": "Tribodus comes from the Cretaceous, with fossils being found in formations across South America, North Africa and Southern Europe. It is a medium-sized hybodont, growing up to 1 m in length. It is one of the few hybodonts to be known from fully body fossils. Its lower jaw was also a lot shorter than most hybodonts, articulating at the hyoid arch, along with cartilage struts connecting the upper and lower jaws, enhancing jaw strength."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tribodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tribodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tribodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tribodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tribodus"
+		}
+	]
+}

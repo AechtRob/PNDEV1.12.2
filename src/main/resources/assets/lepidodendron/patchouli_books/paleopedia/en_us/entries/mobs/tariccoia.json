@@ -1,0 +1,47 @@
+{
+	"name": "Tariccoia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tariccoia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tariccoia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tariccoia",
+			"title": "Tariccoia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Nektaspida$(br)>Liwiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. arrusensis",
+            "entity": "lepidodendron:prehistoric_flora_tariccoia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tariccoia",
+			"type": "text",
+			"text": "Tariccoia hails from the Ordovician, with fossils found in the Monte Argentu Formation, Sardinia, Italy; and Fezouata Formation, Morocco. It is a small, elongated liwiid and grew up to 6 cm in length. The generic name derives from the Latinised surname of M. Taricco, a paleontologist from Sardinia."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tariccoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tariccoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tariccoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tariccoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tariccoia"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Prestosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/prestosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_prestosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_prestosuchus",
+			"title": "Prestosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Loricata$(br)>Prestosuchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. chiniquensis",
+            "entity": "lepidodendron:prehistoric_flora_prestosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_prestosuchus",
+			"type": "text",
+			"text": "Prestosuchus chiniquensis comes from the Middle Triassic, with fossils found in the Santa Maria Formation, Brazil. It is the largest prestosuchidan, and is also the namesake of the family, growing up to around 7 m in overall length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_prestosuchus",
+			"type": "text",
+			"text": "The generic name derives from the middle name of Vicentino Prestes de Almeida, a Brazilian Paleontologist; and the Latin word 'suchus', to mean 'crocodile'. The specific name derives from the Latinised place name 'Chiniquá', where the fossils were found."
+        },
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_prestosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_prestosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_prestosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_prestosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_prestosuchus"
+		}
+	]
+}

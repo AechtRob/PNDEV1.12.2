@@ -1,0 +1,47 @@
+{
+	"name": "Cladocyclus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cladocyclus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_cladocyclus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cladocyclus",
+			"title": "Cladocyclus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Ichthyodectiformes$(br)>Cladocyclidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. lewesiensis",
+            "entity": "lepidodendron:prehistoric_flora_cladocyclus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cladocyclus",
+			"type": "text",
+			"text": "Cladocyclus comes from the Cretaceous, with fossils being found in the Romualdo and Crato Formations, Brazil; and Winton Formation, Australia. It is a small cladocyclid, growing up to 1.2 m in length. The generic name derives from the Greek words 'klados', to mean 'branch'; and 'kyklos', to mean 'circle'."
+		},	
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cladocyclus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cladocyclus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cladocyclus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cladocyclus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cladocyclus"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Rhynchonkos",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rhynchonkos_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_rhynchonkos ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rhynchonkos",
+			"title": "Rhynchonkos",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Microsauria$(br)>Recumbirostra$(br)>Rhynchonkidae"
+		},
+        	{
+            "type": "entity",
+            "name": "R. stovalli",
+            "entity": "lepidodendron:prehistoric_flora_rhynchonkos",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhynchonkos",
+			"type": "text",
+			"text": "Rhynchonkos stovalli comes from the Lower Permian, with fossils being found in the Fairmont Shale, Oklahma (USA). It is a small rhynchonkid, growing up to 20 cm in length. It used to be described as Goniorhynchus, but this had already been in use for almost 100 years, and as such was changed a decade later to the name used today."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhynchonkos",
+			"type": "text",
+			"text": "The family name also had to be changed, the origional being goniorhynchidae, as this was no longer based on a valid genus, as such it was changed to rhynchonkidae several years after. They have also been linked with Caecilians, due to morphological reasons, even being classed as ancestors to them, but after more research this is no longer accepted."
+		},		
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rhynchonkos"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rhynchonkos"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rhynchonkos"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rhynchonkos"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rhynchonkos"
+		}
+	]
+}

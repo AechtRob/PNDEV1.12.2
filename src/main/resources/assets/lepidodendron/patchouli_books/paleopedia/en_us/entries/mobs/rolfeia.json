@@ -1,0 +1,47 @@
+{
+	"name": "Rolfeia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rolfeia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_rolfeia ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rolfeia",
+			"title": "Rolfeia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Chelicerata$(br)>Prosomapoda$(br)>Xiphosura"
+		},
+        	{
+            "type": "entity",
+            "name": "R. fouldenensis",
+            "entity": "lepidodendron:prehistoric_flora_rolfeia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rolfeia",
+			"type": "text",
+			"text": "Rolfeia fouldenensis comes from the Carboniferous, with fossils found in the Cementstones Group, Scotland (United Kingdom). It is a small xiphosuran, growing up to 5 cm in length overall."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rolfeia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rolfeia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rolfeia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rolfeia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rolfeia"
+		}
+	]
+}

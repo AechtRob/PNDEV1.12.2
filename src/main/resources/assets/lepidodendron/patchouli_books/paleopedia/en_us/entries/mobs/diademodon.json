@@ -1,0 +1,47 @@
+{
+	"name": "Diademodon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/diademodon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_diademodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_diademodon",
+			"title": "Diademodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Cynodontia$(br)>Diademodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. tetragonus",
+            "entity": "lepidodendron:prehistoric_flora_diademodon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diademodon",
+			"type": "text",
+			"text": "Diademodon tetragonus comes from the Middle Triassic, with fossils found across Southern Africa, Antarctica and Argentina. It is a large cynodont, known for its flat and very wide skull, and grew up to around 1.5 m in overall length. When it was originally described in 1894, the arrangement and size of its cheek teeth saw it be classified as a gomphodont, which prevailed as late as 1988, when it was then re-classified as a cynodont due to its skull morphology being different to that of known gomphodonts."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_diademodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_diademodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_diademodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_diademodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_diademodon"
+		}
+	]
+}

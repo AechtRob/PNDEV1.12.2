@@ -1,0 +1,52 @@
+{
+	"name": "Onchopristis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/onchopristis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_onchopristis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_onchopristis",
+			"title": "Onchopristis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Batoidea$(br)>Rajiformes$(br)>Sclerorhynchoidei$(br)>Onchopristidae"
+		},
+        	{
+            "type": "entity",
+            "name": "O. numida",
+            "entity": "lepidodendron:prehistoric_flora_onchopristis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_onchopristis",
+			"type": "text",
+			"text": "Onchopristis comes from the Cretaceous, with fossils being found across the Americas, North Africa, and Europe. It is a large sclerorhynchoid, growing up to 4.25 m in length, and weighing up to 150 kg. They are the oldest known sclerorhynchoid genus."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_onchopristis",
+			"type": "text",
+			"text": "Onchopristis is famous for being a known prey item for Spinosaurus, as they are not only found in the same formations in North Africa, but there have been dentary fragments of Spinosaurus found with and in Onchopristis fossils. The generic name derives from the Greek words 'onkos', to mean 'barb'; and 'pristis', to mean 'saw/sawfish'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_onchopristis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_onchopristis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_onchopristis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_onchopristis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_onchopristis"
+		}
+	]
+}

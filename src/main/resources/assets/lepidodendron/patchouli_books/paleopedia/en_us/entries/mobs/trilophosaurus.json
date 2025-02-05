@@ -1,0 +1,52 @@
+{
+	"name": "Trilophosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/trilophosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_trilophosaurus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_trilophosaurus",
+			"title": "Trilophosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauromorpha$(br)>Allokotosauria$(br)>Trilophosauria$(br)>Trilophosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. buettneri",
+            "entity": "lepidodendron:prehistoric_flora_trilophosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_trilophosaurus",
+			"type": "text",
+			"text": "Trilophosaurus comes from the Upper Triassic, with fossils being found in formations across the United States. It is a large trilophosauriid, growing up to 2.5 m in the length. It bears a highly unusual skull, which was not only heavily built, but a missing temporal opening. It was possibly in a similar niche to that of the modern iguanas."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_trilophosaurus",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'tri', to mean 'three'; 'lopho', to mean 'ridge'; and 'saurus', to mean 'lizard'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_trilophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_trilophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_trilophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_trilophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_trilophosaurus"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Silvanerpeton",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/silvanerpeton_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_silvanerpeton ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_silvanerpeton",
+			"title": "Silvanerpeton",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Reptiliomorpha"
+		},
+        	{
+            "type": "entity",
+            "name": "S. miripedes",
+            "entity": "lepidodendron:prehistoric_flora_silvanerpeton",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_silvanerpeton",
+			"type": "text",
+			"text": "Silvanerpeton miripedes comes from the Lower Carboniferous, with fossils being found in the East Kirkton Quarry, Scotland (United Kingdom). It is a small reptiliomorph, growing up to 40 cm in length. The discovery of its fossil material was important, as it comes from 'Romer's Gap', a gap in the fossil record of tetrapods, which helped to 'close the gap'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_silvanerpeton",
+			"type": "text",
+			"text": "The generic name derives from the name 'Silvanus', the Roman God of Woods; and the Greek word 'herpeton', to mean 'creeping'. The specific name derives from the Latin words 'mirus', to mean 'wonderful': and 'pedes', to mean 'feet'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_silvanerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_silvanerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_silvanerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_silvanerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_silvanerpeton"
+		}
+	]
+}

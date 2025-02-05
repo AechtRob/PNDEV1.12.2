@@ -1,0 +1,52 @@
+{
+	"name": "Priscomyzon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/priscomyzon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_priscomyzon ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_priscomyzon",
+			"title": "Priscomyzon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Hyperoartia$(br)>Petromyzontiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "P. riniensis",
+            "entity": "lepidodendron:prehistoric_flora_priscomyzon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_priscomyzon",
+			"type": "text",
+			"text": "Priscomyzon riniensis comes from the Upper Devonian, with fossils found in the Witpoort Formation, South Africa. It is a small lamprey, growing to 4.2 cm in length. It is known for having the oldest large oral disc, circumoral teeth and branchial basket."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_priscomyzon",
+			"type": "text",
+			"text": "The generic name derives from the Latin word 'priscus', to mean 'ancient'; and the Greek word 'myzon', to mean 'sucking'. The specific name derives from the isiXhosa name for Grahamstown, 'Rini', close to where the fossil specimens were found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_priscomyzon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_priscomyzon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_priscomyzon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_priscomyzon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_priscomyzon"
+		}
+	]
+}

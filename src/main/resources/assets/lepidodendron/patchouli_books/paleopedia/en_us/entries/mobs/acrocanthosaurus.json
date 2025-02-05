@@ -1,0 +1,52 @@
+{
+	"name": "Acrocanthosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/acrocanthosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_acrocanthosaurus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_acrocanthosaurus",
+			"title": "Acrocanthosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Carcharodontosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. atokensis",
+            "entity": "lepidodendron:prehistoric_flora_acrocanthosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acrocanthosaurus",
+			"type": "text",
+			"text": "Acrocanthosaurus atokensis comes from the Early Cretaceous, with fossils being found in formations across the USA. It is a large carcharodontosaurid, growing up to 11 m in length, and weighing up to 6,600 kg. It is most well known for the tall neural spines that it bears, which would have allowed for a ridge of muscle along the length of its back, from the neck to the hips."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acrocanthosaurus",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'akra', to mean 'high'; 'akantha', to mean 'spine'; and 'sauros', to mean 'lizard'. The specific name derives from the Latinised place name 'Atoka County', where the original fossils were found."
+		},		
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_acrocanthosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_acrocanthosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_acrocanthosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_acrocanthosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_acrocanthosaurus"
+		}
+	]
+}
