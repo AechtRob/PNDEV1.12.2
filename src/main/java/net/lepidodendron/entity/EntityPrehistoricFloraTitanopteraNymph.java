@@ -79,6 +79,12 @@ public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFlo
 		return true;
 	}
 
+	@Override
+	public String getPNTypeName()
+	{
+		return this.getPNType().getName();
+	}
+
 	public enum Type
 	{
 		CLATROTITAN(1, "clatrotitan"),

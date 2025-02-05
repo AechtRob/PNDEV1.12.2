@@ -2,20 +2,23 @@ package net.lepidodendron.util.patchouli;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.lepidodendron.world.biome.EntityLists;
-import net.minecraft.entity.EntityLiving;
-import net.minecraft.nbt.JsonToNBT;
-import net.minecraft.nbt.NBTException;
-import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
-import net.minecraftforge.fml.common.registry.EntityEntry;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import vazkii.patchouli.api.IComponentProcessor;
+import vazkii.patchouli.client.book.BookEntry;
+import vazkii.patchouli.client.book.BookPage;
+import vazkii.patchouli.client.book.gui.GuiBookEntry;
+import vazkii.patchouli.client.book.template.BookTemplate;
+import vazkii.patchouli.client.book.template.TemplateComponent;
+import vazkii.patchouli.client.book.template.component.ComponentImage;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
+import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class BiomeSpawns {
 
@@ -81,7 +84,7 @@ public class BiomeSpawns {
             mobList = spawnListJoiner.toArray(mobList);
         }
 
-        ObjectArrayList<BiomeSpawns.PPEntry> spawnListInterim = new ObjectArrayList<PPEntry>();
+        ObjectArrayList<DimensionSpawns.PPEntry> spawnListInterim = new ObjectArrayList<DimensionSpawns.PPEntry>();
         if (mobList.length >= 1) {
             for (String entry : mobList) {
                 String entryName = entry;
@@ -96,9 +99,12 @@ public class BiomeSpawns {
                 String mobName[] = getMobName(entryName, strNBT);
                 if (mobName != null) {
                     for (String name : mobName) {
-                        String nameSimple = name.substring(name.indexOf(")"));
-                        if (!alreadyInList(spawnListInterim, new BiomeSpawns.PPEntry(nameSimple, name, getIconPath(entry)))) {
-                            spawnListInterim.add(new BiomeSpawns.PPEntry(nameSimple, name, getIconPath(entry)));
+                        String nameSimple = name;
+                        if (name.indexOf(")") >= 0) {
+                            nameSimple = name.substring(name.indexOf(")"));
+                        }
+                        if (!alreadyInList(spawnListInterim, new DimensionSpawns.PPEntry(nameSimple, name, getIconPath(name)))) {
+                            spawnListInterim.add(new DimensionSpawns.PPEntry(nameSimple, name, getIconPath(name)));
                         }
                     }
                     if (entry.contains("lepidodendron:prehistoric_flora_turboscinetes")) {
@@ -106,9 +112,12 @@ public class BiomeSpawns {
                         String mobNameT[] = getMobName("lepidodendron:prehistoric_flora_piranhamesodon", "");
                         if (mobNameT != null) {
                             for (String name : mobNameT) {
-                                String nameSimple = name.substring(name.indexOf(")"));
-                                if (!alreadyInList(spawnListInterim, new BiomeSpawns.PPEntry(nameSimple, name, getIconPath(entry)))) {
-                                    spawnListInterim.add(new BiomeSpawns.PPEntry(nameSimple, name, getIconPath(entry)));
+                                String nameSimple = name;
+                                if (name.indexOf(")") >= 0) {
+                                    nameSimple = name.substring(name.indexOf(")"));
+                                }
+                                if (!alreadyInList(spawnListInterim, new DimensionSpawns.PPEntry(nameSimple, name, getIconPath(entry)))) {
+                                    spawnListInterim.add(new DimensionSpawns.PPEntry(nameSimple, name, "paleopedia:textures/items/piranhamesodon_icon.png"));
                                 }
                             }
                         }
@@ -116,9 +125,9 @@ public class BiomeSpawns {
                 }
             }
 
-            Collections.sort(spawnListInterim, new Comparator<BiomeSpawns.PPEntry>() {
+            Collections.sort(spawnListInterim, new Comparator<DimensionSpawns.PPEntry>() {
                 @Override
-                public int compare(BiomeSpawns.PPEntry s1, BiomeSpawns.PPEntry s2) {
+                public int compare(DimensionSpawns.PPEntry s1, DimensionSpawns.PPEntry s2) {
                     return s1.getSortKey().compareToIgnoreCase(s2.getSortKey());
                 }
             });
@@ -145,54 +154,18 @@ public class BiomeSpawns {
                 return spawnListFinal;
             }
             if (from == 0) {
-                if (type == 2) {
-                    return "paleopedia:textures/items/blank_icon.png";
-                }
-                else if (type == 3) {
-                    return "do not show this advancment icon";
-                }
                 return spawnsEmpty;
             }
         }
 
         if (from == 0) {
-            if (type == 2) {
-                return "paleopedia:textures/items/blank_icon.png";
-            }
-            else if (type == 3) {
-                return "do not show this advancment icon";
-            }
             return spawnsEmpty;
         }
         return "";
     }
 
-    public static class PPEntry {
-        private String sortkey;
-        private String entry;
-        private String iconpath;
-
-        public PPEntry(String sortkey, String entry, String iconpath){
-            this.sortkey = sortkey;
-            this.entry = entry;
-            this.iconpath = iconpath;
-        }
-
-        public String getSortKey() {
-            return this.sortkey;
-        }
-
-        public String getEntry() {
-            return this.entry;
-        }
-
-        public String getIconPath() {
-            return this.iconpath;
-        }
-    }
-
-    public static boolean alreadyInList(ObjectArrayList<BiomeSpawns.PPEntry> list, PPEntry entry) {
-        for (PPEntry listEntry : list) {
+    public static boolean alreadyInList(ObjectArrayList<DimensionSpawns.PPEntry> list, DimensionSpawns.PPEntry entry) {
+        for (DimensionSpawns.PPEntry listEntry : list) {
             if (listEntry.getEntry().equalsIgnoreCase(entry.getEntry())) {
                 return true;
             }
@@ -202,72 +175,50 @@ public class BiomeSpawns {
 
     @Nullable
     public static String[] getMobName(String mobStr, String nbtStr) {
-        String[] mobName = new String[]{};
-        if (nbtStr.contains("PNType:\"male\"") || nbtStr.contains("PNType:\"female\"")) {
-            nbtStr = "";
-        }
-        EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobStr));
-        if (ee != null) {
-            EntityLiving entity = (EntityLiving) ee.newInstance(null);
-            if (entity != null) {
-                //Do we have variants?
-                if (!nbtStr.equalsIgnoreCase("")) {
-                    String[] arrSplit = new String[]{nbtStr};
-                    if (nbtStr.indexOf("PNType") > 0) {
-                        ArrayList<String> mobArray = new ArrayList<String>();
-                        if (nbtStr.indexOf("@") > 0) {
-                            arrSplit = nbtStr.split("@");
-                        }
-                        for (String mobNBT : arrSplit) {
-                            NBTTagCompound nbttagcompound = new NBTTagCompound();
-                            try {
-                                nbttagcompound = JsonToNBT.getTagFromJson(mobNBT);
-                            } catch (NBTException nbtexception) {
-                                //do nothing
-                            }
-                            String type = "";
-                            if (nbttagcompound.hasKey("PNType")) {
-                                entity.readEntityFromNBT(nbttagcompound);
-                                type = nbttagcompound.getString("PNType");
-                            }
-                            if (!type.equalsIgnoreCase("")) {
-                                if (!mobArray.contains("$(l:mobs/" + getHyperlink(mobStr + "_" + type) + ")" + entity.getName() + "$(/l)")) {
-                                    mobArray.add("$(l:mobs/" + getHyperlink(mobStr + "_" + type) + ")" + entity.getName() + "$(/l)");
-                                }
-                            }
-                            else {
-                                if (!mobArray.contains("$(l:mobs/" + getHyperlink(mobStr) + ")" + entity.getName() + "$(/l)")) {
-                                    mobArray.add("$(l:mobs/" + getHyperlink(mobStr) + ")" + entity.getName() + "$(/l)");
-                                }
-                            }
-                        }
-                        mobName = mobArray.toArray(mobName);
-                    }
-                    else {
-                        mobName = new String[]{"$(l:mobs/" + getHyperlink(mobStr)  + ")" + entity.getName() + "$(/l)"};
-                    }
-                }
-                else {
-                    mobName = new String[]{"$(l:mobs/" + getHyperlink(mobStr)  + ")" + entity.getName() + "$(/l)"};
-                }
-                entity.setDead();
-                return mobName;
-            }
-        }
-        return null;
-    }
-
-    public static String getHyperlink(String mobStr) {
-        return DimensionSpawns.getHyperlink(mobStr);
+        return DimensionSpawns.getMobName(mobStr, nbtStr);
     }
 
     public static String getIconPath(String mobStr) {
-        mobStr = mobStr.substring(mobStr.indexOf(":") + 1);
-        if (mobStr.indexOf(":") > 0) {
-            mobStr = mobStr.substring(0, mobStr.indexOf(":"));
+        return DimensionSpawns.getIconPath(mobStr);
+    }
+
+    public static void refreshForRender(int pageNumber, IComponentProcessor processor, GuiScreen parent) {
+
+        try { //Reflection :/
+            Field field = BookEntry.class.getDeclaredField("realPages");
+            field.setAccessible(true);
+            List<BookPage> pagesAll = (List<BookPage>)field.get(((GuiBookEntry) parent).getEntry());
+
+            BookPage page = pagesAll.get(pageNumber);
+            field = page.getClass().getDeclaredField("template");
+            field.setAccessible(true);
+            BookTemplate booktemplate = (BookTemplate) field.get(page);
+
+            field = booktemplate.getClass().getDeclaredField("components");
+            field.setAccessible(true);
+            List<TemplateComponent> bookcomponents = (List<TemplateComponent>) field.get(booktemplate);
+
+            field = TemplateComponent.class.getDeclaredField("negateAdvancement");
+            field.setAccessible(true);
+
+            for (int i = 1; i <= 15; i++) {
+                String advStr = ((ComponentImage) bookcomponents.get(i)).image;
+                advStr = advStr.replace("paleopedia:textures/items/", "");
+                advStr = advStr.replace("_icon.png", "");
+                advStr = "lepidodendron:pf_adv_book_" + getAmendedAdv(advStr);
+                bookcomponents.get(i + 15).advancement = advStr;
+                bookcomponents.get(i + 30).advancement = advStr;
+                field.setBoolean(bookcomponents.get(i + 30), true);
+            }
+
         }
-        mobStr = mobStr.replace("prehistoric_flora_", "");
-        return "paleopedia:textures/items/" + mobStr + "_icon.png";
+        catch(Exception e){
+            //Do nothing
+        }
+    }
+
+    public static String getAmendedAdv(String string) {
+        return DimensionSpawns.getAmendedAdv(string);
     }
 
 }

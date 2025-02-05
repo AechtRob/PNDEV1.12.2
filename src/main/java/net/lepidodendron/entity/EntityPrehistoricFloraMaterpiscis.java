@@ -115,6 +115,12 @@ public class EntityPrehistoricFloraMaterpiscis extends EntityPrehistoricFloraAge
 		return true;
 	}
 
+	@Override
+	public String getPNTypeName()
+	{
+		return this.getPNType().getName();
+	}
+
 	public enum Type
 	{
 		MALE(1, "male"),
