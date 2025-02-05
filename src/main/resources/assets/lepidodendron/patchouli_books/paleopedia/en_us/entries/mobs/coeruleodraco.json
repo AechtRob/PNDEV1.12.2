@@ -1,0 +1,52 @@
+{
+	"name": "Coeruleodraco",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/coeruleodraco_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_coeruleodraco ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_coeruleodraco",
+			"title": "Coeruleodraco",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Choristodera"
+		},
+        	{
+            "type": "entity",
+            "name": "C. jurassicus",
+            "entity": "lepidodendron:prehistoric_flora_coeruleodraco",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_coeruleodraco",
+			"type": "text",
+			"text": "Coeruleodraco jurassicus comes from the Upper Jurassic, with fossils found in the Tiaojishan Formation , China. It is a small choristoderes, growing up to 40 cm in the length. It is known to have two nares (nostril holes), which is not common amongst other choristoderes which only have one."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_coeruleodraco",
+			"type": "text",
+			"text": "The generic name derives from the Latin words 'coeruleus', to mean 'blue'; and 'draco', to mean 'dragon'. The specific name derives from the time period name 'Jurassic', the period it hails from."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_coeruleodraco"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_coeruleodraco"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_coeruleodraco"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_coeruleodraco"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_coeruleodraco"
+		}
+	]
+}

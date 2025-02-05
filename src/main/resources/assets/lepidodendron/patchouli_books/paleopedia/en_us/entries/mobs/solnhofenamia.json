@@ -1,0 +1,47 @@
+{
+	"name": "Solnhofenamia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/solnhofenamia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_solnhofenamia ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_solnhofenamia",
+			"title": "Solnhofenamia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Halecomorphi$(br)>Amiiformes$(br)>Amiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. elongata",
+            "entity": "lepidodendron:prehistoric_flora_solnhofenamia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_solnhofenamia",
+			"type": "text",
+			"text": "Solnhofenamia elongata comes from the Upper Jurassic, with fossils found in the Solnhofen Limestone, Germany. It is a small amiid, growing up to 50 cm in length. The generic name derives from the place name 'Solnhofen', where the fossils were found; and the genus name 'Amia'. The specific name derives from the Latin word 'elongata', to mean 'elongated'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_solnhofenamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_solnhofenamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_solnhofenamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_solnhofenamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_solnhofenamia"
+		}
+	]
+}

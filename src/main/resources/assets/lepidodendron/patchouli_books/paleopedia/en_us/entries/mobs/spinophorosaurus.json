@@ -1,0 +1,52 @@
+{
+	"name": "Spinophorosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/spinophorosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_spinophorosaurus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_spinophorosaurus",
+			"title": "Spinophorosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Sauropoda$(br)>Gravisauria"
+		},
+        	{
+            "type": "entity",
+            "name": "S. nigerensis",
+            "entity": "lepidodendron:prehistoric_flora_spinophorosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spinophorosaurus",
+			"type": "text",
+			"text": "Spinophorosaurus nigerensis comes from the Middle Jurassic, with fossils being found in the Irhazer Shale, Niger. It is a large sauropod, growing up to 14 m in length, and weighed up to 7,000 kg. It is the most complete, basal Sauropod known, as such its reconstructions, ecology and so forth are well known. It was thought to once bear spines on the tail, but this was later found to be a misinterpretation of the material."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spinophorosaurus",
+			"type": "text",
+			"text": "The generic name derives from the Latin word 'spīna', to mean 'spike'; and the Greek words 'phoro', to mean 'bear'; and 'sauros', to mean 'lizard'. The specific name derives from the Latinised name of the 'Republic of Niger', where the fossils were found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_spinophorosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_spinophorosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_spinophorosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_spinophorosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_spinophorosaurus"
+		}
+	]
+}

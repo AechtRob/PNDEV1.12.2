@@ -1,0 +1,52 @@
+{
+	"name": "Koonwarria",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/koonwarria_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_koonwarria",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_koonwarria",
+			"title": "Koonwarria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>Koonwarriidae"
+		},
+        	{
+            "type": "entity",
+            "name": "K. manifrons",
+            "entity": "lepidodendron:prehistoric_flora_koonwarria",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_koonwarria",
+			"type": "text",
+			"text": "Koonwarria manifrons comes from the Early Cretaceous, with fossils being found in the Strzelecki Group, Australia. It is a small teleost, growing up to 15 cm in length. Whilst is has many similarities to archaeomaenids, it is assumed that they are descended from the family, but it is still distinct enough to be put into its own family, the koonwarriids."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_koonwarria",
+			"type": "text",
+			"text": "The generic name derives from the place name 'Koonwarra', near to where the fossils are found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_koonwarria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_koonwarria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_koonwarria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_koonwarria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_koonwarria"
+		}
+	]
+}

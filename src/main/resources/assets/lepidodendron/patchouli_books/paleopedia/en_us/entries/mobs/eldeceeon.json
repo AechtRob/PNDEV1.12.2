@@ -1,0 +1,52 @@
+{
+	"name": "Eldeceeon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eldeceeon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_eldeceeon ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eldeceeon",
+			"title": "Eldeceeon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Tetrapoda$(br)>Reptiliomorpha (?)"
+		},
+        	{
+            "type": "entity",
+            "name": "E. rolfei",
+            "entity": "lepidodendron:prehistoric_flora_eldeceeon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eldeceeon",
+			"type": "text",
+			"text": "Eldeceeon rolfei comes from the Lower Carboniferous, with fossils being found in the East Kirkton Quarry, Scotland (United Kingdom). It is a small tetrapod, growing up to 35 cm in length. It is unknown which clade Eldeceeon currently belongs to, but possibly has affinities with embolomeres, although it has many features not known in this clade, muddying the waters."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eldeceeon",
+			"type": "text",
+			"text": "These features range from fewer dorsal vertebrae, to larger and more robust limbs, suggesting it had a more terrestrial lifestyle that the aquatic embolomeres, although it may have still ventured into the water from time to time. The generic name derives from the abbreviation of the Livingstone Development Corporation (L.D.C.), who made a large donation for the purchase of the holotype. The specific name derives from the Latinised surname of W. D. I. Rolfe, the Keeper of Geology at the National Museum of Scotland at the time of naming."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eldeceeon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eldeceeon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eldeceeon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eldeceeon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eldeceeon"
+		}
+	]
+}

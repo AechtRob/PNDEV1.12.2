@@ -1,0 +1,47 @@
+{
+	"name": "Anderella",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/anderella_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_anderella ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_anderella",
+			"title": "Anderella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Chelicerata$(br)>Euchelicerata$(br)>Synziphosurina"
+		},
+        	{
+            "type": "entity",
+            "name": "A. parva",
+            "entity": "lepidodendron:prehistoric_flora_anderella",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anderella",
+			"type": "text",
+			"text": "Anderella parva comes from the Lower Carboniferous, with fossils found in the Bear Gulch Limestone, Montana (USA). It is a small synziphosurine, growing up to 5 cm in length overall. It is currently the youngest known Synziphosurine, and is the only one to show evidence of appendages. The generic name derives from the Latinised surname of Lyall Anderson, whom has contributed much to xiphosuran research. The specific name derives from the Latin word 'parva', to mean 'small'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anderella"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anderella"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anderella"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anderella"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anderella"
+		}
+	]
+}

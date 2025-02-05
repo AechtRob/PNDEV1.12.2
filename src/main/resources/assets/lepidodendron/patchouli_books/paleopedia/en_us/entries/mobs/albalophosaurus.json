@@ -1,0 +1,52 @@
+{
+	"name": "Albalophosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/albalophosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_albalophosaurus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_albalophosaurus",
+			"title": "Albalophosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Neornithischia$(br)>Marginocephalia"
+		},
+        	{
+            "type": "entity",
+            "name": "A. yamaguchiorum",
+            "entity": "lepidodendron:prehistoric_flora_albalophosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_albalophosaurus",
+			"type": "text",
+			"text": "Albalophosaurus yamaguchiorum comes from the Early Cretaceous, with fossils being found in the Kuwajima Formation, Japan. It is a small ceratopsian, growing up to 1 m in length. Phylogenetic analysis suggests that it is likely to be a basal marginocephalian, closely related to Yinlong, although some suggest that it may be a basal pachycephalosaur."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_albalophosaurus",
+			"type": "text",
+			"text": "The generic name derives from the Latin word 'albus', to mean 'white'; and the Greek word 'lophos', to mean 'crest'. The specific name derives from the Latinised surname of Ichio and Mikiko Yamaguchi, whom discovered and prepared many fossils from the site Albalophosaurus was found."
+		},		
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_albalophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_albalophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_albalophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_albalophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_albalophosaurus"
+		}
+	]
+}

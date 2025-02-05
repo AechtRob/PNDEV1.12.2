@@ -1,0 +1,47 @@
+{
+	"name": "Machimosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/machimosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_machimosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_machimosaurus",
+			"title": "Machimosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic-Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Crocodyliformes$(br)>Thalattosuchia$(br)>Machimosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. hugii",
+            "entity": "lepidodendron:prehistoric_flora_machimosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_machimosaurus",
+			"type": "text",
+			"text": "Machimosaurus hails from the Upper Jurassic into the Early Cretaceous, with fossils being found in formations across Europe and Africa. It contains the largest known thalattosuchian, growing up to 7.15 m in length. They are also possibly the youngest thalattosuchian genus, surviving until the Hauterivian (Early Cretaceous)."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_machimosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_machimosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_machimosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_machimosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_machimosaurus"
+		}
+	]
+}

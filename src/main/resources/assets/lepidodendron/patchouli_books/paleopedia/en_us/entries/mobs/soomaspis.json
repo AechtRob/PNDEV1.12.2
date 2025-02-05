@@ -1,0 +1,47 @@
+{
+	"name": "Soomaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/soomaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_soomaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_soomaspis",
+			"title": "Soomaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Nektaspida$(br)>Liwiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. splendida",
+            "entity": "lepidodendron:prehistoric_flora_soomaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_soomaspis",
+			"type": "text",
+			"text": "Soomaspis splendida comes from the Upper Ordovician, with fossils found in the Soom Shale Lagerstätte, South Africa. It is a small, rounded liwiid and grew up to 3 cm in length. The generic name derives from the place name 'Soom Shale', where fossils of it were found; and the Greek word 'aspis', to mean 'shield'. The specific name derives from the Latin word 'splendere', to mean 'brightness'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_soomaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_soomaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_soomaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_soomaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_soomaspis"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Pambdelurion",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pambdelurion_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_pambdelurion ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pambdelurion",
+			"title": "Pambdelurion",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda"
+		},
+        	{
+            "type": "entity",
+            "name": "P. whittingtoni",
+            "entity": "lepidodendron:prehistoric_flora_pambdelurion",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pambdelurion",
+			"type": "text",
+			"text": "Pambdelurion whittingtoni comes from the Middle Cambrian, with fossils found in the Sirius Passet, Greenland. They are the largest organisms from the Sirius Passet, growing to 55 cm in length. The generic name derives from the Greek word 'pambdelyrion', to mean 'all-loathsome'. The specific name is the Latinised surname of Harry B. Whittington, a British paleontologist who made major contributions to the Burgess Shale."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pambdelurion"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pambdelurion"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pambdelurion"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pambdelurion"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pambdelurion"
+		}
+	]
+}

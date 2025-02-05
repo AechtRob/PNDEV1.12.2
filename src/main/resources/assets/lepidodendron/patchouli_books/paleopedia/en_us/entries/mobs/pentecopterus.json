@@ -1,0 +1,52 @@
+{
+	"name": "Pentecopterus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pentecopterus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_pentecopterus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pentecopterus",
+			"title": "Pentecopterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Megalograptidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. decorahensis",
+            "entity": "lepidodendron:prehistoric_flora_pentecopterus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pentecopterus",
+			"type": "text",
+			"text": "Pentecopterus decorahensis comes from the Middle Ordovician, with fossils found in the Kayenta Formation, Arizona (USA). It is a large eurypterid, growing up to 1.7 m in the length. It is the oldest known eurypterid, surpassing some by nearly 9 million years."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pentecopterus",
+			"type": "text",
+			"text": "The generic name derives from the name of a type of Greek warship, 'Penteconters'; and the Latin word '-pterus', to mean 'wing'. The specific name dervies from the Latinisation of the place name 'Decorah', and town in Iowa near to were the fossils were found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pentecopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pentecopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pentecopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pentecopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pentecopterus"
+		}
+	]
+}

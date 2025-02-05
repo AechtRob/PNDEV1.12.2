@@ -1,0 +1,47 @@
+{
+	"name": "Calamopleurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/calamopleurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_calamopleurus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_calamopleurus",
+			"title": "Calamopleurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Halecomorphi$(br)>Amiiformes$(br)>Amiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. cylindricus",
+            "entity": "lepidodendron:prehistoric_flora_calamopleurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_calamopleurus",
+			"type": "text",
+			"text": "Calamopleurus comes from the Cretaceous, with fossils found in the Kem Kem beds, Morocco; Guir basin, Algeria; and multiple formations across Brazil. It is one of the earliest known large amiids, growing up to 1.4 m in length. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_calamopleurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_calamopleurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_calamopleurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_calamopleurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_calamopleurus"
+		}
+	]
+}

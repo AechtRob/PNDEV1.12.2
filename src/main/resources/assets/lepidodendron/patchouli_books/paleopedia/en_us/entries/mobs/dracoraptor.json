@@ -1,0 +1,52 @@
+{
+	"name": "Dracoraptor",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dracoraptor_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_dracoraptor ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dracoraptor",
+			"title": "Dracoraptor",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Coelophysoidea"
+		},
+        	{
+            "type": "entity",
+            "name": "D. hanigani",
+            "entity": "lepidodendron:prehistoric_flora_dracoraptor",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dracoraptor",
+			"type": "text",
+			"text": "Dracoraptor hanigani comes from the Lower Jurassic, with fossils being found in the Blue Lias Formation, Wales (United Kingdom). It is a medium sized coelophysoid, growing up to 2 m in the length, with a max size estimate of 3 m. It is earliest known Jurassic dinosaur, and its not only the first known dinosaur from Jurassic Wales, but also the most complete non-avian therapod from Wales."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dracoraptor",
+			"type": "text",
+			"text": "The generic name derives from the Latin words 'Draco', to mean 'dragon'; and 'raptor', to mean 'thief'. The specific name derives from the Latinised surnames of Nick and Rob Hanigan, the discoverers of the fossil specimens."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dracoraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dracoraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dracoraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dracoraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dracoraptor"
+		}
+	]
+}

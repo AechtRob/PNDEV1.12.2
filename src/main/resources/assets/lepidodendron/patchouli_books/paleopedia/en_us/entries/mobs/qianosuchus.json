@@ -1,0 +1,52 @@
+{
+	"name": "Qianosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/qianosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_qianosuchus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_qianosuchus",
+			"title": "Qianosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Suchia$(br)>Paracrocodylomorpha$(br)>Poposauroidea"
+		},
+        	{
+            "type": "entity",
+            "name": "Q. mixtus",
+            "entity": "lepidodendron:prehistoric_flora_qianosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_qianosuchus",
+			"type": "text",
+			"text": "Qianosuchus mixtus comes from the Middle Triassic, with fossils found in the Guanling Formation, China. It is a medium sized poposauroiid, growing up to 3 m in length. It is the only archosaur from the Triassic to live a semi-marine lifestyle."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_qianosuchus",
+			"type": "text",
+			"text": "The generic name derives from the Chinese word 'Qian', an abbreviation of Guizhou Province. The specific name derives from the Latin word 'mixtus', to mean 'mix'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_qianosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_qianosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_qianosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_qianosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_qianosuchus"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Mieridduryn",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mieridduryn_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_mieridduryn ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mieridduryn",
+			"title": "Mieridduryn",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Opabiniidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. bonniae",
+            "entity": "lepidodendron:prehistoric_flora_mieridduryn",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mieridduryn",
+			"type": "text",
+			"text": "Mieridduryn bonniae comes from the Middle Ordovician, with fossils found in the Castle Bank lagerstätte, Wales (United Kingdom). It is a tiny opabiniidae, only growing to 1.3 cm in length. Mieridduryn is possibly a late surviving opabiniid, or is the result of convergent evolution, although the former is currently the most favoured."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mieridduryn",
+			"type": "text",
+			"text": "The generic name derives from the Welsh words 'mieri', to mean 'bramble'; and 'duryn', to mean 'snout'. The specific name is the Latinised firstname of Bonnie Douel, one of the owners of the Castle Bank site who permitted and supported research at said site."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mieridduryn"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mieridduryn"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mieridduryn"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mieridduryn"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mieridduryn"
+		}
+	]
+}

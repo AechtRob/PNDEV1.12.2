@@ -1,0 +1,47 @@
+{
+	"name": "Anhanguera",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/anhanguera_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_anhanguera",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_anhanguera",
+			"title": "Anhanguera",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Pterosauria$(br)>Pterodactyloidea$(br)>Anhangueridae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. blittersdorffi",
+            "entity": "lepidodendron:prehistoric_flora_anhanguera",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anhanguera",
+			"type": "text",
+			"text": "Anhanguera hails from the Cretaceous, with fossils found in the Romualdo Formation, Brazil; and the Kem Kem Group, Morocco. It is a medium sized anhanguerid, with a wingspan of 5 m overall, and is the namesake of the anhanguerid Family. The generic name derives from the Tupi words 'añanga', to mean 'spirit protector of animals'; and 'wera', to mean 'bygone'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anhanguera"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anhanguera"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anhanguera"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anhanguera"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anhanguera"
+		}
+	]
+}

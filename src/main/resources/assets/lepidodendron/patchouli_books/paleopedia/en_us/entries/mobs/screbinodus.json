@@ -1,0 +1,47 @@
+{
+	"name": "Screbinodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/screbinodus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_screbinodus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_screbinodus",
+			"title": "Screbinodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Rhizodontida$(br)>Rhizodontiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "S. ornatus",
+            "entity": "lepidodendron:prehistoric_flora_screbinodus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_screbinodus",
+			"type": "text",
+			"text": "Screbinodus comes from the Carboniferous, with fossils found in the Gilmerton Ironstone Formation, Scotland (United Kingdom). It is a small rhizodontid, growing up to 1.5 m in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_screbinodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_screbinodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_screbinodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_screbinodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_screbinodus"
+		}
+	]
+}

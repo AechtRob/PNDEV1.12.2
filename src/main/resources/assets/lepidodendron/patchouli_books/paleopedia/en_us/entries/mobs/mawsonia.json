@@ -1,0 +1,47 @@
+{
+	"name": "Mawsonia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mawsonia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_mawsonia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mawsonia",
+			"title": "Mawsonia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Actinistia$(br)>Coelacanthiformes$(br)>Mawsoniidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. gigas",
+            "entity": "lepidodendron:prehistoric_flora_mawsonia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mawsonia",
+			"type": "text",
+			"text": "Mawsonia comes from the Cretaceous, with fossils being found in formations across both American continents and Africa. It is amongst the largest coelacanths, growing up to 3.5 m, possibly 5 m, in length. Several studies have noted the type species M. gigas and M. brasiliensis to be valid, whilst several others hand in the balance of either being synonymous of M. gigas or not, with one possibly being apart of the Axelrodichthys genus all together."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mawsonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mawsonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mawsonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mawsonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mawsonia"
+		}
+	]
+}

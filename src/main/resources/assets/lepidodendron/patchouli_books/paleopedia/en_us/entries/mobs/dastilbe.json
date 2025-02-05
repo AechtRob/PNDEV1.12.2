@@ -1,0 +1,52 @@
+{
+	"name": "Dastilbe",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dastilbe_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_dastilbe",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dastilbe",
+			"title": "Dastilbe",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Gonorynchiformes$(br)>Chanidae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. crandalli",
+            "entity": "lepidodendron:prehistoric_flora_dastilbe",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dastilbe",
+			"type": "text",
+			"text": "Dastilbe crandalli comes from the Early Cretaceous, with fossils being found in the Muribeca Formation, Crato Formation and Codó Formation, Brazil. It is a small chaniid, growing up to 15 cm in length. Dastilbe is known for engaging in cannibalism, with one known adult specimen containing a smaller individual in the digestive tract."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dastilbe",
+			"type": "text",
+			"text": "The generic name derives from the Greek word 'stilbe', to mean 'glittering'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dastilbe"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dastilbe"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dastilbe"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dastilbe"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dastilbe"
+		}
+	]
+}

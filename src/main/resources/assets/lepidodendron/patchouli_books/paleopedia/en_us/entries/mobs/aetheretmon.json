@@ -1,0 +1,47 @@
+{
+	"name": "Aetheretmon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/aetheretmon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_aetheretmon ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_aetheretmon",
+			"title": "Aetheretmon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Actinopterygii$(br)>Strepheoschemidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. valentiacum",
+            "entity": "lepidodendron:prehistoric_flora_aetheretmon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aetheretmon",
+			"type": "text",
+			"text": "Aetheretmon valentiacum comes from the Lower Carboniferous, with fossils found in formations across Europe, from Scotland to Russia. It is a small actinopterygian, growing up to 5 cm in length overall. It is currently the oldest known actinopterygian with a known growth series."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_aetheretmon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_aetheretmon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_aetheretmon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_aetheretmon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_aetheretmon"
+		}
+	]
+}

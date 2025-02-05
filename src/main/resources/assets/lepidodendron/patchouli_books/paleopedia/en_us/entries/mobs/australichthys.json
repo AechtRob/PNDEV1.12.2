@@ -1,0 +1,47 @@
+{
+	"name": "Australichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/australichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_australichthys ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_australichthys",
+			"title": "Australichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Osteichthyes$(br)>Actinopterygii"
+		},
+        	{
+            "type": "entity",
+            "name": "A. longidorsalis",
+            "entity": "lepidodendron:prehistoric_flora_australichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_australichthys",
+			"type": "text",
+			"text": "Australichthys longidorsalis comes from the Lower Carboniferous, with fossils found in the Witteberg series, South Africa. The generic name derives from the Latin word 'austral', to mean 'southern': and the Greek word 'ichthys', to mean 'fish'. The specific name derives from the Latin words 'longus', to mean 'long'; and 'dorsalis', to mean 'dorsal'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_australichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_australichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_australichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_australichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_australichthys"
+		}
+	]
+}

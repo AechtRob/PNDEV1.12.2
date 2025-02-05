@@ -1,0 +1,47 @@
+{
+	"name": "Triopus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/triopus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_triopus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_triopus",
+			"title": "Triopus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Artiopoda$(br)>Vicissicaudata$(br)>Cheloniellida"
+		},
+        	{
+            "type": "entity",
+            "name": "T. drabowiensis",
+            "entity": "lepidodendron:prehistoric_flora_triopus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_triopus",
+			"type": "text",
+			"text": "Triopus drabowiensis comes from the Ordovician, with fossils found in the Letná Formation, Czech Republic; and Fezouata Formation, Morocco. It is a small globular cheloniellid and grew up to 4 cm in length. Triopus is unique from the cheloniellid in that its body is a lot more rounded that most other genera within the order."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_triopus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_triopus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_triopus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_triopus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_triopus"
+		}
+	]
+}

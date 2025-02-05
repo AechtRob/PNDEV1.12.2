@@ -1,0 +1,52 @@
+{
+	"name": "Aquilops",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/aquilops_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_aquilops ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_aquilops",
+			"title": "Aquilops",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Neornithischia$(br)>Ceratopsia"
+		},
+        	{
+            "type": "entity",
+            "name": "A. americanus",
+            "entity": "lepidodendron:prehistoric_flora_aquilops",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aquilops",
+			"type": "text",
+			"text": "Aquilops americanus comes from the Early Cretaceous, with fossils being found in the Cloverly Formation, Montana. It is a small ceratopsian, growing up to 1 m in length. It is most well known for bearing a small horn on its beak, not unlike its later relatives of the Late Cretaceous."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aquilops",
+			"type": "text",
+			"text": "The generic name derives from the Latin word 'aquila', to mean 'eagle'; and the Greek word 'ops', to mean 'face'. The specific name derives from the Latinisation of 'America', honoring that it was the first basal Neoceratopsian of North America."
+		},		
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_aquilops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_aquilops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_aquilops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_aquilops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_aquilops"
+		}
+	]
+}

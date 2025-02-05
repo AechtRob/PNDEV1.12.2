@@ -1,0 +1,52 @@
+{
+	"name": "Psilichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/psilichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_psilichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_psilichthys",
+			"title": "Psilichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Coccolepidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. selwyni",
+            "entity": "lepidodendron:prehistoric_flora_psilichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_psilichthys",
+			"type": "text",
+			"text": "Psilichthys selwyni comes from the Early Cretaceous, with fossils being found in Carapook, Australia. It is a small coccolepid, growing up to 26 cm in length. It holds the title of being the first Mesozoic vertebrate fossil to be named from Victoria. It has also been debated what Psilichthys should be classified as, from either being a paleoniscid, a chondrostied, and even a birgeriid. The current accepted classification is coccolepid, although even this is still tentative."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_psilichthys",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'psil', to mean 'rare'; and 'ichthys' to mean 'fish'. The specific name derives from the surname of Dr. A. R. C. Selywn, who was the first to examine the site in which Psilichthys comes from."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_psilichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_psilichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_psilichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_psilichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_psilichthys"
+		}
+	]
+}

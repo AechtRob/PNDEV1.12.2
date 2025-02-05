@@ -1,0 +1,52 @@
+{
+	"name": "Eocursor",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eocursor_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_eocursor ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eocursor",
+			"title": "Eocursor",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia"
+		},
+        	{
+            "type": "entity",
+            "name": "E. parvus",
+            "entity": "lepidodendron:prehistoric_flora_eocursor",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eocursor",
+			"type": "text",
+			"text": "Eocursor parvus comes from the Lower Jurassic, with fossils found in the Upper Elliot Formation, South Africa. It is a small ornithischian, growing up to 1 m in length. It is the most complete early ornithischian known, helping to piece together the early beginnings of the group."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eocursor",
+			"type": "text",
+			"text": "The generic name derives from the Greek word 'eos', to mean 'Dawn'; and the Latin word 'cursor', to mean 'run'. The specific name derives from the Latin word 'parvus', to mean 'small'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eocursor"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eocursor"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eocursor"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eocursor"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eocursor"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Hispanamia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hispanamia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hispanamia ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hispanamia",
+			"title": "Hispanamia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Halecomorphi$(br)>Amiiformes$(br)>Amiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Hispanamia sp.",
+            "entity": "lepidodendron:prehistoric_flora_hispanamia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hispanamia",
+			"type": "text",
+			"text": "Hispanamia comes from the Early Cretaceous, with fossils found in the Las Hoyas lagerstätte, Spain. It is a small amiid, growing up to 50 cm in length. The generic name derives from the Roman name for Spain 'Hispania', and the genus name 'Amia'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hispanamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hispanamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hispanamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hispanamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hispanamia"
+		}
+	]
+}
