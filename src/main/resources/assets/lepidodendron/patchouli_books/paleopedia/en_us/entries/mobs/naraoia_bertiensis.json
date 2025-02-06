@@ -1,30 +1,16 @@
 {
-	"name": "Naraoiid",
+	"name": "Naraoia bertiensis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/naraoia_spinosa_icon.png",
+	"icon": "paleopedia:textures/items/naraoia_bertiensis_icon.png",
 	"category": "lepidodendron:mobs",
-	"turnin": "lepidodendron:pf_adv_book_naraoia",
+	"turnin": "lepidodendron:pf_adv_book_naraoia_bertiensis",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_naraoia",
-			"title": "Naraoiid",
+			"trigger": "lepidodendron:pf_adv_book_naraoia_bertiensis",
+			"title": "Naraoia bertiensis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian-Silurian$(br2)>Arthropoda$(br)>Nektaspida"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Nektaspida"
 		},
-        	{
-            "type": "entity",
-            "name": "N. spinosa",
-            "entity": "lepidodendron:prehistoric_flora_naraoia_spinosa",
-            "rotate": false,
-            "default_rotation": 0
-       	},
-        	{
-            "type": "entity",
-            "name": "P. hammanni",
-            "entity": "lepidodendron:prehistoric_flora_pseudonaraoia",
-            "rotate": false,
-            "default_rotation": 0
-       	},
         	{
             "type": "entity",
             "name": "N. bertiensis",
@@ -33,34 +19,34 @@
             "default_rotation": 0
        	},
 		{
-			"advancement": "lepidodendron:pf_adv_book_naraoia",
+			"advancement": "lepidodendron:pf_adv_book_naraoia_bertiensis",
 			"type": "text",
 			"text": "Naraoiids hail from the Middle Cambrian into the Silurian, with fossils found across the globe in America, China and Australia They are small, elongated nektaspiids, with flat semi-circular carapaces that bore no compound eyes on the top, and could grow from 1 to 6 cm in length. Species represented are Naraoia bertiensis, Naraoia spinosa and Pseudonaraoia hammanni."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_naraoia",
+			"advancement": "lepidodendron:pf_adv_book_naraoia_bertiensis",
 			"type": "text",
 			"text": "The family and generic names derive from the Latinised place name of 'Narao', a group of small lakes in Canada, near to where some of the first fossils of Naraoia were found."
 		},
 		{
 			"type": "lepidodendron:diet",
-			"mob": "lepidodendron:prehistoric_flora_naraoia"
+			"mob": "lepidodendron:prehistoric_flora_naraoia_bertiensis"
 		},
 		{
 			"type": "lepidodendron:biomelocations1",
-			"mob": "lepidodendron:prehistoric_flora_naraoia"
+			"mob": "lepidodendron:prehistoric_flora_naraoia_bertiensis"
 		},
 		{
 			"type": "lepidodendron:biomelocations2",
-			"mob": "lepidodendron:prehistoric_flora_naraoia"
+			"mob": "lepidodendron:prehistoric_flora_naraoia_bertiensis"
 		},
 		{
 			"type": "lepidodendron:biomelocations3",
-			"mob": "lepidodendron:prehistoric_flora_naraoia"
+			"mob": "lepidodendron:prehistoric_flora_naraoia_bertiensis"
 		},
 		{
 			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron:prehistoric_flora_naraoia"
+			"mob": "lepidodendron:prehistoric_flora_naraoia_bertiensis"
 		}
 	]
 }

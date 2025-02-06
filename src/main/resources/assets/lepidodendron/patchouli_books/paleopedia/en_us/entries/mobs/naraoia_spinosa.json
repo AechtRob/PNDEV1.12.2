@@ -1,0 +1,52 @@
+{
+	"name": "Naraoia spinosa",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/naraoia_spinosa_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_naraoia_spinosa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_naraoia_spinosa",
+			"title": "Naraoia spinosa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Nektaspida"
+		},
+		{
+			"type": "entity",
+			"name": "N. spinosa",
+			"entity": "lepidodendron:prehistoric_flora_naraoia_spinosa",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_naraoia_spinosa",
+			"type": "text",
+			"text": "Naraoiids hail from the Middle Cambrian into the Silurian, with fossils found across the globe in America, China and Australia They are small, elongated nektaspiids, with flat semi-circular carapaces that bore no compound eyes on the top, and could grow from 1 to 6 cm in length. Species represented are Naraoia bertiensis, Naraoia spinosa and Pseudonaraoia hammanni."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_naraoia_spinosa",
+			"type": "text",
+			"text": "The family and generic names derive from the Latinised place name of 'Narao', a group of small lakes in Canada, near to where some of the first fossils of Naraoia were found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_naraoia_spinosa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_naraoia_spinosa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_naraoia_spinosa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_naraoia_spinosa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_naraoia_spinosa"
+		}
+	]
+}

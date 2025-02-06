@@ -278,7 +278,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 		public int processTick;
 		private int processTickTime = 20;
 
-		public int maxResearch = Math.max(0, LepidodendronConfig.researchMax);
+		public int maxResearch = Math.max(0, LepidodendronConfig.researchMax) * 5;
 		public float portalResearch = Math.min(Math.max(0, (float)LepidodendronConfig.researchPortal / 100F), 1F);
 
 		public int dimPrecambrian;
@@ -445,146 +445,199 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 					//Assign knowledge:
 					if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilPrecambrian.block)
 						&& this.dimPrecambrian < this.maxResearch) {
-						this.dimPrecambrian ++;
+						for (int p = 0; p < 13; p++) {
+							this.dimPrecambrian++;
+						}
 					}
 					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilCambrian.block)
 							&& this.dimCambrian < this.maxResearch) {
-						this.dimCambrian ++;
+						for (int p = 0; p < 12; p++) {
+							this.dimCambrian++;
+						}
 					}
 					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilOrdovician.block)
 							&& this.dimOrdovician < this.maxResearch) {
-						this.dimOrdovician ++;
+						for (int p = 0; p < 11; p++) {
+							this.dimOrdovician++;
+						}
 					}
 					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilSilurian.block)
 							&& this.dimSilurian < this.maxResearch) {
-						this.dimSilurian ++;
+						for (int p = 0; p < 10; p++) {
+							this.dimSilurian++;
+						}
 					}
 					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilDevonian.block)
 							&& this.dimDevonian < this.maxResearch) {
-						this.dimDevonian ++;
+						for (int p = 0; p < 9; p++) {
+							this.dimDevonian++;
+						}
 					}
 					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilCarboniferous.block)
 							&& this.dimCarboniferous < this.maxResearch) {
-						this.dimCarboniferous ++;
+						for (int p = 0; p < 8; p++) {
+							this.dimCarboniferous++;
+						}
 					}
 					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilPermian.block)
 							&& this.dimPermian < this.maxResearch) {
-						this.dimPermian ++;
+						for (int p = 0; p < 7; p++) {
+							this.dimPermian++;
+						}
 					}
 					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilTriassic.block)
 							&& this.dimTriassic < this.maxResearch) {
-						this.dimTriassic ++;
+						for (int p = 0; p < 6; p++) {
+							this.dimTriassic++;
+						}
 					}
 					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilJurassic.block)
 							&& this.dimJurassic < this.maxResearch) {
-						this.dimJurassic ++;
+						for (int p = 0; p < 5; p++) {
+							this.dimJurassic++;
+						}
 					}
 					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilCretaceous.block)) {
-						if (world.rand.nextBoolean()) {
-							if (this.dimCretaceousEarly < this.maxResearch) {
-								this.dimCretaceousEarly++;
-							}
-							else if (this.dimCretaceousLate < this.maxResearch) {
-								this.dimCretaceousLate++;
-							}
-						}
-						else {
-							if (this.dimCretaceousLate < this.maxResearch) {
-								this.dimCretaceousLate++;
-							}
-							else if (this.dimCretaceousEarly < this.maxResearch) {
-								this.dimCretaceousEarly++;
+						for (int cret = 0; cret < 2; cret++) {
+							if (world.rand.nextBoolean()) {
+								if (this.dimCretaceousEarly < this.maxResearch) {
+									for (int p = 0; p < 4; p++) {
+										this.dimCretaceousEarly++;
+									}
+								} else if (this.dimCretaceousLate < this.maxResearch) {
+									for (int p = 0; p < 4; p++) {
+										this.dimCretaceousLate++;
+									}
+								}
+							} else {
+								if (this.dimCretaceousLate < this.maxResearch) {
+									for (int p = 0; p < 4; p++) {
+										this.dimCretaceousLate++;
+									}
+								} else if (this.dimCretaceousEarly < this.maxResearch) {
+									for (int p = 0; p < 4; p++) {
+										this.dimCretaceousEarly++;
+									}
+								}
 							}
 						}
 					}
 					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilPaleogene.block)
 							&& this.dimPaleogene < this.maxResearch) {
-						this.dimPaleogene ++;
+						for (int p = 0; p < 3; p++) {
+							this.dimPaleogene++;
+						}
 					}
 					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilNeogene.block)
 							&& this.dimNeogene < this.maxResearch) {
-						this.dimNeogene ++;
+						for (int p = 0; p < 2; p++) {
+							this.dimNeogene++;
+						}
 					}
 					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilPleistocene.block)
 							&& this.dimPleistocene < this.maxResearch) {
-						this.dimPleistocene ++;
+						for (int p = 0; p < 1; p++) {
+							this.dimPleistocene++;
+						}
 					}
 					else if (stackProcessing.getItem() == ItemFossilPrecambrian.block
 							&& this.dimPrecambrian < this.maxResearch) {
-						this.dimPrecambrian ++;
-						this.dimPrecambrian ++;
+						for (int p = 0; p < 26; p++) {
+							this.dimPrecambrian++;
+						}
 					}
 					else if (stackProcessing.getItem() == ItemFossilCambrian.block
 							&& this.dimCambrian < this.maxResearch) {
-						this.dimCambrian ++;
-						this.dimCambrian ++;
+						for (int p = 0; p < 24; p++) {
+							this.dimCambrian++;
+						}
 					}
 					else if (stackProcessing.getItem() == ItemFossilOrdovician.block
 							&& this.dimOrdovician < this.maxResearch) {
-						this.dimOrdovician ++;
-						this.dimOrdovician ++;
+						for (int p = 0; p < 22; p++) {
+							this.dimOrdovician++;
+						}
 					}
 					else if (stackProcessing.getItem() == ItemFossilSilurian.block
 							&& this.dimSilurian < this.maxResearch) {
-						this.dimSilurian ++;
-						this.dimSilurian ++;
+						for (int p = 0; p < 20; p++) {
+							this.dimSilurian++;
+						}
 					}
 					else if (stackProcessing.getItem() == ItemFossilDevonian.block
 							&& this.dimDevonian < this.maxResearch) {
-						this.dimDevonian ++;
-						this.dimDevonian ++;
+						for (int p = 0; p < 18; p++) {
+							this.dimDevonian++;
+						}
 					}
 					else if (stackProcessing.getItem() == ItemFossilCarboniferous.block
 							&& this.dimCarboniferous < this.maxResearch) {
-						this.dimCarboniferous ++;
-						this.dimCarboniferous ++;
+						for (int p = 0; p < 16; p++) {
+							this.dimCarboniferous++;
+						}
 					}
 					else if (stackProcessing.getItem() == ItemFossilPermian.block
 							&& this.dimPermian < this.maxResearch) {
-						this.dimPermian ++;
-						this.dimPermian ++;
+						for (int p = 0; p < 14; p++) {
+							this.dimPermian++;
+						}
 					}
 					else if (stackProcessing.getItem() == ItemFossilTriassic.block
 							&& this.dimTriassic < this.maxResearch) {
-						this.dimTriassic ++;
-						this.dimTriassic ++;
+						for (int p = 0; p < 12; p++) {
+							this.dimTriassic++;
+						}
 					}
 					else if (stackProcessing.getItem() == ItemFossilJurassic.block
 							&& this.dimJurassic < this.maxResearch) {
-						this.dimJurassic ++;
-						this.dimJurassic ++;
+						for (int p = 0; p < 10; p++) {
+							this.dimTriassic++;
+						}
 					}
 					else if (stackProcessing.getItem() == ItemFossilCretaceous.block) {
-						if (world.rand.nextBoolean()) {
-							if (this.dimCretaceousEarly < this.maxResearch) {
-								this.dimCretaceousEarly++;
-								this.dimCretaceousEarly++;
-							}
-						}
-						else {
-							if (this.dimCretaceousLate < this.maxResearch) {
-								this.dimCretaceousLate++;
-								this.dimCretaceousLate++;
+						for (int cret = 0; cret < 2; cret++) {
+							if (world.rand.nextBoolean()) {
+								if (this.dimCretaceousEarly < this.maxResearch) {
+									for (int p = 0; p < 8; p++) {
+										this.dimCretaceousEarly++;
+									}
+								} else if (this.dimCretaceousLate < this.maxResearch) {
+									for (int p = 0; p < 8; p++) {
+										this.dimCretaceousLate++;
+									}
+								}
+							} else {
+								if (this.dimCretaceousLate < this.maxResearch) {
+									for (int p = 0; p < 8; p++) {
+										this.dimCretaceousLate++;
+									}
+								} else if (this.dimCretaceousEarly < this.maxResearch) {
+									for (int p = 0; p < 8; p++) {
+										this.dimCretaceousEarly++;
+									}
+								}
 							}
 						}
 					}
 					else if (stackProcessing.getItem() == ItemFossilPaleogene.block
 							&& this.dimPaleogene < this.maxResearch) {
-						this.dimPaleogene ++;
-						this.dimPaleogene ++;
+						for (int p = 0; p < 6; p++) {
+							this.dimPaleogene++;
+						}
 					}
 					else if (stackProcessing.getItem() == ItemFossilNeogene.block
 							&& this.dimNeogene < this.maxResearch) {
-						this.dimNeogene ++;
-						this.dimNeogene ++;
+						for (int p = 0; p < 4; p++) {
+							this.dimNeogene++;
+						}
 					}
 					else if (stackProcessing.getItem() == ItemFossilPleistocene.block
 							&& this.dimPleistocene < this.maxResearch) {
-						this.dimPleistocene ++;
-						this.dimPleistocene ++;
+						for (int p = 0; p < 2; p++) {
+							this.dimPleistocene++;
+						}
 					}
 
-					int cleanBonus = 5;
 					boolean itemPrecambrian = false;
 					boolean itemCambrian = false;
 					boolean itemOrdovician = false;
@@ -598,7 +651,19 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 					boolean itemPaleogene = false;
 					boolean itemNeogene = false;
 					boolean itemPleistocene = false;
-					if (stackProcessing.getItem() == ItemFossilClean.block) {
+					if (stackProcessing.getItem() == ItemFossilClean.block
+							|| stackProcessing.getItem() == ItemPhialDNA.block
+							|| stackProcessing.getItem() == ItemPlaceableLiving.block) {
+						int cleanBonus = 0;
+						if (stackProcessing.getItem() == ItemFossilClean.block) {
+							cleanBonus = 30;
+						}
+						else if (stackProcessing.getItem() == ItemPhialDNA.block) {
+							cleanBonus = 40;
+						}
+						else {
+							cleanBonus = 50;
+						}
 						if (stackProcessing.hasTagCompound()) {
 							if (stackProcessing.getTagCompound().hasKey("period")) {
 								itemPrecambrian = stackProcessing.getTagCompound().getInteger("period") == 1;
@@ -671,17 +736,26 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 							}
 						}
 						else if (itemCretaceous) {
-							if (world.rand.nextBoolean()) {
-								if (this.dimCretaceousEarly < this.maxResearch) {
-									for (int ii = 0; ii < cleanBonus; ii++) {
-										this.dimCretaceousEarly++;
+							for (int cret = 0; cret < 2; cret++) {
+								if (world.rand.nextBoolean()) {
+									if (this.dimCretaceousEarly < this.maxResearch) {
+										for (int p = 0; p < cleanBonus; p++) {
+											this.dimCretaceousEarly++;
+										}
+									} else if (this.dimCretaceousLate < this.maxResearch) {
+										for (int p = 0; p < cleanBonus; p++) {
+											this.dimCretaceousLate++;
+										}
 									}
-								}
-							}
-							else {
-								if (this.dimCretaceousLate < this.maxResearch) {
-									for (int ii = 0; ii < cleanBonus; ii++) {
-										this.dimCretaceousLate++;
+								} else {
+									if (this.dimCretaceousLate < this.maxResearch) {
+										for (int p = 0; p < cleanBonus; p++) {
+											this.dimCretaceousLate++;
+										}
+									} else if (this.dimCretaceousEarly < this.maxResearch) {
+										for (int p = 0; p < cleanBonus; p++) {
+											this.dimCretaceousEarly++;
+										}
 									}
 								}
 							}

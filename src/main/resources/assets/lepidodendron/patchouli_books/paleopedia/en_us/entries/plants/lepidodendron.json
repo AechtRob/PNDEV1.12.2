@@ -1,0 +1,66 @@
+{
+	"name": "Lepidodendron",
+	"read_by_default": true,
+	"icon": "lepidodendron:sapling",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_lepidodendron",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lepidodendron",
+			"title": "Lepidodendron",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Propagation:$() Use a collection envelope on the spore-producing strobilus to harvest spores.$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
+		},
+		{
+			"type": "multiblock",
+			"name": "Lepidodendron sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "             ","             ","             ","             ","             ","      E      ","     EAE     ","      E      ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","      E      ","     EBE     ","    ECACE    ","     EBE     ","      E      ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","    E   E    ","      E      ","     EAE     ","      E      ","    E   E    ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","   EEE EEE   ","   EAEEEAE   ","   EEAEAEE   ","    EEAEE    ","   EEAEAEE   ","   EAEEEAE   ","   EEE EEE   ","             ","             ","             " ],
+					[ "      E      ","     EEE     ","   EEEBEEE   ","  EE  B  EE  ","  E   B   E  "," EEE EBE EEE ","EECCCCACCCCEE"," EEE EBE EEE ","  E   B   E  ","  EE  B  EE  ","   EEEBEEE   ","     EEE     ","      E      " ],
+					[ "      E      ","             ","   E     E   ","  E       E  ","             ","             ","E  E  A  E  E","             ","             ","  E       E  ","   E     E   ","             ","      E      " ],
+					[ "      D      ","             ","         D   ","  D          ","             ","             ","      A      ","             ","             ","  D          ","   D         ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","      A      ","     AAA     ","      A      ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","      B      ","      A      ","    CA0AC    ","      A      ","      B      ","             ","             ","             ","             " ]
+				],
+				"mapping": {
+					"E": "lepidodendron:treeleaves",
+					"D": "lepidodendron:lepidodendron_strobilus[facing=down]",
+					"C": "lepidodendron:woodenlog[facing=east]",
+					"B": "lepidodendron:woodenlog[facing=up]",
+					"A": "lepidodendron:woodenlog[facing=north]",
+					"0": "lepidodendron:woodenlog[facing=north]"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lepidodendron",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

@@ -1,52 +1,51 @@
 {
 	"name": "Tealliocaris",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/tealliocaris_icon.png",
+	"icon": "paleopedia:textures/items/pygocephalomorpha_tealliocaris_icon.png",
 	"category": "lepidodendron:mobs",
-	"turnin": "lepidodendron:pf_adv_book_tealliocaris ",
+	"turnin": "lepidodendron:pf_adv_book_pygocephalomorpha_tealliocaris ",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_tealliocaris",
+			"trigger": "lepidodendron:pf_adv_book_pygocephalomorpha_tealliocaris",
 			"title": "Tealliocaris",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Devonian-Carboniferous$(br2)>Arthropoda$(br)>Malacostraca$(br)>Pygocephalomorpha$(br)>Tealliocarididae"
 		},
-        	{
-            "type": "entity",
-            "name": "T. woodwardi",
-            "entity": "lepidodendron:prehistoric_flora_tealliocaris",
-            "rotate": false,
-            "default_rotation": 0
-       	},
 		{
-			"advancement": "lepidodendron:pf_adv_book_tealliocaris",
+			"type": "image",
+			"images": ["paleopedia:textures/tealliocaris.png"],
+			"title": "T. woodwardi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pygocephalomorpha_tealliocaris",
 			"type": "text",
 			"text": "Tealliocaris hails from the Upper Devonian into the Lower Carboniferous, with fossils being found in formations across Scotland (United Kingdom) and North America. It is a small pygocephalomorphan, growing up to 4 cm in length. The type species, Tealliocaris woodwardi, was originally considered to be apart of a separate genus entirely, Anthrapalaemon woodwardi in 1877. It wasn't until 1908 that it was moved into it own genus."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_tealliocaris",
+			"advancement": "lepidodendron:pf_adv_book_pygocephalomorpha_tealliocaris",
 			"type": "text",
 			"text": "The generic name derives from the Latinised surname of Jethro Teall, who was the Director of the Geological Survey of Scotland at the time of naming; and the Greek word 'karis', to mean 'Shrimp'."
 		},
 		{
 			"type": "lepidodendron:diet",
-			"mob": "lepidodendron:prehistoric_flora_tealliocaris"
+			"mob": "lepidodendron:prehistoric_flora_pygocephalomorpha@tealliocaris"
 		},
 		{
 			"type": "lepidodendron:biomelocations1",
-			"mob": "lepidodendron:prehistoric_flora_tealliocaris"
+			"mob": "lepidodendron:prehistoric_flora_pygocephalomorpha@tealliocaris"
 		},
 		{
 			"type": "lepidodendron:biomelocations2",
-			"mob": "lepidodendron:prehistoric_flora_tealliocaris"
+			"mob": "lepidodendron:prehistoric_flora_pygocephalomorpha@tealliocaris"
 		},
 		{
 			"type": "lepidodendron:biomelocations3",
-			"mob": "lepidodendron:prehistoric_flora_tealliocaris"
+			"mob": "lepidodendron:prehistoric_flora_pygocephalomorpha@tealliocaris"
 		},
 		{
 			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron:prehistoric_flora_tealliocaris"
+			"mob": "lepidodendron:prehistoric_flora_pygocephalomorpha@tealliocaris"
 		}
 	]
 }
