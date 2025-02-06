@@ -254,19 +254,19 @@ public class EntityPrehistoricFloraTrilophosaurus extends EntityPrehistoricFlora
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:trilophosaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:teraterpeton_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:trilophosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:teraterpeton_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:trilophosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:teraterpeton_death"));
 	}
 
 
