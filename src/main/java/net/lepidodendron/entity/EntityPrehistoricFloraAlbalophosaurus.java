@@ -307,24 +307,24 @@ public class EntityPrehistoricFloraAlbalophosaurus extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:chaoyangsauridae_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:albalophosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:chaoyangsauridae_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:albalophosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:chaoyangsauridae_death"));
+	            .getObject(new ResourceLocation("lepidodendron:albalophosaurus_death"));
 	}
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:chaoyangsauridae_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:albalophosaurus_alarm"));
 	}
 
 	public void playAlarmSound()

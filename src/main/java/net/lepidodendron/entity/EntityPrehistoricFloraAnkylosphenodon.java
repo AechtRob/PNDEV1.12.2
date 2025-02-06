@@ -238,13 +238,13 @@ public class EntityPrehistoricFloraAnkylosphenodon extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:clevosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:ankylosphenodon_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:clevosaurus_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:ankylosphenodon_hurt"));
 	}
 
 	//@Override
@@ -255,12 +255,12 @@ public class EntityPrehistoricFloraAnkylosphenodon extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:clevosaurus_death"));
+				.getObject(new ResourceLocation("lepidodendron:ankylosphenodon_death"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:clevosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:ankylosphenodon_idle"));
 	}
 
 	//@Override

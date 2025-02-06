@@ -11803,6 +11803,22 @@
       }
     ]
   },
+  "psittacosaurus_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:psittacosaurus_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:psittacosaurus_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:psittacosaurus_alarm03",
+        "stream": false
+      }
+    ]
+  },
 
   "anthracosaurus_idle": {
     "sounds": [
@@ -12365,6 +12381,337 @@
       },
       {
         "name": "lepidodendron:haliskia_alarm05",
+        "stream": false
+      }
+    ]
+  },
+
+  "teraterpeton_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:teraterpeton_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:teraterpeton_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:teraterpeton_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:teraterpeton_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:teraterpeton_living05",
+        "stream": false
+      }
+    ]
+  },
+  "teraterpeton_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:teraterpeton_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:teraterpeton_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:teraterpeton_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "teraterpeton_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:teraterpeton_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "dracoraptor_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dracoraptor_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dracoraptor_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dracoraptor_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dracoraptor_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dracoraptor_living05",
+        "stream": false
+      }
+    ]
+  },
+  "dracoraptor_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dracoraptor_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dracoraptor_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dracoraptor_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "dracoraptor_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dracoraptor_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "rhadinosteus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:rhadinosteus_living01",
+        "stream": false
+      }
+    ]
+  },
+  "rhadinosteus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:rhadinosteus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhadinosteus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rhadinosteus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "rhadinosteus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:rhadinosteus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "spinophorosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:spinophorosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:spinophorosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:spinophorosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:spinophorosaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:spinophorosaurus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "spinophorosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:spinophorosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:spinophorosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:spinophorosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "spinophorosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:spinophorosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "ankylosphenodon_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:ankylosphenodon_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:ankylosphenodon_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:ankylosphenodon_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:ankylosphenodon_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:ankylosphenodon_living05",
+        "stream": false
+      }
+    ]
+  },
+  "ankylosphenodon_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:ankylosphenodon_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:ankylosphenodon_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:ankylosphenodon_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "ankylosphenodon_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:ankylosphenodon_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "albalophosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:albalophosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:albalophosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:albalophosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:albalophosaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:albalophosaurus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:albalophosaurus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:albalophosaurus_living07",
+        "stream": false
+      }
+    ]
+  },
+  "albalophosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:albalophosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:albalophosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:albalophosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "albalophosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:albalophosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "albalophosaurus_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:albalophosaurus_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:albalophosaurus_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:albalophosaurus_alarm03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:albalophosaurus_alarm04",
+        "stream": false
+      }
+    ]
+  },
+  
+  "caerorhachis_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:caerorhachis_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caerorhachis_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caerorhachis_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "caerorhachis_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:caerorhachis_death",
         "stream": false
       }
     ]

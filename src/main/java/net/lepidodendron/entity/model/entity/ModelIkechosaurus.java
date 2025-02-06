@@ -1529,13 +1529,13 @@ public class ModelIkechosaurus extends ModelBasePalaeopedia {
         EntityPrehistoricFloraIkechosaurus e = (EntityPrehistoricFloraIkechosaurus) entity;
         animator.update(entity);
 
-            animator.setAnimation(e.ROAR_ANIMATION);
-            animator.startKeyframe(10);
-            animator.rotate(this.head, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-            animator.rotate(this.jaw, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-            animator.endKeyframe();
-            animator.setStaticKeyframe(10);
-            animator.resetKeyframe(10);
+//            animator.setAnimation(e.ROAR_ANIMATION);
+//            animator.startKeyframe(10);
+//            animator.rotate(this.head, (float) Math.toRadians(-20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+//            animator.rotate(this.jaw, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+//            animator.endKeyframe();
+//            animator.setStaticKeyframe(10);
+//            animator.resetKeyframe(10);
 
     }
 }

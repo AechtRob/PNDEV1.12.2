@@ -74,7 +74,7 @@ public class EntityPrehistoricFloraIkechosaurus extends EntityPrehistoricFloraSw
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION};
 	}
 
 	@Override
@@ -240,13 +240,13 @@ public class EntityPrehistoricFloraIkechosaurus extends EntityPrehistoricFloraSw
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:hyphalosaurus_idle"));
+				.getObject(new ResourceLocation(""));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:hyphalosaurus_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:ikechosaurus_hurt"));
 	}
 
 	//@Override
@@ -257,7 +257,7 @@ public class EntityPrehistoricFloraIkechosaurus extends EntityPrehistoricFloraSw
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:hyphalosaurus_death"));
+				.getObject(new ResourceLocation("lepidodendron:ikechosaurus_death"));
 	}
 
 	//@Override

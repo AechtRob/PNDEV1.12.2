@@ -327,7 +327,7 @@ public class EntityPrehistoricFloraPsittacosaurus_sibiricus extends EntityPrehis
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:psittacosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:psittacosaurus_alarm"));
 	}
 
 	public void playAlarmSound()

@@ -14,7 +14,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.lepidodendron.entity.render.entity.RenderRhadinosteus;
-import net.lepidodendron.entity.render.entity.RenderTriadobatrachus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.ITrappableWater;
@@ -201,19 +200,19 @@ public class EntityPrehistoricFloraRhadinosteus extends EntityPrehistoricFloraSw
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:rhadinosteus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:rhadinosteus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:rhadinosteus_death"));
 	}
 
 	@Override
