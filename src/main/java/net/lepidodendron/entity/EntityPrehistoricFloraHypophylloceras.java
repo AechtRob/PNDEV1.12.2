@@ -34,10 +34,10 @@ public class EntityPrehistoricFloraHypophylloceras extends EntityPrehistoricFlor
 
 	public EntityPrehistoricFloraHypophylloceras(World world) {
 		super(world);
-		setSize(0.5F, 0.5F);
+		setSize(0.35F, 0.35F);
 		minWidth = 0.1F;
-		maxWidth = 0.5F;
-		maxHeight = 0.5F;
+		maxWidth = 0.35F;
+		maxHeight = 0.35F;
 		maxHealthAgeable = 9.0D;
 	}
 

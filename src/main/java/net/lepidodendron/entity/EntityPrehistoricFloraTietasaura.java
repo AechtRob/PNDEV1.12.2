@@ -53,10 +53,10 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 
 	public EntityPrehistoricFloraTietasaura(World world) {
 		super(world);
-		setSize(0.425F, 0.4F);
+		setSize(0.05F, 1.4F);
 		minWidth = 0.05F;
-		maxWidth = 0.425F;
-		maxHeight = 0.4F;
+		maxWidth = 0.875F;
+		maxHeight = 1.4F;
 		maxHealthAgeable = 10.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -126,7 +126,7 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.53F;
+		float speedBase = 0.695F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -134,7 +134,7 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.55F;
+			speedBase = speedBase * 1.85F;
 		}
 		return speedBase * 0.7F;
 	}

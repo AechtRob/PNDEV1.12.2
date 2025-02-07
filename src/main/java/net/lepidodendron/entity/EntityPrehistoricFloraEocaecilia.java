@@ -11,7 +11,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderEocaecilia;
-import net.lepidodendron.entity.render.entity.RenderEurynotus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.INeedsWater;
 import net.lepidodendron.entity.util.ITrappableLand;
@@ -50,7 +49,7 @@ public class EntityPrehistoricFloraEocaecilia extends EntityPrehistoricFloraLand
 		minWidth = 0.1F;
 		maxWidth = 0.15F;
 		maxHeight = 0.1F;
-		maxHealthAgeable = 5.0D;
+		maxHealthAgeable = 3.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

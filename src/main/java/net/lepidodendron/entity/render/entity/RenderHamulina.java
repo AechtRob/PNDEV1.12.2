@@ -12,7 +12,7 @@ public class RenderHamulina extends RenderLivingBaseWithBook<EntityPrehistoricFl
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hamulina.png");
 
     public static float getScaler() {
-        return 0.6F;
+        return 0.35F;
     }
     public RenderHamulina(RenderManager mgr) {
         super(mgr, new ModelHamulina(), 0.0f);

@@ -16,7 +16,7 @@ public class RenderSordes extends RenderLivingBaseWithBook<EntityPrehistoricFlor
     }
 
     public static float getScaler() {
-        return 0.35F;
+        return 0.275F;
     }
 
     @Override

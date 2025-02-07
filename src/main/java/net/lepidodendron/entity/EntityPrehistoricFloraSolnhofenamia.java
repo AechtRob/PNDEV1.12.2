@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraSolnhofenamia extends EntityPrehistoricFloraA
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.16F;
-		maxHealthAgeable = 9.0D;
+		maxHealthAgeable = 6.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

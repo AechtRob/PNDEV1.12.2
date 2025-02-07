@@ -36,7 +36,7 @@ public class RenderNautiloidShellHypophylloceras extends TileEntitySpecialRender
 
         GlStateManager.enableAlpha();
         ModelHypophyllocerasShell modelNautiloidShell = this.modelNautiloidShell;
-        double scale = 0.6D;
+        double scale = 0.25D;
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
             //lying down
             GlStateManager.translate(x + 0.5 , y + 0.05, z + 0.5);
@@ -46,7 +46,7 @@ public class RenderNautiloidShellHypophylloceras extends TileEntitySpecialRender
         }
         else {
             //standing up
-            GlStateManager.translate(x + 0.5, y + 0.10, z + 0.5);
+            GlStateManager.translate(x + 0.5, y + 0.025, z + 0.5);
             GlStateManager.scale(scale,scale,scale);
             GlStateManager.rotate(180, 0F, 0F, 1F);
             GlStateManager.rotate(currentRotation, 0F, 1F, 0F);

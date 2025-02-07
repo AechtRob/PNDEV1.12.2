@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraOnychoselache extends EntityPrehistoricFloraA
 		minWidth = 0.2F;
 		maxWidth = 0.4F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 8.0D;
+		maxHealthAgeable = 4.0D;
 	}
 
 	@Override

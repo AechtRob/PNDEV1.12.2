@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraPrestosuchus extends EntityPrehistoricFloraLa
 		minWidth = 0.12F;
 		maxWidth = 0.85F;
 		maxHeight = 1.82F;
-		maxHealthAgeable = 40.0D;
+		maxHealthAgeable = 66;
 		NOISE_ANIMATION = Animation.create(8);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

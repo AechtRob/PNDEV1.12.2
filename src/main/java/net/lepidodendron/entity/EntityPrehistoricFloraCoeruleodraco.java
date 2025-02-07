@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraCoeruleodraco extends EntityPrehistoricFloraS
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.1F;
-		maxHealthAgeable = 11.0D;
+		maxHealthAgeable = 6;
 		EAT_ANIMATION = Animation.create(13);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

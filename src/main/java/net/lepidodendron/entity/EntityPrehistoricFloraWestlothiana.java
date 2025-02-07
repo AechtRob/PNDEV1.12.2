@@ -44,9 +44,9 @@ public class EntityPrehistoricFloraWestlothiana extends EntityPrehistoricFloraLa
 
 	public EntityPrehistoricFloraWestlothiana(World world) {
 		super(world);
-		setSize(0.2F, 0.2F);
+		setSize(0.3F, 0.2F);
 		minWidth = 0.1F;
-		maxWidth = 0.2F;
+		maxWidth = 0.3F;
 		maxHeight = 0.2F;
 		maxHealthAgeable = 4.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {

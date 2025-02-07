@@ -48,10 +48,10 @@ public class EntityPrehistoricFloraIkechosaurus extends EntityPrehistoricFloraSw
 
 	public EntityPrehistoricFloraIkechosaurus(World world) {
 		super(world);
-		setSize(0.3F, 0.1F);
+		setSize(0.6F, 0.15F);
 		minWidth = 0.1F;
-		maxWidth = 0.3F;
-		maxHeight = 0.1F;
+		maxWidth = 0.6F;
+		maxHeight = 0.15F;
 		maxHealthAgeable = 11.0D;
 		EAT_ANIMATION = Animation.create(20);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -127,9 +127,9 @@ public class EntityPrehistoricFloraIkechosaurus extends EntityPrehistoricFloraSw
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.14F;
+		float calcSpeed = 0.24F;
 		if (this.isReallyInWater()) {
-			calcSpeed = 0.25f;
+			calcSpeed = 0.45f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

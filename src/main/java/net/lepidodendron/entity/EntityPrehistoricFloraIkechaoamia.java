@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraIkechaoamia extends EntityPrehistoricFloraAge
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.1F;
-		maxHealthAgeable = 6.0D;
+		maxHealthAgeable = 3.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
