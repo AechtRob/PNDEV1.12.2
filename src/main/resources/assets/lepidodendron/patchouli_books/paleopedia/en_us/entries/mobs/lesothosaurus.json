@@ -1,0 +1,52 @@
+{
+	"name": "Lesothosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lesothosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_lesothosaurus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lesothosaurus",
+			"title": "Lesothosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Saphornithischia$(br)>Genasauria"
+		},
+        	{
+            "type": "entity",
+            "name": "L. diagnosticus",
+            "entity": "lepidodendron:prehistoric_flora_lesothosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lesothosaurus",
+			"type": "text",
+			"text": "Lesothosaurus diagnosticus comes from the Lower Jurassic, with fossils being found in the Upper Elliot Formation, South Africa. It is a small ornithischian, growing up to 2 m in the length. It is amongst the better known ornithischians due to the large amount of material known. It had a unique conformation of the mouth from other members of its group."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lesothosaurus",
+			"type": "text",
+			"text": "The generic name derives from the 'Kingdom of Lesotho', where the fossils were found; and the Greek word 'saurus', to mean 'lizard'. The specific name derives from the Greek word 'diagnostikos', to mean 'distinguished'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lesothosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lesothosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lesothosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lesothosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lesothosaurus"
+		}
+	]
+}

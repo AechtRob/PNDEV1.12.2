@@ -1,0 +1,52 @@
+{
+	"name": "Sclerocephalus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sclerocephalus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sclerocephalus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sclerocephalus",
+			"title": "Sclerocephalus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)>Chordata$(br)>Temnospondyli$(br)>Sclerocephalidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. haeuseri",
+            "entity": "lepidodendron:prehistoric_flora_sclerocephalus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sclerocephalus",
+			"type": "text",
+			"text": "Sclerocephalus comes from the Upper Carboniferous into the Lower Permian, with fossils found in the Rotliegend Group, Germany. It is a small temnospondyl, growing up to 1.5 m in length. It is the most complete and abundant Palaeozoic tetrapod currently known."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sclerocephalus",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'sclero', to mean 'hard'; and 'cephalus', to mean 'head'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sclerocephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sclerocephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sclerocephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sclerocephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sclerocephalus"
+		}
+	]
+}

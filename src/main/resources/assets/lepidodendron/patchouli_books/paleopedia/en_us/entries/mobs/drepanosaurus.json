@@ -1,0 +1,52 @@
+{
+	"name": "Drepanosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/drepanosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_drepanosaurus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_drepanosaurus",
+			"title": "Drepanosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Drepanosauromorpha$(br)>Drepanosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. unguicaudatus",
+            "entity": "lepidodendron:prehistoric_flora_drepanosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_drepanosaurus",
+			"type": "text",
+			"text": "Drepanosaurus unguicaudatus comes from the Upper Triassic, with fossils found in the Chinle Formation, New Mexico (USA); Zorzino Limestone and Dolomia di Forni Formations, Italy. It is a small drepanosaurid, growing up to 50 cm in length. They are known for having one huge claw on their index finger, as well as bearing a claw on the tip of their tail, used to grip onto tree branches."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_drepanosaurus",
+			"type": "text",
+			"text": "No known skull has been found so far, but it has been inferred from other drepanosaurids that it may have had a bird like skull, which would have aided in picking insects out of branches. The generic name derives from the Greek words 'drepanus', to mean 'sickle'; and 'saurus', to mean 'lizard'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_drepanosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_drepanosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_drepanosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_drepanosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_drepanosaurus"
+		}
+	]
+}

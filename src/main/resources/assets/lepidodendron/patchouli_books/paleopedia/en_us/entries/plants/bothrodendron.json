@@ -1,0 +1,67 @@
+{
+	"name": "Bothrodendron",
+	"read_by_default": true,
+	"icon": "lepidodendron:bothrodendron_sapling",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_bothrodendron",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bothrodendron",
+			"title": "Bothrodendron",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Propagation:$() Use a collection envelope on the spore-producing strobilus to harvest spores.$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
+		},
+		{
+			"type": "multiblock",
+			"name": "Bothrodendron sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["     ","     ","  E  ","     ","     "],
+					["     ","     ","  E  ","     ","     "],
+					["     ","     ","  E  ","     ","     "],
+					["     ","     ","  EE ","     ","     "],
+					["     ","  E  "," EAE ","  E  ","     "],
+					["     ","  E  "," EAE ","  E  ","     "],
+					["     ","  E  "," EAE ","  E  ","     "],
+					["     ","  E  "," EAE ","  E  ","     "],
+					["     ","  E  "," EAE ","  E  ","     "],
+					["     ","  E  "," EAE ","  E  ","     "],
+					["     ","  E  "," EAE ","  E  ","     "],
+					["     ","  E  "," EAE ","  E  ","     "],
+					["     ","  E  "," EAE ","  E  ","     "],
+					["     ","  E  "," EAE ","  E  ","     "],
+					["     ","  E  "," EAE ","  E  ","     "],
+					["     ","  E  ","  AD ","  E  ","     "],
+					["     ","  D  ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["  B  ","  B  ","CC0CC","  B  ","  B  "]
+				],
+				"mapping": {
+					"E": "lepidodendron:bothrodendron_leaves",
+					"D": "lepidodendron:bothrodendron_strobilus[facing=down]",
+					"C": "lepidodendron:bothrodendron_log[facing=east]",
+					"B": "lepidodendron:bothrodendron_log[facing=up]",
+					"A": "lepidodendron:bothrodendron_log[facing=north]",
+					"0": "lepidodendron:bothrodendron_log[facing=north]"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bothrodendron",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

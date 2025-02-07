@@ -121,6 +121,12 @@ public class EntityPrehistoricFloraPseudorhina extends EntityPrehistoricFloraAge
 		return true;
 	}
 
+	@Override
+	public String getPNTypeName()
+	{
+		return this.getPNType().getName();
+	}
+
 	public enum Type
 	{
 		MALE(1, "male"),
@@ -213,7 +219,7 @@ public class EntityPrehistoricFloraPseudorhina extends EntityPrehistoricFloraAge
 		return true;
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Jurassic - early Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

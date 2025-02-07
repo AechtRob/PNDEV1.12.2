@@ -1,0 +1,47 @@
+{
+	"name": "Dugaldia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dugaldia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_dugaldia ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dugaldia",
+			"title": "Dugaldia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>Ichthyodectiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "D. emmilta",
+            "entity": "lepidodendron:prehistoric_flora_dugaldia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dugaldia",
+			"type": "text",
+			"text": "Dugaldia emmilta comes from the Early Cretaceous, with fossils being found in the Toolebuc Formation, Brazil, Australia. It is a small ichthyodectiforme, growing up to 60 cm in length. Unlike other members of their order, Dugaldia were known for having a unique jaw mechanic, being able to laterally open its mouth extremely wide."
+		},			
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dugaldia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dugaldia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dugaldia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dugaldia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dugaldia"
+		}
+	]
+}

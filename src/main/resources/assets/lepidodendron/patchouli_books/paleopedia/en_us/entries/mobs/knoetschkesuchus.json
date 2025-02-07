@@ -1,0 +1,52 @@
+{
+	"name": "Knoetschkesuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/knoetschkesuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_knoetschkesuchus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_knoetschkesuchus",
+			"title": "Knoetschkesuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Crocodyliformes$(br)>Eusuchia$(br)>Atoposauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "K. langenbergensis",
+            "entity": "lepidodendron:prehistoric_flora_knoetschkesuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_knoetschkesuchus",
+			"type": "text",
+			"text": "Knoetschkesuchus comes from the Upper Jurassic, with fossils found in the Süntel Formation, Germany; and Alcobaça Formation, Portugal. It is a small atoposauridan, growing up to 55 cm in length. It is know to have fed on small prey items like invertebrates and mammals, separating it from most other crocodillians ecologically, as it lived on the island ecosystems of Jurassic Europe."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_knoetschkesuchus",
+			"type": "text",
+			"text": "The generic name derives from the family name of Nils Knötschke, a researcher that aided in the collection, curation and preparation of the first specimens; and the Greek word 'souchos', to mean 'crocodile'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_knoetschkesuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_knoetschkesuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_knoetschkesuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_knoetschkesuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_knoetschkesuchus"
+		}
+	]
+}

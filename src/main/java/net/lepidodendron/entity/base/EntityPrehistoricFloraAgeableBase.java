@@ -11,6 +11,7 @@ import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.util.*;
 import net.lepidodendron.item.ItemNesting;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
+import net.lepidodendron.util.patchouli.DimensionSpawns;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -813,6 +814,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
         String s = mobToSpawn;
 
+        if (s.equalsIgnoreCase("lepidodendron:prehistoric_flora_myriapod")) {
+            int y= 99;
+        }
+
         String variantStr = "";
         if (s.indexOf("@") >= 0) {
             variantStr = s.substring(s.indexOf("@") + 1);
@@ -846,6 +851,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         if (!variantStr.equalsIgnoreCase("")) {
             nbttagcompound.setString("PNType", variantStr);
         }
+        else {
+            variantStr = nbttagcompound.getString("PNType");
+        }
 
         //if (s.substring(0, 10).equalsIgnoreCase("minecraft:")) {
             nbttagcompound.setBoolean("PersistenceRequired", true);
@@ -865,6 +873,13 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             if (entity instanceof EntityLiving) {
                 ((EntityLiving) entity).onInitialSpawn(worldIn.getDifficultyForLocation(new BlockPos(entity)), (IEntityLivingData) null);
                 entity.readFromNBT(nbttagcompound); //re-apply nbt from previously in case some was overwritten by the init event
+                //Cancel all this if we've summoned an invalid variant!
+                if (!variantStr.equalsIgnoreCase("")) {
+                    if (!DimensionSpawns.doesVariantExist((EntityLiving) entity, variantStr)) {
+                        entity.setDead();
+                        return;
+                    }
+                }
             }
 
             //Babify mob if required:

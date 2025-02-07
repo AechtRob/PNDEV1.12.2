@@ -1,0 +1,47 @@
+{
+	"name": "Tetrameroceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tetrameroceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tetrameroceras ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tetrameroceras",
+			"title": "Tetrameroceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Cephalopoda$(br)>Nautiloidea$(br)>Oncocerida$(br)>Hemiphragmoceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Tetrameroceras sp.",
+            "entity": "lepidodendron:prehistoric_flora_tetrameroceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tetrameroceras",
+			"type": "text",
+			"text": "Tetrameroceras comes from the Silurian, with fossils found in formations across North America and Europe. It is a small nautiloid, growing up to 10 cm in the length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tetrameroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tetrameroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tetrameroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tetrameroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tetrameroceras"
+		}
+	]
+}

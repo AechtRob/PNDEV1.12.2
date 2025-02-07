@@ -1,0 +1,52 @@
+{
+	"name": "Sordes",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sordes_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sordes ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sordes",
+			"title": "Sordes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Pterosauria$(br)>Breviquartossa$(br)>Pterodactylomorpha"
+		},
+        	{
+            "type": "entity",
+            "name": "S. pilosus",
+            "entity": "lepidodendron:prehistoric_flora_sordes",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sordes",
+			"type": "text",
+			"text": "Sordes pilosus comes from the Upper Jurassic, with fossils found in the Karabastau Svita, Kazakhstan. It is a small pterodactylomorph, with a 60 cm wide wingspan. Its fossil specimens featured the first examples of hair-like filaments on them, which confirmed that pterosaurs indeed had hair. They would later be named 'pycnofibres'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sordes",
+			"type": "text",
+			"text": "The generic name derives directly from the Latin word 'Sordes', to mean 'filth', but it is noted that its intended to mean 'devil'. The specific name derives directly from the Latin word 'pilosus', to mean 'hairy'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sordes"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sordes"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sordes"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sordes"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sordes"
+		}
+	]
+}

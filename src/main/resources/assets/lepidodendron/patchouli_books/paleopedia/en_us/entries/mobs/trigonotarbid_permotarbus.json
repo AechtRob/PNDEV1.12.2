@@ -1,7 +1,7 @@
 {
 	"name": "Permotarbus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/permotarbus_icon.png",
+	"icon": "paleopedia:textures/items/trigonotarbid_permotarbus_icon.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_trigonotarbid_permotarbus",
 	"pages": [
@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Arachnida$(br)>Trigonotarbida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/permotarbus.png"],
-			"title": "P. schuberti",
-			"text": ""
+			"type": "entity",
+			"name": "P. schuberti",
+			"entity": "lepidodendron:prehistoric_flora_trigonotarbid_permotarbus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_trigonotarbid_permotarbus",

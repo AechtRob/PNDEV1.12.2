@@ -1,0 +1,52 @@
+{
+	"name": "Acherontiscus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/acherontiscus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_acherontiscus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_acherontiscus",
+			"title": "Acherontiscus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Stegocephali$(br)>Adelospondyli"
+		},
+        	{
+            "type": "entity",
+            "name": "A. caledoniae",
+            "entity": "lepidodendron:prehistoric_flora_acherontiscus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acherontiscus",
+			"type": "text",
+			"text": "Acherontiscus caledoniae comes from the Lower Carboniferous, with fossils that possibly hail from the Limestone Coal Group, Scotland (United Kingdom), although no collector or data of were it came from is known. It is a small adelospondylian, growing up to 14 cm in length overall."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acherontiscus",
+			"type": "text",
+			"text": "The generic name derives from the 'Acheron' river, in honor to Edward Drinker Cope's naming conventions of using names of 'tributaries' to the mythic 'Styx' river; and the Latin word 'icus', to mean 'belonging/related to'. The specific name derives from the Latinised name for 'Scotland', 'Caledonia'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_acherontiscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_acherontiscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_acherontiscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_acherontiscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_acherontiscus"
+		}
+	]
+}

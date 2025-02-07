@@ -1513,13 +1513,13 @@ public class ModelCaerorhachis extends ModelBasePalaeopedia {
         //this.resetToDefaultPose();
         setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);
 
-        animator.setAnimation(e.ROAR_ANIMATION);
-        animator.startKeyframe(10);
-        animator.move(this.head, 0,0,-0.2F);
-        animator.rotate(this.head, (float) Math.toRadians(-35), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.jaw, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.endKeyframe();
-        animator.setStaticKeyframe(10);
-        animator.resetKeyframe(10);
+//        animator.setAnimation(e.ROAR_ANIMATION);
+//        animator.startKeyframe(10);
+//        animator.move(this.head, 0,0,-0.2F);
+//        animator.rotate(this.head, (float) Math.toRadians(-35), (float) Math.toRadians(0), (float) Math.toRadians(0));
+//        animator.rotate(this.jaw, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+//        animator.endKeyframe();
+//        animator.setStaticKeyframe(10);
+//        animator.resetKeyframe(10);
     }
 }

@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:urasterella_raw"
+			"item": "lepidodendron:urasterella_item"
 		},
 		"title": {
 			"translate": "advancements.pf_adv_book_urasterella.title"

@@ -1,0 +1,52 @@
+{
+	"name": "Litargosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/litargosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_litargosuchus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_litargosuchus",
+			"title": "Litargosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Saltoposuchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. leptorhynchus",
+            "entity": "lepidodendron:prehistoric_flora_litargosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_litargosuchus",
+			"type": "text",
+			"text": "Litargosuchus leptorhynchus comes from the Lower Jurassic, with fossils found in the Upper Elliot Formation, South Africa. It is a small saltoposuchidan, growing up to 52 cm in length. It had uniquely elongated limbs, with the hind limbs being even longer than the front."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_litargosuchus",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'litargos', to mean 'running fast'; and  'souchos', to mean 'crocodile'. The specific name derives from the Greek words 'leptos', to mean 'thin'; and 'rhynchos',to mean 'snout'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_litargosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_litargosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_litargosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_litargosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_litargosuchus"
+		}
+	]
+}

@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraJellyfish1 extends EntityPrehistoricFloraJell
         return true;
     }
 
-    public static String getPeriod() {return "Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene";}
+    public static String getPeriod() {return "Early Cretaceous - Paleogene - Neogene - Pleistocene [- present]";}
 
     //public static String getHabitat() {return "Aquatic";}
 

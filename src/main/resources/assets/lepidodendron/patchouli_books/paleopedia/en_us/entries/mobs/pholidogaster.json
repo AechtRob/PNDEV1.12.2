@@ -1,0 +1,52 @@
+{
+	"name": "Pholidogaster",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pholidogaster_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_pholidogaster ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pholidogaster",
+			"title": "Pholidogaster",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Stegocephali$(br)>Colosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. pisciformes",
+            "entity": "lepidodendron:prehistoric_flora_pholidogaster",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pholidogaster",
+			"type": "text",
+			"text": "Pholidogaster pisciformes comes from the Middle Carboniferous, with fossils being found in Gilmerton Ironstone, Scotland (United Kingdom). It is a small Stem-tetrapod, growing up to 1 m in the length. It was the first extinct animal to show an evolutionary link between fish and amphibians."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pholidogaster",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'pholid', to mean 'scale'; and 'gaster', to mean 'stomach'. The specific name derives from the Latin words 'piscis', to mean 'fish'; and 'fōrmis', to mean 'form'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pholidogaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pholidogaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pholidogaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pholidogaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pholidogaster"
+		}
+	]
+}

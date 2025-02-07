@@ -1,12 +1,12 @@
 {
 	"name": "Jeholopterus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/jeholopterus_icon.png",
+	"icon": "paleopedia:textures/items/anurognathid_jeholopterus_icon.png",
 	"category": "lepidodendron:mobs",
-	"turnin": "lepidodendron:pf_adv_book_jeholopterus",
+	"turnin": "lepidodendron:pf_adv_book_anuroganthid_jeholopterus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_jeholopterus",
+			"trigger": "lepidodendron:pf_adv_book_anuroganthid_jeholopterus",
 			"title": "Jeholopterus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Pterodactyliformes $(br)>Anurognathidae $(br)>Anurognathinae"
@@ -18,7 +18,7 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_jeholopterus",
+			"advancement": "lepidodendron:pf_adv_book_anuroganthid_jeholopterus",
 			"type": "text",
 			"text": "Jeholopterus is an anurognathid pterosaur from the Jurassic Tiaojishan Formation of China. It was first named in 2002 by Wang Xiaolin, and its name derives from the location it was discovered, Jehol. It was the largest of the anurognathids currently known, with a wingspan of around 70 cm long. Wang hypothesized that Jeholopterus, being the largest of the group, may have been piscivorous as opposed to insectivorous, though this is still debated. Compared to Batrachognathus, Jeholopterus' skull was wider and rounder."
 		},

@@ -1,0 +1,52 @@
+{
+	"name": "Kannemeyeria",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kannemeyeria_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_kannemeyeria ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kannemeyeria",
+			"title": "Kannemeyeria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Kannemeyeriidae"
+		},
+        	{
+            "type": "entity",
+            "name": "K. proboscoides",
+            "entity": "lepidodendron:prehistoric_flora_kannemeyeria",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kannemeyeria",
+			"type": "text",
+			"text": "Kannemeyeria comes from the Middle Triassic, with fossils being found in formations across Africa and parts of Argentina. It is a large dicynodont, growing up to 3 m in the length. It is the oldest known kannemeyeriid and large Triassic herbivore."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kannemeyeria",
+			"type": "text",
+			"text": "The generic name derives from the Latinised surname of Daniel Rossouw Kannemeyer, who discovered the original specimen."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kannemeyeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kannemeyeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kannemeyeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kannemeyeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kannemeyeria"
+		}
+	]
+}

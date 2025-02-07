@@ -1,6 +1,7 @@
 package net.lepidodendron.util.patchouli;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.lepidodendron.entity.base.*;
 import net.lepidodendron.world.biome.EntityLists;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.EntityLiving;
@@ -43,7 +44,6 @@ public class DimensionSpawns {
         //type 3: One single advancement reference, but this is also drawn from the spawn list ordering
 
         String spawnListFinal = "$(br)";
-
         String[] mobList = EntityLists.mobStringInDimension(Integer.parseInt(dimid));
 
         //Websteroprioin spawns as a block, so this needs an overrride here:
@@ -202,14 +202,14 @@ public class DimensionSpawns {
                                 entityname = entityname.substring(0, 24) + "...";
                             }
                             if (!type.equalsIgnoreCase("")) {
-                                if (!mobArray.contains("$(l:mobs/" + getHyperlink(mobStr + "_" + type) + ")" + entityname + "$(/l)")) {
-                                    mobArray.add("$(l:mobs/" + getHyperlink(mobStr + "_" + type) + ")" + entityname + "$(/l)");
+                                //Check if this variant exists yet:
+                                if (doesVariantExist(entity, type)) {
+                                    if (!mobArray.contains("$(l:mobs/" + getHyperlink(mobStr + "_" + type) + ")" + entityname + "$(/l)")) {
+                                        mobArray.add("$(l:mobs/" + getHyperlink(mobStr + "_" + type) + ")" + entityname + "$(/l)");
+                                    }
                                 }
                             }
                             else {
-                                if (entityname.length() > 24) {
-                                    entityname = entityname.substring(0, 24) + "...";
-                                }
                                 if (!mobArray.contains("$(l:mobs/" + getHyperlink(mobStr) + ")" + entityname + "$(/l)")) {
                                     mobArray.add("$(l:mobs/" + getHyperlink(mobStr) + ")" + entityname + "$(/l)");
                                 }
@@ -332,6 +332,98 @@ public class DimensionSpawns {
             return "roachoid";
         }
         return string;
+    }
+
+    public static boolean doesVariantExist(EntityLiving entityIn, String variantStr) {
+        if (entityIn instanceof EntityPrehistoricFloraAgeableBase) {
+            EntityPrehistoricFloraAgeableBase entityBase = (EntityPrehistoricFloraAgeableBase) entityIn;
+            if (entityBase.hasPNVariants()) {
+                if (entityBase.getPNTypeName() != null && entityBase.getPNTypeName().equalsIgnoreCase(variantStr)) {
+                    return true;
+                }
+            }
+            else {
+                return false;
+            }
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraFishBase) {
+            EntityPrehistoricFloraFishBase entityBase = (EntityPrehistoricFloraFishBase) entityIn;
+            if (entityBase.hasPNVariants()) {
+                if (entityBase.getPNTypeName() != null && entityBase.getPNTypeName().equalsIgnoreCase(variantStr)) {
+                    return true;
+                }
+            }
+            else {
+                return false;
+            }
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraCrawlingFlyingInsectBase) {
+            EntityPrehistoricFloraCrawlingFlyingInsectBase entityBase = (EntityPrehistoricFloraCrawlingFlyingInsectBase) entityIn;
+            if (entityBase.hasPNVariants()) {
+                if (entityBase.getPNTypeName() != null && entityBase.getPNTypeName().equalsIgnoreCase(variantStr)) {
+                    return true;
+                }
+            }
+            else {
+                return false;
+            }
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraInsectFlyingBase) {
+            EntityPrehistoricFloraInsectFlyingBase entityBase = (EntityPrehistoricFloraInsectFlyingBase) entityIn;
+            if (entityBase.hasPNVariants()) {
+                if (entityBase.getPNTypeName() != null && entityBase.getPNTypeName().equalsIgnoreCase(variantStr)) {
+                    return true;
+                }
+            }
+            else {
+                return false;
+            }
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraJellyfishBase) {
+            EntityPrehistoricFloraJellyfishBase entityBase = (EntityPrehistoricFloraJellyfishBase) entityIn;
+            if (entityBase.hasPNVariants()) {
+                if (entityBase.getPNTypeName() != null && entityBase.getPNTypeName().equalsIgnoreCase(variantStr)) {
+                    return true;
+                }
+            }
+            else {
+                return false;
+            }
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraSlitheringWaterBase) {
+            EntityPrehistoricFloraSlitheringWaterBase entityBase = (EntityPrehistoricFloraSlitheringWaterBase) entityIn;
+            if (entityBase.hasPNVariants()) {
+                if (entityBase.getPNTypeName() != null && entityBase.getPNTypeName().equalsIgnoreCase(variantStr)) {
+                    return true;
+                }
+            }
+            else {
+                return false;
+            }
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
+            EntityPrehistoricFloraTrilobiteBottomBase entityBase = (EntityPrehistoricFloraTrilobiteBottomBase) entityIn;
+            if (entityBase.hasPNVariants()) {
+                if (entityBase.getPNTypeName() != null && entityBase.getPNTypeName().equalsIgnoreCase(variantStr)) {
+                    return true;
+                }
+            }
+            else {
+                return false;
+            }
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
+            EntityPrehistoricFloraTrilobiteSwimBase entityBase = (EntityPrehistoricFloraTrilobiteSwimBase) entityIn;
+            if (entityBase.hasPNVariants()) {
+                if (entityBase.getPNTypeName() != null && entityBase.getPNTypeName().equalsIgnoreCase(variantStr)) {
+                    return true;
+                }
+            }
+            else {
+                return false;
+            }
+        }
+        return false;
     }
 
 }

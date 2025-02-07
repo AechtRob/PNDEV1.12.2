@@ -1,0 +1,52 @@
+{
+	"name": "Caerorhachis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/caerorhachis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_caerorhachis ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_caerorhachis",
+			"title": "Caerorhachis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Stegocephali"
+		},
+        	{
+            "type": "entity",
+            "name": "C. bairdi",
+            "entity": "lepidodendron:prehistoric_flora_caerorhachis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caerorhachis",
+			"type": "text",
+			"text": "Caerorhachis bairdi comes from the Early Carboniferous, with fossils being found in the Limestone Coal Group, Scotland (United Kingdom). It is a small Stem-Tetrapod, growing up to 30 cm in length. With full fossil material, it has been noted that Caerorhachis may have lived a more different lifestyle to its ancestors, being more terrestrial, but still occasionally venturing into water streams for food."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caerorhachis",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'kairos', to mean 'suitable'; and 'rhachis', to mean 'spine'. The specific name derives from the Latinised surname of Dr. Donal Baird, who prepared the first specimen and recognised its significance."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_caerorhachis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_caerorhachis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_caerorhachis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_caerorhachis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_caerorhachis"
+		}
+	]
+}

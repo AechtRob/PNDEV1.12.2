@@ -1,7 +1,7 @@
 {
 	"name": "Kreischeria",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/kreischeria_icon.png",
+	"icon": "paleopedia:textures/items/trigonotarbid_kreischeria_icon.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_trigonotarbid_kreischeria",
 	"pages": [
@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arachnida$(br)>Trigonotarbida$(br)>Kreischeriidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/kreischeria.png"],
-			"title": "Kreischeria wiedei",
-			"text": ""
+			"type": "entity",
+			"name": "K. wiedei",
+			"entity": "lepidodendron:prehistoric_flora_trigonotarbid_kreischeria",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_trigonotarbid_kreischeria",

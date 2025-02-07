@@ -1,0 +1,52 @@
+{
+	"name": "Carbotubulus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/carbotubulus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_carbotubulus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_carbotubulus",
+			"title": "Carbotubulus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br)>Panarthropoda$(br)>Lobopodia$(br)>Hallucigeniidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. waloszeki",
+            "entity": "lepidodendron:prehistoric_flora_carbotubulus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_carbotubulus",
+			"type": "text",
+			"text": "Carbotubulus waloszeki comes from the Upper Carboniferous, with fossils found in the Carbondale Formation, Illinois (USA). It is a small hallucigeniid, growing up to 3.5 cm in length. It is possibly the youngest known hallucigeniid, although this classification has been challenged."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_carbotubulus",
+			"type": "text",
+			"text": "The Generic name derives from the time period name 'Carboniferous', and the Latin word 'tubulus', to mean 'small tube'. The specific name derives from the Latinised surname of Dieter Waloszek, in honor of his work in arthropod evolution."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_carbotubulus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_carbotubulus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_carbotubulus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_carbotubulus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_carbotubulus"
+		}
+	]
+}

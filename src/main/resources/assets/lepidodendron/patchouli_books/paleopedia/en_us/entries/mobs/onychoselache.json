@@ -1,0 +1,52 @@
+{
+	"name": "Onychoselache",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/onychoselache_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_onychoselache ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_onychoselache",
+			"title": "Onychoselache",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Hybodontiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "O. traquairi",
+            "entity": "lepidodendron:prehistoric_flora_onychoselache",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_onychoselache",
+			"type": "text",
+			"text": "Onychoselache traquairi comes from the Lower Carboniferous, with fossils found in the Glencartholm Volcanic Beds, Scotland (United Kingdom). It is a small hybodontiforme, growing up to 25 cm in length. It is the oldest known hybodont, with a multitude of horns on its head and surprisingly modern fins for the time."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_onychoselache",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'onycho', to mean 'nail'; and 'selache', to mean 'shark'. The specific name derives from the surname of Ramsay Traquair, the discoverer of the first fossil specimens."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_onychoselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_onychoselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_onychoselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_onychoselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_onychoselache"
+		}
+	]
+}

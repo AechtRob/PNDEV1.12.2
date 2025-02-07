@@ -103,6 +103,12 @@ public class EntityPrehistoricFloraDragonflyNymph extends EntityPrehistoricFlora
 		return true;
 	}
 
+	@Override
+	public String getPNTypeName()
+	{
+		return this.getPNType().getName();
+	}
+
 	public enum Type
 	{
 		DRAGONFLY1(1, "dragonfly1"),

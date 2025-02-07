@@ -77,7 +77,7 @@ public class EntityPrehistoricFloraCricosaurus extends EntityPrehistoricFloraSwi
 		return this.getAgeScale() < 0.5;
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Jurassic - early Cretaceous";}
 
 	@Override
 	public int airTime() {

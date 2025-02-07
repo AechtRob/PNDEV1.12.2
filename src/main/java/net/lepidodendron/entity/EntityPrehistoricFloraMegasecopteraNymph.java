@@ -81,6 +81,12 @@ public class EntityPrehistoricFloraMegasecopteraNymph extends EntityPrehistoricF
 		return true;
 	}
 
+	@Override
+	public String getPNTypeName()
+	{
+		return this.getPNType().getName();
+	}
+
 	public enum Type
 	{
 		SYLVOHYMEN(1, "sylvohymen")

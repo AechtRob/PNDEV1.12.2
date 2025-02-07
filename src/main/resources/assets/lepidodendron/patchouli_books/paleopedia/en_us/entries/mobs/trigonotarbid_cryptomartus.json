@@ -1,27 +1,28 @@
 {
     "name": "Anthracomartus",
     "read_by_default": true,
-    "icon": "paleopedia:textures/items/anthracomartus_icon.png",
+    "icon": "paleopedia:textures/items/trigonotarbid_cryptomartus_icon.png",
     "category": "lepidodendron:mobs",
     "turnin": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
     "pages": [
-        {
-            "trigger": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
-            "title": "Anthracomartus",
-            "type": "quest",
-            "text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arachnida$(br)>Trigonotarbida$(br)>Anthracomartidae"
-        },
-	{
-            "type": "image",
-            "images": ["paleopedia:textures/anthracomartus.png"],
-            "title": "A. hindi",
-	    "text": ""
-        },
-	{
-		"advancement": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
-		"type": "text",
-		"text": "Anthracomartus is a Carboniferous trigonotarbid which lived in the forested environments. It had a tick shaped body with a pointed head."
-	},
+      {
+          "trigger": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
+          "title": "Anthracomartus",
+          "type": "quest",
+          "text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arachnida$(br)>Trigonotarbida$(br)>Anthracomartidae"
+      },
+      {
+        "type": "entity",
+        "name": "A. hindi",
+        "entity": "lepidodendron:prehistoric_flora_trigonotarbid_cryptomartus",
+        "rotate": false,
+        "default_rotation": 0
+      },
+      {
+      "advancement": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
+      "type": "text",
+      "text": "Anthracomartus is a Carboniferous trigonotarbid which lived in the forested environments. It had a tick shaped body with a pointed head."
+	  },
       {
         "type": "lepidodendron:diet",
         "mob": "lepidodendron:prehistoric_flora_trigonotarbid_cryptomartus"

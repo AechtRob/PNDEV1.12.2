@@ -1,0 +1,47 @@
+{
+	"name": "Neoceratodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/neoceratodus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_neoceratodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_neoceratodus",
+			"title": "Neoceratodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous-Present$(br2)>Chordata$(br)>Sarcopterygii$(br)>Dipnoi$(br)>Ceratodontiformes$(br)>Neoceratodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "N. forsteri",
+            "entity": "lepidodendron:prehistoric_flora_neoceratodus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_neoceratodus",
+			"type": "text",
+			"text": "Neoceratodus hails from the Early Cretaceous into the Present day, being found in river systems around South-Eastern Queensland, along with fossils of extinct species being found in the Kem Kem Formation, Morocco; and Griman Creek Formation, Australia. It is a medium-sized neoceratodontiid, growing up to 1.5 m in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_neoceratodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_neoceratodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_neoceratodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_neoceratodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_neoceratodus"
+		}
+	]
+}

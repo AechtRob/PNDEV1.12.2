@@ -1,0 +1,82 @@
+{
+	"name": "Sigillaria",
+	"read_by_default": true,
+	"icon": "lepidodendron:sigillaria_sapling",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_sigillaria",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sigillaria",
+			"title": "Sigillaria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian-Carboniferous$(br2)$(l)Propagation:$() Use a collection envelope on the spore-producing strobilus to harvest spores.$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
+		},
+		{
+			"type": "multiblock",
+			"name": "Sigillaria sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["     ","  N  ","     ","  N  ","     "],
+					["     ","  M  ","     ","  M  ","     "],
+					["     ","  L  ","     ","  L  ","     "],
+					["  H  ","  G  "," KH  "," KFJ ","  I  "],
+					["     ","  B  ","     ","  B  ","     "],
+					["     ","  B  ","     ","  B  ","     "],
+					["     ","  B  ","     ","  B  ","     "],
+					["     ","  B  ","     ","  B  ","     "],
+					["     ","  B  ","     ","  B  ","     "],
+					["     ","  D  ","  C  ","  E  ","     "],
+					["     ","     ","  B  ","     ","     "],
+					["     ","     ","  B  ","     ","     "],
+					["     ","     ","  B  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","     ","  A  ","     ","     "],
+					["     ","  P  "," O0O ","  P  ","     "]
+				],
+				"mapping": {
+					"P": "lepidodendron:sigillaria_log[facing=east]",
+					"O": "lepidodendron:sigillaria_log[facing=up]",
+					"N": "lepidodendron:sigillaria_shoot_top",
+					"M": "lepidodendron:sigillaria_shoot_centre",
+					"L": "lepidodendron:sigillaria_shoot",
+					"K": "lepidodendron:sigillaria_strobilus[facing=north]",
+					"J": "lepidodendron:sigillaria_strobilus[facing=south]",
+					"I": "lepidodendron:sigillaria_strobilus[facing=east]",
+					"H": "lepidodendron:sigillaria_strobilus[facing=west]",
+					"G": "lepidodendron:sigillaria_stem[down=true,north=true,up=true,west=true]",
+					"F": "lepidodendron:sigillaria_stem[down=true,east=true,north=true,up=true,south=true,west=true]",
+					"E": "lepidodendron:sigillaria_stem[up=true,south=true]",
+					"D": "lepidodendron:sigillaria_stem[up=true,north=true]",
+					"C": "lepidodendron:sigillaria_stem[down=true,north=true,south=true]",
+					"B": "lepidodendron:sigillaria_stem[down=true,up=true]",
+					"A": "lepidodendron:sigillaria_log[facing=north]",
+					"0": "lepidodendron:sigillaria_log[facing=north]"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sigillaria",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

@@ -1,0 +1,35 @@
+{
+	"name": "Eukaryotic Mat",
+	"read_by_default": true,
+	"icon": "lepidodendron:eukaryotic_mat",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_eukaryotic_mat",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eukaryotic_mat",
+			"title": "Eukaryotic Mat",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Precambrian$(br2)$(l)Habitat:$() Marine$(br)$(l)Method of Obtaining:$() Shears"
+		},
+		{
+			"type": "multiblock",
+			"name": "Eukaryotic Mat",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:eukaryotic_mat",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eukaryotic_mat",
+			"type": "text",
+			"text": "Eukaryotic Mats represent clumped microbial eukaryote colonies that would otherwise not be representable as seperate entities due to their miniscule size. The biota/lifeforms that are represented by this are the Volyn Biota, Protosterol biota, Longfengshania & Houjiashania."
+		}
+	]
+}

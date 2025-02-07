@@ -1,0 +1,52 @@
+{
+	"name": "Ausktribosphenos",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ausktribosphenos_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ausktribosphenos",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ausktribosphenos",
+			"title": "Ausktribosphenos",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Mammalia$(br)>Australosphenida$(br)>Ausktribosphenidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. nyktos",
+            "entity": "lepidodendron:prehistoric_flora_ausktribosphenos",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ausktribosphenos",
+			"type": "text",
+			"text": "Ausktribosphenos nyktos comes from the Early Cretaceous, with fossils being found in the Flat Rocks, Australia. It is a small ausktribosphenid, growing up to 8.5 cm in length. It was the first pre-Cenozoic placental mammal found in Australia, pushing the existence of placental mammals in Australia back by 110 million years."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ausktribosphenos",
+			"type": "text",
+			"text": "The generic name Ausktribosphenos derives from the place name Australia, where the fossils were found; and the English word Tribosphenic, which further derives from the Greek words tribeo, to mean 'rub'; and sphen, to mean 'wedge'. The specific name nyktos derives from the name of the Greek god Nyx, which further derives from the Greek word Núx, to mean 'night'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ausktribosphenos"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ausktribosphenos"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ausktribosphenos"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ausktribosphenos"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ausktribosphenos"
+		}
+	]
+}

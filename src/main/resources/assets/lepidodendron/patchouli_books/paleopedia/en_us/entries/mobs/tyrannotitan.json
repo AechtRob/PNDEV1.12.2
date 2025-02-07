@@ -1,0 +1,52 @@
+{
+	"name": "Tyrannotitan",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tyrannotitan_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tyrannotitan ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tyrannotitan",
+			"title": "Tyrannotitan",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Carcharodontosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. chubutensis",
+            "entity": "lepidodendron:prehistoric_flora_tyrannotitan",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tyrannotitan",
+			"type": "text",
+			"text": "Tyrannotitan chubutensis comes from the Early Cretaceous, with fossils found in the Cerro Barcino Formation, Argentina. It is a large carcharodontosaurid, growing up to 13 m in length, and 7 tons in body mass. It is the most basal of the giganotosaurinian tribe, and has unusual features, with a pneumatic hiatus at the anterior of its sacral region (Base of the tail),"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tyrannotitan",
+			"type": "text",
+			"text": "which allowed the vertebral column to be pneumatised by independent segments of the respiratory system. The generic name derives from the Greek word 'Tyranno', to mean 'Tyrant'; and 'titan'. The specific name derives from the place name 'Chubut Province', near to were its fossils were found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tyrannotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tyrannotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tyrannotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tyrannotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tyrannotitan"
+		}
+	]
+}

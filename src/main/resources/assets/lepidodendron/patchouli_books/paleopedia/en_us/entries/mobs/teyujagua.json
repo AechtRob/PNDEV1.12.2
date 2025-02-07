@@ -1,0 +1,52 @@
+{
+	"name": "Teyujagua",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/teyujagua_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_teyujagua ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_teyujagua",
+			"title": "Teyujagua",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Sauria$(br)>Archelosauria$(br)>Crocopoda"
+		},
+        	{
+            "type": "entity",
+            "name": "T. paradoxa",
+            "entity": "lepidodendron:prehistoric_flora_teyujagua",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_teyujagua",
+			"type": "text",
+			"text": "Teyujagua paradoxa comes from the Lower Triassic, with fossils found in the Sanga do Cabral Formation, Southern Brazil. It is a small crocopodan, growing up to 1.5 m in length. It is an intermediary between archosauromorphs and archosauriformes, bearing features found in both, like a closed antorbital fenestra and serrated teeth."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_teyujagua",
+			"type": "text",
+			"text": "The generic name derives from the name 'Teyú Yaguá', a mythic beast of the Tupi-Guarani people. The specific name derives from the Greek word surname 'parádoxos', to mean 'unexpected'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_teyujagua"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_teyujagua"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_teyujagua"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_teyujagua"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_teyujagua"
+		}
+	]
+}

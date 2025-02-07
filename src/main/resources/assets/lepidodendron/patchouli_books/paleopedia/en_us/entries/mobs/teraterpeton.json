@@ -1,0 +1,52 @@
+{
+	"name": "Teraterpeton",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/teraterpeton_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_teraterpeton ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_teraterpeton",
+			"title": "Teraterpeton",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauromorpha$(br)>Allokotosauria$(br)>Trilophosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "T. hrynewichorum",
+            "entity": "lepidodendron:prehistoric_flora_teraterpeton",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_teraterpeton",
+			"type": "text",
+			"text": "Teraterpeton hrynewichorum comes from the Upper Triassic, with fossils found in the Wolfville Formation, Nova Scotia (Canada). It is a medium-sized archosauromorph, growing up to 2 m in length. It is incredibly unique in having a elongated, thin skull with no teeth at the ends of the jaws but many small interlocking teeth at the back of the jaws. It also bore a large nasal opening and a closed up fenestra, like that of marine reptiles."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_teraterpeton",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'teras', to mean 'wonder'; and 'erpeton', to mean 'creeping thing'. The specific name derives from the Latinised surname of George P. & Sandy Hrynewich, the discoverers of the first fossil specimens."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_teraterpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_teraterpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_teraterpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_teraterpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_teraterpeton"
+		}
+	]
+}

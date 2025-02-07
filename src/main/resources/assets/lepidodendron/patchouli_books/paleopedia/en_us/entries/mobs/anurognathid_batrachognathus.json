@@ -1,12 +1,12 @@
 {
 	"name": "Batrachognathus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/batrachognathus_icon.png",
+	"icon": "paleopedia:textures/items/anurognathid_batrachognathus_icon.png",
 	"category": "lepidodendron:mobs",
-	"turnin": "lepidodendron:pf_adv_book_batrachognathus",
+	"turnin": "lepidodendron:pf_adv_book_anurognathid_batrachognathus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_batrachognathus",
+			"trigger": "lepidodendron:pf_adv_book_anurognathid_batrachognathus",
 			"title": "Batrachognathus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Pterodactyliformes $(br)>Anurognathidae $(br)>Batrachognathinae"
@@ -18,7 +18,7 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_batrachognathus",
+			"advancement": "lepidodendron:pf_adv_book_anurognathid_batrachognathus",
 			"type": "text",
 			"text": "Batrachognathus is a Jurassic Anurognathid known from the Karabastau Formation of Kazakhstan. It had a slightly longer and less rounded skull compared to other Anurognathids with a wingspan of up to 75 cm long. In 2021, phylogenetic analysis placed Batrachognathus as the sister taxon to Sinomacrops within its own subfamily, Batrachognathinae, in contrast to the 2006 study which placed it as sister to Jeholopterus."
 		},

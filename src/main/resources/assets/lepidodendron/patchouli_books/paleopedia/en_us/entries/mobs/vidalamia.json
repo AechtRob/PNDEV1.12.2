@@ -1,0 +1,47 @@
+{
+	"name": "Vidalamia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/vidalamia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_vidalamia ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_vidalamia",
+			"title": "Vidalamia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Halecomorphi$(br)>Amiiformes$(br)>Amiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Vidalamia sp.",
+            "entity": "lepidodendron:prehistoric_flora_vidalamia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vidalamia",
+			"type": "text",
+			"text": "Vidalamia comes from the Early Cretaceous, with fossils found in the Las Hoyas lagerstätte, Spain. It is a small amiid, growing up to 40 cm in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_vidalamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_vidalamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_vidalamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_vidalamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_vidalamia"
+		}
+	]
+}

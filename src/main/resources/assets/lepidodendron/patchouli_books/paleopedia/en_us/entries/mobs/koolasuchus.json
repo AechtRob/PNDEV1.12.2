@@ -1,0 +1,52 @@
+{
+	"name": "Koolasuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/koolasuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_koolasuchus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_koolasuchus",
+			"title": "Koolasuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Temnospondyli$(br)>Stereospondyli$(br)>Chigutisauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "K. cleelandi",
+            "entity": "lepidodendron:prehistoric_flora_koolasuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_koolasuchus",
+			"type": "text",
+			"text": "Koolasuchus cleelandi comes from the Early Cretaceous, with fossils being found in the Wonthaggi Formation, Australia. It is a large temnospondyl, growing up to 3 m in length, and weighing up to 500 kg in weight. They are the youngest known temnospondyl."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_koolasuchus",
+			"type": "text",
+			"text": "The generic name derives from the surname of Lesley Kool, a well known Australian palaeontologist who has studied the region in which Koolasuchus comes from; and the Latin word 'suchus', to mean 'crocodile'. The specific name derives from the surname of Mike Cleeland, a Australian Geologist who found the first pieces of jaw material."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_koolasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_koolasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_koolasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_koolasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_koolasuchus"
+		}
+	]
+}

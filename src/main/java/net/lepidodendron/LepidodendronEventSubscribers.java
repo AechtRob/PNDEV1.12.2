@@ -1355,105 +1355,117 @@ public class LepidodendronEventSubscribers {
 
 		if (Block.getBlockFromItem(event.getItemStack().getItem()) instanceof BlockFossil) {
 			List<String> tt = event.getToolTip();
-			tt.add("Time Research x1");
 			if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilPrecambrian.block) {
+				tt.add("Time Research x13");
 				tt.add(TextFormatting.DARK_RED + "Precambrian");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilCambrian.block) {
+				tt.add("Time Research x12");
 				tt.add(TextFormatting.DARK_GREEN + "Cambrian");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilOrdovician.block) {
+				tt.add("Time Research x11");
 				tt.add(TextFormatting.DARK_AQUA + "Ordovician");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilSilurian.block) {
+				tt.add("Time Research x10");
 				tt.add(TextFormatting.AQUA + "Silurian");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilDevonian.block) {
+				tt.add("Time Research x9");
 				tt.add(TextFormatting.GOLD + "Devonian");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilCarboniferous.block) {
+				tt.add("Time Research x8");
 				tt.add(TextFormatting.DARK_BLUE + "Carboniferous");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilPermian.block) {
+				tt.add("Time Research x7");
 				tt.add(TextFormatting.RED + "Permian");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilTriassic.block) {
+				tt.add("Time Research x6");
 				tt.add(TextFormatting.DARK_PURPLE + "Triassic");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilJurassic.block) {
+				tt.add("Time Research x5");
 				tt.add(TextFormatting.BLUE + "Jurassic");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilCretaceous.block) {
+				tt.add("Time Research x8");
 				tt.add(TextFormatting.GREEN + "Cretaceous");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilPaleogene.block) {
+				tt.add("Time Research x3");
 				tt.add(TextFormatting.GOLD + "Paleogene");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilNeogene.block) {
+				tt.add("Time Research x2");
 				tt.add(TextFormatting.YELLOW + "Neogene");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilPleistocene.block) {
+				tt.add("Time Research x1");
 				tt.add(TextFormatting.GRAY + "Pleistocene");
 			}
 		}
 		else if (event.getItemStack().getItem() == ItemFossilPrecambrian.block) {
 			List<String> tt = event.getToolTip();
-			tt.add("Time Research x2");
+			tt.add("Time Research x26");
 			tt.add(TextFormatting.DARK_RED + "Precambrian");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilCambrian.block) {
 			List<String> tt = event.getToolTip();
-			tt.add("Time Research x2");
+			tt.add("Time Research x24");
 			tt.add(TextFormatting.DARK_GREEN + "Cambrian");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilOrdovician.block) {
 			List<String> tt = event.getToolTip();
-			tt.add("Time Research x2");
+			tt.add("Time Research x22");
 			tt.add(TextFormatting.DARK_AQUA + "Ordovician");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilSilurian.block) {
 			List<String> tt = event.getToolTip();
-			tt.add("Time Research x2");
+			tt.add("Time Research x20");
 			tt.add(TextFormatting.AQUA + "Silurian");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilDevonian.block) {
 			List<String> tt = event.getToolTip();
-			tt.add("Time Research x2");
+			tt.add("Time Research x18");
 			tt.add(TextFormatting.GOLD + "Devonian");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilCarboniferous.block) {
 			List<String> tt = event.getToolTip();
-			tt.add("Time Research x2");
+			tt.add("Time Research x16");
 			tt.add(TextFormatting.DARK_BLUE + "Carboniferous");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilPermian.block) {
 			List<String> tt = event.getToolTip();
-			tt.add("Time Research x2");
+			tt.add("Time Research x14");
 			tt.add(TextFormatting.RED + "Permian");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilTriassic.block) {
 			List<String> tt = event.getToolTip();
-			tt.add("Time Research x2");
+			tt.add("Time Research x12");
 			tt.add(TextFormatting.DARK_PURPLE + "Triassic");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilJurassic.block) {
 			List<String> tt = event.getToolTip();
-			tt.add("Time Research x2");
+			tt.add("Time Research x10");
 			tt.add(TextFormatting.BLUE + "Jurassic");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilCretaceous.block) {
 			List<String> tt = event.getToolTip();
-			tt.add("Time Research x2");
+			tt.add("Time Research x16");
 			tt.add(TextFormatting.GREEN + "Cretaceous");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilPaleogene.block) {
 			List<String> tt = event.getToolTip();
-			tt.add("Time Research x2");
+			tt.add("Time Research x6");
 			tt.add(TextFormatting.GOLD + "Paleogene");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilNeogene.block) {
 			List<String> tt = event.getToolTip();
-			tt.add("Time Research x2");
+			tt.add("Time Research x4");
 			tt.add(TextFormatting.YELLOW + "Neogene");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilPleistocene.block) {
@@ -1468,7 +1480,13 @@ public class LepidodendronEventSubscribers {
 				if (event.getItemStack().getTagCompound().hasKey("period")) {
 					List<String> tt = event.getToolTip();
 					if (event.getItemStack().getItem() == ItemFossilClean.block) {
-						tt.add("Time Research x5");
+						tt.add("Time Research x30");
+					}
+					if (event.getItemStack().getItem() == ItemPhialDNA.block) {
+						tt.add("Time Research x40");
+					}
+					if (event.getItemStack().getItem() == ItemPlaceableLiving.block) {
+						tt.add("Time Research x50");
 					}
 					int period = event.getItemStack().getTagCompound().getInteger("period");
 					switch (period) {

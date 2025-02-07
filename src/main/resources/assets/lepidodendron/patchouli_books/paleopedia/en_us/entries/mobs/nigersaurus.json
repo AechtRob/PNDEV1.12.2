@@ -1,0 +1,57 @@
+{
+	"name": "Nigersaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/nigersaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_nigersaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_nigersaurus",
+			"title": "Nigersaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Sauropoda$(br)>Diplodocoidea$(br)>Rebbachisauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "N. taqueti",
+            "entity": "lepidodendron:prehistoric_flora_nigersaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nigersaurus",
+			"type": "text",
+			"text": "Nigersaurus taqueti comes from the Early Cretaceous, with fossils being found in the Elrhaz Formation, Niger. It is a small rebbachisauriid, growing up to 9 m in length, and weighing up to 4000 kg. Nigersaurus was surprisingly small for a sauropod of this time, and also had a very specialised skull used for feeding, with thin bones and a short but wide down-turned muzzle,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nigersaurus",
+			"type": "text",
+			"text": "with hundreds of teeth all concentrated at the very front of the snout. Furthermore, instead of each tooth growing from its own individual socket, all the teeth grew out of a single, fused 'trough' opening, one in the upper and lower jaws respectively. The generic name derives from the place name 'Niger', the country the fossils were found in; and the Greek word 'sauros',"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nigersaurus",
+			"type": "text",
+			"text": "to mean 'reptile'. The specific name derives from the Latinsied surname of Philippe Taquet, a French palaeontologist that discovered the first fossils."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_nigersaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_nigersaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_nigersaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_nigersaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_nigersaurus"
+		}
+	]
+}

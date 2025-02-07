@@ -8,9 +8,15 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
@@ -29,6 +35,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
     private static final ResourceLocation TEXTURE_DEVONIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_devonian.png");
     private static final ResourceLocation TEXTURE_CARBONIFEROUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_carboniferous.png");
     private static final ResourceLocation TEXTURE_PERMIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_permian.png");
+    private static final ResourceLocation TEXTURE_PERMIAN_EMISSIVE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_permian_emissivelayer.png");
     private static final ResourceLocation TEXTURE_TRIASSIC = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_triassic.png");
     private static final ResourceLocation TEXTURE_JURASSIC = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_jurassic.png");
     private final ModelPortalBlockOverworld modelPortalBlockOverworld;
@@ -1901,6 +1908,52 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 colRed = (byte) 153;
                 colGreen = (byte) 42;
                 colBlue = (byte) 25;
+
+                //Emissive layer:
+                if ((entity.getIsActive() && entity.getAnimationTick() > 14)
+                    || entity.getAnimationTick() > 60) {
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_PERMIAN_EMISSIVE);
+
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    GlStateManager.enableNormalize();
+                    GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+
+                    GlStateManager.enableBlend();
+                    GlStateManager.disableAlpha();
+                    GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
+                    GlStateManager.depthMask(true);
+                    int i = 61680;
+                    int j = i % 65536;
+                    int k = i / 65536;
+                    OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float) j, (float) k);
+                    GlStateManager.color(1.0F, 1.0F, 1.0F, transparency);
+                    Minecraft.getMinecraft().entityRenderer.setupFogColor(true);
+                    modelPortalBlockPermian.setModelAttributes(modelPortalBlockPermian);
+                    modelPortalBlockPermian.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
+                    Minecraft.getMinecraft().entityRenderer.setupFogColor(false);
+                    i = this.getBrightnessForRender(entity.getWorld(), entity.getPos());
+                    j = i % 65536;
+                    k = i / 65536;
+                    OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float) j, (float) k);
+                    this.setLightmap(entity.getWorld(), entity.getPos());
+                    GlStateManager.disableBlend();
+                    GlStateManager.enableAlpha();
+
+                    GlStateManager.disableRescaleNormal();
+
+                    GlStateManager.disableBlend();
+                    GlStateManager.disableNormalize();
+                    GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+                    GlStateManager.enableCull();
+
+                    GlStateManager.popMatrix();
+                }
+
             }
             //TRIASSIC
             //----------
@@ -3290,5 +3343,30 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
 
         }
 
+    }
+
+
+    @SideOnly(Side.CLIENT)
+    public int getBrightnessForRender(World worldIn, BlockPos pos)
+    {
+        BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos(MathHelper.floor(pos.getX()), 0, MathHelper.floor(pos.getZ()));
+
+        if (worldIn.isBlockLoaded(blockpos$mutableblockpos))
+        {
+            blockpos$mutableblockpos.setY(MathHelper.floor(pos.getY() + 1));
+            return worldIn.getCombinedLight(blockpos$mutableblockpos, 0);
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public void setLightmap(World worldIn, BlockPos pos)
+    {
+        int i = this.getBrightnessForRender(worldIn, pos);
+        int j = i % 65536;
+        int k = i / 65536;
+        OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
     }
 }

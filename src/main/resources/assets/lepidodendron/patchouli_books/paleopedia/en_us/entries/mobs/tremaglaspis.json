@@ -1,0 +1,52 @@
+{
+	"name": "Tremaglaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tremaglaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tremaglaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tremaglaspis",
+			"title": "Tremaglaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian-Ordovician$(br2)>Arthropoda$(br)>Artiopoda$(br)>Vicissicaudata$(br)>Aglaspidida$(br)>Tremaglaspididae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. unite",
+            "entity": "lepidodendron:prehistoric_flora_tremaglaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tremaglaspis",
+			"type": "text",
+			"text": "Tremaglaspis hails from the Upper Cambrian into the Lower Ordovician, with fossils found in the Weeks Formation, Utah (USA); Fezouata Formation, Morocco; and the Dol-cyn-afon Formation, North Wales. It is a elongated tremaglaspidiid, with a long pointed telson, and may possibly be blind as well with no evidence of eyes on top of its prosoma, and grew up to 13 cm in length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tremaglaspis",
+			"type": "text",
+			"text": "The generic name derives from the place name 'Tremadoc', near to where the fossils were found, and the species name 'Aglaspis'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tremaglaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tremaglaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tremaglaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tremaglaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tremaglaspis"
+		}
+	]
+}

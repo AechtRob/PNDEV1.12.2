@@ -1,7 +1,7 @@
 {
 	"name": "Palaeocharinus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/palaeocharinus_icon.png",
+	"icon": "paleopedia:textures/items/trigonotarbid_palaeocharinus_icon.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_trigonotarbid_palaeocharinus",
 	"pages": [
@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arachnida$(br)>Trigonotarbida$(br)>Palaeocharinidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/palaeocharinus.png"],
-			"title": "P. rhyniensis",
-			"text": ""
+			"type": "entity",
+			"name": "P. rhyniensis",
+			"entity": "lepidodendron:prehistoric_flora_trigonotarbid_palaeocharinus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_trigonotarbid_palaeocharinus",

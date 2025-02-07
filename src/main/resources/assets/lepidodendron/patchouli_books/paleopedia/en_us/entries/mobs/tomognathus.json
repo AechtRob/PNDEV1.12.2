@@ -1,0 +1,47 @@
+{
+	"name": "Tomognathus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tomognathus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tomognathus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tomognathus",
+			"title": "Tomognathus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Halecomorphi$(br)>Amiiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "T. mordax",
+            "entity": "lepidodendron:prehistoric_flora_tomognathus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tomognathus",
+			"type": "text",
+			"text": "Tomognathus comes from the Cretaceous, with fossils found in the Jingchuan Formation, Mongolia. It is a small amiiforme, growing up to 1 m in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tomognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tomognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tomognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tomognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tomognathus"
+		}
+	]
+}

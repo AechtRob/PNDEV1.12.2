@@ -19,47 +19,47 @@ public class ProcedureSpawnNilssoniocladus extends ElementsLepidodendronMod.ModE
 
 	public static void executeProcedure(int x, int y, int z, World world, boolean TreeChosen, boolean SaplingSpawn) {
 
-			//Try spawn Nilssoniocladus here?
-			boolean biomeCriteria = false;
-			boolean dimensionCriteria = false;
-			int dimID = world.provider.getDimension();
-			if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimNilssoniocladus))
-				dimensionCriteria = true;
-			if (!TreeChosen && !LepidodendronConfig.genAllPlants)
-				dimensionCriteria = false;
-			if (dimID == LepidodendronConfig.dimJurassic) {
-				dimensionCriteria = true;
+		//Try spawn Nilssoniocladus here?
+		boolean biomeCriteria = false;
+		boolean dimensionCriteria = false;
+		int dimID = world.provider.getDimension();
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimNilssoniocladus))
+			dimensionCriteria = true;
+		if (!TreeChosen && !LepidodendronConfig.genAllPlants)
+			dimensionCriteria = false;
+		if (dimID == LepidodendronConfig.dimJurassic
+			||dimID == LepidodendronConfig.dimCretaceousEarly
+			|| dimID == LepidodendronConfig.dimCretaceousLate) {
+			dimensionCriteria = true;
+		}
+		Biome biome = world.getBiome(new BlockPos(x, y, z));
+		if (dimensionCriteria && !SaplingSpawn) {
+			if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genNilssoniocladusBlacklistBiomes))) {
+				if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.CONIFEROUS))
+					biomeCriteria = true;
+				if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+					biomeCriteria = false;
+				if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
+					biomeCriteria = false;
 			}
-			if (dimensionCriteria && !SaplingSpawn) {
-				Biome biome = world.getBiome(new BlockPos(x, y, z));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genNilssoniocladusBlacklistBiomes))) {
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.CONIFEROUS))
-						biomeCriteria = true;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
-						biomeCriteria = false;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
-						biomeCriteria = false;
-				}
-				if (matchBiome(biome, LepidodendronConfigPlants.genNilssoniocladusOverrideBiomes))
-					biomeCriteria = true;
-				}
-				if (dimID == LepidodendronConfig.dimJurassic) {
-					biomeCriteria = true;
-				}
-				if (biomeCriteria && !SaplingSpawn) {
-					//Try one spot at the foot of the tree:
-					//{
-						//java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
-						Random rnd = new Random();
-						//$_dependencies.put("x", x + (rnd.nextInt(5) - 2));
-						//$_dependencies.put("y", y);
-						//$_dependencies.put("z", z + (rnd.nextInt(5) - 2));
-						//$_dependencies.put("world", world);
-					//}
-					ProcedureWorldGenNilssoniocladus.executeProcedure(x + (rnd.nextInt(5) - 2), y, z + (rnd.nextInt(5) - 2), world);
-					ProcedureWorldGenNilssoniocladus.executeProcedure(x + (rnd.nextInt(5) - 2), y, z + (rnd.nextInt(5) - 2), world);
-				}
+			if (matchBiome(biome, LepidodendronConfigPlants.genNilssoniocladusOverrideBiomes)) {
+				biomeCriteria = true;
+			}
+			if (dimID == LepidodendronConfig.dimJurassic) {
+				biomeCriteria = true;
+			}
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_foothills")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_mountains")) {
+				biomeCriteria = true;
+			}
+			if (biomeCriteria && !SaplingSpawn) {
+				//Try one spot at the foot of the tree:
+				Random rnd = new Random();
+				ProcedureWorldGenNilssoniocladus.executeProcedure(x + (rnd.nextInt(5) - 2), y, z + (rnd.nextInt(5) - 2), world);
+				ProcedureWorldGenNilssoniocladus.executeProcedure(x + (rnd.nextInt(5) - 2), y, z + (rnd.nextInt(5) - 2), world);
+			}
 
+		}
 	}
 
 	

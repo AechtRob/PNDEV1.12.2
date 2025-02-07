@@ -123,6 +123,12 @@ public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraA
 		return true;
 	}
 
+	@Override
+	public String getPNTypeName()
+	{
+		return this.getPNType().getName();
+	}
+
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {

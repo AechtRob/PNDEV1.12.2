@@ -1,0 +1,47 @@
+{
+	"name": "Sinamia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sinamia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sinamia ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sinamia",
+			"title": "Sinamia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Halecomorphi$(br)>Amiiformes$(br)>Amiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. zdanskyi",
+            "entity": "lepidodendron:prehistoric_flora_sinamia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sinamia",
+			"type": "text",
+			"text": "Sinamia comes from the Early Cretaceous, with fossils found in formations across East Asia, from China through to Japan. It is a small amiid, growing up to 50 cm in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sinamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sinamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sinamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sinamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sinamia"
+		}
+	]
+}

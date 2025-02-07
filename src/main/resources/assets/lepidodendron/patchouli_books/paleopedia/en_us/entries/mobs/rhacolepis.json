@@ -1,0 +1,52 @@
+{
+	"name": "Rhacolepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rhacolepis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_rhacolepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rhacolepis",
+			"title": "Rhacolepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Crossognathiformes$(br)>Pachyrhizodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "R. buccalis",
+            "entity": "lepidodendron:prehistoric_flora_rhacolepis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhacolepis",
+			"type": "text",
+			"text": "Rhacolepis comes from the Early Cretaceous, with fossils being found in the Santana Formation, Brazil. It is a small pachyrhizodontiid, growing up to 25 cm in length. They are most well know for their excellent preservation, from full bodies, to their stomachs and the contents within, and even fully complete fossilised hearts."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhacolepis",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'rhakos', to mean 'cloth'; and 'lepís', to mean 'scales'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rhacolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rhacolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rhacolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rhacolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rhacolepis"
+		}
+	]
+}

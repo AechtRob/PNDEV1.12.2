@@ -1,0 +1,52 @@
+{
+	"name": "Eucritta",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eucritta_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_eucritta ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eucritta",
+			"title": "Eucritta",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Stegocephali"
+		},
+        	{
+            "type": "entity",
+            "name": "E. melanolimnetes",
+            "entity": "lepidodendron:prehistoric_flora_eucritta",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eucritta",
+			"type": "text",
+			"text": "Eucritta watsoni comes from the Lower Carboniferous, with fossils being found in the East Kirkton Quarry, Scotland (United Kingdom). It is a small Stem-tetropod, growing up to 25 cm in length. When first studied, the fossil specimens bore certain characteristics from early-reptiliomorphs, temnospondyls and baphetids, showing that these three orders diverged during the Carboniferous, rather than in the Devonian as previously thought."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eucritta",
+			"type": "text",
+			"text": "The generic name derives from the Greek word 'eu', to mean 'true'; and American vernacular 'critta', to mean 'creature'. The specific name derives from the Greek words 'melano', to mean 'black'; and 'limnetes', to mean 'lagoon'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eucritta"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eucritta"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eucritta"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eucritta"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eucritta"
+		}
+	]
+}

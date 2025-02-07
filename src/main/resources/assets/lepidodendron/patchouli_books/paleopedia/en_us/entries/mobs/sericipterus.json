@@ -1,0 +1,52 @@
+{
+	"name": "Sericipterus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sericipterus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sericipterus ",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sericipterus",
+			"title": "Sericipterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Pterosauria$(br)>Rhamphorhynchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. wucaiwanensis",
+            "entity": "lepidodendron:prehistoric_flora_sericipterus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sericipterus",
+			"type": "text",
+			"text": "Sericipterus wucaiwanensis comes from the Upper Jurassic, with fossils found in the Shishugou Formation, China. It is a small rhamphorhynchidan, with a wingspan of 1.7 m. The bears 3 crests on its skull, with the parietal crest being the first reported for a non-pterodactyloid."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sericipterus",
+			"type": "text",
+			"text": "The generic name derives from the Latin words 'sericum', to mean 'silk'; and  'pteron', to mean 'wing'. The specific name derives from the place name 'Wucaiwan', near to were the fossils were found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sericipterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sericipterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sericipterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sericipterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sericipterus"
+		}
+	]
+}

@@ -1,7 +1,7 @@
 {
 	"name": "Ozarkodina",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/ozarkodina_icon.png",
+	"icon": "paleopedia:textures/items/conodont_ozarkodina_icon.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_ozarkodina",
 	"pages": [
