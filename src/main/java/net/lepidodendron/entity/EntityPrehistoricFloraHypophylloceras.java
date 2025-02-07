@@ -38,7 +38,7 @@ public class EntityPrehistoricFloraHypophylloceras extends EntityPrehistoricFlor
 		minWidth = 0.1F;
 		maxWidth = 0.35F;
 		maxHeight = 0.35F;
-		maxHealthAgeable = 9.0D;
+		maxHealthAgeable = 3.0D;
 	}
 
 	@Override

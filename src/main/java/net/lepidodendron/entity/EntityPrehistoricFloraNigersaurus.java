@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 		minWidth = 0.1F;
 		maxWidth = 2.95F;
 		maxHeight = 3F;
-		maxHealthAgeable = 50.0D;
+		maxHealthAgeable = 76.0D;
 		TAIL_ANIMATION = Animation.create(155);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

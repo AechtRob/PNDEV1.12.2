@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 		minWidth = 0.05F;
 		maxWidth = 0.875F;
 		maxHeight = 1.4F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 40.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

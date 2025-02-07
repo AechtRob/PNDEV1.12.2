@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 		minWidth = 0.12F;
 		maxWidth = 0.15F;
 		maxHeight = 0.20F;
-		maxHealthAgeable = 6.0D;
+		maxHealthAgeable = 4.0D;
 		STAND_ANIMATION = Animation.create(15);
 	}
 

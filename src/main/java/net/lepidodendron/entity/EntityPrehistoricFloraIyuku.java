@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraIyuku extends EntityPrehistoricFloraLandBase 
 		minWidth = 0.12F;
 		maxWidth = 0.7F;
 		maxHeight = 1.3F;
-		maxHealthAgeable = 20.0D;
+		maxHealthAgeable = 40.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

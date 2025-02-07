@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraRhadinosteus extends EntityPrehistoricFloraSw
 		minWidth = 0.12F;
 		maxWidth = 0.15F;
 		maxHeight = 0.10F;
-		maxHealthAgeable = 3.0D;
+		maxHealthAgeable = 2.0D;
 		STAND_ANIMATION = Animation.create(15);
 		THREAT_ANIMATION = Animation.create(100);
 	}

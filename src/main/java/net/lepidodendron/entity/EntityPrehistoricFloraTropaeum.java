@@ -35,7 +35,7 @@ public class EntityPrehistoricFloraTropaeum extends EntityPrehistoricFloraNautil
 		minWidth = 0.07F;
 		maxWidth = 0.7F;
 		maxHeight = 0.8F;
-		maxHealthAgeable = 15.0D;
+		maxHealthAgeable = 10.0D;
 	}
 
 	@Override
