@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "multiblock",
-			"name": "Palaeophragmodictya sp.",
+			"name": "P. reticulata",
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [
@@ -29,7 +29,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_palaeophragmodictya",
 			"type": "text",
-			"text": "Palaeophragmodictya hails from the Upper Ediacaran, with fossils found in the White Sea, Russia and Flinders Ranges, South Australia. It is a sponge-like lifeform, growing up to 7 cm in diameter, with a 'stalk' rising 10+ cm up into the water column. The generic name derives from the Greek word 'Palaeos', to mean 'ancient', and the species name of 'Phragmodictya', a Carboniferous dictyosponge."
+			"text": "Palaeophragmodictya comes from the Upper Ediacaran, with fossils found in the White Sea, Russia and Flinders Ranges, South Australia. It is a sponge-like lifeform, growing up to 7 cm in diameter, with a 'stalk' rising 10+ cm up into the water column. The generic name derives from the Greek word 'Palaeos', to mean 'ancient', and the species name of 'Phragmodictya', a Carboniferous dictyosponge."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_palaeophragmodictya",

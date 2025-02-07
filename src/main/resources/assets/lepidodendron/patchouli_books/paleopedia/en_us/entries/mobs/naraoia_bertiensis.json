@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_naraoia_bertiensis",
 			"title": "Naraoia bertiensis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Nektaspida"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Nektaspida$(br)>Naraoiidae"
 		},
         	{
             "type": "entity",
@@ -21,12 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_naraoia_bertiensis",
 			"type": "text",
-			"text": "Naraoiids hail from the Middle Cambrian into the Silurian, with fossils found across the globe in America, China and Australia They are small, elongated nektaspiids, with flat semi-circular carapaces that bore no compound eyes on the top, and could grow from 1 to 6 cm in length. Species represented are Naraoia bertiensis, Naraoia spinosa and Pseudonaraoia hammanni."
+			"text": "Naraoioa bertiensis comes from the Upper, with fossils found in the Bertie Formation, Canada. It is a small naraoiid, growing up to 3.5 cm in length. They had flat semi-circular cephalons that bore no compound eyes on the top, whilst their pygidium ended with a point."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_naraoia_bertiensis",
 			"type": "text",
-			"text": "The family and generic names derive from the Latinised place name of 'Narao', a group of small lakes in Canada, near to where some of the first fossils of Naraoia were found."
+			"text": "The generic names derive from the Latinised place name of 'Narao', a group of small lakes in Canada, near to where some of the first fossils of naraoiids were found. The specific name derives from the place name 'Bertie Formation', where they were found; and the Latin word 'ensis', to mean 'belonging to'."
 		},
 		{
 			"type": "lepidodendron:diet",

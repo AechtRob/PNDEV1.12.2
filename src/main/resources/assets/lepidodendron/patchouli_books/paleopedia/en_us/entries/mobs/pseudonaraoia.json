@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pseudonaraoia",
 			"title": "Pseudonaraoia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Nektaspida"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Nektaspida$(brNaraoiidae"
 		},
 		{
 			"type": "entity",
@@ -19,14 +19,14 @@
 			"default_rotation": 0
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_pseudonaraoia",
+			"advancement": "lepidodendron:pf_adv_book_naraoia_spinosa",
 			"type": "text",
-			"text": "Naraoiids hail from the Middle Cambrian into the Silurian, with fossils found across the globe in America, China and Australia They are small, elongated nektaspiids, with flat semi-circular carapaces that bore no compound eyes on the top, and could grow from 1 to 6 cm in length. Species represented are Naraoia bertiensis, Naraoia spinosa and Pseudonaraoia hammanni."
+			"text": "Pseudonaraoia hammanni comes from the Middle Ordovician, with fossils found in the Maotianshan Shales, China. It is a small naraoiid, growing up to 1.75 cm in length. They had flat semi-circular cephalons that bore no compound eyes on the top, and a elongated pygidium, both of which bore spines."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_pseudonaraoia",
+			"advancement": "lepidodendron:pf_adv_book_naraoia_spinosa",
 			"type": "text",
-			"text": "The family and generic names derive from the Latinised place name of 'Narao', a group of small lakes in Canada, near to where some of the first fossils of Naraoia were found."
+			"text": "The generic names derive from the Latin word 'pseudes', to mean 'false'; and the Latinised place name of 'Narao', a group of small lakes in Canada, near to where some of the first fossils of naraoiids were found. The specific name derives from the Latinised surname of Dr. Wolfgang Hammann, a German palaeontologist who studied both trilobites and naraoiids."
 		},
 		{
 			"type": "lepidodendron:diet",

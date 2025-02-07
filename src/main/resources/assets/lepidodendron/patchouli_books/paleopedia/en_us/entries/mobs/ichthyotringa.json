@@ -1,0 +1,47 @@
+{
+	"name": "Ichthyotringa",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ichthyotringa_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ichthyotringa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ichthyotringa",
+			"title": "Ichthyotringa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Alepisauriformes"
+		},
+        	{
+            "type": "entity",
+            "name": "I. tenuirostris",
+            "entity": "lepidodendron:prehistoric_flora_ichthyotringa",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ichthyotringa",
+			"type": "text",
+			"text": "Ichthyotringa comes from the Cretaceous, with fossils being found in the Muhi Quarry, Mexico. It is the small alepisauriforme, growing up to 7 cm in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ichthyotringa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ichthyotringa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ichthyotringa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ichthyotringa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ichthyotringa"
+		}
+	]
+}

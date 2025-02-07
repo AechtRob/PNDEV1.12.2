@@ -1,0 +1,47 @@
+{
+	"name": "Araripesuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/araripesuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_araripesuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_araripesuchus",
+			"title": "Araripesuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Crocodyliformes$(br)>Notosuchia$(br)>Uruguaysuchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. gomesii",
+            "entity": "lepidodendron:prehistoric_flora_araripesuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_araripesuchus",
+			"type": "text",
+			"text": "Araripesuchus comes from the Cretaceous, with fossils being found in formations across South America and Africa. It is the small uruguaysuchid, growing up to 1 m in length. It is known their bulged edges of the snout, with this being most prominent around the maxillary tooth. The snout itself is also smoother than most crocodyliforms."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_araripesuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_araripesuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_araripesuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_araripesuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_araripesuchus"
+		}
+	]
+}

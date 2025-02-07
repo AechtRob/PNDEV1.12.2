@@ -1,0 +1,47 @@
+{
+	"name": "Iemanja",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/iemanja_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_iemanja",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_iemanja",
+			"title": "Iemanja",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Pycnodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "I. palma",
+            "entity": "lepidodendron:prehistoric_flora_iemanja",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_iemanja",
+			"type": "text",
+			"text": "Iemanja palma comes from the Early Cretaceous, with fossils being found in the Romualdo Formation, Brazil. It is the small pycnodontiforme, growing up to 60 cm in length. It is known for its long snout, most likely used to feed from cracks and crevices in reef habitats. The generic name derives from the name 'Yemọja', a water spirit in Brazilian myth."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_iemanja"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_iemanja"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_iemanja"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_iemanja"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_iemanja"
+		}
+	]
+}

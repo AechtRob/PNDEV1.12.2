@@ -1,0 +1,52 @@
+{
+	"name": "Protopsephurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/protopsephurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_protopsephurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_protopsephurus",
+			"title": "Protopsephurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Acipenseriformes$(br)>Polyodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. liui",
+            "entity": "lepidodendron:prehistoric_flora_protopsephurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_protopsephurus",
+			"type": "text",
+			"text": "Protopsephurus liui comes from the Early Cretaceous, with fossils being found in the Yixian, Jiufotang and Huajiying Formations, China. It is the small polyodontiid, growing up to 80 cm in length. It is the oldest and most basal paddle fish known. Its snout is a lot shorter, and the roof of its skull is more"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_protopsephurus",
+			"type": "text",
+			"text": "archaic than known paddle fish. The generic name derives from the Greek 'protos', to mean 'first'; and 'psepharos', to mean 'cloudy one' or 'psephus', to mean 'pebble'; and 'phorus', to mean 'holder'. The specific name derivation is unknown."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_protopsephurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_protopsephurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_protopsephurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_protopsephurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_protopsephurus"
+		}
+	]
+}

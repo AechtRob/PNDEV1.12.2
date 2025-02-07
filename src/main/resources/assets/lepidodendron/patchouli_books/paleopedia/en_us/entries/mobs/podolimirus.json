@@ -21,12 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_podolimirus",
 			"type": "text",
-			"text": "Podolimirus mirus comes from the Upper Ediacaran, with fossils from the Dniester River, Ukraine. It is a quilted lifeform that was able to move around in order to get food, and could grow up to 20 cm in length. Podolimirus is apart of the Proarticulata Phylum, which is restricted to the Ediacaran, and happens to be amongst the last. It also bears possible structures within its 'head' region."
+			"text": "Podolimirus mirus comes from the Upper Ediacaran, with fossils from the Dniester River, Ukraine. It is a quilted lifeform that was able to move around in order to get food, and could grow up to 20 cm in length. Podolimirus is apart of the proarticulata Phylum, which is restricted to the Ediacaran, and happens to be amongst the last. It also bears possible structures within its 'head' region."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_podolimirus",
 			"type": "text",
-			"text": "The generic name derives from the place name 'Podolia', the region to which it was found in; and the Latin word 'mÄ«rus', to mean 'wonderful/surprising'. This is also used for the specific name."
+			"text": "The generic name derives from the place name 'Podolia', the region to which it was found in; and the Latin word 'mīrus', to mean 'wonderful/surprising'. This is also used for the specific name."
 		},
 		{
 			"type": "lepidodendron:diet",

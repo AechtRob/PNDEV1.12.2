@@ -1,0 +1,52 @@
+{
+	"name": "Iyuku",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/iyuku_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_iyuku",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_iyuku",
+			"title": "Iyuku",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Ornithopoda$(br)>Iguanodontia"
+		},
+        	{
+            "type": "entity",
+            "name": "I. raathi",
+            "entity": "lepidodendron:prehistoric_flora_iyuku",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_iyuku",
+			"type": "text",
+			"text": "Iyuku raathi comes from the Early Cretaceous, with fossils being found in the Kirkwood Formation, South Africa. It is the small iguanodont, growing up to 4 m in length. Most specimens are known from juveniles and hatchlings, with possible subadults."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_iyuku",
+			"type": "text",
+			"text": "The generic name derives directly from the Xhosa word 'Iyuku', to mean 'hatchling'. The specific name derives from the surname of Mike Raath, a South African paleontologist who contributed a lot of South African paleontology, and the Kirkwood Formation itself."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_iyuku"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_iyuku"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_iyuku"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_iyuku"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_iyuku"
+		}
+	]
+}

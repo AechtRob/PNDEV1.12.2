@@ -1,0 +1,47 @@
+{
+	"name": "Xeneichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/xeneichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_xeneichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_xeneichthys",
+			"title": "Xeneichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Xeneichthyidae"
+		},
+        	{
+            "type": "entity",
+            "name": "X. yanesi",
+            "entity": "lepidodendron:prehistoric_flora_xeneichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xeneichthys",
+			"type": "text",
+			"text": "Xeneichthys yanesi comes from the Early Cretaceous, with fossils being found in the El Doctor Formation, Mexico. It is a small xeneichthyiid, growing up to 17 cm in length. The generic name derives from the Otomí word 'xene', to mean 'big mouth'; and the Greek word 'ichthys', to mean 'fish'. The specific name derives from the Yáñez family, who work at the site the fossils were found in."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_xeneichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_xeneichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_xeneichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_xeneichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_xeneichthys"
+		}
+	]
+}
