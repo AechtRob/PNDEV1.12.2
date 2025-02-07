@@ -136,6 +136,10 @@ public class EntityPrehistoricFloraPentecopterus extends EntityPrehistoricFloraS
 					}
 				}
 
+				if (this.getIsFast())
+				{
+					this.setWalkTick(0);
+				}
 				if ((!(this.getSwimTick() > 0)) && this.getIsSwimming()) {
 					this.setIsSwimming(false);
 					this.setAnimation(UNSWIM_ANIMATION);
@@ -210,7 +214,7 @@ public class EntityPrehistoricFloraPentecopterus extends EntityPrehistoricFloraS
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 6 && this.getAttackTarget() != null) {
 			launchAttack();
 			if (this.getOneHit()) {
 				this.setAttackTarget(null);

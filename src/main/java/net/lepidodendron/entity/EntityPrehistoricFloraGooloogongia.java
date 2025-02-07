@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraGooloogongia extends EntityPrehistoricFloraAg
 		minWidth = 0.2F;
 		maxWidth = 0.5F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 12.0D;
+		maxHealthAgeable = 8.0D;
 	}
 
 

@@ -123,6 +123,9 @@ public class EntityPrehistoricFloraCoeruleodraco extends EntityPrehistoricFloraS
 
 	protected float getAISpeedSwimmingAmphibian() {
 		float calcSpeed = 0.14F;
+		if (this.getAttackTarget() != null) {
+			calcSpeed = 0.25F;
+		}
 		if (this.isReallyInWater()) {
 			calcSpeed = 0.25f;
 		}
@@ -293,7 +296,7 @@ public class EntityPrehistoricFloraCoeruleodraco extends EntityPrehistoricFloraS
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 6 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
 

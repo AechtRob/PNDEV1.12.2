@@ -124,7 +124,7 @@ public class EntityPrehistoricFloraEocaecilia extends EntityPrehistoricFloraLand
 	}
 
 	public float getAISpeedLand() {
-		float calcSpeed = 0.31F;
+		float calcSpeed = 0.225F;
 		if (this.isReallyInWater()) {
 			calcSpeed= 0.39f;
 		}
@@ -171,7 +171,7 @@ public class EntityPrehistoricFloraEocaecilia extends EntityPrehistoricFloraLand
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.MEAT);
+		return ArrayUtils.addAll(DietString.BUG);
 	}
 
 
