@@ -1,0 +1,52 @@
+{
+	"name": "Leptocleidus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/leptocleidus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_leptocleidus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_leptocleidus",
+			"title": "Leptocleidus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Plesiosauria$(br)>Leptocleididae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. superstes",
+            "entity": "lepidodendron:prehistoric_flora_leptocleidus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_leptocleidus",
+			"type": "text",
+			"text": "Leptocleidus superstes comes from the Early Cretaceous, with fossils being found in the Sundays River Formation, South Africa; Weald Clay, England (United Kingdom); Carnarvon Basin, Australia. It is the small plesiosaur, growing up to 3 m in length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_leptocleidus",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'leptós', to mean 'slender'; and 'cleidoic', to mean 'clavicle'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_leptocleidus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_leptocleidus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_leptocleidus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_leptocleidus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_leptocleidus"
+		}
+	]
+}

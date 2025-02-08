@@ -1,0 +1,52 @@
+{
+	"name": "Psittacosaurus sinensis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/psittacosaurus_sinensis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_psittacosaurus_sinensis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_psittacosaurus_sinensis",
+			"title": "Psittacosaurus sinensis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Marginocephalia$(br)>Ceratopsia$(br)>Psittacosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. sinensis",
+            "entity": "lepidodendron:prehistoric_flora_psittacosaurus_sinensis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_psittacosaurus_sinensis",
+			"type": "text",
+			"text": "Psittacosaurus sinensis comes from the Early Cretaceous, with fossils being found in the Doushan Formation, China. It is the small psittacosauriid, growing up to 1 m in length. It is the second most well known species, behind P. mongoliensis."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_psittacosaurus_sinensis",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'psittakós', to mean 'parrot'; and 'sauros', to mean 'lizard'. The specific name derives from the Latin words 'Sinae', to mean 'China'; and 'ensis' to mean 'belonging to'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_psittacosaurus_sinensis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_psittacosaurus_sinensis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_psittacosaurus_sinensis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_psittacosaurus_sinensis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_psittacosaurus_sinensis"
+		}
+	]
+}

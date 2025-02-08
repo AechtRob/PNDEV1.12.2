@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "multiblock",
-			"name": "Arborea arborea",
+			"name": "A. arborea",
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [
@@ -34,7 +34,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_arborea",
 			"type": "text",
-			"text": "Arborea is unique amongst other Petalonamae in that it has a noticeable posterior and anterior, with the latter featuring the classic branching and the former being a smooth backing sheet. The generic name derives from the Latin word 'Arboreus', to mean 'tree-like'."
+			"text": "Arborea is unique amongst other petalonamae in that it has a noticeable posterior and anterior, with the latter featuring the classic branching and the former being a smooth backing sheet. The generic name derives from the Latin word 'Arboreus', to mean 'tree-like'."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_arborea",

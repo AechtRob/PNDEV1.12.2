@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_choia",
 			"title": "Choiid",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian-Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Porifera$(br)>Demospongiae$(br)>Protomonaxonida"
+			"text": "$(l)Temporal Range:$() Cambrian-Silurian$(br2)>Porifera$(br)>Demospongiae$(br)>Protomonaxonida"
 		},
 		{
 			"type": "multiblock",
@@ -34,7 +34,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_choia",
 			"type": "text",
-			"text": "The generic name possibly derives from the Spanish word 'Cholla', which is the nickname of a spikey cactus genus known as 'Cylindropuntia'."
+			"text": "The generic name possibly derives from the Spanish word 'Cholla', which is the nickname of a spiky cactus genus known as 'Cylindropuntia'."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_choia",

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "multiblock",
-			"name": "Pteridinium sp.",
+			"name": "P. simplex ",
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [
@@ -34,7 +34,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_pteridinium",
 			"type": "text",
-			"text": "The generic name derives from the Greek word 'ptÃ©ris', to mean 'fern'. Pteridium was the original generic name, but as this had already been given to an extant brackern fern, the name was altered slightly to what we have today."
+			"text": "The generic name derives from the Greek word 'ptéris', to mean 'fern'. Pteridium was the original generic name, but as this had already been given to an extant bracken fern, the name was altered slightly to what we have today."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pteridinium",

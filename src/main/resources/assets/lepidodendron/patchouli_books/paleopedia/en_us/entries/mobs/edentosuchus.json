@@ -1,0 +1,47 @@
+{
+	"name": "Edentosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/edentosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_edentosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_edentosuchus",
+			"title": "Edentosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Crocodyliformes$(br)>Protosuchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. tienshanensis",
+            "entity": "lepidodendron:prehistoric_flora_edentosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_edentosuchus",
+			"type": "text",
+			"text": "Edentosuchus tienshanensis comes from the Early Cretaceous, with fossils being found in the Lianmuqin Formation, China. It is the small protosuchid, growing up to 40 cm in length. It is known for having heterodont teeth, were it possessed more than one tooth morphology, for example the second tooth on the lower jaw was a enlarged fang."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_edentosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_edentosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_edentosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_edentosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_edentosuchus"
+		}
+	]
+}

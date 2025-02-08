@@ -1,0 +1,52 @@
+{
+	"name": "Psittacosaurus sibiricus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/psittacosaurus_sibiricus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_psittacosaurus_sibiricus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_psittacosaurus_sibiricus",
+			"title": "Psittacosaurus sibiricus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Marginocephalia$(br)>Ceratopsia$(br)>Psittacosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. sibiricus",
+            "entity": "lepidodendron:prehistoric_flora_psittacosaurus_sibiricus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_psittacosaurus_sibiricus",
+			"type": "text",
+			"text": "Psittacosaurus sibiricus comes from the Early Cretaceous, with fossils being found in the Ilek Formation, Siberia (Russia). It is the largest psittacosauriid, growing up to 2.5 m in length, and weighing around 20 kg. They are most well known for their unique set of horn ornamentation, which are slightly pointing forwards."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_psittacosaurus_sibiricus",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'psittakós', to mean 'parrot'; and 'sauros', to mean 'lizard'. The specific name derives from the Latinised place name 'Siberia', where the fossils are found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_psittacosaurus_sibiricus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_psittacosaurus_sibiricus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_psittacosaurus_sibiricus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_psittacosaurus_sibiricus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_psittacosaurus_sibiricus"
+		}
+	]
+}

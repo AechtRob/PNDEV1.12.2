@@ -1,0 +1,52 @@
+{
+	"name": "Luskhan",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/luskhan_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_luskhan",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_luskhan",
+			"title": "Luskhan",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Plesiosauria$(br)>Pliosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. itilensis",
+            "entity": "lepidodendron:prehistoric_flora_luskhan",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_luskhan",
+			"type": "text",
+			"text": "Luskhan itilensis comes from the Early Cretaceous, with fossils being found in the Volga River, Russia. It is the small pliosaurid, growing up to 6.5 cm in length. It is known for having a unusally slender snout from other pliosaurids. It is also considered to be the most basal brachaucheninae,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_luskhan",
+			"type": "text",
+			"text": "bearing features from both more basal and derived pliosaurs. The generic name derives from 'luuses', the name spirits in Monglian and Turkic myth; and 'khan', to mean 'chief'. The specific name derives from the Turkic name for the Volga River, 'Itil'; and the Latin word 'ensis', to mean 'belonging to'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_luskhan"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_luskhan"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_luskhan"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_luskhan"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_luskhan"
+		}
+	]
+}

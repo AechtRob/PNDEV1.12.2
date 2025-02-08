@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "multiblock",
-			"name": "Conomedusites sp.",
+			"name": "C. lobatus",
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [
@@ -29,7 +29,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_conomedusites",
 			"type": "text",
-			"text": "Conomedusites was an Ediacaran organism with 4-lateral symmetry thought to be a stem cnidarian, the group which now contain jellyfish. Its main body took a somewhat squat cone shaped. Its fossils are found in colonies, and was thought to be attached to surfaces with the main body possessing some buoyancy to keep it upright. It was likely a filter feeder."
+			"text": "Conomedusites lobatus was an Ediacaran organism with 4-lateral symmetry thought to be a stem cnidarian, the group which now contain jellyfish. Its main body took a somewhat squat cone shaped. Its fossils are found in colonies, and was thought to be attached to surfaces with the main body possessing some buoyancy to keep it upright. It was likely a filter feeder."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_conomedusites",

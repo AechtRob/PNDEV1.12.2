@@ -1,0 +1,52 @@
+{
+	"name": "Ankylosphenodon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ankylosphenodon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ankylosphenodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ankylosphenodon",
+			"title": "Ankylosphenodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Sphenodontia$(br)>Sphenodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. pachyostosus",
+            "entity": "lepidodendron:prehistoric_flora_ankylosphenodon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ankylosphenodon",
+			"type": "text",
+			"text": "Ankylosphenodon pachyostosus comes from the Early Cretaceous, with fossils being found in the Tlayúa Formation, Mexico. It is the small sphenodontid, growing up to 28 cm in length. Despite its skull material being poorly preserved, it has been noted that its teeth appeared to have continuously grown, similar to rodents."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ankylosphenodon",
+			"type": "text",
+			"text": "It has also been noted that the post-cranial material is similar in morphology to semi-aquatic reptiles, like marine iguanas. The generic name derives from the Greek word 'ankylos', to mean 'fused/bent'; and the generic name 'Sphenodon'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ankylosphenodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ankylosphenodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ankylosphenodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ankylosphenodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ankylosphenodon"
+		}
+	]
+}
