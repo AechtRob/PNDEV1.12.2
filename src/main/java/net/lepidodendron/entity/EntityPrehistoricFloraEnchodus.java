@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraEnchodus extends EntityPrehistoricFloraAgeabl
 
 	@Override
 	public int getShoalDist() {
-		return 3;
+		return 4;
 	}
 
 	@Override

@@ -69,12 +69,6 @@ public class EntityPrehistoricFloraMawsonia extends EntityPrehistoricFloraAgeabl
 
 	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous";}
 
-	//public static String getHabitat() {return "Aquatic Lobe-Finned Fish (Coelacanth)";}
-
-	@Override
-	public void playLivingSound() {
-	}
-
 	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
 		return new EntityPrehistoricFloraMawsonia(this.world);

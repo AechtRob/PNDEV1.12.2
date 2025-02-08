@@ -112,7 +112,7 @@ public class EntityPrehistoricFloraAcutiramus extends EntityPrehistoricFloraEury
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.MEAT, DietString.FISH);
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.FISH, DietString.MEAT), DietString.FISHFOOD);
 	}
 
 	@Override

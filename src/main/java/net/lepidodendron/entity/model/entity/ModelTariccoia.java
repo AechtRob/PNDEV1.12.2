@@ -46,221 +46,221 @@ public class ModelTariccoia extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer rightleg4;
 
     public ModelTariccoia() {
-        this.textureWidth = 36;
-        this.textureHeight = 36;
+        textureWidth = 36;
+        textureHeight = 36;
 
-        this.tariccoia = new AdvancedModelRenderer(this);
-        this.tariccoia.setRotationPoint(0.0F, 24.0F, 0.0F);
-
-
-        this.cephalon = new AdvancedModelRenderer(this);
-        this.cephalon.setRotationPoint(0.0F, -1.95F, -3.0F);
-        this.tariccoia.addChild(cephalon);
-        this.cephalon.cubeList.add(new ModelBox(cephalon, 0, 8, -0.5F, 0.0F, -5.0F, 1, 1, 1, -0.002F, false));
-        this.cephalon.cubeList.add(new ModelBox(cephalon, 11, 0, -3.5F, 0.0F, -2.0F, 7, 1, 2, 0.0F, false));
-        this.cephalon.cubeList.add(new ModelBox(cephalon, 10, 17, -2.5F, 0.0F, -4.0F, 5, 1, 2, -0.001F, false));
-        this.cephalon.cubeList.add(new ModelBox(cephalon, 0, 22, -1.0F, 0.5F, -2.3F, 2, 1, 2, 0.051F, false));
-
-        this.cube_r1 = new AdvancedModelRenderer(this);
-        this.cube_r1.setRotationPoint(-0.5F, 3.0F, -5.0F);
-        this.cephalon.addChild(cube_r1);
-        this.setRotateAngle(cube_r1, 0.0F, 0.3927F, 0.0F);
-        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 0, 0, -2.0F, -3.0F, 0.0F, 2, 1, 1, -0.003F, true));
-
-        this.cube_r2 = new AdvancedModelRenderer(this);
-        this.cube_r2.setRotationPoint(-2.3478F, 3.0F, -4.2346F);
-        this.cephalon.addChild(cube_r2);
-        this.setRotateAngle(cube_r2, 0.0F, 0.8727F, 0.0F);
-        this.cube_r2.cubeList.add(new ModelBox(cube_r2, 6, 13, -2.0F, -3.0F, 0.0F, 2, 1, 2, -0.002F, true));
-
-        this.cube_r3 = new AdvancedModelRenderer(this);
-        this.cube_r3.setRotationPoint(-3.6333F, 3.0F, -2.7025F);
-        this.cephalon.addChild(cube_r3);
-        this.setRotateAngle(cube_r3, 0.0F, 1.3963F, 0.0F);
-        this.cube_r3.cubeList.add(new ModelBox(cube_r3, 11, 3, -2.0F, -3.0F, 0.0F, 2, 1, 1, -0.001F, true));
-
-        this.cube_r4 = new AdvancedModelRenderer(this);
-        this.cube_r4.setRotationPoint(-3.9806F, 3.0F, -0.7329F);
-        this.cephalon.addChild(cube_r4);
-        this.setRotateAngle(cube_r4, 0.0F, 1.5708F, 0.0F);
-        this.cube_r4.cubeList.add(new ModelBox(cube_r4, 0, 3, -1.0F, -3.0F, 0.0F, 1, 1, 2, -0.003F, true));
-
-        this.cube_r5 = new AdvancedModelRenderer(this);
-        this.cube_r5.setRotationPoint(3.9806F, 3.0F, -0.7329F);
-        this.cephalon.addChild(cube_r5);
-        this.setRotateAngle(cube_r5, 0.0F, -1.5708F, 0.0F);
-        this.cube_r5.cubeList.add(new ModelBox(cube_r5, 0, 3, 0.0F, -3.0F, 0.0F, 1, 1, 2, -0.003F, false));
-
-        this.cube_r6 = new AdvancedModelRenderer(this);
-        this.cube_r6.setRotationPoint(3.6333F, 3.0F, -2.7025F);
-        this.cephalon.addChild(cube_r6);
-        this.setRotateAngle(cube_r6, 0.0F, -1.3963F, 0.0F);
-        this.cube_r6.cubeList.add(new ModelBox(cube_r6, 11, 3, 0.0F, -3.0F, 0.0F, 2, 1, 1, -0.001F, false));
-
-        this.cube_r7 = new AdvancedModelRenderer(this);
-        this.cube_r7.setRotationPoint(2.3478F, 3.0F, -4.2346F);
-        this.cephalon.addChild(cube_r7);
-        this.setRotateAngle(cube_r7, 0.0F, -0.8727F, 0.0F);
-        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 6, 13, 0.0F, -3.0F, 0.0F, 2, 1, 2, -0.002F, false));
-
-        this.cube_r8 = new AdvancedModelRenderer(this);
-        this.cube_r8.setRotationPoint(0.5F, 3.0F, -5.0F);
-        this.cephalon.addChild(cube_r8);
-        this.setRotateAngle(cube_r8, 0.0F, -0.3927F, 0.0F);
-        this.cube_r8.cubeList.add(new ModelBox(cube_r8, 0, 0, 0.0F, -3.0F, 0.0F, 2, 1, 1, -0.003F, false));
-
-        this.anntennae1 = new AdvancedModelRenderer(this);
-        this.anntennae1.setRotationPoint(1.0F, 1.25F, -1.55F);
-        this.cephalon.addChild(anntennae1);
-        this.anntennae1.cubeList.add(new ModelBox(anntennae1, -5, 13, 0.0F, 0.0F, -4.5F, 3, 0, 5, 0.0F, true));
-
-        this.anntennae2 = new AdvancedModelRenderer(this);
-        this.anntennae2.setRotationPoint(-1.0F, 1.25F, -1.55F);
-        this.cephalon.addChild(anntennae2);
-        this.setRotateAngle(anntennae2, 0.0F, 0.0F, 0.0F);
-        this.anntennae2.cubeList.add(new ModelBox(anntennae2, -5, 13, -3.0F, 0.0F, -4.5F, 3, 0, 5, 0.0F, false));
-
-        this.thorax1 = new AdvancedModelRenderer(this);
-        this.thorax1.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.cephalon.addChild(thorax1);
-        this.setRotateAngle(thorax1, 0.0F, 0.0F, 0.0F);
+        tariccoia = new AdvancedModelRenderer(this);
+        tariccoia.setRotationPoint(0.0F, 24.0F, 0.0F);
 
 
-        this.cube_r9 = new AdvancedModelRenderer(this);
-        this.cube_r9.setRotationPoint(0.0F, 3.0F, 0.6F);
-        this.thorax1.addChild(cube_r9);
-        this.setRotateAngle(cube_r9, -3.1416F, 0.0F, 3.1416F);
-        this.cube_r9.cubeList.add(new ModelBox(cube_r9, 17, 5, -2.5F, -2.5F, -0.15F, 5, 1, 1, -0.002F, false));
-        this.cube_r9.cubeList.add(new ModelBox(cube_r9, 16, 7, -3.0F, -3.0F, -0.15F, 6, 1, 1, -0.002F, false));
+        cephalon = new AdvancedModelRenderer(this);
+        cephalon.setRotationPoint(0.0F, -1.95F, -3.0F);
+        tariccoia.addChild(cephalon);
+        cephalon.cubeList.add(new ModelBox(cephalon, 0, 8, -0.5F, 0.0F, -5.0F, 1, 1, 1, -0.002F, false));
+        cephalon.cubeList.add(new ModelBox(cephalon, 11, 0, -3.5F, 0.0F, -2.0F, 7, 1, 2, 0.0F, false));
+        cephalon.cubeList.add(new ModelBox(cephalon, 10, 17, -2.5F, 0.0F, -4.0F, 5, 1, 2, -0.001F, false));
+        cephalon.cubeList.add(new ModelBox(cephalon, 0, 22, -1.0F, 0.5F, -2.3F, 2, 1, 2, 0.051F, false));
 
-        this.thorax2 = new AdvancedModelRenderer(this);
-        this.thorax2.setRotationPoint(0.0F, 0.0F, 0.7F);
-        this.thorax1.addChild(thorax2);
-        this.setRotateAngle(thorax2, 0.0F, 0.0F, 0.0F);
+        cube_r1 = new AdvancedModelRenderer(this);
+        cube_r1.setRotationPoint(-0.5F, 3.0F, -5.0F);
+        cephalon.addChild(cube_r1);
+        setRotateAngle(cube_r1, 0.0F, 0.3927F, 0.0F);
+        cube_r1.cubeList.add(new ModelBox(cube_r1, 0, 0, -2.0F, -3.0F, 0.0F, 2, 1, 1, -0.003F, true));
 
+        cube_r2 = new AdvancedModelRenderer(this);
+        cube_r2.setRotationPoint(-2.3478F, 3.0F, -4.2346F);
+        cephalon.addChild(cube_r2);
+        setRotateAngle(cube_r2, 0.0F, 0.8727F, 0.0F);
+        cube_r2.cubeList.add(new ModelBox(cube_r2, 6, 13, -2.0F, -3.0F, 0.0F, 2, 1, 2, -0.002F, true));
 
-        this.cube_r10 = new AdvancedModelRenderer(this);
-        this.cube_r10.setRotationPoint(0.0F, 3.0F, 0.9F);
-        this.thorax2.addChild(cube_r10);
-        this.setRotateAngle(cube_r10, -3.1416F, 0.0F, 3.1416F);
-        this.cube_r10.cubeList.add(new ModelBox(cube_r10, 0, 25, -2.5F, -2.5F, 0.1F, 5, 1, 1, -0.004F, false));
-        this.cube_r10.cubeList.add(new ModelBox(cube_r10, 22, 17, -3.0F, -3.0F, 0.1F, 6, 1, 1, -0.004F, false));
+        cube_r3 = new AdvancedModelRenderer(this);
+        cube_r3.setRotationPoint(-3.6333F, 3.0F, -2.7025F);
+        cephalon.addChild(cube_r3);
+        setRotateAngle(cube_r3, 0.0F, 1.3963F, 0.0F);
+        cube_r3.cubeList.add(new ModelBox(cube_r3, 11, 3, -2.0F, -3.0F, 0.0F, 2, 1, 1, -0.001F, true));
 
-        this.leftleg1 = new AdvancedModelRenderer(this);
-        this.leftleg1.setRotationPoint(0.8413F, 1.4881F, 0.35F);
-        this.thorax2.addChild(leftleg1);
-        this.setRotateAngle(leftleg1, 0.0189F, 0.0852F, 0.219F);
-        this.leftleg1.cubeList.add(new ModelBox(leftleg1, -1, 10, 0.2438F, -0.0541F, -0.5109F, 2, 0, 1, 0.0F, false));
+        cube_r4 = new AdvancedModelRenderer(this);
+        cube_r4.setRotationPoint(-3.9806F, 3.0F, -0.7329F);
+        cephalon.addChild(cube_r4);
+        setRotateAngle(cube_r4, 0.0F, 1.5708F, 0.0F);
+        cube_r4.cubeList.add(new ModelBox(cube_r4, 0, 3, -1.0F, -3.0F, 0.0F, 1, 1, 2, -0.003F, true));
 
-        this.rightleg1 = new AdvancedModelRenderer(this);
-        this.rightleg1.setRotationPoint(-0.8413F, 1.4881F, 0.35F);
-        this.thorax2.addChild(rightleg1);
-        this.setRotateAngle(rightleg1, 0.0189F, -0.0852F, -0.219F);
-        this.rightleg1.cubeList.add(new ModelBox(rightleg1, -1, 10, -2.2438F, -0.0541F, -0.5109F, 2, 0, 1, 0.0F, true));
+        cube_r5 = new AdvancedModelRenderer(this);
+        cube_r5.setRotationPoint(3.9806F, 3.0F, -0.7329F);
+        cephalon.addChild(cube_r5);
+        setRotateAngle(cube_r5, 0.0F, -1.5708F, 0.0F);
+        cube_r5.cubeList.add(new ModelBox(cube_r5, 0, 3, 0.0F, -3.0F, 0.0F, 1, 1, 2, -0.003F, false));
 
-        this.thorax3 = new AdvancedModelRenderer(this);
-        this.thorax3.setRotationPoint(0.0F, 3.0F, 0.75F);
-        this.thorax2.addChild(thorax3);
-        this.setRotateAngle(thorax3, 0.0F, 0.0F, 0.0F);
+        cube_r6 = new AdvancedModelRenderer(this);
+        cube_r6.setRotationPoint(3.6333F, 3.0F, -2.7025F);
+        cephalon.addChild(cube_r6);
+        setRotateAngle(cube_r6, 0.0F, -1.3963F, 0.0F);
+        cube_r6.cubeList.add(new ModelBox(cube_r6, 11, 3, 0.0F, -3.0F, 0.0F, 2, 1, 1, -0.001F, false));
 
+        cube_r7 = new AdvancedModelRenderer(this);
+        cube_r7.setRotationPoint(2.3478F, 3.0F, -4.2346F);
+        cephalon.addChild(cube_r7);
+        setRotateAngle(cube_r7, 0.0F, -0.8727F, 0.0F);
+        cube_r7.cubeList.add(new ModelBox(cube_r7, 6, 13, 0.0F, -3.0F, 0.0F, 2, 1, 2, -0.002F, false));
 
-        this.cube_r11 = new AdvancedModelRenderer(this);
-        this.cube_r11.setRotationPoint(0.0F, 0.0F, 0.9F);
-        this.thorax3.addChild(cube_r11);
-        this.setRotateAngle(cube_r11, -3.1416F, 0.0F, 3.1416F);
-        this.cube_r11.cubeList.add(new ModelBox(cube_r11, 17, 3, -2.5F, -2.5F, 0.1F, 5, 1, 1, -0.006F, false));
-        this.cube_r11.cubeList.add(new ModelBox(cube_r11, 16, 7, -3.0F, -3.0F, 0.1F, 6, 1, 1, -0.006F, false));
+        cube_r8 = new AdvancedModelRenderer(this);
+        cube_r8.setRotationPoint(0.5F, 3.0F, -5.0F);
+        cephalon.addChild(cube_r8);
+        setRotateAngle(cube_r8, 0.0F, -0.3927F, 0.0F);
+        cube_r8.cubeList.add(new ModelBox(cube_r8, 0, 0, 0.0F, -3.0F, 0.0F, 2, 1, 1, -0.003F, false));
 
-        this.pygidium = new AdvancedModelRenderer(this);
-        this.pygidium.setRotationPoint(0.0F, -3.0F, 0.575F);
-        this.thorax3.addChild(pygidium);
-        this.setRotateAngle(pygidium, 0.0F, 0.0F, 0.0F);
-        this.pygidium.cubeList.add(new ModelBox(pygidium, 0, 8, -3.0F, 0.5F, 0.025F, 6, 1, 4, 0.0F, false));
-        this.pygidium.cubeList.add(new ModelBox(pygidium, 16, 9, -2.0F, 0.5F, 4.025F, 4, 1, 2, 0.0F, false));
+        anntennae1 = new AdvancedModelRenderer(this);
+        anntennae1.setRotationPoint(1.0F, 1.25F, -1.55F);
+        cephalon.addChild(anntennae1);
+        anntennae1.cubeList.add(new ModelBox(anntennae1, -5, 13, 0.0F, 0.0F, -4.5F, 3, 0, 5, 0.0F, true));
 
-        this.cube_r12 = new AdvancedModelRenderer(this);
-        this.cube_r12.setRotationPoint(2.4962F, 0.0F, 3.9973F);
-        this.pygidium.addChild(cube_r12);
-        this.setRotateAngle(cube_r12, -1.5708F, -1.4399F, 1.5708F);
-        this.cube_r12.cubeList.add(new ModelBox(cube_r12, 15, 20, -0.025F, 0.0F, -1.0F, 5, 0, 7, 0.0F, false));
+        anntennae2 = new AdvancedModelRenderer(this);
+        anntennae2.setRotationPoint(-1.0F, 1.25F, -1.55F);
+        cephalon.addChild(anntennae2);
+        setRotateAngle(anntennae2, 0.0F, 0.0F, 0.0F);
+        anntennae2.cubeList.add(new ModelBox(anntennae2, -5, 13, -3.0F, 0.0F, -4.5F, 3, 0, 5, 0.0F, false));
 
-        this.cube_r13 = new AdvancedModelRenderer(this);
-        this.cube_r13.setRotationPoint(0.4976F, 0.0F, 6.9382F);
-        this.pygidium.addChild(cube_r13);
-        this.setRotateAngle(cube_r13, 0.0F, -1.5708F, 0.0F);
-        this.cube_r13.cubeList.add(new ModelBox(cube_r13, -1, -1, -6.9409F, 0.0F, -2.9986F, 1, 1, 7, 0.0F, false));
-
-        this.cube_r14 = new AdvancedModelRenderer(this);
-        this.cube_r14.setRotationPoint(0.0F, 3.0F, 4.975F);
-        this.pygidium.addChild(cube_r14);
-        this.setRotateAngle(cube_r14, -3.1416F, 0.0F, 3.1416F);
-        this.cube_r14.cubeList.add(new ModelBox(cube_r14, 12, 13, -3.5F, -3.0F, 1.0F, 7, 1, 3, -0.001F, false));
-
-        this.cube_r15 = new AdvancedModelRenderer(this);
-        this.cube_r15.setRotationPoint(-0.1F, 0.025F, 3.9739F);
-        this.pygidium.addChild(cube_r15);
-        this.setRotateAngle(cube_r15, -3.0543F, 0.0F, 3.1416F);
-        this.cube_r15.cubeList.add(new ModelBox(cube_r15, 10, 20, -1.6F, -0.0249F, -2.9989F, 3, 1, 3, -0.002F, false));
-
-        this.cube_r16 = new AdvancedModelRenderer(this);
-        this.cube_r16.setRotationPoint(0.0F, -1.0F, 0.875F);
-        this.pygidium.addChild(cube_r16);
-        this.setRotateAngle(cube_r16, -3.0543F, 0.0F, 3.1416F);
-        this.cube_r16.cubeList.add(new ModelBox(cube_r16, 20, 7, 0.0F, 0.0F, -6.0F, 0, 1, 5, 0.0F, false));
-
-        this.cube_r17 = new AdvancedModelRenderer(this);
-        this.cube_r17.setRotationPoint(0.0F, 3.0F, -0.425F);
-        this.pygidium.addChild(cube_r17);
-        this.setRotateAngle(cube_r17, -3.1416F, 0.0F, 3.1416F);
-        this.cube_r17.cubeList.add(new ModelBox(cube_r17, 0, 18, -1.0F, -3.5F, -4.3F, 2, 1, 3, 0.0F, false));
-
-        this.bone = new AdvancedModelRenderer(this);
-        this.bone.setRotationPoint(2.845F, 0.0323F, 4.8419F);
-        this.pygidium.addChild(bone);
-        this.setRotateAngle(bone, 0.0349F, -0.0338F, -0.0317F);
+        thorax1 = new AdvancedModelRenderer(this);
+        thorax1.setRotationPoint(0.0F, 0.0F, 0.0F);
+        cephalon.addChild(thorax1);
+        setRotateAngle(thorax1, 0.0F, 0.0F, 0.0F);
 
 
-        this.bone2 = new AdvancedModelRenderer(this);
-        this.bone2.setRotationPoint(-2.845F, 0.0323F, 4.8419F);
-        this.pygidium.addChild(bone2);
-        this.setRotateAngle(bone2, 0.0349F, 0.0338F, 0.0317F);
+        cube_r9 = new AdvancedModelRenderer(this);
+        cube_r9.setRotationPoint(0.0F, 3.0F, 0.6F);
+        thorax1.addChild(cube_r9);
+        setRotateAngle(cube_r9, -3.1416F, 0.0F, 3.1416F);
+        cube_r9.cubeList.add(new ModelBox(cube_r9, 17, 5, -2.5F, -2.5F, -0.15F, 5, 1, 1, -0.002F, false));
+        cube_r9.cubeList.add(new ModelBox(cube_r9, 16, 7, -3.0F, -3.0F, -0.15F, 6, 1, 1, -0.002F, false));
+
+        thorax2 = new AdvancedModelRenderer(this);
+        thorax2.setRotationPoint(0.0F, 0.0F, 0.7F);
+        thorax1.addChild(thorax2);
+        setRotateAngle(thorax2, 0.0F, 0.0F, 0.0F);
 
 
-        this.leftleg2 = new AdvancedModelRenderer(this);
-        this.leftleg2.setRotationPoint(1.1413F, 1.4881F, 0.525F);
-        this.pygidium.addChild(leftleg2);
-        this.setRotateAngle(leftleg2, 0.0F, 0.0F, 0.22F);
-        this.leftleg2.cubeList.add(new ModelBox(leftleg2, -1, 10, -0.0255F, 0.0057F, -0.4983F, 2, 0, 1, 0.0F, false));
+        cube_r10 = new AdvancedModelRenderer(this);
+        cube_r10.setRotationPoint(0.0F, 3.0F, 0.9F);
+        thorax2.addChild(cube_r10);
+        setRotateAngle(cube_r10, -3.1416F, 0.0F, 3.1416F);
+        cube_r10.cubeList.add(new ModelBox(cube_r10, 0, 25, -2.5F, -2.5F, 0.1F, 5, 1, 1, -0.004F, false));
+        cube_r10.cubeList.add(new ModelBox(cube_r10, 22, 17, -3.0F, -3.0F, 0.1F, 6, 1, 1, -0.004F, false));
 
-        this.rightleg2 = new AdvancedModelRenderer(this);
-        this.rightleg2.setRotationPoint(-1.1413F, 1.4881F, 0.525F);
-        this.pygidium.addChild(rightleg2);
-        this.setRotateAngle(rightleg2, 0.0F, 0.0F, -0.22F);
-        this.rightleg2.cubeList.add(new ModelBox(rightleg2, -1, 10, -1.9745F, 0.0057F, -0.4983F, 2, 0, 1, 0.0F, true));
+        leftleg1 = new AdvancedModelRenderer(this);
+        leftleg1.setRotationPoint(0.8413F, 1.4881F, 0.35F);
+        thorax2.addChild(leftleg1);
+        setRotateAngle(leftleg1, 0.0189F, 0.0852F, 0.219F);
+        leftleg1.cubeList.add(new ModelBox(leftleg1, -1, 10, 0.2438F, -0.0541F, -0.5109F, 2, 0, 1, 0.0F, false));
 
-        this.leftleg3 = new AdvancedModelRenderer(this);
-        this.leftleg3.setRotationPoint(1.0346F, 1.4881F, 2.4797F);
-        this.pygidium.addChild(leftleg3);
-        this.setRotateAngle(leftleg3, -0.0189F, -0.0852F, 0.219F);
-        this.leftleg3.cubeList.add(new ModelBox(leftleg3, -1, 10, 0.0064F, -0.0014F, -0.4996F, 2, 0, 1, 0.0F, false));
+        rightleg1 = new AdvancedModelRenderer(this);
+        rightleg1.setRotationPoint(-0.8413F, 1.4881F, 0.35F);
+        thorax2.addChild(rightleg1);
+        setRotateAngle(rightleg1, 0.0189F, -0.0852F, -0.219F);
+        rightleg1.cubeList.add(new ModelBox(rightleg1, -1, 10, -2.2438F, -0.0541F, -0.5109F, 2, 0, 1, 0.0F, true));
 
-        this.rightleg3 = new AdvancedModelRenderer(this);
-        this.rightleg3.setRotationPoint(-1.0346F, 1.4881F, 2.4797F);
-        this.pygidium.addChild(rightleg3);
-        this.setRotateAngle(rightleg3, -0.0189F, 0.0852F, -0.219F);
-        this.rightleg3.cubeList.add(new ModelBox(rightleg3, -1, 10, -2.0064F, -0.0014F, -0.4996F, 2, 0, 1, 0.0F, true));
+        thorax3 = new AdvancedModelRenderer(this);
+        thorax3.setRotationPoint(0.0F, 3.0F, 0.75F);
+        thorax2.addChild(thorax3);
+        setRotateAngle(thorax3, 0.0F, 0.0F, 0.0F);
 
-        this.leftleg4 = new AdvancedModelRenderer(this);
-        this.leftleg4.setRotationPoint(0.6913F, 1.4881F, 4.675F);
-        this.pygidium.addChild(leftleg4);
-        this.setRotateAngle(leftleg4, -0.0479F, -0.2129F, 0.2233F);
-        this.leftleg4.cubeList.add(new ModelBox(leftleg4, -1, 11, 0.0292F, -0.0065F, -0.7115F, 2, 0, 1, 0.0F, false));
 
-        this.rightleg4 = new AdvancedModelRenderer(this);
-        this.rightleg4.setRotationPoint(-0.6913F, 1.4881F, 4.675F);
-        this.pygidium.addChild(rightleg4);
-        this.setRotateAngle(rightleg4, -0.0479F, 0.2129F, -0.2233F);
-        this.rightleg4.cubeList.add(new ModelBox(rightleg4, -1, 11, -2.0292F, -0.0065F, -0.7115F, 2, 0, 1, 0.0F, true));
+        cube_r11 = new AdvancedModelRenderer(this);
+        cube_r11.setRotationPoint(0.0F, 0.0F, 0.9F);
+        thorax3.addChild(cube_r11);
+        setRotateAngle(cube_r11, -3.1416F, 0.0F, 3.1416F);
+        cube_r11.cubeList.add(new ModelBox(cube_r11, 17, 3, -2.5F, -2.5F, 0.1F, 5, 1, 1, -0.006F, false));
+        cube_r11.cubeList.add(new ModelBox(cube_r11, 16, 7, -3.0F, -3.0F, 0.1F, 6, 1, 1, -0.006F, false));
+
+        pygidium = new AdvancedModelRenderer(this);
+        pygidium.setRotationPoint(0.0F, -3.0F, 0.575F);
+        thorax3.addChild(pygidium);
+        setRotateAngle(pygidium, 0.0F, 0.0F, 0.0F);
+        pygidium.cubeList.add(new ModelBox(pygidium, 0, 8, -3.0F, 0.5F, 0.025F, 6, 1, 4, 0.0F, false));
+        pygidium.cubeList.add(new ModelBox(pygidium, 16, 9, -2.0F, 0.5F, 4.025F, 4, 1, 2, 0.0F, false));
+
+        cube_r12 = new AdvancedModelRenderer(this);
+        cube_r12.setRotationPoint(2.4962F, 0.0F, 3.9973F);
+        pygidium.addChild(cube_r12);
+        setRotateAngle(cube_r12, -1.5708F, -1.4399F, 1.5708F);
+        cube_r12.cubeList.add(new ModelBox(cube_r12, 15, 20, -0.025F, 0.0F, -1.0F, 5, 0, 7, 0.0F, false));
+
+        cube_r13 = new AdvancedModelRenderer(this);
+        cube_r13.setRotationPoint(0.4976F, 0.0F, 6.9382F);
+        pygidium.addChild(cube_r13);
+        setRotateAngle(cube_r13, 0.0F, -1.5708F, 0.0F);
+        cube_r13.cubeList.add(new ModelBox(cube_r13, 0, 0, -6.9409F, 0.0F, -2.9986F, 1, 1, 7, 0.0F, false));
+
+        cube_r14 = new AdvancedModelRenderer(this);
+        cube_r14.setRotationPoint(0.0F, 3.0F, 4.975F);
+        pygidium.addChild(cube_r14);
+        setRotateAngle(cube_r14, -3.1416F, 0.0F, 3.1416F);
+        cube_r14.cubeList.add(new ModelBox(cube_r14, 12, 13, -3.5F, -3.0F, 1.0F, 7, 1, 3, -0.001F, false));
+
+        cube_r15 = new AdvancedModelRenderer(this);
+        cube_r15.setRotationPoint(-0.1F, 0.025F, 3.9739F);
+        pygidium.addChild(cube_r15);
+        setRotateAngle(cube_r15, -3.0543F, 0.0F, 3.1416F);
+        cube_r15.cubeList.add(new ModelBox(cube_r15, 10, 20, -1.6F, -0.0249F, -2.9989F, 3, 1, 3, -0.002F, false));
+
+        cube_r16 = new AdvancedModelRenderer(this);
+        cube_r16.setRotationPoint(0.0F, -1.0F, 0.875F);
+        pygidium.addChild(cube_r16);
+        setRotateAngle(cube_r16, -3.0543F, 0.0F, 3.1416F);
+        cube_r16.cubeList.add(new ModelBox(cube_r16, 20, 7, 0.0F, 0.0F, -6.0F, 0, 1, 5, 0.0F, false));
+
+        cube_r17 = new AdvancedModelRenderer(this);
+        cube_r17.setRotationPoint(0.0F, 3.0F, -0.425F);
+        pygidium.addChild(cube_r17);
+        setRotateAngle(cube_r17, -3.1416F, 0.0F, 3.1416F);
+        cube_r17.cubeList.add(new ModelBox(cube_r17, 0, 18, -1.0F, -3.5F, -4.3F, 2, 1, 3, 0.0F, false));
+
+        bone = new AdvancedModelRenderer(this);
+        bone.setRotationPoint(2.845F, 0.0323F, 4.8419F);
+        pygidium.addChild(bone);
+        setRotateAngle(bone, 0.0349F, -0.0338F, -0.0317F);
+
+
+        bone2 = new AdvancedModelRenderer(this);
+        bone2.setRotationPoint(-2.845F, 0.0323F, 4.8419F);
+        pygidium.addChild(bone2);
+        setRotateAngle(bone2, 0.0349F, 0.0338F, 0.0317F);
+
+
+        leftleg2 = new AdvancedModelRenderer(this);
+        leftleg2.setRotationPoint(1.1413F, 1.4881F, 0.525F);
+        pygidium.addChild(leftleg2);
+        setRotateAngle(leftleg2, 0.0F, 0.0F, 0.22F);
+        leftleg2.cubeList.add(new ModelBox(leftleg2, -1, 10, -0.0255F, 0.0057F, -0.4983F, 2, 0, 1, 0.0F, false));
+
+        rightleg2 = new AdvancedModelRenderer(this);
+        rightleg2.setRotationPoint(-1.1413F, 1.4881F, 0.525F);
+        pygidium.addChild(rightleg2);
+        setRotateAngle(rightleg2, 0.0F, 0.0F, -0.22F);
+        rightleg2.cubeList.add(new ModelBox(rightleg2, -1, 10, -1.9745F, 0.0057F, -0.4983F, 2, 0, 1, 0.0F, true));
+
+        leftleg3 = new AdvancedModelRenderer(this);
+        leftleg3.setRotationPoint(1.0346F, 1.4881F, 2.4797F);
+        pygidium.addChild(leftleg3);
+        setRotateAngle(leftleg3, -0.0189F, -0.0852F, 0.219F);
+        leftleg3.cubeList.add(new ModelBox(leftleg3, -1, 10, 0.0064F, -0.0014F, -0.4996F, 2, 0, 1, 0.0F, false));
+
+        rightleg3 = new AdvancedModelRenderer(this);
+        rightleg3.setRotationPoint(-1.0346F, 1.4881F, 2.4797F);
+        pygidium.addChild(rightleg3);
+        setRotateAngle(rightleg3, -0.0189F, 0.0852F, -0.219F);
+        rightleg3.cubeList.add(new ModelBox(rightleg3, -1, 10, -2.0064F, -0.0014F, -0.4996F, 2, 0, 1, 0.0F, true));
+
+        leftleg4 = new AdvancedModelRenderer(this);
+        leftleg4.setRotationPoint(0.6913F, 1.4881F, 4.675F);
+        pygidium.addChild(leftleg4);
+        setRotateAngle(leftleg4, -0.0479F, -0.2129F, 0.2233F);
+        leftleg4.cubeList.add(new ModelBox(leftleg4, -1, 11, 0.0292F, -0.0065F, -0.7115F, 2, 0, 1, 0.0F, false));
+
+        rightleg4 = new AdvancedModelRenderer(this);
+        rightleg4.setRotationPoint(-0.6913F, 1.4881F, 4.675F);
+        pygidium.addChild(rightleg4);
+        setRotateAngle(rightleg4, -0.0479F, 0.2129F, -0.2233F);
+        rightleg4.cubeList.add(new ModelBox(rightleg4, -1, 11, -2.0292F, -0.0065F, -0.7115F, 2, 0, 1, 0.0F, true));
 
         updateDefaultPose();
     }

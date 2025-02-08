@@ -302,7 +302,7 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH, DietString.MEAT);
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.FISH, DietString.MEAT), DietString.FISHFOOD);
 	}
 
 	@Override

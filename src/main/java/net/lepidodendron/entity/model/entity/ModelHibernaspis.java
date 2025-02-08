@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraHibernaspis;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelRenderer;
@@ -290,6 +291,29 @@ public class ModelHibernaspis extends ModelBasePalaeopedia {
         //this.Body.offsetX = 0.2F;
         this.Body.offsetZ = -0.9F;
 
+        EntityPrehistoricFloraHibernaspis ee = (EntityPrehistoricFloraHibernaspis) e;
+        float speedmodifier = 1;
+        float swaymodifier = 1;
+
+        if (ee.getBuriedTick() > 0 || ee.getBuried() || ee.getSwimCount() <= 0) {
+            if (ee.getBuriedTick() > 0) {
+                speedmodifier = 6F;
+            }
+            if (ee.getBuried() && (ee.getBuriedTick() <= 0)) {
+                this.Body.offsetY = 2.4F;
+                this.Body.rotateAngleX = (float) Math.toRadians(40);
+                swaymodifier = 0;
+            }
+            else {
+                this.Body.offsetY = 2.4F - 1.3F + (1.3F * (float)((double)ee.getBuriedTick()/60D));
+                this.Body.rotateAngleX = (float) Math.toRadians(50 * ((double)ee.getBuriedTick()/60D));
+            }
+        }
+        else {
+            this.Body.offsetY = 1.3F;
+        }
+
+
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Tail1, this.Tail2, this.Tail3, this.Tail4};
 
@@ -309,14 +333,14 @@ public class ModelHibernaspis extends ModelBasePalaeopedia {
         }
         if (isAtBottom) {
             //System.err.println("Animation at bottom");
-            speed = 0.15F;
+            speed = 0.15F * speedmodifier;
             taildegree = 0.15F;
         }
 
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
             this.chainSwing(fishTail, speed, taildegree, -3, f2, 1);
-            this.swing(Body, speed, 0.3F, true, 0, 0, f2, 1);
+            this.swing(Body, speed, 0.3F * swaymodifier, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
                 this.Body.offsetY = 1.25F;

@@ -2215,14 +2215,14 @@ public class ModelKannemeyeria extends ModelBasePalaeopedia {
             zz = 2.04549 + (((tickAnim - 5) / 4) * (3.21435-(2.04549)));
         }
         else if (tickAnim >= 9 && tickAnim < 12) {
-            xx = 7.93194 + (((tickAnim - 9) / 3) * (25.70883-(7.93194)));
-            yy = -0.90565 + (((tickAnim - 9) / 3) * (-1.15264-(-0.90565)));
-            zz = 3.21435 + (((tickAnim - 9) / 3) * (4.09099-(3.21435)));
+            xx = 7.93194 + (((tickAnim - 9) / 3) * (22.94302-(7.93194)));
+            yy = -0.90565 + (((tickAnim - 9) / 3) * (1.35561-(-0.90565)));
+            zz = 3.21435 + (((tickAnim - 9) / 3) * (-4.81318-(3.21435)));
         }
         else if (tickAnim >= 12 && tickAnim < 14) {
-            xx = 25.70883 + (((tickAnim - 12) / 2) * (10.63038-(25.70883)));
-            yy = -1.15264 + (((tickAnim - 12) / 2) * (-0.66709-(-1.15264)));
-            zz = 4.09099 + (((tickAnim - 12) / 2) * (2.36765-(4.09099)));
+            xx = 22.94302 + (((tickAnim - 12) / 2) * (10.63038-(22.94302)));
+            yy = 1.35561 + (((tickAnim - 12) / 2) * (-0.66709-(1.35561)));
+            zz = -4.81318 + (((tickAnim - 12) / 2) * (2.36765-(-4.81318)));
         }
         else if (tickAnim >= 14 && tickAnim < 20) {
             xx = 10.63038 + (((tickAnim - 14) / 6) * (-8.60803-(10.63038)));
@@ -2254,13 +2254,18 @@ public class ModelKannemeyeria extends ModelBasePalaeopedia {
         }
         else if (tickAnim >= 9 && tickAnim < 12) {
             xx = 0 + (((tickAnim - 9) / 3) * (0-(0)));
-            yy = 0 + (((tickAnim - 9) / 3) * (0-(0)));
+            yy = 0 + (((tickAnim - 9) / 3) * (-0.75-(0)));
             zz = 0 + (((tickAnim - 9) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 12 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 12) / 8) * (0-(0)));
-            yy = 0 + (((tickAnim - 12) / 8) * (-0.175-(0)));
-            zz = 0 + (((tickAnim - 12) / 8) * (0-(0)));
+        else if (tickAnim >= 12 && tickAnim < 17) {
+            xx = 0 + (((tickAnim - 12) / 5) * (0-(0)));
+            yy = -0.75 + (((tickAnim - 12) / 5) * (0.325-(-0.75)));
+            zz = 0 + (((tickAnim - 12) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 17 && tickAnim < 20) {
+            xx = 0 + (((tickAnim - 17) / 3) * (0-(0)));
+            yy = 0.325 + (((tickAnim - 17) / 3) * (-0.175-(0.325)));
+            zz = 0 + (((tickAnim - 17) / 3) * (0-(0)));
         }
         else if (tickAnim >= 20 && tickAnim < 28) {
             xx = 0 + (((tickAnim - 20) / 8) * (0-(0)));
@@ -2750,8 +2755,8 @@ public class ModelKannemeyeria extends ModelBasePalaeopedia {
 
         this.setRotateAngle(hip, hip.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*254/0.5))*-1), hip.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*254))*0.5), hip.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*254-40))*-1.5));
         this.hip.rotationPointX = this.hip.rotationPointX + (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*254))*0.2);
-        this.hip.rotationPointY = this.hip.rotationPointY - (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*254/0.5-50))*-0.35);
-        this.hip.rotationPointZ = this.hip.rotationPointZ + (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*254/0.5-50))*0.4);
+        this.hip.rotationPointY = this.hip.rotationPointY - (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*254/0.5+50))*-0.6);
+        this.hip.rotationPointZ = this.hip.rotationPointZ + (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*254/0.5-50))*1);
 
 
         this.setRotateAngle(body, body.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*254/0.5+60))*1.8), body.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*254))*-0.5), body.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*254-160))*-2));
@@ -2803,6 +2808,7 @@ public class ModelKannemeyeria extends ModelBasePalaeopedia {
         this.root.rotationPointZ = this.root.rotationPointZ + (float)(zz);
 
     }
+
     public void animRunning(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraKannemeyeria entity = (EntityPrehistoricFloraKannemeyeria) entitylivingbaseIn;
         int animCycle = 17;

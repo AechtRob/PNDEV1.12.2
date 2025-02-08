@@ -556,7 +556,7 @@ public class ModelSordes extends ModelBasePalaeopedia {
             }
         }
 
-        if (ee.getAttachmentPos() == null) { //set wing membranes to their proper scale for flight
+        if (ee.getAttachmentPos() == null || ee.getAttachmentFacing() == EnumFacing.UP) { //set wing membranes to their proper scale for flight
             this.wing1left.setScale((float) 1, (float) 1, (float) 1);
             this.wing1right.setScale((float) 1, (float) 1, (float) 1);
             this.wing2left.setScale((float) 1, (float) 1, (float) 1);
@@ -571,8 +571,6 @@ public class ModelSordes extends ModelBasePalaeopedia {
             this.rightmembrane.setScale((float) 1, (float) 1, (float) 1);
             this.rightmembranemiddle.setScale((float) 1, (float) 1, (float) 1);
             this.rightmembranetip.setScale((float) 1, (float) 1, (float) 1);
-
-
         } else {
 
         }
@@ -1972,7 +1970,7 @@ public class ModelSordes extends ModelBasePalaeopedia {
         this.setRotateAngle(wing4left, wing4left.rotateAngleX + (float) Math.toRadians(1.75), wing4left.rotateAngleY + (float) Math.toRadians(0), wing4left.rotateAngleZ + (float) Math.toRadians(0));
 
 
-        this.leftmembranetip.setScale((float)1,(float)0,(float)1);
+        //this.leftmembranetip.setScale((float)1,(float)0,(float)1);
 
 
 
@@ -2000,10 +1998,10 @@ public class ModelSordes extends ModelBasePalaeopedia {
 
 
 
-        this.leftmembranemiddle.setScale((float)0.5,(float)0.8,(float)1);
+        //this.leftmembranemiddle.setScale((float)0.5,(float)0.8,(float)1);
 
 
-        this.leftmembrane.setScale((float)0,(float)1,(float)0);
+        //this.leftmembrane.setScale((float)0,(float)1,(float)0);
 
 
 
@@ -2076,7 +2074,7 @@ public class ModelSordes extends ModelBasePalaeopedia {
 
 
 
-        this.rightmembrane.setScale((float)0,(float)1,(float)0);
+        //this.rightmembrane.setScale((float)0,(float)1,(float)0);
 
 
 
@@ -2104,7 +2102,7 @@ public class ModelSordes extends ModelBasePalaeopedia {
 
 
 
-        this.rightmembranetip.setScale((float)1,(float)0,(float)1);
+        //this.rightmembranetip.setScale((float)1,(float)0,(float)1);
 
 
 
@@ -2137,7 +2135,7 @@ public class ModelSordes extends ModelBasePalaeopedia {
 
 
 
-        this.rightmembranemiddle.setScale((float)0.5,(float)0.8,(float)1);
+        //this.rightmembranemiddle.setScale((float)0.5,(float)0.8,(float)1);
 
 
         this.setRotateAngle(chest, chest.rotateAngleX + (float) Math.toRadians(0), chest.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-50))*-3), chest.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-50))*-3));
@@ -2221,7 +2219,11 @@ public class ModelSordes extends ModelBasePalaeopedia {
     public void animClimb(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraSordes entity = (EntityPrehistoricFloraSordes) entitylivingbaseIn;
         int animCycle = 25;
-        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        if (entity.animSpeedAdder() <= 0) {
+            partialTickTime = 0; //If it's static don't increment partial ticks either
+        }
+        double tickAnim = (entity.ticksExistedAnimated + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExistedAnimated + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+
         double xx = 0;
         double yy = 0;
         double zz = 0;

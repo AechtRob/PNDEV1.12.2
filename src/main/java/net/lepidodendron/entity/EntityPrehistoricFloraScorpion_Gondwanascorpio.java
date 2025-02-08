@@ -1,6 +1,7 @@
 
 package net.lepidodendron.entity;
 
+import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
@@ -100,6 +101,7 @@ public class EntityPrehistoricFloraScorpion_Gondwanascorpio extends EntityPrehis
 		tasks.addTask(5, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
+		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
 	}
 
 	

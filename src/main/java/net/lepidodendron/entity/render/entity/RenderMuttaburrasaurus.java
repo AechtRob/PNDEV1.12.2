@@ -33,7 +33,7 @@ public class RenderMuttaburrasaurus extends RenderLivingBaseWithBook<EntityPrehi
     protected void preRenderCallback(EntityPrehistoricFloraMuttaburrasaurus entity, float f) {
         float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.90F;
+        this.shadowSize = entity.width * scale * 0.50F;
     }
 
 }

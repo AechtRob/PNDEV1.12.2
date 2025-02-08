@@ -101,7 +101,7 @@ public class EntityPrehistoricFloraMegalograptus extends EntityPrehistoricFloraE
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH, DietString.FISHFOOD);
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.FISH, DietString.MEAT), DietString.FISHFOOD);
 	}
 
 	@Override

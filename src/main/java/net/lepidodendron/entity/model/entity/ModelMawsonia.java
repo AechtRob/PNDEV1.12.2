@@ -452,7 +452,7 @@ public class ModelMawsonia extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
         EntityPrehistoricFloraMawsonia ee = (EntityPrehistoricFloraMawsonia) entitylivingbaseIn;
 
-        if (ee.getAnimation() == ee.ATTACK_ANIMATION) {
+        if (ee.getAnimation() == ee.ATTACK_ANIMATION || ee.getAnimation() == ee.ROAR_ANIMATION) {
             animAttack(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
 

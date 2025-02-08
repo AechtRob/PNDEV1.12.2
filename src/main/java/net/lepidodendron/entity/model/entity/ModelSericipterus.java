@@ -701,7 +701,7 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
             }
         }
 
-        if (ee.getAttachmentPos() == null) { //set wing membranes to their proper scale for flight
+        if (ee.getAttachmentPos() == null || ee.getAttachmentFacing() == EnumFacing.UP) { //set wing membranes to their proper scale for flight
             this.rightwing.setScale((float) 1, (float) 1, (float) 1);
             this.rightwing2.setScale((float) 1, (float) 1, (float) 1);
             this.rightwing3.setScale((float) 1, (float) 1, (float) 1);
@@ -2563,7 +2563,7 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
 
 
 
-        this.wingmembranemiddle2.setScale((float)1,(float)0,(float)1);
+       //this.wingmembranemiddle2.setScale((float)1,(float)0,(float)1);
 
 
 
@@ -2591,7 +2591,7 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
 
 
 
-        this.wingmembraneend2.setScale((float)1,(float)0,(float)1);
+        //this.wingmembraneend2.setScale((float)1,(float)0,(float)1);
 
 
 
@@ -2877,7 +2877,7 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
         this.wingmembraneend4.rotationPointX = this.wingmembraneend4.rotationPointX + (float)(0);
         this.wingmembraneend4.rotationPointY = this.wingmembraneend4.rotationPointY - (float)(0);
         this.wingmembraneend4.rotationPointZ = this.wingmembraneend4.rotationPointZ + (float)(-6);
-        this.wingmembraneend4.setScale((float)0,(float)1,(float)0);
+        //this.wingmembraneend4.setScale((float)0,(float)1,(float)0);
 
 
 
@@ -2948,7 +2948,7 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
         this.wingmembraneend3.rotationPointX = this.wingmembraneend3.rotationPointX + (float)(0);
         this.wingmembraneend3.rotationPointY = this.wingmembraneend3.rotationPointY - (float)(0);
         this.wingmembraneend3.rotationPointZ = this.wingmembraneend3.rotationPointZ + (float)(-5.775);
-        this.wingmembraneend3.setScale((float)0,(float)1,(float)0);
+        //this.wingmembraneend3.setScale((float)0,(float)1,(float)0);
 
 
 
@@ -2996,7 +2996,7 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
 
 
 
-        this.wingmembranemiddle3.setScale((float)1,(float)0,(float)1);
+        //this.wingmembranemiddle3.setScale((float)1,(float)0,(float)1);
 
 
 
@@ -3034,7 +3034,7 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
 
 
 
-        this.wingmembraneend5.setScale((float)1,(float)0,(float)1);
+        //this.wingmembraneend5.setScale((float)1,(float)0,(float)1);
 
 
 

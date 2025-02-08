@@ -391,11 +391,12 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
         super.onEntityUpdate();
 
         //Lay eggs perhaps:
-        if (this instanceof IWaterSurfaceEggsAmphibian) {
-            EggLayingConditions.layWaterSurfaceEggs(this);
-        }
-        else {
-            EggLayingConditions.layWaterBottomEggs(this);
+        if (!this.hasNest()) {
+            if (this instanceof IWaterSurfaceEggsAmphibian) {
+                EggLayingConditions.layWaterSurfaceEggs(this);
+            } else {
+                EggLayingConditions.layWaterBottomEggs(this);
+            }
         }
     }
 

@@ -82,7 +82,7 @@ public class EntityPrehistoricFloraAdelophthalmus extends EntityPrehistoricFlora
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISHFOOD, DietString.FISH);
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.FISH, DietString.MEAT), DietString.FISHFOOD);
 	}
 
 	@Override

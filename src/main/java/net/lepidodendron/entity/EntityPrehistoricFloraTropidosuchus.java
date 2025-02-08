@@ -235,9 +235,6 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 		if (world.getBlockState(pos.offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing)))) {
 			return false;
 		}
-		if (world.getBlockState(pos.offset(facing).offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing)))) {
-			return false;
-		}
 
 		return true;
 	}
@@ -251,6 +248,7 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 
 		BlockPos entityPos = Functions.getEntityBlockPos(this);
 
+		boolean test2 = false;
 		boolean test = (this.getPFDrinking() <= 0
 				&& !world.isRemote
 				&& !this.getIsFast()
@@ -276,24 +274,27 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 		if (test) {
 			//Which one is water?
 			EnumFacing facing = null;
-			if (this.world.getBlockState(entityPos.north(2).down()).getMaterial() == Material.WATER) {
+			if (this.world.getBlockState(entityPos.north(1).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.NORTH;
 			}
-			else if (this.world.getBlockState(entityPos.south(2).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.south(1).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.SOUTH;
+
 			}
-			else if (this.world.getBlockState(entityPos.east(2).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.east(1).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.EAST;
+
 			}
-			else if (this.world.getBlockState(entityPos.west(2).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.west(1).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.WEST;
+
 			}
-			if (facing != null) {
+			if (facing != null && test & test2) {
 				this.setDrinkingFrom(entityPos.offset(facing).offset(facing));
 				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 			}
 		}
-		return test;
+		return test && test2;
 	}
 
 	@Override

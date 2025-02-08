@@ -54,10 +54,10 @@ public class EntityPrehistoricFloraPsittacosaurus_sibiricus extends EntityPrehis
 
 	public EntityPrehistoricFloraPsittacosaurus_sibiricus(World world) {
 		super(world);
-		setSize(0.375F, 0.5F);
+		setSize(0.65F, 0.95F);
 		minWidth = 0.12F;
-		maxWidth = 0.375F;
-		maxHeight = 0.5F;
+		maxWidth = 0.65F;
+		maxHeight = 0.95F;
 		maxHealthAgeable = 16.0D;
 		STAND_ANIMATION = Animation.create(710);
 		SCRATCH_ANIMATION = Animation.create(55);

@@ -316,7 +316,7 @@ public class EntityPrehistoricFloraTapejara extends EntityPrehistoricFloraLandCl
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH);
+		return ArrayUtils.addAll(DietString.FRUIT);
 	}
 
 	protected void initEntityAI() {

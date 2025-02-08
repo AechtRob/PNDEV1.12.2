@@ -160,7 +160,7 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH);
+		return ArrayUtils.addAll(DietString.BUG);
 	}
 
 	@Override

@@ -90,6 +90,7 @@ public class ItemGlassJarItem extends ElementsLepidodendronMod.ModElement {
 			if (target == null) {
 				return false;
 			}
+
 			if (target instanceof EntityPrehistoricFloraAgeableBase) {
 				EntityPrehistoricFloraAgeableBase e = (EntityPrehistoricFloraAgeableBase) target;
 				if (e.canJar()) {

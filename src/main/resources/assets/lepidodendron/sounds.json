@@ -12715,5 +12715,54 @@
         "stream": false
       }
     ]
+  },
+
+  "phlegethontia_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:phlegethontia_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:phlegethontia_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:phlegethontia_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:phlegethontia_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:phlegethontia_living05",
+        "stream": false
+      }
+    ]
+  },
+  "phlegethontia_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:phlegethontia_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:phlegethontia_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:phlegethontia_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "phlegethontia_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:phlegethontia_death",
+        "stream": false
+      }
+    ]
   }
 }

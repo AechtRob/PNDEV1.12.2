@@ -72,7 +72,7 @@ public class EntityPrehistoricFloraTristychius extends EntityPrehistoricFloraTri
 
 	@Override
 	public int getAnimationTick() {
-		return getAnimationTick();
+		return this.animationTick;
 	}
 
 	@Override
@@ -90,7 +90,7 @@ public class EntityPrehistoricFloraTristychius extends EntityPrehistoricFloraTri
 
 	@Override
 	public Animation getAnimation() {
-		return null;
+		return this.animation;
 	}
 
 	@Override
