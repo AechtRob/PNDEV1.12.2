@@ -35,7 +35,7 @@ public class EntityPrehistoricFloraAustraliceras extends EntityPrehistoricFloraN
 		minWidth = 0.07F;
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 6.0D;
+		maxHealthAgeable = 3.0D;
 	}
 
 	@Override

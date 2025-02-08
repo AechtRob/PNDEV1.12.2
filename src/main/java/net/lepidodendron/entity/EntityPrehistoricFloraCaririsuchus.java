@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraCaririsuchus extends EntityPrehistoricFloraLa
 		minWidth = 0.18F;
 		maxWidth = 0.6F;
 		maxHeight = 0.55F;
-		maxHealthAgeable = 20.0D;
+		maxHealthAgeable = 14.0D;
 		STAND_ANIMATION = Animation.create(27);
 		ALERT_ANIMATION = Animation.create(115);
 		if (FMLCommonHandler.instance().getSide().isClient()) {

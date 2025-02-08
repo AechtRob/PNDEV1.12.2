@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraCooyoo extends EntityPrehistoricFloraAgeableF
 		minWidth = 0.1F;
 		maxWidth = 0.95F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 11.0D;
+		maxHealthAgeable = 18.0D;
 	}
 
 	@Override

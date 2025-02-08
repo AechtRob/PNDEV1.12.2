@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraPietraroiasuchus extends EntityPrehistoricFlo
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.1F;
-		maxHealthAgeable = 11.0D;
+		maxHealthAgeable = 8.0D;
 		EAT_ANIMATION = Animation.create(20);
 		BASK_ANIMATION = Animation.create(320);
 		if (FMLCommonHandler.instance().getSide().isClient()) {

@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraOnchopristis extends EntityPrehistoricFloraAg
 		minWidth = 0.2F;
 		maxWidth = 0.9F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 15.0D;
+		maxHealthAgeable = 20.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

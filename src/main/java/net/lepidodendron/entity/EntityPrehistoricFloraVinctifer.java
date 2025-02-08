@@ -40,7 +40,7 @@ public class EntityPrehistoricFloraVinctifer extends EntityPrehistoricFloraAgeab
 		minWidth = 0.1F;
 		maxWidth = 0.45F;
 		maxHeight = 0.45F;
-		maxHealthAgeable = 14.0D;
+		maxHealthAgeable = 10.0D;
 	}
 
 	@Override

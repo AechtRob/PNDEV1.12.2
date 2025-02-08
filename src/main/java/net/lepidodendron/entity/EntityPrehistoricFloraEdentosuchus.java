@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraEdentosuchus extends EntityPrehistoricFloraLa
 		minWidth = 0.18F;
 		maxWidth = 0.3F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 8.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

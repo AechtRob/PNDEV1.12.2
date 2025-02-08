@@ -48,9 +48,9 @@ public class EntityPrehistoricFloraToxolophosaurus extends EntityPrehistoricFlor
 
 	public EntityPrehistoricFloraToxolophosaurus(World world) {
 		super(world);
-		setSize(0.2F, 0.2F);
+		setSize(0.4F, 0.2F);
 		minWidth = 0.1F;
-		maxWidth = 0.2F;
+		maxWidth = 0.4F;
 		maxHeight = 0.2F;
 		maxHealthAgeable = 6.0D;
 		STAND_ANIMATION = Animation.create(44);

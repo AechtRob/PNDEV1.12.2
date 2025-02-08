@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraKoolasuchus extends EntityPrehistoricFloraSwi
 		minWidth = 0.1F;
 		maxWidth = 0.9F;
 		maxHeight = 0.9F;
-		maxHealthAgeable = 30.0D;
+		maxHealthAgeable = 46.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

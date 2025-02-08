@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraPambdelurion extends EntityPrehistoricFloraAg
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 5.0D;
 		LOOK_ANIMATION = Animation.create(120);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new MillipedeBuffer();

@@ -163,6 +163,7 @@ public class ModelTeyujagua extends ModelBasePalaeopedia {
         this.cube_r8.cubeList.add(new ModelBox(cube_r8, 24, 39, 0.01F, 0.97F, -1.98F, 1, 1, 2, -0.01F, false));
 
         this.eye = new AdvancedModelRenderer(this);
+        this.eye.scaleChildren = true;
         this.eye.setRotationPoint(0.0F, -0.8F, -3.621F);
         this.Head.addChild(eye);
 

@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraCretoxyrhina extends EntityPrehistoricFloraAg
 		minWidth = 0.1F;
 		maxWidth = 1.5F;
 		maxHeight = 1.3F;
-		maxHealthAgeable = 30.0D;
+		maxHealthAgeable = 40.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

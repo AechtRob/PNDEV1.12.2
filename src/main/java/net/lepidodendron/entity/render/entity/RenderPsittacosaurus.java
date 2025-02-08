@@ -16,7 +16,7 @@ public class RenderPsittacosaurus extends RenderLivingBaseWithBook<EntityPrehist
     }
 
     public static float getScaler() {
-        return 0.73F;
+        return 0.615F;
     }
 
     @Override

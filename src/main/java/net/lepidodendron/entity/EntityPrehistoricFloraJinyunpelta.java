@@ -48,7 +48,7 @@ public class EntityPrehistoricFloraJinyunpelta extends EntityPrehistoricFloraLan
 		minWidth = 0.3F;
 		maxWidth = 0.99F;
 		maxHeight = 0.99F;
-		maxHealthAgeable = 40.0D;
+		maxHealthAgeable = 45.0D;
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

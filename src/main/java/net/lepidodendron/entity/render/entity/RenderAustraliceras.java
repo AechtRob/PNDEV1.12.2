@@ -12,7 +12,7 @@ public class RenderAustraliceras extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/australiceras.png");
 
     public static float getScaler() {
-        return 0.6F;
+        return 0.325F;
     }
     public RenderAustraliceras(RenderManager mgr) {
         super(mgr, new ModelAustraliceras(), 0.0f);

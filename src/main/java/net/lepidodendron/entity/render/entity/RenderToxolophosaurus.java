@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderToxolophosaurus extends RenderLivingBaseWithBook<EntityPrehistoricFloraToxolophosaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/toxolophosaurus.png");
 
-    public static float getScaler() {return 0.19f;}
+    public static float getScaler() {return 0.275f;}
 
     public RenderToxolophosaurus(RenderManager mgr) {
         super(mgr, new ModelToxolophosaurus(), 0.5f);

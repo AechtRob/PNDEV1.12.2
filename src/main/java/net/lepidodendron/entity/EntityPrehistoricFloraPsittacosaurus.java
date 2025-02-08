@@ -51,11 +51,11 @@ public class EntityPrehistoricFloraPsittacosaurus extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraPsittacosaurus(World world) {
 		super(world);
-		setSize(0.375F, 0.5F);
+		setSize(0.65F, 0.85F);
 		minWidth = 0.12F;
-		maxWidth = 0.375F;
-		maxHeight = 0.5F;
-		maxHealthAgeable = 12.0D;
+		maxWidth = 0.65F;
+		maxHeight = 0.85F;
+		maxHealthAgeable = 16.0D;
 		STAND_ANIMATION = Animation.create(40);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

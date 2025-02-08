@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraMythunga extends EntityPrehistoricFloraLandCl
 		minWidth = 0.10F;
 		maxWidth = 0.85F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 18.0D;
 		setNoAI(!true);
 		enablePersistence();
 	}

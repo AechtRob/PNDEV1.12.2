@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraMuttaburrasaurus extends EntityPrehistoricFlo
 		minWidth = 0.20F;
 		maxWidth = 1.5F;
 		maxHeight = 2.5F;
-		maxHealthAgeable = 50.0D;
+		maxHealthAgeable = 68.0D;
 		IDLE1 = Animation.create(160);
 		IDLE2 = Animation.create(30);
 		if (FMLCommonHandler.instance().getSide().isClient()) {

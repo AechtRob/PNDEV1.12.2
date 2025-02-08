@@ -12,7 +12,7 @@ public class RenderTietasaura extends RenderLivingBaseWithBook<EntityPrehistoric
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tietasaura.png");
 
     public static float getScaler() {
-        return 0.358F;
+        return 0.95F;
     }
 
     public RenderTietasaura(RenderManager mgr) {

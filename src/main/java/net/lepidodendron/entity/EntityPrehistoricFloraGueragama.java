@@ -24,7 +24,7 @@ public class EntityPrehistoricFloraGueragama extends EntityPrehistoricFloraMorga
 		minWidth = 0.12F;
 		maxWidth = 0.3F;
 		maxHeight = 0.15F;
-		maxHealthAgeable = 6.0D;
+		maxHealthAgeable = 4.0D;
 	}
 
 	@Nullable

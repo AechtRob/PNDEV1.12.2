@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraMaiaspondylus extends EntityPrehistoricFloraA
 		minWidth = 0.15F;
 		maxWidth = 0.8F;
 		maxHeight = 0.65F;
-		maxHealthAgeable = 35.0D;
+		maxHealthAgeable = 30.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

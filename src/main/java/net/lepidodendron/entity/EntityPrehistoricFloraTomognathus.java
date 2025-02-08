@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraTomognathus extends EntityPrehistoricFloraAge
 		minWidth = 0.1F;
 		maxWidth = 0.8F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 18.0D;
+		maxHealthAgeable = 12.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
