@@ -20,7 +20,6 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
@@ -37,15 +36,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
-import java.util.List;
 
 public class EntityPrehistoricFloraHypuronector extends EntityPrehistoricFloraLandClimbingBase implements ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
-	private boolean screaming;
-	private int alarmCooldown;
 
 	public EntityPrehistoricFloraHypuronector(World world) {
 		super(world);
@@ -102,30 +98,8 @@ public class EntityPrehistoricFloraHypuronector extends EntityPrehistoricFloraLa
 	//public static String getHabitat() {return "Arboreal Therapsid";}
 
 	@Override
-	public boolean attackEntityFrom(DamageSource ds, float i) {
-		Entity e = ds.getTrueSource();
-		if (e instanceof EntityLivingBase) {
-			EntityLivingBase ee = (EntityLivingBase) e;
-			List<EntityPrehistoricFloraHypuronector> Hypuronector = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraHypuronector.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-			for (EntityPrehistoricFloraHypuronector currentHypuronector : Hypuronector) {
-				currentHypuronector.setRevengeTarget(ee);
-				currentHypuronector.alarmCooldown = rand.nextInt(20);
-			}
-		}
-		return super.attackEntityFrom(ds, i);
-	}
-
-	@Override
 	public boolean canSpawnOnLeaves() {
 		return true;
-	}
-
-	public void setScreaming(boolean screaming) {
-		this.screaming = screaming;
-	}
-
-	public boolean getScreaming() {
-		return this.screaming;
 	}
 
 	@Override
@@ -188,7 +162,7 @@ public class EntityPrehistoricFloraHypuronector extends EntityPrehistoricFloraLa
 		tasks.addTask(1, new EntityTemptAI(this, 1, true, true, 0));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(3, new AttackAI(this, 1.6D, false, this.getAttackLength()));
-		tasks.addTask(4, new PanicScreamAI(this, 1.0));
+		tasks.addTask(4, new PanicAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestInBlockAI(this));
 		tasks.addTask(6, new LandWanderAvoidWaterClimbingAI(this, 1.0D, 5));
 		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
@@ -249,34 +223,6 @@ public class EntityPrehistoricFloraHypuronector extends EntityPrehistoricFloraLa
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
 	            .getObject(new ResourceLocation("lepidodendron:hypuronector_death"));
-	}
-
-	public SoundEvent getAlarmSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:hypuronector_alarm"));
-	}
-
-	public void playAlarmSound()
-	{
-		SoundEvent soundevent = this.getAlarmSound();
-		//System.err.println("looking for alarm sound");
-		if (soundevent != null)
-		{
-			//System.err.println("playing alarm sound");
-			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-			this.alarmCooldown = 20;
-		}
-	}
-
-	@Override
-	public void onEntityUpdate() {
-		if (this.alarmCooldown > 0) {
-			this.alarmCooldown -= 1;
-		}
-		if (this.getScreaming() && alarmCooldown <= 0) {
-			this.playAlarmSound();
-		}
-		super.onEntityUpdate();
 	}
 
 	@Override

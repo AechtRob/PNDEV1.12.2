@@ -12764,5 +12764,79 @@
         "stream": false
       }
     ]
+  },
+
+  "hypuronector_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:hypuronector_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypuronector_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypuronector_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypuronector_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypuronector_living05",
+        "stream": false
+      }
+    ]
+  },
+  "hypuronector_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:hypuronector_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypuronector_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypuronector_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "hypuronector_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:hypuronector_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "drepanosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:drepanosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:drepanosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:drepanosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "drepanosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:drepanosaurus_death",
+        "stream": false
+      }
+    ]
   }
 }
