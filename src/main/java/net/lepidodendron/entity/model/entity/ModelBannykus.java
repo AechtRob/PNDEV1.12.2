@@ -4338,7 +4338,7 @@ public class ModelBannykus extends ModelBasePalaeopedia {
     }
     public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraBannykus entity = (EntityPrehistoricFloraBannykus) entitylivingbaseIn;
-        int animCycle = 20;
+        int animCycle = 21;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;
         double yy = 0;

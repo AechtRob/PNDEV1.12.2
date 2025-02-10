@@ -20,14 +20,12 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -37,7 +35,6 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -45,6 +42,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLandWadingBase implements IAdvancementGranter, ITrappableLand {
 
@@ -54,8 +52,6 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 	public ChainBuffer tailBuffer;
 	//display
 	public Animation TAIL_ANIMATION;
-	private int standCooldown;
-	public int ambientSoundTime;
 	public Animation NOISE_ANIMATION;
 
 	public EntityPrehistoricFloraNigersaurus(World world) {
@@ -65,7 +61,7 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 		minWidth = 0.1F;
 		maxWidth = 2.95F;
 		maxHeight = 3F;
-		maxHealthAgeable = 50.0D;
+		maxHealthAgeable = 76.0D;
 		TAIL_ANIMATION = Animation.create(155);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -85,6 +81,10 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 			return 1.0F + (40F - (40F * this.getAgeScale()));
 		}
 		return super.getgetMaxTurnDistancePerTick();
+	}
+
+	public int getChatterLength() {
+		return 155;
 	}
 
 	@Override
@@ -144,7 +144,7 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{GRAZE_ANIMATION, HURT_ANIMATION, ATTACK_ANIMATION, NOISE_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, MAKE_NEST_ANIMATION, LAY_ANIMATION, EAT_ANIMATION};
+		return new Animation[]{TAIL_ANIMATION, GRAZE_ANIMATION, HURT_ANIMATION, ATTACK_ANIMATION, NOISE_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, MAKE_NEST_ANIMATION, LAY_ANIMATION, EAT_ANIMATION};
 	}
 
 	@Override
@@ -202,6 +202,9 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
+		if (this.getAnimation() == TAIL_ANIMATION && (this.willGrapple) && this.getGrappleTarget() != null) {
+			return 0.0F; //Is talking to a colleague!
+		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
 			|| this.getAnimation() == ATTACK_ANIMATION || this.getAnimation() == EAT_ANIMATION
 			|| this.getAnimation() == GRAZE_ANIMATION
@@ -213,6 +216,11 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 			speedBase = speedBase * 1.15F;
 		}
 		return speedBase;
+	}
+
+	@Override
+	public int grappleChance() {
+		return 500;
 	}
 
 	@Override
@@ -231,6 +239,46 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public AxisAlignedBB getGrappleBoundingBox() {
+		float size = this.getRenderSizeModifier() * 0.25F;
+		return this.getEntityBoundingBox().grow(8.0F + size, 6.0F + size, 8.0F + size);
+	}
+
+	//TODO find a way to delay the other partner's animation and sound running, maybe with a variable with a randomized integer?
+	@Override
+	public boolean findGrappleTarget() {
+		//System.err.println("finding grapple target");
+		if (this.willGrapple) {
+			return false;
+		}
+		List<EntityPrehistoricFloraNigersaurus> Nigersaurus = world.getEntitiesWithinAABB(EntityPrehistoricFloraNigersaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+		for (EntityPrehistoricFloraNigersaurus currentNigersaurus : Nigersaurus) {
+			if (currentNigersaurus.isPFAdult() && this.isPFAdult() && currentNigersaurus != this && (!currentNigersaurus.willGrapple) && this.canEntityBeSeen(currentNigersaurus)) {
+				this.setGrappleTarget(currentNigersaurus);
+				currentNigersaurus.willGrapple = true;
+				this.willGrapple = true;
+				currentNigersaurus.setGrappleTarget(this);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public boolean grappleEntityAsMob(Entity entity) {
+		if (this.getAnimation() == NO_ANIMATION) {
+			this.setAnimation(this.getGrappleAnimation());
+			//System.err.println("set attack");
+		}
+		return false;
+	}
+
+	@Override
+	public Animation getGrappleAnimation() {
+		return this.TAIL_ANIMATION;
+	}
+
+	@Override
 	public float getEyeHeight()
 	{
 		return Math.max(super.getEyeHeight(), this.height * 0.975F);
@@ -241,9 +289,9 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(4, new LandWanderNestAI(this));
-		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
-		//tasks.addTask(6, new LandWanderHerd(this, 1.00D, Math.max(6, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
+		tasks.addTask(4, new GrappleAI(this, 1.0D, false, this.getChatterLength(), this.getGrappleAnimation(), 0.25));
+		tasks.addTask(5, new LandWanderNestAI(this));
+		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(7, new LandWanderAvoidDeepWaterAI(this, 0.7D, 120));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
@@ -430,14 +478,37 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 			launchAttack();
 		}
 
-		if (this.standCooldown > 0) {
-			this.standCooldown -= rand.nextInt(3) + 1;
+		if (!this.world.isRemote) {
+			if (this.getAnimation() == TAIL_ANIMATION) {
+				if (this.getAnimationTick() == 1) {
+					this.playSound(this.getAmbientSound(), this.getSoundVolume(), 1);
+				}
+			}
 		}
-		if (this.standCooldown < 0) {
-			this.standCooldown = 0;
+
+		if ((this.getAnimation() == TAIL_ANIMATION) && this.getAnimationTick() == this.headbutTick() && this.getGrappleTarget() != null) {
+			this.faceEntity(this.getGrappleTarget(), 10, 10);
+			launchGrapple();
+			if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
+				EntityPrehistoricFloraAgeableBase grappleTarget = (EntityPrehistoricFloraAgeableBase) this.getGrappleTarget();
+				grappleTarget.setGrappleTarget(null);
+				grappleTarget.willGrapple = false;
+			}
+			this.setGrappleTarget(null);
+			this.willGrapple = false;
 		}
+		else if ((this.getAnimation() == TAIL_ANIMATION) && this.getGrappleTarget() != null) {
+			this.faceEntity(this.getGrappleTarget(), 10, 10);
+		}
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
+	}
+
+	@Override
+	public int headbutTick() {
+		//Just here to prevent the animation timing out:
+		return this.TAIL_ANIMATION.getDuration() - 1;
 	}
 
 	@Override
@@ -513,50 +584,13 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
-	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
-		livingdata = super.onInitialSpawn(difficulty, livingdata);
-		this.standCooldown = rand.nextInt(2000);
-		return livingdata;
-	}
-	public void writeEntityToNBT(NBTTagCompound compound)
-	{
-		super.writeEntityToNBT(compound);
-		compound.setInteger("standCooldown", this.standCooldown);
-	}
-
-	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
-		this.standCooldown = compound.getInteger("standCooldown");
-	}
-
-	@Override
 	public void onEntityUpdate() {
-		super.onEntityUpdate();
-		//Sometimes stand up and look around:
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			this.setAnimation(TAIL_ANIMATION);
-			this.standCooldown = 3000;
-		}
-		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == TAIL_ANIMATION && this.getAnimationTick() == TAIL_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 3000;
-			this.setAnimation(NO_ANIMATION);
+
+		if ((this.getAnimation() == TAIL_ANIMATION) && this.getGrappleTarget() != null) {
+			this.faceEntity(this.getGrappleTarget(), 10F, 10F);
 		}
 
-		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
-		{
-			this.ambientSoundTime = -this.getAmbientTalkInterval();
-			SoundEvent soundevent = this.getAmbientAmbientSound();
-			if (soundevent != null)
-			{
-				if (this.getAnimation() == NO_ANIMATION) {
-					this.setAnimation(NOISE_ANIMATION);
-					//System.err.println("Playing noise sound on remote: " + (world.isRemote));
-					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-				}
-			}
-		}
+		super.onEntityUpdate();
 
 	}
 

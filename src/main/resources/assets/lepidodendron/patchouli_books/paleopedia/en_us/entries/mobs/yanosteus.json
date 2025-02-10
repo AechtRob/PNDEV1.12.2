@@ -1,0 +1,47 @@
+{
+	"name": "Yanosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/yanosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_yanosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_yanosteus",
+			"title": "Yanosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Peipiaosteiformes$(br)>Peipiaosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Y. longidorsalis",
+            "entity": "lepidodendron:prehistoric_flora_yanosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yanosteus",
+			"type": "text",
+			"text": "Yanosteus longidorsalis comes from the Early Cretaceous, with fossils being found in the Yixian Formation, China. It is a small peipiaosteiid, growing up to 46 cm in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_yanosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_yanosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_yanosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_yanosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_yanosteus"
+		}
+	]
+}

@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraNematoptychius extends EntityPrehistoricFlora
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 11.0D;
+		maxHealthAgeable = 8.0D;
 	}
 
 	@Override

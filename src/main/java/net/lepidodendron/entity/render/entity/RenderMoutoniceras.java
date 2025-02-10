@@ -14,7 +14,7 @@ public class RenderMoutoniceras extends RenderLivingBaseWithBook<EntityPrehistor
     private static final ResourceLocation TEXTURE_2 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/moutoniceras_poly.png");
 
     public static float getScaler() {
-        return 0.6F;
+        return 0.435F;
     }
     public RenderMoutoniceras(RenderManager mgr) {
         super(mgr, new ModelMoutoniceras(), 0.0f);

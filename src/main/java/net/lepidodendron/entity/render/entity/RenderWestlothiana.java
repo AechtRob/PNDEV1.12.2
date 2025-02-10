@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderWestlothiana extends RenderLivingBaseWithBook<EntityPrehistoricFloraWestlothiana> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/westlothiana.png");
 
-    public static float getScaler() {return 0.2f;}
+    public static float getScaler() {return 0.3f;}
 
     public RenderWestlothiana(RenderManager mgr) {
         super(mgr, new ModelWestlothiana(), 0.0f);

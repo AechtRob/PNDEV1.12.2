@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraProtopsephurus extends EntityPrehistoricFlora
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 15.0D;
+		maxHealthAgeable = 12.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

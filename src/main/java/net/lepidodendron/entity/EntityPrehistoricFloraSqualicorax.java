@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraSqualicorax extends EntityPrehistoricFloraAge
 		minWidth = 0.1F;
 		maxWidth = 1F;
 		maxHeight = 1F;
-		maxHealthAgeable = 25.0D;
+		maxHealthAgeable = 20.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

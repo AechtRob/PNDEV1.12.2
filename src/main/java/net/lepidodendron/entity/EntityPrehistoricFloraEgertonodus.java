@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraEgertonodus extends EntityPrehistoricFloraAge
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 30.0D;
+		maxHealthAgeable = 16.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

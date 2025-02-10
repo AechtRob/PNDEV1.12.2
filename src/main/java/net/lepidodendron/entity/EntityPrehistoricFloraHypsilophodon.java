@@ -10,6 +10,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.INervous;
 import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
@@ -43,7 +44,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraLandBase implements IScreamer, IAdvancementGranter, ITrappableLand {
+public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraLandBase implements IScreamer, INervous, IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -52,6 +53,8 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 	public ChainBuffer tailBuffer;
 	private boolean screaming;
 	private int alarmCooldown;
+	private int nervousnessTimer;
+	private EntityLivingBase nervousnessTarget;
 	//chatter
 	public Animation CHATTER_ANIMATION;
 	//chatter2
@@ -106,11 +109,13 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 	{
 		super.writeEntityToNBT(compound);
 		compound.setInteger("standCooldown", this.standCooldown);
+		compound.setInteger("NervousByTimestamp", this.nervousnessTimer);
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
 		this.standCooldown = compound.getInteger("standCooldown");
+		this.nervousnessTimer = compound.getInteger("NervousByTimestamp");
 	}
 
 	@Override
@@ -286,14 +291,15 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new PanicScreamAI(this, 1.0));
-		tasks.addTask(5, new GrappleAI(this, 1.0D, false, this.getChatterLength(), this.getGrappleAnimation(), 0.25));
-		tasks.addTask(6, new LandWanderNestAI(this));
-		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(8, new LandWanderHerd(this, 1.00D, Math.max(1F, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
-		tasks.addTask(9, new LandWanderAvoidWaterAI(this, 1.0D, 60));
-		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(11, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(12, new EntityLookIdleAI(this));
+		tasks.addTask(5, new PanicWhenLookedAI(this, 1.0F));
+		tasks.addTask(6, new GrappleAI(this, 1.0D, false, this.getChatterLength(), this.getGrappleAnimation(), 0.25));
+		tasks.addTask(7, new LandWanderNestAI(this));
+		tasks.addTask(8, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(9, new LandWanderHerd(this, 1.00D, Math.max(1F, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
+		tasks.addTask(10, new LandWanderAvoidWaterAI(this, 1.0D, 60));
+		tasks.addTask(11, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(12, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(13, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 	}
@@ -674,6 +680,18 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 			this.setAnimation(NO_ANIMATION);
 		}
 
+		if (this.nervousnessTarget != null)
+		{
+			if (!this.nervousnessTarget.isEntityAlive())
+			{
+				this.setNervousnessTarget((EntityLivingBase)null);
+			}
+			else if (this.ticksExisted - this.nervousnessTimer > 100)
+			{
+				this.setNervousnessTarget((EntityLivingBase)null);
+			}
+		}
+
 		super.onEntityUpdate();
 
 	}
@@ -689,6 +707,18 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 			return LepidodendronMod.HYPSILOPHODON_LOOT_YOUNG;
 		}
 		return LepidodendronMod.HYPSILOPHODON_LOOT;
+	}
+
+	@Nullable
+	public EntityLivingBase getNervousnessTarget()
+	{
+		return this.nervousnessTarget;
+	}
+
+	public void setNervousnessTarget(@Nullable EntityLivingBase livingBase)
+	{
+		this.nervousnessTarget = livingBase;
+		this.nervousnessTimer = this.ticksExisted;
 	}
 
 	//Rendering taxidermy:

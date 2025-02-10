@@ -591,7 +591,7 @@ public class ModelMoutoniceras extends ModelBasePalaeopedia {
 
         if (!e.isInWater()) {
             this.Root.rotateAngleZ = (float) Math.toRadians(90);
-            this.Root.offsetY = 0.7F;
+            this.Root.offsetY = 0.95F;
             this.Root.offsetZ = 0.0F;
             this.Root.offsetX = 0.2F;
         }

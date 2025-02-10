@@ -1,0 +1,52 @@
+{
+	"name": "Psittacosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/psittacosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_psittacosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_psittacosaurus",
+			"title": "Psittacosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Marginocephalia$(br)>Ceratopsia$(br)>Psittacosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "Psittacosaurus sp.",
+            "entity": "lepidodendron:prehistoric_flora_psittacosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_psittacosaurus",
+			"type": "text",
+			"text": "Psittacosaurus sp. (SMF R 4970) comes from the Early Cretaceous, with fossils being found in the Yixian Formation, China. It is a small psittacosauriid, growing up to 1 m in length. It is the most well preserved and well known specimen, from bristle-like structures on the tail, finely preserved scales, integument and dermis,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_psittacosaurus",
+			"type": "text",
+			"text": "right down to the colouration of the skin, and even the first known belly button from a non-avian dinosaur. Despite this, it has yet to be described to any of the 12 known species of Psittacosaurus, although P. mongoliensis has been ruled out as a possibility, based on hip features. The generic name derives from the Greek words 'psittakós', to mean 'parrot'; and 'sauros', to mean 'lizard'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_psittacosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_psittacosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_psittacosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_psittacosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_psittacosaurus"
+		}
+	]
+}

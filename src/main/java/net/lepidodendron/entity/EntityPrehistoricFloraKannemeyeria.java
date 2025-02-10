@@ -121,7 +121,7 @@ public class EntityPrehistoricFloraKannemeyeria extends EntityPrehistoricFloraLa
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.25F;
+			speedBase = speedBase * 1.85F;
 		}
 		return speedBase;
 	}

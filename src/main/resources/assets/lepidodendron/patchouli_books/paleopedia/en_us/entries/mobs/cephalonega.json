@@ -21,12 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_cephalonega",
 			"type": "text",
-			"text": "Cephalonega stepanovi comes from the Upper Ediacaran, with fossils found from the White Sea, Russia. It has a strange morphology for a Proarticulata, with its isomers clumped up ontop of a undivided part of the body, with two tail-like features coming out of the rear-most isomers."
+			"text": "Cephalonega stepanovi comes from the Upper Ediacaran, with fossils found from the White Sea, Russia. It has a strange morphology for a proarticulata, with its isomers clumped up on top of a undivided part of the body, with two tail-like features coming out of the rear-most isomers."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cephalonega",
 			"type": "text",
-			"text": "The generic name derives from the original genus name 'Ongea', named after the region its was found in 'Onega Peninsula'. The specific name derives from the surname of A.V. Stepanov, whom it was named in houour of after he discovered the site in which Cephalonega would be found."
+			"text": "The generic name derives from the original genus name 'Ongea', named after the region its was found in 'Onega Peninsula'. The specific name derives from the surname of A.V. Stepanov, whom it was named in honour of after he discovered the site in which Cephalonega would be found."
 		},
 		{
 			"type": "lepidodendron:diet",

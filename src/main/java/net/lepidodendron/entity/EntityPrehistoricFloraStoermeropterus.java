@@ -296,13 +296,10 @@ public class EntityPrehistoricFloraStoermeropterus extends EntityPrehistoricFlor
 //		this.targetTasks.addTask(3, new HuntAI(this, EntityPrehistoricFloraTrilobiteSwimBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
-
-
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH, DietString.MEAT);
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.FISH, DietString.MEAT), DietString.FISHFOOD);
 	}
-
 
 	@Override
 	public boolean attackEntityAsMob(Entity entity) {

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "entity",
-			"name": "Rugoconites sp.",
+			"name": "R. enigmaticus",
 			"entity": "lepidodendron:prehistoric_flora_rugoconites",
 			"rotate": false,
 			"default_rotation": 0
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_rugoconites",
 			"type": "text",
-			"text": "Rugoconites hails from the Cryogenian into the Upper Ediacaran, with fossils found in the Flinders Ranges, Southern Australia; and Taoudenni basin, Southern Algeria. It is a small, rounded lifeform, growing up to 6 cm in diameter. It is noted for its 3 thin, long lobe structures, giving it a rare tri-radial symmetry, something not seen in modern phylums. It is also possibly the oldest of the Trilobozoans, with records going into the Cryogenian."
+			"text": "Rugoconites hails from the Cryogenian into the Upper Ediacaran, with fossils found in the Flinders Ranges, Southern Australia; and Taoudenni basin, Southern Algeria. It is a small, rounded lifeform, growing up to 6 cm in diameter. It is noted for its 3 thin, long lobe structures, giving it a rare tri-radial symmetry, something not seen in modern phylums. It is also possibly the oldest of the trilobozoans, with records going into the Cryogenian."
 		},
 		{
 			"type": "lepidodendron:diet",

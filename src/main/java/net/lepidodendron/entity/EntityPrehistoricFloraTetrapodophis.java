@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraTetrapodophis extends EntityPrehistoricFloraS
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.1F;
-		maxHealthAgeable = 11.0D;
+		maxHealthAgeable = 4.0D;
 		EAT_ANIMATION = Animation.create(8);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

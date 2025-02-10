@@ -2,6 +2,8 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
+import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
@@ -10,6 +12,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
@@ -30,6 +33,8 @@ public class EntityPrehistoricFloraMawsonia extends EntityPrehistoricFloraAgeabl
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
+	private int animationTick;
+	private Animation animation = NO_ANIMATION;
 
 	public EntityPrehistoricFloraMawsonia(World world) {
 		super(world);
@@ -63,12 +68,6 @@ public class EntityPrehistoricFloraMawsonia extends EntityPrehistoricFloraAgeabl
 	
 
 	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous";}
-
-	//public static String getHabitat() {return "Aquatic Lobe-Finned Fish (Coelacanth)";}
-
-	@Override
-	public void playLivingSound() {
-	}
 
 	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
@@ -111,8 +110,8 @@ public class EntityPrehistoricFloraMawsonia extends EntityPrehistoricFloraAgeabl
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAI(this, 1));
-		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(2, new ShoalFishAgeableAI(this, 1, true));
+		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
+		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 1D, -10));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
@@ -122,6 +121,27 @@ public class EntityPrehistoricFloraMawsonia extends EntityPrehistoricFloraAgeabl
 		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
+	@Override
+	public void onLivingUpdate() {
+		super.onLivingUpdate();
+		////this.renderYawOffset = this.rotationYaw;
+
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 15 && this.getAttackTarget() != null) {
+			launchAttack();
+		}
+
+		AnimationHandler.INSTANCE.updateAnimations(this);
+
+	}
+
+	@Override
+	public boolean attackEntityAsMob(Entity entity) {
+		if (this.getAnimation() == NO_ANIMATION) {
+			this.setAnimation(ATTACK_ANIMATION);
+			//System.err.println("set attack");
+		}
+		return false;
+	}
 
 	@Override
 	public boolean isAIDisabled() {

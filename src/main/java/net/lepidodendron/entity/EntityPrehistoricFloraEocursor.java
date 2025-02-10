@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraEocursor extends EntityPrehistoricFloraLandBa
 		minWidth = 0.05F;
 		maxWidth = 0.425F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 7.0D;
 		STAND_ANIMATION = Animation.create(40);
 		ALERT_ANIMATION = Animation.create(40);
 		if (FMLCommonHandler.instance().getSide().isClient()) {

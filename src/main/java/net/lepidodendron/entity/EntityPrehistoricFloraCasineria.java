@@ -39,9 +39,9 @@ public class EntityPrehistoricFloraCasineria extends EntityPrehistoricFloraLandB
 
 	public EntityPrehistoricFloraCasineria(World world) {
 		super(world);
-		setSize(0.3F, 0.3F);
+		setSize(0.2F, 0.3F);
 		minWidth = 0.1F;
-		maxWidth = 0.3F;
+		maxWidth = 0.2F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 6.0D;
 	}

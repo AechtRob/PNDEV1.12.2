@@ -11,6 +11,10 @@ import net.minecraft.util.ResourceLocation;
 public class RenderCasineria extends RenderLivingBaseWithBook<EntityPrehistoricFloraCasineria> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/casineria.png");
 
+    public static float getScaler() {
+        return 0.75F;
+    }
+
     public RenderCasineria(RenderManager mgr) {
         super(mgr, new ModelCasineria(), 0.0f);
     }
@@ -27,9 +31,9 @@ public class RenderCasineria extends RenderLivingBaseWithBook<EntityPrehistoricF
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCasineria entity, float f) {
-        float scale = entity.getAgeScale() * 1.125F;
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.1F;
+        this.shadowSize = entity.width * scale * 0.0F;
     }
 
 }

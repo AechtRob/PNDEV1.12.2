@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraScrebinodus extends EntityPrehistoricFloraAge
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 9.0D;
+		maxHealthAgeable = 18.0D;
 	}
 
 	@Override

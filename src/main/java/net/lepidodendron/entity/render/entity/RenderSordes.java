@@ -16,7 +16,7 @@ public class RenderSordes extends RenderLivingBaseWithBook<EntityPrehistoricFlor
     }
 
     public static float getScaler() {
-        return 0.35F;
+        return 0.275F;
     }
 
     @Override
@@ -27,7 +27,7 @@ public class RenderSordes extends RenderLivingBaseWithBook<EntityPrehistoricFlor
     @Override
     protected void applyRotations(EntityPrehistoricFloraSordes entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
-        float getOffset = 0.12F;
+        float getOffset = 0.175F;
         switch (entityLiving.getAttachmentFacing()) {
             case DOWN: case UP:
             default:

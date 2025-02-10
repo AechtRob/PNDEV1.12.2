@@ -44,9 +44,10 @@ public class EntityPrehistoricFloraPtychodus extends EntityPrehistoricFloraAgeab
 		super(world);
 		setSize(1.5F, 1.6F);
 		minWidth = 0.1F;
+		minWidth = 0.1F;
 		maxWidth = 1.5F;
 		maxHeight = 1.6F;
-		maxHealthAgeable = 45.0D;
+		maxHealthAgeable = 60.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -137,7 +138,7 @@ public class EntityPrehistoricFloraPtychodus extends EntityPrehistoricFloraAgeab
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.SHELLFISH);
+		return ArrayUtils.addAll(DietString.SHELLFISH, DietString.NAUTILOID);
 	}
 
 

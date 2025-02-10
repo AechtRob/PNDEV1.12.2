@@ -32,7 +32,7 @@ public class EntityPrehistoricFloraGobiconodon extends EntityPrehistoricFloraMor
 		minWidth = 0.12F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 8.0D;
 		STAND_ANIMATION = Animation.create(35);
 		ALERT_ANIMATION = Animation.create(95);
 	}

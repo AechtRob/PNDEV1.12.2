@@ -452,7 +452,7 @@ public class ModelHypophylloceras extends ModelBasePalaeopedia {
 
         if (!e.isInWater()) {
             this.root.rotateAngleZ = (float) Math.toRadians(90);
-            this.root.offsetY = -0.2F;
+            this.root.offsetY = 0.175F;
         }
 
     }

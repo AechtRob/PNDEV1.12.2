@@ -21,12 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_windermeria",
 			"type": "text",
-			"text": "Windermeria aitkeni comes from the Upper Ediacaran, with fossils found from the Blueflower Formation, Canada. It is a elongated Proarticulatan, growing up to 2 cm in overall length. It is currently the only Proarticulatan to be found outside of the Eurasian and Oceananic continents, with only a singular fossil specimen found."
+			"text": "Windermeria aitkeni comes from the Upper Ediacaran, with fossils found from the Blueflower Formation, Canada. It is a elongated proarticulatan, growing up to 2 cm in overall length. It is currently the only Proarticulatan to be found outside of the Eurasian and Oceananic continents, with only a singular fossil specimen found."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_windermeria",
 			"type": "text",
-			"text": "The generic name derives from the placename of 'Windermere Supergroup', where the fossil was found. The specific name derives from the surname of James D. Aitken, who contributed to the understanding of the stratigraphy of the Windermere Supergroup."
+			"text": "The generic name derives from the place name of 'Windermere Supergroup', where the fossil was found. The specific name derives from the surname of James D. Aitken, who contributed to the understanding of the stratigraphy of the Windermere Supergroup."
 		},
 		{
 			"type": "lepidodendron:diet",

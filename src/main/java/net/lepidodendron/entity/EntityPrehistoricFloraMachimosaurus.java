@@ -6,6 +6,7 @@ import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
@@ -52,10 +53,10 @@ public class EntityPrehistoricFloraMachimosaurus extends EntityPrehistoricFloraS
 
 	public EntityPrehistoricFloraMachimosaurus(World world) {
 		super(world);
-		setSize(1F, 1F);
+		setSize(1.3F, 0.92F);
 		minWidth = 0.1F;
-		maxWidth = 1F;
-		maxHeight = 1F;
+		maxWidth = 1.3F;
+		maxHeight = 0.92F;
 		maxHealthAgeable = 55.0D;
 		EAT_ANIMATION = Animation.create(40);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -178,7 +179,14 @@ public class EntityPrehistoricFloraMachimosaurus extends EntityPrehistoricFloraS
 		return 24;
 	}
 
-
+	@Override
+	@SideOnly(Side.CLIENT)
+	public AxisAlignedBB getRenderBoundingBox() {
+		if (LepidodendronConfig.renderBigMobsProperly) {
+			return this.getEntityBoundingBox().grow(5.0, 2.00, 5.0);
+		}
+		return this.getEntityBoundingBox();
+	}
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));

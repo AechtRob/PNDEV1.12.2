@@ -51,10 +51,10 @@ public class EntityPrehistoricFloraMonolophosaurus extends EntityPrehistoricFlor
 
 	public EntityPrehistoricFloraMonolophosaurus(World world) {
 		super(world);
-		setSize(0.8F, 1.25F);
+		setSize(0.85F, 1.55F);
 		minWidth = 0.20F;
-		maxWidth = 0.8F;
-		maxHeight = 1.25F;
+		maxWidth = 0.85F;
+		maxHeight = 1.55F;
 		maxHealthAgeable = 50;
 		SCRATCH_ANIMATION = Animation.create(65);
 		if (FMLCommonHandler.instance().getSide().isClient()) {

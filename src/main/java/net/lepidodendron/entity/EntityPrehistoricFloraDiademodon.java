@@ -49,9 +49,9 @@ public class EntityPrehistoricFloraDiademodon extends EntityPrehistoricFloraLand
 
 	public EntityPrehistoricFloraDiademodon(World world) {
 		super(world);
-		setSize(0.5F, 0.5F);
+		setSize(0.85F, 0.5F);
 		minWidth = 0.18F;
-		maxWidth = 0.5F;
+		maxWidth = 0.85F;
 		maxHeight = 0.5F;
 		maxHealthAgeable = 10.0D;
 		STAND_ANIMATION = Animation.create(90);

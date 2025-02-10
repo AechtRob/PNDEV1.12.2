@@ -550,17 +550,20 @@ public class ModelPholidogaster extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
         EntityPrehistoricFloraPholidogaster ee = (EntityPrehistoricFloraPholidogaster) entitylivingbaseIn;
 
-        if (!ee.isReallyInWater()) {
+        if (!ee.isInWater()) {
             if (ee.getIsMoving()) {
                 animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
         }
         else {
             //Swimming pose:
-            if (ee.getIsFast()) { //Running
-                animSwimFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-            } else {
-                animSwim(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+            if (ee.getIsMoving()) {
+                if (ee.getIsFast()) {
+                    animSwimFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+
+                } else {
+                    animSwim(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                }
             }
 
         }

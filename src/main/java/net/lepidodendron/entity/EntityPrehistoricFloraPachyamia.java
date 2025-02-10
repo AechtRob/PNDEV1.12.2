@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraPachyamia extends EntityPrehistoricFloraAgeab
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 16.0D;
+		maxHealthAgeable = 11.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

@@ -47,11 +47,11 @@ public class EntityPrehistoricFloraKoolasuchus extends EntityPrehistoricFloraSwi
 
 	public EntityPrehistoricFloraKoolasuchus(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
+		setSize(0.9F, 0.8F);
 		minWidth = 0.1F;
 		maxWidth = 0.9F;
-		maxHeight = 0.9F;
-		maxHealthAgeable = 30.0D;
+		maxHeight = 0.8F;
+		maxHealthAgeable = 46.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -172,12 +172,12 @@ public class EntityPrehistoricFloraKoolasuchus extends EntityPrehistoricFloraSwi
 			return 0.0F; //Is laying eggs
 		}
         if (this.getIsFast() && this.isReallyInWater()) {
-            calcSpeed = calcSpeed * 1.52F;
+            calcSpeed = calcSpeed * 2.02F;
         }
 		if (this.isAtBottom() && !this.getIsFast() && !this.isInLove() && this.getEatTarget() == null) {
 			return 0;
 		}
-		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed;
+		return Math.min(1.4F, (this.getAgeScale() * 2F)) * calcSpeed;
 	}
 
 	@Override
@@ -187,7 +187,7 @@ public class EntityPrehistoricFloraKoolasuchus extends EntityPrehistoricFloraSwi
 
 	@Override
 	public int WaterDist() {
-		int i = (int) LepidodendronConfig.waterMetoposaurus;
+		int i = (int) LepidodendronConfig.waterMegalocephalus;
 		if (i > 16) {i = 16;}
 		if (i < 1) {i = 1;}
 		return i;
@@ -195,7 +195,7 @@ public class EntityPrehistoricFloraKoolasuchus extends EntityPrehistoricFloraSwi
 
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
+		return this.getEntityBoundingBox().grow(0.5F + size, 0.25 + size, 0.5F + size);
 	}
 
 	protected void initEntityAI() {

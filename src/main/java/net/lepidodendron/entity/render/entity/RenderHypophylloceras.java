@@ -12,7 +12,7 @@ public class RenderHypophylloceras extends RenderLivingBaseWithBook<EntityPrehis
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hypophylloceras.png");
 
     public static float getScaler() {
-        return 0.7F;
+        return 0.295F;
     }
 
     public RenderHypophylloceras(RenderManager mgr) {

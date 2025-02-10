@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraLiaoceratops extends EntityPrehistoricFloraLa
 		minWidth = 0.12F;
 		maxWidth = 0.375F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 12.0D;
+		maxHealthAgeable = 10.0D;
 		STAND_ANIMATION = Animation.create(40);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

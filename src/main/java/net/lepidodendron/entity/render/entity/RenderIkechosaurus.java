@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderIkechosaurus extends RenderLivingBaseWithBook<EntityPrehistoricFloraIkechosaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ikechosaurus.png");
 
-    public static float getScaler() {return 0.28f;}
+    public static float getScaler() {return 0.48f;}
     public RenderIkechosaurus(RenderManager mgr) {
         super(mgr, new ModelIkechosaurus(), 0.3f);
     }

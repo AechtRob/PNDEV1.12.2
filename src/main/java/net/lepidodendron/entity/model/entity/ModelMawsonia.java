@@ -386,7 +386,7 @@ public class ModelMawsonia extends ModelBasePalaeopedia {
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
-        this.resetToDefaultPose();
+        //this.resetToDefaultPose();
 
         //this.Bodyfront.offsetY = 1.3F;
 
@@ -452,9 +452,7 @@ public class ModelMawsonia extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
         EntityPrehistoricFloraMawsonia ee = (EntityPrehistoricFloraMawsonia) entitylivingbaseIn;
 
-
-
-        if (ee.getAnimation() == ee.ATTACK_ANIMATION) {
+        if (ee.getAnimation() == ee.ATTACK_ANIMATION || ee.getAnimation() == ee.ROAR_ANIMATION) {
             animAttack(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
 

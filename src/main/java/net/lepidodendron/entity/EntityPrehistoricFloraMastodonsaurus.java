@@ -223,8 +223,6 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 		return ArrayUtils.addAll(DietString.FISH, DietString.MEAT);
 	}
 
-	
-
 	@Override
 	public boolean isAIDisabled() {
 		return false;

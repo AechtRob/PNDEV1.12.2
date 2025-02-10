@@ -1,0 +1,47 @@
+{
+	"name": "Ichthyemidion",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ichthyemidion_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ichthyemidion",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ichthyemidion",
+			"title": "Ichthyemidion",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Elopiformes$(br)>Elopidae"
+		},
+        	{
+            "type": "entity",
+            "name": "I. vivaldi",
+            "entity": "lepidodendron:prehistoric_flora_ichthyemidion",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ichthyemidion",
+			"type": "text",
+			"text": "Ichthyemidion vivaldi comes from the Early Cretaceous, with fossils being found in the La Pedrera de Rúbies Formation, Spain. It is the small elopid, growing up to 50 cm in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ichthyemidion"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ichthyemidion"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ichthyemidion"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ichthyemidion"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ichthyemidion"
+		}
+	]
+}

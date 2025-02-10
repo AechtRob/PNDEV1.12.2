@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraHispanamia extends EntityPrehistoricFloraAgea
 		minWidth = 0.1F;
 		maxWidth = 0.4F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 8.0D;
+		maxHealthAgeable = 6.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

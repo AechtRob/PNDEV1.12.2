@@ -4,10 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
-import net.lepidodendron.entity.ai.DietString;
-import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
-import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.NautiloidWanderBottomFeed;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
@@ -34,11 +31,11 @@ public class EntityPrehistoricFloraHypophylloceras extends EntityPrehistoricFlor
 
 	public EntityPrehistoricFloraHypophylloceras(World world) {
 		super(world);
-		setSize(0.5F, 0.5F);
+		setSize(0.35F, 0.35F);
 		minWidth = 0.1F;
-		maxWidth = 0.5F;
-		maxHeight = 0.5F;
-		maxHealthAgeable = 9.0D;
+		maxWidth = 0.35F;
+		maxHeight = 0.35F;
+		maxHealthAgeable = 3.0D;
 	}
 
 	@Override
@@ -77,7 +74,7 @@ public class EntityPrehistoricFloraHypophylloceras extends EntityPrehistoricFlor
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
-		tasks.addTask(1, new NautiloidWanderBottomFeed(this, NO_ANIMATION));
+		tasks.addTask(1, new NautiloidWander(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 

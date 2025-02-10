@@ -147,7 +147,7 @@ public class EntityPrehistoricFloraAcanthodes extends EntityPrehistoricFloraAgea
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAI(this, 1));
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new ShoalFishAgeableAI(this, 1, true));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(1, new AgeableFishWander(this, NO_ANIMATION, 0.1, -2, true));

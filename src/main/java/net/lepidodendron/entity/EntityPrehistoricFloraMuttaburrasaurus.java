@@ -10,7 +10,7 @@ import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderCamptosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IBluffer;
@@ -47,7 +47,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraMuttaburrasaurus extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter, IBluffer, ITrappableLand {
+public class EntityPrehistoricFloraMuttaburrasaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, IBluffer, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraMuttaburrasaurus extends EntityPrehistoricFlo
 		minWidth = 0.20F;
 		maxWidth = 1.5F;
 		maxHeight = 2.5F;
-		maxHealthAgeable = 50.0D;
+		maxHealthAgeable = 68.0D;
 		IDLE1 = Animation.create(160);
 		IDLE2 = Animation.create(30);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -175,9 +175,6 @@ public class EntityPrehistoricFloraMuttaburrasaurus extends EntityPrehistoricFlo
 	}
 
 	@Override
-	public int getEatTick() {return 12;}
-
-	@Override
 	public int getEggType(@Nullable String PNType) {
 		return 2; //large
 	}
@@ -202,11 +199,6 @@ public class EntityPrehistoricFloraMuttaburrasaurus extends EntityPrehistoricFlo
 	@Override
 	public int getEatLength() {
 		return 16;
-	}
-
-	@Override
-	public int getRoarLength() {
-		return 70;
 	}
 
 	@Override
@@ -290,7 +282,7 @@ public class EntityPrehistoricFloraMuttaburrasaurus extends EntityPrehistoricFlo
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
-		tasks.addTask(3, new AgeableWarnEntity(this, EntityPlayer.class, 4));
+		//tasks.addTask(3, new AgeableWarnEntity(this, EntityPlayer.class, 4));
 		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(5, new PanicAI(this, 1.0));
 		tasks.addTask(6, new LandWanderNestAI(this));
@@ -331,11 +323,11 @@ public class EntityPrehistoricFloraMuttaburrasaurus extends EntityPrehistoricFlo
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
-	@Override
-	public SoundEvent getRoarSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:muttaburrasaurus_idle"));
-	}
+//	@Override
+//	public SoundEvent getRoarSound() {
+//	    return (SoundEvent) SoundEvent.REGISTRY
+//	            .getObject(new ResourceLocation("lepidodendron:muttaburrasaurus_idle"));
+//	}
 
 	@Override
 	public SoundEvent getAmbientSound() {

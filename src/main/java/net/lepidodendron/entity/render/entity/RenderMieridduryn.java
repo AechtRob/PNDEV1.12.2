@@ -12,7 +12,7 @@ public class RenderMieridduryn extends RenderLivingBaseWithBook<EntityPrehistori
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mieridduryn.png");
 
     public static float getScaler() {
-        return 0.35F;
+        return 0.285F;
     }
     public RenderMieridduryn(RenderManager mgr) {
         super(mgr, new ModelMieridduryn(), 0.0f);

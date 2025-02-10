@@ -594,7 +594,7 @@ public class ModelNigersaurus extends ModelBasePalaeopedia {
         else if (ee.getAnimation() == ee.GRAZE_ANIMATION) { //The leaves grazing anim
             animGraze(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.TAIL_ANIMATION) { //The leaves grazing anim
+        else if (ee.getAnimation() == ee.TAIL_ANIMATION) { //Social/grapple/chatter (whataver you call it)
             animDisplay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
 

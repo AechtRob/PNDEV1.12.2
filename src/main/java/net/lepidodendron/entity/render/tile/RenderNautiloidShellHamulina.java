@@ -36,7 +36,7 @@ public class RenderNautiloidShellHamulina extends TileEntitySpecialRenderer<Bloc
 
         GlStateManager.enableAlpha();
         ModelHamulinaShell modelNautiloidShell = this.modelNautiloidShell;
-        double scale = 0.6D;
+        double scale = 0.29F;
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
             //lying down
             GlStateManager.translate(x + 0.5 , y + 0.05, z + 0.5);

@@ -9513,10 +9513,10 @@ public class ModelDeinonychus extends ModelBasePalaeopedia {
             //moving in water
             //
         }
-        if (ee.getAnimation() == ee.EAT_ANIMATION) {
+        if (ee.getAnimation() == ee.EAT_ANIMATION) { //
             animEat(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.ATTACK_ANIMATION) {
+        else if (ee.getAnimation() == ee.ATTACK_ANIMATION) { //
             animAttack(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         else if (ee.getAnimation() == ee.MAKE_NEST_ANIMATION) {
@@ -9528,7 +9528,7 @@ public class ModelDeinonychus extends ModelBasePalaeopedia {
         else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The idle noise/anim
             animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The actual roar/anim
+        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The actual roar/anim (bellow)
             animRoar(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         else if (ee.getAnimation() == ee.STAND_ANIMATION) {
