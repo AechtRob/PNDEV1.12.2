@@ -76,19 +76,19 @@ public class EntityPrehistoricFloraGobiconodon extends EntityPrehistoricFloraMor
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:pseudotherium_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:gobiconodon_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:pseudotherium_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:gobiconodon_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:pseudotherium_death"));
+	            .getObject(new ResourceLocation("lepidodendron:gobiconodon_death"));
 	}
 
 	@Override

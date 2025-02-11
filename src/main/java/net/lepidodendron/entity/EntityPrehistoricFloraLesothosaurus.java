@@ -34,19 +34,18 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	public int ambientSoundTime;
-
-
 	public Animation STAND_ANIMATION;
 	private int standCooldown;
-
-
+	private boolean screaming;
+	private int alarmCooldown;
+	
 	public EntityPrehistoricFloraLesothosaurus(World world) {
 		super(world);
 		setSize(0.425F, 0.4F);
@@ -99,6 +98,10 @@ public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public boolean hasNest() {
+		return true;
+	}
+
+	public boolean hasAlarm() {
 		return true;
 	}
 
@@ -207,19 +210,38 @@ public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraL
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:eocursor_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:lesothosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:eocursor_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:lesothosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:eocursor_death"));
+	            .getObject(new ResourceLocation("lepidodendron:lesothosaurus_death"));
+	}
+
+
+	public SoundEvent getAlarmSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:lesothosaurus_alarm"));
+	}
+
+	public void playAlarmSound()
+	{
+		SoundEvent soundevent = this.getAlarmSound();
+		//System.err.println("looking for alarm sound");
+		if (soundevent != null && this.getAnimation() == NO_ANIMATION)
+		{
+			//System.err.println("playing alarm sound");
+			this.setAnimation(ROAR_ANIMATION);
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			this.alarmCooldown = 20;
+		}
 	}
 
 	@Override
@@ -252,6 +274,13 @@ public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public void onEntityUpdate() {
+		if (this.alarmCooldown > 0) {
+			this.alarmCooldown -= 1;
+		}
+		if (this.getScreaming() && alarmCooldown <= 0) {
+			this.playAlarmSound();
+		}
+		
 		super.onEntityUpdate();
 
 		//Sometimes stand up and look around:
@@ -266,10 +295,32 @@ public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraL
 			this.standCooldown = 2000;
 			this.setAnimation(NO_ANIMATION);
 		}
-
-
+	}
+	
+	@Override
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		Entity e = ds.getTrueSource();
+		if (e instanceof EntityLivingBase && this.hasAlarm()) {
+			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
+			List<EntityPrehistoricFloraLesothosaurus> Lesothosaurus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraLesothosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraLesothosaurus currentLesothosaurus : Lesothosaurus) {
+				currentLesothosaurus.setRevengeTarget(ee);
+				currentLesothosaurus.setAlarmTarget(ee);
+				currentLesothosaurus.alarmCooldown = rand.nextInt(20);
+			}
+		}
+		return super.attackEntityFrom(ds, i);
 	}
 
+	public void setScreaming(boolean screaming) {
+		this.screaming = screaming;
+	}
+
+	public boolean getScreaming() {
+		return this.screaming;
+	}
+	
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();

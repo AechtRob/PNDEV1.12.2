@@ -197,19 +197,19 @@ public class EntityPrehistoricFloraTeyujagua extends EntityPrehistoricFloraLandB
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:archosaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:teyujagua_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:archosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:teyujagua_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:archosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:teyujagua_death"));
 	}
 
 	@Override

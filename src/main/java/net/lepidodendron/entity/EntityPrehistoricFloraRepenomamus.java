@@ -82,20 +82,20 @@ public class EntityPrehistoricFloraRepenomamus extends EntityPrehistoricFloraMor
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:pseudotherium_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:repenomamus_idle"));
 	}
 
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:pseudotherium_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:repenomamus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:pseudotherium_death"));
+	            .getObject(new ResourceLocation("lepidodendron:repenomamus_death"));
 	}
 
 	@Override

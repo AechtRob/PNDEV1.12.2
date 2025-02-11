@@ -11,6 +11,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
@@ -23,7 +24,6 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -41,19 +41,19 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
-public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
+public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLandBase implements IScreamer, ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	public int ambientSoundTime;
-	private int standCooldown;
-
+	private boolean screaming;
+	private int alarmCooldown;
 
 	public EntityPrehistoricFloraTietasaura(World world) {
 		super(world);
-		setSize(0.05F, 1.4F);
+		setSize(0.875F, 1.4F);
 		minWidth = 0.05F;
 		maxWidth = 0.875F;
 		maxHeight = 1.4F;
@@ -69,11 +69,6 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 		if (world.isRemote && !this.isAIDisabled()) {
 			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
 		}
-
-//		if (world.isRemote) {
-//			System.err.println(Math.sin((float)this.getTicks() / 100F));
-//		}
-
 	}
 
 	@Override
@@ -102,6 +97,10 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 
 	@Override
 	public boolean hasNest() {
+		return true;
+	}
+
+	public boolean hasAlarm() {
 		return true;
 	}
 
@@ -277,8 +276,6 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 
 	}
 
-	
-	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
@@ -315,6 +312,25 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 	            .getObject(new ResourceLocation("lepidodendron:tietasaura_death"));
 	}
 
+
+	public SoundEvent getAlarmSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:tietasaura_alarm"));
+	}
+
+	public void playAlarmSound()
+	{
+		SoundEvent soundevent = this.getAlarmSound();
+		//System.err.println("looking for alarm sound");
+		if (soundevent != null && this.getAnimation() == NO_ANIMATION)
+		{
+			//System.err.println("playing alarm sound");
+			this.setAnimation(ROAR_ANIMATION);
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			this.alarmCooldown = 20;
+		}
+	}
+
 	@Override
 	protected float getSoundVolume() {
 		return 1.0F;
@@ -328,24 +344,44 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 	@Override
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
-		this.standCooldown = rand.nextInt(2000);
 		return livingdata;
-	}
-
-	public void writeEntityToNBT(NBTTagCompound compound)
-	{
-		super.writeEntityToNBT(compound);
-		compound.setInteger("standCooldown", this.standCooldown);
-	}
-
-	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
-		this.standCooldown = compound.getInteger("standCooldown");
 	}
 
 	@Override
 	public void onEntityUpdate() {
+		
+		if (this.alarmCooldown > 0) {
+			this.alarmCooldown -= 1;
+		}
+		if (this.getScreaming() && alarmCooldown <= 0) {
+			this.playAlarmSound();
+		}
+		
 		super.onEntityUpdate();
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		Entity e = ds.getTrueSource();
+		if (e instanceof EntityLivingBase && this.hasAlarm()) {
+			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
+			List<EntityPrehistoricFloraTietasaura> Tietasaura = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraTietasaura.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraTietasaura currentTietasaura : Tietasaura) {
+				currentTietasaura.setRevengeTarget(ee);
+				currentTietasaura.setAlarmTarget(ee);
+				currentTietasaura.alarmCooldown = rand.nextInt(20);
+			}
+		}
+		return super.attackEntityFrom(ds, i);
+	}
+	
+	public void setScreaming(boolean screaming) {
+		this.screaming = screaming;
+	}
+
+	public boolean getScreaming() {
+		return this.screaming;
 	}
 
 	@Override
@@ -366,13 +402,6 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 				}
 				this.setHealth(Math.min(this.getHealth() + itemHealth, (float) this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getBaseValue()));
 			}
-		}
-
-		if (this.standCooldown > 0) {
-			this.standCooldown -= rand.nextInt(3) + 1;
-		}
-		if (this.standCooldown < 0) {
-			this.standCooldown = 0;
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);

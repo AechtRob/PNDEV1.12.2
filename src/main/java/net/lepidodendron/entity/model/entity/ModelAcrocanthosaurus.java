@@ -2199,6 +2199,7 @@ public class ModelAcrocanthosaurus extends ModelBasePalaeopedia {
 
 
     }
+
     public void animNoiseHiss(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraAcrocanthosaurus entity = (EntityPrehistoricFloraAcrocanthosaurus) entitylivingbaseIn;
         int animCycle = 49;
@@ -6733,7 +6734,7 @@ public class ModelAcrocanthosaurus extends ModelBasePalaeopedia {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) {
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The idle noise/anim
+        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The idle noise/anim  - RUMBLE!
             animNoiseHiss(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The actual roar/anim
@@ -6741,6 +6742,9 @@ public class ModelAcrocanthosaurus extends ModelBasePalaeopedia {
         }
         else if (ee.getAnimation() == ee.STAND_ANIMATION) {
             animAlert(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
+        else if (ee.getAnimation() == ee.RELAX_ANIMATION) {
+            animRelax(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
 
         

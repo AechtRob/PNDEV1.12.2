@@ -50,7 +50,6 @@ public class EntityPrehistoricFloraAcrocanthosaurus extends EntityPrehistoricFlo
 	public Animation RELAX_ANIMATION;
 	private int standCooldown;
 	public Animation NOISE_ANIMATION;
-	public int ambientSoundTime;
 
 	public EntityPrehistoricFloraAcrocanthosaurus(World world) {
 		super(world);
@@ -87,11 +86,6 @@ public class EntityPrehistoricFloraAcrocanthosaurus extends EntityPrehistoricFlo
 		return 0;
 	}
 
-
-	public int getAmbientTalkInterval() {
-		return 160;
-	}
-
 	@Override
 	public void onUpdate() {
 		super.onUpdate();
@@ -112,13 +106,13 @@ public class EntityPrehistoricFloraAcrocanthosaurus extends EntityPrehistoricFlo
 	public Animation[] getAnimations() {
 		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, MAKE_NEST_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, HURT_ANIMATION, RELAX_ANIMATION};
 	}
+
 	public static String getPeriod() {return "Early Cretaceous";}
 
 	@Override
 	public int getEatLength() {
 		return 20;
 	}
-
 
 	@Override
 	public int getRoarLength() {
@@ -160,7 +154,10 @@ public class EntityPrehistoricFloraAcrocanthosaurus extends EntityPrehistoricFlo
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION ||  this.getAnimation() == STAND_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION
+				|| this.getAnimation() == MAKE_NEST_ANIMATION
+				|| this.getAnimation() == STAND_ANIMATION
+				|| this.getAnimation() == RELAX_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -263,10 +260,6 @@ public class EntityPrehistoricFloraAcrocanthosaurus extends EntityPrehistoricFlo
 				.getObject(new ResourceLocation("lepidodendron:tyrannotitan_idle"));
 	}
 
-	public SoundEvent getAmbientAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:tyrannotitan_idle2"));
-	}
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
@@ -292,33 +285,24 @@ public class EntityPrehistoricFloraAcrocanthosaurus extends EntityPrehistoricFlo
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-		int next = rand.nextInt(10);
-		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
-		{
-			this.ambientSoundTime = -this.getAmbientTalkInterval();
-			SoundEvent soundevent = this.getAmbientAmbientSound();
-			if (soundevent != null)
-			{
-				//Random sound animations
-				if (this.getAnimation() == NO_ANIMATION) {
-					if(next > 7) {
-						this.setAnimation(NOISE_ANIMATION);
-					} else {
-						this.setAnimation(ROAR_ANIMATION);
-					}
-					//System.err.println("Playing noise sound on remote: " + (world.isRemote));
-					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-				}
-			}
-		}
+
 		//Sometimes stand up and look around:
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			this.setAnimation(STAND_ANIMATION);
+			if (rand.nextInt(2) == 0) {
+				this.setAnimation(STAND_ANIMATION);
+			}
+			else {
+				this.setAnimation(RELAX_ANIMATION);
+			}
 			this.standCooldown = 3000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
 		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 3000;
+			this.setAnimation(NO_ANIMATION);
+		}
+		if ((!this.world.isRemote) && this.getAnimation() == RELAX_ANIMATION && this.getAnimationTick() == RELAX_ANIMATION.getDuration() - 1) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}

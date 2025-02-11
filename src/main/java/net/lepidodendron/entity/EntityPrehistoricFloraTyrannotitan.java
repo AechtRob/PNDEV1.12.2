@@ -292,27 +292,21 @@ public class EntityPrehistoricFloraTyrannotitan extends EntityPrehistoricFloraLa
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-		int next = rand.nextInt(10);
+
 		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
 		{
 			this.ambientSoundTime = -this.getAmbientTalkInterval();
 			SoundEvent soundevent = this.getAmbientAmbientSound();
 			if (soundevent != null)
 			{
-				//Random sound animations
 				if (this.getAnimation() == NO_ANIMATION) {
-					if(next > 7) {
-						this.setAnimation(NOISE_ANIMATION);
-					} else if(next > 4 && next <= 7){
-						this.setAnimation(NOISE2_ANIMATION);
-					} else {
-						this.setAnimation(ROAR_ANIMATION);
-					}
+					this.setAnimation(NOISE2_ANIMATION);
 					//System.err.println("Playing noise sound on remote: " + (world.isRemote));
 					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
 				}
 			}
 		}
+
 		//Sometimes stand up and look around:
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
@@ -324,7 +318,6 @@ public class EntityPrehistoricFloraTyrannotitan extends EntityPrehistoricFloraLa
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
-
 
 	}
 

@@ -308,24 +308,24 @@ public class EntityPrehistoricFloraLiaoceratops extends EntityPrehistoricFloraLa
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:chaoyangsauridae_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:liaoceratops_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:chaoyangsauridae_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:liaoceratops_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:chaoyangsauridae_death"));
+	            .getObject(new ResourceLocation("lepidodendron:liaoceratops_death"));
 	}
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:chaoyangsauridae_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:liaoceratops_alarm"));
 	}
 
 	public void playAlarmSound()
