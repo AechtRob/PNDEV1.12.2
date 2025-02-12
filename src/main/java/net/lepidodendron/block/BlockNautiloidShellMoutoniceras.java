@@ -85,10 +85,9 @@ public class BlockNautiloidShellMoutoniceras extends ElementsLepidodendronMod.Mo
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, 0, l14));
 			if (!(
-					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:something_cretaceous")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:something_cretaceous")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:something_cretaceous")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:something_cretaceous")
+					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_europe_dry")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_europe_ferny")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_europe_swamp")
 			)
 			) {
 				break;
