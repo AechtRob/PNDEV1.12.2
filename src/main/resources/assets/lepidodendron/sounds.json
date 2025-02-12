@@ -13338,23 +13338,15 @@
   "acrocanthosaurus_idle": {
     "sounds": [
       {
-        "name": "lepidodendron:acrocanthosaurus_living01",
+        "name": "lepidodendron:acrocanthosaurus_rumble01",
         "stream": false
       },
       {
-        "name": "lepidodendron:acrocanthosaurus_living02",
+        "name": "lepidodendron:acrocanthosaurus_rumble02",
         "stream": false
       },
       {
-        "name": "lepidodendron:acrocanthosaurus_living03",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:acrocanthosaurus_living04",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:acrocanthosaurus_living05",
+        "name": "lepidodendron:acrocanthosaurus_rumble03",
         "stream": false
       }
     ]
@@ -13395,22 +13387,6 @@
       },
       {
         "name": "lepidodendron:acrocanthosaurus_threat03",
-        "stream": false
-      }
-    ]
-  },
-  "acrocanthosaurus_idle2": {
-    "sounds": [
-      {
-        "name": "lepidodendron:acrocanthosaurus_rumble01",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:acrocanthosaurus_rumble02",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:acrocanthosaurus_rumble03",
         "stream": false
       }
     ]
