@@ -224,7 +224,7 @@ public class EntityPrehistoricFloraAnhanguera extends EntityPrehistoricFloraLand
 				if (this.getIsFast()) {
 					return 0.35f;
 				}
-				return 0.24F;
+				return 0.35F;
 			}
 		}
 		//Otherwise we are flying:
