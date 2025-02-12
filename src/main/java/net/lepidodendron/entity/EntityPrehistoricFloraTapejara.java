@@ -72,12 +72,12 @@ public class EntityPrehistoricFloraTapejara extends EntityPrehistoricFloraLandCl
 
 	@Override
 	public int flyTransitionLength() {
-		return 10;
+		return 15;
 	}
 
 	@Override
 	public int unflyTransitionLength() {
-		return 10;
+		return 15;
 	}
 
 	@Override

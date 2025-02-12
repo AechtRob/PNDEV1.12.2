@@ -12,7 +12,7 @@ public class RenderSericipterus extends RenderLivingBaseWithBook<EntityPrehistor
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sericipterus.png");
 
     public static float getScaler() {
-        return 0.4F;
+        return 0.333F;
     }
 
     public RenderSericipterus(RenderManager mgr) {

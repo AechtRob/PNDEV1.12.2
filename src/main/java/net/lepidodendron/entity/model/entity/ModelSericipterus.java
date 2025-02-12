@@ -463,6 +463,22 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
         this.setRotateAngle(cube_r22, -0.0436F, 0.0F, 0.0F);
         this.cube_r22.cubeList.add(new ModelBox(cube_r22, 48, 41, -1.0F, -1.0F, -4.0F, 2, 1, 4, 0.0F, false));
 
+
+        this.wingmembranemiddle2.scaleChildren = true;
+        this.wingmembraneend2.scaleChildren = true;
+        this.wingmembraneend4.scaleChildren = true;
+        this.wingmembraneend3.scaleChildren = true;
+        this.wingmembranemiddle3.scaleChildren = true;
+        this.wingmembraneend5.scaleChildren = true;
+
+        this.wingmembranemiddle2.setScale((float)1,(float)0,(float)1);
+        this.wingmembraneend2.setScale((float)1,(float)0,(float)1);
+        this.wingmembraneend4.setScale((float)0,(float)1,(float)0);
+        this.wingmembraneend3.setScale((float)0,(float)1,(float)0);
+        this.wingmembranemiddle3.setScale((float)1,(float)0,(float)1);
+        this.wingmembraneend5.setScale((float)1,(float)0,(float)1);
+
+
         updateDefaultPose();
         animator = ModelAnimator.create();
     }
@@ -640,6 +656,17 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
 
         if (ee.isReallyFlying() || ee.getAnimation() == ee.UNFLY_ANIMATION) {
             //flight pose
+            //The pose itself is given by the animation, which plays constantly
+            //also within the flight anim itself is the rescaling of the wings
+            //so w
+            this.wingmembranemiddle2.setScale((float)1,(float)1,(float)1);
+            this.wingmembraneend2.setScale((float)1,(float)1,(float)1);
+            this.wingmembraneend4.setScale((float)1,(float)1,(float)1);
+            this.wingmembraneend3.setScale((float)1,(float)1,(float)1);
+            this.wingmembranemiddle3.setScale((float)1,(float)1,(float)1);
+            this.wingmembraneend5.setScale((float)1,(float)1,(float)1);
+
+            //flight pose
             this.setRotateAngle(body1, -0.1571F, 0.0F, 0.0F);
             this.setRotateAngle(cube_r1, -0.1701F, -0.1986F, -0.0162F);
             this.setRotateAngle(cube_r10, 0.0843F, 0.0226F, -0.2608F);
@@ -693,32 +720,29 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
         } else if (ee.getAttachmentPos() != null) {
             if (ee.getAttachmentFacing() == EnumFacing.UP) {
                 //Is walking:
-                //The model is already reset to default each cycle so no need to do more here
+                //The pose is reset here, and I have hard coded these into the default
+                //pose as BB won't have done that
+
+                this.wingmembranemiddle2.setScale((float)1,(float)0,(float)1);
+                this.wingmembraneend2.setScale((float)1,(float)0,(float)1);
+                this.wingmembraneend4.setScale((float)0,(float)1,(float)0);
+                this.wingmembraneend3.setScale((float)0,(float)1,(float)0);
+                this.wingmembranemiddle3.setScale((float)1,(float)0,(float)1);
+                this.wingmembraneend5.setScale((float)1,(float)0,(float)1);
             }
             else {
                 //Climb pose
 
+                this.wingmembranemiddle2.setScale((float)1,(float)0,(float)1);
+                this.wingmembraneend2.setScale((float)1,(float)0,(float)1);
+                this.wingmembraneend4.setScale((float)0,(float)1,(float)0);
+                this.wingmembraneend3.setScale((float)0,(float)1,(float)0);
+                this.wingmembranemiddle3.setScale((float)1,(float)0,(float)1);
+                this.wingmembraneend5.setScale((float)1,(float)0,(float)1);
             }
         }
 
         if (ee.getAttachmentPos() == null || ee.getAttachmentFacing() == EnumFacing.UP) { //set wing membranes to their proper scale for flight
-            this.rightwing.setScale((float) 1, (float) 1, (float) 1);
-            this.rightwing2.setScale((float) 1, (float) 1, (float) 1);
-            this.rightwing3.setScale((float) 1, (float) 1, (float) 1);
-            this.rightwing4.setScale((float) 1, (float) 1, (float) 1);
-            this.leftwing.setScale((float) 1, (float) 1, (float) 1);
-            this.leftwing2.setScale((float) 1, (float) 1, (float) 1);
-            this.leftwing3.setScale((float) 1, (float) 1, (float) 1);
-            this.leftwing4.setScale((float) 1, (float) 1, (float) 1);
-            this.wingmembranebeg2.setScale((float) 1, (float) 1, (float) 1);
-            this.wingmembranebeg3.setScale((float) 1, (float) 1, (float) 1);
-            this.wingmembraneend2.setScale((float) 1, (float) 1, (float) 1);
-            this.wingmembraneend4.setScale((float) 1, (float) 1, (float) 1);
-            this.wingmembraneend3.setScale((float) 1, (float) 1, (float) 1);
-            this.wingmembraneend5.setScale((float) 1, (float) 1, (float) 1);
-            this.wingmembranemiddle2.setScale((float) 1, (float) 1, (float) 1);
-            this.wingmembranemiddle3.setScale((float) 1, (float) 1, (float) 1);
-
 
         } else {
 
@@ -967,14 +991,6 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
         this.setRotateAngle(leftwing2, leftwing2.rotateAngleX + (float) Math.toRadians(xx), leftwing2.rotateAngleY + (float) Math.toRadians(yy), leftwing2.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-
-        this.wingmembranemiddle2.setScale((float)1,(float)0,(float)1);
-
-
-        this.wingmembraneend2.setScale((float)1,(float)0,(float)1);
-
-
-
         if (tickAnim >= 0 && tickAnim < 5) {
             xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.25))*5 + (((tickAnim - 0) / 5) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/1))*7.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.25))*5)));
             yy = 0 + (((tickAnim - 0) / 5) * (10-(0)));
@@ -1143,12 +1159,9 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
         this.setRotateAngle(jaw, jaw.rotateAngleX + (float) Math.toRadians(xx), jaw.rotateAngleY + (float) Math.toRadians(yy), jaw.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-
         this.wingmembraneend4.rotationPointX = this.wingmembraneend4.rotationPointX + (float)(0);
         this.wingmembraneend4.rotationPointY = this.wingmembraneend4.rotationPointY - (float)(0);
         this.wingmembraneend4.rotationPointZ = this.wingmembraneend4.rotationPointZ + (float)(-7);
-        this.wingmembraneend4.setScale((float)0,(float)1,(float)0);
-
 
 
         if (tickAnim >= 0 && tickAnim < 5) {
@@ -1223,16 +1236,9 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
         this.wingmembraneend3.rotationPointX = this.wingmembraneend3.rotationPointX + (float)(0);
         this.wingmembraneend3.rotationPointY = this.wingmembraneend3.rotationPointY - (float)(0);
         this.wingmembraneend3.rotationPointZ = this.wingmembraneend3.rotationPointZ + (float)(-7);
-        this.wingmembraneend3.setScale((float)0,(float)1,(float)0);
-
-
-        this.wingmembranemiddle3.setScale((float)1,(float)0,(float)1);
-
-
-        this.wingmembraneend5.setScale((float)1,(float)0,(float)1);
-
 
     }
+
     public void animEat(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraSericipterus entity = (EntityPrehistoricFloraSericipterus) entitylivingbaseIn;
         int animCycle = 15;
@@ -2561,12 +2567,6 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
         this.leftwing3.rotationPointY = this.leftwing3.rotationPointY - (float)(yy);
         this.leftwing3.rotationPointZ = this.leftwing3.rotationPointZ + (float)(zz);
 
-
-
-       //this.wingmembranemiddle2.setScale((float)1,(float)0,(float)1);
-
-
-
         if (tickAnim >= 0 && tickAnim < 12) {
             xx = 4 + (((tickAnim - 0) / 12) * (22.25-(4)));
             yy = 0 + (((tickAnim - 0) / 12) * (0-(0)));
@@ -2588,12 +2588,6 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
             zz = 0;
         }
         this.setRotateAngle(leftwing4, leftwing4.rotateAngleX + (float) Math.toRadians(xx), leftwing4.rotateAngleY + (float) Math.toRadians(yy), leftwing4.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-        //this.wingmembraneend2.setScale((float)1,(float)0,(float)1);
-
-
 
         if (tickAnim >= 0 && tickAnim < 12) {
             xx = 0 + (((tickAnim - 0) / 12) * (-3.25-(0)));
@@ -2872,13 +2866,9 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
         this.rightfoot.rotationPointY = this.rightfoot.rotationPointY - (float)(yy);
         this.rightfoot.rotationPointZ = this.rightfoot.rotationPointZ + (float)(zz);
 
-
-
         this.wingmembraneend4.rotationPointX = this.wingmembraneend4.rotationPointX + (float)(0);
         this.wingmembraneend4.rotationPointY = this.wingmembraneend4.rotationPointY - (float)(0);
         this.wingmembraneend4.rotationPointZ = this.wingmembraneend4.rotationPointZ + (float)(-6);
-        //this.wingmembraneend4.setScale((float)0,(float)1,(float)0);
-
 
 
         if (tickAnim >= 0 && tickAnim < 6) {
@@ -2943,13 +2933,9 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
         }
         this.setRotateAngle(rightwing2, rightwing2.rotateAngleX + (float) Math.toRadians(xx), rightwing2.rotateAngleY + (float) Math.toRadians(yy), rightwing2.rotateAngleZ + (float) Math.toRadians(zz));
 
-
-
         this.wingmembraneend3.rotationPointX = this.wingmembraneend3.rotationPointX + (float)(0);
         this.wingmembraneend3.rotationPointY = this.wingmembraneend3.rotationPointY - (float)(0);
         this.wingmembraneend3.rotationPointZ = this.wingmembraneend3.rotationPointZ + (float)(-5.775);
-        //this.wingmembraneend3.setScale((float)0,(float)1,(float)0);
-
 
 
         if (tickAnim >= 0 && tickAnim < 8) {
@@ -2994,12 +2980,6 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
         this.rightwing3.rotationPointY = this.rightwing3.rotationPointY - (float)(yy);
         this.rightwing3.rotationPointZ = this.rightwing3.rotationPointZ + (float)(zz);
 
-
-
-        //this.wingmembranemiddle3.setScale((float)1,(float)0,(float)1);
-
-
-
         if (tickAnim >= 0 && tickAnim < 12) {
             xx = 11 + (((tickAnim - 0) / 12) * (4-(11)));
             yy = 0 + (((tickAnim - 0) / 12) * (0-(0)));
@@ -3031,12 +3011,6 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
         this.rightwing4.rotationPointX = this.rightwing4.rotationPointX + (float)(xx);
         this.rightwing4.rotationPointY = this.rightwing4.rotationPointY - (float)(yy);
         this.rightwing4.rotationPointZ = this.rightwing4.rotationPointZ + (float)(zz);
-
-
-
-        //this.wingmembraneend5.setScale((float)1,(float)0,(float)1);
-
-
 
         if (tickAnim >= 0 && tickAnim < 8) {
             xx = 0 + (((tickAnim - 0) / 8) * (1.51645-(0)));
@@ -3100,7 +3074,7 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        EntityPrehistoricFloraLandClimbingFlyingWalkingBase e = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) entity;
+        EntityPrehistoricFloraSericipterus e = (EntityPrehistoricFloraSericipterus) entity;
         animator.update(entity);
 
         animator.setAnimation(e.FLY_ANIMATION);
