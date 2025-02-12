@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_haplophrentis",
 			"type": "text",
-			"text": "It was a small creature up to around 4.5cm long, and is possibly related to brachiopods or other molluscs. It was a filter feeder and possessed arm-like structures which could be used to elevate the shell opening diagonally, and perhaps also used to push the creature around on the sea-floor. Its name means \"single wall\", in reference to the shell possessing only a single wall inside it."
+			"text": "It was a filter feeder and possessed arm-like structures which could be used to elevate the shell opening diagonally, and perhaps also used to push the creature around on the sea-floor. Its name means \"single wall\", in reference to the shell possessing only a single wall inside it."
 		},
 		{
 			"type": "lepidodendron:diet",
