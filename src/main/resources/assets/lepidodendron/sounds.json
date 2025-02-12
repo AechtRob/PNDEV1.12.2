@@ -13634,5 +13634,42 @@
         "stream": false
       }
     ]
+  },
+
+  "segisaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:segisaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:segisaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:segisaurus_living03",
+        "stream": false
+      }
+    ]
+  },
+  "segisaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:segisaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:segisaurus_hurt02",
+        "stream": false
+      }
+    ]
+  },
+  "segisaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:segisaurus_death",
+        "stream": false
+      }
+    ]
   }
 }
