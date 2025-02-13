@@ -1,0 +1,33 @@
+{
+	"name": "Archive Sorter",
+	"icon": "lepidodendron:archive_sorter",
+	"category": "lepidodendron:revival",
+	"sortnum": 12,
+	"pages": [
+		{
+			"type": "text",
+			"text": "The Archive Sorter is a large multiblock structure (5 wide by 3 tall) which you can use to file and manage your revival items. It comprises two main areas: the upper fossil insertion and management chamber, and five lower archive cabinets. Each of the cabinets wil store one of the five types of item, as given in their names when you open them:"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Vertebrate mobs$(li)InVertebrate mobs$(li)Static creatures$(li)Flora$(li)Other items$(br2)Items are inserted into the archive through the hopper-like duct on its upper face."
+		},
+		{
+			"type": "text",
+			"text": "The entire archive can be set to accept items only from certain periods. Open the upper Sorting Chamber and lock or unlock periods (or non-period-related) as you wish by clicking on the green or red toggle beside each one. Breaking and picking up the archive will retain all its contents."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:archive_sorter",
+			"recipe2": "lepidodendron:archive_cabinet"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:archive_drawer"
+		},
+		{
+			"type": "text",
+			"text": ""
+		}
+	]
+}

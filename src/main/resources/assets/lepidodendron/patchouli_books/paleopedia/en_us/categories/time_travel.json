@@ -1,0 +1,7 @@
+{
+    "name": "Time Travel System",
+    "description": "$(l)This section will walk you through the mod's time travel system!",
+    "icon": "lepidodendron:bone_wand",
+    "parent": "lepidodendron:basics",
+    "sortnum": 1
+}
