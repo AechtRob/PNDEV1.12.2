@@ -1,0 +1,57 @@
+{
+	"name": "Wielandiella",
+	"read_by_default": true,
+	"icon": "lepidodendron:wielandiella",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_wielandiella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_wielandiella",
+			"title": "Wielandiella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic-Jurassic$(br2)$(l)Propagation:$() Use a collection envelope to harvest seeds.$(br2)$(l)Growth:$() Grows on all dirt-like blocks."
+		},
+		{
+			"type": "multiblock",
+			"name": "Wielandiella sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "B" ],
+					[ "A" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"B": "lepidodendron:wielandiella_top",
+					"A": "lepidodendron:wielandiella",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_wielandiella",
+			"type": "text",
+			"text": "In Palaeobotany, names are usually given only to different shapes of fossil. Occasionally an author will want to publish a whole-plant description though, where it has been possible to reconstruct a full plant by close association or preservation complete. Wielandiella is one such taxon."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_wielandiella",
+			"type": "text",
+			"text": "Wielandiella comprises a full-plant bearing Anomozamites-type leaves, arranged in spiral shoots on woody stems displaying a divaricate branching habit (Y-shaped branching), very like modern Banksia. It bore its flower and seed cone at the tips of shoots, which then branched below the cone. Bennettites were not Angiosperms,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_wielandiella",
+			"type": "text",
+			"text": "but are known to have usually produced sometimes dramatic flower-like or cone-like structures for pollination and seed production, and so we have added the suggestion of floral structures to our plant. Bennettites leaves are usually somewhat thickly-textured, not delicate, and so we assume the plants were somewhat tough and resilient,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_wielandiella",
+			"type": "text",
+			"text": "able to grow in many different types of habitat, and their dominance of Mesozoic floras backs this up.$(br2)The various discoveries which can be reconstructed as Wielandiella have been found in fossil layers dating from the Late Triassic to the Mid Jurassic, typically in the northern hemisphere. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_wielandiella",
+			"type": "text",
+			"text": "Various subtle differences in stem and leaf have led to a few different species being proposed for Wielandiella plants. None bore very large examples of the Anomozamites leaves, and the stems are typically narrow, suggesting a smallish shrubby-growth."
+		}
+	]
+}

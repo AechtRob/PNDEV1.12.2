@@ -1,0 +1,64 @@
+{
+	"name": "Sahnioxylon",
+	"read_by_default": true,
+	"icon": "lepidodendron:sahnioxylon_shoot",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_sahnioxylon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sahnioxylon",
+			"title": "Sahnioxylon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic-Late Cretaceous$(br2)$(l)Propagation:$() Use a collection envelope on the flower-parts (not the main shoots) to harvest seeds.$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
+		},
+		{
+			"type": "multiblock",
+			"name": "Sahnioxylon sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "       ","       ","       "," G     ", "       ","       ","       " ],
+					[ "       ","       ","       "," A G   ", "       ","       ","       " ],
+					[ "       ","       ","       "," A A   ", "       ","       ","       " ],
+					[ "       ","       ","    G  "," AEA   ", "    G  ","       ","       " ],
+					[ "       ","       ","    A  "," AAA   ", "    A  ","       ","       " ],
+					[ "       ","       ","    A  ","  A E  ", "    A  ","       ","       " ],
+					[ "       ","       ","    A  ","  A F  ", "    A  ","       ","       " ],
+					[ "       ","       ","       ","  A A  ", "       ","       ","       " ],
+					[ "       ","       ","       ","  AEA  ", "       ","       ","       " ],
+					[ "       ","       ","       ","  CBD  ", "       ","       ","       " ],
+					[ "       ","       ","       ","   A   ", "       ","       ","       " ],
+					[ "       ","       ","       ","   A   ", "       ","       ","       " ],
+					[ "       ","       ","       ","   A   ", "       ","       ","       " ],
+					[ "       ","       ","       ","   A   ", "       ","       ","       " ],
+					[ "       ","       ","       ","   0   ", "       ","       ","       " ]
+				],
+				"mapping": {
+					"G": "lepidodendron:sahnioxylon_shoot",
+					"F": "lepidodendron:sahnioxylon_log[down=true,south=true,leaves=true,up=true,north=true]",
+					"E": "lepidodendron:sahnioxylon_leaves[facing=up]",
+					"D": "lepidodendron:sahnioxylon_log[east=true,up=true]",
+					"C": "lepidodendron:sahnioxylon_log[west=true,up=true]",
+					"B": "lepidodendron:sahnioxylon_log[down=true,east=true,leaves=true,up=true,west=true]",
+					"A": "lepidodendron:sahnioxylon_log[down=true,up=true]",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sahnioxylon",
+			"type": "text",
+			"text": "Sahnioxylon is the name given to a fairly wide range of fossil woods found from the Triassic to Cretaceous. The wood displays primitive features, but appears to belong to plants somewhere fairly basal within angiosperms/gymnosperms. At least some forms of Sahnioxylon are likely to be the trunks of larger Bennettities plants, and we follow this suggestion here. The fossils are often of good stature and so seem to be able"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sahnioxylon",
+			"type": "text",
+			"text": "to have come from fairly large plants. We do not know which leaves belong with Sahnioxylon, and we have suggested shoots of leaves with no particular diagnostic features. As most Bennettities plants display a divaricate branching habit (Y-shaped branching), very like modern Banksia, we have adopted that structure here: as seen in some full-plant discoveries (see $(l:plants/wielandiella)Wielandiella$(/l)) we know that many of these plants produced flowers/cones at the ends of shoots,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sahnioxylon",
+			"type": "text",
+			"text": "which then branched behind the cone (again very like modern Banksia), and we show that shape here in the Sahnioxylon plant. Bennettites were not Angiosperms, but are known to have usually produced sometimes dramatic flower-like or cone-like structures for pollination and seed production, and so we have added the suggestion of floral structures to our plant."
+		}
+	]
+}
