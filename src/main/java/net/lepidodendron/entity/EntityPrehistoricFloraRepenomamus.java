@@ -99,6 +99,17 @@ public class EntityPrehistoricFloraRepenomamus extends EntityPrehistoricFloraMor
 	}
 
 	@Override
+	public SoundEvent getAlarmSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation(""));
+	}
+
+	@Override
+	public boolean hasAlarm() {
+		return false;
+	}
+
+	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 

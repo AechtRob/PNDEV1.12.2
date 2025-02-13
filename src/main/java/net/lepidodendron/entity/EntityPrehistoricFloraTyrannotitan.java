@@ -60,8 +60,8 @@ public class EntityPrehistoricFloraTyrannotitan extends EntityPrehistoricFloraLa
 		maxHeight = 3.5F;
 		maxHealthAgeable = 100.0D;
 		STAND_ANIMATION = Animation.create(210);
-		NOISE_ANIMATION = Animation.create(50); //rumble
-		NOISE2_ANIMATION = Animation.create(40); //hiss
+		NOISE_ANIMATION = Animation.create(40); //rumble
+		NOISE2_ANIMATION = Animation.create(50); //hiss
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

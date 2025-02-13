@@ -742,8 +742,8 @@ public class ModelHaliskia extends ModelBasePalaeopedia {
         //Animations:
 
         if (flier.isReallyFlying()) { //flying
-            this.faceTarget(f3, f4, 8, neck);
-            this.faceTarget(f3, f4, 4, head);
+            //this.faceTarget(f3, f4, 8, neck);
+            //this.faceTarget(f3, f4, 4, head);
 
         }
         else { //not flying

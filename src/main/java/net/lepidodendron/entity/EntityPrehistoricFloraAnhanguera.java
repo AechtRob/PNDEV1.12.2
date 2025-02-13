@@ -70,7 +70,7 @@ public class EntityPrehistoricFloraAnhanguera extends EntityPrehistoricFloraLand
 
 	@Override
 	public int flyTransitionLength() {
-		return 40;
+		return 15;
 	}
 
 	@Override
