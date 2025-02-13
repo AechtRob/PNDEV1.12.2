@@ -193,7 +193,8 @@ public class BlockBivalveWhite extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeCretaceousEarly)
 		{
 			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
-			if (biomeCretaceousEarly.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_southern")) {
+			if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean_Shore_Southern
+					|| biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean_Shore_Atlantic) {
 				biomeCriteria = true;
 			}
 			else {
