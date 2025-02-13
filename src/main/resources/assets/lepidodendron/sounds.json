@@ -10799,10 +10799,6 @@
       {
         "name": "lepidodendron:dearc_hurt03",
         "stream": false
-      },
-      {
-        "name": "lepidodendron:dearc_hurt04",
-        "stream": false
       }
     ]
   },
@@ -10866,10 +10862,6 @@
       },
       {
         "name": "lepidodendron:germanodactylus_hurt03",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:germanodactylus_hurt04",
         "stream": false
       }
     ]
@@ -13436,6 +13428,55 @@
     "sounds": [
       {
         "name": "lepidodendron:triadobatrachus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "gobiconodon_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:gobiconodon_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:gobiconodon_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:gobiconodon_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:gobiconodon_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:gobiconodon_living05",
+        "stream": false
+      }
+    ]
+  },
+  "gobiconodon_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:gobiconodon_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:gobiconodon_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:gobiconodon_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "gobiconodon_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:gobiconodon_death",
         "stream": false
       }
     ]
