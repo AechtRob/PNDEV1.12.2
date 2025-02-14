@@ -133,7 +133,7 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.85F;
+			speedBase = speedBase * 2.55F;
 		}
 		return speedBase * 0.7F;
 	}
