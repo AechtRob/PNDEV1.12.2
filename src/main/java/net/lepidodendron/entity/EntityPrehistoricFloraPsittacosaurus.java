@@ -79,6 +79,7 @@ public class EntityPrehistoricFloraPsittacosaurus extends EntityPrehistoricFlora
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraPsittacosaurus> Psittacosaurus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraPsittacosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraPsittacosaurus currentPsittacosaurus : Psittacosaurus) {
+				currentPsittacosaurus.setAnimation(NO_ANIMATION);
 				currentPsittacosaurus.setRevengeTarget(ee);
 				currentPsittacosaurus.setAlarmTarget(ee);
 				currentPsittacosaurus.alarmCooldown = rand.nextInt(20);

@@ -38,10 +38,10 @@ public class EntityPrehistoricFloraMythunga extends EntityPrehistoricFloraLandCl
 
 	public EntityPrehistoricFloraMythunga(World world) {
 		super(world);
-		setSize(0.85F, 0.5F);
+		setSize(0.95F, 1.15F);
 		minWidth = 0.10F;
-		maxWidth = 0.85F;
-		maxHeight = 0.5F;
+		maxWidth = 0.95F;
+		maxHeight = 1.15F;
 		maxHealthAgeable = 18.0D;
 		setNoAI(!true);
 		enablePersistence();
@@ -75,7 +75,7 @@ public class EntityPrehistoricFloraMythunga extends EntityPrehistoricFloraLandCl
 
 	@Override
 	public int unflyTransitionLength() {
-		return 10;
+		return 15;
 	}
 
 	@Override
@@ -100,6 +100,7 @@ public class EntityPrehistoricFloraMythunga extends EntityPrehistoricFloraLandCl
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraMythunga> mythunga = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraMythunga.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraMythunga currentTapejara : mythunga) {
+				currentTapejara.setAnimation(NO_ANIMATION);
 				currentTapejara.setAlarmTarget(ee);
 				currentTapejara.setRevengeTarget(ee);
 				currentTapejara.screamAlarmCooldown = rand.nextInt(20);

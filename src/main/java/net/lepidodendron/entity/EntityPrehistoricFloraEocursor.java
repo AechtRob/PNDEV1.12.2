@@ -372,6 +372,7 @@ public class EntityPrehistoricFloraEocursor extends EntityPrehistoricFloraLandBa
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraEocursor> Eocursor = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraEocursor.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraEocursor currentEocursor : Eocursor) {
+				currentEocursor.setAnimation(NO_ANIMATION);
 				currentEocursor.setRevengeTarget(ee);
 				currentEocursor.setAlarmTarget(ee);
 				currentEocursor.screamAlarmCooldown = rand.nextInt(20);

@@ -278,6 +278,7 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraWukongopterus> wukongopterus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraWukongopterus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraWukongopterus currentWukongopterus : wukongopterus) {
+				currentWukongopterus.setAnimation(NO_ANIMATION);
 				currentWukongopterus.setAlarmTarget(ee);
 				currentWukongopterus.setRevengeTarget(ee);
 				currentWukongopterus.screamAlarmCooldown = rand.nextInt(20);

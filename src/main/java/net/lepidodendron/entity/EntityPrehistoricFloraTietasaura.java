@@ -368,6 +368,7 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraTietasaura> Tietasaura = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraTietasaura.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraTietasaura currentTietasaura : Tietasaura) {
+				currentTietasaura.setAnimation(NO_ANIMATION);
 				currentTietasaura.setRevengeTarget(ee);
 				currentTietasaura.setAlarmTarget(ee);
 				currentTietasaura.alarmCooldown = rand.nextInt(20);

@@ -100,6 +100,7 @@ public class EntityPrehistoricFloraAnhanguera extends EntityPrehistoricFloraLand
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraAnhanguera> anhanguera = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraAnhanguera.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraAnhanguera currentTapejara : anhanguera) {
+				currentTapejara.setAnimation(NO_ANIMATION);
 				currentTapejara.setAlarmTarget(ee);
 				currentTapejara.setRevengeTarget(ee);
 				currentTapejara.screamAlarmCooldown = rand.nextInt(20);

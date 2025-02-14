@@ -537,9 +537,9 @@ public class ModelAcrocanthosaurus extends ModelBasePalaeopedia {
         this.cube_r40.cubeList.add(new ModelBox(cube_r40, 0, 0, -5.0F, -3.75F, -5.0F, 8, 8, 5, 0.0F, false));
 
         this.eyes = new AdvancedModelRenderer(this);
+        this.eyes.scaleChildren = true;
         this.eyes.setRotationPoint(0.0F, -0.35F, -5.65F);
         this.head.addChild(eyes);
-
 
         this.cube_r41 = new AdvancedModelRenderer(this);
         this.cube_r41.setRotationPoint(-4.0F, 6.0F, 1.65F);
@@ -2200,14 +2200,15 @@ public class ModelAcrocanthosaurus extends ModelBasePalaeopedia {
 
     }
 
-    public void animNoiseHiss(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
+    public void animRumble(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraAcrocanthosaurus entity = (EntityPrehistoricFloraAcrocanthosaurus) entitylivingbaseIn;
         int animCycle = 49;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
         double yy = 0;
         double zz = 0;
-         if (tickAnim >= 0 && tickAnim < 15) {
+
+        if (tickAnim >= 0 && tickAnim < 15) {
             xx = 0 + (((tickAnim - 0) / 15) * (10.425+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150))*-7-(0)));
             yy = 0 + (((tickAnim - 0) / 15) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 15) * (0-(0)));
@@ -2434,8 +2435,8 @@ public class ModelAcrocanthosaurus extends ModelBasePalaeopedia {
         }
         this.eyes.setScale((float)xx, (float)yy, (float)zz);
 
-
     }
+
     public void animRelax(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraAcrocanthosaurus entity = (EntityPrehistoricFloraAcrocanthosaurus) entitylivingbaseIn;
         int animCycle = 60;
@@ -6734,10 +6735,10 @@ public class ModelAcrocanthosaurus extends ModelBasePalaeopedia {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) {
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The idle noise/anim  - RUMBLE!
-            animNoiseHiss(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The idle noise anim = RUMBLE
+            animRumble(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The actual roar/anim
+        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The roar/threat anim
             animRoar(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         else if (ee.getAnimation() == ee.STAND_ANIMATION) {

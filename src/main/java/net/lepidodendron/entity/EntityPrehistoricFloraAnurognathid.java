@@ -94,6 +94,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 				List<EntityPrehistoricFloraAnurognathid> anurognathid = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraAnurognathid.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 				for (EntityPrehistoricFloraAnurognathid currentAnurognathid : anurognathid) {
 					if (currentAnurognathid.getPNType() == this.getPNType()) {
+						currentAnurognathid.setAnimation(NO_ANIMATION);
 						currentAnurognathid.setAlarmTarget(ee);
 						currentAnurognathid.setRevengeTarget(ee);
 						currentAnurognathid.screamAlarmCooldown = rand.nextInt(20);

@@ -111,6 +111,7 @@ public class EntityPrehistoricFloraSericipterus extends EntityPrehistoricFloraLa
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraSericipterus> sericipterus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraSericipterus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraSericipterus currentSericipterus : sericipterus) {
+				currentSericipterus.setAnimation(NO_ANIMATION);
 				currentSericipterus.setAlarmTarget(ee);
 				currentSericipterus.setRevengeTarget(ee);
 				currentSericipterus.screamAlarmCooldown = rand.nextInt(20);

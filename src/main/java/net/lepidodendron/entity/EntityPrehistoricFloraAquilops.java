@@ -79,6 +79,7 @@ public class EntityPrehistoricFloraAquilops extends EntityPrehistoricFloraLandBa
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraAquilops> Yinlong = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraAquilops.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraAquilops currentYinlong : Yinlong) {
+				currentYinlong.setAnimation(NO_ANIMATION);
 				currentYinlong.setRevengeTarget(ee);
 				currentYinlong.setAlarmTarget(ee);
 				currentYinlong.alarmCooldown = rand.nextInt(20);
@@ -173,7 +174,7 @@ public class EntityPrehistoricFloraAquilops extends EntityPrehistoricFloraLandBa
 	@Override
 	public AxisAlignedBB getGrappleBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(2.0F + size, 1.0F + size, 2.0F + size);
+		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
 	}
 
 	public boolean findGrappleTarget() {
@@ -381,6 +382,11 @@ public class EntityPrehistoricFloraAquilops extends EntityPrehistoricFloraLandBa
 				.getObject(new ResourceLocation("lepidodendron:aquilops_alarm"));
 	}
 
+	public SoundEvent getChatterSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:aquilops_alarm"));
+	}
+
 	public void playAlarmSound()
 	{
 		SoundEvent soundevent = this.getAlarmSound();
@@ -412,7 +418,6 @@ public class EntityPrehistoricFloraAquilops extends EntityPrehistoricFloraLandBa
 			launchAttack();
 		}
 
-
 		if (this.standCooldown > 0) {
 			this.standCooldown -= rand.nextInt(3) + 1;
 		}
@@ -433,6 +438,14 @@ public class EntityPrehistoricFloraAquilops extends EntityPrehistoricFloraLandBa
 		}
 		else if ((this.getAnimation() == GRAPPLE_ANIMATION) && this.getGrappleTarget() != null) {
 			this.faceEntity(this.getGrappleTarget(), 10, 10);
+		}
+
+		if (!this.world.isRemote) {
+			if (this.getAnimation() == GRAPPLE_ANIMATION) {
+				if (this.getAnimationTick() == 1) {
+					this.playSound(this.getChatterSound(), this.getSoundVolume(), 1);
+				}
+			}
 		}
 
 		//System.err.println("this.getMateable() " + this.getMateable() + " inPFLove " + this.inPFLove);

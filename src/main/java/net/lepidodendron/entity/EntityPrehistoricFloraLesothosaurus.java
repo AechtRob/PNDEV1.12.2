@@ -305,6 +305,7 @@ public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraL
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraLesothosaurus> Lesothosaurus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraLesothosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraLesothosaurus currentLesothosaurus : Lesothosaurus) {
+				currentLesothosaurus.setAnimation(NO_ANIMATION);
 				currentLesothosaurus.setRevengeTarget(ee);
 				currentLesothosaurus.setAlarmTarget(ee);
 				currentLesothosaurus.alarmCooldown = rand.nextInt(20);

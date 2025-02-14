@@ -103,6 +103,7 @@ public class EntityPrehistoricFloraIyuku extends EntityPrehistoricFloraLandBase 
 			List<EntityPrehistoricFloraIyuku> Dryosaurus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraIyuku.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraIyuku currentDryosaurus : Dryosaurus) {
 				if (!(currentDryosaurus instanceof EntityPrehistoricFloraIyuku)) {
+					currentDryosaurus.setAnimation(NO_ANIMATION);
 					currentDryosaurus.setRevengeTarget(ee);
 					currentDryosaurus.setAlarmTarget(ee);
 					currentDryosaurus.alarmCooldown = rand.nextInt(20);

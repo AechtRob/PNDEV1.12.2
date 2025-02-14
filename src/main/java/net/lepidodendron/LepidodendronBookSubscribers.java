@@ -437,7 +437,13 @@ public class LepidodendronBookSubscribers {
 						}
 					}
 					else {
-						nestString = " requires a nest to lay into";
+						if (((EntityPrehistoricFloraLandBase) entity).placesNest()
+							&& (!((EntityPrehistoricFloraLandBase) entity).isNestMound())) {
+							nestString = " if it has no nest, places a new nest along with its eggs when it lays";
+						}
+						else {
+							nestString = " requires a nest to lay into";
+						}
 					}
 				}
 			}
@@ -474,7 +480,13 @@ public class LepidodendronBookSubscribers {
 					nestString = " lays eggs into mounds in blocks";
 				}
 				else if (((EntityPrehistoricFloraAgeableBase) entity).hasNest()) {
-					nestString = " requires a nest to lay into";
+					if (((EntityPrehistoricFloraLandBase) entity).placesNest()
+							&& (!((EntityPrehistoricFloraLandBase) entity).isNestMound())) {
+						nestString = " if it has no nest, places a new nest along with its eggs when it lays";
+					}
+					else {
+						nestString = " requires a nest to lay into";
+					}
 				}
 				else {
 					nestString = " lays eggs in water";
