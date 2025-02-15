@@ -48,7 +48,6 @@ public class EntityPrehistoricFloraTyrannotitan extends EntityPrehistoricFloraLa
 	public ChainBuffer tailBuffer;
 	public Animation STAND_ANIMATION;
 	private int standCooldown;
-	public Animation NOISE_ANIMATION;
 	public int ambientSoundTime;
 	public Animation NOISE2_ANIMATION;
 
@@ -60,8 +59,7 @@ public class EntityPrehistoricFloraTyrannotitan extends EntityPrehistoricFloraLa
 		maxHeight = 3.5F;
 		maxHealthAgeable = 100.0D;
 		STAND_ANIMATION = Animation.create(210);
-		NOISE_ANIMATION = Animation.create(40); //rumble
-		NOISE2_ANIMATION = Animation.create(50); //hiss
+		NOISE2_ANIMATION = Animation.create(50); //rumble
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -123,12 +121,12 @@ public class EntityPrehistoricFloraTyrannotitan extends EntityPrehistoricFloraLa
 	@Override
 	public int getRoarLength() {
 		return 100;
-	} //Idle
+	} //Roar/threat
 
 	@Override
 	public int getNoiseLength() {
 		return 40;
-	} //Roar
+	} //Hiss/noise
 
 	@Override
 	public boolean hasNest() {
@@ -267,6 +265,7 @@ public class EntityPrehistoricFloraTyrannotitan extends EntityPrehistoricFloraLa
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:tyrannotitan_idle2"));
 	}
+
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
