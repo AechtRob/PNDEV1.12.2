@@ -61,6 +61,11 @@ public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraL
 	}
 
 	@Override
+	public int getRoarLength() {
+		return 30;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {

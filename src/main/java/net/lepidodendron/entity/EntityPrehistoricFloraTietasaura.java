@@ -96,6 +96,11 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 	}
 
 	@Override
+	public int getRoarLength() {
+		return 20;
+	}
+
+	@Override
 	public boolean hasNest() {
 		return true;
 	}
@@ -133,7 +138,7 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.55F;
+			speedBase = speedBase * 3.55F;
 		}
 		return speedBase * 0.7F;
 	}
