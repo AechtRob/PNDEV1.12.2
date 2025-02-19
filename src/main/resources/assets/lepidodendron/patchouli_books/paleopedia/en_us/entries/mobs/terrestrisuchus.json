@@ -1,0 +1,52 @@
+{
+	"name": "Terrestrisuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/terrestrisuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_terrestrisuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_terrestrisuchus",
+			"title": "Terrestrisuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Saltoposuchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. gracilis",
+            "entity": "lepidodendron:prehistoric_flora_terrestrisuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_terrestrisuchus",
+			"type": "text",
+			"text": "Terrestrisuchus gracilis comes from the Upper Triassic, with fossils being found in the Pant-y-ffynon and Ruthin Quarries, Wales (United Kingdom); Tytherington and Cromhall Quarries, England (United Kingdom). It is a small crocodylomorph, growing to 76 cm cm in length, with a possible length of 1 m or more. Unlike modern crocodiles, Terrestrisuchus lived entirely on land, and as such also hand long limbs that were held beneath their bodies,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_terrestrisuchus",
+			"type": "text",
+			"text": "as well as also having its eyes being supported by a sclerotic ring. The generic name derives from the Latin word 'terrestris', to mean 'terrestrial'; and 'suchus', to mean 'crocodile'. The specific name derives directly from the Latin word 'gracilis', to mean 'slender'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_terrestrisuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_terrestrisuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_terrestrisuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_terrestrisuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_terrestrisuchus"
+		}
+	]
+}

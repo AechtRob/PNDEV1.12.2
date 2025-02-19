@@ -1,0 +1,52 @@
+{
+	"name": "Cooyoo",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cooyoo_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_cooyoo",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cooyoo",
+			"title": "Cooyoo",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Ichthyodectiformes$(br)>Ichthyodectidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Cooyoo",
+            "entity": "lepidodendron:prehistoric_flora_cooyoo",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cooyoo",
+			"type": "text",
+			"text": "Cooyoo australis comes from the Early Cretaceous, with fossils being found in the Chañares Formation, Argentina. It is a large ichthyodectid, growing to 2.5 m in length. It is known for being the largest bony fish in the Eromanga Sea, as such was a dominant predator within the sea, although there is evidence of it being preyed upon by larger animals,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cooyoo",
+			"type": "text",
+			"text": "with one skull that was discovered bearing fatal bite marks. The generic name derives directly from the Yirandhali word 'cooyoo', to mean 'fish'. The specific name derives from the Latin word for 'Australia'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cooyoo"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cooyoo"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cooyoo"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cooyoo"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cooyoo"
+		}
+	]
+}

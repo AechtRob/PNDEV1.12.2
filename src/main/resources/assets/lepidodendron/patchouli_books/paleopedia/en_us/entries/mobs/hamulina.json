@@ -1,0 +1,47 @@
+{
+	"name": "Hamulina",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hamulina_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hamulina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hamulina",
+			"title": "Hamulina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Ammonitida$(br)>Ancyloceratina$(br)>Hamulinidae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. astieriana",
+            "entity": "lepidodendron:prehistoric_flora_hamulina",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hamulina",
+			"type": "text",
+			"text": "Hamulina comes from the Cretaceous, with fossils being found across the globe. It is a small hamulinid, growing to 40 cm cm in length. They are known to be fast moving nektonic predators due to their streamlined shells."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hamulina"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hamulina"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hamulina"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hamulina"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hamulina"
+		}
+	]
+}
