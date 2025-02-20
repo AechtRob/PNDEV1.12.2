@@ -1,0 +1,47 @@
+{
+	"name": "Hypophylloceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hypophylloceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hypophylloceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hypophylloceras",
+			"title": "Hypophylloceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Ammonitida$(br)>Phylloceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. ramosus",
+            "entity": "lepidodendron:prehistoric_flora_hypophylloceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hypophylloceras",
+			"type": "text",
+			"text": "Hypophylloceras comes from the Cretaceous, with fossils being found across the globe. It is a small phylloceratid, growing to 3.4 cm in diameter."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hypophylloceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hypophylloceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hypophylloceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hypophylloceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hypophylloceras"
+		}
+	]
+}

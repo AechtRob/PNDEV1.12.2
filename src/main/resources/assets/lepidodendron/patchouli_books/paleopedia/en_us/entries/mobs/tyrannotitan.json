@@ -21,12 +21,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_tyrannotitan",
 			"type": "text",
-			"text": "Tyrannotitan chubutensis comes from the Early Cretaceous, with fossils found in the Cerro Barcino Formation, Argentina. It is a large carcharodontosaurid, growing up to 13 m in length, and 7 tons in body mass. It is the most basal of the giganotosaurinian tribe, and has unusual features, with a pneumatic hiatus at the anterior of its sacral region (Base of the tail),"
+			"text": "Tyrannotitan chubutensis comes from the Early Cretaceous, with fossils found in the Cerro Barcino Formation, Argentina. It is a large carcharodontosaurid, growing up to 13 m in length, and 7000 kg in weight. It is the most basal of the giganotosaurinian tribe, and has unusual features, with a pneumatic hiatus at the anterior of its sacral region (Base of the tail),"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tyrannotitan",
 			"type": "text",
-			"text": "which allowed the vertebral column to be pneumatised by independent segments of the respiratory system. The generic name derives from the Greek word 'Tyranno', to mean 'Tyrant'; and 'titan'. The specific name derives from the place name 'Chubut Province', near to were its fossils were found."
+			"text": "which allowed the vertebral column to be pneumatised by independent segments of the respiratory system. Its skull was built to effectively cut through flesh, having a large narrow head and numerous blade-like teeth, which had strong serrations on them. The generic name derives from the Greek word 'Tyranno', to mean 'Tyrant'; and 'titan'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tyrannotitan",
+			"type": "text",
+			"text": "The specific name derives from the place name 'Chubut Province', near to were its fossils were found."
 		},
 		{
 			"type": "lepidodendron:diet",

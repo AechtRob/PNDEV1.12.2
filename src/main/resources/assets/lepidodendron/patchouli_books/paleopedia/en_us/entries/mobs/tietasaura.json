@@ -21,12 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_tietasaura",
 			"type": "text",
-			"text": "Tietasaura derbyiana hails from the Early Cretaceous, with fossils found in the Marfim Formation, Brazil. It is a small ornithopod, and grew up to 1.5 m in overall size. It is the first ornithischian to be named that comes from Brazil, and the first dinosaur remains to be found in South America overall."
+			"text": "Tietasaura derbyiana comes from the Early Cretaceous, with fossils found in the Marfim Formation, Brazil. It is a small ornithopod, and grew up to 1.5 m in overall size. It is the first ornithischian to be named that comes from Brazil, and the first dinosaur remains to be found in South America overall."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tietasaura",
 			"type": "text",
-			"text": "The generic name derives from the fictional name 'Tieta', the name of the main character of the novel 'Tieta do Agreste'; and the Greek word 'sauros', to mean 'Lizard'. The specific name derives from the Latinised surname of Orville A. Derby, a geologist who contributed to Brazillian palaeontology."
+			"text": "The generic name derives from the fictional name 'Tieta', the name of the main character of the novel 'Tieta do Agreste'; and the Greek word 'sauros', to mean 'Lizard'. The specific name derives from the Latinised surname of Orville A. Derby, a geologist who contributed to Brazilian palaeontology."
 		},
 		{
 			"type": "lepidodendron:diet",
