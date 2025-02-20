@@ -591,7 +591,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 					else if (stackProcessing.getItem() == ItemFossilJurassic.block
 							&& this.dimJurassic < this.maxResearch) {
 						for (int p = 0; p < 10; p++) {
-							this.dimTriassic++;
+							this.dimJurassic++;
 						}
 					}
 					else if (stackProcessing.getItem() == ItemFossilCretaceous.block) {
