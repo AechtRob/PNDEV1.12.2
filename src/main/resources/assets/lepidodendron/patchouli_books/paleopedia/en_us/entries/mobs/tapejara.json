@@ -1,0 +1,52 @@
+{
+	"name": "Tapejara",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tapejara_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tapejara",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tapejara",
+			"title": "Tapejara",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Pterosauria$(br)>Pterodactyloidea$(br)>Tapejaridae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. wellnhoferi",
+            "entity": "lepidodendron:prehistoric_flora_tapejara",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tapejara",
+			"type": "text",
+			"text": "Tapejara wellnhoferi comes from the Early Cretaceous, with fossils being found in the Romualdo Formation, Brazil. It is a small tapejarid, with a wingspan of 1.3 m in width. It is most well known for its large rounded crest on top of its skull."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tapejara",
+			"type": "text",
+			"text": "The generic name derives from the Tupí-Guaraní word 'tape', to mean 'path'; and 'jara', to mean 'lord'. The specific name derives from the surname of Peter Wellnhofer, a German paleontologist, who is most well known for his work on Archaeopteryx, the first known Mesozoic bird."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tapejara"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tapejara"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tapejara"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tapejara"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tapejara"
+		}
+	]
+}

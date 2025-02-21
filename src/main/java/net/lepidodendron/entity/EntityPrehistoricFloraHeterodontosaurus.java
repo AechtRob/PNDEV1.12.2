@@ -240,6 +240,7 @@ public class EntityPrehistoricFloraHeterodontosaurus extends EntityPrehistoricFl
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraHeterodontosaurus> Heterodontosaurus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraHeterodontosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraHeterodontosaurus currentHeterodontosaurus : Heterodontosaurus) {
+				currentHeterodontosaurus.setAnimation(NO_ANIMATION);
 				currentHeterodontosaurus.setRevengeTarget(ee);
 				currentHeterodontosaurus.setAlarmTarget(ee);
 				currentHeterodontosaurus.alarmCooldown = rand.nextInt(20);

@@ -103,6 +103,7 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 					&& (!(currentDiictodon instanceof EntityPrehistoricFloraEosimops))
 					&& (!(currentDiictodon instanceof EntityPrehistoricFloraProsictodon))
 				) {
+					currentDiictodon.setAnimation(NO_ANIMATION);
 					currentDiictodon.setRevengeTarget(ee);
 					currentDiictodon.setAlarmTarget(ee);
 					currentDiictodon.screamAlarmCooldown = rand.nextInt(20);

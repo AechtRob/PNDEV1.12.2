@@ -98,6 +98,7 @@ public class EntityPrehistoricFloraSuminia extends EntityPrehistoricFloraLandCli
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraSuminia> Suminia = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraSuminia.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraSuminia currentSuminia : Suminia) {
+				currentSuminia.setAnimation(NO_ANIMATION);
 				currentSuminia.setRevengeTarget(ee);
 				currentSuminia.setAlarmTarget(ee);
 				currentSuminia.alarmCooldown = rand.nextInt(20);

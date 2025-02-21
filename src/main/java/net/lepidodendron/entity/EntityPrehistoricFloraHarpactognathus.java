@@ -102,6 +102,7 @@ public class EntityPrehistoricFloraHarpactognathus extends EntityPrehistoricFlor
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraHarpactognathus> harpactognathus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraHarpactognathus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraHarpactognathus currentHarpactognathus : harpactognathus) {
+				currentHarpactognathus.setAnimation(NO_ANIMATION);
 				currentHarpactognathus.setAlarmTarget(ee);
 				currentHarpactognathus.setRevengeTarget(ee);
 				currentHarpactognathus.screamAlarmCooldown = rand.nextInt(20);

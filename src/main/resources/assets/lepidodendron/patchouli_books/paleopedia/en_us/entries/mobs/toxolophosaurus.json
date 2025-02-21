@@ -1,0 +1,47 @@
+{
+	"name": "Toxolophosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/toxolophosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_toxolophosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_toxolophosaurus",
+			"title": "Toxolophosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Rhynchocephalia$(br)>Sphenodontia$(br)>Opisthodontia"
+		},
+        	{
+            "type": "entity",
+            "name": "T. cloudi",
+            "entity": "lepidodendron:prehistoric_flora_toxolophosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_toxolophosaurus",
+			"type": "text",
+			"text": "Toxolophosaurus cloudi comes from the Early Cretaceous, with fossils being found in the Kootenai Formation, Montana (USA). It is a small sphenodont, growing to 60 cm in length. When discovered, it was origionally assigned to the Trilophosauridae family, which come from the Triassic. This was done without any reason, but it took 20 years for it to be reassigned to the current family."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_toxolophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_toxolophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_toxolophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_toxolophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_toxolophosaurus"
+		}
+	]
+}

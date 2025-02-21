@@ -127,6 +127,7 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 			List<EntityPrehistoricFloraHypsilophodon> Hypsilophodon = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraHypsilophodon.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraHypsilophodon currentHypsilophodon : Hypsilophodon) {
 				if (!(currentHypsilophodon instanceof EntityPrehistoricFloraHypsilophodon)) {
+					currentHypsilophodon.setAnimation(NO_ANIMATION);
 					currentHypsilophodon.setRevengeTarget(ee);
 					currentHypsilophodon.setAlarmTarget(ee);
 					currentHypsilophodon.alarmCooldown = rand.nextInt(20);

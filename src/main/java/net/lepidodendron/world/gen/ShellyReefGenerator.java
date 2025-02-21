@@ -43,7 +43,8 @@ public class ShellyReefGenerator extends WorldGenerator
 
 		Biome biome = worldIn.getBiome(position);
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks")
-			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks_raised")) {
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks_raised")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_southern")) {
 			dimensionCriteria = true;
 		}
 

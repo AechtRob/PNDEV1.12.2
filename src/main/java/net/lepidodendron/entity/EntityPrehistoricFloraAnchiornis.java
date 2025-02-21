@@ -89,6 +89,7 @@ public class EntityPrehistoricFloraAnchiornis extends EntityPrehistoricFloraLand
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraAnchiornis> anchiornis = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraAnchiornis.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraAnchiornis currentAnchiornis : anchiornis) {
+				currentAnchiornis.setAnimation(NO_ANIMATION);
 				currentAnchiornis.setAlarmTarget(ee);
 				currentAnchiornis.setRevengeTarget(ee);
 				currentAnchiornis.screamAlarmCooldown = rand.nextInt(20);

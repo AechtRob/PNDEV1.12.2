@@ -38,10 +38,10 @@ public class EntityPrehistoricFloraAnhanguera extends EntityPrehistoricFloraLand
 
 	public EntityPrehistoricFloraAnhanguera(World world) {
 		super(world);
-		setSize(0.85F, 0.5F);
+		setSize(0.95F, 1.15F);
 		minWidth = 0.10F;
-		maxWidth = 0.85F;
-		maxHeight = 0.5F;
+		maxWidth = 0.95F;
+		maxHeight = 1.15F;
 		maxHealthAgeable = 35.0D;
 		setNoAI(!true);
 		enablePersistence();
@@ -70,12 +70,12 @@ public class EntityPrehistoricFloraAnhanguera extends EntityPrehistoricFloraLand
 
 	@Override
 	public int flyTransitionLength() {
-		return 10;
+		return 15;
 	}
 
 	@Override
 	public int unflyTransitionLength() {
-		return 10;
+		return 40;
 	}
 
 	@Override
@@ -100,6 +100,7 @@ public class EntityPrehistoricFloraAnhanguera extends EntityPrehistoricFloraLand
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraAnhanguera> anhanguera = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraAnhanguera.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraAnhanguera currentTapejara : anhanguera) {
+				currentTapejara.setAnimation(NO_ANIMATION);
 				currentTapejara.setAlarmTarget(ee);
 				currentTapejara.setRevengeTarget(ee);
 				currentTapejara.screamAlarmCooldown = rand.nextInt(20);

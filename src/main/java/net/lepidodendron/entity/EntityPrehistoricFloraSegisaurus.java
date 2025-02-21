@@ -213,20 +213,20 @@ public class EntityPrehistoricFloraSegisaurus extends EntityPrehistoricFloraLand
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:dracoraptor_idle"));
+				.getObject(new ResourceLocation("lepidodendron:segisaurus_idle"));
 
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:dracoraptor_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:segisaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:dracoraptor_death"));
+	            .getObject(new ResourceLocation("lepidodendron:segisaurus_death"));
 	}
 
 	@Override

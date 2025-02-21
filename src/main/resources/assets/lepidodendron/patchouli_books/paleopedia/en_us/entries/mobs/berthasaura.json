@@ -1,0 +1,52 @@
+{
+	"name": "Berthasaura",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/berthasaura_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_berthasaura",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_berthasaura",
+			"title": "Berthasaura",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Ceratosauria$(br)>Berthasauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. leopoldinae",
+            "entity": "lepidodendron:prehistoric_flora_berthasaura",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_berthasaura",
+			"type": "text",
+			"text": "Berthasaura leopoldinae comes from the Early Cretaceous, with fossils being found in the Goio-Erê Formation, Brazil. It is a small ceratosaur, growing to 1 m in length. It preserves the most complete axial series (backbone) of any noasaurid to date, and its short, toothless beak suggests that it was either at least a herbivore or at most an omnivore,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_berthasaura",
+			"type": "text",
+			"text": "unlike most other ceratosaurs, which were carnivorous. The generic name derives from the name of Bertha Maria Júlia Lutz, a Brazilian Zoologist and women's right activist; and the Greek word 'sauros', to mean 'lizard'. The specific name derives from the surname of Maria Leopoldina, the first Empress of Brazil."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_berthasaura"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_berthasaura"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_berthasaura"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_berthasaura"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_berthasaura"
+		}
+	]
+}

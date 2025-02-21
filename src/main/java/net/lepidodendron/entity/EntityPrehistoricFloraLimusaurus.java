@@ -154,6 +154,7 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraLimusaurus> Limusaurus = Functions.getEntitiesWithinAABBPN(this.world, EntityPrehistoricFloraLimusaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)), EntitySelectors.NOT_SPECTATING);
 			for (EntityPrehistoricFloraLimusaurus currentLimusaurus : Limusaurus) {
+				currentLimusaurus.setAnimation(NO_ANIMATION);
 				currentLimusaurus.setRevengeTarget(ee);
 				currentLimusaurus.setAlarmTarget(ee);
 				currentLimusaurus.alarmCooldown = rand.nextInt(20);

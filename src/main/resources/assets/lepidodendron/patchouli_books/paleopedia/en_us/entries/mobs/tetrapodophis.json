@@ -1,0 +1,52 @@
+{
+	"name": "Tetrapodophis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tetrapodophis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tetrapodophis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tetrapodophis",
+			"title": "Tetrapodophis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Squamata$(br)>Toxicofera$(br)>Dolichosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. amplectus",
+            "entity": "lepidodendron:prehistoric_flora_tetrapodophis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tetrapodophis",
+			"type": "text",
+			"text": "Tetrapodophis amplectus comes from the Early Cretaceous, with fossils being found in the Crato Formation, Brazil. It is a small dolichosaur, growing to 19.5 cm in length. It has been reassigned from various groups and orders since being described in 2015, first being assigned as a stem-snake, although outside of the grown group."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tetrapodophis",
+			"type": "text",
+			"text": "In 2016 it was then considered to be a mosasaur, then landing within the dolichosaurid family for the time being, although all this is still disputed, which is not helped by the dolichosaurid family itself being considered more close to snakes than mosasaurs. The generic name derives from the Greek words 'tetra', to mean 'four'; 'poús', to mean 'foot'; and 'ófis', to mean 'snake'. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tetrapodophis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tetrapodophis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tetrapodophis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tetrapodophis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tetrapodophis"
+		}
+	]
+}

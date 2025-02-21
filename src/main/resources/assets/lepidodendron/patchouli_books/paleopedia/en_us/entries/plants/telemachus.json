@@ -1,0 +1,66 @@
+{
+	"name": "Telemachus",
+	"read_by_default": true,
+	"icon": "lepidodendron:telemachus_sapling",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_telemachus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_telemachus",
+			"title": "Telemachus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Propagation:$() Leaves, when broken, drop cones. Cones can be crafted to obtain seeds.$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
+		},
+		{
+			"type": "multiblock",
+			"name": "T. elongatus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "       ","       ","       ","   B   ", "       ","       ","       " ],
+					[ "       ","       ","   B   ","  BAB  ", "   B   ","       ","       " ],
+					[ "       ","   B   ","       "," B A B ", "       ","   B   ","       " ],
+					[ "       ","   B   ","   B   "," BBABB ", "   B   ","   B   ","       " ],
+					[ "   B   ","       ","       ","B  A  B", "       ","       ","   B   " ],
+					[ "   B   ","   B   ","   B   ","BBBABBB", "   B   ","   B   ","   B   " ],
+					[ "       ","       ","       ","   A   ", "       ","       ","       " ],
+					[ "   B   ","  BBB  "," B B B ","BBBABBB", " B B B ","  BBB  ","   B   " ],
+					[ "       ","       ","       ","   A   ", "       ","       ","       " ],
+					[ "   B   ","  BBB  "," B B B ","BBBABBB", " B B B ","  BBB  ","   B   " ],
+					[ "       ","       ","       ","   A   ", "       ","       ","       " ],
+					[ "   B   ","  BBB  "," B B B ","BBBABBB", " B B B ","  BBB  ","   B   " ],
+					[ "       ","       ","       ","   A   ", "       ","       ","       " ],
+					[ "   B   ","  BBB  "," B B B ","BBBABBB", " B B B ","  BBB  ","   B   " ],
+					[ "       ","       ","   B   ","  BAB  ", "   B   ","       ","       " ],
+					[ "       ","       ","       ","   A   ", "       ","       ","       " ],
+					[ "       ","       ","       ","   0   ", "       ","       ","       " ]
+				],
+				"mapping": {
+					"B": "lepidodendron:telemachus_leaves",
+					"A": "lepidodendron:telemachus_log[facing=north]",
+					"0": "lepidodendron:telemachus_log[facing=north]"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_telemachus",
+			"type": "text",
+			"text": "Telemachus is the name given to fossils of a certain type of coniferous seed cone, which are found all over Gondwana from Triassic sediments, including from sites in Antarctica. The cones are small and broadly spherical, up to around 4cm long, vaguely similar to some modern Larch cones, although not closely related.$(br2)It is uncommon to be able to say with any certainty how plant fossils may have been assembled in life,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_telemachus",
+			"type": "text",
+			"text": "or even which fossils go together. However, in several Triassic formations we have fossils found in such close association, with cones and leaves attached to twigs matching those of the conifer foliage found, and twigs attached to larger wood samples, etc., that we know that the tree was made up of what we now call these fossils: Telemachus (female fruiting cones - sometimes the cones are fossilised differently and are then called"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_telemachus",
+			"type": "text",
+			"text": "Parasciadopitys even though they appear to be the same plant organ), Heidiphyllum (leaves and twigs: the leaves are shortish, thin and strap-shaped, and borne in fairly dense, whorled shoots), Switzianthus (male pollen cones), trunks, branches, and even roots (Notophytum) and pollen (Alisporites)! The tree itself would have been a medium-sized conifer and the organs show clear relationship to other Voltzialean conifers. Despite, this, it's worth bearing in mind that the leaf fossils called Heidophyllum"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_telemachus",
+			"type": "text",
+			"text": "may also match the shapes of leaves on other, unknown, conifers as well the one here!$(br2)Finally, from the depositional settings of these fossils, we are fairly confident this conifer grew in wet, peat-forming soils, in dense stands."
+		}
+	]
+}

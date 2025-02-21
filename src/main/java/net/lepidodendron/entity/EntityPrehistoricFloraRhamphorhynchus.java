@@ -109,6 +109,7 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraRhamphorhynchus> rhamphorhynchus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraRhamphorhynchus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraRhamphorhynchus currentRhamphorhynchus : rhamphorhynchus) {
+				currentRhamphorhynchus.setAnimation(NO_ANIMATION);
 				currentRhamphorhynchus.setAlarmTarget(ee);
 				currentRhamphorhynchus.setRevengeTarget(ee);
 				currentRhamphorhynchus.screamAlarmCooldown = rand.nextInt(20);

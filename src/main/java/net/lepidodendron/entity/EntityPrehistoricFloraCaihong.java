@@ -89,6 +89,7 @@ public class EntityPrehistoricFloraCaihong extends EntityPrehistoricFloraLandCli
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraCaihong> caihong = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraCaihong.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraCaihong currentCaihong : caihong) {
+				currentCaihong.setAnimation(NO_ANIMATION);
 				currentCaihong.setAlarmTarget(ee);
 				currentCaihong.setRevengeTarget(ee);
 				currentCaihong.screamAlarmCooldown = rand.nextInt(20);

@@ -93,16 +93,16 @@ public class Functions {
             portalBlockState = BlockPortalBlockCarboniferous.block.getDefaultState();
         }
         if (lastDimension == LepidodendronConfig.dimPermian) {
-            portalBlockState = BlockGlossopterisPlanks.block.getDefaultState();
+            portalBlockState = BlockPortalBlockPermian.block.getDefaultState();
         }
         if (lastDimension == LepidodendronConfig.dimTriassic) {
-            portalBlockState = BlockDicroidiumFPlanks.block.getDefaultState();
+            portalBlockState = BlockPortalBlockTriassic.block.getDefaultState();
         }
         if (lastDimension == LepidodendronConfig.dimJurassic) {
-            portalBlockState = BlockGinkgoPlanks.block.getDefaultState();
+            portalBlockState = BlockPortalBlockJurassic.block.getDefaultState();
         }
         if (lastDimension == LepidodendronConfig.dimCretaceousEarly) {
-            portalBlockState = BlockAraucariaPlanks.block.getDefaultState();
+            portalBlockState = BlockPortalBlockCretaceousEarly.block.getDefaultState();
         }
         return portalBlockState;
     }

@@ -96,6 +96,11 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 	}
 
 	@Override
+	public int getRoarLength() {
+		return 20;
+	}
+
+	@Override
 	public boolean hasNest() {
 		return true;
 	}
@@ -133,7 +138,7 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.85F;
+			speedBase = speedBase * 3.55F;
 		}
 		return speedBase * 0.7F;
 	}
@@ -368,6 +373,7 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraTietasaura> Tietasaura = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraTietasaura.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraTietasaura currentTietasaura : Tietasaura) {
+				currentTietasaura.setAnimation(NO_ANIMATION);
 				currentTietasaura.setRevengeTarget(ee);
 				currentTietasaura.setAlarmTarget(ee);
 				currentTietasaura.alarmCooldown = rand.nextInt(20);

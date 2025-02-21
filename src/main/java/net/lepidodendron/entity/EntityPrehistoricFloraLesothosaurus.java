@@ -10,6 +10,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -36,7 +37,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
+public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraLandBase implements IScreamer, ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -57,6 +58,11 @@ public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraL
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public int getRoarLength() {
+		return 30;
 	}
 
 	@Override
@@ -305,6 +311,7 @@ public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraL
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraLesothosaurus> Lesothosaurus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraLesothosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraLesothosaurus currentLesothosaurus : Lesothosaurus) {
+				currentLesothosaurus.setAnimation(NO_ANIMATION);
 				currentLesothosaurus.setRevengeTarget(ee);
 				currentLesothosaurus.setAlarmTarget(ee);
 				currentLesothosaurus.alarmCooldown = rand.nextInt(20);

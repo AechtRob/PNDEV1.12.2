@@ -1,0 +1,52 @@
+{
+	"name": "Otozamites",
+	"read_by_default": true,
+	"icon": "lepidodendron:otozamites",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_otozamites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_otozamites",
+			"title": "Otozamites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic-Early Cretaceous$(br2)$(l)Propagation:$() Use a collection envelope to harvest seeds.$(br2)$(l)Growth:$() Grows on all dirt-like blocks."
+		},
+		{
+			"type": "multiblock",
+			"name": "Otozamites sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "B" ],
+					[ "A" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"B": "lepidodendron:otozamites_top",
+					"A": "lepidodendron:otozamites",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_otozamites",
+			"type": "text",
+			"text": "Otozamites is the name given to fossils of a particular form of leaf which belonged to some Bennettitalean plants. They are found in rocks from the later Triassic until the end of the Early Cretaceous, and are found all over the world. They are always once-pinnate (have single-level leaflets), and present a similar shape to many other Bennettitalean leaf fossils, and also varying a lot in their own shapes:"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_otozamites",
+			"type": "text",
+			"text": "basically extended oval shapes, but of varying lengths and proportions, with leaflets of varying shapes and sizes, they have several common detailed features causing them to receive assignment as Otozamites, such as the arrangement of pores, the attachment of leaflets to the midrib, etc. Bennettites leaves are usually somewhat thickly-textured, not delicate, and so we assume the plants were somewhat tough and resilient,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_otozamites",
+			"type": "text",
+			"text": "able to grow in many different types of habitat, and their dominance of Mesozoic floras backs this up.$(br2)We do not know what plants the various leaves come from, however Bennettites plants are normally woody plants, displaying a divaricate branching habit (Y-shaped branching), very like modern Banksia. As Otozamites leaves are not vast (and indeed, sometimes vaguely resemble Banksia leaves in simplistic shapes),"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_otozamites",
+			"type": "text",
+			"text": "they have been placed onto a small woody shrub with a generally bushy habit in our mod. Bennettites were not Angiosperms, but are known to have usually produced sometimes dramatic flower-like or cone-like structures for pollination and seed production, and so we have added the suggestion of floral structures to our plant."
+		}
+	]
+}

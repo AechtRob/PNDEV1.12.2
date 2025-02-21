@@ -144,6 +144,7 @@ public class EntityPrehistoricFloraCompsognathus extends EntityPrehistoricFloraL
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraCompsognathus> Compsognathus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraCompsognathus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraCompsognathus currentCompsognathus : Compsognathus) {
+				currentCompsognathus.setAnimation(NO_ANIMATION);
 				currentCompsognathus.setRevengeTarget(ee);
 				currentCompsognathus.setAlarmTarget(ee);
 				currentCompsognathus.alarmCooldown = rand.nextInt(20);

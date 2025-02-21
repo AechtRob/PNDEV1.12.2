@@ -109,6 +109,7 @@ public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLan
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraDorygnathus> dorygnathus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraDorygnathus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraDorygnathus currentDorygnathus : dorygnathus) {
+				currentDorygnathus.setAnimation(NO_ANIMATION);
 				currentDorygnathus.setAlarmTarget(ee);
 				currentDorygnathus.setRevengeTarget(ee);
 				currentDorygnathus.screamAlarmCooldown = rand.nextInt(20);

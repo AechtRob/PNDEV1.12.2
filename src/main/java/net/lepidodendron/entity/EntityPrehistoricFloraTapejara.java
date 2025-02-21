@@ -72,12 +72,12 @@ public class EntityPrehistoricFloraTapejara extends EntityPrehistoricFloraLandCl
 
 	@Override
 	public int flyTransitionLength() {
-		return 10;
+		return 15;
 	}
 
 	@Override
 	public int unflyTransitionLength() {
-		return 10;
+		return 15;
 	}
 
 	@Override
@@ -102,6 +102,7 @@ public class EntityPrehistoricFloraTapejara extends EntityPrehistoricFloraLandCl
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraTapejara> tapejara = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraTapejara.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraTapejara currentTapejara : tapejara) {
+				currentTapejara.setAnimation(NO_ANIMATION);
 				currentTapejara.setAlarmTarget(ee);
 				currentTapejara.setRevengeTarget(ee);
 				currentTapejara.screamAlarmCooldown = rand.nextInt(20);

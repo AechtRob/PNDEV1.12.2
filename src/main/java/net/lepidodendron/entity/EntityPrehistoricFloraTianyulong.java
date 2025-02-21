@@ -171,6 +171,7 @@ public class EntityPrehistoricFloraTianyulong extends EntityPrehistoricFloraLand
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraTianyulong> Tianyulong = Functions.getEntitiesWithinAABBPN(this.world, EntityPrehistoricFloraTianyulong.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)), EntitySelectors.NOT_SPECTATING);
 			for (EntityPrehistoricFloraTianyulong currentTianyulong : Tianyulong) {
+				currentTianyulong.setAnimation(NO_ANIMATION);
 				currentTianyulong.setRevengeTarget(ee);
 				currentTianyulong.setAlarmTarget(ee);
 				currentTianyulong.alarmCooldown = rand.nextInt(20);

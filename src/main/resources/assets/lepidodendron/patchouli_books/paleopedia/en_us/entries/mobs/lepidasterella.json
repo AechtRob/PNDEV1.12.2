@@ -1,0 +1,47 @@
+{
+	"name": "Lepidasterella",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lepidasterella_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_lepidasterella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lepidasterella",
+			"title": "Lepidasterella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Echinodermata$(br)>Asteroidea"
+		},
+        	{
+            "type": "entity",
+            "name": "L. gyalum",
+            "entity": "lepidodendron:prehistoric_flora_lepidasterella",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lepidasterella",
+			"type": "text",
+			"text": "Lepidasterella comes from the Lower Carboniferous, with fossils being found in the Heath Formation, Montana (USA). It is a small asteroid, growing to 18 cm in length, and weighing up to 7 kg. Members of this genus bear a whopping 24 - 35 arms."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lepidasterella"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lepidasterella"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lepidasterella"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lepidasterella"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lepidasterella"
+		}
+	]
+}

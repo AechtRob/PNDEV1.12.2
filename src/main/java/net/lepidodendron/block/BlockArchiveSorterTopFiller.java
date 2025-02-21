@@ -113,6 +113,11 @@ public class BlockArchiveSorterTopFiller extends ElementsLepidodendronMod.ModEle
 		}
 
 		@Override
+		public boolean isTopSolid(IBlockState state) {
+			return true;
+		}
+
+		@Override
 		public IBlockState getStateFromMeta(int meta) {
 			return this.getDefaultState().withProperty(FACING, EnumFacing.byIndex(meta));
 		}
