@@ -85,8 +85,8 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 			super(Material.IRON);
 			setTranslationKey("pf_time_researcher");
 			setSoundType(SoundType.METAL);
-			setHardness(1F);
-			setResistance(1F);
+			setHardness(10F);
+			setResistance(1200F);
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronBuilding.tab);

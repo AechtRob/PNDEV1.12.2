@@ -79,8 +79,8 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 			super(Material.IRON);
 			setTranslationKey("pf_time_researcher_hopper");
 			setSoundType(SoundType.METAL);
-			setHardness(1F);
-			setResistance(1F);
+			setHardness(10F);
+			setResistance(1200F);
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronBuilding.tab);
