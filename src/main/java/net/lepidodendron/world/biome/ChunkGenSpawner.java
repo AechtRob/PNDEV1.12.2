@@ -72,6 +72,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
             boolean Deserts = false;
             boolean LowerSpawnBiomes = false;
             boolean HigherSpawnBiomes = false;
+            int yMin = 0;
+            int yMax = 255;
             String[] MobString = new String[0];
             if (mobList == null) {
                 //Biome biome = world.getBiome(pos.add(16, 0, 16)); //move to the centre of the 2x2 of chunks we are populating so the biome is more "likely" to be right
@@ -81,6 +83,22 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_riverbank")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_riverbank_forest")) {
                     TriassicCanyons = true;
+                }
+
+                if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_arid_spikes")) {
+                    yMin = 94;
+                }
+
+                if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_sandy_desert_spikes")) {
+                    yMin = 102;
+                }
+
+                if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_coastal_cliffs")) {
+                    yMin = 105;
+                }
+
+                if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_crags")) {
+                    yMin = 85;
                 }
 
                 if (biome.getRegistryName().toString().startsWith("lepidodendron:")
@@ -1437,6 +1455,9 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                     }
 
                                                                     //Spawn the mob via a command:
+                                                                    if (spawnPos.getY() > yMax || spawnPos.getY() < yMin) {
+                                                                        break;
+                                                                    }
                                                                     if (!world.isRemote && world.getMinecraftServer() != null) {
                                                                         EntityPrehistoricFloraAgeableBase.summon(world, mobToSpawn, nbtStr, spawnPos.getX() + ((world.rand.nextFloat() - 0.5F)/10F), (spawnPos.getY() + offsetter), spawnPos.getZ() + ((world.rand.nextFloat() - 0.5F)/10F));
 
