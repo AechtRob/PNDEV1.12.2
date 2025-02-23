@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraEzkutuberezi extends EntityPrehistoricFloraFi
 
 	@Override
 	public int getShoalSize() {
-		return 30;
+		return 16;
 	}
 
 	@Override

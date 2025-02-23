@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraLanxangichthys extends EntityPrehistoricFlora
 
 	@Override
 	public int getShoalSize() {
-		return 30;
+		return 16;
 	}
 
 	@Override

@@ -38,10 +38,10 @@ public class EntityPrehistoricFloraHaliskia extends EntityPrehistoricFloraLandCl
 
 	public EntityPrehistoricFloraHaliskia(World world) {
 		super(world);
-		setSize(0.95F, 0.8F);
+		setSize(0.85F, 0.7F);
 		minWidth = 0.10F;
-		maxWidth = 0.95F;
-		maxHeight = 0.8F;
+		maxWidth = 0.85F;
+		maxHeight = 0.7F;
 		maxHealthAgeable = 30.0D;
 		setNoAI(!true);
 		enablePersistence();

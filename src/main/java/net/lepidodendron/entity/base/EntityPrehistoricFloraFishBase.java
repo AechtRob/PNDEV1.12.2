@@ -120,7 +120,7 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     }
 
     public int getShoalInterval() {
-        return 100;
+        return 200;
     }
 
     public int getAlarmCooldown() {return this.alarmCooldown;}
