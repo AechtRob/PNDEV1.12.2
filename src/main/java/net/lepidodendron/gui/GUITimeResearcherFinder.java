@@ -472,6 +472,27 @@ public class GUITimeResearcherFinder extends ElementsLepidodendronMod.ModElement
             DecimalFormat df = new DecimalFormat("#0.##%");
             xPos = (this.fontRenderer.getStringWidth(df.format(getProbability())) / 2);
             this.fontRenderer.drawString(df.format(getProbability()), 89 - xPos, 57, 4210752);
+            this.fontRenderer.drawString(getTime(), 150 - xPos, 34, 4210752);
+        }
+
+        public String getTime() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
+                    BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom te = (BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) tileEntity;
+                    int ticks = te.processTickTime;
+                    if (ticks == -1) {
+                        return "";
+                    }
+                    ticks = (int) Math.round((double)ticks * (1D - te.progressFraction()));
+                    int seconds = (int)Math.round((double)ticks/20D);
+                    int minutes = (int)Math.floor((double)seconds/60D);
+                    seconds = seconds%60;
+                    DecimalFormat df = new DecimalFormat("00");
+                    return df.format(minutes) + ":" + df.format(seconds);
+                }
+            }
+            return "";
         }
 
         public double getProbability() {

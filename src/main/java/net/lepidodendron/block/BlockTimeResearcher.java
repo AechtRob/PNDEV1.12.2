@@ -1004,7 +1004,9 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 				) {
 					return true;
 				}
-				if (item == ItemFossilClean.block) {
+				if (item == ItemFossilClean.block
+						|| item == ItemPhialDNA.block
+						|| item == ItemPlaceableLiving.block) {
 					if (stack.hasTagCompound()) {
 						if (stack.getTagCompound().hasKey("period")) {
 							return true;

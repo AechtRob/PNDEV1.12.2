@@ -809,7 +809,7 @@ public class ModelDeinonychus extends ModelBasePalaeopedia {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-         if (tickAnim >= 0 && tickAnim < 3) {
+        if (tickAnim >= 0 && tickAnim < 3) {
             xx = 0 + (((tickAnim - 0) / 3) * (-3.25-(0)));
             yy = 0 + (((tickAnim - 0) / 3) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 3) * (0-(0)));
@@ -1107,7 +1107,147 @@ public class ModelDeinonychus extends ModelBasePalaeopedia {
         this.throat.rotationPointZ = this.throat.rotationPointZ + (float)(zz);
 
 
-   }
+
+
+        if (tickAnim >= 0 && tickAnim < 3) {
+            xx = 0 + (((tickAnim - 0) / 3) * (-5-(0)));
+            yy = 0 + (((tickAnim - 0) / 3) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 3) * (0-(0)));
+        }
+        else if (tickAnim >= 3 && tickAnim < 4) {
+            xx = -5 + (((tickAnim - 3) / 1) * (-5-(-5)));
+            yy = 0 + (((tickAnim - 3) / 1) * (0-(0)));
+            zz = 0 + (((tickAnim - 3) / 1) * (0-(0)));
+        }
+        else if (tickAnim >= 4 && tickAnim < 8) {
+            xx = -5 + (((tickAnim - 4) / 4) * (6-(-5)));
+            yy = 0 + (((tickAnim - 4) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 4) / 4) * (0-(0)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 13) {
+            xx = 6 + (((tickAnim - 8) / 5) * (0-(6)));
+            yy = 0 + (((tickAnim - 8) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 8) / 5) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(body, body.rotateAngleX + (float) Math.toRadians(xx), body.rotateAngleY + (float) Math.toRadians(yy), body.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 2) {
+            xx = 0 + (((tickAnim - 0) / 2) * (10-(0)));
+            yy = 0 + (((tickAnim - 0) / 2) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 2) * (0-(0)));
+        }
+        else if (tickAnim >= 2 && tickAnim < 7) {
+            xx = 10 + (((tickAnim - 2) / 5) * (-70-(10)));
+            yy = 0 + (((tickAnim - 2) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 2) / 5) * (-40-(0)));
+        }
+        else if (tickAnim >= 7 && tickAnim < 8) {
+            xx = -70 + (((tickAnim - 7) / 1) * (-90-(-70)));
+            yy = 0 + (((tickAnim - 7) / 1) * (0-(0)));
+            zz = -40 + (((tickAnim - 7) / 1) * (0-(-40)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 10) {
+            xx = -90 + (((tickAnim - 8) / 2) * (-60-(-90)));
+            yy = 0 + (((tickAnim - 8) / 2) * (0-(0)));
+            zz = 0 + (((tickAnim - 8) / 2) * (-20-(0)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 13) {
+            xx = -60 + (((tickAnim - 10) / 3) * (0-(-60)));
+            yy = 0 + (((tickAnim - 10) / 3) * (0-(0)));
+            zz = -20 + (((tickAnim - 10) / 3) * (0-(-20)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(leftArm1, leftArm1.rotateAngleX + (float) Math.toRadians(xx), leftArm1.rotateAngleY + (float) Math.toRadians(yy), leftArm1.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (-10-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (10-(0)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 13) {
+            xx = -10 + (((tickAnim - 8) / 5) * (0-(-10)));
+            yy = 0 + (((tickAnim - 8) / 5) * (0-(0)));
+            zz = 10 + (((tickAnim - 8) / 5) * (0-(10)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(leftArm2, leftArm2.rotateAngleX + (float) Math.toRadians(xx), leftArm2.rotateAngleY + (float) Math.toRadians(yy), leftArm2.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 2) {
+            xx = 0 + (((tickAnim - 0) / 2) * (10-(0)));
+            yy = 0 + (((tickAnim - 0) / 2) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 2) * (0-(0)));
+        }
+        else if (tickAnim >= 2 && tickAnim < 6) {
+            xx = 10 + (((tickAnim - 2) / 4) * (-70-(10)));
+            yy = 0 + (((tickAnim - 2) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 2) / 4) * (40-(0)));
+        }
+        else if (tickAnim >= 6 && tickAnim < 8) {
+            xx = -70 + (((tickAnim - 6) / 2) * (-90-(-70)));
+            yy = 0 + (((tickAnim - 6) / 2) * (0-(0)));
+            zz = 40 + (((tickAnim - 6) / 2) * (0-(40)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 10) {
+            xx = -90 + (((tickAnim - 8) / 2) * (-60-(-90)));
+            yy = 0 + (((tickAnim - 8) / 2) * (0-(0)));
+            zz = 0 + (((tickAnim - 8) / 2) * (20-(0)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 13) {
+            xx = -60 + (((tickAnim - 10) / 3) * (0-(-60)));
+            yy = 0 + (((tickAnim - 10) / 3) * (0-(0)));
+            zz = 20 + (((tickAnim - 10) / 3) * (0-(20)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(rightArm1, rightArm1.rotateAngleX + (float) Math.toRadians(xx), rightArm1.rotateAngleY + (float) Math.toRadians(yy), rightArm1.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (-10-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (-10-(0)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 13) {
+            xx = -10 + (((tickAnim - 8) / 5) * (0-(-10)));
+            yy = 0 + (((tickAnim - 8) / 5) * (0-(0)));
+            zz = -10 + (((tickAnim - 8) / 5) * (0-(-10)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(rightArm2, rightArm2.rotateAngleX + (float) Math.toRadians(xx), rightArm2.rotateAngleY + (float) Math.toRadians(yy), rightArm2.rotateAngleZ + (float) Math.toRadians(zz));
+
+    }
+
     public void animNest(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraDeinonychus entity = (EntityPrehistoricFloraDeinonychus) entitylivingbaseIn;
         int animCycle = 50;

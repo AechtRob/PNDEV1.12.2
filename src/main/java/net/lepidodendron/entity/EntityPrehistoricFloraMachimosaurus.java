@@ -243,13 +243,13 @@ public class EntityPrehistoricFloraMachimosaurus extends EntityPrehistoricFloraS
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:machimosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:dakosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:machimosaurus_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:dakosaurus_hurt"));
 	}
 
 	//@Override
@@ -260,7 +260,7 @@ public class EntityPrehistoricFloraMachimosaurus extends EntityPrehistoricFloraS
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:machimosaurus_death"));
+				.getObject(new ResourceLocation("lepidodendron:dakosaurus_death"));
 	}
 
 	//@Override

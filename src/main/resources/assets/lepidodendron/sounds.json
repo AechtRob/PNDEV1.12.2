@@ -6551,7 +6551,6 @@
       }
     ]
   },
-
   "dryosaurid_death": {
     "sounds": [
       {
@@ -13709,6 +13708,294 @@
     "sounds": [
       {
         "name": "lepidodendron:segisaurus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "prestosuchus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:prestosuchus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:prestosuchus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:prestosuchus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:prestosuchus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:prestosuchus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "prestosuchus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:prestosuchus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:prestosuchus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:prestosuchus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "prestosuchus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:prestosuchus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "tapejara_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tapejara_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tapejara_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tapejara_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tapejara_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tapejara_living05",
+        "stream": false
+      }
+    ]
+  },
+  "tapejara_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tapejara_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tapejara_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tapejara_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "tapejara_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tapejara_death",
+        "stream": false
+      }
+    ]
+  },
+  "tapejara_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tapejara_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tapejara_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tapejara_alarm03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tapejara_alarm04",
+        "stream": false
+      }
+    ]
+  },
+  "tapejara_display": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tapejara_display01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tapejara_display02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tapejara_display03",
+        "stream": false
+      }
+    ]
+  },
+
+  "hypsilophodon_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:hypsilophodon_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypsilophodon_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypsilophodon_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypsilophodon_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypsilophodon_living05",
+        "stream": false
+      }
+    ]
+  },
+  "hypsilophodon_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:hypsilophodon_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypsilophodon_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypsilophodon_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "hypsilophodon_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:hypsilophodon_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypsilophodon_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypsilophodon_alarm03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypsilophodon_alarm04",
+        "stream": false
+      }
+    ]
+  },
+  "hypsilophodon_chatter": {
+    "sounds": [
+      {
+        "name": "lepidodendron:hypsilophodon_chatter_one01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypsilophodon_chatter_one02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypsilophodon_chatter_one03",
+        "stream": false
+      }
+    ]
+  },
+  "hypsilophodon_long_chatter": {
+    "sounds": [
+      {
+        "name": "lepidodendron:hypsilophodon_chatter_two01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypsilophodon_chatter_two02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypsilophodon_chatter_two03",
+        "stream": false
+      }
+    ]
+  },
+  "hypsilophodon_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:hypsilophodon_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "eocarcharia_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eocarcharia_rumble01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eocarcharia_rumble02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eocarcharia_rumble03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eocarcharia_rumble04",
+        "stream": false
+      }
+    ]
+  },
+  "eocarcharia_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eocarcharia_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eocarcharia_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eocarcharia_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "eocarcharia_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eocarcharia_death",
+        "stream": false
+      }
+    ]
+  },
+  "eocarcharia_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eocarcharia_threat",
         "stream": false
       }
     ]

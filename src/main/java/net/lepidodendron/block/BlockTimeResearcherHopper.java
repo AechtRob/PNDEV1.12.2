@@ -672,7 +672,9 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 				boolean itemPaleogene = false;
 				boolean itemNeogene = false;
 				boolean itemPleistocene = false;
-				if (item == ItemFossilClean.block) {
+				if (item == ItemFossilClean.block
+					|| item == ItemPhialDNA.block
+					|| item == ItemPlaceableLiving.block) {
 					if (stack.hasTagCompound()) {
 						if (stack.getTagCompound().hasKey("period")) {
 							itemPrecambrian = stack.getTagCompound().getInteger("period") == 1;

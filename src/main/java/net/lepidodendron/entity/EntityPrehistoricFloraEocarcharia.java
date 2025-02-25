@@ -250,29 +250,25 @@ public class EntityPrehistoricFloraEocarcharia extends EntityPrehistoricFloraLan
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:tyrannotitan_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:eocarcharia_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:tyrannotitan_idle"));
+				.getObject(new ResourceLocation("lepidodendron:eocarcharia_idle"));
 	}
 
-	public SoundEvent getAmbientAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:tyrannotitan_idle2"));
-	}
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:tyrannotitan_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:eocarcharia_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:tyrannotitan_death"));
+	            .getObject(new ResourceLocation("lepidodendron:eocarcharia_death"));
 	}
 
 	@Override
@@ -288,25 +284,7 @@ public class EntityPrehistoricFloraEocarcharia extends EntityPrehistoricFloraLan
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-		int next = rand.nextInt(10);
-		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
-		{
-			this.ambientSoundTime = -this.getAmbientTalkInterval();
-			SoundEvent soundevent = this.getAmbientAmbientSound();
-			if (soundevent != null)
-			{
-				//Random sound animations
-				if (this.getAnimation() == NO_ANIMATION) {
-					if(next > 7) {
-						this.setAnimation(NOISE_ANIMATION);
-					} else {
-						this.setAnimation(ROAR_ANIMATION);
-					}
-					//System.err.println("Playing noise sound on remote: " + (world.isRemote));
-					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-				}
-			}
-		}
+		
 		//Sometimes stand up and look around:
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
