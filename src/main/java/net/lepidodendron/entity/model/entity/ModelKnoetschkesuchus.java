@@ -334,36 +334,35 @@ public class ModelKnoetschkesuchus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.30F;
-        this.main.offsetX = 1.2F;
-        this.main.rotateAngleY = (float)Math.toRadians(130);
-        this.main.rotateAngleX = (float)Math.toRadians(0);
-        this.main.rotateAngleZ = (float)Math.toRadians(0);
+        this.main.offsetY = -1.20F;
+        this.main.offsetX = -0.7F;
+        this.main.rotateAngleY = (float)Math.toRadians(-246);
+        this.main.rotateAngleX = (float)Math.toRadians(-16);
+        this.main.rotateAngleZ = (float)Math.toRadians(-14);
         this.main.scaleChildren = true;
-        float scaler = 2.0F;
+        float scaler = 1.725F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(main, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(neck2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.05F, 0.25F, -0.05F);
+        this.setRotateAngle(body2, -0.05F, 0.1F, -0.05F);
+        this.setRotateAngle(neck2, 0.0F, 0.35F, -0.05F);
+        this.setRotateAngle(head, -0.1F, 0.1F, 0.1F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.2F, 0.0F);
         this.setRotateAngle(frontLeftLeg, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(frontLeftLeg2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(frontLeftLeg3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(frontRightLeg, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(frontRightLeg2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(frontRightLeg3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(backLeftLeg, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(backLeftLeg2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(backLeftLeg3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(backRightLeg, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(backRightLeg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg2, -1.1F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg3, 1.7F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg, 1.0F, -0.2F, 0.0F);
+        this.setRotateAngle(frontRightLeg2, -0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg3, 1.8F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg, -0.0F, 0.0F, -0.1F);
+        this.setRotateAngle(backLeftLeg2, 0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg3, -0.35F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg, -0.4F, 0.25F, 0.0F);
+        this.setRotateAngle(backRightLeg2, 0.2F, 0.0F, 0.0F);
         this.setRotateAngle(backRightLeg3, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.main.render(f);
@@ -372,6 +371,7 @@ public class ModelKnoetschkesuchus extends ModelBasePalaeopedia {
         this.main.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

@@ -331,12 +331,12 @@ public class ModelCoeruleodraco extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Root.offsetY = -2.0F;
-        this.Root.offsetX = -1.338F;
-        this.Root.rotateAngleY = (float)Math.toRadians(200);
-        this.Root.rotateAngleX = (float)Math.toRadians(8);
+        this.Root.offsetX = 1.0F;
+        this.Root.rotateAngleY = (float)Math.toRadians(230);
+        this.Root.rotateAngleX = (float)Math.toRadians(18);
         this.Root.rotateAngleZ = (float)Math.toRadians(-8);
         this.Root.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 2.23F;
         this.Root.setScale(scaler, scaler, scaler);
         //Start of pose:
 

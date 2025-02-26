@@ -582,13 +582,13 @@ public class ModelPtychodus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.head.offsetY = -2.0F;
-        this.head.offsetX = -1.338F;
-        this.head.rotateAngleY = (float)Math.toRadians(200);
+        this.head.offsetY = -0.0F;
+        this.head.offsetX = 0.10F;
+        this.head.rotateAngleY = (float)Math.toRadians(250);
         this.head.rotateAngleX = (float)Math.toRadians(8);
         this.head.rotateAngleZ = (float)Math.toRadians(-8);
         this.head.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 0.25F;
         this.head.setScale(scaler, scaler, scaler);
         //Start of pose:
 

@@ -220,13 +220,13 @@ public class ModelTremaglaspis extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.tremaglaspis.offsetY = -2.0F;
-        this.tremaglaspis.offsetX = -1.338F;
-        this.tremaglaspis.rotateAngleY = (float)Math.toRadians(200);
-        this.tremaglaspis.rotateAngleX = (float)Math.toRadians(8);
+        this.tremaglaspis.offsetY = -2.2F;
+        this.tremaglaspis.offsetX = -0.228F;
+        this.tremaglaspis.rotateAngleY = (float)Math.toRadians(222);
+        this.tremaglaspis.rotateAngleX = (float)Math.toRadians(28);
         this.tremaglaspis.rotateAngleZ = (float)Math.toRadians(-8);
         this.tremaglaspis.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 8.63F;
         this.tremaglaspis.setScale(scaler, scaler, scaler);
         //Start of pose:
 
@@ -236,7 +236,6 @@ public class ModelTremaglaspis extends ModelBasePalaeopedia {
         this.tremaglaspis.setScale(1.0F, 1.0F, 1.0F);
         this.tremaglaspis.scaleChildren = false;
         resetToDefaultPose();
-
     }
 
     public void renderStaticFloor(float f) {

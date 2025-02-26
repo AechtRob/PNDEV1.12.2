@@ -258,13 +258,13 @@ public class ModelWestlothiana extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hip.offsetY = -2.0F;
-        this.hip.offsetX = -1.338F;
-        this.hip.rotateAngleY = (float)Math.toRadians(200);
-        this.hip.rotateAngleX = (float)Math.toRadians(8);
+        this.hip.offsetY = -1.6F;
+        this.hip.offsetX = -0.0F;
+        this.hip.rotateAngleY = (float)Math.toRadians(210);
+        this.hip.rotateAngleX = (float)Math.toRadians(18);
         this.hip.rotateAngleZ = (float)Math.toRadians(-8);
         this.hip.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 2.63F;
         this.hip.setScale(scaler, scaler, scaler);
         //Start of pose:
 

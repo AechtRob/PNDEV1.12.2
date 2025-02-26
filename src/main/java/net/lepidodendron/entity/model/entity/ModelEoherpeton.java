@@ -431,16 +431,29 @@ public class ModelEoherpeton extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -2.0F;
-        this.main.offsetX = -1.338F;
-        this.main.rotateAngleY = (float)Math.toRadians(200);
+        this.main.offsetY = -0.5F;
+        this.main.offsetX = -0.0F;
+        this.main.rotateAngleY = (float)Math.toRadians(210);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 1.00F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(bodyback, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(bodyfront, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(upperhead, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.15F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, -0.4F, 0.0F);
+        this.setRotateAngle(tail3, 0.03F, -0.2F, 0.0F);
+        this.setRotateAngle(armleft, 0.0F, 0.0F, -1.0F);
+        this.setRotateAngle(armleft2, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(armleft3, 1.7F, 0.0F, 0.0F);
+        this.setRotateAngle(legright, 0.05F, -0.2F, 1.0F);
+        this.setRotateAngle(legright2, 0.2F, 0.0F, 0.2F);
+        this.setRotateAngle(legright3, 1.5F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

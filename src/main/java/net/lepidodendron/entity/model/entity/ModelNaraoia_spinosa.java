@@ -208,13 +208,13 @@ public class ModelNaraoia_spinosa extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.naraoia.offsetY = -2.0F;
-        this.naraoia.offsetX = -1.338F;
-        this.naraoia.rotateAngleY = (float)Math.toRadians(200);
-        this.naraoia.rotateAngleX = (float)Math.toRadians(8);
-        this.naraoia.rotateAngleZ = (float)Math.toRadians(-8);
+        this.naraoia.offsetY = -1.60F;
+        this.naraoia.offsetX = 0.0F;
+        this.naraoia.rotateAngleY = (float)Math.toRadians(202);
+        this.naraoia.rotateAngleX = (float)Math.toRadians(32);
+        this.naraoia.rotateAngleZ = (float)Math.toRadians(-12);
         this.naraoia.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 3.80F;
         this.naraoia.setScale(scaler, scaler, scaler);
         //Start of pose:
 
@@ -224,7 +224,6 @@ public class ModelNaraoia_spinosa extends ModelBasePalaeopedia {
         this.naraoia.setScale(1.0F, 1.0F, 1.0F);
         this.naraoia.scaleChildren = false;
         resetToDefaultPose();
-
     }
 
     public void renderStaticFloor(float f) {

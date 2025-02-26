@@ -405,10 +405,10 @@ public class ModelTetrameroceras extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -2.0F;
-        this.root.offsetX = -1.338F;
+        this.root.offsetY = -1.0F;
+        this.root.offsetX = 0.0F;
         this.root.rotateAngleY = (float)Math.toRadians(200);
-        this.root.rotateAngleX = (float)Math.toRadians(8);
+        this.root.rotateAngleX = (float)Math.toRadians(18);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
         float scaler = 1.63F;

@@ -198,7 +198,23 @@ public class ModelSolnhofenamia extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.base.offsetY = -1.2F;
+        this.base.offsetX = 0.528F;
+        this.base.rotateAngleY = (float)Math.toRadians(242);
+        this.base.rotateAngleX = (float)Math.toRadians(8);
+        this.base.rotateAngleZ = (float)Math.toRadians(-8);
+        this.base.scaleChildren = true;
+        float scaler = 2.63F;
+        this.base.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
+        //End of pose, now render the model:
+        this.base.render(f);
+        //Reset rotations, positions and sizing:
+        this.base.setScale(1.0F, 1.0F, 1.0F);
+        this.base.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void renderStaticWall(float f) {

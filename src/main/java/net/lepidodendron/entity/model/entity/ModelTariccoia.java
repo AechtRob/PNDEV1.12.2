@@ -273,13 +273,13 @@ public class ModelTariccoia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.tariccoia.offsetY = -2.0F;
-        this.tariccoia.offsetX = -1.338F;
-        this.tariccoia.rotateAngleY = (float)Math.toRadians(200);
-        this.tariccoia.rotateAngleX = (float)Math.toRadians(8);
-        this.tariccoia.rotateAngleZ = (float)Math.toRadians(-8);
+        this.tariccoia.offsetY = -2.60F;
+        this.tariccoia.offsetX = 0.0F;
+        this.tariccoia.rotateAngleY = (float)Math.toRadians(202);
+        this.tariccoia.rotateAngleX = (float)Math.toRadians(32);
+        this.tariccoia.rotateAngleZ = (float)Math.toRadians(-12);
         this.tariccoia.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 5.10F;
         this.tariccoia.setScale(scaler, scaler, scaler);
         //Start of pose:
 
@@ -289,7 +289,6 @@ public class ModelTariccoia extends ModelBasePalaeopedia {
         this.tariccoia.setScale(1.0F, 1.0F, 1.0F);
         this.tariccoia.scaleChildren = false;
         resetToDefaultPose();
-
     }
 
     public void renderStaticFloor(float f) {

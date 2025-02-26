@@ -347,13 +347,13 @@ public class ModelTropidosuchus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.30F;
-        this.main.offsetX = 1.2F;
+        this.main.offsetY = -1.10F;
+        this.main.offsetX = -0.1F;
         this.main.rotateAngleY = (float)Math.toRadians(130);
-        this.main.rotateAngleX = (float)Math.toRadians(0);
+        this.main.rotateAngleX = (float)Math.toRadians(2);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 2.0F;
+        float scaler = 1.8F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

@@ -446,9 +446,9 @@ public class ModelNigersaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = 0.7F;
+        this.root.offsetY = 0.2F;
         this.root.offsetX = 0.1F;
-        this.root.rotateAngleY = (float)Math.toRadians(210);
+        this.root.rotateAngleY = (float)Math.toRadians(220);
         this.root.rotateAngleX = (float)Math.toRadians(8);
         this.root.rotateAngleZ = (float)Math.toRadians(-4);
         this.root.scaleChildren = true;

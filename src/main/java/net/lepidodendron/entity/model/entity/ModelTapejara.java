@@ -709,8 +709,8 @@ public class ModelTapejara extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.7F;
-        this.root.offsetX = 0F;
+        this.root.offsetY = -0.5F;
+        this.root.offsetX = 0.2F;
         this.root.rotateAngleY = (float)Math.toRadians(125);
         this.root.rotateAngleX = (float)Math.toRadians(0);
         this.root.rotateAngleZ = (float)Math.toRadians(0);

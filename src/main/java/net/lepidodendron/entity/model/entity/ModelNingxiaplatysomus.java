@@ -199,18 +199,16 @@ public class ModelNingxiaplatysomus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -0.30F;
-        this.body.offsetX = 1.2F;
-        this.body.rotateAngleY = (float)Math.toRadians(130);
-        this.body.rotateAngleX = (float)Math.toRadians(0);
-        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.offsetY = -1.25F;
+        this.body.offsetX = 0.5F;
+        this.body.rotateAngleY = (float)Math.toRadians(262);
+        this.body.rotateAngleX = (float)Math.toRadians(12);
+        this.body.rotateAngleZ = (float)Math.toRadians(-12);
         this.body.scaleChildren = true;
-        float scaler = 2.0F;
+        float scaler = 4.33F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+
         //End of pose, now render the model:
         this.body.render(f);
         //Reset rotations, positions and sizing:

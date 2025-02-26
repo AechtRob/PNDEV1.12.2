@@ -798,28 +798,16 @@ public class ModelTesnusocaris extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.head.offsetY = -0.30F;
-        this.head.offsetX = 1.2F;
-        this.head.rotateAngleY = (float)Math.toRadians(130);
-        this.head.rotateAngleX = (float)Math.toRadians(0);
-        this.head.rotateAngleZ = (float)Math.toRadians(0);
+        this.head.offsetY = -1.65F;
+        this.head.offsetX = 0.35F;
+        this.head.rotateAngleY = (float)Math.toRadians(212);
+        this.head.rotateAngleX = (float)Math.toRadians(48);
+        this.head.rotateAngleZ = (float)Math.toRadians(-28);
         this.head.scaleChildren = true;
-        float scaler = 2.0F;
+        float scaler = 2.7F;
         this.head.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body6, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body7, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body8, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body9, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body10, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body11, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(telson, 0.0F, 0.0F, 0.0F);
+
         //End of pose, now render the model:
         this.head.render(f);
         //Reset rotations, positions and sizing:

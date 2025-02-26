@@ -265,13 +265,13 @@ public class ModelRolfeia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -2.0F;
-        this.body.offsetX = -1.338F;
-        this.body.rotateAngleY = (float)Math.toRadians(200);
-        this.body.rotateAngleX = (float)Math.toRadians(8);
-        this.body.rotateAngleZ = (float)Math.toRadians(-8);
+        this.body.offsetY = -1.4F;
+        this.body.offsetX = -0.2F;
+        this.body.rotateAngleY = (float)Math.toRadians(142);
+        this.body.rotateAngleX = (float)Math.toRadians(40);
+        this.body.rotateAngleZ = (float)Math.toRadians(8);
         this.body.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 6.0F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
 

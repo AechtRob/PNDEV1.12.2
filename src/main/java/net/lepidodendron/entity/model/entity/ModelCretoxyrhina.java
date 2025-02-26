@@ -624,13 +624,13 @@ public class ModelCretoxyrhina extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -2.0F;
-        this.main.offsetX = -1.338F;
-        this.main.rotateAngleY = (float)Math.toRadians(200);
+        this.main.offsetY = -0.2F;
+        this.main.offsetX = 0.15F;
+        this.main.rotateAngleY = (float)Math.toRadians(250);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 0.30F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 
