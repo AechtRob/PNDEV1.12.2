@@ -1,0 +1,47 @@
+{
+"name": "Nicrosaurus",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/nicrosaurus_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_nicrosaurus",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_nicrosaurus",
+"title": "Nicrosaurus",
+"type": "quest",
+"text": "$(l)Temporal Range:$()  Triassic$(br2)>Chordata$(br)>Archosauromorpha$(br)>Phytosauria$(br)>Parasuchidae$(br)>Mystriosuchini"
+},
+        {
+            "type": "entity",
+            "name": "N. kapffi",
+            "entity": "lepidodendron:prehistoric_flora_nicrosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_nicrosaurus",
+"type": "text",
+"text": "Nicrosaurus is a genus of Phytosaur from the Late Triassic of Europe. What distinguished phytosaurs from modern day crocodiles was the placement of its nostrils. Its Nostrils were positioned directly in front of the forehead, quite similarly to modern day cetaceans compared to the end of the snot like modern day crocodiles." 
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_nicrosaurus"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_nicrosaurus"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_nicrosaurus"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_nicrosaurus"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_nicrosaurus"
+}
+]
+}

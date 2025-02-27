@@ -1,0 +1,47 @@
+{
+	"name": "Moutoniceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/moutoniceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_moutoniceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_moutoniceras",
+			"title": "Moutoniceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Ammonitida$(br)>Acanthoceratoidea$(br)>Brancoceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Moutoniceras sp.",
+            "entity": "lepidodendron:prehistoric_flora_moutoniceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_moutoniceras",
+			"type": "text",
+			"text": "Moutoniceras comes from the Early Cretaceous, with fossils being found in formations across the globe. It is a small ammonite, growing up to 20 cm in diameter. Despite a majority of its shell being standard for an ammonite, and the bottom of the shell, there is a strange hook-like feature."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_moutoniceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_moutoniceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_moutoniceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_moutoniceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_moutoniceras"
+		}
+	]
+}

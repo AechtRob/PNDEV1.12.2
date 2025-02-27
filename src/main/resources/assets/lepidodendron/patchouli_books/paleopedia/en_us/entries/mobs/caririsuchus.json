@@ -1,0 +1,47 @@
+{
+"name": "Caririsuchus",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/caririsuchus_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_caririsuchus",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_caririsuchus",
+"title": "Caririsuchus",
+"type": "quest",
+"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Pseudosuchia$(br)>Notosuchia$(br)>Sebecosuchia$(br)>Peirosauridae"
+},
+        {
+            "type": "entity",
+            "name": "C. camposi",
+            "entity": "lepidodendron:prehistoric_flora_caririsuchus",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_caririsuchus",
+"type": "text",
+"text": "Caririsuchus is an Early Cretaceous Peirosaur, which are armored, mostly terrestrial notosuchians, although some members of Peirosauridae were semi-aquatic. Caririsuchus is one of the best known Peirosaurs, with its osteoderms, and most of the postcrania and skull preserved."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_caririsuchus"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_caririsuchus"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_caririsuchus"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_caririsuchus"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_caririsuchus"
+}
+]
+}

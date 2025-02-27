@@ -1,0 +1,47 @@
+{
+	"name": "Egertonodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/egertonodus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_egertonodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_egertonodus",
+			"title": "Egertonodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Chondrichtyes$(br)>Hybodontiformes$(br)>Hybondontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. basanus",
+            "entity": "lepidodendron:prehistoric_flora_egertonodus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_egertonodus",
+			"type": "text",
+			"text": "Egertonodus is a genus of hybodont known from the well-preserved species, E. basanus from England. This 1.5 m long freshwater hybodont has a 3D-preserved skull which helped a lot to reconstruct anatomy of the group. Some Jurassic species may also belong to this genus but this remains uncertain."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_egertonodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_egertonodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_egertonodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_egertonodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_egertonodus"
+		}
+	]
+}

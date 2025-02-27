@@ -1,0 +1,47 @@
+{
+	"name": "Kalops",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kalops_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_kalops",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kalops",
+			"title": "Kalops",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Actinopterygii"
+		},
+        	{
+            "type": "entity",
+            "name": "K. monophrys",
+            "entity": "lepidodendron:prehistoric_flora_kalops",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kalops",
+			"type": "text",
+			"text": "Kalops comes from the Lower Carboniferous, with fossils being found in the Heath Formation, Montana (USA). It is a small actinopterygian, growing to 12 cm in length. The generic name derives from the Greek words 'kalos', to mean 'beautiful'; and 'ops', to mean 'look'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kalops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kalops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kalops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kalops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kalops"
+		}
+	]
+}

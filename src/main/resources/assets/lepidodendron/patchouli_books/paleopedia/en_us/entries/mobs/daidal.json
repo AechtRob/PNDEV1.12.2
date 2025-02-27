@@ -1,0 +1,62 @@
+{
+	"name": "Daidal",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/daidal_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_daidal",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_daidal",
+			"title": "Daidal",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Malacostraca$(br)>Stomatopoda$(br)>Daidalidae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. acanthocercus",
+            "entity": "lepidodendron:prehistoric_flora_daidal",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_daidal",
+			"type": "text",
+			"text": "Daidal comes from the Upper Carboniferous, with fossils being found in the Bear Gulch Limestone, Montana (USA); Lower Limestone Formation, Scotland (United Kingdom), and Westphalia, Germany. It is a small daidalid, growing up to 8 cm in length. Daidal has been through several revisions, with the remains themselves being described nearly a century before being given their current name."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_daidal",
+			"type": "text",
+			"text": "The first described species (D. pattoni) started out as a species of Perimecturus in 1908, was then moved to Tyrannophontes in 1989, then went back to Perimecturus in 2004. In 1998, another species (D. acanthocercus) would be seperated from the genus Bairdops as Tyrannophontes acanthocercus. The most recent species (D. schoellmanni) from Germany would be described as Gorgonophontes fraiponti in 2004."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_daidal",
+			"type": "text",
+			"text": "Then, in 2007, a revision of the classification of Paleozoic stomatopods was undertaken, as it was found that the species T. acanthocercus differed greatly from the genus it was assigned to, which is when the genus Daidal was erected, with T. acanthocercus changing to D. acanthocercus. P. pattoni would soon follow suit, as it was found that it was similar to D. acanthocercus due to the pleon and telson,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_daidal",
+			"type": "text",
+			"text": "finally being moved from P. pattoni to D. pattoni after 99 years. And finally G.fraiponti was also recongised as being similar to D. acanthocercus, and was not only moved to the Daidal genus, but was given a new specific name, now being D. schoellmanni. The generic name derives from the name of a Takelma spirit of the same name."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_daidal"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_daidal"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_daidal"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_daidal"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_daidal"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Shantungosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/shantungosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_shantungosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_shantungosuchus",
+			"title": "S. chuhsienensis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Archosauria$(br)>Pseudosuchia$(br)>Mesoeucrocodylia$(br)>Shartegosuchiodiea"
+		},
+        	{
+            "type": "entity",
+            "name": "Shantungosuchus",
+            "entity": "lepidodendron:prehistoric_flora_shantungosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_shantungosuchus",
+			"type": "text",
+			"text": "Shantungosuchus is a genus of mesoeucrocodylian crocodyliform from the Early Cretaceous of China. The first part of its genus name “Shantung” comes from the Romanization of Shandong, the province were it was first discovered. Shantungosuchus was a small terrestrial crocodyliform that measured less than a meter in length."
+		},
+				{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_shantungosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_shantungosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_shantungosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_shantungosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_shantungosuchus"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Illinichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/illinichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_illinichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_illinichthys",
+			"title": "Illinichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Actinopterygii$(br)>Palaeonisciformes"
+		},
+        	{
+            "type": "entity",
+            "name": "I. cozarti",
+            "entity": "lepidodendron:prehistoric_flora_illinichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_illinichthys",
+			"type": "text",
+			"text": "Illinichthys cozarti comes from the Upper Carboniferous, with fossils being found in the Mazon Creek, Illinois (USA). The generic name derives from the name 'Illini', and Native American Tribe that lived within the area the fossils were found, and the Greek word 'ichthys', to mean 'fish'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_illinichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_illinichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_illinichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_illinichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_illinichthys"
+		}
+	]
+}

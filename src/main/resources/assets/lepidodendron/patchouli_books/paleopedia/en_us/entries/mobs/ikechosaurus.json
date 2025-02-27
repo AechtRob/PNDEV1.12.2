@@ -1,0 +1,47 @@
+{
+	"name": "Ikechosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ikechosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ikechosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ikechosaurus",
+			"title": "Ikechosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Choristodera$(br)>Neochoristodera"
+		},
+        	{
+            "type": "entity",
+            "name": "I. sunailinae",
+            "entity": "lepidodendron:prehistoric_flora_ikechosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ikechosaurus",
+			"type": "text",
+			"text": "Ikechosaurus comes from the Early Cretaceous, with fossils found in the Jiufotang Formation, China, and Hühteeg Formation, Monglia. It is a small choristoderan, growing up to 2 m in length. Unlike other members of its suborder Neochoristodera, it has simpler dentition (arrangement of teeth), and it also has parasphenoid palatal teeth, something not even seen within the order Choristodera itself."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ikechosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ikechosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ikechosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ikechosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ikechosaurus"
+		}
+	]
+}
