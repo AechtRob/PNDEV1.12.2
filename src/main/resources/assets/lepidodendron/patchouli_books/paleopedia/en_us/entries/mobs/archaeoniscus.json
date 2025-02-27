@@ -1,0 +1,52 @@
+{
+"name": "Archaeoniscus",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/archaeoniscus_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_archaeoniscus",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_archaeoniscus",
+"title": "Archaeoniscus",
+"type": "quest",
+"text": "$(l)Temporal Range:$()  Jurassic - Early Cretaceous$(br2)>Arthropoda$(br)>Malacostraca$(br)>Isopoda$(br)>Archaeoniscidae"
+},
+        {
+            "type": "entity",
+            "name": "A. brodiei",
+            "entity": "lepidodendron:prehistoric_flora_archaeoniscus",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_archaeoniscus",
+"type": "text",
+"text": "Archaeoniscus is a genus of mid-sized isopod known from Jurassic-Cretaceous sites mainly around Europe. Reaching up to 4.5 cm long, this isopod had a wide, oval-shaped body. It was originally considered as a parasitic isopod like many other fossil isopods are, but well-preserved leg anatomy found in a South Korean species A. coreaensis suggests it was a benthic dweller instead."
+},
+{
+"advancement": "lepidodendron:pf_adv_book_archaeoniscus",
+"type": "text",
+"text": "Most fossils are known from marine strata while A. aranguthyorum was lagoonal and A. coreaensis is freshwater."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_archaeoniscus"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_archaeoniscus"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_archaeoniscus"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_archaeoniscus"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_archaeoniscus"
+}
+]
+}

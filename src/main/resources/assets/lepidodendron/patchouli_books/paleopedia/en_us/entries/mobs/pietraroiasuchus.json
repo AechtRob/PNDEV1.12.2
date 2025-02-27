@@ -1,0 +1,52 @@
+{
+	"name": "Pietraroiasuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pietraroiasuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_pietraroiasuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pietraroiasuchus",
+			"title": "Pietraroiasuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Crocodyliformes$(br)>Eusuchia$(br)>Hylaeochampsidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. ormezzanoi",
+            "entity": "lepidodendron:prehistoric_flora_pietraroiasuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pietraroiasuchus",
+			"type": "text",
+			"text": "Pietraroiasuchus ormezzanoi comes from the Early Cretaceous, with fossils being found in the Pietraroja Plattenkalk, Italy. It is a small crocodylomorph, growing up to 1 m in length. The discovery of Pietraroiasuchus helped to resolve several issues within the family Hylaeochampsidae. Alongside this, it also bore more primitive and mosaic features for its time whilst other members of its family were more advanced, suggesting that the area it was found in, Pietraroia, was once an island."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pietraroiasuchus",
+			"type": "text",
+			"text": "The generic name derives from the place name of 'Pietraroja', where the fossils were found; and the Greek word 'suchus', to mean 'crocodile'. The specific name derives from the surname of Daniele Ormezzano, a curator of the Museo Regionale di Scienze Naturali di Torino who helped in cleaning one of the specimens."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pietraroiasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pietraroiasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pietraroiasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pietraroiasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pietraroiasuchus"
+		}
+	]
+}

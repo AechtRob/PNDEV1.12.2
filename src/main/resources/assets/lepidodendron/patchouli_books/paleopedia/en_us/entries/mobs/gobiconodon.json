@@ -1,0 +1,52 @@
+{
+	"name": "Gobiconodon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gobiconodon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_gobiconodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gobiconodon",
+			"title": "Gobiconodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Mammalia$(br)>Eutriconodonta$(br)>Gobiconodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "G. borissiaki",
+            "entity": "lepidodendron:prehistoric_flora_gobiconodon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gobiconodon",
+			"type": "text",
+			"text": "Gobiconodon comes from the Early Cretaceous, with fossils being found in formations across Eurasia and Africa. It is a small gobiconodontid, growing up to 45 cm in diameter. Like most carnivorous predators, it possessed the usual sheering molariform teeth, canine-like incisors and powerful jaw and forelimb muscles. But unlike most carnivorous predators, and even other eutriconodonts,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gobiconodon",
+			"type": "text",
+			"text": "its lower canines had become vestigial, with only the first lower incisor pair becoming large and canine-like. The generic name derives from the place name 'Gobi', where the first fossils were found; and the English word 'conodont', to mean 'cone-tooth', from the Greek words 'kônos' and 'odoús'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gobiconodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gobiconodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gobiconodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gobiconodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gobiconodon"
+		}
+	]
+}

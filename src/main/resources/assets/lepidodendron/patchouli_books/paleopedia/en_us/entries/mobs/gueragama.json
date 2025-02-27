@@ -1,0 +1,57 @@
+{
+	"name": "Gueragama",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gueragama_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_gueragama",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gueragama",
+			"title": "Gueragama",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Squamata$(br)>Iguania$(br)>Acrodonta"
+		},
+        	{
+            "type": "entity",
+            "name": "G. sulamericana",
+            "entity": "lepidodendron:prehistoric_flora_gueragama",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gueragama",
+			"type": "text",
+			"text": "Gueragama sulamericana comes from the Early Cretaceous, with fossils found in the Goio-Erê Formation, Brazil. It is a small iguanian, growing up to 20 cm in length. It is currently the only known acrodont from South America, helping palaeontologists to understand that the clade was widespread across a good chunk of Gondwana before the continent split into what we see today."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gueragama",
+			"type": "text",
+			"text": "It has also been noted that unlike its more modern relatives, which have their teeth implant on the margins of their jaws, the teeth of Gueragama implant along the inner surface of the lower jaw, a feature that was previously only known to non-acrodontans and another Iguanian clade, Pleurodonta. This also helped to establish that it was most likely a basal member of its clade."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gueragama",
+			"type": "text",
+			"text": "Although some more recent publications instead suggest that it should be either assigned to the infraorder Scincomorpha or family Teiidae instead."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gueragama"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gueragama"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gueragama"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gueragama"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gueragama"
+		}
+	]
+}

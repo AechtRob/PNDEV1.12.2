@@ -1,0 +1,52 @@
+{
+	"name": "Palaeocambarus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/palaeocambarus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_palaeocambarus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeocambarus",
+			"title": "Palaeocambarus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Arthropoda$(br)>Malacostraca$(br)>Decopoda$(br)>Astacoidea$(br)>Cambaroididae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. licenti",
+            "entity": "lepidodendron:prehistoric_flora_palaeocambarus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeocambarus",
+			"type": "text",
+			"text": "Palaeocambarus is a member of Cambaroididae known from the Yixian Formation in China. Previously another species, Cricoidoscelus aethus was known from same formation, however it has since been synonymized with Palaeocambarus. In 2019, a gigantic spider with the body length of about 3 cm was described from the Yixian Formation and named as Mongolarachne chaoyangensis."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeocambarus",
+			"type": "text",
+			"text": " However, M. chaoyangensis was later found to be a forged fossil that was processed from Palaeocambarus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeocambarus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeocambarus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeocambarus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeocambarus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeocambarus"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Microbrachis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/microbrachis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_microbrachis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_microbrachis",
+			"title": "Microbrachis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Tetrapoda$(br)>Microsauria$(br)>Microbrachidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. pelikani",
+            "entity": "lepidodendron:prehistoric_flora_microbrachis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_microbrachis",
+			"type": "text",
+			"text": "Microbrachis pelikani comes from the Upper Carboniferous, with fossils being found in the Kladno Formation, Czech Republic. It is a small microbrachid, growing up to 15 cm in length. It is unique for having over 40 vertebrae, with living relatives only having up to 26."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_microbrachis",
+			"type": "text",
+			"text": "The generic name derives from the Latin words 'micro', to mean 'small'; and 'brachio', to mean 'limb'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_microbrachis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_microbrachis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_microbrachis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_microbrachis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_microbrachis"
+		}
+	]
+}

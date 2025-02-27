@@ -1,0 +1,47 @@
+{
+"name": "Eocarcharia",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/eocarcharia_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_eocarcharia",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_eocarcharia",
+"title": "Eocarcharia",
+"type": "quest",
+"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Carcharodontosauridae"
+},
+        {
+            "type": "entity",
+            "name": "E. dinops",
+            "entity": "lepidodendron:prehistoric_flora_eocarcharia",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_eocarcharia",
+"type": "text",
+"text": "Eocarcharia is a genus of carcharodontosaurid theropod from the Early Cretaceous of Niger. It lived amongst some famous and well known dinosaurs such as Suchomimus, Nigersaurus, and Oranosaurus. Eocarcharia is estimated to have grown up to almost 8 meters in length. Its name, fierce-eyed, comes from its swollen brow which gave it a menacing glare."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_eocarcharia"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_eocarcharia"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_eocarcharia"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_eocarcharia"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_eocarcharia"
+}
+]
+}

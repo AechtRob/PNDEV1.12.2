@@ -1,0 +1,52 @@
+{
+	"name": "Tuzoia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tuzoia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tuzoia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tuzoia",
+			"title": "Tuzoia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Hymenocarina$(br)>Tuzoiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. retifera",
+            "entity": "lepidodendron:prehistoric_flora_tuzoia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tuzoia",
+			"type": "text",
+			"text": "Tuzoia comes from the Lower Cambrian, with fossils being found in formations across North America, Australia, China, Europe and Siberia (Russia). It is amongst the largest hymenocarines, growing up to 18 cm, with a possible length 23 cm. Until recently it was only known from carapace material, but in 2022, soft tissues were discovered, helping us to understand that"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tuzoia",
+			"type": "text",
+			"text": "Tuzoia was a hymenocarine and also nektobenthic, meaning it swam near the seafloor, either predating on life on the seafloor or scavenging. The generic name derives from the Latinised place name of 'Mount Tuzo', near to where the first fossils were found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tuzoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tuzoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tuzoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tuzoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tuzoia"
+		}
+	]
+}

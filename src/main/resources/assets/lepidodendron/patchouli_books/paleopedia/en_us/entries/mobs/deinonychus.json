@@ -1,0 +1,52 @@
+{
+"name": "Deinonychus",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/deinonychus_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_deinonychus",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_deinonychus",
+"title": "Deinonychus",
+"type": "quest",
+"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Dromaeosauridae"
+},
+        {
+            "type": "entity",
+            "name": "D. antirrhopus",
+            "entity": "lepidodendron:prehistoric_flora_deinonychus",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_deinonychus",
+"type": "text",
+"text": "Deinonychus is a well known dromaeosaur that originated from the Antlers and Cloverly Formations of the Early Cretaceous of North America. Deinonychus and most other dromaeosaurs are quite popular because of the presence of a large and scythe-like talon on each foot."
+},
+{
+"advancement": "lepidodendron:pf_adv_book_deinonychus",
+"type": "text",
+"text": "The terrible claw of Deinonychus can reach upwards to 5 inches long, which is how the genus got its name. Studies from the 1960s involving Deinonychus are one of the factors that made paleontologists start to believe that dinosaurs were indeed warm-blooded and began what would be called the dinosaur renaissance."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_deinonychus"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_deinonychus"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_deinonychus"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_deinonychus"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_deinonychus"
+}
+]
+}
