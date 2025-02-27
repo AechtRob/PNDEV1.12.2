@@ -411,6 +411,13 @@ public class ModelGermanodactylus extends ModelBasePalaeopedia {
         this.setRotateAngle(cube_r17, -0.3054F, 0.0F, 0.0F);
         this.cube_r17.cubeList.add(new ModelBox(cube_r17, 35, 10, -1.0F, -1.025F, -1.575F, 2, 1, 3, 0.0F, false));
 
+
+        this.leftmembranetip.scaleChildren = true;
+        this.rightmembranetip.scaleChildren = true;
+
+        this.leftmembranetip.setScale((float)1,(float)0.2,(float)1);
+        this.rightmembranetip.setScale((float)1,(float)0.4,(float)1);
+
         updateDefaultPose();
         animator = ModelAnimator.create();
     }
@@ -529,6 +536,12 @@ public class ModelGermanodactylus extends ModelBasePalaeopedia {
         EntityPrehistoricFloraGermanodactylus ee = (EntityPrehistoricFloraGermanodactylus) entitylivingbaseIn;
 
         if (ee.isReallyFlying() || ee.getAnimation() == ee.UNFLY_ANIMATION) {
+
+            if (ee.getAnimation() != ee.UNFLY_ANIMATION) {
+                this.leftmembranetip.setScale((float) 1, (float) 1, (float) 1);
+                this.rightmembranetip.setScale((float) 1, (float) 1, (float) 1);
+            }
+
             //flight pose
             this.setRotateAngle(body1, -0.0456F, 0.0F, 0.0F);
             this.setRotateAngle(chest, -0.0456F, 0.0F, 0.0F);
@@ -589,6 +602,8 @@ public class ModelGermanodactylus extends ModelBasePalaeopedia {
             if (ee.getAttachmentFacing() == EnumFacing.UP) {
                 //Is walking:
                 //The model is already reset to default each cycle so no need to do more here
+                this.leftmembranetip.setScale((float)1,(float)0.2,(float)1);
+                this.rightmembranetip.setScale((float)1,(float)0.4,(float)1);
             }
         }
 
@@ -1490,10 +1505,6 @@ public class ModelGermanodactylus extends ModelBasePalaeopedia {
 
 
 
-        this.leftmembranetip.setScale((float)1,(float)0.2,(float)1);
-
-
-
         if (tickAnim >= 0 && tickAnim < 10) {
             xx = -22.5 + (((tickAnim - 0) / 10) * (-21.95244-(-22.5)));
             yy = 0 + (((tickAnim - 0) / 10) * (2.32349-(0)));
@@ -1906,11 +1917,6 @@ public class ModelGermanodactylus extends ModelBasePalaeopedia {
         this.wing4right.rotationPointX = this.wing4right.rotationPointX + (float)(xx);
         this.wing4right.rotationPointY = this.wing4right.rotationPointY - (float)(yy);
         this.wing4right.rotationPointZ = this.wing4right.rotationPointZ + (float)(zz);
-
-
-
-        this.rightmembranetip.setScale((float)1,(float)0.4,(float)1);
-
 
 
         if (tickAnim >= 0 && tickAnim < 5) {
