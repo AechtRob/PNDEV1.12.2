@@ -315,13 +315,13 @@ public class ModelArchaeoniscus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.bone.offsetY = -0.20F;
-        this.bone.offsetX = 0.0F;
-        this.bone.rotateAngleY = (float)Math.toRadians(220);
-        this.bone.rotateAngleX = (float)Math.toRadians(12);
-        this.bone.rotateAngleZ = (float)Math.toRadians(-2);
+        this.bone.offsetY = -1.80F;
+        this.bone.offsetX = 0.3F;
+        this.bone.rotateAngleY = (float)Math.toRadians(202);
+        this.bone.rotateAngleX = (float)Math.toRadians(32);
+        this.bone.rotateAngleZ = (float)Math.toRadians(-12);
         this.bone.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 5.0F;
         this.bone.setScale(scaler, scaler, scaler);
         //Start of pose:
 

@@ -76,13 +76,13 @@ public class ModelAnchura extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.foot.offsetY = -2.0F;
-        this.foot.offsetX = -1.338F;
+        this.foot.offsetY = -1.2F;
+        this.foot.offsetX = -0.238F;
         this.foot.rotateAngleY = (float)Math.toRadians(200);
         this.foot.rotateAngleX = (float)Math.toRadians(8);
         this.foot.rotateAngleZ = (float)Math.toRadians(-8);
         this.foot.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 5.2F;
         this.foot.setScale(scaler, scaler, scaler);
         //Start of pose:
 

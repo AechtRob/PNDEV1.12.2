@@ -1,8 +1,8 @@
 {
-	"name": "Osedax",
+	"name": "Bone Worm (Osedax)",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/bone_worm_icon.png",
-	"category": "lepidodendron:mobs",
+	"category": "lepidodendron:statics",
 	"turnin": "lepidodendron:pf_adv_book_bone_worm",
 	"pages": [
 		{
@@ -11,13 +11,21 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Cretaceous - Present$(br2)>Annelida$(br)>Pleistoannelida$(br)>Sedentaria$(br)>Sabellida$(br)>Siboglinidae"
 		},
-        	{
-            "type": "entity",
-            "name": "O. rubiplumus",
-            "entity": "lepidodendron:prehistoric_flora_bone_worm",
-            "rotate": false,
-            "default_rotation": 0
-       	},
+		{
+			"type": "multiblock",
+			"name": "O. rubiplumus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:brachiospongia",
+					"0": "minecraft:air"
+				}
+			}
+		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bone_worm",
 			"type": "text",
@@ -27,26 +35,6 @@
 			"advancement": "lepidodendron:pf_adv_book_bone_worm",
 			"type": "text",
 			"text": "Whilst they today are most known for feeding on whale bones, Osedax have a generalist diet, feeding on the bones of fishes, turtles, and even birds. The current earliest known traces of Osedax have been found on a plesiosaur humerus from the Cambridge Greensand, England (United Kingdom). The generic name derives from the Latin words 'ōs', to mean 'bone'; and 'edāx', to mean 'devourer'."
-		},
-		{
-			"type": "lepidodendron:diet",
-			"mob": "lepidodendron:prehistoric_flora_bone_worm"
-		},
-		{
-			"type": "lepidodendron:biomelocations1",
-			"mob": "lepidodendron:prehistoric_flora_bone_worm"
-		},
-		{
-			"type": "lepidodendron:biomelocations2",
-			"mob": "lepidodendron:prehistoric_flora_bone_worm"
-		},
-		{
-			"type": "lepidodendron:biomelocations3",
-			"mob": "lepidodendron:prehistoric_flora_bone_worm"
-		},
-		{
-			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron:prehistoric_flora_bone_worm"
 		}
 	]
 }

@@ -732,17 +732,50 @@ public class ModelMythunga extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.fossil.offsetY = -0.7F;
-        this.fossil.offsetX = 0F;
-        this.fossil.rotateAngleY = (float)Math.toRadians(125);
-        this.fossil.rotateAngleX = (float)Math.toRadians(0);
+        this.fossil.offsetY = -0.25F;
+        this.fossil.offsetX = -0.3F;
+        this.fossil.rotateAngleY = (float)Math.toRadians(135);
+        this.fossil.rotateAngleX = (float)Math.toRadians(28);
         this.fossil.rotateAngleZ = (float)Math.toRadians(0);
         this.fossil.scaleChildren = true;
-        float scaler = 1.5F;
+        float scaler = 0.45F;
         this.fossil.setScale(scaler, scaler, scaler);
         //Start of pose:
-        //this.setRotateAngle(root, 0.2618F, 0.0F, 0.0F);
-
+        this.leftwing5membrane.setScale((float)1,(float)1,(float)1);
+        this.leftwing6membrane.setScale((float)1,(float)1,(float)1);
+        this.rightwing5membrane.setScale((float)1,(float)1,(float)1);
+        this.rightwing6membrane.setScale((float)1,(float)1,(float)1);
+        this.leftwing1planemembrane.setScale((float)1,(float)1,(float)1);
+        this.leftwing2planemembrane.setScale((float)1,(float)1,(float)1);
+        this.leftwing3planemembrane.setScale((float)1,(float)1,(float)1);
+        this.leftwing4planemembrane.setScale((float)1,(float)1,(float)1);
+        this.rightwing1planemembrane.setScale((float)1,(float)1,(float)1);
+        this.rightwing2planemembrane.setScale((float)1,(float)1,(float)1);
+        this.rightwing3planemembrane.setScale((float)1,(float)1,(float)1);
+        this.rightwing4planemembrane.setScale((float)1,(float)1,(float)1);
+        setRotateAngle(head, -0.2662F, 0.0F, 0.0F);
+        setRotateAngle(hips, 0.2705F, 0.0F, 0.0F);
+        setRotateAngle(leftfoot, 0.4071F, 0.0341F, -0.0703F);
+        setRotateAngle(lefthand, -1.5534F, 1.519F, -1.6385F);
+        setRotateAngle(leftleg1, 0.4287F, -0.4465F, -1.733F);
+        setRotateAngle(leftleg2, 1.1155F, -0.1055F, 0.0693F);
+        setRotateAngle(leftwing1, -0.1683F, -0.0008F, -0.1259F);
+        setRotateAngle(leftwing2, -0.0219F, -0.0276F, 0.015F);
+        setRotateAngle(leftwing3, -0.0098F, 0.0179F, 0.1089F);
+        setRotateAngle(leftwing4, -0.0177F, -0.0206F, 0.1016F);
+        setRotateAngle(leftwing5, -0.0218F, -0.0905F, 0.1F);
+        setRotateAngle(neck, -0.2967F, 0.0F, 0.0F);
+        setRotateAngle(rightfoot, 0.4071F, -0.0341F, 0.0703F);
+        setRotateAngle(righthand, 1.2294F, -1.519F, -1.1608F);
+        setRotateAngle(rightleg1, 0.4287F, 0.4465F, 1.733F);
+        setRotateAngle(rightleg2, 1.1155F, 0.1055F, -0.0693F);
+        setRotateAngle(rightwing1, -0.1683F, -0.0008F, 0.1259F);
+        setRotateAngle(rightwing2, -0.0219F, -0.0276F, 0.015F);
+        setRotateAngle(rightwing3, -0.0098F, 0.0179F, -0.1089F);
+        setRotateAngle(rightwing4, -0.0177F, 0.0206F, -0.1016F);
+        setRotateAngle(rightwing5, -0.0218F, 0.0905F, -0.1F);
+        setRotateAngle(shoulder, 0.288F, 0.0F, 0.0F);
+        setRotateAngle(throat1, 0.3796F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.fossil.render(f);
         //Reset rotations, positions and sizing:

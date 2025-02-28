@@ -363,13 +363,13 @@ public class ModelGobiconodon extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.30F;
-        this.root.offsetX = 1.2F;
+        this.root.offsetY = -3.80F;
+        this.root.offsetX = 0.2F;
         this.root.rotateAngleY = (float)Math.toRadians(130);
-        this.root.rotateAngleX = (float)Math.toRadians(0);
+        this.root.rotateAngleX = (float)Math.toRadians(1);
         this.root.rotateAngleZ = (float)Math.toRadians(0);
         this.root.scaleChildren = true;
-        float scaler = 2.0F;
+        float scaler = 2.5F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
 

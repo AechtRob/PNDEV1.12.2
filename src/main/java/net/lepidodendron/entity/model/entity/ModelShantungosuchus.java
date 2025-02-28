@@ -363,13 +363,13 @@ public class ModelShantungosuchus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -2.0F;
-        this.main.offsetX = -1.338F;
-        this.main.rotateAngleY = (float)Math.toRadians(200);
+        this.main.offsetY = -1.0F;
+        this.main.offsetX = 0.438F;
+        this.main.rotateAngleY = (float)Math.toRadians(225);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 2.63F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

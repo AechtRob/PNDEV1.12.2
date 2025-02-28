@@ -716,8 +716,8 @@ public class ModelDeinonychus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Deinonychus.offsetY = -0.20F;
-        this.Deinonychus.offsetX = 0.0F;
+        this.Deinonychus.offsetY = 0.08F;
+        this.Deinonychus.offsetX = 0.1F;
         this.Deinonychus.rotateAngleY = (float)Math.toRadians(220);
         this.Deinonychus.rotateAngleX = (float)Math.toRadians(12);
         this.Deinonychus.rotateAngleZ = (float)Math.toRadians(-2);
