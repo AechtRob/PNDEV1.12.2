@@ -1,0 +1,52 @@
+{
+	"name": "Repenomamus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/repenomamus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_repenomamus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_repenomamus",
+			"title": "Repenomamus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Mammalia$(br)>Eutriconodonta$(br)>Gobiconodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "R. robustus",
+            "entity": "lepidodendron:prehistoric_flora_repenomamus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_repenomamus",
+			"type": "text",
+			"text": "Repenomamus comes from the Early Cretaceous, with fossils found in the Yixian Formation, China. It is a large gobiconodontid, growing up to 1 m in length, and weighing up to 14 kg. It is currently the largest known mammal from the Mesozoic, although there could be larger. With this, it is also amongst one of the few Mesozoic mammals known to have fed on vertebrates, which includes dinosaurs."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_repenomamus",
+			"type": "text",
+			"text": "This is evidenced by fossil material of Repenomamus with the skeletal remains of a juvenile Psittacosaurus within its stomach area. This was again further supported when a fully complete fossil of a Repenomamus and a adult Psittacosaurus was found, both locked and intertwined within a fight, which also showed that Repenomammus went for prey items larger than itself."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_repenomamus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_repenomamus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_repenomamus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_repenomamus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_repenomamus"
+		}
+	]
+}

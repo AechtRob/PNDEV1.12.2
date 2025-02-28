@@ -317,13 +317,13 @@ public class ModelDrepanosaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Drepanosaurus.offsetY = -1.3F;
-        this.Drepanosaurus.offsetX = 1.5F;
-        this.Drepanosaurus.rotateAngleY = (float)Math.toRadians(200);
+        this.Drepanosaurus.offsetY = -1.7F;
+        this.Drepanosaurus.offsetX = 1.0F;
+        this.Drepanosaurus.rotateAngleY = (float)Math.toRadians(230);
         this.Drepanosaurus.rotateAngleX = (float)Math.toRadians(8);
         this.Drepanosaurus.rotateAngleZ = (float)Math.toRadians(-8);
         this.Drepanosaurus.scaleChildren = true;
-        float scaler = 4.4F;
+        float scaler = 2.4F;
         this.Drepanosaurus.setScale(scaler, scaler, scaler);
         //Start of pose:
 

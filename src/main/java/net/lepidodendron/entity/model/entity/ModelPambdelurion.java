@@ -1012,9 +1012,26 @@ public class ModelPambdelurion extends ModelBasePalaeopedia {
     public void renderStaticFloor(float f) {
         resetToDefaultPose();
     }
+
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Pambdelurion.offsetY = -2.0F;
+        this.Pambdelurion.offsetX = -0.25F;
+        this.Pambdelurion.rotateAngleY = (float)Math.toRadians(200);
+        this.Pambdelurion.rotateAngleX = (float)Math.toRadians(40);
+        this.Pambdelurion.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Pambdelurion.scaleChildren = true;
+        float scaler = 1.8F;
+        this.Pambdelurion.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
+        //End of pose, now render the model:
+        this.Pambdelurion.render(f);
+        //Reset rotations, positions and sizing:
+        this.Pambdelurion.setScale(1.0F, 1.0F, 1.0F);
+        this.Pambdelurion.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

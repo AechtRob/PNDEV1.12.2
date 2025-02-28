@@ -763,13 +763,13 @@ public class ModelAcrocanthosaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = -0.20F;
+        this.hips.offsetY = 0.30F;
         this.hips.offsetX = 0.0F;
         this.hips.rotateAngleY = (float)Math.toRadians(220);
         this.hips.rotateAngleX = (float)Math.toRadians(12);
         this.hips.rotateAngleZ = (float)Math.toRadians(-2);
         this.hips.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.7F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
        

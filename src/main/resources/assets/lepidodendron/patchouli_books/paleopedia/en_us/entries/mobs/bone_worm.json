@@ -1,0 +1,52 @@
+{
+	"name": "Osedax",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bone_worm_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_bone_worm",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bone_worm",
+			"title": "Osedax",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous - Present$(br2)>Annelida$(br)>Pleistoannelida$(br)>Sedentaria$(br)>Sabellida$(br)>Siboglinidae"
+		},
+        	{
+            "type": "entity",
+            "name": "O. rubiplumus",
+            "entity": "lepidodendron:prehistoric_flora_bone_worm",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bone_worm",
+			"type": "text",
+			"text": "Osedax, more commonly referred to as 'Bone Worms', hails from the Cretaceous right into the Present day, with fossils being found in formations across the globe, and extant species in many deep sea regions. It is a small siboglinid, growing up to 7 cm in length. Like most siboglinids, they do not have a digestive tract, instead relying on bacteria to break down the bones they latch onto, absorbing the nutrients that the bacteria releases in the process."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bone_worm",
+			"type": "text",
+			"text": "Whilst they today are most known for feeding on whale bones, Osedax have a generalist diet, feeding on the bones of fishes, turtles, and even birds. The current earliest known traces of Osedax have been found on a plesiosaur humerus from the Cambridge Greensand, England (United Kingdom). The generic name derives from the Latin words 'ōs', to mean 'bone'; and 'edāx', to mean 'devourer'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bone_worm"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bone_worm"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bone_worm"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bone_worm"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bone_worm"
+		}
+	]
+}

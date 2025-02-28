@@ -1,0 +1,52 @@
+{
+	"name": "Brachiospongia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/brachiospongia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_brachiospongia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_brachiospongia",
+			"title": "Brachiospongia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Porifera$(br)>Hexactinellida$(br)>Lyssacinosa$(br)>Brachiospongiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. digitata",
+            "entity": "lepidodendron:prehistoric_flora_brachiospongia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brachiospongia",
+			"type": "text",
+			"text": "Brachiospongia digitata comes from the Upper Ordovician, with fossils being found in the Bigby Limestone, Kentucky (USA), and the Cat Head Member, Canada. It is a small sponge, growing up to 30 cm in length. It is a rather distinctive sponge, which is comprised of a cup-like structure in its center, and six to twelve finger-like extensions coming off."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brachiospongia",
+			"type": "text",
+			"text": "The generic name derives from the Latin words 'brachio', to mean 'branched'; and 'spongia', to mean 'sponge'. The specific name derives directly from the Latin word 'digitata', to mean 'having fingers'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_brachiospongia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_brachiospongia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_brachiospongia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_brachiospongia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_brachiospongia"
+		}
+	]
+}

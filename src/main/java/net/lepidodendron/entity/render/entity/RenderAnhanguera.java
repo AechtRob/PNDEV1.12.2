@@ -12,7 +12,7 @@ public class RenderAnhanguera extends RenderLivingBaseWithBook<EntityPrehistoric
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anhanguera.png");
 
     public static float getScaler() {
-        return 1F;
+        return 0.565F;
     }
 
     public RenderAnhanguera(RenderManager mgr) {

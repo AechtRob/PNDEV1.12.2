@@ -1860,7 +1860,8 @@ public class EntityLists {
 
 
         //JURASSIC:
-        else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean")) {
+        else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean")
+            || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_transition")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyOceanDeepPF);
             }
@@ -2613,17 +2614,6 @@ public class EntityLists {
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_shrubland")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyAsiaShrublandPF);
-            }
-//            if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
-//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.dimJurassicMobsOceanDeepFA);
-//            }
-//            if ((LepidodendronConfig.doSpawnsReborn && Loader.isModLoaded("rebornmod"))) {
-//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.dimJurassicMobsOceanDeepReborn);
-//            }
-        }
-        else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_shrubland_oasis")) {
-            if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyAsiaOasisPF);
             }
 //            if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
 //                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.dimJurassicMobsOceanDeepFA);

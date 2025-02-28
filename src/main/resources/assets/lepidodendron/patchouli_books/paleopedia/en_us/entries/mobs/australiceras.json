@@ -1,0 +1,47 @@
+{
+	"name": "Australiceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/australiceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_australiceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_australiceras",
+			"title": "Australiceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Ammonitida$(br)>Ancyloceratina$(br)>Ancyloceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. jackii",
+            "entity": "lepidodendron:prehistoric_flora_australiceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_australiceras",
+			"type": "text",
+			"text": "Australiceras comes from the Early Cretaceous, with fossils being found in formations across the globe. It is a small ammonite, growing up to 15 cm in diameter."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_australiceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_australiceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_australiceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_australiceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_australiceras"
+		}
+	]
+}

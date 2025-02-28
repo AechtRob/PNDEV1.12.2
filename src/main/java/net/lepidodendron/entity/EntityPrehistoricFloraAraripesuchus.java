@@ -316,13 +316,13 @@ public class EntityPrehistoricFloraAraripesuchus extends EntityPrehistoricFloraL
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.KNOETSCHKESUCHUS_LOOT;
+		return LepidodendronMod.ARARIPESUCHUS_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_KNOETSCHKESUCHUS;
+		return ModTriggers.CLICK_ARARIPESUCHUS;
 	}
 	//Rendering taxidermy:
 	//--------------------

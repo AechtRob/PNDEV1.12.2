@@ -85,8 +85,8 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 			super(Material.IRON);
 			setTranslationKey("pf_time_researcher");
 			setSoundType(SoundType.METAL);
-			setHardness(1F);
-			setResistance(1F);
+			setHardness(10F);
+			setResistance(1200F);
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronBuilding.tab);
@@ -1004,7 +1004,9 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 				) {
 					return true;
 				}
-				if (item == ItemFossilClean.block) {
+				if (item == ItemFossilClean.block
+						|| item == ItemPhialDNA.block
+						|| item == ItemPlaceableLiving.block) {
 					if (stack.hasTagCompound()) {
 						if (stack.getTagCompound().hasKey("period")) {
 							return true;

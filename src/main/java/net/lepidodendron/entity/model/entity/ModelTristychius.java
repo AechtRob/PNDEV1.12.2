@@ -239,13 +239,13 @@ public class ModelTristychius extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -2.0F;
-        this.base.offsetX = -1.338F;
-        this.base.rotateAngleY = (float)Math.toRadians(200);
+        this.base.offsetY = -1.4F;
+        this.base.offsetX = 0.1F;
+        this.base.rotateAngleY = (float)Math.toRadians(225);
         this.base.rotateAngleX = (float)Math.toRadians(8);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
         this.base.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 2.0F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
 

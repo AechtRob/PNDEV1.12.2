@@ -1,0 +1,47 @@
+{
+"name": "Ezkutuberezi",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/ezkutuberezi_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_ezkutuberezi",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_ezkutuberezi",
+"title": "Ezkutuberezi",
+"type": "quest",
+"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Clupeomorpha$(br)>Paraclupeidae"
+},
+        {
+            "type": "entity",
+            "name": "E. carmeni",
+            "entity": "lepidodendron:prehistoric_flora_ezkutuberezi",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_ezkutuberezi",
+"type": "text",
+"text": "Ezkutuberezi is a genus of clupeomorph fish from the Early Cretaceous of Spain. It is a small fish that measures just over 9 cm in length. This brackish/freshwater fish was the first articulated vertebrate fossil to be described from the Basque-Canatabrian Basin."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_ezkutuberezi"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_ezkutuberezi"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_ezkutuberezi"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_ezkutuberezi"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_ezkutuberezi"
+}
+]
+}

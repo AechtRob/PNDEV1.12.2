@@ -1,0 +1,52 @@
+{
+	"name": "Stenamara",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/stenamara_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_stenamara",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_stenamara",
+			"title": "Stenamara",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Neopterygii$(br)>Pycnodontiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "S. mia",
+            "entity": "lepidodendron:prehistoric_flora_stenamara",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stenamara",
+			"type": "text",
+			"text": "Stenamara was a genus of pycnodontiform fish from the Early Cretaceous Las Hoyas Formation in Spain. It was a small freshwater fish measuring only just over 7 cm. It was the rarest and smallest of the Las Hoyas pycnodonts, known from only two specimens. Based on its body shape it was"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stenamara",
+			"type": "text",
+			"text": "likely a slow swimmer, however it would have been perfectly suited to maneuver through the vegetated shallows of the lakes it called home."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_stenamara"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_stenamara"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_stenamara"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_stenamara"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_stenamara"
+		}
+	]
+}

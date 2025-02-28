@@ -1,0 +1,57 @@
+{
+	"name": "Acheronauta",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/acheronauta_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_acheronauta",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_acheronauta",
+			"title": "Acheronauta",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda"
+		},
+        	{
+            "type": "entity",
+            "name": "A. stimulapis",
+            "entity": "lepidodendron:prehistoric_flora_acheronauta",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acheronauta",
+			"type": "text",
+			"text": "Acheronauta stimulapis comes from the Lower Silurian, with fossils found in the Cedar Mountain Formation, Utah (USA). It is a small arthropod, growing up to 6 cm in length. Whilst it is unknown which group, order or family Acheronauta is apart of, many have put forward the idea that it could be of the class Remipedia, although its not likely as there are no remipedes that bear"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acheronauta",
+			"type": "text",
+			"text": "a carapace at all, and only have one tagma. Another possibility is the enigmatic group Thylacocephala, which is more supported as studies have shown it to being related to another possible thylacocephalan, Captopodus, which also forms a possible clade within the group itself, although it may be some time before a consensus is made due to the strange morphologies of this genus."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acheronauta",
+			"type": "text",
+			"text": "The generic name derives from the Greek name of the River of Woe, 'Acheron', a river in the Greek Underworld; and the Latin word 'nauta', to mean 'sailor'. The specific name derives from the Latin words 'stimulas', to mean 'sting'; and 'apis', to mean 'bee'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_acheronauta"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_acheronauta"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_acheronauta"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_acheronauta"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_acheronauta"
+		}
+	]
+}

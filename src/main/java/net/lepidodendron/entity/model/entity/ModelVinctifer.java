@@ -346,6 +346,23 @@ public class ModelVinctifer extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.martillichthys.offsetY = -1.20F;
+        this.martillichthys.offsetX = -0.1F;
+        this.martillichthys.rotateAngleY = (float)Math.toRadians(130);
+        this.martillichthys.rotateAngleX = (float)Math.toRadians(-6);
+        this.martillichthys.rotateAngleZ = (float)Math.toRadians(-2);
+        this.martillichthys.scaleChildren = true;
+        float scaler = 1.85F;
+        this.martillichthys.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.martillichthys.render(f);
+        //Reset rotations, positions and sizing:
+        this.martillichthys.setScale(1.0F, 1.0F, 1.0F);
+        this.martillichthys.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

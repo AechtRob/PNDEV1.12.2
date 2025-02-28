@@ -335,13 +335,13 @@ public class ModelMawsonia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Body.offsetY = -2.0F;
-        this.Body.offsetX = -1.338F;
-        this.Body.rotateAngleY = (float)Math.toRadians(200);
+        this.Body.offsetY = -0.40F;
+        this.Body.offsetX = 0.175F;
+        this.Body.rotateAngleY = (float)Math.toRadians(220);
         this.Body.rotateAngleX = (float)Math.toRadians(8);
         this.Body.rotateAngleZ = (float)Math.toRadians(-8);
         this.Body.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 0.51F;
         this.Body.setScale(scaler, scaler, scaler);
         //Start of pose:
 

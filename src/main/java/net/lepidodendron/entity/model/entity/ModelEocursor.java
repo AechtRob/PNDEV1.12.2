@@ -665,13 +665,13 @@ public class ModelEocursor extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Eocursor.offsetY = -0.30F;
-        this.Eocursor.offsetX = 1.2F;
-        this.Eocursor.rotateAngleY = (float)Math.toRadians(130);
-        this.Eocursor.rotateAngleX = (float)Math.toRadians(0);
-        this.Eocursor.rotateAngleZ = (float)Math.toRadians(0);
+        this.Eocursor.offsetY = -1.20F;
+        this.Eocursor.offsetX = -0.30F;
+        this.Eocursor.rotateAngleY = (float)Math.toRadians(135);
+        this.Eocursor.rotateAngleX = (float)Math.toRadians(2);
+        this.Eocursor.rotateAngleZ = (float)Math.toRadians(3);
         this.Eocursor.scaleChildren = true;
-        float scaler = 2.0F;
+        float scaler = 1.60F;
         this.Eocursor.setScale(scaler, scaler, scaler);
         //Start of pose:
 

@@ -1,0 +1,47 @@
+{
+	"name": "Anthracoceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/anthracoceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_anthracoceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_anthracoceras",
+			"title": "Anthracoceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Mollusca$(br)>Ammonoidea$(br)>Goniatitida$(br)>Anthracoceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Anthracoceras sp.",
+            "entity": "lepidodendron:prehistoric_flora_anthracoceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anthracoceras",
+			"type": "text",
+			"text": "Anthracoceras comes from the Carboniferous, with fossils being found in formations across Europe, Asia, North America and Africa. It is a small ammonite, growing up to 3.5 cm in diameter."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anthracoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anthracoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anthracoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anthracoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anthracoceras"
+		}
+	]
+}

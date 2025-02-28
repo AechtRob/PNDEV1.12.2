@@ -432,16 +432,17 @@ public class ModelTrilophosaurus extends ModelBasePalaeopedia {
     public void renderStaticFloor(float f) {
         resetToDefaultPose();
     }
+
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -1.3F;
-        this.body.offsetX = 1.5F;
-        this.body.rotateAngleY = (float)Math.toRadians(200);
-        this.body.rotateAngleX = (float)Math.toRadians(8);
-        this.body.rotateAngleZ = (float)Math.toRadians(-8);
+        this.body.offsetY = -0.50F;
+        this.body.offsetX = -0.2F;
+        this.body.rotateAngleY = (float)Math.toRadians(130);
+        this.body.rotateAngleX = (float)Math.toRadians(2);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
         this.body.scaleChildren = true;
-        float scaler = 4.4F;
+        float scaler = 1.0F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
 

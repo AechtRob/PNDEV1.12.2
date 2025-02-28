@@ -38,11 +38,11 @@ public class EntityPrehistoricFloraAnhanguera extends EntityPrehistoricFloraLand
 
 	public EntityPrehistoricFloraAnhanguera(World world) {
 		super(world);
-		setSize(0.95F, 1.15F);
+		setSize(0.65F, 0.85F);
 		minWidth = 0.10F;
-		maxWidth = 0.95F;
-		maxHeight = 1.15F;
-		maxHealthAgeable = 35.0D;
+		maxWidth = 0.65F;
+		maxHeight = 0.85F;
+		maxHealthAgeable = 28.0;
 		setNoAI(!true);
 		enablePersistence();
 	}

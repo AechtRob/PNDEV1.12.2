@@ -1744,7 +1744,11 @@ public class LepidodendronEventSubscribers {
 	@SubscribeEvent //Make obsidian variants
 	public void onEvent(BlockEvent.FluidPlaceBlockEvent event) {
 		if (!event.getWorld().isRemote) {
-			if (event.getState().getBlock() == Blocks.OBSIDIAN) {
+			if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockAcid.block
+				&& event.getNewState() == Blocks.STONE.getDefaultState()) {
+				event.setNewState(BlockLavaRock.block.getDefaultState());
+			}
+			else if (event.getState().getBlock() == Blocks.OBSIDIAN) {
 				if (event.getWorld().rand.nextFloat() > 0.98) {
 					if (event.getWorld().rand.nextFloat() > 0.5) {
 						event.setNewState(BlockObsidianSulphurOre.block.getDefaultState());

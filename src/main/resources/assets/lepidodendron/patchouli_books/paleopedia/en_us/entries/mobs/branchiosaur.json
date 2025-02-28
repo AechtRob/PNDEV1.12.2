@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_branchiosaur",
 			"title": "Melanerpeton",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Amphibia$(br)>Temnospondyli$(br)>Amphibamiformes$(br)>Branchiosauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Amphibia$(br)>Temnospondyli$(br)>Amphibamiformes$(br)>Branchiosauridae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_branchiosaur",
 			"type": "text",
-			"text": "Branchiosaurs are a family of temnospondyls which lived from the Carboniferous to Permian periods. They had external gills and had an overall juvenile appearance. One species, $(o)Melanerpeton$() even had fossilized skin patters, which was a sort of checkered pattern. They were generally small and spent most of their time in the water."
+			"text": "Melanerpeton comes from the Early Permian. It is a small branchiosaurid, growing up to 19 cm in length. They had external gills and had an overall juvenile appearance. They are most well known for their fossils having preserved skin patterns, which took on a checkered appearance. The generic name derives from the Greek words 'mélanos', to mean 'black'; and 'erpeton', to mean 'creeping thing'"
 		},
 		{
 			"type": "lepidodendron:diet",

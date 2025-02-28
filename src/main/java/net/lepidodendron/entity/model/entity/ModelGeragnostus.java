@@ -134,13 +134,13 @@ public class ModelGeragnostus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.geragnostus.offsetY = -2.0F;
-        this.geragnostus.offsetX = -1.338F;
-        this.geragnostus.rotateAngleY = (float)Math.toRadians(200);
-        this.geragnostus.rotateAngleX = (float)Math.toRadians(8);
-        this.geragnostus.rotateAngleZ = (float)Math.toRadians(-8);
+        this.geragnostus.offsetY = -1.60F;
+        this.geragnostus.offsetX = 0.0F;
+        this.geragnostus.rotateAngleY = (float)Math.toRadians(202);
+        this.geragnostus.rotateAngleX = (float)Math.toRadians(22);
+        this.geragnostus.rotateAngleZ = (float)Math.toRadians(-12);
         this.geragnostus.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 4.80F;
         this.geragnostus.setScale(scaler, scaler, scaler);
         //Start of pose:
 
@@ -150,7 +150,6 @@ public class ModelGeragnostus extends ModelBasePalaeopedia {
         this.geragnostus.setScale(1.0F, 1.0F, 1.0F);
         this.geragnostus.scaleChildren = false;
         resetToDefaultPose();
-
     }
 
     public void renderStaticFloor(float f) {

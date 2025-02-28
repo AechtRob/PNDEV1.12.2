@@ -1,0 +1,47 @@
+{
+"name": "Anchura",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/anchura_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_anchura",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_anchura",
+"title": "Anchura",
+"type": "quest",
+"text": "$(l)Temporal Range:$()  Early Cretaceous - Paleogene$(br2)>Mullusca$(br)>Gastropoda$(br)>Stromboidea$(br)>Aporrhaidae"
+},
+        {
+            "type": "entity",
+            "name": "A. abrupta",
+            "entity": "lepidodendron:prehistoric_flora_anchura",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_anchura",
+"type": "text",
+"text": "Anchura is a genus of marine gastropod that lived from the Early Cretaceous till the Paleogene. The outer lip of Anchuras shell extended very prominently towards the back of the shell, sometimes looking almost like a check mark."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_anchura"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_anchura"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_anchura"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_anchura"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_anchura"
+}
+]
+}

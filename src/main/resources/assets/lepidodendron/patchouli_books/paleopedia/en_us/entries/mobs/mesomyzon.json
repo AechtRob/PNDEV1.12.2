@@ -1,0 +1,47 @@
+{
+	"name": "Mesomyzon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mesomyzon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_mesomyzon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mesomyzon",
+			"title": "Mesomyzon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Hyperoartia$(br)>Petromyzontiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "M. mengae",
+            "entity": "lepidodendron:prehistoric_flora_mesomyzon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mesomyzon",
+			"type": "text",
+			"text": "Mesomyzon is a genus of freshwater lamprey from the Early Cretaceous Yixian Formation in China. Mesomyzon is a perfectly preserved fossil that shows a creature very similar to modern lampreys. Paleontologists have debated as to what family Mesomyzon belongs to, a recent study has placed it as a derived stem lamprey."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mesomyzon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mesomyzon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mesomyzon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mesomyzon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mesomyzon"
+		}
+	]
+}

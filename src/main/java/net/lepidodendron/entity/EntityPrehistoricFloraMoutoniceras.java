@@ -70,7 +70,7 @@ public class EntityPrehistoricFloraMoutoniceras extends EntityPrehistoricFloraNa
 	@Override
 	protected float getAISpeedNautiloid() {
 		//return 0;
-		return 0.045f;
+		return 0.085f;
 	}
 
 	protected void initEntityAI() {

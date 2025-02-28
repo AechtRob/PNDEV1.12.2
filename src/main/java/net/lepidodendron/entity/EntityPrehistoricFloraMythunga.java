@@ -38,10 +38,10 @@ public class EntityPrehistoricFloraMythunga extends EntityPrehistoricFloraLandCl
 
 	public EntityPrehistoricFloraMythunga(World world) {
 		super(world);
-		setSize(0.95F, 1.15F);
+		setSize(0.91F, 1.10F);
 		minWidth = 0.10F;
-		maxWidth = 0.95F;
-		maxHeight = 1.15F;
+		maxWidth = 0.91F;
+		maxHeight = 1.10F;
 		maxHealthAgeable = 18.0D;
 		setNoAI(!true);
 		enablePersistence();

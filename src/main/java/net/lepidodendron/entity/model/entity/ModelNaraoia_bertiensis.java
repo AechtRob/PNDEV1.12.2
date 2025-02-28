@@ -201,13 +201,13 @@ public class ModelNaraoia_bertiensis extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.n_bertiensis.offsetY = -2.0F;
-        this.n_bertiensis.offsetX = -1.338F;
-        this.n_bertiensis.rotateAngleY = (float)Math.toRadians(200);
-        this.n_bertiensis.rotateAngleX = (float)Math.toRadians(8);
-        this.n_bertiensis.rotateAngleZ = (float)Math.toRadians(-8);
+        this.n_bertiensis.offsetY = -1.60F;
+        this.n_bertiensis.offsetX = 0.0F;
+        this.n_bertiensis.rotateAngleY = (float)Math.toRadians(202);
+        this.n_bertiensis.rotateAngleX = (float)Math.toRadians(32);
+        this.n_bertiensis.rotateAngleZ = (float)Math.toRadians(-12);
         this.n_bertiensis.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 3.80F;
         this.n_bertiensis.setScale(scaler, scaler, scaler);
         //Start of pose:
 
@@ -217,7 +217,6 @@ public class ModelNaraoia_bertiensis extends ModelBasePalaeopedia {
         this.n_bertiensis.setScale(1.0F, 1.0F, 1.0F);
         this.n_bertiensis.scaleChildren = false;
         resetToDefaultPose();
-
     }
 
     public void renderStaticFloor(float f) {

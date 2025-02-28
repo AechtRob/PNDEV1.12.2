@@ -1,0 +1,47 @@
+{
+"name": "Giraffatitan",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/giraffatitan_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_giraffatitan",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_giraffatitan",
+"title": "Giraffatitan",
+"type": "quest",
+"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropoda$(br)>Brachiosauridae"
+},
+        {
+            "type": "entity",
+            "name": "G. brancai",
+            "entity": "lepidodendron:prehistoric_flora_giraffatitan",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_giraffatitan",
+"type": "text",
+"text": "Giraffatitan, meaning titanic giraffe, is a genus of Macronarian sauropod from the Late Jurassic of Africa. Originally Giraffatitan was described as a species under the genus of Brachiosaurus, however after more research it was determined that differences between Brachiosaurus and Giraffatitan was so large that it required separating them into separate genera."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_giraffatitan"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_giraffatitan"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_giraffatitan"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_giraffatitan"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_giraffatitan"
+}
+]
+}

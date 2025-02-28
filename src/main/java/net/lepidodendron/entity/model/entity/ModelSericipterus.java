@@ -589,21 +589,58 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -0.7F;
-        this.root.offsetX = 0F;
-        this.root.rotateAngleY = (float)Math.toRadians(125);
+        this.root.offsetX = -0.25F;
+        this.root.rotateAngleY = (float)Math.toRadians(135);
         this.root.rotateAngleX = (float)Math.toRadians(0);
         this.root.rotateAngleZ = (float)Math.toRadians(0);
         this.root.scaleChildren = true;
-        float scaler = 1.5F;
+        float scaler = 1.2F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-        //this.setRotateAngle(root, 0.2618F, 0.0F, 0.0F);
-
+        this.wingmembranemiddle2.setScale((float)1,(float)1,(float)1);
+        this.wingmembraneend2.setScale((float)1,(float)1,(float)1);
+        this.wingmembraneend4.setScale((float)1,(float)1,(float)1);
+        this.wingmembraneend3.setScale((float)1,(float)1,(float)1);
+        this.wingmembranemiddle3.setScale((float)1,(float)1,(float)1);
+        this.wingmembraneend5.setScale((float)1,(float)1,(float)1);
+        this.setRotateAngle(chest, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(head2, 0.05F, 0.0F, -0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.0F, 0.1F);
+        this.setRotateAngle(tail3, 0.1F, 0.0F, 0.1F);
+        this.setRotateAngle(tail4, 0.1F, 0.0F, 0.1F);
+        this.setRotateAngle(tail5, 0.2F, 0.0F, 0.2F);
+        this.setRotateAngle(leftleg, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(leftleg2, 1.0F, 0.0F, 0.4F);
+        this.setRotateAngle(leftfoot, 1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(rightleg2, 1.2F, 0.0F, -0.4F);
+        this.setRotateAngle(rightfoot, 1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(leftwing, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(leftwing2, 0.2F, 0.0F, -1.5F);
+        this.setRotateAngle(leftwing3, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(leftwing4, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(lefthand, 0.0F,0.0F, 1.5F);
+        this.setRotateAngle(rightwing, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(rightwing2, -0.2F, 0.0F, 1.5F);
+        this.setRotateAngle(rightwing3, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing4, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(righthand, 0.0F,0.0F, -1.5F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:
         this.root.setScale(1.0F, 1.0F, 1.0F);
         this.root.scaleChildren = false;
+        this.wingmembranemiddle2.setScale((float)1,(float)0,(float)1);
+        this.wingmembraneend2.setScale((float)1,(float)0,(float)1);
+        this.wingmembraneend4.setScale((float)0,(float)1,(float)0);
+        this.wingmembraneend3.setScale((float)0,(float)1,(float)0);
+        this.wingmembranemiddle3.setScale((float)1,(float)0,(float)1);
+        this.wingmembraneend5.setScale((float)1,(float)0,(float)1);
         resetToDefaultPose();
     }
 

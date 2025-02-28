@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraDastilbe extends EntityPrehistoricFloraFishBa
 
 	@Override
 	public int getShoalSize() {
-		return 30;
+		return 16;
 	}
 
 	@Override

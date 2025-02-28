@@ -1,0 +1,47 @@
+{
+"name": "Hoyasotes",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/hoyasotes_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_hoyasotes",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_hoyasotes",
+"title": "Hoyasotes",
+"type": "quest",
+"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Semionoformes$(br)>Semionotidae"
+},
+        {
+            "type": "entity",
+            "name": "H. tanyrhis",
+            "entity": "lepidodendron:prehistoric_flora_hoyasotes",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_hoyasotes",
+"type": "text",
+"text": "Hoyasotes is a genus of freshwater Semionoform fish that inhabited Early Cretaceous Europe. Hoyasotes was originally described as a species of Lepidotes before being reassigned in 2016. Hoyasotes was named after the Las Hoyas in Spain where it was discovered. "
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_hoyasotes"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_hoyasotes"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_hoyasotes"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_hoyasotes"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_hoyasotes"
+}
+]
+}

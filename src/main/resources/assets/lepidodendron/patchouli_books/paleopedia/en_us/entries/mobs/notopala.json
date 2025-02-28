@@ -1,0 +1,47 @@
+{
+"name": "Notopala",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/notopala_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_notopala",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_notopala",
+"title": "Notopala",
+"type": "quest",
+"text": "$(l)Temporal Range:$()  Early Cretaceous - Recent$(br2)>Mollusca$(br)>Gastropoda$(br)>Architaenioglossa$(br)>Viviparidae"
+},
+        {
+            "type": "entity",
+            "name": "N. hanleyi",
+            "entity": "lepidodendron:prehistoric_flora_notopala",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_notopala",
+"type": "text",
+"text": "Notopala is an extant genus of freshwater snail that was found as far back as the Early Cretaceous of Australia and has survived there till the modern day. Notopala is thought to graze in slow moving water and some species are even able to aestivate in mud."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_notopala"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_notopala"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_notopala"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_notopala"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_notopala"
+}
+]
+}

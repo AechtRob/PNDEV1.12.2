@@ -493,13 +493,13 @@ public class ModelTietasaura extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.30F;
-        this.main.offsetX = 1.2F;
-        this.main.rotateAngleY = (float)Math.toRadians(130);
-        this.main.rotateAngleX = (float)Math.toRadians(0);
+        this.main.offsetY = 0.20F;
+        this.main.offsetX = -0.05F;
+        this.main.rotateAngleY = (float)Math.toRadians(135);
+        this.main.rotateAngleX = (float)Math.toRadians(-1);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 2.0F;
+        float scaler = 0.7F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

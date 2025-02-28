@@ -369,16 +369,42 @@ public class ModelSpinophorosaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.mainbody.offsetY = -2.0F;
-        this.mainbody.offsetX = -1.338F;
-        this.mainbody.rotateAngleY = (float)Math.toRadians(200);
+        this.mainbody.offsetY = 0.7F;
+        this.mainbody.offsetX = 0.0F;
+        this.mainbody.rotateAngleY = (float)Math.toRadians(210);
         this.mainbody.rotateAngleX = (float)Math.toRadians(8);
-        this.mainbody.rotateAngleZ = (float)Math.toRadians(-8);
+        this.mainbody.rotateAngleZ = (float)Math.toRadians(-3);
         this.mainbody.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 0.80F;
         this.mainbody.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(hips, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(neck4, -0.55F, 0.0F, 0.0F);
+        this.setRotateAngle(neck3, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(neck1, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(neckend, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(headbase, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw1, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, -0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, -0.2F, 0.0F);
+        this.setRotateAngle(tail5, 0.05F, -0.2F, 0.0F);
+        this.setRotateAngle(leftArm, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm2, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm2, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm3, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg1, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg3, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg1, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg3, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.mainbody.render(f);
         //Reset rotations, positions and sizing:

@@ -93,8 +93,8 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			super(Material.IRON);
 			setTranslationKey("pf_time_researcher_finder_bottom");
 			setSoundType(SoundType.METAL);
-			setHardness(1F);
-			setResistance(1F);
+			setHardness(10F);
+			setResistance(1200F);
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronBuilding.tab);
@@ -221,7 +221,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 
 		@Override
 		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
-			
+
 			if (worldIn.getBlockState(pos.offset(state.getValue(FACING).rotateY())).getBlock() != BlockTimeResearcherDispenser.block) {
 				worldIn.destroyBlock(pos, true);
 				return;
@@ -238,7 +238,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
 			return layer == BlockRenderLayer.CUTOUT_MIPPED;
 		}
-		
+
 		@Override
 		public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face) {
 			if (face == EnumFacing.DOWN) {
@@ -259,7 +259,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 		public boolean renderZap;
 		private int minEnergyNeeded = 1000;
 		private int trayLiftTickTime = 120; //6 seconds to move the block
-		private int processTickTime = 960; //48 seconds to process the block fully
+		public int processTickTime; //600 ticks = 30 seconds to process the block fully at max research level
 
 		public int getHeight() {
 			return this.trayheight;
@@ -291,7 +291,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			}
 			return null;
 		}
-		
+
 		public boolean isEmpty()
 		{
 			for (ItemStack itemstack : this.forgeContents)
@@ -350,6 +350,74 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			return 1 - (251 - chance) / 251;
 		}
 
+		public int getRevisedProcessTotalTime() {
+			BlockPos researcherPos = getResearcherPos();
+			if (researcherPos != null) {
+				TileEntity tileEntity = world.getTileEntity(researcherPos);
+				if (tileEntity != null) {
+					if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+						BlockTimeResearcher.TileEntityTimeResearcher timeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+						if (this.getStackInSlot(1).getItem() == ItemFossilClean.block
+								|| this.getStackInSlot(1).getItem() == ItemFossilPrecambrian.block
+								|| this.getStackInSlot(1).getItem() == ItemFossilCambrian.block
+								|| this.getStackInSlot(1).getItem() == ItemFossilOrdovician.block
+								|| this.getStackInSlot(1).getItem() == ItemFossilSilurian.block
+								|| this.getStackInSlot(1).getItem() == ItemFossilDevonian.block
+								|| this.getStackInSlot(1).getItem() == ItemFossilCarboniferous.block
+								|| this.getStackInSlot(1).getItem() == ItemFossilPermian.block
+								|| this.getStackInSlot(1).getItem() == ItemFossilTriassic.block
+								|| this.getStackInSlot(1).getItem() == ItemFossilJurassic.block
+								|| this.getStackInSlot(1).getItem() == ItemFossilCretaceous.block
+								|| this.getStackInSlot(1).getItem() == ItemFossilPaleogene.block
+								|| this.getStackInSlot(1).getItem() == ItemFossilNeogene.block
+								|| this.getStackInSlot(1).getItem() == ItemFossilPleistocene.block) {
+							return this.processTickTime;
+						}
+						else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPrecambrian.block)) {
+							return 600 + Math.round(((1 - timeResearcher.getResearchPercent(1)) * ((20 * 60 * 10) - 600)));
+						}
+						else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilCambrian.block)) {
+							return 600 + Math.round(((1 - timeResearcher.getResearchPercent(2)) * ((20 * 60 * 10) - 600)));
+						}
+						else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilOrdovician.block)) {
+							return 600 + Math.round(((1 - timeResearcher.getResearchPercent(3)) * ((20 * 60 * 10) - 600)));
+						}
+						else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilSilurian.block)) {
+							return 600 + Math.round(((1 - timeResearcher.getResearchPercent(4)) * ((20 * 60 * 10) - 600)));
+						}
+						else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilDevonian.block)) {
+							return 600 + Math.round(((1 - timeResearcher.getResearchPercent(5)) * ((20 * 60 * 10) - 600)));
+						}
+						else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilCarboniferous.block)) {
+							return 600 + Math.round(((1 - timeResearcher.getResearchPercent(6)) * ((20 * 60 * 10) - 600)));
+						}
+						else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPermian.block)) {
+							return 600 + Math.round(((1 - timeResearcher.getResearchPercent(7)) * ((20 * 60 * 10) - 600)));
+						}
+						else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilTriassic.block)) {
+							return 600 + Math.round(((1 - timeResearcher.getResearchPercent(8)) * ((20 * 60 * 10) - 600)));
+						}
+						else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilJurassic.block)) {
+							return 600 + Math.round(((1 - timeResearcher.getResearchPercent(9)) * ((20 * 60 * 10) - 600)));
+						}
+						else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilCretaceous.block)) {
+							return 600 + Math.round(((1 - timeResearcher.getResearchPercent(10)) * ((20 * 60 * 10) - 600)));
+						}
+						else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPaleogene.block)) {
+							return 600 + Math.round(((1 - timeResearcher.getResearchPercent(11)) * ((20 * 60 * 10) - 600)));
+						}
+						else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilNeogene.block)) {
+							return 600 + Math.round(((1 - timeResearcher.getResearchPercent(12)) * ((20 * 60 * 10) - 600)));
+						}
+						else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPleistocene.block)) {
+							return 600 + Math.round(((1 - timeResearcher.getResearchPercent(13)) * ((20 * 60 * 10) - 600)));
+						}
+					}
+				}
+			}
+			return -1;
+		}
+
 		@Override
 		public void update() {
 
@@ -382,6 +450,9 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 						timeResearcher.drainEnergy(500);
 					}
 				}
+
+				this.processTickTime = this.getRevisedProcessTotalTime();
+
 				updated = true;
 			}
 
@@ -394,7 +465,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			}
 
 			if (this.isProcessing && this.processTick < this.processTickTime && hasEnergy) {
-				this.processTick++;
+				//this.processTick++;
 				//this.drainEnergy(10);
 				if (this.processTick <= this.trayLiftTickTime) {
 					this.trayheight++;
@@ -1075,7 +1146,6 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 							}
 						}
 					}
-
 					setInventorySlotContents(1, result);
 
 				}
@@ -1208,6 +1278,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 				this.processTick = 0;
 				this.isProcessing = false;
 				this.trayheight = 0;
+				this.processTickTime = -1;
 				updated = true;
 			}
 
@@ -1250,6 +1321,9 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			if (compound.hasKey("processTick")) {
 				this.processTick = compound.getInteger("processTick");
 			}
+			if (compound.hasKey("processTickTime")) {
+				this.processTickTime = compound.getInteger("processTickTime");
+			}
 			if (compound.hasKey("isProcessing")) {
 				this.isProcessing = compound.getBoolean("isProcessing");
 			}
@@ -1273,6 +1347,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			super.writeToNBT(compound);
 			compound.setBoolean("isProcessing", this.isProcessing);
 			compound.setInteger("processTick", this.processTick);
+			compound.setInteger("processTickTime", this.processTickTime);
 			compound.setString("selectedLife", this.getSelectedLife());
 			compound.setInteger("trayheight", this.trayheight);
 			compound.setBoolean("renderZap", this.renderZap);

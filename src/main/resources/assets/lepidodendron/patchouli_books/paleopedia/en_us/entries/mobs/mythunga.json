@@ -1,0 +1,47 @@
+{
+"name": "Mythunga",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/mythunga_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_mythunga",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_mythunga",
+"title": "Mythunga",
+"type": "quest",
+"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Pterosauria$(br)>Anhangueridae"
+},
+        {
+            "type": "entity",
+            "name": "M. camara",
+            "entity": "lepidodendron:prehistoric_flora_mythunga",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_mythunga",
+"type": "text",
+"text": "Mythunga is an anhanguerid from the Early Cretaceous of Australia. Found in the Toolebuc Formation of the Eromanga Basin, this animal would have had a wingspan of around 5 m. It would have lived in coastal areas, being a carnivorous animal, likely feeding on fish and other animals that live in or adjacent to the water. This animal is known from one holotype specimen, a section of the top and lower jaw."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_mythunga"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_mythunga"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_mythunga"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_mythunga"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_mythunga"
+}
+]
+}

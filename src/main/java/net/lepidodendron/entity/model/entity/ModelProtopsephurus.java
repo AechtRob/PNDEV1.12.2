@@ -371,11 +371,13 @@ public class ModelProtopsephurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.rotateAngleY = (float)Math.toRadians(200);
+        this.main.offsetY = -0.65F;
+        this.main.offsetX = 0.238F;
+        this.main.rotateAngleY = (float)Math.toRadians(245);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 1.03F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

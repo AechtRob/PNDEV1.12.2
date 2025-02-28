@@ -325,13 +325,13 @@ public class ModelRhadinosteus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Hips.offsetY = -2.0F;
-        this.Hips.offsetX = -1.338F;
-        this.Hips.rotateAngleY = (float)Math.toRadians(200);
-        this.Hips.rotateAngleX = (float)Math.toRadians(8);
+        this.Hips.offsetY = -2.8F;
+        this.Hips.offsetX = -0.5F;
+        this.Hips.rotateAngleY = (float)Math.toRadians(210);
+        this.Hips.rotateAngleX = (float)Math.toRadians(18);
         this.Hips.rotateAngleZ = (float)Math.toRadians(-8);
         this.Hips.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 5.0F;
         this.Hips.setScale(scaler, scaler, scaler);
         //Start of pose:
 
