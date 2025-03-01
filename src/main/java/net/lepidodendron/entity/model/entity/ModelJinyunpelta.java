@@ -1014,13 +1014,13 @@ public class ModelJinyunpelta extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = -0.05F;
-        this.hips.offsetX = 0.35F;
+        this.hips.offsetY = 0.16F;
+        this.hips.offsetX = -0.03F;
         this.hips.rotateAngleY = (float)Math.toRadians(150);
-        this.hips.rotateAngleX = (float)Math.toRadians(0);
+        this.hips.rotateAngleX = (float)Math.toRadians(2);
         this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;
-        float scaler = 0.8F;
+        float scaler = 0.646F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
 

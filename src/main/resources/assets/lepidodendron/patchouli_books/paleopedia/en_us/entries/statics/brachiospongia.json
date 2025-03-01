@@ -2,7 +2,7 @@
 	"name": "Brachiospongia",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/brachiospongia_icon.png",
-	"category": "lepidodendron:mobs",
+	"category": "lepidodendron:statics",
 	"turnin": "lepidodendron:pf_adv_book_brachiospongia",
 	"pages": [
 		{
@@ -11,13 +11,21 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Porifera$(br)>Hexactinellida$(br)>Lyssacinosa$(br)>Brachiospongiidae"
 		},
-        	{
-            "type": "entity",
-            "name": "B. digitata",
-            "entity": "lepidodendron:prehistoric_flora_brachiospongia",
-            "rotate": false,
-            "default_rotation": 0
-       	},
+		{
+			"type": "multiblock",
+			"name": "B. digitata",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:brachiospongia",
+					"0": "minecraft:air"
+				}
+			}
+		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_brachiospongia",
 			"type": "text",
@@ -27,26 +35,6 @@
 			"advancement": "lepidodendron:pf_adv_book_brachiospongia",
 			"type": "text",
 			"text": "The generic name derives from the Latin words 'brachio', to mean 'branched'; and 'spongia', to mean 'sponge'. The specific name derives directly from the Latin word 'digitata', to mean 'having fingers'."
-		},
-		{
-			"type": "lepidodendron:diet",
-			"mob": "lepidodendron:prehistoric_flora_brachiospongia"
-		},
-		{
-			"type": "lepidodendron:biomelocations1",
-			"mob": "lepidodendron:prehistoric_flora_brachiospongia"
-		},
-		{
-			"type": "lepidodendron:biomelocations2",
-			"mob": "lepidodendron:prehistoric_flora_brachiospongia"
-		},
-		{
-			"type": "lepidodendron:biomelocations3",
-			"mob": "lepidodendron:prehistoric_flora_brachiospongia"
-		},
-		{
-			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron:prehistoric_flora_brachiospongia"
 		}
 	]
 }

@@ -724,16 +724,61 @@ public class ModelHaliskia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.fossil.offsetY = -0.7F;
-        this.fossil.offsetX = 0F;
-        this.fossil.rotateAngleY = (float)Math.toRadians(125);
-        this.fossil.rotateAngleX = (float)Math.toRadians(0);
+        this.fossil.offsetY = -0.40F;
+        this.fossil.offsetX = -0.2F;
+        this.fossil.rotateAngleY = (float)Math.toRadians(130);
+        this.fossil.rotateAngleX = (float)Math.toRadians(37);
         this.fossil.rotateAngleZ = (float)Math.toRadians(0);
         this.fossil.scaleChildren = true;
-        float scaler = 1.5F;
+        float scaler = 0.4F;
         this.fossil.setScale(scaler, scaler, scaler);
         //Start of pose:
-        //this.setRotateAngle(root, 0.2618F, 0.0F, 0.0F);
+
+        this.leftwing5membrane.setScale((float) 1, (float) 1, (float) 1);
+        this.leftwing6membrane.setScale((float) 1, (float) 1, (float) 1);
+        this.rightwing5membrane.setScale((float) 1, (float) 1, (float) 1);
+        this.rightwing6membrane.setScale((float) 1, (float) 1, (float) 1);
+
+        this.leftwing1planemembrane.setScale((float) 1, (float) 1, (float) 1);
+        this.leftwing2planemembrane.setScale((float) 1, (float) 1, (float) 1);
+        this.leftwing3planemembrane.setScale((float) 1, (float) 1, (float) 1);
+        this.leftwing4planemembrane.setScale((float) 1, (float) 1, (float) 1);
+        this.rightwing1planemembrane.setScale((float) 1, (float) 1, (float) 1);
+        this.rightwing2planemembrane.setScale((float) 1, (float) 1, (float) 1);
+        this.rightwing3planemembrane.setScale((float) 1, (float) 1, (float) 1);
+        this.rightwing4planemembrane.setScale((float) 1, (float) 1, (float) 1);
+
+            hips.setRotationPoint(0.0F, -3.825F, 7.075F);
+            leftwing1planemembrane.setRotationPoint(1.75F, 0.275F, 0.0F);
+            leftwing2planemembrane.setRotationPoint(4.5F, 0.55F, 1.225F);
+            leftwing3planemembrane.setRotationPoint(3.5F, 0.4F, 5.0F);
+            rightwing1planemembrane.setRotationPoint(-1.75F, 0.275F, 0.0F);
+            rightwing2planemembrane.setRotationPoint(-4.5F, 0.55F, 1.225F);
+            rightwing3planemembrane.setRotationPoint(-3.5F, 0.4F, 5.0F);
+            rightwing5membrane.setRotationPoint(-1.0F, 0.0F, 0.0F);
+    setRotateAngle(chest, 0.0F, 0.0F, 0.0F);
+    setRotateAngle(hips, 0.0F, 0.0F, 0.0F);
+    setRotateAngle(leftfoot, 1.1254F, 0.0804F, -0.024F);
+    setRotateAngle(lefthand, 0.5806F, 0.825F, 0.3218F);
+    setRotateAngle(leftleg1, 0.1323F, -0.1934F, -1.7129F);
+    setRotateAngle(leftleg2, 1.0026F, -0.0258F, 0.0676F);
+    setRotateAngle(leftwing1, -0.1063F, 0.0897F, -0.1075F);
+    setRotateAngle(leftwing2, 0.0033F, 0.1483F, -0.0216F);
+    setRotateAngle(leftwing2planemembrane, -0.1658F, -0.0016F, -0.013F);
+    setRotateAngle(leftwing3, -0.0018F, -0.0523F, 0.0786F);
+    setRotateAngle(leftwing4, -0.0222F, -0.3484F, 0.065F);
+    setRotateAngle(leftwing5, -0.0222F, -0.2171F, 0.1028F);
+    setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
+    setRotateAngle(rightfoot, 1.1254F, -0.0804F, 0.024F);
+    setRotateAngle(righthand, 0.5806F, -0.825F, -0.3218F);
+    setRotateAngle(rightleg1, 0.1323F, 0.1934F, 1.7129F);
+    setRotateAngle(rightleg2, 1.0026F, 0.0258F, -0.0676F);
+    setRotateAngle(rightwing1, -0.1063F, -0.0897F, 0.1075F);
+    setRotateAngle(rightwing2, 0.0033F, -0.1483F, 0.0216F);
+    setRotateAngle(rightwing2planemembrane, -0.1658F, 0.0016F, 0.013F);
+    setRotateAngle(rightwing3, -0.0018F, 0.0523F, -0.0786F);
+    setRotateAngle(rightwing4, -0.0222F, 0.3484F, -0.065F);
+    setRotateAngle(rightwing5, -0.0222F, 0.2171F, -0.1028F);
 
         //End of pose, now render the model:
         this.fossil.render(f);

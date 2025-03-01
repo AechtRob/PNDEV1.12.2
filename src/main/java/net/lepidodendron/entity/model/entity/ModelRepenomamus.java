@@ -409,13 +409,13 @@ public class ModelRepenomamus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = -0.30F;
-        this.hips.offsetX = 1.2F;
+        this.hips.offsetY = -0.80F;
+        this.hips.offsetX = 0.25F;
         this.hips.rotateAngleY = (float)Math.toRadians(130);
         this.hips.rotateAngleX = (float)Math.toRadians(0);
         this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;
-        float scaler = 2.0F;
+        float scaler = 1.15F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
 

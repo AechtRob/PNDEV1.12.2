@@ -299,13 +299,13 @@ public class ModelBrannerion extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -2.0F;
-        this.root.offsetX = -1.338F;
-        this.root.rotateAngleY = (float)Math.toRadians(200);
+        this.root.offsetY = -2.4F;
+        this.root.offsetX = -0.138F;
+        this.root.rotateAngleY = (float)Math.toRadians(232);
         this.root.rotateAngleX = (float)Math.toRadians(8);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 2.23F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
 
