@@ -260,9 +260,25 @@ public class ModelDatheosaurus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Datheosaurus.offsetY = -0.5F;
+        this.Datheosaurus.offsetX = -0.1F;
+        this.Datheosaurus.rotateAngleY = (float)Math.toRadians(220);
+        this.Datheosaurus.rotateAngleX = (float)Math.toRadians(11);
+        this.Datheosaurus.rotateAngleZ = (float)Math.toRadians(-4);
+        this.Datheosaurus.scaleChildren = true;
+        float scaler = 1.2F;
+        this.Datheosaurus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.Datheosaurus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Datheosaurus.setScale(1.0F, 1.0F, 1.0F);
+        this.Datheosaurus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
-
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
