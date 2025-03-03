@@ -87,7 +87,7 @@ public class MobSpawnGenerator extends WorldGenerator
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))) {
 						Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state, 2);
- 						applyVariant(this.mobspawn, worldIn, new BlockPos(j, k, l), variant);
+						applyVariant(this.mobspawn, worldIn, new BlockPos(j, k, l), variant);
 						return true;
 					}
 				}

@@ -245,7 +245,7 @@ public class LepidodendronBookSubscribers {
 		float f5 = MathHelper.sin(-f * 0.017453292F);
 		float f6 = f3 * f4;
 		float f7 = f2 * f4;
-		double d3 = playerIn.getEntityAttribute(EntityPlayer.REACH_DISTANCE).getAttributeValue();
+		double d3 = 8.0D; //reach distance changed from 5 to 8
 		Vec3d vec3d1 = vec3d.add((double)f6 * d3, (double)f5 * d3, (double)f7 * d3);
 		return worldIn.rayTraceBlocks(vec3d, vec3d1, useLiquids, !useLiquids, false);
 	}
