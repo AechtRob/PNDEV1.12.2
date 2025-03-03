@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_xenacanthus",
 			"title": "Xenacanthus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Permian(br2)>Chondrichthyes$(br)>Selachimorpha$(br)>Xenacanthida$(br)>Xenacanthidae"
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)>Chondrichthyes$(br)>Selachimorpha$(br)>Xenacanthida$(br)>Xenacanthidae"
 		},
 		{
 			"type": "entity",
