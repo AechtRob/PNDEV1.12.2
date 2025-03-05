@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_quasimodichthys",
 			"title": "Quasimodichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Semionotiformes"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Semionotiformes"
 		},
 		{
 			"type": "image",

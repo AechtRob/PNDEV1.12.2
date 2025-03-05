@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_stoermeropterus",
 			"title": "Stoermeropterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda $(br)>Eurypterida $(br)>Moselopteridae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Eurypterida$(br)>Moselopteridae"
 		},
         	{
             "type": "entity",

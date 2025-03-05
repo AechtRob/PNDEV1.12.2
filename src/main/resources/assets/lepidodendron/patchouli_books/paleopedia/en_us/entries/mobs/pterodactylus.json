@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pterodactylus",
 			"title": "Pterodactylus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Pterodactyliformes $(br)>Pterodactyloidea $(br)>Euctenochasmatia"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Pterosauria$(br)>Pterodactyliformes$(br)>Pterodactyloidea$(br)>Euctenochasmatia"
 		},
         	{
             "type": "entity",

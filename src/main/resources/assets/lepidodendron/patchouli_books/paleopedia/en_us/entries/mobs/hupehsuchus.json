@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hupehsuchus",
 			"title": "Hupehsuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic $(br2)>Reptilia $(br)>Hupehsuchia $(br)>Hupehsuchidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Hupehsuchia$(br)>Hupehsuchidae"
 		},
 		{
 			"type": "image",

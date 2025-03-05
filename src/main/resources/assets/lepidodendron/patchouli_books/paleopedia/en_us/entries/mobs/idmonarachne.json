@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_idmonarachne",
 			"title": "Idmonarachne",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arachnida $(br)>Tetrapulmonata"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Arachnida$(br)>Tetrapulmonata"
 		},
         	{
             "type": "entity",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_morganucodon",
 			"title": "Morganucodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)>Cynodontia$(br)>Mammaliaformes$(br)>Morganucodonta$(br)>Morganucodontidae"
+			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)>Chordata$(br)>Cynodontia$(br)>Mammaliaformes$(br)>Morganucodonta$(br)>Morganucodontidae"
 		},
 		{
 			"type": "image",

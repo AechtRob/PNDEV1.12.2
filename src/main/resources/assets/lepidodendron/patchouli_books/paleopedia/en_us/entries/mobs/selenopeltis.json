@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_selenopeltis",
 			"title": "Selenopeltis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Trilobita$(br)>Odontopleurida$(br)>Odontopleuridae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Trilobita$(br)>Odontopleurida$(br)>Odontopleuridae"
 		},
 		{
 			"type": "entity",

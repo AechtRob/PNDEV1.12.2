@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_laidleria",
 			"title": "Laidleria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Amphibia $(br)>Temnospondyli $(br)>Plagiosauroidea $(br)>Laidleriidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Amphibia$(br)>Temnospondyli$(br)>Plagiosauroidea$(br)>Laidleriidae"
 		},
 		{
 			"type": "image",

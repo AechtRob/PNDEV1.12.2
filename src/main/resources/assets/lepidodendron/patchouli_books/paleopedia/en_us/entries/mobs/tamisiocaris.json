@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tamisiocaris",
 			"title": "Tamisiocaris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Dinocaridida $(br)>Radiodonta$(br)>Tamisiocarididae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Dinocaridida$(br)>Radiodonta$(br)>Tamisiocarididae"
 		},
 		{
 			"type": "image",

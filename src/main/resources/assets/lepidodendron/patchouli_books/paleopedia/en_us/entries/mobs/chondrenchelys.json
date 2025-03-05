@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_chondrenchelys",
 			"title": "Chondrenchelys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes $(br)>Chondrenchelyiformes $(br)>Chondrenchelyidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Chondrenchelyiformes$(br)>Chondrenchelyidae"
 		},
         	{
             "type": "entity",

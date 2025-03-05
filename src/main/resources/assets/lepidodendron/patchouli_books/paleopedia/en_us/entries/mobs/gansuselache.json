@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gansuselache",
 			"title": "Gansuselache",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chondrichthyes $(br)>Elasmobranchii $(br)>Hybodontiformes $(br)>Lonchidiidae?"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Hybodontiformes$(br)>Lonchidiidae (?)"
 		},
         	{
             "type": "entity",

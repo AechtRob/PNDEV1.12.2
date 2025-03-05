@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dollocaris",
 			"title": "Dollocaris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Crustacea$(br)>Thylacocephala$(br)>Concavidarida$(br)>Dollocarididae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Crustacea$(br)>Thylacocephala$(br)>Concavidarida$(br)>Dollocarididae"
 		},
 		{
 			"type": "image",

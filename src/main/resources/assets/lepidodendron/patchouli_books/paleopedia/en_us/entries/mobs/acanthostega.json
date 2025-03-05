@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_acanthostega",
 			"title": "Acanthostega",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Stegocephalia$(br)>Acanthostegidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Stegocephalia$(br)>Acanthostegidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_acanthostega",
 			"type": "text",
-			"text": "Acanthostega lived during the late Devonian period, and was one of the earliest-known tetrapods. Its name means \"spiny roof\". It was around 60cm long and was still fish-like, and could not have lived much of a terrestrial life. The front fins had been adapted with eight webbed, digit-like structures on each \"hand\". However, it is thought that the structure of the limbs would have meant actual walking on land would have been impossible as they could not"
+			"text": "Acanthostega lived during the Upper Devonian, and was one of the earliest-known tetrapods. Its name means \"spiny roof\". It was around 60 cm long and was still fish-like, as such it could not have lived much of a terrestrial life. The front fins had been adapted with eight webbed, digit-like structures on each \"hand\". However, it is thought that the structure of the limbs would have meant actual walking on land would have been impossible as they could not"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_acanthostega",

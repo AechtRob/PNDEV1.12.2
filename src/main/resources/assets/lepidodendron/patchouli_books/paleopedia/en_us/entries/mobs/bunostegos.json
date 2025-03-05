@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_bunostegos",
 			"title": "Bunostegos",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauridae"
 		},
 		{
 			"type": "image",

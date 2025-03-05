@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_notidanoides",
 			"title": "Notidanoides",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chondrichthyes$(br)>Hexanchiformes$(br)>Crassodontidanidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>Hexanchiformes$(br)>Crassodontidanidae"
 		},
 		{
 			"type": "image",

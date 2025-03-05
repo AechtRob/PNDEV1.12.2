@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cooperoceras",
 			"title": "Cooperoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Cephalopoda$(br)>Nautiloidea$(br)>Nautilida$(br)>Tainoceratidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Nautiloidea$(br)>Nautilida$(br)>Tainoceratidae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_meganeuropsis",
 			"title": "Meganeuropsis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Insecta$(br)>Odonatoptera$(br)>Meganisoptera$(br)>Meganeuridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Arthropoda$(br)>Insecta$(br)>Odonatoptera$(br)>Meganisoptera$(br)>Meganeuridae"
 		},
 		{
 			"type": "image",

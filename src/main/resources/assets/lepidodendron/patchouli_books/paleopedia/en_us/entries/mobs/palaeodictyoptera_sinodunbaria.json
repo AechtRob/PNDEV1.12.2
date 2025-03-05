@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera_sinodunbaria",
 			"title": "Sinodunbaria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Spilapteridae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Insecta$(br)>Palaeodictyoptera$(br)>Spilapteridae"
 		},
 		{
 			"type": "image",

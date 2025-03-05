@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ammonite_parapuzosia",
 			"title": "Parapuzosia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Ammonitida$(br)>Desmoceratidae"
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Desmoceratidae"
 		},
 		{
 			"type": "image",

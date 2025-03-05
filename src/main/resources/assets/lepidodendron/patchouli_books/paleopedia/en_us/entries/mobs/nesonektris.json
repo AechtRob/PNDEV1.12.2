@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_nesonektris",
 			"title": "Nesonektris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Vetulicolia $(br)>Vetulicolida $(br)>Vetulicolata $(br)>Didazoonidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Vetulicolia$(br)>Vetulicolida$(br)>Vetulicolata$(br)>Didazoonidae"
 		},
         	{
             "type": "entity",

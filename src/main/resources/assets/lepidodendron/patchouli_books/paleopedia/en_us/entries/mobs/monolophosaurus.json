@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_monolophosaurus",
 			"title": "Monolophosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Tetanurae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Tetanurae"
 		},
         	{
             "type": "entity",

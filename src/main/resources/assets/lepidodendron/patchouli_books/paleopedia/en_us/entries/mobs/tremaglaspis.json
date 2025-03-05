@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tremaglaspis",
 			"title": "Tremaglaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian-Ordovician$(br2)>Arthropoda$(br)>Artiopoda$(br)>Vicissicaudata$(br)>Aglaspidida$(br)>Tremaglaspididae"
+			"text": "$(l)Temporal Range:$() Cambrian - Ordovician$(br2)>Arthropoda$(br)>Artiopoda$(br)>Vicissicaudata$(br)>Aglaspidida$(br)>Tremaglaspididae"
 		},
         	{
             "type": "entity",

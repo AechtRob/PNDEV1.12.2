@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hybodus",
 			"title": "Hybodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chondrichthyes$(br)>Hybodontiformes$(br)>Hybodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>Hybodontiformes$(br)>Hybodontidae"
 		},
 		{
 			"type": "image",

@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_elginia",
 			"title": "Elginia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauria$(br)>Pareiasauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauria$(br)>Pareiasauridae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/elginia.png"],
-			"title": "Elginia mirabilis",
+			"title": "E. mirabilis",
 			"text": ""
 		},
 		{

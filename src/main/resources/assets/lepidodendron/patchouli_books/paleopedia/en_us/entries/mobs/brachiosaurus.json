@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_brachiosaurus",
 			"title": "Brachiosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Sauropoda $(br)>Macronaria $(br)>Brachiosauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropoda$(br)>Macronaria$(br)>Brachiosauridae"
 		},
         	{
             "type": "entity",

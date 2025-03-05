@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ornitholestes",
 			"title": "Ornitholestes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Theropoda $(br)>Tyrannoraptora $(br)>Maniraptoromorpha"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Tyrannoraptora$(br)>Maniraptoromorpha"
 		},
         	{
             "type": "entity",

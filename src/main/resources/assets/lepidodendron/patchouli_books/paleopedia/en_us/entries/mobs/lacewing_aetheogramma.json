@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lacewing_aetheogramma",
 			"title": "Aetheogramma",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Insecta $(br)>Neuroptera $(br)>Myrmeleontiformia $(br)>Aetheogrammatidae"
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Neuroptera$(br)>Myrmeleontiformia$(br)>Aetheogrammatidae"
 		},
 		{
 			"type": "image",

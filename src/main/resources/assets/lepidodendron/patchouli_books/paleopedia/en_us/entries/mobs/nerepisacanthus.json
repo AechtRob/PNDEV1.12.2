@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_nerepisacanthus",
 			"title": "Nerepisacanthus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Acanthodii$(br)>Ischnacanthiformes$(br)>Acritolepidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Acanthodii$(br)>Ischnacanthiformes$(br)>Acritolepidae"
 		},
 		{
 			"type": "image",

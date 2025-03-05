@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeoniscum",
 			"title": "Palaeoniscum",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Palaeoniscidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Actinopterygii$(br)>Palaeonisciformes$(br)>Palaeoniscidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/palaeoniscum.png"],
-			"title": "H. freieslebeni",
+			"title": "P. freieslebeni",
 			"text": ""
 		},
 		{

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_helicoprion",
 			"title": "Helicoprion",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Helicoprionidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Helicoprionidae"
 		},
 		{
 			"type": "image",

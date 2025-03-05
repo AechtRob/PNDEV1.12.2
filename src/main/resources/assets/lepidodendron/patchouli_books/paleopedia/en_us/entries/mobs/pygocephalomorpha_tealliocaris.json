@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pygocephalomorpha_tealliocaris",
 			"title": "Tealliocaris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian-Carboniferous$(br2)>Arthropoda$(br)>Malacostraca$(br)>Pygocephalomorpha$(br)>Tealliocarididae"
+			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)>Arthropoda$(br)>Malacostraca$(br)>Pygocephalomorpha$(br)>Tealliocarididae"
 		},
 		{
 			"type": "image",

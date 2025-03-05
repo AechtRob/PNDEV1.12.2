@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gerarus",
 			"title": "Gerarus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Insecta$(br)>Archaeorthoptera$(br)>Geraridae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Insecta$(br)>Archaeorthoptera$(br)>Geraridae"
 		},
 		{
 			"type": "entity",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_scaumenacia",
 			"title": "Scaumenacia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Sarcopterygii$(br)>Dipnoi$(br)>Phaneropleuridae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Sarcopterygii$(br)>Dipnoi$(br)>Phaneropleuridae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_bushizheia",
 			"title": "Bushizheia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Euarthropoda"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Euarthropoda$(br)>$(o)incertae sedis"
 		},
 		{
 			"type": "image",

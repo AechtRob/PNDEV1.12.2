@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eocarcinus",
 			"title": "Eocarcinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Crustacea $(br)>Malacostraca $(br)>Decapoda $(br)>Eocarcinidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Decapoda (br)>Eocarcinidae"
 		},
 		{
 			"type": "image",

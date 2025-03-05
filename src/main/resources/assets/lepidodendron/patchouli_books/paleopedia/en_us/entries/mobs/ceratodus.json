@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ceratodus",
 			"title": "Ceratodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Paleogene$(br2)>Dipnoi$(br)>Ceratodontidae"
+			"text": "$(l)Temporal Range:$() Triassic - Paleogene$(br2)>Chordata$(br)>Dipnoi$(br)>Ceratodontidae"
 		},
 		{
 			"type": "image",

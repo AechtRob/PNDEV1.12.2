@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dendrocystites",
 			"title": "Dendrocystites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Echinodermata $(br)>Soluta $(br)>Dendrocystitida"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Echinodermata$(br)>Soluta$(br)>Dendrocystitida"
 		},
 		{
 			"type": "image",

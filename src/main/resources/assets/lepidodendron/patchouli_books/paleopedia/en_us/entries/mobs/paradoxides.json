@@ -9,11 +9,11 @@
 			"trigger": "lepidodendron:pf_adv_book_paradoxides",
 			"title": "Paradoxides",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Trilobita$(br)>Redlichiida$(br)>Paradoxididae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Trilobita$(br)>Redlichiida$(br)>Paradoxididae"
 		},
 		{
 			"type": "entity",
-			"name": "Paradoxides sp.",
+			"name": "P. paradoxissimus",
 			"entity": "lepidodendron:prehistoric_flora_paradoxides",
 			"rotate": false,
 			"default_rotation": 0

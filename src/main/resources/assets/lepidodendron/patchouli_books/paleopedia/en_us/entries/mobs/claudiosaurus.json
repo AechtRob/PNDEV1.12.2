@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_claudiosaurus",
 			"title": "Claudiosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Reptilia$(br)>Eosuchia$(br)>Claudiosauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Reptilia$(br)>Eosuchia$(br)>Claudiosauridae"
 		},
 		{
 			"type": "image",

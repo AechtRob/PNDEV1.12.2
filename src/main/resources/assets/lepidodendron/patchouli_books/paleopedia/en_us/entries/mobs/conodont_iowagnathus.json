@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_iowagnathus",
 			"title": "Iowagnathus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Conodonta $(br)>Ozarkodinida $(br)>Iowagnathidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Chordata$(br)>Conodonta$(br)>Ozarkodinida$(br)>Iowagnathidae"
 		},
 		{
 			"type": "image",

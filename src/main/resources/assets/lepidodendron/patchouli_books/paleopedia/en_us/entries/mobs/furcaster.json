@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_furcaster",
 			"title": "Furcaster",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)>Ophiuroidea$(br)>Oegophiurida$(br)>Protasteridae"
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Enchinodermata$(br)>Ophiuroidea$(br)>Oegophiurida$(br)>Protasteridae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_banksiops",
 			"title": "Banksiops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Temnospondyli $(br)>Stereospondyli $(br)>Brachyopidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Temnospondyli$(br)>Stereospondyli$(br)>Brachyopidae"
 		},
         	{
             "type": "entity",

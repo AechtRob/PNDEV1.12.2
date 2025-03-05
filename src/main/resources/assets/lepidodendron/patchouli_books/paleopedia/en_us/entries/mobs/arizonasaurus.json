@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_arizonasaurus",
 			"title": "Arizonasaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Pseudosuchia$(br)>Poposauroidea$(br)>Ctenosauriscidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Poposauroidea$(br)>Ctenosauriscidae"
 		},
 		{
 			"type": "image",

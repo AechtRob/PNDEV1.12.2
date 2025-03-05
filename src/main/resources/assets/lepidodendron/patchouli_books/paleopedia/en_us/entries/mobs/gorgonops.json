@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gorgonops",
 			"title": "Gorgonops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_apatosaurus",
 			"title": "Apatosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Sauropoda $(br)>Diplodocidae $(br)>Apatosaurinae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropoda$(br)>Diplodocidae$(br)>Apatosaurinae"
 		},
         	{
             "type": "entity",

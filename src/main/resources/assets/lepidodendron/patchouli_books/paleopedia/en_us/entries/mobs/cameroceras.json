@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cameroceras",
 			"title": "Cameroceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Silurian$(br2)>Nautiloidea$(br)>Endocerida$(br)>Endoceratidae"
+			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Nautiloidea$(br)>Endocerida$(br)>Endoceratidae"
 		},
 		{
 			"type": "image",

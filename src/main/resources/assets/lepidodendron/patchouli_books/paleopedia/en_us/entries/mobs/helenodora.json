@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_helenodora",
 			"title": "Helenodora",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Onychophora$(br)>Ontonychophora$(br)>Helenodoridae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Onychophora$(br)>Ontonychophora$(br)>Helenodoridae"
 		},
 		{
 			"type": "image",

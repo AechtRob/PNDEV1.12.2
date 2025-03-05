@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gantarostrataspis",
 			"title": "Gantarostrataspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Galeaspida$(br)>Huananaspidiformes$(br)>Gantarostrataspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Galeaspida$(br)>Huananaspidiformes$(br)>Gantarostrataspididae"
 		},
 		{
 			"type": "image",

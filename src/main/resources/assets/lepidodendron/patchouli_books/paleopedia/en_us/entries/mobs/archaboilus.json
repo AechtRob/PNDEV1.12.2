@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_archaboilus",
 			"title": "Archaboilus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Insecta $(br)>Orthoptera $(br)>Tettigoniidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Insecta$(br)>Orthoptera$(br)>Tettigoniidae"
 		},
 		{
 			"type": "image",

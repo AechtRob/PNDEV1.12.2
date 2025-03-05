@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_diania",
 			"title": "Diania",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Panarthropoda$(br)>Xenusia"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ecdysozoa$(br)>Panarthropoda$(br)>Xenusia"
 		},
 		{
 			"type": "image",

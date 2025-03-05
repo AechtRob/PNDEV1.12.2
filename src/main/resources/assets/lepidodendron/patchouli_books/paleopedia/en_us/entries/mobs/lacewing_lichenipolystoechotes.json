@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lacewing_lichenipolystoechotes",
 			"title": "Lichenipolystoechotes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Insecta $(br)>Neuroptera $(br)>Ithonidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Insecta$(br)>Neuroptera$(br)>Ithonidae"
 		},
 		{
 			"type": "image",

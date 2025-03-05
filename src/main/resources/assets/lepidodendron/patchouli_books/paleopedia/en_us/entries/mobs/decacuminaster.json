@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_decacuminaster",
 			"title": "Decacuminaster",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Echinodermata $(br)>Asteroidea $(br)>Velatida"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Echinodermata$(br)>Asteroidea$(br)>Velatida"
 		},
 		{
 			"type": "image",

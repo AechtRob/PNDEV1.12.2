@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_saltriovenator",
 			"title": "Saltriovenator",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria$(br)>Theropoda$(br)>Ceratosauria"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Ceratosauria"
 		},
 		{
 			"type": "image",

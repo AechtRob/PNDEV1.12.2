@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_foreyia",
 			"title": "Foreyia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinistia$(br)>Latimeriidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinistia$(br)>Latimeriidae"
 		},
 		{
 			"type": "image",

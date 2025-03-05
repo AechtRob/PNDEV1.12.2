@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_endothiodon",
 			"title": "Endothiodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Endothiodontidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Endothiodontidae"
 		},
 		{
 			"type": "image",

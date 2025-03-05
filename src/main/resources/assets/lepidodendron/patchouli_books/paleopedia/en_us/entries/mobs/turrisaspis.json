@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_turrisaspis",
 			"title": "Turrisaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthrodira$(br)>Groenlandaspidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Groenlandaspidae"
 		},
 		{
 			"type": "image",

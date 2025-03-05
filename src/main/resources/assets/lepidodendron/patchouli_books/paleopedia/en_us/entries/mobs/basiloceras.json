@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_basiloceras",
 			"title": "Basiloceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Cephalopoda$(br)>Oncoceratida$(br)>Acleistoceratidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Oncoceratida$(br)>Acleistoceratidae"
 		},
 		{
 			"type": "image",

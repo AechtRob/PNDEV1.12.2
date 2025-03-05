@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_brazilichthys",
 			"title": "Brazilichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Actinopterygii $(br)>Brazilichthyidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Actinopterygii$(br)>Brazilichthyidae"
 		},
         	{
             "type": "entity",

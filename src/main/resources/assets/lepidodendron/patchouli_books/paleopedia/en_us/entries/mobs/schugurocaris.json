@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_schugurocaris",
 			"title": "Schugurocaris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Crustacea$(br)>Malacostraca$(br)>Phyllocarida$(br)>Ceratiocarididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropda$(br)>Crustacea$(br)>Malacostraca$(br)>Phyllocarida$(br)>Ceratiocarididae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_panguraptor",
 			"title": "Panguraptor",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria$(br)>Theropoda$(br)>Coelophysidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Coelophysidae"
 		},
 		{
 			"type": "image",

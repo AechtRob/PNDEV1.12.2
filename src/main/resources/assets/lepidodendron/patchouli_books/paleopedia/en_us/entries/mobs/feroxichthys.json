@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_feroxichthys",
 			"title": "Feroxichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii$(br)>Neopterygii$(br)>Colobodontidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Neopterygii$(br)>Colobodontidae"
 		},
 		{
 			"type": "image",

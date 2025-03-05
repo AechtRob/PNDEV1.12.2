@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_strudops",
 			"title": "Strudops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Crustacea $(br)>Branchiopoda $(br)>Calmanostraca $(br)>Notostraca"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Crustacea$(br)>Branchiopoda$(br)>Calmanostraca$(br)>Notostraca"
 		},
 		{
 			"type": "image",

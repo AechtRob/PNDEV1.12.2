@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeojelly",
 			"title": "Ancient Jellyfish",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Permian$(br2)>Cnidaria"
+			"text": "$(l)Temporal Range:$() Ordovician - Permian$(br2)>Cnidaria"
 		},
 		{
 			"type": "entity",

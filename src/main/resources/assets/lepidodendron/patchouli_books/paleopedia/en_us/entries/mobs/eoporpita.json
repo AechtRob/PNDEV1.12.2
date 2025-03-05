@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eoporpita",
 			"title": "Eoporpita",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Cnidaria$(br)>Hydrozoa$(br)>Anthoathecata$(br)>Porpitidae(?)"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Cnidaria$(br)>Hydrozoa$(br)>Anthoathecata$(br)>Porpitidae (?)"
 		},
 		{
 			"type": "entity",

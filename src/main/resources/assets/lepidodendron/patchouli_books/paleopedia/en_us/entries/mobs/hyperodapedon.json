@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hyperodapedon",
 			"title": "Hyperodapedon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Rhynchosauria$(br)>Hyperodapedontidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Rhynchosauria$(br)>Hyperodapedontidae"
 		},
 		{
 			"type": "image",

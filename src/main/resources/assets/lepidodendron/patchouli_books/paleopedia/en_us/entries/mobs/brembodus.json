@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_brembodus",
 			"title": "Brembodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii$(br)>Pycnodontiformes$(br)>Brembodonidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Brembodonidae"
 		},
 		{
 			"type": "image",

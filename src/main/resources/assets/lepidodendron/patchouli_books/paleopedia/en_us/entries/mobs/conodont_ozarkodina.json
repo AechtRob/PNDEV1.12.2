@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ozarkodina",
 			"title": "Ozarkodina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Conodonta $(br)>Ozarkodinida $(br)>Spathognathodontidae"
+			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Chordata$(br)>Conodonta$(br)>Ozarkodinida$(br)>Spathognathodontidae"
 		},
 		{
 			"type": "image",

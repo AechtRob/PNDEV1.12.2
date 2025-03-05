@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kalligrammatid_liassopsychops",
 			"title": "Liassopsychops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Insecta $(br)>Neuroptera $(br)>Prohemerobiidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Insecta$(br)>Neuroptera$(br)>Prohemerobiidae"
 		},
 		{
 			"type": "image",

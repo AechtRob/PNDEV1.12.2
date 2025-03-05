@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hadranax",
 			"title": "Hadranax",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Xenusia $(br)>Protonychophora $(br)>Xenusiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Xenusia$(br)>Protonychophora$(br)>Xenusiidae"
 		},
         	{
             "type": "entity",

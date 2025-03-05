@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_arduafrons",
 			"title": "Arduafrons",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii$(br)>Pycnodontiformes$(br)>Gladiopycnodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Gladiopycnodontidae"
 		},
 		{
 			"type": "image",

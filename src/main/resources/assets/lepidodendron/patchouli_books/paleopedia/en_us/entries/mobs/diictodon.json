@@ -9,11 +9,11 @@
 			"trigger": "lepidodendron:pf_adv_book_diictodon",
 			"title": "Diictodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
 		},
 		{
 			"type": "entity",
-			"name": "Diictodon sp.",
+			"name": "D. feliceps",
 			"entity": "lepidodendron:prehistoric_flora_diictodon",
 			"rotate": false,
 			"default_rotation": 0

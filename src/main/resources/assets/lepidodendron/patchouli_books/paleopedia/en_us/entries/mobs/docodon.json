@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_docodon",
 			"title": "Docodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mammaliaformes $(br)>Docodonta $(br)>Docodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Mammaliaformes $(br)>Docodonta $(br)>Docodontidae"
 		},
 		{
 			"type": "image",

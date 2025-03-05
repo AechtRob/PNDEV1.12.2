@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_warneticaris",
 			"title": "Warneticaris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Crustacea$(br)>Malacostraca$(br)>Phyllocarida$(br)>Ceratiocarididae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Phyllocarida$(br)>Ceratiocarididae"
 		},
 		{
 			"type": "image",

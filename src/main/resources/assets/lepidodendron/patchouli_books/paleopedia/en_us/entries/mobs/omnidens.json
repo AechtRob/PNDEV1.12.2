@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_omnidens",
 			"title": "Omnidens",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Panarthropoda"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ecdysozoa$(br)>Panarthropoda"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cyclomedusa",
 			"title": "Cyclomedusa",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Tonian - Ediacaran$(br2)>Animalia?"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Tonian - Ediacaran)$(br2)>Animalia (?)"
 		},
 		{
 			"type": "entity",

@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_olenellus",
 			"title": "Olenellus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Trilobita$(br)>Redlichiida$(br)>Olenellidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Trilobita$(br)>Redlichiida$(br)>Olenellidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/olenellus.png"],
-			"title": "Olenellus sp.",
+			"title": "O. thompsoni",
 			"text": ""
 		},
 		{

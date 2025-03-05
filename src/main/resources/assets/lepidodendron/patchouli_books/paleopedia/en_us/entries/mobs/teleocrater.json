@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_teleocrater",
 			"title": "Teleocrater",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Archosauria$(br)>Avemetatarsalia$(br)>Aphanosauria"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Archosauria$(br)>Avemetatarsalia$(br)>Aphanosauria"
 		},
 		{
 			"type": "image",

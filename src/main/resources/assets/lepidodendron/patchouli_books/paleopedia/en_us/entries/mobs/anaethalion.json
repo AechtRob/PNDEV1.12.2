@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_anaethalion",
 			"title": "Anaethalion",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Elopiformes $(br)>Anaethalionidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Elopiformes$(br)>Anaethalionidae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_panderodus",
 			"title": "Panderodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)>Conodonta$(br)>Conodontophorida$(br)>Distacodontidae"
+			"text": "$(l)Temporal Range:$() Ordovician - Devonian$(br2)>Chordata$(br)>Conodonta$(br)>Conodontophorida$(br)>Distacodontidae"
 		},
 		{
 			"type": "image",

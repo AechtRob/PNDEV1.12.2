@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_timorebestia",
 			"title": "Timorebestia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Chaetognatha"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Bilateria$(br)>Spiralia$(br)>Chaetognatha"
 		},
         	{
             "type": "entity",

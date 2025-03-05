@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_bobasatrania",
 			"title": "Bobasatrania",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian-Triassic$(br2)>Actinopterygii$(br)>Chondrostei$(br)>Bobasatraniiformes$(br)>Bobasatraniidae"
+			"text": "$(l)Temporal Range:$() Permian - Triassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Chondrostei$(br)>Bobasatraniiformes$(br)>Bobasatraniidae"
 		},
 		{
 			"type": "image",

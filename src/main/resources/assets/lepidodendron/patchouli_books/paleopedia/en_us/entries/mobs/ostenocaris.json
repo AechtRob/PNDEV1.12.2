@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ostenocaris",
 			"title": "Ostenocaris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Thylacocephala $(br)>Conchyliocarida $(br)>Ostenocarididae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Thylacocephala $(br)>Conchyliocarida $(br)>Ostenocarididae"
 		},
 		{
 			"type": "image",

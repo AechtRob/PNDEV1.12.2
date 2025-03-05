@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kokomopterus",
 			"title": "Kokomopterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Eurypterida$(br)>Kokomopteroidea$(br)>Kokomopteridae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Eurypterida$(br)>Kokomopteroidea$(br)>Kokomopteridae"
 		},
 		{
 			"type": "image",

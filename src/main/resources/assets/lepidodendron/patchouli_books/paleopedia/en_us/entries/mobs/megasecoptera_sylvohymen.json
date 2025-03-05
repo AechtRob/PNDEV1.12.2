@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_sylvohymen",
 			"title": "Sylvohymen",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Insecta $(br)>Megasecoptera $(br)>Bardohymenidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Arthropoda$(br)>Insecta$(br)>Megasecoptera$(br)>Bardohymenidae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ediacaria",
 			"title": "Ediacaria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Precambrian - Cambrian$(br2)>Cnidaria $(br)>Scyphozoa"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran) - Cambrian$(br2)>Cnidaria$(br)>Scyphozoa"
 		},
 		{
 			"type": "entity",

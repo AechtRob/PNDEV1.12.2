@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_estemmenosuchus",
 			"title": "Estemmenosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Dinocephalia$(br)>Estemmenosuchidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Dinocephalia$(br)>Estemmenosuchidae"
 		},
 		{
 			"type": "image",

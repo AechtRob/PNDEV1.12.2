@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_antarcticarcinus",
 			"title": "Antarcticarcinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)>Euthycarcinoidea$(br)>Euthycarcinida"
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Arthropoda$(br)>Euthycarcinoidea$(br)>Euthycarcinida"
 		},
 		{
 			"type": "image",

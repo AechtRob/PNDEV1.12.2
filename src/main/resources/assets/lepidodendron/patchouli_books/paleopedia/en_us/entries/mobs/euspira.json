@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_euspira",
 			"title": "Euspira",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic - Present$(br2)>Mollusca $(br)>Gastropoda $(br)>Littorinimorpha $(br)>Naticidae"
+			"text": "$(l)Temporal Range:$() Triassic - Present$(br2)>Mollusca$(br)>Gastropoda$(br)>Littorinimorpha$(br)>Naticidae"
 		},
 		{
 			"type": "image",

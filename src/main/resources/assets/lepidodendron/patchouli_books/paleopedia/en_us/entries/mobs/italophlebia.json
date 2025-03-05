@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_italophlebia",
 			"title": "Italophlebia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Insecta$(br)>Odonata$(br)>Triassolestidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Arthropoda$(br)>Insecta$(br)>Odonata$(br)>Triassolestidae"
 		},
 		{
 			"type": "image",
