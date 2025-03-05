@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lufengosaurus",
 			"title": "Lufengosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Sauropodomorpha $(br)>Massospondylidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Massospondylidae"
 		},
         	{
             "type": "entity",

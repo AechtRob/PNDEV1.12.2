@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_siderops",
 			"title": "Siderops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Amphibia $(br)>Temnospondyli $(br)>Stereospondyli $(br)>Chigutisauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Amphibia$(br)>Temnospondyli$(br)>Stereospondyli$(br)>Chigutisauridae"
 		},
 		{
 			"type": "image",

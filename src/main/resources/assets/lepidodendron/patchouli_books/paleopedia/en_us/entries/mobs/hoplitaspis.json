@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hoplitaspis",
 			"title": "Hoplitaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda $(br)>Dekatriata $(br)>Chasmataspidida $(br)>Diploaspididae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Dekatriata$(br)>Chasmataspidida$(br)>Diploaspididae"
 		},
 		{
 			"type": "image",

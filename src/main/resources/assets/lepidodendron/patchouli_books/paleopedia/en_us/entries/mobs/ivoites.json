@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ivoites",
 			"title": "Ivoites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Cephalopoda$(br)>Ammonoidea$(br)>Mimosphinctidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Mimosphinctidae"
 		},
 		{
 			"type": "image",

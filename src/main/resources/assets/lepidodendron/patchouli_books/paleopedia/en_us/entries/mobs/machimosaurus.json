@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_machimosaurus",
 			"title": "Machimosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic-Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Crocodyliformes$(br)>Thalattosuchia$(br)>Machimosauridae"
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Crocodyliformes$(br)>Thalattosuchia$(br)>Machimosauridae"
 		},
         	{
             "type": "entity",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pseudodiscophyllum",
 			"title": "Pseudodiscophyllum",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Cnidaria $(br)>Hydrozoa $(br)>Porpitoidea"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Cnidaria$(br)>Hydrozoa$(br)>Porpitoidea"
 		},
         	{
 			"type": "image",

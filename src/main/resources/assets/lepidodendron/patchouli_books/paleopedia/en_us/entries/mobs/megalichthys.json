@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_megalichthys",
 			"title": "Megalichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)>Sarcopterygii $(br)>Tetrapodomorpha $(br)>Megalichthyiformes $(br)>Megalichthyidae"
+			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Megalichthyiformes$(br)>Megalichthyidae"
 		},
         	{
             "type": "entity",

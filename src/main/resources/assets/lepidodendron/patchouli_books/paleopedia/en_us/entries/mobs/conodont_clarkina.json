@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_clarkina",
 			"title": "Clarkina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian - Triassic$(br2)>Conodonta $(br)>Ozarkodinida $(br)>Gondolellidae"
+			"text": "$(l)Temporal Range:$() Permian - Triassic$(br2)>Chordata$(br)>Conodonta$(br)>Ozarkodinida$(br)>Gondolellidae"
 		},
 		{
 			"type": "image",

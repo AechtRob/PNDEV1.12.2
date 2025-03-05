@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lasanius",
 			"title": "Lasanius",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Anaspida$(br)>Birkeniiformes$(br)>Lasaniidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Anaspida$(br)>Birkeniiformes$(br)>Lasaniidae"
 		},
 		{
 			"type": "image",

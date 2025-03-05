@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_chinlea",
 			"title": "Chinlea",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinistia$(br)>Mawsoniidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinistia$(br)>Mawsoniidae"
 		},
 		{
 			"type": "image",

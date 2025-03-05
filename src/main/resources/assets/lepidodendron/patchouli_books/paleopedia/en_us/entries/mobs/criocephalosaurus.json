@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_criocephalosaurus",
 			"title": "Criocephalosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Dinocephalia$(br)>Tapinocephalidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Dinocephalia$(br)>Tapinocephalidae"
 		},
 		{
 			"type": "image",

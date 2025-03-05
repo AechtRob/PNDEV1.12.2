@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lagosuchus",
 			"title": "Lagosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Ornithodira $(br)>Dinosauromorpha $(br)>Lagosuchia $(br)>Lagosuchidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Ornithodira$(br)>Dinosauromorpha$(br)>Lagosuchia$(br)>Lagosuchidae"
 		},
         	{
             "type": "entity",

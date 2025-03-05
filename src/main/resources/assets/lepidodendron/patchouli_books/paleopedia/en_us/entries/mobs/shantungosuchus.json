@@ -13,7 +13,7 @@
 		},
         	{
             "type": "entity",
-            "name": "Shantungosuchus",
+            "name": "S. chuhsienensis",
             "entity": "lepidodendron:prehistoric_flora_shantungosuchus",
             "rotate": false,
             "default_rotation": 0

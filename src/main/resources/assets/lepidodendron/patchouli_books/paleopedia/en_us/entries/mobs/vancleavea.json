@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_vancleavea",
 			"title": "Vancleavea",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Proterochampsia$(br)>Doswelliidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Proterochampsia$(br)>Doswelliidae"
 		},
 		{
 			"type": "image",

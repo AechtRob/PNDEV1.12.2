@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera_homoioptera",
 			"title": "Homoioptera",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Homoiopteridae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Insecta$(br)>Palaeodictyoptera$(br)>Homoiopteridae"
 		},
 		{
 			"type": "image",

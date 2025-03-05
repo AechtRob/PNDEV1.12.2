@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cyamodus",
 			"title": "Cyamodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Sauropterygia$(br)>Placodontia$(br)>Cyamodontidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Sauropterygia$(br)>Placodontia$(br)>Cyamodontidae"
 		},
 		{
 			"type": "image",

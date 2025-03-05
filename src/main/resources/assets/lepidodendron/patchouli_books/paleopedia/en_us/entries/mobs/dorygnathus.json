@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dorygnathus",
 			"title": "Dorygnathus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Rhamphorhynchidae $(br)>Rhamphorhynchinae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Pterosauria$(br)>Rhamphorhynchidae$(br)>Rhamphorhynchinae"
 		},
         	{
             "type": "entity",

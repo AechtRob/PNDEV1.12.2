@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_meganeurites",
 			"title": "Meganeurites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Insecta $(br)>Meganisoptera $(br)>Meganeuridae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Insecta$(br)>Meganisoptera$(br)>Meganeuridae"
 		},
 		{
 			"type": "image",

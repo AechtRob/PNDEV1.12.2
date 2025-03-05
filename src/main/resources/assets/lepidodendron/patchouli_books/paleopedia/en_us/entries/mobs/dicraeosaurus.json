@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dicraeosaurus",
 			"title": "Dicraeosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Sauropoda $(br)>Diplodocoidea $(br)>Dicraeosauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Sauropoda$(br)>Diplodocoidea$(br)>Dicraeosauridae"
 		},
         	{
             "type": "entity",

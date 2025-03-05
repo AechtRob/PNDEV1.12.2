@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ammonite_ceratites",
 			"title": "Ceratites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Cephalopoda$(br)>Ammonoidea$(br)>Ceratitida$(br)>Ceratitidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Ceratitida$(br)>Ceratitidae"
 		},
 		{
 			"type": "image",

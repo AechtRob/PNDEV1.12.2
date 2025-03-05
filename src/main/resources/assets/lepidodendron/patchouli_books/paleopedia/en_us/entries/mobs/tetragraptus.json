@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tetragraptus",
 			"title": "Tetragraptus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Pterobranchia$(br)>Graptoloidea$(br)>Dichograptidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Hemichordata$(br)>Pterobranchia$(br)>Graptoloidea$(br)>Dichograptidae"
 		},
 		{
 			"type": "image",

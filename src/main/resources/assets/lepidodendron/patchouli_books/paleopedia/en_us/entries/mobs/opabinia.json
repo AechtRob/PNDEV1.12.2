@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_opabinia",
 			"title": "Opabinia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Dinocaridida$(br)>Opabiniidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Dinocaridida$(br)>Opabiniidae"
 		},
 		{
 			"type": "image",

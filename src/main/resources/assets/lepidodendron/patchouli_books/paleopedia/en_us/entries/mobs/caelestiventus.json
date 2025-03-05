@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_caelestiventus",
 			"title": "Caelestiventus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Pterosauria$(br)>Dimorphodontidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Pterosauria$(br)>Dimorphodontidae"
 		},
 		{
 			"type": "image",

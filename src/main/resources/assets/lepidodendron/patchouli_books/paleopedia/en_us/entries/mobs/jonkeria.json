@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_jonkeria",
 			"title": "Jonkeria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Dinocephalia$(br)>Titanosuchidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Dinocephalia$(br)>Titanosuchidae"
 		},
 		{
 			"type": "image",

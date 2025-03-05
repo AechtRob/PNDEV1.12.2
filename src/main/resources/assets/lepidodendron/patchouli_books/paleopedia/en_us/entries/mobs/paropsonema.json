@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_paropsonema",
 			"title": "Paropsonema",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Deuterostomia $(br)>Ambulacraria $(br)>Cambroernida $(br)>Eldoniidae $(br)>Paropsonemida"
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Deuterostomia$(br)>Ambulacraria$(br)>Cambroernida$(br)>Eldoniidae$(br)>Paropsonemida"
 		},
     
             {

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_misikella",
 			"title": "Misikella",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)>Conodonta $(br)>Ozarkodinida $(br)>Gladigondolellidae"
+			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)>Chordata$(br)>Conodonta$(br)>Ozarkodinida$(br)>Gladigondolellidae"
 		},
 		{
 			"type": "image",

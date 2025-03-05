@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_attenborites",
 			"title": "Attenborites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Cnidaria"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>$(o)incertae sedis (Cnidaria ?)"
 		},
 		{
 			"type": "entity",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_angelina",
 			"title": "Angelina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Trilobita $(br)>Ptychopariida $(br)>Olenidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Trilobita$(br)>Ptychopariida$(br)>Olenidae"
 		},
 		{
 			"type": "image",

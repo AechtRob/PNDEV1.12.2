@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_furcacauda",
 			"title": "Furcacauda",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Thelodonti$(br)>Furcacaudiformes$(br)>Furcacaudidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Thelodonti$(br)>Furcacaudiformes$(br)>Furcacaudidae"
 		},
 		{
 			"type": "image",

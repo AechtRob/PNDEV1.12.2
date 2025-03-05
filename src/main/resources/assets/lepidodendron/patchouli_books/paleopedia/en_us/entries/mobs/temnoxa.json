@@ -9,11 +9,11 @@
 			"trigger": "lepidodendron:pf_adv_book_temnoxa",
 			"title": "Temnoxa",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>incertae sedis (Arthropoda? Mollusca?)"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>(o)incertae sedis (Arthropoda? / Mollusca?)"
 		},
 		{
 			"type": "entity",
-			"name": "P. molluscula",
+			"name": "T. molluscula",
 			"entity": "lepidodendron:prehistoric_flora_temnoxa",
 			"rotate": false,
 			"default_rotation": 0

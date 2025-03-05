@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_shringasaurus",
 			"title": "Shringasaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Archosauromorpha$(br)>Crocopoda$(br)>Allokotosauria$(br)>Azendohsauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Archosauromorpha$(br)>Crocopoda$(br)>Allokotosauria$(br)>Azendohsauridae"
 		},
 		{
 			"type": "image",

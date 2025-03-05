@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_shonisaurus",
 			"title": "Shonisaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Ichthyosauria$(br)>Shastasauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Ichthyosauria$(br)>Shastasauridae"
 		},
 		{
 			"type": "image",

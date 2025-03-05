@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hypsognathus",
 			"title": "Hypsognathus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Parareptilia$(br)>Procolophonomorpha$(br)>Procolophonidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Parareptilia$(br)>Procolophonomorpha$(br)>Procolophonidae"
 		},
 		{
 			"type": "image",

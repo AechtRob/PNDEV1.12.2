@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_megalograptus",
 			"title": "Megalograptus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Eurypterida$(br)>Carcinosomatoidea$(br)>Megalograptidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Eurypterida$(br)>Carcinosomatoidea$(br)>Megalograptidae"
 		},
 		{
 			"type": "image",

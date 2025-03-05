@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_marmolatella",
 			"title": "Marmolatella",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous - Jurassic$(br2)>Mollusca $(br)>Gastropoda $(br)>Cycloneritida $(br)>Delphinulopsidae"
+			"text": "$(l)Temporal Range:$() Carboniferous - Jurassic$(br2)>Mollusca$(br)>Gastropoda$(br)>Cycloneritida$(br)>Delphinulopsidae"
 		},
 		{
 			"type": "image",

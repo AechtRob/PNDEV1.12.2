@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_vivaxosaurus",
 			"title": "Vivaxosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/vivaxosaurus.png"],
-			"title": "Vivaxosaurus sp.",
+			"title": "V. trautscholdi",
 			"text": ""
 		},
 		{

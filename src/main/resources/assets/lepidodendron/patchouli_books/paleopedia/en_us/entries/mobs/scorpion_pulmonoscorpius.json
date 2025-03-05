@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_scorpion_pulmonoscorpius",
 			"title": "Pulmonoscorpius",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arachnida$(br)>Scorpiones$(br)>Centromachidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Arachnida$(br)>Scorpiones$(br)>Centromachidae"
 		},
 		{
 			"type": "image",

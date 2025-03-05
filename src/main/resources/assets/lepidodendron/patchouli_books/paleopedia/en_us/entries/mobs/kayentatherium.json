@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kayentatherium",
 			"title": "Kayentatherium",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Cynodontia $(br)>Tritylodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Cynodontia$(br)>Tritylodontidae"
 		},
 		{
 			"type": "image",

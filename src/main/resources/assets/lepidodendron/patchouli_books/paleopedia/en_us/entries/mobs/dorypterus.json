@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dorypterus",
 			"title": "Dorypterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Dorypteridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Actinopterygii$(br)>Palaeonisciformes$(br)>Dorypteridae"
 		},
 		{
 			"type": "image",

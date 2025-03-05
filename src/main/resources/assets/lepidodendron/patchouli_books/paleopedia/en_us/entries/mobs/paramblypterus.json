@@ -9,18 +9,18 @@
 			"trigger": "lepidodendron:pf_adv_book_paramblypterus",
 			"title": "Paramblypterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Actinopterygii"
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Chordata$(br)>Actinopterygii"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/paramblypterus.png"],
-			"title": "Paramblypterus sp.",
+			"title": "P. decorus",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_paramblypterus",
 			"type": "text",
-			"text": "Paramblypterus is from Carboniferous and Permian formations in Russia, Czechia, UK, France and Spain. It is a small fish, being about 15cm long. It was probably carnivorous based on it’s dentition. It has a long slender body with small fins. Some fossils of it have been found at a small Czech town called Boskovice, which has ruins of an old Medieval castle that possibly dates to the 1300s or earlier.para"
+			"text": "Paramblypterus is from Carboniferous and Permian formations in Russia, Czechia, UK, France and Spain. It is a small fish, being about 15cm long. It was probably carnivorous based on it’s dentition. It has a long slender body with small fins. Some fossils of it have been found at a small Czech town called Boskovice, which has ruins of an old Medieval castle that possibly dates to the 1300s or earlier."
 		},
 		{
 			"type": "lepidodendron:diet",

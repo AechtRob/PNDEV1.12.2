@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_datheosaurus",
 			"title": "Datheosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)Cotylosauria$(br)>Caseidae"
+			"text": "$(l)Temporal Range:$() Carboniferous  -Permian$(br2)>Chordata$(br)>Cotylosauria$(br)>Caseidae"
 		},
 		{
 			"type": "entity",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_typhloesus",
 			"title": "Typhloesus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Lophotrochozoa $(br)>Mollusca"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Lophotrochozoa$(br)>Mollusca"
 		},
 		{
 			"type": "image",

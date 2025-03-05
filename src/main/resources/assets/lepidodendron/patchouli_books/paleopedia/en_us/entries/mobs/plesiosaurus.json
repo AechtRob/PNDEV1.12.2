@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_plesiosaurus",
 			"title": "Plesiosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Reptilia $(br)>Sauropterygia $(br)>Plesiosauria $(br)>Plesiosauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Plesiosauria$(br)>Plesiosauridae"
 		},
         	{
             "type": "entity",

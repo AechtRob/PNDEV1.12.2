@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_semionotus",
 			"title": "Semionotus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Jurassic$(br2)>Actinopterygii$(br)>Semionotiformes$(br)>Semionotidae"
+			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Semionotiformes$(br)>Semionotidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/semionotus.png"],
-			"title": "Semionotus sp.",
+			"title": "S. bergeri",
 			"text": ""
 		},
 		{

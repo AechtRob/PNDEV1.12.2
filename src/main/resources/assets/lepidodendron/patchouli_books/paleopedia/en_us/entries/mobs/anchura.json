@@ -9,7 +9,7 @@
 "trigger": "lepidodendron:pf_adv_book_anchura",
 "title": "Anchura",
 "type": "quest",
-"text": "$(l)Temporal Range:$()  Early Cretaceous - Paleogene$(br2)>Mullusca$(br)>Gastropoda$(br)>Stromboidea$(br)>Aporrhaidae"
+"text": "$(l)Temporal Range:$()  Early Cretaceous - Paleogene$(br2)>Mollusca$(br)>Gastropoda$(br)>Stromboidea$(br)>Aporrhaidae"
 },
         {
             "type": "entity",

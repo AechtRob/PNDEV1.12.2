@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_labidosaurus",
 			"title": "Labidosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Reptilia$(br)>Captorhinidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Reptilia$(br)>Captorhinidae"
 		},
 		{
 			"type": "image",

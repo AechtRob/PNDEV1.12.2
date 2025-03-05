@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_onychodus",
 			"title": "Onychodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Sarcopterygii$(br)>Onychodontida$(br)>Onychodontidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Sarcopterygii$(br)>Onychodontida$(br)>Onychodontidae"
 		},
 		{
 			"type": "image",

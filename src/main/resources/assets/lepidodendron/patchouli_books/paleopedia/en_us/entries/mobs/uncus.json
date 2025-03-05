@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_uncus",
 			"title": "Uncus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Ecdysozoa"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Ecdysozoa$(br)>$(o)incertae sedis"
 		},
 		{
 			"type": "entity",

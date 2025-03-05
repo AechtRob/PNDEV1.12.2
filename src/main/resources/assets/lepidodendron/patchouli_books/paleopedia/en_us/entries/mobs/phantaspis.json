@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_phantaspis",
 			"title": "Phantaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Trilobita$(br)>Ptychopariida"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Trilobita$(br)>Ptychopariida"
 		},
 		{
 			"type": "image",

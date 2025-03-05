@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_viviparus",
 			"title": "Viviparus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Present$(br2)>Mollusca $(br)>Gastropoda $(br)>Architaenioglossa $(br)>Viviparidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Present$(br2)>Mollusca$(br)>Gastropoda$(br)>Architaenioglossa$(br)>Viviparidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/viviparus.png"],
-			"title": "Viviparus sp.",
+			"title": "V. fluviorum",
 			"text": ""
 		},
 		{

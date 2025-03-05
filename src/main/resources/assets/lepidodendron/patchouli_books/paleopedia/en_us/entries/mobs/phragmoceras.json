@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_phragmoceras",
 			"title": "Phragmoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Cephalopoda$(br)>Nautiloidea$(br)>Discosorida$(br)>Phragmoceratidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Nautiloidea$(br)>Discosorida$(br)>Phragmoceratidae"
 		},
 		{
 			"type": "image",

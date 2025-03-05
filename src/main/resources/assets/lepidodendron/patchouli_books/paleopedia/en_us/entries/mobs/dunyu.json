@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dunyu",
 			"title": "Dunyu",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Galeaspida$(br)>Eugaleaspidiformes$(br)>Eugaleaspidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Galeaspida$(br)>Eugaleaspidiformes$(br)>Eugaleaspidae"
 		},
 		{
 			"type": "image",

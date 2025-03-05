@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_rhenocystis",
 			"title": "Rhenocystis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Echinodermata $(br)>Stylophora $(br)>Mitrata"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Echinodermata$(br)>Stylophora$(br)>Mitrata"
 		},
 		{
 			"type": "image",

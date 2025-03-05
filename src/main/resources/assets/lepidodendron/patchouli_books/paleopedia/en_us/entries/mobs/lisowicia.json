@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lisowicia",
 			"title": "Lisowicia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Synapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Stahleckeriidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Synapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Stahleckeriidae"
 		},
 		{
 			"type": "image",

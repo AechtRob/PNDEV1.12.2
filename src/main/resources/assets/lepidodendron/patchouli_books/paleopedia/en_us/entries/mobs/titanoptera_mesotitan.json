@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_titanoptera_mesotitan",
 			"title": "Mesotitan",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Insecta$(br)>Orthoptera$(br)>Mesotitanidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Arthropoda$(br)>nsecta$(br)>Orthoptera$(br)>Mesotitanidae"
 		},
 		{
 			"type": "image",

@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_gnathorhiza",
 			"title": "Gnathorhiza",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Triassic $(br2)>Sarcopterygii$(br)>Dipnoi$(br)>Gnathorhizidae"
+			"text": "$(l)Temporal Range:$() Carboniferous - Triassic$(br2)>Chordata$(br)>Sarcopterygii$(br)>Dipnoi$(br)>Gnathorhizidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/gnathorhiza.png"],
-			"title": "Gnathorhiza sp.",
+			"title": "G. serrata",
 			"text": ""
 		},
 		{

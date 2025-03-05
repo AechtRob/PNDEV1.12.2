@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_europasaurus",
 			"title": "Europasaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Sauropoda $(br)>Camarasauromorpha"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropoda$(br)>Camarasauromorpha"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pneumodesmus",
 			"title": "Pneumodesmus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)>Myriapoda$(br)>Archipolypoda$(br)$(o)>incertae sedis"
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Arthropoda$(br)>Myriapoda$(br)>Archipolypoda$(br)$(o)>incertae sedis"
 		},
 		{
 			"type": "image",

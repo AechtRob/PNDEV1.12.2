@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_adamanteryon",
 			"title": "Adamanteryon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Crustacea $(br)>Malacostraca $(br)>Decapoda $(br)>Eryonidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Eryonidae"
 		},
 		{
 			"type": "image",

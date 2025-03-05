@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ebenaqua",
 			"title": "Ebenaqua",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Actinopterygii$(br)>Bobasatraniiformes"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Actinopterygii$(br)>Bobasatraniiformes"
 		},
 		{
 			"type": "image",

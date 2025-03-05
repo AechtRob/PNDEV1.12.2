@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_captorhinus",
 			"title": "Captorhinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Reptilia$(br)>Captorhinidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Reptilia$(br)>Captorhinidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/captorhinus.png"],
-			"title": "Captorhinus aguti",
+			"title": "C. aguti",
 			"text": ""
 		},
 		{

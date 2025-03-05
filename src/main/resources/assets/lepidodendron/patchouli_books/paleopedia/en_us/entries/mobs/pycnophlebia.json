@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pycnophlebia",
 			"title": "Pycnophlebia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Insecta $(br)>Orthoptera $(br)>Hagloidea $(br)>Prophalangopsidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Insecta$(br)>Orthoptera$(br)>Hagloidea$(br)>Prophalangopsidae"
 		},
 		{
 			"type": "image",

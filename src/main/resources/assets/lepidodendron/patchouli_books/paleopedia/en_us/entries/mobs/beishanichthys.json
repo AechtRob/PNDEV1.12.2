@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_beishanichthys",
 			"title": "Beishanichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii$(br)>Cladistia$(br)>Scanilepiformes"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Cladistia$(br)>Scanilepiformes"
 		},
 		{
 			"type": "image",

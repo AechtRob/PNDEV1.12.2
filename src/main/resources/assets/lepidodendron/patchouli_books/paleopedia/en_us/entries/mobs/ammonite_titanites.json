@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ammonite_titanites",
 			"title": "Titanites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Ammonitida"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusica$(br)>Cephalopoda$(br)>Ammonitida"
 		},
 		{
 			"type": "image",

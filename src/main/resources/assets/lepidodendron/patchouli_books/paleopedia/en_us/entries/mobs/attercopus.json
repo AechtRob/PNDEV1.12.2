@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_attercopus",
 			"title": "Attercopus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arachnida$(br)>Uraraneida"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Arachnida$(br)>Uraraneida"
 		},
 		{
 			"type": "image",

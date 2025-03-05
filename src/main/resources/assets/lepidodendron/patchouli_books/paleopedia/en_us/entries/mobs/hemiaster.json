@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hemiaster",
 			"title": "Hemiaster",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous-Neogene (Miocene)$(br2)>Echinodermata$(br)>Echinoidea$(br)>Spatangoida$(br)>Hemiasteridae"
+			"text": "$(l)Temporal Range:$() Cretaceous - Neogene (Miocene)$(br2)>Echinodermata$(br)>Echinoidea$(br)>Spatangoida$(br)>Hemiasteridae"
 		},
         	{
             "type": "entity",

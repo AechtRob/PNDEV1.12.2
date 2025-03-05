@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_vampyronassa",
 			"title": "Vampyronassa",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca $(br)>Cephalopoda $(br)>Vampyromorphida $(br)>Vampyroteuthidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Vampyromorphida$(br)>Vampyroteuthidae"
 		},
 		{
 			"type": "image",

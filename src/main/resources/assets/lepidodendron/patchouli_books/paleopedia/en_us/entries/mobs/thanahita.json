@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_thanahita",
 			"title": "Thanahita",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Panarthropoda $(br)>Hallucigeniidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Ecdysozoa$(br)>Panarthropoda$(br)>Hallucigeniidae"
 		},
 		{
 			"type": "image",

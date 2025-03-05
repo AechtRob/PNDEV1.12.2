@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_listracanthus",
 			"title": "Listracanthus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Triassic$(br2)>Chondrichthyes$(br)>$(o)incertae sedis$()$(br)>Listracanthidae"
+			"text": "$(l)Temporal Range:$() Carboniferous - Triassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>$(o)incertae sedis$()$(br)>Listracanthidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/listracanthus.png"],
-			"title": "Listracanthus sp.",
+			"title": "L. hystrix",
 			"text": ""
 		},
 		{

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eramoscorpius",
 			"title": "Eramoscorpius",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arachnida $(br)>Scorpiones"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Arachnida$(br)>Scorpiones"
 		},
         	{
             "type": "entity",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_rhomaleosaurus",
 			"title": "Rhomaleosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Reptilia $(br)>Sauropterygia $(br)>Plesiosauria $(br)>Rhomaleosauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Plesiosauria$(br)>Rhomaleosauridae"
 		},
 		{
 			"type": "image",

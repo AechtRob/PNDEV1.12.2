@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_lystrosaurus",
 			"title": "Lystrosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian-Triassic$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Lystrosauridae"
+			"text": "$(l)Temporal Range:$() Permian - Triassic$(br2)>Chordata$(br)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Lystrosauridae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/lystrosaurus.png"],
-			"title": "Lystrosaurus sp.",
+			"title": "L. murrayi",
 			"text": ""
 		},
 		{

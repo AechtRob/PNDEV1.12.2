@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_proconodontus",
 			"title": "Proconodontus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Conodonta $(br)>Proconodontida $(br)>Proconodontidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Chordata$(br)>Conodonta$(br)>Proconodontida$(br)>Proconodontidae"
 		},
 		{
 			"type": "image",

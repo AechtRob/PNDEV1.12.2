@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_microbrachius",
 			"title": "Microbrachius",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Antiarchi$(br)>Microbrachiidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Antiarchi$(br)>Microbrachiidae"
 		},
 		{
 			"type": "image",

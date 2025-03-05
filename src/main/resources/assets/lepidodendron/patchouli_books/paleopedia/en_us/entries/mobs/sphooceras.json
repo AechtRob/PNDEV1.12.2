@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_sphooceras",
 			"title": "Sphooceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Cephalopoda$(br)>Orthocerida$(br)>Sphooceratidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Orthocerida$(br)>Sphooceratidae"
 		},
 		{
 			"type": "image",

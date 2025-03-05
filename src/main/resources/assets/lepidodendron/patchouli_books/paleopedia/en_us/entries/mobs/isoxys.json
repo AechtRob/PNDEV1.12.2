@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_isoxys",
 			"title": "Isoxys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda $(br)>Isoxyida $(br)>Isoxyidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Isoxyida$(br)>Isoxyidae"
 		},
         	{
             "type": "entity",

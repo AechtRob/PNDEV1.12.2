@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_slimonia",
 			"title": "Slimonia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda $(br)>Chelicerata $(br)>Eurypterida $(br)>Slimonidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Slimonidae"
 		},
 		{
 			"type": "image",

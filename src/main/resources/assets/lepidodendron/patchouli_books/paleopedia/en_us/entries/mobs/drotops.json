@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_drotops",
 			"title": "Drotops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Trilobita$(br)>Phacopida$(br)>Phacopidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Trilobita$(br)>Phacopida$(br)>Phacopidae"
 		},
 		{
 			"type": "image",

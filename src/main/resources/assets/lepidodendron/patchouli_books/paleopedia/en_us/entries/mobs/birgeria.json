@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_birgeria",
 			"title": "Birgeria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii$(br)>Birgeriformes$(br)>Birgeriidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Birgeriformes$(br)>Birgeriidae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_mixopterus",
 			"title": "Mixopterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Eurypterida$(br)>Carcinosomatoidea$(br)>Mixopteridae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Eurypterida$(br)>Carcinosomatoidea$(br)>Mixopteridae"
 		},
 		{
 			"type": "image",

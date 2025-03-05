@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeontinid",
 			"title": "Palaeontinoid",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian-Cretaceous$(br2)>Insecta$(br)>Hemiptera$(br)>Auchenorrhyncha$(br)>Cicadomorpha$(br)>Palaeontinidea"
+			"text": "$(l)Temporal Range:$() Permian - Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Hemiptera$(br)>Auchenorrhyncha$(br)>Cicadomorpha$(br)>Palaeontinidea"
 		},
 		{
 			"type": "image",

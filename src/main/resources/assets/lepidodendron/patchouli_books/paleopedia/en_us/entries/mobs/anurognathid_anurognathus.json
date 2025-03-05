@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_anurognathid_anurognathus",
 			"title": "Anurognathus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Anurognathidae $(br)>Anurognathinae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Pterosauria$(br)>Anurognathidae$(br)>Anurognathinae"
 		},
 		{
 			"type": "image",

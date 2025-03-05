@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_scutosaurus",
 			"title": "Scutosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauria"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauria"
 		},
 		{
 			"type": "image",

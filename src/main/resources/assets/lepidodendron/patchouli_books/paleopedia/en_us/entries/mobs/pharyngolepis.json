@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pharyngolepis",
 			"title": "Pharyngolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Anaspida$(br)>Birkeniiformes"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Anaspida$(br)>Birkeniiformes"
 		},
 		{
 			"type": "image",

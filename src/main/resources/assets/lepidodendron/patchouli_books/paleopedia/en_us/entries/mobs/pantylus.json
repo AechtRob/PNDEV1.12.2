@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_pantylus",
 			"title": "Pantylus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Recumbirostra$(br)>Pantylidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Recumbirostra$(br)>Pantylidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/pantylus.png"],
-			"title": "Pantylus cordatus",
+			"title": "P. cordatus",
 			"text": ""
 		},
 		{

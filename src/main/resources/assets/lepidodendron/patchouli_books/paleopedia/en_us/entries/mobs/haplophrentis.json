@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_haplophrentis",
 			"title": "Haplophrentis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Lophotrochozoa $(br)>Hyolitha $(br)>Hyolithida $(br)>Hyolithidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Lophotrochozoa$(br)>Brachiopoda$(br)>Hyolitha$(br)>Hyolithida$(br)>Hyolithidae"
 		},
 		{
 			"type": "image",

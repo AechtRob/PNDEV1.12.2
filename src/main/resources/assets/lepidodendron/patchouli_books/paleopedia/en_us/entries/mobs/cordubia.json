@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cordubia",
 			"title": "Cordubia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Cnidaria $(br)>Medusae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Cnidaria$(br)>Medusae"
 		},
         	{
 			"type": "image",

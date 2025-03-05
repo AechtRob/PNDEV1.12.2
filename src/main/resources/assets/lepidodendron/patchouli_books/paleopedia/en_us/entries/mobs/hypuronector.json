@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hypuronector",
 			"title": "Hypuronector",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia $(br)>Drepanosauromorpha $(br)>Drepanosauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Drepanosauromorpha$(br)>Drepanosauridae"
 		},
         	{
             "type": "entity",

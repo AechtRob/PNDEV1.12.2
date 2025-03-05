@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_carcinosoma",
 			"title": "Carcinosoma",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Eurypterida$(br)>Carinosomatoidea$(br)>Carcinosomatidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Eurypterida$(br)>Carinosomatoidea$(br)>Carcinosomatidae"
 		},
 		{
 			"type": "image",

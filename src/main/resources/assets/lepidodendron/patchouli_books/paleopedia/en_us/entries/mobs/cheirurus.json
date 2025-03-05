@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cheirurus",
 			"title": "Cheirurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Silurian$(br2)>Trilobita$(br)>Phacopida$(br)>Cheiruridae"
+			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Arthropoda$(br)>Trilobita$(br)>Phacopida$(br)>Cheiruridae"
 		},
 		{
 			"type": "image",

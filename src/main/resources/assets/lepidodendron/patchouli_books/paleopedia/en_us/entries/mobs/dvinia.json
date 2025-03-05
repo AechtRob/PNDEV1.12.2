@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_dvinia",
 			"title": "Dvinia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Cynodontia$(br)>Dviniidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Cynodontia$(br)>Dviniidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/dvinia.png"],
-			"title": "Dvinia prima",
+			"title": "D. prima",
 			"text": ""
 		},
 		{

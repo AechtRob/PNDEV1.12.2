@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_poposaurus",
 			"title": "Poposaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Pseudosuchia$(br)>Poposauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Pseudosuchia$(br)>Poposauridae"
 		},
 		{
 			"type": "image",

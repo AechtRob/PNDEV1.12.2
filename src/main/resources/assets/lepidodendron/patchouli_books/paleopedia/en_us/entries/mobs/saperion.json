@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_saperion",
 			"title": "Saperion",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda $(br)>Artiopoda $(br)>Trilobitomorpha $(br)>Conciliterga"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)Arthropoda$(br)>Artiopoda$(br)>Trilobitomorpha$(br)>Conciliterga"
 		},
         	{
             "type": "entity",

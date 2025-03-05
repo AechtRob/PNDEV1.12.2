@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eulithota",
 			"title": "Eulithota",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Cnidaria $(br)>Scyphozoa $(br)>Semaeostomeae $(br)>Eulithotidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Eulithotidae"
 		},
         	{
 			"type": "image",

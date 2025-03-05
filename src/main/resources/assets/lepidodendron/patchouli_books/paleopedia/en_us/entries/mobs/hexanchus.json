@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hexanchus",
 			"title": "Hexanchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Late Cretaceous-Present$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Hexanchiformes$(br)>Hexanchidae"
+			"text": "$(l)Temporal Range:$() Late Cretaceous - Present$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Hexanchiformes$(br)>Hexanchidae"
 		},
         	{
             "type": "entity",

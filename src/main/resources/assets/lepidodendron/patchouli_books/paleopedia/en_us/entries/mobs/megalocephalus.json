@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_megalocephalus",
 			"title": "Megalocephalus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Tetrapoda$(br)>Baphetidae$(br)>Loxommatinae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Tetrapoda$(br)>Baphetidae$(br)>Loxommatinae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/megalocephalus.png"],
-			"title": "Megalocephalus sp.",
+			"title": "M. pachycephalus",
 			"text": ""
 		},
 		{

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_steurbautichthys",
 			"title": "Steurbautichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Ankylophoriformes"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Ankylophoriformes"
 		},
 		{
 			"type": "image",

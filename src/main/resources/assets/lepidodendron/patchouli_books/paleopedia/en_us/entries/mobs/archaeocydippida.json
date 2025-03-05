@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_archaeocydippida",
 			"title": "Archaeocydippida",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Ctenophora $(br)>Tentaculata $(br)>Cydippida"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Ctenophora$(br)>Tentaculata$(br)>Cydippida"
 		},
         	{
 			"type": "image",

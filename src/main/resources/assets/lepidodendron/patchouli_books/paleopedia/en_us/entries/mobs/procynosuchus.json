@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_procynosuchus",
 			"title": "Procynosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Cynodontia$(br)>Procynosuchidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Cynodontia$(br)>Procynosuchidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/procynosuchus.png"],
-			"title": "Procynosuchus sp.",
+			"title": "P. delaharpeae",
 			"text": ""
 		},
 		{

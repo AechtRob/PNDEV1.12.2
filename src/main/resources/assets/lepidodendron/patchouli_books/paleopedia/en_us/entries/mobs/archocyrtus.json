@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_archocyrtus",
 			"title": "Archocyrtus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Insecta $(br)>Diptera $(br)>Acroceridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Insecta$(br)>Diptera$(br)>Acroceridae"
 		},
 		{
 			"type": "image",

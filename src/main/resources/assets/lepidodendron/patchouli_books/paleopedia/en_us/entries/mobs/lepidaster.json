@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lepidaster",
 			"title": "Lepidaster",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Echinodermata $(br)>Asteroidea $(br)>Lepidasteridae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Echinodermata$(br)>Asteroidea$(br)>Lepidasteridae"
 		},
 		{
 			"type": "image",

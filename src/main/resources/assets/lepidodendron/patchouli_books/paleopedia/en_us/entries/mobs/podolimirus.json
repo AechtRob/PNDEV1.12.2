@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_podolimirus",
 			"title": "Podolimirus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>incertae sedis"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Proarticulata$(br)>$(o)incertae sedis"
 		},
 		{
 			"type": "entity",

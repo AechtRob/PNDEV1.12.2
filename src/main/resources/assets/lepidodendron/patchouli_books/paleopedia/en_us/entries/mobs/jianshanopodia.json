@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_jianshanopodia",
 			"title": "Jianshanopodia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Xenusia$(br)>Siberiida$(br)>Siberiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Xenusia$(br)>Siberiida$(br)>Siberiidae"
 		},
 		{
 			"type": "image",

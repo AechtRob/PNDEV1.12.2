@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_nipponomaria",
 			"title": "Nipponomaria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Gastropoda$(br)>Murchisoniina$(br)>Gosseletinidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Mollusca$(br)>Gastropoda$(br)>Murchisoniina$(br)>Gosseletinidae"
 		},
 		{
 			"type": "image",

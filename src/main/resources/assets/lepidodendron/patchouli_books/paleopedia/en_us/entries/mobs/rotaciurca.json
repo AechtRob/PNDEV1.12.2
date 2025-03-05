@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_rotaciurca",
 			"title": "Rotaciurca",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Hemichordata $(br)>Pterobranchia $(br)>Cephalodiscida"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Hemichordata$(br)>Pterobranchia$(br)>Cephalodiscida"
 		},
         	{
 			"type": "image",

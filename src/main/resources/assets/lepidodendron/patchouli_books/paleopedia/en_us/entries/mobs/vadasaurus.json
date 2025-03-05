@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_vadasaurus",
 			"title": "Vadasaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$()Jurassic $(br2)>Reptilia$(br)>Rhynchocephalia$(br2)>Sphenodontia"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Rhynchocephalia$(br2)>Sphenodontia"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/vadasaurus.png"],
-			"title": "Vadasaurus herzogi",
+			"title": "V. herzogi",
 			"text": ""
 		},
 		{

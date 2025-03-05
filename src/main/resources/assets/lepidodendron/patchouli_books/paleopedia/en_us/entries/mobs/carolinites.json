@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_carolinites",
 			"title": "Carolinites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Trilobita $(br)>Proetida $(br)>Telephinidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Trilobita$(br)>Proetida$(br)>Telephinidae"
 		},
 		{
 			"type": "image",

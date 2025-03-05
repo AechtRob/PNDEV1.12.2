@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_austrolimulus",
 			"title": "Austrolimulus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chelicerata$(br)>Xiphosura$(br)>Austrolimulidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Arthropoda$(br)>Chelicerata$(br)>Xiphosura$(br)>Austrolimulidae"
 		},
 		{
 			"type": "image",

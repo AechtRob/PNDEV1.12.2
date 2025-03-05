@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_nothosaurus",
 			"title": "Nothosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Sauropterygia$(br)>Nothosauroidea$(br)>Nothosauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Sauropterygia$(br)>Nothosauroidea$(br)>Nothosauridae"
 		},
 		{
 			"type": "image",

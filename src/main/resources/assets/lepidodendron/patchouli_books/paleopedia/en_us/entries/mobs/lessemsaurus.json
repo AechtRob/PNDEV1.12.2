@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lessemsaurus",
 			"title": "Lessemsaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Sauropoda$(br)>Lessemsauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Sauropoda$(br)>Lessemsauridae"
 		},
 		{
 			"type": "image",

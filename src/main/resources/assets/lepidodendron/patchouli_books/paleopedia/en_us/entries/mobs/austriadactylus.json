@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_austriadactylus",
 			"title": "Austriadactylus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Pterosauria$(br)>Preondactylia"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Pterosauria$(br)>Preondactylia"
 		},
 		{
 			"type": "image",

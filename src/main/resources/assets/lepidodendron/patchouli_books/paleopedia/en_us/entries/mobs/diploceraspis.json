@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_diploceraspis",
 			"title": "Diploceraspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Lepospndyli$(br)>Nectridea$(br)>Diplocaulidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Lepospndyli$(br)>Nectridea$(br)>Diplocaulidae"
 		},
 		{
 			"type": "image",

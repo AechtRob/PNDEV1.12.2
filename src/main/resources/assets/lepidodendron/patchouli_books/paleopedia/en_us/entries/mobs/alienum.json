@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_alienum",
 			"title": "Alienum",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>incertae sedis"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>$(o)incertae sedis"
 		},
         	{
             "type": "entity",
