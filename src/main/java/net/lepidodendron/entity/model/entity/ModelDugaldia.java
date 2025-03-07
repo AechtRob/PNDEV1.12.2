@@ -384,14 +384,12 @@ public class ModelDugaldia extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
         EntityPrehistoricFloraDugaldia ee = (EntityPrehistoricFloraDugaldia) entitylivingbaseIn;
 
-            if (ee.getIsFast()) { //Running
-                animRunning(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-            } else {
-                animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-            }
+        if (ee.getIsFast()) { //Running
+            animRunning(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+        } else {
+            animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+        }
 
-
-        
         if (ee.getAnimation() == ee.GRAPPLE_ANIMATION) {
             animDisplay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
