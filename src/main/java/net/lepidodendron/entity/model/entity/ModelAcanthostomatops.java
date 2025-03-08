@@ -312,6 +312,7 @@ public class ModelAcanthostomatops extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.bone.render(f5);
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body2, 0.0F, 0.1309F, 0.0F);
         this.setRotateAngle(cube_r1, 0.0F, 0.5672F, 0.0F);
@@ -357,16 +358,16 @@ public class ModelAcanthostomatops extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body2.offsetY = 0.5F;
-        this.body2.offsetX = 0.5F;
-        this.body2.rotateAngleY = (float) Math.toRadians(210);
-        this.body2.rotateAngleX = (float) Math.toRadians(8);
-        this.body2.rotateAngleZ = (float) Math.toRadians(-4);
-        this.body2.scaleChildren = true;
+        this.bone.offsetY = -0.75F;
+        this.bone.offsetX = 0.5F;
+        this.bone.rotateAngleY = (float) Math.toRadians(210);
+        this.bone.rotateAngleX = (float) Math.toRadians(35);
+        this.bone.rotateAngleZ = (float) Math.toRadians(-1);
+        this.bone.scaleChildren = true;
         float scaler = 2F;
-        this.body2.setScale(scaler, scaler, scaler);
+        this.bone.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(body2, 0.0F, 4F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.1309F, 0.0F);
         this.setRotateAngle(cube_r1, 0.0F, 0.5672F, 0.0F);
         this.setRotateAngle(cube_r10, 0.0436F, 0.0F, -0.0436F);
         this.setRotateAngle(cube_r11, 0.0436F, 0.0F, 0.0F);
@@ -402,10 +403,10 @@ public class ModelAcanthostomatops extends ModelBasePalaeopedia {
         this.setRotateAngle(tail3, 0.0872F, -0.2599F, -0.0451F);
         this.setRotateAngle(upperjaw, -0.3927F, 0.0F, 0.0F);
         //End of pose, now render the model:
-        this.body2.render(f);
+        this.bone.render(f);
         //Reset rotations, positions and sizing:
-        this.body2.setScale(1.0F, 1.0F, 1.0F);
-        this.body2.scaleChildren = false;
+        this.bone.setScale(1.0F, 1.0F, 1.0F);
+        this.bone.scaleChildren = false;
         resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
