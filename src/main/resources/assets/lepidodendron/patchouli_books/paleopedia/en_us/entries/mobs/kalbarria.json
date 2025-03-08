@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kalbarria",
 			"title": "Kalbarria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Euthycarcinoidea$(br)>Euthycarcinida$(br)>Kottixerxidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Euthycarcinoidea$(br)>Euthycarcinida$(br)>Kottixerxidae"
 		},
 		{
 			"type": "image",

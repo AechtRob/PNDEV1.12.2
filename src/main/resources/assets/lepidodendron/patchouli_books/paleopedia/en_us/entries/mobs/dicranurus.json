@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dicranurus",
 			"title": "Dicranurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda $(br)>Trilobita $(br)>Odontopleurida $(br)>Odontopleuridae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Trilobita$(br)>Odontopleurida$(br)>Odontopleuridae"
 		},
 		{
 			"type": "image",

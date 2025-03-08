@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_passaloteuthis",
 			"title": "Passaloteuthis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca $(br)>Cephalopoda $(br)>Belemnitida $(br)>Passaloteuthidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Belemnitida$(br)>Passaloteuthidae"
 		},
 		{
 			"type": "image",

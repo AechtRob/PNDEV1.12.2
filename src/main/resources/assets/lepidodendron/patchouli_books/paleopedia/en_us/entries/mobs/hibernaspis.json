@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hibernaspis",
 			"title": "Hibernaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Amphiaspidida$(br)>Hibernaspidoidei$(br)>Hibernaspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Amphiaspidida$(br)>Hibernaspidoidei$(br)>Hibernaspididae"
 		},
 		{
 			"type": "image",

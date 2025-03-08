@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_uralichas",
 			"title": "Uralichas",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Trilobita$(br)>Lichida$(br)>Lichidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Trilobita$(br)>Lichida$(br)>Lichidae"
 		},
 		{
 			"type": "image",

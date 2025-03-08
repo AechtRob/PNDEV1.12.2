@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraAlienum extends EntityPrehistoricFloraFishBas
 		return true;
 	}
 
-	public static String getPeriod() {return "Precambrian";}
+	public static String getPeriod() {return "Neoproterozoic (Ediacaran)";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

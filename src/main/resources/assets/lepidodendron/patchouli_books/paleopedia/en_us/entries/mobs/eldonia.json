@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eldonia",
 			"title": "Eldonia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Deuterostomia $(br)>Ambulacraria $(br)>Cambroernida $(br)>Eldoniidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Deuterostomia$(br)>Ambulacraria$(br)>Cambroernida$(br)>Eldoniidae"
 		},
         	{
 			"type": "image",

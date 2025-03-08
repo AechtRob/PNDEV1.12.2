@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_proganochelys",
 			"title": "Proganochelys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia$(br)>Pantestudines$(br)>Testudinata"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Pantestudines$(br)>Testudinata"
 		},
 		{
 			"type": "image",

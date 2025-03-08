@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_snail_land",
 			"title": "Land Snail",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous - Present$(br2)>Gastropoda$(br)>Heterobranchia"
+			"text": "$(l)Temporal Range:$() Carboniferous - Present$(br2)>Mollusca$(br)>Gastropoda$(br)>Heterobranchia"
 		},
 		{
 			"type": "image",

@@ -281,13 +281,13 @@ public class EntityPrehistoricFloraShantungosuchus extends EntityPrehistoricFlor
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.KNOETSCHKESUCHUS_LOOT;
+		return LepidodendronMod.SHANTUNGOSUCHUS_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_KNOETSCHKESUCHUS;
+		return ModTriggers.CLICK_SHANTUNGOSUCHUS;
 	}
 	//Rendering taxidermy:
 	//--------------------

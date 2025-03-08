@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_polybranchiaspis",
 			"title": "Polybranchiaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Agnatha $(br)>Galeaspida $(br)>Polybranchiaspididae"
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Galeaspida$(br)>Polybranchiaspididae"
 		},
 		{
 			"type": "image",

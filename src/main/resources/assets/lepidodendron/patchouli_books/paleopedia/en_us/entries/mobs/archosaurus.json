@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_archosaurus",
 			"title": "Archosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Reptilia$(br)>Proterosuchia"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Reptilia$(br)>Proterosuchia"
 		},
 		{
 			"type": "image",

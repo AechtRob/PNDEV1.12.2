@@ -10,7 +10,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
-import net.lepidodendron.item.entities.ItemNautiloidEggsProteroctopus;
+import net.lepidodendron.item.entities.ItemNautiloidEggsTetrameroceras;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.entity.IEntityLivingData;
@@ -283,7 +283,7 @@ public class EntityPrehistoricFloraTetrameroceras extends EntityPrehistoricFlora
 
 	@Override
 	public ItemStack getPropagule() {
-		return new ItemStack(ItemNautiloidEggsProteroctopus.block, (int) (1));
+		return new ItemStack(ItemNautiloidEggsTetrameroceras.block, (int) (1));
 	}
 
 	@Nullable

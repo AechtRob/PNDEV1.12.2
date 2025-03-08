@@ -64,6 +64,7 @@ public class EntityPrehistoricFloraDimorphodon extends EntityPrehistoricFloraLan
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraDimorphodon> dimorphodon = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraDimorphodon.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraDimorphodon currentDimorphodon : dimorphodon) {
+				currentDimorphodon.setAnimation(NO_ANIMATION);
 				currentDimorphodon.setRevengeTarget(ee);
 				currentDimorphodon.setAlarmTarget(ee);
 				currentDimorphodon.screamAlarmCooldown = rand.nextInt(20);

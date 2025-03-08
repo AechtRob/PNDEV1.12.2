@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_spiniplatyceras",
 			"title": "Spiniplatyceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Gastropoda$(br)>Platyceratidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Mollusca$(br)>Gastropoda$(br)>Platyceratidae"
 		},
 		{
 			"type": "image",

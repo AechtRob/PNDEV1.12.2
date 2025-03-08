@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_strombus",
 			"title": "Strombus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Early Cretaceous - Present$(br2)>Mollusca $(br)>Gastropoda $(br)>Caenogastropoda $(br)>Littorinimorpha $(br)>Strombidae"
+			"text": "$(l)Temporal Range:$() Early Cretaceous - Present$(br2)>Mollusca$(br)>Gastropoda$(br)>Caenogastropoda$(br)>Littorinimorpha$(br)>Strombidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/strombus.png"],
-			"title": "Strombus sp.",
+			"title": "S. pugilis",
 			"text": ""
 		},
 		{

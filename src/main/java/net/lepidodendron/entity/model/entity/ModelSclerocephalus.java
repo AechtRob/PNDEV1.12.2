@@ -461,36 +461,16 @@ public class ModelSclerocephalus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hip.offsetY = -0.30F;
-        this.hip.offsetX = 1.2F;
-        this.hip.rotateAngleY = (float)Math.toRadians(130);
-        this.hip.rotateAngleX = (float)Math.toRadians(0);
-        this.hip.rotateAngleZ = (float)Math.toRadians(0);
+        this.hip.offsetY = -0.9F;
+        this.hip.offsetX = 0.2F;
+        this.hip.rotateAngleY = (float)Math.toRadians(140);
+        this.hip.rotateAngleX = (float)Math.toRadians(24);
+        this.hip.rotateAngleZ = (float)Math.toRadians(5);
         this.hip.scaleChildren = true;
-        float scaler = 1.0F;
+        float scaler = 0.98F;
         this.hip.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(hip, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(chest, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(armright1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(armright2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(armright3, 0.0F, 0.0F, 0.5F);
-        this.setRotateAngle(armleft1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(armleft2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(armleft3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(legright1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(legright2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(legright3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(legleft1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(legleft2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(legleft3, 0.0F, 0.0F, 0.0F);
+
         //End of pose, now render the model:
         this.hip.render(f);
         //Reset rotations, positions and sizing:

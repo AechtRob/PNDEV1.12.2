@@ -382,21 +382,16 @@ public class ModelScrebinodus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.head.offsetY = -0.30F;
-        this.head.offsetX = 1.2F;
-        this.head.rotateAngleY = (float)Math.toRadians(130);
-        this.head.rotateAngleX = (float)Math.toRadians(0);
-        this.head.rotateAngleZ = (float)Math.toRadians(0);
+        this.head.offsetY = -0.5F;
+        this.head.offsetX = -0.1F;
+        this.head.rotateAngleY = (float)Math.toRadians(140);
+        this.head.rotateAngleX = (float)Math.toRadians(24);
+        this.head.rotateAngleZ = (float)Math.toRadians(5);
         this.head.scaleChildren = true;
-        float scaler = 2.0F;
+        float scaler = 0.98F;
         this.head.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+
         //End of pose, now render the model:
         this.head.render(f);
         //Reset rotations, positions and sizing:

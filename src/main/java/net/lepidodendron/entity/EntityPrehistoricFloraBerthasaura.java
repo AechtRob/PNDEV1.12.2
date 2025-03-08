@@ -473,6 +473,7 @@ public class EntityPrehistoricFloraBerthasaura extends EntityPrehistoricFloraLan
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraBerthasaura> Berthasaura = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraBerthasaura.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraBerthasaura currentBerthasaura : Berthasaura) {
+				currentBerthasaura.setAnimation(NO_ANIMATION);
 				currentBerthasaura.setRevengeTarget(ee);
 				currentBerthasaura.setAlarmTarget(ee);
 				currentBerthasaura.screamAlarmCooldown = rand.nextInt(20);

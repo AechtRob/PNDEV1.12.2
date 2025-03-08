@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_orcanopterus",
 			"title": "Orcanopterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda $(br)>Eurypterida $(br)>Waeringopteridae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Eurypterida$(br)>Waeringopteridae"
 		},
         	{
             "type": "entity",

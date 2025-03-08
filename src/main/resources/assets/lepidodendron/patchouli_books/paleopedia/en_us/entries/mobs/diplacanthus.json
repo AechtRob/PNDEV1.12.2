@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_diplacanthus",
 			"title": "Diplacanthus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Acanthodii$(br)>Diplacanthiformes$(br)>Diplacanthidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Acanthodii$(br)>Diplacanthiformes$(br)>Diplacanthidae"
 		},
 		{
 			"type": "image",

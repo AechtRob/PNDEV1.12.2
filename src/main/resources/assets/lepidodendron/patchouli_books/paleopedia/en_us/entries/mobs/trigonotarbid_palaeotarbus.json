@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_trigonotarbid_palaeotarbus",
 			"title": "Palaeotarbus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arachnida$(br)>Trigonotarbida"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Arachnida$(br)>Trigonotarbida"
 		},
 		{
 			"type": "entity",

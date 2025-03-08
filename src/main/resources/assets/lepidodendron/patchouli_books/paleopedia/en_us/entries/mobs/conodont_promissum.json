@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_promissum",
 			"title": "Promissum",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Conodonta$(br)>Balognathidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Chordata$(br)>Conodonta$(br)>Balognathidae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_belantsea",
 			"title": "Belantsea",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Petalodontiformes$(br)>Belantseidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Holocephali$(br)>Petalodontiformes$(br)>Belantseidae"
 		},
 		{
 			"type": "image",

@@ -33,7 +33,7 @@ public class RenderDrepanosaurus extends RenderLivingBaseWithBook<EntityPrehisto
                 break;
 
             case EAST: case WEST: case NORTH: case SOUTH: case DOWN:
-                GlStateManager.translate(0.0F, 0F, 0.0F);
+                GlStateManager.translate(0.0F, 0F, -0.07F);
                 GlStateManager.rotate(0, 1.0F, 0.0F, 0.0F);
                 break;
 

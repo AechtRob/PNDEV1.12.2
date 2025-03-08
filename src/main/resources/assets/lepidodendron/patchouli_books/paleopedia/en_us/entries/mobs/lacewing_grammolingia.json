@@ -7,9 +7,9 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_lacewing_grammolingia",
-			"title": "",
+			"title": "Grammolingia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Insecta $(br)>Neuroptera $(br)>Grammolingiidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Insecta$(br)>Neuroptera$(br)>Grammolingiidae"
 		},
 		{
 			"type": "image",

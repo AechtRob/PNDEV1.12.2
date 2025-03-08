@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_spiroceras",
 			"title": "Spiroceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca $(br)>Cephalopoda $(br)>Ammonitida $(br)>Spiroceratidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Spiroceratidae"
 		},
 		{
 			"type": "image",

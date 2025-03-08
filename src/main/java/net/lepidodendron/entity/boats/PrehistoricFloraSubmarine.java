@@ -1028,7 +1028,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 ItemStack stackB = item.getItem().copy();
                 stackB.setCount(1);
                 if (ItemStack.areItemStacksEqual(stackA, stackB)) {
-                    if (this.submarineChest.getStackInSlot(i).getCount() <= this.submarineChest.getStackInSlot(i).getItem().getItemStackLimit()) {
+                    if (this.submarineChest.getStackInSlot(i).getCount() < this.submarineChest.getStackInSlot(i).getItem().getItemStackLimit()) {
                         slot = i;
                         break;
                     }
@@ -1070,7 +1070,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 ItemStack stackB = itemstack.copy();
                 stackB.setCount(1);
                 if (ItemStack.areItemStacksEqual(stackA, stackB)) {
-                    if (this.submarineChest.getStackInSlot(i).getCount() <= this.submarineChest.getStackInSlot(i).getItem().getItemStackLimit()) {
+                    if (this.submarineChest.getStackInSlot(i).getCount() < this.submarineChest.getStackInSlot(i).getItem().getItemStackLimit()) {
                         slot = i;
                         break;
                     }

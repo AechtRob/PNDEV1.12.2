@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_trigonotarbid_kreischeria",
 			"title": "Kreischeria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arachnida$(br)>Trigonotarbida$(br)>Kreischeriidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Arachnida$(br)>Trigonotarbida$(br)>Kreischeriidae"
 		},
 		{
 			"type": "entity",

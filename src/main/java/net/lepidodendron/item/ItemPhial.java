@@ -104,12 +104,16 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 				String strPhial = "";
 				ItemStack phial = new ItemStack(ItemPhialFull.block, 1);
 				String eggRenderType = "";
+				String variant = "";
 
 				if (blockTarget == BlockEggsWater.block) {
 					TileEntity tileEntity = worldIn.getTileEntity(target);
 					if (tileEntity != null) {
 						if (tileEntity.getTileData().hasKey("creature")) {
 							eggRenderType = tileEntity.getTileData().getString("creature");
+						}
+						if (tileEntity.getTileData().hasKey("PNType")) {
+							variant = tileEntity.getTileData().getString("PNType");
 						}
 					}
 
@@ -125,6 +129,7 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 								TileEntity te = worldIn.getTileEntity(target);
 								if (te != null) {
 									te.getTileData().removeTag("creature");
+									te.getTileData().removeTag("PNType");
 								}
 								worldIn.notifyBlockUpdate(target, state, state, 3);
 							}
@@ -136,6 +141,9 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 					if (tileEntity != null) {
 						if (tileEntity.getTileData().hasKey("creature")) {
 							eggRenderType = tileEntity.getTileData().getString("creature");
+						}
+						if (tileEntity.getTileData().hasKey("PNType")) {
+							variant = tileEntity.getTileData().getString("PNType");
 						}
 					}
 
@@ -151,6 +159,11 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 								TileEntity te = worldIn.getTileEntity(target);
 								if (te != null) {
 									te.getTileData().removeTag("creature");
+									te.getTileData().removeTag("PNType");
+								}
+
+								if (tileEntity.getTileData().hasKey("PNType")) {
+									variant = tileEntity.getTileData().getString("PNType");
 								}
 								worldIn.notifyBlockUpdate(target, state, state, 3);
 							}
@@ -166,6 +179,9 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 						if (tileEntity.getTileData().hasKey("creature")) {
 							eggRenderType = tileEntity.getTileData().getString("creature");
 						}
+						if (tileEntity.getTileData().hasKey("PNType")) {
+							variant = tileEntity.getTileData().getString("PNType");
+						}
 					}
 
 					if (!eggRenderType.equalsIgnoreCase("")) {
@@ -179,6 +195,7 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 								TileEntity te = worldIn.getTileEntity(target);
 								if (te != null) {
 									te.getTileData().removeTag("creature");
+									te.getTileData().removeTag("PNType");
 								}
 								worldIn.notifyBlockUpdate(target, state, state, 3);
 							}
@@ -198,6 +215,10 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 					if (i >= 1) {
 						phial.getTagCompound().setString("PNType", eggRenderType.substring(eggRenderType.indexOf("@") + 1));
 						phial.getTagCompound().setString("id_eggs", eggRenderType.substring(0, eggRenderType.indexOf("@")));
+					}
+					else if (!variant.equalsIgnoreCase("")) {
+						phial.getTagCompound().setString("PNType", variant);
+						phial.getTagCompound().setString("id_eggs", eggRenderType);
 					}
 					else {
 						phial.getTagCompound().setString("id_eggs", eggRenderType);

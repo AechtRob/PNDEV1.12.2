@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_aphnelepis",
 			"title": "Aphnelepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii$(br2)>Archaeomaenidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br2)>Archaeomaenidae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tarracodiscus",
 			"title": "Tarracodiscus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Cnidaria $(br)>Hydrozoa $(br)>Leptothecata $(br)>Aequoreidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Cnidaria$(br)>Hydrozoa$(br)>Leptothecata$(br)>Aequoreidae"
 		},
         	{
 			"type": "image",

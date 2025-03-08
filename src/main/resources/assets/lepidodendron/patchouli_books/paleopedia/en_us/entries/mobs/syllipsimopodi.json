@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_syllipsimopodi",
 			"title": "Gordoniconus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Cephalopoda$(br)>Coleoidea"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Coleoidea"
 		},
 		{
 			"type": "image",

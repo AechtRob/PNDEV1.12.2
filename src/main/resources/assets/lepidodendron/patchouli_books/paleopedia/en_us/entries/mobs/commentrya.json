@@ -1,0 +1,47 @@
+{
+	"name": "Commentrya",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/commentrya_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_commentrya",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_commentrya",
+			"title": "Commentrya",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Actinopterygii$(br)>Palaeonisciformes$(br)>Commentryidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Commentrya",
+            "entity": "lepidodendron:prehistoric_flora_commentrya",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_commentrya",
+			"type": "text",
+			"text": "Commentrya comes from the Upper Carboniferous, with fossils being found in the Bear Gulch Limestone, Montana (USA); Lower Limestone Formation, Scotland (United Kingdom), and Westphalia, Germany. It is a small commentryaid, growing up to 8 cm in length. Commentrya has been through several revisions, with the remains themselves being described nearly a century before being given their current name."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_commentrya"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_commentrya"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_commentrya"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_commentrya"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_commentrya"
+		}
+	]
+}

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_laminacaris",
 			"title": "Laminacaris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Dinocaridida$(br)>Radiodonta$(br)>Anomalocarida"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Dinocaridida$(br)>Radiodonta$(br)>Anomalocarida"
 		},
 		{
 			"type": "image",

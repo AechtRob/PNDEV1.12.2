@@ -1,0 +1,52 @@
+{
+	"name": "Segisaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/segisaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_segisaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_segisaurus",
+			"title": "Segisaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Coelophysidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. halli",
+            "entity": "lepidodendron:prehistoric_flora_segisaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_segisaurus",
+			"type": "text",
+			"text": "Segisaurus halli comes from the Lower Jurassic, with fossils being found in the Navajo Sandstone, Arizona (USA). It is a small coelophysid, growing to 1 m in length, and weighing up to 7 kg. It is the only known dinosaur to have been found within the area in which its fossil was found in. It was also the first non-avian dinosaur to preserve furcula (wishbone)."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_segisaurus",
+			"type": "text",
+			"text": "Although it took until 2005 for this to be found out, as when it was originally described in 1936, they were thought to have been clavicles (collarbones). The generic name derives from the place name 'Tsegi Canyon', where the fossil was found; and the Greek word 'sauros' to mean 'lizard'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_segisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_segisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_segisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_segisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_segisaurus"
+		}
+	]
+}

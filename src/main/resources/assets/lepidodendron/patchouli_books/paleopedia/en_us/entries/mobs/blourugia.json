@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_blourugia",
 			"title": "Blourugia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Actinopterygii$(br)>Actinopteri"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Actinopterygii$(br)>Actinopteri"
 		},
 		{
 			"type": "image",

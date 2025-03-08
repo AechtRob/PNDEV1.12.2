@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pederpes",
 			"title": "Pederpes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Stegocephalia$(br)>Whatcheeriidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Stegocephalia$(br)>Whatcheeriidae"
 		},
 		{
 			"type": "image",

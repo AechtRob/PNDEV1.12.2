@@ -9,18 +9,18 @@
 			"trigger": "lepidodendron:pf_adv_book_semionotus",
 			"title": "Semionotus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Jurassic$(br2)>Actinopterygii$(br)>Semionotiformes$(br)>Semionotidae"
+			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Semionotiformes$(br)>Semionotidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/semionotus.png"],
-			"title": "Semionotus sp.",
+			"title": "S. bergeri",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_semionotus",
 			"type": "text",
-			"text": "Semionotus was a ray finned fish that lived from the Late Triassic to Early Jurassic. It has been found throughout the Northern Pangaea and many of its fossils have been found together suggesting they were quite common. It is a staple fish in many aquatic environments and they would have been prey to other larger fish and reptiles. Its name comes from the Greek 'semion,' meaning mark and 'notos,' meaning back"
+			"text": "Semionotus was a ray finned fish that lived from the Late Triassic to Early Jurassic. It has been found throughout the Northern Pangaea and many of its fossils have been found together suggesting they were quite common. It is a staple fish in many aquatic environments and they would have been prey to other larger fish and reptiles. Its name comes from the Greek 'semion,' meaning mark and 'notos,' meaning back."
 		},
 		{
 			"type": "lepidodendron:diet",

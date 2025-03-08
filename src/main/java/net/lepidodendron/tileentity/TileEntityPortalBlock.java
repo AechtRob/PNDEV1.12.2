@@ -25,6 +25,11 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 	private int animationTickAmbient;
 	private boolean isActive;
 
+	@Override
+	public double getMaxRenderDistanceSquared() {
+		return 256*256;
+	}
+
 	public static boolean isPartOfValidPortal(World world, BlockPos pos, IBlockState portalState) {
 		boolean xChecked = false;
 		if (world.getBlockState(pos.east()).getBlock() == portalState.getBlock()) {

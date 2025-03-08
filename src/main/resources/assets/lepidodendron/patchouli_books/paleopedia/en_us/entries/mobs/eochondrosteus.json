@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eochondrosteus",
 			"title": "Eochondrosteus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii $(br)>Acipenseriformes"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinopterygii $(br)>Acipenseriformes"
 		},
         	{
             "type": "entity",

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:items/notopala_icon"
+    "layer0": "lepidodendron:items/entities/notopala_item"
   }
 }

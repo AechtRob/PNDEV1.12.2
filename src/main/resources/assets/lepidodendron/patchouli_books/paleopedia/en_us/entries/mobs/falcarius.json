@@ -1,0 +1,57 @@
+{
+	"name": "Falcarius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/falcarius_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_falcarius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_falcarius",
+			"title": "Falcarius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Maniraptora$(br)>Therizinosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "F. utahensis",
+            "entity": "lepidodendron:prehistoric_flora_falcarius",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_falcarius",
+			"type": "text",
+			"text": "Falcarius utahensis comes from the Early Cretaceous, with fossils found in the Cedar Mountain Formation, Utah (USA). It is a medium-sized therizinosaur, growing up to 4 m in length. The fossil bed it was found from contained many individuals of its species, representing multiple age groups, meaning palaeontologists' potential for research on this animal's skeleton and growth is excellent."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_falcarius",
+			"type": "text",
+			"text": "Falcarius is the most basal member of the family Therizinosauria known, meaning that it still bore some typical theropod traits unlike later members of its family. This included a forward-facing pelvis, three-toed feet that had a reduced first digit. All of this has given palaeontologists a deeper insight into this strange and elusive family. Another thing that is interesting about Falcarius is that its claws,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_falcarius",
+			"type": "text",
+			"text": "which come in at 13 cm in length, are still short enough to be used for self defense, whilst claws on the later derived therizinosaurians are far too long and fragile to be used as such. The generic name derives directly from the Latin word 'falcarius', to mean 'sickle cutter'. The specific name derives from the place name 'Utah', where it was found; and the Latin word 'ensis', to mean 'belonging to'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_falcarius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_falcarius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_falcarius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_falcarius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_falcarius"
+		}
+	]
+}

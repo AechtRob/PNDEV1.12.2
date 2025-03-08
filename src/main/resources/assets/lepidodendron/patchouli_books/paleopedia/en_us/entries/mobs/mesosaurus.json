@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_mesosaurus",
 			"title": "Mesosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Parareptilia$(br)>Mesosauria$(br)>Mesosauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Parareptilia$(br)>Mesosauria$(br)>Mesosauridae"
 		},
 		{
 			"type": "image",

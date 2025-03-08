@@ -324,6 +324,23 @@ public class ModelHemiaster extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.bone.offsetY = -2.60F;
+        this.bone.offsetX = 0.0F;
+        this.bone.rotateAngleY = (float)Math.toRadians(202);
+        this.bone.rotateAngleX = (float)Math.toRadians(22);
+        this.bone.rotateAngleZ = (float)Math.toRadians(-12);
+        this.bone.scaleChildren = true;
+        float scaler = 7.00F;
+        this.bone.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.bone.render(f);
+        //Reset rotations, positions and sizing:
+        this.bone.setScale(1.0F, 1.0F, 1.0F);
+        this.bone.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

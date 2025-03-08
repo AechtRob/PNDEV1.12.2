@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cenoceras",
 			"title": "Cenoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)>Mollusca $(br)>Cephalopoda $(br)>Nautilida $(br)>Nautilidae"
+			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Nautilida$(br)>Nautilidae"
 		},
 		{
 			"type": "image",

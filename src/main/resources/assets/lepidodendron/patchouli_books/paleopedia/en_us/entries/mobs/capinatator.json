@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_capinatator",
 			"title": "Capinatator",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Animalia $(br)>Chaetognatha"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Animalia$(br)>Chaetognatha"
 		},
         	{
             "type": "entity",

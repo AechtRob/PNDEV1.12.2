@@ -2,7 +2,7 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEgertonodus;
-import net.lepidodendron.entity.model.entity.ModelParhybodus;
+import net.lepidodendron.entity.model.entity.ModelEgertonodus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -15,7 +15,7 @@ public class RenderEgertonodus extends RenderLivingBaseWithBook<EntityPrehistori
         return 0.58F;
     }
     public RenderEgertonodus(RenderManager mgr) {
-        super(mgr, new ModelParhybodus(), 0.0f);
+        super(mgr, new ModelEgertonodus(), 0.0f);
     }
 
     @Override

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pseudorhina",
 			"title": "Pseudorhina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Chondrichthyes $(br)>Squatiniformes $(br)>Pseudorhinidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Squatiniformes$(br)>Pseudorhinidae"
 		},
 		{
 			"type": "image",

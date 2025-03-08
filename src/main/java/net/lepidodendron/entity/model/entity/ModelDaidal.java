@@ -359,13 +359,13 @@ public class ModelDaidal extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.bone.offsetY = -2.0F;
-        this.bone.offsetX = -1.338F;
-        this.bone.rotateAngleY = (float)Math.toRadians(200);
-        this.bone.rotateAngleX = (float)Math.toRadians(8);
+        this.bone.offsetY = -3.0F;
+        this.bone.offsetX = 0.438F;
+        this.bone.rotateAngleY = (float)Math.toRadians(230);
+        this.bone.rotateAngleX = (float)Math.toRadians(18);
         this.bone.rotateAngleZ = (float)Math.toRadians(-8);
         this.bone.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 5.63F;
         this.bone.setScale(scaler, scaler, scaler);
 
         //End of pose, now render the model:

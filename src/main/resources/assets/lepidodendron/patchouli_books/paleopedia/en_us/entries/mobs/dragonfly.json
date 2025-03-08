@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dragonfly",
 			"title": "Dragonfly",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Present$(br2)>Insecta$(br)>Odonata$(br)>Epiprocta$(br)>Anisoptera"
+			"text": "$(l)Temporal Range:$() Jurassic - Present$(br2)>Arthropoda$(br)>Insecta$(br)>Odonata$(br)>Epiprocta$(br)>Anisoptera"
 		},
 		{
 			"type": "image",

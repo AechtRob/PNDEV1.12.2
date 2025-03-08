@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_rhamphorhynchus",
 			"title": "Rhamphorhynchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Novialoidea $(br)>Breviquartossa $(br)>Rhamphorhynchidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Pterosauria$(br)>Novialoidea$(br)>Breviquartossa$(br)>Rhamphorhynchidae"
 		},
         	{
             "type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_rhamphorhynchus",
 			"type": "text",
-			"text": "Rhamphorhynchus is a Jurassic pterosaur known from many places around the world. It was a medium sized animal with a wingspawn close to 2 meters, though some specimens suggest a larger wingspan. Its dentition shows that it was probably a piscivore, and may have lived in a similar way to today's seabirds. Recent studies show that the animal had large broad feet suggesting that it likely foraged while swimming, instead of being an aerial piscivore."
+			"text": "Rhamphorhynchus is a Jurassic pterosaur known from many places around the world. It was a medium sized animal with a wingspan close to 2 meters, though some specimens suggest a larger wingspan. Its dentition shows that it was probably a piscivore, and may have lived in a similar way to today's seabirds. Recent studies show that the animal had large broad feet suggesting that it likely foraged while swimming, instead of being an aerial piscivore."
 		},
 		{
 			"type": "lepidodendron:diet",

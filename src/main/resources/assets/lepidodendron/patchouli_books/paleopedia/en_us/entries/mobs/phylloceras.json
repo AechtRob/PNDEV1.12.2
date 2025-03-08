@@ -9,11 +9,11 @@
 			"trigger": "lepidodendron:pf_adv_book_phylloceras",
 			"title": "Phylloceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Mollusca $(br)>Cephalopoda $(br)>Ammonitida $(br)>Phylloceratidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Phylloceratidae"
 		},
         	{
             "type": "entity",
-            "name": "Phylloceras sp.",
+            "name": "P. serum",
             "entity": "lepidodendron:prehistoric_flora_phylloceras",
             "rotate": false,
             "default_rotation": 0

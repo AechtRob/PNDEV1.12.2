@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_longisquama",
 			"title": "Longisquama",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia $(br)>Neodiapsida"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Neodiapsida"
 		},
         	{
             "type": "entity",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_sclerocormus",
 			"title": "Sclerocormus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Ichthyosauromorpha$(br)>Ichthyosauriformes$(br)>Nasorostra"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordara$(br)>Ichthyosauromorpha$(br)>Ichthyosauriformes$(br)>Nasorostra"
 		},
 		{
 			"type": "image",

@@ -1,0 +1,52 @@
+{
+"name": "Muttaburrasaurus",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/muttaburrasaurus_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_muttaburrasaurus",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_muttaburrasaurus",
+"title": "Muttaburrasaurus",
+"type": "quest",
+"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithiscia$(br)>Ornithopoda$(br)>Rhabdodontomorpha"
+},
+        {
+            "type": "entity",
+            "name": "M. langdoni",
+            "entity": "lepidodendron:prehistoric_flora_muttaburrasaurus",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_muttaburrasaurus",
+"type": "text",
+"text": "Muttaburrasaurus is a genus of Iguanodontian dinosaur from the Early Cretaceous of Austrialia. It is currently the second most complete dinosaur fossil known from Australia following behind Kunbarrasaurus. Muttaburrasaurus was named after were it was found in the Muttaburra site of Queensland, Australia."
+},
+{
+"advancement": "lepidodendron:pf_adv_book_muttaburrasaurus",
+"type": "text",
+"text": "Muttaburrasaurs would have grown to the length of about 8 meters and is quite widely proposed to have had nasal sacs for making calls."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_muttaburrasaurus"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_muttaburrasaurus"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_muttaburrasaurus"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_muttaburrasaurus"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_muttaburrasaurus"
+}
+]
+}

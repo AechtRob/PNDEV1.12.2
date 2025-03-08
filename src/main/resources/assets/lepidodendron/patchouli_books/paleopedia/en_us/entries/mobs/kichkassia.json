@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kichkassia",
 			"title": "Kichkassia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Actinopterygii $(br)>Eurynotoidiformes $(br)>Eurynotoidiidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Actinopterygii$(br)>Eurynotoidiformes$(br)>Eurynotoidiidae"
 		},
         	{
             "type": "entity",

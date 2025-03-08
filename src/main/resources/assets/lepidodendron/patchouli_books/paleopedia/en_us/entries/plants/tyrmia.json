@@ -1,0 +1,49 @@
+{
+	"name": "Tyrmia",
+	"read_by_default": true,
+	"icon": "lepidodendron:tyrmia",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_tyrmia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tyrmia",
+			"title": "Tyrmia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous (uncertain Jurassic records)$(br2)$(l)Propagation:$() Use a collection envelope to harvest seeds.$(br2)$(l)Growth:$() Grows on all dirt-like blocks."
+		},
+		{
+			"type": "multiblock",
+			"name": "Tyrmia sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "C" ],
+					[ "B" ],
+					[ "A" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"C": "lepidodendron:tyrmia_top",
+					"B": "lepidodendron:tyrmia_centre",
+					"A": "lepidodendron:tyrmia",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tyrmia",
+			"type": "text",
+			"text": "Tyrmia is the name given to fossils of a particular form of leaf which belonged to some Bennettitalean plants. The taxon is probably invalid technically, as the fossils appear to be within Pterophyllum. The instances of the leaves referred to as Tyrmia were found specifically in early Cretaceous deposits in Siberia and China."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tyrmia",
+			"type": "text",
+			"text": "We have retained this name to show a different type of Bennettite growth concept in the mod. See the entry on $(l:plants/pterophyllum)Pterophyllum$(/l) for more about those leaves.$(br2)We do not usually know what plants the various leaves come from, however Bennettites plants are normally woody plants, displaying a divaricate branching habit (Y-shaped branching),"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tyrmia",
+			"type": "text",
+			"text": "very like modern Banksia. As the leaves assigned to Tyrmia leaves are not vast, they have been placed onto a small woody shrub with a generally bushy habit in our mod. Bennettites were not Angiosperms, but are known to have usually produced sometimes dramatic flower-like or cone-like structures for pollination and seed production, and so we have added the suggestion of floral structures to our plant."
+		}
+	]
+}

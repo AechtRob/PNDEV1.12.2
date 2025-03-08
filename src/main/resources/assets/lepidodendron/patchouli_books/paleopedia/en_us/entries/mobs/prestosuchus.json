@@ -21,12 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_prestosuchus",
 			"type": "text",
-			"text": "Prestosuchus chiniquensis comes from the Middle Triassic, with fossils found in the Santa Maria Formation, Brazil. It is the largest prestosuchidan, and is also the namesake of the family, growing up to around 7 m in overall length."
+			"text": "Prestosuchus chiniquensis comes from the Middle Triassic, with fossils found in the Santa Maria Formation, Brazil. It is amongst the largest known prestosuchids, and is also the namesake of the family, growing up to around 7 m in overall length. Prestosuchus has had many species described over the years, but currently P. chiniquensis remains as the only valid species, with all the others being either a part of P. chiniquensis themselves, assigned to another genus, or given their own genus and species entirely."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_prestosuchus",
 			"type": "text",
-			"text": "The generic name derives from the middle name of Vicentino Prestes de Almeida, a Brazilian Paleontologist; and the Latin word 'suchus', to mean 'crocodile'. The specific name derives from the Latinised place name 'Chiniquá', where the fossils were found."
+			"text": "The generic name derives from the middle name of Vicentino Prestes de Almeida, a Brazilian paleontologist; and the Latin word 'suchus', to mean 'crocodile'. The specific name derives from the Latinised place name 'Chiniquá', where the fossils were found."
         },
 		{
 			"type": "lepidodendron:diet",

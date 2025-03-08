@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_spathicephalus",
 			"title": "Spathicephalus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Elpistostegalia$(br)>Stegocephalia$(br)>Baphetoidea$(br)>Spathicephalidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Elpistostegalia$(br)>Stegocephalia$(br)>Baphetoidea$(br)>Spathicephalidae"
 		},
 		{
 			"type": "image",

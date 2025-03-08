@@ -76,11 +76,12 @@ public class ModelAlienum extends ModelBasePalaeopedia {
         this.main.render(0.01F);
         resetToDefaultPose();
     }
+
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.7F;
-        this.main.offsetX = 0.8F;
+        this.main.offsetY = -0.9F;
+        this.main.offsetX = 0.1F;
         this.main.rotateAngleY = (float)Math.toRadians(200);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
@@ -88,7 +89,7 @@ public class ModelAlienum extends ModelBasePalaeopedia {
         float scaler = 3.5F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(main, 0.2F, 3.5F, 0.3F);
+        this.setRotateAngle(main, 0.2F, 3.75F, 0.3F);
         this.setRotateAngle(tail, 0.0F, 0.7F, 0.0F);
         this.setRotateAngle(tail2, 0.0F, 0.5F, 0.0F);
         //End of pose, now render the model:

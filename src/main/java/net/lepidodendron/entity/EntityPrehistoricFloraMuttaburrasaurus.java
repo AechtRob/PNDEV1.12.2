@@ -184,7 +184,7 @@ public class EntityPrehistoricFloraMuttaburrasaurus extends EntityPrehistoricFlo
 		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, GRAZE_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, IDLE1, IDLE2};
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	@Override
 	public int getDrinkLength() {

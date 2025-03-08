@@ -1153,7 +1153,23 @@ public class ModelLepidasterella extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = -2.60F;
+        this.root.offsetX = 0.0F;
+        this.root.rotateAngleY = (float)Math.toRadians(202);
+        this.root.rotateAngleX = (float)Math.toRadians(22);
+        this.root.rotateAngleZ = (float)Math.toRadians(-12);
+        this.root.scaleChildren = true;
+        float scaler = 4.00F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

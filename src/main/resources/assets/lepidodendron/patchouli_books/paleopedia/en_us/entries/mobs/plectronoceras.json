@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_plectronoceras",
 			"title": "Plectronoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Mollusca $(br)>Cephalopoda $(br)>Plectronocerida $(br)>Plectronoceridae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Plectronocerida$(br)>Plectronoceridae"
 		},
 		{
 			"type": "entity",

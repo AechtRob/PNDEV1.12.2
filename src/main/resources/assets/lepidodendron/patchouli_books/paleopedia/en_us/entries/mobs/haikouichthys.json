@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_haikouichthys",
 			"title": "Haikouichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Agnatha$(br)>Myllokunmingiida$(br)>Myllokunmingiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Chordata$(br)>Agnatha$(br)>Myllokunmingiida$(br)>Myllokunmingiidae"
 		},
 		{
 			"type": "image",

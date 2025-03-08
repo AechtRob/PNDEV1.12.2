@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_nimbia",
 			"title": "Nimbia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cryogenian - Cambrian$(br2)>$(o)incertae sedis"
+			"text": "$(l)Temporal Range:$() Neoproterozic (Cryogenian - Ediacaran) - Cambrian$(br2)>$(o)incertae sedis"
 		},
 		{
 			"type": "entity",

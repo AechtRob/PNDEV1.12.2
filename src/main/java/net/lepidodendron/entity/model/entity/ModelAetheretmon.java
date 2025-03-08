@@ -231,19 +231,16 @@ public class ModelAetheretmon extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.30F;
-        this.main.offsetX = 1.2F;
-        this.main.rotateAngleY = (float)Math.toRadians(130);
-        this.main.rotateAngleX = (float)Math.toRadians(0);
-        this.main.rotateAngleZ = (float)Math.toRadians(0);
+        this.main.offsetY = -1.4F;
+        this.main.offsetX = 0.5F;
+        this.main.rotateAngleY = (float)Math.toRadians(252);
+        this.main.rotateAngleX = (float)Math.toRadians(6);
+        this.main.rotateAngleZ = (float)Math.toRadians(-6);
         this.main.scaleChildren = true;
-        float scaler = 2.0F;
+        float scaler = 2.93F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(main, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
+
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

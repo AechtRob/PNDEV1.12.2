@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_guiyu",
 			"title": "Guiyu",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Sarcopterygii"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Sarcopterygii"
 		},
 		{
 			"type": "image",

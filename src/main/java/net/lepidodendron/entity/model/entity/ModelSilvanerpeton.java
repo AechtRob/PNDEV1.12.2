@@ -341,12 +341,12 @@ public class ModelSilvanerpeton extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = -2.0F;
-        this.hips.offsetX = -1.338F;
-        this.hips.rotateAngleY = (float)Math.toRadians(200);
-        this.hips.rotateAngleX = (float)Math.toRadians(8);
+        this.hips.offsetX = -0.338F;
+        this.hips.rotateAngleY = (float)Math.toRadians(210);
+        this.hips.rotateAngleX = (float)Math.toRadians(18);
         this.hips.rotateAngleZ = (float)Math.toRadians(-8);
         this.hips.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 2.63F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
 
@@ -356,7 +356,6 @@ public class ModelSilvanerpeton extends ModelBasePalaeopedia {
         this.hips.setScale(1.0F, 1.0F, 1.0F);
         this.hips.scaleChildren = false;
         resetToDefaultPose();
-
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

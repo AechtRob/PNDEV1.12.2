@@ -191,15 +191,24 @@ public class ModelLethiscus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -2.0F;
-        this.root.offsetX = -1.338F;
-        this.root.rotateAngleY = (float)Math.toRadians(200);
-        this.root.rotateAngleX = (float)Math.toRadians(8);
+        this.root.offsetY = -1.5F;
+        this.root.offsetX = 1.85F;
+        this.root.rotateAngleY = (float)Math.toRadians(245);
+        this.root.rotateAngleX = (float)Math.toRadians(28);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 1.50F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(neck, 0.0F, -0.2F, 0.05F);
+        this.setRotateAngle(head, 0.0F, -0.2F, 0.05F);
+        this.setRotateAngle(body1, 0.0F, 0.2F, 0.05F);
+        this.setRotateAngle(body2, 0.0F, 0.3F, 0.05F);
+        this.setRotateAngle(body3, 0.0F, 0.4F, 0.05F);
+        this.setRotateAngle(body4, 0.0F, -0.5F, 0.05F);
+        this.setRotateAngle(body5, 0.0F, -0.6F, 0.05F);
+        this.setRotateAngle(body6, 0.0F, -0.8F, 0.05F);
+        this.setRotateAngle(body7, 0.0F, -1.0F, 0.05F);
 
         //End of pose, now render the model:
         this.root.render(f);

@@ -243,13 +243,13 @@ public class ModelCladocyclus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -2.0F;
-        this.base.offsetX = -1.338F;
-        this.base.rotateAngleY = (float)Math.toRadians(200);
+        this.base.offsetY = -0.85F;
+        this.base.offsetX = 0.78F;
+        this.base.rotateAngleY = (float)Math.toRadians(250);
         this.base.rotateAngleX = (float)Math.toRadians(8);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
         this.base.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 0.86F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
 
@@ -259,7 +259,6 @@ public class ModelCladocyclus extends ModelBasePalaeopedia {
         this.base.setScale(1.0F, 1.0F, 1.0F);
         this.base.scaleChildren = false;
         resetToDefaultPose();
-
     }
 
     public void renderStaticWall(float f) {

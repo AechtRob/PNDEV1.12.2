@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_carbotubulus",
 			"title": "Carbotubulus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br)>Panarthropoda$(br)>Lobopodia$(br)>Hallucigeniidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br)>Ecdysozoa$(br)>Panarthropoda$(br)>Lobopodia$(br)>Hallucigeniidae"
 		},
         	{
             "type": "entity",

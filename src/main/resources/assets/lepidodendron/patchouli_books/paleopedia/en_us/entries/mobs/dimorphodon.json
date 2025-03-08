@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dimorphodon",
 			"title": "Dimorphodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Macronychoptera $(br)>Dimorphodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Pterosauria$(br)>Macronychoptera $(br)>Dimorphodontidae"
 		},
         	{
             "type": "entity",

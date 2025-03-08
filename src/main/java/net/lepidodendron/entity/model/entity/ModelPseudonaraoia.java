@@ -114,13 +114,13 @@ public class ModelPseudonaraoia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.pseudonaraoia.offsetY = -2.0F;
-        this.pseudonaraoia.offsetX = -1.338F;
-        this.pseudonaraoia.rotateAngleY = (float)Math.toRadians(200);
-        this.pseudonaraoia.rotateAngleX = (float)Math.toRadians(8);
-        this.pseudonaraoia.rotateAngleZ = (float)Math.toRadians(-8);
+        this.pseudonaraoia.offsetY = -1.60F;
+        this.pseudonaraoia.offsetX = 0.0F;
+        this.pseudonaraoia.rotateAngleY = (float)Math.toRadians(202);
+        this.pseudonaraoia.rotateAngleX = (float)Math.toRadians(32);
+        this.pseudonaraoia.rotateAngleZ = (float)Math.toRadians(-12);
         this.pseudonaraoia.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 4.80F;
         this.pseudonaraoia.setScale(scaler, scaler, scaler);
         //Start of pose:
 

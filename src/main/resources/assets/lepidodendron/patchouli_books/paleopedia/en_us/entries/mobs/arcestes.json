@@ -1,0 +1,47 @@
+{
+	"name": "Arcestes",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/arcestes_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_arcestes",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_arcestes",
+			"title": "Arcestes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Ceratitida$(br)>Arcestaceae$(br)>Arcestidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Arcestes sp.",
+            "entity": "lepidodendron:prehistoric_flora_arcestes",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arcestes",
+			"type": "text",
+			"text": "Arcestes comes from the Triassic, with fossils found in formations across the globe. It is a small ceratitid, growing up to 12 cm in diameter. The shells of Arcestes were quite broad, giving them a almost spherical appearance to them, and also didn't have kneels, which helps with swimming. This suggests that Arcestes was most likely a bottom-dweller."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_arcestes"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_arcestes"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_arcestes"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_arcestes"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_arcestes"
+		}
+	]
+}

@@ -201,13 +201,13 @@ public class ModelCommentrya extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -2.0F;
-        this.base.offsetX = -1.338F;
-        this.base.rotateAngleY = (float)Math.toRadians(200);
+        this.base.offsetY = -2.3F;
+        this.base.offsetX = 1.0F;
+        this.base.rotateAngleY = (float)Math.toRadians(235);
         this.base.rotateAngleX = (float)Math.toRadians(8);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
         this.base.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 3.83F;
         this.base.setScale(scaler, scaler, scaler);
 
         //End of pose, now render the model:

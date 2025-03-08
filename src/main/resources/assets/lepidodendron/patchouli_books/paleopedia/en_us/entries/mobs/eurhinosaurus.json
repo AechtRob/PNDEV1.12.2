@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eurhinosaurus",
 			"title": "Eurhinosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Reptilia $(br)>Ichthyosauria $(br)>Leptonectidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Ichthyosauria$(br)>Leptonectidae"
 		},
 		{
 			"type": "image",

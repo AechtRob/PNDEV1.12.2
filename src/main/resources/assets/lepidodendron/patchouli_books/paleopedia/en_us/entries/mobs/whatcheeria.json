@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_whatcheeria",
 			"title": "Whatcheeria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Stegocephalia$(br)>Whatcheeriidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Stegocephalia$(br)>Whatcheeriidae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_urosthenes",
 			"title": "Urosthenes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Actinopterygii$(br)>Palaeonisciformes"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Actinopterygii$(br)>Palaeonisciformes"
 		},
 		{
 			"type": "image",

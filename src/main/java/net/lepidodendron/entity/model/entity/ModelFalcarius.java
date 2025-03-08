@@ -665,13 +665,13 @@ public class ModelFalcarius extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = 0.250F;
+        this.root.offsetY = 0.700F;
         this.root.offsetX = 0.0F;
         this.root.rotateAngleY = (float)Math.toRadians(225);
         this.root.rotateAngleX = (float)Math.toRadians(-2);
         this.root.rotateAngleZ = (float)Math.toRadians(3);
         this.root.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.45F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
         

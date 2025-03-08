@@ -308,7 +308,7 @@ public class ModelAlbanerpeton extends ModelBasePalaeopedia {
         this.Hips.rotateAngleX = (float)Math.toRadians(20);
         this.Hips.rotateAngleZ = (float)Math.toRadians(-8);
         this.Hips.scaleChildren = true;
-        float scaler = 3.2F;
+        float scaler = 6.2F;
         this.Hips.setScale(scaler, scaler, scaler);
         //Start of pose:
 

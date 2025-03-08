@@ -282,7 +282,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public int getShoalInterval() {
-        return 100;
+        return 200;
     }
 
     @SideOnly(Side.CLIENT)

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kerygmachela",
 			"title": "Kerygmachela",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda(br)>Dinocaridida$(br)>Kerygmachelidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Dinocaridida$(br)>Kerygmachelidae"
 		},
 		{
 			"type": "image",

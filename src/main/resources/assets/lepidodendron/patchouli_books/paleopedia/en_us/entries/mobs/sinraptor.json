@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_sinraptor",
 			"title": "Sinraptor",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Metriacanthosauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Metriacanthosauridae"
 		},
         	{
             "type": "entity",

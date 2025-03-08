@@ -657,13 +657,13 @@ public class ModelGiraffatitan extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = 0.7F;
-        this.hips.offsetX = 0.1F;
+        this.hips.offsetY = 2.1F;
+        this.hips.offsetX = -0.45F;
         this.hips.rotateAngleY = (float)Math.toRadians(210);
         this.hips.rotateAngleX = (float)Math.toRadians(8);
         this.hips.rotateAngleZ = (float)Math.toRadians(-4);
         this.hips.scaleChildren = true;
-        float scaler = 0.575F;
+        float scaler = 0.485F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
 

@@ -199,6 +199,7 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraKulindadromeus> Kulindadromeus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraKulindadromeus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraKulindadromeus currentKulindadromeus : Kulindadromeus) {
+				currentKulindadromeus.setAnimation(NO_ANIMATION);
 				currentKulindadromeus.setRevengeTarget(ee);
 				currentKulindadromeus.setAlarmTarget(ee);
 				currentKulindadromeus.alarmCooldown = rand.nextInt(20);

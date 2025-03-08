@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_thulaspis",
 			"title": "Thulaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda $(br)>Artiopoda"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Artiopoda"
 		},
         	{
             "type": "entity",

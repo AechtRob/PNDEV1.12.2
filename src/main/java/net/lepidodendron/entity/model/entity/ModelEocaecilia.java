@@ -291,16 +291,24 @@ public class ModelEocaecilia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Root.offsetY = -2.0F;
-        this.Root.offsetX = -1.338F;
-        this.Root.rotateAngleY = (float)Math.toRadians(200);
-        this.Root.rotateAngleX = (float)Math.toRadians(8);
+        this.Root.offsetY = -5.0F;
+        this.Root.offsetX = 1.0F;
+        this.Root.rotateAngleY = (float)Math.toRadians(210);
+        this.Root.rotateAngleX = (float)Math.toRadians(28);
         this.Root.rotateAngleZ = (float)Math.toRadians(-8);
         this.Root.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 3.5F;
         this.Root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Neck2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body12, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body13, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body14, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body15, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body16, 0.0F, -0.2F, 0.0F);
         //End of pose, now render the model:
         this.Root.render(f);
         //Reset rotations, positions and sizing:

@@ -1,0 +1,47 @@
+{
+"name": "Platysuchus",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/platysuchus_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_platysuchus",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_platysuchus",
+"title": "Platysuchus",
+"type": "quest",
+"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Archosauria$(br)>Pseudosuchia$(br)>Thalattoscuchia$(br)>Teleosauridae"
+},
+        {
+            "type": "entity",
+            "name": "P. multiscrobiculatus",
+            "entity": "lepidodendron:prehistoric_flora_platysuchus",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_platysuchus",
+"type": "text",
+"text": "Platysuchus is a genus of telosaurid crocdyliform from the Early Jurassic of Europe. Platysuchus was 2.8 m long and looked relatively close to modern crocodiles, by having heavy osteoderms and clawed limbs. However, it was still adapted to marine life and spent much of their lives in the sea."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_platysuchus"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_platysuchus"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_platysuchus"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_platysuchus"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_platysuchus"
+}
+]
+}

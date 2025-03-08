@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_leedsichthys",
 			"title": "Leedsichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Pachycormiformes $(br)>Pachycormidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Pachycormiformes$(br)>Pachycormidae"
 		},
 		{
 			"type": "image",

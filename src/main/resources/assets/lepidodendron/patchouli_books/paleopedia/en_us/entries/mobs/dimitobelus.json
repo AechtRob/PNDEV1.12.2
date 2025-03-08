@@ -1,0 +1,47 @@
+{
+	"name": "Dimitobelus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dimitobelus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_dimitobelus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dimitobelus",
+			"title": "Dimitobelus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Belemnoidea$(br)>Dimitobelidae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. stimulus",
+            "entity": "lepidodendron:prehistoric_flora_dimitobelus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dimitobelus",
+			"type": "text",
+			"text": "Dimitobelus comes from the Cretaceous, with fossils being found across the globe. It is a small dimitobelid, growing to 7 cm in length. They are known to be fast moving nektonic predators due to their streamlined shells."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dimitobelus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dimitobelus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dimitobelus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dimitobelus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dimitobelus"
+		}
+	]
+}

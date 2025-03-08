@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_erythrosuchus",
 			"title": "Erythrosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Crocopoda$(br)>Archosauriformes$(br)>Erythrosuchidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Crocopoda$(br)>Archosauriformes$(br)>Erythrosuchidae"
 		},
 		{
 			"type": "image",

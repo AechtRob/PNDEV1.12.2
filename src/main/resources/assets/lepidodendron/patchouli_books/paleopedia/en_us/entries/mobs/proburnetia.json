@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_proburnetia",
 			"title": "Proburnetia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Biarmosuchia$(br)>Burnetiidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Biarmosuchia$(br)>Burnetiidae"
 		},
 		{
 			"type": "image",

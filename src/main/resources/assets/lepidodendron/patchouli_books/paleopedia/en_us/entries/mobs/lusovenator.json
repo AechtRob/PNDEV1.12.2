@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lusovenator",
 			"title": "Lusovenator",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Theropoda $(br)>Carcharodontosauria"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Carcharodontosauria"
 		},
         	{
             "type": "entity",

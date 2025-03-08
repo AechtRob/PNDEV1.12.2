@@ -1,0 +1,30 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    " 7 "
+  ],
+  "key": {
+    "1": {
+      "item": "lepidodendron:carboniferous_mud"
+    },
+    "3": {
+      "item": "lepidodendron:carboniferous_mud"
+    },
+    "4": {
+      "item": "lepidodendron:bottle_of_sulfuric_acid"
+    },
+    "5": {
+      "item": "lepidodendron:carboniferous_mud"
+    },
+    "7": {
+      "item": "lepidodendron:carboniferous_mud"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:toxic_mud",
+    "count": 4
+  }
+}

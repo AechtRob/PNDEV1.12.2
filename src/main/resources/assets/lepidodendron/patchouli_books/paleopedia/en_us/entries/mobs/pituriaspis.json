@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pituriaspis",
 			"title": "Pituriaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Pituriaspida$(br)>Pituriaspidiformes$(br)>Pituriaspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Pituriaspida$(br)>Pituriaspidiformes$(br)>Pituriaspididae"
 		},
 		{
 			"type": "image",

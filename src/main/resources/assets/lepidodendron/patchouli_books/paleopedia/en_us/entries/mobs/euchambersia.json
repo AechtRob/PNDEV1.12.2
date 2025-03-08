@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_euchambersia",
 			"title": "Euchambersia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Therocephalia$(br)>Akidnognathidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Therocephalia$(br)>Akidnognathidae"
 		},
 		{
 			"type": "image",

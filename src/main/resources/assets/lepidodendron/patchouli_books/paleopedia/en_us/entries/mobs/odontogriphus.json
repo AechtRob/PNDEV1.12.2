@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_odontogriphus",
 			"title": "Odontogriphus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Odontogriphidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Lophotrochozoa$(br)>Odontogriphidae"
 		},
 		{
 			"type": "image",

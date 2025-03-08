@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_elephantoceras",
 			"title": "Elephantoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Mollusca $(br)>Cephalopoda $(br)>Ammonoidea $(br)>Goniatitida $(br)>Pseudohaloritidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Goniatitida$(br)>Pseudohaloritidae"
 		},
 		{
 			"type": "image",

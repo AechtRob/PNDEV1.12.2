@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tetrameroceras",
 			"title": "Tetrameroceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Cephalopoda$(br)>Nautiloidea$(br)>Oncocerida$(br)>Hemiphragmoceratidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Nautiloidea$(br)>Oncocerida$(br)>Hemiphragmoceratidae"
 		},
         	{
             "type": "entity",

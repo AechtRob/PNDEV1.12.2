@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_fadenia_permotriassic",
 			"title": "Fadenia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian-Triassic$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Caseodontidae"
+			"text": "$(l)Temporal Range:$() Permian - Triassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Caseodontidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/fadenia.png"],
-			"title": "Fadenia sp.",
+			"title": "F. crenulata",
 			"text": ""
 		},
 		{

@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraTapejara extends EntityPrehistoricFloraLandCl
 		maxWidth = 0.85F;
 		maxHeight = 0.5F;
 		maxHealthAgeable = 10.0D;
-		ALERT_ANIMATION = Animation.create(40);
+		ALERT_ANIMATION = Animation.create(115);
 		setNoAI(!true);
 		enablePersistence();
 	}
@@ -72,12 +72,12 @@ public class EntityPrehistoricFloraTapejara extends EntityPrehistoricFloraLandCl
 
 	@Override
 	public int flyTransitionLength() {
-		return 10;
+		return 15;
 	}
 
 	@Override
 	public int unflyTransitionLength() {
-		return 10;
+		return 15;
 	}
 
 	@Override
@@ -102,6 +102,7 @@ public class EntityPrehistoricFloraTapejara extends EntityPrehistoricFloraLandCl
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraTapejara> tapejara = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraTapejara.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraTapejara currentTapejara : tapejara) {
+				currentTapejara.setAnimation(NO_ANIMATION);
 				currentTapejara.setAlarmTarget(ee);
 				currentTapejara.setRevengeTarget(ee);
 				currentTapejara.screamAlarmCooldown = rand.nextInt(20);
@@ -302,6 +303,11 @@ public class EntityPrehistoricFloraTapejara extends EntityPrehistoricFloraLandCl
 				.getObject(new ResourceLocation("lepidodendron:tapejara_alarm"));
 	}
 
+	public SoundEvent getDisplaySound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:tapejara_display"));
+	}
+
 	public void playAlarmSound()
 	{
 		SoundEvent soundevent = this.getAlarmSound();
@@ -311,6 +317,15 @@ public class EntityPrehistoricFloraTapejara extends EntityPrehistoricFloraLandCl
 			//System.err.println("playing alarm sound");
 			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
 			this.screamAlarmCooldown = 25;
+		}
+	}
+
+	public void playDisplaySound()
+	{
+		SoundEvent soundevent = this.getDisplaySound();
+		if (soundevent != null)
+		{
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
 		}
 	}
 
@@ -356,6 +371,7 @@ public class EntityPrehistoricFloraTapejara extends EntityPrehistoricFloraLandCl
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0
 				&& this.getAttachmentFacing() == EnumFacing.UP) {
 			this.setAnimation(ALERT_ANIMATION);
+			this.playDisplaySound();
 			this.standCooldown = 2000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_rebellatrix",
 			"title": "Rebellatrix",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinistia$(br)>Rebellatricidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinistia$(br)>Rebellatricidae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_xenusion",
 			"title": "Xenusion",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Xenusia$(br)>Protonychophora$(br)>Xenusiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ecdysozoa$(br)>Xenusia$(br)>Protonychophora$(br)>Xenusiidae"
 		},
 		{
 			"type": "image",

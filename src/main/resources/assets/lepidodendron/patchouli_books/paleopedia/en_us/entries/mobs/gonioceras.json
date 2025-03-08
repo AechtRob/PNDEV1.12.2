@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_gonioceras",
 			"title": "Gonioceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Nautiloidea$(br)>Actinocerida$(br)>Gonioceratidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Mollusca$(br)>Cephalopoda$(br)>Nautiloidea$(br)>Actinocerida$(br)>Gonioceratidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/gonioceras.png"],
-			"title": "Gonioceras sp.",
+			"title": "G. anceps",
 			"text": ""
 		},
 		{

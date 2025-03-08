@@ -1,5 +1,5 @@
 {
-	"name": "Psittacosaurus sinensis",
+	"name": "Psittacosaurus (Coastal)",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/psittacosaurus_sinensis_icon.png",
 	"category": "lepidodendron:mobs",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_psittacosaurus_sinensis",
 			"type": "text",
-			"text": "Psittacosaurus sinensis comes from the Early Cretaceous, with fossils being found in the Doushan Formation, China. It is the small psittacosauriid, growing up to 1 m in length. It is the second most well known species, behind P. mongoliensis."
+			"text": "Our \"Coastal Psittacosaurus\" is based on Psittacosaurus sinensis, which comes from the Early Cretaceous, with fossils being found in the Doushan Formation, China. It is a small psittacosaur, growing up to 1 m in length. It is the second most well known species, behind P. mongoliensis."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_psittacosaurus_sinensis",

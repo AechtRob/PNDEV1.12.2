@@ -206,13 +206,13 @@ public class ModelWenzichthys extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.head.offsetY = -2.0F;
-        this.head.offsetX = -1.338F;
-        this.head.rotateAngleY = (float)Math.toRadians(200);
+        this.head.offsetY = -1.45F;
+        this.head.offsetX = 0.338F;
+        this.head.rotateAngleY = (float)Math.toRadians(245);
         this.head.rotateAngleX = (float)Math.toRadians(8);
         this.head.rotateAngleZ = (float)Math.toRadians(-8);
         this.head.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 3.63F;
         this.head.setScale(scaler, scaler, scaler);
         //Start of pose:
 

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_syringocrinus",
 			"title": "Syringocrinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Echinodermata $(br)>Soluta"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Echinodermata$(br)>Soluta"
 		},
 		{
 			"type": "image",

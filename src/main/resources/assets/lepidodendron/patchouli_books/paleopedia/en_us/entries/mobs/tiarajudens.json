@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tiarajudens",
 			"title": "Tiarajudens",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Anomodontia$(br)>Anomocephaloidea"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Anomodontia$(br)>Anomocephaloidea"
 		},
 		{
 			"type": "image",

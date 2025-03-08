@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_daohugoucossus",
 			"title": "Daohugoucossus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Insecta $(br)>Hemiptera $(br)>Palaeontinidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Insecta$(br)>Hemiptera$(br)>Palaeontinidae"
 		},
 		{
 			"type": "image",

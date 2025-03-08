@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeocarcharias",
 			"title": "Palaeocarcharias",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chondrichthyes $(br)>Lamniformes"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>Lamniformes"
 		},
 		{
 			"type": "image",

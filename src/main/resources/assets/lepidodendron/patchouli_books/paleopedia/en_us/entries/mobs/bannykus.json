@@ -1,0 +1,52 @@
+{
+	"name": "Bannykus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bannykus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_bannykus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bannykus",
+			"title": "Bannykus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Alvarezsauroidea"
+		},
+        	{
+            "type": "entity",
+            "name": "B. wulatensis",
+            "entity": "lepidodendron:prehistoric_flora_bannykus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bannykus",
+			"type": "text",
+			"text": "Bannykus wulatensis comes from the Early Cretaceous, with fossils being found in the Bayin-Gobi Formation, China. It is a large alvarezsaur, growing to 2.5 m in length, and weighing up to 24 kg. 6 years before it was properly described, it was displayed under the informal name of 'Wulatesaurus', which was derived from the place name of Wulatehouqi and the Greek word 'sauros', although this was replaced with a proper formal name in 2018."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bannykus",
+			"type": "text",
+			"text": "Bannykus fills in a previously empty gap in alvarezsaur evolution. The generic name derives from the Mandarin word 'ban', to mean 'half'; and the Greek word 'onyx', to mean 'claw'. The specific name derives from the Latinised place name of 'Wulatehouqi', the county that fossils were found in."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bannykus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bannykus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bannykus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bannykus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bannykus"
+		}
+	]
+}

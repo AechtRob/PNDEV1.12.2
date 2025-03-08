@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ammonite_perisphinctes",
 			"title": "Perisphinctes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca $(br)>Cephalopoda $(br)>Ammonitida $(br)>Perisphinctidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Perisphinctidae"
 		},
 		{
 			"type": "image",

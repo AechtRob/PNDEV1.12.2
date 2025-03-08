@@ -1,0 +1,47 @@
+{
+	"name": "Lanxangichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lanxangichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_lanxangichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lanxangichthys",
+			"title": "Lanxangichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Ginglymodi$(br)>lepisosteiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "L. alticephalus",
+            "entity": "lepidodendron:prehistoric_flora_lanxangichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lanxangichthys",
+			"type": "text",
+			"text": "Lanxangichthys is a basal lepisosteiform, which is related to the Jurassic lepisosteiform, Isanichthys. It reached nearly a meter in length, however, compared to its length it has a much taller skull. Its skull is known from the Grès supérieurs Formation in Laos, while attributed postcranial material is also known from the Khok Kruat Formation in Thailand."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lanxangichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lanxangichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lanxangichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lanxangichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lanxangichthys"
+		}
+	]
+}

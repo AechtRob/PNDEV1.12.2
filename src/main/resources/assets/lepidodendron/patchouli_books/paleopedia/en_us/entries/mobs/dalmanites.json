@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_dalmanites",
 			"title": "Dalmanites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)>Trilobita$(br)>Phacopida$(br)>Dalmanitidae"
+			"text": "$(l)Temporal Range:$() Ordovician - Devonian$(br2)>Arthropoda$(br)>Trilobita$(br)>Phacopida$(br)>Dalmanitidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/dalmanites.png"],
-			"title": "Dalmanites sp.",
+			"title": "D. caudatus",
 			"text": ""
 		},
 		{

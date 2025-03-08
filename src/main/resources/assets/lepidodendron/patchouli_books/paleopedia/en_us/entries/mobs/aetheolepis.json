@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_aetheolepis",
 			"title": "Aetheolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii$(br)>Archaeomaenidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Archaeomaenidae"
 		},
 		{
 			"type": "image",

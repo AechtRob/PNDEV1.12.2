@@ -1,0 +1,52 @@
+{
+	"name": "Wenzichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/wenzichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_wenzichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_wenzichthys",
+			"title": "Wenzichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleosteomorpha$(br)>Teleostei$(br)>Euteleostei"
+		},
+        	{
+            "type": "entity",
+            "name": "W. congolensis",
+            "entity": "lepidodendron:prehistoric_flora_wenzichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_wenzichthys",
+			"type": "text",
+			"text": "Wenzichthys congolensis is a small teleost fish from the Early Cretaceous of Africa. It was initially described in 1935 by Arambourg & Schneegans as a species of Leptolepis, then a wastebasket of various small fishes, before eventually be elevated to its own genus, Wenzia, in 1976. This name turned out to be preoccupied by a gastropod, and so it was renamed to Wenzichthys. Amusingly, in 2005, a coelacanth was also given the name of Wenzia, and it too had to be renamed."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_wenzichthys",
+			"type": "text",
+			"text": "Wenzichthys belongs to the family Pattersonellidae, and is tentatively included within the modern fish order Argentiformes, which includes many of the fish referred to as smelts, though not the true smelts. However, this family is sometimes recovered as a more basal lineage of the teleosts and so this identification is hesitant at best. Wenzichthys is known from non-marine deposits in Gabon, and has been utilized in comparing the faunal similarities between South America and Africa during the rifting of these continents."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_wenzichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_wenzichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_wenzichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_wenzichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_wenzichthys"
+		}
+	]
+}

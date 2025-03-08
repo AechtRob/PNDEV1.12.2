@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_phlebolepis",
 			"title": "Phlebolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Agnatha $(br)>Thelodonti $(br)>Phlebolepidiformes $(br)>Phlebolepididae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Agnatha$(br)>Thelodonti$(br)>Phlebolepidiformes$(br)>Phlebolepididae"
 		},
 		{
 			"type": "image",

@@ -1,0 +1,52 @@
+{
+	"name": "Squalicorax",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/squalicorax_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_squalicorax",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_squalicorax",
+			"title": "Squalicorax",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Lamniformes$(br)>Anacoracidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. pristodontus",
+            "entity": "lepidodendron:prehistoric_flora_squalicorax",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_squalicorax",
+			"type": "text",
+			"text": "Squalicorax comes from the Cretaceous, with fossils being found in formations across the globe. It is a medium-sized lamniform, growing up to 3 m in length, although some specimens grew up to nearly 5 m in length. Whilst the overall body resembled that of gray reef sharks, its teeth are quite similar in appearance to tiger sharks, and, like most sharks, are the most commonly preserved part of Squalicorax."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_squalicorax",
+			"type": "text",
+			"text": "It has also been noted that Squalicorax had a generalist lifestyle, predating on fish and the like, but also resorting to scavenging, which was evidenced by one specimen having part of a foot bone of a hadrosaurid within it. The generic name derives from the Latin word 'squalus', to mean 'shark'; and the Greek word 'korax', to mean 'raven'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_squalicorax"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_squalicorax"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_squalicorax"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_squalicorax"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_squalicorax"
+		}
+	]
+}

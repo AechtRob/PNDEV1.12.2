@@ -80,6 +80,7 @@ public class EntityPrehistoricFloraAlbalophosaurus extends EntityPrehistoricFlor
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraAlbalophosaurus> Yinlong = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraAlbalophosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraAlbalophosaurus currentYinlong : Yinlong) {
+				currentYinlong.setAnimation(NO_ANIMATION);
 				currentYinlong.setRevengeTarget(ee);
 				currentYinlong.setAlarmTarget(ee);
 				currentYinlong.alarmCooldown = rand.nextInt(20);

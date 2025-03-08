@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_ebenaqua",
 			"title": "Ebenaqua",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Actinopterygii$(br)>Bobasatraniiformes"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Actinopterygii$(br)>Bobasatraniiformes$(br)>Bobasatraniidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ebenaqua.png"],
-			"title": "E. ritchei",
-			"text": ""
+			"type": "entity",
+			"name": "E. ritchei",
+			"entity": "lepidodendron:prehistoric_flora_ebenaqua",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ebenaqua",
 			"type": "text",
-			"text": "Ebenaqua is a bobasatraniiform from the late Permian period. It had a triangular body shape similar to modern angelfish. Its fossils have been found in the Rangal Coal Measures."
+			"text": "Ebenaqua is a bobasatraniiform from the Upper Permian. It had a triangular body shape similar to modern angelfish. Its fossils have been found in the Rangal Coal Measures."
 		},
 		{
 			"type": "lepidodendron:diet",

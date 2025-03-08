@@ -305,13 +305,13 @@ public class ModelToxolophosaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.pelvis.offsetY = -2.5F;
-        this.pelvis.offsetX = -0.3F;
+        this.pelvis.offsetY = -2.3F;
+        this.pelvis.offsetX = -0.10F;
         this.pelvis.rotateAngleY = (float)Math.toRadians(200);
         this.pelvis.rotateAngleX = (float)Math.toRadians(20);
         this.pelvis.rotateAngleZ = (float)Math.toRadians(-8);
         this.pelvis.scaleChildren = true;
-        float scaler = 3.2F;
+        float scaler = 2.95F;
         this.pelvis.setScale(scaler, scaler, scaler);
         //Start of pose:
 

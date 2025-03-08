@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_myriacantherpestes",
 			"title": "Myriacantherpestes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda $(br)>Diplopoda $(br)>Euphoberiida $(br)>Euphoberiidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Diplopoda$(br)>Euphoberiida$(br)>Euphoberiidae"
 		},
 		{
 			"type": "image",

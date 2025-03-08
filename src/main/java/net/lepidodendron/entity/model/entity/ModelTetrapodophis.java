@@ -303,13 +303,13 @@ public class ModelTetrapodophis extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.chest.offsetY = -2.0F;
-        this.chest.offsetX = -1.338F;
-        this.chest.rotateAngleY = (float)Math.toRadians(200);
-        this.chest.rotateAngleX = (float)Math.toRadians(8);
+        this.chest.offsetY = -2.5F;
+        this.chest.offsetX = 2.9F;
+        this.chest.rotateAngleY = (float)Math.toRadians(240);
+        this.chest.rotateAngleX = (float)Math.toRadians(28);
         this.chest.rotateAngleZ = (float)Math.toRadians(-8);
         this.chest.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 2.5F;
         this.chest.setScale(scaler, scaler, scaler);
         //Start of pose:
 

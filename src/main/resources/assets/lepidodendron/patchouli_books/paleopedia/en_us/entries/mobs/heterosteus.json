@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_heterosteus",
 			"title": "Heterosteus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Brachythoraci$(br)>Heterosteidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Brachythoraci$(br)>Heterosteidae"
 		},
 		{
 			"type": "image",

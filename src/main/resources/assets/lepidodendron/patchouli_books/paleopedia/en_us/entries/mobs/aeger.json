@@ -9,18 +9,18 @@
 			"trigger": "lepidodendron:pf_adv_book_aeger",
 			"title": "Aeger",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Cretaceous$(br2)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Aegeridae"
+			"text": "$(l)Temporal Range:$() Triassic - Cretaceous$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Aegeridae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/aegerred.png", "paleopedia:textures/aegerbrown.png"],
-			"title": "Aeger elegans",
+			"title": "A. elegans",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_aeger",
 			"type": "text",
-			"text": "Aeger is a genus of Malacostracan crustacean that lived between the late Triassic and the Cretaceous of Europe. This 8 centimeters long animal resembled a modern day prawn both in shape and behavior, preying on small coastal water animals. It possessed long antennae and three pairs of clawed appendages, all topped with a fairly long abdomen."
+			"text": "Aeger is a genus of malacostracan crustacean that lived between the Upper Triassic and the Cretaceous of Europe. This 8 centimeter long animal resembled a modern day prawn both in shape and behavior, preying on small coastal water animals. It possessed long antennae and three pairs of clawed appendages, all topped with a fairly long abdomen."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_aeger",

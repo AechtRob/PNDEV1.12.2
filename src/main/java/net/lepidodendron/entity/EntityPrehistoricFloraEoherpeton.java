@@ -240,12 +240,6 @@ public class EntityPrehistoricFloraEoherpeton extends EntityPrehistoricFloraSwim
 	}
 
 	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-
-	}
-
-	@Override
 	public boolean attackEntityAsMob(Entity entity) {
 		if (this.getAnimation() == NO_ANIMATION) {
 			this.setAnimation(ATTACK_ANIMATION);

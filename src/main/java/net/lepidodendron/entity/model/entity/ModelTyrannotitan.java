@@ -914,7 +914,7 @@ public class ModelTyrannotitan extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = -0.20F;
+        this.hips.offsetY = 0.60F;
         this.hips.offsetX = 0.0F;
         this.hips.rotateAngleY = (float)Math.toRadians(220);
         this.hips.rotateAngleX = (float)Math.toRadians(12);

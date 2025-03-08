@@ -1,0 +1,47 @@
+{
+	"name": "Triadobatrachus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/triadobatrachus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_triadobatrachus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_triadobatrachus",
+			"title": "Triadobatrachus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Amphibia"
+		},
+        	{
+            "type": "entity",
+            "name": "T. massinoti",
+            "entity": "lepidodendron:prehistoric_flora_triadobatrachus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_triadobatrachus",
+			"type": "text",
+			"text": "Triadobatrachus massinoti comes from the Lower Triassic, with fossils found in the Middle Sakamena Formation, Madagascar. It is a small frog-like amphibian, growing up to 10 cm in length. It is currently the oldest known member of the frog lineage, and also is a transitional fossil, evidenced by it possessing 26 vertebrae, whilst modern frogs only have between four to nine vertebrae."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_triadobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_triadobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_triadobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_triadobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_triadobatrachus"
+		}
+	]
+}

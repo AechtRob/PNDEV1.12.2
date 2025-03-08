@@ -2,7 +2,7 @@
 	"name": "Nematoptychius",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/nematoptychius_icon.png",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_nematoptychius ",
 	"pages": [
 		{
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_nematoptychius",
 			"type": "text",
-			"text": "Nematoptychius comes from the Carboniferous, with fossils found from formations in Scotland, Belgium and France. It is a small palaeonisciformes, growing up to 48 cm in length. The type species, N. greenocki was first described as Pygopterus greenocki, although there were no descriptions or figures, and as such when described properly some time later, it was given the current name it has today."
+			"text": "Nematoptychius comes from the Carboniferous, with fossils found from formations in Scotland, Belgium and France. It is a small palaeonisciform, growing up to 48 cm in length. The type species, N. greenocki was first described as Pygopterus greenocki, although there were no descriptions or figures, and as such when described properly some time later, it was given the current name it has today."
 		},
 		{
 			"type": "lepidodendron:diet",

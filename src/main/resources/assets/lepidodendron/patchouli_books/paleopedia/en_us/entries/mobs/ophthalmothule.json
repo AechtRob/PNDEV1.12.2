@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ophthalmothule",
 			"title": "Ophthalmothule",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Reptilia $(br)>Sauropterygia $(br)>Plesiosauria $(br)>Cryptoclididae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Plesiosauria$(br)>Cryptoclididae"
 		},
 		{
 			"type": "image",

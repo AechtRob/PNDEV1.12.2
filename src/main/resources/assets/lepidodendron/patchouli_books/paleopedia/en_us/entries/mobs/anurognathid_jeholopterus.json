@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_anuroganthid_jeholopterus",
 			"title": "Jeholopterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Pterodactyliformes $(br)>Anurognathidae $(br)>Anurognathinae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Pterosauria$(br)>Pterodactyliformes$(br)>Anurognathidae$(br)>Anurognathinae"
 		},
 		{
 			"type": "image",

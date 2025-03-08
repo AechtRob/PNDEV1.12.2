@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_diplodocus",
 			"title": "Diplodocus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Sauropoda $(br)>Diplodocoidea $(br)>Diplodocidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropoda$(br)>Diplodocoidea$(br)>Diplodocidae"
 		},
         	{
             "type": "entity",
@@ -26,7 +26,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_diplodocus",
 			"type": "text",
-			"text": "With Diplodocus's generally lighter frame it is thought that they could move reletively quick for their large size with speed estimates being at 12-22 miles per hour. but with the stress it would cause to their limbs they may prefer to amble most of the time."
+			"text": "With Diplodocus's generally lighter frame it is thought that they could move relatively quick for their large size with speed estimates being at 12-22 miles per hour. but with the stress it would cause to their limbs they may prefer to amble most of the time."
 		},
 
 		{

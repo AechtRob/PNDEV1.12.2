@@ -1,0 +1,52 @@
+{
+"name": "Haliskia",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/haliskia_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_haliskia",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_haliskia",
+"title": "Haliskia",
+"type": "quest",
+"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Pterosauria$(br)>Anhangueridae"
+},
+        {
+            "type": "entity",
+            "name": "H. peterseni",
+            "entity": "lepidodendron:prehistoric_flora_haliskia",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_haliskia",
+"type": "text",
+"text": "Haliskia is a genus anhanguerian pterosaur described in June of 2024, and it is currently the most well preserved Australian pterosaur, surpassing the previous best preserved pterosaur of Australia; Ferrodraco. The wingspan of this animal is known to be approximately 4.7 m, and is a member of the Toolebuc Formation of Queensland."
+},
+{
+"advancement": "lepidodendron:pf_adv_book_haliskia",
+"type": "text",
+"text": "It would have lived in Coastal Regions of Australia around the Eromanga Inland Sea, likely hunting fish from this ocean."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_haliskia"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_haliskia"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_haliskia"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_haliskia"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_haliskia"
+}
+]
+}

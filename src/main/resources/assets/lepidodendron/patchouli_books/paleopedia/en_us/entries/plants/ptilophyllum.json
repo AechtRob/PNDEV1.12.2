@@ -1,0 +1,64 @@
+{
+	"name": "Ptilophyllum",
+	"read_by_default": true,
+	"icon": "lepidodendron:ptilophyllum_shoot",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_ptilophyllum",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ptilophyllum",
+			"title": "Ptilophyllum",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic-Oligocene$(br2)$(l)Propagation:$() Use a collection envelope on the flowering leaves (not the main shoots) to harvest seeds.$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
+		},
+		{
+			"type": "multiblock",
+			"name": "Ptilophyllum sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "   ","E E", "   " ],
+					[ "   ","A A", "   " ],
+					[ "   ","CBD", "   " ],
+					[ "   "," A ", "   " ],
+					[ "   "," A ", "   " ],
+					[ "   "," A ", "   " ],
+					[ "   "," 0 ", "   " ]
+				],
+				"mapping": {
+					"E": "lepidodendron:ptilophyllum_shoot",
+					"D": "lepidodendron:ptilophyllum_log[up=true,east=true]",
+					"C": "lepidodendron:ptilophyllum_log[up=true,west=true]",
+					"B": "lepidodendron:ptilophyllum_log[down=true,east=true,west=true]",
+					"A": "lepidodendron:ptilophyllum_log[down=true,up=true]",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ptilophyllum",
+			"type": "text",
+			"text": "Ptilophyllum is the name given to fossils of a particular form of leaf which belonged to some Bennetitalean plants. They are found in rocks from the Triassic onwards, and are found all over the world. They are always once-pinnate (have single-level leaflets), and present a similar shape to many other Bennettitalean leaf fossils. Ptilophyllum leaves have simple smooth-edged leaflets, quite a lot longer than wide, usually somewhat like very long triangles,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ptilophyllum",
+			"type": "text",
+			"text": "arranged point-outwards, alternately with certain distinctive features of attachment and veining. Bennettites leaves are usually somewhat thickly-textured, not delicate, and so we assume the plants were somewhat tough and resilient, able to grow in many different types of habitat, and their dominance of Mesozoic floras backs this up.$(br2)We do not usually know what plants the various leaves come from, however Bennettites plants are"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ptilophyllum",
+			"type": "text",
+			"text": "normally woody plants, displaying a divaricate branching habit (Y-shaped branching), very like modern Banksia. Ptilophyllum leaves can be reasonably large leaves amongst the Bennettites, and are often interpreted in shoot arrangements reminiscent of branched cycad-like shapes. Bennettites were not Angiosperms, but are known to have usually produced sometimes dramatic flower-like or cone-like structures for pollination and seed production,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ptilophyllum",
+			"type": "text",
+			"text": "and so we have added the suggestion of floral structures to our plant.$(br2)Ptilophyllum leaves have the distinction of being known as fossils from after the end of the Cretaceous, and have been found in deposits dating from the Oligocene of Australia, which makes them by far the latest-lived \"seed fern\" fossils known. Given how extended a period the fossils are found from,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ptilophyllum",
+			"type": "text",
+			"text": "it is unlikely that they all come from the same plant or even similar plants, beyond being Bennettites."
+		}
+	]
+}

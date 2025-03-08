@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraKalops extends EntityPrehistoricFloraFishBase
 
 	@Override
 	public int getShoalSize() {
-		return 30;
+		return 16;
 	}
 
 	@Override

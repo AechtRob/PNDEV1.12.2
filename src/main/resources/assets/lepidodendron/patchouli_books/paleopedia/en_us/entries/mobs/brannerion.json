@@ -1,0 +1,47 @@
+{
+	"name": "Brannerion",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/brannerion_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_brannerion",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_brannerion",
+			"title": "Brannerion",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Albuliformes$(br)>Albulidae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. latum",
+            "entity": "lepidodendron:prehistoric_flora_brannerion",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brannerion",
+			"type": "text",
+			"text": "Brannerion comes from the Early Cretaceous, with fossils being found in the Romualdo Formation, Brazil. It is a small albuliform, growing up to 45 cm in diameter. It is considered to be a basal member of the order Albuliformes. The generic name derives from the Latinised surname of John Casper Branner, an American geologist."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_brannerion"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_brannerion"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_brannerion"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_brannerion"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_brannerion"
+		}
+	]
+}

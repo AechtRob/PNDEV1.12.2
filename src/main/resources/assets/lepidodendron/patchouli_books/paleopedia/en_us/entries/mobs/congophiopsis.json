@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_congophiopsis",
 			"title": "Congophiopsis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Neopterygii $(br)>Ionoscopiformes $(br)>Ophiopsidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Neopterygii$(br)>Ionoscopiformes$(br)>Ophiopsidae"
 		},
 		{
 			"type": "image",

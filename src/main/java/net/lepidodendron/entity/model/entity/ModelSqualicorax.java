@@ -484,13 +484,13 @@ public class ModelSqualicorax extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -2.0F;
-        this.base.offsetX = -1.338F;
-        this.base.rotateAngleY = (float)Math.toRadians(200);
+        this.base.offsetY = -0.08F;
+        this.base.offsetX = 0.408F;
+        this.base.rotateAngleY = (float)Math.toRadians(260);
         this.base.rotateAngleX = (float)Math.toRadians(8);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
         this.base.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 0.50F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
 

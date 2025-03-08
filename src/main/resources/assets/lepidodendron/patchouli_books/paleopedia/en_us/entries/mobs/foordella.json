@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_foordella",
 			"title": "Foordella",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Mollusca $(br)>Gastropoda $(br)>Pleurotomariida"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Mollusca$(br)>Gastropoda$(br)>Pleurotomariida"
 		},
         	{
             "type": "entity",

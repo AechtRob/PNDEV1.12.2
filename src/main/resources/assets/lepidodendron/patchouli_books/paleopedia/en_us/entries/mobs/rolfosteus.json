@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_rolfosteus",
 			"title": "Rolfosteus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthrodira$(br)>Camuropiscidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Camuropiscidae"
 		},
 		{
 			"type": "image",

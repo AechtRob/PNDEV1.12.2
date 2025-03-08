@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_bandringa",
 			"title": "Bandringa",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes$(br)>Elasmobranchii$(br)>Ctenacanthiformes$(br)>Bandringidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Ctenacanthiformes$(br)>Bandringidae"
 		},
 		{
 			"type": "image",

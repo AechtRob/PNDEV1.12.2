@@ -49,7 +49,6 @@ public class EntityPrehistoricFloraAcrocanthosaurus extends EntityPrehistoricFlo
 	public Animation STAND_ANIMATION;
 	public Animation RELAX_ANIMATION;
 	private int standCooldown;
-	public Animation NOISE_ANIMATION;
 
 	public EntityPrehistoricFloraAcrocanthosaurus(World world) {
 		super(world);
@@ -60,11 +59,11 @@ public class EntityPrehistoricFloraAcrocanthosaurus extends EntityPrehistoricFlo
 		maxHealthAgeable = 90.0D;
 		STAND_ANIMATION = Animation.create(210);
 		RELAX_ANIMATION = Animation.create(60);
-		NOISE_ANIMATION = Animation.create(50); //rumble
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
 	}
+
 
 	@Override
 	public int getWalkCycleLength() {
@@ -117,12 +116,12 @@ public class EntityPrehistoricFloraAcrocanthosaurus extends EntityPrehistoricFlo
 	@Override
 	public int getRoarLength() {
 		return 100;
-	} //Idle
+	} //Threat/roar
 
 	@Override
 	public int getNoiseLength() {
 		return 49;
-	} //Roar
+	} //Idle/rumble
 
 	@Override
 	public boolean hasNest() {
@@ -251,25 +250,25 @@ public class EntityPrehistoricFloraAcrocanthosaurus extends EntityPrehistoricFlo
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:tyrannotitan_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:acrocanthosaurus_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:tyrannotitan_idle"));
+				.getObject(new ResourceLocation("lepidodendron:acrocanthosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:tyrannotitan_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:acrocanthosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:tyrannotitan_death"));
+	            .getObject(new ResourceLocation("lepidodendron:acrocanthosaurus_death"));
 	}
 
 	@Override
@@ -339,8 +338,6 @@ public class EntityPrehistoricFloraAcrocanthosaurus extends EntityPrehistoricFlo
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 		//System.err.println("Eating: " + this.getEatTarget() + " isFast " + this.getIsFast());
-
-
 
 	}
 

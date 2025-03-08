@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dapedium",
 			"title": "Dapedium",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Jurassic$(br2)>Actinopterygii$(br)>Dapediiformes$(br)>Dapediidae"
+			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Dapediiformes$(br)>Dapediidae"
 		},
 		{
 			"type": "image",

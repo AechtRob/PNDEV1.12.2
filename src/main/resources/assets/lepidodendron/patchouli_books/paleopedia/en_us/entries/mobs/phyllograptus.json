@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_phyllograptus",
 			"title": "Phyllograptus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Hemichordata $(br)>Graptolithina $(br)>Graptoloidea $(br)>Phyllograptidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Hemichordata$(br)>Graptolithina$(br)>Graptoloidea$(br)>Phyllograptidae"
 		},
         	{
             "type": "entity",

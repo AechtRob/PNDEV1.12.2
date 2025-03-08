@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ophthalmosaurus",
 			"title": "Ophthalmosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Reptilia$(br)>Ichthyosauria$(br)>Ophthalmosauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Ichthyosauria$(br)>Ophthalmosauridae"
 		},
 		{
 			"type": "image",

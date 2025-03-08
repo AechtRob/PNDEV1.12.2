@@ -13,7 +13,7 @@
 		},
         	{
             "type": "entity",
-            "name": "T. drabowiensis",
+            "name": "T. draboviensis",
             "entity": "lepidodendron:prehistoric_flora_triopus",
             "rotate": false,
             "default_rotation": 0
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_triopus",
 			"type": "text",
-			"text": "Triopus drabowiensis comes from the Ordovician, with fossils found in the Letná Formation, Czech Republic; and Fezouata Formation, Morocco. It is a small globular cheloniellid and grew up to 4 cm in length. Triopus is unique from the cheloniellid in that its body is a lot more rounded that most other genera within the order."
+			"text": "Triopus draboviensis comes from the Ordovician, with fossils found in the Letná Formation, Czech Republic, and the Fezouata Formation, Morocco. It is a small globular cheloniellid, growing up to 4 - 6 cm in length. Triopus is unique from other cheloniellids in that its body is a lot more domed. It was also the first cheloniellid to be described and named all the way back in 1872, although due to the incompleteness of the original fossil, it took until 1998 for it to be placed in the cheloniellid order, which was further supported when more complete fossil material was found in 2006."
 		},
 		{
 			"type": "lepidodendron:diet",

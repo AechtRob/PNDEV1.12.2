@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tauraspis",
 			"title": "Tauraspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Osteostraci $(br)>Benneviaspidida $(br)>Boreaspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Osteostraci$(br)>Benneviaspidida$(br)>Boreaspididae"
 		},
 		{
 			"type": "image",

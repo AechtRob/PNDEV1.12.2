@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_macrosemius",
 			"title": "Macrosemius",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Macrosemiiformes $(br)>Macrosemiidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Macrosemiiformes$(br)>Macrosemiidae"
 		},
 		{
 			"type": "image",

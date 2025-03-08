@@ -84,13 +84,9 @@ public class BlockNautiloidShellArcestes extends ElementsLepidodendronMod.ModEle
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, 0, l14));
 			if (!(
-					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_shore")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach_forested_island")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy_white")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy_white_edge")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_estuary_helper")
+					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_beach")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_shore")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_volcanic_islands")
 			)
 			) {
 				break;

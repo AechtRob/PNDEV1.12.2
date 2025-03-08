@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pristerognathus",
 			"title": "Alopecognathus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Therocephalia$(br)>Scylacosauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Therocephalia$(br)>Scylacosauridae"
 		},
 		{
 			"type": "image",

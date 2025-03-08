@@ -73,6 +73,7 @@ public class EntityPrehistoricFloraXuanhuaceratops extends EntityPrehistoricFlor
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraXuanhuaceratops> Xuanhuaceratops = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraXuanhuaceratops.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraXuanhuaceratops currentXuanhuaceratops : Xuanhuaceratops) {
+				currentXuanhuaceratops.setAnimation(NO_ANIMATION);
 				currentXuanhuaceratops.setRevengeTarget(ee);
 				currentXuanhuaceratops.setAlarmTarget(ee);
 				currentXuanhuaceratops.alarmCooldown = rand.nextInt(20);

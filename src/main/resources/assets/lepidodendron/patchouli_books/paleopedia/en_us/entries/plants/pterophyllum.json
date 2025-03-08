@@ -1,0 +1,63 @@
+{
+	"name": "Pterophyllum",
+	"read_by_default": true,
+	"icon": "lepidodendron:pterophyllum_shoot",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_pterophyllum",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pterophyllum",
+			"title": "Pterophyllum",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic-Oligocene$(br2)$(l)Propagation:$() Use a collection envelope on the flowering leaves (not the main shoots) to harvest seeds.$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
+		},
+		{
+			"type": "multiblock",
+			"name": "Pterophyllum sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "   "," B ", "   " ],
+					[ " G ","CHB", " B " ],
+					[ "   "," DE", " F " ],
+					[ "   "," A ", "   " ],
+					[ "   "," A ", "   " ],
+					[ "   "," A ", "   " ],
+					[ "   "," A ", "   " ],
+					[ "   "," 0 ", "   " ]
+				],
+				"mapping": {
+					"H": "lepidodendron:pterophyllum_log[down=true,up=true,west=true]",
+					"G": "lepidodendron:pterophyllum_leaves[facing=west]",
+					"F": "lepidodendron:pterophyllum_log[up=true,south=true]",
+					"E": "lepidodendron:pterophyllum_log[up=true,west=true]",
+					"D": "lepidodendron:pterophyllum_log[down=true,east=true,north=true,up=true]",
+					"C": "lepidodendron:pterophyllum_leaves[facing=north]",
+					"B": "lepidodendron:pterophyllum_shoot",
+					"A": "lepidodendron:pterophyllum_log[down=true,up=true]",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pterophyllum",
+			"type": "text",
+			"text": "Pterophyllum is the name given to fossils of a particular form of leaf which belonged to some Bennetitalean plants. They are found in rocks from the Triassic onwards, and are found all over the world. They are always once-pinnate (have single-level leaflets), and present a similar shape to many other Bennettitalean leaf fossils. Pterophyllum leaves are long and have large numbers of simple, narrow, smooth-edged leaflets, much longer than wide,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pterophyllum",
+			"type": "text",
+			"text": "each leaflet being approximately narrowly cuboid in outline, with the sides all virtually parallel, although they may be attached at various different angles according to species, arranged alternately with certain distinctive features of attachment and veining. Bennettites leaves are usually somewhat thickly-textured, not delicate, and so we assume the plants were somewhat tough and resilient, able to grow in many different types of habitat, and their dominance of Mesozoic floras backs this up."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pterophyllum",
+			"type": "text",
+			"text": "We do not usually know what plants the various leaves come from, however Bennettites plants are normally woody plants, displaying a divaricate branching habit (Y-shaped branching), very like modern Banksia. Pterophyllum leaves are amongst the longest of Bennettites, and are often interpreted in shoot arrangements reminiscent of branched cycad-like shapes. Bennettites were not Angiosperms, but are known to have usually produced sometimes dramatic flower-like"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pterophyllum",
+			"type": "text",
+			"text": " or cone-like structures for pollination and seed production, and so we have added the suggestion of floral structures to our plant.$(br2)Pterophyllum leaves are one of the most abundant and widespread forms of Bennettites foliage and probably come from a wide range of different plants. However, in the mod we have given it a somewhat archaic look, with cycad-like tufts of leaves and a thin branching stem."
+		}
+	]
+}

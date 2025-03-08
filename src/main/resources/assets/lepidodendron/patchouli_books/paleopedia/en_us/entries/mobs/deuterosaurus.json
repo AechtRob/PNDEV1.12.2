@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_deuterosaurus",
 			"title": "Deuterosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Synapsida $(br)>Therapsida $(br)>Dinocephalia $(br)>Deuterosauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Dinocephalia$(br)>Deuterosauridae"
 		},
         	{
             "type": "entity",

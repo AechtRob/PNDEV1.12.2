@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tartuosteus",
 			"title": "Tartuosteus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Heterostraci$(br)>Psammosteida"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agantha$(br)>Heterostraci$(br)>Psammosteida"
 		},
 		{
 			"type": "image",

@@ -1,5 +1,5 @@
 {
-	"name": "Psittacosaurus sibiricus",
+	"name": "Psittacosaurus (Hinterland)",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/psittacosaurus_sibiricus_icon.png",
 	"category": "lepidodendron:mobs",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_psittacosaurus_sibiricus",
 			"type": "text",
-			"text": "Psittacosaurus sibiricus comes from the Early Cretaceous, with fossils being found in the Ilek Formation, Siberia (Russia). It is the largest psittacosauriid, growing up to 2.5 m in length, and weighing around 20 kg. They are most well known for their unique set of horn ornamentation, which are slightly pointing forwards."
+			"text": "Our \"Hinterland Psittacosaurus\" is based on Psittacosaurus sibiricus, which comes from the Early Cretaceous, with fossils being found in the Ilek Formation, Siberia (Russia). It is a largest psittacosaur, growing up to 2.5 m in length, and weighing around 20 kg. They are most well known for their unique set of horn ornamentation, which are slightly pointing forwards."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_psittacosaurus_sibiricus",

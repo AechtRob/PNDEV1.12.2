@@ -1,0 +1,23 @@
+{
+	"name": "Portals",
+	"icon": "lepidodendron:portal_block_overworld",
+	"category": "lepidodendron:time_travel",
+	"sortnum": 1,
+	"pages": [
+		{
+			"type": "text",
+			"title": "Portals",
+			"text": "Portals are built in identical shapes to Nether Portals, and are lit with a Bone Wand enchanted with Enchantment of Time Reversal. You cannot take mobs through portals, but you can take items containing mobs."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:portal_block_recipe",
+			"title": "Recipe",
+			"text": "A basic portal block is used to return to the Overworld from anywhere else. In order to convert this portal block into one that can take you to another dimension, you must have researched that dimension using the $(l:basics/11timeresearcher)Time Researcher$(/l)."
+		},
+		{
+			"type": "text",
+			"text": "When a period has been researched up to the needed accuracy (5% by default) the research bar will turn green and then you will then be able to convert a portal block of any kind into a portal block for that period. The lowest art of the researcher machine is used for this: once you have your block inside it you will shown what periods are available to you, and you select the one you want by clicking on the green light beside it."
+		}
+	]
+}

@@ -69,6 +69,7 @@ public class EntityPrehistoricFloraDrepanosaurus extends EntityPrehistoricFloraL
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase && this.hasAlarm()) {
 			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAnimation(NO_ANIMATION);
 			this.setAlarmTarget(ee);
 			this.freezeTicks = 0;
 			List<EntityPrehistoricFloraDrepanosaurus> Drepanosaurus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraDrepanosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));

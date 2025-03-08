@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_saurichthys",
 			"title": "Saurichthys (marine)",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii$(br)>Saurichthyiformes$(br)>Saurichthyidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Saurichthyiformes$(br)>Saurichthyidae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_helmetia",
 			"title": "Helmetia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Trilobitomorpha$(br)>Conciliterga"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Trilobitomorpha$(br)>Conciliterga"
 		},
 		{
 			"type": "image",

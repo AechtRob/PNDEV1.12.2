@@ -1,0 +1,57 @@
+{
+	"name": "Hypsilophodon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hypsilophodon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hypsilophodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hypsilophodon",
+			"title": "Hypsilophodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Hypsilophodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. foxii",
+            "entity": "lepidodendron:prehistoric_flora_hypsilophodon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hypsilophodon",
+			"type": "text",
+			"text": "Hypsilophodon foxii comes from the Early Cretaceous, with fossils being found in the Wessex Formation, England (United Kingdom). It is a small hypsilophodontid, growing to 2 m in length, and weighing up to 20 kg. Found in 1849, it was originally considered to be a young Iguandon, which went unquestioned until 1867 when its known material was compared with known material of Iguandon, with it being concluded to be a separate species. This was further."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hypsilophodon",
+			"type": "text",
+			"text": "supported by the discovery of skull material within the same area the original material was found just a year later in 1868, again presumed to be a younger Iguandon, or a smaller species within the genus. After studies of the skull (and accompanying post-cranial material) were done, it was finally concluded that the material from the Wessex Formation was of an entirely new species, with this being announced only a year later in 1869."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hypsilophodon",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'hypsilophos', to mean 'high-crested'; and 'odon', to mean 'tooth'. The specific name derives from the surname of William Fox, a English clergyman and palaeontologist, who is most well known for his work on the Isle of Wight, and was the discoverer of the original skull material."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hypsilophodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hypsilophodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hypsilophodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hypsilophodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hypsilophodon"
+		}
+	]
+}

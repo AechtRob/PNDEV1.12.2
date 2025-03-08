@@ -88,7 +88,7 @@ public class BlockBrachiopodMicromitra extends ElementsLepidodendronMod.ModEleme
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
 		boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBivalve))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBivalvePrehistoric))
 			dimensionCriteria = true;
 		if ((dimID == LepidodendronConfig.dimCambrian)
 		) {

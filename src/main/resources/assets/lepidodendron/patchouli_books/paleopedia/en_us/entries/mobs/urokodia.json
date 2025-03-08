@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_urokodia",
 			"title": "Urokodia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda $(br)>Mollisoniida"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Mollisoniida"
 		},
         	{
             "type": "entity",

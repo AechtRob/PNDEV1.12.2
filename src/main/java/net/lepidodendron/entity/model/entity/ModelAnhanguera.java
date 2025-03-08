@@ -16,10 +16,10 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer hips;
     private final AdvancedModelRenderer tail;
-    private final AdvancedModelRenderer cube_r1;
-    private final AdvancedModelRenderer cube_r2;
+    private final AdvancedModelRenderer cube2_r1;
+    private final AdvancedModelRenderer cube1_r1;
     private final AdvancedModelRenderer tail1;
-    private final AdvancedModelRenderer cube_r3;
+    private final AdvancedModelRenderer cube3_r1;
     private final AdvancedModelRenderer leftleg1;
     private final AdvancedModelRenderer leftleg2;
     private final AdvancedModelRenderer leftfoot;
@@ -31,8 +31,8 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer rightlegwing1;
     private final AdvancedModelRenderer rightlegwing2;
     private final AdvancedModelRenderer body;
-    private final AdvancedModelRenderer cube_r4;
-    private final AdvancedModelRenderer cube_r5;
+    private final AdvancedModelRenderer cube39_r1;
+    private final AdvancedModelRenderer cube38_r1;
     private final AdvancedModelRenderer leftwing1;
     private final AdvancedModelRenderer leftwing1membrane;
     private final AdvancedModelRenderer leftwing1planemembrane;
@@ -68,546 +68,551 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer rightwing6;
     private final AdvancedModelRenderer rightwing6membrane;
     private final AdvancedModelRenderer shoulder;
-    private final AdvancedModelRenderer cube_r6;
+    private final AdvancedModelRenderer cube40_r1;
     private final AdvancedModelRenderer neck;
-    private final AdvancedModelRenderer cube_r7;
-    private final AdvancedModelRenderer cube_r8;
+    private final AdvancedModelRenderer cube42_r1;
+    private final AdvancedModelRenderer cube41_r1;
     private final AdvancedModelRenderer head;
-    private final AdvancedModelRenderer cube_r9;
-    private final AdvancedModelRenderer cube_r10;
-    private final AdvancedModelRenderer cube_r11;
-    private final AdvancedModelRenderer cube_r12;
-    private final AdvancedModelRenderer cube_r13;
-    private final AdvancedModelRenderer cube_r14;
-    private final AdvancedModelRenderer cube_r15;
-    private final AdvancedModelRenderer cube_r16;
-    private final AdvancedModelRenderer cube_r17;
-    private final AdvancedModelRenderer cube_r18;
-    private final AdvancedModelRenderer cube_r19;
-    private final AdvancedModelRenderer cube_r20;
-    private final AdvancedModelRenderer cube_r21;
+    private final AdvancedModelRenderer cube61_r1;
+    private final AdvancedModelRenderer cube60_r1;
+    private final AdvancedModelRenderer cube59_r1;
+    private final AdvancedModelRenderer cube58_r1;
+    private final AdvancedModelRenderer cube54_r1;
+    private final AdvancedModelRenderer cube53_r1;
+    private final AdvancedModelRenderer cube52_r1;
+    private final AdvancedModelRenderer cube51_r1;
+    private final AdvancedModelRenderer cube50_r1;
+    private final AdvancedModelRenderer cube49_r1;
+    private final AdvancedModelRenderer cube48_r1;
+    private final AdvancedModelRenderer cube46_r1;
+    private final AdvancedModelRenderer cube45_r1;
     private final AdvancedModelRenderer jaw;
-    private final AdvancedModelRenderer cube_r22;
-    private final AdvancedModelRenderer cube_r23;
-    private final AdvancedModelRenderer cube_r24;
-    private final AdvancedModelRenderer cube_r25;
-    private final AdvancedModelRenderer cube_r26;
-    private final AdvancedModelRenderer cube_r27;
-    private final AdvancedModelRenderer cube_r28;
-    private final AdvancedModelRenderer cube_r29;
-    private final AdvancedModelRenderer cube_r30;
-    private final AdvancedModelRenderer cube_r31;
+    private final AdvancedModelRenderer cube75_r1;
+    private final AdvancedModelRenderer cube74_r1;
+    private final AdvancedModelRenderer cube73_r1;
+    private final AdvancedModelRenderer cube72_r1;
+    private final AdvancedModelRenderer cube71_r1;
+    private final AdvancedModelRenderer cube70_r1;
+    private final AdvancedModelRenderer cube69_r1;
+    private final AdvancedModelRenderer cube68_r1;
+    private final AdvancedModelRenderer cube65_r1;
+    private final AdvancedModelRenderer cube64_r1;
     private final AdvancedModelRenderer throat;
 
     private ModelAnimator animator;
 
     public ModelAnhanguera() {
-        this.textureWidth = 80;
-        this.textureHeight = 80;
-
-        this.main = new AdvancedModelRenderer(this);
-        this.main.setRotationPoint(0.0F, 20.0F, -6.0F);
-
-
-        this.hips = new AdvancedModelRenderer(this);
-        this.hips.setRotationPoint(0.0F, -3.825F, 7.075F);
-        this.main.addChild(hips);
-        this.setRotateAngle(hips, -0.2138F, 0.0F, 0.0F);
-
-
-        this.tail = new AdvancedModelRenderer(this);
-        this.tail.setRotationPoint(0.0F, -0.6F, 1.0F);
-        this.hips.addChild(tail);
-        this.setRotateAngle(tail, -0.1222F, 0.0F, 0.0F);
-
-
-        this.cube_r1 = new AdvancedModelRenderer(this);
-        this.cube_r1.setRotationPoint(-0.5F, 1.7393F, 4.2284F);
-        this.tail.addChild(cube_r1);
-        this.setRotateAngle(cube_r1, -0.2443F, 0.0F, 0.0F);
-        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 20, 67, -1.0F, 0.3439F, -4.5009F, 3, 1, 2, -0.001F, false));
-
-        this.cube_r2 = new AdvancedModelRenderer(this);
-        this.cube_r2.setRotationPoint(-0.5F, 1.1393F, 4.3784F);
-        this.tail.addChild(cube_r2);
-        this.setRotateAngle(cube_r2, -0.2443F, 0.0F, 0.0F);
-        this.cube_r2.cubeList.add(new ModelBox(cube_r2, 0, 65, -1.0F, -0.6561F, -4.5009F, 3, 2, 2, 0.0F, false));
-
-        this.tail1 = new AdvancedModelRenderer(this);
-        this.tail1.setRotationPoint(0.0F, 0.4143F, 1.8284F);
-        this.tail.addChild(tail1);
-
-
-        this.cube_r3 = new AdvancedModelRenderer(this);
-        this.cube_r3.setRotationPoint(0.5F, 0.2F, 4.25F);
-        this.tail1.addChild(cube_r3);
-        this.setRotateAngle(cube_r3, -0.1047F, 0.0F, 0.0F);
-        this.cube_r3.cubeList.add(new ModelBox(cube_r3, 69, 30, -1.0F, -0.1564F, -4.6539F, 1, 1, 3, 0.0F, false));
-
-        this.leftleg1 = new AdvancedModelRenderer(this);
-        this.leftleg1.setRotationPoint(1.7454F, -0.4555F, 0.2462F);
-        this.hips.addChild(leftleg1);
-        this.setRotateAngle(leftleg1, -0.1617F, -0.3296F, -0.375F);
-        this.leftleg1.cubeList.add(new ModelBox(leftleg1, 53, 63, -1.2166F, -0.2193F, -0.7468F, 2, 5, 2, 0.0F, false));
-
-        this.leftleg2 = new AdvancedModelRenderer(this);
-        this.leftleg2.setRotationPoint(-0.3135F, 4.5915F, -0.425F);
-        this.leftleg1.addChild(leftleg2);
-        this.setRotateAngle(leftleg2, 1.2309F, 0.0429F, 0.3343F);
-        this.leftleg2.cubeList.add(new ModelBox(leftleg2, 62, 63, -0.3433F, -0.2147F, -0.2048F, 1, 7, 2, 0.0F, false));
-
-        this.leftfoot = new AdvancedModelRenderer(this);
-        this.leftfoot.setRotationPoint(0.1308F, 6.2913F, 0.6363F);
-        this.leftleg2.addChild(leftfoot);
-        this.setRotateAngle(leftfoot, -0.7884F, 0.0341F, -0.0703F);
-        this.leftfoot.cubeList.add(new ModelBox(leftfoot, 40, 59, -0.9797F, -0.4862F, -3.6551F, 2, 1, 4, 0.0F, false));
-
-        this.leftlegwing1 = new AdvancedModelRenderer(this);
-        this.leftlegwing1.setRotationPoint(0.1567F, 3.2956F, 1.7027F);
-        this.leftleg2.addChild(leftlegwing1);
-        this.setRotateAngle(leftlegwing1, -0.0141F, 0.0F, 0.0F);
-        this.leftlegwing1.cubeList.add(new ModelBox(leftlegwing1, 69, 21, 0.0F, -3.0127F, -0.1001F, 0, 6, 2, 0.0F, false));
-
-        this.leftlegwing2 = new AdvancedModelRenderer(this);
-        this.leftlegwing2.setRotationPoint(-0.5166F, 2.1211F, 1.0845F);
-        this.leftleg1.addChild(leftlegwing2);
-        this.setRotateAngle(leftlegwing2, 0.1367F, 0.0F, 0.0F);
-        this.leftlegwing2.cubeList.add(new ModelBox(leftlegwing2, 46, 65, -0.5F, -2.3638F, -0.0093F, 1, 5, 2, 0.0F, false));
-
-        this.rightleg1 = new AdvancedModelRenderer(this);
-        this.rightleg1.setRotationPoint(-1.7454F, -0.4555F, 0.2462F);
-        this.hips.addChild(rightleg1);
-        this.setRotateAngle(rightleg1, -0.1617F, 0.3296F, 0.375F);
-        this.rightleg1.cubeList.add(new ModelBox(rightleg1, 53, 63, -0.7834F, -0.2193F, -0.7468F, 2, 5, 2, 0.0F, true));
-
-        this.rightleg2 = new AdvancedModelRenderer(this);
-        this.rightleg2.setRotationPoint(0.3135F, 4.5915F, -0.425F);
-        this.rightleg1.addChild(rightleg2);
-        this.setRotateAngle(rightleg2, 1.2309F, -0.0429F, -0.3343F);
-        this.rightleg2.cubeList.add(new ModelBox(rightleg2, 62, 63, -0.6567F, -0.2147F, -0.2048F, 1, 7, 2, 0.0F, true));
-
-        this.rightfoot = new AdvancedModelRenderer(this);
-        this.rightfoot.setRotationPoint(-0.1308F, 6.2913F, 0.6363F);
-        this.rightleg2.addChild(rightfoot);
-        this.setRotateAngle(rightfoot, -0.7884F, -0.0341F, 0.0703F);
-        this.rightfoot.cubeList.add(new ModelBox(rightfoot, 40, 59, -1.0203F, -0.4862F, -3.6551F, 2, 1, 4, 0.0F, true));
-
-        this.rightlegwing1 = new AdvancedModelRenderer(this);
-        this.rightlegwing1.setRotationPoint(-0.1567F, 3.2956F, 1.7027F);
-        this.rightleg2.addChild(rightlegwing1);
-        this.setRotateAngle(rightlegwing1, -0.0141F, 0.0F, 0.0F);
-        this.rightlegwing1.cubeList.add(new ModelBox(rightlegwing1, 69, 21, 0.0F, -3.0127F, -0.1001F, 0, 6, 2, 0.0F, true));
-
-        this.rightlegwing2 = new AdvancedModelRenderer(this);
-        this.rightlegwing2.setRotationPoint(0.5166F, 2.1211F, 1.0845F);
-        this.rightleg1.addChild(rightlegwing2);
-        this.setRotateAngle(rightlegwing2, 0.1367F, 0.0F, 0.0F);
-        this.rightlegwing2.cubeList.add(new ModelBox(rightlegwing2, 46, 65, -0.5F, -2.3638F, -0.0093F, 1, 5, 2, 0.0F, true));
-
-        this.body = new AdvancedModelRenderer(this);
-        this.body.setRotationPoint(0.0F, -0.4588F, 1.2124F);
-        this.hips.addChild(body);
-        this.setRotateAngle(body, -0.2618F, 0.0F, 0.0F);
-
-
-        this.cube_r4 = new AdvancedModelRenderer(this);
-        this.cube_r4.setRotationPoint(-0.5F, -0.8912F, -5.3624F);
-        this.body.addChild(cube_r4);
-        this.setRotateAngle(cube_r4, -0.4363F, 0.0F, 0.0F);
-        this.cube_r4.cubeList.add(new ModelBox(cube_r4, 0, 34, -2.0F, -2.0F, -1.0F, 5, 2, 6, -0.001F, false));
-
-        this.cube_r5 = new AdvancedModelRenderer(this);
-        this.cube_r5.setRotationPoint(-0.5F, 2.6088F, -6.2124F);
-        this.body.addChild(cube_r5);
-        this.setRotateAngle(cube_r5, -0.1309F, 0.0F, 0.0F);
-        this.cube_r5.cubeList.add(new ModelBox(cube_r5, 0, 22, -2.0F, -4.0F, -1.0F, 5, 4, 7, 0.0F, false));
-
-        this.leftwing1 = new AdvancedModelRenderer(this);
-        this.leftwing1.setRotationPoint(2.0F, -1.8912F, -6.4374F);
-        this.body.addChild(leftwing1);
-        this.setRotateAngle(leftwing1, -0.2875F, -0.6908F, -0.8886F);
-        this.leftwing1.cubeList.add(new ModelBox(leftwing1, 40, 51, 0.0F, -0.25F, -0.5F, 7, 2, 2, 0.0F, false));
-
-        this.leftwing1membrane = new AdvancedModelRenderer(this);
-        this.leftwing1membrane.setRotationPoint(2.925F, 0.325F, 0.4F);
-        this.leftwing1.addChild(leftwing1membrane);
-        this.setRotateAngle(leftwing1membrane, -0.0884F, 0.1959F, -0.0936F);
-        this.leftwing1membrane.cubeList.add(new ModelBox(leftwing1membrane, 25, 22, -4.25F, -0.25F, 0.0F, 8, 1, 6, 0.0F, false));
-
-        this.leftwing1planemembrane = new AdvancedModelRenderer(this);
-        this.leftwing1planemembrane.setRotationPoint(1.75F, 0.275F, 6.0F);
-        this.leftwing1membrane.addChild(leftwing1planemembrane);
-        this.setRotateAngle(leftwing1planemembrane, -0.0393F, 0.0F, 0.0F);
-        this.leftwing1planemembrane.cubeList.add(new ModelBox(leftwing1planemembrane, 0, 43, -2.0F, 0.0F, 0.0F, 4, 0, 6, 0.0F, false));
-
-        this.leftwing2 = new AdvancedModelRenderer(this);
-        this.leftwing2.setRotationPoint(6.675F, 0.075F, 0.25F);
-        this.leftwing1.addChild(leftwing2);
-        this.setRotateAngle(leftwing2, 0.4638F, -0.4369F, 2.215F);
-        this.leftwing2.cubeList.add(new ModelBox(leftwing2, 50, 37, -0.1F, -0.25F, -0.75F, 9, 1, 2, 0.0F, false));
-
-        this.leftwing2membrane = new AdvancedModelRenderer(this);
-        this.leftwing2membrane.setRotationPoint(-0.125F, -0.025F, -0.325F);
-        this.leftwing2.addChild(leftwing2membrane);
-        this.setRotateAngle(leftwing2membrane, -0.0218F, 0.0742F, 0.0F);
-        this.leftwing2membrane.cubeList.add(new ModelBox(leftwing2membrane, 25, 30, -0.1F, -0.25F, 1.25F, 9, 1, 5, 0.0F, false));
-
-        this.leftwing2planemembrane = new AdvancedModelRenderer(this);
-        this.leftwing2planemembrane.setRotationPoint(4.5F, 0.4F, 6.225F);
-        this.leftwing2membrane.addChild(leftwing2planemembrane);
-        this.setRotateAngle(leftwing2planemembrane, -0.1658F, -0.0016F, -0.013F);
-        this.leftwing2planemembrane.cubeList.add(new ModelBox(leftwing2planemembrane, 31, 16, -4.6F, 0.0F, 0.0F, 9, 0, 5, 0.0F, false));
-
-        this.leftwing3 = new AdvancedModelRenderer(this);
-        this.leftwing3.setRotationPoint(8.75F, -0.05F, -0.3F);
-        this.leftwing2.addChild(leftwing3);
-        this.setRotateAngle(leftwing3, -0.0151F, -0.5525F, 0.3F);
-        this.leftwing3.cubeList.add(new ModelBox(leftwing3, 40, 56, 0.0F, -0.15F, -0.45F, 7, 1, 1, 0.0F, false));
-
-        this.leftwing3membrane = new AdvancedModelRenderer(this);
-        this.leftwing3membrane.setRotationPoint(0.0F, 0.0F, 0.05F);
-        this.leftwing3.addChild(leftwing3membrane);
-        this.leftwing3membrane.cubeList.add(new ModelBox(leftwing3membrane, 35, 9, 0.0F, -0.15F, 0.5F, 7, 1, 5, 0.0F, false));
-
-        this.leftwing3planemembrane = new AdvancedModelRenderer(this);
-        this.leftwing3planemembrane.setRotationPoint(3.5F, 0.4F, 5.0F);
-        this.leftwing3membrane.addChild(leftwing3planemembrane);
-        this.setRotateAngle(leftwing3planemembrane, -0.1309F, 0.0F, 0.0F);
-        this.leftwing3planemembrane.cubeList.add(new ModelBox(leftwing3planemembrane, 0, 50, -3.5F, -0.05F, 0.5F, 7, 0, 4, 0.0F, false));
-
-        this.leftwing4 = new AdvancedModelRenderer(this);
-        this.leftwing4.setRotationPoint(6.9F, 0.0F, 0.0F);
-        this.leftwing3.addChild(leftwing4);
-        this.setRotateAngle(leftwing4, -2.9433F, -1.4943F, 2.923F);
-        this.leftwing4.cubeList.add(new ModelBox(leftwing4, 41, 0, 0.0F, -0.15F, -0.45F, 12, 1, 1, 0.001F, false));
-
-        this.leftwing4membrane = new AdvancedModelRenderer(this);
-        this.leftwing4membrane.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.leftwing4.addChild(leftwing4membrane);
-        this.leftwing4membrane.cubeList.add(new ModelBox(leftwing4membrane, 0, 9, 0.0F, -0.15F, 0.5F, 12, 1, 5, 0.0F, false));
-
-        this.leftwing4planemembrane = new AdvancedModelRenderer(this);
-        this.leftwing4planemembrane.setRotationPoint(6.5F, 0.15F, 5.5F);
-        this.leftwing4membrane.addChild(leftwing4planemembrane);
-        this.setRotateAngle(leftwing4planemembrane, -0.0873F, 0.0F, 0.0F);
-        this.leftwing4planemembrane.cubeList.add(new ModelBox(leftwing4planemembrane, 23, 37, -5.0F, 0.0F, 0.0F, 10, 0, 3, 0.0F, false));
-
-        this.lefthand = new AdvancedModelRenderer(this);
-        this.lefthand.setRotationPoint(0.2F, 0.375F, 0.0F);
-        this.leftwing4.addChild(lefthand);
-        this.setRotateAngle(lefthand, -1.5534F, 0.0793F, -1.6385F);
-        this.lefthand.cubeList.add(new ModelBox(lefthand, 31, 69, 0.0F, 0.0F, -1.0F, 2, 1, 2, 0.0F, false));
-
-        this.leftwing5 = new AdvancedModelRenderer(this);
-        this.leftwing5.setRotationPoint(11.9F, 0.0F, 0.0F);
-        this.leftwing4.addChild(leftwing5);
-        this.setRotateAngle(leftwing5, -0.0782F, -1.2897F, 0.1732F);
-        this.leftwing5.cubeList.add(new ModelBox(leftwing5, 39, 5, 0.0F, -0.15F, -0.45F, 11, 1, 2, 0.001F, false));
-
-        this.leftwing5membrane = new AdvancedModelRenderer(this);
-        this.leftwing5membrane.setRotationPoint(0.0F, 0.0F, 1.5F);
-        this.leftwing5.addChild(leftwing5membrane);
-        this.leftwing5membrane.cubeList.add(new ModelBox(leftwing5membrane, 0, 16, 0.0F, -0.15F, 0.05F, 11, 1, 4, 0.0F, false));
-
-        this.leftwing6 = new AdvancedModelRenderer(this);
-        this.leftwing6.setRotationPoint(11.0935F, 0.1091F, -0.4648F);
-        this.leftwing5.addChild(leftwing6);
-        this.setRotateAngle(leftwing6, -0.0193F, -0.1997F, 0.1113F);
-        this.leftwing6.cubeList.add(new ModelBox(leftwing6, 0, 5, -0.1F, -0.15F, 0.05F, 17, 1, 2, 0.0F, false));
-
-        this.leftwing6membrane = new AdvancedModelRenderer(this);
-        this.leftwing6membrane.setRotationPoint(0.0F, 0.0F, 2.0F);
-        this.leftwing6.addChild(leftwing6membrane);
-        this.leftwing6membrane.cubeList.add(new ModelBox(leftwing6membrane, 0, 0, -0.1F, -0.15F, 0.05F, 17, 1, 3, 0.0F, false));
-
-        this.rightwing1 = new AdvancedModelRenderer(this);
-        this.rightwing1.setRotationPoint(-2.0F, -1.8912F, -6.4374F);
-        this.body.addChild(rightwing1);
-        this.setRotateAngle(rightwing1, -0.2875F, 0.6908F, 0.8886F);
-        this.rightwing1.cubeList.add(new ModelBox(rightwing1, 40, 51, -7.0F, -0.25F, -0.5F, 7, 2, 2, 0.0F, true));
-
-        this.rightwing1membrane = new AdvancedModelRenderer(this);
-        this.rightwing1membrane.setRotationPoint(-2.925F, 0.325F, 0.4F);
-        this.rightwing1.addChild(rightwing1membrane);
-        this.setRotateAngle(rightwing1membrane, -0.0884F, -0.1959F, 0.0936F);
-        this.rightwing1membrane.cubeList.add(new ModelBox(rightwing1membrane, 25, 22, -3.75F, -0.25F, 0.0F, 8, 1, 6, 0.0F, true));
-
-        this.rightwing1planemembrane = new AdvancedModelRenderer(this);
-        this.rightwing1planemembrane.setRotationPoint(-1.75F, 0.275F, 6.0F);
-        this.rightwing1membrane.addChild(rightwing1planemembrane);
-        this.setRotateAngle(rightwing1planemembrane, -0.0393F, 0.0F, 0.0F);
-        this.rightwing1planemembrane.cubeList.add(new ModelBox(rightwing1planemembrane, 0, 43, -2.0F, 0.0F, 0.0F, 4, 0, 6, 0.0F, true));
-
-        this.rightwing2 = new AdvancedModelRenderer(this);
-        this.rightwing2.setRotationPoint(-6.675F, 0.075F, 0.25F);
-        this.rightwing1.addChild(rightwing2);
-        this.setRotateAngle(rightwing2, 0.4638F, 0.4369F, -2.215F);
-        this.rightwing2.cubeList.add(new ModelBox(rightwing2, 50, 37, -8.9F, -0.25F, -0.75F, 9, 1, 2, 0.0F, true));
-
-        this.rightwing2membrane = new AdvancedModelRenderer(this);
-        this.rightwing2membrane.setRotationPoint(0.125F, -0.025F, -0.325F);
-        this.rightwing2.addChild(rightwing2membrane);
-        this.setRotateAngle(rightwing2membrane, -0.0218F, -0.0742F, 0.0F);
-        this.rightwing2membrane.cubeList.add(new ModelBox(rightwing2membrane, 25, 30, -8.9F, -0.25F, 1.25F, 9, 1, 5, 0.0F, true));
-
-        this.rightwing2planemembrane = new AdvancedModelRenderer(this);
-        this.rightwing2planemembrane.setRotationPoint(-4.5F, 0.4F, 6.225F);
-        this.rightwing2membrane.addChild(rightwing2planemembrane);
-        this.setRotateAngle(rightwing2planemembrane, -0.1658F, 0.0016F, 0.013F);
-        this.rightwing2planemembrane.cubeList.add(new ModelBox(rightwing2planemembrane, 31, 16, -4.4F, 0.0F, 0.0F, 9, 0, 5, 0.0F, true));
-
-        this.rightwing3 = new AdvancedModelRenderer(this);
-        this.rightwing3.setRotationPoint(-8.75F, -0.05F, -0.3F);
-        this.rightwing2.addChild(rightwing3);
-        this.setRotateAngle(rightwing3, -0.0151F, 0.5525F, -0.3F);
-        this.rightwing3.cubeList.add(new ModelBox(rightwing3, 40, 56, -7.0F, -0.15F, -0.45F, 7, 1, 1, 0.0F, true));
-
-        this.rightwing3membrane = new AdvancedModelRenderer(this);
-        this.rightwing3membrane.setRotationPoint(0.0F, 0.0F, 0.05F);
-        this.rightwing3.addChild(rightwing3membrane);
-        this.rightwing3membrane.cubeList.add(new ModelBox(rightwing3membrane, 35, 9, -7.0F, -0.15F, 0.5F, 7, 1, 5, 0.0F, true));
-
-        this.rightwing3planemembrane = new AdvancedModelRenderer(this);
-        this.rightwing3planemembrane.setRotationPoint(-3.5F, 0.4F, 5.0F);
-        this.rightwing3membrane.addChild(rightwing3planemembrane);
-        this.setRotateAngle(rightwing3planemembrane, -0.1309F, 0.0F, 0.0F);
-        this.rightwing3planemembrane.cubeList.add(new ModelBox(rightwing3planemembrane, 0, 50, -3.5F, -0.05F, 0.5F, 7, 0, 4, 0.0F, true));
-
-        this.rightwing4 = new AdvancedModelRenderer(this);
-        this.rightwing4.setRotationPoint(-6.9F, 0.0F, 0.0F);
-        this.rightwing3.addChild(rightwing4);
-        this.setRotateAngle(rightwing4, -2.9433F, 1.4943F, -2.923F);
-        this.rightwing4.cubeList.add(new ModelBox(rightwing4, 41, 0, -12.0F, -0.15F, -0.45F, 12, 1, 1, 0.001F, true));
-
-        this.rightwing4membrane = new AdvancedModelRenderer(this);
-        this.rightwing4membrane.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.rightwing4.addChild(rightwing4membrane);
-        this.rightwing4membrane.cubeList.add(new ModelBox(rightwing4membrane, 0, 9, -12.0F, -0.15F, 0.5F, 12, 1, 5, 0.0F, true));
-
-        this.rightwing4planemembrane = new AdvancedModelRenderer(this);
-        this.rightwing4planemembrane.setRotationPoint(-6.5F, 0.15F, 5.5F);
-        this.rightwing4membrane.addChild(rightwing4planemembrane);
-        this.setRotateAngle(rightwing4planemembrane, -0.0873F, 0.0F, 0.0F);
-        this.rightwing4planemembrane.cubeList.add(new ModelBox(rightwing4planemembrane, 23, 37, -5.0F, 0.0F, 0.0F, 10, 0, 3, 0.0F, true));
-
-        this.righthand = new AdvancedModelRenderer(this);
-        this.righthand.setRotationPoint(-0.2F, 0.375F, 0.0F);
-        this.rightwing4.addChild(righthand);
-        this.setRotateAngle(righthand, -1.5534F, -0.0793F, 1.6385F);
-        this.righthand.cubeList.add(new ModelBox(righthand, 31, 69, -2.0F, 0.0F, -1.0F, 2, 1, 2, 0.0F, true));
-
-        this.rightwing5 = new AdvancedModelRenderer(this);
-        this.rightwing5.setRotationPoint(-11.9F, 0.0F, 0.0F);
-        this.rightwing4.addChild(rightwing5);
-        this.setRotateAngle(rightwing5, -0.0782F, 1.2897F, -0.1732F);
-        this.rightwing5.cubeList.add(new ModelBox(rightwing5, 39, 5, -11.0F, -0.15F, -0.45F, 11, 1, 2, 0.001F, true));
-
-        this.rightwing5membrane = new AdvancedModelRenderer(this);
-        this.rightwing5membrane.setRotationPoint(0.0F, 0.0F, 1.5F);
-        this.rightwing5.addChild(rightwing5membrane);
-        this.rightwing5membrane.cubeList.add(new ModelBox(rightwing5membrane, 0, 16, -11.0F, -0.15F, 0.05F, 11, 1, 4, 0.0F, true));
-
-        this.rightwing6 = new AdvancedModelRenderer(this);
-        this.rightwing6.setRotationPoint(-11.0935F, 0.1091F, -0.4648F);
-        this.rightwing5.addChild(rightwing6);
-        this.setRotateAngle(rightwing6, -0.0193F, 0.1997F, -0.1113F);
-        this.rightwing6.cubeList.add(new ModelBox(rightwing6, 0, 5, -16.9F, -0.15F, 0.05F, 17, 1, 2, 0.0F, true));
-
-        this.rightwing6membrane = new AdvancedModelRenderer(this);
-        this.rightwing6membrane.setRotationPoint(0.0F, 0.0F, 2.0F);
-        this.rightwing6.addChild(rightwing6membrane);
-        this.rightwing6membrane.cubeList.add(new ModelBox(rightwing6membrane, 0, 0, -16.9F, -0.15F, 0.05F, 17, 1, 3, 0.0F, true));
-
-        this.shoulder = new AdvancedModelRenderer(this);
-        this.shoulder.setRotationPoint(0.0F, -0.7412F, -5.8124F);
-        this.body.addChild(shoulder);
-
-
-        this.cube_r6 = new AdvancedModelRenderer(this);
-        this.cube_r6.setRotationPoint(0.0F, -0.7F, 0.6F);
-        this.shoulder.addChild(cube_r6);
-        this.setRotateAngle(cube_r6, 0.6589F, 0.0F, 0.0F);
-        this.cube_r6.cubeList.add(new ModelBox(cube_r6, 23, 41, -2.0F, -2.0F, -4.0F, 4, 4, 5, -0.1F, false));
-
-        this.neck = new AdvancedModelRenderer(this);
-        this.neck.setRotationPoint(0.0F, -1.975F, 0.125F);
-        this.shoulder.addChild(neck);
-        this.setRotateAngle(neck, 0.0829F, 0.0F, 0.0F);
-
-
-        this.cube_r7 = new AdvancedModelRenderer(this);
-        this.cube_r7.setRotationPoint(-0.5F, 0.425F, -4.275F);
-        this.neck.addChild(cube_r7);
-        this.setRotateAngle(cube_r7, 0.9032F, 0.0F, 0.0F);
-        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 0, 55, -1.0F, -2.8321F, -1.4813F, 3, 7, 2, -0.002F, false));
-
-        this.cube_r8 = new AdvancedModelRenderer(this);
-        this.cube_r8.setRotationPoint(-0.5F, -1.175F, -4.2F);
-        this.neck.addChild(cube_r8);
-        this.setRotateAngle(cube_r8, -0.672F, 0.0F, 0.0F);
-        this.cube_r8.cubeList.add(new ModelBox(cube_r8, 42, 41, -1.0F, -2.2F, -2.2F, 3, 3, 6, 0.0F, false));
-
-        this.head = new AdvancedModelRenderer(this);
-        this.head.setRotationPoint(-0.5F, -2.8509F, -5.4142F);
-        this.neck.addChild(head);
-        this.setRotateAngle(head, 0.829F, 0.0F, 0.0F);
-        this.head.cubeList.add(new ModelBox(head, 24, 60, -1.0F, -2.5F, -0.5F, 3, 4, 2, 0.005F, false));
-        this.head.cubeList.add(new ModelBox(head, 11, 60, -0.5F, -0.8F, -8.125F, 2, 1, 4, 0.001F, false));
-        this.head.cubeList.add(new ModelBox(head, 35, 65, -1.0F, -0.8F, -4.125F, 3, 1, 2, 0.003F, false));
-        this.head.cubeList.add(new ModelBox(head, 11, 55, -1.0F, -0.8F, -2.125F, 3, 2, 2, 0.004F, false));
-
-        this.cube_r9 = new AdvancedModelRenderer(this);
-        this.cube_r9.setRotationPoint(0.975F, -2.0165F, -10.4807F);
-        this.head.addChild(cube_r9);
-        this.setRotateAngle(cube_r9, 0.1614F, 0.0F, 0.0F);
-        this.cube_r9.cubeList.add(new ModelBox(cube_r9, 11, 66, -0.485F, 0.0F, -4.0F, 0, 1, 4, 0.0F, false));
-
-        this.cube_r10 = new AdvancedModelRenderer(this);
-        this.cube_r10.setRotationPoint(1.0F, -1.4537F, -8.1728F);
-        this.head.addChild(cube_r10);
-        this.setRotateAngle(cube_r10, -0.2182F, 0.0F, 0.0F);
-        this.cube_r10.cubeList.add(new ModelBox(cube_r10, 69, 63, -0.5F, -0.05F, -2.375F, 0, 1, 3, 0.0F, false));
-
-        this.cube_r11 = new AdvancedModelRenderer(this);
-        this.cube_r11.setRotationPoint(0.0F, -1.8054F, -4.4392F);
-        this.head.addChild(cube_r11);
-        this.setRotateAngle(cube_r11, 0.0873F, 0.0F, 0.0F);
-        this.cube_r11.cubeList.add(new ModelBox(cube_r11, 60, 15, -0.5F, 0.025F, -3.75F, 2, 1, 4, 0.0F, false));
-
-        this.cube_r12 = new AdvancedModelRenderer(this);
-        this.cube_r12.setRotationPoint(1.5F, -2.5F, -0.5F);
-        this.head.addChild(cube_r12);
-        this.setRotateAngle(cube_r12, 0.1789F, 0.0F, 0.0F);
-        this.cube_r12.cubeList.add(new ModelBox(cube_r12, 70, 60, -2.75F, 0.5F, -1.7F, 1, 1, 1, 0.0F, true));
-        this.cube_r12.cubeList.add(new ModelBox(cube_r12, 70, 60, -0.25F, 0.5F, -1.7F, 1, 1, 1, 0.0F, false));
-        this.cube_r12.cubeList.add(new ModelBox(cube_r12, 54, 30, -2.5F, 0.0F, -4.0F, 3, 2, 4, 0.0F, false));
-
-        this.cube_r13 = new AdvancedModelRenderer(this);
-        this.cube_r13.setRotationPoint(0.25F, -0.753F, -14.6153F);
-        this.head.addChild(cube_r13);
-        this.setRotateAngle(cube_r13, -0.5888F, 0.1733F, 0.2528F);
-        this.cube_r13.cubeList.add(new ModelBox(cube_r13, 20, 71, 0.0F, 0.0F, -0.5F, 0, 1, 1, 0.0F, true));
-
-        this.cube_r14 = new AdvancedModelRenderer(this);
-        this.cube_r14.setRotationPoint(0.15F, -0.9206F, -13.4186F);
-        this.head.addChild(cube_r14);
-        this.setRotateAngle(cube_r14, -0.2559F, 0.056F, 0.211F);
-        this.cube_r14.cubeList.add(new ModelBox(cube_r14, 53, 59, 0.0F, 0.0F, -0.5F, 0, 2, 1, 0.0F, true));
-
-        this.cube_r15 = new AdvancedModelRenderer(this);
-        this.cube_r15.setRotationPoint(0.0F, -0.105F, -11.6117F);
-        this.head.addChild(cube_r15);
-        this.setRotateAngle(cube_r15, -0.0865F, 0.0114F, 0.1304F);
-        this.cube_r15.cubeList.add(new ModelBox(cube_r15, 61, 48, 0.0F, -0.75F, -1.5F, 0, 1, 5, 0.0F, true));
-
-        this.cube_r16 = new AdvancedModelRenderer(this);
-        this.cube_r16.setRotationPoint(0.75F, -0.753F, -14.6153F);
-        this.head.addChild(cube_r16);
-        this.setRotateAngle(cube_r16, -0.5888F, -0.1733F, -0.2528F);
-        this.cube_r16.cubeList.add(new ModelBox(cube_r16, 20, 71, 0.0F, 0.0F, -0.5F, 0, 1, 1, 0.0F, false));
-
-        this.cube_r17 = new AdvancedModelRenderer(this);
-        this.cube_r17.setRotationPoint(0.85F, -0.9206F, -13.4186F);
-        this.head.addChild(cube_r17);
-        this.setRotateAngle(cube_r17, -0.2559F, -0.056F, -0.211F);
-        this.cube_r17.cubeList.add(new ModelBox(cube_r17, 53, 59, 0.0F, 0.0F, -0.5F, 0, 2, 1, 0.0F, false));
-
-        this.cube_r18 = new AdvancedModelRenderer(this);
-        this.cube_r18.setRotationPoint(1.0F, -0.105F, -11.6117F);
-        this.head.addChild(cube_r18);
-        this.setRotateAngle(cube_r18, -0.0865F, -0.0114F, -0.1304F);
-        this.cube_r18.cubeList.add(new ModelBox(cube_r18, 61, 48, 0.0F, -0.75F, -1.5F, 0, 1, 5, 0.0F, false));
-
-        this.cube_r19 = new AdvancedModelRenderer(this);
-        this.cube_r19.setRotationPoint(0.5F, 0.2F, -8.125F);
-        this.head.addChild(cube_r19);
-        this.setRotateAngle(cube_r19, -0.0873F, 0.0F, 0.0F);
-        this.cube_r19.cubeList.add(new ModelBox(cube_r19, 23, 51, -0.5F, -1.0F, -7.0F, 1, 1, 7, 0.0F, false));
-
-        this.cube_r20 = new AdvancedModelRenderer(this);
-        this.cube_r20.setRotationPoint(-0.45F, 0.05F, -5.625F);
-        this.head.addChild(cube_r20);
-        this.setRotateAngle(cube_r20, 0.0F, 0.0F, 0.3491F);
-        this.cube_r20.cubeList.add(new ModelBox(cube_r20, 0, 70, 0.0F, -0.5F, -1.5F, 0, 1, 3, 0.0F, true));
-
-        this.cube_r21 = new AdvancedModelRenderer(this);
-        this.cube_r21.setRotationPoint(1.45F, 0.05F, -5.625F);
-        this.head.addChild(cube_r21);
-        this.setRotateAngle(cube_r21, 0.0F, 0.0F, -0.3491F);
-        this.cube_r21.cubeList.add(new ModelBox(cube_r21, 0, 70, 0.0F, -0.5F, -1.5F, 0, 1, 3, 0.0F, false));
-
-        this.jaw = new AdvancedModelRenderer(this);
-        this.jaw.setRotationPoint(0.0F, 0.2F, -2.125F);
-        this.head.addChild(jaw);
-        this.jaw.cubeList.add(new ModelBox(jaw, 60, 9, -0.5F, 0.0F, -6.0F, 2, 1, 4, 0.001F, false));
-        this.jaw.cubeList.add(new ModelBox(jaw, 66, 3, -1.0F, 0.0F, -2.0F, 3, 1, 2, 0.0F, false));
-        this.jaw.cubeList.add(new ModelBox(jaw, 69, 68, -0.5F, -1.5F, -1.75F, 2, 2, 2, 0.0F, false));
-
-        this.cube_r22 = new AdvancedModelRenderer(this);
-        this.cube_r22.setRotationPoint(0.3674F, -0.4766F, -11.9036F);
-        this.jaw.addChild(cube_r22);
-        this.setRotateAngle(cube_r22, 0.242F, -0.1453F, -0.5277F);
-        this.cube_r22.cubeList.add(new ModelBox(cube_r22, 7, 70, -0.225F, -1.5F, -0.625F, 0, 2, 1, 0.0F, true));
-
-        this.cube_r23 = new AdvancedModelRenderer(this);
-        this.cube_r23.setRotationPoint(0.6326F, -0.4766F, -11.9036F);
-        this.jaw.addChild(cube_r23);
-        this.setRotateAngle(cube_r23, 0.242F, 0.1453F, 0.5277F);
-        this.cube_r23.cubeList.add(new ModelBox(cube_r23, 7, 70, 0.225F, -1.5F, -0.625F, 0, 2, 1, 0.0F, false));
-
-        this.cube_r24 = new AdvancedModelRenderer(this);
-        this.cube_r24.setRotationPoint(0.5F, 0.4771F, -11.9772F);
-        this.jaw.addChild(cube_r24);
-        this.setRotateAngle(cube_r24, -0.3927F, 0.0F, 0.0F);
-        this.cube_r24.cubeList.add(new ModelBox(cube_r24, 68, 0, -0.5F, -1.0F, -1.0F, 1, 1, 1, -0.002F, false));
-
-        this.cube_r25 = new AdvancedModelRenderer(this);
-        this.cube_r25.setRotationPoint(0.0F, -0.2577F, -8.9014F);
-        this.jaw.addChild(cube_r25);
-        this.setRotateAngle(cube_r25, -0.0843F, -0.0226F, -0.2608F);
-        this.cube_r25.cubeList.add(new ModelBox(cube_r25, 61, 41, 0.0F, -0.25F, -3.0F, 0, 1, 5, 0.0F, true));
-
-        this.cube_r26 = new AdvancedModelRenderer(this);
-        this.cube_r26.setRotationPoint(1.0F, -0.2577F, -8.9014F);
-        this.jaw.addChild(cube_r26);
-        this.setRotateAngle(cube_r26, -0.0843F, 0.0226F, 0.2608F);
-        this.cube_r26.cubeList.add(new ModelBox(cube_r26, 61, 41, 0.0F, -0.25F, -3.0F, 0, 1, 5, 0.0F, false));
-
-        this.cube_r27 = new AdvancedModelRenderer(this);
-        this.cube_r27.setRotationPoint(1.0F, 0.9947F, -10.0453F);
-        this.jaw.addChild(cube_r27);
-        this.setRotateAngle(cube_r27, 0.0916F, 0.0F, 0.0F);
-        this.cube_r27.cubeList.add(new ModelBox(cube_r27, 40, 69, -0.51F, -1.0F, 0.0F, 0, 1, 2, 0.0F, false));
-
-        this.cube_r28 = new AdvancedModelRenderer(this);
-        this.cube_r28.setRotationPoint(1.0F, 0.4771F, -11.9772F);
-        this.jaw.addChild(cube_r28);
-        this.setRotateAngle(cube_r28, -0.2618F, 0.0F, 0.0F);
-        this.cube_r28.cubeList.add(new ModelBox(cube_r28, 35, 60, -0.5F, -1.0F, 0.0F, 0, 1, 2, 0.0F, false));
-
-        this.cube_r29 = new AdvancedModelRenderer(this);
-        this.cube_r29.setRotationPoint(0.5F, 1.0F, -6.0F);
-        this.jaw.addChild(cube_r29);
-        this.setRotateAngle(cube_r29, -0.0873F, 0.0F, 0.0F);
-        this.cube_r29.cubeList.add(new ModelBox(cube_r29, 54, 22, -0.5F, -1.0F, -6.0F, 1, 1, 6, 0.0F, false));
-
-        this.cube_r30 = new AdvancedModelRenderer(this);
-        this.cube_r30.setRotationPoint(-0.45F, 0.2F, -4.5F);
-        this.jaw.addChild(cube_r30);
-        this.setRotateAngle(cube_r30, 0.0F, 0.0F, -0.3491F);
-        this.cube_r30.cubeList.add(new ModelBox(cube_r30, 70, 55, 0.025F, -0.5F, -1.5F, 0, 1, 3, 0.0F, true));
-
-        this.cube_r31 = new AdvancedModelRenderer(this);
-        this.cube_r31.setRotationPoint(1.45F, 0.2F, -4.5F);
-        this.jaw.addChild(cube_r31);
-        this.setRotateAngle(cube_r31, 0.0F, 0.0F, 0.3491F);
-        this.cube_r31.cubeList.add(new ModelBox(cube_r31, 70, 55, -0.025F, -0.5F, -1.5F, 0, 1, 3, 0.0F, false));
-
-        this.throat = new AdvancedModelRenderer(this);
-        this.throat.setRotationPoint(0.0F, 1.0F, -3.0F);
-        this.jaw.addChild(throat);
-        this.setRotateAngle(throat, -1.0036F, 0.0F, 0.0F);
-        this.throat.cubeList.add(new ModelBox(throat, 57, 56, -0.5F, -2.0F, 0.0F, 2, 2, 4, -0.003F, false));
+        textureWidth = 80;
+        textureHeight = 80;
+
+        main = new AdvancedModelRenderer(this);
+        main.setRotationPoint(0.0F, 20.0F, -6.0F);
+
+
+        hips = new AdvancedModelRenderer(this);
+        hips.setRotationPoint(0.0F, -3.825F, 7.075F);
+        main.addChild(hips);
+        setRotateAngle(hips, -0.2138F, 0.0F, 0.0F);
+
+
+        tail = new AdvancedModelRenderer(this);
+        tail.setRotationPoint(0.0F, -0.6F, 1.0F);
+        hips.addChild(tail);
+        setRotateAngle(tail, -0.1222F, 0.0F, 0.0F);
+
+
+        cube2_r1 = new AdvancedModelRenderer(this);
+        cube2_r1.setRotationPoint(-0.5F, 1.7393F, 4.2284F);
+        tail.addChild(cube2_r1);
+        setRotateAngle(cube2_r1, -0.2443F, 0.0F, 0.0F);
+        cube2_r1.cubeList.add(new ModelBox(cube2_r1, 20, 67, -1.0F, 0.3439F, -4.5009F, 3, 1, 2, -0.001F, false));
+
+        cube1_r1 = new AdvancedModelRenderer(this);
+        cube1_r1.setRotationPoint(-0.5F, 1.1393F, 4.3784F);
+        tail.addChild(cube1_r1);
+        setRotateAngle(cube1_r1, -0.2443F, 0.0F, 0.0F);
+        cube1_r1.cubeList.add(new ModelBox(cube1_r1, 0, 65, -1.0F, -0.6561F, -4.5009F, 3, 2, 2, 0.0F, false));
+
+        tail1 = new AdvancedModelRenderer(this);
+        tail1.setRotationPoint(0.0F, 0.4143F, 1.8284F);
+        tail.addChild(tail1);
+
+
+        cube3_r1 = new AdvancedModelRenderer(this);
+        cube3_r1.setRotationPoint(0.5F, 0.2F, 4.25F);
+        tail1.addChild(cube3_r1);
+        setRotateAngle(cube3_r1, -0.1047F, 0.0F, 0.0F);
+        cube3_r1.cubeList.add(new ModelBox(cube3_r1, 69, 30, -1.0F, -0.1564F, -4.6539F, 1, 1, 3, 0.0F, false));
+
+        leftleg1 = new AdvancedModelRenderer(this);
+        leftleg1.setRotationPoint(1.7454F, -0.4555F, 0.2462F);
+        hips.addChild(leftleg1);
+        setRotateAngle(leftleg1, -0.1617F, -0.3296F, -0.375F);
+        leftleg1.cubeList.add(new ModelBox(leftleg1, 53, 63, -1.2166F, -0.2193F, -0.7468F, 2, 5, 2, 0.0F, false));
+
+        leftleg2 = new AdvancedModelRenderer(this);
+        leftleg2.setRotationPoint(-0.3135F, 4.5915F, -0.425F);
+        leftleg1.addChild(leftleg2);
+        setRotateAngle(leftleg2, 1.2309F, 0.0429F, 0.3343F);
+        leftleg2.cubeList.add(new ModelBox(leftleg2, 62, 63, -0.3433F, -0.2147F, -0.2048F, 1, 7, 2, 0.0F, false));
+
+        leftfoot = new AdvancedModelRenderer(this);
+        leftfoot.setRotationPoint(0.1308F, 6.2913F, 0.6363F);
+        leftleg2.addChild(leftfoot);
+        setRotateAngle(leftfoot, -0.7884F, 0.0341F, -0.0703F);
+        leftfoot.cubeList.add(new ModelBox(leftfoot, 40, 59, -0.9797F, -0.4862F, -3.6551F, 2, 1, 4, 0.0F, false));
+
+        leftlegwing1 = new AdvancedModelRenderer(this);
+        leftlegwing1.setRotationPoint(0.1567F, 3.2956F, 1.7027F);
+        leftleg2.addChild(leftlegwing1);
+        setRotateAngle(leftlegwing1, -0.0141F, 0.0F, 0.0F);
+        leftlegwing1.cubeList.add(new ModelBox(leftlegwing1, 69, 21, 0.0F, -3.0127F, -0.1001F, 0, 6, 2, 0.0F, false));
+
+        leftlegwing2 = new AdvancedModelRenderer(this);
+        leftlegwing2.setRotationPoint(-0.5166F, 2.1211F, 1.0845F);
+        leftleg1.addChild(leftlegwing2);
+        setRotateAngle(leftlegwing2, 0.1367F, 0.0F, 0.0F);
+        leftlegwing2.cubeList.add(new ModelBox(leftlegwing2, 46, 65, -0.5F, -2.3638F, -0.0093F, 1, 5, 2, 0.0F, false));
+
+        rightleg1 = new AdvancedModelRenderer(this);
+        rightleg1.setRotationPoint(-1.7454F, -0.4555F, 0.2462F);
+        hips.addChild(rightleg1);
+        setRotateAngle(rightleg1, -0.1617F, 0.3296F, 0.375F);
+        rightleg1.cubeList.add(new ModelBox(rightleg1, 53, 63, -0.7834F, -0.2193F, -0.7468F, 2, 5, 2, 0.0F, true));
+
+        rightleg2 = new AdvancedModelRenderer(this);
+        rightleg2.setRotationPoint(0.3135F, 4.5915F, -0.425F);
+        rightleg1.addChild(rightleg2);
+        setRotateAngle(rightleg2, 1.2309F, -0.0429F, -0.3343F);
+        rightleg2.cubeList.add(new ModelBox(rightleg2, 62, 63, -0.6567F, -0.2147F, -0.2048F, 1, 7, 2, 0.0F, true));
+
+        rightfoot = new AdvancedModelRenderer(this);
+        rightfoot.setRotationPoint(-0.1308F, 6.2913F, 0.6363F);
+        rightleg2.addChild(rightfoot);
+        setRotateAngle(rightfoot, -0.7884F, -0.0341F, 0.0703F);
+        rightfoot.cubeList.add(new ModelBox(rightfoot, 40, 59, -1.0203F, -0.4862F, -3.6551F, 2, 1, 4, 0.0F, true));
+
+        rightlegwing1 = new AdvancedModelRenderer(this);
+        rightlegwing1.setRotationPoint(-0.1567F, 3.2956F, 1.7027F);
+        rightleg2.addChild(rightlegwing1);
+        setRotateAngle(rightlegwing1, -0.0141F, 0.0F, 0.0F);
+        rightlegwing1.cubeList.add(new ModelBox(rightlegwing1, 69, 21, 0.0F, -3.0127F, -0.1001F, 0, 6, 2, 0.0F, true));
+
+        rightlegwing2 = new AdvancedModelRenderer(this);
+        rightlegwing2.setRotationPoint(0.5166F, 2.1211F, 1.0845F);
+        rightleg1.addChild(rightlegwing2);
+        setRotateAngle(rightlegwing2, 0.1367F, 0.0F, 0.0F);
+        rightlegwing2.cubeList.add(new ModelBox(rightlegwing2, 46, 65, -0.5F, -2.3638F, -0.0093F, 1, 5, 2, 0.0F, true));
+
+        body = new AdvancedModelRenderer(this);
+        body.setRotationPoint(0.0F, -0.4588F, 1.2124F);
+        hips.addChild(body);
+        setRotateAngle(body, -0.2618F, 0.0F, 0.0F);
+
+
+        cube39_r1 = new AdvancedModelRenderer(this);
+        cube39_r1.setRotationPoint(-0.5F, -0.8912F, -5.3624F);
+        body.addChild(cube39_r1);
+        setRotateAngle(cube39_r1, -0.4363F, 0.0F, 0.0F);
+        cube39_r1.cubeList.add(new ModelBox(cube39_r1, 0, 34, -2.0F, -2.0F, -1.0F, 5, 2, 6, -0.001F, false));
+
+        cube38_r1 = new AdvancedModelRenderer(this);
+        cube38_r1.setRotationPoint(-0.5F, 2.6088F, -6.2124F);
+        body.addChild(cube38_r1);
+        setRotateAngle(cube38_r1, -0.1309F, 0.0F, 0.0F);
+        cube38_r1.cubeList.add(new ModelBox(cube38_r1, 0, 22, -2.0F, -4.0F, -1.0F, 5, 4, 7, 0.0F, false));
+
+        leftwing1 = new AdvancedModelRenderer(this);
+        leftwing1.setRotationPoint(2.0F, -1.8912F, -6.4374F);
+        body.addChild(leftwing1);
+        setRotateAngle(leftwing1, -0.2875F, -0.6908F, -0.8886F);
+        leftwing1.cubeList.add(new ModelBox(leftwing1, 40, 51, 0.0F, -0.25F, -0.5F, 7, 2, 2, 0.0F, false));
+
+        leftwing1membrane = new AdvancedModelRenderer(this);
+        leftwing1membrane.setRotationPoint(2.925F, 0.325F, 0.4F);
+        leftwing1.addChild(leftwing1membrane);
+        setRotateAngle(leftwing1membrane, -0.0884F, 0.1959F, -0.0936F);
+        leftwing1membrane.cubeList.add(new ModelBox(leftwing1membrane, 25, 22, -4.25F, -0.25F, 0.0F, 8, 1, 6, 0.0F, false));
+
+        leftwing1planemembrane = new AdvancedModelRenderer(this);
+        leftwing1planemembrane.setRotationPoint(1.75F, 0.275F, 6.0F);
+        leftwing1membrane.addChild(leftwing1planemembrane);
+        setRotateAngle(leftwing1planemembrane, -0.0393F, 0.0F, 0.0F);
+        leftwing1planemembrane.cubeList.add(new ModelBox(leftwing1planemembrane, 0, 43, -2.0F, 0.0F, 0.0F, 4, 0, 6, 0.0F, false));
+
+        leftwing2 = new AdvancedModelRenderer(this);
+        leftwing2.setRotationPoint(6.675F, 0.075F, 0.25F);
+        leftwing1.addChild(leftwing2);
+        setRotateAngle(leftwing2, 0.4638F, -0.4369F, 2.215F);
+        leftwing2.cubeList.add(new ModelBox(leftwing2, 50, 37, -0.1F, -0.25F, -0.75F, 9, 1, 2, 0.0F, false));
+
+        leftwing2membrane = new AdvancedModelRenderer(this);
+        leftwing2membrane.setRotationPoint(-0.125F, -0.025F, -0.325F);
+        leftwing2.addChild(leftwing2membrane);
+        setRotateAngle(leftwing2membrane, -0.0218F, 0.0742F, 0.0F);
+        leftwing2membrane.cubeList.add(new ModelBox(leftwing2membrane, 25, 30, -0.1F, -0.25F, 1.25F, 9, 1, 5, 0.0F, false));
+
+        leftwing2planemembrane = new AdvancedModelRenderer(this);
+        leftwing2planemembrane.setRotationPoint(4.5F, 0.4F, 6.225F);
+        leftwing2membrane.addChild(leftwing2planemembrane);
+        setRotateAngle(leftwing2planemembrane, -0.1658F, -0.0016F, -0.013F);
+        leftwing2planemembrane.cubeList.add(new ModelBox(leftwing2planemembrane, 31, 16, -4.6F, 0.0F, 0.0F, 9, 0, 5, 0.0F, false));
+
+        leftwing3 = new AdvancedModelRenderer(this);
+        leftwing3.setRotationPoint(8.75F, -0.05F, -0.3F);
+        leftwing2.addChild(leftwing3);
+        setRotateAngle(leftwing3, -0.0151F, -0.5525F, 0.3F);
+        leftwing3.cubeList.add(new ModelBox(leftwing3, 40, 56, 0.0F, -0.15F, -0.45F, 7, 1, 1, 0.0F, false));
+
+        leftwing3membrane = new AdvancedModelRenderer(this);
+        leftwing3membrane.setRotationPoint(0.0F, 0.0F, 0.05F);
+        leftwing3.addChild(leftwing3membrane);
+        leftwing3membrane.cubeList.add(new ModelBox(leftwing3membrane, 35, 9, 0.0F, -0.15F, 0.5F, 7, 1, 5, 0.0F, false));
+
+        leftwing3planemembrane = new AdvancedModelRenderer(this);
+        leftwing3planemembrane.setRotationPoint(3.5F, 0.4F, 5.0F);
+        leftwing3membrane.addChild(leftwing3planemembrane);
+        setRotateAngle(leftwing3planemembrane, -0.1309F, 0.0F, 0.0F);
+        leftwing3planemembrane.cubeList.add(new ModelBox(leftwing3planemembrane, 0, 50, -3.5F, -0.05F, 0.5F, 7, 0, 4, 0.0F, false));
+
+        leftwing4 = new AdvancedModelRenderer(this);
+        leftwing4.setRotationPoint(6.9F, 0.0F, 0.0F);
+        leftwing3.addChild(leftwing4);
+        setRotateAngle(leftwing4, -2.9433F, -1.4943F, 2.923F);
+        leftwing4.cubeList.add(new ModelBox(leftwing4, 41, 0, 0.0F, -0.15F, -0.45F, 12, 1, 1, 0.001F, false));
+
+        leftwing4membrane = new AdvancedModelRenderer(this);
+        leftwing4membrane.setRotationPoint(0.0F, 0.0F, 0.0F);
+        leftwing4.addChild(leftwing4membrane);
+        leftwing4membrane.cubeList.add(new ModelBox(leftwing4membrane, 0, 9, 0.0F, -0.15F, 0.5F, 12, 1, 5, 0.0F, false));
+
+        leftwing4planemembrane = new AdvancedModelRenderer(this);
+        leftwing4planemembrane.setRotationPoint(6.5F, 0.15F, 5.5F);
+        leftwing4membrane.addChild(leftwing4planemembrane);
+        setRotateAngle(leftwing4planemembrane, -0.0873F, 0.0F, 0.0F);
+        leftwing4planemembrane.cubeList.add(new ModelBox(leftwing4planemembrane, 23, 37, -5.0F, 0.0F, 0.0F, 10, 0, 3, 0.0F, false));
+
+        lefthand = new AdvancedModelRenderer(this);
+        lefthand.setRotationPoint(0.2F, 0.375F, 0.0F);
+        leftwing4.addChild(lefthand);
+        setRotateAngle(lefthand, -1.5534F, 0.0793F, -1.6385F);
+        lefthand.cubeList.add(new ModelBox(lefthand, 31, 69, 0.0F, 0.0F, -1.0F, 2, 1, 2, 0.0F, false));
+
+        leftwing5 = new AdvancedModelRenderer(this);
+        leftwing5.setRotationPoint(11.9F, 0.0F, 0.0F);
+        leftwing4.addChild(leftwing5);
+        setRotateAngle(leftwing5, -0.0782F, -1.2897F, 0.1732F);
+        leftwing5.cubeList.add(new ModelBox(leftwing5, 39, 5, 0.0F, -0.15F, -0.45F, 11, 1, 2, 0.001F, false));
+
+        leftwing5membrane = new AdvancedModelRenderer(this);
+        leftwing5membrane.setRotationPoint(0.0F, 0.0F, 1.5F);
+        leftwing5.addChild(leftwing5membrane);
+        leftwing5membrane.cubeList.add(new ModelBox(leftwing5membrane, 0, 16, 0.0F, -0.15F, 0.05F, 11, 1, 4, 0.0F, false));
+
+        leftwing6 = new AdvancedModelRenderer(this);
+        leftwing6.setRotationPoint(11.0935F, 0.1091F, -0.4648F);
+        leftwing5.addChild(leftwing6);
+        setRotateAngle(leftwing6, -0.0193F, -0.1997F, 0.1113F);
+        leftwing6.cubeList.add(new ModelBox(leftwing6, 0, 5, -0.1F, -0.15F, 0.05F, 17, 1, 2, 0.0F, false));
+
+        leftwing6membrane = new AdvancedModelRenderer(this);
+        leftwing6membrane.setRotationPoint(0.0F, 0.0F, 2.0F);
+        leftwing6.addChild(leftwing6membrane);
+        leftwing6membrane.cubeList.add(new ModelBox(leftwing6membrane, 0, 0, -0.1F, -0.15F, 0.05F, 17, 1, 3, 0.0F, false));
+
+        rightwing1 = new AdvancedModelRenderer(this);
+        rightwing1.setRotationPoint(-2.0F, -1.8912F, -6.4374F);
+        body.addChild(rightwing1);
+        setRotateAngle(rightwing1, -0.2875F, 0.6908F, 0.8886F);
+        rightwing1.cubeList.add(new ModelBox(rightwing1, 40, 51, -7.0F, -0.25F, -0.5F, 7, 2, 2, 0.0F, true));
+
+        rightwing1membrane = new AdvancedModelRenderer(this);
+        rightwing1membrane.setRotationPoint(-2.925F, 0.325F, 0.4F);
+        rightwing1.addChild(rightwing1membrane);
+        setRotateAngle(rightwing1membrane, -0.0884F, -0.1959F, 0.0936F);
+        rightwing1membrane.cubeList.add(new ModelBox(rightwing1membrane, 25, 22, -3.75F, -0.25F, 0.0F, 8, 1, 6, 0.0F, true));
+
+        rightwing1planemembrane = new AdvancedModelRenderer(this);
+        rightwing1planemembrane.setRotationPoint(-1.75F, 0.275F, 6.0F);
+        rightwing1membrane.addChild(rightwing1planemembrane);
+        setRotateAngle(rightwing1planemembrane, -0.0393F, 0.0F, 0.0F);
+        rightwing1planemembrane.cubeList.add(new ModelBox(rightwing1planemembrane, 0, 43, -2.0F, 0.0F, 0.0F, 4, 0, 6, 0.0F, true));
+
+        rightwing2 = new AdvancedModelRenderer(this);
+        rightwing2.setRotationPoint(-6.675F, 0.075F, 0.25F);
+        rightwing1.addChild(rightwing2);
+        setRotateAngle(rightwing2, 0.4638F, 0.4369F, -2.215F);
+        rightwing2.cubeList.add(new ModelBox(rightwing2, 50, 37, -8.9F, -0.25F, -0.75F, 9, 1, 2, 0.0F, true));
+
+        rightwing2membrane = new AdvancedModelRenderer(this);
+        rightwing2membrane.setRotationPoint(0.125F, -0.025F, -0.325F);
+        rightwing2.addChild(rightwing2membrane);
+        setRotateAngle(rightwing2membrane, -0.0218F, -0.0742F, 0.0F);
+        rightwing2membrane.cubeList.add(new ModelBox(rightwing2membrane, 25, 30, -8.9F, -0.25F, 1.25F, 9, 1, 5, 0.0F, true));
+
+        rightwing2planemembrane = new AdvancedModelRenderer(this);
+        rightwing2planemembrane.setRotationPoint(-4.5F, 0.4F, 6.225F);
+        rightwing2membrane.addChild(rightwing2planemembrane);
+        setRotateAngle(rightwing2planemembrane, -0.1658F, 0.0016F, 0.013F);
+        rightwing2planemembrane.cubeList.add(new ModelBox(rightwing2planemembrane, 31, 16, -4.4F, 0.0F, 0.0F, 9, 0, 5, 0.0F, true));
+
+        rightwing3 = new AdvancedModelRenderer(this);
+        rightwing3.setRotationPoint(-8.75F, -0.05F, -0.3F);
+        rightwing2.addChild(rightwing3);
+        setRotateAngle(rightwing3, -0.0151F, 0.5525F, -0.3F);
+        rightwing3.cubeList.add(new ModelBox(rightwing3, 40, 56, -7.0F, -0.15F, -0.45F, 7, 1, 1, 0.0F, true));
+
+        rightwing3membrane = new AdvancedModelRenderer(this);
+        rightwing3membrane.setRotationPoint(0.0F, 0.0F, 0.05F);
+        rightwing3.addChild(rightwing3membrane);
+        rightwing3membrane.cubeList.add(new ModelBox(rightwing3membrane, 35, 9, -7.0F, -0.15F, 0.5F, 7, 1, 5, 0.0F, true));
+
+        rightwing3planemembrane = new AdvancedModelRenderer(this);
+        rightwing3planemembrane.setRotationPoint(-3.5F, 0.4F, 5.0F);
+        rightwing3membrane.addChild(rightwing3planemembrane);
+        setRotateAngle(rightwing3planemembrane, -0.1309F, 0.0F, 0.0F);
+        rightwing3planemembrane.cubeList.add(new ModelBox(rightwing3planemembrane, 0, 50, -3.5F, -0.05F, 0.5F, 7, 0, 4, 0.0F, true));
+
+        rightwing4 = new AdvancedModelRenderer(this);
+        rightwing4.setRotationPoint(-6.9F, 0.0F, 0.0F);
+        rightwing3.addChild(rightwing4);
+        setRotateAngle(rightwing4, -2.9433F, 1.4943F, -2.923F);
+        rightwing4.cubeList.add(new ModelBox(rightwing4, 41, 0, -12.0F, -0.15F, -0.45F, 12, 1, 1, 0.001F, true));
+
+        rightwing4membrane = new AdvancedModelRenderer(this);
+        rightwing4membrane.setRotationPoint(0.0F, 0.0F, 0.0F);
+        rightwing4.addChild(rightwing4membrane);
+        rightwing4membrane.cubeList.add(new ModelBox(rightwing4membrane, 0, 9, -12.0F, -0.15F, 0.5F, 12, 1, 5, 0.0F, true));
+
+        rightwing4planemembrane = new AdvancedModelRenderer(this);
+        rightwing4planemembrane.setRotationPoint(-6.5F, 0.15F, 5.5F);
+        rightwing4membrane.addChild(rightwing4planemembrane);
+        setRotateAngle(rightwing4planemembrane, -0.0873F, 0.0F, 0.0F);
+        rightwing4planemembrane.cubeList.add(new ModelBox(rightwing4planemembrane, 23, 37, -5.0F, 0.0F, 0.0F, 10, 0, 3, 0.0F, true));
+
+        righthand = new AdvancedModelRenderer(this);
+        righthand.setRotationPoint(-0.2F, 0.375F, 0.0F);
+        rightwing4.addChild(righthand);
+        setRotateAngle(righthand, -1.5534F, -0.0793F, 1.6385F);
+        righthand.cubeList.add(new ModelBox(righthand, 31, 69, -2.0F, 0.0F, -1.0F, 2, 1, 2, 0.0F, true));
+
+        rightwing5 = new AdvancedModelRenderer(this);
+        rightwing5.setRotationPoint(-11.9F, 0.0F, 0.0F);
+        rightwing4.addChild(rightwing5);
+        setRotateAngle(rightwing5, -0.0782F, 1.2897F, -0.1732F);
+        rightwing5.cubeList.add(new ModelBox(rightwing5, 39, 5, -11.0F, -0.15F, -0.45F, 11, 1, 2, 0.001F, true));
+
+        rightwing5membrane = new AdvancedModelRenderer(this);
+        rightwing5membrane.setRotationPoint(0.0F, 0.0F, 1.5F);
+        rightwing5.addChild(rightwing5membrane);
+        rightwing5membrane.cubeList.add(new ModelBox(rightwing5membrane, 0, 16, -11.0F, -0.15F, 0.05F, 11, 1, 4, 0.0F, true));
+
+        rightwing6 = new AdvancedModelRenderer(this);
+        rightwing6.setRotationPoint(-11.0935F, 0.1091F, -0.4648F);
+        rightwing5.addChild(rightwing6);
+        setRotateAngle(rightwing6, -0.0193F, 0.1997F, -0.1113F);
+        rightwing6.cubeList.add(new ModelBox(rightwing6, 0, 5, -16.9F, -0.15F, 0.05F, 17, 1, 2, 0.0F, true));
+
+        rightwing6membrane = new AdvancedModelRenderer(this);
+        rightwing6membrane.setRotationPoint(0.0F, 0.0F, 2.0F);
+        rightwing6.addChild(rightwing6membrane);
+        rightwing6membrane.cubeList.add(new ModelBox(rightwing6membrane, 0, 0, -16.9F, -0.15F, 0.05F, 17, 1, 3, 0.0F, true));
+
+        shoulder = new AdvancedModelRenderer(this);
+        shoulder.setRotationPoint(0.0F, -0.7412F, -5.8124F);
+        body.addChild(shoulder);
+
+
+        cube40_r1 = new AdvancedModelRenderer(this);
+        cube40_r1.setRotationPoint(0.0F, -0.7F, 0.6F);
+        shoulder.addChild(cube40_r1);
+        setRotateAngle(cube40_r1, 0.6589F, 0.0F, 0.0F);
+        cube40_r1.cubeList.add(new ModelBox(cube40_r1, 23, 41, -2.0F, -2.0F, -4.0F, 4, 4, 5, -0.1F, false));
+
+        neck = new AdvancedModelRenderer(this);
+        neck.setRotationPoint(0.0F, -1.975F, 0.125F);
+        shoulder.addChild(neck);
+        setRotateAngle(neck, 0.0829F, 0.0F, 0.0F);
+
+
+        cube42_r1 = new AdvancedModelRenderer(this);
+        cube42_r1.setRotationPoint(-0.5F, 0.425F, -4.275F);
+        neck.addChild(cube42_r1);
+        setRotateAngle(cube42_r1, 0.9032F, 0.0F, 0.0F);
+        cube42_r1.cubeList.add(new ModelBox(cube42_r1, 0, 55, -1.0F, -2.8321F, -1.4813F, 3, 7, 2, -0.002F, false));
+
+        cube41_r1 = new AdvancedModelRenderer(this);
+        cube41_r1.setRotationPoint(-0.5F, -1.175F, -4.2F);
+        neck.addChild(cube41_r1);
+        setRotateAngle(cube41_r1, -0.672F, 0.0F, 0.0F);
+        cube41_r1.cubeList.add(new ModelBox(cube41_r1, 42, 41, -1.0F, -2.2F, -2.2F, 3, 3, 6, 0.0F, false));
+
+        head = new AdvancedModelRenderer(this);
+        head.setRotationPoint(-0.5F, -2.8509F, -5.4142F);
+        neck.addChild(head);
+        setRotateAngle(head, 0.829F, 0.0F, 0.0F);
+        head.cubeList.add(new ModelBox(head, 24, 60, -1.0F, -2.5F, -0.5F, 3, 4, 2, 0.005F, false));
+        head.cubeList.add(new ModelBox(head, 11, 60, -0.5F, -0.8F, -8.125F, 2, 1, 4, 0.001F, false));
+        head.cubeList.add(new ModelBox(head, 35, 65, -1.0F, -0.8F, -4.125F, 3, 1, 2, 0.003F, false));
+        head.cubeList.add(new ModelBox(head, 11, 55, -1.0F, -0.8F, -2.125F, 3, 2, 2, 0.004F, false));
+
+        cube61_r1 = new AdvancedModelRenderer(this);
+        cube61_r1.setRotationPoint(0.975F, -2.0165F, -10.4807F);
+        head.addChild(cube61_r1);
+        setRotateAngle(cube61_r1, 0.1614F, 0.0F, 0.0F);
+        cube61_r1.cubeList.add(new ModelBox(cube61_r1, 11, 66, -0.485F, 0.0F, -4.0F, 0, 1, 4, 0.0F, false));
+
+        cube60_r1 = new AdvancedModelRenderer(this);
+        cube60_r1.setRotationPoint(1.0F, -1.4537F, -8.1728F);
+        head.addChild(cube60_r1);
+        setRotateAngle(cube60_r1, -0.2182F, 0.0F, 0.0F);
+        cube60_r1.cubeList.add(new ModelBox(cube60_r1, 69, 63, -0.5F, -0.05F, -2.375F, 0, 1, 3, 0.0F, false));
+
+        cube59_r1 = new AdvancedModelRenderer(this);
+        cube59_r1.setRotationPoint(0.0F, -1.8054F, -4.4392F);
+        head.addChild(cube59_r1);
+        setRotateAngle(cube59_r1, 0.0873F, 0.0F, 0.0F);
+        cube59_r1.cubeList.add(new ModelBox(cube59_r1, 60, 15, -0.5F, 0.025F, -3.75F, 2, 1, 4, 0.0F, false));
+
+        cube58_r1 = new AdvancedModelRenderer(this);
+        cube58_r1.setRotationPoint(1.5F, -2.5F, -0.5F);
+        head.addChild(cube58_r1);
+        setRotateAngle(cube58_r1, 0.1789F, 0.0F, 0.0F);
+        cube58_r1.cubeList.add(new ModelBox(cube58_r1, 70, 60, -2.75F, 0.5F, -1.7F, 1, 1, 1, 0.0F, true));
+        cube58_r1.cubeList.add(new ModelBox(cube58_r1, 70, 60, -0.25F, 0.5F, -1.7F, 1, 1, 1, 0.0F, false));
+        cube58_r1.cubeList.add(new ModelBox(cube58_r1, 54, 30, -2.5F, 0.0F, -4.0F, 3, 2, 4, 0.0F, false));
+
+        cube54_r1 = new AdvancedModelRenderer(this);
+        cube54_r1.setRotationPoint(0.25F, -0.753F, -14.6153F);
+        head.addChild(cube54_r1);
+        setRotateAngle(cube54_r1, -0.5888F, 0.1733F, 0.2528F);
+        cube54_r1.cubeList.add(new ModelBox(cube54_r1, 20, 71, 0.0F, 0.0F, -0.5F, 0, 1, 1, 0.0F, true));
+
+        cube53_r1 = new AdvancedModelRenderer(this);
+        cube53_r1.setRotationPoint(0.15F, -0.9206F, -13.4186F);
+        head.addChild(cube53_r1);
+        setRotateAngle(cube53_r1, -0.2559F, 0.056F, 0.211F);
+        cube53_r1.cubeList.add(new ModelBox(cube53_r1, 53, 59, 0.0F, 0.0F, -0.5F, 0, 2, 1, 0.0F, true));
+
+        cube52_r1 = new AdvancedModelRenderer(this);
+        cube52_r1.setRotationPoint(0.0F, -0.105F, -11.6117F);
+        head.addChild(cube52_r1);
+        setRotateAngle(cube52_r1, -0.0865F, 0.0114F, 0.1304F);
+        cube52_r1.cubeList.add(new ModelBox(cube52_r1, 61, 48, 0.0F, -0.75F, -1.5F, 0, 1, 5, 0.0F, true));
+
+        cube51_r1 = new AdvancedModelRenderer(this);
+        cube51_r1.setRotationPoint(0.75F, -0.753F, -14.6153F);
+        head.addChild(cube51_r1);
+        setRotateAngle(cube51_r1, -0.5888F, -0.1733F, -0.2528F);
+        cube51_r1.cubeList.add(new ModelBox(cube51_r1, 20, 71, 0.0F, 0.0F, -0.5F, 0, 1, 1, 0.0F, false));
+
+        cube50_r1 = new AdvancedModelRenderer(this);
+        cube50_r1.setRotationPoint(0.85F, -0.9206F, -13.4186F);
+        head.addChild(cube50_r1);
+        setRotateAngle(cube50_r1, -0.2559F, -0.056F, -0.211F);
+        cube50_r1.cubeList.add(new ModelBox(cube50_r1, 53, 59, 0.0F, 0.0F, -0.5F, 0, 2, 1, 0.0F, false));
+
+        cube49_r1 = new AdvancedModelRenderer(this);
+        cube49_r1.setRotationPoint(1.0F, -0.105F, -11.6117F);
+        head.addChild(cube49_r1);
+        setRotateAngle(cube49_r1, -0.0865F, -0.0114F, -0.1304F);
+        cube49_r1.cubeList.add(new ModelBox(cube49_r1, 61, 48, 0.0F, -0.75F, -1.5F, 0, 1, 5, 0.0F, false));
+
+        cube48_r1 = new AdvancedModelRenderer(this);
+        cube48_r1.setRotationPoint(0.5F, 0.2F, -8.125F);
+        head.addChild(cube48_r1);
+        setRotateAngle(cube48_r1, -0.0873F, 0.0F, 0.0F);
+        cube48_r1.cubeList.add(new ModelBox(cube48_r1, 23, 51, -0.5F, -1.0F, -7.0F, 1, 1, 7, 0.0F, false));
+
+        cube46_r1 = new AdvancedModelRenderer(this);
+        cube46_r1.setRotationPoint(-0.45F, 0.05F, -5.625F);
+        head.addChild(cube46_r1);
+        setRotateAngle(cube46_r1, 0.0F, 0.0F, 0.3491F);
+        cube46_r1.cubeList.add(new ModelBox(cube46_r1, 0, 70, 0.0F, -0.5F, -1.5F, 0, 1, 3, 0.0F, true));
+
+        cube45_r1 = new AdvancedModelRenderer(this);
+        cube45_r1.setRotationPoint(1.45F, 0.05F, -5.625F);
+        head.addChild(cube45_r1);
+        setRotateAngle(cube45_r1, 0.0F, 0.0F, -0.3491F);
+        cube45_r1.cubeList.add(new ModelBox(cube45_r1, 0, 70, 0.0F, -0.5F, -1.5F, 0, 1, 3, 0.0F, false));
+
+        jaw = new AdvancedModelRenderer(this);
+        jaw.setRotationPoint(0.0F, 0.2F, -2.125F);
+        head.addChild(jaw);
+        jaw.cubeList.add(new ModelBox(jaw, 60, 9, -0.5F, 0.0F, -6.0F, 2, 1, 4, 0.001F, false));
+        jaw.cubeList.add(new ModelBox(jaw, 66, 3, -1.0F, 0.0F, -2.0F, 3, 1, 2, 0.0F, false));
+        jaw.cubeList.add(new ModelBox(jaw, 69, 68, -0.5F, -1.5F, -1.75F, 2, 2, 2, 0.0F, false));
+
+        cube75_r1 = new AdvancedModelRenderer(this);
+        cube75_r1.setRotationPoint(0.3674F, -0.4766F, -11.9036F);
+        jaw.addChild(cube75_r1);
+        setRotateAngle(cube75_r1, 0.242F, -0.1453F, -0.5277F);
+        cube75_r1.cubeList.add(new ModelBox(cube75_r1, 7, 70, -0.225F, -1.5F, -0.625F, 0, 2, 1, 0.0F, true));
+
+        cube74_r1 = new AdvancedModelRenderer(this);
+        cube74_r1.setRotationPoint(0.6326F, -0.4766F, -11.9036F);
+        jaw.addChild(cube74_r1);
+        setRotateAngle(cube74_r1, 0.242F, 0.1453F, 0.5277F);
+        cube74_r1.cubeList.add(new ModelBox(cube74_r1, 7, 70, 0.225F, -1.5F, -0.625F, 0, 2, 1, 0.0F, false));
+
+        cube73_r1 = new AdvancedModelRenderer(this);
+        cube73_r1.setRotationPoint(0.5F, 0.4771F, -11.9772F);
+        jaw.addChild(cube73_r1);
+        setRotateAngle(cube73_r1, -0.3927F, 0.0F, 0.0F);
+        cube73_r1.cubeList.add(new ModelBox(cube73_r1, 68, 0, -0.5F, -1.0F, -1.0F, 1, 1, 1, -0.002F, false));
+
+        cube72_r1 = new AdvancedModelRenderer(this);
+        cube72_r1.setRotationPoint(0.0F, -0.2577F, -8.9014F);
+        jaw.addChild(cube72_r1);
+        setRotateAngle(cube72_r1, -0.0843F, -0.0226F, -0.2608F);
+        cube72_r1.cubeList.add(new ModelBox(cube72_r1, 61, 41, 0.0F, -0.25F, -3.0F, 0, 1, 5, 0.0F, true));
+
+        cube71_r1 = new AdvancedModelRenderer(this);
+        cube71_r1.setRotationPoint(1.0F, -0.2577F, -8.9014F);
+        jaw.addChild(cube71_r1);
+        setRotateAngle(cube71_r1, -0.0843F, 0.0226F, 0.2608F);
+        cube71_r1.cubeList.add(new ModelBox(cube71_r1, 61, 41, 0.0F, -0.25F, -3.0F, 0, 1, 5, 0.0F, false));
+
+        cube70_r1 = new AdvancedModelRenderer(this);
+        cube70_r1.setRotationPoint(1.0F, 0.9947F, -10.0453F);
+        jaw.addChild(cube70_r1);
+        setRotateAngle(cube70_r1, 0.0916F, 0.0F, 0.0F);
+        cube70_r1.cubeList.add(new ModelBox(cube70_r1, 40, 69, -0.51F, -1.0F, 0.0F, 0, 1, 2, 0.0F, false));
+
+        cube69_r1 = new AdvancedModelRenderer(this);
+        cube69_r1.setRotationPoint(1.0F, 0.4771F, -11.9772F);
+        jaw.addChild(cube69_r1);
+        setRotateAngle(cube69_r1, -0.2618F, 0.0F, 0.0F);
+        cube69_r1.cubeList.add(new ModelBox(cube69_r1, 35, 60, -0.5F, -1.0F, 0.0F, 0, 1, 2, 0.0F, false));
+
+        cube68_r1 = new AdvancedModelRenderer(this);
+        cube68_r1.setRotationPoint(0.5F, 1.0F, -6.0F);
+        jaw.addChild(cube68_r1);
+        setRotateAngle(cube68_r1, -0.0873F, 0.0F, 0.0F);
+        cube68_r1.cubeList.add(new ModelBox(cube68_r1, 54, 22, -0.5F, -1.0F, -6.0F, 1, 1, 6, 0.0F, false));
+
+        cube65_r1 = new AdvancedModelRenderer(this);
+        cube65_r1.setRotationPoint(-0.45F, 0.2F, -4.5F);
+        jaw.addChild(cube65_r1);
+        setRotateAngle(cube65_r1, 0.0F, 0.0F, -0.3491F);
+        cube65_r1.cubeList.add(new ModelBox(cube65_r1, 70, 55, 0.025F, -0.5F, -1.5F, 0, 1, 3, 0.0F, true));
+
+        cube64_r1 = new AdvancedModelRenderer(this);
+        cube64_r1.setRotationPoint(1.45F, 0.2F, -4.5F);
+        jaw.addChild(cube64_r1);
+        setRotateAngle(cube64_r1, 0.0F, 0.0F, 0.3491F);
+        cube64_r1.cubeList.add(new ModelBox(cube64_r1, 70, 55, -0.025F, -0.5F, -1.5F, 0, 1, 3, 0.0F, false));
+
+        throat = new AdvancedModelRenderer(this);
+        throat.setRotationPoint(0.0F, 1.0F, -3.0F);
+        jaw.addChild(throat);
+        setRotateAngle(throat, -1.0036F, 0.0F, 0.0F);
+        throat.cubeList.add(new ModelBox(throat, 57, 56, -0.5F, -2.0F, 0.0F, 2, 2, 4, -0.003F, false));
+
+        this.leftwing5membrane.setScale((float)1,(float)1,(float)0);
+        this.leftwing6membrane.setScale((float)1,(float)1,(float)0);
+        this.rightwing5membrane.setScale((float)1,(float)1,(float)0);
+        this.rightwing6membrane.setScale((float)1,(float)1,(float)0);
 
         updateDefaultPose();
         animator = ModelAnimator.create();
@@ -635,13 +640,13 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.7F;
-        this.main.offsetX = 0F;
+        this.main.offsetY = -0.2F;
+        this.main.offsetX = -0.2F;
         this.main.rotateAngleY = (float)Math.toRadians(125);
         this.main.rotateAngleX = (float)Math.toRadians(0);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 1.5F;
+        float scaler = 0.7F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
         //this.setRotateAngle(root, 0.2618F, 0.0F, 0.0F);
@@ -653,6 +658,7 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
         this.main.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         resetToDefaultPose();
     }
@@ -681,8 +687,8 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
         //Animations:
 
         if (flier.isReallyFlying()) { //flying
-//            this.faceTarget(f3, f4, 8, neck);
-//            this.faceTarget(f3, f4, 4, head);
+            this.faceTarget(f3, f4, 12, neck);
+            this.faceTarget(f3, f4, 8, head);
 
         }
         else { //not flying
@@ -692,8 +698,8 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
             else {
                 speed = speed / 1.5F;
             }
-            this.faceTarget(f3, f4, 12, neck);
-            this.faceTarget(f3, f4, 8, head);
+            this.faceTarget(f3, f4, 14, neck);
+            this.faceTarget(f3, f4, 10, head);
 
             this.chainWave(tailFull, speed * 0.5F, 0.02F, 0.2F, f2, 1F);
             this.chainSwing(tailFull, speed * 0.5F, 0.05F, 0.5F, f2, 1F);
@@ -710,25 +716,194 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
 
         if (ee.isReallyFlying() || ee.getAnimation() == ee.UNFLY_ANIMATION) {
             //flight pose
+            //The pose itself is given by the animation, which plays constantly
+            //also within the flight anim itself is the rescaling of the wings
+            //so we don't need to do them here either, but I will for consistency!
+            this.leftwing5membrane.setScale((float)1,(float)1,(float)1);
+            this.leftwing6membrane.setScale((float)1,(float)1,(float)1);
+            this.rightwing5membrane.setScale((float)1,(float)1,(float)1);
+            this.rightwing6membrane.setScale((float)1,(float)1,(float)1);
 
-
+            //And now the pose:
+            body.setRotationPoint(0.0F, -0.4588F, 1.2124F);
+            cube1_r1.setRotationPoint(-0.5F, 1.1393F, 4.3784F);
+            cube2_r1.setRotationPoint(-0.5F, 1.7393F, 4.2284F);
+            cube3_r1.setRotationPoint(0.5F, 0.2F, 4.25F);
+            cube38_r1.setRotationPoint(-0.5F, 2.6088F, -6.2124F);
+            cube39_r1.setRotationPoint(-0.5F, -0.8912F, -5.3624F);
+            cube40_r1.setRotationPoint(0.0F, -0.7F, 0.6F);
+            cube41_r1.setRotationPoint(-0.5F, -1.175F, -4.2F);
+            cube42_r1.setRotationPoint(-0.5F, 0.425F, -4.275F);
+            cube45_r1.setRotationPoint(1.45F, 0.05F, -5.625F);
+            cube46_r1.setRotationPoint(-0.45F, 0.05F, -5.625F);
+            cube48_r1.setRotationPoint(0.5F, 0.2F, -8.125F);
+            cube49_r1.setRotationPoint(1.0F, -0.1051F, -11.6117F);
+            cube50_r1.setRotationPoint(0.85F, -0.9206F, -13.4186F);
+            cube51_r1.setRotationPoint(0.75F, -0.7531F, -14.6153F);
+            cube52_r1.setRotationPoint(0.0F, -0.1051F, -11.6117F);
+            cube53_r1.setRotationPoint(0.15F, -0.9206F, -13.4186F);
+            cube54_r1.setRotationPoint(0.25F, -0.7531F, -14.6153F);
+            cube58_r1.setRotationPoint(1.5F, -2.5F, -0.5F);
+            cube59_r1.setRotationPoint(0.0F, -1.8054F, -4.4392F);
+            cube60_r1.setRotationPoint(1.0F, -1.4537F, -8.1728F);
+            cube61_r1.setRotationPoint(0.975F, -2.0166F, -10.4807F);
+            cube64_r1.setRotationPoint(1.45F, 0.2F, -4.5F);
+            cube65_r1.setRotationPoint(-0.45F, 0.2F, -4.5F);
+            cube68_r1.setRotationPoint(0.5F, 1.0F, -6.0F);
+            cube69_r1.setRotationPoint(1.0F, 0.477F, -11.9772F);
+            cube70_r1.setRotationPoint(1.0F, 0.9947F, -10.0453F);
+            cube71_r1.setRotationPoint(1.0F, -0.2577F, -8.9014F);
+            cube72_r1.setRotationPoint(0.0F, -0.2577F, -8.9014F);
+            cube73_r1.setRotationPoint(0.5F, 0.477F, -11.9772F);
+            cube74_r1.setRotationPoint(0.6326F, -0.4766F, -11.9036F);
+            cube75_r1.setRotationPoint(0.3674F, -0.4766F, -11.9036F);
+            head.setRotationPoint(-0.5F, -1.7259F, -5.4142F);
+            hips.setRotationPoint(0.0F, -3.825F, 7.075F);
+            jaw.setRotationPoint(0.0F, 0.2F, -2.125F);
+            leftfoot.setRotationPoint(0.1308F, 6.2913F, 0.6363F);
+            lefthand.setRotationPoint(0.2F, 0.375F, 0.0F);
+            leftleg1.setRotationPoint(1.7454F, -0.4555F, 0.2462F);
+            leftleg2.setRotationPoint(-0.3135F, 4.5915F, -0.425F);
+            leftlegwing1.setRotationPoint(0.1567F, 3.2956F, 1.7027F);
+            leftlegwing2.setRotationPoint(-0.5166F, 2.1211F, 1.0845F);
+            leftwing1.setRotationPoint(2.0F, -1.8912F, -6.4374F);
+            leftwing1membrane.setRotationPoint(2.925F, 0.325F, 0.4F);
+            leftwing1planemembrane.setRotationPoint(1.75F, 0.275F, 6.0F);
+            leftwing2.setRotationPoint(6.675F, 0.075F, 0.25F);
+            leftwing2membrane.setRotationPoint(-0.125F, -0.025F, -0.325F);
+            leftwing2planemembrane.setRotationPoint(4.5F, 0.4F, 6.225F);
+            leftwing3.setRotationPoint(8.75F, -0.05F, -0.3F);
+            leftwing3membrane.setRotationPoint(0.0F, 0.0F, 0.05F);
+            leftwing3planemembrane.setRotationPoint(3.5F, 0.4F, 5.0F);
+            leftwing4.setRotationPoint(6.9F, 0.0F, 0.0F);
+            leftwing4membrane.setRotationPoint(0.0F, 0.0F, 0.0F);
+            leftwing4planemembrane.setRotationPoint(6.5F, 0.15F, 5.5F);
+            leftwing5.setRotationPoint(11.9F, 0.0F, 0.0F);
+            leftwing5membrane.setRotationPoint(0.0F, 0.0F, 1.5F);
+            leftwing6.setRotationPoint(11.0935F, 0.1091F, -0.4648F);
+            leftwing6membrane.setRotationPoint(0.0F, 0.0F, 2.0F);
+            main.setRotationPoint(0.0F, 20.0F, -6.0F);
+            neck.setRotationPoint(0.0F, -1.975F, 0.125F);
+            rightfoot.setRotationPoint(-0.1308F, 6.2913F, 0.6363F);
+            righthand.setRotationPoint(-0.2F, 0.375F, 0.0F);
+            rightleg1.setRotationPoint(-1.7454F, -0.4555F, 0.2462F);
+            rightleg2.setRotationPoint(0.3135F, 4.5915F, -0.425F);
+            rightlegwing1.setRotationPoint(-0.1567F, 3.2956F, 1.7027F);
+            rightlegwing2.setRotationPoint(0.5166F, 2.1211F, 1.0845F);
+            rightwing1.setRotationPoint(-2.0F, -1.8912F, -6.4374F);
+            rightwing1membrane.setRotationPoint(-2.925F, 0.325F, 0.4F);
+            rightwing1planemembrane.setRotationPoint(-1.75F, 0.275F, 6.0F);
+            rightwing2.setRotationPoint(-6.675F, 0.075F, 0.25F);
+            rightwing2membrane.setRotationPoint(0.125F, -0.025F, -0.325F);
+            rightwing2planemembrane.setRotationPoint(-4.5F, 0.4F, 6.225F);
+            rightwing3.setRotationPoint(-8.75F, -0.05F, -0.3F);
+            rightwing3membrane.setRotationPoint(0.0F, 0.0F, 0.05F);
+            rightwing3planemembrane.setRotationPoint(-3.5F, 0.4F, 5.0F);
+            rightwing4.setRotationPoint(-6.9F, 0.0F, 0.0F);
+            rightwing4membrane.setRotationPoint(0.0F, 0.0F, 0.0F);
+            rightwing4planemembrane.setRotationPoint(-6.5F, 0.15F, 5.5F);
+            rightwing5.setRotationPoint(-11.9F, 0.0F, 0.0F);
+            rightwing5membrane.setRotationPoint(0.0F, 0.0F, 1.5F);
+            rightwing6.setRotationPoint(-11.0935F, 0.1091F, -0.4648F);
+            rightwing6membrane.setRotationPoint(0.0F, 0.0F, 2.0F);
+            setRotateAngle(body, -0.2618F, 0.0F, 0.0F);
+            setRotateAngle(cube1_r1, -0.2443F, 0.0F, 0.0F);
+            setRotateAngle(cube2_r1, -0.2443F, 0.0F, 0.0F);
+            setRotateAngle(cube3_r1, -0.1047F, 0.0F, 0.0F);
+            setRotateAngle(cube38_r1, -0.1309F, 0.0F, 0.0F);
+            setRotateAngle(cube39_r1, -0.4363F, 0.0F, 0.0F);
+            setRotateAngle(cube40_r1, 0.6589F, 0.0F, 0.0F);
+            setRotateAngle(cube41_r1, -0.672F, 0.0F, 0.0F);
+            setRotateAngle(cube42_r1, 0.9032F, 0.0F, 0.0F);
+            setRotateAngle(cube45_r1, 0.0F, 0.0F, -0.3491F);
+            setRotateAngle(cube46_r1, 0.0F, 0.0F, 0.3491F);
+            setRotateAngle(cube48_r1, -0.0873F, 0.0F, 0.0F);
+            setRotateAngle(cube49_r1, -0.0865F, -0.0114F, -0.1304F);
+            setRotateAngle(cube50_r1, -0.2559F, -0.056F, -0.211F);
+            setRotateAngle(cube51_r1, -0.5888F, -0.1733F, -0.2528F);
+            setRotateAngle(cube52_r1, -0.0865F, 0.0114F, 0.1304F);
+            setRotateAngle(cube53_r1, -0.2559F, 0.056F, 0.211F);
+            setRotateAngle(cube54_r1, -0.5888F, 0.1733F, 0.2528F);
+            setRotateAngle(cube58_r1, 0.1789F, 0.0F, 0.0F);
+            setRotateAngle(cube59_r1, 0.0873F, 0.0F, 0.0F);
+            setRotateAngle(cube60_r1, -0.2182F, 0.0F, 0.0F);
+            setRotateAngle(cube61_r1, 0.1614F, 0.0F, 0.0F);
+            setRotateAngle(cube64_r1, 0.0F, 0.0F, 0.3491F);
+            setRotateAngle(cube65_r1, 0.0F, 0.0F, -0.3491F);
+            setRotateAngle(cube68_r1, -0.0873F, 0.0F, 0.0F);
+            setRotateAngle(cube69_r1, -0.2618F, 0.0F, 0.0F);
+            setRotateAngle(cube70_r1, 0.0916F, 0.0F, 0.0F);
+            setRotateAngle(cube71_r1, -0.0843F, 0.0226F, 0.2608F);
+            setRotateAngle(cube72_r1, -0.0843F, -0.0226F, -0.2608F);
+            setRotateAngle(cube73_r1, -0.3927F, 0.0F, 0.0F);
+            setRotateAngle(cube74_r1, 0.242F, 0.1453F, 0.5277F);
+            setRotateAngle(cube75_r1, 0.242F, -0.1453F, -0.5277F);
+            setRotateAngle(head, 0.1963F, 0.0F, 0.0F);
+            setRotateAngle(hips, 0.3098F, 0.0F, 0.0F);
+            setRotateAngle(leftfoot, 1.1254F, 0.0804F, -0.024F);
+            setRotateAngle(lefthand, 0.5806F, 0.825F, 0.3218F);
+            setRotateAngle(leftleg1, 0.1323F, -0.1934F, -1.7129F);
+            setRotateAngle(leftleg2, 0.9936F, -0.1689F, 0.1602F);
+            setRotateAngle(leftlegwing1, -0.0141F, 0.0F, 0.0F);
+            setRotateAngle(leftlegwing2, 0.1367F, 0.0F, 0.0F);
+            setRotateAngle(leftwing1, -0.1063F, 0.0897F, -0.1075F);
+            setRotateAngle(leftwing1membrane, -0.0884F, 0.1959F, -0.0936F);
+            setRotateAngle(leftwing1planemembrane, -0.0393F, 0.0F, 0.0F);
+            setRotateAngle(leftwing2, 0.0033F, 0.1483F, -0.0216F);
+            setRotateAngle(leftwing2membrane, -0.0218F, 0.0742F, 0.0F);
+            setRotateAngle(leftwing2planemembrane, -0.1658F, -0.0016F, -0.013F);
+            setRotateAngle(leftwing3, -0.0018F, -0.0523F, 0.0786F);
+            setRotateAngle(leftwing3planemembrane, -0.1309F, 0.0F, 0.0F);
+            setRotateAngle(leftwing4, -0.0222F, -0.3484F, 0.065F);
+            setRotateAngle(leftwing4planemembrane, -0.0873F, 0.0F, 0.0F);
+            setRotateAngle(leftwing5, -0.0222F, -0.2171F, 0.1028F);
+            setRotateAngle(leftwing6, -0.0193F, -0.1997F, 0.1113F);
+            setRotateAngle(neck, -0.2836F, 0.0F, 0.0F);
+            setRotateAngle(rightfoot, 1.1254F, -0.0804F, 0.024F);
+            setRotateAngle(righthand, 0.5806F, -0.825F, -0.3218F);
+            setRotateAngle(rightleg1, 0.1323F, 0.1934F, 1.7129F);
+            setRotateAngle(rightleg2, 0.9936F, 0.1689F, -0.1602F);
+            setRotateAngle(rightlegwing1, -0.0141F, 0.0F, 0.0F);
+            setRotateAngle(rightlegwing2, 0.1367F, 0.0F, 0.0F);
+            setRotateAngle(rightwing1, -0.1063F, -0.0897F, 0.1075F);
+            setRotateAngle(rightwing1membrane, -0.0884F, -0.1959F, 0.0936F);
+            setRotateAngle(rightwing1planemembrane, -0.0393F, 0.0F, 0.0F);
+            setRotateAngle(rightwing2, 0.0033F, -0.1483F, 0.0216F);
+            setRotateAngle(rightwing2membrane, -0.0218F, -0.0742F, 0.0F);
+            setRotateAngle(rightwing2planemembrane, -0.1658F, 0.0016F, 0.013F);
+            setRotateAngle(rightwing3, -0.0018F, 0.0523F, -0.0786F);
+            setRotateAngle(rightwing3planemembrane, -0.1309F, 0.0F, 0.0F);
+            setRotateAngle(rightwing4, -0.0222F, 0.3484F, -0.065F);
+            setRotateAngle(rightwing4planemembrane, -0.0873F, 0.0F, 0.0F);
+            setRotateAngle(rightwing5, -0.0222F, 0.2171F, -0.1028F);
+            setRotateAngle(rightwing6, -0.0193F, 0.1997F, -0.1113F);
+            setRotateAngle(shoulder, 0.2182F, 0.0F, 0.0F);
+            setRotateAngle(tail, -0.1222F, 0.0F, 0.0F);
+            setRotateAngle(throat, -0.6196F, 0.0F, 0.0F);
+            shoulder.setRotationPoint(0.0F, -0.7412F, -5.8124F);
+            tail.setRotationPoint(0.0F, -0.6F, 1.0F);
+            tail1.setRotationPoint(0.0F, 0.4143F, 1.8284F);
+            throat.setRotationPoint(0.0F, 0.95F, -1.4F);
 
 
         } else if (ee.getAttachmentPos() != null) {
             if (ee.getAttachmentFacing() == EnumFacing.UP) {
                 //Is walking:
-                //The model is already reset to default each cycle so no need to do more here
+                //The pose is reset here, and I have hard coded these into the default
+                //pose as BB wont have done that
+                this.leftwing5membrane.setScale((float)1,(float)1,(float)0);
+                this.leftwing6membrane.setScale((float)1,(float)1,(float)0);
+                this.rightwing5membrane.setScale((float)1,(float)1,(float)0);
+                this.rightwing6membrane.setScale((float)1,(float)1,(float)0);
+
             }
             else {
                 //Climb pose
-
+                //Anhang does not climb
             }
         }
 
-        if (ee.getAttachmentPos() == null) { //set wing membranes to their proper scale for flight
-            this.rightfoot.setScale((float) 1, (float) 1, (float) 1);
-
-
+        if (ee.getAttachmentPos() == null) {
 
         } else {
 
@@ -768,11 +943,6 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-
-
-        this.leftwing6membrane.setScale((float)1,(float)1,(float)0);
-
-
 
         if (tickAnim >= 0 && tickAnim < 7) {
             xx = 0 + (((tickAnim - 0) / 7) * (-2.75-(0)));
@@ -921,14 +1091,8 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
         }
         this.setRotateAngle(throat, throat.rotateAngleX + (float) Math.toRadians(xx), throat.rotateAngleY + (float) Math.toRadians(yy), throat.rotateAngleZ + (float) Math.toRadians(zz));
 
-
-
-        this.rightwing5membrane.setScale((float)1,(float)1,(float)0);
-
-
-        this.rightwing6membrane.setScale((float)1,(float)1,(float)0);
-
     }
+
     public void animEat(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraAnhanguera entity = (EntityPrehistoricFloraAnhanguera) entitylivingbaseIn;
         int animCycle = 20;
@@ -936,69 +1100,14 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-         if (tickAnim >= 0 && tickAnim < 8) {
-            xx = 0 + (((tickAnim - 0) / 8) * (14.75-(0)));
-            yy = 0 + (((tickAnim - 0) / 8) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
-        }
-        else if (tickAnim >= 8 && tickAnim < 15) {
-            xx = 14.75 + (((tickAnim - 8) / 7) * (14.75-(14.75)));
-            yy = 0 + (((tickAnim - 8) / 7) * (0-(0)));
-            zz = 0 + (((tickAnim - 8) / 7) * (0-(0)));
-        }
-        else if (tickAnim >= 15 && tickAnim < 20) {
-            xx = 14.75 + (((tickAnim - 15) / 5) * (0-(14.75)));
-            yy = 0 + (((tickAnim - 15) / 5) * (0-(0)));
-            zz = 0 + (((tickAnim - 15) / 5) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(body, body.rotateAngleX + (float) Math.toRadians(xx), body.rotateAngleY + (float) Math.toRadians(yy), body.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
 
         if (tickAnim >= 0 && tickAnim < 8) {
-            xx = 0 + (((tickAnim - 0) / 8) * (-14.21493-(0)));
-            yy = 0 + (((tickAnim - 0) / 8) * (-11.514-(0)));
-            zz = 0 + (((tickAnim - 0) / 8) * (0.9154-(0)));
-        }
-        else if (tickAnim >= 8 && tickAnim < 15) {
-            xx = -14.21493 + (((tickAnim - 8) / 7) * (-14.21493-(-14.21493)));
-            yy = -11.514 + (((tickAnim - 8) / 7) * (-11.514-(-11.514)));
-            zz = 0.9154 + (((tickAnim - 8) / 7) * (0.9154-(0.9154)));
-        }
-        else if (tickAnim >= 15 && tickAnim < 20) {
-            xx = -14.21493 + (((tickAnim - 15) / 5) * (0-(-14.21493)));
-            yy = -11.514 + (((tickAnim - 15) / 5) * (0-(-11.514)));
-            zz = 0.9154 + (((tickAnim - 15) / 5) * (0-(0.9154)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(leftwing1, leftwing1.rotateAngleX + (float) Math.toRadians(xx), leftwing1.rotateAngleY + (float) Math.toRadians(yy), leftwing1.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-        this.leftwing5membrane.setScale((float)1,(float)1,(float)0);
-
-
-        this.leftwing6membrane.setScale((float)1,(float)1,(float)0);
-
-
-
-        if (tickAnim >= 0 && tickAnim < 8) {
-            xx = 0 + (((tickAnim - 0) / 8) * (17-(0)));
+            xx = 0 + (((tickAnim - 0) / 8) * (27-(0)));
             yy = 0 + (((tickAnim - 0) / 8) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
         }
         else if (tickAnim >= 8 && tickAnim < 20) {
-            xx = 17 + (((tickAnim - 8) / 12) * (0-(17)));
+            xx = 27 + (((tickAnim - 8) / 12) * (0-(27)));
             yy = 0 + (((tickAnim - 8) / 12) * (0-(0)));
             zz = 0 + (((tickAnim - 8) / 12) * (0-(0)));
         }
@@ -1099,39 +1208,8 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
         }
         this.setRotateAngle(jaw, jaw.rotateAngleX + (float) Math.toRadians(xx), jaw.rotateAngleY + (float) Math.toRadians(yy), jaw.rotateAngleZ + (float) Math.toRadians(zz));
 
-
-
-
-        if (tickAnim >= 0 && tickAnim < 8) {
-            xx = 0 + (((tickAnim - 0) / 8) * (-14.21493-(0)));
-            yy = 0 + (((tickAnim - 0) / 8) * (11.51399-(0)));
-            zz = 0 + (((tickAnim - 0) / 8) * (-0.91543-(0)));
-        }
-        else if (tickAnim >= 8 && tickAnim < 15) {
-            xx = -14.21493 + (((tickAnim - 8) / 7) * (-14.21493-(-14.21493)));
-            yy = 11.51399 + (((tickAnim - 8) / 7) * (11.51399-(11.51399)));
-            zz = -0.91543 + (((tickAnim - 8) / 7) * (-0.91543-(-0.91543)));
-        }
-        else if (tickAnim >= 15 && tickAnim < 20) {
-            xx = -14.21493 + (((tickAnim - 15) / 5) * (0-(-14.21493)));
-            yy = 11.51399 + (((tickAnim - 15) / 5) * (0-(11.51399)));
-            zz = -0.91543 + (((tickAnim - 15) / 5) * (0-(-0.91543)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(rightwing1, rightwing1.rotateAngleX + (float) Math.toRadians(xx), rightwing1.rotateAngleY + (float) Math.toRadians(yy), rightwing1.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-        this.rightwing5membrane.setScale((float)1,(float)1,(float)0);
-
-
-        this.rightwing6membrane.setScale((float)1,(float)1,(float)0);
-
     }
+
     public void animFly(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraAnhanguera entity = (EntityPrehistoricFloraAnhanguera) entitylivingbaseIn;
         int animCycle = 120;
@@ -1141,22 +1219,22 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
         double zz = 0;
 
         if (tickAnim >= 0 && tickAnim < 17) {
-            xx = 32.5 + (((tickAnim - 0) / 17) * (32.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*0.1-(32.5)));
+            xx = 0 + (((tickAnim - 0) / 17) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*0.1-(0)));
             yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 17) * (0-(0)));
         }
         else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = 32.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*0.1 + (((tickAnim - 17) / 23) * (32.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*4-(32.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*0.1)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*0.1 + (((tickAnim - 17) / 23) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*4-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*0.1)));
             yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
             zz = 0 + (((tickAnim - 17) / 23) * (0-(0)));
         }
         else if (tickAnim >= 40 && tickAnim < 62) {
-            xx = 32.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*4 + (((tickAnim - 40) / 22) * (32.5-(32.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*4)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*4 + (((tickAnim - 40) / 22) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*4)));
             yy = 0 + (((tickAnim - 40) / 22) * (0-(0)));
             zz = 0 + (((tickAnim - 40) / 22) * (0-(0)));
         }
         else if (tickAnim >= 62 && tickAnim < 121) {
-            xx = 32.5 + (((tickAnim - 62) / 59) * (32.5-(32.5)));
+            xx = 0 + (((tickAnim - 62) / 59) * (0-(0)));
             yy = 0 + (((tickAnim - 62) / 59) * (0-(0)));
             zz = 0 + (((tickAnim - 62) / 59) * (0-(0)));
         }
@@ -1205,25 +1283,25 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 17) {
-            xx = -8.75 + (((tickAnim - 0) / 17) * (-8.75-(-8.75)));
-            yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 41) {
+            xx = 0 + (((tickAnim - 0) / 41) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 41) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 41) * (0-(0)));
         }
-        else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = -8.75 + (((tickAnim - 17) / 23) * (-8.75-(-8.75)));
-            yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
-            zz = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+        else if (tickAnim >= 41 && tickAnim < 56) {
+            xx = 0 + (((tickAnim - 41) / 15) * (0-(0)));
+            yy = 0 + (((tickAnim - 41) / 15) * (0-(0)));
+            zz = 0 + (((tickAnim - 41) / 15) * (0-(0)));
         }
-        else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = -8.75 + (((tickAnim - 40) / 25) * (-8.75-(-8.75)));
-            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
-            zz = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+        else if (tickAnim >= 56 && tickAnim < 70) {
+            xx = 0 + (((tickAnim - 56) / 14) * (0-(0)));
+            yy = 0 + (((tickAnim - 56) / 14) * (0-(0)));
+            zz = 0 + (((tickAnim - 56) / 14) * (0-(0)));
         }
-        else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = -8.75 + (((tickAnim - 65) / 56) * (-8.75-(-8.75)));
-            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-            zz = 0 + (((tickAnim - 65) / 56) * (0-(0)));
+        else if (tickAnim >= 70 && tickAnim < 121) {
+            xx = 0 + (((tickAnim - 70) / 51) * (0-(0)));
+            yy = 0 + (((tickAnim - 70) / 51) * (0-(0)));
+            zz = 0 + (((tickAnim - 70) / 51) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1235,25 +1313,25 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 17) {
-            xx = 0 + (((tickAnim - 0) / 17) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 41) {
+            xx = 0 + (((tickAnim - 0) / 41) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 41) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 41) * (0-(0)));
         }
-        else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = 0 + (((tickAnim - 17) / 23) * (0-(0)));
-            yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
-            zz = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+        else if (tickAnim >= 41 && tickAnim < 56) {
+            xx = 0 + (((tickAnim - 41) / 15) * (0-(0)));
+            yy = 0 + (((tickAnim - 41) / 15) * (0-(0)));
+            zz = 0 + (((tickAnim - 41) / 15) * (0-(0)));
         }
-        else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = 0 + (((tickAnim - 40) / 25) * (0-(0)));
-            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
-            zz = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+        else if (tickAnim >= 56 && tickAnim < 70) {
+            xx = 0 + (((tickAnim - 56) / 14) * (0-(0)));
+            yy = 0 + (((tickAnim - 56) / 14) * (0-(0)));
+            zz = 0 + (((tickAnim - 56) / 14) * (0-(0)));
         }
-        else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-            zz = 0 + (((tickAnim - 65) / 56) * (0-(0)));
+        else if (tickAnim >= 70 && tickAnim < 121) {
+            xx = 0 + (((tickAnim - 70) / 51) * (0-(0)));
+            yy = 0 + (((tickAnim - 70) / 51) * (0-(0)));
+            zz = 0 + (((tickAnim - 70) / 51) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1266,24 +1344,24 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 17) {
-            xx = 19.37869 + (((tickAnim - 0) / 17) * (19.37869-(19.37869)));
-            yy = -5.1166+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1 + (((tickAnim - 0) / 17) * (-5.11659-(-5.1166+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1)));
-            zz = -75.30834 + (((tickAnim - 0) / 17) * (-75.30834-(-75.30834)));
+            xx = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+            yy = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*0.5 + (((tickAnim - 0) / 17) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*0.5)));
+            zz = 0 + (((tickAnim - 0) / 17) * (0-(0)));
         }
         else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = 19.37869 + (((tickAnim - 17) / 23) * (19.37869-(19.37869)));
-            yy = -5.11659 + (((tickAnim - 17) / 23) * (-5.11659-(-5.11659)));
-            zz = -75.30834 + (((tickAnim - 17) / 23) * (-75.3083+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*25-(-75.30834)));
+            xx = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 17) / 23) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*10-(0)));
         }
-        else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = 19.37869 + (((tickAnim - 40) / 25) * (19.37869-(19.37869)));
-            yy = -5.11659 + (((tickAnim - 40) / 25) * (-5.11659-(-5.11659)));
-            zz = -75.3083+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*25 + (((tickAnim - 40) / 25) * (-75.30834-(-75.3083+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*25)));
+        else if (tickAnim >= 40 && tickAnim < 62) {
+            xx = 0 + (((tickAnim - 40) / 22) * (0-(0)));
+            yy = 0 + (((tickAnim - 40) / 22) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*10 + (((tickAnim - 40) / 22) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*10)));
         }
-        else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = 19.37869 + (((tickAnim - 65) / 56) * (19.37869-(19.37869)));
-            yy = -5.11659 + (((tickAnim - 65) / 56) * (-5.1166+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*-1-(-5.11659)));
-            zz = -75.30834 + (((tickAnim - 65) / 56) * (-75.30834-(-75.30834)));
+        else if (tickAnim >= 62 && tickAnim < 121) {
+            xx = 0 + (((tickAnim - 62) / 59) * (0-(0)));
+            yy = 0 + (((tickAnim - 62) / 59) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*-0.5-(0)));
+            zz = 0 + (((tickAnim - 62) / 59) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1296,84 +1374,24 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 17) {
-            xx = -27.22613 + (((tickAnim - 0) / 17) * (-27.22613-(-27.22613)));
-            yy = -12.38157 + (((tickAnim - 0) / 17) * (-12.38157-(-12.38157)));
-            zz = -20.64622 + (((tickAnim - 0) / 17) * (-20.64622-(-20.64622)));
-        }
-        else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = -27.22613 + (((tickAnim - 17) / 23) * (-27.22613-(-27.22613)));
-            yy = -12.38157 + (((tickAnim - 17) / 23) * (-12.38157-(-12.38157)));
-            zz = -20.64622 + (((tickAnim - 17) / 23) * (-20.64622-(-20.64622)));
-        }
-        else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = -27.22613 + (((tickAnim - 40) / 25) * (-27.22613-(-27.22613)));
-            yy = -12.38157 + (((tickAnim - 40) / 25) * (-12.38157-(-12.38157)));
-            zz = -20.64622 + (((tickAnim - 40) / 25) * (-20.64622-(-20.64622)));
-        }
-        else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = -27.22613 + (((tickAnim - 65) / 56) * (-27.22613-(-27.22613)));
-            yy = -12.38157 + (((tickAnim - 65) / 56) * (-12.38157-(-12.38157)));
-            zz = -20.64622 + (((tickAnim - 65) / 56) * (-20.64622-(-20.64622)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(leftleg2, leftleg2.rotateAngleX + (float) Math.toRadians(xx), leftleg2.rotateAngleY + (float) Math.toRadians(yy), leftleg2.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 17) {
-            xx = 104.25 + (((tickAnim - 0) / 17) * (104.25-(104.25)));
-            yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+            xx = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+            yy = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*0.5 + (((tickAnim - 0) / 17) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*0.5)));
             zz = 0 + (((tickAnim - 0) / 17) * (0-(0)));
         }
         else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = 104.25 + (((tickAnim - 17) / 23) * (104.25-(104.25)));
+            xx = 0 + (((tickAnim - 17) / 23) * (0-(0)));
             yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
-            zz = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 17) / 23) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*-10-(0)));
         }
-        else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = 104.25 + (((tickAnim - 40) / 25) * (104.25-(104.25)));
-            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
-            zz = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+        else if (tickAnim >= 40 && tickAnim < 62) {
+            xx = 0 + (((tickAnim - 40) / 22) * (0-(0)));
+            yy = 0 + (((tickAnim - 40) / 22) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*-10 + (((tickAnim - 40) / 22) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*-10)));
         }
-        else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = 104.25 + (((tickAnim - 65) / 56) * (104.25-(104.25)));
-            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-            zz = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(leftfoot, leftfoot.rotateAngleX + (float) Math.toRadians(xx), leftfoot.rotateAngleY + (float) Math.toRadians(yy), leftfoot.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 17) {
-            xx = 19.37869 + (((tickAnim - 0) / 17) * (19.37869-(19.37869)));
-            yy = 5.1166+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*-1 + (((tickAnim - 0) / 17) * (5.1166-(5.1166+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*-1)));
-            zz = 75.3083 + (((tickAnim - 0) / 17) * (75.3083-(75.3083)));
-        }
-        else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = 19.37869 + (((tickAnim - 17) / 23) * (19.37869-(19.37869)));
-            yy = 5.1166 + (((tickAnim - 17) / 23) * (-5.11659-(5.1166)));
-            zz = 75.3083 + (((tickAnim - 17) / 23) * (75.3083+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*-25-(75.3083)));
-        }
-        else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = 19.37869 + (((tickAnim - 40) / 25) * (19.37869-(19.37869)));
-            yy = -5.11659 + (((tickAnim - 40) / 25) * (5.1166-(-5.11659)));
-            zz = 75.3083+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*-25 + (((tickAnim - 40) / 25) * (75.3083-(75.3083+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*-25)));
-        }
-        else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = 19.37869 + (((tickAnim - 65) / 56) * (19.37869-(19.37869)));
-            yy = 5.1166 + (((tickAnim - 65) / 56) * (5.1166+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1-(5.1166)));
-            zz = 75.3083 + (((tickAnim - 65) / 56) * (75.3083-(75.3083)));
+        else if (tickAnim >= 62 && tickAnim < 121) {
+            xx = 0 + (((tickAnim - 62) / 59) * (0-(0)));
+            yy = 0 + (((tickAnim - 62) / 59) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*-0.5-(0)));
+            zz = 0 + (((tickAnim - 62) / 59) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1386,84 +1404,24 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 17) {
-            xx = -27.22613 + (((tickAnim - 0) / 17) * (-27.22613-(-27.22613)));
-            yy = 12.3816 + (((tickAnim - 0) / 17) * (12.3816-(12.3816)));
-            zz = 20.6462 + (((tickAnim - 0) / 17) * (20.6462-(20.6462)));
-        }
-        else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = -27.22613 + (((tickAnim - 17) / 23) * (-27.22613-(-27.22613)));
-            yy = 12.3816 + (((tickAnim - 17) / 23) * (12.3816-(12.3816)));
-            zz = 20.6462 + (((tickAnim - 17) / 23) * (20.6462-(20.6462)));
-        }
-        else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = -27.22613 + (((tickAnim - 40) / 25) * (-27.22613-(-27.22613)));
-            yy = 12.3816 + (((tickAnim - 40) / 25) * (12.3816-(12.3816)));
-            zz = 20.6462 + (((tickAnim - 40) / 25) * (20.6462-(20.6462)));
-        }
-        else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = -27.22613 + (((tickAnim - 65) / 56) * (-27.22613-(-27.22613)));
-            yy = 12.3816 + (((tickAnim - 65) / 56) * (12.3816-(12.3816)));
-            zz = 20.6462 + (((tickAnim - 65) / 56) * (20.6462-(20.6462)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(rightleg2, rightleg2.rotateAngleX + (float) Math.toRadians(xx), rightleg2.rotateAngleY + (float) Math.toRadians(yy), rightleg2.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 17) {
-            xx = 104.25 + (((tickAnim - 0) / 17) * (104.25-(104.25)));
+            xx = 0 + (((tickAnim - 0) / 17) * (0-(0)));
             yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 17) * (0-(0)));
         }
         else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = 104.25 + (((tickAnim - 17) / 23) * (104.25-(104.25)));
+            xx = 0 + (((tickAnim - 17) / 23) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*4-(0)));
             yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
             zz = 0 + (((tickAnim - 17) / 23) * (0-(0)));
         }
-        else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = 104.25 + (((tickAnim - 40) / 25) * (104.25-(104.25)));
-            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
-            zz = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+        else if (tickAnim >= 40 && tickAnim < 62) {
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*4 + (((tickAnim - 40) / 22) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*4)));
+            yy = 0 + (((tickAnim - 40) / 22) * (0-(0)));
+            zz = 0 + (((tickAnim - 40) / 22) * (0-(0)));
         }
-        else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = 104.25 + (((tickAnim - 65) / 56) * (104.25-(104.25)));
-            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-            zz = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(rightfoot, rightfoot.rotateAngleX + (float) Math.toRadians(xx), rightfoot.rotateAngleY + (float) Math.toRadians(yy), rightfoot.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 16) {
-            xx = 0 + (((tickAnim - 0) / 16) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 16) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 16) * (0-(0)));
-        }
-        else if (tickAnim >= 16 && tickAnim < 40) {
-            xx = 0 + (((tickAnim - 16) / 24) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*4-(0)));
-            yy = 0 + (((tickAnim - 16) / 24) * (0-(0)));
-            zz = 0 + (((tickAnim - 16) / 24) * (0-(0)));
-        }
-        else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*4 + (((tickAnim - 40) / 25) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*4)));
-            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
-            zz = 0 + (((tickAnim - 40) / 25) * (0-(0)));
-        }
-        else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-            zz = 0 + (((tickAnim - 65) / 56) * (0-(0)));
+        else if (tickAnim >= 62 && tickAnim < 121) {
+            xx = 0 + (((tickAnim - 62) / 59) * (0-(0)));
+            yy = 0 + (((tickAnim - 62) / 59) * (0-(0)));
+            zz = 0 + (((tickAnim - 62) / 59) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1476,24 +1434,24 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 17) {
-            xx = 5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220)) + (((tickAnim - 0) / 17) * (5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1-(5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220)))));
-            yy = 42.6727+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*0.5 + (((tickAnim - 0) / 17) * (42.6727-(42.6727+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*0.5)));
-            zz = 45.8265+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 0) / 17) * (45.8265-(45.8265+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220)) + (((tickAnim - 0) / 17) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220)))));
+            yy = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*0.5 + (((tickAnim - 0) / 17) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*0.5)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 0) / 17) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
         }
         else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = 5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1 + (((tickAnim - 17) / 23) * (5.13923-(5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1)));
-            yy = 42.6727 + (((tickAnim - 17) / 23) * (42.67274-(42.6727)));
-            zz = 45.8265 + (((tickAnim - 17) / 23) * (45.8265+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*30-(45.8265)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1 + (((tickAnim - 17) / 23) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1)));
+            yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 17) / 23) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*30-(0)));
         }
         else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = 5.13923 + (((tickAnim - 40) / 25) * (5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1-(5.13923)));
-            yy = 42.67274 + (((tickAnim - 40) / 25) * (42.6727-(42.67274)));
-            zz = 45.8265+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*30 + (((tickAnim - 40) / 25) * (45.8265-(45.8265+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*30)));
+            xx = 0 + (((tickAnim - 40) / 25) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))-(0)));
+            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*30 + (((tickAnim - 40) / 25) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*30)));
         }
         else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = 5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1 + (((tickAnim - 65) / 56) * (5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*-1-(5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1)));
-            yy = 42.6727 + (((tickAnim - 65) / 56) * (42.6727+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*0.5-(42.6727)));
-            zz = 45.8265 + (((tickAnim - 65) / 56) * (45.6515+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*-1.5-(45.8265)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220)) + (((tickAnim - 65) / 56) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*-1-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220)))));
+            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 65) / 56) * (-0.125+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*-1.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
         }
         else {
             xx = 0;
@@ -1503,27 +1461,47 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
         this.setRotateAngle(leftwing1, leftwing1.rotateAngleX + (float) Math.toRadians(xx), leftwing1.rotateAngleY + (float) Math.toRadians(yy), leftwing1.rotateAngleZ + (float) Math.toRadians(zz));
 
 
+        if (tickAnim >= 17 && tickAnim < 40) {
+            xx = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            yy = 0 + (((tickAnim - 17) / 23) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*0.2-(0)));
+            zz = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+        }
+        else if (tickAnim >= 40 && tickAnim < 65) {
+            xx = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+            yy = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*0.2 + (((tickAnim - 40) / 25) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*0.2)));
+            zz = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.leftwing1.rotationPointX = this.leftwing1.rotationPointX + (float)(xx);
+        this.leftwing1.rotationPointY = this.leftwing1.rotationPointY - (float)(yy);
+        this.leftwing1.rotationPointZ = this.leftwing1.rotationPointZ + (float)(zz);
+
+
 
 
         if (tickAnim >= 0 && tickAnim < 17) {
-            xx = -24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5 + (((tickAnim - 0) / 17) * (-24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5-(-24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5)));
-            yy = 33.23234 + (((tickAnim - 0) / 17) * (33.23234-(33.23234)));
-            zz = -127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 0) / 17) * (-127.00484-(-127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5 + (((tickAnim - 0) / 17) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5)));
+            yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 0) / 17) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
         }
         else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = -24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5 + (((tickAnim - 17) / 23) * (-24.91415-(-24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5)));
-            yy = 33.23234 + (((tickAnim - 17) / 23) * (33.23234-(33.23234)));
-            zz = -127.00484 + (((tickAnim - 17) / 23) * (-127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+150))*-30-(-127.00484)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5 + (((tickAnim - 17) / 23) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5)));
+            yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 17) / 23) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+150))*-30-(0)));
         }
         else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = -24.91415 + (((tickAnim - 40) / 25) * (-24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5-(-24.91415)));
-            yy = 33.23234 + (((tickAnim - 40) / 25) * (33.23234-(33.23234)));
-            zz = -127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+150))*-30 + (((tickAnim - 40) / 25) * (-127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5-(-127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+150))*-30)));
+            xx = 0 + (((tickAnim - 40) / 25) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5-(0)));
+            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+150))*-30 + (((tickAnim - 40) / 25) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+150))*-30)));
         }
         else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = -24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5 + (((tickAnim - 65) / 56) * (-24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*-0.5-(-24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5)));
-            yy = 33.23234 + (((tickAnim - 65) / 56) * (33.23234-(33.23234)));
-            zz = -127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 65) / 56) * (-127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*-1.5-(-127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5 + (((tickAnim - 65) / 56) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*-0.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5)));
+            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 65) / 56) * (-0.125+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*-1.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
         }
         else {
             xx = 0;
@@ -1534,31 +1512,26 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
 
 
 
-        this.leftwing2planemembrane.rotationPointX = this.leftwing2planemembrane.rotationPointX + (float)(0);
-        this.leftwing2planemembrane.rotationPointY = this.leftwing2planemembrane.rotationPointY - (float)(0);
-        this.leftwing2planemembrane.rotationPointZ = this.leftwing2planemembrane.rotationPointZ + (float)(-0.45);
-
-
 
         if (tickAnim >= 0 && tickAnim < 17) {
-            xx = -0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2 + (((tickAnim - 0) / 17) * (-0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2-(-0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2)));
-            yy = 23.04147 + (((tickAnim - 0) / 17) * (23.04147-(23.04147)));
-            zz = -17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 0) / 17) * (-17.68938-(-17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2 + (((tickAnim - 0) / 17) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2)));
+            yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 0) / 17) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
         }
         else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = -0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2 + (((tickAnim - 17) / 23) * (-0.39499-(-0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2)));
-            yy = 23.04147 + (((tickAnim - 17) / 23) * (23.04147-(23.04147)));
-            zz = -17.68938 + (((tickAnim - 17) / 23) * (-17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+120))*-20-(-17.68938)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2 + (((tickAnim - 17) / 23) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2)));
+            yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 17) / 23) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+120))*-20-(0)));
         }
         else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = -0.39499 + (((tickAnim - 40) / 25) * (-0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2-(-0.39499)));
-            yy = 23.04147 + (((tickAnim - 40) / 25) * (23.04147-(23.04147)));
-            zz = -17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+120))*-20 + (((tickAnim - 40) / 25) * (-17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5-(-17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+120))*-20)));
+            xx = 0 + (((tickAnim - 40) / 25) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2-(0)));
+            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+120))*-20 + (((tickAnim - 40) / 25) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+120))*-20)));
         }
         else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = -0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2 + (((tickAnim - 65) / 56) * (-0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*-0.2-(-0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2)));
-            yy = 23.04147 + (((tickAnim - 65) / 56) * (23.04147-(23.04147)));
-            zz = -17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 65) / 56) * (-17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*-1.5-(-17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2 + (((tickAnim - 65) / 56) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*-0.2-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2)));
+            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 65) / 56) * (-0.125+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*-1.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
         }
         else {
             xx = 0;
@@ -1569,31 +1542,26 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
 
 
 
-        this.leftwing3planemembrane.rotationPointX = this.leftwing3planemembrane.rotationPointX + (float)(0);
-        this.leftwing3planemembrane.rotationPointY = this.leftwing3planemembrane.rotationPointY - (float)(0);
-        this.leftwing3planemembrane.rotationPointZ = this.leftwing3planemembrane.rotationPointZ + (float)(-0.225);
-
-
 
         if (tickAnim >= 0 && tickAnim < 17) {
-            xx = 165.85166 + (((tickAnim - 0) / 17) * (165.85166-(165.85166)));
-            yy = 71.44244 + (((tickAnim - 0) / 17) * (71.44244-(71.44244)));
-            zz = -165.78455 + (((tickAnim - 0) / 17) * (-165.78455-(-165.78455)));
+            xx = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 17) * (0-(0)));
         }
         else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = 165.85166 + (((tickAnim - 17) / 23) * (165.85166-(165.85166)));
-            yy = 71.44244 + (((tickAnim - 17) / 23) * (71.44244-(71.44244)));
-            zz = -165.78455 + (((tickAnim - 17) / 23) * (-165.7845+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*-15-(-165.78455)));
+            xx = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 17) / 23) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*-15-(0)));
         }
         else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = 165.85166 + (((tickAnim - 40) / 25) * (165.85166-(165.85166)));
-            yy = 71.44244 + (((tickAnim - 40) / 25) * (71.44244-(71.44244)));
-            zz = -165.7845+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*-15 + (((tickAnim - 40) / 25) * (-165.78455-(-165.7845+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*-15)));
+            xx = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*-15 + (((tickAnim - 40) / 25) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*-15)));
         }
         else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = 165.85166 + (((tickAnim - 65) / 56) * (165.85166-(165.85166)));
-            yy = 71.44244 + (((tickAnim - 65) / 56) * (71.44244-(71.44244)));
-            zz = -165.78455 + (((tickAnim - 65) / 56) * (-165.78455-(-165.78455)));
+            xx = 0 + (((tickAnim - 65) / 56) * (0-(0)));
+            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
+            zz = 0 + (((tickAnim - 65) / 56) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1604,31 +1572,25 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
 
 
 
-        this.setRotateAngle(lefthand, lefthand.rotateAngleX + (float) Math.toRadians(263.45788), lefthand.rotateAngleY + (float) Math.toRadians(23.70536), lefthand.rotateAngleZ + (float) Math.toRadians(271.01011));
-        this.lefthand.rotationPointX = this.lefthand.rotationPointX + (float)(0);
-        this.lefthand.rotationPointY = this.lefthand.rotationPointY - (float)(0.275);
-        this.lefthand.rotationPointZ = this.lefthand.rotationPointZ + (float)(-0.025);
-
-
 
         if (tickAnim >= 0 && tickAnim < 17) {
             xx = 0 + (((tickAnim - 0) / 17) * (0-(0)));
-            yy = 57.5 + (((tickAnim - 0) / 17) * (57.5-(57.5)));
+            yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 17) * (0-(0)));
         }
         else if (tickAnim >= 17 && tickAnim < 40) {
             xx = 0 + (((tickAnim - 17) / 23) * (0-(0)));
-            yy = 57.5 + (((tickAnim - 17) / 23) * (57.5-(57.5)));
+            yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
             zz = 0 + (((tickAnim - 17) / 23) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*-20-(0)));
         }
         else if (tickAnim >= 40 && tickAnim < 65) {
             xx = 0 + (((tickAnim - 40) / 25) * (0-(0)));
-            yy = 57.5 + (((tickAnim - 40) / 25) * (57.5-(57.5)));
+            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
             zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*-20 + (((tickAnim - 40) / 25) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*-20)));
         }
         else if (tickAnim >= 65 && tickAnim < 121) {
             xx = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-            yy = 57.5 + (((tickAnim - 65) / 56) * (57.5-(57.5)));
+            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
             zz = 0 + (((tickAnim - 65) / 56) * (0-(0)));
         }
         else {
@@ -1672,24 +1634,24 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 17) {
-            xx = 5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220)) + (((tickAnim - 0) / 17) * (5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1-(5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220)))));
-            yy = -42.6727+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*-0.5 + (((tickAnim - 0) / 17) * (-42.6727-(-42.6727+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*-0.5)));
-            zz = -45.8265+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*-1.5 + (((tickAnim - 0) / 17) * (-45.8265-(-45.8265+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*-1.5)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220)) + (((tickAnim - 0) / 17) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220)))));
+            yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*-1.5 + (((tickAnim - 0) / 17) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*-1.5)));
         }
         else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = 5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1 + (((tickAnim - 17) / 23) * (5.13923-(5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1)));
-            yy = -42.6727 + (((tickAnim - 17) / 23) * (-42.6727-(-42.6727)));
-            zz = -45.8265 + (((tickAnim - 17) / 23) * (-45.8265+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*-30-(-45.8265)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1 + (((tickAnim - 17) / 23) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1)));
+            yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 17) / 23) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*-30-(0)));
         }
         else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = 5.13923 + (((tickAnim - 40) / 25) * (5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1-(5.13923)));
-            yy = -42.6727 + (((tickAnim - 40) / 25) * (-42.6727-(-42.6727)));
-            zz = -45.8265+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*-30 + (((tickAnim - 40) / 25) * (-45.8265-(-45.8265+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*-30)));
+            xx = 0 + (((tickAnim - 40) / 25) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))-(0)));
+            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*-30 + (((tickAnim - 40) / 25) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+80))*-30)));
         }
         else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = 5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1 + (((tickAnim - 65) / 56) * (5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*-1-(5.1392+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*1)));
-            yy = -42.6727 + (((tickAnim - 65) / 56) * (-42.6727+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*-0.5-(-42.6727)));
-            zz = -45.8265 + (((tickAnim - 65) / 56) * (-45.8265+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5-(-45.8265)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220)) + (((tickAnim - 65) / 56) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220))*-1-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220)))));
+            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 65) / 56) * (-0.125+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
         }
         else {
             xx = 0;
@@ -1699,27 +1661,47 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
         this.setRotateAngle(rightwing1, rightwing1.rotateAngleX + (float) Math.toRadians(xx), rightwing1.rotateAngleY + (float) Math.toRadians(yy), rightwing1.rotateAngleZ + (float) Math.toRadians(zz));
 
 
+        if (tickAnim >= 17 && tickAnim < 40) {
+            xx = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            yy = 0 + (((tickAnim - 17) / 23) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*0.2-(0)));
+            zz = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+        }
+        else if (tickAnim >= 40 && tickAnim < 65) {
+            xx = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+            yy = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*0.2 + (((tickAnim - 40) / 25) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*0.2)));
+            zz = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.rightwing1.rotationPointX = this.rightwing1.rotationPointX + (float)(xx);
+        this.rightwing1.rotationPointY = this.rightwing1.rotationPointY - (float)(yy);
+        this.rightwing1.rotationPointZ = this.rightwing1.rotationPointZ + (float)(zz);
+
+
 
 
         if (tickAnim >= 0 && tickAnim < 17) {
-            xx = -24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5 + (((tickAnim - 0) / 17) * (-24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5-(-24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5)));
-            yy = -33.2323 + (((tickAnim - 0) / 17) * (-33.2323-(-33.2323)));
-            zz = 127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 0) / 17) * (127.0048-(127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5 + (((tickAnim - 0) / 17) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5)));
+            yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 0) / 17) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
         }
         else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = -24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5 + (((tickAnim - 17) / 23) * (-24.91415-(-24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5)));
-            yy = -33.2323 + (((tickAnim - 17) / 23) * (-33.2323-(-33.2323)));
-            zz = 127.0048 + (((tickAnim - 17) / 23) * (127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+150))*30-(127.0048)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5 + (((tickAnim - 17) / 23) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5)));
+            yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 17) / 23) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+150))*30-(0)));
         }
         else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = -24.91415 + (((tickAnim - 40) / 25) * (-24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5-(-24.91415)));
-            yy = -33.2323 + (((tickAnim - 40) / 25) * (-33.2323-(-33.2323)));
-            zz = 127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+150))*30 + (((tickAnim - 40) / 25) * (127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5-(127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+150))*30)));
+            xx = 0 + (((tickAnim - 40) / 25) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5-(0)));
+            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+150))*30 + (((tickAnim - 40) / 25) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+150))*30)));
         }
         else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = -24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5 + (((tickAnim - 65) / 56) * (-24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*-0.5-(-24.9142+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5)));
-            yy = -33.2323 + (((tickAnim - 65) / 56) * (-33.2323-(-33.2323)));
-            zz = 127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 65) / 56) * (127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*-1.5-(127.0048+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5 + (((tickAnim - 65) / 56) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*-0.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-80))*0.5)));
+            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 65) / 56) * (-0.125+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*-1.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
         }
         else {
             xx = 0;
@@ -1730,31 +1712,26 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
 
 
 
-        this.rightwing2planemembrane.rotationPointX = this.rightwing2planemembrane.rotationPointX + (float)(0);
-        this.rightwing2planemembrane.rotationPointY = this.rightwing2planemembrane.rotationPointY - (float)(0);
-        this.rightwing2planemembrane.rotationPointZ = this.rightwing2planemembrane.rotationPointZ + (float)(-0.45);
-
-
 
         if (tickAnim >= 0 && tickAnim < 17) {
-            xx = -0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2 + (((tickAnim - 0) / 17) * (-0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2-(-0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2)));
-            yy = -23.0415 + (((tickAnim - 0) / 17) * (-23.0415-(-23.0415)));
-            zz = 17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 0) / 17) * (17.6894-(17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2 + (((tickAnim - 0) / 17) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2)));
+            yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 0) / 17) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
         }
         else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = -0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2 + (((tickAnim - 17) / 23) * (-0.39499-(-0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2)));
-            yy = -23.0415 + (((tickAnim - 17) / 23) * (-23.0415-(-23.0415)));
-            zz = 17.6894 + (((tickAnim - 17) / 23) * (17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+120))*20-(17.6894)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2 + (((tickAnim - 17) / 23) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2)));
+            yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 17) / 23) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+120))*20-(0)));
         }
         else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = -0.39499 + (((tickAnim - 40) / 25) * (-0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2-(-0.39499)));
-            yy = -23.0415 + (((tickAnim - 40) / 25) * (-23.0415-(-23.0415)));
-            zz = 17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+120))*20 + (((tickAnim - 40) / 25) * (17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5-(17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+120))*20)));
+            xx = 0 + (((tickAnim - 40) / 25) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2-(0)));
+            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+120))*20 + (((tickAnim - 40) / 25) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+120))*20)));
         }
         else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = -0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2 + (((tickAnim - 65) / 56) * (-0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*-0.2-(-0.395+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2)));
-            yy = -23.0415 + (((tickAnim - 65) / 56) * (-23.0415-(-23.0415)));
-            zz = 17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 65) / 56) * (17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*-1.5-(17.6894+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
+            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2 + (((tickAnim - 65) / 56) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*-0.2-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1220-150))*0.2)));
+            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5 + (((tickAnim - 65) / 56) * (-0.125+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*-1.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*1.5)));
         }
         else {
             xx = 0;
@@ -1765,31 +1742,26 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
 
 
 
-        this.rightwing3planemembrane.rotationPointX = this.rightwing3planemembrane.rotationPointX + (float)(0);
-        this.rightwing3planemembrane.rotationPointY = this.rightwing3planemembrane.rotationPointY - (float)(0);
-        this.rightwing3planemembrane.rotationPointZ = this.rightwing3planemembrane.rotationPointZ + (float)(-0.225);
-
-
 
         if (tickAnim >= 0 && tickAnim < 17) {
-            xx = 165.85166 + (((tickAnim - 0) / 17) * (165.85166-(165.85166)));
-            yy = -71.4424 + (((tickAnim - 0) / 17) * (-71.4424-(-71.4424)));
-            zz = 165.7845 + (((tickAnim - 0) / 17) * (165.7845-(165.7845)));
+            xx = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 17) * (0-(0)));
         }
         else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = 165.85166 + (((tickAnim - 17) / 23) * (165.85166-(165.85166)));
-            yy = -71.4424 + (((tickAnim - 17) / 23) * (-71.4424-(-71.4424)));
-            zz = 165.7845 + (((tickAnim - 17) / 23) * (165.7845+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*15-(165.7845)));
+            xx = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 17) / 23) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*15-(0)));
         }
         else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = 165.85166 + (((tickAnim - 40) / 25) * (165.85166-(165.85166)));
-            yy = -71.4424 + (((tickAnim - 40) / 25) * (-71.4424-(-71.4424)));
-            zz = 165.7845+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*15 + (((tickAnim - 40) / 25) * (165.7845-(165.7845+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*15)));
+            xx = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*15 + (((tickAnim - 40) / 25) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*15)));
         }
         else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = 165.85166 + (((tickAnim - 65) / 56) * (165.85166-(165.85166)));
-            yy = -71.4424 + (((tickAnim - 65) / 56) * (-71.4424-(-71.4424)));
-            zz = 165.7845 + (((tickAnim - 65) / 56) * (165.7845-(165.7845)));
+            xx = 0 + (((tickAnim - 65) / 56) * (0-(0)));
+            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
+            zz = 0 + (((tickAnim - 65) / 56) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1800,31 +1772,25 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
 
 
 
-        this.setRotateAngle(righthand, righthand.rotateAngleX + (float) Math.toRadians(263.45788), righthand.rotateAngleY + (float) Math.toRadians(-23.7054), righthand.rotateAngleZ + (float) Math.toRadians(-271.0101));
-        this.righthand.rotationPointX = this.righthand.rotationPointX + (float)(0);
-        this.righthand.rotationPointY = this.righthand.rotationPointY - (float)(0.275);
-        this.righthand.rotationPointZ = this.righthand.rotationPointZ + (float)(0.025);
-
-
 
         if (tickAnim >= 0 && tickAnim < 17) {
             xx = 0 + (((tickAnim - 0) / 17) * (0-(0)));
-            yy = -57.5 + (((tickAnim - 0) / 17) * (-57.5-(-57.5)));
+            yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 17) * (0-(0)));
         }
         else if (tickAnim >= 17 && tickAnim < 40) {
             xx = 0 + (((tickAnim - 17) / 23) * (0-(0)));
-            yy = -57.5 + (((tickAnim - 17) / 23) * (-57.5-(-57.5)));
+            yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
             zz = 0 + (((tickAnim - 17) / 23) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*20-(0)));
         }
         else if (tickAnim >= 40 && tickAnim < 65) {
             xx = 0 + (((tickAnim - 40) / 25) * (0-(0)));
-            yy = -57.5 + (((tickAnim - 40) / 25) * (-57.5-(-57.5)));
+            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
             zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*20 + (((tickAnim - 40) / 25) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2+100))*20)));
         }
         else if (tickAnim >= 65 && tickAnim < 121) {
             xx = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-            yy = -57.5 + (((tickAnim - 65) / 56) * (-57.5-(-57.5)));
+            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
             zz = 0 + (((tickAnim - 65) / 56) * (0-(0)));
         }
         else {
@@ -1867,25 +1833,25 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 16) {
-            xx = 10 + (((tickAnim - 0) / 16) * (10-(10)));
-            yy = 0 + (((tickAnim - 0) / 16) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 16) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 17) {
+            xx = 6.5 + (((tickAnim - 0) / 17) * (6.5-(6.5)));
+            yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 17) * (0-(0)));
         }
-        else if (tickAnim >= 16 && tickAnim < 40) {
-            xx = 10 + (((tickAnim - 16) / 24) * (10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*-4-(10)));
-            yy = 0 + (((tickAnim - 16) / 24) * (0-(0)));
-            zz = 0 + (((tickAnim - 16) / 24) * (0-(0)));
+        else if (tickAnim >= 17 && tickAnim < 40) {
+            xx = 6.5 + (((tickAnim - 17) / 23) * (6.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*-4-(6.5)));
+            yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 17) / 23) * (0-(0)));
         }
-        else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = 10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*-4 + (((tickAnim - 40) / 25) * (10-(10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*-4)));
-            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
-            zz = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+        else if (tickAnim >= 40 && tickAnim < 62) {
+            xx = 6.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*-4 + (((tickAnim - 40) / 22) * (6.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))-(6.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*-4)));
+            yy = 0 + (((tickAnim - 40) / 22) * (0-(0)));
+            zz = 0 + (((tickAnim - 40) / 22) * (0-(0)));
         }
-        else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = 10 + (((tickAnim - 65) / 56) * (10-(10)));
-            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-            zz = 0 + (((tickAnim - 65) / 56) * (0-(0)));
+        else if (tickAnim >= 62 && tickAnim < 121) {
+            xx = 6.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120)) + (((tickAnim - 62) / 59) * (6.5-(6.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120)))));
+            yy = 0 + (((tickAnim - 62) / 59) * (0-(0)));
+            zz = 0 + (((tickAnim - 62) / 59) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1897,25 +1863,25 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 16) {
-            xx = -26.75 + (((tickAnim - 0) / 16) * (-26.75-(-26.75)));
-            yy = 0 + (((tickAnim - 0) / 16) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 16) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 17) {
+            xx = -13 + (((tickAnim - 0) / 17) * (-13-(-13)));
+            yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 17) * (0-(0)));
         }
-        else if (tickAnim >= 16 && tickAnim < 40) {
-            xx = -26.75 + (((tickAnim - 16) / 24) * (-26.75+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*-4-(-26.75)));
-            yy = 0 + (((tickAnim - 16) / 24) * (0-(0)));
-            zz = 0 + (((tickAnim - 16) / 24) * (0-(0)));
+        else if (tickAnim >= 17 && tickAnim < 40) {
+            xx = -13 + (((tickAnim - 17) / 23) * (-13+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*-4-(-13)));
+            yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 17) / 23) * (0-(0)));
         }
-        else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = -26.75+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*-4 + (((tickAnim - 40) / 25) * (-26.75-(-26.75+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*-4)));
-            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
-            zz = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+        else if (tickAnim >= 40 && tickAnim < 62) {
+            xx = -13+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*-4 + (((tickAnim - 40) / 22) * (-13+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*2-(-13+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2))*-4)));
+            yy = 0 + (((tickAnim - 40) / 22) * (0-(0)));
+            zz = 0 + (((tickAnim - 40) / 22) * (0-(0)));
         }
-        else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = -26.75 + (((tickAnim - 65) / 56) * (-26.75-(-26.75)));
-            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-            zz = 0 + (((tickAnim - 65) / 56) * (0-(0)));
+        else if (tickAnim >= 62 && tickAnim < 121) {
+            xx = -13+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*2 + (((tickAnim - 62) / 59) * (-13-(-13+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*2)));
+            yy = 0 + (((tickAnim - 62) / 59) * (0-(0)));
+            zz = 0 + (((tickAnim - 62) / 59) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1925,57 +1891,27 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
         this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(xx), neck.rotateAngleY + (float) Math.toRadians(yy), neck.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 16) {
-            xx = 0 + (((tickAnim - 0) / 16) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 16) * (0-(0)));
-            zz = 0.125 + (((tickAnim - 0) / 16) * (0.125-(0.125)));
-        }
-        else if (tickAnim >= 16 && tickAnim < 40) {
-            xx = 0 + (((tickAnim - 16) / 24) * (0-(0)));
-            yy = 0 + (((tickAnim - 16) / 24) * (0-(0)));
-            zz = 0.125 + (((tickAnim - 16) / 24) * (0.125-(0.125)));
-        }
-        else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = 0 + (((tickAnim - 40) / 25) * (0-(0)));
-            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
-            zz = 0.125 + (((tickAnim - 40) / 25) * (0.125-(0.125)));
-        }
-        else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-            zz = 0.125 + (((tickAnim - 65) / 56) * (0.125-(0.125)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.neck.rotationPointX = this.neck.rotationPointX + (float)(xx);
-        this.neck.rotationPointY = this.neck.rotationPointY - (float)(yy);
-        this.neck.rotationPointZ = this.neck.rotationPointZ + (float)(zz);
 
 
-
-
-        if (tickAnim >= 0 && tickAnim < 16) {
-            xx = -29.25 + (((tickAnim - 0) / 16) * (-29.25-(-29.25)));
-            yy = 0 + (((tickAnim - 0) / 16) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 16) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 17) {
+            xx = 5.25 + (((tickAnim - 0) / 17) * (5.25-(5.25)));
+            yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 17) * (0-(0)));
         }
-        else if (tickAnim >= 16 && tickAnim < 40) {
-            xx = -29.25 + (((tickAnim - 16) / 24) * (-29.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2-50))*4-(-29.25)));
-            yy = 0 + (((tickAnim - 16) / 24) * (0-(0)));
-            zz = 0 + (((tickAnim - 16) / 24) * (0-(0)));
+        else if (tickAnim >= 17 && tickAnim < 40) {
+            xx = 5.25 + (((tickAnim - 17) / 23) * (5.23+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2-50))*4-(5.25)));
+            yy = 0 + (((tickAnim - 17) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 17) / 23) * (0-(0)));
         }
-        else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = -29.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2-50))*4 + (((tickAnim - 40) / 25) * (-29.25-(-29.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2-50))*4)));
-            yy = 0 + (((tickAnim - 40) / 25) * (0-(0)));
-            zz = 0 + (((tickAnim - 40) / 25) * (0-(0)));
+        else if (tickAnim >= 40 && tickAnim < 62) {
+            xx = 5.23+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2-50))*4 + (((tickAnim - 40) / 22) * (5.25-(5.23+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720/1.2-50))*4)));
+            yy = 0 + (((tickAnim - 40) / 22) * (0-(0)));
+            zz = 0 + (((tickAnim - 40) / 22) * (0-(0)));
         }
-        else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = -29.25 + (((tickAnim - 65) / 56) * (-29.25-(-29.25)));
-            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-            zz = 0 + (((tickAnim - 65) / 56) * (0-(0)));
+        else if (tickAnim >= 62 && tickAnim < 121) {
+            xx = 5.25 + (((tickAnim - 62) / 59) * (5.25-(5.25)));
+            yy = 0 + (((tickAnim - 62) / 59) * (0-(0)));
+            zz = 0 + (((tickAnim - 62) / 59) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1984,75 +1920,8 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
         }
         this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(xx), head.rotateAngleY + (float) Math.toRadians(yy), head.rotateAngleZ + (float) Math.toRadians(zz));
 
-
-        if (tickAnim >= 0 && tickAnim < 16) {
-            xx = 0 + (((tickAnim - 0) / 16) * (0-(0)));
-            yy = -1.125 + (((tickAnim - 0) / 16) * (-1.125-(-1.125)));
-            zz = 0.225 + (((tickAnim - 0) / 16) * (0.225-(0.225)));
-        }
-        else if (tickAnim >= 16 && tickAnim < 40) {
-            xx = 0 + (((tickAnim - 16) / 24) * (0-(0)));
-            yy = -1.125 + (((tickAnim - 16) / 24) * (-1.125-(-1.125)));
-            zz = 0.225 + (((tickAnim - 16) / 24) * (0.225-(0.225)));
-        }
-        else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = 0 + (((tickAnim - 40) / 25) * (0-(0)));
-            yy = -1.125 + (((tickAnim - 40) / 25) * (-1.125-(-1.125)));
-            zz = 0.225 + (((tickAnim - 40) / 25) * (0.225-(0.225)));
-        }
-        else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-            yy = -1.125 + (((tickAnim - 65) / 56) * (-1.125-(-1.125)));
-            zz = 0.225 + (((tickAnim - 65) / 56) * (0.225-(0.225)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.head.rotationPointX = this.head.rotationPointX + (float)(xx);
-        this.head.rotationPointY = this.head.rotationPointY - (float)(yy);
-        this.head.rotationPointZ = this.head.rotationPointZ + (float)(zz);
-
-
-
-        this.setRotateAngle(throat, throat.rotateAngleX + (float) Math.toRadians(24), throat.rotateAngleY + (float) Math.toRadians(0), throat.rotateAngleZ + (float) Math.toRadians(0));
-        this.throat.rotationPointX = this.throat.rotationPointX + (float)(0);
-        this.throat.rotationPointY = this.throat.rotationPointY - (float)(0.225);
-        this.throat.rotationPointZ = this.throat.rotationPointZ + (float)(1);
-
-
-
-        if (tickAnim >= 0 && tickAnim < 17) {
-            xx = 0 + (((tickAnim - 0) / 17) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 17) * (0-(0)));
-        }
-        else if (tickAnim >= 17 && tickAnim < 40) {
-            xx = 0 + (((tickAnim - 17) / 23) * (0-(0)));
-            yy = 0 + (((tickAnim - 17) / 23) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*0.5-(0)));
-            zz = 0 + (((tickAnim - 17) / 23) * (0-(0)));
-        }
-        else if (tickAnim >= 40 && tickAnim < 65) {
-            xx = 0 + (((tickAnim - 40) / 25) * (0-(0)));
-            yy = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*0.5 + (((tickAnim - 40) / 25) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*0.5)));
-            zz = 0 + (((tickAnim - 40) / 25) * (0-(0)));
-        }
-        else if (tickAnim >= 65 && tickAnim < 121) {
-            xx = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-            yy = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-            zz = 0 + (((tickAnim - 65) / 56) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.main.rotationPointX = this.main.rotationPointX + (float)(xx);
-        this.main.rotationPointY = this.main.rotationPointY - (float)(yy);
-        this.main.rotationPointZ = this.main.rotationPointZ + (float)(zz);
-
     }
+
     public void animWalk(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraAnhanguera entity = (EntityPrehistoricFloraAnhanguera) entitylivingbaseIn;
         int animCycle = 20;
@@ -2380,12 +2249,6 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
         }
         this.setRotateAngle(leftwing5, leftwing5.rotateAngleX + (float) Math.toRadians(xx), leftwing5.rotateAngleY + (float) Math.toRadians(yy), leftwing5.rotateAngleZ + (float) Math.toRadians(zz));
 
-
-
-        this.leftwing5membrane.setScale((float)1,(float)1,(float)0);
-
-
-
         if (tickAnim >= 10 && tickAnim < 16) {
             xx = 0 + (((tickAnim - 10) / 6) * (0-(0)));
             yy = 0 + (((tickAnim - 10) / 6) * (6.75-(0)));
@@ -2402,11 +2265,6 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
             zz = 0;
         }
         this.setRotateAngle(leftwing6, leftwing6.rotateAngleX + (float) Math.toRadians(xx), leftwing6.rotateAngleY + (float) Math.toRadians(yy), leftwing6.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-        this.leftwing6membrane.setScale((float)1,(float)1,(float)0);
-
 
         this.setRotateAngle(shoulder, shoulder.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.5-20))*1), shoulder.rotateAngleY + (float) Math.toRadians(0), shoulder.rotateAngleZ + (float) Math.toRadians(0));
 
@@ -2740,12 +2598,6 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
         }
         this.setRotateAngle(rightwing5, rightwing5.rotateAngleX + (float) Math.toRadians(xx), rightwing5.rotateAngleY + (float) Math.toRadians(yy), rightwing5.rotateAngleZ + (float) Math.toRadians(zz));
 
-
-
-        this.rightwing5membrane.setScale((float)1,(float)1,(float)0);
-
-
-
         if (tickAnim >= 0 && tickAnim < 6) {
             xx = 0 + (((tickAnim - 0) / 6) * (0-(0)));
             yy = 0 + (((tickAnim - 0) / 6) * (-6.75-(0)));
@@ -2764,25 +2616,84 @@ public class ModelAnhanguera extends ModelBasePalaeopedia {
         this.setRotateAngle(rightwing6, rightwing6.rotateAngleX + (float) Math.toRadians(xx), rightwing6.rotateAngleY + (float) Math.toRadians(yy), rightwing6.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-
-        this.rightwing6membrane.setScale((float)1,(float)1,(float)0);
-
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        EntityPrehistoricFloraLandClimbingFlyingWalkingBase e = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) entity;
+        EntityPrehistoricFloraAnhanguera e = (EntityPrehistoricFloraAnhanguera) entity;
         animator.update(entity);
 
         animator.setAnimation(e.FLY_ANIMATION);
         animator.startKeyframe(e.flyTransitionLength()); //move to this keyframe over the right length
-
+        animator.move(cube49_r1, ((1.0F)-(1.0F)), ((-0.1051F)-(-0.105F)),((-11.6117F)-(-11.6117F)));
+        animator.move(cube51_r1, ((0.75F)-(0.75F)), ((-0.7531F)-(-0.753F)),((-14.6153F)-(-14.6153F)));
+        animator.move(cube52_r1, ((0.0F)-(0.0F)), ((-0.1051F)-(-0.105F)),((-11.6117F)-(-11.6117F)));
+        animator.move(cube54_r1, ((0.25F)-(0.25F)), ((-0.7531F)-(-0.753F)),((-14.6153F)-(-14.6153F)));
+        animator.move(cube61_r1, ((0.975F)-(0.975F)), ((-2.0166F)-(-2.0165F)),((-10.4807F)-(-10.4807F)));
+        animator.move(cube69_r1, ((1.0F)-(1.0F)), ((0.477F)-(0.4771F)),((-11.9772F)-(-11.9772F)));
+        animator.move(cube73_r1, ((0.5F)-(0.5F)), ((0.477F)-(0.4771F)),((-11.9772F)-(-11.9772F)));
+        animator.move(head, ((-0.5F)-(-0.5F)), ((-1.7259F)-(-2.8509F)),((-5.4142F)-(-5.4142F)));
+        animator.rotate(head, ((0.1963F)-(0.829F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(hips, ((0.3098F)-(-0.2138F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(leftfoot, ((1.1254F)-(-0.7884F)), ((0.0804F)-(0.0341F)),((-0.024F)-(-0.0703F)));
+        animator.rotate(lefthand, ((0.5806F)-(-1.5534F)), ((0.825F)-(0.0793F)),((0.3218F)-(-1.6385F)));
+        animator.rotate(leftleg1, ((0.1323F)-(-0.1617F)), ((-0.1934F)-(-0.3296F)),((-1.7129F)-(-0.375F)));
+        animator.rotate(leftleg2, ((0.9936F)-(1.2309F)), ((-0.1689F)-(0.0429F)),((0.1602F)-(0.3343F)));
+        animator.rotate(leftwing1, ((-0.1063F)-(-0.2875F)), ((0.0897F)-(-0.6908F)),((-0.1075F)-(-0.8886F)));
+        animator.rotate(leftwing2, ((0.0033F)-(0.4638F)), ((0.1483F)-(-0.4369F)),((-0.0216F)-(2.215F)));
+        animator.rotate(leftwing3, ((-0.0018F)-(-0.0151F)), ((-0.0523F)-(-0.5525F)),((0.0786F)-(0.3F)));
+        animator.rotate(leftwing4, ((-0.0222F)-(-2.9433F)), ((-0.3484F)-(-1.4943F)),((0.065F)-(2.923F)));
+        animator.rotate(leftwing5, ((-0.0222F)-(-0.0782F)), ((-0.2171F)-(-1.2897F)),((0.1028F)-(0.1732F)));
+        animator.rotate(neck, ((-0.2836F)-(0.0829F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(rightfoot, ((1.1254F)-(-0.7884F)), ((-0.0804F)-(-0.0341F)),((0.024F)-(0.0703F)));
+        animator.rotate(righthand, ((0.5806F)-(-1.5534F)), ((-0.825F)-(-0.0793F)),((-0.3218F)-(1.6385F)));
+        animator.rotate(rightleg1, ((0.1323F)-(-0.1617F)), ((0.1934F)-(0.3296F)),((1.7129F)-(0.375F)));
+        animator.rotate(rightleg2, ((0.9936F)-(1.2309F)), ((0.1689F)-(-0.0429F)),((-0.1602F)-(-0.3343F)));
+        animator.rotate(rightwing1, ((-0.1063F)-(-0.2875F)), ((-0.0897F)-(0.6908F)),((0.1075F)-(0.8886F)));
+        animator.rotate(rightwing2, ((0.0033F)-(0.4638F)), ((-0.1483F)-(0.4369F)),((0.0216F)-(-2.215F)));
+        animator.rotate(rightwing3, ((-0.0018F)-(-0.0151F)), ((0.0523F)-(0.5525F)),((-0.0786F)-(-0.3F)));
+        animator.rotate(rightwing4, ((-0.0222F)-(-2.9433F)), ((0.3484F)-(1.4943F)),((-0.065F)-(-2.923F)));
+        animator.rotate(rightwing5, ((-0.0222F)-(-0.0782F)), ((0.2171F)-(1.2897F)),((-0.1028F)-(-0.1732F)));
+        animator.rotate(shoulder, ((0.2182F)-(0.0F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.rotate(throat, ((-0.6196F)-(-1.0036F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
+        animator.move(throat, ((0.0F)-(0.0F)), ((0.95F)-(1.0F)),((-1.4F)-(-3.0F)));
         animator.endKeyframe();
         animator.setStaticKeyframe(0);
         animator.resetKeyframe(0);
 
         animator.setAnimation(e.UNFLY_ANIMATION);
         animator.startKeyframe(e.unflyTransitionLength()); //move to this keyframe over the right length
-
+        animator.move(cube49_r1, -((1.0F)-(1.0F)), -((-0.1051F)-(-0.105F)),-((-11.6117F)-(-11.6117F)));
+        animator.move(cube51_r1, -((0.75F)-(0.75F)), -((-0.7531F)-(-0.753F)),-((-14.6153F)-(-14.6153F)));
+        animator.move(cube52_r1, -((0.0F)-(0.0F)), -((-0.1051F)-(-0.105F)),-((-11.6117F)-(-11.6117F)));
+        animator.move(cube54_r1, -((0.25F)-(0.25F)), -((-0.7531F)-(-0.753F)),-((-14.6153F)-(-14.6153F)));
+        animator.move(cube61_r1, -((0.975F)-(0.975F)), -((-2.0166F)-(-2.0165F)),-((-10.4807F)-(-10.4807F)));
+        animator.move(cube69_r1, -((1.0F)-(1.0F)), -((0.477F)-(0.4771F)),-((-11.9772F)-(-11.9772F)));
+        animator.move(cube73_r1, -((0.5F)-(0.5F)), -((0.477F)-(0.4771F)),-((-11.9772F)-(-11.9772F)));
+        animator.move(head, -((-0.5F)-(-0.5F)), -((-1.7259F)-(-2.8509F)),-((-5.4142F)-(-5.4142F)));
+        animator.rotate(head, -((0.1963F)-(0.829F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(hips, -((0.3098F)-(-0.2138F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(leftfoot, -((1.1254F)-(-0.7884F)), -((0.0804F)-(0.0341F)),-((-0.024F)-(-0.0703F)));
+        animator.rotate(lefthand, -((0.5806F)-(-1.5534F)), -((0.825F)-(0.0793F)),-((0.3218F)-(-1.6385F)));
+        animator.rotate(leftleg1, -((0.1323F)-(-0.1617F)), -((-0.1934F)-(-0.3296F)),-((-1.7129F)-(-0.375F)));
+        animator.rotate(leftleg2, -((0.9936F)-(1.2309F)), -((-0.1689F)-(0.0429F)),-((0.1602F)-(0.3343F)));
+        animator.rotate(leftwing1, -((-0.1063F)-(-0.2875F)), -((0.0897F)-(-0.6908F)),-((-0.1075F)-(-0.8886F)));
+        animator.rotate(leftwing2, -((0.0033F)-(0.4638F)), -((0.1483F)-(-0.4369F)),-((-0.0216F)-(2.215F)));
+        animator.rotate(leftwing3, -((-0.0018F)-(-0.0151F)), -((-0.0523F)-(-0.5525F)),-((0.0786F)-(0.3F)));
+        animator.rotate(leftwing4, -((-0.0222F)-(-2.9433F)), -((-0.3484F)-(-1.4943F)),-((0.065F)-(2.923F)));
+        animator.rotate(leftwing5, -((-0.0222F)-(-0.0782F)), -((-0.2171F)-(-1.2897F)),-((0.1028F)-(0.1732F)));
+        animator.rotate(neck, -((-0.2836F)-(0.0829F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(rightfoot, -((1.1254F)-(-0.7884F)), -((-0.0804F)-(-0.0341F)),-((0.024F)-(0.0703F)));
+        animator.rotate(righthand, -((0.5806F)-(-1.5534F)), -((-0.825F)-(-0.0793F)),-((-0.3218F)-(1.6385F)));
+        animator.rotate(rightleg1, -((0.1323F)-(-0.1617F)), -((0.1934F)-(0.3296F)),-((1.7129F)-(0.375F)));
+        animator.rotate(rightleg2, -((0.9936F)-(1.2309F)), -((0.1689F)-(-0.0429F)),-((-0.1602F)-(-0.3343F)));
+        animator.rotate(rightwing1, -((-0.1063F)-(-0.2875F)), -((-0.0897F)-(0.6908F)),-((0.1075F)-(0.8886F)));
+        animator.rotate(rightwing2, -((0.0033F)-(0.4638F)), -((-0.1483F)-(0.4369F)),-((0.0216F)-(-2.215F)));
+        animator.rotate(rightwing3, -((-0.0018F)-(-0.0151F)), -((0.0523F)-(0.5525F)),-((-0.0786F)-(-0.3F)));
+        animator.rotate(rightwing4, -((-0.0222F)-(-2.9433F)), -((0.3484F)-(1.4943F)),-((-0.065F)-(-2.923F)));
+        animator.rotate(rightwing5, -((-0.0222F)-(-0.0782F)), -((0.2171F)-(1.2897F)),-((-0.1028F)-(-0.1732F)));
+        animator.rotate(shoulder, -((0.2182F)-(0.0F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.rotate(throat, -((-0.6196F)-(-1.0036F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
+        animator.move(throat, -((0.0F)-(0.0F)), -((0.95F)-(1.0F)),-((-1.4F)-(-3.0F)));
         animator.endKeyframe();
         animator.setStaticKeyframe(0);
         animator.resetKeyframe(0);

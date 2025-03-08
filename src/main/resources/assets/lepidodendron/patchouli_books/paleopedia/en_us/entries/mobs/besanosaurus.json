@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_besanosaurus",
 			"title": "Besanosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Sauropsida$(br)>Ichthyopterygia$(br)>Merriamosauria$(br)>Besanosauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Sauropsida$(br)>Ichthyopterygia$(br)>Merriamosauria$(br)>Besanosauridae"
 		},
 		{
 			"type": "image",

@@ -317,13 +317,13 @@ public class ModelDrepanosaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Drepanosaurus.offsetY = -1.3F;
-        this.Drepanosaurus.offsetX = 1.5F;
-        this.Drepanosaurus.rotateAngleY = (float)Math.toRadians(200);
+        this.Drepanosaurus.offsetY = -1.7F;
+        this.Drepanosaurus.offsetX = 1.0F;
+        this.Drepanosaurus.rotateAngleY = (float)Math.toRadians(230);
         this.Drepanosaurus.rotateAngleX = (float)Math.toRadians(8);
         this.Drepanosaurus.rotateAngleZ = (float)Math.toRadians(-8);
         this.Drepanosaurus.scaleChildren = true;
-        float scaler = 4.4F;
+        float scaler = 2.4F;
         this.Drepanosaurus.setScale(scaler, scaler, scaler);
         //Start of pose:
 
@@ -2512,12 +2512,14 @@ public class ModelDrepanosaurus extends ModelBasePalaeopedia {
         this.Drepanosaurus.rotationPointY = this.Drepanosaurus.rotationPointY - (float)(11.125+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*144/0.5-10))*0.4);
         this.Drepanosaurus.rotationPointZ = this.Drepanosaurus.rotationPointZ + (float)(-1.05);
 
-
         this.setRotateAngle(Body, Body.rotateAngleX + (float) Math.toRadians(0), Body.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*144-50))*-2.5), Body.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*144+70))*1.5));
         this.Body.rotationPointX = this.Body.rotationPointX + (float)(0);
         this.Body.rotationPointY = this.Body.rotationPointY - (float)(0);
         this.Body.rotationPointZ = this.Body.rotationPointZ + (float)(0);
 
+        if (isStatic) {
+            this.setRotateAngle(Drepanosaurus, (float)Math.toRadians(-90), Drepanosaurus.rotateAngleY, Drepanosaurus.rotateAngleZ);
+        }
 
         this.setRotateAngle(Neck, Neck.rotateAngleX + (float) Math.toRadians(0), Neck.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*144-100))*-2.5), Neck.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*144+130))*1.5));
 

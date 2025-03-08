@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tritylodon",
 			"title": "Tritylodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Synapsida $(br)>Cynodontia $(br)>Tritylodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Synapsida$(br)>Cynodontia$(br)>Tritylodontidae"
 		},
 		{
 			"type": "image",

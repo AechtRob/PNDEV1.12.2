@@ -1,0 +1,52 @@
+{
+"name": "Jinyunpelta",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/jinyunpelta_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_jinyunpelta",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_jinyunpelta",
+"title": "Jinyunpelta",
+"type": "quest",
+"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Ornithischia$(br)>Ankylosauria$(br)>Ankylosaurinae"
+},
+        {
+            "type": "entity",
+            "name": "J. sinensis",
+            "entity": "lepidodendron:prehistoric_flora_jinyunpelta",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_jinyunpelta",
+"type": "text",
+"text": "Jinyunpelta is a genus of ankylosaur from the Liangtoutang Formation during the Albian Age of Early Cretaceous Asia. It lived in a lacustrine environment near the southern coast of China, and would have likely been a browsing herbivore. This animal measured in at around 3.5 meters, making it a fair bit smaller than some of its more derived and famous relatives like Ankylosaurus and Saichania."
+},
+{
+"advancement": "lepidodendron:pf_adv_book_jinyunpelta",
+"type": "text",
+"text": "Jinyunpelta is significant to science for being the oldest definitive member of the clubbed ankylosaur subfamily Ankylosaurinae.  Like later ankylosaurs, it may have used its club for personal defence against predators or in intra-specific competition."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_jinyunpelta"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_jinyunpelta"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_jinyunpelta"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_jinyunpelta"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_jinyunpelta"
+}
+]
+}

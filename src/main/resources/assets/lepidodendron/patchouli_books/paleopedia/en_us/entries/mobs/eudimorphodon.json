@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eudimorphodon",
 			"title": "Eudimorphodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Pterosauria$(br)>Eudimorphodontidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Pterosauria$(br)>Eudimorphodontidae"
 		},
 		{
 			"type": "image",

@@ -273,6 +273,23 @@ public class ModelMaiaspondylus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.maiaspondylus.offsetY = -0.40F;
+        this.maiaspondylus.offsetX = -0.06F;
+        this.maiaspondylus.rotateAngleY = (float)Math.toRadians(240);
+        this.maiaspondylus.rotateAngleX = (float)Math.toRadians(28);
+        this.maiaspondylus.rotateAngleZ = (float)Math.toRadians(-8);
+        this.maiaspondylus.scaleChildren = true;
+        float scaler = 0.4F;
+        this.maiaspondylus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.maiaspondylus.render(f);
+        //Reset rotations, positions and sizing:
+        this.maiaspondylus.setScale(1.0F, 1.0F, 1.0F);
+        this.maiaspondylus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

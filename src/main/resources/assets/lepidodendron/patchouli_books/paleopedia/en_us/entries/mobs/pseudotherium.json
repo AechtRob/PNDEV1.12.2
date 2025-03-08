@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pseudotherium",
 			"title": "Pseudotherium",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Therapsida$(br)>Cynodontia$(br)>Mammaliamorpha"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Therapsida$(br)>Cynodontia$(br)>Mammaliamorpha"
 		},
 		{
 			"type": "image",

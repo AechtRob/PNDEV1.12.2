@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_leptoteuthis",
 			"title": "Leptoteuthis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca $(br)>Cephalopoda $(br)>Vampyromorphida $(br)>Leptotheuthidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Vampyromorphida$(br)>Leptotheuthidae"
 		},
         	{
             "type": "entity",

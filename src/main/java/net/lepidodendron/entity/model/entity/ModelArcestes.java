@@ -597,12 +597,12 @@ public class ModelArcestes extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -2.0F;
-        this.root.offsetX = -1.338F;
-        this.root.rotateAngleY = (float)Math.toRadians(200);
-        this.root.rotateAngleX = (float)Math.toRadians(8);
+        this.root.offsetX = -0.338F;
+        this.root.rotateAngleY = (float)Math.toRadians(40);
+        this.root.rotateAngleX = (float)Math.toRadians(-28);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 2.63F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
 
@@ -724,8 +724,8 @@ public class ModelArcestes extends ModelBasePalaeopedia {
             this.setRotateAngle(Tentacle6a, -0.2319F, 0.0859F, -0.0152F);
             this.setRotateAngle(Tentacle6b, -0.336F, 0.0F, 0.0F);
 
-            if(ee.isInWater()) {
-                animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+            if (ee.isInWater()) {
+                animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getIsMoving());
             }
 
 
@@ -736,10 +736,13 @@ public class ModelArcestes extends ModelBasePalaeopedia {
 
     }
 
-    public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+    public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isMoving) {
         EntityPrehistoricFloraArcestes entity = (EntityPrehistoricFloraArcestes) entitylivingbaseIn;
         int animCycle = 40;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        if (!isMoving) {
+            tickAnim = 0;
+        }
         double xx = 0;
         double yy = 0;
         double zz = 0;

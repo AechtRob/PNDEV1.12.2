@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_platysomus",
 			"title": "Platysomus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Platysomidae"
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Chordata$(br)>Actinopterygii$(br)>Palaeonisciformes$(br)>Platysomidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/platysomus.png"],
-			"title": "Platysomus sp.",
+			"title": "P. striatus",
 			"text": ""
 		},
 		{

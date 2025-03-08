@@ -230,19 +230,19 @@ public class EntityPrehistoricFloraPlatysuchus extends EntityPrehistoricFloraSwi
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:platysuchus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:geosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:platysuchus_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:geosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:platysuchus_death"));
+				.getObject(new ResourceLocation("lepidodendron:geosaurus_death"));
 	}
 
 

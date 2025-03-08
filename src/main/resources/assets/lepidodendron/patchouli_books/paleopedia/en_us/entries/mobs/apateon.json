@@ -1,0 +1,47 @@
+{
+	"name": "Apateon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/apateon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_apateon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_apateon",
+			"title": "Apateon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Chordata$(br)>Temnospondyli$(br)>Branchiosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. pedestris",
+            "entity": "lepidodendron:prehistoric_flora_apateon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_apateon",
+			"type": "text",
+			"text": "Apateon hails from the Upper Carboniferous into the Lower Permian, with fossils found in formations across Germany, and the Muse Formation, France. It is a small branchiosaurid, growing up to 12 cm in length. Whilst they would have usually fed on microorganisms, it has been found through some fossils that in harsh conditions, some species will partake in cannibalism."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_apateon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_apateon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_apateon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_apateon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_apateon"
+		}
+	]
+}

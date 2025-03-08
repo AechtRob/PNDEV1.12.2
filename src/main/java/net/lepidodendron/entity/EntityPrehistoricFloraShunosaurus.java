@@ -73,7 +73,6 @@ public class EntityPrehistoricFloraShunosaurus extends EntityPrehistoricFloraLan
 		}
 		IDLE_1 = Animation.create(80);
 		IDLE_2 = Animation.create(160);
-		NOISE_ANIMATION = Animation.create(this.getNoiseLength());
 		setgetMaxTurnDistancePerTick(10.0F);
 	}
 

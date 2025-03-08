@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_schoenesmahl",
 			"title": "Schoenesmahl",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Reptilia $(br)>Squamata $(br)>Ardeosauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Squamata$(br)>Ardeosauridae"
 		},
         	{
             "type": "entity",

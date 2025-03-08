@@ -8,12 +8,11 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
-import net.lepidodendron.entity.render.entity.RenderAcheronauta;
 import net.lepidodendron.entity.render.entity.RenderArcestes;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
-import net.lepidodendron.item.entities.ItemNautiloidEggsProteroctopus;
+import net.lepidodendron.item.entities.ItemNautiloidEggsArcestes;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
@@ -287,7 +286,7 @@ public class EntityPrehistoricFloraArcestes extends EntityPrehistoricFloraSwimmi
 
 	@Override
 	public ItemStack getPropagule() {
-		return new ItemStack(ItemNautiloidEggsProteroctopus.block, (int) (1));
+		return new ItemStack(ItemNautiloidEggsArcestes.block, (int) (1));
 	}
 
 	@Nullable

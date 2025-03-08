@@ -177,13 +177,13 @@ public class ModelTriopus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.triopus.offsetY = -2.0F;
-        this.triopus.offsetX = -1.338F;
-        this.triopus.rotateAngleY = (float)Math.toRadians(200);
-        this.triopus.rotateAngleX = (float)Math.toRadians(8);
+        this.triopus.offsetY = -2.2F;
+        this.triopus.offsetX = -0.228F;
+        this.triopus.rotateAngleY = (float)Math.toRadians(222);
+        this.triopus.rotateAngleX = (float)Math.toRadians(28);
         this.triopus.rotateAngleZ = (float)Math.toRadians(-8);
         this.triopus.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 8.63F;
         this.triopus.setScale(scaler, scaler, scaler);
         //Start of pose:
 

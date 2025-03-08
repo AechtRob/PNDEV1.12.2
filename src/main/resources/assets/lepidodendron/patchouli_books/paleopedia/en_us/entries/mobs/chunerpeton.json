@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_chunerpeton",
 			"title": "Chunerpeton",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Amphibia $(br)>Caudata $(br)>Urodela $(br)>Cryptobranchoidea"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Amphibia$(br)>Caudata$(br)>Urodela$(br)>Cryptobranchoidea"
 		},
 		{
 			"type": "image",

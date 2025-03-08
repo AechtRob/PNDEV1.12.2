@@ -1,0 +1,47 @@
+{
+"name": "Anatosuchus",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/anatosuchus_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_anatosuchus",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_anatosuchus",
+"title": "Anatosuchus",
+"type": "quest",
+"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Archosauria$(br)>Pseudosuchia$(br)>Notosuchia$(br)>Uruguaysuchidae"
+},
+        {
+            "type": "entity",
+            "name": "A. minor",
+            "entity": "lepidodendron:prehistoric_flora_anatosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_anatosuchus",
+"type": "text",
+"text": "Anatosuchus is an Early Cretaceous Notosuchian, with a broadened snout, resembling a ducks bill, hence the name, duck crocodile. It probably fed by using its broadened snout to catch prey in the water such as fish, or small crustaceans. It only grew to about 70 cm in length."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_anatosuchus"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_anatosuchus"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_anatosuchus"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_anatosuchus"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_anatosuchus"
+}
+]
+}

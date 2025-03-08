@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ascendonanus",
 			"title": "Ascendonanus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Synapsida$(br)>Varanopidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Varanopidae"
 		},
 		{
 			"type": "entity",

@@ -111,6 +111,7 @@ public class EntityPrehistoricFloraDearc extends EntityPrehistoricFloraLandClimb
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraDearc> dearc = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraDearc.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraDearc currentDearc : dearc) {
+				currentDearc.setAnimation(NO_ANIMATION);
 				currentDearc.setAlarmTarget(ee);
 				currentDearc.setRevengeTarget(ee);
 				currentDearc.screamAlarmCooldown = rand.nextInt(20);

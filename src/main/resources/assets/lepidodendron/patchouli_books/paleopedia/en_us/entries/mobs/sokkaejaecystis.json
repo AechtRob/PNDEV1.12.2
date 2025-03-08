@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_sokkaejaecystis",
 			"title": "Sokkaejaecystis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Echinodermata $(br)>Stylophora $(br)>Cornuta"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Echinodermata$(br)>Stylophora$(br)>Cornuta"
 		},
 		{
 			"type": "image",

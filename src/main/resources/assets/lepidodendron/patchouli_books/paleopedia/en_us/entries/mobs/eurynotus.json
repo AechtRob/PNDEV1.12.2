@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eurynotus",
 			"title": "Eurynotus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Palaeonisciformes$(br)>Platysomidae"
+			"text": "$(l)Temporal Range:$() Carboniferous - Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Palaeonisciformes$(br)>Platysomidae"
 		},
         	{
             "type": "entity",

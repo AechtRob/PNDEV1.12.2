@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_urocordylus",
 			"title": "Urocordylus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Lepospondyli$(br)>Nectridea$(br)>Urocordylidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Lepospondyli$(br)>Nectridea$(br)>Urocordylidae"
 		},
 		{
 			"type": "image",

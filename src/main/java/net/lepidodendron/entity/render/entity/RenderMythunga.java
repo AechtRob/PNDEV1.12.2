@@ -12,7 +12,7 @@ public class RenderMythunga extends RenderLivingBaseWithBook<EntityPrehistoricFl
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mythunga.png");
 
     public static float getScaler() {
-        return 0.78F;
+        return 0.72F;
     }
 
     public RenderMythunga(RenderManager mgr) {

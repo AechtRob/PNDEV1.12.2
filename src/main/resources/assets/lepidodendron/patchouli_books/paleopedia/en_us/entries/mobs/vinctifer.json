@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_vinctifer",
 			"title": "Vinctifer",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic-Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Aspidorhynchiformes$(br)>Aspidorhynchidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Aspidorhynchiformes$(br)>Aspidorhynchidae"
 		},
         	{
             "type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_vinctifer",
 			"type": "text",
-			"text": "Vinctifer hails from the Late Jurassic into the Early Cretaceous, with fossils found in the Marizal, Romualdo and Missão Velha Formations, Brazil; Tlayua Formation, Mexico; Apón Formation, Venezuela and Nordenskjöld Formation, Antarctica. It is a small aspidorhynchiforme, growing up to 90 cm in length. Vinctifer is most well known for its long, spindly premaxilla."
+			"text": "Vinctifer hails from the Late Jurassic into the Early Cretaceous, with fossils found in the Marizal, Romualdo and Missão Velha Formations, Brazil; Tlayua Formation, Mexico; Apón Formation, Venezuela, and the Nordenskjöld Formation, Antarctica. It is a small aspidorhynchiforme, growing up to 90 cm in length. Vinctifer is most well known for its long, spindly premaxilla."
 		},
 		{
 			"type": "lepidodendron:diet",

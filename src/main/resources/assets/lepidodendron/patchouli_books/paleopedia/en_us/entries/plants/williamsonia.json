@@ -1,0 +1,66 @@
+{
+	"name": "Williamsonia",
+	"read_by_default": true,
+	"icon": "lepidodendron:williamsonia_shoot",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_williamsonia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_williamsonia",
+			"title": "Williamsonia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic-Late Cretaceous$(br2)$(l)Propagation:$() Use a collection envelope on the flowering leaves (not the main shoots) to harvest seeds.$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
+		},
+		{
+			"type": "multiblock",
+			"name": "Williamsonia sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "   "," B ", "   " ],
+					[ " G ","CH ", " B " ],
+					[ "   "," D ", " F " ],
+					[ "   "," A ", "   " ],
+					[ "   "," A ", "   " ],
+					[ "   "," 0 ", "   " ]
+				],
+				"mapping": {
+					"H": "lepidodendron:williamsonia_log[down=true,up=true,west=true]",
+					"G": "lepidodendron:williamsonia_leaves[facing=west]",
+					"F": "lepidodendron:williamsonia_log[up=true,south=true]",
+					"E": "lepidodendron:williamsonia_log[up=true,west=true]",
+					"D": "lepidodendron:williamsonia_log[down=true,east=true,north=true,up=true]",
+					"C": "lepidodendron:williamsonia_leaves[facing=north]",
+					"B": "lepidodendron:williamsonia_shoot",
+					"A": "lepidodendron:williamsonia_log[down=true,up=true]",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_williamsonia",
+			"type": "text",
+			"text": "Williamsonia is a somewhat confusing taxon of fossil, which should be used to describe a certain type of male floral fossil belonging to Bennettites plants. Bennettites were not Angiosperms, but are known to have usually produced sometimes dramatic flower-like or cone-like structures for pollination and seed production, and so we have added the suggestion of floral structures to our plant."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_williamsonia",
+			"type": "text",
+			"text": "They occur in several widely different contexts and belonged to plants which were probably physically different from each other in many ways. Some have been found in associated with Eoginkgoites leaves, another one, Williamsonia gigas, has been found with stems of the fossil known as Bucklandia, which can also sometimes be quite hefty and display leaf-base scars and remains along its length rather like cycad trunks;"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_williamsonia",
+			"type": "text",
+			"text": "another was found in India in such close association again with Bucklandia stems and leaves belonging to the Ptilophyllum shape that it was reconstructed as pretty-much complete: interpreting the growth as somewhat cycad-like, or perhaps somewhat like the Bennttitalean plants known as Cycadeoids, to which Bucklandia appears to be similar."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_williamsonia",
+			"type": "text",
+			"text": "This reconstruction was published (unusually) as a full plant named WIlliamsonia sewardiana in 1932, but has been disputed by some authors since. \nBennettites leaves are usually somewhat thickly-textured, not delicate, and so we assume the plants were somewhat tough and resilient, able to grow in many different types of habitat, and their dominance of Mesozoic floras backs this up. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_williamsonia",
+			"type": "text",
+			"text": "We have taken inspiration from a Bucklandia-like stem for this plant, and followed a reconstruction along the lines of the published Williamsonia sewardiana. Of course Williamsonia flowers will be found on most of the Bennettites plants in the mod nonetheless, although not bearing that explicit name in those."
+		}
+	]
+}

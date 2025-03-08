@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_westrichus",
 			"title": "Westrichus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Acanthodii $(br)>Acanthodiiformes $(br)>Acanthodidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Acanthodii$(br)>Acanthodiiformes$(br)>Acanthodidae"
 		},
         	{
             "type": "entity",

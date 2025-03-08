@@ -7,9 +7,9 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_temnodontosaurus",
-			"title": "",
+			"title": "Temnodontosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Reptilia $(br)>Ichthyosauria $(br)>Temnodontosauridae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Ichthyosauria$(br)>Temnodontosauridae"
 		},
 		{
 			"type": "image",

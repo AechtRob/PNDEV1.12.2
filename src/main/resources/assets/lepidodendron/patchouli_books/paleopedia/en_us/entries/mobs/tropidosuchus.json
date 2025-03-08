@@ -1,0 +1,47 @@
+{
+	"name": "Tropidosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tropidosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tropidosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tropidosuchus",
+			"title": "Tropidosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauromorpha$(br)>Archosauriformes$(br)>Proterochampsia$(br)>Proterochampsidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. romeri",
+            "entity": "lepidodendron:prehistoric_flora_tropidosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tropidosuchus",
+			"type": "text",
+			"text": "Tropidosuchus romeri comes from the Middle Triassic, with fossils being found in the Chañares Formation, Argentina. It is a small proterochampsid, growing to 50 cm in length. It is known for having an elongated snout and a flat head adorned with bumps and ridges."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tropidosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tropidosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tropidosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tropidosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tropidosuchus"
+		}
+	]
+}

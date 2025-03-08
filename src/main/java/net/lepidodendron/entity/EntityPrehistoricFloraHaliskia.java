@@ -38,10 +38,10 @@ public class EntityPrehistoricFloraHaliskia extends EntityPrehistoricFloraLandCl
 
 	public EntityPrehistoricFloraHaliskia(World world) {
 		super(world);
-		setSize(0.95F, 0.8F);
+		setSize(0.85F, 0.7F);
 		minWidth = 0.10F;
-		maxWidth = 0.95F;
-		maxHeight = 0.8F;
+		maxWidth = 0.85F;
+		maxHeight = 0.7F;
 		maxHealthAgeable = 30.0D;
 		setNoAI(!true);
 		enablePersistence();
@@ -75,7 +75,7 @@ public class EntityPrehistoricFloraHaliskia extends EntityPrehistoricFloraLandCl
 
 	@Override
 	public int unflyTransitionLength() {
-		return 10;
+		return 15;
 	}
 
 	@Override
@@ -100,6 +100,7 @@ public class EntityPrehistoricFloraHaliskia extends EntityPrehistoricFloraLandCl
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraHaliskia> haliskia = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraHaliskia.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraHaliskia currentTapejara : haliskia) {
+				currentTapejara.setAnimation(NO_ANIMATION);
 				currentTapejara.setAlarmTarget(ee);
 				currentTapejara.setRevengeTarget(ee);
 				currentTapejara.screamAlarmCooldown = rand.nextInt(20);

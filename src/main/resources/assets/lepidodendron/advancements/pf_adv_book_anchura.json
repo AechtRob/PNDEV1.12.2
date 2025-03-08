@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:anchura_raw"
+			"item": "lepidodendron:anchura_item"
 		},
 		"title": {
 			"translate": "advancements.pf_adv_book_anchura.title"

@@ -92,6 +92,7 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraPterodactylus> pterodactylus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraPterodactylus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraPterodactylus currentPterodactylus : pterodactylus) {
+				currentPterodactylus.setAnimation(NO_ANIMATION);
 				currentPterodactylus.setAlarmTarget(ee);
 				currentPterodactylus.setRevengeTarget(ee);
 				currentPterodactylus.screamAlarmCooldown = rand.nextInt(20);

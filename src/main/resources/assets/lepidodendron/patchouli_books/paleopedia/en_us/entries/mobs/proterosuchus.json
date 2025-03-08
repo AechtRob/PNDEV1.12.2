@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_proterosuchus",
 			"title": "Proterosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia $(br)>Archosauriformes $(br)>Proterosuchidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauriformes$(br)>Proterosuchidae"
 		},
 		{
 			"type": "image",

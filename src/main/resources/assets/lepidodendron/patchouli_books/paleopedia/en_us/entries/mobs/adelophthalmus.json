@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_adelophthalmus",
 			"title": "Adelophthalmus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian-Permian$(br2)>Eurypterida$(br)>Adelophthalmidae"
+			"text": "$(l)Temporal Range:$() Devonian - Permian$(br2)>Arthropoda$(br)>Eurypterida$(br)>Adelophthalmidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_adelophthalmus",
 			"type": "text",
-			"text": "Adelophthalmus is one of the longest surviving eurypterids, spanning four continents and living from the Devonian to the Permian periods, going extinct in the early Permian. They were very small compared to the apex predator eurypterids during the Devonian and Silurian periods."
+			"text": "Adelophthalmus is one of the longest surviving eurypterids, spanning four continents and living from the Devonian into the Permian, going extinct in the Lower Permian. They were very small compared to the apex predator eurypterids during the Devonian and Silurian periods."
 		},
 		{
 			"type": "lepidodendron:diet",

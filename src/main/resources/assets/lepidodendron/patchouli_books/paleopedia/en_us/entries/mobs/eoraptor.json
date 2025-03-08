@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eoraptor",
 			"title": "Eoraptor",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha"
 		},
 		{
 			"type": "image",

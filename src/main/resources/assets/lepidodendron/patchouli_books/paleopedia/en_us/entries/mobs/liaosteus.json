@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_liaosteus",
 			"title": "Liaosteus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Acipenseriformes $(br)>Peipiaosteidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Acipenseriformes$(br)>Peipiaosteidae"
 		},
         	{
             "type": "entity",

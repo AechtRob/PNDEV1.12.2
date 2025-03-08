@@ -10,6 +10,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.EggLayingConditions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
@@ -105,6 +106,7 @@ public class EntityPrehistoricFloraOnchopristis extends EntityPrehistoricFloraAg
 	public int getAdultAge() {
 		return 126000;
 	}
+
 
 	@Override
 	protected float getAISpeedFish() {
@@ -231,6 +233,8 @@ public class EntityPrehistoricFloraOnchopristis extends EntityPrehistoricFloraAg
 
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
+		//Lay eggs perhaps:
+		EggLayingConditions.layWaterBottomEggs(this);
 	}
 
 	@Nullable

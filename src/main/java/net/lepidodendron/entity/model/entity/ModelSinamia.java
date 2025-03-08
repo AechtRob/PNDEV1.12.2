@@ -309,22 +309,15 @@ public class ModelSinamia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.30F;
-        this.root.offsetX = 1.2F;
-        this.root.rotateAngleY = (float)Math.toRadians(130);
-        this.root.rotateAngleX = (float)Math.toRadians(0);
-        this.root.rotateAngleZ = (float)Math.toRadians(0);
+        this.root.offsetY = -1.75F;
+        this.root.offsetX = 0.278F;
+        this.root.rotateAngleY = (float)Math.toRadians(242);
+        this.root.rotateAngleX = (float)Math.toRadians(8);
+        this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 2.0F;
+        float scaler = 1.6F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(root, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(bodyfront, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(bodymiddlefront, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(bodymiddleend, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(bodyend, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tailbase, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tailend, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(dorsalfinpt1, 0.0F, 0.0F, 0.34F);
         this.setRotateAngle(dorsalfinpt2, 0.0F, 0.0F, 0.3F);
         this.setRotateAngle(dorsalfinpt3, 0.0F, 0.0F, 0.2F);
