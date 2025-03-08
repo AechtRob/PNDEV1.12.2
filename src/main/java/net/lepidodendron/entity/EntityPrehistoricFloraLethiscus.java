@@ -12,7 +12,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.lepidodendron.entity.render.entity.RenderLethiscus;
-import net.lepidodendron.entity.render.entity.RenderSilvanerpeton;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.ITrappableWater;
@@ -261,12 +260,6 @@ public class EntityPrehistoricFloraLethiscus extends EntityPrehistoricFloraSwimm
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
-	}
-
-	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-
 	}
 
 	@Nullable

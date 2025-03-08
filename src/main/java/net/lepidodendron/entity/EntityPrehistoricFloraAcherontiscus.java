@@ -254,12 +254,6 @@ public class EntityPrehistoricFloraAcherontiscus extends EntityPrehistoricFloraS
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
-	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-
-	}
-
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.ACHERONTISCUS_LOOT;

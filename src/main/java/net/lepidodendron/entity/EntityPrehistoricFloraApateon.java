@@ -229,6 +229,7 @@ public class EntityPrehistoricFloraApateon extends EntityPrehistoricFloraSwimmin
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
+
 		if ((!(isBlinking > 0)) || isBlinking > 200) {isBlinking = 0;}
 		isBlinking ++;
 

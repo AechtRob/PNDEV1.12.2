@@ -269,6 +269,7 @@ public class EntityPrehistoricFloraSclerocephalus extends EntityPrehistoricFlora
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
+
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			this.setAnimation(LOOK_ANIMATION);
