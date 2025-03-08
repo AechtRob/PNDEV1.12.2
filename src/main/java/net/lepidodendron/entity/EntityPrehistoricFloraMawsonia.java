@@ -46,6 +46,11 @@ public class EntityPrehistoricFloraMawsonia extends EntityPrehistoricFloraAgeabl
 	}
 
 	@Override
+	public int getRoarLength() {
+		return 15;
+	}
+
+	@Override
 	public boolean canShoal() {
 		return false;
 	}
@@ -64,8 +69,6 @@ public class EntityPrehistoricFloraMawsonia extends EntityPrehistoricFloraAgeabl
 	public boolean isSmall() {
 		return this.getAgeScale() < 0.35;
 	}
-
-	
 
 	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous";}
 
