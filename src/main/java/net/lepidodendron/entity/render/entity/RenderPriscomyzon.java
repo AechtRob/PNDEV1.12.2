@@ -26,6 +26,7 @@ public class RenderPriscomyzon extends RenderLivingBaseWithBook<EntityPrehistori
     @Override
     protected void applyRotations(EntityPrehistoricFloraPriscomyzon entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
+        float getOffsetSide= 0.102F;
         float getOffset = 0.18F;
 
         switch (entityLiving.getAttachmentFacing()) {
@@ -33,21 +34,21 @@ public class RenderPriscomyzon extends RenderLivingBaseWithBook<EntityPrehistori
             default:
                 break;
             case EAST:
-                GlStateManager.translate(getOffset, 0.05F, 0.0F);
+                GlStateManager.translate(getOffsetSide, 0.05F, 0.0F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(90.0F, 0.0F, 0.0F, 1.0F);
                 break;
             case WEST:
-                GlStateManager.translate(-getOffset, 0.05F, 0.0F);
+                GlStateManager.translate(-getOffsetSide, 0.05F, 0.0F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(-90.0F, 0.0F, 0.0F, 1.0F);
                 break;
             case NORTH:
-                GlStateManager.translate(0.0F, 0.05F, -getOffset);
+                GlStateManager.translate(0.0F, 0.05F, -getOffsetSide);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 break;
             case SOUTH:
-                GlStateManager.translate(0.0F, 0.0F, getOffset);
+                GlStateManager.translate(0.0F, 0.0F, getOffsetSide);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(180.0F, 0.0F, 0.0F, 1.0F);
                 break;

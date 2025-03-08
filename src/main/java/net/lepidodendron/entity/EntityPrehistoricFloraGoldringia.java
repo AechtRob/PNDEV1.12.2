@@ -10,7 +10,7 @@ import net.lepidodendron.entity.render.entity.RenderGoldringia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
-import net.lepidodendron.item.entities.ItemNautiloidEggsCenoceras;
+import net.lepidodendron.item.entities.ItemNautiloidEggsGoldringia;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
@@ -116,7 +116,7 @@ public class EntityPrehistoricFloraGoldringia extends EntityPrehistoricFloraNaut
 
 	@Override
 	public ItemStack getPropagule() {
-		return new ItemStack(ItemNautiloidEggsCenoceras.block, (int) (1));
+		return new ItemStack(ItemNautiloidEggsGoldringia.block, (int) (1));
 	}
 
 	@Override

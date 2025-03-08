@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:notopala_raw"
+			"item": "lepidodendron:notopala_item"
 		},
 		"title": {
 			"translate": "advancements.pf_adv_book_notopala.title"

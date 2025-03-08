@@ -724,8 +724,8 @@ public class ModelArcestes extends ModelBasePalaeopedia {
             this.setRotateAngle(Tentacle6a, -0.2319F, 0.0859F, -0.0152F);
             this.setRotateAngle(Tentacle6b, -0.336F, 0.0F, 0.0F);
 
-            if(ee.isInWater()) {
-                animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+            if (ee.isInWater()) {
+                animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getIsMoving());
             }
 
 
@@ -736,10 +736,13 @@ public class ModelArcestes extends ModelBasePalaeopedia {
 
     }
 
-    public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+    public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isMoving) {
         EntityPrehistoricFloraArcestes entity = (EntityPrehistoricFloraArcestes) entitylivingbaseIn;
         int animCycle = 40;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        if (!isMoving) {
+            tickAnim = 0;
+        }
         double xx = 0;
         double yy = 0;
         double zz = 0;

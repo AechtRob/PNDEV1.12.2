@@ -140,7 +140,7 @@ public class EntityPrehistoricFloraIyuku extends EntityPrehistoricFloraLandBase 
 		return null;
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	//public static String getHabitat() {return "Terrestrial Therapsid";}
 
