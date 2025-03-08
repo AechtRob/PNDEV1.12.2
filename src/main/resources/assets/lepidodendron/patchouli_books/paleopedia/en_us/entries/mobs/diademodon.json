@@ -21,7 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_diademodon",
 			"type": "text",
-			"text": "Diademodon tetragonus comes from the Middle Triassic, with fossils found across Southern Africa, Antarctica and Argentina. It is a large cynodont, known for its flat and very wide skull, and grew up to around 1.5 m in overall length. When it was originally described in 1894, the arrangement and size of its cheek teeth saw it be classified as a gomphodont, which prevailed as late as 1988, when it was then re-classified as a cynodont due to its skull morphology being different to that of known gomphodonts."
+			"text": "Diademodon tetragonus comes from the Middle Triassic, with fossils found across Southern Africa, Antarctica and Argentina. It is a large cynodont, known for its flat and very wide skull, and grew up to around 1.5 m in overall length. When it was originally described in 1894, the arrangement and size of its cheek teeth saw it be classified as a gomphodont, which prevailed as late as 1988,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diademodon",
+			"type": "text",
+			"text": "when it was then re-classified as a cynodont due to its skull morphology being different to that of known gomphodonts."
 		},
 		{
 			"type": "lepidodendron:diet",

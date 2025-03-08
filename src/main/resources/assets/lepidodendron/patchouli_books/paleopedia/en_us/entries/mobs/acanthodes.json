@@ -9,11 +9,11 @@
 			"trigger": "lepidodendron:pf_adv_book_acanthodes",
 			"title": "Acanthodes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous - Permian $(br2)>Chordata$(br)>Acanthodii$(br)>Acanthodiformes$(br)>Acanthodidae"
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Chordata$(br)>Acanthodii$(br)>Acanthodiformes$(br)>Acanthodidae"
 		},
 		{
 			"type": "entity",
-			"name": "Acanthodes sp.",
+			"name": "A. bronni",
 			"entity": "lepidodendron:prehistoric_flora_acanthodes",
 			"rotate": false,
 			"default_rotation": 0

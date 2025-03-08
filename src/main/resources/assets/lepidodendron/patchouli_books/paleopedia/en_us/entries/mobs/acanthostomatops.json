@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Amphibia$(br)>Temnospondyli$(br)>Zatrachydidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/acanthostomatops.png"],
-			"title": "A. vorax",
-			"text": ""
+			"type": "entity",
+			"name": "A. vorax",
+			"entity": "lepidodendron:prehistoric_flora_acanthostomatops",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_acanthostomatops",

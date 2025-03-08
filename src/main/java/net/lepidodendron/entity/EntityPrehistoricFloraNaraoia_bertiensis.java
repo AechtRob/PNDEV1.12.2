@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraNaraoia_bertiensis extends EntityPrehistoricF
 		return true;
 	}
 
-	public static String getPeriod() {return "Cambrian";}
+	public static String getPeriod() {return "Silurian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraEoporpita extends EntityPrehistoricFloraEoand
         return true;
     }
 
-    public static String getPeriod() {return "Precambrian";}
+    public static String getPeriod() {return "Neoproterozoic (Ediacaran)";}
 
     //public static String getHabitat() {return "Aquatic";}
 

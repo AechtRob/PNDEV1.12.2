@@ -373,6 +373,26 @@ public class ModelCascocauda extends ModelBasePalaeopedia {
         float scaler = 0.5F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(main, 0.3F, 0.0F, -0.1F);
+        this.setRotateAngle(neck, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(Head, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg, 0.0F, -0.3F, -1.2F);
+        this.setRotateAngle(leftleg2, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg3, 2.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg, 0.0F, 0.3F, 1.2F);
+        this.setRotateAngle(rightleg2, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg3, 2.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftwing, 0.0F, 0.0F, -0.1F);
+        this.setRotateAngle(leftwing2, 0.0F, 0.3F, -0.2F);
+        this.setRotateAngle(leftwing3, 0.0F, 2.5F, -0.2F);
+        this.setRotateAngle(lefthand, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing, 0.0F, 0.0F, 0.1F);
+        this.setRotateAngle(rightwing2, 0.0F, -0.3F, 0.3F);
+        this.setRotateAngle(rightwing3, 0.0F, -2.5F, 0.2F);
+        this.setRotateAngle(righthand, 0.0F, 0.0F, 0.0F);
 
         //End of pose, now render the model:
         this.main.render(f);
