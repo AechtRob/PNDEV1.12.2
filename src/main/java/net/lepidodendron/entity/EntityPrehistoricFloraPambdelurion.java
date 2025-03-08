@@ -184,7 +184,7 @@ public class EntityPrehistoricFloraPambdelurion extends EntityPrehistoricFloraAg
 			return 0;
 		}
 		if (this.getIsFast()) {
-			return 0.132f;
+			return 0.165f;
 		}
 		return 0.07f;
 		//return 0;
