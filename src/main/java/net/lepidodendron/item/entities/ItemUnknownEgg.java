@@ -484,7 +484,12 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 				stringEgg = stringEgg.replace(LepidodendronMod.MODID.toString() + ":", "");
 
 				if (stack.getTagCompound().hasKey("PNType")) {
-					stringEgg = stringEgg + "_" + stack.getTagCompound().getString("PNType").toString();
+					if (!stringEgg.contains("@")) {
+						stringEgg = stringEgg + "_" + stack.getTagCompound().getString("PNType").toString();
+					}
+					else {
+						stringEgg = stringEgg.replace("@", "_");
+					}
 				}
 
 				return I18n.translateToLocal("item.pf_eggs_generic_full.name").trim()
@@ -510,6 +515,9 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 		public Class getEggClassfromNBT(ItemStack itemstack) {
 			Class classEgg = null;
 			String stringEgg = ((itemstack).hasTagCompound() ? (itemstack).getTagCompound().getString("creature") : null);
+			if (stringEgg.contains("@")) {
+				stringEgg = stringEgg.substring(0, stringEgg.indexOf("@"));
+			}
 			if (stringEgg != null) {
 				classEgg = findEntity(stringEgg);
 			}
