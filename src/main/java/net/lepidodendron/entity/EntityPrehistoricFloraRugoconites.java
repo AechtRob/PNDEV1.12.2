@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraRugoconites extends EntityPrehistoricFloraSli
 		return true;
 	}
 
-	public static String getPeriod() {return "Neoproterozoic (Ediacaran)";}
+	public static String getPeriod() {return "Neoproterozoic (Cryogenian - Ediacaran)";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

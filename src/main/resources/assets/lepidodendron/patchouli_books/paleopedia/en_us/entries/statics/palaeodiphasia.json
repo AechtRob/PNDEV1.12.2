@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeodiphasia",
 			"title": "Palaeodiphasia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$()  Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Hydrozoa$(br)>Hydroidolina$(br)>Macrocolonia$(br)>Sertulariida"
+			"text": "$(l)Temporal Range:$()  Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Hydrozoa$(br)>Hydroidolina$(br)>Leptothecata$(br)>Macrocolonia$(br)>Sertulariida"
 		},
 		{
 			"type": "multiblock",
@@ -34,7 +34,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_palaeodiphasia",
 			"type": "text",
-			"text": "The generic name derives from the Greek word 'Palaeo', to mean 'old'; and the genus name 'diphasia'. The specific name derives from the Latin word 'simplex', to mean 'simple'."
+			"text": "The generic name derives from the Greek word 'Palaeo', to mean 'old'; and the genus name 'Diphasia'. The specific name derives from the Latin word 'simplex', to mean 'simple'."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_palaeodiphasia",
