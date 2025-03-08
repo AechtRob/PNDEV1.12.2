@@ -381,6 +381,10 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 				return;
 			}
 
+			if (this.getStackInSlot(0).isEmpty()) {
+				this.dimensionSelected = -1;
+			}
+
 			if (LepidodendronConfig.machinesRF) {
 				TileEntity tileEntity = world.getTileEntity(this.pos);
 				if (tileEntity instanceof BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) {
@@ -502,7 +506,6 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 							break;
 
 					}
-					this.dimensionSelected = -1;
 				}
 				updated = true;
 			}
