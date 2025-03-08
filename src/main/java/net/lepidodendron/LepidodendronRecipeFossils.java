@@ -612,6 +612,33 @@ public class LepidodendronRecipeFossils {
 			//Don't do anytning - recipes are not working with NBT!
 		}
 
+		if (lifeStr.contains("@gendered")) {
+			registerOredict(event, typeStr, lifeStr.replace("@gendered", "@male"), stackSolvent, stackPhialEmpty);
+			registerOredict(event, typeStr, lifeStr.replace("@gendered", "@female"), stackSolvent, stackPhialEmpty);
+		}
+		if (lifeStr.contains("@triops_random")) {
+			registerOredict(event, typeStr, lifeStr.replace("@triops_random", "@triops1"), stackSolvent, stackPhialEmpty);
+			registerOredict(event, typeStr, lifeStr.replace("@triops_random", "@triops2"), stackSolvent, stackPhialEmpty);
+			registerOredict(event, typeStr, lifeStr.replace("@triops_random", "@triops3"), stackSolvent, stackPhialEmpty);
+		}
+		if (lifeStr.contains("@dragonfly_random")) {
+			registerOredict(event, typeStr, lifeStr.replace("@dragonfly_random", "@dragonfly1"), stackSolvent, stackPhialEmpty);
+			registerOredict(event, typeStr, lifeStr.replace("@dragonfly_random", "@dragonfly2"), stackSolvent, stackPhialEmpty);
+			registerOredict(event, typeStr, lifeStr.replace("@dragonfly_random", "@dragonfly3"), stackSolvent, stackPhialEmpty);
+			registerOredict(event, typeStr, lifeStr.replace("@dragonfly_random", "@dragonfly4"), stackSolvent, stackPhialEmpty);
+			registerOredict(event, typeStr, lifeStr.replace("@dragonfly_random", "@dragonfly5"), stackSolvent, stackPhialEmpty);
+			registerOredict(event, typeStr, lifeStr.replace("@dragonfly_random", "@dragonfly6"), stackSolvent, stackPhialEmpty);
+			registerOredict(event, typeStr, lifeStr.replace("@dragonfly_random", "@dragonfly7"), stackSolvent, stackPhialEmpty);
+			registerOredict(event, typeStr, lifeStr.replace("@dragonfly_random", "@dragonfly8"), stackSolvent, stackPhialEmpty);
+			registerOredict(event, typeStr, lifeStr.replace("@dragonfly_random", "@dragonfly9"), stackSolvent, stackPhialEmpty);
+			registerOredict(event, typeStr, lifeStr.replace("@dragonfly_random", "@dragonfly10"), stackSolvent, stackPhialEmpty);
+		}
+
+		registerOredict(event, typeStr, lifeStr, stackSolvent, stackPhialEmpty);
+	}
+
+
+	public static void registerOredict(RegistryEvent.Register<IRecipe> event, String typeStr, String lifeStr, ItemStack stackSolvent, ItemStack stackPhialEmpty) {
 		if (!event.getRegistry().containsKey(new ResourceLocation(LepidodendronMod.MODID, "oredict_phial_dna_" + lifeStr))) {
 			NBTTagCompound phialNBT = new NBTTagCompound();
 			phialNBT.setString("id", lifeStr);
@@ -634,8 +661,8 @@ public class LepidodendronRecipeFossils {
 			OreIngredient oreFossil = null;
 
 			if (typeStr.equalsIgnoreCase("PFMob")
-				|| typeStr.equalsIgnoreCase("PFMob_vertebrate")
-				|| typeStr.equalsIgnoreCase("PFMob_invertebrate")) {
+					|| typeStr.equalsIgnoreCase("PFMob_vertebrate")
+					|| typeStr.equalsIgnoreCase("PFMob_invertebrate")) {
 				oreFossil = new OreIngredient("mobdnaPN" + lifeStr);
 			}
 			else if (typeStr.equalsIgnoreCase("PFPlant")) {

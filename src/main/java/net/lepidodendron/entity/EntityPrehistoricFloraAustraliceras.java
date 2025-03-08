@@ -8,7 +8,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
-import net.lepidodendron.item.entities.ItemNautiloidEggsHamulina;
+import net.lepidodendron.item.entities.ItemNautiloidEggsAustraliceras;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.item.ItemStack;
@@ -112,7 +112,7 @@ public class EntityPrehistoricFloraAustraliceras extends EntityPrehistoricFloraN
 
 	@Override
 	public ItemStack getPropagule() {
-		return new ItemStack(ItemNautiloidEggsHamulina.block, (int) (1));
+		return new ItemStack(ItemNautiloidEggsAustraliceras.block, (int) (1));
 	}
 
 	@Override

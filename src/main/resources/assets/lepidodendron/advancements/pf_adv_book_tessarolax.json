@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:tessarolax_raw"
+			"item": "lepidodendron:tessarolax_item"
 		},
 		"title": {
 			"translate": "advancements.pf_adv_book_tessarolax.title"
