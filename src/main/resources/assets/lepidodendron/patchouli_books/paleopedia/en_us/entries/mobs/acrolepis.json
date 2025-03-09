@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous - Triassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Palaeonisciformes$(br)>Acrolepidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/acrolepis.png"],
-			"title": "A. sedgwicki",
-			"text": ""
+			"type": "entity",
+			"name": "A. sedgwicki",
+			"entity": "lepidodendron:prehistoric_flora_acrolepis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_acrolepis",

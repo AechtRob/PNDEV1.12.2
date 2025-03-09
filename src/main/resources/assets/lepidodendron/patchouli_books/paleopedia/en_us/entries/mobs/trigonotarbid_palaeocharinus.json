@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_trigonotarbid_palaeocharinus",
 			"title": "Palaeocharinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Arachnida$(br)>Trigonotarbida$(br)>Palaeocharinidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Arachnida$(br)>Trigonotarbida$(br)>Palaeocharinidae"
 		},
 		{
 			"type": "entity",

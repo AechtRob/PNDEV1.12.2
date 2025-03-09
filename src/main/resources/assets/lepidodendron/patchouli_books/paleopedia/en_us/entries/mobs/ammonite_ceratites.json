@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Ceratitida$(br)>Ceratitidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ceratites.png"],
-			"title": "Ceratites sp.",
-			"text": ""
+			"type": "entity",
+			"name": "Ceratites sp.",
+			"entity": "lepidodendron:prehistoric_flora_ammonite_ceratites",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_ceratites",
 			"type": "text",
-			"text": "Ceratites is a genus of Ceratitid ammonite from the Middle Triassic. This ammonite developed to live deeper underwater, where pressures on its shell would have been higher, pushing for the development of stronger sutures between the various pieces of the shell. These sutures, present in all ammonites between various sections of the shell, are classified under three different groups based on their shape; Ceratites had so called Ceratitic suture "
+			"text": "Ceratites is a genus of ceratitid ammonite from the Middle Triassic. This ammonite developed to live deeper underwater, where pressures on its shell would have been higher, pushing for the development of stronger sutures between the various pieces of the shell. These sutures, present in all ammonites between various sections of the shell, are classified under three different groups based on their shape; Ceratites had so called Ceratitic suture "
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_ceratites",
@@ -35,7 +36,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_ceratites",
 			"type": "text",
-			"text": "however smoother specimens inside the genus might've been relatively more agile."
+			"text": "however smoother specimens inside the genus might have been relatively more agile."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Arthropoda$(br)>Trilobita$(br)>Asaphida$(br)>Raphiophoridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ampyx_long.png"],
-			"title": "A. priscus",
-			"text": ""
+			"type": "entity",
+			"name": "A. priscus",
+			"entity": "lepidodendron:prehistoric_flora_ampyx",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ampyx",

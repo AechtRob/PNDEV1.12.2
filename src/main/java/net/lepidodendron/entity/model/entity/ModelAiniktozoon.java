@@ -372,21 +372,21 @@ public class ModelAiniktozoon extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.bones.offsetY = 0.7F;
+        this.bones.offsetY = -0.9F;
         this.bones.offsetX = 0.1F;
         this.bones.rotateAngleY = (float) Math.toRadians(210);
         this.bones.rotateAngleX = (float) Math.toRadians(8);
         this.bones.rotateAngleZ = (float) Math.toRadians(-4);
         this.bones.scaleChildren = true;
-        float scaler = 0.575F;
+        float scaler = 4.5F;
         this.bones.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(bones, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(bones, 0.2F, 3.5F, 0.1F);
+        this.setRotateAngle(body1, 0.0F, 0.01F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.01F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.02F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.1F, 0.0F);
         //End of pose, now render the model:
         this.bones.render(f);
         //Reset rotations, positions and sizing:

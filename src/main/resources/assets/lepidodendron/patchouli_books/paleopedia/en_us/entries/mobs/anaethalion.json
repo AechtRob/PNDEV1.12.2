@@ -12,25 +12,26 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Elopiformes$(br)>Anaethalionidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/anaethalion.png"],
-			"title": "A. angustus",
-			"text": ""
+			"type": "entity",
+			"name": "A. angustus",
+			"entity": "lepidodendron:prehistoric_flora_anaethalion",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_anaethalion",
 			"type": "text",
-			"text": "Anaethalion is a genus of Elopomorph fish from the Late Jurassic of Europe. This fish possessed an elongated body, measuring around 15 cm in length, a large head full of small teeth and a lunate tail; its body was covered by small, imbricated, cycloid scales, some of which crenulated along their posterior margin."
+			"text": "Anaethalion is a genus of elopomorph fish from the Upper Jurassic of Europe. This fish possessed an elongated body, measuring around 15 cm in length, a large head full of small teeth and a lunate tail; its body was covered by small, imbricated, cycloid scales, some of which crenulated along their posterior margin."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_anaethalion",
 			"type": "text",
-			"text": "The first fossils from the animal were discovered in the famous Solnhofen deposits and were described as under the genus Clupea in 1818. Later described under Caturus in the late 1830s and then under the genus Aethalion in 1842. Some other members of its genus were placed under Leptolepis by other authors before Anaethalion was coined in 1938 due to Aethalion being a preoccupied name, already taken by a bug."
+			"text": "The first fossils from the animal were discovered in the famous Solnhofen deposits and were described as under the genus Clupea in 1818. Later it was described under Caturus in the late 1830s and then under the genus Aethalion in 1842. Some other members of its genus were placed under Leptolepis by other authors before Anaethalion was coined in 1938 due to Aethalion being a preoccupied name, already taken by a bug."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_anaethalion",
 			"type": "text",
-			"text": "Anaethalion is considered today as one of the most basal among the Elopomorphs, the same group containing extant Elopiformes, Albuliformes, Anguilliformes, Saccopharyngiformes and Gonorynchiformes. Being contained in its own family alongside of close relatives like Eichstaettia, Anaethalion as a genus is now potentially considered paraphyletic and some of the species now under it might be renamed in the future."
+			"text": "Anaethalion is considered today as one of the most basal among the elopomorphs, the same group containing extant Elopiformes, Albuliformes, Anguilliformes, Saccopharyngiformes and Gonorynchiformes. Being contained in its own family alongside of close relatives like Eichstaettia, Anaethalion as a genus is now potentially considered paraphyletic and some of the species now under it might be renamed in the future."
 		},
 		{
 			"type": "lepidodendron:diet",

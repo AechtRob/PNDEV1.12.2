@@ -540,11 +540,6 @@ public class ModelAegirocassis extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
 
-    @Override
-    public void renderStaticBook(float f) {
-
-    }
-
     public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
         this.body.offsetX = -0F;
@@ -678,6 +673,82 @@ public class ModelAegirocassis extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -0.5F;
+        this.body.offsetX = 0.2F;
+        this.body.rotateAngleY = (float) Math.toRadians(210);
+        this.body.rotateAngleX = (float) Math.toRadians(8);
+        this.body.rotateAngleZ = (float) Math.toRadians(-4);
+        this.body.scaleChildren = true;
+        float scaler = 0.7F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, -0.2F, 3.9F, 0.1F);
+        this.setRotateAngle(Helement_R_r1, 0.0F, 0.0F, -0.5236F);
+        this.setRotateAngle(Helement_L_r1, 0.0F, 0.0F, 0.5236F);
+        this.setRotateAngle(PelementL2_r1, 0.0F, 0.0F, 0.2618F);
+        this.setRotateAngle(PelementL1_r1, 0.0F, 0.0F, -0.2618F);
+        this.setRotateAngle(PelementR2_r1, 0.0F, 0.0F, -0.2618F);
+        this.setRotateAngle(PelementR1_r1, 0.0F, 0.0F, 0.2618F);
+        this.setRotateAngle(finupperL, 0.0F, 0.0F, 0.4363F);
+        this.setRotateAngle(finupperR, 0.0F, 0.0F, -0.4363F);
+        this.setRotateAngle(finlowerL, 0.0F, 0.0F, -0.4363F);
+        this.setRotateAngle(finlowerR, 0.0F, 0.0F, 0.4363F);
+        this.setRotateAngle(segment2, 0.0437F, 0.0436F, 0.0019F);
+        this.setRotateAngle(finlowerR2, 0.0F, 0.0F, 0.5236F);
+        this.setRotateAngle(finupperR2, 0.0F, 0.0F, -0.5672F);
+        this.setRotateAngle(finupperL2, 0.0F, 0.0F, 0.5672F);
+        this.setRotateAngle(finlowerL2, 0.0F, 0.0F, -0.6109F);
+        this.setRotateAngle(segment3, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(finupperL3, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(finupperR3, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(finlowerL3, 0.0F, 0.0F, -0.6109F);
+        this.setRotateAngle(finlowerR3, 0.0F, 0.0F, 0.6109F);
+        this.setRotateAngle(segment4, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(finupperR4, 0.0F, 0.0F, -0.9599F);
+        this.setRotateAngle(finupperL4, 0.0F, 0.0F, 0.9599F);
+        this.setRotateAngle(finlowerL4, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(finlowerR4, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(segment5, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(finupperR5, 0.0F, 0.0F, -1.2217F);
+        this.setRotateAngle(finlowerR5, 0.0F, 0.0F, 0.9599F);
+        this.setRotateAngle(finupperL5, 0.0F, 0.0F, 1.2217F);
+        this.setRotateAngle(finlowerL5, 0.0F, 0.0F, -0.9599F);
+        this.setRotateAngle(segment6, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(finlowerR6, 0.0F, 0.0F, 1.2217F);
+        this.setRotateAngle(finupperR6, 0.0F, 0.0F, -1.0472F);
+        this.setRotateAngle(finupperL6, 0.0F, 0.0F, 1.0472F);
+        this.setRotateAngle(finlowerL6, 0.0F, 0.0F, -1.2217F);
+        this.setRotateAngle(segment7, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(finupperL7, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(finupperR7, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(finlowerL7, 0.0F, 0.0F, -1.4399F);
+        this.setRotateAngle(finlowerR7, 0.0F, 0.0F, 1.4399F);
+        this.setRotateAngle(segment8, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(finupperL8, 0.0F, 0.0F, 0.6545F);
+        this.setRotateAngle(finlowerL8, 0.0F, 0.0F, -1.3963F);
+        this.setRotateAngle(finupperR8, 0.0F, 0.0F, -0.6545F);
+        this.setRotateAngle(finlowerR8, 0.0F, 0.0F, 1.3963F);
+        this.setRotateAngle(segment9, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(finlowerR9, 0.0F, 0.0F, 1.2217F);
+        this.setRotateAngle(finlowerL9, 0.0F, 0.0F, -1.2217F);
+        this.setRotateAngle(finupperR9, 0.0F, 0.0F, -0.5236F);
+        this.setRotateAngle(finupperL9, 0.0F, 0.0F, 0.5236F);
+        this.setRotateAngle(segment10, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(finupperL10, 0.0F, 0.0F, 0.3491F);
+        this.setRotateAngle(finupperR10, 0.0F, 0.0F, -0.3491F);
+        this.setRotateAngle(finlowerL10, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(finlowerR10, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(segment11, 0.0F, 0.0873F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

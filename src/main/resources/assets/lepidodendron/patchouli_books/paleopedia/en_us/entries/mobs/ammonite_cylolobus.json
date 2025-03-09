@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Goniatitida$(br)>Cyclolobidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cyclolobus.png"],
-			"title": "Cyclolobus sp.",
-			"text": ""
+			"type": "entity",
+			"name": "Cyclolobus sp.",
+			"entity": "lepidodendron:prehistoric_flora_ammonite_cylolobus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_cylolobus",
 			"type": "text",
-			"text": "Cyclolobus is a smooth ammonoid that lived during the late Permian period. It had sharp narrow projections inside of its shell."
+			"text": "Cyclolobus is a smooth ammonoid that lived during the Upper Permian. It had sharp narrow projections inside of its shell."
 		},
 		{
 			"type": "lepidodendron:diet",

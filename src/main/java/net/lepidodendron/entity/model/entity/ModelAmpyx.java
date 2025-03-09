@@ -154,16 +154,16 @@ public class ModelAmpyx extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.AmpyxMain.offsetY = 0.7F;
-        this.AmpyxMain.offsetX = 0.1F;
+        this.AmpyxMain.offsetY = -1.8F;
+        this.AmpyxMain.offsetX = 0.6F;
         this.AmpyxMain.rotateAngleY = (float) Math.toRadians(210);
         this.AmpyxMain.rotateAngleX = (float) Math.toRadians(8);
         this.AmpyxMain.rotateAngleZ = (float) Math.toRadians(-4);
         this.AmpyxMain.scaleChildren = true;
-        float scaler = 0.575F;
+        float scaler = 5.0F;
         this.AmpyxMain.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(AmpyxMain, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(AmpyxMain, 0.5F, 3.7F, -0.2F);
         //End of pose, now render the model:
         this.AmpyxMain.render(f);
         //Reset rotations, positions and sizing:

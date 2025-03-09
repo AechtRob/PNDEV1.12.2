@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Thylacocephala$(br)>Concavicarida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ainiktozoon.png"],
-			"title": "A. loganense",
-			"text": ""
+			"type": "entity",
+			"name": "A. elegans",
+			"entity": "lepidodendron:prehistoric_flora_ainiktozoon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ainiktozoon",
 			"type": "text",
-			"text": "Ainiktozoon was an early Thylacocephalan that lived during the Silurian period. It resembled a shrimp with a large head carapace that stuck outwards. Its name comes from the Greek ainiktos(enigmatic) and zoon(animal)."
+			"text": "Ainiktozoon was an early thylacocephalan that lived during the Silurian period. It resembled a shrimp with a large head carapace that stuck outwards. Its name comes from the Greek words 'ainiktos', to mean 'enigmatic'; and 'zoon', to mean 'animal'. The specific name derives from the Latinised place name of 'Logan Reservoir', near to where the first fossils were found."
 		},
 		{
 			"type": "lepidodendron:diet",

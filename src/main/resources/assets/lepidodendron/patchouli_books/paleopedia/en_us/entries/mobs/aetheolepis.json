@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Archaeomaenidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/aetheolepis.png"],
-			"title": "A. mirabilis",
-			"text": ""
+			"type": "entity",
+			"name": "A. mirabilis",
+			"entity": "lepidodendron:prehistoric_flora_aetheolepis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_aetheolepis",
 			"type": "text",
-			"text": "Aetheolepis mirabilis is a species of Archeomenid fish from the Late Jurassic of Australia. Only around 10 cm long on average, this fish possessed a round and short body, making it distinct from its coeval relatives such as Aphnelepis and Archaeomaene. The animal had a tall dorsal fin which originated from the second half of the animal's body,"
+			"text": "Aetheolepis mirabilis is a species of archeomenid fish from the Upper Jurassic of Australia. Only around 10 cm long on average, this fish possessed a round and short body, making it distinct from its coeval relatives such as Aphnelepis and Archaeomaene. The animal had a tall dorsal fin which originated from the second half of the animal's body,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_aetheolepis",

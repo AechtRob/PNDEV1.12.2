@@ -231,9 +231,29 @@ public class ModelAllenypterus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.Allenypterus.offsetY = -3.0F;
+        this.Allenypterus.offsetX = 0.5F;
+        this.Allenypterus.rotateAngleY = (float) Math.toRadians(210);
+        this.Allenypterus.rotateAngleX = (float) Math.toRadians(8);
+        this.Allenypterus.rotateAngleZ = (float) Math.toRadians(-4);
+        this.Allenypterus.scaleChildren = true;
+        float scaler = 7.5F;
+        this.Allenypterus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Allenypterus, 0.2F, 3.7F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Jaw, 0.3F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Allenypterus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Allenypterus.setScale(1.0F, 1.0F, 1.0F);
+        this.Allenypterus.scaleChildren = false;
+        resetToDefaultPose();
     }
-
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

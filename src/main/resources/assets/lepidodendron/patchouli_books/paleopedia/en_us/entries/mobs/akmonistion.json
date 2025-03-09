@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Symmoriiformes$(br)>Symmoriidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/akmonistion.png"],
-			"title": "A. zangerli",
-			"text": ""
+			"type": "entity",
+			"name": "A. zangerli",
+			"entity": "lepidodendron:prehistoric_flora_akmonistion",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_akmonistion",
 			"type": "text",
-			"text": "Akmonistion is a holocephalian from the Early Carboniferous. It is distinguished by an unusual enlarged formation of the dorsal fin with an unknown function. Its first dorsal fin looked like an anvil, referring to its name, which comes from the Ancient Greek, akmon 'anvil' and istion 'sail.'"
+			"text": "Akmonistion is a holocephalian from the Early Carboniferous. It is distinguished by an unusual enlarged formation of the dorsal fin with an unknown function. Its first dorsal fin looked like an anvil, which is the namesake of the genus. Said generic name derives from the Ancient Greek words 'akmon', to mean 'anvil'; and 'istion', to mean 'sail.'"
 		},
 		{
 			"type": "lepidodendron:diet",

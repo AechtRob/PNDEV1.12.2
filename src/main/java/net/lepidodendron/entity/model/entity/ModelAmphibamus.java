@@ -396,18 +396,20 @@ public class ModelAmphibamus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Hips.offsetY = 0.7F;
-        this.Hips.offsetX = 0.1F;
+        this.Hips.offsetY = -1.5F;
+        this.Hips.offsetX = 0.3F;
         this.Hips.rotateAngleY = (float) Math.toRadians(210);
         this.Hips.rotateAngleX = (float) Math.toRadians(8);
         this.Hips.rotateAngleZ = (float) Math.toRadians(-4);
         this.Hips.scaleChildren = true;
-        float scaler = 0.575F;
+        float scaler = 3.0F;
         this.Hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(Hips, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(Tail1, -0.05F, 0.0F, 0.0F);
-        this.setRotateAngle(Tail2, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(Hips, 0.4F, 3.8F, -0.2F);
+        this.setRotateAngle(Tail1, 0.35F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Head, -0.5F, -0.2F, 0.0F);
+        this.setRotateAngle(Jaw, 0.2F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.Hips.render(f);
         //Reset rotations, positions and sizing:

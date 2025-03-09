@@ -300,12 +300,6 @@ public class ModelAcrolepis extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Acrolepis.render(f5);
     }
-
-    @Override
-    public void renderStaticBook(float f) {
-
-    }
-
     public void renderStaticWall(float f) {
         this.Acrolepis.rotateAngleY = (float) Math.toRadians(90);
         this.Acrolepis.offsetY = -0.15F;
@@ -314,7 +308,6 @@ public class ModelAcrolepis extends ModelBasePalaeopedia {
         this.Acrolepis.render(0.01F);
         this.resetToDefaultPose();
     }
-
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Acrolepis, 0.0F, -0.0F, 0.1F);
         this.setRotateAngle(Body1, 0.0F, -0.1F, 0.0F);
@@ -329,11 +322,38 @@ public class ModelAcrolepis extends ModelBasePalaeopedia {
         this.Acrolepis.render(0.01F);
         this.resetToDefaultPose();
     }
-    
-    public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
-        AdvancedModelRenderer.rotateAngleX = x;
-        AdvancedModelRenderer.rotateAngleY = y;
-        AdvancedModelRenderer.rotateAngleZ = z;
+
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Acrolepis.offsetY = -0.7F;
+        this.Acrolepis.offsetX = 0.725F;
+        this.Acrolepis.rotateAngleY = (float) Math.toRadians(210);
+        this.Acrolepis.rotateAngleX = (float) Math.toRadians(8);
+        this.Acrolepis.rotateAngleZ = (float) Math.toRadians(-4);
+        this.Acrolepis.scaleChildren = true;
+        float scaler = 0.88F;
+        this.Acrolepis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Acrolepis, 0.0F, -2F, 0.1F);
+        this.setRotateAngle(Body1, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.2F, 0.05F);
+        this.setRotateAngle(Body4, 0.0F, 0.2F, 0.05F);
+        this.setRotateAngle(Tail_Begin, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail_middle, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail_end, 0.0F, 0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.Acrolepis.render(f);
+        //Reset rotations, positions and sizing:
+        this.Acrolepis.setScale(1.0F, 1.0F, 1.0F);
+        this.Acrolepis.scaleChildren = false;
+        resetToDefaultPose();
+    }
+    public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+        modelRenderer.rotateAngleX = x;
+        modelRenderer.rotateAngleY = y;
+        modelRenderer.rotateAngleZ = z;
     }
 
     @Override

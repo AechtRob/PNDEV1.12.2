@@ -9,18 +9,24 @@
 			"trigger": "lepidodendron:pf_adv_book_acutiramus",
 			"title": "Acutiramus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Arthropoda$(br)>Eurypterida$(br)>Pterygotioidea$(br)>Pterygotidae"
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Pterygotioidea$(br)>Pterygotidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/acutiramus.png"],
-			"title": "A. cummingsi",
-			"text": ""
+			"type": "entity",
+			"name": "A. cummingsi",
+			"entity": "lepidodendron:prehistoric_flora_acutiramus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_acutiramus",
 			"type": "text",
-			"text": "Acutiramus is a giant predatory eurypterid that first appeared in the Upper Silurian, surviving into the Lower Devonian. Its name comes from the Latin acuto(sharp) and ramus(branch) referring to the acute angle of the final tooth of the claws relative to the rest of the claw. Acutiramus grew to over 2 meters in length and probably had low visual acuity and claws for slicing rather than shearing. It may have been an ambush predator or a scavenger."
+			"text": "Acutiramus is a giant predatory eurypterid that first appeared in the Upper Silurian, and survived into the Lower Devonian. Its name comes from the Latin words 'acuto', to mean 'sharp'; and 'ramus', to mean 'branch', which refers to the acute angle of the final tooth of the claws relative to the rest of the claw. Acutiramus grew to over 2 meters in length and probably had low visual acuity and claws for slicing rather than shearing."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acutiramus",
+			"type": "text",
+			"text": "It may have been an ambush predator or a scavenger."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -181,12 +181,32 @@ public class ModelAkmonistion extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
-
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.body.offsetY = -1.0F;
+        this.body.offsetX = 1.35F;
+        this.body.rotateAngleY = (float) Math.toRadians(210);
+        this.body.rotateAngleX = (float) Math.toRadians(8);
+        this.body.rotateAngleZ = (float) Math.toRadians(-4);
+        this.body.scaleChildren = true;
+        float scaler = 1.8F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.4F, 3.4F, 0.0F);
+        this.setRotateAngle(head, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.3F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
     }
-
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

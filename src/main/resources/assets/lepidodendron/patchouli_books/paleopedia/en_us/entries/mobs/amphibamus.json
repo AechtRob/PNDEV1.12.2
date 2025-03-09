@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Temnospondyli$(br)>Amphibamidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/amphibamus.png"],
-			"title": "A. grandiceps",
-			"text": ""
+			"type": "entity",
+			"name": "A. grandiceps",
+			"entity": "lepidodendron:prehistoric_flora_amphibamus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_amphibamus",

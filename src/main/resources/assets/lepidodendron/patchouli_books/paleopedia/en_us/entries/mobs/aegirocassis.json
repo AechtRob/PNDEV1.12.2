@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Dinocaridida$(br)>Radiodonta$(br)>Hurdiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/aegirocassis.png"],
-			"title": "A. benmoulai",
-			"text": ""
+			"type": "entity",
+			"name": "A. benmoulai",
+			"entity": "lepidodendron:prehistoric_flora_aegirocassis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_aegirocassis",
 			"type": "text",
-			"text": "Aegirocassis is a giant filter feeding radiodont which lived during the Ordovician period. Unlike its anomalocarids, which were predatory, Aegirocassis probably swam around slowly, drawing in food to eat with their appendages and filtering out water, keeping the prey trapped to be eaten."
+			"text": "Aegirocassis is a giant filter feeding radiodont which lived during the Ordovician period. Unlike the anomalocarids, which were predatory, Aegirocassis probably swam around slowly, drawing in food to eat with their appendages and filtering out water, keeping the prey trapped to be eaten."
 		},
 		{
 			"type": "lepidodendron:diet",

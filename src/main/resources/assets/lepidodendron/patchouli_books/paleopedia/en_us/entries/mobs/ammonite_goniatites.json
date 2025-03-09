@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian - Permian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Goniatitida$(br)>Goniatitidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/goniatites.png"],
-			"title": "Goniatites sp.",
-			"text": ""
+			"type": "entity",
+			"name": "v sp.",
+			"entity": "lepidodendron:prehistoric_flora_ammonite_goniatites",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_goniatites",

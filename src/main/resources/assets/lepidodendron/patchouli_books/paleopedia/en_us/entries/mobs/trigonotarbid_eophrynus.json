@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_trigonotarbid_eophrynus",
 			"title": "Eophrynus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Arachnida$(br)>Trigonotarida$(br)>Eophrynidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Chelicerata$(br)>Arachnida$(br)>Trigonotarida$(br)>Eophrynidae"
 		},
 		{
 			"type": "entity",

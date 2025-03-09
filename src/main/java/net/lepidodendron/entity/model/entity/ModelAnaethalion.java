@@ -214,11 +214,6 @@ public class ModelAnaethalion extends ModelBasePalaeopedia {
         this.Anaethalion.render(f5);
     }
 
-    @Override
-    public void renderStaticBook(float f) {
-
-    }
-
     public void renderStaticWall(float f) {
         this.Anaethalion.rotateAngleY = (float) Math.toRadians(90);
         this.Anaethalion.offsetY = -0.13F;
@@ -237,7 +232,33 @@ public class ModelAnaethalion extends ModelBasePalaeopedia {
         this.Anaethalion.offsetY = -0.2F;
         this.Anaethalion.render(0.01F);
         resetToDefaultPose();
-}
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Anaethalion.offsetY = -2.0F;
+        this.Anaethalion.offsetX = 0.5F;
+        this.Anaethalion.rotateAngleY = (float) Math.toRadians(210);
+        this.Anaethalion.rotateAngleX = (float) Math.toRadians(8);
+        this.Anaethalion.rotateAngleZ = (float) Math.toRadians(-4);
+        this.Anaethalion.scaleChildren = true;
+        float scaler = 5.5F;
+        this.Anaethalion.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Anaethalion, 0.5F, 3.9F, -0.2F);
+        this.setRotateAngle(Body1, 0.0F, 0.01F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.02F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.03F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.04F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.05F, 0.0F);
+        //End of pose, now render the model:
+        this.Anaethalion.render(f);
+        //Reset rotations, positions and sizing:
+        this.Anaethalion.setScale(1.0F, 1.0F, 1.0F);
+        this.Anaethalion.scaleChildren = false;
+        resetToDefaultPose();
+    }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
