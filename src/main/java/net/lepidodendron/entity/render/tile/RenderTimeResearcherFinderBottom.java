@@ -40,9 +40,9 @@ public class RenderTimeResearcherFinderBottom extends TileEntitySpecialRenderer<
 //        }
 
         int trayheight = entity.getHeight();
-        //trayheight is an integer between 0 and 120
+        //trayheight is an integer between 0 and 230
 
-        double trayheighter = (double)trayheight/120D;
+        double trayheighter = (double)trayheight/230D;
 
         double yy = 1.55D + (1.1 * trayheighter);
 
