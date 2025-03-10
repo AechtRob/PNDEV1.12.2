@@ -279,6 +279,12 @@ public class EntityPrehistoricFloraEocaecilia extends EntityPrehistoricFloraLand
 
 	}
 
+	public boolean testLay(World world, BlockPos pos) {
+		return (
+				nestBlockMatch(world, pos)
+		);
+	}
+
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.EOCAECILIA_LOOT;

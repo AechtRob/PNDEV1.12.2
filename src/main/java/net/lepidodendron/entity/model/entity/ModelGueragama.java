@@ -323,13 +323,11 @@ public class ModelGueragama extends ModelBasePalaeopedia {
     }
 
     public void renderStaticFloor(float f) {
-
+        this.hips.offsetY = 0.122F;
+        this.hips.render(0.01F);
         resetToDefaultPose();
     }
-    public void renderStaticWall(float f) {
 
-        resetToDefaultPose();
-    }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

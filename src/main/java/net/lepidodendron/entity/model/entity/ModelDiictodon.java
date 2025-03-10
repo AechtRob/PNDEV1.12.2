@@ -199,6 +199,7 @@ public class ModelDiictodon extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.hips.render(f5);
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(hips, 0.0F, 0.0F, 0.05F);
         this.setRotateAngle(body, 0.0F, 0.0F, -0.05F);

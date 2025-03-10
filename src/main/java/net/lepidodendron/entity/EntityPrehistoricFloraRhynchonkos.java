@@ -103,6 +103,12 @@ public class EntityPrehistoricFloraRhynchonkos extends EntityPrehistoricFloraLan
 		return true;
 	}
 
+	public boolean testLay(World world, BlockPos pos) {
+		return (
+				nestBlockMatch(world, pos)
+		);
+	}
+
 	@Override
 	public int animSpeedAdder() {
 		if ((this.getIsMoving() || (!this.onGround) || this.isJumping)

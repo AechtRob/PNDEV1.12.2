@@ -14,6 +14,17 @@
 
       "x": 0,
       "y": 10
+    },
+    {
+      "type": "image",
+      "image": "patchouli:textures/patchouli_divider.png",
+      "width": 110,
+      "height": 3,
+      "texture_width": 110,
+      "texture_height": 3,
+      "scale": 1.0,
+      "x": 3,
+      "y": 12
     }
   ]
 }

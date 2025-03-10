@@ -150,7 +150,7 @@ public class BiomeSpawns {
                     spawnListFinal = spawnListFinal + spawnListInterim.get(i).getEntry() + "$(br)";
                 }
             }
-            if (spawnListFinal.length() >= 1) {
+            if (spawnListFinal.length() >= 1 && !spawnListFinal.equalsIgnoreCase("$(br)")) {
                 return spawnListFinal;
             }
             if (from == 0) {

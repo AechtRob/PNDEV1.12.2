@@ -289,6 +289,7 @@ public class EntityPrehistoricFloraShantungosuchus extends EntityPrehistoricFlor
 	public CustomTrigger getModTrigger() {
 		return ModTriggers.CLICK_SHANTUNGOSUCHUS;
 	}
+
 	//Rendering taxidermy:
 	//--------------------
 

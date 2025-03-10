@@ -38,9 +38,9 @@ public class EntityPrehistoricFloraNeoceratodus extends EntityPrehistoricFloraSw
 
 	public EntityPrehistoricFloraNeoceratodus(World world) {
 		super(world);
-		setSize(1.0F, 0.3F);
-		minWidth = 0.5F;
-		maxWidth = 1.0F;
+		setSize(0.8F, 0.3F);
+		minWidth = 0.4F;
+		maxWidth = 0.8F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 8.0D;
 	}

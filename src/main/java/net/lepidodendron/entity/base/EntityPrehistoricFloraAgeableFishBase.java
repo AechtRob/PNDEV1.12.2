@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.base;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -226,7 +227,7 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
                 else {
                     this.setIsMoving(false);
                 }
-                if (this.collidedHorizontally && this.isCollidingRim())
+                if (this.collidedHorizontally && this.isCollidingRim() && this.world.getBlockState(Functions.getEntityBlockPos(this).up()).getMaterial() == Material.WATER)
                 {
                     this.motionY = 0.05D;
                 }

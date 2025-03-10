@@ -247,6 +247,10 @@ public class RenderDisplays {
     public static final ModelDicranurus modelDicranurus = new ModelDicranurus();
     public static final ModelDidymograptus modelDidymograptus = new ModelDidymograptus();
     public static final ModelDiictodon modelDiictodon = new ModelDiictodon();
+    public static final ModelRepenomamus modelRepenomamus = new ModelRepenomamus();
+    public static final ModelGueragama modelGueragama = new ModelGueragama();
+    public static final ModelAusktribosphenos modelAusktribosphenos = new ModelAusktribosphenos();
+    public static final ModelGobiconodon modelGobiconodon = new ModelGobiconodon();
     public static final ModelDilophosaurus modelDilophosaurus = new ModelDilophosaurus();
     public static final ModelDimetrodon modelDimetrodon = new ModelDimetrodon();
     public static final ModelDimorphodon modelDimorphodon = new ModelDimorphodon();

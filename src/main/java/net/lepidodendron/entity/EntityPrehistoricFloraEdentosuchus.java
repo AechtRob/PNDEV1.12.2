@@ -287,7 +287,7 @@ public class EntityPrehistoricFloraEdentosuchus extends EntityPrehistoricFloraLa
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_KNOETSCHKESUCHUS;
+		return ModTriggers.CLICK_EDENTOSUCHUS;
 	}
 	//Rendering taxidermy:
 	//--------------------

@@ -120,7 +120,7 @@ public class DimensionSpawns {
                     spawnListFinal = spawnListFinal + spawnListInterim.get(i).getEntry() + "$(br)";
                 }
             }
-            if (spawnListFinal.length() >= 1) {
+            if (spawnListFinal.length() >= 1 && !spawnListFinal.equalsIgnoreCase("$(br)")) {
                 return spawnListFinal;
             }
             if (from == 0) {
@@ -325,7 +325,7 @@ public class DimensionSpawns {
         if (string.equalsIgnoreCase("myriapod_pneumodesmus")) {
             return "pneumodesmus";
         }
-        if (string.equalsIgnoreCase("lepidodendron:prehistoric_flora_notostracan_strudops")) {
+        if (string.equalsIgnoreCase("notostracan_strudops")) {
             return "strudops";
         }
         if (string.contains("roach")) {
