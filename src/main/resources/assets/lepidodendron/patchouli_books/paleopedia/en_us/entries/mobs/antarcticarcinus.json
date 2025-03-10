@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Arthropoda$(br)>Euthycarcinoidea$(br)>Euthycarcinida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/antarcticarcinus.png"],
-			"title": "A. pagoda",
-			"text": ""
+			"type": "entity",
+			"name": "A. pagoda",
+			"entity": "lepidodendron:prehistoric_flora_antarcticarcinus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_antarcticarcinus",

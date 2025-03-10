@@ -355,6 +355,27 @@ public class ModelAngelina extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Angelina.offsetY = -1.5F;
+        this.Angelina.offsetX = -0.3F;
+        this.Angelina.rotateAngleY = (float)Math.toRadians(120);
+        this.Angelina.rotateAngleX = (float)Math.toRadians(1);
+        this.Angelina.rotateAngleZ = (float)Math.toRadians(0);
+        this.Angelina.scaleChildren = true;
+        float scaler = 3.5F;
+        this.Angelina.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Angelina, 0.5F, 3.7F, -0.4F);
+        this.setRotateAngle(Thorax1, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Thorax2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Thorax3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Thorax4, 0.0F, 0.1F, 0.0F);
+        //End of pose, now render the model:
+        this.Angelina.render(f);
+        //Reset rotations, positions and sizing:
+        this.Angelina.setScale(1.0F, 1.0F, 1.0F);
+        this.Angelina.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_trigonotarbid_kreischeria",
 			"title": "Kreischeria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Arachnida$(br)>Trigonotarbida$(br)>Kreischeriidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Chelicerata$(br)>Arachnida$(br)>Trigonotarbida$(br)>Kreischeriidae"
 		},
 		{
 			"type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_trigonotarbid_kreischeria",
 			"type": "text",
-			"text": "Kreischeria is a trigonotarbid from the Carboniferous period. It bore a resemblence to modern spiders and ticks and it had a protective carapace on it abdomen. Its head was pointed like other trigonotarbids and they could not produce silk."
+			"text": "Kreischeria is a trigonotarbid from the Carboniferous period. It bore a resemblance to modern spiders and ticks, it also had a protective carapace on it abdomen. Its head was pointed like other trigonotarbids and they could not produce silk."
 		},
 		{
 			"type": "lepidodendron:diet",

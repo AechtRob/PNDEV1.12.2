@@ -166,20 +166,20 @@ public class ModelAdelophthalmus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.carapace.offsetY = 0.7F;
+        this.carapace.offsetY = -0.3F;
         this.carapace.offsetX = 0.1F;
         this.carapace.rotateAngleY = (float) Math.toRadians(210);
         this.carapace.rotateAngleX = (float) Math.toRadians(8);
         this.carapace.rotateAngleZ = (float) Math.toRadians(-4);
         this.carapace.scaleChildren = true;
-        float scaler = 0.575F;
+        float scaler = 0.7F;
         this.carapace.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(carapace, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(segment, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(segment2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(segment3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(segment4, 0.0F, 0.0F, 0.0F);
+            this.setRotateAngle(carapace, 0.7F, 3.6F, -0.2F);
+        this.setRotateAngle(segment, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(segment2, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(segment3, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(segment4, -0.1F, 0.0F, 0.0F);
         this.setRotateAngle(segment5, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(segment6, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:

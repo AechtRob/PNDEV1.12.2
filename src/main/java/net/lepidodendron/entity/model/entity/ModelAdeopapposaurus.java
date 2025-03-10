@@ -462,8 +462,8 @@ public class ModelAdeopapposaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Root.offsetY = 0.0F;
-        this.Root.offsetX = 0.0F;
-        this.Root.rotateAngleY = (float)Math.toRadians(120);
+        this.Root.offsetX = 0.2F;
+        this.Root.rotateAngleY = (float)Math.toRadians(225);
         this.Root.rotateAngleX = (float)Math.toRadians(-2);
         this.Root.rotateAngleZ = (float)Math.toRadians(0);
         this.Root.scaleChildren = true;

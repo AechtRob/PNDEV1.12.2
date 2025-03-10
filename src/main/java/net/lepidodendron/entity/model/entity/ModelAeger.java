@@ -409,21 +409,21 @@ public class ModelAeger extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.bone.offsetY = 0.7F;
+        this.bone.offsetY = -7.0F;
         this.bone.offsetX = 0.1F;
         this.bone.rotateAngleY = (float) Math.toRadians(210);
         this.bone.rotateAngleX = (float) Math.toRadians(8);
         this.bone.rotateAngleZ = (float) Math.toRadians(-4);
         this.bone.scaleChildren = true;
-        float scaler = 0.575F;
+        float scaler = 10F;
         this.bone.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(bone, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(bone, 0.5F, 3.7F, 0.0F);
+        this.setRotateAngle(body1, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, -0.1F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.bone.render(f);
         //Reset rotations, positions and sizing:

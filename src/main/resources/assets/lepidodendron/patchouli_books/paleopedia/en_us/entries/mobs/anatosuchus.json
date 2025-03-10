@@ -9,7 +9,7 @@
 "trigger": "lepidodendron:pf_adv_book_anatosuchus",
 "title": "Anatosuchus",
 "type": "quest",
-"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Archosauria$(br)>Pseudosuchia$(br)>Notosuchia$(br)>Uruguaysuchidae"
+"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Crocodyliformes$(br)>Notosuchia$(br)>Uruguaysuchidae"
 },
         {
             "type": "entity",
@@ -21,7 +21,7 @@
 {
 "advancement": "lepidodendron:pf_adv_book_anatosuchus",
 "type": "text",
-"text": "Anatosuchus is an Early Cretaceous Notosuchian, with a broadened snout, resembling a ducks bill, hence the name, duck crocodile. It probably fed by using its broadened snout to catch prey in the water such as fish, or small crustaceans. It only grew to about 70 cm in length."
+"text": "Anatosuchus is an Early Cretaceous notosuchian, with a broadened snout, resembling a ducks bill, hence the name, duck crocodile. It probably fed by using its broadened snout to catch prey in the water such as fish, or small crustaceans. It only grew to about 70 cm in length."
 },
 {
 "type": "lepidodendron:diet",

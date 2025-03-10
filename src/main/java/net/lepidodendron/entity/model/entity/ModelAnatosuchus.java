@@ -497,19 +497,75 @@ public class ModelAnatosuchus extends ModelBasePalaeopedia {
         this.main.render(f5);
     }
 
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg, -0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg2, 1.4F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg3, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg2, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg3, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg2, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg3, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg2, -1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg3, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(head, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.2F, 0.4F, 0.0F);
+        this.setRotateAngle(tail2, -0.2F, 0.3F, 0.0F);
+        this.setRotateAngle(tail3, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.1F, 0.0F);
+        this.main.offsetZ = -0.0F;
+        this.main.offsetY = -0.01F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticWall(float f) {
+
+        resetToDefaultPose();
+    }
+
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.80F;
-        this.main.offsetX = 0.2F;
+        this.main.offsetY = -1.0F;
+        this.main.offsetX = 0.1F;
         this.main.rotateAngleY = (float)Math.toRadians(120);
         this.main.rotateAngleX = (float)Math.toRadians(1);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 1.65F;
+        float scaler = 1.5F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(main, 0.2F, 3.8F, 0.0F);
+        this.setRotateAngle(backLeftLeg, -0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg2, 1.4F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg3, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg2, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg3, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg2, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg3, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg2, -1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg3, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(head, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.2F, 0.4F, 0.0F);
+        this.setRotateAngle(tail2, -0.2F, 0.3F, 0.0F);
+        this.setRotateAngle(tail3, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.1F, 0.0F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:
@@ -517,15 +573,6 @@ public class ModelAnatosuchus extends ModelBasePalaeopedia {
         this.main.scaleChildren = false;
         resetToDefaultPose();
 
-    }
-
-    public void renderStaticFloor(float f) {
-
-        resetToDefaultPose();
-    }
-    public void renderStaticWall(float f) {
-
-        resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

@@ -364,12 +364,6 @@ public class ModelAcutiramus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5);
     }
-
-    @Override
-    public void renderStaticBook(float f) {
-
-    }
-
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body, 0.829F, 0.0F, 0.0F);
         this.setRotateAngle(eyeL_r1, 0.0F, 0.0873F, 0.0F);
@@ -416,6 +410,63 @@ public class ModelAcutiramus extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -1.2F;
+        this.body.offsetX = 0.2F;
+        this.body.rotateAngleY = (float) Math.toRadians(210);
+        this.body.rotateAngleX = (float) Math.toRadians(8);
+        this.body.rotateAngleZ = (float) Math.toRadians(-4);
+        this.body.scaleChildren = true;
+        float scaler = 0.8F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.829F, -2.3F, 0.0F);
+        this.setRotateAngle(eyeL_r1, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(eyeR_r1, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(cheliceraL, 0.3054F, -0.3054F, 0.0F);
+        this.setRotateAngle(cheliceraL_r1, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(clawbaseL, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(clawnotmoveL_r1, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(clawL, 0.0F, -0.2182F, 0.0F);
+        this.setRotateAngle(clawmovespineL_r1, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(cheliceraR, 0.3491F, 0.3054F, 0.0F);
+        this.setRotateAngle(cheliceraR_r1, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(clawbaseR, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(clawnotmovespineR_r1, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(clawR, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(clawmoveR_r1, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(legR1_r1, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(legR3_r1, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(legR5, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(legR5_ptery2_r1, 0.0F, 0.5236F, 0.0F);
+        this.setRotateAngle(legR4_r1, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(legL1_r1, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(legL3_r1, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(legL4_r1, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(legL5_ptery2_r1, 0.0F, -0.5236F, 0.0F);
+        this.setRotateAngle(opisthosoma, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(coxa2_r1, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteA, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteA2, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteA3, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteA4, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteB, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteC, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteD, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteD2, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteE, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteE2, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteF, 0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(telson, 0.3491F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

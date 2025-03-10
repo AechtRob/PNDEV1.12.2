@@ -32,6 +32,7 @@ public class RenderDisplays {
     public static final ModelAmplectobelua modelAmplectobelua = new ModelAmplectobelua();
     public static final ModelAmpyx modelAmpyx = new ModelAmpyx();
     public static final ModelAnaethalion modelAnaethalion = new ModelAnaethalion();
+    public static final ModelAnatosuchus modelAnatosuchus = new ModelAnatosuchus();
     public static final ModelAnchiornis modelAnchiornis = new ModelAnchiornis();
     public static final ModelAnchisaurus modelAnchisaurus = new ModelAnchisaurus();
     public static final ModelAngelina modelAngelina = new ModelAngelina();

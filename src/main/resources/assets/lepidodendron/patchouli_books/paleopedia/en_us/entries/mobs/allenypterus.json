@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_allenypterus",
 			"title": "Allenypterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Hadronectoridae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Actinistia$(br)>Hadronectoridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Allenypterus.png"],
-			"title": "A. montanus",
-			"text": ""
+			"type": "entity",
+			"name": "A. montanus",
+			"entity": "lepidodendron:prehistoric_flora_allenypterus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_allenypterus",

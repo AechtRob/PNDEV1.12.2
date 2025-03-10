@@ -225,7 +225,23 @@ public class ModelAmmonite100cm extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Shell1.offsetY = -0.1F;
+        this.Shell1.offsetX = -0.15F;
+        this.Shell1.rotateAngleY = (float) Math.toRadians(45);
+        this.Shell1.rotateAngleX = (float) Math.toRadians(8);
+        this.Shell1.rotateAngleZ = (float) Math.toRadians(-4);
+        this.Shell1.scaleChildren = true;
+        float scaler = 0.8F;
+        this.Shell1.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
+        //End of pose, now render the model:
+        this.Shell1.render(f);
+        //Reset rotations, positions and sizing:
+        this.Shell1.setScale(1.0F, 1.0F, 1.0F);
+        this.Shell1.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

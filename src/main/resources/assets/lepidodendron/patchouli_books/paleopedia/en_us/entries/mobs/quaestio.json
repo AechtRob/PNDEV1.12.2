@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_quaestio",
 			"title": "Quaestio",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>£(o)incertae sedis"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>$(o)incertae sedis"
 		},
 		{
 			"type": "entity",
@@ -21,12 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_quaestio",
 			"type": "text",
-			"text": "Quaestio simpsonorum comes from the Upper Ediacaran, with fossils from the Flinders Ranges, Australia. It is a circular lifeform with a main ridge in the shape of a question mark (?), that was able to move around in order to get food, and could grow up to 8 cm in diameter. It is the first known lifeforms from the Ediacaran to have an asymmetrical body plan."
+			"text": "Quaestio simpsonorum comes from the Upper Ediacaran, with fossils from the Flinders Ranges, Australia. It is a circular lifeform with a main ridge in the shape of a question mark (?), that was able to move around in order to get food, and could grow up to 8 cm in diameter. It is the first known lifeform from the Ediacaran to have an asymmetrical body plan."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_quaestio",
 			"type": "text",
-			"text": "The generic name derives from the Latin words 'quaestio', to mean 'question'. The specific name derives from the surname of Ant Simpson."
+			"text": "The generic name derives directly from the Latin word 'quaestio', to mean 'question'. The specific name derives from the Latinised surname of Ant Simpson and Mary Lou, in honor of their contributions to the research and conservation of Ediacaran fossil materials."
 		},
 		{
 			"type": "lepidodendron:diet",

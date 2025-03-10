@@ -91,6 +91,7 @@ public class BlockBrachiopodMicromitra extends ElementsLepidodendronMod.ModEleme
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBivalvePrehistoric))
 			dimensionCriteria = true;
 		if ((dimID == LepidodendronConfig.dimCambrian)
+
 		) {
 			dimensionCriteria = true;
 		}

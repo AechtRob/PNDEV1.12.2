@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Perisphinctidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/perisphinctes.png"],
-			"title": "P. variocostatus",
-			"text": ""
+			"type": "entity",
+			"name": "P. variocostatus",
+			"entity": "lepidodendron:prehistoric_flora_ammonite_perisphinctes",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_perisphinctes",
 			"type": "text",
-			"text": "Perisphinctes is an extinct genus of ammnonite cephalopod, which lived during the Middle to Late Jurassic period. The shells of this genus have been found across the world, from Antarctica, the United Kingdom, Russia, Japan and Ethiopia to name a few. Due to this wide distribution, they are commonly used as index fossils."
+			"text": "Perisphinctes is an extinct genus of ammnonite cephalopod, which lived during the Middle to Upper Jurassic. The shells of this genus have been found across the world, from Antarctica, the United Kingdom, Russia, Japan and Ethiopia to name a few. Due to this wide distribution, they are commonly used as index fossils."
 		},
 		{
 			"type": "lepidodendron:diet",

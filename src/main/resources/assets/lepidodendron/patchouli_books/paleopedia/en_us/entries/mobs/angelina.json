@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Trilobita$(br)>Ptychopariida$(br)>Olenidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/angelina.png"],
-			"title": "A. sedgwickii",
-			"text": ""
+			"type": "entity",
+			"name": "A. sedgwickii",
+			"entity": "lepidodendron:prehistoric_flora_angelina",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_angelina",
 			"type": "text",
-			"text": "Angelina is a ptychopariid trilobite from the Early Ordovician of Wales. It had some long spines on its body and its eyes were closer to the center of its head. The type species was named for Adam Sedgwick, the geologist who coined the term \"Cambrian.\""
+			"text": "Angelina is a ptychopariid trilobite from the Lower Ordovician of Wales. It had some long spines on its body and its eyes were closer to the center of its head. The type species was named for Adam Sedgwick, the geologist who coined the term \"Cambrian.\""
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -449,12 +449,12 @@ public class ModelAllosaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Root.offsetY = 0.3F;
-        this.Root.offsetX = -0.15F;
+        this.Root.offsetX = -0.45F;
         this.Root.rotateAngleY = (float)Math.toRadians(130);
         this.Root.rotateAngleX = (float)Math.toRadians(-20);
         this.Root.rotateAngleZ = (float)Math.toRadians(-5);
         this.Root.scaleChildren = true;
-        float scaler = 0.65F;
+        float scaler = 0.5F;
         this.Root.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(Upperjawslopefront_r1, 0.6545F, 0.0F, 0.0F);

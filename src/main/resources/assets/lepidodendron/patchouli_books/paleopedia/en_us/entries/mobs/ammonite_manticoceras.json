@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Mollusca$(br)>Cephalopodea$(br)>Ammonoidea$(br)>Ammonitida$(br)>Gephuroceratidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/manticoceras.png"],
-			"title": "Manticoceras sp.",
-			"text": ""
+			"type": "entity",
+			"name": "Manticoceras sp.",
+			"entity": "lepidodendron:prehistoric_flora_ammonite_manticoceras",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_manticoceras",
 			"type": "text",
-			"text": "Manticoceras is a gephuroceratid ammonite who are fast moving nektonic carnivores. They were quite small, comparable to Goniatites. Manticoceras lived throughout the Devonian period in marine environments."
+			"text": "Manticoceras is a gephuroceratid ammonite which are fast moving nektonic carnivores. They were quite small, comparable to Goniatites. Manticoceras lived throughout the Devonian period in marine environments."
 		},
 		{
 			"type": "lepidodendron:diet",

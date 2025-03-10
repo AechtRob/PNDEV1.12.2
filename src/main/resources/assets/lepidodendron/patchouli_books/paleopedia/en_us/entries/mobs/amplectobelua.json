@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Dinocaridida$(br)>Radiodonta$(br)>Amplectobeluidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/amplectobelua.png"],
-			"title": "A. symbrachiata",
-			"text": ""
+			"type": "entity",
+			"name": "A. symbrachiata",
+			"entity": "lepidodendron:prehistoric_flora_amplectobelua",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_amplectobelua",
 			"type": "text",
-			"text": "Amplectobelua, meaning 'embracing beast,' is a cambrian radiodont. It was a free swimming predator that probably preyed on the abundant trilobites which were found all over the world. Amplectobelua had a gnathobase like structure, being able to rotate and shred prey."
+			"text": "Amplectobelua, meaning 'embracing beast,' is a Cambrian radiodont. It was a free swimming predator that probably preyed on the abundant trilobites which were found all over the world. Amplectobelua had a gnathobase like structure, being able to rotate and shred prey."
 		},
 		{
 			"type": "lepidodendron:diet",

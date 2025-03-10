@@ -11,7 +11,7 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Carcharodontosauridae"
 		},
-        	{
+		{
             "type": "entity",
             "name": "A. atokensis",
             "entity": "lepidodendron:prehistoric_flora_acrocanthosaurus",

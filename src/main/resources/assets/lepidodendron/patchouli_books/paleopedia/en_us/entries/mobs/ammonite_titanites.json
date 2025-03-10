@@ -9,38 +9,39 @@
 			"trigger": "lepidodendron:pf_adv_book_ammonite_titanites",
 			"title": "Titanites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusica$(br)>Cephalopoda$(br)>Ammonitida"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusica$(br)>Cephalopoda$(br)>Ammonitida$(br)>Dorsoplanitidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/titanites.png"],
-			"title": "T. giganteus",
-			"text": ""
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_ammonite_titanites",
-			"type": "text",
-			"text": "Titanites is a genus of ammonite from the late Jurassic of Europe. Most famous for its size, which the name references, the shell of Titanites could grow beyond 1 m in diameter, making it one among several examples of gigantism in cephalopods known from both the fossil record and modern day."
+			"type": "entity",
+			"name": "T. giganteus",
+			"entity": "lepidodendron:prehistoric_flora_ammonite_titanites",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_titanites",
 			"type": "text",
-			"text": "Known mostly from sediments from Portland Dorset, the large ammonite once swam in what were once tropical waters filled with coralline algae and oyster reefs  along sandy seafloors. Quarrymen working at Portland usually dig these ammonites out of the Limestone they work with to keep as souvenirs or sell tourists, with specimens of these giant ammonites "
+			"text": "Titanites is a genus of ammonite from the Upper Jurassic of Europe. Most famous for its size, which the name references, the shell of Titanites could grow beyond 1 m in diameter, making it one among several examples of gigantism in cephalopods known from both the fossil record and modern day."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_titanites",
 			"type": "text",
-			"text": "dotting the gardens in the city like stone monoliths to the area's ancient past. Very rarely these ammonites are also found in walls and other building blocks of houses in the area. In the past it was thought that gigantism was mainly influenced by oxygen availability, factor that has been given credit for the size of Carboniferous arthropods in the past; however "
+			"text": "Known mostly from sediments from Portland Dorset, the large ammonite once swam in what were once tropical waters filled with coralline algae and oyster reefs  along sandy seafloors. Quarrymen working at Portland usually dig these ammonites out of the Limestone they work with to keep as souvenirs or to sell to tourists, with specimens of these giant ammonites"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_titanites",
 			"type": "text",
-			"text": "this might not be the case in all contexts. When Titanites lived, the world was going through a greenhouse stage, temperatures were high and Pangea was breaking up, opening what would become Tethys and greatly changing the regime dynamics in the ecosystems of the time."
+			"text": "dotting the gardens in the city like stone monoliths to the area's ancient past. Very rarely these ammonites are also found in walls and other building blocks of houses in the area. In the past it was thought that gigantism was mainly influenced by oxygen availability, a factor that has been given credit for the size of Carboniferous arthropods in the past; however"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_titanites",
 			"type": "text",
-			"text": "Although the reason for why Titanites grew so large are still not entirely understood, to swim freely, this large sized predator would've needed at the very least 2 or 3 meters of water depth and thus moderately deep waters."
+			"text": "this might not be the case in all contexts. When Titanites lived, the world was going through a greenhouse stage, temperatures were high and Pangea was breaking up, opening up what would become the Tethys and greatly changing the regime dynamics in the ecosystems of the time."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ammonite_titanites",
+			"type": "text",
+			"text": "Although the reasons for why Titanites grew so large are still not entirely understood, to swim freely, this large sized predator would've needed at the very least 2 or 3 meters of water depth and thus moderately deep waters."
 		},
 		{
 			"type": "lepidodendron:diet",

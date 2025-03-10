@@ -141,11 +141,6 @@ public class ModelAlbertonia extends ModelBasePalaeopedia {
         this.Bodyfront.render(f5);
     }
 
-    @Override
-    public void renderStaticBook(float f) {
-
-    }
-
     public void renderStaticWall(float f) {
         this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
         this.Bodyfront.offsetY = -0.05F;
@@ -169,6 +164,31 @@ public class ModelAlbertonia extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Bodyfront.offsetY = -2.5F;
+        this.Bodyfront.offsetX = 0.5F;
+        this.Bodyfront.rotateAngleY = (float) Math.toRadians(210);
+        this.Bodyfront.rotateAngleX = (float) Math.toRadians(8);
+        this.Bodyfront.rotateAngleZ = (float) Math.toRadians(-4);
+        this.Bodyfront.scaleChildren = true;
+        float scaler = 3.5F;
+        this.Bodyfront.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Bodyfront, 0.2F, 3.7F, -0.3F);
+        this.setRotateAngle(Bodyend, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Lowerjaw, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Bodyfront.render(f);
+        //Reset rotations, positions and sizing:
+        this.Bodyfront.setScale(1.0F, 1.0F, 1.0F);
+        this.Bodyfront.scaleChildren = false;
+        resetToDefaultPose();
+    }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

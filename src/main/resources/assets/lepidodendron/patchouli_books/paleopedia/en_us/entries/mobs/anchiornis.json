@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_anchiornis",
 			"title": "Anchiornis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Paraves$(br)>Anchiornithidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Paraves$(br)>Anchiornithidae"
 		},
         	{
             "type": "entity",
@@ -21,37 +21,32 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_anchiornis",
 			"type": "text",
-			"text": "Anchiornis huxleyi is a species of Anchiornithid theropod from the Late Jurassic of China. Perhaps most famous for being among the first dinosaurs to have at least partial pieces of their body examined to determine their color, the animal was quite small in size, only about 60 cm long for the largest known specimens."
+			"text": "Anchiornis huxleyi is a species of anchiornithid theropod from the Upper Jurassic of China. Perhaps most famous for being among the first dinosaurs to have at least partial pieces of their body examined to determine their color, the animal was quite small in size, only about 60 cm long for the largest known specimens."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_anchiornis",
 			"type": "text",
-			"text": "The animal was found in the Tiaojishan Formation in the Liaoning province of China, with the first specimen reportedly being found in the Yaolugou area of Jianchang County, although further analysis of the fossil seem to disagree with this statement. The animal was first described in 2009 by paleontologist Xu Xing based on this first specimen, which was articulated yet incomplete, missing head, tail and even one of the forelimbs."
+			"text": "The animal was found in the Tiaojishan Formation in the Liaoning province of China, with the first specimen reportedly being found in the Yaolugou area of Jianchang County, although further analysis of the fossil seem to disagree with this statement. The animal was first described in 2009 by paleontologist Xu Xing based on this first specimen, which was articulated yet incomplete, missing the head, tail and even one of the forelimbs."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_anchiornis",
 			"type": "text",
-			"text": "A second specimen found at about the same time by a farmer, from a much larger animal, preserved better impressions of the animal's feathers and demonstrated Anchiornis had four wings, similarly to animals like Microraptor. In 2010 one specimen of Anchiornis, BMNHC PH828, was analyzed to study the shapes and sizes of the preserved melanosomes in the feathers,"
+			"text": "A second specimen found at about the same time by a farmer, from a much larger animal, which also preserved better impressions of the animal's feathers and demonstrated Anchiornis had four wings, similarly to animals like Microraptor. In 2010 one specimen of Anchiornis, BMNHC PH828, was analyzed to study the shapes and sizes of the preserved melanosomes in the feathers,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_anchiornis",
 			"type": "text",
-			"text": "which lead Anchiornis to be the first mesozoic dinosaur to have most of its body coloration mapped, demonstrating the animal had grey and white feathers with a red crest-like puff of feathers above the head, or so we thought. In 2015 a similar study was carried out on a different specimen which didn't yield the same results; this second specimen didn't have the red feathers on the head, leading to several "
+			"text": "which lead to Anchiornis being the first mesozoic dinosaur to have most of its body coloration mapped, demonstrating the animal had grey and white feathers with a red crest-like puff of feathers above the head, or so we thought. In 2015 a similar study was carried out on a different specimen which didn't yield the same results; this second specimen didn't have the red feathers on the head, leading to several"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_anchiornis",
 			"type": "text",
-			"text": "hypotheses for why this was the case ranging from Sexual Dimorphism, regional population variance, the first specimen being a younger one might have had more colorful plumage or outright human error in iterpreting the melanosomes in the first specimen. Thanks to some pellets found inside the body of Anchiornis not only we know this animal to have been the earliest recorded dinosaur to have produced pellets,"
+			"text": "hypotheses for why this was the case, ranging from Sexual Dimorphism, regional population variance, the first specimen being a younger one which might have had more colorful plumage or outright human error in interpreting the melanosomes in the first specimen. Thanks to some pellets found inside the body of Anchiornis not only we know this animal to have been the earliest recorded dinosaur to have produced pellets,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_anchiornis",
 			"type": "text",
-			"text": "but we also know it fed on lizards and fish at the very least. The genus name translates to \"Nearby Bird\" given it was considered an important find in mapping the development of the avian bodyplan in dinosaurs,"
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_anchiornis",
-			"type": "text",
-			"text": "while the specific name was given in honor of Thomas Henry Huxley, an English Biologist and Anthropologist that lived between the 1820s and 1890s and most famously one of the first proponents of Birds and Dinosaurs being related."
+			"text": "but we also know it fed on lizards and fish at the very least. The genus name translates to \"Nearby Bird\" given it was considered an important find in mapping the development of the avian body-plan in dinosaurs, while the specific name was given in honor of Thomas Henry Huxley, an English Biologist and Anthropologist that lived between the 1820s and 1890s and most famously one of the first proponents of Birds and Dinosaurs being related."
 		},
 		{
 			"type": "lepidodendron:diet",

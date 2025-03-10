@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_ammonite_dactylioceras",
 			"title": "Dactylioceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Dactylioceratidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca$(br)>Cephalopod$(br)>Ammonoideaa$(br)>Ammonitida$(br)>Dactylioceratidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/dactylioceras.png"],
-			"title": "D. athleticum",
-			"text": ""
+			"type": "entity",
+			"name": "D. athleticum",
+			"entity": "lepidodendron:prehistoric_flora_ammonite_dactylioceras",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_dactylioceras",
@@ -25,7 +26,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_dactylioceras",
 			"type": "text",
-			"text": "The ammonite possessed rectiradiate ribs along its shell, meaning the crests adorning the shell were generally straight pointing, not moving towards either front or back of the shell; the ribs were thicker towards the inner side of the whorl and forked towards the ventral side. The Suture lines in Dactylioceras were of the Ammonitic type but not particularly jagged,"
+			"text": "The ammonite possessed rectiradiate ribs along its shell, meaning the crests adorning the shell were generally straight pointing, not moving towards either front or back of the shell; the ribs were thicker towards the inner side of the whorl and forked towards the ventral side. The suture lines in Dactylioceras were of the Ammonitic type but not particularly jagged,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_dactylioceras",

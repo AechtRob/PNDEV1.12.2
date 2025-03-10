@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_enchodus",
 			"title": "Enchodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Aulopiformes$(br)>Enchodontidae"
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Aulopiformes$(br)>Enchodontidae"
 		},
         	{
             "type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_enchodus",
 			"type": "text",
-			"text": "Enchodus comes from the Late Cretaceous, with fossils being found across the world, making them a cosmopolitan genus. It is a medium-sized enchodontiid, growing up to 1.7 m in length. They are most well known for their large fangs at the front of their upper and lower jaws, which could grow up to 6 cm in length."
+			"text": "Enchodus comes from the Cretaceous, with fossils being found across the world, making them a cosmopolitan genus. It is a medium-sized enchodontiid, growing up to 1.7 m in length. They are most well known for their large fangs at the front of their upper and lower jaws, which could grow up to 6 cm in length."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_enchodus",

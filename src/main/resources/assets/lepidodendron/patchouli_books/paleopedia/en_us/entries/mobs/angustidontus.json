@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)>Arthropoda$(br)>Malacostraca$(br)>Angustidontida$(br)>Angustidontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/angustidontus.png"],
-			"title": "A. seriatus",
-			"text": ""
+			"type": "entity",
+			"name": "A. seriatus",
+			"entity": "lepidodendron:prehistoric_flora_angustidontus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_angustidontus",
 			"type": "text",
-			"text": "Angustidontus was a malacostracan crustacean which lived across what is now Europe and North America during the Late Devonian and Early Carboniferous. It was described by Chalmer Cooper in 1936 based on the discovery of the large, raptorial limbs. However, these were originally mistaken for the jaw of an actinopterygian fish, which is reflected in the genus name, meaning “thin teeth.” The identity of these limbs was long debated, with placement as widely varied as eurypterid"
+			"text": "Angustidontus was a malacostracan crustacean which lived across what is now Europe and North America during the Upper Devonian and Lower Carboniferous. It was described by Chalmer Cooper in 1936 based on the discovery of the large, raptorial limbs. However, these were originally mistaken for the jaw of an actinopterygian fish, which is reflected in the genus name, meaning “thin teeth.” The identity of these limbs was long debated, with placement as widely varied as eurypterid"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_angustidontus",

@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Eryonidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/adamanteryon.png"],
-			"title": "A. fourneti",
-			"text": ""
+			"type": "entity",
+			"name": "A. fourneti",
+			"entity": "lepidodendron:prehistoric_flora_adamanteryon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_adamanteryon",

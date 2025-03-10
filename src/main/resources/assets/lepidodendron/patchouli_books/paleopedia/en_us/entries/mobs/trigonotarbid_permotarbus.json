@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_trigonotarbid_permotarbus",
 			"title": "Permotarbus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Arthropoda$(br)>Arachnida$(br)>Trigonotarbida"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Arachnida$(br)>Trigonotarbida"
 		},
 		{
 			"type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_trigonotarbid_permotarbus",
 			"type": "text",
-			"text": "One of the last known trigonotarbids, Permotarbus schuberti lived during the Early Permian. It is known from the \"Permian Petrified Forest\" of Chemnitz in Germany. This forest, consisting of tree-ferns, Calamites-like plants and early conifers, was preserved by ash layers from volcanic eruptions. "
+			"text": "One of the last known trigonotarbids, Permotarbus schuberti lived during the Lower Permian. It is known from the \"Permian Petrified Forest\" of Chemnitz in Germany. This forest, consisting of tree-ferns, Calamites-like plants and early conifers, was preserved by ash layers from volcanic eruptions. "
 		},
 		{
 			"type": "lepidodendron:diet",

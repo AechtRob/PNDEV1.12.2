@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Desmoceratidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/parapuzosia.png"],
-			"title": "P. daubreei",
-			"text": ""
+			"type": "entity",
+			"name": "P. daubreei",
+			"entity": "lepidodendron:prehistoric_flora_ammonite_parapuzosia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_parapuzosia",
@@ -23,9 +24,24 @@
 			"text": "Parapuzosia is a genus of ammonite from the Late Cretaceous of Africa, Europe and North America. These ammonites are quite large, with many species reaching diameters of more than 1 meter, and the largest species reaching around 2 meters. Its shell was mostly flat with some slightly rounded edges. It had distinct primary and secondary ribbing."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ammonite_parapuzosia",
-			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_parapuzosia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_parapuzosia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_parapuzosia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_parapuzosia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ammonite_parapuzosia"
 		}
 	]
 }

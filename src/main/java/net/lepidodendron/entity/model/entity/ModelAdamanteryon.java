@@ -237,12 +237,6 @@ public class ModelAdamanteryon extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);
     }
-
-    @Override
-    public void renderStaticBook(float f) {
-
-    }
-
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(belly, 0.0F, 0.0F, 0.0F);
@@ -255,7 +249,32 @@ public class ModelAdamanteryon extends ModelBasePalaeopedia {
         this.body.render(0.01F);
         resetToDefaultPose();
     }
-
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -2F;
+        this.body.offsetX = -0.3F;
+        this.body.rotateAngleY = (float) Math.toRadians(210);
+        this.body.rotateAngleX = (float) Math.toRadians(8);
+        this.body.rotateAngleZ = (float) Math.toRadians(-4);
+        this.body.scaleChildren = true;
+        float scaler = 4F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.5F, 3.5F, -0.2F);
+        this.setRotateAngle(belly, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tailfan, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(clawL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(clawL2, 0.0F, 0.7F, 0.0F);
+        this.setRotateAngle(clawR, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(clawR2, 0.0F, -0.5F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
