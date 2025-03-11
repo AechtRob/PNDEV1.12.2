@@ -63,7 +63,7 @@ public class EntityPrehistoricFloraBelonostomusCretaceous extends EntityPrehisto
 		return true;
 	}
 
-	public static String getPeriod() {return "Cretaceous";}
+	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

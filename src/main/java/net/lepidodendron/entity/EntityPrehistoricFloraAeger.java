@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraEurypteri
 		return true;
 	}
 
-	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous";}
+	public static String getPeriod() {return "Triassic - Jurassic - Early Cretaceous - Late Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

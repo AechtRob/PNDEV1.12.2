@@ -68,7 +68,7 @@ public class EntityPrehistoricFloraAsteracanthus extends EntityPrehistoricFloraA
 		return this.getAgeScale() < 0.35;
 	}
 
-	public static String getPeriod() {return "Jurassic - early Cretaceous";}
+	public static String getPeriod() {return "Jurassic - Early Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

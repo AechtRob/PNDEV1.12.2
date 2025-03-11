@@ -67,7 +67,7 @@ public class EntityPrehistoricFloraHarvestman extends EntityPrehistoricFloraLand
 		return 0.8F;
 	}
 
-	public static String getPeriod() {return "Devonian - Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene";}
+	public static String getPeriod() {return "Devonian - Carboniferous - Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

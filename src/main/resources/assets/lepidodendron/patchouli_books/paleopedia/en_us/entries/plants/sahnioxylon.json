@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_sahnioxylon",
 			"title": "Sahnioxylon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Late Cretaceous$(br2)$(l)Propagation:$() Use a collection envelope on the flower-parts (not the main shoots) to harvest seeds.$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
+			"text": "$(l)Temporal Range:$() Triassic-Late Cretaceous$(br2)$(l)Propagation:$() $(l:basics/collecting_plants)Seed-bearing plans without cubic leafblocks$(/l)$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
 		},
 		{
 			"type": "multiblock",

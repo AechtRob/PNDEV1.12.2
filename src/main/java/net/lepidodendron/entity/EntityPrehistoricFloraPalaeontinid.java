@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraPalaeontinid extends EntityPrehistoricFloraIn
 		return new ResourceLocation("lepidodendron:bug_flight");
 	}
 
-	public static String getPeriod() {return "Permian - Triassic - Jurassic - Cretaceous";}
+	public static String getPeriod() {return "Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

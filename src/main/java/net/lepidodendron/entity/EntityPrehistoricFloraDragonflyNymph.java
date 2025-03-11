@@ -265,7 +265,7 @@ public class EntityPrehistoricFloraDragonflyNymph extends EntityPrehistoricFlora
 		return true;
 	}
 
-	public static String getPeriod() {return "Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene [-Present]";}
+	public static String getPeriod() {return "Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [-Present]";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

@@ -163,7 +163,7 @@ public class BlockCladophlebis extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Fern plant");
-	        	tooltip.add("Periods: Permian - Triassic - Jurassic - Cretaceous");
+	        	tooltip.add("Periods: Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous");
 	        	tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

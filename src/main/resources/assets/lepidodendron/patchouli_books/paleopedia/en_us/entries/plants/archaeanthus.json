@@ -1,0 +1,54 @@
+{
+	"name": "Archaeanthus",
+	"read_by_default": true,
+	"icon": "lepidodendron:archaeanthus_sapling",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_archaeanthus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_archaeanthus",
+			"title": "Archaeanthus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous (Albian) - Late Cretaceous (Cenomanian)$(br2)$(l)Propagation:$() $(l:basics/collecting_plants)True, flower-bearing plants$(/l)$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
+		},
+		{
+			"type": "multiblock",
+			"name": "A. linnenbergeri",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "       ","       ","       ","       ", "       ","       ","       " ],
+					[ "       ","   B   ","   B   "," BBBBB ", "       ","       ","       " ],
+					[ "   B   ","  BBB  "," BBCBB ","BBDADBB", " BBBBB ","   B   ","       " ],
+					[ "   E   ","  E    "," E     ","   A  E", " EBCB  ","  BBB  ","   B   " ],
+					[ "       ","       ","       ","   A   ", "       ","    E  ","       " ],
+					[ "       ","       ","       ","   A   ", "       ","       ","       " ],
+					[ "       ","       ","       ","   0   ", "       ","       ","       " ]
+				],
+				"mapping": {
+					"E": "lepidodendron:archaeanthus_flower[facing=down]",
+					"D": "lepidodendron:archaeanthus_log[facing=east]",
+					"C": "lepidodendron:archaeanthus_log[facing=up]",
+					"B": "lepidodendron:archaeanthus_leaves",
+					"A": "lepidodendron:archaeanthus_log[facing=north]",
+					"0": "lepidodendron:archaeanthus_log[facing=north]"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archaeanthus",
+			"type": "text",
+			"text": "Archaeanthus (meaning \"ancient flower\") is amongst the first Angiosperm fossils we have which is assignable to a modern family. It comes from North America, from Kansas (which was mostly submerged under the Western Interior Seaway at the time), dating from around the boundary of the Early and Late Cretaceous. The fossil is a fruit, complete with follicles and seeds, showing twig and leaf attachments, and is assigned to the Magnoliaceae family."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archaeanthus",
+			"type": "text",
+			"text": "Fossil leaves known as Liriophyllum, along with fossilised petals (Archaeopetala) and bud scales (Kalymmanthus) from the same locality have been shown to belong to this fossil, and as the fossils show their attachment scars a reasonable reconstruction of the flower and shoots has been possible. This indicates a woody plant with whorled leaves, and flowers similar to modern Magnolias and Liriodendron (Tulip Trees)."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archaeanthus",
+			"type": "text",
+			"text": "Its very detailed affinities are unclear, as it possesses some detailed characteristics of both Magnolia and Liriodendron, although a recent study has proposed it is basal particularly to Liriodendron."
+		}
+	]
+}

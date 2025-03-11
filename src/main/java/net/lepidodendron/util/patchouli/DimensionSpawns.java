@@ -120,7 +120,7 @@ public class DimensionSpawns {
                     spawnListFinal = spawnListFinal + spawnListInterim.get(i).getEntry() + "$(br)";
                 }
             }
-            if (spawnListFinal.length() >= 1 && !spawnListFinal.equalsIgnoreCase("$(br)")) {
+            if (spawnListFinal.length() >= 1) {
                 return spawnListFinal;
             }
             if (from == 0) {

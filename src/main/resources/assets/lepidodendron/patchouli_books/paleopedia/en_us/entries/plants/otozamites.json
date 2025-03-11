@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_otozamites",
 			"title": "Otozamites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Early Cretaceous$(br2)$(l)Propagation:$() Use a collection envelope to harvest seeds.$(br2)$(l)Growth:$() Grows on all dirt-like blocks."
+			"text": "$(l)Temporal Range:$() Triassic-Early Cretaceous$(br2)$(l)Propagation:$() $(l:basics/collecting_plants)Seed-bearing plans without cubic leafblocks$(/l)$(br2)$(l)Growth:$() Grows on all dirt-like blocks."
 		},
 		{
 			"type": "multiblock",

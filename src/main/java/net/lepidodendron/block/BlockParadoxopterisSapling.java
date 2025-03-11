@@ -229,7 +229,7 @@ public class BlockParadoxopterisSapling extends ElementsLepidodendronMod.ModElem
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Tree-fern");
-				tooltip.add("Periods: Jurassic - Cretaceous");
+				tooltip.add("Periods: Jurassic - Early Cretaceous - Late Cretaceous");
 				tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

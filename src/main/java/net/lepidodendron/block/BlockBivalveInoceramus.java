@@ -353,7 +353,7 @@ public class BlockBivalveInoceramus extends ElementsLepidodendronMod.ModElement 
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Marine bivalve");
-				tooltip.add("Periods: Jurassic - Cretaceous");}
+				tooltip.add("Periods: Jurassic - Early Cretaceous - Late Cretaceous");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 

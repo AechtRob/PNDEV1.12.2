@@ -223,7 +223,7 @@ public class BlockGinkgoitesSapling extends ElementsLepidodendronMod.ModElement 
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Ginkgo tree");
-				tooltip.add("Periods: Triassic - Jurassic - Cretaceous - Paleogene (Paleocene)");
+				tooltip.add("Periods: Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene (Paleocene)");
 				tooltip.add("Propagation: fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

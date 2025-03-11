@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraHomoeosaurus extends EntityPrehistoricFloraLa
 		}
 	}
 
-	public static String getPeriod() {return "Jurassic - early Cretaceous";}
+	public static String getPeriod() {return "Jurassic - Early Cretaceous";}
 
 	//public static String getHabitat() {return "Terrestrial Reptile";}
 

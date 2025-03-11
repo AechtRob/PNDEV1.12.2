@@ -906,7 +906,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Moss");
-				tooltip.add("Periods: Silurian (?) - Devonian (?) - Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
+				tooltip.add("Periods: Silurian (?) - Devonian (?) - Carboniferous - Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
 				tooltip.add("Note: spreads to surrounding blocks.");
 				tooltip.add("Propagation: spores");}
 			super.addInformation(stack, player, tooltip, advanced);

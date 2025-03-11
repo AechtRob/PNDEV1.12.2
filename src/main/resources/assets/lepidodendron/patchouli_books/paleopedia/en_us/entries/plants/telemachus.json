@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_telemachus",
 			"title": "Telemachus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Propagation:$() Leaves, when broken, drop cones. Cones can be crafted to obtain seeds.$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Propagation:$() $(l:basics/collecting_plants)Seed-bearing plants with cubic leafblocks$(/l)$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
 		},
 		{
 			"type": "multiblock",

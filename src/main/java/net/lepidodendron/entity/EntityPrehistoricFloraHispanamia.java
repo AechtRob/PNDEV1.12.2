@@ -78,7 +78,7 @@ public class EntityPrehistoricFloraHispanamia extends EntityPrehistoricFloraAgea
 		return true;
 	}
 
-	public static String getPeriod() {return "early Cretaceous";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 	//public static String getSize() {return "L";}

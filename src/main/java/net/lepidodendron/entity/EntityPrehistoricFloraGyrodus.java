@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraGyrodus extends EntityPrehistoricFloraAgeable
 		return true;
 	}
 
-	public static String getPeriod() {return "Jurassic - Cretaceous";}
+	public static String getPeriod() {return "Jurassic - Early Cretaceous - Late Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

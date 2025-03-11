@@ -231,7 +231,7 @@ public static String getHabitat() {
 	}
 
 	public static String getPeriod() {
-		return "Jurassic - Cretaceous";
+		return "Jurassic - Early Cretaceous - Late Cretaceous";
 	}
 
 	//public static String getHabitat() {return "Aquatic";}

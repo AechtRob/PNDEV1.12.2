@@ -84,7 +84,7 @@ public class EntityPrehistoricFloraCalamopleurus extends EntityPrehistoricFloraA
 		return 10;
 	}
 
-	public static String getPeriod() {return "early Cretaceous - late Cretaceous";}
+	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 	//public static String getSize() {return "L";}

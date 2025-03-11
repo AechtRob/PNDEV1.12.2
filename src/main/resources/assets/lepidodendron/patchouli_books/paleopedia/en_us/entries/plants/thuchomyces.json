@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_thuchomyces",
 			"title": "Thuchomyces",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Archean (Mesoarchean)$(br2)$(l)Habitat:$() Terrestrial$(br2)>Fungi$(br2)$(l)Propagation:$() Spore/seed collection envelope$(br)$(l)Method of Obtaining:$() Shears"
+			"text": "$(l)Temporal Range:$() Archean (Mesoarchean)$(br2)$(l)Habitat:$() Terrestrial$(br2)>Fungi$(br2)$(l)Propagation:$() $(l:basics/collecting_plants)Spore-bearing plants$(/l)$(br)$(l)Method of Obtaining:$() Shears"
 		},
 		{
 			"type": "multiblock",

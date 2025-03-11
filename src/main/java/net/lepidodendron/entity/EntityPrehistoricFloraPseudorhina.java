@@ -219,7 +219,7 @@ public class EntityPrehistoricFloraPseudorhina extends EntityPrehistoricFloraAge
 		return true;
 	}
 
-	public static String getPeriod() {return "Jurassic - early Cretaceous";}
+	public static String getPeriod() {return "Jurassic - Early Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

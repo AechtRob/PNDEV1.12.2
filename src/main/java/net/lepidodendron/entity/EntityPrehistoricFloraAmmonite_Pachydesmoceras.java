@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraAmmonite_Pachydesmoceras extends EntityPrehis
 		return this.getAgeScale() < 0.5;
 	}
 
-	public static String getPeriod() {return "Cretaceous";}
+	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

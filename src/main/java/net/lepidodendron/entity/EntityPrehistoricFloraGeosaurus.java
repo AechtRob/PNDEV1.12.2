@@ -74,7 +74,7 @@ public class EntityPrehistoricFloraGeosaurus extends EntityPrehistoricFloraSwimm
 		return this.getAgeScale() < 0.5;
 	}
 
-	public static String getPeriod() {return "Jurassic - early Cretaceous";}
+	public static String getPeriod() {return "Jurassic - Early Cretaceous";}
 
 	@Override
 	public int airTime() {
