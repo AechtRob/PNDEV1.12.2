@@ -135,17 +135,25 @@ public class ModelArchoblattina extends ModelBasePalaeopedia {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //this.thorax.offsetZ = 0.1F;
-        this.thorax.render(0.022f);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+
+    public void renderStaticDisplayCase(float f) {
+        this.thorax.offsetZ = -0.080F;
+        this.setRotateAngle(legR3, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(legR2, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(legL3, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(legL2, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(legR1, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(legL1, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(forewingR, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(forewingL, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(hindwingL, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(antennaL, -0.2618F, -0.2618F, 0.0F);
+        this.setRotateAngle(antennaR, -0.2618F, 0.2618F, 0.0F);
+        this.thorax.render(0.01f);
+        resetToDefaultPose();
     }
+
     @Override
     public void renderStaticBook(float f) {
 

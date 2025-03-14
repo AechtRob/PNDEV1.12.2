@@ -6,12 +6,16 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
+import net.lepidodendron.entity.render.entity.LayerTitanopteraWing;
+import net.lepidodendron.entity.render.entity.RenderTitanoptera;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraClatrotitan;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraGigatitan;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraMesotitan;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -33,6 +37,8 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
@@ -411,10 +417,110 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 
 	//public static String getHabitat() {return "Terrestrial";}
 
-//	@Override
-//	public String tagEgg () {
-//		return "insect_eggs_titanoptera";
-//	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase(@Nullable String variant) {
+		switch (EntityPrehistoricFloraTitanoptera.Type.getTypeFromString(variant)) {
+			case CLATROTITAN: default:
+				return 0.30;
+
+			case GIGATITAN:
+				return 0.30;
+
+			case MESOTITAN:
+				return 0.30;
+
+		}
+	}
+
+	public static double offsetWall(@Nullable String variant) {
+		switch (EntityPrehistoricFloraTitanoptera.Type.getTypeFromString(variant)) {
+			case CLATROTITAN: default:
+				return 0.30;
+
+			case GIGATITAN:
+				return 0.30;
+
+			case MESOTITAN:
+				return 0.30;
+
+		}
+	}
+
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.67;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.0F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.6;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.6F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0F;
+	}
+	public static float widthSupport(@Nullable String variant) {return 0.01F;}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraTitanoptera.Type.getTypeFromString(variant)) {
+			case CLATROTITAN:
+			default:
+				return RenderTitanoptera.TEXTURE_CLATROTITAN;
+
+			case GIGATITAN:
+				return RenderTitanoptera.TEXTURE_GIGATITAN;
+
+			case MESOTITAN:
+				return RenderTitanoptera.TEXTURE_MESOTITAN;
+
+		}
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplayTransparent(@Nullable String variant) {
+		switch (EntityPrehistoricFloraTitanoptera.Type.getTypeFromString(variant)) {
+			case CLATROTITAN:
+			default:
+				return LayerTitanopteraWing.TEXTURE_CLATROTITAN;
+
+			case GIGATITAN:
+				return LayerTitanopteraWing.TEXTURE_GIGATITAN;
+
+			case MESOTITAN:
+				return LayerTitanopteraWing.TEXTURE_MESOTITAN;
+
+		}
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelTitanoptera;
+	}
 
 
 }

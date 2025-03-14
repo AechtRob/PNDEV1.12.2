@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
-import net.lepidodendron.entity.render.entity.RenderSoomaspis;
 import net.lepidodendron.entity.render.entity.RenderTriopus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
@@ -48,7 +47,7 @@ public class EntityPrehistoricFloraTriopus extends EntityPrehistoricFloraEurypte
 		return true;
 	}
 
-	public static String getPeriod() {return "Ordovician - Silurian - Devonian";}
+	public static String getPeriod() {return "Ordovician";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

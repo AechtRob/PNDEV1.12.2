@@ -129,7 +129,7 @@ public class EntityPrehistoricFloraIkechosaurus extends EntityPrehistoricFloraSw
 	protected float getAISpeedSwimmingAmphibian() {
 		float calcSpeed = 0.24F;
 		if (this.isReallyInWater()) {
-			calcSpeed = 0.45f;
+			calcSpeed = 0.365f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

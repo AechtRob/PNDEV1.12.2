@@ -14,9 +14,11 @@ public class RenderArchoblattina extends RenderLivingBaseWithBook<EntityPrehisto
     public RenderArchoblattina(RenderManager mgr) {
         super(mgr, new ModelArchoblattina(), 0.0f);
     }
+
     public static float getScaler() {
         return 1.25F * 0.165f;
     }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraArchoblattinaInsect entity) {
         return RenderArchoblattina.TEXTURE;

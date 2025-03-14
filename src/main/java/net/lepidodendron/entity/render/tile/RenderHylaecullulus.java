@@ -50,7 +50,12 @@ public class RenderHylaecullulus extends TileEntitySpecialRenderer<BlockHylaecul
         }
         //----End PP Page adjustment
         GlStateManager.disableCull();
+        GlStateManager.enableNormalize();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         modelHylaecullulus.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        GlStateManager.disableBlend();
+        GlStateManager.disableNormalize();
         GlStateManager.enableCull();
         GlStateManager.disableRescaleNormal();
         GlStateManager.popMatrix();

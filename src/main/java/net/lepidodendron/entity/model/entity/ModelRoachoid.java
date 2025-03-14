@@ -131,21 +131,29 @@ public class ModelRoachoid extends ModelBasePalaeopedia {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.thorax.render(f5 * 0.165f);
+        this.thorax.render(f5);
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //this.thorax.offsetZ = 0.1F;
-        this.thorax.render(0.022f);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+
+    public void renderStaticDisplayCase(float f) {
+        this.thorax.offsetZ = -0.080F;
+        this.setRotateAngle(legR3, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(legR2, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(legL3, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(legL2, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(legR1, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(legL1, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(forewingR, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(forewingL, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(hindwingL, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(antennaL, -0.2618F, -0.2618F, 0.0F);
+        this.setRotateAngle(antennaR, -0.2618F, 0.2618F, 0.0F);
+        this.thorax.render(0.01f);
+        resetToDefaultPose();
     }
+
     @Override
     public void renderStaticBook(float f) {
 
@@ -161,7 +169,7 @@ public class ModelRoachoid extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.thorax.offsetY = 1.23F;
+        this.thorax.offsetY = 0.0F;
 
         float modifier = 1F;
 

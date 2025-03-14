@@ -158,15 +158,14 @@ public class ModelTitanoptera extends ModelBasePalaeopedia {
         GlStateManager.popMatrix();
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+    public void renderStaticDisplayCase(float f) {
+        this.body.offsetZ = -0.080F;
+        this.setRotateAngle(forelegR, (float) Math.toRadians(40), -(float) Math.toRadians(20), 0.0F);
+        this.setRotateAngle(forelegR2, -(float) Math.toRadians(75), 0.0F, 0.0F);
+        this.setRotateAngle(forelegL, (float) Math.toRadians(40), (float) Math.toRadians(20), 0.0F);
+        this.setRotateAngle(forelegL2, (float) Math.toRadians(-75), 0.0F, 0.0F);
         this.body.render(0.01f);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
     }
 
     @Override

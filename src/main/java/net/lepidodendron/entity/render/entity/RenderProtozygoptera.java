@@ -11,6 +11,10 @@ import net.minecraft.util.ResourceLocation;
 public class RenderProtozygoptera extends RenderLivingBaseWithBook<EntityPrehistoricFloraProtozygoptera> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/protozygoptera.png");
 
+    public static float getScaler() {
+        return 0.2f;
+    }
+
     public RenderProtozygoptera(RenderManager mgr) {
         super(mgr, new ModelProtozygoptera(), 0.0f);
         this.addLayer(new LayerProtozygopteraWing(this));
@@ -51,6 +55,12 @@ public class RenderProtozygoptera extends RenderLivingBaseWithBook<EntityPrehist
                 GlStateManager.translate(0.0F, 0.5F, 0.0F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         }
+    }
+
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraProtozygoptera entity, float f) {
+        float scale = this.getScaler();
+        GlStateManager.scale(scale, scale, scale);
     }
 
 }

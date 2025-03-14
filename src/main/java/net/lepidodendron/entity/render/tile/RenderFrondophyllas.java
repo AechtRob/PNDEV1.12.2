@@ -51,7 +51,12 @@ public class RenderFrondophyllas extends TileEntitySpecialRenderer<BlockFrondoph
         //----End PP Page adjustment
         GlStateManager.disableCull();
         GlStateManager.disableLighting();
+        GlStateManager.enableNormalize();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         modelFrondophyllas.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        GlStateManager.disableBlend();
+        GlStateManager.disableNormalize();
         GlStateManager.enableCull();
         GlStateManager.enableLighting();
         GlStateManager.disableRescaleNormal();

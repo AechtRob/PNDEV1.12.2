@@ -17,7 +17,7 @@ public class RenderItalophlebia extends RenderLivingBaseWithBook<EntityPrehistor
     }
 
     public static float getScaler() {
-        return 1.0F;
+        return 0.2f;
     }
 
     @Override
@@ -58,8 +58,6 @@ public class RenderItalophlebia extends RenderLivingBaseWithBook<EntityPrehistor
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         }
     }
-
-
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraItalophlebia entity, float f) {

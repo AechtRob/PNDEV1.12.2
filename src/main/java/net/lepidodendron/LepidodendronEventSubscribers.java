@@ -369,10 +369,6 @@ public class LepidodendronEventSubscribers {
 	@SubscribeEvent //Opening the Palaeopedia
 	public void keyPressed(InputEvent.KeyInputEvent event) {
 		if (ClientProxyLepidodendronMod.keyPalaeopdeiaOpen.getKeyCode() <= 0) {
-			ITextComponent itextcomponent = new TextComponentString("Invalid keybind for the Palaeopedia! Please update your keybind.");
-			itextcomponent.getStyle().setColor(TextFormatting.RED).setItalic(Boolean.valueOf(true));
-			Minecraft.getMinecraft().player.sendMessage(itextcomponent);
-			event.setCanceled(true);
 			return;
 		}
 		if (Keyboard.isKeyDown(ClientProxyLepidodendronMod.keyPalaeopdeiaOpen.getKeyCode())) {

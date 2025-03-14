@@ -110,21 +110,21 @@ public class ModelProtozygoptera extends ModelBasePalaeopedia {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.body.render(f5 * 0.2f);
+        this.body.render(f5);
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body.offsetZ = -0.04F;
-        this.body.render(0.037F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+
+    public void renderStaticDisplayCase(float f) {
+        this.body.offsetZ = -0.080F;
+        this.setRotateAngle(hindwingR, 0.0F, (float)Math.toRadians(15), 0.0F);
+        this.setRotateAngle(forewingR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(forewingL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(hindwingL, 0.0F, -(float)Math.toRadians(15), 0.0F);
+        this.body.render(0.01f);
+        resetToDefaultPose();
     }
+
     @Override
     public void renderStaticBook(float f) {
 

@@ -9,6 +9,7 @@ public class RenderDisplays {
     public static final ModelAcanthostomatops modelAcanthostomatops = new ModelAcanthostomatops();
     public static final ModelAcrolepis modelAcrolepis = new ModelAcrolepis();
     public static final ModelAcutiramus modelAcutiramus = new ModelAcutiramus();
+    public static final ModelTitanoptera modelTitanoptera = new ModelTitanoptera();
     public static final ModelAdamanteryon modelAdamanteryon = new ModelAdamanteryon();
     public static final ModelAdelophthalmus modelAdelophthalmus = new ModelAdelophthalmus();
     public static final ModelAdeopapposaurus modelAdeopapposaurus = new ModelAdeopapposaurus();
@@ -446,7 +447,7 @@ public class RenderDisplays {
     public static final ModelIschyodus modelIschyodus = new ModelIschyodus();
     public static final ModelIsotelus modelIsotelus = new ModelIsotelus();
     public static final ModelIsoxys modelIsoxys = new ModelIsoxys();
-    public static final ModelItalophlebia modelItalophlebia = new ModelItalophlebia();
+    public static final ModelProtozygoptera modelItalophlebia = new ModelProtozygoptera();
     public static final ModelIvoites modelIvoites = new ModelIvoites();
     public static final ModelIdmonarachne modelIdmonarachne = new ModelIdmonarachne();
     public static final ModelIkechaoamia modelIkechaoamia = new ModelIkechaoamia();

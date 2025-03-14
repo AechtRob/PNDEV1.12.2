@@ -178,7 +178,7 @@ public class EntityPrehistoricFloraRhynchonkos extends EntityPrehistoricFloraLan
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.MEAT);
+		return ArrayUtils.addAll(DietString.BUG);
 	}
 
 

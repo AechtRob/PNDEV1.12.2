@@ -11,6 +11,8 @@ import net.minecraft.util.ResourceLocation;
 public class RenderPalaeontinid extends RenderLivingBaseWithBook<EntityPrehistoricFloraPalaeontinid> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeontinid.png");
 
+    public static float getScaler() {return 0.2f;}
+
     public RenderPalaeontinid(RenderManager mgr) {
         super(mgr, new ModelPalaeontinid(), 0.0f);
     }
@@ -50,6 +52,12 @@ public class RenderPalaeontinid extends RenderLivingBaseWithBook<EntityPrehistor
                 GlStateManager.translate(0.0F, 0.5F, 0.0F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         }
+    }
+
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraPalaeontinid entity, float f) {
+        float scale = getScaler();
+        GlStateManager.scale(scale, scale, scale);
     }
 
 }

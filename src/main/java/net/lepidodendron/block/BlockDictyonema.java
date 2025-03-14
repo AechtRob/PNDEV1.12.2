@@ -9,7 +9,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
-import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.silurian.BiomeSilurian;
@@ -93,7 +92,6 @@ public class BlockDictyonema extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
 				|| dimID == LepidodendronConfig.dimCambrian
 				|| dimID == LepidodendronConfig.dimDevonian
-				|| dimID == LepidodendronConfig.dimCarboniferous
 		)
 		weight = 100; //Full scale populations in these dims
 
@@ -106,8 +104,7 @@ public class BlockDictyonema extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
 				|| dimID == LepidodendronConfig.dimCambrian
-				|| dimID == LepidodendronConfig.dimDevonian
-				|| dimID == LepidodendronConfig.dimCarboniferous)
+				|| dimID == LepidodendronConfig.dimDevonian)
 			dimensionCriteria = true;
 
 		if (!dimensionCriteria)
@@ -174,17 +171,7 @@ public class BlockDictyonema extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 		}
-		
-		if (biome instanceof BiomeCarboniferous)
-		{
-			BiomeCarboniferous biomeCarb = (BiomeCarboniferous) biome;
-			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
+
 		if (biome instanceof BiomeDevonian)
 		{
 			BiomeDevonian biomeDev = (BiomeDevonian) biome;
@@ -639,7 +626,7 @@ public class BlockDictyonema extends ElementsLepidodendronMod.ModElement {
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Graptolite");
-				tooltip.add("Periods: Cambrian - Ordovician - Silurian - Devonian - Carboniferous");}
+				tooltip.add("Periods: Cambrian - Ordovician - Silurian - Devonian");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 
