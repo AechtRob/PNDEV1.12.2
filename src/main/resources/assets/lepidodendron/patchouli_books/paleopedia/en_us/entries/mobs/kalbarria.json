@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kalbarria",
 			"title": "Kalbarria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Euthycarcinoidea$(br)>Euthycarcinida$(br)>Kottixerxidae"
+			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Arthropoda$(br)>Euthycarcinoidea$(br)>Euthycarcinida$(br)>Kottixerxidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_kalbarria",
 			"type": "text",
-			"text": "Kalbarria is a euthycarcinoid arthropod from the Tumblagooda Sandstone, believed to be between the Ordovician-Silurian. This is only one example of finding the body fossil, while all other fossils from that sandstone are trace fossils. Some trace fossils known from sandstones seem to indicate trackways by this animal or closely related animals."
+			"text": "Kalbarria is a euthycarcinoid arthropod from the Tumblagooda Sandstone, believed to be on the border of the Ordovician-Silurian. The fossils are primarily trackways formed in sandstone, although there are indications of the body impressions as well, but not enough to know much about the body in detail. There are several other trackways known from this formation of this or other similar arthropods."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_kalbarria",
