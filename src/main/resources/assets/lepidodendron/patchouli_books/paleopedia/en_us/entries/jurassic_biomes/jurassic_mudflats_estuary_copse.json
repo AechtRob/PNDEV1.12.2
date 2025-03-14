@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Jurassic Alluvial Grove(br2)$()Text here..."
+			"text": "$(l)Jurassic Alluvial Grove$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

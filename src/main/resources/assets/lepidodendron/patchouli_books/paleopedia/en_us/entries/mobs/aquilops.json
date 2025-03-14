@@ -26,7 +26,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_aquilops",
 			"type": "text",
-			"text": "The generic name derives from the Latin word 'aquila', to mean 'eagle'; and the Greek word 'ops', to mean 'face'. The specific name derives from the Latinisation of 'America', honoring that it was the first basal Neoceratopsian of North America."
+			"text": "The generic name derives from the Latin word 'aquila', to mean 'eagle'; and the Greek word 'ops', to mean 'face'. The specific name derives from the Latinisation of 'America', honoring that it was the first basal neoceratopsian of North America."
 		},		
 		{
 			"type": "lepidodendron:diet",

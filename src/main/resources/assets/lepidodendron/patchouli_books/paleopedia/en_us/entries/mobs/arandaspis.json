@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorphi$(br)>Arandaspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/arandaspis.png"],
-			"title": "A. prionotolepis",
-			"text": ""
+			"type": "entity",
+			"name": "A. prionotolepis",
+			"entity": "lepidodendron:prehistoric_flora_arandaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_arandaspis",
 			"type": "text",
-			"text": "Arandaspis is a primitive jawless fish whose name comes from a local aboriginal tribe, the Aranda(also called the Arrernte). It was about 15cm long and had a streamlined body covered in rows of armored scutes. The front of the body and head were protected by hard plates with openings for eyes, nostrils and gills. It was probably a filter feeder."
+			"text": "Arandaspis is a primitive jawless fish whose name comes from a local aboriginal tribe, the Aranda (also called the Arrernte). It was about 15 cm long and had a streamlined body covered in rows of armored scutes. The front of the body and head were protected by hard plates with openings for eyes, nostrils and gills. It was probably a filter feeder."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -393,7 +393,6 @@ public class ModelCascocauda extends ModelBasePalaeopedia {
         this.setRotateAngle(rightwing2, 0.0F, -0.3F, 0.3F);
         this.setRotateAngle(rightwing3, 0.0F, -2.5F, 0.2F);
         this.setRotateAngle(righthand, 0.0F, 0.0F, 0.0F);
-
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

@@ -21,7 +21,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_parvancorina",
 			"type": "text",
-			"text": "Parvancorina is a bilaterally symmetrical animal that lived on the Ediacaran seafloor. It has superficial similarities to trilobites. Its name comes from the Latin parva ancora (small anchor). They likely lived by slowly moving about the seafloor and were not attached to the seafloor."
+			"text": "Parvancorina comes from the Upper Ediacaran, with fossils found in the Flinders Ranges, South Australia; Sonia Formation, India, and the White Sea, Russia. It is a small, bilateral shield-shaped lifeform, growing up to 3 cm in length. Due to their shape, many scientists have noted a possible affinity with trilobites or molluscs, although a consensus has yet to be reached on either."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_parvancorina",
+			"type": "text",
+			"text": "Due to the sharp margin of the traces they left behind, it has been noted that Parvancorina may have not been tethered to the seafloor, and as such was capable of movement. In a recent study this has also helped to determine how long it takes for a Parvancorina to grow, which is estimated at 10 months, its natural mortality (usually from predation), estimated at 1 year and 2 months,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_parvancorina",
+			"type": "text",
+			"text": "and even overall longevity, which has been estimated at 4 years. This makes Parvancorina the oldest known lifeform were we know of its full lifespan, mortality and so forth. Its generic name derives from the Latin words 'parvus', to mean 'small'; and 'ancora', to mean 'anchor'."
 		},
 		{
 			"type": "lepidodendron:diet",

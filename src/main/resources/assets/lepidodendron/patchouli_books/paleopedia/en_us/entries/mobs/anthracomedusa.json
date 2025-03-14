@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Cnidaria$(br)>Cubozoa$(br)>Carybdeida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/anthracomedusa.png"],
-			"title": "A. turnbulli",
-			"text": ""
+			"type": "entity",
+			"name": "A. turnbulli",
+			"entity": "lepidodendron:prehistoric_flora_anthracomedusa",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_anthracomedusa",
 			"type": "text",
-			"text": "Anthracomedusa is a Carboniferous jellyfish which looked like a plastic bag. It was slender in overal shape, due to its long tentacles."
+			"text": "Anthracomedusa is a Carboniferous jellyfish which looked like a plastic bag. It was slender in overall shape, due to its long tentacles."
 		},
 		{
 			"type": "lepidodendron:diet",

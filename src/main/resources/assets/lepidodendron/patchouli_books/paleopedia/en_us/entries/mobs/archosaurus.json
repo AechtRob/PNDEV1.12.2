@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_archosaurus",
 			"title": "Archosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Reptilia$(br)>Proterosuchia"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Reptilia$(br)>Archosauromorpha$(br)>Proterosuchia"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/archosaurus.png"],
-			"title": "A. rossicus",
-			"text": ""
+			"type": "entity",
+			"name": "A. rossicus",
+			"entity": "lepidodendron:prehistoric_flora_archosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_archosaurus",
 			"type": "text",
-			"text": "Archosaurus is a carnivorous archosauriforme from the late Permian period. Its skull is known and it had an oddly shaped nose which hanged over the end of its lower jaw. It was one of the oldest Archosaurs and it gives its name to the group which would contain the dinosaurs but is not actually classified within the group."
+			"text": "Archosaurus is a carnivorous archosauriform from the Upper Permian. Its skull is known and it had an oddly shaped nose which hanged over the end of its lower jaw. It was one of the oldest archosaurs and is also the namesake of the clade which would contain the dinosaurs, but is not actually classified within the group."
 		},
 		{
 			"type": "lepidodendron:diet",

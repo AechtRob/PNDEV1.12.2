@@ -9,7 +9,7 @@
 "trigger": "lepidodendron:pf_adv_book_giraffatitan",
 "title": "Giraffatitan",
 "type": "quest",
-"text": "$(l)Temporal Range:$() Jurassicc$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Sauropoda$(br)>Macronaria$(br)>Brachiosauridae"
+"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Sauropoda$(br)>Macronaria$(br)>Brachiosauridae"
 },
         {
             "type": "entity",

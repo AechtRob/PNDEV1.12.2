@@ -313,6 +313,46 @@ public class ModelArchosaurus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Archosaurus.offsetY = 0.5F;
+        this.Archosaurus.offsetX = 0.8F;
+        this.Archosaurus.rotateAngleY = (float)Math.toRadians(120);
+        this.Archosaurus.rotateAngleX = (float)Math.toRadians(1);
+        this.Archosaurus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Archosaurus.scaleChildren = true;
+        float scaler = 0.4F;
+        this.Archosaurus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Archosaurus, 0.0F, 4.5F, 0.0F);
+        this.setRotateAngle(Body1, 0.18F, -0.05F, 0.0F);
+        this.setRotateAngle(Body2, -0.05F, -0.05F, 0.0F);
+        this.setRotateAngle(upperBody, -0.05F, -0.05F, 0.0F);
+        this.setRotateAngle(Neck1, 0.0F, 0.15F, 0.0F);
+        this.setRotateAngle(Neck2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Jaw, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(Tail3, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail4, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(leftThigh, -0.3F, -0.2F, -0.3F);
+        this.setRotateAngle(leftTibia, 0.3F, 0.0F, 0.3F);
+        this.setRotateAngle(leftFoot, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightThigh, 0.3F, 0.2F, 0.3F);
+        this.setRotateAngle(rightTibia, 1.0F, 0.2F, -0.3F);
+        this.setRotateAngle(rightFoot, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftBicep, 0.5F, 0.2F, -0.3F);
+        this.setRotateAngle(leftForearm, 0.2F, 0.2F, 0.3F);
+        this.setRotateAngle(leftHand, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBicep, -0.2F, -0.2F, 0.3F);
+        this.setRotateAngle(rightForearm, -0.2F, 0.0F, -0.3F);
+        this.setRotateAngle(rightHand, 0.25F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Archosaurus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Archosaurus.setScale(1.0F, 1.0F, 1.0F);
+        this.Archosaurus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -265,6 +265,35 @@ public class ModelAntineosteus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+//Rotations, positions and sizing:
+        this.Antineosteus.offsetY = 0.0F;
+        this.Antineosteus.offsetX = 0.5F;
+        this.Antineosteus.rotateAngleY = (float)Math.toRadians(120);
+        this.Antineosteus.rotateAngleX = (float)Math.toRadians(25);
+        this.Antineosteus.rotateAngleZ = (float)Math.toRadians(-10);
+        this.Antineosteus.scaleChildren = true;
+        float scaler = 0.43F;
+        this.Antineosteus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.Antineosteus.rotateAngleY = (float) Math.toRadians(-115);
+        this.Bodysegment1.rotateAngleX = (float) Math.toRadians(-10);
+        this.Bodysegment2.rotateAngleX = (float) Math.toRadians(7.5);
+        this.Bodysegment3.rotateAngleX = (float) Math.toRadians(2.5);
+        this.Bodysegment4.rotateAngleX = (float) Math.toRadians(15);
+        this.Bodysegment5.rotateAngleX = (float) Math.toRadians(15);
+        this.Bodysegment6.rotateAngleX = (float) Math.toRadians(15);
+        this.Cephalon.rotateAngleX = (float) Math.toRadians(-10);
+        this.Jaw.rotateAngleX = (float) Math.toRadians(46);
+        this.PectoralfinL.rotateAngleZ = (float) Math.toRadians(+40);
+        this.PectoralfinR.rotateAngleZ = (float) Math.toRadians(-40);
+        this.AnalfinL.rotateAngleZ = (float) Math.toRadians(+37.5);
+        this.AnalfinR.rotateAngleZ = (float) Math.toRadians(-37.5);
+        //End of pose, now render the model:
+        this.Antineosteus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Antineosteus.setScale(1.0F, 1.0F, 1.0F);
+        this.Antineosteus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 
