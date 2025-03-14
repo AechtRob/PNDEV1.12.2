@@ -287,6 +287,23 @@ public class ModelAphetoceras extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.shellbase.offsetY = -1.5F;
+        this.shellbase.offsetX = -1.5F;
+        this.shellbase.rotateAngleY = (float)Math.toRadians(120);
+        this.shellbase.rotateAngleX = (float)Math.toRadians(1);
+        this.shellbase.rotateAngleZ = (float)Math.toRadians(0);
+        this.shellbase.scaleChildren = true;
+        float scaler = 2.5F;
+        this.shellbase.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(shellbase, 0.2F, 3.9F, 0.0F);
+        //End of pose, now render the model:
+        this.shellbase.render(f);
+        //Reset rotations, positions and sizing:
+        this.shellbase.setScale(1.0F, 1.0F, 1.0F);
+        this.shellbase.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

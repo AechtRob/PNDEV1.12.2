@@ -21,17 +21,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_apatosaurus",
 			"type": "text",
-			"text": "Apatosaurus is a famous sauropod from the Late Jurassic Morrison Formation. A. ajax was named by Othniel Charles Marsh in 1877 and A. louisae was named by William Holland in 1916. Although many may feel more familiar with A. ajax, A. louisae is known from more complete remains. Apatosaurus gives name to the subfamily of Apatosaurinae which was only considered a valid grouping since 2015. Apatosaurus is well known for the controversy involving the disputed genus of Brontosaurus."
+			"text": "Apatosaurus is a famous sauropod from the Upper Jurassic Morrison Formation. A. ajax was named by Othniel Charles Marsh in 1877 and A. louisae was named by William Holland in 1916. Although many may feel more familiar with A. ajax, A. louisae is known from more complete remains. Apatosaurus gives name to the subfamily of Apatosaurinae which was only considered a valid grouping since 2015. Apatosaurus is well known for the controversy involving the disputed genus of"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_apatosaurus",
 			"type": "text",
-			"text": "Brontosaurus excelsus, also described by Marsh in 1879, was argued by Elmer Riggs in 1903 to be not different enough from Apatosaurus to be considered its own genus. Brontosaurus was then considered a junior synonym of Apatosaurus until 2015 when it was reassessed as its own genus based on 13 characteristics. Despite the superficial mainstream appeal at the so-called \"revival\" of Brontosaurus, this study still remains contested within Paleontology. "
+			"text": "Brontosaurus. Brontosaurus excelsus, also described by Marsh in 1879, was argued by Elmer Riggs in 1903 to be not different enough from Apatosaurus to be considered its own genus. Brontosaurus was then considered a junior synonym of Apatosaurus until 2015 when it was reassessed as its own genus based on 13 characteristics. Despite the superficial mainstream appeal at the so-called \"revival\" of Brontosaurus, this study still remains contested within Paleontology."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_apatosaurus",
 			"type": "text",
-			"text": "Interest with Apatosaurinae reached another high with the 2015 paper by Michael Taylor, Mathew Wedel, Darren Naish, and Brian Engh in which the unusual triangular cervical vertebrae of Apatosaurinae was hypothesized to have been used in combat, striking down or to the side of opponents. The ventrolateral processes were interpreted as supporting keratinous bosses or neck spikes. The term of this, \"Brontosmash\" was coined by Mark Witton in October of the same year. "
+			"text": "Interest with Apatosaurinae reached another high with the 2015 paper by Michael Taylor, Mathew Wedel, Darren Naish, and Brian Engh in which the unusual triangular cervical vertebrae of Apatosaurinae was hypothesized to have been used in combat, striking down or to the side of opponents. The ventrolateral processes were interpreted as supporting keratinous bosses or neck spikes. The term of this, \"Brontosmash\" was coined by Mark Witton in October of the same year."
 		},
 		{
 			"type": "lepidodendron:diet",

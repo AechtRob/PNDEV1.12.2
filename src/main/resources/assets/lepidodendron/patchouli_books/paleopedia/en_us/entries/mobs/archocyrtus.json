@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Insecta$(br)>Diptera$(br)>Acroceridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/archocyrtus.png"],
-			"title": "A. kovalevi",
-			"text": ""
+			"type": "entity",
+			"name": "A. kovalevi",
+			"entity": "lepidodendron:prehistoric_flora_archocyrtus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_archocyrtus",
 			"type": "text",
-			"text": "Archocyrtus is a genus of dipteran insect from Karabastau Formation, Upper Jurassic of Kazakhstan. It had a long proboscis twice as long as its body length. It was probably one of the early pollinators, that fed on common \"flowers\" at that time such as bennettitales."
+			"text": "Archocyrtus is a genus of dipteran insect from the Upper Jurassic of the Karabastau Formation, Kazakhstan. It had a long proboscis twice as long as its body length. It was probably one of the early pollinators, that fed on common \"flowers\" at that time such as bennettitales."
 		},
 		{
 			"type": "lepidodendron:diet",

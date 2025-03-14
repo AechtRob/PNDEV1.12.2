@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_aphnelepis",
 			"title": "Aphnelepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br2)>Archaeomaenidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Archaeomaenidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/aphnelepis.png"],
-			"title": "A. australis",
-			"text": ""
+			"type": "entity",
+			"name": "A. australis",
+			"entity": "lepidodendron:prehistoric_flora_aphnelepis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_aphnelepis",
 			"type": "text",
-			"text": "Aphnelepis australis is a species of Actinopterygian fish from the Jurassic of Australia. The small fish, being only around 10 cm long, possesses a long and thin body with a laterally flattened head, elongated jaws and a characteristic concave shape of the dorsal fin, which starts tall and quickly recedes as it moves along the body length."
+			"text": "Aphnelepis australis is a species of actinopterygian fish from the Jurassic of Australia. They are small fish, being only around 10 cm long, and have a long and thin body with a laterally flattened head, elongated jaws and a characteristic concave shape of the dorsal fin, which starts tall and quickly recedes as it moves along the body length."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_aphnelepis",

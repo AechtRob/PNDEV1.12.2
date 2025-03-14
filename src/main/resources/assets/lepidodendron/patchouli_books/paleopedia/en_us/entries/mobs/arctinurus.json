@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Trilobita$(br)>Lichida$(br)>Lichidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/arctinurus.png"],
-			"title": "A. boltoni",
-			"text": ""
+			"type": "entity",
+			"name": "A. boltoni",
+			"entity": "lepidodendron:prehistoric_flora_arctinurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_arctinurus",
 			"type": "text",
-			"text": "Arctinurus is a rather large Silurian Trilobite from Europe and North America. It reached lengths up to 30 cm and lived within semi-tropical waters. The pygidia is sectioned into leaf shaped portions which end in a spine. Many complete specimens of Arctinurus can be found in the Rochester Shale, New York, USA."
+			"text": "Arctinurus is a rather large Silurian trilobite from Europe and North America. It reached lengths up to 30 cm and lived within semi-tropical waters. The pygidia is sectioned into leaf shaped portions which end in a spine. Many complete specimens of Arctinurus can be found in the Rochester Shale, New York, USA."
 		},
 		{
 			"type": "lepidodendron:diet",

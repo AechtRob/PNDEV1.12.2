@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_antineosteus",
 			"title": "Antineosteus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Brachythoraci$(br)>Homosteiidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Homosteiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/antineosteus.png"],
-			"title": "A. rufus",
-			"text": ""
+			"type": "entity",
+			"name": "A. rufus",
+			"entity": "lepidodendron:prehistoric_flora_antineosteus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_antineosteus",

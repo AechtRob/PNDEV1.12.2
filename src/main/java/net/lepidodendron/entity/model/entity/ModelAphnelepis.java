@@ -221,6 +221,42 @@ public class ModelAphnelepis extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.aphnelepis.offsetY = -1.5F;
+        this.aphnelepis.offsetX = -0.8F;
+        this.aphnelepis.rotateAngleY = (float)Math.toRadians(120);
+        this.aphnelepis.rotateAngleX = (float)Math.toRadians(1);
+        this.aphnelepis.rotateAngleZ = (float)Math.toRadians(0);
+        this.aphnelepis.scaleChildren = true;
+        float scaler = 3.45F;
+        this.aphnelepis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(aphnelepis, -0.2F, 1.0F, 0.2F);
+        this.setRotateAngle(cube_r1, 0.3229F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(analFinR, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(analFinL, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(pectoralR, 0.0F, 0.0F, -0.6981F);
+        this.setRotateAngle(cube_r5, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(pectoralL, 0.0F, 0.0F, 0.6981F);
+        this.setRotateAngle(cube_r6, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.8727F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.0873F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.aphnelepis.render(f);
+        //Reset rotations, positions and sizing:
+        this.aphnelepis.setScale(1.0F, 1.0F, 1.0F);
+        this.aphnelepis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

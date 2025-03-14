@@ -142,6 +142,28 @@ public class ModelArandaspis extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Bodyhead.offsetY = -0.5F;
+        this.Bodyhead.offsetX = 0.6F;
+        this.Bodyhead.rotateAngleY = (float)Math.toRadians(120);
+        this.Bodyhead.rotateAngleX = (float)Math.toRadians(1);
+        this.Bodyhead.rotateAngleZ = (float)Math.toRadians(0);
+        this.Bodyhead.scaleChildren = true;
+        float scaler = 3.0F;
+        this.Bodyhead.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Bodyhead, 0.2F, 3.9F, 0.2F);
+        this.setRotateAngle(Tail1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail5, 0.0F, -0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.Bodyhead.render(f);
+        //Reset rotations, positions and sizing:
+        this.Bodyhead.setScale(1.0F, 1.0F, 1.0F);
+        this.Bodyhead.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 
