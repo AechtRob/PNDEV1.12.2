@@ -147,6 +147,22 @@ public class ModelArchocyrtus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
 
     }
+    
+    public void renderStaticDisplayCase(float f) {
+        this.setRotateAngle(Body, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(mouth, -0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(WingL, 0.3F, -1.2F, 0.0F);
+        this.setRotateAngle(WingR, 0.3F, 1.2F, 0.0F);
+        this.setRotateAngle(legR1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL3, 0.0F, 0.0F, 0.0F);
+        this.Body.offsetY = 0.15F;
+        this.Body.render(0.01F);
+        resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

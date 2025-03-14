@@ -13,6 +13,10 @@ public class RenderScorpion_Gigantoscorpio extends RenderLivingBaseWithBook<Enti
     private static final ResourceLocation TEXTURE_WITH_BABIES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_gigantoscorpio_withbaby.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_baby.png");
 
+    public static float getScaler() {
+        return 0.32F * 0.6F;
+    }
+
     public RenderScorpion_Gigantoscorpio(RenderManager mgr) {
         super(mgr, new ModelScorpion(), 0.0f);
     }
@@ -62,10 +66,10 @@ public class RenderScorpion_Gigantoscorpio extends RenderLivingBaseWithBook<Enti
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraScorpion_Gigantoscorpio entity, float f) {
         if (entity.getIsBaby()) {
-            GlStateManager.scale(0.3, 0.3, 0.3);
+            GlStateManager.scale(0.5 * this.getScaler(), 0.5 * this.getScaler(), 0.5 * this.getScaler());
         }
         else {
-            GlStateManager.scale(0.6, 0.6, 0.6);
+            GlStateManager.scale(this.getScaler(), this.getScaler(), this.getScaler());
         }
     }
 

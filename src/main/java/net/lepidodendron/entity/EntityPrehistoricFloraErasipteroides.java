@@ -132,6 +132,7 @@ public class EntityPrehistoricFloraErasipteroides extends EntityPrehistoricFlora
 
 	//-------------------
 	//Taxidermy:
+
 	public static double offsetWall(@Nullable String variant) {return 0.075;}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.59;}
 	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}

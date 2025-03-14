@@ -508,6 +508,9 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 
 		//-------------------
 		//Taxidermy:
+		public static double offsetCase(@Nullable String variant) {
+			return 0.40;
+		}
 		public static double offsetWall(@Nullable String variant) {return 0.075;}
 		public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.55;}
 		public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}

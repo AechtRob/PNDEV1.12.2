@@ -53,7 +53,7 @@ public class ItemArchocyrtusRaw extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public String getMobStr() {
-			return "lepidodendron:archocyrtus";
+			return "lepidodendron:prehistoric_flora_archocyrtus";
 		}
 
 		@Nullable

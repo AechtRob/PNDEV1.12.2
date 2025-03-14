@@ -261,19 +261,15 @@ public class ModelEoarthropleura extends ModelBasePalaeopedia {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.body.render(f5 * 0.4F);
+        this.body.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.body.render(0.021F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticDisplayCase(float f) {
+        this.body.offsetZ = -0.080F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
     }
+
     @Override
     public void renderStaticBook(float f) {
 
@@ -289,7 +285,7 @@ public class ModelEoarthropleura extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         //super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.911F;
+        this.body.offsetY = 0.0F;
 
         AdvancedModelRenderer[] legsL = {this.legL_r1, this.legL_r2, this.legL_r3, this.legL_r4, this.legL_r5, this.legL_r6, this.legL_r7, this.legL_r8, this.legL_r9, this.legL_r10};
         AdvancedModelRenderer[] legsR = {this.legR_r1, this.legR_r2, this.legR_r3, this.legR_r4, this.legR_r5, this.legR_r6, this.legR_r7, this.legR_r8, this.legR_r9, this.legR_r10};

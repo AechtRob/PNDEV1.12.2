@@ -259,6 +259,22 @@ public class ModelHelenodora extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body5.render(f5);
     }
+
+    public void renderStaticDisplayCase(float f) {
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body8, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(body9, 0.0F, 0.15F, 0.0F);
+        this.setRotateAngle(body10, 0.0F, 0.15F, 0.0F);
+        this.body5.offsetZ = -0.080F;
+        this.body5.render(0.01f);
+        resetToDefaultPose();
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
         this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
@@ -273,6 +289,7 @@ public class ModelHelenodora extends ModelBasePalaeopedia {
         this.body5.render(0.01F);
         resetToDefaultPose();
     }
+
     @Override
     public void renderStaticBook(float f) {
 

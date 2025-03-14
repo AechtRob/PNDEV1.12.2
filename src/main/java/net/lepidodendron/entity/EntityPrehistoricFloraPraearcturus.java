@@ -197,7 +197,7 @@ public class EntityPrehistoricFloraPraearcturus extends EntityPrehistoricFloraWa
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetCase(@Nullable String variant) {
-		return 0.2;
+		return 0.56;
 	}
 	public static double offsetWall(@Nullable String variant) {
 		return -1.36;
@@ -317,7 +317,7 @@ public class EntityPrehistoricFloraPraearcturus extends EntityPrehistoricFloraWa
 
 	@Override
 	public void onDeath(DamageSource cause) {
-		if (!world.isRemote && this.getBabies() && (!this.getIsBaby())) {
+		if (!world.isRemote && this.getBabies() && (!this.getIsBaby()) && cause != BlockGlassJar.BlockCustom.FREEZE) {
 			int ii = rand.nextInt(5);
 			for (int i = 0; i <= ii; i++) {
 				//Spawn babies:

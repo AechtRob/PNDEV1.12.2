@@ -291,7 +291,7 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetCase(@Nullable String variant) {
-		return 0.4F;
+		return 0.50F;
 	}
 	public static double offsetWall(@Nullable String variant) {
 		return -0.3;

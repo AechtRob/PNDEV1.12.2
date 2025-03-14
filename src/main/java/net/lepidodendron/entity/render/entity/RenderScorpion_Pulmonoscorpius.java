@@ -75,10 +75,10 @@ public class RenderScorpion_Pulmonoscorpius extends RenderLivingBaseWithBook<Ent
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraScorpion_Pulmonoscorpius entity, float f) {
         if (entity.getIsBaby()) {
-            GlStateManager.scale(0.4, 0.4, 0.4);
+            GlStateManager.scale(this.getScaler() * 0.4F, this.getScaler() * 0.4F, this.getScaler() * 0.4F);
         }
         else {
-            GlStateManager.scale(1.0, 1.0, 1.0);
+            GlStateManager.scale(this.getScaler(), this.getScaler(), this.getScaler());
         }
     }
 

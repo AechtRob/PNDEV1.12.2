@@ -11,6 +11,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
 import net.lepidodendron.entity.render.entity.RenderMyriapod;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggMyriapodEoarthropleura;
@@ -20,6 +21,7 @@ import net.lepidodendron.util.EggLayingConditions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -519,7 +521,94 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 		return this.getPNType().getName();
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase(@Nullable String variant) {
+		switch (EntityPrehistoricFloraMyriapod.Type.getTypeFromString(variant)) {
+			case PNEUMODESMUS:
+			default:
+				return 0.3;
+
+			case EOARTHROPLEURA:
+				return 0.40;
+
+		}
+	}
+	public static double offsetWall(@Nullable String variant) {
+		switch (EntityPrehistoricFloraMyriapod.Type.getTypeFromString(variant)) {
+			case PNEUMODESMUS:
+			default:
+				return 0.0;
+
+			case EOARTHROPLEURA:
+				return 0.0;
+
+		}
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.25;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.0;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraMyriapod.Type.getTypeFromString(variant)) {
+			case PNEUMODESMUS:
+			default:
+				return RenderMyriapod.TEXTURE_PNEUMODESMUS;
+
+			case EOARTHROPLEURA:
+				return RenderMyriapod.TEXTURE_EOARTHROPLEURA;
+
+		}
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraMyriapod.Type.getTypeFromString(variant)) {
+			case PNEUMODESMUS:
+			default:
+				return RenderDisplays.modelPneumodesmus;
+
+			case EOARTHROPLEURA:
+				return RenderDisplays.modelEoarthropleura;
+
+		}
+	}
 	public static float getScaler(@Nullable String variant) {
 		return RenderMyriapod.getScaler(EntityPrehistoricFloraMyriapod.Type.getTypeFromString(variant));
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.012F;}
+
+
 }

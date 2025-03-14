@@ -228,6 +228,7 @@ public class ModelArchaboilus extends ModelBasePalaeopedia {
         this.main.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticDisplayCase(float f) {
         this.setRotateAngle(lefthindwing, 0.0F, -0.4F, 0.0F);
         this.setRotateAngle(righthindwing, 0.0F, 0.4F, 0.0F);

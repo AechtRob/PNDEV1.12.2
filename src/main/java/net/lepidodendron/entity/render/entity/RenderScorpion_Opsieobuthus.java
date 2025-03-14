@@ -13,6 +13,9 @@ public class RenderScorpion_Opsieobuthus extends RenderLivingBaseWithBook<Entity
     private static final ResourceLocation TEXTURE_WITH_BABIES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_opsieobuthus_withbaby.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_baby.png");
 
+    public static float getScaler() {
+        return 0.32F * 0.4F;
+    }
     public RenderScorpion_Opsieobuthus(RenderManager mgr) {
         super(mgr, new ModelScorpion(), 0.0f);
     }
@@ -62,10 +65,10 @@ public class RenderScorpion_Opsieobuthus extends RenderLivingBaseWithBook<Entity
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraScorpion_Opsieobuthus entity, float f) {
         if (entity.getIsBaby()) {
-            GlStateManager.scale(0.2, 0.2, 0.2);
+            GlStateManager.scale(0.5 * this.getScaler(), 0.5 * this.getScaler(), 0.5 * this.getScaler());
         }
         else {
-            GlStateManager.scale(0.4, 0.4, 0.4);
+            GlStateManager.scale(this.getScaler(), this.getScaler(), this.getScaler());
         }
     }
 

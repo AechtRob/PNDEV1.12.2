@@ -281,16 +281,13 @@ public class ModelScorpion extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5 * 0.32F);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+
+    public void renderStaticDisplayCase(float f) {
+        this.body.offsetZ = -0.080F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
     }
+
     @Override
     public void renderStaticBook(float f) {
 

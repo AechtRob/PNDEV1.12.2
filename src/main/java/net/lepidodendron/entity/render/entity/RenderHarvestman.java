@@ -11,6 +11,10 @@ import net.minecraft.util.ResourceLocation;
 public class RenderHarvestman extends RenderLivingBaseWithBook<EntityPrehistoricFloraHarvestman> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/harvestman.png");
 
+    public static float getScaler() {
+        return 0.135F;
+    }
+
     public RenderHarvestman(RenderManager mgr) {
         super(mgr, new ModelHarvestman(), 0.0f);
     }
@@ -49,6 +53,12 @@ public class RenderHarvestman extends RenderLivingBaseWithBook<EntityPrehistoric
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         }
 
+    }
+
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraHarvestman entity, float f) {
+        float scale = getScaler();
+        GlStateManager.scale(scale, scale, scale);
     }
 
 }

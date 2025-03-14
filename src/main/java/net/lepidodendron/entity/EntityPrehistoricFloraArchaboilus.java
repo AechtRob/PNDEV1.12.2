@@ -340,6 +340,7 @@ public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArc
 		}
 		return RenderArchaboilus.TEXTURE;
 	}
+
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
 		return RenderDisplays.modelArchaboilus;

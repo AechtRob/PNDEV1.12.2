@@ -4,10 +4,9 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
+import net.lepidodendron.item.ItemGlassCaseDisplayItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -44,7 +43,7 @@ public class ItemEramoscorpiusRaw extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/eramoscorpius_raw", "inventory"));
 	}
 
-	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
+	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
 			super(0,0,false);
 			setTranslationKey("pf_eramoscorpius_raw");
@@ -53,17 +52,11 @@ public class ItemEramoscorpiusRaw extends ElementsLepidodendronMod.ModElement {
 			setMaxStackSize(64);
 		}
 
+		@Nullable
 		@Override
-		public EnumAction getItemUseAction(ItemStack stack)
-		{
-			return EnumAction.NONE;
+		public String getMobStr() {
+			return "lepidodendron:prehistoric_flora_eramoscorpius";
 		}
-
-//		@Nullable
-//		@Override
-//		public String getMobStr() {
-//			return "lepidodendron:prehistoric_flora_eramoscorpius";
-//		}
 
 		@Nullable
 		@Override

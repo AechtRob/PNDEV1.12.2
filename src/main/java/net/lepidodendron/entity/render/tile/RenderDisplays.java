@@ -551,6 +551,7 @@ public class RenderDisplays {
     public static final ModelMegarachne modelMegarachne = new ModelMegarachne();
     public static final ModelMegateuthis modelMegateuthis = new ModelMegateuthis();
     public static final ModelMegazostrodon modelMegazostrodon = new ModelMegazostrodon();
+    public static final ModelSylvohymen modelSylvohymen = new ModelSylvohymen();
     public static final ModelMegistaspis modelMegistaspis = new ModelMegistaspis();
     public static final ModelMelosaurus modelMelosaurus = new ModelMelosaurus();
     public static final ModelMenaspis modelMenaspis = new ModelMenaspis();

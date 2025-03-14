@@ -307,13 +307,25 @@ public class ModelGerarus extends ModelBasePalaeopedia {
         GlStateManager.popMatrix();
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.gerarus.render(0.005f);
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticDisplayCase(float f) {
+        this.gerarus.offsetZ = -0.080F;
+        this.setRotateAngle(abdomen, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(leftCercus, 0.0F, 0.5236F, 0.0F);
+        this.setRotateAngle(leftForewing, 0.0F, 1.9199F, 0.0F);
+        this.setRotateAngle(leftHindwing, 0.0F, 0.9599F, 0.0F);
+        this.setRotateAngle(leftLeg1, -0.1543F, 0.8625F, -0.202F);
+        this.setRotateAngle(leftLeg2, -0.2753F, -0.7926F, 0.3776F);
+        this.setRotateAngle(leftLeg3, -0.5365F, -1.1615F, 0.5751F);
+        this.setRotateAngle(neck, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(rightCercus, 0.0F, -0.5236F, 0.0F);
+        this.setRotateAngle(rightForewing, 0.0F, -1.9199F, 0.0F);
+        this.setRotateAngle(rightHindwing, 0.0F, -0.9599F, 0.0F);
+        this.setRotateAngle(rightLeg1, -0.1543F, -0.8625F, 0.202F);
+        this.setRotateAngle(rightLeg2, -0.2753F, 0.7926F, -0.3776F);
+        this.setRotateAngle(rightLeg3, -0.5365F, 1.1615F, -0.5751F);
+        this.gerarus.render(0.01f);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

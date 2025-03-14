@@ -76,9 +76,7 @@ public class BlockGlassJar extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random) {
 			//If the block is on ice and has something in it, do the drops:
-			if ((worldIn.getBlockState(pos.down()).getMaterial() == Material.ICE
-					|| worldIn.getBlockState(pos.down()).getMaterial() == Material.PACKED_ICE)
-				&& (worldIn.getBlockState(pos.north()).getMaterial() == Material.ICE
+			if ((worldIn.getBlockState(pos.north()).getMaterial() == Material.ICE
 					|| worldIn.getBlockState(pos.north()).getMaterial() == Material.PACKED_ICE)
 				&& (worldIn.getBlockState(pos.south()).getMaterial() == Material.ICE
 					|| worldIn.getBlockState(pos.south()).getMaterial() == Material.PACKED_ICE)

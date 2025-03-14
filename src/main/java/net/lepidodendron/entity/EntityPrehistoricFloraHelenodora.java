@@ -218,6 +218,10 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 		return LepidodendronMod.BUG_LOOT;
 	}
 
+	public static double offsetCase(@Nullable String variant) {
+		return 0.40;
+	}
+
 	public static double offsetWall(@Nullable String variant) {
 		return -1.36;
 	}

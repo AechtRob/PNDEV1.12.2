@@ -53,10 +53,10 @@ public class RenderMyriapod extends RenderLivingBaseVariantModels<EntityPrehisto
         switch (variant) {
             case PNEUMODESMUS:
             default:
-                return 0.60F;
+                return 0.60F * 0.3F;
 
             case EOARTHROPLEURA:
-                return 0.66F;
+                return 0.66F * 0.4F;
         }
     }
 

@@ -329,7 +329,7 @@ public class EntityPrehistoricFloraEramoscorpius extends EntityPrehistoricFloraW
 
 	@Override
 	public void onDeath(DamageSource cause) {
-		if (!world.isRemote && this.getBabies() && (!this.getIsBaby())) {
+		if (!world.isRemote && this.getBabies() && (!this.getIsBaby()) && cause != BlockGlassJar.BlockCustom.FREEZE) {
 			int ii = rand.nextInt(5);
 			for (int i = 0; i <= ii; i++) {
 				//Spawn babies:

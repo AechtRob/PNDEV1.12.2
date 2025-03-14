@@ -208,6 +208,9 @@ public class EntityPrehistoricFloraArchocyrtus extends EntityPrehistoricFloraIns
 	protected ResourceLocation getLootTable() { return LepidodendronMod.BUG_LOOT;}
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetCase(@Nullable String variant) {
+		return 0.50F;
+	}
 	public static double offsetWall(@Nullable String variant) {
 		return 0.0;
 	}

@@ -10,7 +10,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMegasecoptera extends RenderLivingBaseVariantModels<EntityPrehistoricFloraMegasecoptera> {
-    private static final ResourceLocation TEXTURE_SYLVOHYMEN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megasecoptera_sylvohymen.png");
+    public static final ResourceLocation TEXTURE_SYLVOHYMEN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megasecoptera_sylvohymen.png");
 
     public RenderMegasecoptera(RenderManager mgr) {
         super(mgr,

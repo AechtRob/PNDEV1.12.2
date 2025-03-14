@@ -7,7 +7,10 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraScorpion;
+import net.lepidodendron.entity.render.entity.RenderScorpion_Opsieobuthus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLivingBase;
@@ -108,7 +111,7 @@ public class EntityPrehistoricFloraScorpion_Opsieobuthus extends EntityPrehistor
 
 	@Override
 	public void onDeath(DamageSource cause) {
-		if (!world.isRemote && this.getBabies() && (!this.getIsBaby())) {
+		if (!world.isRemote && this.getBabies() && (!this.getIsBaby()) && cause != BlockGlassJar.BlockCustom.FREEZE) {
 			int ii = rand.nextInt(5);
 			for (int i = 0; i <= ii; i++) {
 				//Spawn babies:
@@ -160,5 +163,71 @@ public class EntityPrehistoricFloraScorpion_Opsieobuthus extends EntityPrehistor
 		}
 
 	}
+
+	//-------------------
+	//Displays general:
+	public static float getScaler(@Nullable String variant) {
+		return RenderScorpion_Opsieobuthus.getScaler();
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderScorpion_Opsieobuthus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelScorpion;
+	}
+
+
+	//-------------------
+	//Entomology Case
+	public static double offsetCase(@Nullable String variant) {
+		return 0.185;
+	}
+	//-------------------
+
+
+	//-------------------
+	//Taxidermy:
+	public static double offsetWall(@Nullable String variant) {
+		return 0.075;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.45;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.6F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.06;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0F;
+	}
+	//-------------------
 
 }

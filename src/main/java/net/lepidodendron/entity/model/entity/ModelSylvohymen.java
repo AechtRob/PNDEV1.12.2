@@ -157,16 +157,10 @@ public class ModelSylvohymen extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body.offsetZ = -0.07F;
-        this.body.render(0.015F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticDisplayCase(float f) {
+        this.body.offsetZ = -0.080F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
     }
 
     @Override
