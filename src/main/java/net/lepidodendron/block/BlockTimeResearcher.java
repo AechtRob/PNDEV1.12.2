@@ -957,7 +957,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public int[] getSlotsForFace(EnumFacing side) {
-			return new int[]{0,1};
+			return new int[]{0};
 		}
 
 		@Override
@@ -1014,9 +1014,6 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 					}
 				}
 			}
-			if (index == 1)
-				return false;
-
 			return false;
 		}
 

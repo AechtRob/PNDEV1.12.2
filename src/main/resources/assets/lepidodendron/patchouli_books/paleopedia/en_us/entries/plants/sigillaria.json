@@ -76,7 +76,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_sigillaria",
 			"type": "text",
-			"text": ""
+			"text": "For general details on the Lepidodendrales Order, see $(l:plants/lepidodendron)Lepidodendron$(/l). Sigillaria is a somewhat more distinctive member of this Order, and is known from unusually early, from the late Devonian onwards. The spiralled leaf scar pattern on these trees was somewhat more grid-like than the diagonal patterns of most of the Order, and the stems and trunk were marginally less woody and performed photosynthetic function for longer than the shoots of most other types."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sigillaria",
+			"type": "text",
+			"text": "The shoots of the plant were not expanded out but remained in a bushy mop of long thin leaves at the top of the stems. The stems sometimes branched, leading to plants with more than one bottlebrush-like crown. Sigillaria grew in coal swamps but is also found in drier, floodplain-like or river-like environments."
 		}
 	]
 }

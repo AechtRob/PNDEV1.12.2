@@ -1,0 +1,43 @@
+{
+	"name": "Valmeyerodendron",
+	"read_by_default": true,
+	"icon": "lepidodendron:valmeyerodendron_sapling",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_valmeyerodendron",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_valmeyerodendron",
+			"title": "Valmeyerodendron",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Propagation:$() $(l:basics/collecting_plants)Spore-bearing plants$(/l)$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
+		},
+		{
+			"type": "multiblock",
+			"name": "Valmeyerodendron sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "     ","     ","     ","     ","     " ],
+					[ "     ","  B  ","     "," B   ","    B" ],
+					[ "     ","  A  ","     "," A   ","    A" ],
+					[ "     ","  A  ","     "," A AA","    A" ],
+					[ "     ","  A  ","     "," AAA ","     " ],
+					[ "     ","  A  ","  A  ","  A  ","     " ],
+					[ "     ","     ","  A  ","     ","     " ],
+					[ "     ","     ","  A  ","     ","     " ],
+					[ "     ","     ","  0  ","     ","     " ]
+				],
+				"mapping": {
+					"B": "lepidodendron:valmeyerodendron_strobilus",
+					"A": "lepidodendron:valmeyerodendron_log",
+					"0": "lepidodendron:valmeyerodendron_log"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_valmeyerodendron",
+			"type": "text",
+			"text": "For general details on the Lepidodendrales Order, see $(l:plants/lepidodendron)Lepidodendron$(/l). Valmeyerodendron was an early member of this Order, known in the early Carboniferous, not growing as tall as they would later, and with leaves not so long. It is thought to have had a somewhat shrubby growth."
+		}
+	]
+}

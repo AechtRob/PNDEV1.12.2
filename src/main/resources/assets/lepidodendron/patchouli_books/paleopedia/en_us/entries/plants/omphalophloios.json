@@ -1,0 +1,40 @@
+{
+	"name": "Omphalophloios",
+	"read_by_default": true,
+	"icon": "lepidodendron:omphalophloios_sapling",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_omphalophloios",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_omphalophloios",
+			"title": "Omphalophloios",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Propagation:$() $(l:basics/collecting_plants)Spore-bearing plants$(/l)$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
+		},
+		{
+			"type": "multiblock",
+			"name": "Omphalophloios sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "C" ],
+					[ "B" ],
+					[ "B" ],
+					[ "A" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"C": "lepidodendron:omphalophloios_top",
+					"B": "lepidodendron:omphalophloios_centre",
+					"A": "lepidodendron:omphalophloios",
+					"0": "lepidodendron:omphalophloios_base"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_omphalophloios",
+			"type": "text",
+			"text": "For general details on the Lepidodendrales Order, see $(l:plants/lepidodendron)Lepidodendron$(/l). Omphalophloios is thought to have grown far smaller than most of its relatives, forming a shrub-height single-stemmed plant with a network of small branches forming a less expansive messy crown. It may have branched. It is identified, like most, from distinctive leaf base patterns and stem morphology, which are however very similar to Lepidodendron."
+		}
+	]
+}

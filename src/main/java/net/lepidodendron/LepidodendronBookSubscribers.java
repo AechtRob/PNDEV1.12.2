@@ -480,8 +480,8 @@ public class LepidodendronBookSubscribers {
 					nestString = " lays eggs into mounds in blocks";
 				}
 				else if (((EntityPrehistoricFloraAgeableBase) entity).hasNest()) {
-					if (((EntityPrehistoricFloraLandBase) entity).placesNest()
-							&& (!((EntityPrehistoricFloraLandBase) entity).isNestMound())) {
+					if (((EntityPrehistoricFloraAgeableBase) entity).placesNest()
+							&& (!((EntityPrehistoricFloraAgeableBase) entity).isNestMound())) {
 						nestString = " if it has no nest, places a new nest along with its eggs when it lays";
 					}
 					else {

@@ -60,7 +60,27 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_lepidodendron",
 			"type": "text",
-			"text": ""
+			"text": "Lepidodendron is the namesake for the Order of arborescent (tree-like) lycopsids which flourished in the Carboniferous period. They were related to modern Isoetes as well as more distantly to club mosses. Lepidodendron itself is well-known in the fossil record, and the name refers to the fossil stems and leaves as well as being applied to the whole-plant itself. The plants grew very tall, up to 50 m, with bases over 1 m wide, and formed a thick trunk-like stem covered"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lepidodendron",
+			"type": "text",
+			"text": "in the spiralled pattern of discarded leaf-bases, leading to them sometimes being called \"scale trees\". The various types of Lepidodendrale are often distinguished by these leaf-scar patterns. This outermost layers of leaf-bases became hard, somewhat like some pine bark, and the stems became somewhat woody with age to support their great size, but were not formed mostly of wood, with the centres of them being more like a hard pith and the trees were probably reasonably"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lepidodendron",
+			"type": "text",
+			"text": "flexible. The plant grew initially without expanding its crown, which only expanded at maturity into a network of branching smaller shoots and leaves upon the tips of which were produced the spore-bearing strobili. These strobili were similar to long, thin pine cones in shape and texture, up to over 50 cm in length (the fossils of these are known as \"Lepidostrobus\"). These trees did not form extensive roots, but had massive underground stem-like attachments"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lepidodendron",
+			"type": "text",
+			"text": "to hold them in place, called \"Stigmaria\", with root-like filaments on them. The leaves of these trees (\"Lepidophylloides\" or \"Cyperites\" depending on the preservation or shape)were long and thin with one central vein, and only present on young shoots. They formed a major part of the flora of the lush coal swamps of the Carboniferous, going extinct in most locations towards the end of the Carboniferous but clinging on in the relict coal swamps of Cathaysia"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lepidodendron",
+			"type": "text",
+			"text": "during the Permian and going extinct finally by the end of the Permian. We do not know how fast these plants grew or if they died after setting spores. The dense burying of these trees in often-anoxic swamp conditions, and a comparative lack of fungi and bacteria capable of breaking their woody tissue down, led to the greatest period of coal-formation on earth."
 		}
 	]
 }

@@ -1,0 +1,67 @@
+{
+	"name": "Lepidophloios",
+	"read_by_default": true,
+	"icon": "lepidodendron:lepidophloios_sapling",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_lepidophloios",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lepidophloios",
+			"title": "Lepidophloios",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Propagation:$() $(l:basics/collecting_plants)Spore-bearing plants$(/l)$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
+		},
+		{
+			"type": "multiblock",
+			"name": "Lepidophloios sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "             ","             ","             ","             ","      E      ","             ","    E   E    ","             ","      E      ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","      E      ","             ","    E   E    ","             ","      E      ","             ","             ","             ","             " ],
+					[ "             ","             ","      E      ","      E      ","    EEAEE    ","    E E E    ","  EEAE EAEE  ","    E E E    ","    EEAEE    ","      E      ","      E      ","             ","             " ],
+					[ "             ","             ","      E      ","             ","    E A E    ","             ","  E A   A E  ","             ","    E A E    ","             ","      E      ","             ","             " ],
+					[ "             ","             ","      D      ","             ","    D A D    ","             ","    A   A D  ","             ","    D A D    ","             ","             ","             ","             " ],
+					[ "      E      ","      E      ","    EEAEE    ","             ","  E   A   E  ","  E       E  ","EEA A   A AEE","  E       E  ","  E   A   E  ","             ","    EEAEE    ","      E      ","      E      " ],
+					[ "      E      ","             ","    E A E    ","             ","  E       E  ","      B      ","E A  CAC  A E","      B      ","  E       E  ","             ","    E A E    ","             ","      E      " ],
+					[ "      D      ","             ","        D    ","      A      ","          D  ","             ","D  A  A  A   ","             ","          D  ","      A      ","    D        ","             ","      D      " ],
+					[ "             ","             ","             ","             ","      B      ","      B      ","    CCACC    ","      B      ","      B      ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","             ","      A      ","             ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","             ","             ","      A      ","     AAA     ","      A      ","             ","             ","             ","             ","             " ],
+					[ "             ","             ","             ","      B      ","      B      ","      A      ","   CCA0ACC   ","      A      ","      B      ","      B      ","             ","             ","             " ]
+				],
+				"mapping": {
+					"E": "lepidodendron:lepidophloios_leaves",
+					"D": "lepidodendron:lepidophloios_strobilus[facing=down]",
+					"C": "lepidodendron:lepidophloios_log[facing=east]",
+					"B": "lepidodendron:lepidophloios_log[facing=up]",
+					"A": "lepidodendron:lepidophloios_log[facing=north]",
+					"0": "lepidodendron:lepidophloios_log[facing=north]"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lepidophloios",
+			"type": "text",
+			"text": "For general details on the Lepidodendrales Order, see $(l:plants/lepidodendron)Lepidodendron$(/l). Lepiodophloios is member of this Order, very similar to Lepidodendron, but which had spores enclosed in a fleshy layer for protection, somewhat like fruit."
+		}
+	]
+}

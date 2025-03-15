@@ -61,7 +61,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_bothrodendron",
 			"type": "text",
-			"text": ""
+			"text": "For general details on the Lepidodendrales Order, see $(l:plants/lepidodendron)Lepidodendron$(/l). Bothrodendron is a form of these trees from the middle Carboniferous which grew more cylindrically, something like halfway between Lepidodendron and $(l:plants/sigillaria)Sigillaria$(/l), and with a distinguishing pattern of leaf-scars. The strobili of Bothrodendron are known and are referred to as \"Bothrodendrostrobus\"."
 		}
 	]
 }
