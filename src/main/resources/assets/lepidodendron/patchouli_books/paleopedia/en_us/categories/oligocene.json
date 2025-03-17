@@ -1,6 +1,6 @@
 {
     "name": "Oligocene",
-    "description": "3309 - 23.03 mya$(br2)$$(l)An (N)Whaling!$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System.",
+    "description": "3309 - 23.03 mya$(br)$(l)An (N)Whaling!$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System.",
     "icon": "paleopedia:textures/category_icon/icon_oligocene.png",
     "parent": "lepidodendron:paleogene",
     "sortnum": 3

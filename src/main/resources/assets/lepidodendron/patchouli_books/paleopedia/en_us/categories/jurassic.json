@@ -1,6 +1,6 @@
 {
     "name": "Jurassic",
-    "description": "201.4 - 145.0 mya$(br2)$(l)Welcome... to Jurassic Park$()$(br)This period is known for the explosion in dinosaur diversity, as well as when the ancestors to modern avians first arose.",
+    "description": "201.4 - 145.0 mya$(br)$(l)Welcome... to Jurassic Park$()$(br)This period is known for the explosion in dinosaur diversity, as well as when the ancestors to modern avians first arose.",
     "icon": "paleopedia:textures/category_icon/icon_jurassic.png",
     "sortnum": 8
 }

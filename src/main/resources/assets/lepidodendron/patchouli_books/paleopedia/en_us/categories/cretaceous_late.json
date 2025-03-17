@@ -1,6 +1,6 @@
 {
     "name": "Late Cretaceous",
-    "description": "100.5 - 66.0 mya$(br2)$(l)+20 km$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System.",
+    "description": "100.5 - 66.0 mya$(br)$(l)+20 km$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System.",
     "icon": "paleopedia:textures/category_icon/icon_late_cretaceous.png",
     "parent": "lepidodendron:cretaceous",
     "sortnum": 2

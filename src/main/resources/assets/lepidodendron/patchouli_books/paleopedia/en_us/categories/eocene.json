@@ -1,6 +1,6 @@
 {
     "name": "Eocene",
-    "description": "56.0 - 33.9 mya$(br2)$(l)An (N)Dawn of the Modern Era$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System.",
+    "description": "56.0 - 33.9 mya$(br)$(l)An (N)Dawn of the Modern Era$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System.",
     "icon": "paleopedia:textures/category_icon/icon_eocene.png",
     "parent": "lepidodendron:paleogene",
     "sortnum": 2

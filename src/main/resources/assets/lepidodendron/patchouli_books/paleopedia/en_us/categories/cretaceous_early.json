@@ -1,6 +1,6 @@
 {
     "name": "Early Cretaceous",
-    "description": "145.0 - 100.5 mya$(br2)$(l)+20 km$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System.",
+    "description": "145.0 - 100.5 mya$(br)$(l)+20 km$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System.",
     "icon": "paleopedia:textures/category_icon/icon_early_cretaceous.png",
     "parent": "lepidodendron:cretaceous",
     "sortnum": 1

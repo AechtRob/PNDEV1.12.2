@@ -36,7 +36,7 @@ public class ItemGermanodactylusRaw extends ElementsLepidodendronMod.ModElement 
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_germanodactylus", ItemGermanodactylusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_germanodactylus@male", ItemGermanodactylusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemGermanodactylusRaw.block);
 		OreDictionary.registerOre("pnfurnacePterosaur", ItemGermanodactylusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemGermanodactylusRaw.block);

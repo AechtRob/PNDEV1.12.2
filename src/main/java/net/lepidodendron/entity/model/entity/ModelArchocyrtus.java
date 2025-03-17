@@ -145,7 +145,31 @@ public class ModelArchocyrtus extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.Body.offsetY = -2.0F;
+        this.Body.offsetX = 0.9F;
+        this.Body.rotateAngleY = (float)Math.toRadians(120);
+        this.Body.rotateAngleX = (float)Math.toRadians(1);
+        this.Body.rotateAngleZ = (float)Math.toRadians(0);
+        this.Body.scaleChildren = true;
+        float scaler = 2.85F;
+        this.Body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(mouth, -0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(WingL, 0.3F, -1.2F, 0.0F);
+        this.setRotateAngle(WingR, 0.3F, 1.2F, 0.0F);
+        this.setRotateAngle(legR1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL3, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Body.render(f);
+        //Reset rotations, positions and sizing:
+        this.Body.setScale(1.0F, 1.0F, 1.0F);
+        this.Body.scaleChildren = false;
+        resetToDefaultPose();
     }
     
     public void renderStaticDisplayCase(float f) {

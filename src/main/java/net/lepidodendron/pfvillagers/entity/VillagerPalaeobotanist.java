@@ -92,7 +92,7 @@ public class VillagerPalaeobotanist {
         palaeoCareer.addTrade(4, new EntityVillager.ListItemForEmeralds(ItemBottleOfLatex.block, new EntityVillager.PriceInfo(1, 1)));
 
         //The cleaned fossil item here gets overridden in the EventHandler to be the actual fossils needed:
-        palaeoCareer.addTrade(5, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemFossilClean.block, 1), new EntityVillager.PriceInfo(2, 2)));
+        //palaeoCareer.addTrade(5, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemFossilClean.block, 1), new EntityVillager.PriceInfo(2, 2)));
         palaeoCareer.addTrade(5, new ListEnchantedBookForEmeralds(Enchantments.TIME_REVERSAL, new EntityVillager.PriceInfo(16, 16)));
 
         MapGenStructureIO.registerStructureComponent(VillageComponentPalaeobotanistHouse.class, "palaeobotanisthouse");

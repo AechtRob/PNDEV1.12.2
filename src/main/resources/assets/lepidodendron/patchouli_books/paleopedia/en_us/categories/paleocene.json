@@ -1,6 +1,6 @@
 {
     "name": "Paleocene",
-    "description": "66.0 - 56.0 mya$(br2)$$(l)An (N)Revitalization of Life$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System.",
+    "description": "66.0 - 56.0 mya$(br)$(l)An (N)Revitalization of Life$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System.",
     "icon": "paleopedia:textures/category_icon/icon_paleocene.png",
     "parent": "lepidodendron:paleogene",
     "sortnum": 1
