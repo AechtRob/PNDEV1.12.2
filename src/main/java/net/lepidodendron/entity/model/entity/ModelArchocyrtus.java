@@ -146,8 +146,8 @@ public class ModelArchocyrtus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Body.offsetY = -2.0F;
-        this.Body.offsetX = 0.9F;
+        this.Body.offsetY = -3.0F;
+        this.Body.offsetX = -0.4F;
         this.Body.rotateAngleY = (float)Math.toRadians(120);
         this.Body.rotateAngleX = (float)Math.toRadians(1);
         this.Body.rotateAngleZ = (float)Math.toRadians(0);
@@ -155,6 +155,7 @@ public class ModelArchocyrtus extends ModelBasePalaeopedia {
         float scaler = 2.85F;
         this.Body.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(Body, 0.3F, 3.8F, 0.0F);
         this.setRotateAngle(mouth, -0.8F, 0.0F, 0.0F);
         this.setRotateAngle(WingL, 0.3F, -1.2F, 0.0F);
         this.setRotateAngle(WingR, 0.3F, 1.2F, 0.0F);

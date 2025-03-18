@@ -168,14 +168,15 @@ public class ModelAdelophthalmus extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.carapace.offsetY = -0.3F;
         this.carapace.offsetX = 0.1F;
+        this.carapace.offsetZ = 1.0F;
         this.carapace.rotateAngleY = (float) Math.toRadians(210);
         this.carapace.rotateAngleX = (float) Math.toRadians(8);
         this.carapace.rotateAngleZ = (float) Math.toRadians(-4);
         this.carapace.scaleChildren = true;
-        float scaler = 0.7F;
+        float scaler = 1.0F;
         this.carapace.setScale(scaler, scaler, scaler);
         //Start of pose:
-            this.setRotateAngle(carapace, 0.7F, 3.6F, -0.2F);
+        this.setRotateAngle(carapace, 0.7F, 3.6F, -0.2F);
         this.setRotateAngle(segment, -0.1F, 0.0F, 0.0F);
         this.setRotateAngle(segment2, -0.1F, 0.0F, 0.0F);
         this.setRotateAngle(segment3, -0.1F, 0.0F, 0.0F);

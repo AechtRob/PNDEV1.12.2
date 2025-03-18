@@ -178,15 +178,22 @@ public class ModelAcherontiscus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Root.offsetY = -2.0F;
-        this.Root.offsetX = 0.4F;
+        this.Root.offsetX = -0.35F;
+        this.Root.offsetZ = 1.25F;
         this.Root.rotateAngleY = (float)Math.toRadians(200);
         this.Root.rotateAngleX = (float)Math.toRadians(16);
         this.Root.rotateAngleZ = (float)Math.toRadians(-16);
         this.Root.scaleChildren = true;
-        float scaler = 2.93F;
+        float scaler = 4.0F;
         this.Root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Root, 0.4F, 3.8F, 0.0F);
+        this.setRotateAngle(Body1, -0.1F, -0.2F, 0.05F);
+        this.setRotateAngle(Body2, -0.05F, -0.2F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.1F, 0.3F, -0.05F);
+        this.setRotateAngle(Body5, 0.2F, 0.4F, -0.1F);
+        this.setRotateAngle(Head, 0.0F, 0.2F, -0.1F);
         //End of pose, now render the model:
         this.Root.render(f);
         //Reset rotations, positions and sizing:

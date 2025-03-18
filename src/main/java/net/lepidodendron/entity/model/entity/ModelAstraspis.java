@@ -202,6 +202,28 @@ public class ModelAstraspis extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Astraspis.offsetY = -2.5F;
+        this.Astraspis.offsetX = 1.0F;
+        this.Astraspis.rotateAngleY = (float)Math.toRadians(120);
+        this.Astraspis.rotateAngleX = (float)Math.toRadians(1);
+        this.Astraspis.rotateAngleZ = (float)Math.toRadians(0);
+        this.Astraspis.scaleChildren = true;
+        float scaler = 4.5F;
+        this.Astraspis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Astraspis, 0.2F, 3.8F, 0.0F);
+        this.setRotateAngle(Tail1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Tail5, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Astraspis.render(f);
+        //Reset rotations, positions and sizing:
+        this.Astraspis.setScale(1.0F, 1.0F, 1.0F);
+        this.Astraspis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

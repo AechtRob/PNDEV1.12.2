@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Belemnoidea"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/aulacoceras.png"],
-			"title": "A. sulcatum",
-			"text": ""
+			"type": "entity",
+			"name": "A. sulcatum",
+			"entity": "lepidodendron:prehistoric_flora_aulacoceras",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_aulacoceras",

@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_aulacephalodon",
 			"title": "Aulacephalodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Geikiidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Geikiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/aulacephalodon.png"],
-			"title": "A. bainii",
-			"text": ""
+			"type": "entity",
+			"name": "A. bainii",
+			"entity": "lepidodendron:prehistoric_flora_aulacephalodon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_aulacephalodon",
 			"type": "text",
-			"text": "Aulacephalodon is a medium sized synapsid from the Permian period. It was a Geikiid, which had characteristic bulbs on the tops and front of their heads and they had long tusks that they may have used for digging. Aulacephalodon was the only genus among dicynodonts to possess canine tusks."
+			"text": "Aulacephalodon is a medium sized synapsid from the Permian period. It was a geikiid, which had characteristic bulbs on the tops and front of their heads and they had long tusks that they may have used for digging. Aulacephalodon was the only genus among dicynodonts to possess canine tusks."
 		},
 		{
 			"type": "lepidodendron:diet",

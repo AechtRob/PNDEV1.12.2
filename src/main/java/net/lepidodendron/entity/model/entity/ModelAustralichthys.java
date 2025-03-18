@@ -198,16 +198,22 @@ public class ModelAustralichthys extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -1.05F;
-        this.base.offsetX = 0.8F;
+        this.base.offsetY = -0.5F;
+        this.base.offsetX = 0.25F;
+        this.base.offsetZ = 0.5F;
         this.base.rotateAngleY = (float)Math.toRadians(262);
         this.base.rotateAngleX = (float)Math.toRadians(12);
         this.base.rotateAngleZ = (float)Math.toRadians(-12);
         this.base.scaleChildren = true;
-        float scaler = 2.63F;
+        float scaler = 3.5F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(base, 0.3F, 3.8F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.base.render(f);
         //Reset rotations, positions and sizing:

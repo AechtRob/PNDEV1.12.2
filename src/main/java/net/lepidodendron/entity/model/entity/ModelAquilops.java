@@ -537,7 +537,7 @@ public class ModelAquilops extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -1.0F;
-        this.body.offsetX = -0.1F;
+        this.body.offsetX = 0.1F;
         this.body.rotateAngleY = (float)Math.toRadians(225);
         this.body.rotateAngleX = (float)Math.toRadians(14);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);

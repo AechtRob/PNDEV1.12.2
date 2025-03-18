@@ -1100,6 +1100,34 @@ public class ModelArthropleura extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Arthropleura.offsetY = -0.5F;
+        this.Arthropleura.offsetX = 0.9F;
+        this.Arthropleura.offsetZ = 1.8F;
+        this.Arthropleura.rotateAngleY = (float)Math.toRadians(120);
+        this.Arthropleura.rotateAngleX = (float)Math.toRadians(1);
+        this.Arthropleura.rotateAngleZ = (float)Math.toRadians(0);
+        this.Arthropleura.scaleChildren = true;
+        float scaler = 0.525F;
+        this.Arthropleura.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Arthropleura, 0.8F, -8.4F, -0.4F);
+        this.setRotateAngle(FrontSegment3, -0.2182F, -0.1309F, 0.0F);
+        this.setRotateAngle(FrontSegment4, -0.0873F, -0.1309F, 0.0F);
+        this.setRotateAngle(HeadSegment, 0.1745F, -0.1309F, 0.0F);
+        this.setRotateAngle(FrontSegment2, 0.0873F, 0.0873F, 0.0F);
+        this.setRotateAngle(Back2, 0.0873F, 0.1309F, 0.0F);
+        this.setRotateAngle(Back, 0.0437F, 0.0897F, 0.0017F);
+        this.setRotateAngle(BackSegment1, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(BackSegment2, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(BackSegment3, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(AnalSegment, 0.0F, 0.2182F, 0.0F);
+        //End of pose, now render the model:
+        this.Arthropleura.render(f);
+        //Reset rotations, positions and sizing:
+        this.Arthropleura.setScale(1.0F, 1.0F, 1.0F);
+        this.Arthropleura.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

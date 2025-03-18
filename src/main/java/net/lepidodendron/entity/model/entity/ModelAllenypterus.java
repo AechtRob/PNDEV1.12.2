@@ -233,7 +233,8 @@ public class ModelAllenypterus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Allenypterus.offsetY = -3.0F;
-        this.Allenypterus.offsetX = 0.5F;
+        this.Allenypterus.offsetX = 0.9F;
+        this.Allenypterus.offsetZ = 2.8F;
         this.Allenypterus.rotateAngleY = (float) Math.toRadians(210);
         this.Allenypterus.rotateAngleX = (float) Math.toRadians(8);
         this.Allenypterus.rotateAngleZ = (float) Math.toRadians(-4);
@@ -241,7 +242,7 @@ public class ModelAllenypterus extends ModelBasePalaeopedia {
         float scaler = 7.5F;
         this.Allenypterus.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(Allenypterus, 0.2F, 3.7F, 0.0F);
+        this.setRotateAngle(Allenypterus, 0.2F, 3.9F, 0.0F);
         this.setRotateAngle(Body1, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
         this.setRotateAngle(Body3, 0.0F, -0.2F, 0.0F);

@@ -179,6 +179,23 @@ public class ModelAscoceras extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.shell.offsetY = -2.0F;
+        this.shell.offsetX = 0.05F;
+        this.shell.rotateAngleY = (float)Math.toRadians(200);
+        this.shell.rotateAngleX = (float)Math.toRadians(8);
+        this.shell.rotateAngleZ = (float)Math.toRadians(-8);
+        this.shell.scaleChildren = true;
+        float scaler = 3.46F;
+        this.shell.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(shell, 0.3F, 3.8F, 0.0F);
+        //End of pose, now render the model:
+        this.shell.render(f);
+        //Reset rotations, positions and sizing:
+        this.shell.setScale(1.0F, 1.0F, 1.0F);
+        this.shell.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

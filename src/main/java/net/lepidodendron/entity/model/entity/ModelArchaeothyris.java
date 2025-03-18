@@ -411,7 +411,7 @@ public class ModelArchaeothyris extends ModelBasePalaeopedia {
         this.hips.rotateAngleY = (float)Math.toRadians(-120);
         this.hips.rotateAngleX = (float)Math.toRadians(15);
         this.hips.rotateAngleZ = (float)Math.toRadians(-10);
-        float scaler = 3.9F;
+        float scaler = 3.6F;
         this.hips.scaleChildren = true;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:

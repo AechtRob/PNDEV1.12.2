@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_atopodentatus",
 			"title": "Atopodentatus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Neodiapsida$(br)>Sauropterygia"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/atopodentatus.png"],
-			"title": "A. unicus",
-			"text": ""
+			"type": "entity",
+			"name": "A. unicus",
+			"entity": "lepidodendron:prehistoric_flora_atopodentatus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_atopodentatus",
 			"type": "text",
-			"text": "Atopodentatus unicus is a genus of herbivorous aquatic reptile from the middle Triassic of China. The genus name, meaning \"Unusual teeth\" was originally given to the animal in 2014 when it was described upon a crushed skull, which made it appear as if the animal's mouth shape resembled a zipper made out of its teeth. It took another two years for two new specimens to be described, showing the true shape of the animal's mouth into the shape we see today."
+			"text": "Atopodentatus unicus is a genus of herbivorous aquatic reptile from the Middle Triassic of China. The genus name, meaning \"Unusual teeth\" was originally given to the animal in 2014 when it was described upon a crushed skull, which made it appear as if the animal's mouth shape resembled a zipper made out of its teeth. It took another two years for two new specimens to be described, showing the true shape of the animal's mouth into the shape we see today."
 		},
 		{
 			"type": "lepidodendron:diet",

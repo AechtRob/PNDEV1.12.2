@@ -254,7 +254,8 @@ public class ModelAnderella extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -2.0F;
-        this.body.offsetX = 0.6F;
+        this.body.offsetX = 1.8F;
+        this.body.offsetZ = 1.0F;
         this.body.rotateAngleY = (float)Math.toRadians(220);
         this.body.rotateAngleX = (float)Math.toRadians(28);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);
@@ -262,7 +263,10 @@ public class ModelAnderella extends ModelBasePalaeopedia {
         float scaler = 6.63F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(body, 0.2F, 3.8F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
         //End of pose, now render the model:
         this.body.render(f);
         //Reset rotations, positions and sizing:

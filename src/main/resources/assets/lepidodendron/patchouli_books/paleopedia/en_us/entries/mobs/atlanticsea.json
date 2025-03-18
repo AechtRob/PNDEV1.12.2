@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_jellyfish7",
 			"title": "Atlantic Sea Nettle",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous+$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Pelagiidae$(br)>$(o)Chrysaora"
+			"text": "$(l)Temporal Range:$() Cretaceous - Present$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Pelagiidae$(br)>$(o)Chrysaora"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/jelly_atlantic.png"],
-			"title": "C. quinquecirrha",
-			"text": ""
+			"type": "entity",
+			"name": "C. quinquecirrha",
+			"entity": "lepidodendron:prehistoric_flora_jellyfish7",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_jellyfish7",

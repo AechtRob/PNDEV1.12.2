@@ -412,8 +412,9 @@ public class ModelAnkylosphenodon extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Ankylosphenodon.offsetY = -2.0F;
-        this.Ankylosphenodon.offsetX = 1.2F;
+        this.Ankylosphenodon.offsetY = -1.5F;
+        this.Ankylosphenodon.offsetX = 1.5F;
+        this.Ankylosphenodon.offsetZ = 2.5F;
         this.Ankylosphenodon.rotateAngleY = (float)Math.toRadians(235);
         this.Ankylosphenodon.rotateAngleX = (float)Math.toRadians(18);
         this.Ankylosphenodon.rotateAngleZ = (float)Math.toRadians(-8);
@@ -421,7 +422,7 @@ public class ModelAnkylosphenodon extends ModelBasePalaeopedia {
         float scaler = 1.7F;
         this.Ankylosphenodon.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Ankylosphenodon, 0.3F, 3.8F, 0.0F);
         //End of pose, now render the model:
         this.Ankylosphenodon.render(f);
         //Reset rotations, positions and sizing:

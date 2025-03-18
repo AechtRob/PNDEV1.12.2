@@ -9,28 +9,29 @@
 			"trigger": "lepidodendron:pf_adv_book_aspidorhynchus",
 			"title": "Aspidorhynchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Aspidorhynchiformes$(br)>Aspidorhynchidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Aspidorhynchiformes$(br)>Aspidorhynchidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/aspidorhynchus.png"],
-			"title": "A. acutirostris",
-			"text": ""
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_aspidorhynchus",
-			"type": "text",
-			"text": "Aspidorhynchus is a genus of Actinopterygian fish that lived between the Late Jurassic in Europe, America and the Antarctic. the most obvious characteristic of Aspidorhynchus was the elongated rostrum, which would grow to be visibly longer than the jaw, giving the head the characteristic spear nosed"
+			"type": "entity",
+			"name": "A. acutirostris",
+			"entity": "lepidodendron:prehistoric_flora_aspidorhynchus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_aspidorhynchus",
 			"type": "text",
-			"text": "look it is most known for, structure most probably used to confer the animal better hydrodynamics while swimming, in a similar fashion to modern day swordfishes. The body of Aspidorhynchus was long and streamlined with dorsal and anal fins moved back towards the tail, a characteristic that allowed the animal to gain additional thrust, making it a very fast predator in its waters."
+			"text": "Aspidorhynchus is a genus of actinopterygian fish that lived from the Upper Jurassic in Europe, America and the Antarctic, into the Early Cretaceous in the Purbeck Group, England. The most obvious characteristic of Aspidorhynchus was the elongated rostrum, which would grow to be visibly longer than the jaw, giving the head the characteristic spear nosed"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_aspidorhynchus",
 			"type": "text",
-			"text": "Aspidorhynchus is the eponymous genus of the Aspidorhynchiformes, an order of fish close to the first Teleosts. Aspidorhynchus holds the status of being among the first fossil fishes to have ever been illustrated, with it's first artistic representation being dated all the way back to 1775, a whole 58 years prior to its official description by Louis Agassiz in 1833 in his work \"Recherches sur les poissons fossiles\"."
+			"text": "look it is most well known for, the structure most probably being used to confer the animal better hydrodynamics while swimming, in a similar fashion to modern day swordfishes. The body of Aspidorhynchus was long and streamlined with dorsal and anal fins moved back towards the tail, a characteristic that allowed the animal to gain additional thrust, making it a very fast predator in its waters."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aspidorhynchus",
+			"type": "text",
+			"text": "Aspidorhynchus is the eponymous genus of the Aspidorhynchiformes, an order of fish close to the first Teleosts. Aspidorhynchus holds the status of being among the first fossil fishes to have ever been illustrated, with its first artistic representation being dated all the way back to 1775, a whole 58 years prior to its official description by Louis Agassiz in 1833 in his work \"Recherches sur les poissons fossiles\"."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_aspidorhynchus",
