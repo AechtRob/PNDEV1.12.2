@@ -21,7 +21,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_attenborites",
 			"type": "text",
-			"text": "Attenborites is a lifeform from the late Ediacaran with fossils from Australia. They are small in size, 4.2–24mm, with a slightly wrinkled oval body shape, and are thought to have drifted through the water column. This genus is named after the British naturalist, David Attenborough, and was described in 2018."
+			"text": "Attenborites janeae comes from the Upper Ediacaran, with fossils found in the Flinders Ranges, South Australia. It is a wrinkled ovoid lifeform, growing up to 2.5 cm in diameter. It was unknown whether Attenborites was either a benthic or pelagic lifeform, that was until a recent paper looked at all known specimens. It was first noted that all specimens had a very sharp outer margin with no attachments to the seafloor, very much suggesting they were not tethered"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_attenborites",
+			"type": "text",
+			"text": "to the seafloor, and as such may have also been able to move. The next thing that was noted is that the amount of Attenborites preserved in such a small area and in one location is highly similar to how other pelagic forms are preserved, as they tend to cluster together, specially if they are a free-floating forms. With all this considered, it has been accepted that Attenborites is a pelagic lifeform, although it is still unknown what they are related to."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_attenborites",
+			"type": "text",
+			"text": "The generic name derives from the Latinised surname of Sir David Attenborough, a well known English biologist, broadcaster and natural historian."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_ateleaspis",
 			"title": "Ateleaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)>Chordata$(br)>Osteostraci$(br)>Ateleaspididae"
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Chordata$(br)>Osteostraci$(br)>Atelaspidiformes$(br)>Ateleaspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ateleaspis.png"],
-			"title": "A. tessellata",
-			"text": ""
+			"type": "entity",
+			"name": "A. tessellata",
+			"entity": "lepidodendron:prehistoric_flora_ateleaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ateleaspis",
 			"type": "text",
-			"text": "Ateleaspis is a Silurian to Devonian jawless fish. Its fossils were found in Silurian deposits in Norway and Scotland, and in Devonian deposits in Siberia. It was morphologically similar to Cephalaspis, posessing shovel like head armor and it was likely a benthic feeder, that used its head shape to look for food."
+			"text": "Ateleaspis is a Silurian to Devonian jawless fish. Its fossils were found in Silurian deposits in Norway and Scotland, and in Devonian deposits in Siberia. It was morphologically similar to Cephalaspis, possessing shovel like head armor and it was likely a benthic feeder, that used its head shape to look for food."
 		},
 		{
 			"type": "lepidodendron:diet",

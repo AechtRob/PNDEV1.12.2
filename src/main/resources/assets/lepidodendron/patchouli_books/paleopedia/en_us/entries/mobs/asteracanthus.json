@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Hybodontiformes$(br)>Hybodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/asteracanthus.png"],
-			"title": "A. ornatissimus",
-			"text": ""
+			"type": "entity",
+			"name": "A. ornatissimus",
+			"entity": "lepidodendron:prehistoric_flora_asteracanthus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_asteracanthus",
 			"type": "text",
-			"text": "Asteracanthus is hybodont shark from the Jurassic to Cretaceous, with some dubious records from earlier periods. Even though it was about 3m, it is known from a very well-preserved mostly complete specimen from Solnhofen. Its teeth suggest a durophagous diet, consisting of hard-shelled animals, and it probably had a benthic ecology."
+			"text": "Asteracanthus is hybodont shark from the Jurassic to Cretaceous, with some dubious records from earlier periods. Even though it was about 3 m, it is known from a very well-preserved, mostly complete, specimen from Solnhofen. Its teeth suggest a durophagous diet, consisting of hard-shelled animals, and it probably had a benthic ecology."
 		},
 		{
 			"type": "lepidodendron:diet",

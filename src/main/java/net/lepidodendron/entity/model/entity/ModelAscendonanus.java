@@ -267,15 +267,15 @@ public class ModelAscendonanus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.AscendonanusBase.offsetY = -0.15F;
-        this.AscendonanusBase.offsetX = -0.05F;
+        this.AscendonanusBase.offsetX = 0.05F;
         this.AscendonanusBase.rotateAngleY = (float)Math.toRadians(105);
         this.AscendonanusBase.rotateAngleX = (float)Math.toRadians(2);
         this.AscendonanusBase.rotateAngleZ = (float)Math.toRadians(15);
         this.AscendonanusBase.scaleChildren = true;
-        float scaler = 0.22F;
+        float scaler = 0.35F;
         this.AscendonanusBase.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(AscendonanusBase, 0.3F, 3.8F, 0.0F);
         //End of pose, now render the model:
         this.AscendonanusBase.render(f);
         //Reset rotations, positions and sizing:

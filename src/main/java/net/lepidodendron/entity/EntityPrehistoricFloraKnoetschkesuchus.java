@@ -77,7 +77,7 @@ public class EntityPrehistoricFloraKnoetschkesuchus extends EntityPrehistoricFlo
 		return 0; //small
 	}
 
-	public static String getPeriod() {return "Triassic";}
+	public static String getPeriod() {return "Jurassic";}
 
 	//public static String getHabitat() {return "Terrestrial Archosauriform";}
 

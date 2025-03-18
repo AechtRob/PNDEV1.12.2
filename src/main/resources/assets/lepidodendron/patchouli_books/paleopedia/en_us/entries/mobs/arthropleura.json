@@ -9,28 +9,29 @@
 			"trigger": "lepidodendron:pf_adv_book_arthropleura",
 			"title": "Arthropleura",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Myriapoda$(br)>Diplopoda"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Myriapoda$(br)>Diplopoda$(br)>Arthropleuridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Arthropleura.png"],
-			"title": "A. armata",
-			"text": ""
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_arthropleura",
-			"type": "text",
-			"text": "Arthropleura is a giant millipede from the Carboniferous period and it would have been the largest known terrestrial invertebrate on earth. Although there is no solid evidence of its diet, it may have been an herbivore. It was considered to have mainly lived in coal forests."
+			"type": "entity",
+			"name": "A. armata",
+			"entity": "lepidodendron:prehistoric_flora_arthropleura",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_arthropleura",
 			"type": "text",
-			"text": "However, this is a misunderstanding due to the fact that research on the Carboniferous strata was biased towards the places where coal was collected. It is more likely that it lived in areas such as beaches where the density of plants was rather low, according to trackway fossils."
+			"text": "Arthropleura is a giant millipede from the Carboniferous period and it would have been the largest known terrestrial invertebrate on earth. Although there is no solid evidence of its diet, the current accepted consensus is that it was a detritivore, similar to most extant millipedes. Originally, it was considered to have mainly lived in coal forests. However, this is a misunderstanding due to the fact that research on the Carboniferous strata was biased towards"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_arthropleura",
 			"type": "text",
-			"text": "It's not well understood why Arthropleura became gigantic. A popular theory is that high oxygen levels played a role, but this is questionable given that large Arthropleura are also known from early Permian with relatively low oxygen levels.  "
+			"text": "the places where coal was collected. It is more likely that it lived in wide open areas such as beaches where the density of plants was rather low, according to trackway fossils. It's not well understood why Arthropleura became gigantic. A popular theory is that high oxygen levels played a role, but this has been put into question, as large arthropleurid fossil remains have been found before oxygen levels began to rise during the Carboniferous,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arthropleura",
+			"type": "text",
+			"text": "as well as in the Lower Permian, a period of time which had relatively low oxygen levels. Again, the current accepted consensus on this is that it grew to such large sizes due to the rather stable environmental and ecological conditions, as well as a lack of serious competition from anything larger. This may be the reason why they went extinct in the Permian, as their habitats slowly vanished and larger tetrapods started to evolve that could out compete them."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -314,16 +314,17 @@ public class ModelArchosaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Archosaurus.offsetY = 0.5F;
+        this.Archosaurus.offsetY = -0.5F;
         this.Archosaurus.offsetX = 0.8F;
+        this.Archosaurus.offsetZ = 3.25F;
         this.Archosaurus.rotateAngleY = (float)Math.toRadians(120);
         this.Archosaurus.rotateAngleX = (float)Math.toRadians(1);
         this.Archosaurus.rotateAngleZ = (float)Math.toRadians(0);
         this.Archosaurus.scaleChildren = true;
-        float scaler = 0.4F;
+        float scaler = 0.65F;
         this.Archosaurus.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(Archosaurus, 0.0F, 4.5F, 0.0F);
+        this.setRotateAngle(Archosaurus, 0.2F, 3.8F, 0.0F);
         this.setRotateAngle(Body1, 0.18F, -0.05F, 0.0F);
         this.setRotateAngle(Body2, -0.05F, -0.05F, 0.0F);
         this.setRotateAngle(upperBody, -0.05F, -0.05F, 0.0F);

@@ -208,6 +208,23 @@ public class ModelJellyfish extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Mainbody.offsetY = 0.3F;
+        this.Mainbody.offsetX = 0.0F;
+        this.Mainbody.rotateAngleY = (float)Math.toRadians(120);
+        this.Mainbody.rotateAngleX = (float)Math.toRadians(1);
+        this.Mainbody.rotateAngleZ = (float)Math.toRadians(0);
+        this.Mainbody.scaleChildren = true;
+        float scaler = 1.0F;
+        this.Mainbody.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.Mainbody.render(f);
+        //Reset rotations, positions and sizing:
+        this.Mainbody.setScale(1.0F, 1.0F, 1.0F);
+        this.Mainbody.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

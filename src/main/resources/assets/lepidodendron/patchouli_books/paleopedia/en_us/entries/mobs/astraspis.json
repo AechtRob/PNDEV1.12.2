@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorphi$(br)>Pteraspidiformes"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/astraspis.png"],
-			"title": "A. desiderata",
-			"text": ""
+			"type": "entity",
+			"name": "A. desiderata",
+			"entity": "lepidodendron:prehistoric_flora_astraspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_astraspis",

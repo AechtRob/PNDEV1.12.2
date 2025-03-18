@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_attercopus",
 			"title": "Attercopus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Arachnida$(br)>Uraraneida"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Arachnida$(br)>Uraraneida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/attercopus.png"],
-			"title": "A. fimbriunguis",
-			"text": ""
+			"type": "entity",
+			"name": "A. fimbriunguis",
+			"entity": "lepidodendron:prehistoric_flora_attercopus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_attercopus",
 			"type": "text",
-			"text": "Originally thought to be a trigonotarbid, Attercopus was later redescribed as the most primitive version of a true spider. Attercopus did not have spinnerets, however, it still would have produced silk from spigots located across the abdomen. It also had a segmented tail."
+			"text": "Originally thought to be a trigonotarbid, Attercopus was later redescribed as the most primitive genus of a true spider. Attercopus did not have spinnerets, however, it still would have produced silk from spigots located across the abdomen. It also had a segmented tail."
 		},
 		{
 			"type": "lepidodendron:diet",

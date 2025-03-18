@@ -295,7 +295,8 @@ public class ModelAcheronauta extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.base.offsetY = -1.0F;
-        this.base.offsetX = 0.7F;
+        this.base.offsetX = 1.25F;
+        this.base.offsetZ = 1.0F;
         this.base.rotateAngleY = (float)Math.toRadians(225);
         this.base.rotateAngleX = (float)Math.toRadians(28);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);

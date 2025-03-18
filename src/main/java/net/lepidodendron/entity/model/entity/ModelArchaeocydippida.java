@@ -473,6 +473,7 @@ public class ModelArchaeocydippida extends ModelBasePalaeopedia {
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(main, 0.2F, 3.5F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

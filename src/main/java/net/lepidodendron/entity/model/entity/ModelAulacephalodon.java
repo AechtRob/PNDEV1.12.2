@@ -311,6 +311,42 @@ public class ModelAulacephalodon extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.aulacephalodon.offsetY = -0.2F;
+        this.aulacephalodon.offsetX = -0.05F;
+        this.aulacephalodon.rotateAngleY = (float)Math.toRadians(120);
+        this.aulacephalodon.rotateAngleX = (float)Math.toRadians(1);
+        this.aulacephalodon.rotateAngleZ = (float)Math.toRadians(0);
+        this.aulacephalodon.scaleChildren = true;
+        float scaler = 0.5F;
+        this.aulacephalodon.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(aulacephalodon, 0.1F, 3.8F, 0.0F);
+        this.setRotateAngle(body, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(head, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftfrontleg, -0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(leftfrontleg2, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftfrontleg3, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(rightfrontleg4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(rightfrontleg5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightfrontleg6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftBackLeg4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(leftBackLeg5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftBackLeg6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBackLeg2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(rightBackLeg3, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBackLeg7, 0.4F, 0.5F, 0.0F);
+        this.setRotateAngle(tail, -0.1F, 0.4F, 0.0F);
+        this.setRotateAngle(tail, -0.2F, 0.3F, 0.0F);
+        this.setRotateAngle(tail2, -0.2F, 0.1F, 0.0F);
+        //End of pose, now render the model:
+        this.aulacephalodon.render(f);
+        //Reset rotations, positions and sizing:
+        this.aulacephalodon.setScale(1.0F, 1.0F, 1.0F);
+        this.aulacephalodon.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

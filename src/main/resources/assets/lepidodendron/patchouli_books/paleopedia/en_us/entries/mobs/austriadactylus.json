@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Pterosauria$(br)>Preondactylia"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/austriadactylus.png"],
-			"title": "A. cristatus",
-			"text": ""
+			"type": "entity",
+			"name": "A. cristatus",
+			"entity": "lepidodendron:prehistoric_flora_austriadactylus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_austriadactylus",
 			"type": "text",
-			"text": "Austriadactylus cristatus was a  basal pterosaur that lived during the Late Triassic of Austria. The specific name \"cristatus\" refers to the short, 2cm tall crest running down the pterosaur's snout. Unlike other basal pterosaurs, the tail of this pterosaur didn't have stiffening, rod-like vertebral extensions, making it unusually flexible."
+			"text": "Austriadactylus cristatus was a basal pterosaur that lived during the Upper Triassic of Austria. The specific name \"cristatus\" refers to the short, 2cm tall crest running down the pterosaur's snout. Unlike other basal pterosaurs, the tail of this pterosaur didn't have stiffening, rod-like vertebral extensions, making it unusually flexible."
 		},
 		{
 			"type": "lepidodendron:diet",

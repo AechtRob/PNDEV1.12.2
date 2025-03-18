@@ -265,7 +265,7 @@ public class ModelAntineosteus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
-//Rotations, positions and sizing:
+        //Rotations, positions and sizing:
         this.Antineosteus.offsetY = 0.0F;
         this.Antineosteus.offsetX = 0.5F;
         this.Antineosteus.rotateAngleY = (float)Math.toRadians(120);

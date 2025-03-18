@@ -313,6 +313,47 @@ public class ModelAustriadactylus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.chest.offsetY = 0.4F;
+        this.chest.offsetX = 0.05F;
+        this.chest.offsetZ = 0.5F;
+        this.chest.rotateAngleY = (float)Math.toRadians(120);
+        this.chest.rotateAngleX = (float)Math.toRadians(1);
+        this.chest.rotateAngleZ = (float)Math.toRadians(0);
+        this.chest.scaleChildren = true;
+        float scaler = 0.25F;
+        this.chest.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(chest, 0.4F, 3.9F, -0.2F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(footL, 1.0016444577195458F, 0.0F, 0.0F);
+        this.setRotateAngle(wing2R, 0.0F, 0.0F, 1.6845917940249266F);
+        this.setRotateAngle(handR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.22759093446006054F, 0.0F, 0.0F);
+        this.setRotateAngle(underhead1, -0.045553093477052F, 0.0F, 0.0F);
+        this.setRotateAngle(wing1L, 0.0F, 0.0F, -0.091106186954104F);
+        this.setRotateAngle(gums1, -0.4553564018453205F, 0.0F, 0.0F);
+        this.setRotateAngle(underneck1, 0.091106186954104F, 0.0F, 0.0F);
+        this.setRotateAngle(wing3R, -1.4570008595648662F, 0.0F, -0.18203784098300857F);
+        this.setRotateAngle(wing2L, 0.0F, 0.0F, -1.6845917940249266F);
+        this.setRotateAngle(upperlegL, 0.8651597102135892F, 0.0F, -1.6390387005478748F);
+        this.setRotateAngle(wing4R, 0.091106186954104F, 0.136659280431156F, 0.0F);
+        this.setRotateAngle(wing4L, 0.091106186954104F, -0.136659280431156F, 0.0F);
+        this.setRotateAngle(neck1, 0.18203784098300857F, 0.0F, -0.0F);
+        this.setRotateAngle(lowerlegR, 0.7285004297824331F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.31869712141416456F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegR, 0.8651597102135892F, 0.0F, 1.6390387005478748F);
+        this.setRotateAngle(handL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(wing1R, 0.0F, 0.0F, 0.091106186954104F);
+        this.setRotateAngle(footR, 1.0016444577195458F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerlegL, 0.7285004297824331F, 0.0F, 0.0F);
+        this.setRotateAngle(wing3L, -1.4570008595648662F, 0.0F, 0.18203784098300857F);
+        //End of pose, now render the model:
+        this.chest.render(f);
+        //Reset rotations, positions and sizing:
+        this.chest.setScale(1.0F, 1.0F, 1.0F);
+        this.chest.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 
