@@ -725,7 +725,6 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveCream.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveGrey.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveTall.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBivalveMegalodon.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveDark.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveGreen.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveUpright.block).toString(),
@@ -779,7 +778,6 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveCream.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveGrey.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveTall.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBivalveMegalodon.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveDark.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveGreen.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveUpright.block).toString(),
@@ -803,7 +801,8 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCoralStonySparseBranching.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSeaPenPink.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSeaPenYellow.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBoneWorm.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBoneWorm.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveInoceramusGigantocapulus.block).toString()
         };
         return resLoc;
     }

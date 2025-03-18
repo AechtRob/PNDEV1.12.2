@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/anurognathid_sinomacrops_icon.png",
 	"category": "lepidodendron:mobs",
-	"turnin": "lepidodendron:pf_adv_book_anuroganthid_sinomacrops",
+	"turnin": "lepidodendron:pf_adv_book_anurognathid_sinomacrops",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_anuroganthid_sinomacrops",
+			"trigger": "lepidodendron:pf_adv_book_anurognathid_sinomacrops",
 			"title": "Sinomacrops",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Pterosauria$(br)>Pterodactyliformes$(br)>Anurognathidae$(br)>Batrachognathinae"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_anuroganthid_sinomacrops",
+			"advancement": "lepidodendron:pf_adv_book_anurognathid_sinomacrops",
 			"type": "text",
 			"text": "Sinomacrops is a anurognathid pterosaur that lived in the Tiaojishan Formation of China during the Middle to Upper Jurassic. It was discovered by Wei et al. in 2021. Sinomacrops is similar to many of the other anurognathids that are known, however it has some distinguishing anatomical features that make it unique from other pterosaurs."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_anuroganthid_sinomacrops",
+			"advancement": "lepidodendron:pf_adv_book_anurognathid_sinomacrops",
 			"type": "text",
 			"text": "These are the spacing between their first three tooth sockets being close, and their tibiotarsus bone being twice as long as their femur. Sinomacrops is also the sister taxon to Batrachognathus, another genus of anurognathid pterosaur found in Kazakhstan."
 		},

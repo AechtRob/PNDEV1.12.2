@@ -36,7 +36,7 @@ public class EntityPrehistoricFloraTurboscinetes extends EntityPrehistoricFloraA
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 6.0D;
+		maxHealthAgeable = 3.0D;
 	}
 
 	@Override

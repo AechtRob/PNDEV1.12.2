@@ -120,9 +120,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 GlStateManager.enableCull();
                 Color colorGrass = new Color(getWorld().getBiome(entity.getPos()).getGrassColorAtPos(entity.getPos()));
                 GlStateManager.color(colorGrass.getRed()/255F, colorGrass.getGreen()/255F, colorGrass.getBlue()/255F, transparency);
-                GlStateManager.enableNormalize();
-                GlStateManager.enableBlend();
-                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
 
                 GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
                 GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -131,8 +132,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 modelPortalBlockOverworld.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
                 GlStateManager.disableRescaleNormal();
 
-                GlStateManager.disableBlend();
-                GlStateManager.disableNormalize();
+                //GlStateManager.disableBlend();
+                //GlStateManager.disableNormalize();
                 GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 
                 GlStateManager.enableCull();
@@ -161,9 +162,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             ofsetter = -25;
                         }
                     }
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    GlStateManager.enableAlpha();
                     GlStateManager.enableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.translate(x + 0.50, y + 2.50, z + 0.50);
@@ -172,8 +174,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
                     modelPortalBlockOverworldDecoration.renderBase(entity.getAnimationTick(), 1.25f, partialTicks, ofsetter);
                     GlStateManager.disableRescaleNormal();
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -197,9 +199,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 GlStateManager.disableCull();
 
                 GlStateManager.color(1.0F, 1.0F, 1.0F, transparency);
-                GlStateManager.enableNormalize();
-                GlStateManager.enableBlend();
-                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
 
                 GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
                 GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -208,8 +211,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 modelPortalBlockPrecambrian.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
                 GlStateManager.disableRescaleNormal();
 
-                GlStateManager.disableBlend();
-                GlStateManager.disableNormalize();
+                //GlStateManager.disableBlend();
+                //GlStateManager.disableNormalize();
                 GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 
                 GlStateManager.enableCull();
@@ -238,9 +241,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 GlStateManager.disableCull();
 
                 GlStateManager.color(1.0F, 1.0F, 1.0F, transparency);
-                GlStateManager.enableNormalize();
-                GlStateManager.enableBlend();
-                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
 
                 GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
                 GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -249,8 +253,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 modelPortalBlockCambrian.renderBase(entity.getAnimationTick(), 1.25f, partialTicks, entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.UP), entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.NORTH), entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.EAST), entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.SOUTH), entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.WEST));
                 GlStateManager.disableRescaleNormal();
 
-                GlStateManager.disableBlend();
-                GlStateManager.disableNormalize();
+                //GlStateManager.disableBlend();
+                //GlStateManager.disableNormalize();
                 GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 
                 GlStateManager.enableCull();
@@ -271,13 +275,14 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         }
                         GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockCambrian.renderThing(animTick, 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
                         GlStateManager.disableRescaleNormal();
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
                     }
@@ -296,9 +301,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     }
                     GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockCambrian.renderSponge1(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
                     }
@@ -308,8 +314,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     else {
                         modelPortalBlockCambrian.renderSponge3(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -331,12 +337,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             GlStateManager.rotate(270, 0F, 1F, 0F);
                         }
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockCambrian.renderThing(animTick, 1.25f, partialTicks, 1, ((float) getWorld().getTotalWorldTime() + partialTicks), 1F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -368,9 +375,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     if ((!isVar(entity)) &&  (!isVar2(entity))) {
                         GlStateManager.rotate(-90, 1F, 0F, 0F);
                     }
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockCambrian.renderSideThing1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
@@ -386,8 +394,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     else {
                         modelPortalBlockCambrian.renderSponge3(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -410,12 +418,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         }
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
                         GlStateManager.rotate(180, 0F, 1F, 0F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockCambrian.renderThing(animTick, 1.25f, partialTicks, 10, ((float) getWorld().getTotalWorldTime() + partialTicks), 10F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -449,9 +458,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         GlStateManager.rotate(-90, 1F, 0F, 0F);
                         //GlStateManager.rotate(-90, 1F, 0F, 0F);
                     }
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockCambrian.renderSideThing1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
@@ -467,8 +477,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     else {
                         modelPortalBlockCambrian.renderSponge1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -488,12 +498,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         if (isRotated(entity)) {
                             GlStateManager.rotate(180, 0F, 1F, 0F);
                         }
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockCambrian.renderThing(animTick, 1.25f, partialTicks, 10, ((float) getWorld().getTotalWorldTime() + partialTicks), 10F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -527,9 +538,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         GlStateManager.rotate(-90, 1F, 0F, 0F);
                         //GlStateManager.rotate(-90, 1F, 0F, 0F);
                     }
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockCambrian.renderSideThing1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
@@ -545,8 +557,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     else {
                         modelPortalBlockCambrian.renderSponge2(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -566,12 +578,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         if (isRotated(entity)) {
                             GlStateManager.rotate(180, 0F, 1F, 0F);
                         }
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockCambrian.renderThing(animTick, 1.25f, partialTicks, 19, ((float) getWorld().getTotalWorldTime() + partialTicks), 19F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -605,9 +618,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         GlStateManager.rotate(-90, 1F, 0F, 0F);
                         //GlStateManager.rotate(-90, 1F, 0F, 0F);
                     }
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockCambrian.renderSideThing1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
@@ -623,8 +637,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     else {
                         modelPortalBlockCambrian.renderSponge3(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -653,9 +667,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 GlStateManager.disableCull();
 
                 GlStateManager.color(1.0F, 1.0F, 1.0F, transparency);
-                GlStateManager.enableNormalize();
-                GlStateManager.enableBlend();
-                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
 
                 GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
                 GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -664,8 +679,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 modelPortalBlockOrdovician.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
                 GlStateManager.disableRescaleNormal();
 
-                GlStateManager.disableBlend();
-                GlStateManager.disableNormalize();
+                //GlStateManager.disableBlend();
+                //GlStateManager.disableNormalize();
                 GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 
                 GlStateManager.enableCull();
@@ -686,12 +701,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         }
                         GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockOrdovician.renderTrilobite1(animTick, 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -710,12 +726,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             }
                             GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                             GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             modelPortalBlockOrdovician.renderTrilobite2(animTick, 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -736,17 +753,18 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     }
                     GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockOrdovician.renderSponge1(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
                     }
                     else {
                         modelPortalBlockOrdovician.renderSponge2(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -768,12 +786,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             GlStateManager.rotate(270, 0F, 1F, 0F);
                         }
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockOrdovician.renderTrilobite1(animTick, 1.25f, partialTicks, 1, ((float) getWorld().getTotalWorldTime() + partialTicks), 1F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -793,12 +812,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                                 GlStateManager.rotate(270, 0F, 1F, 0F);
                             }
                             GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             modelPortalBlockOrdovician.renderTrilobite2(animTick, 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -817,16 +837,17 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     }
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockOrdovician.renderSpongeSide2(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
                     } else {
                         modelPortalBlockOrdovician.renderSpongeSide1(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -849,12 +870,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         }
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
                         GlStateManager.rotate(180, 0F, 1F, 0F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockOrdovician.renderTrilobite1(animTick, 1.25f, partialTicks, 10, ((float) getWorld().getTotalWorldTime() + partialTicks), 10F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -875,12 +897,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             }
                             GlStateManager.scale(0.05F, 0.05F, 0.05F);
                             GlStateManager.rotate(180, 0F, 1F, 0F);
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             modelPortalBlockOrdovician.renderTrilobite2(animTick, 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -900,16 +923,17 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
                     GlStateManager.rotate(180, 0F, 1F, 0F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockOrdovician.renderSpongeSide2(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     } else {
                         modelPortalBlockOrdovician.renderSpongeSide1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -929,12 +953,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         if (isRotated(entity)) {
                             GlStateManager.rotate(180, 0F, 1F, 0F);
                         }
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockOrdovician.renderTrilobite1(animTick, 1.25f, partialTicks, 10, ((float) getWorld().getTotalWorldTime() + partialTicks), 10F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -952,12 +977,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             if (isRotated(entity)) {
                                 GlStateManager.rotate(180, 0F, 1F, 0F);
                             }
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             modelPortalBlockOrdovician.renderTrilobite2(animTick, 1.25f, partialTicks, 3, ((float) getWorld().getTotalWorldTime() + partialTicks), 3F);
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -977,16 +1003,17 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
                     GlStateManager.rotate(90, 0F, 1F, 0F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockOrdovician.renderSpongeSide2(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     } else {
                         modelPortalBlockOrdovician.renderSpongeSide1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1006,12 +1033,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         if (isRotated(entity)) {
                             GlStateManager.rotate(180, 0F, 1F, 0F);
                         }
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockOrdovician.renderTrilobite1(animTick, 1.25f, partialTicks, 19, ((float) getWorld().getTotalWorldTime() + partialTicks), 19F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -1029,12 +1057,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             if (isRotated(entity)) {
                                 GlStateManager.rotate(180, 0F, 1F, 0F);
                             }
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             modelPortalBlockOrdovician.renderTrilobite2(animTick, 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -1054,16 +1083,17 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
                     GlStateManager.rotate(270, 0F, 1F, 0F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockOrdovician.renderSpongeSide2(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     } else {
                         modelPortalBlockOrdovician.renderSpongeSide1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1092,9 +1122,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 GlStateManager.disableCull();
 
                 GlStateManager.color(1.0F, 1.0F, 1.0F, transparency);
-                GlStateManager.enableNormalize();
-                GlStateManager.enableBlend();
-                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
 
                 GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
                 GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -1103,8 +1134,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 modelPortalBlockSilurian.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
                 GlStateManager.disableRescaleNormal();
 
-                GlStateManager.disableBlend();
-                GlStateManager.disableNormalize();
+                //GlStateManager.disableBlend();
+                //GlStateManager.disableNormalize();
                 GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 
                 GlStateManager.enableCull();
@@ -1119,9 +1150,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (!isVar2(entity)) {
                         if (isVar(entity)) {
                             modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
@@ -1130,8 +1162,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
                         }
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1144,9 +1176,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     //modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick() - 5, 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 0.15F);
                     if (isVar2(entity)) {
                         if (isVar(entity)) {
@@ -1156,8 +1189,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
                         }
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1173,9 +1206,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (!isVar2(entity)) {
                         if (isVar(entity)) {
                             modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
@@ -1184,8 +1218,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
                         }
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1200,9 +1234,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
                     GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar2(entity)) {
                         if (isVar(entity)) {
                             modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
@@ -1211,8 +1246,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
                         }
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1228,9 +1263,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.rotate(270, 0.0F, 0.0F, 1.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (!isVar2(entity)) {
                         if (isVar(entity)) {
                             modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
@@ -1239,8 +1275,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
                         }
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1255,9 +1291,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
                     GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar2(entity)) {
                         if (isVar(entity)) {
                             modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
@@ -1266,8 +1303,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
                         }
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1284,9 +1321,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
                     GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (!isVar2(entity)) {
                         if (isVar(entity)) {
                             modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
@@ -1295,8 +1333,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
                         }
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1310,9 +1348,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.rotate(270, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar2(entity)) {
                         if (isVar(entity)) {
                             modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
@@ -1321,8 +1360,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
                         }
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1339,9 +1378,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(0, 0.0F, 1.0F, 0.0F);
                     GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (!isVar2(entity)) {
                         if (isVar(entity)) {
                             modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
@@ -1350,8 +1390,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
                         }
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1365,9 +1405,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar2(entity)) {
                         if (isVar(entity)) {
                             modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
@@ -1376,8 +1417,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
                         }
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1392,9 +1433,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(90, 0F, 1F, 0F);
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (!isVar2(entity)) {
                         if (isVar(entity)) {
                             modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
@@ -1403,8 +1445,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
                         }
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1417,9 +1459,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(270, 0F, 1F, 0F);
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar2(entity)) {
                         if (isVar(entity)) {
                             modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
@@ -1428,8 +1471,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
                         }
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1458,9 +1501,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 GlStateManager.disableCull();
 
                 GlStateManager.color(1.0F, 1.0F, 1.0F, transparency);
-                GlStateManager.enableNormalize();
-                GlStateManager.enableBlend();
-                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
 
                 GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
                 GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -1469,8 +1513,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 modelPortalBlockDevonian.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
                 GlStateManager.disableRescaleNormal();
 
-                GlStateManager.disableBlend();
-                GlStateManager.disableNormalize();
+                //GlStateManager.disableBlend();
+                //GlStateManager.disableNormalize();
                 GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 
                 GlStateManager.enableCull();
@@ -1491,17 +1535,18 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         }
                         GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         if (isVar(entity)) {
                             modelPortalBlockDevonian.renderCooksonia1(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
                         }
                         else {
                             modelPortalBlockDevonian.renderCooksonia2(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
                         }
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -1520,17 +1565,18 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             }
                             GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                             GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             if (isVar(entity)) {
                                 modelPortalBlockDevonian.renderCooksonia2(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
                             }
                             else {
                                 modelPortalBlockDevonian.renderCooksonia1(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
                             }
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -1551,17 +1597,18 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     }
                     GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockDevonian.renderAdoketophyton(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
                     }
                     else {
                         modelPortalBlockDevonian.renderPsilophyton(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1581,16 +1628,17 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     }
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockDevonian.renderAdoketophyton(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
                     } else {
                         modelPortalBlockDevonian.renderPsilophyton(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1611,16 +1659,17 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
                     GlStateManager.rotate(180, 0F, 1F, 0F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockDevonian.renderAdoketophyton(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     } else {
                         modelPortalBlockDevonian.renderPsilophyton(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1641,16 +1690,17 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
                     GlStateManager.rotate(90, 0F, 1F, 0F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockDevonian.renderAdoketophyton(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     } else {
                         modelPortalBlockDevonian.renderPsilophyton(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1671,16 +1721,17 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
                     GlStateManager.rotate(270, 0F, 1F, 0F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockDevonian.renderPsilophyton(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     } else {
                         modelPortalBlockDevonian.renderAdoketophyton(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1709,9 +1760,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 GlStateManager.disableCull();
 
                 GlStateManager.color(1.0F, 1.0F, 1.0F, transparency);
-                GlStateManager.enableNormalize();
-                GlStateManager.enableBlend();
-                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
 
                 GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
                 GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -1720,8 +1772,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 modelPortalBlockCarboniferous.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
                 GlStateManager.disableRescaleNormal();
 
-                GlStateManager.disableBlend();
-                GlStateManager.disableNormalize();
+                //GlStateManager.disableBlend();
+                //GlStateManager.disableNormalize();
                 GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 
                 GlStateManager.enableCull();
@@ -1736,12 +1788,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     modelPortalBlockCarboniferous.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks);
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1754,12 +1807,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     modelPortalBlockCarboniferous.renderTentacle(entity.getAnimationTick() - 5, 1.25f, partialTicks);
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1775,12 +1829,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     modelPortalBlockCarboniferous.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks);
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1795,12 +1850,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
                     GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     modelPortalBlockCarboniferous.renderTentacle(entity.getAnimationTick() - 8, 1.25f, partialTicks);
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1816,12 +1872,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.rotate(270, 0.0F, 0.0F, 1.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     modelPortalBlockCarboniferous.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks);
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1836,12 +1893,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
                     GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     modelPortalBlockCarboniferous.renderTentacle(entity.getAnimationTick() - 8, 1.25f, partialTicks);
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1858,12 +1916,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
                     GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     modelPortalBlockCarboniferous.renderTentacle(entity.getAnimationTick() - 1, 1.25f, partialTicks);
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1877,12 +1936,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.rotate(270, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     modelPortalBlockCarboniferous.renderTentacle(entity.getAnimationTick() - 1, 1.25f, partialTicks);
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1899,12 +1959,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(0, 0.0F, 1.0F, 0.0F);
                     GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     modelPortalBlockCarboniferous.renderTentacle(entity.getAnimationTick() - 1, 1.25f, partialTicks);
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1918,12 +1979,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     modelPortalBlockCarboniferous.renderTentacle(entity.getAnimationTick() - 1, 1.25f, partialTicks);
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1938,12 +2000,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(90, 0F, 1F, 0F);
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     modelPortalBlockCarboniferous.renderTentacle(entity.getAnimationTick() - 1, 1.25f, partialTicks);
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1956,12 +2019,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(270, 0F, 1F, 0F);
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     modelPortalBlockCarboniferous.renderTentacle(entity.getAnimationTick() - 7, 1.25f, partialTicks);
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -1990,9 +2054,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 GlStateManager.disableCull();
 
                 GlStateManager.color(1.0F, 1.0F, 1.0F, transparency);
-                GlStateManager.enableNormalize();
-                GlStateManager.enableBlend();
-                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
 
                 GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
                 GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -2001,8 +2066,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 modelPortalBlockPermian.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
                 GlStateManager.disableRescaleNormal();
 
-                GlStateManager.disableBlend();
-                GlStateManager.disableNormalize();
+                //GlStateManager.disableBlend();
+                //GlStateManager.disableNormalize();
                 GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 
                 GlStateManager.enableCull();
@@ -2023,17 +2088,18 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         }
                         GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         if (isVar(entity)) {
                             modelPortalBlockPermian.renderDeadBush1(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
                         }
                         else {
                             modelPortalBlockPermian.renderDeadBush2(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
                         }
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -2052,17 +2118,18 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             }
                             GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                             GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             if (isVar(entity)) {
                                 modelPortalBlockPermian.renderDeadBush2(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
                             }
                             else {
                                 modelPortalBlockPermian.renderDeadBush1(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
                             }
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -2083,17 +2150,18 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     }
                     GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockPermian.renderBurnedBranch(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
                     }
                     else {
                         modelPortalBlockPermian.renderDroopingBranch(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -2113,16 +2181,17 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     }
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockPermian.renderBurnedBranch(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
                     } else {
                         modelPortalBlockPermian.renderDroopingBranch(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -2143,16 +2212,17 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
                     GlStateManager.rotate(180, 0F, 1F, 0F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockPermian.renderBurnedBranch(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     } else {
                         modelPortalBlockPermian.renderDroopingBranch(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -2173,16 +2243,17 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
                     GlStateManager.rotate(90, 0F, 1F, 0F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockPermian.renderBurnedBranch(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     } else {
                         modelPortalBlockPermian.renderDroopingBranch(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -2203,16 +2274,17 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
                     GlStateManager.rotate(270, 0F, 1F, 0F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockPermian.renderDroopingBranch(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     } else {
                         modelPortalBlockPermian.renderBurnedBranch(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -2287,9 +2359,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 GlStateManager.disableCull();
 
                 GlStateManager.color(1.0F, 1.0F, 1.0F, transparency);
-                GlStateManager.enableNormalize();
-                GlStateManager.enableBlend();
-                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
 
                 GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
                 GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -2298,8 +2371,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 modelPortalBlockTriassic.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
                 GlStateManager.disableRescaleNormal();
 
-                GlStateManager.disableBlend();
-                GlStateManager.disableNormalize();
+                //GlStateManager.disableBlend();
+                //GlStateManager.disableNormalize();
                 GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 
                 GlStateManager.enableCull();
@@ -2320,17 +2393,18 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         }
                         GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         if (isVar(entity)) {
                             modelPortalBlockTriassic.renderPleuromeia1(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
                         }
                         else {
                             modelPortalBlockTriassic.renderPleuromeia2(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
                         }
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -2349,17 +2423,18 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             }
                             GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                             GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             if (isVar(entity)) {
                                 modelPortalBlockTriassic.renderPleuromeia2(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
                             }
                             else {
                                 modelPortalBlockTriassic.renderPleuromeia1(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
                             }
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -2377,12 +2452,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         }
                         GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockTriassic.renderLizard1(animTick, 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -2401,12 +2477,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             }
                             GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                             GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             modelPortalBlockTriassic.renderLizard2(animTick, 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -2427,17 +2504,18 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     }
                     GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockTriassic.renderBranch2(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
                     }
                     else {
                         modelPortalBlockTriassic.renderBranch1(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -2457,16 +2535,17 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     }
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockTriassic.renderBranch2(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
                     } else {
                         modelPortalBlockTriassic.renderBranch1(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -2486,12 +2565,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             GlStateManager.rotate(270, 0F, 1F, 0F);
                         }
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockTriassic.renderLizard1(animTick, 1.25f, partialTicks, 1, ((float) getWorld().getTotalWorldTime() + partialTicks), 1F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -2511,12 +2591,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                                 GlStateManager.rotate(270, 0F, 1F, 0F);
                             }
                             GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             modelPortalBlockTriassic.renderLizard2(animTick, 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -2539,16 +2620,17 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
                     GlStateManager.rotate(180, 0F, 1F, 0F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockTriassic.renderBranch2(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     } else {
                         modelPortalBlockTriassic.renderBranch1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -2569,12 +2651,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         }
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
                         GlStateManager.rotate(180, 0F, 1F, 0F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockTriassic.renderLizard1(animTick, 1.25f, partialTicks, 10, ((float) getWorld().getTotalWorldTime() + partialTicks), 10F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -2595,12 +2678,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             }
                             GlStateManager.scale(0.05F, 0.05F, 0.05F);
                             GlStateManager.rotate(180, 0F, 1F, 0F);
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             modelPortalBlockTriassic.renderLizard2(animTick, 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -2623,16 +2707,17 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
                     GlStateManager.rotate(90, 0F, 1F, 0F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockTriassic.renderBranch2(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     } else {
                         modelPortalBlockTriassic.renderBranch1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -2650,12 +2735,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         if (isRotated(entity)) {
                             GlStateManager.rotate(180, 0F, 1F, 0F);
                         }
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockTriassic.renderLizard1(animTick, 1.25f, partialTicks, 10, ((float) getWorld().getTotalWorldTime() + partialTicks), 10F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -2673,12 +2759,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             if (isRotated(entity)) {
                                 GlStateManager.rotate(180, 0F, 1F, 0F);
                             }
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             modelPortalBlockTriassic.renderLizard2(animTick, 1.25f, partialTicks, 3, ((float) getWorld().getTotalWorldTime() + partialTicks), 3F);
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -2701,16 +2788,17 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
                     GlStateManager.rotate(270, 0F, 1F, 0F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity)) {
                         modelPortalBlockTriassic.renderBranch1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     } else {
                         modelPortalBlockTriassic.renderBranch2(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -2728,12 +2816,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         if (isRotated(entity)) {
                             GlStateManager.rotate(180, 0F, 1F, 0F);
                         }
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockTriassic.renderLizard1(animTick, 1.25f, partialTicks, 19, ((float) getWorld().getTotalWorldTime() + partialTicks), 19F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -2751,12 +2840,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             if (isRotated(entity)) {
                                 GlStateManager.rotate(180, 0F, 1F, 0F);
                             }
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             modelPortalBlockTriassic.renderLizard2(animTick, 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -2787,9 +2877,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 GlStateManager.disableCull();
 
                 GlStateManager.color(1.0F, 1.0F, 1.0F, transparency);
-                GlStateManager.enableNormalize();
-                GlStateManager.enableBlend();
-                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
 
                 GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
                 GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -2798,8 +2889,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 modelPortalBlockJurassic.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
                 GlStateManager.disableRescaleNormal();
 
-                GlStateManager.disableBlend();
-                GlStateManager.disableNormalize();
+                //GlStateManager.disableBlend();
+                //GlStateManager.disableNormalize();
                 GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 
                 GlStateManager.enableCull();
@@ -2820,9 +2911,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         }
                         GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         if (isVar(entity) && isVar3(entity)) {
                             modelPortalBlockJurassic.renderTopPlant1(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
                         }
@@ -2835,8 +2927,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         else {
                             modelPortalBlockJurassic.renderTopPlant4(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
                         }
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -2855,9 +2947,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             }
                             GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                             GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             if (isVar(entity) && isVar3(entity)) {
                                 modelPortalBlockJurassic.renderTopPlant4(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
                             }
@@ -2870,8 +2963,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             else {
                                 modelPortalBlockJurassic.renderTopPlant1(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
                             }
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -2889,12 +2982,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         }
                         GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockJurassic.renderEyes(animTick, 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -2913,12 +3007,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             }
                             GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                             GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             modelPortalBlockJurassic.renderHead(animTick, 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -2939,9 +3034,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     }
                     GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity) && isVar4(entity)) {
                         modelPortalBlockJurassic.renderBranch4(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
                     }
@@ -2954,8 +3050,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     else {
                         modelPortalBlockJurassic.renderBranch1(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -2975,9 +3071,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     }
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity) && isVar4(entity)) {
                         modelPortalBlockJurassic.renderBranch4(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
                     }
@@ -2990,8 +3087,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     else {
                         modelPortalBlockJurassic.renderBranch1(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -3011,12 +3108,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             GlStateManager.rotate(270, 0F, 1F, 0F);
                         }
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockJurassic.renderEyes(animTick, 1.25f, partialTicks, 1, ((float) getWorld().getTotalWorldTime() + partialTicks), 1F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -3036,12 +3134,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                                 GlStateManager.rotate(270, 0F, 1F, 0F);
                             }
                             GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             modelPortalBlockJurassic.renderHead(animTick, 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -3064,9 +3163,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
                     GlStateManager.rotate(180, 0F, 1F, 0F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity) && isVar4(entity)) {
                         modelPortalBlockJurassic.renderBranch4(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
@@ -3079,8 +3179,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     else {
                         modelPortalBlockJurassic.renderBranch1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -3101,12 +3201,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         }
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
                         GlStateManager.rotate(180, 0F, 1F, 0F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockJurassic.renderEyes(animTick, 1.25f, partialTicks, 10, ((float) getWorld().getTotalWorldTime() + partialTicks), 10F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -3127,12 +3228,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             }
                             GlStateManager.scale(0.05F, 0.05F, 0.05F);
                             GlStateManager.rotate(180, 0F, 1F, 0F);
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             modelPortalBlockJurassic.renderHead(animTick, 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -3155,9 +3257,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
                     GlStateManager.rotate(90, 0F, 1F, 0F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity) && isVar4(entity)) {
                         modelPortalBlockJurassic.renderBranch4(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
@@ -3170,8 +3273,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     else {
                         modelPortalBlockJurassic.renderBranch1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -3189,12 +3292,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         if (isRotated(entity)) {
                             GlStateManager.rotate(180, 0F, 1F, 0F);
                         }
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockJurassic.renderEyes(animTick, 1.25f, partialTicks, 10, ((float) getWorld().getTotalWorldTime() + partialTicks), 10F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -3212,12 +3316,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             if (isRotated(entity)) {
                                 GlStateManager.rotate(180, 0F, 1F, 0F);
                             }
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             modelPortalBlockJurassic.renderHead(animTick, 1.25f, partialTicks, 3, ((float) getWorld().getTotalWorldTime() + partialTicks), 3F);
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -3240,9 +3345,10 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
                     GlStateManager.rotate(270, 0F, 1F, 0F);
-                    GlStateManager.enableNormalize();
-                    GlStateManager.enableBlend();
-                    GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                     if (isVar(entity) && isVar4(entity)) {
                         modelPortalBlockJurassic.renderBranch1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
@@ -3255,8 +3361,8 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     else {
                         modelPortalBlockJurassic.renderBranch4(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
                     }
-                    GlStateManager.disableBlend();
-                    GlStateManager.disableNormalize();
+                    //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -3274,12 +3380,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         if (isRotated(entity)) {
                             GlStateManager.rotate(180, 0F, 1F, 0F);
                         }
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                         modelPortalBlockJurassic.renderEyes(animTick, 1.25f, partialTicks, 19, ((float) getWorld().getTotalWorldTime() + partialTicks), 19F);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
+                        //GlStateManager.disableBlend();
+                       // GlStateManager.disableNormalize();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -3297,12 +3404,13 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             if (isRotated(entity)) {
                                 GlStateManager.rotate(180, 0F, 1F, 0F);
                             }
-                            GlStateManager.enableNormalize();
-                            GlStateManager.enableBlend();
-                            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                            //GlStateManager.enableNormalize();
+                    //GlStateManager.enableBlend();
+                    //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+GlStateManager.enableAlpha();
                             modelPortalBlockJurassic.renderHead(animTick, 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
-                            GlStateManager.disableBlend();
-                            GlStateManager.disableNormalize();
+                            //GlStateManager.disableBlend();
+                    //GlStateManager.disableNormalize();
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();

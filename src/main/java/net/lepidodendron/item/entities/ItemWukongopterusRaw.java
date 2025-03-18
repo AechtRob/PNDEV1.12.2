@@ -36,7 +36,7 @@ public class ItemWukongopterusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_wukongopterus", ItemWukongopterusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_wukongopterus@male", ItemWukongopterusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemWukongopterusRaw.block);
 		OreDictionary.registerOre("pnfurnacePterosaur", ItemWukongopterusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemWukongopterusRaw.block);

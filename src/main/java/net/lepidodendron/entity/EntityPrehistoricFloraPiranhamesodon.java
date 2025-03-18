@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraPiranhamesodon extends EntityPrehistoricFlora
 		minWidth = 0.1F;
 		maxWidth = 0.55F;
 		maxHeight = 0.55F;
-		maxHealthAgeable = 11.0D;
+		maxHealthAgeable = 4.0D;
 	}
 
 	@Override
