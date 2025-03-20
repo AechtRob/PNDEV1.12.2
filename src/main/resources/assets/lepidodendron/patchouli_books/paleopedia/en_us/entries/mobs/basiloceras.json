@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Oncoceratida$(br)>Acleistoceratidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/basiloceras.png"],
-			"title": "B. goliath",
-			"text": ""
+			"type": "entity",
+			"name": "B. goliath",
+			"entity": "lepidodendron:prehistoric_flora_basiloceras",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_basiloceras",

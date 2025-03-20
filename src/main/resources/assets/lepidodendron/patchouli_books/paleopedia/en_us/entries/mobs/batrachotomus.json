@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_batrachotomus",
 			"title": "Batrachotomus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Pseudosuchia$(br)>Loricata"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Loricata"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/batrachotomus.png"],
-			"title": "B. kupferzellensis",
-			"text": ""
+			"type": "entity",
+			"name": "B. kupferzellensis",
+			"entity": "lepidodendron:prehistoric_flora_batrachotomus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_batrachotomus",
 			"type": "text",
-			"text": "Batrachotomus is a genus of Pseudosuchian from Germany. Originally thought to be around 4m in length, a femur showed that the animal could grow up to lengths of 6m. Trackways possibly belonging to this animal show that this animal would walk in a very weird gait, more similar to a horses trotting. The name Batrachotomus means “Frog Slicer”, referring to the many fossils of Mastodonsaurus found with bite marks attributed to this animal."
+			"text": "Batrachotomus is a genus of pseudosuchian from Germany. Originally thought to be around 4 m in length, a femur showed that the animal could grow up to lengths of 6 m. Trackways possibly belonging to this animal show that this animal would walk in a very weird gait, more similar to a horses trotting. The name Batrachotomus means “Frog Slicer”, referring to the many fossils of Mastodonsaurus found with bite marks attributed to this animal."
 		},
 		{
 			"type": "lepidodendron:diet",

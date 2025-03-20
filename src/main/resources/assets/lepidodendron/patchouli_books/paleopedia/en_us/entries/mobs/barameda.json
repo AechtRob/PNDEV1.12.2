@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_barameda",
 			"title": "Barameda",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Rhizodontida$(br)>Rhizodontidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Rhizodontida$(br)>Rhizodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/barameda.png"],
-			"title": "B. decipiens",
-			"text": ""
+			"type": "entity",
+			"name": "B. decipiens",
+			"entity": "lepidodendron:prehistoric_flora_barameda",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_barameda",
 			"type": "text",
-			"text": "Barameda was a genus of freshwater rhizodont lobe-finned fish that lived during the Early Carboniferous. Its remains have been found in the ancient river deposits of what is now the Snowy Plains Formation of Victoria, Australia. Like most other rhizodonts, its wide pectoral fins suggest that it was a benthic lay-in-ambush predator."
+			"text": "Barameda was a genus of freshwater rhizodont lobe-finned fish that lived during the Lower Carboniferous. Its remains have been found in the ancient river deposits of what is now the Snowy Plains Formation of Victoria, Australia. Like most other rhizodonts, its wide pectoral fins suggest that it was a benthic lay-in-ambush predator."
 		},
 		{
 			"type": "lepidodendron:diet",

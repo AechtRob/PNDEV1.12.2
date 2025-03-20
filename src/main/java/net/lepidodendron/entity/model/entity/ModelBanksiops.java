@@ -487,7 +487,7 @@ public class ModelBanksiops extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hip.offsetY = -1.0F;
+        this.hip.offsetY = -0.8F;
         this.hip.offsetX = -0.20F;
         this.hip.rotateAngleY = (float)Math.toRadians(-167);
         this.hip.rotateAngleX = (float)Math.toRadians(16);
@@ -496,7 +496,13 @@ public class ModelBanksiops extends ModelBasePalaeopedia {
         float scaler = 2.0F;
         this.hip.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(hip, 0.2F, 3.4F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(chest, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(neck, -0.4F, 0.0F, 0.05F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.05F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.hip.render(f);
         //Reset rotations, positions and sizing:

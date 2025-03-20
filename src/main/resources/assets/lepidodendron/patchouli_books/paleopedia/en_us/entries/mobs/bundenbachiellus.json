@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Enaliktidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/bundenbachiellus.png"],
-			"title": "B. giganteus",
-			"text": ""
+			"type": "entity",
+			"name": "B. giganteus",
+			"entity": "lepidodendron:prehistoric_flora_bundenbachiellus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bundenbachiellus",
 			"type": "text",
-			"text": "Bundenbachiellus is an over 20 cm-long arthropod known from Devonian Hunsrück Slate, Germany. This animal is known from two specimens, large specimen which lacks anterior part, and a smaller complete specimen once named \"Eschenbachiellus\". It lacked eyes, and probably used its whip-like appendages as antennae."
+			"text": "Bundenbachiellus is an over 20 cm long arthropod known from Devonian Hunsrück Slate, Germany. This animal is known from two specimens, large specimen which lacks anterior part, and a smaller complete specimen once named \"Eschenbachiellus\". It lacked eyes, and probably used its whip-like appendages as antennae."
 		},
 		{
 			"type": "lepidodendron:diet",

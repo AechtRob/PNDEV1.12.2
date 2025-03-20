@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Cnidaria$(br)>Hydrozoa$(br)>Capitata$(br)>Porpitoidea"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/bertratis.png"],
-			"title": "B. ciurcae",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "B. ciurcae",
+			"entity": "lepidodendron:prehistoric_flora_bertratis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bertratis",

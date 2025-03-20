@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Holocephali$(br)>Petalodontiformes$(br)>Belantseidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/belantsea.png"],
-			"title": "B. montana",
-			"text": ""
+			"type": "entity",
+			"name": "B. montana",
+			"entity": "lepidodendron:prehistoric_flora_belantsea",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_belantsea",

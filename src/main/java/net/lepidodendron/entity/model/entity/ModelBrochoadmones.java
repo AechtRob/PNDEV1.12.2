@@ -358,6 +358,30 @@ public class ModelBrochoadmones extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Brochoadmones.offsetY = -0.25F;
+        this.Brochoadmones.offsetX = 3.4F;
+        this.Brochoadmones.offsetZ = 2.0F;
+        this.Brochoadmones.rotateAngleY = (float)Math.toRadians(120);
+        this.Brochoadmones.rotateAngleX = (float)Math.toRadians(1);
+        this.Brochoadmones.rotateAngleZ = (float)Math.toRadians(0);
+        this.Brochoadmones.scaleChildren = true;
+        float scaler = 5.0F;
+        this.Brochoadmones.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Brochoadmones, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body1, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(Body2, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Body3, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(Body4, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Brochoadmones.render(f);
+        //Reset rotations, positions and sizing:
+        this.Brochoadmones.setScale(1.0F, 1.0F, 1.0F);
+        this.Brochoadmones.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

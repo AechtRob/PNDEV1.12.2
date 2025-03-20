@@ -200,6 +200,28 @@ public class ModelBlourugia extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Blourugia.offsetY = -1.5F;
+        this.Blourugia.offsetX = 0.75F;
+        this.Blourugia.offsetZ = 1.0F;
+        this.Blourugia.rotateAngleY = (float)Math.toRadians(120);
+        this.Blourugia.rotateAngleX = (float)Math.toRadians(1);
+        this.Blourugia.rotateAngleZ = (float)Math.toRadians(0);
+        this.Blourugia.scaleChildren = true;
+        float scaler = 4.0F;
+        this.Blourugia.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Blourugia, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body1, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.Blourugia.render(f);
+        //Reset rotations, positions and sizing:
+        this.Blourugia.setScale(1.0F, 1.0F, 1.0F);
+        this.Blourugia.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

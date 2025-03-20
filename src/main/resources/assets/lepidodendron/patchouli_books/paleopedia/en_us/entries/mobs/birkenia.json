@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Anaspida$(br)>Birkeniiformes$(br)>Birkeniidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/birkenia.png"],
-			"title": "B. elegans",
-			"text": ""
+			"type": "entity",
+			"name": "B. elegans",
+			"entity": "lepidodendron:prehistoric_flora_birkenia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_birkenia",

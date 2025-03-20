@@ -345,6 +345,49 @@ public class ModelBatrachotomus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Root.offsetY = 0.2F;
+        this.Root.offsetX = 0.4F;
+        this.Root.offsetZ = 0.5F;
+        this.Root.rotateAngleY = (float)Math.toRadians(120);
+        this.Root.rotateAngleX = (float)Math.toRadians(1);
+        this.Root.rotateAngleZ = (float)Math.toRadians(0);
+        this.Root.scaleChildren = true;
+        float scaler = 0.5F;
+        this.Root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Root, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(Hips, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Chest, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(Jaw, 0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmR, 0.8F, -0.0F, 0.0F);
+        this.setRotateAngle(LowerArmR, -0.7F, -0.0F, 0.0F);
+        this.setRotateAngle(HandR, 0.3F, 0.0F, -0.3F);
+        this.setRotateAngle(UpperArmL, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerArmL, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(HandL, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegR, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegR, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(FootR, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(ToesR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegL, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegL, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(FootR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(ToesR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, -0.1F, 0.01F, 0.0F);
+        this.setRotateAngle(Tail2, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail4, 0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(Tail5, 0.1F, -0.1F, 0.0F);
+        //End of pose, now render the model:
+        this.Root.render(f);
+        //Reset rotations, positions and sizing:
+        this.Root.setScale(1.0F, 1.0F, 1.0F);
+        this.Root.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

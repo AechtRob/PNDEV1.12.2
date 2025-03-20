@@ -9,23 +9,39 @@
 			"trigger": "lepidodendron:pf_adv_book_belonostomus_cretaceous",
 			"title": "Long Nosed Belonostomus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Aspidorhynchiformes$(br)>Aspidorhynchidae"
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Aspidorhynchiformes$(br)>Aspidorhynchidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/belonostomus_cretaceous.png"],
-			"title": "Belonostomus sp.",
-			"text": ""
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_belonostomus_cretaceous",
-			"type": "text",
-			"text": "Belonostomus 'sp.1' is a cretaceous species of Belonostomus from the sediments of Lebanon, particularly recognizable by the ridiculously long rostrum that would extend sometimes to be as long as the whole rest of the body; although the remains of this species were described, no official binomial naming was assigned to it, thus the lack of species name."
+			"type": "entity",
+			"name": "Belonostomus sp.",
+			"entity": "lepidodendron:prehistoric_flora_belonostomus_cretaceous",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_belonostomus_cretaceous",
 			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"text": "Belonostomus 'sp.1' is a Cretaceous species of Belonostomus from the sediments of Lebanon, particularly recognizable by the ridiculously long rostrum that would extend sometimes to be as long as the whole rest of the body; although the remains of this species were described, no official binomial naming was assigned to it, thus the lack of species name."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_belonostomus_cretaceous"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_belonostomus_cretaceous"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_belonostomus_cretaceous"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_belonostomus_cretaceous"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_belonostomus_cretaceous"
 		}
 	]
 }

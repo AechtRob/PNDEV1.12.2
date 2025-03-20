@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Plesiosauria$(br)>Pliosauroidea"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/bishanopliosaurus.png"],
-			"title": "B. youngi",
-			"text": ""
+			"type": "entity",
+			"name": "B. youngi",
+			"entity": "lepidodendron:prehistoric_flora_bishanopliosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bishanopliosaurus",
 			"type": "text",
-			"text": "Bishanopliosaurus was a genus of rhomaleosaurid pliosauroid plesiosaur that lived during the Early to Middle Jurassic (around 182.7 - 168.3 million years ago). However, unlike its ocean-going close relative Rhomaleosaurus, this animal's remains have been found in freshwater lake deposits at the Ziliujing and Shaximiao formations in China."
+			"text": "Bishanopliosaurus was a genus of rhomaleosaurid pliosauroid plesiosaur that lived during the Lower to Middle Jurassic (around 182.7 - 168.3 million years ago). However, unlike its ocean-going close relative Rhomaleosaurus, this animal's remains have been found in freshwater lake deposits at the Ziliujing and Shaximiao formations in China."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bishanopliosaurus",

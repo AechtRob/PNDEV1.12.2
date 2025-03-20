@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Temnospondyli$(br)>Dendrerpetontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Balanerpeton.png"],
-			"title": "B. woodi",
-			"text": ""
+			"type": "entity",
+			"name": "B. woodi",
+			"entity": "lepidodendron:prehistoric_flora_balanerpeton",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_balanerpeton",
 			"type": "text",
-			"text": "Balanerpeton is a half meter long amphibian from the Early Carboniferous. It may have been capable of hearing high frequency sounds and it would have respired by gulping air instead of expanding its chest to take in air."
+			"text": "Balanerpeton is a half meter long amphibian from the Lower Carboniferous. It may have been capable of hearing high frequency sounds and it would have respired by gulping air instead of expanding its chest to take in air."
 		},
 		{
 			"type": "lepidodendron:diet",

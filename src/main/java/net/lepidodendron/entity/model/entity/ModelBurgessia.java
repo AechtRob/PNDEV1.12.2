@@ -183,18 +183,18 @@ public class ModelBurgessia extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Burgessia.offsetY = -2.0F;
-        this.Burgessia.offsetX = 0.55F;
+        this.Burgessia.offsetX = 0.0F;
         this.Burgessia.rotateAngleY = (float)Math.toRadians(200);
         this.Burgessia.rotateAngleX = (float)Math.toRadians(8);
         this.Burgessia.rotateAngleZ = (float)Math.toRadians(-8);
         this.Burgessia.scaleChildren = true;
-        float scaler = 7.5F;
+        float scaler = 6.2F;
         this.Burgessia.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(Burgessia, 0.5F, 3.0F, 0.0F);
+        this.setRotateAngle(Burgessia, 0.6F, 3.8F, -0.2F);
         this.setRotateAngle(tail, 0.2F, 0.3F, 0.0F);
-        this.setRotateAngle(leftAntenna, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(rightAntenna, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftAntenna, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(rightAntenna, 0.0F, 0.2F, 0.0F);
         //End of pose, now render the model:
         this.Burgessia.render(f);
         //Reset rotations, positions and sizing:

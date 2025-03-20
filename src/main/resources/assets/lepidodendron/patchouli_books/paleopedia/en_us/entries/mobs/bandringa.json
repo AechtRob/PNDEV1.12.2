@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Ctenacanthiformes$(br)>Bandringidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/bandringa.png"],
-			"title": "B. rayi",
-			"text": ""
+			"type": "entity",
+			"name": "B. rayi",
+			"entity": "lepidodendron:prehistoric_flora_bandringa",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bandringa",

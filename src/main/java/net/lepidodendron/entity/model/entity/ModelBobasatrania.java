@@ -253,6 +253,29 @@ public class ModelBobasatrania extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Bobasatrania.offsetY = 0.2F;
+        this.Bobasatrania.offsetX = 0.25F;
+        this.Bobasatrania.offsetZ = 1.0F;
+        this.Bobasatrania.rotateAngleY = (float)Math.toRadians(120);
+        this.Bobasatrania.rotateAngleX = (float)Math.toRadians(1);
+        this.Bobasatrania.rotateAngleZ = (float)Math.toRadians(0);
+        this.Bobasatrania.scaleChildren = true;
+        float scaler = 1.0F;
+        this.Bobasatrania.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Bobasatrania, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.25F, 0.0F);
+        //End of pose, now render the model:
+        this.Bobasatrania.render(f);
+        //Reset rotations, positions and sizing:
+        this.Bobasatrania.setScale(1.0F, 1.0F, 1.0F);
+        this.Bobasatrania.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

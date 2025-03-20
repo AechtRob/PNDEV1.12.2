@@ -253,6 +253,50 @@ public class ModelBeishanichthys extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.bone2.offsetY = -0.6F;
+        this.bone2.offsetX = 0.5F;
+        this.bone2.offsetZ = 1.0F;
+        this.bone2.rotateAngleY = (float)Math.toRadians(120);
+        this.bone2.rotateAngleX = (float)Math.toRadians(1);
+        this.bone2.rotateAngleZ = (float)Math.toRadians(0);
+        this.bone2.scaleChildren = true;
+        float scaler = 1.5F;
+        this.bone2.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(bone2, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(body1, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.1571F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.0698F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.1571F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, -0.2094F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.0785F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.3665F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(pectoralfinL, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(pectoralfinR, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(pelvicfinL, 0.0F, 0.0F, -0.2618F);
+        this.setRotateAngle(pelvicfinR, 0.0F, 0.0F, 0.2618F);
+        //End of pose, now render the model:
+        this.bone2.render(f);
+        //Reset rotations, positions and sizing:
+        this.bone2.setScale(1.0F, 1.0F, 1.0F);
+        this.bone2.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

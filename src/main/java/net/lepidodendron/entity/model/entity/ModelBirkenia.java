@@ -116,6 +116,27 @@ public class ModelBirkenia extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Birkenia.offsetY = -1.25F;
+        this.Birkenia.offsetX = 0.75F;
+        this.Birkenia.offsetZ = 1.0F;
+        this.Birkenia.rotateAngleY = (float)Math.toRadians(120);
+        this.Birkenia.rotateAngleX = (float)Math.toRadians(1);
+        this.Birkenia.rotateAngleZ = (float)Math.toRadians(0);
+        this.Birkenia.scaleChildren = true;
+        float scaler = 3.5F;
+        this.Birkenia.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Birkenia, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        //End of pose, now render the model:
+        this.Birkenia.render(f);
+        //Reset rotations, positions and sizing:
+        this.Birkenia.setScale(1.0F, 1.0F, 1.0F);
+        this.Birkenia.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

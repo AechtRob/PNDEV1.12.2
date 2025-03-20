@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Brembodonidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/brembodus.png"],
-			"title": "B. ridens",
-			"text": ""
+			"type": "entity",
+			"name": "B. ridens",
+			"entity": "lepidodendron:prehistoric_flora_brembodus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_brembodus",
 			"type": "text",
-			"text": "Brembodus ridens is a species of Pycnodont bony fish from the late Triassic of Italy. This fish had a round and flattened body, not dissimilar to modern day reef fishes, and possessed a characteristic elongated spike on the top of its body originating right behind the head."
+			"text": "Brembodus ridens is a species of pycnodont bony fish from the Upper Triassic of Italy. This fish had a round and flattened body, not dissimilar to modern day reef fishes, and possessed a characteristic elongated spike on the top of its body originating right behind the head."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_brembodus",
