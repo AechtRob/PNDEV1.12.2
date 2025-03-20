@@ -1061,7 +1061,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 //            }
 
             IBlockState state = flier.world.getBlockState(flier.getPosition().down());
-            if (!flier.isReallyFlying() || flier.getLaying() || !(flier.sitCooldown > 0)
+            if ((!flier.isReallyFlying()) || flier.getLaying() || !(flier.sitCooldown > 0)
             ) {
                 flier.setFlyTarget(null);
                 return false;
