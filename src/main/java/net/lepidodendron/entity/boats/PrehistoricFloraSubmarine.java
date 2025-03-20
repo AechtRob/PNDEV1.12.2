@@ -18,7 +18,6 @@ import net.lepidodendron.util.BlockSounds;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
-import net.minecraft.block.BlockShulkerBox;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -65,6 +64,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.ItemHandlerHelper;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -1932,7 +1932,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
             this.setEnhanced(true);
             return true;
         }
-        else if (Block.getBlockFromItem(player.getHeldItem(hand).getItem()) instanceof BlockShulkerBox && !this.getShulker()) {
+        else if (OreDictionary.containsMatch(false, OreDictionary.getOres("inventorySubmarine"), player.getHeldItem(hand)) && !this.getShulker()) {
             if (!player.world.isRemote) {
                 ItemStack stack = player.getHeldItem(hand);
                 stack.shrink(1);

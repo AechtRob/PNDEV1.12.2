@@ -22,6 +22,7 @@ import net.lepidodendron.item.*;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.oredict.OreDictionary;
@@ -152,6 +153,47 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 							} else {
 								OreDictionary.registerOre("plantPrehistoric", new ItemStack((Block) block, (int) (1), meta));
 								OreDictionary.registerOre("plant", new ItemStack((Block) block, (int) (1), meta));
+							}
+						}
+
+					}
+				}
+			}
+		} catch (Exception e) {
+		}
+
+		var2 = LepidodendronConfig.submarineInventory;
+		var3 = var2.length;
+
+		try {
+			for (Object item : Item.REGISTRY) {
+				//String name = Block.REGISTRY.getNameForObject((Block)block).toString();
+				if (true) {
+					;
+					//outstream.write(name);
+					//outstream.newLine();
+					//System.err.println("BLOCK FOUND: " + name);
+
+					for (int var4 = 0; var4 < var3; ++var4) {
+						String checkItem = var2[var4];
+						//Is there a metadata tag? If so, keep it and strip it out of the string:
+						int strPos = checkItem.indexOf(":", checkItem.indexOf(":") + 1);
+						//System.err.println("ORGBLOCK: " + checkBlock);
+						//System.err.println("SECOND COLON: " + strPos);
+						if (strPos > 0) {
+							meta = (int) Integer.parseInt(checkItem.substring(strPos + 1));
+							checkItem = checkItem.substring(0, strPos);
+							//System.err.println("REVBLOCK: " + checkBlock + " meta: " + meta);
+						} else {
+							meta = -1;
+						}
+
+						if (checkItem.equalsIgnoreCase(Item.REGISTRY.getNameForObject((Item) item).toString())) {
+							if (meta == -1) {
+								OreDictionary.registerOre("inventorySubmarine", new ItemStack((Item) item, (int) (1)));
+							} else {
+								OreDictionary.registerOre("inventorySubmarine", new ItemStack((Item) item, (int) (1), meta));
+
 							}
 						}
 
