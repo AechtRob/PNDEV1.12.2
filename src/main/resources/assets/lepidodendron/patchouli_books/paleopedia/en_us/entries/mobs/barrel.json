@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_jellyfish4",
 			"title": "Barrel Jelly",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Oligocene+$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Rhizostomeae$(br)>Rhizostomatidae$(br)>$(o)Rhizostoma"
+			"text": "$(l)Temporal Range:$() Paleogene (Oligocene) - Present$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Rhizostomeae$(br)>Rhizostomatidae$(br)>$(o)Rhizostoma"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/jelly_barrel.png"],
-			"title": "Rhizostoma pulmo",
-			"text": ""
+			"type": "entity",
+			"name": "Rhizostoma pulmo",
+			"entity": "lepidodendron:prehistoric_flora_jellyfish4",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_jellyfish4",

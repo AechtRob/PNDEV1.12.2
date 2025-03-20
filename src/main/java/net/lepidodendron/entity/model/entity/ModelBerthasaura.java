@@ -342,15 +342,33 @@ public class ModelBerthasaura extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = -1.20F;
-        this.hips.offsetX = -0.1F;
+        this.hips.offsetX = 0.8F;
+        this.hips.offsetZ = 1.5F;
         this.hips.rotateAngleY = (float)Math.toRadians(130);
         this.hips.rotateAngleX = (float)Math.toRadians(-6);
         this.hips.rotateAngleZ = (float)Math.toRadians(-2);
         this.hips.scaleChildren = true;
-        float scaler = 1.85F;
+        float scaler = 1.5F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(hips, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(leftLeg, -0.2F, 0.0F, -0.0F);
+        this.setRotateAngle(leftLeg2, 1.0F, 0.0F, -0.0F);
+        this.setRotateAngle(leftLeg3, -0.6F, 0.0F, -0.0F);
+        this.setRotateAngle(leftLeg4, 0.4F, 0.0F, -0.0F);
+        this.setRotateAngle(rightLeg, -0.1F, 0.0F, -0.0F);
+        this.setRotateAngle(rightLeg2, 0.6F, 0.0F, -0.0F);
+        this.setRotateAngle(rightLeg3, -0.4F, 0.0F, -0.0F);
+        this.setRotateAngle(rightLeg4, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(neck3, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(neck2, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.1F, -0.0F);
+        this.setRotateAngle(head, 0.0F, 0.2F, -0.0F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, -0.0F);
+        this.setRotateAngle(tail, -0.1F, 0.3F, -0.0F);
+        this.setRotateAngle(tail2, -0.1F, 0.2F, -0.0F);
+        this.setRotateAngle(tail3, -0.05F, 0.1F, -0.0F);
+        this.setRotateAngle(tail4, -0.05F, 0.0F, -0.0F);
         //End of pose, now render the model:
         this.hips.render(f);
         //Reset rotations, positions and sizing:

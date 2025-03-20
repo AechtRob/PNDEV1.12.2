@@ -12,20 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Birgeriformes$(br)>Birgeriidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/birgeria.png"],
-			"title": "B. mougeoti",
-			"text": ""
+			"type": "entity",
+			"name": "B. mougeoti",
+			"entity": "lepidodendron:prehistoric_flora_birgeria",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_birgeria",
 			"type": "text",
-			"text": "Birgeria is a genus of Actinopterigian fish from the Triassic. Found in many locales around the world including Germany, Madagascar, Italy, Slovenia, China, Russia and North America, this large marine predator was quite successful for his time period."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_birgeria",
-			"type": "text",
-			"text": "Originally described by Louis Agassiz in 1844 as a species of Saurichthys, it would take an extra 75 years before Erik Stensiö would recognize it as its own genus and erect it in 1919."
+			"text": "Birgeria is a genus of actinopterigian fish from the Triassic. Found in many locales around the world including Germany, Madagascar, Italy, Slovenia, China, Russia and North America, this large marine predator was quite successful for his time period. Originally described by Louis Agassiz in 1844 as a species of Saurichthys, it would take an extra 75 years before Erik Stensiö would recognize it as its own genus and erect it in 1919."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_birgeria",

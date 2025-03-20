@@ -12,20 +12,21 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Sauropsida$(br)>Ichthyopterygia$(br)>Merriamosauria$(br)>Besanosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/besanosaurus.png"],
-			"title": "B. leptorhynchus",
-			"text": ""
+			"type": "entity",
+			"name": "B. leptorhynchus",
+			"entity": "lepidodendron:prehistoric_flora_besanosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_besanosaurus",
 			"type": "text",
-			"text": "Besanosaurus leptorhynchus is a species of ichthyosaur that existed during the middle Triassic period. The animal, taking its genus name from the Italian town of Besano, was a roughly up to 8 m long reptile that swam with eel-like motions of the body, which made it a particularly maneuverable and quick predator in the tropical waters it inhabited."
+			"text": "Besanosaurus leptorhynchus is a species of ichthyosaur that existed during the Middle Triassic. The animal, taking its genus name from the Italian town of Besano, was a roughly up to 8 m long reptile that swam with eel-like motions of the body, which made it a particularly maneuverable and quick predator in the tropical waters it inhabited."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_besanosaurus",
 			"type": "text",
-			"text": "This animal mainly fed on fish and cephalopods but it's hypothesised it would also eat smaller marine reptiles as well. Contrary to later ichthyosaurs, Besanosaurus didn't have the more characteristic dolphin-like shape of the body, instead having a smaller head relative to body size attached to an elongated trunk terminating in a modest caudal fin."
+			"text": "This animal mainly fed on fish and cephalopods, but it's hypothesised it would also eat smaller marine reptiles as well. Contrary to later ichthyosaurs, Besanosaurus didn't have the more characteristic dolphin-like shape of the body, instead having a smaller head relative to body size attached to an elongated trunk terminating in a modest caudal fin."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_besanosaurus",

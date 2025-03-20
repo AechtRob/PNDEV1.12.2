@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_harvestman",
 			"title": "Harvestman",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian+$(br2)>Arthropoda$(br)>Chelicerata$(br)>Arachnida$(br)>Opiliones"
+			"text": "$(l)Temporal Range:$() Devonian - Present$(br2)>Arthropoda$(br)>Chelicerata$(br)>Arachnida$(br)>Opiliones"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_harvestman",
 			"type": "text",
-			"text": "Harvestmen are arachnids characterized by a smalled elliptical body and eight long legs, that extend from its fused body. They have a single pair of eyes in the middle of the cephalothorax. They are non venomous carnivorous animals."
+			"text": "Harvestmen are arachnids characterized by a small elliptical body and eight long legs, that extend from its fused body. They have a single pair of eyes in the middle of the cephalothorax. They are non venomous carnivorous animals."
 		},
 		{
 			"type": "lepidodendron:diet",

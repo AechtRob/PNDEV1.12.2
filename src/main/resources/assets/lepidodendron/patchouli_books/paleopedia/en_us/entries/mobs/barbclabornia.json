@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_barbclabornia",
 			"title": "Barbclabornia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Chondrichthyes$(br)>Bransonelliformes"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Bransonelliformes"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/barbclabornia.png"],
-			"title": "B. luedersensis",
-			"text": ""
+			"type": "entity",
+			"name": "B. luedersensis",
+			"entity": "lepidodendron:prehistoric_flora_barbclabornia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_barbclabornia",
 			"type": "text",
-			"text": "Barbclabornia is a xenacanthid shark from the Early Permian period. It was a large freshwater filter feeding shark, similar to modern Basking and Whale sharks. This would mean that it primarily ate zooplankton."
+			"text": "Barbclabornia is a xenacanthid shark from the Lower Permian. It was a large freshwater filter feeding shark, similar to modern Basking and Whale sharks. This would mean that it primarily ate zooplankton."
 		},
 		{
 			"type": "lepidodendron:diet",

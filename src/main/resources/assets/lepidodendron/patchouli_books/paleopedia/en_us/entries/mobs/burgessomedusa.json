@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Cnidaria$(br)>Medusozoa"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/burgessomedusa.png"],
-			"title": "B. phasmiformis",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "B. phasmiformis",
+			"entity": "lepidodendron:prehistoric_flora_burgessomedusa",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_burgessomedusa",

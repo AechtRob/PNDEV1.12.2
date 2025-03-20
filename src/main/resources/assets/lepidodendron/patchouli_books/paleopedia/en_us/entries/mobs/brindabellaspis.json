@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Brindabellaspida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/brindabellaspis.png"],
-			"title": "B. stensioi",
-			"text": ""
+			"type": "entity",
+			"name": "B. stensioi",
+			"entity": "lepidodendron:prehistoric_flora_brindabellaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_brindabellaspis",
 			"type": "text",
-			"text": "Brindabellaspis is a basal placoderm from the Early Devonian Taemas-Wee Jasper Reef in Australia. It was a slender fish characterized by a shovel like snout with which it may have used to disrupt the sediment when searching for food. It is now thought to be one of the closest fish to the first placoderms because of similarities between its brain and those of agnathans."
+			"text": "Brindabellaspis is a basal placoderm from the Lower Devonian Taemas-Wee Jasper Reef in Australia. It was a slender fish characterized by a shovel like snout with which it may have used to disrupt the sediment when searching for food. It is now thought to be one of the closest fish to the first placoderms because of similarities between its brain and those of agnathans."
 		},
 		{
 			"type": "lepidodendron:diet",

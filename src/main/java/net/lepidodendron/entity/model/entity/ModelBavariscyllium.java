@@ -189,6 +189,30 @@ public class ModelBavariscyllium extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = -1.5F;
+        this.main.offsetX = 0.6F;
+        this.main.offsetZ = 1.0F;
+        this.main.rotateAngleY = (float)Math.toRadians(120);
+        this.main.rotateAngleX = (float)Math.toRadians(1);
+        this.main.rotateAngleZ = (float)Math.toRadians(0);
+        this.main.scaleChildren = true;
+        float scaler = 4.0F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(main, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(head, -0.02F, -0.01F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.14F, 0.0F);
+        this.setRotateAngle(tail3, 0.15F, -0.18F, 0.0F);
+        this.setRotateAngle(tail4, 0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(tail5, 0.1F, -0.24F, 0.0F);
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

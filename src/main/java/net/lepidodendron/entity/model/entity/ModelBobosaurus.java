@@ -545,6 +545,49 @@ public class ModelBobosaurus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = -0.4F;
+        this.root.offsetX = 0.1F;
+        this.root.offsetZ = 1.0F;
+        this.root.rotateAngleY = (float)Math.toRadians(120);
+        this.root.rotateAngleX = (float)Math.toRadians(1);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
+        this.root.scaleChildren = true;
+        float scaler = 0.5F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(root, 0.2F, 3.6F, -0.0F);
+        this.setRotateAngle(hips, 0.09F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, 0.09F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm, 0.0F, 0.0F, 0.4F);
+        this.setRotateAngle(leftArm2, 0.0F, 0.0F, 0.1F);
+        this.setRotateAngle(leftArm3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm, 0.0F, 0.0F, -0.4F);
+        this.setRotateAngle(rightArm2, 0.0F, 0.0F, -0.1F);
+        this.setRotateAngle(rightArm3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck1, -0.01F, 0.08F, 0.0F);
+        this.setRotateAngle(neck2, -0.02F, 0.09F, 0.0F);
+        this.setRotateAngle(neck3, -0.03F, 0.1F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(leftLeg2, 0.0F, 0.0F, -0.1F);
+        this.setRotateAngle(leftLeg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(rightLeg2, 0.0F, 0.0F, 0.1F);
+        this.setRotateAngle(rightLeg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.01F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.02F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.03F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.12F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.1F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

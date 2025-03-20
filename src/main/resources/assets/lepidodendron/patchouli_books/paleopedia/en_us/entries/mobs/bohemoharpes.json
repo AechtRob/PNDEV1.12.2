@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Arthropoda$(br)>Trilobita$(br)>Harpetida$(br)>Harpetidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/bohemoharpes.png"],
-			"title": "B. bubovicensis",
-			"text": ""
+			"type": "entity",
+			"name": "B. bubovicensis",
+			"entity": "lepidodendron:prehistoric_flora_bohemoharpes",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bohemoharpes",

@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Bungartiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/bungartius.png"],
-			"title": "B. perissus",
-			"text": ""
+			"type": "entity",
+			"name": "B. perissus",
+			"entity": "lepidodendron:prehistoric_flora_bungartius",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bungartius",

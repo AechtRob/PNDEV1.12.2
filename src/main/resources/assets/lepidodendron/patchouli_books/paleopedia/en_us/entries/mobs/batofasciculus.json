@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ctenophora$(br)>Scleroctenophora"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/batofasciculus.png"],
-			"title": "B. ramificans",
-			"text": ""
+			"type": "entity",
+			"name": "B. ramificans",
+			"entity": "lepidodendron:prehistoric_flora_batofasciculus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_batofasciculus",
 			"type": "text",
-			"text": "Batofasciculus is an extinct comb jelly from the Cambrian period. It reached about 5 centimeters in diameter and it probably just floated around, eating micro organisms."
+			"text": "Batofasciculus is an extinct comb jelly from the Cambrian period. It reached about 5 centimeters in diameter and it probably just floated around, eating micro organisms, as most ctenophores do."
 		},
 		{
 			"type": "lepidodendron:diet",

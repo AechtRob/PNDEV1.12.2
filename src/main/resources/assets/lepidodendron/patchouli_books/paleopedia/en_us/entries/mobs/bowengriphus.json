@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_bowengriphus",
 			"type": "text",
-			"text": "Bowengriphus is a freshwater animal known from Permian deposits in Australia. It grew to about 15 cm in length, and bore a superficial resemblence to the Cambrian Odontogriphus, which it was originally thought to have been related to. Re-evaluation of the fossil has cast doubt on this relationship, instead deeming Bowengriphus as incertae sedis"
+			"text": "Bowengriphus is a freshwater animal known from Permian deposits in Australia. It grew to about 15 cm in length, and bore a superficial resemblance to the Cambrian Odontogriphus, which it was originally thought to have been related to. Re-evaluation of the fossil has cast doubt on this relationship, instead deeming Bowengriphus as $(o)incertae sedis"
 		},
 		{
 			"type": "lepidodendron:diet",

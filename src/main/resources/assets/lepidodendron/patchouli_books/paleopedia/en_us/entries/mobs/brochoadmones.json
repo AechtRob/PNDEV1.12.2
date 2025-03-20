@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Acanthodii$(br)>$(o)incertae sedis"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/brochoadmones.png"],
-			"title": "B. milesi",
-			"text": ""
+			"type": "entity",
+			"name": "B. milesi",
+			"entity": "lepidodendron:prehistoric_flora_brochoadmones",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_brochoadmones",

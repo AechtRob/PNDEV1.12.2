@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorphi$(br)>Cyathaspidida$(br)>Ctenaspidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/boothiaspis.png"],
-			"title": "B. ovata",
-			"text": ""
+			"type": "entity",
+			"name": "B. ovata",
+			"entity": "lepidodendron:prehistoric_flora_boothiaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_boothiaspis",

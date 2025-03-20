@@ -199,6 +199,41 @@ public class ModelBandringa extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -0.6F;
+        this.body.offsetX = 0.35F;
+        this.body.offsetZ = 2.5F;
+        this.body.rotateAngleY = (float)Math.toRadians(120);
+        this.body.rotateAngleX = (float)Math.toRadians(1);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 1.8F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.1134F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(pectoralfinL, 0.0F, -0.2618F, 0.2618F);
+        this.setRotateAngle(pectoralfinR, 0.0F, 0.2618F, -0.2618F);
+        this.setRotateAngle(pelvicfinL, 0.0F, -0.7854F, 0.5236F);
+        this.setRotateAngle(pelvicfinR, 0.0F, 0.7854F, -0.5236F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

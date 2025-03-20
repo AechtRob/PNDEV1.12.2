@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_burgessia",
 			"type": "text",
-			"text": "Burgessia is an extremely abundant shelled arthropod from the Burgess Shale of Canada. It had an unsegmented circular carapace which was slightly convex. It was likely to have been a benthic sea floor dweller that lacked the ability to swim. Some studies suggest that Burgessia was a deposit feeder. It is so abundant in the Burgess Shale that over 1,700 specimens have been collected."
+			"text": "Burgessia is an extremely abundant shelled arthropod from the Burgess Shale of Canada. It had an unsegmented circular carapace which was slightly convex. It was likely to have been a benthic sea floor dweller that lacked the ability to swim, as such, some studies suggest that Burgessia was a deposit feeder. It is so abundant in the Burgess Shale that over 1,700 specimens have been collected."
 		},
 		{
 			"type": "lepidodendron:diet",

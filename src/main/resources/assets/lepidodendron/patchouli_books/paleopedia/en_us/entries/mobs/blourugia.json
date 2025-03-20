@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Actinopterygii$(br)>Actinopteri"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/blourugia.png"],
-			"title": "B. seeleyi",
-			"text": ""
+			"type": "entity",
+			"name": "B. seeleyi",
+			"entity": "lepidodendron:prehistoric_flora_blourugia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_blourugia",
 			"type": "text",
-			"text": "Blourugia is a Permian freshwater ray finned fish that is related to Palaeoniscum and Platysomus. It is named after the farm where it was first discovered and it has a somewhat deep bodied shape. It was around 20cm in length."
+			"text": "Blourugia is a Permian freshwater ray finned fish that is related to Palaeoniscum and Platysomus. It is named after the farm where it was first discovered and it has a somewhat deep bodied shape. It was around 20 cm in length."
 		},
 		{
 			"type": "lepidodendron:diet",

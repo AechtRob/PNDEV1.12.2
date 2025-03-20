@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_limulid",
 			"title": "Limulid",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Present$(br2)>Arthropoda$(br)>Chelicerata$(br)>Xiphosura$(br)>Limulidae"
+			"text": "$(l)Temporal Range:$() Triassic - Present$(br2)>Arthropoda$(br)>Chelicerata$(br)>Xiphosura$(br)>Limulidae"
 		},
 		{
 			"type": "image",

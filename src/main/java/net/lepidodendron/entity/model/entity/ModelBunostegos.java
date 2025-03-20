@@ -427,6 +427,41 @@ public class ModelBunostegos extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.bunostegos.offsetY = 0.0F;
+        this.bunostegos.offsetX = 0.05F;
+        this.bunostegos.offsetZ = 2.0F;
+        this.bunostegos.rotateAngleY = (float)Math.toRadians(120);
+        this.bunostegos.rotateAngleX = (float)Math.toRadians(1);
+        this.bunostegos.rotateAngleZ = (float)Math.toRadians(0);
+        this.bunostegos.scaleChildren = true;
+        float scaler = 0.6F;
+        this.bunostegos.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(bunostegos, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(lowerbody, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg4, -0.3F, -0.2F, -0.2F);
+        this.setRotateAngle(backleftleg5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontrightleg4, 0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(frontrightleg5, 0.0F, -0.2F, 0.3F);
+        this.setRotateAngle(frontrightleg6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftleg, 0.3F, 0.0F, 0.1F);
+        this.setRotateAngle(frontleftleg3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(frontleftleg7, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, -0.1F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.bunostegos.render(f);
+        //Reset rotations, positions and sizing:
+        this.bunostegos.setScale(1.0F, 1.0F, 1.0F);
+        this.bunostegos.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

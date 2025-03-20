@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Pistosauria"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/bobosaurus.png"],
-			"title": "B. forojuliensis",
-			"text": ""
+			"type": "entity",
+			"name": "B. forojuliensis",
+			"entity": "lepidodendron:prehistoric_flora_bobosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bobosaurus",
 			"type": "text",
-			"text": "Bobosaurus is a species of Pistosaurian Sauropterygian from the Late Triassic of Italy. The more than 3 m long animal is known from one single specimen recovered from the Rio del Lago Formation. In the past, two specimens were attributed to the species, one being the holotype, still recognized today, the other being a single vertebra now believed to have been of Simosaurus, at the time unknown in the area."
+			"text": "Bobosaurus is a species of pistosaurian sauropterygian from the Upper Triassic of Italy. The more than 3 m long animal is known from one single specimen recovered from the Rio del Lago Formation. In the past, two specimens were attributed to the species, one being the holotype, still recognized today, the other being a single vertebra now believed to have been of Simosaurus, at the time unknown in the area."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bobosaurus",
@@ -40,7 +41,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_bobosaurus",
 			"type": "text",
-			"text": "in the digsite by proposing the known one to have been carried onto the area by water currents after death. Despite all this, Bobosaurus remains an important puzzle piece in the early evolution and diversification of Pistosauria and non Placodont Sauropterygians on the road towards Plesiosauria."
+			"text": "in the dig-site by proposing the known one to have been carried onto the area by water currents after death. Despite all this, Bobosaurus remains an important puzzle piece in the early evolution and diversification of pistosauria and non placodont sauropterygians on the road towards Plesiosauria."
 		},
 		{
 			"type": "lepidodendron:diet",
