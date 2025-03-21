@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tessarolax",
 			"title": "Tessarolax",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous - Paleogene$(br2)>Mollusca$(br)>Gastropoda$(br)>Aporrhaidae"
+			"text": "$(l)Temporal Range:$() Cretaceous - Palaeogene$(br2)>Mollusca$(br)>Gastropoda$(br)>Aporrhaidae"
 		},
         	{
             "type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_tessarolax",
 			"type": "text",
-			"text": "Tessarolax hails from the Cretaceous Paleogene (Paleocene), with fossils being found across the globe. It is a small aporrhaid, growing to 12 cm in length. It has a rather strange shell, with four long and curved canaliculate."
+			"text": "Tessarolax hails from the Cretaceous Palaeogene (Paleocene), with fossils being found across the globe. It is a small aporrhaid, growing to 12 cm in length. It has a rather strange shell, with four long and curved canaliculate."
 		},
 		{
 			"type": "lepidodendron:diet",

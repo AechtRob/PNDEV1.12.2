@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_thuchomyces",
 			"title": "Thuchomyces",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Archean (Mesoarchean)$(br2)$(l)Habitat:$() Terrestrial$(br2)>Fungi$(br2)$(l)Propagation:$() $(l:basics/collecting_plants)Spore-bearing plants$(/l)$(br)$(l)Method of Obtaining:$() Shears"
+			"text": "$(l)Temporal Range:$() Archaean (Mesoarchaean)$(br2)$(l)Habitat:$() Terrestrial$(br2)>Fungi$(br2)$(l)Propagation:$() $(l:basics/collecting_plants)Spore-bearing plants$(/l)$(br)$(l)Method of Obtaining:$() Shears"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_thuchomyces",
 			"type": "text",
-			"text": "Thuchomyces lichenoides comes from the Upper Mesoarchean, with fossils from the Central Rand Group, South Africa. It is a collection of upright tube shapes, and grew up to 3 mm in height. The generic name derives from the mineral name 'thucholite', and the Greek word 'myces', to mean 'fungus'. The specific name derives from the name 'Lichen' and the Latin word 'oid', to mean 'like'."
+			"text": "Thuchomyces lichenoides comes from the Upper Mesoarchaean, with fossils from the Central Rand Group, South Africa. It is a collection of upright tube shapes, and grew up to 3 mm in height. The generic name derives from the mineral name 'thucholite', and the Greek word 'myces', to mean 'fungus'. The specific name derives from the name 'Lichen' and the Latin word 'oid', to mean 'like'."
 		}
 	]
 }

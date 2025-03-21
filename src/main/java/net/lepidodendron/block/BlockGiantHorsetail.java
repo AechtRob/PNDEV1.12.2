@@ -571,7 +571,7 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail shrub");
-	        tooltip.add("Periods: Carboniferous - Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
+	        tooltip.add("Periods: Carboniferous - Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Palaeogene  - Neogene - Pleistocene [- present]");
 	        tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

@@ -486,7 +486,7 @@ public class BlockCoralCarnation extends ElementsLepidodendronMod.ModElement {
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Coral");
-				tooltip.add("Periods: Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene - present");
+				tooltip.add("Periods: Jurassic - Early Cretaceous - Late Cretaceous - Palaeogene  - Neogene - Pleistocene - present");
 				super.addInformation(stack, player, tooltip, advanced);
 			}
 		}

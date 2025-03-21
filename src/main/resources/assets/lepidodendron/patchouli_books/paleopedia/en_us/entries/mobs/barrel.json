@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_jellyfish4",
 			"title": "Barrel Jelly",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Paleogene (Oligocene) - Present$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Rhizostomeae$(br)>Rhizostomatidae$(br)>$(o)Rhizostoma"
+			"text": "$(l)Temporal Range:$() Palaeogene (Oligocene) - Present$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Rhizostomeae$(br)>Rhizostomatidae$(br)>$(o)Rhizostoma"
 		},
 		{
 			"type": "entity",

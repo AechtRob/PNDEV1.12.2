@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_girvanella",
 			"title": "Girvanella",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Tonian) - Paleogene$(br2)$(l)Habitat:$() Marine$(br2)>Cyanobacteria$(br)$(l)Method of Obtaining:$() Shears"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Tonian) - Palaeogene$(br2)$(l)Habitat:$() Marine$(br2)>Cyanobacteria$(br)$(l)Method of Obtaining:$() Shears"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_girvanella",
 			"type": "text",
-			"text": "Girvanella are found from the Tonian into the Paleogene. They are a form of small stromatolite, with domes growing up to 10 cm in diameter. They usually arise in less ideal conditions that do not allow for the larger forms, mostly due to higher oxygen levels and predation."
+			"text": "Girvanella are found from the Tonian into the Palaeogene. They are a form of small stromatolite, with domes growing up to 10 cm in diameter. They usually arise in less ideal conditions that do not allow for the larger forms, mostly due to higher oxygen levels and predation."
 		}
 	]
 }

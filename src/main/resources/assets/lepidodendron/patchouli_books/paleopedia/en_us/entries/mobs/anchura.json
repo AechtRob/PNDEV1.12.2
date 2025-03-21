@@ -9,7 +9,7 @@
 "trigger": "lepidodendron:pf_adv_book_anchura",
 "title": "Anchura",
 "type": "quest",
-"text": "$(l)Temporal Range:$()  Early Cretaceous - Paleogene$(br2)>Mollusca$(br)>Gastropoda$(br)>Stromboidea$(br)>Aporrhaidae"
+"text": "$(l)Temporal Range:$()  Early Cretaceous - Palaeogene$(br2)>Mollusca$(br)>Gastropoda$(br)>Stromboidea$(br)>Aporrhaidae"
 },
         {
             "type": "entity",
@@ -21,7 +21,7 @@
 {
 "advancement": "lepidodendron:pf_adv_book_anchura",
 "type": "text",
-"text": "Anchura is a genus of marine gastropod that lived from the Early Cretaceous till the Paleogene. The outer lip of Anchura's shell extended very prominently towards the back of the shell, sometimes looking almost like a check mark."
+"text": "Anchura is a genus of marine gastropod that lived from the Early Cretaceous until the Palaeogene. The outer lip of Anchura's shell extended very prominently towards the back of the shell, sometimes looking almost like a check mark."
 },
 {
 "type": "lepidodendron:diet",

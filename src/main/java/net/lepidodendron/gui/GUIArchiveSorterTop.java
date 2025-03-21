@@ -697,7 +697,7 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 
             this.fontRenderer.drawString("Jurassic", 142, 3, 4210752);
             this.fontRenderer.drawString("Cretaceous", 128, 34, 4210752);
-            this.fontRenderer.drawString("Paleogene", 136, 65, 4210752);
+            this.fontRenderer.drawString("Palaeogene", 136, 65, 4210752);
             this.fontRenderer.drawString("Neogene", 143, 96, 4210752);
             this.fontRenderer.drawString("Pleisto-", 147, 123, 4210752);
             this.fontRenderer.drawString("cene", 161, 131, 4210752);

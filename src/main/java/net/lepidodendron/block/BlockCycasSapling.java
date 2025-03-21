@@ -223,7 +223,7 @@ public class BlockCycasSapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Cycad");
-				tooltip.add("Periods: [Permian - Triassic -] Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
+				tooltip.add("Periods: [Permian - Triassic -] Jurassic - Early Cretaceous - Late Cretaceous - Palaeogene  - Neogene - Pleistocene [- present]");
 				tooltip.add("Note: Based on Cycadaceae family cycads, primarily Cycas");
 				tooltip.add("Propagation: fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);

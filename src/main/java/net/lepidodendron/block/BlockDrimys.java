@@ -384,7 +384,7 @@ public class BlockDrimys extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering plant");
-	        	tooltip.add("Periods: early Cretaceous (?) - late Cretaceous (?) - Paleogene - Neogene - Pleistocene [- present]");
+	        	tooltip.add("Periods: early Cretaceous (?) - late Cretaceous (?) - Palaeogene  - Neogene - Pleistocene [- present]");
 	        	tooltip.add("Propagation: flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

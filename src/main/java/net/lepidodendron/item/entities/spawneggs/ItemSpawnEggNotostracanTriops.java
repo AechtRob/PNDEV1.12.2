@@ -65,7 +65,7 @@ public class ItemSpawnEggNotostracanTriops extends ElementsLepidodendronMod.ModE
 
 		@Override
 		public String getPeriod() {
-			return "Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - [Present]";
+			return "Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Palaeogene  - Neogene - Pleistocene - [Present]";
 		}
 
 		@Override

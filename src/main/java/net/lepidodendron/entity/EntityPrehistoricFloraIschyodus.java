@@ -304,7 +304,7 @@ public class EntityPrehistoricFloraIschyodus extends EntityPrehistoricFloraAgeab
 		return true;
 	}
 
-	public static String getPeriod() {return "Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene";}
+	public static String getPeriod() {return "Jurassic - Early Cretaceous - Late Cretaceous - Palaeogene  - Neogene";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

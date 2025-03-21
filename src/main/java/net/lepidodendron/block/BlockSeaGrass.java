@@ -390,7 +390,7 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Marine flowering plant");
-				tooltip.add("Periods: early Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
+				tooltip.add("Periods: early Cretaceous - Palaeogene  - Neogene - Pleistocene [- present]");
 				tooltip.add("Note: planted up to 10 blocks under water on sand. Spreads to adjacent blocks");
 				tooltip.add("Propagation: seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
