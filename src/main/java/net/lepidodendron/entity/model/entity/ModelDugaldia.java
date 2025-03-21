@@ -324,31 +324,31 @@ public class ModelDugaldia extends ModelBasePalaeopedia {
         this.head.render(f5);
     }
 
-    public void renderStaticWall(float f) {
-        this.head.rotateAngleY = (float) Math.toRadians(90);
-        this.head.offsetY = -0.2F;
-        this.head.offsetX = -0.15F;
-        this.head.offsetZ = -0.4F;
-        this.head.render(0.01F);
-        resetToDefaultPose();
-    }
-    public void renderStaticFloor(float f) {
-        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(jawleft, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(jawright, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(lipleft, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(lipright, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(jawcoverleft, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(jawcoverright, 0.0F, 0.0F, 0.0F);
-        this.head.offsetY = -0.1F;
-        this.head.render(0.01f);
-        resetToDefaultPose();
-    }
+//    public void renderStaticWall(float f) {
+//        this.head.rotateAngleY = (float) Math.toRadians(90);
+//        this.head.offsetY = -0.2F;
+//        this.head.offsetX = -0.15F;
+//        this.head.offsetZ = -0.4F;
+//        this.head.render(0.01F);
+//        resetToDefaultPose();
+//    }
+//    public void renderStaticFloor(float f) {
+//        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(jawleft, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(jawright, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(lipleft, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(lipright, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(jawcoverleft, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(jawcoverright, 0.0F, 0.0F, 0.0F);
+//        this.head.offsetY = -0.1F;
+//        this.head.render(0.01f);
+//        resetToDefaultPose();
+//    }
 
     @Override
     public void renderStaticBook(float f) {

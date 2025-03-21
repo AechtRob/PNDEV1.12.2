@@ -252,8 +252,6 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 		}
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
-		AnimationHandler.INSTANCE.updateAnimations(this);
-
 	}
 
 	@Override

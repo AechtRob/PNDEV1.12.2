@@ -90,25 +90,25 @@ public class ModelPriscomyzon extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
-    public void renderStaticWall(float f) {
-        this.body.rotateAngleY = (float) Math.toRadians(180);
-        this.body.rotateAngleX = (float) Math.toRadians(-90);
-        this.body.offsetZ = -0.19F;
-        this.body.offsetY = -0.3F;
-        this.body.offsetX = -0.0F;
-        this.body.render(0.01F);
-        resetToDefaultPose();
-    }
-    public void renderStaticFloor(float f) {
-        this.setRotateAngle(body, -0.4F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, 0.1F, 0.0F, 0.0F);
-        this.setRotateAngle(body3, 0.2F, 0.1F, 0.0F);
-        this.setRotateAngle(body4, 0.3F, 0.4F, 0.0F);
-        this.setRotateAngle(body5, 0.4F, 0.6F, 0.0F);
-        this.body.offsetY = -0.11F;
-        this.body.render(0.01F);
-        resetToDefaultPose();
-    }
+//    public void renderStaticWall(float f) {
+//        this.body.rotateAngleY = (float) Math.toRadians(180);
+//        this.body.rotateAngleX = (float) Math.toRadians(-90);
+//        this.body.offsetZ = -0.19F;
+//        this.body.offsetY = -0.3F;
+//        this.body.offsetX = -0.0F;
+//        this.body.render(0.01F);
+//        resetToDefaultPose();
+//    }
+//    public void renderStaticFloor(float f) {
+//        this.setRotateAngle(body, -0.4F, 0.0F, 0.0F);
+//        this.setRotateAngle(body2, 0.1F, 0.0F, 0.0F);
+//        this.setRotateAngle(body3, 0.2F, 0.1F, 0.0F);
+//        this.setRotateAngle(body4, 0.3F, 0.4F, 0.0F);
+//        this.setRotateAngle(body5, 0.4F, 0.6F, 0.0F);
+//        this.body.offsetY = -0.11F;
+//        this.body.render(0.01F);
+//        resetToDefaultPose();
+//    }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

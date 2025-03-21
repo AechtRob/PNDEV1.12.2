@@ -251,6 +251,7 @@ public class ModelAsteracanthus extends ModelBasePalaeopedia {
         this.head.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(cube_r1, 0.2007F, 0.0F, 0.0F);
         this.setRotateAngle(body2, 0.0F, 0.1309F, 0.0F);
@@ -270,10 +271,13 @@ public class ModelAsteracanthus extends ModelBasePalaeopedia {
         this.setRotateAngle(cube_r5, 0.384F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r6, -0.0873F, 0.0F, 0.0F);
         this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.offsetX = 0.15F;
+        this.body.offsetZ = -0.15F;
         this.body.offsetY = -0.3F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticSuspended(float f) {
         this.setRotateAngle(cube_r1, 0.2007F, 0.0F, 0.0F);
         this.setRotateAngle(body2, 0.0F, 0.1309F, 0.0F);
@@ -293,6 +297,8 @@ public class ModelAsteracanthus extends ModelBasePalaeopedia {
         this.setRotateAngle(cube_r5, 0.384F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r6, -0.0873F, 0.0F, 0.0F);
         this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.offsetX = 0.15F;
+        this.body.offsetZ = -0.15F;
         this.body.offsetY = 0.04F;
         this.body.render(0.01F);
         resetToDefaultPose();

@@ -164,7 +164,7 @@ public class EntityPrehistoricFloraBalhuticaris extends EntityPrehistoricFloraFi
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetCase(@Nullable String variant) { return 0.26; }
-
+	public static float widthSupport(@Nullable String variant) {return 0.018F;}
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;
 	}

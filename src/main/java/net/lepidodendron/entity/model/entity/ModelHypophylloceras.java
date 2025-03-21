@@ -390,12 +390,12 @@ public class ModelHypophylloceras extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -1.2F;
-        this.root.offsetX = 0.438F;
+        this.root.offsetX = 1.2F;
         this.root.rotateAngleY = (float)Math.toRadians(242);
-        this.root.rotateAngleX = (float)Math.toRadians(8);
+        this.root.rotateAngleX = (float)Math.toRadians(-18);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 1.53F;
+        float scaler = 1.23F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
 

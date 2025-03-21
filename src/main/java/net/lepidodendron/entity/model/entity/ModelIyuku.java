@@ -534,12 +534,12 @@ public class ModelIyuku extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Root.offsetY = 0.30F;
-        this.Root.offsetX = -0.2F;
+        this.Root.offsetX = -0.32F;
         this.Root.rotateAngleY = (float)Math.toRadians(130);
         this.Root.rotateAngleX = (float)Math.toRadians(0);
         this.Root.rotateAngleZ = (float)Math.toRadians(0);
         this.Root.scaleChildren = true;
-        float scaler = 0.55F;
+        float scaler = 0.47F;
         this.Root.setScale(scaler, scaler, scaler);
         //Start of pose:
 

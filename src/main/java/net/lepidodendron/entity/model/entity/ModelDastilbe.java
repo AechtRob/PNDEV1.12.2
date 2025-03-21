@@ -206,26 +206,26 @@ public class ModelDastilbe extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
-    public void renderStaticWall(float f) {
-        this.root.rotateAngleY = (float) Math.toRadians(90);
-        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
-        this.root.offsetX = -0.14F;
-        this.root.offsetY = -0.19F;
-        this.root.offsetZ = 0.06F;
-        this.root.render(0.01F);
-        this.resetToDefaultPose();
-    }
-    public void renderStaticFloor(float f) {
-        this.setRotateAngle(root, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(bodyfront, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(bodymiddle, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(bodyend, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
-        this.root.offsetY = 0.139F;
-        this.root.render(0.01f);
-        resetToDefaultPose();
-    }
+//    public void renderStaticWall(float f) {
+//        this.root.rotateAngleY = (float) Math.toRadians(90);
+//        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+//        this.root.offsetX = -0.14F;
+//        this.root.offsetY = -0.19F;
+//        this.root.offsetZ = 0.06F;
+//        this.root.render(0.01F);
+//        this.resetToDefaultPose();
+//    }
+//    public void renderStaticFloor(float f) {
+//        this.setRotateAngle(root, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(bodyfront, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(bodymiddle, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(bodyend, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+//        this.root.offsetY = 0.139F;
+//        this.root.render(0.01f);
+//        resetToDefaultPose();
+//    }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

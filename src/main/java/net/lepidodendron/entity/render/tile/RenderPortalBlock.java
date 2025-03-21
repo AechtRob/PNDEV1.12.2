@@ -29,6 +29,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
     private static final ResourceLocation TEXTURE_OVERWORLD_POPPY = new ResourceLocation("minecraft:textures/blocks/flower_rose.png");
     private static final ResourceLocation TEXTURE_OVERWORLD_GRASS = new ResourceLocation("minecraft:textures/blocks/tallgrass.png");
     private static final ResourceLocation TEXTURE_PRECAMBRIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_precambrian.png");
+    private static final ResourceLocation TEXTURE_PRECAMBRIAN_EMISSIVE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_precambrian_emissivelayer.png");
     private static final ResourceLocation TEXTURE_CAMBRIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_cambrian.png");
     private static final ResourceLocation TEXTURE_ORDOVICIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_ordovician.png");
     private static final ResourceLocation TEXTURE_SILURIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_silurian.png");
@@ -221,6 +222,51 @@ GlStateManager.enableAlpha();
                 colRed = (byte) 255;
                 colGreen = (byte) 0;
                 colBlue = (byte) 0;
+
+                //Emissive layer:
+                if ((entity.getIsActive() && entity.getAnimationTick() > 14)
+                        || entity.getAnimationTick() > 60) {
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_PRECAMBRIAN_EMISSIVE);
+
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    GlStateManager.enableNormalize();
+                    GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+
+                    GlStateManager.enableBlend();
+                    GlStateManager.disableAlpha();
+                    GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
+                    GlStateManager.depthMask(true);
+                    int i = 61680;
+                    int j = i % 65536;
+                    int k = i / 65536;
+                    OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float) j, (float) k);
+                    GlStateManager.color(1.0F, 1.0F, 1.0F, transparency);
+                    Minecraft.getMinecraft().entityRenderer.setupFogColor(true);
+                    modelPortalBlockPrecambrian.setModelAttributes(modelPortalBlockPrecambrian);
+                    modelPortalBlockPrecambrian.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
+                    Minecraft.getMinecraft().entityRenderer.setupFogColor(false);
+                    i = this.getBrightnessForRender(entity.getWorld(), entity.getPos());
+                    j = i % 65536;
+                    k = i / 65536;
+                    OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float) j, (float) k);
+                    this.setLightmap(entity.getWorld(), entity.getPos());
+                    GlStateManager.disableBlend();
+                    GlStateManager.enableAlpha();
+
+                    GlStateManager.disableRescaleNormal();
+
+                    GlStateManager.disableBlend();
+                    GlStateManager.disableNormalize();
+                    GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+                    GlStateManager.enableCull();
+
+                    GlStateManager.popMatrix();
+                }
             }
             //CAMBRIAN
             //----------

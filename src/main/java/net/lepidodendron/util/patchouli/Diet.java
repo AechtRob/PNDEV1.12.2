@@ -1,6 +1,7 @@
 package net.lepidodendron.util.patchouli;
 
 import net.lepidodendron.LepidodendronBookSubscribers;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.lepidodendron.util.Functions;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.ResourceLocation;
@@ -55,6 +56,9 @@ public class Diet implements IComponentProcessor {
         }
         else {
             result = "$(br)Unknown diet";
+        }
+        if (entity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
+            nestString = nestString + " (can only breed when on the ground)";
         }
         entity.setDead();
         return "$(br)$(l)Diet:$()$(br)" + result + "$(br2)" + "$(l)Breeding notes:$()$(br)" + nestString + "$(br2)" + homingString;

@@ -160,23 +160,23 @@ public class ModelEbenaqua extends ModelBasePalaeopedia {
         this.base.render(f5);
     }
 
-    public void renderStaticWall(float f) {
-        this.base.offsetY = -0.15F;
-        this.base.offsetX = -0.25F;
-        this.base.rotateAngleY = (float) Math.toRadians(90);
-        this.base.render(0.01F);
-        this.resetToDefaultPose();
-    }
-    public void renderStaticFloor(float f) {
-        this.setRotateAngle(base, 0.2F, 0.0F, 0.1F);
-        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
-        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
-        this.base.offsetZ = -0.01F;
-        this.base.offsetX = -0.12F;
-        this.base.offsetY = 0.35F;
-        this.base.render(0.01F);
-        this.resetToDefaultPose();
-    }
+//    public void renderStaticWall(float f) {
+//        this.base.offsetY = -0.15F;
+//        this.base.offsetX = -0.25F;
+//        this.base.rotateAngleY = (float) Math.toRadians(90);
+//        this.base.render(0.01F);
+//        this.resetToDefaultPose();
+//    }
+//    public void renderStaticFloor(float f) {
+//        this.setRotateAngle(base, 0.2F, 0.0F, 0.1F);
+//        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
+//        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+//        this.base.offsetZ = -0.01F;
+//        this.base.offsetX = -0.12F;
+//        this.base.offsetY = 0.35F;
+//        this.base.render(0.01F);
+//        this.resetToDefaultPose();
+//    }
 
     @Override
     public void renderStaticBook(float f) {

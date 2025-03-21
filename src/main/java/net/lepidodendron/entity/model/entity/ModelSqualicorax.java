@@ -463,23 +463,23 @@ public class ModelSqualicorax extends ModelBasePalaeopedia {
         this.base.render(f5);
     }
 
-    public void renderStaticWall(float f) {
-        this.base.rotateAngleY = (float) Math.toRadians(90);
-        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
-        this.base.offsetY = -0.2F;
-        this.base.offsetX = -0.15F;
-        this.base.offsetZ = -0.4F;
-        this.base.render(0.01F);
-        resetToDefaultPose();
-    }
-
-    public void renderStaticFloor(float f) {
-        this.base.offsetZ = -0.1F;
-        this.base.offsetY = -0.03F;
-        this.base.offsetX = -0.02F;
-        this.base.render(0.01F);
-        resetToDefaultPose();
-    }
+//    public void renderStaticWall(float f) {
+//        this.base.rotateAngleY = (float) Math.toRadians(90);
+//        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+//        this.base.offsetY = -0.2F;
+//        this.base.offsetX = -0.15F;
+//        this.base.offsetZ = -0.4F;
+//        this.base.render(0.01F);
+//        resetToDefaultPose();
+//    }
+//
+//    public void renderStaticFloor(float f) {
+//        this.base.offsetZ = -0.1F;
+//        this.base.offsetY = -0.03F;
+//        this.base.offsetX = -0.02F;
+//        this.base.render(0.01F);
+//        resetToDefaultPose();
+//    }
 
     @Override
     public void renderStaticBook(float f) {

@@ -1,0 +1,50 @@
+{
+	"name": "Sea Pens",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sea_pen_icon.png",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_sea_pen",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sea_pen",
+			"title": "Sea Pens",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian - Present$(br2)>Cnidaria$(br)>Octocorallia$(br)>Pennatulacea"
+		},
+		{
+			"type": "multiblock",
+			"name": "Sea Pen",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:sea_pen_pink",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Sea Pen",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:sea_pen_yellow",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sea_pen",
+			"type": "text",
+			"text": "Sea pens are a diverse group of marine colonial Cnidarians in the order of Pennatulacea. They have existed since the Cambrian into the modern day. They are named such due to their artificial resemblance to quill pens. This is owed to their specialized polyps which branch out from the stem to collect drifting nutrients from the water. Sea pens are very cosmopolitan, existing from tropical waters to deep seas, which also means the order is extremely genetically diverse as well. The oldest accepted sea pen is the genus $(l:statics/thaumaptilon)Thaumaptilon$(/l) found in the Burgess Shale from the Cambrian period."
+		}
+	]
+}

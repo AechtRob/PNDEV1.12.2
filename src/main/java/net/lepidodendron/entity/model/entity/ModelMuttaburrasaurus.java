@@ -651,12 +651,12 @@ public class ModelMuttaburrasaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = 0.520F;
-        this.hips.offsetX = 0.05F;
+        this.hips.offsetX = -0.2F;
         this.hips.rotateAngleY = (float)Math.toRadians(125);
         this.hips.rotateAngleX = (float)Math.toRadians(-2);
         this.hips.rotateAngleZ = (float)Math.toRadians(2);
         this.hips.scaleChildren = true;
-        float scaler = 0.55F;
+        float scaler = 0.45F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
        

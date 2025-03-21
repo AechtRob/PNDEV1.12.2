@@ -81,26 +81,27 @@ public class ModelCometicercus extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);
     }
-    public void renderStaticWall(float f) {
-        this.body.rotateAngleY = (float) Math.toRadians(90);
-        this.body.offsetY = -0.2F;
-        this.body.offsetX = -0.05F;
-        this.body.render(0.01F);
-        resetToDefaultPose();
-    }
-    public void renderStaticFloor(float f) {
-        this.setRotateAngle(body, 0.0F, (float) Math.toRadians(90), -0.3054F);
-        this.setRotateAngle(cube_r1, 0.3491F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r2, 0.6109F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r3, -0.2618F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r4, -0.1309F, 0.0F, 0.0F);
-        this.setRotateAngle(tail, 0.0F, -0.3491F, 0.0F);
-        this.setRotateAngle(cube_r5, 0.0873F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r6, -0.1745F, 0.0F, 0.0F);
-        this.body.offsetY = -0.3F;
-        this.body.render(0.01F);
-        resetToDefaultPose();
-    }
+//    public void renderStaticWall(float f) {
+//        this.body.rotateAngleY = (float) Math.toRadians(90);
+//        this.body.offsetY = -0.2F;
+//        this.body.offsetX = -0.05F;
+//        this.body.render(0.01F);
+//        resetToDefaultPose();
+//    }
+//    public void renderStaticFloor(float f) {
+//        this.setRotateAngle(body, 0.0F, (float) Math.toRadians(90), -0.3054F);
+//        this.setRotateAngle(cube_r1, 0.3491F, 0.0F, 0.0F);
+//        this.setRotateAngle(cube_r2, 0.6109F, 0.0F, 0.0F);
+//        this.setRotateAngle(cube_r3, -0.2618F, 0.0F, 0.0F);
+//        this.setRotateAngle(cube_r4, -0.1309F, 0.0F, 0.0F);
+//        this.setRotateAngle(tail, 0.0F, -0.3491F, 0.0F);
+//        this.setRotateAngle(cube_r5, 0.0873F, 0.0F, 0.0F);
+//        this.setRotateAngle(cube_r6, -0.1745F, 0.0F, 0.0F);
+//        this.body.offsetY = -0.3F;
+//        this.body.render(0.01F);
+//        resetToDefaultPose();
+//    }
+
     @Override
     public void renderStaticBook(float f) {
 

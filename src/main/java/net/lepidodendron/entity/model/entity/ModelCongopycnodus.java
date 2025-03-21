@@ -215,26 +215,27 @@ public class ModelCongopycnodus extends ModelBasePalaeopedia {
 
     }
 
-    public void renderStaticWall(float f) {
-        this.setRotateAngle(Congopycnodus, 0.0F, 1.5F, 0.0F);
-        this.setRotateAngle(Jaw, 0.3F, 0.0F, 0.0F);
-        this.Congopycnodus.offsetY = -0.18F;
-        this.Congopycnodus.offsetZ = 0.02F;
-        this.Congopycnodus.render(0.01F);
-        resetToDefaultPose();
-    }
-    public void renderStaticFloor(float f) {
-        this.setRotateAngle(Congopycnodus, -0.25F, 0.0F, 0.0F);
-        this.setRotateAngle(Head, 0.0F, 0.12F, 0.0F);
-        this.setRotateAngle(Body1, 0.0F, 0.12F, 0.0F);
-        this.setRotateAngle(Body2, 0.0F, 0.14F, 0.0F);
-        this.setRotateAngle(Body3, 0.0F, 0.14F, 0.0F);
-        this.setRotateAngle(Body4, 0.0F, 0.16F, 0.0F);
-        this.setRotateAngle(Body5, 0.0F, 0.16F, 0.0F);
-        this.Congopycnodus.offsetY = -0.4F;
-        this.Congopycnodus.render(0.018f);
-        resetToDefaultPose();
-    }
+//    public void renderStaticWall(float f) {
+//        this.setRotateAngle(Congopycnodus, 0.0F, 1.5F, 0.0F);
+//        this.setRotateAngle(Jaw, 0.3F, 0.0F, 0.0F);
+//        this.Congopycnodus.offsetY = -0.18F;
+//        this.Congopycnodus.offsetZ = 0.02F;
+//        this.Congopycnodus.render(0.01F);
+//        resetToDefaultPose();
+//    }
+//    public void renderStaticFloor(float f) {
+//        this.setRotateAngle(Congopycnodus, -0.25F, 0.0F, 0.0F);
+//        this.setRotateAngle(Head, 0.0F, 0.12F, 0.0F);
+//        this.setRotateAngle(Body1, 0.0F, 0.12F, 0.0F);
+//        this.setRotateAngle(Body2, 0.0F, 0.14F, 0.0F);
+//        this.setRotateAngle(Body3, 0.0F, 0.14F, 0.0F);
+//        this.setRotateAngle(Body4, 0.0F, 0.16F, 0.0F);
+//        this.setRotateAngle(Body5, 0.0F, 0.16F, 0.0F);
+//        this.Congopycnodus.offsetY = -0.4F;
+//        this.Congopycnodus.render(0.018f);
+//        resetToDefaultPose();
+//    }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

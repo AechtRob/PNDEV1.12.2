@@ -305,32 +305,32 @@ public class ModelTribodus extends ModelBasePalaeopedia {
 
     }
 
-    public void renderStaticWall(float f) {
-        this.base.rotateAngleY = (float) Math.toRadians(90);
-        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
-        this.base.offsetX = -0.14F;
-        this.base.offsetY = -0.19F;
-        this.base.offsetZ = 0.06F;
-        this.base.render(0.01F);
-        this.resetToDefaultPose();
-    }
-    public void renderStaticFloor(float f) {
-        this.setRotateAngle(base, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
-        this.base.offsetY = 0.139F;
-        this.base.render(0.01f);
-        resetToDefaultPose();
-    }
-    public void renderStaticSuspended(float f) {
-        this.base.offsetY = 0.0F;
-        this.base.render(0.01F);
-        resetToDefaultPose();
-    }
+//    public void renderStaticWall(float f) {
+//        this.base.rotateAngleY = (float) Math.toRadians(90);
+//        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+//        this.base.offsetX = -0.14F;
+//        this.base.offsetY = -0.19F;
+//        this.base.offsetZ = 0.06F;
+//        this.base.render(0.01F);
+//        this.resetToDefaultPose();
+//    }
+//    public void renderStaticFloor(float f) {
+//        this.setRotateAngle(base, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+//        this.base.offsetY = 0.139F;
+//        this.base.render(0.01f);
+//        resetToDefaultPose();
+//    }
+//    public void renderStaticSuspended(float f) {
+//        this.base.offsetY = 0.0F;
+//        this.base.render(0.01F);
+//        resetToDefaultPose();
+//    }
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

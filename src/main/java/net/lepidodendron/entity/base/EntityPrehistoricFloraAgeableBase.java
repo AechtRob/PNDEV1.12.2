@@ -2163,10 +2163,16 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         {
             if (this.isBreedingItem(itemstack) && this.isPFAdult() && this.inPFLove <= 0 && this.getMateable() == 0)
             {
-                this.consumeItemFromStack(player, itemstack);
-                this.inPFLove = 600;
-                this.world.setEntityState(this, (byte) 18);
-                return true;
+                boolean canBreed = true;
+                if (this instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
+                    canBreed = !((EntityPrehistoricFloraLandClimbingFlyingWalkingBase)this).isFlying();
+                }
+                if (canBreed) {
+                    this.consumeItemFromStack(player, itemstack);
+                    this.inPFLove = 600;
+                    this.world.setEntityState(this, (byte) 18);
+                    return true;
+                }
             }
             if (this.isBreedingItem(itemstack) && (!this.isPFAdult()) && this.canGrow <= 0) {
                 this.consumeItemFromStack(player, itemstack);

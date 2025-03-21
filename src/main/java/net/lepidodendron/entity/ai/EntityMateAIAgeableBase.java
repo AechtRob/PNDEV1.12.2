@@ -117,8 +117,14 @@ public class EntityMateAIAgeableBase extends EntityAIBase
         {
             if (this.animal.canMateWith(EntityPrehistoricFloraAgeableBase1) && this.animal.getDistanceSq(EntityPrehistoricFloraAgeableBase1) < d0)
             {
-                EntityPrehistoricFloraAgeableBase = EntityPrehistoricFloraAgeableBase1;
-                d0 = this.animal.getDistanceSq(EntityPrehistoricFloraAgeableBase1);
+                boolean canBreed = true;
+                if (EntityPrehistoricFloraAgeableBase1 instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
+                    canBreed = !((EntityPrehistoricFloraLandClimbingFlyingWalkingBase)EntityPrehistoricFloraAgeableBase1).isFlying();
+                }
+                if (canBreed) {
+                    EntityPrehistoricFloraAgeableBase = EntityPrehistoricFloraAgeableBase1;
+                    d0 = this.animal.getDistanceSq(EntityPrehistoricFloraAgeableBase1);
+                }
             }
         }
 

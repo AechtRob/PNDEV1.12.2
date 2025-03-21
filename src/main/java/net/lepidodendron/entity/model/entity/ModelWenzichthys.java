@@ -224,26 +224,26 @@ public class ModelWenzichthys extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
-    public void renderStaticWall(float f) {
-        this.head.rotateAngleY = (float) Math.toRadians(90);
-        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
-        this.head.offsetX = -0.14F;
-        this.head.offsetY = -0.19F;
-        this.head.offsetZ = 0.06F;
-        this.head.render(0.01F);
-        this.resetToDefaultPose();
-    }
-    public void renderStaticFloor(float f) {
-        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
-        this.head.offsetY = 0.139F;
-        this.head.render(0.01f);
-        resetToDefaultPose();
-    }
+//    public void renderStaticWall(float f) {
+//        this.head.rotateAngleY = (float) Math.toRadians(90);
+//        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+//        this.head.offsetX = -0.14F;
+//        this.head.offsetY = -0.19F;
+//        this.head.offsetZ = 0.06F;
+//        this.head.render(0.01F);
+//        this.resetToDefaultPose();
+//    }
+//    public void renderStaticFloor(float f) {
+//        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(tail1, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
+//        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+//        this.head.offsetY = 0.139F;
+//        this.head.render(0.01f);
+//        resetToDefaultPose();
+//    }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

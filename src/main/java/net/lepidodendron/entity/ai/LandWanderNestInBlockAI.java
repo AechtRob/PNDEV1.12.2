@@ -2,6 +2,7 @@ package net.lepidodendron.entity.ai;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.pathfinding.Path;
 import net.minecraft.util.math.BlockPos;
@@ -102,7 +103,7 @@ public class LandWanderNestInBlockAI extends AnimationAINoAnimation<EntityPrehis
     }
 
     public boolean isDirectPathBetweenPoints(Entity entity, Vec3d vec1, Vec3d vec2) {
-        RayTraceResult movingobjectposition = entity.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y + (double) entity.height * 0.5D, vec2.z), false, true, false);
+        RayTraceResult movingobjectposition = entity.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y + (double) entity.height * 0.5D, vec2.z), true, true, false);
         return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
     }
 
@@ -113,7 +114,19 @@ public class LandWanderNestInBlockAI extends AnimationAINoAnimation<EntityPrehis
                 BlockPos randPos = this.PrehistoricFloraLandBase.getPosition().add(rand.nextInt(dist+1) - (int) (dist/2), rand.nextInt((int) (dist/2)+1) - (int) (dist/4), rand.nextInt(dist+1) - (int) (dist/2));
                 if (nestBlockMatch(this.PrehistoricFloraLandBase.world, randPos)) {
                     if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
-                        return randPos;
+                        if (this.PrehistoricFloraLandBase instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
+                            if (((EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.PrehistoricFloraLandBase).isFlying()) {
+                                if (isDirectPathBetweenPoints(this.PrehistoricFloraLandBase, this.PrehistoricFloraLandBase.getPositionVector(), new Vec3d(randPos.getX() + 0.5, randPos.getY(), randPos.getZ() + 0.5))) {
+                                    return randPos;
+                                }
+                            }
+                            else {
+                                return randPos;
+                            }
+                        }
+                        else {
+                            return randPos;
+                        }
                     }
                 }
             }
