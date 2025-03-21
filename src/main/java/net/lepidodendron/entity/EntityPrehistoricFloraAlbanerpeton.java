@@ -75,7 +75,7 @@ public class EntityPrehistoricFloraAlbanerpeton extends EntityPrehistoricFloraLa
 		return false;
 	}
 
-	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous - Palaeogene  - Neogene - Pleistocene";}
+	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous - Paleogene  - Neogene - Pleistocene";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraStrombus extends EntityPrehistoricFloraSlithe
 		return true;
 	}
 
-	public static String getPeriod() {return "Cretaceous - Palaeogene  - Neogene - Pleistocene";}
+	public static String getPeriod() {return "Cretaceous - Paleogene  - Neogene - Pleistocene";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

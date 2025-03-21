@@ -145,7 +145,7 @@ public class ItemPrimevalGrassItem extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: flowering water/land plant");
-				tooltip.add("Periods: [Early (?) -] Late Cretaceous - Palaeogene - Neogene - Pleistocene [- Present]");
+				tooltip.add("Periods: [Early (?) -] Late Cretaceous - Paleogene - Neogene - Pleistocene [- Present]");
 				tooltip.add("Note: placed either next to water or at water surface of one-block deep water, over grass, dirt, clay or sand; spreads if there is light.");
 				tooltip.add("Propagation: flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);

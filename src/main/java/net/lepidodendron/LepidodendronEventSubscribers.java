@@ -1578,37 +1578,37 @@ public class LepidodendronEventSubscribers {
 					case 0:
 					default: //Oak
 						tt.add("Type: Flowering tree");
-						tt.add("Periods: [Late Cretaceous (?) -] Palaeogene  - Neogene - Pleistocene - present");
+						tt.add("Periods: [Late Cretaceous (?) -] Paleogene  - Neogene - Pleistocene - present");
 						tt.add("Propagation: acorns drop from leaves");
 						break;
 
 					case 1: //Spruce
 						tt.add("Type: Coniferous tree");
-						tt.add("Periods: Early Cretaceous (?) - Late Cretaceous - Palaeogene  - Neogene - Pleistocene - present");
+						tt.add("Periods: Early Cretaceous (?) - Late Cretaceous - Paleogene  - Neogene - Pleistocene - present");
 						tt.add("Propagation: fruit/cone");
 						break;
 
 					case 2: //Birch
 						tt.add("Type: Flowering tree");
-						tt.add("Periods: Palaeogene  - Neogene - Pleistocene - present");
+						tt.add("Periods: Paleogene  - Neogene - Pleistocene - present");
 						tt.add("Propagation: fruits drop from leaves");
 						break;
 
 					case 3: //Jungle
 						tt.add("Type: Flowering tree");
-						tt.add("Periods: Palaeogene  - Neogene - Pleistocene - present");
+						tt.add("Periods: Paleogene  - Neogene - Pleistocene - present");
 						tt.add("Propagation: fruits drop from leaves");
 						break;
 
 					case 4: //Acacia
 						tt.add("Type: Flowering tree");
-						tt.add("Periods: Palaeogene  - Neogene - Pleistocene - present");
+						tt.add("Periods: Paleogene  - Neogene - Pleistocene - present");
 						tt.add("Propagation: fruits drop from leaves");
 						break;
 
 					case 5: //Dark Oak
 						tt.add("Type: Flowering tree");
-						tt.add("Periods: [Late Cretaceous (?) -] Palaeogene  - Neogene - Pleistocene - present");
+						tt.add("Periods: [Late Cretaceous (?) -] Paleogene  - Neogene - Pleistocene - present");
 						tt.add("Propagation: acorns drop from leaves");
 						break;
 				}

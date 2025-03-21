@@ -310,7 +310,7 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
             this.fontRenderer.drawString("Jurassic", -30, 111, 4210752);
             this.fontRenderer.drawString("E. Cretaceous", -30, 122, 4210752);
             this.fontRenderer.drawString("L. Cretaceous", -30, 133, 4210752);
-            this.fontRenderer.drawString("Palaeogene", -30, 144, 4210752);
+            this.fontRenderer.drawString("Paleogene", -30, 144, 4210752);
             this.fontRenderer.drawString("Neogene", -30, 155, 4210752);
             this.fontRenderer.drawString("Pleistocene", -30, 166, 4210752);
 

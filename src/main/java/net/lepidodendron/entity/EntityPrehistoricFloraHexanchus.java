@@ -73,7 +73,7 @@ public class EntityPrehistoricFloraHexanchus extends EntityPrehistoricFloraAgeab
 		return true;
 	}
 
-	public static String getPeriod() {return "Late Cretaceous - Palaeogene  - Neogene - Pleistocene";}
+	public static String getPeriod() {return "Late Cretaceous - Paleogene  - Neogene - Pleistocene";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

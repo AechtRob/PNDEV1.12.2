@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Archaean Caustic Quagmire$(br2)$()Text here..."
+			"text": "$(l)Archean Caustic Quagmire$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

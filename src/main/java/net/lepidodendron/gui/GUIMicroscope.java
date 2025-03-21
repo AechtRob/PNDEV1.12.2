@@ -712,7 +712,7 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
             this.fontRenderer.drawString("Triassic", 110, 69, 4210752);
             this.fontRenderer.drawString("Jurassic", 106, 77, 4210752);
             this.fontRenderer.drawString("Cretaceous", 92, 85, 4210752);
-            this.fontRenderer.drawString("Palaeogene", 99, 93, 4210752);
+            this.fontRenderer.drawString("Paleogene", 99, 93, 4210752);
             this.fontRenderer.drawString("Neogene", 108, 101, 4210752);
             this.fontRenderer.drawString("Pleistocene", 93, 109, 4210752);
 

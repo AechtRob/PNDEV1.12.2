@@ -1,12 +1,12 @@
 {
-	"name": "Palaeoproterozoic Shallows",
+	"name": "Paleoproterozoic Shallows",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_precambrian.png",
 	"category": "lepidodendron:precambrian_proterozoic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Palaeoproterozoic Shallows$(br2)$()Text here..."
+			"text": "$(l)Paleoproterozoic Shallows$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

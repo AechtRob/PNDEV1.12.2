@@ -223,7 +223,7 @@ public class BlockBanksia2Sapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering shrub");
-				tooltip.add("Periods: Palaeogene (Eocene) - Neogene - Pleistocene [- present]");
+				tooltip.add("Periods: Paleogene (Eocene) - Neogene - Pleistocene [- present]");
 				tooltip.add("Propagation: flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

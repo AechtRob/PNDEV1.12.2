@@ -63,7 +63,7 @@ public class ItemSpawnEggDragonfly extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public String getPeriod() {
-			return "Jurassic - Cretaceous - Palaeogene  - Neogene - Pleistocene [- present]";
+			return "Jurassic - Cretaceous - Paleogene  - Neogene - Pleistocene [- present]";
 		}
 
 		@Override

@@ -699,7 +699,7 @@ public class GUIPortalBlock extends ElementsLepidodendronMod.ModElement {
             this.fontRenderer.drawString("Jurassic", 106, 68, 4210752);
             this.fontRenderer.drawString("Early Cretaceous", 61, 76, 4210752);
             this.fontRenderer.drawString("Late Cretaceous", 66, 84, 4210752);
-            this.fontRenderer.drawString("Palaeogene", 99, 92, 4210752);
+            this.fontRenderer.drawString("Paleogene", 99, 92, 4210752);
             this.fontRenderer.drawString("Neogene", 108, 100, 4210752);
             this.fontRenderer.drawString("Pleistocene", 93, 108, 4210752);
             this.fontRenderer.drawString("Overworld", 98, 116, 4210752);

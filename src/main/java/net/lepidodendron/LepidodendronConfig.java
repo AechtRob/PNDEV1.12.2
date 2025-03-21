@@ -287,7 +287,7 @@ public class LepidodendronConfig {
         propOrder.add(prop.getName());
 
         prop = cfg.get("Revival Integration", "revMobsPaleogene", revMobsPaleogene);
-        prop.setComment("List of mobs from OTHER mods which can be found in Palaeogene fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        prop.setComment("List of mobs from OTHER mods which can be found in Paleogene fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
         revMobsPaleogene = prop.getStringList();
         propOrder.add(prop.getName());
 
