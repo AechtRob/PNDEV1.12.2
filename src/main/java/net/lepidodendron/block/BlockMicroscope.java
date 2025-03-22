@@ -745,7 +745,8 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 				}
 
 			}
-			return super.getCapability(capability, facing);
+			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockMicroscope.BlockCustom.FACING).getOpposite();
+			return (capability == CapabilityEnergy.ENERGY && facing == blockFacing) ? (T) this : null;
 		}
 
 		public void drainEnergy(int energy) {
