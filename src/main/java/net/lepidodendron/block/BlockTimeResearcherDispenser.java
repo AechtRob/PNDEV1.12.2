@@ -37,8 +37,6 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.energy.CapabilityEnergy;
-import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -235,7 +233,7 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 
 	}
 
-	public static class TileEntityTimeResearcherDispenser extends TileEntityLockableLoot implements ITickable, ISidedInventory, IEnergyStorage {
+	public static class TileEntityTimeResearcherDispenser extends TileEntityLockableLoot implements ITickable, ISidedInventory {
 		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
 
 		private int dimensionSelected = -1;
@@ -251,7 +249,8 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 			}
 			BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
 			switch (dimID) {
-				case 0: default:
+				case 0:
+				default:
 					return true;
 
 				case 1:
@@ -342,7 +341,7 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 			//System.err.println("cannotStartProcess");
 			return false;
 		}
-		
+
 		public int isValidItemForProcess(ItemStack stack) {
 			if (this.isItemValidForSlot(0, stack)) {
 				return this.processTickTime;
@@ -352,7 +351,7 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 
 		public double progressFraction() {
 			if (this.isProcessing) {
-				return (double)this.processTick / (double)this.processTickTime;
+				return (double) this.processTick / (double) this.processTickTime;
 			}
 			return 0;
 		}
@@ -360,13 +359,10 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 		public boolean isProcessing() {
 			return this.isProcessing;
 		}
-		
-		public boolean isEmpty()
-		{
-			for (ItemStack itemstack : this.forgeContents)
-			{
-				if (!itemstack.isEmpty())
-				{
+
+		public boolean isEmpty() {
+			for (ItemStack itemstack : this.forgeContents) {
+				if (!itemstack.isEmpty()) {
 					return false;
 				}
 			}
@@ -385,31 +381,6 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 				this.dimensionSelected = -1;
 			}
 
-			if (LepidodendronConfig.machinesRF) {
-				TileEntity tileEntity = world.getTileEntity(this.pos);
-				if (tileEntity instanceof BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) {
-					BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser te = (BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity;
-					if (te.getEnergyStored() < te.getMaxEnergyStored()) {
-						//Is there a power-supplying block in the right place?
-						EnumFacing facing = this.getWorld().getBlockState(this.getPos()).getValue(BlockTimeResearcherDispenser.BlockCustom.FACING);
-						BlockPos powerBlockPos = this.pos.offset(facing.getOpposite());
-						TileEntity teStorage = this.getWorld().getTileEntity(powerBlockPos);
-						if (teStorage != null) {
-							IEnergyStorage powerBlockStorage = teStorage.getCapability(CapabilityEnergy.ENERGY, facing);
-							if (powerBlockStorage != null) {
-								if (powerBlockStorage.canExtract()) {
-									int energyTransferOut = powerBlockStorage.extractEnergy(this.maxReceive, true);
-									int energyTransferIn = this.receiveEnergy(energyTransferOut, true);
-									powerBlockStorage.extractEnergy(energyTransferIn, false);
-									this.receiveEnergy(energyTransferIn, false);
-									this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
-								}
-							}
-						}
-					}
-				}
-			}
-
 			boolean updated = false;
 
 			//System.err.println("Tick: " + this.processTick);
@@ -422,7 +393,7 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 			}
 
 			if (this.isProcessing && this.hasEnergy(minEnergyNeeded)) {
-				this.processTick ++;
+				this.processTick++;
 				this.drainEnergy(40);
 				//if (this.getWorld().rand.nextInt(10) == 0) {
 				//	world.playSound(null, pos, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, SoundCategory.BLOCKS, 0.5F, 0.8F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.8F);
@@ -445,7 +416,8 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 					ItemStack stackProcessing = this.getStackInSlot(0);
 					stackProcessing.shrink(1);
 					switch (this.dimensionSelected) {
-						case 0: default:
+						case 0:
+						default:
 							this.setInventorySlotContents(1, new ItemStack(BlockPortalBlockOverworld.block, 1 + this.getStackInSlot(1).getCount()));
 							break;
 
@@ -600,8 +572,7 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 		}
 
 		@Override
-		public String getGuiID()
-		{
+		public String getGuiID() {
 			return "lepidodendron:gui_time_researcher_dispenser";
 		}
 
@@ -613,9 +584,6 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 		@Override
 		public void readFromNBT(NBTTagCompound compound) {
 			super.readFromNBT(compound);
-			if (compound.hasKey("energystored")) {
-				this.energy = compound.getInteger("energystored");
-			}
 			if (compound.hasKey("processTick")) {
 				this.processTick = compound.getInteger("processTick");
 			}
@@ -632,7 +600,6 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 		@Override
 		public NBTTagCompound writeToNBT(NBTTagCompound compound) {
 			super.writeToNBT(compound);
-			compound.setInteger("energystored", this.energy);
 			compound.setBoolean("isProcessing", this.isProcessing);
 			compound.setInteger("processTick", this.processTick);
 			if (!this.checkLootAndWrite(compound)) {
@@ -655,8 +622,7 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 		}
 
 		@Override
-		public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate)
-		{
+		public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate) {
 			return (oldState.getBlock() != newSate.getBlock());
 		}
 
@@ -682,21 +648,19 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 		}
 
 		@Override
-		public void invalidate()
-		{
+		public void invalidate() {
 			super.invalidate();
 			this.updateContainingBlockInfo();
 		}
 
 		@Override
-		protected NonNullList<ItemStack> getItems()
-		{
+		protected NonNullList<ItemStack> getItems() {
 			return this.forgeContents;
 		}
 
 		@Override
 		public int[] getSlotsForFace(EnumFacing side) {
-			return new int[]{0,1};
+			return new int[]{0, 1};
 		}
 
 		@Override
@@ -755,11 +719,11 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 		}
 
 		public void drainEnergy(int energy) {
-			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			TileEntity tileEntity = world.getTileEntity(this.getPos().up());
 			if (tileEntity != null) {
-				if (tileEntity instanceof BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) {
-					BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser te = (BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity;
-					te.extractEnergy(energy,false);
+				if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+					BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+					te.extractEnergy(energy, false);
 				}
 			}
 		}
@@ -768,98 +732,14 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 			if (!LepidodendronConfig.machinesRF) {
 				return true;
 			}
-			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			TileEntity tileEntity = world.getTileEntity(this.getPos().up());
 			if (tileEntity != null) {
-				if (tileEntity instanceof BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) {
-					BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser te = (BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity;
+				if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+					BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
 					return te.getEnergyStored() > minEnergy;
 				}
 			}
 			return false;
-		}
-
-		//Energy addin:
-		//-------------
-		protected int energy;
-		protected int capacity = 50000;
-		protected int maxReceive = 500;
-		protected int maxExtract = 250;
-
-		@Override
-		public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
-			IBlockState blockstate = this.getWorld().getBlockState(this.getPos());
-			if (blockstate != null) {
-				if (blockstate.getBlock() == BlockTimeResearcherDispenser.block) {
-					EnumFacing blockFacing = blockstate.getValue(BlockTimeResearcherDispenser.BlockCustom.FACING).getOpposite();
-					if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
-						return true;
-					}
-				}
-			}
-			return super.hasCapability(capability, facing);
-		}
-
-		@Override
-		public int receiveEnergy(int maxReceive, boolean simulate)
-		{
-			if (!canReceive())
-				return 0;
-
-			int energyReceived = Math.min(capacity - energy, Math.min(this.maxReceive, maxReceive));
-			if (!simulate) {
-				energy += energyReceived;
-				if (energyReceived > 0) {
-					this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
-				}
-			}
-			return energyReceived;
-		}
-
-		@Override
-		public int extractEnergy(int maxExtract, boolean simulate)
-		{
-			if (!canExtract())
-				return 0;
-
-			int energyExtracted = Math.min(energy, Math.min(this.maxExtract, maxExtract));
-			if (!simulate) {
-				energy -= energyExtracted;
-				if (energyExtracted > 0) {
-					this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
-				}
-			}
-			return energyExtracted;
-		}
-
-		@Override
-		public int getEnergyStored()
-		{
-			return energy;
-		}
-
-		@Override
-		public int getMaxEnergyStored()
-		{
-			return capacity;
-		}
-
-		@Override
-		public boolean canExtract()
-		{
-			return this.maxExtract > 0;
-		}
-
-		@Override
-		public boolean canReceive()
-		{
-			return this.maxReceive > 0;
-		}
-
-		public double getEnergyFraction() {
-			if (this.capacity > 0) {
-				return ((double) this.energy) / ((double) this.capacity);
-			}
-			return 0;
 		}
 
 	}

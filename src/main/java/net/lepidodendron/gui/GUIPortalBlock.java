@@ -308,10 +308,10 @@ public class GUIPortalBlock extends ElementsLepidodendronMod.ModElement {
         }
 
         private int getCurrentRF() {
-            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y + 1, z));
             if (tileEntity != null) {
-                if (tileEntity instanceof BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) {
-                    BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser te = (BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity;
+                if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+                    BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
                     return te.getEnergyStored();
                 }
             }
@@ -319,10 +319,10 @@ public class GUIPortalBlock extends ElementsLepidodendronMod.ModElement {
         }
 
         private int getMaxRF() {
-            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y + 1, z));
             if (tileEntity != null) {
-                if (tileEntity instanceof BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) {
-                    BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser te = (BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity;
+                if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+                    BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
                     return te.getMaxEnergyStored();
                 }
             }
@@ -330,10 +330,10 @@ public class GUIPortalBlock extends ElementsLepidodendronMod.ModElement {
         }
 
         private int getRFHeight() {
-            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y + 1, z));
             if (tileEntity != null) {
-                if (tileEntity instanceof BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) {
-                    BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser te = (BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity;
+                if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+                    BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
                     //return (int)Math.round(te.progressFraction() * 70D);
                     double fraction = te.getEnergyFraction();
                     return (int) Math.round(fraction * 24D);

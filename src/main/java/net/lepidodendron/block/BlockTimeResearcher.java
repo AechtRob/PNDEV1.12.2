@@ -417,8 +417,6 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 				}
 			}
 
-			this.receiveEnergy(10, false);
-
 			if (!(isItemValidForSlot(0, this.getStackInSlot(0))
 			)) {
 				this.processTick = 0;
