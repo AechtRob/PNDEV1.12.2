@@ -1,7 +1,0 @@
-{
-    "name": "Neogene Life",
-    "description": "Life of the Neogene",
-    "icon": "paleopedia:textures/category_icon/icon_neogene.png",
-    "parent": "lepidodendron:neogene",
-    "sortnum": 1
-}

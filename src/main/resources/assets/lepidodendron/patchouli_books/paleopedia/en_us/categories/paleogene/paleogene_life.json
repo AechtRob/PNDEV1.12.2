@@ -1,7 +1,7 @@
 {
-    "name": "Pleistocene Life",
-    "description": "Life of the Pleistocene",
-    "icon": "paleopedia:textures/category_icon/icon_pleistocene.png",
-    "parent": "lepidodendron:pleistocene",
+    "name": "Paleogene Life",
+    "description": "Life of the Paleogene",
+    "icon": "paleopedia:textures/category_icon/icon_paleogene.png",
+    "parent": "lepidodendron:paleogene",
     "sortnum": 1
 }
