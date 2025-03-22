@@ -33,6 +33,8 @@ import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraJellyfish1 extends EntityPrehistoricFloraJellyfishBase implements ITrappableWater, IAdvancementGranter {
 
+    //MOON JELLY
+
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
     public ChainBuffer chainBuffer;

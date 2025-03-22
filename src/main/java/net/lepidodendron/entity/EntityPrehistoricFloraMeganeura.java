@@ -144,7 +144,7 @@ public class EntityPrehistoricFloraMeganeura extends EntityPrehistoricFloraMegan
 		return 0.4;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return -0.2F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
 		return 0.4;
@@ -165,11 +165,12 @@ public class EntityPrehistoricFloraMeganeura extends EntityPrehistoricFloraMegan
 		return -0.6F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return -0.06;
+		return -0.02;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0F;
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.016F;}
 	//-------------------
 
 }

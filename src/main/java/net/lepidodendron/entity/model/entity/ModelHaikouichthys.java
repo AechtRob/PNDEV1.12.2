@@ -111,6 +111,7 @@ public class ModelHaikouichthys extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.bone2.render(f5);
     }
+
         public void renderStaticDisplayCase(float f) {
             this.setRotateAngle(bone2, 0.0F, 0.0F, 1.5F);
             this.setRotateAngle(bone4, 0.0F, 0.0F, 0.0F);
@@ -122,6 +123,7 @@ public class ModelHaikouichthys extends ModelBasePalaeopedia {
             this.bone2.render(0.01F);
             resetToDefaultPose();
     }
+
     @Override
     public void renderStaticBook(float f) {
 

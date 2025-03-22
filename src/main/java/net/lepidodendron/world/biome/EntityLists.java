@@ -269,7 +269,13 @@ public class EntityLists {
                 return MobString;
 
             case 10:
-                return MobString;
+                return new String[]{"lepidodendron:prehistoric_flora_hexanchus",
+            "lepidodendron:prehistoric_flora_ammonite_parapuzosia",
+            "lepidodendron:prehistoric_flora_ammonite_pachydiscus",
+            "lepidodendron:prehistoric_flora_ammonite_pachydesmoceras",
+            "lepidodendron:prehistoric_flora_jellyfish7",
+            "lepidodendron:prehistoric_flora_jellyfish3",
+            "lepidodendron:prehistoric_flora_jellyfish1"};
 
             case 11:
                 return MobString;

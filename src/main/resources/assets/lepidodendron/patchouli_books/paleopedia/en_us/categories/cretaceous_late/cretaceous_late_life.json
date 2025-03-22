@@ -1,0 +1,7 @@
+{
+    "name": "Late Cretaceous Life",
+    "description": "Life of the Late Cretaceous",
+    "icon": "paleopedia:textures/category_icon/icon_late_cretaceous.png",
+    "parent": "lepidodendron:cretaceous_late",
+    "sortnum": 1
+}

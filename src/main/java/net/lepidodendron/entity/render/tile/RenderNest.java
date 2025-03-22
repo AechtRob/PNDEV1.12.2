@@ -20,6 +20,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
+import java.awt.*;
+
 public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityNest> {
 
     private final ModelEggSmall small_egg;
@@ -87,10 +89,19 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityNe
                 GlStateManager.scale(0.05F, 0.05F, 0.05F);
                 Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation(texture + ".png"));
                 GlStateManager.enableAlpha();
+                boolean needsTint = false;
+                if (Minecraft.getMinecraft().getBlockColors().colorMultiplier(state, world, pos1, 0) >= 0) {
+                    needsTint = true;
+                    Color colorGrass = new Color(getWorld().getBiome(entity.getPos()).getGrassColorAtPos(entity.getPos()));
+                    GlStateManager.color(colorGrass.getRed()/255F, colorGrass.getGreen()/255F, colorGrass.getBlue()/255F, 1.0F);
+                }
                 if (BlockNest.BlockCustom.isMound(world, pos)) {
                     this.nest_mound.renderAll(1.25f);
                 } else {
                     this.nest.renderAll(1.25f);
+                }
+                if (needsTint) {
+                    GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
                 }
                 //GlStateManager.disableAlpha();
                 GlStateManager.enableCull();

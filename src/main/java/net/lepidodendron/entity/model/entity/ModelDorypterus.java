@@ -195,13 +195,14 @@ public class ModelDorypterus extends ModelBasePalaeopedia {
         this.base.render(0.01F);
         this.resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(base, 0.1F, -0.1F, 0.0F);
         this.setRotateAngle(body2, -0.1F, 0.2F, 0.0F);
         this.setRotateAngle(body3, 0.0F, 0.05F, 0.0F);
         this.setRotateAngle(body4, 0.0F, 0.05F, 0.0F);
-        this.base.offsetX = 0.015F;
-        this.base.offsetY = 0.4F;
+        this.base.offsetX = 0.010F;
+        this.base.offsetY = -0.0F;
         this.base.render(0.01F);
         this.resetToDefaultPose();
     }
