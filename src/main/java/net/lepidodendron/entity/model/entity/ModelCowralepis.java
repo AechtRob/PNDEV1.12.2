@@ -229,6 +229,40 @@ public class ModelCowralepis extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Root.offsetY = -1.2F;
+        this.Root.offsetX = 0.2F;
+        this.Root.offsetZ = 2.0F;
+        this.Root.rotateAngleY = (float)Math.toRadians(120);
+        this.Root.rotateAngleX = (float)Math.toRadians(1);
+        this.Root.rotateAngleZ = (float)Math.toRadians(0);
+        this.Root.scaleChildren = true;
+        float scaler = 3.8F;
+        this.Root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Root, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(rside, 0.0F, -0.5236F, 0.0F);
+        this.setRotateAngle(rside2, 0.0F, 0.48F, 0.0F);
+        this.setRotateAngle(rside3, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(lside, 0.0F, 0.5236F, 0.0F);
+        this.setRotateAngle(lside2, 0.0F, -0.48F, 0.0F);
+        this.setRotateAngle(LPectoral, 0.0F, -0.1745F, 0.0873F);
+        this.setRotateAngle(lside3, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(forehead, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(RPelvic, -0.0503F, 0.5214F, -0.1007F);
+        this.setRotateAngle(LPelvic, -0.0503F, -0.5214F, 0.1007F);
+        this.setRotateAngle(Tail, 0.0915F, -0.3042F, -0.0275F);
+        this.setRotateAngle(Tail2, 0.1548F, -0.5618F, -0.083F);
+        this.setRotateAngle(Tail3, 0.3237F, -0.3323F, -0.109F);
+        this.setRotateAngle(Tail4, -0.1509F, 0.5187F, -0.0752F);
+        //End of pose, now render the model:
+        this.Root.render(f);
+        //Reset rotations, positions and sizing:
+        this.Root.setScale(1.0F, 1.0F, 1.0F);
+        this.Root.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

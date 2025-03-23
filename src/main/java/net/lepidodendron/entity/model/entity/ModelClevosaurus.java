@@ -273,6 +273,34 @@ public class ModelClevosaurus extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -0.2F;
+        this.body.offsetX = 0.45F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(120);
+        this.body.rotateAngleX = (float)Math.toRadians(1);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 0.5F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, -0.2F, 0.8F, 0.0F);
+        this.jaw.rotateAngleX = (float) Math.toRadians(-12.5);
+        this.head.rotateAngleY = (float) Math.toRadians(15.6);
+        this.head.rotateAngleZ = (float) Math.toRadians(-1.7);
+        this.neck.rotateAngleY = (float) Math.toRadians(11.9);
+        this.bodyfront.rotateAngleY = (float) Math.toRadians(-12.5);
+        this.tail.rotateAngleY = (float) Math.toRadians(4.7);
+        this.tail2.rotateAngleY = (float) Math.toRadians(14.6);
+        this.tail3.rotateAngleY = (float) Math.toRadians(-14.9);
+        this.forelegR.rotateAngleY = (float) Math.toRadians(22.5);
+        this.hindlegR.rotateAngleY = (float) Math.toRadians(-45);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

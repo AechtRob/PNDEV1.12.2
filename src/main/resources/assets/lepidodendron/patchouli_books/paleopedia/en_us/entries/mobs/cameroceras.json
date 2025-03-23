@@ -12,20 +12,21 @@
 			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Nautiloidea$(br)>Endocerida$(br)>Endoceratidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cameroceras.png"],
-			"title": "C. trentonense",
-			"text": ""
+			"type": "entity",
+			"name": "C. trentonense",
+			"entity": "lepidodendron:prehistoric_flora_cameroceras",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cameroceras",
 			"type": "text",
-			"text": "Cameroceras (chambered horn) is a giant orthocone which lived during the Ordovician to Silurian periods. Cameroceras (originally erected in the 1840s for C. trentonense) has become a wastebasket taxon which has also been used to hold many different types of large to very large, straight-shelled endocerid nautiloids."
+			"text": "Cameroceras (chambered horn) is a giant orthocone which lived during the Ordovician to Silurian periods. Cameroceras, originally erected in the 1840s for C. trentonense, has become a wastebasket taxon which has also been used to hold many different types of large to very large, straight-shelled endocerid nautiloids."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cameroceras",
 			"type": "text",
-			"text": "These inhabited shallow seas and became very diverse during the Upper Ordovician but did not recover their diversity after the Ordovician-Silurian extinction event. They may have been ambush predators that lunged at prey and consumed them."
+			"text": "These inhabited shallow seas and became very diverse during the Upper Ordovician but did not recover their diversity after the Ordovician - Silurian extinction event. They may have been ambush predators that lunged at prey and consumed them."
 		},
 		{
 			"type": "lepidodendron:diet",

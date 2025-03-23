@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ctenophora"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/ctenorhabdotus.png"],
-			"title": "C. capulus",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "C. capulus",
+			"entity": "lepidodendron:prehistoric_flora_ctenorhabdotus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ctenorhabdotus",

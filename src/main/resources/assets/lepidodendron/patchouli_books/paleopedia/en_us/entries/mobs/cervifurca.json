@@ -12,25 +12,30 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Holocephali$(br)>Iniopterygiformes$(br)>Iniopterygidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cervifurca.png"],
-			"title": "C. nasuta",
-			"text": ""
+			"type": "entity",
+			"name": "C. nasuta",
+			"entity": "lepidodendron:prehistoric_flora_cervifurca",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cervifurca",
 			"type": "text",
-			"text": "Cervifurca nasuta is a species of Iniopterygian from the Late Carboniferous of North America. This poorly documented species of Iniopterygian is most recognizable by the unique shape of the body, which was flattened and round, quite unusual among members of it's group. Compared to other Iniopterygians, Cervifurca also had unusually small pectoral fins, which seem to indicate a less active swimming style and potentially hinting at this creature potentially being demersal, living close and against the seafloor."
+			"text": "Cervifurca nasuta is a species of iniopterygian from the Upper Carboniferous of North America. This poorly documented species of iniopterygian is most recognizable by the unique shape of the body, which was flattened and round, quite unusual among members of it's group. Compared to other iniopterygians, Cervifurca also had unusually small pectoral fins, which seem to indicate a less active swimming style and potentially hinting at this creature potentially being"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cervifurca",
 			"type": "text",
-			"text": "Not only this animal had a flattened appearance that indicate said lifestyle, but the eyes, positioned dorsolaterally, would've given this animal a more upturned field of view, allowing it to see what swam above it to an extent. In the past this animal was represented with two horn-like protrusions jutting out of the front of the head; this interpretation is now known to be erroneous as the two peduncles acted as support for a soft tissue snout, giving this animal less of a forked head look and more of a flattened shark face."
+			"text": "demersal, living close and against the seafloor. Not only this animal had a flattened appearance that indicate said lifestyle, but the eyes, positioned dorsolaterally, would've given this animal a more upturned field of view, allowing it to see what swam above it to an extent. In the past this animal was represented with two horn-like protrusions jutting out of the front of the head; this interpretation is now known to be erroneous as the two peduncles acted as"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cervifurca",
 			"type": "text",
-			"text": "Further evidence of this animal's benthic lifestyle is the preservation of the specimens themselves, who were found preserved in dorsal view, in a similar fashion to Batoids and other inhabitants of the benthos known in the fossil record. The animal possessed rather small pelvic fins onto which attached disproportionally long Pterygodia, which wouldn't have been of much use to swim."
+			"text": "support for a soft tissue snout, giving this animal less of a forked head look and more of a flattened shark face. Further evidence of this animal's benthic lifestyle is the preservation of the specimens themselves, who were found preserved in dorsal view, in a similar fashion to Batoids and other inhabitants of the benthos known in the fossil record. The animal possessed rather small pelvic fins onto which attached disproportionally long Pterygodia,"
+		},
+		{   "advancement": "lepidodendron:pf_adv_book_cervifurca",
+			"type": "text",
+			"test": "which wouldn't have been of much use to swim."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cervifurca",

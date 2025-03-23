@@ -289,6 +289,29 @@ public class ModelCasineria extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.casineria.offsetY = -0.4F;
+        this.casineria.offsetX = 0.2F;
+        this.casineria.offsetZ = 2.0F;
+        this.casineria.rotateAngleY = (float)Math.toRadians(120);
+        this.casineria.rotateAngleX = (float)Math.toRadians(1);
+        this.casineria.rotateAngleZ = (float)Math.toRadians(0);
+        this.casineria.scaleChildren = true;
+        float scaler = 0.7F;
+        this.casineria.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(casineria, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(head, -0.2F, 0.2F, -0.0F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, -0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, -0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, -0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, -0.0F);
+        //End of pose, now render the model:
+        this.casineria.render(f);
+        //Reset rotations, positions and sizing:
+        this.casineria.setScale(1.0F, 1.0F, 1.0F);
+        this.casineria.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

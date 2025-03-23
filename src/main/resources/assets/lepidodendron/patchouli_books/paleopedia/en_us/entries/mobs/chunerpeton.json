@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Amphibia$(br)>Caudata$(br)>Urodela$(br)>Cryptobranchoidea"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/chunerpeton.png"],
-			"title": "C. tianyiensis",
-			"text": ""
+			"type": "entity",
+			"name": "C. tianyiensis",
+			"entity": "lepidodendron:prehistoric_flora_chunerpeton",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_chunerpeton",
 			"type": "text",
-			"text": "Chunerpeton is a Cryptobranchoid salamander from the Middle to Late Jurassic. It's known from the Daohugou Bed in Inner Mongolia, China. It was 18 cm in length and was neotenic, retaining external gills into adulthood. Phylogenetic studies have restored it as a  stem-group caudatan, outside the crown group of modern salamanders. Once, they were considered to belong to Cryptobranchidae including modern giant salamanders, but are now placed in the basal"
+			"text": "Chunerpeton is a cryptobranchoid salamander from the Middle to Upper Jurassic. It's known from the Daohugou Bed in Inner Mongolia, China. It was 18 cm in length and was neotenic, retaining external gills into adulthood. Phylogenetic studies have restored it as a stem-group caudatan, outside the crown group of modern salamanders. Once, they were considered to belong to Cryptobranchidae including modern giant salamanders, but are now placed in the basal"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_chunerpeton",

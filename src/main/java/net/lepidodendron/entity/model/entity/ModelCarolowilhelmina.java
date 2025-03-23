@@ -182,7 +182,36 @@ public class ModelCarolowilhelmina extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.body.offsetY = -0.6F;
+        this.body.offsetX = 0.1F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(202);
+        this.body.rotateAngleX = (float)Math.toRadians(32);
+        this.body.rotateAngleZ = (float)Math.toRadians(-12);
+        this.body.scaleChildren = true;
+        float scaler = 0.6F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body2, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.2443F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(pectoralfinL, 0.0F, 0.0F, -0.6981F);
+        this.setRotateAngle(pectoralfinR, 0.0F, 0.0F, 0.6981F);
+        this.setRotateAngle(pelvicfinL, 0.0F, 0.0F, -0.5236F);
+        this.setRotateAngle(pelvicfinR, 0.0F, 0.0F, 0.5236F);
+        this.setRotateAngle(tail, 0.0F, 0.3491F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

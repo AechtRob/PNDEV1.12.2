@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Hymenocarina$(br)>Canadaspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/canadaspis.png"],
-			"title": "C. perfecta",
-			"text": ""
+			"type": "entity",
+			"name": "C. perfecta",
+			"entity": "lepidodendron:prehistoric_flora_canadaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_canadaspis",

@@ -196,6 +196,33 @@ public class ModelCoccosteus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Body1.offsetY = -1.6F;
+        this.Body1.offsetX = 1.8F;
+        this.Body1.offsetZ = 2.0F;
+        this.Body1.rotateAngleY = (float)Math.toRadians(120);
+        this.Body1.rotateAngleX = (float)Math.toRadians(1);
+        this.Body1.rotateAngleZ = (float)Math.toRadians(0);
+        this.Body1.scaleChildren = true;
+        float scaler = 2.6F;
+        this.Body1.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Body1, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body2, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(Body2, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Head1, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(Tail1, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail4, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail5, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail6, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Body1.render(f);
+        //Reset rotations, positions and sizing:
+        this.Body1.setScale(1.0F, 1.0F, 1.0F);
+        this.Body1.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

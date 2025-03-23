@@ -180,6 +180,30 @@ public class ModelCoelacanthus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Bodyfront.offsetY = -0.0F;
+        this.Bodyfront.offsetX = 0.2F;
+        this.Bodyfront.offsetZ = 2.0F;
+        this.Bodyfront.rotateAngleY = (float)Math.toRadians(120);
+        this.Bodyfront.rotateAngleX = (float)Math.toRadians(1);
+        this.Bodyfront.rotateAngleZ = (float)Math.toRadians(0);
+        this.Bodyfront.scaleChildren = true;
+        float scaler = 1.2F;
+        this.Bodyfront.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Bodyfront, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Bodyback, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Headbase, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Tailmiddlebase, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailmiddleend, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, 0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.Bodyfront.render(f);
+        //Reset rotations, positions and sizing:
+        this.Bodyfront.setScale(1.0F, 1.0F, 1.0F);
+        this.Bodyfront.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

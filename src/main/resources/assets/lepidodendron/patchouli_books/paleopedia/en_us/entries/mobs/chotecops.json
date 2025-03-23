@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Trilobita$(br)>Phacopida$(br)>Phacopidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/chotecops.png"],
-			"title": "C. ferdinandi",
-			"text": ""
+			"type": "entity",
+			"name": "C. ferdinandi",
+			"entity": "lepidodendron:prehistoric_flora_chotecops",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_chotecops",
 			"type": "text",
-			"text": "Chotecops is phacopid trilobite known from Europe. Some fossils known from Hunsrück Slate show soft tissues like antennae, legs, etc."
+			"text": "Chotecops is phacopid trilobite from the Devonian, with fossils being found in formations across Europe. It is most abundant in the Hunsrück Slate, Germany, so much so that some fossils have been wonderfully preserved with soft tissue, from antennae to legs."
 		},
 		{
 			"type": "lepidodendron:diet",

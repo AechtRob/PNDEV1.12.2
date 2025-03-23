@@ -12,35 +12,26 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Coelophysidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/coelophysis.png"],
-			"title": "C. bauri",
-			"text": ""
+			"type": "entity",
+			"name": "C. bauri",
+			"entity": "lepidodendron:prehistoric_flora_coelophysis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_coelophysis",
 			"type": "text",
-			"text": "Coelophysis is a genus of theropod dinosaurs that lived between second part of the Triassic period and potentially into the Jurassic, depending on interpretation of fossil materials. Namesake to its own family, Coelophysids were a widespread group both temporally and geographically, being found almost worldwide and native of many biomes."
+			"text": "Coelophysis is a genus of theropod dinosaurs that lived between second part of the Triassic period and potentially into the Jurassic, depending on interpretation of fossil materials. Namesake to its own family, coelophysids were a widespread group both temporally and geographically, being found almost worldwide and native of many biomes. Described by none other than Edward Drinker Cope in 1887, Coelophysis has had many names in the past and many specimens assigned to it."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_coelophysis",
 			"type": "text",
-			"text": "Described by none other than Edward Drinker Cope in 1887, Coelophysis has had many names in the past and many specimens assigned to it."
+			"text": "Despite its description in 1887, the animal would not gain its modern name until 1889, before that point described as Coelurus and than even to Tanystropheus based on several incomplete specimens. It wasn’t until 1947, when the Ghost Ranch digsite was explored, that we found more complete specimens in a mass graveyard of their bones, ironically quite close to that first original find in 1881. Measuring around 3 m in length,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_coelophysis",
 			"type": "text",
-			"text": "Despite its description in 1887, the animal would not gain its modern name until 1889, before that point described as Coelurus and than even to Tanystropheus based on several incomplete specimens."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_coelophysis",
-			"type": "text",
-			"text": "It wasn’t until 1947, when the Ghost Ranch digsite was explored, that we found more complete specimens in a mass graveyard of their bones, ironically quite close to that first original find in 1881. Measuring around 3 m in length, this nimble predator would prey on small animals like lizard-like reptiles and potentially small protomammals of its time."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_coelophysis",
-			"type": "text",
-			"text": "Once considered to be a cannibal due to small bones from alleged juveniles in the stomach cavity, we now know this to be untrue as most of the remains interpreted to be juveniles were instead of small non dinosaurian reptiles like Hesperosuchus."
+			"text": "this nimble predator would prey on small animals like lizard-like reptiles and potentially small proto-mammals of its time. Once considered to be a cannibal due to small bones from alleged juveniles in the stomach cavity, we now know this to be untrue as most of the remains interpreted to be juveniles were instead of small non dinosaurian reptiles like Hesperosuchus."
 		},
 		{
 			"type": "lepidodendron:diet",

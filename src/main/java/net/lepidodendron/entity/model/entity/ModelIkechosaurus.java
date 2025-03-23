@@ -427,13 +427,14 @@ public class ModelIkechosaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.chest.offsetY = -1.0F;
-        this.chest.offsetX = 0.05F;
+        this.chest.offsetY = -0.8F;
+        this.chest.offsetX = 0.3F;
+        this.chest.offsetZ = 2.0F;
         this.chest.rotateAngleY = (float)Math.toRadians(210);
         this.chest.rotateAngleX = (float)Math.toRadians(14);
         this.chest.rotateAngleZ = (float)Math.toRadians(-8);
         this.chest.scaleChildren = true;
-        float scaler = 1.73F;
+        float scaler = 1.2F;
         this.chest.setScale(scaler, scaler, scaler);
         //Start of pose:
 

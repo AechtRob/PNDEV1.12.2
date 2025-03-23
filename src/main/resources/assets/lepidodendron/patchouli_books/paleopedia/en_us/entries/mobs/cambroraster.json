@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Dinocaridida$(br)>Radiodonta$(br)>Hurdiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cambroraster.png"],
-			"title": "C. falcatus",
-			"text": ""
+			"type": "entity",
+			"name": "C. falcatus",
+			"entity": "lepidodendron:prehistoric_flora_cambroraster",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cambroraster",
 			"type": "text",
-			"text": "Cambroraster is a genus of hurdiid radiodont describled in 2019. It was relatively large, up to 30 cm long and it had a horseshoe shaped dorsal carapace. It likely fed by sifting through the sediment with its oral cone and frontal appendages, with had hooked spines."
+			"text": "Cambroraster is a genus of hurdiid radiodont described in 2019. It was relatively large, up to 30 cm long and it had a horseshoe shaped dorsal carapace. It likely fed by sifting through the sediment with its oral cone and frontal appendages, with had hooked spines."
 		},
 		{
 			"type": "lepidodendron:diet",

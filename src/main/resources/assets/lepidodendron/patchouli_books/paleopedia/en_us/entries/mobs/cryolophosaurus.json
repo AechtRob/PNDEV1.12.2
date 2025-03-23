@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Neotheropoda"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cryolophosaurus.png"],
-			"title": "C. ellioti",
-			"text": ""
+			"type": "entity",
+			"name": "C. ellioti",
+			"entity": "lepidodendron:prehistoric_flora_cryolophosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cryolophosaurus",
 			"type": "text",
-			"text": "Cryolophosaurus ellioti (meaning \"Elliot's cold crested lizard\") was a species of theropod dinosaur that lived during the Early Jurassic (during the Pliensbachian stage, around 186 - 162 million years ago). Its remains were found at the Hanson Formation in Antarctica (in 1991 by palaeontologist Dr. William Hammer and geologist David Elliot), making it the first carnivorous non-avian dinosaur to have been excavated from the frozen continent."
+			"text": "Cryolophosaurus ellioti (meaning \"Elliot's cold crested lizard\") was a species of theropod dinosaur that lived during the Lower Jurassic (during the Pliensbachian stage, around 186 - 162 million years ago). Its remains were found at the Hanson Formation in Antarctica (in 1991 by palaeontologist Dr. William Hammer and geologist David Elliot), making it the first carnivorous non-avian dinosaur to have been excavated from the frozen continent."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cryolophosaurus",

@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Ceratosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ceratosaurus.png"],
-			"title": "C. nasicornis",
-			"text": ""
+			"type": "entity",
+			"name": "C. nasicornis",
+			"entity": "lepidodendron:prehistoric_flora_ceratosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ceratosaurus",
 			"type": "text",
-			"text": "Ceratosaurus nasicornis is a species of Ceratosaurian Theropod from the Late Jurassic North America and Portugal. Meaning \"Horned Lizard\", the dinosaur is perhaps among the most famous of Jurassic Theropods, easily recognized by the crests growing on the nose and above the eyes and its proportionally large teeth, muscular legs, reduced arms and the singular row of osteoderms running down its back."
+			"text": "Ceratosaurus nasicornis is a species of ceratosaurian theropod from the Upper Jurassic North America and Portugal. Meaning \"Horned Lizard\", the dinosaur is perhaps among the most famous of Jurassic theropods, easily recognized by the crests growing on the nose and above the eyes and its proportionally large teeth, muscular legs, reduced arms and the singular row of osteoderms running down its back."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ceratosaurus",
@@ -40,7 +41,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_ceratosaurus",
 			"type": "text",
-			"text": " instead renaming Ceratosaurus inside the growing Wastebasket that Megalosaurus eventually became. It took more than a century for Marsh's original analysis to gain credibility and be widely accepted as before that many authors classified the animal either under Megalosauria, Carnosauria or Coelurosauria, even being considered the most basal Theropod after the Triassic by Gilmore in 1920."
+			"text": " instead renaming Ceratosaurus inside the growing Wastebasket that Megalosaurus eventually became. It took more than a century for Marsh's original analysis to gain credibility and be widely accepted as before that many authors classified the animal either under Megalosauria, Carnosauria or Coelurosauria, even being considered the most basal theropod after the Triassic by Gilmore in 1920."
 		},
 		{
 			"type": "lepidodendron:diet",

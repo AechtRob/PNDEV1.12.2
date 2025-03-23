@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_jellyfish2",
 			"title": "Compass Jelly",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Oligocene+$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Pelagiidae$(br)>$(o)Chrysaora"
+			"text": "$(l)Temporal Range:$() Paleogene (Oligocene) - Present$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Pelagiidae$(br)>$(o)Chrysaora"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/jelly_compass.png"],
-			"title": "C. hysoscella",
-			"text": ""
+			"type": "entity",
+			"name": "C. hysoscella",
+			"entity": "lepidodendron:prehistoric_flora_jellyfish2",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_jellyfish2",

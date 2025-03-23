@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Caseasauria$(br)>Caseidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cotylorhynchus.png"],
-			"title": "C. romeri",
-			"text": ""
+			"type": "entity",
+			"name": "C. romeri",
+			"entity": "lepidodendron:prehistoric_flora_cotylorhynchus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cotylorhynchus",
 			"type": "text",
-			"text": "Cotylorhynchus is a large herbivorous synapsid that lived during the Middle Permian period. It had a massive body and a disproportionately small head with a long fat tail. They could grow to lengths of up to 4.8m."
+			"text": "Cotylorhynchus is a large herbivorous synapsid that lived during the Middle Permian period. It had a massive body and a disproportionately small head with a long fat tail. They could grow to lengths of up to 4.8 m."
 		},
 		{
 			"type": "lepidodendron:diet",

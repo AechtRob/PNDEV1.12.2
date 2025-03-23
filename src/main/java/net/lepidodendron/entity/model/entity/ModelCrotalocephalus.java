@@ -479,6 +479,24 @@ public class ModelCrotalocephalus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Crotalocephalus.offsetY = -1.0F;
+        this.Crotalocephalus.offsetX = 0.6F;
+        this.Crotalocephalus.offsetZ = 2.0F;
+        this.Crotalocephalus.rotateAngleY = (float)Math.toRadians(120);
+        this.Crotalocephalus.rotateAngleX = (float)Math.toRadians(1);
+        this.Crotalocephalus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Crotalocephalus.scaleChildren = true;
+        float scaler = 2.4F;
+        this.Crotalocephalus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Crotalocephalus, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.Crotalocephalus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Crotalocephalus.setScale(1.0F, 1.0F, 1.0F);
+        this.Crotalocephalus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

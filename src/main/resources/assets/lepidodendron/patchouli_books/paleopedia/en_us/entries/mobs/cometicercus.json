@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Thelodonti$(br)>Furcacaudiformes$(br)>Furcacaudidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cometicercus.png"],
-			"title": "C. talimaaae",
-			"text": ""
+			"type": "entity",
+			"name": "C. talimaaae",
+			"entity": "lepidodendron:prehistoric_flora_cometicercus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cometicercus",

@@ -12,25 +12,21 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Ichthyosauromorpha$(br)>Ichthyosauriformes$(br)>Nasorostra"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cartorhynchus.png"],
-			"title": "C. lenticarpus",
-			"text": ""
+			"type": "entity",
+			"name": "C. lenticarpus",
+			"entity": "lepidodendron:prehistoric_flora_cartorhynchus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cartorhynchus",
 			"type": "text",
-			"text": "Cartorhynchus lenticarpus is a species of basal ichthyosauriform reptile from the early Triassic of China. The only known specimen was recovered in 2011 in Majianshan quarry, part of the Nanlinghu formation."
+			"text": "Cartorhynchus lenticarpus is a species of basal ichthyosauriform reptile from the Lower Triassic of China. The only known specimen was recovered in 2011 in Majianshan quarry, part of the Nanlinghu formation. Almost complete, the specimen is missing only parts of the tail and parts of the skull, probably resulting from post mortem exposure of the right side of the body shortly after death. Described in 2014, the animal was thought to have lacked teeth until they"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cartorhynchus",
 			"type": "text",
-			"text": "Almost complete, the specimen is missing only parts of the tail and parts of the skull, probably resulting from post mortem exposure of the right side of the body shortly after death. Described in 2014, the animal was thought to have lacked teeth until they were revealed inside the mouth cavity after CT scans of the specimen were conducted, allowing us to understand this animal to have been a durophagous suction feeder."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_cartorhynchus",
-			"type": "text",
-			"text": "The poorly ossified bones of the hand and wrist suggest the animal had flipper-like flexible hands, allowing it to not only swim but drag itself on land as well, trait that eventually justified its scientific epithet 'lenticarpus' which translates to 'flexible wrist.'"
+			"text": "were revealed inside the mouth cavity after CT scans of the specimen were conducted, allowing us to understand this animal to have been a durophagous suction feeder. The poorly ossified bones of the hand and wrist suggest the animal had flipper-like flexible hands, allowing it to not only swim but drag itself on land as well, a trait that eventually justified its scientific epithet 'lenticarpus' which translates to 'flexible wrist.'"
 		},
 		{
 			"type": "lepidodendron:diet",

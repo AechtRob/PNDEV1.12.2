@@ -21,7 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_yunnanoascus",
 			"type": "text",
-			"text": "Yunnanoascus is a genus of enigmatic animal known from the Maotianshan Shale. This around 2cm-tall animal was first described in 2007, and it was originally described as a member of ctenophore. However, study in 2016 considered that it was actually a jellyfish, which makes it the earliest jellyfish ever known. As interpreted as a jellyfish, it was considered to have sensory structures called rhopalia. In 2023 however, its affinity as jellyfish was questioned and a ctenophore affinity is suggested again."
+			"text": "Yunnanoascus is a genus of enigmatic animal known from the Maotianshan Shale. This around 2cm-tall animal was first described in 2007, and it was originally described as a member of ctenophore. However, study in 2016 considered that it was actually a jellyfish, which makes it the earliest jellyfish ever known. As interpreted as a jellyfish, it was considered to have sensory structures called rhopalia."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yunnanoascus",
+			"type": "text",
+			"text": "In 2023 however, its affinity as jellyfish was questioned and a ctenophore affinity is suggested again."
 		},
 		{
 			"type": "lepidodendron:diet",

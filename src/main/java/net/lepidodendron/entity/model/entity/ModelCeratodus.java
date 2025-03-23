@@ -256,6 +256,48 @@ public class ModelCeratodus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Bodymiddlefront.offsetY = -0.4F;
+        this.Bodymiddlefront.offsetX = 0.2F;
+        this.Bodymiddlefront.offsetZ = 2.0F;
+        this.Bodymiddlefront.rotateAngleY = (float)Math.toRadians(120);
+        this.Bodymiddlefront.rotateAngleX = (float)Math.toRadians(1);
+        this.Bodymiddlefront.rotateAngleZ = (float)Math.toRadians(0);
+        this.Bodymiddlefront.scaleChildren = true;
+        float scaler = 1.8F;
+        this.Bodymiddlefront.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Bodymiddlefront, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Bodyback, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(Bodyfront, -0.0213F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddleback, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(Dorsalfinbase, 0.0848F, 0.0F, 0.0F);
+        this.setRotateAngle(Dorsalfinend, 0.0201F, 0.0F, 0.0F);
+        this.setRotateAngle(Dorsalfinend2, -0.0375F, 0.0F, 0.0F);
+        this.setRotateAngle(Dorsalfinmiddle, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(Dorsalfinmiddle2, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(Eyes, 0.0848F, 0.0F, 0.0F);
+        this.setRotateAngle(Headbase, -0.2806F, 0.0F, 0.0F);
+        this.setRotateAngle(Headslope, 0.1721F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftpectoralfinbase2, -0.2546F, 1.1463F, -0.2972F);
+        this.setRotateAngle(Leftpelvicfinbase, -0.5032F, 1.2816F, -0.4077F);
+        this.setRotateAngle(Lowerjawbase, -0.0162F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawfront, 0.622F, 0.0F, 0.0F);
+        this.setRotateAngle(Mouth, -0.5308F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightpectoralfinbase, -0.2546F, -1.1463F, 0.2972F);
+        this.setRotateAngle(Rightpelvicfinbase, -0.5032F, -1.2816F, 0.4077F);
+        this.setRotateAngle(Snout, 0.1061F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(Tailmiddlebase, 0.0F, -0.2182F, 0.0F);
+        this.setRotateAngle(Tailmiddleend, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(Upperjawpiece, -0.3821F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Bodymiddlefront.render(f);
+        //Reset rotations, positions and sizing:
+        this.Bodymiddlefront.setScale(1.0F, 1.0F, 1.0F);
+        this.Bodymiddlefront.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_cumnoria",
 			"type": "text",
-			"text": "Cumnoria is a genus of basal Iguanodontian from the Late Jurassic of Britain. Known from a single specimen recovered in Cumnor Hurst, the relatively small 3.5 m long specimen represented a juvenile member of the species, as seen by the lack of fusion across it's vertebrae and ribs."
+			"text": "Cumnoria is a genus of basal iguanodontian from the Upper Jurassic of Britain. Known from a single specimen recovered in Cumnor Hurst, the relatively small 3.5 m long specimen represented a juvenile member of the species, as seen by the lack of fusion across it's vertebrae and ribs."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cumnoria",
@@ -31,12 +31,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_cumnoria",
 			"type": "text",
-			"text": "In 1980 the specimen was rediscribed once more and in 2008 seemingly the validity of Cumnoria became more widespread. In 2015 the genus was once again lumped inside of Camptosaurus, position once again rivaled in 2023 when a new paper regarded it as separate without awcknowledging the 2015 publication on the matter."
+			"text": "In 1980 the specimen was rediscribed once more and in 2008 seemingly the validity of Cumnoria became more widespread. In 2015 the genus was once again lumped inside of Camptosaurus, position once again rivaled in 2023 when a new paper regarded it as separate without acknowledging the 2015 publication on the matter."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cumnoria",
 			"type": "text",
-			"text": "While originally placed to be close to Camptosaurus, Cumnoria now is believed to be the oldest known styracostern, being more closely related to derived Iguanodontians than to Camptosaurus itself, however this position too is still debated as well."
+			"text": "While originally placed to be close to Camptosaurus, Cumnoria now is believed to be the oldest known styracostern, being more closely related to derived iguanodontians than to Camptosaurus itself, however this position too is still debated as well."
 		},
 		{
 			"type": "lepidodendron:diet",

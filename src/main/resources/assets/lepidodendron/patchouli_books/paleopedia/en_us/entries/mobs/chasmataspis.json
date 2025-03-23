@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Dekatriata$(br)>Chasmataspidida$(br)>Chasmataspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/chasmataspis.png"],
-			"title": "C. laurencii",
-			"text": ""
+			"type": "entity",
+			"name": "C. laurencii",
+			"entity": "lepidodendron:prehistoric_flora_chasmataspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_chasmataspis",
 			"type": "text",
-			"text": "Chasmataspis was a chelicerate arthropod from the Early Ordovician of what is now Tennessee. It was described in 1958 by Kenneth Caster and HK Brooks from several specimens found in rocks near the Douglas Dam. It was the first discovered member of the order Chasmataspidida, a group of extinct arthropods that bears significant resemblance to both eurypterids and xiphosurans. At the time, sea scorpions and horseshoe crabs were thought to be closely related, with Chasmataspis"
+			"text": "Chasmataspis was a chelicerate arthropod from the Lower Ordovician of what is now Tennessee. It was described in 1958 by Kenneth Caster and HK Brooks from several specimens found in rocks near the Douglas Dam. It was the first discovered member of the order Chasmataspidida, a group of extinct arthropods that bears significant resemblance to both eurypterids and xiphosurans. At the time, sea scorpions and horseshoe crabs were thought to be closely related, with Chasmataspis"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_chasmataspis",

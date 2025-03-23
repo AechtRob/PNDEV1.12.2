@@ -235,7 +235,37 @@ public class ModelCartorhynchus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.root.offsetY = 0.2F;
+        this.root.offsetX = -0.05F;
+        this.root.offsetZ = 2.0F;
+        this.root.rotateAngleY = (float)Math.toRadians(202);
+        this.root.rotateAngleX = (float)Math.toRadians(32);
+        this.root.rotateAngleZ = (float)Math.toRadians(-12);
+        this.root.scaleChildren = true;
+        float scaler = 0.35F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(root, 0.6F, 3.8F, -0.2F);
+        this.jaw1.rotateAngleX = (float) Math.toRadians(12.5);
+        this.head1.rotateAngleX = (float) Math.toRadians(2.61);
+        this.FrontFlipperR.rotateAngleZ = (float) Math.toRadians(68.91);
+        this.FrontFlipperL.rotateAngleZ = (float) Math.toRadians(-68.91);
+        this.backflipperL.rotateAngleZ = (float) Math.toRadians(-71.41);
+        this.backflipperR.rotateAngleZ = (float) Math.toRadians(71.41);
+        this.neck1.rotateAngleX = (float) Math.toRadians(-7.61);
+        this.chest1.rotateAngleX = (float) Math.toRadians(-10.15);
+        this.chest1.rotateAngleY = (float) Math.toRadians(9.84);
+        this.body1.rotateAngleX = (float) Math.toRadians(-5);
+        this.tail1.rotateAngleY = (float) Math.toRadians(-32.5);
+        this.tail2.rotateAngleY = (float) Math.toRadians(-27.5);
+        this.tail3.rotateAngleY = (float) Math.toRadians(-37.5);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void renderStatic(float f) {

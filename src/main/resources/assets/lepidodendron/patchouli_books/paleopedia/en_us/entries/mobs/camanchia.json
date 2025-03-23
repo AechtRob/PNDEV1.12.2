@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_camanchia",
 			"title": "Camanchia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Euchelicerata$(br)>Prosomapoda£(br)>Synziphosurina"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Euchelicerata$(br)>Prosomapoda$(br)>Synziphosurina"
 		},
         	{
             "type": "entity",

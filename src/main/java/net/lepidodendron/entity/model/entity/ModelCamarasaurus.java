@@ -460,25 +460,27 @@ public class ModelCamarasaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.base.offsetY = 0.50F;
-        this.base.offsetX = 0.0F;
+        this.base.offsetX = 0.2F;
+        this.base.offsetZ = 2.0F;
         this.base.rotateAngleY = (float)Math.toRadians(220);
         this.base.rotateAngleX = (float)Math.toRadians(-2);
         this.base.rotateAngleZ = (float)Math.toRadians(2);
         this.base.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.46F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(base, 0.0F, 3.8F, 0.0F);
         this.setRotateAngle(upperlegright, 0.0436F, 0.0F, 0.0F);
         this.setRotateAngle(upperlegleft, 0.3927F, 0.0F, 0.0F);
         this.setRotateAngle(upperarmright, 0.5236F, 0.0F, 0.0F);
         this.setRotateAngle(upperarmleft, -0.0436F, 0.0F, 0.0F);
         this.setRotateAngle(teeth1, 0.1384F, 0.0F, 0.0F);
-        this.setRotateAngle(tail6, 0.0737F, -0.3405F, 0.0786F);
-        this.setRotateAngle(tail5, 0.0365F, -0.3911F, 0.0361F);
-        this.setRotateAngle(tail4, 0.134F, -0.2608F, -0.0233F);
-        this.setRotateAngle(tail3, 0.134F, -0.2608F, -0.0233F);
-        this.setRotateAngle(tail2, 0.2835F, -0.4253F, -0.1006F);
-        this.setRotateAngle(tail1, -0.0893F, -0.173F, 0.023F);
+        this.setRotateAngle(tail6, 0.0737F, 0.3405F, 0.0786F);
+        this.setRotateAngle(tail5, 0.0365F, 0.3911F, 0.0361F);
+        this.setRotateAngle(tail4, 0.134F, 0.2608F, -0.0233F);
+        this.setRotateAngle(tail3, 0.134F, 0.2608F, -0.0233F);
+        this.setRotateAngle(tail2, 0.2835F, 0.4253F, -0.1006F);
+        this.setRotateAngle(tail1, -0.0893F, 0.173F, 0.023F);
         this.setRotateAngle(nose3, 1.2217F, 0.0F, 0.0F);
         this.setRotateAngle(nose2, 0.9163F, 0.0F, 0.0F);
         this.setRotateAngle(nose1, 0.2618F, 0.0F, 0.0F);

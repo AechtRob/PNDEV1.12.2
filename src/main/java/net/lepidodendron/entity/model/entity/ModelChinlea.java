@@ -219,6 +219,48 @@ public class ModelChinlea extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.head.offsetY = -1.8F;
+        this.head.offsetX = -0.2F;
+        this.head.offsetZ = 2.0F;
+        this.head.rotateAngleY = (float)Math.toRadians(120);
+        this.head.rotateAngleX = (float)Math.toRadians(1);
+        this.head.rotateAngleZ = (float)Math.toRadians(0);
+        this.head.scaleChildren = true;
+        float scaler = 1.4F;
+        this.head.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(head, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body, -0.0873F, -0.0873F, 0.0F);
+        this.setRotateAngle(body2, -0.0873F, -0.1745F, 0.0F);
+        this.setRotateAngle(body3, -0.1309F, 0.1745F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.0611F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -2.618F, 0.0F, 0.0F);
+        this.setRotateAngle(gillL, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(gillR, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(pectoralfinL, -0.6981F, 0.2618F, -0.2618F);
+        this.setRotateAngle(pectoralfinR, -0.6981F, -0.2618F, 0.2618F);
+        this.setRotateAngle(pelvicfinL, 0.0F, 0.0F, -0.3491F);
+        this.setRotateAngle(pelvicfinR, 0.0F, 0.0F, 0.3491F);
+        //End of pose, now render the model:
+        this.head.render(f);
+        //Reset rotations, positions and sizing:
+        this.head.setScale(1.0F, 1.0F, 1.0F);
+        this.head.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

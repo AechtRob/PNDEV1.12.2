@@ -212,6 +212,30 @@ public class ModelCongopycnodus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Congopycnodus.offsetY = -0.4F;
+        this.Congopycnodus.offsetX = 0.2F;
+        this.Congopycnodus.offsetZ = 2.0F;
+        this.Congopycnodus.rotateAngleY = (float)Math.toRadians(120);
+        this.Congopycnodus.rotateAngleX = (float)Math.toRadians(1);
+        this.Congopycnodus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Congopycnodus.scaleChildren = true;
+        float scaler = 3.4F;
+        this.Congopycnodus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Congopycnodus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Head, 0.0F, 0.12F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.12F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.14F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.14F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.16F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.16F, 0.0F);
+        //End of pose, now render the model:
+        this.Congopycnodus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Congopycnodus.setScale(1.0F, 1.0F, 1.0F);
+        this.Congopycnodus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

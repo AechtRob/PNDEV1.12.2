@@ -405,10 +405,52 @@ public class ModelCordaticaris extends ModelBasePalaeopedia {
         this.main.rotateAngleX = (float)Math.toRadians(35);
         this.main.rotateAngleZ = (float)Math.toRadians(10);
         this.main.scaleChildren = true;
-        float scaler = 2.25F;
+        float scaler = 3.0F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(main, 0.3F, 3.8F, 0.2F);
+        this.setRotateAngle(finlower9, 0.0F, 0.0F, -0.9599F);
+        this.setRotateAngle(finlower8, 0.0F, 0.0F, -0.9599F);
+        this.setRotateAngle(finlower7, 0.0F, 0.0F, -0.9599F);
+        this.setRotateAngle(finlower6, 0.0F, 0.0F, -0.9599F);
+        this.setRotateAngle(finlower5, 0.0F, 0.0F, -0.9599F);
+        this.setRotateAngle(finlower4, 0.0F, 0.0F, -0.9599F);
+        this.setRotateAngle(finlower3, 0.0F, 0.0F, -0.9599F);
+        this.setRotateAngle(finlower2, 0.0F, 0.0F, -0.9599F);
+        this.setRotateAngle(finlower18, 0.0F, 0.0F, 0.9599F);
+        this.setRotateAngle(finlower17, 0.0F, 0.0F, 0.9599F);
+        this.setRotateAngle(finlower16, 0.0F, 0.0F, 0.9599F);
+        this.setRotateAngle(finlower15, 0.0F, 0.0F, 0.9599F);
+        this.setRotateAngle(finlower14, 0.0F, 0.0F, 0.9599F);
+        this.setRotateAngle(finlower13, 0.0F, 0.0F, 0.9599F);
+        this.setRotateAngle(finlower12, 0.0F, 0.0F, 0.9599F);
+        this.setRotateAngle(finlower11, 0.0F, 0.0F, 0.9599F);
+        this.setRotateAngle(finlower10, 0.0F, 0.0F, 0.9599F);
+        this.setRotateAngle(finlower, 0.0F, 0.0F, -0.9599F);
+        this.setRotateAngle(cube_r9, 0.0F, 0.0F, -0.7025F);
+        this.setRotateAngle(cube_r8, 0.0F, 0.0F, 0.192F);
+        this.setRotateAngle(cube_r7, 0.0F, 0.0F, 0.7025F);
+        this.setRotateAngle(cube_r6, -0.0751F, -0.5993F, -0.2588F);
+        this.setRotateAngle(cube_r5, -0.0751F, 0.5993F, 0.2588F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.0F, 1.5272F);
+        this.setRotateAngle(cube_r3, 0.0F, 0.0F, -1.5272F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.0F, -0.3971F);
+        this.setRotateAngle(cube_r14, -0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.0F, 0.0F, -0.192F);
+        this.setRotateAngle(cube_r1, 0.0F, 0.0F, 0.3971F);
+        this.setRotateAngle(body9, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(body7, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(body6, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(body12, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(body11, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(body10, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(appendageright, -0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(appendageleft, -0.6545F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

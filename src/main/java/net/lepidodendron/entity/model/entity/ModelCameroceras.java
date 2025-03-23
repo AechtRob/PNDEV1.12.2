@@ -385,6 +385,24 @@ public class ModelCameroceras extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.shellbase.offsetY = 1.15F;
+        this.shellbase.offsetX = 0.1F;
+        this.shellbase.offsetZ = 2.0F;
+        this.shellbase.rotateAngleY = (float)Math.toRadians(120);
+        this.shellbase.rotateAngleX = (float)Math.toRadians(1);
+        this.shellbase.rotateAngleZ = (float)Math.toRadians(0);
+        this.shellbase.scaleChildren = true;
+        float scaler = 0.2F;
+        this.shellbase.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(shellbase, 1.2F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.shellbase.render(f);
+        //Reset rotations, positions and sizing:
+        this.shellbase.setScale(1.0F, 1.0F, 1.0F);
+        this.shellbase.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

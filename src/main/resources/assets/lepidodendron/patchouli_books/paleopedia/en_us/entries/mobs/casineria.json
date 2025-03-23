@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_casineria",
 			"title": "Casineria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Amniota (?)"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>$(o)Amniota (?)"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Casineria.png"],
-			"title": "C. kiddi",
-			"text": ""
+			"type": "entity",
+			"name": "C. kiddi",
+			"entity": "lepidodendron:prehistoric_flora_casineria",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_casineria",

@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinistia$(br)>Mawsoniidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/chinlea.png"],
-			"title": "C. campii",
-			"text": ""
+			"type": "entity",
+			"name": "C. campii",
+			"entity": "lepidodendron:prehistoric_flora_chinlea",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_chinlea",
 			"type": "text",
-			"text": "Chinlea was a freshwater mawsoniid coelacanth that lived during the Late Triassic, in what is now the USA. It is named after the Chinle Formation (a fossil-bearing formation that runs through parts of Arizona and New Mexico), where its fossils were found."
+			"text": "Chinlea was a freshwater mawsoniid coelacanth that lived during the Upper Triassic, in what is now the USA. It is named after the Chinle Formation (a fossil-bearing formation that runs through parts of Arizona and New Mexico), where its fossils were found."
 		},
 		{
 			"type": "lepidodendron:diet",

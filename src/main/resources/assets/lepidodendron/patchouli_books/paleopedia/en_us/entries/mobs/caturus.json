@@ -12,20 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Amiiformes$(br)>Caturidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/caturus.png"],
-			"title": "S. giganteus",
-			"text": ""
+			"type": "entity",
+			"name": "S. giganteus",
+			"entity": "lepidodendron:prehistoric_flora_caturus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_caturus",
 			"type": "text",
-			"text": "Strobilodus giganteus is species of actinopterygian from Jurassic, from Solnhofen Limestone in Germany. Although genus Strobilodus is given in 1851, it was mostly treated as species of widespread fish genus Caturus."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_caturus",
-			"type": "text",
-			"text": "However, in 2023 this species was excluded from caturidae and got back the genus name Strobilodus. It was large predatory fish, reaching around a meter, and had bunch of sharp teeth."
+			"text": "Strobilodus giganteus is species of actinopterygian from Jurassic, from Solnhofen Limestone in Germany. Although genus Strobilodus is given in 1851, it was mostly treated as species of widespread fish genus Caturus. However, in 2023 this species was excluded from caturidae and got back the genus name Strobilodus. It was large predatory fish, reaching around a meter, and had bunch of sharp teeth."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_caturus",

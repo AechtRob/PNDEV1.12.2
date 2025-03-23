@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_cymbospondylus",
 			"title": "Cymbospondylus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Ichthyosauria$(br)>Cymbospondylidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Ichthyosauria$(br)>Cymbospondylidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cymbospondylus.png"],
-			"title": "C. petrinus",
-			"text": ""
+			"type": "entity",
+			"name": "C. petrinus",
+			"entity": "lepidodendron:prehistoric_flora_cymbospondylus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cymbospondylus",
 			"type": "text",
-			"text": "Cymbospondylus is a genus of basal Ichthyosaur from the Middle Triassic from Europe and North America. Able to reach massive sizes up to 14 m long if not more, the genus was quite widespread in the Triassic oceans. Due to its size and shape of the tail, it is believed Cymbospondylus was an ambush predator, able to gain sudden bursts of speed to catch up to prey."
+			"text": "Cymbospondylus is a genus of basal ichthyosaur from the Middle Triassic from Europe and North America. Able to reach massive sizes up to 14 m long if not more, the genus was quite widespread in the Triassic oceans. Due to its size and shape of the tail, it is believed Cymbospondylus was an ambush predator, able to gain sudden bursts of speed to catch up to prey."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cymbospondylus",
@@ -30,7 +31,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_cymbospondylus",
 			"type": "text",
-			"text": "First described in 1868, many fragmentary remains have been classified under the genus, several of which considered either undiagnostic, invalid or from different genera altogether to this day, not an uncommon occurance with early paleontological finds. In 2021 an almost 2 m long skull was described as a new species under the genus, representing potentially the largest member known with an estimated length of 17 m, the remains were nicknamed Jim 2."
+			"text": "First described in 1868, many fragmentary remains have been classified under the genus, several of which considered either undiagnostic, invalid or from different genera altogether to this day, not an uncommon occurrence with early paleontological finds. In 2021 an almost 2 m long skull was described as a new species under the genus, representing potentially the largest member known with an estimated length of 17 m, the remains were nicknamed Jim 2."
 		},
 		{
 			"type": "lepidodendron:diet",

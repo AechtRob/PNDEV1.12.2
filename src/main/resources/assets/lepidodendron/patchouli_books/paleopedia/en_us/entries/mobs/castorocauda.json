@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_castorocauda",
 			"title": "Castorocauda",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Mammaliaformes $(br)>Docodonta $(br)>Docodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Cynodontia$(br)>Mammaliaformes$(br)>Docodonta$(br)>Docodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/castorocauda.png"],
-			"title": "C. lutrasimilis",
-			"text": ""
+			"type": "entity",
+			"name": "C. lutrasimilis",
+			"entity": "lepidodendron:prehistoric_flora_castorocauda",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_castorocauda",
 			"type": "text",
-			"text": "Castorocauda lutrasimilis was a species of docodont mammaliaform that lived during the Middle Jurassic (around 164 million years ago). It is known from a partial - though very well preserved - partial skeleton that was found in the Daohugou Beds in Inner Mongolia, China, as part of the Yanliao biota. Its home would've been a wet, seasonally cool, temperate environment (with an average temperature perhaps no higher than 15°C or 59°F)."
+			"text": "Castorocauda lutrasimilis was a species of docodont mammaliaform that lived during the Middle Jurassic (around 164 million years ago). It is known from a partial - though very well preserved - skeleton that was found in the Daohugou Beds in Inner Mongolia, China, as part of the Yanliao biota. Its home would've been a wet, seasonally cool, temperate environment (with an average temperature perhaps no higher than 15°C or 59°F)."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_castorocauda",

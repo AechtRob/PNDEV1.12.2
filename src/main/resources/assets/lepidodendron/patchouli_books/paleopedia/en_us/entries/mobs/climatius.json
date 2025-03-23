@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Acanthodii$(br)>Climatiiformes$(br)>Climatiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/climatius.png"],
-			"title": "C. reticulatus",
-			"text": ""
+			"type": "entity",
+			"name": "C. reticulatus",
+			"entity": "lepidodendron:prehistoric_flora_climatius",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_climatius",

@@ -444,24 +444,24 @@ public class ModelCapinatator extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -2.4F;
-        this.root.offsetX = -0.5F;
+        this.root.offsetY = -3.4F;
+        this.root.offsetX = 1.6F;
         this.root.rotateAngleY = (float)Math.toRadians(200);
         this.root.rotateAngleX = (float)Math.toRadians(8);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 6.5F;
+        float scaler = 6.0F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(root, -0.3F, 2.5F, 0.05F);
-        this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
-        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
-        this.setRotateAngle(body4, 0.0F, 0.2F, 0.0F);
-        this.setRotateAngle(body5, 0.0F, -0.6F, 0.0F);
-        this.setRotateAngle(body6, 0.0F, -0.5F, 0.0F);
-        this.setRotateAngle(body7, 0.0F, -0.5F, 0.0F);
-        this.setRotateAngle(body8, 0.0F, -0.5F, 0.0F);
+        this.setRotateAngle(root, 0.6F, 3.5F, 0.2F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, -0.2F, 0.4F, 0.0F);
+        this.setRotateAngle(body4, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body6, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(body7, 0.2F, -0.4F, 0.0F);
+        this.setRotateAngle(body8, 0.1F, -0.2F, 0.0F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:

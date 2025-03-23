@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_coccosteus",
 			"title": "Coccosteus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Arthrodira$(br)>Coccosteidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Coccosteidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/coccosteus.png"],
-			"title": "C. cuspidatus",
-			"text": ""
+			"type": "entity",
+			"name": "C. cuspidatus",
+			"entity": "lepidodendron:prehistoric_flora_coccosteus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_coccosteus",

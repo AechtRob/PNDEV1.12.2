@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Ptyctodontida$(br)>Ptyctodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ctenurella_m.png", "paleopedia:textures/ctenurella_f.png"],
-			"title": "C. gladbachensis",
-			"text": ""
+			"type": "entity",
+			"name": "C. gladbachensis",
+			"entity": "lepidodendron:prehistoric_flora_ctenurella",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ctenurella",
 			"type": "text",
-			"text": "Ctenurella gladbachensis was a species of small ptyctodont placoderm that lived during the Late Devonian in what is now Germany. Its fossils were found in the Strunde valley, in the Paffrather Kalkmulde. While most ptyctodonts are thought to have fed on or near the seabed, the fins of Ctenurella suggest it may have also swum in open waters. Male Ctenurella could be distinguished from the females by the pair of hook-shaped claspers."
+			"text": "Ctenurella gladbachensis was a species of small ptyctodont placoderm that lived during the Upper Devonian, in what is now Germany. Its fossils were found in the Strunde valley, in the Paffrather Kalkmulde. While most ptyctodonts are thought to have fed on or near the seabed, the fins of Ctenurella suggest it may have also swum in open waters. Male Ctenurella could be distinguished from the females by the pair of hook-shaped claspers."
 		},
 		{
 			"type": "lepidodendron:diet",

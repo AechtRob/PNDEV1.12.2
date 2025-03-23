@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Mollusca$(br)>Siphogonuchitidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/calvapilosa.png"],
-			"title": "C. kroegeri",
-			"text": ""
+			"type": "entity",
+			"name": "C. kroegeri",
+			"entity": "lepidodendron:prehistoric_flora_calvapilosa",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_calvapilosa",

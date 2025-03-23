@@ -12,20 +12,21 @@
 			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Chordata$(br)>Amphibia$(br)>Allocaudata$(br)>Albanerpetontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/celtedens.png"],
-			"title": "C. megacephalus",
-			"text": ""
+			"type": "entity",
+			"name": "C. megacephalus",
+			"entity": "lepidodendron:prehistoric_flora_celtedens",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_celtedens",
 			"type": "text",
-			"text": "Celtedens is an amphibian that belongs to the extinct family of Albanerpetontid. Although they look like salamanders, Abanerpetonids have differing characteristics such as scales and ballistic tongues. They may have also breathed through their skin. Their biology suggests that they would sit still and wait for prey, striking when the opportunity arises. Albanerpetontids actually existed as close back as the Pleistocene before they went extinct. Celtedens itself is mainly known from the Early"
+			"text": "Celtedens is an amphibian that belongs to the extinct family of Albanerpetontidae. Although they look like salamanders, abanerpetonids have differing characteristics such as scales and ballistic tongues. They may have also breathed through their skin. Their biology suggests that they would sit still and wait for prey, striking when the opportunity arises. Albanerpetontids actually existed right up until the Pleistocene before they went extinct."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_celtedens",
 			"type": "text",
-			"text": "Cretaceous of Europe, but unnamed remains are also known from the Late Jurassic."
+			"text": "Celtedens itself is mainly known from the Early Cretaceous of Europe, but unnamed remains are also known from the Upper Jurassic."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -248,7 +248,48 @@ public class ModelCaptorhinus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.Captorhinus.offsetY = 0.0F;
+        this.Captorhinus.offsetX = 0.2F;
+        this.Captorhinus.offsetZ = 0.8F;
+        this.Captorhinus.rotateAngleY = (float)Math.toRadians(202);
+        this.Captorhinus.rotateAngleX = (float)Math.toRadians(32);
+        this.Captorhinus.rotateAngleZ = (float)Math.toRadians(-12);
+        this.Captorhinus.scaleChildren = true;
+        float scaler = 0.6F;
+        this.Captorhinus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Captorhinus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(LArm, 1.2436F, 1.2609F, -0.1212F);
+        this.setRotateAngle(LArm2, -1.3391F, -0.3405F, -0.0786F);
+        this.setRotateAngle(LHand, 0.3491F, -1.4835F, 0.0F);
+        this.setRotateAngle(RArm, 1.3123F, -1.1773F, 0.0481F);
+        this.setRotateAngle(RArm2, -1.3526F, 0.0F, 0.0F);
+        this.setRotateAngle(RHand, 0.0F, 1.4835F, 0.0F);
+        this.setRotateAngle(Neck, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, -0.1145F, -0.4755F, -0.0678F);
+        this.setRotateAngle(cube_r1, 0.0F, -0.2531F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.2531F, 0.0F);
+        this.setRotateAngle(Jaw, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.2443F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, -0.2531F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, 0.2531F, 0.0F);
+        this.setRotateAngle(Body, -0.0457F, 0.3051F, -0.0138F);
+        this.setRotateAngle(Body2, -0.0886F, -0.1739F, 0.0154F);
+        this.setRotateAngle(LLeg, -0.5427F, -0.806F, -0.1597F);
+        this.setRotateAngle(LLeg2, 0.7418F, 0.0F, 0.0F);
+        this.setRotateAngle(RLeg, 1.3793F, 1.3762F, 2.3745F);
+        this.setRotateAngle(RLeg2, 0.7418F, 0.0F, 0.0F);
+        this.setRotateAngle(RFoot, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, -0.1372F, -0.3027F, 0.0411F);
+        this.setRotateAngle(Tail2, 0.0481F, -0.4359F, -0.0203F);
+        this.setRotateAngle(Tail3, 0.1473F, -0.4755F, -0.0678F);
+        //End of pose, now render the model:
+        this.Captorhinus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Captorhinus.setScale(1.0F, 1.0F, 1.0F);
+        this.Captorhinus.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
