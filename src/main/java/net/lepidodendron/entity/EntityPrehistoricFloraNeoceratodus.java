@@ -69,7 +69,7 @@ public class EntityPrehistoricFloraNeoceratodus extends EntityPrehistoricFloraSw
 		return true;
 	}
 
-	public static String getPeriod() {return "Cretaceous - Paleogene  - Neogene - Pleistocene - (Present)";}
+	public static String getPeriod() {return "Cretaceous - Paleogene  - Neogene - Pleistocene [- Present]";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
