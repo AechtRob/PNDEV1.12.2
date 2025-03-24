@@ -425,6 +425,34 @@ public class ModelCiurcopterus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Ciurcopterus.offsetY = -1.0F;
+        this.Ciurcopterus.offsetX = 0.0F;
+        this.Ciurcopterus.offsetZ = 2.0F;
+        this.Ciurcopterus.rotateAngleY = (float)Math.toRadians(120);
+        this.Ciurcopterus.rotateAngleX = (float)Math.toRadians(1);
+        this.Ciurcopterus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Ciurcopterus.scaleChildren = true;
+        float scaler = 1.4F;
+        this.Ciurcopterus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Ciurcopterus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(TergiteA1, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(TergiteA2, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(TergiteA3, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(TergiteA4, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(TergiteA5, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(TergiteA6, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Telson, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(cheliceraR, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(cheliceraL, 0.0F, -0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.Ciurcopterus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Ciurcopterus.setScale(1.0F, 1.0F, 1.0F);
+        this.Ciurcopterus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

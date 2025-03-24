@@ -9,7 +9,7 @@
 "trigger": "lepidodendron:pf_adv_book_caririsuchus",
 "title": "Caririsuchus",
 "type": "quest",
-"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Pseudosuchia$(br)>Notosuchia$(br)>Sebecosuchia$(br)>Peirosauridae"
+"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Notosuchia$(br)>Sebecosuchia$(br)>Peirosauridae"
 },
         {
             "type": "entity",
@@ -21,7 +21,7 @@
 {
 "advancement": "lepidodendron:pf_adv_book_caririsuchus",
 "type": "text",
-"text": "Caririsuchus is an Early Cretaceous Peirosaur, which are armored, mostly terrestrial notosuchians, although some members of Peirosauridae were semi-aquatic. Caririsuchus is one of the best known Peirosaurs, with its osteoderms, and most of the postcrania and skull preserved."
+"text": "Caririsuchus is an Early Cretaceous peirosaur, which are armored, mostly terrestrial notosuchians, although some members of Peirosauridae were semi-aquatic. Caririsuchus is one of the best known peirosaurs, with its osteoderms, and most of the postcrania and skull preserved."
 },
 {
 "type": "lepidodendron:diet",

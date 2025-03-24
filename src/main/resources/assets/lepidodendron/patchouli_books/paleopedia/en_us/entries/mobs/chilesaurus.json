@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_chilesaurus",
 			"title": "Chilesaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>$(o)Theropoda (?)"
 		},
         	{
             "type": "entity",
@@ -21,22 +21,22 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_chilesaurus",
 			"type": "text",
-			"text": "Chilesaurus diegosuarezi was a species of herbivorous dinosaur that lived during the Late Jurassic (around 147 - 145 million years ago). As the name (meaning \"Diego Suárez's Chilean lizard\") suggests, its remains were found in Chile in 2004, specifically at the Toqui Formation in the Aysén region. The then 7 year-old Diego Suárez was out with his parents (geologists Manuel Suárez and Rita de la Cruz) searching for decorative stones, when they stumbled upon the fossils."
+			"text": "Chilesaurus diegosuarezi was a species of herbivorous dinosaur that lived during the Upper Jurassic (around 147 - 145 million years ago). As the name (meaning \"Diego Suárez's Chilean lizard\") suggests, its remains were found in Chile in 2004, specifically at the Toqui Formation in the Aysén region. The then 7 year-old Diego Suárez was out with his parents (geologists Manuel Suárez and Rita de la Cruz) searching for decorative stones, when they stumbled upon the fossils."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_chilesaurus",
 			"type": "text",
-			"text": "A truly bizarre (and so far, entirely unique) animal, Chilesaurus had traits associated with many other dinosaurs, including theropods, basal ornithischians, and early sauropodomorphs. To this day its uncertain classification remains a taxonomic nightmare (over the years it has been classified either as a basal tetanuran theropod, or as a very basal ornithischian), though its importance to the study of dinosaur evolution cannot be understated!"
+			"text": "A truly bizarre (and so far, entirely unique) animal, Chilesaurus had traits associated with many other dinosaurs, including theropods, basal ornithischians, and early sauropodomorphs. To this day its uncertain classification remains a taxonomic nightmare (over the years it has been classified either as a basal tetanuran theropod, or as a very basal ornithischian), though its importance to the study of dinosaur evolution cannot be understated! Spatula-shaped, elongated,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_chilesaurus",
 			"type": "text",
-			"text": "Spatula-shaped, elongated, forward-pointing teeth, and a backward-facing pelvis allowing for a bigger gut, suggest Chilesaurus was a herbivore. Its hand had been reduced to just two functional, clawed fingers, though the first claw was fairly large and well developed. The first toe on its foot (which was normally a small dewclaw in most bipedal non-avian dinosaurs) was unusually large and had migrated down to the ground, resulting in a broad, weight-bearing foot with four toes on the ground. "
+			"text": "forward-pointing teeth, and a backward-facing pelvis allowing for a bigger gut, suggest Chilesaurus was a herbivore. Its hand had been reduced to just two functional, clawed fingers, though the first claw was fairly large and well developed. The first toe on its foot (which was normally a small dewclaw in most bipedal non-avian dinosaurs) was unusually large and had migrated down to the ground, resulting in a broad, weight-bearing foot with four toes on the ground. "
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_chilesaurus",
 			"type": "text",
-			"text": "The hind limbs were relatively short, and seemingly less suited for running than in many other bipedal dinosaurs. Overall the animal measured around 3.2 metres (just over 10 feet) long.\nDuring the Late Jurassic, the Toqui Formation seems to have been a river delta environment, with some evidence of volcanic activity. Chilesaurus would've shared its environment with such creatures as the mesoeucrocodilian Burkesuchus, and currently unclassified diplodocid sauropods."
+			"text": "The hind limbs were relatively short, and seemingly less suited for running than in many other bipedal dinosaurs. Overall the animal measured around 3.2 metres (just over 10 feet) long. During the Upper Jurassic, the Toqui Formation seems to have been a river delta environment, with some evidence of volcanic activity. Chilesaurus would've shared its environment with such creatures as the mesoeucrocodilian Burkesuchus, and currently unclassified diplodocid sauropods."
 		},
 		{
 			"type": "lepidodendron:diet",

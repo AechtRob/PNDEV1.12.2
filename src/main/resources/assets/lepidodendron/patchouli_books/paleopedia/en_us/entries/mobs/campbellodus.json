@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Ptychodontida$(br)>Ptychodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/campbellodus.png"],
-			"title": "C. decipiens",
-			"text": ""
+			"type": "entity",
+			"name": "C. decipiens",
+			"entity": "lepidodendron:prehistoric_flora_campbellodus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_campbellodus",

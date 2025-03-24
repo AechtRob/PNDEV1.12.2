@@ -576,8 +576,9 @@ public class ModelCanadia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Canadia.offsetY = -0.40F;
-        this.Canadia.offsetX = -0.25F;
+        this.Canadia.offsetY = -0.2F;
+        this.Canadia.offsetX = 0.25F;
+        this.Canadia.offsetZ = 2.0F;
         this.Canadia.rotateAngleY = (float)Math.toRadians(45);
         this.Canadia.rotateAngleX = (float)Math.toRadians(-35);
         this.Canadia.rotateAngleZ = (float)Math.toRadians(-20);
@@ -585,7 +586,19 @@ public class ModelCanadia extends ModelBasePalaeopedia {
         float scaler = 0.65F;
         this.Canadia.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Canadia, 0.6F, 3.6F, -0.2F);
+        this.setRotateAngle(Body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body6, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body7, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body8, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body9, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body10, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body11, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body12, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.Canadia.render(f);
         //Reset rotations, positions and sizing:

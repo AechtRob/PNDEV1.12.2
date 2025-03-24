@@ -12,20 +12,21 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Pterosauria$(br)>Dimorphodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/caelestiventus.png"],
-			"title": "C. hanseni",
-			"text": ""
+			"type": "entity",
+			"name": "C. hanseni",
+			"entity": "lepidodendron:prehistoric_flora_caelestiventus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_caelestiventus",
 			"type": "text",
-			"text": "Caelestiventus  hanseni is a species of Dimorphodontid pterosaur from the late Triassic of the United States. Described officially in 2018, the remains of this animal were known and shown in scientific literature as far back as 2015, having its unnamed remains presented in Portsmouth that year in occasion of a symposium on pterosaurs."
+			"text": "Caelestiventus hanseni is a species of dimorphodontid pterosaur from the Upper Triassic of the United States. Described officially in 2018, the remains of this animal were known and shown in scientific literature as far back as 2015, having its unnamed remains presented in Portsmouth that year in occasion of a symposium on pterosaurs."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_caelestiventus",
 			"type": "text",
-			"text": "Of importance for many reasons, Caelestiventus has extended the range of Dimorphodontids back into the Triassic and demonstrated the presence of early pterosaurs in desert environments."
+			"text": "Of importance for many reasons, Caelestiventus has extended the range of dimorphodontids back into the Triassic and demonstrated the presence of early pterosaurs in desert environments."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_caelestiventus",

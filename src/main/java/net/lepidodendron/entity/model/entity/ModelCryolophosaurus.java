@@ -626,6 +626,48 @@ public class ModelCryolophosaurus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.hips.offsetY = 2.0F;
+        this.hips.offsetX = 0.3F;
+        this.hips.offsetZ = 2.0F;
+        this.hips.rotateAngleY = (float)Math.toRadians(120);
+        this.hips.rotateAngleX = (float)Math.toRadians(1);
+        this.hips.rotateAngleZ = (float)Math.toRadians(0);
+        this.hips.scaleChildren = true;
+        float scaler = 0.5F;
+        this.hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(hips, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(body, 0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, 0.09F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.05F, -0.05F, 0.0F);
+        this.setRotateAngle(neck2, -0.28F, -0.2F, 0.0F);
+        this.setRotateAngle(neck3, 0.4F, -0.55F, -0.08F);
+        this.setRotateAngle(head, 0.0F, -0.7F, -0.1F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(armLeft, 0.78F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, -0.08F, 0.18F, 0.0F);
+        this.setRotateAngle(tail3, 0.02F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, -0.13F, 0.0F);
+        this.setRotateAngle(tail5, 0.13F, -0.29F, 0.0F);
+        this.setRotateAngle(tail6, 0.15F, -0.3F, 0.0F);
+        this.setRotateAngle(legLeft, 0.25F, 0.0F, 0.0F);
+        this.setRotateAngle(legLeft2, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(legLeft3, -0.85F, 0.0F, 0.0F);
+        this.setRotateAngle(footLeft, 0.58F, 0.0F, 0.0F);
+        this.setRotateAngle(footLeft2, -0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(legRight, -0.55F, 0.0F, 0.0F);
+        this.setRotateAngle(legRight2, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(legRight3, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(footRight, 0.55F, 0.0F, 0.0F);
+        this.setRotateAngle(footRight2, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.hips.setScale(1.0F, 1.0F, 1.0F);
+        this.hips.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

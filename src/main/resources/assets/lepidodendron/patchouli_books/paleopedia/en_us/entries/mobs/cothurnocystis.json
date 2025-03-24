@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Echinodermata$(br)>Stylophora$(br)>Cornuta$(br)>Cothurnocystidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cothurnocystis.png"],
-			"title": "C. elizae",
-			"text": ""
+			"type": "entity",
+			"name": "C. elizae",
+			"entity": "lepidodendron:prehistoric_flora_cothurnocystis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cothurnocystis",

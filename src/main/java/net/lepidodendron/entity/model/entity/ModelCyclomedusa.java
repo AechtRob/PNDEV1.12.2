@@ -42,8 +42,8 @@ public class ModelCyclomedusa extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.bone.offsetY = -0.75F;
-        this.bone.offsetX = -0.F;
+        this.bone.offsetY = -0.6F;
+        this.bone.offsetX = -0.0F;
         this.bone.rotateAngleY = (float)Math.toRadians(165);
         this.bone.rotateAngleX = (float)Math.toRadians(22);
         this.bone.rotateAngleZ = (float)Math.toRadians(-28);
@@ -51,7 +51,7 @@ public class ModelCyclomedusa extends ModelBasePalaeopedia {
         float scaler = 2.25F;
         this.bone.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(bone, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);

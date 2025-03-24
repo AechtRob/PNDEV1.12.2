@@ -9,23 +9,24 @@
 			"trigger": "lepidodendron:pf_adv_book_ciurcopterus",
 			"title": "Ciurcopterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Eurypterida$(br)>Pterygotidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Pterygotidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ciurcopterus.png"],
-			"title": "C. ventricosus",
-			"text": ""
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_ciurcopterus",
-			"type": "text",
-			"text": "Ciurcopterus is a basal Pterygotid Eurypterid. Compared to other early Pterygotids, Ciurcopterus is relatively large but is massively dwarfed by its later relatives. It is short and wide with a flattened telson, a characteristic feature of its family. Pterygotids also have robust chelicerae, but these have not been preserved in Ciurcopterus. Although it has all the features that define it as a Pterygotid,"
+			"type": "entity",
+			"name": "C. ventricosus",
+			"entity": "lepidodendron:prehistoric_flora_ciurcopterus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ciurcopterus",
 			"type": "text",
-			"text": "its appendages are more similar to that of the primitive Pterygotioid Slimonia. It lived in the Late Silurian of North America in shallow, stromatolite-abundant environments."
+			"text": "Ciurcopterus is a basal pterygotid eurypterid. Compared to other early pterygotids, Ciurcopterus is relatively large but is massively dwarfed by its later relatives. It is short and wide with a flattened telson, a characteristic feature of its family. Pterygotids also have robust chelicerae, but these have not been preserved in Ciurcopterus. Although it has all the features that define it as a pterygotid,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ciurcopterus",
+			"type": "text",
+			"text": "its appendages are more similar to that of the primitive pterygotioid Slimonia. It lived in the Upper Silurian of North America in shallow, stromatolite-abundant environments."
 		},
 		{
 			"type": "lepidodendron:diet",

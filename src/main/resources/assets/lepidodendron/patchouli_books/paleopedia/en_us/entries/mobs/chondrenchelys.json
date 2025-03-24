@@ -11,7 +11,7 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Chondrenchelyiformes$(br)>Chondrenchelyidae"
 		},
-        	{
+		{
             "type": "entity",
             "name": "C. problematica",
             "entity": "lepidodendron:prehistoric_flora_chondrenchelys",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_chondrenchelys",
 			"type": "text",
-			"text": "Chondrenchelys is a cartilaginous fish, known from Scotland and is likely the earliest Holocephalian known from complete specimens. It was eel-shaped, growing to around 18cm long and did not possess head ornaments like its relative, Harpagofututor. It had a long and tapered dorsal fin that ran down its body."
+			"text": "Chondrenchelys is a cartilaginous fish, known from Scotland and is likely the earliest holocephalian known from complete specimens. It was eel-shaped, growing to around 18 cm long and did not possess head ornaments like its relative, Harpagofututor. It had a long and tapered dorsal fin that ran down its body."
 		},
 		{
 			"type": "lepidodendron:diet",

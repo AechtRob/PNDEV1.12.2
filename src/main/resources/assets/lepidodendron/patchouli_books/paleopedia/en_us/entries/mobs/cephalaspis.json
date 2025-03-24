@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_cephalaspis",
 			"title": "Cephalaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Osteostraci$(br)>Cephalaspidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Cephalaspidomorphi$(br)>Osteostraci$(br)>Cephalaspidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cephalaspis.png"],
-			"title": "C. lyelli",
-			"text": ""
+			"type": "entity",
+			"name": "C. lyelli",
+			"entity": "lepidodendron:prehistoric_flora_cephalaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cephalaspis",
 			"type": "text",
-			"text": "Cephalaspis was a Devonian Osteostracan, a type of jawless fish, which probably evolved its armor to defend against the predators of its time: Placoderms and Eurypterids. It was a freshwater fish and probably ate smaller invertebrates living among the sand. It was probably a bottom feeder which ate by stirring up the sand by moving its shovel like head from side to side, eating worms or small crustaceans."
+			"text": "Cephalaspis was a Devonian osteostracan, a type of jawless fish, which probably evolved its armor to defend against the predators of its time: placoderms and eurypterids. It was a freshwater fish and probably a bottom feeder, eating smaller invertebrates (i.e. worms and crustaceans) living among the sand, which is most probably stirred up by moving its shovel like head from side to side."
 		},
 		{
 			"type": "lepidodendron:diet",

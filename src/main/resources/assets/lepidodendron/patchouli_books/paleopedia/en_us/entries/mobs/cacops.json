@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Amphibia$(br)>Temnospondyli$(br)>Dissorophidae$(br)>Eucacopinae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cacops.png"],
-			"title": "C. aspidephorus",
-			"text": ""
+			"type": "entity",
+			"name": "C. aspidephorus",
+			"entity": "lepidodendron:prehistoric_flora_cacops",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cacops",

@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Cnidaria$(br)>Medusae"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/cordubia.png"],
-			"title": "C. gigantea",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "C. gigantea",
+			"entity": "lepidodendron:prehistoric_flora_cordubia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cordubia",

@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Sarcopterygii$(br)>Actinistia$(br)>Laugiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/coccoderma.png"],
-			"title": "C. bavaricum",
-			"text": ""
+			"type": "entity",
+			"name": "C. bavaricum",
+			"entity": "lepidodendron:prehistoric_flora_coccoderma",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_coccoderma",
 			"type": "text",
-			"text": "Coccoderma was a genus of Laugiid coelacanth fish that lived during the Kimmeridgian stage of the Late Jurassic (around 157.3 - 152.1 million years ago). Fossils of this 35.5 cm long fish have been found in what is now France and Germany, including in the famous Solnhofen Limestone. The rock layers and geographical locations Coccoderma was found in suggest that its preferred habitat was warm, shallow coastal marine waters (such as tropical lagoons)."
+			"text": "Coccoderma was a genus of laugiid coelacanth fish that lived during the Kimmeridgian stage of the Upper Jurassic (around 157.3 - 152.1 million years ago). Fossils of this 35.5 cm long fish have been found in what is now France and Germany, including in the famous Solnhofen Limestone. The rock layers and geographical locations Coccoderma was found in suggest that its preferred habitat was warm, shallow coastal marine waters (such as tropical lagoons)."
 		},
 		{
 			"type": "lepidodendron:diet",

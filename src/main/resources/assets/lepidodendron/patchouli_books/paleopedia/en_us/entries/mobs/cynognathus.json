@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Cynodontia$(br)>Cynognathidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cynognathus.png"],
-			"title": "C. crateronotus",
-			"text": ""
+			"type": "entity",
+			"name": "C. crateronotus",
+			"entity": "lepidodendron:prehistoric_flora_cynognathus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cynognathus",
 			"type": "text",
-			"text": "Cynognathus crateronotus is a species of non mammalian Therapsid from the middle Triassic of Africa, South America and Antarctica. Around 1.2 m long on average, with only rare specimens reaching 2 m, the numerous fossil remains of the species allowed us to reconstruct it quite in detail. The up to 37 cm long skull was heavily built and elongated, taking a shape reminiscent of a modern day dog's, from which the genus name \"Dog jaw\" came from."
+			"text": "Cynognathus crateronotus is a species of non mammalian therapsid from the Middle Triassic of Africa, South America and Antarctica. Around 1.2 m long on average, with only rare specimens reaching 2 m, the numerous fossil remains of the species allowed us to reconstruct it quite in detail. The up to 37 cm long skull was heavily built and elongated, taking a shape reminiscent of a modern day dog's, from which the genus name \"Dog jaw\" came from."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cynognathus",
@@ -35,7 +36,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_cynognathus",
 			"type": "text",
-			"text": "Subsequent finds in South America led to the description of further species and a landslide of junior synonims. This classification wasn't meant to last, however, as in 1972 the remains were found to all be from one single species exhibiting a large range of intraspecific variation and ontogenetic stages."
+			"text": "Subsequent finds in South America led to the description of further species and a landslide of junior synonyms. This classification wasn't meant to last, however, as in 1972 the remains were found to all be from one single species exhibiting a large range of intraspecific variation and ontogenetic stages."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Artiopoda$(br)>Cheloniellida$(br)>Cheloniellidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cheloniellon.png"],
-			"title": "C. calmani",
-			"text": ""
+			"type": "entity",
+			"name": "C. calmani",
+			"entity": "lepidodendron:prehistoric_flora_cheloniellon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cheloniellon",
 			"type": "text",
-			"text": "Cheloniellon was a small flat bodied arthropod from the lower Devonian period. It had an exoskeleton that comprised of 11 segments and had laterally expanded appendages underneath the exoskeleton segments. "
+			"text": "Cheloniellon was a small flat bodied arthropod from the Lower Devonian. It had an exoskeleton that comprised of 11 segments and had laterally expanded appendages underneath the exoskeleton segments. "
 		},
 		{
 			"type": "lepidodendron:diet",

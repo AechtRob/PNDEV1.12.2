@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_capinatator",
 			"type": "text",
-			"text": "Capinatator is an arrow worm known from the Burgess Shale of Canada. It is distinguished by having around 50 spines around its mouth. These spines were used to grasp prey. This animal is thought to represent a stage of chaetognathan evolution before arrow worms became planktonic swimmers. Capinatator grew to around 10 cm long, much larger than most modern arrow worms and its name means \"grasping swimmer.\""
+			"text": "Capinatator is an arrow worm known from the Burgess Shale of Canada. It is distinguished by having around 50 spines around its mouth, which were used to grasp prey. This animal is thought to represent a stage of chaetognathan evolution before arrow worms became planktonic swimmers. Capinatator grew to around 10 cm long, much larger than most modern arrow worms and its name means \"grasping swimmer.\""
 		},
 		{
 			"type": "lepidodendron:diet",

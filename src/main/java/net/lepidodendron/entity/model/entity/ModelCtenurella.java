@@ -231,6 +231,45 @@ public class ModelCtenurella extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = -1.2F;
+        this.main.offsetX = 0.8F;
+        this.main.offsetZ = 2.0F;
+        this.main.rotateAngleY = (float)Math.toRadians(120);
+        this.main.rotateAngleX = (float)Math.toRadians(1);
+        this.main.rotateAngleZ = (float)Math.toRadians(0);
+        this.main.scaleChildren = true;
+        float scaler = 3.2F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(cube_r1, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.6109F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, -0.6109F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftfin, 0.0F, 0.0F, 0.6545F);
+        this.setRotateAngle(cube_r7, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0F, -0.48F, 0.0F);
+        this.setRotateAngle(backrightfin, 0.0F, 0.0F, -0.6545F);
+        this.setRotateAngle(cube_r9, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.0F, 0.48F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(cube_r11, -1.1868F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.2269F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(jaw, 1.2217F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.4712F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, -0.2749F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

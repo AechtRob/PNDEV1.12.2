@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Trilobita$(br)>Proetida$(br)>Telephinidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/carolinites.png"],
-			"title": "C. bulbosa",
-			"text": ""
+			"type": "entity",
+			"name": "C. bulbosa",
+			"entity": "lepidodendron:prehistoric_flora_carolinites",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_carolinites",
 			"type": "text",
-			"text": "Carolinites is a Telephinid trilobite, a family of trilobites similar to yet unrelated to Cyclopygids. Carolinites has been a rigorously studied genus. Particularly Carolinites genacinaca is thought to be one of the most widely distributed trilobite species. It is pantropically distributed. Carolinites was an epipelagic swimmer."
+			"text": "Carolinites is a telephinid trilobite, a family of trilobites similar to yet unrelated to cyclopygids. Carolinites has been a rigorously studied genus. Particularly Carolinites genacinaca is thought to be one of the most widely distributed trilobite species. It is pan-tropically distributed. Carolinites was an epipelagic swimmer."
 		},
 		{
 			"type": "lepidodendron:diet",

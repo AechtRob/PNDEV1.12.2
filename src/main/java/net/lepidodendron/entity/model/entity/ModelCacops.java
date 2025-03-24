@@ -317,6 +317,28 @@ public class ModelCacops extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hip.offsetY = -1.4F;
+        this.Hip.offsetX = -0.1F;
+        this.Hip.offsetZ = 2.0F;
+        this.Hip.rotateAngleY = (float)Math.toRadians(120);
+        this.Hip.rotateAngleX = (float)Math.toRadians(1);
+        this.Hip.rotateAngleZ = (float)Math.toRadians(0);
+        this.Hip.scaleChildren = true;
+        float scaler = 1.8F;
+        this.Hip.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Hip, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body1, -0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(Chest, 0.02F, 0.05F, 0.0F);
+        this.setRotateAngle(Head, -0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.2F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Hip.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hip.setScale(1.0F, 1.0F, 1.0F);
+        this.Hip.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

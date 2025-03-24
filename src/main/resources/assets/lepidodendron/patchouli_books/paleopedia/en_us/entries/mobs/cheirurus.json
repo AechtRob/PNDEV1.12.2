@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Arthropoda$(br)>Trilobita$(br)>Phacopida$(br)>Cheiruridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cheirurus.png"],
-			"title": "C. ingricus",
-			"text": ""
+			"type": "entity",
+			"name": "C. ingricus",
+			"entity": "lepidodendron:prehistoric_flora_cheirurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cheirurus",
 			"type": "text",
-			"text": "Cheirurus is a genus of trilobite from that lived mainly in marine environments. It became extinct in the Middle Devonian and probably fed on small sedimentary animals. Its name comes from the Greek cheir(hand) and oura(tail)."
+			"text": "Cheirurus is a genus of trilobite from that lived mainly in marine environments. It became extinct in the Middle Devonian and probably fed on small sedimentary animals. Its name comes from the Greek words 'cheir', to mean 'hand'; and 'oura', to mean 'tail'."
 		},
 		{
 			"type": "lepidodendron:diet",

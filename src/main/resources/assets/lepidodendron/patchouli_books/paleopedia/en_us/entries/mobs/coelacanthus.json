@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Sarcopterygii$(br)>Actinistia$(br)>Coelacanthiformes$(br)>Coelacanthidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/coelacanthus.png"],
-			"title": "C. granulatus",
-			"text": ""
+			"type": "entity",
+			"name": "C. granulatus",
+			"entity": "lepidodendron:prehistoric_flora_coelacanthus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_coelacanthus",

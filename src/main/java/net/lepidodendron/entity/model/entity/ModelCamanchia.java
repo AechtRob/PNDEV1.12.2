@@ -310,8 +310,9 @@ public class ModelCamanchia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -1.60F;
-        this.body.offsetX = 0.0F;
+        this.body.offsetY = -1.2F;
+        this.body.offsetX = 0.2F;
+        this.body.offsetZ = 2.0F;
         this.body.rotateAngleY = (float)Math.toRadians(202);
         this.body.rotateAngleX = (float)Math.toRadians(32);
         this.body.rotateAngleZ = (float)Math.toRadians(-12);
@@ -319,7 +320,7 @@ public class ModelCamanchia extends ModelBasePalaeopedia {
         float scaler = 4.80F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.body.render(f);
         //Reset rotations, positions and sizing:

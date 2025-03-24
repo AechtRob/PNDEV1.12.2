@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Mollusca$(br)>Cephalopoda$(br)>Nautiloidea$(br)>Bisonocerida$(br)>Piloceratidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cassinoceras.png"],
-			"title": "C. explanator",
-			"text": ""
+			"type": "entity",
+			"name": "C. explanator",
+			"entity": "lepidodendron:prehistoric_flora_cassinoceras",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cassinoceras",
 			"type": "text",
-			"text": "Cassinoceras is a nautiloid from the Ordovician period whose fossils have been found in North America. They had a short, laterally compressed shell, loosely having a triangular shape. These nautiloids could grow up to 30 cm in length and would have been free swimmers, preying on smaller invertebrates."
+			"text": "Cassinoceras is a nautiloid from the Ordovician period whose fossils have been found in North America. They had a short, laterally compressed shell, which was loosely triangular in shape. These nautiloids could grow up to 30 cm in length and would have been free swimmers, preying on smaller invertebrates."
 		},
 		{
 			"type": "lepidodendron:diet",

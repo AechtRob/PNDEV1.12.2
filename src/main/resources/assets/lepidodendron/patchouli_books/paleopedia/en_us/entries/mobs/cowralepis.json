@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Phyllolepididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cowralepis.png"],
-			"title": "C. mclachlani",
-			"text": ""
+			"type": "entity",
+			"name": "C. mclachlani",
+			"entity": "lepidodendron:prehistoric_flora_cowralepis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cowralepis",
 			"type": "text",
-			"text": "Cowralepis is a genus of phyllolepid placoderm from the Devonian. Like other Phyllolepids, Cowralepis was incredibly flat, and likely an ambush predator like modern flatfish or wobbegongs. Several fossils of Cowralepis, including juveniles, have been found."
+			"text": "Cowralepis is a genus of phyllolepid placoderm from the Devonian. Like other phyllolepids, Cowralepis was incredibly flat, and likely an ambush predator like modern flatfish or wobbegongs. Several fossils of Cowralepis, including juveniles, have been found."
 		},
 		{
 			"type": "lepidodendron:diet",

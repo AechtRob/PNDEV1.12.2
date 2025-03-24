@@ -450,16 +450,37 @@ public class ModelCaerorhachis extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = -2.0F;
-        this.hips.offsetX = -0.338F;
+        this.hips.offsetY = -1.8F;
+        this.hips.offsetX = 0.4F;
+        this.hips.offsetZ = 2.8F;
         this.hips.rotateAngleY = (float)Math.toRadians(200);
         this.hips.rotateAngleX = (float)Math.toRadians(18);
         this.hips.rotateAngleZ = (float)Math.toRadians(-8);
         this.hips.scaleChildren = true;
-        float scaler = 3.63F;
+        float scaler = 2.4F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(hips, 0.6F, 3.5F, -0.2F);
+        this.setRotateAngle(body, 0.0F, 0.2F, 0.05F);
+        this.setRotateAngle(chest, 0.0F, 0.2F, 0.05F);
+        this.setRotateAngle(neck, 0.0F, 0.2F, 0.05F);
+        this.setRotateAngle(head, 0.0F, 0.2F, 0.05F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(armleft, 1.2F, -0.9F, 0.0F);
+        this.setRotateAngle(armleft2, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(armleft3, 0.0F, 0.0F, 1.4F);
+        this.setRotateAngle(armright, 1.2F, 0.9F, 0.0F);
+        this.setRotateAngle(armright2, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(armright3, 0.0F, 0.0F, -1.4F);
+        this.setRotateAngle(legleft, 1.2F, -0.5F, 0.2F);
+        this.setRotateAngle(legleft2, 0.0F, 0.0F, -0.3F);
+        this.setRotateAngle(legleft3, 0.0F, 0.0F, 1.0F);
+        this.setRotateAngle(legright, 1.2F, 0.5F, 0.2F);
+        this.setRotateAngle(legright2, 0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(legright3, 0.0F, 0.0F, -1.0F);
         //End of pose, now render the model:
         this.hips.render(f);
         //Reset rotations, positions and sizing:

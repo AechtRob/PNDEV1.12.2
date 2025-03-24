@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Pterosauria$(br)>Caviramidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/caviramus.png"],
-			"title": "C. schesaplanensis",
-			"text": ""
+			"type": "entity",
+			"name": "C. schesaplanensis",
+			"entity": "lepidodendron:prehistoric_flora_caviramus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_caviramus",

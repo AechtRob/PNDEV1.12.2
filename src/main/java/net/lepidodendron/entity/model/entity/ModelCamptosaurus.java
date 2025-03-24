@@ -523,7 +523,8 @@ public class ModelCamptosaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Camptosaurus.offsetY = 0.10F;
-        this.Camptosaurus.offsetX = 0.05F;
+        this.Camptosaurus.offsetX = -0.1F;
+        this.Camptosaurus.offsetZ = 2.5F;
         this.Camptosaurus.rotateAngleY = (float)Math.toRadians(115);
         this.Camptosaurus.rotateAngleX = (float)Math.toRadians(-2);
         this.Camptosaurus.rotateAngleZ = (float)Math.toRadians(2);
@@ -531,6 +532,7 @@ public class ModelCamptosaurus extends ModelBasePalaeopedia {
         float scaler = 0.6F;
         this.Camptosaurus.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(Camptosaurus, -0.0F, 4.0F, 0.0F);
         this.setRotateAngle(Tail5, -0.0886F, -0.1739F, 0.0154F);
         this.setRotateAngle(Tail4, 0.0894F, -0.2173F, -0.0193F);
         this.setRotateAngle(Tail3, 0.0468F, -0.2163F, -0.0289F);

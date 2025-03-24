@@ -709,14 +709,16 @@ public class ModelChilesaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = 0.250F;
-        this.root.offsetX = 0.0F;
+        this.root.offsetX = 0.15F;
+        this.root.offsetZ = 1.0F;
         this.root.rotateAngleY = (float)Math.toRadians(225);
         this.root.rotateAngleX = (float)Math.toRadians(-2);
         this.root.rotateAngleZ = (float)Math.toRadians(3);
         this.root.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.55F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(root, 0.2F, 3.8F, 0.0F);
         this.setRotateAngle(upperJawslopefront, 0.1061F, 0.0F, 0.0F);
         this.setRotateAngle(upperJawslopeback, -0.3609F, 0.0F, 0.0F);
         this.setRotateAngle(upperJawfront, -0.0424F, 0.0F, 0.0F);

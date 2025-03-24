@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Ceratopsia$(br)>Chaoyangsauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/chaoyangsaurus.png"],
-			"title": "C. youngi",
-			"text": ""
+			"type": "entity",
+			"name": "C. youngi",
+			"entity": "lepidodendron:prehistoric_flora_chaoyangsaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_chaoyangsaurus",

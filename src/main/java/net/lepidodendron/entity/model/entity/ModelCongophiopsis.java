@@ -171,6 +171,30 @@ public class ModelCongophiopsis extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Congophiopsis.offsetY = -1.0F;
+        this.Congophiopsis.offsetX = 0.8F;
+        this.Congophiopsis.offsetZ = 2.0F;
+        this.Congophiopsis.rotateAngleY = (float)Math.toRadians(120);
+        this.Congophiopsis.rotateAngleX = (float)Math.toRadians(1);
+        this.Congophiopsis.rotateAngleZ = (float)Math.toRadians(0);
+        this.Congophiopsis.scaleChildren = true;
+        float scaler = 3.2F;
+        this.Congophiopsis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Congophiopsis, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Head, 0.1F, 0.0F, 0.1F);
+        this.setRotateAngle(Body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.3F, 0.0F);
+        //End of pose, now render the model:
+        this.Congophiopsis.render(f);
+        //Reset rotations, positions and sizing:
+        this.Congophiopsis.setScale(1.0F, 1.0F, 1.0F);
+        this.Congophiopsis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

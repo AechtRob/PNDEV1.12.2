@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_ceratodus",
 			"title": "Ceratodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic - Paleogene$(br2)>Chordata$(br)>Dipnoi$(br)>Ceratodontidae"
+			"text": "$(l)Temporal Range:$() Triassic - Paleogene$(br2)>Chordata$(br)>Sarcopterygii$(br)>Dipnoi$(br)>Ceratodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ceratodus.png"],
-			"title": "C. latissimus",
-			"text": ""
+			"type": "entity",
+			"name": "C. latissimus",
+			"entity": "lepidodendron:prehistoric_flora_ceratodus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ceratodus",
 			"type": "text",
-			"text": "Ceratodus was a genus of lungfish that first emerged during the Triassic, and may have survived to as late as the Eocene. It seemingly had a global distribution, with its fossils having been found on every continent except Antarctica. Its closest living relative is thought to be the similar-looking Queensland lungfish of Australia."
+			"text": "Ceratodus was a genus of lungfish that first emerged during the Triassic, and may have survived to as late as the Eocene. It seemingly had a global distribution, with its fossils having been found on every continent except Antarctica. Its closest living relative is thought to be the similar looking Queensland lungfish of Australia."
 		},
 		{
 			"type": "lepidodendron:diet",

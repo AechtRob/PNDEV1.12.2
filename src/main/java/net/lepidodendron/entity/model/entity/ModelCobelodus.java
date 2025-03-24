@@ -406,6 +406,33 @@ public class ModelCobelodus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Cobelodus.offsetY = -0.0F;
+        this.Cobelodus.offsetX = 0.6F;
+        this.Cobelodus.offsetZ = 2.0F;
+        this.Cobelodus.rotateAngleY = (float)Math.toRadians(120);
+        this.Cobelodus.rotateAngleX = (float)Math.toRadians(1);
+        this.Cobelodus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Cobelodus.scaleChildren = true;
+        float scaler = 0.8F;
+        this.Cobelodus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Cobelodus, 0.6F, 3.8F, -0.2F);
+        this.Head.rotateAngleY = (float) Math.toRadians(-20);
+        this.Jaw.rotateAngleX = (float) Math.toRadians(27);
+        this.Body2.rotateAngleY = (float) Math.toRadians(7.5);
+        this.Body3.rotateAngleY = (float) Math.toRadians(12.5);
+        this.Body4.rotateAngleY = (float) Math.toRadians(10);
+        this.Body5.rotateAngleY = (float) Math.toRadians(-15);
+        this.Body6.rotateAngleY = (float) Math.toRadians(-22.5);
+        this.Body7.rotateAngleY = (float) Math.toRadians(-12.5);
+        this.Body8.rotateAngleY = (float) Math.toRadians(-15);
+        //End of pose, now render the model:
+        this.Cobelodus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Cobelodus.setScale(1.0F, 1.0F, 1.0F);
+        this.Cobelodus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

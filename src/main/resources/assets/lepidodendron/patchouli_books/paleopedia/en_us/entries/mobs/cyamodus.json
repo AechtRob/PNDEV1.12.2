@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Sauropterygia$(br)>Placodontia$(br)>Cyamodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cyamodus.png"],
-			"title": "C. rostratus",
-			"text": ""
+			"type": "entity",
+			"name": "C. rostratus",
+			"entity": "lepidodendron:prehistoric_flora_cyamodus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cyamodus",
