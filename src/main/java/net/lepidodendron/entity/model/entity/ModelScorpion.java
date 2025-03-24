@@ -279,7 +279,7 @@ public class ModelScorpion extends ModelBasePalaeopedia {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.32F);
+        this.body.render(f5);
     }
 
     public void renderStaticDisplayCase(float f) {
@@ -303,7 +303,7 @@ public class ModelScorpion extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 1F;
+        //this.body.offsetY = 1F;
 
         this.body.rotateAngleY = f3 * 0.017453292F;
 

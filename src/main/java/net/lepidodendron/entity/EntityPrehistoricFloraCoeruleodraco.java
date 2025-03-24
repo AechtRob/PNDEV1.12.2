@@ -238,13 +238,13 @@ public class EntityPrehistoricFloraCoeruleodraco extends EntityPrehistoricFloraS
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:vancleavea_idle"));
+				.getObject(new ResourceLocation("lepidodendron:clevosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:vancleavea_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:clevosaurus_hurt"));
 	}
 
 	//@Override
@@ -255,7 +255,7 @@ public class EntityPrehistoricFloraCoeruleodraco extends EntityPrehistoricFloraS
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:vancleavea_death"));
+				.getObject(new ResourceLocation("lepidodendron:clevosaurus_death"));
 	}
 
 	//@Override
