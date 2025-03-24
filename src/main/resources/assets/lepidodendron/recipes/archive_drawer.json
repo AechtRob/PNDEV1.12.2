@@ -2,18 +2,14 @@
   "group": "lepidodendron",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " 1 ",
+    "   ",
     "345",
-    " 7 "
+    "   "
   ],
   "key": {
-    "1": {
-      "type": "forge:ore_dict",
-      "ore": "slabIron"
-    },
     "3": {
       "type": "forge:ore_dict",
-      "ore": "slabIron"
+      "ore": "plateIron"
     },
     "4": {
       "type": "forge:ore_dict",
@@ -21,15 +17,11 @@
     },
     "5": {
       "type": "forge:ore_dict",
-      "ore": "slabIron"
-    },
-    "7": {
-      "type": "forge:ore_dict",
-      "ore": "slabIron"
+      "ore": "plateIron"
     }
   },
   "result": {
     "item": "lepidodendron:archive_drawer",
-    "count": 4
+    "count": 3
   }
 }

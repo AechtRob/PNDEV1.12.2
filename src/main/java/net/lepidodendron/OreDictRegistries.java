@@ -272,6 +272,13 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plankWood", BlockStickBundle.block);
 		OreDictionary.registerOre("plateWood", Blocks.WOODEN_PRESSURE_PLATE);
 
+		//Iron:
+		OreDictionary.registerOre("plateIron", Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE);
+
+		//Cabinets
+		OreDictionary.registerOre("archiveCabinet", BlockLabCabinet.block);
+		OreDictionary.registerOre("archiveCabinet", BlockLabCabinetFlipped.block);
+
 		//Mud:
 		OreDictionary.registerOre("blockMud", BlockCarboniferousMud.block);
 
