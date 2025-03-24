@@ -396,9 +396,11 @@ public class ModelParhybodus extends ModelBasePalaeopedia {
         this.body.render(0.01F);
         resetToDefaultPose();
     }
-    public void renderStaticFloor(float f) {
-        resetToDefaultPose();
-    }
+
+//    public void renderStaticFloor(float f) {
+//
+//        resetToDefaultPose();
+//    }
 
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
