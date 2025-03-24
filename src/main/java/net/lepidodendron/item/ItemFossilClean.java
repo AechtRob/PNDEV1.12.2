@@ -2035,6 +2035,12 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
 					ResourceLocation resourcelocation = new ResourceLocation(blockNBT.getString("id"));
 					String blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
+					if (blockname.equalsIgnoreCase(LepidodendronMod.MODID + ":glossopterissapling")) {
+						blockname = LepidodendronMod.MODID + ":glossopteris_sapling";
+					}
+					else if (blockname.equalsIgnoreCase(LepidodendronMod.MODID + ":saplingg")) {
+						blockname = LepidodendronMod.MODID + ":lepidodendron_sapling";
+					}
 					blockname = blockname.replace("minecraft:", "");
 					return "item.pf_fossil_" + blockname + "_clean";
 				}
