@@ -36,7 +36,7 @@ public class ModelGeragnostus extends ModelBasePalaeopedia {
         cephalon = new AdvancedModelRenderer(this);
         cephalon.setRotationPoint(0.0F, -0.15F, -1.0F);
         geragnostus.addChild(cephalon);
-        cephalon.cubeList.add(new ModelBox(cephalon, -4, 5, -2.5F, -0.025F, -4.0F, 5, 0, 3, 0.0F, false));
+        cephalon.cubeList.add(new ModelBox(cephalon, -3, 5, -2.5F, -0.025F, -4.0F, 5, 0, 3, 0.0F, false));
         cephalon.cubeList.add(new ModelBox(cephalon, 12, 9, -1.0F, -0.5F, -2.0F, 2, 1, 2, 0.0F, false));
         cephalon.cubeList.add(new ModelBox(cephalon, 10, 0, -2.0F, -0.025F, -1.0F, 4, 0, 1, 0.0F, false));
 

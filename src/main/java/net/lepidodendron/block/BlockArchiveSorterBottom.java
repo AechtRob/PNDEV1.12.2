@@ -304,7 +304,25 @@ public class BlockArchiveSorterBottom extends ElementsLepidodendronMod.ModElemen
 			if (stack.isEmpty()) {
 				return "zzzzzzzzzzzz";
 			}
-			return stack.getDisplayName().toUpperCase();
+			String stackname = stack.getDisplayName();
+			stackname = stackname.replace("§0", "");
+			stackname = stackname.replace("§1", "");
+			stackname = stackname.replace("§2", "");
+			stackname = stackname.replace("§3", "");
+			stackname = stackname.replace("§4", "");
+			stackname = stackname.replace("§5", "");
+			stackname = stackname.replace("§6", "");
+			stackname = stackname.replace("§7", "");
+			stackname = stackname.replace("§8", "");
+			stackname = stackname.replace("§9", "");
+			stackname = stackname.replace("§a", "");
+			stackname = stackname.replace("§b", "");
+			stackname = stackname.replace("§c", "");
+			stackname = stackname.replace("§d", "");
+			stackname = stackname.replace("§e", "");
+			stackname = stackname.replace("§f", "");
+
+			return stackname.toUpperCase();
 		}
 
 		public void resetStacks() {
@@ -687,6 +705,9 @@ public class BlockArchiveSorterBottom extends ElementsLepidodendronMod.ModElemen
 				return false; //these last 9 slots are for holding stuff for GUI purposes only
 			}
 
+			if (this.getCategory() == 0) {
+				int y= 1;
+			}
 			if (stack.hasTagCompound()) {
 				if (stack.getTagCompound().hasKey("PFMob")) {
 					if (stack.getTagCompound().hasKey("mobtype")) {
