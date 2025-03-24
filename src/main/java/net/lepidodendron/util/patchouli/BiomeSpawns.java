@@ -77,6 +77,15 @@ public class BiomeSpawns {
             spawnListJoiner.addAll(spawnListJoiner1);
             mobList = spawnListJoiner.toArray(mobList);
         }
+        if (biomeID.equalsIgnoreCase("lepidodendron:jurassic_island_forested")) {
+            //Need to combine two biomes together for this one!
+            ObjectArrayList<String> spawnListJoiner = new ObjectArrayList<String>(Arrays.asList(mobList));
+            biome = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:jurassic_beach_forested_island"));
+            String[] mobList1 = EntityLists.mobString(biome);
+            ObjectArrayList<String> spawnListJoiner1 = new ObjectArrayList<String>(Arrays.asList(mobList1));
+            spawnListJoiner.addAll(spawnListJoiner1);
+            mobList = spawnListJoiner.toArray(mobList);
+        }
         //Websteroprioin spawns as a block, so this needs an overrride here:
         if (biomeID.equalsIgnoreCase("lepidodendron:devonian_creek_coastal")
                 || biomeID.equalsIgnoreCase("lepidodendron:devonian_forest")

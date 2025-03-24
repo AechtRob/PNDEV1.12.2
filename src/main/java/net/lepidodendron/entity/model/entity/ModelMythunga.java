@@ -915,7 +915,7 @@ public class ModelMythunga extends ModelBasePalaeopedia {
 
         if (ee.getAttachmentPos() == null ) {
             if (ee.getIsMoving()) {
-                //animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
 
         }
