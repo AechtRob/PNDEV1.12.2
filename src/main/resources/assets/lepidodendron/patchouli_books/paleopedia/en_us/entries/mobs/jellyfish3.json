@@ -1,7 +1,7 @@
 {
 	"name": "Pacific Sea Nettle",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/pacificsea_icon.png",
+	"icon": "paleopedia:textures/items/jellyfish3.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish3",
 	"pages": [
