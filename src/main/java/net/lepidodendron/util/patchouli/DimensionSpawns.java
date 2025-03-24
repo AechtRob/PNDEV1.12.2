@@ -1,6 +1,7 @@
 package net.lepidodendron.util.patchouli;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.entity.base.*;
 import net.lepidodendron.world.biome.EntityLists;
 import net.minecraft.client.gui.GuiScreen;
@@ -42,6 +43,7 @@ public class DimensionSpawns {
         //type 1: Names/hyperlink texts
         //type 2: One single icon for this reference, but this is also drawn from the spawn list ordering
         //type 3: One single advancement reference, but this is also drawn from the spawn list ordering
+
 
         String spawnListFinal = "$(br)";
         String[] mobList = EntityLists.mobStringInDimension(Integer.parseInt(dimid));
@@ -198,8 +200,15 @@ public class DimensionSpawns {
                                 type = nbttagcompound.getString("PNType");
                             }
                             String entityname = entity.getName();
-                            if (entityname.length() > 24) {
-                                entityname = entityname.substring(0, 24) + "...";
+                            int truncate = LepidodendronConfig.palaeopediaTruncation;
+                            if (truncate < 1) {
+                                truncate = 1;
+                            }
+                            if (truncate > 24) {
+                                truncate = 24;
+                            }
+                            if (entityname.length() > truncate) {
+                                entityname = entityname.substring(0, truncate) + "...";
                             }
                             if (!type.equalsIgnoreCase("")) {
                                 //Check if this variant exists yet:
@@ -219,16 +228,30 @@ public class DimensionSpawns {
                     }
                     else {
                         String entityname = entity.getName();
-                        if (entityname.length() > 24) {
-                            entityname = entityname.substring(0, 24) + "...";
+                        int truncate = LepidodendronConfig.palaeopediaTruncation;
+                        if (truncate < 1) {
+                            truncate = 1;
+                        }
+                        if (truncate > 24) {
+                            truncate = 24;
+                        }
+                        if (entityname.length() > truncate) {
+                            entityname = entityname.substring(0, truncate) + "...";
                         }
                         mobName = new String[]{"$(l:mobs/" + getHyperlink(mobStr)  + ")" + entityname + "$(/l)"};
                     }
                 }
                 else {
                     String entityname = entity.getName();
-                    if (entityname.length() > 24) {
-                        entityname = entityname.substring(0, 24) + "...";
+                    int truncate = LepidodendronConfig.palaeopediaTruncation;
+                    if (truncate < 1) {
+                        truncate = 1;
+                    }
+                    if (truncate > 24) {
+                        truncate = 24;
+                    }
+                    if (entityname.length() > truncate) {
+                        entityname = entityname.substring(0, truncate) + "...";
                     }
                     mobName = new String[]{"$(l:mobs/" + getHyperlink(mobStr)  + ")" + entityname + "$(/l)"};
                 }

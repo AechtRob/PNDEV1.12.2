@@ -53,6 +53,7 @@ public class LepidodendronConfig {
     public static boolean genFossil = true;
     public static boolean genStone = true;
     public static int dropSeeds = 50;
+    public static int palaeopediaTruncation = 24;
     public static double genEdiacaran = 0.66D;
     public static double junkFossil = 12.5;
     public static double playerSleepPercent = 100.0;
@@ -701,6 +702,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "dropSeeds", dropSeeds);
         prop.setComment("Small Angiosperm Seeds drop on average one time in every n breaks, where this number is n (0-10000). [default: 50]");
         dropSeeds = prop.getInt();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "palaeopediaTruncation", palaeopediaTruncation);
+        prop.setComment("The Palaeopedia lists of mobs, plants and statics will truncate each line/name after this many characters [0-24]. [default: 24]");
+        palaeopediaTruncation = prop.getInt();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "junkFossil", junkFossil);

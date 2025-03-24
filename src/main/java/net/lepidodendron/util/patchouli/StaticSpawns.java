@@ -1,6 +1,7 @@
 package net.lepidodendron.util.patchouli;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.util.AcidBathOutputStatics;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.text.translation.I18n;
@@ -320,9 +321,15 @@ public class StaticSpawns {
         if (!flag) {
             return endName;
         }
-
-        if (tmpName.length() > 24) {
-            tmpName = tmpName.substring(0, 24) + "...";
+        int truncate = LepidodendronConfig.palaeopediaTruncation;
+        if (truncate < 1) {
+            truncate = 1;
+        }
+        if (truncate > 24) {
+            truncate = 24;
+        }
+        if (tmpName.length() > truncate) {
+            tmpName = tmpName.substring(0, truncate) + "...";
         }
         return "$(l:statics/" + getHyperlink(staticStr)  + ")" + tmpName + "$(/l)";
 
