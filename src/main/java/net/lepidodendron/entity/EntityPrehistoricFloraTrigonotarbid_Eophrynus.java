@@ -248,7 +248,7 @@ public class EntityPrehistoricFloraTrigonotarbid_Eophrynus extends EntityPrehist
 		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.25;
+		return 0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;

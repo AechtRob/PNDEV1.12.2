@@ -435,7 +435,7 @@ public class ModelTrigonotarbid extends ModelBasePalaeopedia {
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body, -0.3F, 0.0F, 0.0F);
         this.setRotateAngle(abdomen, 0.3F, 0.0F, 0.0F);
-        this.body.offsetY = 0.44F;
+        this.body.offsetY = 0.23F;
         this.body.offsetZ = -0.0F;
         this.body.render(0.01f);
         resetToDefaultPose();

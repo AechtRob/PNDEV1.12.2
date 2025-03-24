@@ -1871,6 +1871,8 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_somatohelix_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_pambdelurion_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_liverwort_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_wardichthys_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_lethiscus_clean", "inventory"),
 
 				new ModelResourceLocation("lepidodendron:fossil_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossil_clean_missing_texture", "inventory")
@@ -2035,6 +2037,12 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
 					ResourceLocation resourcelocation = new ResourceLocation(blockNBT.getString("id"));
 					String blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
+					if (blockname.equalsIgnoreCase(LepidodendronMod.MODID + ":glossopterissapling")) {
+						blockname = LepidodendronMod.MODID + ":glossopteris_sapling";
+					}
+					else if (blockname.equalsIgnoreCase(LepidodendronMod.MODID + ":saplingg")) {
+						blockname = LepidodendronMod.MODID + ":lepidodendron_sapling";
+					}
 					blockname = blockname.replace("minecraft:", "");
 					return "item.pf_fossil_" + blockname + "_clean";
 				}
