@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:supaia_shoot"},
+      {"model": "lepidodendron:supaia_shoot_var"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:supaia_shoot_inventory"
+    }
+  }
+}

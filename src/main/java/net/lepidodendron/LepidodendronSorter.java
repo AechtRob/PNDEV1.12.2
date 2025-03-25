@@ -5045,6 +5045,15 @@ public class LepidodendronSorter {
     public static final int somatohelix = 8064;
     public static final int doyleales_seed = 8065;
     public static final int raft_boat_item = 8066;
+    public static final int satpuraphyllum_leaves = 8067;
+    public static final int satpuraphyllum_log = 8068;
+    public static final int satpuraphyllum_sapling = 8069;
+    public static final int satpuraphyllum_strobilus = 8070;
+    public static final int supaia_shoot = 8071;
+    public static final int supaia_shoot_worldgen = 8072;
+    public static final int supaia_log = 8073;
+    public static final int supaia_pallisade = 8074;
+    public static final int supaia_sapling = 8075;
 
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;

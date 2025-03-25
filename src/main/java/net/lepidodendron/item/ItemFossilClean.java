@@ -1332,6 +1332,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_nilssoniopteris_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_nipponomaria_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_noeggerathiales_sapling_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_supaia_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_nothofagus_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_nothosaurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_nystroemia_clean", "inventory"),
@@ -1873,6 +1874,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_liverwort_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_wardichthys_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_lethiscus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_satpuraphyllum_sapling_clean", "inventory"),
 
 				new ModelResourceLocation("lepidodendron:fossil_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossil_clean_missing_texture", "inventory")

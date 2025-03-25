@@ -258,6 +258,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DICROIDIUM_F = new CustomTrigger("pf_book_dicroidium_f");
     public static final CustomTrigger CLICK_DICROIDIUM_H = new CustomTrigger("pf_book_dicroidium_h");
     public static final CustomTrigger CLICK_DICROIDIUM_O = new CustomTrigger("pf_book_dicroidium_o");
+    public static final CustomTrigger CLICK_SATPURAPHYLLUM = new CustomTrigger("pf_book_satpuraphyllum");
     public static final CustomTrigger CLICK_DICROIDIUM = new CustomTrigger("pf_book_dicroidium");
     public static final CustomTrigger CLICK_DICTYONEMA = new CustomTrigger("pf_book_dictyonema");
     public static final CustomTrigger CLICK_DICTYOPHYLLUM = new CustomTrigger("pf_book_dictyophyllum");
@@ -400,6 +401,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_NILSSONIOCLADUS = new CustomTrigger("pf_book_nilssoniocladus");
     public static final CustomTrigger CLICK_NILSSONIOPTERIS = new CustomTrigger("pf_book_nilssoniopteris");
     public static final CustomTrigger CLICK_NOEGGERATHIALES = new CustomTrigger("pf_book_noeggerathiales");
+    public static final CustomTrigger CLICK_SUPAIA = new CustomTrigger("pf_book_supaia");
     public static final CustomTrigger CLICK_PANDAN = new CustomTrigger("pf_book_pandan");
     public static final CustomTrigger CLICK_NOTHOFAGUS = new CustomTrigger("pf_book_nothofagus");
     public static final CustomTrigger CLICK_NYSTROEMIA = new CustomTrigger("pf_book_nystroemia");
@@ -2049,6 +2051,7 @@ public class ModTriggers
             CLICK_DICROIDIUM_H,
             CLICK_DICROIDIUM_O,
             CLICK_DICROIDIUM,
+            CLICK_SATPURAPHYLLUM,
             CLICK_DICTYONEMA,
             CLICK_DICTYOPHYLLUM,
             CLICK_DINOMISCHUS,
@@ -2188,6 +2191,7 @@ public class ModTriggers
             CLICK_NILSSONIOCLADUS,
             CLICK_NILSSONIOPTERIS,
             CLICK_NOEGGERATHIALES,
+            CLICK_SUPAIA,
             CLICK_PANDAN,
             CLICK_NOTHOFAGUS,
             CLICK_NYSTROEMIA,

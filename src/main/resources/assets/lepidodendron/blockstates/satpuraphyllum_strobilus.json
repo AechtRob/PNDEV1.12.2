@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:satpuraphyllum_strobilus"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:satpuraphyllum_strobilus", "y": 270 }
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:satpuraphyllum_strobilus" }
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:satpuraphyllum_strobilus", "y": 90 }
+    ],
+    
+    "facing=west": [
+      {"model": "lepidodendron:satpuraphyllum_strobilus", "y": 180 }
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:satpuraphyllum_strobilus"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:satpuraphyllum_strobilus"}
+    ]
+  }
+}
