@@ -208,6 +208,35 @@ public class ModelDvinia extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.basin.offsetY = -0.1F;
+        this.basin.offsetX = -0.1F;
+        this.basin.offsetZ = 2.0F;
+        this.basin.rotateAngleY = (float)Math.toRadians(120);
+        this.basin.rotateAngleX = (float)Math.toRadians(1);
+        this.basin.rotateAngleZ = (float)Math.toRadians(0);
+        this.basin.scaleChildren = true;
+        float scaler = 0.8F;
+        this.basin.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(basin, 0.0F, 3.8F, -0.0F);
+        this.upperleg1.rotateAngleX = (float) Math.toRadians(30);
+        this.upperleg2.rotateAngleX = (float) Math.toRadians(30);
+        this.body.rotateAngleX = (float) Math.toRadians(-10);
+        this.neck1.rotateAngleX = (float) Math.toRadians(35);
+        this.head1.rotateAngleX = (float) Math.toRadians(15);
+        this.upperarm2.rotateAngleX = (float) Math.toRadians(40);
+        this.upperarm1.rotateAngleX = (float) Math.toRadians(40);
+        this.hand2.rotateAngleX = (float) Math.toRadians(75);
+        this.hand1.rotateAngleX = (float) Math.toRadians(75);
+        this.tail1.rotateAngleX = (float) Math.toRadians(38);
+        this.tail2.rotateAngleX = (float) Math.toRadians(25);
+        //End of pose, now render the model:
+        this.basin.render(f);
+        //Reset rotations, positions and sizing:
+        this.basin.setScale(1.0F, 1.0F, 1.0F);
+        this.basin.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

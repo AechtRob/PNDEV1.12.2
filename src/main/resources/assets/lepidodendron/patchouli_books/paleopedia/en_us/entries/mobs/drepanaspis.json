@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Heterostraci$(br)>Pteraspidiformes$(br)>Psammosteidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/drepanaspis.png"],
-			"title": "D. gemuendenensis",
-			"text": ""
+			"type": "entity",
+			"name": "D. gemuendenensis",
+			"entity": "lepidodendron:prehistoric_flora_drepanaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_drepanaspis",
 			"type": "text",
-			"text": "Drepanaspis was a primitive agnathan or jawless fish from the Early Devonian. It was very flattened and heavily armored and its mouth faced upwards. Its eyes were spaced widely apart and it probably was a benthic feeder, scourging the ocean floor for food."
+			"text": "Drepanaspis was a primitive agnathan or jawless fish from the Lower Devonian. It was very flattened and heavily armored and its mouth faced upwards. Its eyes were spaced widely apart and it probably was a benthic feeder, scourging the ocean floor for food."
 		},
 		{
 			"type": "lepidodendron:diet",

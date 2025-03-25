@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Crustacea$(br)>Thylacocephala$(br)>Concavidarida$(br)>Dollocarididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/dollocaris.png"],
-			"title": "D. ingens",
-			"text": ""
+			"type": "entity",
+			"name": "D. ingens",
+			"entity": "lepidodendron:prehistoric_flora_dollocaris",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dollocaris",

@@ -21,12 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_dastilbe",
 			"type": "text",
-			"text": "Dastilbe crandalli comes from the Early Cretaceous, with fossils being found in the Muribeca Formation, Crato Formation and Codó Formation, Brazil. It is a small chaniid, growing up to 15 cm in length. Dastilbe is known for engaging in cannibalism, with one known adult specimen containing a smaller individual in the digestive tract."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_dastilbe",
-			"type": "text",
-			"text": "The generic name derives from the Greek word 'stilbe', to mean 'glittering'."
+			"text": "Dastilbe crandalli comes from the Early Cretaceous, with fossils being found in the Muribeca Formation, Crato Formation and Codó Formation, Brazil. It is a small chaniid, growing up to 15 cm in length. Dastilbe is known for engaging in cannibalism, with one known adult specimen containing a smaller individual in the digestive tract. The generic name derives from the Greek word 'stilbe', to mean 'glittering'."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Amphibia$(br)>Temnospondyli$(br)>Dvinosauria$(br)>Dvinosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/dvinosaurus.png"],
-			"title": "D. primus",
-			"text": ""
+			"type": "entity",
+			"name": "D. primus",
+			"entity": "lepidodendron:prehistoric_flora_dvinosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dvinosaurus",
 			"type": "text",
-			"text": "Dvinosaurus is a freshwater amphibious temnospondyl that lived in the Late Permian period. It was found near the northern Dvina River, where it gets its name. It had a short head and a long body and tail and its diet was comprised mostly of fish. It is thought to have fed by ambushing its prey from the riverbeds."
+			"text": "Dvinosaurus is a freshwater amphibious temnospondyl that lived in the Upper Permian. It was found near the northern Dvina River, where it gets its name. It had a short head and a long body and tail and its diet was comprised mostly of fish. It is thought to have fed by ambushing its prey from the riverbeds."
 		},
 		{
 			"type": "lepidodendron:diet",

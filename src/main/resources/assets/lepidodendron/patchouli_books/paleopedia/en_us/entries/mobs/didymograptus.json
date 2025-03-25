@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_didymograptus",
 			"title": "Didymograptus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Graptolithinia"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Hemichordata$(br)>Graptolithinia"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/didymograptus.png"],
-			"title": "Didymograptus sp.",
-			"text": ""
+			"type": "entity",
+			"name": "Didymograptus sp.",
+			"entity": "lepidodendron:prehistoric_flora_didymograptus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_didymograptus",
