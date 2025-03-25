@@ -1,0 +1,16 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ "0"
+ ],
+ "key": {
+ "0": {
+ "item": "lepidodendron:satpuraphyllum_log"
+ }
+ },
+ "result": {
+ "item": "lepidodendron:satpuraphyllum_planks",
+ "count": 4
+ }
+}

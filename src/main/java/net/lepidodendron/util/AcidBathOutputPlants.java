@@ -452,6 +452,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.ITEMS.getKey(ItemGreenFilamentousAlgaeItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGreenStemmedAlgae.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockLiverwort.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockSatpuraphyllumSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockSupaiaSapling.block).toString(),
                 "minecraft:small_fern",
                 "minecraft:large_fern"
         };
