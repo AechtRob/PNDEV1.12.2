@@ -8,7 +8,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.procedure.ProcedureWorldGenSphenobaiera;
+import net.lepidodendron.procedure.ProcedureWorldGenBiarmobaiera;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
@@ -49,32 +49,32 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockSphenobaieraSapling extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:sphenobaiera_sapling")
+public class BlockBiarmobaieraSapling extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:biarmobaiera_sapling")
 	public static final Block block = null;
-	public BlockSphenobaieraSapling(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.sphenobaiera_sapling);
+	public BlockBiarmobaieraSapling(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.biarmobaiera_sapling);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("sphenobaiera_sapling"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("biarmobaiera_sapling"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:sphenobaiera_sapling", "inventory"));
+				new ModelResourceLocation("lepidodendron:biarmobaiera_sapling", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:sphenobaiera_sapling", BlockSphenobaieraSapling.block);
-		OreDictionary.registerOre("treeSapling", BlockSphenobaieraSapling.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockSphenobaieraSapling.block);
-		OreDictionary.registerOre("plant", BlockSphenobaieraSapling.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:biarmobaiera_sapling", BlockBiarmobaieraSapling.block);
+		OreDictionary.registerOre("treeSapling", BlockBiarmobaieraSapling.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockBiarmobaieraSapling.block);
+		OreDictionary.registerOre("plant", BlockBiarmobaieraSapling.block);
 	}
 
 
@@ -88,7 +88,7 @@ public class BlockSphenobaieraSapling extends ElementsLepidodendronMod.ModElemen
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0.2F);
         	setResistance(1F);
-			setTranslationKey("pf_sphenobaiera_sapling");
+			setTranslationKey("pf_biarmobaiera_sapling");
 			setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
 		}
 
@@ -100,7 +100,17 @@ public class BlockSphenobaieraSapling extends ElementsLepidodendronMod.ModElemen
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_SPHENOBAIERA;
+			return ModTriggers.CLICK_BIARMOBAIERA;
+		}
+
+		@Override
+		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 100;
+		}
+
+		@Override
+		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 60;
 		}
 
 		@Override
@@ -160,7 +170,7 @@ public class BlockSphenobaieraSapling extends ElementsLepidodendronMod.ModElemen
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
-					ProcedureWorldGenSphenobaiera.executeProcedure($_dependencies);
+					ProcedureWorldGenBiarmobaiera.executeProcedure($_dependencies);
 				}
 	        }
 	    }
@@ -212,8 +222,8 @@ public class BlockSphenobaieraSapling extends ElementsLepidodendronMod.ModElemen
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Ginkgoale tree");
-				tooltip.add("Periods: Permian (?) - Triassic - Jurassic - late Cretaceous");
+				tooltip.add("Type: Ginkgo tree");
+				tooltip.add("Periods: Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene (Paleocene)");
 				tooltip.add("Propagation: fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

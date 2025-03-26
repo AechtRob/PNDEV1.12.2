@@ -14,6 +14,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
@@ -130,6 +131,7 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			}
 			else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_forest")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_desert_edge")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_forest")
@@ -267,7 +269,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_stony")) {
 			GenChance = 192;
 		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_marsh")) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_marsh")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_desert_edge")) {
 			GenChance = 256;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats")
@@ -338,7 +341,9 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
 						if (world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes")
 							|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes")
-							|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_banded_desert")) {
+							|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_banded_desert")
+							|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_desert_edge")
+							|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_desert")) {
 							if (world.getBlockState(blockpos1.down().north()).getMaterial() != Material.WATER
 									&& world.getBlockState(blockpos1.down().east()).getMaterial() != Material.WATER
 									&& world.getBlockState(blockpos1.down().south()).getMaterial() != Material.WATER
@@ -489,7 +494,9 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean canPlaceBlockAt(World world, BlockPos pos) {
 			Block block2 = world.getBlockState(pos.down()).getBlock();
-			return (block2.canSustainPlant(world.getBlockState(pos.down()), world, pos.down(), EnumFacing.UP, this) || block2 == block);
+			return (block2.canSustainPlant(world.getBlockState(pos.down()), world, pos.down(), EnumFacing.UP, this)
+					|| (world.getBlockState(pos.down()).getMaterial() == Material.SAND && world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)
+					|| block2 == block);
 		}
 
 		@SideOnly(Side.CLIENT)

@@ -1,0 +1,7 @@
+{
+ "parent": "block/fence_gate_open",
+ "textures": {
+ "texture": "lepidodendron:blocks/biarmobaiera_planks",
+ "particle": "lepidodendron:blocks/biarmobaiera_planks"
+ }
+}

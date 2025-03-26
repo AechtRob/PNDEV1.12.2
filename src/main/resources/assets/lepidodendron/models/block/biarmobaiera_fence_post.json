@@ -1,0 +1,7 @@
+{
+ "parent": "block/fence_post",
+ "textures": {
+ "texture": "lepidodendron:blocks/biarmobaiera_planks",
+ "particle": "lepidodendron:blocks/biarmobaiera_planks"
+ }
+}

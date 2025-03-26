@@ -1875,6 +1875,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_wardichthys_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_lethiscus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_satpuraphyllum_sapling_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_biarmobaiera_sapling_clean", "inventory"),
 
 				new ModelResourceLocation("lepidodendron:fossil_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossil_clean_missing_texture", "inventory")

@@ -115,6 +115,7 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_forest_ocean")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_plains")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_stony")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_desert_edge")
 			) {
 				biomeCriteria = true;
 			}
@@ -162,7 +163,8 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lakes")
-			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lake_shore")) {
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lake_shore")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_desert_edge")) {
 			GenChance = 256;
 		}
 

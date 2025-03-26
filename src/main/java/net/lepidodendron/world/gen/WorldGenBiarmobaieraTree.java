@@ -1,23 +1,20 @@
 package net.lepidodendron.world.gen;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
-import net.lepidodendron.procedure.ProcedureWorldGenPodozamites;
+import net.lepidodendron.procedure.ProcedureWorldGenBiarmobaiera;
 import net.lepidodendron.util.Functions;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import java.util.Random;
 
-public class WorldGenPodozamitesTreeWater extends WorldGenAbstractTree
+public class WorldGenBiarmobaieraTree extends WorldGenAbstractTree
 {
 
-    public WorldGenPodozamitesTreeWater(boolean notify)
+    public WorldGenBiarmobaieraTree(boolean notify)
     {
         super(notify);
     }
@@ -26,7 +23,10 @@ public class WorldGenPodozamitesTreeWater extends WorldGenAbstractTree
     {
         int i = rand.nextInt(3) + 5;
 
-        boolean onlyWater = worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_forest");
+        //if (this.useExtraRandomHeight)
+        //{
+        //    i += rand.nextInt(7);
+       // }
 
         boolean flag = true;
 
@@ -77,31 +77,6 @@ public class WorldGenPodozamitesTreeWater extends WorldGenAbstractTree
                 IBlockState state = worldIn.getBlockState(down);
                 boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
 
-               if ((state.getMaterial() != Material.WATER) && onlyWater) {
-                   return false;
-               }
-
-                if (!isSoil) {
-                    //System.err.println("position " + position.getX() + " " + position.getY() + " " + position.getX());
-                    BlockPos down2 = position.down(2);
-                    IBlockState state2 = worldIn.getBlockState(down2);
-                    IBlockState state2E = worldIn.getBlockState(down2.east());
-                    IBlockState state2W = worldIn.getBlockState(down2.west());
-                    IBlockState state2N = worldIn.getBlockState(down2.north());
-                    IBlockState state2S = worldIn.getBlockState(down2.south());
-                    isSoil = (state.getMaterial() == Material.WATER
-                        && state2.getBlockFaceShape(worldIn, down2, EnumFacing.UP) == BlockFaceShape.SOLID
-                        && state2E.getBlockFaceShape(worldIn, down2.east(), EnumFacing.UP) == BlockFaceShape.SOLID
-                        && state2W.getBlockFaceShape(worldIn, down2.west(), EnumFacing.UP) == BlockFaceShape.SOLID
-                        && state2N.getBlockFaceShape(worldIn, down2.north(), EnumFacing.UP) == BlockFaceShape.SOLID
-                        && state2S.getBlockFaceShape(worldIn, down2.south(), EnumFacing.UP) == BlockFaceShape.SOLID
-                    );
-                    //System.err.println("isSoil " + isSoil);
-                    if (isSoil) {
-                        position = position.down();
-                    }
-                }
-
                 if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
                     Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
@@ -109,8 +84,7 @@ public class WorldGenPodozamitesTreeWater extends WorldGenAbstractTree
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
-                    $_dependencies.put("SaplingSpawn", false);
-					ProcedureWorldGenPodozamites.executeProcedure($_dependencies);
+					ProcedureWorldGenBiarmobaiera.executeProcedure($_dependencies);
                     return true;
                 }
                 else
