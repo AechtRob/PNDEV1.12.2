@@ -546,7 +546,7 @@ public class ProcedureWorldGenBiarmobaiera extends ElementsLepidodendronMod.ModE
 					
 				}
 				
-				counter = counter + 3 + Math.round(Math.random());
+				counter = counter + 5 + Math.round(Math.random());
 			
 			}
 		}	

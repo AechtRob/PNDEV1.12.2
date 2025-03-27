@@ -361,6 +361,7 @@ public class AcidBathOutputPlants {
 
     public static String[] getPermianCleanedFossilsPlants() {
         String[] resLoc = {
+                ForgeRegistries.BLOCKS.getKey(BlockAlethopterisSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAraucarioxylonSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAridHorsetail.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockArthropitysSapling.block).toString(),
@@ -368,6 +369,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockNeomariopteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBelemnopteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBjuviaSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCallistophytales.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBrachyphyllumSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBrasilodendron.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockRissikiaSapling.block).toString(),
@@ -435,6 +437,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockChiropteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCordaitesDrySapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockSphenophyllales.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSphenophyllales2.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemParacalamitesItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPodozamitesSapling.block).toString(),
@@ -455,6 +458,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockLiverwort.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSatpuraphyllumSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSupaiaSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCtenisSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockPterophyllumSapling.block).toString(),
                 "minecraft:small_fern",
                 "minecraft:large_fern"
         };

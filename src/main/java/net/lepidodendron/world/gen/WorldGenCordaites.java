@@ -119,12 +119,18 @@ public class WorldGenCordaites extends WorldGenAbstractTree
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
-					if (worldIn.provider.getDimension() == LepidodendronConfig.dimCarboniferous) {
-                        $_dependencies.put("vines", true);
+					if (worldIn.provider.getDimension() == LepidodendronConfig.dimCarboniferous
+                        || worldIn.provider.getDimension() == LepidodendronConfig.dimPermian) {
+                        if (worldIn.provider.getDimension() == LepidodendronConfig.dimCarboniferous) {
+                            $_dependencies.put("vines", true);
+                        }
+                        else {
+                            $_dependencies.put("vines", false);
+                        }
                         $_dependencies.put("vines2", true);
                         $_dependencies.put("SaplingSpawn", false);
                     }
-					else { //No vines in Permian
+					else { //No vines in other dims
                         $_dependencies.put("vines", false);
                         $_dependencies.put("vines2", false);
                         $_dependencies.put("SaplingSpawn", true);

@@ -94,6 +94,7 @@ public class WorldGenSigillaria extends WorldGenAbstractTree
 					$_dependencies.put("world", worldIn);
 					$_dependencies.put("SaplingSpawn", false);
                     if ((worldIn.provider.getDimension() != LepidodendronConfig.dimCarboniferous)
+                        && (worldIn.provider.getDimension() != LepidodendronConfig.dimPermian)
                     ){
                         $_dependencies.put("SaplingSpawn", true); // disables Ankyropteris etc.
                     }

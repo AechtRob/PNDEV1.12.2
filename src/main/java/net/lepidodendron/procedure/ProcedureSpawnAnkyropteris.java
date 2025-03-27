@@ -29,8 +29,9 @@ public class ProcedureSpawnAnkyropteris extends ElementsLepidodendronMod.ModElem
 				dimensionCriteria = false;
 			if (dimID == LepidodendronConfig.dimCarboniferous || dimID == LepidodendronConfig.dimPermian)
 				dimensionCriteria = true;
+
+			Biome biome = world.getBiome(new BlockPos(x, y, z));
 			if (dimensionCriteria && !SaplingSpawn) {
-				Biome biome = world.getBiome(new BlockPos(x, y, z));
 				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAnkyropterisBlacklistBiomes))) {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 						biomeCriteria = true;
@@ -46,8 +47,17 @@ public class ProcedureSpawnAnkyropteris extends ElementsLepidodendronMod.ModElem
 				if (matchBiome(biome, LepidodendronConfigPlants.genAnkyropterisOverrideBiomes))
 					biomeCriteria = true;
 				}
-				if (dimID == LepidodendronConfig.dimCarboniferous || dimID == LepidodendronConfig.dimPermian)
+				if (dimID == LepidodendronConfig.dimPermian)
 					biomeCriteria = true;
+				if (dimID == LepidodendronConfig.dimPermian) {
+					if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands")) {
+						biomeCriteria = true;
+					}
+					else {
+						biomeCriteria = false;
+					}
+				}
+
 				if (biomeCriteria && !SaplingSpawn) {
 					//Try one spot at the foot of the tree:
 					//{
