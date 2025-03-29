@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Ctenophora"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/daihuoides.png"],
-			"title": "D. jakobvintheri",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "D. jakobvintheri",
+			"entity": "lepidodendron:prehistoric_flora_daihuoides",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_daihuoides",

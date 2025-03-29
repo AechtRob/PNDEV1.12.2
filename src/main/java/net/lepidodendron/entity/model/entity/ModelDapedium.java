@@ -217,6 +217,49 @@ public class ModelDapedium extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Dapedium.offsetY = -1.2F;
+        this.Dapedium.offsetX = 1.2F;
+        this.Dapedium.offsetZ = 2.0F;
+        this.Dapedium.rotateAngleY = (float)Math.toRadians(120);
+        this.Dapedium.rotateAngleX = (float)Math.toRadians(1);
+        this.Dapedium.rotateAngleZ = (float)Math.toRadians(0);
+        this.Dapedium.scaleChildren = true;
+        float scaler = 2.8F;
+        this.Dapedium.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Dapedium, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body1, -0.1485F, 0.0432F, -0.0065F);
+        this.setRotateAngle(cube_r1, 0.1396F, 0.0F, 0.0F);
+        this.setRotateAngle(PectoralR, 0.0F, 0.9163F, 0.0F);
+        this.setRotateAngle(PectoralL, 0.0F, -1.1345F, 0.0F);
+        this.setRotateAngle(VentralR, -0.4826F, 0.4445F, -0.1608F);
+        this.setRotateAngle(VentralL, -0.4928F, -0.483F, 0.1837F);
+        this.setRotateAngle(Body2, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.7941F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.5585F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.5934F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.5061F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.1396F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -1.0647F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.6458F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, -0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -0.1222F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, -0.1222F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r17, 0.0175F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Dapedium.render(f);
+        //Reset rotations, positions and sizing:
+        this.Dapedium.setScale(1.0F, 1.0F, 1.0F);
+        this.Dapedium.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

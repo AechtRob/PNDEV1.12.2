@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Crocodylomorpha$(br)>Thalattosuchia$(br)>Metriorhynchidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/dakosaurus.png"],
-			"title": "D. maximus",
-			"text": ""
+			"type": "entity",
+			"name": "D. maximus",
+			"entity": "lepidodendron:prehistoric_flora_dakosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dakosaurus",

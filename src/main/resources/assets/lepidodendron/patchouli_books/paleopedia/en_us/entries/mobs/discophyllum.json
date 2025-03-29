@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_discophyllum",
 			"title": "Discophyllum",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Deuterostomia(br)>Ambulacraria$(br)>Cambroernida$(br)>Eldonioidea"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Deuterostomia$(br)>Ambulacraria$(br)>Cambroernida$(br)>Eldonioidea"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/discophyllum.png"],
-			"title": "D. peltatum",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "D. peltatum",
+			"entity": "lepidodendron:prehistoric_flora_discophyllum",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_discophyllum",

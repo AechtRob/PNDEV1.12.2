@@ -11,7 +11,7 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Cynodontia$(br)>Diademodontidae"
 		},
-        	{
+		{
             "type": "entity",
             "name": "D. tetragonus",
             "entity": "lepidodendron:prehistoric_flora_diademodon",

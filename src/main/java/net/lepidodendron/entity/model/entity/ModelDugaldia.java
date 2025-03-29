@@ -354,7 +354,8 @@ public class ModelDugaldia extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.head.offsetY = -2.0F;
-        this.head.offsetX = 0.438F;
+        this.head.offsetX = 0.8F;
+        this.head.offsetZ = 1.0F;
         this.head.rotateAngleY = (float)Math.toRadians(225);
         this.head.rotateAngleX = (float)Math.toRadians(8);
         this.head.rotateAngleZ = (float)Math.toRadians(-8);

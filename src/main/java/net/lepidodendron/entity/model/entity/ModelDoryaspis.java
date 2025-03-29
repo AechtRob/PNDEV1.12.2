@@ -148,6 +148,27 @@ public class ModelDoryaspis extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Doryaspis.offsetY = -2.4F;
+        this.Doryaspis.offsetX = 0.2F;
+        this.Doryaspis.offsetZ = 2.0F;
+        this.Doryaspis.rotateAngleY = (float)Math.toRadians(120);
+        this.Doryaspis.rotateAngleX = (float)Math.toRadians(1);
+        this.Doryaspis.rotateAngleZ = (float)Math.toRadians(0);
+        this.Doryaspis.scaleChildren = true;
+        float scaler = 4.2F;
+        this.Doryaspis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Doryaspis, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Head, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail1, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail2, -0.1F, 0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.Doryaspis.render(f);
+        //Reset rotations, positions and sizing:
+        this.Doryaspis.setScale(1.0F, 1.0F, 1.0F);
+        this.Doryaspis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_beltanelliformis",
 			"title": "Beltanelliformis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>incertae sedis (possibly cyanobacteria)$(br)$(l)Method of Obtaining:$() Shears"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>$(O)incertae sedis (Cyanobacteria ?)$(br)$(l)Method of Obtaining:$() Shears"
 		},
 		{
 			"type": "multiblock",
