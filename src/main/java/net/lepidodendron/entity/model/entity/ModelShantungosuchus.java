@@ -2686,7 +2686,7 @@ public class ModelShantungosuchus extends ModelBasePalaeopedia {
             animator.startKeyframe(5);
             animator.rotate(this.body3, (float) Math.toRadians(8), (float) Math.toRadians(0), (float) Math.toRadians(0));
             animator.rotate(this.head, (float) Math.toRadians(-5), (float) Math.toRadians(0), (float) Math.toRadians(0));
-            animator.rotate(this.jaw, (float) -Math.toRadians(36), (float) Math.toRadians(0), (float) Math.toRadians(0));
+            animator.rotate(this.jaw, (float) Math.toRadians(36), (float) Math.toRadians(0), (float) Math.toRadians(0));
             animator.endKeyframe();
             animator.setStaticKeyframe(5);
             animator.startKeyframe(2);
