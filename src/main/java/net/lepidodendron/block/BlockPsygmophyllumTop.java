@@ -5,7 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
-import net.lepidodendron.item.ItemBaieraFruit;
+import net.lepidodendron.item.ItemPsygmophyllumFruit;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
@@ -14,7 +14,7 @@ import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.statemap.StateMap;
@@ -39,16 +39,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockBaieraTop extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:baiera_top")
+public class BlockPsygmophyllumTop extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:psygmophyllum_top")
 	public static final Block block = null;
-	public BlockBaieraTop(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.baiera_top);
+	public BlockPsygmophyllumTop(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.psygmophyllum_top);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("baiera_top"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("psygmophyllum_top"));
 		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -56,17 +56,16 @@ public class BlockBaieraTop extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-		//		new ModelResourceLocation("lepidodendron:baiera_top", "inventory"));
+		//		new ModelResourceLocation("lepidodendron:psygmophyllum_top", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
 
-	public static final PropertyBool VAR = PropertyBool.create("var");
-	
-	
+	public static final PropertyInteger VAR = PropertyInteger.create("var", 0, 3);
+
 	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
 		public BlockCustom() {
 			super();
-			setTranslationKey("pf_baiera_top");
+			setTranslationKey("pf_psygmophyllum_top");
 			setSoundType(SoundType.PLANT);
 			setHardness(0.2F);
 			setResistance(0.2F);
@@ -79,15 +78,14 @@ public class BlockBaieraTop extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_BAIERA;
+			return ModTriggers.CLICK_PSYGMOPHYLLUM;
 		}
 
 		@Override
-		@javax.annotation.Nullable
+		@Nullable
 		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
 			return NULL_AABB;
 		}
-
 
 		@Override
 		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
@@ -101,18 +99,24 @@ public class BlockBaieraTop extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public NonNullList<ItemStack> onSheared(ItemStack item, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune) {
-			return NonNullList.withSize(1, new ItemStack(BlockBaiera.block, (int) (1)));
+			return NonNullList.withSize(1, new ItemStack(BlockPsygmophyllum.block, (int) (1)));
 		}
 
 		@Override
 		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
-	    {
-	        boolean boolVar = false;
-	        if ((double) (pos.getX() + pos.getZ())/3 == (int) (pos.getX() + pos.getZ())/3) {
-	        	boolVar = true;
-	        }
-	        return state.withProperty(VAR, boolVar);
-	    }
+		{
+			int var = 0;
+			if ((double) (pos.getX() + pos.getZ())/2 == (int) (pos.getX() + pos.getZ())/2) {
+				var = 1;
+			}
+			if ((double) (pos.getX() + pos.getZ())/3 == (int) (pos.getX() + pos.getZ())/3) {
+				var = 2;
+			}
+			if ((double) (pos.getX() + pos.getZ())/5 == (int) (pos.getX() + pos.getZ())/5) {
+				var = 3;
+			}
+			return state.withProperty(VAR, var);
+		}
 
 		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
@@ -134,10 +138,10 @@ public class BlockBaieraTop extends ElementsLepidodendronMod.ModElement {
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    	public BlockRenderLayer getRenderLayer()
-    {
-        return BlockRenderLayer.CUTOUT;
-    }
+		public BlockRenderLayer getRenderLayer()
+		{
+			return BlockRenderLayer.CUTOUT;
+		}
 		
 		@Override
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
@@ -156,16 +160,17 @@ public class BlockBaieraTop extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 100;
+			return 60;
 		}
 
 		@Override
 		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 60;
+			return 30;
 		}
+
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			return new ItemStack(BlockBaiera.block, (int) (1));
+			return new ItemStack(BlockPsygmophyllum.block, (int) (1));
 		}
 
 		@Override
@@ -181,10 +186,10 @@ public class BlockBaieraTop extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public Item getItemDropped(IBlockState state, java.util.Random rand, int fortune) {
 			if (LepidodendronConfig.doPropagation) {
-				return new ItemStack(ItemBaieraFruit.block, (int) (1)).getItem();
+				return new ItemStack(ItemPsygmophyllumFruit.block, (int) (1)).getItem();
 			}
 			else {
-				return Item.getItemFromBlock(BlockBaiera.block);
+				return Item.getItemFromBlock(BlockPsygmophyllum.block);
 			}
 		}
 
@@ -200,33 +205,33 @@ public class BlockBaieraTop extends ElementsLepidodendronMod.ModElement {
 
 	    @Override
         public ItemStack getSilkTouchDrop(IBlockState state)  {
-            return new ItemStack(BlockBaiera.block, (int) (1));
+            return new ItemStack(BlockPsygmophyllum.block, (int) (1));
         }
 
 	    @Override
 		public void neighborChanged(IBlockState state, World world, BlockPos pos, Block neighborBlock, BlockPos fromPos) {
-			
+
 			super.neighborChanged(state, world, pos, neighborBlock, fromPos);
-			
+
 			Block block = world.getBlockState(pos.down()).getBlock();
-			if (block != BlockBaieraCentre.block) {
+			if (block != BlockPsygmophyllum.block) {
 				world.setBlockToAir(pos);
-				
+
 				if (Math.random() > 0.66) {
 					if (!world.isRemote) {
 						EntityItem entityToSpawn;
 						if (!LepidodendronConfig.doPropagation) {
-							entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockBaiera.block, (int) (1)));
+							entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockPsygmophyllum.block, (int) (1)));
 						}
 						else {
-							entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemBaieraFruit.block, (int) (1)));
+							entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemPsygmophyllumFruit.block, (int) (1)));
 						}
 						entityToSpawn.setPickupDelay(10);
 						world.spawnEntity(entityToSpawn);
 					}
 				}
 			}
-			
+
 		}
 
 		@Override
