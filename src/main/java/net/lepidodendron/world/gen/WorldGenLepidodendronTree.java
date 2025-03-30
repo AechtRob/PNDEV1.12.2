@@ -170,9 +170,11 @@ public class WorldGenLepidodendronTree extends WorldGenAbstractTree
 					$_dependencies.put("vines2", true);
 					$_dependencies.put("SaplingSpawn", false);
                     if ((worldIn.provider.getDimension() != LepidodendronConfig.dimCarboniferous)
+                        && (worldIn.provider.getDimension() != LepidodendronConfig.dimPermian)
                     ){
                         $_dependencies.put("SaplingSpawn", true); // disables Ankyropteris etc.
                         $_dependencies.put("vines", false);
+                        $_dependencies.put("vines2", false);
                     }
                     if (rand.nextInt(14) == 0) {
                         ProcedureWorldGenLepidodendronYoung1.executeProcedure($_dependencies);
@@ -181,6 +183,12 @@ public class WorldGenLepidodendronTree extends WorldGenAbstractTree
                         ProcedureWorldGenLepidodendronYoung2.executeProcedure($_dependencies);
                     }
                     else {
+                        if (worldIn.provider.getDimension() == LepidodendronConfig.dimCarboniferous) {
+                            $_dependencies.put("vines", true);
+                        }
+                        else {
+                            $_dependencies.put("vines", false);
+                        }
                         ProcedureWorldGenLepidodendron.executeProcedure($_dependencies);
                     }
                     return true;

@@ -4,7 +4,9 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
+import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -29,7 +31,8 @@ public class ProcedureSpawnOdontopteris extends ElementsLepidodendronMod.ModElem
 				dimensionCriteria = true;
 			if (!TreeChosen && !LepidodendronConfig.genAllPlants)
 				dimensionCriteria = false;
-			if (dimID == LepidodendronConfig.dimCarboniferous)
+			if (dimID == LepidodendronConfig.dimCarboniferous
+				|| dimID == LepidodendronConfig.dimPermian)
 				dimensionCriteria = true;
 
 			Biome biome = world.getBiome(new BlockPos(x, y, z));
@@ -50,6 +53,16 @@ public class ProcedureSpawnOdontopteris extends ElementsLepidodendronMod.ModElem
 				}
 				if (dimID == LepidodendronConfig.dimCarboniferous)
 					biomeCriteria = true;
+
+
+				if (biome instanceof BiomePermian) {
+					if (((BiomePermian)biome).getBiomeType() == EnumBiomeTypePermian.Wetlands) {
+						biomeCriteria = true;
+					}
+					else {
+						biomeCriteria = false;
+					}
+				}
 
 				if (biome instanceof BiomeCarboniferous) {
 					if (((BiomeCarboniferous)biome).getBiomeType() == EnumBiomeTypeCarboniferous.Savanna) {

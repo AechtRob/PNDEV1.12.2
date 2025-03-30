@@ -5054,6 +5054,10 @@ public class LepidodendronSorter {
     public static final int supaia_log = 8073;
     public static final int supaia_pallisade = 8074;
     public static final int supaia_sapling = 8075;
+    public static final int biarmobaiera_log = 8076;
+    public static final int biarmobaiera_leaves = 8077;
+    public static final int biarmobaiera_sapling = 8078;
+    public static final int biarmobaiera_fruit = 8079;
 
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;

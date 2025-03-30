@@ -26,6 +26,8 @@ public class WorldGenPodozamitesTreeWater extends WorldGenAbstractTree
     {
         int i = rand.nextInt(3) + 5;
 
+        boolean onlyWater = worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_forest");
+
         boolean flag = true;
 
         if (position.getY() >= 1 && position.getY() + i + 1 <= 256)
@@ -74,6 +76,10 @@ public class WorldGenPodozamitesTreeWater extends WorldGenAbstractTree
                 BlockPos down = position.down();
                 IBlockState state = worldIn.getBlockState(down);
                 boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
+
+               if ((state.getMaterial() != Material.WATER) && onlyWater) {
+                   return false;
+               }
 
                 if (!isSoil) {
                     //System.err.println("position " + position.getX() + " " + position.getY() + " " + position.getX());

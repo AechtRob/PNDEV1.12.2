@@ -1,7 +1,9 @@
 package net.lepidodendron.world.gen;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.procedure.ProcedureWorldGenArthropitys;
+import net.lepidodendron.procedure.ProcedureWorldGenWalchia;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -79,6 +81,21 @@ public class WorldGenArthropitysTree extends WorldGenAbstractTree
 
                 if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
+                    if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position) + 5 + rand.nextInt(4)) {
+                        Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
+                        $_dependencies.put("x", position.getX());
+                        $_dependencies.put("y", position.getY());
+                        $_dependencies.put("z", position.getZ());
+                        $_dependencies.put("world", worldIn);
+                        $_dependencies.put("SaplingSpawn", false);
+                        if ((worldIn.provider.getDimension() != LepidodendronConfig.dimCarboniferous)
+                        ){
+                            $_dependencies.put("SaplingSpawn", true); // disables Ankyropteris
+                        }
+                        ProcedureWorldGenWalchia.executeProcedure($_dependencies);
+                        return true;
+                    }
+                    else {
                     Object2ObjectOpenHashMap <String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 					$_dependencies.put("x", position.getX());
 					$_dependencies.put("y", position.getY());
@@ -92,6 +109,7 @@ public class WorldGenArthropitysTree extends WorldGenAbstractTree
 					$_dependencies.put("SaplingSpawn", false);
 					ProcedureWorldGenArthropitys.executeProcedure($_dependencies);
                     return true;
+                    }
                 }
                 else
                 {

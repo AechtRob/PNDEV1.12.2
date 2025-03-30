@@ -430,6 +430,11 @@ public class LepidodendronFogSubscribers {
 					|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_cold_glossopteris_foggy"))) {
 				return 150;
 			}
+			if ((biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_forest"))
+					|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_forest_dense"))
+					|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_hummocks"))) {
+				return 110;
+			}
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains")) {
 				return 150;
 			}
@@ -437,13 +442,11 @@ public class LepidodendronFogSubscribers {
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression_rim")) {
 				return 120;
 			}
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_fern_copse")) {
 				return 150;
 			}
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")) {
-				return 150;
-			}
-
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_highland")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_mountains")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia_yixian_foothills")
@@ -526,11 +529,19 @@ public class LepidodendronFogSubscribers {
 							}
 
 							else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
-									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")) && playerEyes >= (double) player.world.getSeaLevel() - 4
+									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains")
+									|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")
+									|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")
+									|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_fern_copse"))
+									&& playerEyes >= (double) player.world.getSeaLevel() - 4
 									&& player.posY <= fogTop) {
 								fog = backgroundFog + (fullFogAddition * ((float) (Math.min(fogTop - fogBottom, Math.max(0, player.posY - fogBottom)) / (fogTop - fogBottom))));
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
-									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")) && playerEyes >= (double) player.world.getSeaLevel() - 4
+									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains")
+									|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")
+									|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")
+									|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_fern_copse"))
+									&& playerEyes >= (double) player.world.getSeaLevel() - 4
 									&& player.posY > fogTop) {
 								int fogTopFree = 125;
 								fog = backgroundFog + fullFogAddition - (fullFogAddition * ((float) (Math.min(fogTopFree - fogTop, Math.max(0, player.posY - fogTop)) / (fogTopFree - fogTop))));
@@ -581,6 +592,11 @@ public class LepidodendronFogSubscribers {
 										|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_forest"))
 										|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_cold_glossopteris_foggy"))) {
 									fog = backgroundFog2 * 10F;
+								}
+								if ((biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_forest"))
+										|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_forest_dense"))
+										|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_hummocks"))) {
+									fog = backgroundFog2 * 5F;
 								}
 							}
 

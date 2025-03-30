@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:biarmobaiera_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:biarmobaiera_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:biarmobaiera_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:biarmobaiera_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:biarmobaiera_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:biarmobaiera_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:biarmobaiera_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

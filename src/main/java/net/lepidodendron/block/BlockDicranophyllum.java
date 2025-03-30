@@ -114,9 +114,8 @@ public class BlockDicranophyllum extends ElementsLepidodendronMod.ModElement {
 		if ((LepidodendronConfig.dimCarboniferous == dimID)
 		)
 			biomeCriteria = true;
-		if ((biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_unwooded"))
-			|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands"))
-			|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_plains"))
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_plains")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_stony")
 		)
 			biomeCriteria = true;
 		if (!biomeCriteria)
@@ -149,6 +148,12 @@ public class BlockDicranophyllum extends ElementsLepidodendronMod.ModElement {
 		else {
 			maxH = maxheight;
 			minH = minheight;
+		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_plains")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_stony")
+		) {
+			GenChance = 48;
 		}
 			
 		for (int i = 0; i < GenChance; i++) {

@@ -9,6 +9,8 @@ import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -103,7 +105,9 @@ public class BlockGiantHorsetailShoot extends ElementsLepidodendronMod.ModElemen
 		@Override
 		public boolean canPlaceBlockAt(World world, BlockPos pos) {
 			Block block2 = world.getBlockState(pos.down()).getBlock();
-			return (block2.canSustainPlant(world.getBlockState(pos.down()), world, pos.down(), EnumFacing.UP, this) || block2 == block);
+			return (block2.canSustainPlant(world.getBlockState(pos.down()), world, pos.down(), EnumFacing.UP, this)
+					|| (world.getBlockState(pos.down()).getMaterial() == Material.SAND && world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)
+					|| block2 == block);
 		}
 
 		@SideOnly(Side.CLIENT)

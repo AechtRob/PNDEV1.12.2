@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pterophyllum",
 			"title": "Pterophyllum",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Oligocene$(br2)$(l)Propagation:$() $(l:basics/collecting_plants)Seed-bearing plans without cubic leafblocks$(/l)$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
+			"text": "$(l)Temporal Range:$() Permian-Oligocene$(br2)$(l)Propagation:$() $(l:basics/collecting_plants)Seed-bearing plans without cubic leafblocks$(/l)$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
 		},
 		{
 			"type": "multiblock",
@@ -42,7 +42,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_pterophyllum",
 			"type": "text",
-			"text": "Pterophyllum is the name given to fossils of a particular form of leaf which belonged to some Bennetitalean plants. They are found in rocks from the Triassic onwards, and are found all over the world. They are always once-pinnate (have single-level leaflets), and present a similar shape to many other Bennettitalean leaf fossils. Pterophyllum leaves are long and have large numbers of simple, narrow, smooth-edged leaflets, much longer than wide,"
+			"text": "Pterophyllum is the name given to fossils of a particular form of leaf which belonged to some Bennetitalean plants. They are found in rocks from the Triassic onwards, possilbbly also the Permian, all over the world. They are always once-pinnate (have single-level leaflets), and present a similar shape to many other Bennettitalean leaf fossils. Pterophyllum leaves are long and have large numbers of simple, narrow, smooth-edged leaflets, much longer than wide,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pterophyllum",
