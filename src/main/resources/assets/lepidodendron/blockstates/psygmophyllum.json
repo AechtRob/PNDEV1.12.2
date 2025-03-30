@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:psygmophyllum_inventory"
+    },
+    "var=0": {"model": "lepidodendron:psygmophyllum_1"},
+    "var=1": {"model": "lepidodendron:psygmophyllum_2"},
+    "var=2": {"model": "lepidodendron:psygmophyllum_3"},
+    "var=3": {"model": "lepidodendron:psygmophyllum_4"}
+  }
+}

@@ -1,0 +1,9 @@
+{
+"parent":"lepidodendron:block/8pointedplanttwoblockhigh",
+"textures":{
+"e":"lepidodendron:blocks/psygmophyllum2_c_e",
+"w":"lepidodendron:blocks/psygmophyllum2_c_w",
+  "eu":"lepidodendron:blocks/psygmophyllum2_t_e",
+  "wu":"lepidodendron:blocks/psygmophyllum2_t_w"
+}
+}
