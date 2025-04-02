@@ -73,11 +73,11 @@ public class ProcedureWorldGenSupaia extends ElementsLepidodendronMod.ModElement
 				}
 				if (world.rand.nextInt(12) == 0) {
 					ProcedureTreeLog.executeProcedure((int) x + 1, (int) (y + counter), (int) z, world, BlockSupaiaLog.block, EnumFacing.DOWN);
-					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockSupaiaShoot.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) (y + counter + 1), (int) z), BlockSupaiaShoot.block.getDefaultState(), 3);
 				}
 				if (world.rand.nextInt(12) == 0) {
 					ProcedureTreeLog.executeProcedure((int) x - 1, (int) (y + counter), (int) z, world, BlockSupaiaLog.block, EnumFacing.DOWN);
-					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockSupaiaShoot.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) (y + counter + 1), (int) z), BlockSupaiaShoot.block.getDefaultState(), 3);
 				}
 
 				counter = counter + 1;

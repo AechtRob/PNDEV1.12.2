@@ -59,6 +59,12 @@ public class ProcedureSpawnOdontopteris extends ElementsLepidodendronMod.ModElem
 					if (((BiomePermian)biome).getBiomeType() == EnumBiomeTypePermian.Wetlands) {
 						biomeCriteria = true;
 					}
+					else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain_lake")) {
+						biomeCriteria = true;
+					}
+					else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")) {
+						biomeCriteria = true;
+					}
 					else {
 						biomeCriteria = false;
 					}
