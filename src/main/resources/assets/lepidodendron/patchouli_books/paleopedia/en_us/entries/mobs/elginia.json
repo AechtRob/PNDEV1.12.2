@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauria$(br)>Pareiasauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/elginia.png"],
-			"title": "E. mirabilis",
-			"text": ""
+			"type": "entity",
+			"name": "E. mirabilis",
+			"entity": "lepidodendron:prehistoric_flora_elginia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_elginia",
 			"type": "text",
-			"text": "Elginia is a small pareiasaurid from the late Permian period. it had many horns on its head and two longer horns at the top of its head. Elginia could grow up to a meter in length and it used its horns likely as a sort of defense against predators."
+			"text": "Elginia is a small pareiasaurid from the Upper Permian period. it had many horns on its head and two longer horns at the top of its head. Elginia could grow up to a meter in length and it used its horns likely as a sort of defense against predators."
 		},
 		{
 			"type": "lepidodendron:diet",

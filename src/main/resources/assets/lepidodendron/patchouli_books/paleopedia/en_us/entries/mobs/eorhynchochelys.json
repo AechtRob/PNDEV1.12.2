@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Pantestudines"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/eorhynchochelys.png"],
-			"title": "E. sinensis",
-			"text": ""
+			"type": "entity",
+			"name": "E. sinensis",
+			"entity": "lepidodendron:prehistoric_flora_eorhynchochelys",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eorhynchochelys",
 			"type": "text",
-			"text": "Eorhynchochelys sinensis was an early relative of turtles, that lived during the Late Triassic in what is now southwestern China. It lived in coastal waters, likely foraging on land as well as in the sea, using its powerful limbs to scour through the mud for food. Although it lacks the signature shell of more familiar turtles, its skull was very turtle-like, complete with a beak."
+			"text": "Eorhynchochelys sinensis was an early relative of turtles, that lived during the Upper Triassic in what is now southwestern China. It lived in coastal waters, likely foraging on land as well as in the sea, using its powerful limbs to scour through the mud for food. Although it lacks the signature shell of more familiar turtles, its skull was very turtle-like, complete with a beak."
 		},
 		{
 			"type": "lepidodendron:diet",

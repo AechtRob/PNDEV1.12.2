@@ -344,12 +344,13 @@ public class ModelEffigia extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -0.50F;
-        this.body.offsetX = 0.0F;
+        this.body.offsetX = -0.5F;
+        this.body.offsetZ = 1.0F;
         this.body.rotateAngleY = (float)Math.toRadians(130);
         this.body.rotateAngleX = (float)Math.toRadians(5);
         this.body.rotateAngleZ = (float)Math.toRadians(0);
         this.body.scaleChildren = true;
-        float scaler = 1.1F;
+        float scaler = 0.7F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(bodyback, 0.0F, 0.0F, 0.0F);

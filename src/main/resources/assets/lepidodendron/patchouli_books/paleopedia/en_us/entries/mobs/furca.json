@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Marrellomorpha$(br)>Marrellida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/furca.png"],
-			"title": "F. bohemica",
-			"text": ""
+			"type": "entity",
+			"name": "F. bohemica",
+			"entity": "lepidodendron:prehistoric_flora_furca",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_furca",
 			"type": "text",
-			"text": "Furca is a marrellomorph from the Late Ordovician period. It possessed a broad head shield with 3 pairs of spines along its body with smaller spines lining the entire head shield."
+			"text": "Furca is a marrellomorph from the Upper Ordovician period. It possessed a broad head shield with 3 pairs of spines along its body with smaller spines lining the entire head shield."
 		},
 		{
 			"type": "lepidodendron:diet",

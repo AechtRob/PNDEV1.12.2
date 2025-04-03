@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Mollusca$(br)>Cephalopoda$(br)>Nautiloidea$(br)>Endocerida$(br)>Endoceratidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/endoceras.png"],
-			"title": "E. giganteum",
-			"text": ""
+			"type": "entity",
+			"name": "E. giganteum",
+			"entity": "lepidodendron:prehistoric_flora_endoceras",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_endoceras",

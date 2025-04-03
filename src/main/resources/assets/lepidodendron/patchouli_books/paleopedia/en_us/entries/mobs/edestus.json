@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Edestidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/edestus.png"],
-			"title": "E. heinrichi",
-			"text": ""
+			"type": "entity",
+			"name": "E. heinrichi",
+			"entity": "lepidodendron:prehistoric_flora_edestus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_edestus",

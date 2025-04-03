@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_bomakellia",
 			"title": "Bomakellia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae(br)>Charniidae"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Rangeomorpha$(br)>Charniidae"
 		},
 		{
 			"type": "multiblock",

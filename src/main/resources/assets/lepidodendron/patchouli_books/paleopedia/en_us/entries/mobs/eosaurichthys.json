@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Permian - Triassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Saurichthyiformes$(br)>Saurichthyidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/eosaurichthys.png"],
-			"title": "E. chaoi",
-			"text": ""
+			"type": "entity",
+			"name": "E. chaoi",
+			"entity": "lepidodendron:prehistoric_flora_eosaurichthys",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eosaurichthys",
 			"type": "text",
-			"text": "Eosaurichthys is a potentially dubious genus of Actinopterygian fish. Similar to the larger Saurichthys, Eosaurichthys is a long and slender predatory fish, characterized by a long snout full of conical teeth, a powerful body ending in a lunate tail and the caudal positioning of dorsal and anal fins to improve speed and stability in water. "
+			"text": "Eosaurichthys is a potentially dubious genus of actinopterygian fish. Similar to the larger Saurichthys, Eosaurichthys is a long and slender predatory fish, characterized by a long snout full of conical teeth, a powerful body ending in a lunate tail and the caudal positioning of dorsal and anal fins to improve speed and stability in water. "
 		},
 		{
 			"type": "lepidodendron:diet",

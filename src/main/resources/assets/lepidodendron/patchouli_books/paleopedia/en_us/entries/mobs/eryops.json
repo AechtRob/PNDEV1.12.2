@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Temnospondyli$(br)>Eryopidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/eryops.png"],
-			"title": "E. megacephalus",
-			"text": ""
+			"type": "entity",
+			"name": "E. megacephalus",
+			"entity": "lepidodendron:prehistoric_flora_eryops",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eryops",

@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Camuropiscidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/fallacosteus.png"],
-			"title": "F. turneri",
-			"text": ""
+			"type": "entity",
+			"name": "F. turneri",
+			"entity": "lepidodendron:prehistoric_flora_fallacosteus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_fallacosteus",
 			"type": "text",
-			"text": "Fallacosteus turneri was a genus of camuropiscid arthrodire placoderm that lived during the Late Devonian (around 382.7 - 372.2 million years ago). Its fossils have been found at the famous Gogo Formation of Kimberly, Western Australia. Like its close relative Camuropiscis, Fallacosteus had a flattened, "
+			"text": "Fallacosteus turneri was a genus of camuropiscid arthrodire placoderm that lived during the Uper Devonian (around 382.7 - 372.2 million years ago). Its fossils have been found at the famous Gogo Formation of Kimberly, Western Australia. Like its close relative Camuropiscis, Fallacosteus had a flattened, "
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_fallacosteus",

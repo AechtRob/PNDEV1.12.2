@@ -383,8 +383,9 @@ public class ModelElaphrosaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = 0.4F;
+        this.root.offsetY = 0.5F;
         this.root.offsetX = 0.0F;
+        this.root.offsetZ = 2.0F;
         this.root.rotateAngleY = (float)Math.toRadians(150);
         this.root.rotateAngleX = (float)Math.toRadians(5);
         this.root.rotateAngleZ = (float)Math.toRadians(0);

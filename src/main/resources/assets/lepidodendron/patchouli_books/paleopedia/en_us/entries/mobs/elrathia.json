@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Trilobita$(br)>Ptychopariida$(br)>Alokistocaridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/elrathia.png"],
-			"title": "E. kingii",
-			"text": ""
+			"type": "entity",
+			"name": "E. kingii",
+			"entity": "lepidodendron:prehistoric_flora_elrathia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_elrathia",

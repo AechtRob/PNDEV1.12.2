@@ -67,6 +67,24 @@ public class ModelEuspira extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.snail.offsetY = -1.4F;
+        this.snail.offsetX = -0.1F;
+        this.snail.offsetZ = 2.0F;
+        this.snail.rotateAngleY = (float)Math.toRadians(120);
+        this.snail.rotateAngleX = (float)Math.toRadians(1);
+        this.snail.rotateAngleZ = (float)Math.toRadians(0);
+        this.snail.scaleChildren = true;
+        float scaler = 4.2F;
+        this.snail.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(snail, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.snail.render(f);
+        //Reset rotations, positions and sizing:
+        this.snail.setScale(1.0F, 1.0F, 1.0F);
+        this.snail.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

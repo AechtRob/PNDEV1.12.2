@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Eryonidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/eryontop.png"],
-			"title": "E. cuvieri",
-			"text": ""
+			"type": "entity",
+			"name": "E. cuvieri",
+			"entity": "lepidodendron:prehistoric_flora_eryon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eryon",

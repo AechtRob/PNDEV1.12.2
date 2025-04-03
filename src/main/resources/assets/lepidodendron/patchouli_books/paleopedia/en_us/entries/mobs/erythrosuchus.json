@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_erythrosuchus",
 			"title": "Erythrosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Crocopoda$(br)>Archosauriformes$(br)>Erythrosuchidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauromorpha$(br)>Crocopoda$(br)>Archosauriformes$(br)>Erythrosuchidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/erythrosuchus.png"],
-			"title": "E. africanus",
-			"text": ""
+			"type": "entity",
+			"name": "E. africanus",
+			"entity": "lepidodendron:prehistoric_flora_erythrosuchus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_erythrosuchus",
 			"type": "text",
-			"text": "Erythrosuchus africanus was an early archosauriform reptile that lived during the Early Triassic in what is now the Karoo Basin of South Africa. Thought to have been the largest terrestrial predator of its time, this carnivore measured around 5 metres in length, a fifth of which was taken up by the animal's 1 metre long skull armed with sharp, conical teeth."
+			"text": "Erythrosuchus africanus was an early archosauriform reptile that lived during the Lower Triassic in what is now the Karoo Basin of South Africa. Thought to have been the largest terrestrial predator of its time, this carnivore measured around 5 metres in length, a fifth of which was taken up by the animal's 1 metre long skull armed with sharp, conical teeth."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_eurypterus",
 			"title": "Eurypterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Eurypterida$(br)>Eurypteroidea$(br)>Eurypteridae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Eurypteroidea$(br)>Eurypteridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/eurypterus.png"],
-			"title": "E. remipes",
-			"text": ""
+			"type": "entity",
+			"name": "E. remipes",
+			"entity": "lepidodendron:prehistoric_flora_eurypterus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eurypterus",
 			"type": "text",
-			"text": "Eurypterus is a famous sea scorpion from the Silurian period. It averaged 13-23 cm in length. It possessed appendages that looked like paddles, used for swimming. They were generalists, both hunting and scavenging for food."
+			"text": "Eurypterus is a famous sea scorpion from the Silurian period. It averaged 13 - 23 cm in length. It possessed appendages that looked like paddles, used for swimming. They were generalists, both hunting and scavenging for food."
 		},
 		{
 			"type": "lepidodendron:diet",
