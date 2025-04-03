@@ -442,6 +442,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.ITEMS.getKey(ItemParacalamitesItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPodozamitesSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGreenAlgaeMat.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockPsygmophyllum.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockRedAlgaeMat.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGreenSproutingAlgae.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGreenCodiumAlgae.block).toString(),

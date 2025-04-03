@@ -120,6 +120,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_AULACERA = new CustomTrigger("pf_book_aulacera");
     public static final CustomTrigger CLICK_AUSIA = new CustomTrigger("pf_book_ausia");
     public static final CustomTrigger CLICK_BAIERA = new CustomTrigger("pf_book_baiera");
+    public static final CustomTrigger CLICK_PSYGMOPHYLLUM = new CustomTrigger("pf_book_psygmophyllum");
     public static final CustomTrigger CLICK_DORATOPHYLLUM = new CustomTrigger("pf_book_doratophyllum");
     public static final CustomTrigger CLICK_BAIKALOPHYLLUM = new CustomTrigger("pf_book_baikalophyllum");
     public static final CustomTrigger CLICK_REHEZAMITES = new CustomTrigger("pf_book_rehezamites");
@@ -1912,6 +1913,7 @@ public class ModTriggers
             CLICK_AULACERA,
             CLICK_AUSIA,
             CLICK_BAIERA,
+            CLICK_PSYGMOPHYLLUM,
             CLICK_DORATOPHYLLUM,
             CLICK_BAIKALOPHYLLUM,
             CLICK_REHEZAMITES,
