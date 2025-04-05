@@ -466,6 +466,74 @@ public class ModelEdaphosaurus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -0.2F;
+        this.body.offsetX = 0.25F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(120);
+        this.body.rotateAngleX = (float)Math.toRadians(1);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 0.6F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(cube_r2, -0.7418F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.5672F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.829F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.0F, -1.5708F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, 0.0F, -1.5708F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(cube_r17, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r18, -1.3526F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r19, -0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r20, -0.8727F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r21, -0.7418F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r22, -1.0908F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r23, -0.8727F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r24, -1.0036F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r25, -1.3526F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.2739F, -0.2947F, 0.0814F);
+        this.setRotateAngle(tail2, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(tail3, -0.0472F, 0.3923F, -0.0181F);
+        this.setRotateAngle(tail4, 0.1443F, 0.4323F, 0.0608F);
+        this.setRotateAngle(tail5, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(hindlegL, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(hindlegL1, 0.7854F, 0.0F, -1.2217F);
+        this.setRotateAngle(cube_r26, 0.0F, 0.0F, 0.1309F);
+        this.setRotateAngle(hindlegL2, 0.3927F, 0.48F, 1.2217F);
+        this.setRotateAngle(hindlegL3, -0.197F, -0.9153F, 0.031F);
+        this.setRotateAngle(hindlegL4, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(hindlegL5, 0.0F, 0.0F, 1.2217F);
+        this.setRotateAngle(cube_r27, 0.0F, 0.0F, -0.1309F);
+        this.setRotateAngle(hindlegL6, 0.0F, 0.0F, -1.2217F);
+        this.setRotateAngle(hindlegL7, 0.0F, 0.6981F, 0.0F);
+        this.setRotateAngle(frontlegL, 0.0F, -0.6981F, 0.0F);
+        this.setRotateAngle(frontlegL1, -0.829F, 0.0F, -1.2217F);
+        this.setRotateAngle(frontlegL2, -0.48F, -0.1309F, 1.2217F);
+        this.setRotateAngle(frontlegL3, 1.1345F, 0.0F, 0.0F);
+        this.setRotateAngle(frontlegL4, 0.0F, 0.6981F, 0.0F);
+        this.setRotateAngle(frontlegL5, 0.2618F, 0.0F, 1.2217F);
+        this.setRotateAngle(frontlegL6, 0.3054F, -0.8727F, -1.2217F);
+        this.setRotateAngle(frontlegL7, -0.2618F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

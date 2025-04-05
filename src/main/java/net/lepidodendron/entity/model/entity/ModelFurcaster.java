@@ -179,6 +179,49 @@ public class ModelFurcaster extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.core.offsetY = -3.8F;
+        this.core.offsetX = 0.2F;
+        this.core.offsetZ = 2.0F;
+        this.core.rotateAngleY = (float)Math.toRadians(120);
+        this.core.rotateAngleX = (float)Math.toRadians(1);
+        this.core.rotateAngleZ = (float)Math.toRadians(0);
+        this.core.scaleChildren = true;
+        float scaler = 2.2F;
+        this.core.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(core, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(arm1a, 0.0F, 0.2F, -0.0F);
+        this.setRotateAngle(arm1b, 0.0F, 0.2F, -0.0F);
+        this.setRotateAngle(arm1c, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(arm1d, 0.0F, -0.2F, -0.0F);
+        this.setRotateAngle(arm1e, 0.0F, -0.2F, -0.0F);
+        this.setRotateAngle(arm2a, 0.0F, 0.2F, -0.0F);
+        this.setRotateAngle(arm2b, 0.0F, 0.2F, -0.0F);
+        this.setRotateAngle(arm2c, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(arm2d, 0.0F, -0.2F, -0.0F);
+        this.setRotateAngle(arm2e, 0.0F, -0.2F, -0.0F);
+        this.setRotateAngle(arm3a, 0.0F, 0.2F, -0.0F);
+        this.setRotateAngle(arm3b, 0.0F, 0.2F, -0.0F);
+        this.setRotateAngle(arm3c, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(arm3d, 0.0F, -0.2F, -0.0F);
+        this.setRotateAngle(arm3e, 0.0F, -0.2F, -0.0F);
+        this.setRotateAngle(arm4a, 0.0F, 0.2F, -0.0F);
+        this.setRotateAngle(arm4b, 0.0F, 0.2F, -0.0F);
+        this.setRotateAngle(arm4c, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(arm4d, 0.0F, -0.2F, -0.0F);
+        this.setRotateAngle(arm4e, 0.0F, -0.2F, -0.0F);
+        this.setRotateAngle(arm5a, 0.0F, 0.2F, -0.0F);
+        this.setRotateAngle(arm5b, 0.0F, 0.2F, -0.0F);
+        this.setRotateAngle(arm5c, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(arm5d, 0.0F, -0.2F, -0.0F);
+        this.setRotateAngle(arm5e, 0.0F, -0.2F, -0.0F);
+        //End of pose, now render the model:
+        this.core.render(f);
+        //Reset rotations, positions and sizing:
+        this.core.setScale(1.0F, 1.0F, 1.0F);
+        this.core.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Sphenacomorpha$(br)>Edaphosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Edaphosaurus.png"],
-			"title": "E. cruciger",
-			"text": ""
+			"type": "entity",
+			"name": "E. cruciger",
+			"entity": "lepidodendron:prehistoric_flora_edaphosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_edaphosaurus",
 			"type": "text",
-			"text": "Edaphosaurus was a large herbivorous animal which lived in the earliest Permian period. It had a large sail with many knobs on each spine and was preyed upon by the famous Dimetrodon. Edaphosaurs also existed in the late Carboniferous period, but in this mod are represented there by Remigiomontanus, a smaller sister-species."
+			"text": "Edaphosaurus was a large herbivorous animal which lived in the Lower-most Permian period. It had a large sail with many knobs on each spine and was preyed upon by the famous Dimetrodon. Edaphosaurs also existed in the late Carboniferous period, but in this mod are represented there by Remigiomontanus, a smaller sister-species."
 		},
 		{
 			"type": "lepidodendron:diet",

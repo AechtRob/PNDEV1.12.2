@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_dvinia",
 			"title": "Dvinia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Cynodontia$(br)>Dviniidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Cynodontia$(br)>Dviniidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/dvinia.png"],
-			"title": "D. prima",
-			"text": ""
+			"type": "entity",
+			"name": "D. prima",
+			"entity": "lepidodendron:prehistoric_flora_dvinia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dvinia",
 			"type": "text",
-			"text": "Dvinia is a cynodont found on the northern Dvina River in Russia which lived during the Late Permian period. It was a small omnivore and had a set of small incisors in its mouth."
+			"text": "Dvinia is a cynodont found on the northern Dvina River in Russia which lived during the Upper Permian. It was a small omnivore and had a set of small incisors in its mouth."
 		},
 		{
 			"type": "lepidodendron:diet",

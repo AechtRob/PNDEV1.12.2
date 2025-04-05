@@ -503,6 +503,24 @@ public class ModelDrotops extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Drotops.offsetY = -0.4F;
+        this.Drotops.offsetX = 0.0F;
+        this.Drotops.offsetZ = 2.0F;
+        this.Drotops.rotateAngleY = (float)Math.toRadians(120);
+        this.Drotops.rotateAngleX = (float)Math.toRadians(1);
+        this.Drotops.rotateAngleZ = (float)Math.toRadians(0);
+        this.Drotops.scaleChildren = true;
+        float scaler = 0.8F;
+        this.Drotops.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Drotops, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.Drotops.render(f);
+        //Reset rotations, positions and sizing:
+        this.Drotops.setScale(1.0F, 1.0F, 1.0F);
+        this.Drotops.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

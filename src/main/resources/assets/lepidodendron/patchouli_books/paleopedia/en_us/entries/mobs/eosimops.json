@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_eosimops",
 			"title": "Eosimops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/eosimops.png"],
-			"title": "Eosimops newtoni",
-			"text": ""
+			"type": "entity",
+			"name": "E. newtoni",
+			"entity": "lepidodendron:prehistoric_flora_eosimops",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eosimops",

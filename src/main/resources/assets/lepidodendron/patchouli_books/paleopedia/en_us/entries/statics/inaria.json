@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_inaria",
 			"title": "Inaria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Animalia$(br)>Cnidaria?$(br)>Anthozoa?"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>$(o)Cnidaria (?)"
 		},
 		{
 			"type": "multiblock",

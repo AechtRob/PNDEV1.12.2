@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_elasmodectes",
 			"title": "Elasmodectes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>Chimaeriformes$(br)>Chimaeridae"
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Chimaeriformes$(br)>Chimaeridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/elasmodectes.png"],
-			"title": "E. avitus",
-			"text": ""
+			"type": "entity",
+			"name": "E. avitus",
+			"entity": "lepidodendron:prehistoric_flora_elasmodectes",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_elasmodectes",
 			"type": "text",
-			"text": "Elasmodectes is a Chimaera known from both the late Jurassic and Early Cretaceous. It had a torpedo like body shape and a single long dorsal spine. This animal was pretty small, reaching lengths around 30 centimeters."
+			"text": "Elasmodectes is a Chimaera known from both the Upper Jurassic and Early Cretaceous. It had a torpedo like body shape and a single long dorsal spine. This animal was pretty small, reaching lengths around 30 centimeters."
 		},
 		{
 			"type": "lepidodendron:diet",

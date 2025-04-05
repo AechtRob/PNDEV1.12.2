@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_rangea",
 			"title": "Rangea",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Rangeomorpha"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Rangeomorpha$(br)>Rangeidae"
 		},
 		{
 			"type": "multiblock",

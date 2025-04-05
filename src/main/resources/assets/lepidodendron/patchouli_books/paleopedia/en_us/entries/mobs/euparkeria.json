@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_euparkeria",
 			"title": "Euparkeria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Euparkeriidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauromorpha$(br)>Eucrocopoda$(br)>Euparkeriidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/euparkeria.png"],
-			"title": "E. capensis",
-			"text": ""
+			"type": "entity",
+			"name": "E. capensis",
+			"entity": "lepidodendron:prehistoric_flora_euparkeria",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_euparkeria",
 			"type": "text",
-			"text": "Euparkeria capensis was an early archosauriform reptile that lived during the Early Triassic in what is now the Karoo Basin of South Africa. The sclerotic rings in this animal's skull resemble those of modern nocturnal animals, suggesting it may have been able to see well in low-light conditions, a useful ability to have in the southern latitudes of its home. Its proportionately long hind legs suggest it could be bipedal for short periods of time."
+			"text": "Euparkeria capensis was an early archosauriform reptile that lived during the Upper Triassic in what is now the Karoo Basin of South Africa. The sclerotic rings in this animal's skull resemble those of modern nocturnal animals, suggesting it may have been able to see well in low-light conditions, a useful ability to have in the southern latitudes of its home. Its proportionately long hind legs suggest it could be bipedal for short periods of time."
 		},
 		{
 			"type": "lepidodendron:diet",

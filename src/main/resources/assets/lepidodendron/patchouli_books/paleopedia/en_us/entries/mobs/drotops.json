@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Trilobita$(br)>Phacopida$(br)>Phacopidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/drotops.png"],
-			"title": "D. armatus",
-			"text": ""
+			"type": "entity",
+			"name": "D. armatus",
+			"entity": "lepidodendron:prehistoric_flora_drotops",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_drotops",

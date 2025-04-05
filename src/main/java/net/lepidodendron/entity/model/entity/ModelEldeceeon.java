@@ -367,6 +367,7 @@ public class ModelEldeceeon extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.hips.offsetY = -2.0F;
         this.hips.offsetX = -0.338F;
+        this.hips.offsetZ = 2.5F;
         this.hips.rotateAngleY = (float)Math.toRadians(200);
         this.hips.rotateAngleX = (float)Math.toRadians(18);
         this.hips.rotateAngleZ = (float)Math.toRadians(-8);

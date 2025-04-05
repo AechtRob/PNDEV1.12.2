@@ -445,11 +445,11 @@ public class ModelTrigonotarbid extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -1.5F;
-        this.body.offsetX = 0.3F;
+        this.body.offsetX = 0.8F;
         this.body.rotateAngleY = (float)Math.toRadians(-120);
         this.body.rotateAngleX = (float)Math.toRadians(15);
         this.body.rotateAngleZ = (float)Math.toRadians(-10);
-        float scaler = 6.5F;
+        float scaler = 5.6F;
         this.body.scaleChildren = true;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:

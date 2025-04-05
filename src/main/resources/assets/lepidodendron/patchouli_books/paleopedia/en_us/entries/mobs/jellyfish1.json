@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cretaceous - Present$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Ulmaridae$(br)>$(o)Aurelia"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/jelly_moon.png"],
-			"title": "Aurelia aurita",
-			"text": ""
+			"type": "entity",
+			"name": "A. aurita",
+			"entity": "lepidodendron:prehistoric_flora_jellyfish1",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_jellyfish1",

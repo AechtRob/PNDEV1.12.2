@@ -293,6 +293,54 @@ public class ModelFallacosteus extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Root.offsetY = -1.6F;
+        this.Root.offsetX = 0.0F;
+        this.Root.offsetZ = 2.0F;
+        this.Root.rotateAngleY = (float)Math.toRadians(120);
+        this.Root.rotateAngleX = (float)Math.toRadians(1);
+        this.Root.rotateAngleZ = (float)Math.toRadians(0);
+        this.Root.scaleChildren = true;
+        float scaler = 3.8F;
+        this.Root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Root, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(cube_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(RPectoral, 0.1572F, 0.3614F, -0.233F);
+        this.setRotateAngle(LPectoral, 0.1239F, -0.3736F, 0.3256F);
+        this.setRotateAngle(RGill, 0.0F, -0.1431F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(LGill, 0.0F, 0.1431F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(lips, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -1.0488F, -0.0436F, 0.0756F);
+        this.setRotateAngle(cube_r5, -1.0488F, 0.0436F, -0.0756F);
+        this.setRotateAngle(cube_r6, 0.087F, -0.0511F, 0.0831F);
+        this.setRotateAngle(cube_r7, 0.087F, 0.0511F, -0.0831F);
+        this.setRotateAngle(cube_r8, -0.0349F, 0.0F, 0.0F);
+        this.setRotateAngle(rostrum2, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.0305F, 0.0F, 0.0F);
+        this.setRotateAngle(forehead, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.1134F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.0175F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.1481F, -0.0511F, -0.0831F);
+        this.setRotateAngle(cube_r13, -0.1481F, 0.0511F, 0.0831F);
+        this.setRotateAngle(Body2, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(cube_r14, -0.1091F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.3927F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, -0.48F, 0.0F);
+        this.setRotateAngle(RPelvic, -0.0998F, 0.648F, -0.8189F);
+        this.setRotateAngle(LPelvic, -0.1646F, -0.6364F, 0.927F);
+        //End of pose, now render the model:
+        this.Root.render(f);
+        //Reset rotations, positions and sizing:
+        this.Root.setScale(1.0F, 1.0F, 1.0F);
+        this.Root.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

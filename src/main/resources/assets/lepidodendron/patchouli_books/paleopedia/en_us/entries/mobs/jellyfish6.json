@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_jellyfish6",
 			"title": "Lion's Mane Jelly",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Pleistocene+$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Cyaneidae$(br)>$(o)Cyanea"
+			"text": "$(l)Temporal Range:$() Pleistocene - Present$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Cyaneidae$(br)>$(o)Cyanea"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/jelly_lions.png"],
-			"title": "Cyanea capillata",
-			"text": ""
+			"type": "entity",
+			"name": "C. capillata",
+			"entity": "lepidodendron:prehistoric_flora_jellyfish6",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_jellyfish6",

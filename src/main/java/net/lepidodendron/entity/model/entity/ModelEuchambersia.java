@@ -265,6 +265,55 @@ public class ModelEuchambersia extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Euchambersia.offsetY = -1.2F;
+        this.Euchambersia.offsetX = 1.0F;
+        this.Euchambersia.offsetZ = 2.0F;
+        this.Euchambersia.rotateAngleY = (float)Math.toRadians(120);
+        this.Euchambersia.rotateAngleX = (float)Math.toRadians(1);
+        this.Euchambersia.rotateAngleZ = (float)Math.toRadians(0);
+        this.Euchambersia.scaleChildren = true;
+        float scaler = 2.0F;
+        this.Euchambersia.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Euchambersia, 0.2F, 3.8F, -0.0F);
+        this.Jaw.rotateAngleX = (float) Math.toRadians(32.5);
+        this.Head.rotateAngleX = (float) Math.toRadians(-23.9);
+        this.Head.rotateAngleY = (float) Math.toRadians(-32.6);
+        this.Head.rotateAngleZ = (float) Math.toRadians(13.4);
+        this.Neck.rotateAngleX = (float) Math.toRadians(1.7);
+        this.Neck.rotateAngleY = (float) Math.toRadians(-16.6);
+        this.Neck.rotateAngleZ = (float) Math.toRadians(-5.4);
+        this.Euchambersia.rotateAngleX = (float) Math.toRadians(15);
+        this.Body.rotateAngleX = (float) Math.toRadians(-17.7);
+        this.Body.rotateAngleY = (float) Math.toRadians(12.1);
+        this.Body.rotateAngleZ = (float) Math.toRadians(2.7);
+        this.Body2.rotateAngleX = (float) Math.toRadians(-17.5);
+        this.Body2.rotateAngleZ = (float) Math.toRadians(0);
+        this.Tail.rotateAngleX = (float) Math.toRadians(-13);
+        this.Tail.rotateAngleY = (float) Math.toRadians(11);
+        this.Tail.rotateAngleZ = (float) Math.toRadians(5.8);
+        this.Tail2.rotateAngleX = (float) Math.toRadians(-10);
+        this.Tail2.rotateAngleY = (float) Math.toRadians(7.3);
+        this.Tail2.rotateAngleZ = (float) Math.toRadians(1.3);
+        this.RArm.rotateAngleX = (float) Math.toRadians(62.5);
+        this.RArm2.rotateAngleX = (float) Math.toRadians(-60);
+        this.RHand.rotateAngleX = (float) Math.toRadians(40);
+        this.LArm.rotateAngleX = (float) Math.toRadians(32.5);
+        this.LArm2.rotateAngleX = (float) Math.toRadians(-54.4);
+        this.LHand.rotateAngleX = (float) Math.toRadians(7.5);
+        this.LLeg.rotateAngleX = (float) Math.toRadians(20);
+        this.LLeg2.rotateAngleX = (float) Math.toRadians(47.5);
+        this.LFoot.rotateAngleX = (float) Math.toRadians(-10);
+        this.RLeg.rotateAngleX = (float) Math.toRadians(-10);
+        this.RLeg2.rotateAngleX = (float) Math.toRadians(25);
+        this.RFoot.rotateAngleX = (float) Math.toRadians(5);
+        //End of pose, now render the model:
+        this.Euchambersia.render(f);
+        //Reset rotations, positions and sizing:
+        this.Euchambersia.setScale(1.0F, 1.0F, 1.0F);
+        this.Euchambersia.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 
