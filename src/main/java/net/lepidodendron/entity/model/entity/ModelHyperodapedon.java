@@ -310,6 +310,32 @@ public class ModelHyperodapedon extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.hip.offsetY = 0.4F;
+        this.hip.offsetX = 0.0F;
+        this.hip.offsetZ = 2.0F;
+        this.hip.rotateAngleY = (float)Math.toRadians(120);
+        this.hip.rotateAngleX = (float)Math.toRadians(1);
+        this.hip.rotateAngleZ = (float)Math.toRadians(0);
+        this.hip.scaleChildren = true;
+        float scaler = 0.8F;
+        this.hip.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(hip, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(upperbody, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(neck, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(head, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.3F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, 0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.hip.render(f);
+        //Reset rotations, positions and sizing:
+        this.hip.setScale(1.0F, 1.0F, 1.0F);
+        this.hip.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

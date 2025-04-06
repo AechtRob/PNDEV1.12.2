@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_haldanodon",
 			"title": "Haldanodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Mammaliaformes$(br)>Docodonta$(br)>Docodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Cynodontia$(br)>Mammaliaformes$(br)>Docodonta$(br)>Docodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/haldanodon.png"],
-			"title": "H. exspectatus",
-			"text": ""
+			"type": "entity",
+			"name": "H. exspectatus",
+			"entity": "lepidodendron:prehistoric_flora_hadronector",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_haldanodon",
 			"type": "text",
-			"text": "Haldanodon was a Docodont, a Mammaliaform clade that existed from the Jurassic to Cretaceous. It’s fossils have been found in Portugal and has some of the most complete skull remains of the clade, which has helped with working out Docodonts fit taxonomically."
+			"text": "Haldanodon was a docodont, a mammaliaform clade that existed from the Jurassic to Cretaceous. It’s fossils have been found in Portugal and has some of the most complete skull remains of the clade, which has helped with working out docodonts fit taxonomically."
 		},
 		{
 			"type": "lepidodendron:diet",

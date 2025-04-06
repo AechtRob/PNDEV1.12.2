@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_jamoytius",
 			"title": "Jamoytius",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Jamoytiiformes$(br)>Jamoytiidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Agnatha$(br)>Jamoytiiformes$(br)>Jamoytiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/jamoytius.png"],
-			"title": "J. kerwoodi",
-			"text": ""
+			"type": "entity",
+			"name": "J. kerwoodi",
+			"entity": "lepidodendron:prehistoric_flora_jamoytius",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_jamoytius",
 			"type": "text",
-			"text": "Jamoytius is a 27 cm long eel-like jawless fish from the Patrick Burn Formation of Scotland. It lived in the Early Silurian. Old reconstructions of Jamoytius depict it with side fins extending down the body. Research has revealed those fins to be artifacts of deformation during the process of preservation. It is the oldest known vertebrate with camera-like eyes. Lacking teeth and any dentition in its mouth, it is believed it would've either been a filter feeder or ate detritus."
+			"text": "Jamoytius is a 27 cm long eel-like jawless fish from the Patrick Burn Formation of Scotland. It lived in the Lower Silurian. Old reconstructions of Jamoytius depict it with side fins extending down the body. Research has revealed those fins to be artifacts of deformation during the process of preservation. It is the oldest known vertebrate with camera-like eyes. Lacking teeth and any dentition in its mouth, it is believed it would've either been a filter feeder or ate detritus."
 		},
 		{
 			"type": "lepidodendron:diet",

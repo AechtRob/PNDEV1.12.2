@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_gogonasus",
 			"title": "Gogonasus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Sarcopterygii"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Osteolepiformes$(br)>Osteolepidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/gogonasus.png"],
-			"title": "G. andrewsae",
-			"text": ""
+			"type": "entity",
+			"name": "G. andrewsae",
+			"entity": "lepidodendron:prehistoric_flora_gogonasus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gogonasus",
 			"type": "text",
-			"text": "Gogonasus is a lobe finned fish from the Gogo formation of Australia. It lived in the late Devonian period and its skeleton shows features of tetrapods as well as early forms of the forearm bones. It is believed to be an ambush hunter, using its forelimbs to dart out quickly to catch prey. It is known from a 3 dimensional skeleton."
+			"text": "Gogonasus is a lobe finned fish from the Upper Devonian Gogo formation of Australia. It lived during the Upper Devonian, and its skeleton shows features of tetrapods as well as early forms of the forearm bones. It is believed to be an ambush hunter, using its forelimbs to dart out quickly to catch prey. It is known from a 3 dimensional skeleton."
 		},
 		{
 			"type": "lepidodendron:diet",

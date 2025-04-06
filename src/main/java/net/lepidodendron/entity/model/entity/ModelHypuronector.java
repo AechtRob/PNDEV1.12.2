@@ -475,7 +475,7 @@ public class ModelHypuronector extends ModelBasePalaeopedia {
         this.Hypuronector.rotateAngleX = (float)Math.toRadians(8);
         this.Hypuronector.rotateAngleZ = (float)Math.toRadians(-8);
         this.Hypuronector.scaleChildren = true;
-        float scaler = 4.4F;
+        float scaler = 4.0F;
         this.Hypuronector.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(Hypuronector, 0.2F, 4.4F, 0.2F);

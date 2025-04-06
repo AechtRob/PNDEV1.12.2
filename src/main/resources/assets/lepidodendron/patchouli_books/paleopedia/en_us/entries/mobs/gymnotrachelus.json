@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_gymnotrachelus",
 			"title": "Gymnotrachelus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Selenosteidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Selenosteidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/gymnotrachelus.png"],
-			"title": "G. hydei",
-			"text": ""
+			"type": "entity",
+			"name": "G. hydei",
+			"entity": "lepidodendron:prehistoric_flora_gymnotrachelus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gymnotrachelus",

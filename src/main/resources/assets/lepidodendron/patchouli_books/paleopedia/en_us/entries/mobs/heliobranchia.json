@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Coronatida$(br)>Heliobranchiidae"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/heliobranchia.png"],
-			"title": "H. catalaunica",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "H. catalaunica",
+			"entity": "lepidodendron:prehistoric_flora_heliobranchia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_heliobranchia",

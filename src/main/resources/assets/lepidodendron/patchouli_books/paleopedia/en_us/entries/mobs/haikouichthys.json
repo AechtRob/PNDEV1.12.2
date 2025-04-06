@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Chordata$(br)>Agnatha$(br)>Myllokunmingiida$(br)>Myllokunmingiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/haikouichthys.png"],
-			"title": "H. ercaicunensis",
-			"text": ""
+			"type": "entity",
+			"name": "H. ercaicunensis",
+			"entity": "lepidodendron:prehistoric_flora_haikouichthys",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_haikouichthys",

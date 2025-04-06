@@ -271,6 +271,31 @@ public class ModelHolonema extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.headshield.offsetY = -0.4F;
+        this.headshield.offsetX = 0.5F;
+        this.headshield.offsetZ = 2.0F;
+        this.headshield.rotateAngleY = (float)Math.toRadians(120);
+        this.headshield.rotateAngleX = (float)Math.toRadians(1);
+        this.headshield.rotateAngleZ = (float)Math.toRadians(0);
+        this.headshield.scaleChildren = true;
+        float scaler = 1.0F;
+        this.headshield.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(headshield, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(frontleftfin, 0.2F, 0.3F, 0.0F);
+        this.setRotateAngle(frontrightfin, 0.2F, -0.3F, 0.0F);
+        //End of pose, now render the model:
+        this.headshield.render(f);
+        //Reset rotations, positions and sizing:
+        this.headshield.setScale(1.0F, 1.0F, 1.0F);
+        this.headshield.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

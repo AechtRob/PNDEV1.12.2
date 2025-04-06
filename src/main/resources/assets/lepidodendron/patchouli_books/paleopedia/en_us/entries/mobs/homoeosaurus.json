@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Rhynchocephalia$(br)>Sphenodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/homoeosaurus.png"],
-			"title": "H. maximilliani",
-			"text": ""
+			"type": "entity",
+			"name": "H. maximilliani",
+			"entity": "lepidodendron:prehistoric_flora_homoeosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_homoeosaurus",
 			"type": "text",
-			"text": "Homoeosaurus is a diverse genus of Sphenodont Rhynchocephalians which inhabited the UK, France, and Germany from the Late Jurassic to the Early Cretaceous. Homoeosaurus had a more gracile body plan with a long tail. Unlike Eusphenodontians, Homoeosaurus has three individual teeth on its premaxilia instead of one chisel-like premaxiliary tooth."
+			"text": "Homoeosaurus is a diverse genus of sphenodont rhynchocephalians which inhabited the UK, France, and Germany from the Late Jurassic to the Early Cretaceous. Homoeosaurus had a more gracile body plan with a long tail. Unlike Eusphenodontians, Homoeosaurus has three individual teeth on its premaxilia instead of one chisel-like premaxiliary tooth."
 		},
 		{
 			"type": "lepidodendron:diet",

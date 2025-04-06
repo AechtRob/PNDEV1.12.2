@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Pycnodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/gyrodus.png"],
-			"title": "G. circularis",
-			"text": ""
+			"type": "entity",
+			"name": "G. circularis",
+			"entity": "lepidodendron:prehistoric_flora_gyrodus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gyrodus",
 			"type": "text",
-			"text": "Gyrodus was a genus of pycnodontid fish that lived from the Early Jurassic to the Late Cretaceous. G. circularis was a species within the Gyrodus genus that lived during the Late Jurassic in what is now southern Germany. At nearly 2 metres (6 feet) long, G. circularis was the largest known species within its genus, as well as one of the largest known pycnodontids overall."
+			"text": "Gyrodus was a genus of pycnodontid fish that lived from the Jurassic to the Late Cretaceous. G. circularis was a species within the Gyrodus genus that lived during the Upper Jurassic in what is now southern Germany. At nearly 2 metres (6 feet) long, G. circularis was the largest known species within its genus, as well as one of the largest known pycnodontids overall."
 		},
 		{
 			"type": "lepidodendron:diet",
