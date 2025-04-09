@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pagea",
 			"title": "Pagea",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$br)>Eurypterida$(br)>Stylonuroidea$(br)>Stylonuridae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Eurypterida$(br)>Stylonuroidea$(br)>Stylonuridae"
 		},
 		{
 			"type": "image",

@@ -229,6 +229,33 @@ public class ModelKaibabvenator extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.all.offsetY = 0.2F;
+        this.all.offsetX = 0.3F;
+        this.all.offsetZ = 2.0F;
+        this.all.rotateAngleY = (float)Math.toRadians(120);
+        this.all.rotateAngleX = (float)Math.toRadians(1);
+        this.all.rotateAngleZ = (float)Math.toRadians(0);
+        this.all.scaleChildren = true;
+        float scaler = 0.35F;
+        this.all.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(all, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(lowerjaw, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(pectoralfinL, 0.0F, 0.0F, 0.3054F);
+        this.setRotateAngle(pectoralfinR, 0.0F, 0.0F, -0.3054F);
+        this.setRotateAngle(body2, 0.0F, -0.2182F, 0.0F);
+        this.setRotateAngle(pelvicfinR, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(pelvicfinL, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(body3, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.3491F, 0.0F);
+        //End of pose, now render the model:
+        this.all.render(f);
+        //Reset rotations, positions and sizing:
+        this.all.setScale(1.0F, 1.0F, 1.0F);
+        this.all.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

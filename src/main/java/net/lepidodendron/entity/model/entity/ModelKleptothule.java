@@ -573,16 +573,27 @@ public class ModelKleptothule extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Kleptothule.offsetY = -3.65F;
-        this.Kleptothule.offsetX = -1.00F;
+        this.Kleptothule.offsetY = -2.2F;
+        this.Kleptothule.offsetX = 1.6F;
+        this.Kleptothule.offsetZ = 2.0F;
         this.Kleptothule.rotateAngleY = (float)Math.toRadians(25);
         this.Kleptothule.rotateAngleX = (float)Math.toRadians(-25);
         this.Kleptothule.rotateAngleZ = (float)Math.toRadians(5);
         this.Kleptothule.scaleChildren = true;
-        float scaler = 3.44F;
+        float scaler = 5.6F;
         this.Kleptothule.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Kleptothule, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(head, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body8, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body9, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body10, 0.0F, -0.2F, 0.0F);
         //End of pose, now render the model:
         this.Kleptothule.render(f);
         //Reset rotations, positions and sizing:

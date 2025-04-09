@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Dinocaridida$(br)>Radiodonta$(br)>Anomalocarida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/laminacaris.png"],
-			"title": "L. chimera",
-			"text": ""
+			"type": "entity",
+			"name": "L. chimera",
+			"entity": "lepidodendron:prehistoric_flora_laminacaris",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_laminacaris",

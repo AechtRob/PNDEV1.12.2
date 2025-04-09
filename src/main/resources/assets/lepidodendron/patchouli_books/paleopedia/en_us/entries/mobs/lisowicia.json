@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_lisowicia",
 			"title": "Lisowicia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Synapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Stahleckeriidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Stahleckeriidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/lisowicia.png"],
-			"title": "L. bojani",
-			"text": ""
+			"type": "entity",
+			"name": "L. bojani",
+			"entity": "lepidodendron:prehistoric_flora_lisowicia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lisowicia",
 			"type": "text",
-			"text": "Lisowicia boyani was a dicynodont synapsid that lived during the Late Triassic in what is now Lipie Śląskie in Poland. Standing at an estimated 2 metres (6.6 feet) tall at the hip and 4.5 metres (15 feet) long, and around 5-7 tons in weight, this elephant-sized animal was not only the largest known dicynodont, its size would not be surpassed by any other synapsid "
+			"text": "Lisowicia boyani was a dicynodont synapsid that lived during the Upper Triassic in what is now Lipie Śląskie in Poland. Standing at an estimated 2 metres (6.6 feet) tall at the hip and 4.5 metres (15 feet) long, and around 5-7 tons in weight, this elephant-sized animal was not only the largest known dicynodont, its size would not be surpassed by any other synapsid "
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lisowicia",

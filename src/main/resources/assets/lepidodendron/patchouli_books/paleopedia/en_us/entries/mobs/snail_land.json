@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous - Present$(br2)>Mollusca$(br)>Gastropoda$(br)>Heterobranchia"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/snail_land.png"],
-			"title": "Generic Land Snail",
-			"text": ""
+			"type": "entity",
+			"name": "Generic Land Snail",
+			"entity": "lepidodendron:prehistoric_flora_snail_land",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_snail_land",
 			"type": "text",
-			"text": "Some snails lived on land and didnt spend any time at all in the water where they originated. These are such snails, which are common all over the place and all over the world."
+			"text": "Some snails lived on land and didn't spend any time at all in the water where they originated. These are such snails, which are common all over the place and all over the world."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Triassic - Present$(br2)>Arthropoda$(br)>Chelicerata$(br)>Xiphosura$(br)>Limulidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/limulus.png"],
-			"title": "Limulus",
-			"text": ""
+			"type": "entity",
+			"name": "Limulus",
+			"entity": "lepidodendron:prehistoric_flora_limulid",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_limulid",
