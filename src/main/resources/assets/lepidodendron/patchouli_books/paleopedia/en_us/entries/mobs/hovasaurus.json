@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Permian - Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Tangasauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/hovasaurus.png"],
-			"title": "H. boulei",
-			"text": ""
+			"type": "entity",
+			"name": "H. boulei",
+			"entity": "lepidodendron:prehistoric_flora_hovasaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hovasaurus",
 			"type": "text",
-			"text": "Hovasaurus was a basal diapsid reptile belonging to the family Tangasauridae. It has been found in what is now Madagascar in layers dated to the Late Permian and Early Triassic, giving it status as a survivor of the P-Tr mass extinction. Despite this, Hovasaurus is the youngest identified tangasaurid, leaving no known descendants."
+			"text": "Hovasaurus was a basal diapsid reptile belonging to the family Tangasauridae. It has been found in what is now Madagascar in layers dated to the Upper Permian and Lower Triassic, giving it status as a survivor of the P-Tr mass extinction. Despite this, Hovasaurus is the youngest identified tangasaurid, leaving no known descendants."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hovasaurus",

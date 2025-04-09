@@ -209,6 +209,34 @@ public class ModelEuparkeria extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.bodybase1.offsetY = -0.3F;
+        this.bodybase1.offsetX = 0.25F;
+        this.bodybase1.offsetZ = 2.0F;
+        this.bodybase1.rotateAngleY = (float)Math.toRadians(120);
+        this.bodybase1.rotateAngleX = (float)Math.toRadians(1);
+        this.bodybase1.rotateAngleZ = (float)Math.toRadians(0);
+        this.bodybase1.scaleChildren = true;
+        float scaler = 0.3F;
+        this.bodybase1.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(bodybase1, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(bodybase, -0.05F, 0.5F, 0.0F);
+        this.setRotateAngle(upperbodybase, 0.22F, -0.3F, 0.0F);
+        this.setRotateAngle(upperbody, 0.0F, -0.3F, 0.05F);
+        this.setRotateAngle(neck, -0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(head, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(hindlegR, -0.05F, 0.7F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.6F, 0.0F);
+        //End of pose, now render the model:
+        this.bodybase1.render(f);
+        //Reset rotations, positions and sizing:
+        this.bodybase1.setScale(1.0F, 1.0F, 1.0F);
+        this.bodybase1.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

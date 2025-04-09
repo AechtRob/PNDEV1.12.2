@@ -589,7 +589,7 @@ public class BlockChoia extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Marine Sponge");
-				tooltip.add("Periods: Cambrian");
+				tooltip.add("Periods: Cambrian - Ordovician - Silurian");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

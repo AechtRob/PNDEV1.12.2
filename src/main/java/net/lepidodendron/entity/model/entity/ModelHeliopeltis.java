@@ -487,6 +487,24 @@ public class ModelHeliopeltis extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Heliopeltis.offsetY = -3.4F;
+        this.Heliopeltis.offsetX = 0.0F;
+        this.Heliopeltis.offsetZ = 2.0F;
+        this.Heliopeltis.rotateAngleY = (float)Math.toRadians(120);
+        this.Heliopeltis.rotateAngleX = (float)Math.toRadians(1);
+        this.Heliopeltis.rotateAngleZ = (float)Math.toRadians(0);
+        this.Heliopeltis.scaleChildren = true;
+        float scaler = 4.2F;
+        this.Heliopeltis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Heliopeltis, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.Heliopeltis.render(f);
+        //Reset rotations, positions and sizing:
+        this.Heliopeltis.setScale(1.0F, 1.0F, 1.0F);
+        this.Heliopeltis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

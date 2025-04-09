@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Dinocephalia$(br)>Titanosuchidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/jonkeria.png"],
-			"title": "J. truculenta",
-			"text": ""
+			"type": "entity",
+			"name": "J. truculenta",
+			"entity": "lepidodendron:prehistoric_flora_jonkeria",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_jonkeria",

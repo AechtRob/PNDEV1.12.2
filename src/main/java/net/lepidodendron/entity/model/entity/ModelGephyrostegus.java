@@ -345,6 +345,43 @@ public class ModelGephyrostegus extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.gephyrostegus.offsetY = -1.6F;
+        this.gephyrostegus.offsetX = -0.1F;
+        this.gephyrostegus.offsetZ = 2.0F;
+        this.gephyrostegus.rotateAngleY = (float)Math.toRadians(120);
+        this.gephyrostegus.rotateAngleX = (float)Math.toRadians(1);
+        this.gephyrostegus.rotateAngleZ = (float)Math.toRadians(0);
+        this.gephyrostegus.scaleChildren = true;
+        float scaler = 3.2F;
+        this.gephyrostegus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(gephyrostegus, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(body, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(upperbody, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(frontrightLeg, 0.15F, 0.4F, -0.4F);
+        this.setRotateAngle(frontrightLeg2, -0.25F, 0.0F, 0.4F);
+        this.setRotateAngle(frontrightLeg3, -0.1F, 0.0F, -0.05F);
+        this.setRotateAngle(frontleftLeg, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(frontleftLeg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftLeg3, 0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(backrightleg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg3, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(backleftleg, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(backleftleg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.05F, -0.4F, 0.0F);
+        this.setRotateAngle(tail3, 0.15F, -0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.gephyrostegus.render(f);
+        //Reset rotations, positions and sizing:
+        this.gephyrostegus.setScale(1.0F, 1.0F, 1.0F);
+        this.gephyrostegus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

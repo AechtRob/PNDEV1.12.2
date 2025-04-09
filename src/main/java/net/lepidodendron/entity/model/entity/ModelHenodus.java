@@ -246,6 +246,53 @@ public class ModelHenodus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.henodus.offsetY = -0.9F;
+        this.henodus.offsetX = 0.1F;
+        this.henodus.offsetZ = 2.0F;
+        this.henodus.rotateAngleY = (float)Math.toRadians(120);
+        this.henodus.rotateAngleX = (float)Math.toRadians(1);
+        this.henodus.rotateAngleZ = (float)Math.toRadians(0);
+        this.henodus.scaleChildren = true;
+        float scaler = 1.2F;
+        this.henodus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(henodus, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(shell, 0.2382F, -0.1096F, 0.4232F);
+        this.setRotateAngle(cube_r1, 0.0F, 0.0F, -0.0436F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.0F, 0.0436F);
+        this.setRotateAngle(cube_r3, 0.0F, 0.5236F, -0.0436F);
+        this.setRotateAngle(cube_r4, 0.0F, -0.5236F, 0.0436F);
+        this.setRotateAngle(cube_r5, 0.0F, 0.7854F, -0.0436F);
+        this.setRotateAngle(cube_r6, 0.0F, -0.7854F, 0.0436F);
+        this.setRotateAngle(cube_r7, 0.0F, -0.1309F, -0.0436F);
+        this.setRotateAngle(cube_r8, 0.0F, 0.1309F, 0.0436F);
+        this.setRotateAngle(neck, 0.3934F, -0.1744F, -0.0077F);
+        this.setRotateAngle(cube_r9, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.3237F, -0.3323F, -0.109F);
+        this.setRotateAngle(cube_r10, -0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.18F, -0.3007F, -0.5509F);
+        this.setRotateAngle(cube_r14, 0.18F, 0.3007F, 0.5509F);
+        this.setRotateAngle(jaw, 0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftleg, 0.1309F, -0.3491F, 0.0F);
+        this.setRotateAngle(frontleftleg2, 0.4378F, -0.3751F, -0.7132F);
+        this.setRotateAngle(frontrightleg3, 0.1309F, 0.3491F, 0.0F);
+        this.setRotateAngle(frontrightleg4, 1.3847F, 0.0779F, 1.2752F);
+        this.setRotateAngle(backleftleg, -0.2182F, 0.3054F, 0.0F);
+        this.setRotateAngle(backleftleg2, -0.1808F, 0.1396F, 0.8845F);
+        this.setRotateAngle(backrightleg3, -0.2182F, -0.3054F, 0.0F);
+        this.setRotateAngle(backrightleg4, 0.1897F, -0.1084F, -1.0575F);
+        this.setRotateAngle(tail, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.3491F, 0.0F);
+        //End of pose, now render the model:
+        this.henodus.render(f);
+        //Reset rotations, positions and sizing:
+        this.henodus.setScale(1.0F, 1.0F, 1.0F);
+        this.henodus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

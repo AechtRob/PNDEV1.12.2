@@ -241,7 +241,7 @@ public class ModelDipteronotus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -2.5F;
+        this.body.offsetY = -2.8F;
         this.body.offsetX = 0.55F;
         this.body.rotateAngleY = (float)Math.toRadians(200);
         this.body.rotateAngleX = (float)Math.toRadians(8);

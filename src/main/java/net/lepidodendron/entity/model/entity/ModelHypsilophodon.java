@@ -604,15 +604,16 @@ public class ModelHypsilophodon extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = -0.10F;
-        this.hips.offsetX = 0.0F;
+        this.hips.offsetX = 0.3F;
+        this.hips.offsetZ = 2.0F;
         this.hips.rotateAngleY = (float)Math.toRadians(130);
         this.hips.rotateAngleX = (float)Math.toRadians(0);
         this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;
-        float scaler = 1.0F;
+        float scaler = 0.8F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(hips, 0.2F, 3.8F, -0.0F);
         //End of pose, now render the model:
         this.hips.render(f);
         //Reset rotations, positions and sizing:

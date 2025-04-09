@@ -21,7 +21,27 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_kimberella",
 			"type": "text",
-			"text": "Kimberella was a slug like Ediacaran organism that lived in shallow waters, which were more well oxygenated. It probably grazed on microbial mats as its main source of food."
+			"text": "Kimberella comes from the Upper Ediacaran, with fossils from the White Sea, Russia; Flinders Ranges, Australia and Kushk Series, Iran. It is a small, mollusc-like lifeform, which grew to 15 cm in length. It is a uniquely shaped organism, with the first (and only) interpretation of it being a medusoid form in 1972, and even a trilobite-like form in 1992, although since then a mollusc-like form has been favoured."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kimberella",
+			"type": "text",
+			"text": "This interpretation has been supported by multiple factors, firstly, there are over 1,000 known specimens of Kimberella, allowing its growth and appearance to be studied closely. It has been noted to have a non-mineralised, soft shell, and what seems to be a 'foot', which was frilled. And whilst no radula has been found preserved, the area surrounding alot of Kimberella specimens bear scratch marks,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kimberella",
+			"type": "text",
+			"text": "known as 'Radulichnus' and 'Kimberichnus', which suggests that Kimberella most likely did have a radula. Further studies have suggested that Kimberella may have had a retractable proboscis with hooks on the end, supported by the fact the scratch marks are noted to have been dragged in, whilst modern molluscs push out when feeding, muddying the waters on whether Kimberella is a mollusc or something outside of that group."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kimberella",
+			"type": "text",
+			"text": "But whatever it may be, it is certainly amongst the most interesting Ediacaran lifeforms. The generic name derives from the Latinised surname of Mr. John Kimber, who was an avid collector whom lost their life during an expedition to central Australia some 2 years before Kimberellas discovery, with the original name being 'Kimberia' in 1966, although it was noted this name was already taken by a subgenus of Turritella,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kimberella",
+			"type": "text",
+			"text": "as such, the new generic name 'Kimberella' was put forward in 1972, still honouring Mr. John Kimber, and still in use today."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -305,15 +305,17 @@ public class ModelLimusaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Root.offsetY = -0.50F;
-        this.Root.offsetX = 0.0F;
+        this.Root.offsetY = -0.4F;
+        this.Root.offsetX = 0.1F;
+        this.Root.offsetZ = 2.0F;
         this.Root.rotateAngleY = (float)Math.toRadians(130);
-        this.Root.rotateAngleX = (float)Math.toRadians(9);
-        this.Root.rotateAngleZ = (float)Math.toRadians(-2);
+        this.Root.rotateAngleX = (float)Math.toRadians(0);
+        this.Root.rotateAngleZ = (float)Math.toRadians(0);
         this.Root.scaleChildren = true;
-        float scaler = 1.1F;
+        float scaler = 0.8F;
         this.Root.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(Root, 0.2F, 3.8F, -0.0F);
         this.setRotateAngle(Hips, 0.08F, 0.0F, 0.0F);
         this.setRotateAngle(Body, 0.05F, 0.1F, 0.0F);
         this.setRotateAngle(Chest, 0.1F, 0.3F, 0.0F);

@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Leptolepiformes$(br)>Leptolepidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/leptolepis.png"],
-			"title": "L. coryphaenoides",
-			"text": ""
+			"type": "entity",
+			"name": "L. coryphaenoides",
+			"entity": "lepidodendron:prehistoric_flora_leptolepis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_leptolepis",
 			"type": "text",
-			"text": "Leptolepis was a genus of small, planktivorous, basal teleost (i.e. bony) fish that lived during the Early to Middle Jurassic. The distribution of this superficially herring-like fish seems to have been more or less global, with most of the fossils coming from the northern hemisphere, but a few also being found in Australia."
+			"text": "Leptolepis was a genus of small, planktivorous, basal teleost (i.e. bony) fish that lived during the Lower to Middle Jurassic. The distribution of this superficially herring-like fish seems to have been more or less global, with most of the fossils coming from the northern hemisphere, but a few also being found in Australia."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_leptolepis",

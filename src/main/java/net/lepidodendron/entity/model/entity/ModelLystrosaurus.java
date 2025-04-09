@@ -246,16 +246,16 @@ public class ModelLystrosaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Hips.offsetY = -0.50F;
-        this.Hips.offsetX = 0.0F;
+        this.Hips.offsetY = -0.2F;
+        this.Hips.offsetX = -0.3F;
         this.Hips.rotateAngleY = (float)Math.toRadians(130);
         this.Hips.rotateAngleX = (float)Math.toRadians(9);
         this.Hips.rotateAngleZ = (float)Math.toRadians(-2);
         this.Hips.scaleChildren = true;
-        float scaler = 1.1F;
+        float scaler = 0.8F;
         this.Hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(Hips, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Hips, 0.0F, 3.8F, 0.0F);
         this.setRotateAngle(Bodymiddle, 0.0F, 0.1F, 0.0F);
         this.setRotateAngle(Bodyfront, 0.0F, 0.1F, 0.0F);
         this.setRotateAngle(Neck, 0.0F, 0.1F, 0.0F);

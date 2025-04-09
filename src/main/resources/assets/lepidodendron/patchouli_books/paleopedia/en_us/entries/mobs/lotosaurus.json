@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_lotosaurus",
 			"title": "Lotosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Pseudosuchia$(br)>Paracrocodylomorpha$(br)>Poposauroidea$(br)>Lotosauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Paracrocodylomorpha$(br)>Poposauroidea$(br)>Lotosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/lotosaurus.png"],
-			"title": "L. adentus",
-			"text": ""
+			"type": "entity",
+			"name": "L. adentus",
+			"entity": "lepidodendron:prehistoric_flora_lotosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lotosaurus",

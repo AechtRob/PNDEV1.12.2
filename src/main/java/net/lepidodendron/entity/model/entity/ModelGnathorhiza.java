@@ -240,6 +240,31 @@ public class ModelGnathorhiza extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Bodymiddlefront.offsetY = -2.2F;
+        this.Bodymiddlefront.offsetX = 0.6F;
+        this.Bodymiddlefront.offsetZ = 2.0F;
+        this.Bodymiddlefront.rotateAngleY = (float)Math.toRadians(120);
+        this.Bodymiddlefront.rotateAngleX = (float)Math.toRadians(1);
+        this.Bodymiddlefront.rotateAngleZ = (float)Math.toRadians(0);
+        this.Bodymiddlefront.scaleChildren = true;
+        float scaler = 4.0F;
+        this.Bodymiddlefront.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Bodymiddlefront, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Bodyfront, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(Bodyback, 0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(Headbase, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailmiddlebase, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailmiddleend, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, 0.3F, 0.0F);
+        //End of pose, now render the model:
+        this.Bodymiddlefront.render(f);
+        //Reset rotations, positions and sizing:
+        this.Bodymiddlefront.setScale(1.0F, 1.0F, 1.0F);
+        this.Bodymiddlefront.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

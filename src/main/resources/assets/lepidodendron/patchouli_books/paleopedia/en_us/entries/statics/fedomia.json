@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_fedomia",
 			"title": "Fedomia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Porifera(?)"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>$(o)Porifera (?)"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_fedomia",
 			"type": "text",
-			"text": "Fedomia mikhaili comes from the Upper Ediacaran, with fossils found from the White Sea, Russia. It is a possible sponge-like lifeform that could grow up to 10 cm in height. The generic and specific names derive from Mikhail A. Fedonkin, a well known Ediacaran paleontologist."
+			"text": "Fedomia mikhaili comes from the Upper Ediacaran, with fossils found from the White Sea, Russia. It is a possible sponge-like lifeform that could grow up to 10 cm in height. The generic and specific names derive from Mikhail A. Fedonkin, a well known Russian Ediacaran paleontologist."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_fedomia",

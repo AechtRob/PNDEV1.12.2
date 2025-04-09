@@ -372,6 +372,50 @@ public class ModelLepidaster extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = -2.8F;
+        this.root.offsetX = 0.0F;
+        this.root.offsetZ = 2.0F;
+        this.root.rotateAngleY = (float)Math.toRadians(120);
+        this.root.rotateAngleX = (float)Math.toRadians(1);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
+        this.root.scaleChildren = true;
+        float scaler = 5.2F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(root, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(armb, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(armb2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(armb3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(armb4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(armb5, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(armb6, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(armb7, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(armb8, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(armb9, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(armb10, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(armb11, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(armb12, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(armb13, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(arma, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(arma2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(arma3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(arma4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(arma5, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(arma6, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(arma7, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(arma8, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(arma9, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(arma10, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(arma11, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(arma12, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(arma13, 0.0F, 0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_henodus",
 			"title": "Henodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Sauropterygia$(br)>Placodontia$(br)>Henodontidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Placodontia$(br)>Henodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/henodus.png"],
-			"title": "H. chelyops",
-			"text": ""
+			"type": "entity",
+			"name": "H. chelyops",
+			"entity": "lepidodendron:prehistoric_flora_henodus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_henodus",
 			"type": "text",
-			"text": "Henodus chelyops was a placodont reptile that lived during the Late Triassic in what is now southern Germany. It is the only placodont so far discovered in non-marine deposits, suggesting it lived in brackish or freshwater lagoons. Specialized baleen-like denticles in the animal's mouth suggest it fed by scraping off and filtering algae from the mud."
+			"text": "Henodus chelyops was a placodont reptile that lived during the upper Triassic in what is now southern Germany. It is the only placodont so far discovered in non-marine deposits, suggesting it lived in brackish or freshwater lagoons. Specialized baleen-like denticles in the animal's mouth suggest it fed by scraping off and filtering algae from the mud."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_eastmanosteus",
 			"title": "Eastmanosteus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Dunkleosteidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Dunkleosteidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/eastmanosteus.png"],
-			"title": "E. calliaspis",
-			"text": ""
+			"type": "entity",
+			"name": "E. calliaspis",
+			"entity": "lepidodendron:prehistoric_flora_eastmanosteus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eastmanosteus",
 			"type": "text",
-			"text": "Eastmanosteus is a genus of Placoderm fish from the Middle to Late Devonian of several regions of the world. Perhaps easily recognizable due to its rather obvious relation with the larger and more famous Dunkleosteus, this animal still had its set of unique bony features to distinguish it from the latter, aside from the more visible differences in size."
+			"text": "Eastmanosteus is a genus of placoderm fish from the Middle to Upper Devonian of several regions of the world. Perhaps easily recognizable due to its rather obvious relation with the larger and more famous Dunkleosteus, this animal still had its set of unique bony features to distinguish it from the latter, aside from the more visible differences in size."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eastmanosteus",

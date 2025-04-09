@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Gephyrostegida$(br)>Gephyrostegidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Gephyrostegus.png"],
-			"title": "G. bohemicus",
-			"text": ""
+			"type": "entity",
+			"name": "G. bohemicus",
+			"entity": "lepidodendron:prehistoric_flora_gephyrostegus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gephyrostegus",
 			"type": "text",
-			"text": "Gephyrostegus is a reptiliomorph from the Late Carboniferous. It was very small, only 22cm in length and it is known to have preyed on insects. It may have been semi aquatic, laying eggs in water, but staying mostly on land."
+			"text": "Gephyrostegus is a reptiliomorph from the Upper Carboniferous. It was very small, only 22cm in length and it is known to have preyed on insects. It may have been semi aquatic, laying eggs in water, but staying mostly on land."
 		},
 		{
 			"type": "lepidodendron:diet",

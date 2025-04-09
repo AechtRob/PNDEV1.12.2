@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Acipenseriformes$(br)>Chondrosteidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/gyrosteus.png"],
-			"title": "G. mirabilis",
-			"text": ""
+			"type": "entity",
+			"name": "G. mirabilis",
+			"entity": "lepidodendron:prehistoric_flora_gyrosteus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gyrosteus",
 			"type": "text",
-			"text": "Gyrosteus was an Acipenseriform fish that lived during the Early Jurassic (around 181 million years ago). This large, 6 metre (20 foot) long fish was likely a filter-feeder, with a niche similar to that of a modern whale shark or basking shark. It lived in marine environments in what is now northern Europe, with remains having been found at the Whitby Mudstone Formation in the UK, and near Ahrensburg in northern Germany."
+			"text": "Gyrosteus was an acipenseriform fish that lived during the Lower Jurassic (around 181 million years ago). This large, 6 metre (20 foot) long fish was likely a filter-feeder, with a niche similar to that of a modern whale shark or basking shark. It lived in marine environments in what is now northern Europe, with remains having been found at the Whitby Mudstone Formation in the UK, and near Ahrensburg in northern Germany."
 		},
 		{
 			"type": "lepidodendron:diet",

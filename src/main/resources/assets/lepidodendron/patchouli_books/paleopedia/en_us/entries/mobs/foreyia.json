@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_foreyia",
 			"title": "Foreyia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinistia$(br)>Latimeriidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Sarcopterygii$(br)>Actinistia$(br)>Coelacanthiformes$(br)>Latimeriidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/foreyia.png"],
-			"title": "F. maxkuhni",
-			"text": ""
+			"type": "entity",
+			"name": "F. maxkuhni",
+			"entity": "lepidodendron:prehistoric_flora_foreyia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_foreyia",

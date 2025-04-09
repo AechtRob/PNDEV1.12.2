@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Panarthropoda$(br)>Hallucishaniids$(br)>Hallucigeniidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/hallucigenia.png"],
-			"title": "H. sparsa",
-			"text": ""
+			"type": "entity",
+			"name": "H. sparsa",
+			"entity": "lepidodendron:prehistoric_flora_hallucigenia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hallucigenia",

@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Trilobita$(br)>Phacopida$(br)>Acastidae$(br)>Asteropyginae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/lanceaspis.png"],
-			"title": "L. hammondi",
-			"text": ""
+			"type": "entity",
+			"name": "L. hammondi",
+			"entity": "lepidodendron:prehistoric_flora_lanceaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lanceaspis",

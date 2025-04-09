@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Ctenacanthiformes$(br)>$(o)incertae sedis"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/kaibabvenator.png"],
-			"title": "K. swiftae",
-			"text": ""
+			"type": "entity",
+			"name": "K. swiftae",
+			"entity": "lepidodendron:prehistoric_flora_kaibabvenator",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_kaibabvenator",

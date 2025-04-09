@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Deuterostomia$(br)>Ambulacraria$(br)>Cambroernida$(br)>Eldoniidae"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/Eldonia.png"],
-			"title": "E. ludwigii",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "E. ludwigii",
+			"entity": "lepidodendron:prehistoric_flora_eldonia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eldonia",

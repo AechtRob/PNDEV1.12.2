@@ -280,6 +280,24 @@ public class ModelHelmetia extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Helmetia.offsetY = -0.5F;
+        this.Helmetia.offsetX = 0.0F;
+        this.Helmetia.offsetZ = 2.0F;
+        this.Helmetia.rotateAngleY = (float)Math.toRadians(120);
+        this.Helmetia.rotateAngleX = (float)Math.toRadians(1);
+        this.Helmetia.rotateAngleZ = (float)Math.toRadians(0);
+        this.Helmetia.scaleChildren = true;
+        float scaler = 0.8F;
+        this.Helmetia.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Helmetia, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.Helmetia.render(f);
+        //Reset rotations, positions and sizing:
+        this.Helmetia.setScale(1.0F, 1.0F, 1.0F);
+        this.Helmetia.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

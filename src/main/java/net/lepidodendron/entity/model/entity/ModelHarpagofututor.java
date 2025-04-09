@@ -371,6 +371,7 @@ public class ModelHarpagofututor extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.head.offsetY = -1.3F;
         this.head.offsetX = 1.75F;
+        this.head.offsetZ = 2.0F;
         this.head.rotateAngleY = (float)Math.toRadians(-115);
         this.head.rotateAngleX = (float)Math.toRadians(15);
         this.head.rotateAngleZ = (float)Math.toRadians(-10);
@@ -378,7 +379,11 @@ public class ModelHarpagofututor extends ModelBasePalaeopedia {
         this.head.scaleChildren = true;
         this.head.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(head, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.2F, 0.0F);
         //End of pose, now render the model:
         this.head.render(f);
         //Reset rotations, positions and sizing:

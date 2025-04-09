@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Dryosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/dryosaurus.png"],
-			"title": "D. altus",
-			"text": ""
+			"type": "entity",
+			"name": "D. altus",
+			"entity": "lepidodendron:prehistoric_flora_dryosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dryosaurus",
 			"type": "text",
-			"text": "Dryosaurus is a genus of Dryomorph Iguanodontian from the Late Jurassic of North America. The animal is estimated to have grown to lengths of 3-4 m; due to the lack of preserved adult specimens, this estimate tends to fluctuate depending on the authors."
+			"text": "Dryosaurus is a genus of dryomorph iguanodontian from the Upper Jurassic of North America. The animal is estimated to have grown to lengths of 3-4 m; due to the lack of preserved adult specimens, this estimate tends to fluctuate depending on the authors."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dryosaurus",

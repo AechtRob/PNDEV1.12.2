@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gansuselache",
 			"title": "Gansuselache",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Hybodontiformes$(br)>Lonchidiidae (?)"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Hybodontiformes$(br)>$(o)Lonchidiidae (?)"
 		},
         	{
             "type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_gansuselache",
 			"type": "text",
-			"text": "Gansuselache is a Triassic Hybodont from the Gansu province of China. It was previously interpreted as being from the Permian, but is now known to have lived in the earliest Triassic. They grew to almost 50 cm long and it had large eyes and a round body. This fish would have lived in lacustrine environments, alongside Eochondrosteus."
+			"text": "Gansuselache is a Triassic hybodont from the Gansu province of China. It was previously interpreted as being from the Permian, but is now known to have lived in the earliest Triassic. They grew to almost 50 cm long and it had large eyes and a round body. This fish would have lived in lacustrine environments, alongside Eochondrosteus."
 		},
 		{
 			"type": "lepidodendron:diet",

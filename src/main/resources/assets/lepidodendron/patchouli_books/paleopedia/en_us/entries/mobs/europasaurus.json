@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropoda$(br)>Camarasauromorpha"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/europasaurus.png"],
-			"title": "E. holgeri",
-			"text": ""
+			"type": "entity",
+			"name": "E. holgeri",
+			"entity": "lepidodendron:prehistoric_flora_europasaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_europasaurus",

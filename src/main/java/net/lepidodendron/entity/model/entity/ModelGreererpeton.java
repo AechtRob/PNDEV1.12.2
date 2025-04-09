@@ -348,6 +348,44 @@ public class ModelGreererpeton extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hips.offsetY = -1.2F;
+        this.Hips.offsetX = 0.2F;
+        this.Hips.offsetZ = 2.0F;
+        this.Hips.rotateAngleY = (float)Math.toRadians(120);
+        this.Hips.rotateAngleX = (float)Math.toRadians(1);
+        this.Hips.rotateAngleZ = (float)Math.toRadians(0);
+        this.Hips.scaleChildren = true;
+        float scaler = 1.2F;
+        this.Hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Hips, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Tail, -0.05F, 0.02F, 0.02F);
+        this.setRotateAngle(Tail2, -0.07F, 0.05F, 0.04F);
+        this.setRotateAngle(Tail3, 0.02F, -0.08F, 0.06F);
+        this.setRotateAngle(Tail4, 0.05F, -0.09F, 0.08F);
+        this.setRotateAngle(UpperLegR, 0.0F, 0.9F, -0.5F);
+        this.setRotateAngle(LowerLegR, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(FootR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegL, 0.0F, -0.9F, 0.5F);
+        this.setRotateAngle(LowerLegL, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(FootL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.05F, -0.08F, -0.02F);
+        this.setRotateAngle(Body, 0.09F, 0.1F, -0.03F);
+        this.setRotateAngle(Chest, 0.03F, 0.0F, -0.04F);
+        this.setRotateAngle(Head, 0.0F, 0.07F, 0.0F);
+        this.setRotateAngle(UpperArmR, -0.0F, 0.9F, -0.5F);
+        this.setRotateAngle(LowerArmR, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(HandR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmL, 0.0F, -0.9F, 0.5F);
+        this.setRotateAngle(LowerArmL, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(HandL, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hips.setScale(1.0F, 1.0F, 1.0F);
+        this.Hips.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

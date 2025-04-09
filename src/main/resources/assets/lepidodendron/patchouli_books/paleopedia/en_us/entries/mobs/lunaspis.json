@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Petalichthyida$(br)>Macropetalichthyidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/lunaspis.png"],
-			"title": "L. broili",
-			"text": ""
+			"type": "entity",
+			"name": "L. broili",
+			"entity": "lepidodendron:prehistoric_flora_lunaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lunaspis",

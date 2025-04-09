@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Neopterygii$(br)>Colobodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/feroxichthys.png"],
-			"title": "F. panzhouensis",
-			"text": ""
+			"type": "entity",
+			"name": "F. panzhouensis",
+			"entity": "lepidodendron:prehistoric_flora_feroxichthys",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_feroxichthys",
 			"type": "text",
-			"text": "Feroxichthys is a genus of Colobodontid Actinopterygian from the Middle Triassic of China. 30-40 cm in length, Feroxichthys had a blunt head and a fusiform body ending in a short heterocercal tail that began developing right after the end of the pelvic fins."
+			"text": "Feroxichthys is a genus of colobodontid actinopterygian from the Middle Triassic of China. 30-40 cm in length, Feroxichthys had a blunt head and a fusiform body ending in a short heterocercal tail that began developing right after the end of the pelvic fins."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_feroxichthys",

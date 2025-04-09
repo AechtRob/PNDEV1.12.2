@@ -1072,6 +1072,34 @@ public class ModelDiania extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.bone.offsetY = -0.4F;
+        this.bone.offsetX = 0.0F;
+        this.bone.offsetZ = 2.0F;
+        this.bone.rotateAngleY = (float)Math.toRadians(120);
+        this.bone.rotateAngleX = (float)Math.toRadians(1);
+        this.bone.rotateAngleZ = (float)Math.toRadians(0);
+        this.bone.scaleChildren = true;
+        float scaler = 0.2F;
+        this.bone.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(bone, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(body4, -0.3F, 0.1F, 0.0F);
+        this.setRotateAngle(body5, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(back, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(back2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(back3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(back4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(back5, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.bone.render(f);
+        //Reset rotations, positions and sizing:
+        this.bone.setScale(1.0F, 1.0F, 1.0F);
+        this.bone.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

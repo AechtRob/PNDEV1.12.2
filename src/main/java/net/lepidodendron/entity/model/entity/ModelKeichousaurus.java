@@ -217,6 +217,42 @@ public class ModelKeichousaurus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Keichousaurus.offsetY = -1.4F;
+        this.Keichousaurus.offsetX = -0.4F;
+        this.Keichousaurus.offsetZ = 2.0F;
+        this.Keichousaurus.rotateAngleY = (float)Math.toRadians(120);
+        this.Keichousaurus.rotateAngleX = (float)Math.toRadians(1);
+        this.Keichousaurus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Keichousaurus.scaleChildren = true;
+        float scaler = 1.4F;
+        this.Keichousaurus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Keichousaurus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(upperbody, -0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(neck2, 0.15F, 0.2F, 0.0F);
+        this.setRotateAngle(head, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(lowerJaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(leftleg, 0.1F, 0.5F, 0.4F);
+        this.setRotateAngle(leftleg2, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(rightleg3, 0.1F, -0.7F, -0.4F);
+        this.setRotateAngle(rightleg4, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(leftarm, 0.3F, -0.5F, 0.2F);
+        this.setRotateAngle(leftarm2, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(rightarm3, 0.5F, 0.5F, 0.1F);
+        this.setRotateAngle(rightarm4, 0.0F, 0.3F, 0.0F);
+        //End of pose, now render the model:
+        this.Keichousaurus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Keichousaurus.setScale(1.0F, 1.0F, 1.0F);
+        this.Keichousaurus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

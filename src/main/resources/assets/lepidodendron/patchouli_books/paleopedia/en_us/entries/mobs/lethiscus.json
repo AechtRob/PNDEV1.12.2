@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lethiscus",
 			"title": "Lethiscus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$()  Carboniferous$(br2)>Chordata$(br)>Aistopoda$(br)>Lethiscidae"
+			"text": "$(l)Temporal Range:$()  Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Aistopoda$(br)>Lethiscidae"
 		},
         	{
             "type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_lethiscus",
 			"type": "text",
-			"text": "Lethiscus is a genus from the order Aistopoda from the Carboniferous Wardie Shale in Scotland. Aistopoda is an order of highly specialized snake-like stegocephalians, and Lethiscus is its earliest representative. Even with how old Lethiscus is, being one of the oldest known post Devonian tetrapods, it was already a highly advanced animal."
+			"text": "Lethiscus is a genus from the order aistopoda from the Carboniferous Wardie Shale in Scotland. Aistopoda is an order of highly specialized snake-like stegocephalians, and Lethiscus is its earliest representative. Even with how old Lethiscus is, being one of the oldest known post Devonian tetrapods, it was already a highly advanced animal."
 		},
 		{
 			"type": "lepidodendron:diet",

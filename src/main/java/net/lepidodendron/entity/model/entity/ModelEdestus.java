@@ -194,6 +194,24 @@ public class ModelEdestus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Bodyfront.offsetY = 1.25F;
+        this.Bodyfront.offsetX = 0.075F;
+        this.Bodyfront.offsetZ = 2.0F;
+        this.Bodyfront.rotateAngleY = (float)Math.toRadians(120);
+        this.Bodyfront.rotateAngleX = (float)Math.toRadians(1);
+        this.Bodyfront.rotateAngleZ = (float)Math.toRadians(0);
+        this.Bodyfront.scaleChildren = true;
+        float scaler = 0.25F;
+        this.Bodyfront.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Bodyfront, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.Bodyfront.render(f);
+        //Reset rotations, positions and sizing:
+        this.Bodyfront.setScale(1.0F, 1.0F, 1.0F);
+        this.Bodyfront.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

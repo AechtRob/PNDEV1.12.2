@@ -448,6 +448,24 @@ public class ModelIsotelus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Isotelus.offsetY = -0.4F;
+        this.Isotelus.offsetX = 0.0F;
+        this.Isotelus.offsetZ = 2.0F;
+        this.Isotelus.rotateAngleY = (float)Math.toRadians(120);
+        this.Isotelus.rotateAngleX = (float)Math.toRadians(1);
+        this.Isotelus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Isotelus.scaleChildren = true;
+        float scaler = 0.8F;
+        this.Isotelus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Isotelus, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.Isotelus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Isotelus.setScale(1.0F, 1.0F, 1.0F);
+        this.Isotelus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

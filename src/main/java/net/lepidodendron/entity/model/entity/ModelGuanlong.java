@@ -663,15 +663,16 @@ public class ModelGuanlong extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = 0.00F;
-        this.root.offsetX = 0.0F;
+        this.root.offsetY = 0.2F;
+        this.root.offsetX = 0.4F;
         this.root.rotateAngleY = (float)Math.toRadians(280);
         this.root.rotateAngleX = (float)Math.toRadians(-1);
         this.root.rotateAngleZ = (float)Math.toRadians(12);
         this.root.scaleChildren = true;
-        float scaler = 0.7F;
+        float scaler = 0.5F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(root, 0.2F, 4.5F, -0.0F);
         this.setRotateAngle(Upperjawfront, 0.0424F, 0.0F, 0.0F);
         this.setRotateAngle(Upperjawbase, 0.4245F, 0.0F, 0.0F);
         this.setRotateAngle(Upperbackteeth, 0.1061F, 0.0F, 0.0F);
@@ -685,7 +686,6 @@ public class ModelGuanlong extends ModelBasePalaeopedia {
         this.setRotateAngle(Tailend, -0.0634F, 0.3054F, -0.0059F);
         this.setRotateAngle(Tailbasemohawk, -0.0637F, 0.0F, 0.0F);
         this.setRotateAngle(Tailbase, -0.1531F, 0.1301F, -0.0143F);
-        //this.setRotateAngle(root, 0.2182F, 0.0F, 0.0F);
         this.setRotateAngle(Rightupperfrontteeth, -0.0424F, -0.0424F, 0.0F);
         this.setRotateAngle(Rightupperarm, 0.6096F, -0.1485F, 0.1911F);
         this.setRotateAngle(Rightthighfluff, 0.1061F, 0.0637F, 0.3183F);

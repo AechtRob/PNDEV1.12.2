@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Goniatitida$(br)>Pseudohaloritidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/elephantoceras.png"],
-			"title": "E. spinonodosum",
-			"text": ""
+			"type": "entity",
+			"name": "E. spinonodosum",
+			"entity": "lepidodendron:prehistoric_flora_elephantoceras",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_elephantoceras",

@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Neornithischia"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/kulindadromeus.png"],
-			"title": "K. zabaikalicus",
-			"text": ""
+			"type": "entity",
+			"name": "K. zabaikalicus",
+			"entity": "lepidodendron:prehistoric_flora_kulindadromeus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_kulindadromeus",
@@ -25,7 +26,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_kulindadromeus",
 			"type": "text",
-			"text": "lower parts of the legs and arms), implying that they may have been a basal trait to the Ornithischia and possibly even the wider Dinosauria as a whole. Kulindadromeus is also featured on the flag and coat of arms of the Chernyshevsky District, where its fossils were discovered."
+			"text": "lower parts of the legs and arms), implying that they may have been a basal trait to the ornithischia and possibly even the wider dinosauria as a whole. Kulindadromeus is also featured on the flag and coat of arms of the Chernyshevsky District, where its fossils were discovered."
 		},
 		{
 			"type": "lepidodendron:diet",

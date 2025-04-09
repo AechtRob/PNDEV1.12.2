@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_heterodontosaurus",
 			"type": "text",
-			"text": "Heterodontosaurus tucki is a species of Heterodontosaurian dinosaur from the Early Jurassic of South Africa. This genus, eponymous to its own family, is the better known among it's kin and was only one of four genera of Heterodontosaurians to have been discovered in the formation it comes from."
+			"text": "Heterodontosaurus tucki is a species of heterodontosaurian dinosaur from the Lower Jurassic of South Africa. This genus, eponymous to its own family, is the better known among its kin and was only one of four genera of heterodontosaurians to have been discovered in the formation it comes from."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_heterodontosaurus",
@@ -31,7 +31,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_heterodontosaurus",
 			"type": "text",
-			"text": "most commonly seen in animals who chew vegetation and a set of upper incisors which would hit against the lower predentary bone characteristic of Ornithischians. Originally described in 1962, the animal was named before the holotype was fully prepared as the authors recognized the importance of the discovery, being one of the first basal ornithischians found at the time."
+			"text": "most commonly seen in animals who chew vegetation and a set of upper incisors which would hit against the lower predentary bone characteristic of ornithischians. Originally described in 1962, the animal was named before the holotype was fully prepared as the authors recognized the importance of the discovery, being one of the first basal ornithischians found at the time."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_heterodontosaurus",
@@ -41,7 +41,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_heterodontosaurus",
 			"type": "text",
-			"text": "While we know Heterodontosaurids to have been basal Ornithischians, their placement in relation with later ones is still a topic of debate today. Despite its small size, Heterodontosaurus remains among the largest of its peers, the group containing some of the smallest ornithischians known today."
+			"text": "While we know heterodontosaurids to have been basal ornithischians, their placement in relation with later ones is still a topic of debate today. Despite its small size, Heterodontosaurus remains among the largest of its peers, the group containing some of the smallest ornithischians known today."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -293,6 +293,46 @@ public class ModelLisowicia extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = 0.2F;
+        this.root.offsetX = -0.2F;
+        this.root.offsetZ = 2.0F;
+        this.root.rotateAngleY = (float)Math.toRadians(120);
+        this.root.rotateAngleX = (float)Math.toRadians(1);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
+        this.root.scaleChildren = true;
+        float scaler = 0.8F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(root, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(basin, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, 0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(neck1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(head1, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw1, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.7F, 0.0F, 0.1F);
+        this.setRotateAngle(tail2, 0.2F, 0.0F, 0.3F);
+        this.setRotateAngle(upperleg1, 0.0F, 0.0F, 0.1F);
+        this.setRotateAngle(leg1, 1.3F, 0.3F, 0.0F);
+        this.setRotateAngle(foot1, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(toes1, 1.6F, 0.0F, 0.0F);
+        this.setRotateAngle(upperleg2, -0.8F, -0.1F, -0.1F);
+        this.setRotateAngle(leg2, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(foot2, -1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(toes2, 1.55F, 0.0F, 0.0F);
+        this.setRotateAngle(upperarm1, 0.5F, -0.2F, 0.3F);
+        this.setRotateAngle(arm1, -1.3F, -0.2F, -0.2F);
+        this.setRotateAngle(hand1, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(upperarm2, -0.4F, 0.2F, -0.3F);
+        this.setRotateAngle(arm2, -0.5F, -0.2F, 0.2F);
+        this.setRotateAngle(hand2, 0.9F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

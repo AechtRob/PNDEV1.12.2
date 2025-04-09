@@ -514,6 +514,32 @@ public class ModelListracanthus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.bodybase.offsetY = -0.2F;
+        this.bodybase.offsetX = 0.8F;
+        this.bodybase.offsetZ = 2.0F;
+        this.bodybase.rotateAngleY = (float)Math.toRadians(120);
+        this.bodybase.rotateAngleX = (float)Math.toRadians(1);
+        this.bodybase.rotateAngleZ = (float)Math.toRadians(0);
+        this.bodybase.scaleChildren = true;
+        float scaler = 0.35F;
+        this.bodybase.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(bodybase, 0.6F, 3.2F, -0.2F);
+        this.jaw.rotateAngleX = (float) Math.toRadians(20);
+        this.body.rotateAngleY = (float) Math.toRadians(15);
+        this.body2.rotateAngleY = (float) Math.toRadians(10);
+        this.body3.rotateAngleY = (float) Math.toRadians(10);
+        this.body4.rotateAngleY = (float) Math.toRadians(18);
+        this.body5.rotateAngleY = (float) Math.toRadians(20);
+        this.body6.rotateAngleY = (float) Math.toRadians(20);
+        this.body7.rotateAngleY = (float) Math.toRadians(24);
+        //End of pose, now render the model:
+        this.bodybase.render(f);
+        //Reset rotations, positions and sizing:
+        this.bodybase.setScale(1.0F, 1.0F, 1.0F);
+        this.bodybase.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

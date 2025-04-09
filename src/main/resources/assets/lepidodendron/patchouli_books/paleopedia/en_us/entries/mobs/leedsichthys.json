@@ -12,30 +12,31 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Pachycormiformes$(br)>Pachycormidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/leedsichthys.png"],
-			"title": "L. problematicus",
-			"text": ""
+			"type": "entity",
+			"name": "L. problematicus",
+			"entity": "lepidodendron:prehistoric_flora_leedsichthys",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_leedsichthys",
 			"type": "text",
-			"text": "Leedsichthys problematicus is a species of giant Pachycormid ray finned fish from the middle to late Jurassic of Europe and South America. While there is no single agreed upon size range this fish could reach, what we know is this animal could reach potentially truly enormous sizes, exceeding even the largest living fish today, the Whale Shark. First discovered in the 1880s by Alfred Nicholson Leeds, the first fragmentary remains of this animal where informally known as \"Leed's fish\"."
+			"text": "Leedsichthys problematicus is a species of giant pachycormid ray finned fish from the Middle - Upper Jurassic of Europe and South America. While there is no single agreed upon size range this fish could reach, what we know is this animal could reach potentially truly enormous sizes, exceeding even the largest living fish today, the Whale Shark. First discovered in the 1880s by Alfred Nicholson Leeds, the first fragmentary remains of this animal where informally known as \"Leed's fish\"."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_leedsichthys",
 			"type": "text",
-			"text": "Due to the nature of this animal's skeletal anatomy, only parts of it are optimal for preservation and thus we don't actually have the whole animal but rather a series of body pieces from specimens found over the world. Thanks to the wealth of specimens we have, more than seventy by now, we have been able over the years to reconstruct an imperfect image of this creature. From the remains we do have of Leedsichthys we are able to reconstruct an animal potentially up to 14 m in length, maybe more, with a "
+			"text": "Due to the nature of this animal's skeletal anatomy, only parts of it are optimal for preservation and thus we don't actually have the whole animal but rather a series of body pieces from specimens found over the world. Thanks to the wealth of specimens we have, more than seventy by now, we have been able over the years to reconstruct an imperfect image of this creature. From the remains we do have of Leedsichthys we are able to reconstruct an animal potentially up to 14 m in length,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_leedsichthys",
 			"type": "text",
-			"text": "powerful and tall caudal fin, large pectoral fins and gill arches lined with gill rakers specifically adapted to aid the creature in filtering water for plankton. Aside from non ossified remains of the animal, such as the spine, which have difficulties preserving in the fossil record, this animal's ossified tissues would also hollow out with age, which would lead to these bones cracking and breaking under the pressures they would go through during fossilization, making it even harder to study this animal thoroughly."
+			"text": "maybe more, with a powerful and tall caudal fin, large pectoral fins and gill arches lined with gill rakers specifically adapted to aid the creature in filtering water for plankton. Aside from non ossified remains of the animal, such as the spine, which have difficulties preserving in the fossil record, this animal's ossified tissues would also hollow out with age, which would lead to these bones cracking and breaking under the pressures they would go through during fossilization,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_leedsichthys",
 			"type": "text",
-			"text": "Our modern understanding of this animal is not solely due to its remains, however, as a great degree of study over better preserved relatives of it allowed us to speculate on the unknown parts. Due to the great amount of unknowns, reconstructions of the species vary wildly from author to author and to this day Leedsichthys still remains a bit of a problematic genus."
+			"text": "making it even harder to study this animal thoroughly. Our modern understanding of this animal is not solely due to its remains, however, as a great degree of study over better preserved relatives of it allowed us to speculate on the unknown parts. Due to the great amount of unknowns, reconstructions of the species vary wildly from author to author and to this day Leedsichthys still remains a bit of a problematic genus."
 		},
 		{
 			"type": "lepidodendron:diet",

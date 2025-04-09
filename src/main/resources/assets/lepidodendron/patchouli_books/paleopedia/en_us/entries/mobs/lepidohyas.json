@@ -9,7 +9,7 @@
 "trigger": "lepidodendron:pf_adv_book_lepidohyas",
 "title": "Lepidohyas",
 "type": "quest",
-"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Semionoformes"
+"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Semionoformes"
 },
         {
             "type": "entity",
@@ -21,7 +21,7 @@
 {
 "advancement": "lepidodendron:pf_adv_book_lepidohyas",
 "type": "text",
-"text": "Lepidohyas is a genus of Semionoform fish from the Early Cretaceous of Europe. It inhabited the freshwaters of Las Hoyas Spain. Lepidohyas was originally described as a genus of Lepidotes, however it has since been reassigned to Lepdiohyas as we know it today."
+"text": "Lepidohyas is a genus of semionoform fish from the Early Cretaceous of Europe. It inhabited the freshwaters of Las Hoyas Spain. Lepidohyas was originally described as a genus of Lepidotes, however it has since been reassigned to Lepdiohyas as we know it today."
 },
 {
 "type": "lepidodendron:diet",

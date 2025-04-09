@@ -12,30 +12,26 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>Ligulelliformes$(br)>Ligulellidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ligulella.png"],
-			"title": "L. sluysi",
-			"text": ""
+			"type": "entity",
+			"name": "L. sluysi",
+			"entity": "lepidodendron:prehistoric_flora_ligulella",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ligulella",
 			"type": "text",
-			"text": "Ligulella sluysi is a species of Ligulelliform Teleost fish from the Middle Jurassic of Congo. This very small freshwater animal, often not longer than 5 cm, was described in 1955 on the basis of more than 100 specimens coming from the Kisangani formation (formerly known as the Stanleyville formation), once part of a riverine and lacustrine environment."
+			"text": "Ligulella sluysi is a species of Ligulelliform Teleost fish from the Middle Jurassic of Congo. This very small freshwater animal, often not longer than 5 cm, was described in 1955 on the basis of more than 100 specimens coming from the Kisangani formation (formerly known as the Stanleyville formation), once part of a riverine and lacustrine environment. Immediately apparent when looking at this tiny animal is the head, ornamented by a shield-like skull roof,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ligulella",
 			"type": "text",
-			"text": "Immediately apparent when looking at this tiny animal is the head, ornamented by a shield-like skull roof, topped with a thin layer of ganoin which gave it a rather atypical armored appearance; this ganoin roof would grow in such a way as to create a fringe of hard bony spines along the borders of the head, the function of which is unknown."
+			"text": "topped with a thin layer of ganoin which gave it a rather atypical armored appearance; this ganoin roof would grow in such a way as to create a fringe of hard bony spines along the borders of the head, the function of which is unknown. This animal was first described as part of the Pachycormiformes, the same group of teleosts in which rest more famous animals such as Leedsichthys and Protosphyraena. With the description of a second species of this animal, however,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ligulella",
 			"type": "text",
-			"text": "This animal was first described as part of the Pachycormiformes, the same group of Teleosts in which rest more famous animals such as Leedsichthys and Protosphyraena. With the description of a second species of this animal, however, it became apparent this little fish couldn't be housed alongside those other Teleosts and so,"
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_ligulella",
-			"type": "text",
-			"text": "in a third paper by the same author, this little animal found itself to be collocated in an entire order for itself. The second species of Ligulella has since been synonymized into the first making Ligulella sluysi the only known genus and species inside the Ligulelliformes order."
+			"text": "it became apparent this little fish couldn't be housed alongside those other teleosts and so, in a third paper by the same author, this little animal found itself to be collocated in an entire order for itself. The second species of Ligulella has since been synonymized into the first making Ligulella sluysi the only known genus and species inside the Ligulelliformes order."
 		},
 		{
 			"type": "lepidodendron:diet",

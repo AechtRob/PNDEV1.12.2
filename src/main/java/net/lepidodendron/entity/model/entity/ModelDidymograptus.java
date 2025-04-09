@@ -82,6 +82,24 @@ public class ModelDidymograptus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.full.offsetY = -0.2F;
+        this.full.offsetX = -0.2F;
+        this.full.offsetZ = 2.0F;
+        this.full.rotateAngleY = (float)Math.toRadians(120);
+        this.full.rotateAngleX = (float)Math.toRadians(1);
+        this.full.rotateAngleZ = (float)Math.toRadians(0);
+        this.full.scaleChildren = true;
+        float scaler = 3.2F;
+        this.full.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(full, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.full.render(f);
+        //Reset rotations, positions and sizing:
+        this.full.setScale(1.0F, 1.0F, 1.0F);
+        this.full.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

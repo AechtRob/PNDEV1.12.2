@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous - Triassic$(br2)>Chordata$(br)>Sarcopterygii$(br)>Dipnoi$(br)>Gnathorhizidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/gnathorhiza.png"],
-			"title": "G. serrata",
-			"text": ""
+			"type": "entity",
+			"name": "G. serrata",
+			"entity": "lepidodendron:prehistoric_flora_gnathorhiza",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gnathorhiza",
 			"type": "text",
-			"text": "Gnathorhiza is a prehistoric lungfish from the Carboniferous to Early Triassic periods. It had a long and slender body with a pair of long fins which it may have used to help it walk underwater and potentially on land for brief periods."
+			"text": "Gnathorhiza is a prehistoric lungfish from the Carboniferous to Lower Triassic periods. It had a long and slender body with a pair of long fins which it may have used to help it walk underwater and potentially on land for brief periods."
 		},
 		{
 			"type": "lepidodendron:diet",

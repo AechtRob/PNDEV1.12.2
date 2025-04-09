@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_otavia",
 			"title": "Otavia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic$(br2)$(l)Habitat:$() Marine$(br2)>Porifera?"
+			"text": "$(l)Temporal Range:$() Neoproterozoic$(br2)$(l)Habitat:$() Marine$(br2)>$(o)Porifera (?)"
 		},
 		{
 			"type": "multiblock",

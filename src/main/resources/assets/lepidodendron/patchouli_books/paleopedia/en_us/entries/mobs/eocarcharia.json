@@ -9,7 +9,7 @@
 "trigger": "lepidodendron:pf_adv_book_eocarcharia",
 "title": "Eocarcharia",
 "type": "quest",
-"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Carcharodontosauridae"
+"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Carcharodontosauridae"
 },
         {
             "type": "entity",

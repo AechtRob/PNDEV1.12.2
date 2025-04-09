@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Ordovician - Devonian$(br2)>Mollusuca$(br)>Cephalopoda$(br)>Actinocerida$(br)>Ormoceratidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/deiroceras.png"],
-			"title": "D. hollardi",
-			"text": ""
+			"type": "entity",
+			"name": "D. hollardi",
+			"entity": "lepidodendron:prehistoric_flora_deiroceras",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_deiroceras",

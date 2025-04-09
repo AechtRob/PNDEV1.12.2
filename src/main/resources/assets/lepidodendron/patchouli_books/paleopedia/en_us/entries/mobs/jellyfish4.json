@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "entity",
-			"name": "Rhizostoma pulmo",
+			"name": "R. pulmo",
 			"entity": "lepidodendron:prehistoric_flora_jellyfish4",
 			"rotate": false,
 			"default_rotation": 0

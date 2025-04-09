@@ -71,6 +71,24 @@ public class ModelLandSnail extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Snail.offsetY = -0.1F;
+        this.Snail.offsetX = 0.1F;
+        this.Snail.offsetZ = 2.0F;
+        this.Snail.rotateAngleY = (float)Math.toRadians(120);
+        this.Snail.rotateAngleX = (float)Math.toRadians(1);
+        this.Snail.rotateAngleZ = (float)Math.toRadians(0);
+        this.Snail.scaleChildren = true;
+        float scaler = 2.2F;
+        this.Snail.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Snail, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.Snail.render(f);
+        //Reset rotations, positions and sizing:
+        this.Snail.setScale(1.0F, 1.0F, 1.0F);
+        this.Snail.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -484,7 +484,7 @@ public class ModelDubreuillosaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Hips.offsetY = 0.3F;
-        this.Hips.offsetX = 0.9F;
+        this.Hips.offsetX = 1.0F;
         this.Hips.rotateAngleY = (float)Math.toRadians(-150);
         this.Hips.rotateAngleX = (float)Math.toRadians(6);
         this.Hips.rotateAngleZ = (float)Math.toRadians(-2);

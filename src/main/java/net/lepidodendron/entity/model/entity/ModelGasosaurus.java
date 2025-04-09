@@ -467,6 +467,41 @@ public class ModelGasosaurus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = 0.2F;
+        this.root.offsetX = 0.35F;
+        this.root.offsetZ = 2.0F;
+        this.root.rotateAngleY = (float)Math.toRadians(120);
+        this.root.rotateAngleX = (float)Math.toRadians(1);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
+        this.root.scaleChildren = true;
+        float scaler = 0.6F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(root, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(hips, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, -0.15F, 0.0F);
+        this.setRotateAngle(tail3, 0.03F, -0.1F, 0.0F);
+        this.setRotateAngle(tail4, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(tail5, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(leftLeg, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg2, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg3, -0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg4, 0.65F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg, 0.2F, 0.2F, 0.15F);
+        this.setRotateAngle(rightLeg2, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg3, -1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg4, 0.68F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm, -0.2F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

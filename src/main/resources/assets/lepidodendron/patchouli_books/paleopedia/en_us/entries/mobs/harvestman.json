@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_harvestman",
 			"title": "Harvestman",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian - Present$(br2)>Arthropoda$(br)>Chelicerata$(br)>Arachnida$(br)>Opiliones"
+			"text": "$(l)Temporal Range:$() Devonian - Present$(br2)>Arthropoda$(br)>Chelicerata$(br)>Arachnida$(br)>$(o)Opiliones"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/harvestman.png"],
-			"title": "Opiliones",
-			"text": ""
+			"type": "entity",
+			"name": "Opiliones",
+			"entity": "lepidodendron:prehistoric_flora_harvestman",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_harvestman",

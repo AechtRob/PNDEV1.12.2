@@ -209,7 +209,7 @@ public class ModelJellyfish extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Mainbody.offsetY = 0.3F;
+        this.Mainbody.offsetY = 0.4F;
         this.Mainbody.offsetX = 0.0F;
         this.Mainbody.rotateAngleY = (float)Math.toRadians(120);
         this.Mainbody.rotateAngleX = (float)Math.toRadians(1);

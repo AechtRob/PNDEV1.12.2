@@ -207,6 +207,32 @@ public class ModelHoplitaspis extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Root.offsetY = -1.0F;
+        this.Root.offsetX = 0.6F;
+        this.Root.offsetZ = 2.0F;
+        this.Root.rotateAngleY = (float)Math.toRadians(120);
+        this.Root.rotateAngleX = (float)Math.toRadians(1);
+        this.Root.rotateAngleZ = (float)Math.toRadians(0);
+        this.Root.scaleChildren = true;
+        float scaler = 2.2F;
+        this.Root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Root, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Head, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(Tail5, 0.0F, -0.08F, 0.0F);
+        this.setRotateAngle(Tail6, 0.0F, -0.08F, 0.0F);
+        //End of pose, now render the model:
+        this.Root.render(f);
+        //Reset rotations, positions and sizing:
+        this.Root.setScale(1.0F, 1.0F, 1.0F);
+        this.Root.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

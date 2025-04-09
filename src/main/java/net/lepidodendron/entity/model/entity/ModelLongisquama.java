@@ -347,7 +347,7 @@ public class ModelLongisquama extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body2.offsetY = -0.8F;
-        this.body2.offsetX = 0.65F;
+        this.body2.offsetX = 1.2F;
         this.body2.rotateAngleY = (float)Math.toRadians(245);
         this.body2.rotateAngleX = (float)Math.toRadians(10);
         this.body2.rotateAngleZ = (float)Math.toRadians(-10);

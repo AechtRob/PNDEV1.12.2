@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Arachnida$(br)>Scorpiones$(br)>Gigantoscorpionidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/gigantoscorpio.png"],
-			"title": "G. willsi",
-			"text": ""
+			"type": "entity",
+			"name": "G. willsi",
+			"entity": "lepidodendron:prehistoric_flora_scorpion_gigantoscorpio",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_scorpion_gigantoscorpio",
