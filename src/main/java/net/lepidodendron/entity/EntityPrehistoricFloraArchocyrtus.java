@@ -5,12 +5,15 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.render.entity.RenderArchocyrtus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EggLayingConditions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
@@ -33,7 +36,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraArchocyrtus extends EntityPrehistoricFloraInsectFlyingBase implements ITrappableLand {
+public class EntityPrehistoricFloraArchocyrtus extends EntityPrehistoricFloraInsectFlyingBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -290,4 +293,10 @@ public class EntityPrehistoricFloraArchocyrtus extends EntityPrehistoricFloraIns
 		return EggLayingConditions.testLayMossAndWoodInsectFlying(this, world, pos);
 	}
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_ARCHOCYRTUS;
+	}
+	}
 }

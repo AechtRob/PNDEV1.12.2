@@ -3,11 +3,14 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemNautiloidEggsAphetoceras;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -19,7 +22,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraAphetoceras extends EntityPrehistoricFloraNautiloidBase implements ITrappableWater {
+public class EntityPrehistoricFloraAphetoceras extends EntityPrehistoricFloraNautiloidBase implements IAdvancementGranter, ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -44,7 +47,9 @@ public class EntityPrehistoricFloraAphetoceras extends EntityPrehistoricFloraNau
 		return true;
 	}
 
-	public static String getPeriod() {return "Ordovician";}
+	public static String getPeriod() {
+		return "Ordovician";
+	}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -52,7 +57,7 @@ public class EntityPrehistoricFloraAphetoceras extends EntityPrehistoricFloraNau
 	public boolean dropsEggs() {
 		return true;
 	}
-	
+
 	@Override
 	public boolean laysEggs() {
 		return false;
@@ -116,9 +121,15 @@ public class EntityPrehistoricFloraAphetoceras extends EntityPrehistoricFloraNau
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		 		if (!this.isPFAdult()) {
+		if (!this.isPFAdult()) {
 			return LepidodendronMod.APHETOCERAS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.APHETOCERAS_LOOT;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_APHETOCERAS;
 	}
 }

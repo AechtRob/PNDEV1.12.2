@@ -5,6 +5,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.render.entity.RenderArchaboilus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
@@ -35,7 +36,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArchoblattinaInsect implements ITrappableAir {
+public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArchoblattinaInsect implements IAdvancementGranter, ITrappableAir {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
