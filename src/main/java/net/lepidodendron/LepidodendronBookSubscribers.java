@@ -6,7 +6,9 @@ import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.base.*;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.util.BlockSounds;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.util.TriggerRegistry;
 import net.lepidodendron.util.patchouli.PercentageCollected;
 import net.minecraft.advancements.AdvancementManager;
 import net.minecraft.block.Block;
@@ -615,7 +617,6 @@ public class LepidodendronBookSubscribers {
 
 	@SubscribeEvent
 	public void onUseBook(PlayerInteractEvent.EntityInteract event) {
-		/// click on entities:
 		if (!event.getItemStack().getItem().getRegistryName().toString().equalsIgnoreCase("patchouli:guide_book")) {
 			return;
 		}
