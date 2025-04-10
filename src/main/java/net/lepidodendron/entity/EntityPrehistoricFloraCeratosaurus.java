@@ -7,12 +7,15 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockNest;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
 import net.lepidodendron.entity.render.entity.RenderCeratosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -38,7 +41,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraCeratosaurus extends EntityPrehistoricFloraLandCarnivoreBase implements ITrappableLand {
+public class EntityPrehistoricFloraCeratosaurus extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -380,4 +383,9 @@ public class EntityPrehistoricFloraCeratosaurus extends EntityPrehistoricFloraLa
 	}
 	public static float getScaler(@Nullable String variant) {return RenderCeratosaurus.getScaler();}
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_CERATOSAURUS;
+	}
 }

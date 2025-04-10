@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
@@ -11,6 +12,8 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemEchinodermEggsCothurnocystis;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
@@ -25,7 +28,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraCothurnocystis extends EntityPrehistoricFloraWalkingAmphibianBase implements ITrappableWater {
+public class EntityPrehistoricFloraCothurnocystis extends EntityPrehistoricFloraWalkingAmphibianBase implements IAdvancementGranter, ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -203,5 +206,10 @@ public class EntityPrehistoricFloraCothurnocystis extends EntityPrehistoricFlora
 		return LepidodendronMod.COTHURNOCYSTIS_LOOT;
 	}
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_COTHURNOCYSTIS;
+	}
 }
 
