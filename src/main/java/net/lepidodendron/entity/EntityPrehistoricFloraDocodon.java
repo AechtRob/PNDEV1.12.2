@@ -2,6 +2,7 @@
 package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.render.entity.RenderDocodon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
@@ -20,7 +21,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraDocodon extends EntityPrehistoricFloraMorganucodon implements ITrappableLand {
+public class EntityPrehistoricFloraDocodon extends EntityPrehistoricFloraMorganucodon implements IAdvancementGranter, ITrappableLand {
 
 	public EntityPrehistoricFloraDocodon(World world) {
 		super(world);
