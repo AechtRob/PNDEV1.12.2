@@ -299,4 +299,3 @@ public class EntityPrehistoricFloraArchocyrtus extends EntityPrehistoricFloraIns
 		return ModTriggers.CLICK_ARCHOCYRTUS;
 	}
 	}
-}

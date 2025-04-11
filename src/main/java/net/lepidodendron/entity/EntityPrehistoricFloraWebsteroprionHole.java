@@ -7,10 +7,13 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockWebsteroprionBurrow;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraWebsteroprionHoleAI;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
@@ -36,7 +39,7 @@ import javax.annotation.Nullable;
 import java.util.Comparator;
 import java.util.List;
 
-public class EntityPrehistoricFloraWebsteroprionHole extends EntityAnimal implements IAnimatedEntity, IPrehistoricDiet {
+public class EntityPrehistoricFloraWebsteroprionHole extends EntityAnimal implements IAdvancementGranter, IAnimatedEntity, IPrehistoricDiet {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -384,6 +387,12 @@ public class EntityPrehistoricFloraWebsteroprionHole extends EntityAnimal implem
 			}
 		}
 		return null;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_WEBSTEROPRION;
 	}
 
 	public class PlayerSorter implements Comparator<Entity> {
