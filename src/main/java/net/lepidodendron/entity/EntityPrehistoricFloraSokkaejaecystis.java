@@ -4,6 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.lepidodendron.entity.render.entity.RenderSokkaejaecystis;
@@ -11,6 +12,8 @@ import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemEchinodermEggsSokkaejaecystis;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -26,7 +29,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraSokkaejaecystis extends EntityPrehistoricFloraTrilobiteBottomBase implements ITrappableWater {
+public class EntityPrehistoricFloraSokkaejaecystis extends EntityPrehistoricFloraTrilobiteBottomBase implements IAdvancementGranter, ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -213,5 +216,11 @@ public class EntityPrehistoricFloraSokkaejaecystis extends EntityPrehistoricFlor
 	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelSokkaejaecystis;}
 	public static float getScaler(@Nullable String variant) {
 		return RenderSokkaejaecystis.getScaler();
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_SOKKAEJAECYSTIS;
 	}
 }

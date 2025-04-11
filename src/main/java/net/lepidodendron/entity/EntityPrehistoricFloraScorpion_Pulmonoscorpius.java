@@ -5,11 +5,14 @@ import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraScorpion;
 import net.lepidodendron.entity.render.entity.RenderScorpion_Pulmonoscorpius;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
@@ -34,7 +37,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraScorpion_Pulmonoscorpius extends EntityPrehistoricFloraScorpion implements ITrappableAir {
+public class EntityPrehistoricFloraScorpion_Pulmonoscorpius extends EntityPrehistoricFloraScorpion implements IAdvancementGranter, ITrappableAir {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -227,6 +230,12 @@ public class EntityPrehistoricFloraScorpion_Pulmonoscorpius extends EntityPrehis
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0F;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_SCORPION_PULMONOSCORPIUS;
 	}
 	//-------------------
 
