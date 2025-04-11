@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:europejara_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_europejara.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_europejara.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_europejara"
+        }
+    }
+}

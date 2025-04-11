@@ -37,10 +37,10 @@ public class EntityPrehistoricFloraPiranhamesodon extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraPiranhamesodon(World world) {
 		super(world);
-		setSize(0.55F, 0.55F);
+		setSize(0.2F, 0.2F);
 		minWidth = 0.1F;
-		maxWidth = 0.55F;
-		maxHeight = 0.55F;
+		maxWidth = 0.2F;
+		maxHeight = 0.2F;
 		maxHealthAgeable = 4.0D;
 	}
 

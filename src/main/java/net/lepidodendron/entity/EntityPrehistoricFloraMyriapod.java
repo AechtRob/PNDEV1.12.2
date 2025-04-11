@@ -63,6 +63,13 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 
 	private static final float[] PNEUMODESMUS_SIZE = new float[]{0.30F, 0.30F};
 	private static final float[] EOARTHROPLEURA_SIZE = new float[]{0.30F, 0.30F};
+	private static final float[] LATZELIA_SIZE = new float[]{0.30F, 0.30F};
+	private static final float[] CRUSSOLUM_SIZE = new float[]{0.30F, 0.30F};
+	private static final float[] VELOCIPEDE_SIZE = new float[]{0.30F, 0.30F};
+	private static final float[] FULMENOCURSOR_SIZE = new float[]{0.30F, 0.30F};
+	private static final float[] DEVONOBIUS_SIZE = new float[]{0.30F, 0.30F};
+	private static final float[] JULIFORM_SIZE = new float[]{0.30F, 0.30F};
+	private static final float[] POLYDESMID_SIZE = new float[]{0.30F, 0.30F};
 
 	private static final DataParameter<Integer> INSECT_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraMyriapod.class, DataSerializers.VARINT);
 

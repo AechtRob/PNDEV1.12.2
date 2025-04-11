@@ -15,7 +15,7 @@ public class RenderPalaeocambarus extends RenderLivingBaseWithBook<EntityPrehist
         super(mgr, new ModelPalaeocambarus(), 0.0f);
     }
 
-    public static float getScaler() {return 0.3F; }
+    public static float getScaler() {return 0.26F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPalaeocambarus entity) {

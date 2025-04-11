@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.tile;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockNautiloidShellAmmonite_Asteroceras;
 import net.lepidodendron.entity.model.tile.ModelAmmonite50cmShell;
+import net.lepidodendron.entity.model.tile.ModelAsterocerasShell;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
@@ -14,11 +15,11 @@ import net.minecraft.util.ResourceLocation;
 public class RenderNautiloidShellAmmonite_Asteroceras extends TileEntitySpecialRenderer<BlockNautiloidShellAmmonite_Asteroceras.TileEntityCustom> {
 
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_asteroceras_shell.png");
-    private final ModelAmmonite50cmShell modelNautiloidShell;
+    private final ModelAsterocerasShell modelNautiloidShell;
     public static final PropertyDirection FACING = BlockDirectional.FACING;
 
     public RenderNautiloidShellAmmonite_Asteroceras() {
-        this.modelNautiloidShell = new ModelAmmonite50cmShell();
+        this.modelNautiloidShell = new ModelAsterocerasShell();
     }
 
     @Override
@@ -34,7 +35,7 @@ public class RenderNautiloidShellAmmonite_Asteroceras extends TileEntitySpecialR
         GlStateManager.enableRescaleNormal();
         this.bindTexture(TEXTURE);
         GlStateManager.enableAlpha();
-        ModelAmmonite50cmShell modelNautiloidShell = this.modelNautiloidShell;
+        ModelAsterocerasShell modelNautiloidShell = this.modelNautiloidShell;
         double scale = 0.18D;
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
             //lying down

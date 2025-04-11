@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraStethacanthus extends EntityPrehistoricFloraA
 		minWidth = 0.1F;
 		maxWidth = 0.7F;
 		maxHeight = 0.8F;
-		maxHealthAgeable = 28.0D;
+		maxHealthAgeable = 12.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

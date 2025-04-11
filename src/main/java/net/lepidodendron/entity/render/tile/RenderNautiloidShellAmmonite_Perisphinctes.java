@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.tile;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockNautiloidShellAmmonite_Perisphinctes;
 import net.lepidodendron.entity.model.entity.ModelAmmonite_Perisphinctes;
+import net.lepidodendron.entity.model.tile.ModelPerisphinctesShell;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
@@ -14,11 +15,11 @@ import net.minecraft.util.ResourceLocation;
 public class RenderNautiloidShellAmmonite_Perisphinctes extends TileEntitySpecialRenderer<BlockNautiloidShellAmmonite_Perisphinctes.TileEntityCustom> {
 
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_perisphinctes_shell.png");
-    private final ModelAmmonite_Perisphinctes modelNautiloidShell;
+    private final ModelPerisphinctesShell modelNautiloidShell;
     public static final PropertyDirection FACING = BlockDirectional.FACING;
 
     public RenderNautiloidShellAmmonite_Perisphinctes() {
-        this.modelNautiloidShell = new ModelAmmonite_Perisphinctes();
+        this.modelNautiloidShell = new ModelPerisphinctesShell();
     }
 
     @Override
@@ -35,7 +36,7 @@ public class RenderNautiloidShellAmmonite_Perisphinctes extends TileEntitySpecia
         this.bindTexture(TEXTURE);
 
         GlStateManager.enableAlpha();
-        ModelAmmonite_Perisphinctes modelNautiloidShell = this.modelNautiloidShell;
+        ModelPerisphinctesShell modelNautiloidShell = this.modelNautiloidShell;
         double scale = 0.2D;
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
             //lying down

@@ -28,9 +28,9 @@ public class EntityPrehistoricFloraAmmonite_Cylolobus extends EntityPrehistoricF
 
 	public EntityPrehistoricFloraAmmonite_Cylolobus(World world) {
 		super(world);
-		setSize(0.5F, 0.3F);
+		setSize(0.3F, 0.3F);
 		minWidth = 0.1F;
-		maxWidth = 0.5F;
+		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 4;
 	}
@@ -66,7 +66,7 @@ public class EntityPrehistoricFloraAmmonite_Cylolobus extends EntityPrehistoricF
 
 	@Override
 	protected float getAISpeedNautiloid() {
-		return 0.2f;
+		return 0.05f;
 	}
 
 	protected void initEntityAI() {

@@ -48,6 +48,9 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 	private static final float[] LICHENIPOLYSTOECHOTES_SIZE = new float[]{0.2F, 0.2F};
 	private static final float[] BELLINYMPHA_SIZE = new float[]{0.2F, 0.2F};
 	private static final float[] GRAMMOLINGIA_SIZE = new float[]{0.2F, 0.2F};
+	private static final float[] KRIKA_SIZE = new float[]{0.2F, 0.2F};
+	private static final float[] NUDDSIA_SIZE = new float[]{0.2F, 0.2F};
+	private static final float[] KARENINA_SIZE = new float[]{0.2F, 0.2F};
 
 	private static final DataParameter<Integer> INSECT_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraLacewing.class, DataSerializers.VARINT);
 

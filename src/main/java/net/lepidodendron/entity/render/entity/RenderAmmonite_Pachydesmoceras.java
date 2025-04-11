@@ -3,6 +3,8 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAmmonite_Pachydesmoceras;
 import net.lepidodendron.entity.model.entity.ModelAmmonite100cm;
+import net.lepidodendron.entity.model.entity.ModelManticoceras;
+import net.lepidodendron.entity.model.entity.ModelPachydesmoceras;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -12,7 +14,7 @@ public class RenderAmmonite_Pachydesmoceras extends RenderLivingBaseWithBook<Ent
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_pachydesmoceras.png");
 
     public RenderAmmonite_Pachydesmoceras(RenderManager mgr) {
-        super(mgr, new ModelAmmonite100cm(), 0.65f);
+        super(mgr, new ModelPachydesmoceras(), 0.65f);
     }
 
     @Override

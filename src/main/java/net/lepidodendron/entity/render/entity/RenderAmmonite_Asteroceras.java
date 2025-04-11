@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAmmonite_Asteroceras;
 import net.lepidodendron.entity.model.entity.ModelAmmonite50cm;
+import net.lepidodendron.entity.model.entity.ModelAsteroceras;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -12,7 +13,10 @@ public class RenderAmmonite_Asteroceras extends RenderLivingBaseWithBook<EntityP
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_asteroceras.png");
 
     public RenderAmmonite_Asteroceras(RenderManager mgr) {
-        super(mgr, new ModelAmmonite50cm(), 0.2f);
+        super(mgr, new ModelAsteroceras(), 0.2f);
+    }
+    public static float getScaler() {
+        return 0.7F * 0.3F;
     }
 
     @Override
@@ -27,7 +31,7 @@ public class RenderAmmonite_Asteroceras extends RenderLivingBaseWithBook<EntityP
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAmmonite_Asteroceras entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = this.getScaler() * entity.getAgeScale();;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }
