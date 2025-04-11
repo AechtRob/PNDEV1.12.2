@@ -5,6 +5,7 @@ import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
@@ -14,6 +15,8 @@ import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.entity.util.PathNavigateWaterBottom;
 import net.lepidodendron.item.entities.ItemEggsOmnidens;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
@@ -41,7 +44,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraOmnidens extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater {
+public class EntityPrehistoricFloraOmnidens extends EntityPrehistoricFloraAgeableFishBase implements IAdvancementGranter, ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -497,6 +500,12 @@ public class EntityPrehistoricFloraOmnidens extends EntityPrehistoricFloraAgeabl
 		}
 		this.limbSwingAmount += (delta - this.limbSwingAmount) * 0.4F;
 		this.limbSwing += this.limbSwingAmount;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_OMNIDENS;
 	}
 
 	public class WanderMoveHelper extends EntityMoveHelper {

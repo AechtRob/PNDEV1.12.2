@@ -5,12 +5,15 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
 import net.lepidodendron.entity.render.entity.RenderOnychopterella;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EggLayingConditions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
@@ -32,7 +35,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraOnychopterella extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase implements ITrappableWater {
+public class EntityPrehistoricFloraOnychopterella extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase implements IAdvancementGranter, ITrappableWater {
 
 	public Animation SWIM_ANIMATION;
 	public Animation UNSWIM_ANIMATION;
@@ -371,4 +374,10 @@ public class EntityPrehistoricFloraOnychopterella extends EntityPrehistoricFlora
 	}
 
 	public static float getScaler(@Nullable String variant) {return RenderOnychopterella.getScaler();}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_ONYCHOPTERELLA;
+	}
 }
