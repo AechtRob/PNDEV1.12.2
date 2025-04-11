@@ -2,12 +2,15 @@
 package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EurypteridWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.spawneggs.*;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
@@ -28,7 +31,7 @@ import net.minecraft.world.WorldServer;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehistoricFloraEurypteridBase implements ITrappableWater {
+public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehistoricFloraEurypteridBase implements IAdvancementGranter, ITrappableWater {
 
 	private static final float[] DELITZSCHALA_SIZE = new float[]{0.2F, 0.2F};
 	private static final float[] DUNBARIA_SIZE = new float[]{0.2F, 0.2F};
@@ -70,6 +73,41 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 		return true;
 	}
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		switch (this.getPNType()) {
+			case DELITZSCHALA: default:
+				return ModTriggers.CLICK_PALAEODICTYOPTERA_DELITZSCHALA;
+
+			case DUNBARIA:
+				return ModTriggers.CLICK_PALAEODICTYOPTERA_DUNBARIA;
+
+			case HOMALONEURA:
+				return ModTriggers.CLICK_PALAEODICTYOPTERA_HOMALONEURA;
+
+			case HOMOIOPTERA:
+				return ModTriggers.CLICK_PALAEODICTYOPTERA_HOMOIOPTERA;
+
+			case LITHOMANTIS:
+				return ModTriggers.CLICK_PALAEODICTYOPTERA_LITHOMANTIS;
+
+			case LYCOCERCUS:
+				return ModTriggers.CLICK_PALAEODICTYOPTERA_LYCOCERCUS;
+
+			case SINODUNBARIA:
+				return ModTriggers.CLICK_PALAEODICTYOPTERA_SINODUNBARIA;
+
+			case STENODICTYA:
+				return ModTriggers.CLICK_PALAEODICTYOPTERA_STENODICTYA;
+
+			case MAZOTHAIROS:
+				return ModTriggers.CLICK_PALAEODICTYOPTERA_MAZOTHAIROS;
+
+			case PSYCHROPTILUS:
+				return ModTriggers.CLICK_PALAEODICTYOPTERA_PSYCHROPTILUS;
+		}
+	}
 	public enum Type
 	{
 		DELITZSCHALA(1, "delitzschala"),
