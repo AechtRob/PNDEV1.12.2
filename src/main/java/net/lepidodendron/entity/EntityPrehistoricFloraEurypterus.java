@@ -3,9 +3,12 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -21,7 +24,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraEurypterus extends EntityPrehistoricFloraEurypteridBase implements ITrappableWater {
+public class EntityPrehistoricFloraEurypterus extends EntityPrehistoricFloraEurypteridBase implements IAdvancementGranter, ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -221,4 +224,9 @@ public class EntityPrehistoricFloraEurypterus extends EntityPrehistoricFloraEury
 		} return LepidodendronMod.EURYPTERUS_LOOT;
 	}
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_EURYPTERUS;
+	}
 }
