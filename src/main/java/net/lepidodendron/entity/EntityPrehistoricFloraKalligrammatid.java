@@ -37,7 +37,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFloraInsectFlyingBase implements ITrappableAir {
+public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFloraInsectFlyingBase implements  ITrappableAir {
 
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;

@@ -5,11 +5,14 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -28,7 +31,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraBranchiosaur extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater {
+public class EntityPrehistoricFloraBranchiosaur extends EntityPrehistoricFloraSwimmingAmphibianBase implements IAdvancementGranter, ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -59,7 +62,9 @@ public class EntityPrehistoricFloraBranchiosaur extends EntityPrehistoricFloraSw
 		return true;
 	}
 
-	public static String getPeriod() {return "early Permian";}
+	public static String getPeriod() {
+		return "early Permian";
+	}
 
 	//public static String getHabitat() {return "Amphibious";}
 
@@ -72,7 +77,7 @@ public class EntityPrehistoricFloraBranchiosaur extends EntityPrehistoricFloraSw
 	public boolean dropsEggs() {
 		return false;
 	}
-	
+
 	@Override
 	public boolean laysEggs() {
 		return false;
@@ -81,16 +86,16 @@ public class EntityPrehistoricFloraBranchiosaur extends EntityPrehistoricFloraSw
 	protected float getAISpeedSwimmingAmphibian() {
 		float calcSpeed = 0.110F;
 		if (this.isReallyInWater()) {
-			calcSpeed= 0.302f;
+			calcSpeed = 0.302f;
 		}
 		//calcSpeed = 0;
 		if (this.getTicks() < 0) {
 			//System.err.println("Laying");
 			return 0.0F; //Is laying eggs
 		}
-        if (this.getIsFast() && this.isReallyInWater()) {
-            calcSpeed = calcSpeed * 1.32F;
-        }
+		if (this.getIsFast() && this.isReallyInWater()) {
+			calcSpeed = calcSpeed * 1.32F;
+		}
 		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed;
 	}
 
@@ -102,8 +107,12 @@ public class EntityPrehistoricFloraBranchiosaur extends EntityPrehistoricFloraSw
 	@Override
 	public int WaterDist() {
 		int i = (int) LepidodendronConfig.waterBranchiosaur;
-		if (i > 16) {i = 16;}
-		if (i < 1) {i = 1;}
+		if (i > 16) {
+			i = 16;
+		}
+		if (i < 1) {
+			i = 1;
+		}
 		return i;
 	}
 
@@ -128,7 +137,6 @@ public class EntityPrehistoricFloraBranchiosaur extends EntityPrehistoricFloraSw
 		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.FISHFOOD, DietString.FISH), DietString.BUG);
 	}
 
-	
 
 	@Override
 	public boolean isAIDisabled() {
@@ -236,4 +244,9 @@ public class EntityPrehistoricFloraBranchiosaur extends EntityPrehistoricFloraSw
 		return LepidodendronMod.BRANCHIOSAUR_LOOT;
 	}
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_BRANCHIOSAUR;
+	}
 }

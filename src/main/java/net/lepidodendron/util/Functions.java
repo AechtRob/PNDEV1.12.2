@@ -148,13 +148,11 @@ public class Functions {
         return portalState;
     }
 
-    public static boolean isWater(World world, BlockPos pos) {
-        IBlockState state = world.getBlockState(pos);
-        Block block = state.getBlock();
-        return ((block instanceof BlockFluidBase || block instanceof BlockLiquid)
-           && state.getMaterial() == Material.WATER
-        );
-    }
+      public static boolean isWater(World world, BlockPos pos) {
+    IBlockState state = world.getBlockState(pos);
+    return state.getMaterial() == Material.WATER && 
+           (state.getBlock() instanceof BlockFluidBase || state.getBlock() instanceof BlockLiquid);
+}
 
     public static Vec3d getEntityCentre(Entity entity) {
         double entityX = entity.getEntityBoundingBox().minX + ((entity.getEntityBoundingBox().maxX - entity.getEntityBoundingBox().minX)/2.0D);

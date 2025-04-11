@@ -5,9 +5,12 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.init.SoundEvents;
@@ -26,7 +29,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMimetaster extends EntityPrehistoricFloraFishBase implements ITrappableWater {
+public class EntityPrehistoricFloraMimetaster extends EntityPrehistoricFloraFishBase implements IAdvancementGranter, ITrappableWater {
 
 	private static final DataParameter<Integer> SPONGE = EntityDataManager.createKey(EntityPrehistoricFloraMimetaster.class, DataSerializers.VARINT);
 	private static final DataParameter<Integer> SPONGE_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraMimetaster.class, DataSerializers.VARINT);
@@ -263,4 +266,9 @@ public class EntityPrehistoricFloraMimetaster extends EntityPrehistoricFloraFish
 		return LepidodendronMod.MIMETASTER_LOOT;
 	}
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_MIMETASTER;
+	}
 }

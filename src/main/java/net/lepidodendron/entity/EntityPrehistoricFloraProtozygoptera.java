@@ -5,13 +5,16 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.render.entity.LayerProtozygopteraWing;
 import net.lepidodendron.entity.render.entity.RenderProtozygoptera;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EggLayingConditions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.IEntityLivingData;
@@ -34,7 +37,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraProtozygoptera extends EntityPrehistoricFloraInsectFlyingBase implements ITrappableAir {
+public class EntityPrehistoricFloraProtozygoptera extends EntityPrehistoricFloraInsectFlyingBase implements IAdvancementGranter, ITrappableAir {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -304,5 +307,10 @@ public class EntityPrehistoricFloraProtozygoptera extends EntityPrehistoricFlora
 		return RenderProtozygoptera.getScaler();
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.012F;}
-	
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_PROTOZYGOPTERA;
+	}
 }

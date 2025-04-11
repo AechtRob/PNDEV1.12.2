@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
@@ -11,6 +12,8 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemStrombus;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.item.EntityItem;
@@ -34,7 +37,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraStrombus extends EntityPrehistoricFloraSlitheringWaterBase implements ITrappableWater {
+public class EntityPrehistoricFloraStrombus extends EntityPrehistoricFloraSlitheringWaterBase implements IAdvancementGranter, ITrappableWater {
 
 	private static final DataParameter<Integer> MOVETICKS = EntityDataManager.createKey(EntityPrehistoricFloraStrombus.class, DataSerializers.VARINT);
 	private static final DataParameter<Integer> OFFSETTICKS = EntityDataManager.createKey(EntityPrehistoricFloraStrombus.class, DataSerializers.VARINT);
@@ -263,4 +266,10 @@ public class EntityPrehistoricFloraStrombus extends EntityPrehistoricFloraSlithe
 		return super.attackEntityFrom(source, amount);
 	}
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_STROMBUS;
+
+	}
 }

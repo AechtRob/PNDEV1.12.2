@@ -3,11 +3,14 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.lepidodendron.entity.render.entity.RenderAeger;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -30,8 +33,8 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraEurypteridBase implements ITrappableWater {
-	private static final DataParameter<Integer> VARIANT= EntityDataManager.createKey(EntityPrehistoricFloraAeger.class, DataSerializers.VARINT);
+public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraEurypteridBase implements IAdvancementGranter, ITrappableWater {
+	private static final DataParameter<Integer> VARIANT = EntityDataManager.createKey(EntityPrehistoricFloraAeger.class, DataSerializers.VARINT);
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
@@ -50,7 +53,9 @@ public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraEurypteri
 		return true;
 	}
 
-	public static String getPeriod() {return "Triassic - Jurassic - Early Cretaceous - Late Cretaceous";}
+	public static String getPeriod() {
+		return "Triassic - Jurassic - Early Cretaceous - Late Cretaceous";
+	}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -58,7 +63,7 @@ public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraEurypteri
 	public boolean dropsEggs() {
 		return true;
 	}
-	
+
 	@Override
 	public boolean laysEggs() {
 		return false;
@@ -94,8 +99,8 @@ public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraEurypteri
 		this.setVariant(rand.nextInt(10));
 		return livingdata;
 	}
-	public void writeEntityToNBT(NBTTagCompound compound)
-	{
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
 		super.writeEntityToNBT(compound);
 		compound.setInteger("variant", this.getVariant());
 	}
@@ -245,8 +250,7 @@ public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraEurypteri
 		super.onLivingUpdate();
 	}
 
-	public void onEntityUpdate()
-	{
+	public void onEntityUpdate() {
 		super.onEntityUpdate();
 	}
 
@@ -260,53 +264,76 @@ public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraEurypteri
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;
 	}
+
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 1.4;
 	}
+
 	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 0.8;
 	}
+
 	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.4;
 	}
+
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
+
 	public static double upperbacklineoffset(@Nullable String variant) {
 		return 0.4;
 	}
+
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0.15F;
 	}
+
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 0.0;
 	}
+
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0.35;
 	}
+
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
 	}
+
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0.0F;
 	}
+
 	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0.0;
 	}
+
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0.0F;
 	}
+
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
 		return RenderAeger.TEXTURE;
 	}
+
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
 		return RenderDisplays.modelAeger;
 	}
+
 	public static float getScaler(@Nullable String variant) {
 		return RenderAeger.getScaler();
 	}
-	public static float widthSupport(@Nullable String variant) {return 0.01F;}
 
+	public static float widthSupport(@Nullable String variant) {
+		return 0.01F;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_AEGER;
+	}
 }

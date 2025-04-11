@@ -4,6 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.render.entity.LayerDragonflyWing;
@@ -11,7 +12,9 @@ import net.lepidodendron.entity.render.entity.RenderDragonfly;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggDragonfly;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EggLayingConditions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.IEntityLivingData;
@@ -39,7 +42,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsectFlyingBase implements ITrappableAir {
+public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsectFlyingBase implements IAdvancementGranter, ITrappableAir {
 
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
@@ -143,6 +146,12 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 	@Override
 	public boolean hasPNVariants() {
 		return true;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_DRAGONFLY;
 	}
 
 	public enum Type

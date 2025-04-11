@@ -5,6 +5,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
@@ -14,6 +15,8 @@ import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraClatrotitan;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraGigatitan;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraMesotitan;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.*;
@@ -38,7 +41,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 
 
-public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFloraLandBase implements ITrappableAir {
+public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, ITrappableAir {
 
 	private static final float[] CLATROTITAN_SIZE = new float[]{0.3F, 0.3F};
 	private static final float[] GIGATITAN_SIZE = new float[]{0.3F, 0.3F};
@@ -83,6 +86,19 @@ public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFlo
 	public String getPNTypeName()
 	{
 		return this.getPNType().getName();
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		switch (this.getPNType()) {
+			case CLATROTITAN: default:
+				return ModTriggers.CLICK_TITANOPTERA_CLATROTITAN;
+			case GIGATITAN:
+				return ModTriggers.CLICK_TITANOPTERA_GIGATITAN;
+			case MESOTITAN:
+				return ModTriggers.CLICK_TITANOPTERA_MESOTITAN;
+		}
 	}
 
 	public enum Type
