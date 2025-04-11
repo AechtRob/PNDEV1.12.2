@@ -3,12 +3,15 @@ package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EurypteridWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggMegasecopteraSylvohymen;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
@@ -33,7 +36,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMegasecopteraNymph extends EntityPrehistoricFloraEurypteridBase implements ITrappableWater {
+public class EntityPrehistoricFloraMegasecopteraNymph extends EntityPrehistoricFloraEurypteridBase implements IAdvancementGranter, ITrappableWater {
 
 	private static final float[] SYLVOHYMEN_SIZE = new float[]{0.2F, 0.2F};
 
@@ -85,6 +88,12 @@ public class EntityPrehistoricFloraMegasecopteraNymph extends EntityPrehistoricF
 	public String getPNTypeName()
 	{
 		return this.getPNType().getName();
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_MEGASECOPTERA_SYLVOHYMEN;
 	}
 
 	public enum Type

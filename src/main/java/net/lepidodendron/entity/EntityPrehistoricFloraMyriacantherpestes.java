@@ -7,6 +7,7 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
@@ -14,7 +15,9 @@ import net.lepidodendron.entity.render.entity.RenderMyriacantherpestes;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.entity.util.ITrappableAir;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EggLayingConditions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -41,7 +44,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricFloraLandBase implements ITrappableAir {
+public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, ITrappableAir {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -342,4 +345,9 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 	}
 	public static float getScaler(@Nullable String variant) {return RenderMyriacantherpestes.getScaler();}
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_MYRIACANTHERPESTES;
+	}
 }
