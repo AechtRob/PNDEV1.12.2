@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_estemmenosuchus",
 			"title": "Estemmenosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Dinocephalia$(br)>Estemmenosuchidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Dinocephalia$(br)>Estemmenosuchidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/estemmenosuchus.png"],
-			"title": "E. uralensis",
-			"text": ""
+			"type": "entity",
+			"name": "E. uralensis",
+			"entity": "lepidodendron:prehistoric_flora_estemmenosuchus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_estemmenosuchus",

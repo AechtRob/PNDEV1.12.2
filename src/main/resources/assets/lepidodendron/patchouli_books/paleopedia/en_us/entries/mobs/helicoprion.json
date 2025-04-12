@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Helicoprionidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/helicoprion.png"],
-			"title": "H. bessonowi",
-			"text": ""
+			"type": "entity",
+			"name": "H. bessonowi",
+			"entity": "lepidodendron:prehistoric_flora_helicoprion",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_helicoprion",

@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Holocephali$(br)>Iniopterygiformes$(br)>Iniopterygidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/iniopteryx.png"],
-			"title": "I. rushlaui",
-			"text": ""
+			"type": "entity",
+			"name": "I. rushlaui",
+			"entity": "lepidodendron:prehistoric_flora_iniopteryx",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_iniopteryx",

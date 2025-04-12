@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Chordata$(br)>Metaspriggiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/metaspriggina.png"],
-			"title": "M. walcotti",
-			"text": ""
+			"type": "entity",
+			"name": "M. walcotti",
+			"entity": "lepidodendron:prehistoric_flora_metaspriggina",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_metaspriggina",
 			"type": "text",
-			"text": "Metaspriggina is an early chordate that bore similarities to Pikaia and Haikouichthys. It is one of the earliest vetebrates, and it possessed two upward facing eyes and lacked fins. They were probably filter feeders, swimming above the sea floor."
+			"text": "Metaspriggina is an early chordate that bore similarities to Pikaia and Haikouichthys. It is one of the earliest vertebrates, and it possessed two upward facing eyes and lacked fins. They were probably filter feeders, swimming above the sea floor."
 		},
 		{
 			"type": "lepidodendron:diet",

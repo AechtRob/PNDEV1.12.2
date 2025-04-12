@@ -276,6 +276,35 @@ public class ModelHupehsuchus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hupehsuchus.offsetY = -4.2F;
+        this.Hupehsuchus.offsetX = 2.4F;
+        this.Hupehsuchus.offsetZ = 2.0F;
+        this.Hupehsuchus.rotateAngleY = (float)Math.toRadians(120);
+        this.Hupehsuchus.rotateAngleX = (float)Math.toRadians(1);
+        this.Hupehsuchus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Hupehsuchus.scaleChildren = true;
+        float scaler = 2.8F;
+        this.Hupehsuchus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Hupehsuchus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Neck, 0.4F, 0.3F, 0.0F);
+        this.setRotateAngle(Head, -0.3F, 0.3F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, -0.1F, 0.3F, 0.0F);
+        this.setRotateAngle(Body2, -0.1F, 0.3F, 0.0F);
+        this.setRotateAngle(Tail, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail3, 0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(Tail4, 0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(LArm, 0.3F, 0.3F, -0.3F);
+        this.setRotateAngle(RArm, 0.3F, -0.3F, 0.3F);
+        //End of pose, now render the model:
+        this.Hupehsuchus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hupehsuchus.setScale(1.0F, 1.0F, 1.0F);
+        this.Hupehsuchus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

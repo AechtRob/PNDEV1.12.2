@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Phyllocarida$(br)>Archaeostraca"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/nahecaris.png"],
-			"title": "N. stuertzi",
-			"text": ""
+			"type": "entity",
+			"name": "N. stuertzi",
+			"entity": "lepidodendron:prehistoric_flora_nahecaris",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_nahecaris",

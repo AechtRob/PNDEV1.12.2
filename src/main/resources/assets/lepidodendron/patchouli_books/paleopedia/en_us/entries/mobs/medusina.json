@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Cnidaria"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/medusina.png"],
-			"title": "M. atava",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "M. atava",
+			"entity": "lepidodendron:prehistoric_flora_medusina",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_medusina",

@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Insecta$(br)>Hemiptera$(br)>Palaeontinidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/daohugoucossus.png"],
-			"title": "D. lii",
-			"text": ""
+			"type": "entity",
+			"name": "D. lii",
+			"entity": "lepidodendron:prehistoric_flora_daohugoucossus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_daohugoucossus",

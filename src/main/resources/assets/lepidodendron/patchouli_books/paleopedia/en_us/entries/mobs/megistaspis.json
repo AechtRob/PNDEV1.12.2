@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Trilobita$(br)>Asaphida$(br)>Asaphidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/megistaspis.png"],
-			"title": "M. hammondi",
-			"text": ""
+			"type": "entity",
+			"name": "M. hammondi",
+			"entity": "lepidodendron:prehistoric_flora_megistaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_megistaspis",

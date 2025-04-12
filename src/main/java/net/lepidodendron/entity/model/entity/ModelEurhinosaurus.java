@@ -347,6 +347,34 @@ public class ModelEurhinosaurus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Eurhinosaurus.offsetY = -0.0F;
+        this.Eurhinosaurus.offsetX = 0.2F;
+        this.Eurhinosaurus.offsetZ = 2.0F;
+        this.Eurhinosaurus.rotateAngleY = (float)Math.toRadians(120);
+        this.Eurhinosaurus.rotateAngleX = (float)Math.toRadians(1);
+        this.Eurhinosaurus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Eurhinosaurus.scaleChildren = true;
+        float scaler = 0.35F;
+        this.Eurhinosaurus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Eurhinosaurus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body1, -0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.07F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.09F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.09F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.09F, 0.0F);
+        this.setRotateAngle(Body6, 0.0F, -0.09F, 0.0F);
+        this.setRotateAngle(Body7, 0.0F, -0.09F, 0.0F);
+        this.setRotateAngle(Body8, 0.0F, -0.09F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.05F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Eurhinosaurus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Eurhinosaurus.setScale(1.0F, 1.0F, 1.0F);
+        this.Eurhinosaurus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -182,14 +182,15 @@ public class ModelAscoceras extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.shell.offsetY = -2.0F;
         this.shell.offsetX = 0.05F;
+        this.shell.offsetZ = 2.0F;
         this.shell.rotateAngleY = (float)Math.toRadians(200);
-        this.shell.rotateAngleX = (float)Math.toRadians(8);
-        this.shell.rotateAngleZ = (float)Math.toRadians(-8);
+        this.shell.rotateAngleX = (float)Math.toRadians(0);
+        this.shell.rotateAngleZ = (float)Math.toRadians(0);
         this.shell.scaleChildren = true;
         float scaler = 3.46F;
         this.shell.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(shell, 0.3F, 3.8F, 0.0F);
+        this.setRotateAngle(shell, 1.2F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.shell.render(f);
         //Reset rotations, positions and sizing:

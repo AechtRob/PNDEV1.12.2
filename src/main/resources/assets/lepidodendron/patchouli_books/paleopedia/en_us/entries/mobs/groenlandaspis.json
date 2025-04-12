@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_groenlandaspis",
 			"title": "Groenlandaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Arthrodira$(br)>Groenlandaspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Groenlandaspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/groenlandaspis.png"],
-			"title": "G. mirabilis",
-			"text": ""
+			"type": "entity",
+			"name": "G. mirabilis",
+			"entity": "lepidodendron:prehistoric_flora_groenlandaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_groenlandaspis",

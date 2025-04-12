@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_kayentatherium",
 			"title": "Kayentatherium",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Cynodontia$(br)>Tritylodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Cynodontia$(br)>Tritylodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/kayentatherium.png"],
-			"title": "K. wellesi",
-			"text": ""
+			"type": "entity",
+			"name": "K. wellesi",
+			"entity": "lepidodendron:prehistoric_flora_kayentatherium",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_kayentatherium",
 			"type": "text",
-			"text": "First discovered in the 1950s, this Early Jurassic tritylodontid cynodont, known from the Kayenta Formation of Arizona, was unusually large and stocky for a therapsid of its time, measuring around 1 metre (3 feet) long and sporting a robust and stocky build. Its powerful jaws and superficially almost rodent-esque front teeth suggest that it may have been either herbivorous or possibly durophagous. It is also thought to have been semi-aquatic, with adaptations suggesting"
+			"text": "First discovered in the 1950s, this Lower Jurassic tritylodontid cynodont, known from the Kayenta Formation of Arizona, was unusually large and stocky for a therapsid of its time, measuring around 1 metre (3 feet) long and sporting a robust and stocky build. Its powerful jaws and superficially almost rodent-esque front teeth suggest that it may have been either herbivorous or possibly durophagous. It is also thought to have been semi-aquatic, with adaptations suggesting"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_kayentatherium",

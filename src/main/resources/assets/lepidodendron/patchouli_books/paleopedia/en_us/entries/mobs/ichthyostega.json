@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Stegocephalia$(br)>Ichthyostegidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ichthyostega.png"],
-			"title": "I. stensioei",
-			"text": ""
+			"type": "entity",
+			"name": "I. stensioei",
+			"entity": "lepidodendron:prehistoric_flora_ichthyostega",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ichthyostega",

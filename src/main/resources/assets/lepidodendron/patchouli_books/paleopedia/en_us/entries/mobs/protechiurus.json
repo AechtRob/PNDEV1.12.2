@@ -21,12 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_protechiurus",
 			"type": "text",
-			"text": "Protechiurus edmondsi comes from the Upper Ediacaran, with fossils from the Nama Group, Namibia. It is a work-like lifeform that was able to move around in order to get food, and could grow up to 7 cm in length. It is currently unknown whether Protechiurus is related to the echiura Phylum (Spoon worms), is a proto-chordate, or is apart of another Phylum entirely."
+			"text": "Protechiurus edmondsi comes from the Upper Ediacaran, with fossils from the Nama Group, Namibia. It is a work-like lifeform that was able to move around in order to get food, and could grow up to 7 cm in length. It is currently unknown whether Protechiurus is related to the phylum Echiura (Spoon worms), is a proto-chordate, or is apart of another phylum entirely."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_protechiurus",
 			"type": "text",
-			"text": "The generic name derives from the Greek words 'protos', to mean 'first', and the genus name 'Echiurus'. The specific name derives from the surname of Dr S. J. Edmonds"
+			"text": "The generic name derives from the Greek words 'protos', to mean 'first', and the genus name 'Echiurus'. The specific name derives from the surname of Dr S. J. Edmonds."
 		},
 		{
 			"type": "lepidodendron:diet",

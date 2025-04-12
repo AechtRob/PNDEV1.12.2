@@ -311,6 +311,35 @@ public class ModelDiplocaulus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -1.0F;
+        this.body.offsetX = 0.5F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(120);
+        this.body.rotateAngleX = (float)Math.toRadians(1);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 1.2F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
+        this.upperjaw.rotateAngleX = (float) Math.toRadians(-5);
+        this.wholehead.rotateAngleY = (float) Math.toRadians(-22.5);
+        this.neck.rotateAngleY = (float) Math.toRadians(-17.5);
+        this.body2.rotateAngleY = (float) Math.toRadians(17.5);
+        this.body3.rotateAngleY = (float) Math.toRadians(15);
+        this.body4.rotateAngleY = (float) Math.toRadians(22.5);
+        this.tail.rotateAngleY = (float) Math.toRadians(27.4);
+        this.tail2.rotateAngleY = (float) Math.toRadians(25);
+        this.tail3.rotateAngleY = (float) Math.toRadians(24.9);
+        this.tail4.rotateAngleY = (float) Math.toRadians(30);
+        this.tail5.rotateAngleY = (float) Math.toRadians(32.5);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

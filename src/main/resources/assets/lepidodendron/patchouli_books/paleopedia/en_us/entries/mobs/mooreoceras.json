@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Pseudorthocerida$(br)>Pseudorthoceratidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/mooreoceras.png"],
-			"title": "M. sibumasuense",
-			"text": ""
+			"type": "entity",
+			"name": "M. sibumasuense",
+			"entity": "lepidodendron:prehistoric_flora_mooreoceras",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_mooreoceras",
 			"type": "text",
-			"text": "Mooreoceras is an fast moving, carnivorous orthocone that lived from the Carboniferous to Permian periods. It hunted by grabbing prey with its tentacles. It lived in an environment that was a more cool tempereate zone rather than a tropical sea. "
+			"text": "Mooreoceras is an fast moving, carnivorous orthocone that lived from the Carboniferous to Permian periods. It hunted by grabbing prey with its tentacles. It lived in an environment that was a more cool temperate zone rather than a tropical sea. "
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -262,15 +262,41 @@ public class ModelDatheosaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Datheosaurus.offsetY = -0.5F;
-        this.Datheosaurus.offsetX = -0.1F;
+        this.Datheosaurus.offsetX = 0.4F;
         this.Datheosaurus.rotateAngleY = (float)Math.toRadians(220);
         this.Datheosaurus.rotateAngleX = (float)Math.toRadians(11);
         this.Datheosaurus.rotateAngleZ = (float)Math.toRadians(-4);
         this.Datheosaurus.scaleChildren = true;
-        float scaler = 1.2F;
+        float scaler = 0.8F;
         this.Datheosaurus.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Datheosaurus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body2, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg, -0.0415F, 0.8281F, -0.064F);
+        this.setRotateAngle(backleftleg2, 0.0038F, -0.0435F, -0.2619F);
+        this.setRotateAngle(backleftleg3, 0.3055F, -1.0118F, 0.1458F);
+        this.setRotateAngle(backrightleg4, -0.0511F, -0.1688F, 0.1711F);
+        this.setRotateAngle(backrightleg5, 0.2541F, 0.1739F, -0.0012F);
+        this.setRotateAngle(backrightleg6, -0.1435F, 0.9672F, -0.219F);
+        this.setRotateAngle(tail, -0.0447F, 0.218F, -0.0097F);
+        this.setRotateAngle(tail2, -0.0457F, 0.3051F, -0.0138F);
+        this.setRotateAngle(tail3, 0.0401F, 0.5667F, -0.0188F);
+        this.setRotateAngle(tail4, 0.1827F, 0.5664F, 0.0421F);
+        this.setRotateAngle(body, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(upperbody, -0.0452F, 0.2615F, -0.0117F);
+        this.setRotateAngle(frontleftleg, 0.2992F, -0.833F, -0.395F);
+        this.setRotateAngle(cube_r1, 0.0F, 0.0F, 0.3927F);
+        this.setRotateAngle(frontleftleg2, 0.2618F, 0.1745F, 0.0F);
+        this.setRotateAngle(frontleftleg3, -0.1307F, 0.1577F, 0.2542F);
+        this.setRotateAngle(frontrightleg4, 0.0094F, -0.2176F, 0.0748F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.0F, -0.3927F);
+        this.setRotateAngle(frontrightleg5, -0.3077F, 0.1268F, -0.0264F);
+        this.setRotateAngle(frontrightleg6, 0.4492F, 0.0984F, -0.0007F);
+        this.setRotateAngle(head, 0.1752F, -0.0859F, -0.0152F);
+        this.setRotateAngle(cube_r3, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.7854F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.5672F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.Datheosaurus.render(f);
         //Reset rotations, positions and sizing:

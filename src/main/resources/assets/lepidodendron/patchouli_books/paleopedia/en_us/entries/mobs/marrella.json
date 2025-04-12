@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Marrellomorpha$(br)>Marrellida$(br)>Marrellidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/marrella.png"],
-			"title": "M. splendens",
-			"text": ""
+			"type": "entity",
+			"name": "M. splendens",
+			"entity": "lepidodendron:prehistoric_flora_marrella",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_marrella",

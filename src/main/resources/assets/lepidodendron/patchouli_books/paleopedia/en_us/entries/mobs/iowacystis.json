@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Echinodermata$(br)>Soluta$(br)>Syringocrinida$(br)>Iowacystidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/iowacystis.png"],
-			"title": "I. sagittaria",
-			"text": ""
+			"type": "entity",
+			"name": "I. sagittaria",
+			"entity": "lepidodendron:prehistoric_flora_iowacystis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_iowacystis",
 			"type": "text",
-			"text": "Iowacystis is a member of the extinct Soluta class of echinoderms. It lived during the late Ordovician period in what is now the state of Iowa in the United States. This group of organisms are asymmetric, with strange body-plans, and it is uncertain exactly how they moved, although it is suspected that they were static and sessile (attached ot the bottom) at least during their juvenile stage. It is the type genus for Iowacystidae, which was first described in 1960."
+			"text": "Iowacystis is a member of the extinct Soluta class of echinoderms. It lived during the Upper Ordovician, in what is now the state of Iowa in the United States. This group of organisms are asymmetric, with strange body-plans, and it is uncertain exactly how they moved, although it is suspected that they were static and sessile (attached ot the bottom) at least during their juvenile stage. It is the type genus for Iowacystidae, which was first described in 1960."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Ichthyosauria$(br)>Mixosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/mixosaurus.png"],
-			"title": "M. cornalianus",
-			"text": ""
+			"type": "entity",
+			"name": "M. cornalianus",
+			"entity": "lepidodendron:prehistoric_flora_mixosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_mixosaurus",
 			"type": "text",
-			"text": "Mixosaurus is a small sized Triassic ichthyosaur. Previously known from many species, Mixosaurus today is composed only of three valid species hailing from Italy, Switzerland and South China. Long considered a transitional stage between older eel like Ichthyosaurs "
+			"text": "Mixosaurus is a small sized Triassic ichthyosaur. Previously known from many species, Mixosaurus today is composed only of three valid species hailing from Italy, Switzerland and South China. Long considered a transitional stage between older eel like ichthyosaurs "
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_mixosaurus",

@@ -283,6 +283,50 @@ public class ModelEuropasaurus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hips.offsetY = -0.2F;
+        this.Hips.offsetX = -0.1F;
+        this.Hips.offsetZ = 2.0F;
+        this.Hips.rotateAngleY = (float)Math.toRadians(120);
+        this.Hips.rotateAngleX = (float)Math.toRadians(1);
+        this.Hips.rotateAngleZ = (float)Math.toRadians(0);
+        this.Hips.scaleChildren = true;
+        float scaler = 0.6F;
+        this.Hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Hips, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(Tail1, -0.3F, 0.05F, 0.0F);
+        this.setRotateAngle(Tail2, 0.15F, 0.09F, 0.0F);
+        this.setRotateAngle(Tail3, 0.09F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail4, -0.05F, -0.12F, 0.0F);
+        this.setRotateAngle(Tail5, -0.09F, -0.15F, 0.0F);
+        this.setRotateAngle(UpperlegR, 0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerlegR, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(FootR, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperlegL, -0.09F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerlegL, 0.09F, 0.0F, 0.0F);
+        this.setRotateAngle(FootL, -0.02F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Shoulder, 0.08F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmR, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerArmR, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(HandR, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmL, -0.25F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerArmL, -0.28F, 0.0F, 0.0F);
+        this.setRotateAngle(HandL, 0.45F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck1, -0.7F, 0.05F, 0.0F);
+        this.setRotateAngle(Neck2, -0.09F, 0.06F, 0.0F);
+        this.setRotateAngle(Neck3, -0.0F, 0.07F, 0.0F);
+        this.setRotateAngle(Neck4, 0.02F, 0.08F, 0.0F);
+        this.setRotateAngle(Neck5, 0.3F, 0.09F, 0.0F);
+        this.setRotateAngle(Head, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.3F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hips.setScale(1.0F, 1.0F, 1.0F);
+        this.Hips.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

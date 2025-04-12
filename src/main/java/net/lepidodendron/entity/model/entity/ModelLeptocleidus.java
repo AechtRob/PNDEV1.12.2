@@ -300,16 +300,30 @@ public class ModelLeptocleidus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.38F;
-        this.main.offsetX = -0.03F;
+        this.main.offsetY = -0.6F;
+        this.main.offsetX = 0.0F;
         this.main.rotateAngleY = (float)Math.toRadians(205);
         this.main.rotateAngleX = (float)Math.toRadians(18);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 0.625F;
+        float scaler = 0.5F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(neck, -0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(neck2, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(neck3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftFlipper, 0.0F, 0.0F, -0.7F);
+        this.setRotateAngle(frontRightFlipper, 0.0F, 0.0F, 0.7F);
+        this.setRotateAngle(backLeftFlipper, 0.0F, 0.0F, -1.3F);
+        this.setRotateAngle(backRightFlipper, 0.0F, 0.0F, 1.3F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

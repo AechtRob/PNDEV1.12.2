@@ -227,6 +227,30 @@ public class ModelGuiyu extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Guiyu.offsetY = -1.0F;
+        this.Guiyu.offsetX = 0.4F;
+        this.Guiyu.offsetZ = 2.0F;
+        this.Guiyu.rotateAngleY = (float)Math.toRadians(120);
+        this.Guiyu.rotateAngleX = (float)Math.toRadians(1);
+        this.Guiyu.rotateAngleZ = (float)Math.toRadians(0);
+        this.Guiyu.scaleChildren = true;
+        float scaler = 3.2F;
+        this.Guiyu.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Guiyu, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Jaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.1F, 0.0F);
+        //End of pose, now render the model:
+        this.Guiyu.render(f);
+        //Reset rotations, positions and sizing:
+        this.Guiyu.setScale(1.0F, 1.0F, 1.0F);
+        this.Guiyu.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

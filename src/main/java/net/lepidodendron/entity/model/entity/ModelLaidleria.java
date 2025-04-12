@@ -362,6 +362,28 @@ public class ModelLaidleria extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Laidleria.offsetY = -1.6F;
+        this.Laidleria.offsetX = -0.2F;
+        this.Laidleria.offsetZ = 2.0F;
+        this.Laidleria.rotateAngleY = (float)Math.toRadians(120);
+        this.Laidleria.rotateAngleX = (float)Math.toRadians(1);
+        this.Laidleria.rotateAngleZ = (float)Math.toRadians(0);
+        this.Laidleria.scaleChildren = true;
+        float scaler = 1.6F;
+        this.Laidleria.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Laidleria, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(chest, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.Laidleria.render(f);
+        //Reset rotations, positions and sizing:
+        this.Laidleria.setScale(1.0F, 1.0F, 1.0F);
+        this.Laidleria.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

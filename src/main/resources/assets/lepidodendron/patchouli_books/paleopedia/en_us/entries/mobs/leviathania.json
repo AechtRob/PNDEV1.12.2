@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Mollusca$(br)>Gastropoda$(br)>Purpurinidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/leviathania.png"],
-			"title": "L. gigantea",
-			"text": ""
+			"type": "entity",
+			"name": "L. gigantea",
+			"entity": "lepidodendron:prehistoric_flora_leviathania",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_leviathania",

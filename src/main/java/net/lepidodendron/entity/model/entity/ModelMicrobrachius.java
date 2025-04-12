@@ -169,6 +169,39 @@ public class ModelMicrobrachius extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Body.offsetY = -2.0F;
+        this.Body.offsetX = 0.8F;
+        this.Body.offsetZ = 2.0F;
+        this.Body.rotateAngleY = (float)Math.toRadians(120);
+        this.Body.rotateAngleX = (float)Math.toRadians(1);
+        this.Body.rotateAngleZ = (float)Math.toRadians(0);
+        this.Body.scaleChildren = true;
+        float scaler = 4.2F;
+        this.Body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Body, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(cube_r1, 0.0F, 0.0F, 0.3054F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.0F, -0.3054F);
+        this.setRotateAngle(cube_r3, 0.5323F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(FinR1, 0.4363F, -0.7418F, 0.0F);
+        this.setRotateAngle(FinR2, -0.3054F, 0.7854F, 0.0F);
+        this.setRotateAngle(FinL1, 0.0F, 0.6109F, 0.0F);
+        this.setRotateAngle(FinL2, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(jaw, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0436F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Body.render(f);
+        //Reset rotations, positions and sizing:
+        this.Body.setScale(1.0F, 1.0F, 1.0F);
+        this.Body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

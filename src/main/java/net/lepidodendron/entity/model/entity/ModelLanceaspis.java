@@ -292,6 +292,24 @@ public class ModelLanceaspis extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Lanceaspis.offsetY = -0.4F;
+        this.Lanceaspis.offsetX = 0.0F;
+        this.Lanceaspis.offsetZ = 2.0F;
+        this.Lanceaspis.rotateAngleY = (float)Math.toRadians(120);
+        this.Lanceaspis.rotateAngleX = (float)Math.toRadians(1);
+        this.Lanceaspis.rotateAngleZ = (float)Math.toRadians(0);
+        this.Lanceaspis.scaleChildren = true;
+        float scaler = 1.2F;
+        this.Lanceaspis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Lanceaspis, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.Lanceaspis.render(f);
+        //Reset rotations, positions and sizing:
+        this.Lanceaspis.setScale(1.0F, 1.0F, 1.0F);
+        this.Lanceaspis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Chordata$(br)>Chondrichthyes$(br)>Holocephali$(br)>Petalodontiformes$(br)>Janassidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/janassa.png"],
-			"title": "J. bituminosa",
-			"text": ""
+			"type": "entity",
+			"name": "J. bituminosa",
+			"entity": "lepidodendron:prehistoric_flora_janassa",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_janassa",

@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_onychopterella",
 			"title": "Onychopterella",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Arthropoda$(br)>Eurypterida$(br)>Onychopterelloidea$(br)>Onychopterellidae"
+			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Onychopterelloidea$(br)>Onychopterellidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/onychopterella.png"],
-			"title": "O. kokomoensis",
-			"text": ""
+			"type": "entity",
+			"name": "O. kokomoensis",
+			"entity": "lepidodendron:prehistoric_flora_onychopterella",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_onychopterella",
 			"type": "text",
-			"text": "Onychopterella is a Eurypterid known from the United States and South Africa. With length only about 16 cm, it was quite small. Its lifestyle was mainly benthic although it was also able to swim. This genus is known from fossil sites with different periods, like Ordovician Soom Shale and Silurian Kokomo. It had a rounded squarish head with a fat body and thinner tail. Its eyes were reniform and its legs were unspecialized and lacked spines save for the distal end."
+			"text": "Onychopterella is a eurypterid known from the United States and South Africa. With length only about 16 cm, it was quite small. Its lifestyle was mainly benthic although it was also able to swim. This genus is known from fossil sites with different periods, like Ordovician Soom Shale and Silurian Kokomo. It had a rounded squarish head with a fat body and thinner tail. Its eyes were reniform and its legs were unspecialized and lacked spines save for the distal end."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_onychopterella",

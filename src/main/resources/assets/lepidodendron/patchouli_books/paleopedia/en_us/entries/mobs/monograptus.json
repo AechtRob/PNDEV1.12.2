@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Graptolithina$(br)>Graptoloidea$(br)>Monograptidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/monograptus.png"],
-			"title": "M. spiralis",
-			"text": ""
+			"type": "entity",
+			"name": "M. spiralis",
+			"entity": "lepidodendron:prehistoric_flora_monograptus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_monograptus",

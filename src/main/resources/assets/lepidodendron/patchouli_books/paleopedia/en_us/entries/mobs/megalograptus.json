@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_megalograptus",
 			"title": "Megalograptus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Eurypterida$(br)>Carcinosomatoidea$(br)>Megalograptidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Carcinosomatoidea$(br)>Megalograptidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/megalograptus.png"],
-			"title": "M. ohioensis",
-			"text": ""
+			"type": "entity",
+			"name": "M. ohioensis",
+			"entity": "lepidodendron:prehistoric_flora_megalograptus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_megalograptus",
 			"type": "text",
-			"text": "Megalograptus is a famous sea scorpion from the Late Ordovician period. Some specimens were so well preserved, life colorations could be inferred from them. Those colors were inferred to be a dark brown and black on its tail and pincers and a lighter body coloration. They also had a trident like tail and their arms had a multitude of spines on them."
+			"text": "Megalograptus is a famous sea scorpion from the Upper Ordovician period. Some specimens were so well preserved, life colorations could be inferred from them. Those colors were inferred to be a dark brown and black on its tail and pincers and a lighter body coloration. They also had a trident like tail and their arms had a multitude of spines on them."
 		},
 		{
 			"type": "lepidodendron:diet",

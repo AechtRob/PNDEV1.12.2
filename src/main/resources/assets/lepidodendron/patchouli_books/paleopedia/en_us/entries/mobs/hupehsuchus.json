@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Hupehsuchia$(br)>Hupehsuchidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/hupehsuchus.png"],
-			"title": "H. nanchangensis",
-			"text": ""
+			"type": "entity",
+			"name": "H. nanchangensis",
+			"entity": "lepidodendron:prehistoric_flora_hupehsuchus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hupehsuchus",
 			"type": "text",
-			"text": "Hupehsuchus is a Hupehsuchid from Hubei Province, China that lived in the early Triassic. It had finely ordered osteoderms, polydactylus flippers, and a whale-like throat pouched speculated to be used to filter feed. Although this marine reptile resembles some strange ichthyosaur, it was only vaguely related to them. Its and Nanchangosaurus' unusual anatomy has warranted the construction of unique order of Hupesuchia."
+			"text": "Hupehsuchus is a hupehsuchid from Hubei Province, China that lived in the Lower Triassic. It had finely ordered osteoderms, polydactylus flippers, and a whale-like throat pouched speculated to be used to filter feed. Although this marine reptile resembles some strange ichthyosaur, it was only vaguely related to them. Its and Nanchangosaurus' unusual anatomy has warranted the construction of unique order of Hupesuchia."
 		},
 		{
 			"type": "lepidodendron:diet",

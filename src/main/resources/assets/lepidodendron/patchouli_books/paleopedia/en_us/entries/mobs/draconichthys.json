@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Selenosteidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/draconichthys.png"],
-			"title": "D. elegans",
-			"text": ""
+			"type": "entity",
+			"name": "D. elegans",
+			"entity": "lepidodendron:prehistoric_flora_draconichthys",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_draconichthys",
 			"type": "text",
-			"text": "Draconichthys elegans was a species of arthrodire placoderm that lived during the Late Devonian (some 383 - 372 million years ago) in what is now the Anti-Atlas Mountains of Morocco. During this time, this part of the world was a shallow, algae-rich sea. Draconichthys could be distinguished from its "
+			"text": "Draconichthys elegans was a species of arthrodire placoderm that lived during the Upper Devonian (some 383 - 372 million years ago) in what is now the Anti-Atlas Mountains of Morocco. During this time, this part of the world was a shallow, algae-rich sea. Draconichthys could be distinguished from its "
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_draconichthys",

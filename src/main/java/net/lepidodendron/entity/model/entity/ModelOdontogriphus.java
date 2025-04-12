@@ -104,6 +104,25 @@ public class ModelOdontogriphus extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.all.offsetY = -0.3F;
+        this.all.offsetX = -0.05F;
+        this.all.offsetZ = 2.0F;
+        this.all.rotateAngleY = (float)Math.toRadians(120);
+        this.all.rotateAngleX = (float)Math.toRadians(1);
+        this.all.rotateAngleZ = (float)Math.toRadians(0);
+        this.all.scaleChildren = true;
+        float scaler = 1.2F;
+        this.all.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(all, -0.6F, 0.6F, -0.2F);
+        this.setRotateAngle(frontbit, 0.2F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.all.render(f);
+        //Reset rotations, positions and sizing:
+        this.all.setScale(1.0F, 1.0F, 1.0F);
+        this.all.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

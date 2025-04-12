@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Trilobita$(br)>Corynexochida$(br)>Styginidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/heliopeltis.png"],
-			"title": "H. johnsoni",
-			"text": ""
+			"type": "entity",
+			"name": "H. johnsoni",
+			"entity": "lepidodendron:prehistoric_flora_heliopeltis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_heliopeltis",

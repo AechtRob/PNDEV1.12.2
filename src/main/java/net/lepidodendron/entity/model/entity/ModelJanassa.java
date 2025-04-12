@@ -190,6 +190,28 @@ public class ModelJanassa extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -1.0F;
+        this.body.offsetX = 0.4F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(120);
+        this.body.rotateAngleX = (float)Math.toRadians(1);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 2.2F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body2, -0.02F, 0.3F, 0.0F);
+        this.setRotateAngle(body3, -0.04F, -0.2F, 0.0F);
+        this.setRotateAngle(body4, -0.06F, -0.2F, 0.0F);
+        this.setRotateAngle(body5, -0.08F, -0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

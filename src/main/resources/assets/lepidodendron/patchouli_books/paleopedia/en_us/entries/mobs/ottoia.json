@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_ottoia",
 			"title": "Ottoia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ottoidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>$(o)Priapulida (?)$()$(br)>Ottoidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ottoia.png"],
-			"title": "O. prolifica",
-			"text": ""
+			"type": "entity",
+			"name": "O. prolifica",
+			"entity": "lepidodendron:prehistoric_flora_ottoia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ottoia",
 			"type": "text",
-			"text": "Ottoia was a worm like animal from the late Cambrian which would have lived in burrows on the sea floor. It hunted prey with its proboscis and it may have also scavenged on dead organisms on the sea floor."
+			"text": "Ottoia was a worm like animal from the Upper Cambrian which would have lived in burrows on the sea floor. It hunted prey with its proboscis and it may have also scavenged on dead organisms on the sea floor."
 		},
 		{
 			"type": "lepidodendron:diet",

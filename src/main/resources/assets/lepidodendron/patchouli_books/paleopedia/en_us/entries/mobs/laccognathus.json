@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_laccognathus",
 			"title": "Laccognathus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Porolepiformes$(br)>Holoptychiidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Sarcopterygii$(br)>Porolepiformes$(br)>Holoptychiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/laccognathus.png"],
-			"title": "L. panderi",
-			"text": ""
+			"type": "entity",
+			"name": "L. panderi",
+			"entity": "lepidodendron:prehistoric_flora_laccognathus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_laccognathus",

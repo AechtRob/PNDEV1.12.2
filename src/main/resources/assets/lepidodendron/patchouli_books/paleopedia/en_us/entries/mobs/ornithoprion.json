@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Eugeneodontida$(br)>Caseodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ornithoprion.png"],
-			"title": "O. hertwigi",
-			"text": ""
+			"type": "entity",
+			"name": "O. hertwigi",
+			"entity": "lepidodendron:prehistoric_flora_ornithoprion",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ornithoprion",
 			"type": "text",
-			"text": "Ornithoprion is a Carboniferous Eugeneodont that was characterized by its elongated jaw. It had a small 10 cenimeter skull and was scaled to be able to grow up to around half a meter in length. These small Eugeneodonts still had the characteristic tooth whorl that their larger relatives, like Helicoprion possessed.  The discovery of Ornithorpion helped established the aspects of eugeneodont skull anatomy."
+			"text": "Ornithoprion is a Carboniferous eugeneodont that was characterized by its elongated jaw. It had a small 10 centimeter long skull and was estimated to be able to grow up to around half a meter in length. These small eugeneodonts still had the characteristic tooth whorl that their larger relatives, like Helicoprion possessed.  The discovery of Ornithorpion helped established the aspects of eugeneodont skull anatomy."
 		},
 		{
 			"type": "lepidodendron:diet",

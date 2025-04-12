@@ -12,30 +12,26 @@
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Anaspida$(br)>Birkeniiformes$(br)>Lasaniidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/lasanius.png"],
-			"title": "L. problematicus",
-			"text": ""
+			"type": "entity",
+			"name": "L. problematicus",
+			"entity": "lepidodendron:prehistoric_flora_lasanius",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lasanius",
 			"type": "text",
-			"text": "Lasanius is a genus of Anaspid fish from the late Silurian of Scotland. While usually only around 5 cm long, incomplete specimens from the same genus seem to indicate it could grow up to as much as 15 cm in length. The body was long and thin, the skin wasn't covered in scales unlike its cousins like Birkenia, with the only exception being the row of median hook shaped spikes on its back."
+			"text": "Lasanius is a genus of anaspid fish from the Upper Silurian of Scotland. While usually only around 5 cm long, incomplete specimens from the same genus seem to indicate it could grow up to as much as 15 cm in length. The body was long and thin, the skin wasn't covered in scales unlike its cousins like Birkenia, with the only exception being the row of median hook shaped spikes on its back. Due to the cartilaginous nature of its skeleton,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lasanius",
 			"type": "text",
-			"text": "Due to the cartilaginous nature of its skeleton, the only hard parts of Lasanius' body to be consistently preserved are the 17-24 aforementioned hook-shaped spikes, the series of six ossicles associated to the branchial openings and the associated post-cephalic \"sticks\"; all other remains of Lasanius are carbon films."
+			"text": "the only hard parts of Lasanius' body to be consistently preserved are the 17 - 24 aforementioned hook-shaped spikes, the series of six ossicles associated to the branchial openings and the associated post-cephalic \"sticks\"; all other remains of Lasanius are carbon films. The number of the ossicles and the \"sticks\" varies between species and even individuals, in some cases not even being the same on both sides of the same animal;"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lasanius",
 			"type": "text",
-			"text": "The number of the ossicles and the \"sticks\" varies between species and even individuals, in some cases not even being the same on both sides of the same animal; although several hypotheses were formulated on the function of those L shaped structures, ranging from support for the gills to muscle support, no real answer has been reached yet on their function."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_lasanius",
-			"type": "text",
-			"text": "Due to the preservation of this animal, not much is known about the head, aside from two lens-like structures, interpreted to be eyes. Lasanius was first described in 1899 by Traquair on several Scottish fossils."
+			"text": "although several hypotheses were formulated on the function of those L shaped structures, ranging from support for the gills to muscle support, no real answer has been reached yet on their function. Due to the preservation of this animal, not much is known about the head, aside from two lens-like structures, interpreted to be eyes. Lasanius was first described in 1899 by Traquair on several Scottish fossils."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lasanius",

@@ -347,6 +347,44 @@ public class ModelEndothiodon extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.endothiodon.offsetY = -0.2F;
+        this.endothiodon.offsetX = -0.4F;
+        this.endothiodon.offsetZ = 2.0F;
+        this.endothiodon.rotateAngleY = (float)Math.toRadians(120);
+        this.endothiodon.rotateAngleX = (float)Math.toRadians(1);
+        this.endothiodon.rotateAngleZ = (float)Math.toRadians(0);
+        this.endothiodon.scaleChildren = true;
+        float scaler = 0.8F;
+        this.endothiodon.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(endothiodon, 0.2F, 3.8F, -0.0F);this.setRotateAngle(bodyback, -0.0873F, 0.3927F, 0.0F);
+        this.setRotateAngle(tail1, -0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(legBL1, -0.1745F, -0.3491F, -0.1745F);
+        this.setRotateAngle(legBL2, 0.6981F, 0.0873F, 0.1309F);
+        this.setRotateAngle(legBL3, -0.3927F, 0.0436F, 0.0436F);
+        this.setRotateAngle(legBL4, -0.1745F, 0.3491F, 0.1745F);
+        this.setRotateAngle(legBL5, 0.6981F, -0.0873F, -0.1309F);
+        this.setRotateAngle(legBL6, -0.3927F, -0.0436F, -0.0436F);
+        this.setRotateAngle(bodyfront, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(neck1, -0.3054F, -0.2182F, 0.0F);
+        this.setRotateAngle(neck2, 0.0873F, -0.2618F, 0.0F);
+        this.setRotateAngle(head, 0.3927F, -0.0436F, -0.2182F);
+        this.setRotateAngle(jaw, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(legRL1, 0.9163F, 0.5236F, 0.0F);
+        this.setRotateAngle(legRL2, -1.4835F, -0.4363F, 0.5672F);
+        this.setRotateAngle(legRL3, 0.4363F, 0.0F, 0.0436F);
+        this.setRotateAngle(legRL4, 0.9163F, -0.5236F, 0.0F);
+        this.setRotateAngle(legRL5, -1.4835F, 0.4363F, -0.5672F);
+        this.setRotateAngle(legRL6, 0.4363F, 0.0F, -0.0436F);
+        //End of pose, now render the model:
+        this.endothiodon.render(f);
+        //Reset rotations, positions and sizing:
+        this.endothiodon.setScale(1.0F, 1.0F, 1.0F);
+        this.endothiodon.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

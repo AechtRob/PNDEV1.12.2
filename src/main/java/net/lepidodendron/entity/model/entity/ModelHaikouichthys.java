@@ -126,6 +126,28 @@ public class ModelHaikouichthys extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.bone2.offsetY = -6.4F;
+        this.bone2.offsetX = 2.8F;
+        this.bone2.offsetZ = 2.0F;
+        this.bone2.rotateAngleY = (float)Math.toRadians(120);
+        this.bone2.rotateAngleX = (float)Math.toRadians(1);
+        this.bone2.rotateAngleZ = (float)Math.toRadians(0);
+        this.bone2.scaleChildren = true;
+        float scaler = 6.2F;
+        this.bone2.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(bone2, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(bone4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(bone5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(bone6, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(bone7, 0.0F, -0.4F, 0.0F);
+        //End of pose, now render the model:
+        this.bone2.render(f);
+        //Reset rotations, positions and sizing:
+        this.bone2.setScale(1.0F, 1.0F, 1.0F);
+        this.bone2.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

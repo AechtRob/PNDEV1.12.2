@@ -9,38 +9,29 @@
 			"trigger": "lepidodendron:pf_adv_book_eugaleaspis",
 			"title": "Eugaleaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)>Chordata$(br)>Galeaspida$(br)>Eugaleaspidiformes$(br)>Eugaleaspidae"
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Galeaspida$(br)>Eugaleaspidiformes$(br)>Eugaleaspidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/eugaleaspis.png"],
-			"title": "E. lianhuashanensis",
-			"text": ""
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_eugaleaspis",
-			"type": "text",
-			"text": "Eugaleaspis is the namesake genus to the order Eugaleaspiformes, it lived in the upper Silurian to lower Devonian of the Yunnan province of China. The animal, in many aspects similar to the slightly older Dunyu, was a small jawless fish possessing a long and thin medial opening on the top of the head, around 6 times longer than wide."
+			"type": "entity",
+			"name": "E. lianhuashanensis",
+			"entity": "lepidodendron:prehistoric_flora_eugaleaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eugaleaspis",
 			"type": "text",
-			"text": "The head armor was circular in shape and ending on two low horn like structures creating the vertices at the back of its head. Quite a small animal, the length of the head shield would not go over 4 cm, with the largest specimen being 3.7 cm long along its midline."
+			"text": "Eugaleaspis is the namesake genus to the order Eugaleaspiformes, it lived in the Upper Silurian to Lower Devonian of the Yunnan province of China. The animal, in many aspects similar to the slightly older Dunyu, was a small jawless fish possessing a long and thin medial opening on the top of the head, around 6 times longer than wide. The head armor was circular in shape and ending on two low horn like structures creating the vertices at the back of its head."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eugaleaspis",
 			"type": "text",
-			"text": "Due to the shape and anatomy of the headshield in Galeaspids, being an unsegmented and sutureless carapace, it is thought these animals would only acquire this extremely characteristic feature at near to full growth, explaining the limited size range seen in these animals."
+			"text": "Quite a small animal, the length of the head shield would not go over 4 cm, with the largest specimen being 3.7 cm long along its midline. Due to the shape and anatomy of the headshield in galeaspids, being an unsegmented and sutureless carapace, it is thought these animals would only acquire this extremely characteristic feature at near to full growth, explaining the limited size range seen in these animals."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eugaleaspis",
 			"type": "text",
-			"text": "Among the sites where this animal was found there is the Xishancun Formation in Qujing City, in strata overlying the older Silurian aged Yulungssu Formation, where the remains of Dunyu were discovered and described."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_eugaleaspis",
-			"type": "text",
-			"text": "Eugaleaspis had previously been thought to have lived during the Silurian as well, however that species has now been synonymized with Dunyu, leaving the only valid species in the Devonian."
+			"text": "Among the sites where this animal was found there is the Xishancun Formation in Qujing City, in strata overlying the older Silurian aged Yulungssu Formation, where the remains of Dunyu were discovered and described. Eugaleaspis had previously been thought to have lived during the Silurian as well, however that species has now been synonymized with Dunyu, leaving the only valid species in the Devonian."
 		},
 		{
 			"type": "lepidodendron:diet",

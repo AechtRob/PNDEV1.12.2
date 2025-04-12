@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_furcacauda",
 			"title": "Furcacauda",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Thelodonti$(br)>Furcacaudiformes$(br)>Furcacaudidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Thelodonti$(br)>Furcacaudiformes$(br)>Furcacaudidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/furcacauda.png"],
-			"title": "F. heintzae",
-			"text": ""
+			"type": "entity",
+			"name": "F. heintzae",
+			"entity": "lepidodendron:prehistoric_flora_furcacauda",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_furcacauda",

@@ -209,6 +209,28 @@ public class ModelGabreyaspis extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.gabreyaspis.offsetY = -0.8F;
+        this.gabreyaspis.offsetX = 0.2F;
+        this.gabreyaspis.offsetZ = 2.0F;
+        this.gabreyaspis.rotateAngleY = (float)Math.toRadians(120);
+        this.gabreyaspis.rotateAngleX = (float)Math.toRadians(1);
+        this.gabreyaspis.rotateAngleZ = (float)Math.toRadians(0);
+        this.gabreyaspis.scaleChildren = true;
+        float scaler = 3.2F;
+        this.gabreyaspis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(gabreyaspis, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(tail, -0.2F, -0.4F, 0.0F);
+        this.setRotateAngle(tail2, 0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(tail4, 0.1F, 0.1F, 0.0F);
+        //End of pose, now render the model:
+        this.gabreyaspis.render(f);
+        //Reset rotations, positions and sizing:
+        this.gabreyaspis.setScale(1.0F, 1.0F, 1.0F);
+        this.gabreyaspis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_eocarcinus",
 			"title": "Eocarcinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Decapoda (br)>Eocarcinidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Eocarcinidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/eocarcinus.png"],
-			"title": "E. praecursor",
-			"text": ""
+			"type": "entity",
+			"name": "E. praecursor",
+			"entity": "lepidodendron:prehistoric_flora_eocarcinus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eocarcinus",
 			"type": "text",
-			"text": "Eocarcinus was a decapod crustacean that lived during the early Jurassic, described from rocks in the United Kingdom. The name, Eocarcinus, best interpreted to mean “early crab” accurately describes this ancient crustacean, which is generally regarded as the oldest known member of the group Brachyura, or “true crabs.”"
+			"text": "Eocarcinus was a decapod crustacean that lived during the Lower Jurassic, described from rocks in the United Kingdom. The name, Eocarcinus, best interpreted to mean “early crab” accurately describes this ancient crustacean, which is generally regarded as the oldest known member of the group Brachyura, or “true crabs.”"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eocarcinus",

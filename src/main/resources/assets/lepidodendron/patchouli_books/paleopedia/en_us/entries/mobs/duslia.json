@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Artiopoda$(br)>Vicissicaudata$(br)>Cheloniellida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/duslia.png"],
-			"title": "D. insignis",
-			"text": ""
+			"type": "entity",
+			"name": "D. insignis",
+			"entity": "lepidodendron:prehistoric_flora_duslia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_duslia",
 			"type": "text",
-			"text": "Duslia is a creature from the Ordovician of the Czech Republic and Morocco. Being one of the few examples of a non-trilobite member of the Artiopods, Duslia itself is fairly enigmatic, though currently being placed within Cheloniellida. It was fairly large, of a circular-shape, soft bodied, comprised of several body-segments, and was completely blind, lacking any eyes."
+			"text": "Duslia is a creature from the Ordovician of the Czech Republic and Morocco. Being one of the few examples of a non-trilobite member of the artiopods, Duslia itself is fairly enigmatic, though currently being placed within cheloniellida. It was fairly large, of a circular-shape, soft bodied, comprised of several body-segments, and was completely blind, lacking any eyes."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_duslia",

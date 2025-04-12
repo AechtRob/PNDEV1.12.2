@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Trilobitomorpha$(br)>Conciliterga"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/helmetia.png"],
-			"title": "H. expansa",
-			"text": ""
+			"type": "entity",
+			"name": "H. expansa",
+			"entity": "lepidodendron:prehistoric_flora_helmetia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_helmetia",

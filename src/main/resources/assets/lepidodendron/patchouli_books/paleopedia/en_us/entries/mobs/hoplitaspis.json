@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_hoplitaspis",
 			"title": "Hoplitaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Dekatriata$(br)>Chasmataspidida$(br)>Diploaspididae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Chelicerata$(br)>Dekatriata$(br)>Chasmataspidida$(br)>Diploaspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/hoplitaspis.png"],
-			"title": "H. hiawathai",
-			"text": ""
+			"type": "entity",
+			"name": "H. hiawathai",
+			"entity": "lepidodendron:prehistoric_flora_hoplitaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hoplitaspis",
 			"type": "text",
-			"text": "Hoplitaspis was a Late Ordovician chasmataspid arthropod described in 2017 from the Big Hill Formation of Michigan. It is the earliest known diploaspidid, a group of chasmataspids which were similar in appearance to eurypterids, and has morphology intermediate between the earlier Chasmataspis and later diploaspidids. It is also the largest known Chasmataspid, at around 30 centimeters. The physical similarity of diploaspidids to eurypterids"
+			"text": "Hoplitaspis was a Upper Ordovician chasmataspid arthropod described in 2017 from the Big Hill Formation of Michigan. It is the earliest known diploaspidid, a group of chasmataspids which were similar in appearance to eurypterids, and has morphology intermediate between the earlier chasmataspis and later diploaspidids. It is also the largest known chasmataspid, at around 30 centimeters. The physical similarity of diploaspidids to eurypterids"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hoplitaspis",

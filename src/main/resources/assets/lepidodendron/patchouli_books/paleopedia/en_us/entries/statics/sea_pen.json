@@ -44,7 +44,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_sea_pen",
 			"type": "text",
-			"text": "Sea pens are a diverse group of marine colonial Cnidarians in the order of Pennatulacea. They have existed since the Cambrian into the modern day. They are named such due to their artificial resemblance to quill pens. This is owed to their specialized polyps which branch out from the stem to collect drifting nutrients from the water. Sea pens are very cosmopolitan, existing from tropical waters to deep seas, which also means the order is extremely genetically diverse as well. The oldest accepted sea pen is the genus $(l:statics/thaumaptilon)Thaumaptilon$(/l) found in the Burgess Shale from the Cambrian period."
+			"text": "Sea pens are a diverse group of marine colonial Cnidarians in the order of Pennatulacea. They have existed since the Cambrian into the modern day. They are named such due to their artificial resemblance to quill pens. This is owed to their specialized polyps which branch out from the stem to collect drifting nutrients from the water."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sea_pen",
+			"type": "text",
+			"text": "Sea pens are very cosmopolitan, existing from tropical waters to deep seas, which also means the order is extremely genetically diverse as well. The oldest accepted sea pen is the genus $(l:statics/thaumaptilon)Thaumaptilon$(/l) found in the Burgess Shale from the Cambrian period."
 		}
 	]
 }

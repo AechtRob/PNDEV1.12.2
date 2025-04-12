@@ -268,6 +268,50 @@ public class ModelMixosaurus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Mixosaurus.offsetY = -0.5F;
+        this.Mixosaurus.offsetX = 0.3F;
+        this.Mixosaurus.offsetZ = 2.0F;
+        this.Mixosaurus.rotateAngleY = (float)Math.toRadians(120);
+        this.Mixosaurus.rotateAngleX = (float)Math.toRadians(1);
+        this.Mixosaurus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Mixosaurus.scaleChildren = true;
+        float scaler = 0.8F;
+        this.Mixosaurus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Mixosaurus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body3, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.4887F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.219F, 0.3286F, -0.6037F);
+        this.setRotateAngle(cube_r11, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.0175F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, -0.192F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r17, 0.4712F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r18, 0.4712F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r19, -0.1833F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.3079F, 0.3142F, -0.7711F);
+        this.setRotateAngle(cube_r20, -0.2772F, -0.0069F, 0.013F);
+        this.setRotateAngle(cube_r3, 0.3079F, -0.3142F, 0.7711F);
+        this.setRotateAngle(cube_r4, -0.1396F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.2269F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.3142F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.1571F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.219F, -0.3286F, 0.6037F);
+        this.setRotateAngle(Head, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(Jaw, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, 0.0F, -0.2618F, 0.0F);
+        //End of pose, now render the model:
+        this.Mixosaurus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Mixosaurus.setScale(1.0F, 1.0F, 1.0F);
+        this.Mixosaurus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

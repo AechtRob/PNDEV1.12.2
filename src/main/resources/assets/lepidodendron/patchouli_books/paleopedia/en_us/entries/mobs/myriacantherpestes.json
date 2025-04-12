@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Diplopoda$(br)>Euphoberiida$(br)>Euphoberiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/myriacantherpestes.png"],
-			"title": "M. ferox",
-			"text": ""
+			"type": "entity",
+			"name": "M. ferox",
+			"entity": "lepidodendron:prehistoric_flora_myriacantherpestes",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_myriacantherpestes",

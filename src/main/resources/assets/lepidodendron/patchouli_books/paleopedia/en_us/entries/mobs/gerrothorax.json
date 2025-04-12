@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Amphibia$(br)>Temnospondyli$(br)>Stereospondyli$(br)>Plagiosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/gerrothorax.png"],
-			"title": "G. pulcherrimus",
-			"text": ""
+			"type": "entity",
+			"name": "G. pulcherrimus",
+			"entity": "lepidodendron:prehistoric_flora_gerrothorax",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gerrothorax",

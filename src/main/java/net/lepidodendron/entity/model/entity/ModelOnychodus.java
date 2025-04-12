@@ -255,6 +255,30 @@ public class ModelOnychodus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Body1.offsetY = 0.9F;
+        this.Body1.offsetX = 0.3F;
+        this.Body1.offsetZ = 2.0F;
+        this.Body1.rotateAngleY = (float)Math.toRadians(120);
+        this.Body1.rotateAngleX = (float)Math.toRadians(1);
+        this.Body1.rotateAngleZ = (float)Math.toRadians(0);
+        this.Body1.scaleChildren = true;
+        float scaler = 0.4F;
+        this.Body1.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Body1, 0.6F, 3.8F, -0.2F);
+        this.Head.rotateAngleY = (float) Math.toRadians(-12.5);
+        this.Lowerjawback.rotateAngleX = (float) Math.toRadians(16.5);
+        this.Body2.rotateAngleY = (float) Math.toRadians(10);
+        this.Tail1.rotateAngleY = (float) Math.toRadians(7.5);
+        this.Tail2.rotateAngleY = (float) Math.toRadians(7.5);
+        this.Tail4.rotateAngleY = (float) Math.toRadians(7.5);
+        //End of pose, now render the model:
+        this.Body1.render(f);
+        //Reset rotations, positions and sizing:
+        this.Body1.setScale(1.0F, 1.0F, 1.0F);
+        this.Body1.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

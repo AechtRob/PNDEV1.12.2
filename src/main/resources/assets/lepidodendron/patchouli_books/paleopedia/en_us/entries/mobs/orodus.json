@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Chordata$(br)>Chondrichthyes$(br)>Orodontida$(br)>Orodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/orodus.png"],
-			"title": "O. micropterygius",
-			"text": ""
+			"type": "entity",
+			"name": "O. micropterygius",
+			"entity": "lepidodendron:prehistoric_flora_orodus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_orodus",
 			"type": "text",
-			"text": "Orodus is a weirdly shaped cartilaginous fish that lived from the Late Carboniferous to Early Permian. It was quite large for cartilaginous fish of its time."
+			"text": "Orodus is a weirdly shaped cartilaginous fish that lived from the Upper Carboniferous to Lower Permian. It was quite large for cartilaginous fish of its time."
 		},
 		{
 			"type": "lepidodendron:diet",

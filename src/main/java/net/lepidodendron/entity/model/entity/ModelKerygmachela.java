@@ -335,6 +335,24 @@ public class ModelKerygmachela extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.head.offsetY = -1.8F;
+        this.head.offsetX = -0.2F;
+        this.head.offsetZ = 2.0F;
+        this.head.rotateAngleY = (float)Math.toRadians(120);
+        this.head.rotateAngleX = (float)Math.toRadians(1);
+        this.head.rotateAngleZ = (float)Math.toRadians(0);
+        this.head.scaleChildren = true;
+        float scaler = 2.4F;
+        this.head.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(head, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.head.render(f);
+        //Reset rotations, positions and sizing:
+        this.head.setScale(1.0F, 1.0F, 1.0F);
+        this.head.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

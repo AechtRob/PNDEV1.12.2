@@ -331,6 +331,34 @@ public class ModelOrodus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Orodus.offsetY = 0.2F;
+        this.Orodus.offsetX = 0.8F;
+        this.Orodus.offsetZ = 2.0F;
+        this.Orodus.rotateAngleY = (float)Math.toRadians(120);
+        this.Orodus.rotateAngleX = (float)Math.toRadians(1);
+        this.Orodus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Orodus.scaleChildren = true;
+        float scaler = 0.6F;
+        this.Orodus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Orodus, 0.6F, 3.8F, -0.2F);
+        this.Cephalon.rotateAngleY = (float) Math.toRadians(-12.5);
+        this.Jaw.rotateAngleX = (float) Math.toRadians(16.5);
+        this.Body2.rotateAngleY = (float) Math.toRadians(10);
+        this.Body3.rotateAngleY = (float) Math.toRadians(7.5);
+        this.Body4.rotateAngleY = (float) Math.toRadians(7.5);
+        this.Body5.rotateAngleY = (float) Math.toRadians(7.5);
+        this.Body6.rotateAngleY = (float) Math.toRadians(5);
+        this.Body7.rotateAngleY = (float) Math.toRadians(5);
+        this.Body8.rotateAngleY = (float) Math.toRadians(-12.5);
+        this.Body9.rotateAngleY = (float) Math.toRadians(-17.5);
+        //End of pose, now render the model:
+        this.Orodus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Orodus.setScale(1.0F, 1.0F, 1.0F);
+        this.Orodus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

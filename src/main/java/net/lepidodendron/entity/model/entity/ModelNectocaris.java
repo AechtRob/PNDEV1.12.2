@@ -353,6 +353,24 @@ public class ModelNectocaris extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Center.offsetY = -3.2F;
+        this.Center.offsetX = 0.0F;
+        this.Center.offsetZ = 2.0F;
+        this.Center.rotateAngleY = (float)Math.toRadians(120);
+        this.Center.rotateAngleX = (float)Math.toRadians(1);
+        this.Center.rotateAngleZ = (float)Math.toRadians(0);
+        this.Center.scaleChildren = true;
+        float scaler = 4.2F;
+        this.Center.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Center, -0.8F, 1.0F, -0.2F);
+        //End of pose, now render the model:
+        this.Center.render(f);
+        //Reset rotations, positions and sizing:
+        this.Center.setScale(1.0F, 1.0F, 1.0F);
+        this.Center.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

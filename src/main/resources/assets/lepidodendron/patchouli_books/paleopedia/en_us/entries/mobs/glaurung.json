@@ -12,15 +12,21 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Reptilia$(br)>Weigeltisauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/glaurung.png"],
-			"title": "G. schneideri",
-			"text": ""
+			"type": "entity",
+			"name": "G. schneideri",
+			"entity": "lepidodendron:prehistoric_flora_glaurung",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_glaurung",
 			"type": "text",
-			"text": "Glaurung is a weigeltisaurid from the Permian period. Similar to its more famous relative Coelurosauravus, it had wings that were attached to the sides of its body. In life it lived near a large inland sea in Northern Europe and its environment was considered to be semi arid."
+			"text": "Glaurung is a weigeltisaurid from the Permian period. Similar to its more famous relative Coelurosauravus, it had wings that were attached to the sides of its body. In life it lived near a large inland sea in Northern Europe and its environment was considered to be semi arid. The generic name derives directly from the name 'Glaurung', a fictional ancestor to all dragons from J. R. R. Tolkien's Middle-earth legendarium."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_glaurung",
+			"type": "text",
+			"text": "The specific name derives from the surname of Thomas Schneider, who found the original specimen."
 		},
 		{
 			"type": "lepidodendron:diet",

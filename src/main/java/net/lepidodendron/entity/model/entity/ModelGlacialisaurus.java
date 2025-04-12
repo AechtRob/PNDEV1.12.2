@@ -404,16 +404,56 @@ public class ModelGlacialisaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.2F;
-        this.root.offsetX = -0.15F;
+        this.root.offsetY = 0.2F;
+        this.root.offsetX = 0.3F;
+        this.root.offsetZ = 2.0F;
         this.root.rotateAngleY = (float)Math.toRadians(220);
         this.root.rotateAngleX = (float)Math.toRadians(8);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 0.75F;
+        float scaler = 0.6F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(root, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(tail5, 0.0869F, 0.0076F, -0.0869F);
+        this.setRotateAngle(tail4, 0.1308F, -0.0057F, 0.0433F);
+        this.setRotateAngle(tail3, 0.1745F, 0.0F, 0.0873F);
+        this.setRotateAngle(tail2, -0.2176F, 0.0132F, 0.1298F);
+        this.setRotateAngle(tail1, -0.1302F, 0.0076F, 0.1744F);
+        this.setRotateAngle(rightUpperleg, 0.9326F, -0.005F, 0.5344F);
+        this.setRotateAngle(rightUpperarm, 0.9134F, -0.4441F, 0.3349F);
+        this.setRotateAngle(rightToes, 1.5802F, 0.0F, 0.0F);
+        this.setRotateAngle(rightThumbclaw, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLowerleg, 0.7796F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLowerarm, 0.09F, 0.2237F, 0.3315F);
+        this.setRotateAngle(rightHand, 0.5186F, 0.8653F, 0.8262F);
+        this.setRotateAngle(rightFeet, -0.3737F, 0.0F, 0.0F);
+        this.setRotateAngle(neck4, 0.264F, -0.1264F, -0.0341F);
+        this.setRotateAngle(neck3, 0.088F, -0.1304F, -0.0115F);
+        this.setRotateAngle(neck2, -0.2252F, -0.1181F, 0.0714F);
+        this.setRotateAngle(neck1, -0.2617F, -0.0309F, 0.0534F);
+        this.setRotateAngle(leftUpperleg, -1.3098F, -0.3423F, 0.1534F);
+        this.setRotateAngle(leftUpperarm, 0.734F, 0.1431F, -0.0675F);
+        this.setRotateAngle(leftToes, 0.533F, 0.0F, 0.0F);
+        this.setRotateAngle(leftThumbclaw, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLowerleg, 1.724F, -0.1029F, 0.1098F);
+        this.setRotateAngle(leftLowerarm, 0.7854F, 0.0F, 0.0F);
+        this.setRotateAngle(leftHand, 0.0F, -1.309F, 0.0F);
+        this.setRotateAngle(leftFeet, -0.7912F, 0.2039F, 0.1609F);
+        this.setRotateAngle(jaw2, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(head2, 0.4367F, -0.0395F, -0.0184F);
+        this.setRotateAngle(cube_r7, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.24F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.6501F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.6773F, -0.2621F, 0.2055F);
+        this.setRotateAngle(cube_r3, -0.6773F, 0.2621F, -0.2055F);
+        this.setRotateAngle(cube_r2, -0.7025F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, 0.0435F, -0.0038F, 0.0872F);
+        this.setRotateAngle(bone4, 0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(bone3, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0445F, -0.0099F, 0.2179F);
+        this.setRotateAngle(basin, -0.0834F, -0.0286F, -0.4791F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:

@@ -447,15 +447,30 @@ public class ModelNigersaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = 0.2F;
-        this.root.offsetX = 0.1F;
+        this.root.offsetX = 0.6F;
+        this.root.offsetZ = 2.0F;
         this.root.rotateAngleY = (float)Math.toRadians(220);
-        this.root.rotateAngleX = (float)Math.toRadians(8);
-        this.root.rotateAngleZ = (float)Math.toRadians(-4);
+        this.root.rotateAngleX = (float)Math.toRadians(0);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
         this.root.scaleChildren = true;
-        float scaler = 0.575F;
+        float scaler = 0.35F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(root, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(neckbase, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(neckmiddlebase, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(neckfront, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(head, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(lowerjawbase, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(tail4, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(tail5, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(tail6, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(tail7, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(tail8, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(tail9, -0.3F, 0.1F, 0.0F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:

@@ -245,6 +245,42 @@ public class ModelEntelognathus extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Root.offsetY = -0.8F;
+        this.Root.offsetX = -0.4F;
+        this.Root.offsetZ = 2.0F;
+        this.Root.rotateAngleY = (float)Math.toRadians(120);
+        this.Root.rotateAngleX = (float)Math.toRadians(1);
+        this.Root.rotateAngleZ = (float)Math.toRadians(0);
+        this.Root.scaleChildren = true;
+        float scaler = 3.6F;
+        this.Root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Root, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(forehead2, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(lips, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(nose, -0.5672F, 0.0F, 0.0F);
+        this.setRotateAngle(forehead, -0.2531F, 0.0F, 0.0F);
+        this.setRotateAngle(eye, 0.0F, 0.0F, 0.5672F);
+        this.setRotateAngle(eye2, 0.0F, 0.0F, -0.5672F);
+        this.setRotateAngle(rfinspike, 0.0F, 0.7854F, 0.0F);
+        this.setRotateAngle(lfinspike, 0.0F, -0.7854F, 0.0F);
+        this.setRotateAngle(LPectoral, 0.0038F, -0.0872F, 0.1307F);
+        this.setRotateAngle(Body, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.4363F, 0.0F);
+        this.setRotateAngle(Tail, 0.1064F, -0.6082F, -0.061F);
+        this.setRotateAngle(Tail2, 0.1962F, -0.4721F, -0.0902F);
+        this.setRotateAngle(Tail3, 0.2823F, 0.3786F, 0.1068F);
+        this.setRotateAngle(Tail4, -0.1064F, 0.6082F, -0.061F);
+        this.setRotateAngle(RPelvic, -0.0562F, 0.8653F, -0.2282F);
+        this.setRotateAngle(LPelvic, -0.0562F, -0.8653F, 0.2282F);
+        //End of pose, now render the model:
+        this.Root.render(f);
+        //Reset rotations, positions and sizing:
+        this.Root.setScale(1.0F, 1.0F, 1.0F);
+        this.Root.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

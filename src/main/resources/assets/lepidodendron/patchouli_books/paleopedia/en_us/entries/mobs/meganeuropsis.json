@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Arthropoda$(br)>Insecta$(br)>Odonatoptera$(br)>Meganisoptera$(br)>Meganeuridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/meganeuropsis.png"],
-			"title": "M. americana",
-			"text": ""
+			"type": "entity",
+			"name": "M. americana",
+			"entity": "lepidodendron:prehistoric_flora_meganeuropsis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_meganeuropsis",

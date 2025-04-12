@@ -228,6 +228,29 @@ public class ModelLunaspis extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Lunaspis.offsetY = -0.3F;
+        this.Lunaspis.offsetX = 0.2F;
+        this.Lunaspis.offsetZ = 2.0F;
+        this.Lunaspis.rotateAngleY = (float)Math.toRadians(120);
+        this.Lunaspis.rotateAngleX = (float)Math.toRadians(1);
+        this.Lunaspis.rotateAngleZ = (float)Math.toRadians(0);
+        this.Lunaspis.scaleChildren = true;
+        float scaler = 2.2F;
+        this.Lunaspis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Lunaspis, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body1, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.2F, -0.2F, 0.5F);
+        this.setRotateAngle(Body4, 0.2F, 0.2F, -0.5F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Lunaspis.render(f);
+        //Reset rotations, positions and sizing:
+        this.Lunaspis.setScale(1.0F, 1.0F, 1.0F);
+        this.Lunaspis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

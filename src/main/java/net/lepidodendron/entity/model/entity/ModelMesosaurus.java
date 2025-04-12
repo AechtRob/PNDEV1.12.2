@@ -277,6 +277,43 @@ public class ModelMesosaurus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = 1.1F;
+        this.body.offsetX = 0.15F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(120);
+        this.body.rotateAngleX = (float)Math.toRadians(1);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 0.125F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
+        this.mandible.rotateAngleX = (float) Math.toRadians(10);
+        this.neck.rotateAngleY = (float) Math.toRadians(18);
+        this.neckbase.rotateAngleY = (float) Math.toRadians(15);
+        this.head.rotateAngleY = (float) Math.toRadians(10);
+        this.tail1.rotateAngleY = (float) Math.toRadians(10);
+        this.tail2.rotateAngleY = (float) Math.toRadians(20);
+        this.tail3.rotateAngleY = (float) Math.toRadians(15);
+        this.setRotateAngle(leftarm1, 1.2F, -0.6F, 0.0F);
+        this.setRotateAngle(leftarm2, 0.0F, 0.0F, 0.6F);
+        this.setRotateAngle(leftfrontfin, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(rightarm1, 1.2F, 0.6F, 0.0F);
+        this.setRotateAngle(rightarm2, 0.0F, 0.0F, -0.6F);
+        this.setRotateAngle(rightfrontfin, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(leftleg1, 1.2F, -0.6F, 0.0F);
+        this.setRotateAngle(leftleg2, 0.0F, 0.0F, 0.6F);
+        this.setRotateAngle(leftrearfin, 0.0F, 0.0F, 0.4F);
+        this.setRotateAngle(rightleg1, 1.2F, 0.6F, 0.0F);
+        this.setRotateAngle(rightleg2, 0.0F, 0.0F, -0.6F);
+        this.setRotateAngle(rightrearfin, 0.0F, 0.0F, -0.4F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_jellyfish5",
 			"title": "Purple Striped Jelly",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Pleistocene+$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Pelagiidae$(br)>$(o)Pelagia"
+			"text": "$(l)Temporal Range:$() Pleistocene - Present$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Pelagiidae$(br)>$(o)Pelagia"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/jelly_purpleStriped.png"],
-			"title": "P. noctiluca",
-			"text": ""
+			"type": "entity",
+			"name": "P. noctiluca",
+			"entity": "lepidodendron:prehistoric_flora_jellyfish5",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_jellyfish5",

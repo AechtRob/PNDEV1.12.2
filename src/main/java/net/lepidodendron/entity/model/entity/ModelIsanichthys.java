@@ -180,6 +180,29 @@ public class ModelIsanichthys extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Body.offsetY = -0.8F;
+        this.Body.offsetX = 0.0F;
+        this.Body.offsetZ = 2.0F;
+        this.Body.rotateAngleY = (float)Math.toRadians(120);
+        this.Body.rotateAngleX = (float)Math.toRadians(1);
+        this.Body.rotateAngleZ = (float)Math.toRadians(0);
+        this.Body.scaleChildren = true;
+        float scaler = 1.8F;
+        this.Body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Body, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(Body6, 0.0F, -0.5F, 0.0F);
+        //End of pose, now render the model:
+        this.Body.render(f);
+        //Reset rotations, positions and sizing:
+        this.Body.setScale(1.0F, 1.0F, 1.0F);
+        this.Body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

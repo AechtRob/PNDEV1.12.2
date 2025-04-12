@@ -12,30 +12,26 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>Hybodontiformes$(br)>Hybodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/hybodus.png"],
-			"title": "H. hauffianus",
-			"text": ""
+			"type": "entity",
+			"name": "H. hauffianus",
+			"entity": "lepidodendron:prehistoric_flora_hybodus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hybodus",
 			"type": "text",
-			"text": "Hybodus is a genus of ancient cartilaginous fish from the Jurassic of Europe. The genus is the namesake of the order Hybodontiformes, part of a very successful group of fishes that existed between the Late Devonian and the Late Cretaceous, when they disappeared under unclear circumstances."
+			"text": "Hybodus is a genus of ancient cartilaginous fish from the Jurassic of Europe. The genus is the namesake of the order Hybodontiformes, part of a very successful group of fishes that existed between the Late Devonian and the Late Cretaceous, when they disappeared under unclear circumstances. Hybodus itself as a genus is considered a wastebasket taxon today and in serious need of re-evaluation,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hybodus",
 			"type": "text",
-			"text": "Hybodus itself as a genus is considered a wastebasket taxon today and in serious need of re-evaluation, as remains assigned to the genus were described covering the whole temporal range of the order, a very unlikely proposition considering that would mean the same genus existed for more than 290 million years."
+			"text": "as remains assigned to the genus were described covering the whole temporal range of the order, a very unlikely proposition considering that would mean the same genus existed for more than 290 million years. The reason for this inaccurate estimates and ranges is mostly due to the poorly preserved nature of their fossils, many of which consisting just of teeth or the stereotypical spines that grew at the base of their fins."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hybodus",
 			"type": "text",
-			"text": "The reason for this inaccurate estimates and ranges is mostly due to the poorly preserved nature of their fossils, many of which consisting just of teeth or the stereotypical spines that grew at the base of their fins. Even though most of them are known from these poorly preserved remains,"
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_hybodus",
-			"type": "text",
-			"text": "a few hybodonts are known from full body fossils, usually coming from Lagerstatten sites, where exceptional preservation of fossil material was made possible by the poorly oxygenated environments they formed in. Thanks to these rare remains we are now able to reconstruct these animals and know their body shape more accurately,"
+			"text": "Even though most of them are known from these poorly preserved remains, a few hybodonts are known from full body fossils, usually coming from Lagerstatten sites, where exceptional preservation of fossil material was made possible by the poorly oxygenated environments they formed in. Thanks to these rare remains we are now able to reconstruct these animals and know their body shape more accurately,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hybodus",

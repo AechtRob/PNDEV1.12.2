@@ -789,13 +789,14 @@ public class ModelGargoyleosaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.2F;
-        this.root.offsetX = -0.15F;
+        this.root.offsetY = -0.4F;
+        this.root.offsetX = -0.2F;
+        this.root.offsetZ = 1.0F;
         this.root.rotateAngleY = (float)Math.toRadians(125);
         this.root.rotateAngleX = (float)Math.toRadians(1);
         this.root.rotateAngleZ = (float)Math.toRadians(-1);
         this.root.scaleChildren = true;
-        float scaler = 0.65F;
+        float scaler = 0.4F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(Tail4, 0.0F, 0.0873F, 0.0F);

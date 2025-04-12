@@ -432,12 +432,13 @@ public class ModelEoherpeton extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.5F;
-        this.main.offsetX = -0.0F;
+        this.main.offsetX = 0.1F;
+        this.main.offsetZ = 1.0F;
         this.main.rotateAngleY = (float)Math.toRadians(210);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 1.00F;
+        float scaler = 0.8F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(bodyback, 0.0F, 0.2F, 0.0F);

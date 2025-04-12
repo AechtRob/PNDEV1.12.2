@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Phyllocarida$(br)>Echinocarididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/montecaris.png"],
-			"title": "M. gogoensis",
-			"text": ""
+			"type": "entity",
+			"name": "M. gogoensis",
+			"entity": "lepidodendron:prehistoric_flora_montecaris",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_montecaris",

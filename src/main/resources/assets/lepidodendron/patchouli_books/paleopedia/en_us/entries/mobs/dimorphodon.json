@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dimorphodon",
 			"title": "Dimorphodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Pterosauria$(br)>Macronychoptera $(br)>Dimorphodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Pterosauria$(br)>Macronychoptera$(br)>Dimorphodontidae"
 		},
         	{
             "type": "entity",
@@ -21,12 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_dimorphodon",
 			"type": "text",
-			"text": "Dimorphodon is a genus of Macronychopteran pterosaur from the early Jurassic of Europe. With a wingspan of around 1.5 m, Dimorphodon had short wings compared to the length of the body- which was around 1 m in length- and was a rather poor flier; due to its robust skeleton and short wings, the animal probably only flew for brief distances and as a last resort, not unlike modern day fowl."
+			"text": "Dimorphodon is a genus of macronychopteran pterosaur from the Lower Jurassic of Europe. With a wingspan of around 1.5 m, Dimorphodon had short wings compared to the length of the body - which was around 1 m in length - and was a rather poor flyer; due to its robust skeleton and short wings, the animal probably only flew for brief distances and as a last resort, not unlike modern day fowl."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dimorphodon",
 			"type": "text",
-			"text": "Dimorphodon would've been a decent climber- just like many other members of the non-pterodactyloid branch of Pterosauria- but is also notable for the well developed legs that would've made him an apt runner. The diet of this animal has long been debated with early hypotheses placing it as a soaring insect hunter and later made into a piscivore; "
+			"text": "Dimorphodon would've been a decent climber- just like many other members of the non - pterodactyloid branch of pterosauria - but is also notable for the well developed legs that would've made him an apt runner. The diet of this animal has long been debated with early hypotheses placing it as a soaring insect hunter and later made into a piscivore; "
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dimorphodon",
@@ -41,12 +41,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_dimorphodon",
 			"type": "text",
-			"text": "The name Dimorphodon was assigned years later in 1859 upon Owen's description of further specimens, this time including the skull, which he regarded distinct enough from Pterodactylus. A second species of Dimorphodon was described in 1998 from remains unearthed in Mexico, however we now believe this second species to not be closely related to Dimorphodon but rather represent an early relative of Anurognathids."
+			"text": "The name Dimorphodon was assigned years later in 1859 upon Owen's description of further specimens, this time including the skull, which he regarded distinct enough from Pterodactylus. A second species of Dimorphodon was described in 1998 from remains unearthed in Mexico, however we now believe this second species to not be closely related to Dimorphodon but rather represent an early relative of anurognathids."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dimorphodon",
 			"type": "text",
-			"text": "Dimorphodon has a long history in Paleoart with a long standing meme sometimes dubbed the \"Puffinodon\", where many artists chose to depict the animal exhibiting puffin coloration and behaviour, trend probably initiated in 1986 with the depiction of a fishing Dimorphodon by Bob Bakker. The idea that pterosaurs were mostly piscivorous is an old notion stemming from early paleontology interpreting them as marine bird analogues;"
+			"text": "Dimorphodon has a long history in paleoart with a long standing meme sometimes dubbed the \"Puffinodon\", where many artists chose to depict the animal exhibiting puffin coloration and behaviour, trend probably initiated in 1986 with the depiction of a fishing Dimorphodon by Bob Bakker. The idea that pterosaurs were mostly piscivorous is an old notion stemming from early paleontology interpreting them as marine bird analogues;"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dimorphodon",

@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Actinolepidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/kujdanowiaspis.png"],
-			"title": "K. buczacziensis",
-			"text": ""
+			"type": "entity",
+			"name": "K. buczacziensis",
+			"entity": "lepidodendron:prehistoric_flora_kujdanowiaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_kujdanowiaspis",
 			"type": "text",
-			"text": "Kujdanowiaspis is antinolepid arthrodiran placoderm known from the Early Devonian of Europe. It had medium to large-sized spines on side, and sharply humped back. As an early form of arthrodiran placodrm, it had a relatively flat body and it was probably benthic."
+			"text": "Kujdanowiaspis is antinolepid arthrodiran placoderm known from the Lower Devonian of Europe. It had medium to large-sized spines on side, and sharply humped back. As an early form of arthrodiran placoderm, it had a relatively flat body and it was probably benthic."
 		},
 		{
 			"type": "lepidodendron:diet",

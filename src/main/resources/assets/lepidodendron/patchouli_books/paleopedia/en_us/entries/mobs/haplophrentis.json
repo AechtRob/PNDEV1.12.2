@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Lophotrochozoa$(br)>Brachiopoda$(br)>Hyolitha$(br)>Hyolithida$(br)>Hyolithidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/haplophrentis.png"],
-			"title": "H. reesei",
-			"text": ""
+			"type": "entity",
+			"name": "H. reesei",
+			"entity": "lepidodendron:prehistoric_flora_haplophrentis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_haplophrentis",

@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_lacewing_cretapsychops",
 			"type": "text",
-			"text": "Cretapsychops is a genus of psychopsid lacewing. Its type species C. corami is described from the Weald Clay, Lower Cretaceous of England, which is famous for dinosaurs such as Baryonyx. A second species, C. decipiens is described from Jiulongshan Formation, Middle Jurassic of Inner Mongolia, China. Fossil of this species had well-preserved complex wing patterns. A third species, C. skywalkeri from Karabastau Formation, Upper Jurassic of Kazakhstan, had similar wing patterns."
+			"text": "Cretapsychops is a genus of psychopsid lacewing. Its type species C. corami is described from the Weald Clay, Early Cretaceous of England, which is famous for dinosaurs such as Baryonyx. A second species, C. decipiens is described from Jiulongshan Formation, Middle Jurassic of Inner Mongolia, China. Fossil of this species had well-preserved complex wing patterns. A third species, C. skywalkeri from Karabastau Formation, Upper Jurassic of Kazakhstan, had similar wing patterns."
 		},
 		{
 			"type": "lepidodendron:diet",

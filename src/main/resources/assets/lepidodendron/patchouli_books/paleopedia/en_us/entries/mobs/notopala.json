@@ -9,7 +9,7 @@
 "trigger": "lepidodendron:pf_adv_book_notopala",
 "title": "Notopala",
 "type": "quest",
-"text": "$(l)Temporal Range:$()  Early Cretaceous - Recent$(br2)>Mollusca$(br)>Gastropoda$(br)>Architaenioglossa$(br)>Viviparidae"
+"text": "$(l)Temporal Range:$()  Early Cretaceous - Present$(br2)>Mollusca$(br)>Gastropoda$(br)>Architaenioglossa$(br)>Viviparidae"
 },
         {
             "type": "entity",

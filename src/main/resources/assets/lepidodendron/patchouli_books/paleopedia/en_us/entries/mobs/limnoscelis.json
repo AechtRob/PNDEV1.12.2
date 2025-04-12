@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Reptiliomorpha$(br)>Diadectomorpha$(br)>Limnoscelidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/limnoscelis.png"],
-			"title": "L. paludis",
-			"text": ""
+			"type": "entity",
+			"name": "L. paludis",
+			"entity": "lepidodendron:prehistoric_flora_limnoscelis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_limnoscelis",
 			"type": "text",
-			"text": "Limnoscelis is a tetrapod from the Late Carboniferous that was semi aquatic. It had both amphibian and reptilian features. It may have used the water to look for food, such as fish and to hide from predators."
+			"text": "Limnoscelis is a tetrapod from the Upper Carboniferous that was semi aquatic. It had both amphibian and reptilian features. It may have used the water to look for food, such as fish and to hide from predators."
 		},
 		{
 			"type": "lepidodendron:diet",

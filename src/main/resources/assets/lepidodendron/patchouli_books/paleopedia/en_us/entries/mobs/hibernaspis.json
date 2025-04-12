@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_hibernaspis",
 			"title": "Hibernaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Amphiaspidida$(br)>Hibernaspidoidei$(br)>Hibernaspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Pteraspidomorphi$(br)>Cyathaspidiformes$(br)>Amphiaspidida$(br)>Hibernaspidoidei$(br)>Hibernaspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/hibernaspis.png"],
-			"title": "H. macrolepis",
-			"text": ""
+			"type": "entity",
+			"name": "H. macrolepis",
+			"entity": "lepidodendron:prehistoric_flora_hibernaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hibernaspis",

@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_megarachne",
 			"title": "Megarachne",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Eurypterida$(br)>Mycteropoidea$(br)>Mycteroptidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Mycteropoidea$(br)>Mycteroptidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/megarachne.png"],
-			"title": "M. servinei",
-			"text": ""
+			"type": "entity",
+			"name": "M. servinei",
+			"entity": "lepidodendron:prehistoric_flora_megarachne",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_megarachne",
 			"type": "text",
-			"text": "Megarachne, once thought to be a giant spider, is actually a eurypterid or sea scorpion from the Late Carboniferous period. It was relatively large and was a freshwater predator, hunting and preying on small invertebrates."
+			"text": "Megarachne, once thought to be a giant spider, is actually a eurypterid or sea scorpion from the Upper Carboniferous period. It was relatively large and was a freshwater predator, hunting and preying on small invertebrates."
 		},
 		{
 			"type": "lepidodendron:diet",

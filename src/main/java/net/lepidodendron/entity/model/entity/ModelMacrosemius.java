@@ -276,6 +276,29 @@ public class ModelMacrosemius extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Macrosemius.offsetY = -0.4F;
+        this.Macrosemius.offsetX = -0.2F;
+        this.Macrosemius.offsetZ = 2.0F;
+        this.Macrosemius.rotateAngleY = (float)Math.toRadians(120);
+        this.Macrosemius.rotateAngleX = (float)Math.toRadians(1);
+        this.Macrosemius.rotateAngleZ = (float)Math.toRadians(0);
+        this.Macrosemius.scaleChildren = true;
+        float scaler = 3.2F;
+        this.Macrosemius.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Macrosemius, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body1, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.45F, 0.0F);
+        //End of pose, now render the model:
+        this.Macrosemius.render(f);
+        //Reset rotations, positions and sizing:
+        this.Macrosemius.setScale(1.0F, 1.0F, 1.0F);
+        this.Macrosemius.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

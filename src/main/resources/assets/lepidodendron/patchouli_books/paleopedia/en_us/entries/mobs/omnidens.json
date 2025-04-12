@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ecdysozoa$(br)>Panarthropoda"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/omnidens.png"],
-			"title": "O. amplus",
-			"text": ""
+			"type": "entity",
+			"name": "O. amplus",
+			"entity": "lepidodendron:prehistoric_flora_omnidens",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_omnidens",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eldeceeon",
 			"title": "Eldeceeon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Tetrapoda$(br)>Reptiliomorpha (?)"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Tetrapoda$(br)>$(o)Reptiliomorpha (?)"
 		},
         	{
             "type": "entity",
@@ -26,7 +26,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_eldeceeon",
 			"type": "text",
-			"text": "These features range from fewer dorsal vertebrae, to larger and more robust limbs, suggesting it had a more terrestrial lifestyle that the aquatic embolomeres, although it may have still ventured into the water from time to time. The generic name derives from the abbreviation of the Livingstone Development Corporation (L.D.C.), who made a large donation for the purchase of the holotype. The specific name derives from the Latinised surname of W. D. I. Rolfe, the Keeper of Geology at the National Museum of Scotland at the time of naming."
+			"text": "These features range from fewer dorsal vertebrae, to larger and more robust limbs, suggesting it had a more terrestrial lifestyle that the aquatic embolomeres, although it may have still ventured into the water from time to time. The generic name derives from the abbreviation of the Livingstone Development Corporation (L.D.C.), who made a large donation for the purchase of the holotype."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eldeceeon",
+			"type": "text",
+			"text": "The specific name derives from the Latinised surname of W. D. I. Rolfe, the Keeper of Geology at the National Museum of Scotland at the time of naming."
 		},
 		{
 			"type": "lepidodendron:diet",

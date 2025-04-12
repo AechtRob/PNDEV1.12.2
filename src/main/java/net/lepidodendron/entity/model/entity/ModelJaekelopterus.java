@@ -395,6 +395,39 @@ public class ModelJaekelopterus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -0.8F;
+        this.body.offsetX = 0.15F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(120);
+        this.body.rotateAngleX = (float)Math.toRadians(1);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 0.5F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
+        this.cheliceraL.rotateAngleY = (float) Math.toRadians(-17.5);
+        this.cheliceraR.rotateAngleY = (float) Math.toRadians(17.5);
+        this.opisthosoma.rotateAngleX = (float) Math.toRadians(-7.5);
+        this.tergiteA.rotateAngleX = (float) Math.toRadians(-7.5);
+        this.tergiteA2.rotateAngleX = (float) Math.toRadians(-7.5);
+        this.tergiteA3.rotateAngleX = (float) Math.toRadians(-12.5);
+        this.tergiteA4.rotateAngleX = (float) Math.toRadians(-12.5);
+        this.tergiteB.rotateAngleX = (float) Math.toRadians(-7.5);
+        this.tergiteC.rotateAngleX = (float) Math.toRadians(-7.5);
+        this.tergiteD.rotateAngleX = (float) Math.toRadians(-7.5);
+        this.tergiteD2.rotateAngleX = (float) Math.toRadians(-7.5);
+        this.tergiteE.rotateAngleX = (float) Math.toRadians(2.5);
+        this.tergiteE2.rotateAngleX = (float) Math.toRadians(7.5);
+        this.tergiteF.rotateAngleX = (float) Math.toRadians(7.5);
+        this.telson.rotateAngleX = (float) Math.toRadians(20);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

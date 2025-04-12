@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Echinodermata$(br)>Asteroidea$(br)>Hemizonida$(br)>Helianthasteridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/helianthaster.png"],
-			"title": "H. rhenanus",
-			"text": ""
+			"type": "entity",
+			"name": "H. rhenanus",
+			"entity": "lepidodendron:prehistoric_flora_helianthaster",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_helianthaster",

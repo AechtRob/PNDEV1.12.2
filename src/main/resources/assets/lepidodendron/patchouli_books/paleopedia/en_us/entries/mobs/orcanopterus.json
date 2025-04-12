@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_orcanopterus",
 			"title": "Orcanopterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Eurypterida$(br)>Waeringopteridae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Waeringopteridae"
 		},
         	{
             "type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_orcanopterus",
 			"type": "text",
-			"text": "Orcanopterus is a medium sized eurypterid known from the Late Ordovician of Canada. It grew to around 60 cm long, and had a broad and flat body and cephalon. The body was made up of twelve segments, which is further grouped into two tagmata and a telson. The first tagma has segments that are more wide than long, while the second tagma has segments that are only slightly wider than they are long."
+			"text": "Orcanopterus is a medium sized eurypterid known from the Upper Ordovician of Canada. It grew to around 60 cm long, and had a broad and flat body and cephalon. The body was made up of twelve segments, which is further grouped into two tagmata and a telson. The first tagma has segments that are more wide than long, while the second tagma has segments that are only slightly wider than they are long."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Reptilia$(br)>Romeriida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/hylonomus.png"],
-			"title": "H. lyelli",
-			"text": ""
+			"type": "entity",
+			"name": "H. lyelli",
+			"entity": "lepidodendron:prehistoric_flora_hylonomus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hylonomus",
 			"type": "text",
-			"text": "Hylonomus was a small reptilian animal from the Late Carboniferous period. Its fossils have been found in moss stumps supposing that these animals may have taken shelter in the logs, gotten trapped, and died as a result."
+			"text": "Hylonomus was a small reptilian animal from the Upper Carboniferous period. Its fossils have been found in moss stumps supposing that these animals may have taken shelter in the logs, gotten trapped, and died as a result."
 		},
 		{
 			"type": "lepidodendron:diet",

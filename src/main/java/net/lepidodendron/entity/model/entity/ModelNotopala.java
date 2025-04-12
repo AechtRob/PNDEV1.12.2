@@ -90,7 +90,7 @@ public class ModelNotopala extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.snail.offsetY = -1.2F;
+        this.snail.offsetY = -1.6F;
         this.snail.offsetX = -0.08F;
         this.snail.rotateAngleY = (float)Math.toRadians(235);
         this.snail.rotateAngleX = (float)Math.toRadians(8);
@@ -99,7 +99,7 @@ public class ModelNotopala extends ModelBasePalaeopedia {
         float scaler = 4.63F;
         this.snail.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(snail, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.snail.render(f);
         //Reset rotations, positions and sizing:

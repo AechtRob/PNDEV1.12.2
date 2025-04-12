@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Nectocarididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/nectocaris.png"],
-			"title": "N. pteryx",
-			"text": ""
+			"type": "entity",
+			"name": "N. pteryx",
+			"entity": "lepidodendron:prehistoric_flora_nectocaris",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_nectocaris",

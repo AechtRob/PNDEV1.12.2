@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_dragonfly",
 			"title": "Dragonfly",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Present$(br2)>Arthropoda$(br)>Insecta$(br)>Odonata$(br)>Epiprocta$(br)>Anisoptera"
+			"text": "$(l)Temporal Range:$() Jurassic - Present$(br2)>Arthropoda$(br)>Insecta$(br)>Odonata$(br)>Epiprocta$(br)>$(o)Anisoptera"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/dragonfly.png"],
-			"title": "Anisoptera",
-			"text": ""
+			"type": "entity",
+			"name": "Anisoptera",
+			"entity": "lepidodendron:prehistoric_flora_dragonfly",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dragonfly",
@@ -35,7 +36,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_dragonfly",
 			"type": "text",
-			"text": " Historically, dragonflies and other odonates have been grouped with the mayflies of the order Ephemeroptera and the extinct Palaeodictyopteroids in the group Palaeoptera on account of their shared lack of folding wings. This group has become increasingly viewed as a wastebasket taxon in recent years, and it is plausible that any of these three subgroups may in reality be closer related to neopterous insects than to each other."
+			"text": " Historically, dragonflies and other odonates have been grouped with the mayflies of the order Ephemeroptera and the extinct palaeodictyopteroids in the group Palaeoptera on account of their shared lack of folding wings. This group has become increasingly viewed as a wastebasket taxon in recent years, and it is plausible that any of these three subgroups may in reality be closer related to neopterous insects than to each other."
 		},
 		{
 			"type": "lepidodendron:diet",

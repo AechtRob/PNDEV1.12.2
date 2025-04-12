@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_xenusion",
 			"title": "Xenusion",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ecdysozoa$(br)>Xenusia$(br)>Protonychophora$(br)>Xenusiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ecdysozoa$(br)>Panarthropoda$(br)>Lobopodia$(br)>Xenusia$(br)>Protonychophora$(br)>Xenusiidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_xenusion",
 			"type": "text",
-			"text": "Xenusion is a worm like lobopodian from the early Cambrian which had spines on its tube like body and pairs of annulated legs similar to modern onychophorans."
+			"text": "Xenusion is a worm like lobopodian from the Lower Cambrian which had spines on its tube like body and pairs of annulated legs similar to modern onychophorans."
 		},
 		{
 			"type": "lepidodendron:diet",

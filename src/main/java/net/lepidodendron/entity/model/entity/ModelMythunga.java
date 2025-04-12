@@ -733,14 +733,16 @@ public class ModelMythunga extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.fossil.offsetY = -0.25F;
-        this.fossil.offsetX = -0.3F;
+        this.fossil.offsetX = 0.05F;
+        this.fossil.offsetZ = 2.0F;
         this.fossil.rotateAngleY = (float)Math.toRadians(135);
         this.fossil.rotateAngleX = (float)Math.toRadians(28);
         this.fossil.rotateAngleZ = (float)Math.toRadians(0);
         this.fossil.scaleChildren = true;
-        float scaler = 0.45F;
+        float scaler = 0.3F;
         this.fossil.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(fossil, 0.6F, 3.8F, -0.2F);
         this.leftwing5membrane.setScale((float)1,(float)1,(float)1);
         this.leftwing6membrane.setScale((float)1,(float)1,(float)1);
         this.rightwing5membrane.setScale((float)1,(float)1,(float)1);

@@ -212,6 +212,29 @@ public class ModelOsteolepis extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Osteolepis.offsetY = -0.4F;
+        this.Osteolepis.offsetX = 1.0F;
+        this.Osteolepis.offsetZ = 2.0F;
+        this.Osteolepis.rotateAngleY = (float)Math.toRadians(120);
+        this.Osteolepis.rotateAngleX = (float)Math.toRadians(1);
+        this.Osteolepis.rotateAngleZ = (float)Math.toRadians(0);
+        this.Osteolepis.scaleChildren = true;
+        float scaler = 4.2F;
+        this.Osteolepis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Osteolepis, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body1, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(Bady5, 0.05F, 0.1F, 0.0F);
+        //End of pose, now render the model:
+        this.Osteolepis.render(f);
+        //Reset rotations, positions and sizing:
+        this.Osteolepis.setScale(1.0F, 1.0F, 1.0F);
+        this.Osteolepis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

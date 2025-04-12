@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Ordovician - Devonian$(br2)>Mollusca$(br)>Gastropoda$(br)>Macluritoidea"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/maclurina.png"],
-			"title": "M. manitobensis",
-			"text": ""
+			"type": "entity",
+			"name": "M. manitobensis",
+			"entity": "lepidodendron:prehistoric_flora_maclurina",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_maclurina",

@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Archaeomaenidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/oreochima.png"],
-			"title": "O. ellioti",
-			"text": ""
+			"type": "entity",
+			"name": "O. ellioti",
+			"entity": "lepidodendron:prehistoric_flora_oreochima",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_oreochima",
 			"type": "text",
-			"text": "Oreochima is an early Jurassic freshwater Archaeomaenid fish described from Antarctica, it is one of the few named Antarctic vertebrate fauna in Jurassic! It inhabited the Mawson Formation of the Toarcian. At this time, Lake Carapace was an alkaline lake with regular hydrothermal inflow. Oreochima is a small fish with an average length of 6 cm and is one of the oldest members of its family."
+			"text": "Oreochima is an early Jurassic freshwater archaeomaenid fish described from Antarctica, it is one of the few named Antarctic vertebrate fauna in Jurassic! It inhabited the Mawson Formation of the Toarcian. At this time, Lake Carapace was an alkaline lake with regular hydrothermal inflow. Oreochima is a small fish with an average length of 6 cm and is one of the oldest members of its family."
 		},
 		{
 			"type": "lepidodendron:diet",

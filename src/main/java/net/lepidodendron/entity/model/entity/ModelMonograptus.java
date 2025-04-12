@@ -153,6 +153,24 @@ public class ModelMonograptus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Floatingpiece.offsetY = 0.7F;
+        this.Floatingpiece.offsetX = 0.1F;
+        this.Floatingpiece.offsetZ = 2.0F;
+        this.Floatingpiece.rotateAngleY = (float)Math.toRadians(120);
+        this.Floatingpiece.rotateAngleX = (float)Math.toRadians(1);
+        this.Floatingpiece.rotateAngleZ = (float)Math.toRadians(0);
+        this.Floatingpiece.scaleChildren = true;
+        float scaler = 0.4F;
+        this.Floatingpiece.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Floatingpiece, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.Floatingpiece.render(f);
+        //Reset rotations, positions and sizing:
+        this.Floatingpiece.setScale(1.0F, 1.0F, 1.0F);
+        this.Floatingpiece.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

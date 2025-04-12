@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eochondrosteus",
 			"title": "Eochondrosteus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinopterygii $(br)>Acipenseriformes"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Acipenseriformes"
 		},
         	{
             "type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_eochondrosteus",
 			"type": "text",
-			"text": "Eochondrosteus is a early Triassic fish known from China. It is suggested to be the most basal acipenseriform fish, although this classification is debated in later studies. If really an acipenseriform fish, this would push the group's origins close to the P-T extinction event, if not slightly before it in the Late Permian."
+			"text": "Eochondrosteus is a Lower Triassic fish known from China. It is suggested to be the most basal acipenseriform fish, although this classification is debated in later studies. If really an acipenseriform fish, this would push the group's origins close to the P-T extinction event, if not slightly before it in the Upper Permian."
 		},
 		{
 			"type": "lepidodendron:diet",

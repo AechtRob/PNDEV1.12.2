@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Arthropoda$(br)>Euthycarcinoidea$(br)>Euthycarcinida$(br)>Kottixerxidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/kalbarria.png"],
-			"title": "K. brimmellae",
-			"text": ""
+			"type": "entity",
+			"name": "K. brimmellae",
+			"entity": "lepidodendron:prehistoric_flora_kalbarria",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_kalbarria",
 			"type": "text",
-			"text": "Kalbarria is a euthycarcinoid arthropod from the Tumblagooda Sandstone, believed to be on the border of the Ordovician-Silurian. The fossils are primarily trackways formed in sandstone, although there are indications of the body impressions as well, but not enough to know much about the body in detail. There are several other trackways known from this formation of this or other similar arthropods."
+			"text": "Kalbarria is a euthycarcinoid arthropod from the Tumblagooda Sandstone, believed to be on the boundary of the Ordovician - Silurian. The fossils are primarily trackways formed in sandstone, although there are indications of the body impressions as well, but not enough to know much about the body in detail. There are several other trackways known from this formation of this or other similar arthropods."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_kalbarria",

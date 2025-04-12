@@ -431,6 +431,24 @@ public class ModelOrthrozanclus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Orthozanclus.offsetY = -1.6F;
+        this.Orthozanclus.offsetX = 0.0F;
+        this.Orthozanclus.offsetZ = 2.0F;
+        this.Orthozanclus.rotateAngleY = (float)Math.toRadians(120);
+        this.Orthozanclus.rotateAngleX = (float)Math.toRadians(1);
+        this.Orthozanclus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Orthozanclus.scaleChildren = true;
+        float scaler = 4.2F;
+        this.Orthozanclus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Orthozanclus, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.Orthozanclus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Orthozanclus.setScale(1.0F, 1.0F, 1.0F);
+        this.Orthozanclus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

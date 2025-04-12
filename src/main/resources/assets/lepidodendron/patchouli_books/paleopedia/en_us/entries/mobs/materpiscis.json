@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Ptyctodontida$(br)>Ptyctodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/materpiscis.png"],
-			"title": "M. attenboroughi",
-			"text": ""
+			"type": "entity",
+			"name": "M. attenboroughi",
+			"entity": "lepidodendron:prehistoric_flora_materpiscis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_materpiscis",

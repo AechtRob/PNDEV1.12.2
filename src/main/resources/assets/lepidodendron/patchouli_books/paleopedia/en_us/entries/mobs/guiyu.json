@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Sarcopterygii"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/guiyu.png"],
-			"title": "G. oneiros",
-			"text": ""
+			"type": "entity",
+			"name": "G. oneiros",
+			"entity": "lepidodendron:prehistoric_flora_guiyu",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_guiyu",
 			"type": "text",
-			"text": "One of the earliest articulated bony fish ever discovered, Guiyu oneiros was a species of basal bony fish that lived during the Late Silurian (around 425.6 million years ago). This remarkable fish (the name of which is a mix of Mandarin Chinese and Latin, and translates to \"dream ghost fish\") is part of the Xiaoxiang fauna, an impressively well documented ancient marine ecosystem, with remains being found in the Kuanti Formation in China."
+			"text": "One of the earliest articulated bony fish ever discovered, Guiyu oneiros was a species of basal bony fish that lived during the Upper Silurian (around 425.6 million years ago). This remarkable fish (the name of which is a mix of Mandarin Chinese and Latin, and translates to \"dream ghost fish\") is part of the Xiaoxiang fauna, an impressively well documented ancient marine ecosystem, with remains being found in the Kuanti Formation in China."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_guiyu",

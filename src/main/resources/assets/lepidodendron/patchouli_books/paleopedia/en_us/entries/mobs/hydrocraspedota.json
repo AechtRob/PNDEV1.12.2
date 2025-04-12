@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_hydrocraspedota",
 			"title": "Hydrocraspedota",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Cnidaria"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Cnidaria$(br)>Medusozoa$(br)>$(o)Hydrozoa (?)"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/hydrocraspedota.png"],
-			"title": "H. mayri",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "H. mayri",
+			"entity": "lepidodendron:prehistoric_flora_hydrocraspedota",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hydrocraspedota",

@@ -484,15 +484,17 @@ public class ModelOrnitholestes extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = 0.250F;
-        this.base.offsetX = 0.4F;
+        this.base.offsetY = 0.1F;
+        this.base.offsetX = 0.55F;
+        this.base.offsetZ = 2.0F;
         this.base.rotateAngleY = (float)Math.toRadians(240);
         this.base.rotateAngleX = (float)Math.toRadians(-0);
         this.base.rotateAngleZ = (float)Math.toRadians(3);
         this.base.scaleChildren = true;
-        float scaler = 0.75F;
+        float scaler = 0.575F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(base, 0.0F, 4.0F, 0.0F);
         this.setRotateAngle(upperlegright, -1.9648F, 0.1739F, -0.0154F);
         this.setRotateAngle(upperlegleft, -1.9648F, -0.1739F, 0.0154F);
         this.setRotateAngle(upperarmright, -0.7946F, -0.0046F, -0.1925F);

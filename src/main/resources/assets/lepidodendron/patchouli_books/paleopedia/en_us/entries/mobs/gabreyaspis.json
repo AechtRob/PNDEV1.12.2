@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_gabreyaspis",
 			"title": "Gabreyaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Heterostraci$(br)>Cyathaspidiformes$(br)>Amphiaspidoidea$(br)>Gabreyaspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Pteraspidomorphi$(br)>Heterostraci$(br)>Cyathaspidiformes$(br)>Amphiaspidoidea$(br)>Gabreyaspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/gabreyaspis.png"],
-			"title": "G. tarda",
-			"text": ""
+			"type": "entity",
+			"name": "G. tarda",
+			"entity": "lepidodendron:prehistoric_flora_gabreyaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gabreyaspis",
