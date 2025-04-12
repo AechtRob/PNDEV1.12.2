@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Amphibia$(br)>Temnospondyli$(br)>Melosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/melosaurus.png"],
-			"title": "M. uralensis",
-			"text": ""
+			"type": "entity",
+			"name": "M. uralensis",
+			"entity": "lepidodendron:prehistoric_flora_melosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_melosaurus",

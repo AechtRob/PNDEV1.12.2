@@ -418,6 +418,46 @@ public class ModelMelosaurus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Melosaurus.offsetY = -0.2F;
+        this.Melosaurus.offsetX = 0.2F;
+        this.Melosaurus.offsetZ = 2.0F;
+        this.Melosaurus.rotateAngleY = (float)Math.toRadians(120);
+        this.Melosaurus.rotateAngleX = (float)Math.toRadians(1);
+        this.Melosaurus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Melosaurus.scaleChildren = true;
+        float scaler = 0.7F;
+        this.Melosaurus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Melosaurus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(RArm, 1.5F, 0.8F, 0.3F);
+        this.setRotateAngle(RArm2, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(RHand, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(LArm, 1.5F, -0.8F, 0.3F);
+        this.setRotateAngle(LArm2, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(LHand, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(Neck, -0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Upperjaw, -0.4F, -0.1F, 0.0F);
+        this.setRotateAngle(Lowerjaw, 0.2F, -0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.1F, -0.2F, -0.05F);
+        this.setRotateAngle(RLeg, 1.5F, 0.5F, 0.0F);
+        this.setRotateAngle(RLeg2, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(RFoot, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(LLeg, 1.5F, -0.9F, 0.0F);
+        this.setRotateAngle(LLeg2, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(LFoot, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(Tail, 0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail2, 0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail3, -0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail4, -0.1F, -0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.Melosaurus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Melosaurus.setScale(1.0F, 1.0F, 1.0F);
+        this.Melosaurus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

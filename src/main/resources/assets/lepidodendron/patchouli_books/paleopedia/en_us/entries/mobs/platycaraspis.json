@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_platycaraspis",
 			"title": "Microphymaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Galeaspida$(br)>Dayongaspidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Agnatha$(br)>Cephalaspidomorphi$(br)>Galeaspida$(br)>Dayongaspidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/platycaraspis.png"],
-			"title": "M. tianshanensis",
-			"text": ""
+			"type": "entity",
+			"name": "M. tianshanensis",
+			"entity": "lepidodendron:prehistoric_flora_platycaraspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_platycaraspis",

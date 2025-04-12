@@ -516,7 +516,7 @@ public class ModelMamenchisaurus extends ModelBasePalaeopedia {
         this.root.rotateAngleX = (float)Math.toRadians(8);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 0.48F;
+        float scaler = 0.46F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
 

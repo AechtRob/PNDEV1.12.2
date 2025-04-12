@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Mollusca$(br)>Gastropoda$(br)>Murchisoniina$(br)>Gosseletinidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/nipponomaria.png"],
-			"title": "N. yokoyamai",
-			"text": ""
+			"type": "entity",
+			"name": "N. yokoyamai",
+			"entity": "lepidodendron:prehistoric_flora_nipponomaria",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_nipponomaria",

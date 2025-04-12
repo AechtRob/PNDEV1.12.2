@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hallucigenia",
 			"title": "Hallucigenia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Panarthropoda$(br)>Hallucishaniids$(br)>Hallucigeniidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ecdysozoa$(br)>Panarthropoda$(br)>Hallucishaniids$(br)>Hallucigeniidae"
 		},
 		{
 			"type": "entity",

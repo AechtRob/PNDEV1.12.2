@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Cnidaria$(br)>Scyphozoa"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/octomedusa.png"],
-			"title": "O. pieckorum",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "O. pieckorum",
+			"entity": "lepidodendron:prehistoric_flora_octomedusa",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_octomedusa",

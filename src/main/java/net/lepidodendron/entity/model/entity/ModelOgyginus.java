@@ -654,6 +654,24 @@ public class ModelOgyginus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Ogyginus.offsetY = 0.4F;
+        this.Ogyginus.offsetX = 1.0F;
+        this.Ogyginus.offsetZ = 4.0F;
+        this.Ogyginus.rotateAngleY = (float)Math.toRadians(120);
+        this.Ogyginus.rotateAngleX = (float)Math.toRadians(1);
+        this.Ogyginus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Ogyginus.scaleChildren = true;
+        float scaler = 0.6F;
+        this.Ogyginus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Ogyginus, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.Ogyginus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Ogyginus.setScale(1.0F, 1.0F, 1.0F);
+        this.Ogyginus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

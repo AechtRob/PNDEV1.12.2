@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Insecta$(br)>Meganisoptera$(br)>Meganeuridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/meganeura.png"],
-			"title": "M. monyi",
-			"text": ""
+			"type": "entity",
+			"name": "M. monyi",
+			"entity": "lepidodendron:prehistoric_flora_meganeura",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_meganeura",
 			"type": "text",
-			"text": "Meganeura is a carnivorous giant extinct 'griffinfly' from the late Carboniferous period. It had a wingspan ranging up to just under a meter long. It may have grown to such large proportions due to high oxygen levels and a lack of predators in its time. "
+			"text": "Meganeura is a carnivorous giant extinct 'griffinfly' from the Upper Carboniferous period. It had a wingspan ranging up to just under a meter long. It may have grown to such large proportions due to high oxygen levels and a lack of predators in its time. "
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -9,7 +9,7 @@
 "trigger": "lepidodendron:pf_adv_book_nicrosaurus",
 "title": "Nicrosaurus",
 "type": "quest",
-"text": "$(l)Temporal Range:$()  Triassic$(br2)>Chordata$(br)>Archosauromorpha$(br)>Phytosauria$(br)>Parasuchidae$(br)>Mystriosuchini"
+"text": "$(l)Temporal Range:$()  Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauromorpha$(br)>Phytosauria$(br)>Parasuchidae$(br)>Mystriosuchini"
 },
         {
             "type": "entity",
@@ -21,7 +21,7 @@
 {
 "advancement": "lepidodendron:pf_adv_book_nicrosaurus",
 "type": "text",
-"text": "Nicrosaurus is a genus of Phytosaur from the Late Triassic of Europe. What distinguished phytosaurs from modern day crocodiles was the placement of its nostrils. Its Nostrils were positioned directly in front of the forehead, quite similarly to modern day cetaceans compared to the end of the snot like modern day crocodiles." 
+"text": "Nicrosaurus is a genus of phytosaur from the Upper Triassic of Europe. What distinguished phytosaurs from modern day crocodiles was the placement of its nostrils. Its Nostrils were positioned directly in front of the forehead, quite similarly to modern day cetaceans compared to the end of the snot like modern day crocodiles."
 },
 {
 "type": "lepidodendron:diet",

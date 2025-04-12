@@ -638,6 +638,36 @@ public class ModelOmnidens extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body6.offsetY = -0.8F;
+        this.body6.offsetX = -0.4F;
+        this.body6.offsetZ = 2.0F;
+        this.body6.rotateAngleY = (float)Math.toRadians(120);
+        this.body6.rotateAngleX = (float)Math.toRadians(1);
+        this.body6.rotateAngleZ = (float)Math.toRadians(0);
+        this.body6.scaleChildren = true;
+        float scaler = 0.7F;
+        this.body6.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body6, 0.6F, 3.8F, -0.2F);
+        this.body5.rotateAngleX = (float) Math.toRadians(-27.5);
+        this.body4.rotateAngleX = (float) Math.toRadians(-15);
+        this.body3.rotateAngleX = (float) Math.toRadians(-10);
+        this.body2.rotateAngleX = (float) Math.toRadians(-5);
+        this.body1.rotateAngleX = (float) Math.toRadians(5);
+        this.head.rotateAngleX = (float) Math.toRadians(15);
+        this.body5.rotateAngleY = (float) Math.toRadians(-2.5);
+        this.body4.rotateAngleY = (float) Math.toRadians(-2.5);
+        this.body3.rotateAngleY = (float) Math.toRadians(-2.5);
+        this.body2.rotateAngleY = (float) Math.toRadians(-2.5);
+        this.body1.rotateAngleY = (float) Math.toRadians(-2.5);
+        this.head.rotateAngleY = (float) Math.toRadians(-7.5);
+        //End of pose, now render the model:
+        this.body6.render(f);
+        //Reset rotations, positions and sizing:
+        this.body6.setScale(1.0F, 1.0F, 1.0F);
+        this.body6.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

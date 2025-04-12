@@ -21,12 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_monolophosaurus",
 			"type": "text",
-			"text": "Monolophosaurus jiangi is a species of Tetanuran Theropod from the Middle Jurassic of China. This animal, estimated at around 5 m in length, is extremely recognizable by the long and tall crest originating from the midline of the snout from the premaxilla to behind the nasal and lacrimal. The tall and hollow crest has been speculated to have been used for sexual display, however its structure, complex yet not very striking, also suggests it might have had another use as well, to this day still unknown. The head appeared to be particularly flattened on its side, however this might have been due to plastic deformation in the specimen."
+			"text": "Monolophosaurus jiangi is a species of tetanuran theropod from the Middle Jurassic of China. This animal, estimated at around 5 m in length, is extremely recognizable by the long and tall crest originating from the midline of the snout from the premaxilla to behind the nasal and lacrimal. The tall and hollow crest has been speculated to have been used for sexual display, however its structure, complex yet not very striking, also suggests it might have had another use as well, to this day still unknown. The head appeared to be particularly flattened on its side, however this might have been due to plastic deformation in the specimen."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_monolophosaurus",
 			"type": "text",
-			"text": "The animal is known from one single, mostly complete skeleton, which was found in 1981 but not excavated if not three years later in 1984. The exact placement of the animal in the theropod family tree is rather dubious, first described to be a Megalosaurid and subsequently placed to be an Allosauroid; more recent studies recovered this animal to be among the most basal of Tetanurans. The only specimen, IVPP 84019, was prepared for exposition and some of its bones being restored in plaster and left side of the body encased in foam, making it impossible for a piece of the specimen to be accessible for further research."
+			"text": "The animal is known from one single, mostly complete skeleton, which was found in 1981 but not excavated if not three years later in 1984. The exact placement of the animal in the theropod family tree is rather dubious, first described to be a megalosaurid and subsequently placed to be an allosauroid; more recent studies recovered this animal to be among the most basal of tetanurans. The only specimen, IVPP 84019, was prepared for exposition and some of its bones being restored in plaster and left side of the body encased in foam, making it impossible for a piece of the specimen to be accessible for further research."
 		},
 		{
 			"type": "lepidodendron:diet",

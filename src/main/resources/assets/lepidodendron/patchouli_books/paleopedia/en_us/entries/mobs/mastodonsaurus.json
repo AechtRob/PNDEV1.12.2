@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Amphibia$(br)>Temnospondyli$(br)>Capitosauria$(br)>Mastodonsauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/mastodonsaurus.png"],
-			"title": "M. jaegeri",
-			"text": ""
+			"type": "entity",
+			"name": "M. jaegeri",
+			"entity": "lepidodendron:prehistoric_flora_mastodonsaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_mastodonsaurus",

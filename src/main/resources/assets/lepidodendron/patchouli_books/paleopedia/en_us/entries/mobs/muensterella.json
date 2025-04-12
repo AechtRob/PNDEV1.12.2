@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Octopoda$(br)>Muensterellidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/muensterella.png"],
-			"title": "M. scutellaris",
-			"text": ""
+			"type": "entity",
+			"name": "M. scutellaris",
+			"entity": "lepidodendron:prehistoric_flora_muensterella",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_muensterella",

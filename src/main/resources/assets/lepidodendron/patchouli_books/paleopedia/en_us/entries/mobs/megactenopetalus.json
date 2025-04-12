@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Chondrichthyes$(br)>Petalodontiformes$(br)>Pristodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/megactenopetalus.png"],
-			"title": "M. kaibabanus",
-			"text": ""
+			"type": "entity",
+			"name": "M. kaibabanus",
+			"entity": "lepidodendron:prehistoric_flora_megactenopetalus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_megactenopetalus",

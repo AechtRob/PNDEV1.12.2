@@ -223,6 +223,44 @@ public class ModelMooreoceras extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -0.2F;
+        this.body.offsetX = 0.1F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(120);
+        this.body.rotateAngleX = (float)Math.toRadians(1);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 0.25F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 1.2F, 3.8F, -0.2F);
+        this.setRotateAngle(arm1, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(armb1, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm2, -0.2F, 0.0F, 0.4F);
+        this.setRotateAngle(armb2, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm3, 0.2F, 0.0F, -0.4F);
+        this.setRotateAngle(armb3, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm4, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(armb4, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm5, 0.2F, 0.F, -1.5F);
+        this.setRotateAngle(armb5, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm6, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(armb6, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm7, -0.2F, 0.0F, -0.2F);
+        this.setRotateAngle(armb7, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm8, 0.2F, 0.0F, 0.4F);
+        this.setRotateAngle(armb8, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm9, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(armb9, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm10, 0.2F, 0.0F, 1.5F);
+        this.setRotateAngle(armb10, 0.2F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 
