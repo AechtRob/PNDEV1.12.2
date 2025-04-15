@@ -27,7 +27,7 @@ public class RenderDeiroceras extends RenderLivingBaseWithBook<EntityPrehistoric
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraDeiroceras entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

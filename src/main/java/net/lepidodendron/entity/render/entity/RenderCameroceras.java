@@ -31,7 +31,7 @@ public class RenderCameroceras extends RenderLivingBaseWithBook<EntityPrehistori
     protected void preRenderCallback(EntityPrehistoricFloraCameroceras entity, float f) {
         float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.45F;
+        this.shadowSize = entity.width * scale * 0F;
     }
 
 }

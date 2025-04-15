@@ -16,7 +16,7 @@ public class RenderKronosaurus extends RenderLivingBaseWithBook<EntityPrehistori
     }
 
     public static float getScaler() {
-        return 1F;
+        return 1.09F;
     }
 
     @Override

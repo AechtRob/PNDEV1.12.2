@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderRayonnoceras extends RenderLivingBaseWithBook<EntityPrehistoricFloraRayonnoceras> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rayonnoceras.png");
+    public static float getScaler() {return 0.325F;}
 
     public RenderRayonnoceras(RenderManager mgr) {
         super(mgr, new ModelRayonnoceras(), 0.6f);
@@ -27,7 +28,7 @@ public class RenderRayonnoceras extends RenderLivingBaseWithBook<EntityPrehistor
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraRayonnoceras entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         GlStateManager.rotate(180, 0, 1, 0);
         this.shadowSize = entity.width * scale * 0.45F;

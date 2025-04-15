@@ -160,6 +160,7 @@ public class WorldGenAncientMoss extends WorldGenerator
 					"lepidodendron:prehistoric_flora_archocyrtus",
 					"lepidodendron:prehistoric_flora_arthropleura",
 					"lepidodendron:prehistoric_flora_attercopus",
+					"lepidodendron:prehistoric_flora_permarachne",
 					"lepidodendron:prehistoric_flora_daohugoucossus",
 					"lepidodendron:prehistoric_flora_gerarus",
 					"lepidodendron:prehistoric_flora_harvestman",

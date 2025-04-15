@@ -4,6 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
@@ -12,6 +13,9 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemNautiloidEggsEndoceras;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
@@ -27,7 +31,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraEndoceras extends EntityPrehistoricFloraNautiloidBase implements ITrappableWater {
+public class EntityPrehistoricFloraEndoceras extends EntityPrehistoricFloraNautiloidBase implements ITrappableWater, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -35,10 +39,10 @@ public class EntityPrehistoricFloraEndoceras extends EntityPrehistoricFloraNauti
 
 	public EntityPrehistoricFloraEndoceras(World world) {
 		super(world);
-		setSize(1.5F, 1.5F);
+		setSize(0.9F, 0.9F);
 		minWidth = 0.1F;
-		maxWidth = 1.5F;
-		maxHeight = 1.5F;
+		maxWidth = 0.9F;
+		maxHeight = 0.9F;
 		maxHealthAgeable = 46.0D;
 	}
 
@@ -89,6 +93,15 @@ public class EntityPrehistoricFloraEndoceras extends EntityPrehistoricFloraNauti
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new NautiloidWanderBottomFeed(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+	}
+	//this checks if the mob can currently be vertical, that is, X blocks above it is still water
+	//change the value inside up to denote now many blocks above to check
+	public boolean canBeVertical() {
+		//isReally in Water
+		boolean check1 = this.isReallyInWater();
+		boolean check2 = (this.world.isAirBlock(this.getPosition().up(6)));
+
+		return check1 && !check2;
 	}
 
 	@Override
@@ -162,5 +175,11 @@ public class EntityPrehistoricFloraEndoceras extends EntityPrehistoricFloraNauti
 			return LepidodendronMod.ENDOCERAS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.ENDOCERAS_LOOT;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_ENDOCERAS;
 	}
 }
