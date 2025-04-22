@@ -314,13 +314,18 @@ public class BlockEggs extends ElementsLepidodendronMod.ModElement {
 						nbtStr = "{PNType:\"" + creatureTypeVariant + "\",AgeTicks:0}";
 					}
 
-					EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEggOwner(worldIn, pos)).toString(), nbtStr, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D);
-					worldIn.playSound(null, pos, SoundEvents.BLOCK_SLIME_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+					try {
+						EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEggOwner(worldIn, pos)).toString(), nbtStr, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D);
+					}
+					catch (Throwable e) {
+						//All flavours of shit could go down, but we'll just ignore it all if so
+					}
 
 					if (te != null) {
 						te.getTileData().setString("creature", "");
 					}
 
+					worldIn.playSound(null, pos, SoundEvents.BLOCK_SLIME_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
 					worldIn.setBlockToAir(pos);
 				}
 			}
