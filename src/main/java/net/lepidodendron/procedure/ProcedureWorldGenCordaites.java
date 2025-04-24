@@ -803,7 +803,8 @@ public class ProcedureWorldGenCordaites extends ElementsLepidodendronMod.ModElem
 			}
 
 			ProcedureSpawnOdontopteris.executeProcedure(x, y + 3, z, world, LepidodendronConfigPlants.genOdontopterisCordaites, SaplingSpawn);
-			
+			ProcedureSpawnGigantopteridClimbing.executeProcedure(x, y + 3, z, world, LepidodendronConfigPlants.genGigantopteridClimbingCordaites, SaplingSpawn);
+
 		}
 	}
 }

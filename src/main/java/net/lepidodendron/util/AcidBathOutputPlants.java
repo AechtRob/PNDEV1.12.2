@@ -163,6 +163,8 @@ public class AcidBathOutputPlants {
         String[] resLoc = {
                 ForgeRegistries.BLOCKS.getKey(BlockDollyphyton.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockEdwardsiphyton.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockVolkhoviella.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockPiterophyton.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGreenAlgaeMat.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockRedAlgaeMat.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGreenSproutingAlgae.block).toString(),
@@ -207,7 +209,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.ITEMS.getKey(ItemSlimyAlgaeItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCooksonia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockLiverwort.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBacterialCrust.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBacterialCrust.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockTichavekia.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsSilurian);
         return resLoc;
@@ -461,6 +464,9 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockSupaiaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCtenisSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPterophyllumSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBiarmobaieraSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockUllmanniaSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockGigantopteridClimbingSapling.block).toString(),
                 "minecraft:small_fern",
                 "minecraft:large_fern"
         };

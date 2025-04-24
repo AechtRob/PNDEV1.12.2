@@ -1977,7 +1977,9 @@ public class ProcedureWorldGenLepidodendron extends ElementsLepidodendronMod.Mod
 			}
 
 			ProcedureSpawnOdontopteris.executeProcedure(x, y + 2, z, world, LepidodendronConfigPlants.genOdontopterisLepidodendron, SaplingSpawn);
-			
+
+			ProcedureSpawnGigantopteridClimbing.executeProcedure(x, y + 2, z, world, LepidodendronConfigPlants.genGigantopteridClimbingLepidodendron, SaplingSpawn);
+
 		}
 	}
 }

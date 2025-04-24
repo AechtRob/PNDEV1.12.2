@@ -337,11 +337,11 @@ public class BlockSwampHorsetailWater extends ElementsLepidodendronMod.ModElemen
 	    		return false;
 	    	}
 
-	    	double getLight = worldIn.getLight(pos);
-	    	if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
-	    	{
-	    		return false;
-	    	}
+//	    	double getLight = worldIn.getLight(pos);
+//	    	if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
+//	    	{
+//	    		return false;
+//	    	}
 
 	    	return true;
 	    	 

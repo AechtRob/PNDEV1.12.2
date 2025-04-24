@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/tichavekia_nospore",
+    "particle": "lepidodendron:blocks/tichavekia_nospore"
+  }
+}

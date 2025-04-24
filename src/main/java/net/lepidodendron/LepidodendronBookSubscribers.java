@@ -5,8 +5,8 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.base.*;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
-import net.lepidodendron.util.BlockSounds;
-import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.entity.util.*;
+import net.lepidodendron.util.*;
 import net.lepidodendron.util.patchouli.PercentageCollected;
 import net.minecraft.advancements.AdvancementManager;
 import net.minecraft.block.Block;
@@ -41,6 +41,181 @@ import java.util.Locale;
 
 public class LepidodendronBookSubscribers {
 
+	public static void updatePaleopediaStats(EntityPlayer player) {
+		if (player.world.isRemote) {
+			return;
+		}
+		IPaleopediaStatsPrecambrian stats1 = player.getCapability(PaleopediaStatsProviderPrecambrian.PALEOPEDIA_STATS, null);
+		stats1.setStats(PercentageCollected.getPercentagePerDimensionTotal(player, 0, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats1.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderPrecambrian.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsPrecambrianCompleted stats2 = player.getCapability(PaleopediaStatsProviderPrecambrianCompleted.PALEOPEDIA_STATS, null);
+		stats2.setStats(PercentageCollected.getPercentagePerDimensionAchieved(player, 0, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats2.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderPrecambrianCompleted.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsCambrian stats3 = player.getCapability(PaleopediaStatsProviderCambrian.PALEOPEDIA_STATS, null);
+		stats3.setStats(PercentageCollected.getPercentagePerDimensionTotal(player, 1, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats3.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderCambrian.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsCambrianCompleted stats4 = player.getCapability(PaleopediaStatsProviderCambrianCompleted.PALEOPEDIA_STATS, null);
+		stats4.setStats(PercentageCollected.getPercentagePerDimensionAchieved(player, 1, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats4.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderCambrianCompleted.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsOrdovician stats5 = player.getCapability(PaleopediaStatsProviderOrdovician.PALEOPEDIA_STATS, null);
+		stats3.setStats(PercentageCollected.getPercentagePerDimensionTotal(player, 2, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats5.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderOrdovician.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsOrdovicianCompleted stats6 = player.getCapability(PaleopediaStatsProviderOrdovicianCompleted.PALEOPEDIA_STATS, null);
+		stats6.setStats(PercentageCollected.getPercentagePerDimensionAchieved(player, 2, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats6.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderOrdovicianCompleted.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsSilurian stats7 = player.getCapability(PaleopediaStatsProviderSilurian.PALEOPEDIA_STATS, null);
+		stats7.setStats(PercentageCollected.getPercentagePerDimensionTotal(player, 3, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats7.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderSilurian.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsSilurianCompleted stats8 = player.getCapability(PaleopediaStatsProviderSilurianCompleted.PALEOPEDIA_STATS, null);
+		stats8.setStats(PercentageCollected.getPercentagePerDimensionAchieved(player, 3, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats8.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderSilurianCompleted.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsDevonian stats9 = player.getCapability(PaleopediaStatsProviderDevonian.PALEOPEDIA_STATS, null);
+		stats9.setStats(PercentageCollected.getPercentagePerDimensionTotal(player, 4, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats9.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderDevonian.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsDevonianCompleted stats10 = player.getCapability(PaleopediaStatsProviderDevonianCompleted.PALEOPEDIA_STATS, null);
+		stats10.setStats(PercentageCollected.getPercentagePerDimensionAchieved(player, 4, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats10.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderDevonianCompleted.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsCarboniferous stats11 = player.getCapability(PaleopediaStatsProviderCarboniferous.PALEOPEDIA_STATS, null);
+		stats11.setStats(PercentageCollected.getPercentagePerDimensionTotal(player, 5, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats11.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderCarboniferous.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsCarboniferousCompleted stats12 = player.getCapability(PaleopediaStatsProviderCarboniferousCompleted.PALEOPEDIA_STATS, null);
+		stats12.setStats(PercentageCollected.getPercentagePerDimensionAchieved(player, 5, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats12.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderCarboniferousCompleted.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsPermian stats13 = player.getCapability(PaleopediaStatsProviderPermian.PALEOPEDIA_STATS, null);
+		stats13.setStats(PercentageCollected.getPercentagePerDimensionTotal(player, 6, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats13.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderPermian.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsPermianCompleted stats14 = player.getCapability(PaleopediaStatsProviderPermianCompleted.PALEOPEDIA_STATS, null);
+		stats14.setStats(PercentageCollected.getPercentagePerDimensionAchieved(player, 6, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats14.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderPermianCompleted.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsTriassic stats15 = player.getCapability(PaleopediaStatsProviderTriassic.PALEOPEDIA_STATS, null);
+		stats15.setStats(PercentageCollected.getPercentagePerDimensionTotal(player, 7, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats15.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderTriassic.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsTriassicCompleted stats16 = player.getCapability(PaleopediaStatsProviderTriassicCompleted.PALEOPEDIA_STATS, null);
+		stats16.setStats(PercentageCollected.getPercentagePerDimensionAchieved(player, 7, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats16.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderTriassicCompleted.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsJurassic stats17 = player.getCapability(PaleopediaStatsProviderJurassic.PALEOPEDIA_STATS, null);
+		stats17.setStats(PercentageCollected.getPercentagePerDimensionTotal(player, 8, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats17.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderJurassic.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsJurassicCompleted stats18 = player.getCapability(PaleopediaStatsProviderJurassicCompleted.PALEOPEDIA_STATS, null);
+		stats18.setStats(PercentageCollected.getPercentagePerDimensionAchieved(player, 8, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats18.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderJurassicCompleted.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsCretaceousEarly stats19 = player.getCapability(PaleopediaStatsProviderCretaceousEarly.PALEOPEDIA_STATS, null);
+		stats19.setStats(PercentageCollected.getPercentagePerDimensionTotal(player, 9, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats19.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderCretaceousEarly.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsCretaceousEarlyCompleted stats20 = player.getCapability(PaleopediaStatsProviderCretaceousEarlyCompleted.PALEOPEDIA_STATS, null);
+		stats20.setStats(PercentageCollected.getPercentagePerDimensionAchieved(player, 9, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats20.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderCretaceousEarlyCompleted.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsCretaceousLate stats21 = player.getCapability(PaleopediaStatsProviderCretaceousLate.PALEOPEDIA_STATS, null);
+		stats21.setStats(PercentageCollected.getPercentagePerDimensionTotal(player, 10, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats21.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderCretaceousLate.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsCretaceousLateCompleted stats22 = player.getCapability(PaleopediaStatsProviderCretaceousLateCompleted.PALEOPEDIA_STATS, null);
+		stats22.setStats(PercentageCollected.getPercentagePerDimensionAchieved(player, 10, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats22.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderCretaceousLateCompleted.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsPaleogene stats23 = player.getCapability(PaleopediaStatsProviderPaleogene.PALEOPEDIA_STATS, null);
+		stats23.setStats(PercentageCollected.getPercentagePerDimensionTotal(player, 11, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats23.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderPaleogene.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsPaleogeneCompleted stats24 = player.getCapability(PaleopediaStatsProviderPaleogeneCompleted.PALEOPEDIA_STATS, null);
+		stats24.setStats(PercentageCollected.getPercentagePerDimensionAchieved(player, 11, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats24.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderPaleogeneCompleted.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsNeogene stats25 = player.getCapability(PaleopediaStatsProviderNeogene.PALEOPEDIA_STATS, null);
+		stats25.setStats(PercentageCollected.getPercentagePerDimensionTotal(player, 12, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats25.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderNeogene.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsNeogeneCompleted stats26 = player.getCapability(PaleopediaStatsProviderNeogeneCompleted.PALEOPEDIA_STATS, null);
+		stats26.setStats(PercentageCollected.getPercentagePerDimensionAchieved(player, 12, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats26.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderNeogeneCompleted.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsPleistocene stats27 = player.getCapability(PaleopediaStatsProviderPleistocene.PALEOPEDIA_STATS, null);
+		stats27.setStats(PercentageCollected.getPercentagePerDimensionTotal(player, 13, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats27.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderPleistocene.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+		IPaleopediaStatsPleistoceneCompleted stats28 = player.getCapability(PaleopediaStatsProviderPleistoceneCompleted.PALEOPEDIA_STATS, null);
+		stats28.setStats(PercentageCollected.getPercentagePerDimensionAchieved(player, 13, false));
+		if (player instanceof EntityPlayerMP) {
+			float statsFloat = stats28.getStats();
+			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderPleistoceneCompleted.StatsPacket(statsFloat), (EntityPlayerMP)player);
+		}
+
+	}
+	
 	@SubscribeEvent //If we grant an advancement, check if we have just completed a Dimension:
 	public void onGiveAdvancement(AdvancementEvent event) {
 		if (event.getEntityPlayer().getEntityWorld().isRemote) {
@@ -59,6 +234,9 @@ public class LepidodendronBookSubscribers {
 				return;
 			}
 		}
+
+		updatePaleopediaStats(event.getEntityPlayer());
+
 		if (event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_precambrian")
 				|| event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_cambrian")
 				|| event.getAdvancement().getId().toString().equalsIgnoreCase("lepidodendron:pf_adv_complete_ordovician")

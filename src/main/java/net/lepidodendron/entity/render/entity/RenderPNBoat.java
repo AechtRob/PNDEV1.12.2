@@ -86,6 +86,10 @@ public class RenderPNBoat extends RenderBoat {
     private static final ResourceLocation TEXTURE_SYNCHYSIDENDRON = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_synchysidendron.png");
     private static final ResourceLocation TEXTURE_DOYLEALES = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_doyleales.png");
 
+    private static final ResourceLocation TEXTURE_SATPURAPHYLLUM = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_satpuraphyllum.png");
+    private static final ResourceLocation TEXTURE_ULLMANNIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_ullmannia.png");
+    private static final ResourceLocation TEXTURE_BIARMOBAIERA = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_biarmobaiera.png");
+
 
     public RenderPNBoat(RenderManager renderManagerIn) {
         super(renderManagerIn);
@@ -244,6 +248,12 @@ public class RenderPNBoat extends RenderBoat {
                 return TEXTURE_SYNCHYSIDENDRON;
             case DOYLEALES:
                 return TEXTURE_DOYLEALES;
+            case SATPURAPHYLLUM:
+                return TEXTURE_SATPURAPHYLLUM;
+            case ULLMANNIA:
+                return TEXTURE_ULLMANNIA;
+            case BIARMOBAIERA:
+                return TEXTURE_BIARMOBAIERA;
         }
     }
 }

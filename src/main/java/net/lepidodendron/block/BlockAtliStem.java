@@ -68,9 +68,13 @@ public class BlockAtliStem extends ElementsLepidodendronMod.ModElement {
 	}
 
 	public static class BlockCustom extends Block implements IAdvancementGranter {
-	
+
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public static final PropertyBool TOPSHOOT = PropertyBool.create("topshoot");
+		public static final PropertyBool EAST = PropertyBool.create("east");
+		public static final PropertyBool SOUTH = PropertyBool.create("south");
+		public static final PropertyBool WEST = PropertyBool.create("west");
+		public static final PropertyBool NORTH = PropertyBool.create("north");
 
 		public BlockCustom() {
 			super(Material.WOOD);
@@ -108,26 +112,88 @@ public class BlockAtliStem extends ElementsLepidodendronMod.ModElement {
 			}
 
 			//Testing if this shoot is properly attached to a plant/vine in the right direction for a visual connection:
-			
+
 			boolean shootonvine = false;
 
-	        Block block = worldIn.getBlockState(pos.up()).getBlock();
-	        if ((block == BlockAtliShoot.block) || (block == BlockAtliShootPlaceable.block)) {
-	        	if (worldIn.getBlockState(pos.up()).getValue(FACING) == EnumFacing.UP) {
-	        		shootonvine = true;
-	        	}
-	        }
-			
-			return state.withProperty(TOPSHOOT, shootonvine).withProperty(FACING, state.getValue(FACING));
+			Block block = worldIn.getBlockState(pos.up()).getBlock();
+			if ((block == BlockAtliShoot.block) || (block == BlockAtliShootPlaceable.block) ) {
+				if (worldIn.getBlockState(pos.up()).getValue(FACING) == EnumFacing.UP) {
+					shootonvine = true;
+				}
+			}
+
+			state = state.withProperty(TOPSHOOT, shootonvine).withProperty(FACING, state.getValue(FACING))
+					.withProperty(NORTH, false).withProperty(EAST, false).withProperty(SOUTH, false).withProperty(WEST, false);
+
+			//Check if we have a joint:
+			if (state.getValue(FACING) == EnumFacing.EAST) {
+				if (worldIn.getBlockState(pos.south()).getBlock() == BlockAtliStemNE.block) {
+					state = state.withProperty(SOUTH, worldIn.getBlockState(pos.south()).getValue(FACING) == EnumFacing.EAST);
+				}
+				if (worldIn.getBlockState(pos.north()).getBlock() == BlockAtliStemNW.block) {
+					state = state.withProperty(NORTH, worldIn.getBlockState(pos.north()).getValue(FACING) == EnumFacing.EAST);
+				}
+				if (worldIn.getBlockState(pos.south().west()).getBlock() == BlockAtliStemNE.block) {
+					state = state.withProperty(SOUTH, worldIn.getBlockState(pos.south().west()).getValue(FACING) == EnumFacing.SOUTH);
+				}
+				if (worldIn.getBlockState(pos.north().west()).getBlock() == BlockAtliStemNW.block) {
+					state = state.withProperty(NORTH, worldIn.getBlockState(pos.north().west()).getValue(FACING) == EnumFacing.NORTH);
+				}
+			}
+			else if (state.getValue(FACING) == EnumFacing.SOUTH) {
+				if (worldIn.getBlockState(pos.west()).getBlock() == BlockAtliStemNE.block) {
+					state = state.withProperty(WEST, worldIn.getBlockState(pos.west()).getValue(FACING) == EnumFacing.SOUTH);
+				}
+				if (worldIn.getBlockState(pos.east()).getBlock() == BlockAtliStemNW.block) {
+					state = state.withProperty(EAST, worldIn.getBlockState(pos.east()).getValue(FACING) == EnumFacing.SOUTH);
+				}
+				if (worldIn.getBlockState(pos.west().north()).getBlock() == BlockAtliStemNE.block) {
+					state = state.withProperty(WEST, worldIn.getBlockState(pos.west().north()).getValue(FACING) == EnumFacing.WEST);
+				}
+				if (worldIn.getBlockState(pos.east().north()).getBlock() == BlockAtliStemNW.block) {
+					state = state.withProperty(EAST, worldIn.getBlockState(pos.east().north()).getValue(FACING) == EnumFacing.EAST);
+				}
+			}
+			else if (state.getValue(FACING) == EnumFacing.WEST) {
+				if (worldIn.getBlockState(pos.north()).getBlock() == BlockAtliStemNE.block) {
+					state = state.withProperty(NORTH, worldIn.getBlockState(pos.north()).getValue(FACING) == EnumFacing.WEST);
+				}
+				if (worldIn.getBlockState(pos.south()).getBlock() == BlockAtliStemNW.block) {
+					state = state.withProperty(SOUTH, worldIn.getBlockState(pos.south()).getValue(FACING) == EnumFacing.WEST);
+				}
+				if (worldIn.getBlockState(pos.north().east()).getBlock() == BlockAtliStemNE.block) {
+					state = state.withProperty(NORTH, worldIn.getBlockState(pos.north().east()).getValue(FACING) == EnumFacing.NORTH);
+				}
+				if (worldIn.getBlockState(pos.south().east()).getBlock() == BlockAtliStemNW.block) {
+					state = state.withProperty(SOUTH, worldIn.getBlockState(pos.south().east()).getValue(FACING) == EnumFacing.SOUTH);
+				}
+			}
+			else if (state.getValue(FACING) == EnumFacing.NORTH) {
+				if (worldIn.getBlockState(pos.east()).getBlock() == BlockAtliStemNE.block) {
+					state = state.withProperty(EAST, worldIn.getBlockState(pos.east()).getValue(FACING) == EnumFacing.NORTH);
+				}
+				if (worldIn.getBlockState(pos.west()).getBlock() == BlockAtliStemNW.block) {
+					state = state.withProperty(WEST, worldIn.getBlockState(pos.west()).getValue(FACING) == EnumFacing.NORTH);
+				}
+				if (worldIn.getBlockState(pos.east().south()).getBlock() == BlockAtliStemNE.block) {
+					state = state.withProperty(EAST, worldIn.getBlockState(pos.east().south()).getValue(FACING) == EnumFacing.EAST);
+				}
+				if (worldIn.getBlockState(pos.west().south()).getBlock() == BlockAtliStemNW.block) {
+					state = state.withProperty(WEST, worldIn.getBlockState(pos.west().south()).getValue(FACING) == EnumFacing.WEST);
+				}
+			}
+
+
+			return state;
 		}
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    	public BlockRenderLayer getRenderLayer()
-    {
-        return BlockRenderLayer.CUTOUT;
-    }
-		
+		public BlockRenderLayer getRenderLayer()
+		{
+			return BlockRenderLayer.CUTOUT;
+		}
+
 		@Override
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
 			return layer == BlockRenderLayer.CUTOUT_MIPPED;
@@ -139,18 +205,18 @@ public class BlockAtliStem extends ElementsLepidodendronMod.ModElement {
 		}
 
 		public boolean isFullCube(IBlockState state)
-	    {
-	        return false;
-	    }
+		{
+			return false;
+		}
 
-	    @Override
+		@Override
 		public boolean canSustainLeaves(IBlockState state, IBlockAccess world, BlockPos pos) {
 			return true;
 		}
 
-		@Override public boolean isWood(IBlockAccess world, BlockPos pos){ 
-				return true;
-			}
+		@Override public boolean isWood(IBlockAccess world, BlockPos pos){
+			return true;
+		}
 
 		@Override
 		public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing face) {
@@ -159,7 +225,7 @@ public class BlockAtliStem extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING,TOPSHOOT});
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING,TOPSHOOT, NORTH, EAST, SOUTH, WEST});
 		}
 
 		@Override
@@ -183,9 +249,58 @@ public class BlockAtliStem extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta,
-				EntityLivingBase placer) {
-			return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
+		{
+			if (canPlaceAt(worldIn, pos, facing))
+			{
+				return this.getDefaultState().withProperty(FACING, facing);
+			}
+			else
+			{
+				for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL)
+				{
+					if (canPlaceAt(worldIn, pos, enumfacing))
+					{
+						return this.getDefaultState().withProperty(FACING, enumfacing);
+					}
+				}
+
+				return this.getDefaultState();
+			}
+		}
+
+		@Override
+		public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
+		{
+			for (EnumFacing enumfacing : FACING.getAllowedValues())
+			{
+				if (canPlaceAt(worldIn, pos, enumfacing))
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		public static boolean canPlaceAt(World worldIn, BlockPos pos, EnumFacing facing)
+		{
+			BlockPos blockpos = pos.offset(facing.getOpposite());
+			IBlockState iblockstate = worldIn.getBlockState(blockpos);
+			Block block = iblockstate.getBlock();
+			BlockFaceShape blockfaceshape = iblockstate.getBlockFaceShape(worldIn, blockpos, facing);
+
+			if (facing.equals(EnumFacing.UP) || facing.equals(EnumFacing.DOWN))
+			{
+				return false;
+			}
+			else if (facing != EnumFacing.UP && facing != EnumFacing.DOWN)
+			{
+				return !isExceptBlockForAttachWithPiston(block) && blockfaceshape == BlockFaceShape.SOLID;
+			}
+			else
+			{
+				return false;
+			}
 		}
 
 		@Override
@@ -194,25 +309,25 @@ public class BlockAtliStem extends ElementsLepidodendronMod.ModElement {
 				case SOUTH :
 				default :
 					return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 0.1D);
-					
+
 				case NORTH :
 					return new AxisAlignedBB(0.0D, 0.0D, 0.9D, 1.0D, 1.0D, 1.0D);
-					
+
 				case WEST :
 					return new AxisAlignedBB(0.9D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
-					
+
 				case EAST :
 					return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.1D, 1.0D, 1.0D);
-					
+
 				case UP :
 					return new AxisAlignedBB(0.0D, 0D, 0.0D, 1.0D, 0.1D, 1.0D);
-					
+
 				case DOWN :
 					return new AxisAlignedBB(0.0D, 1D, 0.0D, 1.0D, 0.9D, 1.0D);
 			}
 		}
 
 		@Override public boolean isLadder(IBlockState state, IBlockAccess world, BlockPos pos, EntityLivingBase entity) { return true; }
-	
+
 	}
 }

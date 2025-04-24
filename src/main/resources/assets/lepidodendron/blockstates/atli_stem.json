@@ -1,72 +1,137 @@
 {
-  "variants": {
-    "normal": [
-     	{"model": "lepidodendron:atli_stem_1", "weight": 3},
-     	{"model": "lepidodendron:atli_stem_2" },
-     	{"model": "lepidodendron:atli_stem_3" },
-     	{"model": "lepidodendron:atli_stem_4" },
-     	{"model": "lepidodendron:atli_stem_5" }
-    ],
-    "facing=north,topshoot=true": [
-      {"model": "lepidodendron:atli_top", "y": 180 }
-    ],
-    "facing=south,topshoot=true": [
-      {"model": "lepidodendron:atli_top" }
-    ],
-    "facing=east,topshoot=true": [
-      {"model": "lepidodendron:atli_top", "y": 270 }
-    ],
-    "facing=west,topshoot=true": [
-      {"model": "lepidodendron:atli_top", "y": 90 }
-    ],
-    "facing=up,topshoot=true": [
-      {"model": "lepidodendron:atli_top" }
-    ],
-    "facing=down,topshoot=true": [
-      {"model": "lepidodendron:atli_top" }
-    ],
-  "facing=north,topshoot=false": [
-      {"model": "lepidodendron:atli_stem_1", "y": 180, "weight": 3},
-     	{"model": "lepidodendron:atli_stem_2", "y": 180 },
-     	{"model": "lepidodendron:atli_stem_3", "y": 180 },
-     	{"model": "lepidodendron:atli_stem_4", "y": 180 },
-     	{"model": "lepidodendron:atli_stem_5", "y": 180 }
-    ],
-    "facing=south,topshoot=false": [
-      	{"model": "lepidodendron:atli_stem_1", "weight": 3},
-     	{"model": "lepidodendron:atli_stem_2" },
-     	{"model": "lepidodendron:atli_stem_3" },
-     	{"model": "lepidodendron:atli_stem_4" },
-     	{"model": "lepidodendron:atli_stem_5" }
-    ],
-    "facing=east,topshoot=false": [
-      	{"model": "lepidodendron:atli_stem_1", "y": 270, "weight": 3},
-     	{"model": "lepidodendron:atli_stem_2", "y": 270 },
-     	{"model": "lepidodendron:atli_stem_3", "y": 270 },
-     	{"model": "lepidodendron:atli_stem_4", "y": 270 },
-     	{"model": "lepidodendron:atli_stem_5", "y": 270 }
-    ],
-    "facing=west,topshoot=false": [
-      	{"model": "lepidodendron:atli_stem_1", "y": 90, "weight": 3},
-     	{"model": "lepidodendron:atli_stem_2", "y": 90 },
-     	{"model": "lepidodendron:atli_stem_3", "y": 90 },
-     	{"model": "lepidodendron:atli_stem_4", "y": 90 },
-     	{"model": "lepidodendron:atli_stem_5", "y": 90 }
-    ],
-    "facing=up,topshoot=false": [
-      	{"model": "lepidodendron:atli_stem_1", "weight": 3},
-     	{"model": "lepidodendron:atli_stem_2" },
-     	{"model": "lepidodendron:atli_stem_3" },
-     	{"model": "lepidodendron:atli_stem_4" },
-     	{"model": "lepidodendron:atli_stem_5" }
-    ],
-    "facing=down,topshoot=false": [
-      	{"model": "lepidodendron:atli_stem_1", "weight": 3},
-     	{"model": "lepidodendron:atli_stem_2" },
-     	{"model": "lepidodendron:atli_stem_3" },
-     	{"model": "lepidodendron:atli_stem_4" },
-     	{"model": "lepidodendron:atli_stem_5" }
-    ]
-    
-  }
+  "multipart" : [
+    {	"when": { "facing": "north", "topshoot": true },
+      "apply": [
+        {"model": "lepidodendron:atli_top", "y": 180 }
+      ]
+    },
+    {	"when": { "facing": "south", "topshoot": true },
+      "apply": [
+        {"model": "lepidodendron:atli_top" }
+      ]
+    },
+    {	"when": { "facing": "east", "topshoot": true },
+      "apply": [
+        {"model": "lepidodendron:atli_top", "y": 270 }
+      ]
+    },
+    {	"when": { "facing": "west", "topshoot": true },
+      "apply": [
+        {"model": "lepidodendron:atli_top", "y": 90 }
+      ]
+    },
+    {	"when": { "facing": "up", "topshoot": true },
+      "apply": [
+        {"model": "lepidodendron:atli_top" }
+      ]
+    },
+    {	"when": { "facing": "down", "topshoot": true },
+      "apply": [
+        {"model": "lepidodendron:atli_top" }
+      ]
+    },
+    {	"when": { "facing": "north", "topshoot": false },
+      "apply": [
+        {"model": "lepidodendron:atli_stem_1", "y": 180, "weight": 3},
+        {"model": "lepidodendron:atli_stem_2", "y": 180 },
+        {"model": "lepidodendron:atli_stem_3", "y": 180 },
+        {"model": "lepidodendron:atli_stem_4", "y": 180 },
+        {"model": "lepidodendron:atli_stem_5", "y": 180 }
+      ]
+    },
+    {	"when": { "facing": "south", "topshoot": false },
+      "apply": [
+        {"model": "lepidodendron:atli_stem_1", "weight": 3},
+        {"model": "lepidodendron:atli_stem_2" },
+        {"model": "lepidodendron:atli_stem_3" },
+        {"model": "lepidodendron:atli_stem_4" },
+        {"model": "lepidodendron:atli_stem_5" }
+      ]
+    },
+    {	"when": { "facing": "east", "topshoot": false },
+      "apply": [
+        {"model": "lepidodendron:atli_stem_1", "y": 270, "weight": 3},
+        {"model": "lepidodendron:atli_stem_2", "y": 270 },
+        {"model": "lepidodendron:atli_stem_3", "y": 270 },
+        {"model": "lepidodendron:atli_stem_4", "y": 270 },
+        {"model": "lepidodendron:atli_stem_5", "y": 270 }
+      ]
+    },
+    {	"when": { "facing": "west", "topshoot": false },
+      "apply": [
+        {"model": "lepidodendron:atli_stem_1", "y": 90, "weight": 3},
+        {"model": "lepidodendron:atli_stem_2", "y": 90 },
+        {"model": "lepidodendron:atli_stem_3", "y": 90 },
+        {"model": "lepidodendron:atli_stem_4", "y": 90 },
+        {"model": "lepidodendron:atli_stem_5", "y": 90 }
+      ]
+    },
+    {	"when": { "facing": "up", "topshoot": false },
+      "apply": [
+        {"model": "lepidodendron:atli_stem_1", "weight": 3},
+        {"model": "lepidodendron:atli_stem_2" },
+        {"model": "lepidodendron:atli_stem_3" },
+        {"model": "lepidodendron:atli_stem_4" },
+        {"model": "lepidodendron:atli_stem_5" }
+      ]
+    },
+    {	"when": { "facing": "down", "topshoot": false },
+      "apply": [
+        {"model": "lepidodendron:atli_stem_1", "weight": 3},
+        {"model": "lepidodendron:atli_stem_2" },
+        {"model": "lepidodendron:atli_stem_3" },
+        {"model": "lepidodendron:atli_stem_4" },
+        {"model": "lepidodendron:atli_stem_5" }
+      ]
+    },
+
+    {	"when": { "facing": "east", "south": true },
+      "apply": [
+        {"model": "lepidodendron:atli_stem_junction", "y": 270}
+      ]
+    },
+
+    {	"when": { "facing": "east", "north": true },
+      "apply": [
+        {"model": "lepidodendron:atli_stem_junction_flipped", "y": 270}
+      ]
+    },
+
+    {	"when": { "facing": "south", "west": true },
+      "apply": [
+        {"model": "lepidodendron:atli_stem_junction" }
+      ]
+    },
+
+    {	"when": { "facing": "south", "east": true },
+      "apply": [
+        {"model": "lepidodendron:atli_stem_junction_flipped" }
+      ]
+    },
+
+    {	"when": { "facing": "west", "north": true },
+      "apply": [
+        {"model": "lepidodendron:atli_stem_junction", "y": 90 }
+      ]
+    },
+
+    {	"when": { "facing": "west", "south": true },
+      "apply": [
+        {"model": "lepidodendron:atli_stem_junction_flipped", "y": 90 }
+      ]
+    },
+
+    {	"when": { "facing": "north", "east": true },
+      "apply": [
+        {"model": "lepidodendron:atli_stem_junction", "y": 180 }
+      ]
+    },
+
+    {	"when": { "facing": "north", "west": true },
+      "apply": [
+        {"model": "lepidodendron:atli_stem_junction_flipped", "y": 180 }
+      ]
+    }
+
+  ]
 }

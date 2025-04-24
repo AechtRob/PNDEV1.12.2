@@ -317,11 +317,11 @@ public class BlockAdoketophyton extends ElementsLepidodendronMod.ModElement {
 				return false;
 			}
 
-	    	double getLight = worldIn.getLight(pos);
-	    	if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
-	    	{
-	    		return false;
-	    	}
+//	    	double getLight = worldIn.getLight(pos);
+//	    	if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
+//	    	{
+//	    		return false;
+//	    	}
 	    	
 			int distH = (int) LepidodendronConfigPlants.waterAdoketophytonHorizontal;
 			if (distH < 1) distH = 1;

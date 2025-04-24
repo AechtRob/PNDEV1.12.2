@@ -1,0 +1,34 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ "345",
+ "678"
+ ],
+ "key": {
+ "3": {
+ "item": "lepidodendron:ullmannia_planks"
+ },
+ "4": {
+ "type": "forge:ore_dict",
+ "ore": "stickWood"
+ },
+ "5": {
+ "item": "lepidodendron:ullmannia_planks"
+ },
+ "6": {
+ "item": "lepidodendron:ullmannia_planks"
+ },
+ "7": {
+ "type": "forge:ore_dict",
+ "ore": "stickWood"
+ },
+ "8": {
+ "item": "lepidodendron:ullmannia_planks"
+ }
+ },
+ "result": {
+ "item": "lepidodendron:ullmannia_fence",
+ "count": 3
+ }
+}

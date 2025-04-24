@@ -11,7 +11,8 @@
       "ore": "stickWood"
     },
     "4": {
-      "item": "lepidodendron:gigantopterid_log"
+      "type": "forge:ore_dict",
+      "ore": "itemGigantopteridStem"
     },
     "5": {
       "type": "forge:ore_dict",
@@ -22,7 +23,8 @@
       "ore": "stickWood"
      },
     "7": {
-      "item": "lepidodendron:gigantopterid_log"
+      "type": "forge:ore_dict",
+      "ore": "itemGigantopteridStem"
    },
     "8": {
       "type": "forge:ore_dict",

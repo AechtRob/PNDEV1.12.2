@@ -200,6 +200,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CONIOPTERIS = new CustomTrigger("pf_book_coniopteris");
     public static final CustomTrigger CLICK_CONOMEDUSITES = new CustomTrigger("pf_book_conomedusites");
     public static final CustomTrigger CLICK_COOKSONIA = new CustomTrigger("pf_book_cooksonia");
+    public static final CustomTrigger CLICK_TICHAVEKIA = new CustomTrigger("pf_book_tichavekia");
+    public static final CustomTrigger CLICK_PITEROPHYTON = new CustomTrigger("pf_book_piterophyton");
     public static final CustomTrigger CLICK_BELLENDENA = new CustomTrigger("pf_book_bellendena");
     public static final CustomTrigger CLICK_CORDAITES = new CustomTrigger("pf_book_cordaites");
     public static final CustomTrigger CLICK_CORDAITES_DRY = new CustomTrigger("pf_book_cordaites_dry");
@@ -260,6 +262,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DICROIDIUM_H = new CustomTrigger("pf_book_dicroidium_h");
     public static final CustomTrigger CLICK_DICROIDIUM_O = new CustomTrigger("pf_book_dicroidium_o");
     public static final CustomTrigger CLICK_SATPURAPHYLLUM = new CustomTrigger("pf_book_satpuraphyllum");
+    public static final CustomTrigger CLICK_ULLMANNIA = new CustomTrigger("pf_book_ullmannia");
     public static final CustomTrigger CLICK_DICROIDIUM = new CustomTrigger("pf_book_dicroidium");
     public static final CustomTrigger CLICK_DICTYONEMA = new CustomTrigger("pf_book_dictyonema");
     public static final CustomTrigger CLICK_DICTYOPHYLLUM = new CustomTrigger("pf_book_dictyophyllum");
@@ -290,6 +293,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DIOON = new CustomTrigger("pf_book_dioon");
     public static final CustomTrigger CLICK_EOGINKGOITES = new CustomTrigger("pf_book_eoginkgoites");
     public static final CustomTrigger CLICK_DOLLYPHYTON = new CustomTrigger("pf_book_dollyphyton");
+    public static final CustomTrigger CLICK_VOLKHOVIELLA = new CustomTrigger("pf_book_volkhoviella");
     public static final CustomTrigger CLICK_ECHMATOCRINUS = new CustomTrigger("pf_book_echmatocrinus");
     public static final CustomTrigger CLICK_EDWARDSIPHYTON = new CustomTrigger("pf_book_edwardsiphyton");
     public static final CustomTrigger CLICK_ELKINSIA = new CustomTrigger("pf_book_elkinsia");
@@ -324,6 +328,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_GIANT_HORSETAIL = new CustomTrigger("pf_book_giant_horsetail");
     public static final CustomTrigger CLICK_JURASSIC_HORSETAIL = new CustomTrigger("pf_book_jurassic_horsetail");
     public static final CustomTrigger CLICK_GIGANTOPTERID = new CustomTrigger("pf_book_gigantopterid");
+    public static final CustomTrigger CLICK_GIGANTOPTERID_CLIMBING = new CustomTrigger("pf_book_gigantopterid_climbing");
     public static final CustomTrigger CLICK_GIGANTOSPONGIA = new CustomTrigger("pf_book_gigantospongia");
     public static final CustomTrigger CLICK_GLASS_SPONGE = new CustomTrigger("pf_book_glass_sponge");
     public static final CustomTrigger CLICK_GINKGO = new CustomTrigger("pf_book_ginkgo");
@@ -1992,6 +1997,8 @@ public class ModTriggers
             CLICK_CONIOPTERIS,
             CLICK_CONOMEDUSITES,
             CLICK_COOKSONIA,
+            CLICK_TICHAVEKIA,
+            CLICK_PITEROPHYTON,
             CLICK_BELLENDENA,
             CLICK_CORDAITES,
             CLICK_CORDAITES_DRY,
@@ -2055,6 +2062,7 @@ public class ModTriggers
             CLICK_DICROIDIUM_O,
             CLICK_DICROIDIUM,
             CLICK_SATPURAPHYLLUM,
+            CLICK_ULLMANNIA,
             CLICK_DICTYONEMA,
             CLICK_DICTYOPHYLLUM,
             CLICK_DINOMISCHUS,
@@ -2084,6 +2092,7 @@ public class ModTriggers
             CLICK_DIOON,
             CLICK_EOGINKGOITES,
             CLICK_DOLLYPHYTON,
+            CLICK_VOLKHOVIELLA,
             CLICK_ECHMATOCRINUS,
             CLICK_EDWARDSIPHYTON,
             CLICK_ELKINSIA,
@@ -2118,6 +2127,7 @@ public class ModTriggers
             CLICK_GIANT_HORSETAIL,
             CLICK_JURASSIC_HORSETAIL,
             CLICK_GIGANTOPTERID,
+            CLICK_GIGANTOPTERID_CLIMBING,
             CLICK_GIGANTOSPONGIA,
             CLICK_GLASS_SPONGE,
             CLICK_GINKGO,

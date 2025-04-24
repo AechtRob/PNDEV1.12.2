@@ -611,7 +611,11 @@ public class BlockBacterialCrust extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) 
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+			updateTickForced(worldIn, pos, state, rand, false);
+		}
+
+		public static void updateTickForced(World worldIn, BlockPos pos, IBlockState state, Random rand, boolean forced)
 		{
 			if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
 
@@ -625,7 +629,7 @@ public class BlockBacterialCrust extends ElementsLepidodendronMod.ModElement {
 				)
 					{
 						worldIn.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
+						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockBacterialCrust.block, (int) (1)));
 						entityToSpawn.setPickupDelay(10);
 						worldIn.spawnEntity(entityToSpawn);
 					}
@@ -639,7 +643,7 @@ public class BlockBacterialCrust extends ElementsLepidodendronMod.ModElement {
 				)
 					{
 						worldIn.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
+						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockBacterialCrust.block, (int) (1)));
 						entityToSpawn.setPickupDelay(10);
 						worldIn.spawnEntity(entityToSpawn);
 					}
@@ -653,7 +657,7 @@ public class BlockBacterialCrust extends ElementsLepidodendronMod.ModElement {
 				)
 					{
 						worldIn.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
+						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockBacterialCrust.block, (int) (1)));
 						entityToSpawn.setPickupDelay(10);
 						worldIn.spawnEntity(entityToSpawn);
 					}
@@ -667,7 +671,7 @@ public class BlockBacterialCrust extends ElementsLepidodendronMod.ModElement {
 				)
 					{
 						worldIn.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
+						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockBacterialCrust.block, (int) (1)));
 						entityToSpawn.setPickupDelay(10);
 						worldIn.spawnEntity(entityToSpawn);
 					}
@@ -681,7 +685,7 @@ public class BlockBacterialCrust extends ElementsLepidodendronMod.ModElement {
 				)
 					{
 						worldIn.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
+						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockBacterialCrust.block, (int) (1)));
 						entityToSpawn.setPickupDelay(10);
 						worldIn.spawnEntity(entityToSpawn);
 					}
@@ -695,14 +699,14 @@ public class BlockBacterialCrust extends ElementsLepidodendronMod.ModElement {
 				)
 					{
 						worldIn.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
+						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockBacterialCrust.block, (int) (1)));
 						entityToSpawn.setPickupDelay(10);
 						worldIn.spawnEntity(entityToSpawn);
 					}
 				}
 
 			//So if the block is still here, can it spread?
-			if ((worldIn.getBlockState(pos).getBlock() == this) & (Math.random() > 0.8)) {
+			if ((worldIn.getBlockState(pos).getBlock() == BlockBacterialCrust.block) & (Math.random() > 0.8 || forced)) {
 				if ((Boolean) state.getValue(SPREADABLE)) {
 					//System.err.println("Ticked a spreadable block");
 					int spreadradius = (int) LepidodendronConfigPlants.radiusBacterialCrust;
@@ -738,377 +742,377 @@ public class BlockBacterialCrust extends ElementsLepidodendronMod.ModElement {
 										case 0 : //North
 											//Is there air here and is this face flat?
 											if ((worldIn.isAirBlock(pos1.north())) 
-												&& canPlaceBlockOnSide (worldIn, pos1.north(), EnumFacing.NORTH) ){
+												&& BlockBacterialCrust.block.canPlaceBlockOnSide (worldIn, pos1.north(), EnumFacing.NORTH) ){
 												//Is there moss suitably placed to spread here?
-												if (worldIn.getBlockState(pos1.up().north()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.up().north()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.up().north()), worldIn, pos1.up().north()).getValue(SOUTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.up().north()), worldIn, pos1.up().north()).getValue(FACING) == EnumFacing.NORTH))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.up().north()), worldIn, pos1.up().north()).getValue(SOUTH) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.up().north()), worldIn, pos1.up().north()).getValue(FACING) == EnumFacing.NORTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.down().north()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.down().north()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.down().north()), worldIn, pos1.down().north()).getValue(SOUTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.down().north()), worldIn, pos1.down().north()).getValue(FACING) == EnumFacing.NORTH))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.down().north()), worldIn, pos1.down().north()).getValue(SOUTH) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.down().north()), worldIn, pos1.down().north()).getValue(FACING) == EnumFacing.NORTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.east().north()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.east().north()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.east().north()), worldIn, pos1.east().north()).getValue(SOUTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.east().north()), worldIn, pos1.east().north()).getValue(FACING) == EnumFacing.NORTH))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.east().north()), worldIn, pos1.east().north()).getValue(SOUTH) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.east().north()), worldIn, pos1.east().north()).getValue(FACING) == EnumFacing.NORTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.west().north()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.west().north()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.west().north()), worldIn, pos1.west().north()).getValue(SOUTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.west().north()), worldIn, pos1.west().north()).getValue(FACING) == EnumFacing.NORTH))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.west().north()), worldIn, pos1.west().north()).getValue(SOUTH) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.west().north()), worldIn, pos1.west().north()).getValue(FACING) == EnumFacing.NORTH))
 													{
 														gen = true;
 													}
 												}
 												
 											
-												if (worldIn.getBlockState(pos1.up()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.up()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(DOWN) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(FACING) == EnumFacing.UP))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(DOWN) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(FACING) == EnumFacing.UP))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.down()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.down()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(UP) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(FACING) == EnumFacing.DOWN))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(UP) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(FACING) == EnumFacing.DOWN))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.east()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.east()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(WEST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(FACING) == EnumFacing.EAST))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(WEST) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(FACING) == EnumFacing.EAST))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.west()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.west()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(EAST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(FACING) == EnumFacing.WEST))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(EAST) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(FACING) == EnumFacing.WEST))
 													{
 														gen = true;
 													}
 												}
 												if (gen) {
 													//Place the moss:
-													worldIn.setBlockState(pos1.north(), this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
+													worldIn.setBlockState(pos1.north(), BlockBacterialCrust.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
 												}
 											}
 
 										case 1 : //South
 										//Is there air here and is this face flat?
 											if ((worldIn.isAirBlock(pos1.south())) 
-												&& canPlaceBlockOnSide (worldIn, pos1.south(), EnumFacing.SOUTH) ){
+												&& BlockBacterialCrust.block.canPlaceBlockOnSide (worldIn, pos1.south(), EnumFacing.SOUTH) ){
 												//Is there moss suitably placed to spread here?
-												if (worldIn.getBlockState(pos1.up().south()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.up().south()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.up().south()), worldIn, pos1.up().south()).getValue(NORTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.up().south()), worldIn, pos1.up().south()).getValue(FACING) == EnumFacing.SOUTH))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.up().south()), worldIn, pos1.up().south()).getValue(NORTH) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.up().south()), worldIn, pos1.up().south()).getValue(FACING) == EnumFacing.SOUTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.down().south()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.down().south()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.down().south()), worldIn, pos1.down().south()).getValue(NORTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.down().south()), worldIn, pos1.down().south()).getValue(FACING) == EnumFacing.SOUTH))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.down().south()), worldIn, pos1.down().south()).getValue(NORTH) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.down().south()), worldIn, pos1.down().south()).getValue(FACING) == EnumFacing.SOUTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.east().south()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.east().south()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.east().south()), worldIn, pos1.east().south()).getValue(NORTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.east().south()), worldIn, pos1.east().south()).getValue(FACING) == EnumFacing.SOUTH))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.east().south()), worldIn, pos1.east().south()).getValue(NORTH) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.east().south()), worldIn, pos1.east().south()).getValue(FACING) == EnumFacing.SOUTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.west().south()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.west().south()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.west().south()), worldIn, pos1.west().south()).getValue(NORTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.west().south()), worldIn, pos1.west().south()).getValue(FACING) == EnumFacing.SOUTH))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.west().south()), worldIn, pos1.west().south()).getValue(NORTH) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.west().south()), worldIn, pos1.west().south()).getValue(FACING) == EnumFacing.SOUTH))
 													{
 														gen = true;
 													}
 												}
 												
 											
-												if (worldIn.getBlockState(pos1.up()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.up()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(DOWN) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(FACING) == EnumFacing.UP))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(DOWN) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(FACING) == EnumFacing.UP))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.down()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.down()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(UP) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(FACING) == EnumFacing.DOWN))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(UP) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(FACING) == EnumFacing.DOWN))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.east()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.east()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(WEST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(FACING) == EnumFacing.EAST))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(WEST) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(FACING) == EnumFacing.EAST))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.west()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.west()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(EAST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(FACING) == EnumFacing.WEST))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(EAST) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(FACING) == EnumFacing.WEST))
 													{
 														gen = true;
 													}
 												}
 												if (gen) {
 													//Place the moss:
-													worldIn.setBlockState(pos1.south(), this.blockState.getBaseState().withProperty(FACING, EnumFacing.SOUTH).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
+													worldIn.setBlockState(pos1.south(), BlockBacterialCrust.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
 												}
 											}
 
 										case 2 : //East
 											if ((worldIn.isAirBlock(pos1.east())) 
-												&& canPlaceBlockOnSide (worldIn, pos1.east(), EnumFacing.EAST) ){
+												&& BlockBacterialCrust.block.canPlaceBlockOnSide (worldIn, pos1.east(), EnumFacing.EAST) ){
 												//Is there moss suitably placed to spread here?
-												if (worldIn.getBlockState(pos1.up().east()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.up().east()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.up().east()), worldIn, pos1.up().east()).getValue(WEST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.up().east()), worldIn, pos1.up().east()).getValue(FACING) == EnumFacing.EAST))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.up().east()), worldIn, pos1.up().east()).getValue(WEST) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.up().east()), worldIn, pos1.up().east()).getValue(FACING) == EnumFacing.EAST))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.down().east()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.down().east()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.down().east()), worldIn, pos1.down().east()).getValue(WEST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.down().east()), worldIn, pos1.down().east()).getValue(FACING) == EnumFacing.EAST))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.down().east()), worldIn, pos1.down().east()).getValue(WEST) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.down().east()), worldIn, pos1.down().east()).getValue(FACING) == EnumFacing.EAST))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.north().east()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.north().east()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.north().east()), worldIn, pos1.north().east()).getValue(WEST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.north().east()), worldIn, pos1.north().east()).getValue(FACING) == EnumFacing.EAST))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.north().east()), worldIn, pos1.north().east()).getValue(WEST) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.north().east()), worldIn, pos1.north().east()).getValue(FACING) == EnumFacing.EAST))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.south().east()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.south().east()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.south().east()), worldIn, pos1.south().east()).getValue(WEST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.south().east()), worldIn, pos1.south().east()).getValue(FACING) == EnumFacing.EAST))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.south().east()), worldIn, pos1.south().east()).getValue(WEST) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.south().east()), worldIn, pos1.south().east()).getValue(FACING) == EnumFacing.EAST))
 													{
 														gen = true;
 													}
 												}
 												
 											
-												if (worldIn.getBlockState(pos1.up()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.up()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(DOWN) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(FACING) == EnumFacing.UP))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(DOWN) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(FACING) == EnumFacing.UP))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.down()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.down()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(UP) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(FACING) == EnumFacing.DOWN))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(UP) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(FACING) == EnumFacing.DOWN))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.north()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.north()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(SOUTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(FACING) == EnumFacing.NORTH))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(SOUTH) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(FACING) == EnumFacing.NORTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.south()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.south()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(NORTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(FACING) == EnumFacing.SOUTH))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(NORTH) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(FACING) == EnumFacing.SOUTH))
 													{
 														gen = true;
 													}
 												}
 												if (gen) {
 													//Place the moss:
-													worldIn.setBlockState(pos1.east(), this.blockState.getBaseState().withProperty(FACING, EnumFacing.EAST).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
+													worldIn.setBlockState(pos1.east(), BlockBacterialCrust.block.getDefaultState().withProperty(FACING, EnumFacing.EAST).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
 												}
 											}
 
 										case 3 : //West
 											if ((worldIn.isAirBlock(pos1.west())) 
-												&& canPlaceBlockOnSide (worldIn, pos1.west(), EnumFacing.WEST) ){
+												&& BlockBacterialCrust.block.canPlaceBlockOnSide (worldIn, pos1.west(), EnumFacing.WEST) ){
 												//Is there moss suitably placed to spread here?
-												if (worldIn.getBlockState(pos1.up().west()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.up().west()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.up().west()), worldIn, pos1.up().west()).getValue(EAST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.up().west()), worldIn, pos1.up().west()).getValue(FACING) == EnumFacing.WEST))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.up().west()), worldIn, pos1.up().west()).getValue(EAST) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.up().west()), worldIn, pos1.up().west()).getValue(FACING) == EnumFacing.WEST))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.down().west()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.down().west()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.down().west()), worldIn, pos1.down().west()).getValue(EAST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.down().west()), worldIn, pos1.down().west()).getValue(FACING) == EnumFacing.WEST))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.down().west()), worldIn, pos1.down().west()).getValue(EAST) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.down().west()), worldIn, pos1.down().west()).getValue(FACING) == EnumFacing.WEST))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.north().west()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.north().west()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.north().west()), worldIn, pos1.north().west()).getValue(EAST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.north().west()), worldIn, pos1.north().west()).getValue(FACING) == EnumFacing.WEST))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.north().west()), worldIn, pos1.north().west()).getValue(EAST) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.north().west()), worldIn, pos1.north().west()).getValue(FACING) == EnumFacing.WEST))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.south().west()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.south().west()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.south().west()), worldIn, pos1.south().west()).getValue(EAST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.south().west()), worldIn, pos1.south().west()).getValue(FACING) == EnumFacing.WEST))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.south().west()), worldIn, pos1.south().west()).getValue(EAST) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.south().west()), worldIn, pos1.south().west()).getValue(FACING) == EnumFacing.WEST))
 													{
 														gen = true;
 													}
 												}
 												
 											
-												if (worldIn.getBlockState(pos1.up()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.up()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(DOWN) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(FACING) == EnumFacing.UP))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(DOWN) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(FACING) == EnumFacing.UP))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.down()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.down()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(UP) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(FACING) == EnumFacing.DOWN))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(UP) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(FACING) == EnumFacing.DOWN))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.north()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.north()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(SOUTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(FACING) == EnumFacing.NORTH))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(SOUTH) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(FACING) == EnumFacing.NORTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.south()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.south()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(NORTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(FACING) == EnumFacing.SOUTH))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(NORTH) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(FACING) == EnumFacing.SOUTH))
 													{
 														gen = true;
 													}
 												}
 												if (gen) {
 													//Place the moss:
-													worldIn.setBlockState(pos1.west(), this.blockState.getBaseState().withProperty(FACING, EnumFacing.WEST).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
+													worldIn.setBlockState(pos1.west(), BlockBacterialCrust.block.getDefaultState().withProperty(FACING, EnumFacing.WEST).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
 												}
 											}
 
 										case 4 : //Up
 											//Is there air here and is this face flat?
 											if ((worldIn.isAirBlock(pos1.up())) 
-												&& (canPlaceBlockOnSide (worldIn, pos1.up(), EnumFacing.UP))
+												&& (BlockBacterialCrust.block.canPlaceBlockOnSide (worldIn, pos1.up(), EnumFacing.UP))
 												) {
 												//Is there moss suitably placed to spread here?
-												if (worldIn.getBlockState(pos1.north().up()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.north().up()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.north().up()), worldIn, pos1.north().up()).getValue(DOWN) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.north().up()), worldIn, pos1.north().up()).getValue(FACING) == EnumFacing.UP))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.north().up()), worldIn, pos1.north().up()).getValue(DOWN) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.north().up()), worldIn, pos1.north().up()).getValue(FACING) == EnumFacing.UP))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.south().up()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.south().up()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.south().up()), worldIn, pos1.south().up()).getValue(DOWN) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.south().up()), worldIn, pos1.south().up()).getValue(FACING) == EnumFacing.UP))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.south().up()), worldIn, pos1.south().up()).getValue(DOWN) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.south().up()), worldIn, pos1.south().up()).getValue(FACING) == EnumFacing.UP))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.east().up()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.east().up()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.east().up()), worldIn, pos1.east().up()).getValue(DOWN) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.east().up()), worldIn, pos1.east().up()).getValue(FACING) == EnumFacing.UP))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.east().up()), worldIn, pos1.east().up()).getValue(DOWN) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.east().up()), worldIn, pos1.east().up()).getValue(FACING) == EnumFacing.UP))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.west().up()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.west().up()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.west().up()), worldIn, pos1.west().up()).getValue(DOWN) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.west().up()), worldIn, pos1.west().up()).getValue(FACING) == EnumFacing.UP))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.west().up()), worldIn, pos1.west().up()).getValue(DOWN) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.west().up()), worldIn, pos1.west().up()).getValue(FACING) == EnumFacing.UP))
 													{
 														gen = true;
 													}
 												}
 												
 
-												if (worldIn.getBlockState(pos1.north()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.north()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(SOUTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(FACING) == EnumFacing.NORTH))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(SOUTH) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(FACING) == EnumFacing.NORTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.south()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.south()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(NORTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(FACING) == EnumFacing.SOUTH))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(NORTH) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(FACING) == EnumFacing.SOUTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.east()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.east()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(WEST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(FACING) == EnumFacing.EAST))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(WEST) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(FACING) == EnumFacing.EAST))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.west()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.west()).getBlock() == BlockBacterialCrust.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(EAST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(FACING) == EnumFacing.WEST))
+													if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(EAST) == true)
+													|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(FACING) == EnumFacing.WEST))
 													{
 														gen = true;
 													}
@@ -1117,84 +1121,84 @@ public class BlockBacterialCrust extends ElementsLepidodendronMod.ModElement {
 												
 												if (gen) {
 													//Place the moss:
-													worldIn.setBlockState(pos1.up(), this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
+													worldIn.setBlockState(pos1.up(), BlockBacterialCrust.block.getDefaultState().withProperty(FACING, EnumFacing.UP).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
 												}
 											}
 
 										case 5 : //Down
 										//Is there air here and is this face flat?
 										if ((worldIn.isAirBlock(pos1.down())) 
-											&& canPlaceBlockOnSide (worldIn, pos1.down(), EnumFacing.DOWN) ){
+											&& BlockBacterialCrust.block.canPlaceBlockOnSide (worldIn, pos1.down(), EnumFacing.DOWN) ){
 											//Is there moss suitably placed to spread here?
-											if (worldIn.getBlockState(pos1.north().down()).getBlock() == this)
+											if (worldIn.getBlockState(pos1.north().down()).getBlock() == BlockBacterialCrust.block)
 											{
-												if ((getActualState(worldIn.getBlockState(pos1.north().down()), worldIn, pos1.north().down()).getValue(UP) == true)
-												|| (getActualState(worldIn.getBlockState(pos1.north().down()), worldIn, pos1.north().down()).getValue(FACING) == EnumFacing.DOWN))
+												if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.north().down()), worldIn, pos1.north().down()).getValue(UP) == true)
+												|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.north().down()), worldIn, pos1.north().down()).getValue(FACING) == EnumFacing.DOWN))
 												{
 													gen = true;
 												}
 											}
-											if (worldIn.getBlockState(pos1.south().down()).getBlock() == this)
+											if (worldIn.getBlockState(pos1.south().down()).getBlock() == BlockBacterialCrust.block)
 											{
-												if ((getActualState(worldIn.getBlockState(pos1.south().down()), worldIn, pos1.south().down()).getValue(UP) == true)
-												|| (getActualState(worldIn.getBlockState(pos1.south().down()), worldIn, pos1.south().down()).getValue(FACING) == EnumFacing.DOWN))
+												if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.south().down()), worldIn, pos1.south().down()).getValue(UP) == true)
+												|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.south().down()), worldIn, pos1.south().down()).getValue(FACING) == EnumFacing.DOWN))
 												{
 													gen = true;
 												}
 											}
-											if (worldIn.getBlockState(pos1.east().down()).getBlock() == this)
+											if (worldIn.getBlockState(pos1.east().down()).getBlock() == BlockBacterialCrust.block)
 											{
-												if ((getActualState(worldIn.getBlockState(pos1.east().down()), worldIn, pos1.east().down()).getValue(UP) == true)
-												|| (getActualState(worldIn.getBlockState(pos1.east().down()), worldIn, pos1.east().down()).getValue(FACING) == EnumFacing.DOWN))
+												if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.east().down()), worldIn, pos1.east().down()).getValue(UP) == true)
+												|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.east().down()), worldIn, pos1.east().down()).getValue(FACING) == EnumFacing.DOWN))
 												{
 													gen = true;
 												}
 											}
-											if (worldIn.getBlockState(pos1.west().down()).getBlock() == this)
+											if (worldIn.getBlockState(pos1.west().down()).getBlock() == BlockBacterialCrust.block)
 											{
-												if ((getActualState(worldIn.getBlockState(pos1.west().down()), worldIn, pos1.west().down()).getValue(UP) == true)
-												|| (getActualState(worldIn.getBlockState(pos1.west().down()), worldIn, pos1.west().down()).getValue(FACING) == EnumFacing.DOWN))
+												if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.west().down()), worldIn, pos1.west().down()).getValue(UP) == true)
+												|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.west().down()), worldIn, pos1.west().down()).getValue(FACING) == EnumFacing.DOWN))
 												{
 													gen = true;
 												}
 											}
 											
 										
-											if (worldIn.getBlockState(pos1.north()).getBlock() == this)
+											if (worldIn.getBlockState(pos1.north()).getBlock() == BlockBacterialCrust.block)
 											{
-												if ((getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(SOUTH) == true)
-												|| (getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(FACING) == EnumFacing.NORTH))
+												if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(SOUTH) == true)
+												|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(FACING) == EnumFacing.NORTH))
 												{
 													gen = true;
 												}
 											}
-											if (worldIn.getBlockState(pos1.south()).getBlock() == this)
+											if (worldIn.getBlockState(pos1.south()).getBlock() == BlockBacterialCrust.block)
 											{
-												if ((getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(NORTH) == true)
-												|| (getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(FACING) == EnumFacing.SOUTH))
+												if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(NORTH) == true)
+												|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(FACING) == EnumFacing.SOUTH))
 												{
 													gen = true;
 												}
 											}
-											if (worldIn.getBlockState(pos1.east()).getBlock() == this)
+											if (worldIn.getBlockState(pos1.east()).getBlock() == BlockBacterialCrust.block)
 											{
-												if ((getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(WEST) == true)
-												|| (getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(FACING) == EnumFacing.EAST))
+												if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(WEST) == true)
+												|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(FACING) == EnumFacing.EAST))
 												{
 													gen = true;
 												}
 											}
-											if (worldIn.getBlockState(pos1.west()).getBlock() == this)
+											if (worldIn.getBlockState(pos1.west()).getBlock() == BlockBacterialCrust.block)
 											{
-												if ((getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(EAST) == true)
-												|| (getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(FACING) == EnumFacing.WEST))
+												if ((BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(EAST) == true)
+												|| (BlockBacterialCrust.block.getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(FACING) == EnumFacing.WEST))
 												{
 													gen = true;
 												}
 											}
 												if (gen) {
 													//Place the moss:
-													worldIn.setBlockState(pos1.down(), this.blockState.getBaseState().withProperty(FACING, EnumFacing.DOWN).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
+													worldIn.setBlockState(pos1.down(), BlockBacterialCrust.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
 												}
 											}
 										
