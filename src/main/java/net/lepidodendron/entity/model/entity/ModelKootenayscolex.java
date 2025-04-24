@@ -2107,6 +2107,35 @@ public class ModelKootenayscolex extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body1.offsetY = -3.2F;
+        this.body1.offsetX = 3.8F;
+        this.body1.offsetZ = 2.0F;
+        this.body1.rotateAngleY = (float)Math.toRadians(120);
+        this.body1.rotateAngleX = (float)Math.toRadians(1);
+        this.body1.rotateAngleZ = (float)Math.toRadians(0);
+        this.body1.scaleChildren = true;
+        float scaler = 5.4F;
+        this.body1.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body1, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body8, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body9, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body10, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body11, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body12, 0.0F, 0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.body1.render(f);
+        //Reset rotations, positions and sizing:
+        this.body1.setScale(1.0F, 1.0F, 1.0F);
+        this.body1.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

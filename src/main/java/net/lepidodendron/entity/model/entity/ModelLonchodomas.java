@@ -158,6 +158,24 @@ public class ModelLonchodomas extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.LonchodomasMain.offsetY = -0.3F;
+        this.LonchodomasMain.offsetX = 0.1F;
+        this.LonchodomasMain.offsetZ = 2.0F;
+        this.LonchodomasMain.rotateAngleY = (float)Math.toRadians(120);
+        this.LonchodomasMain.rotateAngleX = (float)Math.toRadians(1);
+        this.LonchodomasMain.rotateAngleZ = (float)Math.toRadians(0);
+        this.LonchodomasMain.scaleChildren = true;
+        float scaler = 0.8F;
+        this.LonchodomasMain.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(LonchodomasMain, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.LonchodomasMain.render(f);
+        //Reset rotations, positions and sizing:
+        this.LonchodomasMain.setScale(1.0F, 1.0F, 1.0F);
+        this.LonchodomasMain.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_diania",
 			"title": "Diania",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ecdysozoa$(br)>Panarthropoda$(br)>Xenusia"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ecdysozoa$(br)>Panarthropoda$(br)>Lobopodia$(br)>Xenusia"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/diania.png"],
-			"title": "D. cactiformis",
-			"text": ""
+			"type": "entity",
+			"name": "D. cactiformis",
+			"entity": "lepidodendron:prehistoric_flora_diania",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_diania",

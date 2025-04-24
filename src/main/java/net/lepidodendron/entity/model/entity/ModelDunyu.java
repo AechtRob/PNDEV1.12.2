@@ -174,6 +174,39 @@ public class ModelDunyu extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = -1.0F;
+        this.main.offsetX = -0.4F;
+        this.main.offsetZ = 2.0F;
+        this.main.rotateAngleY = (float)Math.toRadians(120);
+        this.main.rotateAngleX = (float)Math.toRadians(1);
+        this.main.rotateAngleZ = (float)Math.toRadians(0);
+        this.main.scaleChildren = true;
+        float scaler = 3.2F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(cube_r1, 0.0F, -1.0036F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, 1.0036F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, -1.6232F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, 1.6232F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, -1.3526F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0F, 1.3526F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.0F, 0.781F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0F, -0.781F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.1242F, -0.0414F, 0.3203F);
+        this.setRotateAngle(cube_r10, 0.1242F, 0.0414F, -0.3203F);
+        this.setRotateAngle(cube_r11, 0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.2628F, 0.0843F, 0.0226F);
+        this.setRotateAngle(tail3, 0.088F, -0.1304F, -0.0115F);
+        this.setRotateAngle(tail4, 0.0859F, -0.1964F, -0.0129F);
+        this.setRotateAngle(tail5, 0.132F, 0.1298F, 0.0172F);
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

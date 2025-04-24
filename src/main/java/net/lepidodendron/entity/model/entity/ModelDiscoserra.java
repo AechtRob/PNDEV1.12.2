@@ -246,7 +246,7 @@ public class ModelDiscoserra extends ModelBasePalaeopedia {
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 3F;
+        float scaler = 4.4F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

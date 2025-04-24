@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Acanthodii$(br)>Ischnacanthiformes$(br)>Acritolepidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/nerepisacanthus.png"],
-			"title": "N. denisoni",
-			"text": ""
+			"type": "entity",
+			"name": "N. denisoni",
+			"entity": "lepidodendron:prehistoric_flora_nerepisacanthus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_nerepisacanthus",

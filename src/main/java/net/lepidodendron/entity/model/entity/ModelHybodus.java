@@ -461,21 +461,33 @@ public class ModelHybodus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -2.0F;
-        this.body.offsetX = -1.338F;
-        this.body.rotateAngleY = (float)Math.toRadians(200);
-        this.body.rotateAngleX = (float)Math.toRadians(8);
-        this.body.rotateAngleZ = (float)Math.toRadians(-8);
-        this.body.scaleChildren = true;
-        float scaler = 1.63F;
-        this.body.setScale(scaler, scaler, scaler);
+        this.Hybodus.offsetY = -0.2F;
+        this.Hybodus.offsetX = 0.3F;
+        this.Hybodus.offsetZ = 2.0F;
+        this.Hybodus.rotateAngleY = (float)Math.toRadians(120);
+        this.Hybodus.rotateAngleX = (float)Math.toRadians(1);
+        this.Hybodus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Hybodus.scaleChildren = true;
+        float scaler = 0.5F;
+        this.Hybodus.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Hybodus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(head, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftFrontFin, 0.2F, 0.0F, -0.8F);
+        this.setRotateAngle(rightFrontFin, 0.2F, 0.0F, 0.8F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftBackFin, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBackFin, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.1F, 0.0F);
         //End of pose, now render the model:
-        this.body.render(f);
+        this.Hybodus.render(f);
         //Reset rotations, positions and sizing:
-        this.body.setScale(1.0F, 1.0F, 1.0F);
-        this.body.scaleChildren = false;
+        this.Hybodus.setScale(1.0F, 1.0F, 1.0F);
+        this.Hybodus.scaleChildren = false;
         resetToDefaultPose();
 
     }

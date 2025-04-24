@@ -191,6 +191,44 @@ public class ModelEretmorhipis extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Eretmorhipis.offsetY = -0.1F;
+        this.Eretmorhipis.offsetX = 0.375F;
+        this.Eretmorhipis.offsetZ = 2.0F;
+        this.Eretmorhipis.rotateAngleY = (float)Math.toRadians(120);
+        this.Eretmorhipis.rotateAngleX = (float)Math.toRadians(1);
+        this.Eretmorhipis.rotateAngleZ = (float)Math.toRadians(0);
+        this.Eretmorhipis.scaleChildren = true;
+        float scaler = 0.45F;
+        this.Eretmorhipis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Eretmorhipis, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(LArm, 0.1195F, -0.1796F, 0.0727F);
+        this.setRotateAngle(LArm2, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(RArm, 0.1071F, 0.2454F, -0.1313F);
+        this.setRotateAngle(RArm2, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(Neck, 0.0457F, -0.3051F, -0.0138F);
+        this.setRotateAngle(cube_r1, -0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, -0.0175F, 0.0873F, -0.0015F);
+        this.setRotateAngle(Body2, -0.0177F, 0.1745F, -0.0031F);
+        this.setRotateAngle(LLeg, -0.1353F, -0.4091F, 0.1079F);
+        this.setRotateAngle(LLeg2, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(RLeg, -0.0262F, 0.3172F, -0.028F);
+        this.setRotateAngle(RLeg2, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(Tail, 0.0183F, 0.3054F, 0.0055F);
+        this.setRotateAngle(Tail2, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, -0.5672F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, -0.6545F, 0.0F);
+        //End of pose, now render the model:
+        this.Eretmorhipis.render(f);
+        //Reset rotations, positions and sizing:
+        this.Eretmorhipis.setScale(1.0F, 1.0F, 1.0F);
+        this.Eretmorhipis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

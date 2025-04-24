@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_geosaurus",
 			"title": "Geosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Thalattosuchia$(br)>Metriorhynchidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Thalattosuchia$(br)>Metriorhynchidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/geosaurus.png"],
-			"title": "G. giganteus",
-			"text": ""
+			"type": "entity",
+			"name": "G. giganteus",
+			"entity": "lepidodendron:prehistoric_flora_geosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_geosaurus",
 			"type": "text",
-			"text": "Geosaurus is a Late Jurassic to Early Cretaceous Metriorhynchid. The genus name Geosaurus was coined in 1824 and being such an old genus, Geosaurus has experienced radical taxonomic changes. Geosaurus currently consists of three valid species, being G. giganteus the type species, G. grandis, and G. lapparenti."
+			"text": "Geosaurus is a Upper Jurassic to Early Cretaceous metriorhynchid. The genus name Geosaurus was coined in 1824 and being such an old genus, Geosaurus has experienced radical taxonomic changes. Geosaurus currently consists of three valid species, being G. giganteus the type species, G. grandis, and G. lapparenti."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_geosaurus",

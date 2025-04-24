@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Artiopoda$(br)>Vicissicaudata"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/kodymirus.png"],
-			"title": "K. vagans",
-			"text": ""
+			"type": "entity",
+			"name": "K. vagans",
+			"entity": "lepidodendron:prehistoric_flora_kodymirus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_kodymirus",
 			"type": "text",
-			"text": "Kodymirus is an early artiopod which bears resemblence to eurypterids and it tended to live in brackish waters."
+			"text": "Kodymirus is an early artiopod which bears resemblance to eurypterids, with fossils found in the Paseky Shale, Czech Republic. It could grow up to 8 cm in length, and tended to live in brackish waters, possibly making it the earliest known arthropod predator to live within a intertidal zone."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -392,8 +392,8 @@ public class ModelInostrancevia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = -0.3F;
-        this.hips.offsetX = -0.35F;
+        this.hips.offsetY = -0.5F;
+        this.hips.offsetX = -0.5F;
         this.hips.rotateAngleY = (float)Math.toRadians(100);
         this.hips.rotateAngleX = (float)Math.toRadians(-1.5);
         this.hips.rotateAngleZ = (float)Math.toRadians(-1.5);

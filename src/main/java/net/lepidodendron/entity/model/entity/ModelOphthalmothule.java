@@ -321,6 +321,41 @@ public class ModelOphthalmothule extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hips.offsetY = -1.2F;
+        this.Hips.offsetX = -0.75F;
+        this.Hips.offsetZ = 2.0F;
+        this.Hips.rotateAngleY = (float)Math.toRadians(120);
+        this.Hips.rotateAngleX = (float)Math.toRadians(1);
+        this.Hips.rotateAngleZ = (float)Math.toRadians(0);
+        this.Hips.scaleChildren = true;
+        float scaler = 0.65F;
+        this.Hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Hips, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Bodymiddle, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodyfront, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Neck2, 0.0F, 0.12F, 0.0F);
+        this.setRotateAngle(Neck3, 0.0F, 0.14F, 0.0F);
+        this.setRotateAngle(Neck4, 0.0F, 0.16F, 0.0F);
+        this.setRotateAngle(Neck5, 0.0F, 0.18F, 0.0F);
+        this.setRotateAngle(Neck6, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.22F, 0.0F);
+        this.setRotateAngle(Leftfrontflipper1, 0.0F, 0.0F, 0.25F);
+        this.setRotateAngle(Rightfrontflipper1, 0.0F, 0.0F, -0.25F);
+        this.setRotateAngle(Tail1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, -0.11F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, -0.12F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Lefthindflipper1, 0.0F, 0.0F, -0.25F);
+        this.setRotateAngle(Righthindflipper1, 0.0F, 0.0F, 0.25F);
+        //End of pose, now render the model:
+        this.Hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hips.setScale(1.0F, 1.0F, 1.0F);
+        this.Hips.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

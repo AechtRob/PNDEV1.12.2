@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Xenacanthida$(br)>Diplodoselachidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/lebachacanthus.png"],
-			"title": "L. senckenbergianus",
-			"text": ""
+			"type": "entity",
+			"name": "L. senckenbergianus",
+			"entity": "lepidodendron:prehistoric_flora_lebachacanthus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lebachacanthus",

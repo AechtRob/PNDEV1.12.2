@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_gargoyleosaurus",
 			"type": "text",
-			"text": "Gargoyleosaurus is an early ankylosaur from the Jurassic of the Morrison Formation. This animal was one of the earliest known Ankylosaurs with reasonably complete fossil remains. It grew to roughly 3.5 meters long and stood at less than a meter tall. As a Nodosaurid, it lacked a bony clubbed tail, but had longer spike plates on the sides of its body. It is characterized by the presence of seven conical teeth in its premaxilla, or the tip of its upper jaw."
+			"text": "Gargoyleosaurus is an early ankylosaur from the Jurassic of the Morrison Formation. This animal was one of the earliest known ankylosaurs with reasonably complete fossil remains. It grew to roughly 3.5 meters long and stood at less than a meter tall. As a nodosaurid, it lacked a bony clubbed tail, but had longer spike plates on the sides of its body. It is characterized by the presence of seven conical teeth in its premaxilla, or the tip of its upper jaw."
 		},
 		{
 			"type": "lepidodendron:diet",

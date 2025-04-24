@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_gorgonops",
 			"title": "Gorgonops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/gorgonops.png"],
-			"title": "G. torvus",
-			"text": ""
+			"type": "entity",
+			"name": "G. torvus",
+			"entity": "lepidodendron:prehistoric_flora_gorgonops",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gorgonops",

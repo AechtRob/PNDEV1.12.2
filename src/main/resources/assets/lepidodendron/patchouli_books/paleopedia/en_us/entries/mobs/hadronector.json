@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Actinistia$(br)>Hadronectoridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/hadronector.png"],
-			"title": "H. donbairdi",
-			"text": ""
+			"type": "entity",
+			"name": "H. donbairdi",
+			"entity": "lepidodendron:prehistoric_flora_hadronector",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hadronector",
 			"type": "text",
-			"text": "Hadronector is a Carboniferous Coelacanth from the Bear Gulch Limestone of Montana. It had a very pudgy body shape in contrast to its more slender and longer coelacanth relatives. Its family included a host of weirdly shaped coelacanths, including Allenypterus, all with a pudgy body and smaller fins."
+			"text": "Hadronector is a Carboniferous coelacanth from the Bear Gulch Limestone of Montana. It had a very pudgy body shape in contrast to its more slender and longer coelacanth relatives. Its family included a host of weirdly shaped coelacanths, including Allenypterus, all with a pudgy body and smaller fins."
 		},
 		{
 			"type": "lepidodendron:diet",

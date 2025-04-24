@@ -306,6 +306,30 @@ public class ModelKaykay extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Kaykay.offsetY = 0.1F;
+        this.Kaykay.offsetX = 0.9F;
+        this.Kaykay.offsetZ = 2.0F;
+        this.Kaykay.rotateAngleY = (float)Math.toRadians(120);
+        this.Kaykay.rotateAngleX = (float)Math.toRadians(1);
+        this.Kaykay.rotateAngleZ = (float)Math.toRadians(0);
+        this.Kaykay.scaleChildren = true;
+        float scaler = 0.8F;
+        this.Kaykay.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Kaykay, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Jaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.09F, 0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.05F, 0.13F, 0.0F);
+        this.setRotateAngle(Body3, 0.05F, -0.15F, 0.0F);
+        this.setRotateAngle(Body4, 0.08F, -0.1F, -0.1F);
+        this.setRotateAngle(body5, 0.0F, -0.15F, -0.15F);
+        //End of pose, now render the model:
+        this.Kaykay.render(f);
+        //Reset rotations, positions and sizing:
+        this.Kaykay.setScale(1.0F, 1.0F, 1.0F);
+        this.Kaykay.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

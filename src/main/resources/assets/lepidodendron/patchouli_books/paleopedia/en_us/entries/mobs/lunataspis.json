@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Xiphosura$(br)>Xiphosurida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/lunataspis.png"],
-			"title": "L. aurora",
-			"text": ""
+			"type": "entity",
+			"name": "L. aurora",
+			"entity": "lepidodendron:prehistoric_flora_lunataspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lunataspis",
 			"type": "text",
-			"text": "Lunataspis is the oldest known xiphosuran and it bore resemblence to horseshoe crabs, suggesting they may have lived in a way similar to modern horseshoe crabs. "
+			"text": "Lunataspis is the oldest known xiphosuran and it bore resemblance to horseshoe crabs, suggesting they may have lived in a way similar to modern horseshoe crabs. "
 		},
 		{
 			"type": "lepidodendron:diet",

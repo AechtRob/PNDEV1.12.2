@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Caseodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/fadeniaG.png"],
-			"title": "Fadenia gigas",
-			"text": ""
+			"type": "entity",
+			"name": "F. gigas",
+			"entity": "lepidodendron:prehistoric_flora_fadenia_carboniferous",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_fadenia_carboniferous",

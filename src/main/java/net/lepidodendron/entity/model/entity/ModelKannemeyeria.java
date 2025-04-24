@@ -386,12 +386,12 @@ public class ModelKannemeyeria extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hip.offsetY = 1.60F;
-        this.hip.offsetX = 0.7F;
+        this.hip.offsetX = 0.65F;
         this.hip.rotateAngleY = (float)Math.toRadians(130);
         this.hip.rotateAngleX = (float)Math.toRadians(2);
         this.hip.rotateAngleZ = (float)Math.toRadians(0);
         this.hip.scaleChildren = true;
-        float scaler = 0.75F;
+        float scaler = 0.7F;
         this.hip.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);

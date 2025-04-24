@@ -12,25 +12,21 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Halecomorphi"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/luoxiongichthys.png"],
-			"title": "L. hyperdorsalis",
-			"text": ""
+			"type": "entity",
+			"name": "L. hyperdorsalis",
+			"entity": "lepidodendron:prehistoric_flora_luoxiongichthys",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_luoxiongichthys",
 			"type": "text",
-			"text": "Luoxiongichthys hyperdorsalis is a species of prehistoric Actinopterygian from the Triassic of China.The 15 cm long animal is perhaps most recognisable by the hunched shape of its back right before the dorsal fin, which gave the animal its distinctive triangular shape."
+			"text": "Luoxiongichthys hyperdorsalis is a species of prehistoric actinopterygian from the Triassic of China. This 15 cm long animal is perhaps most recognisable by the hunched shape of its back right before the dorsal fin, which gave the animal its distinctive triangular shape. The body was covered in heavy scales and compressed laterally, making the animal’s hunched back function in a way similar to a fin thanks to its thin structure."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_luoxiongichthys",
 			"type": "text",
-			"text": "The body was covered in heavy scales and compressed laterally, making the animal’s hunched back function in a way similar to a fin thanks to its thin structure.The fish was first described in 2011 based on remains found in the Guanling formation in Yunnan."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_luoxiongichthys",
-			"type": "text",
-			"text": "While the shape of the back wouldn’t have been problematic for the fish during locomotion, it would’ve required the animal constant adjustment while idling in the water to maintain vertical positioning.Luoxiongichthys inhabited Triassic reefs and cliff sides."
+			"text": "The fish was first described in 2011 based on remains found in the Guanling formation in Yunnan. While the shape of the back would not have been problematic for the fish during locomotion, it would’ve required the animal constant adjustment while idling in the water to maintain vertical positioning. Luoxiongichthys inhabited Triassic reefs and cliff sides."
 		},
 		{
 			"type": "lepidodendron:diet",

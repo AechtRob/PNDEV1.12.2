@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_andiva",
 			"title": "Andiva",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Proarticulata"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Proarticulata$(br)>Cephalozoa"
 		},
 		{
 			"type": "entity",
@@ -26,7 +26,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_andiva",
 			"type": "text",
-			"text": "The generic & specific name derives from Andrei Yu. Ivantsov, who is a well known Russian Ediacaran paleontologist, and also aided in collecting the fossil material for the first study of Andiva."
+			"text": "The generic and specific name derives from Andrei Yu. Ivantsov, who is a well known Russian Ediacaran paleontologist, and also aided in collecting the fossil material for the first study of Andiva."
 		},
 		{
 			"type": "lepidodendron:diet",

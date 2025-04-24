@@ -414,16 +414,16 @@ public class ModelHadranax extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.head.offsetY = -0.5F;
-        this.head.offsetX = 0.1F;
+        this.head.offsetY = -1.8F;
+        this.head.offsetX = 0.0F;
         this.head.rotateAngleY = (float)Math.toRadians(200);
         this.head.rotateAngleX = (float)Math.toRadians(8);
         this.head.rotateAngleZ = (float)Math.toRadians(-8);
         this.head.scaleChildren = true;
-        float scaler = 2.7F;
+        float scaler = 2.2F;
         this.head.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(head, -0.4F, 3.5F, 0.0F);
+        this.setRotateAngle(head, 0.2F, 3.8F, -0.0F);
         this.setRotateAngle(body1, 0.3F, 0.2F, 0.0F);
         this.setRotateAngle(body2, 0.1F, 0.2F, 0.0F);
         this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);

@@ -12,25 +12,21 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Megalosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/megalosaurus.png"],
-			"title": "M. bucklandii",
-			"text": ""
+			"type": "entity",
+			"name": "M. bucklandii",
+			"entity": "lepidodendron:prehistoric_flora_megalosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_megalosaurus",
 			"type": "text",
-			"text": "Megalosaurus is a British theropod from the Jurassic. Particularly famous for being among the first dinosaurs to have ever been named, this medium-large Theropod in fact was first named in the late 1820s!"
+			"text": "Megalosaurus is a British theropod from the Jurassic. Particularly famous for being among the first dinosaurs to have ever been named, this medium-large Theropod in fact was first named in the late 1820s! Megalosaurus, as one of the founding fathers of Dinosauria, passed through its fair share of changes during the years, from a giant 20 m long lizard (from which the name \"Great Lizard\" comes from), to a 9 meter long sprawling quadrupedal"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_megalosaurus",
 			"type": "text",
-			"text": "Megalosaurus, as one of the founding fathers of Dinosauria, passed through its fair share of changes during the years, from a giant 20 m long lizard (from which the name \"Great Lizard\" comes from), to a 9 meter long sprawling quadrupedal  beast to what we are used to see today."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_megalosaurus",
-			"type": "text",
-			"text": "To this day no complete specimen has ever been found and even putting together all known bones of it we still wouldn't be able to create a full skeleton of one!  "
+			"text": "beast to what we are used to see today. To this day no complete specimen has ever been found and even putting together all known bones of it we still wouldn't be able to create a full skeleton of one!"
 		},
 		{
 			"type": "lepidodendron:diet",

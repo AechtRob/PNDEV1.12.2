@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/eoraptor.png"],
-			"title": "E. lunensis",
-			"text": ""
+			"type": "entity",
+			"name": "E. lunensis",
+			"entity": "lepidodendron:prehistoric_flora_eoraptor",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eoraptor",
 			"type": "text",
-			"text": "Eoraptor lunensis is a species of small basal dinosaur from the late Triassic of Argentina. Despite its name and appearance, which might mislead, this animal wasn't a \"raptor\" or even a theropod dinosaur like the more well known Coelophysis; instead Eoraptor was a basal member of the Sauropodomorpha, the same group that would eventually give rise to the giant Plateosaurus."
+			"text": "Eoraptor lunensis is a species of small basal dinosaur from the Upper Triassic of Argentina. Despite its name and appearance, which might mislead, this animal wasn't a \"raptor\" or even a theropod dinosaur like the more well known Coelophysis; instead Eoraptor was a basal member of the Sauropodomorpha, the same group that would eventually give rise to the giant Plateosaurus."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eoraptor",

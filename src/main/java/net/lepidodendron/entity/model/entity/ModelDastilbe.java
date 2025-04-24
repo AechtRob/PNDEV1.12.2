@@ -188,16 +188,17 @@ public class ModelDastilbe extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -5.6F;
-        this.root.offsetX = 0.30F;
+        this.root.offsetY = -8.6F;
+        this.root.offsetX = 2.0F;
+        this.root.offsetZ = 4.6F;
         this.root.rotateAngleY = (float)Math.toRadians(250);
         this.root.rotateAngleX = (float)Math.toRadians(8);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 3.25F;
+        float scaler = 6.8F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(root, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:

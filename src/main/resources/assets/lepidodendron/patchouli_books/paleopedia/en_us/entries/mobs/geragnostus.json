@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_geragnostus",
 			"title": "Geragnostus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Trilobita(?)$(br)>Agnostida$(br)>Metagnostidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>$(o)Trilobita (?)$(br)>Agnostida$(br)>Metagnostidae"
 		},
         	{
             "type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_geragnostus",
 			"type": "text",
-			"text": "Geragnostus comes from the Ordovician, with fossils found across Eurasia, North America and Argentina. It is a small rounded agnostid, and grew up to 1 cm in length. Unlike most other agnostids, Geragnostus is simple in its overall appearance, omitting even the classic pygidium spines known in most agnostid."
+			"text": "Geragnostus comes from the Ordovician, with fossils found across Eurasia, North America and Argentina. It is a small rounded metagnostid agnostid, and grew up to 1 cm in length. Unlike most other agnostids, Geragnostus is simple in its overall appearance, omitting even the classic pygidium spines known in most other agnostids."
 		},
 		{
 			"type": "lepidodendron:diet",

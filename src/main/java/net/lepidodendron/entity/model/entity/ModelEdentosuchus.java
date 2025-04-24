@@ -310,7 +310,7 @@ public class ModelEdentosuchus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -2.0F;
-        this.main.offsetX = -0.1F;
+        this.main.offsetX = -0.0F;
         this.main.rotateAngleY = (float)Math.toRadians(222);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);

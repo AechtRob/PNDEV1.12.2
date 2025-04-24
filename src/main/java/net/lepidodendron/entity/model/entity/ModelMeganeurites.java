@@ -255,11 +255,21 @@ public class ModelMeganeurites extends ModelBasePalaeopedia {
         this.body.rotateAngleY = (float)Math.toRadians(-10);
         this.body.rotateAngleX = (float)Math.toRadians(60);
         this.body.rotateAngleZ = (float)Math.toRadians(-50);
-        float scaler = 1.80F;
+        float scaler = 2.4F;
         this.body.scaleChildren = true;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(legL1, 0.0F, 0.3F, 0.8F);
+        this.setRotateAngle(legR1, 0.0F, -0.3F, -0.8F);
+        this.setRotateAngle(legL2, 0.0F, 0.1F, 0.7F);
+        this.setRotateAngle(legR2, 0.0F, -0.1F, -0.7F);
+        this.setRotateAngle(legL3, 0.0F, -0.3F, 1.0F);
+        this.setRotateAngle(legR3, 0.0F, 0.3F, -1.0F);
+        this.setRotateAngle(forewingL, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(hindwingL, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(forewingR, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.0F, 0.5F);
         //End of pose, now render the model:
         this.body.render(f);
         //Reset rotations, positions and sizing:

@@ -347,6 +347,36 @@ public class ModelKayentatherium extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = -0.4F;
+        this.root.offsetX = 0.3F;
+        this.root.offsetZ = 2.0F;
+        this.root.rotateAngleY = (float)Math.toRadians(120);
+        this.root.rotateAngleX = (float)Math.toRadians(1);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
+        this.root.scaleChildren = true;
+        float scaler = 1.0F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(root, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(Hips, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.3F, -0.2F, 0.0F);
+        this.setRotateAngle(Bodyfront, 0.3F, -0.1F, 0.0F);
+        this.setRotateAngle(Neck, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawbase, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailbase, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailmiddle, -0.2F, 0.3F, 0.0F);
+        this.setRotateAngle(Tailend, 0.1F, 0.4F, 0.0F);
+        this.setRotateAngle(Rightfrontfoot, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftfrontfoot, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawbase, 0.2F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

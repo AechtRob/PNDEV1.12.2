@@ -9,18 +9,24 @@
 			"trigger": "lepidodendron:pf_adv_book_microdictyon",
 			"title": "Microdictyon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ecdysozoa$(br)>Onychophora"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ecdysozoa$(br)>Panarthropoda$(br)>Lobopodia$(br)>Xenusia$(br)>Archonychophora$(br)>Eoconchariidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/microdictyon.png"],
-			"title": "M. effusum",
-			"text": ""
+			"type": "entity",
+			"name": "M. effusum",
+			"entity": "lepidodendron:prehistoric_flora_microdictyon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_microdictyon",
 			"type": "text",
-			"text": "Microdictyon was an armored worm like animal placed within Onychophora. It had 10 pairs of sclerites on the sides matched with a pair of tentacle like feetand its body was tube shaped."
+			"text": "Microdictyon was an armored lopobodian placed placed within Eoconchariidae. It had 10 pairs of sclerites on the sides matched with a pair of tentacle like feet and its body was tube shaped. Although it was described in 1986, the only known material at the time were the sclerites, and it took until 1995 for soft-bodied material to be found in the Chengjiang Lagerstätte in Cental China, with more being found in 1999 at the Kaili Formation in Southwest China."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_microdictyon",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'mikrós', to mean 'small'; and 'díktuon', to mean 'net'."
 		},
 		{
 			"type": "lepidodendron:diet",

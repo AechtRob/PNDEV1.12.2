@@ -189,6 +189,37 @@ public class ModelLasanius extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Head.offsetY = 0.8F;
+        this.Head.offsetX = 2.2F;
+        this.Head.offsetZ = 2.0F;
+        this.Head.rotateAngleY = (float)Math.toRadians(120);
+        this.Head.rotateAngleX = (float)Math.toRadians(1);
+        this.Head.rotateAngleZ = (float)Math.toRadians(0);
+        this.Head.scaleChildren = true;
+        float scaler = 4.2F;
+        this.Head.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Head, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(cube_r1, -0.2705F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.7545F, 0.5698F, 0.6557F);
+        this.setRotateAngle(cube_r4, 0.7545F, -0.5698F, -0.6557F);
+        this.setRotateAngle(tail, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.1222F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.5498F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.5498F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Head.render(f);
+        //Reset rotations, positions and sizing:
+        this.Head.setScale(1.0F, 1.0F, 1.0F);
+        this.Head.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

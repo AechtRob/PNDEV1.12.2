@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)>Chordata$(br)>Acanthodii$(br)>Gyracanthidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/gyracanthides.png"],
-			"title": "G. murrayi",
-			"text": ""
+			"type": "entity",
+			"name": "G. murrayi",
+			"entity": "lepidodendron:prehistoric_flora_gyracanthides",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gyracanthides",

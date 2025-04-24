@@ -450,10 +450,67 @@ public class ModelDasyceps extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Dasyceps.offsetY = -0.8F;
+        this.Dasyceps.offsetX = 1.3F;
+        this.Dasyceps.offsetZ = 2.2F;
+        this.Dasyceps.rotateAngleY = (float)Math.toRadians(120);
+        this.Dasyceps.rotateAngleX = (float)Math.toRadians(1);
+        this.Dasyceps.rotateAngleZ = (float)Math.toRadians(0);
+        this.Dasyceps.scaleChildren = true;
+        float scaler = 1.1F;
+        this.Dasyceps.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Dasyceps, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(cube_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Humerus_r1, 0.0F, 0.0F, -0.5061F);
+        this.setRotateAngle(Radio_Ulna_r1, 1.3537F, -0.6041F, -1.4174F);
+        this.setRotateAngle(cube_r3, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(Humerus_r2, 0.0F, 0.0F, 0.5061F);
+        this.setRotateAngle(Radio_Ulna_r2, 1.3537F, 0.6041F, 1.4174F);
+        this.setRotateAngle(cube_r4, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(Body2, 0.088F, 0.1304F, 0.0115F);
+        this.setRotateAngle(cube_r5, -0.2007F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, -0.2214F, 0.1704F, -0.0381F);
+        this.setRotateAngle(cube_r6, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(FemurR, 0.0F, 0.0F, 0.2182F);
+        this.setRotateAngle(cube_r7, -0.2295F, 0.2556F, -0.5177F);
+        this.setRotateAngle(cube_r8, -1.6672F, 0.167F, -1.4693F);
+        this.setRotateAngle(cube_r9, 0.1047F, 0.0F, -0.2269F);
+        this.setRotateAngle(FemurR2, 0.0F, 0.0F, -0.2182F);
+        this.setRotateAngle(cube_r10, -0.2295F, -0.2556F, 0.5177F);
+        this.setRotateAngle(cube_r11, -1.6672F, -0.167F, 1.4693F);
+        this.setRotateAngle(cube_r12, 0.1047F, 0.0F, 0.2269F);
+        this.setRotateAngle(Body4, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.3927F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Body6, 0.1509F, 0.5187F, 0.0752F);
+        this.setRotateAngle(Cephalon, 0.0F, -0.4363F, 0.0F);
+        this.setRotateAngle(Cranium, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, -0.0531F, -0.0504F, -0.2335F);
+        this.setRotateAngle(cube_r15, 0.0368F, 0.5244F, 0.1878F);
+        this.setRotateAngle(cube_r16, 0.0368F, -0.5244F, -0.1878F);
+        this.setRotateAngle(cube_r17, 0.0368F, -0.5244F, -0.1878F);
+        this.setRotateAngle(cube_r18, -0.1484F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r19, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r20, -0.0533F, 0.094F, 0.2311F);
+        this.setRotateAngle(Jaw, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r21, 0.0023F, -0.4364F, -0.005F);
+        this.setRotateAngle(cube_r22, 0.0023F, 0.4364F, 0.005F);
+        this.setRotateAngle(cube_r23, 0.0175F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r24, -0.1571F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Dasyceps.render(f);
+        //Reset rotations, positions and sizing:
+        this.Dasyceps.setScale(1.0F, 1.0F, 1.0F);
+        this.Dasyceps.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 
-    public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+        public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
         modelRenderer.rotateAngleZ = z;

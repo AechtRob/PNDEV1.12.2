@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian - Triassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Caseodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/fadenia.png"],
-			"title": "F. crenulata",
-			"text": ""
+			"type": "entity",
+			"name": "E. crenulata",
+			"entity": "lepidodendron:prehistoric_flora_fadenia_permotriassic",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_fadenia_permotriassic",

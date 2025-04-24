@@ -194,6 +194,43 @@ public class ModelOttoia extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.tail.offsetY = -6.2F;
+        this.tail.offsetX = -2.4F;
+        this.tail.offsetZ = 2.0F;
+        this.tail.rotateAngleY = (float)Math.toRadians(120);
+        this.tail.rotateAngleX = (float)Math.toRadians(1);
+        this.tail.rotateAngleZ = (float)Math.toRadians(0);
+        this.tail.scaleChildren = true;
+        float scaler = 4.2F;
+        this.tail.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(tail, 3.2F, 3.8F, -0.2F);
+        this.setRotateAngle(body1, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body6, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body7, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body8, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body9, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body10, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body11, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body12, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body13, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body14, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body15, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body16, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body17, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body18, -0.1F, 0.0F, 0.0F);
+
+        //End of pose, now render the model:
+        this.tail.render(f);
+        //Reset rotations, positions and sizing:
+        this.tail.setScale(1.0F, 1.0F, 1.0F);
+        this.tail.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

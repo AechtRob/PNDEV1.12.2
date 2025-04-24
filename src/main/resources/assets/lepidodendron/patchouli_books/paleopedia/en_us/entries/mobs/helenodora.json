@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Onychophora$(br)>Ontonychophora$(br)>Helenodoridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/helenodora.png"],
-			"title": "H. inopinata",
-			"text": ""
+			"type": "entity",
+			"name": "H. inopinata",
+			"entity": "lepidodendron:prehistoric_flora_helenodora",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_helenodora",

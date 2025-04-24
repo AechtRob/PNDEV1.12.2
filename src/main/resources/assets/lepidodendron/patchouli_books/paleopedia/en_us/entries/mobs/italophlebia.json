@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Arthropoda$(br)>Insecta$(br)>Odonata$(br)>Triassolestidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/italophlebia.png"],
-			"title": "I. gervasuttii",
-			"text": ""
+			"type": "entity",
+			"name": "I. gervasuttii",
+			"entity": "lepidodendron:prehistoric_flora_italophlebia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_italophlebia",
 			"type": "text",
-			"text": "Italophlebia was a dragonfly that lived during the Late Triassic. Its fossils have been found in Italy (hence its name), as well as Germany, in lake and lagoon deposits."
+			"text": "Italophlebia was a dragonfly that lived during the Upper Triassic. Its fossils have been found in Italy (hence its name), as well as Germany, in lake and lagoon deposits."
 		},
 		{
 			"type": "lepidodendron:diet",

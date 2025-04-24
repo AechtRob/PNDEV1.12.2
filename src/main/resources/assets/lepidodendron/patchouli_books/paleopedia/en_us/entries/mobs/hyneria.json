@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Eotetrapodiformes$(br)>Tristichopteridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/hyneria.png"],
-			"title": "H. lindae",
-			"text": ""
+			"type": "entity",
+			"name": "H. lindae",
+			"entity": "lepidodendron:prehistoric_flora_hyneria",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hyneria",
 			"type": "text",
-			"text": "Hyneria is named for the village of Hyner, Pennsylvania, near where the species was found. It was relatively large, growing up to 2.5-3.7m and it had large sensory canals possibly to aid in the detection of prey. "
+			"text": "Hyneria is named for the village of Hyner, Pennsylvania, near where the species was found. It was relatively large, growing up to 2.5 - 3.7m and it had large sensory canals possibly to aid in the detection of prey. "
 		},
 		{
 			"type": "lepidodendron:diet",

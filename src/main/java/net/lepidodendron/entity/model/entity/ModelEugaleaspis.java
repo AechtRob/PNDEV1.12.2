@@ -189,6 +189,41 @@ public class ModelEugaleaspis extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = -1.4F;
+        this.main.offsetX = -0.1F;
+        this.main.offsetZ = 2.0F;
+        this.main.rotateAngleY = (float)Math.toRadians(120);
+        this.main.rotateAngleX = (float)Math.toRadians(1);
+        this.main.rotateAngleZ = (float)Math.toRadians(0);
+        this.main.scaleChildren = true;
+        float scaler = 3.2F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(cube_r1, 0.0F, -1.7235F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, 1.7235F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, -1.2654F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, 1.2654F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, -0.5934F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0F, 0.5934F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.0F, -0.2007F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0F, 0.2007F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.0F, -0.6501F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.0F, 0.6501F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.1242F, -0.0414F, 0.3203F);
+        this.setRotateAngle(cube_r12, 0.1242F, 0.0414F, -0.3203F);
+        this.setRotateAngle(cube_r13, 0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0443F, 0.1744F, 0.0077F);
+        this.setRotateAngle(tail3, 0.1787F, 0.2148F, 0.0385F);
+        this.setRotateAngle(tail4, 0.1787F, 0.2148F, 0.0385F);
+        this.setRotateAngle(tail5, 0.2778F, 0.3367F, 0.0939F);
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

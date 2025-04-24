@@ -252,6 +252,29 @@ public class ModelFeroxichthys extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Feroxichthys.offsetY = -1.2F;
+        this.Feroxichthys.offsetX = 0.8F;
+        this.Feroxichthys.offsetZ = 2.0F;
+        this.Feroxichthys.rotateAngleY = (float)Math.toRadians(120);
+        this.Feroxichthys.rotateAngleX = (float)Math.toRadians(1);
+        this.Feroxichthys.rotateAngleZ = (float)Math.toRadians(0);
+        this.Feroxichthys.scaleChildren = true;
+        float scaler = 3.2F;
+        this.Feroxichthys.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Feroxichthys, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body, 0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(head, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(tail, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        //End of pose, now render the model:
+        this.Feroxichthys.render(f);
+        //Reset rotations, positions and sizing:
+        this.Feroxichthys.setScale(1.0F, 1.0F, 1.0F);
+        this.Feroxichthys.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

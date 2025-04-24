@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Plesiosauria$(br)>Cryptoclididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ophthalmothule.png"],
-			"title": "O. cryostea",
-			"text": ""
+			"type": "entity",
+			"name": "O. cryostea",
+			"entity": "lepidodendron:prehistoric_flora_ophthalmothule",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ophthalmothule",

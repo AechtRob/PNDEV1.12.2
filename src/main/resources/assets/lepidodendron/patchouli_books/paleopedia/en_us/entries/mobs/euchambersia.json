@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_euchambersia",
 			"title": "Euchambersia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Therocephalia$(br)>Akidnognathidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Therocephalia$(br)>Akidnognathidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/euchambersia.png"],
-			"title": "E. mirabilis",
-			"text": ""
+			"type": "entity",
+			"name": "E. mirabilis",
+			"entity": "lepidodendron:prehistoric_flora_euchambersia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_euchambersia",

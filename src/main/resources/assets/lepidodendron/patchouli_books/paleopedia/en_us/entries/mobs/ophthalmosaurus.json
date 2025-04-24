@@ -12,25 +12,21 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Ichthyosauria$(br)>Ophthalmosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ophthalmosaurus.png"],
-			"title": "O. icenicus",
-			"text": ""
+			"type": "entity",
+			"name": "O. icenicus",
+			"entity": "lepidodendron:prehistoric_flora_ophthalmosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ophthalmosaurus",
 			"type": "text",
-			"text": "Ophthalmosaurus is a Jurassic ichthyosaur whose genus name means \"Eye Lizard\", was named in 1874 by Harry Govier Seeley after the proportionally huge eye sockets in the cranium of the animal."
+			"text": "Ophthalmosaurus is a Jurassic ichthyosaur whose genus name means \"Eye Lizard\", was named in 1874 by Harry Govier Seeley after the proportionally huge eye sockets in the cranium of the animal. Considered a generalist thanks to the intermediate shape of the teeth compared to its relatives, this animal probably fed on smaller fish and cephalopods which it hunted in the shallow waters it lived in. The back of the head was largely occupied by the proportionally"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ophthalmosaurus",
 			"type": "text",
-			"text": "Considered a generalist thanks to the intermediate shape of the teeth compared to its relatives, this animal probably fed on smaller fish and cephalopods which it hunted in the shallow waters it lived in. The back of the head was largely occupied by the proportionally large eyes, from which the animal's name took inspiration; the sclerotic rings had a diameter of more than 20 cm on "
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_ophthalmosaurus",
-			"type": "text",
-			"text": "their outer rim, however that would've not been the size of the visible eye in life. It's a widespread misconception, in fact, that the sclerotic rings marked the contour of the visible eye; it's much more likely that whole area was covered in life and the actual eye you see would be smaller and only take the inner area of it."
+			"text": "large eyes, from which the animal's name took inspiration; the sclerotic rings had a diameter of more than 20 cm on their outer rim, however that would've not been the size of the visible eye in life. It's a widespread misconception, in fact, that the sclerotic rings marked the contour of the visible eye; it's much more likely that whole area was covered in life and the actual eye you see would be smaller and only take the inner area of it."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ophthalmosaurus",

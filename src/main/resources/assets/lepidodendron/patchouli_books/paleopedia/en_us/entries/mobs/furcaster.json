@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Enchinodermata$(br)>Ophiuroidea$(br)>Oegophiurida$(br)>Protasteridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/furcaster.png"],
-			"title": "F. palaeozoicus",
-			"text": ""
+			"type": "entity",
+			"name": "F. palaeozoicus",
+			"entity": "lepidodendron:prehistoric_flora_furcaster",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_furcaster",

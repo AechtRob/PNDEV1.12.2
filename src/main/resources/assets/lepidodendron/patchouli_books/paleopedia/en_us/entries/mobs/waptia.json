@@ -21,7 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_waptia",
 			"type": "text",
-			"text": "Waptia is a small bivalved arthropod from the Burgess Shale of Canada. It was about 6 cm long and was a member of hymenocarina alongside other bivalved arthropods like Canadaspis and Tokummia. The shape of its legs suggest it was a nektonic swimmer, being unable to walk on the seafloor. Its legs would have been used for catching food instead. It is one of the earliest known animals to have been fossilized with eggs. Presumed females have been preserved with eggs in their carapace which shows brooding among these arthropods."
+			"text": "Waptia is a small bivalved arthropod from the Burgess Shale of Canada. It was about 6 cm long and was a member of hymenocarina alongside other bivalved arthropods like Canadaspis and Tokummia. The shape of its legs suggest it was a nektonic swimmer, being unable to walk on the seafloor. Its legs would have been used for catching food instead. It is one of the earliest known animals to have been fossilized with eggs."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_waptia",
+			"type": "text",
+			"text": "Presumed females have been preserved with eggs in their carapace which shows brooding among these arthropods."
 		},
 		{
 			"type": "lepidodendron:diet",

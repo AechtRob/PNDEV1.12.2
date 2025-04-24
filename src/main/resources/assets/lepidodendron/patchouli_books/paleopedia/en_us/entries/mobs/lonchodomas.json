@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Trilobita$(br)>Asaphida$(br)>Raphiophoridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/lonchodomas_long.png"],
-			"title": "L. rostrata",
-			"text": ""
+			"type": "entity",
+			"name": "L. rostrata",
+			"entity": "lepidodendron:prehistoric_flora_lonchodomas",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lonchodomas",

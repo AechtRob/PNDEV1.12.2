@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Euthycarcinoidea"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ericixerxes.png"],
-			"title": "E. potii",
-			"text": ""
+			"type": "entity",
+			"name": "E. potii",
+			"entity": "lepidodendron:prehistoric_flora_ericixerxes",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ericixerxes",

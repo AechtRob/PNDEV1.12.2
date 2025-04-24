@@ -301,6 +301,35 @@ public class ModelMegalocephalus extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hips.offsetY = -1.4F;
+        this.Hips.offsetX = 0.8F;
+        this.Hips.offsetZ = 2.0F;
+        this.Hips.rotateAngleY = (float)Math.toRadians(120);
+        this.Hips.rotateAngleX = (float)Math.toRadians(1);
+        this.Hips.rotateAngleZ = (float)Math.toRadians(0);
+        this.Hips.scaleChildren = true;
+        float scaler = 1.2F;
+        this.Hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Hips, 0.2F, 3.8F, -0.0F);
+        this.Lowerjaw1.rotateAngleX = (float) Math.toRadians(23);
+        this.Head.rotateAngleX = (float) Math.toRadians(-20);
+        this.Head.rotateAngleY = (float) Math.toRadians(-25);
+        this.Neck.rotateAngleY = (float) Math.toRadians(-21);
+        this.Bodyfront.rotateAngleY = (float) Math.toRadians(-11);
+        this.Bodymiddle.rotateAngleY = (float) Math.toRadians(-11);
+        this.Tail1.rotateAngleY = (float) Math.toRadians(15);
+        this.Tail2.rotateAngleY = (float) Math.toRadians(20);
+        this.Tail3.rotateAngleY = (float) Math.toRadians(20);
+        this.Tail4.rotateAngleY = (float) Math.toRadians(10);
+        this.Tail5.rotateAngleY = (float) Math.toRadians(5);
+        //End of pose, now render the model:
+        this.Hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hips.setScale(1.0F, 1.0F, 1.0F);
+        this.Hips.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

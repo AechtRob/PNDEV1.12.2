@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Dinocaridida$(br)>Kerygmachelidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/kerygmachela.png"],
-			"title": "K. kierkegaardi",
-			"text": ""
+			"type": "entity",
+			"name": "K. kierkegaardi",
+			"entity": "lepidodendron:prehistoric_flora_kerygmachela",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_kerygmachela",

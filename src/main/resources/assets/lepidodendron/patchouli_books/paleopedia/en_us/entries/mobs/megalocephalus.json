@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_megalocephalus",
 			"title": "Megalocephalus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Tetrapoda$(br)>Baphetidae$(br)>Loxommatinae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapoda$(br)>Baphetidae$(br)>Loxommatinae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/megalocephalus.png"],
-			"title": "M. pachycephalus",
-			"text": ""
+			"type": "entity",
+			"name": "M. pachycephalus",
+			"entity": "lepidodendron:prehistoric_flora_megalocephalus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_megalocephalus",
 			"type": "text",
-			"text": "Megalocephalus was a Late Carboniferous carnivorous amphibian which measured up to 1.5 meters. It is known from its skull and it had long pointed teeth, with a really hard bite force."
+			"text": "Megalocephalus was an Upper Carboniferous carnivorous amphibian which measured up to 1.5 meters. It is known from its skull and it had long pointed teeth, with a really hard bite force."
 		},
 		{
 			"type": "lepidodendron:diet",

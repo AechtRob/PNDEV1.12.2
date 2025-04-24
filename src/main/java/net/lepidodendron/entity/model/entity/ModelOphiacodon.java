@@ -427,6 +427,47 @@ public class ModelOphiacodon extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.ophiacodon.offsetY = -0.4F;
+        this.ophiacodon.offsetX = 0.0F;
+        this.ophiacodon.offsetZ = 2.0F;
+        this.ophiacodon.rotateAngleY = (float)Math.toRadians(120);
+        this.ophiacodon.rotateAngleX = (float)Math.toRadians(1);
+        this.ophiacodon.rotateAngleZ = (float)Math.toRadians(0);
+        this.ophiacodon.scaleChildren = true;
+        float scaler = 0.8F;
+        this.ophiacodon.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(ophiacodon, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(head, -0.1F, 0.1F, 0.2F);
+        this.setRotateAngle(neck, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(front_body, -0.08F, 0.1F, 0.0F);
+        this.setRotateAngle(middle_body, -0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(back_body, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(tail, 0.05F, -0.05F, 0.0F);
+        this.setRotateAngle(tail2, 0.05F, -0.05F, 0.0F);
+        this.setRotateAngle(tail3, 0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, -0.2F, 0.0F);
+        this.setRotateAngle(tail5, 0.05F, -0.3F, 0.0F);
+        this.setRotateAngle(lower_jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(left_upper_arm, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(left_lower_arm, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(left_paw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(right_upper_arm, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(right_lower_arm, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(right_paw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(left_thigh, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(left_shin, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(left_foot, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(right_thigh, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(right_shin, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(right_foot, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.ophiacodon.render(f);
+        //Reset rotations, positions and sizing:
+        this.ophiacodon.setScale(1.0F, 1.0F, 1.0F);
+        this.ophiacodon.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

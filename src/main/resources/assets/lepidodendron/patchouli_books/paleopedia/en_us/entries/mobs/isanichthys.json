@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Lepisosteiformes"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/isanichthys.png"],
-			"title": "I. palustris",
-			"text": ""
+			"type": "entity",
+			"name": "I. palustris",
+			"entity": "lepidodendron:prehistoric_flora_isanichthys",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_isanichthys",
 			"type": "text",
-			"text": "Isanichthys is a ginglymodian actinopterygian fish known from Phu Kradung Formation, northeastern Thailand. Two species are described, I. palustris from Early Cretaceous section and I. lertboosi from Late Jurassic section of same Formation, both reaching close to a meter. It is closely related to Lepidotes, but I. palustris is slenderer, which makes this fish look like a short-snouted gar."
+			"text": "Isanichthys is a ginglymodian actinopterygian fish known from Phu Kradung Formation, northeastern Thailand. Two species are described, I. palustris from the Early Cretaceous section and I. lertboosi from the Lower Jurassic section of same Formation, both reaching close to a meter. It is closely related to Lepidotes, but I. palustris is slenderer, which makes this fish look like a short-snouted gar."
 		},
 		{
 			"type": "lepidodendron:diet",

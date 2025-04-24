@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_hibbertopterus",
 			"title": "Hibbertopterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)>Arthropoda$(br)>Eurypterida$(br)>Stylonurina$(br)>Hibbertopteridae"
+			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Stylonurina$(br)>Hibbertopteridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/hibbertopterus.png"],
-			"title": "H. scouleri",
-			"text": ""
+			"type": "entity",
+			"name": "H. scouleri",
+			"entity": "lepidodendron:prehistoric_flora_hibbertopterus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hibbertopterus",

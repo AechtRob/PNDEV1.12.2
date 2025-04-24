@@ -257,6 +257,40 @@ public class ModelMixopterus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.carapace.offsetY = -0.8F;
+        this.carapace.offsetX = 0.2F;
+        this.carapace.offsetZ = 2.0F;
+        this.carapace.rotateAngleY = (float)Math.toRadians(120);
+        this.carapace.rotateAngleX = (float)Math.toRadians(1);
+        this.carapace.rotateAngleZ = (float)Math.toRadians(0);
+        this.carapace.scaleChildren = true;
+        float scaler = 1.2F;
+        this.carapace.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(carapace, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(body2, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(body3, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(body4, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(tail, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(tail2, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(tail3, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(tail5, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(tail6, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(l3L, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(l4L, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(l5L, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(l3R, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(l4R, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(l5R, 0.0F, 0.4F, 0.0F);
+        //End of pose, now render the model:
+        this.carapace.render(f);
+        //Reset rotations, positions and sizing:
+        this.carapace.setScale(1.0F, 1.0F, 1.0F);
+        this.carapace.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 
