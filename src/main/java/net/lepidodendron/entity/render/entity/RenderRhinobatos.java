@@ -12,7 +12,7 @@ public class RenderRhinobatos extends RenderLivingBaseWithBook<EntityPrehistoric
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rhinobatos.png");
 
     public static float getScaler() {
-        return 0.5F;
+        return 0.4F;
     }
     public RenderRhinobatos(RenderManager mgr) {
         super(mgr, new ModelRhinobatos(), 0.0f);

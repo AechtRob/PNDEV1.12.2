@@ -111,10 +111,10 @@ public class BlockEggsWaterSurface extends ElementsLepidodendronMod.ModElement {
 			"lepidodendron:prehistoric_flora_silvanerpeton",
 			"lepidodendron:prehistoric_flora_eldeceeon",
 			"lepidodendron:prehistoric_flora_triadobatrachus",
-			"lepidodendron:prehistoric_flora_rhadinosteus",
-			"lepidodendron:prehistoric_flora_notobatrachus",
-			"lepidodendron:prehistoric_flora_cratopipa",
-			"lepidodendron:prehistoric_flora_prosalirus"
+			"lepidodendron:prehistoric_flora_tadpole@rhadinosteus",
+			"lepidodendron:prehistoric_flora_tadpole@notobatrachus",
+			"lepidodendron:prehistoric_flora_tadpole@cratopipa",
+			"lepidodendron:prehistoric_flora_tadpole@prosalirus"
 	};
 
 	public static class BlockCustom extends BlockLilyPad {

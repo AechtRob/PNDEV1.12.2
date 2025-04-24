@@ -559,6 +559,7 @@ public class ModelDiplomoceras extends ModelBasePalaeopedia {
 
         EntityPrehistoricFloraDiplomoceras ee = (EntityPrehistoricFloraDiplomoceras) e;
 
+
         if (!e.isInWater()) {
             this.base.rotateAngleZ = (float) Math.toRadians(90);
             this.base.offsetX = -1f;

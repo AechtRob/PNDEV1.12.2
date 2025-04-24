@@ -42,6 +42,16 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 
 		ModelBakery.registerItemVariants(block,
 
+				new ModelResourceLocation("lepidodendron:fossils/fossil_scelidosaurus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_cryptoclidus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_mecistotrachelos_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_vulcanodon_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_tawa_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_rechnisaurus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_prenocephale_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_vesperopterylus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_chaoyangopterus_clean", "inventory"),
+
 				new ModelResourceLocation("lepidodendron:fossils/fossil_archaeoceratops_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_anoualerpeton_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_candidodon_clean", "inventory"),

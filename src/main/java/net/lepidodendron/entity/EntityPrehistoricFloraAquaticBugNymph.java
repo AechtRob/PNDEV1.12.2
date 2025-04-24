@@ -30,11 +30,11 @@ import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFloraEurypteridBase implements ITrappableWater {
 
-	private static final float[] DELITZSCHALA_SIZE = new float[]{0.2F, 0.2F};
-	private static final float[] DUNBARIA_SIZE = new float[]{0.2F, 0.2F};
-	private static final float[] HOMALONEURA_SIZE = new float[]{0.2F, 0.2F};
-	private static final float[] HOMOIOPTERA_SIZE = new float[]{0.2F, 0.2F};
-	private static final float[] LITHOMANTIS_SIZE = new float[]{0.2F, 0.2F};
+	private static final float[] MAYFLY_SIZE = new float[]{0.2F, 0.2F};
+	private static final float[] STONEFLY_SIZE = new float[]{0.2F, 0.2F};
+	private static final float[] DAMSELFLY_SIZE = new float[]{0.2F, 0.2F};
+	private static final float[] VELISOPTERA_SIZE = new float[]{0.2F, 0.2F};
+	private static final float[] ARGENTINALA_SIZE = new float[]{0.2F, 0.2F};
 	private static final float[] LYCOCERCUS_SIZE = new float[]{0.2F, 0.2F};
 	private static final float[] SINODUNBARIA_SIZE = new float[]{0.2F, 0.2F};
 	private static final float[] STENODICTYA_SIZE = new float[]{0.2F, 0.2F};
@@ -72,11 +72,11 @@ public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFlor
 
 	public enum Type
 	{
-		DELITZSCHALA(1, "delitzschala"),
-		DUNBARIA(2, "dunbaria"),
-		HOMALONEURA(3, "homaloneura"),
-		HOMOIOPTERA(4, "homoioptera"),
-		LITHOMANTIS(5, "lithomantis"),
+		MAYFLY(1, "mayfly"),
+		STONEFLY(2, "stonefly"),
+		DAMSELFLY(3, "damselfly"),
+		VELISOPTERA(4, "velisoptera"),
+		ARGENTINALA(5, "argentinala"),
 		LYCOCERCUS(6, "lycocercus"),
 		SINODUNBARIA(7, "sinodunbaria"),
 		STENODICTYA(8, "stenodictya"),
@@ -135,19 +135,19 @@ public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFlor
 
 	public float getFlySpeed() {
 		switch (this.getPNType()) {
-			case DELITZSCHALA: default:
+			case MAYFLY: default:
 				return 3f;
 
-			case DUNBARIA:
+			case STONEFLY:
 				return 3f;
 
-			case HOMALONEURA:
+			case DAMSELFLY:
 				return 3f;
 
-			case HOMOIOPTERA:
+			case VELISOPTERA:
 				return 3f;
 
-			case LITHOMANTIS:
+			case ARGENTINALA:
 				return 3f;
 
 			case LYCOCERCUS:
@@ -169,20 +169,20 @@ public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFlor
 
 	public float[] getHitBoxSize() {
 		switch (this.getPNType()) {
-			case DELITZSCHALA: default:
-				return DELITZSCHALA_SIZE;
+			case MAYFLY: default:
+				return MAYFLY_SIZE;
 
-			case DUNBARIA:
-				return DUNBARIA_SIZE;
+			case STONEFLY:
+				return STONEFLY_SIZE;
 
-			case HOMALONEURA:
-				return HOMALONEURA_SIZE;
+			case DAMSELFLY:
+				return DAMSELFLY_SIZE;
 
-			case HOMOIOPTERA:
-				return HOMOIOPTERA_SIZE;
+			case VELISOPTERA:
+				return VELISOPTERA_SIZE;
 
-			case LITHOMANTIS:
-				return LITHOMANTIS_SIZE;
+			case ARGENTINALA:
+				return ARGENTINALA_SIZE;
 
 			case LYCOCERCUS:
 				return LYCOCERCUS_SIZE;
@@ -220,7 +220,7 @@ public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFlor
 		}
 		else
 		{
-			return I18n.translateToLocal("entity.prehistoric_flora_palaeodictyoptera_nymph_" + this.getPNType().getName() + ".name");
+			return I18n.translateToLocal("entity.prehistoric_flora_aquatic_nymph_" + this.getPNType().getName() + ".name");
 		}
 	}
 
@@ -291,45 +291,6 @@ public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFlor
 		return livingdata;
 	}
 
-	@Override
-	public ItemStack getPickedResult(RayTraceResult target)
-	{
-		if (target.entityHit instanceof EntityPrehistoricFloraAquaticBugNymph) {
-			EntityPrehistoricFloraAquaticBugNymph palaeodictyoptera = (EntityPrehistoricFloraAquaticBugNymph) target.entityHit;
-			switch (palaeodictyoptera.getPNType()) {
-				case DELITZSCHALA: default:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraDelitzschala.block, 1);
-
-				case DUNBARIA:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraDunbaria.block, 1);
-
-				case HOMALONEURA:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraHomaloneura.block, 1);
-
-				case HOMOIOPTERA:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraHomoioptera.block, 1);
-
-				case LITHOMANTIS:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraLithomantis.block, 1);
-
-				case LYCOCERCUS:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraLycocercus.block, 1);
-
-				case MAZOTHAIROS:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraMazothairos.block, 1);
-
-				case SINODUNBARIA:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraSinodunbaria.block, 1);
-
-				case STENODICTYA:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraStenodictya.block, 1);
-
-				case PSYCHROPTILUS:
-					return new ItemStack(ItemSpawnEggPalaeodictyopteraPsychroptilus.block, 1);
-			}
-		}
-		return ItemStack.EMPTY;
-	}
 
 	@Override
 	public int getAdultAge() {
@@ -394,34 +355,17 @@ public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFlor
 
 	}
 
-	//@Override
-	//public net.minecraft.util.SoundEvent getAmbientSound() {
-	//    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	//            .getObject(new ResourceLocation("lepidodendron:eurypterus_idle"));
-	//}
-
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
 	}
 
 
-	//@Override
-	//public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
-	//    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	//            .getObject(new ResourceLocation("lepidodendron:eurypterus_hurt"));
-	//}
-
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
 	}
 
-	//@Override
-	//public net.minecraft.util.SoundEvent getDeathSound() {
-	//    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	//            .getObject(new ResourceLocation("lepidodendron:eurypterus_death"));
-	//}
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
@@ -432,16 +376,6 @@ public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFlor
 	@Override
 	protected int getExperiencePoints(EntityPlayer player) {
 		return 1 + this.world.rand.nextInt(1);
-	}
-
-	@Override
-	public boolean isOnLadder() {
-		return false;
-	}
-
-	@Override
-	public void onLivingUpdate() {
-		super.onLivingUpdate();
 	}
 
 	public void onEntityUpdate()

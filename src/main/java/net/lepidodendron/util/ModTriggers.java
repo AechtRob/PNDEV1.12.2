@@ -1918,6 +1918,15 @@ public class ModTriggers
     public static final CustomTrigger CLICK_NUDDSIA = new CustomTrigger("pf_book_nuddsia");
     public static final CustomTrigger CLICK_KARENINA = new CustomTrigger("pf_book_karenina");
     public static final CustomTrigger CLICK_DAMSELFLY = new CustomTrigger("pf_book_damselfly");
+    public static final CustomTrigger CLICK_SCELIDOSAURUS = new CustomTrigger("pf_book_scelidosaurus");
+    public static final CustomTrigger CLICK_CRYPTOCLIDUS = new CustomTrigger("pf_book_cryptoclidus");
+    public static final CustomTrigger CLICK_MECISTOTRACHELOS = new CustomTrigger("pf_book_mecistotrachelos");
+    public static final CustomTrigger CLICK_VULCANODON = new CustomTrigger("pf_book_vulcanodon");
+    public static final CustomTrigger CLICK_TAWA = new CustomTrigger("pf_book_tawa");
+    public static final CustomTrigger CLICK_RECHNISAURUS = new CustomTrigger("pf_book_rechnisaurus");
+    public static final CustomTrigger CLICK_PRENOCEPHALE = new CustomTrigger("pf_book_prenocephale");
+    public static final CustomTrigger CLICK_VESPEROPTERYLUS = new CustomTrigger("pf_book_vesperopterylus");
+    public static final CustomTrigger CLICK_CHAOYANGOPTERUS = new CustomTrigger("pf_book_chaoyangopterus");
 
 
 
@@ -3824,7 +3833,16 @@ public class ModTriggers
             CLICK_KRIKA,
             CLICK_NUDDSIA,
             CLICK_KARENINA,
-            CLICK_DAMSELFLY
+            CLICK_DAMSELFLY,
+            CLICK_SCELIDOSAURUS,
+            CLICK_CRYPTOCLIDUS,
+            CLICK_MECISTOTRACHELOS,
+            CLICK_VULCANODON,
+            CLICK_TAWA,
+            CLICK_RECHNISAURUS,
+            CLICK_PRENOCEPHALE,
+            CLICK_VESPEROPTERYLUS,
+            CLICK_CHAOYANGOPTERUS
 
 
 

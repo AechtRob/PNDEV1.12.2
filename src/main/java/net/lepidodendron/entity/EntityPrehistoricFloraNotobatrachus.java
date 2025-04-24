@@ -159,6 +159,17 @@ public class EntityPrehistoricFloraNotobatrachus extends EntityPrehistoricFloraS
 
 	}
 
+	@Override
+	public String getEntityId(Entity entity) {
+		String mobid;
+		mobid = "lepidodendron:prehistoric_flora_tadpole";
+
+		if (this.hasPNVariants() && this.getPNTypeName() != null) {
+			mobid = mobid + "@" + "notobatrachus";
+		}
+		return mobid;
+	}
+
 
 	@Override
 	public void onLivingUpdate() {

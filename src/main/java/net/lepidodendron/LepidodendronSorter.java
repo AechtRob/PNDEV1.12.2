@@ -5461,6 +5461,13 @@ public class LepidodendronSorter {
     public static final int eggs_pterodaustro = 5374;
     public static final int permarachne_raw = 5375;
     public static final int magnipterygius_raw = 5376;
+    public static final int juliform_raw = 5377;
+    public static final int polydesmid_raw = 5378;
+    public static final int devonobius_raw = 5379;
+    public static final int eoscorpius_raw = 5380;
+    public static final int eggs_eoscorpius = 5381;
+    public static final int eggs_protoischnurus = 5382;
+
 
 
 

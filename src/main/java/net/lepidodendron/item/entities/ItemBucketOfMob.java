@@ -61,6 +61,11 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 		//ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:brasilodendron_spores", "inventory"));
 
 		ModelBakery.registerItemVariants(block,
+				new ModelResourceLocation("lepidodendron:entities/tadpole_rhadinosteus_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/tadpole_notobatrachus_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/tadpole_cratopipa_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/tadpole_prosalirus_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/cryptoclidus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/dissimilites_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/parawocklumeria_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/mortoniceras_bucket", "inventory"),
@@ -95,7 +100,8 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/liaoningogriphus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/valdotriton_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/austropotamobius_bucket", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/keurbos_bucket", "inventory"),				new ModelResourceLocation("lepidodendron:entities/hoyasemys_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/keurbos_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/hoyasemys_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/brodiechelys_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/ordosemys_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/goniopholis_bucket", "inventory"),

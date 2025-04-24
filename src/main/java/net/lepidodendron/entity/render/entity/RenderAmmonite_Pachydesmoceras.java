@@ -14,7 +14,10 @@ public class RenderAmmonite_Pachydesmoceras extends RenderLivingBaseWithBook<Ent
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_pachydesmoceras.png");
 
     public RenderAmmonite_Pachydesmoceras(RenderManager mgr) {
-        super(mgr, new ModelPachydesmoceras(), 0.65f);
+        super(mgr, new ModelPachydesmoceras(), 0.5f);
+    }
+    public static float getScaler() {
+        return 0.8f;
     }
 
     @Override
@@ -29,7 +32,7 @@ public class RenderAmmonite_Pachydesmoceras extends RenderLivingBaseWithBook<Ent
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAmmonite_Pachydesmoceras entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() *getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

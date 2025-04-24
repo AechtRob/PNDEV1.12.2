@@ -70,7 +70,7 @@ public class EntityPrehistoricFloraBaculites extends EntityPrehistoricFloraNauti
 	public boolean canBeVertical() {
 		//isReally in Water
 		boolean check1 = this.isReallyInWater();
-		boolean check2 = (this.world.isAirBlock(this.getPosition().up(6)));
+		boolean check2 = (this.world.isAirBlock(this.getPosition().up(2)));
 
 		return check1 && !check2;
 	}

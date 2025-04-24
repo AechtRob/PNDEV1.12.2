@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderRayonnoceras extends RenderLivingBaseWithBook<EntityPrehistoricFloraRayonnoceras> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rayonnoceras.png");
-    public static float getScaler() {return 0.325F;}
+    public static float getScaler() {return 0.85F;}
 
     public RenderRayonnoceras(RenderManager mgr) {
         super(mgr, new ModelRayonnoceras(), 0.6f);

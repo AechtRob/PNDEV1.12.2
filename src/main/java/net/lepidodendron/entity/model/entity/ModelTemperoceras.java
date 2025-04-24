@@ -241,6 +241,7 @@ public class ModelTemperoceras extends ModelBasePalaeopedia {
             this.bob(body, 0.1F, 2.0F, false, f2, 2);
             this.body.offsetZ = this.moveBoxExtended(speed, 1F, false, 3.5F, f2, 1) + offsetZ;
             this.body.rotateAngleY = (float) Math.toRadians(180);
+            this.body.rotateAngleZ = (float) Math.toRadians(90);
         }
         else {
             this.body.rotateAngleZ = (float) Math.toRadians(90);

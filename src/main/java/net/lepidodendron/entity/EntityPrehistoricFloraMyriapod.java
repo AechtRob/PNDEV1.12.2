@@ -14,8 +14,7 @@ import net.lepidodendron.entity.render.entity.RenderMyriapod;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.entity.util.ITrappableAir;
-import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggMyriapodEoarthropleura;
-import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggMyriapodPneumodesmus;
+import net.lepidodendron.item.entities.spawneggs.*;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EggLayingConditions;
 import net.lepidodendron.util.ModTriggers;
@@ -310,6 +309,21 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 
 			case EOARTHROPLEURA:
 				return ModTriggers.CLICK_EOARTHROPLEURA;
+
+			case LATZELIA:
+				return ModTriggers.CLICK_LATZELIA;
+			case CRUSSOLUM:
+				return ModTriggers.CLICK_CRUSSOLUM;
+			case VELOCIPEDE:
+				return ModTriggers.CLICK_VELOCIPEDE;
+			case FULMENOCURSOR:
+				return ModTriggers.CLICK_FULMENOCURSOR;
+			case DEVONOBIUS:
+				return ModTriggers.CLICK_DEVONOBIUS;
+			case JULIFORM:
+				return ModTriggers.CLICK_JULIFORM;
+			case POLYDESMID:
+				return ModTriggers.CLICK_POLYDESMID;
 				
 		}
 	}
@@ -318,6 +332,13 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 	{
 		PNEUMODESMUS(1, "pneumodesmus"),
 		EOARTHROPLEURA(2, "eoarthropleura"),
+		LATZELIA(3, "latzelia"),
+		CRUSSOLUM(4, "crussolum"),
+		VELOCIPEDE(5, "velocipede"),
+		FULMENOCURSOR(6, "fulmenocursor"),
+		DEVONOBIUS(7, "devonobius"),
+		JULIFORM(8, "juliform"),
+		POLYDESMID(9, "polydesmid"),
 		;
 
 		private final String name;
@@ -376,29 +397,50 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 
 			case EOARTHROPLEURA:
 				return LepidodendronMod.EOARTHROPLEURA_LOOT_JAR;
+			case LATZELIA:
+				return LepidodendronMod.LATZELIA_LOOT;
+			case CRUSSOLUM:
+				return LepidodendronMod.CRUSSOLUM_LOOT;
+			case VELOCIPEDE:
+				return LepidodendronMod.VELOCIPEDE_LOOT;
+			case FULMENOCURSOR:
+				return LepidodendronMod.FULMENOCURSOR_LOOT;
+			case DEVONOBIUS:
+				return LepidodendronMod.DEVONOBIUS_LOOT;
+			case JULIFORM:
+				return LepidodendronMod.JULIFORM_LOOT;
+			case POLYDESMID:
+				return LepidodendronMod.POLYDESMID_LOOT;
 
 		}
 	}
 
 	public ResourceLocation getStandardLoot() {
-		switch (this.getPNType()) {
-			case PNEUMODESMUS: default:
-				return LepidodendronMod.BUG_LOOT;
-
-			case EOARTHROPLEURA:
-				return LepidodendronMod.BUG_LOOT;
-				
-		}
+		return LepidodendronMod.BUG_LOOT;
 	}
 
 	public float getCrawlSpeed() {
 		switch (this.getPNType()) {
 			case PNEUMODESMUS: default:
-				return 0.35f;
+				return 0.12f;
 
 			case EOARTHROPLEURA:
-				return 0.35f;
-				
+				return 0.12f;
+			case CRUSSOLUM:
+				return 0.18f;
+			case LATZELIA:
+				return 0.2f;
+			case DEVONOBIUS:
+				return 0.2f;
+			case FULMENOCURSOR:
+				return 0.2f;
+			case VELOCIPEDE:
+				return 0.2f;
+			case POLYDESMID:
+				return 0.2f;
+			case JULIFORM:
+				return 0.2f;
+
 		}
 	}
 
@@ -409,6 +451,21 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 
 			case EOARTHROPLEURA:
 				return EOARTHROPLEURA_SIZE;
+
+			case LATZELIA:
+				return LATZELIA_SIZE;
+			case CRUSSOLUM:
+				return CRUSSOLUM_SIZE;
+			case VELOCIPEDE:
+				return VELOCIPEDE_SIZE;
+			case FULMENOCURSOR:
+				return FULMENOCURSOR_SIZE;
+			case DEVONOBIUS:
+				return DEVONOBIUS_SIZE;
+			case JULIFORM:
+				return JULIFORM_SIZE;
+			case POLYDESMID:
+				return POLYDESMID_SIZE;
 				
 		}
 	}
@@ -478,6 +535,20 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 
 				case EOARTHROPLEURA:
 					return new ItemStack(ItemSpawnEggMyriapodEoarthropleura.block, 1);
+				case LATZELIA:
+					return new ItemStack(ItemSpawnEggMyriapodLatzelia.block, 1);
+				case CRUSSOLUM:
+					return new ItemStack(ItemSpawnEggMyriapodCrussolum.block, 1);
+				case VELOCIPEDE:
+					return new ItemStack(ItemSpawnEggMyriapodVelocipede.block, 1);
+				case FULMENOCURSOR:
+					return new ItemStack(ItemSpawnEggMyriapodFulmenocursor.block, 1);
+				case DEVONOBIUS:
+					return new ItemStack(ItemSpawnEggMyriapodDevonobius.block, 1);
+				case JULIFORM:
+					return new ItemStack(ItemSpawnEggMyriapodJuliform.block, 1);
+				case POLYDESMID:
+					return new ItemStack(ItemSpawnEggMyriapodPolydesmid.block, 1);
 					
 			}
 		}

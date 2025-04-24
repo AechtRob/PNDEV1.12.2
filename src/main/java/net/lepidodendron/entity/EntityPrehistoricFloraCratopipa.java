@@ -161,6 +161,17 @@ public class EntityPrehistoricFloraCratopipa extends EntityPrehistoricFloraSwimm
 
 
 	@Override
+	public String getEntityId(Entity entity) {
+		String mobid;
+		mobid = "lepidodendron:prehistoric_flora_tadpole";
+
+		if (this.hasPNVariants() && this.getPNTypeName() != null) {
+			mobid = mobid + "@" + "cratopipa";
+		}
+		return mobid;
+	}
+	
+	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;

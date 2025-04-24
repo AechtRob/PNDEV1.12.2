@@ -3148,6 +3148,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation SANTANMANTIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/santanmantis"));
 	public static final int ENTITY_PROTOISCHNURUS = 1291;
 	public static final ResourceLocation PROTOISCHNURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/protoischnurus"));
+	public static final ResourceLocation PROTOISCHNURUS_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/protoischnurus_jar"));
 	public static final int ENTITY_EOSCORPIUS = 1292;
 	public static final ResourceLocation EOSCORPIUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eoscorpius"));
 	public static final ResourceLocation EOSCORPIUS_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eoscorpius_jar"));
@@ -3179,6 +3180,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation KRIKA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/krika"));
 	public static final ResourceLocation NUDDSIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/nuddsia"));
 	public static final ResourceLocation KARENINA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/karenina"));
+	public static final int ENTITY_TADPOLE = 1302;
 
 
 
