@@ -2,6 +2,7 @@ package net.lepidodendron.procedure;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.*;
 import net.lepidodendron.util.Functions;
@@ -129,6 +130,11 @@ public class ProcedureWorldGenCalamites extends ElementsLepidodendronMod.ModElem
 			//Trunk: 10-36 blocks, but more likely to be smaller:
 			TrunkHeight = 10 + Math.round(Math.random() * 26);
 			if ((TrunkHeight>=23) && (Math.random() >=0.65)) TrunkHeight = TrunkHeight * 0.6;
+
+			if (world.provider.getDimension() == LepidodendronConfig.dimPermian) {
+				//Only generate small ones in the Permian
+				TrunkHeight = Math.min(TrunkHeight, 27);
+			}
 
 			if (TrunkHeight >=28) {
 				//Do a big tree
