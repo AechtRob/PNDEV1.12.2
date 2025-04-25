@@ -343,6 +343,8 @@ public class EntityPNBoat extends EntityBoat
                 return ItemUllmanniaBoatItem.block;
             case BIARMOBAIERA:
                 return ItemBiarmobaieraBoatItem.block;
+            case LEPTOPHLOEUM:
+                return ItemLeptophloeumBoatItem.block;
 
         }
     }
@@ -505,6 +507,8 @@ public class EntityPNBoat extends EntityBoat
                 return BlockUllmanniaPlanks.block;
             case BIARMOBAIERA:
                 return BlockBiarmobaieraPlanks.block;
+            case LEPTOPHLOEUM:
+                return BlockLeptophloeumPlanks.block;
 
         }
     }
@@ -1380,7 +1384,8 @@ public class EntityPNBoat extends EntityBoat
         DOYLEALES(73, "doyleales"),
         SATPURAPHYLLUM(74, "satpuraphyllum"),
         ULLMANNIA(75, "ullmannia"),
-        BIARMOBAIERA(76, "biarmobaiera")
+        BIARMOBAIERA(76, "biarmobaiera"),
+        LEPTOPHLOEUM(77, "leptophloeum")
         ;
 
         private final String name;

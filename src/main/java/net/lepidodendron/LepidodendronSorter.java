@@ -5111,6 +5111,19 @@ public class LepidodendronSorter {
     public static final int tichavekia = 8126;
     public static final int tichavekia_spore = 8127;
 
+    public static final int leptophloeum_boat_item = 8102;
+    public static final int leptophloeum_planks = 8103;
+    public static final int leptophloeum_fence = 8104;
+    public static final int leptophloeum_fence_gate = 8105;
+    public static final int leptophloeum_door = 8106;
+    public static final int leptophloeum_trapdoor = 8107;
+    public static final int leptophloeum_slab = 8108;
+    public static final int leptophloeum_stairs = 8109;
+    public static final int leptophloeum_door_item = 8110;
+    public static final int leptophloeum_leaves = 8113;
+    public static final int leptophloeum_log = 8114;
+    public static final int leptophloeum_sapling = 8115;
+
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;
     public static final int eocursor_raw = 4976;

@@ -272,7 +272,9 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.ITEMS.getKey(ItemSlimyAlgaeItem.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemGreenFilamentousAlgaeItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockLiverwort.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBacterialCrust.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBacterialCrust.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemArchaeocalamitesItem.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockLepidophloiosSapling.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsDevonian);
         return resLoc;

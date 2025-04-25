@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class LayerArchaeocydippidaEmissive implements LayerRenderer<EntityPrehistoricFloraArchaeocydippida>
 {
     private final RenderArchaeocydippida ArchaeocydippidaRenderer;
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/archaeocydippida_emissive.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/archaeocydippida_emissive.png");
 
     public LayerArchaeocydippidaEmissive(RenderArchaeocydippida ArchaeocydippidaRendererIn)
     {

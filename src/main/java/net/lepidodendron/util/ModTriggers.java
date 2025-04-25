@@ -150,6 +150,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MOSACAULIS = new CustomTrigger("pf_book_mosacaulis");
     public static final CustomTrigger CLICK_BOMAKELLIA = new CustomTrigger("pf_book_bomakellia");
     public static final CustomTrigger CLICK_BOTHRODENDRON = new CustomTrigger("pf_book_bothrodendron");
+    public static final CustomTrigger CLICK_LEPTOPHLOEUM = new CustomTrigger("pf_book_leptophloeum");
     public static final CustomTrigger CLICK_BRACHIOPOD_GIGANTOPRODUCTUS = new CustomTrigger("pf_book_brachiopod_gigantoproductus");
     public static final CustomTrigger CLICK_BRACHIOPOD_ORTHID = new CustomTrigger("pf_book_brachiopod_orthid");
     public static final CustomTrigger CLICK_BRACHIOPOD_SPIRIFERID = new CustomTrigger("pf_book_brachiopod_spiriferid");
@@ -1947,6 +1948,7 @@ public class ModTriggers
             CLICK_BOMAKELLIA,
             CLICK_MOSACAULIS,
             CLICK_BOTHRODENDRON,
+            CLICK_LEPTOPHLOEUM,
             CLICK_BRACHIOPOD_GIGANTOPRODUCTUS,
             CLICK_BRACHIOPOD_ORTHID,
             CLICK_BRACHIOPOD_SPIRIFERID,
