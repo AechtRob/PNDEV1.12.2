@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Amphibia$(br)>Temnospondyli$(br)>Plagiosauroidea$(br)>Laidleriidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/laidleria.png"],
-			"title": "L. gracilis",
-			"text": ""
+			"type": "entity",
+			"name": "L. gracilis",
+			"entity": "lepidodendron:prehistoric_flora_laidleria",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_laidleria",
 			"type": "text",
-			"text": "Laidleria's fossil was found in sediments dated to some time within the early to mid-Triassic period, coming from modern day South Africa. It was a fairly small temnospondyl amphibian, growing to somewhere in the region of 30-40cm in length, with a very flat body and skull, and with sprawling legs. The single fossil known has been studied since 1957 and presented researchers with some difficulty in interpreting,"
+			"text": "Laidleria's fossil was found in sediments dated to some time within the early to middle Triassic period, coming from modern day South Africa. It was a fairly small temnospondyl amphibian, growing to somewhere in the region of 30 - 40 cm in length, with a very flat body and skull, and with sprawling legs. The single fossil known has been studied since 1957 and presented researchers with some difficulty in interpreting ,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_laidleria",

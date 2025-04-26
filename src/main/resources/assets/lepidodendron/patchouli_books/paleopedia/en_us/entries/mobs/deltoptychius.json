@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Chimaeriformes$(br)>Deltoptychiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/deltoptychius.png"],
-			"title": "D. gibberuius",
-			"text": ""
+			"type": "entity",
+			"name": "D. gibberuius",
+			"entity": "lepidodendron:prehistoric_flora_deltoptychius",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_deltoptychius",

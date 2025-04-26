@@ -481,6 +481,70 @@ public class ModelEastmanosteus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Eastmanosteus.offsetY = -0.3F;
+        this.Eastmanosteus.offsetX = 0.4F;
+        this.Eastmanosteus.offsetZ = 2.0F;
+        this.Eastmanosteus.rotateAngleY = (float)Math.toRadians(120);
+        this.Eastmanosteus.rotateAngleX = (float)Math.toRadians(1);
+        this.Eastmanosteus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Eastmanosteus.scaleChildren = true;
+        float scaler = 0.8F;
+        this.Eastmanosteus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Eastmanosteus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(cube_r1, -1.5708F, -1.4137F, 1.5746F);
+        this.setRotateAngle(cube_r2, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.2967F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.6632F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.4189F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.2269F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.2356F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.1222F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.4961F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.2443F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0175F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -1.5708F, -1.3788F, 1.5708F);
+        this.setRotateAngle(cube_r12, 0.0698F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.1571F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(cube_r16, 0.0349F, 0.0F, 0.0F);
+        this.setRotateAngle(PectoralL, 0.3054F, 0.0F, -0.1745F);
+        this.setRotateAngle(cube_r17, 0.0F, -0.1745F, 0.4363F);
+        this.setRotateAngle(PectoralR, 0.2618F, 0.0F, 0.3054F);
+        this.setRotateAngle(cube_r18, 0.0F, 0.1745F, -0.4363F);
+        this.setRotateAngle(Body2, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(cube_r19, 0.2443F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r20, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(VentralL, 0.0F, 0.0F, 0.2182F);
+        this.setRotateAngle(cube_r21, 0.0F, -0.6981F, 0.3054F);
+        this.setRotateAngle(VentralR, 0.0F, 0.0F, -0.3927F);
+        this.setRotateAngle(cube_r22, 0.0F, 0.6981F, -0.3054F);
+        this.setRotateAngle(Body3, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(cube_r23, -0.5919F, -0.2188F, 0.1449F);
+        this.setRotateAngle(cube_r24, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r25, -0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(cube_r26, 0.733F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r27, 0.3316F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r28, -0.0175F, 0.0F, 0.0F);
+        this.setRotateAngle(Body5, 0.0894F, -0.2173F, -0.0193F);
+        this.setRotateAngle(cube_r29, 0.384F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r30, 0.0698F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(cube_r31, 0.3316F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r32, 0.0175F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(cube_r33, 0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r34, 0.4014F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Eastmanosteus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Eastmanosteus.setScale(1.0F, 1.0F, 1.0F);
+        this.Eastmanosteus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

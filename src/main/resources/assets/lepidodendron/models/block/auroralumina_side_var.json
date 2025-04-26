@@ -2,7 +2,8 @@
     "parent": "lepidodendron:block/cube_noao",
     "textures": {
         "particle": "lepidodendron:blocks/auroralumina_side_var",
-        "plant": "lepidodendron:blocks/auroralumina_side_var"
+        "plant1": "lepidodendron:blocks/auroralumina_side_var",
+        "plant2": "lepidodendron:blocks/auroralumina_side"
     },
     "elements": [
         {
@@ -11,8 +12,8 @@
             "shade": false,
             "rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 16]},
             "faces": {
-                "east": {"uv": [0, 0, 16, 16], "texture": "#plant"},
-                "west": {"uv": [16, 0, 0, 16], "texture": "#plant"}
+                "east": {"uv": [0, 0, 16, 16], "texture": "#plant1"},
+                "west": {"uv": [16, 0, 0, 16], "texture": "#plant1"}
             }
         },
         {
@@ -21,8 +22,8 @@
             "shade": false,
             "rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 16]},
             "faces": {
-                "east": {"uv": [0, 0, 16, 16], "texture": "#plant"},
-                "west": {"uv": [16, 0, 0, 16], "texture": "#plant"}
+                "east": {"uv": [0, 0, 16, 16], "texture": "#plant2"},
+                "west": {"uv": [16, 0, 0, 16], "texture": "#plant2"}
             }
         }
     ]

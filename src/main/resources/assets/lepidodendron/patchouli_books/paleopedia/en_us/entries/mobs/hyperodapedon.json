@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Rhynchosauria$(br)>Hyperodapedontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/hyperodapedon.png"],
-			"title": "H. sanjuanensis",
-			"text": ""
+			"type": "entity",
+			"name": "H. sanjuanensis",
+			"entity": "lepidodendron:prehistoric_flora_hyperodapedon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hyperodapedon",
 			"type": "text",
-			"text": "Hyperodapedon was a genus of rhynchosaurian reptile that lived during the Middle to Late Triassic. It was seemingly quite widespread, with fossils occurring in Africa, Asia, Europe, North America, and South America. This animal used its hind legs and beak-like snout to dig for buried plant matter, that it then processed with jaws built for precision-shearing."
+			"text": "Hyperodapedon was a genus of rhynchosaurian reptile that lived during the Middle to Upper Triassic. It was seemingly quite widespread, with fossils occurring in Africa, Asia, Europe, North America, and South America. This animal used its hind legs and beak-like snout to dig for buried plant matter, that it then processed with jaws built for precision-shearing."
 		},
 		{
 			"type": "lepidodendron:diet",

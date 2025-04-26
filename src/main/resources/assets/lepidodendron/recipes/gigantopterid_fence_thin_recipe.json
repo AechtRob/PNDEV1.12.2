@@ -7,17 +7,20 @@
   ],
   "key": {
     "3": {
-      "item": "lepidodendron:gigantopterid_log"
+      "type": "forge:ore_dict",
+      "ore": "itemGigantopteridStem"
     },
     "4": {
       "type": "forge:ore_dict",
       "ore": "stickWood"
     },
     "5": {
-      "item": "lepidodendron:gigantopterid_log"
+      "type": "forge:ore_dict",
+      "ore": "itemGigantopteridStem"
     },
     "6": {
-      "item": "lepidodendron:gigantopterid_log"
+      "type": "forge:ore_dict",
+      "ore": "itemGigantopteridStem"
     },
     "7": {
       "type": "forge:ore_dict",

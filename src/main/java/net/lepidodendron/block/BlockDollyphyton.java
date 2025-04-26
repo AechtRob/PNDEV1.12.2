@@ -18,6 +18,7 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -67,7 +68,7 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockDollyphyton.TileEntityCustom.class, "lepidodendron:tileentitydollyphyton");
-		OreDictionary.registerOre("plantdnaPNlepidodendron:dollyphyton", BlockDollyphyton.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:dollyphyton", BlockDollyphyton.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockDollyphyton.block);
 		OreDictionary.registerOre("plant", BlockDollyphyton.block);
 		OreDictionary.registerOre("itemMoss", BlockDollyphyton.block);
@@ -80,17 +81,17 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:dollyphyton", "inventory"));
 	}
-
 	public static class BlockCustom extends SeedSporeFacingBlockBase implements net.minecraftforge.common.IShearable, IAdvancementGranter, ILayableMoss {
 
+		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public static final PropertyBool NORTH = PropertyBool.create("north");
-   		public static final PropertyBool EAST = PropertyBool.create("east");
-	    public static final PropertyBool SOUTH = PropertyBool.create("south");
-	    public static final PropertyBool WEST = PropertyBool.create("west");
-	    public static final PropertyBool UP = PropertyBool.create("up");
-	    public static final PropertyBool DOWN = PropertyBool.create("down");
-	    public static final PropertyBool SPREADABLE = PropertyBool.create("spreadable");
-    
+		public static final PropertyBool EAST = PropertyBool.create("east");
+		public static final PropertyBool SOUTH = PropertyBool.create("south");
+		public static final PropertyBool WEST = PropertyBool.create("west");
+		public static final PropertyBool UP = PropertyBool.create("up");
+		public static final PropertyBool DOWN = PropertyBool.create("down");
+		public static final PropertyBool SPREADABLE = PropertyBool.create("spreadable");
+
 		public BlockCustom() {
 			super(Material.VINE);
 			setTranslationKey("pf_dollyphyton");
@@ -104,15 +105,15 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, true));
 		}
 
+		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
+		}
+
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
 			return ModTriggers.CLICK_DOLLYPHYTON;
-		}
-
-		@Override
-		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
-			return true;
 		}
 
 		@Override
@@ -139,14 +140,14 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos){
-			
-	    	Block block = worldIn.getBlockState(pos.down()).getBlock();
-	        Block block1 = worldIn.getBlockState(pos.up()).getBlock();
-	        Block block2 = worldIn.getBlockState(pos.north()).getBlock();
-	        Block block3 = worldIn.getBlockState(pos.east()).getBlock();
-	        Block block4 = worldIn.getBlockState(pos.south()).getBlock();
-	        Block block5 = worldIn.getBlockState(pos.west()).getBlock();
-	        
+
+			Block block = worldIn.getBlockState(pos.down()).getBlock();
+			Block block1 = worldIn.getBlockState(pos.up()).getBlock();
+			Block block2 = worldIn.getBlockState(pos.north()).getBlock();
+			Block block3 = worldIn.getBlockState(pos.east()).getBlock();
+			Block block4 = worldIn.getBlockState(pos.south()).getBlock();
+			Block block5 = worldIn.getBlockState(pos.west()).getBlock();
+
 			Boolean attachmentblock = false;
 			Boolean attachmentblock1 = false;
 			Boolean attachmentblock2 = false;
@@ -160,16 +161,16 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 			IBlockState blockState3 = worldIn.getBlockState(pos.east());
 			IBlockState blockState4 = worldIn.getBlockState(pos.south());
 			IBlockState blockState5 = worldIn.getBlockState(pos.west());
-			
-            if (blockState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID) 
-            {
-            	if (state.getValue(FACING) == EnumFacing.DOWN)
-	            {
-					if ((blockState2.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID) 
-						|| (blockState3.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID) 
-						|| (blockState4.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID)
-						|| (blockState5.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID) 
-						) {
+
+			if (blockState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)
+			{
+				if (state.getValue(FACING) == EnumFacing.DOWN)
+				{
+					if ((blockState2.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID)
+							|| (blockState3.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID)
+							|| (blockState4.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID)
+							|| (blockState5.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID)
+					) {
 						attachmentblock = true;
 					}
 				}
@@ -177,17 +178,17 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 				{
 					attachmentblock = true;
 				}
-            }
+			}
 
-            if (blockState1.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
-            {
-            	if (state.getValue(FACING) == EnumFacing.UP)
-	            {
-					if ((blockState2.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID) 
-						|| (blockState3.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID) 
-						|| (blockState4.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID)
-						|| (blockState5.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID) 
-						) {
+			if (blockState1.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
+			{
+				if (state.getValue(FACING) == EnumFacing.UP)
+				{
+					if ((blockState2.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID)
+							|| (blockState3.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID)
+							|| (blockState4.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID)
+							|| (blockState5.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID)
+					) {
 						attachmentblock1 = true;
 					}
 				}
@@ -195,17 +196,17 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 				{
 					attachmentblock1 = true;
 				}
-            }
+			}
 
-            if (blockState2.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID)
-            {
-            	if (state.getValue(FACING) == EnumFacing.NORTH)
-	            {
-					if ((blockState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID) 
-						|| (blockState3.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID) 
-						|| (blockState1.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
-						|| (blockState5.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID) 
-						) {
+			if (blockState2.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID)
+			{
+				if (state.getValue(FACING) == EnumFacing.NORTH)
+				{
+					if ((blockState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)
+							|| (blockState3.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID)
+							|| (blockState1.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
+							|| (blockState5.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID)
+					) {
 						attachmentblock2 = true;
 					}
 				}
@@ -213,17 +214,17 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 				{
 					attachmentblock2 = true;
 				}
-            }
+			}
 
-            if (blockState3.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID) 
-            {
-            	if (state.getValue(FACING) == EnumFacing.EAST)
-	            {
-					if ((blockState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID) 
-						|| (blockState2.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID) 
-						|| (blockState1.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
-						|| (blockState4.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID) 
-						) {
+			if (blockState3.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID)
+			{
+				if (state.getValue(FACING) == EnumFacing.EAST)
+				{
+					if ((blockState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)
+							|| (blockState2.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID)
+							|| (blockState1.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
+							|| (blockState4.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID)
+					) {
 						attachmentblock3 = true;
 					}
 				}
@@ -231,17 +232,17 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 				{
 					attachmentblock3 = true;
 				}
-            }
+			}
 
-            if (blockState4.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID) 
-            {
-            	if (state.getValue(FACING) == EnumFacing.SOUTH)
-	            {
-					if ((blockState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID) 
-						|| (blockState3.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID) 
-						|| (blockState1.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
-						|| (blockState5.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID) 
-						) {
+			if (blockState4.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID)
+			{
+				if (state.getValue(FACING) == EnumFacing.SOUTH)
+				{
+					if ((blockState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)
+							|| (blockState3.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID)
+							|| (blockState1.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
+							|| (blockState5.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID)
+					) {
 						attachmentblock4 = true;
 					}
 				}
@@ -249,17 +250,17 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 				{
 					attachmentblock4 = true;
 				}
-            }
+			}
 
-            if (blockState5.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID) 
-           	{
-            	if (state.getValue(FACING) == EnumFacing.WEST)
-	            {
-					if ((blockState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID) 
-						|| (blockState2.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID) 
-						|| (blockState1.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
-						|| (blockState4.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID) 
-						) {
+			if (blockState5.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID)
+			{
+				if (state.getValue(FACING) == EnumFacing.WEST)
+				{
+					if ((blockState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)
+							|| (blockState2.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID)
+							|| (blockState1.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
+							|| (blockState4.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID)
+					) {
 						attachmentblock5 = true;
 					}
 				}
@@ -267,23 +268,23 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 				{
 					attachmentblock5 = true;
 				}
-            }
+			}
 
-	        return state.withProperty(DOWN, attachmentblock).withProperty(UP, attachmentblock1).withProperty(NORTH, attachmentblock2).withProperty(EAST, attachmentblock3).withProperty(SOUTH, attachmentblock4).withProperty(WEST, attachmentblock5);
-	    }
-			
+			return state.withProperty(DOWN, attachmentblock).withProperty(UP, attachmentblock1).withProperty(NORTH, attachmentblock2).withProperty(EAST, attachmentblock3).withProperty(SOUTH, attachmentblock4).withProperty(WEST, attachmentblock5);
+		}
+
 		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
-		
+
 		@Override
 		public NonNullList<ItemStack> onSheared(ItemStack item, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune) {
 			return NonNullList.withSize(1, new ItemStack(this, (int) (1)));
 		}
-	
-	    @Nullable
-	    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
-	    {
-	        return NULL_AABB;
-	    }
+
+		@Nullable
+		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
+		{
+			return NULL_AABB;
+		}
 
 		@SideOnly(Side.CLIENT)
 		@Override
@@ -293,11 +294,11 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    	public BlockRenderLayer getRenderLayer()
-    {
-        return BlockRenderLayer.CUTOUT;
-    }
-		
+		public BlockRenderLayer getRenderLayer()
+		{
+			return BlockRenderLayer.CUTOUT;
+		}
+
 		@Override
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
 			return layer == BlockRenderLayer.CUTOUT_MIPPED;
@@ -307,23 +308,23 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 		public boolean isOpaqueCube(IBlockState state) {
 			return false;
 		}
-		
+
 		@Override
 		public boolean isFullCube(IBlockState state)
-	    {
-	        return false;
-	    }
+		{
+			return false;
+		}
 
 		@Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-			
+
 			Block block = source.getBlockState(pos.down()).getBlock();
-	        Block block1 = source.getBlockState(pos.up()).getBlock();
-	        Block block2 = source.getBlockState(pos.north()).getBlock();
-	        Block block3 = source.getBlockState(pos.east()).getBlock();
-	        Block block4 = source.getBlockState(pos.south()).getBlock();
-	        Block block5 = source.getBlockState(pos.west()).getBlock();
-	        
+			Block block1 = source.getBlockState(pos.up()).getBlock();
+			Block block2 = source.getBlockState(pos.north()).getBlock();
+			Block block3 = source.getBlockState(pos.east()).getBlock();
+			Block block4 = source.getBlockState(pos.south()).getBlock();
+			Block block5 = source.getBlockState(pos.west()).getBlock();
+
 			Boolean attachmentblock = false;
 			Boolean attachmentblock1 = false;
 			Boolean attachmentblock2 = false;
@@ -337,16 +338,16 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 			IBlockState blockState3 = source.getBlockState(pos.east());
 			IBlockState blockState4 = source.getBlockState(pos.south());
 			IBlockState blockState5 = source.getBlockState(pos.west());
-			
-            if (blockState.getBlockFaceShape(source, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID) 
-            {
-            	if (state.getValue(FACING) == EnumFacing.DOWN)
-	            {
-					if ((blockState2.getBlockFaceShape(source, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID) 
-						|| (blockState3.getBlockFaceShape(source, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID) 
-						|| (blockState4.getBlockFaceShape(source, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID)
-						|| (blockState5.getBlockFaceShape(source, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID) 
-						) {
+
+			if (blockState.getBlockFaceShape(source, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)
+			{
+				if (state.getValue(FACING) == EnumFacing.DOWN)
+				{
+					if ((blockState2.getBlockFaceShape(source, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID)
+							|| (blockState3.getBlockFaceShape(source, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID)
+							|| (blockState4.getBlockFaceShape(source, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID)
+							|| (blockState5.getBlockFaceShape(source, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID)
+					) {
 						attachmentblock = true;
 					}
 				}
@@ -354,17 +355,17 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 				{
 					attachmentblock = true;
 				}
-            }
+			}
 
-            if (blockState1.getBlockFaceShape(source, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
-            {
-            	if (state.getValue(FACING) == EnumFacing.UP)
-	            {
-					if ((blockState2.getBlockFaceShape(source, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID) 
-						|| (blockState3.getBlockFaceShape(source, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID) 
-						|| (blockState4.getBlockFaceShape(source, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID)
-						|| (blockState5.getBlockFaceShape(source, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID) 
-						) {
+			if (blockState1.getBlockFaceShape(source, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
+			{
+				if (state.getValue(FACING) == EnumFacing.UP)
+				{
+					if ((blockState2.getBlockFaceShape(source, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID)
+							|| (blockState3.getBlockFaceShape(source, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID)
+							|| (blockState4.getBlockFaceShape(source, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID)
+							|| (blockState5.getBlockFaceShape(source, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID)
+					) {
 						attachmentblock1 = true;
 					}
 				}
@@ -372,17 +373,17 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 				{
 					attachmentblock1 = true;
 				}
-            }
+			}
 
-            if (blockState2.getBlockFaceShape(source, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID)
-            {
-            	if (state.getValue(FACING) == EnumFacing.NORTH)
-	            {
-					if ((blockState.getBlockFaceShape(source, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID) 
-						|| (blockState3.getBlockFaceShape(source, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID) 
-						|| (blockState1.getBlockFaceShape(source, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
-						|| (blockState5.getBlockFaceShape(source, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID) 
-						) {
+			if (blockState2.getBlockFaceShape(source, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID)
+			{
+				if (state.getValue(FACING) == EnumFacing.NORTH)
+				{
+					if ((blockState.getBlockFaceShape(source, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)
+							|| (blockState3.getBlockFaceShape(source, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID)
+							|| (blockState1.getBlockFaceShape(source, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
+							|| (blockState5.getBlockFaceShape(source, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID)
+					) {
 						attachmentblock2 = true;
 					}
 				}
@@ -390,17 +391,17 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 				{
 					attachmentblock2 = true;
 				}
-            }
+			}
 
-            if (blockState3.getBlockFaceShape(source, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID) 
-            {
-            	if (state.getValue(FACING) == EnumFacing.EAST)
-	            {
-					if ((blockState.getBlockFaceShape(source, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID) 
-						|| (blockState2.getBlockFaceShape(source, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID) 
-						|| (blockState1.getBlockFaceShape(source, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
-						|| (blockState4.getBlockFaceShape(source, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID) 
-						) {
+			if (blockState3.getBlockFaceShape(source, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID)
+			{
+				if (state.getValue(FACING) == EnumFacing.EAST)
+				{
+					if ((blockState.getBlockFaceShape(source, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)
+							|| (blockState2.getBlockFaceShape(source, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID)
+							|| (blockState1.getBlockFaceShape(source, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
+							|| (blockState4.getBlockFaceShape(source, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID)
+					) {
 						attachmentblock3 = true;
 					}
 				}
@@ -408,17 +409,17 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 				{
 					attachmentblock3 = true;
 				}
-            }
+			}
 
-            if (blockState4.getBlockFaceShape(source, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID) 
-            {
-            	if (state.getValue(FACING) == EnumFacing.SOUTH)
-	            {
-					if ((blockState.getBlockFaceShape(source, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID) 
-						|| (blockState3.getBlockFaceShape(source, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID) 
-						|| (blockState1.getBlockFaceShape(source, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
-						|| (blockState5.getBlockFaceShape(source, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID) 
-						) {
+			if (blockState4.getBlockFaceShape(source, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID)
+			{
+				if (state.getValue(FACING) == EnumFacing.SOUTH)
+				{
+					if ((blockState.getBlockFaceShape(source, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)
+							|| (blockState3.getBlockFaceShape(source, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID)
+							|| (blockState1.getBlockFaceShape(source, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
+							|| (blockState5.getBlockFaceShape(source, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID)
+					) {
 						attachmentblock4 = true;
 					}
 				}
@@ -426,17 +427,17 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 				{
 					attachmentblock4 = true;
 				}
-            }
+			}
 
-            if (blockState5.getBlockFaceShape(source, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID) 
-           	{
-            	if (state.getValue(FACING) == EnumFacing.WEST)
-	            {
-					if ((blockState.getBlockFaceShape(source, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID) 
-						|| (blockState2.getBlockFaceShape(source, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID) 
-						|| (blockState1.getBlockFaceShape(source, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
-						|| (blockState4.getBlockFaceShape(source, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID) 
-						) {
+			if (blockState5.getBlockFaceShape(source, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID)
+			{
+				if (state.getValue(FACING) == EnumFacing.WEST)
+				{
+					if ((blockState.getBlockFaceShape(source, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)
+							|| (blockState2.getBlockFaceShape(source, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID)
+							|| (blockState1.getBlockFaceShape(source, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID)
+							|| (blockState4.getBlockFaceShape(source, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID)
+					) {
 						attachmentblock5 = true;
 					}
 				}
@@ -444,7 +445,7 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 				{
 					attachmentblock5 = true;
 				}
-            }
+			}
 
 			switch ((EnumFacing) state.getValue(BlockDirectional.FACING)) {
 				case SOUTH :
@@ -456,36 +457,36 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 						return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 0.1D);
 					}
 				case NORTH :
-				if (attachmentblock1 || attachmentblock2 || attachmentblock3 || attachmentblock || attachmentblock5) {
+					if (attachmentblock1 || attachmentblock2 || attachmentblock3 || attachmentblock || attachmentblock5) {
 						return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
 					}
 					else {
 						return new AxisAlignedBB(0.0D, 0.0D, 0.9D, 1.0D, 1.0D, 1.0D);
 					}
 				case WEST :if (attachmentblock1 || attachmentblock2 || attachmentblock || attachmentblock4 || attachmentblock5) {
-						return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
-					}
-					else {
-						return new AxisAlignedBB(0.9D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
-					}
+					return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+				}
+				else {
+					return new AxisAlignedBB(0.9D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+				}
 				case EAST :if (attachmentblock1 || attachmentblock2 || attachmentblock3 || attachmentblock4 || attachmentblock) {
-						return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
-					}
-					else {
-						return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.1D, 1.0D, 1.0D);
-					}
+					return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+				}
+				else {
+					return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.1D, 1.0D, 1.0D);
+				}
 				case UP :if (attachmentblock1 || attachmentblock2 || attachmentblock3 || attachmentblock4 || attachmentblock5) {
-						return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
-					}
-					else {
-						return new AxisAlignedBB(0.0D, 0D, 0.0D, 1.0D, 0.1D, 1.0D);
-					}
+					return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+				}
+				else {
+					return new AxisAlignedBB(0.0D, 0D, 0.0D, 1.0D, 0.1D, 1.0D);
+				}
 				case DOWN :if (attachmentblock || attachmentblock2 || attachmentblock3 || attachmentblock4 || attachmentblock5) {
-						return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
-					}
-					else {
-						return new AxisAlignedBB(0.0D, 1D, 0.0D, 1.0D, 0.9D, 1.0D);
-					}
+					return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+				}
+				else {
+					return new AxisAlignedBB(0.0D, 1D, 0.0D, 1.0D, 0.9D, 1.0D);
+				}
 			}
 		}
 
@@ -513,22 +514,22 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public int getMetaFromState(IBlockState state) {
 			int i = 0;
-	        i = i | ((EnumFacing) state.getValue(FACING)).getIndex();
-	
-	        if (((Boolean)state.getValue(SPREADABLE)).booleanValue())
-	        {
-	            i |= 8;
-	        }
-	
-	        return i;
-			
+			i = i | ((EnumFacing) state.getValue(FACING)).getIndex();
+
+			if (((Boolean)state.getValue(SPREADABLE)).booleanValue())
+			{
+				i |= 8;
+			}
+
+			return i;
+
 			//return ((EnumFacing) state.getValue(FACING)).getIndex();
 		}
 
 		@Override
 		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta,
-				EntityLivingBase placer) {
-				return this.getDefaultState().withProperty(FACING, facing);
+												EntityLivingBase placer) {
+			return this.getDefaultState().withProperty(FACING, facing);
 		}
 
 		@Override
@@ -553,305 +554,309 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		protected boolean canSilkHarvest()
-	    {
-	        return false;
-	    }
+		{
+			return false;
+		}
 
 		@Override
 		public void neighborChanged(IBlockState state, World world, BlockPos pos, Block neighborBlock, BlockPos fromPos) {
-			
+
 			if (!world.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
 
 			//Test the orientation of this block and then check if it is still connected:
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
 				IBlockState iblockstate = world.getBlockState(pos.south());
-				if (world.isAirBlock(pos.south()) || 
-					(
-						(iblockstate.getBlockFaceShape(world, pos.south(), EnumFacing.NORTH) != BlockFaceShape.SOLID)
-						&& (!iblockstate.getBlock().isLeaves(iblockstate, world, pos.south()))
-					)	
+				if (world.isAirBlock(pos.south()) ||
+						(
+								(iblockstate.getBlockFaceShape(world, pos.south(), EnumFacing.NORTH) != BlockFaceShape.SOLID)
+										&& (!iblockstate.getBlock().isLeaves(iblockstate, world, pos.south()))
+						)
 				)
-					{
-						world.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
-						entityToSpawn.setPickupDelay(10);
-						world.spawnEntity(entityToSpawn);
+				{
+					world.setBlockToAir(pos);
+					EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					world.spawnEntity(entityToSpawn);
 
-						SpawnEggs(world, pos);
-						//Clear nbt:
-						TileEntity te = world.getTileEntity(pos);
-						if (te != null) {
-							te.getTileData().removeTag("creature");
-						}
-						world.notifyBlockUpdate(pos, state, state, 3);
+					SpawnEggs(world, pos);
+					//Clear nbt:
+					TileEntity te = world.getTileEntity(pos);
+					if (te != null) {
+						te.getTileData().removeTag("creature");
 					}
+					world.notifyBlockUpdate(pos, state, state, 3);
 				}
+			}
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.SOUTH) {
 				IBlockState iblockstate = world.getBlockState(pos.north());
-				if (world.isAirBlock(pos.north()) || 
-					(
-						(iblockstate.getBlockFaceShape(world, pos.north(), EnumFacing.SOUTH) != BlockFaceShape.SOLID)
-						&& (!iblockstate.getBlock().isLeaves(iblockstate, world, pos.north()))
-					)	
+				if (world.isAirBlock(pos.north()) ||
+						(
+								(iblockstate.getBlockFaceShape(world, pos.north(), EnumFacing.SOUTH) != BlockFaceShape.SOLID)
+										&& (!iblockstate.getBlock().isLeaves(iblockstate, world, pos.north()))
+						)
 				)
-					{
-						world.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
-						entityToSpawn.setPickupDelay(10);
-						world.spawnEntity(entityToSpawn);
+				{
+					world.setBlockToAir(pos);
+					EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					world.spawnEntity(entityToSpawn);
 
-						SpawnEggs(world, pos);
-						//Clear nbt:
-						TileEntity te = world.getTileEntity(pos);
-						if (te != null) {
-							te.getTileData().removeTag("creature");
-						}
-						world.notifyBlockUpdate(pos, state, state, 3);
+					SpawnEggs(world, pos);
+					//Clear nbt:
+					TileEntity te = world.getTileEntity(pos);
+					if (te != null) {
+						te.getTileData().removeTag("creature");
 					}
+					world.notifyBlockUpdate(pos, state, state, 3);
 				}
+			}
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.EAST) {
 				IBlockState iblockstate = world.getBlockState(pos.west());
-				if (world.isAirBlock(pos.west()) || 
-					(
-						(iblockstate.getBlockFaceShape(world, pos.west(), EnumFacing.EAST) != BlockFaceShape.SOLID)
-						&& (!iblockstate.getBlock().isLeaves(iblockstate, world, pos.west()))
-					)	
+				if (world.isAirBlock(pos.west()) ||
+						(
+								(iblockstate.getBlockFaceShape(world, pos.west(), EnumFacing.EAST) != BlockFaceShape.SOLID)
+										&& (!iblockstate.getBlock().isLeaves(iblockstate, world, pos.west()))
+						)
 				)
-					{
-						world.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
-						entityToSpawn.setPickupDelay(10);
-						world.spawnEntity(entityToSpawn);
+				{
+					world.setBlockToAir(pos);
+					EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					world.spawnEntity(entityToSpawn);
 
-						SpawnEggs(world, pos);
-						//Clear nbt:
-						TileEntity te = world.getTileEntity(pos);
-						if (te != null) {
-							te.getTileData().removeTag("creature");
-						}
-						world.notifyBlockUpdate(pos, state, state, 3);
+					SpawnEggs(world, pos);
+					//Clear nbt:
+					TileEntity te = world.getTileEntity(pos);
+					if (te != null) {
+						te.getTileData().removeTag("creature");
 					}
+					world.notifyBlockUpdate(pos, state, state, 3);
 				}
+			}
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.WEST) {
 				IBlockState iblockstate = world.getBlockState(pos.east());
-				if (world.isAirBlock(pos.east()) || 
-					(
-						(iblockstate.getBlockFaceShape(world, pos.east(), EnumFacing.WEST) != BlockFaceShape.SOLID)
-						&& (!iblockstate.getBlock().isLeaves(iblockstate, world, pos.east()))
-					)	
+				if (world.isAirBlock(pos.east()) ||
+						(
+								(iblockstate.getBlockFaceShape(world, pos.east(), EnumFacing.WEST) != BlockFaceShape.SOLID)
+										&& (!iblockstate.getBlock().isLeaves(iblockstate, world, pos.east()))
+						)
 				)
-					{
-						world.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
-						entityToSpawn.setPickupDelay(10);
-						world.spawnEntity(entityToSpawn);
+				{
+					world.setBlockToAir(pos);
+					EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					world.spawnEntity(entityToSpawn);
 
-						SpawnEggs(world, pos);
-						//Clear nbt:
-						TileEntity te = world.getTileEntity(pos);
-						if (te != null) {
-							te.getTileData().removeTag("creature");
-						}
-						world.notifyBlockUpdate(pos, state, state, 3);
+					SpawnEggs(world, pos);
+					//Clear nbt:
+					TileEntity te = world.getTileEntity(pos);
+					if (te != null) {
+						te.getTileData().removeTag("creature");
 					}
+					world.notifyBlockUpdate(pos, state, state, 3);
 				}
+			}
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.UP) {
 				IBlockState iblockstate = world.getBlockState(pos.down());
-				if (world.isAirBlock(pos.down()) || 
-					(
-						(iblockstate.getBlockFaceShape(world, pos.down(), EnumFacing.UP) != BlockFaceShape.SOLID)
-						&& (!iblockstate.getBlock().isLeaves(iblockstate, world, pos.down()))
-						&& (iblockstate.getMaterial() != Material.WATER)
-					)	
+				if (world.isAirBlock(pos.down()) ||
+						(
+								(iblockstate.getBlockFaceShape(world, pos.down(), EnumFacing.UP) != BlockFaceShape.SOLID)
+										&& (!iblockstate.getBlock().isLeaves(iblockstate, world, pos.down()))
+										&& (iblockstate.getMaterial() != Material.WATER)
+						)
 				)
-					{
-						world.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
-						entityToSpawn.setPickupDelay(10);
-						world.spawnEntity(entityToSpawn);
+				{
+					world.setBlockToAir(pos);
+					EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					world.spawnEntity(entityToSpawn);
 
-						SpawnEggs(world, pos);
-						//Clear nbt:
-						TileEntity te = world.getTileEntity(pos);
-						if (te != null) {
-							te.getTileData().removeTag("creature");
-						}
-						world.notifyBlockUpdate(pos, state, state, 3);
+					SpawnEggs(world, pos);
+					//Clear nbt:
+					TileEntity te = world.getTileEntity(pos);
+					if (te != null) {
+						te.getTileData().removeTag("creature");
 					}
+					world.notifyBlockUpdate(pos, state, state, 3);
 				}
+			}
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.DOWN) {
 				IBlockState iblockstate = world.getBlockState(pos.up());
-				if (world.isAirBlock(pos.up()) || 
-					(
-						(iblockstate.getBlockFaceShape(world, pos.up(), EnumFacing.DOWN) != BlockFaceShape.SOLID)
-						&& (!iblockstate.getBlock().isLeaves(iblockstate, world, pos.up()))
-					)	
+				if (world.isAirBlock(pos.up()) ||
+						(
+								(iblockstate.getBlockFaceShape(world, pos.up(), EnumFacing.DOWN) != BlockFaceShape.SOLID)
+										&& (!iblockstate.getBlock().isLeaves(iblockstate, world, pos.up()))
+						)
 				)
-					{
-						world.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
-						entityToSpawn.setPickupDelay(10);
-						world.spawnEntity(entityToSpawn);
+				{
+					world.setBlockToAir(pos);
+					EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					world.spawnEntity(entityToSpawn);
 
-						SpawnEggs(world, pos);
-						//Clear nbt:
-						TileEntity te = world.getTileEntity(pos);
-						if (te != null) {
-							te.getTileData().removeTag("creature");
-						}
-						world.notifyBlockUpdate(pos, state, state, 3);
+					SpawnEggs(world, pos);
+					//Clear nbt:
+					TileEntity te = world.getTileEntity(pos);
+					if (te != null) {
+						te.getTileData().removeTag("creature");
 					}
+					world.notifyBlockUpdate(pos, state, state, 3);
 				}
+			}
 		}
 
 		@Override
-		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) 
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+			updateTickForced(worldIn, pos, state, rand, false);
+		}
+
+		public static void updateTickForced(World worldIn, BlockPos pos, IBlockState state, Random rand, boolean forced)
 		{
 			if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
 
-				//Test the orientation of this block and then check if it is still connected:
+			//Test the orientation of this block and then check if it is still connected:
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
 				IBlockState iblockstate = worldIn.getBlockState(pos.south());
-				if (worldIn.isAirBlock(pos.south()) || 
-					(
-						(iblockstate.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) != BlockFaceShape.SOLID)
-						&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.south()))
-					)	
+				if (worldIn.isAirBlock(pos.south()) ||
+						(
+								(iblockstate.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) != BlockFaceShape.SOLID)
+										&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.south()))
+						)
 				)
-					{
-						worldIn.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
-						entityToSpawn.setPickupDelay(10);
-						worldIn.spawnEntity(entityToSpawn);
+				{
+					worldIn.setBlockToAir(pos);
+					EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockDollyphyton.block, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					worldIn.spawnEntity(entityToSpawn);
 
-						SpawnEggs(worldIn, pos);
-						//Clear nbt:
-						TileEntity te = worldIn.getTileEntity(pos);
-						if (te != null) {
-							te.getTileData().removeTag("creature");
-						}
-						worldIn.notifyBlockUpdate(pos, state, state, 3);
+					SpawnEggs(worldIn, pos);
+					//Clear nbt:
+					TileEntity te = worldIn.getTileEntity(pos);
+					if (te != null) {
+						te.getTileData().removeTag("creature");
 					}
+					worldIn.notifyBlockUpdate(pos, state, state, 3);
 				}
+			}
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.SOUTH) {
 				IBlockState iblockstate = worldIn.getBlockState(pos.north());
-				if (worldIn.isAirBlock(pos.north()) || 
-					(
-						(iblockstate.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) != BlockFaceShape.SOLID)
-						&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.north()))
-					)	
+				if (worldIn.isAirBlock(pos.north()) ||
+						(
+								(iblockstate.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) != BlockFaceShape.SOLID)
+										&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.north()))
+						)
 				)
-					{
-						worldIn.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
-						entityToSpawn.setPickupDelay(10);
-						worldIn.spawnEntity(entityToSpawn);
+				{
+					worldIn.setBlockToAir(pos);
+					EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockDollyphyton.block, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					worldIn.spawnEntity(entityToSpawn);
 
-						SpawnEggs(worldIn, pos);
-						//Clear nbt:
-						TileEntity te = worldIn.getTileEntity(pos);
-						if (te != null) {
-							te.getTileData().removeTag("creature");
-						}
-						worldIn.notifyBlockUpdate(pos, state, state, 3);
+					SpawnEggs(worldIn, pos);
+					//Clear nbt:
+					TileEntity te = worldIn.getTileEntity(pos);
+					if (te != null) {
+						te.getTileData().removeTag("creature");
 					}
+					worldIn.notifyBlockUpdate(pos, state, state, 3);
 				}
+			}
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.EAST) {
 				IBlockState iblockstate = worldIn.getBlockState(pos.west());
-				if (worldIn.isAirBlock(pos.west()) || 
-					(
-						(iblockstate.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) != BlockFaceShape.SOLID)
-						&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.west()))
-					)	
+				if (worldIn.isAirBlock(pos.west()) ||
+						(
+								(iblockstate.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) != BlockFaceShape.SOLID)
+										&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.west()))
+						)
 				)
-					{
-						worldIn.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
-						entityToSpawn.setPickupDelay(10);
-						worldIn.spawnEntity(entityToSpawn);
+				{
+					worldIn.setBlockToAir(pos);
+					EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockDollyphyton.block, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					worldIn.spawnEntity(entityToSpawn);
 
-						SpawnEggs(worldIn, pos);
-						//Clear nbt:
-						TileEntity te = worldIn.getTileEntity(pos);
-						if (te != null) {
-							te.getTileData().removeTag("creature");
-						}
-						worldIn.notifyBlockUpdate(pos, state, state, 3);
+					SpawnEggs(worldIn, pos);
+					//Clear nbt:
+					TileEntity te = worldIn.getTileEntity(pos);
+					if (te != null) {
+						te.getTileData().removeTag("creature");
 					}
+					worldIn.notifyBlockUpdate(pos, state, state, 3);
 				}
+			}
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.WEST) {
 				IBlockState iblockstate = worldIn.getBlockState(pos.east());
-				if (worldIn.isAirBlock(pos.east()) || 
-					(
-						(iblockstate.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) != BlockFaceShape.SOLID)
-						&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.east()))
-					)	
+				if (worldIn.isAirBlock(pos.east()) ||
+						(
+								(iblockstate.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) != BlockFaceShape.SOLID)
+										&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.east()))
+						)
 				)
-					{
-						worldIn.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
-						entityToSpawn.setPickupDelay(10);
-						worldIn.spawnEntity(entityToSpawn);
+				{
+					worldIn.setBlockToAir(pos);
+					EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockDollyphyton.block, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					worldIn.spawnEntity(entityToSpawn);
 
-						SpawnEggs(worldIn, pos);
-						//Clear nbt:
-						TileEntity te = worldIn.getTileEntity(pos);
-						if (te != null) {
-							te.getTileData().removeTag("creature");
-						}
-						worldIn.notifyBlockUpdate(pos, state, state, 3);
+					SpawnEggs(worldIn, pos);
+					//Clear nbt:
+					TileEntity te = worldIn.getTileEntity(pos);
+					if (te != null) {
+						te.getTileData().removeTag("creature");
 					}
+					worldIn.notifyBlockUpdate(pos, state, state, 3);
 				}
+			}
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.UP) {
 				IBlockState iblockstate = worldIn.getBlockState(pos.down());
-				if (worldIn.isAirBlock(pos.down()) || 
-					(
-						(iblockstate.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) != BlockFaceShape.SOLID)
-						&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.down()))
-						&& (iblockstate.getMaterial() != Material.WATER)
-					)	
+				if (worldIn.isAirBlock(pos.down()) ||
+						(
+								(iblockstate.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) != BlockFaceShape.SOLID)
+										&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.down()))
+										&& (iblockstate.getMaterial() != Material.WATER)
+						)
 				)
-					{
-						worldIn.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
-						entityToSpawn.setPickupDelay(10);
-						worldIn.spawnEntity(entityToSpawn);
+				{
+					worldIn.setBlockToAir(pos);
+					EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockDollyphyton.block, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					worldIn.spawnEntity(entityToSpawn);
 
-						SpawnEggs(worldIn, pos);
-						//Clear nbt:
-						TileEntity te = worldIn.getTileEntity(pos);
-						if (te != null) {
-							te.getTileData().removeTag("creature");
-						}
-						worldIn.notifyBlockUpdate(pos, state, state, 3);
+					SpawnEggs(worldIn, pos);
+					//Clear nbt:
+					TileEntity te = worldIn.getTileEntity(pos);
+					if (te != null) {
+						te.getTileData().removeTag("creature");
 					}
+					worldIn.notifyBlockUpdate(pos, state, state, 3);
 				}
+			}
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.DOWN) {
 				IBlockState iblockstate = worldIn.getBlockState(pos.up());
-				if (worldIn.isAirBlock(pos.up()) || 
-					(
-						(iblockstate.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) != BlockFaceShape.SOLID)
-						&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.up()))
-					)	
+				if (worldIn.isAirBlock(pos.up()) ||
+						(
+								(iblockstate.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) != BlockFaceShape.SOLID)
+										&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.up()))
+						)
 				)
-					{
-						worldIn.setBlockToAir(pos);
-						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
-						entityToSpawn.setPickupDelay(10);
-						worldIn.spawnEntity(entityToSpawn);
+				{
+					worldIn.setBlockToAir(pos);
+					EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockDollyphyton.block, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					worldIn.spawnEntity(entityToSpawn);
 
-						SpawnEggs(worldIn, pos);
-						//Clear nbt:
-						TileEntity te = worldIn.getTileEntity(pos);
-						if (te != null) {
-							te.getTileData().removeTag("creature");
-						}
-						worldIn.notifyBlockUpdate(pos, state, state, 3);
+					SpawnEggs(worldIn, pos);
+					//Clear nbt:
+					TileEntity te = worldIn.getTileEntity(pos);
+					if (te != null) {
+						te.getTileData().removeTag("creature");
 					}
+					worldIn.notifyBlockUpdate(pos, state, state, 3);
 				}
+			}
 
 			//So if the block is still here, can it spread?
-			if ((worldIn.getBlockState(pos).getBlock() == this && Math.random() > 0.8)) {
+			if ((worldIn.getBlockState(pos).getBlock() == BlockDollyphyton.block && Math.random() > 0.8 || forced)) {
 				if ((Boolean) state.getValue(SPREADABLE)) {
 					//System.err.println("Ticked a spreadable block");
 					int spreadradius = (int) LepidodendronConfigPlants.radiusDollyphyton;
@@ -860,13 +865,12 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 
 					if (!worldIn.isAreaLoaded(pos, spreadradius)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
 
-
 					//Pick a random block and a random face within the radius (including the block we are on):
 					//Is there air at the face?
-					
+
 					//If this is the block we are on, can we pick a random face to place more on?
 					//If it's full up, check a new block
-					
+
 					//If this is a different block, run the rules about what face can spread to what:
 
 					int yct = Math.max(-spreadradius, -pos.getY());
@@ -887,550 +891,550 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 									switch (bf) {
 										case 0 : //North
 											//Is there air here and is this face flat?
-											if ((worldIn.isAirBlock(pos1.north())) 
-												&& canPlaceBlockOnSide (worldIn, pos1.north(), EnumFacing.NORTH) ){
+											if ((worldIn.isAirBlock(pos1.north()))
+													&& BlockDollyphyton.block.canPlaceBlockOnSide (worldIn, pos1.north(), EnumFacing.NORTH) ){
 												//Is there moss suitably placed to spread here?
-												if (worldIn.getBlockState(pos1.up().north()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.up().north()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.up().north()), worldIn, pos1.up().north()).getValue(SOUTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.up().north()), worldIn, pos1.up().north()).getValue(FACING) == EnumFacing.NORTH))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.up().north()), worldIn, pos1.up().north()).getValue(SOUTH) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.up().north()), worldIn, pos1.up().north()).getValue(FACING) == EnumFacing.NORTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.down().north()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.down().north()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.down().north()), worldIn, pos1.down().north()).getValue(SOUTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.down().north()), worldIn, pos1.down().north()).getValue(FACING) == EnumFacing.NORTH))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.down().north()), worldIn, pos1.down().north()).getValue(SOUTH) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.down().north()), worldIn, pos1.down().north()).getValue(FACING) == EnumFacing.NORTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.east().north()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.east().north()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.east().north()), worldIn, pos1.east().north()).getValue(SOUTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.east().north()), worldIn, pos1.east().north()).getValue(FACING) == EnumFacing.NORTH))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.east().north()), worldIn, pos1.east().north()).getValue(SOUTH) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.east().north()), worldIn, pos1.east().north()).getValue(FACING) == EnumFacing.NORTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.west().north()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.west().north()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.west().north()), worldIn, pos1.west().north()).getValue(SOUTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.west().north()), worldIn, pos1.west().north()).getValue(FACING) == EnumFacing.NORTH))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.west().north()), worldIn, pos1.west().north()).getValue(SOUTH) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.west().north()), worldIn, pos1.west().north()).getValue(FACING) == EnumFacing.NORTH))
 													{
 														gen = true;
 													}
 												}
-												
-											
-												if (worldIn.getBlockState(pos1.up()).getBlock() == this)
+
+
+												if (worldIn.getBlockState(pos1.up()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(DOWN) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(FACING) == EnumFacing.UP))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(DOWN) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(FACING) == EnumFacing.UP))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.down()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.down()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(UP) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(FACING) == EnumFacing.DOWN))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(UP) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(FACING) == EnumFacing.DOWN))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.east()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.east()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(WEST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(FACING) == EnumFacing.EAST))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(WEST) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(FACING) == EnumFacing.EAST))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.west()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.west()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(EAST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(FACING) == EnumFacing.WEST))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(EAST) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(FACING) == EnumFacing.WEST))
 													{
 														gen = true;
 													}
 												}
 												if (gen) {
 													//Place the moss:
-													worldIn.setBlockState(pos1.north(), this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
+													worldIn.setBlockState(pos1.north(), BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
 												}
 											}
 
 										case 1 : //South
-										//Is there air here and is this face flat?
-											if ((worldIn.isAirBlock(pos1.south())) 
-												&& canPlaceBlockOnSide (worldIn, pos1.south(), EnumFacing.SOUTH) ){
+											//Is there air here and is this face flat?
+											if ((worldIn.isAirBlock(pos1.south()))
+													&& BlockDollyphyton.block.canPlaceBlockOnSide (worldIn, pos1.south(), EnumFacing.SOUTH) ){
 												//Is there moss suitably placed to spread here?
-												if (worldIn.getBlockState(pos1.up().south()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.up().south()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.up().south()), worldIn, pos1.up().south()).getValue(NORTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.up().south()), worldIn, pos1.up().south()).getValue(FACING) == EnumFacing.SOUTH))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.up().south()), worldIn, pos1.up().south()).getValue(NORTH) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.up().south()), worldIn, pos1.up().south()).getValue(FACING) == EnumFacing.SOUTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.down().south()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.down().south()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.down().south()), worldIn, pos1.down().south()).getValue(NORTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.down().south()), worldIn, pos1.down().south()).getValue(FACING) == EnumFacing.SOUTH))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.down().south()), worldIn, pos1.down().south()).getValue(NORTH) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.down().south()), worldIn, pos1.down().south()).getValue(FACING) == EnumFacing.SOUTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.east().south()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.east().south()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.east().south()), worldIn, pos1.east().south()).getValue(NORTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.east().south()), worldIn, pos1.east().south()).getValue(FACING) == EnumFacing.SOUTH))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.east().south()), worldIn, pos1.east().south()).getValue(NORTH) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.east().south()), worldIn, pos1.east().south()).getValue(FACING) == EnumFacing.SOUTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.west().south()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.west().south()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.west().south()), worldIn, pos1.west().south()).getValue(NORTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.west().south()), worldIn, pos1.west().south()).getValue(FACING) == EnumFacing.SOUTH))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.west().south()), worldIn, pos1.west().south()).getValue(NORTH) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.west().south()), worldIn, pos1.west().south()).getValue(FACING) == EnumFacing.SOUTH))
 													{
 														gen = true;
 													}
 												}
-												
-											
-												if (worldIn.getBlockState(pos1.up()).getBlock() == this)
+
+
+												if (worldIn.getBlockState(pos1.up()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(DOWN) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(FACING) == EnumFacing.UP))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(DOWN) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(FACING) == EnumFacing.UP))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.down()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.down()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(UP) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(FACING) == EnumFacing.DOWN))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(UP) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(FACING) == EnumFacing.DOWN))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.east()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.east()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(WEST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(FACING) == EnumFacing.EAST))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(WEST) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(FACING) == EnumFacing.EAST))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.west()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.west()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(EAST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(FACING) == EnumFacing.WEST))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(EAST) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(FACING) == EnumFacing.WEST))
 													{
 														gen = true;
 													}
 												}
 												if (gen) {
 													//Place the moss:
-													worldIn.setBlockState(pos1.south(), this.blockState.getBaseState().withProperty(FACING, EnumFacing.SOUTH).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
+													worldIn.setBlockState(pos1.south(), BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
 												}
 											}
 
 										case 2 : //East
-											if ((worldIn.isAirBlock(pos1.east())) 
-												&& canPlaceBlockOnSide (worldIn, pos1.east(), EnumFacing.EAST) ){
+											if ((worldIn.isAirBlock(pos1.east()))
+													&& BlockDollyphyton.block.canPlaceBlockOnSide (worldIn, pos1.east(), EnumFacing.EAST) ){
 												//Is there moss suitably placed to spread here?
-												if (worldIn.getBlockState(pos1.up().east()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.up().east()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.up().east()), worldIn, pos1.up().east()).getValue(WEST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.up().east()), worldIn, pos1.up().east()).getValue(FACING) == EnumFacing.EAST))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.up().east()), worldIn, pos1.up().east()).getValue(WEST) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.up().east()), worldIn, pos1.up().east()).getValue(FACING) == EnumFacing.EAST))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.down().east()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.down().east()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.down().east()), worldIn, pos1.down().east()).getValue(WEST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.down().east()), worldIn, pos1.down().east()).getValue(FACING) == EnumFacing.EAST))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.down().east()), worldIn, pos1.down().east()).getValue(WEST) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.down().east()), worldIn, pos1.down().east()).getValue(FACING) == EnumFacing.EAST))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.north().east()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.north().east()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.north().east()), worldIn, pos1.north().east()).getValue(WEST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.north().east()), worldIn, pos1.north().east()).getValue(FACING) == EnumFacing.EAST))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.north().east()), worldIn, pos1.north().east()).getValue(WEST) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.north().east()), worldIn, pos1.north().east()).getValue(FACING) == EnumFacing.EAST))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.south().east()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.south().east()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.south().east()), worldIn, pos1.south().east()).getValue(WEST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.south().east()), worldIn, pos1.south().east()).getValue(FACING) == EnumFacing.EAST))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.south().east()), worldIn, pos1.south().east()).getValue(WEST) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.south().east()), worldIn, pos1.south().east()).getValue(FACING) == EnumFacing.EAST))
 													{
 														gen = true;
 													}
 												}
-												
-											
-												if (worldIn.getBlockState(pos1.up()).getBlock() == this)
+
+
+												if (worldIn.getBlockState(pos1.up()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(DOWN) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(FACING) == EnumFacing.UP))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(DOWN) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(FACING) == EnumFacing.UP))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.down()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.down()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(UP) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(FACING) == EnumFacing.DOWN))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(UP) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(FACING) == EnumFacing.DOWN))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.north()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.north()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(SOUTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(FACING) == EnumFacing.NORTH))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(SOUTH) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(FACING) == EnumFacing.NORTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.south()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.south()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(NORTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(FACING) == EnumFacing.SOUTH))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(NORTH) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(FACING) == EnumFacing.SOUTH))
 													{
 														gen = true;
 													}
 												}
 												if (gen) {
 													//Place the moss:
-													worldIn.setBlockState(pos1.east(), this.blockState.getBaseState().withProperty(FACING, EnumFacing.EAST).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
+													worldIn.setBlockState(pos1.east(), BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.EAST).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
 												}
 											}
 
 										case 3 : //West
-											if ((worldIn.isAirBlock(pos1.west())) 
-												&& canPlaceBlockOnSide (worldIn, pos1.west(), EnumFacing.WEST) ){
+											if ((worldIn.isAirBlock(pos1.west()))
+													&& BlockDollyphyton.block.canPlaceBlockOnSide (worldIn, pos1.west(), EnumFacing.WEST) ){
 												//Is there moss suitably placed to spread here?
-												if (worldIn.getBlockState(pos1.up().west()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.up().west()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.up().west()), worldIn, pos1.up().west()).getValue(EAST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.up().west()), worldIn, pos1.up().west()).getValue(FACING) == EnumFacing.WEST))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.up().west()), worldIn, pos1.up().west()).getValue(EAST) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.up().west()), worldIn, pos1.up().west()).getValue(FACING) == EnumFacing.WEST))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.down().west()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.down().west()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.down().west()), worldIn, pos1.down().west()).getValue(EAST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.down().west()), worldIn, pos1.down().west()).getValue(FACING) == EnumFacing.WEST))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.down().west()), worldIn, pos1.down().west()).getValue(EAST) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.down().west()), worldIn, pos1.down().west()).getValue(FACING) == EnumFacing.WEST))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.north().west()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.north().west()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.north().west()), worldIn, pos1.north().west()).getValue(EAST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.north().west()), worldIn, pos1.north().west()).getValue(FACING) == EnumFacing.WEST))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.north().west()), worldIn, pos1.north().west()).getValue(EAST) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.north().west()), worldIn, pos1.north().west()).getValue(FACING) == EnumFacing.WEST))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.south().west()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.south().west()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.south().west()), worldIn, pos1.south().west()).getValue(EAST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.south().west()), worldIn, pos1.south().west()).getValue(FACING) == EnumFacing.WEST))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.south().west()), worldIn, pos1.south().west()).getValue(EAST) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.south().west()), worldIn, pos1.south().west()).getValue(FACING) == EnumFacing.WEST))
 													{
 														gen = true;
 													}
 												}
-												
-											
-												if (worldIn.getBlockState(pos1.up()).getBlock() == this)
+
+
+												if (worldIn.getBlockState(pos1.up()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(DOWN) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(FACING) == EnumFacing.UP))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(DOWN) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.up()), worldIn, pos1.up()).getValue(FACING) == EnumFacing.UP))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.down()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.down()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(UP) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(FACING) == EnumFacing.DOWN))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(UP) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.down()), worldIn, pos1.down()).getValue(FACING) == EnumFacing.DOWN))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.north()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.north()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(SOUTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(FACING) == EnumFacing.NORTH))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(SOUTH) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(FACING) == EnumFacing.NORTH))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.south()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.south()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(NORTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(FACING) == EnumFacing.SOUTH))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(NORTH) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(FACING) == EnumFacing.SOUTH))
 													{
 														gen = true;
 													}
 												}
 												if (gen) {
 													//Place the moss:
-													worldIn.setBlockState(pos1.west(), this.blockState.getBaseState().withProperty(FACING, EnumFacing.WEST).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
+													worldIn.setBlockState(pos1.west(), BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.WEST).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
 												}
 											}
 
 										case 4 : //Up
 											//Is there air here and is this face flat?
-											if ((worldIn.isAirBlock(pos1.up())) 
-												&& (canPlaceBlockOnSide (worldIn, pos1.up(), EnumFacing.UP) || (worldIn.getBlockState(pos1).getMaterial() == Material.WATER))
-												) {
+											if ((worldIn.isAirBlock(pos1.up()))
+													&& (BlockDollyphyton.block.canPlaceBlockOnSide (worldIn, pos1.up(), EnumFacing.UP) || (worldIn.getBlockState(pos1).getMaterial() == Material.WATER))
+											) {
 												//Is there moss suitably placed to spread here?
-												if (worldIn.getBlockState(pos1.north().up()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.north().up()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.north().up()), worldIn, pos1.north().up()).getValue(DOWN) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.north().up()), worldIn, pos1.north().up()).getValue(FACING) == EnumFacing.UP))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.north().up()), worldIn, pos1.north().up()).getValue(DOWN) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.north().up()), worldIn, pos1.north().up()).getValue(FACING) == EnumFacing.UP))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.south().up()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.south().up()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.south().up()), worldIn, pos1.south().up()).getValue(DOWN) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.south().up()), worldIn, pos1.south().up()).getValue(FACING) == EnumFacing.UP))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.south().up()), worldIn, pos1.south().up()).getValue(DOWN) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.south().up()), worldIn, pos1.south().up()).getValue(FACING) == EnumFacing.UP))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.east().up()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.east().up()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.east().up()), worldIn, pos1.east().up()).getValue(DOWN) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.east().up()), worldIn, pos1.east().up()).getValue(FACING) == EnumFacing.UP))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.east().up()), worldIn, pos1.east().up()).getValue(DOWN) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.east().up()), worldIn, pos1.east().up()).getValue(FACING) == EnumFacing.UP))
 													{
 														gen = true;
 													}
 												}
-												if (worldIn.getBlockState(pos1.west().up()).getBlock() == this)
+												if (worldIn.getBlockState(pos1.west().up()).getBlock() == BlockDollyphyton.block)
 												{
-													if ((getActualState(worldIn.getBlockState(pos1.west().up()), worldIn, pos1.west().up()).getValue(DOWN) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.west().up()), worldIn, pos1.west().up()).getValue(FACING) == EnumFacing.UP))
-													{
-														gen = true;
-													}
-												}
-												
-
-												if (worldIn.getBlockState(pos1.north()).getBlock() == this)
-												{
-													if ((getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(SOUTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(FACING) == EnumFacing.NORTH))
-													{
-														gen = true;
-													}
-												}
-												if (worldIn.getBlockState(pos1.south()).getBlock() == this)
-												{
-													if ((getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(NORTH) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(FACING) == EnumFacing.SOUTH))
-													{
-														gen = true;
-													}
-												}
-												if (worldIn.getBlockState(pos1.east()).getBlock() == this)
-												{
-													if ((getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(WEST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(FACING) == EnumFacing.EAST))
-													{
-														gen = true;
-													}
-												}
-												if (worldIn.getBlockState(pos1.west()).getBlock() == this)
-												{
-													if ((getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(EAST) == true)
-													|| (getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(FACING) == EnumFacing.WEST))
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.west().up()), worldIn, pos1.west().up()).getValue(DOWN) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.west().up()), worldIn, pos1.west().up()).getValue(FACING) == EnumFacing.UP))
 													{
 														gen = true;
 													}
 												}
 
-												
+
+												if (worldIn.getBlockState(pos1.north()).getBlock() == BlockDollyphyton.block)
+												{
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(SOUTH) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(FACING) == EnumFacing.NORTH))
+													{
+														gen = true;
+													}
+												}
+												if (worldIn.getBlockState(pos1.south()).getBlock() == BlockDollyphyton.block)
+												{
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(NORTH) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(FACING) == EnumFacing.SOUTH))
+													{
+														gen = true;
+													}
+												}
+												if (worldIn.getBlockState(pos1.east()).getBlock() == BlockDollyphyton.block)
+												{
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(WEST) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(FACING) == EnumFacing.EAST))
+													{
+														gen = true;
+													}
+												}
+												if (worldIn.getBlockState(pos1.west()).getBlock() == BlockDollyphyton.block)
+												{
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(EAST) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(FACING) == EnumFacing.WEST))
+													{
+														gen = true;
+													}
+												}
+
+
 												if (gen) {
 													//Place the moss:
-													worldIn.setBlockState(pos1.up(), this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
+													worldIn.setBlockState(pos1.up(), BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.UP).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
 												}
 											}
 
 										case 5 : //Down
-										//Is there air here and is this face flat?
-										if ((worldIn.isAirBlock(pos1.down())) 
-											&& canPlaceBlockOnSide (worldIn, pos1.down(), EnumFacing.DOWN) ){
-											//Is there moss suitably placed to spread here?
-											if (worldIn.getBlockState(pos1.north().down()).getBlock() == this)
-											{
-												if ((getActualState(worldIn.getBlockState(pos1.north().down()), worldIn, pos1.north().down()).getValue(UP) == true)
-												|| (getActualState(worldIn.getBlockState(pos1.north().down()), worldIn, pos1.north().down()).getValue(FACING) == EnumFacing.DOWN))
+											//Is there air here and is this face flat?
+											if ((worldIn.isAirBlock(pos1.down()))
+													&& BlockDollyphyton.block.canPlaceBlockOnSide (worldIn, pos1.down(), EnumFacing.DOWN) ){
+												//Is there moss suitably placed to spread here?
+												if (worldIn.getBlockState(pos1.north().down()).getBlock() == BlockDollyphyton.block)
 												{
-													gen = true;
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.north().down()), worldIn, pos1.north().down()).getValue(UP) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.north().down()), worldIn, pos1.north().down()).getValue(FACING) == EnumFacing.DOWN))
+													{
+														gen = true;
+													}
+												}
+												if (worldIn.getBlockState(pos1.south().down()).getBlock() == BlockDollyphyton.block)
+												{
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.south().down()), worldIn, pos1.south().down()).getValue(UP) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.south().down()), worldIn, pos1.south().down()).getValue(FACING) == EnumFacing.DOWN))
+													{
+														gen = true;
+													}
+												}
+												if (worldIn.getBlockState(pos1.east().down()).getBlock() == BlockDollyphyton.block)
+												{
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.east().down()), worldIn, pos1.east().down()).getValue(UP) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.east().down()), worldIn, pos1.east().down()).getValue(FACING) == EnumFacing.DOWN))
+													{
+														gen = true;
+													}
+												}
+												if (worldIn.getBlockState(pos1.west().down()).getBlock() == BlockDollyphyton.block)
+												{
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.west().down()), worldIn, pos1.west().down()).getValue(UP) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.west().down()), worldIn, pos1.west().down()).getValue(FACING) == EnumFacing.DOWN))
+													{
+														gen = true;
+													}
+												}
+
+
+												if (worldIn.getBlockState(pos1.north()).getBlock() == BlockDollyphyton.block)
+												{
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(SOUTH) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(FACING) == EnumFacing.NORTH))
+													{
+														gen = true;
+													}
+												}
+												if (worldIn.getBlockState(pos1.south()).getBlock() == BlockDollyphyton.block)
+												{
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(NORTH) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(FACING) == EnumFacing.SOUTH))
+													{
+														gen = true;
+													}
+												}
+												if (worldIn.getBlockState(pos1.east()).getBlock() == BlockDollyphyton.block)
+												{
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(WEST) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(FACING) == EnumFacing.EAST))
+													{
+														gen = true;
+													}
+												}
+												if (worldIn.getBlockState(pos1.west()).getBlock() == BlockDollyphyton.block)
+												{
+													if ((BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(EAST) == true)
+															|| (BlockDollyphyton.block.getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(FACING) == EnumFacing.WEST))
+													{
+														gen = true;
+													}
+												}
+												if (gen) {
+													//Place the moss:
+													worldIn.setBlockState(pos1.down(), BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
 												}
 											}
-											if (worldIn.getBlockState(pos1.south().down()).getBlock() == this)
-											{
-												if ((getActualState(worldIn.getBlockState(pos1.south().down()), worldIn, pos1.south().down()).getValue(UP) == true)
-												|| (getActualState(worldIn.getBlockState(pos1.south().down()), worldIn, pos1.south().down()).getValue(FACING) == EnumFacing.DOWN))
-												{
-													gen = true;
-												}
-											}
-											if (worldIn.getBlockState(pos1.east().down()).getBlock() == this)
-											{
-												if ((getActualState(worldIn.getBlockState(pos1.east().down()), worldIn, pos1.east().down()).getValue(UP) == true)
-												|| (getActualState(worldIn.getBlockState(pos1.east().down()), worldIn, pos1.east().down()).getValue(FACING) == EnumFacing.DOWN))
-												{
-													gen = true;
-												}
-											}
-											if (worldIn.getBlockState(pos1.west().down()).getBlock() == this)
-											{
-												if ((getActualState(worldIn.getBlockState(pos1.west().down()), worldIn, pos1.west().down()).getValue(UP) == true)
-												|| (getActualState(worldIn.getBlockState(pos1.west().down()), worldIn, pos1.west().down()).getValue(FACING) == EnumFacing.DOWN))
-												{
-													gen = true;
-												}
-											}
-											
-										
-											if (worldIn.getBlockState(pos1.north()).getBlock() == this)
-											{
-												if ((getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(SOUTH) == true)
-												|| (getActualState(worldIn.getBlockState(pos1.north()), worldIn, pos1.north()).getValue(FACING) == EnumFacing.NORTH))
-												{
-													gen = true;
-												}
-											}
-											if (worldIn.getBlockState(pos1.south()).getBlock() == this)
-											{
-												if ((getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(NORTH) == true)
-												|| (getActualState(worldIn.getBlockState(pos1.south()), worldIn, pos1.south()).getValue(FACING) == EnumFacing.SOUTH))
-												{
-													gen = true;
-												}
-											}
-											if (worldIn.getBlockState(pos1.east()).getBlock() == this)
-											{
-												if ((getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(WEST) == true)
-												|| (getActualState(worldIn.getBlockState(pos1.east()), worldIn, pos1.east()).getValue(FACING) == EnumFacing.EAST))
-												{
-													gen = true;
-												}
-											}
-											if (worldIn.getBlockState(pos1.west()).getBlock() == this)
-											{
-												if ((getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(EAST) == true)
-												|| (getActualState(worldIn.getBlockState(pos1.west()), worldIn, pos1.west()).getValue(FACING) == EnumFacing.WEST))
-												{
-													gen = true;
-												}
-											}
-											if (gen) {
-												//Place the moss:
-												worldIn.setBlockState(pos1.down(), this.blockState.getBaseState().withProperty(FACING, EnumFacing.DOWN).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false).withProperty(SPREADABLE, false), 3);
-											}
-										}
-										
+
 									}
 								}
 								zct = zct + 1;
 							}
 							xct = xct + 1;
-						}	
+						}
 						yct = yct + 1;
 					}
 				}
 			}
 		}
-	
-		@Override
-	    public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
-	    {
-	        return BlockFaceShape.UNDEFINED;
-	    }
 
 		@Override
-	    public boolean canBeReplacedByLeaves(IBlockState state, IBlockAccess world, BlockPos pos)
-	    {
-	        return true;
-	    }
+		public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
+		{
+			return BlockFaceShape.UNDEFINED;
+		}
 
-	    @Override
+		@Override
+		public boolean canBeReplacedByLeaves(IBlockState state, IBlockAccess world, BlockPos pos)
+		{
+			return true;
+		}
+
+		@Override
 		public boolean canPlaceBlockAt(World world, BlockPos pos) {
 			if (!world.isAirBlock(pos)) {
 				return false;
 			}
-			return super.canPlaceBlockAt(world, pos); 
+			return super.canPlaceBlockAt(world, pos);
 		}
 
 		@Override
 		public boolean canPlaceBlockOnSide(World worldIn, BlockPos pos, EnumFacing side)
-	    {
-	    	boolean blockface  = true;
+		{
+			boolean blockface  = true;
 			if (side == EnumFacing.NORTH) {
-	        	if (worldIn.getBlockState(pos.south()).getBlockFaceShape(worldIn, pos.south(), side) != BlockFaceShape.SOLID)
-	        		blockface = false;
+				if (worldIn.getBlockState(pos.south()).getBlockFaceShape(worldIn, pos.south(), side) != BlockFaceShape.SOLID)
+					blockface = false;
 			}
 			if (side == EnumFacing.SOUTH) {
-	        	if (worldIn.getBlockState(pos.north()).getBlockFaceShape(worldIn, pos.north(), side) != BlockFaceShape.SOLID)
-	        		blockface = false;
+				if (worldIn.getBlockState(pos.north()).getBlockFaceShape(worldIn, pos.north(), side) != BlockFaceShape.SOLID)
+					blockface = false;
 			}
 			if (side == EnumFacing.EAST) {
-	        	if (worldIn.getBlockState(pos.west()).getBlockFaceShape(worldIn, pos.west(), side) != BlockFaceShape.SOLID)
-	        		blockface = false;
+				if (worldIn.getBlockState(pos.west()).getBlockFaceShape(worldIn, pos.west(), side) != BlockFaceShape.SOLID)
+					blockface = false;
 			}
 			if (side == EnumFacing.WEST) {
-	        	if (worldIn.getBlockState(pos.east()).getBlockFaceShape(worldIn, pos.east(), side) != BlockFaceShape.SOLID)
-	        		blockface = false;
+				if (worldIn.getBlockState(pos.east()).getBlockFaceShape(worldIn, pos.east(), side) != BlockFaceShape.SOLID)
+					blockface = false;
 			}
 			if (side == EnumFacing.UP) {
-	        	if (worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), side) != BlockFaceShape.SOLID)
-	        		blockface = false;
+				if (worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), side) != BlockFaceShape.SOLID)
+					blockface = false;
 			}
 			if (side == EnumFacing.DOWN) {
-	        	if (worldIn.getBlockState(pos.up()).getBlockFaceShape(worldIn, pos.up(), side) != BlockFaceShape.SOLID)
-	        		blockface = false;
+				if (worldIn.getBlockState(pos.up()).getBlockFaceShape(worldIn, pos.up(), side) != BlockFaceShape.SOLID)
+					blockface = false;
 			}
-			
+
 			return blockface;
-			
-	    }
-		
-		@Override
-	    public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos)
-	    {
-	        return true;
-	    }
 
-	   	@SideOnly(Side.CLIENT)
+		}
+
 		@Override
-	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-	        if (LepidodendronConfig.showTooltips) {
+		public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos)
+		{
+			return true;
+		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Proto-plant / moss");
-	        	tooltip.add("Periods: mid-Ordovician");
-	        	tooltip.add("Note: spreads to surrounding block faces and over liquids.");
-	        	tooltip.add("Propagation: spores");}
-	        super.addInformation(stack, player, tooltip, advanced);
-	    }
+				tooltip.add("Periods: mid-Ordovician");
+				tooltip.add("Note: spreads to surrounding block faces and over liquids.");
+				tooltip.add("Propagation: spores");}
+			super.addInformation(stack, player, tooltip, advanced);
+		}
 
-		public void SpawnEggs(World world, BlockPos pos) {
+		public static void SpawnEggs(World world, BlockPos pos) {
 			String eggRenderType = new Object() {
 				public String getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);

@@ -21,14 +21,13 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_diplodocus",
 			"type": "text",
-			"text": "Diplodocus was a genus of Diplodocid sauropod dinosaur which lived in what is now mid-western North America from about 154 to 152 million years ago, During the Kimmeridgian Age of the Morrison Formation. Being one of the best known sauropods, we know a lot about these dinosaurs with their long necks and tails. It is thought they would have been lighter than their fellow sauropods of similar sizes with Diplodocus being at 12-14.8 tons while Apatosaurus weighs 16.4-22.4 tons."
+			"text": "Diplodocus was a genus of diplodocid sauropod dinosaur which lived in what is now mid-western North America from about 154 to 152 million years ago, During the Kimmeridgian Age of the Morrison Formation. Being one of the best known sauropods, we know a lot about these dinosaurs with their long necks and tails. It is thought they would have been lighter than their fellow sauropods of similar sizes with Diplodocus being at 12-14.8 tons while Apatosaurus weighs 16.4-22.4 tons."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_diplodocus",
 			"type": "text",
-			"text": "With Diplodocus's generally lighter frame it is thought that they could move relatively quick for their large size with speed estimates being at 12-22 miles per hour. but with the stress it would cause to their limbs they may prefer to amble most of the time."
+			"text": "With Diplodocus's generally lighter frame it is thought that they could move relatively quick for their large size with speed estimates being at 12-22 miles per hour, but with the stress it would cause to their limbs they may prefer to amble most of the time."
 		},
-
 		{
 			"type": "lepidodendron:diet",
 			"mob": "lepidodendron:prehistoric_flora_diplodocus"

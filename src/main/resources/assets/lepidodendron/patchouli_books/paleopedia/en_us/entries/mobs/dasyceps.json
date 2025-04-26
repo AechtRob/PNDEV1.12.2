@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Amphibia$(br)>Temnospondyli$(br)>Zatrachydidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/dasyceps.png"],
-			"title": "D. bucklandi",
-			"text": ""
+			"type": "entity",
+			"name": "D. bucklandi",
+			"entity": "lepidodendron:prehistoric_flora_dasyceps",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dasyceps",
 			"type": "text",
-			"text": "Dasyceps is a zatracheidid temnospondyl from the Early Permian period. It was the largest of the zatracheidids and they had a crested and flat head with large flat bodies and a short tail. It was a carnivore and would likely have hunted fish and invertebrates."
+			"text": "Dasyceps is a zatracheidid temnospondyl from the Lower Permian. It was the largest of the zatracheidids and they had a crested and flat head with large flat bodies and a short tail. It was a carnivore and would likely have hunted fish and invertebrates."
 		},
 		{
 			"type": "lepidodendron:diet",

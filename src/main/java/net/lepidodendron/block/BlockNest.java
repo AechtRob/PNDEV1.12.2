@@ -217,6 +217,9 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		public static ItemStack getEggItemStack(@Nullable String stringEgg) {
 			stringEgg = stringEgg.replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
+			stringEgg = stringEgg.replace("@male", "");
+			stringEgg = stringEgg.replace("@female", "");
+			stringEgg = stringEgg.replace("@", "_");
 			String eggs = LepidodendronMod.MODID + ":eggs_" + stringEgg;
 			Item eggItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation(eggs));
 			if (eggItem != null) {

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:ullmannia_slab_double"
+    }
+  }
+}

@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_greererpeton",
 			"title": "Greererpeton",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Colosteidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Colosteidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/greererpeton.png"],
-			"title": "G. burkemorani",
-			"text": ""
+			"type": "entity",
+			"name": "G. burkemorani",
+			"entity": "lepidodendron:prehistoric_flora_greererpeton",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_greererpeton",

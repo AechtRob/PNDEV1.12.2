@@ -163,6 +163,8 @@ public class AcidBathOutputPlants {
         String[] resLoc = {
                 ForgeRegistries.BLOCKS.getKey(BlockDollyphyton.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockEdwardsiphyton.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockVolkhoviella.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockPiterophyton.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGreenAlgaeMat.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockRedAlgaeMat.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGreenSproutingAlgae.block).toString(),
@@ -207,7 +209,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.ITEMS.getKey(ItemSlimyAlgaeItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCooksonia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockLiverwort.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBacterialCrust.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBacterialCrust.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockTichavekia.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsSilurian);
         return resLoc;
@@ -247,7 +250,6 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.ITEMS.getKey(ItemRhyniaItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSelaginella.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSigillariaSapling.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockSphenopteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockStauropteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSublepidodendron.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTetraxylopteris.block).toString(),
@@ -270,7 +272,11 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.ITEMS.getKey(ItemSlimyAlgaeItem.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemGreenFilamentousAlgaeItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockLiverwort.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBacterialCrust.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBacterialCrust.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemArchaeocalamitesItem.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockLepidophloiosSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockSphenopteris.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockXinhangia.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsDevonian);
         return resLoc;
@@ -366,6 +372,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockAridHorsetail.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockArthropitysSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBaiera.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockSphenopteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockNeomariopteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBelemnopteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBjuviaSapling.block).toString(),
@@ -442,6 +449,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.ITEMS.getKey(ItemParacalamitesItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPodozamitesSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGreenAlgaeMat.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockPsygmophyllum.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockRedAlgaeMat.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGreenSproutingAlgae.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGreenCodiumAlgae.block).toString(),
@@ -460,6 +468,9 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockSupaiaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCtenisSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPterophyllumSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBiarmobaieraSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockUllmanniaSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockGigantopteridClimbingSapling.block).toString(),
                 "minecraft:small_fern",
                 "minecraft:large_fern"
         };

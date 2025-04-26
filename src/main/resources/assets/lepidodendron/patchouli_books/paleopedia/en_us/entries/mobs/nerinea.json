@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Mollusca$(br)>Gastropoda$(br)>Nerineidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/nerinea.png"],
-			"title": "Nerinea sp.",
-			"text": ""
+			"type": "entity",
+			"name": "Nerinea sp.",
+			"entity": "lepidodendron:prehistoric_flora_nerinea",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_nerinea",
 			"type": "text",
-			"text": "Nerinea is a medium filter-feeding Nerineoid snail with fossils found across the world dating from the Jurassic to the Cretaceous. Some species had turreted shells able to exceed 15 cm in length.  "
+			"text": "Nerinea is a medium filter-feeding nerineoid snail with fossils found across the world dating from the Jurassic to the Cretaceous. Some species had turreted shells able to exceed 15 cm in length.  "
 		},
 		{
 			"type": "lepidodendron:diet",

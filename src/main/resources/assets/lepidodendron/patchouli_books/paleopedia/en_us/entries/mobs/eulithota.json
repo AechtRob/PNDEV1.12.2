@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Eulithotidae"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/eulithota.png"],
-			"title": "E. fasciculata",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "E. fasciculata",
+			"entity": "lepidodendron:prehistoric_flora_eulithota",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eulithota",

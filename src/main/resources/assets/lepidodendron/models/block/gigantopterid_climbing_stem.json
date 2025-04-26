@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/gigantopterid_log",
+    "up": "lepidodendron:blocks/gigantopterid_log",
+    "north": "lepidodendron:blocks/gigantopterid_log",
+    "east": "lepidodendron:blocks/gigantopterid_log",
+    "south": "lepidodendron:blocks/gigantopterid_log",
+    "west": "lepidodendron:blocks/gigantopterid_log",
+    "particle": "lepidodendron:blocks/gigantopterid_log"
+  }
+}

@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Echinodermata$(br)>Stylophora$(br)>Mitrata$(br)>Anomalocystitidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/enoploura.png"],
-			"title": "E. popei",
-			"text": ""
+			"type": "entity",
+			"name": "E. popei",
+			"entity": "lepidodendron:prehistoric_flora_enoploura",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_enoploura",

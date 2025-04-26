@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Avetheropoda"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/gasosaurus.png"],
-			"title": "G. constructus",
-			"text": ""
+			"type": "entity",
+			"name": "G. constructus",
+			"entity": "lepidodendron:prehistoric_flora_gasosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gasosaurus",
 			"type": "text",
-			"text": "Gasosaurus is Tetanuran theropod from the Middle to Late Jurassic of the Sichuan Province, the genus name translates to “Gasoline Lizard” which references the fact that the holotype was found by a gasoline company during the construction of a gas facility. The holotype contains 23 vertebrae, both humeri, and multiple bones of the left leg; along with this, a couple teeth were attributed to it as the paratype."
+			"text": "Gasosaurus is Tetanuran theropod from the Middle to Upper Jurassic of the Sichuan Province, the genus name translates to “Gasoline Lizard” which references the fact that the holotype was found by a gasoline company during the construction of a gas facility. The holotype contains 23 vertebrae, both humeri, and multiple bones of the left leg; along with this, a couple teeth were attributed to it as the paratype."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gasosaurus",
@@ -30,7 +31,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_gasosaurus",
 			"type": "text",
-			"text": "that had salinity increases during more arid parts of the year. Based on palaeoenvironmental studies, it is suggested that the formation contained a large perennial lake that turned into a number of small short-lived lakes within a large alluvial plain whenever water levels became lower. Over the length of the time that the Shaximiao Formation covers, the climate was semihumid to semiarid and became drier and cooler over time."
+			"text": "that had salinity increases during more arid parts of the year. Based on palaeoenvironmental studies, it is suggested that the formation contained a large perennial lake that turned into a number of small short-lived lakes within a large alluvial plain whenever water levels became lower. Over the length of the time that the Shaximiao Formation covers, the climate was semi-humid to semi-arid and became drier and cooler over time."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gasosaurus",

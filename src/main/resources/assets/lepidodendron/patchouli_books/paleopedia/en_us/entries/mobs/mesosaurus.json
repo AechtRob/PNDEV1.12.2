@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Parareptilia$(br)>Mesosauria$(br)>Mesosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/mesosaurus.png"],
-			"title": "M. tenuidens",
-			"text": ""
+			"type": "entity",
+			"name": "M. tenuidens",
+			"entity": "lepidodendron:prehistoric_flora_mesosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_mesosaurus",

@@ -337,6 +337,14 @@ public class EntityPNBoat extends EntityBoat
                 return ItemSynchysidendronBoatItem.block;
             case DOYLEALES:
                 return ItemDoylealesBoatItem.block;
+            case SATPURAPHYLLUM:
+                return ItemSatpuraphyllumaBoatItem.block;
+            case ULLMANNIA:
+                return ItemUllmanniaBoatItem.block;
+            case BIARMOBAIERA:
+                return ItemBiarmobaieraBoatItem.block;
+            case LEPTOPHLOEUM:
+                return ItemLeptophloeumBoatItem.block;
 
         }
     }
@@ -493,6 +501,14 @@ public class EntityPNBoat extends EntityBoat
                 return BlockSynchysidendronPlanks.block;
             case DOYLEALES:
                 return BlockDoylealesPlanks.block;
+            case SATPURAPHYLLUM:
+                return BlockSatpuraphyllumPlanks.block;
+            case ULLMANNIA:
+                return BlockUllmanniaPlanks.block;
+            case BIARMOBAIERA:
+                return BlockBiarmobaieraPlanks.block;
+            case LEPTOPHLOEUM:
+                return BlockLeptophloeumPlanks.block;
 
         }
     }
@@ -1365,7 +1381,11 @@ public class EntityPNBoat extends EntityBoat
         THUJA(71, "arid_pine"),
         LIQUIDAMBAR(71, "liquidambar"),
         SYNCHYSIDENDRON(72, "synchysidendron"),
-        DOYLEALES(73, "doyleales")
+        DOYLEALES(73, "doyleales"),
+        SATPURAPHYLLUM(74, "satpuraphyllum"),
+        ULLMANNIA(75, "ullmannia"),
+        BIARMOBAIERA(76, "biarmobaiera"),
+        LEPTOPHLOEUM(77, "leptophloeum")
         ;
 
         private final String name;

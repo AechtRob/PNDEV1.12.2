@@ -12,20 +12,21 @@
 			"text": "$(l)Temporal Range:$() Triassic - Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Hybodontiformes$(br)>Lonchidiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/lonchidion.png"],
-			"title": "L. selachas",
-			"text": ""
+			"type": "entity",
+			"name": "L. selachas",
+			"entity": "lepidodendron:prehistoric_flora_lonchidion",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lonchidion",
 			"type": "text",
-			"text": "Lonchidion was genus of hybodont shark that lived throughout Mesozoic, Triassic to Cretaceous. Mostly known from teeth and fin spines, it was probably small hybodont with length tens of centimeters. Most of the fossil records are known from strata thought to have been deposited in freshwater environments. Lonchidon is not only one of the longest survived hybodonts,"
+			"text": "Lonchidion was genus of hybodont shark that lived throughout the Mesozoic, from the Triassic to the Cretaceous. Mostly known from teeth and fin spines, it was probably a small hybodont, with some estimates suggesting it could grow up to 25 centimeters in length. Most of the fossil records are known from strata thought to have been deposited in freshwater environments. Lonchidon is not only one of the longest surviving hybodonts,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lonchidion",
 			"type": "text",
-			"text": "it is also the last survived hybodont until end of the Cretaceous period. Fossils are also known from Hell Creek, which is famous for Tyrannosaurus and Triceratops."
+			"text": "it is also the last surviving hybodont, going extinct near the end of the Cretaceous period. Fossils are also known from Hell Creek, which is famous for Tyrannosaurus and Triceratops."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_dunyu",
 			"title": "Dunyu",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Galeaspida$(br)>Eugaleaspidiformes$(br)>Eugaleaspidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Agnatha$(br)>Galeaspida$(br)>Eugaleaspidiformes$(br)>Eugaleaspidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/dunyu.png"],
-			"title": "D. xiushanensis",
-			"text": ""
+			"type": "entity",
+			"name": "D. xiushanensis",
+			"entity": "lepidodendron:prehistoric_flora_dunyu",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dunyu",
 			"type": "text",
-			"text": "Dunyu is a genus of Eugaleaspid jawless fish from the Silurian of Yunnan, China. Like in all Galeaspids, Dunyu possessed a dorsally placed median opening, which appeared as a very long and thin fissure running along the top of their cephalic shield."
+			"text": "Dunyu is a genus of eugaleaspid jawless fish from the Silurian of Yunnan, China. Like in all galeaspids, Dunyu possessed a dorsally placed median opening, which appeared as a very long and thin fissure running along the top of their cephalic shield."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dunyu",

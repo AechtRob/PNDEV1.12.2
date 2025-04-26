@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Trilobita$(br)>Ptychopariida$(br)>Ellipsocephalidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ellipsocephalus.png"],
-			"title": "E. hoffi",
-			"text": ""
+			"type": "entity",
+			"name": "E. hoffi",
+			"entity": "lepidodendron:prehistoric_flora_ellipsocephalus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ellipsocephalus",

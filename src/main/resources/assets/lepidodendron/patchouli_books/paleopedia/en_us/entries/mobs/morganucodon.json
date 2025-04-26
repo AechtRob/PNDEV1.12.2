@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_morganucodon",
 			"title": "Morganucodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)>Chordata$(br)>Cynodontia$(br)>Mammaliaformes$(br)>Morganucodonta$(br)>Morganucodontidae"
+			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Cynodontia$(br)>Mammaliaformes$(br)>Morganucodonta$(br)>Morganucodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/morganucodon.png"],
-			"title": "M. watsoni",
-			"text": ""
+			"type": "entity",
+			"name": "M. watsoni",
+			"entity": "lepidodendron:prehistoric_flora_morganucodon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_morganucodon",
 			"type": "text",
-			"text": "Morganucodon is an early mammaliaform that lived from the Late Triassic to Jurassic periods. it resembled a rat in appearance but unlike other early mammaliaforms, Morganucodon was found to be more well preserved and abundant. Morganucodon was likely a nocturnal burrower, spending the day inside its burrow to avoid the larger dinosaurs that it coexisted with in the Jurassic."
+			"text": "Morganucodon is an early mammaliaform that lived from the Upper Triassic to Jurassic periods. it resembled a rat in appearance but unlike other early mammaliaforms, Morganucodon was found to be more well preserved and abundant. Morganucodon was likely a nocturnal burrower, spending the day inside its burrow to avoid the larger dinosaurs that it coexisted with in the Jurassic."
 		},
 		{
 			"type": "lepidodendron:diet",

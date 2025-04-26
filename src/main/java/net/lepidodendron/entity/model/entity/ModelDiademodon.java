@@ -521,16 +521,23 @@ public class ModelDiademodon extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hip.offsetY = -0.50F;
-        this.hip.offsetX = 0.6F;
+        this.hip.offsetY = -0.8F;
+        this.hip.offsetX = -0.5F;
         this.hip.rotateAngleY = (float)Math.toRadians(130);
         this.hip.rotateAngleX = (float)Math.toRadians(0);
         this.hip.rotateAngleZ = (float)Math.toRadians(0);
         this.hip.scaleChildren = true;
-        float scaler = 1.0F;
+        float scaler = 0.9F;
         this.hip.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(hip, 0.2F, 3.8F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(neck, 0.6F, 0.1F, 0.0F);
+        this.setRotateAngle(head, -0.7F, 0.1F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.4F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.2F, 0.2F, 0.0F);
         //End of pose, now render the model:
         this.hip.render(f);
         //Reset rotations, positions and sizing:

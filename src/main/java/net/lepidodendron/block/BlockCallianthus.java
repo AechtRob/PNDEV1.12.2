@@ -298,11 +298,11 @@ public class BlockCallianthus extends ElementsLepidodendronMod.ModElement {
 	    		return false;
 	    	}
 
-	    	double getLight = worldIn.getLight(pos);
-	    	if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
-	    	{
-	    		return false;
-	    	}
+//	    	double getLight = worldIn.getLight(pos);
+//	    	if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
+//	    	{
+//	    		return false;
+//	    	}
 
 	    	return true;
 	    	 

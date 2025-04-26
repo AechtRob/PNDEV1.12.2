@@ -320,6 +320,30 @@ public class ModelOrthocormus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Root.offsetY = -0.7F;
+        this.Root.offsetX = 0.1F;
+        this.Root.offsetZ = 2.0F;
+        this.Root.rotateAngleY = (float)Math.toRadians(120);
+        this.Root.rotateAngleX = (float)Math.toRadians(1);
+        this.Root.rotateAngleZ = (float)Math.toRadians(0);
+        this.Root.scaleChildren = true;
+        float scaler = 1.2F;
+        this.Root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Root, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(TailFin, 0.0F, 0.1F, 0.0F);
+        //End of pose, now render the model:
+        this.Root.render(f);
+        //Reset rotations, positions and sizing:
+        this.Root.setScale(1.0F, 1.0F, 1.0F);
+        this.Root.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

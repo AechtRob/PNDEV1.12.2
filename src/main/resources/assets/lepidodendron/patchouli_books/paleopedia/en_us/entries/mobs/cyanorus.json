@@ -26,7 +26,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_cyanorus",
 			"type": "text",
-			"text": "The generic name derives from the English word 'Cyan', which further derives from the Greek word 'kúanos', to mean 'Blue'; and the Greek word 'óros', to mean 'mountain'. The specific name derives from the directly from the Latin word 'singularis', to mean 'singular' or 'peculiar'."
+			"text": "The generic name derives from the English word 'Cyan', which further derives from the Greek word 'kúanos', to mean 'Blue'; and the Greek word 'óros', to mean 'mountain'. The specific name derives from the directly from the Latin word 'singularis', to mean 'singular/peculiar'."
 		},
 		{
 			"type": "lepidodendron:diet",

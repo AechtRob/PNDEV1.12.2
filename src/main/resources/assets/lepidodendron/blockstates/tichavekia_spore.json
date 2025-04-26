@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:tichavekia_spore"},
+      {"model": "lepidodendron:tichavekia_spore_var"}
+    ]
+  }
+}

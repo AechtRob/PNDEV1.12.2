@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_dunkleosteus",
 			"title": "Dunkleosteus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Dunkleosteidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Dunkleosteidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/dunkleosteus.png"],
-			"title": "D. terrelli",
-			"text": ""
+			"type": "entity",
+			"name": "D. terrelli",
+			"entity": "lepidodendron:prehistoric_flora_dunkleosteus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dunkleosteus",

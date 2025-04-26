@@ -396,6 +396,34 @@ public class ModelMicrodictyon extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = 0.3F;
+        this.body.offsetX = 0.35F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(120);
+        this.body.rotateAngleX = (float)Math.toRadians(1);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 0.4F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(head, -0.3F, -0.2F, 0.0F);
+        this.setRotateAngle(segment1, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(segment2, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(segment3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment4, 0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(segment5, 0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(segment6, 0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(segment7, 0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(segment8, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment9, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

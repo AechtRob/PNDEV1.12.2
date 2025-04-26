@@ -198,6 +198,30 @@ public class ModelMesturus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Mesturus.offsetY = -0.8F;
+        this.Mesturus.offsetX = 0.35F;
+        this.Mesturus.offsetZ = 2.0F;
+        this.Mesturus.rotateAngleY = (float)Math.toRadians(120);
+        this.Mesturus.rotateAngleX = (float)Math.toRadians(1);
+        this.Mesturus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Mesturus.scaleChildren = true;
+        float scaler = 2.2F;
+        this.Mesturus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Mesturus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Head, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.Mesturus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Mesturus.setScale(1.0F, 1.0F, 1.0F);
+        this.Mesturus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

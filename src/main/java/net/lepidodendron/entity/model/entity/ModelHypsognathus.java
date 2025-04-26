@@ -417,6 +417,32 @@ public class ModelHypsognathus extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hypsognathus.offsetY = -0.3F;
+        this.Hypsognathus.offsetX = 0.0F;
+        this.Hypsognathus.offsetZ = 2.0F;
+        this.Hypsognathus.rotateAngleY = (float)Math.toRadians(120);
+        this.Hypsognathus.rotateAngleX = (float)Math.toRadians(1);
+        this.Hypsognathus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Hypsognathus.scaleChildren = true;
+        float scaler = 0.7F;
+        this.Hypsognathus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Hypsognathus, 0.2F, 3.8F, -0.0F);
+        this.jaw.rotateAngleX = (float) Math.toRadians(20);
+        this.head.rotateAngleX = (float) Math.toRadians(-5);
+        this.neck.rotateAngleX = (float) Math.toRadians(-5);
+        this.upperbody.rotateAngleY = (float) Math.toRadians(7.5);
+        this.tail.rotateAngleY = (float) Math.toRadians(-7.5);
+        this.tail2.rotateAngleY = (float) Math.toRadians(-12);
+        this.tail3.rotateAngleY = (float) Math.toRadians(14.9);
+        this.tail4.rotateAngleY = (float) Math.toRadians(16.8);
+        //End of pose, now render the model:
+        this.Hypsognathus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hypsognathus.setScale(1.0F, 1.0F, 1.0F);
+        this.Hypsognathus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

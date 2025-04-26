@@ -12,7 +12,11 @@ import java.util.Random;
 public class WorldGenLiverwort extends WorldGenerator
 {
 
-    public boolean generate(World worldIn, Random rand, BlockPos position)
+    public boolean generate(World worldIn, Random rand, BlockPos position) {
+        return generate(worldIn, rand, position, false);
+    }
+
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean forced)
     {
         boolean flag = false;
 
@@ -25,7 +29,10 @@ public class WorldGenLiverwort extends WorldGenerator
             {
 			    if (BlockLiverwort.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.UP)) {
 					Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockLiverwort.block.getDefaultState(), 2);
-					flag = true;
+                    for (int n = 0; n < 28; n++) {
+                        BlockLiverwort.BlockCustom.updateTickForced(worldIn, blockpos, BlockLiverwort.block.getDefaultState(), rand, forced);
+                    }
+                    flag = true;
             	}
             }
         }

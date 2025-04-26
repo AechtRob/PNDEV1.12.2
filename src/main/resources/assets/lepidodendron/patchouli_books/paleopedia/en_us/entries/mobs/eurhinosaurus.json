@@ -12,14 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Ichthyosauria$(br)>Leptonectidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/eurhinosaurus.png"],
-			"title": "E. huenei"
+			"type": "entity",
+			"name": "E. huenei",
+			"entity": "lepidodendron:prehistoric_flora_eurhinosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eurhinosaurus",
 			"type": "text",
-			"text": "Eurhinosaurus is a genus of Ichthyosaur from the Early Jurassic of Europe. This up to 7 m long Ichthyosaur possessed the characteristic fish-shaped body as most derived members of the group, however, what makes Eurhinosaurus most characteristic is the presence of a disproportionally large rostrum compared to its lower jaw, which gives this animal an almost swordfish like appearance."
+			"text": "Eurhinosaurus is a genus of ichthyosaur from the Upper Jurassic of Europe. This up to 7 m long ichthyosaur possessed the characteristic fish-shaped body as most derived members of the group, however, what makes Eurhinosaurus most characteristic is the presence of a disproportionally large rostrum compared to its lower jaw, which gives this animal an almost swordfish like appearance."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eurhinosaurus",

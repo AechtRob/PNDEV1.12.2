@@ -12,35 +12,26 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Nothosauroidea$(br)>Keichousauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/keichousaurus.png"],
-			"title": "K. hui",
-			"text": ""
+			"type": "entity",
+			"name": "K. hui",
+			"entity": "lepidodendron:prehistoric_flora_keichousaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_keichousaurus",
 			"type": "text",
-			"text": "Keichousaurus hui is a species of Pachypleurosaur from the Late Triassic of China. Little more than 20 cm long on average, Keichousaurus was a small aquatic reptile characterized by its powerful forelimbs, relatively long neck an short snout."
+			"text": "Keichousaurus hui is a species of pachypleurosaur from the Upper Triassic of China. Little more than 20 cm long on average, Keichousaurus was a small aquatic reptile characterized by its powerful forelimbs, relatively long neck an short snout. Some specimens attributed to the species have demonstrated the animal was viviparous, giving live birth instead of laying eggs. Hunting mainly small fish, Keichousaurus was an apt predator in its environment,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_keichousaurus",
 			"type": "text",
-			"text": "Some specimens attributed to the species have demonstrated the animal was viviparous, giving live birth instead of laying eggs. Hunting mainly small fish, Keichousaurus was an apt predator in its environment, using its front limbs to propel the body while the hindlegs would stabilize it in the water."
+			"text": "using its front limbs to propel the body while the hindlegs would stabilize it in the water. The neck didn't play a role in its movement but the tail potentially could, as indicated by some characteristics of the vertebrae, that point at a possible undulatory movement of the latter in the water. Particularly common in the fossil record, this animal is known from several complete or almost complete specimens, most commonly preserved in dorsal view."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_keichousaurus",
 			"type": "text",
-			"text": "The neck didn't play a role in its movement but the tail potentially could, as indicated by some characteristics of the vertebrae, that point at a possible undulatory movement of the latter in the water. Particularly common in the fossil record, this animal is known from several complete or almost complete specimens, most commonly preserved in dorsal view."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_keichousaurus",
-			"type": "text",
-			"text": "Thanks to the abundance of these animals, not only are we aware of their ontogeny (growth stages) in detail, but several of them are being sold thanks to international trade, being quite popular among collectors."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_keichousaurus",
-			"type": "text",
-			"text": "Keichousaurus was described in 1958 by famous late chinese Palaeontologist Yang Zhongjian, one of the most important vertebrate palaeontologists of the country, often attributed as the \"father\" of the subject within his nation."
+			"text": "Thanks to the abundance of these animals, not only are we aware of their ontogeny (growth stages) in detail, but several of them are being sold thanks to international trade, being quite popular among collectors. Keichousaurus was described in 1958 by famous late chinese Palaeontologist Yang Zhongjian, one of the most important vertebrate palaeontologists of the country, often attributed as the \"father\" of the subject within his nation."
 		},
 		{
 			"type": "lepidodendron:diet",

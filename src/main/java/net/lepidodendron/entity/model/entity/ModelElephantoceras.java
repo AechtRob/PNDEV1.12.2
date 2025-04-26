@@ -244,6 +244,24 @@ public class ModelElephantoceras extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Shell1.offsetY = -1.2F;
+        this.Shell1.offsetX = -1.0F;
+        this.Shell1.offsetZ = 2.0F;
+        this.Shell1.rotateAngleY = (float)Math.toRadians(120);
+        this.Shell1.rotateAngleX = (float)Math.toRadians(1);
+        this.Shell1.rotateAngleZ = (float)Math.toRadians(0);
+        this.Shell1.scaleChildren = true;
+        float scaler = 4.2F;
+        this.Shell1.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Shell1, -0.2F, 0.8F, -0.2F);
+        //End of pose, now render the model:
+        this.Shell1.render(f);
+        //Reset rotations, positions and sizing:
+        this.Shell1.setScale(1.0F, 1.0F, 1.0F);
+        this.Shell1.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

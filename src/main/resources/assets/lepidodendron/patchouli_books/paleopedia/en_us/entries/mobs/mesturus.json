@@ -12,30 +12,26 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Mesturidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/mesturus.png"],
-			"title": "M. verrucosus",
-			"text": ""
+			"type": "entity",
+			"name": "M. verrucosus",
+			"entity": "lepidodendron:prehistoric_flora_mesturus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_mesturus",
 			"type": "text",
-			"text": "Mesturus is a species of Pycnodont fish from the Late Jurassic of Germany, UK and France. The 30 cm long fish had an oval and laterally flattened body, it possessed a deep and long head terminating in a pointy snout. The large eyes dominated the skull while inside the mouth the rounded wide teeth created a mosaic pattern of teeth plates."
+			"text": "Mesturus is a species of pycnodont fish from the Upper Jurassic of Germany, UK and France. The 30 cm long fish had an oval and laterally flattened body, it possessed a deep and long head terminating in a pointy snout. The large eyes dominated the skull while inside the mouth the rounded wide teeth created a mosaic pattern of teeth plates. The animal had relatively small paired fins while the caudal fin was rounded and not much bifurcated."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_mesturus",
 			"type": "text",
-			"text": "The animal had relatively small paired fins while the caudal fin was rounded and not much bifurcated. The dorsal fin was wide and positioned towards the back; the anal fin was mirrored on the bottom of the body. The whole body of the animal was covered in large rhomboid scales, linked together through serrated sutures."
+			"text": "The dorsal fin was wide and positioned towards the back; the anal fin was mirrored on the bottom of the body. The whole body of the animal was covered in large rhomboid scales, linked together through serrated sutures. Mesturus is the pycnodont with the better preserved Neurocranium known, which preserved a relatively high degree of ossification; in successive pycnodonts this ossification is much less extensive."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_mesturus",
 			"type": "text",
-			"text": "Mesturus is the pycnodont with the better preserved Neurocranium known, which preserved a relatively high degree of ossification; in successive Pycnodonts this ossification is much less extensive. Mesturus was described in 1859 by Wagner based on several exquisitely preserved specimens from Solnhofen."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_mesturus",
-			"type": "text",
-			"text": "Regardless of more ancient pycnodonts being known from the Triassic, Mesturus is usually considered to be among the most archaic members of the group thanks to the shape of its body and basal anatomical traits."
+			"text": "Mesturus was described in 1859 by Wagner based on several exquisitely preserved specimens from Solnhofen. Regardless of more ancient pycnodonts being known from the Triassic, Mesturus is usually considered to be among the most archaic members of the group thanks to the shape of its body and basal anatomical traits."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -170,6 +170,29 @@ public class ModelOrnithoprion extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.ornithoprion.offsetY = -1.4F;
+        this.ornithoprion.offsetX = 1.2F;
+        this.ornithoprion.offsetZ = 2.0F;
+        this.ornithoprion.rotateAngleY = (float)Math.toRadians(120);
+        this.ornithoprion.rotateAngleX = (float)Math.toRadians(1);
+        this.ornithoprion.rotateAngleZ = (float)Math.toRadians(0);
+        this.ornithoprion.scaleChildren = true;
+        float scaler = 2.6F;
+        this.ornithoprion.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(ornithoprion, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.ornithoprion.render(f);
+        //Reset rotations, positions and sizing:
+        this.ornithoprion.setScale(1.0F, 1.0F, 1.0F);
+        this.ornithoprion.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

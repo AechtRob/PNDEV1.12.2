@@ -12,35 +12,26 @@
 			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Pycnodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/macromesodon.png"],
-			"title": "M. macropterus",
-			"text": ""
+			"type": "entity",
+			"name": "M. macropterus",
+			"entity": "lepidodendron:prehistoric_flora_macromesodon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_macromesodon",
 			"type": "text",
-			"text": "Macromesodon macropterus is a species of Pycnodont fish from the late Jurassic of Europe. Up to half a meter in length, this animal would have used the down-pointed mouth to pick hard foods it would then crush using the specialized battery of flattened teeth plating the inside of its mouth."
+			"text": "Macromesodon macropterus is a species of pycnodont fish from the Upper Jurassic of Europe. Up to half a meter in length, this animal would have used the down-pointed mouth to pick hard foods it would then crush using the specialized battery of flattened teeth plating the inside of its mouth. Differentiating this animal from other members of its group are a series of features both derived and primitive coming together in a weird mix;"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_macromesodon",
 			"type": "text",
-			"text": "Differentiating this animal from other members of its group are a series of features both derived and primitive coming together in a weird mix; The fish had an oval and flattened body with a large dorsal fin towards the base of the rounded caudal fin, while the anal fin was opposed to the dorsal but much smaller than the latter."
+			"text": "The fish had an oval and flattened body with a large dorsal fin towards the base of the rounded caudal fin, while the anal fin was opposed to the dorsal but much smaller than the latter. The head was flattened and down-pointing, attached to a body sometimes square-shaped by a gibbosity in the front. Macromesodon is an archaic member among pycnodonts, which are actinopterygians close to teleosts, the group of fishes which encapsulates more than 90% of all living fishes today."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_macromesodon",
 			"type": "text",
-			"text": "The head was flattened and down-pointing, attached to a body sometimes square-shaped by a gibbosity in the front. Macromesodon is an archaic member among Pycnodonts, which are Actinopterygians close to Teleosts, the group of fishes which encapsulates more than 90% of all living fishes today."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_macromesodon",
-			"type": "text",
-			"text": "The animal saw quite the complicated taxonomic history, with members of other genera like Turbomesodon, Eomesodon and Apomesodon being attributed to this animal in the past, while specimens once described as Mesodon being eventually identified as part of this species."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_macromesodon",
-			"type": "text",
-			"text": "The animal is perhaps most famous from German digsites like those seen in Solnhofen but a second recognized species is also known from Cerin in France. "
+			"text": "The animal saw quite the complicated taxonomic history, with members of other genera like Turbomesodon, Eomesodon and Apomesodon being attributed to this animal in the past, while specimens once described as Mesodon being eventually identified as part of this species. The animal is perhaps most famous from German digsites like those seen in Solnhofen but a second recognized species is also known from Cerin in France."
 		},
 		{
 			"type": "lepidodendron:diet",

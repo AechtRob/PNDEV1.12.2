@@ -262,10 +262,10 @@ public class BlockAdoketophytonSpore extends ElementsLepidodendronMod.ModElement
 				return false;
 			}
 
-	    	if (!worldIn.canSeeSky(pos) && (worldIn.getBlockState(pos).getLightValue() < 7))
-	    	{
-	    		return false;
-	    	}
+//	    	if (!worldIn.canSeeSky(pos) && (worldIn.getBlockState(pos).getLightValue() < 7))
+//	    	{
+//	    		return false;
+//	    	}
 	    	
 			int distH = (int) LepidodendronConfigPlants.waterAdoketophytonHorizontal;
 			if (distH < 1) distH = 1;

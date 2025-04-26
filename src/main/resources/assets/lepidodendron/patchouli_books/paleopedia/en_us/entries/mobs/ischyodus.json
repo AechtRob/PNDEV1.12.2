@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_ischyodus",
 			"title": "Ischyodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Miocene$(br2)>Chordata$(br)>Chondrichthyes$(br)>Chimaeriformes$(br)>Callorhynchidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Neogene (Miocene)$(br2)>Chordata$(br)>Chondrichthyes$(br)>Chimaeriformes$(br)>Callorhynchidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ischyodus.png"],
-			"title": "I. quenstedti",
-			"text": ""
+			"type": "entity",
+			"name": "I. quenstedti",
+			"entity": "lepidodendron:prehistoric_flora_ischyodus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ischyodus",
 			"type": "text",
-			"text": "Ischyodus is callorhynchid chimaera known from sites in Jurassic to Miocene. Although most species are only described from teeth, Solnhofen limestone preserved complete specimen and it closely resembles modern elephantfish."
+			"text": "Ischyodus is callorhynchid chimaera known from sites ranging from the Jurassic to the Neogene (Miocene). Although most species are only described from teeth, Solnhofen limestone preserved complete specimen and it closely resembles modern elephantfish."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -278,6 +278,24 @@ public class ModelHibbertopterus extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.carapace.offsetY = -0.2F;
+        this.carapace.offsetX = 0.1F;
+        this.carapace.offsetZ = 2.0F;
+        this.carapace.rotateAngleY = (float)Math.toRadians(120);
+        this.carapace.rotateAngleX = (float)Math.toRadians(1);
+        this.carapace.rotateAngleZ = (float)Math.toRadians(0);
+        this.carapace.scaleChildren = true;
+        float scaler = 0.6F;
+        this.carapace.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(carapace, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.carapace.render(f);
+        //Reset rotations, positions and sizing:
+        this.carapace.setScale(1.0F, 1.0F, 1.0F);
+        this.carapace.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -190,6 +190,27 @@ public class ModelGantarostrataspis extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Gantarostrataspis.offsetY = -2.2F;
+        this.Gantarostrataspis.offsetX = 0.4F;
+        this.Gantarostrataspis.offsetZ = 2.0F;
+        this.Gantarostrataspis.rotateAngleY = (float)Math.toRadians(120);
+        this.Gantarostrataspis.rotateAngleX = (float)Math.toRadians(1);
+        this.Gantarostrataspis.rotateAngleZ = (float)Math.toRadians(0);
+        this.Gantarostrataspis.scaleChildren = true;
+        float scaler = 2.2F;
+        this.Gantarostrataspis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Gantarostrataspis, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Tail1, -0.2F, 0.3F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail3, 0.2F, -0.3F, 0.0F);
+        //End of pose, now render the model:
+        this.Gantarostrataspis.render(f);
+        //Reset rotations, positions and sizing:
+        this.Gantarostrataspis.setScale(1.0F, 1.0F, 1.0F);
+        this.Gantarostrataspis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

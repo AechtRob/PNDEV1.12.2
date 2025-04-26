@@ -255,6 +255,42 @@ public class ModelHomoeosaurus extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hips.offsetY = -3.0F;
+        this.Hips.offsetX = 0.0F;
+        this.Hips.offsetZ = 2.0F;
+        this.Hips.rotateAngleY = (float)Math.toRadians(120);
+        this.Hips.rotateAngleX = (float)Math.toRadians(1);
+        this.Hips.rotateAngleZ = (float)Math.toRadians(0);
+        this.Hips.scaleChildren = true;
+        float scaler = 4.2F;
+        this.Hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Hips, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmR, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(LowerArmR, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(HandR, -0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerArmL, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(HandL, -0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(UpperLegR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegR, -0.2F, -0.5F, 0.0F);
+        this.setRotateAngle(FootR, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegL, -0.2F, 0.5F, 0.0F);
+        this.setRotateAngle(FootL, 0.2F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hips.setScale(1.0F, 1.0F, 1.0F);
+        this.Hips.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

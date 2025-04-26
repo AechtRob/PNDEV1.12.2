@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous - Triassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>$(o)incertae sedis$()$(br)>Listracanthidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/listracanthus.png"],
-			"title": "L. hystrix",
-			"text": ""
+			"type": "entity",
+			"name": "L. hystrix",
+			"entity": "lepidodendron:prehistoric_flora_listracanthus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_listracanthus",

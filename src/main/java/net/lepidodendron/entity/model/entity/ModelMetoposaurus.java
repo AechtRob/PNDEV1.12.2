@@ -378,6 +378,35 @@ public class ModelMetoposaurus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body4.offsetY = -0.4F;
+        this.body4.offsetX = -0.2F;
+        this.body4.offsetZ = 2.0F;
+        this.body4.rotateAngleY = (float)Math.toRadians(120);
+        this.body4.rotateAngleX = (float)Math.toRadians(1);
+        this.body4.rotateAngleZ = (float)Math.toRadians(0);
+        this.body4.scaleChildren = true;
+        float scaler = 0.8F;
+        this.body4.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body4, 0.2F, 3.4F, -0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.1F, 0.0F);
+        //End of pose, now render the model:
+        this.body4.render(f);
+        //Reset rotations, positions and sizing:
+        this.body4.setScale(1.0F, 1.0F, 1.0F);
+        this.body4.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

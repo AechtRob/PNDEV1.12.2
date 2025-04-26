@@ -485,6 +485,47 @@ public class ModelMastodonsaurus extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Mastodonsaurus.offsetY = -0.1F;
+        this.Mastodonsaurus.offsetX = -0.05F;
+        this.Mastodonsaurus.offsetZ = 2.0F;
+        this.Mastodonsaurus.rotateAngleY = (float)Math.toRadians(120);
+        this.Mastodonsaurus.rotateAngleX = (float)Math.toRadians(1);
+        this.Mastodonsaurus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Mastodonsaurus.scaleChildren = true;
+        float scaler = 0.3F;
+        this.Mastodonsaurus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Mastodonsaurus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body, 0.1F, 0.01F, 0.0F);
+        this.setRotateAngle(RArm, 0.8F, -1.0F, 0.0F);
+        this.setRotateAngle(RArm2, 0.5F, -0.1F, -0.3F);
+        this.setRotateAngle(RHand, -0.3F, -0.3F, 0.8F);
+        this.setRotateAngle(RArm3, 0.9F, 0.9F, 0.0F);
+        this.setRotateAngle(RArm4, 0.5F, -0.1F, -0.3F);
+        this.setRotateAngle(RHand2, -0.3F, -0.3F, -0.4F);
+        this.setRotateAngle(Neck, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.7F, 0.1F, 0.0F);
+        this.setRotateAngle(UpperJaw, -0.94F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerJaw, -1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, -0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(RLeg, 0.5F, 0.9F, 0.0F);
+        this.setRotateAngle(RLeg2, 0.5F, -1.5F, 0.0F);
+        this.setRotateAngle(RFoot, 0.6F, -0.9F, .9F);
+        this.setRotateAngle(RLeg3, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(RLeg4, 0.9F, 0.7F, 0.0F);
+        this.setRotateAngle(RFoot2, -0.8F, -0.0F, -0.8F);
+        this.setRotateAngle(Tail, 0.2F, 0.4F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, -0.6F, 0.0F);
+        this.setRotateAngle(bone, -0.0F, -0.6F, 0.0F);
+        this.setRotateAngle(bonejawthing, -0.1F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Mastodonsaurus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Mastodonsaurus.setScale(1.0F, 1.0F, 1.0F);
+        this.Mastodonsaurus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

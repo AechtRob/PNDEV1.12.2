@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_doryaspis",
 			"title": "Doryaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Heterostraci$(br)>Pteraspidiformes$(br)>Protopteraspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Heterostraci$(br)>Pteraspidiformes$(br)>Protopteraspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/doryaspis.png"],
-			"title": "D. nathorsti",
-			"text": ""
+			"type": "entity",
+			"name": "D. nathorsti",
+			"entity": "lepidodendron:prehistoric_flora_doryaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_doryaspis",

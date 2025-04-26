@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Mollusca$(br)>Cephalopoda$(br)>Orthocerida$(br)>Orthoceratidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/orthoceras.png"],
-			"title": "O. regulare",
-			"text": ""
+			"type": "entity",
+			"name": "O. regulare",
+			"entity": "lepidodendron:prehistoric_flora_orthoceras",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_orthoceras",
 			"type": "text",
-			"text": "Orthoceras (straight horn) is a orthocone cephalopod from the middle Ordovician. Although it looked similar, having a straight shell with other nautiloids such as Endoceras, it was not actually related due to differences in the internal structures of the shell. "
+			"text": "Orthoceras (straight horn) is a orthocone cephalopod from the Middle Ordovician. Although it looked similar, having a straight shell with other nautiloids such as Endoceras, it was not actually related due to differences in the internal structures of the shell. "
 		},
 		{
 			"type": "lepidodendron:diet",

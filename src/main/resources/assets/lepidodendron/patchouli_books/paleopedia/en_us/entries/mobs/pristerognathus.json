@@ -1,5 +1,5 @@
 {
-	"name": "Alopecognathus",
+		"name": "Alopecognathus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/pristerognathus_icon.png",
 	"category": "lepidodendron:mobs",
@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_pristerognathus",
 			"title": "Alopecognathus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Therocephalia$(br)>Scylacosauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Therocephalia$(br)>Scylacosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pristerognathus.png"],
-			"title": "A. angusticeps",
-			"text": ""
+			"type": "entity",
+			"name": "A. angusticeps",
+			"entity": "lepidodendron:prehistoric_flora_pristerognathus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pristerognathus",

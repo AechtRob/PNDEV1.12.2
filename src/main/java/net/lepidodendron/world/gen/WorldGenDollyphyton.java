@@ -16,7 +16,11 @@ public class WorldGenDollyphyton extends WorldGenerator
 	
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
-    public boolean generate(World worldIn, Random rand, BlockPos position)
+	public boolean generate(World worldIn, Random rand, BlockPos position) {
+		return generate(worldIn, rand, position, false);
+	}
+
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean forced)
     {
         boolean flag = false;
 
@@ -60,6 +64,9 @@ public class WorldGenDollyphyton extends WorldGenerator
 				            		if (BlockDollyphyton.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.UP)) {
 					                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.UP), 2);
 										WorldGenAncientMoss.PlaceEggs(rand, worldIn, blockpos);
+										for (int n = 0; n < 28; n++) {
+											BlockDollyphyton.BlockCustom.updateTickForced(worldIn, blockpos, BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.UP), rand, forced);
+										}
 										flag = true;
 				            		}
 				            	}
@@ -67,7 +74,7 @@ public class WorldGenDollyphyton extends WorldGenerator
 				            		if (orientation == 5) { //Down
 					            		if (BlockDollyphyton.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.DOWN)) {
 						                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 2);
-						                	flag = true;
+											flag = true;
 					            		}
 					            	}
 				            	}

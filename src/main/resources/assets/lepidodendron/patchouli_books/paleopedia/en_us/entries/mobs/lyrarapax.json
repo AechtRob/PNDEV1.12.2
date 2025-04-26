@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Dinocaridida$(br)>Radiodonta$(br)>Amplectobeluidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/lyrarapax.png"],
-			"title": "L. unguispinus",
-			"text": ""
+			"type": "entity",
+			"name": "L. unguispinus",
+			"entity": "lepidodendron:prehistoric_flora_lyrarapax",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lyrarapax",
 			"type": "text",
-			"text": "Lyrarapax is a small radiodont from the early Cambrian which hunted using its small frontal appendages. These frontal appendages had a similar function to the front antennae of velvet worms."
+			"text": "Lyrarapax is a small radiodont from the Lower Cambrian which hunted using its small frontal appendages. These frontal appendages had a similar function to the front antennae of velvet worms."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -1,0 +1,35 @@
+{
+  "variants": {
+    "inventory": [
+      { "model": "lepidodendron:gigantopterid_climbing_shoot_inventory" }
+    ],
+    "normal": [
+      { "model": "lepidodendron:gigantopterid_climbing_shoot" },
+      { "model": "lepidodendron:gigantopterid_climbing_shoot_flower" }
+    ],
+    "facing=north": [
+      { "model": "lepidodendron:gigantopterid_climbing_shoot", "x": 90 },
+      { "model": "lepidodendron:gigantopterid_climbing_shoot_flower", "x": 90 }
+    ],
+    "facing=east": [
+      { "model": "lepidodendron:gigantopterid_climbing_shoot","x": 90, "y": 90 },
+      { "model": "lepidodendron:gigantopterid_climbing_shoot_flower","x": 90, "y": 90 }
+    ],
+    "facing=south": [
+      { "model": "lepidodendron:gigantopterid_climbing_shoot", "x": 90, "y": 180 },
+      { "model": "lepidodendron:gigantopterid_climbing_shoot_flower", "x": 90, "y": 180 }
+    ],
+    "facing=west": [
+      { "model": "lepidodendron:gigantopterid_climbing_shoot", "x": 90, "y": 270 },
+      { "model": "lepidodendron:gigantopterid_climbing_shoot_flower", "x": 90, "y": 270 }
+    ],
+    "facing=up": [
+      { "model": "lepidodendron:gigantopterid_climbing_shoot" },
+      { "model": "lepidodendron:gigantopterid_climbing_shoot_flower" }
+    ],
+    "facing=down": [
+      { "model": "lepidodendron:gigantopterid_climbing_shoot", "x": 180 },
+      { "model": "lepidodendron:gigantopterid_climbing_shoot_flower", "x": 180 }
+    ]
+  }
+}

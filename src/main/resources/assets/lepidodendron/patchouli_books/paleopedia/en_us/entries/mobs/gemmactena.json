@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ctenophora$(br)>Scleroctenophora"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/gemmactena.png"],
-			"title": "G. actinala",
-			"text": ""
+			"type": "entity",
+			"name": "G. actinala",
+			"entity": "lepidodendron:prehistoric_flora_gemmactena",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gemmactena",

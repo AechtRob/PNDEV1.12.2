@@ -116,9 +116,7 @@ public class BlockPseudobornia extends ElementsLepidodendronMod.ModElement {
 		if (LepidodendronConfig.dimDevonian == dimID) {
 			if (biome instanceof BiomeDevonian) {
 				BiomeDevonian biomeDevonian = (BiomeDevonian) biome;
-				if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Forest
-						|| biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Swamp
-						|| biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Vale) {
+				if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Forest) {
 					biomeCriteria = true;
 				}
 				else {
@@ -143,13 +141,10 @@ public class BlockPseudobornia extends ElementsLepidodendronMod.ModElement {
 			GenChance = 25;
 		}
 
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_swamp")) {
-			GenChance = 56;
-		}
-
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_vale")
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_hills")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_forest")
 		)
-			GenChance = 96;
+			GenChance = 76;
 
 		int maxheight = LepidodendronConfigPlants.maxheightPseudobornia;
 		int minheight = LepidodendronConfigPlants.minheightPseudobornia;

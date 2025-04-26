@@ -456,6 +456,46 @@ public class ModelDesmatosuchus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Desmatosuchus.offsetY = 0.2F;
+        this.Desmatosuchus.offsetX = 0.3F;
+        this.Desmatosuchus.offsetZ = 2.0F;
+        this.Desmatosuchus.rotateAngleY = (float)Math.toRadians(120);
+        this.Desmatosuchus.rotateAngleX = (float)Math.toRadians(1);
+        this.Desmatosuchus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Desmatosuchus.scaleChildren = true;
+        float scaler = 0.45F;
+        this.Desmatosuchus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Desmatosuchus, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(body3, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(leftBackLeg, -0.0451F, -0.0301F, 0.0006F);
+        this.setRotateAngle(leftBjoint, 0.9163F, 0.0F, 0.0F);
+        this.setRotateAngle(leftBfoot, -0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBackLeg, -0.7418F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBjoint, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBfoot, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(bodyfront, -0.0886F, -0F, 0.0154F);
+        this.setRotateAngle(neck, 0.2712F, -0.0497F, -0.1492F);
+        this.setRotateAngle(head, 0.0473F, -0.2556F, -0.0458F);
+        this.setRotateAngle(jaw, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(leftFrontLeg, -0.48F, 0.2618F, -0.3491F);
+        this.setRotateAngle(LeftFjoint, -0.5672F, -0.0436F, 0.3491F);
+        this.setRotateAngle(LeftFFoot, 1.3577F, -0.0983F, -0.1562F);
+        this.setRotateAngle(rightFrontLeg, 0.7854F, -0.2618F, 0.3491F);
+        this.setRotateAngle(RightFjoint, -0.3491F, 0.0436F, -0.3491F);
+        this.setRotateAngle(RightFFoot, 0.436F, 0.0184F, -0.0832F);
+        //End of pose, now render the model:
+        this.Desmatosuchus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Desmatosuchus.setScale(1.0F, 1.0F, 1.0F);
+        this.Desmatosuchus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

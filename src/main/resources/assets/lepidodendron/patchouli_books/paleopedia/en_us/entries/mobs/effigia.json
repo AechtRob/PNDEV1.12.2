@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_effigia",
 			"title": "Effigia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Pseudosuchia$(br)>Suchia$(br)>Poposauroidea$(br)>Shuvosauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Suchia$(br)>Poposauroidea$(br)>Shuvosauridae"
 		},
 		{
 			"type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_effigia",
 			"type": "text",
-			"text": "Effigia okeeffeae was a species of shuvosaurid archosaur that lived during the Late Triassic in what is now New Mexico. This lightly built, toothless biped superficially resembled the much later ornithomimid dinosaurs, though this is a case of convergent evolution. It is thought to have fed by nipping and shearing vegetation using its sharp beak."
+			"text": "Effigia okeeffeae was a species of shuvosaurid archosaur that lived during the Upper Triassic in what is now New Mexico. This lightly built, toothless biped superficially resembled the much later ornithomimid dinosaurs, though this is a case of convergent evolution. It is thought to have fed by nipping and shearing vegetation using its sharp beak."
 		},
 		{
 			"type": "lepidodendron:diet",

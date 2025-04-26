@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_jaekelopterus",
 			"title": "Jaekelopterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Eurypterida$(br)>Pterygotioidea$(br)>Pterygotidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Pterygotioidea$(br)>Pterygotidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/jaekelopterus.png"],
-			"title": "J. rhenaniae",
-			"text": ""
+			"type": "entity",
+			"name": "J. rhenaniae",
+			"entity": "lepidodendron:prehistoric_flora_jaekelopterus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_jaekelopterus",

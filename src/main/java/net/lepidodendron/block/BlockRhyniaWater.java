@@ -146,7 +146,7 @@ public class BlockRhyniaWater extends ElementsLepidodendronMod.ModElement {
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }
@@ -349,11 +349,11 @@ public class BlockRhyniaWater extends ElementsLepidodendronMod.ModElement {
 	    		return false;
 	    	}
 
-	    	double getLight = worldIn.getLight(pos);
-	    	if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
-	    	{
-	    		return false;
-	    	}
+//	    	double getLight = worldIn.getLight(pos);
+//	    	if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
+//	    	{
+//	    		return false;
+//	    	}
 
 	    	return true;
 	    	 

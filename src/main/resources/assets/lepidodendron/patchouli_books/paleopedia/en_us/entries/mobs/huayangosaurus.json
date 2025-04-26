@@ -12,20 +12,21 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Thyreophora$(br)>Stegosauria"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/huayangosaurus.png"],
-			"title": "H. taibaii",
-			"text": ""
+			"type": "entity",
+			"name": "H. taibaii",
+			"entity": "lepidodendron:prehistoric_flora_huayangosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_huayangosaurus",
 			"type": "text",
-			"text": "Huayangosaurus is a genus of stegosaurian dinosaur from the middle Jurassic of the Lower Shaxiaomao Formation. The name Huayangosaurus is derived from Huayang an alternate name for Sichuan and Saurus meaning lizard. Huayangosaurus lived during the Bathonian to Callovian stages, around 165 million years ago."
+			"text": "Huayangosaurus is a genus of stegosaurian dinosaur from the Middle Jurassic of the Lower Shaxiaomao Formation. The name Huayangosaurus is derived from Huayang an alternate name for Sichuan and Saurus meaning lizard. Huayangosaurus lived during the Bathonian to Callovian stages, around 165 million years ago."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_huayangosaurus",
 			"type": "text",
-			"text": "Huayangosaurus looked rather unusual for a Stegosaurian with its long forelimbs and wide head. Huayangosaurus shows more basal Stegosaurian anatomy, retaining the thyreophoran flank row of osteoderms that end in a parascapular spine at the shoulder."
+			"text": "Huayangosaurus looked rather unusual for a stegosaurian with its long forelimbs and wide head. Huayangosaurus shows more basal stegosaurian anatomy, retaining the thyreophoran flank row of osteoderms that end in a parascapular spine at the shoulder."
 		},
 		{
 			"type": "lepidodendron:diet",

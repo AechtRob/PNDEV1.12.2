@@ -323,11 +323,11 @@ public class BlockZosterophyllum extends ElementsLepidodendronMod.ModElement {
 				return false;
 			}
 
-	    	double getLight = worldIn.getLight(pos);
-	    	if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
-	    	{
-	    		return false;
-	    	}
+//	    	double getLight = worldIn.getLight(pos);
+//	    	if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
+//	    	{
+//	    		return false;
+//	    	}
 	    	
 			int distH = (int) LepidodendronConfigPlants.waterZosterophyllumHorizontal;
 			if (distH < 1) distH = 1;

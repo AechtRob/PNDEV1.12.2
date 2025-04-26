@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_paucipodia",
 			"title": "Paucipodia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Xenusia$(br)>Archonychophora$(br)>Paucipodiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ecdysozoa$(br)>Panarthropoda$(br)>Lobopodia$(br)>Xenusia$(br)>Archonychophora$(br)>Paucipodiidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_paucipodia",
 			"type": "text",
-			"text": "Paucipodia is a lobopod from the lower Cambrian period. It was a worm like creature with many pairs of tentacle like legs and a tube shaped body. It did not have any sclerites unlike some other Xenusians."
+			"text": "Paucipodia is a lobopod from the Lower Cambrian period. It was a worm like creature with many pairs of tentacle like legs and a tube shaped body. It did not have any sclerites unlike some other Xenusians."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -545,6 +545,24 @@ public class ModelLochmanolenellus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Lochmanolenellus.offsetY = -0.35F;
+        this.Lochmanolenellus.offsetX = 0.05F;
+        this.Lochmanolenellus.offsetZ = 2.0F;
+        this.Lochmanolenellus.rotateAngleY = (float)Math.toRadians(120);
+        this.Lochmanolenellus.rotateAngleX = (float)Math.toRadians(1);
+        this.Lochmanolenellus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Lochmanolenellus.scaleChildren = true;
+        float scaler = 0.7F;
+        this.Lochmanolenellus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Lochmanolenellus, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.Lochmanolenellus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Lochmanolenellus.setScale(1.0F, 1.0F, 1.0F);
+        this.Lochmanolenellus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

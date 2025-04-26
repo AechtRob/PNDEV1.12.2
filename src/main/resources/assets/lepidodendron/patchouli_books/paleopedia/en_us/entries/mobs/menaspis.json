@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Chondrichthyes$(br)>Holocephali$(br)>Chimaeriformes$(br)>Menaspidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/menaspis.png"],
-			"title": "M. armata",
-			"text": ""
+			"type": "entity",
+			"name": "M. armata",
+			"entity": "lepidodendron:prehistoric_flora_menaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_menaspis",
 			"type": "text",
-			"text": "Menaspis was a cartilaginous holocephalian fish that lived during the Late Permian in what is now Germany. This small shallow-water marine fish was instantly recognizable by the three pairs of bizarre protrusions on its face."
+			"text": "Menaspis was a cartilaginous holocephalian fish that lived during the Upper Permian in what is now Germany. This small shallow-water marine fish was instantly recognizable by the three pairs of bizarre protrusions on its face."
 		},
 		{
 			"type": "lepidodendron:diet",

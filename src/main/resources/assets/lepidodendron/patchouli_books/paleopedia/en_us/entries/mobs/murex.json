@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Early Cretaceous - Present$(br2)>Mollusca$(br)>Gastropoda$(br)>Neogastropoda$(br)>Muricidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/murex.png"],
-			"title": "Murex sp.",
-			"text": ""
+			"type": "entity",
+			"name": "Murex sp.",
+			"entity": "lepidodendron:prehistoric_flora_murex",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_murex",

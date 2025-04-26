@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>Hexanchiformes$(br)>Crassodontidanidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/notidanoides.png"],
-			"title": "N. muensteri",
-			"text": ""
+			"type": "entity",
+			"name": "N. muensteri",
+			"entity": "lepidodendron:prehistoric_flora_notidanoides",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_notidanoides",

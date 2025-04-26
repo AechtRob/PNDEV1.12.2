@@ -106,8 +106,7 @@ public class BlockProtolepidodendropsis extends ElementsLepidodendronMod.ModElem
 		if (LepidodendronConfig.dimDevonian == dimID) {
 			if (biome instanceof BiomeDevonian) {
 				BiomeDevonian biomeDevonian = (BiomeDevonian) biome;
-				if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Forest
-					|| biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Swamp) {
+				if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Forest) {
 					biomeCriteria = true;
 				}
 				else {
@@ -132,16 +131,9 @@ public class BlockProtolepidodendropsis extends ElementsLepidodendronMod.ModElem
 			GenChance = 64;
 		}
 
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_swamp")) {
-			GenChance = 128;
-		}
-
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_gilboa")) {
-			GenChance = 256;
-		}
-
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_lycopsid_spinney")) {
-			GenChance = 1056;
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_hills")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_forest")) {
+			GenChance = 526;
 		}
 
 		int maxheight = LepidodendronConfigPlants.maxheightProtolepidodendropsis;

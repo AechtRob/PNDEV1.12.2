@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Parareptilia$(br)>Procolophonomorpha$(br)>Procolophonidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/hypsognathus.png"],
-			"title": "H. fenneri",
-			"text": ""
+			"type": "entity",
+			"name": "H. fenneri",
+			"entity": "lepidodendron:prehistoric_flora_hypsognathus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hypsognathus",
 			"type": "text",
-			"text": "Hypsognathus is a species of Procolophonid from the Triassic of North America. Late surviving member of its group, its small and short body would sit close to the ground where it could reach the tough vegetation it fed on. The strong and blunt teeth in his mouth would work perfectly to break down the fibers of the plants it preyed upon. The bony spikes at the sides of the head potentially acted as a defence mechanism against predators."
+			"text": "Hypsognathus is a species of procolophonid from the Triassic of North America. Late surviving member of its group, its small and short body would sit close to the ground where it could reach the tough vegetation it fed on. The strong and blunt teeth in his mouth would work perfectly to break down the fibers of the plants it preyed upon. The bony spikes at the sides of the head potentially acted as a defence mechanism against predators."
 		},
 		{
 			"type": "lepidodendron:diet",

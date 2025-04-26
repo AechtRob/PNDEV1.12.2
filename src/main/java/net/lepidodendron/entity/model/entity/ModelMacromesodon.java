@@ -206,6 +206,49 @@ public class ModelMacromesodon extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Macromesodon.offsetY = -0.3F;
+        this.Macromesodon.offsetX = 0.4F;
+        this.Macromesodon.offsetZ = 2.0F;
+        this.Macromesodon.rotateAngleY = (float)Math.toRadians(120);
+        this.Macromesodon.rotateAngleX = (float)Math.toRadians(1);
+        this.Macromesodon.rotateAngleZ = (float)Math.toRadians(0);
+        this.Macromesodon.scaleChildren = true;
+        float scaler = 1.8F;
+        this.Macromesodon.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Macromesodon, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(cube_r1, -0.6458F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.4712F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.733F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.2531F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.4102F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.1833F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperJawJoint, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 1.2654F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.2443F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(PectoralL, 0.0F, 0.6109F, 0.0F);
+        this.setRotateAngle(PectoralR, 0.0F, -0.6109F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.6458F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.9687F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, -1.0472F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -1.0821F, 0.0F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(cube_r16, -0.0349F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Macromesodon.render(f);
+        //Reset rotations, positions and sizing:
+        this.Macromesodon.setScale(1.0F, 1.0F, 1.0F);
+        this.Macromesodon.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

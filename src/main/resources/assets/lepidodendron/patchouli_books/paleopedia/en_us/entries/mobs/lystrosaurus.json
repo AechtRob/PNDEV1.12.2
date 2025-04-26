@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_lystrosaurus",
 			"title": "Lystrosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian - Triassic$(br2)>Chordata$(br)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Lystrosauridae"
+			"text": "$(l)Temporal Range:$() Permian - Triassic$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Lystrosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/lystrosaurus.png"],
-			"title": "L. murrayi",
-			"text": ""
+			"type": "entity",
+			"name": "L. murrayi",
+			"entity": "lepidodendron:prehistoric_flora_lystrosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lystrosaurus",
 			"type": "text",
-			"text": "Lystrosaurus is a common and medium sized herbivorous dicynodont that lasted from the Permian to Early Triassic. They were known to have survived the great dying likely because of their burrowing lifestyle. In the Early Triassic, they were by far the most common terrestrial vertebrate and were found all over the world in a wide variety of habitats."
+			"text": "Lystrosaurus is a common and medium sized herbivorous dicynodont that lasted from the Permian to Lower Triassic. They were known to have survived the great dying likely because of their burrowing lifestyle. In the Early Triassic, they were by far the most common terrestrial vertebrate and were found all over the world in a wide variety of habitats."
 		},
 		{
 			"type": "lepidodendron:diet",

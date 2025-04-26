@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_moschops",
 			"title": "Moschops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Dinocephalia$(br)>Tapinocephalidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Dinocephalia$(br)>Tapinocephalidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/moschops.png"],
-			"title": "M. capensis",
-			"text": ""
+			"type": "entity",
+			"name": "M. capensis",
+			"entity": "lepidodendron:prehistoric_flora_moschops",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_moschops",

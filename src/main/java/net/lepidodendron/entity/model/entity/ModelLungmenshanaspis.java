@@ -133,6 +133,34 @@ public class ModelLungmenshanaspis extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Lungmenshanaspis.offsetY = -0.8F;
+        this.Lungmenshanaspis.offsetX = 0.1F;
+        this.Lungmenshanaspis.offsetZ = 2.0F;
+        this.Lungmenshanaspis.rotateAngleY = (float)Math.toRadians(120);
+        this.Lungmenshanaspis.rotateAngleX = (float)Math.toRadians(1);
+        this.Lungmenshanaspis.rotateAngleZ = (float)Math.toRadians(0);
+        this.Lungmenshanaspis.scaleChildren = true;
+        float scaler = 3.6F;
+        this.Lungmenshanaspis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Lungmenshanaspis, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(CornualPlateL, 0.0F, 0.0F, 0.0873F);
+        this.setRotateAngle(CornualR2_r1, 0.0F, 0.3403F, 0.0F);
+        this.setRotateAngle(PlateSlatedR_r1, 0.0F, -0.9425F, 0.0F);
+        this.setRotateAngle(CornualplateR, 0.0F, 0.0F, -0.0873F);
+        this.setRotateAngle(Plateslated_r1, 0.0F, 0.9425F, 0.0F);
+        this.setRotateAngle(CornualL2_r1, 0.0F, -0.3403F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, -0.48F, 0.0F);
+        //End of pose, now render the model:
+        this.Lungmenshanaspis.render(f);
+        //Reset rotations, positions and sizing:
+        this.Lungmenshanaspis.setScale(1.0F, 1.0F, 1.0F);
+        this.Lungmenshanaspis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

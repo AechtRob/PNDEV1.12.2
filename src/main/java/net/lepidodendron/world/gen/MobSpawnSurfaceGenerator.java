@@ -78,11 +78,11 @@ public class MobSpawnSurfaceGenerator extends WorldGenerator
 			return false;
 		}
 
-		double getLight = worldIn.getLight(pos);
-		if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
-		{
-			return false;
-		}
+//		double getLight = worldIn.getLight(pos);
+//		if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
+//		{
+//			return false;
+//		}
 
 		if (worldIn.getBlockState(pos.down(3)).getMaterial() == Material.WATER)
 		{

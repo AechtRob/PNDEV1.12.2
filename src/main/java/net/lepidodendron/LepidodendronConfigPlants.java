@@ -848,6 +848,20 @@ public class LepidodendronConfigPlants {
     public static int maxheightCooksonia = 90;
     public static double multiplierCooksonia = 1;
     public static boolean spreadCooksonia = true;
+    
+    public static int waterTichavekiaHorizontal = 4;
+    public static int waterTichavekiaVertical = 1;
+
+    public static boolean genPiterophyton = false;
+    public static String[] genPiterophytonBlacklistBiomes = new String[0];
+    public static String[] genPiterophytonOverrideBiomes = new String[0];
+    public static int[] dimPiterophyton = new int[]{0};
+    public static int waterPiterophytonHorizontal = 3;
+    public static int waterPiterophytonVertical = 0;
+    public static int minheightPiterophyton = 1;
+    public static int maxheightPiterophyton = 90;
+    public static double multiplierPiterophyton = 1;
+    public static boolean spreadPiterophyton = true;
 
     public static boolean genSeagrass = true;
     public static String[] genSeagrassBlacklistBiomes = new String[0];
@@ -1541,6 +1555,7 @@ public class LepidodendronConfigPlants {
     public static int maxheightDollyphyton = 0;
     public static double multiplierDollyphyton = 1;
     public static int radiusDollyphyton = 3;
+    public static int radiusVolkhoviella = 3;
     public static boolean genFungi = false;
     public static String[] genFungiBlacklistBiomes = new String[0];
     public static String[] genFungiOverrideBiomes = new String[0];
@@ -1674,6 +1689,14 @@ public class LepidodendronConfigPlants {
     public static String[] genOdontopterisBlacklistBiomes = new String[0];
     public static String[] genOdontopterisOverrideBiomes = new String[0];
     public static int[] dimOdontopteris = new int[]{0};
+
+    public static boolean genGigantopteridClimbingLepidodendron = false;
+    public static boolean genGigantopteridClimbingUllmannia = false;
+    public static boolean genGigantopteridClimbingCordaites = false;
+    public static boolean genGigantopteridClimbingSigillaria = false;
+    public static String[] genGigantopteridClimbingBlacklistBiomes = new String[0];
+    public static String[] genGigantopteridClimbingOverrideBiomes = new String[0];
+    public static int[] dimGigantopteridClimbing = new int[]{0};
 
     public static boolean genLyginopterisPitys = false;
     public static String[] genLyginopterisBlacklistBiomes = new String[0];
@@ -13617,6 +13640,83 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Angiopteris", "multiplierAngiopteris", multiplierAngiopteris);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierAngiopteris = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Gigantopterid Climbing", "genGigantopteridClimbingLepidodendron", genGigantopteridClimbingLepidodendron);
+        prop.setComment("Set to true to generate Climbing Gigantopterid naturally on Lepidodendron trees [default: false]");
+        genGigantopteridClimbingLepidodendron = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen GigantopteridClimbing", "genGigantopteridClimbingCordaites", genGigantopteridClimbingCordaites);
+        prop.setComment("Set to true to generate Climbing Gigantopterid naturally on Cordaites trees [default: false]");
+        genGigantopteridClimbingCordaites = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen GigantopteridClimbing", "genGigantopteridClimbingUllmannia", genGigantopteridClimbingUllmannia);
+        prop.setComment("Set to true to generate Climbing Gigantopterid naturally on Ullmannia trees [default: false]");
+        genGigantopteridClimbingUllmannia = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen GigantopteridClimbing", "genGigantopteridClimbingSigillaria", genGigantopteridClimbingSigillaria);
+        prop.setComment("Set to true to generate Climbing Gigantopterid naturally on Sigillaria trees [default: false]");
+        genGigantopteridClimbingSigillaria = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen GigantopteridClimbing", "genGigantopteridClimbingBlacklistBiomes", genGigantopteridClimbingBlacklistBiomes);
+        prop.setComment("List of biomes Climbing Gigantopterid are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genGigantopteridClimbingBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen GigantopteridClimbing", "genGigantopteridClimbingOverrideBiomes", genGigantopteridClimbingOverrideBiomes);
+        prop.setComment("List of biomes Climbing Gigantopterid are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genGigantopteridClimbingOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen GigantopteridClimbing", "dimGigantopteridClimbing", dimGigantopteridClimbing);
+        prop.setComment("List of dimension IDs Climbing Gigantopterid can generate in [default: 0]");
+        dimGigantopteridClimbing = prop.getIntList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Piterophyton", "genPiterophyton", genPiterophyton);
+        prop.setComment("Set to true to generate Piterophyton naturally [default: false]");
+        genPiterophyton = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Piterophyton", "genPiterophytonBlacklistBiomes", genPiterophytonBlacklistBiomes);
+        prop.setComment("List of biomes Piterophyton are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genPiterophytonBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Piterophyton", "genPiterophytonOverrideBiomes", genPiterophytonOverrideBiomes);
+        prop.setComment("List of biomes Piterophyton are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genPiterophytonOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Piterophyton", "dimPiterophyton", dimPiterophyton);
+        prop.setComment("List of dimension IDs Piterophyton can generate in [default: 0]");
+        dimPiterophyton = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Piterophyton", "waterPiterophytonHorizontal", waterPiterophytonHorizontal);
+        prop.setComment("Distance NSEW from water that Piterophyton can exist and spread onto neighbouring dirt and grass (1 to 16) [default: 3]");
+        waterPiterophytonHorizontal = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Piterophyton", "waterPiterophytonVertical", waterPiterophytonVertical);
+        prop.setComment("Distance above water required for Piterophyton to exist (0 to 6) [default: 0]");
+        waterPiterophytonVertical = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Piterophyton", "minheightPiterophyton", minheightPiterophyton);
+        prop.setComment("Minimum height that Piterophyton can generate (1 to 250) [default: 1]");
+        minheightPiterophyton = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Piterophyton", "maxheightPiterophyton", maxheightPiterophyton);
+        prop.setComment("Maximum height that Piterophyton can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightPiterophyton = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Piterophyton", "multiplierPiterophyton", multiplierPiterophyton);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierPiterophyton = prop.getDouble();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Piterophyton", "spreadPiterophyton", spreadPiterophyton);
+        prop.setComment("Set to true for Piterophyton to spread naturally, and to false to require bonemeal to spread [default: true]");
+        spreadPiterophyton = prop.getBoolean();
+        propOrder.add(prop.getName());
+        
+        prop = cfg.get("WorldGen Tichavekia", "waterTichavekiaHorizontal", waterTichavekiaHorizontal);
+        prop.setComment("Distance NSEW from water that Tichavekia can exist and spread onto neighbouring dirt and grass (1 to 16) [default: 4]");
+        waterTichavekiaHorizontal = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Tichavekia", "waterTichavekiaVertical", waterTichavekiaVertical);
+        prop.setComment("Distance above water required for Tichavekia to exist (0 to 6) [default: 1]");
+        waterTichavekiaVertical = prop.getInt();
         propOrder.add(prop.getName());
 
 

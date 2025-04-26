@@ -16,8 +16,12 @@ public class WorldGenEdwardsiphyton extends WorldGenerator
 	
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
-    public boolean generate(World worldIn, Random rand, BlockPos position)
-    {
+	public boolean generate(World worldIn, Random rand, BlockPos position) {
+		return generate(worldIn, rand, position, false);
+	}
+
+	public boolean generate(World worldIn, Random rand, BlockPos position, boolean forced)
+	{
         boolean flag = false;
 
         for (int i = 0; i < 64; ++i)
@@ -60,6 +64,9 @@ public class WorldGenEdwardsiphyton extends WorldGenerator
 				            		if (BlockEdwardsiphyton.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.UP)) {
 					                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockEdwardsiphyton.block.getDefaultState().withProperty(FACING, EnumFacing.UP), 2);
 										WorldGenAncientMoss.PlaceEggs(rand, worldIn, blockpos);
+										for (int n = 0; n < 28; n++) {
+											BlockEdwardsiphyton.BlockCustom.updateTickForced(worldIn, blockpos, BlockEdwardsiphyton.block.getDefaultState().withProperty(FACING, EnumFacing.UP), rand, forced);
+										}
 										flag = true;
 				            		}
 				            	}

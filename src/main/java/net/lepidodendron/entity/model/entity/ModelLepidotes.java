@@ -342,6 +342,31 @@ public class ModelLepidotes extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Bodyfront.offsetY = -1.0F;
+        this.Bodyfront.offsetX = 0.9F;
+        this.Bodyfront.offsetZ = 2.0F;
+        this.Bodyfront.rotateAngleY = (float)Math.toRadians(120);
+        this.Bodyfront.rotateAngleX = (float)Math.toRadians(1);
+        this.Bodyfront.rotateAngleZ = (float)Math.toRadians(0);
+        this.Bodyfront.scaleChildren = true;
+        float scaler = 2.2F;
+        this.Bodyfront.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Bodyfront, 0.6F, 3.8F, -0.2F);
+        this.Lowerjaw.rotateAngleX = (float) Math.toRadians(40.2);
+        this.Bodymiddle.rotateAngleY = (float) Math.toRadians(10);
+        this.Bodyend.rotateAngleY = (float) Math.toRadians(20);
+        this.Tailbase.rotateAngleY = (float) Math.toRadians(12.5);
+        this.Tailmiddlebase.rotateAngleY = (float) Math.toRadians(-17.5);
+        this.Tailmiddleend.rotateAngleY = (float) Math.toRadians(-20);
+        this.Tailend.rotateAngleY = (float) Math.toRadians(-18.2);
+        //End of pose, now render the model:
+        this.Bodyfront.render(f);
+        //Reset rotations, positions and sizing:
+        this.Bodyfront.setScale(1.0F, 1.0F, 1.0F);
+        this.Bodyfront.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

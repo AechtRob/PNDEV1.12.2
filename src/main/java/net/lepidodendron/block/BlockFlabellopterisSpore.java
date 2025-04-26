@@ -148,7 +148,7 @@ public class BlockFlabellopterisSpore extends ElementsLepidodendronMod.ModElemen
 
 		@Override
 		public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
-			return EnumPlantType.Desert;
+			return EnumPlantType.Plains;
 		}
 
 		@Override

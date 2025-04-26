@@ -7,8 +7,10 @@ import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemArchaeocalamitesItem;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
+import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
 import net.minecraft.block.SoundType;
@@ -79,7 +81,8 @@ public class BlockArchaeocalamites extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = true;
 		if (!LepidodendronConfigPlants.genArchaeocalamites && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
-		if (dimID == LepidodendronConfig.dimCarboniferous)
+		if (dimID == LepidodendronConfig.dimCarboniferous
+			|| dimID == LepidodendronConfig.dimDevonian)
 			dimensionCriteria = true;
 
 		if (!dimensionCriteria)
@@ -101,7 +104,20 @@ public class BlockArchaeocalamites extends ElementsLepidodendronMod.ModElement {
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genArchaeocalamitesOverrideBiomes))
 			biomeCriteria = true;
-
+		
+		if (biome instanceof BiomeDevonian) {
+			BiomeDevonian biomeDevonian = (BiomeDevonian) biome;
+			if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Swamp
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_forest")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_hills")
+			) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+		
 		if (biome instanceof BiomeCarboniferous) {
 			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
 			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp
@@ -136,6 +152,11 @@ public class BlockArchaeocalamites extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimCarboniferous
 		){
 			GenChance = 72;
+		}
+
+		if (dimID == LepidodendronConfig.dimDevonian
+		){
+			GenChance = 30;
 		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_cold_savanna")
@@ -450,7 +471,7 @@ public class BlockArchaeocalamites extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail shrub");
-	        	tooltip.add("Periods: Carboniferous [- Permian]");
+	        	tooltip.add("Periods: Late Devonian - Carboniferous [- Permian (?)]");
 	        	tooltip.add("Note: Can be planted in water or on land");
 	        	tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);

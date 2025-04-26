@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_docodon",
 			"title": "Docodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Mammaliaformes $(br)>Docodonta $(br)>Docodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Cynodontia$(br)>Mammaliaformes$(br)>Docodonta$(br)>Docodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/docodon.png"],
-			"title": "D. victor",
-			"text": ""
+			"type": "entity",
+			"name": "D. victor",
+			"entity": "lepidodendron:prehistoric_flora_docodon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_docodon",
 			"type": "text",
-			"text": "Discovered by William Harlow Reed and named by the famous Othniel Charles Marsh in 1880, Docodon was a mammaliaform that lived in western North America (remains have mainly been found in the Black Hills region of South Dakota) during the Late Jurassic. Its varied teeth suggest it could eat a wide range of different foods."
+			"text": "Discovered by William Harlow Reed and named by the famous Othniel Charles Marsh in 1880, Docodon was a mammaliaform that lived in western North America (remains have mainly been found in the Black Hills region of South Dakota) during the Upper Jurassic. Its varied teeth suggest it could eat a wide range of different foods."
 		},
 		{
 			"type": "lepidodendron:diet",

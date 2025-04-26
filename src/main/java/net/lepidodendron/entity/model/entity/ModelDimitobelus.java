@@ -231,7 +231,7 @@ public class ModelDimitobelus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -1.9F;
-        this.body.offsetX = 1.038F;
+        this.body.offsetX = 0.6F;
         this.body.rotateAngleY = (float)Math.toRadians(242);
         this.body.rotateAngleX = (float)Math.toRadians(8);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);
@@ -239,7 +239,7 @@ public class ModelDimitobelus extends ModelBasePalaeopedia {
         float scaler = 3.23F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.body.render(f);
         //Reset rotations, positions and sizing:

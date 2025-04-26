@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockPertica;
 import net.lepidodendron.block.BlockPerticaSpore;
 import net.lepidodendron.util.Functions;
+import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -12,23 +13,62 @@ import java.util.Random;
 public class WorldGenPertica extends WorldGenerator
 {
 
-    public boolean generate(World worldIn, Random rand, BlockPos position)
+    public boolean generate(World worldIn, Random rand, BlockPos position) {
+        return generate(worldIn, rand, position, false);
+    }
+
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater)
     {
         boolean flag = false;
+        int offset = 8;
+        if (needsWater) {
+            offset = 6;
+        }
 
-        for (int i = 0; i < 100; ++i)
+        for (int i = 0; i < 64; ++i)
         {
-            BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+            BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(offset) - rand.nextInt(offset));
 
             if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPertica.block.canPlaceBlockAt(worldIn, blockpos))
             {
-            	if (Math.random() < 0.7) {
-					Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPertica.block.getDefaultState(), 2);
-				}
-				else {
-					Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPerticaSpore.block.getDefaultState(), 2);
-				}
-                flag = true;
+                if (!needsWater) {
+
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockPertica.block.getDefaultState(), 2);
+                    if ((Math.random() > 0.7)) {
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockPerticaSpore.block.getDefaultState(), 2);
+                    }
+                    flag = true;
+                }
+                else {
+                    boolean waterCriteria = false;
+                    //Is there water nearby?
+                    int xct = -2;
+                    int yct;
+                    int zct;
+                    while ((xct < 3) && (!waterCriteria)) {
+                        yct = -2;
+                        while ((yct <= 0) && (!waterCriteria)) {
+                            zct = -2;
+                            while ((zct < 3) && (!waterCriteria)) {
+                                if ((worldIn.getBlockState(position.add(xct, yct, zct))).getMaterial() == Material.WATER) {
+                                    waterCriteria = true;
+                                }
+                                zct = zct + 1;
+                            }
+                            yct = yct + 1;
+                        }
+                        xct = xct + 1;
+                    }
+                    if (waterCriteria) {
+                        if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPertica.block.canPlaceBlockAt(worldIn, blockpos)) {
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockPertica.block.getDefaultState(), 2);
+                            if ((Math.random() > 0.7)) {
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockPerticaSpore.block.getDefaultState(), 2);
+                            }
+                            flag = true;
+                        }
+                    }
+                }
             }
         }
 

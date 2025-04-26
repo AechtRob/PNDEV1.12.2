@@ -1079,6 +1079,8 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_coniopteris_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_conomedusites_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cooksonia_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_piterophyton_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_tichavekia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cooperoceras_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_pezopallichthys_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_zenaspis_clean", "inventory"),
@@ -1185,6 +1187,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_diploceraspis_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_discosauriscus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_dollyphyton_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_volkhoviella_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_doryaspis_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_dorypterus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_doswellia_clean", "inventory"),
@@ -2020,6 +2023,11 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_lethiscus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_satpuraphyllum_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_biarmobaiera_sapling_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_psygmophyllum_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_ullmannia_sapling_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_gigantopterid_climbing_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_lepidophloeum_sapling_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_xinhangia_clean", "inventory"),
 
 				new ModelResourceLocation("lepidodendron:fossil_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossil_clean_missing_texture", "inventory")

@@ -264,6 +264,44 @@ public class ModelGorgonops extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hips.offsetY = -0.4F;
+        this.Hips.offsetX = -0.5F;
+        this.Hips.offsetZ = 2.0F;
+        this.Hips.rotateAngleY = (float)Math.toRadians(120);
+        this.Hips.rotateAngleX = (float)Math.toRadians(1);
+        this.Hips.rotateAngleZ = (float)Math.toRadians(0);
+        this.Hips.scaleChildren = true;
+        float scaler = 0.8F;
+        this.Hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Hips, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(Belly, 0.07F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodyfront, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck, -0.4F, 0.3F, 0.01F);
+        this.setRotateAngle(Head, 0.4F, 0.3F, 0.05F);
+        this.setRotateAngle(Lowerjaw1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, -0.6F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail2, -0.3F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail3, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Leftthigh, 0.3F, 0.0F, -0.3F);
+        this.setRotateAngle(Leftshin, 0.7F, 0.0F, 0.3F);
+        this.setRotateAngle(Lefthindfoot, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightthigh, -0.3F, 0.0F, 0.3F);
+        this.setRotateAngle(Rightshin, 0.35F, 0.0F, -0.3F);
+        this.setRotateAngle(Righthindfoot, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftupperarm, 0.1F, 0.0F, -0.5F);
+        this.setRotateAngle(Leftlowerarm, -1.1F, 0.3F, 0.3F);
+        this.setRotateAngle(Leftfrontfoot, 1.3F, -0.2F, 0.3F);
+        this.setRotateAngle(Rightupperarm, 0.4F, 0.0F, 0.3F);
+        this.setRotateAngle(Rightlowerarm, -0.3F, 0.0F, -0.3F);
+        this.setRotateAngle(Rightfrontfoot, -0.1F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hips.setScale(1.0F, 1.0F, 1.0F);
+        this.Hips.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

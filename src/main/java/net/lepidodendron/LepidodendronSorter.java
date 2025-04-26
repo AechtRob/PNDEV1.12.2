@@ -5058,6 +5058,73 @@ public class LepidodendronSorter {
     public static final int biarmobaiera_leaves = 8077;
     public static final int biarmobaiera_sapling = 8078;
     public static final int biarmobaiera_fruit = 8079;
+    public static final int psygmophyllum = 8080;
+    public static final int psygmophyllum_top = 8081;
+    public static final int psygmophyllum_fruit = 8082;
+    public static final int psygmophyllum_seed = 8083;
+    
+    public static final int satpuraphyllum_boat_item = 8084;
+    public static final int satpuraphyllum_planks = 8085;
+    public static final int satpuraphyllum_fence = 8086;
+    public static final int satpuraphyllum_fence_gate = 8087;
+    public static final int satpuraphyllum_door = 8088;
+    public static final int satpuraphyllum_trapdoor = 8089;
+    public static final int satpuraphyllum_slab = 8090;
+    public static final int satpuraphyllum_stairs = 8091;
+    public static final int satpuraphyllum_door_item = 8092;
+
+    public static final int biarmobaiera_boat_item = 8093;
+    public static final int biarmobaiera_planks = 8094;
+    public static final int biarmobaiera_fence = 8095;
+    public static final int biarmobaiera_fence_gate = 8096;
+    public static final int biarmobaiera_door = 8097;
+    public static final int biarmobaiera_trapdoor = 8098;
+    public static final int biarmobaiera_slab = 8099;
+    public static final int biarmobaiera_stairs = 8100;
+    public static final int biarmobaiera_door_item = 8101;
+
+    public static final int ullmannia_boat_item = 8102;
+    public static final int ullmannia_planks = 8103;
+    public static final int ullmannia_fence = 8104;
+    public static final int ullmannia_fence_gate = 8105;
+    public static final int ullmannia_door = 8106;
+    public static final int ullmannia_trapdoor = 8107;
+    public static final int ullmannia_slab = 8108;
+    public static final int ullmannia_stairs = 8109;
+    public static final int ullmannia_door_item = 8110;
+    public static final int ullmannia_seed = 8111;
+    public static final int ullmannia_fruit = 8112;
+    public static final int ullmannia_leaves = 8113;
+    public static final int ullmannia_log = 8114;
+    public static final int ullmannia_sapling = 8115;
+    public static final int gigantopterid_climbing_shoot = 8116;
+    public static final int gigantopterid_climbing_shoot_worldgen = 8117;
+    public static final int gigantopterid_climbing_stem = 8118;
+    public static final int gigantopterid_climbing_stem_ne = 8119;
+    public static final int gigantopterid_climbing_stem_nw = 8120;
+    public static final int gigantopterid_climbing_stem_se = 8121;
+    public static final int gigantopterid_climbing_stem_sw = 8122;
+    public static final int gigantopterid_climbing_sapling = 8123;
+    public static final int volkhoviella = 8124;
+    public static final int piterophyton = 8125;
+    public static final int piterophyton_spore = 8126;
+    public static final int tichavekia = 8126;
+    public static final int tichavekia_spore = 8127;
+
+    public static final int leptophloeum_boat_item = 8102;
+    public static final int leptophloeum_planks = 8103;
+    public static final int leptophloeum_fence = 8104;
+    public static final int leptophloeum_fence_gate = 8105;
+    public static final int leptophloeum_door = 8106;
+    public static final int leptophloeum_trapdoor = 8107;
+    public static final int leptophloeum_slab = 8108;
+    public static final int leptophloeum_stairs = 8109;
+    public static final int leptophloeum_door_item = 8110;
+    public static final int leptophloeum_leaves = 8113;
+    public static final int leptophloeum_log = 8114;
+    public static final int leptophloeum_sapling = 8115;
+
+    public static final int xinhangia = 8116;
 
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;

@@ -329,15 +329,37 @@ public class ModelNicrosaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.25F;
-        this.main.offsetX = -0.10F;
+        this.main.offsetX = 0.0F;
+        this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(117);
         this.main.rotateAngleX = (float)Math.toRadians(0);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 0.30F;
+        float scaler = 0.4F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(main, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(neck, -0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(neck2, -0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(head, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(jaw, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg, -0.2F, 0.0F, -0.1F);
+        this.setRotateAngle(frontLeftLeg2, -0.25F, 0.0F, 0.1F);
+        this.setRotateAngle(frontLeftLeg3, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg, 0.9F, 0.0F, 0.1F);
+        this.setRotateAngle(frontRightLeg2, -0.6F, 0.0F, -0.1F);
+        this.setRotateAngle(frontRightLeg3, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg2, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg2, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg3, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

@@ -232,6 +232,50 @@ public class ModelEorhynchochelys extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -0.25F;
+        this.body.offsetX = 0.45F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(120);
+        this.body.rotateAngleX = (float)Math.toRadians(1);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 0.95F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body3, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg, -0.521F, -0.8538F, 0.8763F);
+        this.setRotateAngle(backleftleg2, -0.0411F, -0.3027F, 0.1372F);
+        this.setRotateAngle(backleftleg3, 0.0F, -0.4363F, 0.0873F);
+        this.setRotateAngle(backrightleg, -0.2856F, 0.5973F, -0.4812F);
+        this.setRotateAngle(backrightleg2, -0.0411F, 0.3027F, -0.1372F);
+        this.setRotateAngle(backrightleg3, 0.0F, 0.4363F, -0.0873F);
+        this.setRotateAngle(tail, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0876F, -0.0869F, -0.0076F);
+        this.setRotateAngle(tail3, -0.0443F, -0.1744F, 0.0077F);
+        this.setRotateAngle(tail4, 0.0886F, -0.1739F, -0.0154F);
+        this.setRotateAngle(tail5, 0.0962F, -0.4346F, -0.0406F);
+        this.setRotateAngle(tail6, 0.0472F, -0.3923F, -0.0181F);
+        this.setRotateAngle(neck, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftarm, -0.0455F, 0.5062F, 0.4291F);
+        this.setRotateAngle(frontleftarm2, 0.0233F, -0.2608F, 0.1715F);
+        this.setRotateAngle(frontleftarm3, 0.0406F, -0.4346F, -0.0962F);
+        this.setRotateAngle(frontrightarm, 0.0258F, 0.3211F, -0.6053F);
+        this.setRotateAngle(frontrightarm2, 0.0233F, 0.2608F, -0.1715F);
+        this.setRotateAngle(frontrightarm3, 0.0406F, 0.4346F, 0.0962F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

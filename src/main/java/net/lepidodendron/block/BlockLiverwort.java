@@ -241,7 +241,11 @@ public class BlockLiverwort extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) 
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+			updateTickForced(worldIn, pos, state, rand, false);
+		}
+
+		public static void updateTickForced(World worldIn, BlockPos pos, IBlockState state, Random rand, boolean forced)
 		{
 			if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
 
@@ -261,13 +265,13 @@ public class BlockLiverwort extends ElementsLepidodendronMod.ModElement {
 				)
 			) {
 				worldIn.setBlockToAir(pos);
-				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
+				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockLiverwort.block, (int) (1)));
 				entityToSpawn.setPickupDelay(10);
 				worldIn.spawnEntity(entityToSpawn);
 			}
 
 			//So if the block is still here, can it spread?
-			if ((worldIn.getBlockState(pos).getBlock() == this && Math.random() > 0.8)) {
+			if ((worldIn.getBlockState(pos).getBlock() == BlockLiverwort.block && Math.random() > 0.8 || forced)) {
 				if ((Boolean) state.getValue(SPREADABLE)) {
 					//System.err.println("Ticked a spreadable block");
 					int spreadradius = (int) LepidodendronConfigPlants.radiusNematophyta;
@@ -287,29 +291,29 @@ public class BlockLiverwort extends ElementsLepidodendronMod.ModElement {
 								}
 								//Is there air here and is this face flat?
 								if ((worldIn.isAirBlock(pos1.up()))
-									&& (canPlaceBlockOnSide (worldIn, pos1.up(), EnumFacing.UP))
+									&& (BlockLiverwort.block.canPlaceBlockOnSide (worldIn, pos1.up(), EnumFacing.UP))
 									) {
 									//Is there moss suitably placed to spread here?
-									if (worldIn.getBlockState(pos1.north().up()).getBlock() == this)
+									if (worldIn.getBlockState(pos1.north().up()).getBlock() == BlockLiverwort.block)
 									{
 										gen = true;
 									}
-									if (worldIn.getBlockState(pos1.south().up()).getBlock() == this)
+									if (worldIn.getBlockState(pos1.south().up()).getBlock() == BlockLiverwort.block)
 									{
 										gen = true;
 									}
-									if (worldIn.getBlockState(pos1.east().up()).getBlock() == this)
+									if (worldIn.getBlockState(pos1.east().up()).getBlock() == BlockLiverwort.block)
 									{
 										gen = true;
 									}
-									if (worldIn.getBlockState(pos1.west().up()).getBlock() == this)
+									if (worldIn.getBlockState(pos1.west().up()).getBlock() == BlockLiverwort.block)
 									{
 										gen = true;
 									}
 
 									if (gen) {
 										//Place the moss:
-										worldIn.setBlockState(pos1.up(), this.blockState.getBaseState().withProperty(SPREADABLE, false), 3);
+										worldIn.setBlockState(pos1.up(), BlockLiverwort.block.getDefaultState().withProperty(SPREADABLE, false), 3);
 									}
 								}
 							}

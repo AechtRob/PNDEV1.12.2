@@ -49,11 +49,11 @@ public class WorldGenNathorstiana extends WorldGenerator
     		return false;
     	}
 
-    	double getLight = worldIn.getLight(pos);
-    	if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
-    	{
-    		return false;
-    	}
+//    	double getLight = worldIn.getLight(pos);
+//    	if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
+//    	{
+//    		return false;
+//    	}
 
     	return true;
     	 
