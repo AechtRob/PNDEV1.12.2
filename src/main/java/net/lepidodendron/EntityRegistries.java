@@ -1238,11 +1238,11 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_tropites", EntityPrehistoricFloraTropites.class, LepidodendronMod.ENTITY_TROPITES, 48,-4015232,-8672599);
         registerEntity("prehistoric_flora_soliclymenia", EntityPrehistoricFloraSoliclymenia.class, LepidodendronMod.ENTITY_SOLICLYMENIA, 48,-4694718,-331043);
         registerEntity("prehistoric_flora_diplomoceras", EntityPrehistoricFloraDiplomoceras.class, LepidodendronMod.ENTITY_DIPLOMOCERAS, 48,-3628648,-3190969);
-//        registerEntity("prehistoric_flora_kirkospira", EntityPrehistoricFloraKirkospira.class, LepidodendronMod.ENTITY_KIRKOSPIRA, 48,-8234216,-6912736);
-//        registerEntity("prehistoric_flora_lesueurilla", EntityPrehistoricFloraLesueurilla.class, LepidodendronMod.ENTITY_LESUEURILLA, 48,-8234216,-6912736);
-//        registerEntity("prehistoric_flora_lytospira", EntityPrehistoricFloraLytospira.class, LepidodendronMod.ENTITY_LYTOSPIRA, 48,-8234216,-6912736);
-//        registerEntity("prehistoric_flora_boiotremus", EntityPrehistoricFloraBoiotremus.class, LepidodendronMod.ENTITY_BOIOTREMUS, 48,-8234216,-6912736);
-//        registerEntity("prehistoric_flora_bathrotomaria", EntityPrehistoricFloraBathrotomaria.class, LepidodendronMod.ENTITY_BATHROTOMARIA, 48,-8234216,-6912736);
+        registerEntity("prehistoric_flora_kirkospira", EntityPrehistoricFloraKirkospira.class, LepidodendronMod.ENTITY_KIRKOSPIRA, 48,-8302006,-14804455);
+        registerEntity("prehistoric_flora_lesueurilla", EntityPrehistoricFloraLesueurilla.class, LepidodendronMod.ENTITY_LESUEURILLA, 48,-4737147,-12961259);
+        registerEntity("prehistoric_flora_lytospira", EntityPrehistoricFloraLytospira.class, LepidodendronMod.ENTITY_LYTOSPIRA, 48,-4934844,-6861268);
+        registerEntity("prehistoric_flora_boiotremus", EntityPrehistoricFloraBoiotremus.class, LepidodendronMod.ENTITY_BOIOTREMUS, 48,-11168883,-6743796);
+        registerEntity("prehistoric_flora_bathrotomaria", EntityPrehistoricFloraBathrotomaria.class, LepidodendronMod.ENTITY_BATHROTOMARIA, 48,-2049358,-7260638);
 //        registerEntity("prehistoric_flora_megateuthis", EntityPrehistoricFloraMegateuthis.class, LepidodendronMod.ENTITY_MEGATEUTHIS, 48,-8234216,-6912736);
         registerEntity("prehistoric_flora_lytoceras", EntityPrehistoricFloraLytoceras.class, LepidodendronMod.ENTITY_LYTOCERAS, 64,-1186124,-9282468);
         registerEntity("prehistoric_flora_mariella", EntityPrehistoricFloraMariella.class, LepidodendronMod.ENTITY_MARIELLA, 48,-8692846,-3089686);

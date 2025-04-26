@@ -7479,6 +7479,42 @@ public class RenderHandler {
                 return new RenderTadpole(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLesueurilla.class, new IRenderFactory<EntityPrehistoricFloraLesueurilla>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLesueurilla> createRenderFor(RenderManager manager) {
+                return new RenderLesueurilla(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLytospira.class, new IRenderFactory<EntityPrehistoricFloraLytospira>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLytospira> createRenderFor(RenderManager manager) {
+                return new RenderLytospira(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKirkospira.class, new IRenderFactory<EntityPrehistoricFloraKirkospira>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraKirkospira> createRenderFor(RenderManager manager) {
+                return new RenderKirkospira(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBathrotomaria.class, new IRenderFactory<EntityPrehistoricFloraBathrotomaria>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraBathrotomaria> createRenderFor(RenderManager manager) {
+                return new RenderBathrotomaria(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBoiotremus.class, new IRenderFactory<EntityPrehistoricFloraBoiotremus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraBoiotremus> createRenderFor(RenderManager manager) {
+                return new RenderBoiotremus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCoelostylina.class, new IRenderFactory<EntityPrehistoricFloraCoelostylina>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCoelostylina> createRenderFor(RenderManager manager) {
+                return new RenderCoelostylina(manager);
+            }
+        });
         
 
 
