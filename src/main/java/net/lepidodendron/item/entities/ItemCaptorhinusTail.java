@@ -15,7 +15,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -70,7 +69,6 @@ public class ItemCaptorhinusTail extends ElementsLepidodendronMod.ModElement {
 			super.onFoodEaten(itemStack, world, entity);
 			if (entity instanceof EntityLivingBase) {
 				((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.NAUSEA, (int) 300, (int) 3));
-				entity.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 				if (entity instanceof EntityPlayerMP) {
 					ModTriggers.TAIL.trigger((EntityPlayerMP) entity);
 				}

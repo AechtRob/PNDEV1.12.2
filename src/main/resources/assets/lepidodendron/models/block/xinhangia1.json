@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/xinhangia1",
+    "particle": "lepidodendron:blocks/xinhangia1"
+  }
+}

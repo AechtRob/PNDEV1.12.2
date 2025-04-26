@@ -81,8 +81,10 @@ public class WorldGenArchaeopterisTree extends WorldGenAbstractTree
                 boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
                 Biome biome = worldIn.getBiome(position);
                 boolean vines = (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_hills")
+                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_forest")
                     || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_beach")
-                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_swamp"));
+                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_vale")
+                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_vale"));
 
                 if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
@@ -106,7 +108,10 @@ public class WorldGenArchaeopterisTree extends WorldGenAbstractTree
                         if ((biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_cold_savanna")
                                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_cold_savanna")
                                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_mountains")
-                                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_vale"))
+                                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_vale")
+                                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_vale")
+                                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_lycopsid_spinney")
+                                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_lycopsid_spinney"))
                             && rand.nextInt(3) != 0) {
                             ProcedureWorldGenArchaeopterisStunted.executeProcedure($_dependencies);
                         }

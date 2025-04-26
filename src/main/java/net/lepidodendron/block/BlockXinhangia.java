@@ -16,16 +16,12 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
@@ -43,11 +39,11 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockSphenopteris extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:sphenopteris")
+public class BlockXinhangia extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:xinhangia")
 	public static final Block block = null;
-	public BlockSphenopteris(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.sphenopteris);
+	public BlockXinhangia(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.xinhangia);
 	}
 
 	@Override
@@ -60,15 +56,15 @@ public class BlockSphenopteris extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:sphenopteris", "inventory"));
+				new ModelResourceLocation("lepidodendron:xinhangia", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:sphenopteris", BlockSphenopteris.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockSphenopteris.block);
-		OreDictionary.registerOre("plant", BlockSphenopteris.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:xinhangia", BlockXinhangia.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockXinhangia.block);
+		OreDictionary.registerOre("plant", BlockXinhangia.block);
 	}
 
 
@@ -80,34 +76,19 @@ public class BlockSphenopteris extends ElementsLepidodendronMod.ModElement {
 			setHardness(0F);
 			setResistance(0F);
 			setLightLevel(0F);
-			setTranslationKey("pf_sphenopteris");
-			setRegistryName("sphenopteris");
+			setTranslationKey("pf_xinhangia");
+			setRegistryName("xinhangia");
 		}
 
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_SPHENOPTERIS;
+			return ModTriggers.CLICK_XINHANGIA;
 		}
 
 		@Override
-		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
-			if (stack.getItem() == Items.SHEARS && LepidodendronConfig.doPropagation
-					&&
-					(worldIn.getBlockState(pos.down()).getMaterial() == Material.GROUND
-							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.SAND
-							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.ROCK
-							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.CLAY
-							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.GRASS
-					)
-			) {
-				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
-				entityToSpawn.setPickupDelay(10);
-				worldIn.spawnEntity(entityToSpawn);
-			}
-			else {
-				super.harvestBlock(worldIn, player, pos, state, te, stack);
-			}
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
 		}
 
 		@Override
@@ -140,30 +121,38 @@ public class BlockSphenopteris extends ElementsLepidodendronMod.ModElement {
 			return EnumPlantType.Plains;
 		}
 
-		@Override
-		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-			return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
-		}
+		//@Override
+		//public BlockFlower.EnumFlowerColor getBlockType() {
+		//	return BlockFlower.EnumFlowerColor.YELLOW;
+		//}
+
+		//@SideOnly(Side.CLIENT)
+		//@Override
+		//public void getSubBlocks(CreativeTabs tab, net.minecraft.util.NonNullList<ItemStack> list) {
+		//	for (BlockFlower.EnumFlowerType blockflower$enumflowertype : BlockFlower.EnumFlowerType.getTypes(this.getBlockType())) {
+		//		list.add(new ItemStack(this, 1, blockflower$enumflowertype.getMeta()));
+		//	}
+		//}
 		
 	    @SideOnly(Side.CLIENT)
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Seed-Plant");
-	        	tooltip.add("Periods: late Devonian(?) - Carboniferous - Permian - Triassic");
-	        	tooltip.add("Propagation: seeds");}
+				tooltip.add("Type: Fern plant");
+	        tooltip.add("Periods: Devonian - Carboniferous");
+	        tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
 		@Override
-	    public Block.EnumOffsetType getOffsetType()
+	    public EnumOffsetType getOffsetType()
 	    {
-	        return Block.EnumOffsetType.XZ;
+	        return EnumOffsetType.XZ;
 	    }
 
 		@Override
 		public Block planted() {
-			return BlockSphenopteris.block;
+			return BlockXinhangia.block;
 		}
 
 		@Override

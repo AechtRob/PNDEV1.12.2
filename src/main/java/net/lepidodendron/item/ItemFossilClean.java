@@ -1883,6 +1883,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_ullmannia_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_gigantopterid_climbing_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_lepidophloeum_sapling_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_xinhangia_clean", "inventory"),
 
 				new ModelResourceLocation("lepidodendron:fossil_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossil_clean_missing_texture", "inventory")

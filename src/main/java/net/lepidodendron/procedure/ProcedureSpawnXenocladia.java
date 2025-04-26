@@ -27,10 +27,9 @@ public class ProcedureSpawnXenocladia extends ElementsLepidodendronMod.ModElemen
 				dimensionCriteria = true;
 			if (!TreeChosen && !LepidodendronConfig.genAllPlants)
 				dimensionCriteria = false;
-			if (dimID == LepidodendronConfig.dimDevonian)
-				dimensionCriteria = true;
+
+			Biome biome = world.getBiome(new BlockPos(x, y, z));
 			if (dimensionCriteria && !SaplingSpawn) {
-				Biome biome = world.getBiome(new BlockPos(x, y, z));
 				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genXenocladiaBlacklistBiomes))) {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 						biomeCriteria = true;
@@ -43,11 +42,11 @@ public class ProcedureSpawnXenocladia extends ElementsLepidodendronMod.ModElemen
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
+
 				if (matchBiome(biome, LepidodendronConfigPlants.genXenocladiaOverrideBiomes))
 					biomeCriteria = true;
 				}
-				if (dimID == LepidodendronConfig.dimDevonian)
-					biomeCriteria = true;
+
 				if (biomeCriteria && !SaplingSpawn) {
 					//Try one spot at the foot of the tree:
 					//{

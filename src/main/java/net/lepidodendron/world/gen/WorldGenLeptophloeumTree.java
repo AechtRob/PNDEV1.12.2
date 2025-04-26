@@ -13,10 +13,10 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import java.util.Random;
 
-public class WorldGenLepidophloeumTree extends WorldGenAbstractTree
+public class WorldGenLeptophloeumTree extends WorldGenAbstractTree
 {
 
-    public WorldGenLepidophloeumTree(boolean notify)
+    public WorldGenLeptophloeumTree(boolean notify)
     {
         super(notify);
     }
@@ -98,7 +98,7 @@ public class WorldGenLepidophloeumTree extends WorldGenAbstractTree
 						ProcedureWorldGenWalchia.executeProcedure($_dependencies);
 					}
 					else {
-                        if (rand.nextInt(13) == 0) {
+                        if (rand.nextInt(10) == 0) {
                             ProcedureWorldGenLeptophloeumYoung.executeProcedure($_dependencies);
                         }
                         else {
