@@ -15,7 +15,7 @@ public class RenderParadoxides extends RenderLivingBaseWithBook<EntityPrehistori
         super(mgr, new ModelParadoxides(), 0.2f);
     }
 
-    public static float getScaler() {return 0.66F; }
+    public static float getScaler() {return 0.45F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraParadoxides entity) {

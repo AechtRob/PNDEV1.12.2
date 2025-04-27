@@ -15,7 +15,7 @@ public class RenderDatheosaurus extends RenderLivingBaseWithBook<EntityPrehistor
         super(mgr, new ModelDatheosaurus(), 0.25F);
     }
     public static float getScaler() {
-        return 0.558f;
+        return 0.51f;
     }
 
     @Override
