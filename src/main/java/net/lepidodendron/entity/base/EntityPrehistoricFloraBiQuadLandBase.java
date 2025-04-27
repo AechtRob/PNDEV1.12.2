@@ -51,11 +51,15 @@ public abstract class EntityPrehistoricFloraBiQuadLandBase extends EntityPrehist
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
     public ChainBuffer chainBuffer;
-    private int quadTicks;
-    private int biTicks;
+//    private int quadTicks;
+//    private int biTicks;
     public Animation TOQUAD_ANIMATION;
     public Animation TOBI_ANIMATION;
-    public boolean isQuad = true;
+//    public boolean isQuad = true;
+    private static final DataParameter<Boolean> ISQUAD = EntityDataManager.createKey(EntityPrehistoricFloraBiQuadLandBase.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Integer> BITICKS = EntityDataManager.createKey(EntityPrehistoricFloraBiQuadLandBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Integer> QUADTICKS = EntityDataManager.createKey(EntityPrehistoricFloraBiQuadLandBase.class, DataSerializers.VARINT);
+
 
     public EntityPrehistoricFloraBiQuadLandBase(World world) {
         super(world);
@@ -99,6 +103,30 @@ public abstract class EntityPrehistoricFloraBiQuadLandBase extends EntityPrehist
         return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, TOBI_ANIMATION, TOQUAD_ANIMATION};
     }
 
+    public boolean isQuad() {
+        return this.dataManager.get(ISQUAD);
+    }
+
+    public void setIsQuad(boolean sitting) {
+        this.dataManager.set(ISQUAD, sitting);
+    }
+
+    public int getQuadTicks() {
+        return this.dataManager.get(QUADTICKS);
+    }
+
+    public void setQuadTicks(int ticks) {
+        this.dataManager.set(QUADTICKS, ticks);
+    }
+
+    public int getBiTicks() {
+        return this.dataManager.get(BITICKS);
+    }
+
+    public void setBiTicks(int ticks) {
+        this.dataManager.set(BITICKS, ticks);
+    }
+
     @Override
     /**
      * Override this in order to set which mode is the default mode. By default, Quadrupedal is the default walking mode
@@ -106,42 +134,46 @@ public abstract class EntityPrehistoricFloraBiQuadLandBase extends EntityPrehist
      */
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
-        this.biTicks = 0;
-        this.quadTicks = rand.nextInt(2500);
+        this.setBiTicks(0);
+        this.setQuadTicks(rand.nextInt(2500));
         return livingdata;
     }
 
     public void setBipedal() {
         if (!world.isRemote) {
             //not in transition, not quad, and quadrupedal time is up
-            if (this.getAnimation() != this.TOBI_ANIMATION && !this.isQuad && this.quadTicks <= 0) {
+            System.out.println("here");
+            if (this.getAnimation() != this.TOBI_ANIMATION && this.isQuad() && this.getQuadTicks() <= 0) {
                 if (this.onGround) {
                     this.setAnimation(TOBI_ANIMATION);
                 }
             }
-            this.biTicks = rand.nextInt(2500) + this.getToBiTransitionLength();
-            this.quadTicks = 0;
-            this.isQuad = false;
+            this.setBiTicks(rand.nextInt(2500) + this.getToBiTransitionLength());
+            this.setQuadTicks(0);
+            this.setIsQuad(false);
         }
     }
 
     public void setQuadrupedal() {
         if (!world.isRemote) {
             //not in transition, not quad, and quadrupedal time is up
-            if (this.getAnimation() != this.TOQUAD_ANIMATION && this.isQuad && this.biTicks <= 0) {
+            if (this.getAnimation() != this.TOQUAD_ANIMATION && !this.isQuad() && this.getBiTicks() <= 0) {
                 if (this.onGround) {
                     this.setAnimation(TOQUAD_ANIMATION);
                 }
             }
-            this.quadTicks = rand.nextInt(2500) + this.getToQuadTransitionLength();
-            this.biTicks = 0;
-            this.isQuad = true;
+            this.setBiTicks(0);
+            this.setQuadTicks(rand.nextInt(2500)+ this.getToQuadTransitionLength());
+            this.setIsQuad(true);
         }
     }
 
     @Override
     protected void entityInit() {
         super.entityInit();
+        this.dataManager.register(ISQUAD, true);
+        this.dataManager.register(BITICKS, 0);
+        this.dataManager.register(QUADTICKS, rand.nextInt(2500) + this.getToQuadTransitionLength());
         this.setScaleForAge(false);
     }
     @Override
@@ -149,12 +181,20 @@ public abstract class EntityPrehistoricFloraBiQuadLandBase extends EntityPrehist
     {
         super.writeEntityToNBT(compound);
         compound.setInteger("animationcountdown", this.getAnimationCountdown());
+        compound.setBoolean("IsQuad", this.isQuad());
+        compound.setInteger("BiCooldown", this.getBiTicks());
+        compound.setInteger("QuadCooldown", this.getQuadTicks());
     }
 
     @Override
     public void readEntityFromNBT(NBTTagCompound compound) {
         super.readEntityFromNBT(compound);
         this.setAnimationCountdown(compound.getInteger("animationcountdown"));
+        this.dataManager.set(BITICKS, compound.getInteger("BiCooldown"));
+        this.dataManager.set(QUADTICKS, compound.getInteger("QuadCooldown"));
+        this.dataManager.set(ISQUAD, compound.getBoolean("IsQuad"));
+
+
     }
 
 
@@ -218,27 +258,36 @@ public abstract class EntityPrehistoricFloraBiQuadLandBase extends EntityPrehist
     @Override
     public void onLivingUpdate()
     {
+
         super.onLivingUpdate();
+        if(!world.isRemote) {
+            //is bipedal, decrease bipedal ticks
+            if (this.getBiTicks() > 0 && !this.isQuad()) {
+                this.setBiTicks(this.getBiTicks() - 1);
+            }
 
-        //is bipedal, decrease bipedal ticks
-        if(this.biTicks > 0 && !this.isQuad) {
-            this.biTicks--;
-        }
+            //is jumping, decrease walking cooldown
+            if (this.getQuadTicks() > 0 && this.isQuad()) {
+                this.setQuadTicks(this.getQuadTicks() - 1);
+            }
 
-        //is jumping, decrease walking cooldown
-        if(this.quadTicks > 0 && this.isQuad) {
-            this.quadTicks--;
-        }
-
-        //switch to quad if currently in bipedal mode
-        if(this.quadTicks <= 0 && this.biTicks <=0 && !this.isQuad) {
-            this.setQuadrupedal();
-            this.getNavigator().clearPath();
-        }
-        //switch to bipedal if currently in quad mode
-        else if(this.quadTicks <= 0 && this.biTicks <=0 && this.isQuad) {
-            this.setBipedal();
-            this.getNavigator().clearPath();
+            //switch to quad if currently in bipedal mode
+            if (this.getQuadTicks() <= 0 && this.getBiTicks() <= 0 && !this.isQuad() && (!this.isAnimationDirectionLocked(this.getAnimation()))) {
+                this.setQuadrupedal();
+            }
+            //switch to bipedal if currently in quad mode
+            else if (this.getQuadTicks() <= 0 && this.getBiTicks() <= 0 && this.isQuad() && (!this.isAnimationDirectionLocked(this.getAnimation()))) {
+                this.setBipedal();
+            }
+            else if(this.getQuadTicks() == 0 && this.getBiTicks() == 0) {
+                this.setBiTicks(this.getBiTicks() + 100);
+                this.setIsQuad(false);
+            }
+            if(this.getIsFast() && this.isQuad()) {
+                this.setBipedal();
+                this.setBiTicks(50+this.getEatLength());
+                this.setIsQuad(false);
+            }
         }
 
         if (!world.isRemote) {
@@ -254,6 +303,8 @@ public abstract class EntityPrehistoricFloraBiQuadLandBase extends EntityPrehist
                 this.setJuvenile(false);
             }
         }
+
+
 
 
         this.renderYawOffset = this.rotationYaw;

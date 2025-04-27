@@ -1,7 +1,7 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraAkasakiella;
+import net.lepidodendron.entity.EntityPrehistoricFloraCoelostylina;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -17,51 +17,50 @@ public class ModelCoelostylina extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer cube_r1;
 
     public ModelCoelostylina() {
-        this.textureWidth = 20;
-        this.textureHeight = 20;
+        this.textureWidth = 32;
+        this.textureHeight = 32;
 
         this.body = new AdvancedModelRenderer(this);
-        this.body.setRotationPoint(-1.0F, 23.0F, -2.5F);
+        this.body.setRotationPoint(0.0F, 23.0F, -2.5F);
         this.body.cubeList.add(new ModelBox(body, 0, 0, -1.5F, 0.0F, -2.0F, 3, 1, 4, 0.0F, false));
-        this.body.cubeList.add(new ModelBox(body, 13, 10, -1.0F, 0.0F, -3.0F, 2, 1, 1, 0.0F, false));
-        this.body.cubeList.add(new ModelBox(body, 7, 6, -1.0F, -0.25F, -1.45F, 2, 1, 3, 0.0F, false));
+        this.body.cubeList.add(new ModelBox(body, 15, 0, -1.0F, 0.0F, -3.0F, 2, 1, 1, 0.0F, false));
+        this.body.cubeList.add(new ModelBox(body, 0, 12, -1.0F, -0.75F, -1.45F, 2, 1, 3, 0.0F, false));
 
         this.tail = new AdvancedModelRenderer(this);
         this.tail.setRotationPoint(1.0F, 1.0F, 2.5F);
         this.body.addChild(tail);
-        this.tail.cubeList.add(new ModelBox(tail, 13, 4, -2.0F, -0.99F, -0.5F, 2, 1, 1, 0.0F, false));
+        this.tail.cubeList.add(new ModelBox(tail, 15, 3, -2.0F, -0.99F, -0.5F, 2, 1, 1, 0.0F, false));
 
         this.tail2 = new AdvancedModelRenderer(this);
         this.tail2.setRotationPoint(0.0F, 0.0F, 0.0F);
         this.tail.addChild(tail2);
-        this.tail2.cubeList.add(new ModelBox(tail2, 0, 0, -1.5F, -1.0F, 0.5F, 1, 1, 1, 0.0F, false));
+        this.tail2.cubeList.add(new ModelBox(tail2, 0, 17, -1.5F, -1.0F, 0.5F, 1, 1, 1, 0.0F, false));
 
         this.eye1 = new AdvancedModelRenderer(this);
         this.eye1.setRotationPoint(0.5F, 0.25F, -2.5F);
         this.body.addChild(eye1);
         this.setRotateAngle(eye1, 1.0472F, 0.0F, 0.1745F);
-        this.eye1.cubeList.add(new ModelBox(eye1, 2, 1, 0.0F, -1.75F, -0.5F, 0, 2, 1, 0.0F, false));
+        this.eye1.cubeList.add(new ModelBox(eye1, 10, 17, 0.0F, -1.75F, -0.5F, 0, 2, 1, 0.0F, false));
 
         this.eye2 = new AdvancedModelRenderer(this);
         this.eye2.setRotationPoint(-0.5F, 0.25F, -2.5F);
         this.body.addChild(eye2);
         this.setRotateAngle(eye2, 1.0472F, 0.0F, -0.1745F);
-        this.eye2.cubeList.add(new ModelBox(eye2, 0, 1, 0.0F, -1.75F, -0.5F, 0, 2, 1, 0.0F, false));
+        this.eye2.cubeList.add(new ModelBox(eye2, 13, 17, 0.0F, -1.75F, -0.5F, 0, 2, 1, 0.0F, false));
 
         this.shell = new AdvancedModelRenderer(this);
-        this.shell.setRotationPoint(0.0F, 0.0F, -0.4F);
+        this.shell.setRotationPoint(0.0F, 0.275F, -0.5F);
         this.body.addChild(shell);
-        this.setRotateAngle(shell, 0.2138F, 0.0F, 0.0F);
-        this.shell.cubeList.add(new ModelBox(shell, 10, 0, -1.0F, -2.0F, -1.5F, 2, 2, 2, 0.01F, false));
-        this.shell.cubeList.add(new ModelBox(shell, 0, 9, -0.5F, -2.0F, 0.5F, 1, 2, 3, 0.0F, false));
-        this.shell.cubeList.add(new ModelBox(shell, 0, 5, -1.0F, -1.5F, 0.5F, 2, 1, 3, 0.0F, false));
-        this.shell.cubeList.add(new ModelBox(shell, 8, 10, -0.5F, -1.5F, 3.5F, 1, 1, 3, 0.0F, false));
+        this.setRotateAngle(shell, 0.1745F, 0.0F, 0.0F);
+        this.shell.cubeList.add(new ModelBox(shell, 0, 6, -1.5F, -2.9062F, -0.1858F, 3, 3, 2, 0.01F, false));
+        this.shell.cubeList.add(new ModelBox(shell, 11, 6, -1.0F, -2.4062F, 1.8142F, 2, 2, 3, 0.01F, false));
+        this.shell.cubeList.add(new ModelBox(shell, 5, 17, -0.5F, -1.9062F, 4.8142F, 1, 1, 1, 0.0F, false));
 
         this.cube_r1 = new AdvancedModelRenderer(this);
-        this.cube_r1.setRotationPoint(-0.01F, -1.3136F, -1.3872F);
+        this.cube_r1.setRotationPoint(-0.5F, -2.9062F, -0.1858F);
         this.shell.addChild(cube_r1);
         this.setRotateAngle(cube_r1, 0.9599F, 0.0F, 0.0F);
-        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 5, 10, -0.99F, -0.5F, -0.5F, 2, 1, 1, 0.002F, false));
+        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 11, 12, -1.0F, 0.0F, -2.0F, 2, 2, 2, 0.0F, false));
 
         updateDefaultPose();
     }
@@ -105,7 +104,7 @@ public class ModelCoelostylina extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
        // this.snail.offsetY = 0.83F;
 
-        EntityPrehistoricFloraAkasakiella ee = (EntityPrehistoricFloraAkasakiella) e;
+        EntityPrehistoricFloraCoelostylina ee = (EntityPrehistoricFloraCoelostylina) e;
 
         this.body.offsetZ = 0.13F;
         this.body.offsetX = 0.06F;

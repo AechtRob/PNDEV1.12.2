@@ -7515,6 +7515,12 @@ public class RenderHandler {
                 return new RenderCoelostylina(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTenontosaurus.class, new IRenderFactory<EntityPrehistoricFloraTenontosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTenontosaurus> createRenderFor(RenderManager manager) {
+                return new RenderTenontosaurus(manager);
+            }
+        });
         
 
 
