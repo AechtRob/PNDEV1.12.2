@@ -110,6 +110,9 @@ public class BlockArchaeocalamites extends ElementsLepidodendronMod.ModElement {
 			if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Swamp
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_forest")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_hills")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_vale")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_swamp")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_swamp")
 			) {
 				biomeCriteria = true;
 			}
