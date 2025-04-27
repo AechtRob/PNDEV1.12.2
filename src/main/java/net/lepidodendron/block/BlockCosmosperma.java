@@ -39,11 +39,11 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockXinhangia extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:xinhangia")
+public class BlockCosmosperma extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cosmosperma")
 	public static final Block block = null;
-	public BlockXinhangia(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.xinhangia);
+	public BlockCosmosperma(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.cosmosperma);
 	}
 
 	@Override
@@ -56,15 +56,15 @@ public class BlockXinhangia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:xinhangia", "inventory"));
+				new ModelResourceLocation("lepidodendron:cosmosperma", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:xinhangia", BlockXinhangia.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockXinhangia.block);
-		OreDictionary.registerOre("plant", BlockXinhangia.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:cosmosperma", BlockCosmosperma.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockCosmosperma.block);
+		OreDictionary.registerOre("plant", BlockCosmosperma.block);
 	}
 
 
@@ -76,14 +76,14 @@ public class BlockXinhangia extends ElementsLepidodendronMod.ModElement {
 			setHardness(0F);
 			setResistance(0F);
 			setLightLevel(0F);
-			setTranslationKey("pf_xinhangia");
-			setRegistryName("xinhangia");
+			setTranslationKey("pf_cosmosperma");
+			setRegistryName("cosmosperma");
 		}
 
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_XINHANGIA;
+			return ModTriggers.CLICK_COSMOSPERMA;
 		}
 
 		@Override
@@ -138,9 +138,9 @@ public class BlockXinhangia extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Fern plant");
+				tooltip.add("Type: Seed-Plant");
 	        tooltip.add("Periods: Devonian");
-	        tooltip.add("Propagation: spores");}
+	        tooltip.add("Propagation: seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
@@ -152,7 +152,7 @@ public class BlockXinhangia extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Block planted() {
-			return BlockXinhangia.block;
+			return BlockCosmosperma.block;
 		}
 
 		@Override
