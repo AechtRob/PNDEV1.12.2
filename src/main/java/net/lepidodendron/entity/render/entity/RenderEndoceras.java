@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderEndoceras extends RenderLivingBaseWithBook<EntityPrehistoricFloraEndoceras> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/endoceras.png");
+    public static float getScaler() {
+        return 0.96F;
+    }
 
     public RenderEndoceras(RenderManager mgr) {
         super(mgr, new ModelEndoceras(), 0.6f);
@@ -27,9 +30,9 @@ public class RenderEndoceras extends RenderLivingBaseWithBook<EntityPrehistoricF
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraEndoceras entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * entity.getAgeScale();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.45F;
+        this.shadowSize = entity.width * scale * 0F;
     }
 
 }

@@ -15,7 +15,7 @@ public class RenderTemperoceras extends RenderLivingBaseWithBook<EntityPrehistor
         super(mgr, new ModelTemperoceras(), 0.1f);
     }
 
-    public static float getScaler() {return 0.3F;}
+    public static float getScaler() {return 0.25F;}
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraTemperoceras entity) {

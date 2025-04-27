@@ -12,7 +12,7 @@ public class RenderTurboscinetes extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/turboscinetes.png");
 
     public static float getScaler() {
-        return 0.7F * 0.395F;
+        return 0.7F * 0.2F;
     }
     public RenderTurboscinetes(RenderManager mgr) {
         super(mgr, new ModelTurboscinetes(), 0.0f);

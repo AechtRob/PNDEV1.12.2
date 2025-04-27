@@ -36,7 +36,7 @@ public class RenderNautiloidShellCameroceras extends TileEntitySpecialRenderer<B
 
         GlStateManager.enableAlpha();
         ModelCamerocerasShell modelNautiloidShell = this.modelNautiloidShell;
-        double scale = 0.60D;
+        double scale = 0.35D;
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
             //lying down
             GlStateManager.translate(x + 0.5 , y + 0.65, z + 0.5);

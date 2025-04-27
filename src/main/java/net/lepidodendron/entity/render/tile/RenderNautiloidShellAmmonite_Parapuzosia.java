@@ -2,7 +2,7 @@ package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockNautiloidShellAmmonite_Parapuzosia;
-import net.lepidodendron.entity.model.tile.ModelAmmonite200cmShell;
+import net.lepidodendron.entity.model.tile.ModelParapuzosiaShell;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
@@ -14,11 +14,11 @@ import net.minecraft.util.ResourceLocation;
 public class RenderNautiloidShellAmmonite_Parapuzosia extends TileEntitySpecialRenderer<BlockNautiloidShellAmmonite_Parapuzosia.TileEntityCustom> {
 
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_parapuzosia_shell.png");
-    private final ModelAmmonite200cmShell modelNautiloidShell;
+    private final ModelParapuzosiaShell modelNautiloidShell;
     public static final PropertyDirection FACING = BlockDirectional.FACING;
 
     public RenderNautiloidShellAmmonite_Parapuzosia() {
-        this.modelNautiloidShell = new ModelAmmonite200cmShell();
+        this.modelNautiloidShell = new ModelParapuzosiaShell();
     }
 
     @Override
@@ -35,8 +35,8 @@ public class RenderNautiloidShellAmmonite_Parapuzosia extends TileEntitySpecialR
         this.bindTexture(TEXTURE);
 
         GlStateManager.enableAlpha();
-        ModelAmmonite200cmShell modelNautiloidShell = this.modelNautiloidShell;
-        double scale = 1.3D;
+        ModelParapuzosiaShell modelNautiloidShell = this.modelNautiloidShell;
+        double scale = 0.6D;
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
             //lying down
             GlStateManager.translate(x + 0.5 , y + 0.25, z + 0.5);

@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:jeppssonoceras_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_jeppssonoceras.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_jeppssonoceras.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_jeppssonoceras"
+        }
+    }
+}

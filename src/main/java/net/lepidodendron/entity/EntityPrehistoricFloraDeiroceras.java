@@ -42,11 +42,11 @@ public class EntityPrehistoricFloraDeiroceras extends EntityPrehistoricFloraNaut
 
 	public EntityPrehistoricFloraDeiroceras(World world) {
 		super(world);
-		setSize(1.0F, 0.99F);
+		setSize(0.9F, 0.9F);
 		minWidth = 0.1F;
-		maxWidth = 1.0F;
-		maxHeight = 0.99F;
-		maxHealthAgeable = 24.0D;
+		maxWidth = 0.9F;
+		maxHeight = 0.9F;
+		maxHealthAgeable = 20.0D;
 	}
 
 	@Override
@@ -71,7 +71,13 @@ public class EntityPrehistoricFloraDeiroceras extends EntityPrehistoricFloraNaut
 		return "Ordovician - Silurian - Devonian";
 	}
 
-	//public static String getHabitat() {return "Aquatic";}
+	public boolean canBeVertical() {
+		//isReally in Water
+		boolean check1 = this.isReallyInWater();
+		boolean check2 = (this.world.isAirBlock(this.getPosition().up(2)));
+
+		return check1 && !check2;
+	}
 
 	@Override
 	public boolean isAtBottom() {
@@ -107,7 +113,7 @@ public class EntityPrehistoricFloraDeiroceras extends EntityPrehistoricFloraNaut
 
 	@Override
 	protected float getAISpeedNautiloid() {
-		return 0.1f;
+		return 0.05f;
 	}
 
 	protected void initEntityAI() {

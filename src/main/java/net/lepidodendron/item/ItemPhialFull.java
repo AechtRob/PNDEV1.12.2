@@ -198,7 +198,7 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_eldeceeon", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_silvanerpeton", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_westlothiana", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/phial_eggs_rhadinosteus", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_tadpole_rhadinosteus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_triadobatrachus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_apateon", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_microbrachis", "inventory"),
@@ -209,7 +209,12 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_cretoxyrhina", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_egertonodus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_thaiodus", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/phial_eggs_sarcoprion", "inventory")
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_sarcoprion", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_tadpole_notobatrachus", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_cretalamna", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_tadpole_cratopipa", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_tadpole_prosalirus", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_permarachne", "inventory")
 
 
 		);

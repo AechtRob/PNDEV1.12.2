@@ -12,7 +12,7 @@ public class RenderPiranhamesodon extends RenderLivingBaseWithBook<EntityPrehist
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/piranhamesodon.png");
 
     public static float getScaler() {
-        return 0.7F * 0.395F;
+        return 0.7F * 0.22F;
     }
     public RenderPiranhamesodon(RenderManager mgr) {
         super(mgr, new ModelPiranhamesodon(), 0.0f);

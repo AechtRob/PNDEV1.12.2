@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:mosineia_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_mosineia.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_mosineia.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_mosineia"
+        }
+    }
+}

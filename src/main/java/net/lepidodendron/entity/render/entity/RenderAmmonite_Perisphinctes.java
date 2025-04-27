@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAmmonite_Perisphinctes;
 import net.lepidodendron.entity.model.entity.ModelAmmonite_Perisphinctes;
+import net.lepidodendron.entity.model.entity.ModelPerisphinctes;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -12,10 +13,10 @@ public class RenderAmmonite_Perisphinctes extends RenderLivingBaseWithBook<Entit
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/perisphinctes_ammonite.png");
 
     public static float getScaler() {
-        return 0.7F * 0.5F;
+        return 0.7F * 0.3F;
     }
     public RenderAmmonite_Perisphinctes(RenderManager mgr) {
-        super(mgr, new ModelAmmonite_Perisphinctes(), 0.0f);
+        super(mgr, new ModelPerisphinctes(), 0.0f);
     }
 
     @Override

@@ -98,6 +98,7 @@ public class JellyfishWanderSurface extends AnimationAINoAnimation<EntityPrehist
                 if (this.PrehistoricFloraJellyfishBase.world.isBlockLoaded(new BlockPos(randPos))) {
                     boolean surfaceCheck = false;
 
+                    //this allows you to check if you are at surface while in water
                     if (this.PrehistoricFloraJellyfishBase.world.isAirBlock(new BlockPos(randPos).up())) {
                         surfaceCheck = true;
                     }

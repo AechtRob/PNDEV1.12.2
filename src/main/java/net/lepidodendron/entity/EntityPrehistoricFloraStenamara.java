@@ -66,7 +66,7 @@ public class EntityPrehistoricFloraStenamara extends EntityPrehistoricFloraFishB
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.3f;
+		return 0.09f;
 	}
 
 	@Override

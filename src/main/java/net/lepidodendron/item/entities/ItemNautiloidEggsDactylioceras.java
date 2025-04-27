@@ -105,7 +105,7 @@ public class ItemNautiloidEggsDactylioceras extends ElementsLepidodendronMod.Mod
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Nautiloid Ammonite");
-				tooltip.add("Periods: early Jurassic");
+				tooltip.add("Periods: Permian");
 				super.addInformation(stack, player, tooltip, advanced);
 			}
 		} */

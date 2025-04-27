@@ -13,7 +13,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderNautiloidShellDeiroceras extends TileEntitySpecialRenderer<BlockNautiloidShellDeiroceras.TileEntityCustom> {
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/deiroceras.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/deiroceras_shell.png");
     private final ModelDeirocerasShell modelNautiloidShell;
     public static final PropertyDirection FACING = BlockDirectional.FACING;
 
@@ -39,7 +39,7 @@ public class RenderNautiloidShellDeiroceras extends TileEntitySpecialRenderer<Bl
         double scale = 0.290D;
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
             //lying down
-            GlStateManager.translate(x + 0.5 , y + 0.225, z + 0.5);
+            GlStateManager.translate(x + 0.7 , y + 0.1, z +0.5D);
             GlStateManager.scale(scale,scale,scale);
             GlStateManager.rotate(90, 0F, 0F, 1F);
             GlStateManager.rotate(currentRotation, 1F, 0F, 0F);

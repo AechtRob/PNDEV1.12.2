@@ -146,6 +146,17 @@ public class EntityPrehistoricFloraRhadinosteus extends EntityPrehistoricFloraSw
 		return this.getEntityBoundingBox().grow(0.0F + size, 0.0F + size, 0.0F + size);
 	}
 
+	@Override
+	public String getEntityId(Entity entity) {
+		String mobid;
+		mobid = "lepidodendron:prehistoric_flora_tadpole";
+
+		if (this.hasPNVariants() && this.getPNTypeName() != null) {
+			mobid = mobid + "@" + "rhadinosteus";
+		}
+		return mobid;
+	}
+
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));

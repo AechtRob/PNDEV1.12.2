@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAmmonite_Pachydiscus;
 import net.lepidodendron.entity.model.entity.ModelAmmonite100cm;
+import net.lepidodendron.entity.model.entity.ModelPachydiscus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -12,7 +13,10 @@ public class RenderAmmonite_Pachydiscus extends RenderLivingBaseWithBook<EntityP
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_pachydiscus.png");
 
     public RenderAmmonite_Pachydiscus(RenderManager mgr) {
-        super(mgr, new ModelAmmonite100cm(), 0.65f);
+        super(mgr, new ModelPachydiscus(), 0.65f);
+    }
+    public static float getScaler() {
+        return 0.3f;
     }
 
     @Override
@@ -27,9 +31,9 @@ public class RenderAmmonite_Pachydiscus extends RenderLivingBaseWithBook<EntityP
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAmmonite_Pachydiscus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.45F;
+        this.shadowSize = entity.width * scale * 0.0F;
     }
 
 }

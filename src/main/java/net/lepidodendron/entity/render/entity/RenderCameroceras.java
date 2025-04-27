@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderCameroceras extends RenderLivingBaseWithBook<EntityPrehistoricFloraCameroceras> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cameroceras.png");
 
-    public static float getScaler() {return 1F;}
+    public static float getScaler() {return 0.6F;}
 
     public RenderCameroceras(RenderManager mgr) {
         super(mgr, new ModelCameroceras(), 0.6f);
@@ -31,7 +31,7 @@ public class RenderCameroceras extends RenderLivingBaseWithBook<EntityPrehistori
     protected void preRenderCallback(EntityPrehistoricFloraCameroceras entity, float f) {
         float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.45F;
+        this.shadowSize = entity.width * scale * 0F;
     }
 
 }

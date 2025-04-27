@@ -12,7 +12,7 @@ public class RenderElephantoceras extends RenderLivingBaseWithBook<EntityPrehist
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/elephantoceras.png");
 
     public static float getScaler() {
-        return 0.7F * 0.4F;
+        return 0.7F * 0.5F;
     }
     public RenderElephantoceras(RenderManager mgr) {
         super(mgr, new ModelElephantoceras(), 0.0f);

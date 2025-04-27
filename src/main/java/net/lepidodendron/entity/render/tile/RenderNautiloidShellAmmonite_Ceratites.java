@@ -2,7 +2,7 @@ package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockNautiloidShellAmmonite_Ceratites;
-import net.lepidodendron.entity.model.tile.ModelAmmonite50cmShell;
+import net.lepidodendron.entity.model.tile.ModelCeratitesShell;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
@@ -14,11 +14,11 @@ import net.minecraft.util.ResourceLocation;
 public class RenderNautiloidShellAmmonite_Ceratites extends TileEntitySpecialRenderer<BlockNautiloidShellAmmonite_Ceratites.TileEntityCustom> {
 
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_ceratites_shell.png");
-    private final ModelAmmonite50cmShell modelNautiloidShell;
+    private final ModelCeratitesShell modelNautiloidShell;
     public static final PropertyDirection FACING = BlockDirectional.FACING;
 
     public RenderNautiloidShellAmmonite_Ceratites() {
-        this.modelNautiloidShell = new ModelAmmonite50cmShell();
+        this.modelNautiloidShell = new ModelCeratitesShell();
     }
 
     @Override
@@ -35,7 +35,7 @@ public class RenderNautiloidShellAmmonite_Ceratites extends TileEntitySpecialRen
         this.bindTexture(TEXTURE);
 
         GlStateManager.enableAlpha();
-        ModelAmmonite50cmShell modelNautiloidShell = this.modelNautiloidShell;
+        ModelCeratitesShell modelNautiloidShell = this.modelNautiloidShell;
         double scale = 0.18D;
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
             //lying down

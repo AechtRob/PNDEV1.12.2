@@ -13,7 +13,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderNautiloidShellOrthoceras extends TileEntitySpecialRenderer<BlockNautiloidShellOrthoceras.TileEntityCustom> {
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/orthoceras.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/orthoceras_shell.png");
     private final ModelOrthocerasShell modelNautiloidShell;
     public static final PropertyDirection FACING = BlockDirectional.FACING;
 
@@ -36,10 +36,10 @@ public class RenderNautiloidShellOrthoceras extends TileEntitySpecialRenderer<Bl
 
         GlStateManager.enableAlpha();
         ModelOrthocerasShell modelNautiloidShell = this.modelNautiloidShell;
-        double scale = 0.18D;
+        double scale = 0.12D;
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
             //lying down
-            GlStateManager.translate(x + 0.5 , y + 0.10, z + 0.5);
+            GlStateManager.translate(x + 0.5 , y + 0.00, z + 0.5);
             GlStateManager.scale(scale,scale,scale);
             GlStateManager.rotate(90, 0F, 0F, 1F);
             GlStateManager.rotate(currentRotation, 1F, 0F, 0F);

@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:apankura_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_apankura.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_apankura.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_apankura"
+        }
+    }
+}

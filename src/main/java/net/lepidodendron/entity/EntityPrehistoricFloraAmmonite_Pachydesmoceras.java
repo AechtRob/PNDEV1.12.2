@@ -3,11 +3,14 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemNautiloidEggsPachydesmoceras;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -19,7 +22,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraAmmonite_Pachydesmoceras extends EntityPrehistoricFloraNautiloidBase implements ITrappableWater {
+public class EntityPrehistoricFloraAmmonite_Pachydesmoceras extends EntityPrehistoricFloraNautiloidBase implements ITrappableWater, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -121,6 +124,11 @@ public class EntityPrehistoricFloraAmmonite_Pachydesmoceras extends EntityPrehis
 		if (!this.isPFAdult()) {
 			return LepidodendronMod.PACHYDESMOCERAS_LOOT_YOUNG;
 		}return LepidodendronMod.PACHYDESMOCERAS_LOOT;
+	}
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_AMMONITE_PACHYDESMOCERAS;
 	}
 
 }

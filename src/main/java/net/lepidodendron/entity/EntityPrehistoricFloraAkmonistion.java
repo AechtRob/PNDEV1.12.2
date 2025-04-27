@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraAkmonistion extends EntityPrehistoricFloraAge
 		minWidth = 0.1F;
 		maxWidth = 0.4F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 9.0D;
+		maxHealthAgeable = 4.0D;
 	}
 
 	@Override

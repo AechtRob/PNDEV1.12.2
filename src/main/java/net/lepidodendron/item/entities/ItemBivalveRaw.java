@@ -42,7 +42,7 @@ public class ItemBivalveRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
-			super(2, 0.1f, false);
+			super(4, 0.5f, false);
 			setTranslationKey("pf_bivalve_raw");
 			setRegistryName("bivalve_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);

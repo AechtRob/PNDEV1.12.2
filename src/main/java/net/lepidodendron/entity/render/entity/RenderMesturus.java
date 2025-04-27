@@ -12,7 +12,7 @@ public class RenderMesturus extends RenderLivingBaseWithBook<EntityPrehistoricFl
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mesturus.png");
 
     public static float getScaler() {
-        return 0.7F * 0.395F;
+        return 0.7F * 0.25F;
     }
     public RenderMesturus(RenderManager mgr) {
         super(mgr, new ModelMesturus(), 0.0f);

@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:kirkospira_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_kirkospira.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_kirkospira.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_kirkospira"
+        }
+    }
+}

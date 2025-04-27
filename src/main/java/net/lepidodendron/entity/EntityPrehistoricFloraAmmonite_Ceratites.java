@@ -3,11 +3,14 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemNautiloidEggsCeratites;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -20,7 +23,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 
 
-public class EntityPrehistoricFloraAmmonite_Ceratites extends EntityPrehistoricFloraNautiloidBase implements ITrappableWater {
+public class EntityPrehistoricFloraAmmonite_Ceratites extends EntityPrehistoricFloraNautiloidBase implements ITrappableWater, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -28,10 +31,10 @@ public class EntityPrehistoricFloraAmmonite_Ceratites extends EntityPrehistoricF
 
 	public EntityPrehistoricFloraAmmonite_Ceratites(World world) {
 		super(world);
-		setSize(0.5F, 0.3F);
+		setSize(0.2F, 0.2F);
 		minWidth = 0.1F;
-		maxWidth = 0.5F;
-		maxHeight = 0.3F;
+		maxWidth = 0.2F;
+		maxHeight = 0.2F;
 		maxHealthAgeable = 4;
 	}
 
@@ -137,6 +140,12 @@ public class EntityPrehistoricFloraAmmonite_Ceratites extends EntityPrehistoricF
 			return LepidodendronMod.CERATITES_LOOT_YOUNG;
 		}
 		return LepidodendronMod.CERATITES_LOOT;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_AMMONITE_CERATITES;
 	}
 
 }

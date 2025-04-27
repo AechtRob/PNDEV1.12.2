@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAmmonite_Goniatites;
 import net.lepidodendron.entity.model.entity.ModelAmmonite15cm;
+import net.lepidodendron.entity.model.entity.ModelGoniatites;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -12,7 +13,11 @@ public class RenderAmmonite_Goniatites extends RenderLivingBaseWithBook<EntityPr
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_goniatites.png");
 
     public RenderAmmonite_Goniatites(RenderManager mgr) {
-        super(mgr, new ModelAmmonite15cm(), 0.1f);
+        super(mgr, new ModelGoniatites(), 0.1f);
+    }
+
+    public static float getScaler() {
+        return 0.2F;
     }
 
     @Override
@@ -27,7 +32,7 @@ public class RenderAmmonite_Goniatites extends RenderLivingBaseWithBook<EntityPr
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAmmonite_Goniatites entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }
