@@ -381,10 +381,28 @@ public class ModelRetifacies extends ModelBasePalaeopedia {
         this.Retifacies.render(0.022f);
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Retifacies.offsetY = -0.3F;
+        this.Retifacies.offsetX = 0.1F;
+        this.Retifacies.offsetZ = 2.0F;
+        this.Retifacies.rotateAngleY = (float)Math.toRadians(120);
+        this.Retifacies.rotateAngleX = (float)Math.toRadians(0);
+        this.Retifacies.rotateAngleZ = (float)Math.toRadians(0);
+        this.Retifacies.scaleChildren = true;
+        float scaler = 1.0F;
+        this.Retifacies.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Retifacies, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.Retifacies.render(f);
+        //Reset rotations, positions and sizing:
+        this.Retifacies.setScale(1.0F, 1.0F, 1.0F);
+        this.Retifacies.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

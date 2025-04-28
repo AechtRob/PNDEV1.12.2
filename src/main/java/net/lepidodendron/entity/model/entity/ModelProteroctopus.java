@@ -346,9 +346,54 @@ public class ModelProteroctopus extends ModelBasePalaeopedia {
         this.Body.offsetZ = -0.025F;
         this.Body.render(0.01F);
         resetToDefaultPose();
+
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Body.offsetY = -2.4F;
+        this.Body.offsetX = -0.8F;
+        this.Body.offsetZ = 2.0F;
+        this.Body.rotateAngleY = (float)Math.toRadians(120);
+        this.Body.rotateAngleX = (float)Math.toRadians(0);
+        this.Body.rotateAngleZ = (float)Math.toRadians(0);
+        this.Body.scaleChildren = true;
+        float scaler = 3.0F;
+        this.Body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Body, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(mantle, 0F, 0F, .0F);
+        this.setRotateAngle(Arm, -0.0873F, 0.0873F, 0.0F);
+        this.setRotateAngle(Arm2, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(Arm3, 0.0436F, 0.0873F, 0.0F);
+        this.setRotateAngle(Arm4, 0.0873F, 0.0436F, 0.0F);
+        this.setRotateAngle(Arm5, -0.0873F, -0.0873F, 0.0F);
+        this.setRotateAngle(Arm6, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(Arm7, 0.0436F, -0.0873F, 0.0F);
+        this.setRotateAngle(Arm8, 0.0873F, -0.0436F, 0.0F);
+        this.setRotateAngle(Arms, 0.0873F, -0.0873F, 0.0F);
+        this.setRotateAngle(Arms2, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(Arms3, -0.0436F, -0.1309F, 0.0F);
+        this.setRotateAngle(Arms4, -0.0873F, -0.0436F, 0.0F);
+        this.setRotateAngle(Arms5, 0.0873F, 0.0436F, 0.0F);
+        this.setRotateAngle(Arms6, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(Arms7, -0.0436F, 0.1309F, 0.0F);
+        this.setRotateAngle(Arms8, -0.0873F, 0.0436F, 0.0F);
+        this.setRotateAngle(Armss, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(Armss2, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0F, -0.2793F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.2793F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(FinL, 0.0F, 0.0436F, -0.2182F);
+        this.setRotateAngle(FinR, 0.0F, -0.0436F, 0.2182F);
+        this.setRotateAngle(mantle2, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(siphon, 0.0436F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Body.render(f);
+        //Reset rotations, positions and sizing:
+        this.Body.setScale(1.0F, 1.0F, 1.0F);
+        this.Body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

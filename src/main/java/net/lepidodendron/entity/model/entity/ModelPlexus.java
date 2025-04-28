@@ -173,21 +173,43 @@ public class ModelPlexus extends ModelBasePalaeopedia {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.bone.render(f5);
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.bone.offsetY = -3.2F;
-        this.bone.offsetX = -1.138F;
-        this.bone.rotateAngleY = (float)Math.toRadians(200);
-        this.bone.rotateAngleX = (float)Math.toRadians(25);
-        this.bone.rotateAngleZ = (float)Math.toRadians(-8);
+        this.bone.offsetY = -2.4F;
+        this.bone.offsetX = -1.8F;
+        this.bone.offsetZ = 2.0F;
+        this.bone.rotateAngleY = (float)Math.toRadians(120);
+        this.bone.rotateAngleX = (float)Math.toRadians(0);
+        this.bone.rotateAngleZ = (float)Math.toRadians(0);
         this.bone.scaleChildren = true;
-        float scaler = 2.33F;
+        float scaler = 1.8F;
         this.bone.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(bone, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(bone2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(bone3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(bone4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(bone5, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(bone6, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(bone7, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(bone8, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(bone9, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(bone10, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(bone11, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(bone12, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(bone13, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(bone14, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(bone15, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(bone16, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(bone17, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(bone18, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(bone19, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(bone20, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(bone21, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(bone22, 0.0F, -0.2F, 0.0F);
         //End of pose, now render the model:
         this.bone.render(f);
         //Reset rotations, positions and sizing:

@@ -62,7 +62,7 @@ public class RenderArchaeocydippida extends RenderLivingBaseWithBook<EntityPrehi
                 //Layer1:
                 this.bindTexture(LayerArchaeocydippidaBody.TEXTURE);
                 GlStateManager.pushMatrix();
-                GlStateManager.color(1.0F, 1.0F, 1.0F, 0.9F);
+                GlStateManager.color(1.0F, 1.0F, 1.0F, 0.95F);
                 GlStateManager.enableNormalize();
                 GlStateManager.enableBlend();
                 GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);

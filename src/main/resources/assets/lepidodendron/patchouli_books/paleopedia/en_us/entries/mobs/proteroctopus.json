@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_proteroctopus",
 			"title": "Proteroctopus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca$(br)>Cephalopoda"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Vampyropoda"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/proteroctopus.png"],
-			"title": "P. ribeti",
-			"text": ""
+			"type": "entity",
+			"name": "P. ribeti",
+			"entity": "lepidodendron:prehistoric_flora_proteroctopus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_proteroctopus",

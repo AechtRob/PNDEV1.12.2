@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Acanthodii$(br)>Climatiiformes$(br)>Climatiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/parexus.png"],
-			"title": "P. recurvus",
-			"text": ""
+			"type": "entity",
+			"name": "P. recurvus",
+			"entity": "lepidodendron:prehistoric_flora_parexus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_parexus",

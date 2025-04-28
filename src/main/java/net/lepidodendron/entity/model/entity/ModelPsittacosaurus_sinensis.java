@@ -429,11 +429,12 @@ public class ModelPsittacosaurus_sinensis extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.body.offsetY = -0.5F;
         this.body.offsetX = -0.35F;
+        this.body.offsetZ = 2.0F;
         this.body.rotateAngleY = (float)Math.toRadians(230);
         this.body.rotateAngleX = (float)Math.toRadians(12);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);
         this.body.scaleChildren = true;
-        float scaler = 1.45F;
+        float scaler = 1.4F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
 

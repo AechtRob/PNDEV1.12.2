@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_rubidgea",
 			"title": "Rubidgea",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/rubidgea.png"],
-			"title": "R. atrox",
-			"text": ""
+			"type": "entity",
+			"name": "R. atrox",
+			"entity": "lepidodendron:prehistoric_flora_rubidgea",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_rubidgea",

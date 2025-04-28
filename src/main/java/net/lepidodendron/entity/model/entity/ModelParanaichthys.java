@@ -269,9 +269,31 @@ public class ModelParanaichthys extends ModelBasePalaeopedia {
         this.Paranaichthys.render(0.01F);
         resetToDefaultPose();
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Paranaichthys.offsetY = 0.0F;
+        this.Paranaichthys.offsetX = 0.4F;
+        this.Paranaichthys.offsetZ = 2.0F;
+        this.Paranaichthys.rotateAngleY = (float)Math.toRadians(120);
+        this.Paranaichthys.rotateAngleX = (float)Math.toRadians(0);
+        this.Paranaichthys.rotateAngleZ = (float)Math.toRadians(0);
+        this.Paranaichthys.scaleChildren = true;
+        float scaler = 0.8F;
+        this.Paranaichthys.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Paranaichthys, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.3F, 0.0F);
+        //End of pose, now render the model:
+        this.Paranaichthys.render(f);
+        //Reset rotations, positions and sizing:
+        this.Paranaichthys.setScale(1.0F, 1.0F, 1.0F);
+        this.Paranaichthys.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

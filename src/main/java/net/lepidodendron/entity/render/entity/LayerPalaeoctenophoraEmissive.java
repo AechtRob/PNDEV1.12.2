@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class LayerPalaeoctenophoraEmissive implements LayerRenderer<EntityPrehistoricFloraPalaeoctenophora>
 {
     private final RenderPalaeoctenophora PalaeoctenophoraRenderer;
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeoctenophora_emissive.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeoctenophora_emissive.png");
 
     public LayerPalaeoctenophoraEmissive(RenderPalaeoctenophora PalaeoctenophoraRendererIn)
     {

@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Chordata$(br)>Synapsida$(br)>Edaphosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/remigiomontanus.png"],
-			"title": "R. robustus",
-			"text": ""
+			"type": "entity",
+			"name": "R. robustus",
+			"entity": "lepidodendron:prehistoric_flora_remigiomontanus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_remigiomontanus",

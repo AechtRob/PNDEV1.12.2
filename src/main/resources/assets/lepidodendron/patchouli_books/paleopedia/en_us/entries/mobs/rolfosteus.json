@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Camuropiscidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/rolfosteus.png"],
-			"title": "R. canningensis",
-			"text": ""
+			"type": "entity",
+			"name": "R. canningensis",
+			"entity": "lepidodendron:prehistoric_flora_rolfosteus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_rolfosteus",
 			"type": "text",
-			"text": "Rolfosteus is a genus of camuropiscid placoderm from the Late Devonian of Australia. Having a skull length of 11 centimeters (4.3 inches),  the animal was quite unusual for placoderms, having an elongated rostrum, similar to those of billfish, that would make the fast-swimming predator hydrodynamic. This new hydrodynamicism would allow this predator even more speed to catch up with its fast swimming prey."
+			"text": "Rolfosteus is a genus of camuropiscid placoderm from the Upper Devonian of Australia. Having a skull length of 11 centimeters (4.3 inches),  the animal was quite unusual for placoderms, having an elongated rostrum, similar to those of billfish, that would make the fast-swimming predator hydrodynamic. This new hydrodynamicism would allow this predator even more speed to catch up with its fast swimming prey."
 		},
 		{
 			"type": "lepidodendron:diet",

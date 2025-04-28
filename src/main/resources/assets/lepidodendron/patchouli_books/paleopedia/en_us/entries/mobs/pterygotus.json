@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_pterygotus",
 			"title": "Pterygotus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Arthropoda$(br)>Eurypterida$(br)>Pterygotioidea$(br)>Pterygotidae"
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Pterygotioidea$(br)>Pterygotidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pterygotus.png"],
-			"title": "P. anglicus",
-			"text": ""
+			"type": "entity",
+			"name": "P. anglicus",
+			"entity": "lepidodendron:prehistoric_flora_pterygotus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pterygotus",

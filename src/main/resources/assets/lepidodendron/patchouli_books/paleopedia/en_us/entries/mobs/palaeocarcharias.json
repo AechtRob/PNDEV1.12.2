@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>Lamniformes"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/palaeocarcharias.png"],
-			"title": "P. stromeri",
-			"text": ""
+			"type": "entity",
+			"name": "P. stromeri",
+			"entity": "lepidodendron:prehistoric_flora_palaeocarcharias",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_palaeocarcharias",
 			"type": "text",
-			"text": "Paleocarcharias stromeri, found in the Solenhofen and Eichstätt of Germany and the Čerín of France during the late Jurassic.  It's appearance was similar to currently living oretolobids, however it's teeth had high cusps and similar shape to lamniformes. Despite the complete nature of the specimens only a few studies have been carried out to find out the systematic position of Palaeocarcharias."
+			"text": "Paleocarcharias stromeri, found in the Solenhofen and Eichstätt of Germany and the Čerín of France during the Upper Jurassic.  It's appearance was similar to currently living oretolobids, however it's teeth had high cusps and similar shape to lamniformes. Despite the complete nature of the specimens only a few studies have been carried out to find out the systematic position of Palaeocarcharias."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -473,16 +473,34 @@ public class ModelPholidogaster extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hip.offsetY = -1.3F;
-        this.hip.offsetX = -0.4F;
+        this.hip.offsetY = -1.2F;
+        this.hip.offsetX = -0.1F;
         this.hip.rotateAngleY = (float)Math.toRadians(200);
         this.hip.rotateAngleX = (float)Math.toRadians(8);
         this.hip.rotateAngleZ = (float)Math.toRadians(-8);
         this.hip.scaleChildren = true;
-        float scaler = 2.13F;
+        float scaler = 1.4F;
         this.hip.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(hip, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body, 0.0F, 0.25F, 0.1F);
+        this.setRotateAngle(body2, -0.1F, -0.15F, -0.05F);
+        this.setRotateAngle(chest, -0.15F, -0.2F, -0.1F);
+        this.setRotateAngle(head, -0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.1F, 0.25F, 0.0F);
+        this.setRotateAngle(tail2, -0.1F, 0.25F, 0.0F);
+        this.setRotateAngle(tail3, -0.0F, 0.25F, 0.0F);
+        this.setRotateAngle(armleft, 0.0F, -1.0F, 0.8F);
+        this.setRotateAngle(armleft2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(armright, 0.0F, 1.0F, -0.8F);
+        this.setRotateAngle(armright2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legleft, 0.0F, -0.8F, 0.8F);
+        this.setRotateAngle(legleft2, 0.0F, -0.4F, 0.5F);
+        this.setRotateAngle(legleft3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legright, 0.0F, 0.8F, -0.8F);
+        this.setRotateAngle(legright2, 0.0F, 0.4F, -0.5F);
+        this.setRotateAngle(legright3, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.hip.render(f);
         //Reset rotations, positions and sizing:

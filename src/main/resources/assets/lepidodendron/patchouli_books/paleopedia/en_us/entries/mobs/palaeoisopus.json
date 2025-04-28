@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Pycnogonida$(br)>Palaeoisopoda$(br)>Palaeoisopodidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/palaeoisopus.png"],
-			"title": "P. problematicus",
-			"text": ""
+			"type": "entity",
+			"name": "P. problematicus",
+			"entity": "lepidodendron:prehistoric_flora_palaeoisopus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_palaeoisopus",

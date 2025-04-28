@@ -1,5 +1,5 @@
 {
-	"name": "Paleoctenophora",
+		"name": "Paleoctenophora",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/palaeoctenophora_icon.png",
 	"category": "lepidodendron:mobs",
@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Ctenophora$(br)>Tentaculata$(br)>Cydippida"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/palaeoctenophora.png"],
-			"title": "P. brasseli",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "P. brasseli",
+			"entity": "lepidodendron:prehistoric_flora_palaeoctenophora",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_palaeoctenophora",

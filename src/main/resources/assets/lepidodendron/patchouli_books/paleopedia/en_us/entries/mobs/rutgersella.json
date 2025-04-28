@@ -12,15 +12,21 @@
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>$(o)incertae sedis"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/rutgersella.png"],
-			"title": "R. truexi",
-			"text": ""
+			"type": "entity",
+			"name": "R. truexi",
+			"entity": "lepidodendron:prehistoric_flora_rutgersella",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_rutgersella",
 			"type": "text",
-			"text": "Rutgersella is a problematic fossil hailing from the Early Silurian Period, Pennsylvania. The reasoning for its problematic position in the Silurian is that it resembles lifeforms like Dickinsonia, which went extinct at the end of the Ediacaran Period, some 95 Mya, which suggests it may be a very late surviving vendobiont"
+			"text": "Rutgersella is a problematic fossil which comes from the Upper Silurian Period, Pennsylvania. The reasoning for its problematic position in the Silurian is that it resembles the Proarticulata, like Dickinsonia, a phylum which went extinct at the end of the Ediacaran Period, some 95 Mya. This suggests it may be a very late surviving proarticulate, not only giving credence to the idea that the biota of the Ediacaran didn't all go extinct at once near the end of the"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rutgersella",
+			"type": "text",
+			"text": "Ediacaran period as many scientists used to believe, but would also be an example of what is know as an 'extinction debt', or as its more commonly known as, 'dead clade walking', where the original habitat the species evolved in has long since been destroyed by many changes, but the species, genus, or in this case phylum, lingers on in an ever shrinking pocket of safety."
 		},
 		{
 			"type": "lepidodendron:diet",

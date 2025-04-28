@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_pezopallichthys",
 			"title": "Pezopallichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Agnatha$(br)>Furcacaudiformes"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Agnatha$(br)>Thelodonti$(br)>Furcacaudiformes$(br)>Furcacaudidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pezopallichthys.png"],
-			"title": "P. ritchiei",
-			"text": ""
+			"type": "entity",
+			"name": "P. ritchiei",
+			"entity": "lepidodendron:prehistoric_flora_pezopallichthys",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pezopallichthys",
 			"type": "text",
-			"text": "Pezopallichthys was a genus of furcacaudiform jawless fish that lived during the Early to Middle Silurian. It is currently the only known Silurian member of the furcacaudiforms (a mainly Devonian lineage that also included such animals as Furcacauda and Cometicircus). Its remains have been found in Canada's Northwest Territories, alongside other jawless fish such as Athenaegis."
+			"text": "Pezopallichthys was a genus of furcacaudiform jawless fish that lived during the Lower to Middle Silurian. It is currently the only known Silurian member of the furcacaudiforms (a mainly Devonian lineage that also included such animals as Furcacauda and Cometicircus). Its remains have been found in Canada's Northwest Territories, alongside other jawless fish such as Athenaegis."
 		},
 		{
 			"type": "lepidodendron:diet",

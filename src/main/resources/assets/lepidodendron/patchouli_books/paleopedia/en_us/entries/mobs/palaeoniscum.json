@@ -12,35 +12,31 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Actinopterygii$(br)>Palaeonisciformes$(br)>Palaeoniscidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/palaeoniscum.png"],
-			"title": "P. freieslebeni",
-			"text": ""
+			"type": "entity",
+			"name": "P. freieslebeni",
+			"entity": "lepidodendron:prehistoric_flora_palaeoniscum",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_palaeoniscum",
 			"type": "text",
-			"text": "Palaeoniscum is a genus of Palaeonisciform fish from the Permian of at least Europe and North America, with potential specimens from elsewhere. Only around 30 cm long, this fish was covered in heavy Ganoid scales, much like other primitive Ray finned fishes of its time, but unlike them, Palaeoniscum had a strong tail and long fins, "
+			"text": "Palaeoniscum is a genus of Palaeonisciform fish from the Permian of at least Europe and North America, with potential specimens from elsewhere. Only around 30 cm long, this fish was covered in heavy Ganoid scales, much like other primitive Ray finned fishes of its time, but unlike them, Palaeoniscum had a strong tail and long fins, which implied it being a fast and agile hunter, in spite of the heavy scaling which usually worked against this type of adaptation."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_palaeoniscum",
 			"type": "text",
-			"text": "which implied it being a fast and agile hunter, in spite of the heavy scaling which usually worked against this type of adaptation. The animal also possessed an early substitute for a swim bladder in the presence of internal air sacs connected to the digestive tract, which gave the animal better buoyancy in the water. The head was short and sported some very large eyes, while the mouth was armed with small conical teeth, able to be replaced when consumed, like modern day sharks."
+			"text": "The animal also possessed an early substitute for a swim bladder in the presence of internal air sacs connected to the digestive tract, which gave the animal better buoyancy in the water. The head was short and sported some very large eyes, while the mouth was armed with small conical teeth, able to be replaced when consumed, like modern day sharks. First described in 1818 by French Zoologist Henri Marie Ducrotay de Blainville, the animal is an overabundant"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_palaeoniscum",
 			"type": "text",
-			"text": "First described in 1818 by French Zoologist Henri Marie Ducrotay de Blainville, the animal is an overabundant find in many sites where it can be found. Although the genus has many species named under it, the validity of many of these is doubtful at best, as most animals classified under its order are only really considered so thanks to "
+			"text": "find in many sites where it can be found. Although the genus has many species named under it, the validity of many of these is doubtful at best, as most animals classified under its order are only really considered so thanks to their body shape, which was particularly popular among fishes since the Devonian but also after the extinction of this group, making their placement less than solid. Many animals once thought to have been part of this genus"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_palaeoniscum",
 			"type": "text",
-			"text": "their body shape, which was particularly popular among fishes since the Devonian but also after the extinction of this group, making their placement less than solid. Many animals once thought to have been part of this genus have been reclassified today and, while many others remain, the animal is considered a wastebasket taxon and its order paraphyletic."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_palaeoniscum",
-			"type": "text",
-			"text": "Interestingly enough, although the correct name for the animal is Palaeoniscum, several authors since its description started referring to it using the incorrectly spelled Palaeoniscus instead, error that has been trascribed from paper to paper over the years by several people, seemingly going unnoticed for quite a long time."
+			"text": "have been reclassified today and, while many others remain, the animal is considered a wastebasket taxon and its order paraphyletic. Interestingly enough, although the correct name for the animal is Palaeoniscum, several authors since its description started referring to it using the incorrectly spelled Palaeoniscus instead, error that has been trascribed from paper to paper over the years by several people, seemingly going unnoticed for quite a long time."
 		},
 		{
 			"type": "lepidodendron:diet",

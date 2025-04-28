@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Belemnitida$(br)>Passaloteuthidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/passaloteuthis.png"],
-			"title": "P. auricipitis",
-			"text": ""
+			"type": "entity",
+			"name": "P. auricipitis",
+			"entity": "lepidodendron:prehistoric_flora_passaloteuthis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_passaloteuthis",
 			"type": "text",
-			"text": "Passaloteuthis is a Pliensbachian to Toarcian Belmenite known from Europe, Morocco, and Greenland. It is well known for its tentacles which each have 40 small hooks in them. However, Passaloteuthis also has a pair of large hooks on its base arms known as onychites. Some have interpreted these massive hooks as being evidence of sexual dimorphism. However, their function is still not understood. They would've likely been fast and agile predators."
+			"text": "Passaloteuthis is a Pliensbachian to Toarcian belmenite known from Europe, Morocco, and Greenland. It is well known for its tentacles which each have 40 small hooks in them. However, Passaloteuthis also has a pair of large hooks on its base arms known as onychites. Some have interpreted these massive hooks as being evidence of sexual dimorphism. However, their function is still not understood. They would've likely been fast and agile predators."
 		},
 		{
 			"type": "lepidodendron:diet",

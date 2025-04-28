@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_pelurgaspis",
 			"title": "Pelurgaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Cyathaspidiformes$(br)>Amphiaspidida$(br)>Hibernaspidoidei$(br)>Eglonaspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorphi$(br)>Heterostraci$(br)>Cyathaspidiformes$(br)>Amphiaspidida$(br)>Hibernaspidoidei$(br)>Eglonaspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pelurgaspis.png"],
-			"title": "P. macrorhyncha",
-			"text": ""
+			"type": "entity",
+			"name": "P. macrorhyncha",
+			"entity": "lepidodendron:prehistoric_flora_pelurgaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pelurgaspis",
