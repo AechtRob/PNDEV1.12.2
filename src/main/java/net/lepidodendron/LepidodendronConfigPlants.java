@@ -2883,6 +2883,15 @@ public class LepidodendronConfigPlants {
     public static double multiplierBumbudendron = 1;
     public static boolean spreadBumbudendron = true;
 
+    public static boolean genDrepanophycus = false;
+    public static String[] genDrepanophycusBlacklistBiomes = new String[0];
+    public static String[] genDrepanophycusOverrideBiomes = new String[0];
+    public static int[] dimDrepanophycus = new int[]{0};
+    public static int minheightDrepanophycus = 1;
+    public static int maxheightDrepanophycus = 0;
+    public static double multiplierDrepanophycus = 1;
+    public static boolean spreadDrepanophycus = true;
+
     public static boolean genSwampHorsetail = false;
     public static String[] genSwampHorsetailBlacklistBiomes = new String[0];
     public static String[] genSwampHorsetailOverrideBiomes = new String[0];
@@ -13717,6 +13726,38 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Tichavekia", "waterTichavekiaVertical", waterTichavekiaVertical);
         prop.setComment("Distance above water required for Tichavekia to exist (0 to 6) [default: 1]");
         waterTichavekiaVertical = prop.getInt();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Drepanophycus", "genDrepanophycus", genDrepanophycus);
+        prop.setComment("Set to true to generate Drepanophycus naturally [default: false]");
+        genDrepanophycus = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drepanophycus", "genDrepanophycusBlacklistBiomes", genDrepanophycusBlacklistBiomes);
+        prop.setComment("List of biomes Drepanophycus are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genDrepanophycusBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drepanophycus", "genDrepanophycusOverrideBiomes", genDrepanophycusOverrideBiomes);
+        prop.setComment("List of biomes Drepanophycus are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genDrepanophycusOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Drepanophycus", "dimDrepanophycus", dimDrepanophycus);
+        prop.setComment("List of dimension IDs Drepanophycus can generate in [default: 0]");
+        dimDrepanophycus = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drepanophycus", "minheightDrepanophycus", minheightDrepanophycus);
+        prop.setComment("Minimum height that Drepanophycus can generate (1 to 250) [default: 1]");
+        minheightDrepanophycus = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drepanophycus", "maxheightDrepanophycus", maxheightDrepanophycus);
+        prop.setComment("Maximum height that Drepanophycus can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightDrepanophycus = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drepanophycus", "multiplierDrepanophycus", multiplierDrepanophycus);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierDrepanophycus = prop.getDouble();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Drepanophycus", "spreadDrepanophycus", spreadDrepanophycus);
+        prop.setComment("Set to true for Drepanophycus to spread naturally, and to false to require bonemeal to spread [default: true]");
+        spreadDrepanophycus = prop.getBoolean();
         propOrder.add(prop.getName());
 
 

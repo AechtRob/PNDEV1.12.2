@@ -5127,6 +5127,10 @@ public class LepidodendronSorter {
     public static final int xinhangia = 8116;
     public static final int cosmosperma = 8117;
 
+    public static final int drepanophycus_item = 8118;
+    public static final int drepanophycus_land = 8119;
+    public static final int drepanophycus_water = 8120;
+
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;
     public static final int eocursor_raw = 4976;
