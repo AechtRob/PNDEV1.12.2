@@ -1,8 +1,8 @@
 {
   "variants": {
     "normal": [
-      {"model": "lepidodendron:bumbudendron_water"},
-      {"model": "lepidodendron:bumbudendron_water", "y": 90}
+      {"model": "lepidodendron:drepanophycus_water"},
+      {"model": "lepidodendron:drepanophycus_water", "y": 90}
     ]
   }
 }

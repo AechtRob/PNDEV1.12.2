@@ -2,6 +2,6 @@
     "parent": "item/generated",
     "textures": {
         "layer0": "lepidodendron:items/fossil_clean_background",
-        "layer1": "lepidodendron:items/fossil_devonobius_clean"
+        "layer1": "lepidodendron:items/fossil_myriapod_devonobius_clean"
     }
 }
