@@ -98,6 +98,14 @@ public abstract class EntityPrehistoricFloraBiQuadLandBase extends EntityPrehist
      */
     public abstract int getToBiTransitionLength();
 
+    /**
+     * These two methods control how long it stays in either mode. Designed to allow for more complex timings
+     * @return
+     */
+    public abstract int getQuadTime();
+
+    public abstract int getBiTime();
+
     @Override
     public Animation[] getAnimations() {
         return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, TOBI_ANIMATION, TOQUAD_ANIMATION};
@@ -127,6 +135,7 @@ public abstract class EntityPrehistoricFloraBiQuadLandBase extends EntityPrehist
         this.dataManager.set(BITICKS, ticks);
     }
 
+
     @Override
     /**
      * Override this in order to set which mode is the default mode. By default, Quadrupedal is the default walking mode
@@ -135,7 +144,7 @@ public abstract class EntityPrehistoricFloraBiQuadLandBase extends EntityPrehist
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         this.setBiTicks(0);
-        this.setQuadTicks(rand.nextInt(2500));
+        this.setQuadTicks(rand.nextInt(getQuadTime()));
         return livingdata;
     }
 
@@ -148,7 +157,7 @@ public abstract class EntityPrehistoricFloraBiQuadLandBase extends EntityPrehist
                     this.setAnimation(TOBI_ANIMATION);
                 }
             }
-            this.setBiTicks(rand.nextInt(2500) + this.getToBiTransitionLength());
+            this.setBiTicks(rand.nextInt(getBiTime()) + this.getToBiTransitionLength());
             this.setQuadTicks(0);
             this.setIsQuad(false);
         }
@@ -163,7 +172,7 @@ public abstract class EntityPrehistoricFloraBiQuadLandBase extends EntityPrehist
                 }
             }
             this.setBiTicks(0);
-            this.setQuadTicks(rand.nextInt(2500)+ this.getToQuadTransitionLength());
+            this.setQuadTicks(rand.nextInt(getQuadTime())+ this.getToQuadTransitionLength());
             this.setIsQuad(true);
         }
     }

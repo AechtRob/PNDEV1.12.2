@@ -74,6 +74,16 @@ public class EntityPrehistoricFloraTenontosaurus extends EntityPrehistoricFloraB
 		return 20;
 	}
 
+	@Override
+	public int getQuadTime() {
+		return 2500;
+	}
+
+	@Override
+	public int getBiTime() {
+		return 2500;
+	}
+
 	//Grazes
 	@Override
 	public boolean drinksWater() {
