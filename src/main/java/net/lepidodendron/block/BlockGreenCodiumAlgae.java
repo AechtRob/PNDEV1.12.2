@@ -251,6 +251,7 @@ public class BlockGreenCodiumAlgae extends ElementsLepidodendronMod.ModElement {
 			multiplier = 24;
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_algal_reef")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
 			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef")
 		)
 			multiplier = 48;

@@ -451,6 +451,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PODOZAMITES = new CustomTrigger("pf_book_podozamites");
     public static final CustomTrigger CLICK_POLYSPERMOPHYLLUM = new CustomTrigger("pf_book_polyspermophyllum");
     public static final CustomTrigger CLICK_PRIMAEVAL_GRASS = new CustomTrigger("pf_book_primaeval_grass");
+    public static final CustomTrigger CLICK_DREPANOPHYCUS = new CustomTrigger("pf_book_drepanophycus");
     public static final CustomTrigger CLICK_PROTEA_1 = new CustomTrigger("pf_book_protea_1");
     public static final CustomTrigger CLICK_PROTEA = new CustomTrigger("pf_book_protea");
     public static final CustomTrigger CLICK_PROTOLEPIDODENDROPSIS = new CustomTrigger("pf_book_protolepidodendropsis");
@@ -2387,6 +2388,7 @@ public class ModTriggers
             CLICK_PODOZAMITES,
             CLICK_POLYSPERMOPHYLLUM,
             CLICK_PRIMAEVAL_GRASS,
+            CLICK_DREPANOPHYCUS,
             CLICK_PROTEA_1,
             CLICK_PROTEA,
             CLICK_PROTOLEPIDODENDROPSIS,

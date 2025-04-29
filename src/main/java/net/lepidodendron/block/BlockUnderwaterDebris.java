@@ -113,6 +113,7 @@ public class BlockUnderwaterDebris extends ElementsLepidodendronMod.ModElement {
 			if (biomeDevonian.getBiomeType() != EnumBiomeTypeDevonian.Hypersaline
 				&& biomeDevonian.getBiomeType() != EnumBiomeTypeDevonian.Brackish
 				&& biomeDevonian.getBiomeType() != EnumBiomeTypeDevonian.Ocean
+				&& biomeDevonian.getBiomeType() != EnumBiomeTypeDevonian.Lagoon
 				&& biomeDevonian.getBiomeType() != EnumBiomeTypeDevonian.Springs) {
 				biomeCriteria = true;
 			}
