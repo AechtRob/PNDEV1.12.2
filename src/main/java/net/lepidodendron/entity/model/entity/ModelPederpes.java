@@ -295,9 +295,56 @@ public class ModelPederpes extends ModelBasePalaeopedia {
         this.body.render(0.01F);
         resetToDefaultPose();
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = 0.2F;
+        this.body.offsetX = 1.0F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(120);
+        this.body.rotateAngleX = (float)Math.toRadians(0);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 2.0F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.1F, 3.8F, -0.0F);
+        this.setRotateAngle(head, -0.1745F, -0.2182F, 0.0F);
+        this.setRotateAngle(upperhead, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(headU2_r1, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(headU1_r1, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerhead, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(throat2_r1, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(tail1_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(legBL, 0.0F, 0.4363F, 0.0F);
+        this.setRotateAngle(legBL1, 0.0F, 0.0F, 1.3526F);
+        this.setRotateAngle(footBL1, 0.2618F, 0.0F, 0.2182F);
+        this.setRotateAngle(legBR, 0.0F, -0.4363F, 0.0F);
+        this.setRotateAngle(legBR1, 0.0F, 0.0F, -1.3526F);
+        this.setRotateAngle(footBR1, 0.2618F, 0.0F, -0.2182F);
+        this.setRotateAngle(tail2, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(tail2_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(tail3fin_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(tail4fin_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(tail5fin_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(legFL, -0.3927F, 0.6545F, 0.0F);
+        this.setRotateAngle(legFL1, -1.1345F, 0.0F, 0.0F);
+        this.setRotateAngle(footFL1, 0.0F, 0.0F, 0.4363F);
+        this.setRotateAngle(legFR, -0.3927F, -0.6545F, 0.0F);
+        this.setRotateAngle(legFR1, -1.1345F, 0.0F, 0.0F);
+        this.setRotateAngle(footFR1, 0.0F, 0.0F, -0.4363F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

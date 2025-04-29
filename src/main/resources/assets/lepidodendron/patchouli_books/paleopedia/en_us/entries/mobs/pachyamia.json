@@ -11,7 +11,7 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Halecomorphi$(br)>Amiiformes$(br)>Amiidae"
 		},
-        	{
+		{
             "type": "entity",
             "name": "P. latimaxillaris",
             "entity": "lepidodendron:prehistoric_flora_pachyamia",

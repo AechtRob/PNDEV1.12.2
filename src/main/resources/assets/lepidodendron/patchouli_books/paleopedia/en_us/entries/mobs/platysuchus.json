@@ -9,7 +9,7 @@
 "trigger": "lepidodendron:pf_adv_book_platysuchus",
 "title": "Platysuchus",
 "type": "quest",
-"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Archosauria$(br)>Pseudosuchia$(br)>Thalattoscuchia$(br)>Teleosauridae"
+"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Thalattoscuchia$(br)>Teleosauridae"
 },
         {
             "type": "entity",
@@ -21,7 +21,7 @@
 {
 "advancement": "lepidodendron:pf_adv_book_platysuchus",
 "type": "text",
-"text": "Platysuchus is a genus of telosaurid crocdyliform from the Early Jurassic of Europe. Platysuchus was 2.8 m long and looked relatively close to modern crocodiles, by having heavy osteoderms and clawed limbs. However, it was still adapted to marine life and spent much of their lives in the sea."
+"text": "Platysuchus is a genus of telosaurid crocdyliform from the Lower Jurassic of Europe. Platysuchus was 2.8 m long and looked relatively close to modern crocodiles, by having heavy osteoderms and clawed limbs. However, it was still adapted to marine life and spent much of their lives in the sea."
 },
 {
 "type": "lepidodendron:diet",

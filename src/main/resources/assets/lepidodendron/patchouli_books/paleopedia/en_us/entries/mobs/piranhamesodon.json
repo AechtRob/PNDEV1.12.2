@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/piranhamesodon.png"],
-			"title": "P. pinnamotus",
-			"text": ""
+			"type": "entity",
+			"name": "P. pinnamotus",
+			"entity": "lepidodendron:prehistoric_flora_piranhamesodon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_piranhamesodon",
 			"type": "text",
-			"text": "Piranhamesodon pinnatomus lurks among unsuspecting prey, masquerading as one of them in a display of what's known as aggressive mimicry. Piranhamesodon is, in fact, the oldest known occurrance of a piranha styled hunting lifestyle in the fossil record."
+			"text": "Piranhamesodon pinnatomus lurks among unsuspecting prey, masquerading as one of them in a display of what's known as aggressive mimicry. Piranhamesodon is, in fact, the oldest known occurrence of a piranha styled hunting lifestyle in the fossil record."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_piranhamesodon",

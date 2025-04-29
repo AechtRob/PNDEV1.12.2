@@ -9,28 +9,29 @@
 			"trigger": "lepidodendron:pf_adv_book_pituriaspis",
 			"title": "Pituriaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Pituriaspida$(br)>Pituriaspidiformes$(br)>Pituriaspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Cephalaspidomorphi$(br)>Pituriaspida$(br)>Pituriaspidiformes$(br)>Pituriaspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pituriaspis.png"],
-			"title": "P. doylei",
-			"text": ""
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_pituriaspis",
-			"type": "text",
-			"text": "Pituriaspis is one of two only known genera of Pituriaspid agnathans known. Both the genera known are from Australia and appear to be among the only moderately sized jawless fishes known from the continent. The animal is known from one headshield preserving its peculiar shape and anatomy, which lead them to be classified in their own clade."
+			"type": "entity",
+			"name": "P. doylei",
+			"entity": "lepidodendron:prehistoric_flora_pituriaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pituriaspis",
 			"type": "text",
-			"text": "Pituriaspids had peculiar openings under the eyes, not too dissimilar from the spiracles seen in modern day rays and skates, as well as pitted skulls next to the cornual processes, which indicate these animals might've had pectoral fins not unlike Osteostracans. The headshields of Pituriaspids were long and unfused, Pituriaspis having the longest of the two known genera, terminating in a thin and elongated rostrum."
+			"text": "Pituriaspis is one of two only known genera of pituriaspid agnathans known. Both the genera known are from Australia and appear to be among the only moderately sized jawless fishes known from the continent. The animal is known from one headshield preserving its peculiar shape and anatomy, which lead them to be classified in their own clade. Pituriaspids had peculiar openings under the eyes, not too dissimilar from the spiracles seen in modern day rays and skates,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pituriaspis",
 			"type": "text",
-			"text": "Due to the known fossil material, we don't have any idea what the postcrania of these animals looked like, leaving us to speculate over what shape their body was like. The name Pituriaspis was assigned to the genus by Australian Palaeontologist Gavin Young in 1991 referencing the Pituri, a type of hallucinogen referencing how the author believed he was hallucinating while describing them."
+			"text": "as well as pitted skulls next to the cornual processes, which indicate these animals might've had pectoral fins not unlike osteostracans. The headshields of pituriaspids were long and unfused, Pituriaspis having the longest of the two known genera, terminating in a thin and elongated rostrum. Due to the known fossil material, we don't have any idea what the postcrania of these animals looked like, leaving us to speculate over what shape their body was like."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pituriaspis",
+			"type": "text",
+			"text": "The name Pituriaspis was assigned to the genus by Australian Palaeontologist Gavin Young in 1991 referencing the Pituri, a type of hallucinogen referencing how the author believed he was hallucinating while describing them."
 		},
 		{
 			"type": "lepidodendron:diet",

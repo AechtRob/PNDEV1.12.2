@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Acanthodii$(br)>Diplacanthiformes$(br)>Diplacanthidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/rhadinacanthus.png"],
-			"title": "R. longispinus",
-			"text": ""
+			"type": "entity",
+			"name": "R. longispinus",
+			"entity": "lepidodendron:prehistoric_flora_rhadinacanthus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_rhadinacanthus",

@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_scorpion_pulmonoscorpius",
 			"title": "Pulmonoscorpius",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Arachnida$(br)>Scorpiones$(br)>Centromachidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Chelicerata$(br)>Arachnida$(br)>Scorpiones$(br)>Centromachidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pulmonoscorpius.png"],
-			"title": "P. kirktonensis",
-			"text": ""
+			"type": "entity",
+			"name": "P. kirktonensis",
+			"entity": "lepidodendron:prehistoric_flora_scorpion_pulmonoscorpius",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_scorpion_pulmonoscorpius",
 			"type": "text",
-			"text": "Pulmonoscorpius is an extinct large scorpion from the middle Carboniferous period. Its name comes from the latin 'pulmonis' meaning lung, and Greek 'skorpios,' a scorpion. Pulmonoscorpius had a body plan similar to extant scorpions and is thought to have preyed on smaller arthropods."
+			"text": "Pulmonoscorpius is an extinct large scorpion from the Middle Carboniferous period. Its name comes from the Latin word 'pulmonis', meaning 'lung'; and the Greek word 'skorpios', to mean 'scorpion'. Pulmonoscorpius had a body plan similar to extant scorpions and is thought to have preyed on smaller arthropods."
 		},
 		{
 			"type": "lepidodendron:diet",

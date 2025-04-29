@@ -9,23 +9,24 @@
 			"trigger": "lepidodendron:pf_adv_book_quasimodichthys",
 			"title": "Quasimodichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Semionotiformes"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Ginglymodi$(br)>Neoginglymodi$(br)>Semionotiformes"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/quasimodichthys.png"],
-			"title": "Q. piauhyensis",
-			"text": ""
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_quasimodichthys",
-			"type": "text",
-			"text": "Quasimodichthys is a species of Semionotiform fish from the Late Jurassic of Brazil. Formerly known as a species of Lepidotes, the animal received its new genus name only rather recently, making it fully distinct. The remains of this animal come from the Pastos Bons Formation of Brazil, which back in the Late Jurassic was part of an extensive warm arid environment;"
+			"type": "entity",
+			"name": "Q. piauhyensis",
+			"entity": "lepidodendron:prehistoric_flora_quasimodichthys",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_quasimodichthys",
 			"type": "text",
-			"text": "Quasimodichthys would've lived in saline lakes the temperature of which could've reached 20-30°C (68-86 F), interspaced by dry periods which would cause mass cyclical death events. Alongside this peculiar fish, the same digsites also yield Ostracods, Mawsoniids, Pleuropholids and other Semionotids. The generic name of the animal was given in honor of the fictional character Quasimodo"
+			"text": "Quasimodichthys is a species of semionotiform fish from the Upper Jurassic of Brazil. Formerly known as a species of Lepidotes, the animal received its new genus name only rather recently, making it fully distinct. The remains of this animal come from the Pastos Bons Formation of Brazil, which back in the Late Jurassic was part of an extensive warm arid environment;"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_quasimodichthys",
+			"type": "text",
+			"text": "Quasimodichthys would've lived in saline lakes the temperature of which could've reached 20-30°C (68-86 F), interspaced by dry periods which would cause mass cyclical death events. Alongside this peculiar fish, the same digsites also yield ostracods, mawsoniids, pleuropholids and other semionotids. The generic name of the animal was given in honor of the fictional character Quasimodo"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_quasimodichthys",

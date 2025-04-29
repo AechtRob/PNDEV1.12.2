@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Hemichordata$(br)>Pterobranchia$(br)>Cephalodiscida"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/rotaciurca.png"],
-			"title": "R. superbus",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "R. superbus",
+			"entity": "lepidodendron:prehistoric_flora_rotaciurca",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_rotaciurca",

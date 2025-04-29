@@ -272,6 +272,30 @@ public class ModelPapilionichthys extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Papilionichthys.offsetY = -1.2F;
+        this.Papilionichthys.offsetX = 0.0F;
+        this.Papilionichthys.offsetZ = 2.0F;
+        this.Papilionichthys.rotateAngleY = (float)Math.toRadians(120);
+        this.Papilionichthys.rotateAngleX = (float)Math.toRadians(0);
+        this.Papilionichthys.rotateAngleZ = (float)Math.toRadians(0);
+        this.Papilionichthys.scaleChildren = true;
+        float scaler = 2.6F;
+        this.Papilionichthys.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Papilionichthys, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.3F, 0.0F);
+        //End of pose, now render the model:
+        this.Papilionichthys.render(f);
+        //Reset rotations, positions and sizing:
+        this.Papilionichthys.setScale(1.0F, 1.0F, 1.0F);
+        this.Papilionichthys.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

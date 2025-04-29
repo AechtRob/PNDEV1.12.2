@@ -371,27 +371,29 @@ public class ModelPachydesmoceras extends ModelBasePalaeopedia {
         this.root.offsetX = -0.02F;
         this.root.render(0.01F);
         resetToDefaultPose();
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -1.2F;
-        this.root.offsetX = 1.2F;
-        this.root.rotateAngleY = (float)Math.toRadians(242);
-        this.root.rotateAngleX = (float)Math.toRadians(-18);
-        this.root.rotateAngleZ = (float)Math.toRadians(-8);
+        this.root.offsetY = -0.25F;
+        this.root.offsetX = -0.25F;
+        this.root.offsetZ = 2.0F;
+        this.root.rotateAngleY = (float)Math.toRadians(120);
+        this.root.rotateAngleX = (float)Math.toRadians(0);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
         this.root.scaleChildren = true;
-        float scaler = 1.23F;
+        float scaler = 0.7F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(root, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:
         this.root.setScale(1.0F, 1.0F, 1.0F);
         this.root.scaleChildren = false;
         resetToDefaultPose();
+
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedAdvancedModelRenderer, float x, float y, float z) {

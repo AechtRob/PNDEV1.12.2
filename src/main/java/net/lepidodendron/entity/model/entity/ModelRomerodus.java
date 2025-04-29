@@ -277,28 +277,59 @@ public class ModelRomerodus extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
-
         //Rotations, positions and sizing:
-        this.root.offsetY = -1.2F;
-        this.root.offsetX = 0.1F;
-        this.root.rotateAngleY = (float)Math.toRadians(-68);
-        this.root.rotateAngleX = (float)Math.toRadians(15);
-        this.root.rotateAngleZ = (float)Math.toRadians(-10);
-        float scaler = 1.5F;
+        this.root.offsetY = -1.6F;
+        this.root.offsetX = 0.0F;
+        this.root.offsetZ = 2.0F;
+        this.root.rotateAngleY = (float)Math.toRadians(120);
+        this.root.rotateAngleX = (float)Math.toRadians(0);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
         this.root.scaleChildren = true;
+        float scaler = 2.0F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(root, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(tail5, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightFin, 0.0F, 0.0F, 0.829F);
+        this.setRotateAngle(frontLeftFin, 0.0F, 0.0F, -0.829F);
+        this.setRotateAngle(cube_r9, -0.2967F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.1527F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.144F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.192F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.1571F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0524F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r24, -0.5149F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r23, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r22, -0.1443F, -0.4323F, 0.0608F);
+        this.setRotateAngle(cube_r21, -0.1443F, 0.4323F, -0.0608F);
+        this.setRotateAngle(cube_r20, 0.2269F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r19, -0.1222F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r18, -0.1392F, -0.346F, 0.0475F);
+        this.setRotateAngle(cube_r17, -0.1392F, 0.346F, -0.0475F);
+        this.setRotateAngle(cube_r16, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.2967F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.3229F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.1134F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.2182F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:
         this.root.setScale(1.0F, 1.0F, 1.0F);
         this.root.scaleChildren = false;
         resetToDefaultPose();
+
     }
 
     public void renderStaticWall(float f) {

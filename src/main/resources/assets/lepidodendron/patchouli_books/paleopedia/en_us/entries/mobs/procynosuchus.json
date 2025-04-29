@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_procynosuchus",
 			"title": "Procynosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Cynodontia$(br)>Procynosuchidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Cynodontia$(br)>Procynosuchidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/procynosuchus.png"],
-			"title": "P. delaharpeae",
-			"text": ""
+			"type": "entity",
+			"name": "P. delaharpeae",
+			"entity": "lepidodendron:prehistoric_flora_procynosuchus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_procynosuchus",
 			"type": "text",
-			"text": "Procynosuchus is a cynodont from the late Permian period. it is considered to be one of the most basal cynodonts and measured 60 cm in length. It was also adapted to swimming and it probably lived a semi aquatic lifestyle."
+			"text": "Procynosuchus is a cynodont from the Upper Permian period. it is considered to be one of the most basal cynodonts and measured 60 cm in length. It was also adapted to swimming and it probably lived a semi aquatic lifestyle."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/prosictodon.png"],
-			"title": "P. dubei",
-			"text": ""
+			"type": "entity",
+			"name": "P. dubei",
+			"entity": "lepidodendron:prehistoric_flora_prosictodon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_prosictodon",

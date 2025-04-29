@@ -196,9 +196,28 @@ public class ModelProcynosuchus extends ModelBasePalaeopedia {
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
+
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.chest.offsetY = 0.0F;
+        this.chest.offsetX = 0.15F;
+        this.chest.offsetZ = 2.0F;
+        this.chest.rotateAngleY = (float)Math.toRadians(120);
+        this.chest.rotateAngleX = (float)Math.toRadians(0);
+        this.chest.rotateAngleZ = (float)Math.toRadians(0);
+        this.chest.scaleChildren = true;
+        float scaler = 0.6F;
+        this.chest.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(chest, 0.1F, 3.8F, -0.0F);
+        //End of pose, now render the model:
+        this.chest.render(f);
+        //Reset rotations, positions and sizing:
+        this.chest.setScale(1.0F, 1.0F, 1.0F);
+        this.chest.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

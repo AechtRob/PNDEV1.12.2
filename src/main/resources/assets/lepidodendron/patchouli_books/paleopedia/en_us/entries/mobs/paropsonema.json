@@ -11,12 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Deuterostomia$(br)>Ambulacraria$(br)>Cambroernida$(br)>Eldoniidae$(br)>Paropsonemida"
 		},
-    
-            {
-			"type": "image",
-			"images": ["paleopedia:textures/paropsonema.png"],
-			"title": "P. cryptophya",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "P. cryptophya",
+			"entity": "lepidodendron:prehistoric_flora_paropsonema",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_paropsonema",

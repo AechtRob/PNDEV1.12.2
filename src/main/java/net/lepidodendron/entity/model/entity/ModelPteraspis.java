@@ -179,9 +179,34 @@ public class ModelPteraspis extends ModelBasePalaeopedia {
         this.Headback.offsetY = 0.08F;
         this.Headback.render(0.01F);
         resetToDefaultPose();
+
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Headback.offsetY = 1.05F;
+        this.Headback.offsetX = 0.1F;
+        this.Headback.offsetZ = 2.0F;
+        this.Headback.rotateAngleY = (float)Math.toRadians(120);
+        this.Headback.rotateAngleX = (float)Math.toRadians(0);
+        this.Headback.rotateAngleZ = (float)Math.toRadians(0);
+        this.Headback.scaleChildren = true;
+        float scaler = 0.7F;
+        this.Headback.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Headback, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Tail1, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail4, 0.05F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail5, 0.05F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail6, 0.3F, -0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.Headback.render(f);
+        //Reset rotations, positions and sizing:
+        this.Headback.setScale(1.0F, 1.0F, 1.0F);
+        this.Headback.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

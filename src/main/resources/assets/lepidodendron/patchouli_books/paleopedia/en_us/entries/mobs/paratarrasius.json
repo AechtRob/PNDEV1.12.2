@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Actinopterygii$(br)>Tarrasiiformes$(br)>Tarrasiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/paratarrasius.png"],
-			"title": "P. hibbardi",
-			"text": ""
+			"type": "entity",
+			"name": "P. hibbardi",
+			"entity": "lepidodendron:prehistoric_flora_paratarrasius",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_paratarrasius",

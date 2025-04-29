@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)>Mollusca$(br)>Gastropoda$(br)>Euomphalina$(br)>Euomphalidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/phanerotinus.png"],
-			"title": "P. cristatus",
-			"text": ""
+			"type": "entity",
+			"name": "P. cristatus",
+			"entity": "lepidodendron:prehistoric_flora_phanerotinus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_phanerotinus",

@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorphi$(br)>Traquairaspidiformes$(br)>Phialaspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/phialaspis.png"],
-			"title": "P. angusta",
-			"text": ""
+			"type": "entity",
+			"name": "P. angusta",
+			"entity": "lepidodendron:prehistoric_flora_phialaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_phialaspis",
 			"type": "text",
-			"text": "Phialaspis was a Heterostracan jawless fish that lived during the Silurian to Early Devonian (around 443 - 411 million years ago). Its remains have been found widely across the northern hemisphere, specifically in the northeast USA, northernmost Canada, Svalbard, Scotland, Ukraine, and Severny Island in the high Russian Arctic. Like some other heterostracans, Phialaspis bore a dorsal crest and a pair of wing-like side-crests on its armour,"
+			"text": "Phialaspis was a heterostracan jawless fish that lived during the Silurian to Lower Devonian (around 443 - 411 million years ago). Its remains have been found widely across the northern hemisphere, specifically in the northeast USA, northernmost Canada, Svalbard, Scotland, Ukraine, and Severny Island in the high Russian Arctic. Like some other heterostracans, Phialaspis bore a dorsal crest and a pair of wing-like side-crests on its armour,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_phialaspis",

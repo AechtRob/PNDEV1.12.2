@@ -104,14 +104,14 @@ public class ModelEldonia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.8F;
-        this.main.offsetX = 0.0F;
+        this.main.offsetY = -1.0F;
+        this.main.offsetX = -0.1F;
         this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(120);
         this.main.rotateAngleX = (float)Math.toRadians(1);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 4.2F;
+        float scaler = 3.0F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);

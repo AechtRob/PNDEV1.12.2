@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_pseudorhina",
 			"title": "Pseudorhina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Squatiniformes$(br)>Pseudorhinidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Selachii$(br)>Squatiniformes$(br)>Pseudorhinidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pseudorhina.png"],
-			"title": "P. alifera",
-			"text": ""
+			"type": "entity",
+			"name": "P. alifera",
+			"entity": "lepidodendron:prehistoric_flora_pseudorhina",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pseudorhina",
 			"type": "text",
-			"text": "Pseudorhina is a Jurassic to Early Cretaceous Squatiniforme. It had a resemblance to modern angel sharks with a flattened body and wing like fins. All species of Pseudorhina are known exclusively from western Europe and many are known only from teeth. Several preserved flattened body fossils have also been unearthed from Germany and France."
+			"text": "Pseudorhina is a Jurassic to Early Cretaceous squatiniform. It had a resemblance to modern angel sharks with a flattened body and wing like fins. All species of Pseudorhina are known exclusively from western Europe and many are known only from teeth. Several preserved flattened body fossils have also been unearthed from Germany and France."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pseudorhina",

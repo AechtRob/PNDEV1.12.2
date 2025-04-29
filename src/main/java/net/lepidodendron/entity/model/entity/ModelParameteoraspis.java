@@ -316,6 +316,28 @@ public class ModelParameteoraspis extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Parameteoraspis.offsetY = -0.6F;
+        this.Parameteoraspis.offsetX = 0.8F;
+        this.Parameteoraspis.offsetZ = 2.0F;
+        this.Parameteoraspis.rotateAngleY = (float)Math.toRadians(120);
+        this.Parameteoraspis.rotateAngleX = (float)Math.toRadians(0);
+        this.Parameteoraspis.rotateAngleZ = (float)Math.toRadians(0);
+        this.Parameteoraspis.scaleChildren = true;
+        float scaler = 1.0F;
+        this.Parameteoraspis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Parameteoraspis, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body5, 0.03F, 0.1F, 0.0F);
+        this.setRotateAngle(body6, 0.05F, -0.05F, 0.0F);
+        this.setRotateAngle(body7, 0.1F, -0.1F, 0.0F);
+        //End of pose, now render the model:
+        this.Parameteoraspis.render(f);
+        //Reset rotations, positions and sizing:
+        this.Parameteoraspis.setScale(1.0F, 1.0F, 1.0F);
+        this.Parameteoraspis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

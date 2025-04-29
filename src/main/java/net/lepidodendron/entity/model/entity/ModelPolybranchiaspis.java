@@ -188,9 +188,28 @@ public class ModelPolybranchiaspis extends ModelBasePalaeopedia {
         this.Polybranchiaspis.offsetY = 0.15F;
         this.Polybranchiaspis.render(0.01F);
         resetToDefaultPose();
+
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Polybranchiaspis.offsetY = -1.2F;
+        this.Polybranchiaspis.offsetX = 0.6F;
+        this.Polybranchiaspis.offsetZ = 2.0F;
+        this.Polybranchiaspis.rotateAngleY = (float)Math.toRadians(120);
+        this.Polybranchiaspis.rotateAngleX = (float)Math.toRadians(0);
+        this.Polybranchiaspis.rotateAngleZ = (float)Math.toRadians(0);
+        this.Polybranchiaspis.scaleChildren = true;
+        float scaler = 4.0F;
+        this.Polybranchiaspis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Polybranchiaspis, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.Polybranchiaspis.render(f);
+        //Reset rotations, positions and sizing:
+        this.Polybranchiaspis.setScale(1.0F, 1.0F, 1.0F);
+        this.Polybranchiaspis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

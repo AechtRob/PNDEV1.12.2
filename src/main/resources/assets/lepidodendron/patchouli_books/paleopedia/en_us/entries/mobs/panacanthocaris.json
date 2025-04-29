@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)>Arthropoda$(br)>Crustacea$(br)>Branchiopoda$(br)>Kazacharthra$(br)>Ketmeniidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/panacanthocaris.png"],
-			"title": "P. ketmenia",
-			"text": ""
+			"type": "entity",
+			"name": "P. ketmenia",
+			"entity": "lepidodendron:prehistoric_flora_panacanthocaris",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_panacanthocaris",
 			"type": "text",
-			"text": "Panacanthocaris belongs to the unusual and mysterious Branchiopod order of Kazacharthra. It lived in Late Triassic and Early Jurassic of Kazakhstan and China. It was first described by Tchernyshev in 1940 who drew the carapace of Panacanthocaris upsidedown with the mandibular bulge pointing towards the body instead of forwards. Kazacharthrans are unique and easily recognizeable for their spiny irregular carapaces and"
+			"text": "Panacanthocaris belongs to the unusual and mysterious branchiopod order of Kazacharthra. It lived in the Upper Triassic and Lower Jurassic of Kazakhstan and China. It was first described by Tchernyshev in 1940 who drew the carapace of Panacanthocaris upside down with the mandibular bulge pointing towards the body instead of forwards. Kazacharthrans are unique and easily recognizable for their spiny irregular carapaces and"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_panacanthocaris",

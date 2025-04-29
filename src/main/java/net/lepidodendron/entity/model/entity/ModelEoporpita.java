@@ -167,15 +167,15 @@ public class ModelEoporpita extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.52F;
-        this.main.offsetX = -0.1F;
+        this.main.offsetX = -0.0F;
         this.main.rotateAngleY = (float)Math.toRadians(165);
         this.main.rotateAngleX = (float)Math.toRadians(22);
         this.main.rotateAngleZ = (float)Math.toRadians(-28);
         this.main.scaleChildren = true;
-        float scaler = 2.25F;
+        float scaler = 1.8F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);

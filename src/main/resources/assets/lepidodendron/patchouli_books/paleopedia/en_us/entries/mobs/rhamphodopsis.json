@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Ptyctodontida$(br)>Ptyctodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/rhamphodopsis.png"],
-			"title": "R. thrieplandi",
-			"text": ""
+			"type": "entity",
+			"name": "R. thrieplandi",
+			"entity": "lepidodendron:prehistoric_flora_rhamphodopsis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_rhamphodopsis",
@@ -29,23 +30,23 @@
 		},
 		{
 			"type": "lepidodendron:diet",
-			"mob": "lepidodendron:prehistoric_flora_eusthenopteron"
+			"mob": "lepidodendron:prehistoric_flora_rhamphodopsis"
 		},
 		{
 			"type": "lepidodendron:biomelocations1",
-			"mob": "lepidodendron:prehistoric_flora_eusthenopteron"
+			"mob": "lepidodendron:prehistoric_flora_rhamphodopsis"
 		},
 		{
 			"type": "lepidodendron:biomelocations2",
-			"mob": "lepidodendron:prehistoric_flora_eusthenopteron"
+			"mob": "lepidodendron:prehistoric_flora_rhamphodopsis"
 		},
 		{
 			"type": "lepidodendron:biomelocations3",
-			"mob": "lepidodendron:prehistoric_flora_eusthenopteron"
+			"mob": "lepidodendron:prehistoric_flora_rhamphodopsis"
 		},
 		{
 			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron:prehistoric_flora_eusthenopteron"
+			"mob": "lepidodendron:prehistoric_flora_rhamphodopsis"
 		}
 	]
 }

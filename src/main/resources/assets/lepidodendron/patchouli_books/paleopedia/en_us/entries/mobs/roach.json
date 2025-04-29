@@ -9,13 +9,28 @@
 			"trigger": "lepidodendron:pf_adv_book_roachoid",
 			"title": "Roach",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous+$(br2)>Arthropoda$(br)>Insecta$(br)>Dictyoptera$(br)>Blattodea"
+			"text": "$(l)Temporal Range:$() Carboniferous - Present$(br2)>Arthropoda$(br)>Insecta$(br)>Dictyoptera$(br)>$(o)Blattodea"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/roach1.png", "paleopedia:textures/roach2.png", "paleopedia:textures/roach3.png"],
-			"title": "Blattodea",
-			"text": ""
+			"type": "entity",
+			"name": "Blattodea (Arid)",
+			"entity": "lepidodendron:prehistoric_flora_roachoid_arid",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"type": "entity",
+			"name": "Blattodea (Forest)",
+			"entity": "lepidodendron:prehistoric_flora_roachoid_forest",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"type": "entity",
+			"name": "Blattodea (Swamp)",
+			"entity": "lepidodendron:prehistoric_flora_roachoid_swamp",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_roachoid",

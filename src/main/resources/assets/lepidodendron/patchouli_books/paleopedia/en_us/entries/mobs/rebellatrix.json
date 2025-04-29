@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_rebellatrix",
 			"title": "Rebellatrix",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinistia$(br)>Rebellatricidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Sarcopterygii$(br)>Actinistia$(br)>Rebellatricidae$(br)>Coelacanthiformes"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/rebellatrix.png"],
-			"title": "R. divaricerca",
-			"text": ""
+			"type": "entity",
+			"name": "R. divaricerca",
+			"entity": "lepidodendron:prehistoric_flora_rebellatrix",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_rebellatrix",
 			"type": "text",
-			"text": "Rebellatrix divaricerca is an unusual species of Coelacanth. Characterized by its unique fork-tailed appearance, this animal was unique among its peers for being a fast swimming active animal, unseen in modern day Coelacanths. Paleontologically of importance for challenging the idea that Coelacanth fishes remained unchanged after the Carboniferous and helped to bring light to the diversity of these animals in a time when they were much more populous than today."
+			"text": "Rebellatrix divaricerca is an unusual species of coelacanth. Characterized by its unique fork-tailed appearance, this animal was unique among its peers for being a fast swimming active animal, unseen in modern day coelacanths. Paleontologically of importance for challenging the idea that coelacanth fishes remained unchanged after the Carboniferous and helped to bring light to the diversity of these animals in a time when they were much more populous than today."
 		},
 		{
 			"type": "lepidodendron:diet",

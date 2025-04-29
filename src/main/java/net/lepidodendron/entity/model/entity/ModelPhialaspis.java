@@ -199,9 +199,49 @@ public class ModelPhialaspis extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Body.render(f5);
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Body.offsetY = -1.4F;
+        this.Body.offsetX = 0.4F;
+        this.Body.offsetZ = 2.0F;
+        this.Body.rotateAngleY = (float)Math.toRadians(120);
+        this.Body.rotateAngleX = (float)Math.toRadians(0);
+        this.Body.rotateAngleZ = (float)Math.toRadians(0);
+        this.Body.scaleChildren = true;
+        float scaler = 3.0F;
+        this.Body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Body, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(beak, -0.7854F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, -0.1745F, -0.0436F, 0.0F);
+        this.setRotateAngle(Body3, -0.0873F, -0.0436F, 0.0F);
+        this.setRotateAngle(Body4, -0.0873F, -0.0436F, 0.0F);
+        this.setRotateAngle(Body5, -0.0873F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.829F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.0F, 1.0036F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.0F, 0.672F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.0F, -1.0036F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.0F, -0.672F, 0.0F);
+        this.setRotateAngle(cube_r16, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(cube_r17, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r18, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(cube_r2, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.0F, 0.3927F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.1658F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Body.render(f);
+        //Reset rotations, positions and sizing:
+        this.Body.setScale(1.0F, 1.0F, 1.0F);
+        this.Body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

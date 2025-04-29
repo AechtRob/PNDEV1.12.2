@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_rugoconites",
 			"title": "Rugoconites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Trilobozoa"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Cryogenian - Ediacaran)$(br2)>Trilobozoa"
 		},
 		{
 			"type": "entity",

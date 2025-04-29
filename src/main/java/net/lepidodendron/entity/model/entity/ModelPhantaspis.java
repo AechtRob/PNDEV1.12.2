@@ -178,9 +178,26 @@ public class ModelPhantaspis extends ModelBasePalaeopedia {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Group.offsetY = -2.2F;
+        this.Group.offsetX = -1.2F;
+        this.Group.offsetZ = 2.0F;
+        this.Group.rotateAngleY = (float)Math.toRadians(120);
+        this.Group.rotateAngleX = (float)Math.toRadians(0);
+        this.Group.rotateAngleZ = (float)Math.toRadians(0);
+        this.Group.scaleChildren = true;
+        float scaler = 3.0F;
+        this.Group.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Group, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.Group.render(f);
+        //Reset rotations, positions and sizing:
+        this.Group.setScale(1.0F, 1.0F, 1.0F);
+        this.Group.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_phlegethontia",
 			"title": "Phlegethontia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Chordata$(br)>Aistopoda$(br)>Phlegethontiidae"
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Aistopoda$(br)>Phlegethontiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/phlegethontia.png"],
-			"title": "P. linearis",
-			"text": ""
+			"type": "entity",
+			"name": "P. linearis",
+			"entity": "lepidodendron:prehistoric_flora_phlegethontia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_phlegethontia",

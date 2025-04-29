@@ -698,13 +698,13 @@ public class ModelProceratosaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.2F;
+        this.root.offsetY = -0.6F;
         this.root.offsetX = 0.2F;
         this.root.rotateAngleY = (float)Math.toRadians(-60);
         this.root.rotateAngleX = (float)Math.toRadians(1);
         this.root.rotateAngleZ = (float)Math.toRadians(-1);
         this.root.scaleChildren = true;
-        float scaler = 0.85F;
+        float scaler = 0.6F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(throatPouch, 1.0036F, 0.0F, 0.0F);

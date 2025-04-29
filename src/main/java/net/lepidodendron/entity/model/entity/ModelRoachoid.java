@@ -152,10 +152,40 @@ public class ModelRoachoid extends ModelBasePalaeopedia {
         this.setRotateAngle(antennaR, -0.2618F, 0.2618F, 0.0F);
         this.thorax.render(0.01f);
         resetToDefaultPose();
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.thorax.offsetY = -2.4F;
+        this.thorax.offsetX = -0.4F;
+        this.thorax.offsetZ = 2.0F;
+        this.thorax.rotateAngleY = (float)Math.toRadians(120);
+        this.thorax.rotateAngleX = (float)Math.toRadians(0);
+        this.thorax.rotateAngleZ = (float)Math.toRadians(0);
+        this.thorax.scaleChildren = true;
+        float scaler = 4.0F;
+        this.thorax.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(thorax, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(legR3, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(legR2, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(legL3, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(legL2, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(legR1, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(legL1, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(forewingR, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(forewingL, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(hindwingL, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(antennaL, -0.2618F, -0.2618F, 0.0F);
+        this.setRotateAngle(antennaR, -0.2618F, 0.2618F, 0.0F);
+        //End of pose, now render the model:
+        this.thorax.render(f);
+        //Reset rotations, positions and sizing:
+        this.thorax.setScale(1.0F, 1.0F, 1.0F);
+        this.thorax.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

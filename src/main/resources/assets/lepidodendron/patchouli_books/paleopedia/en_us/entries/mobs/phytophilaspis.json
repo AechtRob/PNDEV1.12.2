@@ -12,15 +12,21 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Artiopoda$(br)>Trilobitomorpha$(br)>Xandarellida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/phytophilaspis.png"],
-			"title": "P. pergamena",
-			"text": ""
+			"type": "entity",
+			"name": "P. pergamena",
+			"entity": "lepidodendron:prehistoric_flora_phytophilaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_phytophilaspis",
 			"type": "text",
-			"text": "Phytophilaspis is a Xandarellid Trilobitomorph, which means it was related to Trilobites, but was not a true trilobite. These small arthropods, which may have reached up to 6 cm, would have lived in shallow oceans and was found in association with algal remains."
+			"text": "Phytophilaspis pergamena comes from the Lower Cambrian, with fossils found in the Sinsk Formation, Russia. It is a small xandarellid trilobitomorph, growing up to 14 cm in length. Whilst Phytophilaspis has many features in common with trilobites, it has many features that sets it apart from trilobites, from the notable reduced thorax, which itself is fused with the cephalon and the astonishingly large pygidium. It would have live in shallow marine areas,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phytophilaspis",
+			"type": "text",
+			"text": "which is further supported by it being found alongside algal remains, which itself may have fed on. The generic name derives from the Greek words 'phyton', to mean 'plant'; 'phileo', to mean 'love'; and 'aspis', to mean 'shield'. The specific name derives directly from the Latin word 'perqamena', to mean 'parchment'."
 		},
 		{
 			"type": "lepidodendron:diet",
