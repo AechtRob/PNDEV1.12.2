@@ -1,0 +1,71 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "lepidodendron:blocks/baragwanathia_var",
+		"stem": "lepidodendron:blocks/baragwanathia_var"
+	},
+	"elements": [
+		{
+			"from": [0.8, 0, 9],
+			"to": [15.2, 13, 9],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 9], "rescale": true},
+			"faces": {
+				"north": {"uv": [16, 3, 0, 16], "texture": "#stem"},
+				"south": {"uv": [0, 3, 16, 16], "texture": "#stem"}
+			}
+		},
+		{
+			"from": [0.8, 13, 9],
+			"to": [15.2, 20, 9],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 21, 9], "rescale": true},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 7], "texture": "#stem"},
+				"south": {"uv": [0, 0, 16, 7], "texture": "#stem"}
+			}
+		},
+		{
+			"from": [7.2, 0, 1],
+			"to": [7.2, 13, 15.4],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [7, 8, 8], "rescale": true},
+			"faces": {
+				"east": {"uv": [0, 3, 16, 16], "texture": "#stem"},
+				"west": {"uv": [16, 3, 0, 16], "texture": "#stem"}
+			}
+		},
+		{
+			"from": [7.2, 13, 1],
+			"to": [7.2, 20, 15.4],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [7, 21, 8], "rescale": true},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 7], "texture": "#stem"},
+				"west": {"uv": [16, 0, 0, 7], "texture": "#stem"}
+			}
+		},
+		{
+			"name": "mid",
+			"from": [4.2, 0, 16],
+			"to": [6.2, 3, 18],
+			"rotation": {"angle": 45, "axis": "y", "origin": [-3.5, 0, 9]},
+			"faces": {
+				"north": {"uv": [9, 12, 11, 15], "texture": "#stem"},
+				"east": {"uv": [9, 12, 11, 15], "texture": "#stem"},
+				"south": {"uv": [9, 12, 11, 15], "texture": "#stem"},
+				"west": {"uv": [9, 12, 11, 15], "texture": "#stem"},
+				"up": {"uv": [7, 14, 9, 16], "texture": "#stem"},
+				"down": {"uv": [7, 14, 9, 16], "texture": "#stem", "cullface": "down"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "group",
+			"origin": [4, 0, 3],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4]
+		}
+	]
+}
