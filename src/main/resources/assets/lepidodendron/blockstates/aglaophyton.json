@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:aglaophyton_1"},
+      {"model": "lepidodendron:aglaophyton_2"},
+      {"model": "lepidodendron:aglaophyton_3"},
+      {"model": "lepidodendron:aglaophyton_1_var"},
+      {"model": "lepidodendron:aglaophyton_2_var"},
+      {"model": "lepidodendron:aglaophyton_3_var"}
+    ]
+  }
+}

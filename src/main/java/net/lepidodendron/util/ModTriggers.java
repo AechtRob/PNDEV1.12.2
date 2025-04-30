@@ -201,6 +201,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CONIOPTERIS = new CustomTrigger("pf_book_coniopteris");
     public static final CustomTrigger CLICK_CONOMEDUSITES = new CustomTrigger("pf_book_conomedusites");
     public static final CustomTrigger CLICK_COOKSONIA = new CustomTrigger("pf_book_cooksonia");
+    public static final CustomTrigger CLICK_HORNEOPHYTON = new CustomTrigger("pf_book_horneophyton");
+    public static final CustomTrigger CLICK_AGLAOPHYTON = new CustomTrigger("pf_book_aglaophyton");
     public static final CustomTrigger CLICK_TICHAVEKIA = new CustomTrigger("pf_book_tichavekia");
     public static final CustomTrigger CLICK_PITEROPHYTON = new CustomTrigger("pf_book_piterophyton");
     public static final CustomTrigger CLICK_BELLENDENA = new CustomTrigger("pf_book_bellendena");
@@ -2140,6 +2142,8 @@ public class ModTriggers
             CLICK_CONIOPTERIS,
             CLICK_CONOMEDUSITES,
             CLICK_COOKSONIA,
+            CLICK_AGLAOPHYTON,
+            CLICK_HORNEOPHYTON,
             CLICK_TICHAVEKIA,
             CLICK_PITEROPHYTON,
             CLICK_BELLENDENA,

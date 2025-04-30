@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/horneophyton_3_spore",
+    "particle": "lepidodendron:blocks/horneophyton_3_spore"
+  }
+}
