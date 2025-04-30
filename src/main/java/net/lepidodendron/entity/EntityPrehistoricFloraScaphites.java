@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraScaphites extends EntityPrehistoricFloraNauti
 	@Override
 	protected float getAISpeedNautiloid() {
 		//return 0;
-		return 0.0498f;
+		return 0.02f;
 	}
 
 	protected void initEntityAI() {
