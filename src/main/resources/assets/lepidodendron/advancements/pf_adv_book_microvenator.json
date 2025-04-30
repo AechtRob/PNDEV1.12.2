@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:microvenator_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_microvenator.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_microvenator.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_microvenator"
+        }
+    }
+}

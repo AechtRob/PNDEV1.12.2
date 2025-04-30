@@ -12,7 +12,7 @@ public class RenderCoelostylina extends RenderLivingBaseWithBook<EntityPrehistor
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/coelostylina.png");
 
     public static float getScaler() {
-        return 0.76F;
+        return 0.22F;
     }
     public RenderCoelostylina(RenderManager mgr) {
         super(mgr, new ModelCoelostylina(), 0.0f);

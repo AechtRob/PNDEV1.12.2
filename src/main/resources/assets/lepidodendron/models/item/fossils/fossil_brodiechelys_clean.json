@@ -1,5 +1,5 @@
 {
-  "parent": "item/generated",
+"parent": "item/generated",
   "textures": {
     "layer0": "lepidodendron:items/fossil_clean_background",
     "layer1": "lepidodendron:items/fossil_brodiechelys_clean"
