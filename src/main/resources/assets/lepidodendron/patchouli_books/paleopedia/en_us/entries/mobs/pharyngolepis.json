@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_pharyngolepis",
 			"title": "Pharyngolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Anaspida$(br)>Birkeniiformes"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Agnatha$(br)>Anaspidomorphi$(br)>Anaspida$(br)>Birkeniiformes"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pharyngolepis.png"],
-			"title": "P. oblonga",
-			"text": ""
+			"type": "entity",
+			"name": "P. oblonga",
+			"entity": "lepidodendron:prehistoric_flora_pharyngolepis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pharyngolepis",

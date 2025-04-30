@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_pseudotherium",
 			"title": "Pseudotherium",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Therapsida$(br)>Cynodontia$(br)>Mammaliamorpha"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Cynodontia$(br)>Mammaliamorpha"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pseudotherium.png"],
-			"title": "P. argentinus",
-			"text": ""
+			"type": "entity",
+			"name": "P. argentinus",
+			"entity": "lepidodendron:prehistoric_flora_pseudotherium",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pseudotherium",
 			"type": "text",
-			"text": "Pseudotherium argentinus (whose name means \"Almost-but-not a Mammal, from Argentina\") was a species of mammaliaform cynodont that lived during the Late Triassic in what is now the famous Ischigualasto Formation of Argentina. It sported a prominent saggital crest running along the top of its skull, anchoring large jaw muscles that likely gave it a powerful bite. Its canine teeth are thin and curved, with unique ridges on either side running down their length."
+			"text": "Pseudotherium argentinus (whose name means \"Almost-but-not a Mammal, from Argentina\") was a species of mammaliaform cynodont that lived during the Upper Triassic in what is now the famous Ischigualasto Formation of Argentina. It sported a prominent saggital crest running along the top of its skull, anchoring large jaw muscles that likely gave it a powerful bite. Its canine teeth are thin and curved, with unique ridges on either side running down their length."
 		},
 		{
 			"type": "lepidodendron:diet",

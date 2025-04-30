@@ -8,6 +8,7 @@ import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import scala.util.Right;
 
 public class ModelPlatysuchus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer root;
@@ -488,21 +489,30 @@ public class ModelPlatysuchus extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.7F;
-        this.root.offsetX = -0.338F;
-        this.root.rotateAngleY = (float)Math.toRadians(220);
-        this.root.rotateAngleX = (float)Math.toRadians(8);
-        this.root.rotateAngleZ = (float)Math.toRadians(-8);
+        this.root.offsetY = 0.0F;
+        this.root.offsetX = 0.2F;
+        this.root.offsetZ = 2.0F;
+        this.root.rotateAngleY = (float)Math.toRadians(120);
+        this.root.rotateAngleX = (float)Math.toRadians(0);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
         this.root.scaleChildren = true;
-        float scaler = 1.03F;
+        float scaler = 0.6F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(root, 0.0F, 3.6F, -0.0F);
+        this.setRotateAngle(Neck, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Head, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(Lowerjawback, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightupperarm, 0.3F, 0.8F, 0.0F);
+        this.setRotateAngle(Rightlowerarm, 0.2F, -1.2F, -0.2F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailmiddle, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, 0.2F, 0.0F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:

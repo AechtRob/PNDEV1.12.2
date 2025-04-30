@@ -189,10 +189,53 @@ public class ModelProthysanostoma extends ModelBasePalaeopedia {
         this.main.render(f5);
         GlStateManager.disableBlend();
 
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = -0.4F;
+        this.main.offsetX = -0.4F;
+        this.main.offsetZ = 2.0F;
+        this.main.rotateAngleY = (float)Math.toRadians(120);
+        this.main.rotateAngleX = (float)Math.toRadians(0);
+        this.main.rotateAngleZ = (float)Math.toRadians(0);
+        this.main.scaleChildren = true;
+        float scaler = 3.0F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(tentacle, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle2, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle3, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle4, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle5, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle6, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle7, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle8, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle9, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle10, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle11, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle12, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle13, 0.2F, -0.6F, 0.0F);
+        this.setRotateAngle(tentacle14, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle15, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle16, 0.2F, 0.6F, 0.0F);
+        this.setRotateAngle(tentacle17, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle18, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle19, -0.2F, 0.6F, 0.0F);
+        this.setRotateAngle(tentacle20, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle21, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle22, -0.2F, -0.6F, 0.0F);
+        this.setRotateAngle(tentacle23, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle24, -0.2F, 0.0F, 0.0F);
+
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

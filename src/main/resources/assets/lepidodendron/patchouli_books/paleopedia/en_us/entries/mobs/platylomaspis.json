@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_platylomaspis",
 			"title": "Platylomaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Galeaspida$(br)>Polybranchiaspidiformes$(br)>Gumuaspidida"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Agnatha$(br)>Cephalaspidomorphi$(br)>Galeaspida$(br)>Polybranchiaspidiformes$(br)>Gumuaspidida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/platylomaspis.png"],
-			"title": "P. serratus",
-			"text": ""
+			"type": "entity",
+			"name": "P. serratus",
+			"entity": "lepidodendron:prehistoric_flora_platylomaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_platylomaspis",

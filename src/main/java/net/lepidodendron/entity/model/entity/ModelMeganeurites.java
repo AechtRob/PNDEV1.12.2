@@ -255,7 +255,7 @@ public class ModelMeganeurites extends ModelBasePalaeopedia {
         this.body.rotateAngleY = (float)Math.toRadians(-10);
         this.body.rotateAngleX = (float)Math.toRadians(60);
         this.body.rotateAngleZ = (float)Math.toRadians(-50);
-        float scaler = 2.4F;
+        float scaler = 2.2F;
         this.body.scaleChildren = true;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:

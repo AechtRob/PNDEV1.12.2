@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Elpistostegalia$(br)>Panderichthyidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/panderichthys.png"],
-			"title": "P. rhombolepis",
-			"text": ""
+			"type": "entity",
+			"name": "P. rhombolepis",
+			"entity": "lepidodendron:prehistoric_flora_panderichthys",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_panderichthys",

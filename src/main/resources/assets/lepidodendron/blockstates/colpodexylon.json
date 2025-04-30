@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:colpodexylon_1"},
+      {"model": "lepidodendron:colpodexylon_1", "y": 90},
+      {"model": "lepidodendron:colpodexylon_2"},
+      {"model": "lepidodendron:colpodexylon_2", "y": 90},
+      {"model": "lepidodendron:colpodexylon_3"},
+      {"model": "lepidodendron:colpodexylon_3", "y": 90}
+    ]
+  }
+}

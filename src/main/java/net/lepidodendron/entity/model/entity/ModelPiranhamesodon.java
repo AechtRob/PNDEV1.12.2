@@ -414,10 +414,34 @@ public class ModelPiranhamesodon extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Piranhamesodon.render(f5);
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Piranhamesodon.offsetY = -0.4F;
+        this.Piranhamesodon.offsetX = 0.0F;
+        this.Piranhamesodon.offsetZ = 2.0F;
+        this.Piranhamesodon.rotateAngleY = (float)Math.toRadians(120);
+        this.Piranhamesodon.rotateAngleX = (float)Math.toRadians(0);
+        this.Piranhamesodon.rotateAngleZ = (float)Math.toRadians(0);
+        this.Piranhamesodon.scaleChildren = true;
+        float scaler = 2.4F;
+        this.Piranhamesodon.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Piranhamesodon, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Jaw, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(PectoralL, 0.0F, 0.5236F, 0.0F);
+        this.setRotateAngle(PectoralR, 0.0F, -0.5236F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.48F, 0.0F);
+        //End of pose, now render the model:
+        this.Piranhamesodon.render(f);
+        //Reset rotations, positions and sizing:
+        this.Piranhamesodon.setScale(1.0F, 1.0F, 1.0F);
+        this.Piranhamesodon.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

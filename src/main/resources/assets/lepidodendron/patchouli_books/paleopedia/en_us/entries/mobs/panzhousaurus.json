@@ -9,28 +9,29 @@
 			"trigger": "lepidodendron:pf_adv_book_panzhousaurus",
 			"title": "Panzhousaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Sauropterygia$(br)>Nothosauroidea$(br)>Pachypleurosauria"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Eosauropterygia$(br)>Nothosauroidea$(br)>Pachypleurosauria"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/panzhousaurus.png"],
-			"title": "P. rotundirostris",
-			"text": ""
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_panzhousaurus",
-			"type": "text",
-			"text": "Panzhousaurus rotundirostris is a species of Middle Triassic Eosauropterygian from China. Panzhousaurus was in many ways similar to other members of its group, with a body adapted to aquatic life and a flattened skull, most famously characteristic of animals like Nothosaurus and even Plesiosaurs. Panzhousaurus however, had a few unique characters of its own,"
+			"type": "entity",
+			"name": "P. rotundirostris",
+			"entity": "lepidodendron:prehistoric_flora_panzhousaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_panzhousaurus",
 			"type": "text",
-			"text": "like the short and rounded head, from which the species name \"rotundirostris\", meaning \"rounded snout\", comes from. The animal was only a few centimeters long, with the only known specimen measuring 36 cm in length. First described in 2019 on the basis of the single almost complete specimen, found in bed 87 of the Upper Member of the Guanling Formation, in Panzhou City, from which the genus "
+			"text": "Panzhousaurus rotundirostris is a species of Middle Triassic eosauropterygian from China. Panzhousaurus was in many ways similar to other members of its group, with a body adapted to aquatic life and a flattened skull, most famously characteristic of animals like Nothosaurus and even plesiosaurs. Panzhousaurus however, had a few unique characters of its own, like the short and rounded head, from which the species name \"rotundirostris\", meaning \"rounded snout\","
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_panzhousaurus",
 			"type": "text",
-			"text": "name was coined, the specimen was confirmed adult in age by the fusion of its upper skull bones. Phylogenetic analyses on this animal elucidated its position among sauropterygians, confirming its close relation with Pachypleurosaur-like forms already known and expanding our knowledge on the placement and relationships of known sauropterygians. "
+			"text": "comes from. The animal was only a few centimeters long, with the only known specimen measuring 36 cm in length. First described in 2019 on the basis of the single almost complete specimen, found in bed 87 of the Upper Member of the Guanling Formation, in Panzhou City, from which the genus name was coined, the specimen was confirmed adult in age by the fusion of its upper skull bones. Phylogenetic analyses on this animal elucidated its position among sauropterygians,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_panzhousaurus",
+			"type": "text",
+			"text": "confirming its close relation with Pachypleurosaur-like forms already known and expanding our knowledge on the placement and relationships of known sauropterygians. "
 		},
 		{
 			"type": "lepidodendron:diet",

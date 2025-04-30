@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_protozygoptera",
 			"title": "Protozygoptera",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Arthropoda$(br)>Insecta$(br)>Odonatoptera$(br)>Protozygoptera"
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Arthropoda$(br)>Insecta$(br)>Odonatoptera$(br)>$(o)Protozygoptera"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/protozygoptera.png"],
-			"title": "Protozygoptera",
-			"text": ""
+			"type": "entity",
+			"name": "Protozygoptera",
+			"entity": "lepidodendron:prehistoric_flora_protozygoptera",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_protozygoptera",

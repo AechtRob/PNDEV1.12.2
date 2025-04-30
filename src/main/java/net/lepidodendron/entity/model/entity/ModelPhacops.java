@@ -256,16 +256,16 @@ public class ModelPhacops extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Body.offsetY = -0.4F;
-        this.Body.offsetX = 0.1F;
+        this.Body.offsetY = -1.8F;
+        this.Body.offsetX = -0.2F;
         this.Body.rotateAngleY = (float)Math.toRadians(200);
         this.Body.rotateAngleX = (float)Math.toRadians(8);
         this.Body.rotateAngleZ = (float)Math.toRadians(-8);
         this.Body.scaleChildren = true;
-        float scaler = 2.5F;
+        float scaler = 3.5F;
         this.Body.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(Body, 0.2F, 3.0F, 0.0F);
+        this.setRotateAngle(Body, 0.6F, 3.8F, -0.2F);
         this.setRotateAngle(Body2, 0.0F, 0.05F, 0.0F);
         this.setRotateAngle(Body3, 0.0F, 0.1F, 0.0F);
         this.setRotateAngle(Body4, 0.0F, 0.1F, 0.0F);

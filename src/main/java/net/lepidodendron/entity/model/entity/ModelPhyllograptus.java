@@ -46,8 +46,8 @@ public class ModelPhyllograptus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -1.0F;
-        this.main.offsetX = 0.2F;
+        this.main.offsetY = -0.4F;
+        this.main.offsetX = -0.1F;
         this.main.rotateAngleY = (float)Math.toRadians(150);
         this.main.rotateAngleX = (float)Math.toRadians(3);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
@@ -55,7 +55,7 @@ public class ModelPhyllograptus extends ModelBasePalaeopedia {
         float scaler = 3.5F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(main, 0.2F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

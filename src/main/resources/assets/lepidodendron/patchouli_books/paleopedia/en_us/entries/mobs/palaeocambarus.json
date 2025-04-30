@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeocambarus",
 			"title": "Palaeocambarus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Arthropoda$(br)>Malacostraca$(br)>Decopoda$(br)>Astacoidea$(br)>Cambaroididae"
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Malacostraca$(br)>Decopoda$(br)>Astacoidea$(br)>Cambaroididae"
 		},
         	{
             "type": "entity",

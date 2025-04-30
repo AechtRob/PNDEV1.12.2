@@ -451,6 +451,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PODOZAMITES = new CustomTrigger("pf_book_podozamites");
     public static final CustomTrigger CLICK_POLYSPERMOPHYLLUM = new CustomTrigger("pf_book_polyspermophyllum");
     public static final CustomTrigger CLICK_PRIMAEVAL_GRASS = new CustomTrigger("pf_book_primaeval_grass");
+    public static final CustomTrigger CLICK_DREPANOPHYCUS = new CustomTrigger("pf_book_drepanophycus");
     public static final CustomTrigger CLICK_PROTEA_1 = new CustomTrigger("pf_book_protea_1");
     public static final CustomTrigger CLICK_PROTEA = new CustomTrigger("pf_book_protea");
     public static final CustomTrigger CLICK_PROTOLEPIDODENDROPSIS = new CustomTrigger("pf_book_protolepidodendropsis");
@@ -512,6 +513,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SPRUCE = new CustomTrigger("pf_book_spruce");
     public static final CustomTrigger CLICK_STAUROPTERIS = new CustomTrigger("pf_book_stauropteris");
     public static final CustomTrigger CLICK_XINHANGIA = new CustomTrigger("pf_book_xinhangia");
+    public static final CustomTrigger CLICK_COLPODEXYLON = new CustomTrigger("pf_book_colpodexylon");
     public static final CustomTrigger CLICK_COSMOSPERMA = new CustomTrigger("pf_book_cosmosperma");
     public static final CustomTrigger CLICK_STIFF_CYCAD = new CustomTrigger("pf_book_stiff_cycad");
     public static final CustomTrigger CLICK_STROMATOCYSTITES = new CustomTrigger("pf_book_stromatocystites");
@@ -2387,6 +2389,7 @@ public class ModTriggers
             CLICK_PODOZAMITES,
             CLICK_POLYSPERMOPHYLLUM,
             CLICK_PRIMAEVAL_GRASS,
+            CLICK_DREPANOPHYCUS,
             CLICK_PROTEA_1,
             CLICK_PROTEA,
             CLICK_PROTOLEPIDODENDROPSIS,
@@ -2448,6 +2451,7 @@ public class ModTriggers
             CLICK_SPRUCE,
             CLICK_STAUROPTERIS,
             CLICK_XINHANGIA,
+            CLICK_COLPODEXYLON,
             CLICK_COSMOSPERMA,
             CLICK_STIFF_CYCAD,
             CLICK_STROMATOCYSTITES,

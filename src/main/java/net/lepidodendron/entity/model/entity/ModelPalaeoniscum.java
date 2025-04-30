@@ -292,6 +292,30 @@ public class ModelPalaeoniscum extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Palaeoniscum.offsetY = -0.0F;
+        this.Palaeoniscum.offsetX = 0.2F;
+        this.Palaeoniscum.offsetZ = 2.0F;
+        this.Palaeoniscum.rotateAngleY = (float)Math.toRadians(120);
+        this.Palaeoniscum.rotateAngleX = (float)Math.toRadians(1);
+        this.Palaeoniscum.rotateAngleZ = (float)Math.toRadians(0);
+        this.Palaeoniscum.scaleChildren = true;
+        float scaler = 0.3F;
+        this.Palaeoniscum.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Palaeoniscum, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Jaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.1F, 0.0F);
+        //End of pose, now render the model:
+        this.Palaeoniscum.render(f);
+        //Reset rotations, positions and sizing:
+        this.Palaeoniscum.setScale(1.0F, 1.0F, 1.0F);
+        this.Palaeoniscum.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

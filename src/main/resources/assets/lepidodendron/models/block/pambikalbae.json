@@ -664,12 +664,12 @@
 				0,
 				{
 					"name": "frond",
-					"origin": [0, 2, 0],
+					"origin": [0, 1, 0],
 					"color": 0,
 					"children": [
 						{
 							"name": "chamber1",
-							"origin": [0, -1, 0],
+							"origin": [0, 1, 0],
 							"color": 0,
 							"children": [
 								1,
@@ -681,7 +681,7 @@
 								7,
 								{
 									"name": "chamber2",
-									"origin": [0, -1, 0],
+									"origin": [0, 3, 0],
 									"color": 0,
 									"children": [
 										8,
@@ -693,7 +693,7 @@
 										14,
 										{
 											"name": "chamber3",
-											"origin": [0, 1, 0],
+											"origin": [0, 5, 0],
 											"color": 0,
 											"children": [
 												15,
@@ -705,7 +705,7 @@
 												21,
 												{
 													"name": "chamber4",
-													"origin": [0, 3, 0],
+													"origin": [0, 7, 0],
 													"color": 0,
 													"children": [
 														22,
@@ -717,7 +717,7 @@
 														28,
 														{
 															"name": "chamber5",
-															"origin": [0, 6, 0],
+															"origin": [0, 8, 0],
 															"color": 0,
 															"children": [
 																29,
@@ -729,7 +729,7 @@
 																35,
 																{
 																	"name": "chamber6",
-																	"origin": [0, 8, 0],
+																	"origin": [0, 10, 0],
 																	"color": 0,
 																	"children": [
 																		36,
@@ -741,7 +741,7 @@
 																		42,
 																		{
 																			"name": "chamber7",
-																			"origin": [0, 9, 0],
+																			"origin": [0, 11, 0],
 																			"color": 0,
 																			"children": [
 																				43,
@@ -753,7 +753,7 @@
 																				49,
 																				{
 																					"name": "top",
-																					"origin": [0, 9, 0],
+																					"origin": [0, 12, 0],
 																					"color": 0,
 																					"children": [50, 51, 52]
 																				}

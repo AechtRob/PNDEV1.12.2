@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeontinid",
 			"title": "Palaeontinoid",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian - Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Hemiptera$(br)>Auchenorrhyncha$(br)>Cicadomorpha$(br)>Palaeontinidea"
+			"text": "$(l)Temporal Range:$() Permian - Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Hemiptera$(br)>Auchenorrhyncha$(br)>Cicadomorpha$(br)>$(o)Palaeontinidea"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/palaeontinid.png"],
-			"title": "Palaeontinidea",
-			"text": ""
+			"type": "entity",
+			"name": "Palaeontinidea",
+			"entity": "lepidodendron:prehistoric_flora_palaeontinid",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_palaeontinid",

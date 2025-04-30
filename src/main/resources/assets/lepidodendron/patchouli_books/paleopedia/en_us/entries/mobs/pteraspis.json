@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorphi$(br)>Pteraspidiformes$(br)>Pteraspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pteraspis.png"],
-			"title": "P. rostrata",
-			"text": ""
+			"type": "entity",
+			"name": "P. rostrata",
+			"entity": "lepidodendron:prehistoric_flora_pteraspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pteraspis",
 			"type": "text",
-			"text": "Pteraspis was an agnathan(jawless) fish from the Devonian with protective armor covering its upper body and head. At the tip of its head was also a pointed protrusion as well as wing-like protrusions on the sides of its body. Pteraspis was very streamlined, making it a good swimmer and it is thought to have fed off plankton just under the ocean surface."
+			"text": "Pteraspis was an agnathan (jawless) fish from the Devonian with protective armor covering its upper body and head. At the tip of its head was also a pointed protrusion as well as wing-like protrusions on the sides of its body. Pteraspis was very streamlined, making it a good swimmer and it is thought to have fed off plankton just under the ocean surface."
 		},
 		{
 			"type": "lepidodendron:diet",

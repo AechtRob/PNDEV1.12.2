@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Vetulicolia$(br)>Vetulicolida$(br)>Vetulicolata$(br)>Didazoonidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pomatrum.png"],
-			"title": "P. ventralis",
-			"text": ""
+			"type": "entity",
+			"name": "P. ventralis",
+			"entity": "lepidodendron:prehistoric_flora_pomatrum",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pomatrum",
 			"type": "text",
-			"text": "Pomatrum is a vetulicolian, an enigmatic animal from the early Cambrian which had a tube shaped body and a tail. They also had every gill slits on the side of its body and a mouth at the end of the body, with no eyes."
+			"text": "Pomatrum is a vetulicolian, an enigmatic animal from the Lower Cambrian which had a tube shaped body and a tail. They also had every gill slits on the side of its body and a mouth at the end of the body, with no eyes."
 		},
 		{
 			"type": "lepidodendron:diet",

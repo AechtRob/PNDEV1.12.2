@@ -310,10 +310,29 @@ public class ModelPhytophilaspis extends ModelBasePalaeopedia {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.phytophilaspis.render(f5);
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.phytophilaspis.offsetY = -1.8F;
+        this.phytophilaspis.offsetX = -0.7F;
+        this.phytophilaspis.offsetZ = 2.0F;
+        this.phytophilaspis.rotateAngleY = (float)Math.toRadians(120);
+        this.phytophilaspis.rotateAngleX = (float)Math.toRadians(0);
+        this.phytophilaspis.rotateAngleZ = (float)Math.toRadians(0);
+        this.phytophilaspis.scaleChildren = true;
+        float scaler = 3.0F;
+        this.phytophilaspis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(phytophilaspis, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Cephalon, 0.0F, 0.05F, 0.0F);
+        //End of pose, now render the model:
+        this.phytophilaspis.render(f);
+        //Reset rotations, positions and sizing:
+        this.phytophilaspis.setScale(1.0F, 1.0F, 1.0F);
+        this.phytophilaspis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

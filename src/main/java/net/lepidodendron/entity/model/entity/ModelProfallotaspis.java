@@ -511,10 +511,30 @@ public class ModelProfallotaspis extends ModelBasePalaeopedia {
         this.Profallotaspis.offsetY = 0.312F;
         this.Profallotaspis.render(0.01F);
         this.resetToDefaultPose();
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Profallotaspis.offsetY = -0.4F;
+        this.Profallotaspis.offsetX = 0.15F;
+        this.Profallotaspis.offsetZ = 2.0F;
+        this.Profallotaspis.rotateAngleY = (float)Math.toRadians(120);
+        this.Profallotaspis.rotateAngleX = (float)Math.toRadians(0);
+        this.Profallotaspis.rotateAngleZ = (float)Math.toRadians(0);
+        this.Profallotaspis.scaleChildren = true;
+        float scaler = 0.8F;
+        this.Profallotaspis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Profallotaspis, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Thorax1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Thorax2, 0.0F, 0.3F, 0.0F);
+        //End of pose, now render the model:
+        this.Profallotaspis.render(f);
+        //Reset rotations, positions and sizing:
+        this.Profallotaspis.setScale(1.0F, 1.0F, 1.0F);
+        this.Profallotaspis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

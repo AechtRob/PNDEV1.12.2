@@ -351,10 +351,32 @@ public class ModelPlatypeltoides extends ModelBasePalaeopedia {
         this.Asaphellus.offsetY = -0.05F;
         this.Asaphellus.render(0.01F);
         resetToDefaultPose();
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Asaphellus.offsetY = -1.2F;
+        this.Asaphellus.offsetX = 0.2F;
+        this.Asaphellus.offsetZ = 2.0F;
+        this.Asaphellus.rotateAngleY = (float)Math.toRadians(120);
+        this.Asaphellus.rotateAngleX = (float)Math.toRadians(0);
+        this.Asaphellus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Asaphellus.scaleChildren = true;
+        float scaler = 2.0F;
+        this.Asaphellus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Asaphellus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Thorax1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Thorax2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Thorax3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Pygidium, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Asaphellus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Asaphellus.setScale(1.0F, 1.0F, 1.0F);
+        this.Asaphellus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

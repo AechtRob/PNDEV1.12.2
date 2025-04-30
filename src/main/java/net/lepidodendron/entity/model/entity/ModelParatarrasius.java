@@ -145,6 +145,30 @@ public class ModelParatarrasius extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.bone3.offsetY = 0.15F;
+        this.bone3.offsetX = 0.15F;
+        this.bone3.offsetZ = 2.0F;
+        this.bone3.rotateAngleY = (float)Math.toRadians(120);
+        this.bone3.rotateAngleX = (float)Math.toRadians(0);
+        this.bone3.rotateAngleZ = (float)Math.toRadians(0);
+        this.bone3.scaleChildren = true;
+        float scaler = 0.8F;
+        this.bone3.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(bone3, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(bone, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(bone2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(bone4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(bone5, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(bone6, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(bone7, 0.0F, -0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.bone3.render(f);
+        //Reset rotations, positions and sizing:
+        this.bone3.setScale(1.0F, 1.0F, 1.0F);
+        this.bone3.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

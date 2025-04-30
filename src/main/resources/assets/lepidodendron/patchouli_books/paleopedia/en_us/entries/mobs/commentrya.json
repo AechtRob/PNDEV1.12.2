@@ -13,7 +13,7 @@
 		},
         	{
             "type": "entity",
-            "name": "Commentrya",
+            "name": "C. traquairi",
             "entity": "lepidodendron:prehistoric_flora_commentrya",
             "rotate": false,
             "default_rotation": 0
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_commentrya",
 			"type": "text",
-			"text": "Commentrya comes from the Upper Carboniferous, with fossils being found in the Bear Gulch Limestone, Montana (USA); Lower Limestone Formation, Scotland (United Kingdom), and Westphalia, Germany. It is a small commentryaid, growing up to 8 cm in length. Commentrya has been through several revisions, with the remains themselves being described nearly a century before being given their current name."
+			"text": "Commentrya comes from the Upper Carboniferous, with fossils being found in the Commentry Shales, France . It is a small commentryaid, growing up to 20 cm in length. It is unqiue for having the placement of its dorsal fin change between the juvenvile and adult stages. The generic name derives from the place name 'Commentry', where it was found."
 		},
 		{
 			"type": "lepidodendron:diet",

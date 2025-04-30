@@ -283,6 +283,45 @@ public class ModelPassaloteuthis extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -2.0F;
+        this.body.offsetX = -0.5F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(120);
+        this.body.rotateAngleX = (float)Math.toRadians(0);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 2.0F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(finL, 0.0F, 0.F, 0.0F);
+        this.setRotateAngle(arm, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arms, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm2, -0.2F, 0.0F, -0.7F);
+        this.setRotateAngle(arms2, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm3, -0.2F, 0.0F, -1.5F);
+        this.setRotateAngle(arms3, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm4, -0.2F, 0.0F, -2.5F);
+        this.setRotateAngle(arms4, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm5, -0.2F, 0.0F, 3.2F);
+        this.setRotateAngle(arms5, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm6, -0.2F, 0.0F, 0.2F);
+        this.setRotateAngle(arms6, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm7, -0.2F, 0.0F, 0.7F);
+        this.setRotateAngle(arms7, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm8, -0.2F, 0.0F, 1.5F);
+        this.setRotateAngle(arms8, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm9, -0.2F, 0.0F, 2.5F);
+        this.setRotateAngle(arms9, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm10, -0.2F, 0.0F, -3.2F);
+        this.setRotateAngle(arms10, -0.2F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -440,10 +440,45 @@ public class ModelRhomaleosaurus extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = -0.55F;
+        this.root.offsetX = 0.0F;
+        this.root.offsetZ = 2.0F;
+        this.root.rotateAngleY = (float)Math.toRadians(120);
+        this.root.rotateAngleX = (float)Math.toRadians(0);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
+        this.root.scaleChildren = true;
+        float scaler = 0.4F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(root, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Hips, 0.0F, 0.0F, 0.8F);
+        this.setRotateAngle(Bodymiddle, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodyfront, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck1, 0.0F, -0.12F, 0.0F);
+        this.setRotateAngle(Neck2, 0.0F, -0.14F, 0.0F);
+        this.setRotateAngle(Neck3, 0.0F, -0.16F, 0.0F);
+        this.setRotateAngle(Neck4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftfrontflipper1, 0.0F, 0.1F, 0.3F);
+        this.setRotateAngle(Rightfrontflipper1, 0.0F, 0.1F, -0.3F);
+        this.setRotateAngle(Tail1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Lefthindflipper1, 0.0F, 0.0F, -0.3F);
+        this.setRotateAngle(Righthindflipper1, 0.0F, 0.0F, 0.3F);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

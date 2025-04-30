@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Trilobita$(br)>Asaphida$(br)>Cyclopygidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pricyclopyge.png"],
-			"title": "P. prisca",
-			"text": ""
+			"type": "entity",
+			"name": "P. prisca",
+			"entity": "lepidodendron:prehistoric_flora_pricyclopyge",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pricyclopyge",
 			"type": "text",
-			"text": "Pricyclopyge is a very interesting Cyclopygid due to the presence of two small disks on its third thoracic segment which are thought to have been bioluminescent in life. Pricyclopyge was a mesopelagic swimmer based on the huge eyes. Pricyclopyge has been found in China, the Czech Republic, France, and the United Kingdom.  "
+			"text": "Pricyclopyge is a very interesting cyclopygid due to the presence of two small disks on its third thoracic segment which are thought to have been bioluminescent in life. Pricyclopyge was a mesopelagic swimmer based on the huge eyes. Pricyclopyge has been found in China, the Czech Republic, France, and the United Kingdom.  "
 		},
 		{
 			"type": "lepidodendron:diet",

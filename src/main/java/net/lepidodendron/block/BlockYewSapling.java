@@ -214,7 +214,7 @@ public class BlockYewSapling extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Coniferous tree");
 				tooltip.add("Periods: [Jurassic (?) -] Cretaceous - Paleogene  - Neogene - Pleistocene [- Present]");
-				tooltip.add("Propagation: fruit/cone");}
+				tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

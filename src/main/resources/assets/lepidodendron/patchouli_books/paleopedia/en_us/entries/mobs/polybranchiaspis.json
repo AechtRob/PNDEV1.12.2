@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_polybranchiaspis",
 			"title": "Polybranchiaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Galeaspida$(br)>Polybranchiaspididae"
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Cephalaspidomorphi$(br)>Galeaspida$(br)>Polybranchiaspidiformes$(br)>Polybranchiaspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/polybranchiaspis.png"],
-			"title": "P. miandiancunensis",
-			"text": ""
+			"type": "entity",
+			"name": "P. miandiancunensis",
+			"entity": "lepidodendron:prehistoric_flora_polybranchiaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_polybranchiaspis",
 			"type": "text",
-			"text": "Polybranchiaspis was a genus of agnathan (jawless fish) that lived during the Late Silurian to Early Devonian (427 - 411 million years ago). Its remains have been found in China, specifically at the Kuanti Formation and at the Cuifengshan Assemblage in Qujing."
+			"text": "Polybranchiaspis was a genus of agnathan (jawless fish) that lived during the Upper Silurian to Lower Devonian (427 - 411 million years ago). Its remains have been found in China, specifically at the Kuanti Formation and at the Cuifengshan Assemblage in Qujing."
 		},
 		{
 			"type": "lepidodendron:diet",

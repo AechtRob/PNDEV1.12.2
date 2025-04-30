@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Cnidaria$(br)>Hydrozoa$(br)>Porpitoidea"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/pseudodiscophyllum.png"],
-			"title": "P. windermerensis",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "P. windermerensis",
+			"entity": "lepidodendron:prehistoric_flora_pseudodiscophyllum",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pseudodiscophyllum",

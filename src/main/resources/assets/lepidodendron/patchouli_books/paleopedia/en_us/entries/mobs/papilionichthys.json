@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Iniopterygia$(br)>Iniopterygidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/papilionichthys.png"],
-			"title": "P. stahlae",
-			"text": ""
+			"type": "entity",
+			"name": "P. stahlae",
+			"entity": "lepidodendron:prehistoric_flora_papilionichthys",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_papilionichthys",
 			"type": "text",
-			"text": "Papilionichthys, the \"Butterfly fish\" of the Carboniferous! This small animal was described alongside the larger Rainerichthys and is an Iniopterygid from the Carboniferous (they didn't exist in other periods). This is the smallest among the members of the group in the mod."
+			"text": "Papilionichthys, the \"Butterfly fish\" of the Carboniferous! This small animal was described alongside the larger Rainerichthys and is an iniopterygid from the Carboniferous (they didn't exist in other periods). This is the smallest among the members of the group in the mod."
 		},
 		{
 			"type": "lepidodendron:diet",

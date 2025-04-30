@@ -280,9 +280,33 @@ public class ModelPsarolepis extends ModelBasePalaeopedia {
         this.Body1.offsetY = -0.0F;
         this.Body1.render(0.01F);
         resetToDefaultPose();
+
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Body1.offsetY = 1.0F;
+        this.Body1.offsetX = 0.2F;
+        this.Body1.offsetZ = 2.0F;
+        this.Body1.rotateAngleY = (float)Math.toRadians(120);
+        this.Body1.rotateAngleX = (float)Math.toRadians(0);
+        this.Body1.rotateAngleZ = (float)Math.toRadians(0);
+        this.Body1.scaleChildren = true;
+        float scaler = 0.4F;
+        this.Body1.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Body1, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail1, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail3, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail4, 0.1F, 0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.Body1.render(f);
+        //Reset rotations, positions and sizing:
+        this.Body1.setScale(1.0F, 1.0F, 1.0F);
+        this.Body1.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

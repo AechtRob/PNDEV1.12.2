@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/satpuraphyllum_planks",
+    "top": "lepidodendron:blocks/satpuraphyllum_planks",
+    "side": "lepidodendron:blocks/satpuraphyllum_planks"
+  }
+}

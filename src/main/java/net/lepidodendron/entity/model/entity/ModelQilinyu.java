@@ -211,9 +211,37 @@ public class ModelQilinyu extends ModelBasePalaeopedia {
         this.head.offsetY = 0.2F;
         this.head.render(0.01F);
         resetToDefaultPose();
+
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.head.offsetY = -2.0F;
+        this.head.offsetX = 0.0F;
+        this.head.offsetZ = 2.0F;
+        this.head.rotateAngleY = (float)Math.toRadians(120);
+        this.head.rotateAngleX = (float)Math.toRadians(0);
+        this.head.rotateAngleZ = (float)Math.toRadians(0);
+        this.head.scaleChildren = true;
+        float scaler = 4.0F;
+        this.head.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(head, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(fin2R, 0.0F, 0.7854F, 0.0F);
+        this.setRotateAngle(fin2L, 0.0F, -0.7854F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.5236F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.5236F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.7418F, 0.0F);
+        this.setRotateAngle(fin1R, 0.0F, 0.4363F, 0.0F);
+        this.setRotateAngle(fin1L, 0.0F, -0.4363F, 0.0F);
+        //End of pose, now render the model:
+        this.head.render(f);
+        //Reset rotations, positions and sizing:
+        this.head.setScale(1.0F, 1.0F, 1.0F);
+        this.head.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

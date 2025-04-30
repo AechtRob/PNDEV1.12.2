@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorphi$(br)>Heterostraci$(br)>Pteraspidiformes$(br)>Pteraspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/rhinopteraspis.png"],
-			"title": "R. dunensis",
-			"text": ""
+			"type": "entity",
+			"name": "R. dunensis",
+			"entity": "lepidodendron:prehistoric_flora_rhinopteraspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_rhinopteraspis",

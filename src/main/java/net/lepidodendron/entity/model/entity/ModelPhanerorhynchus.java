@@ -262,7 +262,7 @@ public class ModelPhanerorhynchus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -1.4F;
-        this.body.offsetX = -1.3F;
+        this.body.offsetX = -1.5F;
         this.body.rotateAngleY = (float)Math.toRadians(200);
         this.body.rotateAngleX = (float)Math.toRadians(8);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);

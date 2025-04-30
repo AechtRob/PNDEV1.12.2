@@ -184,10 +184,32 @@ public class ModelProtospinax extends ModelBasePalaeopedia {
         this.base.offsetY = -0.13F;
         this.base.render(0.01F);
         resetToDefaultPose();
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.base.offsetY = -0.2F;
+        this.base.offsetX = 0.3F;
+        this.base.offsetZ = 2.0F;
+        this.base.rotateAngleY = (float)Math.toRadians(120);
+        this.base.rotateAngleX = (float)Math.toRadians(0);
+        this.base.rotateAngleZ = (float)Math.toRadians(0);
+        this.base.scaleChildren = true;
+        float scaler = 1.0F;
+        this.base.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(base, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body1, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.4F, 0.0F);
+        //End of pose, now render the model:
+        this.base.render(f);
+        //Reset rotations, positions and sizing:
+        this.base.setScale(1.0F, 1.0F, 1.0F);
+        this.base.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

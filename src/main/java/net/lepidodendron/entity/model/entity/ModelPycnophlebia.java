@@ -238,10 +238,37 @@ public class ModelPycnophlebia extends ModelBasePalaeopedia {
         this.main.offsetY = 0.15F;
         this.main.render(0.01F);
         resetToDefaultPose();
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = -2.0F;
+        this.main.offsetX = -0.2F;
+        this.main.offsetZ = 2.0F;
+        this.main.rotateAngleY = (float)Math.toRadians(120);
+        this.main.rotateAngleX = (float)Math.toRadians(0);
+        this.main.rotateAngleZ = (float)Math.toRadians(0);
+        this.main.scaleChildren = true;
+        float scaler = 4.0F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftantennae, 0.0F, 0.2F, 0.2F);
+        this.setRotateAngle(rightantennae, 0.0F, -0.2F, -0.2F);
+        this.setRotateAngle(lefthindwing, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(righthindwing, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftwing, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftwing2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing2, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 
