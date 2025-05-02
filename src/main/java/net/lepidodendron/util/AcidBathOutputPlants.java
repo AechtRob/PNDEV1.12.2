@@ -282,7 +282,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockColpodexylon.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAglaophyton.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockHorneophyton.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockRenalia.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockRenalia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockSawdonia.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsDevonian);
         return resLoc;
@@ -365,6 +366,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockGreenStemmedAlgae.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockLiverwort.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockColpodexylon.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockSawdonia.block).toString(),
                 "minecraft:small_fern",
                 "minecraft:large_fern"
         };

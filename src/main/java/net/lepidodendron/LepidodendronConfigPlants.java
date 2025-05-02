@@ -957,6 +957,17 @@ public class LepidodendronConfigPlants {
     public static int maxheightPsilophyton = 90;
     public static double multiplierPsilophyton = 1;
     public static boolean spreadPsilophyton = true;
+    
+    public static boolean genSawdonia = false;
+    public static String[] genSawdoniaBlacklistBiomes = new String[0];
+    public static String[] genSawdoniaOverrideBiomes = new String[0];
+    public static int[] dimSawdonia = new int[]{0};
+    public static int waterSawdoniaHorizontal = 5;
+    public static int waterSawdoniaVertical = 1;
+    public static int minheightSawdonia = 1;
+    public static int maxheightSawdonia = 90;
+    public static double multiplierSawdonia = 1;
+    public static boolean spreadSawdonia = true;
 
     public static boolean genHorneophyton = false;
     public static String[] genHorneophytonBlacklistBiomes = new String[0];
@@ -13912,6 +13923,46 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Renalia", "spreadRenalia", spreadRenalia);
         prop.setComment("Set to true for Renalia to spread naturally, and to false to require bonemeal to spread [default: true]");
         spreadRenalia = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Sawdonia", "genSawdonia", genSawdonia);
+        prop.setComment("Set to true to generate Sawdonia naturally [default: false]");
+        genSawdonia = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sawdonia", "genSawdoniaBlacklistBiomes", genSawdoniaBlacklistBiomes);
+        prop.setComment("List of biomes Sawdonia are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genSawdoniaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sawdonia", "genSawdoniaOverrideBiomes", genSawdoniaOverrideBiomes);
+        prop.setComment("List of biomes Sawdonia are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genSawdoniaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Sawdonia", "dimSawdonia", dimSawdonia);
+        prop.setComment("List of dimension IDs Sawdonia can generate in [default: 0]");
+        dimSawdonia = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sawdonia", "waterSawdoniaHorizontal", waterSawdoniaHorizontal);
+        prop.setComment("Distance NSEW from water that Sawdonia can exist and spread onto neighbouring sand and dirt, although it will never grow right next to water, (1 to 16) [default: 5]");
+        waterSawdoniaHorizontal = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sawdonia", "waterSawdoniaVertical", waterSawdoniaVertical);
+        prop.setComment("Distance above water required for Sawdonia to exist (0 to 6) [default: 1]");
+        waterSawdoniaVertical = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sawdonia", "minheightSawdonia", minheightSawdonia);
+        prop.setComment("Minimum height that Sawdonia can generate (1 to 250) [default: 1]");
+        minheightSawdonia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sawdonia", "maxheightSawdonia", maxheightSawdonia);
+        prop.setComment("Maximum height that Sawdonia can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightSawdonia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sawdonia", "multiplierSawdonia", multiplierSawdonia);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierSawdonia = prop.getDouble();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sawdonia", "spreadSawdonia", spreadSawdonia);
+        prop.setComment("Set to true for Sawdonia to spread naturally, and to false to require bonemeal to spread [default: true]");
+        spreadSawdonia = prop.getBoolean();
         propOrder.add(prop.getName());
 
 

@@ -469,6 +469,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PSEUDOBORNIA = new CustomTrigger("pf_book_pseudobornia");
     public static final CustomTrigger CLICK_PSEUDOVOLTZIA = new CustomTrigger("pf_book_pseudovoltzia");
     public static final CustomTrigger CLICK_PSILOPHYTON = new CustomTrigger("pf_book_psilophyton");
+    public static final CustomTrigger CLICK_SAWDONIA = new CustomTrigger("pf_book_sawdonia");
     public static final CustomTrigger CLICK_PTILOZAMITES = new CustomTrigger("pf_book_ptilozamites");
     public static final CustomTrigger CLICK_PTERIDINIUM = new CustomTrigger("pf_book_pteridinium");
     public static final CustomTrigger CLICK_PTEROPHYLLUM = new CustomTrigger("pf_book_pterophyllum");
@@ -2412,6 +2413,7 @@ public class ModTriggers
             CLICK_PSEUDOBORNIA,
             CLICK_PSEUDOVOLTZIA,
             CLICK_PSILOPHYTON,
+            CLICK_SAWDONIA,
             CLICK_PTILOZAMITES,
             CLICK_PTERIDINIUM,
             CLICK_PTEROPHYLLUM,

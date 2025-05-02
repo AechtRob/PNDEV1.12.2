@@ -5147,6 +5147,9 @@ public class LepidodendronSorter {
     public static final int renalia = 8132;
     public static final int renalia_spore = 8133;
 
+    public static final int sawdonia = 8134;
+    public static final int sawdonia_spore = 8135;
+    public static final int sawdonia_stem = 8136;
 
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;
