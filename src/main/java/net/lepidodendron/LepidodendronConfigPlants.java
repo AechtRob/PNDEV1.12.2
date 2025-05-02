@@ -849,6 +849,17 @@ public class LepidodendronConfigPlants {
     public static double multiplierCooksonia = 1;
     public static boolean spreadCooksonia = true;
 
+    public static boolean genRenalia = false;
+    public static String[] genRenaliaBlacklistBiomes = new String[0];
+    public static String[] genRenaliaOverrideBiomes = new String[0];
+    public static int[] dimRenalia = new int[]{0};
+    public static int waterRenaliaHorizontal = 3;
+    public static int waterRenaliaVertical = 0;
+    public static int minheightRenalia = 1;
+    public static int maxheightRenalia = 90;
+    public static double multiplierRenalia = 1;
+    public static boolean spreadRenalia = true;
+
     public static boolean genAglaophyton = false;
     public static String[] genAglaophytonBlacklistBiomes = new String[0];
     public static String[] genAglaophytonOverrideBiomes = new String[0];
@@ -13861,6 +13872,46 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Horneophyton", "spreadHorneophyton", spreadHorneophyton);
         prop.setComment("Set to true for Horneophyton to spread naturally, and to false to require bonemeal to spread [default: true]");
         spreadHorneophyton = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Renalia", "genRenalia", genRenalia);
+        prop.setComment("Set to true to generate Renalia naturally [default: false]");
+        genRenalia = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Renalia", "genRenaliaBlacklistBiomes", genRenaliaBlacklistBiomes);
+        prop.setComment("List of biomes Renalia are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genRenaliaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Renalia", "genRenaliaOverrideBiomes", genRenaliaOverrideBiomes);
+        prop.setComment("List of biomes Renalia are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genRenaliaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Renalia", "dimRenalia", dimRenalia);
+        prop.setComment("List of dimension IDs Renalia can generate in [default: 0]");
+        dimRenalia = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Renalia", "waterRenaliaHorizontal", waterRenaliaHorizontal);
+        prop.setComment("Distance NSEW from water that Renalia can exist and spread onto neighbouring dirt and grass (1 to 16) [default: 3]");
+        waterRenaliaHorizontal = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Renalia", "waterRenaliaVertical", waterRenaliaVertical);
+        prop.setComment("Distance above water required for Renalia to exist (0 to 6) [default: 0]");
+        waterRenaliaVertical = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Renalia", "minheightRenalia", minheightRenalia);
+        prop.setComment("Minimum height that Renalia can generate (1 to 250) [default: 1]");
+        minheightRenalia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Renalia", "maxheightRenalia", maxheightRenalia);
+        prop.setComment("Maximum height that Renalia can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightRenalia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Renalia", "multiplierRenalia", multiplierRenalia);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierRenalia = prop.getDouble();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Renalia", "spreadRenalia", spreadRenalia);
+        prop.setComment("Set to true for Renalia to spread naturally, and to false to require bonemeal to spread [default: true]");
+        spreadRenalia = prop.getBoolean();
         propOrder.add(prop.getName());
 
 

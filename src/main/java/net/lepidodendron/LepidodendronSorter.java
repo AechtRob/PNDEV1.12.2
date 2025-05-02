@@ -5137,6 +5137,17 @@ public class LepidodendronSorter {
     public static final int aglaophyton = 8124;
     public static final int aglaophyton_spore = 8125;
 
+    public static final int paleoenkianthus = 8126;
+    public static final int paleoenkianthus_flower = 8127;
+    public static final int paleoenkianthus_seeds = 8128;
+    public static final int tylerianthus = 8129;
+    public static final int tylerianthus_flower = 8130;
+    public static final int tylerianthus_seeds = 8131;
+
+    public static final int renalia = 8132;
+    public static final int renalia_spore = 8133;
+
+
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;
     public static final int eocursor_raw = 4976;

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/tylerianthus_small_noflower",
+    "particle": "lepidodendron:blocks/tylerianthus_small_noflower"
+  }
+}

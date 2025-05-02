@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/paleoenkianthus_2",
+    "particle": "lepidodendron:blocks/paleoenkianthus_2"
+  }
+}
