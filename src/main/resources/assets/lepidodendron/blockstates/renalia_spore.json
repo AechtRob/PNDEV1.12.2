@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:renalia_1_spore"},
+      {"model": "lepidodendron:renalia_2_spore"},
+      {"model": "lepidodendron:renalia_1_spore_var"},
+      {"model": "lepidodendron:renalia_2_spore_var"}
+    ]
+  }
+}
