@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Pantestudines$(br)>Testudinata"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/proganochelys.png"],
-			"title": "P. quenstedti",
-			"text": ""
+			"type": "entity",
+			"name": "P. quenstedti",
+			"entity": "lepidodendron:prehistoric_flora_proganochelys",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_proganochelys",
 			"type": "text",
-			"text": "Proganochelys is a genus of early stem-turtle from Germany, Switzerland, Greenland and Thailand dating back to the Late Triassic.  Once considered to be the oldest stem-turtle, Proganochelys would keep this title from its discovery in 1887 up until 2008, when the even older genus Odontochelys was described.  Together, these stem-turtles make the oldest evidence of the evolution of the carapace in modern day turtles."
+			"text": "Proganochelys is a genus of early stem-turtle from Germany, Switzerland, Greenland and Thailand dating back to the Upper Triassic.  Once considered to be the oldest stem-turtle, Proganochelys would keep this title from its discovery in 1887 up until 2008, when the even older genus Odontochelys was described.  Together, these stem-turtles make the oldest evidence of the evolution of the carapace in modern day turtles."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_proganochelys",

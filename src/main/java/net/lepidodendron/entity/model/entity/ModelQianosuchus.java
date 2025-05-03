@@ -371,12 +371,13 @@ public class ModelQianosuchus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.20F;
-        this.main.offsetX = 0.02F;
+        this.main.offsetX = 0.075F;
+        this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(212);
         this.main.rotateAngleX = (float)Math.toRadians(22);
         this.main.rotateAngleZ = (float)Math.toRadians(-12);
         this.main.scaleChildren = true;
-        float scaler = 0.525F;
+        float scaler = 0.4F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(body, 0.1F, 0.1F, 0.0F);

@@ -404,21 +404,22 @@ public class ModelRepenomamus extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.hips.render(f5);
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = -0.80F;
-        this.hips.offsetX = 0.25F;
-        this.hips.rotateAngleY = (float)Math.toRadians(130);
+        this.hips.offsetY = -0.8F;
+        this.hips.offsetX = -0.2F;
+        this.hips.offsetZ = 2.0F;
+        this.hips.rotateAngleY = (float)Math.toRadians(120);
         this.hips.rotateAngleX = (float)Math.toRadians(0);
         this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;
-        float scaler = 1.15F;
+        float scaler = 1.0F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(hips, 0.0F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.hips.render(f);
         //Reset rotations, positions and sizing:

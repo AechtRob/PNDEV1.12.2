@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_placodus",
 			"title": "Placodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Sauropterygia$(br)>Placodontia$(br)>Placodontidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Placodontia$(br)>Placodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/placodus.png"],
-			"title": "P. gigas",
-			"text": ""
+			"type": "entity",
+			"name": "P. gigas",
+			"entity": "lepidodendron:prehistoric_flora_placodus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_placodus",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_corumbella",
 			"title": "Corumbella",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Staurozoa$(br)>Corumbellidae"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Corumbellidae"
 		},
 		{
 			"type": "multiblock",

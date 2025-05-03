@@ -9,7 +9,7 @@
 		"trigger": "lepidodendron:pf_adv_book_romerodus",
 		"title": "Romerodus",
 		"type": "quest",
-		"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Holocephali$(br)>Eugeneodontida$(br)>Caseodontidae"
+		"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Caseodontidae"
 	},
 	{
             "type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_romerodus",
 			"type": "text",
-			"text": "Romerodus is a Carboniferous eugeneodontid cartilaginous fish from Nebraska.  It is known from an incredibly well preserved fossil slab that preserves the body, tail, and soft tissue impressions. Eugeneodontids post cranial details are known only from the family Caseodontidae, and thus differences in the body morphology of other Eugeneodontid families are not known."
+			"text": "Romerodus is a Carboniferous eugeneodontid cartilaginous fish from Nebraska.  It is known from an incredibly well preserved fossil slab that preserves the body, tail, and soft tissue impressions. Eugeneodontids post cranial details are known only from the family Caseodontidae, and thus differences in the body morphology of other eugeneodontid families are not known."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -355,20 +355,22 @@ public class ModelGoniatites extends ModelBasePalaeopedia {
     public void renderStaticSuspended(float f) {
         this.Root.render(0.01F);
         resetToDefaultPose();
+
     }
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Root.offsetY = -2.0F;
-        this.Root.offsetX = -0.338F;
-        this.Root.rotateAngleY = (float)Math.toRadians(40);
-        this.Root.rotateAngleX = (float)Math.toRadians(-28);
-        this.Root.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Root.offsetY = -1.2F;
+        this.Root.offsetX = -0.8F;
+        this.Root.offsetZ = 2.0F;
+        this.Root.rotateAngleY = (float)Math.toRadians(120);
+        this.Root.rotateAngleX = (float)Math.toRadians(0);
+        this.Root.rotateAngleZ = (float)Math.toRadians(0);
         this.Root.scaleChildren = true;
-        float scaler = 2.63F;
+        float scaler = 2.0F;
         this.Root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Root, 0.8F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.Root.render(f);
         //Reset rotations, positions and sizing:

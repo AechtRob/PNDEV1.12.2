@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Ordovician - Devonian$(br2)>Chordata$(br)>Conodonta$(br)>Conodontophorida$(br)>Distacodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/panderodus.png"],
-			"title": "P. denticulatus",
-			"text": ""
+			"type": "entity",
+			"name": "P. denticulatus",
+			"entity": "lepidodendron:prehistoric_flora_panderodus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_panderodus",
 			"type": "text",
-			"text": "Panderodus is a Conodont that originated in the Ordivician and died out in the Late Devonian period. Due to the discovery of rare conodont body fossils, it was revealed that Panderodus had a thicker body compared to the more slender bodies of other conodonts. They were also macrophagous predators, meaning they attacked larger prey and studies have shown that they were venomous."
+			"text": "Panderodus is a conodont that originated in the Ordovician and died out in the Upper Devonian. Due to the discovery of rare conodont body fossils, it was revealed that Panderodus had a thicker body compared to the more slender bodies of other conodonts. They were also macrophagous predators, meaning they attacked larger prey and studies have shown that they were venomous."
 		},
 		{
 			"type": "lepidodendron:diet",

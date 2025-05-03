@@ -157,7 +157,7 @@ public class ModelArchoblattina extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.thorax.offsetY = -1.5F;
+        this.thorax.offsetY = -2.2F;
         this.thorax.offsetX = -0.5F;
         this.thorax.rotateAngleY = (float)Math.toRadians(120);
         this.thorax.rotateAngleX = (float)Math.toRadians(1);
@@ -166,7 +166,7 @@ public class ModelArchoblattina extends ModelBasePalaeopedia {
         float scaler = 3.5F;
         this.thorax.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(thorax, 0.2F, 3.9F, 0.0F);
+        this.setRotateAngle(thorax, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.thorax.render(f);
         //Reset rotations, positions and sizing:

@@ -811,7 +811,7 @@ public class ModelPseudoangustidontus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.bone.offsetY = -0.5F;
-        this.bone.offsetX = 0.1F;
+        this.bone.offsetX = 0.0F;
         this.bone.rotateAngleY = (float)Math.toRadians(200);
         this.bone.rotateAngleX = (float)Math.toRadians(8);
         this.bone.rotateAngleZ = (float)Math.toRadians(-8);

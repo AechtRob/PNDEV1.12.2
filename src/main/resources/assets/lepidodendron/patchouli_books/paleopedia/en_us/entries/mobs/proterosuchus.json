@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauriformes$(br)>Proterosuchidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/proterosuchus.png"],
-			"title": "P. fergusi",
-			"text": ""
+			"type": "entity",
+			"name": "P. fergusi",
+			"entity": "lepidodendron:prehistoric_flora_proterosuchus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_proterosuchus",
 			"type": "text",
-			"text": "Proterosuchus fergusi was described by Robert Broom in 1903, and its name means \"Fergus' First Crocodile\". It lived during the early Triassic period in what is today South Africa. It was one of the earliest members of the crocodylomorphs known, although it is unclear whether it lived terrestrially or semi-aquatically like modern crocodiles."
+			"text": "Proterosuchus fergusi was described by Robert Broom in 1903, and its name means \"Fergus' First Crocodile\". It lived during the Lower Triassic period in what is today South Africa. It was one of the earliest members of the crocodylomorphs known, although it is unclear whether it lived terrestrially or semi-aquatically like modern crocodiles."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_proterosuchus",

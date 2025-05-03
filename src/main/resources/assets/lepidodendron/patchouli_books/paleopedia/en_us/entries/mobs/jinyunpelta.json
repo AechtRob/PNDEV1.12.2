@@ -9,7 +9,7 @@
 "trigger": "lepidodendron:pf_adv_book_jinyunpelta",
 "title": "Jinyunpelta",
 "type": "quest",
-"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Ornithischia$(br)>Ankylosauria$(br)>Ankylosaurinae"
+"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Ornithischia$(br)>Ankylosauria$(br)>Ankylosaurinae"
 },
         {
             "type": "entity",
@@ -21,7 +21,7 @@
 {
 "advancement": "lepidodendron:pf_adv_book_jinyunpelta",
 "type": "text",
-"text": "Jinyunpelta is a genus of ankylosaur from the Liangtoutang Formation during the Albian Age of Early Cretaceous Asia. It lived in a lacustrine environment near the southern coast of China, and would have likely been a browsing herbivore. This animal measured in at around 3.5 meters, making it a fair bit smaller than some of its more derived and famous relatives like Ankylosaurus and Saichania."
+"text": "Jinyunpelta is a genus of ankylosaur from the Liangtoutang Formation during the Albian and Cenomanian ages of Cretaceous Asia. It lived in a lacustrine environment near the southern coast of China, and would have likely been a browsing herbivore. This animal measured in at around 3.5 meters, making it a fair bit smaller than some of its more derived and famous relatives like Ankylosaurus and Saichania."
 },
 {
 "advancement": "lepidodendron:pf_adv_book_jinyunpelta",

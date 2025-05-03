@@ -328,9 +328,36 @@ public class ModelPromexyele extends ModelBasePalaeopedia {
         this.Promexyele.offsetY = -0.03F;
         this.Promexyele.render(0.01F);
         resetToDefaultPose();
+
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Promexyele.offsetY = 0.0F;
+        this.Promexyele.offsetX = 0.4F;
+        this.Promexyele.offsetZ = 2.0F;
+        this.Promexyele.rotateAngleY = (float)Math.toRadians(120);
+        this.Promexyele.rotateAngleX = (float)Math.toRadians(0);
+        this.Promexyele.rotateAngleZ = (float)Math.toRadians(0);
+        this.Promexyele.scaleChildren = true;
+        float scaler = 2.0F;
+        this.Promexyele.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Promexyele, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body1, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(Body5, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(Jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(PectoralL, -1.3F, -0.3F, -0.1F);
+        this.setRotateAngle(PectoralR, -1.3F, 0.3F, 0.1F);
+        //End of pose, now render the model:
+        this.Promexyele.render(f);
+        //Reset rotations, positions and sizing:
+        this.Promexyele.setScale(1.0F, 1.0F, 1.0F);
+        this.Promexyele.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

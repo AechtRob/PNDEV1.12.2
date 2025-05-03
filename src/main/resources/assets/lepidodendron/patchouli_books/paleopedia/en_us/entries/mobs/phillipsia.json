@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Arthropoda$(br)>Trilobita$(br)>Proetida$(br)>Phillipsiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/phillipsia.png"],
-			"title": "P. kellyi",
-			"text": ""
+			"type": "entity",
+			"name": "P. kellyi",
+			"entity": "lepidodendron:prehistoric_flora_phillipsia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_phillipsia",

@@ -120,7 +120,8 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 		{
 			BiomeDevonian biomeDevonian = (BiomeDevonian) biome;
 			if ( biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Ocean
-					|| biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Hypersaline) {
+					|| biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Hypersaline
+					|| biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Lagoon) {
 				biomeCriteria = false;
 			}
 			else {

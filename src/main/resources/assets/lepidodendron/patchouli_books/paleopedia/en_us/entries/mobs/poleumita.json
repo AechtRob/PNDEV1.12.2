@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Mollusca$(br)>Gastropoda$(br)>Euomphalidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/poleumita.png"],
-			"title": "P. discors",
-			"text": ""
+			"type": "entity",
+			"name": "P. discors",
+			"entity": "lepidodendron:prehistoric_flora_poleumita",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_poleumita",
 			"type": "text",
-			"text": "Poleumita is a medium sized a sea snail. It is known to have lived during the Silurian period. It likely fed and moved in ways similar to today's sea snails."
+			"text": "Poleumita is a medium sized a sea snail, and is known to have lived during the Silurian period. It likely fed and moved in ways similar to today's sea snails."
 		},
 		{
 			"type": "lepidodendron:diet",

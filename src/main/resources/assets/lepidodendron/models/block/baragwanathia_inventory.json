@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "lepidodendron:items/baragwanathia_inventory",
-    "particle": "lepidodendron:items/baragwanathia_inventory"
+    "cross": "lepidodendron:blocks/baragwanathia",
+    "particle": "lepidodendron:blocks/baragwanathia"
   }
 }

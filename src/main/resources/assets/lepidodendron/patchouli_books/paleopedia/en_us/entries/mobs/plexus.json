@@ -26,7 +26,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_plexus",
 			"type": "text",
-			"text": "The generic name derives from the Latin word 'plexus', to mean 'braided'. The specific name derives from the surname of Dennis Rice, a field assistant who helped collect a large amount of the fossil material."
+			"text": "The generic name derives directly from the Latin word 'plexus', to mean 'braided'. The specific name derives from the surname of Dennis Rice, a field assistant who helped collect a large amount of the fossil material."
 		},
 		{
 			"type": "lepidodendron:diet",

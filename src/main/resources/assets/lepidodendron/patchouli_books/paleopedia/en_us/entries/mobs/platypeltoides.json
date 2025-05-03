@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Trilobita$(br)>Asaphida$(br)>Nileidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/platypeltoides.png"],
-			"title": "P. cuervoae",
-			"text": ""
+			"type": "entity",
+			"name": "P. cuervoae",
+			"entity": "lepidodendron:prehistoric_flora_platypeltoides",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_platypeltoides",

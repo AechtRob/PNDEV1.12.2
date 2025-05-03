@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Rhizostomatida"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/prothysanostoma.png"],
-			"title": "P. eleanorae",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "P. eleanorae",
+			"entity": "lepidodendron:prehistoric_flora_prothysanostoma",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_prothysanostoma",

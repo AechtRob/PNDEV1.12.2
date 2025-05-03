@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Trilobita$(br)>Ptychopariida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/phantaspis.png"],
-			"title": "P. auritus",
-			"text": ""
+			"type": "entity",
+			"name": "P. auritus",
+			"entity": "lepidodendron:prehistoric_flora_phantaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_phantaspis",

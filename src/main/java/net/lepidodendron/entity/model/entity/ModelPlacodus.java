@@ -272,10 +272,49 @@ public class ModelPlacodus extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5);
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -0.8F;
+        this.body.offsetX = 0.4F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(120);
+        this.body.rotateAngleX = (float)Math.toRadians(0);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 0.5F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.4F, 3.9F, -0.2F);
+        this.setRotateAngle(body1, 0.1F, -0.15F, 0.0F);
+        this.setRotateAngle(body2, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(neck, 0.2F, 0.3F, 0.0F);
+        this.setRotateAngle(head, 0.2F, 0.3F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(tail, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(legL, 1.1F, 0.3F, -0.5F);
+        this.setRotateAngle(legL2, 0.0F, 0.3F, 0.5F);
+        this.setRotateAngle(legL3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR, 0.9F, 0.3F, 0.5F);
+        this.setRotateAngle(legR2, 0.3F, 0.0F, 0.5F);
+        this.setRotateAngle(legR3, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(armL, -0.2F, 0.0F, -0.5F);
+        this.setRotateAngle(armL2, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(armL3, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(armR, 0.3F, 0.0F, 0.5F);
+        this.setRotateAngle(armR2, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(armR3, 0.3F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

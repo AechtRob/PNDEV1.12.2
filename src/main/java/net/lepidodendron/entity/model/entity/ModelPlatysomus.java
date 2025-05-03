@@ -130,10 +130,31 @@ public class ModelPlatysomus extends ModelBasePalaeopedia {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Body.render(f5 * 0.15F);
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Body.offsetY = 1.0F;
+        this.Body.offsetX = 0.1F;
+        this.Body.offsetZ = 2.0F;
+        this.Body.rotateAngleY = (float)Math.toRadians(120);
+        this.Body.rotateAngleX = (float)Math.toRadians(0);
+        this.Body.rotateAngleZ = (float)Math.toRadians(0);
+        this.Body.scaleChildren = true;
+        float scaler = 0.6F;
+        this.Body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Body, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Headbase, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, -0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.Body.render(f);
+        //Reset rotations, positions and sizing:
+        this.Body.setScale(1.0F, 1.0F, 1.0F);
+        this.Body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

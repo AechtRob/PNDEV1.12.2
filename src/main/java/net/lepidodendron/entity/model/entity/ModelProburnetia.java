@@ -396,10 +396,39 @@ public class ModelProburnetia extends ModelBasePalaeopedia {
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.proburnetia.offsetY = -0.6F;
+        this.proburnetia.offsetX = 0.6F;
+        this.proburnetia.offsetZ = 2.0F;
+        this.proburnetia.rotateAngleY = (float)Math.toRadians(120);
+        this.proburnetia.rotateAngleX = (float)Math.toRadians(0);
+        this.proburnetia.rotateAngleZ = (float)Math.toRadians(0);
+        this.proburnetia.scaleChildren = true;
+        float scaler = 1.0F;
+        this.proburnetia.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(proburnetia, 0.0F, 3.8F, -0.0F);
+        this.Neck2.rotateAngleX = (float) Math.toRadians(-7.5);
+        this.Neck2.rotateAngleY = (float) Math.toRadians(-27.5);
+        this.Tail.rotateAngleY = (float) Math.toRadians(14.63);
+        this.Tail2.rotateAngleY = (float) Math.toRadians(12.3);
+        this.Tail3.rotateAngleY = (float) Math.toRadians(14.7);
+        this.Tail4.rotateAngleY = (float) Math.toRadians(24);
+        this.Tail5.rotateAngleY = (float) Math.toRadians(22.3);
+        this.chest.rotateAngleY = (float) Math.toRadians(-10);
+        this.Head.rotateAngleX = (float) Math.toRadians(-11.25);
+        this.Head.rotateAngleY = (float) Math.toRadians(-27);
+        this.Jaw.rotateAngleX = (float) Math.toRadians(35);
+        //End of pose, now render the model:
+        this.proburnetia.render(f);
+        //Reset rotations, positions and sizing:
+        this.proburnetia.setScale(1.0F, 1.0F, 1.0F);
+        this.proburnetia.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

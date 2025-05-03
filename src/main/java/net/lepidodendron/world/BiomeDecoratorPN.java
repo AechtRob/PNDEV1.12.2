@@ -347,7 +347,8 @@ public class BiomeDecoratorPN extends BiomeDecorator {
             hillsBiome = ((BiomeSilurian)biomeIn).getBiomeType() == EnumBiomeTypeSilurian.BarrenLand;
         }
         if (biomeIn instanceof BiomeDevonian) {
-            hillsBiome = ((BiomeDevonian)biomeIn).getBiomeType() == EnumBiomeTypeDevonian.Mountains;
+            hillsBiome = ((BiomeDevonian)biomeIn).getBiomeType() == EnumBiomeTypeDevonian.Mountains
+                || ((BiomeDevonian)biomeIn).getBiomeType() == EnumBiomeTypeDevonian.MountainsEarly;
             if (hillsBiome) {
                 hillsBiomeSilkverfish = true;
             }

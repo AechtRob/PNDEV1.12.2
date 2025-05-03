@@ -8,15 +8,11 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
-import net.lepidodendron.entity.render.entity.RenderArcestes;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
-import net.lepidodendron.item.entities.ItemNautiloidEggsArcestes;
 import net.lepidodendron.item.entities.ItemNautiloidEggsGoniatites;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -140,6 +136,23 @@ public class EntityPrehistoricFloraAmmonite_Goniatites extends EntityPrehistoric
 				}
 			}
 
+			//random idle animations
+			if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+					&& (this.getAnimation() == NO_ANIMATION || this.getAnimation() == null ) && standCooldown == 0) {
+				//int next = rand.nextInt(10);
+				//if (next < 5) {
+				this.setAnimation(STAND_ANIMATION);
+				//} else {
+				//this.setAnimation(ATTACK_ANIMATION);
+				//}
+				this.standCooldown = 1500;
+			}
+
+			if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+				this.standCooldown = 1500;
+				this.setAnimation(NO_ANIMATION);
+			}
+
 			//System.err.println("IsSwimming: " + this.isReallySwimming() + " walkTick " + this.getWalkTick() + " swimTick " + this.getSwimTick());
 
 		}
@@ -151,23 +164,6 @@ public class EntityPrehistoricFloraAmmonite_Goniatites extends EntityPrehistoric
 		super.entityInit();
 		this.dataManager.register(SWIMMINGPN, false);
 		this.setScaleForAge(false);
-
-		//random idle animations
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
-				&& (this.getAnimation() == NO_ANIMATION || this.getAnimation() == null ) && standCooldown == 0) {
-			//int next = rand.nextInt(10);
-			//if (next < 5) {
-			this.setAnimation(STAND_ANIMATION);
-			//} else {
-			//this.setAnimation(ATTACK_ANIMATION);
-			//}
-			this.standCooldown = 1500;
-		}
-
-		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 1500;
-			this.setAnimation(NO_ANIMATION);
-		}
 	}
 
 	@Override

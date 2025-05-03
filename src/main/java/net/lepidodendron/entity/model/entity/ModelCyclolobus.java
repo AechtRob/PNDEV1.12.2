@@ -342,27 +342,29 @@ public class ModelCyclolobus extends ModelBasePalaeopedia {
         this.Root.offsetX = -0.02F;
         this.Root.render(0.01F);
         resetToDefaultPose();
-    }
 
+    }
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Root.offsetY = -1.2F;
-        this.Root.offsetX = 1.2F;
-        this.Root.rotateAngleY = (float)Math.toRadians(242);
-        this.Root.rotateAngleX = (float)Math.toRadians(-18);
-        this.Root.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Root.offsetY = -1.4F;
+        this.Root.offsetX = -0.2F;
+        this.Root.offsetZ = 2.0F;
+        this.Root.rotateAngleY = (float)Math.toRadians(120);
+        this.Root.rotateAngleX = (float)Math.toRadians(0);
+        this.Root.rotateAngleZ = (float)Math.toRadians(0);
         this.Root.scaleChildren = true;
-        float scaler = 1.23F;
+        float scaler = 2.0F;
         this.Root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Root, -0.2F, 0.8F, -0.2F);
         //End of pose, now render the model:
         this.Root.render(f);
         //Reset rotations, positions and sizing:
         this.Root.setScale(1.0F, 1.0F, 1.0F);
         this.Root.scaleChildren = false;
         resetToDefaultPose();
+
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedAdvancedModelRenderer, float x, float y, float z) {

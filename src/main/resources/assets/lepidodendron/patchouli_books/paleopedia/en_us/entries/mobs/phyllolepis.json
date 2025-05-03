@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Phyllolepididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/phyllolepis.png"],
-			"title": "P. concentrica",
-			"text": ""
+			"type": "entity",
+			"name": "P. concentrica",
+			"entity": "lepidodendron:prehistoric_flora_phyllolepis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_phyllolepis",
 			"type": "text",
-			"text": "Phyllolepis is a genus of flat placoderm from the late Devonian period. They were restricted to freshwater strata and possibly lived in rivers and streams. It had eyes though lacked a sclerotic ring, which suggests reduced or blind vision, instead hunting by using sensory organs on the surface grooves of their armor plates."
+			"text": "Phyllolepis is a genus of flat placoderm from the Upper Devonian period. They were restricted to freshwater strata and possibly lived in rivers and streams. It had eyes though lacked a sclerotic ring, which suggests reduced or blind vision, instead hunting by using sensory organs on the surface grooves of their armor plates."
 		},
 		{
 			"type": "lepidodendron:diet",

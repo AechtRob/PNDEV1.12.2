@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Nautiloidea$(br)>Discosorida$(br)>Phragmoceratidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/phragmoceras.png"],
-			"title": "P. broderipi",
-			"text": ""
+			"type": "entity",
+			"name": "P. broderipi",
+			"entity": "lepidodendron:prehistoric_flora_phragmoceras",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_phragmoceras",
 			"type": "text",
-			"text": "Phragmoceras is a genus of nautiloids from the Silurian period. It had a light bulb like shell that didnt look very circular but was also not straight. "
+			"text": "Phragmoceras is a genus of nautiloids from the Silurian period. It had a light bulb like shell that didn't look very circular but was also not straight. "
 		},
 		{
 			"type": "lepidodendron:diet",

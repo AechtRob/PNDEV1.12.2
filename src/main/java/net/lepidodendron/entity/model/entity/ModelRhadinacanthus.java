@@ -295,9 +295,38 @@ public class ModelRhadinacanthus extends ModelBasePalaeopedia {
         this.Rhadinacanthus.offsetY = -0.4F;
         this.Rhadinacanthus.render(0.01F);
         resetToDefaultPose();
+
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Rhadinacanthus.offsetY = -1.0F;
+        this.Rhadinacanthus.offsetX = 0.4F;
+        this.Rhadinacanthus.offsetZ = 2.0F;
+        this.Rhadinacanthus.rotateAngleY = (float)Math.toRadians(120);
+        this.Rhadinacanthus.rotateAngleX = (float)Math.toRadians(0);
+        this.Rhadinacanthus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Rhadinacanthus.scaleChildren = true;
+        float scaler = 3.0F;
+        this.Rhadinacanthus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Rhadinacanthus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Jaw, 0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(PectoralL, 0.0F, 0.0F, 0.4363F);
+        this.setRotateAngle(PectoralR, 0.0F, 0.0F, -0.4363F);
+        this.setRotateAngle(Body2, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(Anal2L, 0.0F, 0.0F, 0.7418F);
+        this.setRotateAngle(Anal2R, 0.0F, 0.0F, -0.7418F);
+        this.setRotateAngle(Body3, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.3054F, 0.0F);
+        //End of pose, now render the model:
+        this.Rhadinacanthus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Rhadinacanthus.setScale(1.0F, 1.0F, 1.0F);
+        this.Rhadinacanthus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

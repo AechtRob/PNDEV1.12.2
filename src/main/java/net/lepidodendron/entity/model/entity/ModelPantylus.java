@@ -264,7 +264,28 @@ public class ModelPantylus extends ModelBasePalaeopedia {
         //GlStateManager.popMatrix();
     }
     @Override
+
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Pantylus.offsetY = -0.2F;
+        this.Pantylus.offsetX = 0.0F;
+        this.Pantylus.offsetZ = 2.0F;
+        this.Pantylus.rotateAngleY = (float)Math.toRadians(120);
+        this.Pantylus.rotateAngleX = (float)Math.toRadians(0);
+        this.Pantylus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Pantylus.scaleChildren = true;
+        float scaler = 1.0F;
+        this.Pantylus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Pantylus, 0.2F, 3.8F, -0.0F);
+        this.setRotateAngle(Cephalon, -0.4F, 0.2F, 0.0F);
+        this.setRotateAngle(Jaw, 0.3F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Pantylus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Pantylus.setScale(1.0F, 1.0F, 1.0F);
+        this.Pantylus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

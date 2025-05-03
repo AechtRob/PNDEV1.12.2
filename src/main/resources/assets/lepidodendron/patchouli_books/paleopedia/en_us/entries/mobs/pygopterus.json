@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Permian - Triassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Palaeonisciformes$(br)>Pygopteridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pygopterus.png"],
-			"title": "P. humboldti",
-			"text": ""
+			"type": "entity",
+			"name": "P. humboldti",
+			"entity": "lepidodendron:prehistoric_flora_pygopterus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pygopterus",
 			"type": "text",
-			"text": "Pygopterus is a medium sized predatory fish from the Permian period that lived until the Early Triassic. It had eyes near the very front of its head and an arched back."
+			"text": "Pygopterus is a medium sized predatory fish from the Permian period that lived until the Lower Triassic. It had eyes near the very front of its head and an arched back."
 		},
 		{
 			"type": "lepidodendron:diet",

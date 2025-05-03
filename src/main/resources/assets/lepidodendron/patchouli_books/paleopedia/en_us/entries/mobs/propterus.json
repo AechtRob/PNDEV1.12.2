@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Macrosemiiformes$(br)>Macrosemiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/propterus.png"],
-			"title": "P. microstomus",
-			"text": ""
+			"type": "entity",
+			"name": "P. microstomus",
+			"entity": "lepidodendron:prehistoric_flora_propterus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_propterus",
 			"type": "text",
-			"text": "Propterus was a Late Jurassic fish that lived in the waters of the Solnhofen archipelago. It was described in 1834 by Louis Agassiz from the Altmühltal Formation of Germany, informally known as the Solnhofen Limestone. It was a macrosemiiform, one among several of that phenotypically diverse group found there. As such, it was a member of the clade Ginglymodi,"
+			"text": "Propterus was a Upper Jurassic fish that lived in the waters of the Solnhofen archipelago. It was described in 1834 by Louis Agassiz from the Altmühltal Formation of Germany, informally known as the Solnhofen Limestone. It was a macrosemiiform, one among several of that phenotypically diverse group found there. As such, it was a member of the clade Ginglymodi,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_propterus",

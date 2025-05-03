@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Piatnitzkysauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/piatnitzkysaurus.png"],
-			"title": "P. floresi",
-			"text": ""
+			"type": "entity",
+			"name": "P. floresi",
+			"entity": "lepidodendron:prehistoric_flora_piatnitzkysaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_piatnitzkysaurus",
 			"type": "text",
-			"text": "Piatnitzkysaurus is a medium sized theropod that lived during the lower part of the jurassic period of what is now Argentina. It was first collected in 1977 from the Canadon Asfalto Formation. The braincase Piatnitzkysaurus is one of the few detailed accounts of braincase morphology in basal theropods. Piatnitzkysaurus estimates for adults are around 4.3 meters long and around 450 kilograms."
+			"text": "Piatnitzkysaurus is a medium sized theropod that lived during the lower part of the jurassic period of what is now Argentina. It was first collected in 1977 from the Canadon Asfalto Formation. The braincase of Piatnitzkysaurus is one of the few detailed accounts of braincase morphology in basal theropods. The estimated length and weight for adult Piatnitzkysaurus are around 4.3 meters long and around 450 kilograms."
 		},
 		{
 			"type": "lepidodendron:diet",

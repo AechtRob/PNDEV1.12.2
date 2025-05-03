@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Insecta$(br)>Orthoptera$(br)>Hagloidea$(br)>Prophalangopsidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pycnophlebia.png"],
-			"title": "P. deichmuelleri",
-			"text": ""
+			"type": "entity",
+			"name": "P. deichmuelleri",
+			"entity": "lepidodendron:prehistoric_flora_pycnophlebia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pycnophlebia",

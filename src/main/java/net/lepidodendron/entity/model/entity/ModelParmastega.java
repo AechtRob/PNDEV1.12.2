@@ -317,9 +317,56 @@ public class ModelParmastega extends ModelBasePalaeopedia {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Parmastega.offsetY = -0.8F;
+        this.Parmastega.offsetX = 0.6F;
+        this.Parmastega.offsetZ = 2.0F;
+        this.Parmastega.rotateAngleY = (float)Math.toRadians(120);
+        this.Parmastega.rotateAngleX = (float)Math.toRadians(0);
+        this.Parmastega.rotateAngleZ = (float)Math.toRadians(0);
+        this.Parmastega.scaleChildren = true;
+        float scaler = 1.0F;
+        this.Parmastega.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Parmastega, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(cube_r1, -0.1396F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck, -0.0888F, 0.2615F, -0.0117F);
+        this.setRotateAngle(cube_r2, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.2356F, 0.0F, 0.0F);
+        this.setRotateAngle(Snout, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, -0.2967F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, 0.2967F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0F, -0.2967F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.0F, 0.2967F, 0.0F);
+        this.setRotateAngle(Jaw, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0F, -0.2967F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.0F, 0.2967F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.0611F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.0611F, -0.2967F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.0611F, 0.2967F, 0.0F);
+        this.setRotateAngle(LArm, 0.3054F, -0.8727F, 0.7854F);
+        this.setRotateAngle(LArm2, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(RArm, 0.3054F, 0.8727F, -0.7854F);
+        this.setRotateAngle(RArm2, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(Body, -0.0438F, -0.0872F, 0.0038F);
+        this.setRotateAngle(Body2, -0.0464F, -0.3487F, 0.0159F);
+        this.setRotateAngle(cube_r13, 0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(LLeg, 0.1844F, -0.9715F, 0.9993F);
+        this.setRotateAngle(LLeg2, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(RLeg, 0.1844F, 0.9715F, -0.9993F);
+        this.setRotateAngle(RLeg2, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(Tail, 0.0457F, 0.3051F, 0.0138F);
+        this.setRotateAngle(Tail2, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.4363F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, 0.2182F, 0.0F);
+        //End of pose, now render the model:
+        this.Parmastega.render(f);
+        //Reset rotations, positions and sizing:
+        this.Parmastega.setScale(1.0F, 1.0F, 1.0F);
+        this.Parmastega.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

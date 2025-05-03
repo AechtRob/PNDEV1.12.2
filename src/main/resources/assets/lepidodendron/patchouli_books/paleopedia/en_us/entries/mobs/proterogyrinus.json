@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetropodomorpha$(br)>Embolomeri$(br)>Proterogyrinidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/proterogyrinus.png"],
-			"title": "P. scheelei",
-			"text": ""
+			"type": "entity",
+			"name": "P. scheelei",
+			"entity": "lepidodendron:prehistoric_flora_proterogyrinus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_proterogyrinus",
 			"type": "text",
-			"text": "Proterogyrinus is an embolomere amphibian from the middle Carboniferous period. It was capable of coming onto land and hunt, however it was more adapted for the water and would have spent more time in water than out."
+			"text": "Proterogyrinus is an embolomere amphibian from the Middle Carboniferous period. It was capable of coming onto land and hunt, however it was more adapted for the water and would have spent more time in water than out."
 		},
 		{
 			"type": "lepidodendron:diet",

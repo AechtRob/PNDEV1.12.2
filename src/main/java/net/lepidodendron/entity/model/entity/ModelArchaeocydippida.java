@@ -463,7 +463,7 @@ public class ModelArchaeocydippida extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = 0.5F;
+        this.main.offsetY = 0.6F;
         this.main.offsetX = 0.0F;
         this.main.rotateAngleY = (float)Math.toRadians(120);
         this.main.rotateAngleX = (float)Math.toRadians(1);
@@ -472,8 +472,7 @@ public class ModelArchaeocydippida extends ModelBasePalaeopedia {
         float scaler = 4.5F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(main, 0.2F, 3.5F, 0.0F);
-        this.setRotateAngle(cube_r1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(main, -0.05F, 3.8F, -0.05F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

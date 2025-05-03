@@ -234,7 +234,7 @@ public class ModelPseudodiscophyllum extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Body.offsetY = -0.8F;
+        this.Body.offsetY = -2.6F;
         this.Body.offsetX = 0.0F;
         this.Body.offsetZ = 2.0F;
         this.Body.rotateAngleY = (float)Math.toRadians(120);

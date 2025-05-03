@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Stegocephalia"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/parmastega.png"],
-			"title": "P. aelidae",
-			"text": ""
+			"type": "entity",
+			"name": "P. aelidae",
+			"entity": "lepidodendron:prehistoric_flora_parmastega",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_parmastega",

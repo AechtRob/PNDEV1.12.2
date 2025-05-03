@@ -5,10 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockCalamitesRhizome;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -254,9 +251,9 @@ public class ProcedureCalamitesRhizomeUpdateTick extends ElementsLepidodendronMo
 					$_dependencies.put("parentz", zz);
 					$_dependencies.put("SaplingSpawn", true);
 					ProcedureWorldGenCalamites.executeProcedure($_dependencies);
-					world.playSound((EntityPlayer) null, x, y, z,
-						(net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation("")), SoundCategory.NEUTRAL,
-						(float) spreadLimit, (float) 1);
+//					world.playSound((EntityPlayer) null, x, y, z,
+//						(net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation("")), SoundCategory.NEUTRAL,
+//						(float) spreadLimit, (float) 1);
 					//System.err.println("Tree generated! " + x + " " + y + " " + z);
 
 				}

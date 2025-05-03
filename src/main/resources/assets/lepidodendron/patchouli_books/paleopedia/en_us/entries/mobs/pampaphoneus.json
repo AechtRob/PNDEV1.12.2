@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pampaphoneus",
 			"title": "Pampaphoneus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Dinocephalia$(br)>Anteosauridae$(br)>Syodontinae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Dinocephalia$(br)>Anteosauridae$(br)>Syodontinae"
 		},
         	{
             "type": "entity",

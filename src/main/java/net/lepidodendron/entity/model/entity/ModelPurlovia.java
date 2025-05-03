@@ -228,9 +228,48 @@ public class ModelPurlovia extends ModelBasePalaeopedia {
         this.PurloviaBase.offsetZ = -0.1F;
         this.PurloviaBase.render(0.01F);
         resetToDefaultPose();
+
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.PurloviaBase.offsetY = -0.6F;
+        this.PurloviaBase.offsetX = -0.3F;
+        this.PurloviaBase.offsetZ = 2.0F;
+        this.PurloviaBase.rotateAngleY = (float)Math.toRadians(120);
+        this.PurloviaBase.rotateAngleX = (float)Math.toRadians(0);
+        this.PurloviaBase.rotateAngleZ = (float)Math.toRadians(0);
+        this.PurloviaBase.scaleChildren = true;
+        float scaler = 1.0F;
+        this.PurloviaBase.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(PurloviaBase, 0.0F, 3.8F, -0.2F);
+        this.setRotateAngle(Body, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0F, 0.0F, 0.1309F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.0F, -0.1309F);
+        this.setRotateAngle(cube_r3, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.4747F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(LeftForelimb, 1.0472F, 0.0F, 0.0F);
+        this.setRotateAngle(LeftForelimb2, -1.2217F, 0.0F, 0.0F);
+        this.setRotateAngle(LeftLeg, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(LeftLeg2, 0.4014F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(RightForelimb, 1.0472F, 0.0F, 0.0F);
+        this.setRotateAngle(RightForelimb2, -1.2217F, 0.0F, 0.0F);
+        this.setRotateAngle(RightLeg, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(RightLeg2, 0.4014F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.2182F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.PurloviaBase.render(f);
+        //Reset rotations, positions and sizing:
+        this.PurloviaBase.setScale(1.0F, 1.0F, 1.0F);
+        this.PurloviaBase.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

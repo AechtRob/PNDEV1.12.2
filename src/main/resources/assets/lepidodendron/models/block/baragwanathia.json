@@ -1,45 +1,71 @@
 {
-    "ambientocclusion": false,
-    "textures": {
-        "particle": "lepidodendron:blocks/baragwanathia_b",
-        "top": "lepidodendron:blocks/baragwanathia_t",
-        "bottom": "lepidodendron:blocks/baragwanathia_b"
-    },
-    "elements": [
-        {   "from": [ 0.8, 0, 8 ],
-            "to": [ 15.2, 16, 8 ],
-            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
-            "shade": false,
-            "faces": {
-                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#top" },
-                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#top" }
-            }
-        },
-        {   "from": [ 8, 0, 0.8 ],
-            "to": [ 8, 16, 15.2 ],
-            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
-            "shade": false,
-            "faces": {
-                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#top" },
-                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#top" }
-            }
-        },        {   "from": [ 0.8, -16, 8 ],
-            "to": [ 15.2, 0, 8 ],
-            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
-            "shade": false,
-            "faces": {
-                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom" },
-                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom" }
-            }
-        },
-        {   "from": [ 8, -16, 0.8 ],
-            "to": [ 8, 0, 15.2 ],
-            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
-            "shade": false,
-            "faces": {
-                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom" },
-                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom" }
-            }
-        }
-    ]
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "lepidodendron:blocks/baragwanathia",
+		"stem": "lepidodendron:blocks/baragwanathia"
+	},
+	"elements": [
+		{
+			"from": [-0.2, -16, 8],
+			"to": [14.2, -3, 8],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [7, -8, 8], "rescale": true},
+			"faces": {
+				"north": {"uv": [16, 3, 0, 16], "texture": "#stem"},
+				"south": {"uv": [0, 3, 16, 16], "texture": "#stem"}
+			}
+		},
+		{
+			"from": [-0.2, -3, 8],
+			"to": [14.2, 4, 8],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [7, 5, 8], "rescale": true},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 7], "texture": "#stem"},
+				"south": {"uv": [0, 0, 16, 7], "texture": "#stem"}
+			}
+		},
+		{
+			"from": [8.2, -16, 2],
+			"to": [8.2, -3, 16.4],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, -8, 9], "rescale": true},
+			"faces": {
+				"east": {"uv": [0, 3, 16, 16], "texture": "#stem"},
+				"west": {"uv": [16, 3, 0, 16], "texture": "#stem"}
+			}
+		},
+		{
+			"from": [8.2, -3, 2],
+			"to": [8.2, 4, 16.4],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 5, 9], "rescale": true},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 7], "texture": "#stem"},
+				"west": {"uv": [16, 0, 0, 7], "texture": "#stem"}
+			}
+		},
+		{
+			"name": "mid",
+			"from": [7.2, -16, 7],
+			"to": [9.2, -11, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-0.5, -16, 0]},
+			"faces": {
+				"north": {"uv": [8, 11, 10, 16], "texture": "#stem"},
+				"east": {"uv": [8, 11, 10, 16], "texture": "#stem"},
+				"south": {"uv": [8, 11, 10, 16], "texture": "#stem"},
+				"west": {"uv": [8, 11, 10, 16], "texture": "#stem"},
+				"up": {"uv": [8, 11, 10, 13], "texture": "#stem"},
+				"down": {"uv": [8, 14, 10, 16], "texture": "#stem", "cullface": "down"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "group",
+			"origin": [4, 0, 3],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4]
+		}
+	]
 }

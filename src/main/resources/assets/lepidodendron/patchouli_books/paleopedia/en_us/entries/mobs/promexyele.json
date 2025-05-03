@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Iniopterygia$(br)>Iniopterygidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/promexyele.png"],
-			"title": "P. peyeri",
-			"text": ""
+			"type": "entity",
+			"name": "P. peyeri",
+			"entity": "lepidodendron:prehistoric_flora_promexyele",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_promexyele",
 			"type": "text",
-			"text": "Promexyele is an Iniopterygid fish from the Carboniferous. This bizarre looking fish is easily recognized by the hard, spike covered front section of its dorsally placed pectoral fins and the rows of diagonal inward facing teeth in its mouth."
+			"text": "Promexyele is an iniopterygid fish from the Carboniferous. This bizarre looking fish is easily recognized by the hard, spike covered front section of its dorsally placed pectoral fins and the rows of diagonal inward facing teeth in its mouth."
 		},
 		{
 			"type": "lepidodendron:diet",

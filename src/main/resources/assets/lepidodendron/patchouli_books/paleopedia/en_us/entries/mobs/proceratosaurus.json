@@ -21,27 +21,27 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_proceratosaurus",
 			"type": "text",
-			"text": "Proceratosaurus bradleyi is a species of Proceratosaurid Tyrannosauroid from the Middle Jurassic of England. This small predator, estimated to grow up to 3 m long, is known from a single almost complete skull. Despite its name, this animal is not related to Ceratosaurus in any way but rather it was one of the earliest members of the Tyrannosauroidea;"
+			"text": "Proceratosaurus bradleyi is a species of proceratosaurid tyrannosauroid from the Middle Jurassic of England. This small predator, estimated to grow up to 3 m long, is known from a single almost complete skull. Despite its name, this animal is not related to Ceratosaurus in any way but rather it was one of the earliest members of the Tyrannosauroidea; in fact, the classification of this animal saw quite a bit of history. Discovered in 1910 by F. Lewis Bradley and"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_proceratosaurus",
 			"type": "text",
-			"text": " in fact, the classification of this animal saw quite a bit of history. Discovered in 1910 by F. Lewis Bradley and described by British paleontologist Arthur Smith Woodward, the animal was at first assigned to the genus Megalosaurus based on the number of premaxillary teeth;"
+			"text": "described by British paleontologist Arthur Smith Woodward, the animal was at first assigned to the genus Megalosaurus based on the number of premaxillary teeth; this assignment would change more than two decades later when Friedrich von Huene postulated a close relationship of the remains to Ceratosaurus and placed both animals inside of Coelurosauria. It wasn't until the 1980s that the moving of Ceratosaurus out of Coelurosauria prompted people into re-examining"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_proceratosaurus",
 			"type": "text",
-			"text": "this assignment would change more than two decades later when Friedrich von Huene postulated a close relationship of the remains to Ceratosaurus and placed both animals inside of Coelurosauria. It wasn't until the 1980s that the moving of Ceratosaurus out of Coelurosauria prompted people into re-examining the remains of Proceratosaurus; at this point in time the animal had been reassigned as a relative of Ornitholestes by Gregory S. Paul,"
+			"text": "the remains of Proceratosaurus; at this point in time the animal had been reassigned as a relative of Ornitholestes by Gregory S. Paul, on the basis that both these animals possessed a nasal crest, claim that resulted untrue in Ornitholestes' case years later by Gregory S. Paul's own admission. And so Ornitholestes and Proceratosaurus were placed inside Allosauroidea in the 80s and there they remained until the early 2000s, when more research on these animals"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_proceratosaurus",
 			"type": "text",
-			"text": " on the basis that both these animals possessed a nasal crest, claim that resulted untrue in Ornitholestes' case years later by Gregory S. Paul's own admission. And so Ornitholestes and Proceratosaurus were placed inside Allosauroidea in the 80s and there they remained until the early 2000s, when more research on these animals finally placed them inside Coelurosauria where they rest today."
+			"text": "finally placed them inside Coelurosauria where they rest today. Proceratosaurus would need to wait until 2010 to be finally assigned to Tyrannosauroidea by Oliver Rauhut, who conducted a thorough analysis of the remains to find this animal's current placement in the Coelurosaur tree. Proceratosaurus lived in coastal environments and probably hunted small animals like morganucodonts, docodonts and small reptiles; the nasal crest,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_proceratosaurus",
 			"type": "text",
-			"text": "Proceratosaurus would need to wait until 2010 to be finally assigned to Tyrannosauroidea by Oliver Rauhut, who conducted a thorough analysis of the remains to find this animal's current placement in the Coelurosaur tree. Proceratosaurus lived in coastal environments and probably hunted small animals like morganucodonts, docodonts and small reptiles; the nasal crest, similar to some other proceratosaurs may have worked both as display but also as an organ to relieve the skull from stresses while biting"
+			"text": "similar to some other proceratosaurs may have worked both as display but also as an organ to relieve the skull from stresses while biting"
 		},
 		{
 			"type": "lepidodendron:diet",

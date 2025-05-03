@@ -1,9 +1,14 @@
 {
   "variants": {
     "normal": [
-      {"model": "lepidodendron:baragwanathia_1"},
-      {"model": "lepidodendron:baragwanathia_2"},
-      {"model": "lepidodendron:baragwanathia_3"}
+      {"model": "lepidodendron:baragwanathia"},
+      {"model": "lepidodendron:baragwanathia_var"},
+      {"model": "lepidodendron:baragwanathia", "y": 90},
+      {"model": "lepidodendron:baragwanathia_var", "y": 90},
+      {"model": "lepidodendron:baragwanathia", "y": 180},
+      {"model": "lepidodendron:baragwanathia_var", "y": 180},
+      {"model": "lepidodendron:baragwanathia", "y": 270},
+      {"model": "lepidodendron:baragwanathia_var", "y": 270}
     ]
   }
 }

@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Cnidaria$(br)>Scyphozoa"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/rhizostomites.png"],
-			"title": "R. admirandus",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "R. admirandus",
+			"entity": "lepidodendron:prehistoric_flora_rhizostomites",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_rhizostomites",
