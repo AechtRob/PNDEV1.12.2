@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:paleoenkianthus"}
+    ],
+    "flowers=false": [
+      {"model": "lepidodendron:paleoenkianthus"},
+      {"model": "lepidodendron:paleoenkianthus_var"}
+    ],
+    "flowers=true": [
+      {"model": "lepidodendron:paleoenkianthus_flower"},
+      {"model": "lepidodendron:paleoenkianthus_var_flower"}
+    ]
+  }
+}

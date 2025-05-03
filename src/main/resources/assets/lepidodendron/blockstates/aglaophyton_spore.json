@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:aglaophyton_1_spore"},
+      {"model": "lepidodendron:aglaophyton_2_spore"},
+      {"model": "lepidodendron:aglaophyton_3_spore"},
+      {"model": "lepidodendron:aglaophyton_1_var_spore"},
+      {"model": "lepidodendron:aglaophyton_2_var_spore"},
+      {"model": "lepidodendron:aglaophyton_3_var_spore"}
+    ]
+  }
+}

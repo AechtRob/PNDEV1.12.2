@@ -279,7 +279,11 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockXinhangia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCosmosperma.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemDrepanophycusItem.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockColpodexylon.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockColpodexylon.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAglaophyton.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockHorneophyton.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockRenalia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockSawdonia.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsDevonian);
         return resLoc;
@@ -362,6 +366,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockGreenStemmedAlgae.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockLiverwort.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockColpodexylon.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockSawdonia.block).toString(),
                 "minecraft:small_fern",
                 "minecraft:large_fern"
         };
@@ -1109,6 +1114,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockBrownAscendingAlgae.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemCorallineAlgaeItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSeaweed.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockPaleoenkianthus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockTylerianthus.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:dark_oak_sapling",
                 "minecraft:spruce_sapling",

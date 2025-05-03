@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:horneophyton_1"},
+      {"model": "lepidodendron:horneophyton_2"},
+      {"model": "lepidodendron:horneophyton_3"},
+      {"model": "lepidodendron:horneophyton_1_var"},
+      {"model": "lepidodendron:horneophyton_2_var"},
+      {"model": "lepidodendron:horneophyton_3_var"}
+    ]
+  }
+}

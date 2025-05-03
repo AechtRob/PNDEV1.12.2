@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/sawdonia",
+    "particle": "lepidodendron:blocks/sawdonia"
+  }
+}

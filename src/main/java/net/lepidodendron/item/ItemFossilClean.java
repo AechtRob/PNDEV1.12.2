@@ -1080,6 +1080,8 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_coniopteris_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_conomedusites_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cooksonia_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_horneophyton_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_aglaophyton_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_piterophyton_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_tichavekia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cooperoceras_clean", "inventory"),
@@ -2031,6 +2033,10 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_xinhangia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cosmosperma_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_colpodexylon_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_renalia_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_paleoenkianthus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_tylerianthus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_sawdonia_clean", "inventory"),
 
 				new ModelResourceLocation("lepidodendron:fossil_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossil_clean_missing_texture", "inventory")

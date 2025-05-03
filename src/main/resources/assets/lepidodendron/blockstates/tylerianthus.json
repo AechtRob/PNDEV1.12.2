@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:tylerianthus"}
+    ],
+    "flowers=false": [
+      {"model": "lepidodendron:tylerianthus"},
+      {"model": "lepidodendron:tylerianthus_var"},
+      {"model": "lepidodendron:tylerianthus_small"}
+    ],
+    "flowers=true": [
+      {"model": "lepidodendron:tylerianthus_flower"},
+      {"model": "lepidodendron:tylerianthus_var_flower"},
+      {"model": "lepidodendron:tylerianthus_small_flower"}
+    ]
+  }
+}
