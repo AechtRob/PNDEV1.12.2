@@ -7563,6 +7563,12 @@ public class RenderHandler {
                 return new RenderMei(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSantanmantis.class, new IRenderFactory<EntityPrehistoricFloraSantanmantis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSantanmantis> createRenderFor(RenderManager manager) {
+                return new RenderSantanmantis(manager);
+            }
+        });
         
 
 
