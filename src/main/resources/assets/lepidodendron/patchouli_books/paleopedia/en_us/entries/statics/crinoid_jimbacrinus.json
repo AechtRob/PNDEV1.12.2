@@ -12,10 +12,21 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Ampelocrinida$(br)>Calceolispongiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Jimbacrinus.png"],
-			"title": "Jimbacrinus bostocki",
-			"text": ""
+			"type": "multiblock",
+			"name": "J. bostocki",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_jimbacrinus[topshoot=true]",
+					"1": "lepidodendron:crinoid_jimbacrinus[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_jimbacrinus",

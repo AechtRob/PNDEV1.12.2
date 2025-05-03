@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_tauraspis",
 			"title": "Tauraspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Osteostraci$(br)>Benneviaspidida$(br)>Boreaspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Cephalaspidomorphi$(br)>Osteostraci$(br)>Benneviaspidida$(br)>Boreaspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/tauraspis.png"],
-			"title": "T. rara",
-			"text": ""
+			"type": "entity",
+			"name": "T. rara",
+			"entity": "lepidodendron:prehistoric_flora_tauraspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tauraspis",
 			"type": "text",
-			"text": "Tauraspis was a genus of osteostracan jawless fish that lived during the Early Devonian. The name \"Tauraspis\" means \"bull shield\", in reference to the strange, superficially horn-like bony protrusions on the front of its face. Its remains have been found in Severnaya Zemlya, Russia, and were first described in 1995. It seemingly lived in shallow waters."
+			"text": "Tauraspis was a genus of osteostracan jawless fish that lived during the Lower Devonian. The name \"Tauraspis\" means \"bull shield\", in reference to the strange, superficially horn-like bony protrusions on the front of its face. Its remains have been found in Severnaya Zemlya, Russia, and were first described in 1995. It seemingly lived in shallow waters."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Actinopterygii$(br)>Palaeonisciformes$(br)>Varialepididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/varialepis.png"],
-			"title": "V. orientalis",
-			"text": ""
+			"type": "entity",
+			"name": "V. orientalis",
+			"entity": "lepidodendron:prehistoric_flora_varialepis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_varialepis",

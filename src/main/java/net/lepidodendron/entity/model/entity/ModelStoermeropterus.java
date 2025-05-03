@@ -277,16 +277,17 @@ public class ModelStoermeropterus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.carapace.offsetY = -0.4F;
-        this.carapace.offsetX = 1.0F;
+        this.carapace.offsetY = -1.8F;
+        this.carapace.offsetX = 0.8F;
+        this.carapace.offsetZ = 2.0F;
         this.carapace.rotateAngleY = (float)Math.toRadians(200);
         this.carapace.rotateAngleX = (float)Math.toRadians(8);
         this.carapace.rotateAngleZ = (float)Math.toRadians(-8);
         this.carapace.scaleChildren = true;
-        float scaler = 3.5F;
+        float scaler = 3.0F;
         this.carapace.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(carapace, 0.2F, 3.5F, 0.0F);
+        this.setRotateAngle(carapace, 0.6F, 3.8F, -0.2F);
         this.setRotateAngle(segment, -0.1F, 0.2F, 0.05F);
         this.setRotateAngle(segment2, -0.1F, 0.2F, 0.05F);
         this.setRotateAngle(segment3, 0.1F, 0.2F, 0.05F);

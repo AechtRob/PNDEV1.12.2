@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Actinopterygii$(br)>Palaeonisciformes"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/urosthenes.png"],
-			"title": "U. latus",
-			"text": ""
+			"type": "entity",
+			"name": "U. latus",
+			"entity": "lepidodendron:prehistoric_flora_urosthenes",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_urosthenes",
 			"type": "text",
-			"text": "Urosthenes latus is the second species under the genus to be described. Different from its cousin, Urosthenes had a short and round body with large and veil-like fins almost symmetrical in shape. The ventral fins were moved close to the face and also were quite large compared to the body, similarly to the Dorsal and Anal fins. Contrary to most other archaic Actinopterygians, Urosthenes had very thin scales."
+			"text": "Urosthenes latus is the second species under the genus to be described. Different from its cousin, Urosthenes had a short and round body with large and veil-like fins almost symmetrical in shape. The ventral fins were moved close to the face and also were quite large compared to the body, similarly to the Dorsal and Anal fins. Contrary to most other archaic actinopterygians, Urosthenes had very thin scales."
 		},
 		{
 			"type": "lepidodendron:diet",

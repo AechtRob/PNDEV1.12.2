@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_scleromochlus",
 			"title": "Scleromochlus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Archosauriformes$(br)>Ornithodira$(br)>Pterosauromorpha"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Archosauriformes$(br)>Ornithodira$(br)>Pterosauromorpha$(br)>Scleromochlidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/scleromochlus.png"],
-			"title": "S. taylori",
-			"text": ""
+			"type": "entity",
+			"name": "S. taylori",
+			"entity": "lepidodendron:prehistoric_flora_scleromochlus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_scleromochlus",
 			"type": "text",
-			"text": "Scleromochlus is a lizard like archosauriform from the Late Triassic that would have been able to hop around. It had long hind legs suggesting that it may have been capable of four legged and 2 legged locomotion. Scleromochlus is also debated on its role in pterosaur evolution."
+			"text": "Scleromochlus is a lizard like archosauriform from the Upper Triassic that would have been able to hop around. It had long hind legs suggesting that it may have been capable of four legged and 2 legged locomotion. Scleromochlus is also debated on its role in pterosaur evolution."
 		},
 		{
 			"type": "lepidodendron:diet",

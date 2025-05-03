@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Porifera$(br)>Hexactinellida$(br)>Lyssakida$(br)>Titusvilliidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/titusvillia.png"],
-			"title": "T. drakei",
-			"text": ""
+			"type": "multiblock",
+			"name": "T. drakei",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:titusvillia",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_titusvillia",

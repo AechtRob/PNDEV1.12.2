@@ -356,8 +356,8 @@ public class ModelWaptia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -2.0F;
-        this.base.offsetX = -0.9F;
+        this.base.offsetY = -1.4F;
+        this.base.offsetX = 0.6F;
         this.base.rotateAngleY = (float)Math.toRadians(200);
         this.base.rotateAngleX = (float)Math.toRadians(8);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
@@ -365,7 +365,7 @@ public class ModelWaptia extends ModelBasePalaeopedia {
         float scaler = 4.5F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(base, -0.2F, 2.0F, 0.1F);
+        this.setRotateAngle(base, 0.6F, 3.8F, -0.2F);
         this.setRotateAngle(body1, 0.05F, 0.0F, 0.0F);
         this.setRotateAngle(body2, 0.05F, 0.1F, 0.0F);
         this.setRotateAngle(body3, 0.1F, 0.1F, 0.0F);

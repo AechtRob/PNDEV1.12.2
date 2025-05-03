@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_lepidocystis",
 			"title": "Lepidocystis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian-Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Eocrinoidea$(br)>Imbricata"
+			"text": "$(l)Temporal Range:$() Cambrian - Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Eocrinoidea$(br)>Imbricata"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Lepidocystis.png"],
-			"title": "Lepidocystis sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "Lepidocystis sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:lepidocystis",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lepidocystis",

@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_shankouclava",
 			"title": "Shankouclava",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Tunicata"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Chordata$(br)>Tunicata"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/shankouclava.png"],
-			"title": "S. anningense",
-			"text": ""
+			"type": "multiblock",
+			"name": "S. anningense",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:shankouclava",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_shankouclava",

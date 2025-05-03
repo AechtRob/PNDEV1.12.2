@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauria"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/scutosaurus.png"],
-			"title": "S. karpinskii",
-			"text": ""
+			"type": "entity",
+			"name": "S. karpinskii",
+			"entity": "lepidodendron:prehistoric_flora_scutosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_scutosaurus",
 			"type": "text",
-			"text": "Scutosaurus is a large pareiasaur from the Permian period. It had a tank like build with hardened scutes along its back and head and they had powerful muscles, especially around the neck. Its head was covered in ridges and scutes and also had horns that protected its face. Scutosaurus was an herbivore and they would have been preyed upon by large gorgonopsids like Inostrancevia."
+			"text": "Scutosaurus is a large pareiasaur from the Upper Permian Malokinelskaya Formation of Russia. It had a tank like build with hardened scutes along its back and head and they had powerful muscles, especially around the neck. Its head was covered in ridges and scutes and also had horns that protected its face. Scutosaurus was an herbivore and they would have been preyed upon by large gorgonopsids like Inostrancevia."
 		},
 		{
 			"type": "lepidodendron:diet",

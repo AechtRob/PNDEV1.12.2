@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_cystoid_echinosphaerites",
 			"title": "Echinosphaerites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Rhombifera"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Echinodermata$(br)>Crinozoa$(br)>Rhombifera"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Echinosphaerites.png"],
-			"title": "E. aurantium",
-			"text": ""
+			"type": "multiblock",
+			"name": "E. aurantium.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:cystoid_echinosphaerites",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cystoid_echinosphaerites",

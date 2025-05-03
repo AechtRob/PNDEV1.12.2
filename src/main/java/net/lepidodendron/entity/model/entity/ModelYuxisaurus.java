@@ -716,9 +716,42 @@ public class ModelYuxisaurus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = 0.0F;
+        this.root.offsetX = 0.2F;
+        this.root.offsetZ = 2.0F;
+        this.root.rotateAngleY = (float)Math.toRadians(120);
+        this.root.rotateAngleX = (float)Math.toRadians(0);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
+        this.root.scaleChildren = true;
+        float scaler = 0.6F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(root, 0.4F, 3.8F, -0.2F);
+        this.setRotateAngle(hips, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm, 1.05F, 0.15F, -0.1F);
+        this.setRotateAngle(leftArm2, -1.75F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm3, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg, -0.4F, 0.15F, 0.1F);
+        this.setRotateAngle(rightLeg2, 1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg3, -1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg4, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, -0.05F, 0.1F, 0.05F);
+        this.setRotateAngle(tail3, -0.05F, 0.1F, 0.07F);
+        this.setRotateAngle(tail4, -0.05F, 0.1F, 0.09F);
+        this.setRotateAngle(tail5, -0.05F, 0.1F, 0.12F);
+        this.setRotateAngle(head, 0.3F, -0.3F, 0.0F);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

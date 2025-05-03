@@ -268,9 +268,30 @@ public class ModelTiarajudens extends ModelBasePalaeopedia {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hips.offsetY = -0.4F;
+        this.Hips.offsetX = -0.4F;
+        this.Hips.offsetZ = 2.0F;
+        this.Hips.rotateAngleY = (float)Math.toRadians(120);
+        this.Hips.rotateAngleX = (float)Math.toRadians(0);
+        this.Hips.rotateAngleZ = (float)Math.toRadians(0);
+        this.Hips.scaleChildren = true;
+        float scaler = 1.0F;
+        this.Hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Hips, 0.1F, 4.3F, -0.2F);
+        this.Lowerjaw1.rotateAngleX = (float) Math.toRadians(40);
+        this.Head.rotateAngleY = (float) Math.toRadians(-17);
+        this.Neck.rotateAngleY = (float) Math.toRadians(-24.8);
+        this.Neck.rotateAngleX = (float) Math.toRadians(-14.4);
+        //End of pose, now render the model:
+        this.Hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hips.setScale(1.0F, 1.0F, 1.0F);
+        this.Hips.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

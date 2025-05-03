@@ -367,6 +367,7 @@ public class ModelAcanthostomatops extends ModelBasePalaeopedia {
         float scaler = 2F;
         this.bone.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(bone, 0.2F, 3.8F, -0.1F);
         this.setRotateAngle(body2, 0.0F, 0.1309F, 0.0F);
         this.setRotateAngle(cube_r1, 0.0F, 0.5672F, 0.0F);
         this.setRotateAngle(cube_r10, 0.0436F, 0.0F, -0.0436F);

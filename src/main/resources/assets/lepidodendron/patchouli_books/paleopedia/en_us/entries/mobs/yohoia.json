@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Megacheira$(br)>Yohoiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/yohoia.png"],
-			"title": "Y. tenuis",
-			"text": ""
+			"type": "entity",
+			"name": "Y. tenuis",
+			"entity": "lepidodendron:prehistoric_flora_yohoia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_yohoia",
 			"type": "text",
-			"text": "Yohoia is a tiny megacheiran from the middle Cambrian period which is characterized by a segmented body with frontal grasping appendages and many rows of legs on its body. It was suggested to be a mainly benthic feeder."
+			"text": "Yohoia is a tiny, 2.3 cm long megacheiran from the Middle Cambrian Burgess Shale of Canada and Marjum Formation of Utah (USA), which is characterized by a segmented body with frontal grasping appendages and many rows of legs along the length of its body. It was suggested to be a mainly benthic feeder, swimming just above the seafloor and using its large appendages to grasp at prey items or to scavenge."
 		},
 		{
 			"type": "lepidodendron:diet",

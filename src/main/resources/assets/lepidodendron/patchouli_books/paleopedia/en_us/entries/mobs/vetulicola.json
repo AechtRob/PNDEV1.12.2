@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Vetulicolia$(br)>Vetulicolida$(br)>Vetulicolata$(br)>Vetulicolidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/vetulicola.png"],
-			"title": "V. cuneata",
-			"text": ""
+			"type": "entity",
+			"name": "V. cuneata",
+			"entity": "lepidodendron:prehistoric_flora_vetulicola",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_vetulicola",
 			"type": "text",
-			"text": "Vetulicola is a marine organism from the enigmatic phylum Vetulicolia. Its body had 2 parts, a main body which included the gills and the mouth as well as the tail. It was thought to have either been a filter feeder or a detritivore."
+			"text": "Vetulicola is a marine organism from the enigmatic phylum vetulicolia. It was a small vetulicolia, growing up to 9 cm in length, with its body consisting of 2 parts, a main body which included the gills and the mouth as well as the tail. It was thought to have either been a filter feeder or a detritivore."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_saivodus",
 			"title": "Saivodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Ctenacanthiformes"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Ctenacanthiformes"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/saivodus.png"],
-			"title": "S. striatus",
-			"text": ""
+			"type": "entity",
+			"name": "S. striatus",
+			"entity": "lepidodendron:prehistoric_flora_saivodus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_saivodus",

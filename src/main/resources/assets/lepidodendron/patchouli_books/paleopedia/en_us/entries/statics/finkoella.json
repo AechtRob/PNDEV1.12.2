@@ -1,5 +1,5 @@
 {
-	"name": "Finkoella",
+		"name": "Finkoella",
 	"read_by_default": true,
 	"icon": "lepidodendron:finkoella",
 	"category": "lepidodendron:statics",
@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_finkoella",
 			"title": "Finkoella",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Tunicata$(br)>Ascidiacea(?)"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Chordata$(br)>Tunicata$(br)>$(o)Ascidiacea (?)"
 		},
 		{
 			"type": "multiblock",

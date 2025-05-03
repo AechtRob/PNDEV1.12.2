@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Annelida$(br)>Polychaeta"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/websteroprion.png"],
-			"title": "W. armstrongi",
-			"text": ""
+			"type": "entity",
+			"name": "W. armstrongi",
+			"entity": "lepidodendron:prehistoric_flora_websteroprion",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_websteroprion",

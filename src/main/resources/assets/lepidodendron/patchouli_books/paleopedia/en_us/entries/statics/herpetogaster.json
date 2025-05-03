@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_herpetogaster",
 			"title": "Herpetogaster",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Ambulacraria$(br)>Cambroernida"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Deuterostomia$(br)>Ambulacraria$(br)>Cambroernida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Herpetogaster.png"],
-			"title": "H. collinsi",
-			"text": ""
+			"type": "multiblock",
+			"name": "H. collinsi",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:herpetogaster",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_herpetogaster",

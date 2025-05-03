@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Rhynchocephalia$(br2)>Sphenodontia"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/vadasaurus.png"],
-			"title": "V. herzogi",
-			"text": ""
+			"type": "entity",
+			"name": "V. herzogi",
+			"entity": "lepidodendron:prehistoric_flora_vadasaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_vadasaurus",
 			"type": "text",
-			"text": "Vadasaurus is a unique Rhynchocephalian due to its anatomical features which point towards a semi-aquatic lifestyle. It is related to marine Rhynchocephalians and may represent a transitional form. It possessed a heavier ribcage and grastralia which may have functioned as a ballast when swimming. Furthermore, Vadasaurus did not develop fully ossified forelimbs which is more evidence that Vadasaurus would've been spending some time in the water."
+			"text": "Vadasaurus is a unique rhynchocephalian due to its anatomical features which point towards a semi-aquatic lifestyle. It is related to marine rhynchocephalians and may represent a transitional form. It possessed a heavier ribcage and grastralia which may have functioned as a ballast when swimming. Furthermore, Vadasaurus did not develop fully ossified forelimbs which is more evidence that Vadasaurus would've been spending some time in the water."
 		},
 		{
 			"type": "lepidodendron:diet",

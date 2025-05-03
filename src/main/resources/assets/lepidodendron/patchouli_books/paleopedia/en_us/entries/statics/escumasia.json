@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_escumasia",
 			"title": "Escumasia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Estuarine(br2)>Cnidaria$(br)>$(o)incertae sedis"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Escumasia.png"],
-			"title": "E. roryi",
-			"text": ""
+			"type": "multiblock",
+			"name": "E. roryi",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:escumasia",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_escumasia",

@@ -244,6 +244,30 @@ public class ModelTurrisaspis extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Body.offsetY = 1.55F;
+        this.Body.offsetX = 0.25F;
+        this.Body.offsetZ = 2.0F;
+        this.Body.rotateAngleY = (float)Math.toRadians(120);
+        this.Body.rotateAngleX = (float)Math.toRadians(0);
+        this.Body.rotateAngleZ = (float)Math.toRadians(0);
+        this.Body.scaleChildren = true;
+        float scaler = 0.6F;
+        this.Body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Body, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Segment1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Segment2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(segment3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Segment4, 0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Body.render(f);
+        //Reset rotations, positions and sizing:
+        this.Body.setScale(1.0F, 1.0F, 1.0F);
+        this.Body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

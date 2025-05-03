@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_whatcheeria",
 			"title": "Whatcheeria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Stegocephalia$(br)>Whatcheeriidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Elpistostegalia$(br)>Stegocephalia$(br)>Whatcheeriidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/whatcheeria.png"],
-			"title": "W. deltae",
-			"text": ""
+			"type": "entity",
+			"name": "W. deltae",
+			"entity": "lepidodendron:prehistoric_flora_whatcheeria",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_whatcheeria",
 			"type": "text",
-			"text": "Whatcheeria was a genus of Carboniferous early tetrapod that was related to Pederpes. They were adapted to both land and aquatic life and they would have been able to swim and hunt in the water. They could grow up to 2 meters long and fossils have been found in Iowa, US."
+			"text": "Whatcheeria was a genus of early tetrapod that was related to Pederpes from the Lower Carboniferous of Iowa (USA). They were adapted to both land and aquatic life and they would have been able to swim and hunt in the water. They were fairly large, growing up to 2 m in length."
 		},
 		{
 			"type": "lepidodendron:diet",

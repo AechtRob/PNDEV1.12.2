@@ -349,6 +349,60 @@ public class ModelShringasaurus extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Shringasaurus.offsetY = 0.2F;
+        this.Shringasaurus.offsetX = 0.3F;
+        this.Shringasaurus.offsetZ = 2.0F;
+        this.Shringasaurus.rotateAngleY = (float)Math.toRadians(120);
+        this.Shringasaurus.rotateAngleX = (float)Math.toRadians(0);
+        this.Shringasaurus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Shringasaurus.scaleChildren = true;
+        float scaler = 0.6F;
+        this.Shringasaurus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Shringasaurus, 0.0F, 3.8F, -0.0F);
+        this.setRotateAngle(Body, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0F, 0.0F, 0.0262F);
+        this.setRotateAngle(cube_r10, 0.0F, -0.2513F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.171F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.0F, 0.2513F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.0F, -0.2513F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.0F, -0.0262F);
+        this.setRotateAngle(cube_r3, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.0867F, 0.1311F, 0.0038F);
+        this.setRotateAngle(cube_r5, -0.0867F, -0.1311F, -0.0038F);
+        this.setRotateAngle(cube_r6, 0.2601F, 0.1324F, -0.0114F);
+        this.setRotateAngle(cube_r7, 0.2601F, -0.1324F, 0.0114F);
+        this.setRotateAngle(cube_r8, 0.0F, 0.2513F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.2513F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(LArm, 1.5029F, -0.4289F, -0.0949F);
+        this.setRotateAngle(LArm2, -1.789F, 0.0F, 0.0F);
+        this.setRotateAngle(LFoot, -0.3752F, 0.0F, 0.0F);
+        this.setRotateAngle(LHand, 0.7418F, 0.48F, 0.0F);
+        this.setRotateAngle(LLeg, 0.0671F, 0.4421F, 0.1803F);
+        this.setRotateAngle(LLeg2, 0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck3, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(RArm, 1.2411F, 0.4289F, 0.0949F);
+        this.setRotateAngle(RArm2, -0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(RFoot, 0.0611F, 0.0F, 0.0F);
+        this.setRotateAngle(RHand, -0.0436F, -0.48F, 0.0873F);
+        this.setRotateAngle(RLeg, -0.4129F, -0.4421F, -0.1803F);
+        this.setRotateAngle(RLeg2, 0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, -0.1309F, -0.0873F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1309F, -0.0873F, 0.0F);
+        this.setRotateAngle(Tail3, 0.1745F, -0.1309F, 0.0F);
+        this.setRotateAngle(Tail4, 0.1745F, -0.1745F, 0.0F);
+        //End of pose, now render the model:
+        this.Shringasaurus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Shringasaurus.setScale(1.0F, 1.0F, 1.0F);
+        this.Shringasaurus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

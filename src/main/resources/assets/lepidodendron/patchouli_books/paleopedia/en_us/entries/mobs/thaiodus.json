@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_thaiodus",
 			"title": "Thaiodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Euselachii$(br)>Hybodontiformes$(br)>Thaiodontidae"
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Euselachii$(br)>Hybodontiformes$(br)>Thaiodontidae"
 		},
         	{
             "type": "entity",

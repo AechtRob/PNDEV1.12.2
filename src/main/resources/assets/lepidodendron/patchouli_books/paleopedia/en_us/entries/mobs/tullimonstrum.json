@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_tullimonstrum",
 			"title": "Tullimonstrum",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Bilateria"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Bilateria$(br)>$(o)incertae sedis"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/tullimonstrum.png"],
-			"title": "T. gregarium",
-			"text": ""
+			"type": "entity",
+			"name": "T. gregarium",
+			"entity": "lepidodendron:prehistoric_flora_tullimonstrum",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tullimonstrum",

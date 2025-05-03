@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic - Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Plesiosauria$(br)>Pliosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/thalassiodracon.png"],
-			"title": "T. hawkinsi",
-			"text": ""
+			"type": "entity",
+			"name": "T. hawkinsi",
+			"entity": "lepidodendron:prehistoric_flora_thalassiodracon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_thalassiodracon",
 			"type": "text",
-			"text": "Thalassiodracon was around from the very end of the Triassic to Early Jurassic and has only been found in England. It is known from a number of complete skeletons. It was thought to belong to the genus Plesiosaurus, but has since moved to its own after an examining the skull and could be ancestral to Pliosaurs."
+			"text": "Thalassiodracon was around from the very end of the Triassic to Lower Jurassic and has only been found in England. It is known from a number of complete skeletons. It was thought to belong to the genus Plesiosaurus, but has since moved to its own after an examining the skull and could be ancestral to Pliosaurs."
 		},
 		{
 			"type": "lepidodendron:diet",

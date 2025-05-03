@@ -9,13 +9,24 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_cyathocrinus",
 			"title": "Cyathocrinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Permian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Cladida$(br)>Cyathocrinitidae"
+			"text": "$(l)Temporal Range:$() Silurian - Permian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Cladida$(br)>Cyathocrinitidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Cyathocrinus.png"],
-			"title": "C. multibrachiatus",
-			"text": ""
+			"type": "multiblock",
+			"name": "C. multibrachiatus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_cyathocrinus[topshoot=true]",
+					"1": "lepidodendron:crinoid_cyathocrinus[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_cyathocrinus",

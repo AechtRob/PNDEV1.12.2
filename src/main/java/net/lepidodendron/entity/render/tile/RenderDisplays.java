@@ -911,6 +911,7 @@ public class RenderDisplays {
     public static final ModelTrachymetopon modelTrachymetopon = new ModelTrachymetopon();
     public static final ModelTraquairius modelTraquairius = new ModelTraquairius();
     public static final ModelTribrachiodemas modelTribrachiodemas = new ModelTribrachiodemas();
+    public static final ModelTietasaura modelTietasaura = new ModelTietasaura();
     public static final ModelTrigonotarbid modelTrigonotarbid = new ModelTrigonotarbid();
     public static final ModelTrimerus modelTrimerus = new ModelTrimerus();
     public static final ModelTritylodon modelTritylodon = new ModelTritylodon();

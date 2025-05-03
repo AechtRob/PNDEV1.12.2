@@ -12,15 +12,26 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ecdysozoa$(br)>Panarthropoda$(br)>Lobopodia$(br)>Xenusia$(br)>Protonychophora$(br)>Xenusiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/xenusion.png"],
-			"title": "X. auerswaldae",
-			"text": ""
+			"type": "entity",
+			"name": "X. auerswaldae",
+			"entity": "lepidodendron:prehistoric_flora_xenusion",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_xenusion",
 			"type": "text",
-			"text": "Xenusion is a worm like lobopodian from the Lower Cambrian which had spines on its tube like body and pairs of annulated legs similar to modern onychophorans."
+			"text": "Xenusion comes from the Lower Cambrian, with fossils found in glacial erratics off the coast of Germany, which most likely came from the Kalmarsund Sandstone, Sweden. It is a small lobopodian, growing up to an estimated 20 cm in length, although all known specimens are not well preserved. Despite this, certain details can still be gleamed from the fossil material, for example it had spines along the length of its body and pairs of annulated legs similar to"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xenusion",
+			"type": "text",
+			"text": "modern onychophorans. All the oldest specimens only preserved the posterior half of Xenusion, but thankfully a slightly more recent specimen found preserved the anterior part, showing that it may have had a narrow proboscis, although again due to the poor preservation, this may just be a preservational artefact. It must also be noted that some studies have suggested that Xenusion could in fact be related to the Ediacaran Petalonamae, like Charnia,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xenusion",
+			"type": "text",
+			"text": "although not many people agree with this, again mostly due to the poor preservation of the fossil material. Putting the Petalonamae theory aside, Xenusion is currently the oldest known lobopodian with soft bodied fossils, although there have been probable lobopodian trace fossils found before it in earlier Lower Cambrian rocks and even in the Upper Ediacaran, though no body fossils have been found yet."
 		},
 		{
 			"type": "lepidodendron:diet",

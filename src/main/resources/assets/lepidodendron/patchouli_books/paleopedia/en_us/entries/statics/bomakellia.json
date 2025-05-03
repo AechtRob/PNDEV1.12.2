@@ -29,7 +29,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_bomakellia",
 			"type": "text",
-			"text": "Bomakellia kelleri comes from the Upper Ediacaran, with fossils found in the Ust-Pinega Formation, Russia. It is a small petalonamid lifeform, growing up to 9 cm in height."
+			"text": "Bomakellia kelleri comes from the Upper Ediacaran, with fossils found in the Ust-Pinega Formation, Russia. It is a small petalonamid lifeform, growing up to 9 cm in height. Until recently, Due to its poor preservation, Bomakellia was originally thought to be some form of arthropod, and possibly even a primitive anomalocarid, although this hypothesis was note widely accepted, with some even outright ignoring it, with more recent studies suggesting it to be apart of"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bomakellia",
+			"type": "text",
+			"text": "the phylum Petalonamae, and classified further in the family Charniidae."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bomakellia",

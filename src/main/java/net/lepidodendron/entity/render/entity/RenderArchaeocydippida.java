@@ -89,7 +89,7 @@ public class RenderArchaeocydippida extends RenderLivingBaseWithBook<EntityPrehi
                 int j = i % 65536;
                 int k = i / 65536;
                 OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
-                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+                GlStateManager.color(0.3F, 0.3F, 0.3F, 1.0F);
                 Minecraft.getMinecraft().entityRenderer.setupFogColor(true);
                 this.bookModel.setModelAttributes(this.bookModel);
                 this.bookModel.renderStaticBook(scale);

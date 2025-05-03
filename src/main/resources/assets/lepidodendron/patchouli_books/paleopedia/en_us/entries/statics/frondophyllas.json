@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_frondophyllas",
 			"title": "Frondophyllas",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Rangeomorpha"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Deep Marine$(br2)>Petalonamae$(br)>Rangeomorpha"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_frondophyllas",
 			"type": "text",
-			"text": "Frondophyllas grandis comes from the Upper Ediacaran, with fossils found from Newfoundland, Canada. It is a tree-like lifeform, and could grow up to over 1 m in height, making it possibly the tallest Ediacaran known, and also may have partook in filter feeding from the surrounding water."
+			"text": "Frondophyllas grandis comes from the Upper Ediacaran, with fossils found from Newfoundland, Canada. It is a tree-like petalonamid lifeform, and could grow up to over 1 m in height, making it possibly the tallest Ediacaran known, and also may have partook in filter feeding from the surrounding water."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_frondophyllas",

@@ -298,9 +298,32 @@ public class ModelSaurostomus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Saurostomus.render(f5);
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Saurostomus.offsetY = 0.0F;
+        this.Saurostomus.offsetX = 0.5F;
+        this.Saurostomus.offsetZ = 2.0F;
+        this.Saurostomus.rotateAngleY = (float)Math.toRadians(120);
+        this.Saurostomus.rotateAngleX = (float)Math.toRadians(0);
+        this.Saurostomus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Saurostomus.scaleChildren = true;
+        float scaler = 0.6F;
+        this.Saurostomus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Saurostomus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Saurostomus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Saurostomus.setScale(1.0F, 1.0F, 1.0F);
+        this.Saurostomus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

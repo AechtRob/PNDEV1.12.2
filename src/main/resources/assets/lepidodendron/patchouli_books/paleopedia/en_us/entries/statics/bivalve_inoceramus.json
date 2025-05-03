@@ -9,18 +9,27 @@
 			"trigger": "lepidodendron:pf_adv_book_bivalve_inoceramus",
 			"title": "Inoceramus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic-Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Pteriida$(br)>Inoceramidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Pteriida$(br)>Inoceramidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/inoceramus.png"],
-			"title": "I. steenstrupi",
-			"text": ""
+			"type": "multiblock",
+			"name": "I. steenstrupi",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_inoceramus",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bivalve_inoceramus",
 			"type": "text",
-			"text": "Inoceramus is a genus of mollusk bivalve from that lived between the lower Jurassic up to the latest Cretaceous, found in disparate locations around the world. The genus is widespread and contains a large number of species; the abundance of its remains and the specific horizons they appear in make this mollusk an excellent guide fossil for dating sediments."
+			"text": "Inoceramus is a genus of mollusk bivalve from that lived between the Lower Jurassic up to the Latest Cretaceous, found in disparate locations around the world. The genus is widespread and contains a large number of species; the abundance of its remains and the specific horizons they appear in make this mollusk an excellent guide fossil for dating sediments."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bivalve_inoceramus",

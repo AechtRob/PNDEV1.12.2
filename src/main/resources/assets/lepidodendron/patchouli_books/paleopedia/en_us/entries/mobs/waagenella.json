@@ -11,7 +11,7 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Mollusca$(br)>Gastropoda$(br)>Bellerophontida$(br)>Bellerophontidae"
 		},
-        	{
+		{
             "type": "entity",
             "name": "W. jonesianus",
             "entity": "lepidodendron:prehistoric_flora_waagenella",
@@ -21,12 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_waagenella",
 			"type": "text",
-			"text": "Waagenella jonesianus is a substantially large species of Bellerophontida, a group commonly accepted to represent an order of primitive sea snails. First discovered in 1863 by Belgian paleontologist Laurent-Guillaume de Koninck. It is notably found from India and Akasaka Limestone of Japan. Waagenella jonesianus has had a very messy history of taxonomic classification. It is occasionally and was initially classed within the genus of Bellerophon, a wastebasket grouping."
+			"text": "Waagenella jonesianus is a substantially large species of bellerophontida, a group commonly accepted to represent an order of primitive sea snails. First discovered in 1863 by Belgian paleontologist Laurent-Guillaume de Koninck. It is notably found from India and Akasaka Limestone of Japan. Waagenella jonesianus has had a very messy history of taxonomic classification. It is occasionally and was initially classed within the genus of Bellerophon, a wastebasket grouping."
 		},
 		{
 		        "advancement": "lepidodendron:pf_adv_book_waagenella",
 			"type": "text",
-			"text": "It is notable for it's large size which can reach up to 18 cm. Many Bellerophontida have a \"waterline\" about halfway up the shell, suggesting that the mantle likely covered a large portion of the shell in life such as is present in modern Naticids."
+			"text": "It is notable for it's large size which can reach up to 18 cm. Many bellerophontida have a \"waterline\" about halfway up the shell, suggesting that the mantle likely covered a large portion of the shell in life such as is present in modern naticids."
 	        },
 		{
 			"type": "lepidodendron:diet",

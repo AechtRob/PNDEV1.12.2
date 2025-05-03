@@ -286,6 +286,51 @@ public class ModelTauraspis extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Tauraspis.offsetY = -1.8F;
+        this.Tauraspis.offsetX = 0.6F;
+        this.Tauraspis.offsetZ = 2.0F;
+        this.Tauraspis.rotateAngleY = (float)Math.toRadians(120);
+        this.Tauraspis.rotateAngleX = (float)Math.toRadians(0);
+        this.Tauraspis.rotateAngleZ = (float)Math.toRadians(0);
+        this.Tauraspis.scaleChildren = true;
+        float scaler = 2.4F;
+        this.Tauraspis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Tauraspis, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.2269F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.2161F, -0.0936F, 0.0939F);
+        this.setRotateAngle(cube_r11, 0.1989F, -0.0215F, 0.1644F);
+        this.setRotateAngle(cube_r12, 0.0F, 0.2487F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.0F, 0.9468F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.0F, 0.9468F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.2408F, -0.8429F, -0.3178F);
+        this.setRotateAngle(cube_r16, 0.0F, -1.3395F, 0.0F);
+        this.setRotateAngle(cube_r17, 0.0F, 1.2523F, 0.0F);
+        this.setRotateAngle(cube_r18, 0.2336F, 0.0953F, -0.0922F);
+        this.setRotateAngle(cube_r19, 0.2161F, 0.0936F, -0.0939F);
+        this.setRotateAngle(cube_r2, 0.0F, 1.5708F, 0.0F);
+        this.setRotateAngle(cube_r20, 0.1989F, 0.0215F, -0.1644F);
+        this.setRotateAngle(cube_r21, -0.5934F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, -0.2487F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, -0.9468F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, -0.9468F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.2408F, 0.8429F, 0.3178F);
+        this.setRotateAngle(cube_r7, 0.0F, 1.3395F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0F, -1.2523F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.2336F, -0.0953F, 0.0922F);
+        this.setRotateAngle(PectoralL, 0.0F, 0.48F, 0.0F);
+        this.setRotateAngle(PectoralR, 0.0F, -0.48F, 0.0F);
+        this.setRotateAngle(tail2, 0.0436F, 0.3054F, 0.0F);
+        this.setRotateAngle(tail3, 0.0436F, 0.3491F, 0.0F);
+        this.setRotateAngle(tail4, 0.0436F, 0.2618F, 0.0F);
+        //End of pose, now render the model:
+        this.Tauraspis.render(f);
+        //Reset rotations, positions and sizing:
+        this.Tauraspis.setScale(1.0F, 1.0F, 1.0F);
+        this.Tauraspis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

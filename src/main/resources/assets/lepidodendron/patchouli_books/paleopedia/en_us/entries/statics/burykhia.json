@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_burykhia",
 			"title": "Burykhia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Animalia$(br)>Chordata"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Chordata$(br)>Tunicata$(br)>$(o)Ascidiacea (?)"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_burykhia",
 			"type": "text",
-			"text": "Burykhia is a precambrian animal of uncertain affinity. It is likely to be related to Ausia, and it bears many similar features. Its exact classification is disputed, like Ausia."
+			"text": "Burykhia hunti comes from the Upper Ediacaran, with fossils found in the White Sea, Russia. It is a small, sac-like lifeform, growing up to 13 cm in height. Due to its overall appearance, Burykhia may have affinities with ascidians, which would result in Burykhia being the oldest known ascidian. It is also possibly related to the younger but more incomplete Ausia, which has helped with the classification of Ausia itself."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_burykhia",
+			"type": "text",
+			"text": "The generic name derives from the Latinised surnames of Andreevna and Timofey Antonovich Burykh, residents who lived near the fossil site that helped with the expedition. The specific name derives from the surname of Nathan Hunt, who has contributed to the study of Neoproterozoic rocks in Russia."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_burykhia",

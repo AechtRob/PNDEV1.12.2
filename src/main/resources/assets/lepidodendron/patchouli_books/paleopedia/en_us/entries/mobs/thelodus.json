@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_thelodus",
 			"title": "Thelodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Thelodonti$(br)>Thelodontiformes$(br)>Coelolepidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Agnatha$(br)>Thelodonti$(br)>Thelodontiformes$(br)>Coelolepidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/thelodus.png"],
-			"title": "T. parvidens",
-			"text": ""
+			"type": "entity",
+			"name": "T. parvidens",
+			"entity": "lepidodendron:prehistoric_flora_thelodus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_thelodus",
 			"type": "text",
-			"text": "Thelodus is a flat jawless fish from the Silurian period. Thelodus is known mainly from scales and impressions in rocks. It could have been up to a meter in length and they probably fed by sucking in prey with their mouths. "
+			"text": "Thelodus is a flat jawless fish from the Silurian period. Thelodus is known mainly from scales and impressions in rocks. It could have been up to a meter in length and they probably fed by sucking in prey with their mouths."
 		},
 		{
 			"type": "lepidodendron:diet",

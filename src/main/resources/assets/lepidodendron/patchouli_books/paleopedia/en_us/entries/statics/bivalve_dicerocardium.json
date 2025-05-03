@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_bivalve_dicerocardium",
 			"title": "Dicerocardium",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Bivalvia$(br)>Megalodontida$(br)>Dicerocardiidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Megalodontida$(br)>Dicerocardiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Dicerocardium.png"],
-			"title": "Dicerocardium jani",
-			"text": ""
+			"type": "multiblock",
+			"name": "D. jani",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_dicerocardium",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bivalve_dicerocardium",

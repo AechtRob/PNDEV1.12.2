@@ -9,18 +9,27 @@
 			"trigger": "lepidodendron:pf_adv_book_bivalve_megalodon",
 			"title": "Megalodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian-Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Bivalvia$(br)>Megalodontida$(br)>Megalodontidae"
+			"text": "$(l)Temporal Range:$() Devonian - Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Bivalvia$(br)>Megalodontida$(br)>Megalodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Megalodon_bivalve.png"],
-			"title": "Megalodon sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "Megalodon sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_megalodon",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bivalve_megalodon",
 			"type": "text",
-			"text": "Megalodon is a bivalve that may have lived from the Devonian to Jurassic periods. It was a species of medium sized saltwater clams which were likely filter feeders that lived on the bottom of the ocean. The genus name Megalodon means 'large tooth.'"
+			"text": "Megalodon is a bivalve that may have lived from the Devonian to Jurassic periods. It was a species of medium sized saltwater clams which were likely filter feeders that lived on the bottom of the ocean. The genus name Megalodon means 'large tooth'."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bivalve_megalodon",

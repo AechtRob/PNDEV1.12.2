@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_blastoids",
 			"title": "Blastoids",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Permian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Blastozoa$(br)>Blastoidea"
+			"text": "$(l)Temporal Range:$() Ordovician - Permian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Blastozoa$(br)>$(o)Blastoidea"
 		},
 		{
 			"type": "multiblock",
@@ -59,7 +59,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_blastoids",
 			"type": "text",
-			"text": "Blastoids are a type of stemmed echinoderm that went extinct during the Permian period. They had what looked like a bud at the end of their stalks and coincided with crinoids, although the crinoids were more diverse. Blastoids were high level suspension feeders, eating plankton. "
+			"text": "Blastoids are a type of stemmed echinoderm that arose sometime around the Middle Ordovician, surviving until the Upper-most Permian before going extinct during the P-T Extinction Event. They had what looked like a bud at the end of their stalks and coincided with crinoids, although the crinoids were much more diverse and longer lasting, surviving beyond the Periman. Blastoids were high level suspension feeders, feeding on plankton that drifted by. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_blastoids",
+			"type": "text",
+			"text": "The class name derives from the Greek words 'blastós', to mean 'bud'; and 'eîdos', to mean 'form/like'."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_blastoids",

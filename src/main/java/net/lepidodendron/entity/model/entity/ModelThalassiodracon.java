@@ -244,9 +244,42 @@ public class ModelThalassiodracon extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5);
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hips.offsetY = -0.6F;
+        this.Hips.offsetX = -0.25F;
+        this.Hips.offsetZ = 2.0F;
+        this.Hips.rotateAngleY = (float)Math.toRadians(120);
+        this.Hips.rotateAngleX = (float)Math.toRadians(0);
+        this.Hips.rotateAngleZ = (float)Math.toRadians(0);
+        this.Hips.scaleChildren = true;
+        float scaler = 0.8F;
+        this.Hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Hips, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Tail4, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck6, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck4, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjaw, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(head, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightfrontflipper1, 0.0F, 0.0873F, -0.1745F);
+        this.setRotateAngle(Leftfrontflipper1, 0.0F, -0.0873F, 0.2182F);
+        this.setRotateAngle(cube_r1, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodyfront, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Righthindflipper1, 0.0F, 0.0873F, 0.1745F);
+        this.setRotateAngle(Lefthindflipper1, 0.0F, -0.0873F, -0.1745F);
+        //End of pose, now render the model:
+        this.Hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hips.setScale(1.0F, 1.0F, 1.0F);
+        this.Hips.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

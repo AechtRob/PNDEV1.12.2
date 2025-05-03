@@ -491,12 +491,12 @@ public class ModelSubmarine extends ModelBasePalaeopedia {
         this.setRotateAngle(Handanimated2, Handanimated2.rotateAngleX + (float) Math.toRadians(xx), Handanimated2.rotateAngleY + (float) Math.toRadians(yy), Handanimated2.rotateAngleZ + (float) Math.toRadians(zz));
 
     }
-
     @Override
     public void renderStaticBook(float f) {
 
+
     }
-    
+
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

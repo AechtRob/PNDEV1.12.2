@@ -9,13 +9,24 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_pisocrinus",
 			"title": "Pisocrinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Pisocrinida$(br)>Pisocrinidae"
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Pisocrinida$(br)>Pisocrinidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Pisocrinus.png"],
-			"title": "Pisocrinus sphericus",
-			"text": ""
+			"type": "multiblock",
+			"name": "P. pilula",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_pisocrinus[topshoot=true]",
+					"1": "lepidodendron:crinoid_pisocrinus[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_pisocrinus",

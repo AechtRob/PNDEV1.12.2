@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_oesiamargaretia",
 			"title": "Oesia/Margaretia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() $(br2)Oesia:$(br)>$(o)incertae sedis$()$(br2)Margaretia:$(br)>$(o)incertae sedis"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)Oesia:$(br)>Hemichordata$()$(br2)Margaretia:$(br)>$(o)incertae sedis"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/oesia.png"],
-			"title": "O. disjuncta, M. dorus",
-			"text": ""
+			"type": "multiblock",
+			"name": "O. disjuncta, M. dorus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:oesia",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_oesiamargaretia",

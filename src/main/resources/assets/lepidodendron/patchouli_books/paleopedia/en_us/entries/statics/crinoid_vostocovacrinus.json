@@ -12,10 +12,21 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Encrinida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Vostocovacrinus.png"],
-			"title": "",
-			"text": ""
+			"type": "multiblock",
+			"name": "Vostocovacrinus sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_vostocovacrinus[topshoot=true]",
+					"1": "lepidodendron:crinoid_vostocovacrinus[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_vostocovacrinus",

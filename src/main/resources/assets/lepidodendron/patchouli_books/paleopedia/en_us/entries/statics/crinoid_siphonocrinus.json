@@ -9,13 +9,24 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_siphonocrinus",
 			"title": "Siphonocrinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Diplobathrida"
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Diplobathrida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Siphonocrinus.png"],
-			"title": "Siphonocrinus nobilis",
-			"text": ""
+			"type": "multiblock",
+			"name": "S. nobilis",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_siphonocrinus[topshoot=true]",
+					"1": "lepidodendron:crinoid_siphonocrinus[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_siphonocrinus",

@@ -12,15 +12,21 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Thyreophora"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/yuxisaurus.png"],
-			"title": "Y. kopchicki",
-			"text": ""
+			"type": "entity",
+			"name": "Y. kopchicki",
+			"entity": "lepidodendron:prehistoric_flora_yuxisaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_yuxisaurus",
 			"type": "text",
-			"text": "Yuxisaurus is a genus of basal thyreophoran dinosaur from the Jurassic. It comes from the Fengjiahe Formation of what is now the Yunnan Province of China. Yuxisaurus was named after the Yuxi Prefecture in the Yunnan Province. Yuxisaurus is estimated to have been about 4 meters in length. It is known from an incomplete skeleton including parts of the skull, vertebrae, parts of limbs, and at least 120 osteoderms."
+			"text": "Yuxisaurus is a genus of basal thyreophoran dinosaur from the Lower Jurassic. It comes from the Fengjiahe Formation of what is now the Yunnan Province of China. It is known from an incomplete skeleton including parts of the skull, vertebrae, parts of limbs, and at least 120 osteoderms, and is estimated to have grown up to 4 meters in length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yuxisaurus",
+			"type": "text",
+			"text": "The generic name derives from the place of 'Yuxi', the prefecture in which the fossil material was found; and the Greek word 'sauros', to mean 'lizard'. The specific name derives from the surname of John J. Kopchick, a American molecular biologist, due to his contributions to the field of biology."
 		},
 		{
 			"type": "lepidodendron:diet",

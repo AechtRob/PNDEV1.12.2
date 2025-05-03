@@ -9,18 +9,29 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_eugeniacrinites",
 			"title": "Eugeniacrinites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Cyrtocrinida"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Cyrtocrinida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/eugeniacrinites.png"],
-			"title": "E. cariophilites",
-			"text": ""
+			"type": "multiblock",
+			"name": "E. cariophilites",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_eugeniacrinites[topshoot=true]",
+					"1": "lepidodendron:crinoid_eugeniacrinites[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_eugeniacrinites",
 			"type": "text",
-			"text": "Eugeniacrinites is a genus of crinoid from the Jurassic and Cretaceous periods. It was a Cyrtocrinid, an order of crinoids that that had asymmetrical calyxes and had very small skeletal units. They had stems that attached directly to the substrate and used their arms to catch floating prey."
+			"text": "Eugeniacrinites is a genus of crinoid from the Jurassic period. It was a cyrtocrinid, an order of crinoids that that had asymmetrical calyxes and had very small skeletal units. They had stems that attached directly to the substrate and used their arms to catch floating prey."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_eugeniacrinites",

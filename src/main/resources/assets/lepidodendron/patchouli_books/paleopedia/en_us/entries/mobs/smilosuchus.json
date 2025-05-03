@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_smilosuchus",
 			"title": "Smilosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Pseudosuchia$(br)>Phytosauria$(br)>Parasuchidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauromorpha(br)>Phytosauria$(br)>Parasuchidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/smilosuchus.png"],
-			"title": "S. gregorii",
-			"text": ""
+			"type": "entity",
+			"name": "S. gregorii",
+			"entity": "lepidodendron:prehistoric_flora_smilosuchus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_smilosuchus",
 			"type": "text",
-			"text": "Smilosuchus was a genus of phytosaur that lived during the Late Triassic in what is now North America. Like other phytosaurs, this massive predator led a semi-aquatic lifestyle very similar to that of a modern crocodile (a classic case of convergent evolution). The jaws of Smilosuchus had two distinct types of teeth: Enlarged tusks at the front of the mouth for impaling prey, and more bladelike teeth further back in the mouth for slicing flesh. "
+			"text": "Smilosuchus was a genus of phytosaur that lived during the Upper Triassic in what is now North America. Like other phytosaurs, this massive predator led a semi-aquatic lifestyle very similar to that of a modern crocodile (a classic case of convergent evolution). The jaws of Smilosuchus had two distinct types of teeth: Enlarged tusks at the front of the mouth for impaling prey, and more bladelike teeth further back in the mouth for slicing flesh. "
 		},
 		{
 			"type": "lepidodendron:diet",

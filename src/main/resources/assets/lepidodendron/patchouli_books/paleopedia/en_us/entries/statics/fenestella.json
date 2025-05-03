@@ -9,13 +9,82 @@
 			"trigger": "lepidodendron:pf_adv_book_fenestella",
 			"title": "Fenestella",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Bryozoa$(br)>Fenestrida$(br)>Fenestellidae"
+			"text": "$(l)Temporal Range:$() Ordovician - Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Bryozoa$(br)>Fenestrida$(br)>Fenestellidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Fenestella.png"],
-			"title": "Fenestella sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "Fenestella sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:fenestella_1",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Fenestella sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:fenestella_2",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Fenestella sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:fenestella_3",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Fenestella sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:fenestella_4",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Fenestella sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:fenestella_5",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_fenestella",

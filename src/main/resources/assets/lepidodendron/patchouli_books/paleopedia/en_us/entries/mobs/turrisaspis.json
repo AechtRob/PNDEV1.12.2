@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Groenlandaspidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Turrisaspis.png"],
-			"title": "T. elektor",
-			"text": ""
+			"type": "entity",
+			"name": "T. elektor",
+			"entity": "lepidodendron:prehistoric_flora_turrisaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_turrisaspis",

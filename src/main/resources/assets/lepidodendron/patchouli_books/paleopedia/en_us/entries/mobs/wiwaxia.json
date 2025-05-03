@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_wiwaxia",
 			"title": "Wiwaxia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Mollusca (?)$(br)>Wiwaxiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>$(o)Mollusca (?)$()$(br)>Wiwaxiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/wiwaxia.png"],
-			"title": "W. corrugata",
-			"text": ""
+			"type": "entity",
+			"name": "W. corrugata",
+			"entity": "lepidodendron:prehistoric_flora_wiwaxia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_wiwaxia",

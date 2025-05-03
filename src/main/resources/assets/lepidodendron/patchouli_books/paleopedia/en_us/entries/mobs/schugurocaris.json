@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropda$(br)>Crustacea$(br)>Malacostraca$(br)>Phyllocarida$(br)>Ceratiocarididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/schugurocaris.png"],
-			"title": "S. wami",
-			"text": ""
+			"type": "entity",
+			"name": "S. wami",
+			"entity": "lepidodendron:prehistoric_flora_schugurocaris",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_schugurocaris",

@@ -9,23 +9,24 @@
 			"trigger": "lepidodendron:pf_adv_book_vancleavea",
 			"title": "Vancleavea",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Proterochampsia$(br)>Doswelliidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauromorpha$(br)>Archosauriformes$(br)>Proterochampsia$(br)>Doswelliidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/vancleavea.png"],
-			"title": "V. campi",
-			"text": ""
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_vancleavea",
-			"type": "text",
-			"text": "Vancleavea campi is a species of Archosauriform reptile from the Late Triassic of North America. First described in 1995 on several fragmentary remains, it is now perhaps most known from more complete and articulated specimens, some of which preserving the thick osteoderm plating they had in life, as is the case with the famous specimen GR 138, a 1.2 m long almost complete animal."
+			"type": "entity",
+			"name": "V. campi",
+			"entity": "lepidodendron:prehistoric_flora_vancleavea",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_vancleavea",
 			"type": "text",
-			"text": "This reptile, however, could potentially become larger, with some estimates making it as large as 3.8 m in length, based on remains from other larger specimens like MCCDM 1745. Vancleavea was also particular in the absence of several fenestrae in the skull, holes used by animals to make their heads lighter, and usually seen in other Archosauriforms."
+			"text": "Vancleavea campi is a species of archosauriform reptile from the Upper Triassic of North America. First described in 1995 on several fragmentary remains, it is now perhaps most known from more complete and articulated specimens, some of which preserving the thick osteoderm plating they had in life, as is the case with the famous specimen GR 138, a 1.2 m long almost complete animal."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vancleavea",
+			"type": "text",
+			"text": "This reptile, however, could potentially become larger, with some estimates making it as large as 3.8 m in length, based on remains from other larger specimens like MCCDM 1745. Vancleavea was also particular in the absence of several fenestrae in the skull, holes used by animals to make their heads lighter, and usually seen in other archosauriforms."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_vancleavea",

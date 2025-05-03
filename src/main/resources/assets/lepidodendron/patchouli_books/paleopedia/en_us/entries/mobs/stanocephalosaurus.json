@@ -12,15 +12,21 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Amphibia$(br)>Temnospondyli$(br)>Stereospondyli$(br)>Mastodonsauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/stanocephalosaurus.png"],
-			"title": "S. birdi",
-			"text": ""
+			"type": "entity",
+			"name": "S. birdi",
+			"entity": "lepidodendron:prehistoric_flora_stanocephalosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_stanocephalosaurus",
 			"type": "text",
-			"text": "Stanocephalosarus means “narrow head”. It’s found in early and late Triassic layers from Tanzania, Algeria and the USA. It is a relatively small Temnospondyl at being a little over a metre long and like other Temnospondyls it was probably carnivorous eating small fish in the rivers and lakes it lived in. It has a large head in comparison to its short and wide body."
+			"text": "Stanocephalosarus comes from the Triassic, with fossils found in the Manda Formation, Tanzania (Africa); Zarzaïtine Series, Algeria (Africa); and 'Six and six-tenths miles southwest of Winslow', Arizona (USA). It is a relatively small Temnospondyl at being a little over a metre long and like other Temnospondyls it was probably carnivorous eating small fish in the rivers and lakes it lived in. It has a large head in comparison to its short and wide body."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stanocephalosaurus",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'stenos', to mean 'narrow'; and 'kephalē', to mean 'head'."
 		},
 		{
 			"type": "lepidodendron:diet",

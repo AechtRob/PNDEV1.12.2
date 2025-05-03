@@ -385,9 +385,53 @@ public class ModelSilesaurus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Silesaurus.render(f5);
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Silesaurus.offsetY = 0.1F;
+        this.Silesaurus.offsetX = 0.2F;
+        this.Silesaurus.offsetZ = 2.0F;
+        this.Silesaurus.rotateAngleY = (float)Math.toRadians(120);
+        this.Silesaurus.rotateAngleX = (float)Math.toRadians(0);
+        this.Silesaurus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Silesaurus.scaleChildren = true;
+        float scaler = 0.6F;
+        this.Silesaurus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Silesaurus, 0.4F, 3.8F, -0.2F);
+        this.setRotateAngle(LegL, LegL.rotateAngleX + (float) Math.toRadians(-45), (float) Math.toRadians(-14), (float) Math.toRadians(0));
+        this.setRotateAngle(KneeL, KneeL.rotateAngleX + (float) Math.toRadians(-30), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        this.setRotateAngle(MetatarsalL, MetatarsalL.rotateAngleX + (float) Math.toRadians(37.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        this.setRotateAngle(FootL, FootL.rotateAngleX + (float) Math.toRadians(37.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        this.setRotateAngle(LegR, LegR.rotateAngleX + (float) Math.toRadians(12.56835), (float) Math.toRadians(4.00921), (float) Math.toRadians(0.43505));
+        this.setRotateAngle(KneeR, KneeR.rotateAngleX + (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        this.setRotateAngle(MetatarsalR, MetatarsalR.rotateAngleX + (float) Math.toRadians(37.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        this.setRotateAngle(FootR, FootR.rotateAngleX + (float) Math.toRadians(107.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        this.setRotateAngle(ArmL, ArmL.rotateAngleX + (float) Math.toRadians(-42.59709), (float) Math.toRadians(4.87088), (float) Math.toRadians(13.69794));
+        this.setRotateAngle(ElbowL, ElbowL.rotateAngleX + (float) Math.toRadians(-67.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        this.setRotateAngle(MetacarpalL, MetacarpalL.rotateAngleX + (float) Math.toRadians(22.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        this.setRotateAngle(HandL, HandL.rotateAngleX + (float) Math.toRadians(135), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        this.setRotateAngle(ArmR, ArmR.rotateAngleX + (float) Math.toRadians(-42.59709), (float) Math.toRadians(-4.87088), (float) Math.toRadians(-13.69794));
+        this.setRotateAngle(ElbowR, ElbowR.rotateAngleX + (float) Math.toRadians(-67.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        this.setRotateAngle(MetacarpalR, MetacarpalR.rotateAngleX + (float) Math.toRadians(22.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        this.setRotateAngle(HandR, HandR.rotateAngleX + (float) Math.toRadians(135), (float) Math.toRadians(0), (float) Math.toRadians(0));
+
+        this.setRotateAngle(Tail1, Tail1.rotateAngleX + (float) Math.toRadians(1.0), (float) Math.toRadians(4.330127019), 0);
+        this.setRotateAngle(Tail2, Tail2.rotateAngleX + (float) Math.toRadians(1.0), (float) Math.toRadians(4.330127019), 0);
+        this.setRotateAngle(Tail3, Tail3.rotateAngleX + (float) Math.toRadians(-2), (float) Math.toRadians(-5.196152423), 0);
+        this.setRotateAngle(Tail4, Tail4.rotateAngleX + (float) Math.toRadians(-4), (float) Math.toRadians(-6.92820323), 0);
+        this.setRotateAngle(Body, Body.rotateAngleX + (float) Math.toRadians(2.5), (float) Math.toRadians(0.46984631), 0);
+        this.setRotateAngle(Chest, Chest.rotateAngleX + (float) Math.toRadians(-1.25), (float) Math.toRadians(0.086824089), 0);
+        this.setRotateAngle(Neck3, Neck3.rotateAngleX + (float) Math.toRadians(-0.5), (float) Math.toRadians(-0.766044443), 0);
+        this.setRotateAngle(Neck2, Neck2.rotateAngleX + (float) Math.toRadians(-1), (float) Math.toRadians(-0.939692621), 0);
+        this.setRotateAngle(Neck1, Neck1.rotateAngleX + (float) Math.toRadians(-1), (float) Math.toRadians(-0.939692621), 0);
+        this.setRotateAngle(Head, Head.rotateAngleX + (float) Math.toRadians(0), (float) Math.toRadians(0.5), (float) Math.toRadians(-1.969615506));
+        //End of pose, now render the model:
+        this.Silesaurus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Silesaurus.setScale(1.0F, 1.0F, 1.0F);
+        this.Silesaurus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

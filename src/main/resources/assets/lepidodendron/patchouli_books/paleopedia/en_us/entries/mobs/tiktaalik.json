@@ -9,38 +9,34 @@
 			"trigger": "lepidodendron:pf_adv_book_tiktaalik",
 			"title": "Tiktaalik",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Stegocephalia"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Elpistostegalia$(br)>Stegocephalia"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Tiktaalik.png"],
-			"title": "T. roseae",
-			"text": ""
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_tiktaalik",
-			"type": "text",
-			"text": "Tiktaalik roseae is a species of sarcopterygian fish from the Late Devonian of Canada.  Sharing many characters with both lobe-finned fish and early tetrapods, Tiktaalik is widely regarded as one of the most ancient semi terrestrial vertebrates in Earth’s history, representing a very important transitional fossil between aquatic animals like Panderichthys and early amphibians."
+			"type": "entity",
+			"name": "T. roseae",
+			"entity": "lepidodendron:prehistoric_flora_tiktaalik",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tiktaalik",
 			"type": "text",
-			"text": "Possessing features of tetrapods like developed arm bones and shoulders, Tiktaalik was able to sustain its own weight and, while the joints weren’t able to allow for proper walking, they would’ve been more than capable of keeping the animal’s body lifted from the ground."
+			"text": "Tiktaalik roseae is a species of sarcopterygian fish from the Late Devonian of Canada.  Sharing many characters with both lobe-finned fish and early tetrapods, Tiktaalik is widely regarded as one of the most ancient semi terrestrial vertebrates in Earth’s history, representing a very important transitional fossil between aquatic animals like Panderichthys and early amphibians. Possessing features of tetrapods like developed arm bones and shoulders, Tiktaalik was"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tiktaalik",
 			"type": "text",
-			"text": "Today we think these features didn’t initially develop for terrestrial lifestyles but instead to anchor the animal against the bottom of the shallow water bodies they lived in, where strong currents may have otherwise swept them away.  Thanks to the presence of nostrils on top of the head and a reinforced ribcage we hypothesise Tiktaalik had primitive lungs allowing it to breathe atmospheric oxygen more efficiently."
+			"text": "able to sustain its own weight and, while the joints weren’t able to allow for proper walking, they would’ve been more than capable of keeping the animal’s body lifted from the ground. Today we think these features didn’t initially develop for terrestrial lifestyles but instead to anchor the animal against the bottom of the shallow water bodies they lived in, where strong currents may have otherwise swept them away."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tiktaalik",
 			"type": "text",
-			"text": "The lack of the small bony plates surrounding the animal’s gills made Tiktaalik’s head more mobile, making it the first fish to possess a neck.  Tiktaalik was first discovered in 2004 in Ellesmere Island in Nunavut.  The three skeletons were discovered in fluvial sediments in what were once the warm tropics of the continent of Laurentia."
+			"text": "Thanks to the presence of nostrils on top of the head and a reinforced ribcage we hypothesise Tiktaalik had primitive lungs allowing it to breathe atmospheric oxygen more efficiently. The lack of the small bony plates surrounding the animal’s gills made Tiktaalik’s head more mobile, making it the first fish to possess a neck. Tiktaalik was first discovered in 2004 in Ellesmere Island in Nunavut. The three skeletons were discovered in fluvial sediments in what were"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tiktaalik",
 			"type": "text",
-			"text": "Based on the fossil remains and where they were found we think Tiktaalik lived in oxygen poor shallow freshwater systems, where larger animals had trouble swimming and where it could hunt smaller animals coming in to feed on the abundant leaves falling in the water from the newly developed deciduous flora of the times, occasionally being able to venture on land for brief periods."
+			"text": "once the warm tropics of the continent of Laurentia. Based on the fossil remains and where they were found we think Tiktaalik lived in oxygen poor shallow freshwater systems, where larger animals had trouble swimming and where it could hunt smaller animals coming in to feed on the abundant leaves falling in the water from the newly developed deciduous flora of the times, occasionally being able to venture on land for brief periods."
 		},
 		{
 			"type": "lepidodendron:diet",

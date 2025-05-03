@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Ceratopsia$(br)>Chaoyangsauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/xuanhuaceratops.png"],
-			"title": "X. niei",
-			"text": ""
+			"type": "entity",
+			"name": "X. niei",
+			"entity": "lepidodendron:prehistoric_flora_xuanhuaceratops",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_xuanhuaceratops",
 			"type": "text",
-			"text": "Xuanhuaceratops is a basal ceratopsian described from Houcheng Formation, Hebei, China. It is only known from a fragmentary skull and some postcranial materials. Its name was originally invalidly described in 1985, but validated in 2006."
+			"text": "Xuanhuaceratops is a basal ceratopsian described from the Houcheng Formation, Hebei, China. It is only known from a fragmentary skull and some postcranial material. Its name was originally invalidly described in 1985, but validated in 2006."
 		},
 		{
 			"type": "lepidodendron:diet",

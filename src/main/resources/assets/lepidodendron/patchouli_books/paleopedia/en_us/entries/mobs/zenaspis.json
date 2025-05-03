@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Cephalaspidomorphi$(br)>Osteostraci$(br)>Cornuata$(br)>Zenaspidida$(br)>Zenaspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/zenaspis.png"],
-			"title": "Z. podolica",
-			"text": ""
+			"type": "entity",
+			"name": "Y. podolica",
+			"entity": "lepidodendron:prehistoric_flora_zenaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_zenaspis",
 			"type": "text",
-			"text": "Zenaspis is a Devonian agnathan fish, similar to Cephalaspis, from shallow waters. It is known from fossilized head-shields and was quite small, not more than half a meter in most estimates."
+			"text": "Zenaspis is a Devonian agnathan fish, similar to Cephalaspis, from shallow waters. It is known from fossilized head-shields and was quite small, no more than half a meter in most estimates."
 		},
 		{
 			"type": "lepidodendron:diet",

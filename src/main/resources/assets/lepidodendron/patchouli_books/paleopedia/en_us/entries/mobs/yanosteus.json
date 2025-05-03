@@ -11,7 +11,7 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Peipiaosteiformes$(br)>Peipiaosteidae"
 		},
-        	{
+		{
             "type": "entity",
             "name": "Y. longidorsalis",
             "entity": "lepidodendron:prehistoric_flora_yanosteus",

@@ -9,18 +9,29 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_cupressocrinites",
 			"title": "Cupressocrinites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Cladida$(br)>Cupressocrinitidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Cladida$(br)>Cupressocrinitidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Cupressocrinites.png"],
-			"title": "C. elongatus",
-			"text": ""
+			"type": "multiblock",
+			"name": "C. elongatus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_cupressocrinites[topshoot=true]",
+					"1": "lepidodendron:crinoid_cupressocrinites[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_cupressocrinites",
 			"type": "text",
-			"text": "Cupressocrinites is a crinoid from the Middle to Late Devonian. Its bulb was slighly more slender than other crinoids and its stalk could grow to really long lengths. It was a suspension feeder like other crinoids."
+			"text": "Cupressocrinites is a crinoid from the Middle to Upper Devonian. Its bulb was slightly more slender than other crinoids and its stalk could grow to really long lengths. It was a suspension feeder like other crinoids."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_cupressocrinites",

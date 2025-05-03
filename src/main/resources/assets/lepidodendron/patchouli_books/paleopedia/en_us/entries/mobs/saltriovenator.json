@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_saltriovenator",
 			"title": "Saltriovenator",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Ceratosauria"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Ceratosauria"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/saltriovenator.png"],
-			"title": "S. zanellai",
-			"text": ""
+			"type": "entity",
+			"name": "S. zanellai",
+			"entity": "lepidodendron:prehistoric_flora_saltriovenator",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_saltriovenator",
 			"type": "text",
-			"text": "Saltriovenator is a ceratosaur from the Early Jurassic. The name of the animal comes from the place of its discovery, since it was found in the area around Saltrio in Italy, in the Salnova marble quarry."
+			"text": "Saltriovenator is a ceratosaur from the Lower Jurassic. The name of the animal comes from the place of its discovery, since it was found in the area around Saltrio in Italy, in the Salnova marble quarry."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_saltriovenator",

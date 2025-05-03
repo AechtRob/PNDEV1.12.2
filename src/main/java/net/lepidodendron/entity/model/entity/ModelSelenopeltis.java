@@ -703,8 +703,8 @@ public class ModelSelenopeltis extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Selenopeltis.offsetY = -2.0F;
-        this.Selenopeltis.offsetX = 0.3F;
+        this.Selenopeltis.offsetY = -1.4F;
+        this.Selenopeltis.offsetX = 0.6F;
         this.Selenopeltis.rotateAngleX = (float)Math.toRadians(45);
         this.Selenopeltis.rotateAngleY = (float)Math.toRadians(220);
         this.Selenopeltis.rotateAngleZ = (float)Math.toRadians(-20);

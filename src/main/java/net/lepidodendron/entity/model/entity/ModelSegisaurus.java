@@ -389,12 +389,13 @@ public class ModelSegisaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Segisaurus.offsetY = -0.650F;
-        this.Segisaurus.offsetX = 0.1F;
+        this.Segisaurus.offsetX = 0.2F;
+        this.Segisaurus.offsetZ = 2.0F;
         this.Segisaurus.rotateAngleY = (float)Math.toRadians(225);
-        this.Segisaurus.rotateAngleX = (float)Math.toRadians(-10);
-        this.Segisaurus.rotateAngleZ = (float)Math.toRadians(3);
+        this.Segisaurus.rotateAngleX = (float)Math.toRadians(0);
+        this.Segisaurus.rotateAngleZ = (float)Math.toRadians(0);
         this.Segisaurus.scaleChildren = true;
-        float scaler = 1.15F;
+        float scaler = 1.0F;
         this.Segisaurus.setScale(scaler, scaler, scaler);
         //Start of pose:
 

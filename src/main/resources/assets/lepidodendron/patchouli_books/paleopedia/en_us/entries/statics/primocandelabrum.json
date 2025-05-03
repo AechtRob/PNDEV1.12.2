@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_primocandelabrum",
 			"title": "Primocandelabrum",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Rangeomorpha"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Deep Marine$(br2)>Petalonamae$(br)>Rangeomorpha"
 		},
 		{
 			"type": "multiblock",
@@ -44,7 +44,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_primocandelabrum",
 			"type": "text",
-			"text": "Primocandelabrum is a rangeomorph from the Ediacaran. It had a frondose like body with many branching stems. It was named because it resembles a candelabra."
+			"text": "Primocandelabrum comes from the Upper Ediacaran, with fossils found in Newfoundland, Canada. They were small, feather-duster petalonamid lifeforms, growing up to 35 cm in height. They derive part of their name from the candelabra, due to the superficially resemblance."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_primocandelabrum",

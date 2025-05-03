@@ -180,6 +180,31 @@ public class ModelThrinacodus extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Thrinacodus.offsetY = 0.0F;
+        this.Thrinacodus.offsetX = 0.35F;
+        this.Thrinacodus.offsetZ = 2.0F;
+        this.Thrinacodus.rotateAngleY = (float)Math.toRadians(120);
+        this.Thrinacodus.rotateAngleX = (float)Math.toRadians(0);
+        this.Thrinacodus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Thrinacodus.scaleChildren = true;
+        float scaler = 0.3F;
+        this.Thrinacodus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Thrinacodus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Jaw, 0.3F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Thrinacodus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Thrinacodus.setScale(1.0F, 1.0F, 1.0F);
+        this.Thrinacodus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

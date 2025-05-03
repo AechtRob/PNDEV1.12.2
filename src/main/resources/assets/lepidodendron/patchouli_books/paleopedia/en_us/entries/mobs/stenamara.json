@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_stenamara",
 			"title": "Stenamara",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Neopterygii$(br)>Pycnodontiformes"
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Neopterygii$(br)>Pycnodontiformes"
 		},
         	{
             "type": "entity",

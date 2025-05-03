@@ -407,6 +407,46 @@ public class ModelUranocentrodon extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body4.offsetY = -0.8F;
+        this.body4.offsetX = 0.1F;
+        this.body4.offsetZ = 2.0F;
+        this.body4.rotateAngleY = (float)Math.toRadians(120);
+        this.body4.rotateAngleX = (float)Math.toRadians(0);
+        this.body4.rotateAngleZ = (float)Math.toRadians(0);
+        this.body4.scaleChildren = true;
+        float scaler = 0.5F;
+        this.body4.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body4, 0.3F, 3.8F, -0.2F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(forelegL, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(forelegL2, 0.0F, 0.5F, 0.4F);
+        this.setRotateAngle(forelegL3, 0.6F, 0.5F, -0.2F);
+        this.setRotateAngle(forelegR, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(forelegR2, 0.0F, -0.5F, -0.4F);
+        this.setRotateAngle(forelegR3, 0.8F, -0.7F, -0.2F);
+        this.setRotateAngle(hindlegL, 0.0F, 0.2F, 0.3F);
+        this.setRotateAngle(hindlegL2, 0.0F, -0.7F, 0.0F);
+        this.setRotateAngle(hindlegL3, 0.5F, 1.5F, 0.0F);
+        this.setRotateAngle(hindlegR, 0.0F, 0.2F, -0.3F);
+        this.setRotateAngle(hindlegR2, 0.0F, 0.7F, 0.0F);
+        this.setRotateAngle(hindlegR3, 0.5F, -1.5F, 0.0F);
+        //End of pose, now render the model:
+        this.body4.render(f);
+        //Reset rotations, positions and sizing:
+        this.body4.setScale(1.0F, 1.0F, 1.0F);
+        this.body4.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

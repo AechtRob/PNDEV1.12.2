@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_slimonia",
 			"title": "Slimonia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Slimonidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Pterygotioidea$(br)>Slimonidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/slimonia.png"],
-			"title": "S. acuminata",
-			"text": ""
+			"type": "entity",
+			"name": "S. acuminata",
+			"entity": "lepidodendron:prehistoric_flora_slimonia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_slimonia",
 			"type": "text",
-			"text": "Slimonia is a Pterygotioid Eurypterid from the Silurian of South America and Europe. Slimonia has an unusual square-shaped head with small compound eyes on the frontal corners. Its chelicerae are small and its body is long and bulges at the front. Slimonia also possesses a more derived flattened telson that terminated in a long needle. It was once assumed that Slimonia stabbed prey with its telson."
+			"text": "Slimonia is a pterygotioid eurypterid from the Silurian of South America and Europe. Slimonia has an unusual square-shaped head with small compound eyes on the frontal corners. Its chelicerae are small and its body is long and bulges at the front. Slimonia also possesses a more derived flattened telson that terminated in a long needle, and it was once assumed that Slimonia stabbed prey with its telson."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_slimonia",

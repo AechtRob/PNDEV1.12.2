@@ -967,6 +967,7 @@ public class ModelTianyulong extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.Hips.offsetY = -0.2F;
         this.Hips.offsetX = 0.4F;
+        this.Hips.offsetZ = 2.0F;
         this.Hips.rotateAngleY = (float)Math.toRadians(240);
         this.Hips.rotateAngleX = (float)Math.toRadians(-0);
         this.Hips.rotateAngleZ = (float)Math.toRadians(-0);
@@ -974,6 +975,7 @@ public class ModelTianyulong extends ModelBasePalaeopedia {
         float scaler = 1.0F;
         this.Hips.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(Hips, 0.2F, 3.8F, -0.1F);
         this.setRotateAngle(UpperLegR, -0.3665F, 0.0F, 0.0F);
         this.setRotateAngle(UpperLegL, -0.3665F, 0.0F, 0.0F);
         this.setRotateAngle(UpperArmR, -1.4473F, -0.1236F, 0.2274F);

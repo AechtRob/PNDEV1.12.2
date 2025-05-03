@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_willwerathia",
 			"title": "Willwerathia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Xiphosura"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Chelicerata$(br)>$(o)Euchelicerata (?)$()$(br)>$(o)Xiphosura (?)"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/willwerathia.png"],
-			"title": "W. laticeps",
-			"text": ""
+			"type": "entity",
+			"name": "W. laticeps",
+			"entity": "lepidodendron:prehistoric_flora_willwerathia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_willwerathia",
 			"type": "text",
-			"text": "Willwerathia is a genus of blind Xiphosuran from the Devonian that lived a benthic feeding life. It looked like a trilobite but was actually more closely related to Horseshoe Crabs."
+			"text": "Willwerathia is a genus of blind xiphosuran from the Devonian that lived a benthic feeding life. It looked like a trilobite but was actually more closely related to Horseshoe Crabs."
 		},
 		{
 			"type": "lepidodendron:diet",

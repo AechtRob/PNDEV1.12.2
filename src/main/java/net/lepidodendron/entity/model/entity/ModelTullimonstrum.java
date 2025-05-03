@@ -189,6 +189,38 @@ public class ModelTullimonstrum extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.bone.offsetY = -0.6F;
+        this.bone.offsetX = 0.1F;
+        this.bone.offsetZ = 2.0F;
+        this.bone.rotateAngleY = (float)Math.toRadians(120);
+        this.bone.rotateAngleX = (float)Math.toRadians(0);
+        this.bone.rotateAngleZ = (float)Math.toRadians(0);
+        this.bone.scaleChildren = true;
+        float scaler = 2.0F;
+        this.bone.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(bone, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(proboscis, 0.2F, 0.05F, 0.0F);
+        this.setRotateAngle(bone2, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(bone3, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(bone4, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(bone5, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(bone6, -0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(bone7, -0.2F, 0.05F, 0.0F);
+        this.setRotateAngle(bone8, -0.3F, 0.05F, 0.0F);
+        this.setRotateAngle(bone9, -0.3F, 0.05F, 0.0F);
+        this.setRotateAngle(upperjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.5F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.bone.render(f);
+        //Reset rotations, positions and sizing:
+        this.bone.setScale(1.0F, 1.0F, 1.0F);
+        this.bone.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

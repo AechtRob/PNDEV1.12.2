@@ -9,13 +9,113 @@
 			"trigger": "lepidodendron:pf_adv_book_tabulata",
 			"title": "Tabulate Coral",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Permian$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Anthozoa$(br)>Tabulata"
+			"text": "$(l)Temporal Range:$() Ordovician - Permian$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Anthozoa$(br)>$(o)Tabulata"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/tabulate.png"],
-			"title": "Tabulata",
-			"text": ""
+			"type": "multiblock",
+			"name": "Tabulata",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:tabulata_1",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Tabulata",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:tabulata_block_1",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Tabulata",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:tabulata_2",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Tabulata",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:tabulata_block_2",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Tabulata",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:tabulata_3",
+					"0": "minecraft:air"
+				}
+			}
+		},
+
+		{
+			"type": "multiblock",
+			"name": "Tabulata",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:tabulata_block_3",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Tabulata",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:tabulata_4",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tabulata",

@@ -9,18 +9,34 @@
 			"trigger": "lepidodendron:pf_adv_book_spathicephalus",
 			"title": "Spathicephalus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Elpistostegalia$(br)>Stegocephalia$(br)>Baphetoidea$(br)>Spathicephalidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Tetrapodomorpha$(br)>Elpistostegalia$(br)>Stegocephalia$(br)>Baphetoidea$(br)>Spathicephalidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/spathicephalus.png"],
-			"title": "S. mirus",
-			"text": ""
+			"type": "entity",
+			"name": "S. mirus",
+			"entity": "lepidodendron:prehistoric_flora_spathicephalus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_spathicephalus",
 			"type": "text",
-			"text": "Spathicephalus is an early stem tetrapod from the Carboniferous period and is thought to have fed on aquatic invertebrates through filter feeding and suction feeding."
+			"text": "Spathicephalus comes from the Carboniferous, with fossils found in the Rumbles Ironstone, Scotland (United Kingdom), and Point Edward Formation, Canada. It is a medium-sized stem-tetrapod, that is estimated to grow up to 1.5 m in length. It is only known from skull material, which itself is distinctly unique in that it is flattened and almost perfectly square, unlike most other early tetrapods which had rounded snouts. Other features of its skull also stand out, like"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spathicephalus",
+			"type": "text",
+			"text": "its maxillae (the part of the skull the teeth are embedded in) being unusually thin, being no more than 1 cm thick along the entire length. Its orbits (eye sockets) also differ from its kin, as instead of being rounded, they are kidney shaped due to them fusing with another set of holes called the antorbital fenestrae. Moving to the area behind the orbits, known as the 'skull table', even this is unique in being alot smaller in comparison to other Carboniferous"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spathicephalus",
+			"type": "text",
+			"text": "tetrapods. Another defining feature of Spathicephalus is it dentition, which comprises of hundreds of small, closely packed chiesel-like teeth, which range from 1 - 3 mm in diameter. Despite the simplicity, this makes it very unusual, as most other tetrapods are known to having a wide variety in their dentition, making it easy to identify the isolated teeth of Spathicephalus. With all this in mind, many agree that the feeding behaviour of Spathicephalus greatly"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spathicephalus",
+			"type": "text",
+			"text": "differed from that of its other Carboniferous relatives, which would have actively hunted, whilst Spathicephalus would have likely lain on a river or lake bed feeding on aquatic invertebrates through filter feeding and suction feeding."
 		},
 		{
 			"type": "lepidodendron:diet",

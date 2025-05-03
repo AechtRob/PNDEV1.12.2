@@ -365,19 +365,20 @@ public class ModelSpinophorosaurus extends ModelBasePalaeopedia {
         this.rightArm.setScale(1,1,1);
         resetToDefaultPose();
     }
-
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.mainbody.offsetY = 0.7F;
-        this.mainbody.offsetX = 0.0F;
-        this.mainbody.rotateAngleY = (float)Math.toRadians(210);
-        this.mainbody.rotateAngleX = (float)Math.toRadians(8);
-        this.mainbody.rotateAngleZ = (float)Math.toRadians(-3);
+        this.mainbody.offsetY = 0.4F;
+        this.mainbody.offsetX = 0.2F;
+        this.mainbody.offsetZ = 2.0F;
+        this.mainbody.rotateAngleY = (float)Math.toRadians(120);
+        this.mainbody.rotateAngleX = (float)Math.toRadians(0);
+        this.mainbody.rotateAngleZ = (float)Math.toRadians(0);
         this.mainbody.scaleChildren = true;
-        float scaler = 0.80F;
+        float scaler = 0.6F;
         this.mainbody.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(mainbody, 0.4F, 3.8F, -0.2F);
         this.setRotateAngle(hips, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(body2, -0.3F, 0.0F, 0.0F);
         this.setRotateAngle(chest, 0.2F, 0.0F, 0.0F);

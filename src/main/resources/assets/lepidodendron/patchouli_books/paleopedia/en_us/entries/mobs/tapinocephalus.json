@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_tapinocephalus",
 			"title": "Tapinocephalus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Dinocephalia$(br)>Tapinocephalidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Dinocephalia$(br)>Tapinocephalidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/tapinocephalus.png"],
-			"title": "T. atherstonei",
-			"text": ""
+			"type": "entity",
+			"name": "T. atherstonei",
+			"entity": "lepidodendron:prehistoric_flora_tapinocephalus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tapinocephalus",
 			"type": "text",
-			"text": "Tapinocephalus was a large herbivorous dinocephalian that lived during the Permian period. It had a massive bony skull roof and a short snout. It may have engaged in headbutting with each other for mates or for territory. It could grow up to over 3 meters in length and they had strong robust bodies and limbs."
+			"text": "Tapinocephalus was a large herbivorous dinocephalian that lived during the Middle Permian. It had a massive bony skull roof and a short snout. It may have engaged in headbutting with each other for mates or for territory. It could grow up to over 3 meters in length and they had strong robust bodies and limbs."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_bradgatia",
 			"title": "Bradgatia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Rangeomorpha$(br)>Charniidae"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Deep Marine$(br2)>Petalonamae$(br)>Rangeomorpha$(br)>Charniidae"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_bradgatia",
 			"type": "text",
-			"text": "Bradgatia linfordensis comes from the Upper Ediacaran, with fossils found from the Charnwood Forest, UK and Newfoundland, Canada. Bradgatia is a cabbage shaped petalonamae, with several fronds radiating from the central holdfast, and could grow up to 22 cm in height. The generic name derives from the place name 'Bradgate Park' in Bradgate, near to were it was found."
+			"text": "Bradgatia linfordensis comes from the Upper Ediacaran, with fossils found from the Bradgate Park Formation, UK and Newfoundland, Canada. Bradgatia is a cabbage shaped petalonamid, with several fronds radiating from the central holdfast, and could grow up to 22 cm in height. The generic name derives from the place name 'Bradgate Park' in Bradgate, near to were it was found."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bradgatia",

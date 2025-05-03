@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Actinopterygii"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/tegeolepis.png"],
-			"title": "T. clarki",
-			"text": ""
+			"type": "entity",
+			"name": "T. clarki",
+			"entity": "lepidodendron:prehistoric_flora_tegeolepis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tegeolepis",

@@ -11,16 +11,17 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Cnidaria$(br)>Hydrozoa$(br)>Leptothecata$(br)>Aequoreidae"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/tarracodiscus.png"],
-			"title": "T. viai",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "T. viai",
+			"entity": "lepidodendron:prehistoric_flora_tarracodiscus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tarracodiscus",
 			"type": "text",
-			"text": "Tarracodiscus is a Leptothecatan hydrozoan known from the Triassic of Spain. It was small and had a discoid head with dozens of small tentacles protruding from the circumference of the bell. It probably floated around, catching food caught in its tentacles."
+			"text": "Tarracodiscus is a leptothecatan hydrozoan known from the Triassic of Spain. It was small and had a discoid head with dozens of small tentacles protruding from the circumference of the bell. It probably floated around, catching food caught in its tentacles."
 		},
 		{
 			"type": "lepidodendron:diet",

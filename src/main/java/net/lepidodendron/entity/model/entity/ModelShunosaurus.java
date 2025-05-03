@@ -415,12 +415,12 @@ public class ModelShunosaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = 0.30F;
-        this.root.offsetX = 0.25F;
+        this.root.offsetX = 0.15F;
         this.root.rotateAngleY = (float)Math.toRadians(120);
         this.root.rotateAngleX = (float)Math.toRadians(-1);
         this.root.rotateAngleZ = (float)Math.toRadians(-1);
         this.root.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.5F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(upperlegleft, 0.2618F, 0.0F, 0.0F);

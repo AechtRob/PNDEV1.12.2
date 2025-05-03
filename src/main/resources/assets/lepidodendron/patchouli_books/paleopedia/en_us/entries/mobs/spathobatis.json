@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_spathobatis",
 			"title": "Spathobatis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>Rhinopristiformes$(br)>Rhinobatidae?"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Rhinopristiformes$(br)>$(o)Rhinobatidae (?)"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/spathobatis.png"],
-			"title": "S. bugesiacus",
-			"text": ""
+			"type": "entity",
+			"name": "S. bugesiacus",
+			"entity": "lepidodendron:prehistoric_flora_spathobatis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_spathobatis",

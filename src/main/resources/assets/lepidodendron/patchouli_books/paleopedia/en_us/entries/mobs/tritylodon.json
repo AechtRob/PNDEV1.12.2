@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_tritylodon",
 			"title": "Tritylodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Synapsida$(br)>Cynodontia$(br)>Tritylodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Cynodontia$(br)>Tritylodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/tritylodon.png"],
-			"title": "T. maximus",
-			"text": ""
+			"type": "entity",
+			"name": "T. maximus",
+			"entity": "lepidodendron:prehistoric_flora_tritylodon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tritylodon",
 			"type": "text",
-			"text": "Tritylodon was a genus of tritylodontid cynodont therapsids that lived during the Early Jurassic (around 200 - 182.7 million years ago). Its name means \"three-cusped tooth\". The remains of this 30 cm (12 inch) long animal have been found at the Elliot Formation in South Africa, and at the Hanson Formation in Antarctica."
+			"text": "Tritylodon was a genus of tritylodontid cynodont therapsids that lived during the Lower Jurassic (around 200 - 182.7 million years ago). Its name means \"three-cusped tooth\". The remains of this 30 cm (12 inch) long animal have been found at the Elliot Formation in South Africa, and at the Hanson Formation in Antarctica."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tritylodon",

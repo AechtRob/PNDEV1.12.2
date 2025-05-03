@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ausia",
 			"title": "Ausia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Animalia$(br)>Chordata$(br)>Tunicata$(br)>Ascidiacea"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Animalia$(br)>Chordata$(br)>Tunicata$(br)>$(o)Ascidiacea (?)"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,22 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_ausia",
 			"type": "text",
-			"text": "Ausia was a  pin head shaped animal with many little oval shaped depressions spaced in parallel rows. Ausia is commonly reconstructed as a tunicate, though the exact classification is disputed."
+			"text": "Ausia fenestrata comes from the Upper Ediacaran, with a single fossil found in the Nama Group, Namibia (Africa). It is a small, cone-shaped lifeform, with the known height at 5 cm, although its likely to have been taller. What we do have preserved shows that the 'cone' was covered in many oval shaped depressions, which were evenly spaced. Due to the little information we have to go on, Ausia has seen many interpretations, first being reconstructed as a pennatulacean"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ausia",
+			"type": "text",
+			"text": "coral, although this was quickly disputed, as there are not only no polpys preserved, there are currently no known fossil records of the corals, which would have created possibly the largest fossil gap of over 500 million years. Later studies saw it reconstructed as a sponge-like organism, an archeocyathan, and even a true-sponge, although again these were disputed, although other sponges have been found, like Arimasia. Another more recent study saw it reconstructed"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ausia",
+			"type": "text",
+			"text": "as a Halkieriid, a type of mollusc, although this has seemingly too met a dead end. Currently, the most accepted and likely interpretation is that Ausia may in fact be a early ascidian, a type of tunicate. This resulted from a study done on a strikingly similar organism, Burykhia, which was also noted to possibly be a ascidian tunicate as well. With this, most agree that Ausia is the earliest known tunicate, with Burykhia coming second, although some still doubt"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ausia",
+			"type": "text",
+			"text": "this classification, for example the Halkieriid interpretation was suggested again a few years after the tunicate interpretation. So, until better fossil material of Ausia is found, the debate continues."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ausia",

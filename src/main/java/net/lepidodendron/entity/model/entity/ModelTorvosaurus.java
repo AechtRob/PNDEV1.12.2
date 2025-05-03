@@ -591,15 +591,17 @@ public class ModelTorvosaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = -0.0F;
-        this.hips.offsetX = -1.1F;
+        this.hips.offsetY = 0.4F;
+        this.hips.offsetX = 0.1F;
+        this.hips.offsetZ = 2.0F;
         this.hips.rotateAngleY = (float)Math.toRadians(200);
         this.hips.rotateAngleX = (float)Math.toRadians(8);
         this.hips.rotateAngleZ = (float)Math.toRadians(-8);
         this.hips.scaleChildren = true;
-        float scaler = 1.0F;
+        float scaler = 0.525F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(hips, 0.2F, 3.6F, -0.1F);
         this.setRotateAngle(tail7, -0.2214F, 0.1704F, -0.0381F);
         this.setRotateAngle(tail6, -0.1329F, 0.173F, -0.023F);
         this.setRotateAngle(tail5, -0.1772F, 0.1719F, -0.0306F);
@@ -642,7 +644,6 @@ public class ModelTorvosaurus extends ModelBasePalaeopedia {
         this.setRotateAngle(immobile10, 0.192F, 0.0F, 0.0F);
         this.setRotateAngle(immobile, 0.0436F, 0.0F, 0.0F);
         this.setRotateAngle(immmobile, 0.0427F, -0.1004F, 0.0013F);
-        //this.setRotateAngle(hips, -0.1288F, -0.8249F, 0.0948F);
         this.setRotateAngle(head, 0.1314F, -0.0865F, -0.0114F);
         this.setRotateAngle(cube_r9, 0.0218F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r8, -0.5323F, 0.0F, 0.0F);

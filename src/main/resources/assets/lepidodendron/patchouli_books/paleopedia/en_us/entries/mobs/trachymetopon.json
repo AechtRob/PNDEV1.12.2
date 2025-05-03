@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Sarcopterygii$(br)>Actinistia$(br)>Coelacanthiformes$(br)>Mawsoniidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/trachymetopon.png"],
-			"title": "T. liasicum",
-			"text": ""
+			"type": "entity",
+			"name": "T. liasicum",
+			"entity": "lepidodendron:prehistoric_flora_trachymetopon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_trachymetopon",
@@ -25,7 +26,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_trachymetopon",
 			"type": "text",
-			"text": "The vast majority of  Mawsoniids lived in either freshwater or brackish water environments."
+			"text": "The vast majority of mawsoniids lived in either freshwater or brackish water environments."
 		},
 		{
 			"type": "lepidodendron:diet",

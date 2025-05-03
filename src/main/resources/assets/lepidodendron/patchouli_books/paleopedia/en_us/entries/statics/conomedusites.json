@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_conomedusites",
 			"title": "Conomedusites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis (Cnidaria ?)"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Shallow Marine$(br2)>$(o)incertae sedis (Cnidaria ?)"
 		},
 		{
 			"type": "multiblock",

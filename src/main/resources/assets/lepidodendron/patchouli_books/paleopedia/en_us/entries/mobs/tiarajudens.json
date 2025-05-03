@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Anomodontia$(br)>Anomocephaloidea"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/tiarajudens.png"],
-			"title": "T. eccentricus",
-			"text": ""
+			"type": "entity",
+			"name": "T. eccentricus",
+			"entity": "lepidodendron:prehistoric_flora_tiarajudens",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tiarajudens",

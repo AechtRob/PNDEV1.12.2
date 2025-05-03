@@ -218,9 +218,47 @@ public class ModelThanahita extends ModelBasePalaeopedia {
         resetToDefaultPose();
 
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -3.0F;
+        this.body.offsetX = 1.8F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(120);
+        this.body.rotateAngleX = (float)Math.toRadians(0);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 6.0F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(armL, -0.4363F, 0.0F, -0.2182F);
+        this.setRotateAngle(armL2, -0.2618F, 0.0F, -0.3491F);
+        this.setRotateAngle(armR2, -0.4363F, 0.0F, 0.2182F);
+        this.setRotateAngle(armR3, -0.2618F, 0.0F, 0.3491F);
+        this.setRotateAngle(head, 0.2182F, 0.0436F, 0.0F);
+        this.setRotateAngle(legL, 0.0F, 0.0F, -0.6981F);
+        this.setRotateAngle(legL2, 0.0F, 0.0F, -0.6981F);
+        this.setRotateAngle(legL3, 0.0F, 0.0F, -0.6981F);
+        this.setRotateAngle(legL4, 0.0F, 0.0F, -0.5236F);
+        this.setRotateAngle(legL5, 0.0F, 0.0F, -0.5236F);
+        this.setRotateAngle(legL6, 0.4363F, 0.0F, -0.5236F);
+        this.setRotateAngle(legL7, 0.48F, 0.0F, -0.2618F);
+        this.setRotateAngle(legR, 0.0F, 0.0F, 0.6981F);
+        this.setRotateAngle(legR2, 0.0F, 0.0F, 0.6981F);
+        this.setRotateAngle(legR3, 0.0F, 0.0F, 0.6981F);
+        this.setRotateAngle(legR4, 0.0F, 0.0F, 0.5236F);
+        this.setRotateAngle(legR5, 0.0F, 0.0F, 0.5236F);
+        this.setRotateAngle(legR6, 0.4363F, 0.0F, 0.5236F);
+        this.setRotateAngle(legR7, 0.48F, 0.0F, 0.2618F);
+        this.setRotateAngle(neck, -0.2182F, 0.1309F, 0.0F);
+        this.setRotateAngle(tail, -0.0873F, 0.0873F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

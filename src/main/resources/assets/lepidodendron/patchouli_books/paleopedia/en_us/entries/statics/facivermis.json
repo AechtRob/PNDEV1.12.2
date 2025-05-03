@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_facivermis",
 			"title": "Facivermis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Ecdysozoa$(br)>Panarthropoda$(br)>Lobopodia$(br)>Luolishaniidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Ecdysozoa$(br)>Panarthropoda$(br)>Lobopodia$(br)>Luolishaniidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/facivermis.png"],
-			"title": "F. yunnanicus",
-			"text": ""
+			"type": "multiblock",
+			"name": "F. yunnanicus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:facivermis",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_facivermis",

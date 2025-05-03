@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cloudina",
 			"title": "Cloudina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis$(br)>Cloudinidae"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran) - [Cambrian]$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis$()$(br)>Cloudinidae"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_cloudina",
 			"type": "text",
-			"text": "Cloudina is an Ediacaran animal of uncertain placement. They consist of many cones nested within each other. Their mode of life is currently still in debate and unresolved."
+			"text": "Cloudina hails from the Upper Ediacaran into the Lower-most Cambrian, with fossils found across the globe on almost every major continent. Whilst small, it is amongst one of the larger tubular forms in the Ediacaran, growing up to 15 cm in height. The morphology of their tubes consisted of little vases stacked on top of one another, and whilst the composition of the tubes remains unknown, it is possibly made from high-magnesium calcite. As for its mode of life,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cloudina",
+			"type": "text",
+			"text": "most suggest that it remained embedded in microbial mats, always growing new cones to avoid being engulfed, although it must be noted no specimens to date have been found in mats, leaving their mode of life a mystery."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cloudina",

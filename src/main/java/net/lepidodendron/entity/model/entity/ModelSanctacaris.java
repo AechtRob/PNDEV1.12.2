@@ -776,9 +776,71 @@ public class ModelSanctacaris extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Head.render(f5);
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Head.offsetY = -2.6F;
+        this.Head.offsetX = 0.2F;
+        this.Head.offsetZ = 2.0F;
+        this.Head.rotateAngleY = (float)Math.toRadians(120);
+        this.Head.rotateAngleX = (float)Math.toRadians(0);
+        this.Head.rotateAngleZ = (float)Math.toRadians(0);
+        this.Head.scaleChildren = true;
+        float scaler = 6.0F;
+        this.Head.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Head, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.00F, 0.0F);
+        this.setRotateAngle(legR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR2, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR3, -0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(legR4, 0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(legR5, 0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(legR6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR7, 0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(legR8, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(legR9, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR10, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(legR11, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR12, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR13, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR14, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR15, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR16, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL5, 0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(legL6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL7, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL8, 0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(legL9, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL10, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL11, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL12, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL13, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL14, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL15, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL16, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jawR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jawR2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jawR3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jawR4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jawR5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jawL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jawL2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jawL3, 0.0F, 0.001F, 0.0F);
+        this.setRotateAngle(jawL4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jawL5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.5F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Head.render(f);
+        //Reset rotations, positions and sizing:
+        this.Head.setScale(1.0F, 1.0F, 1.0F);
+        this.Head.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

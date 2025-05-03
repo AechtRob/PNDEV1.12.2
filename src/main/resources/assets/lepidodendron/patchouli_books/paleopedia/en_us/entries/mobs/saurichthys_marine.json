@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Saurichthyiformes$(br)>Saurichthyidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/saurichthys_marine.png"],
-			"title": "Saurichthys sp.",
-			"text": ""
+			"type": "entity",
+			"name": "Saurichthys sp.",
+			"entity": "lepidodendron:prehistoric_flora_saurichthys_marine",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_saurichthys",
@@ -25,17 +26,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_saurichthys",
 			"type": "text",
-			"text": "The anal and dorsal fins were moved towards the end of the body to make full use of the propulsion created by the tail while the skin was left bare of scales if not for a few spots along the back.  The shape of the body, reminiscent of that of modern day pikes, lead to the hypothesis that this animal must’ve been an ambush predator able of quick bursts of speed, a particularly "
+			"text": "The anal and dorsal fins were moved towards the end of the body to make full use of the propulsion created by the tail while the skin was left bare of scales if not for a few spots along the back. The shape of the body, reminiscent of that of modern day pikes, lead to the hypothesis that this animal must’ve been an ambush predator able of quick bursts of speed, a particularly puzzling issue as animals like those usually require specific environments to survive,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_saurichthys",
 			"type": "text",
-			"text": "puzzling issue as animals like those usually require specific environments to survive, making their range more specific rather than general, in full opposition to the almost cosmopolitan range of Saurichthys.  Saurichthys is among the earliest known cases of viviparity in actinopterygian fishes, with specimens from Monte San Giorgio (famous Triassic fossil locality from Switzerland and Italy)"
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_saurichthys",
-			"type": "text",
-			"text": "preserving pregnant females and their unborn embryos."
+			"text": "making their range more specific rather than general, in full opposition to the almost cosmopolitan range of Saurichthys.  Saurichthys is among the earliest known cases of viviparity in actinopterygian fishes, with specimens from Monte San Giorgio (famous Triassic fossil locality from Switzerland and Italy) preserving pregnant females and their unborn embryos."
 		},
 		{
 			"type": "lepidodendron:diet",

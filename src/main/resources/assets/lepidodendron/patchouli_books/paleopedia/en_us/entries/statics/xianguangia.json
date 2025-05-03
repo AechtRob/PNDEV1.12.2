@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_xianguangia",
 			"title": "Xianguangia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>$(o)incertae sedis"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Xianguangia.png"],
-			"title": "X. sinica",
-			"text": ""
+			"type": "multiblock",
+			"name": "X. sinica",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:xianguangia",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_xianguangia",

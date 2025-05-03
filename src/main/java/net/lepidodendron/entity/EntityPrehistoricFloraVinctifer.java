@@ -208,7 +208,7 @@ public class EntityPrehistoricFloraVinctifer extends EntityPrehistoricFloraAgeab
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.ASPIDORHYNCHUS_LOOT;
+		return LepidodendronMod.VINCTIFER_LOOT;
 	}
 
 	//Rendering taxidermy:

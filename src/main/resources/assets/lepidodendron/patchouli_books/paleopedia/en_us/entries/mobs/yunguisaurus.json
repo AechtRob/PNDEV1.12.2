@@ -21,17 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_yunguisaurus",
 			"type": "text",
-			"text": "Yunguisaurus liae is a species of late Triassic sauropterygian reptile from today’s China. This animal is known from an almost complete skeleton from the Falang formation, described for the first time in 2006."
+			"text": "Yunguisaurus liae is a species of Upper Triassic sauropterygian reptile from China. This animal is known from an almost complete 1.7 m long skeleton, with a full length estimated at 2.3 m, from the Falang formation, and was described for the first time in 2006. Like other pistorasurids, Yunguisaurus sported a series of characteristics between the more basal nothosaurids and the more derived plesiosaurids both in the skull and arms. Unlike nothosaurus,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_yunguisaurus",
 			"type": "text",
-			"text": "Like other pistorasurids, Yunguisaurus sported a series of characteristics between the more basal Nothosaurids and the more derived plesiosaurids both in the skull and arms."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_yunguisaurus",
-			"type": "text",
-			"text": "Unlike Nothosaurus, which had still quite developed arms, Yunguisaurus had flattened paddle like flipper more closely associated with the Jurassic long necked marine reptiles."
+			"text": "which had still quite developed arms, Yunguisaurus had flattened paddle like flippers more closely associated with the Jurassic long necked marine reptiles. The generic name derives from the place name of 'Yúnguì Gāoyuán Plateau', which resides in the same place were the fossil material was found; and the Greek word 'sauros', to mean 'lizard'. The specific name derives from the surname of Professor Jinling Li, for aiding in the study of Chinese Triassic marine fauna."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_crumillospongia",
 			"title": "Crumillospongia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Porifera$(br)>Demospongiae$(br)>Protomonaxonida$(br)>Hazeliidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Porifera$(br)>Demospongiae$(br)>Protomonaxonida$(br)>Hazeliidae"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_crumillospongia",
 			"type": "text",
-			"text": "Crumillospongia Comes from the Middle Cambrian, with fossils found in the Burgess Shale, Canada and Murero Lagerstätte, Spain. It is bag-like sponge with a large opening at its top, and could grow up to 15 cm in overall size. The generic name derives from the Latin words 'crumilla', to mean 'money purse'; and 'spongia', to mean 'sponge."
+			"text": "Crumillospongia comes from the Middle Cambrian, with fossils found in the Burgess Shale, Canada and Murero Lagerstätte, Spain. It is bag-like sponge with a large opening at its top, and could grow up to 15 cm in overall size. The generic name derives from the Latin words 'crumilla', to mean 'money purse'; and 'spongia', to mean 'sponge."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crumillospongia",

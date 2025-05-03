@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>$(o)incertae sedis"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/wingertshellicus.png"],
-			"title": "W. backesi",
-			"text": ""
+			"type": "entity",
+			"name": "W. backesi",
+			"entity": "lepidodendron:prehistoric_flora_wingertshellicus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_wingertshellicus",

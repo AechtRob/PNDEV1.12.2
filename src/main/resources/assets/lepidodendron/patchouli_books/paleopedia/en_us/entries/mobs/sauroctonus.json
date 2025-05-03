@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_sauroctonus",
 			"title": "Sauroctonus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/sauroctonus.png"],
-			"title": "S. progressus",
-			"text": ""
+			"type": "entity",
+			"name": "S. progressus",
+			"entity": "lepidodendron:prehistoric_flora_sauroctonus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_sauroctonus",
 			"type": "text",
-			"text": "Sauroctonus is a genus of gorgonopsid from the Late Permian period. They had a pair of canines on both the upper and lower jaws and the lower jaw formed a kind of chin. Sauroctonus was not as specialized as other gorgonopsids like Rubidgea and Inostrancevia and they also had very mammalian features despite not being an ancestor to mammals."
+			"text": "Sauroctonus is a genus of gorgonopsid from the Upper Permian. They had a pair of canines on both the upper and lower jaws and the lower jaw formed a kind of chin. Sauroctonus was not as specialized as other gorgonopsids like Rubidgea and Inostrancevia, and they also had very mammalian features despite not being an ancestor to mammals."
 		},
 		{
 			"type": "lepidodendron:diet",

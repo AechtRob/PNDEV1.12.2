@@ -362,9 +362,72 @@ public class ModelThecodontosaurus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Thecodontosaurus.render(f5);
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Thecodontosaurus.offsetY = 0.0F;
+        this.Thecodontosaurus.offsetX = -0.2F;
+        this.Thecodontosaurus.offsetZ = 2.0F;
+        this.Thecodontosaurus.rotateAngleY = (float)Math.toRadians(120);
+        this.Thecodontosaurus.rotateAngleX = (float)Math.toRadians(0);
+        this.Thecodontosaurus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Thecodontosaurus.scaleChildren = true;
+        float scaler = 0.8F;
+        this.Thecodontosaurus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Thecodontosaurus, 0.2F, 3.8F, -0.2F);
+        this.setRotateAngle(HindlimbR, -0.8859F, 0.1016F, 0.0827F);
+        this.setRotateAngle(KneeR, 1.2217F, 0.0F, 0.0F);
+        this.setRotateAngle(MetatarsalsR, -1.2217F, 0.0F, 0.0F);
+        this.setRotateAngle(PesR, 1.7366F, 0.0F, 0.0F);
+        this.setRotateAngle(HindlimbL, -0.2356F, 0.0F, 0.0F);
+        this.setRotateAngle(KneeL, 0.9163F, 0.0F, 0.0F);
+        this.setRotateAngle(MetatarsalsL, -0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(PesL, 0.1658F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(Chest, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(Breast_CoracoidBristlescrest_r1, 0.2269F, 0.0F, 0.0F);
+        this.setRotateAngle(ForearmR, 0.9001F, -0.149F, 0.2161F);
+        this.setRotateAngle(ElbowR, -1.2654F, 0.0F, 0.0F);
+        this.setRotateAngle(ManusR, 0.0F, 0.0F, -0.5236F);
+        this.setRotateAngle(Ungual_r1, 0.6156F, 0.5713F, -0.2713F);
+        this.setRotateAngle(ForearmL, 1.0472F, -0.2291F, -0.3747F);
+        this.setRotateAngle(ElbowL, -1.4353F, 0.2595F, 0.035F);
+        this.setRotateAngle(ManusL, 0.0F, 0.0F, 0.4363F);
+        this.setRotateAngle(Ungual_r2, 0.6156F, -0.5713F, 0.2713F);
+        this.setRotateAngle(Neck1, -0.2751F, 0.7258F, -0.015F);
+        this.setRotateAngle(Neck_basebristles_r1, -0.1222F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck_base_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, -0.0056F, 0.3477F, -0.0317F);
+        this.setRotateAngle(Neck_bodybristles_r1, -0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck_body_r1, -0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck3, 0.2679F, 0.2106F, 0.0573F);
+        this.setRotateAngle(Cervicalbristles_r1, -0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(ThroatPouch, 1.0036F, 0.0F, 0.0F);
+        this.setRotateAngle(Throat_pouch_r1, -1.4399F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.4356F, -0.0114F, 0.1304F);
+        this.setRotateAngle(maxillaryteeth_r1, 0.0F, 0.1047F, 0.0F);
+        this.setRotateAngle(maxillaryteeth_r2, 0.0F, -0.1047F, 0.0F);
+        this.setRotateAngle(Premaxillaproximal_r1, 0.0253F, -0.0053F, -0.0098F);
+        this.setRotateAngle(Premaxilladistal_r1, -0.2705F, 0.0F, 0.0F);
+        this.setRotateAngle(Nasalridgedistal_r1, 0.2269F, 0.0F, 0.0F);
+        this.setRotateAngle(Nasalridgeproximal_r1, 0.0698F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(Dentaryteeth_r1, 0.0F, 0.1047F, 0.0F);
+        this.setRotateAngle(Dentaryteeth_r2, 0.0F, -0.1047F, 0.0F);
+        this.setRotateAngle(Tail1, 0.07F, -0.1309F, -0.0034F);
+        this.setRotateAngle(Tail2, 0.1661F, -0.1308F, -0.0046F);
+        this.setRotateAngle(Tail3, -0.1309F, -0.1745F, 0.0F);
+        this.setRotateAngle(Caudal_Bodydistal_r1, -0.0524F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail4, -0.0873F, -0.1745F, 0.0F);
+        this.setRotateAngle(Caudaldistal_r1, -0.2094F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail5, -0.4363F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Thecodontosaurus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Thecodontosaurus.setScale(1.0F, 1.0F, 1.0F);
+        this.Thecodontosaurus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

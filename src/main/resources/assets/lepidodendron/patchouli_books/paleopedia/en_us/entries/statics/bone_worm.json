@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_bone_worm",
 			"title": "Osedax",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous - Present$(br2)>Annelida$(br)>Pleistoannelida$(br)>Sedentaria$(br)>Sabellida$(br)>Siboglinidae"
+			"text": "$(l)Temporal Range:$() Cretaceous - Present$(br2)$(l)Habitat:$() Deep Marine$(br2)>Annelida$(br)>Pleistoannelida$(br)>Sedentaria$(br)>Sabellida$(br)>Siboglinidae"
 		},
 		{
 			"type": "multiblock",

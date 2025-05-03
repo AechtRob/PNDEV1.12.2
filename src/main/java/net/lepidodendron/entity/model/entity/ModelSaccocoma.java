@@ -324,9 +324,36 @@ public class ModelSaccocoma extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);        this.Base.render(f5);
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Base.offsetY = -2.4F;
+        this.Base.offsetX = 0.0F;
+        this.Base.offsetZ = 2.0F;
+        this.Base.rotateAngleY = (float)Math.toRadians(120);
+        this.Base.rotateAngleX = (float)Math.toRadians(0);
+        this.Base.rotateAngleZ = (float)Math.toRadians(0);
+        this.Base.scaleChildren = true;
+        float scaler = 3.0F;
+        this.Base.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Base, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Arm1, 0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(Arm2, -0.7F, 0.3F, 0.0F);
+        this.setRotateAngle(Arm3, 0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(Arm4, -0.7F, 0.3F, 0.0F);
+        this.setRotateAngle(Arm5, 0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(Arm6, -0.7F, 0.3F, 0.0F);
+        this.setRotateAngle(Arm7, 0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(Arm8, -0.7F, 0.3F, 0.0F);
+        this.setRotateAngle(Arm9, 0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(Arm10, -0.7F, 0.3F, 0.0F);
+        //End of pose, now render the model:
+        this.Base.render(f);
+        //Reset rotations, positions and sizing:
+        this.Base.setScale(1.0F, 1.0F, 1.0F);
+        this.Base.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

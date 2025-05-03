@@ -242,6 +242,47 @@ public class ModelThrissops extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Thrissops.offsetY = -0.2F;
+        this.Thrissops.offsetX = 1.6F;
+        this.Thrissops.offsetZ = 2.0F;
+        this.Thrissops.rotateAngleY = (float)Math.toRadians(120);
+        this.Thrissops.rotateAngleX = (float)Math.toRadians(0);
+        this.Thrissops.rotateAngleZ = (float)Math.toRadians(0);
+        this.Thrissops.scaleChildren = true;
+        float scaler = 1.4F;
+        this.Thrissops.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Thrissops, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(cube_r1, -0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.1833F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.4538F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.5585F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.192F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0401F, -0.05F, -0.0102F);
+        this.setRotateAngle(cube_r6, 0.192F, 0.0F, 0.0F);
+        this.setRotateAngle(PectoralL, -0.4274F, 0.4424F, -0.1926F);
+        this.setRotateAngle(PectoralR, -0.4274F, -0.4424F, 0.1926F);
+        this.setRotateAngle(Body2, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.0349F, 0.0F, 0.0F);
+        this.setRotateAngle(VentralL, -0.6713F, 0.2068F, -0.1617F);
+        this.setRotateAngle(VentralR, -0.6713F, -0.2068F, 0.1617F);
+        this.setRotateAngle(Body3, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.0349F, 0.0F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.4363F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.192F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.5236F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.2443F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.2443F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Thrissops.render(f);
+        //Reset rotations, positions and sizing:
+        this.Thrissops.setScale(1.0F, 1.0F, 1.0F);
+        this.Thrissops.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

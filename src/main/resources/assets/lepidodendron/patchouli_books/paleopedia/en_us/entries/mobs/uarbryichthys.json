@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_uarbryichthys",
 			"title": "Uarbryichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Macrosemiiformes"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Ginglymodi$(br)>Macrosemiiformes"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/uarbryichthys.png"],
-			"title": "U. latus",
-			"text": ""
+			"type": "entity",
+			"name": "U. latus",
+			"entity": "lepidodendron:prehistoric_flora_uarbryichthys",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_uarbryichthys",

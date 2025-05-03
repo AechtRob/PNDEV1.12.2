@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Thyreophora$(br)>Stegosauria"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/tuojiangosaurus.png"],
-			"title": "T. multispinus",
-			"text": ""
+			"type": "entity",
+			"name": "T. multispinus",
+			"entity": "lepidodendron:prehistoric_flora_tuojiangosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tuojiangosaurus",

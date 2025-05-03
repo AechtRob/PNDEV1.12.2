@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ctenophora$(br)>Scleroctenophora"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/thaumactena.png"],
-			"title": "T. ensis",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "T. ensis",
+			"entity": "lepidodendron:prehistoric_flora_thaumactena",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_thaumactena",

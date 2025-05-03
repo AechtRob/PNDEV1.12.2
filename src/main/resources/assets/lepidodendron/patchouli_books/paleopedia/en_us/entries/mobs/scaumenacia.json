@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Sarcopterygii$(br)>Dipnoi$(br)>Phaneropleuridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/scaumenacia.png"],
-			"title": "S. curta",
-			"text": ""
+			"type": "entity",
+			"name": "S. curta",
+			"entity": "lepidodendron:prehistoric_flora_scaumenacia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_scaumenacia",

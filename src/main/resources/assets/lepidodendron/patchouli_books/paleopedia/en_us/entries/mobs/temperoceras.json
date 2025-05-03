@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Ordovician - Devonian$(br2)>Mollusca$(br)>Nautiloidea$(br)>Orthocerida$(br)>Geisonoceratidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/temperoceras.png"],
-			"title": "T. ludense",
-			"text": ""
+			"type": "entity",
+			"name": "T. ludense",
+			"entity": "lepidodendron:prehistoric_flora_temperoceras",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_temperoceras",

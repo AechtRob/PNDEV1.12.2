@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_brachiopod_micromitra",
 			"title": "Micromitra",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Brachiopoda$(br)>Paterinata$(br)>Paterinida$(br)>Paterinidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Brachiopoda$(br)>Paterinata$(br)>Paterinida$(br)>Paterinidae"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_brachiopod_micromitra",
 			"type": "text",
-			"text": "Micromitra hails from the Middle to Upper Cambrian, with fossils found in the Burgess Shale, Canada. It is a semi-circular brachiopod, that was suspended above the seafloor via a small stalk, and grew up to 1 cm in overall size. The generic name derives from the Greek words 'mikros', to mean 'small'; and 'mitra', to mean 'turban'."
+			"text": "Micromitra comes from the Upper Cambrian, with fossils found in the Burgess Shale, Canada. It is a semi-circular brachiopod, that was suspended above the seafloor via a small stalk, and grew up to 1 cm in overall size. The generic name derives from the Greek words 'mikros', to mean 'small'; and 'mitra', to mean 'turban'."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_brachiopod_micromitra",

@@ -21,7 +21,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_spriggina",
 			"type": "text",
-			"text": "Spriggina is a bilaterian animal from the late Ediacaran period. It is made up of several interlocking plates and many fused segments. It was probably predatory."
+			"text": "Spriggina floundersi comes from the Upper Ediacaran, with fossils found in the Ediacara Hills, South Australia. It is a small, worm-like proarticulate, which grew up to 5 cm in length. Whilst superficially resembling a bilterian animal, like a worm or arthropod, it has the standard glide symmetry of most fauna found in the Ediacaran, as such it is currently placed into the phylum Proarticulata. It has a distinct 'head' at its front, which possibly may have bore eyes"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spriggina",
+			"type": "text",
+			"text": "and even a circular mouth which may suggest a predatory lifestyle, although due to the small size of all specimens and the large grains of the sandstones they are preserved in, these may not be features that Spriggina had in life."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spriggina",
+			"type": "text",
+			"text": "The generic name derives from the Latinised surname of Reg Sprigg, who was the first to discover the fossils within the Flinders Ranges during an inspection of abandoned mines within the area. The specific name derives from the surname of Ben Flounders, an amateur South Australian fossil hunter."
 		},
 		{
 			"type": "lepidodendron:diet",

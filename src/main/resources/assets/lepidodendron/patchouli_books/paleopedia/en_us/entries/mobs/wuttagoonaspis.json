@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_wuttagoonaspis",
 			"title": "Wuttagoonaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Arthrodira$(br)>Wuttagoonaspidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Wuttagoonaspidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/wuttagoonaspis.png"],
-			"title": "W. fletcheri",
-			"text": ""
+			"type": "entity",
+			"name": "W. fletcheri",
+			"entity": "lepidodendron:prehistoric_flora_wuttagoonaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_wuttagoonaspis",

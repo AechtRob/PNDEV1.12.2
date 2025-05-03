@@ -21,12 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_uteodon",
 			"type": "text",
-			"text": "Uteodon is a genus of basal Iguanodontian dinosaur from the late Jurassic of North America. This genus' size is sometimes debated as its placement as it's own thing has for long remained uncertain, with some estimates placing it as long as 6 m based on Camptosaurus while others estimating it as small as 2.5 m across, based on confirmed fossil material."
+			"text": "Uteodon is a genus of basal iguanodontian dinosaur from the Upper Jurassic of North America. This genus' size is sometimes debated as its placement as it's own thing has for long remained uncertain, with some estimates placing it as long as 6 m based on Camptosaurus while others estimating it as small as 2.5 m across, based on confirmed fossil material."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_uteodon",
 			"type": "text",
-			"text": "First discovered in 1925 based on an almost complete specimen, the animal was first assigned to the species Camptosaurus medius, synonymized with Camptosaurus dispar in 1980 prompting the creation of the new species Camptosaurus aphanoecetes to accomodate the remains in 2008; the animal would then be reassigned to its own genus in 2011 only to be synonymized with Camptosaurus again four years later."
+			"text": "First discovered in 1925 based on an almost complete specimen, the animal was first assigned to the species Camptosaurus medius, synonymized with Camptosaurus dispar in 1980 prompting the creation of the new species Camptosaurus aphanoecetes to accommodate the remains in 2008; the animal would then be reassigned to its own genus in 2011 only to be synonymized with Camptosaurus again four years later."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_uteodon",
@@ -36,7 +36,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_uteodon",
 			"type": "text",
-			"text": "Camarasaurus, Stegosaurus and more, all of which are known from the same digsite the single specimen of Uteodon came from. The environment it lived in was also rich in flora like Ginkgos, Conifers and Cycads, which seemingly dominated the landscape during the Late Jurassic of what is today the Dry Mesa Quarry in the Morrison Formation."
+			"text": "Camarasaurus, Stegosaurus and more, all of which are known from the same digsite the single specimen of Uteodon came from. The environment it lived in was also rich in flora like Ginkgos, Conifers and Cycads, which seemingly dominated the landscape during the Upper Jurassic of what is today the Dry Mesa Quarry in the Morrison Formation."
 		},
 		{
 			"type": "lepidodendron:diet",
