@@ -11,6 +11,7 @@ import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.item.entities.ItemNotopala;
 import net.lepidodendron.item.entities.ItemTessarolax;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -192,7 +193,7 @@ public class EntityPrehistoricFloraNotopala extends EntityPrehistoricFloraSlithe
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		if (!this.world.isRemote && !this.isDead) {
 			if ("player".equals(source.getDamageType())) {
-				EntityItem entityToSpawn = new EntityItem(world, this.posX, this.posY, this.posZ, new ItemStack(ItemTessarolax.block, (int) (1)));
+				EntityItem entityToSpawn = new EntityItem(world, this.posX, this.posY, this.posZ, new ItemStack(ItemNotopala.block, (int) (1)));
 				entityToSpawn.setPickupDelay(10);
 				world.spawnEntity(entityToSpawn);
 				if (this.world instanceof WorldServer)
