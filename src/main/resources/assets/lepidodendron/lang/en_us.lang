@@ -10932,6 +10932,10 @@ item.pf_eggs_rechnisaurus.name=Rechnisaurus Eggs
 item.pf_eggs_prenocephale.name=Prenocephale Eggs
 item.pf_eggs_vesperopterylus.name=Vesperopterylus Eggs
 item.pf_eggs_chaoyangopterus.name=Chaoyangopterus Eggs
+tile.pf_eggs_valdotriton.name=Valdotriton Spawn
+tile.pf_eggs_tadpole_cratopipa.name=Cratopipa Spawn
+tile.pf_eggs_tadpole_notobatrachus.name=Notobatrachus Spawn
+tile.pf_eggs_tadpole_prosalirus.name=Prosalirus Spawn
 
 
 

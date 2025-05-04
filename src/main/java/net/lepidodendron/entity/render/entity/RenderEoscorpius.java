@@ -15,7 +15,7 @@ public class RenderEoscorpius extends RenderLivingBaseWithBook<EntityPrehistoric
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eoscorpius_baby.png");
 
     public static float getScaler() {
-        return 0.32F * 0.4F;
+        return 0.32F * 0.65F;
     }
 
     public RenderEoscorpius(RenderManager mgr) {

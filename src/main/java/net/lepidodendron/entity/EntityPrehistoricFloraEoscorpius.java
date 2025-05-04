@@ -5,11 +5,14 @@ import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraScorpion;
 import net.lepidodendron.entity.render.entity.RenderScorpion_Gigantoscorpio;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
@@ -34,7 +37,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraEoscorpius extends EntityPrehistoricFloraScorpion implements ITrappableAir {
+public class EntityPrehistoricFloraEoscorpius extends EntityPrehistoricFloraScorpion implements ITrappableAir, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -50,7 +53,7 @@ public class EntityPrehistoricFloraEoscorpius extends EntityPrehistoricFloraScor
 			maxHealthAgeable = 1.0D;
 		}
 		else {
-			maxHealthAgeable = 5.0D;
+			maxHealthAgeable = 3.0D;
 		}
 	}
 
@@ -71,7 +74,7 @@ public class EntityPrehistoricFloraEoscorpius extends EntityPrehistoricFloraScor
 
 	@Override
 	public float getAISpeedLand() {
-		return 0.4F;
+		return 0.3F;
 	}
 
 	public static String getPeriod() {return "Carboniferous - Permian";}
@@ -160,6 +163,12 @@ public class EntityPrehistoricFloraEoscorpius extends EntityPrehistoricFloraScor
 			super.dropLoot(wasRecentlyHit, lootingModifier, source);
 		}
 
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_EOSCORPIUS;
 	}
 
 	//-------------------
