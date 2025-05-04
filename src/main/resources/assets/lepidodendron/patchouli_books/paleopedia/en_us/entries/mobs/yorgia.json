@@ -21,7 +21,22 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_yorgia",
 			"type": "text",
-			"text": "Yorgia is a disk like Ediacaran organism with no appendages and several segments to its body. It moved along the sea floor as evidenced by trace fossils associated with Yorgia."
+			"text": "Yorgia waggoneri comes from the Upper Ediacaran, with fossils found in the White Sea and Central Urals, Russia, and Flinders Ranges, South Australia. It is a small, but fairly sizable and discoidal proarticulate, growing up to 25 cm in length. Like most other proarticulates, it is made up of isomers which are put together in a 'glide reflection' symmetry, although unlike most, the front first right-hand isomer goes across the width of the entire body, forming "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yorgia",
+			"type": "text",
+			"text": "something akin to a 'head', similar to other cephalozoans like Spriggina and Andiva. Whilst incredibly rare, there have been many positive trace fossils of Yorgia found, assigned to the ichnogenus $(o)'Epibaion'$() as $(o)'E. waggoneris'$(), which often occur in chains, and sometimes even have the negative imprint (death-mask) of Yorgia itself at the end of a chain. Most agree that these trace fossils are of feeding traces, which showed for the first time,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yorgia",
+			"type": "text",
+			"text": "definitive evidence that proarticulates were not only capable of movement, but were even capable of feeding upon the microbial mat in which they moved over. It has been suggested that this may have been done through the use of cilia on the underside of the body to slowly scrape, or graze, on the microbial mat and lift it into spaces between the isomers, which is backed up by chevron-like marks within the feeding traces themselves."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yorgia",
+			"type": "text",
+			"text": "The generic name derives from the place name of 'Yorga river', near to where the first fossil material was found. The specific name derives from the surname of Ben Waggoner, an American palaeontologist who found the first specimen."
 		},
 		{
 			"type": "lepidodendron:diet",

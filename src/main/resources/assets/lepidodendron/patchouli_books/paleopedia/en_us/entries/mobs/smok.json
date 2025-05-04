@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_smok",
 			"title": "Smok",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria ?"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauromorpha$(br)>$(o)Archosauria (?)"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/smok.png"],
-			"title": "S. wawelski",
-			"text": ""
+			"type": "entity",
+			"name": "S. wawelski",
+			"entity": "lepidodendron:prehistoric_flora_smok",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_smok",
 			"type": "text",
-			"text": "Smok lived in what is now Poland, in an ecosystem of seasonally wet forests surrounding an extensive inland shallow sea. It was probably an apex predator of its ecosystem during the late Triassic. Its remains are incompletely known; they indicate an archosaur creature rather like Pseudosuchian Rauisuchians such as Postosuchus, but with some characteristics intriguingly close to forebears of Theropod dinosaurs:"
+			"text": "Smok lived in what is now Poland, in an ecosystem of seasonally wet forests surrounding an extensive inland shallow sea. It was probably an apex predator of its ecosystem during the late Triassic. Its remains are incompletely known; they indicate an archosaur creature rather like pseudosuchian rauisuchians such as Postosuchus, but with some characteristics intriguingly close to forebears of theropod dinosaurs:"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_smok",

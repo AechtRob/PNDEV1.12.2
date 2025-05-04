@@ -12,15 +12,26 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Cyrtocrinida$(br)>Phyllocrinidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/phyllocrinus.png"],
-			"title": "P. bersekensis",
-			"text": ""
+			"type": "multiblock",
+			"name": "P. malbosianus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_phyllocrinus[topshoot=true]",
+					"1": "lepidodendron:crinoid_phyllocrinus[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_phyllocrinus",
 			"type": "text",
-			"text": "Phyllocrinus is a genus of crinoid from the Jurassic and Cretaceous periods. It is characterized by a small bulb and long stems that attach it to the substrate. It was an epifaunal feeder that used its arms to catch floating prey."
+			"text": "Phyllocrinus is a genus of crinoid from the Jurassic period. It is characterized by a small bulb and long stems that attach it to the substrate. It was an epifaunal feeder that used its arms to catch floating prey."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_phyllocrinus",

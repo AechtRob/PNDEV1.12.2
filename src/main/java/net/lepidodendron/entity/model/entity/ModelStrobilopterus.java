@@ -182,8 +182,8 @@ public class ModelStrobilopterus extends ModelBasePalaeopedia {
         this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(Body2, 0.0F, 0.05F, 0.0F);
         this.setRotateAngle(Body3, 0.0F, 0.05F, 0.0F);
-        this.setRotateAngle(Body4, 0.0F, -0.05F, 0.0F);
-        this.setRotateAngle(Body5, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.05F, 0.0F);
         this.setRotateAngle(Body6, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(Telson, 0.0F, 0.0F, 0.0F);
         this.Body.offsetZ = -0.03F;
@@ -199,8 +199,9 @@ public class ModelStrobilopterus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Body.offsetY = 0.0F;
-        this.Body.offsetX = 1.5F;
+        this.Body.offsetY = -1.0F;
+        this.Body.offsetX = 2.0F;
+        this.Body.offsetZ = 2.0F;
         this.Body.rotateAngleY = (float)Math.toRadians(200);
         this.Body.rotateAngleX = (float)Math.toRadians(8);
         this.Body.rotateAngleZ = (float)Math.toRadians(-8);
@@ -208,11 +209,11 @@ public class ModelStrobilopterus extends ModelBasePalaeopedia {
         float scaler = 4.0F;
         this.Body.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(Body, 0.3F, -3.3F, 0.0F);
-        this.setRotateAngle(Body2, 0.0F, 0.9F, 0.0F);
-        this.setRotateAngle(Body3, 0.0F, 0.3F, 0.0F);
-        this.setRotateAngle(Body4, 0.0F, 0.3F, 0.0F);
-        this.setRotateAngle(Body5, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Body, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body2, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.05F, 0.0F);
         this.setRotateAngle(Body6, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(Telson, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:

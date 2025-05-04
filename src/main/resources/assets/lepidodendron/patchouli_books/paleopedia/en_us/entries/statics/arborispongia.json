@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_arborispongia",
 			"title": "Arborispongia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Bay$(br2)>Porifera $(br)>Demospongia $(br)>$(o)incertae sedis"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Bay$(br2)>Porifera$(br)>Demospongia$(br)>$(o)incertae sedis"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_arborispongia",
 			"type": "text",
-			"text": "Arborispongia is a genus of sponge known from Early Carboniferous. It is one of the most common sponges in the Bear Gulch Limestone. It is thought that this sponge had a branched form similar to that of a tree."
+			"text": "Arborispongia is a genus of sponge known from Lower Carboniferous. It is one of the most common sponges in the Bear Gulch Limestone. It is thought that this sponge had a branched form similar to that of a tree."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_arborispongia",

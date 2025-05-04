@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_cystoid_pseudocrinites",
 			"title": "Pseudocrinites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Rhombifera$(br)>Callocystitidae"
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Rhombifera$(br)>Callocystitidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Pseudocrinites.png"],
-			"title": "P. magnificus",
-			"text": ""
+			"type": "multiblock",
+			"name": "P. magnificus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:cystoid_pseudocrinites",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cystoid_pseudocrinites",

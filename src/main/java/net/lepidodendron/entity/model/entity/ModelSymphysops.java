@@ -265,6 +265,25 @@ public class ModelSymphysops extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Smalltrilo.offsetY = -1.6F;
+        this.Smalltrilo.offsetX = 4.4F;
+        this.Smalltrilo.offsetZ = 2.0F;
+        this.Smalltrilo.rotateAngleY = (float)Math.toRadians(120);
+        this.Smalltrilo.rotateAngleX = (float)Math.toRadians(0);
+        this.Smalltrilo.rotateAngleZ = (float)Math.toRadians(0);
+        this.Smalltrilo.scaleChildren = true;
+        float scaler = 6.0F;
+        this.Smalltrilo.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Smalltrilo, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Thorax1, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Smalltrilo.render(f);
+        //Reset rotations, positions and sizing:
+        this.Smalltrilo.setScale(1.0F, 1.0F, 1.0F);
+        this.Smalltrilo.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

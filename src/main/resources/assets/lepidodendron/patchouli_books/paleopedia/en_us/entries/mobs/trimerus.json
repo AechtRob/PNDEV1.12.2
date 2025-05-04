@@ -21,7 +21,13 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_trimerus",
 			"type": "text",
-			"text": "Trimerus is a small trilobite from the Silurian to Devonian periods. Its body had many little segments and it was a benthic feeder."
+			"text": "Trimerus hails from the Silurian into the Lower Devonian, with fossils found across the globe. It was a small trilobite, growing up to 20 cm in length, although this makes it the largest trilobite in North America. It had triangular cephalon and pygidium, with a thorax made up of 13 segments. The shape of its cephalon suggests a burrowing lifestyle, and was covered in many pores, which may have house small little hair-like structures in life, which would have allowed"
+		},
+
+		{
+			"advancement": "lepidodendron:pf_adv_book_trimerus",
+			"type": "text",
+			"text": "it to sense which parts of its body where under sediment."
 		},
 		{
 			"type": "lepidodendron:diet",

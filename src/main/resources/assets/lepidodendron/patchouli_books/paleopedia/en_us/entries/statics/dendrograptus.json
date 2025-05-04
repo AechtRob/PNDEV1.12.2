@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_dendrograptus",
 			"title": "Dendrograptus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Graptolithina$(br)>Dendroidea$(br)>Dendrograptidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Graptolithina$(br)>Dendroidea$(br)>Dendrograptidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Dendrograptus.png"],
-			"title": "Dendrograptus rigidus",
-			"text": ""
+			"type": "multiblock",
+			"name": "D. rigidus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:dendrograptus",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dendrograptus",

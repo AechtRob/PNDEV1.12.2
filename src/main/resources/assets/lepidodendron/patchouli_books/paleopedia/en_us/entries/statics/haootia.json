@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_haootia",
 			"title": "Haootia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$()  Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria(br)>Staurozoa"
+			"text": "$(l)Temporal Range:$()  Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Deep Marine$(br2)>Cnidaria$(br)>Staurozoa"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_haootia",
 			"type": "text",
-			"text": "Haootia quadriformis hails from the Upper Ediacaran, with fossils found from Newfoundland, Canada. It is a staurozoan, and could grow up to 6 cm in height, and possibly partook in filter feeding from the surrounding water, or eating any other fauna that were small enough to consume if the need arose. "
+			"text": "Haootia quadriformis comes from the Upper Ediacaran, with fossils found from Newfoundland, Canada. It is a small staurozoan, and could grow up to 6 cm in height, and possibly partook in filter feeding from the surrounding water, or eating any other fauna that were small enough to consume if the need arose."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_haootia",

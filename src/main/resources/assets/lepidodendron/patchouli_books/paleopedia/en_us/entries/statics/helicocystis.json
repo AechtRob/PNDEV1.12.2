@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_helicocystis",
 			"title": "Helicocystis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Helicocystitidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Echinodermata$(br2)$(l)Habitat:$() Marine$(br)>Helicocystitidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Helicocystis.png"],
-			"title": "H. moroccoensis",
-			"text": ""
+			"type": "multiblock",
+			"name": "H. moroccoensis",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:helicocystis",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_helicocystis",

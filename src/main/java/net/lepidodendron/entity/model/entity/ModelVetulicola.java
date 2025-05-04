@@ -96,6 +96,27 @@ public class ModelVetulicola extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Vetulicola.offsetY = -1.4F;
+        this.Vetulicola.offsetX = 0.6F;
+        this.Vetulicola.offsetZ = 2.0F;
+        this.Vetulicola.rotateAngleY = (float)Math.toRadians(120);
+        this.Vetulicola.rotateAngleX = (float)Math.toRadians(0);
+        this.Vetulicola.rotateAngleZ = (float)Math.toRadians(0);
+        this.Vetulicola.scaleChildren = true;
+        float scaler = 4.0F;
+        this.Vetulicola.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Vetulicola, 0.6F, 3.7F, -0.2F);
+        this.setRotateAngle(Tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.Vetulicola.render(f);
+        //Reset rotations, positions and sizing:
+        this.Vetulicola.setScale(1.0F, 1.0F, 1.0F);
+        this.Vetulicola.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

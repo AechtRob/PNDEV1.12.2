@@ -21,12 +21,22 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_uncus",
 			"type": "text",
-			"text": "Uncus dzaugisi comes from the Upper Ediacaran, with fossils from the Flinders Ranges, South Australia. It is a worm-like lifeform that could grow up to 3 cm in length. It is possibly the oldest known ecdysozoan, helping to further bridge the gap between the Ediacaran and Cambrian faunas."
+			"text": "Uncus dzaugisi comes from the Upper Ediacaran, with fossils from the Flinders Ranges, South Australia. It is a worm-like lifeform that could grow up to 3 cm in length. It is suggested that Uncus has a hardy external membrane, possibly evidence of an early cuticle, due to a majority of its fossil material showing no deformation, and also being quite deep for Ediacaran fossils, which are commonly shallow. Alongside this, the sharpness of all the fossil material"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_uncus",
 			"type": "text",
-			"text": "The generic name derives directly from the Latin word 'uncus', to mean 'hooked'. The specific name derives from the Latinised surnames of Mary, Matthew and Peter Dzaugis, who have contributed to the site in which Uncus was found."
+			"text": "shows that Uncus was free from the mature microbial mats that caked the area they were found in, unlike sessil forms like Obamus, which preserved with a blurred margin. The motility of Uncus is supported further by the existence of the ichnogenus $(o)'Multina'$(), near to where several Uncus specimens were found, which are now proposed to be the maker of. Several other specimens have also been found overlaying felled organisms, like Funisia, and even the feeding"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_uncus",
+			"type": "text",
+			"text": "traces of other motile forms like Dickinsonia. All of this suggests that Uncus may be the earliest known ecdysozoan discovered to date, with possible relations to the clade Nematoida, due to the overall morphology, the rigid and hooked nature of the fossil specimens, akin to postmortem positions of nematodes, alongside the appearance of the aforementioned $(o)'Multina'$(), which shows that Uncus may have had a similar locomotion to that of nematodes."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_uncus",
+			"type": "text",
+			"text": "Although it must be noted, there are several key details missing, like the absence of a stylet/esophagus, that make it difficult to properly assign it to Nematoida. The generic name derives directly from the Latin word 'uncus', to mean 'hooked'. The specific name derives from the Latinised surnames of Mary, Matthew and Peter Dzaugis, who have contributed to the site in which Uncus was found."
 		},
 		{
 			"type": "lepidodendron:diet",

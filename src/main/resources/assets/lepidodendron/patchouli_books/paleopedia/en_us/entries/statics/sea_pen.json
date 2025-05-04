@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_sea_pen",
 			"title": "Sea Pens",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian - Present$(br2)>Cnidaria$(br)>Octocorallia$(br)>Pennatulacea"
+			"text": "$(l)Temporal Range:$() Cambrian - Present$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Anthozoa$(br)>Octocorallia$(br)>Pennatulacea"
 		},
 		{
 			"type": "multiblock",
@@ -50,6 +50,11 @@
 			"advancement": "lepidodendron:pf_adv_book_sea_pen",
 			"type": "text",
 			"text": "Sea pens are very cosmopolitan, existing from tropical waters to deep seas, which also means the order is extremely genetically diverse as well. The oldest accepted sea pen is the genus $(l:statics/thaumaptilon)Thaumaptilon$(/l) found in the Burgess Shale from the Cambrian period."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dictyonema",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}
 	]
 }

@@ -12,10 +12,21 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Monobathrida$(br)>Batocrinidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Dizygocrinus.png"],
-			"title": "Dizygocrinus sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "Dizygocrinus sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_dizygocrinus[topshoot=true]",
+					"1": "lepidodendron:crinoid_dizygocrinus[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_dizygocrinus",

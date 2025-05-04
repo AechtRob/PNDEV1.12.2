@@ -7,9 +7,9 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_shantungosuchus",
-			"title": "S. chuhsienensis",
+			"title": "Shantungosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$()  Early Cretaceous$(br2)>Chordata$(br)>Archosauria$(br)>Pseudosuchia$(br)>Mesoeucrocodylia$(br)>Shartegosuchiodiea"
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Mesoeucrocodylia$(br)>Shartegosuchiodiea"
 		},
         	{
             "type": "entity",

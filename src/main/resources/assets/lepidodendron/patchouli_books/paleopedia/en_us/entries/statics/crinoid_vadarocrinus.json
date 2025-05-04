@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Cyathocrinida$(br)>Petalocrinidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Vadarocrinus.png"],
-			"title": "V. vassa",
-			"text": ""
+			"type": "multiblock",
+			"name": "V. vassa",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:crinoid_vadarocrinus",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_vadarocrinus",

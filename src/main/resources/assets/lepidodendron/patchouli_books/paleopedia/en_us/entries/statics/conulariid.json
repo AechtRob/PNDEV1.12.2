@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_conulariid",
 			"title": "Conulariids",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Precambrian? - Triassic$(br2)>Cnidaria $(br)>Conulatae $(br)>Conulariida"
+			"text": "$(l)Temporal Range:$() Precambrian (Ediacaran ?) - Triassic$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Cnidaria$(br)>Conulatae$(br)>Conulariida"
 		},
 		{
 			"type": "multiblock",
@@ -55,6 +55,11 @@
 			"advancement": "lepidodendron:pf_adv_book_conulariid",
 			"type": "text",
 			"text": "They are generally believed to have used their tentacles to ensnare prey, and as they grew older, conulariids may have become recumbent, or tipped over."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_conulariid",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}
 	]
 }

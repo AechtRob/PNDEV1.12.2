@@ -9,18 +9,29 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_macrocrinus",
 			"title": "Macrocrinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Monobathrida$(br)>Batocrinidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Monobathrida$(br)>Batocrinidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Macrocrinus.png"],
-			"title": "Macrocrinus sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "M. konincki",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_macrocrinus[topshoot=true]",
+					"1": "lepidodendron:crinoid_macrocrinus[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_macrocrinus",
 			"type": "text",
-			"text": "Macrocrinus is a crinoid known from the Carboniferous period."
+			"text": "Macrocrinus is a batocrinid crinoid that comes from the Lower Carboniferous, with fossils found in the Borden Formation/Group, USA. "
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_macrocrinus",

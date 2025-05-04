@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomatida"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/semaeostomites.png"],
-			"title": "S. zitteli",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "S. zitteli",
+			"entity": "lepidodendron:prehistoric_flora_semaeostomites",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_semaeostomites",

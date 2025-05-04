@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_arkarua",
 			"title": "Arkarua",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Animalia$(br)>$(o)Echinodermata (?)"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Animalia$(br)>$(o)Echinodermata (?)"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_arkarua",
 			"type": "text",
-			"text": "Arkarua is a small precambrian disk like animal with a number of radial ridges on the rim and a star like impression. It is unknown what kind of animal Arkarua was and classification is problematic. "
+			"text": "Arkarua comes from the Upper Ediacaran, with fossils found in the Flinders Ranges, South Australia. It is a small disk-like organism, growing up to 1 cm in diameter. The overall appearance of Arkarua, from the pentamerous symmetry to the flat/buttoned shaped, some have tentatively placed it into the phylum Echinodermata, with some further placing it into the class Edrioasteroidea. Although it is missing one of the key defining features of echinoderms, their skeleton,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arkarua",
+			"type": "text",
+			"text": "making the placement into Echniodoermata problematic. The generic name derives from the Latinised name of 'Arkaroo', a giant snake from the Dreaming of the local Aboriginal Australians."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_arkarua",

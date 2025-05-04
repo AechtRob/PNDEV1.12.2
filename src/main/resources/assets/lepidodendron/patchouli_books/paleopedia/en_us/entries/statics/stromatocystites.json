@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Edrioasteroidea$(br)>Edrioasterida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Stromatocystites.png"],
-			"title": "S. walcotti",
-			"text": ""
+			"type": "multiblock",
+			"name": "S. walcotti",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:stromatocystites",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_stromatocystites",

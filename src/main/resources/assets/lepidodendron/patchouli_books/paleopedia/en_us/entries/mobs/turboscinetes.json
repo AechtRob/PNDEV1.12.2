@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Pycnodontidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/turboscinetes.png"],
-			"title": "T. egertoni",
-			"text": ""
+			"type": "entity",
+			"name": "T. egertoni",
+			"entity": "lepidodendron:prehistoric_flora_turboscinetes",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_turboscinetes",

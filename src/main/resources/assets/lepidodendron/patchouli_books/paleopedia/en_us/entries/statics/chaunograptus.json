@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_chaunograptus",
 			"title": "Chaunograptus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Hemichordata$(br)>Graptolithina$(br)>Rhabdopleuridae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Hemichordata$(br)>Graptolithina$(br)>Rhabdopleuridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/chaunograptus.png"],
-			"title": "Chaunograptus sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "Chaunograptus sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:chaunograptus",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_chaunograptus",

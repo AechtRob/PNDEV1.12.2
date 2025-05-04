@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeodiphasia",
 			"title": "Palaeodiphasia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$()  Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Hydrozoa$(br)>Hydroidolina$(br)>Leptothecata$(br)>Macrocolonia$(br)>Sertulariida"
+			"text": "$(l)Temporal Range:$()  Cambrian$(br2)>Cnidaria$(br2)$(l)Habitat:$() Shallow Marine$(br)>Hydrozoa$(br)>Hydroidolina$(br)>Leptothecata$(br)>Macrocolonia$(br)>Sertulariida"
 		},
 		{
 			"type": "multiblock",

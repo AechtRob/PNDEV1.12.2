@@ -268,6 +268,39 @@ public class ModelStahleckeria extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = 0.6F;
+        this.body.offsetX = 0.2F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(120);
+        this.body.rotateAngleX = (float)Math.toRadians(0);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 0.5F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.4F, 3.8F, -0.2F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(armL, -0.3F, 0.2F, -0.5F);
+        this.setRotateAngle(armL2, -1.3F, 0.0F, 0.5F);
+        this.setRotateAngle(armL3, 1.3F, -0.05F, 0.0F);
+        this.setRotateAngle(armR, -0.3F, -0.2F, 0.5F);
+        this.setRotateAngle(armR2, -1.3F, 0.05F, -0.5F);
+        this.setRotateAngle(armR3, 1.3F, 0.05F, 0.0F);
+        this.setRotateAngle(legR, 0.6F, -0.0F, 0.7F);
+        this.setRotateAngle(legR2, 1.0F, 0.1F, -0.7F);
+        this.setRotateAngle(legR3, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(legL, 0.6F, -0.0F, -0.7F);
+        this.setRotateAngle(legL2, 1.0F, 0.1F, 0.7F);
+        this.setRotateAngle(legL3, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

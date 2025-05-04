@@ -435,6 +435,44 @@ public class ModelTetraceratops extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Tetraceratops.offsetY = -0.8F;
+        this.Tetraceratops.offsetX = 0.0F;
+        this.Tetraceratops.offsetZ = 2.0F;
+        this.Tetraceratops.rotateAngleY = (float)Math.toRadians(120);
+        this.Tetraceratops.rotateAngleX = (float)Math.toRadians(0);
+        this.Tetraceratops.rotateAngleZ = (float)Math.toRadians(0);
+        this.Tetraceratops.scaleChildren = true;
+        float scaler = 1.0F;
+        this.Tetraceratops.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Tetraceratops, 0.4F, 3.8F, -0.1F);
+        this.setRotateAngle(chest, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Neck1, -0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(Neck2, -0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, -0.25F, 0.0F, 0.0F);
+        this.setRotateAngle(Mandible, 0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LBackLeg, 0.4F, 0.2F, 0.2F);
+        this.setRotateAngle(LowerLBackLeg, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(LBackFoot, -0.2F, 0.2F, -0.25F);
+        this.setRotateAngle(RBackLeg, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerRBackLeg, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(RBackFoot, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LFrontLeg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLFrontLeg, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(LFrontFoot, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(RFrontLeg, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerRFrontLeg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(RFrontFoot, -0.3F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Tetraceratops.render(f);
+        //Reset rotations, positions and sizing:
+        this.Tetraceratops.setScale(1.0F, 1.0F, 1.0F);
+        this.Tetraceratops.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Pantherapsida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/tetraceratops.png"],
-			"title": "T. insignis",
-			"text": ""
+			"type": "entity",
+			"name": "T. insignis",
+			"entity": "lepidodendron:prehistoric_flora_tetraceratops",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tetraceratops",

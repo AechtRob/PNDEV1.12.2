@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Thecodontosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/thecodontosaurus.png"],
-			"title": "T. antiquus",
-			"text": ""
+			"type": "entity",
+			"name": "T. antiquus",
+			"entity": "lepidodendron:prehistoric_flora_thecodontosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_thecodontosaurus",

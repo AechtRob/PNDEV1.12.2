@@ -9,18 +9,27 @@
 			"trigger": "lepidodendron:pf_adv_book_siphusauctum",
 			"title": "Siphusauctum",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Ctenophora$(br)>Siphusauctidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Ctenophora$(br)>Siphusauctidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Siphusauctum.png"],
-			"title": "S. gregarium",
-			"text": ""
+			"type": "multiblock",
+			"name": "S. gregarium",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:siphusauctum",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_siphusauctum",
 			"type": "text",
-			"text": "Siphusauctum is a stalked filter feeding animal from the Middle Cambrian. It had a tulip chaped body, the calyx, which it pumped water and filtered out organic contents to be digested."
+			"text": "Siphusauctum is a stalked filter feeding animal from the Middle Cambrian. It had a tulip shaped body, the calyx, which it pumped water and filtered out organic contents to be digested."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_siphusauctum",

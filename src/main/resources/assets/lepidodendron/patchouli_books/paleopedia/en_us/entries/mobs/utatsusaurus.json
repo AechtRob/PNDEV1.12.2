@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Sauropsida$(br)>Ichthyopterygia$(br)>Utatsusauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/utatsusaurus.png"],
-			"title": "U. hataii",
-			"text": ""
+			"type": "entity",
+			"name": "U. hataii",
+			"entity": "lepidodendron:prehistoric_flora_utatsusaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_utatsusaurus",
 			"type": "text",
-			"text": "Utatsusaurus is a genus of ichthyopterygian described from the Early Triassic strata in Miyagi Prefecture in Japan. Additional materials are also described from British Colombia in Canada. It is one of the earliest ichthyopterygian ever known. It had relatively thin snout and small teeth. Having many of cylindal presacral vertebrae suggest it may swam like eel. It is coexisted to other fauna like ammonites,"
+			"text": "Utatsusaurus is a genus of ichthyopterygian described from the Lower Triassic strata in Miyagi Prefecture in Japan. Additional materials are also described from British Colombia in Canada. It is one of the earliest ichthyopterygian ever known. It had relatively thin snout and small teeth. Having many of cylindal presacral vertebrae suggest it may swam like eel. It is coexisted to other fauna like ammonites,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_utatsusaurus",

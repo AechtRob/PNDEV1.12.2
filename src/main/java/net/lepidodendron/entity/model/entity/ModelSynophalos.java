@@ -442,9 +442,33 @@ public class ModelSynophalos extends ModelBasePalaeopedia {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = 0.05F;
+        this.body.offsetX = 0.55F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(120);
+        this.body.rotateAngleX = (float)Math.toRadians(0);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 0.375F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 1.0F, 3.4F, -0.2F);
+        this.setRotateAngle(body2, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(body4, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(body5, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body7, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body8, 0.2F, -0.1F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

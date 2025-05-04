@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cystoid_bolboporites",
 			"title": "Bolboporites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Eocrinoidea$(br)>Bolboporitidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Echinodermata$(br)>Eocrinoidea$(br)>Bolboporitidae"
 		},
 		{
 			"type": "multiblock",

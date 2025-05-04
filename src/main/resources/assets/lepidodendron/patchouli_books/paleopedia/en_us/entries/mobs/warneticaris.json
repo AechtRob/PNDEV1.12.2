@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Phyllocarida$(br)>Ceratiocarididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/warneticaris.png"],
-			"title": "W. cornwallisensis",
-			"text": ""
+			"type": "entity",
+			"name": "W. cornwallisensis",
+			"entity": "lepidodendron:prehistoric_flora_warneticaris",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_warneticaris",
 			"type": "text",
-			"text": "Warneticaris is phyllocarid crustacean known mostly from Silurian. With a tail spine reaching 20cm, it is the largest phyllocarid ever known, estimating this animal reached near a meter. Although it was once considered to be synonymous with Schugurocaris, its morphology is closer to Ceratiocaris."
+			"text": "Warneticaris is phyllocarid crustacean known mostly from Silurian. With a tail spine reaching 20 cm, it is the largest phyllocarid ever known, estimating this animal reached near a meter. Although it was once considered to be synonymous with Schugurocaris, its morphology is closer to Ceratiocaris."
 		},
 		{
 			"type": "lepidodendron:diet",

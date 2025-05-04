@@ -11,7 +11,7 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Chordata$(br)>Temnospondyli$(br)>Sclerocephalidae"
 		},
-        	{
+		{
             "type": "entity",
             "name": "S. haeuseri",
             "entity": "lepidodendron:prehistoric_flora_sclerocephalus",
@@ -21,12 +21,22 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_sclerocephalus",
 			"type": "text",
-			"text": "Sclerocephalus comes from the Upper Carboniferous into the Lower Permian, with fossils found in the Rotliegend Group, Germany. It is a small temnospondyl, growing up to 1.5 m in length. It is the most complete and abundant Paleozoic tetrapod currently known."
+			"text": "Sclerocephalus hails from the Upper Carboniferous into the Lower Permian, with fossils found in the Rotliegend Group, Germany. It is a large temnospondyl, growing up to 1.5 m in length. It is the most complete and abundant Paleozoic tetrapod currently known. When its fossil material was originally discovered in 1847, it was originally thought to be a fish, although nearly a century later in 1939, it was then recognised as amphibian due to the palaeontologist"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_sclerocephalus",
 			"type": "text",
-			"text": "The generic name derives from the Greek words 'sclero', to mean 'hard'; and 'cephalus', to mean 'head'."
+			"text": "Alfred Romer noticing that another genus (Leptorophus) was actually the larvae of Sclerocephalus. Although we have many fossils of Sclerocephalus, the phylogenetic relationship of it is still up in the air, with it originally being placed in the family Actinodontidae, which itself was thought to be closely related to the family Eryopidae, and may now be synonymous with it. Most recent studies place it within the clade Stereospondylomorpha, and into the superfamily"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sclerocephalus",
+			"type": "text",
+			"text": "Archegosauroidea, and whilst the first part of this analysis is supported still, even the position of Stereospondylomorpha is up in the air, as a recent study suggests it may be apart of the superfamily Eryopoidea, making Sclerocephalus more closely related to the eryopids once again than it is currently if this is to be accepted. Due to the aforementioned abundance of fossil material for Sclerocephalus, we know of the drastic changes it underwent during ontogeny,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sclerocephalus",
+			"type": "text",
+			"text": "with the eyes and tail being much much larger in larvae than adults being an example. Sclerocephalus predominantly ate fish, with a liking towards Paramblypterus, although has also been found with other, smaller, amphibians. The generic name derives from the Greek words 'sclero', to mean 'hard'; and 'cephalus', to mean 'head'."
 		},
 		{
 			"type": "lepidodendron:diet",

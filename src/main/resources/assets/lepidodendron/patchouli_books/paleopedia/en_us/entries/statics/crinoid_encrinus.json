@@ -9,11 +9,11 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_encrinus",
 			"title": "Encrinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Encrinida$(br)>Encrinidae"
+			"text": "$(l)Temporal Range:$() Silurian - Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Encrinida$(br)>Encrinidae"
 		},
 		{
 			"type": "multiblock",
-			"name": "Encrinus sp.",
+			"name": "E. liliiformis",
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [
@@ -33,7 +33,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_encrinus",
 			"type": "text",
-			"text": "Encrinus is a well known crinoid from the Late Silurian to the Late Triassic period. It possessed a large crown like structure at the top of its stalk. Its arms had many pinnules on it and Encrinus may have been an active filter feeder. A small leathery dome covered the mouth and topped the cup and food would be transported from the arms to the cilia, which led to the mouth."
+			"text": "Encrinus is a well known crinoid from the Upper Silurian to the Triassic period. It possessed a large crown like structure at the top of its stalk. Its arms had many pinnules on it and Encrinus may have been an active filter feeder. A small leathery dome covered the mouth and topped the cup and food would be transported from the arms to the cilia, which led to the mouth."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_encrinus",

@@ -467,9 +467,26 @@ public class ModelYawunik extends ModelBasePalaeopedia {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.bodybase.offsetY = -1.0F;
+        this.bodybase.offsetX = -0.4F;
+        this.bodybase.offsetZ = 2.0F;
+        this.bodybase.rotateAngleY = (float)Math.toRadians(120);
+        this.bodybase.rotateAngleX = (float)Math.toRadians(0);
+        this.bodybase.rotateAngleZ = (float)Math.toRadians(0);
+        this.bodybase.scaleChildren = true;
+        float scaler = 4.0F;
+        this.bodybase.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(bodybase, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.bodybase.render(f);
+        //Reset rotations, positions and sizing:
+        this.bodybase.setScale(1.0F, 1.0F, 1.0F);
+        this.bodybase.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

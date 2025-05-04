@@ -9,13 +9,112 @@
 			"trigger": "lepidodendron:pf_adv_book_sponge",
 			"title": "Sponge",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ediacaran+$(br2)$(l)Habitat:$() Marine$(br2)>Animalia$(br)>Porifera"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran) - Present$(br2)$(l)Habitat:$() Marine$(br2)>Animalia$(br)>$(o)Porifera"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/sponge.png"],
-			"title": "Porifera",
-			"text": ""
+			"type": "multiblock",
+			"name": "Porifera",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:blue_sponge",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Porifera",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:brown_sponge",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Porifera",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:orange_sponge",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Porifera",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:pink_sponge",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Porifera",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:red_sponge",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Porifera",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:white_sponge",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Porifera",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:yellow_sponge",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_sponge",

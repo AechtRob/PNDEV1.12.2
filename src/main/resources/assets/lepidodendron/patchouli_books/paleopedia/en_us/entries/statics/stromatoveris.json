@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_stromatoveris",
 			"title": "Stromatoveris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>$(o)Petalonamae (?)/ Cnidaria (?)"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Stromatoveris.png"],
-			"title": "S. psygmoglena",
-			"text": ""
+			"type": "multiblock",
+			"name": "S. psygmoglena",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:stromatoveris",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_stromatoveris",

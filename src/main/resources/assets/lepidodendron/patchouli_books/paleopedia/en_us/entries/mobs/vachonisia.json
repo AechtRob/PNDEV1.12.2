@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Marrellomorpha$(br)>Acercostraca$(br)>Vachonisiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/vachonisia.png"],
-			"title": "V. rogeri",
-			"text": ""
+			"type": "entity",
+			"name": "V. rogeri",
+			"entity": "lepidodendron:prehistoric_flora_vachonisia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_vachonisia",
 			"type": "text",
-			"text": "Vachonisia is around 7 cm-long marrellomorph from Devonian Hunsrück Slate, Germany. It carries a roughly trapezoidal 'shield', which seems to have been rounded in juveniles. Alongside with Mimetaster, it was likely a bottom-feeder, but the shield shape shows that it is able to swim relatively well."
+			"text": "Vachonisia is around 7 cm long marrellomorph from Devonian Hunsrück Slate, Germany. It carries a roughly trapezoidal 'shield', which seems to have been rounded in juveniles. Alongside with Mimetaster, it was likely a bottom-feeder, but the shield shape shows that it is able to swim relatively well."
 		},
 		{
 			"type": "lepidodendron:diet",

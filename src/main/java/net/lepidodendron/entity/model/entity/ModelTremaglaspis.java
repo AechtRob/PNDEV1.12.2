@@ -19,6 +19,8 @@ public class ModelTremaglaspis extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer cube_r6;
     private final AdvancedModelRenderer cube_r7;
     private final AdvancedModelRenderer cube_r8;
+    private final AdvancedModelRenderer antennaeLeft;
+    private final AdvancedModelRenderer antennaeRight;
     private final AdvancedModelRenderer thorax;
     private final AdvancedModelRenderer cube_r9;
     private final AdvancedModelRenderer cube_r10;
@@ -101,6 +103,18 @@ public class ModelTremaglaspis extends ModelBasePalaeopedia {
         this.carapace.addChild(cube_r8);
         this.setRotateAngle(cube_r8, 0.4363F, 0.0F, 0.0F);
         this.cube_r8.cubeList.add(new ModelBox(cube_r8, 20, 0, 0.0F, 0.0F, -2.0F, 1, 1, 2, 0.0F, false));
+
+        this.antennaeLeft = new AdvancedModelRenderer(this);
+        this.antennaeLeft.setRotationPoint(1.5F, -0.25F, -4.0F);
+        this.carapace.addChild(antennaeLeft);
+        this.setRotateAngle(antennaeLeft, 0.0F, -0.3054F, 0.0F);
+        this.antennaeLeft.cubeList.add(new ModelBox(antennaeLeft, 18, 10, -0.5F, 0.0F, -4.0F, 2, 0, 4, 0.0F, true));
+
+        this.antennaeRight = new AdvancedModelRenderer(this);
+        this.antennaeRight.setRotationPoint(-0.5F, -0.25F, -4.0F);
+        this.carapace.addChild(antennaeRight);
+        this.setRotateAngle(antennaeRight, 0.0F, 0.3054F, 0.0F);
+        this.antennaeRight.cubeList.add(new ModelBox(antennaeRight, 18, 10, -1.5F, 0.0F, -4.0F, 2, 0, 4, 0.0F, false));
 
         this.thorax = new AdvancedModelRenderer(this);
         this.thorax.setRotationPoint(0.0F, -1.8F, -3.0F);
@@ -221,15 +235,15 @@ public class ModelTremaglaspis extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.tremaglaspis.offsetY = -2.2F;
-        this.tremaglaspis.offsetX = -0.228F;
-        this.tremaglaspis.rotateAngleY = (float)Math.toRadians(222);
-        this.tremaglaspis.rotateAngleX = (float)Math.toRadians(28);
-        this.tremaglaspis.rotateAngleZ = (float)Math.toRadians(-8);
+        this.tremaglaspis.offsetX = -0.8F;
+        this.tremaglaspis.rotateAngleY = (float)Math.toRadians(120);
+        this.tremaglaspis.rotateAngleX = (float)Math.toRadians(0);
+        this.tremaglaspis.rotateAngleZ = (float)Math.toRadians(0);
         this.tremaglaspis.scaleChildren = true;
         float scaler = 8.63F;
         this.tremaglaspis.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(tremaglaspis, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.tremaglaspis.render(f);
         //Reset rotations, positions and sizing:
@@ -301,8 +315,8 @@ public class ModelTremaglaspis extends ModelBasePalaeopedia {
 
         }
 
-//        this.swing(anntennae1, 0.36F, -0.21F, false, 0, -0.11F, f2, 0.8F);
-//        this.swing(anntennae2, 0.36F, 0.21F, false, 0, 0.11F, f2, 0.8F);
+        this.swing(antennaeLeft, 0.36F, -0.21F, false, 0, -0.11F, f2, 0.8F);
+        this.swing(antennaeRight, 0.36F, 0.21F, false, 0, 0.11F, f2, 0.8F);
 
     }
 }

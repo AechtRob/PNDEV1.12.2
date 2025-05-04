@@ -21,7 +21,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_yilingia",
 			"type": "text",
-			"text": "Yilingia was a worm like animal from the Ediacaran period. It was segmented, similar to many arthropods. Yilingia seems to be the oldest known animal capable of moving on its own."
+			"text": "Yilingia spiciformis comes from the Upper Ediacaran, with fossils found in the Dengying Formation, China. It is a small, worm-like organism, growing up to 27 cm in length. When it was discovered in 2019, it was a rare example of an Edicaran organism that bears many similarities to later Cambrian organisms, like a definitive segmented bilteral body instead of the distinctive glide reflection of most Ediacaran organisms. And whilst it wasn't the first, or earliest motile"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yilingia",
+			"type": "text",
+			"text": "lifeform found, being beaten by the likes of Dickinsonia, Kimberella and Uncus, it was the first definitive bilaterian animal found to be capable of moving on its own, after a specimen was found at the end of one of its traces it had left behind. Whilst Dickinsonia has been found next to feeding traces since 2011, showing its movement, it is not a true bilateral lifeform, unlike Yilingia. Yilingia held the title of earliest motile (true) animal until the discovery of"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yilingia",
+			"type": "text",
+			"text": "Uncus in 2024, which was found in the earlier rocks of the Flinders Ranges in South Australia, although it will still hold the title of the first motile (true) animal found. The generic name derives from the Latinised place name of 'Yiling', a city near to where the fossils were found. The generic name derives from the Latin words 'spīca', to mean 'spike'; and 'formis', to mean 'form'."
 		},
 		{
 			"type": "lepidodendron:diet",

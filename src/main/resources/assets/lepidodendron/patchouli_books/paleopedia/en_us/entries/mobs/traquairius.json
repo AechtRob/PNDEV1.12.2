@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Holocephali$(br)>Menaspiformes$(br)>Traquairiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/traquairius.png"],
-			"title": "T. agkistrocephalus",
-			"text": ""
+			"type": "entity",
+			"name": "T. agkistrocephalus",
+			"entity": "lepidodendron:prehistoric_flora_traquairius",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_traquairius",
 			"type": "text",
-			"text": "Traquairius was a weirdly shaped Menaspid Holocephalian fish from the Bear Gulch of the Carboniferous. It was up to 30 cm long and it had lionfish like protrusions on its head and body."
+			"text": "Traquairius was a weirdly shaped menaspid holocephalian fish from the Bear Gulch of the Carboniferous. It was up to 30 cm long and it had lionfish like protrusions on its head and body."
 		},
 		{
 			"type": "lepidodendron:diet",

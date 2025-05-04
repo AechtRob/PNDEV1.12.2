@@ -107,7 +107,7 @@ public class ModelWaagenella extends ModelBasePalaeopedia {
         this.whole.scaleChildren = true;
         this.whole.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(whole, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.whole.render(f);
         //Reset rotations, positions and sizing:

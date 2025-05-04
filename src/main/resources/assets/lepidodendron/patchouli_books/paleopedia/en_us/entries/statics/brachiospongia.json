@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_brachiospongia",
 			"title": "Brachiospongia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Porifera$(br)>Hexactinellida$(br)>Lyssacinosa$(br)>Brachiospongiidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Deep Marine$(br2)>Porifera$(br)>Hexactinellida$(br)>Lyssacinosa$(br)>Brachiospongiidae"
 		},
 		{
 			"type": "multiblock",
@@ -35,6 +35,11 @@
 			"advancement": "lepidodendron:pf_adv_book_brachiospongia",
 			"type": "text",
 			"text": "The generic name derives from the Latin words 'brachio', to mean 'branched'; and 'spongia', to mean 'sponge'. The specific name derives directly from the Latin word 'digitata', to mean 'having fingers'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brachiospongia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}
 	]
 }

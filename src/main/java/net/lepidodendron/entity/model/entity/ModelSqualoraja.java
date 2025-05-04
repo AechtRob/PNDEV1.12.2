@@ -230,9 +230,46 @@ public class ModelSqualoraja extends ModelBasePalaeopedia {
         this.Root.render(0.01F);
         resetToDefaultPose();
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Root.offsetY = -1.4F;
+        this.Root.offsetX = -0.2F;
+        this.Root.offsetZ = 2.0F;
+        this.Root.rotateAngleY = (float)Math.toRadians(120);
+        this.Root.rotateAngleX = (float)Math.toRadians(0);
+        this.Root.rotateAngleZ = (float)Math.toRadians(0);
+        this.Root.scaleChildren = true;
+        float scaler = 2.0F;
+        this.Root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Root, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Bodyback, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.0F, -0.7418F);
+        this.setRotateAngle(cube_r3, 0.0F, 0.0F, 0.7418F);
+        this.setRotateAngle(cube_r4, 0.096F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, 0.4363F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0F, -0.4363F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.0349F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.0349F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(LeftAnal, -0.0432F, -0.2568F, 0.0947F);
+        this.setRotateAngle(LeftPectoral, -0.0193F, -0.305F, 0.0454F);
+        this.setRotateAngle(RightAnal, -0.0432F, 0.2568F, -0.0947F);
+        this.setRotateAngle(RightPectoral, -0.0193F, 0.305F, -0.0454F);
+        this.setRotateAngle(Tail, 0.0436F, -0.0873F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0436F, -0.0873F, 0.0F);
+        this.setRotateAngle(Tail3, -0.0436F, -0.1309F, 0.0F);
+        //End of pose, now render the model:
+        this.Root.render(f);
+        //Reset rotations, positions and sizing:
+        this.Root.setScale(1.0F, 1.0F, 1.0F);
+        this.Root.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

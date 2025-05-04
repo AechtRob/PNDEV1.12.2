@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Orthocerida$(br)>Sphooceratidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/sphooceras.png"],
-			"title": "S. truncatum",
-			"text": ""
+			"type": "entity",
+			"name": "S. truncatum",
+			"entity": "lepidodendron:prehistoric_flora_sphooceras",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_sphooceras",
 			"type": "text",
-			"text": "Sphooceras is a genus of Orthocerid cephalopod from the Silurian of the Czech Republic. Incredibly characteristic for this animal was the anatomy of the phragmocone itself, being among the only known shelled cephalopods to have shed pieces of its shell as it grew. After shedding the shell, the animal would cover the apical part of the remaining phragmocone in callus,"
+			"text": "Sphooceras is a genus of orthocerid cephalopod from the Upper Silurian of the Czech Republic. Incredibly characteristic for this animal was the anatomy of the phragmocone itself, being among the only known shelled cephalopods to have shed pieces of its shell as it grew. After shedding the shell, the animal would cover the apical part of the remaining phragmocone in callus,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_sphooceras",

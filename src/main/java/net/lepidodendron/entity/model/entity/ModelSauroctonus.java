@@ -366,6 +366,46 @@ public class ModelSauroctonus extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = 0.6F;
+        this.root.offsetX = 0.0F;
+        this.root.offsetZ = 2.0F;
+        this.root.rotateAngleY = (float)Math.toRadians(120);
+        this.root.rotateAngleX = (float)Math.toRadians(0);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
+        this.root.scaleChildren = true;
+        float scaler = 0.4F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(root, 0.0F, 3.8F, -0.0F);
+        this.setRotateAngle(Hips, -0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(Belly, 0.35F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodyfront, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck, -0.45F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjaw1, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, -0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail4, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftthigh, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftshin, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(Lefthindfoot, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightthigh, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightshin, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Righthindfoot, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftupperarm, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftlowerarm, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftfrontfoot, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightupperarm, 0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightlowerarm, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightfrontfoot, 0.9F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

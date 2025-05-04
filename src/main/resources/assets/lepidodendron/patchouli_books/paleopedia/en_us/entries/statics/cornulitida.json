@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_cornulitida",
 			"title": "Cornulitida",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Incertae sedis"
+			"text": "$(l)Temporal Range:$() Ordovician - Carboniferous$(br2)$(l)Habitat:$() Shallow Marine$(br2)>$(o)incertae sedis$()$(br)>Tentaculita$(br)>$(o)Cornulitida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cornulitida.png"],
-			"title": "Cornulitida",
-			"text": ""
+			"type": "multiblock",
+			"name": "Cornulitida",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:cornulitida",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cornulitida",

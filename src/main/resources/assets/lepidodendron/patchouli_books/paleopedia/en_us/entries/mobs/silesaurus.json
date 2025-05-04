@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_silesaurus",
 			"title": "Silesaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Ornithodira$(br)>Silesauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Ornithodira$(br)>Dinosauromorpha$(br)>Silesauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/silesaurus.png"],
-			"title": "S. opolensis",
-			"text": ""
+			"type": "entity",
+			"name": "S. opolensis",
+			"entity": "lepidodendron:prehistoric_flora_silesaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_silesaurus",
 			"type": "text",
-			"text": "Silesaurus opolensis was a species of silesaurid dinosauriform (though not a true dinosaur) that lived during the Late Triassic (around 224 - 209 million years ago). Its remains have been found in the Keuper Claystone of Krasiejów, Poland. This lightly built, likely fast-moving animal was initially thought to have been herbivorous, but later research on coprolites attributed to this animal suggest that it may actually have been an insectivore."
+			"text": "Silesaurus opolensis was a species of silesaurid dinosauriform (though not a true dinosaur) that lived during the Upper Triassic (around 224 - 209 million years ago). Its remains have been found in the Keuper Claystone of Krasiejów, Poland. This lightly built, likely fast-moving animal was initially thought to have been herbivorous, but later research on coprolites attributed to this animal suggest that it may actually have been an insectivore."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_silesaurus",

@@ -264,6 +264,24 @@ public class ModelWhatcheeria extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.whatcheeria.offsetY = 0.0F;
+        this.whatcheeria.offsetX = 0.075F;
+        this.whatcheeria.offsetZ = 2.0F;
+        this.whatcheeria.rotateAngleY = (float)Math.toRadians(120);
+        this.whatcheeria.rotateAngleX = (float)Math.toRadians(0);
+        this.whatcheeria.rotateAngleZ = (float)Math.toRadians(0);
+        this.whatcheeria.scaleChildren = true;
+        float scaler = 0.3F;
+        this.whatcheeria.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(whatcheeria, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.whatcheeria.render(f);
+        //Reset rotations, positions and sizing:
+        this.whatcheeria.setScale(1.0F, 1.0F, 1.0F);
+        this.whatcheeria.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

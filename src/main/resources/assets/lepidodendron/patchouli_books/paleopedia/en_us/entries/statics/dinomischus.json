@@ -9,18 +9,27 @@
 			"trigger": "lepidodendron:pf_adv_book_dinomischus",
 			"title": "Dinomischus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>$(o)Ctenophora (?)$()$(br)>Dinomischidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Dinomischus.png"],
-			"title": "D. isolatus",
-			"text": ""
+			"type": "multiblock",
+			"name": "D. isolatus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:dinomischus",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dinomischus",
 			"type": "text",
-			"text": "Dinomischus is a small cambrian stalked animal with an uncertain placement. Dinomischus consisted of a body and a thin stalk. It was a sessile organism that ate micro organisms while attached to the sea floor."
+			"text": "Dinomischus is a small, stalked Cambrian animal with an uncertain placement. Dinomischus consisted of a body and a thin stalk. It was a sessile organism that ate micro organisms while attached to the sea floor."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dinomischus",

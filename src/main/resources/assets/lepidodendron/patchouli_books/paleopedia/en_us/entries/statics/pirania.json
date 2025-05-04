@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_pirania",
 			"title": "Pirania",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian-Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Demospongea$(br)>Protomonaxonida$(br)>Piraniidae"
+			"text": "$(l)Temporal Range:$() Cambrian - Ordovician$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Demospongea$(br)>Protomonaxonida$(br)>Piraniidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Pirania.png"],
-			"title": "Pirania sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "Pirania sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:pirania",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pirania",

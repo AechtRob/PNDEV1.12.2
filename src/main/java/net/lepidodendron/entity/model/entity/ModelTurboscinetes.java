@@ -245,9 +245,55 @@ public class ModelTurboscinetes extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Turboscinetes.render(f5);
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Turboscinetes.offsetY = 0.0F;
+        this.Turboscinetes.offsetX = 0.6F;
+        this.Turboscinetes.offsetZ = 2.0F;
+        this.Turboscinetes.rotateAngleY = (float)Math.toRadians(120);
+        this.Turboscinetes.rotateAngleX = (float)Math.toRadians(0);
+        this.Turboscinetes.rotateAngleZ = (float)Math.toRadians(0);
+        this.Turboscinetes.scaleChildren = true;
+        float scaler = 5.0F;
+        this.Turboscinetes.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Turboscinetes, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(cube_r1, -0.8552F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 1.0734F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.0349F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.9425F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.1833F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(PectoralL, 0.0F, 0.6545F, 0.0F);
+        this.setRotateAngle(PectoralR, 0.0F, -0.6545F, 0.0F);
+        this.setRotateAngle(VentralL, -0.5993F, 0.5459F, -0.3509F);
+        this.setRotateAngle(VentralR, -0.5993F, -0.5459F, 0.3509F);
+        this.setRotateAngle(Body3, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.2443F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.7156F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.4887F, 0.0F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.9076F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.9774F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, -0.9076F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r17, -0.7156F, 0.0F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(cube_r18, 0.9076F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r19, -0.7156F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r20, -0.9076F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Turboscinetes.render(f);
+        //Reset rotations, positions and sizing:
+        this.Turboscinetes.setScale(1.0F, 1.0F, 1.0F);
+        this.Turboscinetes.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

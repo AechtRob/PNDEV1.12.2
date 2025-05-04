@@ -322,9 +322,32 @@ public class ModelSclerodus extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Sclerodus.render(f5);
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Sclerodus.offsetY = -1.4F;
+        this.Sclerodus.offsetX = 0.8F;
+        this.Sclerodus.offsetZ = 2.0F;
+        this.Sclerodus.rotateAngleY = (float)Math.toRadians(120);
+        this.Sclerodus.rotateAngleX = (float)Math.toRadians(0);
+        this.Sclerodus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Sclerodus.scaleChildren = true;
+        float scaler = 4.0F;
+        this.Sclerodus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Sclerodus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, -0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.Sclerodus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Sclerodus.setScale(1.0F, 1.0F, 1.0F);
+        this.Sclerodus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -1,5 +1,5 @@
 {
-	"name": "Gigantoproductus Brachiopod",
+	"name": "Gigantoproductus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/brachiopod_gigantoproductus_icon.png",
 	"category": "lepidodendron:statics",
@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_brachiopod_gigantoproductus",
 			"title": "Gigantoproductus Brachiopod",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Brachiopoda$(br)>Strophomenata$(br)>Productida$(br)>Monticuliferidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Brachiopoda$(br)>Strophomenata$(br)>Productida$(br)>Monticuliferidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/gigantoproductus.png"],
-			"title": "G. giganteus",
-			"text": ""
+			"type": "multiblock",
+			"name": "G. giganteus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:brachiopod_gigantoproductus",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_brachiopod_gigantoproductus",

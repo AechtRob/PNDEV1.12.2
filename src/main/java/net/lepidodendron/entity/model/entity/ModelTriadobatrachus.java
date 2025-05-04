@@ -372,16 +372,16 @@ public class ModelTriadobatrachus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Hips.offsetY = -1.8F;
-        this.Hips.offsetX = -0.138F;
-        this.Hips.rotateAngleY = (float)Math.toRadians(200);
-        this.Hips.rotateAngleX = (float)Math.toRadians(48);
-        this.Hips.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Hips.offsetY = -1.4F;
+        this.Hips.offsetX = -0.0F;
+        this.Hips.rotateAngleY = (float)Math.toRadians(120);
+        this.Hips.rotateAngleX = (float)Math.toRadians(0);
+        this.Hips.rotateAngleZ = (float)Math.toRadians(0);
         this.Hips.scaleChildren = true;
-        float scaler = 2.63F;
+        float scaler = 3.2F;
         this.Hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Hips, 0.2F, 3.8F, -0.1F);
         //End of pose, now render the model:
         this.Hips.render(f);
         //Reset rotations, positions and sizing:

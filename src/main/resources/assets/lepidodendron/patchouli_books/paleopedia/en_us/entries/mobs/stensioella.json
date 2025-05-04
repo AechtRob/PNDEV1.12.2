@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_stensioella",
 			"title": "Stensioella",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Stensioellida$(br)>Stensioellidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Stensioellida$(br)>Stensioellidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Stensioella.png"],
-			"title": "S. heintzi",
-			"text": ""
+			"type": "entity",
+			"name": "S. janvieri",
+			"entity": "lepidodendron:prehistoric_flora_stensioella",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_stensioella",
 			"type": "text",
-			"text": "Stensioella is a fish of uncertain placement. It is debated whether or not the animal was a placoderm and it had some resemblences to later holocephalians. They had wing like fins and were likely bottom dwelling fish."
+			"text": "Stensioella is a fish of uncertain placement. It is debated whether or not the animal was a placoderm and it had some resemblances to later holocephalians. They had wing like fins and were likely bottom dwelling fish."
 		},
 		{
 			"type": "lepidodendron:diet",

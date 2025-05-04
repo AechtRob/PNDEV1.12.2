@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Amphibia$(br)>Temnospondyli$(br)>Sterospondyli$(br)>Rhinesuchidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/uranocentrodon.png"],
-			"title": "U. senekalensis",
-			"text": ""
+			"type": "entity",
+			"name": "U. senekalensis",
+			"entity": "lepidodendron:prehistoric_flora_uranocentrodon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_uranocentrodon",
 			"type": "text",
-			"text": "Uranocentrodon is a late Permian temnospondyl. It was a large predator that could grow up to 3.75 meters and it was likely to have been an ambush predator. Uranocentrodon had internal gills as an adult but likely had external gills as a larva."
+			"text": "Uranocentrodon is a temnospondyl from the Upper Permian Normandien Formation, South Africa. It was a large predator that could grow up to 3.75 meters and it was likely to have been an ambush predator. Uranocentrodon had internal gills as an adult but likely had external gills as a larva."
 		},
 		{
 			"type": "lepidodendron:diet",

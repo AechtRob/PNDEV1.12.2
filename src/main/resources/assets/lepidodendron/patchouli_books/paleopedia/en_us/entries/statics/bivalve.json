@@ -9,13 +9,112 @@
 			"trigger": "lepidodendron:pf_adv_book_bivalve",
 			"title": "Bivalve",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician+$(br2)$(l)Habitat:$() Aquatic$(br2)>Mollusca$(br)>Conchifera$(br)>Bivalvia"
+			"text": "$(l)Temporal Range:$() Ordovician - Present$(br2)$(l)Habitat:$() Freshwater & Marine$(br2)>Mollusca$(br)>Conchifera$(br)>$(o)Bivalvia"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/bivalve.png"],
-			"title": "Bivalvia",
-			"text": ""
+			"type": "multiblock",
+			"name": "Bivalvia",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_cream",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Bivalvia",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_white",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Bivalvia",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_grey",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Bivalvia",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_green",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Bivalvia",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_dark",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Bivalvia",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_tall",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Bivalvia",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_upright",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bivalve",

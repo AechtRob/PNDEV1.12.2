@@ -11,6 +11,9 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderAnteosaurus;
+import net.lepidodendron.entity.render.entity.RenderTietasaura;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
@@ -20,6 +23,7 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
@@ -354,14 +358,14 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 
 	@Override
 	public void onEntityUpdate() {
-		
+
 		if (this.alarmCooldown > 0) {
 			this.alarmCooldown -= 1;
 		}
 		if (this.getScreaming() && alarmCooldown <= 0) {
 			this.playAlarmSound();
 		}
-		
+
 		super.onEntityUpdate();
 	}
 
@@ -381,7 +385,7 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 		}
 		return super.attackEntityFrom(ds, i);
 	}
-	
+
 	public void setScreaming(boolean screaming) {
 		this.screaming = screaming;
 	}
@@ -454,21 +458,16 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 	}
 
 	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {return ModTriggers.CLICK_TIETASAURA;}
+
+	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
 			return LepidodendronMod.TIETASAURA_LOOT_YOUNG;
 		}
 		return LepidodendronMod.TIETASAURA_LOOT;
-	}
-
-	@Nullable
-	@Override
-	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_TIETASAURA;
-	}
-
+    }
 	//Rendering taxidermy:
 	//--------------------
-
-
 }

@@ -313,6 +313,58 @@ public class ModelSpathicephalus extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hips.offsetY = -1.4F;
+        this.Hips.offsetX = 0.5F;
+        this.Hips.offsetZ = 2.0F;
+        this.Hips.rotateAngleY = (float)Math.toRadians(120);
+        this.Hips.rotateAngleX = (float)Math.toRadians(0);
+        this.Hips.rotateAngleZ = (float)Math.toRadians(0);
+        this.Hips.scaleChildren = true;
+        float scaler = 1.0F;
+        this.Hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Hips, 0.4F, 3.8F, -0.2F);
+        this.setRotateAngle(Bodyfront, 0.0637F, -0.1745F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.0424F, -0.1309F, 0.0F);
+        this.setRotateAngle(Head, -0.3278F, -0.0436F, 0.0F);
+        this.setRotateAngle(Headslope1, 0.0848F, 0.0F, 0.0F);
+        this.setRotateAngle(Headslope2, 0.1911F, 0.0F, 0.0F);
+        this.setRotateAngle(Jawparting, -0.3821F, 0.0F, 0.0F);
+        this.setRotateAngle(Lefteye, -0.2335F, 0.0848F, -0.3821F);
+        this.setRotateAngle(Leftfrontfoot, -0.1698F, -1.6556F, 0.9765F);
+        this.setRotateAngle(Leftgill, 0.0637F, 1.1463F, 0.4245F);
+        this.setRotateAngle(Lefthindfoot, 0.5095F, 0.3821F, 0.2972F);
+        this.setRotateAngle(Leftlowerarm, -1.3162F, -0.5308F, 0.1274F);
+        this.setRotateAngle(Leftshin, 1.401F, 0.1274F, 0.0F);
+        this.setRotateAngle(Leftthigh, -1.8467F, -1.1675F, 0.0F);
+        this.setRotateAngle(Leftupperarm, 0.9339F, 0.8278F, -0.5732F);
+        this.setRotateAngle(Lowerjaw1, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjaw2, -0.0213F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerteeth1, -0.0213F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck, -0.1086F, -0.1745F, 0.0F);
+        this.setRotateAngle(Righteye, -0.2335F, -0.0848F, 0.3821F);
+        this.setRotateAngle(Rightfrontfoot, -0.1698F, 1.6556F, -0.9765F);
+        this.setRotateAngle(Rightgill, 0.0637F, -1.1463F, -0.4245F);
+        this.setRotateAngle(Righthindfoot, 0.5095F, -0.3821F, -0.2972F);
+        this.setRotateAngle(Rightlowerarm, -1.3162F, 0.5308F, -0.1274F);
+        this.setRotateAngle(Rightshin, 1.401F, -0.1274F, 0.0F);
+        this.setRotateAngle(Rightthigh, -1.8467F, 1.1675F, 0.0F);
+        this.setRotateAngle(Rightupperarm, 0.9879F, -0.8501F, 0.533F);
+        this.setRotateAngle(Tail1, -0.0637F, 0.1309F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0424F, 0.1745F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0848F, 0.2618F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(Tail5, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(Tailfin1, 0.0848F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperjaw1, -0.0213F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperteeth1, 0.0213F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hips.setScale(1.0F, 1.0F, 1.0F);
+        this.Hips.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

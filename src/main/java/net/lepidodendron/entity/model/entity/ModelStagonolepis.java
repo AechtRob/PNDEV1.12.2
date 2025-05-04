@@ -371,9 +371,48 @@ public class ModelStagonolepis extends ModelBasePalaeopedia {
         this.Stagonolepis.render(0.01F);
         resetToDefaultPose();
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Stagonolepis.offsetY = -0.2F;
+        this.Stagonolepis.offsetX = 0.15F;
+        this.Stagonolepis.offsetZ = 2.0F;
+        this.Stagonolepis.rotateAngleY = (float)Math.toRadians(120);
+        this.Stagonolepis.rotateAngleX = (float)Math.toRadians(0);
+        this.Stagonolepis.rotateAngleZ = (float)Math.toRadians(0);
+        this.Stagonolepis.scaleChildren = true;
+        float scaler = 0.45F;
+        this.Stagonolepis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Stagonolepis, 0.4F, 3.8F, -0.2F);
+        this.setRotateAngle(body3, -0.1F, 0.1F, 0.05F);
+        this.setRotateAngle(tail, -0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(tail2, -0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(leftBackLeg, -0.2F, 0.0F, -0.2F);
+        this.setRotateAngle(leftBjoint, 0.1F, 0.0F, 0.1F);
+        this.setRotateAngle(leftBfoot, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBackLeg, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBjoint, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBfoot, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, -0.1F, -0.05F);
+        this.setRotateAngle(body2, 0.18F, -0.1F, 0.05F);
+        this.setRotateAngle(neck, -0.05F, 0.1F, -0.05F);
+        this.setRotateAngle(head, 0.0F, 0.1F, -0.05F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftFrontLeg, 0.3F, 0.5F, -0.6F);
+        this.setRotateAngle(LeftFjoint, 0.2F, -0.3F, 0.38F);
+        this.setRotateAngle(LeftFFoot, 0.5F, 0.0F, 0.2F);
+        this.setRotateAngle(rightFrontLeg, -0.4F, -0.3F, 0.7F);
+        this.setRotateAngle(RightFjoint, -0.3F, 0.3F, -0.3F);
+        this.setRotateAngle(RightFFoot, 0.8F, 0.3F, -0.3F);
+        //End of pose, now render the model:
+        this.Stagonolepis.render(f);
+        //Reset rotations, positions and sizing:
+        this.Stagonolepis.setScale(1.0F, 1.0F, 1.0F);
+        this.Stagonolepis.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

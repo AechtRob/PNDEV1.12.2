@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorpha(br)>Heterostraci(br)>Cyathaspidiformes$(br)>Torpedaspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/torpedaspis.png"],
-			"title": "T. elongata",
-			"text": ""
+			"type": "entity",
+			"name": "T. elongata",
+			"entity": "lepidodendron:prehistoric_flora_torpedaspis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_torpedaspis",

@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_thaumaptilon",
 			"title": "Thaumaptilon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria?"
+			"text": "$(l)Temporal Range:$() Cambriane$(br2)$(l)Habitat:$() ShallowMarine$(br2)>$(o)Petalonamae (?)/ Cnidaria (?)"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Thaumaptilon.png"],
-			"title": "T. walcotti",
-			"text": ""
+			"type": "multiblock",
+			"name": "T. walcotti",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:thaumaptilon",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_thaumaptilon",

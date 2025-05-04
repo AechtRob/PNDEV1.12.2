@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_sphenoecium",
 			"title": "Sphenoecium",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Hemichordata$(br)>Graptolithina$(br)>Rhabdopleuridae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Hemichordata$(br)>Graptolithina$(br)>Rhabdopleuridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/sphenoecium.png"],
-			"title": "Sphenoecium sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "Sphenoecium sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:sphenoecium",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_sphenoecium",

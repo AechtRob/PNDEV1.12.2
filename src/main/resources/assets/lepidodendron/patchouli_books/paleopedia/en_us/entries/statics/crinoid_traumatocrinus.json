@@ -9,13 +9,24 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_traumatocrinus",
 			"title": "Traumatocrinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Encrinida"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine Driftwood$(br2)>Echinodermata$(br)>Crinoidea$(br)>Encrinida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Traumatocrinus.png"],
-			"title": "Traumatocrinus sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "T. caudex",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_traumatocrinus[topshoot=false]",
+					"1": "lepidodendron:crinoid_traumatocrinus[topshoot=true]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_traumatocrinus",

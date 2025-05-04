@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Megacheira$(br)>Leanchoilida$(br)>Leanchoilidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/yawunik.png"],
-			"title": "Y. kootenayi",
-			"text": ""
+			"type": "entity",
+			"name": "Y. kootenayi",
+			"entity": "lepidodendron:prehistoric_flora_yawunik",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_yawunik",

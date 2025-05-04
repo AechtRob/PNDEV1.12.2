@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_thamnobeatricea",
 			"title": "Thamnobeatricea",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Porifera$(br)>Demospongiae$(br)>Stromatoporoidea"
+			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Porifera$(br)>Demospongiae$(br)>Stromatoporoidea"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/thamnobeatricea.png"],
-			"title": "Thamnobeatricea",
-			"text": ""
+			"type": "multiblock",
+			"name": "Thamnobeatricea",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:thamnobeatricea",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_thamnobeatricea",

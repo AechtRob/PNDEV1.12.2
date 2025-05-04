@@ -9,7 +9,7 @@
 "trigger": "lepidodendron:pf_adv_book_thylacares",
 "title": "Thylacares",
 "type": "quest",
-"text": "$(l)Temporal Range:$()  Silurian$(br2)>Arthropoda$(br)>Thylacocephala"
+"text": "$(l)Temporal Range:$()  Silurian$(br2)>Arthropoda$(br)>Thylacocephala$(br)>$(o)incertae sedis"
 },
         {
             "type": "entity",

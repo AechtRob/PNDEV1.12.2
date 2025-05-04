@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_sillosuchus",
 			"title": "Sillosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Pseudosuchia$(br)>Paracrocodylomorpha$(br)>Poposauroidea$(br)>Shuvosauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Paracrocodylomorpha$(br)>Poposauroidea$(br)>Shuvosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/sillosuchus.png"],
-			"title": "S. longicervix",
-			"text": ""
+			"type": "entity",
+			"name": "S. longicervix",
+			"entity": "lepidodendron:prehistoric_flora_sillosuchus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_sillosuchus",
 			"type": "text",
-			"text": "Sillosuchus is a genus of shuvosaurid archosaur from the Late Triassic of South America. Although their closest living relatives are crocodilians, they were bipedal and lightly armored, superficially resembling dinosaurs. Sillosuchus and related animals like Effigia were also toothless and beaked herbivores. Sillosuchus was named after Dr. William Sill."
+			"text": "Sillosuchus is a genus of shuvosaurid archosaur from the Upper Triassic of South America. Although their closest living relatives are crocodilians, they were bipedal and lightly armored, superficially resembling dinosaurs. Sillosuchus and related animals like Effigia were also toothless and beaked herbivores. Sillosuchus was named after Dr. William Sill."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_sillosuchus",

@@ -336,6 +336,42 @@ public class ModelSphenacodon extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hips.offsetY = 0.0F;
+        this.Hips.offsetX = -0.1F;
+        this.Hips.offsetZ = 2.0F;
+        this.Hips.rotateAngleY = (float)Math.toRadians(120);
+        this.Hips.rotateAngleX = (float)Math.toRadians(0);
+        this.Hips.rotateAngleZ = (float)Math.toRadians(0);
+        this.Hips.scaleChildren = true;
+        float scaler = 0.4F;
+        this.Hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Hips, 0.0F, 3.8F, -0.0F);
+        this.setRotateAngle(Bodymiddle, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodyfront, 0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckbase, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckend, 0.05F, 0.09F, 0.02F);
+        this.setRotateAngle(Head, 0.0F, 0.1F, 0.05F);
+        this.setRotateAngle(Lowerjawback, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftupperarm, 0.3F, -0.05F, -0.4F);
+        this.setRotateAngle(Leftlowerarm, -0.7F, 0.1F, 0.4F);
+        this.setRotateAngle(Leftfrontfoot, 0.45F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailbase, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailmiddlebase, 0.02F, 0.05F, 0.0F);
+        this.setRotateAngle(Tailmiddleend, 0.15F, 0.05F, 0.0F);
+        this.setRotateAngle(Tailend, 0.28F, 0.05F, 0.0F);
+        this.setRotateAngle(Leftthigh, -0.4F, 0.0F, -0.35F);
+        this.setRotateAngle(Leftshin, 0.65F, -0.1F, 0.35F);
+        this.setRotateAngle(Rightthigh, 0.2F, 0.0F, 0.3F);
+        this.setRotateAngle(Rightshin, 1.2F, 0.33F, -0.3F);
+        this.setRotateAngle(Righthindfoot, 0.3F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hips.setScale(1.0F, 1.0F, 1.0F);
+        this.Hips.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

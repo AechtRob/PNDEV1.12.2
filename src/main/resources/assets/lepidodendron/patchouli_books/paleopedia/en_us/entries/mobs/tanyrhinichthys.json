@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Actinopterygii"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/tanyrhinichthys.png"],
-			"title": "T. mcallisteri",
-			"text": ""
+			"type": "entity",
+			"name": "T. mcallisteri",
+			"entity": "lepidodendron:prehistoric_flora_tanyrhinichthys",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tanyrhinichthys",
 			"type": "text",
-			"text": "Tanyrhinichthys mcallisteri is a species of Actinopterygian fish from the Late Carboniferous of North America. The animal, measuring around 20 cm, was part of a radiation of long snouted aquatic animals that took place in the Pennsylvanian of North America, alongside other animals such as Bandringa and the small Phanerorhynchus. Originally interpreted as a Ram-feeder, along the likes of extant esocid fishes like pike, the animal was thought to have"
+			"text": "Tanyrhinichthys mcallisteri is a species of actinopterygian fish from the Upper Carboniferous of North America. The animal, measuring around 20 cm, was part of a radiation of long snouted aquatic animals that took place in the Pennsylvanian of North America, alongside other animals such as Bandringa and the small Phanerorhynchus. Originally interpreted as a Ram-feeder, along the likes of extant esocid fishes like pike, the animal was thought to have"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tanyrhinichthys",

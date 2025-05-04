@@ -12,15 +12,21 @@
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Dinocaridida$(br)>Radiodonta$(br)>Hurdiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/schinderhannes.png"],
-			"title": "S. bartelsi",
-			"text": ""
+			"type": "entity",
+			"name": "S. bartelsi",
+			"entity": "lepidodendron:prehistoric_flora_schinderhannes",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_schinderhannes",
 			"type": "text",
-			"text": "Schinderhannes is a hurdiid radiodont known from the Devonian of Germany. Its discovery proved that radiodonts had lasted a lot longer than previously thought and that there was a ghost lineage spanning the later Ordovician and Silurian periods. Schinderhannes was likely a predator which swam quickly around to catch smaller prey."
+			"text": "Schinderhannes is a hurdiid radiodont known from the Devonian Hunsrück Slate of Germany. Its discovery proved that radiodonts had lasted a lot longer than previously thought and that there was a ghost lineage spanning the Upper Ordovician and Silurian periods. Schinderhannes was likely a predator which swam quickly around to catch smaller prey."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_schinderhannes",
+			"type": "text",
+			"text": "The generic name derives directly from the nickname of Johannes 'Schinderhannes' Bückler, who was known to frequent the area between 1800 to 1803. The specific name derives from the surname of Christoph Bartels, a German paleontologist and a Hunsrück Slate expert."
 		},
 		{
 			"type": "lepidodendron:diet",

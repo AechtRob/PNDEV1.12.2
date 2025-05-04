@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_weinbergina",
 			"title": "Weinbergina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Chelicerata"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Euchelicerata$(br)>Prosomapoda$(br)>Synziphosurina"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/weinbergina.png"],
-			"title": "W. opitzi",
-			"text": ""
+			"type": "entity",
+			"name": "W. opitzi",
+			"entity": "lepidodendron:prehistoric_flora_weinbergina",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_weinbergina",
 			"type": "text",
-			"text": "Weinbergina is around 10 cm-long xiphosuran from Devonian Hunsrück Slate, Germany. It had six pairs of legs, which is exceptional and unusual for the anatomy of Euchelicerata. It is possible that one of the pair of legs are actually exopods, but no definitive conclusions have been reached. The shape of the tip of the leg seems to have been suitable for walking on sinking substrates."
+			"text": "Weinbergina is around 10 cm long synziphosurine from Devonian Hunsrück Slate, Germany. It had six pairs of legs, which is exceptional and unusual for the anatomy of Euchelicerata. It is possible that one of the pair of legs are actually exopods, but no definitive conclusions have been reached. The shape of the tip of the leg seems to have been suitable for walking on sinking substrates."
 		},
 		{
 			"type": "lepidodendron:diet",

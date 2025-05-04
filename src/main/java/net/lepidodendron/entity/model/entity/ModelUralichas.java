@@ -611,9 +611,26 @@ public class ModelUralichas extends ModelBasePalaeopedia {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Uralichas.offsetY = 0.3F;
+        this.Uralichas.offsetX = 0.75F;
+        this.Uralichas.offsetZ = 4.0F;
+        this.Uralichas.rotateAngleY = (float)Math.toRadians(120);
+        this.Uralichas.rotateAngleX = (float)Math.toRadians(0);
+        this.Uralichas.rotateAngleZ = (float)Math.toRadians(0);
+        this.Uralichas.scaleChildren = true;
+        float scaler = 0.6F;
+        this.Uralichas.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Uralichas, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.Uralichas.render(f);
+        //Reset rotations, positions and sizing:
+        this.Uralichas.setScale(1.0F, 1.0F, 1.0F);
+        this.Uralichas.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -66,7 +66,6 @@ public class RenderBrachiospongia extends TileEntitySpecialRenderer<BlockBrachio
                 GlStateManager.translate(x + 0.5, y + 0.4, z + 1.4);
                 GlStateManager.rotate(270, 1F, 0F, 0F);
             }
-
             if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
                 GlStateManager.rotate(180, 0F, 0F, 1F);
             }
@@ -80,6 +79,18 @@ public class RenderBrachiospongia extends TileEntitySpecialRenderer<BlockBrachio
                 GlStateManager.rotate(45, 0F, 1F, 0F);
             }
             GlStateManager.scale(0.575F, 0.575F, 0.575F);
+            //----Start PP Page adjustment
+            StackTraceElement[] elements = new Throwable().getStackTrace();
+            String callerClass = elements[5].getClassName();
+            if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
+                GlStateManager.enableBlend();
+                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+                GlStateManager.scale(2.0, 2.0, 2.0);
+                GlStateManager.rotate(90, 0F, 0F, 0F);
+                GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
+                GlStateManager.translate(x + 0.0F, y + 0.0F, z + 2.0F);
+            }
+            //----End PP Page adjustment
             this.brachiospongia.renderAll(Minecraft.getMinecraft().player.ticksExisted);
             GlStateManager.popMatrix();
             GlStateManager.disableRescaleNormal();

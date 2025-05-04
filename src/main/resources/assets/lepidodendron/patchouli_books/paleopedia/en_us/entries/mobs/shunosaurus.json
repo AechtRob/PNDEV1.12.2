@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_shunosaurus",
 			"title": "Shunosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropoda$(br)>Eusauropoda"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Sauropoda$(br)>Eusauropoda"
 		},
         	{
             "type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_shunosaurus",
 			"type": "text",
-			"text": "Shunosaurus was a genus of sauropod that lived during the Late Jurassic, around 159 million years ago. Its fossils have been found in the Sichuan province of China, specifically at the Xiashaximiao Formation, near the city of Zigong. Shunosaurus's name means \"Shu lizard\", referencing an ancient name for what is now the Sichuan province. This sauropod is easily recognizable by its relatively short neck (though not quite as short as that of the South American "
+			"text": "Shunosaurus was a genus of sauropod that lived during the Upper Jurassic, around 159 million years ago. Its fossils have been found in the Sichuan province of China, specifically at the Xiashaximiao Formation, near the city of Zigong. Shunosaurus's name means \"Shu lizard\", referencing an ancient name for what is now the Sichuan province. This sauropod is easily recognizable by its relatively short neck (though not quite as short as that of the South American"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_shunosaurus",

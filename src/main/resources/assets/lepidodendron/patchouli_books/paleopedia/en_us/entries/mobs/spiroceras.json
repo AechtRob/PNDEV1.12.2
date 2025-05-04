@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Spiroceratidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/spiroceras.png"],
-			"title": "S. orbignyi",
-			"text": ""
+			"type": "entity",
+			"name": "S. orbignyi",
+			"entity": "lepidodendron:prehistoric_flora_spiroceras",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_spiroceras",

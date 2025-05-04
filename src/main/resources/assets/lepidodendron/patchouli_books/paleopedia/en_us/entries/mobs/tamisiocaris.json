@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Dinocaridida$(br)>Radiodonta$(br)>Tamisiocarididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/tamisiocaris.png"],
-			"title": "T. borealis",
-			"text": ""
+			"type": "entity",
+			"name": "T. borealis",
+			"entity": "lepidodendron:prehistoric_flora_tamisiocaris",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tamisiocaris",

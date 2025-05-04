@@ -11,7 +11,7 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Euchelicerata$(br)>Prosomapoda$(br)>Synziphosurina"
 		},
-        	{
+		{
             "type": "entity",
             "name": "V. waukeshaensis",
             "entity": "lepidodendron:prehistoric_flora_venustulus",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_venustulus",
 			"type": "text",
-			"text": "Venustulus waukeshaensis hails from the Middle Silurian, with fossils found in the Scotch Grove Formation, USA. It is a small rounded Synziphosurine, with a flat semi-circular carapace that bore no compound eyes on the top, a spiked Preabdomen like most other Synziphosurines, and grew up to 7 cm in length."
+			"text": "Venustulus waukeshaensis comes from the Middle Silurian, with fossils found in the Scotch Grove Formation, USA. It is a small rounded synziphosurine, with a flat semi-circular carapace that bore no compound eyes on the top, a spiked Preabdomen like most other Synziphosurines, and grew up to 7 cm in length."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_venustulus",

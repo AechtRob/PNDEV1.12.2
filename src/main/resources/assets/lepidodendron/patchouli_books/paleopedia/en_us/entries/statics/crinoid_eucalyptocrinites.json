@@ -9,13 +9,24 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_eucalyptocrinites",
 			"title": "Eucalyptocrinites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Monobathrida$(br)>Eucalyptocrinitidae"
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Monobathrida$(br)>Eucalyptocrinitidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Eucalyptocrinites.png"],
-			"title": "E. inchoatus",
-			"text": ""
+			"type": "multiblock",
+			"name": "E. inchoatus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_eucalyptocrinites[topshoot=true]",
+					"1": "lepidodendron:crinoid_eucalyptocrinites[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_eucalyptocrinites",

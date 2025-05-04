@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Ichthyodectiformes"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/thrissops.png"],
-			"title": "T. formosus",
-			"text": ""
+			"type": "entity",
+			"name": "T. formosus",
+			"entity": "lepidodendron:prehistoric_flora_thrissops",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_thrissops",
 			"type": "text",
-			"text": "Thrissops was a species of Ichthyodectiform fish from the Late Jurassic and Early Cretaceous of Europe and Africa. The animal was around 60 cm long in adulthood and fed on smaller fishes and animals. Its long body was adapted for high speed motions and quick changes in direction, as seen from the deeply lunate tail."
+			"text": "Thrissops was a species of ichthyodectiform fish from the Upper Jurassic and Early Cretaceous of Europe and Africa. The animal was around 60 cm long in adulthood and fed on smaller fishes and animals. Its long body was adapted for high speed motions and quick changes in direction, as seen from the deeply lunate tail."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_thrissops",

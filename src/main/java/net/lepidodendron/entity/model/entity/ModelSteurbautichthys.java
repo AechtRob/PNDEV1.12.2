@@ -203,9 +203,31 @@ public class ModelSteurbautichthys extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Steurbautichthys.render(f5);
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Steurbautichthys.offsetY = 0.2F;
+        this.Steurbautichthys.offsetX = 0.4F;
+        this.Steurbautichthys.offsetZ = 2.0F;
+        this.Steurbautichthys.rotateAngleY = (float)Math.toRadians(120);
+        this.Steurbautichthys.rotateAngleX = (float)Math.toRadians(0);
+        this.Steurbautichthys.rotateAngleZ = (float)Math.toRadians(0);
+        this.Steurbautichthys.scaleChildren = true;
+        float scaler = 4.0F;
+        this.Steurbautichthys.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Steurbautichthys, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.3F, 0.0F);
+        //End of pose, now render the model:
+        this.Steurbautichthys.render(f);
+        //Reset rotations, positions and sizing:
+        this.Steurbautichthys.setScale(1.0F, 1.0F, 1.0F);
+        this.Steurbautichthys.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordara$(br)>Agnatha$(br)>Cephalaspidomorphi$(br)>Osteostraci$(br)>Thyestiida$(br)>Tremataspididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/sclerodus.png"],
-			"title": "S. pustuliferus",
-			"text": ""
+			"type": "entity",
+			"name": "S. pustuliferus",
+			"entity": "lepidodendron:prehistoric_flora_sclerodus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_sclerodus",
 			"type": "text",
-			"text": "First described in 1839, Sclerodus was a genus of Cephalaspidomorph osteostracan jawless fish that lived during the Silurian. It is most recognizable for its extremely long and arching cornua, which closed almost against its own body. Not only were the long cornuas visually impressive, but the lateral field on its head was also remarkable due to the presence of holes running down its length."
+			"text": "First described in 1839, Sclerodus was a genus of cephalaspidomorph osteostracan jawless fish that lived during the Silurian. It is most recognizable for its extremely long and arching cornua, which closed almost against its own body. Not only were the long cornuas visually impressive, but the lateral field on its head was also remarkable due to the presence of holes running down its length."
 		},
 		{
 			"type": "lepidodendron:diet",

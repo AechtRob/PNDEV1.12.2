@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Malacostraca$(br)>Stomatopoda"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/tyrannophontes.png"],
-			"title": "T. acanthocercus",
-			"text": ""
+			"type": "entity",
+			"name": "T. theridion",
+			"entity": "lepidodendron:prehistoric_flora_tyrannophontes",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tyrannophontes",
 			"type": "text",
-			"text": "Tyrannophontes is an early shrimp from the Carboniferous period. It looked like a mantis shrimp and it was a benthic feeder."
+			"text": "Tyrannophontes is an early shrimp from the Carboniferous Mazon Creek fossil beds, Illinois (USA). It is a small mantis shrimp, growing up to 13.5 cm in length. It is suggested to be a benthopelagic predator, meaning it would have swam just above the seafloor during hunts, and pulling its prey up to it using the standard raptorial appendages that mantis shrimp have."
 		},
 		{
 			"type": "lepidodendron:diet",

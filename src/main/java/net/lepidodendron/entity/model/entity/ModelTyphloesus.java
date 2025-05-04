@@ -106,9 +106,29 @@ public class ModelTyphloesus extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.head.render(f5);
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.head.offsetY = -0.6F;
+        this.head.offsetX = 0.4F;
+        this.head.offsetZ = 2.0F;
+        this.head.rotateAngleY = (float)Math.toRadians(120);
+        this.head.rotateAngleX = (float)Math.toRadians(0);
+        this.head.rotateAngleZ = (float)Math.toRadians(0);
+        this.head.scaleChildren = true;
+        float scaler = 4.0F;
+        this.head.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(head, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.08F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.10F, 0.0F);
+        //End of pose, now render the model:
+        this.head.render(f);
+        //Reset rotations, positions and sizing:
+        this.head.setScale(1.0F, 1.0F, 1.0F);
+        this.head.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

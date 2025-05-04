@@ -289,6 +289,54 @@ public class ModelUrosthenes extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Urosthenes.offsetY = -1.2F;
+        this.Urosthenes.offsetX = 0.0F;
+        this.Urosthenes.offsetZ = 2.0F;
+        this.Urosthenes.rotateAngleY = (float)Math.toRadians(120);
+        this.Urosthenes.rotateAngleX = (float)Math.toRadians(0);
+        this.Urosthenes.rotateAngleZ = (float)Math.toRadians(0);
+        this.Urosthenes.scaleChildren = true;
+        float scaler = 2.0F;
+        this.Urosthenes.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Urosthenes, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(cube_r1, -0.0349F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.1396F, 0.0F, 0.0F);
+        this.setRotateAngle(PectoralR, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, -0.6981F, 0.0F);
+        this.setRotateAngle(PectoralL, 0.0F, 0.4363F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.6981F, 0.0F);
+        this.setRotateAngle(PelvicR, 0.0F, 0.0F, 0.3491F);
+        this.setRotateAngle(cube_r5, 0.0F, 0.0F, 0.48F);
+        this.setRotateAngle(PelvicL, 0.0F, 0.0F, -0.48F);
+        this.setRotateAngle(cube_r6, 0.0F, 0.0F, -0.48F);
+        this.setRotateAngle(Body2, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.3665F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.2967F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.5149F, 0.0F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.7767F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.5061F, 0.0F, 0.0F);
+        this.setRotateAngle(Body5, 0.0944F, -0.3911F, -0.0361F);
+        this.setRotateAngle(cube_r13, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.3665F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(Cephalon, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(cube_r16, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r17, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r18, -1.1432F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r19, -0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r20, -0.9425F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Urosthenes.render(f);
+        //Reset rotations, positions and sizing:
+        this.Urosthenes.setScale(1.0F, 1.0F, 1.0F);
+        this.Urosthenes.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

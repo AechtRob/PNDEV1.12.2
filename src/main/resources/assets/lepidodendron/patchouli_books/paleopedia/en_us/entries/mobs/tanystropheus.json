@@ -9,28 +9,24 @@
 			"trigger": "lepidodendron:pf_adv_book_tanystropheus",
 			"title": "Tanystropheus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Protorosauria$(br)>Tanystropheidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauromorpha$(br)>Tanystropheidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/tanystropheus.png"],
-			"title": "T. hydroides",
-			"text": ""
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_tanystropheus",
-			"type": "text",
-			"text": "Tanystropheus hydroides was a genus of tanystropheid archosauromorph reptile from the middle triassic period. This animal is extremely recognizable, bearing a 3 meter long neck which was longer than the body and tail combined! "
+			"type": "entity",
+			"name": "T. hydroides",
+			"entity": "lepidodendron:prehistoric_flora_tanystropheus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tanystropheus",
 			"type": "text",
-			"text": "This neck only had 13 vertebrae structured in such a way in that the animal was unable to look upward, but could bend the neck sideways at incredible angles. These adaptations, including the animal’s head filled with long, outward-facing "
+			"text": "Tanystropheus hydroides was a genus of tanystropheid archosauromorph reptile from the Middle triassic. This animal is extremely recognizable, bearing a 3 meter long neck which was longer than the body and tail combined! This neck only had 13 vertebrae structured in such a way in that the animal was unable to look upward, but could bend the neck sideways at incredible angles. These adaptations, including the animal’s head filled with long, outward-facing teeth, were"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tanystropheus",
 			"type": "text",
-			"text": "teeth, were perfectly adapted for snatching schooling fish. Recent studies on the animal have revealed that it would have swam by alternatively kicking the back legs, not too different from some types of turtles"
+			"text": "perfectly adapted for snatching schooling fish. Recent studies on the animal have revealed that it would have swam by alternatively kicking the back legs, not too different from some types of turtles."
 		},
 		{
 			"type": "lepidodendron:diet",

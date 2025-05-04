@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_schoenesmahl",
 			"type": "text",
-			"text": "Schoenesmahl is a lizard from the Painten formation of Jurassic Germany. It is known from a disarticulated skeleton, lacking several parts of the body, which was preserved inside the stomach of a Compsognathus, showing a unique predator-prey interaction. The disarticulation of the skeleton implies that Compsognathus may have dismembered the lizard during consumption."
+			"text": "Schoenesmahl is a lizard from the Painten formation of Jurassic Germany. It is known from a dis-articulated skeleton, lacking several parts of the body, which was preserved inside the stomach of a Compsognathus, showing a unique predator-prey interaction. The dis-articulation of the skeleton implies that Compsognathus may have dismembered the lizard during consumption."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -9,18 +9,27 @@
 			"trigger": "lepidodendron:pf_adv_book_lithiotis",
 			"title": "Lithiotis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Bivalvia"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Pteriida$(br)>Pterioidea$(br)>Plicatostylidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Lithiotis.png"],
-			"title": "Lithiotis sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "Lithiotis sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_lithiotis",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lithiotis",
 			"type": "text",
-			"text": "Lithiotis is a long bivalve that grew in groups, giving it a crystal or rock spikes appearance. Individually, they are reminiscent of modern razor shells. They are infaunal bottom dwellers."
+			"text": "Lithiotis is a long plicatostylid bivalve that grew in groups, giving it a crystal or rock spikes appearance. Individually, they are reminiscent of modern razor shells. They are infaunal bottom dwellers."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lithiotis",

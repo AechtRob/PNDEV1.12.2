@@ -9,13 +9,24 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_pentacrinites",
 			"title": "Pentacrinites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Isocrinida$(br)>Pentacrinitidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine Driftwood$(br2)>Echinodermata$(br)>Crinoidea$(br)>Isocrinida$(br)>Pentacrinitidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pentacrinites.png"],
-			"title": "P. dichotomus",
-			"text": ""
+			"type": "multiblock",
+			"name": "P. dichotomus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_pentacrinites[topshoot=false]",
+					"1": "lepidodendron:crinoid_pentacrinites[topshoot=true]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_pentacrinites",

@@ -9,23 +9,24 @@
 			"trigger": "lepidodendron:pf_adv_book_sclerocormus",
 			"title": "Sclerocormus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordara$(br)>Ichthyosauromorpha$(br)>Ichthyosauriformes$(br)>Nasorostra"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordara$(br)>Reptilia$(br)>Ichthyosauromorpha$(br)>Ichthyosauriformes$(br)>Nasorostra"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/sclerocormus.png"],
-			"title": "S. parviceps",
-			"text": ""
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_sclerocormus",
-			"type": "text",
-			"text": "Sclerocormus is a basal ichthyosaur from the Early Triassic of China. The tail, longer than the body and head combined, served as a strong propulsion organ, while the tiny head, only around 6% of the total length of the body, was toothless and probably functioned in suction feeding. "
+			"type": "entity",
+			"name": "S. parviceps",
+			"entity": "lepidodendron:prehistoric_flora_sclerocormus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_sclerocormus",
 			"type": "text",
-			"text": "The really early appearance of this animal in the fossil record (248 million years ago), only around 4 million years after the end Permian mass extinction event, is testament to the quick recovery of life in the earliest Triassic and the incredible evolutionary radiation of the times."
+			"text": "Sclerocormus is a basal ichthyosaur from the Lower Triassic of China. The tail, longer than the body and head combined, served as a strong propulsion organ, while the tiny head, only around 6% of the total length of the body, was toothless and probably functioned in suction feeding. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sclerocormus",
+			"type": "text",
+			"text": "The really early appearance of this animal in the fossil record (248 million years ago), only around 4 million years after the end Permian mass extinction event, is testament to the quick recovery of life in the Lower-most Triassic and the incredible evolutionary radiation of the times."
 		},
 		{
 			"type": "lepidodendron:diet",

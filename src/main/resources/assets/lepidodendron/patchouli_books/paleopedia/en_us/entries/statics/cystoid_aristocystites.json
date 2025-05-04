@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_cystoid_aristocystites",
 			"title": "Aristocystites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Diploporita$(br)>Aristocystitidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Echinodermata$(br)>Diploporita$(br)>Aristocystitidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Aristocystites.png"],
-			"title": "Aristocystites sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "A. bohemicus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:cystoid_aristocystites",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cystoid_aristocystites",

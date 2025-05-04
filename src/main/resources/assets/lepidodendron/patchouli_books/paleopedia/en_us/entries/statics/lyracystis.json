@@ -9,18 +9,27 @@
 			"trigger": "lepidodendron:pf_adv_book_lyracystis",
 			"title": "Lyracystis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Blastozoa$(br)>Eocrinoidea$(br)>Gogiida$(br)>Lyracystidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Echinodermata$(br)>Blastozoa$(br)>Eocrinoidea$(br)>Gogiida$(br)>Lyracystidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Lyracystis.png"],
-			"title": "L. radiata",
-			"text": ""
+			"type": "multiblock",
+			"name": "L. radiata",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:lyracystis",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lyracystis",
 			"type": "text",
-			"text": "Lyracystis is a Cambrian eocrinoid echinoderm known from the Burgess Shale. It is related to Gogia. Lyracystis had a bulb on the end of its body with fern like tentacles extending from the bulb."
+			"text": "Lyracystis is a Cambrian eocrinoid echinoderm known from the Burgess Shale, and is closely related to Gogia. Lyracystis had a bulb on the end of its body with fern like tentacles extending from the bulb."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lyracystis",

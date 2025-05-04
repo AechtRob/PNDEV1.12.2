@@ -300,9 +300,26 @@ public class ModelWillwerathia extends ModelBasePalaeopedia {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.head.offsetY = -0.2F;
+        this.head.offsetX = 0.175F;
+        this.head.offsetZ = 2.0F;
+        this.head.rotateAngleY = (float)Math.toRadians(120);
+        this.head.rotateAngleX = (float)Math.toRadians(0);
+        this.head.rotateAngleZ = (float)Math.toRadians(0);
+        this.head.scaleChildren = true;
+        float scaler = 1.0F;
+        this.head.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(head, 0.6F, 3.8F, -0.2F);
+        //End of pose, now render the model:
+        this.head.render(f);
+        //Reset rotations, positions and sizing:
+        this.head.setScale(1.0F, 1.0F, 1.0F);
+        this.head.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

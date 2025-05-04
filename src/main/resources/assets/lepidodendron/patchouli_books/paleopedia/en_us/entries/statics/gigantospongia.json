@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>Demospongea$(br)>Agelasida$(br)>Auriculospongiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Gigantospongia.png"],
-			"title": "G. discoforma",
-			"text": ""
+			"type": "multiblock",
+			"name": "G. discoforma",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["1"],
+					["0"]
+				],
+				"mapping": {
+					"1": "lepidodendron:gigantospongia[facing=east]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gigantospongia",

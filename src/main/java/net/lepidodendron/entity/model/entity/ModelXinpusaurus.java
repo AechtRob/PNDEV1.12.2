@@ -388,12 +388,63 @@ public class ModelXinpusaurus extends ModelBasePalaeopedia {
         this.Xinpusaurus.render(0.01F);
         resetToDefaultPose();
     }
-
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Xinpusaurus.offsetY = -1.0F;
+        this.Xinpusaurus.offsetX = 1.4F;
+        this.Xinpusaurus.offsetZ = 2.0F;
+        this.Xinpusaurus.rotateAngleY = (float)Math.toRadians(120);
+        this.Xinpusaurus.rotateAngleX = (float)Math.toRadians(0);
+        this.Xinpusaurus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Xinpusaurus.scaleChildren = true;
+        float scaler = 1.0F;
+        this.Xinpusaurus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Xinpusaurus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Chest, -0.0873F, -0.3054F, 0.0F);
+        this.setRotateAngle(Neck, -0.0424F, -0.2619F, -0.0039F);
+        this.setRotateAngle(cube_r1, -0.2531F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, -0.2182F, -0.3927F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.1833F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.1833F, 0.0F, 0.0F);
+        this.setRotateAngle(bone, -0.0698F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.384F, 0.0F, -0.1658F);
+        this.setRotateAngle(cube_r5, -0.384F, 0.0F, 0.1658F);
+        this.setRotateAngle(cube_r6, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.1134F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(bone4, -0.0698F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.0436F, 0.0F, 0.1745F);
+        this.setRotateAngle(cube_r11, -0.0436F, 0.0F, -0.1745F);
+        this.setRotateAngle(cube_r12, 0.1745F, 0.0F, 0.1745F);
+        this.setRotateAngle(cube_r13, 0.1745F, 0.0F, -0.1745F);
+        this.setRotateAngle(cube_r14, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(LArm, 1.6815F, 1.0158F, 0.1063F);
+        this.setRotateAngle(LArm2, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(LHand, 0.0F, 0.0F, -0.3491F);
+        this.setRotateAngle(RArm, 1.6815F, -1.0158F, -0.1063F);
+        this.setRotateAngle(RArm2, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(RHand, 0.0F, 0.0F, 0.3491F);
+        this.setRotateAngle(Hip, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(RLeg, 0.2196F, -0.5734F, 0.7649F);
+        this.setRotateAngle(RLeg2, 0.0F, -0.6109F, 0.0F);
+        this.setRotateAngle(LLeg, 0.2618F, 0.7854F, -0.6981F);
+        this.setRotateAngle(LLeg2, 0.0F, 0.6109F, 0.0F);
+        this.setRotateAngle(Tail, 0.0436F, 0.3491F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0436F, 0.2618F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0873F, -0.3491F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0873F, -0.48F, 0.0F);
+        //End of pose, now render the model:
+        this.Xinpusaurus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Xinpusaurus.setScale(1.0F, 1.0F, 1.0F);
+        this.Xinpusaurus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
-
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

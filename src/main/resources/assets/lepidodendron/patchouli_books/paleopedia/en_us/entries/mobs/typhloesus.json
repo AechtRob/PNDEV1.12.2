@@ -9,13 +9,14 @@
 			"trigger": "lepidodendron:pf_adv_book_typhloesus",
 			"title": "Typhloesus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Lophotrochozoa$(br)>Mollusca"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Lophotrochozoa$(br)>$(o)Mollusca (?)"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/typhloesus.png"],
-			"title": "T. wellsi",
-			"text": ""
+			"type": "entity",
+			"name": "T. wellsi",
+			"entity": "lepidodendron:prehistoric_flora_typhloesus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_typhloesus",

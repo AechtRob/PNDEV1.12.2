@@ -12,15 +12,24 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Soluta$(br)>Syringocrinida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Castericystis.png"],
-			"title": "Coleicarpus sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "Coleicarpus sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:castericystis",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_castericystis",
 			"type": "text",
-			"text": "Coleicarpus is a marine and relatively short echinoderm that lived as a suspension feeder, like other echinoderms. It had a bulb like segment attached to the end of its stalk and it was covered with spines. It was orignally classified as Castericystis, although fossils were later found which suggest that while Castericystis was free-living as an adult, Coleicarpus remained attached via a holdfast all of its life."
+			"text": "Coleicarpus is a marine and relatively short echinoderm that lived as a suspension feeder, like other echinoderms. It had a bulb like segment attached to the end of its stalk and it was covered with spines. It was originally classified as Castericystis, although fossils were later found which suggest that while Castericystis was free-living as an adult, Coleicarpus remained attached via a holdfast all of its life."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_castericystis",

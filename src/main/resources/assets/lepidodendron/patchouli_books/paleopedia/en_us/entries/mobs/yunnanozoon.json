@@ -12,15 +12,26 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Chordata$(br)>Yunnanozoonidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/yunnanozoon.png"],
-			"title": "Y. lividum",
-			"text": ""
+			"type": "entity",
+			"name": "Y. lividum",
+			"entity": "lepidodendron:prehistoric_flora_yunnanozoon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_yunnanozoon",
 			"type": "text",
-			"text": "Yunnanozoon was an early Cambrian organism that looked like a tube with a single large body fin. It is sometimes associated with Vetulicolians."
+			"text": "Yunnanozoon lividum comes from the Lower Cambrian, with fossils found in the Maotianshan Shales, China. It is a small lancelet-like organism, growing up to 6 cm in length. Due to its rather simple appearance, being an elongated form with a fin, its affinites have been the subject of debate since its description and naming in 1999. Some have suggested that it could be a cephalochordate (Lancelet), a hemichordate, even a protostome, although some more recent studies"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yunnanozoon",
+			"type": "text",
+			"text": "have agreed that it may be a bilterian stem-vertebrate, with a further study done in 2024, spurred on mostly by the reinterpretation of Pikaia, also looked at Yunnanozoon and placed it as a transitional stem-chordate between the vetulicola and crown-group chorates, but whether this will remain as such it yet to be seen! As for how it feed, most agree that it likely used the filamentous arches in filter out food,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yunnanozoon",
+			"type": "text",
+			"text": "and expelled water and unwanted materials out of the holes along the side of its body. The generic name derives from the place name of 'Yunnan', a province in China were the fossil material is found; and the Greek word 'zôion', to mean 'animal'. The specific name derives directly from the Latin word 'lividum', to mean 'lead-coloured'."
 		},
 		{
 			"type": "lepidodendron:diet",

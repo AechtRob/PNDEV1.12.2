@@ -12,15 +12,21 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Artiopoda$(br)>Vicissicaudata"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/sidneyia.png"],
-			"title": "S. inexpectans",
-			"text": ""
+			"type": "entity",
+			"name": "S. inexpectans",
+			"entity": "lepidodendron:prehistoric_flora_sidneyia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_sidneyia",
 			"type": "text",
-			"text": "Sidneyia is an extinct arthropod from the early Cambrian that was thought to have been a benthic carnivore and scavenger that searched for hard-shelled prey on the sea floor."
+			"text": "Sidneyia comes from the Middle Cambrian, with fossils found in the Mantou and Hongjingshao Formations, China, and the Burgess Shale, Canada. It is a small arthropod, growing up to 16 cm in length. It is known to have bristle-like structures, similar to the gnathobases of horseshoe crabs, suggesting it may have lived a similar epibenthic lifestyle, scavenging along the seafloor and eating hard-shelled organisms, like trilobites and brachiopods, which are preserved in"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sidneyia",
+			"type": "text",
+			"text": "great numbers in the stomach contents of some known fossil specimens. The generic name derives from the Latinised forename of Sidney Walcott, the son of the famous American paleontologist Charles Doolittle Walcott, who's son had helped locate and and collect the first specimen in the Burgess Shale."
 		},
 		{
 			"type": "lepidodendron:diet",

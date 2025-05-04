@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_brachiopod_orthid",
 			"title": "Orthid Brachiopod",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian-Permian$(br2)$(l)Habitat:$() Marine$(br2)>Brachiopoda$(br)>Rhynchonellata$(br)>Orthida"
+			"text": "$(l)Temporal Range:$() Cambrian - Permian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Brachiopoda$(br)>Rhynchonellata$(br)>$(o)Orthida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/orthid.png"],
-			"title": "Orthida",
-			"text": ""
+			"type": "multiblock",
+			"name": "Orthida",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["1"],
+					["0"]
+				],
+				"mapping": {
+					"1": "lepidodendron:brachiopod_orthid[facing=east]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_brachiopod_orthid",

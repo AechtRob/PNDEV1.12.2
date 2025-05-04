@@ -9,13 +9,24 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_holocrinus",
 			"title": "Holocrinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Encrinida"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Encrinida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Holocrinus.png"],
-			"title": "",
-			"text": ""
+			"type": "multiblock",
+			"name": "H. beyrichi",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_holocrinus[topshoot=true]",
+					"1": "lepidodendron:crinoid_holocrinus[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_holocrinus",

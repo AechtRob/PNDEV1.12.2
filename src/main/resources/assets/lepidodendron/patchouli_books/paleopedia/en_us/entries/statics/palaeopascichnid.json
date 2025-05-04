@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeopascichnid",
 			"title": "Palaeopascichnids",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>incertae sedis"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis$(br)>Palaeopascichnid"
 		},
 		{
 			"type": "multiblock",

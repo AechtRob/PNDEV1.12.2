@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Ecdysozoa$(br)>Panarthropoda$(br)>Lobopodia$(br)>Hallucigeniidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/thanahita.png"],
-			"title": "T. distos",
-			"text": ""
+			"type": "entity",
+			"name": "T. distos",
+			"entity": "lepidodendron:prehistoric_flora_thanahita",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_thanahita",

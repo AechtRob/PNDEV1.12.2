@@ -200,6 +200,29 @@ public class ModelTartuosteus extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Tartuosteus.offsetY = 0.1F;
+        this.Tartuosteus.offsetX = 0.15F;
+        this.Tartuosteus.offsetZ = 2.0F;
+        this.Tartuosteus.rotateAngleY = (float)Math.toRadians(120);
+        this.Tartuosteus.rotateAngleX = (float)Math.toRadians(0);
+        this.Tartuosteus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Tartuosteus.scaleChildren = true;
+        float scaler = 0.25F;
+        this.Tartuosteus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Tartuosteus, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Body1, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.3F, 0.0F);
+        //End of pose, now render the model:
+        this.Tartuosteus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Tartuosteus.setScale(1.0F, 1.0F, 1.0F);
+        this.Tartuosteus.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_orthograptus",
 			"title": "Orthograptus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Hemichordata $(br)>Pterobranchia $(br)>Graptolithina $(br)>Diplograptidae"
+			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Hemichordata$(br)>Pterobranchia$(br)>Graptolithina$(br)>Diplograptidae"
 		},
 		{
 			"type": "multiblock",

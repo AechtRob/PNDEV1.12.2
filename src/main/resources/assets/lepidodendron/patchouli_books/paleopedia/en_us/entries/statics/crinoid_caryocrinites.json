@@ -9,13 +9,24 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_caryocrinites",
 			"title": "Caryocrinites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Rhombifera$(br)>Caryocrinitidae"
+			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Blastozoa$(br)>Eocrinoidea$(br)>Rhombifera$(br)>Caryocrinitidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Caryocrinites.png"],
-			"title": "C. ornatus",
-			"text": ""
+			"type": "multiblock",
+			"name": "C. ornatus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_caryocrinites[topshoot=true]",
+					"1": "lepidodendron:crinoid_caryocrinites[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_caryocrinites",

@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Amphibia$(br)>Temnospondyli$(br)>Stereospondyli$(br)>Chigutisauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/siderops.png"],
-			"title": "S. kehli",
-			"text": ""
+			"type": "entity",
+			"name": "S. kehli",
+			"entity": "lepidodendron:prehistoric_flora_siderops",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_siderops",
 			"type": "text",
-			"text": "Siderops is a chigutisaurid temnospondyl from Evergreen Formation in Australia. Although most temnospondyls went extinct in the Late Triassic, Siderops was one of the late-surviving members from Early Jurassic, and remains are pretty complete. With length over 2.6 m, it was probably massive predator that hunted prey with its large fangs."
+			"text": "Siderops is a chigutisaurid temnospondyl from the Lower Jurassic Evergreen Formation in Australia. Although most temnospondyls went extinct in the Upper Triassic, Siderops was one of the late-surviving members, being found in the Lower Jurassic, and remains are pretty complete. With length over 2.6 m, it was probably massive predator that hunted prey with its large fangs."
 		},
 		{
 			"type": "lepidodendron:diet",

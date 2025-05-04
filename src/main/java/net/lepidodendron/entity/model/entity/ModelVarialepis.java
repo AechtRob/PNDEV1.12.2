@@ -245,15 +245,17 @@ public class ModelVarialepis extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.varialepis.offsetY = -0.50F;
-        this.varialepis.offsetX = 0.0F;
+        this.varialepis.offsetY = -0.8F;
+        this.varialepis.offsetX = 0.4F;
+        this.varialepis.offsetZ = 2.0F;
         this.varialepis.rotateAngleY = (float)Math.toRadians(130);
         this.varialepis.rotateAngleX = (float)Math.toRadians(9);
         this.varialepis.rotateAngleZ = (float)Math.toRadians(-2);
         this.varialepis.scaleChildren = true;
-        float scaler = 1.1F;
+        float scaler = 2.2F;
         this.varialepis.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(varialepis, 0.6F, 3.9F, -0.2F);
         this.setRotateAngle(body, 0.1F, 0.1F, 0.15F);
         this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(body3, 0.0F, 0.1F, 0.0F);

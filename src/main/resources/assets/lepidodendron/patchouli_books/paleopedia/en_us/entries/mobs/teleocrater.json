@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Archosauria$(br)>Avemetatarsalia$(br)>Aphanosauria"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/teleocrater.png"],
-			"title": "T. rhadinus",
-			"text": ""
+			"type": "entity",
+			"name": "T. rhadinus",
+			"entity": "lepidodendron:prehistoric_flora_teleocrater",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_teleocrater",
 			"type": "text",
-			"text": "Teleocrater is a Triassic Aphanosaurian archosaur. With a total length of about 2 m, Teleocrater is characterized by its long neck. Contrary to what is thought from its small sauropod-like appearance, Teleocrater is carnivorous animal with sharp teeth. Aphanosauria is important in considering the evolution of dinosaurs and pterosaurs."
+			"text": "Teleocrater is a Triassic aphanosaurian archosaur. With a total length of about 2 m, Teleocrater is characterized by its long neck. Contrary to what is thought from its small sauropod-like appearance, Teleocrater is carnivorous animal with sharp teeth. Aphanosauria is important in considering the evolution of dinosaurs and pterosaurs."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_teleocrater",

@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Jurassic - Present$(br2)>Mollusca$(br)>Gastropoda$(br)>Architaenioglossa$(br)>Viviparidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/viviparus.png"],
-			"title": "V. fluviorum",
-			"text": ""
+			"type": "entity",
+			"name": "V. fluviorum",
+			"entity": "lepidodendron:prehistoric_flora_viviparus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_viviparus",

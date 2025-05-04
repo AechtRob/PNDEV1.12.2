@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_paracharnia",
 			"title": "Paracharnia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Rangeomorpha$(br)>Charniidae"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Petalonamae$(br)>Rangeomorpha$(br)>Charniidae"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_paracharnia",
 			"type": "text",
-			"text": "Paracharnia denyingensis comes from the Upper Ediacaran, with fossils found in the Dengying Formation, South China. It is a leaf-like lifeform found in shallow waters and could grow up to 20 cm in height, and possibly partook in filter feeding from the surrounding water."
+			"text": "Paracharnia denyingensis comes from the Upper Ediacaran, with fossils found in the Dengying Formation, South China. It is a leaf-like petalonamid lifeform found in shallow waters and could grow up to 20 cm in height, and possibly partook in filter feeding from the surrounding water."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_paracharnia",

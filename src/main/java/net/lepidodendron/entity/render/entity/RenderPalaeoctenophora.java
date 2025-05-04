@@ -72,7 +72,49 @@ public class RenderPalaeoctenophora extends RenderLivingBaseWithBook<EntityPrehi
                 GlStateManager.disableNormalize();
                 GlStateManager.popMatrix();
                 //Layer2 (Emissive):
+                this.bindTexture(LayerPalaeoctenophoraEmissive.TEXTURE);
+                GlStateManager.pushMatrix();
+                GlStateManager.enableBlend();
+                GlStateManager.disableAlpha();
+                GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
+                if (entity.isInvisible())
+                {
+                    GlStateManager.depthMask(false);
+                }
+                else
+                {
+                    GlStateManager.depthMask(true);
+                }
 
+                int i = 61680;
+                int j = i % 65536;
+                int k = i / 65536;
+                OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
+                GlStateManager.color(0.2F, 0.2F, 0.2F, 1.0F);
+                Minecraft.getMinecraft().entityRenderer.setupFogColor(true);
+                this.bookModel.setModelAttributes(this.bookModel);
+                this.bookModel.renderStaticBook(scale);
+                Minecraft.getMinecraft().entityRenderer.setupFogColor(false);
+                i = entity.getBrightnessForRender();
+                j = i % 65536;
+                k = i / 65536;
+                OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
+                this.setLightmap(entity);
+                GlStateManager.disableBlend();
+                GlStateManager.enableAlpha();
+                GlStateManager.popMatrix();
+                //End of renders
+                if (flag)
+                {
+                    this.unsetBrightness();
+                }
+                GlStateManager.depthMask(true);
+                GlStateManager.disableRescaleNormal();
+                GlStateManager.setActiveTexture(OpenGlHelper.lightmapTexUnit);
+                GlStateManager.enableTexture2D();
+                GlStateManager.setActiveTexture(OpenGlHelper.defaultTexUnit);
+                GlStateManager.enableCull();
+                GlStateManager.popMatrix();
                 //End of renders
                 if (flag)
                 {

@@ -9,18 +9,19 @@
 			"trigger": "lepidodendron:pf_adv_book_saurosuchus",
 			"title": "Saurosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Pseudosuchia$(br)>Loricata$(br)>Prestosuchidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Loricata$(br)>Prestosuchidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/saurosuchus.png"],
-			"title": "S. galilei",
-			"text": ""
+			"type": "entity",
+			"name": "S. galilei",
+			"entity": "lepidodendron:prehistoric_flora_saurosuchus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_saurosuchus",
 			"type": "text",
-			"text": "Saurosuchus galilei was a genus of large loricatan from the Ischigualasto formation, Argentina. The animal was 6.3 meters long, making it one of the largest predators of its time, only outclassed by the much larger Fasolasuchus.sauros"
+			"text": "Saurosuchus galilei was a genus of large loricatan from the Ischigualasto formation, Argentina. The animal was 6.3 meters long, making it one of the largest predators of its time, only outclassed by the much larger Fasolasuchus."
 		},
 		{
 			"type": "lepidodendron:diet",

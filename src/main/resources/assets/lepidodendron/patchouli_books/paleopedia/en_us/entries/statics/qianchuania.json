@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_qianchuania",
 			"title": "Qianchuania",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Lower Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>$(o)Cnidarian (?)"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Lower Ediacaran)$(br2)$(l)Habitat:$() Shallow Marine$(br2)>$(o)Cnidarian (?)"
 		},
 		{
 			"type": "multiblock",

@@ -9,18 +9,27 @@
 			"trigger": "lepidodendron:pf_adv_book_brachiopod_spiriferid",
 			"title": "Spiriferid Brachiopod",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Jurassic$(br2)$(l)Habitat:$() $(br2)>Brachiopoda$(br)>Rhynchonellata$(br)>Spiriferida"
+			"text": "$(l)Temporal Range:$() Ordovician - Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Brachiopoda$(br)>Rhynchonellata$(br)>$(o)Spiriferida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/spiriferid.png"],
-			"title": "Spiriferida",
-			"text": ""
+			"type": "multiblock",
+			"name": "Spiriferida",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["1"],
+					["0"]
+				],
+				"mapping": {
+					"1": "lepidodendron:brachiopod_spiriferid[facing=east]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_brachiopod_spiriferid",
 			"type": "text",
-			"text": "Spiriferids are a group of brachiopods that first appeared during the Ordovician period and are characterized by their croissant shaped shells. Like other brachiopods, they were stalked and could attach themselves to ocean shelves and were very abundant in shallow seas. Their diversity peaked during the Devonian and they survived the Permian extinction, lasting until the Jurassic period."
+			"text": "Spiriferids are a group of brachiopods that first appeared during the Ordovician period and are characterized by their croissant shaped shells. Like other brachiopods, they were stalked and could attach themselves to ocean shelves and were very abundant in shallow seas. Their diversity peaked during the Devonian and they survived the Permian - Triassic extinction, lasting until the Jurassic period."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_brachiopod_spiriferid",

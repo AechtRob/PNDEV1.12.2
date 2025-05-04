@@ -436,22 +436,31 @@ public class ModelTrilophosaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -0.50F;
-        this.body.offsetX = -0.2F;
-        this.body.rotateAngleY = (float)Math.toRadians(130);
-        this.body.rotateAngleX = (float)Math.toRadians(2);
+        this.body.offsetY = -0.4F;
+        this.body.offsetX = 0.45F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(120);
+        this.body.rotateAngleX = (float)Math.toRadians(0);
         this.body.rotateAngleZ = (float)Math.toRadians(0);
         this.body.scaleChildren = true;
-        float scaler = 1.0F;
+        float scaler = 0.6F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(body, 0.4F, 3.8F, -0.2F);
+        this.setRotateAngle(neck, -0.4F, 0.2F, 0.0F);
+        this.setRotateAngle(neck2, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.3F, 0.0F);
         //End of pose, now render the model:
         this.body.render(f);
         //Reset rotations, positions and sizing:
         this.body.setScale(1.0F, 1.0F, 1.0F);
         this.body.scaleChildren = false;
         resetToDefaultPose();
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
