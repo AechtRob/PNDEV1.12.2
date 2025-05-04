@@ -57,6 +57,13 @@ public class RenderFacivermis extends TileEntitySpecialRenderer<TileEntityFacive
             }
         }
 
+        //----Start PP Page adjustment
+        StackTraceElement[] elements = new Throwable().getStackTrace();
+        String callerClass = elements[5].getClassName();
+        if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
+            scaler = 1.0F;
+        }
+
         this.bindTexture(TEXTURE_FACIVERMIS);
         ModelFacivermis modelFacivermis = this.modelFacivermis;
         GlStateManager.enableRescaleNormal();
@@ -71,6 +78,14 @@ public class RenderFacivermis extends TileEntitySpecialRenderer<TileEntityFacive
         GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
         //GlStateManager.pushMatrix();
         modelFacivermis.scaler = scaler;
+        //----Start PP Page adjustment
+        if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
+            GlStateManager.enableBlend();
+            GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+            GlStateManager.scale(2.1, 2.1, 2.1);
+            GlStateManager.translate(0,-1.0,0);
+        }
+        //----End PP Page adjustment
         modelFacivermis.renderAll(Minecraft.getMinecraft().player.ticksExisted);
         GlStateManager.popMatrix();
         GlStateManager.disableRescaleNormal();
@@ -90,7 +105,14 @@ public class RenderFacivermis extends TileEntitySpecialRenderer<TileEntityFacive
         GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
         //GlStateManager.pushMatrix();
         modelFacivermisBase.scaler = scaler;
-        modelFacivermisBase.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        //----Start PP Page adjustment
+        if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
+            //Do not render the base
+        }
+        //----End PP Page adjustment
+        else {
+            modelFacivermisBase.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        }
         GlStateManager.popMatrix();
         GlStateManager.disableRescaleNormal();
         GlStateManager.disableBlend();

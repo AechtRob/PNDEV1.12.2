@@ -36,84 +36,82 @@ public class RenderOesia extends TileEntitySpecialRenderer<BlockOesia.TileEntity
 
     @Override
     public void render(BlockOesia.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
-        EnumFacing facing = EnumFacing.NORTH;
-        if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockOesia.block) {
-            facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
+        EnumFacing facing = EnumFacing.UP;
+        int variant = 0;
 
-            int variant = 0;
-            TileEntity te = getWorld().getTileEntity(entity.getPos());
-            if (te != null) {
-                if (te.getTileData().hasKey("variant")) {
-                    variant = te.getTileData().getInteger("variant");
-                }
-            }
-            /*
-            int variant = new Object() {
-                public int getValue(BlockPos pos, String tag) {
-                    TileEntity tileEntity = entity.getWorld().getTileEntity(pos);
-                    if (tileEntity != null)
-                        return tileEntity.getTileData().getInteger(tag);
-                    return 0;
-                }
-            }.getValue(new BlockPos(entity.getPos()), "variant");
-             */
+        try { //to support book rendering:
+            if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockOesia.block) {
+                facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
 
-            if (variant == 0) {
-                this.bindTexture(TEXTURE);
+                TileEntity te = getWorld().getTileEntity(entity.getPos());
+                if (te != null) {
+                    if (te.getTileData().hasKey("variant")) {
+                        variant = te.getTileData().getInteger("variant");
+                    }
+                }
+
             }
-            if (variant == 1) {
-                this.bindTexture(TEXTURE1);
-            }
-            if (variant == 2) {
-                this.bindTexture(TEXTURE2);
-            }
-            if (variant == 3) {
-                this.bindTexture(TEXTURE3);
-            }
-            if (variant == 4) {
-                this.bindTexture(TEXTURE4);
-            }
-            if (variant == 5) {
-                this.bindTexture(TEXTURE5);
-            }
-            if (variant == 6) {
-                this.bindTexture(TEXTURE6);
-            }
-            if (variant == 7) {
-                this.bindTexture(TEXTURE7);
-            }
-            if (variant == 8) {
-                this.bindTexture(TEXTURE8);
-            }
-            if (variant == 9) {
-                this.bindTexture(TEXTURE9);
-            }
-            if (variant == 10) {
-                this.bindTexture(TEXTURE10);
-            }
-            ModelOesia modelOesia = this.modelOesia;
-            GlStateManager.enableRescaleNormal();
-            GlStateManager.alphaFunc(516, 0.1f);
-            GlStateManager.enableBlend();
-            RenderHelper.enableStandardItemLighting();
-            GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
-            GlStateManager.pushMatrix();
-            GlStateManager.translate(x + 0.5, y + 2.4, z + 0.5);
-            GlStateManager.rotate(180, 0F, 0F, 1F);
-            GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
-            //----Start PP Page adjustment
-            StackTraceElement[] elements = new Throwable().getStackTrace();
-            String callerClass = elements[5].getClassName();
-            if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
-                GlStateManager.enableBlend();
-                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-                GlStateManager.scale(0.7, 0.8, 0.7);
-            }
-            //----End PP Page adjustment
-            modelOesia.renderAll(Minecraft.getMinecraft().player.ticksExisted);
-            GlStateManager.popMatrix();
-            GlStateManager.disableRescaleNormal();
-            GlStateManager.disableBlend();
         }
+        catch (Exception e){
+            facing = EnumFacing.UP;
+            variant = 0;
+        }
+        if (variant == 0) {
+            this.bindTexture(TEXTURE);
+        }
+        if (variant == 1) {
+            this.bindTexture(TEXTURE1);
+        }
+        if (variant == 2) {
+            this.bindTexture(TEXTURE2);
+        }
+        if (variant == 3) {
+            this.bindTexture(TEXTURE3);
+        }
+        if (variant == 4) {
+            this.bindTexture(TEXTURE4);
+        }
+        if (variant == 5) {
+            this.bindTexture(TEXTURE5);
+        }
+        if (variant == 6) {
+            this.bindTexture(TEXTURE6);
+        }
+        if (variant == 7) {
+            this.bindTexture(TEXTURE7);
+        }
+        if (variant == 8) {
+            this.bindTexture(TEXTURE8);
+        }
+        if (variant == 9) {
+            this.bindTexture(TEXTURE9);
+        }
+        if (variant == 10) {
+            this.bindTexture(TEXTURE10);
+        }
+        ModelOesia modelOesia = this.modelOesia;
+        GlStateManager.enableRescaleNormal();
+        GlStateManager.alphaFunc(516, 0.1f);
+        GlStateManager.enableBlend();
+        RenderHelper.enableStandardItemLighting();
+        GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+        GlStateManager.pushMatrix();
+        GlStateManager.translate(x + 0.5, y + 2.4, z + 0.5);
+        GlStateManager.rotate(180, 0F, 0F, 1F);
+        GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
+        //----Start PP Page adjustment
+        StackTraceElement[] elements = new Throwable().getStackTrace();
+        String callerClass = elements[5].getClassName();
+        if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
+            GlStateManager.enableBlend();
+            GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+            GlStateManager.scale(2.3, 2.3, 2.3);
+            GlStateManager.translate(0,-1.3,0);
+        }
+        //----End PP Page adjustment
+        modelOesia.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        GlStateManager.popMatrix();
+        GlStateManager.disableRescaleNormal();
+        GlStateManager.disableBlend();
     }
 }

@@ -28,7 +28,7 @@ public class ModelFacivermis extends AdvancedModelBase {
     private final AdvancedModelRenderer legR2;
     private final AdvancedModelRenderer legR3;
     private final AdvancedModelRenderer head;
-    private final AdvancedModelRenderer tube;
+    public final AdvancedModelRenderer tube;
 
     public float scaler;
 

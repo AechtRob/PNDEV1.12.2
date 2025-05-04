@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class LayerCtenorhabdotusEmissive implements LayerRenderer<EntityPrehistoricFloraCtenorhabdotus>
 {
     private final RenderCtenorhabdotus CtenorhabdotusRenderer;
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ctenorhabdotus_emissive.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ctenorhabdotus_emissive.png");
 
     public LayerCtenorhabdotusEmissive(RenderCtenorhabdotus CtenorhabdotusRendererIn)
     {
