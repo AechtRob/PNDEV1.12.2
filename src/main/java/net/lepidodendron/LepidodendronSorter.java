@@ -5569,6 +5569,18 @@ public class LepidodendronSorter {
     public static final int scelidosaurus_raw = 5390;
     public static final int mei_raw = 5391;
     public static final int cryptoclidus_raw = 5392;
+    public static final int keurbos_raw = 5393;
+    public static final int valdotriton_raw = 5394;
+    public static final int eggs_rutiodon = 5395;
+    public static final int tawa_raw = 5396;
+    public static final int eggs_tawa = 5397;
+    public static final int eggs_rechnisaurus = 5398;
+    public static final int rechnisaurus_raw = 5399;
+    public static final int eggs_valdotriton = 5400;
+    public static final int mecistotrachelos_raw = 5401;
+    public static final int vulcanodon_raw = 5402;
+    public static final int eggs_mecistotrachelos = 5403;
+    public static final int eggs_vulcanodon = 5404;
 
 
 

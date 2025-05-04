@@ -39,17 +39,17 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMarmorerpeton extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, IAdvancementGranter {
+public class EntityPrehistoricFloraValdotriton extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, IAdvancementGranter {
 
-	private static final DataParameter<Integer> BOTTOM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraMarmorerpeton.class, DataSerializers.VARINT);
-	private static final DataParameter<Integer> SWIM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraMarmorerpeton.class, DataSerializers.VARINT);
-	private static final DataParameter<Boolean> BOTTOM_FLAG = EntityDataManager.createKey(EntityPrehistoricFloraMarmorerpeton.class, DataSerializers.BOOLEAN);
+	private static final DataParameter<Integer> BOTTOM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraValdotriton.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> SWIM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraValdotriton.class, DataSerializers.VARINT);
+	private static final DataParameter<Boolean> BOTTOM_FLAG = EntityDataManager.createKey(EntityPrehistoricFloraValdotriton.class, DataSerializers.BOOLEAN);
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
 
-	public EntityPrehistoricFloraMarmorerpeton(World world) {
+	public EntityPrehistoricFloraValdotriton(World world) {
 		super(world);
 		setSize(0.35F, 0.20F);
 		minWidth = 0.1F;
@@ -87,7 +87,7 @@ public class EntityPrehistoricFloraMarmorerpeton extends EntityPrehistoricFloraS
 		return true;
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	//public static String getHabitat() {return "Amphibious";}
 
@@ -103,7 +103,7 @@ public class EntityPrehistoricFloraMarmorerpeton extends EntityPrehistoricFloraS
 
 	protected float getAISpeedSwimmingAmphibian() {
 		//return 0;
-		float calcSpeed = 0.1F;
+		float calcSpeed = 0.2F;
 		if (this.isReallyInWater()) {
 			calcSpeed= 0.185f;
 		}
@@ -337,64 +337,15 @@ public class EntityPrehistoricFloraMarmorerpeton extends EntityPrehistoricFloraS
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.MARMORERPETON_LOOT;
+		return LepidodendronMod.VALDOTRITON_LOOT;
 	}
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetPlinth() { return 0.018; }
-	public static double offsetWall(@Nullable String variant) { return 0.05; }
-	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
-	}
-	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.5;
-	}
-	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.2;
-	}
-	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.0F;
-	}
-	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.2;
-	}
-	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0F;
-	}
-	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.14;
-	}
-	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0F;
-	}
-	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.1;
-	}
-	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0F;
-	}
-	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderMarmorerpeton.TEXTURE;
-	}
-	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelMarmorerpeton;
-	}
-	public static float getScaler(@Nullable String variant) {
-		return RenderMarmorerpeton.getScaler();
-	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_MARMORERPETON;
+		return ModTriggers.CLICK_VALDOTRITON;
 	}
 }

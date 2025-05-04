@@ -7569,6 +7569,36 @@ public class RenderHandler {
                 return new RenderSantanmantis(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraValdotriton.class, new IRenderFactory<EntityPrehistoricFloraValdotriton>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraValdotriton> createRenderFor(RenderManager manager) {
+                return new RenderValdotriton(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKeurbos.class, new IRenderFactory<EntityPrehistoricFloraKeurbos>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraKeurbos> createRenderFor(RenderManager manager) {
+                return new RenderKeurbos(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRutiodon.class, new IRenderFactory<EntityPrehistoricFloraRutiodon>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraRutiodon> createRenderFor(RenderManager manager) {
+                return new RenderRutiodon(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRechnisaurus.class, new IRenderFactory<EntityPrehistoricFloraRechnisaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraRechnisaurus> createRenderFor(RenderManager manager) {
+                return new RenderRechnisaurus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTawa.class, new IRenderFactory<EntityPrehistoricFloraTawa>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTawa> createRenderFor(RenderManager manager) {
+                return new RenderTawa(manager);
+            }
+        });
         
 
 
