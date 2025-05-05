@@ -99,19 +99,17 @@ public class BlockPhyllotheca extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomePermian) {
 			BiomePermian biomePermian = (BiomePermian) biome;
-			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_plains")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_stony")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_arid_lands_lush")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_arid")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_arid_lands_lush")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_arid")
 				|| biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris) {
 				biomeCriteria = true;
 			}
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_swamp")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_forest")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_cold_glossopteris_foggy")) {
+			else {
 				biomeCriteria = false;
 			}
 		}
@@ -121,6 +119,9 @@ public class BlockPhyllotheca extends ElementsLepidodendronMod.ModElement {
 			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.River
 				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Swamp) {
 				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
 			}
 		}
 			

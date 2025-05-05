@@ -1,12 +1,12 @@
 {
-	"name": "Wetlands",
+	"name": "Cathaysian Wetlands",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_permian.png",
 	"category": "lepidodendron:permian/permian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Permian Wetlands$(br2)$()Text here..."
+			"text": "$(l)Permian Cathaysian Wetlands$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

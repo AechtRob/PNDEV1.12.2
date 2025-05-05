@@ -16,10 +16,16 @@
 		"experience": 10000
 	},
 	"criteria": {
-		"permian_arid_hills": {
+		"permian_stony_plains": {
 			"trigger": "minecraft:location",
 			"conditions": {
-				"biome": "lepidodendron:permian_arid_hills"
+				"biome": "lepidodendron:permian_stony_plains"
+			}
+		},
+		"permian_stony_plains_spikes": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_stony_plains_spikes"
 			}
 		},
 		"permian_arid_lands": {
@@ -28,10 +34,22 @@
 				"biome": "lepidodendron:permian_arid_lands"
 			}
 		},
+		"permian_arid_hills": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_arid_hills"
+			}
+		},
 		"permian_arid_lands_lush": {
 			"trigger": "minecraft:location",
 			"conditions": {
 				"biome": "lepidodendron:permian_arid_lands_lush"
+			}
+		},
+		"permian_ocean": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_ocean"
 			}
 		},
 		"permian_beach": {
@@ -46,52 +64,40 @@
 				"biome": "lepidodendron:permian_cold_glossopteris_beach"
 			}
 		},
-		"permian_desert": {
+		"permian_ocean_shore": {
 			"trigger": "minecraft:location",
 			"conditions": {
-				"biome": "lepidodendron:permian_desert"
+				"biome": "lepidodendron:permian_ocean_shore"
 			}
 		},
-		"permian_floodbasalt": {
+		"permian_ocean_cliff": {
 			"trigger": "minecraft:location",
 			"conditions": {
-				"biome": "lepidodendron:permian_floodbasalt"
+				"biome": "lepidodendron:permian_ocean_cliff"
 			}
 		},
-		"permian_floodbasalt_edge": {
+		"permian_ocean_sponge_reef": {
 			"trigger": "minecraft:location",
 			"conditions": {
-				"biome": "lepidodendron:permian_floodbasalt_edge"
-			}
-		},
-		"permian_cold_glossopteris_swamp": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:permian_cold_glossopteris_swamp"
+				"biome": "lepidodendron:permian_ocean_sponge_reef"
 			}
 		},
 		"permian_cold_glossopteris_forest": {
 			"trigger": "minecraft:location",
 			"conditions": {
-				"biome": "lepidodendron:permian_cold_glossopteris_forest"
+				"biome": "lepidodendron:permian_cold_glossopteris_forest_ocean"
 			}
 		},
-		"permian_drumlin": {
+		"permian_cold_glossopteris_swamp": {
 			"trigger": "minecraft:location",
 			"conditions": {
-				"biome": "lepidodendron:permian_drumlin"
+				"biome": "lepidodendron:permian_temperate_glossopteris_copse"
 			}
 		},
 		"permian_cold_glossopteris_forest_ocean": {
 			"trigger": "minecraft:location",
 			"conditions": {
 				"biome": "lepidodendron:permian_cold_glossopteris_forest_ocean"
-			}
-		},
-		"permian_temperate_glossopteris_copse": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:permian_temperate_glossopteris_copse"
 			}
 		},
 		"permian_cold_glossopteris_forest_light": {
@@ -106,10 +112,40 @@
 				"biome": "lepidodendron:permian_cold_glossopteris_forest_craggy"
 			}
 		},
+		"permian_temperate_glossopteris_copse": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_temperate_glossopteris_copse"
+			}
+		},
 		"permian_temperate_glossopteris": {
 			"trigger": "minecraft:location",
 			"conditions": {
 				"biome": "lepidodendron:permian_temperate_glossopteris"
+			}
+		},
+		"permian_desert": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_desert"
+			}
+		},
+		"permian_desert_edge": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_desert_edge"
+			}
+		},
+		"permian_floodbasalt": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_floodbasalt"
+			}
+		},
+		"permian_floodbasalt_edge": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_floodbasalt_edge"
 			}
 		},
 		"permian_highlands": {
@@ -118,10 +154,16 @@
 				"biome": "lepidodendron:permian_highlands"
 			}
 		},
-		"permian_lowlands_floodplain": {
+		"permian_wetlands_fern_copse": {
 			"trigger": "minecraft:location",
 			"conditions": {
-				"biome": "lepidodendron:permian_lowlands_floodplain"
+				"biome": "lepidodendron:permian_wetlands_fern_copse"
+			}
+		},
+		"permian_wetlands_fern_copse_lakes": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_wetlands_fern_copse_lakes"
 			}
 		},
 		"permian_lowlands": {
@@ -130,10 +172,28 @@
 				"biome": "lepidodendron:permian_lowlands"
 			}
 		},
+		"permian_lowlands_floodplain": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_lowlands_floodplain"
+			}
+		},
+		"permian_lowlands_floodplain_lake": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_lowlands_floodplain_lake"
+			}
+		},
 		"permian_lowlands_forest": {
 			"trigger": "minecraft:location",
 			"conditions": {
 				"biome": "lepidodendron:permian_lowlands_forest"
+			}
+		},
+		"permian_lowlands_forest_dense": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_lowlands_forest_dense"
 			}
 		},
 		"permian_mountains": {
@@ -142,64 +202,10 @@
 				"biome": "lepidodendron:permian_mountains"
 			}
 		},
-		"permian_ocean": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:permian_ocean"
-			}
-		},
-		"permian_ocean_cliff": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:permian_ocean_cliff"
-			}
-		},
-		"permian_ocean_shore": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:permian_ocean_shore"
-			}
-		},
 		"permian_river": {
 			"trigger": "minecraft:location",
 			"conditions": {
 				"biome": "lepidodendron:permian_river"
-			}
-		},
-		"permian_wetlands": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:permian_wetlands"
-			}
-		},
-		"permian_wetlands_fern_copse": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:permian_wetlands_fern_copse"
-			}
-		},
-		"permian_stony_plains": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:permian_stony_plains"
-			}
-		},
-		"permian_stony_plains_spikes": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:permian_stony_plains_spikes"
-			}
-		},
-		"permian_stony_depression_rim": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:permian_stony_depression_rim"
-			}
-		},
-		"permian_stony_depression": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:permian_stony_depression"
 			}
 		},
 		"permian_wetlands_unwooded": {
@@ -208,10 +214,28 @@
 				"biome": "lepidodendron:permian_wetlands_unwooded"
 			}
 		},
-		"permian_ocean_sponge_reef": {
+		"permian_wetlands_unwooded_earthbanks": {
 			"trigger": "minecraft:location",
 			"conditions": {
-				"biome": "lepidodendron:permian_ocean_sponge_reef"
+				"biome": "lepidodendron:permian_wetlands_unwooded_earthbanks"
+			}
+		},
+		"permian_beach_saltmarsh": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_beach_saltmarsh"
+			}
+		},
+		"permian_wooded_atoll": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_wooded_atoll"
+			}
+		},
+		"permian_wooded_atoll_rim": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_wooded_atoll_rim"
 			}
 		},
 		"permian_wetlands_hummocks": {
@@ -259,6 +283,9 @@
 			"permian_desert"
 		],
 		[
+			"permian_desert_edge"
+		],
+		[
 			"permian_floodbasalt",
 			"permian_floodbasalt_edge"
 		],
@@ -266,13 +293,21 @@
 			"permian_highlands"
 		],
 		[
-			"permian_lowlands_floodplain"
+			"permian_wetlands_fern_copse",
+			"permian_wetlands_fern_copse_lakes"
+		],
+		[
+			"permian_lowlands_floodplain",
+			"permian_lowlands_floodplain_lake"
 		],
 		[
 			"permian_lowlands"
 		],
 		[
 			"permian_lowlands_forest"
+		],
+		[
+			"permian_lowlands_forest_dense"
 		],
 		[
 			"permian_mountains"
@@ -291,13 +326,13 @@
 			"permian_river"
 		],
 		[
-			"permian_wetlands"
-		],
-		[
-			"permian_wetlands_fern_copse"
-		],
-		[
 			"permian_wetlands_unwooded"
+		],
+		[
+			"permian_wetlands_unwooded_earthbanks"
+		],
+		[
+			"permian_beach_saltmarsh"
 		],
 		[
 			"permian_stony_plains",
@@ -309,6 +344,10 @@
 		],
 		[
 			"permian_wetlands_hummocks"
+		],
+		[
+			"permian_wooded_atoll",
+			"permian_wooded_atoll_rim"
 		]
 	]
 }

@@ -117,8 +117,14 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_stony")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_desert_edge")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_unwooded")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_wetlands_fern_copse")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_fern_copse")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_fern_copse_lakes")
 			) {
 				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
 			}
 		}
 
@@ -129,6 +135,9 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Warm) {
 				biomeCriteria = true;
 			}
+			else {
+				biomeCriteria = false;
+			}
 		}
 
 		if (biome instanceof BiomeJurassic) {
@@ -137,6 +146,9 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.River
 					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Desert) {
 				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
 			}
 		}
 			
@@ -160,7 +172,10 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_unwooded")) {
 			GenChance = 42;
 		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_wetlands_fern_copse")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_fern_copse")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_fern_copse_lakes")) {
 			GenChance = 64;
 		}
 

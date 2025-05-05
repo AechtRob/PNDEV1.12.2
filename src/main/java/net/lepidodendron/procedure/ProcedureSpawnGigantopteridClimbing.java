@@ -3,6 +3,7 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
+import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -46,9 +47,14 @@ public class ProcedureSpawnGigantopteridClimbing extends ElementsLepidodendronMo
 						biomeCriteria = true;
 					}
 				}
-				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_unwooded"))
-					biomeCriteria = true;
 
+				if (biome instanceof BiomePermian) {
+					if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_unwooded")) {
+						biomeCriteria = true;
+					} else {
+						biomeCriteria = false;
+					}
+				}
 
 				if (biomeCriteria && !SaplingSpawn) {
 					//Try one spot at the foot of the tree:
