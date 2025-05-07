@@ -1,12 +1,12 @@
 {
-	"name": "Beach",
+	"name": "Beach & Coastal Creek",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
 	"category": "lepidodendron:silurian/silurian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Silurian Beach$(br2)$()Text here..."
+			"text": "$(l)Silurian Beach & Coastal Creek$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
