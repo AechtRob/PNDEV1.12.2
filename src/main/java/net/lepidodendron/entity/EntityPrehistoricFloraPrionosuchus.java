@@ -69,7 +69,7 @@ public class EntityPrehistoricFloraPrionosuchus extends EntityPrehistoricFloraSw
 		return this.getAgeScale() < 0.3;
 	}
 
-	public static String getPeriod() {return "early Permian";}
+	public static String getPeriod() {return "Permian";}
 
 	//public static String getHabitat() {return "Amphibious";}
 

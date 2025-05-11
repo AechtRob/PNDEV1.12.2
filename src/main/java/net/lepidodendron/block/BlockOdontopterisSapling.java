@@ -214,7 +214,7 @@ public class BlockOdontopterisSapling extends ElementsLepidodendronMod.ModElemen
 				tooltip.add("Type: Climbing Seed-Plant");
 				tooltip.add("Periods: Carboniferous - Permian");
 				tooltip.add("Note: Must be planted against a climbable surface");
-				tooltip.add("Propagation: seeds");}
+				tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

@@ -76,7 +76,7 @@ public class EntityPrehistoricFloraPlatyhystrix extends EntityPrehistoricFloraSw
 		return this.getAgeScale() < 0.5;
 	}
 
-	public static String getPeriod() {return "early- to mid-Permian";}
+	public static String getPeriod() {return "Permian";}
 
 	//public static String getHabitat() {return "Amphibious";}
 	

@@ -157,7 +157,7 @@ public class BlockProtognetum extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Gnetophyte plant");
 	        	tooltip.add("Periods: Jurassic");
-	        	tooltip.add("Propagation: fruit/cone");}
+	        	tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

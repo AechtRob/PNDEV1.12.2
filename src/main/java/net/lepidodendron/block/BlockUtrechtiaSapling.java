@@ -213,8 +213,8 @@ public class BlockUtrechtiaSapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Coniferous tree");
-				tooltip.add("Periods: [Carboniferous -] Permian");
-				tooltip.add("Propagation: fruit/cone");}
+				tooltip.add("Periods: [Carboniferous - ] Permian");
+				tooltip.add("Propagation: Fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

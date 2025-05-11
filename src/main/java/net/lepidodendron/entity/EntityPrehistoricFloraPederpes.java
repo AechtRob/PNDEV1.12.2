@@ -71,7 +71,7 @@ public class EntityPrehistoricFloraPederpes extends EntityPrehistoricFloraSwimmi
 		return true;
 	}
 
-	public static String getPeriod() {return "early Carboniferous";}
+	public static String getPeriod() {return "Carboniferous";}
 
 	//public static String getHabitat() {return "Amphibious";}
 

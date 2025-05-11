@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraCarcinosoma extends EntityPrehistoricFloraEur
 		return this.getAgeScale() < 0.4;
 	}
 
-	public static String getPeriod() {return "late Silurian";}
+	public static String getPeriod() {return "Silurian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

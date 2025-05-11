@@ -216,7 +216,7 @@ public class BlockTallAraucariaSapling extends ElementsLepidodendronMod.ModEleme
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Coniferous tree");
 				tooltip.add("Periods: Jurassic");
-				tooltip.add("Propagation: fruit/cone");}
+				tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

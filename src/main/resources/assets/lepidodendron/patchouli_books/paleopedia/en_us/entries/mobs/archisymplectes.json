@@ -1,0 +1,47 @@
+{
+	"name": "Archisymplectes",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/archisymplectes_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_archisymplectes",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_archisymplectes",
+			"title": "Archisymplectes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>$(o)Nemertea (?)"
+		},
+        	{
+            "type": "entity",
+            "name": "A. rhothon",
+            "entity": "lepidodendron:prehistoric_flora_archisymplectes",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archisymplectes",
+			"type": "text",
+			"text": "Archisymplectes rhothon comes from the Upper Carboniferous, with fossils found in the Francis Creek Shale, USA. It is has the standard elongated ribbon-like body known in nemerteans, and grew up to 12 cm in length. It is one of the many candidates for the oldest known Ribbon Worm, but due to the absence of a proboscis in all fossil material known, it is unknown if it can be assigned to the phylum Nemertea."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_archisymplectes"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_archisymplectes"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_archisymplectes"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_archisymplectes"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_archisymplectes"
+		}
+	]
+}

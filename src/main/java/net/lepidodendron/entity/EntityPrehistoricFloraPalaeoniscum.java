@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraPalaeoniscum extends EntityPrehistoricFloraFi
 		return true;
 	}
 
-	public static String getPeriod() {return "Permian [- Triassic]";}
+	public static String getPeriod() {return "Permian [ - Triassic]";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

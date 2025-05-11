@@ -584,7 +584,7 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 		return true;
 	}
 
-	public static String getPeriod() {return "Jurassic - Cretaceoous";}
+	public static String getPeriod() {return "Jurassic - Early Cretaceous - Late Cretaceoous";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

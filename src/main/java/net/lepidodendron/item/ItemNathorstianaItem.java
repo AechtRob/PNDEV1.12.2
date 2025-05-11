@@ -131,9 +131,9 @@ public class ItemNathorstianaItem extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Lycophyte water plant");
-				tooltip.add("Periods: Cretaceous");
-				tooltip.add("Note: placed at water surface of one-block deep water, over dirt, clay or sand; spreads if there is light.");
-				tooltip.add("Propagation: spores");}
+				tooltip.add("Periods: Early Cretaceous - Late Cretaceous");
+				tooltip.add("Note: Placed at water surface of one-block deep water, over dirt, clay or sand; spreads if there is light.");
+				tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

@@ -1,0 +1,61 @@
+{
+	"name": "Polydesmida",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/myriapod_polydesmid_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_myriapod_polydesmid",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_myriapod_polydesmid",
+			"title": "Polydesmida",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian - Present$(br2)>Arthropoda$(br)>Myriapoda$(br)>Diplopoda$(br)>Diplopoda$(br)>Chilognatha$(br)>Helminthomorpha$(br)>Eugnatha$(br)>Merocheta$(br)>$(o)Polydesmida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/polydesmid.png"],
+			"title": "Polydesmida",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myriapod_polydesmid",
+			"type": "text",
+			"text": "Polydesmids are an old order of Myriapoda, and the largest, hailing from the Devonian up until the present day, with fossils found across the globe. They can grow from size of 0.2 cm up to 13.5 cm in length. Even though most myriapods are simple in appearance, the polydesmids boast the most diverse morphologies within the Myriapoda. Despite this, there are still some defining features that connect them all together, like for example that adults have 20 segments, with"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myriapod_polydesmid",
+			"type": "text",
+			"text": "juveniles bearing 7 to 19 segments. All polydesmids are also blind, as they have no eyes of any form. Alot of larger species also sport bright colouration and patterning as a warning to possible wannabe predators, as polydesmids can secrete toxins from their carapace. Even with this, some species still deviate from the standard, sometimes having more or less segments, and alongside more or less legs, with the most extreme being the modern Dobrodesmus mirabilis,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myriapod_polydesmid",
+			"type": "text",
+			"text": "which has 40 segments overall, double that of the average. Like their juliform kin, they also lack the 'Tömösváry organ', or 'temporal organ', a sensory organ unique to the some myriapod and hexapod groupss, although its primary function is still debating, from sensing vibrations, humidity and even light. But, like most myriapods, they can most commonly be found burrowing in and around leaf litter, and feeding on the decaying vegetation that surrounds them."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myriapod_polydesmid",
+			"type": "text",
+			"text": "The order name derives from the Greek words 'poly', to mean 'many'; and 'desmos', to mean 'bond'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_myriapod@polydesmid"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@polydesmid"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@polydesmid"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@polydesmid"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@polydesmid"
+		}
+	]
+}

@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraLisowicia extends EntityPrehistoricFloraLandB
 		return 2; //large
 	}
 
-	public static String getPeriod() {return "late Triassic";}
+	public static String getPeriod() {return "Triassic";}
 
 	//public static String getHabitat() {return "Terrestrial Dicynodont";}
 

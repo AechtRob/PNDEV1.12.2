@@ -68,7 +68,7 @@ public class EntityPrehistoricFloraProterogyrinus extends EntityPrehistoricFlora
 		return this.getAgeScale() < 0.4;
 	}
 
-	public static String getPeriod() {return "mid Carboniferous";}
+	public static String getPeriod() {return "Carboniferous";}
 
 	//public static String getHabitat() {return "Amphibious";}
 

@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraTiarajudens extends EntityPrehistoricFloraLan
 		return 1; //medium
 	}
 
-	public static String getPeriod() {return "mid Permian";}
+	public static String getPeriod() {return "Permian";}
 
 	//public static String getHabitat() {return "Terrestrial Therapsid";}
 

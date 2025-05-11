@@ -545,7 +545,7 @@ public class BlockBeltanelliformis extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Cyanobacterial(?) formation");
+				tooltip.add("Type: Cyanobacterial (?) formation");
 				tooltip.add("Periods: Neoproterozoic (Ediacaran)");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);

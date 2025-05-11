@@ -67,7 +67,7 @@ public class EntityPrehistoricFloraDiadectes extends EntityPrehistoricFloraLandB
 		return 47; //surface spawn
 	}
 
-	public static String getPeriod() {return "early Permian";}
+	public static String getPeriod() {return "Permian";}
 
 	//public static String getHabitat() {return "Terrestrial Diadectomorph";}
 

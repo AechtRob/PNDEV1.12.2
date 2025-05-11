@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_neoceratodus",
 			"title": "Neoceratodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Early Cretaceous - Present$(br2)>Chordata$(br)>Sarcopterygii$(br)>Dipnoi$(br)>Ceratodontiformes$(br)>Neoceratodontidae"
+			"text": "$(l)Temporal Range:$() Cretaceous - Present$(br2)>Chordata$(br)>Sarcopterygii$(br)>Dipnoi$(br)>Ceratodontiformes$(br)>Neoceratodontidae"
 		},
         	{
             "type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_neoceratodus",
 			"type": "text",
-			"text": "Neoceratodus hails from the Early Cretaceous into the Present day, being found in river systems around South-Eastern Queensland, along with fossils of extinct species being found in the Kem Kem Formation, Morocco; and Griman Creek Formation, Australia. It is a medium-sized neoceratodontiid, growing up to 1.5 m in length."
+			"text": "Neoceratodus hails from the Cretaceous into the Present day, being found in river systems around South-Eastern Queensland, along with fossils of extinct species being found in the Kem Kem Formation, Morocco; and Griman Creek Formation, Australia. It is a medium-sized neoceratodontiid, growing up to 1.5 m in length."
 		},
 		{
 			"type": "lepidodendron:diet",

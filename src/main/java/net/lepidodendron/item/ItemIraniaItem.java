@@ -152,8 +152,8 @@ public class ItemIraniaItem extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Uncertain Gymnosperm");
 				tooltip.add("Periods: Triassic");
-				tooltip.add("Note: placed either on land or at water surface of one-block deep water, over grass, dirt, clay or sand.");
-				tooltip.add("Propagation: seeds");}
+				tooltip.add("Note: Placed either on land or at water surface of one-block deep water, over grass, dirt, clay or sand.");
+				tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

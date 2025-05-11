@@ -213,8 +213,8 @@ public class BlockLiriodendronSapling extends ElementsLepidodendronMod.ModElemen
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering tree");
-				tooltip.add("Periods: early (?) Cretaceous - Paleogene  - Neogene - Pleistocene [- present]");
-				tooltip.add("Propagation: flowers");}
+				tooltip.add("Periods: Early Cretaceous (?) - Late Cretaceous - Paleogene - Neogene - Pleistocene [ - Present]");
+				tooltip.add("Propagation: Flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

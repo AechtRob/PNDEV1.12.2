@@ -565,7 +565,7 @@ public class BlockTabulata_Block2 extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Tabulate Coral");
-				tooltip.add("Periods: [Ordovician -] Silurian - Devonian - Carboniferous - Permian");
+				tooltip.add("Periods: [Ordovician - ] Silurian - Devonian - Carboniferous - Permian");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

@@ -230,8 +230,8 @@ public class BlockNehvizdyellaSapling extends ElementsLepidodendronMod.ModElemen
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Ginkgo tree");
-				tooltip.add("Periods: late Cretaceous");
-				tooltip.add("Propagation: fruit/cone");}
+				tooltip.add("Periods: Late Cretaceous");
+				tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

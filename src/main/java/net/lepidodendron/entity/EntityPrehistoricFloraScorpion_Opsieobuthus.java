@@ -74,7 +74,7 @@ public class EntityPrehistoricFloraScorpion_Opsieobuthus extends EntityPrehistor
 		return 0.4F;
 	}
 
-	public static String getPeriod() {return "late Carboniferous - early Permian";}
+	public static String getPeriod() {return "Carboniferous - Permian";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

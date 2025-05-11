@@ -214,7 +214,7 @@ public class BlockSanfordiacaulisSapling extends ElementsLepidodendronMod.ModEle
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed-Plant (?) shrub");
 				tooltip.add("Periods: Carboniferous");
-				tooltip.add("Propagation: seeds");}
+				tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

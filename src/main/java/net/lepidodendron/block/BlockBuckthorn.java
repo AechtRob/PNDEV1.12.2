@@ -298,8 +298,8 @@ public class BlockBuckthorn extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering plant");
-	        	tooltip.add("Periods: late Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
-	        	tooltip.add("Propagation: fruits");}
+	        	tooltip.add("Periods: Late Cretaceous - Paleogene - Neogene - Pleistocene [ - Present]");
+	        	tooltip.add("Propagation: Fruits");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

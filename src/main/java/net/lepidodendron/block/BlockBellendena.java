@@ -291,8 +291,8 @@ public class BlockBellendena extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering plant");
-				tooltip.add("Periods: late Cretaceous (?) - Paleogene (?) - Neogene - Pleistocene [- present]");
-				tooltip.add("Propagation: produces envelopaable seeds on a flowering and fruiting cycle");}
+				tooltip.add("Periods: Late Cretaceous (?) - Paleogene (?) - Neogene - Pleistocene [ - Present]");
+				tooltip.add("Propagation: Produces envelopaable seeds on a flowering and fruiting cycle");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

@@ -245,7 +245,7 @@ public class BlockSchizoneuraSapling extends ElementsLepidodendronMod.ModElement
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail/sphenophyte shrub");
 				tooltip.add("Periods: Permian - Triassic");
-				tooltip.add("Propagation: spores");}
+				tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

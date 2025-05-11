@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_protozygoptera",
 			"title": "Protozygoptera",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Arthropoda$(br)>Insecta$(br)>Odonatoptera$(br)>$(o)Protozygoptera"
+			"text": "$(l)Temporal Range:$() Carboniferous - Triassic(br2)>Arthropoda$(br)>Insecta$(br)>Palaeoptera$(br)>Odonatoptera$(br)>$(o)Protozygoptera"
 		},
 		{
 			"type": "entity",

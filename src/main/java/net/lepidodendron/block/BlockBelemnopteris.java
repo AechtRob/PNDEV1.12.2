@@ -173,7 +173,7 @@ public class BlockBelemnopteris extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed-Plant");
 	        	tooltip.add("Periods: Permian");
-	        	tooltip.add("Propagation: seeds");}
+	        	tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 		@Override

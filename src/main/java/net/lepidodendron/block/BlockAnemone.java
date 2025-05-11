@@ -172,8 +172,8 @@ public class BlockAnemone extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering plant");
-	        	tooltip.add("Periods: Neogene - Pleistocene - present");
-	        	tooltip.add("Propagation: flowers");}
+	        	tooltip.add("Periods: Neogene - Pleistocene [ - Present]");
+	        	tooltip.add("Propagation: Flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

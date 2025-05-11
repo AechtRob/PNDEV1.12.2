@@ -77,7 +77,7 @@ public class EntityPrehistoricFloraCtenospondylus extends EntityPrehistoricFlora
 		);
 	}
 
-	public static String getPeriod() {return "early Permian";}
+	public static String getPeriod() {return "Permian";}
 
 	//public static String getHabitat() {return "Terrestrial Pelycosaur";}
 

@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraBirkenia extends EntityPrehistoricFloraFishBa
 		return true;
 	}
 
-	public static String getPeriod() {return "mid Silurian";}
+	public static String getPeriod() {return "Silurian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

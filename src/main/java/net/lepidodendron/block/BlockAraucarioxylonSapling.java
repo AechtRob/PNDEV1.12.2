@@ -224,7 +224,7 @@ public class BlockAraucarioxylonSapling extends ElementsLepidodendronMod.ModElem
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Coniferous tree");
 				tooltip.add("Periods: Permian - Triassic");
-				tooltip.add("Propagation: fruit/cone");
+				tooltip.add("Propagation: Fruit/Cone");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

@@ -307,7 +307,7 @@ public class BlockPsygmophyllum extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Ginkgoale shrub");
 	        	tooltip.add("Periods: Permian");
-	        	tooltip.add("Propagation: fruit/cone");}
+	        	tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

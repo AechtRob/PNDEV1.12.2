@@ -269,7 +269,7 @@ public class BlockScytophyllum extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed-Plant shrub");
 	        tooltip.add("Periods: Triassic");
-	        tooltip.add("Propagation: seeds");}
+	        tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

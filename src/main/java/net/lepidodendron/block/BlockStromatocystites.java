@@ -574,7 +574,7 @@ public class BlockStromatocystites extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Echinoderm");
+				tooltip.add("Type: Sessile echinoderm");
 				tooltip.add("Periods: Cambrian");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);

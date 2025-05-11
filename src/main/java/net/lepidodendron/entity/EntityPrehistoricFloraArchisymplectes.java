@@ -313,6 +313,6 @@ public class EntityPrehistoricFloraArchisymplectes extends EntityPrehistoricFlor
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_PLEXUS;
+		return ModTriggers.CLICK_ARCHISYMPLECTES;
 	}
 }

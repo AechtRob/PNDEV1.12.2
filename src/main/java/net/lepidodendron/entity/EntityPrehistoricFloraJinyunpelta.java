@@ -115,7 +115,7 @@ public class EntityPrehistoricFloraJinyunpelta extends EntityPrehistoricFloraLan
 		return 0; //small
 	}
 
-	public static String getPeriod() {return "Cretaceous";}
+	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous";}
 
 	@Override
 	public String getTexture() {

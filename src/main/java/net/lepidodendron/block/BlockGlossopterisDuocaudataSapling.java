@@ -225,9 +225,9 @@ public class BlockGlossopterisDuocaudataSapling extends ElementsLepidodendronMod
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed-Plant tree");
-				tooltip.add("Periods: Permian [- Triassic (?)]");
-				tooltip.add("Note: wet ground, high latitudes");
-				tooltip.add("Propagation: seeds");}
+				tooltip.add("Periods: Permian [ - Triassic (?)]");
+				tooltip.add("Note: Wet ground, high latitudes");
+				tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
