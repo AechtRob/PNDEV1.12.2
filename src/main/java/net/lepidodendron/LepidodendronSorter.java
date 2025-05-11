@@ -5581,7 +5581,6 @@ public class LepidodendronSorter {
     public static final int vulcanodon_raw = 5402;
     public static final int eggs_mecistotrachelos = 5403;
     public static final int eggs_vulcanodon = 5404;
-    public static final int magnifying_glass = 5405;
 
 
 
