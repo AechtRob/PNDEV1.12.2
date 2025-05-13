@@ -10923,7 +10923,7 @@ entity.prehistoric_flora_vulcanodon.name=Vulcanodon
 entity.prehistoric_flora_tawa.name=Tawa
 entity.prehistoric_flora_rechnisaurus.name=Rechnisaurus
 entity.prehistoric_flora_prenocephale.name=Prenocephale
-entity.prehistoric_flora_vesperopterylus.name=Vesperopterylus
+entity.prehistoric_flora_anurognathid_vesperopterylus.name=Vesperopterylus
 entity.prehistoric_flora_chaoyangopterus.name=Chaoyangopterus
 item.pf_eggs_scelidosaurus.name=Scelidosaurus Eggs
 item.pf_eggs_mecistotrachelos.name=Mecistotrachelos Eggs
@@ -10938,6 +10938,8 @@ tile.pf_eggs_valdotriton.name=Valdotriton Spawn
 tile.pf_eggs_tadpole_cratopipa.name=Cratopipa Spawn
 tile.pf_eggs_tadpole_notobatrachus.name=Notobatrachus Spawn
 tile.pf_eggs_tadpole_prosalirus.name=Prosalirus Spawn
+item.pf_spawn_egg_anurognathid_vesperopterylus.name=Spawn Vesperopterylus
+
 
 
 

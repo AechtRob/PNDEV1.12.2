@@ -5581,6 +5581,12 @@ public class LepidodendronSorter {
     public static final int vulcanodon_raw = 5402;
     public static final int eggs_mecistotrachelos = 5403;
     public static final int eggs_vulcanodon = 5404;
+    public static final int hoyasemys_raw = 5405;
+    public static final int borealopelta_raw = 5406;
+    public static final int eggs_hoyasemys = 5407;
+    public static final int eggs_borealopelta = 5408;
+    public static final int anurognathid_vesperopterylus_raw = 5409;
+    public static final int eggs_anurognathid_vesperopterylus = 5410;
 
 
 

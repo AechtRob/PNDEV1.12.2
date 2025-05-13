@@ -16,11 +16,13 @@ public class RenderAnurognathid extends RenderLivingBaseVariantModels<EntityPreh
     public static final ResourceLocation TEXTURE_DENDRORHYNCHOIDES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anurognathid_dendrorhynchoides.png");
     public static final ResourceLocation TEXTURE_JEHOLOPTERUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anurognathid_jeholopterus.png");
     public static final ResourceLocation TEXTURE_SINOMACROPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anurognathid_sinomacrops.png");
+    public static final ResourceLocation TEXTURE_VESPEROPTERYLUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anurognathid_vesperopterylus.png");
+
 
     public RenderAnurognathid(RenderManager mgr) {
         super(mgr,
             new ModelAnurognathus(),
-            new ModelBase[]{new ModelAnurognathus(), new ModelBatrachognathus(), new ModelCascocauda(), new ModelDendrorhynchoides(), new ModelJeholopterus()},
+            new ModelBase[]{new ModelAnurognathus(), new ModelBatrachognathus(), new ModelCascocauda(), new ModelDendrorhynchoides(), new ModelJeholopterus(), new ModelVesperopterylus()},
            0.0f);
     }
 
@@ -44,6 +46,8 @@ public class RenderAnurognathid extends RenderLivingBaseVariantModels<EntityPreh
 
             case SINOMACROPS:
                 return TEXTURE_SINOMACROPS;
+            case VESPEROPTERYLUS:
+                return TEXTURE_VESPEROPTERYLUS;
 
         }
     }
@@ -67,6 +71,8 @@ public class RenderAnurognathid extends RenderLivingBaseVariantModels<EntityPreh
 
             case SINOMACROPS:
                 return this.mainModelArray[1];
+            case VESPEROPTERYLUS:
+                return this.mainModelArray[5];
         }
     }
 
@@ -89,6 +95,8 @@ public class RenderAnurognathid extends RenderLivingBaseVariantModels<EntityPreh
 
             case SINOMACROPS:
                 return 0.20F;
+            case VESPEROPTERYLUS:
+                return 0.26F;
 
         }
     }
@@ -131,6 +139,8 @@ public class RenderAnurognathid extends RenderLivingBaseVariantModels<EntityPreh
 
             case SINOMACROPS:
                 return 0.22F;
+            case VESPEROPTERYLUS:
+                return 0.33F;
 
         }
     }
