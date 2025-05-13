@@ -102,6 +102,7 @@ public class EntityLists {
             case 6:
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsStonyPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsAridLandsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsAridHillsPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsAridLandsLushPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsOceanDeepPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsOceanShallowPF);
@@ -111,13 +112,21 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsGlossopterisTemperateForestPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsGlossopterisTemperateWaterMeadowPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsDesertPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsDesertEdgePF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsFloodbasaltPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsHighlandsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsHighlandsCirquePF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsLowlandsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsFloodplainPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsWoodedScrubPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsWoodedScrubDensePF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsMountainsPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsRiverPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsCathayWetlandsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsEarthbanksPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsSaltmarshPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsMarineForestPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsMarineForestWaterPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsHummocksPF);
                 return MobString;
 

@@ -124,7 +124,8 @@ public class BlockBivalveShikamaia extends ElementsLepidodendronMod.ModElement {
 		{
 			BiomePermian biomePermian = (BiomePermian) biome;
 			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Ocean) {
-				biomeCriteria = true;
+				biomeCriteria = (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wooded_atoll"))
+				&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wooded_atoll_rim"));
 			}
 			else {
 				biomeCriteria = false;
