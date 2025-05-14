@@ -82,6 +82,9 @@ public final class BlockSounds {
     @GameRegistry.ObjectHolder("portal_block_jurassic")
     public static final SoundEvent PORTAL_JURASSIC = createSoundEvent("portal_block_jurassic");
 
+    @GameRegistry.ObjectHolder("music_disc_brontosaurus")
+    public static final SoundEvent MUSIC_DISC_BRONTOSAURUS = createSoundEvent("music_disc_brontosaurus");
+
     private static SoundEvent createSoundEvent(final String soundName) {
         final ResourceLocation soundID = new ResourceLocation(LepidodendronMod.MODID, soundName);
         return new SoundEvent(soundID).setRegistryName(soundID);
