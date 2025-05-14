@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lantianella",
 			"title": "Lantianella",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Lower Ediacaran)$(br2)$(l)Habitat:$() Shallow Marine$(br2)>$(o)Cnidarian (?)"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (early Ediacaran)$(br2)$(l)Habitat:$() Shallow Marine$(br2)>$(o)Cnidarian (?)"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_lantianella",
 			"type": "text",
-			"text": "Lantianella comes from the Lower Ediacaran, with fossils found from Lantian Formation, South China. It is a cone-shaped lifeform, and could grow up to around 5.5 cm in height, and possibly partook in filter feeding from the surrounding water. The generic name derives from the place name 'Lantian', near to were the fossils were found."
+			"text": "Lantianella comes from the early Ediacaran, with fossils found from Lantian Formation, South China. It is a cone-shaped lifeform, and could grow up to around 5.5 cm in height, and possibly partook in filter feeding from the surrounding water. The generic name derives from the place name 'Lantian', near to were the fossils were found."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lantianella",
