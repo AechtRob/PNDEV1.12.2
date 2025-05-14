@@ -10939,5 +10939,6 @@ tile.pf_eggs_tadpole_cratopipa.name=Cratopipa Spawn
 tile.pf_eggs_tadpole_notobatrachus.name=Notobatrachus Spawn
 tile.pf_eggs_tadpole_prosalirus.name=Prosalirus Spawn
 
-
+item.record.brontosaurus.desc=Brontosaurus (Will You Wait for Me)
+item.pf_music_disc_brontosaurus.name=Music Disc
 

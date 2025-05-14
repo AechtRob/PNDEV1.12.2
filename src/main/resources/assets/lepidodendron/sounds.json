@@ -25,6 +25,15 @@
       }
     ]
   },
+
+  "music_disc_brontosaurus": {
+    "sounds": [
+      {
+        "name": "lepidodendron:music_disc_brontosaurus",
+        "stream": false
+      }
+    ]
+  },
   
   "wet_crunch_plants": {
     "sounds": [
