@@ -213,7 +213,7 @@ public class BlockChestnutSapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering tree");
-				tooltip.add("Periods: Paleogene - Neogene - Pleistocene [ - Present]");
+				tooltip.add("Periods: Paleogene - Neogene - Pleistocene [ - present]");
 				tooltip.add("Propagation: Seeds drop from leaves");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

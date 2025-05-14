@@ -221,7 +221,7 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 		return true;
 	}
 
-	public static String getPeriod() {return "Devonian - Carboniferous - Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene  - Neogene - Pleistocene [ - Present]";}
+	public static String getPeriod() {return "Devonian - Carboniferous - Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene  - Neogene - Pleistocene [ - present]";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

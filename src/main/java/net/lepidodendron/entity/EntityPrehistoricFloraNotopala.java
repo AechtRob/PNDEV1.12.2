@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraNotopala extends EntityPrehistoricFloraSlithe
 		return true;
 	}
 
-	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous - Paleogene  - Neogene - Pleistocene [ - Present]";}
+	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous - Paleogene  - Neogene - Pleistocene [ - present]";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

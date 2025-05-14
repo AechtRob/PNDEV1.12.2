@@ -59,7 +59,7 @@ public class EntityPrehistoricFloraJellyfish5 extends EntityPrehistoricFloraJell
         return true;
     }
 
-    public static String getPeriod() {return "Pleistocene [ - Present]";}
+    public static String getPeriod() {return "Pleistocene [ - present]";}
 
     //public static String getHabitat() {return "Aquatic";}
 

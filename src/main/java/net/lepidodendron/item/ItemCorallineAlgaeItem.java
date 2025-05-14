@@ -120,7 +120,7 @@ public class ItemCorallineAlgaeItem extends ElementsLepidodendronMod.ModElement 
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Algae");
-				tooltip.add("Periods: [Orodivican - Silurian - Devonian - Carboniferous - Periman - Triassic - ] Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [ - Present]");
+				tooltip.add("Periods: [Orodivican - Silurian - Devonian - Carboniferous - Periman - Triassic - ] Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]");
 				tooltip.add("Note: Placed at water surface of one-block deep water, over stone, dirt, clay or sand.");
 				super.addInformation(stack, player, tooltip, advanced);
 			}
