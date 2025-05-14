@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraMurex extends EntityPrehistoricFloraSlitherin
 		return true;
 	}
 
-	public static String getPeriod() {return "Cretaceous - Paleogene  - Neogene - Pleistocene";}
+	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous - Paleogene  - Neogene - Pleistocene [ - Present]";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

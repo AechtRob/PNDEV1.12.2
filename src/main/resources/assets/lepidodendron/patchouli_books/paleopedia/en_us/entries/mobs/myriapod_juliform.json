@@ -1,0 +1,56 @@
+{
+	"name": "Juliformia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/myriapod_juliform_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_myriapod_juliform",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_myriapod_juliform",
+			"title": "Juliformia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian - Present$(br2)>Arthropoda$(br)>Myriapoda$(br)>Diplopoda$(br)>Diplopoda$(br)>Chilognatha$(br)>Helminthomorpha$(br)>Eugnatha$(br)>$(o)Juliformia"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/juliform.png"],
+			"title": "Juliformia",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myriapod_juliform",
+			"type": "text",
+			"text": "Juliforms are an old order of Myriapoda, hailing from the Devonian up until the present day, with fossils found across the globe. They contain some of the smallest and largest millepedes, growing up to sizes of 0.1 cm up to 30 cm in length. Julifroms are known to have up to 50 segments in their adult stages, which are fused in complete rings, with their legs poking through the base of the ring. Like other myriapods, some juliform genera do not possess any eyes, with"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myriapod_juliform",
+			"type": "text",
+			"text": "all juliforms lacking the 'Tömösváry organ', or 'temporal organ', a sensory organ unique to the some myriapod and hexapod groups, although its primary function is still debating, from sensing vibrations, humidity and even light. But, like most myriapods, they can most commonly be found burrowing in and around leaf litter, and feeding on the decaying vegetation that surrounds them."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myriapod_juliform",
+			"type": "text",
+			"text": "The order name derives from the Greek word 'íoulos', to mean 'centipede-like'; and the Latin word 'fōrmis', to mean 'appearance/form'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_myriapod@juliform"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@juliform"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@juliform"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@juliform"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@juliform"
+		}
+	]
+}

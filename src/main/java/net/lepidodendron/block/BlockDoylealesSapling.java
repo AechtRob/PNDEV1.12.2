@@ -213,8 +213,8 @@ public class BlockDoylealesSapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Coniferous tree");
-				tooltip.add("Periods: [Jurassic (?) -] early Cretaceous");
-				tooltip.add("Propagation: fruit/cone");}
+				tooltip.add("Periods: [Jurassic (?) - ] Early Cretaceous");
+				tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

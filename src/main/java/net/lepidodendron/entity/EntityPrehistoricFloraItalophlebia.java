@@ -116,7 +116,7 @@ public class EntityPrehistoricFloraItalophlebia extends EntityPrehistoricFloraIn
 		return new ResourceLocation("lepidodendron:dragonfly_flight");
 	}
 
-	public static String getPeriod() {return "late Triassic";}
+	public static String getPeriod() {return "Triassic";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

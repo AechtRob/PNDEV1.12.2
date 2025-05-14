@@ -63,7 +63,7 @@ public class EntityPrehistoricFloraEusthenopteron extends EntityPrehistoricFlora
 		return this.getAgeScale() < 0.8;
 	}
 
-	public static String getPeriod() {return "late Devonian";}
+	public static String getPeriod() {return "Devonian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

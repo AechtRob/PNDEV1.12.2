@@ -1428,9 +1428,9 @@ public class BlockVolkhoviella extends ElementsLepidodendronMod.ModElement {
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Proto-plant");
-				tooltip.add("Periods: late Ordovician");
-				tooltip.add("Note: spreads to surrounding block faces and over liquids.");
-				tooltip.add("Propagation: spores");}
+				tooltip.add("Periods: Upper Ordovician");
+				tooltip.add("Note: Spreads to surrounding block faces and over liquids.");
+				tooltip.add("Propagation: Spores");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 

@@ -190,8 +190,8 @@ public class BlockNilssoniaSapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Cycad");
-				tooltip.add("Periods: Triassic - Jurassic - late Cretaceous");
-				tooltip.add("Propagation: fruit/cone");}
+				tooltip.add("Periods: Triassic - Jurassic - Early Cretaceous - Late Cretaceous");
+				tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

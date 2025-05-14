@@ -69,7 +69,7 @@ public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFlor
 		);
 	}
 
-	public static String getPeriod() {return "late Carboniferous";}
+	public static String getPeriod() {return "Carboniferous";}
 
 	//public static String getHabitat() {return "Terrestrial Synapsid";}
 

@@ -104,7 +104,7 @@ public class EntityPrehistoricFloraArchocyrtus extends EntityPrehistoricFloraIns
 		return null;
 	}
 
-	public static String getPeriod() {return "late Jurassic";}
+	public static String getPeriod() {return "Jurassic";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

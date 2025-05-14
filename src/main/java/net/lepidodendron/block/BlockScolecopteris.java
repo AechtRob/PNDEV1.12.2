@@ -151,7 +151,7 @@ public class BlockScolecopteris extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Fern");
 	        	tooltip.add("Periods: Permian");
-	        	tooltip.add("Propagation: spores");}
+	        	tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

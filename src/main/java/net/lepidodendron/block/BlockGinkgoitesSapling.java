@@ -224,7 +224,7 @@ public class BlockGinkgoitesSapling extends ElementsLepidodendronMod.ModElement 
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Ginkgo tree");
 				tooltip.add("Periods: Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene (Paleocene)");
-				tooltip.add("Propagation: fruit/cone");}
+				tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

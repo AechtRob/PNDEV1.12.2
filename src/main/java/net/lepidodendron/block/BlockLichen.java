@@ -1469,7 +1469,9 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-	        tooltip.add("Note: spreads to surrounding block faces.");}
+			tooltip.add("Type: Symbiotic algae and fungi");
+			tooltip.add("Periods: [Devonian - ] Carboniferous - Permian [ - Triassic - Jurassic - ] Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene - Present");
+	        tooltip.add("Note: Spreads to surrounding block faces.");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

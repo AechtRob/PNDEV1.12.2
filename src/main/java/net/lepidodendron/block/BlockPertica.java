@@ -169,7 +169,7 @@ public class BlockPertica extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Proto-plant");
 	        tooltip.add("Periods: Devonian");
-	        tooltip.add("Propagation: spores");}
+	        tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

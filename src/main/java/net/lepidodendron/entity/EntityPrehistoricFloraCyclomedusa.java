@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraCyclomedusa extends EntityPrehistoricFloraSli
 		return true;
 	}
 
-	public static String getPeriod() {return "Neoproterozoic (Ediacaran)";}
+	public static String getPeriod() {return "Neoproterozoic (Tonian - Cryogenian - Ediacaran)";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

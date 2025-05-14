@@ -59,7 +59,7 @@ public class EntityPrehistoricFloraLystrosaurus extends EntityPrehistoricFloraDi
 		return 10;
 	}
 
-	public static String getPeriod() {return "late Permian - early Triassic";}
+	public static String getPeriod() {return "Permian - Triassic";}
 
 	//public static String getHabitat() {
 	//	return I18n.translateToLocal("helper.pf_terrestrial.name");

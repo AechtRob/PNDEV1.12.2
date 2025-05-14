@@ -67,7 +67,7 @@ public class EntityPrehistoricFloraSphenotitan extends EntityPrehistoricFloraLan
 		}
 	}
 
-	public static String getPeriod() {return "late Triassic";}
+	public static String getPeriod() {return "Triassic";}
 
 	//public static String getHabitat() {return "Terrestrial Reptile";}
 

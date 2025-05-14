@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraAcutiramus extends EntityPrehistoricFloraEury
 		return this.getAgeScale() < 0.4;
 	}
 
-	public static String getPeriod() {return "late Silurian - early Devonian";}
+	public static String getPeriod() {return "Silurian - Devonian";}
 
 	public static String getSize() {return "L";}
 

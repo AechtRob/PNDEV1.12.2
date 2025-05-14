@@ -301,7 +301,7 @@ public class BlockSphenophyllales extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail/sphenophyte vine");
 	        	tooltip.add("Periods: Devonian - Carboniferous - Permian");
-	        	tooltip.add("Propagation: spores");}
+	        	tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

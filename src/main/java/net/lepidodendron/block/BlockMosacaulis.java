@@ -376,9 +376,9 @@ public class BlockMosacaulis extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Marine lycophyte water plant");
-				tooltip.add("Periods: late Cretaceous");
-				tooltip.add("Note: planted up to 10 blocks under water on sand");
-				tooltip.add("Propagation: spores");}
+				tooltip.add("Periods: Late Cretaceous");
+				tooltip.add("Note: Planted up to 10 blocks under water on sand");
+				tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

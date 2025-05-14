@@ -295,7 +295,7 @@ public class BlockSchmeissneria extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Ginkgoale (?) shrub");
 	        	tooltip.add("Periods: Jurassic");
-	        	tooltip.add("Propagation: seeds");}
+	        	tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

@@ -214,7 +214,7 @@ public class BlockPtilophyllumSapling extends ElementsLepidodendronMod.ModElemen
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Bennettitales shrub");
 				tooltip.add("Periods: Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene (Oligocene (?))");
-				tooltip.add("Propagation: seeds");}
+				tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

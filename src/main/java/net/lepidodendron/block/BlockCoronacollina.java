@@ -320,7 +320,7 @@ public class BlockCoronacollina extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Uncertain organism");
+				tooltip.add("Type: Undetermined organism");
 				tooltip.add("Periods: Neoproterozoic (Ediacaran)");
 			}
 			super.addInformation(stack, player, tooltip, advanced);

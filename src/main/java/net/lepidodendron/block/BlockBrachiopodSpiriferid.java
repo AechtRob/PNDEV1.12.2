@@ -700,7 +700,7 @@ public class BlockBrachiopodSpiriferid extends ElementsLepidodendronMod.ModEleme
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Marine shelled creature");
-				tooltip.add("Periods: late Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic - mid-Jurassic");}
+				tooltip.add("Periods: Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic - Jurassic");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 

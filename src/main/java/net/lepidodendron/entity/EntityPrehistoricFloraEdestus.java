@@ -80,7 +80,7 @@ public class EntityPrehistoricFloraEdestus extends EntityPrehistoricFloraAgeable
 		return this.getAgeScale() < 0.2;
 	}
 
-	public static String getPeriod() {return "late Carboniferous";}
+	public static String getPeriod() {return "Carboniferous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

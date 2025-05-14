@@ -214,7 +214,7 @@ public class BlockSahnioxylonSapling extends ElementsLepidodendronMod.ModElement
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Bennettitales tree");
 				tooltip.add("Periods: Triassic - Jurassic - Early Cretaceous - Late Cretaceous");
-				tooltip.add("Propagation: seeds");}
+				tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

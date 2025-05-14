@@ -226,7 +226,6 @@ public class BlockAulaceraSapling extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Marine Sponge");
 				tooltip.add("Periods: Ordovician");
-				tooltip.add("Propagation: n/a");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

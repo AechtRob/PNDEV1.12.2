@@ -466,7 +466,7 @@ public class BlockSwartpuntia extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Undetermined bag-like organism");
+				tooltip.add("Type: Frondose organism");
 				tooltip.add("Periods: Neoproterozoic (Ediacaran)");
 			}
 			super.addInformation(stack, player, tooltip, advanced);

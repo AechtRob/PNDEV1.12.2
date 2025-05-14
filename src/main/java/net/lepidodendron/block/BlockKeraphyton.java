@@ -286,7 +286,7 @@ public class BlockKeraphyton extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Iridopteridales proto-plant/horsetail");
 	        	tooltip.add("Periods: Devonian");
-	        	tooltip.add("Propagation: spores");}
+	        	tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

@@ -212,9 +212,9 @@ public class BlockAtliSapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering climbing plant");
-				tooltip.add("Periods: late Cretaceous");
+				tooltip.add("Periods: Late Cretaceous");
 				tooltip.add("Note: Must be planted against a climbable surface");
-				tooltip.add("Propagation: flowers");
+				tooltip.add("Propagation: Flowers");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

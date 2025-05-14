@@ -214,8 +214,8 @@ public class BlockAmborellaSapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering shrub");
-				tooltip.add("Periods: Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
-				tooltip.add("Propagation: flowers");}
+				tooltip.add("Periods: Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [ - Present]");
+				tooltip.add("Propagation: Flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

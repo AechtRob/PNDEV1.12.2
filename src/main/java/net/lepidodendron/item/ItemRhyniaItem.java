@@ -144,10 +144,10 @@ public class ItemRhyniaItem extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: proto-plant");
-				tooltip.add("Periods: early Devonian");
-				tooltip.add("Note: placed either next to water or at water surface of one-block deep water, over grass, dirt, clay or sand; spreads if there is light.");
-				tooltip.add("Propagation: spores");}
+				tooltip.add("Type: Proto-plant");
+				tooltip.add("Periods: Lower Devonian");
+				tooltip.add("Note: Placed either next to water or at water surface of one-block deep water, over grass, dirt, clay or sand; spreads if there is light.");
+				tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

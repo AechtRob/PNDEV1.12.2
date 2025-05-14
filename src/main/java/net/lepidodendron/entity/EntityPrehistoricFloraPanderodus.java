@@ -59,7 +59,7 @@ public class EntityPrehistoricFloraPanderodus extends EntityPrehistoricFloraFish
 		return true;
 	}
 
-	public static String getPeriod() {return "late Ordovician - Silurian - Devonian";}
+	public static String getPeriod() {return "Ordovician - Silurian - Devonian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

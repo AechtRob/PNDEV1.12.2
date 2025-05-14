@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraClimacograptus extends EntityPrehistoricFlora
         return true;
     }
 
-    public static String getPeriod() {return "Ordovician";}
+    public static String getPeriod() {return "Ordovician - Silurian";}
 
     //public static String getHabitat() {return "Aquatic";}
 

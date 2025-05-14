@@ -226,7 +226,7 @@ public class BlockSatpuraphyllumSapling extends ElementsLepidodendronMod.ModElem
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed-Plant tree");
 				tooltip.add("Periods: Permian");
-				tooltip.add("Propagation: seeds");
+				tooltip.add("Propagation: Seeds");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

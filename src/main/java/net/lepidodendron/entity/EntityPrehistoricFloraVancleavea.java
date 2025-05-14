@@ -70,7 +70,7 @@ public class EntityPrehistoricFloraVancleavea extends EntityPrehistoricFloraSwim
 
 
 	public static String getPeriod() {
-		return "late Triassic";
+		return "Triassic";
 	}
 
 	//public static String getHabitat() {

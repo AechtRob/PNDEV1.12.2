@@ -682,8 +682,8 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Sessile Cnidarian");
-				tooltip.add("Periods: [Precambrian?] - Cambrian - Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic");}
+				tooltip.add("Type: Sessile cnidarian");
+				tooltip.add("Periods: [Neoproterozoic (Ediacaran (?)) - ] Cambrian - Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 

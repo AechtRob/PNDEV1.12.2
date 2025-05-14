@@ -140,7 +140,7 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 		return null;
 	}
 
-	public static String getPeriod() {return "early Jurassic";}
+	public static String getPeriod() {return "Jurassic";}
 
 	//public static String getHabitat() {return "Terrestrial Dinosaur";}
 

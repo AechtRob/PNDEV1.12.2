@@ -65,7 +65,7 @@ public class ItemSpawnEggMyriapodJuliform extends ElementsLepidodendronMod.ModEl
 
 		@Override
 		public String getPeriod() {
-			return "Devonian - Carboniferous - Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene";
+			return "Devonian - Carboniferous - Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [ - Present]";
 		}
 
 		@Override

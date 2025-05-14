@@ -158,7 +158,7 @@ public class BlockPtilozamites extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed-Plant");
 	        	tooltip.add("Periods: Triassic - Jurassic");
-	        	tooltip.add("Propagation: seeds");}
+	        	tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

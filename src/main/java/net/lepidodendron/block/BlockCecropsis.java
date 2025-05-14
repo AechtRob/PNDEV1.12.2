@@ -162,7 +162,7 @@ public class BlockCecropsis extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Spore-bearing woody plant");
 	        	tooltip.add("Periods: Carboniferous");
-	        	tooltip.add("Propagation: spores");}
+	        	tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

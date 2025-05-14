@@ -225,7 +225,7 @@ public class BlockAlethopterisSapling extends ElementsLepidodendronMod.ModElemen
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed-Plant tree");
 				tooltip.add("Periods: Carboniferous - Permian");
-				tooltip.add("Propagation: seeds");
+				tooltip.add("Propagation: Seeds");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

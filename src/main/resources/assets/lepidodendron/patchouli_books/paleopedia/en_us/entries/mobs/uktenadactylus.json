@@ -1,0 +1,62 @@
+{
+	"name": "Uktenadactylus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/uktenadactylus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_uktenadactylus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_uktenadactylus",
+			"title": "Uktenadactylus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Pterosauria$(br)>Pterodactyloidea$(br)>Anhangueridae"
+		},
+        	{
+            "type": "entity",
+            "name": "U. wadleighi",
+            "entity": "lepidodendron:prehistoric_flora_uktenadactylus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_uktenadactylus",
+			"type": "text",
+			"text": "Uktenadactylus comes from the Early Cretaceous, with fossils found in the Paw Paw Formation, Texas (USA), and Wessex Formation, England (United Kingdom). It is a medium sized anhanguerid, with a possible wingspan of 5 m - 7 m. Discovered in 1992 and described in 1994, the type species was originally assigned to the genus Coloborhynchus, under the species of C. wadleighi, based on snouth material, which was similar to the type species of Coloborhynchus."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_uktenadactylus",
+			"type": "text",
+			"text": "This had helped revive Coloborhynchus as its own genus, which up until this point, had been lumped in with Criorhynchus. But, this revival worked too well, and many European workers had started to assign a wide range of South American species to Coloborhynchus, despite rejections from native South American researchers. This all came to a conclusion in 2009, when Brazilian paleontologists concluded that Coloborhynchus infact only contained a single"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_uktenadactylus",
+			"type": "text",
+			"text": "species, C. clavirostris, which was the type species. This same study would also cause the creation of the new genus Uktenadactylus, with U. wadleighi now its type species. In 2020, a new species would be assigned to the genus, U. rodriguesae, which comes from the Isle of Wight off the coast of England. U. rodriguesae had also, like U. wadleighi, been previously assigned to Coloborhynchus, again based on similarities in the snout, but the new study"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_uktenadactylus",
+			"type": "text",
+			"text": "found that it more closely resembled that of Uktenadactylus, and as such was moved over. The generic name derives from the name of 'Uktena', a giant horned snake from Cherokee mythology; and the Greek word 'daktylos', to mean 'finger'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_uktenadactylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_uktenadactylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_uktenadactylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_uktenadactylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_uktenadactylus"
+		}
+	]
+}
