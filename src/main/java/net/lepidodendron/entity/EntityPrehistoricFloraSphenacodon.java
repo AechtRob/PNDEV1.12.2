@@ -83,7 +83,7 @@ public class EntityPrehistoricFloraSphenacodon extends EntityPrehistoricFloraLan
 	}
 
 	public static String getPeriod() {
-		return "late Carboniferous - early Permian";
+		return "Carboniferous - Permian";
 	}
 
 	//public static String getHabitat() {return "Terrestrial Pelycosaur";}

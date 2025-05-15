@@ -161,8 +161,8 @@ public class BlockOnychiopsis extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Fern plant");
-	        	tooltip.add("Periods: Cretaceous");
-	        	tooltip.add("Propagation: spores");}
+	        	tooltip.add("Periods: Early Cretaceous - Late Cretaceous");
+	        	tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

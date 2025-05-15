@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraHemiaster extends EntityPrehistoricFloraSlith
 		return true;
 	}
 
-	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous";}
+	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous - Paleogene - Neogene";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

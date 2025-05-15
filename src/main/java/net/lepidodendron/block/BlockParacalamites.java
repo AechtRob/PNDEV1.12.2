@@ -441,7 +441,7 @@ public class BlockParacalamites extends ElementsLepidodendronMod.ModElement {
 				tooltip.add("Type: Horsetail shrub");
 	        	tooltip.add("Periods: Permian");
 	        	tooltip.add("Note: Can be planted in water or on land");
-	        	tooltip.add("Propagation: spores");}
+	        	tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

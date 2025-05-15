@@ -224,7 +224,7 @@ public class BlockAnkyropterisSapling extends ElementsLepidodendronMod.ModElemen
 				tooltip.add("Type: Climbing fern");
 				tooltip.add("Periods: Carboniferous");
 				tooltip.add("Note: Must be planted against a climbable surface");
-				tooltip.add("Propagation: spores");
+				tooltip.add("Propagation: Spores");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

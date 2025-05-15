@@ -457,8 +457,8 @@ public class BlockActinidea extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering-plant vine");
-	        	tooltip.add("Periods: Paleogene (Eocene) - Neogene - Pleistocene");
-	        	tooltip.add("Propagation: fruit");}
+	        	tooltip.add("Periods: Paleogene (Eocene) - Neogene - Pleistocene [ - present]");
+	        	tooltip.add("Propagation: Fruit");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

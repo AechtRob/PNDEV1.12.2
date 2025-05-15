@@ -216,7 +216,7 @@ public class BlockPitysSapling extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed-Plant tree");
 				tooltip.add("Periods: Carboniferous");
-				tooltip.add("Propagation: seeds");}
+				tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

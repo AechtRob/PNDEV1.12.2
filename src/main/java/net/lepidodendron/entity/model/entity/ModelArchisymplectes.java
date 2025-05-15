@@ -109,20 +109,32 @@ public class ModelArchisymplectes extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.archisymplectes.render(f5);
     }
-
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.archisymplectes.offsetY = -3.2F;
-        this.archisymplectes.offsetX = -1.138F;
-        this.archisymplectes.rotateAngleY = (float)Math.toRadians(200);
-        this.archisymplectes.rotateAngleX = (float)Math.toRadians(25);
-        this.archisymplectes.rotateAngleZ = (float)Math.toRadians(-8);
+        this.archisymplectes.offsetY = -2.2F;
+        this.archisymplectes.offsetX = 0.6F;
+        this.archisymplectes.offsetZ = 2.0F;
+        this.archisymplectes.rotateAngleY = (float)Math.toRadians(120);
+        this.archisymplectes.rotateAngleX = (float)Math.toRadians(0);
+        this.archisymplectes.rotateAngleZ = (float)Math.toRadians(0);
         this.archisymplectes.scaleChildren = true;
-        float scaler = 2.33F;
+        float scaler = 4.0F;
         this.archisymplectes.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(archisymplectes, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(segment, 0.0F, 0.1F, -0.0F);
+        this.setRotateAngle(segment2, 0.0F, 0.2F, -0.0F);
+        this.setRotateAngle(segment3, 0.0F, 0.2F, -0.0F);
+        this.setRotateAngle(segment4, 0.0F, 0.1F, -0.0F);
+        this.setRotateAngle(segment5, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(segment6, 0.0F, -0.1F, -0.0F);
+        this.setRotateAngle(segment7, 0.0F, -0.2F, -0.0F);
+        this.setRotateAngle(segment8, 0.0F, -0.2F, -0.0F);
+        this.setRotateAngle(segment9, 0.0F, -0.1F, -0.0F);
+        this.setRotateAngle(segment10, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(segment11, 0.0F, 0.1F, -0.0F);
+        this.setRotateAngle(segment12, 0.0F, 0.1F, -0.0F);
         //End of pose, now render the model:
         this.archisymplectes.render(f);
         //Reset rotations, positions and sizing:

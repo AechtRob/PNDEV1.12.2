@@ -140,7 +140,7 @@ public class BlockColpodexylon extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Lycophyte plant");
 	        tooltip.add("Periods: Devonian - Carboniferous");
-	        tooltip.add("Propagation: spores");}
+	        tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

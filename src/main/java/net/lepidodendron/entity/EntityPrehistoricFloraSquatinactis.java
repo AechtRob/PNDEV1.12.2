@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraSquatinactis extends EntityPrehistoricFloraFi
 		return true;
 	}
 
-	public static String getPeriod() {return "mid Carboniferous";}
+	public static String getPeriod() {return "Carboniferous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

@@ -68,7 +68,7 @@ public class EntityPrehistoricFloraProtozygopteraNymph extends EntityPrehistoric
 		return true;
 	}
 
-	public static String getPeriod() {return "mid Carboniferous - Permian";}
+	public static String getPeriod() {return "Carboniferous - Triassic";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

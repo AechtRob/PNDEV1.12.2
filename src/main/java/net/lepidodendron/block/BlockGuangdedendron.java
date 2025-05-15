@@ -369,8 +369,8 @@ public class BlockGuangdedendron extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Lycophyte shrub");
 	        	tooltip.add("Periods: Devonian");
-				tooltip.add("Note: plant next to water");
-	        	tooltip.add("Propagation: spores");}
+				tooltip.add("Note: Plant next to water");
+	        	tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

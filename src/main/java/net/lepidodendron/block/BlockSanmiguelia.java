@@ -245,7 +245,7 @@ public class BlockSanmiguelia extends ElementsLepidodendronMod.ModElement {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Engimatic seed-plant with angiosperm-like features");
 				tooltip.add("Periods: Triassic - Jurassic");
-				tooltip.add("Propagation: seeds");}
+				tooltip.add("Propagation: Seeds");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 

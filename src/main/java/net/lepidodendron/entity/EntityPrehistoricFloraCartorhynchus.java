@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraCartorhynchus extends EntityPrehistoricFloraS
 	}
 
 	public static String getPeriod() {
-		return "early Triassic";
+		return "Triassic";
 	}
 
 	@Override

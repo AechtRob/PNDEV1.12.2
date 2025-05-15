@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraItalophlebiaNymph extends EntityPrehistoricFl
 		return true;
 	}
 
-	public static String getPeriod() {return "late Triassic";}
+	public static String getPeriod() {return "Triassic";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

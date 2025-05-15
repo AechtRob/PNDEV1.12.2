@@ -224,7 +224,7 @@ public class BlockHymenaeaSapling extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering tree");
 				tooltip.add("Periods: Paleogene (Eocene)");
-				tooltip.add("Propagation: flowers");}
+				tooltip.add("Propagation: Flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

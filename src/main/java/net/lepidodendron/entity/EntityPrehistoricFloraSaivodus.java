@@ -78,7 +78,7 @@ public class EntityPrehistoricFloraSaivodus extends EntityPrehistoricFloraAgeabl
 		return this.getAgeScale() < 0.25;
 	}
 
-	public static String getPeriod() {return "early Carboniferous";}
+	public static String getPeriod() {return "Carboniferous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

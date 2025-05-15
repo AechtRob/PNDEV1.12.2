@@ -226,7 +226,7 @@ public class BlockFurculaSapling extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Enigmatic seed-plant");
 				tooltip.add("Periods: Triassic");
-				tooltip.add("Propagation: seeds drop from leaves");
+				tooltip.add("Propagation: Seeds drop from leaves");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

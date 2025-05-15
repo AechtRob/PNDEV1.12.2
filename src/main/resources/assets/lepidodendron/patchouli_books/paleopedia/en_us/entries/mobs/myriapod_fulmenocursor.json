@@ -1,0 +1,46 @@
+{
+	"name": "Fulmenocursor",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/myriapod_fulmenocursor_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_myriapod_fulmenocursor",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_myriapod_fulmenocursor",
+			"title": "Fulmenocursor",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Myriapoda$(br)>Chilopoda$(br)>Scutigeromorpha$(br)>Scutigeridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/fulmenocursor.png"],
+			"title": "F. tevax",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myriapod_fulmenocursor",
+			"type": "text",
+			"text": "Fulmenocursor tevax comes from the Early Cretaceous, with fossils found in the Crato Formation, Brazil. It is a small scutigerid, growing up to only 1 cm in length, possibly more. It is currently the earliest known member of its family Scutigeridae. The generic name derives from the Latin words 'fulmen', to mean 'lightening'; and 'cursor', to mean 'runner'. The specific name derives from the Latin word 'tenax', to mean 'tenacious'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_myriapod@fulmenocursor"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@fulmenocursor"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@fulmenocursor"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@fulmenocursor"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@fulmenocursor"
+		}
+	]
+}

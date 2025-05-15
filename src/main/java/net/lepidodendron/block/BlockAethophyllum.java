@@ -333,7 +333,7 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 				tooltip.add("Type: Coniferous shrub");
 				tooltip.add("Periods: Triassic");
 				tooltip.add("Note: An unusual herbaceous conifer");
-				tooltip.add("Propagation: fruit/cone");
+				tooltip.add("Propagation: Fruit/Cone");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

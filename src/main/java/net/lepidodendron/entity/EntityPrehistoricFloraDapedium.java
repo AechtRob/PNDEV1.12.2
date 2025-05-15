@@ -59,7 +59,7 @@ public class EntityPrehistoricFloraDapedium extends EntityPrehistoricFloraFishBa
 		return true;
 	}
 
-	public static String getPeriod() {return "Triassic";}
+	public static String getPeriod() {return "Triassic - Jurassic";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

@@ -59,7 +59,7 @@ public class EntityPrehistoricFloraSaccocoma extends EntityPrehistoricFloraAgeab
 		return true;
 	}
 
-	public static String getPeriod() {return "Jurassic - early Cretaceous";}
+	public static String getPeriod() {return "Jurassic - Early Cretaceous";}
 
 	//public static String getSize() {return "M";}
 

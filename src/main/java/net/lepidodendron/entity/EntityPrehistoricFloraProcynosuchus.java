@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraProcynosuchus extends EntityPrehistoricFloraS
 	}
 
 	public static String getPeriod() {
-		return "late Permian";
+		return "Permian";
 	}
 
 	//public static String getHabitat() {

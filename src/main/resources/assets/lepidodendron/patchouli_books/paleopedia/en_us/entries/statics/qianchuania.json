@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_qianchuania",
 			"title": "Qianchuania",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Lower Ediacaran)$(br2)$(l)Habitat:$() Shallow Marine$(br2)>$(o)Cnidarian (?)"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (early Ediacaran)$(br2)$(l)Habitat:$() Shallow Marine$(br2)>$(o)Cnidarian (?)"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_qianchuania",
 			"type": "text",
-			"text": "Qianchuania fusiformis comes from the Lower Ediacaran, with fossils found from Lantian Formation, South China. It is a spindle-shaped lifeform, and could grow up to around 6 cm in height, and possibly partook in filter feeding from the surrounding water. The generic name derives from the place name 'Qianchuan', near to were the fossils were found. The specific name derives directly from the Latin word 'fusiformis', to mean 'spindle'."
+			"text": "Qianchuania fusiformis comes from the early Ediacaran, with fossils found from Lantian Formation, South China. It is a spindle-shaped lifeform, and could grow up to around 6 cm in height, and possibly partook in filter feeding from the surrounding water. The generic name derives from the place name 'Qianchuan', near to were the fossils were found. The specific name derives directly from the Latin word 'fusiformis', to mean 'spindle'."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_qianchuania",

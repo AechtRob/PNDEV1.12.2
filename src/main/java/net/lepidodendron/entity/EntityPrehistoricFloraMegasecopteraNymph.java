@@ -251,7 +251,7 @@ public class EntityPrehistoricFloraMegasecopteraNymph extends EntityPrehistoricF
 		return true;
 	}
 
-	public static String getPeriod() {return "mid Carboniferous - early Permian";}
+	public static String getPeriod() {return "Carboniferous - Permian";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

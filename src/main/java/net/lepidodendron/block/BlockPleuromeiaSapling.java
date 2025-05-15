@@ -225,7 +225,7 @@ public class BlockPleuromeiaSapling extends ElementsLepidodendronMod.ModElement 
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Lycophyte shrub");
 				tooltip.add("Periods: Triassic");
-				tooltip.add("Propagation: spores");}
+				tooltip.add("Propagation: SSpores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

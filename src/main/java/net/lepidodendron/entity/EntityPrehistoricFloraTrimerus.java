@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraTrimerus extends EntityPrehistoricFloraTrilob
 		return true;
 	}
 
-	public static String getPeriod() {return "Silurian";}
+	public static String getPeriod() {return "Silurian - Devonian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

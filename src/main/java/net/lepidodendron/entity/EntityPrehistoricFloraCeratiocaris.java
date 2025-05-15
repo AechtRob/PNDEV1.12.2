@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraCeratiocaris extends EntityPrehistoricFloraFi
 		return true;
 	}
 
-	public static String getPeriod() {return "Ordovician - Silurian - [Devonian]";}
+	public static String getPeriod() {return "Ordovician - Silurian [ - Devonian]";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

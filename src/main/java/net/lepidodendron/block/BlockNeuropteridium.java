@@ -127,7 +127,7 @@ public class BlockNeuropteridium extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Fern");
 	        tooltip.add("Periods: Triassic");
-	        tooltip.add("Propagation: spores");}
+	        tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

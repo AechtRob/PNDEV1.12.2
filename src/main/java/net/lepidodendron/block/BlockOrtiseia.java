@@ -260,7 +260,7 @@ public class BlockOrtiseia extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Conifer");
 	        	tooltip.add("Periods: Permian");
-	        	tooltip.add("Propagation: fruit/cone");}
+	        	tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

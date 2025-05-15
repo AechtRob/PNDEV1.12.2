@@ -70,7 +70,7 @@ public class EntityPrehistoricFloraAtopodentatus extends EntityPrehistoricFloraS
 
 
 	public static String getPeriod() {
-		return "mid Triassic";
+		return "Triassic";
 	}
 
 	//public static String getHabitat() {

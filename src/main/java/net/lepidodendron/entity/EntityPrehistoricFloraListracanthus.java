@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraListracanthus extends EntityPrehistoricFloraA
 		return this.getAgeScale() < 0.4;
 	}
 
-	public static String getPeriod() {return "late Carboniferous - Permian - early Triassic";}
+	public static String getPeriod() {return "Carboniferous - Permian - Triassic";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

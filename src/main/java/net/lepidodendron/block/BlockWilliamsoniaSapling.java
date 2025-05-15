@@ -214,7 +214,7 @@ public class BlockWilliamsoniaSapling extends ElementsLepidodendronMod.ModElemen
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Bennettitales shrub");
 				tooltip.add("Periods: Jurassic - Early Cretaceous - Late Cretaceous");
-				tooltip.add("Propagation: seeds");}
+				tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

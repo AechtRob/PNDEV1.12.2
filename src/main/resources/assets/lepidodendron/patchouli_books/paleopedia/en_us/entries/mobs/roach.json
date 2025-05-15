@@ -1,5 +1,5 @@
 {
-	"name": "Roach",
+	"name": "Roachoid",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/roach_icon.png",
 	"category": "lepidodendron:mobs",
@@ -9,25 +9,25 @@
 			"trigger": "lepidodendron:pf_adv_book_roachoid",
 			"title": "Roach",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous - Present$(br2)>Arthropoda$(br)>Insecta$(br)>Dictyoptera$(br)>$(o)Blattodea"
+			"text": "$(l)Temporal Range:$() Carboniferous - Cretaceous(br2)>Arthropoda$(br)>Insecta$(br)>Dictyoptera$(br)>$(o)Roachoid"
 		},
 		{
 			"type": "entity",
-			"name": "Blattodea (Arid)",
+			"name": "Roachoid (Arid)",
 			"entity": "lepidodendron:prehistoric_flora_roachoid_arid",
 			"rotate": false,
 			"default_rotation": 0
 		},
 		{
 			"type": "entity",
-			"name": "Blattodea (Forest)",
+			"name": "Roachoid (Forest)",
 			"entity": "lepidodendron:prehistoric_flora_roachoid_forest",
 			"rotate": false,
 			"default_rotation": 0
 		},
 		{
 			"type": "entity",
-			"name": "Blattodea (Swamp)",
+			"name": "Roachoid (Swamp)",
 			"entity": "lepidodendron:prehistoric_flora_roachoid_swamp",
 			"rotate": false,
 			"default_rotation": 0
@@ -35,7 +35,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_roachoid",
 			"type": "text",
-			"text": "Insects of the order Blattodea have been around since the Carboniferous period. Blattodea includes termites and cockroaches, although both of those don't show up until the Lower Cretaceous period. Blattoids are generally active and mobile creatures."
+			"text": "Roachoids are a stem group of the superorder Dictyoptera, lasting from the Carboniferous into the Cretaceous. Roachoids share a similar morphology to that of modern Cockroaches, which are apart of the order Blattodea, but are differetiated from this group by their longer ovipositors, which has led to the hypothosis that they also didn't lay ootheca, a type of egg capsule, like modern dictyopterans. As such, they lay outside of the Blattodea order."
 		},
 		{
 			"type": "lepidodendron:diet",

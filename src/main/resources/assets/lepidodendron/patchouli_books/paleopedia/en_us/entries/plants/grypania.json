@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_grypania",
 			"title": "Grypania",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Mesoproterozoic (Calymmian) - Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)Domain:$(br)>$(o)incertae sedis(br2)$(l)Propagation:$() Craft with a bucket of water.$(br)$(l)Method of Obtaining:$() Shears"
+			"text": "$(l)Temporal Range:$() Paleoproterozoic (Orosirian) - Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)Domain:$(br)>$(o)incertae sedis(br2)$(l)Propagation:$() Craft with a bucket of water.$(br)$(l)Method of Obtaining:$() Shears"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_grypania",
 			"type": "text",
-			"text": "Grypania is an extremely early, tube shaped fossil from the Proterozoic Eon. It could have been a bacterial colony or a eukaryotic alga. The time range for this taxon extended for around 1200 million years due to the oldest probable Grypania being dated to 2100 mya."
+			"text": "Grypania is an extremely early, tube shaped fossil from the Proterozoic Eon. It could have been a bacterial colony or a eukaryotic alga. The time range for this taxon extended for around 1200 million years due to the oldest probable Grypania being dated to 1870 mya."
 		}
 	]
 }

@@ -230,7 +230,7 @@ public class BlockParadoxopterisSapling extends ElementsLepidodendronMod.ModElem
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Tree-fern");
 				tooltip.add("Periods: Jurassic - Early Cretaceous - Late Cretaceous");
-				tooltip.add("Propagation: spores");}
+				tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

@@ -267,9 +267,9 @@ public class BlockShrubbyCycad extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Cycad");
-				tooltip.add("Periods: early Cretaceous - late Cretaceous - Paleogene  - Neogene - Pleistocene [- present]");
+				tooltip.add("Periods: Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]");
 				tooltip.add("Note: Based on Restrepophyllum and Chigua/Zamia cycads");
-				tooltip.add("Propagation: fruit/cone");}
+				tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

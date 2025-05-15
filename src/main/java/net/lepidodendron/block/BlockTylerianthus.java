@@ -356,7 +356,7 @@ public class BlockTylerianthus extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering plant");
 	        	tooltip.add("Periods: Late Cretaceous");
-	        	tooltip.add("Propagation: flowers");}
+	        	tooltip.add("Propagation: Flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

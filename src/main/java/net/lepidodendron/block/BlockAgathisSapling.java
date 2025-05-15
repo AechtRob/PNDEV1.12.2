@@ -225,8 +225,8 @@ public class BlockAgathisSapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Coniferous tree");
-				tooltip.add("Periods: late Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
-				tooltip.add("Propagation: fruit/cone");
+				tooltip.add("Periods: Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]");
+				tooltip.add("Propagation: Fruit/Cone");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
