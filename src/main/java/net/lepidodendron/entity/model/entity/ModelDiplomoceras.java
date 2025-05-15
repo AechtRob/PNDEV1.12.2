@@ -384,7 +384,7 @@ public class ModelDiplomoceras extends ModelBasePalaeopedia {
         }
 
         if(ee.isAtBottom() && ee.canBeVertical()) {
-            animWalkingForage(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+//            animWalkingForage(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         }
 
 

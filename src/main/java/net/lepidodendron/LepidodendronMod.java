@@ -3047,7 +3047,7 @@ public class LepidodendronMod {
 	public static final int ENTITY_MEI = 1248;
 	public static final ResourceLocation MEI_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/mei"));
 	public static final int ENTITY_LEAELLYNASAURA = 1249;
-	public static final ResourceLocation LEALLYNASAURA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/leaellynasaura"));
+	public static final ResourceLocation LEAELLYNASAURA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/leaellynasaura"));
 	public static final int ENTITY_IGUANODON = 1250;
 	public static final ResourceLocation IGUANODON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/iguanodon"));
 	public static final ResourceLocation IGUANODON_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/iguanodon_young"));

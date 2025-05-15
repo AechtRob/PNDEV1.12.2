@@ -5587,6 +5587,17 @@ public class LepidodendronSorter {
     public static final int eggs_borealopelta = 5408;
     public static final int anurognathid_vesperopterylus_raw = 5409;
     public static final int eggs_anurognathid_vesperopterylus = 5410;
+    public static final int parenchodus_raw = 5411;
+    public static final int siamamia_raw = 5412;
+    public static final int leaellynasaura_raw = 5413;
+    public static final int goniopholis_raw = 5414;
+    public static final int eichstaettisaurus_raw = 5415;
+    public static final int anoualerpeton_raw = 5416;
+    public static final int eggs_anoualerpeton = 5417;
+    public static final int eggs_goniopholis = 5418;
+    public static final int eggs_leaellynasaura = 5419;
+    public static final int eggs_eichstaettisaurus = 5420;
+    public static final int harranahynchus_raw = 5421;
 
 
 
