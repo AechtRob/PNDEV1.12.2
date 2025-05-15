@@ -38,28 +38,34 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraRutiodon extends EntityPrehistoricFloraSwimmingAmphibianBase implements IAdvancementGranter, ITrappableWater, ITrappableLand {
+public class EntityPrehistoricFloraHoyasemys extends EntityPrehistoricFloraSwimmingAmphibianBase implements IAdvancementGranter, ITrappableWater, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	public Animation EAT_ANIMATION;
-	public Animation STAND_ANIMATION;
 	private int standCooldown;
 
-	public EntityPrehistoricFloraRutiodon(World world) {
+	public Animation HIDE_ANIMATION;
+
+	public EntityPrehistoricFloraHoyasemys(World world) {
 		super(world);
-		setSize(0.8F, 0.3F);
+		setSize(0.2F, 0.2F);
 		minWidth = 0.1F;
-		maxWidth = 0.8F;
-		maxHeight = 0.3F;
-		maxHealthAgeable = 20.0D;
-		EAT_ANIMATION = Animation.create(35);
-		STAND_ANIMATION = Animation.create(660);
+		maxWidth = 0.2F;
+		maxHeight = 0.2F;
+		maxHealthAgeable = 6.0D;
+		EAT_ANIMATION = Animation.create(40);
+		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
 	}
+
+	public int hideAnimationLength() {
+		return 600;
+	}
+
 
 	@Override
 	public void onUpdate() {
@@ -72,7 +78,7 @@ public class EntityPrehistoricFloraRutiodon extends EntityPrehistoricFloraSwimmi
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, STAND_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, HIDE_ANIMATION};
 	}
 
 
@@ -83,7 +89,7 @@ public class EntityPrehistoricFloraRutiodon extends EntityPrehistoricFloraSwimmi
 
 
 	public static String getPeriod() {
-		return "Triassic";
+		return "Early Cretaceous";
 	}
 
 	//public static String getHabitat() {
@@ -121,14 +127,15 @@ public class EntityPrehistoricFloraRutiodon extends EntityPrehistoricFloraSwimmi
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.17F;
+		float calcSpeed = 0.11F;
 		if (this.isReallyInWater()) {
-			calcSpeed = 0.275f;
+			calcSpeed = 0.2f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == STAND_ANIMATION) {
+		if (this.getAnimation() == MAKE_NEST_ANIMATION
+				|| this.getAnimation() == HIDE_ANIMATION) {
 			return 0.0F;
 		}
 		//System.err.println("Speed " + (Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed));
@@ -231,19 +238,19 @@ public class EntityPrehistoricFloraRutiodon extends EntityPrehistoricFloraSwimmi
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:rutiodon_idle"));
+				.getObject(new ResourceLocation("lepidodendron:proganochelys_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:rutiodon_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:proganochelys_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:rutiodon_death"));
+				.getObject(new ResourceLocation("lepidodendron:proganochelys_death"));
 	}
 
 
@@ -300,18 +307,21 @@ public class EntityPrehistoricFloraRutiodon extends EntityPrehistoricFloraSwimmi
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 
-		//Sometimes stand up and look around:
-		if ((!this.world.isRemote) && !this.isReallyInWater() && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			this.setAnimation(STAND_ANIMATION);
-			this.standCooldown = 3000;
-		}
-		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 3000;
-			this.setAnimation(NO_ANIMATION);
-		}
+	}
 
+	@Override
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		boolean result;
+		if (ds.getTrueSource() instanceof EntityLivingBase && this.getAnimation() == HIDE_ANIMATION) {
+			result = super.attackEntityFrom(ds, i/10F);
+		}
+		else {
+			result = super.attackEntityFrom(ds, i);
+		}
+		if (result && ds.getTrueSource() instanceof EntityLivingBase) {
+			this.setAnimation(HIDE_ANIMATION);
+		}
+		return result;
 	}
 
 	@Override
@@ -352,14 +362,11 @@ public class EntityPrehistoricFloraRutiodon extends EntityPrehistoricFloraSwimmi
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_RUTIODON;
+		return ModTriggers.CLICK_HOYASEMYS;
 	}
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		if (!this.isPFAdult()) {
-			return LepidodendronMod.RUTIODON_LOOT_YOUNG;
-		}
-		return LepidodendronMod.RUTIODON_LOOT;
+		return LepidodendronMod.HOYASEMYS_LOOT;
 	}
 	//Rendering taxidermy:
 	//--------------------

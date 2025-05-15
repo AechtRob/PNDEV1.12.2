@@ -38,7 +38,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraRutiodon extends EntityPrehistoricFloraSwimmingAmphibianBase implements IAdvancementGranter, ITrappableWater, ITrappableLand {
+public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwimmingAmphibianBase implements IAdvancementGranter, ITrappableWater, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -47,15 +47,15 @@ public class EntityPrehistoricFloraRutiodon extends EntityPrehistoricFloraSwimmi
 	public Animation STAND_ANIMATION;
 	private int standCooldown;
 
-	public EntityPrehistoricFloraRutiodon(World world) {
+	public EntityPrehistoricFloraGoniopholis(World world) {
 		super(world);
-		setSize(0.8F, 0.3F);
+		setSize(0.8F, 0.6F);
 		minWidth = 0.1F;
 		maxWidth = 0.8F;
-		maxHeight = 0.3F;
+		maxHeight = 0.6F;
 		maxHealthAgeable = 20.0D;
 		EAT_ANIMATION = Animation.create(35);
-		STAND_ANIMATION = Animation.create(660);
+		STAND_ANIMATION = Animation.create(635);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -83,7 +83,7 @@ public class EntityPrehistoricFloraRutiodon extends EntityPrehistoricFloraSwimmi
 
 
 	public static String getPeriod() {
-		return "Triassic";
+		return "Jurassic - Early Cretaceous";
 	}
 
 	//public static String getHabitat() {
@@ -121,7 +121,7 @@ public class EntityPrehistoricFloraRutiodon extends EntityPrehistoricFloraSwimmi
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.17F;
+		float calcSpeed = 0.19F;
 		if (this.isReallyInWater()) {
 			calcSpeed = 0.275f;
 		}
@@ -174,6 +174,11 @@ public class EntityPrehistoricFloraRutiodon extends EntityPrehistoricFloraSwimmi
 	@Override
 	public int getAttackLength() {
 		return 12;
+	}
+
+	@Override
+	public int getRoarLength() {
+		return 55;
 	}
 
 	protected void initEntityAI() {
@@ -231,19 +236,19 @@ public class EntityPrehistoricFloraRutiodon extends EntityPrehistoricFloraSwimmi
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:rutiodon_idle"));
+				.getObject(new ResourceLocation("lepidodendron:goniopholis_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:rutiodon_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:goniopholis_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:rutiodon_death"));
+				.getObject(new ResourceLocation("lepidodendron:goniopholis_death"));
 	}
 
 
@@ -352,14 +357,14 @@ public class EntityPrehistoricFloraRutiodon extends EntityPrehistoricFloraSwimmi
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_RUTIODON;
+		return ModTriggers.CLICK_GONIOPHOLIS;
 	}
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.RUTIODON_LOOT_YOUNG;
+			return LepidodendronMod.GONIOPHOLIS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.RUTIODON_LOOT;
+		return LepidodendronMod.GONIOPHOLIS_LOOT;
 	}
 	//Rendering taxidermy:
 	//--------------------

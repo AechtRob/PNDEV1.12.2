@@ -56,6 +56,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 	private static final float[] DENDRORHYNCHOIDES_SIZE = new float[]{0.45F, 0.275F};
 	private static final float[] JEHOLOPTERUS_SIZE = new float[]{0.90F, 0.4F};
 	private static final float[] SINOMACROPS_SIZE = new float[]{0.40F, 0.25F};
+	private static final float[] VESPEROPTERYLUS_SIZE = new float[]{0.40F, 0.25F};
 
 	private static final DataParameter<Integer> CREATURE_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraAnurognathid.class, DataSerializers.VARINT);
 
@@ -222,6 +223,8 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 			case SINOMACROPS:
 				return ModTriggers.CLICK_SINOMACROPS;
+			case VESPEROPTERYLUS:
+				return ModTriggers.CLICK_VESPEROPTERYLUS;
 
 		}
 	}
@@ -233,7 +236,8 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 		CASCOCAUDA(3, "cascocauda"),
 		DENDRORHYNCHOIDES(4, "dendrorhynchoides"),
 		JEHOLOPTERUS(5, "jeholopterus"),
-		SINOMACROPS(6, "sinomacrops")
+		SINOMACROPS(6, "sinomacrops"),
+		VESPEROPTERYLUS(7, "vesperopterylus")
 		;
 
 		private final String name;
@@ -308,6 +312,8 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 			case SINOMACROPS:
 				return LepidodendronMod.AGNURONATHID_SINOMACROPS_LOOT;
+			case VESPEROPTERYLUS:
+				return LepidodendronMod.VESPEROPTERYLUS_LOOT;
 		}
 	}
 
@@ -329,6 +335,8 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 				return 2.2f;
 
 			case SINOMACROPS:
+				return 1.6f;
+			case VESPEROPTERYLUS:
 				return 1.6f;
 
 
@@ -354,6 +362,8 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 			case SINOMACROPS:
 				return SINOMACROPS_SIZE;
+			case VESPEROPTERYLUS:
+				return VESPEROPTERYLUS_SIZE;
 
 		}
 	}
@@ -408,6 +418,8 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 			case SINOMACROPS:
 				return SINOMACROPS_SIZE[0];
+			case VESPEROPTERYLUS:
+				return VESPEROPTERYLUS_SIZE[0];
 
 		}
 	}
@@ -439,6 +451,8 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 			case SINOMACROPS:
 				return SINOMACROPS_SIZE[1];
+			case VESPEROPTERYLUS:
+				return VESPEROPTERYLUS_SIZE[1];
 
 		}
 	}
@@ -484,6 +498,8 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 				case SINOMACROPS:
 					return new ItemStack(ItemSpawnEggAnurognathidSinomacrops.block, 1);
+				case VESPEROPTERYLUS:
+					return new ItemStack(ItemSpawnEggAnurognathidVesperopterylus.block, 1);
 
 
 			}
@@ -714,30 +730,6 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 		super.onEntityUpdate();
 	}
 
-//	@Override
-//	public String getEntityId(Entity entity) {
-//		switch (((EntityPrehistoricFloraAnurognathid) entity).getPNType()) {
-//			case ANUROGNTHUS:
-//			default:
-//				return "lepidodendron:prehistoric_flora_anurognathid_anurognathus";
-//
-//			case BATRACHOGNATHUS:
-//				return "lepidodendron:prehistoric_flora_anurognathid_batrachognathius";
-//
-//			case CASCOCAUDA:
-//				return "lepidodendron:prehistoric_flora_anurognathid_cascocauda";
-//
-//			case DENDRORHYNCHOIDES:
-//				return "lepidodendron:prehistoric_flora_anurognathid_dendrorhynchoides";
-//
-//			case JEHOLOPTERUS:
-//				return "lepidodendron:prehistoric_flora_anurognathid_jeholopterus";
-//
-//			case SINOMACROPS:
-//				return "lepidodendron:prehistoric_flora_anurognathid_sinomacrops";
-//
-//		}
-//	}
 
 	@Override
 	public int getEggType(@Nullable String variantIn) { //0-3
@@ -765,6 +757,8 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 				return 0.01;
 
 			case SINOMACROPS:
+				return 0.01;
+			case VESPEROPTERYLUS:
 				return 0.01;
 
 		}
@@ -830,6 +824,8 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 			case SINOMACROPS:
 				return RenderAnurognathid.TEXTURE_SINOMACROPS;
+			case VESPEROPTERYLUS:
+				return RenderAnurognathid.TEXTURE_VESPEROPTERYLUS;
 
 		}
 	}

@@ -166,7 +166,8 @@ public class WorldGenTreeRottenLog extends WorldGenerator
 					"lepidodendron:prehistoric_flora_myriapod@velocipede",
 					"lepidodendron:prehistoric_flora_myriapod@polydesmid",
 					"lepidodendron:prehistoric_flora_myriapod@juliform",
-					"lepidodendron:prehistoric_flora_santanmantis"
+					"lepidodendron:prehistoric_flora_santanmantis",
+					"lepidodendron:prehistoric_flora_mecistotrachelos"
 			};
 
 			ArrayList<String> mobStringValid = new ArrayList<String>();

@@ -39,10 +39,10 @@ public class EntityPrehistoricFloraCryptoclidus extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraCryptoclidus(World world) {
 		super(world);
-		setSize(0.95F, 0.925F);
+		setSize(0.95F, 0.8F);
 		minWidth = 0.1F;
 		maxWidth = 0.95F;
-		maxHeight = 0.925F;
+		maxHeight = 0.8F;
 		maxHealthAgeable = 20.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
