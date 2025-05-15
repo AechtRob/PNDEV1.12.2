@@ -260,9 +260,9 @@ public class BlockBolbitis extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Water Fern");
-				tooltip.add("Periods: early Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
-				tooltip.add("Note: planted 2-3 blocks under water");
-				tooltip.add("Propagation: spores");}
+				tooltip.add("Periods: Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]");
+				tooltip.add("Note: Planted 2-3 blocks under water");
+				tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

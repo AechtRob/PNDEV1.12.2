@@ -493,7 +493,7 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 		return true;
 	}
 
-	public static String getPeriod() {return "Jurassic - Early Cretaceous - Late Cretaceous - Paleogene  - Neogene - Pleistocene [-Present]";}
+	public static String getPeriod() {return "Jurassic - Early Cretaceous - Late Cretaceous - Paleogene  - Neogene - Pleistocene [ - present]";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

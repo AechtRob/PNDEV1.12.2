@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraViviparus extends EntityPrehistoricFloraSlith
 		return true;
 	}
 
-	public static String getPeriod() {return "Cretaceous - Paleogene  - Neogene - Pleistocene";}
+	public static String getPeriod() {return "Jurassic - Early Cretaceous - Late Cretaceous - Paleogene  - Neogene - Pleistocene [ - present]";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

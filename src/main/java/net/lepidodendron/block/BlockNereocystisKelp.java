@@ -356,7 +356,7 @@ public class BlockNereocystisKelp extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Marine Algae");
 	        tooltip.add("Periods: Neogene - Pleistocene - present");
-	        tooltip.add("Propagation: water");}
+	        tooltip.add("Propagation: Water");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

@@ -310,7 +310,7 @@ public class BlockCallistophytales extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed-Plant vine");
 	        tooltip.add("Periods: Carboniferous - Permian");
-	        tooltip.add("Propagation: seeds");}
+	        tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

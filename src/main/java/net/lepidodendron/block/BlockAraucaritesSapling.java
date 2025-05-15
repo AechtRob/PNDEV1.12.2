@@ -225,7 +225,7 @@ public class BlockAraucaritesSapling extends ElementsLepidodendronMod.ModElement
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Coniferous tree");
 				tooltip.add("Periods: Jurassic - Early Cretaceous - Late Cretaceous - Paleogene");
-				tooltip.add("Propagation: fruit/cone");}
+				tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

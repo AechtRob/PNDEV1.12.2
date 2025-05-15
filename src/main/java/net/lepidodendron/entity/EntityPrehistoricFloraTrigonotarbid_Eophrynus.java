@@ -77,7 +77,7 @@ public class EntityPrehistoricFloraTrigonotarbid_Eophrynus extends EntityPrehist
 		return 0.8F;
 	}
 
-	public static String getPeriod() {return "late Carboniferous";}
+	public static String getPeriod() {return "Carboniferous";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

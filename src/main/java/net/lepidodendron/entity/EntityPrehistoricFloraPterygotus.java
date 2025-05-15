@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraPterygotus extends EntityPrehistoricFloraEury
 		return this.getAgeScale() < 0.4;
 	}
 
-	public static String getPeriod() {return "late Silurian - Devonian";}
+	public static String getPeriod() {return "Silurian - Devonian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

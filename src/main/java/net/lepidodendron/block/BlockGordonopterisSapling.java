@@ -214,7 +214,7 @@ public class BlockGordonopterisSapling extends ElementsLepidodendronMod.ModEleme
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Small tree-fern");
 				tooltip.add("Periods: Triassic - Jurassic");
-				tooltip.add("Propagation: spores");}
+				tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

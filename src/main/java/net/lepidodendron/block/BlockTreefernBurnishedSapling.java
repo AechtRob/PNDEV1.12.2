@@ -213,8 +213,8 @@ public class BlockTreefernBurnishedSapling extends ElementsLepidodendronMod.ModE
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Tree-fern");
-				tooltip.add("Periods: early Cretaceous - Paleogene  - Neogene - Pleistocene [- present]");
-				tooltip.add("Propagation: spores");}
+				tooltip.add("Periods: Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]");
+				tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

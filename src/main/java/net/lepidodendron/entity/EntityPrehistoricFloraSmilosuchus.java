@@ -105,7 +105,7 @@ public class EntityPrehistoricFloraSmilosuchus extends EntityPrehistoricFloraSwi
 		return this.getAgeScale() < 0.15;
 	}
 
-	public static String getPeriod() {return "late Triassic";}
+	public static String getPeriod() {return "Triassic";}
 
 	//public static String getHabitat() {return "Amphibious";}
 

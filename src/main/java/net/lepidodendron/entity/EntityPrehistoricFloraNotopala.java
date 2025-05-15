@@ -12,7 +12,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemNotopala;
-import net.lepidodendron.item.entities.ItemTessarolax;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
@@ -58,7 +57,7 @@ public class EntityPrehistoricFloraNotopala extends EntityPrehistoricFloraSlithe
 		return true;
 	}
 
-	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous - Paleogene  - Neogene - Pleistocene";}
+	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous - Paleogene  - Neogene - Pleistocene [ - present]";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

@@ -371,8 +371,8 @@ public class BlockRenalia extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Proto-plant");
 				tooltip.add("Periods: Silurian - Devonian");
-				tooltip.add("Note: requires water proximity and spreads to surrounding gravel, grass and dirt");
-				tooltip.add("Propagation: spores");}
+				tooltip.add("Note: Requires water proximity and spreads to surrounding gravel, grass and dirt");
+				tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

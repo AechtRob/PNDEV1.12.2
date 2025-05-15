@@ -1657,7 +1657,7 @@ public class LepidodendronEventSubscribers {
 						tt.add(TextFormatting.RED + "Permian: " + (int)statsPermianComplete.getStats() + " of " + (int)statsPermian.getStats() + " (" + df.format(100.00 * ((double)statsPermianComplete.getStats()/statsPermian.getStats())) + "%)");
 						tt.add(TextFormatting.DARK_PURPLE + "Triassic: " + (int)statsTriassicComplete.getStats() + " of " + (int)statsTriassic.getStats() + " (" + df.format(100.00 * ((double)statsTriassicComplete.getStats()/statsTriassic.getStats())) + "%)");
 						tt.add(TextFormatting.BLUE + "Jurassic: " + (int)statsJurassicComplete.getStats() + " of " + (int)statsJurassic.getStats() + " (" + df.format(100.00 * ((double)statsJurassicComplete.getStats()/statsJurassic.getStats())) + "%)");
-						tt.add(TextFormatting.GREEN + "Early Creatceous: " + (int)statsCretaceousEarlyComplete.getStats() + " of " + (int)statsCretaceousEarly.getStats() + " (" + df.format(100.00 * ((double)statsCretaceousEarlyComplete.getStats()/statsCretaceousEarly.getStats())) + "%)");
+						tt.add(TextFormatting.GREEN + "Early Cretaceous: " + (int)statsCretaceousEarlyComplete.getStats() + " of " + (int)statsCretaceousEarly.getStats() + " (" + df.format(100.00 * ((double)statsCretaceousEarlyComplete.getStats()/statsCretaceousEarly.getStats())) + "%)");
 						tt.add(TextFormatting.GREEN + "Late Cretaceous: " + (int)statsCretaceousLateComplete.getStats() + " of " + (int)statsCretaceousLate.getStats() + " (" + df.format(100.00 * ((double)statsCretaceousLateComplete.getStats()/statsCretaceousLate.getStats())) + "%)");
 						tt.add(TextFormatting.GOLD + "Paleogene: " + (int)statsPaleogeneComplete.getStats() + " of " + (int)statsPaleogene.getStats() + " (" + df.format(100.00 * ((double)statsPaleogeneComplete.getStats()/statsPaleogene.getStats())) + "%)");
 						tt.add(TextFormatting.YELLOW + "Neogene: " + (int)statsNeogeneComplete.getStats() + " of " + (int)statsNeogene.getStats() + " (" + df.format(100.00 * ((double)statsNeogeneComplete.getStats()/statsNeogene.getStats())) + "%)");
@@ -1688,7 +1688,7 @@ public class LepidodendronEventSubscribers {
 					case 0:
 					default: //Oak
 						tt.add("Type: Flowering tree");
-						tt.add("Periods: [Late Cretaceous (?) -] Paleogene  - Neogene - Pleistocene - present");
+						tt.add("Periods: [Late Cretaceous (?) - ] Paleogene  - Neogene - Pleistocene - present");
 						tt.add("Propagation: acorns drop from leaves");
 						break;
 
@@ -1718,7 +1718,7 @@ public class LepidodendronEventSubscribers {
 
 					case 5: //Dark Oak
 						tt.add("Type: Flowering tree");
-						tt.add("Periods: [Late Cretaceous (?) -] Paleogene  - Neogene - Pleistocene - present");
+						tt.add("Periods: [Late Cretaceous (?) - ] Paleogene  - Neogene - Pleistocene - present");
 						tt.add("Propagation: acorns drop from leaves");
 						break;
 				}

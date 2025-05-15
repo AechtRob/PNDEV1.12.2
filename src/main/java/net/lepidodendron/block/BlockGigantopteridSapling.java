@@ -224,7 +224,7 @@ public class BlockGigantopteridSapling extends ElementsLepidodendronMod.ModEleme
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed-Plant shrub");
 				tooltip.add("Periods: Permian");
-				tooltip.add("Propagation: seeds");}
+				tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

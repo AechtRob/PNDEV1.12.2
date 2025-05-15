@@ -1373,8 +1373,8 @@ public class BlockNematophyta extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Nematophyta");
 				tooltip.add("Periods: Silurian - Devonian");
-				tooltip.add("Note: spreads to surrounding blocks.");
-				tooltip.add("Propagation: spores");}
+				tooltip.add("Note: Spreads to surrounding blocks.");
+				tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

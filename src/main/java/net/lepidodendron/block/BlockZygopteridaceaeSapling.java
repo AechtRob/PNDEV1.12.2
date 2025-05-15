@@ -214,7 +214,7 @@ public class BlockZygopteridaceaeSapling extends ElementsLepidodendronMod.ModEle
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Tree-fern");
 				tooltip.add("Periods: Carboniferous - Permian");
-				tooltip.add("Propagation: spores");}
+				tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

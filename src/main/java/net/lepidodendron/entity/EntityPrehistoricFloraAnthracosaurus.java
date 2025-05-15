@@ -82,7 +82,7 @@ public class EntityPrehistoricFloraAnthracosaurus extends EntityPrehistoricFlora
 		return this.getAgeScale() < 0.3;
 	}
 
-	public static String getPeriod() {return "late Carboniferous";}
+	public static String getPeriod() {return "Carboniferous";}
 
 	//public static String getHabitat() {return "Amphibious";}
 

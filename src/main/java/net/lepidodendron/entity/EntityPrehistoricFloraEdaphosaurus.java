@@ -77,7 +77,7 @@ public class EntityPrehistoricFloraEdaphosaurus extends EntityPrehistoricFloraLa
 		);
 	}
 
-	public static String getPeriod() {return "[late Carboniferous -] early Permian";}
+	public static String getPeriod() {return "[Carboniferous - ] Permian";}
 
 	//public static String getHabitat() {return "Terrestrial Synapsid";}
 

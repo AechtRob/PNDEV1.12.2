@@ -210,7 +210,7 @@ public class BlockFenestellaGiantGreen extends ElementsLepidodendronMod.ModEleme
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Bryozoan water colony");
-				tooltip.add("Periods: [Ordovician - Silurian - Devonian -] Carboniferous [- Permian - Triassic]");}
+				tooltip.add("Periods: [Ordovician - Silurian - Devonian - ] Carboniferous [ - Permian - Triassic]");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 			

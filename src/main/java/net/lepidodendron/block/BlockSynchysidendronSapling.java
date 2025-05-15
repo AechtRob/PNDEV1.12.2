@@ -231,7 +231,7 @@ public class BlockSynchysidendronSapling extends ElementsLepidodendronMod.ModEle
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Lycophyte tree");
 				tooltip.add("Periods: Carboniferous");
-				tooltip.add("Propagation: spores");}
+				tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

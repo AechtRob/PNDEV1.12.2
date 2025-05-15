@@ -77,7 +77,7 @@ public class EntityPrehistoricFloraTrigonotarbid_Gondwanarachne extends EntityPr
 		return 0.8F;
 	}
 
-	public static String getPeriod() {return "late Carboniferous";}
+	public static String getPeriod() {return "Carboniferous";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

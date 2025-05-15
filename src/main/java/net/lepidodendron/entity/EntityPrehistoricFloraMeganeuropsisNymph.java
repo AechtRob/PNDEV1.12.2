@@ -78,7 +78,7 @@ public class EntityPrehistoricFloraMeganeuropsisNymph extends EntityPrehistoricF
 		return true;
 	}
 
-	public static String getPeriod() {return "early Permian";}
+	public static String getPeriod() {return "Permian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

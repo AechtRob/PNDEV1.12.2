@@ -145,7 +145,7 @@ public class BlockPetriellales extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed plant");
 	        	tooltip.add("Periods: Triassic");
-	        	tooltip.add("Propagation: seeds");}
+	        	tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

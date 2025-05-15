@@ -224,7 +224,7 @@ public class BlockEquisitesSapling extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail small tree");
 				tooltip.add("Periods: Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous");
-				tooltip.add("Propagation: spores");}
+				tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

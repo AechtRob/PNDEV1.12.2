@@ -2,6 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
@@ -19,6 +20,7 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -40,12 +42,14 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:stromatoporoidea_reef")
 	public static final Block block = null;
+
 	public BlockStromatoporoideaReef(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.stromatoporoidea_reef);
 	}
@@ -93,8 +97,7 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 
 		@Override
 		@SideOnly(Side.CLIENT)
-		public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
-		{
+		public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
 		}
 
 		/*
@@ -110,8 +113,7 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 		public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos) {
 			int i = source.getCombinedLight(pos, state.getLightValue(source, pos));
 
-			if (i == 0)
-			{
+			if (i == 0) {
 				BlockPos pos1 = pos.up();
 				state = source.getBlockState(pos1);
 				int ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
@@ -144,13 +146,10 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 						return ii;
 					}
 					return ii;
-				}
-				else {
+				} else {
 					return ii;
 				}
-			}
-			else
-			{
+			} else {
 				return i;
 			}
 		}
@@ -179,7 +178,7 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 		//@Override
 		//public boolean isOpaqueCube(IBlockState state)
 		//{
-			//return false;
+		//return false;
 		//}
 
 		//@Override
@@ -195,12 +194,10 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 		}
 
 		@Override
-		public IBlockState getStateFromMeta(int meta)
-		{
+		public IBlockState getStateFromMeta(int meta) {
 			EnumFacing enumfacing = EnumFacing.byIndex(meta);
 
-			if (enumfacing.getAxis() == EnumFacing.Axis.Y)
-			{
+			if (enumfacing.getAxis() == EnumFacing.Axis.Y) {
 				enumfacing = EnumFacing.NORTH;
 			}
 
@@ -208,9 +205,8 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 		}
 
 		@Override
-		public int getMetaFromState(IBlockState state)
-		{
-			return ((EnumFacing)state.getValue(FACING)).getIndex();
+		public int getMetaFromState(IBlockState state) {
+			return ((EnumFacing) state.getValue(FACING)).getIndex();
 		}
 
 		@Override
@@ -264,5 +260,16 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 		public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
 			return true;
 		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+			if (LepidodendronConfig.showTooltips) {
+				tooltip.add("Type: Marine reef sponges");
+				tooltip.add("Periods: Ordovician - Silurian - Devonian [ - Carboniferous (?) - Permian (?) - Triassic (?) - Jurassic (?) - Early Cretaceous (?) - Late Cretaceous (?)]");
+			}
+			super.addInformation(stack, player, tooltip, advanced);
+		}
+
 	}
 }

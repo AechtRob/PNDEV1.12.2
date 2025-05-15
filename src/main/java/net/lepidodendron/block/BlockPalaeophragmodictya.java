@@ -545,7 +545,7 @@ public class BlockPalaeophragmodictya extends ElementsLepidodendronMod.ModElemen
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Sessile organism");
+				tooltip.add("Type: Sponge");
 				tooltip.add("Periods: Neoproterozoic (Ediacaran)");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);

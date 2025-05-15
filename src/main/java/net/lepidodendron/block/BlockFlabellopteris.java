@@ -169,7 +169,7 @@ public class BlockFlabellopteris extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Iridopteridales (?)/Rhacophytales (?) proto-plant");
 	        	tooltip.add("Periods: Devonian");
-	        	tooltip.add("Propagation: spores");}
+	        	tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

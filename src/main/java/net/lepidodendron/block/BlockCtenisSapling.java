@@ -223,7 +223,7 @@ public class BlockCtenisSapling extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Cycad-like plant");
 				tooltip.add("Periods: Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene (Eocene)");
-				tooltip.add("Propagation: fruit/cone");}
+				tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

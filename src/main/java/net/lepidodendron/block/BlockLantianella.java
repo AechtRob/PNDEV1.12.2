@@ -594,7 +594,7 @@ public class BlockLantianella extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Sessile cnidarian");
+				tooltip.add("Type: Sessile cnidarian-grade organism");
 				tooltip.add("Periods: Neoproterozoic (Ediacaran)");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}

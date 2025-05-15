@@ -254,7 +254,7 @@ public class BlockAntarcticycas extends ElementsLepidodendronMod.ModElement {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Cycad");
 				tooltip.add("Periods: Triassic");
-				tooltip.add("Propagation: fruit/cone");}
+				tooltip.add("Propagation: Fruit/Cone");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 

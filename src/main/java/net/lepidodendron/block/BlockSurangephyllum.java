@@ -283,7 +283,7 @@ public class BlockSurangephyllum extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Seed-Plant Shrub");
 	        	tooltip.add("Periods: Permian");
-	        	tooltip.add("Propagation: seeds");}
+	        	tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

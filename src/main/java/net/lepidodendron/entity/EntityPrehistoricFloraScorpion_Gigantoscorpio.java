@@ -74,7 +74,7 @@ public class EntityPrehistoricFloraScorpion_Gigantoscorpio extends EntityPrehist
 		return 0.4F;
 	}
 
-	public static String getPeriod() {return "early Carboniferous";}
+	public static String getPeriod() {return "Carboniferous";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

@@ -230,7 +230,7 @@ public class BlockCordaitesDrySapling extends ElementsLepidodendronMod.ModElemen
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Coniferous-Cordaitalean tree");
 				tooltip.add("Periods: Carboniferous - Permian");
-				tooltip.add("Propagation: fruit/cone");}
+				tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

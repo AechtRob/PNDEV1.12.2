@@ -1,0 +1,56 @@
+{
+	"name": "Devonobius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/myriapod_devonobius_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_myriapod_devonobius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_myriapod_devonobius",
+			"title": "Devonobius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Myriapoda$(br)>Chilopoda$(br)>Devonobiomorpha$(br)>Devonobiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/devonobius.png"],
+			"title": "D. delta",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myriapod_devonobius",
+			"type": "text",
+			"text": "Devonobius delta comes from the Middle Devonian, with fossils found in the Panther Mountain Formation, New York (USA). It is a small devonobid, growing up to only 1 cm in length, possibly more. Most fossil specimens only preserve the head and part of the maxillipeds, excluding the rest of the body and even the antennae, although a more complete fossil specimens have been found, with one that preserves up to 14 segments and part of the antennae."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myriapod_devonobius",
+			"type": "text",
+			"text": "It is unique from other centipedes, by the fact that its maxillipeds, used to aid in feeding, lack a lateral division, and are also greatly reduced in size, although one specimen is preserved with larger maxillipeds, which is similar to male lithobiomorphs. It is also blind, with no eyes and lacks the Tömösváry organ known in other myriapods. Due to the overall morphology of the features on its head, it has been suggested that Devonobius was"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myriapod_devonobius",
+			"type": "text",
+			"text": "adapted for eating larger prey items, which is allowed by the reduced and moved maxillipeds, letting them get closer to their chosen food. The generic name derives from the time period name 'Devonian', and the suffix word '-bius', commonly used for centipedes. The specific name derives from the place name of 'Catskill Delta', where the species resided in."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_myriapod@devonobius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@devonobius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@devonobius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@devonobius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@devonobius"
+		}
+	]
+}

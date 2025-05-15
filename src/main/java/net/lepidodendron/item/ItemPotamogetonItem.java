@@ -129,10 +129,10 @@ public class ItemPotamogetonItem extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: flowering water plant");
-				tooltip.add("Periods: early Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
-				tooltip.add("Note: placed at water surface of one-block deep water, over dirt, clay or sand; spreads if there is light.");
-				tooltip.add("Propagation: flowers");}
+				tooltip.add("Type: Flowering water plant");
+				tooltip.add("Periods: Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]");
+				tooltip.add("Note: Placed at water surface of one-block deep water, over dirt, clay or sand; spreads if there is light.");
+				tooltip.add("Propagation: Flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

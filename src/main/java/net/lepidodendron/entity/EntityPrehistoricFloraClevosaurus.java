@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraClevosaurus extends EntityPrehistoricFloraLan
 		}
 	}
 
-	public static String getPeriod() {return "late Triassic - early Jurassic";}
+	public static String getPeriod() {return "Triassic - Jurassic";}
 
 	//public static String getHabitat() {return "Terrestrial Reptile";}
 

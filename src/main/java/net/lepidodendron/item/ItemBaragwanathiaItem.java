@@ -130,9 +130,9 @@ public class ItemBaragwanathiaItem extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Lycophyte (marine) water plant");
-				tooltip.add("Periods: late Silurian - early Devonian");
-				tooltip.add("Note: placed at water surface of one-block deep water, over dirt, clay, stone or sand; spreads if there is light.");
-				tooltip.add("Propagation: spores");}
+				tooltip.add("Periods: Upper Silurian - Lower Devonian");
+				tooltip.add("Note: Placed at water surface of one-block deep water, over dirt, clay, stone or sand; spreads if there is light.");
+				tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

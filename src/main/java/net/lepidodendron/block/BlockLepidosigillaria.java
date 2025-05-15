@@ -339,7 +339,7 @@ public class BlockLepidosigillaria extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Lycophyte shrub");
 	        	tooltip.add("Periods: Devonian");
-	        	tooltip.add("Propagation: spores");}
+	        	tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

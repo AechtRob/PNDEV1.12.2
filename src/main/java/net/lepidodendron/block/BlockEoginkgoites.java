@@ -280,7 +280,7 @@ public class BlockEoginkgoites extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Bennettitales shrub");
 	        tooltip.add("Periods: Triassic");
-	        tooltip.add("Propagation: seeds");}
+	        tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 		@Override

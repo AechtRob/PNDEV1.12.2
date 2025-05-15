@@ -223,8 +223,8 @@ public class BlockGlossophyllumSapling extends ElementsLepidodendronMod.ModEleme
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Ginkgoale (?) Seed-Plant");
-				tooltip.add("Periods: [Triassic -] Jurassic - early Cretaceous");
-				tooltip.add("Propagation: seeds");}
+				tooltip.add("Periods: [Triassic - ] Jurassic - Early Cretaceous");
+				tooltip.add("Propagation: Seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}
