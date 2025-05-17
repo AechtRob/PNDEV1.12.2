@@ -185,7 +185,7 @@ public class EntityPrehistoricFloraCaudipteryx extends EntityPrehistoricFloraLan
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.42F;
+		float speedBase = 0.5F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -231,11 +231,11 @@ public class EntityPrehistoricFloraCaudipteryx extends EntityPrehistoricFloraLan
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			this.setAnimation(STAND_ANIMATION);
 
-			this.standCooldown = 2000;
+			this.standCooldown = 3000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
 		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 2000;
+			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
 		
@@ -253,7 +253,7 @@ public class EntityPrehistoricFloraCaudipteryx extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getTalkInterval() {
-		return 180;
+		return 1000;
 	}
 
 	@Override

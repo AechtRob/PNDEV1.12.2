@@ -184,7 +184,7 @@ public class EntityPrehistoricFloraIncisivosaurus extends EntityPrehistoricFlora
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.42F;
+		float speedBase = 0.5F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -217,7 +217,7 @@ public class EntityPrehistoricFloraIncisivosaurus extends EntityPrehistoricFlora
 
 	@Override
 	public int getTalkInterval() {
-		return 400;
+		return 1000;
 	}
 
 	public int getAmbientTalkInterval() {

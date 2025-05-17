@@ -259,8 +259,6 @@ public class EntityPrehistoricFloraPaulchoffatia extends EntityPrehistoricFloraD
 			this.standCooldown = 0;
 		}
 
-		AnimationHandler.INSTANCE.updateAnimations(this);
-
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;

@@ -222,7 +222,7 @@ public class EntityPrehistoricFloraYuanyanglong extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getTalkInterval() {
-		return 400;
+		return 1000;
 	}
 
 	public int getAmbientTalkInterval() {
@@ -272,16 +272,16 @@ public class EntityPrehistoricFloraYuanyanglong extends EntityPrehistoricFloraLa
 				}
 			}
 
-			this.standCooldown = 2000;
+			this.standCooldown = 3000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
 		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 2000;
+			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
 
 		if ((!this.world.isRemote) && this.getAnimation() == SAND_ANIMATION && this.getAnimationTick() == SAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 2000;
+			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
 
