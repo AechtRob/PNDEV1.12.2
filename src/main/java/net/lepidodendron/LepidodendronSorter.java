@@ -5600,6 +5600,15 @@ public class LepidodendronSorter {
     public static final int eggs_leaellynasaura = 5419;
     public static final int eggs_eichstaettisaurus = 5420;
     public static final int harranahynchus_raw = 5421;
+    public static final int paulchoffatia_raw = 5422;
+    public static final int yuanyanglong_raw = 5423;
+    public static final int caudipteryx_raw = 5424;
+    public static final int incisivosaurus_raw = 5425;
+    public static final int microvenator_raw = 5426;
+    public static final int eggs_caudipteryx = 5427;
+    public static final int eggs_yuanyanglong = 5428;
+    public static final int eggs_incisivosaurus = 5429;
+    public static final int eggs_microvenator = 5430;
 
 
 
