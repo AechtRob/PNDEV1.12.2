@@ -432,6 +432,7 @@ public class LepidodendronFogSubscribers {
 			}
 			if ((biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_forest"))
 					|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_forest_dense"))
+					|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_lowlands_forest"))
 					|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_hummocks"))) {
 				return 110;
 			}
@@ -444,6 +445,7 @@ public class LepidodendronFogSubscribers {
 			}
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_wetlands_fern_copse")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_fern_copse")) {
 				return 150;
 			}
