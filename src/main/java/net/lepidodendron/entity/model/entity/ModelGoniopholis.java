@@ -636,6 +636,8 @@ public class ModelGoniopholis extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.Righteye.setScale(1,1,1);
+        this.Lefteye.setScale(1,1,1);
 
         EntityPrehistoricFloraGoniopholis ee = (EntityPrehistoricFloraGoniopholis) entitylivingbaseIn;
 
@@ -956,6 +958,7 @@ public class ModelGoniopholis extends ModelBasePalaeopedia {
         this.Throat.rotationPointZ = this.Throat.rotationPointZ + (float)(zz);
 
     }
+
     public void animAttack(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraGoniopholis entity = (EntityPrehistoricFloraGoniopholis) entitylivingbaseIn;
         int animCycle = 12;

@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.ai;
 
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.util.ICurious;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
@@ -31,13 +30,11 @@ public class LandWanderFollowHuman extends EntityAIBase
 
     public boolean shouldExecute()
     {
-        if (this.curiousAnimal instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.curiousAnimal;
-            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
-                LandBase.setIsCuriousWalking(false);
-                return false;
-            }
+        if (this.curiousAnimal.isAnimationDirectionLocked(this.curiousAnimal.getAnimation())) {
+            this.curiousAnimal.setIsCuriousWalking(false);
+            return false;
         }
+
         if (this.curiousAnimal instanceof ICurious) {
             ICurious CuriousBase = (ICurious) this.curiousAnimal;
             if (!CuriousBase.isCurious()) {
@@ -94,14 +91,12 @@ public class LandWanderFollowHuman extends EntityAIBase
 
     public boolean shouldContinueExecuting()
     {
-        if (this.curiousAnimal instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.curiousAnimal;
-            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
-                LandBase.getNavigator().clearPath();
-                this.curiousAnimal.setIsCuriousWalking(false);
-                return false;
-            }
+        if (this.curiousAnimal.isAnimationDirectionLocked(this.curiousAnimal.getAnimation())) {
+            this.curiousAnimal.getNavigator().clearPath();
+            this.curiousAnimal.setIsCuriousWalking(false);
+            return false;
         }
+
         if (this.humanToFollow != null) {
             if (!this.humanToFollow.isEntityAlive())
             {

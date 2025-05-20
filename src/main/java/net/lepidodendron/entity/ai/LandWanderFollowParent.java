@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.ai;
 
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.entity.ai.EntityAIBase;
 
 import java.util.List;
@@ -40,11 +39,8 @@ public class LandWanderFollowParent extends EntityAIBase
 
     public boolean shouldExecute()
     {
-        if (this.childAnimal instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.childAnimal;
-            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
-                return false;
-            }
+        if (this.childAnimal.isAnimationDirectionLocked(this.childAnimal.getAnimation())) {
+            return false;
         }
 
         if (this.childAnimal.isPFAdult())
@@ -89,13 +85,11 @@ public class LandWanderFollowParent extends EntityAIBase
 
     public boolean shouldContinueExecuting()
     {
-        if (this.childAnimal instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.childAnimal;
-            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
-                LandBase.getNavigator().clearPath();
-                return false;
-            }
+        if (this.childAnimal.isAnimationDirectionLocked(this.childAnimal.getAnimation())) {
+            this.childAnimal.getNavigator().clearPath();
+            return false;
         }
+
         if (this.childAnimal.isPFAdult())
         {
             return false;

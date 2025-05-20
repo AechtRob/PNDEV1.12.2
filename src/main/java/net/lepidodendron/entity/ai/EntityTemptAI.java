@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.ai;
 
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIBase;
@@ -47,11 +46,8 @@ public class EntityTemptAI extends EntityAIBase
             return false;
         }
 
-        if (this.temptedEntity instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase landbase = (EntityPrehistoricFloraLandBase) this.temptedEntity;
-            if (landbase.isAnimationDirectionLocked(landbase.getAnimation())) {
-                return false;
-            }
+        if (this.temptedEntity.isAnimationDirectionLocked(this.temptedEntity.getAnimation())) {
+            return false;
         }
 
         if (this.temptedEntity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
@@ -96,12 +92,9 @@ public class EntityTemptAI extends EntityAIBase
 
     public boolean shouldContinueExecuting()
     {
-        if (this.temptedEntity instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase landbase = (EntityPrehistoricFloraLandBase) this.temptedEntity;
-            if (landbase.isAnimationDirectionLocked(landbase.getAnimation())) {
-                landbase.getNavigator().clearPath();
-                return false;
-            }
+        if (this.temptedEntity.isAnimationDirectionLocked(this.temptedEntity.getAnimation())) {
+            this.temptedEntity.getNavigator().clearPath();
+            return false;
         }
         if (this.scaredByPlayerMovement)
         {

@@ -37,8 +37,8 @@ public class EntityLookIdleAI extends EntityAIBase
     public boolean shouldExecute()
     {
 
-        if (this.idleEntity instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.idleEntity;
+        if (this.idleEntity instanceof EntityPrehistoricFloraAgeableBase) {
+            EntityPrehistoricFloraAgeableBase LandBase = (EntityPrehistoricFloraAgeableBase) this.idleEntity;
             if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
                 return false;
             }
@@ -85,8 +85,8 @@ public class EntityLookIdleAI extends EntityAIBase
 
     public boolean shouldContinueExecuting()
     {
-        if (this.idleEntity instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.idleEntity;
+        if (this.idleEntity instanceof EntityPrehistoricFloraAgeableBase) {
+            EntityPrehistoricFloraAgeableBase LandBase = (EntityPrehistoricFloraAgeableBase) this.idleEntity;
             if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
                 return false;
             }
