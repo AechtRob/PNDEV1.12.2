@@ -153,6 +153,48 @@
 			"conditions": {
 				"biome": "lepidodendron:devonian_vale"
 			}
+		},
+		"devonian_vale_edge": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_vale_edge"
+			}
+		},
+		"devonian_aztec": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_aztec"
+			}
+		},
+		"devonian_creek_aztec": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_creek_aztec"
+			}
+		},
+		"devonian_creek_aztec_shallow": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_creek_aztec_shallow"
+			}
+		},
+		"devonian_hills_pools": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_hills_pools"
+			}
+		},
+		"devonian_lagoon": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_lagoon"
+			}
+		},
+		"devonian_lagoon_helper": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_lagoon_helper"
+			}
 		}
 	},
 	"requirements": [
@@ -210,7 +252,20 @@
 			"devonian_swamp"
 		],
 		[
-			"devonian_vale"
+			"devonian_vale",
+			"devonian_vale_edge"
+		],
+		[
+			"devonian_hills_pools"
+		],
+		[
+			"devonian_aztec",
+			"devonian_creek_aztec",
+			"devonian_creek_aztec_shallow"
+		],
+		[
+			"devonian_lagoon",
+			"devonian_lagoon_helper"
 		]
 	]
 }

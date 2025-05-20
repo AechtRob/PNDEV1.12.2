@@ -1,12 +1,12 @@
 {
-	"name": "Lycopsid Spinney",
+	"name": "Cold Glades",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
 	"category": "lepidodendron:devonian/devonian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Devonian Lycopsid Spinney$(br2)$()Text here..."
+			"text": "$(l)Devonian Cold Glades$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
