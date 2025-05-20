@@ -15,7 +15,6 @@ import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemNautiloidEggsEndoceras;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
@@ -36,6 +35,8 @@ public class EntityPrehistoricFloraEndoceras extends EntityPrehistoricFloraNauti
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
+
+
 
 	public EntityPrehistoricFloraEndoceras(World world) {
 		super(world);
