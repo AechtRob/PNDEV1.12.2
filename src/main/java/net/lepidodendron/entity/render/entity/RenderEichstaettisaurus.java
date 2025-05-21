@@ -34,7 +34,7 @@ public class RenderEichstaettisaurus extends RenderLivingBaseWithBook<EntityPreh
                 break;
 
             case EAST: case WEST: case NORTH: case SOUTH:
-                GlStateManager.translate(0.0F, 0.05F, -0.0F);
+                GlStateManager.translate(0.0F, 0.05F, -0.1F);
                 GlStateManager.rotate(0, 1.0F, 0.0F, 0.0F);
                 break;
 

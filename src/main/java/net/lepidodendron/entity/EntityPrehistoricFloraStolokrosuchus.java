@@ -38,7 +38,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwimmingAmphibianBase implements IAdvancementGranter, ITrappableWater, ITrappableLand {
+public class EntityPrehistoricFloraStolokrosuchus extends EntityPrehistoricFloraSwimmingAmphibianBase implements IAdvancementGranter, ITrappableWater, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -47,15 +47,15 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 	public Animation STAND_ANIMATION;
 	private int standCooldown;
 
-	public EntityPrehistoricFloraGoniopholis(World world) {
+	public EntityPrehistoricFloraStolokrosuchus(World world) {
 		super(world);
-		setSize(0.8F, 0.6F);
+		setSize(0.6F, 0.6F);
 		minWidth = 0.1F;
-		maxWidth = 0.8F;
+		maxWidth = 0.6F;
 		maxHeight = 0.6F;
-		maxHealthAgeable = 20.0D;
-		EAT_ANIMATION = Animation.create(35);
-		STAND_ANIMATION = Animation.create(635);
+		maxHealthAgeable = 30.0D;
+		EAT_ANIMATION = Animation.create(20);
+		STAND_ANIMATION = Animation.create(640);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -83,7 +83,7 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 
 
 	public static String getPeriod() {
-		return "Jurassic - Early Cretaceous";
+		return "Early Cretaceous";
 	}
 
 	//public static String getHabitat() {
@@ -173,12 +173,12 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 	}
 	@Override
 	public int getAttackLength() {
-		return 12;
+		return 11;
 	}
 
 	@Override
 	public int getRoarLength() {
-		return 55;
+		return 35;
 	}
 
 	protected void initEntityAI() {
@@ -240,19 +240,19 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:goniopholis_idle"));
+				.getObject(new ResourceLocation("lepidodendron:stolokrosuchus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:goniopholis_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:stolokrosuchus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:goniopholis_death"));
+				.getObject(new ResourceLocation("lepidodendron:stolokrosuchus_death"));
 	}
 
 
@@ -362,14 +362,14 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_GONIOPHOLIS;
+		return ModTriggers.CLICK_STOLOKROSUCHUS;
 	}
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.GONIOPHOLIS_LOOT_YOUNG;
+			return LepidodendronMod.STOLOKROSUCHUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.GONIOPHOLIS_LOOT;
+		return LepidodendronMod.STOLOKROSUCHUS_LOOT;
 	}
 	//Rendering taxidermy:
 	//--------------------

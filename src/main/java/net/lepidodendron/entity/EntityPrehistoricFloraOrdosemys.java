@@ -38,28 +38,35 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwimmingAmphibianBase implements IAdvancementGranter, ITrappableWater, ITrappableLand {
+public class EntityPrehistoricFloraOrdosemys extends EntityPrehistoricFloraSwimmingAmphibianBase implements IAdvancementGranter, ITrappableWater, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	public Animation EAT_ANIMATION;
-	public Animation STAND_ANIMATION;
 	private int standCooldown;
+	public Animation STAND_ANIMATION;
+	public Animation HIDE_ANIMATION;
 
-	public EntityPrehistoricFloraGoniopholis(World world) {
+	public EntityPrehistoricFloraOrdosemys(World world) {
 		super(world);
-		setSize(0.8F, 0.6F);
+		setSize(0.2F, 0.2F);
 		minWidth = 0.1F;
-		maxWidth = 0.8F;
-		maxHeight = 0.6F;
-		maxHealthAgeable = 20.0D;
-		EAT_ANIMATION = Animation.create(35);
-		STAND_ANIMATION = Animation.create(635);
+		maxWidth = 0.2F;
+		maxHeight = 0.2F;
+		maxHealthAgeable = 6.0D;
+		EAT_ANIMATION = Animation.create(11);
+		STAND_ANIMATION = Animation.create(480);
+		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
 	}
+
+	public int hideAnimationLength() {
+		return 310;
+	}
+
 
 	@Override
 	public void onUpdate() {
@@ -69,10 +76,28 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 		}
 	}
 
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.standCooldown = rand.nextInt(3000);
+		return livingdata;
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound)
+	{
+		super.writeEntityToNBT(compound);
+		compound.setInteger("standCooldown", this.standCooldown);
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.standCooldown = compound.getInteger("standCooldown");
+	}
+
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, STAND_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, HIDE_ANIMATION, STAND_ANIMATION};
 	}
 
 
@@ -83,7 +108,7 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 
 
 	public static String getPeriod() {
-		return "Jurassic - Early Cretaceous";
+		return "Early Cretaceous";
 	}
 
 	//public static String getHabitat() {
@@ -121,14 +146,15 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.19F;
+		float calcSpeed = 0.125F;
 		if (this.isReallyInWater()) {
-			calcSpeed = 0.275f;
+			calcSpeed = 0.2f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == STAND_ANIMATION) {
+		if (this.getAnimation() == MAKE_NEST_ANIMATION
+				|| this.getAnimation() == HIDE_ANIMATION) {
 			return 0.0F;
 		}
 		//System.err.println("Speed " + (Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed));
@@ -176,10 +202,6 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 		return 12;
 	}
 
-	@Override
-	public int getRoarLength() {
-		return 55;
-	}
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
@@ -202,7 +224,7 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.MEAT, DietString.FISH);
+		return ArrayUtils.addAll(DietString.ALGAE);
 	}
 
 	@Override
@@ -233,28 +255,23 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 		return true;
 	}
 
-	public boolean isAnimationDirectionLocked(Animation animation) {
-		return animation == STAND_ANIMATION;
-	}
-
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:goniopholis_idle"));
+				.getObject(new ResourceLocation("lepidodendron:proganochelys_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:goniopholis_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:proganochelys_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:goniopholis_death"));
+				.getObject(new ResourceLocation("lepidodendron:proganochelys_death"));
 	}
-
 
 
 	@Override
@@ -265,24 +282,6 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 	@Override
 	public boolean canBreatheUnderwater() {
 		return true;
-	}
-
-	@Override
-	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
-		livingdata = super.onInitialSpawn(difficulty, livingdata);
-		this.standCooldown = rand.nextInt(3000);
-		return livingdata;
-	}
-
-	public void writeEntityToNBT(NBTTagCompound compound)
-	{
-		super.writeEntityToNBT(compound);
-		compound.setInteger("standCooldown", this.standCooldown);
-	}
-
-	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
-		this.standCooldown = compound.getInteger("standCooldown");
 	}
 
 	@Override
@@ -325,6 +324,21 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 	}
 
 	@Override
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		boolean result;
+		if (ds.getTrueSource() instanceof EntityLivingBase && this.getAnimation() == HIDE_ANIMATION) {
+			result = super.attackEntityFrom(ds, i/10F);
+		}
+		else {
+			result = super.attackEntityFrom(ds, i);
+		}
+		if (result && ds.getTrueSource() instanceof EntityLivingBase) {
+			this.setAnimation(HIDE_ANIMATION);
+		}
+		return result;
+	}
+
+	@Override
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
@@ -362,14 +376,11 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_GONIOPHOLIS;
+		return ModTriggers.CLICK_ORDOSEMYS;
 	}
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		if (!this.isPFAdult()) {
-			return LepidodendronMod.GONIOPHOLIS_LOOT_YOUNG;
-		}
-		return LepidodendronMod.GONIOPHOLIS_LOOT;
+		return LepidodendronMod.ORDOSEMYS_LOOT;
 	}
 	//Rendering taxidermy:
 	//--------------------
