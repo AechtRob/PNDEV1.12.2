@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.ai;
 
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.util.EnumFacing;
@@ -36,11 +35,8 @@ public class EntityMateAIAgeableBase extends EntityAIBase
 
     public boolean shouldExecute()
     {
-        if (this.animal instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.animal;
-            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
-                return false;
-            }
+        if (this.animal.isAnimationDirectionLocked(this.animal.getAnimation())) {
+            return false;
         }
 
         if (this.animal instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
@@ -64,12 +60,9 @@ public class EntityMateAIAgeableBase extends EntityAIBase
 
     public boolean shouldContinueExecuting()
     {
-        if (this.animal instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.animal;
-            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
-                this.animal.getNavigator().clearPath();
-                return false;
-            }
+        if (this.animal.isAnimationDirectionLocked(this.animal.getAnimation())) {
+            this.animal.getNavigator().clearPath();
+            return false;
         }
 
         if (this.animal instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {

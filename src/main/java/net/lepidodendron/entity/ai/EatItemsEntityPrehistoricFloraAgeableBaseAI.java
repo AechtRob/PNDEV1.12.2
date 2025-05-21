@@ -41,11 +41,8 @@ public class EatItemsEntityPrehistoricFloraAgeableBaseAI extends EntityAIBase {
             return false;
         }
 
-        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.entity;
-            if (LandBase.isAnimationDirectionLocked(this.entity.getAnimation())) {
-                return false;
-            }
+        if (entity.isAnimationDirectionLocked(this.entity.getAnimation())) {
+            return false;
         }
 
         this.targetItem = this.getNearestItem(16);
@@ -54,13 +51,11 @@ public class EatItemsEntityPrehistoricFloraAgeableBaseAI extends EntityAIBase {
 
     @Override
     public boolean shouldContinueExecuting() {
-        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.entity;
-            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
-                LandBase.getNavigator().clearPath();
-                return false;
-            }
+        if (entity.isAnimationDirectionLocked(entity.getAnimation())) {
+            entity.getNavigator().clearPath();
+            return false;
         }
+
         if (this.targetItem == null || !this.targetItem.isEntityAlive()) {
             return false;
         }

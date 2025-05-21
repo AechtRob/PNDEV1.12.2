@@ -181,12 +181,9 @@ public class LandWanderAvoidDeepWaterAI extends AnimationAINoAnimation<EntityPre
                 }
             }
         }
-        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.entity;
-            if (LandBase.isAnimationDirectionLocked(this.entity.getAnimation())) {
-                this.entity.getNavigator().clearPath();
-                return false;
-            }
+       if (this.entity.isAnimationDirectionLocked(this.entity.getAnimation())) {
+            this.entity.getNavigator().clearPath();
+            return false;
         }
 
         if (this.entity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {

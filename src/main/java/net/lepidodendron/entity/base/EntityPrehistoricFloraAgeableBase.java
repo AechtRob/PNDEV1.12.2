@@ -121,6 +121,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return null;
     }
 
+    public boolean isAnimationDirectionLocked(Animation animation) {
+        /**
+         * If it must not pathfind, rotate or change its look angle while it is happening
+         * This is used primarily to stop certain AI for pathfinding or targeting happening
+         */
+        return false;
+    }
+
     @Nullable
     public EntityLivingBase getAlarmTarget()
     {

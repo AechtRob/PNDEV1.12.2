@@ -90,6 +90,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         GRAZE_ANIMATION = Animation.create(this.getGrazeLength());
     }
 
+    @Override
     public boolean isAnimationDirectionLocked(Animation animation) {
          /**
          * If it must not pathfind, rotate or change its look angle while it is happening

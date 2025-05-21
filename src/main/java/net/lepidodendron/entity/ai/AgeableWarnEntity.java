@@ -4,7 +4,6 @@ import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import net.lepidodendron.entity.EntityPrehistoricFloraEustreptospondylus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
@@ -59,15 +58,12 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
 
     public boolean shouldExecute()
     {
-        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.entity;
-            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
-                return false;
-            }
-        }
 
         if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
             EntityPrehistoricFloraAgeableBase ageableBase = (EntityPrehistoricFloraAgeableBase) this.entity;
+            if (ageableBase.isAnimationDirectionLocked(ageableBase.getAnimation())) {
+                return false;
+            }
             if ((!ageableBase.isPFAdult()) || ageableBase.getWarnTarget() != null || ageableBase.getAttackTarget() != null || ageableBase.getEatTarget() != null) {
                 return false;
             }

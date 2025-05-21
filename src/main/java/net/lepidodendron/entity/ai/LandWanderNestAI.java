@@ -53,16 +53,16 @@ public class LandWanderNestAI extends AnimationAINoAnimation<EntityPrehistoricFl
             return false;
         }
 
+        if (this.PrehistoricFloraAgeableBase.isAnimationDirectionLocked(this.PrehistoricFloraAgeableBase.getAnimation())) {
+            return false;
+        }
+
         if (this.PrehistoricFloraAgeableBase instanceof EntityPrehistoricFloraLandBase)
         {
             EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.PrehistoricFloraAgeableBase;
             if (LandBase.isReallyInWater()) {
                 return false;
             }
-
-           if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
-               return false;
-           }
 
             if (!(LandBase.getAISpeedLand() > 0)) {
                 return false;

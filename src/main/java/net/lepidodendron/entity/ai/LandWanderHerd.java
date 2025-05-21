@@ -34,11 +34,8 @@ public class LandWanderHerd extends EntityAIBase
     public boolean shouldExecute()
     {
 
-        if (this.followingAnimal instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.followingAnimal;
-            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
-                return false;
-            }
+        if (this.followingAnimal.isAnimationDirectionLocked(this.followingAnimal.getAnimation())) {
+            return false;
         }
 
         if (this.followingAnimal instanceof EntityPrehistoricFloraLandBase) {
@@ -102,12 +99,9 @@ public class LandWanderHerd extends EntityAIBase
 
     public boolean shouldContinueExecuting()
     {
-        if (this.followingAnimal instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.followingAnimal;
-            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
-                LandBase.getNavigator().clearPath();
-                return false;
-            }
+        if (this.followingAnimal.isAnimationDirectionLocked(this.followingAnimal.getAnimation())) {
+            this.followingAnimal.getNavigator().clearPath();
+            return false;
         }
 
         if (this.followingAnimal.isPFAdult())

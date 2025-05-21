@@ -62,6 +62,12 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 	}
 
 	@Override
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return super.isAnimationDirectionLocked(animation)
+			|| animation == this.STAND_ANIMATION;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
@@ -69,12 +75,10 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 		}
 	}
 
-
 	@Override
 	public Animation[] getAnimations() {
 		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, STAND_ANIMATION};
 	}
-
 
 	@Override
 	public boolean isSmall() {

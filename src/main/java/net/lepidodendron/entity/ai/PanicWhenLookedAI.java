@@ -61,7 +61,7 @@ public class PanicWhenLookedAI extends EntityAIBase
     public boolean shouldExecute()
     {
         if (this.creature instanceof EntityPrehistoricFloraLandBase) {
-            if (((EntityPrehistoricFloraLandBase) this.creature).isAnimationDirectionLocked(this.creature.getAnimation())) {
+            if (this.creature.isAnimationDirectionLocked(this.creature.getAnimation())) {
                 return false;
             }
             if (!(((EntityPrehistoricFloraLandBase) this.creature).getAISpeedLand() > 0)) {
