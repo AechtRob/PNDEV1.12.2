@@ -3038,6 +3038,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation EICHSTAETTISAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eichstaettisaurus"));
 	public static final int ENTITY_MICROVENATOR = 1244;
 	public static final ResourceLocation MICROVENATOR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/microvenator"));
+	public static final ResourceLocation MICROVENATOR_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/microvenator_f"));
 	public static final int ENTITY_YUANYANGLONG = 1245;
 	public static final ResourceLocation YUANYANGLONG_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/yuanyanglong"));
 	public static final int ENTITY_CAUDIPTERYX = 1246;

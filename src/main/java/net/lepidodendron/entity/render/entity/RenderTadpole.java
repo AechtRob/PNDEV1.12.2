@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
 import net.lepidodendron.entity.EntityPrehistoricFloraTadpole;
 import net.lepidodendron.entity.model.entity.ModelTadpole;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
@@ -20,9 +21,17 @@ public class RenderTadpole extends RenderLivingBaseWithBook<EntityPrehistoricFlo
         return RenderTadpole.TEXTURE;
     }
 
+    public static float getScaler(EntityPrehistoricFloraTadpole.Type variant) {
+        if(variant == EntityPrehistoricFloraTadpole.Type.NOTOBATRACHUS) {
+            return 0.5F;
+        } else {
+            return 0.11F;
+        }
+    }
+
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraTadpole entity, float f) {
-        float scale = 0.11F;
+        float scale = getScaler(entity.getPNType());
         GlStateManager.scale(scale, scale, scale);
     }
 

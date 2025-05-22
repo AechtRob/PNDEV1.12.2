@@ -204,7 +204,7 @@ public class EntityPrehistoricFloraHoyasemys extends EntityPrehistoricFloraSwimm
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.MEAT, DietString.FISH);
+		return ArrayUtils.addAll(DietString.ALGAE);
 	}
 
 	@Override

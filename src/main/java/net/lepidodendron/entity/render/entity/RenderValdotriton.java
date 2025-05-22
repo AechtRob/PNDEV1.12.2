@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderValdotriton extends RenderLivingBaseWithBook<EntityPrehistoricFloraValdotriton> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/valdotriton.png");
 
-    public static float getScaler() {return 0.25f;}
+    public static float getScaler() {return 0.16f;}
     public RenderValdotriton(RenderManager mgr) {
         super(mgr, new ModelValdotriton(), 0.3f);
     }

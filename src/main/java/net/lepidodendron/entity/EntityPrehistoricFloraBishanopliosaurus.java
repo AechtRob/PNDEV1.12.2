@@ -39,10 +39,10 @@ public class EntityPrehistoricFloraBishanopliosaurus extends EntityPrehistoricFl
 
 	public EntityPrehistoricFloraBishanopliosaurus(World world) {
 		super(world);
-		setSize(0.95F, 0.925F);
+		setSize(0.95F, 0.7F);
 		minWidth = 0.1F;
 		maxWidth = 0.95F;
-		maxHeight = 0.925F;
+		maxHeight = 0.7F;
 		maxHealthAgeable = 20.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

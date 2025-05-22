@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderGoniopholis extends RenderLivingBaseWithBook<EntityPrehistoricFloraGoniopholis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/goniopholis.png");
 
-    public static float getScaler() {return 0.78f;}
+    public static float getScaler() {return 0.78f*0.8f;}
     public RenderGoniopholis(RenderManager mgr) {
         super(mgr, new ModelGoniopholis(), 0.3f);
     }

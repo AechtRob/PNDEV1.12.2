@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraSantanmantis extends EntityPrehistoricFloraLe
 
 	@Override
 	public int jumpCooldown() {
-		return 700;
+		return 1500;
 	}
 
 	@Override

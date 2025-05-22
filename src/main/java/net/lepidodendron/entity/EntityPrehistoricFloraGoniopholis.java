@@ -237,6 +237,10 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 		return true;
 	}
 
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return animation == STAND_ANIMATION;
+	}
+
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
@@ -254,6 +258,7 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:goniopholis_death"));
 	}
+
 
 
 	@Override
