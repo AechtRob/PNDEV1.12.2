@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_side",
+  "textures": {
+    "texture": "lepidodendron:blocks/schilderia_planks",
+    "particle": "lepidodendron:blocks/schilderia_planks"
+  }
+}

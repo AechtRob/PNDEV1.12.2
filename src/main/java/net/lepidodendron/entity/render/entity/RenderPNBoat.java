@@ -89,6 +89,11 @@ public class RenderPNBoat extends RenderBoat {
     private static final ResourceLocation TEXTURE_SATPURAPHYLLUM = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_satpuraphyllum.png");
     private static final ResourceLocation TEXTURE_ULLMANNIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_ullmannia.png");
     private static final ResourceLocation TEXTURE_BIARMOBAIERA = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_biarmobaiera.png");
+    private static final ResourceLocation TEXTURE_LEPTOPHLOEUM = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_leptophloeum.png");
+    private static final ResourceLocation TEXTURE_MIROVIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_mirovia.png");
+    private static final ResourceLocation TEXTURE_ALBERTIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_albertia.png");
+    private static final ResourceLocation TEXTURE_WOODWORTHIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_woodworthia.png");
+    private static final ResourceLocation TEXTURE_ARBORAMOSA = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_arboramosa.png");
 
 
     public RenderPNBoat(RenderManager renderManagerIn) {
@@ -254,6 +259,16 @@ public class RenderPNBoat extends RenderBoat {
                 return TEXTURE_ULLMANNIA;
             case BIARMOBAIERA:
                 return TEXTURE_BIARMOBAIERA;
+            case LEPTOPHLOEUM:
+                return TEXTURE_LEPTOPHLOEUM;
+            case MIROVIA:
+                return TEXTURE_MIROVIA;
+            case ALBERTIA:
+                return TEXTURE_ALBERTIA;
+            case WOODWORTHIA:
+                return TEXTURE_WOODWORTHIA;
+            case ARBORAMOSA:
+                return TEXTURE_ARBORAMOSA;
         }
     }
 }

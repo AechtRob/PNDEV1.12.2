@@ -5153,6 +5153,85 @@ public class LepidodendronSorter {
 
     public static final int music_disc_brontosaurus = 8137;
 
+    public static final int mirovia_boat_item = 8102;
+    public static final int mirovia_planks = 8103;
+    public static final int mirovia_fence = 8104;
+    public static final int mirovia_fence_gate = 8105;
+    public static final int mirovia_door = 8106;
+    public static final int mirovia_trapdoor = 8107;
+    public static final int mirovia_slab = 8108;
+    public static final int mirovia_stairs = 8109;
+    public static final int mirovia_door_item = 8110;
+    public static final int mirovia_leaves = 8113;
+    public static final int mirovia_log = 8114;
+    public static final int mirovia_sapling = 8115;
+    public static final int mirovia_fruit = 8116;
+    public static final int mirovia_nuts = 8117;
+
+    public static final int albertia_boat_item = 8118;
+    public static final int albertia_planks = 8119;
+    public static final int albertia_fence = 8120;
+    public static final int albertia_fence_gate = 8121;
+    public static final int albertia_door = 8122;
+    public static final int albertia_trapdoor = 8123;
+    public static final int albertia_slab = 8124;
+    public static final int albertia_stairs = 8125;
+    public static final int albertia_door_item = 8126;
+    public static final int albertia_seed = 8127;
+    public static final int albertia_fruit = 8128;
+    public static final int albertia_leaves = 8129;
+    public static final int albertia_log = 8130;
+    public static final int albertia_sapling = 8131;
+
+    public static final int woodworthia_boat_item = 8132;
+    public static final int woodworthia_planks = 8133;
+    public static final int woodworthia_fence = 8134;
+    public static final int woodworthia_fence_gate = 8135;
+    public static final int woodworthia_door = 8136;
+    public static final int woodworthia_trapdoor = 8137;
+    public static final int woodworthia_slab = 8138;
+    public static final int woodworthia_stairs = 8139;
+    public static final int woodworthia_door_item = 8140;
+    public static final int woodworthia_nuts = 8141;
+    public static final int woodworthia_fruit_block = 8142;
+    public static final int woodworthia_leaves = 8143;
+    public static final int woodworthia_log = 8144;
+    public static final int woodworthia_sapling = 8145;
+
+    public static final int schilderia_boat_item = 8146;
+    public static final int schilderia_planks = 8147;
+    public static final int schilderia_fence = 8148;
+    public static final int schilderia_fence_gate = 8149;
+    public static final int schilderia_door = 8150;
+    public static final int schilderia_trapdoor = 8151;
+    public static final int schilderia_slab = 8152;
+    public static final int schilderia_stairs = 8153;
+    public static final int schilderia_door_item = 8154;
+    public static final int schilderia_leaves = 8155;
+    public static final int schilderia_log = 8156;
+    public static final int schilderia_sapling = 8157;
+
+    public static final int arboramosa_boat_item = 8158;
+    public static final int arboramosa_planks = 8159;
+    public static final int arboramosa_fence = 8160;
+    public static final int arboramosa_fence_gate = 8161;
+    public static final int arboramosa_door = 8162;
+    public static final int arboramosa_trapdoor = 8163;
+    public static final int arboramosa_slab = 8164;
+    public static final int arboramosa_stairs = 8165;
+    public static final int arboramosa_door_item = 8166;
+    public static final int arboramosa_seed = 8167;
+    public static final int arboramosa_fruit = 8168;
+    public static final int arboramosa_leaves = 8169;
+    public static final int arboramosa_log = 8170;
+    public static final int arboramosa_sapling = 8171;
+
+    public static final int desmiophyllum_berries = 8172;
+    public static final int desmiophyllum_leaves = 8173;
+    public static final int desmiophyllum_leaves_berries = 8174;
+    public static final int desmiophyllum_sapling = 8175;
+    public static final int desmiophyllum_seed = 8176;
+    
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;
     public static final int eocursor_raw = 4976;

@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:albertia_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:albertia_seed",
+    "count": 1
+  }
+}

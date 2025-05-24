@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:schilderia_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:schilderia_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:schilderia_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:schilderia_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:schilderia_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:schilderia_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:schilderia_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

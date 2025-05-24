@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/woodworthia_log_end",
+    "up": "lepidodendron:blocks/woodworthia_log_end",
+    "north": "lepidodendron:blocks/woodworthia_log",
+    "east": "lepidodendron:blocks/woodworthia_log",
+    "south": "lepidodendron:blocks/woodworthia_log",
+    "west": "lepidodendron:blocks/woodworthia_log",
+    "particle": "lepidodendron:blocks/woodworthia_log_end"
+  }
+}

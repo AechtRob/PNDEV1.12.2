@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/woodworthia_sapling",
+    "particle": "lepidodendron:blocks/woodworthia_sapling"
+  }
+}

@@ -1,0 +1,33 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ "0  ",
+ "34 ",
+ "678"
+ ],
+ "key": {
+ "0": {
+ "item": "lepidodendron:mirovia_planks"
+ },
+ "3": {
+ "item": "lepidodendron:mirovia_planks"
+ },
+ "4": {
+ "item": "lepidodendron:mirovia_planks"
+ },
+ "6": {
+ "item": "lepidodendron:mirovia_planks"
+ },
+ "7": {
+ "item": "lepidodendron:mirovia_planks"
+ },
+ "8": {
+ "item": "lepidodendron:mirovia_planks"
+ }
+ },
+ "result": {
+ "item": "lepidodendron:mirovia_stairs",
+ "count": 4
+ }
+}

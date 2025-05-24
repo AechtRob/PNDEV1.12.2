@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:woodworthia_fruit_1"},
+      {"model": "lepidodendron:woodworthia_fruit_2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:woodworthia_fruit_block_inventory"
+    }
+  }
+}

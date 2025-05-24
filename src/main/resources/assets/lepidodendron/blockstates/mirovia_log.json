@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:mirovia_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:mirovia_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:mirovia_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:mirovia_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:mirovia_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:mirovia_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:mirovia_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

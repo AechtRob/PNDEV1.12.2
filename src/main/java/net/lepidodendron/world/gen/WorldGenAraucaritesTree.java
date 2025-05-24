@@ -2,7 +2,7 @@ package net.lepidodendron.world.gen;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.procedure.ProcedureWorldGenAraucarites;
-import net.lepidodendron.procedure.ProcedureWorldGenSciadopitys;
+import net.lepidodendron.procedure.ProcedureWorldGenMirovia;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -89,7 +89,7 @@ public class WorldGenAraucaritesTree extends WorldGenAbstractTree
                         ProcedureWorldGenAraucarites.executeProcedure($_dependencies);
                     }
                     else if (!(worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_rough_hills") && position.getY() > 100)) {
-                        ProcedureWorldGenSciadopitys.executeProcedure($_dependencies);
+                        ProcedureWorldGenMirovia.executeProcedure($_dependencies);
                     }
                     return true;
                 }

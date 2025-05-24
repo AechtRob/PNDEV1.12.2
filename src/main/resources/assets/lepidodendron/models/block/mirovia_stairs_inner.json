@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/mirovia_planks",
+    "top": "lepidodendron:blocks/mirovia_planks",
+    "side": "lepidodendron:blocks/mirovia_planks"
+  }
+}
