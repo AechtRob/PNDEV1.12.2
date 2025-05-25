@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/arboramosa_log_end",
+    "up": "lepidodendron:blocks/arboramosa_log_end",
+    "north": "lepidodendron:blocks/arboramosa_log",
+    "east": "lepidodendron:blocks/arboramosa_log",
+    "south": "lepidodendron:blocks/arboramosa_log",
+    "west": "lepidodendron:blocks/arboramosa_log",
+    "particle": "lepidodendron:blocks/arboramosa_log_end"
+  }
+}

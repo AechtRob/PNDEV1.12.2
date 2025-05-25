@@ -1,0 +1,8 @@
+{
+    "parent": "block/fence_gate_closed",
+    "textures": {
+        "texture": "lepidodendron:blocks/woodworthia_wood",
+    "particle": "lepidodendron:blocks/woodworthia_wood"
+    }
+}
+

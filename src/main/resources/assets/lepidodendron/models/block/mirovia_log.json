@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/mirovia_log_end",
+    "up": "lepidodendron:blocks/mirovia_log_end",
+    "north": "lepidodendron:blocks/mirovia_log",
+    "east": "lepidodendron:blocks/mirovia_log",
+    "south": "lepidodendron:blocks/mirovia_log",
+    "west": "lepidodendron:blocks/mirovia_log",
+    "particle": "lepidodendron:blocks/mirovia_log_end"
+  }
+}

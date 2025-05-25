@@ -69,6 +69,8 @@ public class RecipeCookedMeatsandSeeds  {
 
 		for (ItemStack stack : OreDictionary.getOres("logWood")) {
 			if (stack.getItem() != new ItemStack(BlockAraucarioxylonLog.block, 1).getItem()
+					&& stack.getItem() !=  new ItemStack(BlockWoodworthiaLog.block, 1).getItem()
+					&& stack.getItem() !=  new ItemStack(BlockArboramosaLog.block, 1).getItem()
 					&& stack.getItem() !=  new ItemStack(BlockSciadopitysLog.block, 1).getItem()
 					&& stack.getItem() !=  new ItemStack(BlockHymenaeaLog.block, 1).getItem()) {
 				GameRegistry.addSmelting(stack, new ItemStack(Items.COAL, 1, 1), 0.15F);
@@ -76,6 +78,8 @@ public class RecipeCookedMeatsandSeeds  {
 		}
 
 		GameRegistry.addSmelting(new ItemStack(BlockAraucarioxylonLog.block, (int) (1)), new ItemStack(BlockAraucarioxylonLogPetrified.block, (int) (1)), 1F);
+		GameRegistry.addSmelting(new ItemStack(BlockWoodworthiaLog.block, (int) (1)), new ItemStack(BlockAraucarioxylonLogPetrified.block, (int) (1)), 1F);
+		GameRegistry.addSmelting(new ItemStack(BlockArboramosaLog.block, (int) (1)), new ItemStack(BlockAraucarioxylonLogPetrified.block, (int) (1)), 1F);
 		GameRegistry.addSmelting(new ItemStack(BlockSciadopitysLog.block, (int) (1)), new ItemStack(ItemBalticAmberChunk.block, (int) (1)), 1F);
 		GameRegistry.addSmelting(new ItemStack(BlockHymenaeaLog.block, (int) (1)), new ItemStack(ItemDominicanAmberChunk.block, (int) (1)), 1F);
 

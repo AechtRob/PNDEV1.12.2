@@ -1,0 +1,6 @@
+{
+    "parent": "block/leaves",
+    "textures": {
+        "all": "lepidodendron:blocks/desmiophyllum_leaves_berries"
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:mirovia_fruit_1"},
+      {"model": "lepidodendron:mirovia_fruit_2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:mirovia_fruit_block_inventory"
+    }
+  }
+}

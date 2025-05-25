@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:albertia_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:albertia_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:albertia_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:albertia_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:albertia_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:albertia_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:albertia_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

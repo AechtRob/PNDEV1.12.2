@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/mirovia_sapling",
+    "particle": "lepidodendron:blocks/mirovia_sapling"
+  }
+}

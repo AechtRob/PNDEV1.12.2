@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:woodworthia_slab_double"
+    }
+  }
+}

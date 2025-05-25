@@ -345,6 +345,14 @@ public class EntityPNBoat extends EntityBoat
                 return ItemBiarmobaieraBoatItem.block;
             case LEPTOPHLOEUM:
                 return ItemLeptophloeumBoatItem.block;
+            case MIROVIA:
+                return ItemMiroviaBoatItem.block;
+            case ALBERTIA:
+                return ItemAlbertiaBoatItem.block;
+            case WOODWORTHIA:
+                return ItemWoodworthiaBoatItem.block;
+            case ARBORAMOSA:
+                return ItemArboramosaBoatItem.block;
 
         }
     }
@@ -509,6 +517,14 @@ public class EntityPNBoat extends EntityBoat
                 return BlockBiarmobaieraPlanks.block;
             case LEPTOPHLOEUM:
                 return BlockLeptophloeumPlanks.block;
+            case MIROVIA:
+                return BlockMiroviaPlanks.block;
+            case ALBERTIA:
+                return BlockAlbertiaPlanks.block;
+            case WOODWORTHIA:
+                return BlockWoodworthiaPlanks.block;
+            case ARBORAMOSA:
+                return BlockArboramosaPlanks.block;
 
         }
     }
@@ -1385,7 +1401,11 @@ public class EntityPNBoat extends EntityBoat
         SATPURAPHYLLUM(74, "satpuraphyllum"),
         ULLMANNIA(75, "ullmannia"),
         BIARMOBAIERA(76, "biarmobaiera"),
-        LEPTOPHLOEUM(77, "leptophloeum")
+        LEPTOPHLOEUM(77, "leptophloeum"),
+        MIROVIA(78, "mirovia"),
+        ALBERTIA(79, "albertia"),
+        WOODWORTHIA(80, "woodworthia"),
+        ARBORAMOSA(81, "arboramosa")
         ;
 
         private final String name;

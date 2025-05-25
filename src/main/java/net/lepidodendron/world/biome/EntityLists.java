@@ -83,6 +83,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsPuddlesPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsWaterlooPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsLagoonsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsRedLakePF);
                 return MobString;
 
             case 5:
@@ -944,6 +945,16 @@ public class EntityLists {
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_lagoon_helper")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsLagoonsPF);
+            }
+//            if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsMountainsFA);
+//            }
+//            if ((LepidodendronConfig.doSpawnsReborn && Loader.isModLoaded("rebornmod"))) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsMountainsReborn);
+//            }
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_gilboa_lake")) {
+            if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsRedLakePF);
             }
 //            if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
 //                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsMountainsFA);

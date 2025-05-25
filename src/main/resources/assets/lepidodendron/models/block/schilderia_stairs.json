@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/schilderia_planks",
+    "top": "lepidodendron:blocks/schilderia_planks",
+    "side": "lepidodendron:blocks/schilderia_planks"
+  }
+}

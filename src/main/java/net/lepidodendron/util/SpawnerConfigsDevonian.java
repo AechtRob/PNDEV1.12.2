@@ -22,6 +22,7 @@ public class SpawnerConfigsDevonian {
     public static String[] dimDevonianMobsPuddlesPF = new String[0];
     public static String[] dimDevonianMobsWaterlooPF = new String[0];
     public static String[] dimDevonianMobsLagoonsPF = new String[0];
+    public static String[] dimDevonianMobsRedLakePF = new String[0];
 
     //------------ Fossils and Archeology mobs:
     public static String[] dimDevonianMobsOceanDeepFA = new String[0];

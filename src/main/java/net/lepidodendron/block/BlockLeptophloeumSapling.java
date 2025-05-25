@@ -229,7 +229,7 @@ public class BlockLeptophloeumSapling extends ElementsLepidodendronMod.ModElemen
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Lycophyte tree");
-				tooltip.add("Periods: Carboniferous");
+				tooltip.add("Periods: Devonian - Carboniferous");
 				tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

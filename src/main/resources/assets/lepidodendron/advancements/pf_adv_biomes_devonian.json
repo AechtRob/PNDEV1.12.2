@@ -195,6 +195,12 @@
 			"conditions": {
 				"biome": "lepidodendron:devonian_lagoon_helper"
 			}
+		},
+		"devonian_gilboa_lake": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_gilboa_lake"
+			}
 		}
 	},
 	"requirements": [
@@ -266,6 +272,9 @@
 		[
 			"devonian_lagoon",
 			"devonian_lagoon_helper"
+		],
+		[
+			"devonian_gilboa_lake"
 		]
 	]
 }

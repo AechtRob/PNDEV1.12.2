@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:desmiophyllum_berries"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:desmiophyllum_seed",
+    "count": 1
+  }
+}

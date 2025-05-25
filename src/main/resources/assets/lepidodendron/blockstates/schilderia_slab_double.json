@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:schilderia_slab_double"
+    }
+  }
+}
