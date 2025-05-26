@@ -1,6 +1,9 @@
 package net.lepidodendron.world.gen;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
+import net.lepidodendron.procedure.ProcedureWorldGenDicroidium;
+import net.lepidodendron.procedure.ProcedureWorldGenDicroidiumO;
+import net.lepidodendron.procedure.ProcedureWorldGenSphenobaiera;
 import net.lepidodendron.procedure.ProcedureWorldGenTelemachus;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
@@ -74,6 +77,7 @@ public class WorldGenTelemachusTreeWaterDeep extends WorldGenAbstractTree
                 BlockPos down = position.down();
                 IBlockState state = worldIn.getBlockState(down);
                 boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
+                boolean isWater = false;
 
                 if (!isSoil) {
                     //System.err.println("position " + position.getX() + " " + position.getY() + " " + position.getX());
@@ -114,6 +118,7 @@ public class WorldGenTelemachusTreeWaterDeep extends WorldGenAbstractTree
                     //System.err.println("isSoil " + isSoil);
                     if (isSoil) {
                         position = position.down(2);
+                        isWater = true;
                     }
                 }
 
@@ -124,7 +129,25 @@ public class WorldGenTelemachusTreeWaterDeep extends WorldGenAbstractTree
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
-					ProcedureWorldGenTelemachus.executeProcedure($_dependencies);
+                    if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest")
+                            || worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest_dense")
+                            || worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_flooded_forest"))
+                        && !isWater) {
+                        if (rand.nextInt(5) == 0) {
+                            ProcedureWorldGenSphenobaiera.executeProcedure($_dependencies);
+                        }
+                        else {
+                            if (rand.nextInt(4) != 0) {
+                                ProcedureWorldGenDicroidium.executeProcedure($_dependencies);
+                            }
+                            else {
+                                ProcedureWorldGenDicroidiumO.executeProcedure($_dependencies);
+                            }
+                        }
+                    }
+                    else {
+                        ProcedureWorldGenTelemachus.executeProcedure($_dependencies);
+                    }
                     return true;
                 }
                 else
