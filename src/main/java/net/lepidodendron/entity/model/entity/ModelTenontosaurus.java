@@ -5,13 +5,11 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraTenontosaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraBiQuadLandBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.util.EnumFacing;
 
 public class ModelTenontosaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer hips;
@@ -610,6 +608,7 @@ public class ModelTenontosaurus extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.eye.setScale(1,1,1);
         EntityPrehistoricFloraTenontosaurus ee = (EntityPrehistoricFloraTenontosaurus) entitylivingbaseIn;
 
         if ((!ee.isQuad() && ee.getAnimation() != ee.TOBI_ANIMATION) || ee.getAnimation() == ee.TOQUAD_ANIMATION) {

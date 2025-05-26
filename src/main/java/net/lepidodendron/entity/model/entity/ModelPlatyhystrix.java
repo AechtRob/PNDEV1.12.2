@@ -428,6 +428,8 @@ public class ModelPlatyhystrix extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.leftEye.setScale(1,1,1);
+        this.rightEye.setScale(1,1,1);
         EntityPrehistoricFloraPlatyhystrix ee = (EntityPrehistoricFloraPlatyhystrix) entitylivingbaseIn;
 
         if (!ee.isReallyInWater()) {

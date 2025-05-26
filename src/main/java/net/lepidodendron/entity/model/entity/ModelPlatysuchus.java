@@ -8,7 +8,6 @@ import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import scala.util.Right;
 
 public class ModelPlatysuchus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer root;
@@ -594,6 +593,7 @@ public class ModelPlatysuchus extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.Throatpouchfront.setScale(1,1,1);
 
         EntityPrehistoricFloraPlatysuchus ee = (EntityPrehistoricFloraPlatysuchus) entitylivingbaseIn;
 

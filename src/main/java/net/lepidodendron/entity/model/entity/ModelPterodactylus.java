@@ -758,6 +758,8 @@ public class ModelPterodactylus extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.rightwing1.setScale(1,1,1);
+        this.leftwing1.setScale(1,1,1);
         EntityPrehistoricFloraPterodactylus ee = (EntityPrehistoricFloraPterodactylus) entitylivingbaseIn;
 
         if (ee.isReallyFlying() || ee.getAnimation() == ee.UNFLY_ANIMATION) {

@@ -738,6 +738,7 @@ public class ModelPholiderpeton extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.Lowerjawslopeback.setScale(1,1,1);
         EntityPrehistoricFloraPholiderpeton ee = (EntityPrehistoricFloraPholiderpeton) entitylivingbaseIn;
 
         if (!ee.isReallyInWater()) {
