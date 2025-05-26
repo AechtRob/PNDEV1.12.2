@@ -756,6 +756,8 @@ public class ModelFalcarius extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.lefteye.setScale(1,1,1);
+        this.righteye.setScale(1,1,1);
         EntityPrehistoricFloraFalcarius ee = (EntityPrehistoricFloraFalcarius) entitylivingbaseIn;
 
         if (!ee.isReallyInWater()) {

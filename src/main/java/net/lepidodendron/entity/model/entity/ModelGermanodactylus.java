@@ -533,6 +533,8 @@ public class ModelGermanodactylus extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.wing1left.setScale(1,1,1);
+        this.wing1right.setScale(1,1,1);
         EntityPrehistoricFloraGermanodactylus ee = (EntityPrehistoricFloraGermanodactylus) entitylivingbaseIn;
 
         if (ee.isReallyFlying() || ee.getAnimation() == ee.UNFLY_ANIMATION) {

@@ -446,6 +446,9 @@ public class ModelGobiconodon extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.nose.setScale(1,1,1);
+        this.righteye.setScale(1,1,1);
+        this.lefteye.setScale(1,1,1);
         EntityPrehistoricFloraGobiconodon ee = (EntityPrehistoricFloraGobiconodon) entitylivingbaseIn;
 
         if (!ee.isReallyInWater()) {

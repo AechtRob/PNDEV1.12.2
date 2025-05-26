@@ -549,6 +549,8 @@ public class ModelHypuronector extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.eyeleft.setScale(1,1,1);
+        this.eyeright.setScale(1,1,1);
         EntityPrehistoricFloraHypuronector ee = (EntityPrehistoricFloraHypuronector) entitylivingbaseIn;
 
 
