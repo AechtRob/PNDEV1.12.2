@@ -1872,7 +1872,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SIAMAMIA = new CustomTrigger("pf_book_siamamia");
     public static final CustomTrigger CLICK_HOYASEMYS = new CustomTrigger("pf_book_hoyasemys");
     public static final CustomTrigger CLICK_GASTONIA = new CustomTrigger("pf_book_gastonia");
-    public static final CustomTrigger CLICK_PAUCHOFFATIA = new CustomTrigger("pf_book_pauchoffatia");
+    public static final CustomTrigger CLICK_PAULCHOFFATIA = new CustomTrigger("pf_book_paulchoffatia");
     public static final CustomTrigger CLICK_EICHSTAETTISAURUS = new CustomTrigger("pf_book_eichstaettisaurus");
     public static final CustomTrigger CLICK_MICROVENATOR = new CustomTrigger("pf_book_microvenator");
     public static final CustomTrigger CLICK_YUANYANGLONG = new CustomTrigger("pf_book_yuanyanglong");
@@ -1950,6 +1950,84 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PRENOCEPHALE = new CustomTrigger("pf_book_prenocephale");
     public static final CustomTrigger CLICK_VESPEROPTERYLUS = new CustomTrigger("pf_book_vesperopterylus");
     public static final CustomTrigger CLICK_CHAOYANGOPTERUS = new CustomTrigger("pf_book_chaoyangopterus");
+    public static final CustomTrigger CLICK_MACROPENAEUS = new CustomTrigger("pf_book_macropenaeus");
+    public static final CustomTrigger CLICK_ARMIGATUS = new CustomTrigger("pf_book_armigatus");
+    public static final CustomTrigger CLICK_HAYENCHELYS = new CustomTrigger("pf_book_hayenchelys");
+    public static final CustomTrigger CLICK_ACROGNATHUS = new CustomTrigger("pf_book_acrognathus");
+    public static final CustomTrigger CLICK_PRIONOLEPIS = new CustomTrigger("pf_book_prionolepis");
+    public static final CustomTrigger CLICK_ANGUILLAVUS = new CustomTrigger("pf_book_anguillavus");
+    public static final CustomTrigger CLICK_MARALDICHTHYS = new CustomTrigger("pf_book_maraldichthys");
+    public static final CustomTrigger CLICK_GLADIOPYCNODUS = new CustomTrigger("pf_book_gladiopycnodus");
+    public static final CustomTrigger CLICK_STENOPROTOME = new CustomTrigger("pf_book_stenoprotome");
+    public static final CustomTrigger CLICK_HAYOLPERICHTHYS = new CustomTrigger("pf_book_hayolperichthys");
+    public static final CustomTrigger CLICK_TRICERICHTHYS = new CustomTrigger("pf_book_tricerichthys");
+    public static final CustomTrigger CLICK_ROSTROPYCNODUS = new CustomTrigger("pf_book_rostropycnodus");
+    public static final CustomTrigger CLICK_RHYNCHODERCETIS = new CustomTrigger("pf_book_rhynchodercetis");
+    public static final CustomTrigger CLICK_DUCROTAYICHTHYS = new CustomTrigger("pf_book_ducrotayichthys");
+    public static final CustomTrigger CLICK_JOINVILLICHTHYS = new CustomTrigger("pf_book_joinvillichthys");
+    public static final CustomTrigger CLICK_RHINOPYCNODUS = new CustomTrigger("pf_book_rhinopycnodus");
+    public static final CustomTrigger CLICK_SIGMAPYCNODUS = new CustomTrigger("pf_book_sigmapycnodus");
+    public static final CustomTrigger CLICK_PLECTOCRETACICUS = new CustomTrigger("pf_book_plectocretacicus");
+    public static final CustomTrigger CLICK_RHAMPHOICHTHYS = new CustomTrigger("pf_book_rhamphoichthys");
+    public static final CustomTrigger CLICK_PANKOWSKICHTHYS = new CustomTrigger("pf_book_pankowskichthys");
+    public static final CustomTrigger CLICK_HENSODON = new CustomTrigger("pf_book_hensodon");
+    public static final CustomTrigger CLICK_EUSEBICHTHYS = new CustomTrigger("pf_book_eusebichthys");
+    public static final CustomTrigger CLICK_HETEROTHRISSA = new CustomTrigger("pf_book_heterothrissa");
+    public static final CustomTrigger CLICK_LISSOBERYX = new CustomTrigger("pf_book_lissoberyx");
+    public static final CustomTrigger CLICK_FLAGELLIPINNA = new CustomTrigger("pf_book_flagellipinna");
+    public static final CustomTrigger CLICK_PARACOCCODUS = new CustomTrigger("pf_book_paracoccodus");
+    public static final CustomTrigger CLICK_CORUSICHTHYS = new CustomTrigger("pf_book_corusichthys");
+    public static final CustomTrigger CLICK_CRETAPANTODON = new CustomTrigger("pf_book_cretapantodon");
+    public static final CustomTrigger CLICK_ICHTHYOCEROS = new CustomTrigger("pf_book_ichthyoceros");
+    public static final CustomTrigger CLICK_GEBRAYELICHTHYS = new CustomTrigger("pf_book_gebrayelichthys");
+    public static final CustomTrigger CLICK_EXOCOETOIDES = new CustomTrigger("pf_book_exocoetoides");
+    public static final CustomTrigger CLICK_EUPODOPHIS = new CustomTrigger("pf_book_eupodophis");
+    public static final CustomTrigger CLICK_CYCLOBATIS = new CustomTrigger("pf_book_cyclobatis");
+    public static final CustomTrigger CLICK_EUBIODECTES = new CustomTrigger("pf_book_eubiodectes");
+    public static final CustomTrigger CLICK_MESITEIA = new CustomTrigger("pf_book_mesiteia");
+    public static final CustomTrigger CLICK_HAIMIRICHIA = new CustomTrigger("pf_book_haimirichia");
+    public static final CustomTrigger CLICK_HAKELIA = new CustomTrigger("pf_book_hakelia");
+    public static final CustomTrigger CLICK_HAQELPYCNODUS = new CustomTrigger("pf_book_haqelpycnodus");
+    public static final CustomTrigger CLICK_SASAYAMAGNOMUS = new CustomTrigger("pf_book_sasayamagnomus");
+    public static final CustomTrigger CLICK_SHOKAWA = new CustomTrigger("pf_book_shokawa");
+    public static final CustomTrigger CLICK_CHUHSIUNGICHTHYS = new CustomTrigger("pf_book_chuhsiungichthys");
+    public static final CustomTrigger CLICK_JINJUICHTHYS = new CustomTrigger("pf_book_jinjuichthys");
+    public static final CustomTrigger CLICK_KOKURAICHTHYS = new CustomTrigger("pf_book_kokuraichthys");
+    public static final CustomTrigger CLICK_NIPPONAMIA = new CustomTrigger("pf_book_nipponamia");
+    public static final CustomTrigger CLICK_PARALEPTOLEPIS = new CustomTrigger("pf_book_paraleptolepis");
+    public static final CustomTrigger CLICK_WAKINOICHTHYS = new CustomTrigger("pf_book_wakinoichthys");
+    public static final CustomTrigger CLICK_SASAYAMAMYLOS = new CustomTrigger("pf_book_sasayamamylos");
+    public static final CustomTrigger CLICK_HAKUSANOBAATAR = new CustomTrigger("pf_book_hakusanobaatar");
+    public static final CustomTrigger CLICK_HYOGOBATRACHUS = new CustomTrigger("pf_book_hyogobatrachus");
+    public static final CustomTrigger CLICK_SHIRERPETON = new CustomTrigger("pf_book_shirerpeton");
+    public static final CustomTrigger CLICK_FUKUIPTERYX = new CustomTrigger("pf_book_fukuipteryx");
+    public static final CustomTrigger CLICK_KUWAJIMALLA = new CustomTrigger("pf_book_kuwajimalla");
+    public static final CustomTrigger CLICK_FUKUISAURUS = new CustomTrigger("pf_book_fukuisaurus");
+    public static final CustomTrigger CLICK_FUKUITITAN = new CustomTrigger("pf_book_fukuititan");
+    public static final CustomTrigger CLICK_TAMBATITANIS = new CustomTrigger("pf_book_tambatitanis");
+    public static final CustomTrigger CLICK_FUKUIRAPTOR = new CustomTrigger("pf_book_fukuiraptor");
+    public static final CustomTrigger CLICK_FUKUIVENATOR = new CustomTrigger("pf_book_fukuivenator");
+    public static final CustomTrigger CLICK_HYPNOVENATOR = new CustomTrigger("pf_book_hypnovenator");
+    public static final CustomTrigger CLICK_TYRANNOMIMUS = new CustomTrigger("pf_book_tyrannomimus");
+    public static final CustomTrigger CLICK_MEGAPTERYGIUS  = new CustomTrigger("pf_book_megapterygius ");
+    public static final CustomTrigger CLICK_FUTABASAURUS = new CustomTrigger("pf_book_futabasaurus");
+    public static final CustomTrigger CLICK_PHOSPHOROSAURUS = new CustomTrigger("pf_book_phosphorosaurus");
+    public static final CustomTrigger CLICK_NIPPONITES = new CustomTrigger("pf_book_nipponites");
+    public static final CustomTrigger CLICK_KAMUYSAURUS = new CustomTrigger("pf_book_kamuysaurus");
+    public static final CustomTrigger CLICK_AMAKUSAICHTHYS = new CustomTrigger("pf_book_amakusaichthys");
+    public static final CustomTrigger CLICK_SINEMYS = new CustomTrigger("pf_book_sinemys");
+    public static final CustomTrigger CLICK_ANOMALOCHELYS = new CustomTrigger("pf_book_anomalochelys");
+    public static final CustomTrigger CLICK_MONJUROSUCHUS = new CustomTrigger("pf_book_monjurosuchus");
+    public static final CustomTrigger CLICK_KAGANAIAS = new CustomTrigger("pf_book_kaganaias");
+    public static final CustomTrigger CLICK_YEZOCERAS = new CustomTrigger("pf_book_yezoceras");
+    public static final CustomTrigger CLICK_MESODERMOCHELYS = new CustomTrigger("pf_book_mesodermochelys");
+    public static final CustomTrigger CLICK_CRETOSAJA = new CustomTrigger("pf_book_cretosaja");
+    public static final CustomTrigger CLICK_ADOCUS = new CustomTrigger("pf_book_adocus");
+    public static final CustomTrigger CLICK_KUJIBEROTHA = new CustomTrigger("pf_book_kujiberotha");
+    public static final CustomTrigger CLICK_CONFUCIUSORNIS = new CustomTrigger("pf_book_confuciusornis");
+    public static final CustomTrigger CLICK_NORIPTERUS = new CustomTrigger("pf_book_noripterus");
+    public static final CustomTrigger CLICK_SAPEORNIS = new CustomTrigger("pf_book_sapeornis");
+    public static final CustomTrigger CLICK_KOLEKEN = new CustomTrigger("pf_book_koleken");
 
 
 
@@ -3811,7 +3889,7 @@ public class ModTriggers
             CLICK_SIAMAMIA,
             CLICK_HOYASEMYS,
             CLICK_GASTONIA,
-            CLICK_PAUCHOFFATIA,
+            CLICK_PAULCHOFFATIA,
             CLICK_EICHSTAETTISAURUS,
             CLICK_MICROVENATOR,
             CLICK_YUANYANGLONG,
@@ -3888,7 +3966,85 @@ public class ModTriggers
             CLICK_RECHNISAURUS,
             CLICK_PRENOCEPHALE,
             CLICK_VESPEROPTERYLUS,
-            CLICK_CHAOYANGOPTERUS
+            CLICK_CHAOYANGOPTERUS,
+            CLICK_MACROPENAEUS,
+            CLICK_ARMIGATUS,
+            CLICK_HAYENCHELYS,
+            CLICK_ACROGNATHUS,
+            CLICK_PRIONOLEPIS,
+            CLICK_ANGUILLAVUS,
+            CLICK_MARALDICHTHYS,
+            CLICK_GLADIOPYCNODUS,
+            CLICK_STENOPROTOME,
+            CLICK_HAYOLPERICHTHYS,
+            CLICK_TRICERICHTHYS,
+            CLICK_ROSTROPYCNODUS,
+            CLICK_RHYNCHODERCETIS,
+            CLICK_DUCROTAYICHTHYS,
+            CLICK_JOINVILLICHTHYS,
+            CLICK_RHINOPYCNODUS,
+            CLICK_SIGMAPYCNODUS,
+            CLICK_PLECTOCRETACICUS,
+            CLICK_RHAMPHOICHTHYS,
+            CLICK_PANKOWSKICHTHYS,
+            CLICK_HENSODON,
+            CLICK_EUSEBICHTHYS,
+            CLICK_HETEROTHRISSA,
+            CLICK_LISSOBERYX,
+            CLICK_FLAGELLIPINNA,
+            CLICK_PARACOCCODUS,
+            CLICK_CORUSICHTHYS,
+            CLICK_CRETAPANTODON,
+            CLICK_ICHTHYOCEROS,
+            CLICK_GEBRAYELICHTHYS,
+            CLICK_EXOCOETOIDES,
+            CLICK_EUPODOPHIS,
+            CLICK_CYCLOBATIS,
+            CLICK_EUBIODECTES,
+            CLICK_MESITEIA,
+            CLICK_HAIMIRICHIA,
+            CLICK_HAKELIA,
+            CLICK_HAQELPYCNODUS,
+            CLICK_SASAYAMAGNOMUS,
+            CLICK_SHOKAWA,
+            CLICK_CHUHSIUNGICHTHYS,
+            CLICK_JINJUICHTHYS,
+            CLICK_KOKURAICHTHYS,
+            CLICK_NIPPONAMIA,
+            CLICK_PARALEPTOLEPIS,
+            CLICK_WAKINOICHTHYS,
+            CLICK_SASAYAMAMYLOS,
+            CLICK_HAKUSANOBAATAR,
+            CLICK_HYOGOBATRACHUS,
+            CLICK_SHIRERPETON,
+            CLICK_FUKUIPTERYX,
+            CLICK_KUWAJIMALLA,
+            CLICK_FUKUISAURUS,
+            CLICK_FUKUITITAN,
+            CLICK_TAMBATITANIS,
+            CLICK_FUKUIRAPTOR,
+            CLICK_FUKUIVENATOR,
+            CLICK_HYPNOVENATOR,
+            CLICK_TYRANNOMIMUS,
+            CLICK_MEGAPTERYGIUS ,
+            CLICK_FUTABASAURUS,
+            CLICK_PHOSPHOROSAURUS,
+            CLICK_NIPPONITES,
+            CLICK_KAMUYSAURUS,
+            CLICK_AMAKUSAICHTHYS,
+            CLICK_SINEMYS,
+            CLICK_ANOMALOCHELYS,
+            CLICK_MONJUROSUCHUS,
+            CLICK_KAGANAIAS,
+            CLICK_YEZOCERAS,
+            CLICK_MESODERMOCHELYS,
+            CLICK_CRETOSAJA,
+            CLICK_ADOCUS,
+            CLICK_KUJIBEROTHA,
+            CLICK_CONFUCIUSORNIS,
+            CLICK_NORIPTERUS,
+            CLICK_SAPEORNIS,
+            CLICK_KOLEKEN
 
 
 
