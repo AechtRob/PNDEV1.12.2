@@ -636,6 +636,8 @@ public class ModelAquilops extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.Eye1.setScale(1,1,1);
+        this.Eye2.setScale(1,1,1);
         EntityPrehistoricFloraAquilops ee = (EntityPrehistoricFloraAquilops) entitylivingbaseIn;
 
         if (!ee.isReallyInWater()) {

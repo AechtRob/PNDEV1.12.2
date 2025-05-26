@@ -738,6 +738,9 @@ public class ModelDicraeosaurus extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.throat.setScale(1,1,1);
+        this.throat2.setScale(1,1,1);
+        this.chest.setScale(1,1,1);
         EntityPrehistoricFloraDicraeosaurus ee = (EntityPrehistoricFloraDicraeosaurus) entitylivingbaseIn;
 
         //if (!ee.isInWater()) {

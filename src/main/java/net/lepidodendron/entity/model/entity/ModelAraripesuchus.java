@@ -434,6 +434,7 @@ public class ModelAraripesuchus extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.eye.setScale(1,1,1);
         EntityPrehistoricFloraAraripesuchus ee = (EntityPrehistoricFloraAraripesuchus) entitylivingbaseIn;
 
         if (!ee.isReallyInWater()) {

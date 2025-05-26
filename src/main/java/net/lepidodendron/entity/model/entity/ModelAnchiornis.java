@@ -672,6 +672,7 @@ public class ModelAnchiornis extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.Feathers.setScale(1,1,1);
         EntityPrehistoricFloraAnchiornis ee = (EntityPrehistoricFloraAnchiornis) entitylivingbaseIn;
 
         if (!ee.isReallyInWater()) {

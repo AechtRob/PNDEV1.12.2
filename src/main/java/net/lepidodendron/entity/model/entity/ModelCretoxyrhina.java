@@ -649,6 +649,8 @@ public class ModelCretoxyrhina extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.membrane.setScale(1,1,1);
+        this.membrane2.setScale(1,1,1);
         EntityPrehistoricFloraCretoxyrhina ee = (EntityPrehistoricFloraCretoxyrhina) entitylivingbaseIn;
 
             if (ee.getIsFast()) { //Running

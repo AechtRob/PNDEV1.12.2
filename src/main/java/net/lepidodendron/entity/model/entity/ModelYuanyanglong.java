@@ -812,6 +812,7 @@ public class ModelYuanyanglong extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.eye.setScale(1,1,1);
         EntityPrehistoricFloraYuanyanglong ee = (EntityPrehistoricFloraYuanyanglong) entitylivingbaseIn;
 
         if (!ee.isReallyInWater()) {
@@ -5241,6 +5242,7 @@ public class ModelYuanyanglong extends ModelBasePalaeopedia {
 
        
     }
+
     public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraYuanyanglong entity = (EntityPrehistoricFloraYuanyanglong) entitylivingbaseIn;
         int animCycle = 22;

@@ -441,6 +441,8 @@ public class ModelEldeceeon extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.eyeright.setScale(1,1,1);
+        this.eyeleft.setScale(1,1,1);
         EntityPrehistoricFloraEldeceeon ee = (EntityPrehistoricFloraEldeceeon) entitylivingbaseIn;
 
         if (!ee.isReallyInWater()) {

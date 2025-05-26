@@ -675,6 +675,11 @@ public class ModelArchaeopteryx extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.head.setScale(1,1,1);
+        this.feathers.setScale(1,1,1);
+        this.feathers2.setScale(1,1,1);
+        this.feathers3.setScale(1,1,1);
+        this.feathers4.setScale(1,1,1);
         EntityPrehistoricFloraArchaeopteryx ee = (EntityPrehistoricFloraArchaeopteryx) entitylivingbaseIn;
 
         if (!ee.isReallyInWater()) {

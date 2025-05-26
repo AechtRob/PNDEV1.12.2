@@ -6703,6 +6703,7 @@ public class ModelAcrocanthosaurus extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.eyes.setScale(1,1,1);
         EntityPrehistoricFloraAcrocanthosaurus ee = (EntityPrehistoricFloraAcrocanthosaurus) entitylivingbaseIn;
 
         if (!ee.isReallyInWater()) {

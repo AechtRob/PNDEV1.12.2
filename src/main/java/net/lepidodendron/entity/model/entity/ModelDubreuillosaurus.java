@@ -6993,6 +6993,7 @@ public class ModelDubreuillosaurus extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.Tail1.setScale(1,1,1);
         EntityPrehistoricFloraDubreuillosaurus ee = (EntityPrehistoricFloraDubreuillosaurus) entitylivingbaseIn;
 
 //        if (!ee.isInWater()) {

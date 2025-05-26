@@ -727,6 +727,9 @@ public class ModelDearc extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
+        this.wingmembranemiddle.setScale(1,1,1);
+        this.wingmembraneend.setScale(1,1,1);
+        this.wingmembranemiddle2.setScale(1,1,1);
         EntityPrehistoricFloraDearc ee = (EntityPrehistoricFloraDearc) entitylivingbaseIn;
 
         if (ee.getAnimation() == ee.UNFLY_ANIMATION) {
