@@ -321,6 +321,7 @@ public class ModelAnchiornis extends ModelBasePalaeopedia {
         this.cube_r17.cubeList.add(new ModelBox(cube_r17, 0, 0, 0.0F, -0.35F, 0.0F, 1, 1, 4, -0.001F, true));
 
         this.Feathers = new AdvancedModelRenderer(this);
+        this.Feathers.scaleChildren = true;
         this.Feathers.setRotationPoint(-0.25F, 2.6F, -0.2F);
         this.LowerArmL.addChild(Feathers);
 

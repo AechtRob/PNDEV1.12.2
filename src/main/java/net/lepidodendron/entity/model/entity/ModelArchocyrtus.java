@@ -100,6 +100,7 @@ public class ModelArchocyrtus extends ModelBasePalaeopedia {
         this.Body2.cubeList.add(new ModelBox(Body2, 2, 6, -1.0F, -1.0F, -0.25F, 2, 2, 4, 0.0F, false));
 
         this.mouth = new AdvancedModelRenderer(this);
+        this.mouth.scaleChildren = true;
         this.mouth.setRotationPoint(0.0F, -3.25F, -6.75F);
         this.Body.addChild(mouth);
         this.setRotateAngle(mouth, -0.7418F, 0.0F, 0.0F);

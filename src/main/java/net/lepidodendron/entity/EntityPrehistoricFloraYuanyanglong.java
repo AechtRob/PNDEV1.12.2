@@ -9,7 +9,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
@@ -18,7 +17,6 @@ import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -265,7 +263,7 @@ public class EntityPrehistoricFloraYuanyanglong extends EntityPrehistoricFloraLa
 			if(num < 5) {
 				this.setAnimation(STAND_ANIMATION);
 			} else  {
-				if (this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.GROUND || this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.SAND) {
+				if (this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.GROUND || this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.SAND || this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.GRASS) {
 					this.setAnimation(SAND_ANIMATION);
 				} else {
 					this.setAnimation(STAND_ANIMATION);

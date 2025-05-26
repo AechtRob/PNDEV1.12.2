@@ -310,6 +310,7 @@ public class ModelArchaeothyris extends ModelBasePalaeopedia {
         this.cube_r24.cubeList.add(new ModelBox(cube_r24, 34, 9, -1.2302F, 1.269F, 12.4569F, 3, 2, 2, -0.007F, false));
 
         this.eye = new AdvancedModelRenderer(this);
+        this.eye.scaleChildren = true;
         this.eye.setRotationPoint(0.0346F, 0.0137F, -1.1668F);
         this.head.addChild(eye);
 
