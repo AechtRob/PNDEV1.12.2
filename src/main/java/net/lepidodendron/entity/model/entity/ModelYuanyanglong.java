@@ -557,6 +557,7 @@ public class ModelYuanyanglong extends ModelBasePalaeopedia {
         this.cube_r50.cubeList.add(new ModelBox(cube_r50, 18, 82, -1.0F, -2.6776F, 2.5871F, 2, 1, 2, -0.05F, false));
 
         this.eye = new AdvancedModelRenderer(this);
+        this.eye.scaleChildren = true;
         this.eye.setRotationPoint(0.5F, 0.5723F, -2.1351F);
         this.head.addChild(eye);
 
@@ -9246,6 +9247,7 @@ public class ModelYuanyanglong extends ModelBasePalaeopedia {
         animDispHelper(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, animTick, tickAnim, xx, yy, zz);
 
     }
+
     public void animDispHelper(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick, double tickAnim, double xx, double yy, double zz) {
 
         if (tickAnim >= 0 && tickAnim < 6) {
@@ -14873,6 +14875,7 @@ public class ModelYuanyanglong extends ModelBasePalaeopedia {
         animSandHelper(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, animTick, tickAnim, xx, yy, zz);
 
     }
+
     public void animSandHelper(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick, double tickAnim, double xx, double yy, double zz) {
 
 

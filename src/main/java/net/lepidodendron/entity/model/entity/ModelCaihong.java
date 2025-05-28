@@ -259,6 +259,7 @@ public class ModelCaihong extends ModelBasePalaeopedia {
         this.UpperArmL.cubeList.add(new ModelBox(UpperArmL, 26, 24, -0.8144F, -1.4744F, -0.2619F, 1, 2, 4, 0.0F, false));
 
         this.feathers2 = new AdvancedModelRenderer(this);
+        this.feathers2.scaleChildren = true;
         this.feathers2.setRotationPoint(-0.8144F, -0.2244F, -1.2619F);
         this.UpperArmL.addChild(feathers2);
         this.feathers2.cubeList.add(new ModelBox(feathers2, 8, 22, 0.8F, -4.0F, 1.0F, 0, 4, 5, 0.0F, false));
@@ -276,6 +277,7 @@ public class ModelCaihong extends ModelBasePalaeopedia {
         this.cube_r13.cubeList.add(new ModelBox(cube_r13, 0, 2, 0.0F, -0.35F, 1.0F, 1, 1, 3, -0.001F, false));
 
         this.feathers = new AdvancedModelRenderer(this);
+        this.feathers.scaleChildren = true;
         this.feathers.setRotationPoint(-0.2623F, -1.0271F, 0.1265F);
         this.LowerArmL.addChild(feathers);
 
@@ -330,6 +332,7 @@ public class ModelCaihong extends ModelBasePalaeopedia {
         this.UpperArmR.cubeList.add(new ModelBox(UpperArmR, 26, 24, -0.1856F, -1.4744F, -0.2619F, 1, 2, 4, 0.0F, true));
 
         this.feathers3 = new AdvancedModelRenderer(this);
+        this.feathers3.scaleChildren = true;
         this.feathers3.setRotationPoint(0.8144F, -0.2244F, -1.2619F);
         this.UpperArmR.addChild(feathers3);
         this.feathers3.cubeList.add(new ModelBox(feathers3, 8, 22, -0.8F, -4.0F, 1.0F, 0, 4, 5, 0.0F, true));
@@ -347,6 +350,7 @@ public class ModelCaihong extends ModelBasePalaeopedia {
         this.cube_r19.cubeList.add(new ModelBox(cube_r19, 0, 2, -1.0F, -0.35F, 1.0F, 1, 1, 3, -0.001F, true));
 
         this.feathers4 = new AdvancedModelRenderer(this);
+        this.feathers4.scaleChildren = true;
         this.feathers4.setRotationPoint(0.2623F, -1.0271F, 0.1265F);
         this.LowerArmR.addChild(feathers4);
 
@@ -443,6 +447,7 @@ public class ModelCaihong extends ModelBasePalaeopedia {
         this.cube_r29.cubeList.add(new ModelBox(cube_r29, 32, 22, -1.0F, -2.76F, -0.5234F, 2, 3, 2, 0.0F, false));
 
         this.head = new AdvancedModelRenderer(this);
+        this.head.scaleChildren = true;
         this.head.setRotationPoint(0.5F, -0.5509F, -1.9993F);
         this.Neck3.addChild(head);
         this.setRotateAngle(head, -0.0698F, 0.0F, 0.0F);

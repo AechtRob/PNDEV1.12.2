@@ -364,6 +364,7 @@ public class ModelAnthracosaurus extends ModelBasePalaeopedia {
         this.cube_r27.cubeList.add(new ModelBox(cube_r27, 26, 62, -3.225F, -0.7F, -6.0F, 2, 1, 7, -0.01F, false));
 
         this.Throatpouch = new AdvancedModelRenderer(this);
+        this.Throatpouch.scaleChildren = true;
         this.Throatpouch.setRotationPoint(0.0F, -0.05F, 0.0F);
         this.jaw.addChild(Throatpouch);
 

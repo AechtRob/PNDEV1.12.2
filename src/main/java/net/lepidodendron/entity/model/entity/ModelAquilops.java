@@ -380,6 +380,7 @@ public class ModelAquilops extends ModelBasePalaeopedia {
         this.cube_r30.cubeList.add(new ModelBox(cube_r30, 0, 29, -1.0F, -1.2066F, -0.3912F, 1, 2, 1, 0.0F, false));
 
         this.Eye1 = new AdvancedModelRenderer(this);
+        this.Eye1.scaleChildren = true;
         this.Eye1.setRotationPoint(-0.125F, 1.6F, -3.875F);
         this.head.addChild(Eye1);
 
@@ -391,6 +392,7 @@ public class ModelAquilops extends ModelBasePalaeopedia {
         this.cube_r31.cubeList.add(new ModelBox(cube_r31, 44, 30, 0.0F, -2.0F, 0.0F, 1, 1, 1, 0.0F, false));
 
         this.Eye2 = new AdvancedModelRenderer(this);
+        this.Eye2.scaleChildren = true;
         this.Eye2.setRotationPoint(-0.875F, 1.6F, -3.875F);
         this.head.addChild(Eye2);
 
