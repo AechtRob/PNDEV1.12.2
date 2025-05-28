@@ -37,7 +37,7 @@ public class RenderSantanmantis extends RenderLivingBaseWithBook<EntityPrehistor
             case NORTH:
             case SOUTH:
                 GlStateManager.translate(0.0F, 0.1F, -0.05F);
-                GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
+                GlStateManager.rotate(0.0F, 1.0F, 0.0F, 0.0F);
                 break;
             case UP:
                 GlStateManager.translate(0.0F, 0.5F, 0.0F);

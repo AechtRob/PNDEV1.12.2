@@ -131,6 +131,9 @@ public class EntityPrehistoricFloraStolokrosuchus extends EntityPrehistoricFlora
 		if (this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == STAND_ANIMATION) {
 			return 0.0F;
 		}
+		if(this.getIsFast()) {
+			calcSpeed = calcSpeed *2F;
+		}
 		//System.err.println("Speed " + (Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed));
 		return calcSpeed;
 	}
@@ -233,6 +236,7 @@ public class EntityPrehistoricFloraStolokrosuchus extends EntityPrehistoricFlora
 		return true;
 	}
 
+	@Override
 	public boolean isAnimationDirectionLocked(Animation animation) {
 		return animation == STAND_ANIMATION;
 	}

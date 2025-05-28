@@ -5,6 +5,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EurypteridWander;
+import net.lepidodendron.entity.ai.EurypteridWanderBottomDweller;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.spawneggs.*;
@@ -35,11 +36,7 @@ public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFlor
 	private static final float[] DAMSELFLY_SIZE = new float[]{0.2F, 0.2F};
 	private static final float[] VELISOPTERA_SIZE = new float[]{0.2F, 0.2F};
 	private static final float[] ARGENTINALA_SIZE = new float[]{0.2F, 0.2F};
-	private static final float[] LYCOCERCUS_SIZE = new float[]{0.2F, 0.2F};
-	private static final float[] SINODUNBARIA_SIZE = new float[]{0.2F, 0.2F};
-	private static final float[] STENODICTYA_SIZE = new float[]{0.2F, 0.2F};
-	private static final float[] MAZOTHAIROS_SIZE = new float[]{0.2F, 0.2F};
-	private static final float[] PSYCHROPTILUS_SIZE = new float[]{0.2F, 0.2F};
+
 
 	private static final DataParameter<Integer> INSECT_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraAquaticBugNymph.class, DataSerializers.VARINT);
 
@@ -76,12 +73,7 @@ public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFlor
 		STONEFLY(2, "stonefly"),
 		DAMSELFLY(3, "damselfly"),
 		VELISOPTERA(4, "velisoptera"),
-		ARGENTINALA(5, "argentinala"),
-		LYCOCERCUS(6, "lycocercus"),
-		SINODUNBARIA(7, "sinodunbaria"),
-		STENODICTYA(8, "stenodictya"),
-		MAZOTHAIROS(9, "mazothairos"),
-		PSYCHROPTILUS(10, "psychroptilus")
+		ARGENTINALA(5, "argentinala")
 		;
 	
 		private final String name;
@@ -150,20 +142,6 @@ public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFlor
 			case ARGENTINALA:
 				return 3f;
 
-			case LYCOCERCUS:
-				return 3f;
-
-			case SINODUNBARIA:
-				return 3f;
-
-			case STENODICTYA:
-				return 3f;
-
-			case MAZOTHAIROS:
-				return 3f;
-
-			case PSYCHROPTILUS:
-				return 3f;
 		}
 	}
 
@@ -183,21 +161,6 @@ public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFlor
 
 			case ARGENTINALA:
 				return ARGENTINALA_SIZE;
-
-			case LYCOCERCUS:
-				return LYCOCERCUS_SIZE;
-
-			case SINODUNBARIA:
-				return SINODUNBARIA_SIZE;
-
-			case STENODICTYA:
-				return STENODICTYA_SIZE;
-
-			case MAZOTHAIROS:
-				return MAZOTHAIROS_SIZE;
-
-			case PSYCHROPTILUS:
-				return PSYCHROPTILUS_SIZE;
 		}
 	}
 
@@ -220,7 +183,7 @@ public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFlor
 		}
 		else
 		{
-			return I18n.translateToLocal("entity.prehistoric_flora_aquatic_nymph_" + this.getPNType().getName() + ".name");
+			return I18n.translateToLocal("entity.prehistoric_flora_aquaticnymph_" + this.getPNType().getName() + ".name");
 		}
 	}
 
@@ -262,7 +225,6 @@ public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFlor
 		return true;
 	}
 
-	public static String getPeriod() {return "mid Carboniferous - early Permian";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 
@@ -298,7 +260,7 @@ public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFlor
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EurypteridWander(this, NO_ANIMATION));
+		tasks.addTask(0, new EurypteridWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
@@ -309,7 +271,7 @@ public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFlor
 
 	@Override
 	protected float getAISpeedEurypterid() {
-		return 0.41F;
+		return 0.1F;
 	}
 
 	@Override
@@ -378,6 +340,22 @@ public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFlor
 		return 1 + this.world.rand.nextInt(1);
 	}
 
+	public Class <? extends Entity > getEntityIn() {
+		switch (this.getPNType()) {
+			case STONEFLY: default:
+				return EntityPrehistoricFloraStonefly.class;
+			case MAYFLY:
+				return EntityPrehistoricFloraMayfly.class;
+			case DAMSELFLY:
+				return EntityPrehistoricFloraDamselfly.class;
+//			case ARGENTINALA:
+//				return EntityPrehistoricFloraArgentinala.class;
+//			case VELISOPTERA:
+//				return EntityPrehistoricFloraVelisoptera.class;
+		}
+
+	}
+
 	public void onEntityUpdate()
 	{
 		super.onEntityUpdate();
@@ -387,12 +365,12 @@ public class EntityPrehistoricFloraAquaticBugNymph extends EntityPrehistoricFlor
 			if (!(world.isRemote)) {
 				BlockPos pos = this.getPosition();
 
-				entity = ItemMonsterPlacer.spawnCreature(this.getEntityWorld(), EntityList.getKey(EntityPrehistoricFloraPalaeodictyoptera.class), (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D);
+				entity = ItemMonsterPlacer.spawnCreature(this.getEntityWorld(), EntityList.getKey(this.getEntityIn()), (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D);
 
 				if (entity != null) {
-					if (entity instanceof EntityPrehistoricFloraPalaeodictyoptera) {
-						((EntityPrehistoricFloraPalaeodictyoptera) entity).setPNType(EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(this.getPNType().getName()));
-					}
+//					if (entity instanceof EntityPrehistoricFloraPalaeodictyoptera) {
+//						((EntityPrehistoricFloraPalaeodictyoptera) entity).setPNType(EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(this.getPNType().getName()));
+//					}
 					this.setDead();
 					if (world instanceof WorldServer) {
 						((WorldServer) world).playSound(null, pos.up(), SoundEvents.BLOCK_SLIME_BREAK, SoundCategory.BLOCKS, 0.5F, 2.6F + (rand.nextFloat() - rand.nextFloat()) * 0.8F);

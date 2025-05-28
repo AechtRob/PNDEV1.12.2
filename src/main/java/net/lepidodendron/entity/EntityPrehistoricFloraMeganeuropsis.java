@@ -331,7 +331,7 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 
 	@Override
 	protected float getSoundVolume() {
-		return 1.0F;
+		return 0.4F;
 	}
 
 	@Nullable

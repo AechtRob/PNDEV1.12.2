@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:prionolepis_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_prionolepis.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_prionolepis.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_prionolepis"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:stenoprotome_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_stenoprotome.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_stenoprotome.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_stenoprotome"
+        }
+    }
+}

@@ -148,7 +148,7 @@ public class EntityPrehistoricFloraBarosaurus extends EntityPrehistoricFloraLand
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{GRAZE_ANIMATION, HURT_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, MAKE_NEST_ANIMATION, LAY_ANIMATION, EAT_ANIMATION};
+		return new Animation[]{GRAZE_ANIMATION, HURT_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, MAKE_NEST_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, DRINK_ANIMATION};
 	}
 
 	@Override
@@ -303,41 +303,41 @@ public class EntityPrehistoricFloraBarosaurus extends EntityPrehistoricFloraLand
 				&& !this.isReallyInWater()
 				&&
 				(
-					(isBlockGrazable(this.world.getBlockState(entityPos.north(6).up(6)))
+					(isBlockGrazable(this.world.getBlockState(entityPos.north(8).up(8)))
 						&& isGrazable(this.world, entityPos, EnumFacing.NORTH))
 
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.south(6).up(6)))
+						|| (isBlockGrazable(this.world.getBlockState(entityPos.south(8).up(8)))
 						&& isGrazable(this.world, entityPos, EnumFacing.SOUTH))
 
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.east(6).up(6)))
+						|| (isBlockGrazable(this.world.getBlockState(entityPos.east(8).up(8)))
 						&& isGrazable(this.world, entityPos, EnumFacing.EAST))
 
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.west(6).up(6)))
+						|| (isBlockGrazable(this.world.getBlockState(entityPos.west(8).up(8)))
 						&& isGrazable(this.world, entityPos, EnumFacing.WEST))
 				)
 		);
 		if (test) {
 			//Which one is grazable?
 			EnumFacing facing = null;
-			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north(6).up(6)))) {
+			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north(8).up(8)))) {
 				facing = EnumFacing.NORTH;
 				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.5D) {
 					test2 = true;
 				}
 			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south(6).up(6)))) {
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south(8).up(8)))) {
 				facing = EnumFacing.SOUTH;
 				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.5D) {
 					test2 = true;
 				}
 			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east(6).up(6)))) {
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east(8).up(8)))) {
 				facing = EnumFacing.EAST;
 				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.5D) {
 					test2 = true;
 				}
 			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(6).up(6)))) {
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(8).up(8)))) {
 				facing = EnumFacing.WEST;
 				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.5D) {
 					test2 = true;

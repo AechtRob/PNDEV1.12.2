@@ -9,17 +9,17 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderAquaticNymph extends RenderLivingBaseVariantModels<EntityPrehistoricFloraAquaticBugNymph> {
+public class RenderAquaticBugNymph extends RenderLivingBaseVariantModels<EntityPrehistoricFloraAquaticBugNymph> {
     public static final ResourceLocation TEXTURE_MAYFLY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mayfly_nymph.png");
     public static final ResourceLocation TEXTURE_STONEFLY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/stonefly_nymph.png");
     public static final ResourceLocation TEXTURE_PALAEODICTYOPTERAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_nymph.png");
 
 
 
-    public RenderAquaticNymph(RenderManager mgr) {
+    public RenderAquaticBugNymph(RenderManager mgr) {
         super(mgr,
-            new ModelPneumodesmus(),
-            new ModelBase[]{new ModelPneumodesmus(), new ModelEoarthropleura(), new ModelPalaeodictyopteraNymph()},
+            new ModelStoneflyNymph(),
+            new ModelBase[]{new ModelStoneflyNymph(), new ModelMayflyNymph(), new ModelPalaeodictyopteraNymph()},
            0.0f);
     }
 
@@ -43,10 +43,10 @@ public class RenderAquaticNymph extends RenderLivingBaseVariantModels<EntityPreh
     public ModelBase getModelFromArray(EntityPrehistoricFloraAquaticBugNymph entity) {
         switch (entity.getPNType()) {
             case MAYFLY: default:
-                return this.mainModelArray[0];
+                return this.mainModelArray[1];
 
             case STONEFLY:
-                return this.mainModelArray[1];
+                return this.mainModelArray[0];
             case ARGENTINALA:
                 return this.mainModelArray[2];
             case VELISOPTERA:
@@ -67,7 +67,7 @@ public class RenderAquaticNymph extends RenderLivingBaseVariantModels<EntityPreh
         switch (variant) {
             case MAYFLY:
             default:
-                return 0.60F * 0.3F;
+                return 0.60F * 0.15F;
 
             case STONEFLY:
                 return 0.66F * 0.4F;
