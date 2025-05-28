@@ -131,7 +131,10 @@ public class BlockTmesipteris extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeTriassic)
 		{
 			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
-			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Warm
+			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.CentralAfricaIndia
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Europe
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.USAGreenland
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.China
 				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.River) {
 				biomeCriteria = true;
 			}

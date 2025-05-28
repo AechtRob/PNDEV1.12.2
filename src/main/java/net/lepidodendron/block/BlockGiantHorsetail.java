@@ -170,10 +170,13 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomeTriassic) {
 			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
-			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Cool
+			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.SouthAmericaAusAnt
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.CentralAfricaIndia
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.SouthAfricaMadagascar
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Chinle
 				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Ocean
 				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.River
-				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Warm) {
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Europe) {
 				biomeCriteria = true;
 			}
 			else if (

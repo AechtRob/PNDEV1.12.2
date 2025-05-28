@@ -130,9 +130,15 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomeTriassic) {
 			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
-			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Cool
+			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.SouthAmericaAusAnt
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.CentralAfricaIndia
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.SouthAfricaMadagascar
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Europe
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Chinle
 				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.River
-				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Warm) {
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.USAGreenland
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.China
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Asia) {
 				biomeCriteria = true;
 			}
 			else {

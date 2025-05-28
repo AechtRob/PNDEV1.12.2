@@ -126,7 +126,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeTriassic)
 		{
 			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
-			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Cool) {
+			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.SouthAmericaAusAnt) {
 				biomeCriteria = true;
 			}
 			else {

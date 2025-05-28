@@ -177,7 +177,7 @@ public class BlockBivalveGreen extends ElementsLepidodendronMod.ModElement {
 		{
 			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
 			if (biomeTriassic.getBiomeType() != EnumBiomeTypeTriassic.Ocean
-				&& biomeTriassic.getBiomeType() != EnumBiomeTypeTriassic.Island) {
+				&& biomeTriassic.getBiomeType() != EnumBiomeTypeTriassic.China) {
 				biomeCriteria = true;
 			}
 			else {

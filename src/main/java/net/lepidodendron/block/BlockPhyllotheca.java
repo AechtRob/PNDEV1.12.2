@@ -117,7 +117,9 @@ public class BlockPhyllotheca extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeTriassic) {
 			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
 			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.River
-				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Swamp) {
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.SouthAmericaAusAnt
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.CentralAfricaIndia
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.SouthAfricaMadagascar) {
 				biomeCriteria = true;
 			}
 			else {
