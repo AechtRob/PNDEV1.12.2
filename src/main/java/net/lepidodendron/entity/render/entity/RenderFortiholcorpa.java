@@ -90,7 +90,7 @@ public class RenderFortiholcorpa extends RenderLivingBaseWithBook<EntityPrehisto
     protected void applyRotations(EntityPrehistoricFloraFortiholcorpa entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
 
-        float getOffset = 0.16F;
+        float getOffset = 0.08F;
         switch (entityLiving.getAttachmentFacing()) {
             case DOWN:
             default:

@@ -33,7 +33,7 @@ public class RenderJuracimbrophlebia extends RenderLivingBaseWithBook<EntityPreh
     protected void applyRotations(EntityPrehistoricFloraJuracimbrophlebia entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
 
-        float getOffset = 0.13F;
+        float getOffset = 0.08F;
         switch (entityLiving.getAttachmentFacing()) {
             case DOWN:
             default:
