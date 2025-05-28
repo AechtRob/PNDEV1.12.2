@@ -268,7 +268,7 @@ public class EntityPrehistoricFloraCratopipa extends EntityPrehistoricFloraSwimm
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 0.025, 20));
+		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 0.9, 20));
 		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
 		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));

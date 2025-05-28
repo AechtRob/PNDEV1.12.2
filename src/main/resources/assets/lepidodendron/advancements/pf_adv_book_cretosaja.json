@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:cretosaja_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_cretosaja.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_cretosaja.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_cretosaja"
+        }
+    }
+}

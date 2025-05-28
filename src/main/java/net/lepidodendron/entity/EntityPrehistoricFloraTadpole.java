@@ -36,12 +36,7 @@ public class EntityPrehistoricFloraTadpole extends EntityPrehistoricFloraAgeable
 	private static final float[] PROSALIRUS_SIZE = new float[]{0.2F, 0.2F};
 	private static final float[] NOTOBATRACHUS_SIZE = new float[]{0.2F, 0.2F};
 	private static final float[] RHADINOSTEUS_SIZE = new float[]{0.2F, 0.2F};
-//	private static final float[] LITHOMANTIS_SIZE = new float[]{0.2F, 0.2F};
-//	private static final float[] LYCOCERCUS_SIZE = new float[]{0.2F, 0.2F};
-//	private static final float[] SINODUNBARIA_SIZE = new float[]{0.2F, 0.2F};
-//	private static final float[] STENODICTYA_SIZE = new float[]{0.2F, 0.2F};
-//	private static final float[] MAZOTHAIROS_SIZE = new float[]{0.2F, 0.2F};
-//	private static final float[] PSYCHROPTILUS_SIZE = new float[]{0.2F, 0.2F};
+
 
 	private static final DataParameter<Integer> TADPOLE_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraTadpole.class, DataSerializers.VARINT);
 

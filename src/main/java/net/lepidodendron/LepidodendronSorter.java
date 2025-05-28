@@ -5714,6 +5714,14 @@ public class LepidodendronSorter {
     public static final int eggs_prenocephale = 5453;
     public static final int eggs_sarcosuchus = 5454;
     public static final int eggs_candidodon = 5455;
+    public static final int juracimbrophlebia_raw = 5456;
+    public static final int fortiholcorpa_raw = 5457;
+    public static final int hangingfly_raw = 5458;
+    public static final int stonefly_raw = 5459;
+    public static final int mayfly_raw = 5460;
+    public static final int damselfly_raw = 5461;
+    public static final int argentinala_raw = 5462;
+    public static final int velisoptera_raw = 5463;
 
 
 

@@ -2474,7 +2474,7 @@ public class ModelGastonia extends ModelBasePalaeopedia {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) {
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.GRAZE_ANIMATION) {
+        else if (ee.getAnimation() == ee.DRINK_ANIMATION) {
             animGraze(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The roar/warn anim

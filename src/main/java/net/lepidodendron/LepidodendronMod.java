@@ -2320,7 +2320,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation DRACOPELTA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dracopelta_young"));
 
 	public static final int ENTITY_STONEFLY = 936;
-	//public static final ResourceLocation STONEFLY_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/stonefly_jar"));
+	public static final ResourceLocation STONEFLY_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/stonefly_jar"));
 	public static final int ENTITY_SINOPHONEUS = 937;
 	//public static final ResourceLocation SINOPHONEUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sinophoneus"));
 	//public static final ResourceLocation SINOPHONEUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sinophoneus_young"));
@@ -3086,7 +3086,7 @@ public class LepidodendronMod {
 	public static final int ENTITY_BAROSAURUS = 1264;
 	public static final ResourceLocation BAROSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/barosaurus"));
 	public static final ResourceLocation BAROSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/barosaurus_young"));
-	public static final int ENTITY_SAROCSUCHUS = 1265;
+	public static final int ENTITY_SARCOSUCHUS = 1265;
 	public static final ResourceLocation SARCOSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sarcosuchus"));
 	public static final ResourceLocation SARCOSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sarcosuchus_young"));
 	public static final int ENTITY_DISSIMILITES = 1266;

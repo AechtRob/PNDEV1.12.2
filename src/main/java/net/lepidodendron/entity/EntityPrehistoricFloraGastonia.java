@@ -100,7 +100,7 @@ public class EntityPrehistoricFloraGastonia extends EntityPrehistoricFloraLandCa
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{HURT_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, HIDE_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, GRAZE_ANIMATION};
+		return new Animation[]{HURT_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, HIDE_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, DRINK_ANIMATION};
 	}
 
 	@Override
@@ -123,23 +123,6 @@ public class EntityPrehistoricFloraGastonia extends EntityPrehistoricFloraLandCa
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-
-//		if (this.getIsSneaking()) {
-//			if (this.getRevengeTarget() != null) {
-//				if (this.getRevengeTarget() instanceof EntityPlayer) {
-//					if (((EntityPlayer) this.getRevengeTarget()).isCreative()) {
-//						this.setIsSneaking(false);
-//					}
-//				}
-//			}
-//			if (this.getAttackTarget() != null) {
-//				if (this.getAttackTarget() instanceof EntityPlayer) {
-//					if (((EntityPlayer) this.getAttackTarget()).isCreative()) {
-//						this.setIsSneaking(false);
-//					}
-//				}
-//			}
-//		}
 
 
 		//Managing the rotations, client-side only:

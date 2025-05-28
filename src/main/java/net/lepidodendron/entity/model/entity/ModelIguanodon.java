@@ -880,8 +880,8 @@ public class ModelIguanodon extends ModelBasePalaeopedia {
 
         AdvancedModelRenderer[] Tail = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
         AdvancedModelRenderer[] Neck = {this.neck3, this.neck2, this.neck, this.head};
-        AdvancedModelRenderer[] ArmL = {this.leftArm, this.leftArm2, this.leftArm3};
-        AdvancedModelRenderer[] ArmR = {this.rightArm, this.rightArm2, this.rightArm3};
+//        AdvancedModelRenderer[] ArmL = {this.leftArm, this.leftArm2, this.leftArm3};
+//        AdvancedModelRenderer[] ArmR = {this.rightArm, this.rightArm2, this.rightArm3};
 
         entityIguanodon.tailBuffer.applyChainSwingBuffer(Tail);
 
@@ -902,14 +902,14 @@ public class ModelIguanodon extends ModelBasePalaeopedia {
                     this.chainWave(Tail, (0.15F * 0.35F), 0.125F * 0.15F, 0.2F, f2, 1F);
                     this.chainSwing(Tail, (0.15F * 0.35F) * 4F, 0.05F * 0.35F, 0.12F, f2, 1F);
                     if (entityIguanodon.getAnimation() == entityIguanodon.NO_ANIMATION) {
-                        this.chainWaveExtended(ArmL, 0.175F, 0.03F, 0.1F, 3F, f2, 1F);
-                        this.chainWaveExtended(ArmR, 0.175F, -0.03F, -0.1F, 0f, f2, 1F);
-                        this.chainFlapExtended(ArmL, 0.175F, -0.03F, 0.1F, 3F, f2, 1F);
-                        this.chainFlapExtended(ArmR, 0.175F, -0.03F, -0.1F, 0f, f2, 1F);
-                        this.walk(this.leftArm, 0.175F, 0.10F, true, 3F, 0.05F, f2, 1F);
-                        this.walk(this.rightArm, 0.175F, -0.10F, true, 0F, 0.05F, f2, 1F);
-                        this.flap(this.leftArm2, 0.175F, -0.10F, true, 3F, 0.05F, f2, 1F);
-                        this.flap(this.rightArm2, 0.175F, -0.10F, true, 0F, 0.05F, f2, 1F);
+//                        this.chainWaveExtended(ArmL, 0.175F, 0.03F, 0.1F, 3F, f2, 1F);
+//                        this.chainWaveExtended(ArmR, 0.175F, -0.03F, -0.1F, 0f, f2, 1F);
+//                        this.chainFlapExtended(ArmL, 0.175F, -0.03F, 0.1F, 3F, f2, 1F);
+//                        this.chainFlapExtended(ArmR, 0.175F, -0.03F, -0.1F, 0f, f2, 1F);
+//                        this.walk(this.leftArm, 0.175F, 0.10F, true, 3F, 0.05F, f2, 1F);
+//                        this.walk(this.rightArm, 0.175F, -0.10F, true, 0F, 0.05F, f2, 1F);
+//                        this.flap(this.leftArm2, 0.175F, -0.10F, true, 3F, 0.05F, f2, 1F);
+//                        this.flap(this.rightArm2, 0.175F, -0.10F, true, 0F, 0.05F, f2, 1F);
                     }
 
                     return;
@@ -970,7 +970,7 @@ public class ModelIguanodon extends ModelBasePalaeopedia {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) {
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.GRAZE_ANIMATION) { //The graze anim
+        else if (ee.getAnimation() == ee.DRINK_ANIMATION) { //The graze anim
             animGraze(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The noise anim

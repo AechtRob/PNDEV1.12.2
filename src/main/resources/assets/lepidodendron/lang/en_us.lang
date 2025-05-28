@@ -8567,6 +8567,11 @@ tile.pf_eggs_microbrachis.name=Microbrachis Spawn
 tile.pf_eggs_mixopterus.name=Mixopterus Eggs
 tile.pf_eggs_mooreodontus.name=Mooreodontus Eggs
 tile.pf_eggs_myriacantherpestes.name=Myriacantherpestes Eggs
+tile.pf_eggs_santanmantis.name=Santanmantis Eggs
+tile.pf_eggs_hangingfly.name=Hangingfly Eggs
+tile.pf_eggs_juracimbrophlebia.name=Juracimbrophlebia Eggs
+tile.pf_eggs_scorpionfly.name=Scorpionfly Eggs
+tile.pf_eggs_fortiholcorpa.name=Fortiholcorpa Eggs
 tile.pf_eggs_myriapod_eoarthropleura.name=Eoarthropleura Eggs
 tile.pf_eggs_myriapod_pneumodesmus.name=Pneumodesmus Eggs
 tile.pf_eggs_myriapod_polydesmid.name=Polydesmid Millipede Eggs
@@ -11020,6 +11025,28 @@ tile.pf_eggs_tadpole_prosalirus.name=Prosalirus Spawn
 item.pf_spawn_egg_anurognathid_vesperopterylus.name=Spawn Vesperopterylus
 tile.pf_eggs_tadpole_hyogobatrachus.name=Hyogobatrachus Spawn
 
+tile.pf_eggs_aquaticnymph_mayfly.name=Mayfly Spawn
+tile.pf_eggs_aquaticnymph_stonefly.name=Stonefly Spawn
+tile.pf_eggs_aquaticnymph_damselfly.name=Damselfly Spawn
+tile.pf_eggs_aquaticnymph_argentinala.name=Argentinala Spawn
+tile.pf_eggs_aquaticnymph_velisoptera.name=Velisoptera Spawn
+entity.prehistoric_flora_aquaticnymph_mayfly.name=Mayfly Nymph
+entity.prehistoric_flora_aquaticnymph_damselfly.name=Damselfly Nymph
+entity.prehistoric_flora_aquaticnymph_stonefly.name=Stonefly Nymph
+entity.prehistoric_flora_aquaticnymph_argentinala.name=Argentinala Nymph
+entity.prehistoric_flora_aquaticnymph_velisoptera.name=Velisoptera Nymph
+entity.prehistoric_flora_tadpole_rhadinosteus.name=Rhadinosteus Tadpole
+entity.prehistoric_flora_tadpole_cratopipa.name=Cratopipa Tadpole
+entity.prehistoric_flora_tadpole_notobatrachus.name=Notobatrachus Tadpole
+entity.prehistoric_flora_tadpole_prosalirus.name=Prosalirus Tadpole
+entity.prehistoric_flora_tadpole_hyogobatrachus.name=Hyogobatrachus Tadpole
+
+
+
+
+
+
+
 
 item.record.brontosaurus.desc=Brontosaurus (Will You Wait for Me)
 item.pf_music_disc_brontosaurus.name=Music Disc
@@ -11377,6 +11404,7 @@ item.pf_eggs_confuciusornis.name=Confuciusornis Eggs
 item.pf_eggs_noripterus.name=Noripterus Eggs
 item.pf_eggs_sapeornis.name=Sapeornis Eggs
 item.pf_eggs_koleken.name=Koleken Eggs
+tile.pf_eggs_aquaticnymph.name=Insect Eggs
 
 
 

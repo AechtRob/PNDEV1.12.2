@@ -154,7 +154,7 @@ public class EntityPrehistoricFloraOrdosemys extends EntityPrehistoricFloraSwimm
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getAnimation() == MAKE_NEST_ANIMATION
-				|| this.getAnimation() == HIDE_ANIMATION) {
+				|| this.getAnimation() == HIDE_ANIMATION || this.getAnimation() == STAND_ANIMATION) {
 			return 0.0F;
 		}
 		//System.err.println("Speed " + (Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed));
@@ -311,7 +311,7 @@ public class EntityPrehistoricFloraOrdosemys extends EntityPrehistoricFloraSwimm
 
 		//Sometimes stand up and look around:
 		if ((!this.world.isRemote) && !this.isReallyInWater() && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0 && !this.isReallyInWater()) {
 			this.setAnimation(STAND_ANIMATION);
 			this.standCooldown = 3000;
 		}

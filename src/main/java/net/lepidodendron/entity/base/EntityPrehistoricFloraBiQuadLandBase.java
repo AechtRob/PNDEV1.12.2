@@ -151,7 +151,6 @@ public abstract class EntityPrehistoricFloraBiQuadLandBase extends EntityPrehist
     public void setBipedal() {
         if (!world.isRemote) {
             //not in transition, not quad, and quadrupedal time is up
-            System.out.println("here");
             if (this.getAnimation() != this.TOBI_ANIMATION && this.isQuad() && this.getQuadTicks() <= 0) {
                 if (this.onGround) {
                     this.setAnimation(TOBI_ANIMATION);
