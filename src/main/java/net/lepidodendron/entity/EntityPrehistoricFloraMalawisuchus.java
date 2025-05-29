@@ -9,8 +9,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.render.entity.RenderAusktribosphenos;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
@@ -18,7 +16,6 @@ import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
@@ -38,7 +35,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraCandidodon extends EntityPrehistoricFloraDiictodon implements ITrappableLand, IAdvancementGranter {
+public class EntityPrehistoricFloraMalawisuchus extends EntityPrehistoricFloraDiictodon implements ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -46,14 +43,14 @@ public class EntityPrehistoricFloraCandidodon extends EntityPrehistoricFloraDiic
 	public Animation STAND_ANIMATION;
 	private int standCooldown;
 
-	public EntityPrehistoricFloraCandidodon(World world) {
+	public EntityPrehistoricFloraMalawisuchus(World world) {
 		super(world);
 		setSize(0.2F, 0.3F);
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 8.0D;
-		STAND_ANIMATION = Animation.create(390);
+		STAND_ANIMATION = Animation.create(280);
 
 	}
 
@@ -71,7 +68,7 @@ public class EntityPrehistoricFloraCandidodon extends EntityPrehistoricFloraDiic
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_CANDIDODON;
+		return ModTriggers.CLICK_MALAWISUCHUS;
 	}
 
 	public static String getPeriod() {
@@ -123,7 +120,7 @@ public class EntityPrehistoricFloraCandidodon extends EntityPrehistoricFloraDiic
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.2F;
+		float speedBase = 0.222F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -336,7 +333,7 @@ public class EntityPrehistoricFloraCandidodon extends EntityPrehistoricFloraDiic
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.CANDIDODON_LOOT;
+		return LepidodendronMod.MALAWISUCHUS_LOOT;
 	}
 	
 	//Rendering taxidermy:

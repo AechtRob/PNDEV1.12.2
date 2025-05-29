@@ -456,6 +456,9 @@ public class EntityPrehistoricFloraGastonia extends EntityPrehistoricFloraLandCa
 		if (ds.getTrueSource() instanceof EntityLivingBase && this.getAnimation() == HIDE_ANIMATION) {
 			result = super.attackEntityFrom(ds, i/10F);
 		}
+		else if(this.getHealth() < this.maxHealthAgeable*0.2F) {
+			result = super.attackEntityFrom(ds, i/3F);
+		}
 		else {
 			result = super.attackEntityFrom(ds, i);
 		}

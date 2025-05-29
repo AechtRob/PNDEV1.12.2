@@ -28,7 +28,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMayfly extends EntityPrehistoricFloraMeganeuropsis implements ITrappableAir, IAdvancementGranter {
+public class EntityPrehistoricFloraArgentinala extends EntityPrehistoricFloraMeganeuropsis implements ITrappableAir, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -38,7 +38,7 @@ public class EntityPrehistoricFloraMayfly extends EntityPrehistoricFloraMeganeur
 	private Animation animation = NO_ANIMATION;
 	public Animation ATTACK_ANIMATION;
 
-		public EntityPrehistoricFloraMayfly(World world) {
+		public EntityPrehistoricFloraArgentinala(World world) {
 		super(world);
 		setSize(0.15F, 0.30F);
 		ATTACK_ANIMATION = Animation.create(this.getAttackLength());
@@ -46,13 +46,13 @@ public class EntityPrehistoricFloraMayfly extends EntityPrehistoricFloraMeganeur
 
 	@Override
 	public String getEntityId(Entity entity) {
-		return "lepidodendron:prehistoric_flora_aquaticnymph@mayfly";
+		return "lepidodendron:prehistoric_flora_aquaticnymph@damselfly";
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_MAYFLY;
+		return ModTriggers.CLICK_ARGENTINALA;
 	}
 
 	@Override
@@ -72,7 +72,7 @@ public class EntityPrehistoricFloraMayfly extends EntityPrehistoricFloraMeganeur
 	}
 
 	public static String getPeriod() {
-		return "Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene - present";
+		return "Carboniferous";
 	}
 
 	@Nullable
@@ -82,21 +82,10 @@ public class EntityPrehistoricFloraMayfly extends EntityPrehistoricFloraMeganeur
 	}
 
 	@Override
-	protected float getAISpeedInsect() {
-		if (this.getTicks() < 0) {
-			return 0.0F; //Is laying eggs
-		}
-		if(!isFlying()) {
-			return 0f;
-		}
-		return 3f;
-	}
-
-	@Override
 	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source) {
 		if (source == BlockGlassJar.BlockCustom.FREEZE) {
 			//System.err.println("Jar loot!");
-			ResourceLocation resourcelocation = LepidodendronMod.MAYFLY_LOOT;
+			ResourceLocation resourcelocation = LepidodendronMod.ARGENTINALA_LOOT;
 			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
 			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer) this.world)).withLootedEntity(this).withDamageSource(source);
 			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build())) {

@@ -50,13 +50,7 @@ public class EntityPrehistoricFloraStonefly extends EntityPrehistoricFloraMegane
 
 	@Override
 	public String getEntityId(Entity entity) {
-		String mobid;
-		mobid = "lepidodendron:prehistoric_flora_aquaticnymph";
-
-		if (this.hasPNVariants() && this.getPNTypeName() != null) {
-			mobid = mobid + "@" + "stonefly";
-		}
-		return mobid;
+		return "lepidodendron:prehistoric_flora_aquaticnymph@stonefly";
 	}
 
 	@Nullable

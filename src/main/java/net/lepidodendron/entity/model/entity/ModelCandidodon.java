@@ -509,7 +509,7 @@ public class ModelCandidodon extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
-        this.main.offsetY = 0.0F;
+        this.main.offsetZ = -0.2F;
 
         EntityPrehistoricFloraCandidodon proteros = (EntityPrehistoricFloraCandidodon) e;
 
@@ -517,7 +517,7 @@ public class ModelCandidodon extends ModelBasePalaeopedia {
         this.faceTarget(f3, f4, 10, head);
 
         AdvancedModelRenderer[] Tail = {this.tail, this.tail2, this.tail3, this.tail4};
-        AdvancedModelRenderer[] Neck = {this.body3, this.head};
+        AdvancedModelRenderer[] Neck = {this.neck, this.head};
         //AdvancedModelRenderer[] ArmL = {this.leftarm, this.leftarm2, this.leftarm3};
         //AdvancedModelRenderer[] ArmR = {this.rightarm, this.rightarm2, this.rightarm3};
 

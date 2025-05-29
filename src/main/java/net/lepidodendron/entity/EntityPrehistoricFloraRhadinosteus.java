@@ -148,13 +148,7 @@ public class EntityPrehistoricFloraRhadinosteus extends EntityPrehistoricFloraSw
 
 	@Override
 	public String getEntityId(Entity entity) {
-		String mobid;
-		mobid = "lepidodendron:prehistoric_flora_tadpole";
-
-		if (this.hasPNVariants() && this.getPNTypeName() != null) {
-			mobid = mobid + "@" + "rhadinosteus";
-		}
-		return mobid;
+		return "lepidodendron:prehistoric_flora_tadpole@rhadinosteus";
 	}
 
 	protected void initEntityAI() {
