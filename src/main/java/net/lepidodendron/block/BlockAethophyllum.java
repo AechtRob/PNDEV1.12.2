@@ -5,7 +5,9 @@ import net.lepidodendron.*;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
 import net.minecraft.block.SoundType;
@@ -113,12 +115,14 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genAethophyllumOverrideBiomes))
 			biomeCriteria = true;
 
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_xeric_scrubland")
-			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_warm_lakeland"))
-			biomeCriteria = true;
-
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland"))
-			biomeCriteria = false;
+		if (biome instanceof BiomeTriassic) {
+			if (((BiomeTriassic)biome).getBiomeType() == EnumBiomeTypeTriassic.Europe) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
 
 		if (!biomeCriteria)
 			return;

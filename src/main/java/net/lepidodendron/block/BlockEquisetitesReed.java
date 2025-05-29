@@ -102,6 +102,12 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeTriassic) {
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest_dense")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_flooded_forest")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_gondwanan_forest_clearing")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_gondwanan_forest_clearing_lake")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_gondwanan_plain_flat")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_gondwanan_plain")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_woodland")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_polje")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_polje_edge")) {

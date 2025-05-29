@@ -4,16 +4,18 @@ import net.minecraft.util.IStringSerializable;
 
 public enum EnumBiomeTypeTriassic implements IStringSerializable {
 
-    Cool("cool"),
+    SouthAmericaAusAnt("southamerica_australia_antarctic"),
+    CentralAfricaIndia("centralafrica_india"),
+    SouthAfricaMadagascar("southafrica_madagascar"),
     Desert("desert"),
     River("river"),
-    Xeric("xeric"),
-    Warm("warm"),
+    Europe("europe"),
     Mountain("mountains"),
-    Swamp("swamp"),
-    Woodland("woodland"),
+    Chinle("chinle"),
+    USAGreenland("usa_greenland"),
     Ocean("ocean"),
-    Island("island");
+    China("china"),
+    Asia("asia");
 
     private final String name;
 

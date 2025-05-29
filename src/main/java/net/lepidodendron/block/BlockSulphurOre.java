@@ -8,7 +8,6 @@ import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemSulphur;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
@@ -84,8 +83,7 @@ public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomeTriassic) {
 			BiomeTriassic BiomeT = (BiomeTriassic) biome;
-			if (BiomeT.getBiomeType() == EnumBiomeTypeTriassic.Island
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_warm_volcanic_hills")) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_warm_volcanic_hills")) {
 				if (random.nextInt(3) != 0)
 					return;
 				int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;

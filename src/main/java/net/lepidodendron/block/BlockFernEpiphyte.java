@@ -130,8 +130,10 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeTriassic)
 		{
 			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
-			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Cool
-				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Swamp) {
+			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.SouthAmericaAusAnt
+					|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.SouthAfricaMadagascar
+					|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Europe
+					|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Chinle) {
 				biomeCriteria = true;
 			}
 			else {
