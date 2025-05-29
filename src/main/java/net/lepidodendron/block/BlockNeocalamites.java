@@ -6,6 +6,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemNeocalamitesItem;
 import net.lepidodendron.util.*;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
@@ -181,7 +182,8 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_wetlands_fern_copse")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_fern_copse")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_fern_copse_lakes")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_fern_copse_lakes")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_chinle_flats")) {
 			GenChance = 64;
 		}
 
@@ -231,6 +233,9 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 10; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
+						if (world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_delta_flats")) {
+							blockpos1 = new BlockPos(blockpos1.getX(),  Math.max(Functions.getAdjustedSeaLevel(world, blockpos1), ChunkGenSpawner.getTopSolidBlock(blockpos1, world).getY() + 1), blockpos1.getZ());
+						}
 						if (world.isAirBlock(blockpos1) && world.isAirBlock(blockpos1.up()) && world.isAirBlock(blockpos1.up(2)) && blockpos1.getY() >= minH && (blockpos1.getY() <= maxH || maxH == 0) ) {
 							
 							//Prepare a stem if this is in suitable water:
