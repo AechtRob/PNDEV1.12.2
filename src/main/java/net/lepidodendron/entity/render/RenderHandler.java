@@ -7869,6 +7869,42 @@ public class RenderHandler {
                 return new RenderSpectrovenator(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAmakusaichthys.class, new IRenderFactory<EntityPrehistoricFloraAmakusaichthys>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAmakusaichthys> createRenderFor(RenderManager manager) {
+                return new RenderAmakusaichthys(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSasayamagnomus.class, new IRenderFactory<EntityPrehistoricFloraSasayamagnomus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSasayamagnomus> createRenderFor(RenderManager manager) {
+                return new RenderSasayamagnomus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraShokawa.class, new IRenderFactory<EntityPrehistoricFloraShokawa>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraShokawa> createRenderFor(RenderManager manager) {
+                return new RenderShokawa(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraShirerpeton.class, new IRenderFactory<EntityPrehistoricFloraShirerpeton>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraShirerpeton> createRenderFor(RenderManager manager) {
+                return new RenderShirerpeton(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKujiberotha.class, new IRenderFactory<EntityPrehistoricFloraKujiberotha>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraKujiberotha> createRenderFor(RenderManager manager) {
+                return new RenderKujiberotha(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCretosaja.class, new IRenderFactory<EntityPrehistoricFloraCretosaja>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCretosaja> createRenderFor(RenderManager manager) {
+                return new RenderCretosaja(manager);
+            }
+        });
         
         
 

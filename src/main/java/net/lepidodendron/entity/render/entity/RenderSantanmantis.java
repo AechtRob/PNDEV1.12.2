@@ -16,7 +16,7 @@ public class RenderSantanmantis extends RenderLivingBaseWithBook<EntityPrehistor
     }
 
     public static float getScaler() {
-        return 0.2F;
+        return 0.17F;
     }
 
     @Override

@@ -5733,6 +5733,25 @@ public class LepidodendronSorter {
     public static final int shell_yezoceras = 5472;
     public static final int nipponites_raw = 5473;
     public static final int shell_nipponites = 5474;
+    public static final int kujiberotha_raw = 5475;
+    public static final int sasayamagnomus_raw = 5476;
+    public static final int shokawa_raw = 5477;
+    public static final int shirerpeton_raw = 5478;
+    public static final int cretosaja_raw = 5479;
+    public static final int amakusaichthys_raw = 5480;
+    public static final int eggs_shirerpeton = 5481;
+    public static final int eggs_sasayamagnomus = 5482;
+    public static final int chuhsiungichthys_raw = 5483;
+    public static final int jinjuichthys_raw = 5484;
+    public static final int kokuraichthys_raw = 5485;
+    public static final int nipponamia_raw = 5486;
+    public static final int paraleptolepis_raw = 5487;
+    public static final int wakinoichthys_raw = 5488;
+    public static final int sasayamamylos_raw = 5489;
+    public static final int hakusanobaatar_raw = 5490;
+    public static final int hyogobatrachus_raw = 5491;
+    public static final int fukuipteryx_raw = 5492;
+    public static final int eggs_fukuipteryx = 5493;
 
 
 

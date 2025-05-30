@@ -4,28 +4,28 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLeapingInsectBase;
 import net.lepidodendron.entity.render.entity.RenderArchaeopteryx;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.INervous;
+import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EggLayingConditions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -34,41 +34,39 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
-import net.minecraft.world.storage.loot.LootContext;
-import net.minecraft.world.storage.loot.LootTable;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
-public class EntityPrehistoricFloraSantanmantis extends EntityPrehistoricFloraLeapingInsectBase implements IAdvancementGranter, ITrappableLand {
+public class EntityPrehistoricFloraCretosaja extends EntityPrehistoricFloraLandClimbingGlidingBase implements IAdvancementGranter, ITrappableLand, IScreamer, INervous {
 
 	public BlockPos currentTarget;
-	public Animation STAND_ANIMATION;
 	private int standCooldown;
+	private boolean screaming;
+	private int alarmCooldown;
+	private int nervousnessTimer;
+	private EntityLivingBase nervousnessTarget;
 
-
-	public EntityPrehistoricFloraSantanmantis(World world) {
+	public EntityPrehistoricFloraCretosaja(World world) {
 		super(world);
-		setSize(0.3F, 0.3F);
-		minWidth = 0.3F;
-		maxWidth = 0.3F;
-		maxHeight = 0.3F;
-		maxHealthAgeable = 2.0D;
-		STAND_ANIMATION = Animation.create(76);
-	}
-
-	@Override
-	public int jumpCooldown() {
-		return 1500;
+		setSize(0.2F, 0.13F);
+		minWidth = 0.2F;
+		maxWidth = 0.2F;
+		maxHeight = 0.13F;
+		maxHealthAgeable = 4.0D;
 	}
 
 	@Override
 	public int getLaunchCooldown() {
-		return 5000;
+		return 0;
+	}
+
+	@Override
+	public boolean isBlockClimbable(World world, BlockPos pos, EnumFacing facing) {
+		return false;
 	}
 
 	@Override
@@ -111,12 +109,12 @@ public class EntityPrehistoricFloraSantanmantis extends EntityPrehistoricFloraLe
 
 	@Override
 	public int getEggType(@Nullable String PNType) {
-		return 20; //insect egg
+		return 20; //insect eggs
 	}
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, EAT_ANIMATION, STAND_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION};
 	}
 
 	@Override
@@ -126,7 +124,7 @@ public class EntityPrehistoricFloraSantanmantis extends EntityPrehistoricFloraLe
 
 	@Override
 	public int getAttackLength() {
-		return 20;
+		return 30;
 	}
 
 	@Override
@@ -139,7 +137,7 @@ public class EntityPrehistoricFloraSantanmantis extends EntityPrehistoricFloraLe
 		return 20 + rand.nextInt(40);
 	}
 
-	public static String getPeriod() {return "Early Cretaceous";}
+	public static String getPeriod() {return "Jurassic";}
 
 	@Override
 	public int getAdultAge() {
@@ -148,29 +146,18 @@ public class EntityPrehistoricFloraSantanmantis extends EntityPrehistoricFloraLe
 
 	@Override
 	public float getAISpeedLand() {
-		if (this.getAnimation() == STAND_ANIMATION) {
+		if (this.getAnimation() == LAY_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast() && (!this.getIsClimbing()) && (!this.getIsFlying())) {
-			return 0.15F;
+			return 0.35F;
 		}
-		if (this.getIsFlying() || this.getIsLaunching()) {
-			return 0.65F;
-		}
-		if(this.isJumping) {
-			return 0.15F;
-		}
-		return 0.25F;
+		return 0.2F;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
 		return this.getEntityBoundingBox().grow(0.0F + size, 0.0F + size, 0.0F + size);
-	}
-
-	@Override
-	public boolean canJar() {
-		return true;
 	}
 
 	@Override
@@ -180,70 +167,51 @@ public class EntityPrehistoricFloraSantanmantis extends EntityPrehistoricFloraLe
 
 	@Override
 	public void onEntityUpdate() {
-
 		super.onEntityUpdate();
-
-		//random idle animations
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
-				&& !this.getIsMoving() && !this.getIsFlying() && !this.getIsClimbing() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			this.setAnimation(STAND_ANIMATION);
-			this.standCooldown = 2000;
-		}
-		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 2000;
-			this.setAnimation(NO_ANIMATION);
-		}
-
-
 	}
 
 	@Override
 	public boolean dropsEggs() {
+		return true;
+	}
+	
+	@Override
+	public boolean laysEggs() {
 		return false;
 	}
 
 	@Override
-	public ResourceLocation getEggTexture(@Nullable String variantIn) {
-		return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_santanmantis.png");
-	}
-
-	@Override
-	public boolean laysEggs() {
+	public boolean panics() {
 		return true;
 	}
-
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(1, new GlideAI());
 		tasks.addTask(2, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(3, new EntityTemptAI(this, 1, false, true, 0));
-		tasks.addTask(4, new LandEntitySwimmingAI(this, 0.75, false));
-		tasks.addTask(5, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(6, new LandWanderNestAI(this));
-		tasks.addTask(7, new LandWanderAvoidWaterClimbingAI(this, 0.8D, 20));
-		tasks.addTask(8, new EntityLookIdleAI(this));
+		tasks.addTask(4, new PanicScreamAI(this, 1.0));
+		tasks.addTask(5, new PanicWhenLookedAI(this, 1.0F));
+		tasks.addTask(6, new LandEntitySwimmingAI(this, 0.75, false));
+		tasks.addTask(7, new LandWanderNestAI(this));
+		tasks.addTask(8, new LandWanderAvoidWaterClimbingAI(this, 0.8D, 20));
+		tasks.addTask(9, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.BUG);
+		return ArrayUtils.addAll(DietString.ROTTEN);
 	}
 
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.22D);
 		//this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0D);
-	}
-
-	@Override
-	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.ARTHROPOD;
 	}
 
 	@Override
@@ -266,38 +234,49 @@ public class EntityPrehistoricFloraSantanmantis extends EntityPrehistoricFloraLe
 		return 0.5F;
 	}
 
-	@Override
-	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
-	{
-		if (source == BlockGlassJar.BlockCustom.FREEZE) {
-			//System.err.println("Jar loot!");
-			ResourceLocation resourcelocation = LepidodendronMod.SANTANMANTIS_LOOT;
-			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
-			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
-			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
-			{
-				NBTTagCompound variantNBT = new NBTTagCompound();
-				variantNBT.setString("PNType", "");
-				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
-				variantNBT.setString("PNDisplaycase", stringEgg);
-				itemstack.setTagCompound(variantNBT);
-				this.entityDropItem(itemstack, 0.0F);
-			}
-		}
-		else {
-			super.dropLoot(wasRecentlyHit, lootingModifier, source);
-		}
-
-	}
-	public static final PropertyDirection FACING = BlockDirectional.FACING;
-
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.BUG_LOOT;
+		return LepidodendronMod.CRETOSAJA_LOOT;
+	}
+	//Rendering taxidermy:
+	//--------------------
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_CRETOSAJA;
 	}
 
+	public static final PropertyDirection FACING = BlockDirectional.FACING;
+
 	public boolean testLay(World world, BlockPos pos) {
-		return EggLayingConditions.testLayMossAndWood(this, world, pos);
+		//System.err.println("Testing laying conditions");
+		BlockPos posNest = pos;
+		if (isLayableNest(world, posNest)) {
+			String eggRenderType = new Object() {
+				public String getValue(BlockPos posNest, String tag) {
+					TileEntity tileEntity = world.getTileEntity(posNest);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getString(tag);
+					return "";
+				}
+			}.getValue(new BlockPos(posNest), "egg");
+
+			//System.err.println("eggRenderType " + eggRenderType);
+
+			if (eggRenderType.equals("")) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public boolean attackEntityAsMob(Entity entity) {
+		if (this.getAnimation() == NO_ANIMATION) {
+			this.setAnimation(ATTACK_ANIMATION);
+		}
+		return false;
 	}
 
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
@@ -305,12 +284,44 @@ public class EntityPrehistoricFloraSantanmantis extends EntityPrehistoricFloraLe
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
-	@Nullable
+	/**
+	 * this should allow the mob to run when collided with (or become alarmed)
+	 * @param entityIn
+	 */
+
 	@Override
-	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_SANTANMANTIS;
+	protected void collideWithEntity(Entity entityIn) {
+		super.collideWithEntity(entityIn);
+		if (entityIn instanceof EntityLivingBase) {
+			EntityLivingBase ee = (EntityLivingBase) entityIn;
+			this.setAlarmTarget(ee);
+			List<EntityPrehistoricFloraCretosaja> Compsognathus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraCretosaja.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraCretosaja curr : Compsognathus) {
+				curr.setAnimation(NO_ANIMATION);
+				curr.setRevengeTarget(ee);
+				curr.setAlarmTarget(ee);
+				curr.alarmCooldown = rand.nextInt(20);
+			}
+		}
 	}
 
-	//Rendering taxidermy:
-	//--------------------
+	@Nullable
+	public EntityLivingBase getNervousnessTarget()
+	{
+		return this.nervousnessTarget;
+	}
+
+	public void setNervousnessTarget(@Nullable EntityLivingBase livingBase)
+	{
+		this.nervousnessTarget = livingBase;
+		this.nervousnessTimer = this.ticksExisted;
+	}
+
+	public void setScreaming(boolean screaming) {
+		this.screaming = screaming;
+	}
+
+	public boolean getScreaming() {
+		return this.screaming;
+	}
 }

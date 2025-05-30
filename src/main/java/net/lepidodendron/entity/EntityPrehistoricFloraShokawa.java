@@ -38,7 +38,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraHyphalosaurus extends EntityPrehistoricFloraSwimmingAmphibianBase implements IAdvancementGranter, ITrappableWater, ITrappableLand {
+public class EntityPrehistoricFloraShokawa extends EntityPrehistoricFloraSwimmingAmphibianBase implements IAdvancementGranter, ITrappableWater, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraHyphalosaurus extends EntityPrehistoricFloraS
 	public Animation EAT_ANIMATION;
 	private int standCooldown;
 
-	public EntityPrehistoricFloraHyphalosaurus(World world) {
+	public EntityPrehistoricFloraShokawa(World world) {
 		super(world);
 		setSize(0.3F, 0.1F);
 		minWidth = 0.1F;
@@ -68,40 +68,6 @@ public class EntityPrehistoricFloraHyphalosaurus extends EntityPrehistoricFloraS
 	}
 
 	@Override
-	public int getRoarLength() {
-		return 20;
-	}
-
-	@Override
-	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION};
-	}
-
-	@Override
-	public boolean isSmall() {
-		return true;
-	}
-
-
-	public static String getPeriod() {
-		return "Early Cretaceous";
-	}
-
-	//public static String getHabitat() {
-	//	return "Amphibious Archosauromorph Reptile";
-	//}
-
-	@Override
-	public boolean hasNest() {
-		return false;
-	}
-
-	@Override
-	public boolean breathesAir() {
-		return true;
-	}
-	
-	@Override
 	public boolean dropsEggs() {
 		return false;
 	}
@@ -112,18 +78,17 @@ public class EntityPrehistoricFloraHyphalosaurus extends EntityPrehistoricFloraS
 	}
 
 	@Override
-	public boolean placesNest() {
-		return false;
+	public Animation[] getAnimations() {
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION};
 	}
 
-	@Override
-	public boolean isNestMound() {
-		return false;
+	public static String getPeriod() {
+		return "Early Cretaceous";
 	}
 
 	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraHyphalosaurus(this.world);
+		return new EntityPrehistoricFloraShokawa(this.world);
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
@@ -142,23 +107,6 @@ public class EntityPrehistoricFloraHyphalosaurus extends EntityPrehistoricFloraS
 	}
 
 	@Override
-	public void eatItem(ItemStack stack) {
-		if (stack != null && stack.getItem() != null) {
-			float itemHealth = 0.5F; //Default minimal nutrition
-			if (stack.getItem() instanceof ItemFood) {
-				itemHealth = ((ItemFood) stack.getItem()).getHealAmount(stack);
-			}
-			this.setHealth(Math.min(this.getHealth() + itemHealth, (float) this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getBaseValue()));
-			stack.shrink(1);
-			if (this.getAnimation() == NO_ANIMATION && !world.isRemote) {
-				this.setAnimation(EAT_ANIMATION);
-				SoundEvent soundevent = SoundEvents.ENTITY_GENERIC_EAT;
-				this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-			}
-		}
-	}
-
-	@Override
 	public int getAdultAge() {
 		return 64000;
 	}
@@ -169,21 +117,9 @@ public class EntityPrehistoricFloraHyphalosaurus extends EntityPrehistoricFloraS
 	}
 
 	@Override
-	public boolean isNearWater(Entity e, BlockPos pos) {
+	public boolean isSmall() {
 		return true;
 	}
-
-	public AxisAlignedBB getAttackBoundingBox() {
-		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
-	}
-
-	@Override
-	public int getAttackLength() {
-		return 10;
-	}
-
-
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAI(this, 1.0D));
@@ -210,60 +146,12 @@ public class EntityPrehistoricFloraHyphalosaurus extends EntityPrehistoricFloraS
 	}
 
 	@Override
-	public boolean isAIDisabled() {
-		return false;
-	}
-
-	@Override
-	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
-	}
-
-	@Override
-	protected boolean canDespawn() {
-		return false;
-	}
-
-	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
-
-	@Override
-	protected boolean canTriggerWalking() {
-		return true;
-	}
-
-	@Override
-	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:hyphalosaurus_idle"));
-	}
-
-	@Override
-	public SoundEvent getHurtSound(DamageSource ds) {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:hyphalosaurus_hurt"));
-	}
-
-	//@Override
-	//public SoundEvent getHurtSound(DamageSource ds) {
-	//	return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
-	//}
-
-	@Override
-	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:hyphalosaurus_death"));
-	}
-
-	//@Override
-	//public SoundEvent getDeathSound() {
-	//	return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
-	//}
 
 	@Override
 	protected float getSoundVolume() {
@@ -314,26 +202,9 @@ public class EntityPrehistoricFloraHyphalosaurus extends EntityPrehistoricFloraS
 
 	}
 
-	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-	}
-
-	@Override
-	public boolean getCanSpawnHere() {
-		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
-	}
-
 	public boolean isNotColliding() {
 		return this.world.checkNoEntityCollision(this.getEntityBoundingBox(), this);
 	}
-
-
-	@Override
-	public boolean isOnLadder() {
-		return false;
-	}
-
 
 	@Override
 	public boolean attackEntityAsMob(Entity entity) {
@@ -357,11 +228,11 @@ public class EntityPrehistoricFloraHyphalosaurus extends EntityPrehistoricFloraS
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_HYPHALOSAURUS;
+		return ModTriggers.CLICK_SHOKAWA;
 	}
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.HYPHALOSAURUS_LOOT;
+		return LepidodendronMod.SHOKAWA_LOOT;
 	}
 	//Rendering taxidermy:
 	//--------------------

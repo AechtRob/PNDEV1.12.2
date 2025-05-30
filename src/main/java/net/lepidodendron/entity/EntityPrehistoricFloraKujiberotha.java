@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.base.IAdvancementGranter;
@@ -17,12 +18,15 @@ import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
@@ -40,10 +44,14 @@ public class EntityPrehistoricFloraKujiberotha extends EntityPrehistoricFloraIns
 	public ChainBuffer chainBuffer;
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
+	public Animation STAND_ANIMATION;
+	private int standCooldown;
 
 	public EntityPrehistoricFloraKujiberotha(World world) {
 		super(world);
 		setSize(0.3F, 0.2F);
+		STAND_ANIMATION = Animation.create(46);
+
 	}
 
 	@Override
@@ -112,10 +120,10 @@ public class EntityPrehistoricFloraKujiberotha extends EntityPrehistoricFloraIns
 		this.animation = animation;
 	}
 
+
 	@Override
-	public Animation[] getAnimations()
-	{
-		return null;
+	public Animation[] getAnimations() {
+		return new Animation[]{ATTACK_ANIMATION, STAND_ANIMATION};
 	}
 
 	protected void onAnimationFinish(Animation animation)
@@ -126,12 +134,72 @@ public class EntityPrehistoricFloraKujiberotha extends EntityPrehistoricFloraIns
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
+		if (this.getAnimation() == STAND_ANIMATION) {
+			return 0.0F;
+		}
+		if (this.flyProgress == 0 || this.getAttachmentPos() != null) {
+			return 0.0f;
+		}
 		return 2.76f;
+	}
+
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return animation == STAND_ANIMATION;
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.standCooldown = rand.nextInt(3000);
+		return livingdata;
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound)
+	{
+		super.writeEntityToNBT(compound);
+		compound.setInteger("standCooldown", this.standCooldown);
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.standCooldown = compound.getInteger("standCooldown");
 	}
 
 	@Override
 	public boolean isAIDisabled() {
 		return false;
+	}
+
+	@Override
+	public void onLivingUpdate() {
+		super.onLivingUpdate();
+
+		if (this.standCooldown > 0) {
+			this.standCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.standCooldown < 0) {
+			this.standCooldown = 0;
+		}
+		AnimationHandler.INSTANCE.updateAnimations(this);
+
+	}
+
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+
+		//Sometimes stand up and look around:
+		if ((!this.world.isRemote)  && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+				&& this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+			this.setAnimation(STAND_ANIMATION);
+			this.standCooldown = 3000;
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 3000;
+			this.setAnimation(NO_ANIMATION);
+		}
+
 	}
 
 

@@ -3210,6 +3210,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation CHAOYANGOPTERUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chaoyangopterus"));
 	public static final int ENTITY_SASAYAMAGNOMUS = 1311;
 	public static final ResourceLocation SASAYAMAGNOMUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sasayamagnomus"));
+	public static final ResourceLocation SASAYAMAGNOMUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sasayamagnomus_young"));
 	public static final int ENTITY_SHOKAWA = 1312;
 	public static final ResourceLocation SHOKAWA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/shokawa"));
 	public static final int ENTITY_CHUHSIUNGICHTHYS = 1313;
