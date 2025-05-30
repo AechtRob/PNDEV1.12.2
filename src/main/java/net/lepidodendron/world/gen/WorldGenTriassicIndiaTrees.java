@@ -1,9 +1,9 @@
 package net.lepidodendron.world.gen;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
-import net.lepidodendron.procedure.ProcedureWorldGenDicroidiumO;
-import net.lepidodendron.procedure.ProcedureWorldGenSphenobaiera;
+import net.lepidodendron.procedure.*;
 import net.lepidodendron.util.Functions;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -12,10 +12,10 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import java.util.Random;
 
-public class WorldGenSphenobaieraTree extends WorldGenAbstractTree
+public class WorldGenTriassicIndiaTrees extends WorldGenAbstractTree
 {
 
-    public WorldGenSphenobaieraTree(boolean notify)
+    public WorldGenTriassicIndiaTrees(boolean notify)
     {
         super(notify);
     }
@@ -77,6 +77,23 @@ public class WorldGenSphenobaieraTree extends WorldGenAbstractTree
                 BlockPos down = position.down();
                 IBlockState state = worldIn.getBlockState(down);
                 boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
+                boolean hasWater = false;
+                for (int xx = -4; xx <= 4; xx++) {
+                    for (int yy = -2; yy <= 2; yy++) {
+                        for (int zz = -4; zz <= 4; zz++) {
+                            if (worldIn.getBlockState(position.add(xx, yy, zz)).getMaterial() == Material.WATER) {
+                                hasWater = true;
+                                break;
+                            }
+                        }
+                        if (hasWater) {
+                            break;
+                        }
+                    }
+                    if (hasWater) {
+                        break;
+                    }
+                }
 
                 if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
@@ -85,16 +102,31 @@ public class WorldGenSphenobaieraTree extends WorldGenAbstractTree
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
-                    if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_karoo_forest")
-                        && position.getY() < Functions.getAdjustedSeaLevel(worldIn, position) + 8) {
-                        return false;
-                    }
-                    if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_karoo_forest")
-                            && position.getY() < Functions.getAdjustedSeaLevel(worldIn, position) + 8) {
-                        ProcedureWorldGenDicroidiumO.executeProcedure($_dependencies);
+                    $_dependencies.put("SaplingSpawn", false);
+                    if ((!hasWater) && rand.nextInt(18) == 0) {
+                        ProcedureWorldGenDicroidiumH.executeProcedure($_dependencies);
                         return true;
                     }
-					ProcedureWorldGenSphenobaiera.executeProcedure($_dependencies);
+                    if (!hasWater) {
+                        return false;
+                    }
+                    int t = rand.nextInt(11);
+                    switch (t) {
+                        case 0: default:
+                            ProcedureWorldGenAraucarioxylon.executeProcedure($_dependencies);
+
+                        case 1: case 2:
+                            ProcedureWorldGenRissikia.executeProcedure($_dependencies);
+
+                        case 3: case 4:
+                            ProcedureWorldGenPodozamites.executeProcedure($_dependencies);
+
+                        case 5: case 6: case 7: case 8:
+                            ProcedureWorldGenDesmiophyllum.executeProcedure($_dependencies);
+
+                        case 9: case 10:
+                            ProcedureWorldGenDicroidiumO.executeProcedure($_dependencies);
+                    }
                     return true;
                 }
                 else
