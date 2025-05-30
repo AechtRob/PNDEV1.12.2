@@ -45,6 +45,17 @@ public class EntityPrehistoricFloraArgentinala extends EntityPrehistoricFloraMeg
 	}
 
 	@Override
+	protected float getAISpeedInsect() {
+		if (this.getTicks() < 0) {
+			return 0.0F; //Is laying eggs
+		}
+		if (this.flyProgress == 0 || this.getAttachmentPos() != null) {
+			return 0.0f;
+		}
+		return 3f;
+	}
+
+	@Override
 	public String getEntityId(Entity entity) {
 		return "lepidodendron:prehistoric_flora_aquaticnymph@damselfly";
 	}

@@ -2,22 +2,27 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLacewing;
-import net.lepidodendron.entity.model.entity.ModelLacewing;
+import net.lepidodendron.entity.model.entity.*;
+import net.lepidodendron.entity.render.RenderLivingBaseVariantModels;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderLacewing extends RenderLivingBaseWithBook<EntityPrehistoricFloraLacewing> {
+public class RenderLacewing extends RenderLivingBaseVariantModels<EntityPrehistoricFloraLacewing> {
     public static final ResourceLocation TEXTURE_AETHEOGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lacewing_aetheogramma.png");
     public static final ResourceLocation TEXTURE_CRETAPSYCHOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lacewing_cretapsychops.png");
     public static final ResourceLocation TEXTURE_LACCOSMYLUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lacewing_laccosmylus.png");
     public static final ResourceLocation TEXTURE_LICHENIPOLYSTOECHOTES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lacewing_lichenipolystoechotes.png");
     public static final ResourceLocation TEXTURE_BELLINYMPHA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lacewing_bellinympha.png");
     public static final ResourceLocation TEXTURE_GRAMMOLINGIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lacewing_grammolingia.png");
+    public static final ResourceLocation TEXTURE_NUDDSIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/nuddsia.png");
+    public static final ResourceLocation TEXTURE_KARENINA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/karenina.png");
+    public static final ResourceLocation TEXTURE_KRIKA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/krika.png");
 
     public RenderLacewing(RenderManager mgr) {
-        super(mgr, new ModelLacewing(), 0.0f);
+        super(mgr, new ModelLacewing(), new ModelBase[]{new ModelLacewing(), new ModelKrika(), new ModelNuddsia(), new ModelKarenina()},0.0f);
     }
 
 
@@ -41,6 +46,43 @@ public class RenderLacewing extends RenderLivingBaseWithBook<EntityPrehistoricFl
 
             case GRAMMOLINGIA:
                 return TEXTURE_GRAMMOLINGIA;
+
+            case KRIKA:
+                return TEXTURE_KRIKA;
+
+            case NUDDSIA:
+                return TEXTURE_NUDDSIA;
+
+            case KARENINA:
+                return TEXTURE_KARENINA;
+        }
+    }
+
+
+    @Override
+    public ModelBase getModelFromArray(EntityPrehistoricFloraLacewing entity) {
+        switch (entity.getPNType()) {
+            case AETHEOGRAMMA: default:
+                return this.mainModelArray[0];
+
+            case CRETAPSYCHOPS:
+                return this.mainModelArray[0];
+            case LACCOSMYLUS:
+                return this.mainModelArray[0];
+            case LICHENIPOLYSTOECHOTES:
+                return this.mainModelArray[0];
+            case BELLINYMPHA:
+                return this.mainModelArray[0];
+            case GRAMMOLINGIA:
+                return this.mainModelArray[0];
+            case KRIKA:
+                return this.mainModelArray[1];
+            case NUDDSIA:
+                return this.mainModelArray[2];
+            case KARENINA:
+                return this.mainModelArray[3];
+
+
         }
     }
 
@@ -96,6 +138,15 @@ public class RenderLacewing extends RenderLivingBaseWithBook<EntityPrehistoricFl
 
             case GRAMMOLINGIA:
                 return 0.2F;
+
+            case KRIKA:
+                return 0.2F;
+
+            case NUDDSIA:
+                return 0.2F;
+
+            case KARENINA:
+                return 0.2F;
         }
     }
 
@@ -125,6 +176,18 @@ public class RenderLacewing extends RenderLivingBaseWithBook<EntityPrehistoricFl
 
             case GRAMMOLINGIA:
                 scaler = 0.2F;
+                break;
+
+            case KRIKA:
+                scaler = 0.2F;
+                break;
+
+            case NUDDSIA:
+                scaler = 0.1F;
+                break;
+
+            case KARENINA:
+                scaler = 0.14F;
                 break;
 
 

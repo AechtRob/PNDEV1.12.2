@@ -126,6 +126,15 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 				case GRAMMOLINGIA:
 					return new ItemStack(ItemSpawnEggLacewingGrammolingia.block, 1);
 
+				case KRIKA:
+					return new ItemStack(ItemSpawnEggLacewingKrika.block, 1);
+
+				case NUDDSIA:
+					return new ItemStack(ItemSpawnEggLacewingNuddsia.block, 1);
+
+				case KARENINA:
+					return new ItemStack(ItemSpawnEggLacewingKarenina.block, 1);
+
 			}
 		}
 		return ItemStack.EMPTY;
@@ -149,7 +158,10 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 		LACCOSMYLUS(3, "laccosmylus"),
 		LICHENIPOLYSTOECHOTES(4, "lichenipolystoechotes"),
 		BELLINYMPHA(5, "bellinympha"),
-		GRAMMOLINGIA(6, "grammolingia")
+		GRAMMOLINGIA(6, "grammolingia"),
+		KRIKA(7, "krika"),
+		NUDDSIA(8, "nuddsia"),
+		KARENINA(9, "karenina")
 		;
 
 		private final String name;
@@ -220,6 +232,15 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 
 			case GRAMMOLINGIA:
 				return LepidodendronMod.LACEWING_GRAMMOLINGIA_LOOT_JAR;
+
+			case KRIKA:
+				return LepidodendronMod.KRIKA_LOOT;
+
+			case NUDDSIA:
+				return LepidodendronMod.NUDDSIA_LOOT;
+
+			case KARENINA:
+				return LepidodendronMod.KARENINA_LOOT;
 				
 		}
 	}
@@ -248,6 +269,15 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 			case GRAMMOLINGIA:
 				return 3f;
 
+			case KRIKA:
+				return 3f;
+
+			case NUDDSIA:
+				return 3f;
+
+			case KARENINA:
+				return 3f;
+
 		}
 	}
 
@@ -270,6 +300,15 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 
 			case GRAMMOLINGIA:
 				return GRAMMOLINGIA_SIZE;
+
+			case KRIKA:
+				return KRIKA_SIZE;
+
+			case NUDDSIA:
+				return NUDDSIA_SIZE;
+
+			case KARENINA:
+				return KARENINA_SIZE;
 		}
 	}
 
@@ -299,6 +338,15 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 
 			case GRAMMOLINGIA:
 				return 0.0;
+
+			case KRIKA:
+				return 0.0;
+
+			case NUDDSIA:
+				return 0.0;
+
+			case KARENINA:
+				return 0.0;
 		}
 	}
 
@@ -320,6 +368,15 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 				return 0.0;
 
 			case GRAMMOLINGIA:
+				return 0.0;
+
+			case KRIKA:
+				return 0.0;
+
+			case NUDDSIA:
+				return 0.0;
+
+			case KARENINA:
 				return 0.0;
 		}
 	}
@@ -557,6 +614,9 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 	protected float getAISpeedInsect() {
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
+		}
+		if (this.flyProgress == 0 || this.getAttachmentPos() != null) {
+			return 0.0f;
 		}
 		return getFlySpeed();
 	}

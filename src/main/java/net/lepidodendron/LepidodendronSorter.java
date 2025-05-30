@@ -5729,6 +5729,10 @@ public class LepidodendronSorter {
     public static final int krika_raw = 5468;
     public static final int nuddsia_raw = 5469;
     public static final int karenina_raw = 5470;
+    public static final int yezoceras_raw = 5471;
+    public static final int shell_yezoceras = 5472;
+    public static final int nipponites_raw = 5473;
+    public static final int shell_nipponites = 5474;
 
 
 

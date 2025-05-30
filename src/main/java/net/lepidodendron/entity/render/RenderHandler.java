@@ -7851,6 +7851,24 @@ public class RenderHandler {
                 return new RenderEuroka(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraYezoceras.class, new IRenderFactory<EntityPrehistoricFloraYezoceras>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraYezoceras> createRenderFor(RenderManager manager) {
+                return new RenderYezoceras(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraNipponites.class, new IRenderFactory<EntityPrehistoricFloraNipponites>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraNipponites> createRenderFor(RenderManager manager) {
+                return new RenderNipponites(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSpectrovenator.class, new IRenderFactory<EntityPrehistoricFloraSpectrovenator>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSpectrovenator> createRenderFor(RenderManager manager) {
+                return new RenderSpectrovenator(manager);
+            }
+        });
         
         
 
@@ -8027,6 +8045,8 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellInversoceras.TileEntityCustom.class, new RenderNautiloidShellInversoceras());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellPentameroceras.TileEntityCustom.class, new RenderNautiloidShellPentameroceras());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellJeppssonoceras.TileEntityCustom.class, new RenderNautiloidShellJeppssonoceras());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellNipponites.TileEntityCustom.class, new RenderNautiloidShellNipponites());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellYezoceras.TileEntityCustom.class, new RenderNautiloidShellYezoceras());
 
 
 

@@ -117,6 +117,7 @@ public class EntityPrehistoricFloraHangingfly extends EntityPrehistoricFloraInse
 		this.animation = animation;
 	}
 
+
 	@Override
 	public Animation[] getAnimations()
 	{
@@ -131,10 +132,10 @@ public class EntityPrehistoricFloraHangingfly extends EntityPrehistoricFloraInse
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if(!isFlying()){
-			return 0f;
+		if (this.flyProgress == 0 || this.getAttachmentPos() != null) {
+			return 0.0f;
 		}
-		return 0.01f;
+		return 0.2f;
 	}
 
 	@Override
