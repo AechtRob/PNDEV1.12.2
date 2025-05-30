@@ -1277,7 +1277,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 if (this.getAttackTarget().isDead) {
                     this.setAttackTarget(null);
                 }
-                if (this.getAttackTarget() instanceof EntityPlayer) {
+                else if (this.getAttackTarget() instanceof EntityPlayer) {
                     if (((EntityPlayer)this.getAttackTarget()).isCreative()) {
                         this.setAttackTarget(null);
                     }
@@ -1292,7 +1292,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 if (this.getWarnTarget().isDead) {
                     this.setWarnTarget(null);
                 }
-                if (this.getWarnTarget() instanceof EntityPlayer) {
+                else if (this.getWarnTarget() instanceof EntityPlayer) {
                     if (((EntityPlayer)this.getWarnTarget()).isCreative()) {
                         this.setWarnTarget(null);
                     }
@@ -1305,7 +1305,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 if (this.getRevengeTarget().isDead) {
                     this.setRevengeTarget(null);
                 }
-                if (this.getRevengeTarget() instanceof EntityPlayer) {
+                else if (this.getRevengeTarget() instanceof EntityPlayer) {
                     if (((EntityPlayer)this.getRevengeTarget()).isCreative()) {
                         this.setRevengeTarget(null);
                     }
@@ -1633,6 +1633,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
         if (this.getAttackTarget() != null && this.wasWarning) {
             if (this.getDistance(this.getAttackTarget()) >= this.warnDistance()) {
+                this.setAttackTarget(null);
+            }
+        }
+        if (this.getAttackTarget() != null && !this.wasWarning) {
+            if (this.getAttackTarget() == this.getWarnTarget() && this.getDistance(this.getAttackTarget()) >= this.warnDistance()) {
                 this.setAttackTarget(null);
             }
         }
