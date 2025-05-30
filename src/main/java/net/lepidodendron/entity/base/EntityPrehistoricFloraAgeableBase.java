@@ -1634,6 +1634,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         if (this.getAttackTarget() != null && this.wasWarning) {
             if (this.getDistance(this.getAttackTarget()) >= this.warnDistance()) {
                 this.setAttackTarget(null);
+                this.setWarnTarget(null);
             }
         }
         if (this.getAttackTarget() != null && !this.wasWarning) {
