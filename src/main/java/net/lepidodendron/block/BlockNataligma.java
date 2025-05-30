@@ -116,7 +116,7 @@ public class BlockNataligma extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomeTriassic)
 		{
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_field")) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_karoo_plains")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -139,7 +139,7 @@ public class BlockNataligma extends ElementsLepidodendronMod.ModElement {
 
 		if (LepidodendronConfig.dimTriassic == dimID) {
 			GenChance = 25;
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_field")) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_karoo_plains")) {
 				GenChance = 92;
 			}
 		}

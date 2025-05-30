@@ -7,10 +7,8 @@ import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemPhyllothecaItem;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.permian.BiomePermian;
-import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
 import net.minecraft.block.SoundType;
@@ -107,19 +105,6 @@ public class BlockPhyllotheca extends ElementsLepidodendronMod.ModElement {
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_arid_lands_lush")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_arid")
 				|| biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-
-		if (biome instanceof BiomeTriassic) {
-			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
-			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.River
-				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.SouthAmericaAusAnt
-				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.CentralAfricaIndia
-				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.SouthAfricaMadagascar) {
 				biomeCriteria = true;
 			}
 			else {

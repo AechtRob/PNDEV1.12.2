@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
+import net.lepidodendron.procedure.ProcedureWorldGenDicroidiumO;
 import net.lepidodendron.procedure.ProcedureWorldGenSphenobaiera;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.state.IBlockState;
@@ -84,6 +85,15 @@ public class WorldGenSphenobaieraTree extends WorldGenAbstractTree
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
+                    if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_karoo_forest")
+                        && position.getY() < Functions.getAdjustedSeaLevel(worldIn, position) + 8) {
+                        return false;
+                    }
+                    if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_karoo_forest")
+                            && position.getY() < Functions.getAdjustedSeaLevel(worldIn, position) + 8) {
+                        ProcedureWorldGenDicroidiumO.executeProcedure($_dependencies);
+                        return true;
+                    }
 					ProcedureWorldGenSphenobaiera.executeProcedure($_dependencies);
                     return true;
                 }
