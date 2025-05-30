@@ -98,7 +98,6 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public int alarmCooldown;
     public int warnCooldown;
     public int ticksExistedAnimated;
-    public boolean wasWarning;
     public float getMaxTurnDistancePerTick;
     public int homeCooldown;
 
@@ -1277,7 +1276,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 if (this.getAttackTarget().isDead) {
                     this.setAttackTarget(null);
                 }
-                if (this.getAttackTarget() instanceof EntityPlayer) {
+                else if (this.getAttackTarget() instanceof EntityPlayer) {
                     if (((EntityPlayer)this.getAttackTarget()).isCreative()) {
                         this.setAttackTarget(null);
                     }
@@ -1292,7 +1291,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 if (this.getWarnTarget().isDead) {
                     this.setWarnTarget(null);
                 }
-                if (this.getWarnTarget() instanceof EntityPlayer) {
+                else if (this.getWarnTarget() instanceof EntityPlayer) {
                     if (((EntityPlayer)this.getWarnTarget()).isCreative()) {
                         this.setWarnTarget(null);
                     }
@@ -1305,7 +1304,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 if (this.getRevengeTarget().isDead) {
                     this.setRevengeTarget(null);
                 }
-                if (this.getRevengeTarget() instanceof EntityPlayer) {
+                else if (this.getRevengeTarget() instanceof EntityPlayer) {
                     if (((EntityPlayer)this.getRevengeTarget()).isCreative()) {
                         this.setRevengeTarget(null);
                     }
@@ -1617,9 +1616,6 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     }
                     else { //They attack
                         this.setAttackTarget(this.getWarnTarget());
-                        if (this instanceof IWarnOnlyButHit) { //These only attack if you are next to them
-                            this.wasWarning = true;
-                        }
                         this.setOneHit(true);
                         this.setWarnCooldown(0);
                     }
@@ -1631,9 +1627,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             }
         }
 
-        if (this.getAttackTarget() != null && this.wasWarning) {
-            if (this.getDistance(this.getAttackTarget()) >= this.warnDistance()) {
+        if (this.getAttackTarget() != null) {
+            if (this.getAttackTarget() == this.getWarnTarget() && this.getDistance(this.getAttackTarget()) >= this.warnDistance()) {
                 this.setAttackTarget(null);
+                this.setWarnTarget(null);
             }
         }
 

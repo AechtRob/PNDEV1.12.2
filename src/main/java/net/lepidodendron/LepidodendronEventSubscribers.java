@@ -3,7 +3,6 @@ package net.lepidodendron;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.EntityPrehistoricFloraGuanoBall;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeteor;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
 import net.lepidodendron.entity.util.*;
@@ -67,7 +66,6 @@ import net.minecraftforge.event.entity.EntityMountEvent;
 import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.*;
 import net.minecraftforge.event.world.BlockEvent;
@@ -350,13 +348,6 @@ public class LepidodendronEventSubscribers {
 				}
 			}
 		}
-	}
-
-	@SubscribeEvent //Default to standard attack behaviour
-	public void attackTargetSet(LivingSetAttackTargetEvent event) {
-		  if (event.getEntity() instanceof EntityPrehistoricFloraAgeableBase) {
-			  ((EntityPrehistoricFloraAgeableBase)event.getEntity()).wasWarning = false;
-		  }
 	}
 
 	@SubscribeEvent //Some instructions for use of rideables
