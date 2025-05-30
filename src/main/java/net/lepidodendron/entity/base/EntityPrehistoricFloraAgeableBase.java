@@ -98,7 +98,6 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public int alarmCooldown;
     public int warnCooldown;
     public int ticksExistedAnimated;
-    public boolean wasWarning;
     public float getMaxTurnDistancePerTick;
     public int homeCooldown;
 
@@ -1617,9 +1616,6 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     }
                     else { //They attack
                         this.setAttackTarget(this.getWarnTarget());
-                        if (this instanceof IWarnOnlyButHit) { //These only attack if you are next to them
-                            this.wasWarning = true;
-                        }
                         this.setOneHit(true);
                         this.setWarnCooldown(0);
                     }
@@ -1631,13 +1627,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             }
         }
 
-        if (this.getAttackTarget() != null && this.wasWarning) {
-            if (this.getDistance(this.getAttackTarget()) >= this.warnDistance()) {
-                this.setAttackTarget(null);
-                this.setWarnTarget(null);
-            }
-        }
-        if (this.getAttackTarget() != null && !this.wasWarning) {
+        if (this.getAttackTarget() != null) {
             if (this.getAttackTarget() == this.getWarnTarget() && this.getDistance(this.getAttackTarget()) >= this.warnDistance()) {
                 this.setAttackTarget(null);
                 this.setWarnTarget(null);
