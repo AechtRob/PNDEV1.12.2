@@ -2,11 +2,9 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
-import net.lepidodendron.entity.render.entity.RenderDiictodon;
 import net.lepidodendron.entity.render.entity.RenderRepenomamus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
@@ -152,7 +150,7 @@ public class EntityPrehistoricFloraRepenomamus extends EntityPrehistoricFloraMor
 		if (this.standCooldown < 0) {
 			this.standCooldown = 0;
 		}
-		AnimationHandler.INSTANCE.updateAnimations(this);
+		//AnimationHandler.INSTANCE.updateAnimations(this);
 
 		//System.err.println("Eating: " + this.getEatTarget() + " isFast " + this.getIsFast());
 
