@@ -48,10 +48,10 @@ public class EntityPrehistoricFloraCandidodon extends EntityPrehistoricFloraDiic
 
 	public EntityPrehistoricFloraCandidodon(World world) {
 		super(world);
-		setSize(0.2F, 0.1F);
+		setSize(0.2F, 0.3F);
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
-		maxHeight = 0.1F;
+		maxHeight = 0.3F;
 		maxHealthAgeable = 8.0D;
 		STAND_ANIMATION = Animation.create(390);
 
@@ -269,7 +269,6 @@ public class EntityPrehistoricFloraCandidodon extends EntityPrehistoricFloraDiic
 		if (this.standCooldown < 0) {
 			this.standCooldown = 0;
 		}
-		AnimationHandler.INSTANCE.updateAnimations(this);
 
 		//System.err.println("Eating: " + this.getEatTarget() + " isFast " + this.getIsFast());
 

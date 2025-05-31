@@ -162,13 +162,7 @@ public class EntityPrehistoricFloraProsalirus extends EntityPrehistoricFloraSwim
 
 	@Override
 	public String getEntityId(Entity entity) {
-		String mobid;
-		mobid = "lepidodendron:prehistoric_flora_tadpole";
-
-		if (this.hasPNVariants() && this.getPNTypeName() != null) {
-			mobid = mobid + "@" + "prosalirus";
-		}
-		return mobid;
+		return "lepidodendron:prehistoric_flora_tadpole@prosalirus";
 	}
 
 

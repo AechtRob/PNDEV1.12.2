@@ -50,6 +50,7 @@ public class EntityPrehistoricFloraSantanmantis extends EntityPrehistoricFloraLe
 	public Animation STAND_ANIMATION;
 	private int standCooldown;
 
+
 	public EntityPrehistoricFloraSantanmantis(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);

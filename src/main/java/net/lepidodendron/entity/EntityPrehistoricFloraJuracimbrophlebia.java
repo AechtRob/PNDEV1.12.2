@@ -129,8 +129,8 @@ public class EntityPrehistoricFloraJuracimbrophlebia extends EntityPrehistoricFl
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if(this.getAttachmentPos() != null){
-			return 0f;
+		if (this.flyProgress == 0 || this.getAttachmentPos() != null) {
+			return 0.0f;
 		}
 		return 2.76f;
 	}

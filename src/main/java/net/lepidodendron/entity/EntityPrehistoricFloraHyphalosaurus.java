@@ -79,7 +79,7 @@ public class EntityPrehistoricFloraHyphalosaurus extends EntityPrehistoricFloraS
 
 	@Override
 	public boolean isSmall() {
-		return getAgeScale() < 0.80;
+		return true;
 	}
 
 

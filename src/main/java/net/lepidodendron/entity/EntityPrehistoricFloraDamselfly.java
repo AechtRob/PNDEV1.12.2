@@ -46,13 +46,7 @@ public class EntityPrehistoricFloraDamselfly extends EntityPrehistoricFloraMegan
 
 	@Override
 	public String getEntityId(Entity entity) {
-		String mobid;
-		mobid = "lepidodendron:prehistoric_flora_aquaticnymph";
-
-		if (this.hasPNVariants() && this.getPNTypeName() != null) {
-			mobid = mobid + "@" + "damselfly";
-		}
-		return mobid;
+		return "lepidodendron:prehistoric_flora_aquaticnymph@damselfly";
 	}
 
 	@Nullable

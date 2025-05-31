@@ -46,13 +46,7 @@ public class EntityPrehistoricFloraMayfly extends EntityPrehistoricFloraMeganeur
 
 	@Override
 	public String getEntityId(Entity entity) {
-		String mobid;
-		mobid = "lepidodendron:prehistoric_flora_aquaticnymph";
-
-		if (this.hasPNVariants() && this.getPNTypeName() != null) {
-			mobid = mobid + "@" + "mayfly";
-		}
-		return mobid;
+		return "lepidodendron:prehistoric_flora_aquaticnymph@mayfly";
 	}
 
 	@Nullable
@@ -92,8 +86,8 @@ public class EntityPrehistoricFloraMayfly extends EntityPrehistoricFloraMeganeur
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if(!isFlying()) {
-			return 0f;
+		if (this.flyProgress == 0 || this.getAttachmentPos() != null) {
+			return 0.0f;
 		}
 		return 3f;
 	}
