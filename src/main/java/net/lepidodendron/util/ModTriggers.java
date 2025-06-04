@@ -387,6 +387,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MACROTAENIOPTERIS = new CustomTrigger("pf_book_macrotaeniopteris");
     public static final CustomTrigger CLICK_MAGNOLIA = new CustomTrigger("pf_book_magnolia");
     public static final CustomTrigger CLICK_MAPLE = new CustomTrigger("pf_book_maple");
+    public static final CustomTrigger CLICK_DINOPHYTON = new CustomTrigger("pf_book_dinophyton");
     public static final CustomTrigger CLICK_GUNNERA = new CustomTrigger("pf_book_gunnera");
     public static final CustomTrigger CLICK_MARATTIA = new CustomTrigger("pf_book_marattia");
     public static final CustomTrigger CLICK_LOPHOSORIA = new CustomTrigger("pf_book_lophosoria");
@@ -487,6 +488,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_WATER_CLOVER = new CustomTrigger("pf_book_water_clover");
     public static final CustomTrigger CLICK_SALVINIA = new CustomTrigger("pf_book_salvinia");
     public static final CustomTrigger CLICK_RUFLORIA = new CustomTrigger("pf_book_rufloria");
+    public static final CustomTrigger CLICK_YUCCITES = new CustomTrigger("pf_book_yuccites");
     public static final CustomTrigger CLICK_ACROCOMIA = new CustomTrigger("pf_book_acrocomia");
     public static final CustomTrigger CLICK_SABAL = new CustomTrigger("pf_book_sabal");
     public static final CustomTrigger CLICK_NYPA = new CustomTrigger("pf_book_nypa");
@@ -2416,6 +2418,7 @@ public class ModTriggers
             CLICK_MACROTAENIOPTERIS,
             CLICK_MAGNOLIA,
             CLICK_MAPLE,
+            CLICK_DINOPHYTON,
             CLICK_GUNNERA,
             CLICK_MARATTIA,
             CLICK_LOPHOSORIA,
@@ -2515,6 +2518,7 @@ public class ModTriggers
             CLICK_WATER_CLOVER,
             CLICK_SALVINIA,
             CLICK_RUFLORIA,
+            CLICK_YUCCITES,
             CLICK_ACROCOMIA,
             CLICK_SABAL,
             CLICK_NYPA,

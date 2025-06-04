@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:dinophyton_sapling"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_dinophyton.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_dinophyton.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_dinophyton"
+		}
+	}
+}

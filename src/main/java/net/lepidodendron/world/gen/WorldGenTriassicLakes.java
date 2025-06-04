@@ -112,21 +112,38 @@ public class WorldGenTriassicLakes extends WorldGenerator
                                 worldIn.immediateBlockTick(position.add(l1, i4 + 1, i3), Blocks.AIR.getDefaultState(), rand);
                                 Block blockPlant = worldIn.getBlockState(position.add(l1, i4, i3).up()).getBlock();
                                 if (blockPlant == Blocks.DOUBLE_PLANT || blockPlant == Blocks.RED_FLOWER || blockPlant == Blocks.YELLOW_FLOWER
-                                    || blockPlant == BlockPleuromeiaShoot.block || blockPlant == BlockPleuromeiaShootTopFlower.block|| blockPlant == BlockPleuromeiaShootTopFlower.block || blockPlant == BlockPleuromeiaStem.block) {
+                                    || blockPlant == BlockPleuromeiaShoot.block || blockPlant == BlockPleuromeiaShootTopFlower.block|| blockPlant == BlockPleuromeiaShootTopFlower.block || blockPlant == BlockPleuromeiaStem.block
+                                    || blockPlant == BlockSchizoneura1.block || blockPlant == BlockSchizoneura2.block|| blockPlant == BlockSchizoneura3.block || blockPlant == BlockSchizoneura4.block || blockPlant == BlockSchizoneura5.block) {
                                     //fix for floating plants and half-plants:
                                     worldIn.setBlockToAir(position.add(l1, i4, i3).up());
                                 }
                                 blockPlant = worldIn.getBlockState(position.add(l1, i4, i3).up(2)).getBlock();
                                 if (blockPlant == Blocks.DOUBLE_PLANT || blockPlant == Blocks.RED_FLOWER || blockPlant == Blocks.YELLOW_FLOWER
-                                        || blockPlant == BlockPleuromeiaShoot.block || blockPlant == BlockPleuromeiaShootTopFlower.block|| blockPlant == BlockPleuromeiaShootTopFlower.block || blockPlant == BlockPleuromeiaStem.block) {
+                                        || blockPlant == BlockPleuromeiaShoot.block || blockPlant == BlockPleuromeiaShootTopFlower.block|| blockPlant == BlockPleuromeiaShootTopFlower.block || blockPlant == BlockPleuromeiaStem.block
+                                        || blockPlant == BlockSchizoneura1.block || blockPlant == BlockSchizoneura2.block|| blockPlant == BlockSchizoneura3.block || blockPlant == BlockSchizoneura4.block || blockPlant == BlockSchizoneura5.block) {
                                     //fix for floating plants and half-plants:
                                     worldIn.setBlockToAir(position.add(l1, i4, i3).up(2));
                                 }
                                 blockPlant = worldIn.getBlockState(position.add(l1, i4, i3).up(3)).getBlock();
                                 if (blockPlant == Blocks.DOUBLE_PLANT || blockPlant == Blocks.RED_FLOWER || blockPlant == Blocks.YELLOW_FLOWER
-                                        || blockPlant == BlockPleuromeiaShoot.block || blockPlant == BlockPleuromeiaShootTopFlower.block|| blockPlant == BlockPleuromeiaShootTopFlower.block || blockPlant == BlockPleuromeiaStem.block) {
+                                        || blockPlant == BlockPleuromeiaShoot.block || blockPlant == BlockPleuromeiaShootTopFlower.block|| blockPlant == BlockPleuromeiaShootTopFlower.block || blockPlant == BlockPleuromeiaStem.block
+                                        || blockPlant == BlockSchizoneura1.block || blockPlant == BlockSchizoneura2.block|| blockPlant == BlockSchizoneura3.block || blockPlant == BlockSchizoneura4.block || blockPlant == BlockSchizoneura5.block) {
                                     //fix for floating plants and half-plants:
                                     worldIn.setBlockToAir(position.add(l1, i4, i3).up(3));
+                                }
+                                blockPlant = worldIn.getBlockState(position.add(l1, i4, i3).up(4)).getBlock();
+                                if (blockPlant == Blocks.DOUBLE_PLANT || blockPlant == Blocks.RED_FLOWER || blockPlant == Blocks.YELLOW_FLOWER
+                                        || blockPlant == BlockPleuromeiaShoot.block || blockPlant == BlockPleuromeiaShootTopFlower.block|| blockPlant == BlockPleuromeiaShootTopFlower.block || blockPlant == BlockPleuromeiaStem.block
+                                        || blockPlant == BlockSchizoneura1.block || blockPlant == BlockSchizoneura2.block|| blockPlant == BlockSchizoneura3.block || blockPlant == BlockSchizoneura4.block || blockPlant == BlockSchizoneura5.block) {
+                                    //fix for floating plants and half-plants:
+                                    worldIn.setBlockToAir(position.add(l1, i4, i3).up(4));
+                                }
+                                blockPlant = worldIn.getBlockState(position.add(l1, i4, i3).up(5)).getBlock();
+                                if (blockPlant == Blocks.DOUBLE_PLANT || blockPlant == Blocks.RED_FLOWER || blockPlant == Blocks.YELLOW_FLOWER
+                                        || blockPlant == BlockPleuromeiaShoot.block || blockPlant == BlockPleuromeiaShootTopFlower.block|| blockPlant == BlockPleuromeiaShootTopFlower.block || blockPlant == BlockPleuromeiaStem.block
+                                        || blockPlant == BlockSchizoneura1.block || blockPlant == BlockSchizoneura2.block|| blockPlant == BlockSchizoneura3.block || blockPlant == BlockSchizoneura4.block || blockPlant == BlockSchizoneura5.block) {
+                                    //fix for floating plants and half-plants:
+                                    worldIn.setBlockToAir(position.add(l1, i4, i3).up(5));
                                 }
                             }
                             else {

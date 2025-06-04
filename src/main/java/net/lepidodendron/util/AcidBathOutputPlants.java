@@ -498,6 +498,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockAraucarioxylonSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWoodworthiaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSchilderiaSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockYuccitesSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockArboramosaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockThinnfeldiaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAridHorsetail.block).toString(),
@@ -605,6 +606,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockGreenStemmedAlgae.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockLiverwort.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockDesmiophyllumSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockDinophytonSapling.block).toString(),
                 "minecraft:small_fern",
                 "minecraft:large_fern"
 

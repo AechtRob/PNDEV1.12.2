@@ -133,10 +133,11 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 		GenChance = Math.min(15, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
 		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
-			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
-				GenChance = 15;
+			GenChance = 15;
 		}
-
+		if (biome instanceof BiomeTriassic) {
+			GenChance = 15;
+		}
 		int maxheight = LepidodendronConfigPlants.maxheightAethophyllum;
 		int minheight = LepidodendronConfigPlants.minheightAethophyllum;
 		if (maxheight < 0) {maxheight = 0;}

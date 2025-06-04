@@ -5231,6 +5231,21 @@ public class LepidodendronSorter {
     public static final int desmiophyllum_leaves_berries = 8174;
     public static final int desmiophyllum_sapling = 8175;
     public static final int desmiophyllum_seed = 8176;
+
+    public static final int dinophyton_leaves = 8177;
+    public static final int dinophyton_seeds = 8178;
+    public static final int dinophyton_sapling = 8179;
+    
+    public static final int yuccites_fence_thin = 8180;
+    public static final int yuccites_fruit = 8181;
+    public static final int yuccites_seed = 8182;
+    public static final int yuccites_fence_gate_thin = 8183;
+    public static final int yuccites_shoot = 8184;
+    public static final int yuccites_shoot_centre = 8485;
+    public static final int yuccites_shoot_top = 8186;
+    public static final int yuccites_shoot_worldgen = 8187;
+    public static final int yuccites_log = 8188;
+    public static final int yuccites_sapling = 8189;
     
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;
