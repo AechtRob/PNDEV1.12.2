@@ -70,7 +70,9 @@ public class LepidodendronConfig {
     public static boolean blockMobs = true;
     public static boolean blockMobsFAExceptions = true;
     public static boolean doMeteorites = true;
+    public static boolean doVolcanos = true;
     public static boolean doMeteoritesGriefing = true;
+    public static boolean doVolcanoGriefing = true;
     public static boolean doGuanoGriefing = true;
     public static boolean doGuanoBats = true;
     public static boolean fixApples = true;
@@ -501,6 +503,16 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "doMeteorites", doMeteorites);
         prop.setComment("Enable meteors in the relevant dimensions [default: true]");
         doMeteorites = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "doVolcanos", doVolcanos);
+        prop.setComment("Allow volcanos to erupt [default: true]");
+        doVolcanos = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "doVolcanoGriefing", doVolcanoGriefing);
+        prop.setComment("Volcano fireballs set things on fire (note that this is also tied to the more general mobGriefing gamerule) [default: true]");
+        doVolcanoGriefing = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "doMeteoritesGriefing", doMeteoritesGriefing);

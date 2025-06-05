@@ -1,8 +1,8 @@
 package net.lepidodendron.entity;
 
+import net.lepidodendron.LepidodendronConfig;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.projectile.EntitySmallFireball;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -21,22 +21,16 @@ public class EntityVolcano extends Entity
         setSize(0.0F, 0.0F);
     }
 
-    @Override
-    public void onUpdate()
+     public void onUpdate()
     {
-        super.onUpdate();
-
         if (!canExistAt())
         {
             setDead();
             return;
         }
 
-        if (this.rand.nextInt(48) == 0) {
-            double xx = this.rand.nextDouble() * (this.rand.nextBoolean() ? 1 : -1);
-            double zz = this.rand.nextDouble() * (this.rand.nextBoolean() ? 1 : -1);
-            double yy = this.rand.nextDouble();
-            EntitySmallFireball fire = new EntitySmallFireball(this.world, this.posX, this.posY, this.posZ, xx, yy, zz);
+        if (this.rand.nextInt(48) == 0 && LepidodendronConfig.doVolcanos) {
+            EntityVolcanoFireball fire = new EntityVolcanoFireball(this.world, this.posX, this.posY, this.posZ, this);
             this.world.spawnEntity(fire);
         }
     }

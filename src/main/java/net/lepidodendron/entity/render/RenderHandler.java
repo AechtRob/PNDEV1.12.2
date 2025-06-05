@@ -7961,6 +7961,12 @@ public class RenderHandler {
                 return new RenderMeteor(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityVolcanoFireball.class, new IRenderFactory<EntityVolcanoFireball>() {
+            @Override
+            public Render<? super EntityVolcanoFireball> createRenderFor(RenderManager manager) {
+                return new RenderVolcanoFireball(manager);
+            }
+        });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGuanoGolem.class, new IRenderFactory<EntityPrehistoricFloraGuanoGolem>() {
             @Override
             public Render<? super EntityPrehistoricFloraGuanoGolem> createRenderFor(RenderManager manager) {

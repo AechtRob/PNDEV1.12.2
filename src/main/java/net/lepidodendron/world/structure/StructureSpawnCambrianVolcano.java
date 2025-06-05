@@ -4,6 +4,7 @@ package net.lepidodendron.world.structure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
+import net.lepidodendron.entity.EntityVolcano;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -167,6 +168,10 @@ public class StructureSpawnCambrianVolcano extends ElementsLepidodendronMod.ModE
 					while (zct <= radiusLake) {
 						if ((Math.pow((int) xct, 2) + Math.pow((int) zct, 2)) <= Math.pow((int) radiusLake, 2)) {
 							Functions.setBlockStateAndCheckForDoublePlant(world,posLake.add(xct, yct + 33, zct), Blocks.FLOWING_LAVA.getDefaultState(), 3);
+							if (world.rand.nextInt(240) == 0) {
+								EntityVolcano volcanoEntity = new EntityVolcano(world, posLake.add(xct, yct + 33, zct));
+								world.spawnEntity(volcanoEntity);
+							}
 						}
 						zct +=1;
 					}

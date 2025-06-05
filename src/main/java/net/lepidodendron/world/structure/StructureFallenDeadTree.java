@@ -7,6 +7,7 @@ import net.lepidodendron.block.BlockDeadLog;
 import net.lepidodendron.procedure.ProcedureTreeLog;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
@@ -29,7 +30,8 @@ public class StructureFallenDeadTree extends ElementsLepidodendronMod.ModElement
 		if (world.isRemote)
 			return;
 
-		if (dimID != LepidodendronConfig.dimCretaceousEarly)
+		if (dimID != LepidodendronConfig.dimTriassic
+			&& dimID != LepidodendronConfig.dimCretaceousEarly)
 			return;
 
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
@@ -38,6 +40,14 @@ public class StructureFallenDeadTree extends ElementsLepidodendronMod.ModElement
 			if ((!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_flats"))
 					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_samerica_flats"))
 					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_samerica_flats_stream"))
+			) {
+				return;
+			}
+		}
+		else if (biome instanceof BiomeTriassic) {
+			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
+			if ((!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_estuary"))
+					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_estuary"))
 			) {
 				return;
 			}
@@ -51,6 +61,8 @@ public class StructureFallenDeadTree extends ElementsLepidodendronMod.ModElement
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_flats")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_samerica_flats")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_samerica_flats_stream")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_estuary")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_estuary")
 		) {
 			GenChance = 120000;
 			genTries = random.nextInt(3) + 1;
@@ -65,6 +77,7 @@ public class StructureFallenDeadTree extends ElementsLepidodendronMod.ModElement
 						(world.getBlockState(new BlockPos(i, height + 1, k)).getMaterial() == Material.AIR
 						|| world.getBlockState(new BlockPos(i, height + 1, k)).getMaterial() == Material.WATER)
 					&& (world.getBlockState(new BlockPos(i, height, k)).getMaterial() == Material.SAND
+						|| world.getBlockState(new BlockPos(i, height, k)).getMaterial() == Material.CLAY
 						|| world.getBlockState(new BlockPos(i, height, k)).getMaterial() == Material.GROUND)
 				) {
 				} else {
