@@ -1245,7 +1245,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation PARHYBODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/parhybodus"));
 	public static final ResourceLocation PARHYBODUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/parhybodus_young"));
 	public static final int ENTITY_PROTOZYGOPTERA_NYMPH = 475;
-	public static final int ENTITY_TITANOPTERA_MESOTITAN = 476;
+	//public static final int ENTITY_TITANOPTERA_MESOTITAN = 476;
+	public static final int ENTITY_VOLCANO = 476;
 	public static final ResourceLocation TITANOPTERA_MESOTITAN_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/titanoptera_mesotitan"));
 	public static final ResourceLocation TITANOPTERA_MESOTITAN_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/titanoptera_mesotitan_jar"));
 	public static final int ENTITY_TITANOPTERA_CLATROTITAN = 477;
