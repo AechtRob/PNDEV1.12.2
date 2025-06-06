@@ -494,6 +494,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockAethophyllum.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAlpiaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAnomozamitesSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockTreefernSilverSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockPentoxylalesSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAntarcticycas.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAraucarioxylonSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWoodworthiaSapling.block).toString(),
@@ -607,6 +609,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockLiverwort.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockDesmiophyllumSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockDinophytonSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockPhoenicopsisSapling.block).toString(),
                 "minecraft:small_fern",
                 "minecraft:large_fern"
 
@@ -1129,7 +1132,6 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockSeaweed.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPaleoenkianthus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTylerianthus.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockDesmiophyllumSapling.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:dark_oak_sapling",
                 "minecraft:spruce_sapling",

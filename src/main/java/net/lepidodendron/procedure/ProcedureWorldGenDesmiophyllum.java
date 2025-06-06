@@ -62,7 +62,7 @@ public class ProcedureWorldGenDesmiophyllum extends ElementsLepidodendronMod.Mod
 			counter = 0;
 			while (counter <= TrunkHeight) {
 				yy = y + counter;
-				ProcedureTreeLog.executeProcedure((int) x, (int) yy, (int) z, world, BlockPodocarpLog.block, EnumFacing.NORTH);
+				ProcedureTreeLog.executeProcedure((int) x, (int) yy, (int) z, world, BlockCzekanowskiaLog.block, EnumFacing.NORTH);
 				counter = counter + 1;
 			}
 			ProcedureTreeLeaf.executeProcedure(x, y + TrunkHeight + 1, z, world, getLeaves());
@@ -72,15 +72,15 @@ public class ProcedureWorldGenDesmiophyllum extends ElementsLepidodendronMod.Mod
 			ProcedureTreeLeaf.executeProcedure(x, y + TrunkHeight, z - 1, world, getLeaves());
 
 			if (TrunkHeight >= 4) {
-				if (world.getBlockState(new BlockPos(x, y + 4, z)).getBlock() == BlockPodocarpLog.block) {
+				if (world.getBlockState(new BlockPos(x, y + 4, z)).getBlock() == BlockCzekanowskiaLog.block) {
 					world.setBlockToAir(new BlockPos(x, y + 4, z));
 					ProcedureTreeLeaf.executeProcedure(x, y + 4, z, world, getLeaves());
 				}
 				if (world.rand.nextInt(2) == 0) {
-					ProcedureTreeLog.executeProcedure((int) x + 1, (int) y + 4, (int) z, world, BlockPodocarpLog.block, EnumFacing.NORTH);
-					ProcedureTreeLog.executeProcedure((int) x - 1, (int) y + 4, (int) z, world, BlockPodocarpLog.block, EnumFacing.NORTH);
-					ProcedureTreeLog.executeProcedure((int) x + 1, (int) y + 3, (int) z, world, BlockPodocarpLog.block, EnumFacing.UP);
-					ProcedureTreeLog.executeProcedure((int) x - 1, (int) y + 3, (int) z, world, BlockPodocarpLog.block, EnumFacing.UP);
+					ProcedureTreeLog.executeProcedure((int) x + 1, (int) y + 4, (int) z, world, BlockCzekanowskiaLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) x - 1, (int) y + 4, (int) z, world, BlockCzekanowskiaLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) x + 1, (int) y + 3, (int) z, world, BlockCzekanowskiaLog.block, EnumFacing.UP);
+					ProcedureTreeLog.executeProcedure((int) x - 1, (int) y + 3, (int) z, world, BlockCzekanowskiaLog.block, EnumFacing.UP);
 					ProcedureTreeLeaf.executeProcedure(x - 2, y + 3, z, world, getLeaves());
 					ProcedureTreeLeaf.executeProcedure(x - 2, y + 4, z, world, getLeaves());
 					ProcedureTreeLeaf.executeProcedure(x + 2, y + 3, z, world, getLeaves());
@@ -105,10 +105,10 @@ public class ProcedureWorldGenDesmiophyllum extends ElementsLepidodendronMod.Mod
 					ProcedureTreeLeaf.executeProcedure(x + 1, y + 5, z, world, getLeaves());
 				}
 				else {
-					ProcedureTreeLog.executeProcedure((int) x, (int) y + 4, (int) z + 1, world, BlockPodocarpLog.block, EnumFacing.NORTH);
-					ProcedureTreeLog.executeProcedure((int) x, (int) y + 4, (int) z - 1, world, BlockPodocarpLog.block, EnumFacing.NORTH);
-					ProcedureTreeLog.executeProcedure((int) x, (int) y + 3, (int) z + 1, world, BlockPodocarpLog.block, EnumFacing.EAST);
-					ProcedureTreeLog.executeProcedure((int) x, (int) y + 3, (int) z - 1, world, BlockPodocarpLog.block, EnumFacing.EAST);
+					ProcedureTreeLog.executeProcedure((int) x, (int) y + 4, (int) z + 1, world, BlockCzekanowskiaLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) x, (int) y + 4, (int) z - 1, world, BlockCzekanowskiaLog.block, EnumFacing.NORTH);
+					ProcedureTreeLog.executeProcedure((int) x, (int) y + 3, (int) z + 1, world, BlockCzekanowskiaLog.block, EnumFacing.EAST);
+					ProcedureTreeLog.executeProcedure((int) x, (int) y + 3, (int) z - 1, world, BlockCzekanowskiaLog.block, EnumFacing.EAST);
 					ProcedureTreeLeaf.executeProcedure(x, y + 3, z - 2, world, getLeaves());
 					ProcedureTreeLeaf.executeProcedure(x, y + 4, z - 2, world, getLeaves());
 					ProcedureTreeLeaf.executeProcedure(x, y + 3, z + 2, world, getLeaves());
@@ -144,28 +144,28 @@ public class ProcedureWorldGenDesmiophyllum extends ElementsLepidodendronMod.Mod
 					ProcedureLeavesAroundLog.executeProcedure(x, y + 1, z, world, getLeaves(), 2, 0.5);
 
 					if (world.rand.nextInt(2) == 0) {
-						ProcedureTreeLog.executeProcedure((int) x, (int) y + 1, (int) z - 1, world, BlockPodocarpLog.block, EnumFacing.EAST);
+						ProcedureTreeLog.executeProcedure((int) x, (int) y + 1, (int) z - 1, world, BlockCzekanowskiaLog.block, EnumFacing.EAST);
 						ProcedureTreeLeaf.executeProcedure(x, y + 2, z - 1, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x, y + 1, z - 2, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x + 1, y + 1, z - 1, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x - 1, y + 1, z - 1, world, getLeaves());
 					}
 					if (world.rand.nextInt(2) == 0) {
-						ProcedureTreeLog.executeProcedure((int) x, (int) y + 1, (int) z + 1, world, BlockPodocarpLog.block, EnumFacing.EAST);
+						ProcedureTreeLog.executeProcedure((int) x, (int) y + 1, (int) z + 1, world, BlockCzekanowskiaLog.block, EnumFacing.EAST);
 						ProcedureTreeLeaf.executeProcedure(x, y + 2, z + 1, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x, y + 1, z + 2, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x + 1, y + 1, z + 1, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x - 1, y + 1, z + 1, world, getLeaves());
 					}
 					if (world.rand.nextInt(2) == 0) {
-						ProcedureTreeLog.executeProcedure((int) x - 1, (int) y + 1, (int) z, world, BlockPodocarpLog.block, EnumFacing.UP);
+						ProcedureTreeLog.executeProcedure((int) x - 1, (int) y + 1, (int) z, world, BlockCzekanowskiaLog.block, EnumFacing.UP);
 						ProcedureTreeLeaf.executeProcedure(x - 1, y + 2, z, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x - 2, y + 1, z, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x - 1, y + 1, z + 1, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x - 1, y + 1, z - 1, world, getLeaves());
 					}
 					if (world.rand.nextInt(2) == 0) {
-						ProcedureTreeLog.executeProcedure((int) x + 1, (int) y + 1, (int) z, world, BlockPodocarpLog.block, EnumFacing.UP);
+						ProcedureTreeLog.executeProcedure((int) x + 1, (int) y + 1, (int) z, world, BlockCzekanowskiaLog.block, EnumFacing.UP);
 						ProcedureTreeLeaf.executeProcedure(x + 1, y + 2, z, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x + 2, y + 1, z, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x + 1, y + 1, z + 1, world, getLeaves());
@@ -175,28 +175,28 @@ public class ProcedureWorldGenDesmiophyllum extends ElementsLepidodendronMod.Mod
 
 				if (TrunkHeight >= 3) {
 					if (world.rand.nextInt(2) == 0) {
-						ProcedureTreeLog.executeProcedure((int) x, (int) y + 2, (int) z - 1, world, BlockPodocarpLog.block, EnumFacing.EAST);
+						ProcedureTreeLog.executeProcedure((int) x, (int) y + 2, (int) z - 1, world, BlockCzekanowskiaLog.block, EnumFacing.EAST);
 						ProcedureTreeLeaf.executeProcedure(x, y + 3, z - 1, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x, y + 2, z - 2, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x + 1, y + 2, z - 1, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x - 1, y + 2, z - 1, world, getLeaves());
 					}
 					if (world.rand.nextInt(2) == 0) {
-						ProcedureTreeLog.executeProcedure((int) x, (int) y + 2, (int) z + 1, world, BlockPodocarpLog.block, EnumFacing.EAST);
+						ProcedureTreeLog.executeProcedure((int) x, (int) y + 2, (int) z + 1, world, BlockCzekanowskiaLog.block, EnumFacing.EAST);
 						ProcedureTreeLeaf.executeProcedure(x, y + 3, z + 1, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x, y + 2, z + 2, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x + 1, y + 2, z + 1, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x - 1, y + 2, z + 1, world, getLeaves());
 					}
 					if (world.rand.nextInt(2) == 0) {
-						ProcedureTreeLog.executeProcedure((int) x - 1, (int) y + 2, (int) z, world, BlockPodocarpLog.block, EnumFacing.UP);
+						ProcedureTreeLog.executeProcedure((int) x - 1, (int) y + 2, (int) z, world, BlockCzekanowskiaLog.block, EnumFacing.UP);
 						ProcedureTreeLeaf.executeProcedure(x - 1, y + 3, z, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x - 2, y + 2, z, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x - 1, y + 2, z + 1, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x - 1, y + 2, z - 1, world, getLeaves());
 					}
 					if (world.rand.nextInt(2) == 0) {
-						ProcedureTreeLog.executeProcedure((int) x + 1, (int) y + 2, (int) z, world, BlockPodocarpLog.block, EnumFacing.UP);
+						ProcedureTreeLog.executeProcedure((int) x + 1, (int) y + 2, (int) z, world, BlockCzekanowskiaLog.block, EnumFacing.UP);
 						ProcedureTreeLeaf.executeProcedure(x + 1, y + 3, z, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x + 2, y + 2, z, world, getLeaves());
 						ProcedureTreeLeaf.executeProcedure(x + 1, y + 2, z + 1, world, getLeaves());

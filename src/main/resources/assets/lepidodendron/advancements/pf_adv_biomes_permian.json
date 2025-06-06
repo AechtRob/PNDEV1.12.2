@@ -243,6 +243,18 @@
 			"conditions": {
 				"biome": "lepidodendron:permian_wetlands_hummocks"
 			}
+		},
+		"permian_lowlands_floodplain_brake": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_lowlands_floodplain_brake"
+			}
+		},
+		"permian_creek_lowlands_floodplain_brake": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_creek_lowlands_floodplain_brake"
+			}
 		}
 	},
 	"requirements": [
@@ -348,6 +360,10 @@
 		[
 			"permian_wooded_atoll",
 			"permian_wooded_atoll_rim"
+		],
+		[
+			"permian_lowlands_floodplain_brake",
+			"permian_creek_lowlands_floodplain_brake"
 		]
 	]
 }

@@ -15,7 +15,11 @@ import java.util.Random;
 public class WorldGenGordonopteris extends WorldGenerator
 {
 
-    public boolean generate(World worldIn, Random rand, BlockPos position)
+    public boolean generate(World worldIn, Random rand, BlockPos position) {
+        return generate(worldIn, rand, position, 0, 255);
+    }
+
+    public boolean generate(World worldIn, Random rand, BlockPos position, int minHeight, int maxHeight)
     {
         boolean flag = false;
 
@@ -24,6 +28,7 @@ public class WorldGenGordonopteris extends WorldGenerator
             BlockPos blockpos = position.add(rand.nextInt(6) - rand.nextInt(6), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(6) - rand.nextInt(6));
 
             if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockGordonopterisSapling.block.canPlaceBlockAt(worldIn, blockpos)
+                    && (blockpos.getY() >= minHeight && blockpos.getY() <= maxHeight)
             	&& (worldIn.getBlockState(blockpos.east()).getBlock() != BlockGordonopterisLog.block)
             	&& (worldIn.getBlockState(blockpos.west()).getBlock() != BlockGordonopterisLog.block)
             	&& (worldIn.getBlockState(blockpos.north()).getBlock() != BlockGordonopterisLog.block)

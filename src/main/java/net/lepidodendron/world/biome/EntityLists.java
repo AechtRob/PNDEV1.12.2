@@ -1330,7 +1330,9 @@ public class EntityLists {
                 }
             } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")
                     || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_lowlands_floodplain")
-                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain_lake")) {
+                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain_lake")
+                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain_brake")
+                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_lowlands_floodplain_brake")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsFloodplainPF);
                 }

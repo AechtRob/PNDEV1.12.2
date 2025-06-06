@@ -17,10 +17,14 @@ public class WorldGenCtenis extends WorldGenerator
 {
 
     public boolean generate(World worldIn, Random rand, BlockPos position) {
-        return generate(worldIn, rand, position, false);
+        return generate(worldIn, rand, position, false, 0, 255);
     }
 
-    public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater)
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater) {
+        return generate(worldIn, rand, position, needsWater, 0, 255);
+    }
+
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater, int minHeight, int maxHeight)
     {
         boolean flag = false;
         int offset = 4;
@@ -33,6 +37,7 @@ public class WorldGenCtenis extends WorldGenerator
             if (!needsWater) {
 
                 if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockCtenisSapling.block.canPlaceBlockAt(worldIn, blockpos)
+                        && (blockpos.getY() >= minHeight && blockpos.getY() <= maxHeight)
                         && (worldIn.getBlockState(blockpos.east()).getBlock() != BlockCtenisLog.block)
                         && (worldIn.getBlockState(blockpos.west()).getBlock() != BlockCtenisLog.block)
                         && (worldIn.getBlockState(blockpos.north()).getBlock() != BlockCtenisLog.block)
@@ -76,6 +81,7 @@ public class WorldGenCtenis extends WorldGenerator
                 }
                 if (waterCriteria) {
                     if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockCtenisSapling.block.canPlaceBlockAt(worldIn, blockpos)
+                            && (blockpos.getY() >= minHeight && blockpos.getY() <= maxHeight)
                             && (worldIn.getBlockState(blockpos.east()).getBlock() != BlockCtenisLog.block)
                             && (worldIn.getBlockState(blockpos.west()).getBlock() != BlockCtenisLog.block)
                             && (worldIn.getBlockState(blockpos.north()).getBlock() != BlockCtenisLog.block)
