@@ -1380,7 +1380,7 @@ public class EntityRegistries {
         registerEntityNoEgg("prehistoric_flora_submarine", PrehistoricFloraSubmarine.class, LepidodendronMod.ENTITY_SUBMARINE, 80);
         registerEntityNoEgg("prehistoric_flora_raft", EntityRaft.class, LepidodendronMod.ENTITY_RAFT, 80);
         registerEntityNoEgg("prehistoric_flora_buoy", EntityPrehistoricFloraBuoy.class, LepidodendronMod.ENTITY_BUOY, 256);
-        registerEntity("prehistoric_flora_volcano", EntityVolcano.class, LepidodendronMod.ENTITY_VOLCANO, 80, 0, 0);
+        registerEntityNoEgg("prehistoric_flora_volcano", EntityVolcano.class, LepidodendronMod.ENTITY_VOLCANO, 256);
 
 
 

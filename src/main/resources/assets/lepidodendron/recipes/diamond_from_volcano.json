@@ -1,0 +1,42 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:coal"
+    },
+    "1": {
+      "item": "minecraft:coal"
+    },
+    "2": {
+      "item": "minecraft:coal"
+    },
+    "3": {
+      "item": "minecraft:coal"
+    },
+    "4": {
+      "item": "lepidodendron:volcano_heart"
+    },
+    "5": {
+      "item": "minecraft:coal"
+    },
+    "6": {
+      "item": "minecraft:coal"
+    },
+    "7": {
+      "item": "minecraft:coal"
+    },
+    "8": {
+      "item": "minecraft:coal"
+    }
+  },
+  "result": {
+    "item": "minecraft:diamond_block",
+    "count": 1
+  }
+}

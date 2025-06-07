@@ -86,8 +86,9 @@ public class ItemVolcanoHeart extends ElementsLepidodendronMod.ModElement {
 
 					IBlockState iblockstate = worldIn.getBlockState(blockpos);
 
-					if (!(worldIn.isRemote)) {
-						if (iblockstate.getMaterial() == Material.LAVA) {
+
+					if (iblockstate.getMaterial() == Material.LAVA) {
+						if (!(worldIn.isRemote)) {
 							EntityVolcano volcanoEntity = new EntityVolcano(worldIn, blockpos);
 							worldIn.spawnEntity(volcanoEntity);
 						}
