@@ -1,8 +1,12 @@
 package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.item.ItemVolcanoHeart;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -25,6 +29,12 @@ public class EntityVolcano extends Entity
     {
         if (!canExistAt())
         {
+            //spawn the item:
+            if (!world.isRemote) {
+                EntityItem entityToSpawn = new EntityItem(this.world, this.getPosition().getX() + 0.5, this.getPosition().getY() + 1.1, this.getPosition().getZ() + 0.5, new ItemStack(ItemVolcanoHeart.block, 1));
+                entityToSpawn.setPickupDelay(10);
+                this.world.spawnEntity(entityToSpawn);
+            }
             setDead();
             return;
         }
@@ -32,6 +42,7 @@ public class EntityVolcano extends Entity
         if (this.rand.nextInt(48) == 0 && LepidodendronConfig.doVolcanos) {
             EntityVolcanoFireball fire = new EntityVolcanoFireball(this.world, this.posX, this.posY, this.posZ, this);
             this.world.spawnEntity(fire);
+            this.playSound(SoundEvents.ENTITY_BLAZE_SHOOT, 1.0F, 1.0F);
         }
     }
 

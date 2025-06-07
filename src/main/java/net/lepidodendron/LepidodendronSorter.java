@@ -5246,6 +5246,8 @@ public class LepidodendronSorter {
     public static final int yuccites_shoot_worldgen = 8187;
     public static final int yuccites_log = 8188;
     public static final int yuccites_sapling = 8189;
+
+    public static final int volcano_heart = 8190;
     
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;

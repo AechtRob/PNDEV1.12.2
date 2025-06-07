@@ -1,6 +1,7 @@
 package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronConfig;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.player.EntityPlayer;
@@ -149,7 +150,9 @@ public class EntityVolcanoFireball extends Entity
                     }
                 }
                 if (doGriefing) {
-                    this.world.setBlockState(this.getPosition(), Blocks.FIRE.getDefaultState());
+                    if (this.world.getBlockState(this.getPosition()) .getMaterial() != Material.LAVA) {
+                        this.world.setBlockState(this.getPosition(), Blocks.FIRE.getDefaultState(), 11);
+                    }
                 }
                 this.setDead();
             }
