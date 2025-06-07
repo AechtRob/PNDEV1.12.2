@@ -1397,7 +1397,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation MEGALOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/megalosaurus_young"));
 	public static final int GUI_COAL_TAR_PROCESSOR_ID = 547;
 	public static final int GUI_OLIGOPOOL_MACHINE_ID = 548;
-	//public static final int ENTITY_ASCOCERAS_BABY = 549;
+	public static final int ENTITY_VOLCANO_FIREBALL = 549;
 	public static final int GUI_LAB_BENCH_ID = 550;
 	public static final int GUI_MICROSCOPE_ID = 551;
 	public static final int GUI_SORTER_FOSSIL_ID = 552;

@@ -22,7 +22,6 @@ public class EntityVolcanoFireball extends Entity
     public EntityVolcanoFireball(World worldIn)
     {
         super(worldIn);
-        this.preventEntitySpawning = true;
         this.setSize(0.98F, 0.98F);
     }
 
@@ -136,7 +135,7 @@ public class EntityVolcanoFireball extends Entity
             {
                 this.onImpact(raytraceresult);
             }
-            else if (this.onGround) {
+            else if (this.onGround && !this.world.isRemote) {
                 boolean doGriefing = world.getGameRules().getBoolean("mobGriefing");
                 if (!LepidodendronConfig.doVolcanoGriefing) {
                     doGriefing = false;
@@ -161,7 +160,9 @@ public class EntityVolcanoFireball extends Entity
         }
         else
         {
-            this.setDead();
+            if (!this.world.isRemote) {
+                this.setDead();
+            }
         }
 
     }

@@ -80,7 +80,6 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("stemHorsetail", BlockGiantHorsetail.block);
 	}
 
-
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;

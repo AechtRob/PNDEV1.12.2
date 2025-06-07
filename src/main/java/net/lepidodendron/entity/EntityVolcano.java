@@ -27,22 +27,21 @@ public class EntityVolcano extends Entity
 
      public void onUpdate()
     {
-        if (!canExistAt())
-        {
-            //spawn the item:
-            if (!world.isRemote) {
+        if (!world.isRemote) {
+            if (!canExistAt()) {
+                //spawn the item:
                 EntityItem entityToSpawn = new EntityItem(this.world, this.getPosition().getX() + 0.5, this.getPosition().getY() + 1.1, this.getPosition().getZ() + 0.5, new ItemStack(ItemVolcanoHeart.block, 1));
                 entityToSpawn.setPickupDelay(10);
                 this.world.spawnEntity(entityToSpawn);
+                setDead();
+                return;
             }
-            setDead();
-            return;
-        }
 
-        if (this.rand.nextInt(48) == 0 && LepidodendronConfig.doVolcanos) {
-            EntityVolcanoFireball fire = new EntityVolcanoFireball(this.world, this.posX, this.posY, this.posZ, this);
-            this.world.spawnEntity(fire);
-            this.playSound(SoundEvents.ENTITY_BLAZE_SHOOT, 1.0F, 1.0F);
+            if (this.rand.nextInt(48) == 0 && LepidodendronConfig.doVolcanos) {
+                EntityVolcanoFireball fire = new EntityVolcanoFireball(this.world, this.posX, this.posY, this.posZ, this);
+                this.world.spawnEntity(fire);
+                this.playSound(SoundEvents.ENTITY_BLAZE_SHOOT, 1.0F, 1.0F);
+            }
         }
     }
 

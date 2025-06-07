@@ -73,6 +73,7 @@ public class LepidodendronConfig {
     public static boolean doVolcanos = true;
     public static boolean doMeteoritesGriefing = true;
     public static boolean doVolcanoGriefing = true;
+    public static int doVolcanoNether = 100;
     public static boolean doGuanoGriefing = true;
     public static boolean doGuanoBats = true;
     public static boolean fixApples = true;
@@ -513,6 +514,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "doVolcanoGriefing", doVolcanoGriefing);
         prop.setComment("Volcano fireballs set things on fire (note that this is also tied to the more general mobGriefing gamerule) [default: true]");
         doVolcanoGriefing = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "doVolcanoNether", doVolcanoNether);
+        prop.setComment("A value to control how many volcano fireballs can be produced in the Nether [default: 120]");
+        doVolcanoNether = prop.getInt();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "doMeteoritesGriefing", doMeteoritesGriefing);

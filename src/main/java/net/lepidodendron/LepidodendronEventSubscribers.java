@@ -13,6 +13,7 @@ import net.lepidodendron.util.*;
 import net.lepidodendron.world.WorldOverworldPortal;
 import net.lepidodendron.world.biome.FishingRodDrops;
 import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
+import net.lepidodendron.world.gen.WorldGenVolcanoEruptableNether;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -68,6 +69,7 @@ import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.*;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.Event;
@@ -194,6 +196,21 @@ public class LepidodendronEventSubscribers {
 					i = Math.max(((EntityAgeable) entity).getGrowingAge(), -5999);
 				}
 				((EntityAgeable)entity).setGrowingAge(i - 1);
+			}
+		}
+	}
+
+	@SubscribeEvent
+	public void onLavaInNether(DecorateBiomeEvent.Post event) {
+		if (event.getWorld().provider.getDimension() == -1
+				&& LepidodendronConfig.doVolcanoNether > 0) {
+			BlockPos pos = event.getPos();
+			for (int i = 0; i < LepidodendronConfig.doVolcanoNether * 10; ++i)
+			{
+				int j = event.getWorld().rand.nextInt(16) + 8;
+				int k = event.getWorld().rand.nextInt(16) + 8;
+				int l = event.getWorld().rand.nextInt(event.getWorld().getHeight(pos.add(j, 0, k)).getY() + 32);
+				(new WorldGenVolcanoEruptableNether()).generate(event.getWorld(), event.getWorld().rand, pos.add(j, l, k));
 			}
 		}
 	}
