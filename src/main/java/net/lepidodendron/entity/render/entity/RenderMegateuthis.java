@@ -4,6 +4,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMegateuthis;
 import net.lepidodendron.entity.model.entity.ModelMegateuthis;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -11,11 +12,12 @@ import net.minecraft.util.ResourceLocation;
 public class RenderMegateuthis extends RenderLivingBaseWithBook<EntityPrehistoricFloraMegateuthis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megateuthis.png");
 
-    public static float getScaler() {
-        return 0.75F;
-    }
     public RenderMegateuthis(RenderManager mgr) {
-        super(mgr, new ModelMegateuthis(), 0.0f);
+        super(mgr, new ModelMegateuthis(), RenderDisplays.modelMegateuthis, 0.3f);
+    }
+
+    public static float getScaler() {
+        return 0.832F;
     }
 
     @Override
@@ -30,12 +32,10 @@ public class RenderMegateuthis extends RenderLivingBaseWithBook<EntityPrehistori
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMegateuthis entity, float f) {
-        float scale = this.getScaler()*entity.getAgeScale();
-        if (scale < 0.1f) {
-            scale = 0.1f;
-        }
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = 0;
+        GlStateManager.rotate(entity.getRotationAngle(), 0, 1, 0);
+        this.shadowSize = entity.width * scale * 0.6F;
     }
 
 }
