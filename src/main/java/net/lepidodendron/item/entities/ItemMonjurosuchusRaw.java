@@ -15,37 +15,35 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemMegateuthisRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:megateuthis_raw")
+public class ItemMonjurosuchusRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:monjurosuchus_raw")
 	public static final Item block = null;
-	public ItemMegateuthisRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.megateuthis_raw);
+	public ItemMonjurosuchusRaw(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.monjurosuchus_raw);
 	}
 
 	@Override
 	public void initElements() {
 		elements.items.add(() -> new ItemFoodCustom());
 	}
-
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/megateuthis_raw", "inventory"));
-	}
-
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_megateuthis", ItemMegateuthisRaw.block);
-		OreDictionary.registerOre("pnfurnaceCalamari", ItemMegateuthisRaw.block);
-		OreDictionary.registerOre("pndietNautiloid", ItemMegateuthisRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_monjurosuchus", ItemMonjurosuchusRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemMonjurosuchusRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemMonjurosuchusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemMonjurosuchusRaw.block);
 	}
-
+	@SideOnly(Side.CLIENT)
+	@Override
+	public void registerModels(ModelRegistryEvent event) {
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/monjurosuchus_raw", "inventory"));
+	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
-			super(2, 0.1f, false);
-			setTranslationKey("pf_megateuthis_raw");
-			setRegistryName("megateuthis_raw");
+			super(3, 0.3f, false);
+			setTranslationKey("pf_monjurosuchus_raw");
+			setRegistryName("monjurosuchus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

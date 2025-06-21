@@ -13,6 +13,7 @@ import net.lepidodendron.entity.util.INervous;
 import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.EggLayingConditions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -172,12 +173,12 @@ public class EntityPrehistoricFloraCretosaja extends EntityPrehistoricFloraLandC
 
 	@Override
 	public boolean dropsEggs() {
-		return true;
+		return false;
 	}
 	
 	@Override
 	public boolean laysEggs() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -234,6 +235,7 @@ public class EntityPrehistoricFloraCretosaja extends EntityPrehistoricFloraLandC
 		return 0.5F;
 	}
 
+
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.CRETOSAJA_LOOT;
@@ -250,25 +252,7 @@ public class EntityPrehistoricFloraCretosaja extends EntityPrehistoricFloraLandC
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 	public boolean testLay(World world, BlockPos pos) {
-		//System.err.println("Testing laying conditions");
-		BlockPos posNest = pos;
-		if (isLayableNest(world, posNest)) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos posNest, String tag) {
-					TileEntity tileEntity = world.getTileEntity(posNest);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(new BlockPos(posNest), "egg");
-
-			//System.err.println("eggRenderType " + eggRenderType);
-
-			if (eggRenderType.equals("")) {
-				return true;
-			}
-		}
-		return false;
+		return EggLayingConditions.testLayMossAndWood(this, world, pos);
 	}
 
 	@Override

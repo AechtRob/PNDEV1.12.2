@@ -5770,6 +5770,8 @@ public class LepidodendronSorter {
     public static final int hyogobatrachus_raw = 5491;
     public static final int fukuipteryx_raw = 5492;
     public static final int eggs_fukuipteryx = 5493;
+    public static final int monjurosuchus_raw = 5494;
+
 
 
 
