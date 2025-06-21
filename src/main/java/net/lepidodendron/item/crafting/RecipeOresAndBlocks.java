@@ -48,6 +48,8 @@ public class RecipeOresAndBlocks  {
 		GameRegistry.addSmelting(new ItemStack(ItemClayBallBrown.block, (int) (1)), new ItemStack(ItemBrickBrown.block, (int) (1)), 0.3F);
 
 		GameRegistry.addSmelting(new ItemStack(BlockLavaRockZirconOre.block, (int) (1)), new ItemStack(ItemZircon.block, (int) (1)), 0.75F);
+		GameRegistry.addSmelting(new ItemStack(BlockZirconOre.block, (int) (1)), new ItemStack(ItemZircon.block, (int) (1)), 0.75F);
+		GameRegistry.addSmelting(new ItemStack(BlockObsidianZirconOre.block, (int) (1)), new ItemStack(ItemZircon.block, (int) (1)), 0.75F);
 
 		GameRegistry.addSmelting(new ItemStack(BlockClayRed.block, (int) (1)), new ItemStack(Blocks.HARDENED_CLAY, (int) (1)), 0.35F);
 

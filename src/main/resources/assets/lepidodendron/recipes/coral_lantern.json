@@ -1,0 +1,42 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:coral_tan_staghorn"
+    },
+    "1": {
+      "item": "lepidodendron:coral_tan_staghorn"
+    },
+    "2": {
+      "item": "lepidodendron:coral_tan_staghorn"
+    },
+    "3": {
+      "item": "lepidodendron:coral_tan_staghorn"
+    },
+    "4": {
+      "item": "lepidodendron:coral_tan_staghorn"
+    },
+    "5": {
+      "item": "lepidodendron:coral_tan_staghorn"
+    },
+    "6": {
+      "item": "lepidodendron:coral_tan_staghorn"
+    },
+    "7": {
+      "item": "lepidodendron:coral_tan_staghorn"
+    },
+    "8": {
+      "item": "lepidodendron:coral_tan_staghorn"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:coral_lantern",
+    "count": 1
+  }
+}
