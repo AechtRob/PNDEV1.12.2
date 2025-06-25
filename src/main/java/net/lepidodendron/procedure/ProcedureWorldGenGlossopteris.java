@@ -86,6 +86,7 @@ public class ProcedureWorldGenGlossopteris extends ElementsLepidodendronMod.ModE
 			world.setBlockToAir(new BlockPos((int) x, (int) y + 1, (int) z));
 			world.setBlockToAir(new BlockPos((int) x, (int) y + 2, (int) z));
 			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), BlockGlossopterisLog.block.getDefaultState(), 3);
+
 			Block block = world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z)), world,
 					new BlockPos((int) x, (int) (y + 1), (int) z))
@@ -97,6 +98,7 @@ public class ProcedureWorldGenGlossopteris extends ElementsLepidodendronMod.ModE
 					|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getMaterial() == Material.LEAVES)) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 1), (int) z), BlockGlossopterisLog.block.getDefaultState(), 3);
 			}
+
 			block = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1))), world,
 					new BlockPos((int) x, (int) y, (int) (z + 1)))
@@ -1277,6 +1279,8 @@ public class ProcedureWorldGenGlossopteris extends ElementsLepidodendronMod.ModE
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 4)),
 						BlockGlossopterisTreeLeaves.block.getDefaultState(), 3);
 			}
+
+
 			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z - 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z - 2))), world,
 					new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z - 2)))) {
@@ -1325,6 +1329,9 @@ public class ProcedureWorldGenGlossopteris extends ElementsLepidodendronMod.ModE
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) (z - 3)),
 						BlockGlossopterisTreeLeaves.block.getDefaultState(), 3);
 			}
+
+			//FLOI.........
+
 			// ===========================================================
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 3)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 3)), (int) z)), world,
