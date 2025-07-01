@@ -175,7 +175,7 @@ public class EntityPrehistoricFloraFukuisaurus extends EntityPrehistoricFloraBiQ
 		}
 
 		if(!this.isQuad()) {
-			speedBase = 0.5F;
+			speedBase = 0.4F;
 		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 1.5F;
