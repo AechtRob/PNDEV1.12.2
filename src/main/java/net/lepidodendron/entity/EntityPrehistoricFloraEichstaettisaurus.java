@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraEichstaettisaurus extends EntityPrehistoricFl
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 0; //rotten wood
+		return 0; //SMALL EGGS
 	}
 
 	@Override

@@ -127,7 +127,7 @@ public class EntityPrehistoricFloraIkechosaurus extends EntityPrehistoricFloraSw
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.24F;
+		float calcSpeed = 0.18F;
 		if (this.isReallyInWater()) {
 			calcSpeed = 0.365f;
 		}

@@ -1208,7 +1208,6 @@ public class ModelArchaeopteryx extends ModelBasePalaeopedia {
         this.setRotateAngle(Jaw, Jaw.rotateAngleX + (float) Math.toRadians(xx), Jaw.rotateAngleY + (float) Math.toRadians(yy), Jaw.rotateAngleZ + (float) Math.toRadians(zz));
 
     }
-
     public void animAttack(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraArchaeopteryx entity = (EntityPrehistoricFloraArchaeopteryx) entitylivingbaseIn;
 
@@ -1614,7 +1613,6 @@ public class ModelArchaeopteryx extends ModelBasePalaeopedia {
 
 
     }
-
     public void animNest(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraArchaeopteryx entity = (EntityPrehistoricFloraArchaeopteryx) entitylivingbaseIn;
 
@@ -2227,7 +2225,6 @@ public class ModelArchaeopteryx extends ModelBasePalaeopedia {
 
 
     }
-
     public void animLay(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraArchaeopteryx entity = (EntityPrehistoricFloraArchaeopteryx) entitylivingbaseIn;
         int animCycle = 50;
@@ -3110,7 +3107,6 @@ public class ModelArchaeopteryx extends ModelBasePalaeopedia {
         this.head.rotationPointZ = this.head.rotationPointZ + (float)(zz);
 
     }
-
     public void animIdle(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraArchaeopteryx entity = (EntityPrehistoricFloraArchaeopteryx) entitylivingbaseIn;
         int animCycle = 85;
@@ -4044,7 +4040,6 @@ public class ModelArchaeopteryx extends ModelBasePalaeopedia {
         this.setRotateAngle(Chest, Chest.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/2.125-60))*-1), Chest.rotateAngleY + (float) Math.toRadians(0), Chest.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180/2.125-60))*-1));
 
     }
-
     public void animDisplay(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraArchaeopteryx entity = (EntityPrehistoricFloraArchaeopteryx) entitylivingbaseIn;
         int animCycle = 45;
@@ -5781,7 +5776,6 @@ public class ModelArchaeopteryx extends ModelBasePalaeopedia {
         this.Jaw.rotationPointZ = this.Jaw.rotationPointZ + (float)(zz);
 
     }
-
     public void animNoise(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraArchaeopteryx entity = (EntityPrehistoricFloraArchaeopteryx) entitylivingbaseIn;
         int animCycle = 20;
@@ -6044,7 +6038,6 @@ public class ModelArchaeopteryx extends ModelBasePalaeopedia {
         this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(xx), head.rotateAngleY + (float) Math.toRadians(yy), head.rotateAngleZ + (float) Math.toRadians(zz));
 
     }
-
     public void animClimbing(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isMoving) {
         EntityPrehistoricFloraArchaeopteryx entity = (EntityPrehistoricFloraArchaeopteryx) entitylivingbaseIn;
         int animCycle = 24;
@@ -6853,7 +6846,6 @@ public class ModelArchaeopteryx extends ModelBasePalaeopedia {
         this.setRotateAngle(Neck1, Neck1.rotateAngleX + (float) Math.toRadians(xx), Neck1.rotateAngleY + (float) Math.toRadians(yy), Neck1.rotateAngleZ + (float) Math.toRadians(zz));
 
     }
-
     public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraArchaeopteryx entity = (EntityPrehistoricFloraArchaeopteryx) entitylivingbaseIn;
         int animCycle = 30;
@@ -7412,7 +7404,6 @@ public class ModelArchaeopteryx extends ModelBasePalaeopedia {
         this.HandsR.rotationPointZ = this.HandsR.rotationPointZ + (float)(0);
 
     }
-
     public void animRunning(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraArchaeopteryx entity = (EntityPrehistoricFloraArchaeopteryx) entitylivingbaseIn;
         int animCycle = 10;
@@ -8361,7 +8352,6 @@ public class ModelArchaeopteryx extends ModelBasePalaeopedia {
         this.setRotateAngle(HandR, HandR.rotateAngleX + (float) Math.toRadians(xx), HandR.rotateAngleY + (float) Math.toRadians(yy), HandR.rotateAngleZ + (float) Math.toRadians(zz));
 
     }
-
     public void animLaunching(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraArchaeopteryx entity = (EntityPrehistoricFloraArchaeopteryx) entitylivingbaseIn;
         int animCycle = 20;
@@ -8467,7 +8457,6 @@ public class ModelArchaeopteryx extends ModelBasePalaeopedia {
         this.setRotateAngle(Jaw, Jaw.rotateAngleX + (float) Math.toRadians(2+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-60))*2), Jaw.rotateAngleY + (float) Math.toRadians(0), Jaw.rotateAngleZ + (float) Math.toRadians(0));
 
     }
-
     public void animGliding(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraArchaeopteryx entity = (EntityPrehistoricFloraArchaeopteryx) entitylivingbaseIn;
 
