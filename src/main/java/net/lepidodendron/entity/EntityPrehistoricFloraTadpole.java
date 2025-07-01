@@ -36,6 +36,7 @@ public class EntityPrehistoricFloraTadpole extends EntityPrehistoricFloraAgeable
 	private static final float[] PROSALIRUS_SIZE = new float[]{0.2F, 0.2F};
 	private static final float[] NOTOBATRACHUS_SIZE = new float[]{0.2F, 0.2F};
 	private static final float[] RHADINOSTEUS_SIZE = new float[]{0.2F, 0.2F};
+	private static final float[] HYOGOBATRACHUS_SIZE = new float[]{0.2F, 0.2F};
 
 
 	private static final DataParameter<Integer> TADPOLE_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraTadpole.class, DataSerializers.VARINT);
@@ -73,6 +74,7 @@ public class EntityPrehistoricFloraTadpole extends EntityPrehistoricFloraAgeable
 		NOTOBATRACHUS(2, "notobatrachus"),
 		PROSALIRUS(3, "prosalirus"),
 		RHADINOSTEUS(4, "rhadinosteus"),
+		HYOGOBATRACHUS(5, "rhadinosteus"),
 
 		;
 	
@@ -135,6 +137,8 @@ public class EntityPrehistoricFloraTadpole extends EntityPrehistoricFloraAgeable
 				return PROSALIRUS_SIZE;
 			case RHADINOSTEUS:
 				return RHADINOSTEUS_SIZE;
+			case HYOGOBATRACHUS:
+				return HYOGOBATRACHUS_SIZE;
 		}
 	}
 
@@ -319,6 +323,8 @@ public class EntityPrehistoricFloraTadpole extends EntityPrehistoricFloraAgeable
 				return EntityPrehistoricFloraProsalirus.class;
 			case RHADINOSTEUS:
 				return EntityPrehistoricFloraRhadinosteus.class;
+			case HYOGOBATRACHUS:
+				return EntityPrehistoricFloraHyogobatrachus.class;
 		}
 
 	}

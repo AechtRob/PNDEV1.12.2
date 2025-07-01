@@ -410,6 +410,7 @@ public class ModelSiamamia extends ModelBasePalaeopedia {
 
         AdvancedModelRenderer[] fishTail = {this.body2, this.body3, this.body4, this.body5, this.body6};
         AdvancedModelRenderer[] dorsal = {this.dorsalfin1, this.dorsalfin2, this.dorsalfin3, this.dorsalfin4, this.dorsalfin5, this.dorsalfin6, this.dorsalfin7, this.dorsalfin8, this.dorsalfin9};
+
         ((EntityPrehistoricFloraSiamamia)e).tailBuffer.applyChainSwingBuffer(fishTail);
 
         float speed = 0.186F;

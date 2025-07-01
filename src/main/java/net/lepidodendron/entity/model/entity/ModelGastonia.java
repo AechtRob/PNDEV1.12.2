@@ -7537,6 +7537,11 @@ public class ModelGastonia extends ModelBasePalaeopedia {
             yy = 0.45 + (((tickAnim - 33) / 8) * (1.75-(0.45)));
             zz = 0.625 + (((tickAnim - 33) / 8) * (0.4-(0.625)));
         }
+        else if (tickAnim >= 41 && tickAnim < 43) {
+            xx = 0 + (((tickAnim - 41) / 2) * (0-(0)));
+            yy = 1.75 + (((tickAnim - 41) / 2) * (1.75-(1.75)));
+            zz = 0.4 + (((tickAnim - 41) / 2) * (0.4-(0.4)));
+        }
         else {
             xx = 0;
             yy = 0;
@@ -7790,7 +7795,6 @@ public class ModelGastonia extends ModelBasePalaeopedia {
 
 
         this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(-2+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*169/0.5-250))*0.5), head.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*169-220))*-0.5), head.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*169-200))*1.5));
-
     }
     public void animSneaking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraGastonia entity = (EntityPrehistoricFloraGastonia) entitylivingbaseIn;

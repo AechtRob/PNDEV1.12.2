@@ -5771,6 +5771,39 @@ public class LepidodendronSorter {
     public static final int fukuipteryx_raw = 5492;
     public static final int eggs_fukuipteryx = 5493;
     public static final int monjurosuchus_raw = 5494;
+    public static final int tambatitanis_raw = 5495;
+    public static final int fukuititan_raw = 5496;
+    public static final int eggs_fukuititan = 5497;
+    public static final int eggs_tambatitanis = 5498;
+    public static final int eggs_fukuiraptor = 5499;
+    public static final int fukuiraptor_raw = 5500;
+    public static final int eggs_kuwajimalla = 5501;
+    public static final int eggs_fukuisaurus = 5502;
+    public static final int eggs_fukuivenator = 5503;
+    public static final int eggs_hypnovenator = 5504;
+    public static final int eggs_tyrannomimus = 5505;
+    public static final int eggs_sinemys = 5506;
+    public static final int eggs_kaganaias = 5507;
+    public static final int eggs_kamuysaurus = 5508;
+    public static final int eggs_adocus = 5509;
+    public static final int eggs_anomalochelys = 5510;
+    public static final int eggs_mesodermochelys = 5511;
+    public static final int fukuivenator_raw = 5512;
+    public static final int hypnovenator_raw = 5513;
+    public static final int kuwajimalla_raw = 5514;
+    public static final int fukuisaurus_raw = 5515;
+    public static final int tyrannomimus_raw = 5516;
+    public static final int sinemys_raw = 5517;
+    public static final int kaganaias_raw = 5518;
+    public static final int kamuysaurus_raw = 5519;
+    public static final int adocus_raw = 5520;
+    public static final int mesodermochelys_raw = 5521;
+    public static final int anomalochelys_raw = 5522;
+    public static final int futabasaurus_raw = 5523;
+    public static final int phosphorosaurus_raw = 5524;
+    public static final int megapterygius_raw = 5525;
+    public static final int utahraptor_raw = 5526;
+    public static final int eggs_utahraptor = 5527;
 
 
 

@@ -159,6 +159,13 @@ public class EntityPrehistoricFloraNotobatrachus extends EntityPrehistoricFloraS
 
 	}
 
+	//control jump height
+	protected void jumpPN()
+	{
+		this.motionY = (double)this.getJumpUpwardsMotion(); //edit this to be a diff value
+		this.isAirBorne = true;
+	}
+
 	@Override
 	public String getEntityId(Entity entity) {
 		return "lepidodendron:prehistoric_flora_tadpole@notobatrachus";
@@ -185,8 +192,8 @@ public class EntityPrehistoricFloraNotobatrachus extends EntityPrehistoricFloraS
 		}
 
 		//switch to jumping
-		if(this.getIsMoving() && (!this.isJumping) && this.onGround && !this.isReallyInWater() && this.getAnimation() != JUMP_ANIMATION && !this.isWalking){
-			this.jump();
+		if(this.getIsMoving() && this.onGround && !this.isReallyInWater() && this.getAnimation() != JUMP_ANIMATION && !this.isWalking){
+			this.jumpPN();
 			this.setAnimation(JUMP_ANIMATION);
 		}
 
