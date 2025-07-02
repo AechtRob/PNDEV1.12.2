@@ -40,7 +40,7 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
     @Override
     public float getEyeHeight() {
         if (this.height >= 0.85) {
-            return 0.333F;
+            return this.height *0.7F;
         }
         return super.getEyeHeight();
     }

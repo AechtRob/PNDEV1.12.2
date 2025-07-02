@@ -12,11 +12,14 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
+import net.lepidodendron.entity.render.entity.RenderAllosaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -38,27 +41,22 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter, ITrappableLand {
+public class EntityPrehistoricFloraKoleken extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	//alert
 	public Animation STAND_ANIMATION;
-	public Animation PREEN_ANIMATION;
 	private int standCooldown;
-	public Animation NOISE_ANIMATION;
-	public int ambientSoundTime;
-	public EntityPrehistoricFloraUtahraptor(World world) {
+
+	public EntityPrehistoricFloraKoleken(World world) {
 		super(world);
-		setSize(0.99F, 2.0F);
+		setSize(1.75F, 1.8F);
 		minWidth = 0.20F;
-		maxWidth = 0.99F;
-		maxHeight = 2.0F;
-		maxHealthAgeable = 45.0D;
-		STAND_ANIMATION = Animation.create(100);//alert
-		NOISE_ANIMATION = Animation.create(80);
-		PREEN_ANIMATION = Animation.create(100);
+		maxWidth = 1.75F;
+		maxHeight = 1.8F;
+		maxHealthAgeable = 50.0D;
+		STAND_ANIMATION = Animation.create(150);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -66,27 +64,22 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getWalkCycleLength() {
-		return 21;
+		return 50;
 	}
 
 	@Override
 	public int getFootstepOffset() {
-		return 10;
+		return 25;
 	}
 
 	@Override
 	public int getRunCycleLength() {
-		return 14;
+		return 20;
 	}
 
 	@Override
 	public int getRunFootstepOffset() {
 		return 0;
-	}
-
-
-	public int getAmbientTalkInterval() {
-		return 160;
 	}
 
 	@Override
@@ -98,34 +91,34 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 	}
 
 	@Override
-	public int getEatTick() {return 80;}
+	public int getEatTick() {return 12;}
 
 	@Override
-	public int getEggType(@Nullable String variantIn) {
+	public int getEggType(@Nullable String PNType) {
 		return 2; //large
 	}
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, MAKE_NEST_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, PREEN_ANIMATION, HURT_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, HURT_ANIMATION};
 	}
-	public static String getPeriod() {return "Early Cretaceous";}
+
+	public static String getPeriod() {return "Jurassic";}
 
 	@Override
 	public int getEatLength() {
-		return 32;
+		return 20;
 	}
-
 
 	@Override
 	public int getRoarLength() {
-		return 80;
-	} //Idle
+		return 60;
+	}
 
 	@Override
 	public int getNoiseLength() {
-		return 80;
-	} //Roar
+		return 35;
+	}
 
 	@Override
 	public boolean hasNest() {
@@ -134,7 +127,7 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getAttackLength() {
-		return 20;
+		return 15;
 	}
 
 	@Override
@@ -153,16 +146,15 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.45F;
+		float speedBase = 0.445F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
-				||  this.getAnimation() == STAND_ANIMATION ||  this.getAnimation() == PREEN_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION ) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.7F;
+			speedBase = speedBase*2F;
 		}
 		return speedBase;
 	}
@@ -180,14 +172,14 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * 1.50F * this.getAgeScale();
-		return this.getEntityBoundingBox().grow(1.5F + size, 1.5F + size, 1.5F + size);
+		return this.getEntityBoundingBox().grow(0.5F + size, 0.2F, 0.5F + size);
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox() {
 		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
-			return this.getEntityBoundingBox().grow(3.0, 6.00, 3.0);
+			return this.getEntityBoundingBox().grow(3.0, 1.00, 3.0);
 		}
 		return this.getEntityBoundingBox();
 	}
@@ -244,7 +236,7 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(25.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(11.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}
@@ -252,29 +244,25 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:utahraptor_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:allosaurus_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:utahraptor_idle"));
+				.getObject(new ResourceLocation("lepidodendron:koleken_idle"));
 	}
 
-	public SoundEvent getAmbientAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:utahraptor_idle"));
-	}
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:utahraptor_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:koleken_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:utahraptor_death"));
+	            .getObject(new ResourceLocation("lepidodendron:koleken_death"));
 	}
 
 	@Override
@@ -290,48 +278,17 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-		int next = rand.nextInt(10);
-		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
-		{
-			this.ambientSoundTime = -this.getAmbientTalkInterval();
-			SoundEvent soundevent = this.getAmbientAmbientSound();
-			if (soundevent != null)
-			{
-				//Random sound animations
-				if (this.getAnimation() == NO_ANIMATION) {
-					if(next > 7) {
-						this.setAnimation(NOISE_ANIMATION);
-					} else {
-						this.setAnimation(ROAR_ANIMATION);
-					}
-					//System.err.println("Playing noise sound on remote: " + (world.isRemote));
-					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-				}
-			}
-		}
 		//Sometimes stand up and look around:
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			int num = rand.nextInt(10);
-			System.out.println(num);
-			if(num >=0 && num < 5) {
-				this.setAnimation(STAND_ANIMATION);
-			} else {
-				this.setAnimation(PREEN_ANIMATION);
-			}
-			this.standCooldown = 1500;
+			this.setAnimation(STAND_ANIMATION);
+			this.standCooldown = 3000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
 		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 1500;
+			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
-		if ((!this.world.isRemote) && this.getAnimation() == PREEN_ANIMATION && this.getAnimationTick() == PREEN_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 1500;
-			this.setAnimation(NO_ANIMATION);
-		}
-
-
 
 	}
 
@@ -342,7 +299,7 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAttackTarget() != null) {
-			if (this.getAnimationTick() == 8) {
+			if (this.getAnimationTick() == 18) {
 				double d1 = this.posX - this.getAttackTarget().posX;
 				double d0;
 				for (d0 = this.posZ -  this.getAttackTarget().posZ; d1 * d1 + d0 * d0 < 1.0E-4D; d0 = (Math.random() - Math.random()) * 0.01D)
@@ -398,15 +355,15 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.UTAHRAPTOR_LOOT_YOUNG;
+			return LepidodendronMod.KOLEKEN_LOOT_YOUNG;
 		}
-		return LepidodendronMod.UTAHRAPTOR_LOOT;
+		return LepidodendronMod.KOLEKEN_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_UTAHRAPTOR;
+		return ModTriggers.CLICK_KOLEKEN;
 	}
 
 	//Rendering taxidermy:

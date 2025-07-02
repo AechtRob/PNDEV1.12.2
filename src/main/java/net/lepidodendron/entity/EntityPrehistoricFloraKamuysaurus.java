@@ -49,9 +49,9 @@ public class EntityPrehistoricFloraKamuysaurus extends EntityPrehistoricFloraBiQ
 
 	public EntityPrehistoricFloraKamuysaurus(World world) {
 		super(world);
-		setSize(2F, 2.5F);
+		setSize(1.5F, 2.5F);
 		minWidth = 0.20F;
-		maxWidth = 2F;
+		maxWidth = 1.5F;
 		maxHeight = 2.5F;
 		maxHealthAgeable = 70.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {

@@ -178,7 +178,7 @@ public class EntityPrehistoricFloraTenontosaurus extends EntityPrehistoricFloraB
 			speedBase = 0.5F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.5F;
+			speedBase = speedBase * 1.7F;
 		}
 		return speedBase;
 	}

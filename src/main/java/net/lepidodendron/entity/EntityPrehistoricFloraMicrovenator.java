@@ -358,7 +358,7 @@ public class EntityPrehistoricFloraMicrovenator extends EntityPrehistoricFloraLa
 			return 0.0F; //Is talking to a colleague!
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.66F;
+			speedBase = speedBase * 2.4F;
 		}
 		return speedBase;
 	}
