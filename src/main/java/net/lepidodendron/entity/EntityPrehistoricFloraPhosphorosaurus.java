@@ -43,10 +43,10 @@ public class EntityPrehistoricFloraPhosphorosaurus extends EntityPrehistoricFlor
 
 	public EntityPrehistoricFloraPhosphorosaurus(World world) {
 		super(world);
-		setSize(1.5F, 0.4F);
+		setSize(0.9F, 0.6F);
 		minWidth = 0.1F;
-		maxWidth = 1.5F;
-		maxHeight = 0.78F;
+		maxWidth = 0.9F;
+		maxHeight = 0.6F;
 		maxHealthAgeable = 30.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

@@ -43,10 +43,10 @@ public class EntityPrehistoricFloraMegapterygius extends EntityPrehistoricFloraA
 
 	public EntityPrehistoricFloraMegapterygius(World world) {
 		super(world);
-		setSize(1.5F, 0.4F);
+		setSize(1.5F, 0.9F);
 		minWidth = 0.1F;
 		maxWidth = 1.5F;
-		maxHeight = 0.78F;
+		maxHeight = 0.9F;
 		maxHealthAgeable = 45.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

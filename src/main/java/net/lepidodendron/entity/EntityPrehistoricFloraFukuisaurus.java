@@ -49,9 +49,9 @@ public class EntityPrehistoricFloraFukuisaurus extends EntityPrehistoricFloraBiQ
 
 	public EntityPrehistoricFloraFukuisaurus(World world) {
 		super(world);
-		setSize(1.3F, 1.3F);
+		setSize(0.99F, 1.3F);
 		minWidth = 0.20F;
-		maxWidth = 1.3F;
+		maxWidth = 0.99F;
 		maxHeight = 1.3F;
 		maxHealthAgeable = 30.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -93,7 +93,7 @@ public class EntityPrehistoricFloraFukuisaurus extends EntityPrehistoricFloraBiQ
 	@Override
 	public boolean isDrinking()
 	{
-		if (this.getAnimation() == this.TOBI_ANIMATION || this.getAnimation() == this.TOQUAD_ANIMATION) {
+		if (this.getAnimation() == this.TOBI_ANIMATION || this.getAnimation() == this.TOQUAD_ANIMATION || !this.isQuad()) {
 			return false;
 		}
 		return super.isDrinking();
@@ -166,7 +166,7 @@ public class EntityPrehistoricFloraFukuisaurus extends EntityPrehistoricFloraBiQ
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.3F;
+		float speedBase = 0.35F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -175,7 +175,7 @@ public class EntityPrehistoricFloraFukuisaurus extends EntityPrehistoricFloraBiQ
 		}
 
 		if(!this.isQuad()) {
-			speedBase = 0.4F;
+			speedBase = 0.36F;
 		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 1.5F;

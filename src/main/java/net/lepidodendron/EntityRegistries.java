@@ -1293,7 +1293,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_hakusanobaatar", EntityPrehistoricFloraHakusanobaatar.class, LepidodendronMod.ENTITY_HAKUSANOBAATAR, 48,-11844034,-2832719);
         registerEntity("prehistoric_flora_hyogobatrachus", EntityPrehistoricFloraHyogobatrachus.class, LepidodendronMod.ENTITY_HYOGOBATRACHUS, 48,-12506598,-4608091);
         registerEntity("prehistoric_flora_shirerpeton", EntityPrehistoricFloraShirerpeton.class, LepidodendronMod.ENTITY_SHIRERPETON, 48,-6839200,-12699604);
-//        registerEntity("prehistoric_flora_fukuipteryx", EntityPrehistoricFloraFukuipteryx.class, LepidodendronMod.ENTITY_FUKUIPTERYX, 64,-11354642,-15131876);
+        registerEntity("prehistoric_flora_fukuipteryx", EntityPrehistoricFloraFukuipteryx.class, LepidodendronMod.ENTITY_FUKUIPTERYX, 64,-12309983,-2039067);
         registerEntity("prehistoric_flora_kuwajimalla", EntityPrehistoricFloraKuwajimalla.class, LepidodendronMod.ENTITY_KUWAJIMALLA, 48,-8742103,-12634577);
         registerEntity("prehistoric_flora_fukuisaurus", EntityPrehistoricFloraFukuisaurus.class, LepidodendronMod.ENTITY_FUKUISAURUS, 64,-10053063,-3623866);
         registerEntity("prehistoric_flora_fukuititan", EntityPrehistoricFloraFukuititan.class, LepidodendronMod.ENTITY_FUKUITITAN, 164,-3100558,-8431339);
@@ -1355,10 +1355,10 @@ public class EntityRegistries {
 //        registerEntity("prehistoric_flora_haimirichia", EntityPrehistoricFloraHaimirichia.class, LepidodendronMod.ENTITY_HAIMIRICHIA, 48,-11354642,-15131876);
 //        registerEntity("prehistoric_flora_hakelia", EntityPrehistoricFloraHakelia.class, LepidodendronMod.ENTITY_HAKELIA, 48,-11354642,-15131876);
 //        registerEntity("prehistoric_flora_haqelpycnodus", EntityPrehistoricFloraHaqelpycnodus.class, LepidodendronMod.ENTITY_HAQELPYCNODUS, 48,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_confuciusornis", EntityPrehistoricFloraConfuciusornis.class, LepidodendronMod.ENTITY_CONFUCIUSORNIS, 64,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_noripterus", EntityPrehistoricFloraNoripterus.class, LepidodendronMod.ENTITY_NORIPTERUS, 64,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_sapeornis", EntityPrehistoricFloraSapeornis.class, LepidodendronMod.ENTITY_SAPEORNIS, 64,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_koleken", EntityPrehistoricFloraKoleken.class, LepidodendronMod.ENTITY_KOLEKEN, 84,-11354642,-15131876);
+        registerEntity("prehistoric_flora_confuciusornis", EntityPrehistoricFloraConfuciusornis.class, LepidodendronMod.ENTITY_CONFUCIUSORNIS, 64,-6340821,-6319214);
+        registerEntity("prehistoric_flora_noripterus", EntityPrehistoricFloraNoripterus.class, LepidodendronMod.ENTITY_NORIPTERUS, 64,-13487315,-6766752);
+        registerEntity("prehistoric_flora_sapeornis", EntityPrehistoricFloraSapeornis.class, LepidodendronMod.ENTITY_SAPEORNIS, 64,-14673123,-4142897);
+        registerEntity("prehistoric_flora_koleken", EntityPrehistoricFloraKoleken.class, LepidodendronMod.ENTITY_KOLEKEN, 84,-11652052,-9259903);
 
 
         // aquatic nymphs for Stonefly, Mayfly, Argentinala, Velisoptera, Damselfly

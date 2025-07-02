@@ -8049,6 +8049,36 @@ public class RenderHandler {
                 return new RenderUtahraptor(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKoleken.class, new IRenderFactory<EntityPrehistoricFloraKoleken>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraKoleken> createRenderFor(RenderManager manager) {
+                return new RenderKoleken(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraFukuipteryx.class, new IRenderFactory<EntityPrehistoricFloraFukuipteryx>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraFukuipteryx> createRenderFor(RenderManager manager) {
+                return new RenderFukuipteryx(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSapeornis.class, new IRenderFactory<EntityPrehistoricFloraSapeornis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSapeornis> createRenderFor(RenderManager manager) {
+                return new RenderSapeornis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraNoripterus.class, new IRenderFactory<EntityPrehistoricFloraNoripterus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraNoripterus> createRenderFor(RenderManager manager) {
+                return new RenderNoripterus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraConfuciusornis.class, new IRenderFactory<EntityPrehistoricFloraConfuciusornis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraConfuciusornis> createRenderFor(RenderManager manager) {
+                return new RenderConfuciusornis(manager);
+            }
+        });
         
         
 
