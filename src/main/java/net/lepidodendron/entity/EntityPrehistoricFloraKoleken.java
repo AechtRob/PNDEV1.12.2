@@ -40,6 +40,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class EntityPrehistoricFloraKoleken extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter, ITrappableLand {
 
@@ -48,6 +49,7 @@ public class EntityPrehistoricFloraKoleken extends EntityPrehistoricFloraLandCar
 	public ChainBuffer tailBuffer;
 	public Animation STAND_ANIMATION;
 	private int standCooldown;
+	public Animation GRAPPLE_ANIMATION;
 
 	public EntityPrehistoricFloraKoleken(World world) {
 		super(world);
@@ -60,6 +62,7 @@ public class EntityPrehistoricFloraKoleken extends EntityPrehistoricFloraLandCar
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		GRAPPLE_ANIMATION = Animation.create(this.getGrappleLength());
 	}
 
 	@Override
@@ -100,7 +103,7 @@ public class EntityPrehistoricFloraKoleken extends EntityPrehistoricFloraLandCar
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, HURT_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, HURT_ANIMATION, GRAPPLE_ANIMATION};
 	}
 
 	public static String getPeriod() {return "Jurassic";}
@@ -153,11 +156,67 @@ public class EntityPrehistoricFloraKoleken extends EntityPrehistoricFloraLandCar
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION ) {
 			return 0.0F;
 		}
+		if ((this.getAnimation() == GRAPPLE_ANIMATION) && (this.willGrapple) && this.getGrappleTarget() != null) {
+			return 0.0F; //Is talking to a colleague!
+		}
 		if (this.getIsFast()) {
 			speedBase = speedBase*2F;
 		}
 		return speedBase;
 	}
+
+	@Override
+	public int grappleChance() {
+		return 4000;
+	}
+
+	@Override
+	public AxisAlignedBB getGrappleBoundingBox() {
+		float size = this.getRenderSizeModifier() * 0.25F;
+		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
+	}
+
+	public boolean findGrappleTarget() {
+		//System.err.println("finding grapple target");
+		if (this.willGrapple || this.getIsCuriousWalking()) {
+			return false;
+		}
+		List<EntityPrehistoricFloraKoleken> Koleken = world.getEntitiesWithinAABB(EntityPrehistoricFloraKoleken.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+		for (EntityPrehistoricFloraKoleken currentKoleken : Koleken) {
+			if ((!currentKoleken.getIsCuriousWalking()) && currentKoleken.isPFAdult() && this.isPFAdult() && currentKoleken != this && (!currentKoleken.willGrapple) && this.canEntityBeSeen(currentKoleken)) {
+				this.setGrappleTarget(currentKoleken);
+				currentKoleken.willGrapple = true;
+				this.willGrapple = true;
+				currentKoleken.setGrappleTarget(this);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public boolean grappleEntityAsMob(Entity entity) {
+		if (this.getAnimation() == NO_ANIMATION) {
+			this.setAnimation(this.getGrappleAnimation());
+			//System.err.println("set attack");
+		}
+		return false;
+	}
+	@Override
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return animation == GRAPPLE_ANIMATION
+				|| super.isAnimationDirectionLocked(animation);
+	}
+
+	public int getGrappleLength() {
+		return 150;
+	}
+
+	@Override
+	public Animation getGrappleAnimation() {
+		return this.GRAPPLE_ANIMATION;
+	}
+
 
 	@Override
 	public int getTalkInterval() {
@@ -204,11 +263,12 @@ public class EntityPrehistoricFloraKoleken extends EntityPrehistoricFloraLandCar
 		tasks.addTask(3, new AgeableWarnEntity(this, EntityPlayer.class, 4));
 		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 45));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityLookIdleAI(this));
+		tasks.addTask(6, new GrappleAI(this, 1.0D, false, this.getGrappleLength(), this.getGrappleAnimation(), 0.15));
+		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D, 45));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(11, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -318,12 +378,35 @@ public class EntityPrehistoricFloraKoleken extends EntityPrehistoricFloraLandCar
 		if (this.standCooldown < 0) {
 			this.standCooldown = 0;
 		}
+
+		if ((this.getAnimation() == GRAPPLE_ANIMATION) && this.getAnimationTick() == this.headbutTick() && this.getGrappleTarget() != null) {
+			this.faceEntity(this.getGrappleTarget(), 10, 10);
+			launchGrapple();
+			if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
+				EntityPrehistoricFloraAgeableBase grappleTarget = (EntityPrehistoricFloraAgeableBase) this.getGrappleTarget();
+				grappleTarget.setGrappleTarget(null);
+				grappleTarget.willGrapple = false;
+			}
+			this.setGrappleTarget(null);
+			this.willGrapple = false;
+		}
+		else if ((this.getAnimation() == GRAPPLE_ANIMATION) && this.getGrappleTarget() != null) {
+			this.faceEntity(this.getGrappleTarget(), 10, 10);
+		}
+
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 		//System.err.println("Eating: " + this.getEatTarget() + " isFast " + this.getIsFast());
 
 
 
+	}
+
+	@Override
+	public int headbutTick() {
+		//Just here to prevent the animation timing out:
+		return this.GRAPPLE_ANIMATION.getDuration() - 1;
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;

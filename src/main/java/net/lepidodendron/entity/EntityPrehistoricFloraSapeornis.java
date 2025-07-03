@@ -312,7 +312,7 @@ public class EntityPrehistoricFloraSapeornis extends EntityPrehistoricFloraLandC
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FRUIT);
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.FRUIT, DietString.SEED), DietString.BUG);
 	}
 
 	protected void initEntityAI() {
