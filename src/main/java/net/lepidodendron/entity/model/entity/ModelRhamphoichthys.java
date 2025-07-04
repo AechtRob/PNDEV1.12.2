@@ -307,7 +307,7 @@ public class ModelRhamphoichthys extends ModelBasePalaeopedia {
             speed = 0.8F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
-            this.chainSwing(fishTail, speed, 0.35F, 0, f2, 1);
+            this.chainSwing(fishTail, speed*0.3f, 0.25F, 3, f2, 1);
             this.walk(jaw, (float) (speed * 0.75), 0.1F, true, 0, 0, f2, 1);
 
             this.walk(frontLeftFin, (float) (speed * 0.75), 0.15F, true, 0, 0, f2, 1);
@@ -320,7 +320,7 @@ public class ModelRhamphoichthys extends ModelBasePalaeopedia {
             this.swing(backRightFin, (float) (speed * 0.75), 0.11F, true, 1.5F, 0, f2, 1);
 
 
-            this.swing(main, speed, 0.3F, true, 0, 0, f2, 1);
+            this.swing(main, speed*0.3f, 0.2F, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 this.main.rotateAngleZ = (float) Math.toRadians(270);
                 this.main.offsetY = -0.20F;

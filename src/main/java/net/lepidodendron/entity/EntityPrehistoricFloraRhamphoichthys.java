@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraRhamphoichthys extends EntityPrehistoricFlora
 
 	@Override
 	public boolean canShoal() {
-		return (!(this.getAlarmCooldown() > 0));
+		return false;
 	}
 
 	@Override
@@ -101,14 +101,13 @@ public class EntityPrehistoricFloraRhamphoichthys extends EntityPrehistoricFlora
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
-		tasks.addTask(1, new ShoalFishBaseAI(this, 1, true));
-		tasks.addTask(2, new FishWander(this, NO_ANIMATION));
+		tasks.addTask(1, new FishWander(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraFishBaseAI(this));
 	}
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return DietString.CORAL;
+		return DietString.FISHFOOD;
 	}
 
 	@Override

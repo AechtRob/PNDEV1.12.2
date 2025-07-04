@@ -247,7 +247,7 @@ public class EntityPrehistoricFloraHensodon extends EntityPrehistoricFloraAgeabl
 
 	@Override
 	protected float getAISpeedFish() {
-		float AIspeed = 0.324F;
+		float AIspeed = 0.13F;
 		if (this.getIsFast()) {
 			AIspeed = AIspeed * 3F;
 		}
@@ -263,7 +263,7 @@ public class EntityPrehistoricFloraHensodon extends EntityPrehistoricFloraAgeabl
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
+		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		//this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
@@ -273,7 +273,7 @@ public class EntityPrehistoricFloraHensodon extends EntityPrehistoricFloraAgeabl
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISHFOOD, DietString.FISH);
+		return ArrayUtils.addAll(DietString.SHELLFISH, DietString.CORAL);
 	}
 
 	@Override

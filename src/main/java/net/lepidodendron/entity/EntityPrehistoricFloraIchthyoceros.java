@@ -19,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -42,7 +43,7 @@ public class EntityPrehistoricFloraIchthyoceros extends EntityPrehistoricFloraFi
 
 	@Override
 	public int getShoalSize() {
-		return 15;
+		return 2;
 	}
 
 	@Override
@@ -102,13 +103,13 @@ public class EntityPrehistoricFloraIchthyoceros extends EntityPrehistoricFloraFi
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
 		tasks.addTask(1, new ShoalFishBaseAI(this, 1, true));
-		tasks.addTask(2, new FishWander(this, NO_ANIMATION));
+		tasks.addTask(2, new FishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraFishBaseAI(this));
 	}
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return DietString.CORAL;
+		return ArrayUtils.addAll(DietString.SHELLFISH, DietString.CORAL);
 	}
 
 	@Override

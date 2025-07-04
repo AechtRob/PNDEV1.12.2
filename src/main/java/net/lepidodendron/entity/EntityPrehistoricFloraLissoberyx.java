@@ -108,7 +108,7 @@ public class EntityPrehistoricFloraLissoberyx extends EntityPrehistoricFloraFish
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return DietString.CORAL;
+		return DietString.SHELLFISH;
 	}
 
 	@Override

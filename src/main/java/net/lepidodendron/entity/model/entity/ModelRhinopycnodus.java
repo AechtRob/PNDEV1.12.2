@@ -313,7 +313,7 @@ public class ModelRhinopycnodus extends ModelBasePalaeopedia {
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3};
-        float speed = 0.5F;
+        float speed = 0.2F;
         if (!e.isInWater()) {
             speed = 0.8F;
         }

@@ -19,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -37,7 +38,7 @@ public class EntityPrehistoricFloraPlectocretacicus extends EntityPrehistoricFlo
 
 	@Override
 	public boolean canShoal() {
-		return (!(this.getAlarmCooldown() > 0));
+		return false;
 	}
 
 	@Override
@@ -66,7 +67,7 @@ public class EntityPrehistoricFloraPlectocretacicus extends EntityPrehistoricFlo
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.13f;
+		return 0.08f;
 	}
 
 	@Override
@@ -101,14 +102,13 @@ public class EntityPrehistoricFloraPlectocretacicus extends EntityPrehistoricFlo
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
-		tasks.addTask(1, new ShoalFishBaseAI(this, 1, true));
-		tasks.addTask(2, new FishWander(this, NO_ANIMATION));
+		tasks.addTask(1, new FishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraFishBaseAI(this));
 	}
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return DietString.CORAL;
+		return ArrayUtils.addAll(DietString.SHELLFISH, DietString.CRUSTACEAN);
 	}
 
 	@Override

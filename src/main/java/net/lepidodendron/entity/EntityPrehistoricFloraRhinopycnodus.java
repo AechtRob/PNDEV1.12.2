@@ -19,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -108,7 +109,7 @@ public class EntityPrehistoricFloraRhinopycnodus extends EntityPrehistoricFloraF
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return DietString.CORAL;
+		return ArrayUtils.addAll(DietString.SHELLFISH, DietString.CORAL);
 	}
 
 	@Override

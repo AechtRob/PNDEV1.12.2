@@ -314,23 +314,14 @@ public class ModelMesiteia extends ModelBasePalaeopedia {
 
             this.flap(backLeftFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             this.swing(backLeftFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-            if (e.isInWater()) { //if moving, slap fins
-                this.flap(frontLeftFin, speed * 2.5F, 0.3F, false, 0, 0, f2, 1);
-                this.flap(frontRightFin, speed * 2.5F, -0.3F, false, 0, 0, f2, 1);
-                this.chainWave(fishTail, speed * 2.5F, 0.05F, -3, f2, 1);
-                this.chainSwing(fishTail, speed * 2.5F, 0.25F, -3, f2, 1);
-            } else { //if not accelerating swing fins instead
-                //this.swing(leftFrontFin, (float)(speed*0.15), (float)Math.toRadians(45), false, -0, -0.5F, f2, 1);
-                //this.swing(rightFrontFin, (float)(speed*0.15), (float)Math.toRadians(45), false, -3, 0.5F, f2, 1);
-                this.flap(frontLeftFin, (speed), 0.25F, false, -3, 0, f2, 1);
-                this.flap(frontRightFin, (speed), -0.25F, false, -3, 0, f2, 1);
-                this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
-                this.chainSwing(fishTail, speed, 0.3F, -3, f2, 1);
-            }
-
-
             this.flap(backRightFin, (float) (speed), 0.2F, true, 0, 0, f2, 1);
             this.swing(backRightFin, (float) (speed), 0.2F, true, 0, 0, f2, 1);
+
+            this.flap(frontLeftFin, speed * 2.5F, 0.3F, false, 0, 0, f2, 1);
+            this.flap(frontRightFin, speed * 2.5F, -0.3F, false, 0, 0, f2, 1);
+            this.chainWave(fishTail, speed * 2.5F, 0.05F, -3, f2, 1);
+            this.chainSwing(fishTail, speed * 2.5F, 0.25F, -3, f2, 1);
+
 
         }
     }

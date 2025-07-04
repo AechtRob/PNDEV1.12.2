@@ -108,7 +108,7 @@ public class EntityPrehistoricFloraHakelia extends EntityPrehistoricFloraFishBas
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return DietString.CORAL;
+		return DietString.FISHFOOD;
 	}
 
 	@Override

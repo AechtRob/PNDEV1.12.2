@@ -15,7 +15,7 @@ public class RenderPlectocretacicus extends RenderLivingBaseWithBook<EntityPrehi
         super(mgr, new ModelPlectocretacicus(), 0.0f);
     }
 
-    public static float getScaler() {return 0.13F; }
+    public static float getScaler() {return 0.16F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPlectocretacicus entity) {

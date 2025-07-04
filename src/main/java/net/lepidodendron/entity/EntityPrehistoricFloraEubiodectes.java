@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraEubiodectes extends EntityPrehistoricFloraAge
 
 	@Override
 	public boolean canShoal() {
-		return (!(this.getAlarmCooldown() > 0));
+		return false;
 	}
 
 	@Override
@@ -109,8 +109,7 @@ public class EntityPrehistoricFloraEubiodectes extends EntityPrehistoricFloraAge
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(2, new ShoalFishAgeableAI(this, 1, true, this.getShoalDist() - 0.5F));
-		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
+		tasks.addTask(2, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
 //		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

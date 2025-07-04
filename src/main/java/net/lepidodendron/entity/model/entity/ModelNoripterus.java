@@ -488,6 +488,8 @@ public class ModelNoripterus extends ModelBasePalaeopedia {
         this.rightmembrane3.setScale((float)1,(float)0,(float)0);
         this.rightmembrane7.setScale((float)1,(float)0,(float)0);
         this.rightmembrane8.setScale((float)1,(float)0,(float)0);
+        this.cube_r1.setScale((float)1,(float)0,(float)0);
+        this.cube_r2.setScale((float)1,(float)0,(float)0);
 
 
         updateDefaultPose();
@@ -610,6 +612,8 @@ public class ModelNoripterus extends ModelBasePalaeopedia {
             this.rightmembrane5.setScale((float)1,(float)1,(float)1);
             this.rightmembrane3.setScale((float)1,(float)1,(float)1);
             this.rightmembrane8.setScale((float)1,(float)1,(float)1);
+            this.cube_r1.setScale((float)1,(float)1,(float)1);
+            this.cube_r2.setScale((float)1,(float)1,(float)1);
 
             //And now the pose:
 
@@ -688,6 +692,8 @@ public class ModelNoripterus extends ModelBasePalaeopedia {
                 this.rightmembrane3.setScale((float)0,(float)0,(float)0);
                 this.rightmembrane7.setScale((float)0,(float)0,(float)0);
                 this.rightmembrane8.setScale((float)0,(float)0,(float)0);
+                this.cube_r1.setScale((float)1,(float)0,(float)0);
+                this.cube_r2.setScale((float)1,(float)0,(float)0);
             }
             else {
                 //Climb pose
@@ -703,7 +709,7 @@ public class ModelNoripterus extends ModelBasePalaeopedia {
 
         if (ee.getAttachmentPos() == null ) {
             if (ee.getIsMoving()) {
-//                animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
 
         }

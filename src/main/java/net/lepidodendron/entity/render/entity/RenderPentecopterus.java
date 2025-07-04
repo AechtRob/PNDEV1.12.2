@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPentecopterus extends RenderLivingBaseWithBook<EntityPrehistoricFloraPentecopterus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pentecopterus.png");
-    private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pentecopterus_baby.png");
+    private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pentecopterus_young.png");
 
     public static float getScaler() {
         return 0.63F;
