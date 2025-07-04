@@ -31,7 +31,7 @@ public class RenderProsalirus extends RenderLivingBaseWithBook<EntityPrehistoric
     protected void preRenderCallback(EntityPrehistoricFloraProsalirus entity, float f) {
         float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.4F;
+        this.shadowSize = entity.width * scale * 0.6F;
     }
 
 }

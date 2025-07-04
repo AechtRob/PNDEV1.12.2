@@ -406,7 +406,7 @@ public class EntityPrehistoricFloraConfuciusornis extends EntityPrehistoricFlora
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.BUG);
+		return ArrayUtils.addAll(DietString.FRUIT);
 	}
 
 	@Override

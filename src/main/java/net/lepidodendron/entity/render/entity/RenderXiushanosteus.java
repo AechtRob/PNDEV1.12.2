@@ -12,7 +12,7 @@ public class RenderXiushanosteus extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/xiushanosteus.png");
 
     public static float getScaler() {
-        return 0.7F * 0.35F;
+        return 0.7F * 0.3F;
     }
     public RenderXiushanosteus(RenderManager mgr) {
         super(mgr, new ModelXiushanosteus(), 0.0f);

@@ -543,7 +543,7 @@ public class ModelFukuivenator extends ModelBasePalaeopedia {
                     this.chainWaveExtended(ArmR, 0.175F, -0.03F, -0.1F, 0f, f2, 1F);
                     this.chainFlapExtended(ArmL, 0.175F, -0.03F, 0.1F, 3F, f2, 1F);
                     this.chainFlapExtended(ArmR, 0.175F, -0.03F, -0.1F, 0f, f2, 1F);
-                    this.walk(this.jaw, 0.1F, 0.05F, true, 3F, 0.05F, f2, 1F);
+                    this.walk(this.jaw, 0.1F, -0.05F, false, 3F, 0.05F, f2, 1F);
 
                     this.walk(this.armleft, 0.175F, 0.10F, true, 3F, 0.05F, f2, 1F);
                     this.walk(this.armright, 0.175F, -0.10F, true, 0F, 0.05F, f2, 1F);
