@@ -12,7 +12,7 @@ public class RenderDissimilites extends RenderLivingBaseWithBook<EntityPrehistor
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dissimilites.png");
 
     public static float getScaler() {
-        return 0.27F;
+        return 0.24F;
     }
     public RenderDissimilites(RenderManager mgr) {
         super(mgr, new ModelDissimilites(), 0.0f);

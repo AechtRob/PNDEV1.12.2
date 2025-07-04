@@ -12,7 +12,7 @@ public class RenderTujiaaspis extends RenderLivingBaseWithBook<EntityPrehistoric
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tujiaaspis.png");
 
     public static float getScaler() {
-        return 0.7F * 0.36F;
+        return 0.7F * 0.28F;
     }
     public RenderTujiaaspis(RenderManager mgr) {
         super(mgr, new ModelTujiaaspis(), 0.0f);

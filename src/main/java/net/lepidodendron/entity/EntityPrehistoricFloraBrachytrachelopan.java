@@ -67,7 +67,7 @@ public class EntityPrehistoricFloraBrachytrachelopan extends EntityPrehistoricFl
 		maxWidth = 2.25F;
 		maxHeight = 2.3F;
 		extraStepHeight = 1F;
-		maxHealthAgeable = 100.0D;
+		maxHealthAgeable = 70.0D;
 		TAIL_ANIMATION = Animation.create(170);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

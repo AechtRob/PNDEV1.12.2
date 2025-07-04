@@ -31,7 +31,7 @@ public class RenderCratopipa extends RenderLivingBaseWithBook<EntityPrehistoricF
     protected void preRenderCallback(EntityPrehistoricFloraCratopipa entity, float f) {
         float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.4F;
+        this.shadowSize = entity.width * scale * 0.6F;
     }
 
 }

@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraApankura extends EntityPrehistoricFloraSwimmi
 		minWidth = 0.1F;
 		maxWidth = 0.1F;
 		maxHeight = 0.1F;
-		maxHealthAgeable = 3.0D;
+		maxHealthAgeable = 2.0D;
 	}
 
 	@Override
