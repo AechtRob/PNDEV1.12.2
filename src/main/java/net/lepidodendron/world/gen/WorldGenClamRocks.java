@@ -1,6 +1,8 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockBivalveMegalodon;
+import net.lepidodendron.block.BlockPebblestone;
+import net.lepidodendron.block.BlockSandstoneWhite;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
@@ -55,8 +57,11 @@ public class WorldGenClamRocks extends WorldGenerator
                             if (rand.nextInt(6) == 0 && posPlace.getY() >= Functions.getAdjustedSeaLevel(worldIn, posPlace)) {
                                 Functions.setBlockStateAndCheckForDoublePlant(worldIn,posPlace, Blocks.GRAVEL.getDefaultState());
                             }
+                            else if (rand.nextInt(5) == 0 && posPlace.getY() >= Functions.getAdjustedSeaLevel(worldIn, posPlace)) {
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,posPlace, BlockPebblestone.block.getDefaultState());
+                            }
                             else {
-                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,posPlace, Blocks.RED_SANDSTONE.getDefaultState());
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,posPlace, BlockSandstoneWhite.block.getDefaultState());
                                 if (worldIn.getBlockState(posPlace.up(2)).getMaterial() == Material.WATER && worldIn.getBlockState(posPlace.up()).getMaterial() == Material.WATER && rand.nextInt(6) ==0) {
                                     //Add a clam:
                                     Functions.setBlockStateAndCheckForDoublePlant(worldIn,posPlace.up(), BlockBivalveMegalodon.block.getDefaultState());
@@ -85,8 +90,11 @@ public class WorldGenClamRocks extends WorldGenerator
                             if (rand.nextInt(6) == 0 && posPlace.getY() >= Functions.getAdjustedSeaLevel(worldIn, posPlace)) {
                                 Functions.setBlockStateAndCheckForDoublePlant(worldIn,posPlace, Blocks.GRAVEL.getDefaultState());
                             }
+                            else if (rand.nextInt(5) == 0 && posPlace.getY() >= Functions.getAdjustedSeaLevel(worldIn, posPlace)) {
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,posPlace, BlockPebblestone.block.getDefaultState());
+                            }
                             else {
-                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,posPlace, Blocks.RED_SANDSTONE.getDefaultState());
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,posPlace, BlockSandstoneWhite.block.getDefaultState());
                                 if (worldIn.getBlockState(posPlace.up(2)).getMaterial() == Material.WATER && worldIn.getBlockState(posPlace.up()).getMaterial() == Material.WATER && rand.nextInt(6) ==0) {
                                     //Add a clam:
                                     Functions.setBlockStateAndCheckForDoublePlant(worldIn,posPlace.up(), BlockBivalveMegalodon.block.getDefaultState());

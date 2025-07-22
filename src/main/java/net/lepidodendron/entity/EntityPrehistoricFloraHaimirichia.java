@@ -1,20 +1,19 @@
 
 package net.lepidodendron.entity;
 
-import com.sun.org.apache.bcel.internal.generic.IADD;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
-import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
+import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.render.entity.RenderPalaeocarcharias;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;

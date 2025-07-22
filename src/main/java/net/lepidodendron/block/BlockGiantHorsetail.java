@@ -173,7 +173,9 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.CentralAfricaIndia
 				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.SouthAfricaMadagascar
 				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Chinle
-				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Ocean
+				|| (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Ocean
+					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_beach_white"))
+					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds")))
 				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.River
 				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Europe) {
 				biomeCriteria = true;
