@@ -8,13 +8,10 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.render.entity.RenderAcanthodes;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -39,6 +36,7 @@ public class EntityPrehistoricFloraExocoetoides extends EntityPrehistoricFloraAg
 	public ChainBuffer tailBuffer;
 	public Animation STAND_ANIMATION;
 	private int standCooldown;
+	private int flightProgress;
 
 	public EntityPrehistoricFloraExocoetoides(World world) {
 		super(world);
@@ -76,11 +74,13 @@ public class EntityPrehistoricFloraExocoetoides extends EntityPrehistoricFloraAg
 	{
 		super.writeEntityToNBT(compound);
 		compound.setInteger("standCooldown", this.standCooldown);
+		compound.setInteger("flightProgress", this.flightProgress);
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
 		this.standCooldown = compound.getInteger("standCooldown");
+		this.flightProgress = compound.getInteger("flightProgress");
 	}
 
 	//this checks if the mob is at surface, that is, 1 blocks above it is still water
@@ -89,8 +89,9 @@ public class EntityPrehistoricFloraExocoetoides extends EntityPrehistoricFloraAg
 		//isReally in Water
 		boolean check1 = this.isReallyInWater();
 		boolean check2 = (this.world.isAirBlock(this.getPosition().up()));
+		boolean check3 = this.posY - this.getPosition().getY() >= 0.0;
 
-		return check1 && check2;
+		return check1 && check2 && check3;
 	}
 
 	//allows jump if all directions are still water and the animal is currently in water
@@ -102,13 +103,28 @@ public class EntityPrehistoricFloraExocoetoides extends EntityPrehistoricFloraAg
 		boolean check4 = this.world.getBlockState(this.getPosition().west()).getMaterial() == Material.WATER;
 		boolean check5 = this.world.getBlockState(this.getPosition().east()).getMaterial() == Material.WATER;
 
+		//Check if the fish is moving
+
 		return check1 && (check2 && check3 && check4 && check5);
 	}
 
-	protected void jumpPN()
+	protected void flyFish()
 	{
-		this.motionY = (double)this.getJumpUpwardsMotion()*3.2f; //edit this to be a diff value
-		this.isAirBorne = true;
+		if (this.isInsideOfMaterial(Material.WATER)) {
+			this.addVelocity(0, 1.1D, 0);
+		}
+		else {
+			if (this.motionY < 0) {
+				this.addVelocity(0, 0.085D, 0);
+			}
+			if (this.motionY > 0.025) {
+				this.motionY = 0;
+			}
+			if (Math.sqrt(Math.pow(this.motionX, 2) + Math.pow(this.motionZ, 2)) < 0.3) {
+				this.motionX = this.motionX * 1.1;
+				this.motionZ = this.motionZ * 1.1;
+			}
+		}
 	}
 
 	@Override
@@ -246,9 +262,21 @@ public class EntityPrehistoricFloraExocoetoides extends EntityPrehistoricFloraAg
 			launchAttack();
 		}
 
-		if((!this.world.isRemote) && this.atSurface() && this.safeJump() && this.standCooldown == 0) {
-			this.jumpPN();
+		if((!this.world.isRemote) && this.atSurface() && this.safeJump() && this.standCooldown == 0
+			&& this.motionX + this.motionZ > 0.04D) {
 			this.standCooldown = 200;
+			this.flightProgress = 150;
+		}
+
+		if (this.flightProgress > 0) {
+			this.flightProgress -= 1;
+		}
+		if (this.flightProgress < 0) {
+			this.flightProgress = 0;
+		}
+
+		if (flightProgress > 0) {
+			this.flyFish();
 		}
 
 		if (this.standCooldown > 0) {

@@ -82,7 +82,6 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockFernEpiphyte.block);
 	}
 
-
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {		
 			
@@ -206,7 +205,7 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 		//Is this a transformed biome?
 		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
-				GenChance = Math.min(GenChance * 10, 100);
+			GenChance = Math.min(GenChance * 10, 100);
 		}
 		
 		for (int i = 0; i < (int) GenChance; i++) {
