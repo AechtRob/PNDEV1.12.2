@@ -194,7 +194,7 @@ public class EntityPrehistoricFloraExocoetoides extends EntityPrehistoricFloraAg
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new ShoalFishAgeableAI(this, 1, true));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
-		tasks.addTask(1, new AgeableFishWander(this, NO_ANIMATION, 0.1, -2, true));
+		tasks.addTask(1, new AgeableFishWander(this, NO_ANIMATION, 0.1, 10, true));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
@@ -263,7 +263,7 @@ public class EntityPrehistoricFloraExocoetoides extends EntityPrehistoricFloraAg
 		}
 
 		if((!this.world.isRemote) && this.atSurface() && this.safeJump() && this.standCooldown == 0
-			&& this.motionX + this.motionZ > 0.04D) {
+			&& this.motionX + this.motionZ > 0.04D && this.getEatTarget() == null && this.getAttackTarget() == null) {
 			this.standCooldown = 200;
 			this.flightProgress = 150;
 		}
