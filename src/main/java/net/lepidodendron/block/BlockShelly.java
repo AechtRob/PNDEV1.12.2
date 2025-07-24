@@ -79,7 +79,7 @@ public class BlockShelly extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimShellyReef))
 			dimensionCriteria = true;

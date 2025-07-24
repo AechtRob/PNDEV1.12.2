@@ -63,7 +63,7 @@ public class BlockAraucarioxylonLogPetrified extends ElementsLepidodendronMod.Mo
 		if (!dimensionCriteria)
 			return;
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 128, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MESA))
 			biomeCriteria = true;		
 		if (!biomeCriteria)

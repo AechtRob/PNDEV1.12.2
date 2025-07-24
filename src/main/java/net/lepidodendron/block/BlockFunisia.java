@@ -92,7 +92,7 @@ public class BlockFunisia extends ElementsLepidodendronMod.ModElement {
 		}
 
 		double mutiplier = 1;
-		if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")
+		if (world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")
 		) {
 			mutiplier = 10;
 		}

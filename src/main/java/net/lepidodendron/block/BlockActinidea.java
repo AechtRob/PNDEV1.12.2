@@ -99,7 +99,7 @@ public class BlockActinidea extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genActinideaBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
 				biomeCriteria = true;

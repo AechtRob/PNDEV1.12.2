@@ -63,7 +63,7 @@ public class BlockBalticAmberOre extends ElementsLepidodendronMod.ModElement {
 		if (!dimensionCriteria)
 			return;
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 128, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
 			biomeCriteria = true;		
 		if (!biomeCriteria)

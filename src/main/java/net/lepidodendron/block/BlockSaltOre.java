@@ -62,7 +62,7 @@ public class BlockSaltOre extends ElementsLepidodendronMod.ModElement {
 		if (dimID == 0 || dimID == LepidodendronConfig.dimJurassic)
 			dimensionCriteria = true;
 
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		boolean biomeCriteria = false;
 		if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SANDY) && dimID == 0)
 			biomeCriteria = true;

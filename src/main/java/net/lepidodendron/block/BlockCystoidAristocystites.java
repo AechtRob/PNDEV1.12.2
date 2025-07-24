@@ -95,7 +95,7 @@ public class BlockCystoidAristocystites extends ElementsLepidodendronMod.ModElem
 		}
 		
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genCrinoidBlacklistBiomes)) {
 			biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))

@@ -66,7 +66,7 @@ public class BlockLavaRockZirconOre extends ElementsLepidodendronMod.ModElement 
 		boolean dimensionCriteria = false;
 		if (dimID == LepidodendronConfig.dimPrecambrian)
 			dimensionCriteria = true;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		if (biome instanceof BiomePrecambrian) {
 			if (((BiomePrecambrian)biome).getBiomeType() != EnumBiomeTypePrecambrian.Hadean) {
 				dimensionCriteria = false;

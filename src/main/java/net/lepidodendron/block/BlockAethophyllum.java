@@ -93,7 +93,7 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 128, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAethophyllumBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.PLAINS))
 				biomeCriteria = true;

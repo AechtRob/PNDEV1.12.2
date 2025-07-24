@@ -92,7 +92,7 @@ public class BlockHuainanMat extends ElementsLepidodendronMod.ModElement {
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran))
 			biomeCriteria = true;
 		if ((dimID == LepidodendronConfig.dimPrecambrian)) {
-			if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")) {
+			if (world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -119,7 +119,7 @@ public class BlockHuainanMat extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int mulitplier = 1;
-		if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")) {
+		if (world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")) {
 			mulitplier = 48;
 		}
 

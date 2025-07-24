@@ -98,8 +98,8 @@ public class BlockVendoconularia extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
 			if (BlockArkarua.isPrecambrianUpdated()) {
-				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")) {
+				if (world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
+					|| world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")) {
 					dimensionCriteria = true;
 				}
 				else {

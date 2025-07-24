@@ -124,7 +124,7 @@ public class BlockCrumillospongia extends ElementsLepidodendronMod.ModElement {
 
 		//which biomes does it generate in?
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genCrinoidBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
@@ -164,11 +164,11 @@ public class BlockCrumillospongia extends ElementsLepidodendronMod.ModElement {
 		}
 		int minWaterDepth = 1;
 		int maxWaterDepth = 4 * dimWeight;
-		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX + 16, 0, chunkZ + 16)) - maxWaterDepth;
+		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX + 15, 0, chunkZ + 15)) - maxWaterDepth;
 
 		for (int i = 0; i < (8 * multiplier); i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX + 16, 0, chunkZ + 16)) - startHeight) + startHeight;
+			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX + 15, 0, chunkZ + 15)) - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			(new WorldGenReed() {
 				@Override

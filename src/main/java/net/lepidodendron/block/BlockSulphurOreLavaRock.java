@@ -55,7 +55,7 @@ public class BlockSulphurOreLavaRock extends ElementsLepidodendronMod.ModElement
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 
 		if (dimID == 0
 				|| dimID == LepidodendronConfig.dimPrecambrian

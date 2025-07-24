@@ -93,20 +93,20 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran))
 			biomeCriteria = true;
 		if ((dimID == LepidodendronConfig.dimPrecambrian)) {
-			if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:paleoproterozoic_shallows")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_sparse_sea")
-					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
+			if (world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
+					|| world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
+					|| world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
+					|| world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:paleoproterozoic_shallows")
+					|| world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")
+					|| world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
+					|| world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
+					|| world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")
+					|| world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
+					|| world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")
+					|| world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
+					|| world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")
+					|| world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_sparse_sea")
+					|| world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -114,8 +114,8 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 		int danglerhelper = 0;
-		if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
-				|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")) {
+		if (world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
+				|| world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")) {
 			danglerhelper = 40;
 		}
 
@@ -137,8 +137,8 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int mulitplier = 1;
-		if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
-				|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")) {
+		if (world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
+				|| world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")) {
 			mulitplier = 5;
 		}
 

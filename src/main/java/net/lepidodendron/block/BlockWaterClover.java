@@ -72,7 +72,7 @@ public class BlockWaterClover extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genWaterCloverBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 				biomeCriteria = true;

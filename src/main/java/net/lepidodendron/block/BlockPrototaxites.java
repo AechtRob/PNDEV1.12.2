@@ -78,7 +78,7 @@ public class BlockPrototaxites extends ElementsLepidodendronMod.ModElement {
 
 		boolean biomeCriteria = false;
 		//Just an *additional* spawner for mushroom biomes:
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genPrototaxitesBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = true;

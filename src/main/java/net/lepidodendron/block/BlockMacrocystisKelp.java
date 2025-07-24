@@ -111,7 +111,7 @@ public class BlockMacrocystisKelp extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genMacrocystisBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;

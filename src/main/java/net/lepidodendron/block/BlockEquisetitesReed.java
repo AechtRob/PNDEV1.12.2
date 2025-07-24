@@ -85,7 +85,7 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 128, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genEquisetitesReedBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 				biomeCriteria = true;

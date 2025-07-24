@@ -94,7 +94,7 @@ public class BlockBurykhia extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
 			if (BlockArkarua.isPrecambrianUpdated()) {
-				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")) {
+				if (world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")) {
 					dimensionCriteria = true;
 				}
 				else {
@@ -102,7 +102,7 @@ public class BlockBurykhia extends ElementsLepidodendronMod.ModElement {
 				}
 			}
 			else {
-				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
+				if (world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
 					dimensionCriteria = true;
 				}
 			}

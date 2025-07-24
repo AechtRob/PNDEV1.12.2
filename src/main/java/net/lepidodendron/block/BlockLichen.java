@@ -74,7 +74,7 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		if (biome instanceof BiomeCarboniferous) {
 			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
 			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Ice

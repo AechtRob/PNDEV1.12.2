@@ -70,7 +70,7 @@ public class BlockSulphurVent extends ElementsLepidodendronMod.ModElement {
 			return;
 		}
 
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 128, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		if (biome instanceof BiomePrecambrian) {
 			if (((BiomePrecambrian)biome).getBiomeType() != EnumBiomeTypePrecambrian.Ediacaran) {
 				return;

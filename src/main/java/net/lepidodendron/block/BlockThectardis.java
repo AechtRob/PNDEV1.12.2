@@ -97,7 +97,7 @@ public class BlockThectardis extends ElementsLepidodendronMod.ModElement {
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran))
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
-			if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)) instanceof BiomePrecambrian) {
+			if (world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)) instanceof BiomePrecambrian) {
 				dimensionCriteria = true;
 			}
 		}

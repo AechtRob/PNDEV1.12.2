@@ -86,7 +86,7 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {		
 			
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genFernEpiphyteBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
 				biomeCriteria = true;
@@ -211,8 +211,8 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 		for (int i = 0; i < (int) GenChance; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int l14 = chunkZ + random.nextInt(16) + 8;
-			int yMin = world.getChunk(chunkX, chunkZ).getHeight(new BlockPos(l6, 0, l14));
-			int yMax = world.getChunk(chunkX, chunkZ).getHeight(new BlockPos(l6, 0, l14)) + 50;
+			int yMin = world.getChunk(new BlockPos(l6, 0, l14)).getHeight(new BlockPos(l6, 0, l14));
+			int yMax = world.getChunk(new BlockPos(l6, 0, l14)).getHeight(new BlockPos(l6, 0, l14)) + 50;
 			int i11 = yMin + random.nextInt(yMax - yMin);
 			(new FernEpiphyteGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
 		}

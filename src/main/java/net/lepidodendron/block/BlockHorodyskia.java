@@ -103,10 +103,10 @@ public class BlockHorodyskia extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
 			if (BlockHorodyskia.isPrecambrianUpdated()) {
-				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")) {
+				if (world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")) {
 					dimensionCriteria = true;
 				}
-				else if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")) {
+				else if (world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")) {
 					dimensionCriteria = true;
 				}
 				else {
@@ -114,7 +114,7 @@ public class BlockHorodyskia extends ElementsLepidodendronMod.ModElement {
 				}
 			}
 			else {
-				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
+				if (world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
 					dimensionCriteria = true;
 				}
 			}

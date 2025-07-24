@@ -82,7 +82,7 @@ public class BlockArchaeocyatha extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimArchaeocyathaReef))
 			dimensionCriteria = true;
@@ -91,7 +91,7 @@ public class BlockArchaeocyatha extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		boolean biomeCriteria = false;
-		//biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
+		//biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genArchaeocyathaReefBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
