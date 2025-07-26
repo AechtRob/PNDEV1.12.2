@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraFukuipteryx extends EntityPrehistoricFloraLan
 		minWidth = 0.3F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 6.0D;
+		maxHealthAgeable = 4.0D;
 	}
 
 	@Override

@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraStolokrosuchus extends EntityPrehistoricFlora
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
 		maxHeight = 0.6F;
-		maxHealthAgeable = 30.0D;
+		maxHealthAgeable = 22.0D;
 		EAT_ANIMATION = Animation.create(20);
 		STAND_ANIMATION = Animation.create(640);
 		if (FMLCommonHandler.instance().getSide().isClient()) {

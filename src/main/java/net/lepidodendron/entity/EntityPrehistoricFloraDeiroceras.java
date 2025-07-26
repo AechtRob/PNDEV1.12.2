@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraDeiroceras extends EntityPrehistoricFloraNaut
 		minWidth = 0.1F;
 		maxWidth = 0.9F;
 		maxHeight = 0.9F;
-		maxHealthAgeable = 20.0D;
+		maxHealthAgeable = 6.0D;
 	}
 
 	@Override

@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraHoyasemys extends EntityPrehistoricFloraSwimm
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 6.0D;
+		maxHealthAgeable = 3.0D;
 		EAT_ANIMATION = Animation.create(40);
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {

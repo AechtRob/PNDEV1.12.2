@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraEoscorpius extends EntityPrehistoricFloraScor
 			maxHealthAgeable = 1.0D;
 		}
 		else {
-			maxHealthAgeable = 3.0D;
+			maxHealthAgeable = 2.0D;
 		}
 	}
 

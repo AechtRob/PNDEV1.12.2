@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraHaimirichia extends EntityPrehistoricFloraAge
 		minWidth = 0.2F;
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 15.0D;
+		maxHealthAgeable = 10.0D;
 	}
 
 

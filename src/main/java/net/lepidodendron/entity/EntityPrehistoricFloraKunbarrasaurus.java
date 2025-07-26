@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraKunbarrasaurus extends EntityPrehistoricFlora
 		minWidth = 0.3F;
 		maxWidth = 0.9F;
 		maxHeight = 0.7F;
-		maxHealthAgeable = 45;
+		maxHealthAgeable = 32;
 		ALERT_ANIMATION = Animation.create(140);
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {

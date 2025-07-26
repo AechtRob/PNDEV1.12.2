@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraGalleonosaurus extends EntityPrehistoricFlora
 		minWidth = 0.05F;
 		maxWidth = 0.5F;
 		maxHeight = 0.7F;
-		maxHealthAgeable = 25.0D;
+		maxHealthAgeable = 16.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

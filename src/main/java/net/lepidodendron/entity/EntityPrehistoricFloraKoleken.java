@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraKoleken extends EntityPrehistoricFloraLandCar
 		minWidth = 0.20F;
 		maxWidth = 1.75F;
 		maxHeight = 1.8F;
-		maxHealthAgeable = 50.0D;
+		maxHealthAgeable = 70.0D;
 		STAND_ANIMATION = Animation.create(150);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

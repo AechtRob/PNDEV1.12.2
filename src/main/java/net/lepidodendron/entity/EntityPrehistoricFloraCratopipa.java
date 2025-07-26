@@ -67,6 +67,13 @@ public class EntityPrehistoricFloraCratopipa extends EntityPrehistoricFloraSwimm
 		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, STAND_ANIMATION, JUMP_ANIMATION};
 	}
 
+	//control jump height
+	protected void jumpPN()
+	{
+		this.motionY = (double)this.getJumpUpwardsMotion()*0.3f; //edit this to be a diff value
+		this.isAirBorne = true;
+	}
+
 	@Override
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
@@ -153,7 +160,7 @@ public class EntityPrehistoricFloraCratopipa extends EntityPrehistoricFloraSwimm
 	protected void collideWithEntity(Entity entityIn) {
 		super.collideWithEntity(entityIn);
 		if(this.getIsMoving() && (!this.isJumping) && this.onGround && !this.isReallyInWater()){
-			this.jump();
+			this.jumpPN();
 			this.setAnimation(JUMP_ANIMATION);
 		}
 
@@ -186,7 +193,7 @@ public class EntityPrehistoricFloraCratopipa extends EntityPrehistoricFloraSwimm
 
 		//switch to jumping
 		if(this.getIsMoving() && (!this.isJumping) && this.onGround && !this.isReallyInWater() && this.getAnimation() != JUMP_ANIMATION && !this.isWalking){
-			this.jump();
+			this.jumpPN();
 			this.setAnimation(JUMP_ANIMATION);
 		}
 
@@ -221,7 +228,7 @@ public class EntityPrehistoricFloraCratopipa extends EntityPrehistoricFloraSwimm
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase && this.getAnimation() != JUMP_ANIMATION) {
-			this.jump();
+			this.jumpPN();
 			this.setAnimation(JUMP_ANIMATION);
 		}
 		return super.attackEntityFrom(ds, i);

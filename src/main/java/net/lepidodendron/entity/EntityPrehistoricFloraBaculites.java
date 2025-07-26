@@ -32,7 +32,7 @@ public class EntityPrehistoricFloraBaculites extends EntityPrehistoricFloraNauti
 		minWidth = 0.07F;
 		maxWidth = 0.6F;
 		maxHeight = 0.9F;
-		maxHealthAgeable = 9.0D;
+		maxHealthAgeable = 6.0D;
 	}
 
 	@Override

@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraFutabasaurus extends EntityPrehistoricFloraAg
 		minWidth = 0.1F;
 		maxWidth = 1.5F;
 		maxHeight = 0.6F;
-		maxHealthAgeable = 30.0D;
+		maxHealthAgeable = 50.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

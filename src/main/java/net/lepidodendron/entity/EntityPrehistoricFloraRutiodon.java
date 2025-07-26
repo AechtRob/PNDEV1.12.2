@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraRutiodon extends EntityPrehistoricFloraSwimmi
 		minWidth = 0.1F;
 		maxWidth = 0.8F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 20.0D;
+		maxHealthAgeable = 30.0D;
 		EAT_ANIMATION = Animation.create(35);
 		STAND_ANIMATION = Animation.create(660);
 		if (FMLCommonHandler.instance().getSide().isClient()) {

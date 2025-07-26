@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraCryptoclidus extends EntityPrehistoricFloraAg
 		minWidth = 0.1F;
 		maxWidth = 0.95F;
 		maxHeight = 0.8F;
-		maxHealthAgeable = 20.0D;
+		maxHealthAgeable = 30.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

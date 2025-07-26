@@ -34,7 +34,7 @@ public class RenderFukuipteryx extends RenderLivingBaseWithBook<EntityPrehistori
     protected void preRenderCallback(EntityPrehistoricFloraFukuipteryx entity, float f) {
         float scale = entity.getAgeScale()*this.getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.35F;
+        this.shadowSize = entity.width * scale * 0.5F;
     }
 
 }

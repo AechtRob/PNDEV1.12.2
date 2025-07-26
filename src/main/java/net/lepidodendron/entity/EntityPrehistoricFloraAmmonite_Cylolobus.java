@@ -32,7 +32,7 @@ public class EntityPrehistoricFloraAmmonite_Cylolobus extends EntityPrehistoricF
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 4;
+		maxHealthAgeable = 2;
 	}
 
 	@Override

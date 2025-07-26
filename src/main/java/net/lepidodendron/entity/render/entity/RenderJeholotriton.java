@@ -12,7 +12,7 @@ public class RenderJeholotriton extends RenderLivingBaseWithBook<EntityPrehistor
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/jeholotriton.png");
 
     public static float getScaler() {
-        return 0.7F * 0.35F;
+        return 0.7F * 0.3F;
     }
     public RenderJeholotriton(RenderManager mgr) {
         super(mgr, new ModelJeholotriton(), 0.0f);

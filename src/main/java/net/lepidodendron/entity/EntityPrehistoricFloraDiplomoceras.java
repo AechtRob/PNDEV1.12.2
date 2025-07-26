@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraDiplomoceras extends EntityPrehistoricFloraNa
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
 		maxHeight = 0.59F;
-		maxHealthAgeable = 12.0D;
+		maxHealthAgeable = 8.0D;
 	}
 
 	@Override

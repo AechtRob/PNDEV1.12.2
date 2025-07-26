@@ -33,7 +33,7 @@ public class EntityPrehistoricFloraTropites extends EntityPrehistoricFloraNautil
 		minWidth = 0.07F;
 		maxWidth = 0.3F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 6.0D;
+		maxHealthAgeable = 4.0D;
 	}
 
 	@Override

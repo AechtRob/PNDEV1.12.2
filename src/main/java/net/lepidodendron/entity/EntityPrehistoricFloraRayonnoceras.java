@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraRayonnoceras extends EntityPrehistoricFloraNa
 		minWidth = 0.1F;
 		maxWidth = 1.0F;
 		maxHeight = 0.99F;
-		maxHealthAgeable = 46.0D;
+		maxHealthAgeable = 7.0D;
 	}
 
 	@Override

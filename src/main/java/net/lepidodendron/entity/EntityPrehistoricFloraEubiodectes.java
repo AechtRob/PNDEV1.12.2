@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraEubiodectes extends EntityPrehistoricFloraAge
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 12.0D;
+		maxHealthAgeable = 8.0D;
 	}
 
 	@Override

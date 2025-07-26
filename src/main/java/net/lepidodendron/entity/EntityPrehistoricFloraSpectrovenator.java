@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraSpectrovenator extends EntityPrehistoricFlora
 		minWidth = 0.20F;
 		maxWidth = 0.6F;
 		maxHeight = 0.9F;
-		maxHealthAgeable = 25.0F;
+		maxHealthAgeable = 20.0F;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

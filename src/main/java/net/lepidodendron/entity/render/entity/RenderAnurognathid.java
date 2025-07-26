@@ -140,7 +140,7 @@ public class RenderAnurognathid extends RenderLivingBaseVariantModels<EntityPreh
             case SINOMACROPS:
                 return 0.22F;
             case VESPEROPTERYLUS:
-                return 0.33F;
+                return 0.29F;
 
         }
     }

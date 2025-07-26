@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraFukuiraptor extends EntityPrehistoricFloraLan
 		minWidth = 0.20F;
 		maxWidth = 1.5F;
 		maxHeight = 1.8F;
-		maxHealthAgeable = 30.0D;
+		maxHealthAgeable = 50.0D;
 		SCRATCH_ANIMATION = Animation.create(105);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

@@ -35,7 +35,7 @@ public class EntityPrehistoricFloraAmmonite_Ceratites extends EntityPrehistoricF
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 4;
+		maxHealthAgeable = 2;
 	}
 
 	@Override

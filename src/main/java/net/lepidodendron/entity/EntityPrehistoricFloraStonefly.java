@@ -73,12 +73,12 @@ public class EntityPrehistoricFloraStonefly extends EntityPrehistoricFloraMegane
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(3.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
 	}
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.MEAT, DietString.BUG);
+		return ArrayUtils.addAll(DietString.PLANTS);
 	}
 
 	@Override

@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraMei extends EntityPrehistoricFloraLandBase im
 		minWidth = 0.20F;
 		maxWidth = 0.5F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 8;
+		maxHealthAgeable = 4;
 		STAND_ANIMATION = Animation.create(390);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraGoniopholis extends EntityPrehistoricFloraSwi
 		minWidth = 0.1F;
 		maxWidth = 0.8F;
 		maxHeight = 0.6F;
-		maxHealthAgeable = 20.0D;
+		maxHealthAgeable = 28.0D;
 		EAT_ANIMATION = Animation.create(35);
 		STAND_ANIMATION = Animation.create(635);
 		if (FMLCommonHandler.instance().getSide().isClient()) {

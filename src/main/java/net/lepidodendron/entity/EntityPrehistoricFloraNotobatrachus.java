@@ -153,7 +153,7 @@ public class EntityPrehistoricFloraNotobatrachus extends EntityPrehistoricFloraS
 	protected void collideWithEntity(Entity entityIn) {
 		super.collideWithEntity(entityIn);
 		if(this.getIsMoving() && (!this.isJumping) && this.onGround && !this.isReallyInWater()){
-			this.jump();
+			this.jumpPN();
 			this.setAnimation(JUMP_ANIMATION);
 		}
 
@@ -228,7 +228,7 @@ public class EntityPrehistoricFloraNotobatrachus extends EntityPrehistoricFloraS
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase && this.getAnimation() != JUMP_ANIMATION) {
-			this.jump();
+			this.jumpPN();
 			this.setAnimation(JUMP_ANIMATION);
 		}
 		return super.attackEntityFrom(ds, i);

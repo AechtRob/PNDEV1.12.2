@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraAmmonite_Dactylioceras extends EntityPrehisto
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 4.0D;
+		maxHealthAgeable = 2.0D;
 		SWIM_ANIMATION = Animation.create(this.swimTransitionLength());
 		UNSWIM_ANIMATION = Animation.create(this.unswimTransitionLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {

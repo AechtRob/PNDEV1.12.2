@@ -34,7 +34,7 @@ public class EntityPrehistoricFloraAmmonite_Perisphinctes extends EntityPrehisto
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 6F;
+		maxHealthAgeable = 3F;
 	}
 
 	@Override

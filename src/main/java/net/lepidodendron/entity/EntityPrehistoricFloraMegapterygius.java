@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraMegapterygius extends EntityPrehistoricFloraA
 		minWidth = 0.1F;
 		maxWidth = 1.5F;
 		maxHeight = 0.9F;
-		maxHealthAgeable = 45.0D;
+		maxHealthAgeable = 60.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

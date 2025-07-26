@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraGegepterus extends EntityPrehistoricFloraLand
 		minWidth = 0.10F;
 		maxWidth = 0.4F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 6.0D;
+		maxHealthAgeable = 4.0D;
 		setNoAI(!true);
 		enablePersistence();
 	}

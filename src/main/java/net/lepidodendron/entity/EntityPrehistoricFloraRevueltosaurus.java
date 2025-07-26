@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraRevueltosaurus extends EntityPrehistoricFlora
 		minWidth = 0.18F;
 		maxWidth = 0.4F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 25;
+		maxHealthAgeable = 18;
 		NOISE_ANIMATION = Animation.create(23);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
