@@ -50,11 +50,11 @@ public class EntityPrehistoricFloraBrodiechelys extends EntityPrehistoricFloraSw
 
 	public EntityPrehistoricFloraBrodiechelys(World world) {
 		super(world);
-		setSize(0.2F, 0.2F);
+		setSize(0.4F, 0.2F);
 		minWidth = 0.1F;
-		maxWidth = 0.2F;
+		maxWidth = 0.4F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 6.0D;
+		maxHealthAgeable = 5.0D;
 		EAT_ANIMATION = Animation.create(40);
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 		STAND_ANIMATION = Animation.create(480);
@@ -198,7 +198,7 @@ public class EntityPrehistoricFloraBrodiechelys extends EntityPrehistoricFloraSw
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 1F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AmphibianWanderNestInBlockAI(this));
-		tasks.addTask(4, new AmphibianWander(this, NO_ANIMATION, 0.5F, 20));
+		tasks.addTask(4, new AmphibianWander(this, NO_ANIMATION, 0.8F, 20));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));

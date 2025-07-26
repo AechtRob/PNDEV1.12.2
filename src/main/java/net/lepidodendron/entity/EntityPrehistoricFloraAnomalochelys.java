@@ -47,11 +47,11 @@ public class EntityPrehistoricFloraAnomalochelys extends EntityPrehistoricFloraL
 
 	public EntityPrehistoricFloraAnomalochelys(World world) {
 		super(world);
-		setSize(0.8F, 0.45F);
+		setSize(0.5F, 0.35F);
 		minWidth = 0.2F;
-		maxWidth = 0.8F;
-		maxHeight = 0.45F;
-		maxHealthAgeable = 10.0D;
+		maxWidth = 0.5F;
+		maxHeight = 0.35F;
+		maxHealthAgeable = 8.0D;
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 	}
 
@@ -81,7 +81,7 @@ public class EntityPrehistoricFloraAnomalochelys extends EntityPrehistoricFloraL
 	}
 
 	public int hideAnimationLength() {
-		return 310;
+		return 350;
 	}
 
 	@Override
@@ -124,7 +124,7 @@ public class EntityPrehistoricFloraAnomalochelys extends EntityPrehistoricFloraL
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.285F;
+		float speedBase = 0.17F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

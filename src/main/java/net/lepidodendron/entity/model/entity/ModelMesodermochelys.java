@@ -648,16 +648,13 @@ public class ModelMesodermochelys extends ModelBasePalaeopedia {
 
         EntityPrehistoricFloraMesodermochelys ee = (EntityPrehistoricFloraMesodermochelys) entitylivingbaseIn;
 
-        if (ee.getAnimation() != ee.HIDE_ANIMATION) {
-            if (!ee.isReallyInWater()) {
-                if (ee.getIsMoving()) {
-                    animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-                }
-            } else {
-                //Swimming pose:
-                animSwimming(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-            }
+        if (ee.isReallyInWater()) {
+            animSwimming(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+
+        } else {
+            animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         }
+
         if (ee.getAnimation() == ee.EAT_ANIMATION) {
             animEat(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }

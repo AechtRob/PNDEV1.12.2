@@ -51,10 +51,10 @@ public class EntityPrehistoricFloraAdocus extends EntityPrehistoricFloraSwimming
 
 	public EntityPrehistoricFloraAdocus(World world) {
 		super(world);
-		setSize(0.2F, 0.2F);
+		setSize(0.4F, 0.3F);
 		minWidth = 0.1F;
-		maxWidth = 0.2F;
-		maxHeight = 0.2F;
+		maxWidth = 0.4F;
+		maxHeight = 0.3F;
 		maxHealthAgeable = 6.0D;
 		EAT_ANIMATION = Animation.create(40);
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
