@@ -164,10 +164,7 @@ public class ModelDamselfly extends ModelBasePalaeopedia {
 
         EntityPrehistoricFloraInsectFlyingBase ee = (EntityPrehistoricFloraInsectFlyingBase) e;
         if (ee.flyProgress != 0 && ee.getAttachmentPos() == null) { //flying pose
-            this.setRotateAngle(hindwingright, 0.0F, (float)Math.toRadians(15), 0.0F);
-            this.setRotateAngle(hindwingright, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(hindwingleft, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(hindwingleft, 0.0F, -(float)Math.toRadians(15), 0.0F);
+
 
             float modifier = 1F;
             this.flap(forewingleft,2.2F * modifier, 0.5F, true, 0,0, f2, 1F);
@@ -183,6 +180,11 @@ public class ModelDamselfly extends ModelBasePalaeopedia {
             this.flap(legright2,1.2F * modifier, 0.1F, false, 2,0, f2, 1F);
             this.flap(legright3,1.2F * modifier, 0.1F, false, 1,0, f2, 1F);
 
+        } else {
+            this.setRotateAngle(forewingleft, 0.0F, -1.309F, -1.3963F);
+            this.setRotateAngle(forewingright, 0.0F, 1.309F, 1.3963F);
+            this.setRotateAngle(hindwingleft, 0.0F, -1.309F, -1.4835F);
+            this.setRotateAngle(hindwingright, 0.0F, 1.309F, 1.4835F);
         }
     }
 }

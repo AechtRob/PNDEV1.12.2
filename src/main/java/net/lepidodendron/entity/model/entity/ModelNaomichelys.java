@@ -521,14 +521,9 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
             if (!ee.isReallyInWater()) {
                 if (ee.getIsMoving()) {
                     animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-                }
-            } else {
-                //Swimming pose:
-                if (!ee.getIsMoving()) { //static in water
-                    //
+
                 } else {
-                    //moving in water
-                    //
+                    animIdlePose(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
             }
         }
@@ -3010,6 +3005,35 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
         }
         this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(xx), tail2.rotateAngleY + (float) Math.toRadians(yy), tail2.rotateAngleZ + (float) Math.toRadians(zz));
 
+
+
+    }
+    public void animIdlePose(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+        EntityPrehistoricFloraNaomichelys entity = (EntityPrehistoricFloraNaomichelys) entitylivingbaseIn;
+        int animCycle = 60;
+        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        double xx = 0;
+        double yy = 0;
+        double zz = 0;
+        this.setRotateAngle(main, main.rotateAngleX + (float) Math.toRadians(-5), main.rotateAngleY + (float) Math.toRadians(0), main.rotateAngleZ + (float) Math.toRadians(0));
+        this.main.rotationPointX = this.main.rotationPointX + (float)(0);
+        this.main.rotationPointY = this.main.rotationPointY - (float)(-3);
+        this.main.rotationPointZ = this.main.rotationPointZ + (float)(0);
+        this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(-15), neck.rotateAngleY + (float) Math.toRadians(0), neck.rotateAngleZ + (float) Math.toRadians(0));
+        this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(-10), head.rotateAngleY + (float) Math.toRadians(0), head.rotateAngleZ + (float) Math.toRadians(0));
+        this.setRotateAngle(frontleftleg, frontleftleg.rotateAngleX + (float) Math.toRadians(-0.19053), frontleftleg.rotateAngleY + (float) Math.toRadians(46.46328), frontleftleg.rotateAngleZ + (float) Math.toRadians(-43.0358));
+        this.setRotateAngle(frontleftleg2, frontleftleg2.rotateAngleX + (float) Math.toRadians(16.20309), frontleftleg2.rotateAngleY + (float) Math.toRadians(3.06523), frontleftleg2.rotateAngleZ + (float) Math.toRadians(12.89167));
+        this.setRotateAngle(frontleftleg3, frontleftleg3.rotateAngleX + (float) Math.toRadians(-24.13272), frontleftleg3.rotateAngleY + (float) Math.toRadians(34.71167), frontleftleg3.rotateAngleZ + (float) Math.toRadians(9.84164));
+        this.setRotateAngle(frontrightleg, frontrightleg.rotateAngleX + (float) Math.toRadians(-0.19053), frontrightleg.rotateAngleY + (float) Math.toRadians(-46.46328), frontrightleg.rotateAngleZ + (float) Math.toRadians(43.0358));
+        this.setRotateAngle(frontrightleg2, frontrightleg2.rotateAngleX + (float) Math.toRadians(16.20309), frontrightleg2.rotateAngleY + (float) Math.toRadians(-3.06523), frontrightleg2.rotateAngleZ + (float) Math.toRadians(-12.89167));
+        this.setRotateAngle(frontrightleg3, frontrightleg3.rotateAngleX + (float) Math.toRadians(-24.13272), frontrightleg3.rotateAngleY + (float) Math.toRadians(-34.71167), frontrightleg3.rotateAngleZ + (float) Math.toRadians(-9.84164));
+        this.setRotateAngle(backleftleg, backleftleg.rotateAngleX + (float) Math.toRadians(64.75252), backleftleg.rotateAngleY + (float) Math.toRadians(-48.73922), backleftleg.rotateAngleZ + (float) Math.toRadians(83.31978));
+        this.setRotateAngle(backleftleg3, backleftleg3.rotateAngleX + (float) Math.toRadians(44.99412), backleftleg3.rotateAngleY + (float) Math.toRadians(53.19349), backleftleg3.rotateAngleZ + (float) Math.toRadians(-55.40601));
+        this.setRotateAngle(backrightleg, backrightleg.rotateAngleX + (float) Math.toRadians(64.75252), backrightleg.rotateAngleY + (float) Math.toRadians(48.73922), backrightleg.rotateAngleZ + (float) Math.toRadians(-83.31978));
+        this.setRotateAngle(backrightleg3, backrightleg3.rotateAngleX + (float) Math.toRadians(44.99412), backrightleg3.rotateAngleY + (float) Math.toRadians(-53.19349), backrightleg3.rotateAngleZ + (float) Math.toRadians(55.40601));
+        this.setRotateAngle(tail, tail.rotateAngleX + (float) Math.toRadians(-2.90089), tail.rotateAngleY + (float) Math.toRadians(-7.74934), tail.rotateAngleZ + (float) Math.toRadians(1.90251));
+        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(0), tail2.rotateAngleY + (float) Math.toRadians(-25), tail2.rotateAngleZ + (float) Math.toRadians(0));
+        this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(0), tail3.rotateAngleY + (float) Math.toRadians(-20), tail3.rotateAngleZ + (float) Math.toRadians(0));
 
 
     }
