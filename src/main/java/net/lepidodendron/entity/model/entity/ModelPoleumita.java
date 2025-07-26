@@ -8,66 +8,84 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 public class ModelPoleumita extends ModelBasePalaeopedia {
-    private final AdvancedModelRenderer shell;
-    private final AdvancedModelRenderer body;
-    private final AdvancedModelRenderer cube_r1;
-    private final AdvancedModelRenderer leg3;
     private final AdvancedModelRenderer bone;
-    private final AdvancedModelRenderer leg;
-    private final AdvancedModelRenderer leg2;
-    private final AdvancedModelRenderer tentacleL;
-    private final AdvancedModelRenderer tentacleL2;
+    private final AdvancedModelRenderer cube_r1;
+    private final AdvancedModelRenderer shell;
+    private final AdvancedModelRenderer shell2;
+    private final AdvancedModelRenderer shell3;
+    private final AdvancedModelRenderer shell4;
+    private final AdvancedModelRenderer shell5;
+    private final AdvancedModelRenderer shell6;
+    private final AdvancedModelRenderer shell7;
+    private final AdvancedModelRenderer tentacleR;
+    private final AdvancedModelRenderer tentacleR2;
 
     public ModelPoleumita() {
         this.textureWidth = 32;
         this.textureHeight = 32;
 
-        this.body = new AdvancedModelRenderer(this);
-        this.body.setRotationPoint(0.0F, 24.0F, 0.0F);
-        this.body.cubeList.add(new ModelBox(body, 0, 12, -2.0F, -2.01F, -1.25F, 4, 2, 6, 0.0F, false));
-        this.body.cubeList.add(new ModelBox(body, 0, 20, -2.0F, -1.0F, -2.75F, 4, 1, 2, 0.0F, false));
+        this.bone = new AdvancedModelRenderer(this);
+        this.bone.setRotationPoint(0.0F, 23.5F, 0.0F);
+        this.bone.cubeList.add(new ModelBox(bone, 20, 9, 2.5F, -1.75F, -4.5F, 2, 2, 2, 0.0F, false));
+        this.bone.cubeList.add(new ModelBox(bone, 0, 0, 1.5F, -0.25F, -5.0F, 4, 1, 6, 0.0F, false));
+        this.bone.cubeList.add(new ModelBox(bone, 0, 25, 2.0F, -0.25F, 1.0F, 3, 1, 1, 0.0F, false));
 
         this.cube_r1 = new AdvancedModelRenderer(this);
-        this.cube_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.body.addChild(cube_r1);
-        this.setRotateAngle(cube_r1, 0.4363F, 0.0F, 0.0F);
-        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 0, 0, -0.5F, -2.5F, -3.25F, 1, 1, 2, 0.0F, false));
-        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 0, 3, -1.0F, -2.5F, -1.25F, 2, 1, 1, 0.0F, false));
-
-        this.leg3 = new AdvancedModelRenderer(this);
-        this.leg3.setRotationPoint(2.0F, 0.0F, 1.0F);
-        this.body.addChild(leg3);
-        this.leg3.cubeList.add(new ModelBox(leg3, 15, 5, 0.0F, -0.99F, -3.25F, 1, 1, 7, 0.0F, false));
-
-        this.bone = new AdvancedModelRenderer(this);
-        this.bone.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.body.addChild(bone);
-
-
-        this.leg = new AdvancedModelRenderer(this);
-        this.leg.setRotationPoint(0.0F, 0.0F, 5.0F);
-        this.body.addChild(leg);
-        this.leg.cubeList.add(new ModelBox(leg, 15, 0, -2.0F, -1.0F, -0.25F, 4, 1, 2, 0.0F, false));
-
-        this.leg2 = new AdvancedModelRenderer(this);
-        this.leg2.setRotationPoint(-2.0F, 0.0F, 1.0F);
-        this.body.addChild(leg2);
-        this.leg2.cubeList.add(new ModelBox(leg2, 13, 13, -1.0F, -0.99F, -3.25F, 1, 1, 7, 0.0F, false));
-
-        this.tentacleL = new AdvancedModelRenderer(this);
-        this.tentacleL.setRotationPoint(1.0F, -1.75F, -2.0F);
-        this.body.addChild(tentacleL);
-        this.tentacleL.cubeList.add(new ModelBox(tentacleL, 20, 13, -0.5F, 0.0F, -1.75F, 4, 0, 2, 0.0F, false));
-
-        this.tentacleL2 = new AdvancedModelRenderer(this);
-        this.tentacleL2.setRotationPoint(-1.0F, -1.75F, -2.0F);
-        this.body.addChild(tentacleL2);
-        this.tentacleL2.cubeList.add(new ModelBox(tentacleL2, 13, 3, -3.5F, 0.0F, -1.75F, 4, 0, 2, 0.0F, false));
+        this.cube_r1.setRotationPoint(3.5F, -1.75F, -4.5F);
+        this.bone.addChild(cube_r1);
+        this.setRotateAngle(cube_r1, 0.5236F, 0.0F, 0.0F);
+        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 8, 25, -0.5F, 0.0F, -2.0F, 1, 1, 2, 0.0F, false));
 
         this.shell = new AdvancedModelRenderer(this);
-        this.shell.setRotationPoint(0.0F, -2.0F, 0.0F);
-        this.body.addChild(shell);
-        this.shell.cubeList.add(new ModelBox(shell, 0, 0, -2.0F, -5.0F, -1.0F, 4, 5, 7, 0.0F, false));
+        this.shell.setRotationPoint(0.0F, 0.0F, 0.0F);
+        this.bone.addChild(shell);
+        this.shell.cubeList.add(new ModelBox(shell, 0, 13, 2.0F, -2.0F, -3.0F, 3, 2, 4, 0.0F, false));
+
+        this.shell2 = new AdvancedModelRenderer(this);
+        this.shell2.setRotationPoint(5.0F, 0.0F, 1.0F);
+        this.shell.addChild(shell2);
+        this.setRotateAngle(shell2, 0.0F, -0.9163F, 0.0F);
+        this.shell2.cubeList.add(new ModelBox(shell2, 14, 13, -3.0F, -2.0F, 0.0F, 3, 2, 4, 0.01F, false));
+
+        this.shell3 = new AdvancedModelRenderer(this);
+        this.shell3.setRotationPoint(0.0F, 0.0F, 4.0F);
+        this.shell2.addChild(shell3);
+        this.setRotateAngle(shell3, 0.0F, -0.6545F, 0.0F);
+        this.shell3.cubeList.add(new ModelBox(shell3, 0, 19, -3.0F, -2.0F, 0.0F, 3, 2, 4, 0.0F, false));
+
+        this.shell4 = new AdvancedModelRenderer(this);
+        this.shell4.setRotationPoint(0.0F, 0.0F, 4.0F);
+        this.shell3.addChild(shell4);
+        this.setRotateAngle(shell4, 0.0F, -1.0036F, 0.0F);
+        this.shell4.cubeList.add(new ModelBox(shell4, 14, 19, -2.0F, -2.0F, 0.0F, 2, 2, 4, 0.01F, false));
+
+        this.shell5 = new AdvancedModelRenderer(this);
+        this.shell5.setRotationPoint(0.0F, 0.0F, 4.0F);
+        this.shell4.addChild(shell5);
+        this.setRotateAngle(shell5, 0.0F, -0.6981F, 0.0F);
+        this.shell5.cubeList.add(new ModelBox(shell5, 20, 0, -2.0F, -2.0F, 0.0F, 2, 2, 3, 0.0F, false));
+
+        this.shell6 = new AdvancedModelRenderer(this);
+        this.shell6.setRotationPoint(0.0F, 0.0F, 3.0F);
+        this.shell5.addChild(shell6);
+        this.setRotateAngle(shell6, 0.0F, -1.0908F, 0.0F);
+        this.shell6.cubeList.add(new ModelBox(shell6, 20, 5, -2.0F, -1.75F, 0.0F, 2, 1, 3, 0.0F, false));
+
+        this.shell7 = new AdvancedModelRenderer(this);
+        this.shell7.setRotationPoint(0.0F, 0.0F, 3.0F);
+        this.shell6.addChild(shell7);
+        this.setRotateAngle(shell7, 0.0F, -0.7418F, 0.0F);
+        this.shell7.cubeList.add(new ModelBox(shell7, 0, 7, -5.0F, -1.75F, 0.0F, 5, 1, 5, -0.01F, false));
+
+        this.tentacleR = new AdvancedModelRenderer(this);
+        this.tentacleR.setRotationPoint(4.5F, -1.75F, -4.5F);
+        this.bone.addChild(tentacleR);
+        this.tentacleR.cubeList.add(new ModelBox(tentacleR, 14, 25, 0.0F, 0.0F, -1.0F, 2, 0, 1, 0.0F, false));
+
+        this.tentacleR2 = new AdvancedModelRenderer(this);
+        this.tentacleR2.setRotationPoint(2.5F, -1.75F, -4.5F);
+        this.bone.addChild(tentacleR2);
+        this.tentacleR2.cubeList.add(new ModelBox(tentacleR2, 20, 25, -2.0F, 0.0F, -1.0F, 2, 0, 1, 0.0F, false));
 
         updateDefaultPose();
     }
@@ -75,28 +93,28 @@ public class ModelPoleumita extends ModelBasePalaeopedia {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         //this.body.render(f5 * 0.2F);
-        body.render(f5 * 0.58F);
+        bone.render(f5 * 0.58F);
 
     }
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -0.2F;
-        this.body.offsetX = 0.0F;
-        this.body.offsetZ = 2.0F;
-        this.body.rotateAngleY = (float)Math.toRadians(120);
-        this.body.rotateAngleX = (float)Math.toRadians(0);
-        this.body.rotateAngleZ = (float)Math.toRadians(0);
-        this.body.scaleChildren = true;
+        this.bone.offsetY = -0.2F;
+        this.bone.offsetX = 0.0F;
+        this.bone.offsetZ = 2.0F;
+        this.bone.rotateAngleY = (float)Math.toRadians(120);
+        this.bone.rotateAngleX = (float)Math.toRadians(0);
+        this.bone.rotateAngleZ = (float)Math.toRadians(0);
+        this.bone.scaleChildren = true;
         float scaler = 1.0F;
-        this.body.setScale(scaler, scaler, scaler);
+        this.bone.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(bone, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
-        this.body.render(f);
+        this.bone.render(f);
         //Reset rotations, positions and sizing:
-        this.body.setScale(1.0F, 1.0F, 1.0F);
-        this.body.scaleChildren = false;
+        this.bone.setScale(1.0F, 1.0F, 1.0F);
+        this.bone.scaleChildren = false;
         resetToDefaultPose();
 
     }
@@ -111,29 +129,24 @@ public class ModelPoleumita extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.62F;
+        this.bone.offsetY = 0.62F;
 
-        this.swing(tentacleL, 0.2F, 0.1F, false, 0, 0.15F, f2, 0.8F);
-        this.swing(tentacleL2, 0.2F, 0.1F, true, 0, 0.15F, f2, 0.8F);
-        this.flap(tentacleL, 0.2F, 0.1F, false, 0, 0.15F, f2, 0.8F);
-        this.flap(tentacleL2, 0.2F, 0.1F, true, 0, 0.15F, f2, 0.8F);
+        this.swing(tentacleR, 0.2F, 0.1F, false, 0, 0.15F, f2, 0.8F);
+        this.swing(tentacleR2, 0.2F, 0.1F, true, 0, 0.15F, f2, 0.8F);
+        this.flap(tentacleR, 0.2F, 0.1F, false, 0, 0.15F, f2, 0.8F);
+        this.flap(tentacleR2, 0.2F, 0.1F, true, 0, 0.15F, f2, 0.8F);
 
-        this.tentacleL.rotateAngleZ += f3 / (180F / (float) Math.PI) * 0.5;
-        this.tentacleL.rotateAngleX += f3 / (180F / (float) Math.PI) * 0.5;
-        this.tentacleL2.rotateAngleZ += f3 / (180F / (float) Math.PI) * 0.5;
-        this.tentacleL2.rotateAngleX += f3 / (180F / (float) Math.PI) * 0.5;
+        this.tentacleR.rotateAngleZ += f3 / (180F / (float) Math.PI) * 0.5;
+        this.tentacleR.rotateAngleX += f3 / (180F / (float) Math.PI) * 0.5;
+        this.tentacleR2.rotateAngleZ += f3 / (180F / (float) Math.PI) * 0.5;
+        this.tentacleR2.rotateAngleX += f3 / (180F / (float) Math.PI) * 0.5;
 
         EntityPrehistoricFloraWaterGastropodBase ee = (EntityPrehistoricFloraWaterGastropodBase) e;
-        this.body.scaleChildren = false;
+        this.bone.scaleChildren = false;
         float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.1F) + 1F;
-        this.body.setScaleZ(scaler);
-        this.leg.setScaleZ(scaler);
-        this.leg2.setScaleZ(scaler);
-        this.leg3.setScaleZ(scaler);
+        this.bone.setScaleZ(scaler);
         float scaler2 = 2F - (float)((((double)ee.getSlitherStage())/10D) * 0.1F);
-        this.body.setScaleX(scaler2 * 0.7F);
-        this.leg.setScaleX(scaler2 * 0.7F);
-        this.leg2.setScaleX(scaler2 * 0.7F);
-        this.leg3.setScaleX(scaler2 * 0.7F);
+        this.bone.setScaleX(scaler2 * 0.7F);
+
     }
 }
