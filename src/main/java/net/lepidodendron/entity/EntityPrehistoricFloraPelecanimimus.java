@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraPelecanimimus extends EntityPrehistoricFloraL
 		minWidth = 0.18F;
 		maxWidth = 0.5F;
 		maxHeight = 0.9F;
-		maxHealthAgeable = 25;
+		maxHealthAgeable = 20;
 		SCRATCH_LEFT_ANIMATION = Animation.create(140);
 
 		if (FMLCommonHandler.instance().getSide().isClient()) {

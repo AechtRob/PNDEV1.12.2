@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraSarcosuchus extends EntityPrehistoricFloraSwi
 		minWidth = 0.1F;
 		maxWidth = 2.2F;
 		maxHeight = 0.99F;
-		maxHealthAgeable = 50.0D;
+		maxHealthAgeable = 65.0D;
 		EAT_ANIMATION = Animation.create(35);
 		STAND_ANIMATION = Animation.create(560);
 		if (FMLCommonHandler.instance().getSide().isClient()) {

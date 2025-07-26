@@ -12,7 +12,7 @@ public class RenderChunerpeton extends RenderLivingBaseWithBook<EntityPrehistori
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/chunerpeton.png");
 
     public static float getScaler() {
-        return 0.7F * 0.4F;
+        return 0.7F * 0.33F;
     }
     public RenderChunerpeton(RenderManager mgr) {
         super(mgr, new ModelChunerpeton(), 0.0f);

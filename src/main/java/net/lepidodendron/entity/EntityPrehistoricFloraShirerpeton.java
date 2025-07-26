@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraShirerpeton extends EntityPrehistoricFloraLan
 		minWidth = 0.1F;
 		maxWidth = 0.225F;
 		maxHeight = 0.15F;
-		maxHealthAgeable = 4.0D;
+		maxHealthAgeable = 2.0D;
 	}
 
 	@Override

@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraCretosaja extends EntityPrehistoricFloraLandC
 		minWidth = 0.2F;
 		maxWidth = 0.2F;
 		maxHeight = 0.13F;
-		maxHealthAgeable = 4.0D;
+		maxHealthAgeable = 2.0D;
 	}
 
 	@Override

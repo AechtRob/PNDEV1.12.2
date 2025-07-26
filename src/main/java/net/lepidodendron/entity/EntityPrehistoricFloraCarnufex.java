@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraCarnufex extends EntityPrehistoricFloraLandBa
 		minWidth = 0.20F;
 		maxWidth = 0.8F;
 		maxHeight = 1.25F;
-		maxHealthAgeable = 35;
+		maxHealthAgeable = 24;
 		YAWN_ANIMATION = Animation.create(55);
 		STAND_ANIMATION = Animation.create(520);
 		HURT_ANIMATION = Animation.create(15);

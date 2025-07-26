@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderPelecanimimus extends RenderLivingBaseWithBook<EntityPrehistoricFloraPelecanimimus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pelecanimimus.png");
 
-    public static float getScaler() {return 0.5f;}
+    public static float getScaler() {return 0.45f;}
     public RenderPelecanimimus(RenderManager mgr) {
         super(mgr, new ModelPelecanimimus(), 0.3f);
     }

@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraVancleavea extends EntityPrehistoricFloraSwim
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.85F;
-		maxHealthAgeable = 36.0D;
+		maxHealthAgeable = 30.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraValdotriton extends EntityPrehistoricFloraSwi
 		minWidth = 0.1F;
 		maxWidth = 0.35F;
 		maxHeight = 0.20F;
-		maxHealthAgeable = 6.0D;
+		maxHealthAgeable = 3.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

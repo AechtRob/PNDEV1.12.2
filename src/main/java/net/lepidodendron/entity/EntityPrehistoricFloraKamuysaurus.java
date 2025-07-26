@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraKamuysaurus extends EntityPrehistoricFloraBiQ
 		minWidth = 0.20F;
 		maxWidth = 1.5F;
 		maxHeight = 2.5F;
-		maxHealthAgeable = 70.0D;
+		maxHealthAgeable = 100.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

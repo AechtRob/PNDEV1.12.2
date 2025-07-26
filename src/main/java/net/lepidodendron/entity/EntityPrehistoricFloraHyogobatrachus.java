@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraHyogobatrachus extends EntityPrehistoricFlora
 		minWidth = 0.12F;
 		maxWidth = 0.15F;
 		maxHeight = 0.20F;
-		maxHealthAgeable = 4.0D;
+		maxHealthAgeable = 2.0D;
 		STAND_ANIMATION = Animation.create(17);
 		JUMP_ANIMATION = Animation.create(this.getJumpLength());
 	}

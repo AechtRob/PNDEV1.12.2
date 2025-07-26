@@ -12,7 +12,7 @@ public class RenderMarmorerpeton extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/marmorerpeton.png");
 
     public static float getScaler() {
-        return 0.7F * 0.4F;
+        return 0.7F * 0.55F;
     }
     public RenderMarmorerpeton(RenderManager mgr) {
         super(mgr, new ModelMarmorerpeton(), 0.0f);

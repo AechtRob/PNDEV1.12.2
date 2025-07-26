@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraSapeornis extends EntityPrehistoricFloraLandC
 		minWidth = 0.10F;
 		maxWidth = 0.85F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 3.0D;
 		setNoAI(!true);
 		enablePersistence();
 	}
@@ -199,24 +199,23 @@ public class EntityPrehistoricFloraSapeornis extends EntityPrehistoricFloraLandC
 
 	@Override
 	public float getAISpeedLand() {
-		return 0f;
-//		if (this.getTicks() < 0) {
-//			return 0.0F; //Is laying eggs
-//		}
-//		if (this.getAttachmentPos() != null) {
-//			if (this.getAttachmentFacing() == EnumFacing.UP) {
-//				//Walking:
-//				if (this.getIsFast()) {
-//					return 0.35f;
-//				}
-//				return 0.24F;
-//			}
-//		}
-//		//Otherwise we are flying:
-//		if (this.getIsFast()) {
-//			return 0.295f;
-//		}
-//		return 0.225f;
+		if (this.getTicks() < 0) {
+			return 0.0F; //Is laying eggs
+		}
+		if (this.getAttachmentPos() != null) {
+			if (this.getAttachmentFacing() == EnumFacing.UP) {
+				//Walking:
+				if (this.getIsFast()) {
+					return 0.35f;
+				}
+				return 0.15F;
+			}
+		}
+		//Otherwise we are flying:
+		if (this.getIsFast()) {
+			return 0.25f;
+		}
+		return 0.1f;
 	}
 
 	@Override

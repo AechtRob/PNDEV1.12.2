@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraOrthoceras extends EntityPrehistoricFloraNaut
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
 		maxHeight = 0.59F;
-		maxHealthAgeable = 16.0D;
+		maxHealthAgeable = 12.0D;
 	}
 
 	@Override

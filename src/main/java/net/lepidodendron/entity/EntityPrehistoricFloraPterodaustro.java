@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraPterodaustro extends EntityPrehistoricFloraLa
 		minWidth = 0.10F;
 		maxWidth = 0.85F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 8.0D;
+		maxHealthAgeable = 15.0D;
 		setNoAI(!true);
 		enablePersistence();
 	}

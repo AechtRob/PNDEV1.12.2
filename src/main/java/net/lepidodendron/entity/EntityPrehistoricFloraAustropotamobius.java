@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraAustropotamobius extends EntityPrehistoricFlo
 		minWidth = 0.2F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 3.0D;
+		maxHealthAgeable = 2.0D;
 		SWIM_ANIMATION = Animation.create(this.swimTransitionLength());
 		UNSWIM_ANIMATION = Animation.create(this.unswimTransitionLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {

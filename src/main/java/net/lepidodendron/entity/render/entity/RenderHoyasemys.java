@@ -31,7 +31,7 @@ public class RenderHoyasemys extends RenderLivingBaseWithBook<EntityPrehistoricF
     protected void preRenderCallback(EntityPrehistoricFloraHoyasemys entity, float f) {
         float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.3F;
+        this.shadowSize = entity.width * scale * 0.5F;
     }
 
 }

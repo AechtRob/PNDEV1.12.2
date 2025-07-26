@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraHakusanobaatar extends EntityPrehistoricFlora
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.1F;
-		maxHealthAgeable = 4.0D;
+		maxHealthAgeable = 3.0D;
 		STAND_ANIMATION = Animation.create(34);
 	}
 

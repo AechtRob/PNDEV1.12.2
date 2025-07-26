@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraCameroceras extends EntityPrehistoricFloraNau
 		minWidth = 0.1F;
 		maxWidth = 0.9F;
 		maxHeight = 0.9F;
-		maxHealthAgeable = 20;
+		maxHealthAgeable = 14;
 	}
 
 	@Override

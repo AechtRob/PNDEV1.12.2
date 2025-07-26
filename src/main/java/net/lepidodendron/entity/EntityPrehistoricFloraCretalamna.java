@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraCretalamna extends EntityPrehistoricFloraAgea
 		minWidth = 0.1F;
 		maxWidth = 1F;
 		maxHeight = 1F;
-		maxHealthAgeable = 18.0D;
+		maxHealthAgeable = 22.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

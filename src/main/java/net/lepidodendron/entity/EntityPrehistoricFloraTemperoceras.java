@@ -35,7 +35,7 @@ public class EntityPrehistoricFloraTemperoceras extends EntityPrehistoricFloraNa
 		minWidth = 0.07F;
 		maxWidth = 0.3F;
 		maxHeight = 0.7F;
-		maxHealthAgeable = 8.0D;
+		maxHealthAgeable = 4.0D;
 	}
 
 	@Override

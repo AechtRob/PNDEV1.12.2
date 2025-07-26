@@ -32,7 +32,7 @@ public class EntityPrehistoricFloraMariella extends EntityPrehistoricFloraNautil
 		minWidth = 0.07F;
 		maxWidth = 0.3F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 7.0D;
+		maxHealthAgeable = 3.0D;
 	}
 
 	@Override

@@ -34,7 +34,7 @@ public class EntityPrehistoricFloraAmmonite_Pachydiscus extends EntityPrehistori
 		minWidth = 0.1F;
 		maxWidth = 0.4F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 10;
+		maxHealthAgeable = 8;
 	}
 
 	@Override

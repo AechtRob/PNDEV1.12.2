@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraScelidosaurus extends EntityPrehistoricFloraB
 		minWidth = 0.20F;
 		maxWidth = 1F;
 		maxHeight = 1F;
-		maxHealthAgeable = 25.0D;
+		maxHealthAgeable = 35.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

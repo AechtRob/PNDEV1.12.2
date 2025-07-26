@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraEichstaettisaurus extends EntityPrehistoricFl
 		minWidth = 0.10F;
 		maxWidth = 0.30F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 4.0D;
+		maxHealthAgeable = 3.0D;
 	}
 
 	@Override

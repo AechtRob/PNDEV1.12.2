@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraMecistotrachelos extends EntityPrehistoricFlo
 		minWidth = 0.3F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 5.0D;
+		maxHealthAgeable = 8.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

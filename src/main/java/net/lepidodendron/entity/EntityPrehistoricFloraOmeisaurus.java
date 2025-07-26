@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraOmeisaurus extends EntityPrehistoricFloraLand
 		minWidth = 0.1F;
 		maxWidth = 3.0F;
 		maxHeight = 4.5F;
-		maxHealthAgeable = 160.0D;
+		maxHealthAgeable = 165.0D;
 		LOOK_ANIMATION = Animation.create(160);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
