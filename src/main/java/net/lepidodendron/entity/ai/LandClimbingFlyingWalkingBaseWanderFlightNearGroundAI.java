@@ -15,6 +15,7 @@ import java.util.List;
 public class LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI extends EntityAIBase {
     BlockPos target;
     boolean isGoingToAttach = false;
+    protected final double flightSpeed;
     protected final boolean avoidsSea;
     protected final boolean likesLogs;
     protected final EntityPrehistoricFloraLandClimbingFlyingWalkingBase entity;
@@ -23,6 +24,15 @@ public class LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI extends Entit
         this.entity = creatureIn;
         this.avoidsSea = avoidsSea;
         this.likesLogs = likesLogs;
+        this.flightSpeed = 1.0D;
+        this.setMutexBits(1);
+    }
+
+    public LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI(EntityPrehistoricFloraLandClimbingFlyingWalkingBase creatureIn, boolean avoidsSea, boolean likesLogs, double flightSpeed) {
+        this.entity = creatureIn;
+        this.avoidsSea = avoidsSea;
+        this.likesLogs = likesLogs;
+        this.flightSpeed = flightSpeed;
         this.setMutexBits(1);
     }
 
@@ -151,7 +161,7 @@ public class LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI extends Entit
             if (!this.entity.isFlying()) {
                 this.entity.selectNavigator();
             }
-            this.entity.getMoveHelper().setMoveTo((double) target.getX() + 0.5D, (double) target.getY() + 0.5D, (double) target.getZ() + 0.5D, 1D);
+            this.entity.getMoveHelper().setMoveTo((double) target.getX() + 0.5D, (double) target.getY() + 0.5D, (double) target.getZ() + 0.5D, this.flightSpeed);
             if (this.entity.getAttackTarget() == null) {
                 this.entity.getLookHelper().setLookPosition((double) target.getX() + 0.5D, (double) target.getY() + 0.5D, (double) target.getZ() + 0.5D, 180.0F, 20.0F);
             }
