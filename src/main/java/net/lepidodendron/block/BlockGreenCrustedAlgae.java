@@ -120,6 +120,9 @@ public class BlockGreenCrustedAlgae extends ElementsLepidodendronMod.ModElement 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
 			biomeCriteria = false;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_china_lakes")) {
+			biomeCriteria = false;
+		}
 		if (!biomeCriteria)
 			return;
 
@@ -177,6 +180,10 @@ public class BlockGreenCrustedAlgae extends ElementsLepidodendronMod.ModElement 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
 		)
 			multiplier = 36;
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")
+		)
+			multiplier = 48;
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;

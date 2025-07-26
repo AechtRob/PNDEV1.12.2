@@ -119,6 +119,9 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 				 ) {
 			biomeCriteria = true;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_china_lakes")) {
+			biomeCriteria = false;
+		}
 		if (!biomeCriteria)
 			return;
 
@@ -170,6 +173,10 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
 		)
 			multiplier = 36;
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")
+		)
+			multiplier = 48;
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;

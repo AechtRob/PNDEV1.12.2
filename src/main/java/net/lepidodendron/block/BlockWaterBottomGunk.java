@@ -6,6 +6,7 @@ import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.EnumBiomeTypeOrdovician;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
@@ -102,8 +103,7 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genUnderwaterGunkOverrideBiomes))
 			biomeCriteria = true;
-		if ((dimID == LepidodendronConfig.dimDevonian)
-				|| (dimID == LepidodendronConfig.dimSilurian)
+		if ((dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimCarboniferous)
 				|| (dimID == LepidodendronConfig.dimCambrian)
 				//|| (dimID == LepidodendronConfig.dimPrecambrian)
@@ -134,6 +134,17 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
+		if (biome instanceof BiomeDevonian)
+		{
+			BiomeDevonian biomeDevonian = (BiomeDevonian) biome;
+			if (biomeDevonian.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (biome instanceof BiomeTriassic)
 		{
 			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
@@ -142,6 +153,9 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 			}
 			else {
 				biomeCriteria = false;
+			}
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_china_lakes")) {
+				biomeCriteria = true;
 			}
 		}
 
@@ -184,7 +198,7 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 				multiplier = 12;
 			}
 		}
-		if ((dimID == LepidodendronConfig.dimJurassic)
+		if ((dimID == LepidodendronConfig.dimJurassic || dimID == LepidodendronConfig.dimDevonian)
 		) {
 			multiplier = 10;
 		}

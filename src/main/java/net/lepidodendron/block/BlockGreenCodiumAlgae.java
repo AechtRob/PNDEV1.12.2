@@ -260,6 +260,10 @@ public class BlockGreenCodiumAlgae extends ElementsLepidodendronMod.ModElement {
 		)
 			multiplier = 24;
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")
+		)
+			multiplier = 48;
+
 		for (int i = 0; i < (int) 10 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);

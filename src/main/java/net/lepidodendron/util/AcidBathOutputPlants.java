@@ -610,6 +610,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockDesmiophyllumSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockDinophytonSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPhoenicopsisSapling.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemCorallineAlgaeItem.block).toString(),
                 "minecraft:small_fern",
                 "minecraft:large_fern"
 

@@ -186,7 +186,8 @@ public class BlockTabulata_4 extends ElementsLepidodendronMod.ModElement {
 			else {
 				biomeCriteria = false;
 			}
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")) {
 				biomeCriteria = false;
 			}
 		}
@@ -209,6 +210,12 @@ public class BlockTabulata_4 extends ElementsLepidodendronMod.ModElement {
 		{
 			dimWeight = 2;
 		}
+
+		if ( biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef2")
+		) {
+			multiplier = 10;
+		}
+
 		int minWaterDepth = 4 * dimWeight;
 		int maxWaterDepth = 30 * dimWeight;
 		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;

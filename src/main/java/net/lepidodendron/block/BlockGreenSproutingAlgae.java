@@ -118,6 +118,9 @@ public class BlockGreenSproutingAlgae extends ElementsLepidodendronMod.ModElemen
 			 ) {
 			biomeCriteria = true;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_china_lakes")) {
+			biomeCriteria = false;
+		}
 		if (!biomeCriteria)
 			return;
 
@@ -196,6 +199,10 @@ public class BlockGreenSproutingAlgae extends ElementsLepidodendronMod.ModElemen
 		{
 			multiplier = 12;
 		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")
+		)
+			multiplier = 48;
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
