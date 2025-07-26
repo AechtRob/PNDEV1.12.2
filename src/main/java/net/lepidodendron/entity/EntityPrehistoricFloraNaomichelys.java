@@ -47,11 +47,11 @@ public class EntityPrehistoricFloraNaomichelys extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraNaomichelys(World world) {
 		super(world);
-		setSize(0.8F, 0.45F);
+		setSize(0.6F, 0.45F);
 		minWidth = 0.2F;
-		maxWidth = 0.8F;
+		maxWidth = 0.6F;
 		maxHeight = 0.45F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 7.0D;
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 	}
 
@@ -124,7 +124,7 @@ public class EntityPrehistoricFloraNaomichelys extends EntityPrehistoricFloraLan
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.285F;
+		float speedBase = 0.16F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

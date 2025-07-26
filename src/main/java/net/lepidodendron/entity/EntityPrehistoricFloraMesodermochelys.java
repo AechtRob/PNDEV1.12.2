@@ -48,10 +48,10 @@ public class EntityPrehistoricFloraMesodermochelys extends EntityPrehistoricFlor
 
 	public EntityPrehistoricFloraMesodermochelys(World world) {
 		super(world);
-		setSize(0.2F, 0.2F);
+		setSize(0.7F, 0.5F);
 		minWidth = 0.1F;
-		maxWidth = 0.2F;
-		maxHeight = 0.2F;
+		maxWidth = 0.7F;
+		maxHeight = 0.5F;
 		maxHealthAgeable = 23.0D;
 		EAT_ANIMATION = Animation.create(40);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -123,7 +123,7 @@ public class EntityPrehistoricFloraMesodermochelys extends EntityPrehistoricFlor
 	protected float getAISpeedSwimmingAmphibian() {
 		float calcSpeed = 0.11F;
 		if (this.isReallyInWater()) {
-			calcSpeed = 0.2f;
+			calcSpeed = 0.3f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

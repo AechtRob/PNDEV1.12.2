@@ -15,7 +15,7 @@ public class RenderBrodiechelys extends RenderLivingBaseWithBook<EntityPrehistor
         super(mgr, new ModelBrodiechelys(), 0.0f);
     }
 
-    public static float getScaler() {return 0.25f; }
+    public static float getScaler() {return 0.21f; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraBrodiechelys entity) {

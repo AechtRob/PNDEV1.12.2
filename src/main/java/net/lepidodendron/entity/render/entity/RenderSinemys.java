@@ -15,7 +15,7 @@ public class RenderSinemys extends RenderLivingBaseWithBook<EntityPrehistoricFlo
         super(mgr, new ModelSinemys(), 0.0f);
     }
 
-    public static float getScaler() {return 0.25f; }
+    public static float getScaler() {return 0.21f; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraSinemys entity) {

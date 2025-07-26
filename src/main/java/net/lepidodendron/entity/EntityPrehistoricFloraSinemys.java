@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraSinemys extends EntityPrehistoricFloraSwimmin
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 6.0D;
+		maxHealthAgeable = 4.0D;
 		EAT_ANIMATION = Animation.create(40);
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 		STAND_ANIMATION = Animation.create(480);
