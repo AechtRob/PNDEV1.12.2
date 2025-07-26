@@ -252,6 +252,10 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 					    		colWater = colWater + 1;
 					    	}
 					    	if ((colWater < 6) && (colWater > 1)) {
+								if (world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_china_lakes")) {
+									//Don't spawn water ones here:
+									continue;
+								}
 					    		//Build the stem:
 					    		int counter = 2;
 					    		while (counter <= colWater) {

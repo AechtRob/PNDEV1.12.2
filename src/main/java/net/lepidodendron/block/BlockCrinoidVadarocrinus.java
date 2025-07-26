@@ -23,8 +23,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -125,6 +123,9 @@ public class BlockCrinoidVadarocrinus extends ElementsLepidodendronMod.ModElemen
 				biomeCriteria = true;
 			}
 			else {
+				biomeCriteria = false;
+			}
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")) {
 				biomeCriteria = false;
 			}
 		}

@@ -116,6 +116,9 @@ public class BlockPiledAlgae extends ElementsLepidodendronMod.ModElement {
 				 ) {
 			biomeCriteria = true;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_china_lakes")) {
+			biomeCriteria = false;
+		}
 		if (!biomeCriteria)
 			return;
 

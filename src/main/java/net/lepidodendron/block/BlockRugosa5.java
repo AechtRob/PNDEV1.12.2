@@ -188,7 +188,8 @@ public class BlockRugosa5 extends ElementsLepidodendronMod.ModElement {
 			else {
 				biomeCriteria = false;
 			}
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")) {
 				biomeCriteria = false;
 			}
 		}
@@ -211,6 +212,11 @@ public class BlockRugosa5 extends ElementsLepidodendronMod.ModElement {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky"))
 		{
 			dimWeight = 2;
+			multiplier = 10;
+		}
+
+		if ( biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef2")
+		) {
 			multiplier = 10;
 		}
 

@@ -136,6 +136,9 @@ public class BlockRedAlgaeMat extends ElementsLepidodendronMod.ModElement {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
 			biomeCriteria = false;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_china_lakes")) {
+			biomeCriteria = false;
+		}
 		if (!biomeCriteria)
 			return;
 

@@ -158,6 +158,9 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 			else {
 				biomeCriteria = true;
 			}
+			if (biomeTriassic.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_china_lakes")) {
+				biomeCriteria = false;
+			}
 		}
 		if (biome instanceof BiomeJurassic)
 		{

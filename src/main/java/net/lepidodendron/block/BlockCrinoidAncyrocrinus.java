@@ -132,6 +132,9 @@ public class BlockCrinoidAncyrocrinus extends ElementsLepidodendronMod.ModElemen
 			else {
 				biomeCriteria = false;
 			}
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")) {
+				biomeCriteria = false;
+			}
 		}
 		if (!biomeCriteria)
 			return;

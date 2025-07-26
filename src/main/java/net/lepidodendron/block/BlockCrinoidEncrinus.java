@@ -174,6 +174,9 @@ public class BlockCrinoidEncrinus extends ElementsLepidodendronMod.ModElement {
 			else {
 				biomeCriteria = false;
 			}
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")) {
+				biomeCriteria = false;
+			}
 		}
 		if (biome instanceof BiomeTriassic)
 		{
