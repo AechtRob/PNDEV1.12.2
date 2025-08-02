@@ -459,6 +459,44 @@ public class ModelVesperopterylus extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
         EntityPrehistoricFloraAnurognathid ee = (EntityPrehistoricFloraAnurognathid) entitylivingbaseIn;
 
+        //climb pose
+        if (ee.getAttachmentPos() != null) {
+            this.setRotateAngle(cube_r1, 0.0F, -0.4363F, 0.0F);
+            this.setRotateAngle(cube_r2, 0.0F, 0.4363F, 0.0F);
+            this.setRotateAngle(cube_r3, -0.2182F, 0.0F, 0.0F);
+            this.setRotateAngle(cube_r4, -1.4966F, 0.0F, 0.0F);
+            this.setRotateAngle(cube_r5, -1.453F, 0.0F, 0.0F);
+            this.setRotateAngle(cube_r6, -0.6545F, 0.0F, 0.0F);
+            this.setRotateAngle(cube_r7, 0.2618F, 0.0F, 0.0F);
+            this.setRotateAngle(cube_r8, -0.1309F, 0.0F, 0.0F);
+            this.setRotateAngle(cube_r9, -0.0611F, 0.0F, 0.0F);
+            this.setRotateAngle(eye, 0.08F, 0.4243F, 0.0971F);
+            this.setRotateAngle(eye2, 0.08F, -0.4243F, -0.0971F);
+            this.setRotateAngle(head, 0.1309F, 0.0F, 0.0F);
+            this.setRotateAngle(lefthand, -0.7087F, 1.306F, -0.7114F);
+            this.setRotateAngle(leftleg, 0.4282F, -0.3437F, -0.9584F);
+            this.setRotateAngle(leftleg2, -0.6704F, 0.0376F, -0.3663F);
+            this.setRotateAngle(leftleg3, 0.3024F, -0.2544F, 1.1118F);
+            this.setRotateAngle(leftwing, -0.0265F, 0.0031F, 0.8107F);
+            this.setRotateAngle(leftwing2, -0.0602F, 0.1639F, -0.354F);
+            this.setRotateAngle(leftwing3, 2.7235F, 1.0533F, 2.4352F);
+            this.setRotateAngle(leftwing4, -0.0475F, -0.346F, 0.1392F);
+            this.setRotateAngle(neck, 0.0873F, 0.0F, 0.0F);
+            this.setRotateAngle(neck2, 0.1309F, 0.0F, 0.0F);
+            this.setRotateAngle(righthand, -0.7087F, -1.306F, 0.7114F);
+            this.setRotateAngle(rightleg, 0.4282F, 0.3437F, 0.9584F);
+            this.setRotateAngle(rightleg2, -0.6704F, -0.0376F, 0.3663F);
+            this.setRotateAngle(rightleg3, 0.3024F, 0.2544F, -1.1118F);
+            this.setRotateAngle(rightwing, -0.0265F, -0.0031F, -0.8107F);
+            this.setRotateAngle(rightwing2, -0.0602F, -0.1639F, 0.354F);
+            this.setRotateAngle(rightwing3, 2.7235F, -1.0533F, -2.4352F);
+            this.setRotateAngle(rightwing4, -0.0475F, 0.346F, -0.1392F);
+            this.setRotateAngle(tail, -0.3054F, 0.0F, 0.0F);
+            this.setRotateAngle(tail2, -0.1309F, 0.0F, 0.0F);
+
+        }
+
+
         if (ee.getAttachmentPos() == null ) {
             //animFlight(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         }

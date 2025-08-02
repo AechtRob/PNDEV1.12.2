@@ -634,6 +634,9 @@ public class ModelSauroposeidon extends ModelBasePalaeopedia {
                     return;
                 }
             } else {
+                this.chainFlap(Neck, 0.05F, 0.01F, 0.5, f2, 0.8F);
+                this.chainWave(Neck, 0.04F * 2, -0.01F, 0.5F, f2, 0.8F);
+                this.walk(jaw, (float) ( 0.04), 0.1F, true, -0.5f, -0.1f, f2, 1);
                 //Swimming pose:
                 if (f3 == 0.0F) { //static in water
                     return;
