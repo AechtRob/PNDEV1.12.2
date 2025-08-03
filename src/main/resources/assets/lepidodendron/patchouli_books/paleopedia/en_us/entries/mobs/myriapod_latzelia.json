@@ -1,0 +1,46 @@
+{
+	"name": "Latzelia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/myriapod_latzelia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_myriapod_latzelia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_myriapod_latzelia",
+			"title": "Latzelia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Myriapoda$(br)>Chilopoda$(br)>Scutigeromorpha$(br)>Latzeliidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/latzelia.png"],
+			"title": "L. primordialis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myriapod_latzelia",
+			"type": "text",
+			"text": "Latzelia primordialis comes from the Upper Carboniferous, with fossils found in the Mazon Creek fossil beds, Illinois (USA). It is a small centipede, growing up to 10 cm in length. The generic name derives from the Latinised surname of 'Robert Latzel', a Austrian myriapodologist who pioneered research into millipedes and centipedes, naming over 160 taxa combined. The specific name derives directly from the Latin word 'primordialis', meaning 'of the beginning'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_myriapod@latzelia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@latzelia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@latzelia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@latzelia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@latzelia"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Protoischnurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/protoischnurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_protoischnurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_protoischnurus",
+			"title": "Protoischnurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Chelicerata$(br)>Arachnida$(br)>Scorpiones$(br)>Scorpionoidea$(br)>Hormuridae"
+		},
+		{
+			"type": "entity",
+			"name": "P. axelrodorum",
+			"entity": "lepidodendron:prehistoric_flora_protoischnurus",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_protoischnurus",
+			"type": "text",
+			"text": "Protoischnurus axelrodorum comes from the Early Cretaceous, with fossils found in the Crato Formation, Brazil. It is a small hormurid scorpion, growing up to 5 cm in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_protoischnurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron::prehistoric_flora_protoischnurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron::prehistoric_flora_protoischnurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron::prehistoric_flora_protoischnurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron::prehistoric_flora_protoischnurus"
+		}
+	]
+}

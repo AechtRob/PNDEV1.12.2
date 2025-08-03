@@ -1,0 +1,47 @@
+{
+	"name": "Brodiechelys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/brodiechelys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_brodiechelys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_brodiechelys",
+			"title": "Brodiechelys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pantestudines$(br)>Testudinata$(br)>Xinjiangchelyidae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. brodiei",
+            "entity": "lepidodendron:prehistoric_flora_brodiechelys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brodiechelys",
+			"type": "text",
+			"text": "Brodiechelys comes from the Early Cretaceous, with fossils found in the Vectis Formation, UK and  Arcillas de Morella Formation, Spain. It is a small xinjiangchelyidan turtle, growing up to around 44 cm in overall length. The discovery of its fossils within two very distinct formations, in both age and location, showed that even some freshwater turtle taxa had a wide distribution across Early Cretaceous Europe."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_brodiechelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_brodiechelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_brodiechelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_brodiechelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_brodiechelys"
+		}
+	]
+}

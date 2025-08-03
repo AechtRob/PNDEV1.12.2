@@ -1,0 +1,47 @@
+{
+	"name": "Shokawa",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/shokawa_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_shokawa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_shokawa",
+			"title": "Shokawa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Choristodera$(br)>Hyphalosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. ikoi",
+            "entity": "lepidodendron:prehistoric_flora_shokawa",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_shokawa",
+			"type": "text",
+			"text": "Shokawa ikoi comes from the Early Cretaceous, with fossils found in the Okurodani Formation, Japan. It is a small hyphalosauriid, and grew up to roughly 25 cm in length. The generic name derives directly from the place name 'Shokawa', near to where the fossils were found. The specific name derives from the forename of Mr. Ikoi Shibata, who collected the first specimen."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_shokawa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_shokawa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_shokawa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_shokawa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_shokawa"
+		}
+	]
+}

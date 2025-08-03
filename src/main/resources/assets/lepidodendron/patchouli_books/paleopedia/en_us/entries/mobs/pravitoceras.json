@@ -1,0 +1,52 @@
+{
+	"name": "Pravitoceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pravitoceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_pravitoceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pravitoceras",
+			"title": "Pravitoceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Ammonitida$(br)>Ancyloceratina>$(br)>Nostoceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. sigmoidale",
+            "entity": "lepidodendron:prehistoric_flora_pravitoceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pravitoceras",
+			"type": "text",
+			"text": "Pravitoceras sigmoidale comes from the Late Cretaceous, with fossils found in formations across Japan. It is a small nostoceratiid, growing up to 30 cm in size. Despite hailing from a family know for its weird, wacking and mathematical coiling, Pravitoceras is considered to be a relatively normal member, with the only oddity being that after some times of growth, it will bend back round, creating a saxaphone-like shape to its shell. Due to this, it didn't experience"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pravitoceras",
+			"type": "text",
+			"text": "the same amount of drag as seen in its relatives, and also experienced little to no rocking when moving, meaning that it was an relatively fast moving ammonite."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pravitoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pravitoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pravitoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pravitoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pravitoceras"
+		}
+	]
+}

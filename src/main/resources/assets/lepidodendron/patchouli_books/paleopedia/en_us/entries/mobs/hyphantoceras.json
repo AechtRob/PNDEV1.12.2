@@ -1,0 +1,47 @@
+{
+	"name": "Hyphantoceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/scaphites_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_scaphites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_scaphites",
+			"title": "Hyphantoceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Ammonitida$(br)>Ancyloceratina>$(br)>Nostoceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Hyphantoceras sp.",
+            "entity": "lepidodendron:prehistoric_flora_scaphites",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_scaphites",
+			"type": "text",
+			"text": "Hyphantoceras comes from the Late Cretaceous, with fossils found in formations across the globe. It is a small nostoceratiid, growing up to 20 cm in size. Like other members of its family, Hyphantoceras certainly has a unique coil to its shell, it coils downwards, forming a tall, spiraled shell."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_scaphites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_scaphites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_scaphites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_scaphites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_scaphites"
+		}
+	]
+}

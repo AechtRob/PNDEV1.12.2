@@ -1,0 +1,46 @@
+{
+	"name": "Velocipede",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/myriapod_velocipede_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_myriapod_velocipede",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_myriapod_velocipede",
+			"title": "Velocipede",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Myriapoda$(br)>Chilopoda"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/velocipede.png"],
+			"title": "V. betimari",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myriapod_velocipede",
+			"type": "text",
+			"text": "Velocipede betimari comes from the Early Cretaceous, with fossils found in the Crato Formation, Brazil. It is a small centipede, growing up to 8.5 cm in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_myriapod@velocipede"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@velocipede"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@velocipede"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@velocipede"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@velocipede"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Ordosemys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ordosemys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ordosemys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ordosemys",
+			"title": "Ordosemys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pantestudines$(br)>Testudinata$(br)>Sinemydidae"
+		},
+        	{
+            "type": "entity",
+            "name": "O. leios",
+            "entity": "lepidodendron:prehistoric_flora_ordosemys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ordosemys",
+			"type": "text",
+			"text": "Ordosemys comes from the Early Cretaceous, with fossils found in the Yixian Formation, Northeast China. It is a small, flat shelled sinemydiid turtle, and grew up to 40 cm in overall size, with a shell that grew to roughly 30 cm in length. The generic name derives from the place name 'Ordos Basin', where the fossils were found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ordosemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ordosemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ordosemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ordosemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ordosemys"
+		}
+	]
+}

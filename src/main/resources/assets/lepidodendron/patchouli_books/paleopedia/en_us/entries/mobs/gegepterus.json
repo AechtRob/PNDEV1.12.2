@@ -1,0 +1,52 @@
+{
+	"name": "Gegepterus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gegepterus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_gegepterus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gegepterus",
+			"title": "Gegepterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pterosauria$(br)>Pterodactyloidea$(br)>Ctenochasmatidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. changi",
+            "entity": "lepidodendron:prehistoric_flora_gegepterus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gegepterus",
+			"type": "text",
+			"text": "Gegepterus changi comes from the Early Cretaceous, with fossils found in the Yixian Formation, Northeast China. It is a small ctenochasmatiid, with a wingspan of 50 cm. Gegepterus is unique in being the first definitive ctenochasmatiid to be described from Yixian, due the preservation of dentition, but was first regarded as a juvenile of another known species until further studies were taken. The generic name derives from the Manchu word 'ge ge',"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gegepterus",
+			"type": "text",
+			"text": "a title given to princesses; and the Greek word 'pteron', to mean 'wing'. The specific name derives from the surname of Meemann Chang, a renowned Chinese palaeontologist that helped establish a relationship between the Chinese and Brazillian authors whom described Gegepterus. An attempt was made by one of the authors to change the sepcific name to be 'changae' in 2008, but such changes were no longer permitted by the ICZN."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gegepterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gegepterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gegepterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gegepterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gegepterus"
+		}
+	]
+}

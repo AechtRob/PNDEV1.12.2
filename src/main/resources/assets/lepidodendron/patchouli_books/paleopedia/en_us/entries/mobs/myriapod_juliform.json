@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_myriapod_juliform",
 			"title": "Juliformia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian - Present$(br2)>Arthropoda$(br)>Myriapoda$(br)>Diplopoda$(br)>Diplopoda$(br)>Chilognatha$(br)>Helminthomorpha$(br)>Eugnatha$(br)>$(o)Juliformia"
+			"text": "$(l)Temporal Range:$() Devonian - Present$(br2)>Arthropoda$(br)>Myriapoda$(br)>Diplopoda$(br)>Chilognatha$(br)>Helminthomorpha$(br)>$(o)Juliformia"
 		},
 		{
 			"type": "image",

@@ -1,0 +1,57 @@
+{
+	"name": "Baculites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/baculites_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_baculites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_baculites",
+			"title": "Baculites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Ammonitida$(br)>Ancyloceratina>$(br)>Baculitidae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. vertebralis",
+            "entity": "lepidodendron:prehistoric_flora_baculites",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_baculites",
+			"type": "text",
+			"text": "Baculites comes from the Late Cretaceous, with fossils found across Europe and the US. It is a medium-sized baculitiid, growing up to 2 m in length. For the most part their shells are mostly straight, with a very slight curve being present, although the old, coiled juvenile shell can still be found at the very tip. The shell shape has caused some confusion and disagreements over the years, most on its life orientation, although some have found that across the"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_baculites",
+			"type": "text",
+			"text": "Baculites genus, some species were more likely vertical, whilst some were more likely to be horizontal. Alongside this, there is also some possible evidence that, whilst most other ammonites went extinct during the K-Pg Mass Extinction 66 Mya, Baculites was one of the few that managed to just make it into the Paleogene before going extinct. But, it must be noted that Paleogene records of ammonites are controversial, sometimes sketchy, and very hard to prove,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_baculites",
+			"type": "text",
+			"text": "as most of the time its fossils from older time periods being washed out and carried into newer sediments, and due to the great abundance of ammonites like Baculites, this happens quite a lot. But if this is indeed true, then Baculites would represent amongst the very last of a once thriving group of animals, snuffed out in a (geological) blink of an eye, remembered only by their abundant, weird, and wonderful shells that they left behind."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_baculites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_baculites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_baculites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_baculites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_baculites"
+		}
+	]
+}

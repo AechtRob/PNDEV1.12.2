@@ -1,0 +1,57 @@
+{
+	"name": "Nipponites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/nipponites_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_nipponites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_nipponites",
+			"title": "Nipponites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Ammonitida$(br)>Ancyloceratina>$(br)>Nostoceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "N. mirabilis",
+            "entity": "lepidodendron:prehistoric_flora_nipponites",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nipponites",
+			"type": "text",
+			"text": "Nipponites comes from the Late Cretaceous, with fossils found in formations across Japan, as well as other parts of Asia, Madagascar and the US. It is a small nostoceratiid, growing up to 10 cm in size. Due to the incredibly unique growth of the shells, when the first specimen was found in 1904, it was originally thought to be a deformed specimen, until more and more were found, and overtime it was accepted that these were an entirely new genus."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nipponites",
+			"type": "text",
+			"text": "But then came figuring out why they evolved to grow in such a manner, first thinking it must be a evolutionary dead end, but through computer simulations, it was found that the coils had a mathematical regularity to them. From this it was found that taking a related genus, Eubostrychoceras, which has a similar manner of coiling shell growth, and changing the formula for forming the coil similar to Nipponites, produces the same coiling effect as Nipponites."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nipponites",
+			"type": "text",
+			"text": "It is also the representative fossil of the Paleontological Society of Japan, alongside its discovery date being labelled as 'Fossil Day' in Japan by the society itself, which is also used for 'International Fossil Day'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_nipponites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_nipponites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_nipponites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_nipponites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_nipponites"
+		}
+	]
+}

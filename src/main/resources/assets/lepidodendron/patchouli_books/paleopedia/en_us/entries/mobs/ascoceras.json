@@ -12,11 +12,10 @@
 			"text": "$(l)Temporal Range:$() Silurian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Orthoceratoidea$(br)>Ascocerida"
 		},
 		{
-			"type": "entity",
-			"name": "A. croneisi",
-			"entity": "lepidodendron:prehistoric_flora_ascoceras",
-			"rotate": false,
-			"default_rotation": 0
+			"type": "image",
+			"images": ["paleopedia:textures/ascoceras.png"],
+			"title": "A. croneisi",
+			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ascoceras",
