@@ -478,8 +478,9 @@ public class ModelBaculites extends ModelBasePalaeopedia {
 
         EntityPrehistoricFloraBaculites ee = (EntityPrehistoricFloraBaculites) e;
 
+        this.base.rotateAngleX = (float) Math.toRadians(((EntityPrehistoricFloraBaculites) e).bodyAngle - 90);
         if(e.isInWater() && !ee.canBeVertical()) {
-            this.base.rotateAngleX = (float) Math.toRadians(270);
+            //this.base.rotateAngleX = (float) Math.toRadians(270);
             this.base.rotateAngleY = (float) Math.toRadians(180);
             this.base.offsetZ = 1f;
             this.base.offsetY = -0.5f;

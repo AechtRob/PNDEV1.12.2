@@ -319,7 +319,7 @@ public class ModelEndoceras extends ModelBasePalaeopedia {
             animWalking(entitylivingbodyIn, limbSwing, limbSwingAmount, partialTickTime);
         }
 
-        if(ee.isAtBottom() && ee.canBeVertical()) {
+        if(ee.isAtBottom() && ee.canBeVertical() && ee.bodyAngle >= 90) {
             animWalkingForage(entitylivingbodyIn, limbSwing, limbSwingAmount, partialTickTime);
         }
 
@@ -404,8 +404,8 @@ public class ModelEndoceras extends ModelBasePalaeopedia {
         this.body.offsetY = 0.8F;
 
         EntityPrehistoricFloraEndoceras ee = (EntityPrehistoricFloraEndoceras) e;
-        if(e.isInWater() && !((EntityPrehistoricFloraEndoceras) e).canBeVertical()) {
-            this.body.rotateAngleX = (float) Math.toRadians(0);
+        this.body.rotateAngleX = (float) Math.toRadians(((EntityPrehistoricFloraEndoceras) e).bodyAngle);
+        if (e.isInWater() && !((EntityPrehistoricFloraEndoceras) e).canBeVertical()) {
             this.body.rotateAngleY = (float) Math.toRadians(180);
         }
 

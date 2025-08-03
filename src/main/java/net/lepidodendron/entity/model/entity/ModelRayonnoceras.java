@@ -253,7 +253,7 @@ public class ModelRayonnoceras extends ModelBasePalaeopedia {
             animWalking(entitylivingbodyIn, limbSwing, limbSwingAmount, partialTickTime);
         }
 
-        if(ee.isAtBottom() && ee.canBeVertical()) {
+        if(ee.isAtBottom() && ee.canBeVertical() && ee.bodyAngle >= 90) {
             animWalkingForage(entitylivingbodyIn, limbSwing, limbSwingAmount, partialTickTime);
         }
 
@@ -380,8 +380,8 @@ public class ModelRayonnoceras extends ModelBasePalaeopedia {
         this.body.offsetY = 0.5F;
 
         EntityPrehistoricFloraRayonnoceras ee = (EntityPrehistoricFloraRayonnoceras) e;
+        this.body.rotateAngleX = (float) Math.toRadians(((EntityPrehistoricFloraRayonnoceras) e).bodyAngle);
         if(e.isInWater() && !((EntityPrehistoricFloraRayonnoceras) e).canBeVertical()) {
-            this.body.rotateAngleX = (float) Math.toRadians(0);
             this.body.rotateAngleY = (float) Math.toRadians(180);
         }
 

@@ -39,6 +39,8 @@ public class EntityPrehistoricFloraDeiroceras extends EntityPrehistoricFloraNaut
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
+	@SideOnly(Side.CLIENT)
+	public float bodyAngle;
 
 	public EntityPrehistoricFloraDeiroceras(World world) {
 		super(world);
@@ -74,7 +76,9 @@ public class EntityPrehistoricFloraDeiroceras extends EntityPrehistoricFloraNaut
 	public boolean canBeVertical() {
 		//isReally in Water
 		boolean check1 = this.isReallyInWater();
-		boolean check2 = (this.world.isAirBlock(this.getPosition().up(2)));
+		int waterTest = Math.round(2 * this.getAgeScale());
+		boolean check2 = this.world.getBlockState(this.getPosition().up(waterTest)).getMaterial() != Material.WATER;
+
 
 		return check1 && !check2;
 	}
@@ -165,6 +169,20 @@ public class EntityPrehistoricFloraDeiroceras extends EntityPrehistoricFloraNaut
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
+		if (this.world.isRemote) {
+			if (this.canBeVertical()) {
+				this.bodyAngle ++;
+			}
+			else {
+				this.bodyAngle --;
+			}
+			if (this.bodyAngle > 90) {
+				this.bodyAngle = 90;
+			}
+			if (this.bodyAngle < 0) {
+				this.bodyAngle = 0;
+			}
+		}
 		if (this.isEntityAlive() && isInWater()) {
 			if (this.isAtBottom()) {
 				//Feeding from bottom pose:
