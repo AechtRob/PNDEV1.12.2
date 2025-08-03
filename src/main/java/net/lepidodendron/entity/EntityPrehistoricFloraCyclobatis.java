@@ -15,10 +15,13 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -37,6 +40,10 @@ public class EntityPrehistoricFloraCyclobatis extends EntityPrehistoricFloraAgea
 
 	public EntityPrehistoricFloraCyclobatis(World world) {
 		super(world);
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraCyclobatis.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
 		setSize(0.6F, 0.4F);
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
@@ -223,6 +230,39 @@ public class EntityPrehistoricFloraCyclobatis extends EntityPrehistoricFloraAgea
 	@Override
 	public CustomTrigger getModTrigger() {
 		return ModTriggers.CLICK_CYCLOBATIS;
+	}
+
+	class SwimmingMoveHelperBase extends EntityMoveHelper {
+		private final EntityPrehistoricFloraCyclobatis EntityBase = EntityPrehistoricFloraCyclobatis.this;
+
+		public SwimmingMoveHelperBase() {
+			super(EntityPrehistoricFloraCyclobatis.this);
+		}
+
+		@Override
+		public void onUpdateMoveHelper() {
+			if (this.action == Action.MOVE_TO && !this.EntityBase.getNavigator().noPath()) {
+				double distanceX = this.posX - this.EntityBase.posX;
+				double distanceY = this.posY - this.EntityBase.posY;
+				double distanceZ = this.posZ - this.EntityBase.posZ;
+				double distance = Math.abs(distanceX * distanceX + distanceY * distanceY + distanceZ * distanceZ);
+				distance = MathHelper.sqrt(distance);
+				distanceY /= distance;
+				float angle = (float) (Math.atan2(distanceZ, distanceX) * 180.0D / Math.PI) - 90.0F;
+
+				this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 10.0F);
+				float speed = getAISpeedFish();
+				this.EntityBase.setAIMoveSpeed(speed);
+
+				if (this.EntityBase.isAtBottom()) {
+					this.EntityBase.setAIMoveSpeed(speed * 0.25F);
+				}
+
+				this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
+			} else {
+				this.EntityBase.setAIMoveSpeed(0.0F);
+			}
+		}
 	}
 
 
