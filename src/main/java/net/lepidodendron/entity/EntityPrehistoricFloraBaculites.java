@@ -9,6 +9,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
+import net.minecraft.block.material.Material;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -25,6 +26,8 @@ public class EntityPrehistoricFloraBaculites extends EntityPrehistoricFloraNauti
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
+	@SideOnly(Side.CLIENT)
+	public float bodyAngle;
 
 	public EntityPrehistoricFloraBaculites(World world) {
 		super(world);
@@ -33,6 +36,26 @@ public class EntityPrehistoricFloraBaculites extends EntityPrehistoricFloraNauti
 		maxWidth = 0.6F;
 		maxHeight = 0.9F;
 		maxHealthAgeable = 6.0D;
+	}
+
+	@Override
+	public void onLivingUpdate() {
+		super.onLivingUpdate();
+		//this.renderYawOffset = this.rotationYaw;
+		if (this.world.isRemote) {
+			if (this.canBeVertical()) {
+				this.bodyAngle ++;
+			}
+			else {
+				this.bodyAngle --;
+			}
+			if (this.bodyAngle > 90) {
+				this.bodyAngle = 90;
+			}
+			if (this.bodyAngle < 0) {
+				this.bodyAngle = 0;
+			}
+		}
 	}
 
 	@Override
@@ -70,7 +93,8 @@ public class EntityPrehistoricFloraBaculites extends EntityPrehistoricFloraNauti
 	public boolean canBeVertical() {
 		//isReally in Water
 		boolean check1 = this.isReallyInWater();
-		boolean check2 = (this.world.isAirBlock(this.getPosition().up(2)));
+		int waterTest = Math.round(2 * this.getAgeScale());
+		boolean check2 = this.world.getBlockState(this.getPosition().up(waterTest)).getMaterial() != Material.WATER;
 
 		return check1 && !check2;
 	}

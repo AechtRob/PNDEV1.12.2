@@ -251,7 +251,7 @@ public class ModelOrthoceras extends ModelBasePalaeopedia {
             animWalking(entitylivingbodyIn, limbSwing, limbSwingAmount, partialTickTime);
         }
 
-        if(ee.isAtBottom() && ee.canBeVertical()) {
+        if(ee.isAtBottom() && ee.canBeVertical() && ee.bodyAngle >= 90) {
             animWalkingForage(entitylivingbodyIn, limbSwing, limbSwingAmount, partialTickTime);
         }
 
@@ -378,8 +378,8 @@ public class ModelOrthoceras extends ModelBasePalaeopedia {
         this.body.offsetY = 0.4F;
 
         EntityPrehistoricFloraOrthoceras ee = (EntityPrehistoricFloraOrthoceras) e;
+        this.body.rotateAngleX = (float) Math.toRadians(((EntityPrehistoricFloraOrthoceras) e).bodyAngle);
         if(e.isInWater() && !((EntityPrehistoricFloraOrthoceras) e).canBeVertical()) {
-            this.body.rotateAngleX = (float) Math.toRadians(0);
             this.body.rotateAngleY = (float) Math.toRadians(180);
         }
 

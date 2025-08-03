@@ -253,7 +253,7 @@ public class ModelCameroceras extends ModelBasePalaeopedia {
             animWalking(entitylivingbodyIn, limbSwing, limbSwingAmount, partialTickTime);
         }
 
-        if(ee.isAtBottom() && ee.canBeVertical()) {
+        if(ee.isAtBottom() && ee.canBeVertical() && ee.bodyAngle >= 90) {
             animWalkingForage(entitylivingbodyIn, limbSwing, limbSwingAmount, partialTickTime);
         }
 
@@ -380,8 +380,8 @@ public class ModelCameroceras extends ModelBasePalaeopedia {
         this.body.offsetY = 0.8F;
 
         EntityPrehistoricFloraCameroceras ee = (EntityPrehistoricFloraCameroceras) e;
+        this.body.rotateAngleX = (float) Math.toRadians(((EntityPrehistoricFloraCameroceras) e).bodyAngle);
         if(e.isInWater() && !((EntityPrehistoricFloraCameroceras) e).canBeVertical()) {
-            this.body.rotateAngleX = (float) Math.toRadians(0);
             this.body.rotateAngleY = (float) Math.toRadians(180);
         }
 
