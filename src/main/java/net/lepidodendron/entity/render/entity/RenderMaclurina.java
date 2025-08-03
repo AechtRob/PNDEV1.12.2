@@ -12,7 +12,7 @@ public class RenderMaclurina extends RenderLivingBaseWithBook<EntityPrehistoricF
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/maclurina.png");
 
     public static float getScaler() {
-        return 0.6F;
+        return 0.4F;
     }
     public RenderMaclurina(RenderManager mgr) {
         super(mgr, new ModelMaclurina(), 0.0f);

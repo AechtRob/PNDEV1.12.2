@@ -81,7 +81,7 @@ public class EntityPrehistoricFloraAnomalochelys extends EntityPrehistoricFloraL
 	}
 
 	public int hideAnimationLength() {
-		return 350;
+		return 310;
 	}
 
 	@Override

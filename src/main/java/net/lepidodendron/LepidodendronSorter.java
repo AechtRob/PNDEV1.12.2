@@ -5854,6 +5854,7 @@ public class LepidodendronSorter {
     public static final int naomichelys_raw = 5575;
     public static final int eggs_brodiechelys = 5576;
     public static final int eggs_naomichelys = 5577;
+    public static final int bivalve_chama = 5578;
 
 
 

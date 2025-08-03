@@ -725,6 +725,22 @@ public class ModelEuropejara extends ModelBasePalaeopedia {
         this.setRotateAngle(upperwing5_r1, -0.0218F, -0.5794F, 0.1017F);
         this.upperwing5_r1.cubeList.add(new ModelBox(upperwing5_r1, 12, 0, -2.2921F, 0.4759F, -1.4343F, 5, 1, 6, 0.0F, true));
 
+        this.rightwingmembrane6.scaleChildren = true;
+        this.rightwingmembrane7.scaleChildren = true;
+        this.rightwinghidable2.scaleChildren = true;
+        this.rightwingmembranehideable2.scaleChildren = true;
+        this.rightwingmembranehidable1.scaleChildren = true;
+        this.rightwinghideable3.scaleChildren = true;
+        this.rightwinghidable3.scaleChildren = true;
+        this.rightwinghidable4.scaleChildren = true;
+        this.leftwingmembranehidable1.scaleChildren = true;
+        this.leftwingmembranehideable2.scaleChildren = true;
+        this.leftwingmembrane7.scaleChildren = true;
+        this.leftwingmembrane6.scaleChildren = true;
+        this.leftwinghidable2.scaleChildren = true;
+        this.leftwinghidable4.scaleChildren = true;
+        this.leftwinghidable3.scaleChildren = true;
+
 
         this.rightwingmembrane7.setScale((float)0,(float)0,(float)0);
         this.rightwingmembrane6.setScale((float)0,(float)0,(float)0);
@@ -854,11 +870,19 @@ public class ModelEuropejara extends ModelBasePalaeopedia {
             this.rightwingmembrane7.setScale((float)1,(float)1,(float)1);
             this.rightwingmembrane6.setScale((float)1,(float)1,(float)1);
             this.rightwinghidable2.setScale((float)1,(float)1,(float)1);
+            this.rightwingmembranehidable1.setScale((float)1,(float)1,(float)1);
+            this.rightwingmembranehideable2.setScale((float)1,(float)1,(float)1);
+            this.rightwinghideable3.setScale((float)1,(float)1,(float)1);
+            this.rightwinghidable3.setScale((float)1,(float)1,(float)1);
+            this.rightwinghidable4.setScale((float)1,(float)1,(float)1);
             this.leftwingmembranehidable1.setScale((float)1,(float)1,(float)1);
+            this.leftwingmembranehideable2.setScale((float)1,(float)1,(float)1);
+            this.leftwinghidable3.setScale((float)1,(float)1,(float)1);
             this.leftwingmembrane7.setScale((float)1,(float)1,(float)1);
             this.leftwingmembrane6.setScale((float)1,(float)1,(float)1);
             this.leftwinghidable2.setScale((float)1,(float)1,(float)1);
-            this.rightwingmembranehidable1.setScale((float)1,(float)1,(float)1);
+            this.leftwinghidable4.setScale((float)1,(float)1,(float)1);
+            this.leftwinghidable3.setScale((float)1,(float)1,(float)1);
 
             //And now the pose:
             this.setRotateAngle(body1, -0.1367F, 0.0F, 0.0F);
@@ -966,7 +990,7 @@ public class ModelEuropejara extends ModelBasePalaeopedia {
                 this.leftwingmembranehidable1.setScale((float)0,(float)0,(float)0);
                  this.leftwingmembranehideable2.setScale((float)0,(float)0,(float)0);
                 this.leftwinghidable3.setScale((float)0,(float)0,(float)0);
-                this.leftwingmembrane7.setScale((float)4,(float)4,(float)4);
+                this.leftwingmembrane7.setScale((float)0,(float)0,(float)0);
                 this.leftwingmembrane6.setScale((float)0,(float)0,(float)0);
                 this.leftwinghidable2.setScale((float)0,(float)0,(float)0);
                 this.leftwinghidable4.setScale((float)0,(float)0,(float)0);
@@ -2521,93 +2545,16 @@ public class ModelEuropejara extends ModelBasePalaeopedia {
         this.setRotateAngle(leftwinghidable3, leftwinghidable3.rotateAngleX + (float) Math.toRadians(0), leftwinghidable3.rotateAngleY + (float) Math.toRadians(0), leftwinghidable3.rotateAngleZ + (float) Math.toRadians(0));
         this.leftwinghidable3.rotationPointX = this.leftwinghidable3.rotationPointX + (float)(0);
         this.leftwinghidable3.rotationPointY = this.leftwinghidable3.rotationPointY - (float)(0);
-        this.leftwinghidable3.rotationPointZ = this.leftwinghidable3.rotationPointZ + (float)(3.05);
+        this.leftwinghidable3.rotationPointZ = this.leftwinghidable3.rotationPointZ + (float)(0);
 
 
         this.setRotateAngle(leftwinghidable4, leftwinghidable4.rotateAngleX + (float) Math.toRadians(0), leftwinghidable4.rotateAngleY + (float) Math.toRadians(0), leftwinghidable4.rotateAngleZ + (float) Math.toRadians(0));
         this.leftwinghidable4.rotationPointX = this.leftwinghidable4.rotationPointX + (float)(0);
         this.leftwinghidable4.rotationPointY = this.leftwinghidable4.rotationPointY - (float)(0);
-        this.leftwinghidable4.rotationPointZ = this.leftwinghidable4.rotationPointZ + (float)(4.975);
+        this.leftwinghidable4.rotationPointZ = this.leftwinghidable4.rotationPointZ + (float)(0);
 
 
         this.setRotateAngle(leftwingmembrane1, leftwingmembrane1.rotateAngleX + (float) Math.toRadians(0), leftwingmembrane1.rotateAngleY + (float) Math.toRadians(0), leftwingmembrane1.rotateAngleZ + (float) Math.toRadians(0));
-
-
-
-        if (tickAnim >= 0 && tickAnim < 50) {
-            xx = 0 + (((tickAnim - 0) / 50) * (0-(0)));
-            yy = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+100))*15 + (((tickAnim - 0) / 50) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+100))*15)));
-            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-40))*25 + (((tickAnim - 0) / 50) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-40))*25)));
-        }
-        else if (tickAnim >= 50 && tickAnim < 120) {
-            xx = 0 + (((tickAnim - 50) / 70) * (0-(0)));
-            yy = 0 + (((tickAnim - 50) / 70) * (0-(0)));
-            zz = 0 + (((tickAnim - 50) / 70) * (0-(0)));
-        }
-        else if (tickAnim >= 120 && tickAnim < 160) {
-            xx = 0 + (((tickAnim - 120) / 40) * (0-(0)));
-            yy = 0 + (((tickAnim - 120) / 40) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+100))*15-(0)));
-            zz = 0 + (((tickAnim - 120) / 40) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-40))*25-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(leftleg1, leftleg1.rotateAngleX + (float) Math.toRadians(xx), leftleg1.rotateAngleY + (float) Math.toRadians(yy), leftleg1.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-        this.setRotateAngle(leftleg2, leftleg2.rotateAngleX + (float) Math.toRadians(-0.47529), leftleg2.rotateAngleY + (float) Math.toRadians(-10.66198), leftleg2.rotateAngleZ + (float) Math.toRadians(-18.51797));
-
-
-        this.setRotateAngle(leftfoot, leftfoot.rotateAngleX + (float) Math.toRadians(0), leftfoot.rotateAngleY + (float) Math.toRadians(0), leftfoot.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.lefthand.rotationPointX = this.lefthand.rotationPointX + (float)(-0.825);
-        this.lefthand.rotationPointY = this.lefthand.rotationPointY - (float)(0.65);
-        this.lefthand.rotationPointZ = this.lefthand.rotationPointZ + (float)(0);
-
-
-        this.leftwingmembranehideable2.rotationPointX = this.leftwingmembranehideable2.rotationPointX + (float)(0);
-        this.leftwingmembranehideable2.rotationPointY = this.leftwingmembranehideable2.rotationPointY - (float)(1.925);
-        this.leftwingmembranehideable2.rotationPointZ = this.leftwingmembranehideable2.rotationPointZ + (float)(0);
-
-
-        this.leftwinghideable3.rotationPointX = this.leftwinghideable3.rotationPointX + (float)(0);
-        this.leftwinghideable3.rotationPointY = this.leftwinghideable3.rotationPointY - (float)(1.925);
-        this.leftwinghideable3.rotationPointZ = this.leftwinghideable3.rotationPointZ + (float)(0);
-
-
-
-        if (tickAnim >= 0 && tickAnim < 50) {
-            xx = 0 + (((tickAnim - 0) / 50) * (0-(0)));
-            yy = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+100))*-15 + (((tickAnim - 0) / 50) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+100))*-15)));
-            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-40))*-25 + (((tickAnim - 0) / 50) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-40))*-25)));
-        }
-        else if (tickAnim >= 50 && tickAnim < 120) {
-            xx = 0 + (((tickAnim - 50) / 70) * (0-(0)));
-            yy = 0 + (((tickAnim - 50) / 70) * (0-(0)));
-            zz = 0 + (((tickAnim - 50) / 70) * (0-(0)));
-        }
-        else if (tickAnim >= 120 && tickAnim < 160) {
-            xx = 0 + (((tickAnim - 120) / 40) * (0-(0)));
-            yy = 0 + (((tickAnim - 120) / 40) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+100))*-15-(0)));
-            zz = 0 + (((tickAnim - 120) / 40) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-40))*-25-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(rightleg1, rightleg1.rotateAngleX + (float) Math.toRadians(xx), rightleg1.rotateAngleY + (float) Math.toRadians(yy), rightleg1.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-        this.setRotateAngle(rightleg2, rightleg2.rotateAngleX + (float) Math.toRadians(-0.47529), rightleg2.rotateAngleY + (float) Math.toRadians(10.662), rightleg2.rotateAngleZ + (float) Math.toRadians(18.518));
-
-
-        this.setRotateAngle(rightfoot, rightfoot.rotateAngleX + (float) Math.toRadians(0), rightfoot.rotateAngleY + (float) Math.toRadians(0), rightfoot.rotateAngleZ + (float) Math.toRadians(0));
 
 
 
@@ -2735,31 +2682,66 @@ public class ModelEuropejara extends ModelBasePalaeopedia {
 
 
 
-        this.rightwingmembranehideable2.rotationPointX = this.rightwingmembranehideable2.rotationPointX + (float)(0);
-        this.rightwingmembranehideable2.rotationPointY = this.rightwingmembranehideable2.rotationPointY - (float)(1.925);
-        this.rightwingmembranehideable2.rotationPointZ = this.rightwingmembranehideable2.rotationPointZ + (float)(0);
+
+        if (tickAnim >= 0 && tickAnim < 50) {
+            xx = 0 + (((tickAnim - 0) / 50) * (0-(0)));
+            yy = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+100))*15 + (((tickAnim - 0) / 50) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+100))*15)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-40))*25 + (((tickAnim - 0) / 50) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-40))*25)));
+        }
+        else if (tickAnim >= 50 && tickAnim < 120) {
+            xx = 0 + (((tickAnim - 50) / 70) * (0-(0)));
+            yy = 0 + (((tickAnim - 50) / 70) * (0-(0)));
+            zz = 0 + (((tickAnim - 50) / 70) * (0-(0)));
+        }
+        else if (tickAnim >= 120 && tickAnim < 160) {
+            xx = 0 + (((tickAnim - 120) / 40) * (0-(0)));
+            yy = 0 + (((tickAnim - 120) / 40) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+100))*15-(0)));
+            zz = 0 + (((tickAnim - 120) / 40) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-40))*25-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(leftleg1, leftleg1.rotateAngleX + (float) Math.toRadians(xx), leftleg1.rotateAngleY + (float) Math.toRadians(yy), leftleg1.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        this.righthand.rotationPointX = this.righthand.rotationPointX + (float)(0.825);
-        this.righthand.rotationPointY = this.righthand.rotationPointY - (float)(0.65);
-        this.righthand.rotationPointZ = this.righthand.rotationPointZ + (float)(0);
+
+        this.setRotateAngle(leftleg2, leftleg2.rotateAngleX + (float) Math.toRadians(-0.47529), leftleg2.rotateAngleY + (float) Math.toRadians(-10.66198), leftleg2.rotateAngleZ + (float) Math.toRadians(-18.51797));
 
 
-        this.rightwinghideable3.rotationPointX = this.rightwinghideable3.rotationPointX + (float)(0);
-        this.rightwinghideable3.rotationPointY = this.rightwinghideable3.rotationPointY - (float)(1.925);
-        this.rightwinghideable3.rotationPointZ = this.rightwinghideable3.rotationPointZ + (float)(0);
+        this.setRotateAngle(leftfoot, leftfoot.rotateAngleX + (float) Math.toRadians(0), leftfoot.rotateAngleY + (float) Math.toRadians(0), leftfoot.rotateAngleZ + (float) Math.toRadians(0));
 
 
-        this.setRotateAngle(rightwinghidable3, rightwinghidable3.rotateAngleX + (float) Math.toRadians(0), rightwinghidable3.rotateAngleY + (float) Math.toRadians(0), rightwinghidable3.rotateAngleZ + (float) Math.toRadians(0));
-        this.rightwinghidable3.rotationPointX = this.rightwinghidable3.rotationPointX + (float)(0);
-        this.rightwinghidable3.rotationPointY = this.rightwinghidable3.rotationPointY - (float)(0);
-        this.rightwinghidable3.rotationPointZ = this.rightwinghidable3.rotationPointZ + (float)(3.05);
+
+        if (tickAnim >= 0 && tickAnim < 50) {
+            xx = 0 + (((tickAnim - 0) / 50) * (0-(0)));
+            yy = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+100))*-15 + (((tickAnim - 0) / 50) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+100))*-15)));
+            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-40))*-25 + (((tickAnim - 0) / 50) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-40))*-25)));
+        }
+        else if (tickAnim >= 50 && tickAnim < 120) {
+            xx = 0 + (((tickAnim - 50) / 70) * (0-(0)));
+            yy = 0 + (((tickAnim - 50) / 70) * (0-(0)));
+            zz = 0 + (((tickAnim - 50) / 70) * (0-(0)));
+        }
+        else if (tickAnim >= 120 && tickAnim < 160) {
+            xx = 0 + (((tickAnim - 120) / 40) * (0-(0)));
+            yy = 0 + (((tickAnim - 120) / 40) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+100))*-15-(0)));
+            zz = 0 + (((tickAnim - 120) / 40) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-40))*-25-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(rightleg1, rightleg1.rotateAngleX + (float) Math.toRadians(xx), rightleg1.rotateAngleY + (float) Math.toRadians(yy), rightleg1.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        this.setRotateAngle(rightwinghidable4, rightwinghidable4.rotateAngleX + (float) Math.toRadians(0), rightwinghidable4.rotateAngleY + (float) Math.toRadians(0), rightwinghidable4.rotateAngleZ + (float) Math.toRadians(0));
-        this.rightwinghidable4.rotationPointX = this.rightwinghidable4.rotationPointX + (float)(0);
-        this.rightwinghidable4.rotationPointY = this.rightwinghidable4.rotationPointY - (float)(0);
-        this.rightwinghidable4.rotationPointZ = this.rightwinghidable4.rotationPointZ + (float)(4.975);
+
+        this.setRotateAngle(rightleg2, rightleg2.rotateAngleX + (float) Math.toRadians(-0.47529), rightleg2.rotateAngleY + (float) Math.toRadians(10.662), rightleg2.rotateAngleZ + (float) Math.toRadians(18.518));
+
+
+        this.setRotateAngle(rightfoot, rightfoot.rotateAngleX + (float) Math.toRadians(0), rightfoot.rotateAngleY + (float) Math.toRadians(0), rightfoot.rotateAngleZ + (float) Math.toRadians(0));
 
     }
     public void animWalk(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {

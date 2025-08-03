@@ -585,6 +585,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ZYGOPTERIDACEAE = new CustomTrigger("pf_book_zygopteridaceae");
     public static final CustomTrigger CLICK_SYMPLOCOPTERIS = new CustomTrigger("pf_book_symplocopteris");
     public static final CustomTrigger CLICK_ZYGOPTERIS = new CustomTrigger("pf_book_zygopteris");
+    public static final CustomTrigger CLICK_BIVALVE_CHAMA = new CustomTrigger("pf_book_bivalve_chama");
 
     public static final CustomTrigger CLICK_CEPHALOTAXUS = new CustomTrigger("pf_book_cephalotaxus");
     public static final CustomTrigger CLICK_CUNNINGHAMIA = new CustomTrigger("pf_book_cunninghamia");
@@ -4048,7 +4049,8 @@ public class ModTriggers
             CLICK_CONFUCIUSORNIS,
             CLICK_NORIPTERUS,
             CLICK_SAPEORNIS,
-            CLICK_KOLEKEN
+            CLICK_KOLEKEN,
+            CLICK_BIVALVE_CHAMA
 
 
 
