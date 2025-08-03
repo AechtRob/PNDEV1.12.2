@@ -11073,7 +11073,10 @@ entity.prehistoric_flora_tadpole_hyogobatrachus.name=Hyogobatrachus Tadpole
 
 
 
-
+advancements.pf_adv_book_anjiaspis.description=Unlock the entry for Anjiaspis in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_anjiaspis.title=Anjiaspis
+item.pf_anjiaspis_raw.name=Raw Anjiaspis
+entity.prehistoric_flora_anjiaspis.name=Anjiaspis
 
 
 item.record.brontosaurus.desc=Brontosaurus (Will You Wait for Me)
