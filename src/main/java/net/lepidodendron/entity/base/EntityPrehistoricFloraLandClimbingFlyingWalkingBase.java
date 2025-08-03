@@ -973,8 +973,6 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         }
     }
 
-
-
     public class FlightMoveHelper extends EntityMoveHelper {
         public FlightMoveHelper(EntityPrehistoricFloraLandClimbingFlyingWalkingBase insect) {
             super(insect);
