@@ -12,11 +12,10 @@
 			"text": "$(l)Temporal Range:$() Jurassic - Present$(br2)>Arthropoda$(br)>Insecta$(br)>Odonata$(br)>Epiprocta$(br)>$(o)Anisoptera"
 		},
 		{
-			"type": "entity",
-			"name": "Anisoptera",
-			"entity": "lepidodendron:prehistoric_flora_dragonfly",
-			"rotate": false,
-			"default_rotation": 0
+			"type": "image",
+			"images": ["paleopedia:textures/dragonfly.png"],
+			"title": "Anisoptera",
+			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dragonfly",

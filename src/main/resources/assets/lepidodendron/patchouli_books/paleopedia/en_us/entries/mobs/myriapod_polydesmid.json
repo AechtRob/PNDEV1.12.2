@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_myriapod_polydesmid",
 			"title": "Polydesmida",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian - Present$(br2)>Arthropoda$(br)>Myriapoda$(br)>Diplopoda$(br)>Diplopoda$(br)>Chilognatha$(br)>Helminthomorpha$(br)>Eugnatha$(br)>Merocheta$(br)>$(o)Polydesmida"
+			"text": "$(l)Temporal Range:$() Devonian - Present$(br2)>Arthropoda$(br)>Myriapoda$(br)>Diplopoda$(br)>Chilognatha$(br)>Helminthomorpha$(br)>Merocheta$(br)>$(o)Polydesmida"
 		},
 		{
 			"type": "image",

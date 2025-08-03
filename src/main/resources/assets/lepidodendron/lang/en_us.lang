@@ -11437,6 +11437,8 @@ tile.pf_eggs_aquaticnymph.name=Insect Eggs
 advancements.pf_adv_book_bivalve_chama.description=Unlock the entry for Chama Bivalve in the Palaeopedia to gain access to extra new pages about it!
 advancements.pf_adv_book_bivalve_chama.title=Chama Bivalve
 tile.pf_bivalve_chama.name=Chama Bivalve
-
+advancements.pf_adv_book_bivalve_actinoceramus.description=Unlock the entry for Actinoceramus Bivalve in the Palaeopedia to gain access to extra new pages about it!
+advancements.pf_adv_book_bivavle_actinoceramus.title=Actinoceramus Bivalve
+tile.pf_bivale_actinoceramus.name=Actinoceramus Bivalve
 
 

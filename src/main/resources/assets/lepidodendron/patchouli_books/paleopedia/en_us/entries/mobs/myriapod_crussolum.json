@@ -1,0 +1,51 @@
+{
+	"name": "Crussolum",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/myriapod_crussolum_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_myriapod_crussolum",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_myriapod_crussolum",
+			"title": "Crussolum",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Arthropoda$(br)>Myriapoda$(br)>Chilopoda$(br)>Scutigeromorpha"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/crussolum.png"],
+			"title": "C. crusserratum",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myriapod_crussolum",
+			"type": "text",
+			"text": "Crussolum crusserratum hails from the Upper Silurian into the Devonian, with fossils found in the Panther Mountain Formation, New York (USA); Rhynie chert, Scotland and Ludford Corner, England (United Kingdom). It is a small centipede, growing up to 3 cm in length. It is currently the oldest known centipede."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myriapod_crussolum",
+			"type": "text",
+			"text": "The generic name derives from the Latin words 'crus', to mean 'legs'; and 'solum', to mean 'only'. The specific name also derives from the Latin words 'crus', and 'serratum', to mean 'serrated'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_myriapod@crussolum"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@crussolum"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@crussolum"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@crussolum"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron::prehistoric_flora_myriapod@crussolum"
+		}
+	]
+}

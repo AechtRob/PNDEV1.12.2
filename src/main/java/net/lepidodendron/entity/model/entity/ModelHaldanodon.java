@@ -364,6 +364,44 @@ public class ModelHaldanodon extends ModelBasePalaeopedia {
     }
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = -1.2F;
+        this.root.offsetX = 0.1F;
+        this.root.offsetZ = 2.0F;
+        this.root.rotateAngleY = (float)Math.toRadians(120);
+        this.root.rotateAngleX = (float)Math.toRadians(0);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
+        this.root.scaleChildren = true;
+        float scaler = 2.2F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(root, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Hips, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.2F, 0.05F, 0.0F);
+        this.setRotateAngle(Chest, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(Neck, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Head, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail1, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmR, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerArmR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(HandR, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmL, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerArmL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(HandL, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegR, 1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegR, -1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(FootR, 2.9F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegL, 1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegL, -1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(FootL, 2.9F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

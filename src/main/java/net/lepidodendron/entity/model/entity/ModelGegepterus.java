@@ -508,17 +508,17 @@ public class ModelGegepterus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.5F;
-        this.main.offsetX = 0.2F;
+        this.main.offsetY = -1.2F;
+        this.main.offsetX = -0.2F;
+        this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(125);
         this.main.rotateAngleX = (float)Math.toRadians(0);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 1.5F;
+        float scaler = 2.5F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-        //this.setRotateAngle(root, 0.2618F, 0.0F, 0.0F);
-
+        this.setRotateAngle(main, -0.4F, 3.8F, -0.0F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

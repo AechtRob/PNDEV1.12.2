@@ -1,0 +1,47 @@
+{
+	"name": "Scaphites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/scaphites_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_scaphites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_scaphites",
+			"title": "Scaphites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Ammonitida$(br)>Ancyloceratina>$(br)>Scaphitidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Scaphites sp.",
+            "entity": "lepidodendron:prehistoric_flora_scaphites",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_scaphites",
+			"type": "text",
+			"text": "Scaphites comes from the Late Cretaceous, with fossils found in formations across the globe. It is a small scaphitiid, growing up to 20 cm in size. Whilst they have the standard coiled shell of most ammonites, a defining feature of Scaphites are small tubercles (bumps) that grow along the sides of the shell. Due to their wide range, they are also sometimes used as index fossils."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_scaphites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_scaphites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_scaphites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_scaphites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_scaphites"
+		}
+	]
+}

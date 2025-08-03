@@ -1,0 +1,47 @@
+{
+	"name": "Naomichelys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/naomichelys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_naomichelys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_naomichelys",
+			"title": "Naomichelys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pantestudines$(br)>Testudinata$(br)>Helochelydridae"
+		},
+        	{
+            "type": "entity",
+            "name": "N. speciosa",
+            "entity": "lepidodendron:prehistoric_flora_naomichelys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_naomichelys",
+			"type": "text",
+			"text": "Naomichelys speciosa comes from the Cretaceous, with fossils found across the North American continent. It is a large stem-turtle, and grew up to 80 cm in overall size. It is the only member of the Helochelydridae known from North America."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_naomichelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_naomichelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_naomichelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_naomichelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_naomichelys"
+		}
+	]
+}

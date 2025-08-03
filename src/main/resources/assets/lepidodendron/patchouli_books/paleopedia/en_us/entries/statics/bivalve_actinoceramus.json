@@ -1,0 +1,45 @@
+{
+	"name": "Actinoceramus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bivalve_actinoceramus_icon.png",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_bivalve_actinoceramus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bivalve_actinoceramus",
+			"title": "Actinoceramus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Pteriida$(br)>Inoceramidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "Actinoceramus sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_actinoceramus",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_actinoceramus",
+			"type": "text",
+			"text": "Actinoceramus is a genus of mollusk bivalve that lived during the Cretaceous, with fossils being found across the globe. Unlike their larger relatives, Actinoceramus are rather small in size, and inhabited saltwater locations. It is unique in that it currently marks the oldest known record of well-developed radial folds,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_actinoceramus",
+			"type": "text",
+			"text": "although it is unknown what they are used for. Due to their incredibly wide range, it has also been considered to be the most successful marine bivalve, at least during the Late Cretaceous."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_actinoceramus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
