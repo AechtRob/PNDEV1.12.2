@@ -1,0 +1,47 @@
+{
+	"name": "Anjiaspis",
+	"read_by_default": true,
+	"icon": "lepidodendron:anjiaspis_raw",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_anjiaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_anjiaspis",
+			"title": "Anjiaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Agnatha$(br)>Galeaspida$(br)>Eugaleaspidiformes"
+		},
+		{
+			"type": "entity",
+			"name": "A. loonensis",
+			"entity": "lepidodendron:prehistoric_flora_anjiaspis",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anjiaspis",
+			"type": "text",
+			"text": "Anjiaspis loonensis comes from the Silurian, with fossils found in the Qingshui and Maoshan Formations, China. It is a small eugaleaspidiform, growing up to 7 cm in length. Anjiaspis represents, alongside Qingshuiaspis, currently the oldest known eugaleaspidiform."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anjiaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anjiaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anjiaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anjiaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anjiaspis"
+		}
+	]
+}

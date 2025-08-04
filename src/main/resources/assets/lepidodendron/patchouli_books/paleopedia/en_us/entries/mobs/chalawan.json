@@ -1,0 +1,47 @@
+{
+	"name": "Chalawan",
+	"read_by_default": true,
+	"icon": "lepidodendron:textures/items/chalawan_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_chalawan",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_chalawan",
+			"title": "Chalawan",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Archosauria$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Pholidosauridae"
+		},
+		{
+			"type": "entity",
+			"name": "C. thailandicus",
+			"entity": "lepidodendron:prehistoric_flora_chalawan",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_chalawan",
+			"type": "text",
+			"text": "Chalawan thailandicus comes from the Early Cretaceous, with fossils found in the Phu Kradung Formation, Thailand. It is a large pholidosaurid, growing up to 7 m in length. Whilst not as big as its relative, Sarcosuchus, it is still quite large, with a skull length of 1.1 m. Its generic name derives directly from the name 'Chalawan', the name of a giant in Thai folktale of Krai Thong, which could take the form of a crocodile."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_chalawan"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_chalawan"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_chalawan"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_chalawan"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_chalawan"
+		}
+	]
+}

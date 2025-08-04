@@ -1,0 +1,47 @@
+{
+	"name": "Jeppssonoceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/jeppssonoceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_jeppssonoceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_jeppssonoceras",
+			"title": "Jeppssonoceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Nautiloidea$(br)>Oncocerida$(br)>Trimeroceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. concentratum",
+            "entity": "lepidodendron:prehistoric_flora_jeppssonoceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jeppssonoceras",
+			"type": "text",
+			"text": "Jeppssonoceras concentratum comes from the Silurian, with fossils found in the Hemse Beds Formation, Sweden. It is a large trimeroceratid, growing up to 20 cm in size. Not only is it larger in size than its other relatives, Jeppssonoceras also has a much more open aperture"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_jeppssonoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_jeppssonoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_jeppssonoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_jeppssonoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_jeppssonoceras"
+		}
+	]
+}

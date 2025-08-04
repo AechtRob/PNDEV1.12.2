@@ -1,0 +1,47 @@
+{
+	"name": "Foreyclupea",
+	"read_by_default": true,
+	"icon": "lepidodendron:foreyclupea_raw",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_foreyclupea",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_foreyclupea",
+			"title": "Foreyclupea",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Ellimmichthyiformes$(br)>Paraclupeidae"
+		},
+		{
+			"type": "entity",
+			"name": "F. loonensis",
+			"entity": "lepidodendron:prehistoric_flora_foreyclupea",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_foreyclupea",
+			"type": "text",
+			"text": "Foreyclupea loonensis comes from the Early Cretaceous, with fossils found in the Loon River Formation, Canada. It is a small paraclupeid, growing up to 7 cm in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_foreyclupea"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_foreyclupea"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_foreyclupea"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_foreyclupea"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_foreyclupea"
+		}
+	]
+}

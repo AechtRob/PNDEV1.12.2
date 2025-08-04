@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:chalawan_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_chalawan.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_chalawan.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_chalawan"
+        }
+    }
+}

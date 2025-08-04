@@ -2032,6 +2032,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_NORIPTERUS = new CustomTrigger("pf_book_noripterus");
     public static final CustomTrigger CLICK_SAPEORNIS = new CustomTrigger("pf_book_sapeornis");
     public static final CustomTrigger CLICK_KOLEKEN = new CustomTrigger("pf_book_koleken");
+    public static final CustomTrigger CLICK_FOREYCLUPEA = new CustomTrigger("pf_book_foreyclupea");
+    public static final CustomTrigger CLICK_CHALAWAN = new CustomTrigger("pf_book_chalawan");
 
 
 
@@ -4052,7 +4054,9 @@ public class ModTriggers
             CLICK_SAPEORNIS,
             CLICK_KOLEKEN,
             CLICK_BIVALVE_CHAMA,
-            CLICK_BIVALVE_ACTINOCERAMUS
+            CLICK_BIVALVE_ACTINOCERAMUS,
+            CLICK_FOREYCLUPEA,
+            CLICK_CHALAWAN
 
 
 

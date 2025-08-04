@@ -1,0 +1,47 @@
+{
+	"name": "Coelostylina",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/coelostylina_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_coelostylina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_coelostylina",
+			"title": "Coelostylina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian - Jurassic$(br2)>Mollusca$(br)>Gastropoda$(br)>Coelostylinidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Coelostylina sp.",
+            "entity": "lepidodendron:prehistoric_flora_coelostylina",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_coelostylina",
+			"type": "text",
+			"text": "Coelostylina hails from the Permian into the Jurassic, with fossils found in formations across the globe. It is a small coelostylinid, growing up to 4 cm in height."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_coelostylina"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_coelostylina"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_coelostylina"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_coelostylina"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_coelostylina"
+		}
+	]
+}

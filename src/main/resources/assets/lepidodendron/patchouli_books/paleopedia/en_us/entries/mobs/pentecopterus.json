@@ -21,12 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_pentecopterus",
 			"type": "text",
-			"text": "Pentecopterus decorahensis comes from the Middle Ordovician, with fossils found in the Kayenta Formation, Arizona (USA). It is a large eurypterid, growing up to 1.7 m in the length. It is the oldest known eurypterid, surpassing some by nearly 9 million years."
+			"text": "Pentecopterus decorahensis comes from the Middle Ordovician, with fossils found in the Winneshiek Shale, Iowa (USA). It is the largest megalograptid eurypterid, growing up to 1.7 m in the length. It is currently the oldest known eurypterid, surpassing some by nearly 9 million years."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pentecopterus",
 			"type": "text",
-			"text": "The generic name derives from the name of a type of Greek warship, 'Penteconters'; and the Latin word '-pterus', to mean 'wing'. The specific name derives from the Latinised place name 'Decorah', and town in Iowa near to were the fossils were found."
+			"text": "The generic name derives from the name of a type of Greek warship, 'Penteconters'; and the Latin word '-pterus', to mean 'wing'. The specific name derives from the Latinised place name 'Decorah', a town in Iowa near to were the fossils were found."
 		},
 		{
 			"type": "lepidodendron:diet",
