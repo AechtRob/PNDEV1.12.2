@@ -11449,5 +11449,8 @@ advancements.pf_adv_book_chalawan.title=Chalawan
 item.pf_chalawan_raw.name=Raw Chalawan
 entity.prehistoric_flora_chalawan.name=Chalawan
 item.pf_eggs_chalawan.name=Chalawan Eggs
+advancements.pf_adv_book_mackenzia.description=Unlock the entry for Mackenzia in the Palaeopedia to gain access to extra new pages about it!
+advancements.pf_adv_book_mackenzia.title=Mackenzia
+tile.pf_mackenzia.name=Mackenzia
 
 

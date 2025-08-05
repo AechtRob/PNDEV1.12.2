@@ -1,0 +1,50 @@
+{
+	"name": "Mackenzia",
+	"read_by_default": true,
+	"icon": "lepidodendron:mackenzia_inventory",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_mackenzia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mackenzia",
+			"title": "Mackenzia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Eumetazoa$(br)>Mackenziidae"
+		},
+        {
+        "type": "multiblock",
+        "name": "M. costalis",
+        "enable_visualize": false,
+        "multiblock": {
+        "pattern": [
+        [ "1" ],
+        [ "0" ]
+        ],
+        "mapping": {
+        "1": "lepidodendron:mackenzia",
+        "0": "minecraft:air"
+        }
+        }
+        },
+        {	
+			"advancement": "lepidodendron:pf_adv_book_mackenzia",
+			"type": "text",
+			"text": "Mackenzia costalis comes from the Middle Cambrian, with fossils found in the Burgess Shale Formation, Canada. It is a small ovoid to elongated organism, growing up to 20 cm in height. Mackenzia is a rare and elusive form, stumping palaeontologists since its naming in 1911. The most common classification is to the Cnidaria, although originally it was thought to be that of an echinoderm. Another recent study postures a possible link to some of the older tubular forms"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mackenzia",
+			"type": "text",
+			"text": "of the Ediacaran, although non have come to a solid conclusion on either front. As for its overall appearance, Mackenzia was attached to the substrate via a holdfast structure, at least indicating that it lived upright during life. The body itself was folded into roughly 8 to 10 distinctive ridges, with some evidence of a gut cavity within it, but that is all that is known of its general anatomy. As such, its mode of feeding is also elusive to palaeontologists,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mackenzia",
+			"type": "text",
+			"text": "although many note that it may have inflated and deflated itself, bringing in water, and as such microscopic to small prey into its gut cavity, then deflating and expelling the water back out, and repeating that over and over. The generic name derives from the place name 'Mount Mackenzie', near to where its fossils are found. The specific name derives from the Latin word 'costalis' , to mean 'pertaining to ribs'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mackenzia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
