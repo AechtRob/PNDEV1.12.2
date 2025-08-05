@@ -3380,6 +3380,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation KOLEKEN_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/koleken_young"));
 	public static final int ENTITY_KUJIBEROTHA = 1388;
 	public static final ResourceLocation KUJIBEROTHA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kujiberotha"));
+	public static final int ENTITY_ANJIASPIS = 1389;
+	public static final ResourceLocation ANJIASPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/anjiaspis"));
 
 
 
