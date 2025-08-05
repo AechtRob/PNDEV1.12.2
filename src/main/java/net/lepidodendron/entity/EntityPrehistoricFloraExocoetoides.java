@@ -103,7 +103,22 @@ public class EntityPrehistoricFloraExocoetoides extends EntityPrehistoricFloraAg
 		boolean check4 = this.world.getBlockState(this.getPosition().west()).getMaterial() == Material.WATER;
 		boolean check5 = this.world.getBlockState(this.getPosition().east()).getMaterial() == Material.WATER;
 
-		//Check if the fish is moving
+		//Check if the fish is moving and confirm that the direction is safe
+
+//		float angle = (float)Math.atan(this.motionZ/this.motionX);
+//		float x = 5.0F * (float)Math.cos(angle);
+//		float z = 5.0F * (float)Math.sin(angle);
+//		Vec3d vec3d1 = this.getPositionVector().add(x, 0, z);
+//
+//		RayTraceResult raytraceresult = this.world.rayTraceBlocks(this.getPositionVector(), vec3d1, false, true, false);
+//		if (raytraceresult != null && raytraceresult.typeOfHit == RayTraceResult.Type.BLOCK) {
+//			return false;
+//		}
+
+		if (Math.sqrt(Math.pow(this.motionX, 2) + Math.pow(this.motionZ, 2)) < 0.3) {
+			this.motionX = this.motionX * 1.1;
+			this.motionZ = this.motionZ * 1.1;
+		}
 
 		return check1 && (check2 && check3 && check4 && check5);
 	}
