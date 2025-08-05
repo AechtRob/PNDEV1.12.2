@@ -21,17 +21,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_mosineia",
 			"type": "text",
-			"text": "Mosineia macnaughtoni comes from the Upper Cambrian, with fossils from the Blackberry Hill Lagerstätte, USA. It is a euthycarcinoid arthropod. growing up to 10 cm in length. Mosineia has been connected to, and found with, fossil trackways on tidal flat strata that were known for 150 years. Whilst many have suggested that these trackways prove Mosineia went onto the land to breed and feed away from the danger of predators, most also agree that the discovery of its"
+			"text": "Mosineia macnaughtoni comes from the upper Cambrian, with fossils from the Blackberry Hill Lagerstätte, Wisconsin (US). It is a euthycarcinoid arthropod, growing up to 10 cm in length. Mosineia has been connected to, and found with, fossil trackways on tidal flat strata that were known for 150 years. Whilst many have suggested that these trackways prove Mosineia went onto the land to breed and feed away from the danger of predators, most also agree that the discovery of its"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_mosineia",
 			"type": "text",
-			"text": "trackways on terrestrial land may be down to the tidal nature of its environment. For example there may have been a small bump or dune with the water that a Mosineia would walk on, and once the tide went out the trackways that it left behind would then be exposed to the air, so purely accidentally. This also leads into another likely example, in that sometimes a Mosineia would test its luck and fail, becoming stranded out of water, and forming the trackways on"
+			"text": "trackways on terrestrial land may be down to the tidal nature of its environment. For example there may have been a small bump or dune with the water that a Mosineia would walk on, and once the tide went out the trackways that it left behind would then be exposed to the air. This also leads into another likely example, in that sometimes a Mosineia would test its luck and fail, becoming stranded out of water, and forming the trackways on"
 		},
 		{
 		    "advancement": "lepidodendron:pf_adv_book_mosineia",
 		    "type": "text",
-		    "text": "its way back into the water. But, either side agrees, whether on purpose or accidental, these may well be the first and oldest known forays onto land in the fossil record. The generic name derives from the place 'Mosinee', near to where its fossils were found. The specific name derives from the Latinised surname of Robert MacNaughton, the discoverer of the locality that Mosineia hails from."
+		    "text": "its way back into the water. But, either side agrees, whether on purpose or accidental, these may well be the oldest known animal forays onto land in the fossil record.  The generic name derives from the place 'Mosinee', near to where its fossils were found. The specific name derives from the Latinised surname of Robert MacNaughton, the discoverer of the locality that Mosineia hails from."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -3382,6 +3382,11 @@ public class LepidodendronMod {
 	public static final ResourceLocation KUJIBEROTHA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kujiberotha"));
 	public static final int ENTITY_ANJIASPIS = 1389;
 	public static final ResourceLocation ANJIASPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/anjiaspis"));
+	public static final int ENTITY_FOREYCLUPEA = 1390;
+	public static final ResourceLocation FOREYCLUPEA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/foreyclupea"));
+	public static final int ENTITY_CHALAWAN = 1391;
+	public static final ResourceLocation CHALAWAN_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chalawan"));
+	public static final ResourceLocation CHALAWAN_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chalawan_young"));
 
 
 

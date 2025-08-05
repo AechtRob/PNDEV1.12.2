@@ -5857,7 +5857,11 @@ public class LepidodendronSorter {
     public static final int bivalve_chama = 5578;
     public static final int anjiaspis_raw = 5583;
     public static final int bivalve_actinoceramus = 5579;
+    public static final int foreyclupea_raw = 5580;
+    public static final int chalawan_raw = 5581;
+    public static final int eggs_chalawan = 5582;
 
+    public static final int mackenzia = 5584;
 
 
 

@@ -11441,7 +11441,19 @@ advancements.pf_adv_book_bivalve_chama.description=Unlock the entry for Chama Bi
 advancements.pf_adv_book_bivalve_chama.title=Chama Bivalve
 tile.pf_bivalve_chama.name=Chama Bivalve
 advancements.pf_adv_book_bivalve_actinoceramus.description=Unlock the entry for Actinoceramus Bivalve in the Palaeopedia to gain access to extra new pages about it!
-advancements.pf_adv_book_bivavle_actinoceramus.title=Actinoceramus Bivalve
-tile.pf_bivale_actinoceramus.name=Actinoceramus Bivalve
+advancements.pf_adv_book_bivalve_actinoceramus.title=Actinoceramus Bivalve
+tile.pf_bivalve_actinoceramus.name=Actinoceramus Bivalve
+advancements.pf_adv_book_foreyclupea.description=Unlock the entry for Foreyclupea in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_foreyclupea.title=Foreyclupea
+item.pf_foreyclupea_raw.name=Raw Foreyclupea
+entity.prehistoric_flora_foreyclupea.name=Foreyclupea
+advancements.pf_adv_book_chalawan.description=Unlock the entry for Chalawan in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_chalawan.title=Chalawan
+item.pf_chalawan_raw.name=Raw Chalawan
+entity.prehistoric_flora_chalawan.name=Chalawan
+item.pf_eggs_chalawan.name=Chalawan Eggs
+advancements.pf_adv_book_mackenzia.description=Unlock the entry for Mackenzia in the Palaeopedia to gain access to extra new pages about it!
+advancements.pf_adv_book_mackenzia.title=Mackenzia
+tile.pf_mackenzia.name=Mackenzia
 
 

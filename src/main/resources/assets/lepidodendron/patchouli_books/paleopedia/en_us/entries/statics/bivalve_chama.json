@@ -1,0 +1,40 @@
+{
+	"name": "Chama",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bivalve_Chama_icon.png",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_bivalve_Chama",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bivalve_Chama",
+			"title": "Chama",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous - Present$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Venerida$(br)>Chamidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "C. lazarus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_Chama",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_Chama",
+			"type": "text",
+			"text": "Chama, most commonly known as 'Jewel Boxes', is a genus of mollusk bivalve hailing from the Cretaceous into the Present, with both extant and extinct forms being found right across the globe. Growing up to 14 cm in length, their most striking feature are their leaf-like spines growing on the outside of each shell."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_Chama",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

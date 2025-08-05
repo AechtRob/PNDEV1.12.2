@@ -52,7 +52,7 @@ public class BlockBivalveActinoceramus extends ElementsLepidodendronMod.ModEleme
 	@GameRegistry.ObjectHolder("lepidodendron:bivalve_actinoceramus")
 	public static final Block block = null;
 	public BlockBivalveActinoceramus(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.bivalve_inoceramus);
+		super(instance, LepidodendronSorter.bivalve_actinoceramus);
 	}
 
 	@Override

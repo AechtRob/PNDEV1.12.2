@@ -1,0 +1,52 @@
+{
+	"name": "Trimeroceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/trimeroceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_trimeroceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_trimeroceras",
+			"title": "Trimeroceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Nautiloidea$(br)>Oncocerida$(br)>Trimeroceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. staurostoma",
+            "entity": "lepidodendron:prehistoric_flora_trimeroceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_trimeroceras",
+			"type": "text",
+			"text": "Trimeroceras comes from the Silurian, with fossils found in formations across China, Europe and North America. It is a small trimeroceratid, growing up to 7 cm in size. The namesake of the family Trimeroceratidae, Trimeroceras and its relatives (alongside other families within the order Oncocerida), have a very unique feature, in that the apertures of their shells were almost slit-like, which meant improved protection, but a diet restricted to microscopic or very small organisms."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_trimeroceras",
+			"type": "text",
+			"text": "It has also been found that based on the overall shell morphology, inside and out, of Trimeroceras indicate that the body chambers had been modified to allow for the brooding of egg internally, and spawning them in safe shallow waters when they had fully matured."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_trimeroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_trimeroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_trimeroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_trimeroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_trimeroceras"
+		}
+	]
+}

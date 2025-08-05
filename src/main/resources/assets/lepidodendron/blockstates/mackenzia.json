@@ -1,0 +1,32 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:mackenzia_1"},
+      {"model": "lepidodendron:mackenzia_2"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:mackenzia_1", "x": 90},
+      {"model": "lepidodendron:mackenzia_2", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:mackenzia_1", "x": 90, "y": 90},
+      {"model": "lepidodendron:mackenzia_2", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:mackenzia_1", "x": 90, "y": 180},
+      {"model": "lepidodendron:mackenzia_2", "x": 90, "y": 180}
+    ],
+    "facing=west": [
+      {"model": "lepidodendron:mackenzia_1", "x": 90, "y": 270},
+      {"model": "lepidodendron:mackenzia_2", "x": 90, "y": 270}
+    ],
+    "facing=up": [
+      {"model": "lepidodendron:mackenzia_1"},
+      {"model": "lepidodendron:mackenzia_2"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:mackenzia_1", "x": 180},
+      {"model": "lepidodendron:mackenzia_2", "x": 180}
+    ]
+  }
+}

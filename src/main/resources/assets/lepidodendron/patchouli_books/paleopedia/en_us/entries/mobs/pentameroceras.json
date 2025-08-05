@@ -1,0 +1,47 @@
+{
+	"name": "Pentameroceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pentameroceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_pentameroceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pentameroceras",
+			"title": "Pentameroceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Nautiloidea$(br)>Oncocerida$(br)>Trimeroceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Pentameroceras sp.",
+            "entity": "lepidodendron:prehistoric_flora_pentameroceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pentameroceras",
+			"type": "text",
+			"text": "Pentameroceras comes from the Silurian, with fossils found in formations across Europe and North America. It is a small trimeroceratid, growing up to 4 cm in size."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pentameroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pentameroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pentameroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pentameroceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pentameroceras"
+		}
+	]
+}
