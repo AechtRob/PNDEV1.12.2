@@ -958,7 +958,6 @@ public class ModelGoniopholis extends ModelBasePalaeopedia {
         this.Throat.rotationPointZ = this.Throat.rotationPointZ + (float)(zz);
 
     }
-
     public void animAttack(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraGoniopholis entity = (EntityPrehistoricFloraGoniopholis) entitylivingbaseIn;
         int animCycle = 12;

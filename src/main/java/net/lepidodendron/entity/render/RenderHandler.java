@@ -8343,6 +8343,14 @@ public class RenderHandler {
                 return new RenderSinemys(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAnjiaspis.class, new IRenderFactory<EntityPrehistoricFloraAnjiaspis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAnjiaspis> createRenderFor(RenderManager manager) {
+                return new RenderAnjiaspis(manager);
+            }
+        });
+
+        
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraForeyclupea.class, new IRenderFactory<EntityPrehistoricFloraForeyclupea>() {
             @Override
             public Render<? super EntityPrehistoricFloraForeyclupea> createRenderFor(RenderManager manager) {
