@@ -1,0 +1,40 @@
+{
+	"name": "Hemicrinus",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_hemicrinus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_hemicrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_hemicrinus",
+			"title": "Hemicrinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Cyrtocrinida$(br)>Hemicrinidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "H. astierianus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:crinoid_hemicrinus",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_hemicrinus",
+			"type": "text",
+			"text": "Hemicrinus astierianus hails from the Jurassic into the Early Cretaceous, with fossils found in formations across Spain, France and Poland. It is a relatively small and strange looking crinoid, with an elongated holdfast, short stem, and a crown at an effective 90 degree angle, giving a lot of its fossils a rather spoon-like appearance."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_hemicrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

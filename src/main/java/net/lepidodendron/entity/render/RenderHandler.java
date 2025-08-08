@@ -8363,6 +8363,12 @@ public class RenderHandler {
                 return new RenderChalawan(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPseudarthron.class, new IRenderFactory<EntityPrehistoricFloraPseudarthron>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPseudarthron> createRenderFor(RenderManager manager) {
+                return new RenderPseudarthron(manager);
+            }
+        });
 
 
 

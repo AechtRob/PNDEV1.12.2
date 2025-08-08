@@ -1,0 +1,33 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:crinoid_hemicrinus"},
+        {"model": "lepidodendron:crinoid_hemicrinus_var"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:crinoid_hemicrinus_side"},
+      {"model": "lepidodendron:crinoid_hemicrinus_side_var"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:crinoid_hemicrinus_side", "y": 90},
+      {"model": "lepidodendron:crinoid_hemicrinus_side_var", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:crinoid_hemicrinus_side", "y": 180},
+      {"model": "lepidodendron:crinoid_hemicrinus_side_var", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:crinoid_hemicrinus_side", "y": 270},
+      {"model": "lepidodendron:crinoid_hemicrinus_side_var", "y": 270}
+    ],
+  "facing=up": [
+      	{"model": "lepidodendron:crinoid_hemicrinus"},
+      {"model": "lepidodendron:crinoid_hemicrinus_var"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:crinoid_hemicrinus", "x": 180},
+      {"model": "lepidodendron:crinoid_hemicrinus_var", "x": 180}
+    ]
+  }
+}

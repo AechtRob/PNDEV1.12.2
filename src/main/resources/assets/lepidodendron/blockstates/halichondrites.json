@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:halichondrites"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:halichondrites", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:halichondrites", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:halichondrites", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:halichondrites", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:halichondrites"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:halichondrites", "x": 180}
+    ]
+  }
+}

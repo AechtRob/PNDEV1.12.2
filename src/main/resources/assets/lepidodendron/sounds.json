@@ -14008,5 +14008,94 @@
         "stream": false
       }
     ]
+  },
+
+  "largecroc_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:largecroc_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:largecroc_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:largecroc_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:largecroc_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:largecroc_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:largecroc_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:largecroc_living07",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:largecroc_living08",
+        "stream": false
+      }
+    ]
+  },
+  "largecroc_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:largecroc_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:largecroc_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:largecroc_hurt03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:largecroc_hurt04",
+        "stream": false
+      }
+    ]
+  },
+  "largecroc_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:largecroc_death",
+        "stream": false
+      }
+    ]
+  },
+  "largecroc_threat": {
+    "sounds": [
+      {
+        "name": "lepidodendron:largecroc_threat01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:largecroc_threat02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:largecroc_threat03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:largecroc_threat04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:largecroc_threat05",
+        "stream": false
+      }
+    ]
   }
 }

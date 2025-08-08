@@ -232,7 +232,9 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockPalaeodiphasia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBrachiopodMicromitra.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockShankouclava.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockGangtoucunia.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockGangtoucunia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockMackenzia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockHalichondrites.block).toString()
 
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCambrian);
@@ -690,7 +692,8 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidPhyllocrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveLithiotis.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSeaPenPink.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockSeaPenYellow.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockSeaPenYellow.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidHemicrinus.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsJurassic);
         return resLoc;
@@ -750,7 +753,9 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCoralStonySparseBranching.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSeaPenPink.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSeaPenYellow.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBoneWorm.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBoneWorm.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidHemicrinus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidRoveacrinus.block).toString()
         };
         return resLoc;
     }
