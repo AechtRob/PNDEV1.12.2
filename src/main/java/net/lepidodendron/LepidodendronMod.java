@@ -3387,7 +3387,8 @@ public class LepidodendronMod {
 	public static final int ENTITY_CHALAWAN = 1391;
 	public static final ResourceLocation CHALAWAN_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chalawan"));
 	public static final ResourceLocation CHALAWAN_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chalawan_young"));
-
+    public static final int ENTITY_TURFANIA = 1396;
+    public static final ResourceLocation TURFANIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/turfania"));
 
 
 

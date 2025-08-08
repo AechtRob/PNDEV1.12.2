@@ -1493,7 +1493,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DORYGNATHUS = new CustomTrigger("pf_book_dorygnathus");
     public static final CustomTrigger CLICK_ELAPHROSAURUS = new CustomTrigger("pf_book_elaphrosaurus");
     public static final CustomTrigger CLICK_YIQI = new CustomTrigger("pf_book_yiqi");
-
+    public static final CustomTrigger CLICK_TURFANIA = new CustomTrigger("pf_book_turfania");
     public static final CustomTrigger CLICK_NIMBIA = new CustomTrigger("pf_book_nimbia");
     public static final CustomTrigger CLICK_EDIACARIA = new CustomTrigger("pf_book_ediacaria");
     public static final CustomTrigger CLICK_EOPORPITA = new CustomTrigger("pf_book_eoporpita");
@@ -4060,7 +4060,8 @@ public class ModTriggers
             CLICK_ANJIASPIS,
             CLICK_FOREYCLUPEA,
             CLICK_CHALAWAN,
-            CLICK_MACKENZIA
+            CLICK_MACKENZIA,
+            CLICK_TURFANIA
 
 
 
