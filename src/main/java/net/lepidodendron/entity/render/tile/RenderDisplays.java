@@ -104,6 +104,7 @@ public class RenderDisplays {
     public static final ModelBeishanichthys modelBeishanichthys = new ModelBeishanichthys();
     public static final ModelBelantsea modelBelantsea = new ModelBelantsea();
     public static final ModelBelonostomus modelBelonostomus = new ModelBelonostomus();
+    public static final ModelBerthasaura modelBerthasaura = new ModelBerthasaura();
     public static final ModelBertratis modelBertratis = new ModelBertratis();
     public static final ModelBesanosaurus modelBesanosaurus = new ModelBesanosaurus();
     public static final ModelBethesdaichthys modelBethesdaichthys = new ModelBethesdaichthys();
@@ -753,7 +754,9 @@ public class RenderDisplays {
     public static final ModelPachyamia modelPachyamia = new ModelPachyamia();
     public static final ModelPseudonaraoia modelPseudonaraoia = new ModelPseudonaraoia();
     public static final ModelPrestosuchus modelPrestosuchus = new ModelPrestosuchus();
+    public static final ModelPsittacosaurus modelPsittacosaurus = new ModelPsittacosaurus();
     public static final ModelPsittacosaurus_sibiricus modelPsittacosaurus_sibiricus = new ModelPsittacosaurus_sibiricus();
+    public static final ModelPsittacosaurus_sinensis modelPsittacosaurus_sinensis = new ModelPsittacosaurus_sinensis();
     public static final ModelPsilichthys modelPsilichthys = new ModelPsilichthys();
     public static final ModelPtychodus modelPtychodus = new ModelPtychodus();
     public static final ModelProtopsephurus modelProtopsephurus = new ModelProtopsephurus();

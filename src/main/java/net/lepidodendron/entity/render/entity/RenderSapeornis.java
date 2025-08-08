@@ -12,7 +12,7 @@ public class RenderSapeornis extends RenderLivingBaseWithBook<EntityPrehistoricF
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sapeornis.png");
 
     public static float getScaler() {
-        return 0.13F;
+        return 0.23F;
     }
 
     public RenderSapeornis(RenderManager mgr) {

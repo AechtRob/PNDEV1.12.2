@@ -5863,6 +5863,11 @@ public class LepidodendronSorter {
 
     public static final int mackenzia = 5584;
 
+    public static final int dentilepisosteus_raw = 5595;
+    public static final int eggs_eoconfuciusornis = 5596;
+    public static final int eoconfuciusornis_raw = 5597;
+    public static final int eggs_procompsognathus = 5598;
+    public static final int procompsognathus_raw = 5599;
 
 
 

@@ -3387,6 +3387,16 @@ public class LepidodendronMod {
 	public static final int ENTITY_CHALAWAN = 1391;
 	public static final ResourceLocation CHALAWAN_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chalawan"));
 	public static final ResourceLocation CHALAWAN_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chalawan_young"));
+	public static final int ENTITY_DENTILEPISOSTEUS = 1392;
+	public static final ResourceLocation DENTILEPISOSTEUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dentilepisosteus"));
+	public static final int ENTITY_EOCONFUCIUSORNIS = 1393;
+	public static final ResourceLocation EOCONFUCIUSORNIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eoconfuciusornis"));
+	public static final ResourceLocation EOCONFUCIUSORNIS_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eoconfuciusornis_f"));
+
+	public static final int ENTITY_PROCOMPSOGNATHUS = 1395;
+	public static final ResourceLocation PROCOMPSOGNATHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/procompsognathus"));
+	public static final ResourceLocation PROCOMPSOGNATHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/procompsognathus_young"));
+
 
 
 
