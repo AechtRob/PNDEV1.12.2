@@ -5865,10 +5865,15 @@ public class LepidodendronSorter {
     public static final int crinoid_roveacrinus = 5586;
     public static final int pseudarthron_raw = 5587;
     public static final int halichondrites = 5588;
+  
+    public static final int dentilepisosteus_raw = 5595;
+    public static final int eggs_eoconfuciusornis = 5596;
+    public static final int eoconfuciusornis_raw = 5597;
+    public static final int eggs_procompsognathus = 5598;
+    public static final int procompsognathus_raw = 5599;
 
 
-
-
+    public static final int turfania_raw = 5605;
 
 
 

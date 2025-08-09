@@ -1,0 +1,52 @@
+{
+	"name": "Fukuipteryx",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/fukuipteryx_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_fukuipteryx",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_fukuipteryx",
+			"title": "Fukuipteryx",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurichia$(br)>Theropoda$(br)>Avialae"
+		},
+        	{
+            "type": "entity",
+            "name": "F. prima",
+            "entity": "lepidodendron:prehistoric_flora_fukuipteryx",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fukuipteryx",
+			"type": "text",
+			"text": "Fukuipteryx is basal avian known from single subadult specimen from Early Cretaceous Japan. Bird bones are fragile, so instead of physically removing the fossils from matrix, CT scans revealed many of their skeletal elements preserved. It is one of the only a few Early Cretaceous avians known from other than China or Spain."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fukuipteryx",
+			"type": "text",
+			"text": "A cladistic analysis placed it between Archaeopteryx and Jeholornis, but unlike those two it already got decreased tail. Its name comes from the Fukui Prefecture where it was found as well as pteryx which translates to feather."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_fukuipteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_fukuipteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_fukuipteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_fukuipteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_fukuipteryx"
+		}
+	]
+}

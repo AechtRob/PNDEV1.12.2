@@ -1,0 +1,47 @@
+{
+"name": "Kronosaurus",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/kronosaurus_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_kronosaurus",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_kronosaurus",
+"title": "Kronosaurus",
+"type": "quest",
+"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Plesiosauria$(br)>Pliosauridae"
+},
+        {
+            "type": "entity",
+            "name": "K. queenslandicus",
+            "entity": "lepidodendron:prehistoric_flora_kronosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_kronosaurus",
+"type": "text",
+"text": "Kronosaurus is a genus of pliosaur from the Early Cretaceous of Australia. Kronosaurus was named in reference to the Titan from Greek mythology, Kronos. Due to its size and morphology, Kronosaurus was most likely the apex predator of the Eromanga inland sea that it called home. Bite marks from Kronosaurus have even been found on the skull of Eromangosaurus, an Australian Plesiosaur." 
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_kronosaurus"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_kronosaurus"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_kronosaurus"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_kronosaurus"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_kronosaurus"
+}
+]
+}

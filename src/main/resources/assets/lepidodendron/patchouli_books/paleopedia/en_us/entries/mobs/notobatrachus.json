@@ -1,0 +1,47 @@
+{
+	"name": "Notobatrachus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/notobatrachus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_notobatrachus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_notobatrachus",
+			"title": "Notobatrachus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Amphibia$(br)>Salientia"
+		},
+        	{
+            "type": "entity",
+            "name": "N. degiustoi",
+            "entity": "lepidodendron:prehistoric_flora_notobatrachus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_notobatrachus",
+			"type": "text",
+			"text": "Notobatrachus is a large frog with a body length of up to 15 cm known from multiple species. Not only is this a large frog, but it is also one of the most well-preserved frogs from the Jurassic. Tadpoles of this species reached lengths of 15.9 centimeters, which sets it among the largest recorded tadpoles, living or extinct."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_notobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_notobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_notobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_notobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_notobatrachus"
+		}
+	]
+}

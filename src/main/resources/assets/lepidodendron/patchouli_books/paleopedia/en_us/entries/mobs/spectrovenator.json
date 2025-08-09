@@ -1,0 +1,52 @@
+{
+	"name": "Spectrovenator",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/spectrovenator_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_spectrovenator",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_spectrovenator",
+			"title": "Spectrovenator",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Abelisauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. ragei",
+            "entity": "lepidodendron:prehistoric_flora_spectrovenator",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spectrovenator",
+			"type": "text",
+			"text": "Spectrovenator is an abelisaur from the Early Cretaceous of South America. Found in the Quiricó Formation, it gets its name, meaning ghost hunter, from the fact that its fossils were found beneath the holotype of the titanosaur Tapuiasaurus. This animal is small for its family, measuring in at around 2.5 meters in length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spectrovenator",
+			"type": "text",
+			"text": "Additionally, it had noticeably longer arms than the better known, more derived, Late Cretaceous abelisaurs. Spectrovenator would have lived in a wet coastal area of what is now Brazil. It likely hunted smaller animals with which it shared this environment, as well as ornithischians of similar stature."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_spectrovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_spectrovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_spectrovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_spectrovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_spectrovenator"
+		}
+	]
+}

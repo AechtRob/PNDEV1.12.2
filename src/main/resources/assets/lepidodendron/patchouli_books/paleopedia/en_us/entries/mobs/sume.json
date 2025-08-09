@@ -1,0 +1,47 @@
+{
+	"name": "Sume",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sume_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sume",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sume",
+			"title": "Sume",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Malacostraca$(br)>Decapoda$(br)>Dendrobranchiata$(br)>Luciferidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. marcosi",
+            "entity": "lepidodendron:prehistoric_flora_sume",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sume",
+			"type": "text",
+			"text": "Sume is a genus of prawn from the family Luciferidae that lived during the Early Cretaceous in South America. Its name is derived from Sumé, from the Tupi mythology, is a god that disappeared in the Atlantic Ocean. Some modern day members of its group are none other than Lucifer, and Belzebub."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sume"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sume"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sume"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sume"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sume"
+		}
+	]
+}

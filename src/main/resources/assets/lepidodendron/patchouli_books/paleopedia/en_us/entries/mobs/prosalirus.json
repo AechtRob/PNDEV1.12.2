@@ -1,0 +1,47 @@
+{
+	"name": "Prosalirus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/prosalirus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_prosalirus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_prosalirus",
+			"title": "Prosalirus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Amphibia$(br)>Anura$(br)>Prosaliridae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. bitis",
+            "entity": "lepidodendron:prehistoric_flora_prosalirus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_prosalirus",
+			"type": "text",
+			"text": "Prosalirus is a small frog with a body length of about 5 cm frog known from Early Jurassic Kayenta Formation. Its name roughly translates to leap forward which is very fitting, do to the length ratio of leg bones leading towards it most likely being one of the earliest frogs that would able to jump."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_prosalirus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_prosalirus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_prosalirus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_prosalirus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_prosalirus"
+		}
+	]
+}

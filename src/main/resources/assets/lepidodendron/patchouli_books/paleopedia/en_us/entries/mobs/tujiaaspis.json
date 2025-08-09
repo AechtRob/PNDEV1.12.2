@@ -1,0 +1,47 @@
+{
+"name": "Tujiaaspis",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/tujiaaspis_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_tujiaaspis",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_tujiaaspis",
+"title": "Tujiaaspis",
+"type": "quest",
+"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Galeaspida$(br)>Eugaleaspidiformes"
+},
+        {
+            "type": "entity",
+            "name": "T. vividus",
+            "entity": "lepidodendron:prehistoric_flora_tujiaaspis",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_tujiaaspis",
+"type": "text",
+"text": "Tujiaaspis is a genus of eugaleaspidiform fish from the Huixingshao Formation of Silurian China. Fossils of Tujiaaspis that preserved the whole body for the first time showed that this group had paired fins that extended from the back of the head to the tip of the tail. It surprised paleontologists, as it was thought that galeaspids lacked paired fins altogether."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_tujiaaspis"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_tujiaaspis"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_tujiaaspis"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_tujiaaspis"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_tujiaaspis"
+}
+]
+}

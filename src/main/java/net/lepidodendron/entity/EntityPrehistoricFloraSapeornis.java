@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
-import net.lepidodendron.entity.util.IGuano;
 import net.lepidodendron.entity.util.IScreamerFlier;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
@@ -39,8 +38,8 @@ public class EntityPrehistoricFloraSapeornis extends EntityPrehistoricFloraLandC
 		super(world);
 		setSize(0.85F, 0.5F);
 		minWidth = 0.10F;
-		maxWidth = 0.85F;
-		maxHeight = 0.5F;
+		maxWidth = 0.35F;
+		maxHeight = 0.45F;
 		maxHealthAgeable = 3.0D;
 		setNoAI(!true);
 		enablePersistence();
