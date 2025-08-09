@@ -8349,8 +8349,6 @@ public class RenderHandler {
                 return new RenderAnjiaspis(manager);
             }
         });
-
-        
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraForeyclupea.class, new IRenderFactory<EntityPrehistoricFloraForeyclupea>() {
             @Override
             public Render<? super EntityPrehistoricFloraForeyclupea> createRenderFor(RenderManager manager) {
@@ -8379,6 +8377,10 @@ public class RenderHandler {
             @Override
             public Render<? super EntityPrehistoricFloraProcompsognathus> createRenderFor(RenderManager manager) {
                 return new RenderProcompsognathus(manager);
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTurfania.class, new IRenderFactory<EntityPrehistoricFloraTurfania>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTurfania> createRenderFor(RenderManager manager) {
+                return new RenderTurfania(manager);
             }
         });
 

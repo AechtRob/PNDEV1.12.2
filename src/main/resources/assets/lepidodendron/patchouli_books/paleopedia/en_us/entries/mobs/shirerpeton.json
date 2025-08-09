@@ -1,0 +1,47 @@
+{
+	"name": "Shirerpeton",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/shirerpeton_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_shirerpeton",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_shirerpeton",
+			"title": "Shirerpeton",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Amphibia$(br)>Allocaudata$(br)>Albanerpetontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. isajii",
+            "entity": "lepidodendron:prehistoric_flora_shirerpeton",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_shirerpeton",
+			"type": "text",
+			"text": "Shirerpeton is a genus of Albanerpetontid described from the Kuwajima Formation in Japan, known from a fragmentary but reconstructable skull. It is also the first known Albanerpetontid from East Asia. Its name comes from the Japanese word, shiro, translating to white in reference to the family name, Alba/Alban meaning white."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_shirerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_shirerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_shirerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_shirerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_shirerpeton"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Caudipteryx",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/caudipteryx_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_caudipteryx",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_caudipteryx",
+			"title": "Caudipteryx",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Oviraptorosauria$(br)>Caudipteridae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. zoui",
+            "entity": "lepidodendron:prehistoric_flora_caudipteryx",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caudipteryx",
+			"type": "text",
+			"text": "Caudipteryx is another small oviraptorosaur, best known for its immaculate preservation which helped to establish the presence of feathers in non-avian dinosaurs. Fossilized melanosomes suggest that Caudipteryx was a dark colored animal with striping in the wings and tail fan. Its name roughly to tail feather."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caudipteryx",
+			"type": "text",
+			"text": "It bears more resemblance to later, more derived Oviraptorosaurs rather than to Incisivosaurus, with reduced teeth, a shortened skull, and more bird-like proportions."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_caudipteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_caudipteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_caudipteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_caudipteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_caudipteryx"
+		}
+	]
+}

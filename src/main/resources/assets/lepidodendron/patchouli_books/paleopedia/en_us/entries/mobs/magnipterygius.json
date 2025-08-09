@@ -1,0 +1,47 @@
+{
+	"name": "Magnipterygius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/magnipterygius_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_magnipterygius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_magnipterygius",
+			"title": "Magnipterygius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Icthyosauria$(br)>Stenoptergiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. huenei",
+            "entity": "lepidodendron:prehistoric_flora_magnipterygius",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_magnipterygius",
+			"type": "text",
+			"text": "Magnipterygius is a small primitive Ichthyosaur of the Early Jurassic. Found in the Posidonia shale of Germany, it is known of a nearly complete articulated skeleton. This small Ichthyosaur measured around 1.2m. The name of this genus is a reference to the warcraft video game series, being named after the character Magni Bronzebeard, king of a dwarven kingdom. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_magnipterygius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_magnipterygius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_magnipterygius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_magnipterygius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_magnipterygius"
+		}
+	]
+}

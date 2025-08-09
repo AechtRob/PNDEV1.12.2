@@ -3392,11 +3392,11 @@ public class LepidodendronMod {
 	public static final int ENTITY_EOCONFUCIUSORNIS = 1393;
 	public static final ResourceLocation EOCONFUCIUSORNIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eoconfuciusornis"));
 	public static final ResourceLocation EOCONFUCIUSORNIS_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eoconfuciusornis_f"));
-
 	public static final int ENTITY_PROCOMPSOGNATHUS = 1395;
 	public static final ResourceLocation PROCOMPSOGNATHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/procompsognathus"));
 	public static final ResourceLocation PROCOMPSOGNATHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/procompsognathus_young"));
-
+  public static final int ENTITY_TURFANIA = 1396;
+  public static final ResourceLocation TURFANIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/turfania"));
 
 
 

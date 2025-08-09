@@ -1,0 +1,52 @@
+{
+	"name": "Sarcosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sarcosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sarcosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sarcosuchus",
+			"title": "Sarcosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Crocodylomorpha$(br)>Pholidosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. imperator",
+            "entity": "lepidodendron:prehistoric_flora_sarcosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sarcosuchus",
+			"type": "text",
+			"text": "Sarcosuchus is a well known large extinct crocodyliforme from the Early Cretaceous. While it bears a resemblance to modern crocodylians, they are actually positioned quite far from each other, with running land crocs such as Mekosuchus and the weird herbivorous Simosuchus both being more closely related to Crocodiles than Sarcosuchus is."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sarcosuchus",
+			"type": "text",
+			"text": "It had an incredibly robust skull, with large tusk-like teeth at the end of its snout. Fully grown adults could have reached almost 10 meters in length and may have had a generalized diet, similar to the Nile Crocodile. It is found in Africa in the Early Cretaceous but in the Late Cretaceous, its range extended into South America based on findings in Brazil."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sarcosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sarcosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sarcosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sarcosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sarcosuchus"
+		}
+	]
+}

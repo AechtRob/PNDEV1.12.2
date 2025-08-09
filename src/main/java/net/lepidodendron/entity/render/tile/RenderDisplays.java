@@ -133,6 +133,7 @@ public class RenderDisplays {
     public static final ModelCacops modelCacops = new ModelCacops();
     public static final ModelCaihong modelCaihong = new ModelCaihong();
     public static final ModelCaelestiventus modelCaelestiventus = new ModelCaelestiventus();
+    public static final ModelCallawayia modelCallawayia = new ModelCallawayia();
     public static final ModelCalvapilosa modelCalvapilosa = new ModelCalvapilosa();
     public static final ModelCamarasaurus modelCamarasaurus = new ModelCamarasaurus();
     public static final ModelCambrianJelly modelCambrianJelly = new ModelCambrianJelly();
@@ -988,6 +989,7 @@ public class RenderDisplays {
     public static final ModelXuanhuaceratops modelXuanhuaceratops = new ModelXuanhuaceratops();
     public static final ModelXeneichthys modelXeneichthys = new ModelXeneichthys();
     public static final ModelYangchuanosaurus modelYangchuanosaurus = new ModelYangchuanosaurus();
+    public static final ModelYuanyanglong modelYuanyanglong = new ModelYuanyanglong();
     public static final ModelYawunik modelYawunik = new ModelYawunik();
     public static final ModelYilingia modelYilingia = new ModelYilingia();
     public static final ModelYinlong modelYinlong = new ModelYinlong();
@@ -999,4 +1001,5 @@ public class RenderDisplays {
     public static final ModelYuxisaurus modelYuxisaurus = new ModelYuxisaurus();
     public static final ModelYanosteus modelYanosteus = new ModelYanosteus();
     public static final ModelZenaspis modelZenaspis = new ModelZenaspis();
+
 }

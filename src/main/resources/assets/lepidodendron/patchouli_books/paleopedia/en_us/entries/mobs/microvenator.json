@@ -1,0 +1,52 @@
+{
+	"name": "Microvenator",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/microvenator_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_microvenator",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_microvenator",
+			"title": "Microvenator",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Caenagnathidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. celer",
+            "entity": "lepidodendron:prehistoric_flora_microvenator",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_microvenator",
+			"type": "text",
+			"text": "Microvenator is known from only a single juvenile specimen, the identity of this animal remains uncertain. It was initially interpreted as a small predatory dinosaur, with Deinonychus teeth being attributed to it. Later study established that it was, in fact, an oviraptorosaur, the oldest known from North America."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_microvenator",
+			"type": "text",
+			"text": "However, whether it is a primitive oviraptorosaur along the lines of Incisivosaurus, or a more derived oviraptorosaur remains uncertain. Recent phylogenies tend to find that it is the most basal Caenagnathid, meaning that it is more closely related to Anzu than to Oviraptor, and as such, quite derived."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_microvenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_microvenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_microvenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_microvenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_microvenator"
+		}
+	]
+}

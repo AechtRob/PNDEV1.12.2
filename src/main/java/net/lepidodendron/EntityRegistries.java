@@ -1365,7 +1365,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_dentilepisosteus", EntityPrehistoricFloraDentilepisosteus.class, LepidodendronMod.ENTITY_DENTILEPISOSTEUS, 48,-12505325,-9411010);
         registerEntity("prehistoric_flora_eoconfuciusornis", EntityPrehistoricFloraEoconfuciusornis.class, LepidodendronMod.ENTITY_EOCONFUCIUSORNIS, 64,-14871280,-8909303);
         registerEntity("prehistoric_flora_procompsognathus", EntityPrehistoricFloraProcompsognathus.class, LepidodendronMod.ENTITY_PROCOMPSOGNATHUS, 64,-1979570,-13159892);
-
+        registerEntity("prehistoric_flora_turfania", EntityPrehistoricFloraTurfania.class, LepidodendronMod.ENTITY_TURFANIA, 48,-11176629,-5394883);
 
 
         // aquatic nymphs for Stonefly, Mayfly, Argentinala, Velisoptera, Damselfly

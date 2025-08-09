@@ -1,0 +1,47 @@
+{
+	"name": "Cretalamna",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cretalamna_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_cretalamna",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cretalamna",
+			"title": "Cretalamna",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous - Eocene$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Lamniformes$(br)>Otodonitdae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. appendiculata",
+            "entity": "lepidodendron:prehistoric_flora_cretalamna",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cretalamna",
+			"type": "text",
+			"text": "Cretalamna is lamniform that lived from the Early Cretaceous until Eocene and it was found worldwide. It is was predator that grew from 3-5m feeding on fish and marine reptiles, though it is possible it scavenged as well. It is the earliest member of family Otodontidae, which includes the shark everyone knows, Otodus megalodon. Fossils known from Lebanon also show its body shape, which may somewhat help for reconstructing Megalodon!"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cretalamna"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cretalamna"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cretalamna"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cretalamna"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cretalamna"
+		}
+	]
+}

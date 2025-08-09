@@ -1,0 +1,47 @@
+{
+	"name": "Hypnovenator",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hypnovenator_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hypnovenator",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hypnovenator",
+			"title": "Hypnovenator",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Troodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. matsubaraetoheorum",
+            "entity": "lepidodendron:prehistoric_flora_hypnovenator",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hypnovenator",
+			"type": "text",
+			"text": "Hypnovenator is small ,about a meter long, troodontid described in 2024. Its name means, sleep hunter, as fossil is preserved with sleeping posture, like some of other troodontids. The fossil mainly preserves its limbs, which were suited for running."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hypnovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hypnovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hypnovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hypnovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hypnovenator"
+		}
+	]
+}
