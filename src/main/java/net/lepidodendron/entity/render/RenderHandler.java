@@ -8365,6 +8365,7 @@ public class RenderHandler {
             @Override
             public Render<? super EntityPrehistoricFloraPseudarthron> createRenderFor(RenderManager manager) {
                 return new RenderPseudarthron(manager);
+            }
         });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDentilepisosteus.class, new IRenderFactory<EntityPrehistoricFloraDentilepisosteus>() {
             @Override
