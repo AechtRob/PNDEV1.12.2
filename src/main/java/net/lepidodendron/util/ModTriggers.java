@@ -2036,6 +2036,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_FOREYCLUPEA = new CustomTrigger("pf_book_foreyclupea");
     public static final CustomTrigger CLICK_CHALAWAN = new CustomTrigger("pf_book_chalawan");
     public static final CustomTrigger CLICK_MACKENZIA = new CustomTrigger("pf_book_mackenzia");
+    public static final CustomTrigger CLICK_DENTILEPISOSTEUS = new CustomTrigger("pf_book_dentilepisosteus");
+    public static final CustomTrigger CLICK_EOCONFUCIUSORNIS = new CustomTrigger("pf_book_eoconfuciusornis");
 
 
 
@@ -4061,6 +4063,8 @@ public class ModTriggers
             CLICK_FOREYCLUPEA,
             CLICK_CHALAWAN,
             CLICK_MACKENZIA,
+            CLICK_DENTILEPISOSTEUS,
+            CLICK_EOCONFUCIUSORNIS,
             CLICK_TURFANIA
 
 

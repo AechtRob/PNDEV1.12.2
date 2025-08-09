@@ -115,7 +115,7 @@ public class EntityPrehistoricFloraArchaeothyris extends EntityPrehistoricFloraL
 			return 0.0F; //Is laying eggs
 		}
 		//return 0;
-		return 0.478F;
+		return 0.178F;
 	}
 
 	@Override
