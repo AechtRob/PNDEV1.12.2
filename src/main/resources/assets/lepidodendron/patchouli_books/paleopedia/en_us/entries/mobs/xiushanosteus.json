@@ -1,0 +1,47 @@
+{
+"name": "Xiushanosteus",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/xiushanosteus_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_xiushanosteus",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_xiushanosteus",
+"title": "Xiushanosteus",
+"type": "quest",
+"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Placodermi$(br)>incertae sedis"
+},
+        {
+            "type": "entity",
+            "name": "X. mirabilis",
+            "entity": "lepidodendron:prehistoric_flora_xiushanosteus",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_xiushanosteus",
+"type": "text",
+"text": "Xiushanosteus is a genus of placoderm from the Silurian Huixingshao Formation of China. It is one of the earliest known jawed vertebrates, being roughly 435 million years old. Xiushanosteus grew to roughly 3cm in length and body was covered in small diamond shaped scales or scutes Its name is derived from Xiushan County where its fossils were found aswell as osteus meaning bone."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_xiushanosteus"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_xiushanosteus"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_xiushanosteus"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_xiushanosteus"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_xiushanosteus"
+}
+]
+}

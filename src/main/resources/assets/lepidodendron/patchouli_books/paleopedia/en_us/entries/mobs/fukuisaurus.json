@@ -1,0 +1,52 @@
+{
+	"name": "Fukuisaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/fukuisaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_fukuisaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_fukuisaurus",
+			"title": "Fukuisaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Ornithopoda$(br)>Ankylopollexia"
+		},
+        	{
+            "type": "entity",
+            "name": "F. tetoriensis",
+            "entity": "lepidodendron:prehistoric_flora_fukuisaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fukuisaurus",
+			"type": "text",
+			"text": "Fukuisaurus is an ankylopollexian ornithopod first discovered in 1989 and described in 2003. In 1994, it was the first dinosaur in Japan to get a reconstructed skeletal mount. It was described mainly from skull materials, although later discovered postcranial materials  are waiting for description."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fukuisaurus",
+			"type": "text",
+			"text": "Its classification is still uncertain, but it shared morphological characters with dinosaurs like Iguanodon and Altirhinus. Its name comes from the Fukui Prefecture where it was discovered."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_fukuisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_fukuisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_fukuisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_fukuisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_fukuisaurus"
+		}
+	]
+}

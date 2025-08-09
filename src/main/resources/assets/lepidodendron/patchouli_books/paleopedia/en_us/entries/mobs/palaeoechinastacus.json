@@ -1,0 +1,47 @@
+{
+	"name": "Palaeoechinastacus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/palaeoechinastacus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_palaeoechinastacus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeoechinastacus",
+			"title": "Palaeoechinastacus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Malacostraca$(br)>Decapoda$(br)>Parastacidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. australianus",
+            "entity": "lepidodendron:prehistoric_flora_palaeoechinastacus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeoechinastacus",
+			"type": "text",
+			"text": "Palaeoechinastacus australianus is a member of Parastacidae known from a fossil deposit in Victoria, Australia. Known from incomplete remains, the site also produced burrow fossils which may have been created by it."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeoechinastacus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeoechinastacus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeoechinastacus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeoechinastacus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeoechinastacus"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Yuanyanglong",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/yuanyanglong_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_yuanyanglong",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_yuanyanglong",
+			"title": "Yuanyanglong",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Oviraptorosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "Y. bainian",
+            "entity": "lepidodendron:prehistoric_flora_yuanyanglong",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yuanyanglong",
+			"type": "text",
+			"text": "Yuanyanglong is a newly described dinosaur published in 2024. It had a comically small head and long legs and ecologically, it may have been a wader. Two specimens are known, having been unearthed from the Miaogou Formation of northern China. While many Late Cretaceous oviraptorosaurs are described from localities in the Gobi desert, this is the first known from the Early Cretaceous in that region."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yuanyanglong",
+			"type": "text",
+			"text": "Its genus name means lovebird dragon, and the species name bainian means a hundred years, and honors the 100th anniversary of the naming of Chirostenotes and Oviraptor, both described in 1924."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_yuanyanglong"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_yuanyanglong"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_yuanyanglong"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_yuanyanglong"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_yuanyanglong"
+		}
+	]
+}

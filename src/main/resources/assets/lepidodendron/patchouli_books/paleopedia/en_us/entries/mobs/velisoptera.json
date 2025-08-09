@@ -1,0 +1,47 @@
+{
+	"name": "Velisoptera",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/velisoptera_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_velisoptera",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_velisoptera",
+			"title": "Velisoptera",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Insecta$(br)>Diaphanopterodea$(br)>Velisopteridae"
+		},
+        	{
+            "type": "entity",
+            "name": "V. taschi",
+            "entity": "lepidodendron:prehistoric_flora_velisoptera",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_velisoptera",
+			"type": "text",
+			"text": "Velisoptera is a large insect with a wingspan of around 20 cm, known from the Bajo de Véliz Formation which also produced Megarachne. It is known from incomplete specimens, with wide wings which is 10 cm long and 5 cm wide. It is originally classified within the order Diaphanopteroidea, later studies question that interpretation."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_velisoptera"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_velisoptera"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_velisoptera"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_velisoptera"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_velisoptera"
+		}
+	]
+}

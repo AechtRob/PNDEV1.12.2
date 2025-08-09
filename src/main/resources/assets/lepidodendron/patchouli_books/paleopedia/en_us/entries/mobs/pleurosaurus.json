@@ -1,0 +1,47 @@
+{
+"name": "Pleurosaurus",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/pleurosaurus_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_pleurosaurus",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_pleurosaurus",
+"title": "Pleurosaurus",
+"type": "quest",
+"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Rhynchochephalia$(br)>Pleurosauridae"
+},
+        {
+            "type": "entity",
+            "name": "P. goldfussi",
+            "entity": "lepidodendron:prehistoric_flora_pleurosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_pleurosaurus",
+"type": "text",
+"text": "Pleurosaurus is an aquatic rhynchocephalian from Jurassic Solnhofen and France. Its name translates to either rib lizard or side lizard. Pleurosaurs is one of the few known aquatic sphenodontians and it grew to 1.5m long. Its body and tail were elongated and in contrast, its limbs were comparatively short. Accompanying these features was its highly modified elongated triangular skulls which sets it apart from other rhynchocephalians."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_pleurosaurus"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_pleurosaurus"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_pleurosaurus"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_pleurosaurus"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_pleurosaurus"
+}
+]
+}

@@ -230,7 +230,7 @@ public class EntityPrehistoricFloraAnoualerpeton extends EntityPrehistoricFloraL
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_ANOULERPETON;
+		return ModTriggers.CLICK_ANOUALERPETON;
 	}
 
 	//Rendering taxidermy:

@@ -8363,6 +8363,12 @@ public class RenderHandler {
                 return new RenderChalawan(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTurfania.class, new IRenderFactory<EntityPrehistoricFloraTurfania>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTurfania> createRenderFor(RenderManager manager) {
+                return new RenderTurfania(manager);
+            }
+        });
 
 
 

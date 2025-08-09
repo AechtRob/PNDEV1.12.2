@@ -1,0 +1,52 @@
+{
+"name": "Utahraptor",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/utahraptor_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_utahraptor",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_utahraptor",
+"title": "Utahraptor",
+"type": "quest",
+"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Dromaeosauridae$(br)>Eudromaeosauria"
+},
+        {
+            "type": "entity",
+            "name": "U. ostrommaysi",
+            "entity": "lepidodendron:prehistoric_flora_utahraptor",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_utahraptor",
+"type": "text",
+"text": "Utahraptor is a large genus of Dromaeosaur from the Early Cretaceous of North America. Reaching between 6-7 m in length the animal attained widespread popularity due to its status as the largest member of the group, and thanks to the lackluster material from its competitors it still holds that title. Its name Translates to Utah’s Predator."
+},
+{
+"advancement": "lepidodendron:pf_adv_book_utahraptor",
+"type": "text",
+"text": "Of current scientific interest is the slow and methodical preparation of a 9-ton block of sandstone containing thousands of bones, many of which are from Utahraptor specimens in various stages of growth. Every so often new discoveries about the genus are made as more and more of the material is cleaned and freed from its 130 million year old prison."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_utahraptor"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_utahraptor"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_utahraptor"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_utahraptor"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_utahraptor"
+}
+]
+}

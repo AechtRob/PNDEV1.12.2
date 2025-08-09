@@ -1,0 +1,47 @@
+{
+"name": "Plumulites",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/plumulites_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_plumulites",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_plumulites",
+"title": "Plumulites",
+"type": "quest",
+"text": "$(l)Temporal Range:$() Ordovician - Devonian$(br2)>Annelida$(br)>Machaeridia$(br)>Plumulitdae"
+},
+        {
+            "type": "entity",
+            "name": "P. bengtsoni",
+            "entity": "lepidodendron:prehistoric_flora_plumulites",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_plumulites",
+"type": "text",
+"text": "Plumulites is a genus of machaeridain that lived from the Early Ordovician to the Middle Devonian. It is known from more than 20 species, the largest of which reached around 15 centimeters long making Plumulites the largest machaeridian ever known. Thanks to its complete specimens, this animal is known to be surrounded by pairs of outer and interior shell plates."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_plumulites"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_plumulites"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_plumulites"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_plumulites"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_plumulites"
+}
+]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Omeisaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/omeisaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_omeisaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_omeisaurus",
+			"title": "Omeisaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropoda$(br)>Mamanchisauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "O. tianfuensis",
+            "entity": "lepidodendron:prehistoric_flora_omeisaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_omeisaurus",
+			"type": "text",
+			"text": "Omeisaurus is a mamenchisaurid sauropod known from both the upper and lower assemblages of the Shaximiao Formation. While it is known from several different species, Omeisaurus as a genus is generally contested in validity. While it does exist in the same formation as Mamenchisaurus, it shows at least enough information to be different from Mamenchisaurus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_omeisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_omeisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_omeisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_omeisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_omeisaurus"
+		}
+	]
+}

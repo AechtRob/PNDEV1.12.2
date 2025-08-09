@@ -1,0 +1,47 @@
+{
+	"name": "Hamiltonichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hamiltonichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hamiltonichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hamiltonichthys",
+			"title": "Hamiltonichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Hybodontiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "H. mapsei",
+            "entity": "lepidodendron:prehistoric_flora_hamiltonichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hamiltonichthys",
+			"type": "text",
+			"text": "Hamiltonichthys is a small, 30 cm, primitive hybodont known from Late Carboniferous Hamilton Quarry in Kansas. The Fossil it is known from has preserved its whole body and soft tissue very well."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hamiltonichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hamiltonichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hamiltonichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hamiltonichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hamiltonichthys"
+		}
+	]
+}
