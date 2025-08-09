@@ -46,6 +46,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_dentilepisosteus_clean", "inventory"),
         new ModelResourceLocation("lepidodendron:fossils/fossil_turfania_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_foreyclupea_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_mackenzia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_chalawan_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_anjiaspis_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_macropenaeus_clean", "inventory"),

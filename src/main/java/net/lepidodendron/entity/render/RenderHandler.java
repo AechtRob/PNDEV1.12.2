@@ -8361,6 +8361,11 @@ public class RenderHandler {
                 return new RenderChalawan(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPseudarthron.class, new IRenderFactory<EntityPrehistoricFloraPseudarthron>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPseudarthron> createRenderFor(RenderManager manager) {
+                return new RenderPseudarthron(manager);
+        });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDentilepisosteus.class, new IRenderFactory<EntityPrehistoricFloraDentilepisosteus>() {
             @Override
             public Render<? super EntityPrehistoricFloraDentilepisosteus> createRenderFor(RenderManager manager) {
@@ -8377,6 +8382,8 @@ public class RenderHandler {
             @Override
             public Render<? super EntityPrehistoricFloraProcompsognathus> createRenderFor(RenderManager manager) {
                 return new RenderProcompsognathus(manager);
+            }
+        });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTurfania.class, new IRenderFactory<EntityPrehistoricFloraTurfania>() {
             @Override
             public Render<? super EntityPrehistoricFloraTurfania> createRenderFor(RenderManager manager) {

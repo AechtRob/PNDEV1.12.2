@@ -1,7 +1,7 @@
 {
 	"name": "Mackenzia",
 	"read_by_default": true,
-	"icon": "lepidodendron:mackenzia_inventory",
+	"icon": "lepidodendron:mackenzia",
 	"category": "lepidodendron:statics",
 	"turnin": "lepidodendron:pf_adv_book_mackenzia",
 	"pages": [

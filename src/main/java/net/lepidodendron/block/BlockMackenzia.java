@@ -7,11 +7,8 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
-import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypePrecambrian;
-import net.lepidodendron.util.Functions;
-import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
+import net.lepidodendron.util.*;
+import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -81,6 +78,7 @@ public class BlockMackenzia extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:mackenzia", BlockMackenzia.block);
 		OreDictionary.registerOre("pndietCrinoid", BlockMackenzia.block);
+		OreDictionary.registerOre("holdfastDrops", BlockMackenzia.block);
 	}
 
 	@Override
@@ -151,8 +149,8 @@ public class BlockMackenzia extends ElementsLepidodendronMod.ModElement {
 						}
 						Biome biome = world.getBiome(blockpos1);
 						boolean era = false;
-						if (biome instanceof BiomePrecambrian) {
-							era = ((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran;
+						if (biome instanceof BiomeCambrian) {
+							era = biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea_shore");
 						}
 						if (!era) {
 							continue;
@@ -194,37 +192,38 @@ public class BlockMackenzia extends ElementsLepidodendronMod.ModElement {
 										&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, EnumFacing.UP) == BlockFaceShape.SOLID)) {
 									world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockMackenzia.BlockCustom.FACING, enumfacing), 2);
 									return true;
-								} else {
-									for (EnumFacing enumfacing1 : BlockMackenzia.BlockCustom.FACING.getAllowedValues()) {
-										pos1 = blockpos1;
-
-										if (enumfacing1 == EnumFacing.NORTH) {
-											pos1 = blockpos1.add(0, 0, 1);
-										}
-										if (enumfacing1 == EnumFacing.SOUTH) {
-											pos1 = blockpos1.add(0, 0, -1);
-										}
-										if (enumfacing1 == EnumFacing.EAST) {
-											pos1 = blockpos1.add(-1, 0, 0);
-										}
-										if (enumfacing1 == EnumFacing.WEST) {
-											pos1 = blockpos1.add(1, 0, 0);
-										}
-										if (enumfacing1 != EnumFacing.UP && enumfacing1 != EnumFacing.DOWN &&
-												((world.getBlockState(pos1).getMaterial() == Material.SAND)
-														|| (world.getBlockState(pos1).getMaterial() == Material.ROCK && world.getBlockState(pos1).getBlock() != Blocks.MAGMA)
-														|| (world.getBlockState(pos1).getMaterial() == Material.GROUND)
-														|| (world.getBlockState(pos1).getMaterial() == Material.CLAY)
-														|| (world.getBlockState(pos1).getMaterial() == Material.GLASS)
-														|| (world.getBlockState(pos1).getMaterial() == Material.CORAL)
-														|| (world.getBlockState(pos1).getMaterial() == Material.IRON)
-														|| (world.getBlockState(pos1).getMaterial() == Material.WOOD))
-												&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, enumfacing1) == BlockFaceShape.SOLID)) {
-											world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockMackenzia.BlockCustom.FACING, enumfacing1), 2);
-											return true;
-										}
-									}
 								}
+//								else {
+//									for (EnumFacing enumfacing1 : BlockMackenzia.BlockCustom.FACING.getAllowedValues()) {
+//										pos1 = blockpos1;
+//
+//										if (enumfacing1 == EnumFacing.NORTH) {
+//											pos1 = blockpos1.add(0, 0, 1);
+//										}
+//										if (enumfacing1 == EnumFacing.SOUTH) {
+//											pos1 = blockpos1.add(0, 0, -1);
+//										}
+//										if (enumfacing1 == EnumFacing.EAST) {
+//											pos1 = blockpos1.add(-1, 0, 0);
+//										}
+//										if (enumfacing1 == EnumFacing.WEST) {
+//											pos1 = blockpos1.add(1, 0, 0);
+//										}
+//										if (enumfacing1 != EnumFacing.UP && enumfacing1 != EnumFacing.DOWN &&
+//												((world.getBlockState(pos1).getMaterial() == Material.SAND)
+//														|| (world.getBlockState(pos1).getMaterial() == Material.ROCK && world.getBlockState(pos1).getBlock() != Blocks.MAGMA)
+//														|| (world.getBlockState(pos1).getMaterial() == Material.GROUND)
+//														|| (world.getBlockState(pos1).getMaterial() == Material.CLAY)
+//														|| (world.getBlockState(pos1).getMaterial() == Material.GLASS)
+//														|| (world.getBlockState(pos1).getMaterial() == Material.CORAL)
+//														|| (world.getBlockState(pos1).getMaterial() == Material.IRON)
+//														|| (world.getBlockState(pos1).getMaterial() == Material.WOOD))
+//												&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, enumfacing1) == BlockFaceShape.SOLID)) {
+//											world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockMackenzia.BlockCustom.FACING, enumfacing1), 2);
+//											return true;
+//										}
+//									}
+//								}
 							}
 						}
 					}
@@ -548,19 +547,19 @@ public class BlockMackenzia extends ElementsLepidodendronMod.ModElement {
 	    {
 	    	boolean blockface  = true;
 			if (side == EnumFacing.NORTH) {
-	        	if (worldIn.getBlockState(pos.south()).getBlockFaceShape(worldIn, pos.south(), side) != BlockFaceShape.SOLID)
+	        	//if (worldIn.getBlockState(pos.south()).getBlockFaceShape(worldIn, pos.south(), side) != BlockFaceShape.SOLID)
 	        		blockface = false;
 			}
 			if (side == EnumFacing.SOUTH) {
-	        	if (worldIn.getBlockState(pos.north()).getBlockFaceShape(worldIn, pos.north(), side) != BlockFaceShape.SOLID)
+	        	//if (worldIn.getBlockState(pos.north()).getBlockFaceShape(worldIn, pos.north(), side) != BlockFaceShape.SOLID)
 	        		blockface = false;
 			}
 			if (side == EnumFacing.EAST) {
-	        	if (worldIn.getBlockState(pos.west()).getBlockFaceShape(worldIn, pos.west(), side) != BlockFaceShape.SOLID)
+	        	//if (worldIn.getBlockState(pos.west()).getBlockFaceShape(worldIn, pos.west(), side) != BlockFaceShape.SOLID)
 	        		blockface = false;
 			}
 			if (side == EnumFacing.WEST) {
-	        	if (worldIn.getBlockState(pos.east()).getBlockFaceShape(worldIn, pos.east(), side) != BlockFaceShape.SOLID)
+	        	//if (worldIn.getBlockState(pos.east()).getBlockFaceShape(worldIn, pos.east(), side) != BlockFaceShape.SOLID)
 	        		blockface = false;
 			}
 			if (side == EnumFacing.UP) {
@@ -568,7 +567,7 @@ public class BlockMackenzia extends ElementsLepidodendronMod.ModElement {
 	        		blockface = false;
 			}
 			if (side == EnumFacing.DOWN) {
-	        	if (worldIn.getBlockState(pos.up()).getBlockFaceShape(worldIn, pos.up(), side) != BlockFaceShape.SOLID)
+	        	//if (worldIn.getBlockState(pos.up()).getBlockFaceShape(worldIn, pos.up(), side) != BlockFaceShape.SOLID)
 	        		blockface = false;
 			}
 

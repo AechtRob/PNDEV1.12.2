@@ -239,6 +239,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CRINOID_PENTACRINITES = new CustomTrigger("pf_book_crinoid_pentacrinites");
     public static final CustomTrigger CLICK_CRINOID_VADAROCRINUS = new CustomTrigger("pf_book_crinoid_vadarocrinus");
     public static final CustomTrigger CLICK_CRINOID_VOSTOCOVACRINUS = new CustomTrigger("pf_book_crinoid_vostocovacrinus");
+    public static final CustomTrigger CLICK_CRINOID_HEMICRINUS = new CustomTrigger("pf_book_crinoid_hemicrinus");
+    public static final CustomTrigger CLICK_CRINOID_ROVEACRINUS = new CustomTrigger("pf_book_crinoid_roveacrinus");
     public static final CustomTrigger CLICK_CTENIS = new CustomTrigger("pf_book_ctenis");
     public static final CustomTrigger CLICK_CYCADEOIDEA = new CustomTrigger("pf_book_cycadeoidea");
     public static final CustomTrigger CLICK_CYCADOPTERIS = new CustomTrigger("pf_book_cycadopteris");
@@ -2036,6 +2038,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_FOREYCLUPEA = new CustomTrigger("pf_book_foreyclupea");
     public static final CustomTrigger CLICK_CHALAWAN = new CustomTrigger("pf_book_chalawan");
     public static final CustomTrigger CLICK_MACKENZIA = new CustomTrigger("pf_book_mackenzia");
+    public static final CustomTrigger CLICK_PSEUDARTHRON = new CustomTrigger("pf_book_pseudarthron");
+    public static final CustomTrigger CLICK_HALICHONDRITES = new CustomTrigger("pf_book_halichondrites");
     public static final CustomTrigger CLICK_DENTILEPISOSTEUS = new CustomTrigger("pf_book_dentilepisosteus");
     public static final CustomTrigger CLICK_EOCONFUCIUSORNIS = new CustomTrigger("pf_book_eoconfuciusornis");
 
@@ -2277,6 +2281,8 @@ public class ModTriggers
             CLICK_CRINOID_PENTACRINITES,
             CLICK_CRINOID_VADAROCRINUS,
             CLICK_CRINOID_VOSTOCOVACRINUS,
+            CLICK_CRINOID_HEMICRINUS,
+            CLICK_CRINOID_ROVEACRINUS,
             CLICK_CTENIS,
             CLICK_CYCADEOIDEA,
             CLICK_CYCADOPTERIS,
@@ -2642,6 +2648,10 @@ public class ModTriggers
             CLICK_FLABELLOPTERIS,
             CLICK_KTALENIA,
             CLICK_TODEA,
+            CLICK_HALICHONDRITES,
+            CLICK_MACKENZIA,
+            CLICK_BIVALVE_CHAMA,
+            CLICK_BIVALVE_ACTINOCERAMUS,
 
             //Grouped ones:
             CLICK_BLASTOID,
@@ -4057,11 +4067,10 @@ public class ModTriggers
             CLICK_NORIPTERUS,
             CLICK_SAPEORNIS,
             CLICK_KOLEKEN,
-            CLICK_BIVALVE_CHAMA,
-            CLICK_BIVALVE_ACTINOCERAMUS,
             CLICK_ANJIASPIS,
             CLICK_FOREYCLUPEA,
             CLICK_CHALAWAN,
+            CLICK_PSEUDARTHRON,
             CLICK_MACKENZIA,
             CLICK_DENTILEPISOSTEUS,
             CLICK_EOCONFUCIUSORNIS,

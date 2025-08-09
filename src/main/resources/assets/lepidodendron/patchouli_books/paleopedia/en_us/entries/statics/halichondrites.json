@@ -1,0 +1,45 @@
+{
+	"name": "Halichondrites",
+	"read_by_default": true,
+	"icon": "lepidodendron:halichondrites",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_halichondrites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_halichondrites",
+			"title": "Halichondrites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Porifera$(br)>Demospongiae$(br)>Protomonaxonida$(br)>Halichondritidae"
+		},
+        {
+        "type": "multiblock",
+        "name": "H. elissa",
+        "enable_visualize": false,
+        "multiblock": {
+        "pattern": [
+        [ "1" ],
+        [ "0" ]
+        ],
+        "mapping": {
+        "1": "lepidodendron:halichondrites",
+        "0": "minecraft:air"
+        }
+        }
+        },
+        {	
+			"advancement": "lepidodendron:pf_adv_book_halichondrites",
+			"type": "text",
+			"text": "Halichondrites elissa comes from the Middle Cambrian, with fossils found in the Burgess Shale, Canada. It is a large demosponge, growing up to 21.5 cm in height. It is currently the largest known sponge from the Burgess Shale, but also the most hirsute sponge of the Shales, due to the dense covering of its spicules, which themselves have been found to grow up to 8.5 cm in length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_halichondrites",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'hal', to mean 'belonging to the sea'; 'chon', to mean 'funnel/tube'; and 'dri', to mean 'thicket'. The specific name derives from the Greek word 'eliss', to mean 'to roll', referring to the smaller spiralling spicules."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_halichondrites",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
