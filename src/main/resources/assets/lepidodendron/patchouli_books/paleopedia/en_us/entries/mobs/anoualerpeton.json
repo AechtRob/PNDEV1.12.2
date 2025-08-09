@@ -1,0 +1,47 @@
+{
+	"name": "Anoualerpeton",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/anoualerpeton_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_anoualerpeton",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_anoualerpeton",
+			"title": "Anoualerpeton",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Amphibia$(br)>Allocaudata$(br)>Albanerpetontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. unicus",
+            "entity": "lepidodendron:prehistoric_flora_anoualerpeton",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anoualerpeton",
+			"type": "text",
+			"text": "Anoualerpeton is the earliest albanerpetontid, which lived in Jurassic Europe and Early Cretaceous Morocco. Anoualerpeton is very interesting as it is the only known record of this group from Gondwana. When looking at the meaning of its name, the first part Anoual is a city in Morocco in close proximity to where the type species was found, and the second part coming from herpeton translates to creeping animal."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anoualerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anoualerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anoualerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anoualerpeton"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anoualerpeton"
+		}
+	]
+}

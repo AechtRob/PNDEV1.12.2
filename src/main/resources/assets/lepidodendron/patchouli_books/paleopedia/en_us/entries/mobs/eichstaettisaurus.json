@@ -1,0 +1,52 @@
+{
+	"name": "Eichstaettisaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eichstaettisaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_eichstaettisaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eichstaettisaurus",
+			"title": "Eichstaettisaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Squamata$(br)>Eichstaettisauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. schroederi",
+            "entity": "lepidodendron:prehistoric_flora_eichstaettisaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eichstaettisaurus",
+			"type": "text",
+			"text": "Eichstaettisaurus was originally described as a species of Ardeosaurus, before being separated out later. Like Ardeosaurus, this lizard is known from the Altmühltal Formation, however, in contrast, it is also known from Early Cretaceous fossils in Italy. Both preserve similar marine lagoonal environments, suggesting comparable habitat preferences across this entire period of time."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eichstaettisaurus",
+			"type": "text",
+			"text": "Eichstaettisaurus is generally recovered closer to extant geckos than Ardeosaurus. No specimen of this lizard preserves the entire tail, but comparisons of the larger specimen with Ardeosaurus suggests a length around 15-20 cm."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eichstaettisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eichstaettisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eichstaettisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eichstaettisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eichstaettisaurus"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Austropotamobius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/austropotamobius_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_austropotamobius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_austropotamobius",
+			"title": "Austropotamobius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous - Recent$(br2)>Arthropoda$(br)>Malascostrata$(br)>Decapoda$(br)>Astacidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. llopisi",
+            "entity": "lepidodendron:prehistoric_flora_austropotamobius",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_austropotamobius",
+			"type": "text",
+			"text": "Austropotamobius is an extant genus of European crayfish that is a member of Astacidae. The extinct species A. llopisi was known from the Las Hoyas and La Pedrera de Meià sites in Spain. It is described as a member of modern genus Austropotamobius, although this would need further review."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_austropotamobius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_austropotamobius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_austropotamobius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_austropotamobius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_austropotamobius"
+		}
+	]
+}

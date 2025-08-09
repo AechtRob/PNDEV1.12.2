@@ -1865,7 +1865,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MALAWISAURUS = new CustomTrigger("pf_book_malawisaurus");
     public static final CustomTrigger CLICK_UKTENADACTYLUS = new CustomTrigger("pf_book_uktenadactylus");
     public static final CustomTrigger CLICK_ARCHAEOCERATOPS = new CustomTrigger("pf_book_archaeoceratops");
-    public static final CustomTrigger CLICK_ANOULERPETON = new CustomTrigger("pf_book_anoulerpeton");
+    public static final CustomTrigger CLICK_ANOUALERPETON = new CustomTrigger("pf_book_anoualerpeton");
     public static final CustomTrigger CLICK_CANDIDODON = new CustomTrigger("pf_book_candidodon");
     public static final CustomTrigger CLICK_MALAWISUCHUS = new CustomTrigger("pf_book_malawisuchus");
     public static final CustomTrigger CLICK_STOLOKROSUCHUS = new CustomTrigger("pf_book_stolokrosuchus");
@@ -3888,7 +3888,7 @@ public class ModTriggers
             CLICK_MALAWISAURUS,
             CLICK_UKTENADACTYLUS,
             CLICK_ARCHAEOCERATOPS,
-            CLICK_ANOULERPETON,
+            CLICK_ANOUALERPETON,
             CLICK_CANDIDODON,
             CLICK_MALAWISUCHUS,
             CLICK_STOLOKROSUCHUS,

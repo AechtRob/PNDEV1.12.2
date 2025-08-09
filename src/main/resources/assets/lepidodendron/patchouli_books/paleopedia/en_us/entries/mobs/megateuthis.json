@@ -1,0 +1,47 @@
+{
+	"name": "Megateuthis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/megateuthis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_megateuthis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_megateuthis",
+			"title": "Megateuthis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Belemnitida$(br)>Megateuthididae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. giganteus",
+            "entity": "lepidodendron:prehistoric_flora_megateuthis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megateuthis",
+			"type": "text",
+			"text": "Megateuthis is the largest belemnite ever known, and so the largest cephalopod in the Jurassic. Although only known from 70 cm long rostrum, its entire mantle length is somewhat estimated at around 2.2 m. Still entire ratio is not known so it is just speculative."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_megateuthis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_megateuthis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_megateuthis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_megateuthis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_megateuthis"
+		}
+	]
+}

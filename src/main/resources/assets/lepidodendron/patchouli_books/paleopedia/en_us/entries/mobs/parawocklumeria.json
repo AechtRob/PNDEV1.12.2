@@ -1,0 +1,47 @@
+{
+	"name": "Parawocklumeria",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/parawocklumeria_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_parawocklumeria",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_parawocklumeria",
+			"title": "Parawocklumeria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Clymeniidia$(br)>Parawocklumeriidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. paradoxa",
+            "entity": "lepidodendron:prehistoric_flora_parawocklumeria",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_parawocklumeria",
+			"type": "text",
+			"text": "Parawocklumeria is a bizarre Ammonite from the Devonian typically found in Germany. It was described by German Paleontologist Otto Heinrich Schindewolf in 1926. It's recognizable for its unusual lumpy shape. However, regardless of Parawocklumeria's unusual shape, it still has round coiling."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_parawocklumeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_parawocklumeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_parawocklumeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_parawocklumeria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_parawocklumeria"
+		}
+	]
+}

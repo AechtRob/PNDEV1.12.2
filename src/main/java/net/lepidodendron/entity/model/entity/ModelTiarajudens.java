@@ -294,7 +294,58 @@ public class ModelTiarajudens extends ModelBasePalaeopedia {
         resetToDefaultPose();
 
     }
-
+    public void renderStaticWall(float f) {
+        this.Neck.rotateAngleX = (float) Math.toRadians(90);
+        setRotateAngle(Neck, -0.2391F, -0.1952F, 0.0211F);
+        setRotateAngle(Head, 0.3046F, 0.0F, 0.0F);
+        this.Neck.offsetY = -0.02F;
+        this.Neck.offsetX = -0.F;
+        this.Neck.offsetZ = -0F;
+        this.Neck.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        setRotateAngle(Upperteeth, 0.3396F, 0.0F, 0.0F);
+        setRotateAngle(Upperlip, 0.8067F, 0.0F, 0.0F);
+        setRotateAngle(Upperjaw2, 0.1061F, 0.0F, 0.0F);
+        setRotateAngle(Upperjaw1, 0.4033F, 0.0F, 0.0F);
+        setRotateAngle(Tail4, 0.1144F, -0.3817F, -0.0428F);
+        setRotateAngle(Tail3, -0.4121F, -0.2004F, 0.0868F);
+        setRotateAngle(Tail2, -0.2977F, 0.0542F, -0.0166F);
+        setRotateAngle(Tail1, -0.0425F, 0.0567F, -0.0024F);
+        setRotateAngle(Rightupperarm, 0.8517F, -0.25F, 0.2884F);
+        setRotateAngle(Righttuskend, 0.1061F, 0.0F, 0.0F);
+        setRotateAngle(Righttusk, -0.5732F, 0.0F, -0.0848F);
+        setRotateAngle(Rightthigh, -0.0445F, 0.0F, 0.1698F);
+        setRotateAngle(Rightshin, 0.3396F, 0.0F, -0.1698F);
+        setRotateAngle(Rightlowerarm, -1.3158F, -0.1061F, -0.3183F);
+        setRotateAngle(Righthindfoot, -0.0213F, 0.0F, 0.0F);
+        setRotateAngle(Rightfrontfoot, 1.4692F, 0.0F, 0.0F);
+        setRotateAngle(Neck, -0.2391F, -0.1952F, 0.0211F);
+        setRotateAngle(Lowerteeth, -0.1061F, 0.0F, 0.0F);
+        setRotateAngle(Lowerlip, -0.0848F, 0.0F, 0.0F);
+        setRotateAngle(Lowerjaw5, 0.407F, 0.0F, 0.0F);
+        setRotateAngle(Lowerjaw4, -0.4245F, 0.0F, 0.0F);
+        setRotateAngle(Lowerjaw3, -0.6793F, 0.0F, 0.0F);
+        setRotateAngle(Lowerjaw2, 0.5308F, 0.0F, 0.0F);
+        setRotateAngle(Leftupperarm, -0.0475F, 0.0F, -0.3396F);
+        setRotateAngle(Lefttuskend, 0.1061F, 0.0F, 0.0F);
+        setRotateAngle(Lefttusk, -0.5519F, 0.0F, 0.0848F);
+        setRotateAngle(Leftthigh, 0.3744F, 0.0F, -0.1698F);
+        setRotateAngle(Leftshin, 0.8065F, 0.0F, 0.1698F);
+        setRotateAngle(Leftlowerarm, -0.2381F, 0.1061F, 0.3183F);
+        setRotateAngle(Lefthindfoot, 0.319F, 0.0F, 0.0F);
+        setRotateAngle(Leftfrontfoot, 0.1297F, 0.0F, 0.0F);
+        setRotateAngle(Jawparting, -0.4033F, 0.0F, 0.0F);
+        setRotateAngle(Hips, -0.2566F, 0.0F, 0.0F);
+        setRotateAngle(Headslope, -0.5095F, 0.0F, 0.0F);
+        setRotateAngle(Head, 0.3046F, 0.0F, 0.0F);
+        setRotateAngle(Bodymiddle, 0.1486F, -0.0216F, -0.0032F);
+        setRotateAngle(Bodyfront, 0.2591F, -0.0694F, -0.0074F);
+        this.Hips.offsetY = -0.05F;
+        this.Hips.render(0.01F);
+        resetToDefaultPose();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

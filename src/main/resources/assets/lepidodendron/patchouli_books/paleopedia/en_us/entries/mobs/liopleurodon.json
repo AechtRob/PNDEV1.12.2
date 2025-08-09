@@ -1,0 +1,47 @@
+{
+"name": "Liopleurodon",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/liopleurodon_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_liopleurodon",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_liopleurodon",
+"title": "Liopleurodon",
+"type": "quest",
+"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Plesiosauria$(br)>Pliosauridae"
+},
+        {
+            "type": "entity",
+            "name": "L. ferox",
+            "entity": "lepidodendron:prehistoric_flora_liopleurodon",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_liopleurodon",
+"type": "text",
+"text": "Liopleurodon is a genus of pliosaur from the United Kingdom during the Jurassic Period. Liopleurodon’s name translates to smooth-sided teeth in reference to its dental features. There have been many fossils attributed to Liopleurodon however, so far there is only one valid species, L. ferox. It rose to fame in 1999, when it was depicted in Walking with Dinosaurs as a 25m long monster however a more modern estimation puts it at about 6-8m long."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_liopleurodon"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_liopleurodon"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_liopleurodon"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_liopleurodon"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_liopleurodon"
+}
+]
+}

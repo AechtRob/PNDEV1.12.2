@@ -1,0 +1,47 @@
+{
+	"name": "Permarachne",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/permarachne_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_permarachne",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_permarachne",
+			"title": "Permarachne",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Arthropoda$(br)>Arachnida$(br)>Uraraneida"
+		},
+        	{
+            "type": "entity",
+            "name": "P. novokshonovi",
+            "entity": "lepidodendron:prehistoric_flora_permarachne",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_permarachne",
+			"type": "text",
+			"text": "Permarachne is uraraneid arachnid known from Permian Koshelevka Formation in Russia. It is mostly complete similar to its only known relative, the Devonian Attercopus. It also had long thin telson similar to Attercopus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_permarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_permarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_permarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_permarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_permarachne"
+		}
+	]
+}

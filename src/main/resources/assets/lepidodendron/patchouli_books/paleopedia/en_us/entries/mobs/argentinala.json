@@ -1,0 +1,47 @@
+{
+	"name": "Argentinala",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/argentinala_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_argentinala",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_argentinala",
+			"title": "Argentinala",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Insecta$(br)>Argentinoptera$(br)>Argentinalidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. cristinae",
+            "entity": "lepidodendron:prehistoric_flora_argentinala",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_argentinala",
+			"type": "text",
+			"text": "Argentinala is a mid-sized stem-odonatopteran with a wingspan of 9 cm known from an almost complete specimen from the Guandacol Formation. Originally it was considered as a specimen of wing taxon for Eugeropteron. It is characterized by having six wings, like Palaeodictyopterans and Erasipteroides."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_argentinala"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_argentinala"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_argentinala"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_argentinala"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_argentinala"
+		}
+	]
+}
