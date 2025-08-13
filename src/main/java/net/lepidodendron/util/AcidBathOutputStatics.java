@@ -810,6 +810,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockSeaPenYellow.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBoneWorm.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveTitanosarcolites.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveIchthyosarcolites.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveInoceramusGigantocapulus.block).toString()
         };
         return resLoc;
