@@ -11061,6 +11061,7 @@ tile.pf_eggs_tadpole_notobatrachus.name=Notobatrachus Spawn
 tile.pf_eggs_tadpole_prosalirus.name=Prosalirus Spawn
 item.pf_spawn_egg_anurognathid_vesperopterylus.name=Spawn Vesperopterylus
 tile.pf_eggs_tadpole_hyogobatrachus.name=Hyogobatrachus Spawn
+tile.pf_eggs_tadpole_kururubatrachus.name=Kururubatrachus Spawn
 
 tile.pf_eggs_aquaticnymph_mayfly.name=Mayfly Spawn
 tile.pf_eggs_aquaticnymph_stonefly.name=Stonefly Spawn
@@ -11077,7 +11078,7 @@ entity.prehistoric_flora_tadpole_cratopipa.name=Cratopipa Tadpole
 entity.prehistoric_flora_tadpole_notobatrachus.name=Notobatrachus Tadpole
 entity.prehistoric_flora_tadpole_prosalirus.name=Prosalirus Tadpole
 entity.prehistoric_flora_tadpole_hyogobatrachus.name=Hyogobatrachus Tadpole
-
+entity.prehistoric_flora_tadpole_kururubatrachus.name=Kururubatrachus Tadpole
 
 
 
@@ -11170,6 +11171,7 @@ advancements.pf_adv_book_eoconfuciusornis.description=Unlock the entry for Eocon
 advancements.pf_adv_book_noripterus.description=Unlock the entry for Noripterus in the Palaeopedia to gain extra new pages about it!
 advancements.pf_adv_book_sapeornis.description=Unlock the entry for Sapeornis in the Palaeopedia to gain extra new pages about it!
 advancements.pf_adv_book_koleken.description=Unlock the entry for Koleken in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_kururubatrachus.description=Unlock the entry for Kururubatrachus in the Palaeopedia to gain extra new pages about it!
 
 entity.prehistoric_flora_hensodon.name=Hensodon
 entity.prehistoric_flora_hensodon_female.name=Hensodon (female)
@@ -11273,6 +11275,7 @@ advancements.pf_adv_book_eoconfuciusornis.title=Eoconfuciusornis
 advancements.pf_adv_book_noripterus.title=Noripterus
 advancements.pf_adv_book_sapeornis.title=Sapeornis
 advancements.pf_adv_book_koleken.title=Koleken
+advancements.pf_adv_book_kururubatrachus.title=Kururubatrachus
 item.pf_macropenaeus_raw.name=Raw Macropenaeus
 item.pf_armigatus_raw.name=Raw Armigatus
 item.pf_hayenchelys_raw.name=Raw Hayenchelys
@@ -11349,6 +11352,7 @@ item.pf_kujiberotha_raw.name=Raw Kujiberotha
 item.pf_noripterus_raw.name=Raw Noripterus
 item.pf_sapeornis_raw.name=Raw Sapeornis
 item.pf_koleken_raw.name=Raw Koleken
+item.pf_kururubatrachus_raw.name=Raw Kururubatrachus
 entity.prehistoric_flora_macropenaeus.name=Macropenaeus
 entity.prehistoric_flora_armigatus.name=Armigatus
 entity.prehistoric_flora_hayenchelys.name=Hayenchelys
@@ -11425,6 +11429,7 @@ entity.prehistoric_flora_kujiberotha.name=Kujiberotha
 entity.prehistoric_flora_noripterus.name=Noripterus
 entity.prehistoric_flora_sapeornis.name=Sapeornis
 entity.prehistoric_flora_koleken.name=Koleken
+entity.prehistoric_flora_kururubatrachus.name=Kururubatrachus
 item.pf_eggs_sasayamagnomus.name=Sasayamagnomus Eggs
 item.pf_eggs_hakusanobaatar.name=Hakusanobaatar Eggs
 item.pf_eggs_hyogobatrachus.name=Hyogobatrachus Eggs
@@ -11454,6 +11459,7 @@ item.pf_eggs_sapeornis.name=Sapeornis Eggs
 item.pf_eggs_koleken.name=Koleken Eggs
 item.pf_eggs_pleurosaurus.name=Pleurosaurus Eggs
 tile.pf_eggs_aquaticnymph.name=Insect Eggs
+item.pf_eggs_kururubatrachus.name=Kururubatrachus Eggs
 advancements.pf_adv_book_bivalve_chama.description=Unlock the entry for Chama Bivalve in the Palaeopedia to gain access to extra new pages about it!
 advancements.pf_adv_book_bivalve_chama.title=Chama Bivalve
 tile.pf_bivalve_chama.name=Chama Bivalve

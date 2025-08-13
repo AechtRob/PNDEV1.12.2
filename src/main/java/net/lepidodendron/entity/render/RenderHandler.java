@@ -8391,7 +8391,12 @@ public class RenderHandler {
                 return new RenderTurfania(manager);
             }
         });
-
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKururubatrachus.class, new IRenderFactory<EntityPrehistoricFloraKururubatrachus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraKururubatrachus> createRenderFor(RenderManager manager) {
+                return new RenderKururubatrachus(manager);
+            }
+        });
 
 
 

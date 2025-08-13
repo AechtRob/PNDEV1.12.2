@@ -32,7 +32,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraHyogobatrachus extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter, IWaterSurfaceEggsAmphibian {
+public class EntityPrehistoricFloraKururubatrachus extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter, IWaterSurfaceEggsAmphibian {
 
 	public BlockPos currentTarget;
 	public Animation STAND_ANIMATION;//blink animation
@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraHyogobatrachus extends EntityPrehistoricFlora
 	public int ambientSoundTime;
 	public boolean isWalking = false;
 
-	public EntityPrehistoricFloraHyogobatrachus(World world) {
+	public EntityPrehistoricFloraKururubatrachus(World world) {
 		super(world);
 		setSize(0.15F, 0.20F);
 		minWidth = 0.12F;
@@ -126,7 +126,7 @@ public class EntityPrehistoricFloraHyogobatrachus extends EntityPrehistoricFlora
 
 	protected float getAISpeedSwimmingAmphibian() {
 		//return 0;
-		float calcSpeed = 0.15F;
+		float calcSpeed = 0.1F;
 		if (this.isReallyInWater()) {
 			calcSpeed= 0.185f;
 		}
@@ -138,7 +138,7 @@ public class EntityPrehistoricFloraHyogobatrachus extends EntityPrehistoricFlora
 		}
 		//this is needed to control the distance of the jump, higher number = larger blocks jumped
 		if (!this.isWalking && (!this.isReallyInWater())) {
-			calcSpeed = 0.3F;
+			calcSpeed = 0.2F;
 		}
 		if(this.getIsFast()){
 			calcSpeed *=1.4F;
@@ -168,7 +168,7 @@ public class EntityPrehistoricFloraHyogobatrachus extends EntityPrehistoricFlora
 
 	@Override
 	public String getEntityId(Entity entity) {
-		return "lepidodendron:prehistoric_flora_tadpole@hyogobatrachus";
+		return "lepidodendron:prehistoric_flora_tadpole@kururubatrachus";
 	}
 
 
@@ -397,7 +397,7 @@ public class EntityPrehistoricFloraHyogobatrachus extends EntityPrehistoricFlora
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.HYOGOBATRACHUS_LOOT;
+		return LepidodendronMod.KURURUBATRACHUS_LOOT;
 	}
 
 	//Rendering taxidermy:
@@ -425,7 +425,7 @@ public class EntityPrehistoricFloraHyogobatrachus extends EntityPrehistoricFlora
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_HYOGOBATRACHUS;
+		return ModTriggers.CLICK_KURURUBATRACHUS;
 	}
 
 }

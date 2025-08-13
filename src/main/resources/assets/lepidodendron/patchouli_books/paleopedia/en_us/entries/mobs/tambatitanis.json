@@ -1,0 +1,47 @@
+{
+	"name": "Tambatitanis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tambatitanis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tambatitanis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tambatitanis",
+			"title": "Tambatitanis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Sauropoda$(br)>Macronaria$(br)>Titanosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "T. amicitiae",
+            "entity": "lepidodendron:prehistoric_flora_tambatitanis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tambatitanis",
+			"type": "text",
+			"text": "Tambatitanis is a Sauropod from Early Cretaceous Japan that was discribed in 2014. At about 14-15 m long, its classification is uncertain, originally considered as member of Euhelopodidae somewhat close to Phuwiangosaurus, but later some considered it as a titanosaurian instead."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tambatitanis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tambatitanis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tambatitanis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tambatitanis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tambatitanis"
+		}
+	]
+}

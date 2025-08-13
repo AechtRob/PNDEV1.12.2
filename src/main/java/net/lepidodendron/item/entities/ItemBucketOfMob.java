@@ -63,6 +63,8 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 		ModelBakery.registerItemVariants(block,
 				new ModelResourceLocation("lepidodendron:entities/dentilepisosteus_bucket", "inventory"),
         new ModelResourceLocation("lepidodendron:entities/turfania_bucket", "inventory"),
+                new ModelResourceLocation("lepidodendron:entities/tadpole_kururubatrachus_bucket", "inventory"),
+                new ModelResourceLocation("lepidodendron:entities/kururubatrachus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/foreyclupea_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/chalawan_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/anjiaspis_bucket", "inventory"),

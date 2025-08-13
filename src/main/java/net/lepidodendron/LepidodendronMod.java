@@ -3399,6 +3399,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation PROCOMPSOGNATHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/procompsognathus_young"));
   public static final int ENTITY_TURFANIA = 1396;
   public static final ResourceLocation TURFANIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/turfania"));
+    public static final int ENTITY_KURURUBATRACHUS = 1414;
+    public static final ResourceLocation KURURUBATRACHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kururubatrachus"));
 
 
 

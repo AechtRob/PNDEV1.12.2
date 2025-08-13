@@ -255,10 +255,47 @@ public class ModelMagnipterygius extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
+        this.head.rotateAngleX = (float) Math.toRadians(90);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, -0.0F);
+        this.head.offsetY = -0F;
+        this.head.offsetX = -0F;
+        this.head.offsetZ = 0.008F;
+        this.head.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(tail4, 0.0F, -0.1178F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.1353F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.144F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.1091F, 0.0F);
+        this.setRotateAngle(rightLeg, -0.0248F, 0.1204F, -0.3892F);
+        this.setRotateAngle(rightArm, -0.0159F, 0.0858F, -0.1839F);
+        this.setRotateAngle(main, 0.1603F, -0.8396F, 0.1149F);
+        this.setRotateAngle(leftLeg, -0.0378F, -0.117F, 0.499F);
+        this.setRotateAngle(leftArm, -0.0263F, -0.0832F, 0.3065F);
+        this.setRotateAngle(jaw, 0.2967F, 0.0F, 0.0F);
+        this.setRotateAngle(head2, 0.0F, 0.1047F, 0.0F);
+        this.setRotateAngle(head, 0.0516F, 0.0656F, -0.0059F);
+        this.setRotateAngle(cube_r9, -0.2574F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.2313F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.2487F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.2923F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.1527F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.5323F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.4276F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -0.7418F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, -0.9599F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -1.0821F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.0524F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.2487F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.192F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0175F, 0.0F);
+        this.main.offsetY = -0.3F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticSuspended(float f) {
