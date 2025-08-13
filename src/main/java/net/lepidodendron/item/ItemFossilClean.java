@@ -1025,6 +1025,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_bivalve_grey_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_bivalve_shikamaia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_bivalve_inoceramus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_bivalve_titanosarcolites_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_bivalve_lithiotis_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_bivalve_megalodon_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_bivalve_tall_clean", "inventory"),

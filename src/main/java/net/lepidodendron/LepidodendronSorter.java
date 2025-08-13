@@ -5251,6 +5251,7 @@ public class LepidodendronSorter {
     public static final int coral_lantern = 8191;
     public static final int rudist_reef = 8192;
     public static final int rudist_reef_sticky = 8193;
+    public static final int bivalve_titanosarcolites = 8194;
     //Rob list ends-----
     
     public static final int priscomyzon_raw = 4974;
