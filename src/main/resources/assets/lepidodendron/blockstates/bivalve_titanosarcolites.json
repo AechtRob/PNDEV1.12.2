@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:titanosarcolites"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:titanosarcolites"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:titanosarcolites", "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:titanosarcolites", "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:titanosarcolites", "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:titanosarcolites"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:titanosarcolites"}
+    ]
+  }
+}

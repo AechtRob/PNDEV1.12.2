@@ -1,0 +1,37 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:ichthyosarcolites"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:ichthyosarcolites", "weight": 3},
+      {"model": "lepidodendron:ichthyosarcolites_1"},
+      {"model": "lepidodendron:ichthyosarcolites_2"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:ichthyosarcolites", "y": 90, "weight": 3},
+      {"model": "lepidodendron:ichthyosarcolites_1", "y": 90},
+      {"model": "lepidodendron:ichthyosarcolites_2", "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:ichthyosarcolites", "y": 180, "weight": 3},
+      {"model": "lepidodendron:ichthyosarcolites_1", "y": 180},
+      {"model": "lepidodendron:ichthyosarcolites_2", "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:ichthyosarcolites", "y": 270, "weight": 3},
+      {"model": "lepidodendron:ichthyosarcolites_1", "y": 270},
+      {"model": "lepidodendron:ichthyosarcolites_2", "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:ichthyosarcolites", "weight": 3},
+      {"model": "lepidodendron:ichthyosarcolites_1"},
+      {"model": "lepidodendron:ichthyosarcolites_2"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:ichthyosarcolites", "weight": 3},
+      {"model": "lepidodendron:ichthyosarcolites_1"},
+      {"model": "lepidodendron:ichthyosarcolites_2"}
+    ]
+  }
+}

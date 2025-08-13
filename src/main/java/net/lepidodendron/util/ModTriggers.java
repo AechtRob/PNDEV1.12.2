@@ -64,6 +64,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_REEF_CORAL = new CustomTrigger("pf_book_reef_coral");
     public static final CustomTrigger CLICK_REEF_ALGAL = new CustomTrigger("pf_book_reef_algal");
     public static final CustomTrigger CLICK_REEF_SHELLY = new CustomTrigger("pf_book_reef_shelly");
+    public static final CustomTrigger CLICK_REEF_RUDIST = new CustomTrigger("pf_book_reef_rudist");
     public static final CustomTrigger CLICK_REEF_SPONGE = new CustomTrigger("pf_book_reef_sponge");
     public static final CustomTrigger CLICK_REEF_STROMATOPOROIDEA = new CustomTrigger("pf_book_reef_stromatoporoidea");
     public static final CustomTrigger CLICK_REEF_DEAD = new CustomTrigger("pf_book_reef_dead");
@@ -137,6 +138,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_BIVALVE_DICEROCARDIUM = new CustomTrigger("pf_book_bivalve_dicerocardium");
     public static final CustomTrigger CLICK_BIVALVE_GREEN = new CustomTrigger("pf_book_bivalve_green");
     public static final CustomTrigger CLICK_BIVALVE_GREY = new CustomTrigger("pf_book_bivalve_grey");
+    public static final CustomTrigger CLICK_BIVALVE_TITANOSARCOLITES = new CustomTrigger("pf_book_bivalve_titanosarcolites");
+    public static final CustomTrigger CLICK_BIVALVE_ICHTHYOSARCOLITES = new CustomTrigger("pf_book_bivalve_ichthyosarcolites");
     public static final CustomTrigger CLICK_BIVALVE_SHIKAMAIA = new CustomTrigger("pf_book_bivalve_shikamaia");
     public static final CustomTrigger CLICK_BIVALVE_INOCERAMUS = new CustomTrigger("pf_book_bivalve_inoceramus");
     public static final CustomTrigger CLICK_BIVALVE_INOCERAMUS_GIGANTOCAPULUS = new CustomTrigger("pf_book_bivalve_inoceramus_gigantocapulus");
@@ -2114,6 +2117,7 @@ public class ModTriggers
             CLICK_REEF_GLASS_SPONGE,
             CLICK_REEF_CORAL,
             CLICK_REEF_SHELLY,
+            CLICK_REEF_RUDIST,
             CLICK_ANKYROPTERIS,
             CLICK_ANOMOZAMITES,
             CLICK_ANTARCTICYCAS,
@@ -2182,6 +2186,8 @@ public class ModTriggers
             CLICK_BIVALVE_GREEN,
             CLICK_BIVALVE_GREY,
             CLICK_BIVALVE_SHIKAMAIA,
+            CLICK_BIVALVE_TITANOSARCOLITES,
+            CLICK_BIVALVE_ICHTHYOSARCOLITES,
             CLICK_BIVALVE_INOCERAMUS,
             CLICK_BIVALVE_LITHIOTIS,
             CLICK_BIVALVE_MEGALODON,
