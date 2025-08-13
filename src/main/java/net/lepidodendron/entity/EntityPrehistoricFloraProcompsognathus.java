@@ -339,15 +339,15 @@ public class EntityPrehistoricFloraProcompsognathus extends EntityPrehistoricFlo
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.SEGISAURUS_LOOT_YOUNG;
+			return LepidodendronMod.PROCOMPSOGNATHUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.SEGISAURUS_LOOT;
+		return LepidodendronMod.PROCOMPSOGNATHUS_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_SEGISAURUS;
+		return ModTriggers.CLICK_PROCOMPSOGNATHUS;
 	}
 
 	//Rendering taxidermy:
