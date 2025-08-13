@@ -105,7 +105,7 @@ public class EntityPrehistoricFloraHyogobatrachus extends EntityPrehistoricFlora
 		return true;
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	//public static String getHabitat() {return "Amphibious";}
 
