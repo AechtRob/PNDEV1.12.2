@@ -16,9 +16,7 @@ import net.minecraft.world.gen.structure.template.ITemplateProcessor;
 import net.minecraft.world.gen.structure.template.PlacementSettings;
 import net.minecraft.world.gen.structure.template.Template;
 import net.minecraftforge.common.BiomeDictionary;
-import net.prehistoricnaturedeco.block.BlockAcaciaBridge;
-import net.prehistoricnaturedeco.block.BlockOakBridge;
-import net.prehistoricnaturedeco.block.BlockSpruceBridge;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -130,7 +128,8 @@ public class PalaeontologisthouseBlocks implements ITemplateProcessor {
 
             if (blockstateIn == Blocks.WOOL.getStateFromMeta(0)) {
                 if (Functions.decoLoaded()) {
-                    return BlockSpruceBridge.block.getDefaultState().withProperty(BlockSpruceBridge.BlockCustom.FACING, EnumFacing.NORTH);
+                    Block bridgeBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("lepidodendron:spruce_bridge"));
+                    return bridgeBlock.getDefaultState();
                 }
                 else {
                     return Blocks.WOODEN_SLAB.getStateFromMeta(1).withProperty(BlockSlab.HALF, BlockSlab.EnumBlockHalf.TOP);
@@ -181,7 +180,8 @@ public class PalaeontologisthouseBlocks implements ITemplateProcessor {
 
             if (blockstateIn == Blocks.WOOL.getStateFromMeta(0)) {
                 if (Functions.decoLoaded()) {
-                    return BlockAcaciaBridge.block.getDefaultState().withProperty(BlockAcaciaBridge.BlockCustom.FACING, EnumFacing.NORTH);
+                    Block bridgeBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("lepidodendron:acacia_bridge"));
+                    return bridgeBlock.getDefaultState();
                 }
                 else {
                     return Blocks.WOODEN_SLAB.getStateFromMeta(4).withProperty(BlockSlab.HALF, BlockSlab.EnumBlockHalf.TOP);
@@ -210,7 +210,8 @@ public class PalaeontologisthouseBlocks implements ITemplateProcessor {
 
         if (blockstateIn == Blocks.WOOL.getStateFromMeta(0)) {
             if (Functions.decoLoaded()) {
-                return BlockOakBridge.block.getDefaultState().withProperty(BlockOakBridge.BlockCustom.FACING, EnumFacing.NORTH);
+                Block bridgeBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("lepidodendron:oak_bridge"));
+                return bridgeBlock.getDefaultState();
             }
             else {
                 return Blocks.WOODEN_SLAB.getStateFromMeta(0).withProperty(BlockSlab.HALF, BlockSlab.EnumBlockHalf.TOP);
