@@ -1,0 +1,64 @@
+{
+	"multipart" : [
+		{	"when": { "facing": "north", "water": 0 },
+			"apply": [
+				{"model": "lepidodendron:rudist_reef_nowater"}
+			]
+		},
+		{	"when": { "facing": "east", "water": 0  },
+			"apply": [
+				{"model": "lepidodendron:rudist_reef_nowater", "y": 90 }
+			]
+		},
+		{	"when": { "facing": "south", "water": 0  },
+			"apply": [
+				{"model": "lepidodendron:rudist_reef_nowater", "y": 180 }
+			]
+		},
+		{	"when": { "facing": "west", "water": 0  },
+			"apply": [
+				{"model": "lepidodendron:rudist_reef_nowater", "y": 270 }
+			]
+		},
+		{	"when": { "facing": "north", "water": 2 },
+			"apply": [
+				{"model": "lepidodendron:rudist_reef"}
+			]
+		},
+		{	"when": { "facing": "east", "water": 2  },
+			"apply": [
+				{"model": "lepidodendron:rudist_reef", "y": 90 }
+			]
+		},
+		{	"when": { "facing": "south", "water": 2  },
+			"apply": [
+				{"model": "lepidodendron:rudist_reef", "y": 180 }
+			]
+		},
+		{	"when": { "facing": "west", "water": 2  },
+			"apply": [
+				{"model": "lepidodendron:rudist_reef", "y": 270 }
+			]
+		},
+		{	"when": { "facing": "north", "water": 1 },
+			"apply": [
+				{"model": "lepidodendron:rudist_reef_partial"}
+			]
+		},
+		{	"when": { "facing": "east", "water": 1  },
+			"apply": [
+				{"model": "lepidodendron:rudist_reef_partial", "y": 90 }
+			]
+		},
+		{	"when": { "facing": "south", "water": 1  },
+			"apply": [
+				{"model": "lepidodendron:rudist_reef_partial", "y": 180 }
+			]
+		},
+		{	"when": { "facing": "west", "water": 1  },
+			"apply": [
+				{"model": "lepidodendron:rudist_reef_partial", "y": 270 }
+			]
+		}
+	]
+}
