@@ -8397,6 +8397,12 @@ public class RenderHandler {
                 return new RenderKururubatrachus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAmericaspis.class, new IRenderFactory<EntityPrehistoricFloraAmericaspis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAmericaspis> createRenderFor(RenderManager manager) {
+                return new RenderAmericaspis(manager);
+            }
+        });
 
 
 

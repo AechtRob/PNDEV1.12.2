@@ -5880,6 +5880,7 @@ public class LepidodendronSorter {
 
     public static final int turfania_raw = 5605;
     public static final int kururubatrachus_raw = 5616;
+    public static final int americaspis_raw = 5623;
 
 
 

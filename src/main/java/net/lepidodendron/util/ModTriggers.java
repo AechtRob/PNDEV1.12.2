@@ -2046,6 +2046,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DENTILEPISOSTEUS = new CustomTrigger("pf_book_dentilepisosteus");
     public static final CustomTrigger CLICK_EOCONFUCIUSORNIS = new CustomTrigger("pf_book_eoconfuciusornis");
     public static final CustomTrigger CLICK_KURURUBATRACHUS = new CustomTrigger("pf_book_kururubatrachus");
+    public static final CustomTrigger CLICK_AMERICASPIS = new CustomTrigger("pf_book_americaspis");
 
 
 
@@ -4082,6 +4083,7 @@ public class ModTriggers
             CLICK_EOCONFUCIUSORNIS,
             CLICK_TURFANIA,
             CLICK_KURURUBATRACHUS,
+            CLICK_AMERICASPIS,
 
 
 

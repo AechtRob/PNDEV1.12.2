@@ -11501,4 +11501,7 @@ advancements.pf_adv_book_turfania.description=Unlock the entry for Turfania in t
 advancements.pf_adv_book_turfania.title=Turfania
 item.pf_turfania_raw.name=Raw Turfania
 entity.prehistoric_flora_turfania.name=Turfania
-
+advancements.pf_adv_book_americaspis.description=Unlock the entry for Americaspis in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_americaspis.title=Americaspis
+item.pf_americaspis_raw.name=Raw Americaspis
+entity.prehistoric_flora_americaspis.name=Americaspis
