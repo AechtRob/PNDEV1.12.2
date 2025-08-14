@@ -8391,6 +8391,18 @@ public class RenderHandler {
                 return new RenderTurfania(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKururubatrachus.class, new IRenderFactory<EntityPrehistoricFloraKururubatrachus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraKururubatrachus> createRenderFor(RenderManager manager) {
+                return new RenderKururubatrachus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAmericaspis.class, new IRenderFactory<EntityPrehistoricFloraAmericaspis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAmericaspis> createRenderFor(RenderManager manager) {
+                return new RenderAmericaspis(manager);
+            }
+        });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraVictalimulus.class, new IRenderFactory<EntityPrehistoricFloraVictalimulus>() {
             @Override
             public Render<? super EntityPrehistoricFloraVictalimulus> createRenderFor(RenderManager manager) {
@@ -8421,8 +8433,6 @@ public class RenderHandler {
                 return new RenderGenibatrachus(manager);
             }
         });
-
-
 
 
 

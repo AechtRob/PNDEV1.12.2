@@ -1,0 +1,47 @@
+{
+	"name": "Fukuivenator",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/fukuivenator_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_fukuivenator",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_fukuivenator",
+			"title": "Fukuivenator",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Coelurosauria$(br)>Therizinosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "F. paradoxus",
+            "entity": "lepidodendron:prehistoric_flora_fukuivenator",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fukuivenator",
+			"type": "text",
+			"text": "Fukuivenator, which was described in 2016, is one of the most complete dinosaurs known from Kitadani Formation. It was originally considered as a weird maniraptoran do to its similar appearance with dromaeosaurs, however a more recent study in 2021 revealed that it is more likely to be a basal therizinosaur instead. According to tooth shape, it have been at least omnivorous."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_fukuivenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_fukuivenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_fukuivenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_fukuivenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_fukuivenator"
+		}
+	]
+}

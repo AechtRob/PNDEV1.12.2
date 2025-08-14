@@ -105,7 +105,7 @@ public class EntityPrehistoricFloraHyogobatrachus extends EntityPrehistoricFlora
 		return true;
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	//public static String getHabitat() {return "Amphibious";}
 
@@ -168,7 +168,7 @@ public class EntityPrehistoricFloraHyogobatrachus extends EntityPrehistoricFlora
 
 	@Override
 	public String getEntityId(Entity entity) {
-		return "lepidodendron:prehistoric_flora_tadpole@notobatrachus";
+		return "lepidodendron:prehistoric_flora_tadpole@hyogobatrachus";
 	}
 
 

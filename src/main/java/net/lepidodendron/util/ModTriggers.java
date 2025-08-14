@@ -2045,6 +2045,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_HALICHONDRITES = new CustomTrigger("pf_book_halichondrites");
     public static final CustomTrigger CLICK_DENTILEPISOSTEUS = new CustomTrigger("pf_book_dentilepisosteus");
     public static final CustomTrigger CLICK_EOCONFUCIUSORNIS = new CustomTrigger("pf_book_eoconfuciusornis");
+    public static final CustomTrigger CLICK_KURURUBATRACHUS = new CustomTrigger("pf_book_kururubatrachus");
+    public static final CustomTrigger CLICK_AMERICASPIS = new CustomTrigger("pf_book_americaspis");
     public static final CustomTrigger CLICK_PROCOMPSOGNATHUS = new CustomTrigger("pf_book_procompsognathus");
     public static final CustomTrigger CLICK_VICTALIMULUS = new CustomTrigger("pf_book_victalimulus");
     public static final CustomTrigger CLICK_MOSURA = new CustomTrigger("pf_book_mosura");
@@ -4086,6 +4088,9 @@ public class ModTriggers
             CLICK_MACKENZIA,
             CLICK_DENTILEPISOSTEUS,
             CLICK_EOCONFUCIUSORNIS,
+            CLICK_TURFANIA,
+            CLICK_KURURUBATRACHUS,
+            CLICK_AMERICASPIS,
             CLICK_PROCOMPSOGNATHUS,
             CLICK_VICTALIMULUS,
             CLICK_MOSURA,

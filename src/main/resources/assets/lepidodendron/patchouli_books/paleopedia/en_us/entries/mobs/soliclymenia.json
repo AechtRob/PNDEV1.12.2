@@ -1,0 +1,47 @@
+{
+	"name": "Soliclymenia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/soliclymenia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_soliclymenia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_soliclymenia",
+			"title": "Soliclymenia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidia$(br)>Clymeniidia$(br)>Glatziellidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. paradoxa",
+            "entity": "lepidodendron:prehistoric_flora_soliclymenia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_soliclymenia",
+			"type": "text",
+			"text": "Soliclymenia is a Devonian ammonite discovered by Schindewolf in 1937. It is known from multiple species however the one represented in the mod, paradoxa, is most recognizable for the triangular coiling of its shell."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_soliclymenia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_soliclymenia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_soliclymenia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_soliclymenia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_soliclymenia"
+		}
+	]
+}
