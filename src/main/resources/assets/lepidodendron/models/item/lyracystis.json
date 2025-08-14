@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:blocks/lyracystis"
+    "layer0": "lepidodendron:items/lyracystis_inventory"
   }
 }

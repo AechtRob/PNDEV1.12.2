@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:megasiphon"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:megasiphon"}
+
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:megasiphon", "y": 90}
+
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:megasiphon", "y": 180}
+
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:megasiphon", "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:megasiphon"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:megasiphon"}
+    ]
+  }
+}

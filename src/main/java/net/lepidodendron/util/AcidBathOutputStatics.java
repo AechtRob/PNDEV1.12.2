@@ -234,7 +234,12 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockShankouclava.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGangtoucunia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockMackenzia.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockHalichondrites.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockHalichondrites.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCapsospongia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockVetulocystis.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockThylacocercus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockMegasiphon.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockChancelloria.block).toString()
 
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCambrian);
@@ -755,7 +760,10 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockSeaPenYellow.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBoneWorm.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidHemicrinus.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockCrinoidRoveacrinus.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidRoveacrinus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveRequienia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveToucasia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoeloptychium.block).toString()
         };
         return resLoc;
     }
@@ -811,7 +819,10 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBoneWorm.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveTitanosarcolites.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveIchthyosarcolites.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBivalveInoceramusGigantocapulus.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveInoceramusGigantocapulus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveRequienia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveToucasia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoeloptychium.block).toString()
         };
         return resLoc;
     }

@@ -1,0 +1,45 @@
+{
+	"name": "Coeloptychium",
+	"read_by_default": true,
+	"icon": "lepidodendron:coeloptychium",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_coeloptychium",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_coeloptychium",
+			"title": "Coeloptychium",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Porifera)$(br)>Hexactinellida$(br)>Hexasterophora$(br)>Lychniscosida$(br)>Coeloptychidae"
+		},
+        {
+        "type": "multiblock",
+        "name": "Coeloptychium sp.",
+        "enable_visualize": false,
+        "multiblock": {
+        "pattern": [
+        [ "1" ],
+        [ "0" ]
+        ],
+        "mapping": {
+        "1": "lepidodendron:coeloptychium",
+        "0": "minecraft:air"
+        }
+        }
+        },
+        {	
+			"advancement": "lepidodendron:pf_adv_book_coeloptychium",
+			"type": "text",
+			"text": "Coeloptychium comes from the Cretaceous, with fossils found across the globe. They are small lychniscosid glass sponges, growing up to 40 cm in height and with bulbs/caps 30 cm wide. Coeloptychium is a unique genus, in the fact that they have a rather mushroom-like appearance, with holdfasts, a stalk, and even a cap or bulb on top. They would vanish at the end of the Cretaceous period, although other mushroom-like lychniscosids would continue right up until the present day."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_coeloptychium",
+			"type": "text",
+			"text": "The generic name derives from the Greek word 'coelo', to mean 'cavity'; and 'ptycho', to mean 'fold'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_coeloptychium",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

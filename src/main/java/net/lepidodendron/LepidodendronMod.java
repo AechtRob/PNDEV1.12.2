@@ -2282,8 +2282,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation PHYLLOCERAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/phylloceras"));
 	public static final ResourceLocation PHYLLOCERAS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/phylloceras_young"));
 	public static final int ENTITY_ERETTOPTERUS = 920;
-	//public static final ResourceLocation ERETTOPTERUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/erettopterus"));
-	//public static final ResourceLocation ERETTOPTERUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/erettopterus_young"));
+	public static final ResourceLocation ERETTOPTERUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/erettopterus"));
+	public static final ResourceLocation ERETTOPTERUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/erettopterus_young"));
 	public static final int ENTITY_POLYSENTOR = 921;
 	public static final ResourceLocation POLYSENTOR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/polysentor"));
 	public static final int ENTITY_HARPAGOFUTUTOR = 922;
@@ -3414,6 +3414,10 @@ public class LepidodendronMod {
   public static final ResourceLocation KURURUBATRACHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kururubatrachus"));
   public static final int ENTITY_AMERICASPIS = 1403;
   public static final ResourceLocation AMERICASPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/americaspis"));
+ public static final int ENTITY_TRYPANOGNATHUS = 1404;
+	public static final ResourceLocation TRYPANOGNATHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/trypanognathus"));
+	public static final ResourceLocation TRYPANOGNATHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/trypanognathus_young"));
+
 
 
 

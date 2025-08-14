@@ -1,0 +1,40 @@
+{
+	"name": "Toucasia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bivalve_toucasia_icon.png",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_bivalve_toucasia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bivalve_toucasia",
+			"title": "Toucasia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Hippuritida$(br)>Requieniidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "Toucasia sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_toucasia",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_toucasia",
+			"type": "text",
+			"text": "Toucasia is a genus of mollusk rudist that lived during the Cretaceous, with fossils being found across the globe. Toucasia is apart of an informal group known as 'clingers', which as the name suggests, cling onto the sides of rocks, and so forth."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_toucasia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

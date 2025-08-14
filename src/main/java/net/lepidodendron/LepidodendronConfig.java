@@ -212,6 +212,7 @@ public class LepidodendronConfig {
     public static int waterCacops = 10;
     public static int waterDasyceps = 10;
     public static int waterDvinosaurus = 3;
+    public static int waterTrypanognathus = 3;
     public static int waterMelosaurus = 4;
     public static int waterPantylus = 8;
     public static int waterUranocentrodon = 3;

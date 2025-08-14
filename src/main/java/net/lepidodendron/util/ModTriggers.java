@@ -149,6 +149,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_BIVALVE_UPRIGHT = new CustomTrigger("pf_book_bivalve_upright");
     public static final CustomTrigger CLICK_BIVALVE_WHITE = new CustomTrigger("pf_book_bivalve_white");
     public static final CustomTrigger CLICK_BIVALVE_ACTINOCERAMUS = new CustomTrigger("pf_book_bivalve_actinoceramus");
+    public static final CustomTrigger CLICK_BIVALVE_REQUIENIA = new CustomTrigger("pf_book_bivalve_requienia");
+    public static final CustomTrigger CLICK_BIVALVE_TOUCASIA = new CustomTrigger("pf_book_bivalve_toucasia");
     public static final CustomTrigger CLICK_BJUVIA = new CustomTrigger("pf_book_bjuvia");
     public static final CustomTrigger CLICK_BLACK_TREEFERN = new CustomTrigger("pf_book_black_treefern");
     public static final CustomTrigger CLICK_BOLBITIS = new CustomTrigger("pf_book_bolbitis");
@@ -612,6 +614,15 @@ public class ModTriggers
     public static final CustomTrigger CLICK_FLABELLOPTERIS = new CustomTrigger("pf_book_flabellopteris");
     public static final CustomTrigger CLICK_KTALENIA = new CustomTrigger("pf_book_ktalenia");
     public static final CustomTrigger CLICK_TODEA = new CustomTrigger("pf_book_todea");
+    public static final CustomTrigger CLICK_HALICHONDRITES = new CustomTrigger("pf_book_halichondrites");
+    public static final CustomTrigger CLICK_MACKENZIA = new CustomTrigger("pf_book_mackenzia");
+    public static final CustomTrigger CLICK_CAPSOSPONGIA = new CustomTrigger("pf_book_capsospongia");
+    public static final CustomTrigger CLICK_VETULOCYSTIS = new CustomTrigger("pf_book_vetulocystis");
+
+    public static final CustomTrigger CLICK_COELOPTYCHIUM = new CustomTrigger("pf_book_coeloptychium");
+    public static final CustomTrigger CLICK_THYLACOCERCUS = new CustomTrigger("pf_book_thylacocercus");
+    public static final CustomTrigger CLICK_MEGASIPHON = new CustomTrigger("pf_book_megasiphon");
+    public static final CustomTrigger CLICK_CHANCELLORIA = new CustomTrigger("pf_book_chancelloria");
 
     //Grouped ones:
     public static final CustomTrigger CLICK_BLASTOID = new CustomTrigger("pf_book_blastoid");
@@ -2040,9 +2051,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ANJIASPIS = new CustomTrigger("pf_book_anjiaspis");
     public static final CustomTrigger CLICK_FOREYCLUPEA = new CustomTrigger("pf_book_foreyclupea");
     public static final CustomTrigger CLICK_CHALAWAN = new CustomTrigger("pf_book_chalawan");
-    public static final CustomTrigger CLICK_MACKENZIA = new CustomTrigger("pf_book_mackenzia");
     public static final CustomTrigger CLICK_PSEUDARTHRON = new CustomTrigger("pf_book_pseudarthron");
-    public static final CustomTrigger CLICK_HALICHONDRITES = new CustomTrigger("pf_book_halichondrites");
+    public static final CustomTrigger CLICK_TRYPANOGNATHUS = new CustomTrigger("pf_book_trypanognathus");
     public static final CustomTrigger CLICK_DENTILEPISOSTEUS = new CustomTrigger("pf_book_dentilepisosteus");
     public static final CustomTrigger CLICK_EOCONFUCIUSORNIS = new CustomTrigger("pf_book_eoconfuciusornis");
     public static final CustomTrigger CLICK_KURURUBATRACHUS = new CustomTrigger("pf_book_kururubatrachus");
@@ -2664,8 +2674,16 @@ public class ModTriggers
             CLICK_TODEA,
             CLICK_HALICHONDRITES,
             CLICK_MACKENZIA,
+            CLICK_CAPSOSPONGIA,
+            CLICK_VETULOCYSTIS,
             CLICK_BIVALVE_CHAMA,
             CLICK_BIVALVE_ACTINOCERAMUS,
+            CLICK_BIVALVE_REQUIENIA,
+            CLICK_BIVALVE_TOUCASIA,
+            CLICK_COELOPTYCHIUM,
+            CLICK_THYLACOCERCUS,
+            CLICK_MEGASIPHON,
+            CLICK_CHANCELLORIA,
 
             //Grouped ones:
             CLICK_BLASTOID,
@@ -4085,7 +4103,7 @@ public class ModTriggers
             CLICK_FOREYCLUPEA,
             CLICK_CHALAWAN,
             CLICK_PSEUDARTHRON,
-            CLICK_MACKENZIA,
+            CLICK_TRYPANOGNATHUS,
             CLICK_DENTILEPISOSTEUS,
             CLICK_EOCONFUCIUSORNIS,
             CLICK_TURFANIA,

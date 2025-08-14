@@ -1,0 +1,47 @@
+{
+	"name": "Lytoceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lytoceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_lytoceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lytoceras",
+			"title": "Lytoceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Lytoceratidae"
+		},
+		{
+			"type": "entity",
+			"name": "Lytoceras sp.",
+			"entity": "lepidodendron:prehistoric_flora_lytoceras",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lytoceras",
+			"type": "text",
+			"text": "Lytoceras hails from the Jurassic into the Cretaceous, with fossils found across the globe. It is a large lytoceratid, growing up to 1.5 m in size. Lytoceras is unique in having overly crinkled growth lines in its shell, although these rarely preserve well due to their fragile nature. Its sutures were also unique, being moss-like and were likely well built for the deep pressures of its habitat."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lytoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lytoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lytoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lytoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lytoceras"
+		}
+	]
+}

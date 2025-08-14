@@ -1,0 +1,40 @@
+{
+	"name": "Requienia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bivalve_requienia_icon.png",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_bivalve_requienia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bivalve_requienia",
+			"title": "Requienia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Hippuritida$(br)>Requieniidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "Requienia sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_requienia",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_requienia",
+			"type": "text",
+			"text": "Requienia is a genus of mollusk rudist that lived during the Cretaceous, with fossils being found across the globe. Requienia is apart of an informal group known as 'clingers', which as the name suggests, cling onto the sides of rocks, and so forth."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_requienia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

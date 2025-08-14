@@ -13,7 +13,7 @@
 		},
         	{
             "type": "entity",
-            "name": "P. concentratum",
+            "name": "J. concentratum",
             "entity": "lepidodendron:prehistoric_flora_jeppssonoceras",
             "rotate": false,
             "default_rotation": 0

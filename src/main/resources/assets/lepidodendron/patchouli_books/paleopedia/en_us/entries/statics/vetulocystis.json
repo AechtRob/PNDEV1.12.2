@@ -1,0 +1,50 @@
+{
+	"name": "Vetulocystis",
+	"read_by_default": true,
+	"icon": "lepidodendron:vetulocystis",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_vetulocystis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_vetulocystis",
+			"title": "Vetulocystis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Eumetazoa$(br)>Vetulocystida$(br)>Vetulocystidae"
+		},
+        {
+        "type": "multiblock",
+        "name": "V. catenata",
+        "enable_visualize": false,
+        "multiblock": {
+        "pattern": [
+        [ "1" ],
+        [ "0" ]
+        ],
+        "mapping": {
+        "1": "lepidodendron:vetulocystis",
+        "0": "minecraft:air"
+        }
+        }
+        },
+        {	
+			"advancement": "lepidodendron:pf_adv_book_vetulocystis",
+			"type": "text",
+			"text": "Vetulocystis catenata comes from the lower Cambrian, with fossils found in the Maotianshan Shale, China. It is a small vetulocystid, growing up to 1 cm in height. Vetulocystis, alongside its relatives, is an incredibly unique lifeform. They have a stalk, or 'tail' section, attaching them to the substrate, with a bulbous body placed ontop. This body is usually soft and smooth in overall appearance, save for two cones and a respiratory organ. The anterior cone,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vetulocystis",
+			"type": "text",
+			"text": "the higher one, is believed to be the mouth, partly due to Vetulocystis' similarities to primitive echinoderms. The posterior cone, the one further down the body, is believed to be the anus. Even more strange and elusive than their body-plan, is where they are placed phylogenetically to other animals, with multiple placements being put forward, from stem-group ambulacrarians, echinoderms and deuterostomes, and possibly even to the chordates."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vetulocystis",
+			"type": "text",
+			"text": "They have even been postured to be a missing link between the vetulicolians and echinoderms when discovered, although this has slowly put to rest, as the vetulicolians suffer similar placement issues. The generic name derives from the Latin words 'vetus', to mean 'old'; and 'cystidae', to mean 'bag-like'. The specific name derives from the Latin word 'catena', to mean 'chain'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vetulocystis",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

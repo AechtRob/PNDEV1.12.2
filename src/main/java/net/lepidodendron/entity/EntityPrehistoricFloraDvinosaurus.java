@@ -12,17 +12,20 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.ITrappableWater;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.block.material.Material;
+import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -32,11 +35,13 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraDvinosaurus extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand {
+	private static final DataParameter<Integer> BOTTOM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraDvinosaurus.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> SWIM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraDvinosaurus.class, DataSerializers.VARINT);
+	private static final DataParameter<Boolean> BOTTOM_FLAG = EntityDataManager.createKey(EntityPrehistoricFloraDvinosaurus.class, DataSerializers.BOOLEAN);
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	//public static final SoundEvent dvinosaurus_ROAR = create("dvinosaurus_roar");
 
 	public EntityPrehistoricFloraDvinosaurus(World world) {
 		super(world);
@@ -64,6 +69,67 @@ public class EntityPrehistoricFloraDvinosaurus extends EntityPrehistoricFloraSwi
 	}
 
 	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(BOTTOM_COOLDOWN, 0);
+		this.dataManager.register(SWIM_COOLDOWN, 0);
+		this.dataManager.register(BOTTOM_FLAG, false);
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setBottomCooldown(0);
+		this.setSwimCooldown(0);
+		this.setBottomFlag(false);
+		return livingdata;
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound)
+	{
+		super.writeEntityToNBT(compound);
+		compound.setInteger("bottomCooldown", this.getBottomCooldown());
+		compound.setInteger("swimCooldown", this.getSwimCooldown());
+		compound.setBoolean("bottomFlag", this.getBottomFlag());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.setBottomCooldown(compound.getInteger("bottomCooldown"));
+		this.setSwimCooldown(compound.getInteger("swimCooldown"));
+		this.setBottomFlag(compound.getBoolean("bottomFlag"));
+	}
+
+	public int getBottomCooldown() {
+		return this.dataManager.get(BOTTOM_COOLDOWN);
+	}
+
+	public void setBottomCooldown(int cooldown) {
+		this.dataManager.set(BOTTOM_COOLDOWN, cooldown);
+	}
+
+	public int getSwimCooldown() {
+		return this.dataManager.get(SWIM_COOLDOWN);
+	}
+
+	public void setSwimCooldown(int cooldown) {
+		this.dataManager.set(SWIM_COOLDOWN, cooldown);
+	}
+
+	public boolean getBottomFlag() {
+		return this.dataManager.get(BOTTOM_FLAG);
+	}
+
+	public void setBottomFlag(boolean flag) {
+		this.dataManager.set(BOTTOM_FLAG, flag);
+	}
+
+	@Override
+	public boolean isBase() {
+		return true;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}
@@ -71,6 +137,12 @@ public class EntityPrehistoricFloraDvinosaurus extends EntityPrehistoricFloraSwi
 	public static String getPeriod() {return "Permian";}
 
 	//public static String getHabitat() {return "Amphibious";}
+
+
+	@Override
+	public boolean sinks() {
+		return this.getSwimCooldown() <= 0;
+	}
 
 	@Override
 	public int getTalkInterval() {
@@ -99,6 +171,9 @@ public class EntityPrehistoricFloraDvinosaurus extends EntityPrehistoricFloraSwi
 		}
         if (this.getIsFast() && this.isReallyInWater()) {
             calcSpeed = calcSpeed * 1.52F;
+		}
+		if (this.isAtBottom() && !this.getIsFast() && !this.isInLove() && this.getEatTarget() == null) {
+			return 0;
         }
 		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed;
 	}
@@ -147,8 +222,6 @@ public class EntityPrehistoricFloraDvinosaurus extends EntityPrehistoricFloraSwi
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(DietString.MEAT, DietString.FISH);
 	}
-
-	
 
 	@Override
 	public boolean isAIDisabled() {
@@ -230,8 +303,45 @@ public class EntityPrehistoricFloraDvinosaurus extends EntityPrehistoricFloraSwi
 			launchAttack();
 		}
 
+		if (!this.world.isRemote) {
+			if (this.isAtBottom() && (!this.getBottomFlag()) && !this.getIsFast() && this.getSwimCooldown() <= 0) {
+				this.setBottomFlag(true);
+				this.setBottomCooldown(300 + rand.nextInt(600));
+			}
+			if (this.isAtBottom() && (this.getBottomFlag())) {
+				this.setBottomCooldown(this.getBottomCooldown() - 1);
+			}
+			if (this.getBottomCooldown() < 0) {
+				this.setBottomCooldown(0);
+			}
+			if (this.getBottomCooldown() <= 0 && this.getBottomFlag()) {
+				this.setBottomFlag(false);
+				this.setSwimCooldown(200 + rand.nextInt(300));
+			}
+			if (!(this.getBottomFlag())) {
+				this.setSwimCooldown(this.getSwimCooldown() - 1);
+			}
+			if (this.getSwimCooldown() <= 0) {
+				this.setSwimCooldown(0);
+			}
+
+		}
+
+
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
+	}
+
+	public boolean isAtBottom() {
+		//System.err.println("Testing position");
+		if (this.getPosition().getY() - 1 >= 0) {
+			BlockPos pos = new BlockPos(this.getPosition().getX(),this.getPosition().getY() - 1, this.getPosition().getZ());
+			return ((this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL))
+					&& ((this.world.getBlockState(pos)).getMaterial() != Material.WATER)
+					&& this.getSwimCooldown() <= 0 && this.onGround);
+		}
+		return false;
 	}
 
 	@Override
