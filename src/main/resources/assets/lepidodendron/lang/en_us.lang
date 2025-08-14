@@ -11067,6 +11067,7 @@ tile.pf_eggs_tadpole_notobatrachus.name=Notobatrachus Spawn
 tile.pf_eggs_tadpole_prosalirus.name=Prosalirus Spawn
 item.pf_spawn_egg_anurognathid_vesperopterylus.name=Spawn Vesperopterylus
 tile.pf_eggs_tadpole_hyogobatrachus.name=Hyogobatrachus Spawn
+tile.pf_eggs_tadpole_genibatrachus.name=Genibatrachus Spawn
 
 tile.pf_eggs_aquaticnymph_mayfly.name=Mayfly Spawn
 tile.pf_eggs_aquaticnymph_stonefly.name=Stonefly Spawn
@@ -11083,6 +11084,7 @@ entity.prehistoric_flora_tadpole_cratopipa.name=Cratopipa Tadpole
 entity.prehistoric_flora_tadpole_notobatrachus.name=Notobatrachus Tadpole
 entity.prehistoric_flora_tadpole_prosalirus.name=Prosalirus Tadpole
 entity.prehistoric_flora_tadpole_hyogobatrachus.name=Hyogobatrachus Tadpole
+entity.prehistoric_flora_tadpole_genibatrachus.name=Genibatrachus Tadpole
 
 
 
@@ -11495,4 +11497,27 @@ advancements.pf_adv_book_turfania.description=Unlock the entry for Turfania in t
 advancements.pf_adv_book_turfania.title=Turfania
 item.pf_turfania_raw.name=Raw Turfania
 entity.prehistoric_flora_turfania.name=Turfania
+advancements.pf_adv_book_victalimulus.description=Unlock the entry for Victalimulus in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_victalimulus.title=Victalimulus
+item.pf_victalimulus_raw.name=Raw Victalimulus
+entity.prehistoric_flora_victalimulus.name=Victalimulus
+advancements.pf_adv_book_mosura.description=Unlock the entry for Mosura in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_mosura.title=Mosura
+item.pf_mosura_raw.name=Raw Mosura
+entity.prehistoric_flora_mosura.name=Mosura
+advancements.pf_adv_book_araripemys.description=Unlock the entry for Araripemys in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_araripemys.title=Araripemys
+item.pf_araripemys_raw.name=Raw Araripemys
+entity.prehistoric_flora_araripemys.name=Araripemys
+item.pf_eggs_araripemys.name=Araripemys Eggs
+advancements.pf_adv_book_ptyktoptychion.description=Unlock the entry for Ptyktoptychion in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_ptyktoptychion.title=Ptyktoptychion
+item.pf_ptyktoptychion_raw.name=Raw Ptyktoptychion
+entity.prehistoric_flora_ptyktoptychion.name=Ptyktoptychion
+item.pf_eggs_ptyktoptychion.name=Ptyktoptychion Eggs
+advancements.pf_adv_book_genibatrachus.description=Unlock the entry for Genibatrachus in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_genibatrachus.title=Genibatrachus
+item.pf_genibatrachus_raw.name=Raw Genibatrachus
+entity.prehistoric_flora_genibatrachus.name=Genibatrachus
+item.pf_eggs_genibatrachus.name=Genibatrachus Eggs
 
