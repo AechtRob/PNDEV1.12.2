@@ -1,0 +1,47 @@
+{
+	"name": "Fukuititan",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/fukuititan_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_fukuititan",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_fukuititan",
+			"title": "Fukuititan",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Sauropoda$(br)>Macronaria$(br)>Family"
+		},
+        	{
+            "type": "entity",
+            "name": "F. nipponensis",
+            "entity": "lepidodendron:prehistoric_flora_fukuititan",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fukuititan",
+			"type": "text",
+			"text": "Fukuititan is titanosauriform sauropod from Early Cretaceous Japan that was described in 2010. It is middle-sized sauropod known mainly from limb bones as well as tooth, a cervical neural arch, fused ischia, and pedal ungual. Due to lack of materials its placement is not well known."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_fukuititan"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_fukuititan"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_fukuititan"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_fukuititan"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_fukuititan"
+		}
+	]
+}

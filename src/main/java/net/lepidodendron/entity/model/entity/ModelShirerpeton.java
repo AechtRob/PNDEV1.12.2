@@ -332,8 +332,61 @@ public class ModelShirerpeton extends ModelBasePalaeopedia {
         //this.base.offsetZ = this.base.offsetZ + 0.7F;
         this.root.render(f5);
     }
-
+    public void renderStaticWall(float f) {
+        this.neck.rotateAngleX = (float) Math.toRadians(90);
+        this.setRotateAngle(neck, -0.152F, -0.2964F, 0.0539F);
+        this.setRotateAngle(head, 0F, 0.0F, 0.0F);
+        this.neck.offsetY = -0F;
+        this.neck.offsetX = -0F;
+        this.neck.offsetZ = -0.203F;
+        this.neck.render(0.01F);
+        resetToDefaultPose();
+    }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(tail3, 0.1401F, -0.3632F, -0.0501F);
+        this.setRotateAngle(tail2, 0.0632F, -0.2613F, -0.0164F);
+        this.setRotateAngle(tail, -0.2317F, -0.3405F, 0.0786F);
+        this.setRotateAngle(root, 0.0F, -0.2705F, 0.0F);
+        this.setRotateAngle(rightLeg3, 0.0873F, 0.0F, 1.1345F);
+        this.setRotateAngle(rightLeg2, 0.0F, 0.0F, -0.9599F);
+        this.setRotateAngle(rightLeg, 0.0F, -0.5236F, -0.2618F);
+        this.setRotateAngle(rightArm3, 0.4974F, -0.9163F, 0.4102F);
+        this.setRotateAngle(rightArm2, 0.1309F, -0.7418F, -0.48F);
+        this.setRotateAngle(rightArm, 0.0F, 0.6545F, -0.5236F);
+        this.setRotateAngle(neck, -0.152F, -0.2964F, 0.0539F);
+        this.setRotateAngle(leftLeg3, 0.0873F, 0.0F, -1.1345F);
+        this.setRotateAngle(leftLeg2, 0.0F, 0.0F, 0.9599F);
+        this.setRotateAngle(leftLeg, 0.007F, -0.122F, 0.2047F);
+        this.setRotateAngle(leftArm3, 0.7612F, 0.8031F, -0.1551F);
+        this.setRotateAngle(leftArm2, 0.1309F, 0.7418F, 0.48F);
+        this.setRotateAngle(leftArm, 0.0F, 0.0175F, 0.5236F);
+        this.setRotateAngle(jaw, 0.3272F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.5672F, 0.0F, 0.0F);
+        this.setRotateAngle(eyeRight, 0.0F, -0.1745F, 0.3054F);
+        this.setRotateAngle(eyeLeft, 0.0F, 0.1745F, -0.3054F);
+        this.setRotateAngle(cube_r9, 0.3272F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.0F, -0.6545F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, 0.6545F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r19, -0.0567F, 0.6413F, -0.0218F);
+        this.setRotateAngle(cube_r18, 0.0F, -0.6981F, 0.0F);
+        this.setRotateAngle(cube_r17, -0.0044F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, 0.0F, -0.5323F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.0F, -0.1134F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.0F, 0.1134F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.0F, 0.5323F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, 0.0F, -0.1789F, 0.0F);
+        this.setRotateAngle(body, 0.0F, -0.1178F, 0.0F);
+        this.root.offsetY = 0.25F;
+        this.root.render(0.01F);
         this.resetToDefaultPose();
     }
 

@@ -1369,13 +1369,17 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_procompsognathus", EntityPrehistoricFloraProcompsognathus.class, LepidodendronMod.ENTITY_PROCOMPSOGNATHUS, 64,-1979570,-13159892);
         registerEntity("prehistoric_flora_turfania", EntityPrehistoricFloraTurfania.class, LepidodendronMod.ENTITY_TURFANIA, 48,-11176629,-5394883);
         registerEntity("prehistoric_flora_erettopterus", EntityPrehistoricFloraErettopterus.class, LepidodendronMod.ENTITY_ERETTOPTERUS, 48,-13222357,-6516642);
-
+        registerEntity("prehistoric_flora_kururubatrachus", EntityPrehistoricFloraKururubatrachus.class, LepidodendronMod.ENTITY_KURURUBATRACHUS, 48,-11912659,-12431318);
+        registerEntity("prehistoric_flora_americaspis", EntityPrehistoricFloraAmericaspis.class, LepidodendronMod.ENTITY_AMERICASPIS, 48,-15806080,-2528997);
+        registerEntity("prehistoric_flora_araripemys", EntityPrehistoricFloraAraripemys.class, LepidodendronMod.ENTITY_ARARIPEMYS, 48,-13620198,-10729439);
+        registerEntity("prehistoric_flora_ptyktoptychion", EntityPrehistoricFloraPtyktoptychion.class, LepidodendronMod.ENTITY_PTYKTOPTYCHION, 84,-8414827,-14539484);
+        registerEntity("prehistoric_flora_genibatrachus", EntityPrehistoricFloraGenibatrachus.class, LepidodendronMod.ENTITY_GENIBATRACHUS, 48,-9024971,-4084892);
 
         // aquatic nymphs for Stonefly, Mayfly, Argentinala, Velisoptera, Damselfly
         registerEntityNoEgg("prehistoric_flora_aquaticnymph", EntityPrehistoricFloraAquaticBugNymph.class, LepidodendronMod.ENTITY_AQUATIC_NYMPH, 48);
         registerEntityNoEgg("prehistoric_flora_tadpole", EntityPrehistoricFloraTadpole.class, LepidodendronMod.ENTITY_TADPOLE, 48);
-
-
+        registerEntity("prehistoric_flora_victalimulis", EntityPrehistoricFloraVictalimulus.class, LepidodendronMod.ENTITY_VICTALIMULUS, 48,-5729963,-13492456);
+        registerEntity("prehistoric_flora_mosura", EntityPrehistoricFloraMosura.class, LepidodendronMod.ENTITY_MOSURA, 48,-1449513,-5141685);
 
 
 

@@ -5881,14 +5881,24 @@ public class LepidodendronSorter {
     public static final int eoconfuciusornis_raw = 5597;
     public static final int eggs_procompsognathus = 5598;
     public static final int procompsognathus_raw = 5599;
-    public static final int turfania_raw = 5605;
 
     public static final int bivalve_toucasia = 6000;
     public static final int coeloptychium = 6001;
     public static final int thylacocercus = 6003;
     public static final int megasiphon = 6002;
     public static final int chancelloria = 6003;
-    //End of, The Devon List-----
+  
+    public static final int victalimulus_raw = 5600;
+    public static final int mosura_raw = 5601;
+    public static final int eggs_araripemys = 5602;
+    public static final int araripemys_raw = 5603;
+    public static final int eggs_tyktoptychion = 5604;
+    public static final int eggs_tyktoptychion_worldgen = 5624;
+    public static final int ptyktoptychion_raw = 5625;
+    public static final int genibatrachus_raw = 5607;
+    public static final int turfania_raw = 5605;
+    public static final int kururubatrachus_raw = 5616;
+    public static final int americaspis_raw = 5623;
 
 
 

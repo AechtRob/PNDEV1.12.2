@@ -1,0 +1,52 @@
+{
+	"name": "Fukuiraptor",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/fukuiraptor_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_fukuiraptor",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_fukuiraptor",
+			"title": "Fukuiraptor",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Megaraptora"
+		},
+        	{
+            "type": "entity",
+            "name": "F. kitadaniensis",
+            "entity": "lepidodendron:prehistoric_flora_fukuiraptor",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fukuiraptor",
+			"type": "text",
+			"text": "Fukuiraptor is a dinosaur described from Early Cretaceous Kitadani Formation of Japan. Originally believed to be large dromaeosaur, this theropod had unique characters that was not well known when described in 2001. It was later found to be a basal megaraptoran, reaching nearly 5 m for subadult specimen."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fukuiraptor",
+			"type": "text",
+			"text": "It is often reconstructed with Sinraptor-like skull, but that is outdated and it should have different shape of skull, in this mod it is reconstructed based on more derived megaraptorans, but its true appearance is still unknown."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_fukuiraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_fukuiraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_fukuiraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_fukuiraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_fukuiraptor"
+		}
+	]
+}
