@@ -235,7 +235,7 @@ public class EntityPrehistoricFloraPtyktoptychion extends EntityPrehistoricFlora
 		return true;
 	}
 
-	public static String getPeriod() {return "Permian";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
