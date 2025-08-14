@@ -5870,16 +5870,25 @@ public class LepidodendronSorter {
     public static final int crinoid_roveacrinus = 5586;
     public static final int pseudarthron_raw = 5587;
     public static final int halichondrites = 5588;
-  
+    public static final int trypanognathus_raw = 5589;
+    public static final int amphibian_spawn_trypanognathus = 5590;
+    public static final int amphibian_spawn_trypanognathus_worldgen = 5591;
+    public static final int capsospongia = 5592;
+    public static final int vetulocystis = 5593;
+    public static final int bivalve_requienia = 5594;
     public static final int dentilepisosteus_raw = 5595;
     public static final int eggs_eoconfuciusornis = 5596;
     public static final int eoconfuciusornis_raw = 5597;
     public static final int eggs_procompsognathus = 5598;
     public static final int procompsognathus_raw = 5599;
-
-
     public static final int turfania_raw = 5605;
 
+    public static final int bivalve_toucasia = 6000;
+    public static final int coeloptychium = 6001;
+    public static final int thylacocercus = 6003;
+    public static final int megasiphon = 6002;
+    public static final int chancelloria = 6003;
+    //End of, The Devon List-----
 
 
 

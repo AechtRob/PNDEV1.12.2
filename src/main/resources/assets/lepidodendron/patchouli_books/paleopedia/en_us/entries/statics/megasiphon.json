@@ -1,0 +1,55 @@
+{
+	"name": "Megasiphon",
+	"read_by_default": true,
+	"icon": "lepidodendron:megasiphon",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_megasiphon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_megasiphon",
+			"title": "Megasiphon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Chordata$(br)>Tunicata"
+		},
+		{
+			"type": "multiblock",
+			"name": "M. thylakos",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:megasiphon",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megasiphon",
+			"type": "text",
+			"text": "Megasiphon thylakos comes from the middle Cambrian, will fossils found in the Marjum Formation, Utah (US). It is a small tunicate, growing up to 3 cm in height. Unlike the older Maotianshan tunicate, Shankouclava, which is relatively thin and has a single large opening, Megasiphon is much closer in appearance to modern tunicates, with a wide body and two large siphons at the top. We also know that the siphons themselves has muscle fibres, showing us that the classic"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megasiphon",
+			"type": "text",
+			"text": "squirt and/or shrink of tunicates had already evolved a little before 500 million years ago. Despite the fact that there is only a singular fossil with only external material preserved, Megasiphon still has incredible implications for tunicate evolution. Firstly, it could be a crown tunicate between Ascidiacea and Taliacea, meaning that molecular clock studies done stating their divergence date to be at 450 million years would be incorrect by 50 million years."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megasiphon",
+			"type": "text",
+			"text": "This is pushed further back the probable Ediacaran tunicates Burykhia and Ausia, setting to 100 million years out from the original estimates. This is based on the side that believes tunicates evolved from a motile ancestor. The second proposition is that Megasiphon is a stem-tunicate, which has even more profound implications that the body-plan of a bag and two siphons is ancestral to all tunicates, although this one lines up more with the 450 mya molecular clock."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megasiphon",
+			"type": "text",
+			"text": "The generic name derives from the Greek word 'Mega', to mean 'large'; and siphon. The specific name derives directly from the Greek word 'thylakos', to mean 'sac/pouch'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megasiphon",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Ptychoceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ptychoceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ptychoceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ptychoceras",
+			"title": "Ptychoceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Ancyloceratina$(br)>Ancyloceratoidea$(br)>Ptychoceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Ptychoceras sp.",
+            "entity": "lepidodendron:prehistoric_flora_ptychoceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ptychoceras",
+			"type": "text",
+			"text": "Ptychoceras comes from the Cretaceous, with fossils found across the globe. It is a small ptychoceratid, growing up to 3 cm in size. It is unique in having an internalised shell, as well as having its shell coil every so often at full 180 degree turns."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ptychoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ptychoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ptychoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ptychoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ptychoceras"
+		}
+	]
+}

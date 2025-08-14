@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_vaveliksia",
 			"title": "Vaveliksia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>$(o)Porifera (?)"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>$(o)Porifera (?)$()$(br)>Olgunidae"
 		},
 		{
 			"type": "multiblock",
@@ -29,17 +29,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_vaveliksia",
 			"type": "text",
-			"text": "Vaveliksia comes from the late Ediacaran, with fossils found in the Dniester River, Ukraine and White Sea, Russia. It is tubular sponge-like lifeform found in shallow waters and could grow up to 10 cm in height, and possibly partook in filter feeding from the surrounding water."
+			"text": "Vaveliksia comes from the late Ediacaran, with fossils found in the Dniester River, Ukraine and White Sea, Russia. It is small olgunid, growing up to 10 cm in height, and possibly partook in filter feeding from the surrounding water."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_vaveliksia",
 			"type": "text",
 			"text": "The generic name (and specific name of the type species) derives from the name of Vyacheslav A. Velikanov, a Ukrainian geologist."
-		},
-		{
-			"advancement": "lepidodendron:pf_adv_book_vaveliksia",
-			"type": "text",
-			"text": "The generic name derives from the name of Vyacheslav A. Velikanov, a Ukrainian Geologist."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_vaveliksia",

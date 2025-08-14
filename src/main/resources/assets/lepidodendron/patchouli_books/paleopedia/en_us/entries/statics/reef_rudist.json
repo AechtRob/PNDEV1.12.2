@@ -1,0 +1,40 @@
+{
+	"name": "Rudist Reef",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/reef_rudist_icon.png",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_reef_rudist",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_reef_rudist",
+			"title": "Requienia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Hippuritida$(br)>Radiolitoidea$(br)>$(o)Hippuritidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "Hippuritidae",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:rudist_reef",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_rudist",
+			"type": "text",
+			"text": "Hippuritid's come from the Late Cretaceous, with fossils found across the globe. Due to their great abundance during the Cretaceous, they had started to form massive reef structures, although despite their large numbers, they wouldn't survive past the K-Pg Mass Extinction Event."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_rudist",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

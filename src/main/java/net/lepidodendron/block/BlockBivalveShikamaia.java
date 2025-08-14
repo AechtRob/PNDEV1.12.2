@@ -244,6 +244,12 @@ public class BlockBivalveShikamaia extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_bivalve_shikamaia");
 		}
 
+		@Override
+		@Nullable
+		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
+			return NULL_AABB;
+		}
+
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
@@ -277,6 +283,12 @@ public class BlockBivalveShikamaia extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
+		@Override
+		public boolean isFullCube(IBlockState state)
+		{
+			return false;
+		}
+
 		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
 			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))
 					&& (worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)) {
@@ -284,13 +296,28 @@ public class BlockBivalveShikamaia extends ElementsLepidodendronMod.ModElement {
 			}
 
 			return false;
+
+		}
+
+
+		public boolean isWaterBlock(World world, BlockPos pos) {
+			if (world.getBlockState(pos).getMaterial() == Material.WATER) {
+				//IBlockState iblockstate = world.getBlockState(pos);
+				//if (((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0) {
+				return true;
+				//}
+			}
+			return false;
 		}
 
 		@Override
 		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta,
 												EntityLivingBase placer) {
+			if (isWaterBlock(worldIn, pos.north(1)) && isWaterBlock(worldIn, pos.south(1)) && isWaterBlock(worldIn, pos.west(1)) && isWaterBlock(worldIn, pos.east(1))
+			) {
+				return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+			}
 			return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
 		}
-
 	}
 }

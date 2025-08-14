@@ -1,0 +1,45 @@
+{
+	"name": "Capsospongia",
+	"read_by_default": true,
+	"icon": "lepidodendron:capsospongia",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_capsospongia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_capsospongia",
+			"title": "Capsospongia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Porifera$(br)>Demospongiae$(br)>Anthaspidellidae"
+		},
+        {
+        "type": "multiblock",
+        "name": "C. undulata",
+        "enable_visualize": false,
+        "multiblock": {
+        "pattern": [
+        [ "1" ],
+        [ "0" ]
+        ],
+        "mapping": {
+        "1": "lepidodendron:capsospongia",
+        "0": "minecraft:air"
+        }
+        }
+        },
+        {	
+			"advancement": "lepidodendron:pf_adv_book_capsospongia",
+			"type": "text",
+			"text": "Capsospongia undulata comes from the Middle Cambrian, with fossils found in the Burgess Shale, Canada. It is a small demosponge, growing up to 7 cm in height. Capsospongia has a unique appearance, with an annulated, or ribbed, surface, which themselves are adorned with horizontal ridges, giving it a similar appearance to the unrelated and later Rugose Corals of the Ordovician."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_capsospongia",
+			"type": "text",
+			"text": "The generic name derives from the Latin words 'capsa', to mean 'boxed'; and 'spongia', to mean 'sponge'. The specific name derives from the Latin word 'undulatus', to mean 'wavy'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_capsospongia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

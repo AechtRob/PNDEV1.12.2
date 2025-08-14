@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:bivalve_requienia"},
+      {"model": "lepidodendron:bivalve_requienia_var"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:bivalve_requienia", "x": 90},
+      {"model": "lepidodendron:bivalve_requienia_var", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:bivalve_requienia", "x": 90, "y": 90},
+      {"model": "lepidodendron:bivalve_requienia_var", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:bivalve_requienia", "x": 90, "y": 180},
+      {"model": "lepidodendron:bivalve_requienia_var", "x": 90, "y": 180}
+    ],
+    "facing=west": [
+      {"model": "lepidodendron:bivalve_requienia", "x": 90, "y": 270},
+      {"model": "lepidodendron:bivalve_requienia_var", "x": 90, "y": 270}
+    ],
+    "facing=up": [
+      {"model": "lepidodendron:bivalve_requienia"},
+      {"model": "lepidodendron:bivalve_requienia_var"}
+    ]
+  }
+}

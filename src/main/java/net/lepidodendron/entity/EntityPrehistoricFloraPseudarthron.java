@@ -23,7 +23,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraPseudarthron extends EntityPrehistoricFloraTrilobiteBottomBase implements ITrappableWater, IAdvancementGranter {
+public class EntityPrehistoricFloraPseudarthron extends EntityPrehistoricFloraTrilobiteBottomBase implements IAdvancementGranter, ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -154,6 +154,8 @@ public class EntityPrehistoricFloraPseudarthron extends EntityPrehistoricFloraTr
 		return LepidodendronMod.PSEUDARTHRON_LOOT;
 	}
 
+	@Nullable
+	@Override
 	public CustomTrigger getModTrigger() {
 		return ModTriggers.CLICK_PSEUDARTHRON;
 	}

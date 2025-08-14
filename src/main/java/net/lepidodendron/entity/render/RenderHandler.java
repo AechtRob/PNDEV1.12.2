@@ -8391,6 +8391,18 @@ public class RenderHandler {
                 return new RenderTurfania(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTrypanognathus.class, new IRenderFactory<EntityPrehistoricFloraTrypanognathus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTrypanognathus> createRenderFor(RenderManager manager) {
+                return new RenderTrypanognathus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraErettopterus.class, new IRenderFactory<EntityPrehistoricFloraErettopterus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraErettopterus> createRenderFor(RenderManager manager) {
+                return new RenderErettopterus(manager);
+            }
+        });
 
 
 
@@ -8480,6 +8492,7 @@ public class RenderHandler {
             ClientRegistry.bindTileEntitySpecialRenderer(BlockStromatoveris.TileEntityCustom.class, new RenderStromatoveris());
             ClientRegistry.bindTileEntitySpecialRenderer(BlockThaumaptilon.TileEntityCustom.class, new RenderThaumaptilon());
             ClientRegistry.bindTileEntitySpecialRenderer(BlockShankouclava.TileEntityCustom.class, new RenderShankouclava());
+            ClientRegistry.bindTileEntitySpecialRenderer(BlockMegasiphon.TileEntityCustom.class, new RenderMegasiphon());
         }
 
         //These do not have block models available:

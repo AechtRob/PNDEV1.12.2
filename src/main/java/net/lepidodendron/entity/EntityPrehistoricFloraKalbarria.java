@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraKalbarria extends EntityPrehistoricFloraSwimm
 		return true;
 	}
 
-	public static String getPeriod() {return "$(o)[Ordovician (?)] Silurian (?)$()";}
+	public static String getPeriod() {return "[Ordovician (?)] Silurian (?)";}
 
 	//public static String getHabitat() {return "Amphibious";}
 

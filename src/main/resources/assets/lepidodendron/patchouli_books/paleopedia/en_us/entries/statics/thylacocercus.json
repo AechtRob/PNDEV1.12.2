@@ -1,0 +1,45 @@
+{
+	"name": "Thylacocercus",
+	"read_by_default": true,
+	"icon": "lepidodendron:thylacocercus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_thylacocercus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_thylacocercus",
+			"title": "Thylacocercus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Eumetazoa$(br)>Vetulocystida$(br)>Vetulocystidae"
+		},
+        {
+        "type": "multiblock",
+        "name": "T. ignota",
+        "enable_visualize": false,
+        "multiblock": {
+        "pattern": [
+        [ "1" ],
+        [ "0" ]
+        ],
+        "mapping": {
+        "1": "lepidodendron:thylacocercus",
+        "0": "minecraft:air"
+        }
+        }
+        },
+        {	
+			"advancement": "lepidodendron:pf_adv_book_thylacocercus",
+			"type": "text",
+			"text": "Thylacocercus ignota comes from the middle Cambrian, with fossils found in the Wheeler Shale, Utah (US). It is a small vetulocystid, growing up to 2 cm in height. Thylacocercus is unique from its older relatives by the fact that cones present are now gone, with the dorsal 'mouth' cone now replaced by a mouth surrounded by a crown of tentacles, although it is unknown what"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thylacocercus",
+			"type": "text",
+			"text": "became of the posterior cone, due to the fact we only have a singular fossil to work from, meaning it is most likely on the 'obscured' side of the fossil. The generic name derives from the Greek words 'thylacos', to mean 'bag-like'; and 'kerkus', to mean 'tail-like'. The specific name derives from the Greek word 'ignotus', to mean 'unknown'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thylacocercus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

@@ -1,0 +1,32 @@
+{
+  "variants": {
+    "normal": [
+        {"model": "lepidodendron:capsospongia_1"},
+        {"model": "lepidodendron:capsospongia_2"}
+    ],
+    "facing=north": [
+        {"model": "lepidodendron:capsospongia_side_1"},
+      {"model": "lepidodendron:capsospongia_side_2"}
+    ],
+    "facing=east": [
+        {"model": "lepidodendron:capsospongia_side_1","y": 90},
+      {"model": "lepidodendron:capsospongia_side_2","y": 90}
+    ],
+    "facing=south": [
+       {"model": "lepidodendron:capsospongia_side_1", "y": 180},
+      {"model": "lepidodendron:capsospongia_side_2", "y": 180}
+    ],
+  "facing=west": [
+        {"model": "lepidodendron:capsospongia_side_1", "y": 270},
+      {"model": "lepidodendron:capsospongia_side_2", "y": 270}
+    ],
+  "facing=up": [
+        {"model": "lepidodendron:capsospongia_1"},
+      {"model": "lepidodendron:capsospongia_2"}
+    ],
+    "facing=down": [
+        {"model": "lepidodendron:capsospongia_1", "x": 180},
+      {"model": "lepidodendron:capsospongia_2", "x": 180}
+    ]
+  }
+}

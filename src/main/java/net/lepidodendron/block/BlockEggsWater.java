@@ -256,6 +256,7 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 			"lepidodendron:prehistoric_flora_aquaticnymph@velisoptera",
 			"lepidodendron:prehistoric_flora_aquaticnymph@argentinala",
 			"lepidodendron:prehistoric_flora_aquaticnymph@damselfly",
+			"lepidodendron:prehistoric_flora_trypanognathus",
 	};
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
