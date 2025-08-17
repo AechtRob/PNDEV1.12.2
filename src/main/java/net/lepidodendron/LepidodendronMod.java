@@ -3417,6 +3417,13 @@ public class LepidodendronMod {
  public static final int ENTITY_TRYPANOGNATHUS = 1404;
 	public static final ResourceLocation TRYPANOGNATHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/trypanognathus"));
 	public static final ResourceLocation TRYPANOGNATHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/trypanognathus_young"));
+	public static final int ENTITY_HOMALONOTUS = 1406;
+	public static final ResourceLocation HOMALONOTUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/homalonotus"));
+	public static final int ENTITY_ARAXOCERAS = 1407;
+	public static final ResourceLocation ARAXOCERAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/araxoceras"));
+	public static final ResourceLocation ARAXOCERAS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/araxoceras_young"));
+	public static final int ENTITY_XIYUICHTHYS = 1408;
+	public static final ResourceLocation XIYUICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/xiyuichthys"));
 
 
 

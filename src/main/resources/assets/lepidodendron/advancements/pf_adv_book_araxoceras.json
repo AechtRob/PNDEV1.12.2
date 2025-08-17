@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:araxoceras_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_araxoceras.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_araxoceras.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_araxoceras"
+        }
+    }
+}

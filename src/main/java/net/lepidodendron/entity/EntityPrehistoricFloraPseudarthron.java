@@ -145,13 +145,13 @@ public class EntityPrehistoricFloraPseudarthron extends EntityPrehistoricFloraTr
 		//this.renderYawOffset = this.rotationYaw;
 	}
 
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-	}
-
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.PSEUDARTHRON_LOOT;
+	}
+
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
 	}
 
 	@Nullable

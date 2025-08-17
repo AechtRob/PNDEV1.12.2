@@ -8445,6 +8445,24 @@ public class RenderHandler {
                 return new RenderGenibatrachus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHomalonotus.class, new IRenderFactory<EntityPrehistoricFloraHomalonotus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraHomalonotus> createRenderFor(RenderManager manager) {
+                return new RenderHomalonotus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAraxoceras.class, new IRenderFactory<EntityPrehistoricFloraAraxoceras>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAraxoceras> createRenderFor(RenderManager manager) {
+                return new RenderAraxoceras(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraXiyuichthys.class, new IRenderFactory<EntityPrehistoricFloraXiyuichthys>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraXiyuichthys> createRenderFor(RenderManager manager) {
+                return new RenderXiyuichthys(manager);
+            }
+        });
 
 
 
@@ -8626,6 +8644,7 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellJeppssonoceras.TileEntityCustom.class, new RenderNautiloidShellJeppssonoceras());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellNipponites.TileEntityCustom.class, new RenderNautiloidShellNipponites());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellYezoceras.TileEntityCustom.class, new RenderNautiloidShellYezoceras());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellAraxoceras.TileEntityCustom.class, new RenderNautiloidShellAraxoceras());
 
 
 
