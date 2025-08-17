@@ -21,10 +21,12 @@ import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.IEntityLivingData;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
@@ -168,10 +170,7 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 		if(this.onGround && !this.isReallyInWater() && this.canHide()){
 			this.setAnimation(HIDE_ANIMATION);
 		}
-
 	}
-
-
 
 	protected void onAnimationFinish(Animation animation)
 	{}
@@ -243,6 +242,10 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
+
+		if (this.isReallyInWater() && this.getAnimation() == HIDE_ANIMATION){
+			this.setAnimation(NO_ANIMATION);
+		}
 
 		this.setSizer(this.getHitBoxSize()[0], this.getHitBoxSize()[1]);
 		
