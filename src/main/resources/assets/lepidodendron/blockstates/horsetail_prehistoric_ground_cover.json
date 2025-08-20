@@ -1,0 +1,14 @@
+{
+    "variants": {
+        "snowy=false": [ 
+        	{"model": "lepidodendron:prehistoric_ground_cover_horsetail_light" },
+        	{"model": "lepidodendron:prehistoric_ground_cover_horsetail" },
+        	{"model": "lepidodendron:prehistoric_ground_cover_horsetail_light", "y": 90},
+        	{"model": "lepidodendron:prehistoric_ground_cover_horsetail",  "y": 90}
+       ],
+        "snowy=true": [
+        	{ "model": "lepidodendron:prehistoric_ground_cover_horsetail_snowed" },
+        	{ "model": "lepidodendron:prehistoric_ground_cover_horsetail_snowed", "y": 90 }
+        ]
+    }
+}

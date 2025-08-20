@@ -5253,6 +5253,8 @@ public class LepidodendronSorter {
     public static final int rudist_reef_sticky = 8193;
     public static final int bivalve_titanosarcolites = 8194;
     public static final int bivalve_ichthyosarcolites = 8195;
+    public static final int horsetail_prehistoric_ground_cover = 8196;
+    public static final int tussock_horsetail = 8197;
     //Rob list ends-----
     
     public static final int priscomyzon_raw = 4974;

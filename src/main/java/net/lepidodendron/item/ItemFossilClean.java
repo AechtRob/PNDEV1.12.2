@@ -1401,6 +1401,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_gonioceras_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_gorgonops_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_grassy_horsetail_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_tussock_horsetail_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_greererpeton_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_groenlandaspis_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_grypania_clean", "inventory"),

@@ -43,11 +43,11 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockGrassyHorsetail extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:grassy_horsetail")
+public class BlockTussockHorsetail extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:tussock_horsetail")
 	public static final Block block = null;
-	public BlockGrassyHorsetail(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.grassy_horsetail);
+	public BlockTussockHorsetail(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.tussock_horsetail);
 	}
 
 	@Override
@@ -60,16 +60,16 @@ public class BlockGrassyHorsetail extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:grassy_horsetail", "inventory"));
+				new ModelResourceLocation("lepidodendron:tussock_horsetail", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:grassy_horsetail", BlockGrassyHorsetail.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockGrassyHorsetail.block);
-		OreDictionary.registerOre("plant", BlockGrassyHorsetail.block);
-		OreDictionary.registerOre("stemHorsetail", BlockGrassyHorsetail.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:tussock_horsetail", BlockTussockHorsetail.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockTussockHorsetail.block);
+		OreDictionary.registerOre("plant", BlockTussockHorsetail.block);
+		OreDictionary.registerOre("stemHorsetail", BlockTussockHorsetail.block);
 	}
 
 
@@ -81,14 +81,14 @@ public class BlockGrassyHorsetail extends ElementsLepidodendronMod.ModElement {
 			setHardness(0F);
 			setResistance(0F);
 			setLightLevel(0F);
-			setTranslationKey("pf_grassy_horsetail");
-			setRegistryName("grassy_horsetail");
+			setTranslationKey("pf_tussock_horsetail");
+			setRegistryName("tussock_horsetail");
 		}
 
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_GRASSY_HORSETAIL;
+			return ModTriggers.CLICK_TUSSOCK_HORSETAIL;
 		}
 
 		@Override
@@ -164,7 +164,7 @@ public class BlockGrassyHorsetail extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail plant");
-	        	tooltip.add("Periods: Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]");
+	        	tooltip.add("Periods: Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]");
 	        	tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
@@ -177,7 +177,7 @@ public class BlockGrassyHorsetail extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Block planted() {
-			return BlockGrassyHorsetail.block;
+			return BlockTussockHorsetail.block;
 		}
 
 		@Override
