@@ -322,8 +322,8 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         BlockPos randPos;
         xx = -dist;
         while (xx <= dist) {
-            yy = (int) -Math.round((double) dist / 2D);
-            while (yy <= (int) Math.round((double) dist / 2D)) {
+            yy = (int) -Math.ceil((double) dist / 2D);
+            while (yy <= (int) Math.ceil((double) dist / 2D)) {
                 zz = -dist;
                 while (zz <= dist) {
                     if (entity.getPosition().getY() + yy >= 1 && entity.getPosition().getY() + yy <= 255) {
@@ -1547,9 +1547,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             }
         }
 
-        if (!world.isRemote) { //Do every 30 seconds provided we're not trying to lay eggs
+        if (!world.isRemote) {
+            // Do every 120 seconds provided we're not trying to lay eggs,
+            // as the AI searches directly in that case.
+            // Colliding with a nest triggers a findNest anyway
             if (!this.getLaying()
-                    && ((double) this.getTicks() / 600D == (int) Math.round((double) this.getTicks() / 600D))) {
+                    && ((double) this.getTicks() / 2400D == (int) Math.round((double) this.getTicks() / 2400D))) {
                 @Nullable BlockPos pos = this.getNestLocation();
                 if (pos == null) {
                     this.setNestLocation(this.findNest(this, 2, false));

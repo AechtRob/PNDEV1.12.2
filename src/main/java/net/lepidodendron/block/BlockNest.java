@@ -176,6 +176,17 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public void onEntityCollision(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
+			super.onEntityCollision(worldIn, pos, state, entityIn);
+			if (entityIn instanceof EntityPrehistoricFloraAgeableBase) {
+				EntityPrehistoricFloraAgeableBase base = (EntityPrehistoricFloraAgeableBase) entityIn;
+				if (!base.getLaying()) {
+					base.findNest(base, 6, false);
+				}
+			}
+		}
+
+		@Override
 		@Nullable
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
 			if (source instanceof World) {
