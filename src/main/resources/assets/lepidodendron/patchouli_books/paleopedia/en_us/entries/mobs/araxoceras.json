@@ -1,0 +1,52 @@
+{
+	"name": "Araxoceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/araxoceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_araxoceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_araxoceras",
+			"title": "Araxoceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Ammonitida$(br)>Ceratitida>$(br)>Araxoceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. latissimum",
+            "entity": "lepidodendron:prehistoric_flora_araxoceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_araxoceras",
+			"type": "text",
+			"text": "Araxoceras comes from the upper Permian, with fossils found in formations across Western Asia. It is a small araxoceratid, growing up to 8 cm in size. Araxoceras has an incredibly unique shell shape, with the most prominent being the weird T-shaped aperture, with the eyes being positioned in the 'wings'. The aperture shape is caused by the fact as Araxoceras ages, its shell gets wider, more so on the inner edge of the coil,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_araxoceras",
+			"type": "text",
+			"text": "leaving what appears to be a 'hole' in its sides. As to why it, and its relatives, grew like this is unknown, but it certainly makes for a weird and elusive ammonite."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_araxoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_araxoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_araxoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_araxoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_araxoceras"
+		}
+	]
+}

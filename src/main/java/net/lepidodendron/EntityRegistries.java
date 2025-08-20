@@ -1369,6 +1369,9 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_procompsognathus", EntityPrehistoricFloraProcompsognathus.class, LepidodendronMod.ENTITY_PROCOMPSOGNATHUS, 64,-1979570,-13159892);
         registerEntity("prehistoric_flora_turfania", EntityPrehistoricFloraTurfania.class, LepidodendronMod.ENTITY_TURFANIA, 48,-11176629,-5394883);
         registerEntity("prehistoric_flora_erettopterus", EntityPrehistoricFloraErettopterus.class, LepidodendronMod.ENTITY_ERETTOPTERUS, 48,-13222357,-6516642);
+        registerEntity("prehistoric_flora_homalonotus", EntityPrehistoricFloraHomalonotus.class, LepidodendronMod.ENTITY_HOMALONOTUS, 48,-10646396,-7117493);
+        registerEntity("prehistoric_flora_araxoceras", EntityPrehistoricFloraAraxoceras.class, LepidodendronMod.ENTITY_ARAXOCERAS, 48,-13222357,-6516642);
+        registerEntity("prehistoric_flora_xiyuichthys", EntityPrehistoricFloraXiyuichthys.class, LepidodendronMod.ENTITY_XIYUICHTHYS, 48,-4883239,-6675146);
         registerEntity("prehistoric_flora_kururubatrachus", EntityPrehistoricFloraKururubatrachus.class, LepidodendronMod.ENTITY_KURURUBATRACHUS, 48,-11912659,-12431318);
         registerEntity("prehistoric_flora_americaspis", EntityPrehistoricFloraAmericaspis.class, LepidodendronMod.ENTITY_AMERICASPIS, 48,-15806080,-2528997);
         registerEntity("prehistoric_flora_araripemys", EntityPrehistoricFloraAraripemys.class, LepidodendronMod.ENTITY_ARARIPEMYS, 48,-13620198,-10729439);

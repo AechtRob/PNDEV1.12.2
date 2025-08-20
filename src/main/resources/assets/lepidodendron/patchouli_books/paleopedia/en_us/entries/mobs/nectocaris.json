@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_nectocaris",
 			"title": "Nectocaris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Nectocarididae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Bilateria$(br)>Spiralia$(br)>Gnathifera$(br)>Nectocarididae"
 		},
 		{
 			"type": "entity",
@@ -21,7 +21,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_nectocaris",
 			"type": "text",
-			"text": "Nectocaris was a free swimming predatory and scavenging organism. Its placement is currently disputed and it was unknown whether it was an ancestor to cephalopods or not. "
+			"text": "Nectocaris comes from the Cambrian, with fossils found in the Burgess Shale, Canada, and Maotianshan Shale, China. It is a small gnathiferan, growing up to 10 cm in length. Nectocaris is perhaps most well known for not knowing what it belonged to, first being postured to be some strange arthropod in 1976, although its fins were unlike any arthropod known at the time. Come 1988, it had been re-classified as a chordate due to the possible presence of a notochord."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nectocaris",
+			"type": "text",
+			"text": "Then in 2010 over 90 new specimens had been found, and with this it had been re-classified as a cephalopod, a class of mollusc, although was later disputed, and was placed within Bilateria as $(o)incertae sedis$(). It wouldn't be until 2025 when another member of Nectocarididae, Nektognathus, was found with a ventral ganglion, which is apart of the nervous system and something distinct to arrow worms, finally ending almost 50 years of a shifting classification."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nectocaris",
+			"type": "text",
+			"text": "As for its lifestyle, this was more well known, being a free-swimming predator or scavenger. The generic name derives from the Greek words 'nekton', to mean 'swimmer'; and 'karis', to mean 'shrimp'."
 		},
 		{
 			"type": "lepidodendron:diet",

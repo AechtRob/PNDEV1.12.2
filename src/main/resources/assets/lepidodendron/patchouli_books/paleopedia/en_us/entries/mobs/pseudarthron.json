@@ -21,17 +21,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_pseudarthron",
 			"type": "text",
-			"text": "Pseudarthron whittingtoni comes from the Upper Silurian, with fossils found in Slot Burn Formation, Scotland (UK). It is a small, if not the smallest, cheloniellid, growing up to 1.6 cm in length. Despite it small size, Pseudarthron is fairly unique, in that its firstly the only known Silurian cheloniellid. Not only that, but its discovery had made palaeontologists come to the realisation that the previously described Triopus from the Ordovician bore many similarities,"
+			"text": "Pseudarthron whittingtoni comes from the upper Silurian, with fossils found in Slot Burn Formation, Scotland (UK). It the smallest cheloniellid, growing up to 1.6 cm in length.  Despite its small size, Pseudarthron is fairly important, from being the only known Silurian cheloniellid, to its discovery making palaeontologists come to the realisation that the previously described Triopus from the Ordovician,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pseudarthron",
 			"type": "text",
-			"text": "and until this point had been referred to a myriad of different things,from trilobites, to even chitons. But with this newfound discovery, Triopus could now confidently be assigned to Cheloniellidae, alongside of course Pseudarthron."
+			"text": "which until this point had been referred to a myriad of different things, from trilobites to chitons, bore some similarities to it, and that Pseudarthron itself bore some similarities to Cheloniellon. This would eventually lead to Pseudarthron being assigned to family Cheloniellidae, alongside Triopus."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pseudarthron",
 			"type": "text",
-			"text": "us could now confidently be assigned to Cheloniellidae, alongside of course Pseudarthron. The generic name derives from the Greek words 'Pseudes', to mean 'false'; and 'Arthron', to mean 'joint'. The specific name derives from the surname of Professor H. B. Whittington, a British palaeontologist most well known for their extensive studies on the Burgess Shale."
+			"text": "The generic name derives from the Greek words 'Pseudes', to mean 'false'; and 'Arthron', to mean 'joint'. The specific name derives from the surname of Professor H. B. Whittington, a British palaeontologist most well known for their extensive studies on the Burgess Shale."
 		},
 		{
 			"type": "lepidodendron:diet",

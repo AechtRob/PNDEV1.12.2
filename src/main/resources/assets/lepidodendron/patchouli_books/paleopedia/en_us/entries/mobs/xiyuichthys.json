@@ -1,0 +1,52 @@
+{
+	"name": "Xiyuichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/xiyuichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_xiyuichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_xiyuichthys",
+			"title": "Xiyuichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Agnatha$(br)>Cephalaspidomorphi$(br)>Galeaspidomorphi$(br)>Xiushuiaspididae"
+		},
+		{
+			"type": "entity",
+			"name": "X. zhangi",
+			"entity": "lepidodendron:prehistoric_flora_xiyuichthys",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xiyuichthys",
+			"type": "text",
+			"text": "Xiyuichthys comes from the lower Silurian, with fossils found in the Tataertag and Qingshui Formations, China. It is a small agnathan, with a head-shield growing up to 12.5 cm in length. It was originally named 'Xiyuaspis', but this name is a junior synonym of an Ordovician trilobite Xiyuasis, as such the new name 'Xiyuichthys' was proposed to be able to tell the two names apart better."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xiyuichthys",
+			"type": "text",
+			"text": "Although the type species, X. zhangi, started out assigned to a completely different genus, first under Nanjiangaspis in 2005 as N. zhangi, then it was reassigned to Kalpinolepis ten years later in 2015 as K. zhangi, before moving to the new genus Xiyuaspis in 2019, and then went through the aforementioned generic name change in 2023."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_xiyuichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_xiyuichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_xiyuichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_xiyuichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_xiyuichthys"
+		}
+	]
+}

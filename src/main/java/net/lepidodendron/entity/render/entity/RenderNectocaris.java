@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderNectocaris extends RenderLivingBaseWithBook<EntityPrehistoricFloraNectocaris> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/nectocaris.png");
 
-    public static float getScaler() {return 0.11F;}
+    public static float getScaler() {return 0.7F * 0.3F;}
 
     public RenderNectocaris(RenderManager mgr) {
         super(mgr, new ModelNectocaris(), 0.0f);
