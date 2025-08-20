@@ -229,7 +229,7 @@ public class BlockPrehistoricGroundHorsetail extends ElementsLepidodendronMod.Mo
 						if (worldIn.isAirBlock(blockpos1))
 						{
 
-							int h = rand.nextInt(5);
+							int h = rand.nextInt(6);
 							IBlockState iblockstate1 = BlockFieldHorsetail.block.getDefaultState();
 							switch (h) {
 								case 0: default:
@@ -250,6 +250,10 @@ public class BlockPrehistoricGroundHorsetail extends ElementsLepidodendronMod.Mo
 
 								case 4:
 									iblockstate1 = BlockGiantHorsetail.block.getDefaultState();
+									break;
+
+								case 5:
+									iblockstate1 = BlockTussockHorsetail.block.getDefaultState();
 									break;
 							}
 
