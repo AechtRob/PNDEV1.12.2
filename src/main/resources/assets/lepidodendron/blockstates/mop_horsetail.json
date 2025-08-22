@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "var=0": {
+      "model": "lepidodendron:mop_horsetail_b_0"
+    },
+    "var=1": {
+      "model": "lepidodendron:mop_horsetail_b_1"
+    },
+    "var=2": {
+      "model": "lepidodendron:mop_horsetail_b_2"
+    },
+    "var=3": {
+      "model": "lepidodendron:mop_horsetail_b_3"
+    },
+    "var=4": {
+      "model": "lepidodendron:mop_horsetail_b_4"
+    },
+    "var=5": {
+      "model": "lepidodendron:mop_horsetail_b_5"
+    },
+    "var=6": {
+      "model": "lepidodendron:mop_horsetail_b_6"
+    },
+    "var=7": {
+      "model": "lepidodendron:mop_horsetail_b_7"
+    },
+    "var=8": {
+      "model": "lepidodendron:mop_horsetail_b_8"
+    }
+  }
+}

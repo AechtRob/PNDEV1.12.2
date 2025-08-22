@@ -356,6 +356,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_GORDONOPTERIS = new CustomTrigger("pf_book_gordonopteris");
     public static final CustomTrigger CLICK_GRASSY_HORSETAIL = new CustomTrigger("pf_book_grassy_horsetail");
     public static final CustomTrigger CLICK_TUSSOCK_HORSETAIL = new CustomTrigger("pf_book_tussock_horsetail");
+    public static final CustomTrigger CLICK_MOP_HORSETAIL = new CustomTrigger("pf_book_mop_horsetail");
     public static final CustomTrigger CLICK_GRYPANIA = new CustomTrigger("pf_book_grypania");
     public static final CustomTrigger CLICK_GUANGDEDENDRON = new CustomTrigger("pf_book_guangdedendron");
     public static final CustomTrigger CLICK_HAOOTIA = new CustomTrigger("pf_book_haootia");
@@ -2423,6 +2424,7 @@ public class ModTriggers
             CLICK_GORDONOPTERIS,
             CLICK_GRASSY_HORSETAIL,
             CLICK_TUSSOCK_HORSETAIL,
+            CLICK_MOP_HORSETAIL,
             CLICK_GRYPANIA,
             CLICK_GUANGDEDENDRON,
             CLICK_HAOOTIA,
