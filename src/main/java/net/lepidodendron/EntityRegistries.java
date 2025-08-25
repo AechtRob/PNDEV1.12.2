@@ -221,7 +221,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_diictodon", EntityPrehistoricFloraDiictodon.class, LepidodendronMod.ENTITY_DIICTODON, 48,-9151434,-12371929);
         registerEntity("prehistoric_flora_dilophosaurus", EntityPrehistoricFloraDilophosaurus.class, LepidodendronMod.ENTITY_DILOPHOSAURUS, 84,-9359838,-808685);
         registerEntity("prehistoric_flora_dimetrodon", EntityPrehistoricFloraDimetrodon.class, LepidodendronMod.ENTITY_DIMETRODON, 64,-14000535,-4372976);
-        registerEntity("prehistoric_flora_diplacanthus", EntityPrehistoricFloraDiplacanthus.class, LepidodendronMod.ENTITY_DIPLACANTHUS, 48,-13750996, -6568241);
+        registerEntity("prehistoric_flora_diplacanthus", EntityPrehistoricFloraDiplacanthus.class, LepidodendronMod.ENTITY_DIPLACANTHUS, 48,-5534412, -2436945);
         registerEntity("prehistoric_flora_diplocaulus", EntityPrehistoricFloraDiplocaulus.class, LepidodendronMod.ENTITY_DIPLOCAULUS, 64,-4348023,-12701927);
         registerEntity("prehistoric_flora_diploceraspis", EntityPrehistoricFloraDiploceraspis.class, LepidodendronMod.ENTITY_DIPLOCERASPIS, 48,-14936047,-4040953);
         registerEntity("prehistoric_flora_docodon", EntityPrehistoricFloraDocodon.class, LepidodendronMod.ENTITY_DOCODON, 48,-10664659,-5014987);
@@ -1370,6 +1370,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_araripemys", EntityPrehistoricFloraAraripemys.class, LepidodendronMod.ENTITY_ARARIPEMYS, 48,-13620198,-10729439);
         registerEntity("prehistoric_flora_ptyktoptychion", EntityPrehistoricFloraPtyktoptychion.class, LepidodendronMod.ENTITY_PTYKTOPTYCHION, 84,-8414827,-14539484);
         registerEntity("prehistoric_flora_genibatrachus", EntityPrehistoricFloraGenibatrachus.class, LepidodendronMod.ENTITY_GENIBATRACHUS, 48,-9024971,-4084892);
+        registerEntity("prehistoric_flora_angelacanthus", EntityPrehistoricFloraAngelacanthus.class, LepidodendronMod.ENTITY_ANGELACANTHUS, 48,-13750996, -6568241);
 
         // aquatic nymphs for Stonefly, Mayfly, Argentinala, Velisoptera, Damselfly
         registerEntityNoEgg("prehistoric_flora_aquaticnymph", EntityPrehistoricFloraAquaticBugNymph.class, LepidodendronMod.ENTITY_AQUATIC_NYMPH, 48);

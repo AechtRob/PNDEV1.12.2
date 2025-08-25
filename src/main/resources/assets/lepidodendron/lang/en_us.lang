@@ -11514,4 +11514,9 @@ advancements.pf_adv_book_genibatrachus.title=Genibatrachus
 item.pf_genibatrachus_raw.name=Raw Genibatrachus
 entity.prehistoric_flora_genibatrachus.name=Genibatrachus
 item.pf_eggs_genibatrachus.name=Genibatrachus Eggs
+advancements.pf_adv_book_angelacanthus.description=Unlock the entry for Angelacanthus in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_angelacanthus.title=Angelacanthus
+item.pf_angelacanthus_raw.name=Raw Angelacanthus
+entity.prehistoric_flora_angelacanthus.name=Angelacanthus
+
 

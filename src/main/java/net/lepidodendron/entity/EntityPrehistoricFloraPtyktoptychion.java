@@ -1,30 +1,31 @@
 
 package net.lepidodendron.entity;
 
-import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.base.IAdvancementGranter;
-import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
+import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
-import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EggLayingConditions;
-import net.lepidodendron.util.ModTriggers;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DifficultyInstance;
@@ -36,30 +37,33 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraPtyktoptychion extends EntityPrehistoricFloraAgeableFishBase implements IAdvancementGranter, ITrappableWater {
+public class EntityPrehistoricFloraPtyktoptychion extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater {
+
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
+	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
+	int bottomCooldown;
+	boolean bottomFlag;
 
 	private static final DataParameter<Integer> PTYKTOPTYCHION_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraPtyktoptychion.class, DataSerializers.VARINT);
 
 	public EntityPrehistoricFloraPtyktoptychion(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
-		minWidth = 0.3F;
-		maxWidth = 0.9F;
-		maxHeight = 0.9F;
-		maxHealthAgeable = 35.0D;
+		if (world != null) {
+			this.moveHelper = new EntityPrehistoricFloraPtyktoptychion.SwimmingMoveHelperBase();
+			this.navigator = new PathNavigateSwimmer(this, world);
+		}
+		setSize(0.5F, 0.5F);
+		minWidth = 0.2F;
+		maxWidth = 0.3F;
+		maxHeight = 0.3F;
+		maxHealthAgeable = 12.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
-	}
-
-	@Override
-	public int getEggType(@Nullable String variantIn) {
-		return 45; //cylinder type
 	}
 
 	@Override
@@ -69,14 +73,6 @@ public class EntityPrehistoricFloraPtyktoptychion extends EntityPrehistoricFlora
 		propaguleNBT.setString("PNType", "gendered");
 		stack.setTagCompound(propaguleNBT);
 		return stack;
-	}
-
-	@Override
-	public void onUpdate() {
-		super.onUpdate();
-		if (world.isRemote && !this.isAIDisabled()) {
-			tailBuffer.calculateChainSwingBuffer(60, 10, 5F, this);
-		}
 	}
 
 	@Override
@@ -224,18 +220,30 @@ public class EntityPrehistoricFloraPtyktoptychion extends EntityPrehistoricFlora
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		if (!this.isPFAdult()) {
-			return LepidodendronMod.PTYKTOPTYCHION_LOOT_YOUNG;
+		switch (this.getPNType()) {
+			case MALE:
+			default:
+				return LepidodendronMod.PTYKTOPTYCHION_LOOT;
+
+			case FEMALE:
+				return LepidodendronMod.PTYKTOPTYCHION_LOOT_F;
 		}
-		return LepidodendronMod.PTYKTOPTYCHION_LOOT;
+
 	}
 
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(50, 10, 5F, this);
+		}
+	}
 	@Override
 	public boolean isSmall() {
 		return true;
 	}
 
-	public static String getPeriod() {return "Early Cretaceous";}
+	public static String getPeriod() {return "Jurassic - Early Cretaceous - Late Cretaceous - Paleogene  - Neogene";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -245,17 +253,12 @@ public class EntityPrehistoricFloraPtyktoptychion extends EntityPrehistoricFlora
 
 	@Override
 	public int getAttackLength() {
-		return 25;
-	}
-
-	@Override
-	public int getRoarLength() {
-		return 15;
+		return 8;
 	}
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -264,22 +267,16 @@ public class EntityPrehistoricFloraPtyktoptychion extends EntityPrehistoricFlora
 	}
 
 	@Override
-	public boolean divesToLay() {
-		return true;
-	}
-
-	@Override
 	public int getAdultAge() {
-		return 84000;
+		return 92000;
 	}
 
 	@Override
 	protected float getAISpeedFish() {
-		float AIspeed = 0.23F;
-		if (this.getIsFast()) {
-			AIspeed = AIspeed * 2F;
+		if (this.isAtBottom() && this.bottomCooldown > 0 && (!this.getIsFast()) && (!this.isInLove())) {
+			return 0.15F;
 		}
-		return AIspeed;
+		return 0.2f;
 	}
 
 	@Override
@@ -287,29 +284,25 @@ public class EntityPrehistoricFloraPtyktoptychion extends EntityPrehistoricFlora
 		return false;
 	}
 
+
+
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+		if (source != DamageSource.DROWN) {
+			return super.attackEntityFrom(source, (amount * 0.5F));
+		}
+		return super.attackEntityFrom(source, amount);
+	}
+
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue()));
-		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 0.1D, 0, true));
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
+		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		//this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
-//		this.targetTasks.addTask(3, new HuntAI(this, EntityPrehistoricFloraNautiloidBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-//		//this.targetTasks.addTask(4, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-//		//this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-//		//this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAmphibianBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-//		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-//		//this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLiving.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-//		this.targetTasks.addTask(5, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-//		//this.targetTasks.addTask(6, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 	}
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.SHELLFISH, DietString.NAUTILOID), DietString.CRUSTACEAN);
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override
@@ -337,6 +330,7 @@ public class EntityPrehistoricFloraPtyktoptychion extends EntityPrehistoricFlora
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(12.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -365,21 +359,22 @@ public class EntityPrehistoricFloraPtyktoptychion extends EntityPrehistoricFlora
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 7 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
 
+		if (this.isAtBottom() && (!this.bottomFlag) && !this.getIsFast()) {
+			this.bottomFlag = true;
+			this.bottomCooldown = 600;
+		}
+		if (!this.isAtBottom()) {
+			this.bottomFlag = false;
+			this.bottomCooldown = 0;
+		}
+		if (this.bottomCooldown > 0) {this.bottomCooldown -= 1;}
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
-	}
-
-	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-
-		//Lay eggs perhaps:
-		//Lay eggs perhaps:
-		EggLayingConditions.layWaterBottomEggs(this);
 	}
 
 	@Override
@@ -391,42 +386,92 @@ public class EntityPrehistoricFloraPtyktoptychion extends EntityPrehistoricFlora
 		return false;
 	}
 
-	@Override
-	public float getAgeScale() {
-		return 1;
-	}
-
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
-	//Rendering taxidermy:
-
-//	@SideOnly(Side.CLIENT)
-//	public static ResourceLocation textureDisplay(@Nullable String variant) {
-//		if (variant.equalsIgnoreCase("female")) {
-//			return RenderFalcatus.TEXTURE_F;
-//		}
-//		return RenderFalcatus.TEXTURE;
-//	}
-//	@SideOnly(Side.CLIENT)
-//	public static ModelBase modelDisplay(@Nullable String variant) {
-//		return RenderDisplays.modelFalcatus;
-//	}
-//	public static float getScaler(@Nullable String variant) {
-//		if (variant.equalsIgnoreCase("female")) {
-//			return RenderFalcatus.getScaler() * 0.8F;
-//		}
-//		return RenderFalcatus.getScaler();
-//	}
-
-	@Nullable
-	@Override
-	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_PTYKTOPTYCHION;
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
 	}
 
 
+	@Override
+	public void travel(float strafe, float vertical, float forward) {
+		float f4;
+		if (this.isServerWorld()) {
+			if (this.isInWater()) {
+				this.moveRelative(strafe, vertical, forward, 0.1F);
+				f4 = 0.8F;
+				float speedModifier = (float) EnchantmentHelper.getDepthStriderModifier(this);
+				if (speedModifier > 3.0F) {
+					speedModifier = 3.0F;
+				}
+				if (!this.onGround) {
+					speedModifier *= 0.5F;
+				}
+				if (speedModifier > 0.0F) {
+					f4 += (0.54600006F - f4) * speedModifier / 3.0F;
+				}
+				this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
 
+				if (this.collidedHorizontally && this.isCollidingRim())
+				{
+					this.motionY = 0.05D;
+				}
+
+				this.motionX *= f4;
+				this.motionX *= 0.9;
+				this.motionY *= 0.9;
+				this.motionY *= f4;
+				this.motionZ *= 0.9;
+				this.motionZ *= f4;
+			} else {
+				super.travel(strafe, vertical, forward);
+			}
+		}
+		this.prevLimbSwingAmount = this.limbSwingAmount;
+		double deltaX = this.posX - this.prevPosX;
+		double deltaZ = this.posZ - this.prevPosZ;
+		double deltaY = this.posY - this.prevPosY;
+		float delta = MathHelper.sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ) * 4.0F;
+		if (delta > 1.0F) {
+			delta = 1.0F;
+		}
+		this.limbSwingAmount += (delta - this.limbSwingAmount) * 0.4F;
+		this.limbSwing += this.limbSwingAmount;
+	}
+
+	class SwimmingMoveHelperBase extends EntityMoveHelper {
+		private final EntityPrehistoricFloraPtyktoptychion EntityBase = EntityPrehistoricFloraPtyktoptychion.this;
+
+		public SwimmingMoveHelperBase() {
+			super(EntityPrehistoricFloraPtyktoptychion.this);
+		}
+
+		@Override
+		public void onUpdateMoveHelper() {
+			if (this.action == Action.MOVE_TO && !this.EntityBase.getNavigator().noPath()) {
+				double distanceX = this.posX - this.EntityBase.posX;
+				double distanceY = this.posY - this.EntityBase.posY;
+				double distanceZ = this.posZ - this.EntityBase.posZ;
+				double distance = Math.abs(distanceX * distanceX + distanceY * distanceY + distanceZ * distanceZ);
+				distance = MathHelper.sqrt(distance);
+				distanceY /= distance;
+				float angle = (float) (Math.atan2(distanceZ, distanceX) * 180.0D / Math.PI) - 90.0F;
+
+				this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 10.0F);
+				float speed = getAISpeedFish();
+				this.EntityBase.setAIMoveSpeed(speed);
+
+				if (this.EntityBase.isAtBottom()) {
+					this.EntityBase.setAIMoveSpeed(speed * 0.25F);
+				}
+
+				this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
+			} else {
+				this.EntityBase.setAIMoveSpeed(0.0F);
+			}
+		}
+	}
 }
