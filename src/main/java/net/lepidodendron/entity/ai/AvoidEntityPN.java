@@ -19,6 +19,9 @@ import java.util.List;
 
 public class AvoidEntityPN<T extends Entity> extends EntityAIBase
 {
+    protected double x;
+    protected double y;
+    protected double z;
     private final Predicate<Entity> canBeSeenSelector;
     protected EntityCreature entity;
     private final double farSpeed;
@@ -26,7 +29,6 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
     protected EntityLivingBase closestLivingEntity;
     private final float avoidDistance;
     private Path path;
-    private final PathNavigate navigation;
     private final Class<T> classToAvoid;
 
     public AvoidEntityPN(EntityCreature entityIn, Class<T> classToAvoidIn, float avoidDistanceIn, double farSpeedIn, double nearSpeedIn)
@@ -43,10 +45,10 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
         this.avoidDistance = avoidDistanceIn;
         this.farSpeed = farSpeedIn;
         this.nearSpeed = nearSpeedIn;
-        this.navigation = entityIn.getNavigator();
         this.setMutexBits(1);
     }
 
+    @Override
     public boolean shouldExecute()
     {
         List<T> list = this.entity.world.<T>getEntitiesWithinAABB(this.classToAvoid, this.entity.getEntityBoundingBox().grow((double)this.avoidDistance, 3.0D, (double)this.avoidDistance), Predicates.and(EntitySelectors.CAN_AI_TARGET, this.canBeSeenSelector, Predicates.alwaysTrue()));
@@ -59,7 +61,7 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
         else
         {
             for (Entity currentEntity : list) {
-                if (TestPrey.result(currentEntity, this.entity) != this.entity) {
+                if (currentEntity != this.entity && TestPrey.result(currentEntity, this.entity) != this.entity) {
                     Vec3d vec3d = RandomPositionGenerator.findRandomTargetBlockAwayFrom(this.entity, 16, 7, new Vec3d(currentEntity.posX, currentEntity.posY, currentEntity.posZ));
 
                     if (vec3d == null) {
@@ -67,8 +69,11 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
                     } else if (currentEntity.getDistanceSq(vec3d.x, vec3d.y, vec3d.z) < currentEntity.getDistanceSq(this.entity)) {
                         continue;
                     } else {
-                        this.path = this.navigation.getPathToXYZ(vec3d.x, vec3d.y, vec3d.z);
+                        this.path = entity.getNavigator().getPathToXYZ(vec3d.x, vec3d.y, vec3d.z);
                         if (this.path != null) {
+                            this.x = vec3d.x;
+                            this.y = vec3d.y;
+                            this.z = vec3d.z;
                             this.closestLivingEntity = (EntityLivingBase) currentEntity;
                             return true;
                         }
@@ -80,31 +85,28 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
         return false;
     }
 
+    @Override
     public boolean shouldContinueExecuting()
     {
-        return !this.navigation.noPath();
+        return !entity.getNavigator().noPath();
     }
 
-    public void startExecuting()
-    {
-        this.navigation.setPath(this.path, this.farSpeed);
+    @Override
+    public void startExecuting() {
+        entity.getNavigator().tryMoveToXYZ(x, y, z, 1.0);
+        super.startExecuting();
     }
 
+    @Override
     public void resetTask()
     {
         this.closestLivingEntity = null;
     }
 
+    @Override
     public void updateTask()
     {
-        if (this.entity.getDistanceSq(this.closestLivingEntity) < 49.0D)
-        {
-            this.entity.getNavigator().setSpeed(this.nearSpeed);
-        }
-        else
-        {
-            this.entity.getNavigator().setSpeed(this.farSpeed);
-        }
+        super.updateTask();
     }
 }
 

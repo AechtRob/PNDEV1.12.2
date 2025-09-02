@@ -54,6 +54,9 @@ public class TestPrey {
                     return entityMe;
                 }
             }
+            if (entityMe.getClass() == entityThem.getClass()) {
+               return entityMe;
+            }
 
             boolean targetOK = true;
             boolean dietOK = false;
@@ -89,11 +92,7 @@ public class TestPrey {
                     //entityThem.setIsFast(false);
                     targetOK = false;
                 }
-                if (entityMe instanceof EntityPlayer) {
-                    if (((EntityPlayer)entityMe).capabilities.disableDamage) {
-                        targetOK = false;
-                    }
-                }
+
                 if (entityMe.isInvisible()) {
                     targetOK = false;
                 }
