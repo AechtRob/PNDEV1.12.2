@@ -55,6 +55,9 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
 
         if (list.isEmpty())
         {
+            if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
+                ((EntityPrehistoricFloraAgeableBase)this.entity).setAvoidTarget(null);
+            }
             this.closestLivingEntity = null;
             return false;
         }
@@ -75,11 +78,17 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
                             this.y = vec3d.y;
                             this.z = vec3d.z;
                             this.closestLivingEntity = (EntityLivingBase) currentEntity;
+                            if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                ((EntityPrehistoricFloraAgeableBase)this.entity).setAvoidTarget(this.closestLivingEntity);
+                            }
                             return true;
                         }
                     }
                 }
             }
+        }
+        if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
+            ((EntityPrehistoricFloraAgeableBase)this.entity).setAvoidTarget(null);
         }
         this.closestLivingEntity = null;
         return false;
@@ -88,6 +97,11 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
     @Override
     public boolean shouldContinueExecuting()
     {
+        if (entity.getNavigator().noPath()) {
+            if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
+                ((EntityPrehistoricFloraAgeableBase)this.entity).setAvoidTarget(null);
+            }
+        }
         return !entity.getNavigator().noPath();
     }
 
@@ -101,6 +115,9 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
     public void resetTask()
     {
         this.closestLivingEntity = null;
+        if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
+            ((EntityPrehistoricFloraAgeableBase)this.entity).setAvoidTarget(null);
+        }
     }
 
     @Override
