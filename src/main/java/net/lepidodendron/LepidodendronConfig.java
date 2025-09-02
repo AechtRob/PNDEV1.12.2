@@ -74,8 +74,8 @@ public class LepidodendronConfig {
     public static boolean doMeteoritesGriefing = true;
     public static boolean doVolcanoGriefing = true;
     public static int doVolcanoNether = 100;
-    public static boolean doGuanoGriefing = true;
-    public static boolean doGuanoBats = true;
+    public static double doGuanoGriefing = 1.00;
+    public static double doGuanoBats = 1.00;
     public static boolean fixApples = true;
     public static boolean doReSpawner = true;
     public static boolean doShoalingFlocking = true;
@@ -528,13 +528,13 @@ public class LepidodendronConfig {
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "doGuanoGriefing", doGuanoGriefing);
-        prop.setComment("Make some appropriate flying creatures drop guano ambiently, causing blocks of it to build up (note that guano is also tied to the more general mobGriefing gamerule) [default: true]");
-        doGuanoGriefing = prop.getBoolean();
+        prop.setComment("Frequency (0.00-1000.00) at which some appropriate flying creatures drop guano ambiently, causing blocks of it to build up (note that guano is also tied to the more general mobGriefing gamerule) [default: 1.00]");
+        doGuanoGriefing = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "doGuanoBats", doGuanoBats);
-        prop.setComment("Make vanilla bats drop guano ambiently while roosting, causing blocks of it to build up (note that guano is also tied to the more general mobGriefing gamerule) [default: true]");
-        doGuanoBats = prop.getBoolean();
+        prop.setComment("Frequency (0.00-1000.00) at which vanilla bats drop guano ambiently while roosting, causing blocks of it to build up (note that guano is also tied to the more general mobGriefing gamerule) [default: 1.00]");
+        doGuanoBats = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "doReSpawner", doReSpawner);

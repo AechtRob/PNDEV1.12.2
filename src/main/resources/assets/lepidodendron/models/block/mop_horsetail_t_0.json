@@ -1,6 +1,6 @@
 {
 	"ambientocclusion": false,
-	"texture_size": [16, 32],
+	"texture_size": [32, 32],
 	"textures": {
 		"0": "lepidodendron:blocks/mop_horsetail_1_t",
 		"particle": "lepidodendron:items/mop_horsetail_inventory"
