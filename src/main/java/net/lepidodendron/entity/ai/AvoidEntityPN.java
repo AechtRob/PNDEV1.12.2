@@ -6,6 +6,7 @@ import net.lepidodendron.entity.ai.helpers.TestPrey;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.RandomPositionGenerator;
 import net.minecraft.pathfinding.Path;
@@ -22,7 +23,7 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
     protected EntityCreature entity;
     private final double farSpeed;
     private final double nearSpeed;
-    protected T closestLivingEntity;
+    protected EntityLivingBase closestLivingEntity;
     private final float avoidDistance;
     private Path path;
     private final PathNavigate navigation;
@@ -52,6 +53,7 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
 
         if (list.isEmpty())
         {
+            this.closestLivingEntity = null;
             return false;
         }
         else
@@ -67,12 +69,14 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
                     } else {
                         this.path = this.navigation.getPathToXYZ(vec3d.x, vec3d.y, vec3d.z);
                         if (this.path != null) {
-
+                            this.closestLivingEntity = (EntityLivingBase) currentEntity;
+                            return true;
                         }
                     }
                 }
             }
         }
+        this.closestLivingEntity = null;
         return false;
     }
 
