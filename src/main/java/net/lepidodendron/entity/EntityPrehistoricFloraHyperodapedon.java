@@ -147,7 +147,7 @@ public class EntityPrehistoricFloraHyperodapedon extends EntityPrehistoricFloraD
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new NightFindNestAI(this));
-		tasks.addTask(4, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, 1.0D, 1.0D));
+		tasks.addTask(4, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
 		tasks.addTask(5, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(6, new PanicAI(this, 1.0));
 		tasks.addTask(7, new LandWanderNestAI(this));

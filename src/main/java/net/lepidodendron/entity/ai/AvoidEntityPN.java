@@ -24,14 +24,13 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
     protected double z;
     private final Predicate<Entity> canBeSeenSelector;
     protected EntityCreature entity;
-    private final double farSpeed;
-    private final double nearSpeed;
     protected EntityLivingBase closestLivingEntity;
     private final float avoidDistance;
     private Path path;
     private final Class<T> classToAvoid;
+    private final boolean avoidsFast;
 
-    public AvoidEntityPN(EntityCreature entityIn, Class<T> classToAvoidIn, float avoidDistanceIn, double farSpeedIn, double nearSpeedIn)
+    public AvoidEntityPN(EntityCreature entityIn, Class<T> classToAvoidIn, float avoidDistanceIn, boolean avoidsFast)
     {
         this.canBeSeenSelector = new Predicate<Entity>()
         {
@@ -43,8 +42,7 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
         this.entity = entityIn;
         this.classToAvoid = classToAvoidIn;
         this.avoidDistance = avoidDistanceIn;
-        this.farSpeed = farSpeedIn;
-        this.nearSpeed = nearSpeedIn;
+        this.avoidsFast = avoidsFast;
         this.setMutexBits(1);
     }
 
@@ -78,7 +76,7 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
                             this.y = vec3d.y;
                             this.z = vec3d.z;
                             this.closestLivingEntity = (EntityLivingBase) currentEntity;
-                            if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
+                            if (this.entity instanceof EntityPrehistoricFloraAgeableBase && this.avoidsFast) {
                                 ((EntityPrehistoricFloraAgeableBase)this.entity).setAvoidTarget(this.closestLivingEntity);
                             }
                             return true;
