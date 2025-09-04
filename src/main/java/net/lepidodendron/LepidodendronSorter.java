@@ -5900,13 +5900,13 @@ public class LepidodendronSorter {
     public static final int mosura_raw = 5601;
     public static final int eggs_araripemys = 5602;
     public static final int araripemys_raw = 5603;
-    public static final int eggs_tyktoptychion = 5604;
-    public static final int eggs_tyktoptychion_worldgen = 5624;
-    public static final int ptyktoptychion_raw = 5625;
-    public static final int genibatrachus_raw = 5607;
+    public static final int ptyktoptychion_raw = 5604;
     public static final int turfania_raw = 5605;
+    public static final int genibatrachus_raw = 5607;
+
     public static final int kururubatrachus_raw = 5616;
     public static final int americaspis_raw = 5623;
+    public static final int angelacanthus_raw = 5624;
 
 
 

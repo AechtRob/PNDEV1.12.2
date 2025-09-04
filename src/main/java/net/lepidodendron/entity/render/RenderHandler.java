@@ -8445,6 +8445,12 @@ public class RenderHandler {
                 return new RenderGenibatrachus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAngelacanthus.class, new IRenderFactory<EntityPrehistoricFloraAngelacanthus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAngelacanthus> createRenderFor(RenderManager manager) {
+                return new RenderAngelacanthus(manager);
+            }
+        });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHomalonotus.class, new IRenderFactory<EntityPrehistoricFloraHomalonotus>() {
             @Override
             public Render<? super EntityPrehistoricFloraHomalonotus> createRenderFor(RenderManager manager) {
@@ -8463,7 +8469,6 @@ public class RenderHandler {
                 return new RenderXiyuichthys(manager);
             }
         });
-
 
 
 
