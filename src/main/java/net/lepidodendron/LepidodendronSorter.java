@@ -5258,7 +5258,7 @@ public class LepidodendronSorter {
     public static final int mop_horsetail = 8198;
     public static final int mop_horsetail_top = 8199;
     //Rob list ends-----
-    
+
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;
     public static final int eocursor_raw = 4976;
@@ -5885,12 +5885,13 @@ public class LepidodendronSorter {
     public static final int eoconfuciusornis_raw = 5597;
     public static final int eggs_procompsognathus = 5598;
     public static final int procompsognathus_raw = 5599;
-  
+
     public static final int victalimulus_raw = 5600;
     public static final int mosura_raw = 5601;
     public static final int eggs_araripemys = 5602;
     public static final int araripemys_raw = 5603;
     public static final int ptyktoptychion_raw = 5604;
+    public static final int scapanorhynchus_raw = 5606;
     public static final int turfania_raw = 5605;
     public static final int genibatrachus_raw = 5607;
 
@@ -5908,6 +5909,11 @@ public class LepidodendronSorter {
     public static final int huanghelepis_raw = 5622;
     public static final int americaspis_raw = 5623;
     public static final int angelacanthus_raw = 5624;
+    public static final int eggs_aetosauroides = 5628;
+    public static final int aetosauroides_raw = 5629;
+    public static final int eggs_taquetochelys = 5609;
+    public static final int taquetochelys_raw = 5610;
+
     public static final int eggs_megachirella = 5626;
     public static final int eggs_orthcanthus = 5627;
 

@@ -2078,6 +2078,10 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MEGACHIRELLA = new CustomTrigger("pf_book_megachirella");
     public static final CustomTrigger CLICK_MAGHRIBOSELACHE = new CustomTrigger("pf_book_maghriboselache");
     public static final CustomTrigger CLICK_ANGELACANTHUS = new CustomTrigger("pf_book_angelacanthus");
+    public static final CustomTrigger CLICK_SCAPANORHYNCHUS = new CustomTrigger("pf_book_scapanorhynchus");
+    public static final CustomTrigger CLICK_AETOSAUROIDES = new CustomTrigger("pf_book_aetosauroides");
+    public static final CustomTrigger CLICK_TAQUETOCHELYS = new CustomTrigger("pf_book_taquetochelys");
+
 
 
 
@@ -4146,7 +4150,9 @@ public class ModTriggers
             CLICK_MEGACHIRELLA,
             CLICK_MAGHRIBOSELACHE,
     };
-
+            CLICK_SCAPANORHYNCHUS,
+            CLICK_AETOSAUROIDES,
+            CLICK_TAQUETOCHELYS,
 
     /**
      * This method is part of my simple custom advancement triggering tutorial.
