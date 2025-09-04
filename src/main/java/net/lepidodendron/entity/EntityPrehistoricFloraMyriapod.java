@@ -167,7 +167,7 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 	@Override
 	protected void collideWithEntity(Entity entityIn) {
 		super.collideWithEntity(entityIn);
-		if(this.onGround && !this.isReallyInWater() && this.canHide()){
+		if (this.onGround && (!this.isReallyInWater()) && this.canHide()){
 			this.setAnimation(HIDE_ANIMATION);
 		}
 	}
