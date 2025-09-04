@@ -15,7 +15,7 @@ public class RenderHylonomus extends RenderLivingBaseWithBook<EntityPrehistoricF
         super(mgr, new ModelHylonomus(), 0.1f);
     }
 
-    public static float getScaler() {return 1.125F * 0.2f; }
+    public static float getScaler() {return 0.18F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraHylonomus entity) {

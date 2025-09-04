@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:triodus_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_triodus.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_triodus.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_triodus"
+        }
+    }
+}

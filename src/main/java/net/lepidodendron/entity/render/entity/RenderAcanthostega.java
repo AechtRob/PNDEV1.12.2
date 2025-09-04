@@ -16,7 +16,7 @@ public class RenderAcanthostega extends RenderLivingBaseWithBook<EntityPrehistor
         super(mgr, new ModelAcanthostega(), 0.4f);
     }
 
-    public static float getScaler() {return 0.22F;}
+    public static float getScaler() {return 0.28F;}
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAcanthostega entity) {

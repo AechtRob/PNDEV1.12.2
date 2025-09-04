@@ -11,17 +11,20 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
-import net.lepidodendron.entity.render.entity.RenderAcanthostega;
+import net.lepidodendron.entity.render.entity.RenderPholidogaster;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -29,27 +32,31 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraAcanthostega extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, IAdvancementGranter {
+public class EntityPrehistoricFloraAcanthostega extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter {
+	private static final DataParameter<Integer> BOTTOM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraAcanthostega.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> SWIM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraAcanthostega.class, DataSerializers.VARINT);
+	private static final DataParameter<Boolean> BOTTOM_FLAG = EntityDataManager.createKey(EntityPrehistoricFloraAcanthostega.class, DataSerializers.BOOLEAN);
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	//public static final SoundEvent LIMNOSCELIS_ROAR = create("limnoscelis_roar");
 
 	public EntityPrehistoricFloraAcanthostega(World world) {
 		super(world);
-		setSize(0.3F, 0.25F);
-		minWidth = 0.1F;
-		maxWidth = 0.3F;
-		maxHeight = 0.25F;
-		maxHealthAgeable = 10.0D;
+		setSize(0.5F, 0.35F);
+		minWidth = 0.12F;
+		maxWidth = 0.5F;
+		maxHeight = 0.35F;
+		maxHealthAgeable = 13.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -57,33 +64,103 @@ public class EntityPrehistoricFloraAcanthostega extends EntityPrehistoricFloraSw
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 40; //normal spawn
+		return 21; //cross spawn
 	}
 
 	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
-			tailBuffer.calculateChainSwingBuffer(60, 10, 5F, this);
+			tailBuffer.calculateChainSwingBuffer(45, 10, 5F, this);
 		}
 	}
 
 	@Override
-	public boolean canJumpOutOfWater() {
-		return false;
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(BOTTOM_COOLDOWN, 0);
+		this.dataManager.register(SWIM_COOLDOWN, 0);
+		this.dataManager.register(BOTTOM_FLAG, false);
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setBottomCooldown(0);
+		this.setSwimCooldown(0);
+		this.setBottomFlag(false);
+		return livingdata;
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound)
+	{
+		super.writeEntityToNBT(compound);
+		compound.setInteger("bottomCooldown", this.getBottomCooldown());
+		compound.setInteger("swimCooldown", this.getSwimCooldown());
+		compound.setBoolean("bottomFlag", this.getBottomFlag());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.setBottomCooldown(compound.getInteger("bottomCooldown"));
+		this.setSwimCooldown(compound.getInteger("swimCooldown"));
+		this.setBottomFlag(compound.getBoolean("bottomFlag"));
+	}
+
+	public int getBottomCooldown() {
+		return this.dataManager.get(BOTTOM_COOLDOWN);
+	}
+
+	public void setBottomCooldown(int cooldown) {
+		this.dataManager.set(BOTTOM_COOLDOWN, cooldown);
+	}
+
+	public int getSwimCooldown() {
+		return this.dataManager.get(SWIM_COOLDOWN);
+	}
+
+	public void setSwimCooldown(int cooldown) {
+		this.dataManager.set(SWIM_COOLDOWN, cooldown);
+	}
+
+	public boolean getBottomFlag() {
+		return this.dataManager.get(BOTTOM_FLAG);
+	}
+
+	public void setBottomFlag(boolean flag) {
+		this.dataManager.set(BOTTOM_FLAG, flag);
+	}
+
+	@Override
+	public boolean isBase() {
+		return true;
+	}
+
+	@Override
+	public int getAttackLength() {
+		return 8;
 	}
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.7;
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "Carboniferous";}
 
-	public static String getSize() {return "M";}
+	//public static String getHabitat() {return "Amphibious";}
+	@Override
+	public boolean sinks() {
+		return this.getSwimCooldown() <= 0;
+	}
 
 	@Override
 	public boolean dropsEggs() {
+		return false;
+	}
+
+	@Override
+	public boolean hasNest() {
 		return false;
 	}
 	
@@ -93,16 +170,21 @@ public class EntityPrehistoricFloraAcanthostega extends EntityPrehistoricFloraSw
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.10F;
+		//return 0;
+		float calcSpeed = 0.11F;
 		if (this.isReallyInWater()) {
-			calcSpeed= 0.28f;
+			calcSpeed= 0.185f;
+			if (this.getIsFast()){
+				calcSpeed *= 1.85f;
+			}
+		}
+		if (this.isAtBottom() && (!this.getIsFast()) && (!this.isInLove()) && this.getEatTarget() == null) {
+			return 0;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getIsFast() && this.isReallyInWater()) {
-			calcSpeed = calcSpeed * 1.52F;
-		}
+
 		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed;
 	}
 
@@ -113,12 +195,11 @@ public class EntityPrehistoricFloraAcanthostega extends EntityPrehistoricFloraSw
 
 	@Override
 	public int WaterDist() {
-		int i = (int) LepidodendronConfig.waterAcanthostega;
+		int i = (int) LepidodendronConfig.waterPederpes;
 		if (i > 16) {i = 16;}
 		if (i < 1) {i = 1;}
 		return i;
 	}
-
 
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
@@ -127,22 +208,28 @@ public class EntityPrehistoricFloraAcanthostega extends EntityPrehistoricFloraSw
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(2, new AmphibianWander(this, NO_ANIMATION, 1.0, 60));
-		tasks.addTask(3, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(3, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
-		tasks.addTask(3, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(4, new EntityLookIdleAI(this));
+		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
+		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 0.95, 20));
+		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
+		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(5, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
-		//this.targetTasks.addTask(3, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		//this.targetTasks.addTask(3, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 2.0F, false));
+		//this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		//this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
+		//this.targetTasks.addTask(2, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(2, new HuntAI(this, EntityVillager.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraPalaeodictyopteraNymph.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return DietString.FISH;
+		return ArrayUtils.addAll(DietString.MEAT, DietString.FISH);
 	}
 
 	@Override
@@ -185,21 +272,11 @@ public class EntityPrehistoricFloraAcanthostega extends EntityPrehistoricFloraSw
 	            .getObject(new ResourceLocation("lepidodendron:acanthostega_hurt"));
 	}
 
-	//@Override
-	//public SoundEvent getHurtSound(DamageSource ds) {
-	//	return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
-	//}
-
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
 	            .getObject(new ResourceLocation("lepidodendron:acanthostega_death"));
 	}
-
-	//@Override
-	//public SoundEvent getDeathSound() {
-	//	return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
-	//}
 
 	@Override
 	protected float getSoundVolume() {
@@ -230,6 +307,29 @@ public class EntityPrehistoricFloraAcanthostega extends EntityPrehistoricFloraSw
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
+		if (!this.world.isRemote) {
+			if (this.isAtBottom() && (!this.getBottomFlag()) && !this.getIsFast() && this.getSwimCooldown() <= 0) {
+				this.setBottomFlag(true);
+				this.setBottomCooldown(300 + rand.nextInt(600));
+			}
+			if (this.isAtBottom() && (this.getBottomFlag())) {
+				this.setBottomCooldown(this.getBottomCooldown() - 1);
+			}
+			if (this.getBottomCooldown() < 0) {
+				this.setBottomCooldown(0);
+			}
+			if (this.getBottomCooldown() <= 0 && this.getBottomFlag()) {
+				this.setBottomFlag(false);
+				this.setSwimCooldown(200 + rand.nextInt(300));
+			}
+			if (!(this.getBottomFlag())) {
+				this.setSwimCooldown(this.getSwimCooldown() - 1);
+			}
+			if (this.getSwimCooldown() <= 0) {
+				this.setSwimCooldown(0);
+			}
+
+		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
 			launchAttack();
@@ -239,10 +339,15 @@ public class EntityPrehistoricFloraAcanthostega extends EntityPrehistoricFloraSw
 
 	}
 
-	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-
+	public boolean isAtBottom() {
+		//System.err.println("Testing position");
+		if (this.getPosition().getY() - 1 >= 0) {
+			BlockPos pos = new BlockPos(this.getPosition().getX(),this.getPosition().getY() - 1, this.getPosition().getZ());
+			return ((this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL))
+					&& ((this.world.getBlockState(pos)).getMaterial() != Material.WATER)
+					&& this.getSwimCooldown() <= 0 && this.onGround);
+		}
+		return false;
 	}
 
 	@Override
@@ -266,62 +371,15 @@ public class EntityPrehistoricFloraAcanthostega extends EntityPrehistoricFloraSw
 		}
 		return LepidodendronMod.ACANTHOSTEGA_LOOT;
 	}
+
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall(@Nullable String variant) {
-		return 0.01;
-	}
-	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 1.4;
-	}
-	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.8;
-	}
-	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.4;
-	}
-	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
-	}
-	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.4;
-	}
-	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.15F;
-	}
-	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.4;
-	}
-	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.0F;
-	}
-	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0F;
-	}
-	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderAcanthostega.TEXTURE;
-	}
-	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelAcanthostega;
-	}
-	public static float getScaler(@Nullable String variant) {
-		return RenderAcanthostega.getScaler();
-	}
+	
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
 		return ModTriggers.CLICK_ACANTHOSTEGA;
 	}
+
 }

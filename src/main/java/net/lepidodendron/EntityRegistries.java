@@ -1377,7 +1377,18 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_araripemys", EntityPrehistoricFloraAraripemys.class, LepidodendronMod.ENTITY_ARARIPEMYS, 48,-13620198,-10729439);
         registerEntity("prehistoric_flora_ptyktoptychion", EntityPrehistoricFloraPtyktoptychion.class, LepidodendronMod.ENTITY_PTYKTOPTYCHION, 84,-8414827,-14539484);
         registerEntity("prehistoric_flora_genibatrachus", EntityPrehistoricFloraGenibatrachus.class, LepidodendronMod.ENTITY_GENIBATRACHUS, 48,-9024971,-4084892);
+        registerEntity("prehistoric_flora_helodus", EntityPrehistoricFloraHelodus.class, LepidodendronMod.ENTITY_HELODUS, 48,-12692099,-4352768);
+        registerEntity("prehistoric_flora_triodus", EntityPrehistoricFloraTriodus.class, LepidodendronMod.ENTITY_TRIODUS, 48,-9602996,-12169427);
+        registerEntity("prehistoric_flora_brachydectes", EntityPrehistoricFloraBrachydectes.class, LepidodendronMod.ENTITY_BRACHYDECTES, 48,-11058384,-9286870);
+        registerEntity("prehistoric_flora_huanghelepis", EntityPrehistoricFloraHuanghelepis.class, LepidodendronMod.ENTITY_HUANGHELEPIS, 48,-7964824,-10727099);
+        registerEntity("prehistoric_flora_leptostyrax", EntityPrehistoricFloraLeptostyrax.class, LepidodendronMod.ENTITY_LEPTOSTYRAX, 48,-3354158,-9669515);
+        registerEntity("prehistoric_flora_gerobatrachus", EntityPrehistoricFloraGerobatrachus.class, LepidodendronMod.ENTITY_GEROBATRACHUS, 48,-10709649,-5425383);
+        registerEntity("prehistoric_flora_orthacanthus", EntityPrehistoricFloraOrthacanthus.class, LepidodendronMod.ENTITY_ORTHACANTHUS, 48,-10937343,-13890304);
+        registerEntity("prehistoric_flora_boreopricea", EntityPrehistoricFloraBoreopricea.class, LepidodendronMod.ENTITY_BOREOPRICEA, 48,-4363492,-7386074);
+        registerEntity("prehistoric_flora_megachirella", EntityPrehistoricFloraMegachirella.class, LepidodendronMod.ENTITY_MEGACHIRELLA, 48,-1918347,-10662593);
+        registerEntity("prehistoric_flora_maghriboselache", EntityPrehistoricFloraMaghriboselache.class, LepidodendronMod.ENTITY_MAGHRIBOSELACHE, 48,-1187107,-8558499);
         registerEntity("prehistoric_flora_angelacanthus", EntityPrehistoricFloraAngelacanthus.class, LepidodendronMod.ENTITY_ANGELACANTHUS, 48,-13750996, -6568241);
+
 
         // aquatic nymphs for Stonefly, Mayfly, Argentinala, Velisoptera, Damselfly
         registerEntityNoEgg("prehistoric_flora_aquaticnymph", EntityPrehistoricFloraAquaticBugNymph.class, LepidodendronMod.ENTITY_AQUATIC_NYMPH, 48);

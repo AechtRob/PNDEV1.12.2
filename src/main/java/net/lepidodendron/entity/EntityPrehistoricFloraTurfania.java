@@ -66,7 +66,7 @@ public class EntityPrehistoricFloraTurfania extends EntityPrehistoricFloraFishBa
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.3f;
+		return 0.2f;
 	}
 
 	@Override
