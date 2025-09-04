@@ -7,9 +7,11 @@ import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TextFormatting;
 
 public class RenderSacabambaspis extends RenderLivingBaseWithBook<EntityPrehistoricFloraSacabambaspis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sacabambaspis.png");
+    public static final ResourceLocation TEXTURE_FUNNY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sacabambaspis_nametag.png");
     public static float getScaler() {
         return 0.25F;
     }
@@ -20,6 +22,12 @@ public class RenderSacabambaspis extends RenderLivingBaseWithBook<EntityPrehisto
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraSacabambaspis entity) {
+        String s = TextFormatting.getTextWithoutFormattingCodes(entity.getName());
+        if (s != null &&
+                (("funny".equalsIgnoreCase(s)) || ("elga".equalsIgnoreCase(s)) || ("helsinki".equalsIgnoreCase(s)))
+        ) {
+            return RenderSacabambaspis.TEXTURE_FUNNY;
+        }
         return RenderSacabambaspis.TEXTURE;
     }
 

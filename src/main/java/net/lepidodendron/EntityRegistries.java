@@ -1388,6 +1388,9 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_megachirella", EntityPrehistoricFloraMegachirella.class, LepidodendronMod.ENTITY_MEGACHIRELLA, 48,-1918347,-10662593);
         registerEntity("prehistoric_flora_maghriboselache", EntityPrehistoricFloraMaghriboselache.class, LepidodendronMod.ENTITY_MAGHRIBOSELACHE, 48,-1187107,-8558499);
         registerEntity("prehistoric_flora_angelacanthus", EntityPrehistoricFloraAngelacanthus.class, LepidodendronMod.ENTITY_ANGELACANTHUS, 48,-13750996, -6568241);
+        registerEntity("prehistoric_flora_scapanorhynchus", EntityPrehistoricFloraScapanorhynchus.class, LepidodendronMod.ENTITY_SCAPANORHYNCHUS, 84,-5465214,-85663);
+        registerEntity("prehistoric_flora_aetosauroides", EntityPrehistoricFloraAetosauroides.class, LepidodendronMod.ENTITY_AETOSAUROIDES, 64,-10062805,-14341353);
+        registerEntity("prehistoric_flora_taquetochelys", EntityPrehistoricFloraTaquetochelys.class, LepidodendronMod.ENTITY_TAQUETOCHELYS, 48,-12767192,-5743794);
 
 
         // aquatic nymphs for Stonefly, Mayfly, Argentinala, Velisoptera, Damselfly

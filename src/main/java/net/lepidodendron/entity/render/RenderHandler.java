@@ -8523,6 +8523,25 @@ public class RenderHandler {
                 return new RenderMaghriboselache(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraScapanorhynchus.class, new IRenderFactory<EntityPrehistoricFloraScapanorhynchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraScapanorhynchus> createRenderFor(RenderManager manager) {
+                return new RenderScapanorhynchus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAetosauroides.class, new IRenderFactory<EntityPrehistoricFloraAetosauroides>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAetosauroides> createRenderFor(RenderManager manager) {
+                return new RenderAetosauroides(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTaquetochelys.class, new IRenderFactory<EntityPrehistoricFloraTaquetochelys>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTaquetochelys> createRenderFor(RenderManager manager) {
+                return new RenderTaquetochelys(manager);
+            }
+        });
+
 
 
 
