@@ -1,0 +1,47 @@
+{
+	"name": "Nipponamia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/nipponamia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_nipponamia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_nipponamia",
+			"title": "Nipponamia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Amiiformes$(br)>Amiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "N. satoi",
+            "entity": "lepidodendron:prehistoric_flora_nipponamia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nipponamia",
+			"type": "text",
+			"text": "Nipponamia satoi is a poorly known species of bowfin from the Dobaru Formation of the Wakino Fish Fauna of Japan, growing to about 30 centimeters long. Its name translates to 'Japanese bowfin' and its species name honors Mr. Masahiro Sato, who donated the specimen."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_nipponamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_nipponamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_nipponamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_nipponamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_nipponamia"
+		}
+	]
+}

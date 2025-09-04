@@ -1,0 +1,47 @@
+{
+	"name": "Triodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/triodus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_triodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_triodus",
+			"title": "Triodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Xenacanthiformes$(br)>Xenacanthidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Triodus sp.",
+            "entity": "lepidodendron:prehistoric_flora_triodus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_triodus",
+			"type": "text",
+			"text": "Triodus hails from the upper Carboniferous into the middle Permian, with fossils found across the Americas and Europe. It is a small xenacanthid, growing up to 60 cm in length. It is thought to have been a excellent predator, as fossils have been found with small amphibians in its stomach contents."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_triodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_triodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_triodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_triodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_triodus"
+		}
+	]
+}

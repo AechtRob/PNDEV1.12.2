@@ -1,0 +1,47 @@
+{
+	"name": "Orthacanthus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/orthacanthus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_orthacanthus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_orthacanthus",
+			"title": "Orthacanthus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Xenacanthiformes$(br)>Orthacanthidae"
+		},
+        	{
+            "type": "entity",
+            "name": "O. cylindricus ",
+            "entity": "lepidodendron:prehistoric_flora_orthacanthus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_orthacanthus",
+			"type": "text",
+			"text": "Orthacanthus hails from the upper Carboniferous into the lower Permian, with fossils found across North America and Europe. It is a large orthacanthid, growing up to 3 cm in length. As with most sharks, it is primarily known from teeth material, although there is wonderfully preserved material of juvenile specimens, with entire bodies preserved."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_orthacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_orthacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_orthacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_orthacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_orthacanthus"
+		}
+	]
+}

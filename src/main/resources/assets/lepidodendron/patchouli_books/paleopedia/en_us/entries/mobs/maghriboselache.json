@@ -1,0 +1,52 @@
+{
+	"name": "Maghriboselache",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/maghriboselache_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_maghriboselache",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_maghriboselache",
+			"title": "Maghriboselache",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian $(br2)>Chordata$(br)>Chondrichthyes$(br)>Holocephali$(br)>Cladoselachiformes$(br)>Cladoselachidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. mohamezanei",
+            "entity": "lepidodendron:prehistoric_flora_maghriboselache",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_maghriboselache",
+			"type": "text",
+			"text": "Maghriboselache mohamezanei comes from the Upper Devonian, with fossils found in the Thylacocephalan Layer Formation, Morocco. It is a small cladoselachid shark, growing up to 2.7 cm in length. Maghriboselache is most well known for being the first cladoselachid to have 3 dimensionally preserved skulls, from the jaws, braincase and endocranium."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_maghriboselache",
+			"type": "text",
+			"text": "The generic name derives from the Arabic word 'al Maghrib', to mean 'Morocco'; and the Greek word 'selachos', to mean 'cartilaginous fish'. The specific name derives from the full name of Moha Mezane, a French geologist and fossil hunter whom discovered the first fossils of Maghriboselache."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_maghriboselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_maghriboselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_maghriboselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_maghriboselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_maghriboselache"
+		}
+	]
+}
