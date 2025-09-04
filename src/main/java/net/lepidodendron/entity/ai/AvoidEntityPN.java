@@ -121,7 +121,19 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
     @Override
     public void updateTask()
     {
-        super.updateTask();
+        if (this.entity.getDistanceSq(this.closestLivingEntity) < 49.0D)
+        {
+            if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
+                ((EntityPrehistoricFloraAgeableBase)this.entity).setAvoidTarget(this.closestLivingEntity);
+            }
+        }
+        else
+        {
+
+            if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
+                ((EntityPrehistoricFloraAgeableBase)this.entity).setAvoidTarget(null);
+            }
+        };
     }
 }
 
