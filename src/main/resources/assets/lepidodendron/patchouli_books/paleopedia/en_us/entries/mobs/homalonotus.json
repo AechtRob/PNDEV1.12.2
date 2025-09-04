@@ -1,0 +1,47 @@
+{
+	"name": "Homalonotus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/homalonotus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_homalonotus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_homalonotus",
+			"title": "Homalonotus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician - Devonian$(br2)>Arthropoda$(br)>Trilobita$(br)>Phacopida$(br)>Homalonotidae"
+		},
+		{
+			"type": "entity",
+			"name": "Homalonotus sp.",
+			"entity": "lepidodendron:prehistoric_flora_homalonotus",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_homalonotus",
+			"type": "text",
+			"text": "Homalonotus hails from the Upper Ordovician into the Lower Devonian, with fossils found across the globe. It was a small trilobite, growing up to 12 cm in length. Namesake of the family Homalonotidae, they have fairly triangular cephalons and pygidiums, with some species of Homalonotus also bearing spines on the topside of its exo-skeleton."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_homalonotus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_homalonotus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_homalonotus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_homalonotus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_homalonotus"
+		}
+	]
+}

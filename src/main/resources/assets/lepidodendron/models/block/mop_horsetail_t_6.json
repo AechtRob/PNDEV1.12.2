@@ -1,0 +1,45 @@
+{
+	"ambientocclusion": false,
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "lepidodendron:blocks/mop_horsetail_2_t",
+		"particle": "lepidodendron:items/mop_horsetail_inventory"
+	},
+	"elements": [
+		{
+			"from": [-0.5, 0, 7],
+			"to": [15.5, 32, 7],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 7]},
+			"faces": {
+				"north": {"uv": [4, 0, 12, 16], "texture": "#1"},
+				"south": {"uv": [12, 0, 4, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [7, 0, -1.5],
+			"to": [7, 32, 14.5],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [7, 0, 7]},
+			"faces": {
+				"east": {"uv": [12, 0, 4, 16], "texture": "#1"},
+				"west": {"uv": [4, 0, 12, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [7, 0, -1.5],
+			"to": [7, 32, 14.5],
+			"rotation": {"angle": 45, "axis": "y", "origin": [7, 0, 7]},
+			"faces": {
+				"east": {"uv": [12, 0, 4, 16], "texture": "#1"},
+				"west": {"uv": [4, 0, 12, 16], "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "group",
+			"origin": [8, 0, 8],
+			"color": 0,
+			"children": [0, 1, 2]
+		}
+	]
+}

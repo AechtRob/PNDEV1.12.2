@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:tussock_horsetail"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_tussock_horsetail.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_tussock_horsetail.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_tussock_horsetail"
+		}
+	}
+}

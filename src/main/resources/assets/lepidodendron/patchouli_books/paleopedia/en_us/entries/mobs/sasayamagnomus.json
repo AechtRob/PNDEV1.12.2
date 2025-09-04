@@ -1,0 +1,47 @@
+{
+	"name": "Sasayamagnomus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sasayamagnomus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sasayamagnomus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sasayamagnomus",
+			"title": "Sasayamagnomus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Ceratopsia$(br)>Neoceratopsia"
+		},
+        	{
+            "type": "entity",
+            "name": "S. saegusai",
+            "entity": "lepidodendron:prehistoric_flora_sasayamagnomus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sasayamagnomus",
+			"type": "text",
+			"text": "Sasayamagnomus is a ceratopsian from the Early Cretaceous Japan.  It is known from a young specimen which is estimated to reach 80 cm. It is also the  sister taxon of North American Aquilops. This shows that ceratopsians may moved to North America from Asia around that time."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sasayamagnomus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sasayamagnomus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sasayamagnomus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sasayamagnomus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sasayamagnomus"
+		}
+	]
+}

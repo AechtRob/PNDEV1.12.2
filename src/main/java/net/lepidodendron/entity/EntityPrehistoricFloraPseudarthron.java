@@ -23,7 +23,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraPseudarthron extends EntityPrehistoricFloraTrilobiteBottomBase implements ITrappableWater, IAdvancementGranter {
+public class EntityPrehistoricFloraPseudarthron extends EntityPrehistoricFloraTrilobiteBottomBase implements IAdvancementGranter, ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -145,15 +145,17 @@ public class EntityPrehistoricFloraPseudarthron extends EntityPrehistoricFloraTr
 		//this.renderYawOffset = this.rotationYaw;
 	}
 
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-	}
-
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.PSEUDARTHRON_LOOT;
 	}
 
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+	}
+
+	@Nullable
+	@Override
 	public CustomTrigger getModTrigger() {
 		return ModTriggers.CLICK_PSEUDARTHRON;
 	}

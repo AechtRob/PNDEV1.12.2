@@ -5249,6 +5249,15 @@ public class LepidodendronSorter {
 
     public static final int volcano_heart = 8190;
     public static final int coral_lantern = 8191;
+    public static final int rudist_reef = 8192;
+    public static final int rudist_reef_sticky = 8193;
+    public static final int bivalve_titanosarcolites = 8194;
+    public static final int bivalve_ichthyosarcolites = 8195;
+    public static final int horsetail_prehistoric_ground_cover = 8196;
+    public static final int tussock_horsetail = 8197;
+    public static final int mop_horsetail = 8198;
+    public static final int mop_horsetail_top = 8199;
+    //Rob list ends-----
     
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;
@@ -5865,23 +5874,39 @@ public class LepidodendronSorter {
     public static final int crinoid_roveacrinus = 5586;
     public static final int pseudarthron_raw = 5587;
     public static final int halichondrites = 5588;
-  
+    public static final int trypanognathus_raw = 5589;
+    public static final int amphibian_spawn_trypanognathus = 5590;
+    public static final int amphibian_spawn_trypanognathus_worldgen = 5591;
+    public static final int capsospongia = 5592;
+    public static final int vetulocystis = 5593;
+    public static final int bivalve_requienia = 5594;
     public static final int dentilepisosteus_raw = 5595;
     public static final int eggs_eoconfuciusornis = 5596;
     public static final int eoconfuciusornis_raw = 5597;
     public static final int eggs_procompsognathus = 5598;
     public static final int procompsognathus_raw = 5599;
+
+    public static final int bivalve_toucasia = 6000;
+    public static final int coeloptychium = 6001;
+    public static final int megasiphon = 6002;
+    public static final int thylacocercus = 6003;
+    public static final int chancelloria = 6004;
+    public static final int homalonotus_raw = 6005;
+    public static final int araxoceras_raw = 6006;
+    public static final int shell_araxoceras = 6007;
+    public static final int xiyuichthys_raw = 6008;
+  
     public static final int victalimulus_raw = 5600;
     public static final int mosura_raw = 5601;
     public static final int eggs_araripemys = 5602;
     public static final int araripemys_raw = 5603;
     public static final int ptyktoptychion_raw = 5604;
-    public static final int genibatrachus_raw = 5607;
-    public static final int angelacanthus_raw = 5624;
-
-
     public static final int turfania_raw = 5605;
+    public static final int genibatrachus_raw = 5607;
 
+    public static final int kururubatrachus_raw = 5616;
+    public static final int americaspis_raw = 5623;
+    public static final int angelacanthus_raw = 5624;
 
 
 

@@ -119,6 +119,7 @@ public class ItemPrehistoricPlantable extends Item {
 			|| blockGround == BlockPrehistoricGroundSandPangaean.block
 			|| blockGround == BlockPrehistoricGroundSandRed.block
 			|| blockGround == BlockPrehistoricGroundFern.block
+			|| blockGround == BlockPrehistoricGroundHorsetail.block
 			|| blockGround == BlockPrehistoricGroundMossy.block
 		) {
 			return true;

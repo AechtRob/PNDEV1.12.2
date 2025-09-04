@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:chancelloria"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:chancelloria", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:chancelloria", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:chancelloria", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:chancelloria", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:chancelloria"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:chancelloria", "x": 180}
+    ]
+  }
+}

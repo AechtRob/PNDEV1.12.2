@@ -1,0 +1,79 @@
+{
+	"ambientocclusion": false,
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "lepidodendron:blocks/mop_horsetail_3_t",
+		"1": "lepidodendron:blocks/mop_horsetail_2_t",
+		"particle": "lepidodendron:items/mop_horsetail_inventory"
+	},
+	"elements": [
+		{
+			"from": [3.5, 0, 11],
+			"to": [19.5, 32, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [11, 0, 11]},
+			"faces": {
+				"north": {"uv": [4, 0, 12, 16], "texture": "#0"},
+				"south": {"uv": [12, 0, 4, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [11, 0, 2.5],
+			"to": [11, 32, 18.5],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [11, 0, 11]},
+			"faces": {
+				"east": {"uv": [12, 0, 4, 16], "texture": "#0"},
+				"west": {"uv": [4, 0, 12, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [11, 0, 2.5],
+			"to": [11, 32, 18.5],
+			"rotation": {"angle": 45, "axis": "y", "origin": [11, 0, 11]},
+			"faces": {
+				"east": {"uv": [12, 0, 4, 16], "texture": "#0"},
+				"west": {"uv": [4, 0, 12, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [-0.5, 0, 5],
+			"to": [15.5, 32, 5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 5]},
+			"faces": {
+				"north": {"uv": [4, 0, 12, 16], "texture": "#1"},
+				"south": {"uv": [12, 0, 4, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [7, 0, -3.5],
+			"to": [7, 32, 12.5],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [7, 0, 5]},
+			"faces": {
+				"east": {"uv": [12, 0, 4, 16], "texture": "#1"},
+				"west": {"uv": [4, 0, 12, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [7, 0, -3.5],
+			"to": [7, 32, 12.5],
+			"rotation": {"angle": 45, "axis": "y", "origin": [7, 0, 5]},
+			"faces": {
+				"east": {"uv": [12, 0, 4, 16], "texture": "#1"},
+				"west": {"uv": [4, 0, 12, 16], "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "group",
+			"origin": [8, 0, 8],
+			"color": 0,
+			"children": [0, 1, 2]
+		},
+		{
+			"name": "group",
+			"origin": [8, 0, 8],
+			"color": 0,
+			"children": [3, 4, 5]
+		}
+	]
+}

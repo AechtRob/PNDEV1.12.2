@@ -1,0 +1,52 @@
+{
+	"name": "Trypanognathus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/trypanognathus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_trypanognathus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_trypanognathus",
+			"title": "Trypanognathus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Amphibia$(br)>Temnospondyli$(br)>Dvinosauria"
+		},
+		{
+			"type": "entity",
+			"name": "T. remigiusbergensis",
+			"entity": "lepidodendron:prehistoric_flora_trypanognathus",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_trypanognathus",
+			"type": "text",
+			"text": "Trypanognathus remigiusbergensis comes from the upper Carboniferous, with fossils found in Remigiusberg Formation, Germany. It was a small dvinosaur temnospondly, growing up to 60 cm in length. The one outstanding feature of Trypanognathus is that not only does it have tusks poking out through the top of its skull through openings, but also has tusks poking through the bottom of its jaw."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_trypanognathus",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'trypanon', to mean 'to bore'; and 'gnáthos', to mean 'jaw'. The specific name derives from the place name 'Remigiusberg', where the fossils are found; and 'ensis', to mean 'belonging to'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_trypanognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_trypanognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_trypanognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_trypanognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_trypanognathus"
+		}
+	]
+}

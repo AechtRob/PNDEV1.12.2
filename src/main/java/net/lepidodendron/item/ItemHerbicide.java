@@ -83,7 +83,7 @@ public class ItemHerbicide extends ElementsLepidodendronMod.ModElement {
 							if (isDirectPathBetweenPointsToKill(worldIn, fromBlockPos(usepos), fromBlockPos(blockpos))) {
 								Block targetBlock = worldIn.getBlockState(blockpos.down()).getBlock();
 								if (targetBlock == BlockPrehistoricGroundBasic.block || targetBlock == BlockPrehistoricGroundLush.block
-									|| targetBlock == BlockPrehistoricGroundFern.block || targetBlock == BlockPrehistoricGroundMossy.block
+									|| targetBlock == BlockPrehistoricGroundFern.block || targetBlock == BlockPrehistoricGroundMossy.block || targetBlock == BlockPrehistoricGroundHorsetail.block
 									|| targetBlock == BlockPrehistoricGroundEarlyAngiosperm.block) {
 									worldIn.destroyBlock(blockpos.down(), false);
 									worldIn.setBlockState(blockpos.down(), Blocks.DIRT.getStateFromMeta(0));

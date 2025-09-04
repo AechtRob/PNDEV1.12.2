@@ -611,6 +611,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockDinophytonSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPhoenicopsisSapling.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemCorallineAlgaeItem.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockGrassyHorsetail.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockTussockHorsetail.block).toString(),
                 "minecraft:small_fern",
                 "minecraft:large_fern"
 
@@ -748,6 +750,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.ITEMS.getKey(ItemCorallineAlgaeItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockLiverwort.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockDesmiophyllumSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockTussockHorsetail.block).toString(),
                 "minecraft:small_fern",
                 "minecraft:large_fern"
         };
@@ -934,6 +937,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.ITEMS.getKey(ItemCorallineAlgaeItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockLiverwort.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockDesmiophyllumSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockTussockHorsetail.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockMopHorsetail.block).toString(),
                 "minecraft:spruce_sapling",
                 "minecraft:small_fern",
                 "minecraft:large_fern"
@@ -1133,6 +1138,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockSeaweed.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPaleoenkianthus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTylerianthus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockTussockHorsetail.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockMopHorsetail.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:dark_oak_sapling",
                 "minecraft:spruce_sapling",
@@ -1286,6 +1293,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockBrownAscendingAlgae.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemCorallineAlgaeItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSeaweed.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockTussockHorsetail.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockMopHorsetail.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:acacia_sapling",
                 "minecraft:dark_oak_sapling",
@@ -1440,6 +1449,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockMacrocystisKelp.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockNereocystisKelp.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSeaweed.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockTussockHorsetail.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockMopHorsetail.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:acacia_sapling",
                 "minecraft:dark_oak_sapling",
@@ -1594,6 +1605,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockMacrocystisKelp.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockNereocystisKelp.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSeaweed.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockTussockHorsetail.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockMopHorsetail.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:acacia_sapling",
                 "minecraft:dark_oak_sapling",

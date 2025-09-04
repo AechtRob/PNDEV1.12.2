@@ -1,0 +1,52 @@
+{
+	"name": "Erettopterus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/erettopterus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_erettopterus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_erettopterus",
+			"title": "Erettopterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Pterygotidae"
+		},
+		{
+			"type": "entity",
+			"name": "E. bilobus",
+			"entity": "lepidodendron:prehistoric_flora_erettopterus",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_erettopterus",
+			"type": "text",
+			"text": "Erettopterus hails from the Silurian into the lower Devonian, with fossils found in formations across North America and Eurasia. It is a small pterygotid, growing up to 90 cm in length, with sparse evidence of sizes up to 2.5 m or more, although this is not properly confirmed. Erettopterus is most well known for its bilobed telson, meaning its been divided into two, whilst most other pterygotids have a single lobed telson."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_erettopterus",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'eréttō', to mean 'rower'; and 'pterón', to mean 'wing'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_erettopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_erettopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_erettopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_erettopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_erettopterus"
+		}
+	]
+}

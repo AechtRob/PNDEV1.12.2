@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_funisia",
 			"title": "Funisia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Shallow Marine$(br2)>$(o)incertae sedis"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Shallow Marine$(br2)>$(o)Porifera (?)$()$(br)>Olgunidae"
 		},
 		{
 			"type": "multiblock",
@@ -29,7 +29,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_funisia",
 			"type": "text",
-			"text": "Funisia is an animal of uncertain affinity that resembled many little stalks grouped together. It is one of the earliest animals for which sexual reproduction is believed to be evident in. Its name comes from the Latin 'rope.'"
+			"text": "Funisia dorothea comes from the upper Ediacaran, with fossils found in the Rawnsley Quartzite, Australia. It is the largest olgunid, growing up to 30 cm in height. It superficially resembles and upright worm, although the similarities end there, as it bears a small holdfast at its base, and has been postured to have affinities to sponges. It is also currently the oldest known animal to sexually reproduce, although could still reproduce via budding."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_funisia",
+			"type": "text",
+			"text": "The generic name derives directly from the Latin word 'Funisia', to mean 'rope'. The specific name derives from the Latinised forename of Dorothy Droser, mother to Mary L. Droser, one of the palaeontologists that studied the first specimens of Funisia."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_funisia",

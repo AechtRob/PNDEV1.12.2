@@ -353,6 +353,8 @@ public class EntityPNBoat extends EntityBoat
                 return ItemWoodworthiaBoatItem.block;
             case ARBORAMOSA:
                 return ItemArboramosaBoatItem.block;
+            case SCHILDERIA:
+                return ItemSchilderiaBoatItem.block;
 
         }
     }
@@ -525,6 +527,8 @@ public class EntityPNBoat extends EntityBoat
                 return BlockWoodworthiaPlanks.block;
             case ARBORAMOSA:
                 return BlockArboramosaPlanks.block;
+            case SCHILDERIA:
+                return BlockSchilderiaPlanks.block;
 
         }
     }
@@ -1405,7 +1409,8 @@ public class EntityPNBoat extends EntityBoat
         MIROVIA(78, "mirovia"),
         ALBERTIA(79, "albertia"),
         WOODWORTHIA(80, "woodworthia"),
-        ARBORAMOSA(81, "arboramosa")
+        ARBORAMOSA(81, "arboramosa"),
+        SCHILDERIA(82, "schilderia")
         ;
 
         private final String name;

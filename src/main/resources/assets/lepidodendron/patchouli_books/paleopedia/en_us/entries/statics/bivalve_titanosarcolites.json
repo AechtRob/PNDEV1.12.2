@@ -1,0 +1,40 @@
+{
+	"name": "Titanosarcolites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bivalve_titanosarcolites_icon.png",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_bivalve_titanosarcolites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bivalve_titanosarcolites",
+			"title": "Titanosarcolites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Hippuritida$(br)>Antillocaprinidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "Titanosarcolites sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_titanosarcolites",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_titanosarcolites",
+			"type": "text",
+			"text": "Titanosarcolites is a genus of mollusk rudist that lived during the Late Cretaceous, with fossils being found across the Americas. Titanosarcolites is apart of an informal group known as 'recumbents', meaning that they lay flat on top of the substrate."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_titanosarcolites",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

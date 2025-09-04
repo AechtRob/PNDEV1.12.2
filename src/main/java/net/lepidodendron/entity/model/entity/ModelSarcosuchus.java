@@ -669,16 +669,16 @@ public class ModelSarcosuchus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = 0.0F;
-        this.root.offsetX = 0.2F;
+        this.root.offsetX = 0.4F;
         this.root.offsetZ = 2.0F;
         this.root.rotateAngleY = (float)Math.toRadians(120);
         this.root.rotateAngleX = (float)Math.toRadians(0);
         this.root.rotateAngleZ = (float)Math.toRadians(0);
         this.root.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.3F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(root, 0.2F, 4.2F, -0.2F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:

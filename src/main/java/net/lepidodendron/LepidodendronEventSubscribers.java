@@ -520,9 +520,16 @@ public class LepidodendronEventSubscribers {
 
 	@SubscribeEvent //Bat poo
 	public void guano(LivingEvent.LivingUpdateEvent event) {
-		if (event.getEntity() instanceof EntityBat && LepidodendronConfig.doGuanoBats) {
+		double chancer = LepidodendronConfig.doGuanoBats;
+		if (chancer < 0.0D) {
+			chancer = 0.0D;
+		}
+		if (chancer > 1000.0D) {
+			chancer = 1000.0D;
+		}
+		if (event.getEntity() instanceof EntityBat && chancer > 0.0D) {
 			EntityBat bat = (EntityBat) event.getEntity();
-			if (bat.world.rand.nextInt(6000) == 0 && (!bat.world.isRemote)
+			if (bat.world.rand.nextInt((int)Math.floor(6000 / chancer)) == 0 && (!bat.world.isRemote)
 					&& bat.getIsBatHanging() && bat.world.isAirBlock(bat.getPosition().down())) {
 				EntityPrehistoricFloraGuanoBall guanoBall = new EntityPrehistoricFloraGuanoBall(bat.world, bat.posX, bat.posY - 0.5, bat.posZ);
 				guanoBall.setFromMob(true);

@@ -21,6 +21,7 @@ import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -59,6 +60,7 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 	public MillipedeBuffer myriapodBuffer;
+	public Animation HIDE_ANIMATION;
 
 	private static final float[] PNEUMODESMUS_SIZE = new float[]{0.30F, 0.30F};
 	private static final float[] EOARTHROPLEURA_SIZE = new float[]{0.30F, 0.30F};
@@ -79,9 +81,14 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 1D;
+		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			myriapodBuffer = new MillipedeBuffer();
 		}
+	}
+
+	public int hideAnimationLength() {
+		return 160;
 	}
 
 	@Override
@@ -96,6 +103,8 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 			myriapodBuffer.calculateChainSwingBuffer(120, 16, 12.5F, this);
 		}
 	}
+
+
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
@@ -122,42 +131,45 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 	} //Only adults!
 
 	@Override
-	public int getAnimationTick() {
-		return getAnimationTick();
-	}
-
-	@Override
 	public float getAISpeedLand() {
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
+		}
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
+				|| this.getAnimation() == HIDE_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
+			return 0.0F;
 		}
 		return getCrawlSpeed();
 	}
 
 	@Override
-	public void setAnimationTick(int tick) {
-		animationTick = tick;
+	public Animation[] getAnimations() {
+		return new Animation[]{HIDE_ANIMATION};
 	}
 
-	@Override
-	public Animation getAnimation() {
-		return null;
-	}
-
-	@Override
-	public void setAnimation(Animation animation)
-	{
-		if (animation == NO_ANIMATION){
-			onAnimationFinish(this.animation);
-			setAnimationTick(0);
+	//This allows us to only allow the hide animation for specific variants
+	public boolean canHide() {
+		switch (this.getPNType()) {
+			case JULIFORM:
+				return true;
+			case CRUSSOLUM: default:
+            case PNEUMODESMUS:
+			case LATZELIA:
+			case EOARTHROPLEURA:
+			case VELOCIPEDE:
+			case FULMENOCURSOR:
+			case DEVONOBIUS:
+			case POLYDESMID:
+                return false;
 		}
-		this.animation = animation;
 	}
 
 	@Override
-	public Animation[] getAnimations()
-	{
-		return null;
+	protected void collideWithEntity(Entity entityIn) {
+		super.collideWithEntity(entityIn);
+		if(this.onGround && !this.isReallyInWater() && this.canHide()){
+			this.setAnimation(HIDE_ANIMATION);
+		}
 	}
 
 	protected void onAnimationFinish(Animation animation)
@@ -230,6 +242,10 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
+
+		if (this.isReallyInWater() && this.getAnimation() == HIDE_ANIMATION){
+			this.setAnimation(NO_ANIMATION);
+		}
 
 		this.setSizer(this.getHitBoxSize()[0], this.getHitBoxSize()[1]);
 		

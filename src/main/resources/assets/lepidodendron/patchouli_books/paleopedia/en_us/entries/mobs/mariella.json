@@ -1,0 +1,47 @@
+{
+	"name": "Mariella",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mariella_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_mariella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mariella",
+			"title": "Mariella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Ancyloceratina$(br)>Ancyloceratoidea$(br)>Turrilitidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Mariella sp.",
+            "entity": "lepidodendron:prehistoric_flora_mariella",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mariella",
+			"type": "text",
+			"text": "Mariella comes from the Cretaceous, with fossils found across the globe. It is a small turrilitid, growing up to 20 cm in size. Like most turrilitids, its shell coils downwards, forming a sort of spire-like shape, which itself is covered in equally spaced tubercles. Although it differs from its kin in having a stronger ribbed shell, and an oval aperture."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mariella"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mariella"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mariella"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mariella"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mariella"
+		}
+	]
+}

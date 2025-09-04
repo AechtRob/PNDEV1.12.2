@@ -705,17 +705,17 @@ public class ModelMicrovenator extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.microvenator.offsetY = -0.4F;
-        this.microvenator.offsetX = 0.1F;
+        this.microvenator.offsetY = 0.4F;
+        this.microvenator.offsetX = 0.26F;
         this.microvenator.offsetZ = 2.0F;
         this.microvenator.rotateAngleY = (float)Math.toRadians(130);
         this.microvenator.rotateAngleX = (float)Math.toRadians(0);
         this.microvenator.rotateAngleZ = (float)Math.toRadians(0);
         this.microvenator.scaleChildren = true;
-        float scaler = 0.8F;
+        float scaler = 0.5F;
         this.microvenator.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(microvenator, 0.2F, 4.4F, -0.2F);
         //End of pose, now render the model:
         this.microvenator.render(f);
         //Reset rotations, positions and sizing:

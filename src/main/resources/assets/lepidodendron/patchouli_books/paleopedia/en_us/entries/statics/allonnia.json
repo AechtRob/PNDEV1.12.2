@@ -9,11 +9,11 @@
 			"trigger": "lepidodendron:pf_adv_book_allonnia",
 			"title": "Allonnia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>$(o)incertae sedis$()$(br)>Coeloscleritophora$(br)>Chancelloriida$(br)>Chancelloriidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>$(o)Eumetazoa (?)$()$(br)>Coeloscleritophora$(br)>Chancelloriida$(br)>Chancelloriidae"
 		},
 		{
 			"type": "multiblock",
-			"name": "Allonnia sp.",
+			"name": "A. tripodophora",
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [
@@ -29,7 +29,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_allonnia",
 			"type": "text",
-			"text": "Allonnia is a coeloscleritophoran from the Cambrian period. It was covered in spines and looked like a closed bag. It was a stationary organism, living attached to the seafloor."
+			"text": "Allonnia comes from the middle Cambrian, with fossils found across the globe. It is a small chancelloriid, growing up to 5 cm in height. It differs from the namesake of the family, Chancelloria, by the fact that it has a more globular shape and how the spines form, consisting of only three rays."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_allonnia",

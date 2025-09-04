@@ -1,7 +1,7 @@
 {
   "parent": "block/fence_post",
   "textures": {
-    "texture": "lepidodendron:blocks/woodworthia_wood",
-    "particle": "lepidodendron:blocks/woodworthia_wood"
+    "texture": "lepidodendron:blocks/woodworthia_planks",
+    "particle": "lepidodendron:blocks/woodworthia_planks"
   }
 }

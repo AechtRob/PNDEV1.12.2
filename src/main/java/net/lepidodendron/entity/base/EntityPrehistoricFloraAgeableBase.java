@@ -93,6 +93,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public float extraStepHeight = 0F;
     public EntityItem eatTarget;
     public EntityLivingBase warnTarget;
+    public EntityLivingBase avoidTarget;
     public EntityLiving grappleTarget;
     public boolean willGrapple;
     public int alarmCooldown;
@@ -322,8 +323,8 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         BlockPos randPos;
         xx = -dist;
         while (xx <= dist) {
-            yy = (int) -Math.round((double) dist / 2D);
-            while (yy <= (int) Math.round((double) dist / 2D)) {
+            yy = (int) -Math.ceil((double) dist / 2D);
+            while (yy <= (int) Math.ceil((double) dist / 2D)) {
                 zz = -dist;
                 while (zz <= dist) {
                     if (entity.getPosition().getY() + yy >= 1 && entity.getPosition().getY() + yy <= 255) {
@@ -1238,6 +1239,17 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     @Nullable
+    public EntityLivingBase getAvoidTarget()
+    {
+        return this.avoidTarget;
+    }
+
+    public void setAvoidTarget(@Nullable EntityLivingBase entityLivingBase)
+    {
+        this.avoidTarget = entityLivingBase;
+    }
+
+    @Nullable
     public EntityLiving getGrappleTarget()
     {
         return this.grappleTarget;
@@ -1291,6 +1303,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 if (this.getWarnTarget().isDead) {
                     this.setWarnTarget(null);
                 }
+            }
+            if (this.getWarnTarget() != null) {
+                if (this.getWarnTarget().isDead) {
+                    this.setWarnTarget(null);
+                }
                 else if (this.getWarnTarget() instanceof EntityPlayer) {
                     if (((EntityPlayer)this.getWarnTarget()).isCreative()) {
                         this.setWarnTarget(null);
@@ -1310,7 +1327,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     }
                 }
             }
-            this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & (this.panics() || this.sneakOnRevenge())) || (this.isBurning() & this.panics()));
+            this.setIsFast(this.getAvoidTarget() != null || this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & (this.panics() || this.sneakOnRevenge())) || (this.isBurning() & this.panics()));
 
             if (this.getSneakRange() > 0 && this.getIsFast()
                     && (this.getAttackTarget() != null || (this.getRevengeTarget() != null && this.sneakOnRevenge()))
@@ -1547,9 +1564,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             }
         }
 
-        if (!world.isRemote) { //Do every 30 seconds provided we're not trying to lay eggs
+        if (!world.isRemote) {
+            // Do every 120 seconds provided we're not trying to lay eggs,
+            // as the AI searches directly in that case.
+            // Colliding with a nest triggers a findNest anyway
             if (!this.getLaying()
-                    && ((double) this.getTicks() / 600D == (int) Math.round((double) this.getTicks() / 600D))) {
+                    && ((double) this.getTicks() / 2400D == (int) Math.round((double) this.getTicks() / 2400D))) {
                 @Nullable BlockPos pos = this.getNestLocation();
                 if (pos == null) {
                     this.setNestLocation(this.findNest(this, 2, false));
