@@ -2077,6 +2077,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_BOREOPRICEA = new CustomTrigger("pf_book_boreopricea");
     public static final CustomTrigger CLICK_MEGACHIRELLA = new CustomTrigger("pf_book_megachirella");
     public static final CustomTrigger CLICK_MAGHRIBOSELACHE = new CustomTrigger("pf_book_maghriboselache");
+    public static final CustomTrigger CLICK_ANGELACANTHUS = new CustomTrigger("pf_book_angelacanthus");
 
 
 
@@ -4130,6 +4131,7 @@ public class ModTriggers
             CLICK_ARARIPEMYS,
             CLICK_PTYKTOPTYCHION,
             CLICK_GENIBATRACHUS,
+            CLICK_ANGELACANTHUS,
             CLICK_HOMALONOTUS,
             CLICK_ARAXOCERAS,
             CLICK_XIYUICHTHYS,

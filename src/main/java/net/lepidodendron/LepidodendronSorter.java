@@ -5885,6 +5885,31 @@ public class LepidodendronSorter {
     public static final int eoconfuciusornis_raw = 5597;
     public static final int eggs_procompsognathus = 5598;
     public static final int procompsognathus_raw = 5599;
+  
+    public static final int victalimulus_raw = 5600;
+    public static final int mosura_raw = 5601;
+    public static final int eggs_araripemys = 5602;
+    public static final int araripemys_raw = 5603;
+    public static final int ptyktoptychion_raw = 5604;
+    public static final int turfania_raw = 5605;
+    public static final int genibatrachus_raw = 5607;
+
+    public static final int boreopricea_raw = 5611;
+    public static final int eggs_boreopricea = 5612;
+    public static final int eggs_orthacanthus_worldgen = 5613;
+    public static final int gerobatrachus_raw = 5614;
+    public static final int helodus_raw = 5615;
+    public static final int kururubatrachus_raw = 5616;
+    public static final int orthacanthus_raw = 5617;
+    public static final int triodus_raw = 5618;
+    public static final int maghriboselache_raw = 5619;
+    public static final int leptostyrax_raw = 5620;
+    public static final int megachirella_raw = 5621;
+    public static final int huanghelepis_raw = 5622;
+    public static final int americaspis_raw = 5623;
+    public static final int angelacanthus_raw = 5624;
+    public static final int eggs_megachirella = 5626;
+    public static final int eggs_orthcanthus = 5627;
 
     public static final int bivalve_toucasia = 6000;
     public static final int coeloptychium = 6001;
@@ -5895,31 +5920,12 @@ public class LepidodendronSorter {
     public static final int araxoceras_raw = 6006;
     public static final int shell_araxoceras = 6007;
     public static final int xiyuichthys_raw = 6008;
-  
-    public static final int victalimulus_raw = 5600;
-    public static final int mosura_raw = 5601;
-    public static final int eggs_araripemys = 5602;
-    public static final int araripemys_raw = 5603;
-    public static final int eggs_tyktoptychion = 5604;
-    public static final int eggs_tyktoptychion_worldgen = 5624;
-    public static final int ptyktoptychion_raw = 5625;
-    public static final int genibatrachus_raw = 5607;
-    public static final int turfania_raw = 5605;
-    public static final int kururubatrachus_raw = 5616;
-    public static final int americaspis_raw = 5623;
-    public static final int huanghelepis_raw = 5622;
-    public static final int megachirella_raw = 5621;
-    public static final int eggs_megachirella = 5626;
-    public static final int boreopricea_raw = 5611;
-    public static final int eggs_boreopricea = 5612;
-    public static final int gerobatrachus_raw = 5614;
-    public static final int helodus_raw = 5615;
-    public static final int triodus_raw = 5618;
-    public static final int leptostyrax_raw = 5620;
-    public static final int eggs_orthcanthus = 5627;
-    public static final int eggs_orthacanthus_worldgen = 5613;
-    public static final int orthacanthus_raw = 5617;
-    public static final int maghriboselache_raw = 5619;
+
+
+
+
+
+
 
 
 }
