@@ -231,8 +231,10 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 			"lepidodendron:prehistoric_flora_whatcheeria",
 			"lepidodendron:prehistoric_flora_wodnika",
 			"lepidodendron:prehistoric_flora_xenacanthus",
+            "lepidodendron:prehistoric_flora_orthacanthus",
 
-			"lepidodendron:prehistoric_flora_archeria",
+
+            "lepidodendron:prehistoric_flora_archeria",
 			"lepidodendron:prehistoric_flora_nigerpeton",
 			"lepidodendron:prehistoric_flora_acherontiscus",
 			"lepidodendron:prehistoric_flora_anthracosaurus",
@@ -257,7 +259,11 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 			"lepidodendron:prehistoric_flora_aquaticnymph@argentinala",
 			"lepidodendron:prehistoric_flora_aquaticnymph@damselfly",
 			"lepidodendron:prehistoric_flora_trypanognathus",
-	};
+            "lepidodendron:prehistoric_flora_brachydectes",
+            "lepidodendron:prehistoric_flora_leptostyrax",
+            "lepidodendron:prehistoric_flora_gerobatrachus",
+
+    };
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 

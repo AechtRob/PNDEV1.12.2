@@ -5907,12 +5907,19 @@ public class LepidodendronSorter {
     public static final int turfania_raw = 5605;
     public static final int kururubatrachus_raw = 5616;
     public static final int americaspis_raw = 5623;
-
-
-
-
-
-
+    public static final int huanghelepis_raw = 5622;
+    public static final int megachirella_raw = 5621;
+    public static final int eggs_megachirella = 5626;
+    public static final int boreopricea_raw = 5611;
+    public static final int eggs_boreopricea = 5612;
+    public static final int gerobatrachus_raw = 5614;
+    public static final int helodus_raw = 5615;
+    public static final int triodus_raw = 5618;
+    public static final int leptostyrax_raw = 5620;
+    public static final int eggs_orthcanthus = 5627;
+    public static final int eggs_orthacanthus_worldgen = 5613;
+    public static final int orthacanthus_raw = 5617;
+    public static final int maghriboselache_raw = 5619;
 
 
 }

@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "paleopedia:items/brachydectes_icon"
-  }
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "paleopedia:items/brachydectes_icon"
+    }
 }

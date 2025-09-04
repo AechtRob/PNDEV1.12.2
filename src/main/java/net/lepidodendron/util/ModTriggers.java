@@ -2068,8 +2068,15 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ARARIPEMYS = new CustomTrigger("pf_book_araripemys");
     public static final CustomTrigger CLICK_PTYKTOPTYCHION = new CustomTrigger("pf_book_ptyktoptychion");
     public static final CustomTrigger CLICK_GENIBATRACHUS = new CustomTrigger("pf_book_genibatrachus");
-
-
+    public static final CustomTrigger CLICK_HELODUS = new CustomTrigger("pf_book_helodus");
+    public static final CustomTrigger CLICK_TRIODUS = new CustomTrigger("pf_book_triodus");
+    public static final CustomTrigger CLICK_HUANGHELEPIS = new CustomTrigger("pf_book_huanghelepis");
+    public static final CustomTrigger CLICK_LEPTOSTYRAX = new CustomTrigger("pf_book_leptostyrax");
+    public static final CustomTrigger CLICK_GEROBATRACHUS = new CustomTrigger("pf_book_gerobatrachus");
+    public static final CustomTrigger CLICK_ORTHACANTHUS = new CustomTrigger("pf_book_orthacanthus");
+    public static final CustomTrigger CLICK_BOREOPRICEA = new CustomTrigger("pf_book_boreopricea");
+    public static final CustomTrigger CLICK_MEGACHIRELLA = new CustomTrigger("pf_book_megachirella");
+    public static final CustomTrigger CLICK_MAGHRIBOSELACHE = new CustomTrigger("pf_book_maghriboselache");
 
 
 
@@ -4125,11 +4132,17 @@ public class ModTriggers
             CLICK_GENIBATRACHUS,
             CLICK_HOMALONOTUS,
             CLICK_ARAXOCERAS,
-            CLICK_XIYUICHTHYS
+            CLICK_XIYUICHTHYS,
 
-
-
-
+            CLICK_HELODUS,
+            CLICK_TRIODUS,
+            CLICK_HUANGHELEPIS,
+            CLICK_LEPTOSTYRAX,
+            CLICK_GEROBATRACHUS,
+            CLICK_ORTHACANTHUS,
+            CLICK_BOREOPRICEA,
+            CLICK_MEGACHIRELLA,
+            CLICK_MAGHRIBOSELACHE,
     };
 
 
