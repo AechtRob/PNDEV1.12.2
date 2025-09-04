@@ -4149,10 +4149,10 @@ public class ModTriggers
             CLICK_BOREOPRICEA,
             CLICK_MEGACHIRELLA,
             CLICK_MAGHRIBOSELACHE,
-    };
             CLICK_SCAPANORHYNCHUS,
             CLICK_AETOSAUROIDES,
-            CLICK_TAQUETOCHELYS,
+            CLICK_TAQUETOCHELYS
+    };
 
     /**
      * This method is part of my simple custom advancement triggering tutorial.
