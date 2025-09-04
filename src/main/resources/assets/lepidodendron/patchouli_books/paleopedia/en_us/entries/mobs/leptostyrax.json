@@ -1,0 +1,47 @@
+{
+	"name": "Leptostyrax",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/leptostyrax_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_leptostyrax",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_leptostyrax",
+			"title": "Leptostyrax",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Selachii$(br)>Lamniformes$(br)>Pseudoscapanorhynchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. macrorhiza",
+            "entity": "lepidodendron:prehistoric_flora_leptostyrax",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_leptostyrax",
+			"type": "text",
+			"text": "Leptostyrax comes from the Cretaceous, with fossils found across North America, Europe, Africa and Asia. It is a small pseudoscapanorhynchid, growing up to an conservative estimate of 3 m in length, with larger estimates of up to 8 m. As its temporal range and fossil range shows, its was amongst the most common sharks during the Cretaceous, and if the larger size estimates can be properly assigned to Leptostyrax, the largest as well."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_leptostyrax"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_leptostyrax"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_leptostyrax"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_leptostyrax"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_leptostyrax"
+		}
+	]
+}

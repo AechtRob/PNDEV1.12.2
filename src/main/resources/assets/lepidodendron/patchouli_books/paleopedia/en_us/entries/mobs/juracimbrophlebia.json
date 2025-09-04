@@ -1,0 +1,57 @@
+{
+	"name": "Juracimbrophlebia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/juracimbrophlebia_raw.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_juracimbrophlebia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_juracimbrophlebia",
+			"title": "Juracimbrophlebia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Insecta$(br)>Mecoptera$(br)>Raptipeda$(br)>Cimbrophlebiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "J. ginkgofolia",
+            "entity": "lepidodendron:prehistoric_flora_juracimbrophlebia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_juracimbrophlebia",
+			"type": "text",
+			"text": "Juracimbrophlebia ginkgofolia is a species of hangfly from the Middle Jurassic of China. The scorpionfly's wings seem extremely similar to the Gingkoites type leaves in its ecosystem, matching in size, shape, wrinkly texture, and even having patterns on its wings to match the looks of sunlight on leaves."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_juracimbrophlebia",
+			"type": "text",
+			"text": "It is likely that this animal would hang onto Gingkoites trees in order to camouflage itself. Juracimbrophlebia was quite large compared to other insects, about 3.8 centimeters, meaning it would be noticed easier by insectivores, and so evolved camouflage to avoid detection."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_juracimbrophlebia",
+			"type": "text",
+			"text": "The host tree may also benefit from this relationship, as herbivorous insects would be more wary about eating that tree after accidentally eating another insect. This unique trait is represented in the animal's name, meaning gingko leaved Jurassic Cimbrophlebia."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_juracimbrophlebia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_juracimbrophlebia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_juracimbrophlebia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_juracimbrophlebia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_juracimbrophlebia"
+		}
+	]
+}

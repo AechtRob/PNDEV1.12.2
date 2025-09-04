@@ -1,0 +1,47 @@
+{
+	"name": "Americaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/americaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_americaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_americaspis",
+			"title": "Americaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorpha$(br)>Heterostraci$(br)>Cyathaspidiformes$(br)>Cyathaspididae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. americana",
+            "entity": "lepidodendron:prehistoric_flora_americaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_americaspis",
+			"type": "text",
+			"text": "Americaspis hails from the upper Silurian into the lower Devonian, with fossils found in the Bloomsburg, Wills Creek and Longwood shale Formations, United States; as well as Ukraine. It is a small agnathan, growing up to 15 cm in length. It is well known for its 'finger-print' like pattern of its dorsal shield."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_americaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_americaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_americaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_americaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_americaspis"
+		}
+	]
+}

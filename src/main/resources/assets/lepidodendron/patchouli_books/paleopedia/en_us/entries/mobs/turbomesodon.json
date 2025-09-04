@@ -1,0 +1,52 @@
+{
+	"name": "Turbomesodon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/turbomesodon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_turbomesodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_turbomesodon",
+			"title": "Turbomesodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Pycnodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. relegans",
+            "entity": "lepidodendron:prehistoric_flora_turbomesodon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_turbomesodon",
+			"type": "text",
+			"text": "Turbomesodon is a genus of pycnodontid from Europe. Multiple species of this animal were originally assigned to Macromesodon, resulting in an annoying taxonomic revision of the species, referenced in the name, literally meaning 'agitating and confusing Macromesodon.'"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_turbomesodon",
+			"type": "text",
+			"text": "A juvenile skeleton of this animal was found and is one of the smallest pycnodont fossils to date, growing to only 2.4 cm long as opposed to an adult Turbomesodon's 13.5 cm. Turbomesodon is also the only pycnodont found with a nasal bone."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_turbomesodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_turbomesodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_turbomesodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_turbomesodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_turbomesodon"
+		}
+	]
+}

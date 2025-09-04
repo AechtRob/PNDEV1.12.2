@@ -1,0 +1,52 @@
+{
+	"name": "Pinacoceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pinacoceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_pinacoceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pinacoceras",
+			"title": "Pinacoceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Pinacoceratoidea$(br)>Pinacoceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. metternichi",
+            "entity": "lepidodendron:prehistoric_flora_pinacoceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pinacoceras",
+			"type": "text",
+			"text": "Pinacoceras is a genus of extremely laterally compressed ammonite, found worldwide. This genus is widespread, with specimens found in Canada, India, Oman, Nepal, and Austria, where it was originally found. However, Pinacoceras has become a very large wastebasket taxon, meaning that many of these reports may be from different genera thrown into Pinacoceras."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pinacoceras",
+			"type": "text",
+			"text": "It had a wide range of sizes, with species as small as 3.6 centimeters and some like P. parma growing to sizes of 21 centimeters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pinacoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pinacoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pinacoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pinacoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pinacoceras"
+		}
+	]
+}

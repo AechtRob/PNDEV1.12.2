@@ -1,0 +1,52 @@
+{
+	"name": "Araripemys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/araripemys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_araripemys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_araripemys",
+			"title": "Araripemys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Testudines$(br)>Pleurodira$(br)>Araripemydidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. barretoi",
+            "entity": "lepidodendron:prehistoric_flora_araripemys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_araripemys",
+			"type": "text",
+			"text": "Araripemys barretoi comes from the Early Cretaceous, with fossils found in the Romualdo and Crato Formations, Brazil. It is a small testudine turtle, growing up to 28 cm in length. It is most well know for currently being the oldest known pleurodires."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_araripemys",
+			"type": "text",
+			"text": "The generic name derives from the place name 'Araripe Basin', where the fossils were found; and the Greek word 'emys', to mean 'turtle'. The specific name derives from the surname of Adel Barreto, who found the fossil material in 1964."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_araripemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_araripemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_araripemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_araripemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_araripemys"
+		}
+	]
+}

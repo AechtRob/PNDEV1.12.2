@@ -1,0 +1,47 @@
+{
+	"name": "Stenoprotome",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/stenoprotome_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_stenoprotome",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_stenoprotome",
+			"title": "Stenoprotome",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Gladiopycnodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. hamata",
+            "entity": "lepidodendron:prehistoric_flora_stenoprotome",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stenoprotome",
+			"type": "text",
+			"text": "Stenoprotome hamata is a poorly known genus of pycnodont from the Sannine Formation of Lebanon. Growing to about 3.5 centimeters long, its long bony head and its two fishhook-like spines, possibly derived opercular bones, make is extremely visually striking. Its name means 'narrow face', referencing its extremely elongated head."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_stenoprotome"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_stenoprotome"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_stenoprotome"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_stenoprotome"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_stenoprotome"
+		}
+	]
+}
