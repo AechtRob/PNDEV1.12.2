@@ -61,7 +61,7 @@ public class BlockMarginalHorsetailLand extends ElementsLepidodendronMod.ModElem
 	//			new ModelResourceLocation("lepidodendron:primeval_grass_land", "inventory"));
 	//}
 
-	public static final PropertyInteger VAR = PropertyInteger.create("var", 0, 2);
+	public static final PropertyInteger VAR = PropertyInteger.create("var", 0, 5);
 
 	public static class BlockCustom extends SeedSporeBushBase implements IGrowable, net.minecraftforge.common.IShearable, IAdvancementGranter {
 		public BlockCustom() {
@@ -99,6 +99,9 @@ public class BlockMarginalHorsetailLand extends ElementsLepidodendronMod.ModElem
 			}
 			if ((double) (pos.getX() + pos.getZ())/5 == (int) (pos.getX() + pos.getZ())/3) {
 				boolVar = 2;
+			}
+			if ((double) (pos.getX() + pos.getZ())/2 == (int) (pos.getX() + pos.getZ())/2) {
+				boolVar = boolVar + 3;
 			}
 			return state.withProperty(VAR, boolVar);
 		}
