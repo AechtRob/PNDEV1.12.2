@@ -82,6 +82,7 @@ public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraL
 		return true;
 	}
 
+	@Override
 	public boolean hasAlarm() {
 		return true;
 	}

@@ -77,6 +77,7 @@ public class EntityPrehistoricFloraAustriadactylus extends EntityPrehistoricFlor
 		return true;
 	}
 
+	@Override
 	public boolean hasAlarm() {
 		return true;
 	}

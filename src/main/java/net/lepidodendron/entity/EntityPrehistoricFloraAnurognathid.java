@@ -80,6 +80,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 		return !this.world.isDaytime();
 	}
 
+	@Override
 	public boolean hasAlarm() {
 		return true;
 	}

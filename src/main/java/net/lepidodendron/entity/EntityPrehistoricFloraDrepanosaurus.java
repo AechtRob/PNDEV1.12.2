@@ -60,6 +60,7 @@ public class EntityPrehistoricFloraDrepanosaurus extends EntityPrehistoricFloraL
 		return this.getFrozen() || animation == DRINK_ANIMATION || animation == GRAZE_ANIMATION;
 	}
 
+	@Override
 	public boolean hasAlarm() {
 		return true;
 	}

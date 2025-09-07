@@ -82,6 +82,7 @@ public class EntityPrehistoricFloraCaelestiventus extends EntityPrehistoricFlora
 		return true;
 	}
 
+	@Override
 	public boolean hasAlarm() {
 		return true;
 	}

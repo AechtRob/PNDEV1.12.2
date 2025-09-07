@@ -105,6 +105,7 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 		return true;
 	}
 
+	@Override
 	public boolean hasAlarm() {
 		return true;
 	}

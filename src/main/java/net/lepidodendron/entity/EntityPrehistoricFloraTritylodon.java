@@ -36,6 +36,7 @@ public class EntityPrehistoricFloraTritylodon extends EntityPrehistoricFloraDiic
 		return ModTriggers.CLICK_TRITYLODON;
 	}
 
+	@Override
 	public boolean hasAlarm() {
 		return false;
 	}

@@ -72,6 +72,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> AIR_SPECIAL = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
 
+    public int screamAlarmCooldown;
     private EntityLivingBase alarmTarget;
     private int alarmTimer;
     //public float minSize;
@@ -237,6 +238,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             return 1;
         }
         return 0;
+    }
+
+    public boolean hasAlarm() {
+        return false;
     }
 
     public boolean hasPNVariants() {

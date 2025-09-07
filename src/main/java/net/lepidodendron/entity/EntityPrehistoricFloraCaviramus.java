@@ -77,6 +77,7 @@ public class EntityPrehistoricFloraCaviramus extends EntityPrehistoricFloraLandC
 		return true;
 	}
 
+	@Override
 	public boolean hasAlarm() {
 		return true;
 	}

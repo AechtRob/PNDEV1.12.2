@@ -106,6 +106,7 @@ public class EntityPrehistoricFloraEocursor extends EntityPrehistoricFloraLandBa
 		return true;
 	}
 
+	@Override
 	public boolean hasAlarm() {
 		return true;
 	}
