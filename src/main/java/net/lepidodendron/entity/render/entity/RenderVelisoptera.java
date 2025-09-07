@@ -2,14 +2,11 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraVelisoptera;
-import net.lepidodendron.entity.model.entity.ModelMeganeurites;
 import net.lepidodendron.entity.model.entity.ModelVelisoptera;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
-import org.lwjgl.opengl.GL11;
 
 public class RenderVelisoptera extends RenderLivingBaseWithBook<EntityPrehistoricFloraVelisoptera> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/velisoptera.png");

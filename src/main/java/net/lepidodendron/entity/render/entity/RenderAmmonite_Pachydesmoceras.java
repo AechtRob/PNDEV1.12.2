@@ -2,8 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAmmonite_Pachydesmoceras;
-import net.lepidodendron.entity.model.entity.ModelAmmonite100cm;
-import net.lepidodendron.entity.model.entity.ModelManticoceras;
 import net.lepidodendron.entity.model.entity.ModelPachydesmoceras;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;

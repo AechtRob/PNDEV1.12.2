@@ -5,7 +5,6 @@ import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
 
 public class ModelNectocaris extends ModelBasePalaeopedia {

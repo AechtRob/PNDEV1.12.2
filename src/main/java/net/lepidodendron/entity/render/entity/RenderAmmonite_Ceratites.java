@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAmmonite_Ceratites;
-import net.lepidodendron.entity.model.entity.ModelAmmonite50cm;
 import net.lepidodendron.entity.model.entity.ModelCeratites;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;

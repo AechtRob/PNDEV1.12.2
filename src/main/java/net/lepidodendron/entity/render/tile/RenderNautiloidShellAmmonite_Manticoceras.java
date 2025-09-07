@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockNautiloidShellAmmonite_Manticoceras;
-import net.lepidodendron.entity.model.tile.ModelAmmonite50cmShell;
 import net.lepidodendron.entity.model.tile.ModelManticocerasShell;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;

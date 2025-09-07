@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraMeganeura;
 import net.lepidodendron.entity.EntityPrehistoricFloraProtozygoptera;
 import net.lepidodendron.entity.model.entity.ModelProtozygoptera;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;

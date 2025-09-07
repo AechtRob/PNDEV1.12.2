@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAcanthostega;
-import net.lepidodendron.entity.model.entity.ModelAcanthodes;
 import net.lepidodendron.entity.model.entity.ModelAcanthostega;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;

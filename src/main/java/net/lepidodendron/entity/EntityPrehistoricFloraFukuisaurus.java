@@ -11,7 +11,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraBiQuadLandBase;
-import net.lepidodendron.entity.render.entity.RenderCaudipteryx;
 import net.lepidodendron.entity.render.entity.RenderFukuisaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IBluffer;

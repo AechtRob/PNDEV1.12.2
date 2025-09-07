@@ -1,6 +1,5 @@
 package net.lepidodendron.entity.model;
 
-import net.lepidodendron.entity.EntityPrehistoricFloraLoricatosaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 
 public abstract class ModelBasePalaeopedia extends AdvancedModelBaseExtended {

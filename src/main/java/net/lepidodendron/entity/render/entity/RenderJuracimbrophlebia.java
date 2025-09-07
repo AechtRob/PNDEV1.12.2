@@ -2,9 +2,7 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraJuracimbrophlebia;
-import net.lepidodendron.entity.model.entity.ModelHangingfly;
 import net.lepidodendron.entity.model.entity.ModelJuracimbrophlebia;
-import net.lepidodendron.entity.model.entity.ModelProtozygoptera;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;

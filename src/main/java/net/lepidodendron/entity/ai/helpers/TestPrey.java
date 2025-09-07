@@ -1,30 +1,23 @@
 package net.lepidodendron.entity.ai.helpers;
 
-import net.lepidodendron.entity.ai.HuntForDietEntityPrehistoricFloraInsectFlyingBaseAI;
 import net.lepidodendron.entity.base.*;
 import net.lepidodendron.entity.util.PathNavigateGroundNoDeepWater;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityBoat;
-import net.minecraft.entity.monster.*;
-import net.minecraft.entity.passive.*;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.oredict.OreDictionary;
 
 import java.lang.reflect.Method;
-import java.util.Arrays;
 import java.util.List;
 
 public class TestPrey {

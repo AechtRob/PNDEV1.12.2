@@ -2,9 +2,11 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLacewing;
-import net.lepidodendron.entity.model.entity.*;
+import net.lepidodendron.entity.model.entity.ModelKarenina;
+import net.lepidodendron.entity.model.entity.ModelKrika;
+import net.lepidodendron.entity.model.entity.ModelLacewing;
+import net.lepidodendron.entity.model.entity.ModelNuddsia;
 import net.lepidodendron.entity.render.RenderLivingBaseVariantModels;
-import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;

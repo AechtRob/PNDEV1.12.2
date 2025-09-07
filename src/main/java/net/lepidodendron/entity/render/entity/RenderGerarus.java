@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraEldonia;
 import net.lepidodendron.entity.EntityPrehistoricFloraGerarusInsect;
 import net.lepidodendron.entity.model.entity.ModelGerarus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;

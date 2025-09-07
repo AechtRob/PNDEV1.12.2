@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/marginal_horsetail_1_e_var1",
+"w":"lepidodendron:blocks/marginal_horsetail_1_w_var1"
+}
+}

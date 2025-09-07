@@ -613,6 +613,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.ITEMS.getKey(ItemCorallineAlgaeItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGrassyHorsetail.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTussockHorsetail.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemMarginalHorsetailItem.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockMopHorsetail.block).toString(),
                 "minecraft:small_fern",
                 "minecraft:large_fern"
 
@@ -751,6 +753,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockLiverwort.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockDesmiophyllumSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTussockHorsetail.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemMarginalHorsetailItem.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockMopHorsetail.block).toString(),
                 "minecraft:small_fern",
                 "minecraft:large_fern"
         };
@@ -939,6 +943,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockDesmiophyllumSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTussockHorsetail.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockMopHorsetail.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemMarginalHorsetailItem.block).toString(),
                 "minecraft:spruce_sapling",
                 "minecraft:small_fern",
                 "minecraft:large_fern"
@@ -1140,6 +1145,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockTylerianthus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTussockHorsetail.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockMopHorsetail.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemMarginalHorsetailItem.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:dark_oak_sapling",
                 "minecraft:spruce_sapling",
@@ -1295,6 +1301,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockSeaweed.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTussockHorsetail.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockMopHorsetail.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemMarginalHorsetailItem.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:acacia_sapling",
                 "minecraft:dark_oak_sapling",
@@ -1451,6 +1458,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockSeaweed.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTussockHorsetail.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockMopHorsetail.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemMarginalHorsetailItem.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:acacia_sapling",
                 "minecraft:dark_oak_sapling",
@@ -1607,6 +1615,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockSeaweed.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTussockHorsetail.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockMopHorsetail.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemMarginalHorsetailItem.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:acacia_sapling",
                 "minecraft:dark_oak_sapling",

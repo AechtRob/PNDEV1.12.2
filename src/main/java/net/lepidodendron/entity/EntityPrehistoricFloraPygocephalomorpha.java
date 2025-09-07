@@ -9,8 +9,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
-import net.lepidodendron.entity.render.entity.RenderEryma;
-import net.lepidodendron.entity.render.entity.RenderLacewing;
 import net.lepidodendron.entity.render.entity.RenderPygocephalomorpha;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;

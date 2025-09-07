@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraEldonia;
 import net.lepidodendron.entity.EntityPrehistoricFloraOdaraia;
 import net.lepidodendron.entity.model.entity.ModelOdaraia;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;

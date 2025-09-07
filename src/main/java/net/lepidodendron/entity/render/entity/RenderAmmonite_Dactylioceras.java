@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAmmonite_Dactylioceras;
-import net.lepidodendron.entity.model.entity.ModelAmmonite15cm;
 import net.lepidodendron.entity.model.entity.ModelDactylioceras;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
