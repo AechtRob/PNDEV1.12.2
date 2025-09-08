@@ -72,8 +72,9 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
         {
             for (Entity currentEntity : list) {
                 if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
-                    ((EntityPrehistoricFloraAgeableBase)this.entity).getIsSneaking();
-                    continue;
+                    if (((EntityPrehistoricFloraAgeableBase)this.entity).getIsSneaking()) {
+                        continue;
+                    }
                 }
                 if (currentEntity != this.entity && TestPrey.result(currentEntity, this.entity) != this.entity) {
                     Vec3d vec3d = RandomPositionGenerator.findRandomTargetBlockAwayFrom(this.entity, 16, 7, new Vec3d(currentEntity.posX, currentEntity.posY, currentEntity.posZ));
