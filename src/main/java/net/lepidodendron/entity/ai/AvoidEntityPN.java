@@ -71,12 +71,15 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
         else
         {
             for (Entity currentEntity : list) {
+                if (this.entity == currentEntity) {
+                    continue;
+                }
                 if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
                     if (((EntityPrehistoricFloraAgeableBase)this.entity).getIsSneaking()) {
                         continue;
                     }
                 }
-                if (currentEntity != this.entity && TestPrey.result(currentEntity, this.entity) != this.entity) {
+                if (TestPrey.result(currentEntity, this.entity) != this.entity) {
                     Vec3d vec3d = RandomPositionGenerator.findRandomTargetBlockAwayFrom(this.entity, 16, 7, new Vec3d(currentEntity.posX, currentEntity.posY, currentEntity.posZ));
                     if (vec3d == null) {
                         continue;
@@ -125,6 +128,12 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
 
     @Override
     public void startExecuting() {
+        if (this.closestLivingEntity == null) {
+            if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
+                ((EntityPrehistoricFloraAgeableBase)this.entity).setAvoidTarget(null);
+            }
+            return;
+        }
         if (this.entity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
             if (!((EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.entity).isReallyFlying()) {
                 ((EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.entity).setAvoidTarget(null);
@@ -163,6 +172,13 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
     @Override
     public void updateTask()
     {
+        if (this.closestLivingEntity == null || this.closestLivingEntity.isDead) {
+            this.closestLivingEntity = null;
+            if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
+                ((EntityPrehistoricFloraAgeableBase)this.entity).setAvoidTarget(null);
+            }
+            return;
+        }
         if (this.entity.getDistanceSq(this.closestLivingEntity) < 49.0D)
         {
             if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
@@ -180,7 +196,6 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
                 ((EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.entity).setAvoidTarget(null);
                 ((EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.entity).setFlying();
                 this.closestLivingEntity = null;
-                return;
             }
         }
     }
