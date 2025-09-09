@@ -113,6 +113,7 @@ public class EntityPrehistoricFloraBerthasaura extends EntityPrehistoricFloraLan
 		return true;
 	}
 
+	@Override
 	public boolean hasAlarm() {
 		return true;
 	}

@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraFortiholcorpa;
 import net.lepidodendron.entity.model.entity.ModelFortiholcorpa;
-import net.lepidodendron.entity.model.entity.ModelMeganeurites;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;

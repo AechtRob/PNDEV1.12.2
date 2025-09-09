@@ -1,14 +1,12 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraHoyasemys;
 import net.lepidodendron.entity.EntityPrehistoricFloraMecistotrachelos;
 import net.lepidodendron.entity.model.entity.ModelMecistotrachelos;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.TextFormatting;
 
 public class RenderMecistotrachelos extends RenderLivingBaseWithBook<EntityPrehistoricFloraMecistotrachelos> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mecistotrachelos.png");

@@ -2,13 +2,11 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraShokawa;
-import net.lepidodendron.entity.model.entity.ModelHyphalosaurus;
 import net.lepidodendron.entity.model.entity.ModelShokawa;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.TextFormatting;
 
 public class RenderShokawa extends RenderLivingBaseWithBook<EntityPrehistoricFloraShokawa> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/shokawa.png");

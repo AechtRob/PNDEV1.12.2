@@ -2,8 +2,6 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraArchisymplectes;
-import net.lepidodendron.entity.EntityPrehistoricFloraEuropejara;
-import net.lepidodendron.entity.EntityPrehistoricFloraPlexus;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;

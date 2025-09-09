@@ -11,7 +11,6 @@ import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
-import net.lepidodendron.item.entities.ItemAkasakiella;
 import net.lepidodendron.item.entities.ItemBathrotomaria;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;

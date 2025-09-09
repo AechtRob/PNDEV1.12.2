@@ -107,6 +107,7 @@ public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraL
 		return true;
 	}
 
+	@Override
 	public boolean hasAlarm() {
 		return true;
 	}

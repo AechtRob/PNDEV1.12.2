@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockNautiloidShellAmmonite_Dactylioceras;
-import net.lepidodendron.entity.model.tile.ModelAmmonite15cmShell;
 import net.lepidodendron.entity.model.tile.ModelDactyliocerasShell;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;

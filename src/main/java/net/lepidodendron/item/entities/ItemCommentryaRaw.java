@@ -14,8 +14,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
-import javax.annotation.Nullable;
-
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemCommentryaRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:commentrya_raw")

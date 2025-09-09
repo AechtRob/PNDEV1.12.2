@@ -1,8 +1,8 @@
 package net.lepidodendron.entity.boats;
 
 import com.google.common.collect.Lists;
-import net.lepidodendron.block.*;
-import net.lepidodendron.item.*;
+import net.lepidodendron.block.BlockStickBundle;
+import net.lepidodendron.item.ItemRaftItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;

@@ -1,6 +1,9 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockAngiopteris;
+import net.lepidodendron.block.BlockTetraxylopteris;
+import net.lepidodendron.block.BlockTetraxylopterisSpore;
+import net.lepidodendron.block.BlockTetraxylopterisTop;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;

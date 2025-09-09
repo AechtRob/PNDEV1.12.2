@@ -92,6 +92,7 @@ public class EntityPrehistoricFloraGermanodactylus extends EntityPrehistoricFlor
 		return this.world.isDaytime();
 	}
 
+	@Override
 	public boolean hasAlarm() {
 		return true;
 	}

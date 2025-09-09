@@ -1,6 +1,5 @@
 package net.lepidodendron.entity;
 
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockGuano;
 import net.lepidodendron.block.BlockGuanoBlock;
 import net.lepidodendron.item.ItemGuanoBall;

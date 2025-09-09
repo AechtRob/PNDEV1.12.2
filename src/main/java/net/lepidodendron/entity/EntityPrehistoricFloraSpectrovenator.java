@@ -12,7 +12,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
-import net.lepidodendron.entity.render.entity.RenderCeratosaurus;
 import net.lepidodendron.entity.render.entity.RenderSpectrovenator;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;

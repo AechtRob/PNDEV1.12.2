@@ -545,6 +545,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_STROMATOVERIS = new CustomTrigger("pf_book_stromatoveris");
     public static final CustomTrigger CLICK_SURANGEPHYLLUM = new CustomTrigger("pf_book_surangephyllum");
     public static final CustomTrigger CLICK_SWAMP_HORSETAIL = new CustomTrigger("pf_book_swamp_horsetail");
+    public static final CustomTrigger CLICK_MARGINAL_HORSETAIL = new CustomTrigger("pf_book_marginal_horsetail");
     public static final CustomTrigger CLICK_SWARTPUNTIA = new CustomTrigger("pf_book_swartpuntia");
     public static final CustomTrigger CLICK_SYCAMORE = new CustomTrigger("pf_book_sycamore");
     public static final CustomTrigger CLICK_CHESTNUT = new CustomTrigger("pf_book_chestnut");
@@ -2622,6 +2623,7 @@ public class ModTriggers
             CLICK_STROMATOVERIS,
             CLICK_SURANGEPHYLLUM,
             CLICK_SWAMP_HORSETAIL,
+            CLICK_MARGINAL_HORSETAIL,
             CLICK_SWARTPUNTIA,
             CLICK_SYCAMORE,
             CLICK_CHESTNUT,

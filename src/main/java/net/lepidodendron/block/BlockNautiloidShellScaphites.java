@@ -5,12 +5,9 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.BlockPNTaxidermyItem;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
-import net.lepidodendron.util.Functions;
-import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
@@ -31,9 +28,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -43,7 +37,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockNautiloidShellScaphites extends ElementsLepidodendronMod.ModElement {

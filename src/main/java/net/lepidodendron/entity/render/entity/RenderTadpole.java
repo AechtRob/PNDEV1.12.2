@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
 import net.lepidodendron.entity.EntityPrehistoricFloraTadpole;
 import net.lepidodendron.entity.model.entity.ModelTadpole;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;

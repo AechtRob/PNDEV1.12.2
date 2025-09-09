@@ -2,7 +2,9 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAquaticBugNymph;
-import net.lepidodendron.entity.model.entity.*;
+import net.lepidodendron.entity.model.entity.ModelMayflyNymph;
+import net.lepidodendron.entity.model.entity.ModelPalaeodictyopteraNymph;
+import net.lepidodendron.entity.model.entity.ModelStoneflyNymph;
 import net.lepidodendron.entity.render.RenderLivingBaseVariantModels;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;

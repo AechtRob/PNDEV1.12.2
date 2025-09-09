@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:marginal_horsetail_inventory"
+    },
+    "var=0": {"model": "lepidodendron:marginal_horsetail_land_middle_var1"},
+    "var=1": {"model": "lepidodendron:marginal_horsetail_land_middle_var2"},
+    "var=2": {"model": "lepidodendron:marginal_horsetail_land_middle_var3"},
+    "var=3": {"model": "lepidodendron:marginal_horsetail_land_middle_var4"},
+    "var=4": {"model": "lepidodendron:marginal_horsetail_land_middle_var5"},
+    "var=5": {"model": "lepidodendron:marginal_horsetail_land_middle_var6"}
+  }
+}

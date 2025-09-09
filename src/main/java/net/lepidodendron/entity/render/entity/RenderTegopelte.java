@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraEldonia;
 import net.lepidodendron.entity.EntityPrehistoricFloraTegopelte;
 import net.lepidodendron.entity.model.entity.ModelTegopelte;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;

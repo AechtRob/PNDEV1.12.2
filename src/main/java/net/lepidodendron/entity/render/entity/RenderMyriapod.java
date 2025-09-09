@@ -8,7 +8,6 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
-import scala.tools.nsc.typechecker.StructuredTypeStrings;
 
 public class RenderMyriapod extends RenderLivingBaseVariantModels<EntityPrehistoricFloraMyriapod> {
     public static final ResourceLocation TEXTURE_PNEUMODESMUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pneumodesmus.png");

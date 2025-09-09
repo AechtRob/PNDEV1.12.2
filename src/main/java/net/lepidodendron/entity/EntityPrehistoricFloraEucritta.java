@@ -12,7 +12,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.lepidodendron.entity.render.entity.RenderEucritta;
-import net.lepidodendron.entity.render.entity.RenderKannemeyeria;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.ITrappableWater;

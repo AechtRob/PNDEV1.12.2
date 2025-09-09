@@ -116,7 +116,7 @@ public class EntityPrehistoricFloraHyperodapedon extends EntityPrehistoricFloraD
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.56F;
+			speedBase = speedBase * 1.86F;
 		}
 		return speedBase;
 	}

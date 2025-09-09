@@ -82,6 +82,7 @@ public class EntityPrehistoricFloraCaiuajara extends EntityPrehistoricFloraLandC
 		return this.world.isDaytime();
 	}
 
+	@Override
 	public boolean hasAlarm() {
 		return true;
 	}

@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraIncisivosaurus;
 import net.lepidodendron.entity.model.entity.ModelIncisivosaurus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;

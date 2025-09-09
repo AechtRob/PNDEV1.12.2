@@ -9,7 +9,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderTiarajudens;
 import net.lepidodendron.entity.render.entity.RenderYuanyanglong;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IScreamer;

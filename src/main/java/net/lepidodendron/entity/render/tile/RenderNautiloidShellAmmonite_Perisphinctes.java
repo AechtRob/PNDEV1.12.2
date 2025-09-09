@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockNautiloidShellAmmonite_Perisphinctes;
-import net.lepidodendron.entity.model.entity.ModelAmmonite_Perisphinctes;
 import net.lepidodendron.entity.model.tile.ModelPerisphinctesShell;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;

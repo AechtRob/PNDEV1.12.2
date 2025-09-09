@@ -83,6 +83,7 @@ public class EntityPrehistoricFloraAnhanguera extends EntityPrehistoricFloraLand
 		return this.world.isDaytime();
 	}
 
+	@Override
 	public boolean hasAlarm() {
 		return true;
 	}

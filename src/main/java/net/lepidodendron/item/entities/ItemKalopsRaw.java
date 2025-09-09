@@ -14,8 +14,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
-import javax.annotation.Nullable;
-
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemKalopsRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:kalops_raw")
