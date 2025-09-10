@@ -1,0 +1,52 @@
+{
+	"name": "Parenchodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/parenchodus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_parenchodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_parenchodus",
+			"title": "Parenchodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Aulopiformes$(br)>Enchodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. longipterygius",
+            "entity": "lepidodendron:prehistoric_flora_parenchodus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_parenchodus",
+			"type": "text",
+			"text": "Parenchodus longipterygius is a species of squat enchodontid from the Cenomanian Kefar-Shaul and Amminadav Formations. This animal was strangely proportioned compared with its relatives, growing to 7.5 cm in length, with a head taking up around 40% of that. It was deep and laterally compressed, and having a well-developed caudal fin allowing it to swim well."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_parenchodus",
+			"type": "text",
+			"text": "These features imply this animal was a reef predator, feeding off of the more vertical areas of the rudist reefs of its time. Its name means 'long-fined animal resembling enchodus.'"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_parenchodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_parenchodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_parenchodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_parenchodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_parenchodus"
+		}
+	]
+}

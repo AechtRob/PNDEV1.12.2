@@ -1,0 +1,47 @@
+{
+	"name": "Turfania",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/turfania_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_turfania",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_turfania",
+			"title": "Turfania",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Actinopterygii$(br)>Palaeonisciformes$(br)>Palaeoniscoidei$(br)>Palaeoniscidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. taoshuyuanensis",
+            "entity": "lepidodendron:prehistoric_flora_turfania",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_turfania",
+			"type": "text",
+			"text": "Turfania comes from the upper Permian, with fossils found in the Lucaogou, Fangshankou and Chichitsao Formations, China. It is a small palaeoniscid, growing up to 15 cm in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_turfania"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_turfania"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_turfania"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_turfania"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_turfania"
+		}
+	]
+}
