@@ -50,6 +50,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Random;
 
 public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable implements IAnimatedEntity, IPrehistoricDiet {
 
@@ -858,6 +859,16 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             catch (NBTException nbtexception)
             {
                 return;
+            }
+        }
+
+        if (nbttagcompound.hasKey("PNType")) {
+            if (nbttagcompound.getString("PNType").equalsIgnoreCase("gendered")) {
+                if ((new Random()).nextInt(2) == 0) {
+                    variantStr = "male";
+                } else {
+                    variantStr = "female";
+                }
             }
         }
 
