@@ -258,48 +258,48 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 									|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_delta_flats_mound")
 									|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_karoo_swamp_open")
 									|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_karoo_swamp_copse")) {
-								blockpos1 = new BlockPos(blockpos1.getX(),  Math.max(Functions.getAdjustedSeaLevel(world, blockpos1), ChunkGenSpawner.getTopSolidBlock(blockpos1, world).getY() + 1), blockpos1.getZ());
+								blockpos1 = new BlockPos(blockpos1.getX(), Math.max(Functions.getAdjustedSeaLevel(world, blockpos1), ChunkGenSpawner.getTopSolidBlock(blockpos1, world).getY() + 1), blockpos1.getZ());
 							}
-							//Prepare a stem if this is in suitable water:
-							int colWater = 1;
-							while (colWater <= 6 && isWaterBlock(world, blockpos1.down(colWater))) {
-					    		colWater = colWater + 1;
-					    	}
-					    	if ((colWater < 6) && (colWater > 1)) {
-					    		//Build the stem:
-					    		int counter = 2;
-					    		while (counter <= colWater) {
-									if (world.getBlockState(blockpos1.down(counter)).getMaterial() == Material.WATER) {
-										world.setBlockState(blockpos1.down(counter), BlockEquisetitesReedStem.block.getDefaultState(), 2);
-									}
-					    			counter = counter + 1;
-					    		}
-					    	}
-							int j = 1 + random.nextInt(random.nextInt(7) + 2);
-							j = Math.max(3, j);
-							int heightCheck = 2;
-							boolean spaceCheck = true;
-							for (int k = 1; k <= j; ++k) {
-								if (((BlockCustomFlower) block).canBlockStay(world, blockpos1)
-									&& (world.isAirBlock(blockpos1.up(k))) && spaceCheck) {
-									heightCheck = k;
+							if (world.isAirBlock(blockpos1) && world.isAirBlock(blockpos1.up()) && world.isAirBlock(blockpos1.up(2)) && blockpos1.getY() >= minH && (blockpos1.getY() <= maxH || maxH == 0)) {
+								//Prepare a stem if this is in suitable water:
+								int colWater = 1;
+								while (colWater <= 6 && isWaterBlock(world, blockpos1.down(colWater))) {
+									colWater = colWater + 1;
 								}
-								else {
-									spaceCheck = false;
-								}
-							}
-							j = heightCheck;
-							for (int k = 0; k <= j; ++k) {
-								if (((BlockCustomFlower) block).canBlockStay(world, blockpos1)) {
-									if (k <= (j - 1)) {
-										world.setBlockState(blockpos1.up(k), block.getDefaultState(), 2); 
-									}
-									if (k == j) {
-										if (random.nextInt(3) == 0) {
-											world.setBlockState(blockpos1.up(k), BlockEquisetitesReedTopSpore.block.getDefaultState(), 2);
+								if ((colWater < 6) && (colWater > 1)) {
+									//Build the stem:
+									int counter = 2;
+									while (counter <= colWater) {
+										if (world.getBlockState(blockpos1.down(counter)).getMaterial() == Material.WATER) {
+											world.setBlockState(blockpos1.down(counter), BlockEquisetitesReedStem.block.getDefaultState(), 2);
 										}
-										else {
-											world.setBlockState(blockpos1.up(k), BlockEquisetitesReedTop.block.getDefaultState(), 2);
+										counter = counter + 1;
+									}
+								}
+								int j = 1 + random.nextInt(random.nextInt(7) + 2);
+								j = Math.max(3, j);
+								int heightCheck = 2;
+								boolean spaceCheck = true;
+								for (int k = 1; k <= j; ++k) {
+									if (((BlockCustomFlower) block).canBlockStay(world, blockpos1)
+											&& (world.isAirBlock(blockpos1.up(k))) && spaceCheck) {
+										heightCheck = k;
+									} else {
+										spaceCheck = false;
+									}
+								}
+								j = heightCheck;
+								for (int k = 0; k <= j; ++k) {
+									if (((BlockCustomFlower) block).canBlockStay(world, blockpos1)) {
+										if (k <= (j - 1)) {
+											world.setBlockState(blockpos1.up(k), block.getDefaultState(), 2);
+										}
+										if (k == j) {
+											if (random.nextInt(3) == 0) {
+												world.setBlockState(blockpos1.up(k), BlockEquisetitesReedTopSpore.block.getDefaultState(), 2);
+											} else {
+												world.setBlockState(blockpos1.up(k), BlockEquisetitesReedTop.block.getDefaultState(), 2);
+											}
 										}
 									}
 								}

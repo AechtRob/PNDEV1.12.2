@@ -24,7 +24,8 @@ public class WorldGenMarginalHorsetail extends WorldGenerator
             BlockPos blockpos = position.add(rand.nextInt(4) - rand.nextInt(4), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(4) - rand.nextInt(4));
             IBlockState iblockstate = worldIn.getBlockState(blockpos.down());
 
-            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254)
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4
+                    && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254)
                     && BlockMarginalHorsetailLand.block.canPlaceBlockAt(worldIn, blockpos))
             {
                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockMarginalHorsetailLand.block.getDefaultState(), 2);
@@ -32,9 +33,12 @@ public class WorldGenMarginalHorsetail extends WorldGenerator
                 Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(2), BlockMarginalHorsetailLandTop.block.getDefaultState(), 2);
                 flag = true;
             }
-            else if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254)
+            else if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4
+                    && canReplaceThis(worldIn, blockpos)
+                    && canReplaceThis(worldIn, blockpos.up())
+                    && (!worldIn.provider.isNether() || blockpos.getY() < 254)
                     && ItemMarginalHorsetailItem.canSurviveAt(worldIn, blockpos)
-                    && worldIn.isAirBlock(blockpos.up()) && (iblockstate.getMaterial() == Material.WATER
+                    && (iblockstate.getMaterial() == Material.WATER
                     && ((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0))
             {
                 Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockMarginalHorsetailWater.block.getDefaultState(), 2);
@@ -44,5 +48,10 @@ public class WorldGenMarginalHorsetail extends WorldGenerator
         }
 
         return flag;
+    }
+
+    public boolean canReplaceThis(World worldIn, BlockPos blockpos) {
+        return worldIn.getBlockState(blockpos).getBlock().isReplaceable(worldIn, blockpos)
+                    || worldIn.getBlockState(blockpos).getMaterial() == Material.PLANTS;
     }
 }
