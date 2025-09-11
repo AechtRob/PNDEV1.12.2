@@ -1,5 +1,5 @@
 {
-  "parent": "lepidodendron:block/bivalve_actinoceramus",
+  "parent": "lepidodendron:block/bivalve_actinoceramus_1",
   "display": {
     "thirdperson": {
       "rotation": [
