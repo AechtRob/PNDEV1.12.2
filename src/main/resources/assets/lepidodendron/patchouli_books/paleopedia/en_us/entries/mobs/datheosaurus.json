@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_datheosaurus",
 			"title": "Datheosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Chordata$(br)>Synapsida$(br)>Caseasauria$(br)>Caseidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Synapsida$(br)>Caseasauria$(br)>Caseidae"
 		},
 		{
 			"type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_datheosaurus",
 			"type": "text",
-			"text": "Datheosaurus is a caseid from the Carboniferous to Permian periods. It was related to the larger, wider, Cotylorhynchus of the Permian. It had a long whip like tail and they were herbivorous animals."
+			"text": "Datheosaurus is a caseid from the Carboniferous period. It was related to the larger, wider, Cotylorhynchus of the Carboniferous. It had a long whip like tail and they were herbivorous animals."
 		},
 		{
 			"type": "lepidodendron:diet",
