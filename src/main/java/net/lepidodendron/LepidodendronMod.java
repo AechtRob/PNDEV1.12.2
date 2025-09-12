@@ -2778,7 +2778,7 @@ public class LepidodendronMod {
 	public static final int ENTITY_GUERAGAMA = 1125;
 	public static final ResourceLocation GUERAGAMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gueragama"));
 	public static final int ENTITY_NOTOPALA = 1126;
-	public static final ResourceLocation NOTOPALA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/notopala"));
+	//public static final ResourceLocation NOTOPALA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/notopala"));
 	public static final int ENTITY_MUTTABURRASAURUS = 1127;
 	public static final ResourceLocation MUTTABURRASAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/muttaburrasaurus"));
 	public static final ResourceLocation MUTTABURRASAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/muttaburrasaurus_young"));
@@ -2846,7 +2846,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation DEINONYCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/deinonychus"));
 	public static final ResourceLocation DEINONYCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/deinonychus_young"));
 	public static final int ENTITY_ANCHURA = 1154;
-	public static final ResourceLocation ANCHURA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/anchura"));
+	//public static final ResourceLocation ANCHURA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/anchura"));
 	public static final int ENTITY_PSITTACOSAURUS = 1155;
 	public static final ResourceLocation PSITTACOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/psittacosaurus"));
 	public static final ResourceLocation PSITTACOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/psittacosaurus_young"));

@@ -1,12 +1,12 @@
 {
   "pools": [
     {
-      "name": "crussolum",
+      "name": "myriapod_crussolum",
       "rolls": 1,
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:crussolum_raw",
+          "name": "lepidodendron:myriapod_crussolum_raw",
           "weight": 1,
           "functions": [
             {

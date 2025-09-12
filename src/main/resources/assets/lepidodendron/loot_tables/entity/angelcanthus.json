@@ -1,12 +1,12 @@
 {
   "pools": [
     {
-      "name": "phantaspis",
+      "name": "angelcanthus",
       "rolls": 1,
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:myriapod_pneumodesmus_raw",
+          "name": "lepidodendron:angelcanthus_raw",
           "weight": 1,
           "functions": [
             {

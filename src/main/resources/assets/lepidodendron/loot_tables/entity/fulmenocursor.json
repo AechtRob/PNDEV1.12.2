@@ -1,12 +1,12 @@
 {
   "pools": [
     {
-      "name": "fulmenocursor",
+      "name": "myriapod_fulmenocursor",
       "rolls": 1,
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:fulmenocursor_raw",
+          "name": "lepidodendron:myriapod_fulmenocursor_raw",
           "weight": 1,
           "functions": [
             {

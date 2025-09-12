@@ -1,12 +1,12 @@
 {
   "pools": [
     {
-      "name": "velocipede",
+      "name": "myriapod_velocipede",
       "rolls": 1,
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:velocipede_raw",
+          "name": "lepidodendron:myriapod_velocipede_raw",
           "weight": 1,
           "functions": [
             {
