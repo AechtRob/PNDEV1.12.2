@@ -29,9 +29,9 @@
       {"model": "lepidodendron:ichthyosarcolites_2"}
     ],
     "facing=down": [
-      {"model": "lepidodendron:ichthyosarcolites", "weight": 3},
-      {"model": "lepidodendron:ichthyosarcolites_1"},
-      {"model": "lepidodendron:ichthyosarcolites_2"}
+      {"model": "lepidodendron:ichthyosarcolites", "x": 180, "weight": 3},
+      {"model": "lepidodendron:ichthyosarcolites_1", "x": 180},
+      {"model": "lepidodendron:ichthyosarcolites_2", "x": 180}
     ]
   }
 }
