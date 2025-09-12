@@ -55,7 +55,7 @@ public class LepidodendronConfig {
     public static int dropSeeds = 50;
     public static int palaeopediaTruncation = 24;
     public static double genEdiacaran = 0.66D;
-    public static double junkFossil = 12.5;
+    public static double junkFossil = 20.0;
     public static double playerSleepPercent = 100.0;
     public static boolean playerSleep = true;
     public static boolean modFire = true;
@@ -729,7 +729,7 @@ public class LepidodendronConfig {
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "junkFossil", junkFossil);
-        prop.setComment("Percentage chance that the acid bath returns a junk output instead of a fossil (0-100). [default: 12.5]");
+        prop.setComment("Percentage chance that the acid bath returns a junk output instead of a fossil (0-100). [default: 20]");
         junkFossil = prop.getDouble();
         propOrder.add(prop.getName());
 

@@ -61,7 +61,7 @@ public class GUITimeResearcherFinderSelector extends GuiScreen
     public void drawScreen(int mouseX, int mouseY, float partialTicks)
     {
         this.list.drawScreen(mouseX, mouseY, partialTicks);
-        this.drawCenteredString(this.fontRenderer, "Select the life-form you are looking for", this.width / 2, 16, 16777215);
+        this.drawCenteredString(this.fontRenderer, "Select the output you are looking for", this.width / 2, 16, 16777215);
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
 
