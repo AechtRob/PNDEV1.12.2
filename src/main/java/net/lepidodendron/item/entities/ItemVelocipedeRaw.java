@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemVelocipedeRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:velocipede_raw")
+	@GameRegistry.ObjectHolder("lepidodendron:myriapod_velocipede_raw")
 	public static final Item block = null;
 	public ItemVelocipedeRaw(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.velocipede_raw);
@@ -33,7 +33,7 @@ public class ItemVelocipedeRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/velocipede_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/myriapod_velocipede_raw", "inventory"));
 	}
 
 	public void init(FMLInitializationEvent event) {
@@ -46,8 +46,8 @@ public class ItemVelocipedeRaw extends ElementsLepidodendronMod.ModElement {
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_velocipede_raw");
-			setRegistryName("velocipede_raw");
+			setTranslationKey("pf_myriapod_velocipede_raw");
+			setRegistryName("myriapod_velocipede_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

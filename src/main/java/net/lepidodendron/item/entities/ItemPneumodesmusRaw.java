@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemPneumodesmusRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:pneumodesmus_raw")
+	@GameRegistry.ObjectHolder("lepidodendron:myriapod_pneumodesmus_raw")
 	public static final Item block = null;
 	public ItemPneumodesmusRaw(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.pneumodesmus_raw);
@@ -33,7 +33,7 @@ public class ItemPneumodesmusRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/pneumodesmus_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/myriapod_pneumodesmus_raw", "inventory"));
 	}
 
 	@Override
@@ -47,8 +47,8 @@ public class ItemPneumodesmusRaw extends ElementsLepidodendronMod.ModElement {
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
 			super(1, 0.05f, false);
-			setTranslationKey("pf_pneumodesmus_raw");
-			setRegistryName("pneumodesmus_raw");
+			setTranslationKey("pf_myriapod_pneumodesmus_raw");
+			setRegistryName("myriapod_pneumodesmus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

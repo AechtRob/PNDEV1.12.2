@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemLatzeliaRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:latzelia_raw")
+	@GameRegistry.ObjectHolder("lepidodendron:myriapod_latzelia_raw")
 	public static final Item block = null;
 	public ItemLatzeliaRaw(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.latzelia_raw);
@@ -33,7 +33,7 @@ public class ItemLatzeliaRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/latzelia_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/myriapod_latzelia_raw", "inventory"));
 	}
 
 	public void init(FMLInitializationEvent event) {
@@ -46,8 +46,8 @@ public class ItemLatzeliaRaw extends ElementsLepidodendronMod.ModElement {
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_latzelia_raw");
-			setRegistryName("latzelia_raw");
+			setTranslationKey("pf_myriapod_latzelia_raw");
+			setRegistryName("myriapod_latzelia_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

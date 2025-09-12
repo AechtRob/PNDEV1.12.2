@@ -1,20 +1,20 @@
 {
     "display": {
         "icon": {
-            "item": "lepidodendron:latzelia_raw"
+            "item": "lepidodendron:myriapod_latzelia_raw"
         },
         "title": {
-            "translate": "advancements.pf_adv_book_latzelia.title"
+            "translate": "advancements.pf_adv_book_myriapod_latzelia.title"
         },
         "description": {
-            "translate": "advancements.pf_adv_book_latzelia.description"
+            "translate": "advancements.pf_adv_book_myriapod_latzelia.description"
         }
     },
     "parent": "lepidodendron:pf_base_adv_knowledge",
     "hidden": true,
     "criteria": {
         "pf_trigger": {
-            "trigger": "pf_book_latzelia"
+            "trigger": "pf_book_myriapod_latzelia"
         }
     }
 }

@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemFulmenocursorRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:fulmenocursor_raw")
+	@GameRegistry.ObjectHolder("lepidodendron:myriapod_fulmenocursor_raw")
 	public static final Item block = null;
 	public ItemFulmenocursorRaw(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.fulmenocursor_raw);
@@ -33,7 +33,7 @@ public class ItemFulmenocursorRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/fulmenocursor_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/myriapod_fulmenocursor_raw", "inventory"));
 	}
 
 	public void init(FMLInitializationEvent event) {
@@ -46,8 +46,8 @@ public class ItemFulmenocursorRaw extends ElementsLepidodendronMod.ModElement {
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_fulmenocursor_raw");
-			setRegistryName("fulmenocursor_raw");
+			setTranslationKey("pf_myriapod_fulmenocursor_raw");
+			setRegistryName("myriapod_fulmenocursor_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

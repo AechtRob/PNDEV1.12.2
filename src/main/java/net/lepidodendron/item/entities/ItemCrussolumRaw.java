@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemCrussolumRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:crussolum_raw")
+	@GameRegistry.ObjectHolder("lepidodendron:myriapod_crussolum_raw")
 	public static final Item block = null;
 	public ItemCrussolumRaw(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.crussolum_raw);
@@ -33,7 +33,7 @@ public class ItemCrussolumRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/crussolum_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/myriapod_crussolum_raw", "inventory"));
 	}
 
 	public void init(FMLInitializationEvent event) {
@@ -46,8 +46,8 @@ public class ItemCrussolumRaw extends ElementsLepidodendronMod.ModElement {
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_crussolum_raw");
-			setRegistryName("crussolum_raw");
+			setTranslationKey("pf_myriapod_crussolum_raw");
+			setRegistryName("myriapod_crussolum_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

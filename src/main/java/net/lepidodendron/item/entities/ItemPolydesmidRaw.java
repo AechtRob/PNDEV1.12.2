@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemPolydesmidRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:polydesmid_raw")
+	@GameRegistry.ObjectHolder("lepidodendron:myriapod_polydesmid_raw")
 	public static final Item block = null;
 	public ItemPolydesmidRaw(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.polydesmid_raw);
@@ -46,8 +46,8 @@ public class ItemPolydesmidRaw extends ElementsLepidodendronMod.ModElement {
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_polydesmid_raw");
-			setRegistryName("polydesmid_raw");
+			setTranslationKey("pf_myriapod_polydesmid_raw");
+			setRegistryName("myriapod_polydesmid_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

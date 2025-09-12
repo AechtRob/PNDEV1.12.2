@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemDevonobiusRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:devonobius_raw")
+	@GameRegistry.ObjectHolder("lepidodendron:myriapod_devonobius_raw")
 	public static final Item block = null;
 	public ItemDevonobiusRaw(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.devonobius_raw);
@@ -33,7 +33,7 @@ public class ItemDevonobiusRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/devonobius_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/myriapod_devonobius_raw", "inventory"));
 	}
 
 	public void init(FMLInitializationEvent event) {
@@ -46,8 +46,8 @@ public class ItemDevonobiusRaw extends ElementsLepidodendronMod.ModElement {
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_devonobius_raw");
-			setRegistryName("devonobius_raw");
+			setTranslationKey("pf_myriapod_devonobius_raw");
+			setRegistryName("myriapod_devonobius_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
