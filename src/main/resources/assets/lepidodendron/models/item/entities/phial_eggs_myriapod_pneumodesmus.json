@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/phial_pneumodesmus"
+    "layer0": "lepidodendron:items/entities/phial_myriapod_pneumodesmus"
   }
 }
