@@ -18,10 +18,10 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemNuddsiaRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:nuddsia_raw")
+public class ItemLacewingNuddsiaRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:lacewing_nuddsia_raw")
 	public static final Item block = null;
-	public ItemNuddsiaRaw(ElementsLepidodendronMod instance) {
+	public ItemLacewingNuddsiaRaw(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.nuddsia_raw);
 	}
 
@@ -33,22 +33,22 @@ public class ItemNuddsiaRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/nuddsia_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/lacewing_nuddsia_raw", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lacewing@nuddsia", ItemNuddsiaRaw.block);
-		OreDictionary.registerOre("pnfurnaceBug", ItemNuddsiaRaw.block);
-		OreDictionary.registerOre("pndietBug", ItemNuddsiaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lacewing@nuddsia", ItemLacewingNuddsiaRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemLacewingNuddsiaRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemLacewingNuddsiaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
 			super();
-			setTranslationKey("pf_nuddsia_raw");
-			setRegistryName("nuddsia_raw");
+			setTranslationKey("pf_lacewing_nuddsia_raww");
+			setRegistryName("lacewing_nuddsia_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

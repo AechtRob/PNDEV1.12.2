@@ -18,11 +18,11 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemKareninaRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:karenina_raw")
+public class ItemLacewingKrikaRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:lacewing_krika_raw")
 	public static final Item block = null;
-	public ItemKareninaRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.karenina_raw);
+	public ItemLacewingKrikaRaw(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.krika_raw);
 	}
 
 	@Override
@@ -33,22 +33,22 @@ public class ItemKareninaRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/karenina_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/lacewing_krika_raw", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lacewing@karenina", ItemKareninaRaw.block);
-		OreDictionary.registerOre("pnfurnaceBug", ItemKareninaRaw.block);
-		OreDictionary.registerOre("pndietBug", ItemKareninaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lacewing@krika", ItemLacewingKrikaRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemLacewingKrikaRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemLacewingKrikaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
 			super();
-			setTranslationKey("pf_karenina_raw");
-			setRegistryName("karenina_raw");
+			setTranslationKey("pf_lacewing_krika_raw");
+			setRegistryName("lacewing_krika_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
@@ -62,7 +62,7 @@ public class ItemKareninaRaw extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public String getVariantStr() {
-			return "karenina";
+			return "krika";
 		}
 	}
 }

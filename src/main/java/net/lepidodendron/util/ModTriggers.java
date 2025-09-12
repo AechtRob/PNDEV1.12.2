@@ -1960,9 +1960,9 @@ public class ModTriggers
     public static final CustomTrigger CLICK_HANGINGFLY = new CustomTrigger("pf_book_hangingfly");
     public static final CustomTrigger CLICK_JURACIMBROPHLEBIA = new CustomTrigger("pf_book_juracimbrophlebia");
     public static final CustomTrigger CLICK_FORTIHOLCORPA = new CustomTrigger("pf_book_fortiholcorpa");
-    public static final CustomTrigger CLICK_KRIKA = new CustomTrigger("pf_book_krika");
-    public static final CustomTrigger CLICK_NUDDSIA = new CustomTrigger("pf_book_nuddsia");
-    public static final CustomTrigger CLICK_KARENINA = new CustomTrigger("pf_book_karenina");
+    public static final CustomTrigger CLICK_KRIKA = new CustomTrigger("pf_book_lacewing_krika");
+    public static final CustomTrigger CLICK_NUDDSIA = new CustomTrigger("pf_book_lacewing_nuddsia");
+    public static final CustomTrigger CLICK_KARENINA = new CustomTrigger("pf_book_lacewing_karenina");
     public static final CustomTrigger CLICK_DAMSELFLY = new CustomTrigger("pf_book_damselfly");
     public static final CustomTrigger CLICK_SCELIDOSAURUS = new CustomTrigger("pf_book_scelidosaurus");
     public static final CustomTrigger CLICK_CRYPTOCLIDUS = new CustomTrigger("pf_book_cryptoclidus");

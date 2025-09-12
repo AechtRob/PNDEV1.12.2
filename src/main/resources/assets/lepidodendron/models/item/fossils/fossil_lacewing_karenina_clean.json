@@ -2,7 +2,7 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "lepidodendron:items/fossil_clean_background",
-    "layer1": "lepidodendron:items/fossil_nuddsia_clean"
+    "layer1": "lepidodendron:items/fossil_lacewing_karenina_clean"
   }
 }
 
