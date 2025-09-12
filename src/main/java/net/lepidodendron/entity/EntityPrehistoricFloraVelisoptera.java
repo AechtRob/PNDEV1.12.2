@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraVelisoptera extends EntityPrehistoricFloraMeg
 
 	@Override
 	public String getEntityId(Entity entity) {
-		return "lepidodendron:prehistoric_flora_aquaticnymph@damselfly";
+		return "lepidodendron:prehistoric_flora_aquaticnymph@velisoptera";
 	}
 
 	@Nullable

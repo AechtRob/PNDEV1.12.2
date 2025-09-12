@@ -33,7 +33,7 @@ public class ItemJuliformRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/myriapod_myriapod_juliform_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/myriapod_juliform_raw", "inventory"));
 	}
 
 	public void init(FMLInitializationEvent event) {
