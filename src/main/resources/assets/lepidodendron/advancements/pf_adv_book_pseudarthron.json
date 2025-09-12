@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:pseudarthron_icon"
+			"item": "lepidodendron:pseudarthron_raw"
 		},
 		"title": {
 			"translate": "advancements.pf_adv_book_pseudarthron.title"

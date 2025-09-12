@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "lepidodendron:lytospira_raw"
+            "item": "lepidodendron:lytospira_item"
         },
         "title": {
             "translate": "advancements.pf_adv_book_lytospira.title"

@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "lepidodendron:boiotremus_raw"
+            "item": "lepidodendron:boiotremus_item"
         },
         "title": {
             "translate": "advancements.pf_adv_book_boiotremus.title"

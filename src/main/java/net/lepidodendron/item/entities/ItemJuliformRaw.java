@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemJuliformRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:juliform_raw")
+	@GameRegistry.ObjectHolder("lepidodendron:myriapod_juliform_raw")
 	public static final Item block = null;
 	public ItemJuliformRaw(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.juliform_raw);
@@ -33,7 +33,7 @@ public class ItemJuliformRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/myriapod_juliform_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/myriapod_myriapod_juliform_raw", "inventory"));
 	}
 
 	public void init(FMLInitializationEvent event) {
@@ -46,8 +46,8 @@ public class ItemJuliformRaw extends ElementsLepidodendronMod.ModElement {
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_juliform_raw");
-			setRegistryName("juliform_raw");
+			setTranslationKey("pf_myriapod_juliform_raw");
+			setRegistryName("myriapod_juliform_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "lepidodendron:kirkospira_raw"
+            "item": "lepidodendron:kirkospira_item"
         },
         "title": {
             "translate": "advancements.pf_adv_book_kirkospira.title"

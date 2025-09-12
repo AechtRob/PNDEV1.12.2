@@ -1,20 +1,20 @@
 {
     "display": {
         "icon": {
-            "item": "lepidodendron:paleoechinastacus_raw"
+            "item": "lepidodendron:palaeoechinastacus_raw"
         },
         "title": {
-            "translate": "advancements.pf_adv_book_paleoechinastacus.title"
+            "translate": "advancements.pf_adv_book_palaeoechinastacus.title"
         },
         "description": {
-            "translate": "advancements.pf_adv_book_paleoechinastacus.description"
+            "translate": "advancements.pf_adv_book_palaeoechinastacus.description"
         }
     },
     "parent": "lepidodendron:pf_base_adv_knowledge",
     "hidden": true,
     "criteria": {
         "pf_trigger": {
-            "trigger": "pf_book_paleoechinastacus"
+            "trigger": "pf_book_palaeoechinastacus"
         }
     }
 }

@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "lepidodendron:bathrotomaria_raw"
+            "item": "lepidodendron:bathrotomaria_item"
         },
         "title": {
             "translate": "advancements.pf_adv_book_bathrotomaria.title"

@@ -155,7 +155,7 @@ public class EntityPrehistoricFloraVictalimulus extends EntityPrehistoricFloraWa
 	@Nullable
 	protected ResourceLocation getLootTable() {
 
-		return LepidodendronMod.LIMULID_LOOT;
+		return LepidodendronMod.VICTALIMULUS_LOOT;
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "lepidodendron:lesueurilla_raw"
+            "item": "lepidodendron:lesueurilla_item"
         },
         "title": {
             "translate": "advancements.pf_adv_book_lesueurilla.title"

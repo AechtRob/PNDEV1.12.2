@@ -2032,7 +2032,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_FUKUIVENATOR = new CustomTrigger("pf_book_fukuivenator");
     public static final CustomTrigger CLICK_HYPNOVENATOR = new CustomTrigger("pf_book_hypnovenator");
     public static final CustomTrigger CLICK_TYRANNOMIMUS = new CustomTrigger("pf_book_tyrannomimus");
-    public static final CustomTrigger CLICK_MEGAPTERYGIUS  = new CustomTrigger("pf_book_megapterygius ");
+    public static final CustomTrigger CLICK_MEGAPTERYGIUS  = new CustomTrigger("pf_book_megapterygius");
     public static final CustomTrigger CLICK_FUTABASAURUS = new CustomTrigger("pf_book_futabasaurus");
     public static final CustomTrigger CLICK_PHOSPHOROSAURUS = new CustomTrigger("pf_book_phosphorosaurus");
     public static final CustomTrigger CLICK_NIPPONITES = new CustomTrigger("pf_book_nipponites");
