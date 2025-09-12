@@ -5260,6 +5260,7 @@ public class LepidodendronSorter {
     public static final int marginal_horsetail_item = 8200;
     public static final int marginal_horsetail_land = 8201;
     public static final int marginal_horsetail_water = 8203;
+    public static final int biarmobaiera_seed = 8204;
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;
