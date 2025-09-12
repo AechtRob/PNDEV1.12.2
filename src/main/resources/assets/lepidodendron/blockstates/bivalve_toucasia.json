@@ -23,6 +23,10 @@
     "facing=up": [
       {"model": "lepidodendron:bivalve_toucasia"},
       {"model": "lepidodendron:bivalve_toucasia_var"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:bivalve_toucasia", "x": 180},
+      {"model": "lepidodendron:bivalve_toucasia_var", "x": 180}
     ]
   }
 }

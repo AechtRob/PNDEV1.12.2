@@ -227,7 +227,7 @@ public class EntityPrehistoricFloraScorpionfly extends EntityPrehistoricFloraIns
 		return new ResourceLocation("lepidodendron:bug_flight");
 	}
 
-	public static String getPeriod() {return "Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene - present";}
+	public static String getPeriod() {return "Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [- present]";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 

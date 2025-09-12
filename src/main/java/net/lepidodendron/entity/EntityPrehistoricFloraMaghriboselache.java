@@ -5,10 +5,13 @@ import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.entity.*;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
@@ -32,7 +35,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMaghriboselache extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater {
+public class EntityPrehistoricFloraMaghriboselache extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -391,6 +394,12 @@ public class EntityPrehistoricFloraMaghriboselache extends EntityPrehistoricFlor
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_MAGHRIBOSELACHE;
 	}
 
 	//Rendering taxidermy:
