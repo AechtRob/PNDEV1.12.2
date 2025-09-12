@@ -23,6 +23,10 @@
     "facing=up": [
       {"model": "lepidodendron:bivalve_requienia"},
       {"model": "lepidodendron:bivalve_requienia_var"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:bivalve_requienia", "x": 180},
+      {"model": "lepidodendron:bivalve_requienia_var", "x": 180}
     ]
   }
 }
