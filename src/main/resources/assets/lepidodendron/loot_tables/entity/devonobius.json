@@ -1,12 +1,12 @@
 {
   "pools": [
     {
-      "name": "devonobius",
+      "name": "myriapod_devonobius",
       "rolls": 1,
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:devonobius_raw",
+          "name": "lepidodendron:myriapod_devonobius_raw",
           "weight": 1,
           "functions": [
             {

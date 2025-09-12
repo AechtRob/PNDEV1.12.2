@@ -8,31 +8,31 @@
   ],
   "key": {
     "0": {
-      "item": "minecraft:coal"
-    },
-    "1": {
-      "item": "minecraft:coal"
-    },
-    "2": {
-      "item": "minecraft:coal"
-    },
-    "3": {
-      "item": "minecraft:coal"
-    },
-    "4": {
       "item": "lepidodendron:volcano_heart"
     },
+    "1": {
+      "item": "lepidodendron:volcano_heart"
+    },
+    "2": {
+      "item": "lepidodendron:volcano_heart"
+    },
+    "3": {
+      "item": "lepidodendron:volcano_heart"
+    },
+    "4": {
+      "item": "minecraft:coal_block"
+    },
     "5": {
-      "item": "minecraft:coal"
+      "item": "lepidodendron:volcano_heart"
     },
     "6": {
-      "item": "minecraft:coal"
+      "item": "lepidodendron:volcano_heart"
     },
     "7": {
-      "item": "minecraft:coal"
+      "item": "lepidodendron:volcano_heart"
     },
     "8": {
-      "item": "minecraft:coal"
+      "item": "lepidodendron:volcano_heart"
     }
   },
   "result": {

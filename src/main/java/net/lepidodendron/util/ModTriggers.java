@@ -920,7 +920,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PLATYHYSTRIX = new CustomTrigger("pf_book_platyhystrix");
     public static final CustomTrigger CLICK_PLATYLOMASPIS = new CustomTrigger("pf_book_platylomaspis");
     public static final CustomTrigger CLICK_PLATYSOMUS = new CustomTrigger("pf_book_platysomus");
-    public static final CustomTrigger CLICK_PNEUMODESMUS = new CustomTrigger("pf_book_pneumodesmus");
+    public static final CustomTrigger CLICK_PNEUMODESMUS = new CustomTrigger("pf_book_myriapod_pneumodesmus");
     public static final CustomTrigger CLICK_POLEUMITA = new CustomTrigger("pf_book_poleumita");
     public static final CustomTrigger CLICK_POMATRUM = new CustomTrigger("pf_book_pomatrum");
     public static final CustomTrigger CLICK_PORASPIS = new CustomTrigger("pf_book_poraspis");
