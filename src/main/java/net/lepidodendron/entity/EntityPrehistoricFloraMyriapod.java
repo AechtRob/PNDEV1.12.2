@@ -322,10 +322,8 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 		switch (this.getPNType()) {
 			case PNEUMODESMUS: default:
 				return ModTriggers.CLICK_PNEUMODESMUS;
-
 			case EOARTHROPLEURA:
 				return ModTriggers.CLICK_EOARTHROPLEURA;
-
 			case LATZELIA:
 				return ModTriggers.CLICK_LATZELIA;
 			case CRUSSOLUM:

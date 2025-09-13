@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:eoarthropleura_raw"
+			"item": "lepidodendron:myriapod_eoarthropleura_raw"
 		  },
 		"title": {
 			"translate": "advancements.pf_adv_book_eoarthropleura.title"
@@ -14,7 +14,7 @@
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_eoarthropleura"
+			"trigger": "pf_book_myriapod_eoarthropleura"
 		}
 	}
 }

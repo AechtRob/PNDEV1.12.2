@@ -773,7 +773,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ENDOCERAS = new CustomTrigger("pf_book_endoceras");
     public static final CustomTrigger CLICK_ENOPLOURA = new CustomTrigger("pf_book_enoploura");
     public static final CustomTrigger CLICK_EOANDROMEDA = new CustomTrigger("pf_book_eoandromeda");
-    public static final CustomTrigger CLICK_EOARTHROPLEURA = new CustomTrigger("pf_book_eoarthropleura");
+    public static final CustomTrigger CLICK_EOARTHROPLEURA = new CustomTrigger("pf_book_myriapod_eoarthropleura");
     public static final CustomTrigger CLICK_EORAPTOR = new CustomTrigger("pf_book_eoraptor");
     public static final CustomTrigger CLICK_EOREDLICHIA = new CustomTrigger("pf_book_eoredlichia");
     public static final CustomTrigger CLICK_EOSAURICHTHYS = new CustomTrigger("pf_book_eosaurichthys");

@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemEoarthropleuraRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:eoarthropleura_raw")
+	@GameRegistry.ObjectHolder("lepidodendron:myriapod_eoarthropleura_raw")
 	public static final Item block = null;
 	public ItemEoarthropleuraRaw(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.eoarthropleura_raw);
@@ -33,7 +33,7 @@ public class ItemEoarthropleuraRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/eoarthropleura_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/myriapod_eoarthropleura_raw", "inventory"));
 	}
 
 	public void init(FMLInitializationEvent event) {
@@ -46,8 +46,8 @@ public class ItemEoarthropleuraRaw extends ElementsLepidodendronMod.ModElement {
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_eoarthropleura_raw");
-			setRegistryName("eoarthropleura_raw");
+			setTranslationKey("pf_myriapod_eoarthropleura_raw");
+			setRegistryName("myriapod_eoarthropleura_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
