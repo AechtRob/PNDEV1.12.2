@@ -17,10 +17,10 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemPtyktoptychionRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:ptyktoptychion_raw")
+public class ItemPtyktoptychionRawF extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:ptyktoptychion_raw_f")
 	public static final Item block = null;
-	public ItemPtyktoptychionRaw(ElementsLepidodendronMod instance) {
+	public ItemPtyktoptychionRawF(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.ptyktoptychion_raw);
 	}
 
@@ -32,30 +32,30 @@ public class ItemPtyktoptychionRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/ptyktoptychion_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/ptyktoptychion_raw_f", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ptyktoptychion@male", ItemPtyktoptychionRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemPtyktoptychionRaw.block);
-		OreDictionary.registerOre("pnfurnaceFish", ItemPtyktoptychionRaw.block);
-		OreDictionary.registerOre("pndietFish", ItemPtyktoptychionRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ptyktoptychion@female", ItemPtyktoptychionRawF.block);
+		OreDictionary.registerOre("listAllfishraw", ItemPtyktoptychionRawF.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemPtyktoptychionRawF.block);
+		OreDictionary.registerOre("pndietFish", ItemPtyktoptychionRawF.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_ptyktoptychion_raw");
-			setRegistryName("ptyktoptychion_raw");
+			setTranslationKey("pf_ptyktoptychion_raw_f");
+			setRegistryName("ptyktoptychion_raw_f");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
 
 		@Nullable
 		public String getVariantStr() {
-			return "male";
+			return "female";
 		}
 	}
 }

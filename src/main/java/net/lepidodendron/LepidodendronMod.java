@@ -3409,6 +3409,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation PTYKTOPTYCHION_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ptyktoptychion"));
 	public static final ResourceLocation PTYKTOPTYCHION_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ptyktoptychion_f"));
 	public static final ResourceLocation PTYKTOPTYCHION_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ptyktoptychion_young"));
+	public static final ResourceLocation PTYKTOPTYCHION_LOOT_F_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ptyktoptychion_young_f"));
 	public static final int ENTITY_SCAPANORHYNCHUS = 1401;
 	public static final ResourceLocation SCAPANORHYNCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/scapanorhynchus"));
 	public static final ResourceLocation SCAPANORHYNCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/scapanorhynchus_young"));

@@ -219,7 +219,18 @@ public class EntityPrehistoricFloraPtyktoptychion extends EntityPrehistoricFlora
 	}
 
 	@Nullable
+
 	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			switch (this.getPNType()) {
+				case MALE:
+				default:
+					return LepidodendronMod.PTYKTOPTYCHION_LOOT_YOUNG;
+
+				case FEMALE:
+					return LepidodendronMod.PTYKTOPTYCHION_LOOT_F_YOUNG;
+			}
+		}
 		switch (this.getPNType()) {
 			case MALE:
 			default:
@@ -228,7 +239,6 @@ public class EntityPrehistoricFloraPtyktoptychion extends EntityPrehistoricFlora
 			case FEMALE:
 				return LepidodendronMod.PTYKTOPTYCHION_LOOT_F;
 		}
-
 	}
 
 	@Override
