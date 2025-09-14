@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/titanosarcolites_inventory"
+    "layer0": "paleopedia:textures/items/bivalve_titanosarcolites_icon"
   }
 }
 
