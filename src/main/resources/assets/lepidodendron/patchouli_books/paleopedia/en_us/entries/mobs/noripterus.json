@@ -1,0 +1,52 @@
+{
+	"name": "Noripterus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/noripterus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_noripterus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_noripterus",
+			"title": "Noripterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Pterosauria$(br)>Pterodactyloidea$(br)>Dsungaripteridae"
+		},
+        	{
+            "type": "entity",
+            "name": "N. complicidens",
+            "entity": "lepidodendron:prehistoric_flora_noripterus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_noripterus",
+			"type": "text",
+			"text": "Noripterus is a dsungaripterid pterosaur from the Early Cretaceous of the Lianmuqin and Shengjinkou formations of northwest China and the Tsagaantsav Formation of Mongolia. Noripterus would have had a wingspan of at least 2 meters, though a specimen known as, Phobetor, suggests a wingspan of up to 4 meters. However, this specimen is claimed to have considerable differences to the existing fossils of Noripterus and so more study is needed."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_noripterus",
+			"type": "text",
+			"text": "Thus, we have selected to size Noripterus off of the complicidens species. Like other Dsungaripterids, Noripterus is interpreted to have had a diet of hard foods such as shellfish. The long and narrow toothless beak tip may have been used for probing for and picking up prey, with robust teeth closer to the rear of the jaw suitable for crushing shells."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_noripterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_noripterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_noripterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_noripterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_noripterus"
+		}
+	]
+}

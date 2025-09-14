@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraPtyktoptychion extends EntityPrehistoricFlora
 		minWidth = 0.2F;
 		maxWidth = 0.5F;
 		maxHeight = 0.6F;
-		maxHealthAgeable = 12.0D;
+		maxHealthAgeable = 20.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

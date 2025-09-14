@@ -1,0 +1,52 @@
+{
+	"name": "Sauroposeidon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sauroposeidon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sauroposeidon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sauroposeidon",
+			"title": "Sauroposeidon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Sauropoda$(br)>Macronaria$(br)>Somphospondyli"
+		},
+        	{
+            "type": "entity",
+            "name": "S. proteles",
+            "entity": "lepidodendron:prehistoric_flora_sauroposeidon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sauroposeidon",
+			"type": "text",
+			"text": "Sauroposeidon was a sauropod known from the Cloverly and Twin Mountains formations of the Early Cretaceous known for it’s monstrous size. Towering over miniscule theropods or ornithischians, this titanic 20 meter tall sauropod is considered the tallest sauropod we have ever unearthed. For its size and stance, it was bestowed the name of Lizard Earthquake God."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sauroposeidon",
+			"type": "text",
+			"text": "While the specimens that are classified as Sauroposeidon are very fragmentary, we know more about its shape, size, and anatomy thanks to Paluxysaurus, a close relative of Sauroposeidon but considerably more complete than the latter."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sauroposeidon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sauroposeidon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sauroposeidon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sauroposeidon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sauroposeidon"
+		}
+	]
+}

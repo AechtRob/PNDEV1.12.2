@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraBrachydectes extends EntityPrehistoricFloraSw
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.1F;
-		maxHealthAgeable = 5.0D;
+		maxHealthAgeable = 10.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

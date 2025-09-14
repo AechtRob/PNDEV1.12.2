@@ -1,0 +1,62 @@
+{
+	"name": "Sapeornis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sapeornis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sapeornis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sapeornis",
+			"title": "Sapeornis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Omnivoropterygiformes$(br)>Omnivoropterygidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. chaoyangensis",
+            "entity": "lepidodendron:prehistoric_flora_sapeornis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sapeornis",
+			"type": "text",
+			"text": "Sapeornis is an anomalous Early Cretaceous bird known from the Yixian and Jiufotang formations of China. The name is taken rather uncreatively from the acronym SAPE, for the Society of Avian Paleontology and Evolution. Its placement among the Aves remains unclear, as it bears a collection of primitive and derived avian traits and has no known relatives aside from the likely synonymous Omnivoropteryx."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sapeornis",
+			"type": "text",
+			"text": "The skull is odd, bearing only a small collection of teeth near the tip of the beak, and a shape that has been compared to the Oviraptorosaurs, Scansoriopterygids, and the putative enantiornith Falcatakely. In contrast to many contemporary birds, it possessed a full fan of tail feathers like those in the more derived Euornithes."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sapeornis",
+			"type": "text",
+			"text": "Perhaps the most striking feature, however, is the wingspan of approximately 1.4 meters, certainly among the greatest known of all Mesozoic birds. These wings would suggest adept aerial behavior, while the bones of the animal tell a different story. The shoulder girdle appears ill-suited to flapping, raising questions as to whether this bird could even fly."
+		},
+        {
+            "advancement": "lepidodendron:pf_adv_book_sapeornis",
+            "type": "text",
+            "text": "Some paleontologists have suggested that Sapeornis was adapted for soaring behavior, exploiting thermals in a similar manner to modern vultures. This would explain the utility of the immense wing surface in spite of poor adaptation for powered flight."
+       },
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sapeornis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sapeornis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sapeornis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sapeornis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sapeornis"
+		}
+	]
+}

@@ -1,0 +1,57 @@
+{
+	"name": "Diplomoceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/diplomoceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_diplomoceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_diplomoceras",
+			"title": "Diplomoceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammoidea$(br)>Ammonitida$(br)>Diplomoceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. cylindraceum",
+            "entity": "lepidodendron:prehistoric_flora_diplomoceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diplomoceras",
+			"type": "text",
+			"text": "Diplomoceras is a large heteromorphic ammonite shaped like a massive abyssal paperclip. Its coiled shell could grow 1.5 meters long in some species, with some reconstructed shells growing to 1.7 meters. Diplomoceras is often found to be a pelagic sea floor inhabitant and is often associated with methane seeps. Artruc & Ivany in 2016, used stable carbon and oxygen isotope analysis to estimate that Diplomoceras lived for a maximum of about 9-10 years."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diplomoceras",
+			"type": "text",
+			"text": "Four years later, Artuc points out two possibilities, being that the growth could've either reflected annual temperature cycle, which was fast and consistent or it was coincidental and reflects the annual cycle meaning methane venting happened primarily in summer in the Southern Hemisphere. This could mean a shorter lifespan as previously suggested or a lifespan as long as 200 years."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diplomoceras",
+			"type": "text",
+			"text": "The 200 year estimate is commonly mentioned in the news. However, it's important to remember that this is not completely certain and further research must continue to understand the growth of Diplomoceras."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_diplomoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_diplomoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_diplomoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_diplomoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_diplomoceras"
+		}
+	]
+}

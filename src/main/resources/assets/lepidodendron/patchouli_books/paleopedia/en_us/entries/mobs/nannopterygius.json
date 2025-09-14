@@ -1,0 +1,57 @@
+{
+	"name": "Nannopterygius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/nannopterygius_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_nannopterygius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_nannopterygius",
+			"title": "Nannopterygius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Icthyoptergia$(br)>Ichthyosauria$(br)>Ophthalmosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "N. enthekiodon",
+            "entity": "lepidodendron:prehistoric_flora_nannopterygius",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nannopterygius",
+			"type": "text",
+			"text": "Nannopterygius is a genus of Ophthalmosaurid Ichthyosaur from the Late Jurassic of Europe, UK and Russia. Around 3.5 m long at most, the animal was very much alike several others of its relatives, if not for one particular trait, the flippers. The flippers of Nannopterygius were uncommonly short compared to its body, with the hindflippers barely measuring 10 cm in length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nannopterygius",
+			"type": "text",
+			"text": "The tiny flippers would've prevented the animal from generating much lift and torque at all, leading researchers to believe this to have been an ambush predator, using small bursts of speed from its torpedo-like body to propel itself among shoals of fish in the shallow waters it inhabited, much unlike other Ophthalmosaurids with longer flippers which were more adapted for long distance travel."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nannopterygius",
+			"type": "text",
+			"text": "The type species of the animal hails from the Kimmeridge Clays and was named in 1871 under the genus Ichthyosaurus. At the time when this animal was alive the area would've been much warmer and dotted in archipelagos, the same ones that would eventually form the European landmass millions of years later. Its name roughly translates to small wing or small flipper."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_nannopterygius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_nannopterygius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_nannopterygius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_nannopterygius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_nannopterygius"
+		}
+	]
+}

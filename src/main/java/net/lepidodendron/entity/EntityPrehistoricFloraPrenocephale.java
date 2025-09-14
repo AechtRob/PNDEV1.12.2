@@ -112,7 +112,7 @@ public class EntityPrehistoricFloraPrenocephale extends EntityPrehistoricFloraLa
 		return null;
 	}
 
-	public static String getPeriod() {return "Early Cretaceous";}
+	public static String getPeriod() {return "Late Cretaceous";}
 
 	//public static String getHabitat() {return "Terrestrial Therapsid";}
 

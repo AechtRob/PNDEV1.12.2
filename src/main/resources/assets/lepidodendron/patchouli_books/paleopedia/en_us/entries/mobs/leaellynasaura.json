@@ -1,0 +1,52 @@
+{
+	"name": "Leaellynasaura",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/leaellynasaura_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_leaellynasaura",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_leaellynasaura",
+			"title": "Leaellynasaura",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Ornithopoda$(br)>Elasmaria"
+		},
+        	{
+            "type": "entity",
+            "name": "L. amicagraphica",
+            "entity": "lepidodendron:prehistoric_flora_leaellynasaura",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_leaellynasaura",
+			"type": "text",
+			"text": "Leaellynasaura is a small but long Elasmarian from the Early Cretaceous of Australia. While this animal is of a very small stature, it measures in at around 3m long, with most of that length being attributed to its tail. Its use for this tail could have several purposes, one of which that could be particularly likely is for agility, allowing this animal to maintain its footing while weaving to avoid predators."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_leaellynasaura",
+			"type": "text",
+			"text": "Our Leaellynasaura is specifically based on fossils referred to the genus. These fossils are what give us this incredibly long tail. Though it isn’t one hundred percent certain that they are the same genus, due to the lack of overlapping material, many studies have identified it as Leaellynasaura."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_leaellynasaura"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_leaellynasaura"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_leaellynasaura"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_leaellynasaura"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_leaellynasaura"
+		}
+	]
+}
