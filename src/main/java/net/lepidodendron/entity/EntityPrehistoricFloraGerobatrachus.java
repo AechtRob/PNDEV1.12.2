@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraGerobatrachus extends EntityPrehistoricFloraS
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.20F;
-		maxHealthAgeable = 5.0D;
+		maxHealthAgeable = 3.0D;
 	}
 
 	@Override

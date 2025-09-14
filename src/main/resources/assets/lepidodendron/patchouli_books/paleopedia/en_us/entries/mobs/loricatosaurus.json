@@ -1,0 +1,52 @@
+{
+	"name": "Loricatosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/loricatosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_loricatosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_loricatosaurus",
+			"title": "Loricatosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Thyreophora$(br)>Stegosauria$(br)>Stegosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. priscus",
+            "entity": "lepidodendron:prehistoric_flora_loricatosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_loricatosaurus",
+			"type": "text",
+			"text": "Loricatosaurus is a stegosaur from the middle Jurassic, Oxford Clay Formation in England and the Marnes à Belemnopsis latesulcatus Formation in France. Its length is approximately 6 meters long and 2.4 meters tall. This animal has had a long taxonomic history, being named originally Stegosaurus priscus by Baron Franz Nopcsa von Felső-Szilvás in 1911, and other material being assigned to Lexovisaurus by Hoffstetter and Galton."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_loricatosaurus",
+			"type": "text",
+			"text": "Maidment and colleagues reviewed the specimens in 2008 concluding that the Lexovisaurus material was nondiagnostic and Coining the genus Loricatosaurus priscus which translates to ancient armoured lizard. The material of Loricatosaurus consists of the 2 skeletons one being the partially complete holotype, and the french specimen formerly Lexovisaurus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_loricatosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_loricatosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_loricatosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_loricatosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_loricatosaurus"
+		}
+	]
+}

@@ -40,7 +40,7 @@ public class EntityPrehistoricFloraHuanghelepis extends EntityPrehistoricFloraAg
 		minWidth = 0.1F;
 		maxWidth = 0.45F;
 		maxHeight = 0.45F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 4.0D;
 	}
 
 	@Override

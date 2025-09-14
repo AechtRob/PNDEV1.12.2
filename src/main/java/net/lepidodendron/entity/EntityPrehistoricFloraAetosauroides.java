@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraAetosauroides extends EntityPrehistoricFloraL
 		minWidth = 0.18F;
 		maxWidth = 0.82F;
 		maxHeight = 1.05F;
-		maxHealthAgeable = 28.0D;
+		maxHealthAgeable = 24.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

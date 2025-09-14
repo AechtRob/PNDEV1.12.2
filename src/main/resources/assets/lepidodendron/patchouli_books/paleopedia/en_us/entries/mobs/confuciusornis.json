@@ -1,0 +1,57 @@
+{
+	"name": "Confuciusornis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/confuciusornis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_confuciusornis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_confuciusornis",
+			"title": "Confuciusornis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Avialae$(br)>Confuciusornithidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. sanctus",
+            "entity": "lepidodendron:prehistoric_flora_confuciusornis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_confuciusornis",
+			"type": "text",
+			"text": "Confuciusornis is a bird known from Yixian and the overlying Jiufotang Formation of Early Cretaceous China. It was named after the Chinese philosopher, Confucius. This animal has been found in great abundance, numbering hundreds of specimens. Like many modern birds, Confuciusornis was likely sexually dimorphic, with distinct male and female forms."
+		},
+				{
+			"advancement": "lepidodendron:pf_adv_book_confuciusornis",
+			"type": "text",
+			"text": "However, the exact nature of this dimorphism has long been controversial, with the big question being whether the tail streamers, known from only a fraction of preserved specimens, were present in both sexes. Fortunately, a 2024 study based on nearly 200 specimens found a statistically significant correlation between the presence of tail feathers, total body mass, and limb proportions, supporting the conclusion that the tailed form most likely represents the male sex."
+		},
+				{
+			"advancement": "lepidodendron:pf_adv_book_confuciusornis",
+			"type": "text",
+			"text": "Like modern birds, Confuciusornis completely lacked teeth, though this appears to have been a convergent innovation, as teeth were still present in several lineages closer to the Neoaves."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_confuciusornis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_confuciusornis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_confuciusornis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_confuciusornis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_confuciusornis"
+		}
+	]
+}

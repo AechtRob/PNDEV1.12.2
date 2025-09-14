@@ -1,0 +1,47 @@
+{
+	"name": "Prenocephale",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/prenocephale_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_prenocephale",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_prenocephale",
+			"title": "Prenocephale",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Pachycephalosauria$(br)>Pachycephalosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. prenes",
+            "entity": "lepidodendron:prehistoric_flora_prenocephale",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_prenocephale",
+			"type": "text",
+			"text": "Prenocephale is a Pachycephalosaur from the Late Cretaceous of Mongolia, living within the Nemegt Formation. This animal was average sized for Pachycephalosaurs, measuring in at around 2 meters in length. This is small in comparison to the famous Pachycephalosaurus, whose size is more of an outlier. Like other Pachycephalosaurs, Prenocephale would have been a herbivorous animal that possibly displayed omnivorous behaviour in life."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_prenocephale"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_prenocephale"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_prenocephale"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_prenocephale"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_prenocephale"
+		}
+	]
+}

@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraOrthacanthus extends EntityPrehistoricFloraAg
 		minWidth = 0.1F;
 		maxWidth = 0.65F;
 		maxHeight = 0.6F;
-		maxHealthAgeable = 36.0D;
+		maxHealthAgeable = 30.0D;
 	}
 
 	@Override

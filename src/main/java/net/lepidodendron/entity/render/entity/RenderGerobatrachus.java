@@ -16,7 +16,7 @@ public class RenderGerobatrachus extends RenderLivingBaseWithBook<EntityPrehisto
     }
 
     public static float getScaler() {
-        return 0.14f;
+        return 0.22f;
     }
 
     @Override

@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraMaghriboselache extends EntityPrehistoricFlor
 		minWidth = 0.1F;
 		maxWidth = 0.7F;
 		maxHeight = 0.8F;
-		maxHealthAgeable = 12.0D;
+		maxHealthAgeable = 24.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
