@@ -55,7 +55,7 @@ public class WorldGenAddSomethingToTopSolidBlock extends WorldGenerator
                                 Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.add(0, offsetY + 1, 0), state, 4);
                             }
                             else {
-                                Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.add(0, offsetY + 1, 0), state, 4);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.add(0, offsetY, 0), state, 4);
                             }
                             break;
 
@@ -67,7 +67,7 @@ public class WorldGenAddSomethingToTopSolidBlock extends WorldGenerator
                                 Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.add(0, offsetY + 2, 0), state, 4);
                             }
                             else {
-                                Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.add(0, offsetY + 1, 0), state, 4);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.add(0, offsetY, 0), state, 4);
                             }
                             break;
                     }
