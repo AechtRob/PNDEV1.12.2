@@ -2,8 +2,17 @@
   "variants": {
     "normal": [
       {"model": "lepidodendron:sulphur_vent_1"},
+      {"model": "lepidodendron:sulphur_vent_1", "y": 90},
+      {"model": "lepidodendron:sulphur_vent_1", "y": 180},
+      {"model": "lepidodendron:sulphur_vent_1", "y": 270},
       {"model": "lepidodendron:sulphur_vent_2"},
-      {"model": "lepidodendron:sulphur_vent_3"}
+      {"model": "lepidodendron:sulphur_vent_2", "y": 90},
+      {"model": "lepidodendron:sulphur_vent_2", "y": 180},
+      {"model": "lepidodendron:sulphur_vent_2", "y": 270},
+      {"model": "lepidodendron:sulphur_vent_3"},
+      {"model": "lepidodendron:sulphur_vent_3", "y": 90},
+      {"model": "lepidodendron:sulphur_vent_3", "y": 180},
+      {"model": "lepidodendron:sulphur_vent_3", "y": 270}
     ]
   }
 }

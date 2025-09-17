@@ -234,14 +234,13 @@ public class BlockSulphurVent extends ElementsLepidodendronMod.ModElement {
 			int y = pos.getY();
 			int z = pos.getZ();
 			int i = x;
-			int j = y;
+			int j = y + 1;
 			int k = z;
-			if (true)
+			if (random.nextInt(3) == 0)
 				for (int l = 0; l < 5; ++l) {
 					double d0 = (i + random.nextFloat());
 					double d1 = (j + random.nextFloat());
 					double d2 = (k + random.nextFloat());
-					int i1 = random.nextInt(2) * 2 - 1;
 					double d3 = (random.nextFloat() - 0.5D) * 0.1999999985098839D;
 					double d4 = (random.nextFloat() - 0.5D) * 0.1999999985098839D;
 					double d5 = (random.nextFloat() - 0.5D) * 0.1999999985098839D;
@@ -251,7 +250,6 @@ public class BlockSulphurVent extends ElementsLepidodendronMod.ModElement {
 					double d0 = (i + random.nextFloat());
 					double d1 = (j + random.nextFloat());
 					double d2 = (k + random.nextFloat());
-					int i1 = random.nextInt(2) * 2 - 1;
 					double d3 = (random.nextFloat() - 0.5D) * 0.1999999985098839D;
 					double d4 = (random.nextFloat() - 0.5D) * 0.1999999985098839D;
 					double d5 = (random.nextFloat() - 0.5D) * 0.1999999985098839D;
