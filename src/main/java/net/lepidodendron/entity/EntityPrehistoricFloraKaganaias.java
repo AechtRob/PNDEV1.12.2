@@ -238,7 +238,7 @@ public class EntityPrehistoricFloraKaganaias extends EntityPrehistoricFloraSwimm
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:kaganaias_idle"));
+				.getObject(new ResourceLocation(""));
 	}
 
 	@Override

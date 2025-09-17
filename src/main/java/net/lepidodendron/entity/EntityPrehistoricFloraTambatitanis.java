@@ -372,24 +372,24 @@ public class EntityPrehistoricFloraTambatitanis extends EntityPrehistoricFloraLa
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:spinophorosaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:tambatitanis_idle"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:spinophorosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:tambatitanis_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:spinophorosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:tambatitanis_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:spinophorosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:tambatitanis_death"));
 	}
 
 	@Override

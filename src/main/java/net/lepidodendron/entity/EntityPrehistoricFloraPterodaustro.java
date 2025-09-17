@@ -354,27 +354,22 @@ public class EntityPrehistoricFloraPterodaustro extends EntityPrehistoricFloraLa
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:tapejara_idle"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:pterodaustro_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:tapejara_hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:pterodaustro_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:tapejara_death"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:pterodaustro_death"));
 	}
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:tapejara_alarm"));
-	}
-
-	public SoundEvent getDisplaySound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:tapejara_display"));
+				.getObject(new ResourceLocation("lepidodendron:pterodaustro_alarm"));
 	}
 
 	public void playAlarmSound()
@@ -386,15 +381,6 @@ public class EntityPrehistoricFloraPterodaustro extends EntityPrehistoricFloraLa
 			//System.err.println("playing alarm sound");
 			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
 			this.screamAlarmCooldown = 25;
-		}
-	}
-
-	public void playDisplaySound()
-	{
-		SoundEvent soundevent = this.getDisplaySound();
-		if (soundevent != null)
-		{
-			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
 		}
 	}
 

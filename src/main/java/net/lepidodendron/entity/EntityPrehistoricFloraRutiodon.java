@@ -229,21 +229,21 @@ public class EntityPrehistoricFloraRutiodon extends EntityPrehistoricFloraSwimmi
 	}
 
 	@Override
-	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:rutiodon_idle"));
+	public net.minecraft.util.SoundEvent getAmbientSound() {
+		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:smilosuchus_idle"));
 	}
 
 	@Override
-	public SoundEvent getHurtSound(DamageSource ds) {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:rutiodon_hurt"));
+	public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
+		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:smilosuchus_hurt"));
 	}
 
 	@Override
-	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:rutiodon_death"));
+	public net.minecraft.util.SoundEvent getDeathSound() {
+		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:smilosuchus_death"));
 	}
 
 

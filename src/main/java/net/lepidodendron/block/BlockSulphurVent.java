@@ -236,7 +236,7 @@ public class BlockSulphurVent extends ElementsLepidodendronMod.ModElement {
 			int i = x;
 			int j = y + 1;
 			int k = z;
-			if (random.nextInt(3) == 0)
+			if (random.nextInt(15) == 0)
 				for (int l = 0; l < 5; ++l) {
 					double d0 = (i + random.nextFloat());
 					double d1 = (j + random.nextFloat());

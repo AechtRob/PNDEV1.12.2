@@ -1,9 +1,12 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.block.BlockSulphurOre;
+import net.lepidodendron.block.BlockSulphurVent;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -38,7 +41,40 @@ public class WorldGenAddSomethingToTopSolidBlock extends WorldGenerator
         IBlockState checkState = worldIn.getBlockState(checkPos);
         if (checkState.isSideSolid(worldIn, checkPos, EnumFacing.UP)) {
             if (canBeWater) {
-                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.add(0, offsetY, 0), state, 4);
+                if (state.getBlock() == BlockSulphurVent.block) {
+                    //Special settings for this block: */
+                    int c = rand.nextInt(3);
+                    switch (c) {
+                        case 0: default:
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.add(0, offsetY, 0), state, 4);
+                            break;
+
+                        case 1:
+                            if (worldIn.getBlockState(blockpos.add(0, offsetY + 1, 0)).getMaterial() == Material.WATER) {
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.add(0, offsetY, 0), getSulphurState(rand), 4);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.add(0, offsetY + 1, 0), state, 4);
+                            }
+                            else {
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.add(0, offsetY + 1, 0), state, 4);
+                            }
+                            break;
+
+                        case 2:
+                            if (worldIn.getBlockState(blockpos.add(0, offsetY + 1, 0)).getMaterial() == Material.WATER
+                                && worldIn.getBlockState(blockpos.add(0, offsetY + 2, 0)).getMaterial() == Material.WATER) {
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.add(0, offsetY, 0), getSulphurState(rand), 4);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.add(0, offsetY + 1, 0), getSulphurState(rand), 4);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.add(0, offsetY + 2, 0), state, 4);
+                            }
+                            else {
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.add(0, offsetY + 1, 0), state, 4);
+                            }
+                            break;
+                    }
+                }
+                else {
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.add(0, offsetY, 0), state, 4);
+                }
                 return true;
             }
             else { //Must not be water:
@@ -49,5 +85,12 @@ public class WorldGenAddSomethingToTopSolidBlock extends WorldGenerator
             }
         }
         return false;
+    }
+
+    public IBlockState getSulphurState(Random rand) {
+        if (rand.nextInt(8) == 0) {
+            return BlockSulphurOre.block.getDefaultState();
+        }
+        return Blocks.STONE.getDefaultState();
     }
 }

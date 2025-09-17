@@ -201,13 +201,13 @@ public class EntityPrehistoricFloraPleurosaurus extends EntityPrehistoricFloraSw
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:clevosaurus_idle"));
+				.getObject(new ResourceLocation(""));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:clevosaurus_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:pleurosaurus_hurt"));
 	}
 
 	//@Override
@@ -218,7 +218,7 @@ public class EntityPrehistoricFloraPleurosaurus extends EntityPrehistoricFloraSw
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:clevosaurus_death"));
+				.getObject(new ResourceLocation("lepidodendron:pleurosaurus_death"));
 	}
 
 	//@Override

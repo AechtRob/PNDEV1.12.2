@@ -212,19 +212,19 @@ public class EntityPrehistoricFloraHakusanobaatar extends EntityPrehistoricFlora
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:tiny_mammaliaform_idle"));
+				.getObject(new ResourceLocation("lepidodendron:hakusanobaatar_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:tiny_mammaliaform_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:hakusanobaatar_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:tiny_mammaliaform_death"));
+				.getObject(new ResourceLocation("lepidodendron:hakusanobaatar_death"));
 	}
 
 	@Override

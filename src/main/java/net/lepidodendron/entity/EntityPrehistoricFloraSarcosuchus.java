@@ -242,19 +242,19 @@ public class EntityPrehistoricFloraSarcosuchus extends EntityPrehistoricFloraSwi
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:sarcosuchus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:giantcroc_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:sarcosuchus_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:giantcroc_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:sarcosuchus_death"));
+				.getObject(new ResourceLocation("lepidodendron:giantcroc_death"));
 	}
 
 

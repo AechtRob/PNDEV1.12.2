@@ -244,22 +244,20 @@ public class EntityPrehistoricFloraStolokrosuchus extends EntityPrehistoricFlora
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:stolokrosuchus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:normalcroc_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:stolokrosuchus_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:normalcroc_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:stolokrosuchus_death"));
+				.getObject(new ResourceLocation("lepidodendron:normalcroc_death"));
 	}
-
-
 
 	@Override
 	protected float getSoundVolume() {

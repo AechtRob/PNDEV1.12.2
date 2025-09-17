@@ -385,24 +385,24 @@ public class EntityPrehistoricFloraSauroposeidon extends EntityPrehistoricFloraL
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:mamenchisaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:sauroposeidon_idle"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:mamenchisaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:sauroposeidon_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:mamenchisaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:sauroposeidon_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:mamenchisaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:sauroposeidon_death"));
 	}
 
 	@Override

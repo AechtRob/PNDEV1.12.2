@@ -400,26 +400,26 @@ public class EntityPrehistoricFloraLoricatosaurus extends EntityPrehistoricFlora
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:miragaia_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:loricatosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:miragaia_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:loricatosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:miragaia_death"));
+	            .getObject(new ResourceLocation("lepidodendron:loricatosaurus_death"));
 	}
 
 	@Nullable
 	@Override
 	public SoundEvent getRoarSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:miragaia_roar"));
+				.getObject(new ResourceLocation("lepidodendron:loricatosaurus_idle"));
 	}
 
 	@Override
