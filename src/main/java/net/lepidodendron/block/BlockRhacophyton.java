@@ -155,7 +155,7 @@ public class BlockRhacophyton extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Proto-plant/fern");
-	        tooltip.add("Periods: Devonian");
+	        tooltip.add("Periods: Middle Devonian - Late Devonian");
 	        tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

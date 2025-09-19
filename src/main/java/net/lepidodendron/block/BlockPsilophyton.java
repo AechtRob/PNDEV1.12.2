@@ -384,7 +384,7 @@ public class BlockPsilophyton extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Proto-plant");
-	        tooltip.add("Periods: Devonian");
+	        tooltip.add("Periods: Early Devonian to Middle Devonian");
 	        tooltip.add("Note: Requires water proximity, but cannot be right next to water, and spreads to surrounding sand and dirt");
 	        tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
