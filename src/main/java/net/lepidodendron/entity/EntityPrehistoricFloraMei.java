@@ -264,7 +264,7 @@ public class EntityPrehistoricFloraMei extends EntityPrehistoricFloraLandBase im
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:kamuysaurus_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:mei_alarm"));
 	}
 
 	public void playAlarmSound()

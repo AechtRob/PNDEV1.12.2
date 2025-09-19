@@ -284,6 +284,7 @@ public class EntityPrehistoricFloraTawa extends EntityPrehistoricFloraLandBase i
 	    return (SoundEvent) SoundEvent.REGISTRY
 	            .getObject(new ResourceLocation("lepidodendron:tawa_death"));
 	}
+
 	public SoundEvent getChatterSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:tawa_display"));

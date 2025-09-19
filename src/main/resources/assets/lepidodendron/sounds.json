@@ -15424,7 +15424,7 @@
   "tawa_display": {
     "sounds": [
       {
-        "name": "lepidodendron:tawa_display01",
+        "name": "lepidodendron:tawa_display",
         "stream": false
       }
     ]
@@ -16386,58 +16386,58 @@
     ]
   },
 
-  "iguanadon_idle": {
+  "iguanodon_idle": {
     "sounds": [
       {
-        "name": "lepidodendron:iguanadon_living01",
+        "name": "lepidodendron:iguanodon_living01",
         "stream": false
       },
       {
-        "name": "lepidodendron:iguanadon_living02",
+        "name": "lepidodendron:iguanodon_living02",
         "stream": false
       },
       {
-        "name": "lepidodendron:iguanadon_living03",
+        "name": "lepidodendron:iguanodon_living03",
         "stream": false
       },
       {
-        "name": "lepidodendron:iguanadon_living04",
+        "name": "lepidodendron:iguanodon_living04",
         "stream": false
       },
       {
-        "name": "lepidodendron:iguanadon_living05",
+        "name": "lepidodendron:iguanodon_living05",
         "stream": false
       },
       {
-        "name": "lepidodendron:iguanadon_living06",
+        "name": "lepidodendron:iguanodon_living06",
         "stream": false
       },
       {
-        "name": "lepidodendron:iguanadon_living07",
+        "name": "lepidodendron:iguanodon_living07",
         "stream": false
       }
     ]
   },
-  "iguanadon_hurt": {
+  "iguanodon_hurt": {
     "sounds": [
       {
-        "name": "lepidodendron:iguanadon_hurt01",
+        "name": "lepidodendron:iguanodon_hurt01",
         "stream": false
       },
       {
-        "name": "lepidodendron:iguanadon_hurt02",
+        "name": "lepidodendron:iguanodon_hurt02",
         "stream": false
       },
       {
-        "name": "lepidodendron:iguanadon_hurt03",
+        "name": "lepidodendron:iguanodon_hurt03",
         "stream": false
       }
     ]
   },
-  "iguanadon_death": {
+  "iguanodon_death": {
     "sounds": [
       {
-        "name": "lepidodendron:iguanadon_death",
+        "name": "lepidodendron:iguanodon_death",
         "stream": false
       }
     ]

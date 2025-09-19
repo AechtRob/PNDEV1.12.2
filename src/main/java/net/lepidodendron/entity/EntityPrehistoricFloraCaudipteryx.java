@@ -341,12 +341,17 @@ public class EntityPrehistoricFloraCaudipteryx extends EntityPrehistoricFloraLan
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:caudipteryx_alarm"));
 	}
-	
 
 	public void playAlarmSound()
 	{
 		SoundEvent soundevent = this.getAlarmSound();
 		//System.err.println("looking for alarm sound");
+		if (soundevent != null)
+		{
+			//System.err.println("playing alarm sound");
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			this.screamAlarmCooldown = 20;
+		}
 	}
 
 	@Override

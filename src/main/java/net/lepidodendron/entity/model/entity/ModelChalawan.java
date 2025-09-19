@@ -750,8 +750,6 @@ public class ModelChalawan extends ModelBasePalaeopedia {
         this.hips.rotationPointY = this.hips.rotationPointY - (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*120/0.5-50))*0.3);
         this.hips.rotationPointZ = this.hips.rotationPointZ + (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*120/0.5))*-0.5);
 
-
-
         if (tickAnim >= 0 && tickAnim < 5) {
             xx = -1.11072 + (((tickAnim - 0) / 5) * (-18.33244-(-1.11072)));
             yy = -26.20622 + (((tickAnim - 0) / 5) * (-30.01893-(-26.20622)));
