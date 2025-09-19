@@ -1,7 +1,7 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "#cross"
+        "particle": "#cross_lower"
     },
     "elements": [
         {   "from": [ 0.8, 0, 8 ],
@@ -9,8 +9,8 @@
             "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
             "shade": false,
             "faces": {
-                "north": { "uv": [ 16, 0, 0, 16 ], "texture": "#cross" },
-                "south": { "uv": [ 16, 0, 0, 16 ], "texture": "#cross" }
+                "north": { "uv": [ 16, 0, 0, 16 ], "texture": "#cross_lower" },
+                "south": { "uv": [ 16, 0, 0, 16 ], "texture": "#cross_lower" }
             }
         },
         {   "from": [ 8, 0, 0.8 ],
@@ -18,8 +18,8 @@
             "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
             "shade": false,
             "faces": {
-                "west": { "uv": [ 16, 0, 0, 16 ], "texture": "#cross" },
-                "east": { "uv": [ 16, 0, 0, 16 ], "texture": "#cross" }
+                "west": { "uv": [ 16, 0, 0, 16 ], "texture": "#cross_lower" },
+                "east": { "uv": [ 16, 0, 0, 16 ], "texture": "#cross_lower" }
             }
         },
 
@@ -28,8 +28,8 @@
             "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
             "shade": false,
             "faces": {
-                "north": { "uv": [ 16, 0, 0, 16 ], "texture": "#cross" },
-                "south": { "uv": [ 16, 0, 0, 16 ], "texture": "#cross" }
+                "north": { "uv": [ 16, 0, 0, 16 ], "texture": "#cross_upper" },
+                "south": { "uv": [ 16, 0, 0, 16 ], "texture": "#cross_upper" }
             }
         },
         {   "from": [ 8, 16, 0.8 ],
@@ -37,8 +37,8 @@
             "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
             "shade": false,
             "faces": {
-                "west": { "uv": [ 16, 0, 0, 16 ], "texture": "#cross" },
-                "east": { "uv": [ 16, 0, 0, 16 ], "texture": "#cross" }
+                "west": { "uv": [ 16, 0, 0, 16 ], "texture": "#cross_upper" },
+                "east": { "uv": [ 16, 0, 0, 16 ], "texture": "#cross_upper" }
             }
         }
     ]
