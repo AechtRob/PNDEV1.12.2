@@ -12,6 +12,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -36,14 +37,17 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
-public class EntityPrehistoricFloraMei extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
+public class EntityPrehistoricFloraMei extends EntityPrehistoricFloraLandBase implements IScreamer, ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	public Animation STAND_ANIMATION;
 	private int standCooldown;
+	private boolean screaming;
+	private int alarmCooldown;
 
 	public EntityPrehistoricFloraMei(World world) {
 		super(world);
@@ -56,6 +60,31 @@ public class EntityPrehistoricFloraMei extends EntityPrehistoricFloraLandBase im
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		Entity e = ds.getTrueSource();
+		if (e instanceof EntityLivingBase) {
+			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
+			List<EntityPrehistoricFloraMei> Mei = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraMei.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraMei currentMei : Mei) {
+				currentMei.setAnimation(NO_ANIMATION);
+				currentMei.setRevengeTarget(ee);
+				currentMei.setAlarmTarget(ee);
+				currentMei.alarmCooldown = rand.nextInt(20);
+			}
+		}
+		return super.attackEntityFrom(ds, i);
+	}
+
+	public void setScreaming(boolean screaming) {
+		this.screaming = screaming;
+	}
+
+	public boolean getScreaming() {
+		return this.screaming;
 	}
 
 	@Override
@@ -163,18 +192,24 @@ public class EntityPrehistoricFloraMei extends EntityPrehistoricFloraLandBase im
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(4, new LandWanderNestAI(this));
-		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 45));
-		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityLookIdleAI(this));
+		tasks.addTask(4, new PanicScreamAI(this, 1.0));
+		tasks.addTask(5, new LandWanderNestAI(this));
+		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 45));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
 //		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 //		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
+	}
+
+	@Override
+	public boolean panics() {
+		return true;
 	}
 
 	@Override
@@ -227,6 +262,23 @@ public class EntityPrehistoricFloraMei extends EntityPrehistoricFloraLandBase im
 	            .getObject(new ResourceLocation("lepidodendron:mei_death"));
 	}
 
+	public SoundEvent getAlarmSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:kamuysaurus_alarm"));
+	}
+
+	public void playAlarmSound()
+	{
+		SoundEvent soundevent = this.getAlarmSound();
+		//System.err.println("looking for alarm sound");
+		if (soundevent != null)
+		{
+			//System.err.println("playing alarm sound");
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			this.alarmCooldown = 20;
+		}
+	}
+
 	@Override
 	protected float getSoundVolume() {
 		return 1.0F;
@@ -258,6 +310,13 @@ public class EntityPrehistoricFloraMei extends EntityPrehistoricFloraLandBase im
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
+		if (this.alarmCooldown > 0) {
+			this.alarmCooldown -= 1;
+		}
+		if (this.getScreaming() && alarmCooldown <= 0) {
+			this.playAlarmSound();
+			return;
+		}
 
 		//Sometimes stand up and look around:
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null

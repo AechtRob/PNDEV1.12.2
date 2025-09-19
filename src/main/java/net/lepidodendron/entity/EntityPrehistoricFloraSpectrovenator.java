@@ -293,25 +293,25 @@ public class EntityPrehistoricFloraSpectrovenator extends EntityPrehistoricFlora
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:saltriovenator_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:spectrovenator_threat"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:ceratosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:spectrovenator_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:saltriovenator_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:spectrovenator_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:saltriovenator_death"));
+	            .getObject(new ResourceLocation("lepidodendron:spectrovenator_death"));
 	}
 
 	@Override

@@ -195,19 +195,19 @@ public class EntityPrehistoricFloraPhosphorosaurus extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:phosphorosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:smallmosasaur_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:phosphorosaurus_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:smallmosasaur_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:phosphorosaurus_death"));
+				.getObject(new ResourceLocation("lepidodendron:smallmosasaur_death"));
 	}
 
 	@Override

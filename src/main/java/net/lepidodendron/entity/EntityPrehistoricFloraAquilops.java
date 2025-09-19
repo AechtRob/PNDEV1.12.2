@@ -384,7 +384,7 @@ public class EntityPrehistoricFloraAquilops extends EntityPrehistoricFloraLandBa
 
 	public SoundEvent getChatterSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:aquilops_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:aquilops_display"));
 	}
 
 	public void playAlarmSound()

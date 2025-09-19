@@ -416,24 +416,24 @@ public class EntityPrehistoricFloraBrachytrachelopan extends EntityPrehistoricFl
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:dicraeosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:brachytrachelopan_idle"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:dicraeosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:brachytrachelopan_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:dicraeosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:brachytrachelopan_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:dicraeosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:brachytrachelopan_death"));
 	}
 
 	@Override

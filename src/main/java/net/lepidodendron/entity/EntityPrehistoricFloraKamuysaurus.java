@@ -12,12 +12,14 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraBiQuadLandBase;
 import net.lepidodendron.entity.util.IBluffer;
+import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
@@ -40,12 +42,14 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraKamuysaurus extends EntityPrehistoricFloraBiQuadLandBase implements IAdvancementGranter, IBluffer, ITrappableLand {
+public class EntityPrehistoricFloraKamuysaurus extends EntityPrehistoricFloraBiQuadLandBase implements IScreamer, IAdvancementGranter, IBluffer, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	private int standCooldown;
+	private boolean screaming;
+	private int alarmCooldown;
 
 	public EntityPrehistoricFloraKamuysaurus(World world) {
 		super(world);
@@ -57,6 +61,25 @@ public class EntityPrehistoricFloraKamuysaurus extends EntityPrehistoricFloraBiQ
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		Entity e = ds.getTrueSource();
+		if (e instanceof EntityLivingBase) {
+			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
+			this.setBipedal();
+			List<EntityPrehistoricFloraKamuysaurus> Kamuysaurus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraKamuysaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraKamuysaurus currentKamuysaurus : Kamuysaurus) {
+				currentKamuysaurus.setAnimation(NO_ANIMATION);
+				currentKamuysaurus.setRevengeTarget(ee);
+				currentKamuysaurus.setAlarmTarget(ee);
+				currentKamuysaurus.setBipedal();
+				currentKamuysaurus.alarmCooldown = rand.nextInt(20);
+			}
+		}
+		return super.attackEntityFrom(ds, i);
 	}
 
 	@Override
@@ -98,6 +121,14 @@ public class EntityPrehistoricFloraKamuysaurus extends EntityPrehistoricFloraBiQ
 		}
 		return super.isDrinking();
 
+	}
+
+	public void setScreaming(boolean screaming) {
+		this.screaming = screaming;
+	}
+
+	public boolean getScreaming() {
+		return this.screaming;
 	}
 
 	@Override
@@ -227,7 +258,7 @@ public class EntityPrehistoricFloraKamuysaurus extends EntityPrehistoricFloraBiQ
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		//tasks.addTask(3, new AgeableWarnEntity(this, EntityPlayer.class, 4));
 		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(5, new PanicAI(this, 1.0));
+		tasks.addTask(5, new PanicScreamAI(this, 1.0));
 		tasks.addTask(6, new LandWanderNestAI(this));
 		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D, 45));
@@ -290,6 +321,23 @@ public class EntityPrehistoricFloraKamuysaurus extends EntityPrehistoricFloraBiQ
 	            .getObject(new ResourceLocation("lepidodendron:kamuysaurus_death"));
 	}
 
+	public SoundEvent getAlarmSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:kamuysaurus_alarm"));
+	}
+
+	public void playAlarmSound()
+	{
+		SoundEvent soundevent = this.getAlarmSound();
+		//System.err.println("looking for alarm sound");
+		if (soundevent != null)
+		{
+			//System.err.println("playing alarm sound");
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			this.alarmCooldown = 20;
+		}
+	}
+
 	@Override
 	protected float getSoundVolume() {
 		return 1.0F;
@@ -302,8 +350,13 @@ public class EntityPrehistoricFloraKamuysaurus extends EntityPrehistoricFloraBiQ
 
 	@Override
 	public void onEntityUpdate() {
+		if (this.alarmCooldown > 0) {
+			this.alarmCooldown -= 1;
+		}
+		if (this.getScreaming() && alarmCooldown <= 0) {
+			this.playAlarmSound();
+		}
 		super.onEntityUpdate();
-
 	}
 
 	@Override

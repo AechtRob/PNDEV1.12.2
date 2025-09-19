@@ -314,19 +314,19 @@ public class EntityPrehistoricFloraCratopipa extends EntityPrehistoricFloraSwimm
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:cratopipa_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:cratopipa_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:cratopipa_death"));
 	}
 
 	@Override

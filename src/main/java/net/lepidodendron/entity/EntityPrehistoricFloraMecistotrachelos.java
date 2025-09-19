@@ -16,6 +16,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -121,21 +122,21 @@ public class EntityPrehistoricFloraMecistotrachelos extends EntityPrehistoricFlo
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getAmbientSound() {
-		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-			.getObject(new ResourceLocation("lepidodendron:weigeltisaurid_idle"));
+	public SoundEvent getAmbientSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation(""));
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
-		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-			.getObject(new ResourceLocation("lepidodendron:weigeltisaurid_hurt"));
+	public SoundEvent getHurtSound(DamageSource ds) {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:schoenesmahl_hurt"));
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getDeathSound() {
-		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-			.getObject(new ResourceLocation("lepidodendron:weigeltisaurid_death"));
+	public SoundEvent getDeathSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:schoenesmahl_death"));
 	}
 
 	@Override

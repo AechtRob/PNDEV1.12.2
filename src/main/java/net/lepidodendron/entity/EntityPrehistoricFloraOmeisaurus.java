@@ -464,24 +464,24 @@ public class EntityPrehistoricFloraOmeisaurus extends EntityPrehistoricFloraLand
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:mamenchisaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:omeisaurus_idle"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:mamenchisaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:omeisaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:mamenchisaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:omeisaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:mamenchisaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:omeisaurus_death"));
 	}
 
 	@Override

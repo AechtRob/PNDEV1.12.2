@@ -249,21 +249,11 @@ public class EntityPrehistoricFloraHyphalosaurus extends EntityPrehistoricFloraS
 				.getObject(new ResourceLocation("lepidodendron:hyphalosaurus_hurt"));
 	}
 
-	//@Override
-	//public SoundEvent getHurtSound(DamageSource ds) {
-	//	return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
-	//}
-
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:hyphalosaurus_death"));
 	}
-
-	//@Override
-	//public SoundEvent getDeathSound() {
-	//	return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
-	//}
 
 	@Override
 	protected float getSoundVolume() {

@@ -371,12 +371,12 @@ public class EntityPrehistoricFloraMalawisaurus extends EntityPrehistoricFloraLa
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:malawisaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:malawisaurus_roar"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:malawisaurus_roar"));
+				.getObject(new ResourceLocation("lepidodendron:malawisaurus_idle"));
 	}
 
 	@Override

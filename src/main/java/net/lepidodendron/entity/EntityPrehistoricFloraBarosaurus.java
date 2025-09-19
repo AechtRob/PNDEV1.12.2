@@ -370,19 +370,19 @@ public class EntityPrehistoricFloraBarosaurus extends EntityPrehistoricFloraLand
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:diplodocus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:barosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:diplodocus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:barosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:diplodocus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:barosaurus_death"));
 	}
 
 	@Override

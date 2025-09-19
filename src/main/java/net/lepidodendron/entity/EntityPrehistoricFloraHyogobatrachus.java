@@ -314,19 +314,19 @@ public class EntityPrehistoricFloraHyogobatrachus extends EntityPrehistoricFlora
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:hyogobatrachus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:hyogobatrachus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:hyogobatrachus_death"));
 	}
 
 	@Override

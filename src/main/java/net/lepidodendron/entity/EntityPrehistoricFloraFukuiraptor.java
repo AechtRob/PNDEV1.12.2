@@ -239,7 +239,7 @@ public class EntityPrehistoricFloraFukuiraptor extends EntityPrehistoricFloraLan
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:fukuiraptor_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:fukuiraptor_idle"));
 	}
 
 	@Override
