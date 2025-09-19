@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:discalis_1_spore"},
+      {"model": "lepidodendron:discalis_2_spore"},
+      {"model": "lepidodendron:discalis_3_spore"},
+      {"model": "lepidodendron:discalis_1_spore_var"},
+      {"model": "lepidodendron:discalis_2_spore_var"},
+      {"model": "lepidodendron:discalis_3_spore_var"}
+    ]
+  }
+}

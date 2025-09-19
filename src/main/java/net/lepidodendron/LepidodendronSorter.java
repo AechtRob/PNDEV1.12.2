@@ -5263,6 +5263,8 @@ public class LepidodendronSorter {
     public static final int biarmobaiera_seed = 8204;
     public static final int squid_raw = 8205;
     public static final int wolf_raw = 8206;
+    public static final int discalis = 8207;
+    public static final int discalis_spore = 8208;
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;

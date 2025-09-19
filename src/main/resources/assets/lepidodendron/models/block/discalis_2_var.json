@@ -1,0 +1,8 @@
+{
+  "parent": "lepidodendron:block/cross_double_high_flipped",
+  "textures": {
+    "cross_upper": "lepidodendron:blocks/discalis_stem_2",
+    "cross_lower": "lepidodendron:blocks/discalis_2",
+    "particle": "lepidodendron:blocks/discalis_stem_2"
+  }
+}
