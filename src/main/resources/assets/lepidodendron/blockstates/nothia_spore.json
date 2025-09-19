@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:nothia_1_spore"},
+      {"model": "lepidodendron:nothia_2_spore"},
+      {"model": "lepidodendron:nothia_3_spore"},
+      {"model": "lepidodendron:nothia_1_spore_var"},
+      {"model": "lepidodendron:nothia_2_spore_var"},
+      {"model": "lepidodendron:nothia_3_spore_var"}
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:crenaticaulis_1_spore"},
+      {"model": "lepidodendron:crenaticaulis_2_spore"},
+      {"model": "lepidodendron:crenaticaulis_3_spore"},
+      {"model": "lepidodendron:crenaticaulis_1_spore_var"},
+      {"model": "lepidodendron:crenaticaulis_2_spore_var"},
+      {"model": "lepidodendron:crenaticaulis_3_spore_var"}
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "lepidodendron:block/cross_flipped",
+  "textures": {
+    "cross": "lepidodendron:blocks/nothia_3_spore",
+    "particle": "lepidodendron:blocks/nothia_3_spore"
+  }
+}

@@ -210,6 +210,12 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CONOMEDUSITES = new CustomTrigger("pf_book_conomedusites");
     public static final CustomTrigger CLICK_COOKSONIA = new CustomTrigger("pf_book_cooksonia");
     public static final CustomTrigger CLICK_DISCALIS = new CustomTrigger("pf_book_discalis");
+    public static final CustomTrigger CLICK_GOSSLINGIA = new CustomTrigger("pf_book_gosslingia");
+    public static final CustomTrigger CLICK_STACHYOPHYTON = new CustomTrigger("pf_book_stachyophyton");
+    public static final CustomTrigger CLICK_NOTHIA = new CustomTrigger("pf_book_nothia");
+    public static final CustomTrigger CLICK_CRENATICAULIS = new CustomTrigger("pf_book_crenaticaulis");
+    public static final CustomTrigger CLICK_VENTARURA = new CustomTrigger("pf_book_ventarura");
+    public static final CustomTrigger CLICK_TRICHOPHEROPHYTON = new CustomTrigger("pf_book_trichopherophyton");
     public static final CustomTrigger CLICK_RENALIA = new CustomTrigger("pf_book_renalia");
     public static final CustomTrigger CLICK_HORNEOPHYTON = new CustomTrigger("pf_book_horneophyton");
     public static final CustomTrigger CLICK_AGLAOPHYTON = new CustomTrigger("pf_book_aglaophyton");
@@ -2290,6 +2296,12 @@ public class ModTriggers
             CLICK_CONOMEDUSITES,
             CLICK_COOKSONIA,
             CLICK_DISCALIS,
+            CLICK_GOSSLINGIA,
+            CLICK_STACHYOPHYTON,
+            CLICK_NOTHIA,
+            CLICK_CRENATICAULIS,
+            CLICK_VENTARURA,
+            CLICK_TRICHOPHEROPHYTON,
             CLICK_RENALIA,
             CLICK_AGLAOPHYTON,
             CLICK_HORNEOPHYTON,

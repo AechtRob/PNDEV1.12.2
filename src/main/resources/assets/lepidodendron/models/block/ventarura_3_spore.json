@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/ventarura_3_spore",
+    "particle": "lepidodendron:blocks/ventarura_3_spore"
+  }
+}

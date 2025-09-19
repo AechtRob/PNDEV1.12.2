@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:gosslingia_1_spore"},
+      {"model": "lepidodendron:gosslingia_2_spore"},
+      {"model": "lepidodendron:gosslingia_3_spore"},
+      {"model": "lepidodendron:gosslingia_1_spore_var"},
+      {"model": "lepidodendron:gosslingia_2_spore_var"},
+      {"model": "lepidodendron:gosslingia_3_spore_var"}
+    ]
+  }
+}

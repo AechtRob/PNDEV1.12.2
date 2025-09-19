@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/gosslingia_3",
+    "particle": "lepidodendron:blocks/gosslingia_3"
+  }
+}

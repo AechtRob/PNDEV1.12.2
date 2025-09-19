@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:ventarura_1_spore"},
+      {"model": "lepidodendron:ventarura_2_spore"},
+      {"model": "lepidodendron:ventarura_3_spore"},
+      {"model": "lepidodendron:ventarura_1_spore_var"},
+      {"model": "lepidodendron:ventarura_2_spore_var"},
+      {"model": "lepidodendron:ventarura_3_spore_var"}
+    ]
+  }
+}

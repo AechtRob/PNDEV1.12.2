@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:gosslingia_1"},
+      {"model": "lepidodendron:gosslingia_2"},
+      {"model": "lepidodendron:gosslingia_3"},
+      {"model": "lepidodendron:gosslingia_1_var"},
+      {"model": "lepidodendron:gosslingia_2_var"},
+      {"model": "lepidodendron:gosslingia_3_var"}
+    ]
+  }
+}

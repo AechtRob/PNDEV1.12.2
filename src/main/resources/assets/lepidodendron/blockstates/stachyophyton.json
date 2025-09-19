@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:stachyophyton_1"},
+      {"model": "lepidodendron:stachyophyton_2"},
+      {"model": "lepidodendron:stachyophyton_3"},
+      {"model": "lepidodendron:stachyophyton_1_var"},
+      {"model": "lepidodendron:stachyophyton_2_var"},
+      {"model": "lepidodendron:stachyophyton_3_var"}
+    ]
+  }
+}

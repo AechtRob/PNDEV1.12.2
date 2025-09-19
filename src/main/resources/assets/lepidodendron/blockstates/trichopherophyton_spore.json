@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:trichopherophyton_1_spore"},
+      {"model": "lepidodendron:trichopherophyton_2_spore"},
+      {"model": "lepidodendron:trichopherophyton_3_spore"},
+      {"model": "lepidodendron:trichopherophyton_1_spore_var"},
+      {"model": "lepidodendron:trichopherophyton_2_spore_var"},
+      {"model": "lepidodendron:trichopherophyton_3_spore_var"}
+    ]
+  }
+}

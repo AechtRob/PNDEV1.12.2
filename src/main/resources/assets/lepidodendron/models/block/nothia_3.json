@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/nothia_3",
+    "particle": "lepidodendron:blocks/nothia_3"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:crenaticaulis_1"},
+      {"model": "lepidodendron:crenaticaulis_2"},
+      {"model": "lepidodendron:crenaticaulis_3"},
+      {"model": "lepidodendron:crenaticaulis_1_var"},
+      {"model": "lepidodendron:crenaticaulis_2_var"},
+      {"model": "lepidodendron:crenaticaulis_3_var"}
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "lepidodendron:block/cross_flipped",
+  "textures": {
+    "cross": "lepidodendron:blocks/crenaticaulis_3",
+    "particle": "lepidodendron:blocks/crenaticaulis_3"
+  }
+}

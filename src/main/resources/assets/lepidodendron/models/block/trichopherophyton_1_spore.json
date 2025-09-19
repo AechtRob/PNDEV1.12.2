@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/trichopherophyton_1_spore",
+    "particle": "lepidodendron:blocks/trichopherophyton_1_spore"
+  }
+}

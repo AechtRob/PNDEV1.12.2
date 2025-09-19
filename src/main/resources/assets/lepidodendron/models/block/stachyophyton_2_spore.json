@@ -1,0 +1,8 @@
+{
+  "parent": "lepidodendron:block/cross_double_high",
+  "textures": {
+    "cross_upper": "lepidodendron:blocks/stachyophyton_2_spore",
+    "cross_lower": "lepidodendron:blocks/stachyophyton_stem_2_spore",
+    "particle": "lepidodendron:blocks/stachyophyton_stem_2_spore"
+  }
+}

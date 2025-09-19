@@ -5265,6 +5265,18 @@ public class LepidodendronSorter {
     public static final int wolf_raw = 8206;
     public static final int discalis = 8207;
     public static final int discalis_spore = 8208;
+    public static final int gosslingia = 8207;
+    public static final int gosslingia_spore = 8208;
+    public static final int stachyophyton = 8209;
+    public static final int stachyophyton_spore = 8210;
+    public static final int nothia = 8211;
+    public static final int nothia_spore = 8212;
+    public static final int crenaticaulis = 8213;
+    public static final int crenaticaulis_spore = 8214;
+    public static final int ventarura = 8215;
+    public static final int ventarura_spore = 8216;
+    public static final int trichopherophyton = 8217;
+    public static final int trichopherophyton_spore = 8218;
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;
