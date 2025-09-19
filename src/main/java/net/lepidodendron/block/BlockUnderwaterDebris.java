@@ -496,7 +496,8 @@ public class BlockUnderwaterDebris extends ElementsLepidodendronMod.ModElement {
 			//System.err.println("Can place");
 			
 			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))) {
-				return super.canPlaceBlockAt(worldIn, pos); 
+				return super.canPlaceBlockAt(worldIn, pos)
+						&& worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID;
 			}
 			//if (((world.getBlockState(pos.down()).getMaterial() != Material.SAND)
 			//	&& (world.getBlockState(pos.down()).getMaterial() != Material.ROCK)
