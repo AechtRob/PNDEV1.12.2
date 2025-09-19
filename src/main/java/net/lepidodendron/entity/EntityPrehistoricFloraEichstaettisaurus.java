@@ -219,19 +219,19 @@ public class EntityPrehistoricFloraEichstaettisaurus extends EntityPrehistoricFl
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:hypuronector_idle"));
+	            .getObject(new ResourceLocation(""));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:hypuronector_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:eichstaettisaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:hypuronector_death"));
+	            .getObject(new ResourceLocation("lepidodendron:eichstaettisaurus_death"));
 	}
 
 	@Override

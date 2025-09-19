@@ -327,24 +327,24 @@ public class EntityPrehistoricFloraVulcanodon extends EntityPrehistoricFloraLand
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:vulcanodon_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:lessemsaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:vulcanodon_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:lessemsaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:vulcanodon_death"));
+	            .getObject(new ResourceLocation("lepidodendron:lessemsaurus_death"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:vulcanodon_idle"));
+				.getObject(new ResourceLocation("lepidodendron:lessemsaurus_idle"));
 	}
 
 	@Override

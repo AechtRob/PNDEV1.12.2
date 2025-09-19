@@ -383,7 +383,7 @@ public class EntityPrehistoricFloraGastonia extends EntityPrehistoricFloraLandCa
 	@Override
 	public SoundEvent getRoarSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:gastonia_roar"));
+				.getObject(new ResourceLocation("lepidodendron:gastonia_idle"));
 	}
 
 	@Override

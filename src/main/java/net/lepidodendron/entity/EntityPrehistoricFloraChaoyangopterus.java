@@ -279,6 +279,23 @@ public class EntityPrehistoricFloraChaoyangopterus extends EntityPrehistoricFlor
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:chaoyangopterus_death"));
 	}
 
+	public SoundEvent getAlarmSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:chaoyangopterus_alarm"));
+	}
+
+	public void playAlarmSound()
+	{
+		SoundEvent soundevent = this.getAlarmSound();
+		//System.err.println("looking for alarm sound");
+		if (soundevent != null)
+		{
+			//System.err.println("playing alarm sound");
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			this.screamAlarmCooldown = 25;
+		}
+	}
+
 	@Override
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(DietString.FRUIT);
@@ -311,6 +328,9 @@ public class EntityPrehistoricFloraChaoyangopterus extends EntityPrehistoricFlor
 	public void onEntityUpdate() {
 		if (this.screamAlarmCooldown > 0) {
 			this.screamAlarmCooldown -= 1;
+		}
+		if (this.getScreaming() && screamAlarmCooldown <= 0) {
+			this.playAlarmSound();
 		}
 		super.onEntityUpdate();
 	}

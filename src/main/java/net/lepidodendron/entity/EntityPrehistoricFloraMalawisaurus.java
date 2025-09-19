@@ -371,24 +371,24 @@ public class EntityPrehistoricFloraMalawisaurus extends EntityPrehistoricFloraLa
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:spinophorosaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:malawisaurus_idle"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:spinophorosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:malawisaurus_roar"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:spinophorosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:malawisaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:spinophorosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:malawisaurus_idle"));
 	}
 
 	@Override
