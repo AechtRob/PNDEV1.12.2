@@ -631,7 +631,7 @@ public class ModelKuwajimalla extends ModelBasePalaeopedia {
         this.setRotateAngle(hips, hips.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720/0.5))*1), hips.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.5-90))*15), hips.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.5-90))*5));
         this.hips.rotationPointX = this.hips.rotationPointX + (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.5))*1.5);
         this.hips.rotationPointY = this.hips.rotationPointY - (float)(0);
-        this.hips.rotationPointZ = this.hips.rotationPointZ + (float)(0);
+        this.hips.rotationPointZ = this.hips.rotationPointZ + (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.25))*0.5);
 
 
 
@@ -1269,7 +1269,7 @@ public class ModelKuwajimalla extends ModelBasePalaeopedia {
         this.setRotateAngle(hips, hips.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.5))), hips.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180/0.5-90))*6), hips.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180/0.5-90))*5));
         this.hips.rotationPointX = this.hips.rotationPointX + (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180/0.5))*0.5);
         this.hips.rotationPointY = this.hips.rotationPointY - (float)(0);
-        this.hips.rotationPointZ = this.hips.rotationPointZ + (float)(0);
+        this.hips.rotationPointZ = this.hips.rotationPointZ + (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180/0.25))*0.75);
 
 
         this.setRotateAngle(tail1, tail1.rotateAngleX + (float) Math.toRadians(1.99882), tail1.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180/0.5-50))*-3), tail1.rotateAngleZ + (float) Math.toRadians(0));

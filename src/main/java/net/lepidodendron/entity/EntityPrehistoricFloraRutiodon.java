@@ -125,6 +125,9 @@ public class EntityPrehistoricFloraRutiodon extends EntityPrehistoricFloraSwimmi
 		if (this.isReallyInWater()) {
 			calcSpeed = 0.275f;
 		}
+		else if (this.getIsFast()) {
+			calcSpeed = calcSpeed * 1.6F;
+		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

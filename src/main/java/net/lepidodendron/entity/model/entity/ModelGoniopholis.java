@@ -643,7 +643,7 @@ public class ModelGoniopholis extends ModelBasePalaeopedia {
 
         if (!ee.isReallyInWater()) {
             if (ee.getIsMoving()) {
-                animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getIsFast());
             }
         } else {
             //Swimming pose:
@@ -2537,17 +2537,27 @@ public class ModelGoniopholis extends ModelBasePalaeopedia {
         this.setRotateAngle(leftLeg4, leftLeg4.rotateAngleX + (float) Math.toRadians(3.5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*240-130))*-6), leftLeg4.rotateAngleY + (float) Math.toRadians(0), leftLeg4.rotateAngleZ + (float) Math.toRadians(0));
 
     }
-    public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+    public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isFast) {
         EntityPrehistoricFloraGoniopholis entity = (EntityPrehistoricFloraGoniopholis) entitylivingbaseIn;
         int animCycle = 45;
-        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        float runFactor = 1F;
+        if (entity.getIsFast()) {
+            runFactor = 0.5F;
+        }
+        double tickAnim;
+        if (isFast) {
+            tickAnim = ((entity.ticksExisted * 1.6) + entity.getTickOffset()) - (int) (Math.floor((double) ((entity.ticksExisted * 1.6) + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + (partialTickTime * 1.6);
+        }
+        else {
+            tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        }
         double xx = 0;
         double yy = 0;
         double zz = 0;
         this.setRotateAngle(Hips, Hips.rotateAngleX + (float) Math.toRadians(1.25+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*160/0.5-50))*0.8), Hips.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*160-90))*2), Hips.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*160-80))*1.5));
         this.Hips.rotationPointX = this.Hips.rotationPointX + (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*160))*-0.09);
         this.Hips.rotationPointY = this.Hips.rotationPointY - (float)(1.25+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*160/0.5-100))*0.25);
-        this.Hips.rotationPointZ = this.Hips.rotationPointZ + (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*160/0.5-90))*0.2);
+        this.Hips.rotationPointZ = this.Hips.rotationPointZ + (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*160/0.5-90))*(0.8 * runFactor));
 
 
         this.setRotateAngle(Chest, Chest.rotateAngleX + (float) Math.toRadians(-3.5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*160/0.5-90))*-1.2), Chest.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*160-100))*-2), Chest.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*160-80))*-1.5));

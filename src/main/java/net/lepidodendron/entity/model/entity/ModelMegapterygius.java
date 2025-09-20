@@ -887,6 +887,8 @@ public class ModelMegapterygius extends ModelBasePalaeopedia {
         EntityPrehistoricFloraMegapterygius ee = (EntityPrehistoricFloraMegapterygius) e;
         ee.tailBuffer.applyChainSwingBuffer(fishTail);
 
+        this.main.offsetZ = this.main.offsetZ - 0.70F;
+
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
