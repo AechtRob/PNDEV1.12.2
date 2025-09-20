@@ -155,6 +155,9 @@ public class EntityPrehistoricFloraAraripemys extends EntityPrehistoricFloraSwim
 		if (this.isReallyInWater()) {
 			calcSpeed = 0.2f;
 		}
+		else if (this.getIsFast()) {
+			calcSpeed = calcSpeed * 2F;
+		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

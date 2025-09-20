@@ -623,7 +623,7 @@ public class ModelChalawan extends ModelBasePalaeopedia {
 
         if (!ee.isReallyInWater()) {
             if (ee.getIsMoving()) {
-                animWalk(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                animWalk(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getIsFast());
             }
         } else {
             //Swimming pose:
@@ -738,10 +738,16 @@ public class ModelChalawan extends ModelBasePalaeopedia {
         this.setRotateAngle(jaw, jaw.rotateAngleX + (float) Math.toRadians(xx), jaw.rotateAngleY + (float) Math.toRadians(yy), jaw.rotateAngleZ + (float) Math.toRadians(zz));
     }
 
-    public void animWalk(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+    public void animWalk(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isFast) {
         EntityPrehistoricFloraChalawan entity = (EntityPrehistoricFloraChalawan) entitylivingbaseIn;
         int animCycle = 60;
-        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        double tickAnim;
+        if (isFast) {
+           tickAnim = ((entity.ticksExisted * 2) + entity.getTickOffset()) - (int) (Math.floor((double) ((entity.ticksExisted * 2) + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + (partialTickTime * 2);
+        }
+        else {
+            tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        }
         double xx = 0;
         double yy = 0;
         double zz = 0;

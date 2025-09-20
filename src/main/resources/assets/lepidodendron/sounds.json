@@ -16547,5 +16547,22 @@
         "stream": false
       }
     ]
+  },
+
+  "vulcanodon_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:vulcanodon_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:vulcanodon_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:vulcanodon_hurt03",
+        "stream": false
+      }
+    ]
   }
 }

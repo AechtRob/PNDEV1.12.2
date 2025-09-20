@@ -97,16 +97,16 @@ public class EntityPrehistoricFloraValdosaurus extends EntityPrehistoricFloraLan
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		Entity e = ds.getTrueSource();
-		if (e instanceof EntityLivingBase && (!(this instanceof EntityPrehistoricFloraValdosaurus))) {
+		if (e instanceof EntityLivingBase) {
 			EntityLivingBase ee = (EntityLivingBase) e;
 			this.setAlarmTarget(ee);
-			List<EntityPrehistoricFloraValdosaurus> Dryosaurus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraValdosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-			for (EntityPrehistoricFloraValdosaurus currentDryosaurus : Dryosaurus) {
-				if (!(currentDryosaurus instanceof EntityPrehistoricFloraValdosaurus)) {
-					currentDryosaurus.setAnimation(NO_ANIMATION);
-					currentDryosaurus.setRevengeTarget(ee);
-					currentDryosaurus.setAlarmTarget(ee);
-					currentDryosaurus.alarmCooldown = rand.nextInt(20);
+			List<EntityPrehistoricFloraValdosaurus> Valdosaurus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraValdosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraValdosaurus currentValdosaurus : Valdosaurus) {
+				if (!(currentValdosaurus instanceof EntityPrehistoricFloraValdosaurus)) {
+					currentValdosaurus.setAnimation(NO_ANIMATION);
+					currentValdosaurus.setRevengeTarget(ee);
+					currentValdosaurus.setAlarmTarget(ee);
+					currentValdosaurus.alarmCooldown = rand.nextInt(20);
 				}
 			}
 		}
@@ -224,14 +224,14 @@ public class EntityPrehistoricFloraValdosaurus extends EntityPrehistoricFloraLan
 		if (this.willGrapple) {
 			return false;
 		}
-		List<EntityPrehistoricFloraValdosaurus> Dryosaurus = world.getEntitiesWithinAABB(EntityPrehistoricFloraValdosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-		for (EntityPrehistoricFloraValdosaurus currentDryosaurus : Dryosaurus) {
-			if (!(currentDryosaurus instanceof EntityPrehistoricFloraValdosaurus)) {
-				if (currentDryosaurus.isPFAdult() && this.isPFAdult() && currentDryosaurus != this && (!currentDryosaurus.willGrapple) && this.canEntityBeSeen(currentDryosaurus)) {
-					this.setGrappleTarget(currentDryosaurus);
-					currentDryosaurus.willGrapple = true;
+		List<EntityPrehistoricFloraValdosaurus> Valdosaurus = world.getEntitiesWithinAABB(EntityPrehistoricFloraValdosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+		for (EntityPrehistoricFloraValdosaurus currentValdosaurus : Valdosaurus) {
+			if (!(currentValdosaurus instanceof EntityPrehistoricFloraValdosaurus)) {
+				if (currentValdosaurus.isPFAdult() && this.isPFAdult() && currentValdosaurus != this && (!currentValdosaurus.willGrapple) && this.canEntityBeSeen(currentValdosaurus)) {
+					this.setGrappleTarget(currentValdosaurus);
+					currentValdosaurus.willGrapple = true;
 					this.willGrapple = true;
-					currentDryosaurus.setGrappleTarget(this);
+					currentValdosaurus.setGrappleTarget(this);
 					return true;
 				}
 			}
@@ -289,7 +289,6 @@ public class EntityPrehistoricFloraValdosaurus extends EntityPrehistoricFloraLan
 	public boolean panics() {
 		return true;
 	}
-
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -506,12 +505,10 @@ public class EntityPrehistoricFloraValdosaurus extends EntityPrehistoricFloraLan
 				.getObject(new ResourceLocation("lepidodendron:dryosaurid_death"));
 	}
 
-
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:dryosaurid_alarm"));
 	}
-
 
 	public SoundEvent getChatterSound() {
 		return (SoundEvent) SoundEvent.REGISTRY

@@ -30,7 +30,7 @@ public class RenderChalawan extends RenderLivingBaseWithBook<EntityPrehistoricFl
     protected void preRenderCallback(EntityPrehistoricFloraChalawan entity, float f) {
         float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.91F;
+        this.shadowSize = entity.width * scale * 0.65F;
     }
 
 }

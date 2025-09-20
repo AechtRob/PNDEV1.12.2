@@ -333,7 +333,7 @@ public class EntityPrehistoricFloraVulcanodon extends EntityPrehistoricFloraLand
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:lessemsaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:vulcanodon_hurt"));
 	}
 
 	@Override

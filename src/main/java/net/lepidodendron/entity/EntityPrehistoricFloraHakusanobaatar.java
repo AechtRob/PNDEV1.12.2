@@ -75,6 +75,11 @@ public class EntityPrehistoricFloraHakusanobaatar extends EntityPrehistoricFlora
 	//}
 
 	@Override
+	public boolean homesToNest() {
+		return false;
+	}
+
+	@Override
 	public boolean hasAlarm() {
 		return false;
 	}

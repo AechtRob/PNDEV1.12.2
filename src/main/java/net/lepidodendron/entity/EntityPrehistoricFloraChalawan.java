@@ -129,13 +129,15 @@ public class EntityPrehistoricFloraChalawan extends EntityPrehistoricFloraSwimmi
 		if (this.isReallyInWater()) {
 			calcSpeed = 0.275f;
 		}
+		else if (this.getIsFast()) {
+			calcSpeed = calcSpeed * 2F;
+		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == STAND_ANIMATION) {
 			return 0.0F;
 		}
-		//System.err.println("Speed " + (Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed));
 		return calcSpeed;
 	}
 

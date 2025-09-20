@@ -139,7 +139,7 @@ public class EntityPrehistoricFloraGalleonosaurus extends EntityPrehistoricFlora
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 3.55F;
+			speedBase = speedBase * 2.85F;
 		}
 		return speedBase * 0.7F;
 	}
