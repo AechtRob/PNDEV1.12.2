@@ -59,7 +59,7 @@ public class LepidodendronRecipeFossils {
 				isArthropod = ((EntityPrehistoricFloraTrilobiteSwimBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
 			}
 			if (entity != null) {
-				try { //we've seen (spongeforge? or maybe mods?) incompatibility crashes here:
+				try { //we've seen (spongeforge?) incompatibility crashes here:
 					entity.setDead();
 				} catch (Exception e) {
 					System.err.println("Error deconstructing mob for recipes: " + resourcelocation + " " + e.getLocalizedMessage());
