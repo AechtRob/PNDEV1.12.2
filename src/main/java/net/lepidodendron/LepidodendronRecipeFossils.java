@@ -59,7 +59,11 @@ public class LepidodendronRecipeFossils {
 				isArthropod = ((EntityPrehistoricFloraTrilobiteSwimBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
 			}
 			if (entity != null) {
-				entity.setDead();
+				try {
+					entity.setDead();
+				} catch (Exception e) {
+					System.err.println("Error deconstructing mob for recipes: " + resourcelocation + " " + e.getLocalizedMessage());
+				}
 			}
 		}
 		return isArthropod;
