@@ -3,6 +3,7 @@ package net.lepidodendron.util;
 public class SpawnerConfigsDevonian {
 
     public static String[] dimDevonianMobsOceanAlgaePF = new String[0];
+    public static String[] dimDevonianMobsOceanPolarPF = new String[0];
     public static String[] dimDevonianMobsLagoonPF = new String[0];
     public static String[] dimDevonianMobsBarrierReefPF = new String[0];
     public static String[] dimDevonianMobsBrackishPF = new String[0];
@@ -25,7 +26,6 @@ public class SpawnerConfigsDevonian {
     public static String[] dimDevonianMobsWattiezaPF = new String[0];
     public static String[] dimDevonianMobsMeadowPF = new String[0];
     public static String[] dimDevonianMobsHypersalinePF = new String[0];
-    public static String[] dimDevonianMobsColdShorePF = new String[0];
 
     //------------ Fossils and Archeology mobs:
     public static String[] dimDevonianMobsOceanDeepFA = new String[0];
