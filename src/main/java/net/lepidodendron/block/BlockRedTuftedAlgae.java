@@ -117,15 +117,6 @@ public class BlockRedTuftedAlgae extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = false;
 		}
 
-
-		if ((dimID == LepidodendronConfig.dimDevonian)
-				 ) {
-			biomeCriteria = true;
-		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")) {
-			biomeCriteria = false;
-		}
-
 		if (biome instanceof BiomeOrdovician) {
 			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
 			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Ocean
@@ -165,6 +156,9 @@ public class BlockRedTuftedAlgae extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
+				biomeCriteria = false;
+			}
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")) {
 				biomeCriteria = false;
 			}
 		}
