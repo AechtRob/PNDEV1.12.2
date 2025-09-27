@@ -233,15 +233,20 @@ public class BlockBrachiopodOrthid extends ElementsLepidodendronMod.ModElement {
 			multiplier = 6;
 		}
 
-		int dimWeight = 1;
+		double dimWeight = 1;
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")) {
+			multiplier = 2;
+			dimWeight = 0.5;
+		}
+
 		if ((dimID == LepidodendronConfig.dimCarboniferous)
 				|| dimID == LepidodendronConfig.dimPermian
 				) {
 			dimWeight = 2;
 		}
 
-		int minWaterDepth = 2 * dimWeight;
-		int maxWaterDepth = 12 * dimWeight;
+		int minWaterDepth = (int)(2D * dimWeight);
+		int maxWaterDepth = (int)(12D * dimWeight);
 		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
 

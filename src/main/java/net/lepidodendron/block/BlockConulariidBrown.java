@@ -228,6 +228,9 @@ public class BlockConulariidBrown extends ElementsLepidodendronMod.ModElement {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")) {
 			multiplier = 15;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")) {
+			multiplier = 36;
+		}
 		
 		int minWaterDepth = 1;
 		int maxWaterDepth = 18;

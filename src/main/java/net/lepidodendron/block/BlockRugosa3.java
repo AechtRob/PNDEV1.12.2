@@ -189,7 +189,8 @@ public class BlockRugosa3 extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")) {
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")) {
 				biomeCriteria = false;
 			}
 		}

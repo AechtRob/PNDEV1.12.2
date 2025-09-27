@@ -207,6 +207,9 @@ public class BlockTentaculita extends ElementsLepidodendronMod.ModElement {
 		) {
 			multiplier = 4;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")) {
+			multiplier = 24;
+		}
 		int dimWeight = 1;
 
 		int minWaterDepth = 2 * dimWeight;

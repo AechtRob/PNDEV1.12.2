@@ -194,6 +194,9 @@ public class BlockBrownSponge extends ElementsLepidodendronMod.ModElement {
 			else {
 				biomeCriteria = false;
 			}
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")) {
+				biomeCriteria = false;
+			}
 		}
 
 		if (biome instanceof BiomeTriassic)

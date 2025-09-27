@@ -122,6 +122,9 @@ public class BlockRedTuftedAlgae extends ElementsLepidodendronMod.ModElement {
 				 ) {
 			biomeCriteria = true;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")) {
+			biomeCriteria = false;
+		}
 
 		if (biome instanceof BiomeOrdovician) {
 			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;

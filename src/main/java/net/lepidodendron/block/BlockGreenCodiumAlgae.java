@@ -175,7 +175,8 @@ public class BlockGreenCodiumAlgae extends ElementsLepidodendronMod.ModElement {
 			else {
 				biomeCriteria = false;
 			}
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")) {
 				biomeCriteria = false;
 			}
 		}
@@ -263,6 +264,7 @@ public class BlockGreenCodiumAlgae extends ElementsLepidodendronMod.ModElement {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")
 		)
 			multiplier = 48;
+
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;

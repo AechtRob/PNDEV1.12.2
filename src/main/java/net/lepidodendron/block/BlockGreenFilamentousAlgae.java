@@ -7,6 +7,7 @@ import net.lepidodendron.item.ItemGreenFilamentousAlgaeItem;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
@@ -92,6 +93,15 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 		{
 			biomeCriteria = true;
 		}
+
+		if (biome instanceof BiomeDevonian)
+		{
+			BiomeDevonian biomeDevonian = (BiomeDevonian) biome;
+			if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
+				biomeCriteria = false;
+			}
+		}
+
 		if (biome instanceof BiomePermian)
 		{
 			BiomePermian biomePermian = (BiomePermian) biome;

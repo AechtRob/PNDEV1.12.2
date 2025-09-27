@@ -254,8 +254,12 @@ public class BlockBrachiopodSpiriferid extends ElementsLepidodendronMod.ModEleme
 			multiplier = 6;
 		}
 
+		double dimWeight = 1;
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")) {
+			multiplier = 10;
+			dimWeight = 0.5;
+		}
 
-		int dimWeight = 1;
 		if ((dimID == LepidodendronConfig.dimCarboniferous)
 				|| (dimID == LepidodendronConfig.dimTriassic)
 				|| (dimID == LepidodendronConfig.dimJurassic)
@@ -264,8 +268,8 @@ public class BlockBrachiopodSpiriferid extends ElementsLepidodendronMod.ModEleme
 			dimWeight = 2;
 		}
 
-		int minWaterDepth = 2 * dimWeight;
-		int maxWaterDepth = 12 * dimWeight;
+		int minWaterDepth = (int)(2D * dimWeight);
+		int maxWaterDepth = (int)(12D * dimWeight);
 		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
 
