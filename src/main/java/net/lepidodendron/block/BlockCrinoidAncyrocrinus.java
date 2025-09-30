@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
@@ -126,15 +125,23 @@ public class BlockCrinoidAncyrocrinus extends ElementsLepidodendronMod.ModElemen
 		if (biome instanceof BiomeDevonian)
 		{
 			BiomeDevonian biomeDev = (BiomeDevonian) biome;
-			if (biomeDev.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef2")) {
 				biomeCriteria = true;
 			}
 			else {
 				biomeCriteria = false;
 			}
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")) {
-				biomeCriteria = false;
-			}
+//			if (biomeDev.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
+//				biomeCriteria = true;
+//			}
+//			else {
+//				biomeCriteria = false;
+//			}
+//			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")) {
+//				biomeCriteria = false;
+//			}
 		}
 		if (!biomeCriteria)
 			return;
@@ -144,7 +151,8 @@ public class BlockCrinoidAncyrocrinus extends ElementsLepidodendronMod.ModElemen
 		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
 		int multiplier = 1;
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef2")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")) {
 			multiplier = 15;
 		}
 

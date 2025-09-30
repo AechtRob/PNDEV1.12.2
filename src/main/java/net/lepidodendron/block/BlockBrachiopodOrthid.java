@@ -234,7 +234,8 @@ public class BlockBrachiopodOrthid extends ElementsLepidodendronMod.ModElement {
 		}
 
 		double dimWeight = 1;
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid_land")) {
 			multiplier = 2;
 			dimWeight = 0.5;
 		}

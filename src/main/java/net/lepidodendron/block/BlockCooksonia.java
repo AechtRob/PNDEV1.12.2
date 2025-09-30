@@ -313,6 +313,7 @@ public class BlockCooksonia extends ElementsLepidodendronMod.ModElement {
 
 	    	if ((worldIn.getBlockState(pos.down()).getMaterial() != Material.GROUND) 
 	    		&& (worldIn.getBlockState(pos.down()).getMaterial() != Material.GRASS)
+				&& (worldIn.getBlockState(pos.down()).getMaterial() != Material.CLAY)
 	    		&& (worldIn.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL.getDefaultState().getBlock()))
 	    	{
 	    		return false;
@@ -371,7 +372,7 @@ public class BlockCooksonia extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Proto-plant");
 				tooltip.add("Periods: Late Silurian - Early Devonian");
-				tooltip.add("Note: Requires water proximity and spreads to surrounding gravel, grass and dirt");
+				tooltip.add("Note: Requires water proximity and spreads to surrounding gravel, clay, grass and dirt");
 				tooltip.add("Propagation: Spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

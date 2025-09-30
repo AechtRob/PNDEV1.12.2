@@ -194,7 +194,8 @@ public class BlockDarkPinkSponge extends ElementsLepidodendronMod.ModElement {
 			else {
 				biomeCriteria = false;
 			}
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid_land")) {
 				biomeCriteria = false;
 			}
 		}

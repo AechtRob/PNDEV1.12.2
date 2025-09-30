@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.minecraft.block.Block;
@@ -126,21 +125,33 @@ public class BlockCrinoidCupressocrinites extends ElementsLepidodendronMod.ModEl
 		if (biome instanceof BiomeDevonian)
 		{
 			BiomeDevonian biomeDev = (BiomeDevonian) biome;
-			if (biomeDev.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef_transition")) {
 				biomeCriteria = true;
 			}
 			else {
 				biomeCriteria = false;
 			}
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")) {
-				biomeCriteria = false;
-			}
+//			if (biomeDev.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
+//				biomeCriteria = true;
+//			}
+//			else {
+//				biomeCriteria = false;
+//			}
+//			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")) {
+//				biomeCriteria = false;
+//			}
 		}
 		if (!biomeCriteria)
 			return;
 
 		int multiplier = 1;
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef_transition")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")) {
 			multiplier = 15;
 		}
 

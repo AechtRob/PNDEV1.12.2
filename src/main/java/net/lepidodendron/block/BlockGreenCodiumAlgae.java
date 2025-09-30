@@ -176,7 +176,8 @@ public class BlockGreenCodiumAlgae extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid_land")) {
 				biomeCriteria = false;
 			}
 		}

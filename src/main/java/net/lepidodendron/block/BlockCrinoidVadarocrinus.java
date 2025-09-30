@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.gen.AlgaeGenerator;
@@ -119,15 +118,21 @@ public class BlockCrinoidVadarocrinus extends ElementsLepidodendronMod.ModElemen
 		if (biome instanceof BiomeDevonian)
 		{
 			BiomeDevonian biomeDev = (BiomeDevonian) biome;
-			if (biomeDev.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef2")) {
 				biomeCriteria = true;
 			}
 			else {
 				biomeCriteria = false;
 			}
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")) {
-				biomeCriteria = false;
-			}
+//			if (biomeDev.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
+//				biomeCriteria = true;
+//			}
+//			else {
+//				biomeCriteria = false;
+//			}
+//			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")) {
+//				biomeCriteria = false;
+//			}
 		}
 		if (!biomeCriteria)
 			return;
@@ -139,7 +144,7 @@ public class BlockCrinoidVadarocrinus extends ElementsLepidodendronMod.ModElemen
 		}
 
 
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef2")) {
 			multiplier = 15;
 		}
 

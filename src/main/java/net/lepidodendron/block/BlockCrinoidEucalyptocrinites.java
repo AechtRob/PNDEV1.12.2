@@ -150,7 +150,9 @@ public class BlockCrinoidEucalyptocrinites extends ElementsLepidodendronMod.ModE
 			else {
 				biomeCriteria = false;
 			}
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid_land")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")) {
 				biomeCriteria = false;
 			}
 		}

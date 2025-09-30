@@ -163,6 +163,7 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sponge_forest")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid_land")
 		)
 			multiplier = 12;
 

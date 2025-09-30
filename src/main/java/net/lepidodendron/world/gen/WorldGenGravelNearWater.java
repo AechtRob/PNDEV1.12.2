@@ -14,24 +14,25 @@ public class WorldGenGravelNearWater extends WorldGenerator {
     public boolean generate(World worldIn, Random rand, BlockPos position) {
         boolean flag = false;
 
-        //for (int i = 0; i < 64; ++i) {
-            //BlockPos blockpos = position.add(rand.nextInt(3) - rand.nextInt(3), rand.nextInt(3) - rand.nextInt(3), rand.nextInt(3) - rand.nextInt(3));
-            BlockPos blockpos = position.up();
-            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && (blockpos.getY() < Functions.getAdjustedSeaLevel(worldIn, blockpos) + 1) && worldIn.isAirBlock(blockpos)
-                    && (!worldIn.provider.isNether() || blockpos.getY() < 254)
+        for (int i = 0; i < 48; ++i) {
+            BlockPos blockpos = position.add(rand.nextInt(3) - rand.nextInt(3), rand.nextInt(3) - rand.nextInt(3), rand.nextInt(3) - rand.nextInt(3));
+            //BlockPos blockpos = position.up();
+            if (
+                    blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && (blockpos.getY() <= Functions.getAdjustedSeaLevel(worldIn, blockpos) + 1) && worldIn.isAirBlock(blockpos)
+                            && ((!worldIn.provider.isNether()) || blockpos.getY() < 254)
 
-                    && (
-                    ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GROUND)
-                            || ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GRASS)
-                            || ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.ROCK)
-                            || ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.SAND)
-                            || ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.CLAY)
-            )
+                            && (
+                            ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GROUND)
+                                    || ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GRASS)
+                                    || ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.ROCK)
+                                    || ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.SAND)
+                                    || ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.CLAY)
+                    )
             ) {
                 //Check for water and make denser near water:
                 int ii = 0;
                 int water = 0;
-                while (ii < 8 && water == 0) {
+                while (ii < 6 && water == 0) {
                     int xx = -ii;
                     while (xx <= ii && water == 0) {
                         int zz = -ii;
@@ -48,16 +49,13 @@ public class WorldGenGravelNearWater extends WorldGenerator {
                 //water is a number between 0 and 6:
                 if (water != 0) {
                     if (rand.nextInt(water + 1) == 0) {
-                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.GRAVEL.getStateFromMeta(0), 2);
-                        if (rand.nextInt(10) == 0) {
-                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.down(), Blocks.STONE.getStateFromMeta(0), 2);
-                        }
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.GRAVEL.getDefaultState(), 2);
                         flag = true;
                         return flag;
                     }
                 }
             }
-        //}
+        }
         return flag;
     }
 }

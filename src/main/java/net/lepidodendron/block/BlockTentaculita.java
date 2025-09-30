@@ -207,7 +207,8 @@ public class BlockTentaculita extends ElementsLepidodendronMod.ModElement {
 		) {
 			multiplier = 4;
 		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid_land")) {
 			multiplier = 36;
 		}
 		int dimWeight = 1;

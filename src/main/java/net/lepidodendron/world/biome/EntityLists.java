@@ -1000,7 +1000,8 @@ public class EntityLists {
 //            if ((LepidodendronConfig.doSpawnsReborn && Loader.isModLoaded("rebornmod"))) {
 //                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsHypersalineReborn);
 //            }
-        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")) {
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")
+                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid_land")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsOceanPolarPF);
             }
