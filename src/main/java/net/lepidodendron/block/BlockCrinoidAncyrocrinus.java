@@ -167,7 +167,7 @@ public class BlockCrinoidAncyrocrinus extends ElementsLepidodendronMod.ModElemen
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 40; ++i) {
 						//BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
-						if (random.nextInt(6) != 0) {
+						if (random.nextInt(8) != 0) {
 							continue;
 						}
 						BlockPos blockpos1 = ChunkGenSpawner.getTopSolidBlock(pos, world).up(random.nextInt(40));
