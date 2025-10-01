@@ -127,6 +127,7 @@ public class BlockCrinoidAncyrocrinus extends ElementsLepidodendronMod.ModElemen
 			BiomeDevonian biomeDev = (BiomeDevonian) biome;
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef2")) {
 				biomeCriteria = true;
 			}

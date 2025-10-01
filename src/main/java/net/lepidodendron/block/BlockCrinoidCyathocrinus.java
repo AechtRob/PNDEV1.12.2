@@ -165,7 +165,8 @@ public class BlockCrinoidCyathocrinus extends ElementsLepidodendronMod.ModElemen
 		{
 			BiomeDevonian biomeDev = (BiomeDevonian) biome;
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef")) {
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef2")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -185,7 +186,8 @@ public class BlockCrinoidCyathocrinus extends ElementsLepidodendronMod.ModElemen
 			return;
 
 		int multiplier = 1;
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef")) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef2")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
 			multiplier = 15;
 		}
 
