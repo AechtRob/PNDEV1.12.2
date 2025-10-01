@@ -791,18 +791,9 @@ public class BlockGreenAlgaeMat extends ElementsLepidodendronMod.ModElement {
 	    //@Override
 		public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
 		{
-
-			//System.err.println("Can place");
-
 			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))) {
 				return super.canPlaceBlockAt(worldIn, pos);
 			}
-			//if (((world.getBlockState(pos.down()).getMaterial() != Material.SAND)
-			//	&& (world.getBlockState(pos.down()).getMaterial() != Material.ROCK)
-			//	&& (world.getBlockState(pos.down()).getMaterial() != Material.GROUND)
-			//	&& (world.getBlockState(pos.down()).getMaterial() != Material.CLAY))) {
-			//	return false;
-			//}
 			return false; 
 		}
 

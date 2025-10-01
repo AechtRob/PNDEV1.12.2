@@ -94,7 +94,7 @@ public class AlgaeGenerator extends WorldGenerator
 		if (!dimensionCriteria)
 			return true;
 
-		int bound = 6;
+		int bound = 4;
 		if ((this.algae == BlockDarkPinkSponge.block)
 			|| (this.algae == BlockPinkSponge.block)
 			|| (this.algae == BlockYellowSponge.block)
@@ -111,7 +111,7 @@ public class AlgaeGenerator extends WorldGenerator
 			|| (this.algae == BlockFenestellaGiantOrange.block)
 			|| (this.algae == BlockFenestellaGiantRed.block)
 			|| (this.algae == BlockFenestellaGiantYellow.block)) {
-			bound = 4;
+			bound = 2;
 		}
 
 		int multiplier = 1;
@@ -157,12 +157,16 @@ public class AlgaeGenerator extends WorldGenerator
 			}
 		}
 
-		for (int i = 0; i < (64 * multiplier); ++i)
+		for (int i = 0; i < (1 * multiplier); ++i)
 		{
 
 			int j = position.getX() + rand.nextInt(bound) - rand.nextInt(bound);
 			int k = position.getY() + rand.nextInt(4) - rand.nextInt(4);
 			int l = position.getZ() + rand.nextInt(bound) - rand.nextInt(bound);
+
+			j = position.getX();
+			k = position.getY();
+			l = position.getZ();
 
 			if (this.algae == BlockGlassSponge.block) {
 				k = ChunkGenSpawner.getTopSolidBlock(new BlockPos(j, 0, l), worldIn).getY() + 1;

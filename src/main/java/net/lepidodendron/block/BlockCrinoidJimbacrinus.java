@@ -11,6 +11,7 @@ import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -144,8 +145,12 @@ public class BlockCrinoidJimbacrinus extends ElementsLepidodendronMod.ModElement
 			(new WorldGenReed() {
 				@Override
 				public boolean generate(World world, Random random, BlockPos pos) {
-					for (int i = 0; i < 6; ++i) {
-						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
+					for (int i = 0; i < 1; ++i) {
+						//BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
+						if (random.nextInt(6) != 0) {
+							continue;
+						}
+						BlockPos blockpos1 = ChunkGenSpawner.getTopSolidBlock(pos, world).up();
 						if (((BlockCustom) block).isWaterBlock(world, blockpos1) && ((BlockCustom) block).isWaterBlock(world, blockpos1.up()) && ((BlockCustom) block).isWaterBlock(world, blockpos1.up(2)) && i11 <= (Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))-20)) {
 							BlockPos blockpos2 = blockpos1.down();
 							int j = 1 + random.nextInt(random.nextInt(random.nextInt(BlockCustom.crinoidheight) + 1) + 1);

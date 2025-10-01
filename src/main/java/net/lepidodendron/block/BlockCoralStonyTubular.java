@@ -163,7 +163,7 @@ public class BlockCoralStonyTubular extends ElementsLepidodendronMod.ModElement 
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_coral"))
 		{
-			multiplier = 20;
+			multiplier = 10;
 		}
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {
