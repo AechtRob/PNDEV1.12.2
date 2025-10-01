@@ -231,7 +231,7 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid_land")) {
-			multiplier = 12;
+			multiplier = 16;
 		}
 		
 		int minWaterDepth = 1;
