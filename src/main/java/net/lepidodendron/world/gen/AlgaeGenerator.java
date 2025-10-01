@@ -128,7 +128,7 @@ public class AlgaeGenerator extends WorldGenerator
 		if (this.algae == BlockTawuia.block) {
 			if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
 				|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")) {
-				multiplier = 2;
+				multiplier = 20;
 				upsideDown = true;
 			}
 		}
@@ -390,12 +390,13 @@ public class AlgaeGenerator extends WorldGenerator
 							}
 						}
 					}
-					if (upsideDown && rand.nextInt(56) == 0) {
+					if (upsideDown && rand.nextInt(8) == 0) {
 						PropertyDirection FACING = BlockDirectional.FACING;
 						//Can we place this under sea ice upside down?
-						if (this.algae.canPlaceBlockAt(worldIn, new BlockPos(j, Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 2, l))) {
-							if (worldIn.getBlockState(new BlockPos(j, Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 1, l)).getMaterial() == Material.PACKED_ICE && rand.nextInt(24) == 0) {
-								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 2, l), this.state.withProperty(FACING, EnumFacing.DOWN), 2);
+						BlockPos bpUpsideDown = ChunkGenSpawner.getTopSolidOrLiquidBlockIncludingLeaves(new BlockPos(j, 0, l), worldIn).down();
+						if (this.algae.canPlaceBlockAt(worldIn, bpUpsideDown.down())) {
+							if (worldIn.getBlockState(bpUpsideDown).getMaterial() == Material.PACKED_ICE && rand.nextInt(24) == 0) {
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn, bpUpsideDown.down(), this.state.withProperty(FACING, EnumFacing.DOWN), 2);
 								if (this.algae != BlockTawuia.block) {
 									tries --;
 									return (!(tries > 0));

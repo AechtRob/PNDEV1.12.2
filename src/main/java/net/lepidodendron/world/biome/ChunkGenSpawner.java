@@ -17,6 +17,7 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.JsonToNBT;
 import net.minecraft.nbt.NBTException;
@@ -1560,7 +1561,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
             blockpos1 = blockpos.down();
             IBlockState state = chunk.getBlockState(blockpos1);
 
-            if (state.getMaterial().blocksMovement())
+            if (state.getMaterial().blocksMovement()
+                && state.getBlock() != Blocks.SNOW_LAYER)
             {
                 break;
             }
@@ -1584,6 +1586,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                     && state.getMaterial() != Material.WATER
                     && state.getMaterial() != Material.ICE
                     && state.getMaterial() != Material.PACKED_ICE
+                    && state.getBlock() != Blocks.SNOW_LAYER
                     && state.getMaterial() != Material.LEAVES
                     && state.getMaterial() != Material.WOOD
                     && state.getMaterial() != Material.VINE

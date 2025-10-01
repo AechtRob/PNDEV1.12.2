@@ -458,7 +458,7 @@ public class CharniaGenerator extends WorldGenerator
 		)
 				&& this.charnia == BlockGrypania.block)
 		{
-			multiplier = 64;
+			multiplier = 256;
 		}
 
 		for (int i = 0; i < (int)Math.max(1, (int)(4.0D * multiplier)); ++i)
@@ -517,18 +517,23 @@ public class CharniaGenerator extends WorldGenerator
 						}
 					} else if (upsideDown) {
 						//Can we place this here upside down?
-						if (worldIn.getBlockState(new BlockPos(j, k + 1, l)).getMaterial() == Material.PACKED_ICE && rand.nextInt(32) == 0) {
-							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(BlockGrypania.FACING, EnumFacing.DOWN), 2);
+						BlockPos bpUpsideDown = ChunkGenSpawner.getTopSolidOrLiquidBlockIncludingLeaves(new BlockPos(j, 0, l), worldIn).down();
+						if (worldIn.getBlockState(bpUpsideDown).getMaterial() == Material.PACKED_ICE && rand.nextInt(16) == 0
+								&& (this.charnia.canPlaceBlockAt(worldIn, bpUpsideDown.down())
+								&& (worldIn.getBlockState(bpUpsideDown.down()).getBlock() == Blocks.WATER))) {
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn, bpUpsideDown.down(), this.state.withProperty(BlockGrypania.FACING, EnumFacing.DOWN), 2);
 							return true;
 						}
 
 					}
-				} else if (upsideDown) {
+				}
+				if (upsideDown) {
 					//Can we place this under, upside down?
-					if (worldIn.getBlockState(new BlockPos(j, k - 1, l)).getMaterial() == Material.PACKED_ICE && rand.nextInt(16) == 0
-							&& (this.charnia.canPlaceBlockAt(worldIn, new BlockPos(j, k - 2, l))
-							&& (worldIn.getBlockState(new BlockPos(j, k - 2, l)).getBlock() == Blocks.WATER))) {
-						Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k - 2, l), this.state.withProperty(BlockGrypania.FACING, EnumFacing.DOWN), 2);
+					BlockPos bpUpsideDown = ChunkGenSpawner.getTopSolidOrLiquidBlockIncludingLeaves(new BlockPos(j, 0, l), worldIn).down();
+					if (worldIn.getBlockState(bpUpsideDown).getMaterial() == Material.PACKED_ICE && rand.nextInt(16) == 0
+							&& (this.charnia.canPlaceBlockAt(worldIn, bpUpsideDown.down())
+							&& (worldIn.getBlockState(bpUpsideDown.down()).getBlock() == Blocks.WATER))) {
+						Functions.setBlockStateAndCheckForDoublePlant(worldIn, bpUpsideDown.down(), this.state.withProperty(BlockGrypania.FACING, EnumFacing.DOWN), 2);
 						return true;
 					}
 
