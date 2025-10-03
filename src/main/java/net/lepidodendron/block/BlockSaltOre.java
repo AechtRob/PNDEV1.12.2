@@ -7,7 +7,10 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemSalt;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
+import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.SoundType;
@@ -67,16 +70,42 @@ public class BlockSaltOre extends ElementsLepidodendronMod.ModElement {
 		if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SANDY) && dimID == 0)
 			biomeCriteria = true;
 
+		int multiplier = 1;
+
+
+		if (biome instanceof BiomeDevonian) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_hypersaline_sinkhole")) {
+				biomeCriteria = true;
+				multiplier = 2;
+			}
+		}
+
+		if (biome instanceof BiomePermian) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_beach_saltmarsh")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression")) {
+				biomeCriteria = true;
+				multiplier = 2;
+			}
+		}
+
+		if (biome instanceof BiomeTriassic) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_china_lakes")) {
+				biomeCriteria = true;
+				multiplier = 2;
+			}
+		}
+
 		if (biome instanceof BiomeJurassic) {
 			if (((BiomeJurassic)biome).getBiomeType() == EnumBiomeTypeJurassic.Desert) {
 				biomeCriteria = true;
+				multiplier = 2;
 			}
 		}
 
 		if ((!dimensionCriteria) || (!biomeCriteria))
 			return;
 
-		for (int l1 = 0; l1 < 18; ++l1) {
+		for (int l1 = 0; l1 < 18 * multiplier; ++l1) {
 			int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 			int y = random.nextInt(120) + 30;
 			int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;

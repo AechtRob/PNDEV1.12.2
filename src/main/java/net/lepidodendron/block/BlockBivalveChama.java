@@ -5,14 +5,12 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.util.*;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
+import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
-import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
-import net.lepidodendron.world.biome.devonian.BiomeDevonian;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
-import net.lepidodendron.world.biome.permian.BiomePermian;
-import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -101,18 +99,13 @@ public class BlockBivalveChama extends ElementsLepidodendronMod.ModElement {
 		int weight = LepidodendronConfigPlants.weightBivalvePrehistoric;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
-		if (dimID == LepidodendronConfig.dimCarboniferous
-			|| dimID == LepidodendronConfig.dimPermian
-			|| dimID == LepidodendronConfig.dimTriassic
-			|| dimID == LepidodendronConfig.dimJurassic
-			|| dimID == LepidodendronConfig.dimCretaceousEarly
+		if (dimID == LepidodendronConfig.dimCretaceousEarly
+				|| dimID == LepidodendronConfig.dimCretaceousLate
+				|| dimID == LepidodendronConfig.dimPaleogene
+				|| dimID == LepidodendronConfig.dimNeogene
+				|| dimID == LepidodendronConfig.dimPleistocene
 		)
 			weight = 100; //Full scale populations in these dims
-
-		if (dimID == LepidodendronConfig.dimDevonian
-			|| dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
-		)
-			weight = 50; //Half scale populations in these dims
 
 		if (Math.random() < ((double) (100 - (double) weight)/100)) {
 			return;
@@ -133,70 +126,14 @@ public class BlockBivalveChama extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genBivalvePrehistoricOverrideBiomes))
 			biomeCriteria = true;
 
-		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
-		)
-			biomeCriteria = true;
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
-		)
-			biomeCriteria = false;
-
-		if (biome instanceof BiomeDevonian)
-		{
-			BiomeDevonian biomeDev = (BiomeDevonian) biome;
-			if (biomeDev.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-		if (biome instanceof BiomeCarboniferous)
-		{
-			BiomeCarboniferous biomeCarb = (BiomeCarboniferous) biome;
-			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean
-					|| biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Bay) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-		if (biome instanceof BiomePermian)
-		{
-			BiomePermian biomePermian = (BiomePermian) biome;
-			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Ocean) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-		if (biome instanceof BiomeTriassic)
-		{
-			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
-			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-		if (biome instanceof BiomeJurassic)
-		{
-			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ocean
-					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandWhite) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
 		if (biome instanceof BiomeCretaceousEarly)
 		{
 			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
 			if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean_Shore_Southern
-					|| biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean_Shore_Atlantic) {
+					|| biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean_Shore_Atlantic
+					|| biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean_Shore_Pacific
+					|| biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean_Shore_Tethys
+					|| biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean) {
 				biomeCriteria = true;
 			}
 			else {
@@ -207,23 +144,6 @@ public class BlockBivalveChama extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int multiplier = 1;
-		if ((dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
-			|| (dimID == LepidodendronConfig.dimDevonian)
-			|| (dimID == LepidodendronConfig.dimCarboniferous)
-		) {
-			multiplier = 2;
-		}
-		if ((dimID == LepidodendronConfig.dimPermian
-			|| dimID == LepidodendronConfig.dimJurassic)
-		) {
-			multiplier = 3;
-		}
-
-		if ((biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds"))
-		) {
-			multiplier = 10;
-		}
-
 		int minWaterDepth = 15;
 		int maxWaterDepth = 40;
 		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
