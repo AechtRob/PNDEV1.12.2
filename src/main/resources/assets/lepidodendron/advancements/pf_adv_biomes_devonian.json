@@ -1,0 +1,392 @@
+{
+	"display": {
+		"icon": {
+			"item": "minecraft:diamond_boots"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_biomes_devonian.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_biomes_devonian.description"
+		},
+		"frame": "challenge"
+	},
+	"parent": "lepidodendron:pf_base_adv",
+	"rewards": {
+		"experience": 10000
+	},
+	"criteria": {
+		"devonian_ocean_algae": {
+		"trigger": "minecraft:location",
+		"conditions": {
+			"biome": "lepidodendron:devonian_ocean_algae"
+		}
+		},
+		"devonian_lagoon": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_lagoon"
+		}
+		},
+		"devonian_lagoon_helper": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_lagoon_helper"
+		}
+		},
+		"devonian_reef": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_reef"
+		}
+		},
+		"devonian_reef_transition": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_reef_transition"
+		}
+		},
+		"devonian_brackish": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_brackish"
+		}
+		},
+		"devonian_creek_brackish": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_creek_brackish"
+		}
+		},
+		"devonian_lycopsid_spinney": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_lycopsid_spinney"
+		}
+		},
+		"devonian_creek_lycopsid_spinney": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_creek_lycopsid_spinney"
+		}
+		},
+		"devonian_reef2": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_reef2"
+		}
+		},
+		"devonian_ocean_dead_reef": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_ocean_dead_reef"
+		}
+		},
+		"devonian_floodplain": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_floodplain"
+		}
+		},
+		"devonian_creek_floodplain": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_creek_floodplain"
+		}
+		},
+		"devonian_aztec": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_aztec"
+		}
+		},
+		"devonian_creek_aztec": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_creek_aztec"
+		}
+		},
+		"devonian_creek_aztec_shallow": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_creek_aztec_shallow"
+		}
+		},
+		"devonian_savanna": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_savanna"
+		}
+		},
+		"devonian_creek_savanna": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_creek_savanna"
+		}
+		},
+		"devonian_hills": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_hills"
+		}
+		},
+		"devonian_creek_forest": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_creek_forest"
+		}
+		},
+		"devonian_hills_pools": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_hills_pools"
+		}
+		},
+		"devonian_springs": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_springs"
+		}
+		},
+		"devonian_hypersaline_sinkhole": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_hypersaline_sinkhole"
+		}
+		},
+		"devonian_mountains": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_mountains"
+		}
+		},
+		"devonian_mountains_early": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_mountains_early"
+		}
+		},
+		"devonian_spikes": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_spikes"
+		}
+		},
+		"devonian_ocean_deep": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_ocean_deep"
+		}
+		},
+		"devonian_gilboa_lake": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_gilboa_lake"
+		}
+		},
+		"devonian_ocean_deep_rocky": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_ocean_deep_rocky"
+		}
+		},
+		"devonian_forest": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_forest"
+		}
+		},
+		"devonian_beach": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_beach"
+		}
+		},
+		"devonian_creek_coastal": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_creek_coastal"
+		}
+		},
+		"devonian_ocean": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_ocean"
+		}
+		},
+		"devonian_swamp": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_swamp"
+		}
+		},
+		"devonian_creek_swamp": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_creek_swamp"
+		}
+		},
+		"devonian_vale": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_vale"
+		}
+		},
+		"devonian_vale_edge": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_vale_edge"
+		}
+		},
+		"devonian_creek_vale": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_creek_vale"
+		}
+		},
+		"devonian_gilboa": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_gilboa"
+		}
+		},
+		"devonian_creek_gilboa": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_creek_gilboa"
+		}
+		},
+		"devonian_meadow": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_meadow"
+		}
+		},
+		"devonian_creek_meadow": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_creek_meadow"
+		}
+		},
+		"devonian_hypersaline_sinkhole_transition": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:devonian_hypersaline_sinkhole_transition"
+		}
+		},
+		"devonian_conulariid": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_conulariid"
+			}
+		},
+		"devonian_conulariid_land": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_conulariid_land"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"devonian_ocean_algae"
+		],
+		[
+			"devonian_lagoon",
+			"devonian_lagoon_helper"
+		],
+		[
+			"devonian_reef",
+			"devonian_reef_transition"
+		],
+		[
+			"devonian_brackish",
+			"devonian_creek_brackish"
+		],
+		[
+			"devonian_lycopsid_spinney",
+			"devonian_creek_lycopsid_spinney"
+		],
+		[
+			"devonian_reef2"
+		],
+		[
+			"devonian_meadow"
+		],
+		[
+			"devonian_ocean_dead_reef"
+		],
+		[
+			"devonian_floodplain",
+			"devonian_creek_floodplain"
+		],
+		[
+			"devonian_aztec",
+			"devonian_creek_aztec",
+			"devonian_creek_aztec_shallow"
+		],
+		[
+			"devonian_savanna",
+			"devonian_creek_savanna"
+		],
+		[
+			"devonian_hills",
+			"devonian_creek_forest"
+		],
+		[
+			"devonian_hills_pools"
+		],
+		[
+			"devonian_springs"
+		],
+		[
+			"devonian_hypersaline_sinkhole",
+			"devonian_hypersaline_sinkhole_transition"
+		],
+		[
+			"devonian_mountains",
+			"devonian_mountains_early"
+		],
+		[
+			"devonian_spikes"
+		],
+		[
+			"devonian_ocean_deep"
+		],
+		[
+			"devonian_gilboa_lake"
+		],
+		[
+			"devonian_ocean_deep_rocky"
+		],
+		[
+			"devonian_forest",
+			"devonian_beach",
+			"devonian_creek_coastal"
+		],
+		[
+			"devonian_ocean"
+		],
+		[
+			"devonian_swamp",
+			"devonian_creek_swamp"
+		],
+		[
+			"devonian_vale",
+			"devonian_vale_edge",
+			"devonian_creek_vale"
+		],
+		[
+			"devonian_gilboa",
+			"devonian_creek_gilboa"
+		],
+		[
+			"devonian_meadow",
+			"devonian_creek_meadow"
+		],
+		[
+			"devonian_conulariid",
+			"devonian_conulariid_land"
+		]
+	]
+}

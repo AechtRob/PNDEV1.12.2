@@ -4147,7 +4147,6 @@ public class ModTriggers
             CLICK_PROCOMPSOGNATHUS,
             CLICK_VICTALIMULUS,
             CLICK_MOSURA,
-            CLICK_TURFANIA,
             CLICK_ARARIPEMYS,
             CLICK_PTYKTOPTYCHION,
             CLICK_GENIBATRACHUS,
