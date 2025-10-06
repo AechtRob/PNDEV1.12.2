@@ -57,7 +57,8 @@ public class BlockAnthraciteOre extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
-		if (dimID == 0
+		if ((dimID == 0 && LepidodendronConfig.genStone)
+			|| dimID == LepidodendronConfig.dimPrecambrian
 			|| dimID == LepidodendronConfig.dimCambrian
 			|| dimID == LepidodendronConfig.dimOrdovician
 			|| dimID == LepidodendronConfig.dimSilurian
