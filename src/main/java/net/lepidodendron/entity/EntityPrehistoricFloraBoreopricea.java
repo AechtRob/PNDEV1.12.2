@@ -34,7 +34,7 @@ public class EntityPrehistoricFloraBoreopricea extends EntityPrehistoricFloraMor
 	}
 
 
-	public static String getPeriod() {return "Early Cretaceous";}
+	public static String getPeriod() {return "Triassic";}
 
 	@Override
 	public String[] getFoodOreDicts() {

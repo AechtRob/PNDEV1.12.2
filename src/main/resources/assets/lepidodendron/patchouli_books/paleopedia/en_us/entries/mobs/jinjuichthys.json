@@ -1,0 +1,47 @@
+{
+	"name": "Jinjuichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/jinjuichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_jinjuichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_jinjuichthys",
+			"title": "Jinjuichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>$(o)Ichthyodectiformes (?)$()$(br)>Chuhsiungichthiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "J. cheongi",
+            "entity": "lepidodendron:prehistoric_flora_jinjuichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jinjuichthys",
+			"type": "text",
+			"text": "Jinjuichthys is a genus of fish from the Early Cretaceous Jinju Formation in South Korea, after which it was named. The specific name honors geologist Cheong Chang Hi, a former President of the Korean Academy of Sciences. It is 18.7 centimeters long, but 6.9 centimeters deep, making it one of the deepest Ichthyodectiformes, if it does belong to that order."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_jinjuichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_jinjuichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_jinjuichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_jinjuichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_jinjuichthys"
+		}
+	]
+}

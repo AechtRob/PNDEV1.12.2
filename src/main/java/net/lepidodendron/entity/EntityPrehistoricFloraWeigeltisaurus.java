@@ -12,6 +12,7 @@ import net.lepidodendron.util.EggLayingConditions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.util.DamageSource;
@@ -99,11 +100,12 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityAISwimming(this));
-		tasks.addTask(1, new EntityPrehistoricFloraLandClimbingGlidingBase.GlideAI());
-		tasks.addTask(2, new EntityMateAIAgeableBase(this, 1));
-		tasks.addTask(3, new LandWanderNestInBlockAI(this));
-		tasks.addTask(4, new LandWanderAvoidWaterClimbingAI(this, 0.8D, 20));
-		tasks.addTask(5, new EntityLookIdleAI(this));
+        tasks.addTask(1, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
+		tasks.addTask(2, new EntityPrehistoricFloraLandClimbingGlidingBase.GlideAI());
+		tasks.addTask(3, new EntityMateAIAgeableBase(this, 1));
+		tasks.addTask(4, new LandWanderNestInBlockAI(this));
+		tasks.addTask(5, new LandWanderAvoidWaterClimbingAI(this, 0.8D, 20));
+		tasks.addTask(6, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 

@@ -190,7 +190,7 @@ public class EntityPrehistoricFloraTeleocrater extends EntityPrehistoricFloraLan
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		//tasks.addTask(4, new PanicAI(this, 1.6D));
+        tasks.addTask(4, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
 		tasks.addTask(5, new LandWanderNestInBlockAI(this));
 		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 40));
 		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));

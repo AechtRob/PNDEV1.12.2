@@ -131,7 +131,7 @@ public class EntityPrehistoricFloraCretosaja extends EntityPrehistoricFloraLandC
 		return 20 + rand.nextInt(40);
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	@Override
 	public int getAdultAge() {

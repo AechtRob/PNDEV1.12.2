@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraTriodus extends EntityPrehistoricFloraAgeable
 		return true;
 	}
 
-	public static String getPeriod() {return "Carboniferous";}
+	public static String getPeriod() {return "Carboniferous - Permian";}
 
 	public static String getSize() {return "S";}
 

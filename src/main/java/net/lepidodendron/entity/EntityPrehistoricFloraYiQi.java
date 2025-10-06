@@ -16,6 +16,7 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.nbt.NBTTagCompound;
@@ -186,9 +187,10 @@ public class EntityPrehistoricFloraYiQi extends EntityPrehistoricFloraLandClimbi
 		tasks.addTask(3, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(4, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(5, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(6, new LandWanderNestAI(this));
-		tasks.addTask(7, new LandWanderAvoidWaterClimbingAI(this, 0.8D, 20));
-		tasks.addTask(8, new EntityLookIdleAI(this));
+        tasks.addTask(6, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
+		tasks.addTask(7, new LandWanderNestAI(this));
+		tasks.addTask(8, new LandWanderAvoidWaterClimbingAI(this, 0.8D, 20));
+		tasks.addTask(9, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
