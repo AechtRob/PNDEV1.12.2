@@ -125,7 +125,7 @@ public class BlockGreenSproutingAlgae extends ElementsLepidodendronMod.ModElemen
 		if (!biomeCriteria)
 			return;
 
-		int multiplier = 1;
+		float multiplier = 1;
 		if ((dimID == LepidodendronConfig.dimDevonian)
 				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimCambrian)
@@ -148,10 +148,16 @@ public class BlockGreenSproutingAlgae extends ElementsLepidodendronMod.ModElemen
 			multiplier = 10;
 		}
 
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_brackish")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
+		if ( biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
 		)
 			multiplier = 36;
+
+		boolean forced = false;
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_brackish"))
+		{
+			multiplier = 2;
+			forced = true;
+		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
@@ -201,14 +207,13 @@ public class BlockGreenSproutingAlgae extends ElementsLepidodendronMod.ModElemen
 			multiplier = 12;
 		}
 
-		boolean forced = false;
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")
 		) {
 			multiplier = 8;
 			forced = true;
 		}
 
-		for (int i = 0; i < (int) 10 * multiplier; i++) {
+		for (int i = 0; i < (int) 10F * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
