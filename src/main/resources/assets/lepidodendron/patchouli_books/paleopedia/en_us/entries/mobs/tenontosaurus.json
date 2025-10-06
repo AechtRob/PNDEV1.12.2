@@ -1,0 +1,62 @@
+{
+	"name": "Tenontosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tenontosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tenontosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tenontosaurus",
+			"title": "Tenontosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Orithopoda$(br)>Tenontosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. tilletti",
+            "entity": "lepidodendron:prehistoric_flora_tenontosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tenontosaurus",
+			"type": "text",
+			"text": "Tenontosaurus is a genus of iguanodontian that lived during the Early Cretaceous Period in North America. The most characteristic feature that made this animal stand out and allowed it to become somewhat popular among the palaeontological community is its broad and unusually long tail, which employed the use of ossified tendons as a way of maintaining a rigid state."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tenontosaurus",
+			"type": "text",
+			"text": "The name Tenontosaurus, translating to, sinew lizard, is in direct reference to the series of ossified tendons that ran alongside the back and tail of the animal. While not particularly big compared to other iguanodontians, the 6-8 m long animal would've still been a sizeable inhabitant of its native range and a prominent member of its ecosystem."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tenontosaurus",
+			"type": "text",
+			"text": "Like some other iguanodontians, Tenontosaurus was a facultative quadruped, being able to switch between quadrupedal and bipedal postures at will, depending on its needs. While it could move on four legs, it was improbable the animal was able to move at high speeds while in that posture, probably switching to a bipedal stance to run or gain better maneuverability."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tenontosaurus",
+			"type": "text",
+			"text": "Perhaps most famously depicted while being hunted by Deinonychus, Tenontosaurus remains are famously found in the same sites as Deinonychus or with signs of predation from the latter with around 20% of the total Tenontosaurus fossils showing signs of being at the very least scavanged by the dromaeosaur."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tenontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tenontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tenontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tenontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tenontosaurus"
+		}
+	]
+}

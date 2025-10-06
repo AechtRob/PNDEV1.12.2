@@ -103,7 +103,7 @@ public class EntityPrehistoricFloraKoleken extends EntityPrehistoricFloraLandCar
 		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, HURT_ANIMATION, GRAPPLE_ANIMATION};
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Late Cretaceous";}
 
 	@Override
 	public int getEatLength() {

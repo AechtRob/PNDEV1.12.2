@@ -24,6 +24,7 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
@@ -377,6 +378,7 @@ public class EntityPrehistoricFloraUteodon extends EntityPrehistoricFloraLandCar
 		tasks.addTask(3, new AgeableWarnEntity(this, EntityPlayer.class, 4));
 		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(5, new PanicAI(this, 1.0));
+        tasks.addTask(6, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
 		tasks.addTask(6, new LandWanderNestAI(this));
 		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D, 45));

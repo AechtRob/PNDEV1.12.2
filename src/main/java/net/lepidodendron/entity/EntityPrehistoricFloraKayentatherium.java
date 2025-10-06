@@ -11,6 +11,7 @@ import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -71,12 +72,13 @@ public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFlora
 		tasks.addTask(2, new NightFindNestAquaticAI(this, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new PanicAI(this, 1.0));
-		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(7, new AmphibianWanderNotBound(this, NO_ANIMATION, 0.1, 90, 8));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityLookIdleAI(this));
+        tasks.addTask(5, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
+		tasks.addTask(6, new LandWanderNestAI(this));
+		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(8, new AmphibianWanderNotBound(this, NO_ANIMATION, 0.1, 90, 8));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(11, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 	}

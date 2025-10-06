@@ -70,7 +70,7 @@ public class EntityPrehistoricFloraBrachydectes extends EntityPrehistoricFloraSw
 		return true;
 	}
 
-	public static String getPeriod() {return "Permian";}
+	public static String getPeriod() {return "[Carboniferous] - Permian";}
 
 	//public static String getHabitat() {return "Amphibious";}
 

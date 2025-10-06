@@ -18,6 +18,7 @@ import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
@@ -172,7 +173,7 @@ public class EntityPrehistoricFloraTrilophosaurus extends EntityPrehistoricFlora
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.25F;
+			speedBase = speedBase * 2.25F;
 		}
 		if (this.getIsClimbing()) {
 			speedBase = speedBase * 0.30F;
@@ -207,11 +208,12 @@ public class EntityPrehistoricFloraTrilophosaurus extends EntityPrehistoricFlora
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(3, new AttackAI(this, 1.6D, false, this.getAttackLength()));
 		tasks.addTask(4, new PanicAI(this, 1.0));
-		tasks.addTask(5, new LandWanderNestInBlockAI(this));
-		tasks.addTask(6, new LandWanderAvoidWaterClimbingAI(this, 1.0D, 5));
-		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityLookIdleAI(this));
+        tasks.addTask(5, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
+		tasks.addTask(6, new LandWanderNestInBlockAI(this));
+		tasks.addTask(7, new LandWanderAvoidWaterClimbingAI(this, 1.0D, 5));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1.5));
 	}
 

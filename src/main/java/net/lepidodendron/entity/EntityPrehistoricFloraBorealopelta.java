@@ -120,7 +120,7 @@ public class EntityPrehistoricFloraBorealopelta extends EntityPrehistoricFloraLa
 		return 0; //small
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	//public static String getHabitat() {return "Terrestrial Diadectomorph";}
 
