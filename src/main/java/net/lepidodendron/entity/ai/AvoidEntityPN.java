@@ -51,11 +51,11 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
     public boolean shouldExecute()
     {
 
-        if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
-            if (((EntityPrehistoricFloraAgeableBase) this.entity).isAnimationDirectionLocked(((EntityPrehistoricFloraAgeableBase) this.entity).getAnimation())) {
-                return false;
-            }
-        }
+//        if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
+//            if (((EntityPrehistoricFloraAgeableBase) this.entity).isAnimationDirectionLocked(((EntityPrehistoricFloraAgeableBase) this.entity).getAnimation())) {
+//                return false;
+//            }
+//        }
 
         if (this.entity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
             if (((EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.entity).isReallyFlying()) {
