@@ -50,6 +50,13 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
     @Override
     public boolean shouldExecute()
     {
+
+        if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
+            if (((EntityPrehistoricFloraAgeableBase) this.entity).isAnimationDirectionLocked(((EntityPrehistoricFloraAgeableBase) this.entity).getAnimation())) {
+                return false;
+            }
+        }
+
         if (this.entity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
             if (((EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.entity).isReallyFlying()) {
                 ((EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.entity).setAvoidTarget(null);
@@ -93,8 +100,11 @@ public class AvoidEntityPN<T extends Entity> extends EntityAIBase
                         this.y = vec3d.y;
                         this.z = vec3d.z;
                         this.closestLivingEntity = (EntityLivingBase) currentEntity;
-                        if (this.entity instanceof EntityPrehistoricFloraAgeableBase && this.avoidsFast) {
-                            ((EntityPrehistoricFloraAgeableBase)this.entity).setAvoidTarget(this.closestLivingEntity);
+                        if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
+                            ((EntityPrehistoricFloraAgeableBase) this.entity).setAnimation(((EntityPrehistoricFloraAgeableBase) this.entity).NO_ANIMATION);
+                            if (this.avoidsFast) {
+                                ((EntityPrehistoricFloraAgeableBase) this.entity).setAvoidTarget(this.closestLivingEntity);
+                            }
                         }
                         return true;
                     }
