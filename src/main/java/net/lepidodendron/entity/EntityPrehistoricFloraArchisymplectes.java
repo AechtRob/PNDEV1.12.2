@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
@@ -34,7 +35,7 @@ public class EntityPrehistoricFloraArchisymplectes extends EntityPrehistoricFlor
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 	private int animationTick;
-	private Animation animation = NO_ANIMATION;
+	private Animation currentAnimation;
 	public Animation EAT_ANIMATION;
 	private int jumpTicks;
 	private int slitherStage;
@@ -71,13 +72,13 @@ public class EntityPrehistoricFloraArchisymplectes extends EntityPrehistoricFlor
 	}
 
 	@Override
-	public int getAnimationTick() {
-		return getAnimationTick();
+	protected float getAISpeedTrilobite() {
+		return 0.105f;
 	}
 
 	@Override
-	protected float getAISpeedTrilobite() {
-		return 0.105f;
+	public int getAnimationTick() {
+		return animationTick;
 	}
 
 	@Override
@@ -87,17 +88,20 @@ public class EntityPrehistoricFloraArchisymplectes extends EntityPrehistoricFlor
 
 	@Override
 	public Animation getAnimation() {
-		return null;
+		return currentAnimation == null ? NO_ANIMATION : currentAnimation;
 	}
 
 	@Override
 	public void setAnimation(Animation animation) {
-		this.animation = animation;
+		if (this.getAnimation() != animation) {
+			this.currentAnimation = animation;
+			setAnimationTick(0);
+		}
 	}
 
 	@Override
 	public Animation[] getAnimations() {
-		return null;
+		return new Animation[]{EAT_ANIMATION};
 	}
 
 	protected void initEntityAI() {
@@ -307,6 +311,8 @@ public class EntityPrehistoricFloraArchisymplectes extends EntityPrehistoricFlor
 		this.world.profiler.startSection("push");
 		this.collideWithNearbyEntities();
 		this.world.profiler.endSection();
+
+		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
 

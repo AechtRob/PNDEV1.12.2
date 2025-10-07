@@ -26,9 +26,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.*;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -184,8 +182,28 @@ public class BlockButtercup extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public EnumOffsetType getOffsetType()
 	    {
-	        return EnumOffsetType.XZ;
+	        return EnumOffsetType.XYZ;
 	    }
+
+		@Override
+		public Vec3d getOffset(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+		{
+			Block.EnumOffsetType block$enumoffsettype = this.getOffsetType();
+
+			if (block$enumoffsettype == Block.EnumOffsetType.NONE)
+			{
+				return Vec3d.ZERO;
+			}
+			else
+			{
+				long i = MathHelper.getCoordinateRandom(pos.getX(), 0, pos.getZ());
+				return new Vec3d(((double)((float)(i >> 16 & 15L) / 15.0F) - 0.5D) * 0.5D,
+						block$enumoffsettype == Block.EnumOffsetType.XYZ ?
+								((((double)((float)(i >> 20 & 15L) / 15.0F) - 0.250D) * 0.099D) + (((double)((float)(i >> 16 & 15L) / 15.0F) - 0.250D) * 0.099D) + (((double)((float)(i >> 24 & 15L) / 15.0F) - 0.250D) * 0.099D)) / 3.0
+								: 0.0D,
+						((double)((float)(i >> 24 & 15L) / 15.0F) - 0.5D) * 0.5D);
+			}
+		}
 
 		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 		{

@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
@@ -88,7 +89,7 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 	}
 
 	public int hideAnimationLength() {
-		return 160;
+		return 257;
 	}
 
 	@Override
@@ -167,7 +168,7 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 	@Override
 	protected void collideWithEntity(Entity entityIn) {
 		super.collideWithEntity(entityIn);
-		if (this.onGround && (!this.isReallyInWater()) && this.canHide()){
+		if (this.onGround && (!this.isReallyInWater()) && this.canHide() && this.getAnimation() != HIDE_ANIMATION){
 			this.setAnimation(HIDE_ANIMATION);
 		}
 	}
@@ -257,6 +258,8 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 			this.world.destroyBlock(pos,false);
 			this.setHealth(this.getHealth() + 0.5F);
 		}
+
+		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
 

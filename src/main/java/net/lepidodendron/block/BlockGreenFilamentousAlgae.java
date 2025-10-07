@@ -29,9 +29,7 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundCategory;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.*;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -398,6 +396,32 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 		            world.scheduleUpdate(pos, this, 1);
 		        }
 		    }
+		}
+
+		@Override
+		public EnumOffsetType getOffsetType()
+		{
+			return EnumOffsetType.XYZ;
+		}
+
+		@Override
+		public Vec3d getOffset(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+		{
+			Block.EnumOffsetType block$enumoffsettype = this.getOffsetType();
+
+			if (block$enumoffsettype == Block.EnumOffsetType.NONE)
+			{
+				return Vec3d.ZERO;
+			}
+			else
+			{
+				long i = MathHelper.getCoordinateRandom(pos.getX(), 0, pos.getZ());
+				return new Vec3d(((double)((float)(i >> 16 & 15L) / 15.0F) - 0.5D) * 0.5D,
+						block$enumoffsettype == Block.EnumOffsetType.XYZ ?
+								((((double)((float)(i >> 20 & 15L) / 15.0F) - 0.250D) * 0.099D) + (((double)((float)(i >> 16 & 15L) / 15.0F) - 0.250D) * 0.099D) + (((double)((float)(i >> 24 & 15L) / 15.0F) - 0.250D) * 0.099D)) / 3.0
+								: 0.0D,
+						((double)((float)(i >> 24 & 15L) / 15.0F) - 0.5D) * 0.5D);
+			}
 		}
 
 		@Override

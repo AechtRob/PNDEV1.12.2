@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraAetosauroides;
-import net.lepidodendron.entity.EntityPrehistoricFloraTyrannotitan;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
@@ -505,7 +504,7 @@ public class ModelAetosauroides extends ModelBasePalaeopedia {
 
     }
     public void animAttack(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraTyrannotitan entity = (EntityPrehistoricFloraTyrannotitan) entitylivingbaseIn;
+        EntityPrehistoricFloraAetosauroides entity = (EntityPrehistoricFloraAetosauroides) entitylivingbaseIn;
         int animCycle = 15;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;

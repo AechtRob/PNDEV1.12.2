@@ -117,7 +117,7 @@ public class ModelAngiopteris extends ModelBase {
         bone.addChild(bone3);
         setRotationAngle(bone3, -0.3927F, 0.0F, 0.0F);
         bone3.cubeList.add(new ModelBox(bone3, 39, 19, -16.0F, -32.0F, 0.0F, 32, 32, 0, 0.0F, true));
-        bone3.cubeList.add(new ModelBox(bone3, 31, 20, -1.0F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
+        bone3.cubeList.add(new ModelBox(bone3, 31, 20, -0.99F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
 
         bone5 = new ModelRenderer(this);
         bone5.setRotationPoint(0.0F, -32.0F, 0.0F);
@@ -131,7 +131,7 @@ public class ModelAngiopteris extends ModelBase {
         bone5.addChild(bone7);
         setRotationAngle(bone7, -0.3927F, 0.0F, 0.0F);
         bone7.cubeList.add(new ModelBox(bone7, 40, 51, -14.0F, -34.0F, 0.8F, 28, 32, 0, 0.0F, false));
-        bone7.cubeList.add(new ModelBox(bone7, 31, 20, -1.0F, -31.0F, 0.4F, 2, 32, 2, 0.0F, false));
+        bone7.cubeList.add(new ModelBox(bone7, 31, 20, -0.99F, -31.0F, 0.4F, 2, 32, 2, 0.0F, false));
 
         cube_r3 = new ModelRenderer(this);
         cube_r3.setRotationPoint(0.0F, -29.0F, 2.0F);
@@ -156,7 +156,7 @@ public class ModelAngiopteris extends ModelBase {
         bone2.addChild(bone4);
         setRotationAngle(bone4, -0.3927F, 0.0F, 0.0F);
         bone4.cubeList.add(new ModelBox(bone4, 39, 19, -16.0F, -32.0F, 0.0F, 32, 32, 0, 0.0F, true));
-        bone4.cubeList.add(new ModelBox(bone4, 31, 20, -1.0F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
+        bone4.cubeList.add(new ModelBox(bone4, 31, 20, -0.99F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
 
         bone6 = new ModelRenderer(this);
         bone6.setRotationPoint(0.0F, -32.0F, 0.0F);
@@ -170,7 +170,7 @@ public class ModelAngiopteris extends ModelBase {
         bone6.addChild(bone8);
         setRotationAngle(bone8, -0.3927F, 0.0F, 0.0F);
         bone8.cubeList.add(new ModelBox(bone8, 40, 51, -14.0F, -34.0F, 1.2F, 28, 32, 0, 0.0F, false));
-        bone8.cubeList.add(new ModelBox(bone8, 31, 20, -1.0F, -31.0F, 0.3F, 2, 32, 2, 0.0F, false));
+        bone8.cubeList.add(new ModelBox(bone8, 31, 20, -0.99F, -31.0F, 0.3F, 2, 32, 2, 0.0F, false));
 
         cube_r4 = new ModelRenderer(this);
         cube_r4.setRotationPoint(0.0F, -29.0F, 2.0F);
@@ -195,7 +195,7 @@ public class ModelAngiopteris extends ModelBase {
         bone9.addChild(bone10);
         setRotationAngle(bone10, -0.3927F, 0.0F, 0.0F);
         bone10.cubeList.add(new ModelBox(bone10, 39, 19, -16.0F, -32.0F, 0.0F, 32, 32, 0, 0.0F, true));
-        bone10.cubeList.add(new ModelBox(bone10, 31, 20, -1.0F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
+        bone10.cubeList.add(new ModelBox(bone10, 31, 20, -0.99F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
 
         bone11 = new ModelRenderer(this);
         bone11.setRotationPoint(0.0F, -32.0F, 0.0F);
@@ -209,7 +209,7 @@ public class ModelAngiopteris extends ModelBase {
         bone11.addChild(bone12);
         setRotationAngle(bone12, -0.3927F, 0.0F, 0.0F);
         bone12.cubeList.add(new ModelBox(bone12, 40, 51, -14.0F, -32.0F, 1.2F, 28, 32, 0, 0.0F, false));
-        bone12.cubeList.add(new ModelBox(bone12, 31, 20, -1.0F, -29.0F, 1.0F, 2, 32, 2, 0.0F, false));
+        bone12.cubeList.add(new ModelBox(bone12, 31, 20, -0.99F, -29.0F, 1.0F, 2, 32, 2, 0.0F, false));
 
         cube_r5 = new ModelRenderer(this);
         cube_r5.setRotationPoint(0.0F, -29.0F, 2.0F);
@@ -234,7 +234,7 @@ public class ModelAngiopteris extends ModelBase {
         bone13.addChild(bone14);
         setRotationAngle(bone14, -0.3927F, 0.0F, 0.0F);
         bone14.cubeList.add(new ModelBox(bone14, 39, 19, -16.0F, -32.0F, 0.0F, 32, 32, 0, 0.0F, true));
-        bone14.cubeList.add(new ModelBox(bone14, 31, 20, -1.0F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
+        bone14.cubeList.add(new ModelBox(bone14, 31, 20, -0.99F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
 
         bone15 = new ModelRenderer(this);
         bone15.setRotationPoint(0.0F, -32.0F, 0.0F);
@@ -248,7 +248,7 @@ public class ModelAngiopteris extends ModelBase {
         bone15.addChild(bone16);
         setRotationAngle(bone16, -0.3927F, 0.0F, 0.0F);
         bone16.cubeList.add(new ModelBox(bone16, 40, 51, -14.0F, -32.0F, 1.2F, 28, 32, 0, 0.0F, false));
-        bone16.cubeList.add(new ModelBox(bone16, 31, 20, -1.0F, -29.0F, 1.0F, 2, 32, 2, 0.0F, false));
+        bone16.cubeList.add(new ModelBox(bone16, 31, 20, -0.99F, -29.0F, 1.0F, 2, 32, 2, 0.0F, false));
 
         cube_r6 = new ModelRenderer(this);
         cube_r6.setRotationPoint(0.0F, -29.0F, 2.0F);
@@ -273,7 +273,7 @@ public class ModelAngiopteris extends ModelBase {
         bone17.addChild(bone18);
         setRotationAngle(bone18, -0.3927F, 0.0F, 0.0F);
         bone18.cubeList.add(new ModelBox(bone18, 39, 19, -16.0F, -32.0F, 0.0F, 32, 32, 0, 0.0F, true));
-        bone18.cubeList.add(new ModelBox(bone18, 31, 20, -1.0F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
+        bone18.cubeList.add(new ModelBox(bone18, 31, 20, -0.99F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
 
         bone19 = new ModelRenderer(this);
         bone19.setRotationPoint(0.0F, -32.0F, 0.0F);
@@ -287,13 +287,13 @@ public class ModelAngiopteris extends ModelBase {
         bone19.addChild(bone20);
         setRotationAngle(bone20, -0.3927F, 0.0F, 0.0F);
         bone20.cubeList.add(new ModelBox(bone20, 40, 51, -14.0F, -34.0F, 1.2F, 28, 32, 0, 0.0F, false));
-        bone20.cubeList.add(new ModelBox(bone20, 31, 20, -1.0F, -30.8F, 0.1F, 2, 32, 2, 0.0F, false));
+        bone20.cubeList.add(new ModelBox(bone20, 31, 20, -0.99F, -30.8F, 0.1F, 2, 32, 2, 0.0F, false));
 
         cube_r7 = new ModelRenderer(this);
         cube_r7.setRotationPoint(0.0F, -29.0F, 2.0F);
         bone20.addChild(cube_r7);
         setRotationAngle(cube_r7, -0.3927F, 0.0F, 0.0F);
-        cube_r7.cubeList.add(new ModelBox(cube_r7, 55, 2, -4.5F, -13.0F, 0.0F, 9, 12, 0, 0.0F, false));
+        cube_r7.cubeList.add(new ModelBox(cube_r7, 55, 2, -4.5F, -13.0F, -1.5F, 9, 12, 0, 0.0F, false));
 
         leaf6 = new ModelRenderer(this);
         leaf6.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -312,7 +312,7 @@ public class ModelAngiopteris extends ModelBase {
         bone21.addChild(bone22);
         setRotationAngle(bone22, -0.3927F, 0.0F, 0.0F);
         bone22.cubeList.add(new ModelBox(bone22, 39, 19, -16.0F, -32.0F, 0.0F, 32, 32, 0, 0.0F, true));
-        bone22.cubeList.add(new ModelBox(bone22, 31, 20, -1.0F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
+        bone22.cubeList.add(new ModelBox(bone22, 31, 20, -0.99F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
 
         bone23 = new ModelRenderer(this);
         bone23.setRotationPoint(0.0F, -32.0F, 0.0F);
@@ -326,7 +326,7 @@ public class ModelAngiopteris extends ModelBase {
         bone23.addChild(bone24);
         setRotationAngle(bone24, -0.3927F, 0.0F, 0.0F);
         bone24.cubeList.add(new ModelBox(bone24, 40, 51, -14.0F, -32.0F, 1.2F, 28, 32, 0, 0.0F, false));
-        bone24.cubeList.add(new ModelBox(bone24, 31, 20, -1.0F, -29.0F, 1.0F, 2, 32, 2, 0.0F, false));
+        bone24.cubeList.add(new ModelBox(bone24, 31, 20, -0.99F, -29.0F, 1.0F, 2, 32, 2, 0.0F, false));
 
         cube_r8 = new ModelRenderer(this);
         cube_r8.setRotationPoint(0.0F, -29.0F, 2.0F);
@@ -351,7 +351,7 @@ public class ModelAngiopteris extends ModelBase {
         bone25.addChild(bone26);
         setRotationAngle(bone26, -0.3927F, 0.0F, 0.0F);
         bone26.cubeList.add(new ModelBox(bone26, 39, 19, -16.0F, -32.0F, 0.0F, 32, 32, 0, 0.0F, true));
-        bone26.cubeList.add(new ModelBox(bone26, 31, 20, -1.0F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
+        bone26.cubeList.add(new ModelBox(bone26, 31, 20, -0.99F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
 
         bone27 = new ModelRenderer(this);
         bone27.setRotationPoint(0.0F, -32.0F, 0.0F);
@@ -365,7 +365,7 @@ public class ModelAngiopteris extends ModelBase {
         bone27.addChild(bone28);
         setRotationAngle(bone28, -0.3927F, 0.0F, 0.0F);
         bone28.cubeList.add(new ModelBox(bone28, 40, 51, -14.0F, -32.0F, 1.2F, 28, 32, 0, 0.0F, false));
-        bone28.cubeList.add(new ModelBox(bone28, 31, 20, -1.0F, -29.0F, 1.0F, 2, 32, 2, 0.0F, false));
+        bone28.cubeList.add(new ModelBox(bone28, 31, 20, -0.99F, -29.0F, 1.0F, 2, 32, 2, 0.0F, false));
 
         cube_r9 = new ModelRenderer(this);
         cube_r9.setRotationPoint(0.0F, -29.0F, 2.0F);
@@ -389,7 +389,7 @@ public class ModelAngiopteris extends ModelBase {
         bone30.setRotationPoint(0.0F, -32.0F, 0.0F);
         bone29.addChild(bone30);
         bone30.cubeList.add(new ModelBox(bone30, 39, 19, -16.0F, -32.0F, 0.0F, 32, 32, 0, 0.0F, true));
-        bone30.cubeList.add(new ModelBox(bone30, 31, 20, -1.0F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
+        bone30.cubeList.add(new ModelBox(bone30, 31, 20, -0.99F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
 
         bone31 = new ModelRenderer(this);
         bone31.setRotationPoint(0.0F, -32.0F, 0.0F);
@@ -403,7 +403,7 @@ public class ModelAngiopteris extends ModelBase {
         bone31.addChild(bone32);
         setRotationAngle(bone32, -0.3927F, 0.0F, 0.0F);
         bone32.cubeList.add(new ModelBox(bone32, 40, 51, -14.0F, -33.0F, 1.2F, 28, 32, 0, 0.0F, false));
-        bone32.cubeList.add(new ModelBox(bone32, 31, 20, -1.0F, -31.0F, 1.0F, 2, 32, 2, 0.0F, false));
+        bone32.cubeList.add(new ModelBox(bone32, 31, 20, -0.99F, -31.0F, 1.0F, 2, 32, 2, 0.0F, false));
 
         cube_r10 = new ModelRenderer(this);
         cube_r10.setRotationPoint(0.0F, -30.0F, 2.0F);
@@ -428,7 +428,7 @@ public class ModelAngiopteris extends ModelBase {
         bone33.addChild(bone34);
         setRotationAngle(bone34, -0.3927F, 0.0F, 0.0F);
         bone34.cubeList.add(new ModelBox(bone34, 39, 19, -16.0F, -32.0F, 0.0F, 32, 32, 0, 0.0F, true));
-        bone34.cubeList.add(new ModelBox(bone34, 31, 20, -1.0F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
+        bone34.cubeList.add(new ModelBox(bone34, 31, 20, -0.99F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
 
         bone35 = new ModelRenderer(this);
         bone35.setRotationPoint(0.0F, -32.0F, 0.0F);
@@ -442,7 +442,7 @@ public class ModelAngiopteris extends ModelBase {
         bone35.addChild(bone36);
         setRotationAngle(bone36, -0.7854F, 0.0F, 0.0F);
         bone36.cubeList.add(new ModelBox(bone36, 40, 51, -14.0F, -33.0F, 1.5F, 28, 32, 0, 0.0F, false));
-        bone36.cubeList.add(new ModelBox(bone36, 31, 20, -1.0F, -30.55F, 1.45F, 2, 32, 2, 0.0F, false));
+        bone36.cubeList.add(new ModelBox(bone36, 31, 20, -0.99F, -30.55F, 1.45F, 2, 32, 2, 0.0F, false));
 
         cube_r11 = new ModelRenderer(this);
         cube_r11.setRotationPoint(0.0F, -29.0F, 2.0F);
@@ -467,7 +467,7 @@ public class ModelAngiopteris extends ModelBase {
         bone37.addChild(bone38);
         setRotationAngle(bone38, -0.3927F, 0.0F, 0.0F);
         bone38.cubeList.add(new ModelBox(bone38, 39, 19, -16.0F, -32.0F, 0.0F, 32, 32, 0, 0.0F, true));
-        bone38.cubeList.add(new ModelBox(bone38, 31, 20, -1.0F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
+        bone38.cubeList.add(new ModelBox(bone38, 31, 20, -0.99F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
 
         bone39 = new ModelRenderer(this);
         bone39.setRotationPoint(0.0F, -32.0F, 0.0F);
@@ -481,7 +481,7 @@ public class ModelAngiopteris extends ModelBase {
         bone39.addChild(bone40);
         setRotationAngle(bone40, -0.7854F, 0.0F, 0.0F);
         bone40.cubeList.add(new ModelBox(bone40, 40, 51, -14.0F, -34.0F, 1.6F, 28, 32, 0, 0.0F, false));
-        bone40.cubeList.add(new ModelBox(bone40, 31, 20, -1.0F, -30.6F, 1.4F, 2, 32, 2, 0.0F, false));
+        bone40.cubeList.add(new ModelBox(bone40, 31, 20, -0.99F, -30.6F, 1.4F, 2, 32, 2, 0.0F, false));
 
         cube_r12 = new ModelRenderer(this);
         cube_r12.setRotationPoint(0.0F, -29.0F, 2.0F);
@@ -506,7 +506,7 @@ public class ModelAngiopteris extends ModelBase {
         bone41.addChild(bone42);
         setRotationAngle(bone42, -0.3927F, 0.0F, 0.0F);
         bone42.cubeList.add(new ModelBox(bone42, 39, 19, -16.0F, -32.0F, 0.0F, 32, 32, 0, 0.0F, true));
-        bone42.cubeList.add(new ModelBox(bone42, 31, 20, -1.0F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
+        bone42.cubeList.add(new ModelBox(bone42, 31, 20, -0.99F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
 
         bone43 = new ModelRenderer(this);
         bone43.setRotationPoint(0.0F, -32.0F, 0.0F);
@@ -520,7 +520,7 @@ public class ModelAngiopteris extends ModelBase {
         bone43.addChild(bone44);
         setRotationAngle(bone44, -0.7854F, 0.0F, 0.0F);
         bone44.cubeList.add(new ModelBox(bone44, 40, 51, -14.0F, -33.0F, 1.8F, 28, 32, 0, 0.0F, false));
-        bone44.cubeList.add(new ModelBox(bone44, 31, 20, -1.0F, -30.5F, 1.4F, 2, 32, 2, 0.0F, false));
+        bone44.cubeList.add(new ModelBox(bone44, 31, 20, -0.99F, -30.5F, 1.4F, 2, 32, 2, 0.0F, false));
 
         cube_r13 = new ModelRenderer(this);
         cube_r13.setRotationPoint(0.0F, -29.0F, 2.0F);
@@ -545,7 +545,7 @@ public class ModelAngiopteris extends ModelBase {
         bone45.addChild(bone46);
         setRotationAngle(bone46, -0.3927F, 0.0F, 0.0F);
         bone46.cubeList.add(new ModelBox(bone46, 39, 19, -16.0F, -32.0F, 0.0F, 32, 32, 0, 0.0F, true));
-        bone46.cubeList.add(new ModelBox(bone46, 31, 20, -1.0F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
+        bone46.cubeList.add(new ModelBox(bone46, 31, 20, -0.99F, -31.0F, -0.7F, 2, 32, 2, 0.0F, false));
 
         bone47 = new ModelRenderer(this);
         bone47.setRotationPoint(0.0F, -32.0F, 0.0F);
@@ -559,7 +559,7 @@ public class ModelAngiopteris extends ModelBase {
         bone47.addChild(bone48);
         setRotationAngle(bone48, -0.3927F, 0.0F, 0.0F);
         bone48.cubeList.add(new ModelBox(bone48, 40, 51, -14.0F, -32.0F, 1.0F, 28, 32, 0, 0.0F, false));
-        bone48.cubeList.add(new ModelBox(bone48, 31, 20, -1.0F, -30.0F, 0.5F, 2, 32, 2, 0.0F, false));
+        bone48.cubeList.add(new ModelBox(bone48, 31, 20, -0.99F, -30.0F, 0.5F, 2, 32, 2, 0.0F, false));
 
         cube_r14 = new ModelRenderer(this);
         cube_r14.setRotationPoint(0.0F, -29.0F, 2.0F);

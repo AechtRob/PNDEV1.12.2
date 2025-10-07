@@ -782,7 +782,7 @@ public class ModelJuliform extends ModelBasePalaeopedia {
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         //super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
-        this.resetToDefaultPose();
+        //this.resetToDefaultPose();
         //this.millipede.offsetY = 1.3F;
 
         AdvancedModelRenderer[] legsL = {this.leftLeg1, this.leftLeg2, this.leftLeg3, this.leftLeg4, this.leftLeg5, this.leftLeg6, this.leftLeg7, this.leftLeg8, this.leftLeg9, this.leftLeg10, this.leftLeg11, this.leftLeg12, this.leftLeg13, this.leftLeg14, this.leftLeg15, this.leftLeg16, this.leftLeg17, this.leftLeg18, this.leftLeg19, this.leftLeg20, this.leftLeg21, this.leftLeg22, this.leftLeg23};
@@ -814,7 +814,7 @@ public class ModelJuliform extends ModelBasePalaeopedia {
                 body1, body2, body3, body4, body5, body6, body7, body8, body9, body10, body11, body12};
         Pneumodesmus.myriapodBuffer.applyChainSwingBuffer(false, bodySegments);
 
-        if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
+        if (e instanceof EntityLiving && (!((EntityLiving) e).isAIDisabled()) && ((EntityPrehistoricFloraMyriapod) e).getAnimation() != ((EntityPrehistoricFloraMyriapod) e).HIDE_ANIMATION) {
             this.head.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.4;
             this.body4.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.3;
             if (((EntityPrehistoricFloraMyriapod) e).getIsMoving()) {

@@ -126,6 +126,10 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 		this.dataManager.set(ISLAUNCHING, isLaunching);
 	}
 
+	public boolean canRelaunch() {
+		return false;
+	}
+
 	protected void entityInit()
 	{
 		super.entityInit();
@@ -180,6 +184,7 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 			) {
 				this.setIsLaunching(true);
 				this.motionY = this.getJumpUpwardsMotion();
+				this.setMoveForward(this.getAIMoveSpeed());
 				this.launchProgress = 50;
 				if (this.getLaunchCooldown() > 0) {
 					this.launchCooldown = rand.nextInt(this.getLaunchCooldown());
@@ -188,6 +193,7 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 			if (this.isReallyInWater()) {
 				this.setIsLaunching(true);
 				this.motionY = this.getJumpUpwardsMotion();
+				this.setMoveForward(this.getAIMoveSpeed());
 				this.launchProgress = 50;
 				if (this.getLaunchCooldown() > 0) {
 					this.launchCooldown = rand.nextInt(this.getLaunchCooldown());
@@ -196,6 +202,18 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 
 			if (this.launchProgress <= 0) {
 				this.setIsLaunching(false);
+			}
+
+			if (this.getIsFlying() && this.canRelaunch()) {
+				if (rand.nextInt(64) == 0) {
+					this.setIsLaunching(true);
+					this.setMoveForward(this.getAIMoveSpeed());
+					this.motionY = this.getJumpUpwardsMotion();
+					this.launchProgress = 50;
+					if (this.getLaunchCooldown() > 0) {
+						this.launchCooldown = rand.nextInt(this.getLaunchCooldown());
+					}
+				}
 			}
 		}
 

@@ -68,6 +68,11 @@ public class EntityPrehistoricFloraEoconfuciusornis extends EntityPrehistoricFlo
 	}
 
 	@Override
+	public boolean canRelaunch() {
+		return true;
+	}
+
+	@Override
 	protected void entityInit() {
 		super.entityInit();
 		this.dataManager.register(GENDER, 0);
@@ -300,6 +305,13 @@ public class EntityPrehistoricFloraEoconfuciusornis extends EntityPrehistoricFlo
 			return 0.485F;
 		}
 		return 0.275F;
+	}
+
+	@Override
+	public boolean getIsClimbing() {
+		this.setStartingToClimb(false);
+		this.setIsClimbing(false);
+		return false;
 	}
 
 	@Override

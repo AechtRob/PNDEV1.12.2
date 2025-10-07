@@ -57,6 +57,11 @@ public class EntityPrehistoricFloraPermarachne extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public ResourceLocation getEggTexture(@Nullable String variantIn) {
+		return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_permarachne.png");
+	}
+
+	@Override
 	public boolean canJar() {
 		return true;
 	}

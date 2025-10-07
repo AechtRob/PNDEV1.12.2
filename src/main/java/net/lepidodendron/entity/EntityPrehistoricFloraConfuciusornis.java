@@ -68,6 +68,11 @@ public class EntityPrehistoricFloraConfuciusornis extends EntityPrehistoricFlora
 	}
 
 	@Override
+	public boolean canRelaunch() {
+		return true;
+	}
+
+	@Override
 	protected void entityInit() {
 		super.entityInit();
 		this.dataManager.register(GENDER, 0);
@@ -249,8 +254,6 @@ public class EntityPrehistoricFloraConfuciusornis extends EntityPrehistoricFlora
 		return this.GRAPPLE_ANIMATION.getDuration() - 1;
 	}
 
-
-
 	@Override
 	public int getEggType(@Nullable String PNType) {
 		return 0; //small
@@ -300,6 +303,13 @@ public class EntityPrehistoricFloraConfuciusornis extends EntityPrehistoricFlora
 			return 0.485F;
 		}
 		return 0.275F;
+	}
+
+	@Override
+	public boolean getIsClimbing() {
+		this.setStartingToClimb(false);
+		this.setIsClimbing(false);
+		return false;
 	}
 
 	@Override
