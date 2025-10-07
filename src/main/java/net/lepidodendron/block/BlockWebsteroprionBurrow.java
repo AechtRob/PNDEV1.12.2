@@ -10,7 +10,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraWebsteroprion;
 import net.lepidodendron.entity.EntityPrehistoricFloraWebsteroprionHole;
 import net.lepidodendron.item.entities.ItemEggsWebsteroprion;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
@@ -142,13 +141,14 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 
 		if (biome instanceof BiomeDevonian)
 		{
-			BiomeDevonian biomeDev = (BiomeDevonian) biome;
-			if (biomeDev.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
+//			BiomeDevonian biomeDev = (BiomeDevonian) biome;
+//			if (biomeDev.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
+//				biomeCriteria = true;
+//			}
+//			else {
+//				biomeCriteria = false;
+//			}
+			biomeCriteria = biome.getRegistryName().toString().equals("lepidodendron:devonian_ocean");
 		}
 		if (!biomeCriteria)
 			return;
