@@ -5277,6 +5277,8 @@ public class LepidodendronSorter {
     public static final int ventarura_spore = 8216;
     public static final int trichopherophyton = 8217;
     public static final int trichopherophyton_spore = 8218;
+    public static final int trackway_arthropod_straight = 8219;
+    public static final int trackway_arthropod_bent = 82020;
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;

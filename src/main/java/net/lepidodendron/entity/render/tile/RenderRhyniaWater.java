@@ -44,6 +44,7 @@ public class RenderRhyniaWater extends TileEntitySpecialRenderer<BlockRhyniaWate
                     texture = "minecraft:blocks/dirt";
                 }
             }
+
             texture = texture.replace(":", ":textures/");
             GlStateManager.pushMatrix();
             GlStateManager.enableCull();

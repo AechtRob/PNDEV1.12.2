@@ -1,0 +1,32 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:trackway_arthropod_bent_1"},
+      {"model": "lepidodendron:trackway_arthropod_bent_2"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:trackway_arthropod_bent_1"},
+      {"model": "lepidodendron:trackway_arthropod_bent_2"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:trackway_arthropod_bent_1", "y": 90 },
+      {"model": "lepidodendron:trackway_arthropod_bent_2", "y": 90 }
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:trackway_arthropod_bent_1", "y": 180 },
+      {"model": "lepidodendron:trackway_arthropod_bent_2", "y": 180 }
+    ],
+    "facing=west": [
+      {"model": "lepidodendron:trackway_arthropod_bent_1", "y": 270 },
+      {"model": "lepidodendron:trackway_arthropod_bent_2", "y": 270 }
+    ],
+    "facing=up": [
+      {"model": "lepidodendron:trackway_arthropod_bent_1"},
+      {"model": "lepidodendron:trackway_arthropod_bent_2"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:trackway_arthropod_bent_1"},
+      {"model": "lepidodendron:trackway_arthropod_bent_2"}
+    ]
+  }
+}
