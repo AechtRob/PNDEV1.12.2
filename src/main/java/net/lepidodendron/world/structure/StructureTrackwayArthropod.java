@@ -65,7 +65,8 @@ public class StructureTrackwayArthropod extends ElementsLepidodendronMod.ModElem
 					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_beach"))
 					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch"))
 					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_silty_swamp"))
-					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_cooksonia"))) {
+					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_cooksonia"))
+					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_beach_sand"))) {
 				continue;
 			}
 			BlockPos pos = ChunkGenSpawner.getTopSolidBlock(new BlockPos(i, 0, k), world).up();
