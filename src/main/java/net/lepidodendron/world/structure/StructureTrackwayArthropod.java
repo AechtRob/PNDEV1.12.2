@@ -50,7 +50,7 @@ public class StructureTrackwayArthropod extends ElementsLepidodendronMod.ModElem
 			multiplier = 1;
 		}
 
-		for (int n = 0; n <= 4 * multiplier; ++n) {
+		for (int n = 0; n <= 2 * multiplier; ++n) {
 			this.downer = 0;
 			//if ((random.nextInt(1000000) + 1) <= GenChance) {
 			int i = i2 + random.nextInt(16) + 8;
