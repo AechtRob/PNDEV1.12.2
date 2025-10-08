@@ -45,13 +45,17 @@ public class StructureTrackwayArthropod extends ElementsLepidodendronMod.ModElem
 			multiplier = 1;
 		}
 
-		for (int n = 0; n <= 6 * multiplier; ++n) {
+		for (int n = 0; n <= 5 * multiplier; ++n) {
 			this.downer = 0;
 			//if ((random.nextInt(1000000) + 1) <= GenChance) {
 			int i = i2 + random.nextInt(16) + 8;
 			int k = k2 + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(i, 0, k));
 			if ((!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs"))
+					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_floodplain"))
+					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_floodplain"))
+					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_aztec"))
+					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_aztec"))
 					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid"))
 					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_conulariid_land"))
 					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_meadow"))
