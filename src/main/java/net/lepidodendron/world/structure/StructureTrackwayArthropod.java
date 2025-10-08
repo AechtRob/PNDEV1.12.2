@@ -35,7 +35,8 @@ public class StructureTrackwayArthropod extends ElementsLepidodendronMod.ModElem
 
 		int multiplier = 2;
 
-		if (dimID != LepidodendronConfig.dimOrdovician
+		if (dimID != LepidodendronConfig.dimCambrian
+				&& dimID != LepidodendronConfig.dimOrdovician
 				&& dimID != LepidodendronConfig.dimSilurian
 				&& dimID != LepidodendronConfig.dimDevonian)
 			return;
@@ -51,7 +52,8 @@ public class StructureTrackwayArthropod extends ElementsLepidodendronMod.ModElem
 			int i = i2 + random.nextInt(16) + 8;
 			int k = k2 + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(i, 0, k));
-			if ((!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs"))
+			if ((!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_moist"))
+					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs"))
 					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_floodplain"))
 					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_floodplain"))
 					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_aztec"))
