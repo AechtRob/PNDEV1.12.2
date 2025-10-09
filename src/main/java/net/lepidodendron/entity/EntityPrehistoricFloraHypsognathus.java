@@ -10,6 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
@@ -102,7 +103,7 @@ public class EntityPrehistoricFloraHypsognathus extends EntityPrehistoricFloraLa
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, true, true, 1));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, true));
-		//tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+        tasks.addTask(3, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
 		tasks.addTask(4, new LandWanderNestAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(6, new EntityAIWanderAvoidWater(this, 1.0D));

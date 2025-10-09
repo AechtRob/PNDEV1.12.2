@@ -335,11 +335,12 @@ public class EntityPrehistoricFloraDearc extends EntityPrehistoricFloraLandClimb
 		tasks.addTask(1, new EntityAISwimming(this));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new PanicScreamAI(this, 1.5F));
-		tasks.addTask(4, new LandWanderNestInBlockAI(this));
-		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 20));
-		tasks.addTask(6, new AgeableClimbingFlyingWalkingFlyHigh(this, false));
-		tasks.addTask(7, new LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI(this, false, false));
-		tasks.addTask(8, new EntityLookIdleAI(this));
+        tasks.addTask(4, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
+		tasks.addTask(5, new LandWanderNestInBlockAI(this));
+		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 20));
+		tasks.addTask(7, new AgeableClimbingFlyingWalkingFlyHigh(this, false));
+		tasks.addTask(8, new LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI(this, false, false));
+		tasks.addTask(9, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
 	}
