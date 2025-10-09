@@ -285,9 +285,10 @@ public class EntityPrehistoricFloraCaihong extends EntityPrehistoricFloraLandCli
 		tasks.addTask(4, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(5, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(6, new PanicScreamAI(this, 1.5F));
-		tasks.addTask(7, new LandWanderNestAI(this));
-		tasks.addTask(8, new LandWanderAvoidWaterClimbingAI(this, 0.8D, 20));
-		tasks.addTask(9, new EntityLookIdleAI(this));
+        tasks.addTask(7, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
+		tasks.addTask(8, new LandWanderNestAI(this));
+		tasks.addTask(9, new LandWanderAvoidWaterClimbingAI(this, 0.8D, 20));
+		tasks.addTask(10, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 

@@ -119,11 +119,12 @@ public class EntityPrehistoricFloraCaptorhinus extends EntityPrehistoricFloraLan
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(3, new PanicAI(this, 1.0D));
 		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(5, new LandWanderNestInBlockAI(this));
-		tasks.addTask(6, new EntityAIWanderAvoidWater(this, 1.0D));
-		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityLookIdleAI(this));
+        tasks.addTask(5, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
+		tasks.addTask(6, new LandWanderNestInBlockAI(this));
+		tasks.addTask(7, new EntityAIWanderAvoidWater(this, 1.0D));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
 //		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

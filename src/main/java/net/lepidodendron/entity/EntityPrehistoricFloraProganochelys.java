@@ -161,7 +161,6 @@ public class EntityPrehistoricFloraProganochelys extends EntityPrehistoricFloraL
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, false, 0));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		//tasks.addTask(3, new AttackAI(this, 1.6D, false, this.getAttackLength()));
-        tasks.addTask(4, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
 		tasks.addTask(3, new LandWanderNestInBlockAI(this));
 		tasks.addTask(4, new LandWanderAvoidWaterAI(this, 1.0D, 60));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));

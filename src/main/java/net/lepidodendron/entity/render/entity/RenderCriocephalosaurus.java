@@ -15,7 +15,7 @@ public class RenderCriocephalosaurus extends RenderLivingBaseWithBook<EntityPreh
         super(mgr, new ModelCriocephalosaurus(), 0.5f);
     }
     public static float getScaler() {
-        return 0.81f;
+        return 0.35f;
     }
 
     @Override
