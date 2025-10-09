@@ -12,7 +12,7 @@ public class RenderPravitoceras extends RenderLivingBaseWithBook<EntityPrehistor
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pravitoceras.png");
 
     public static float getScaler() {
-        return 0.3F;
+        return 0.225F;
     }
     public RenderPravitoceras(RenderManager mgr) {
         super(mgr, new ModelPravitoceras(), 0.0f);

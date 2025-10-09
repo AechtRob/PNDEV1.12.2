@@ -12,7 +12,7 @@ public class RenderAmakusaichthys extends RenderLivingBaseWithBook<EntityPrehist
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/amakusaichthys.png");
 
     public static float getScaler() {
-        return 0.4F;
+        return 0.34F;
     }
     public RenderAmakusaichthys(RenderManager mgr) {
         super(mgr, new ModelAmakusaichthys(), 0.0f);

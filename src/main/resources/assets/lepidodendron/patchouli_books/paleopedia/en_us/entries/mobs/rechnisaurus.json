@@ -1,0 +1,57 @@
+{
+	"name": "Rechnisaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rechnisaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_rechnisaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rechnisaurus",
+			"title": "Rechnisaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Anomodontia$(br)>Kannemeyeriidae"
+		},
+        	{
+            "type": "entity",
+            "name": "R. cristarhynchus",
+            "entity": "lepidodendron:prehistoric_flora_rechnisaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rechnisaurus",
+			"type": "text",
+			"text": "Rechnisaurus is a species of kannemeyeriid dicynodont from India and possibly Tanzania. This dicynodont, which could've potentially measured up to 2.5-3 m long, is known from two skulls. The first one was discovered in the Yarapalli Formation in India, in the Pranhita-Godavari near the town of Rechni, from which the name came, while the other was found in Tanzania around the areas of the Ruvuma river."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rechnisaurus",
+			"type": "text",
+			"text": "The animal wasn't always known under its current name in fact, for a long time, Rechnisaurus was considered a species under the genus Kannemeyeria. The animal got its name in 1970 and soon after, more specimens were discovered in Zambia and Namibia, however those were later responsible for the species once again being classified as Kannemeyeria."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rechnisaurus",
+			"type": "text",
+			"text": "In 1989 a further re-analysis of the remains resulted in Rechnisaurus once more being considered valid, though this time with only the Indian specimen considered part of the genus. A Tanzanian skull, recovered from the Manda Beds, is now classified as a second specimen of Rechnisaurus, however this classification has been debated and the remains are under scrutiny as of the time of writing."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rechnisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rechnisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rechnisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rechnisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rechnisaurus"
+		}
+	]
+}

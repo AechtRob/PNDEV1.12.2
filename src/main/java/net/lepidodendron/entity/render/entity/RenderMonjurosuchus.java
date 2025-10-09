@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderMonjurosuchus extends RenderLivingBaseWithBook<EntityPrehistoricFloraMonjurosuchus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/monjurosuchus.png");
 
-    public static float getScaler() {return 0.17f;}
+    public static float getScaler() {return 0.238f;}
     public RenderMonjurosuchus(RenderManager mgr) {
         super(mgr, new ModelMonjurosuchus(), 0.3f);
     }

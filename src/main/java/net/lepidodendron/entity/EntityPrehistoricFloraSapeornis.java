@@ -40,7 +40,7 @@ public class EntityPrehistoricFloraSapeornis extends EntityPrehistoricFloraLandC
 		minWidth = 0.10F;
 		maxWidth = 0.35F;
 		maxHeight = 0.45F;
-		maxHealthAgeable = 3.0D;
+		maxHealthAgeable = 5.0D;
 		setNoAI(!true);
 		enablePersistence();
 	}

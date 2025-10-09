@@ -1,0 +1,57 @@
+{
+	"name": "Koleken",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/koleken_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_koleken",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_koleken",
+			"title": "Koleken",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theorpoda$(br)>Abelisauridae$(br)>Carnotaurini"
+		},
+        	{
+            "type": "entity",
+            "name": "K. inakayali",
+            "entity": "lepidodendron:prehistoric_flora_koleken",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_koleken",
+			"type": "text",
+			"text": "Koleken was a species of abelisaurid theropod that lived during the Maastrichtian stage of the Late Cretaceousin what is now the Chubut Province of Argentina. Discovered in 2015 at the La Colonia Formation and officially scientifically described in 2024, this dinosaur is known from a single immature specimen roughly 4.97 metres long and at least 6 years old. Koleken would likely have reached significantly larger sizes when fully grown."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_koleken",
+			"type": "text",
+			"text": "The genus name Koleken means, coming from clay and water, in the Teushen language in reference to the sedimentary estuarine claystone deposits in which the fossil was found, and the species name inakayali honours Inakayal, one of the last chiefs of the Tehuelches. Much like the more famous Carnotaurus, Koleken was in the abelisaurid tribe Carnotaurini."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_koleken",
+			"type": "text",
+			"text": "Members of this tribe were typically characterized by being some of the more derived abelisaurids, with a relatively lightweight build, very short and narrow skulls, extremely reduced arms even by abelisaurid standards, and either horns or rough patches on the frontal and nasal bones. Although quite similar to Carnotaurus in general anatomy, Koleken differed from it in key ways, most notably in characteristics of the skull, vertebrae, and leg bones."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_koleken"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_koleken"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_koleken"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_koleken"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_koleken"
+		}
+	]
+}

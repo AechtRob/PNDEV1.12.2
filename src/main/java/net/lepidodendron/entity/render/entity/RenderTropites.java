@@ -12,7 +12,7 @@ public class RenderTropites extends RenderLivingBaseWithBook<EntityPrehistoricFl
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tropites.png");
 
     public static float getScaler() {
-        return 0.325F;
+        return 0.1625F;
     }
     public RenderTropites(RenderManager mgr) {
         super(mgr, new ModelTropites(), 0.0f);

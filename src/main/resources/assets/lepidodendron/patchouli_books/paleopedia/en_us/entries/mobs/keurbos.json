@@ -1,0 +1,52 @@
+{
+"name": "Keurbos",
+"read_by_default": true,
+"icon": "paleopedia:textures/items/keurbos_icon.png",
+"category": "lepidodendron:mobs",
+"turnin": "lepidodendron:pf_adv_book_keurbos",
+"pages": [
+{
+"trigger": "lepidodendron:pf_adv_book_keurbos",
+"title": "Keurbos",
+"type": "quest",
+"text": "$(l)Temporal Range:$()  Ordovician$(br2)$(l)(br2)>Arthropoda$(br)>incertae sedis"
+},
+        {
+            "type": "entity",
+            "name": "K. susanae",
+            "entity": "lepidodendron:prehistoric_flora_keurbos",
+            "rotate": false,
+            "default_rotation": 0
+       },
+{
+"advancement": "lepidodendron:pf_adv_book_keurbos",
+"type": "text",
+"text": "Keurbos is a genus of arthropod of uncertain placement that is known from the Ordovician Soom Shale. In 2007, illustrator Alan Male published art of two enigmatic fossil animals. One was Carboniferous Typhloesus, and another animal is titled as Keurbosia susanae. This is an enigmatic fossil known from Ordovician fossil site Soom Shale in South Africa, nicknamed as Sue."
+},
+{
+"advancement": "lepidodendron:pf_adv_book_keurbos",
+"type": "text",
+"text": "This is extremely rare fossil, currently only two are known, and both are poorly preserved, so it remained long time undescribed. However, in 2025, it finally got described and was given the valid name Keurbos susanae. This pretty large, around 43 cm long critter is identified as an arthropod, though it is not known what group it belongs to."
+},
+{
+"type": "lepidodendron:diet",
+"mob": "lepidodendron:prehistoric_flora_keurbos"
+},
+{
+"type": "lepidodendron:biomelocations1",
+"mob": "lepidodendron:prehistoric_flora_keurbos"
+},
+{
+"type": "lepidodendron:biomelocations2",
+"mob": "lepidodendron:prehistoric_flora_keurbos"
+},
+{
+"type": "lepidodendron:biomelocations3",
+"mob": "lepidodendron:prehistoric_flora_keurbos"
+},
+{
+"type": "lepidodendron:biomelocations4",
+"mob": "lepidodendron:prehistoric_flora_keurbos"
+}
+]
+}

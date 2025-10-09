@@ -15,7 +15,7 @@ public class RenderMesodermochelys extends RenderLivingBaseWithBook<EntityPrehis
         super(mgr, new ModelMesodermochelys(), 0.0f);
     }
 
-    public static float getScaler() {return 0.55f; }
+    public static float getScaler() {return 0.6875f; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMesodermochelys entity) {
