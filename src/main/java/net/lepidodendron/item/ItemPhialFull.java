@@ -91,6 +91,7 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_dvinosaurus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_edestus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_myriapod_eoarthropleura", "inventory"),
+            new ModelResourceLocation("lepidodendron:entities/phial_eggs_myriapod_crussolum", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_eryops", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_eurypterus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_fadenia_carboniferous", "inventory"),

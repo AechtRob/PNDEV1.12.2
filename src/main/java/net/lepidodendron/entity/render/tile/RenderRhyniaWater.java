@@ -43,6 +43,9 @@ public class RenderRhyniaWater extends TileEntitySpecialRenderer<BlockRhyniaWate
                 } catch (RuntimeException exception) {
                     texture = "minecraft:blocks/dirt";
                 }
+                if (texture.equalsIgnoreCase("missingno")) {
+                    texture = "minecraft:blocks/dirt";
+                }
             }
 
             texture = texture.replace(":", ":textures/");

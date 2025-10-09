@@ -105,8 +105,6 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 		}
 	}
 
-
-
 	@Override
 	public int getEggType(@Nullable String variantIn) {
 		return 20; //insect

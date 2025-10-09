@@ -192,7 +192,7 @@ public class WorldGenAncientMoss extends WorldGenerator
 					"lepidodendron:prehistoric_flora_hangingfly",
 					"lepidodendron:prehistoric_flora_fortiholcorpa",
 					"lepidodendron:prehistoric_flora_juracimbrophlebia",
-					"lepidodendron:prehistoric_flora_cretosaja",
+					"lepidodendron:prehistoric_flora_cretosaja"
 			};
 
 			ArrayList<String> mobStringValid = new ArrayList<String>();
