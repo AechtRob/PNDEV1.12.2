@@ -1,0 +1,47 @@
+{
+	"name": "Boiotremus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/boiotremus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_boiotremus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_boiotremus",
+			"title": "Boiotremus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Mollusca$(br)>Gastropoda$(br)>Bellerophontida$(br)>Bucaniidae$(br)>Tremanotinae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. insignis",
+            "entity": "lepidodendron:prehistoric_flora_boiotremus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_boiotremus",
+			"type": "text",
+			"text": "Boiotremus is a genus of snail found in Eastern Europe. It is notable for its particularly extreme aperture (opening), being nearly twice as long as the rest of the shell, and being shaped like a French horn. Boiotremus fossils are usually found on softer substrata. The wide aperture would have given the snail a wide foot, optimal for not raising sediment as well as for not sinking into the strata."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_boiotremus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_boiotremus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_boiotremus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_boiotremus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_boiotremus"
+		}
+	]
+}
