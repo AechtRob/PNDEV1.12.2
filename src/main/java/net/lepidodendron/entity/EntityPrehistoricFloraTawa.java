@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraTawa extends EntityPrehistoricFloraLandBase i
 		minWidth = 0.20F;
 		maxWidth = 0.5F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 10;
+		maxHealthAgeable = 18;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

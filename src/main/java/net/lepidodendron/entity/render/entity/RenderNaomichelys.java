@@ -15,7 +15,7 @@ public class RenderNaomichelys extends RenderLivingBaseWithBook<EntityPrehistori
         super(mgr, new ModelNaomichelys(), 0.0f);
     }
 
-    public static float getScaler() {return 0.33f; }
+    public static float getScaler() {return 0.429f; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraNaomichelys entity) {

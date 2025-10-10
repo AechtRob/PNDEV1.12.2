@@ -17,7 +17,7 @@ public class RenderMegateuthis extends RenderLivingBaseWithBook<EntityPrehistori
     }
 
     public static float getScaler() {
-        return 0.832F;
+        return 0.624F;
     }
 
     @Override

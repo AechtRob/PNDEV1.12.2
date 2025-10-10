@@ -1,0 +1,47 @@
+{
+	"name": "Caiuajara",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/caiuajara_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_caiuajara",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_caiuajara",
+			"title": "Caiuajara",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Pterosauria$(br)>Azdarchoidea$(br)>Tapejaridae$(br)>Tapejarini"
+		},
+        	{
+            "type": "entity",
+            "name": "C. dobruskii",
+            "entity": "lepidodendron:prehistoric_flora_caiuajara",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caiuajara",
+			"type": "text",
+			"text": "Caiuajara is a genus of tapejarid pterosaur known from the Early Cretaceous of Brazil. This pterosaur, which had a wingspan of around 2.5 meters, was named after the Caiuá Group, where it was discovered. Caiuajara's crest is thought to form more of a hatchet shape rather than the full rounded shape like seen in it relatives Tapejara and Tupandactylus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_caiuajara"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_caiuajara"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_caiuajara"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_caiuajara"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_caiuajara"
+		}
+	]
+}

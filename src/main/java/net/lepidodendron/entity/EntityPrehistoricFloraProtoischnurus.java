@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraProtoischnurus extends EntityPrehistoricFlora
 			maxHealthAgeable = 1.0D;
 		}
 		else {
-			maxHealthAgeable = 3.0D;
+			maxHealthAgeable = 2.0D;
 		}
 	}
 

@@ -32,7 +32,7 @@ public class EntityPrehistoricFloraPtychoceras extends EntityPrehistoricFloraNau
 		minWidth = 0.07F;
 		maxWidth = 0.3F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 3.0D;
+		maxHealthAgeable = 2.0D;
 	}
 
 	@Override

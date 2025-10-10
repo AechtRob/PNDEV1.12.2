@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraHypnovenator extends EntityPrehistoricFloraLa
 		minWidth = 0.20F;
 		maxWidth = 0.5F;
 		maxHeight = 0.9F;
-		maxHealthAgeable = 14.0D;
+		maxHealthAgeable = 10.0D;
 		SCRATCH_ANIMATION = Animation.create(120);
 		GRAPPLE_ANIMATION = Animation.create(this.getGrappleLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {

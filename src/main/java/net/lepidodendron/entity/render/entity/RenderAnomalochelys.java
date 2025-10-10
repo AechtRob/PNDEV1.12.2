@@ -15,7 +15,7 @@ public class RenderAnomalochelys extends RenderLivingBaseWithBook<EntityPrehisto
         super(mgr, new ModelAnomalochelys(), 0.0f);
     }
 
-    public static float getScaler() {return 0.3f; }
+    public static float getScaler() {return 0.39f; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAnomalochelys entity) {

@@ -81,7 +81,7 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 		minWidth = 0.3F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 1D;
+		maxHealthAgeable = 2D;
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			myriapodBuffer = new MillipedeBuffer();

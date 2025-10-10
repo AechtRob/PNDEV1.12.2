@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraMonjurosuchus extends EntityPrehistoricFloraS
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.1F;
-		maxHealthAgeable = 9.0D;
+		maxHealthAgeable = 5.0D;
 		EAT_ANIMATION = Animation.create(13);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

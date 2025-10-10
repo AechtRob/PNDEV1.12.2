@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderRechnisaurus extends RenderLivingBaseWithBook<EntityPrehistoricFloraRechnisaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rechnisaurus.png");
 
-    public static float getScaler() {return 0.67f;}
+    public static float getScaler() {return 0.536f;}
     public RenderRechnisaurus(RenderManager mgr) {
         super(mgr, new ModelRechnisaurus(), 0.3f);
     }

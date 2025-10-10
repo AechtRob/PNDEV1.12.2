@@ -12,7 +12,7 @@ public class RenderSoliclymenia extends RenderLivingBaseWithBook<EntityPrehistor
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/soliclymenia.png");
 
     public static float getScaler() {
-        return 0.27F;
+        return 0.15F;
     }
     public RenderSoliclymenia(RenderManager mgr) {
         super(mgr, new ModelSoliclymenia(), 0.0f);

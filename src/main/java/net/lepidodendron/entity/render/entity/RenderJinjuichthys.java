@@ -15,7 +15,7 @@ public class RenderJinjuichthys extends RenderLivingBaseWithBook<EntityPrehistor
         super(mgr, new ModelJinjuichthys(), 0.0f);
     }
 
-    public static float getScaler() {return 0.17F; }
+    public static float getScaler() {return 0.238F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraJinjuichthys entity) {

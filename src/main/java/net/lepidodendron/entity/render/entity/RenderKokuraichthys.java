@@ -15,7 +15,7 @@ public class RenderKokuraichthys extends RenderLivingBaseWithBook<EntityPrehisto
         super(mgr, new ModelKokuraichthys(), 0.0f);
     }
 
-    public static float getScaler() {return 0.13F; }
+    public static float getScaler() {return 0.195F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraKokuraichthys entity) {

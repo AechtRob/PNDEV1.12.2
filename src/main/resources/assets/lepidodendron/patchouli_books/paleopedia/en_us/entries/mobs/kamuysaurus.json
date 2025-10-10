@@ -1,0 +1,52 @@
+{
+	"name": "Kamuysaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kamuysaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_kamuysaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kamuysaurus",
+			"title": "Kamuysaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithopoda$(br)>Hadrosauridae$(br)>Edmontosaurini"
+		},
+        	{
+            "type": "entity",
+            "name": "K. japonicus",
+            "entity": "lepidodendron:prehistoric_flora_kamuysaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kamuysaurus",
+			"type": "text",
+			"text": "Kamuysaurus is a genus of known from the Late Cretaceous of Japan. The fossils of this hadrosaur were first discovered in Hokkaido in 2003, and full-scale excavation began in 2013. Until it was named in 2019. Kamuyasaurus is also the most complete dinosaur known from Japan with about 80% of its body having been recovered. It was long called, Mukawa-ryu, which is derived from the name of the town where it was discovered."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kamuysaurus",
+			"type": "text",
+			"text": "The Kamuy in Kamuysaurus means god in the Ainu language, which are the indigenous people of Hokkaido. The stratum in which this fossil was found is believed to have originally been a sea, so the body probably washed in. Around 8 m long, the individual was estimated to have been at least 9 years, probably around 12 to 13 years old at the time of death."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kamuysaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kamuysaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kamuysaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kamuysaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kamuysaurus"
+		}
+	]
+}

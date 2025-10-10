@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraConfuciusornis extends EntityPrehistoricFlora
 		minWidth = 0.3F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 3.0D;
+		maxHealthAgeable = 4.0D;
 		GRAPPLE_ANIMATION = Animation.create(getGrappleLength());
 	}
 

@@ -1,0 +1,52 @@
+{
+	"name": "Barosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/barosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_barosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_barosaurus",
+			"title": "Barosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Sauropoda$(br)>Diplodocidae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. lentus",
+            "entity": "lepidodendron:prehistoric_flora_barosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_barosaurus",
+			"type": "text",
+			"text": "Barosaurus is a diplodocid known from the Jurassic Morrison Formation of the United States. Its genus name roughly translates to, heavy lizard, with its species name translates to, slow. While not as popular as its cousin Diplodous, it is still an interesting sauropod in its own right. What makes this diplodocid stand out amongst its peers is the quite long neck, this is likely because of it repurposing one of its dorsal vertebra to be a cervical vertebra."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_barosaurus",
+			"type": "text",
+			"text": "Because of its close relative Kaatedocus, we can infer that diplodocids like Barosaurus could've had a long line of keratinous spines that go down the length of the entire body from neck to tail tip."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_barosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_barosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_barosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_barosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_barosaurus"
+		}
+	]
+}

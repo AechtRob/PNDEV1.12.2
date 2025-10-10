@@ -1,0 +1,52 @@
+{
+	"name": "Incisivosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/incisivosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_incisivosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_incisivosaurus",
+			"title": "Incisivosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Oviraptorosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "I. gauthieri",
+            "entity": "lepidodendron:prehistoric_flora_incisivosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_incisivosaurus",
+			"type": "text",
+			"text": "Incisivosaurus is a genus of oviraptorosaur known from the Yixan Formation of Early Cretaceous China.  Incisivosaurus bears little resemblance to later oviraptorosaurs with a skull that is elongated, crestless, and evidently toothed, in contrast to the more typical members of this clade. Incisivosaurus is among the most basal oviraptorosaurs and was important in illustrating that many of the group’s most bird-like features were the result of convergence."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_incisivosaurus",
+			"type": "text",
+			"text": "This animal was quite small and is known from a single 10 cm skull along with two referred juvenile specimens. It was likely a close relative of Protarchaeopteryx, with some researchers suggesting synonymy between the two genera. However, due to the crushed nature of the Protarchaeopteryx skull and the lack of an adult postcranial skeleton of Incisivosaurus, comparison remains difficult."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_incisivosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_incisivosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_incisivosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_incisivosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_incisivosaurus"
+		}
+	]
+}

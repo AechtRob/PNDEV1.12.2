@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraChalawan extends EntityPrehistoricFloraSwimmi
 		minWidth = 0.1F;
 		maxWidth = 1.5F;
 		maxHeight = 0.99F;
-		maxHealthAgeable = 28.0D;
+		maxHealthAgeable = 50.0D;
 		EAT_ANIMATION = Animation.create(35);
 		STAND_ANIMATION = Animation.create(560);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
