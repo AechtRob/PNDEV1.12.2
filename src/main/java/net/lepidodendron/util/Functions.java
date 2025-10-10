@@ -545,6 +545,9 @@ public class Functions {
 
     @Nullable
     public static SoundEvent getDimensionLivingSound(int dim, World worldIn) {
+        if (worldIn == null) {
+            return null;
+        }
         SoundEvent soundEventOut = null;
         for (int i = 0; i <= 2; i++) {
             if (soundEventOut != null) {
@@ -556,6 +559,9 @@ public class Functions {
                     resourceLocation = resourceLocation.substring(0, resourceLocation.indexOf("@"));
                 }
                 EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(resourceLocation));
+                if (ee == null) {
+                    return null;
+                }
                 EntityLiving entity = (EntityLiving) ee.newInstance(worldIn);
                 if (entity != null) {
                     try { //Uggggh, reflection :(
