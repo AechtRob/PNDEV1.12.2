@@ -5278,7 +5278,13 @@ public class LepidodendronSorter {
     public static final int trichopherophyton = 8217;
     public static final int trichopherophyton_spore = 8218;
     public static final int trackway_arthropod_straight = 8219;
-    public static final int trackway_arthropod_bent = 82020;
+    public static final int trackway_arthropod_bent = 8220;
+    public static final int crinoid_monstrocrinus = 8221;
+    public static final int crinoid_rhenocrinus = 8222;
+    public static final int crinoid_senariocrinus = 8223;
+    public static final int crinoid_hapalocrinus = 8224;
+    public static final int crinoid_gennaeocrinus = 8225;
+    public static final int crinoid_boliviacrinus = 8226;
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;

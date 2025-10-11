@@ -1,0 +1,212 @@
+{
+  "variants": {
+    "age=0,topshoot=false": {
+      "model": "lepidodendron:crinoid_monstrocrinus"
+    },
+    "age=1,topshoot=false": {
+      "model": "lepidodendron:crinoid_monstrocrinus"
+    },
+    "age=2,topshoot=false": {
+      "model": "lepidodendron:crinoid_monstrocrinus"
+    },
+    "age=3,topshoot=false": {
+      "model": "lepidodendron:crinoid_monstrocrinus"
+    },
+    "age=4,topshoot=false": {
+      "model": "lepidodendron:crinoid_monstrocrinus"
+    },
+    "age=5,topshoot=false": {
+      "model": "lepidodendron:crinoid_monstrocrinus"
+    },
+    "age=6,topshoot=false": {
+      "model": "lepidodendron:crinoid_monstrocrinus"
+    },
+    "age=7,topshoot=false": {
+      "model": "lepidodendron:crinoid_monstrocrinus"
+    },
+    "age=8,topshoot=false": {
+      "model": "lepidodendron:crinoid_monstrocrinus"
+    },
+    "age=9,topshoot=false": {
+      "model": "lepidodendron:crinoid_monstrocrinus"
+    },
+    "age=10,topshoot=false": {
+      "model": "lepidodendron:crinoid_monstrocrinus"
+    },
+    "age=11,topshoot=false": {
+      "model": "lepidodendron:crinoid_monstrocrinus"
+    },
+    "age=12,topshoot=false": {
+      "model": "lepidodendron:crinoid_monstrocrinus"
+    },
+    "age=13,topshoot=false": {
+      "model": "lepidodendron:crinoid_monstrocrinus"
+    },
+    "age=14,topshoot=false": {
+      "model": "lepidodendron:crinoid_monstrocrinus"
+    },
+    "age=15,topshoot=false": {
+      "model": "lepidodendron:crinoid_monstrocrinus"
+    },
+  "age=0,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_monstrocrinus_top"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 270 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 270 }
+    ],
+    "age=1,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_monstrocrinus_top"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 270 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 270 }
+    ],
+    "age=2,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_monstrocrinus_top"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 270 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 270 }
+    ],
+    "age=3,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_monstrocrinus_top"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 270 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 270 }
+    ],
+    "age=4,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_monstrocrinus_top"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 270 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 270 }
+    ],
+    "age=5,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_monstrocrinus_top"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 270 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 270 }
+    ],
+    "age=6,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_monstrocrinus_top"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 270 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 270 }
+    ],
+    "age=7,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_monstrocrinus_top"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 270 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 270 }
+    ],
+    "age=8,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_monstrocrinus_top"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 270 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 270 }
+    ],
+    "age=9,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_monstrocrinus_top"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 270 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 270 }
+    ],
+    "age=10,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_monstrocrinus_top"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 270 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 270 }
+    ],
+    "age=11,topshoot=true": [
+      {"model": "lepidodendron:crinoid_monstrocrinus_top"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 270 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 270 }
+    ],
+    "age=12,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_monstrocrinus_top"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 270 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 270 }
+    ],
+    "age=13,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_monstrocrinus_top"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 270 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 270 }
+    ],
+    "age=14,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_monstrocrinus_top"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 270 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 270 }
+    ],
+    "age=15,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_monstrocrinus_top"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top", "y": 270 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var"},
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_monstrocrinus_top_var", "y": 270 }
+    ]
+  }
+}

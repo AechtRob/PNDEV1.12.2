@@ -234,6 +234,12 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CRINOID_CYATHOCRINUS = new CustomTrigger("pf_book_crinoid_cyathocrinus");
     public static final CustomTrigger CLICK_CRINOID_DIZYGOCRINUS = new CustomTrigger("pf_book_crinoid_dizygocrinus");
     public static final CustomTrigger CLICK_CRINOID_ENCRINUS = new CustomTrigger("pf_book_crinoid_encrinus");
+    public static final CustomTrigger CLICK_CRINOID_MONSTROCRINUS = new CustomTrigger("pf_book_crinoid_monstrocrinus");
+    public static final CustomTrigger CLICK_CRINOID_RHENOCRINUS = new CustomTrigger("pf_book_crinoid_rhenocrinus");
+    public static final CustomTrigger CLICK_CRINOID_SENARIOCRINUS = new CustomTrigger("pf_book_crinoid_senariocrinus");
+    public static final CustomTrigger CLICK_CRINOID_HAPALOCRINUSS = new CustomTrigger("pf_book_crinoid_hapalocrinus");
+    public static final CustomTrigger CLICK_CRINOID_GENNAEOCRINUS = new CustomTrigger("pf_book_crinoid_gennaeocrinus");
+    public static final CustomTrigger CLICK_CRINOID_BOLIVIACRINUS = new CustomTrigger("pf_book_crinoid_boliviacrinus");
     public static final CustomTrigger CLICK_CRINOID_EUCALYPTOCRINITES = new CustomTrigger("pf_book_crinoid_eucalyptocrinites");
     public static final CustomTrigger CLICK_CRINOID_HOLOCRINUS = new CustomTrigger("pf_book_crinoid_holocrinus");
     public static final CustomTrigger CLICK_CRINOID_JIMBACRINUS = new CustomTrigger("pf_book_crinoid_jimbacrinus");
@@ -2320,6 +2326,12 @@ public class ModTriggers
             CLICK_CRINOID_CYATHOCRINUS,
             CLICK_CRINOID_DIZYGOCRINUS,
             CLICK_CRINOID_ENCRINUS,
+            CLICK_CRINOID_MONSTROCRINUS,
+            CLICK_CRINOID_RHENOCRINUS,
+            CLICK_CRINOID_SENARIOCRINUS,
+            CLICK_CRINOID_HAPALOCRINUSS,
+            CLICK_CRINOID_GENNAEOCRINUS,
+            CLICK_CRINOID_BOLIVIACRINUS,
             CLICK_CRINOID_EUCALYPTOCRINITES,
             CLICK_CRINOID_HOLOCRINUS,
             CLICK_CRINOID_JIMBACRINUS,
