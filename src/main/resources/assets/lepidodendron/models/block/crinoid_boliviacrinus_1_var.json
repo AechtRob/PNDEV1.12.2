@@ -2,7 +2,7 @@
     "ambientocclusion": false,
     "textures": {
         "particle": "lepidodendron:items/boliviacrinus_inventory",
-        "bottom": "lepidodendron:blocks/boliviacrinus2"
+        "bottom": "lepidodendron:blocks/boliviacrinus1_var"
     },
     "elements": [
         {   "from": [ 0.8, 0, 8 ],

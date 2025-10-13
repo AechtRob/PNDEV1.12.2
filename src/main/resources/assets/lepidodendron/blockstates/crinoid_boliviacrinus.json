@@ -12,7 +12,19 @@
       {"model": "lepidodendron:crinoid_boliviacrinus_3", "y": 180 },
       {"model": "lepidodendron:crinoid_boliviacrinus_1", "y": 270 },
       {"model": "lepidodendron:crinoid_boliviacrinus_2", "y": 270 },
-      {"model": "lepidodendron:crinoid_boliviacrinus_3", "y": 270 }
+      {"model": "lepidodendron:crinoid_boliviacrinus_3", "y": 270 },
+      {"model": "lepidodendron:crinoid_boliviacrinus_1_var"},
+      {"model": "lepidodendron:crinoid_boliviacrinus_2_var"},
+      {"model": "lepidodendron:crinoid_boliviacrinus_3_var"},
+      {"model": "lepidodendron:crinoid_boliviacrinus_1_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_boliviacrinus_2_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_boliviacrinus_3_var", "y": 90 },
+      {"model": "lepidodendron:crinoid_boliviacrinus_1_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_boliviacrinus_2_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_boliviacrinus_3_var", "y": 180 },
+      {"model": "lepidodendron:crinoid_boliviacrinus_1_var", "y": 270 },
+      {"model": "lepidodendron:crinoid_boliviacrinus_2_var", "y": 270 },
+      {"model": "lepidodendron:crinoid_boliviacrinus_3_var", "y": 270 }
     ]
   }
 }
