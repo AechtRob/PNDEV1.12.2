@@ -131,7 +131,7 @@ public class BlockCrinoidAcanthocrinus extends ElementsLepidodendronMod.ModEleme
 			BiomeDevonian biomeDev = (BiomeDevonian) biome;
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
 				biomeCriteria = true;
-				multiplier = 10;
+				multiplier = 2;
 			}
 			else {
 				biomeCriteria = false;
@@ -142,7 +142,7 @@ public class BlockCrinoidAcanthocrinus extends ElementsLepidodendronMod.ModEleme
 
 			return;
 
-		for (int i = 0; i < (12 * multiplier); i++) {
+		for (int i = 0; i < (2 * multiplier); i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
