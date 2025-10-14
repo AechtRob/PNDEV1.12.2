@@ -235,6 +235,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CRINOID_DIZYGOCRINUS = new CustomTrigger("pf_book_crinoid_dizygocrinus");
     public static final CustomTrigger CLICK_CRINOID_ENCRINUS = new CustomTrigger("pf_book_crinoid_encrinus");
     public static final CustomTrigger CLICK_CRINOID_MONSTROCRINUS = new CustomTrigger("pf_book_crinoid_monstrocrinus");
+    public static final CustomTrigger CLICK_CRINOID_MONSTROCRINUS_2 = new CustomTrigger("pf_book_crinoid_monstrocrinus_2");
     public static final CustomTrigger CLICK_CRINOID_RHENOCRINUS = new CustomTrigger("pf_book_crinoid_rhenocrinus");
     public static final CustomTrigger CLICK_CRINOID_SENARIOCRINUS = new CustomTrigger("pf_book_crinoid_senariocrinus");
     public static final CustomTrigger CLICK_CRINOID_HAPALOCRINUSS = new CustomTrigger("pf_book_crinoid_hapalocrinus");
@@ -1042,6 +1043,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_LANCEASPIS = new CustomTrigger("pf_book_lanceaspis");
     public static final CustomTrigger CLICK_MONTECARIS = new CustomTrigger("pf_book_montecaris");
     public static final CustomTrigger CLICK_RHENOCYSTIS = new CustomTrigger("pf_book_rhenocystis");
+    public static final CustomTrigger CLICK_CRINOID_ACANTHOCRINUS = new CustomTrigger("pf_book_crinoid_acanthocrinus");
     public static final CustomTrigger CLICK_WILLWERATHIA = new CustomTrigger("pf_book_willwerathia");
     public static final CustomTrigger CLICK_PARMASTEGA = new CustomTrigger("pf_book_parmastega");
     public static final CustomTrigger CLICK_TIKTAALIK = new CustomTrigger("pf_book_tiktaalik");
@@ -2327,6 +2329,7 @@ public class ModTriggers
             CLICK_CRINOID_DIZYGOCRINUS,
             CLICK_CRINOID_ENCRINUS,
             CLICK_CRINOID_MONSTROCRINUS,
+            CLICK_CRINOID_MONSTROCRINUS_2,
             CLICK_CRINOID_RHENOCRINUS,
             CLICK_CRINOID_SENARIOCRINUS,
             CLICK_CRINOID_HAPALOCRINUSS,
@@ -3142,6 +3145,7 @@ public class ModTriggers
             CLICK_REMIGIOMONTANUS,
             CLICK_RETIFACIES,
             CLICK_RHENOCYSTIS,
+            CLICK_CRINOID_ACANTHOCRINUS,
             CLICK_RHIZODUS,
             CLICK_ROACHOID,
             CLICK_ROBERTIA,

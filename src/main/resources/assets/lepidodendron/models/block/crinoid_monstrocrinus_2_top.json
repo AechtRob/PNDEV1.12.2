@@ -1,10 +1,10 @@
 {
 	"parent": "lepidodendron:block/cube_noao",
 	"textures": {
-		"0": "lepidodendron:blocks/monstrocrinus",
-		"1": "lepidodendron:blocks/monstrocrinus_stem",
-		"2": "lepidodendron:blocks/monstrocrinus_tentacles",
-		"particle": "lepidodendron:blocks/monstrocrinus"
+		"0": "lepidodendron:blocks/monstrocrinus_2",
+		"1": "lepidodendron:blocks/monstrocrinus_2_stem",
+		"2": "lepidodendron:blocks/monstrocrinus_2_tentacles",
+		"particle": "lepidodendron:blocks/monstrocrinus_2"
 	},
 	"elements": [
 		{
@@ -12,8 +12,8 @@
 			"to": [16, 8, 6],
 			"rotation": {"angle": 45, "axis": "z", "origin": [8, 8, 6]},
 			"faces": {
-				"up": {"uv": [16, 0, 0, 16], "rotation": 270, "texture": "#0"},
-				"down": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#0"}
+				"up": {"uv": [16, 16, 0, 0], "rotation": 270, "texture": "#0"},
+				"down": {"uv": [0, 16, 16, 0], "rotation": 270, "texture": "#0"}
 			}
 		},
 		{

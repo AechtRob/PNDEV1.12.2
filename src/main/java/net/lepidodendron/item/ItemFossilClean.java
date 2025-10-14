@@ -1227,6 +1227,8 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_crinoid_dizygocrinus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_crinoid_encrinus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_crinoid_monstrocrinus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_crinoid_monstrocrinus_2_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_crinoid_macanthocrinus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_crinoid_rhenocrinus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_crinoid_senariocrinus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_crinoid_hapalocrinus_clean", "inventory"),

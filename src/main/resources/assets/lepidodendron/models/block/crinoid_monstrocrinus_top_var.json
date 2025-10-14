@@ -8,18 +8,18 @@
 	},
 	"elements": [
 		{
-			"from": [13, 3, -10],
-			"to": [13, 19, 6],
-			"rotation": {"angle": 45, "axis": "z", "origin": [13, 3, 6]},
+			"from": [0, 8, -10],
+			"to": [16, 8, 6],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 8, 6]},
 			"faces": {
-				"east": {"uv": [16, 0, 0, 16], "texture": "#0"},
-				"west": {"uv": [0, 0, 16, 16], "texture": "#0"}
+				"up": {"uv": [16, 0, 0, 16], "rotation": 270, "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#0"}
 			}
 		},
 		{
 			"from": [0, 8, -10],
 			"to": [16, 8, 6],
-			"rotation": {"angle": 45, "axis": "z", "origin": [8, 8, 6]},
+			"rotation": {"angle": -45, "axis": "z", "origin": [8, 8, 6]},
 			"faces": {
 				"up": {"uv": [16, 0, 0, 16], "rotation": 270, "texture": "#0"},
 				"down": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#0"}
@@ -56,6 +56,42 @@
 			"from": [0, 8, -9],
 			"to": [16, 8, 7],
 			"rotation": {"angle": 0, "axis": "z", "origin": [8, 8, 7]},
+			"faces": {
+				"up": {"uv": [16, 0, 0, 16], "rotation": 270, "texture": "#2"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#2"}
+			}
+		},
+		{
+			"from": [8, 0, -9],
+			"to": [8, 16, 7],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [8, 8, 7]},
+			"faces": {
+				"east": {"uv": [16, 0, 0, 16], "texture": "#2"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		},
+		{
+			"from": [0, 8, -9],
+			"to": [16, 8, 7],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [8, 8, 7]},
+			"faces": {
+				"up": {"uv": [16, 0, 0, 16], "rotation": 270, "texture": "#2"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#2"}
+			}
+		},
+		{
+			"from": [8, 0, -9],
+			"to": [8, 16, 7],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [8, 8, 7]},
+			"faces": {
+				"east": {"uv": [16, 0, 0, 16], "texture": "#2"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		},
+		{
+			"from": [0, 8, -9],
+			"to": [16, 8, 7],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [8, 8, 7]},
 			"faces": {
 				"up": {"uv": [16, 0, 0, 16], "rotation": 270, "texture": "#2"},
 				"down": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#2"}
