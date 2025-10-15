@@ -248,12 +248,16 @@ public class BlockGreenCodiumAlgae extends ElementsLepidodendronMod.ModElement {
 			multiplier = 5;
 		}
 
+		boolean forced = false;
+
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_icebergs")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_shore_frozen")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_beach_frozen")
-		)
-			multiplier = 24;
+		) {
+			multiplier = 6;
+			forced = true;
+		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_algal_reef")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
@@ -265,7 +269,6 @@ public class BlockGreenCodiumAlgae extends ElementsLepidodendronMod.ModElement {
 		)
 			multiplier = 24;
 
-		boolean forced = false;
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")
 		) {
 			multiplier = 5;

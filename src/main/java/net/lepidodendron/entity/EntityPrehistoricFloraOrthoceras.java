@@ -18,13 +18,11 @@ import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -180,26 +178,26 @@ public class EntityPrehistoricFloraOrthoceras extends EntityPrehistoricFloraNaut
 				this.bodyAngle = 0;
 			}
 		}
-		if (this.isEntityAlive() && isInWater()) {
-			if (this.isAtBottom()) {
-				//Feeding from bottom pose:
-				BlockPos posIn = this.getPosition();
-				World worldIn = this.world;
-				//worldIn.playSound(player, posIn, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.5F, 2.6F + (worldIn.rand.nextFloat() - worldIn.rand.nextFloat()) * 0.8F);
-				if (worldIn instanceof WorldServer) {
-					if (Math.random() > 0.3) {
-						for (int k = 0; k < 8; ++k) {
-							((WorldServer) worldIn).spawnParticle(EnumParticleTypes.WATER_BUBBLE, posIn.getX(), posIn.getY(), posIn.getZ(), (int) 1, 1, 1, 1, 0.2, new int[0]);
-						}
-					}
-					if (Math.random() > 0.4) {
-						for (int k = 0; k < 4; ++k) {
-							((WorldServer) worldIn).spawnParticle(EnumParticleTypes.SMOKE_NORMAL, posIn.getX(), posIn.getY(), posIn.getZ(), (int) 1, 1, 1, 1, 0.1, new int[0]);
-						}
-					}
-				}
-			}
-		}
+//		if (this.isEntityAlive() && isInWater()) {
+//			if (this.isAtBottom()) {
+//				//Feeding from bottom pose:
+//				BlockPos posIn = this.getPosition();
+//				World worldIn = this.world;
+//				//worldIn.playSound(player, posIn, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.5F, 2.6F + (worldIn.rand.nextFloat() - worldIn.rand.nextFloat()) * 0.8F);
+//				if (worldIn instanceof WorldServer) {
+//					if (Math.random() > 0.3) {
+//						for (int k = 0; k < 8; ++k) {
+//							((WorldServer) worldIn).spawnParticle(EnumParticleTypes.WATER_BUBBLE, posIn.getX(), posIn.getY(), posIn.getZ(), (int) 1, 1, 1, 1, 0.2, new int[0]);
+//						}
+//					}
+//					if (Math.random() > 0.4) {
+//						for (int k = 0; k < 4; ++k) {
+//							((WorldServer) worldIn).spawnParticle(EnumParticleTypes.SMOKE_NORMAL, posIn.getX(), posIn.getY(), posIn.getZ(), (int) 1, 1, 1, 1, 0.1, new int[0]);
+//						}
+//					}
+//				}
+//			}
+//		}
 	}
 
 	@Nullable
