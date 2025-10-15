@@ -146,7 +146,7 @@ public class BlockCrinoidPisocrinus extends ElementsLepidodendronMod.ModElement 
 
 		int multiplier = 1;
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
-			multiplier = 10;
+			multiplier = 15;
 		}
 
 		for (int i = 0; i < 12 * multiplier; i++) {

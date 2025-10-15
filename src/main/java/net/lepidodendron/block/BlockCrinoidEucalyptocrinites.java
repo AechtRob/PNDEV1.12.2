@@ -201,11 +201,11 @@ public class BlockCrinoidEucalyptocrinites extends ElementsLepidodendronMod.ModE
 	}
 
 	private static int crinoidHeight(World worldIn, BlockPos pos, Random random) {
-		if (worldIn.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
-			if (random.nextInt(8) != 0) {
-				return BlockCrinoidEucalyptocrinites.BlockCustom.crinoidheight;
-			}
-		}
+//		if (worldIn.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
+//			if (random.nextInt(8) != 0) {
+//				return BlockCrinoidEucalyptocrinites.BlockCustom.crinoidheight;
+//			}
+//		}
 		return 1 + random.nextInt(random.nextInt(random.nextInt(BlockCrinoidEucalyptocrinites.BlockCustom.crinoidheight) + 1) + 1);
 	}
 	
