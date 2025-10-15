@@ -243,7 +243,7 @@ public class AlgaeGenerator extends WorldGenerator
 					}
 
 					//And check that algae do not generate too deep and some other tests:
-					if (algae && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 10) && !worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
+					if (algae && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 10) && !worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean") && !worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")) {
 						waterDepthCheckMin = false;
 					}
 					if (this.algae == BlockRedAlgaeMat.block && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 30) && !worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {

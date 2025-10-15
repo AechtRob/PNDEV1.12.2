@@ -189,7 +189,7 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")
 		) {
-			multiplier = 2;
+			multiplier = 1;
 			forced = true;
 		}
 

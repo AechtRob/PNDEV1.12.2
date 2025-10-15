@@ -141,6 +141,7 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 			return;
 
 		int multiplier = 1;
+		boolean forced = false;
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
@@ -172,7 +173,6 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_lowlands")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_wetlands")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")
 
 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_creek_coastal")
@@ -195,10 +195,18 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 			multiplier = 8;
 		}
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")) {
+			multiplier = 30;
+			forced = true;
+		}
+
 		for (int i = 0; i < 12 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
+			if (forced) {
+				i11 = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, i11, l14), world).getY() + 1;
+			}
 			(new WorldGenReed() {
 				@Override
 				public boolean generate(World world, Random random, BlockPos pos) {
@@ -348,6 +356,8 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 			if ((world.getBlockState(pos.down()).getMaterial() != Material.SAND)
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.ROCK)
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.GROUND)
+				&& (world.getBlockState(pos.down()).getMaterial() != Material.CORAL)
+				&& (world.getBlockState(pos.down()).getMaterial() != Material.SPONGE)
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.WOOD)
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.CLAY)
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.IRON)

@@ -232,7 +232,7 @@ public class BlockGreenCodiumAlgae extends ElementsLepidodendronMod.ModElement {
 		if (!biomeCriteria)
 			return;
 
-		int multiplier = 1;
+		float multiplier = 1;
 		if ((dimID == LepidodendronConfig.dimDevonian)
 				|| (dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimPermian)
@@ -277,11 +277,11 @@ public class BlockGreenCodiumAlgae extends ElementsLepidodendronMod.ModElement {
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")
 		) {
-			multiplier = 1;
+			multiplier = 0.5F;
 			forced = true;
 		}
 
-		for (int i = 0; i < (int) 10 * multiplier; i++) {
+		for (int i = 0; i < (int) 10F * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
