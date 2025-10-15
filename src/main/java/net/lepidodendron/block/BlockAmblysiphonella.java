@@ -172,7 +172,7 @@ public class BlockAmblysiphonella extends ElementsLepidodendronMod.ModElement {
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_cliff")) {
 				biomeCriteria = true;
 				forced = true;
-				multiplier = 2;
+				multiplier = 9;
 			}
 			else {
 				biomeCriteria = false;
