@@ -136,7 +136,7 @@ public class BlockFenestellaGiantOrange extends ElementsLepidodendronMod.ModElem
 			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_cliff")) {
 				biomeCriteria = true;
-				multiplier = 20;
+				multiplier = 40;
 				forced = true;
 			}
 			else {

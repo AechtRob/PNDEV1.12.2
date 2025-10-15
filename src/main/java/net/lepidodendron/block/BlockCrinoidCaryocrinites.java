@@ -344,6 +344,7 @@ public class BlockCrinoidCaryocrinites extends ElementsLepidodendronMod.ModEleme
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.ROCK)
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.GROUND)
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.CORAL)
+				&& (world.getBlockState(pos.down()).getMaterial() != Material.SPONGE)
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.WOOD)
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.CLAY)
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.IRON)

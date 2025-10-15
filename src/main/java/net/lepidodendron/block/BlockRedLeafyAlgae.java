@@ -273,6 +273,12 @@ public class BlockRedLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 			forced = true;
 		}
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")
+		) {
+			multiplier = 1;
+			forced = true;
+		}
+
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef")
 		)
 			multiplier = 12;

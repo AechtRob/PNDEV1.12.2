@@ -310,6 +310,7 @@ public class BlockCrinoidJimbacrinus extends ElementsLepidodendronMod.ModElement
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.WOOD)
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.CLAY)
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.CORAL)
+				&& (world.getBlockState(pos.down()).getMaterial() != Material.SPONGE)
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.IRON)
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.GLASS)) {
 				blockface =  false;
