@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:crinoid_calceolispongia"},
+      {"model": "lepidodendron:crinoid_calceolispongia", "y": 90 },
+      {"model": "lepidodendron:crinoid_calceolispongia", "y": 180 },
+      {"model": "lepidodendron:crinoid_calceolispongia", "y": 270 }
+    ]
+  }
+}
