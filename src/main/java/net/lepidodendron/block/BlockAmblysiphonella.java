@@ -150,7 +150,7 @@ public class BlockAmblysiphonella extends ElementsLepidodendronMod.ModElement {
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")) {
 				biomeCriteria = true;
 				forced = true;
-				multiplier = 6;
+				multiplier = 2;
 			}
 			else {
 				biomeCriteria = false;
@@ -162,7 +162,6 @@ public class BlockAmblysiphonella extends ElementsLepidodendronMod.ModElement {
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_cliff")) {
 				biomeCriteria = true;
 				forced = true;
-				multiplier = 8;
 			}
 			else {
 				biomeCriteria = false;
