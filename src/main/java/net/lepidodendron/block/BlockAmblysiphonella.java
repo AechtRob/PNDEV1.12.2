@@ -9,6 +9,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.gen.AlgaeGenerator;
@@ -138,12 +139,18 @@ public class BlockAmblysiphonella extends ElementsLepidodendronMod.ModElement {
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))
 			biomeCriteria = true;
+
+		int multiplier = 1;
+		boolean forced = false;
+
 		if (biome instanceof BiomePermian)
 		{
 			BiomePermian biomePermian = (BiomePermian) biome;
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_cliff")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")) {
-			biomeCriteria = true;
+				biomeCriteria = true;
+				forced = true;
+				multiplier = 6;
 			}
 			else {
 				biomeCriteria = false;
@@ -154,6 +161,8 @@ public class BlockAmblysiphonella extends ElementsLepidodendronMod.ModElement {
 			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_cliff")) {
 				biomeCriteria = true;
+				forced = true;
+				multiplier = 8;
 			}
 			else {
 				biomeCriteria = false;
@@ -163,7 +172,6 @@ public class BlockAmblysiphonella extends ElementsLepidodendronMod.ModElement {
 		if (!biomeCriteria)
 			return;
 
-		int multiplier = 1;
 		if ((dimID == LepidodendronConfig.dimCarboniferous)
 		) {
 			multiplier = 32;
@@ -177,6 +185,9 @@ public class BlockAmblysiphonella extends ElementsLepidodendronMod.ModElement {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
+			if (forced) {
+				i11 = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, i11, l14), world).getY() + 1;
+			}
 			(new AlgaeGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}

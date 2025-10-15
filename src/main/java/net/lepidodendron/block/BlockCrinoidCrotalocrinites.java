@@ -126,7 +126,7 @@ public class BlockCrinoidCrotalocrinites extends ElementsLepidodendronMod.ModEle
 			BiomeSilurian biomeSil = (BiomeSilurian) biome;
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
 				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
-					multiplier = 3;
+					multiplier = 1;
 					forced = true;
 				}
 			}
