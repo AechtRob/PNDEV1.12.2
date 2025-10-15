@@ -173,7 +173,7 @@ public class BlockCoralStonyLumpy extends ElementsLepidodendronMod.ModElement {
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_coral"))
 		{
-			multiplier = 2;
+			multiplier = 8;
 			forced = true;
 		}
 
