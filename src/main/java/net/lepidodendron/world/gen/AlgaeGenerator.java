@@ -108,6 +108,7 @@ public class AlgaeGenerator extends WorldGenerator
 			|| (this.algae == BlockBranchedSponge.block)
 			|| (this.algae == BlockGigantospongia.block)
 			|| (this.algae == BlockFenestellaGiantBlue.block)
+			|| (this.algae == BlockFenestellaGiantGreen.block)
 			|| (this.algae == BlockFenestellaGiantOrange.block)
 			|| (this.algae == BlockFenestellaGiantRed.block)
 			|| (this.algae == BlockFenestellaGiantYellow.block)) {
@@ -207,6 +208,7 @@ public class AlgaeGenerator extends WorldGenerator
 							|| (this.algae == BlockFenestellaGiantOrange.block)
 							|| (this.algae == BlockFenestellaGiantRed.block)
 							|| (this.algae == BlockFenestellaGiantYellow.block)
+							|| (this.algae == BlockFenestellaGiantGreen.block)
 							|| (this.algae == BlockAmblysiphonella.block)
 					) {
 						int yy = 1;
@@ -311,6 +313,7 @@ public class AlgaeGenerator extends WorldGenerator
 								&& (this.algae != BlockFenestellaGiantOrange.block) //this is preferred on the sides
 								&& (this.algae != BlockFenestellaGiantRed.block) //this is preferred on the sides
 								&& (this.algae != BlockFenestellaGiantYellow.block) //this is preferred on the sides
+								&& (this.algae != BlockFenestellaGiantGreen.block) //this is preferred on the side
 						) {
 							if (this.algae != BlockCrinoidPetalocrinus.block && this.algae != BlockCrinoidVadarocrinus.block
 									&& this.algae != BlockCrinoidBoliviacrinus.block && this.algae != BlockCrinoidCrotalocrinites.block
