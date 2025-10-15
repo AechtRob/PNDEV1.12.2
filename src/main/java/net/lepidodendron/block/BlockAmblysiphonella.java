@@ -143,6 +143,16 @@ public class BlockAmblysiphonella extends ElementsLepidodendronMod.ModElement {
 		int multiplier = 1;
 		boolean forced = false;
 
+		if ((dimID == LepidodendronConfig.dimCarboniferous)
+		) {
+			multiplier = 32;
+		}
+
+		if ((dimID == LepidodendronConfig.dimPermian)
+		) {
+			multiplier = 24;
+		}
+
 		if (biome instanceof BiomePermian)
 		{
 			BiomePermian biomePermian = (BiomePermian) biome;
@@ -150,7 +160,7 @@ public class BlockAmblysiphonella extends ElementsLepidodendronMod.ModElement {
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")) {
 				biomeCriteria = true;
 				forced = true;
-				multiplier = 2;
+				multiplier = 3;
 			}
 			else {
 				biomeCriteria = false;
@@ -162,6 +172,7 @@ public class BlockAmblysiphonella extends ElementsLepidodendronMod.ModElement {
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_cliff")) {
 				biomeCriteria = true;
 				forced = true;
+				multiplier = 2;
 			}
 			else {
 				biomeCriteria = false;
@@ -170,15 +181,6 @@ public class BlockAmblysiphonella extends ElementsLepidodendronMod.ModElement {
 
 		if (!biomeCriteria)
 			return;
-
-		if ((dimID == LepidodendronConfig.dimCarboniferous)
-		) {
-			multiplier = 32;
-		}
-		if ((dimID == LepidodendronConfig.dimPermian)
-		) {
-			multiplier = 24;
-		}
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
