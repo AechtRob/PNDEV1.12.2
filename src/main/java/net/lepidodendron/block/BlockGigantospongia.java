@@ -159,7 +159,7 @@ public class BlockGigantospongia extends ElementsLepidodendronMod.ModElement {
 			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) + 1);
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			if (forced) {
-				i11 = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, i11, l14), world).getY() + random.nextInt(i + 1);
+				i11 = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, i11, l14), world).getY() + random.nextInt(10);
 			}
 			(new AlgaeGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
 		}
