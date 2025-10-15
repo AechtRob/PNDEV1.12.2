@@ -137,7 +137,7 @@ public class BlockFenestellaGiantBlue extends ElementsLepidodendronMod.ModElemen
 			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_cliff")) {
 				biomeCriteria = true;
-				multiplier = 10;
+				multiplier = 7;
 				forced = true;
 			}
 			else {
@@ -152,7 +152,7 @@ public class BlockFenestellaGiantBlue extends ElementsLepidodendronMod.ModElemen
 			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			if (forced) {
-				i11 = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, i11, l14), world).getY() + random.nextInt(i);
+				i11 = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, i11, l14), world).getY() + random.nextInt(i + 1);
 			}
 			(new AlgaeGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
 		}
