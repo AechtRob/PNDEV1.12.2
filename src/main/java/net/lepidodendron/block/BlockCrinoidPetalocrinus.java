@@ -145,7 +145,7 @@ public class BlockCrinoidPetalocrinus extends ElementsLepidodendronMod.ModElemen
 		boolean forced = false;
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
-			multiplier = 15;
+			multiplier = 3;
 			forced = true;
 		}
 

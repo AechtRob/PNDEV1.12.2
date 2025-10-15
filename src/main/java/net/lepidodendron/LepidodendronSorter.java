@@ -5286,6 +5286,7 @@ public class LepidodendronSorter {
     public static final int crinoid_gennaeocrinus = 8225;
     public static final int crinoid_boliviacrinus = 8226;
     public static final int crinoid_acanthocrinus = 8227;
+    public static final int crinoid_marsupiocrinus = 8228;
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;

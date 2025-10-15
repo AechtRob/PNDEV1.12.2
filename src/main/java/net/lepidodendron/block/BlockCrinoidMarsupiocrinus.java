@@ -10,7 +10,6 @@ import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
-import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
@@ -57,11 +56,11 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockCrinoidHapalocrinus extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:crinoid_hapalocrinus")
+public class BlockCrinoidMarsupiocrinus extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:crinoid_marsupiocrinus")
 	public static final Block block = null;
-	public BlockCrinoidHapalocrinus(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.crinoid_hapalocrinus);
+	public BlockCrinoidMarsupiocrinus(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.crinoid_marsupiocrinus);
 	}
 
 	@Override
@@ -74,16 +73,16 @@ public class BlockCrinoidHapalocrinus extends ElementsLepidodendronMod.ModElemen
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:crinoid_hapalocrinus", "inventory"));
+				new ModelResourceLocation("lepidodendron:crinoid_marsupiocrinus", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockMacrocystisKelp.LEVEL).build());
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("staticdnaPNlepidodendron:crinoid_hapalocrinus", BlockCrinoidHapalocrinus.block);
-		OreDictionary.registerOre("pndietCrinoid", BlockCrinoidHapalocrinus.block);
-		OreDictionary.registerOre("holdfastDrops", BlockCrinoidHapalocrinus.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:crinoid_marsupiocrinus", BlockCrinoidMarsupiocrinus.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockCrinoidMarsupiocrinus.block);
+		OreDictionary.registerOre("holdfastDrops", BlockCrinoidMarsupiocrinus.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
@@ -103,11 +102,11 @@ public class BlockCrinoidHapalocrinus extends ElementsLepidodendronMod.ModElemen
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCrinoid)) {
 			dimensionCriteria = true;
 		}
-		if (dimID == LepidodendronConfig.dimDevonian
-				|| dimID == LepidodendronConfig.dimSilurian
+		if (dimID == LepidodendronConfig.dimSilurian
 		) {
 			dimensionCriteria = true;
 		}
+
 		if (!dimensionCriteria)
 			return;
 
@@ -133,20 +132,6 @@ public class BlockCrinoidHapalocrinus extends ElementsLepidodendronMod.ModElemen
 			BiomeSilurian biomeSil = (BiomeSilurian) biome;
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
 				biomeCriteria = true;
-				multiplier = 0.5F;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-
-		if (biome instanceof BiomeDevonian)
-		{
-			BiomeDevonian biomeDev = (BiomeDevonian) biome;
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef2")) {
-				biomeCriteria = true;
-				multiplier = 10;
 			}
 			else {
 				biomeCriteria = false;
@@ -204,7 +189,7 @@ public class BlockCrinoidHapalocrinus extends ElementsLepidodendronMod.ModElemen
 //				return BlockCrinoidHapalocrinus.BlockCustom.crinoidheight;
 //			}
 //		}
-		return 1 + random.nextInt(random.nextInt(random.nextInt(BlockCrinoidHapalocrinus.BlockCustom.crinoidheight) + 1) + 1);
+		return 1 + random.nextInt(random.nextInt(random.nextInt(BlockCrinoidMarsupiocrinus.BlockCustom.crinoidheight) + 1) + 1);
 	}
 	
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
@@ -220,17 +205,17 @@ public class BlockCrinoidHapalocrinus extends ElementsLepidodendronMod.ModElemen
 			setResistance(0F);
 			setLightLevel(0F);
 			setLightOpacity(3);
-			crinoidheight = 7;
+			crinoidheight = 4;
 			this.setDefaultState(this.blockState.getBaseState().withProperty(TOPSHOOT, false).withProperty(AGE, Integer.valueOf(0)));
         	this.setTickRandomly(true);
-			setTranslationKey("pf_crinoid_hapalocrinus");
-			setRegistryName("crinoid_hapalocrinus");
+			setTranslationKey("pf_crinoid_marsupiocrinus");
+			setRegistryName("crinoid_marsupiocrinus");
 		}
 
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_CRINOID_HAPALOCRINUS;
+			return ModTriggers.CLICK_CRINOID_MARSUPIOCRINUS;
 		}
 
 		@Override
@@ -416,7 +401,7 @@ public class BlockCrinoidHapalocrinus extends ElementsLepidodendronMod.ModElemen
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Crinoid");
-				tooltip.add("Periods: Late Silurian - Early Devonian");
+				tooltip.add("Periods: Silurian");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
