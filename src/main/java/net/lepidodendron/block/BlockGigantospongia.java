@@ -144,7 +144,7 @@ public class BlockGigantospongia extends ElementsLepidodendronMod.ModElement {
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_cliff")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")) {
 				biomeCriteria = true;
-				multiplier = 12;
+				multiplier = 28;
 				forced = true;
 			}
 			else {
