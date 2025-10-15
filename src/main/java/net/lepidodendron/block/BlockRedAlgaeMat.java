@@ -9,6 +9,7 @@ import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
@@ -171,17 +172,27 @@ public class BlockRedAlgaeMat extends ElementsLepidodendronMod.ModElement {
 			multiplier = 5;
 		}
 
+		boolean forced = false;
+
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_icebergs")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_shore_frozen")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_beach_frozen")
-		)
-			multiplier = 24;
+		) {
+			multiplier = 3;
+			forced = true;
+		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
+		) {
+			multiplier = 48;
+		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_algal_reef")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
-		)
-			multiplier = 48;
+		) {
+			multiplier = 6;
+			forced = true;
+		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds")
 		)
@@ -196,6 +207,9 @@ public class BlockRedAlgaeMat extends ElementsLepidodendronMod.ModElement {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
+			if (forced) {
+				i11 = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, i11, l14), world).getY() + 1;
+			}
 			(new AlgaeGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}

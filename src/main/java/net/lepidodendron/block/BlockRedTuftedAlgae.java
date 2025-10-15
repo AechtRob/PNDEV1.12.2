@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.*;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
@@ -254,17 +255,27 @@ public class BlockRedTuftedAlgae extends ElementsLepidodendronMod.ModElement {
 			multiplier = 5;
 		}
 
+		boolean forced = false;
+
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_icebergs")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_shore_frozen")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_beach_frozen")
-		)
-			multiplier = 24;
+		) {
+			multiplier = 3;
+			forced = true;
+		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
+		) {
+			multiplier = 48;
+		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_algal_reef")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
-		)
-			multiplier = 48;
+		) {
+			multiplier = 6;
+			forced = true;
+		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef")
 		)
@@ -278,6 +289,9 @@ public class BlockRedTuftedAlgae extends ElementsLepidodendronMod.ModElement {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
+			if (forced) {
+				i11 = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, i11, l14), world).getY() + 1;
+			}
 			(new AlgaeGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}
