@@ -312,7 +312,10 @@ public class AlgaeGenerator extends WorldGenerator
 								&& (this.algae != BlockFenestellaGiantRed.block) //this is preferred on the sides
 								&& (this.algae != BlockFenestellaGiantYellow.block) //this is preferred on the sides
 						) {
-							if (this.algae != BlockCrinoidPetalocrinus.block && this.algae != BlockCrinoidVadarocrinus.block && this.algae != BlockCrinoidBoliviacrinus.block && this.algae != BlockCrinoidCrotalocrinites.block && this.algae != BlockSeaGrass.block && this.algae != BlockMosacaulis.block) {
+							if (this.algae != BlockCrinoidPetalocrinus.block && this.algae != BlockCrinoidVadarocrinus.block
+									&& this.algae != BlockCrinoidBoliviacrinus.block && this.algae != BlockCrinoidCrotalocrinites.block
+									&& this.algae != BlockCrinoidCalceolispongia.block
+									&& this.algae != BlockSeaGrass.block && this.algae != BlockMosacaulis.block) {
 								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
 							} else {
 								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state, 2);
@@ -349,6 +352,7 @@ public class AlgaeGenerator extends WorldGenerator
 											&& (this.algae != BlockCrinoidPetalocrinus.block)
 											&& (this.algae != BlockCrinoidVadarocrinus.block)
 											&& (this.algae != BlockCrinoidBoliviacrinus.block)
+											&& (this.algae != BlockCrinoidCalceolispongia.block)
 											&& (this.algae != BlockCrinoidCrotalocrinites.block)
 											&& (this.algae != BlockWaterBottomGunk.block)
 											&& (this.algae != BlockTawuia.block)
