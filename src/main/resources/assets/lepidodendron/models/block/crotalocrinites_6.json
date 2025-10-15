@@ -1,0 +1,38 @@
+{
+	"parent": "lepidodendron:block/cube_noao",
+	"textures": {
+		"1": "lepidodendron:blocks/crotalocrinites_3",
+		"2": "lepidodendron:blocks/crotalocrinites_2",
+		"3": "lepidodendron:blocks/crotalocrinites_1",
+		"particle": "lepidodendron:blocks/crotalocrinites_4"
+	},
+	"elements": [
+		{
+			"from": [8, 0, -8],
+			"to": [8, 27, 24],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 13.5], "texture": "#1"},
+				"west": {"uv": [16, 0, 0, 13.5], "texture": "#1"}
+			}
+		},
+		{
+			"from": [-8, 0, 8],
+			"to": [24, 27, 8],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 13.5], "texture": "#3"},
+				"south": {"uv": [16, 0, 0, 13.5], "texture": "#3"}
+			}
+		},
+		{
+			"from": [-8, 0, 8],
+			"to": [24, 27, 8],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 13.5], "texture": "#2"},
+				"south": {"uv": [0, 0, 16, 13.5], "texture": "#2"}
+			}
+		}
+	]
+}

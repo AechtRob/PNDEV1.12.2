@@ -1,0 +1,38 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:crinoid_crotalocrinites_1"},
+      {"model": "lepidodendron:crinoid_crotalocrinites_2"},
+      {"model": "lepidodendron:crinoid_crotalocrinites_3"},
+      {"model": "lepidodendron:crinoid_crotalocrinites_4"},
+      {"model": "lepidodendron:crinoid_crotalocrinites_5"},
+      {"model": "lepidodendron:crinoid_crotalocrinites_6"},
+      {"model": "lepidodendron:crinoid_crotalocrinites_7"},
+      {"model": "lepidodendron:crinoid_crotalocrinites_8"},
+      {"model": "lepidodendron:crinoid_crotalocrinites_1", "y": 90 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_2", "y": 90 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_3", "y": 90 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_4", "y": 90 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_5", "y": 90 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_6", "y": 90 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_7", "y": 90 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_8", "y": 90 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_1", "y": 180 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_2", "y": 180 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_3", "y": 180 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_4", "y": 180 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_5", "y": 180 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_6", "y": 180 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_7", "y": 180 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_8", "y": 180 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_1", "y": 270 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_2", "y": 270 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_3", "y": 270 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_4", "y": 270 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_5", "y": 270 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_6", "y": 270 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_7", "y": 270 },
+      {"model": "lepidodendron:crinoid_crotalocrinites_8", "y": 270 }
+    ]
+  }
+}

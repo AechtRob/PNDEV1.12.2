@@ -132,6 +132,7 @@ public class BlockCrinoidMarsupiocrinus extends ElementsLepidodendronMod.ModElem
 			BiomeSilurian biomeSil = (BiomeSilurian) biome;
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
 				biomeCriteria = true;
+				multiplier = 2;
 			}
 			else {
 				biomeCriteria = false;

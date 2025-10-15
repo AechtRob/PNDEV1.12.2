@@ -133,7 +133,7 @@ public class BlockCrinoidHapalocrinus extends ElementsLepidodendronMod.ModElemen
 			BiomeSilurian biomeSil = (BiomeSilurian) biome;
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
 				biomeCriteria = true;
-				multiplier = 0.5F;
+				multiplier = 0.75F;
 			}
 			else {
 				biomeCriteria = false;
@@ -199,11 +199,11 @@ public class BlockCrinoidHapalocrinus extends ElementsLepidodendronMod.ModElemen
 	}
 
 	private static int crinoidHeight(World worldIn, BlockPos pos, Random random) {
-//		if (worldIn.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
-//			if (random.nextInt(8) != 0) {
-//				return BlockCrinoidHapalocrinus.BlockCustom.crinoidheight;
-//			}
-//		}
+		if (worldIn.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
+			if (random.nextInt(4) != 0) {
+				return BlockCrinoidHapalocrinus.BlockCustom.crinoidheight - random.nextInt(2);
+			}
+		}
 		return 1 + random.nextInt(random.nextInt(random.nextInt(BlockCrinoidHapalocrinus.BlockCustom.crinoidheight) + 1) + 1);
 	}
 	

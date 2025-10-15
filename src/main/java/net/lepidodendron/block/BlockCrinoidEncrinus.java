@@ -205,7 +205,7 @@ public class BlockCrinoidEncrinus extends ElementsLepidodendronMod.ModElement {
 
 		//int multiplier = 1;
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
-			multiplier = 0.5F;
+			multiplier = 0.75F;
 		}
 
 		for (int i = 0; i < (12F * multiplier); i++) {
@@ -238,11 +238,11 @@ public class BlockCrinoidEncrinus extends ElementsLepidodendronMod.ModElement {
 	}
 
 	private static int crinoidHeight(World worldIn, BlockPos pos, Random random) {
-//		if (worldIn.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
-//			if (random.nextInt(8) != 0) {
-//				return BlockCrinoidEncrinus.BlockCustom.crinoidheight;
-//			}
-//		}
+		if (worldIn.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
+			if (random.nextInt(4) != 0) {
+				return BlockCrinoidEncrinus.BlockCustom.crinoidheight - random.nextInt(2);
+			}
+		}
 		return 1 + random.nextInt(random.nextInt(random.nextInt(BlockCrinoidEncrinus.BlockCustom.crinoidheight) + 1) + 1);
 	}
 	
