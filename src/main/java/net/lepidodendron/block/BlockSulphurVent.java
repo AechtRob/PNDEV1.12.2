@@ -92,27 +92,17 @@ public class BlockSulphurVent extends ElementsLepidodendronMod.ModElement {
 							if (blockpos1.getY() > 35 + random.nextInt(3)) {
 								continue;
 							}
+							if (
+								((world.getBlockState(blockpos1.down()).getMaterial() == Material.SAND)
+									|| (world.getBlockState(blockpos1.down()).getMaterial() == Material.ROCK)
+									|| (world.getBlockState(blockpos1.down()).getMaterial() == Material.GROUND))
+									&& (world.getBlockState(blockpos1).getMaterial() == Material.WATER)
+									&& (world.getBlockState(blockpos1.up()).getMaterial() == Material.WATER)
+							)
 
-							//BlockPos blockpos2 = blockpos1.down();
-							//int j = random.nextInt(3) + 1;
-							//j = Math.min(3, j);
-							//for (int k = 0; k < j; ++k) {
-								//System.err.println("SeaLavel: " + (Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))));
-								//System.err.println("Try to spawn at: "  + blockpos1.up(k).getY());
-								if (
-									//((world.isAirBlock(blockpos1.down()) || ((BlockFalling) block).canFallThrough(world.getBlockState(blockpos1.down()))) && blockpos1.getY() >= 0)
-									//&& ((world.isAirBlock(blockpos1.up(k).down()) || ((BlockFalling) block).canFallThrough(world.getBlockState(blockpos1.up(k).down()))) && blockpos1.up(k).getY() >= 0)
-									((world.getBlockState(blockpos1.down()).getMaterial() == Material.SAND)
-										|| (world.getBlockState(blockpos1.down()).getMaterial() == Material.ROCK)
-										|| (world.getBlockState(blockpos1.down()).getMaterial() == Material.GROUND))
-										&& (world.getBlockState(blockpos1).getMaterial() == Material.WATER)
-										&& (world.getBlockState(blockpos1.up()).getMaterial() == Material.WATER)
-								)
-
-								{
-									world.setBlockState(blockpos1, block.getDefaultState(), 2);
-								}
-							//}
+							{
+								world.setBlockState(blockpos1, block.getDefaultState(), 2);
+							}
 						}
 						return true;
 					}

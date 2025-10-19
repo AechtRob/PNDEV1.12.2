@@ -40,10 +40,10 @@ public class EntityPrehistoricFloraLuskhan extends EntityPrehistoricFloraAgeable
 
 	public EntityPrehistoricFloraLuskhan(World world) {
 		super(world);
-		setSize(1F, 1F);
+		setSize(1F, 0.95F);
 		minWidth = 0.2F;
 		maxWidth = 2F;
-		maxHeight = 1F;
+		maxHeight = 0.95F;
 		maxHealthAgeable = 46.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

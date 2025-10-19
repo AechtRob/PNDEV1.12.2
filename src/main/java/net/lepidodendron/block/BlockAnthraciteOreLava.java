@@ -6,6 +6,8 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemAnthracite;
+import net.lepidodendron.util.EnumBiomeTypePrecambrian;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -58,6 +60,12 @@ public class BlockAnthraciteOreLava extends ElementsLepidodendronMod.ModElement 
 		boolean dimensionCriteria = false;
 		if (dimID == LepidodendronConfig.dimPrecambrian)
 			dimensionCriteria = true;
+		if (world.getBiome(new BlockPos(chunkX, 0, chunkZ)) instanceof BiomePrecambrian) {
+			BiomePrecambrian biomePC = (BiomePrecambrian) world.getBiome(new BlockPos(chunkX, 0, chunkZ));
+			if (biomePC.getBiomeType() == EnumBiomeTypePrecambrian.Hadean) {
+				dimensionCriteria = false;
+			}
+		}
 		if (!dimensionCriteria)
 			return;
 		for (int i = 0; i < 10; i++) {

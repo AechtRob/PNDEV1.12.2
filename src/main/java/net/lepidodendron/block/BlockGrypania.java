@@ -3,14 +3,11 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.world.biome.ChunkGenSpawner;
-import net.lepidodendron.world.gen.CharniaGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -36,8 +33,6 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -80,31 +75,6 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("plantdnaPNlepidodendron:grypania", BlockGrypania.block);
 		OreDictionary.registerOre("itemAlgae", BlockGrypania.block);
-	}
-
-
-	@Override
-	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
-		int weight = LepidodendronConfigPlants.weightEdiacaran;
-		if (weight > 100) {weight = 100;}
-		if (weight < 0) {weight = 0;}
-		if (Math.random() < ((double) (100 - (double) weight)/100)) {
-			return;
-		}
-
-		double multiplier = 1;
-		if (world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
-				|| world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
-		) {
-			multiplier = 4;
-		}
-
-		for (int i = 0; i < (int) 24 * multiplier; i++) {
-			int l6 = chunkX + random.nextInt(16) + 8;
-			int l14 = chunkZ + random.nextInt(16) + 8;
-			BlockPos spawnPos = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world);
-			(new CharniaGenerator((Block) block)).generate(world, random, spawnPos);
-		}
 	}
 
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {

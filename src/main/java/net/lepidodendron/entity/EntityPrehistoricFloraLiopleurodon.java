@@ -40,10 +40,10 @@ public class EntityPrehistoricFloraLiopleurodon extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraLiopleurodon(World world) {
 		super(world);
-		setSize(2.7F, 1.2F);
+		setSize(2.7F, 0.95F);
 		minWidth = 0.2F;
 		maxWidth = 2.7F;
-		maxHeight = 1.2F;
+		maxHeight = 0.95F;
 		maxHealthAgeable = 55.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

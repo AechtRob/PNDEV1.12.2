@@ -162,7 +162,7 @@ public class BlockCoralCarnation extends ElementsLepidodendronMod.ModElement {
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_coral"))
 		{
-			multiplier = 8;
+			multiplier = 12;
 			forced = true;
 		}
 

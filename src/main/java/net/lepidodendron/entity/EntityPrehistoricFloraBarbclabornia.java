@@ -39,10 +39,10 @@ public class EntityPrehistoricFloraBarbclabornia extends EntityPrehistoricFloraA
 
 	public EntityPrehistoricFloraBarbclabornia(World world) {
 		super(world);
-		setSize(1.5F, 0.99F);
+		setSize(1.5F, 0.95F);
 		minWidth = 0.2F;
 		maxWidth = 1.5F;
-		maxHeight = 0.99F;
+		maxHeight = 0.95F;
 		maxHealthAgeable = 46.0D;
 	}
 

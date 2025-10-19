@@ -59,7 +59,6 @@ public class RenderGangtoucunia extends TileEntitySpecialRenderer<TileEntityGang
             }
         }
 
-        this.bindTexture(TEXTURE_GANGTOUCUNIA);
         ModelGangtoucunia modelGangtoucunia = this.modelGangtoucunia;
         GlStateManager.enableRescaleNormal();
         GlStateManager.disableCull();
@@ -72,6 +71,19 @@ public class RenderGangtoucunia extends TileEntitySpecialRenderer<TileEntityGang
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
         modelGangtoucunia.scaler = scaler;
+
+        //----Start PP Page adjustment
+        StackTraceElement[] elements = new Throwable().getStackTrace();
+        String callerClass = elements[5].getClassName();
+        this.bindTexture(TEXTURE_GANGTOUCUNIA);
+        if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
+
+        }
+        //----End PP Page adjustment
+        else {
+            GlStateManager.scale(1.75, 1.75, 1.75);
+            GlStateManager.translate(0,-1.03,0);
+        }
         modelGangtoucunia.renderAll(Minecraft.getMinecraft().player.ticksExisted);
         GlStateManager.popMatrix();
 
@@ -81,6 +93,14 @@ public class RenderGangtoucunia extends TileEntitySpecialRenderer<TileEntityGang
             GlStateManager.rotate(180, 0F, 0F, 1F);
             GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
             modelGangtoucunia.scaler = scaler;
+            if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
+
+            }
+            //----End PP Page adjustment
+            else {
+                GlStateManager.scale(1.75, 1.75, 1.75);
+                GlStateManager.translate(0,-1.03,0);
+            }
             modelGangtoucunia.renderAll(Minecraft.getMinecraft().player.ticksExisted);
             GlStateManager.popMatrix();
         }
@@ -91,6 +111,14 @@ public class RenderGangtoucunia extends TileEntitySpecialRenderer<TileEntityGang
             GlStateManager.rotate(180, 0F, 0F, 1F);
             GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
             modelGangtoucunia.scaler = scaler;
+            if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
+
+            }
+            //----End PP Page adjustment
+            else {
+                GlStateManager.scale(1.75, 1.75, 1.75);
+                GlStateManager.translate(0,-1.03,0);
+            }
             modelGangtoucunia.renderAll(Minecraft.getMinecraft().player.ticksExisted);
             GlStateManager.popMatrix();
         }

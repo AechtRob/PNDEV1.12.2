@@ -204,6 +204,7 @@ public class BlockOrthograptus extends ElementsLepidodendronMod.ModElement {
 										|| (world.getBlockState(pos1).getMaterial() == Material.ROCK && world.getBlockState(pos1).getBlock() != Blocks.MAGMA)
 										|| (world.getBlockState(pos1).getMaterial() == Material.GROUND)
 										|| (world.getBlockState(pos1).getMaterial() == Material.CORAL)
+										|| (world.getBlockState(pos1).getMaterial() == Material.SPONGE)
 										|| (world.getBlockState(pos1).getMaterial() == Material.CLAY))
 										&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, EnumFacing.UP) == BlockFaceShape.SOLID)) {
 									world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockOrthograptus.BlockCustom.FACING, enumfacing), 2);

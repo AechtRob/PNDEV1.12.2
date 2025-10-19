@@ -99,11 +99,15 @@ public class BlockBrachiopodOrthid extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
 				|| dimID == LepidodendronConfig.dimCarboniferous
 				|| dimID == LepidodendronConfig.dimPermian
-				|| dimID == LepidodendronConfig.dimCambrian
+				//|| dimID == LepidodendronConfig.dimCambrian
 				
 		) {
 			dimensionCriteria = true;
 		}
+		if (dimID == LepidodendronConfig.dimCambrian) {
+			dimensionCriteria = false;
+		}
+
 		if (!dimensionCriteria)
 			return;
 

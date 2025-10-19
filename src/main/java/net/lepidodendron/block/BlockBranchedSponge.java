@@ -122,19 +122,10 @@ public class BlockBranchedSponge extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = false;
 		}
 
-		if (biome instanceof BiomeCambrian) {
-			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
-			if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Ocean
-					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Estuary
-					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Reef
-			) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
 
+		if (biome instanceof BiomeCambrian) {
+			biomeCriteria = false;
+		}
 		if (biome instanceof BiomeOrdovician) {
 			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
 			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Ocean

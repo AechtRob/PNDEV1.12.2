@@ -71,6 +71,7 @@ public class GlassSpongeReefGenerator extends WorldGenerator
 						|| (worldIn.getBlockState(pos).getMaterial() == Material.GROUND)
 						|| (worldIn.getBlockState(pos).getMaterial() == Material.CLAY)
 						|| (worldIn.getBlockState(pos).getMaterial() == Material.CORAL)
+						|| (worldIn.getBlockState(pos).getMaterial() == Material.SPONGE)
 						|| (worldIn.getBlockState(pos).getMaterial() == Material.GLASS)
 						|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
 						|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))

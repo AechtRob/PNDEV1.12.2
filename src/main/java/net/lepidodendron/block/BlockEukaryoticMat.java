@@ -7,10 +7,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
-import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -35,9 +32,6 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -80,71 +74,6 @@ public class BlockEukaryoticMat extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:eukaryotic_mat", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockEukaryoticMat.LEVEL).build());
 	}
-
-	@Override
-	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
-
-		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
-		if ((dimID == LepidodendronConfig.dimPrecambrian)) {
-			biomeCriteria = true;
-		}
-
-		int multiplier = 36;
-		if (biome instanceof BiomePrecambrian) {
-			BiomePrecambrian biomePrecambrian = (BiomePrecambrian) biome;
-			if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Hadean
-				|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Archean
-				|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Proterozoic_Land
-			) {
-				biomeCriteria = false;
-			}
-			if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Paleoproterozoic) {
-				multiplier = 2;
-			}
-			if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Mesoproterozoic) {
-				multiplier = 10;
-			}
-			if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran) {
-				multiplier = 26;
-			}
-		}
-
-		if (!biomeCriteria)
-			return;
-
-		for (int i = 0; i < (int) 10 * multiplier; i++) {
-			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(128);
-			int l14 = chunkZ + random.nextInt(16) + 8;
-			(new AlgaeGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
-		}
-	}
-
-	public static boolean matchBiome(Biome biome, String[] biomesList) {
-    	
-    	//String regName = biome.getRegistryName().toString();
-    	
-        String[] var2 = biomesList;
-        int var3 = biomesList.length;
-
-        for(int var4 = 0; var4 < var3; ++var4) {
-            String checkBiome = var2[var4];
-            if (!checkBiome.contains(":")) {
-            	//System.err.println("modid test: " + biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":") - 1));
-	            if (checkBiome.equalsIgnoreCase(
-	            	biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":"))
-	            	)) {
-	                return true;
-	            }
-        	}
-        	if (checkBiome.equalsIgnoreCase(biome.getRegistryName().toString())) {
-                return true;
-            }
-        }
-
-        return false;
-    }
 
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 		

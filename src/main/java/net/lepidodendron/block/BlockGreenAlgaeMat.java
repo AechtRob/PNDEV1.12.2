@@ -118,6 +118,11 @@ public class BlockGreenAlgaeMat extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = true;
 		}
 
+		if (dimID == LepidodendronConfig.dimCambrian){
+			biomeCriteria = false;
+		}
+
+
 		if (biome instanceof BiomePrecambrian) {
 			BiomePrecambrian biomePrecambrian = (BiomePrecambrian) biome;
 			if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Hadean

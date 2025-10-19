@@ -41,10 +41,10 @@ public class EntityPrehistoricFloraCymbospondylus extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraCymbospondylus(World world) {
 		super(world);
-		setSize(2.4F, 1.5F);
+		setSize(2.4F, 0.95F);
 		minWidth = 0.15F;
 		maxWidth = 2.4F;
-		maxHeight = 1.5F;
+		maxHeight = 0.95F;
 		maxHealthAgeable = 90.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

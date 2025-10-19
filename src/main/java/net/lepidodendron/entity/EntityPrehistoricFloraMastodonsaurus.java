@@ -47,10 +47,10 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraMastodonsaurus(World world) {
 		super(world);
-		setSize(1.20F, 1.02F);
+		setSize(1.20F, 0.95F);
 		minWidth = 0.1F;
 		maxWidth = 1.20F;
-		maxHeight = 1.02F;
+		maxHeight = 0.95F;
 		maxHealthAgeable = 64.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

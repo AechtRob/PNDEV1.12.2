@@ -107,11 +107,10 @@ public class BlockGreenSproutingAlgae extends ElementsLepidodendronMod.ModElemen
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genGreenSproutingAlgaeOverrideBiomes))
 			biomeCriteria = true;
-		if ((dimID == LepidodendronConfig.dimPrecambrian)) {
+		if ((dimID == LepidodendronConfig.dimPrecambrian) || (dimID == LepidodendronConfig.dimCambrian)) {
 			biomeCriteria = false;
 		}
-		if ((dimID == LepidodendronConfig.dimCambrian)
-			|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
+		if ((dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
 			|| (dimID == LepidodendronConfig.dimDevonian)
 			|| (dimID == LepidodendronConfig.dimCarboniferous)
 			|| (dimID == LepidodendronConfig.dimPermian)

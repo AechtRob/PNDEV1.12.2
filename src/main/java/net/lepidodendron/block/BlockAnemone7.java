@@ -119,17 +119,9 @@ public class BlockAnemone7 extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = false;
 		}
 
+
 		if (biome instanceof BiomeCambrian) {
-			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
-			if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Ocean
-					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Reef
-					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Estuary
-			) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
+			biomeCriteria = false;
 		}
 
 		if (biome instanceof BiomeOrdovician) {

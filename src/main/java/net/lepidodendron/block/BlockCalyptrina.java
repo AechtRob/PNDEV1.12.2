@@ -3,16 +3,11 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypePrecambrian;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.world.biome.ChunkGenSpawner;
-import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockLiquid;
@@ -37,13 +32,8 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.IChunkGenerator;
-import net.minecraft.world.gen.feature.WorldGenReed;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -84,207 +74,6 @@ public class BlockCalyptrina extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:calyptrina", BlockCalyptrina.block);
 		OreDictionary.registerOre("pndietCrinoid", BlockCalyptrina.block);
-	}
-
-	@Override
-	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
-
-		boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCrinoid))
-			dimensionCriteria = true;
-		if ((dimID == LepidodendronConfig.dimPrecambrian)
-		) {
-			dimensionCriteria = true;
-		}
-		if (!dimensionCriteria)
-			return;
-
-		int weight = LepidodendronConfigPlants.weightCrinoid;
-		if (weight > 100) {weight = 100;}
-		if (weight < 0) {weight = 0;}
-		if (dimID == LepidodendronConfig.dimPrecambrian
-		) {
-			weight = 100; //Full scale populations in these dims
-		}
-
-		if (Math.random() < ((double) (100 - (double) weight)/100)) {
-			return;
-		}
-
-		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
-		if (!matchBiome(biome, LepidodendronConfigPlants.genCrinoidBlacklistBiomes)) {
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
-				biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
-				biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
-				biomeCriteria = false;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
-				biomeCriteria = false;
-		}
-		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))
-			biomeCriteria = true;
-
-		int multiplier = 1;
-		if (biome instanceof BiomePrecambrian) {
-			BiomePrecambrian biomePrecambrian = (BiomePrecambrian) biome;
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")
-			) {
-				multiplier = 2;
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-
-		if (!biomeCriteria)
-			return;
-
-		int minWaterDepth = 2;
-		int maxWaterDepth = 100;
-		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
-
-		for (int i = 0; i < (26 * multiplier); i++) {
-			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - startHeight) + startHeight;
-			int l14 = chunkZ + random.nextInt(16) + 8;
-			(new WorldGenReed() {
-				@Override
-				public boolean generate(World world, Random random, BlockPos pos) {
-					for (int i = 0; i < 64; ++i) {
-						//BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
-						if (random.nextInt(8) != 0) {
-							continue;
-						}
-						BlockPos blockpos1 = ChunkGenSpawner.getTopSolidBlock(pos, world).up(random.nextInt(40));
-						if (!(world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement"))) {
-							continue;
-						}
-						if (blockpos1.getY() < 63 + random.nextInt(3)) {
-							continue;
-						}
-						Biome biome = world.getBiome(blockpos1);
-						boolean era = false;
-						if (biome instanceof BiomePrecambrian) {
-							era = ((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran;
-						}
-						if (!era) {
-							continue;
-						}
-						if (Functions.isWater(world, blockpos1)) {
-							boolean waterDepthCheckMax = false;
-							boolean waterDepthCheckMin = true;
-							//find air within the right depth
-							int yy = 1;
-							while (yy <= maxWaterDepth + 1 && !waterDepthCheckMax) {
-								if ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.AIR)
-										&& ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.WATER))) {
-									yy = maxWaterDepth + 1;
-								} else if ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() == Material.AIR)
-										&& (i11 + yy >= Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)))) {
-									waterDepthCheckMax = true;
-								}
-								yy += 1;
-							}
-							//Check that at least enough water is over the position:
-							yy = 1;
-							while (yy <= minWaterDepth && waterDepthCheckMin) {
-								if (world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.WATER) {
-									waterDepthCheckMin = false;
-								}
-								yy += 1;
-							}
-
-							//figure out a position and facing to place this at!
-							//First try regular uprights and then the rotations:
-							EnumFacing enumfacing = EnumFacing.UP;
-							BlockPos pos1 = blockpos1.down();
-							if (waterDepthCheckMin & waterDepthCheckMax) {
-								if (((world.getBlockState(pos1).getMaterial() == Material.SAND)
-										|| (world.getBlockState(pos1).getMaterial() == Material.ROCK && world.getBlockState(pos1).getBlock() != Blocks.MAGMA)
-										|| (world.getBlockState(pos1).getMaterial() == Material.GROUND)
-										|| (world.getBlockState(pos1).getMaterial() == Material.CORAL)
-										|| (world.getBlockState(pos1).getMaterial() == Material.CLAY))
-										&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, EnumFacing.UP) == BlockFaceShape.SOLID)) {
-									world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockCalyptrina.BlockCustom.FACING, enumfacing), 2);
-									return true;
-								} else {
-									for (EnumFacing enumfacing1 : BlockCalyptrina.BlockCustom.FACING.getAllowedValues()) {
-										pos1 = blockpos1;
-
-										if (enumfacing1 == EnumFacing.NORTH) {
-											pos1 = blockpos1.add(0, 0, 1);
-										}
-										if (enumfacing1 == EnumFacing.SOUTH) {
-											pos1 = blockpos1.add(0, 0, -1);
-										}
-										if (enumfacing1 == EnumFacing.EAST) {
-											pos1 = blockpos1.add(-1, 0, 0);
-										}
-										if (enumfacing1 == EnumFacing.WEST) {
-											pos1 = blockpos1.add(1, 0, 0);
-										}
-										if (enumfacing1 != EnumFacing.UP && enumfacing1 != EnumFacing.DOWN &&
-												((world.getBlockState(pos1).getMaterial() == Material.SAND)
-														|| (world.getBlockState(pos1).getMaterial() == Material.ROCK && world.getBlockState(pos1).getBlock() != Blocks.MAGMA)
-														|| (world.getBlockState(pos1).getMaterial() == Material.GROUND)
-														|| (world.getBlockState(pos1).getMaterial() == Material.CLAY)
-														|| (world.getBlockState(pos1).getMaterial() == Material.GLASS)
-														|| (world.getBlockState(pos1).getMaterial() == Material.CORAL)
-														|| (world.getBlockState(pos1).getMaterial() == Material.IRON)
-														|| (world.getBlockState(pos1).getMaterial() == Material.WOOD))
-												&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, enumfacing1) == BlockFaceShape.SOLID)) {
-											world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockCalyptrina.BlockCustom.FACING, enumfacing1), 2);
-											return true;
-										}
-									}
-								}
-							}
-						}
-					}
-					return true;
-				}
-			}).generate(world, random, new BlockPos(l6, i11, l14));
-		}
-	}
-
-	public static boolean matchBiome(Biome biome, String[] biomesList) {
-
-    	//String regName = biome.getRegistryName().toString();
-
-        String[] var2 = biomesList;
-        int var3 = biomesList.length;
-
-        for(int var4 = 0; var4 < var3; ++var4) {
-            String checkBiome = var2[var4];
-            if (!checkBiome.contains(":")) {
-            	//System.err.println("modid test: " + biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":") - 1));
-	            if (checkBiome.equalsIgnoreCase(
-	            	biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":"))
-	            	)) {
-	                return true;
-	            }
-        	}
-        	if (checkBiome.equalsIgnoreCase(biome.getRegistryName().toString())) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-	public boolean shouldGenerateInDimension(int id, int[] dims) {
-		int[] var2 = dims;
-		int var3 = dims.length;
-		for (int var4 = 0; var4 < var3; ++var4) {
-			int dim = var2[var4];
-			if (dim == id) {
-				return true;
-			}
-		}
-		return false;
 	}
 
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {

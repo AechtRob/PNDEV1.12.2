@@ -109,6 +109,10 @@ public class RenderOesia extends TileEntitySpecialRenderer<BlockOesia.TileEntity
             GlStateManager.translate(0,-1.3,0);
         }
         //----End PP Page adjustment
+        else {
+            GlStateManager.scale(2.3, 2.3, 2.3);
+            GlStateManager.translate(0,-1.346,0);
+        }
         modelOesia.renderAll(Minecraft.getMinecraft().player.ticksExisted);
         GlStateManager.popMatrix();
         GlStateManager.disableRescaleNormal();

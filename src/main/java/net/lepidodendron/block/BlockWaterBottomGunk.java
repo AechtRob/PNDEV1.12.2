@@ -118,10 +118,10 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomePrecambrian)
 		{
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")) {
-				multiplier = 30;
-			}
-			biomeCriteria = true;
+//			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")) {
+//				multiplier = 30;
+//			}
+			biomeCriteria = false;
 		}
 
 		if (biome instanceof BiomeOrdovician)

@@ -48,10 +48,10 @@ public class EntityPrehistoricFloraDunkleosteus extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraDunkleosteus(World world) {
 		super(world);
-		setSize(1.5F, 2.0F);
+		setSize(1.5F, 0.95F);
 		minWidth = 0.2F;
 		maxWidth = 1.5F;
-		maxHeight = 2F;
+		maxHeight = 0.95F;
 		maxHealthAgeable = 46.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

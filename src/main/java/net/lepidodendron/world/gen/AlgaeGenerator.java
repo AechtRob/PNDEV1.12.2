@@ -50,7 +50,6 @@ public class AlgaeGenerator extends WorldGenerator
 			}
 		}
 		boolean dimensionCriteria = false;
-		boolean upsideDown = false;
 		boolean eukaryotic = (this.algae == BlockEukaryoticMat.block);
 		boolean huainan = (this.algae == BlockHuainanMat.block);
 		boolean algae = (this.algae == BlockGreenAlgaeMat.block || this.algae == BlockBrownAlgae.block || this.algae == BlockGreenCharaAlgae.block || this.algae == BlockGreenCodiumAlgae.block || this.algae == BlockGreenCrustedAlgae.block || this.algae == BlockGreenLeafyAlgae.block || this.algae == BlockGreenSproutingAlgae.block || this.algae == BlockPiledAlgae.block || this.algae == BlockStalkedAlgae.block || this.algae == BlockStalkyBrownAlgae.block);
@@ -62,34 +61,36 @@ public class AlgaeGenerator extends WorldGenerator
 		boolean ediacaran = (this.algae == BlockTawuia.block);
 		boolean seagrass = (this.algae == BlockSeaGrass.block);
 		boolean mosacaulis = (this.algae == BlockMosacaulis.block);
-		boolean algalfrond = (this.algae == BlockTuanshanzia.block);
 		boolean corals = (this.algae == BlockCoralBamboo.block || this.algae == BlockCoralBlueCrust.block || this.algae == BlockCoralBlueStaghorn.block || this.algae == BlockCoralBrain.block || this.algae == BlockCoralCarnation.block || this.algae == BlockCoralRedTree.block || this.algae == BlockCoralSoftFan.block || this.algae == BlockCoralStonyBlooming.block || this.algae == BlockCoralStonyFractalBranching.block || this.algae == BlockCoralStonyLumpy.block || this.algae == BlockCoralStonyPipeStack.block || this.algae == BlockCoralStonyPuffy.block || this.algae == BlockCoralStonyRoughBranching.block || this.algae == BlockCoralStonySparseBranching.block || this.algae == BlockCoralStonyTubular.block || this.algae == BlockCoralTanStaghorn.block);
 		int[] dimCheck = LepidodendronConfigPlants.dimAlgae;
-		if (rugosas) {dimCheck = LepidodendronConfigPlants.dimRugosa;}
+//		if (rugosas) {dimCheck = LepidodendronConfigPlants.dimRugosa;}
 		if (anemones) {dimCheck = LepidodendronConfigPlants.dimAnemone;}
-		if (cystoids) {dimCheck = LepidodendronConfigPlants.dimCrinoid;}
-		if (ediacaran) {dimCheck = LepidodendronConfigPlants.dimEdiacaran;}
+//		if (cystoids) {dimCheck = LepidodendronConfigPlants.dimCrinoid;}
+//		if (ediacaran) {dimCheck = LepidodendronConfigPlants.dimEdiacaran;}
 		if (seagrass) {dimCheck = LepidodendronConfigPlants.dimSeagrass;}
-		if (mosacaulis) {dimCheck = LepidodendronConfigPlants.dimMosacaulis;}
-		if (algalfrond) {dimCheck = LepidodendronConfigPlants.dimAlgalFrond;}
-		if (shouldGenerateInDimension(dimID, dimCheck))
-		dimensionCriteria = true;
-		if ((dimID == LepidodendronConfig.dimDevonian && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
-			|| ((dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
-			|| (dimID == LepidodendronConfig.dimCambrian && (!rugosas) && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
-			|| (dimID == LepidodendronConfig.dimPrecambrian && (!rugosas) && (!cystoids) && (!anemones) && (!seagrass) && (!mosacaulis))
-			|| (dimID == LepidodendronConfig.dimCarboniferous && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
-			|| (dimID == LepidodendronConfig.dimPermian && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
-			|| (dimID == LepidodendronConfig.dimTriassic && (!cystoids) && (!ediacaran) && (!rugosas) && (!seagrass) && (!mosacaulis) && (!algalfrond))
-			|| (dimID == LepidodendronConfig.dimJurassic && (!cystoids) && (!ediacaran) && (!rugosas) && (!seagrass) && (!mosacaulis) && (!algalfrond))
-			|| (dimID == LepidodendronConfig.dimCretaceousEarly && (!cystoids) && (!ediacaran) && (!rugosas) && (!seagrass) && (!mosacaulis) && (!algalfrond))
-			|| (dimID == LepidodendronConfig.dimCretaceousLate && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis) && (!algalfrond))
-			|| (dimID == LepidodendronConfig.dimPaleogene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis) && (!algalfrond))
-			|| (dimID == LepidodendronConfig.dimNeogene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis) && (!algalfrond))
-			|| (dimID == LepidodendronConfig.dimPleistocene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis) && (!algalfrond))
-			) {
+//		if (mosacaulis) {dimCheck = LepidodendronConfigPlants.dimMosacaulis;}
+//		if (algalfrond) {dimCheck = LepidodendronConfigPlants.dimAlgalFrond;}
+
+		if (shouldGenerateInDimension(dimID, dimCheck)) {
 			dimensionCriteria = true;
 		}
+
+//		if ((dimID == LepidodendronConfig.dimDevonian && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
+//			|| ((dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
+//			|| (dimID == LepidodendronConfig.dimCambrian && (!rugosas) && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
+//			|| (dimID == LepidodendronConfig.dimPrecambrian && (!rugosas) && (!cystoids) && (!anemones) && (!seagrass) && (!mosacaulis))
+//			|| (dimID == LepidodendronConfig.dimCarboniferous && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
+//			|| (dimID == LepidodendronConfig.dimPermian && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
+//			|| (dimID == LepidodendronConfig.dimTriassic && (!cystoids) && (!ediacaran) && (!rugosas) && (!seagrass) && (!mosacaulis) && (!algalfrond))
+//			|| (dimID == LepidodendronConfig.dimJurassic && (!cystoids) && (!ediacaran) && (!rugosas) && (!seagrass) && (!mosacaulis) && (!algalfrond))
+//			|| (dimID == LepidodendronConfig.dimCretaceousEarly && (!cystoids) && (!ediacaran) && (!rugosas) && (!seagrass) && (!mosacaulis) && (!algalfrond))
+//			|| (dimID == LepidodendronConfig.dimCretaceousLate && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis) && (!algalfrond))
+//			|| (dimID == LepidodendronConfig.dimPaleogene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis) && (!algalfrond))
+//			|| (dimID == LepidodendronConfig.dimNeogene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis) && (!algalfrond))
+//			|| (dimID == LepidodendronConfig.dimPleistocene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis) && (!algalfrond))
+//			) {
+//			dimensionCriteria = true;
+//		}
 
 		if (!dimensionCriteria)
 			return true;
@@ -126,23 +127,6 @@ public class AlgaeGenerator extends WorldGenerator
 			multiplier = 10;
 		}
 
-		if (this.algae == BlockTawuia.block) {
-			if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
-				|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")) {
-				multiplier = 20;
-				upsideDown = true;
-			}
-		}
-
-		if (this.algae == BlockGreenAlgaeMat.block || this.algae == BlockRedAlgaeMat.block) {
-			if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
-					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
-					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_sparse_sea")) {
-				multiplier = 3;
-				upsideDown = true;
-			}
-		}
-
 		if (eukaryotic) {
 			multiplier = 3;
 		}
@@ -151,12 +135,12 @@ public class AlgaeGenerator extends WorldGenerator
 			multiplier = 5;
 		}
 
-		if (this.algae == BlockTuanshanzia.block) {
-			if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
-					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")) {
-				multiplier = 2;
-			}
-		}
+//		if (this.algae == BlockTuanshanzia.block) {
+//			if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
+//					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")) {
+//				multiplier = 2;
+//			}
+//		}
 
 		for (int i = 0; i < (1 * multiplier); ++i)
 		{
@@ -170,13 +154,6 @@ public class AlgaeGenerator extends WorldGenerator
 			l = position.getZ();
 
 			if (this.algae == BlockGlassSponge.block) {
-				k = ChunkGenSpawner.getTopSolidBlock(new BlockPos(j, 0, l), worldIn).getY() + 1;
-			}
-
-			if (this.algae == BlockTuanshanzia.block
-				&& (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
-				|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")))
-			{
 				k = ChunkGenSpawner.getTopSolidBlock(new BlockPos(j, 0, l), worldIn).getY() + 1;
 			}
 
@@ -246,9 +223,7 @@ public class AlgaeGenerator extends WorldGenerator
 					if (algae && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 10) && !worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean") && !worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")) {
 						waterDepthCheckMin = false;
 					}
-					if (this.algae == BlockRedAlgaeMat.block && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 30) && !worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
-						waterDepthCheckMin = false;
-					}
+
 					if (rugosas && this.algae != BlockRugosa5.block && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 18) && !worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
 						waterDepthCheckMin = false;
 					}
@@ -258,9 +233,7 @@ public class AlgaeGenerator extends WorldGenerator
 					if ((algaeRed || anemones || corals || algae) && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 15) && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean")) {
 						waterDepthCheckMin = false; //anemones, corals and algae only higher up in the deep Early C oceans
 					}
-					if (this.algae == BlockRedAlgaeMat.block && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 35) && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
-						waterDepthCheckMin = false;
-					}
+
 					if (rugosas && this.algae != BlockRugosa5.block && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 35) && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
 						waterDepthCheckMin = false;
 					}
@@ -324,15 +297,7 @@ public class AlgaeGenerator extends WorldGenerator
 							} else {
 								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state, 2);
 							}
-							if (!upsideDown ||
-								(
-									(this.algae == BlockGreenAlgaeMat.block || this.algae == BlockRedAlgaeMat.block)
-									&& rand.nextInt(12) == 0 && upsideDown
-								)
-							) {
-								tries --;
-								return (!(tries > 0));
-							}
+
 						} else {
 							if ( //exclude ones which are better not/can't go sideways!
 									(this.algae != BlockGreenCharaAlgae.block)
@@ -395,34 +360,20 @@ public class AlgaeGenerator extends WorldGenerator
 										Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing1), 2);
 
 										tries --;
-										return (!(tries > 0));
+										if (!(tries > 0)) {
+											return true;
+										}
 									}
 								}
 							}
 						}
 					}
-					if (upsideDown && rand.nextInt(8) == 0) {
-						PropertyDirection FACING = BlockDirectional.FACING;
-						//Can we place this under sea ice upside down?
-						BlockPos bpUpsideDown = ChunkGenSpawner.getTopSolidOrLiquidBlockIncludingLeaves(new BlockPos(j, 0, l), worldIn).down();
-						if (this.algae.canPlaceBlockAt(worldIn, bpUpsideDown.down())) {
-							if (worldIn.getBlockState(bpUpsideDown).getMaterial() == Material.PACKED_ICE && rand.nextInt(24) == 0) {
-								Functions.setBlockStateAndCheckForDoublePlant(worldIn, bpUpsideDown.down(), this.state.withProperty(FACING, EnumFacing.DOWN), 2);
-								if (this.algae != BlockTawuia.block) {
-									tries --;
-									return (!(tries > 0));
-								}
-							}
-						}
-					}
+
 				}
 			}
 		}
-
-		tries --;
-		return (!(tries > 0));
+		return true;
 	}
-
 
 	public boolean shouldGenerateInDimension(int id, int[] dims) {
 		int[] var2 = dims;

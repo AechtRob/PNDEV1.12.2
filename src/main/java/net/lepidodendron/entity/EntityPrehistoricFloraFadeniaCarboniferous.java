@@ -42,10 +42,10 @@ public class EntityPrehistoricFloraFadeniaCarboniferous extends EntityPrehistori
 
 	public EntityPrehistoricFloraFadeniaCarboniferous(World world) {
 		super(world);
-		setSize(1.65F, 1.66F);
+		setSize(1.65F, 0.95F);
 		minWidth = 0.2F;
 		maxWidth = 1.65F;
-		maxHeight = 1.66F;
+		maxHeight = 0.95F;
 		maxHealthAgeable = 80.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

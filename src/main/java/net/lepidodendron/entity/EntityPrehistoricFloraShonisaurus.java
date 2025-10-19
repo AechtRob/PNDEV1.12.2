@@ -40,10 +40,10 @@ public class EntityPrehistoricFloraShonisaurus extends EntityPrehistoricFloraAge
 
 	public EntityPrehistoricFloraShonisaurus(World world) {
 		super(world);
-		setSize(3.59F, 3.99F);
+		setSize(3.59F, 0.95F);
 		minWidth = 0.15F;
 		maxWidth = 3.59F;
-		maxHeight = 3.99F;
+		maxHeight = 0.95F;
 		maxHealthAgeable = 100.0D;
 	}
 

@@ -121,18 +121,10 @@ public class BlockBlueSponge extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimPrecambrian){
 			biomeCriteria = false;
 		}
-		
+
+
 		if (biome instanceof BiomeCambrian) {
-			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
-			if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Ocean
-					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Estuary
-					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Reef
-			) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
+			biomeCriteria = false;
 		}
 
 		if (biome instanceof BiomeOrdovician) {
