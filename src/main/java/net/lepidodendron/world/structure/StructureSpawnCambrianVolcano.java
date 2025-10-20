@@ -30,6 +30,8 @@ public class StructureSpawnCambrianVolcano extends ElementsLepidodendronMod.ModE
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea"))
 			return;
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_abyssal"))
+			return;
 
 		//int GenChance = 4000;
 		int GenChance = 2500;
