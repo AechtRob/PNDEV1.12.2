@@ -12,7 +12,7 @@ public class RenderParawocklumeria extends RenderLivingBaseWithBook<EntityPrehis
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parawocklumeria.png");
 
     public static float getScaler() {
-        return 0.325F;
+        return 0.25F;
     }
     public RenderParawocklumeria(RenderManager mgr) {
         super(mgr, new ModelParawocklumeria(), 0.0f);
