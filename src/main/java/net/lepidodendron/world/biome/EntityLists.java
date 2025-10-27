@@ -137,7 +137,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsGlossopterisCopsePF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsGlossopterisTemperateForestPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsGlossopterisTemperateWaterMeadowPF);
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsHWoodedScrubPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsWoodedScrubPF);
                 return MobString;
 
             case 7:
@@ -1485,7 +1485,7 @@ public class EntityLists {
             } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ermian_lowlands_forest")
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_lowlands_forest")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsHWoodedScrubPF);
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsWoodedScrubPF);
                 }
 //                if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
 //                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsHummocksFA);
