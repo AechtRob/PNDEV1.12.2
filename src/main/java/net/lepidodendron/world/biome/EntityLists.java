@@ -1482,7 +1482,7 @@ public class EntityLists {
 //            if ((LepidodendronConfig.doSpawnsReborn && Loader.isModLoaded("rebornmod"))) {
 //                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsMarineForestReborn);
 //            }
-            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ermian_lowlands_forest")
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_forest")
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_lowlands_forest")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsWoodedScrubPF);
