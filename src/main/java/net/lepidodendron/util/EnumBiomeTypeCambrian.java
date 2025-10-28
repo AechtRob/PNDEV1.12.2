@@ -9,7 +9,8 @@ public enum EnumBiomeTypeCambrian implements IStringSerializable {
     Moist("moist_land"),
     Estuary("estuary"),
     Ocean("ocean"),
-    Reef("reef")
+    Reef("reef"),
+    Emu("emu")
     ;
 
     private final String name;
