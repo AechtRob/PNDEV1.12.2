@@ -379,7 +379,7 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Undetermined multicellular organism, possibly microbial");
-				tooltip.add("Periods: Paleoproterozoic (Statherian) - Mesoproterozoic (Calymmian - Ectasian - Stenian) - Neoproterozoic (Tonian - Cryogenian - Ediacaran) [ - Cambrian (?)]");
+				tooltip.add("Periods: Paleoproterozoic (Statherian) - Mesoproterozoic (Calymmian - Ectasian - Stenian) - Neoproterozoic (Tonian - Cryogenian - Ediacaran)  - Cambrian (?)");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
