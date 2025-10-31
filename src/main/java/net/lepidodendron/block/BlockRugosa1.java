@@ -101,6 +101,9 @@ public class BlockRugosa1 extends ElementsLepidodendronMod.ModElement {
 		) {
 			dimensionCriteria = true;
 		}
+		if (dimID == LepidodendronConfig.dimSilurian) {
+			dimensionCriteria = false;
+		}
 		if (!dimensionCriteria)
 			return;
 

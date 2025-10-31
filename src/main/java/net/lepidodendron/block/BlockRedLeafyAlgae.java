@@ -231,6 +231,9 @@ public class BlockRedLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 		}
 
 
+		if (dimID == LepidodendronConfig.dimSilurian) {
+			biomeCriteria = false;
+		}
 		if (!biomeCriteria)
 			return;
 

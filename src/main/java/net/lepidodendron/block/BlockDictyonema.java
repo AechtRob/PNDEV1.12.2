@@ -110,6 +110,9 @@ public class BlockDictyonema extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimDevonian)
 			dimensionCriteria = true;
 
+		if (dimID == LepidodendronConfig.dimSilurian) {
+			dimensionCriteria = false;
+		}
 		if (!dimensionCriteria)
 			return;
 

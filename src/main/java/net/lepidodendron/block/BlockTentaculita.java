@@ -105,6 +105,9 @@ public class BlockTentaculita extends ElementsLepidodendronMod.ModElement {
 		) {
 			dimensionCriteria = true;
 		}
+		if (dimID == LepidodendronConfig.dimSilurian) {
+			dimensionCriteria = false;
+		}
 		if (!dimensionCriteria)
 			return;
 

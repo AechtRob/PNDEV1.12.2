@@ -106,6 +106,9 @@ public class BlockBrachiopodSpiriferid extends ElementsLepidodendronMod.ModEleme
 		) {
 			dimensionCriteria = true;
 		}
+		if (dimID == LepidodendronConfig.dimSilurian) {
+			dimensionCriteria = false;
+		}
 		if (!dimensionCriteria)
 			return;
 

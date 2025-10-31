@@ -106,10 +106,6 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genGreenLeafyAlgaeOverrideBiomes))
 			biomeCriteria = true;
 
-		if ((dimID == LepidodendronConfig.dimCambrian)
-				|| (dimID == LepidodendronConfig.dimPrecambrian)) {
-			biomeCriteria = false;
-		}
 		if ((dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimDevonian)
 				|| (dimID == LepidodendronConfig.dimCarboniferous)
@@ -121,6 +117,11 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = true;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_china_lakes")) {
+			biomeCriteria = false;
+		}
+		if ((dimID == LepidodendronConfig.dimCambrian)
+				|| (dimID == LepidodendronConfig.dimPrecambrian)
+				|| (dimID == LepidodendronConfig.dimSilurian)) {
 			biomeCriteria = false;
 		}
 		if (!biomeCriteria)
