@@ -133,7 +133,7 @@ public class BlockCrinoidHapalocrinus extends ElementsLepidodendronMod.ModElemen
 			BiomeSilurian biomeSil = (BiomeSilurian) biome;
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
 				biomeCriteria = true;
-				multiplier = 0.75F;
+				multiplier = 5;
 			}
 			else {
 				biomeCriteria = false;
