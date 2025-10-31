@@ -123,11 +123,48 @@
 			"conditions": {
 				"biome": "lepidodendron:silurian_silty_swamp"
 			}
+		},
+		"silurian_creek": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:silurian_creek"
+			}
+		},
+		"silurian_creek_cooksonia": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:silurian_creek_cooksonia"
+			}
+		},
+		"silurian_creek_sands": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:silurian_creek_sands"
+			}
+		},
+		"silurian_creek_silty_swamp": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:silurian_creek_silty_swamp"
+			}
+		},
+		"silurian_creek_coastal": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:silurian_creek_coastal"
+			}
 		}
 	},
 	"requirements": [
 		[
-			"silurian_beach"
+			"silurian_creek",
+			"silurian_creek_cooksonia",
+			"silurian_creek_sands",
+			"silurian_creek_silty_swamp"
+		],
+		[
+			"silurian_beach",
+			"silurian_creek_coastal"
 		],
 		[
 			"silurian_beach_sand"
