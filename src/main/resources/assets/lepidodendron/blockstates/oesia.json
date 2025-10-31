@@ -1,28 +1,28 @@
 {
   "variants": {
-    "facing=north": {
-      "model": "lepidodendron:oesia",
-      "y": 180
-    },
-    "facing=south": {
-      "model": "lepidodendron:oesia",
-      "y": 0
-    },
-    "facing=west": {
-      "model": "lepidodendron:oesia",
-      "y": -270
-    },
-    "facing=east": {
-      "model": "lepidodendron:oesia",
-      "y": -90
-    },
-    "facing=up": {
-      "model": "lepidodendron:oesia",
-      "y": 0
-    },
-    "facing=down": {
-      "model": "lepidodendron:oesia",
-      "y": 0
-    }
+    "facing=north": [
+      {"model": "lepidodendron:oesia_block" },
+      {"model": "lepidodendron:oesia_block_var" }
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:oesia_block", "y": 180 },
+      {"model": "lepidodendron:oesia_block_var", "y": 180 }
+    ],
+    "facing=west": [
+      {"model": "lepidodendron:oesia_block", "y": 270 },
+      {"model": "lepidodendron:oesia_block_var", "y": 270 }
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:oesia_block", "y": 90 },
+      {"model": "lepidodendron:oesia_block_var", "y": 90 }
+    ],
+    "facing=up": [
+      {"model": "lepidodendron:oesia_block" },
+      {"model": "lepidodendron:oesia_block_var" }
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:oesia_block" },
+      {"model": "lepidodendron:oesia_block_var" }
+    ]
   }
 }
