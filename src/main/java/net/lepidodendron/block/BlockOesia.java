@@ -253,6 +253,11 @@ public class BlockOesia extends ElementsLepidodendronMod.ModElement {
 			return false;
 		}
 
+		@Override
+		public EnumOffsetType getOffsetType() {
+			return EnumOffsetType.XZ;
+		}
+
 		@SideOnly(Side.CLIENT)
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
