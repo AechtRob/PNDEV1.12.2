@@ -139,17 +139,7 @@ public class BlockAnemone1 extends ElementsLepidodendronMod.ModElement {
 		}
 
 		if (biome instanceof BiomeSilurian) {
-			BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
-			if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
-					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon
-					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
-					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
-					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
+			biomeCriteria = false;
 		}
 
 		if (biome instanceof BiomePermian)

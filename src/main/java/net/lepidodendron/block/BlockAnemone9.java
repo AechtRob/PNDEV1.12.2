@@ -226,6 +226,11 @@ public class BlockAnemone9 extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
+
+		if (biome instanceof BiomeCambrian || biome instanceof BiomeSilurian) {
+			biomeCriteria = false;
+		}
+
 		if (!biomeCriteria)
 			return;
 

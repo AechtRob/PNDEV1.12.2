@@ -239,6 +239,9 @@ public class BlockBranchedSponge extends ElementsLepidodendronMod.ModElement {
 		}
 
 
+		if (biome instanceof BiomeCambrian || biome instanceof BiomeSilurian) {
+			biomeCriteria = false;
+		}
 		if (!biomeCriteria)
 			return;
 

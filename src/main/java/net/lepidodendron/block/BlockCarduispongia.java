@@ -109,7 +109,7 @@ public class BlockCarduispongia extends ElementsLepidodendronMod.ModElement {
 		//it goes into these dimensions
 		if ((dimID == LepidodendronConfig.dimSilurian)
 		) {
-			dimensionCriteria = true;
+			dimensionCriteria = false;
 		}
 		if (!dimensionCriteria)
 			return;

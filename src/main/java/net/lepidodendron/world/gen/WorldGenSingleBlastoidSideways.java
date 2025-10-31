@@ -19,7 +19,7 @@ import net.minecraftforge.fluids.BlockFluidBase;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class WorldGenSingleSpongeSideways extends WorldGenerator
+public class WorldGenSingleBlastoidSideways extends WorldGenerator
 {
     public final PropertyDirection FACING = BlockDirectional.FACING;
 
@@ -28,7 +28,7 @@ public class WorldGenSingleSpongeSideways extends WorldGenerator
         return generate(worldIn, rand, position, 1, 255, 1, 0, null);
     }
 
-    public boolean generate(World worldIn, Random rand, BlockPos position, int minWaterDepth, int maxWaterDepth, int minY, int maxY, @Nullable Block coralIn)
+    public boolean generate(World worldIn, Random rand, BlockPos position, int minWaterDepth, int maxWaterDepth, int minY, int maxY, @Nullable Block blastoidIn)
     {
 
         if (maxY == 0) {
@@ -61,54 +61,26 @@ public class WorldGenSingleSpongeSideways extends WorldGenerator
             }
 
             int facer = rand.nextInt(4);
-            if (canAttachToSide(BlockBlueSponge.block, worldIn, blockpos, EnumFacing.byHorizontalIndex(facer))) {
-                int type = rand.nextInt(10);
-                IBlockState state = BlockBlueSponge.block.getDefaultState();
-                if (coralIn != null) {
-                    state = coralIn.getDefaultState();
+            if (canAttachToSide(BlockBlastoid1.block, worldIn, blockpos, EnumFacing.byHorizontalIndex(facer))) {
+                int type = rand.nextInt(3);
+                IBlockState state = BlockBlastoid1.block.getDefaultState();
+                if (blastoidIn != null) {
+                    state = blastoidIn.getDefaultState();
                 }
                 else {
                     switch (type) {
 
                         case 0:
                         default:
-                            state = BlockBlueSponge.block.getDefaultState();
+                            state = BlockBlastoid1.block.getDefaultState();
                             break;
 
                         case 1:
-                            state = BlockBranchedSponge.block.getDefaultState();
+                            state = BlockBlastoid2.block.getDefaultState();
                             break;
 
                         case 2:
-                            state = BlockBrownSponge.block.getDefaultState();
-                            break;
-
-                        case 3:
-                            state = BlockOrangeSponge.block.getDefaultState();
-                            break;
-
-                        case 4:
-                            state = BlockPinkSponge.block.getDefaultState();
-                            break;
-
-                        case 5:
-                            state = BlockRedSponge.block.getDefaultState();
-                            break;
-
-                        case 6:
-                            state = BlockYellowSponge.block.getDefaultState();
-                            break;
-
-                        case 7:
-                            state = BlockWhiteSponge.block.getDefaultState();
-                            break;
-
-                        case 8:
-                            state = BlockDarkOrangeSponge.block.getDefaultState();
-                            break;
-
-                        case 9:
-                            state = BlockDarkPinkSponge.block.getDefaultState();
+                            state = BlockBlastoid3.block.getDefaultState();
                             break;
 
                     }

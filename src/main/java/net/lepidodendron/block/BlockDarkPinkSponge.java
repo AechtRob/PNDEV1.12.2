@@ -123,7 +123,8 @@ public class BlockDarkPinkSponge extends ElementsLepidodendronMod.ModElement {
 		}
 
 
-		if (biome instanceof BiomeCambrian) {
+		if (biome instanceof BiomeCambrian ||
+		    biome instanceof BiomeSilurian) {
 			biomeCriteria = false;
 		}
 
@@ -239,6 +240,11 @@ public class BlockDarkPinkSponge extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
+
+		if (biome instanceof BiomeCambrian ||
+				biome instanceof BiomeSilurian) {
+			biomeCriteria = false;
+		}
 
 		if (!biomeCriteria)
 			return;
