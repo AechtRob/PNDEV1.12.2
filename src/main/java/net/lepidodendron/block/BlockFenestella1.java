@@ -9,7 +9,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
-import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
@@ -102,6 +101,21 @@ public class BlockFenestella1 extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimTriassic
 		) {
 			dimensionCriteria = true;
+		}
+		if (dimID == LepidodendronConfig.dimPrecambrian){
+			dimensionCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimCambrian){
+			dimensionCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimOrdovician){
+			dimensionCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimSilurian) {
+			dimensionCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimDevonian){
+			dimensionCriteria = false;
 		}
 		if (!dimensionCriteria)
 			return;

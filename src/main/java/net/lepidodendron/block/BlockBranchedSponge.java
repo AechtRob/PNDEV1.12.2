@@ -242,6 +242,23 @@ public class BlockBranchedSponge extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeCambrian || biome instanceof BiomeSilurian) {
 			biomeCriteria = false;
 		}
+
+
+		if (dimID == LepidodendronConfig.dimPrecambrian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimCambrian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimOrdovician){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimSilurian) {
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimDevonian){
+			biomeCriteria = false;
+		}
 		if (!biomeCriteria)
 			return;
 

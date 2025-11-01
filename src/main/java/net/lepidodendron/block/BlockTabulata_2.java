@@ -104,6 +104,21 @@ public class BlockTabulata_2 extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimSilurian) {
 			dimensionCriteria = false;
 		}
+		if (dimID == LepidodendronConfig.dimPrecambrian){
+			dimensionCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimCambrian){
+			dimensionCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimOrdovician){
+			dimensionCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimSilurian) {
+			dimensionCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimDevonian){
+			dimensionCriteria = false;
+		}
 		if (!dimensionCriteria)
 			return;
 

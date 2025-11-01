@@ -141,6 +141,21 @@ public class BlockCrinoidPetalocrinus extends ElementsLepidodendronMod.ModElemen
 		) {
 			multiplier = 2;
 		}
+		if (dimID == LepidodendronConfig.dimPrecambrian){
+			dimensionCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimCambrian){
+			dimensionCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimOrdovician){
+			dimensionCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimSilurian) {
+			dimensionCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimDevonian){
+			dimensionCriteria = false;
+		}
 
 		boolean forced = false;
 

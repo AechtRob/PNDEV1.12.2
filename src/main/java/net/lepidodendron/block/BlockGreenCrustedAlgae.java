@@ -136,6 +136,9 @@ public class BlockGreenCrustedAlgae extends ElementsLepidodendronMod.ModElement 
 		if (dimID == LepidodendronConfig.dimSilurian){
 			biomeCriteria = false;
 		}
+		if (dimID == LepidodendronConfig.dimDevonian){
+			biomeCriteria = false;
+		}
 		if (!biomeCriteria)
 			return;
 

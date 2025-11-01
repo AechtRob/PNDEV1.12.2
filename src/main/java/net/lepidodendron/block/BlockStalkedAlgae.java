@@ -134,6 +134,9 @@ public class BlockStalkedAlgae extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimSilurian) {
 			biomeCriteria = false;
 		}
+		if (dimID == LepidodendronConfig.dimDevonian){
+			biomeCriteria = false;
+		}
 		if (!biomeCriteria)
 			return;
 
