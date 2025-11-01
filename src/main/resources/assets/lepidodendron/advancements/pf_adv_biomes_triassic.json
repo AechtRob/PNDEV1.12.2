@@ -1,0 +1,598 @@
+{
+	"display": {
+		"icon": {
+			"item": "minecraft:diamond_boots"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_biomes_triassic.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_biomes_triassic.description"
+		},
+		"frame": "challenge"
+	},
+	"parent": "lepidodendron:pf_base_adv",
+	"rewards": {
+		"experience": 10000
+	},
+	"criteria": {
+		"triassic_beach": {
+		"trigger": "minecraft:location",
+		"conditions": {
+			"biome": "lepidodendron:triassic_beach"
+		}
+		},
+		"triassic_beach_white": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_beach_white"
+		}
+		},
+		"triassic_creek_chinle_flats": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_chinle_flats"
+		}
+		},
+		"triassic_chinle_flats": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_chinle_flats"
+		}
+		},
+		"triassic_creek": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek"
+		}
+		},
+		"triassic_riverbank_forest": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_riverbank_forest"
+		}
+		},
+		"triassic_riverbank": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_riverbank"
+		}
+		},
+		"triassic_china_trees": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_china_trees"
+		}
+		},
+		"triassic_china_swamp": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_china_swamp"
+		}
+		},
+		"triassic_china_lakes": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_china_lakes"
+		}
+		},
+		"triassic_ocean_clam_beds": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_ocean_clam_beds"
+		}
+		},
+		"triassic_creek_coastal": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_coastal"
+		}
+		},
+		"triassic_ocean": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_ocean"
+		}
+		},
+		"triassic_delta_flats": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_delta_flats"
+		}
+		},
+		"triassic_creek_delta_flats": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_delta_flats"
+		}
+		},
+		"triassic_delta_flats_mound": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_delta_flats_mound"
+		}
+		},
+		"triassic_creek_desert": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_desert"
+		}
+		},
+		"triassic_desert_sandy": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_desert_sandy"
+		}
+		},
+		"triassic_desert_plateau_canyons": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_desert_plateau_canyons"
+		}
+		},
+		"triassic_desert_plateau_broken": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_desert_plateau_broken"
+		}
+		},
+		"triassic_desert_plateau": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_desert_plateau"
+		}
+		},
+		"triassic_desert_pleuromeia_beds": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_desert_pleuromeia_beds"
+		}
+		},
+		"triassic_horsetails": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_horsetails"
+		}
+		},
+		"triassic_creek_horsetails": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_horsetails"
+		}
+		},
+		"triassic_estuary": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_estuary"
+		}
+		},
+		"triassic_creek_estuary": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_estuary"
+		}
+		},
+		"triassic_mountains": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_mountains"
+		}
+		},
+		"triassic_gondwanan_forest": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_gondwanan_forest"
+		}
+		},
+		"triassic_gondwanan_forest_hills": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_gondwanan_forest_hills"
+		}
+		},
+		"triassic_gondwanan_forest_crags": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_gondwanan_forest_crags"
+		}
+		},
+		"triassic_creek_gondwanan_forest": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_gondwanan_forest"
+		}
+		},
+		"triassic_woodland_polje_edge": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_woodland_polje_edge"
+		}
+		},
+		"triassic_woodland_polje": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_woodland_polje"
+		}
+		},
+		"triassic_beach_black": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_beach_black"
+		}
+		},
+		"triassic_ocean_reef": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_ocean_reef"
+		}
+		},
+		"triassic_river": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_river"
+		}
+		},
+		"triassic_desert_rocky": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_desert_rocky"
+		}
+		},
+		"triassic_lossiemouth": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_lossiemouth"
+		}
+		},
+		"triassic_creek_lossiemouth": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_lossiemouth"
+		}
+		},
+		"triassic_ocean_shore": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_ocean_shore"
+		}
+		},
+		"triassic_volcanic_islands": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_volcanic_islands"
+		}
+		},
+		"triassic_madagascar_flats": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_madagascar_flats"
+		}
+		},
+		"triassic_flooded_forest_dense": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_flooded_forest_dense"
+		}
+		},
+		"triassic_flooded_forest": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_flooded_forest"
+		}
+		},
+		"triassic_creek_flooded_forest": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_flooded_forest"
+		}
+		},
+		"triassic_gondwanan_forest_clearing_lake": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_gondwanan_forest_clearing_lake"
+		}
+		},
+		"triassic_gondwanan_forest_clearing": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_gondwanan_forest_clearing"
+		}
+		},
+		"triassic_karoo_swamp_open": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_karoo_swamp_open"
+		}
+		},
+		"triassic_karoo_swamp_copse": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_karoo_swamp_copse"
+		}
+		},
+		"triassic_gondwanan_plain_flat": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_gondwanan_plain_flat"
+		}
+		},
+		"triassic_gondwanan_plain": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_gondwanan_plain"
+		}
+		},
+		"triassic_creek_gondwanan_plain": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_gondwanan_plain"
+		}
+		},
+		"triassic_karoo_plains": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_karoo_plains"
+		}
+		},
+		"triassic_gondwanan_forest_dry_bayou": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_gondwanan_forest_dry_bayou"
+		}
+		},
+		"triassic_karoo_forest": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_karoo_forest"
+		}
+		},
+		"triassic_creek_karoo_forest": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_karoo_forest"
+		}
+		},
+		"triassic_creek_karoo_swamp": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_karoo_swamp"
+		}
+		},
+		"triassic_karoo_swamp": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_karoo_swamp"
+		}
+		},
+		"triassic_xeric_scrubland": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_xeric_scrubland"
+		}
+		},
+		"triassic_xeric_forest": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_xeric_forest"
+		}
+		},
+		"triassic_xeric_scrubland_lakes": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_xeric_scrubland_lakes"
+		}
+		},
+		"triassic_creek_xeric": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_xeric"
+		}
+		},
+		"triassic_woodland_field": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_woodland_field"
+		}
+		},
+		"triassic_creek_woodland_field": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_woodland_field"
+		}
+		},
+		"triassic_warm_lakeland": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_warm_lakeland"
+		}
+		},
+		"triassic_creek_warm_lakeland": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_warm_lakeland"
+		}
+		},
+		"triassic_warm_volcanic_hills_valley": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_warm_volcanic_hills_valley"
+		}
+		},
+		"triassic_warm_volcanic_hills": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_warm_volcanic_hills"
+		}
+		},
+		"triassic_creek_warm_volcanic_hills_valley": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_warm_volcanic_hills_valley"
+		}
+		},
+		"triassic_creek_warm_volcanic_hills": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_warm_volcanic_hills"
+		}
+		},
+		"triassic_woodland": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_woodland"
+		}
+		},
+		"triassic_creek_woodland": {
+		"trigger": "minecraft:location",
+		"conditions": {
+		"biome": "lepidodendron:triassic_creek_woodland"
+		}
+	}
+},
+	"requirements": [
+		[
+			"triassic_woodland_polje_edge",
+			"triassic_woodland_polje"
+		],
+		[
+			"triassic_creek",
+			"triassic_riverbank_forest",
+			"triassic_riverbank"
+		],
+		[
+			"triassic_creek_chinle_flats",
+			"triassic_chinle_flats"
+		],
+		[
+			"triassic_china_trees",
+			"triassic_china_swamp"
+		],
+		[
+			"triassic_china_lakes"
+		],
+		[
+			"triassic_beach_white"
+		],
+		[
+			"triassic_ocean_clam_beds"
+		],
+		[
+			"triassic_ocean"
+		],
+		[
+			"triassic_delta_flats",
+			"triassic_creek_delta_flats"
+		],
+		[
+			"triassic_delta_flats_mound"
+		],
+		[
+			"triassic_creek_desert",
+			"triassic_desert_sandy",
+			"triassic_desert_plateau_canyons",
+			"triassic_desert_plateau_broken",
+			"triassic_desert_plateau",
+			"triassic_desert_rocky"
+		],
+		[
+			"triassic_desert_pleuromeia_beds"
+		],
+		[
+			"triassic_horsetails",
+			"triassic_creek_horsetails"
+		],
+		[
+			"triassic_estuary",
+			"triassic_creek_estuary"
+		],
+		[
+			"triassic_mountains"
+		],
+		[
+			"triassic_gondwanan_forest",
+			"triassic_gondwanan_forest_hills",
+			"triassic_gondwanan_forest_crags",
+			"triassic_creek_gondwanan_forest"
+		],
+		[
+			"triassic_ocean_reef"
+		],
+		[
+			"triassic_river"
+		],
+		[
+			"triassic_lossiemouth",
+			"triassic_creek_lossiemouth"
+		],
+		[
+			"triassic_beach",
+			"triassic_creek_coastal"
+		],
+		[
+			"triassic_ocean_shore"
+		],
+		[
+			"triassic_beach_black"
+		],
+		[
+			"triassic_volcanic_islands"
+		],
+		[
+			"triassic_madagascar_flats"
+		],
+		[
+			"triassic_flooded_forest_dense",
+			"triassic_flooded_forest",
+			"triassic_creek_flooded_forest"
+		],
+		[
+			"triassic_gondwanan_forest_clearing_lake",
+			"triassic_gondwanan_forest_clearing"
+		],
+		[
+			"triassic_karoo_swamp_open",
+			"triassic_karoo_swamp_copse",
+			"triassic_creek_karoo_swamp",
+			"triassic_karoo_swamp"
+		],
+		[
+			"triassic_gondwanan_plain_flat",
+			"triassic_gondwanan_plain",
+			"triassic_creek_gondwanan_plain"
+		],
+		[
+			"triassic_karoo_plains"
+		],
+		[
+			"triassic_gondwanan_forest_dry_bayou"
+		],
+		[
+			"triassic_karoo_forest",
+			"triassic_creek_karoo_forest"
+		],
+		[
+			"triassic_xeric_scrubland",
+			"triassic_xeric_forest",
+			"triassic_xeric_scrubland_lakes",
+			"triassic_creek_xeric"
+		],
+		[
+			"triassic_woodland_field",
+			"triassic_creek_woodland_field"
+		],
+		[
+			"triassic_warm_lakeland",
+			"triassic_creek_warm_lakeland",
+			"triassic_warm_volcanic_hills"
+		],
+		[
+			"triassic_warm_volcanic_hills_valley",
+			"triassic_creek_warm_volcanic_hills_valley",
+			"triassic_creek_warm_volcanic_hills"
+		],
+		[
+			"triassic_woodland",
+			"triassic_creek_woodland"
+		]
+	]
+}
