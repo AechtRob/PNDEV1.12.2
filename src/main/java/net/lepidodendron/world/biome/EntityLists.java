@@ -32,10 +32,13 @@ public class EntityLists {
                 return MobString;
 
             case 1:
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsOceanDeepPF);
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsOceanShallowPF);
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianEstuaryMobsPF);
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianReefMobsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsSiltyShorePF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsLagoonsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsReefPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsDeepOceanPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsDeepOceanOesiaPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsDeepOceanSiphusauctumPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsDeepOceanAbyssPF);
                 return MobString;
 
             case 2:
@@ -503,48 +506,79 @@ public class EntityLists {
         else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea")
         ) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsOceanDeepPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsDeepOceanPF);
             }
-            if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsOceanDeepFA);
-            }
-            if ((LepidodendronConfig.doSpawnsReborn && Loader.isModLoaded("rebornmod"))) {
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsOceanDeepReborn);
-            }
+//            if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsOceanDeepFA);
+//            }
+//            if ((LepidodendronConfig.doSpawnsReborn && Loader.isModLoaded("rebornmod"))) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsOceanDeepReborn);
+//            }
         } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_beach")
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_creek_coastal")
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea_shore")
         ) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsOceanShallowPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsReefPF);
             }
-            if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsOceanShallowFA);
-            }
-            if ((LepidodendronConfig.doSpawnsReborn && Loader.isModLoaded("rebornmod"))) {
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsOceanShallowReborn);
-            }
+//            if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsOceanShallowFA);
+//            }
+//            if ((LepidodendronConfig.doSpawnsReborn && Loader.isModLoaded("rebornmod"))) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsOceanShallowReborn);
+//            }
         } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_estuary")
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_estuary_helper")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianEstuaryMobsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsLagoonsPF);
             }
-            if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianEstuaryMobsFA);
-            }
-            if ((LepidodendronConfig.doSpawnsReborn && Loader.isModLoaded("rebornmod"))) {
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianEstuaryMobsReborn);
-            }
+//            if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianEstuaryMobsFA);
+//            }
+//            if ((LepidodendronConfig.doSpawnsReborn && Loader.isModLoaded("rebornmod"))) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianEstuaryMobsReborn);
+//            }
         } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea_reefs")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianReefMobsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsDeepOceanOesiaPF);
             }
-            if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianReefMobsFA);
+//            if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianReefMobsFA);
+//            }
+//            if ((LepidodendronConfig.doSpawnsReborn && Loader.isModLoaded("rebornmod"))) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianReefMobsReborn);
+//            }
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_abyssal")) {
+            if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsDeepOceanAbyssPF);
             }
-            if ((LepidodendronConfig.doSpawnsReborn && Loader.isModLoaded("rebornmod"))) {
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianReefMobsReborn);
+//            if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianReefMobsFA);
+//            }
+//            if ((LepidodendronConfig.doSpawnsReborn && Loader.isModLoaded("rebornmod"))) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianReefMobsReborn);
+//            }
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_foreshore")
+            || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_foreshore_dry")) {
+            if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsSiltyShorePF);
             }
+//            if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianReefMobsFA);
+//            }
+//            if ((LepidodendronConfig.doSpawnsReborn && Loader.isModLoaded("rebornmod"))) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianReefMobsReborn);
+//            }
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea_siphusauctum")) {
+            if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsDeepOceanSiphusauctumPF);
+            }
+//            if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianReefMobsFA);
+//            }
+//            if ((LepidodendronConfig.doSpawnsReborn && Loader.isModLoaded("rebornmod"))) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianReefMobsReborn);
+//            }
         }
 
         //ORDOVICIAN:

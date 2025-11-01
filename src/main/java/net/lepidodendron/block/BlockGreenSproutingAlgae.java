@@ -123,6 +123,15 @@ public class BlockGreenSproutingAlgae extends ElementsLepidodendronMod.ModElemen
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_china_lakes")) {
 			biomeCriteria = false;
 		}
+		if (dimID == LepidodendronConfig.dimPrecambrian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimCambrian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimOrdovician){
+			biomeCriteria = false;
+		}
 		if (dimID == LepidodendronConfig.dimSilurian) {
 			biomeCriteria = false;
 		}

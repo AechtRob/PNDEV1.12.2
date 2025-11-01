@@ -229,7 +229,13 @@ public class BlockGreenCodiumAlgae extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
-		if (dimID == LepidodendronConfig.dimSilurian) {
+		if (dimID == LepidodendronConfig.dimCambrian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimOrdovician){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimSilurian){
 			biomeCriteria = false;
 		}
 		if (!biomeCriteria)
