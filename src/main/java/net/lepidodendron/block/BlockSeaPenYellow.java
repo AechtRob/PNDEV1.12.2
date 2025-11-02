@@ -122,6 +122,9 @@ public class BlockSeaPenYellow extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimDevonian){
 			biomeCriteria = false;
 		}
+		if (dimID == LepidodendronConfig.dimCarboniferous){
+			biomeCriteria = false;
+		}
 
 		if (!biomeCriteria)
 			return;

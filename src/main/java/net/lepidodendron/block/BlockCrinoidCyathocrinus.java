@@ -194,6 +194,10 @@ public class BlockCrinoidCyathocrinus extends ElementsLepidodendronMod.ModElemen
 			multiplier = 10;
 		}
 
+		if (biome instanceof BiomeCarboniferous) {
+			multiplier = 6;
+		}
+
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
 			multiplier = 20;
 		}

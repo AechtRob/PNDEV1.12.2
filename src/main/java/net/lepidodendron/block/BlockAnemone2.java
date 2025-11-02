@@ -244,6 +244,9 @@ public class BlockAnemone2 extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimDevonian){
 			biomeCriteria = false;
 		}
+		if (dimID == LepidodendronConfig.dimCarboniferous){
+			biomeCriteria = false;
+		}
 		if (!biomeCriteria)
 			return;
 

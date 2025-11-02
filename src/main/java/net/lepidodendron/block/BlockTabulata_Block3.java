@@ -113,6 +113,9 @@ public class BlockTabulata_Block3 extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimSilurian) {
 			dimensionCriteria = false;
 		}
+		if (dimID == LepidodendronConfig.dimCarboniferous){
+			dimensionCriteria = false;
+		}
 		if (!dimensionCriteria)
 			return;
 
