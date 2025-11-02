@@ -90,10 +90,25 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
 			for (String mob : waterLayingMobs) {
 				String spawnMob = mob;
-				if (spawnMob.indexOf("_nymph") >= 1) {
+				if (spawnMob.equalsIgnoreCase("lepidodendron:prehistoric_flora_aquaticnymph@stonefly")) {
+					spawnMob = "lepidodendron:prehistoric_flora_stonefly";
+				}
+				else if (spawnMob.equalsIgnoreCase("lepidodendron:prehistoric_flora_aquaticnymph@mayfly")) {
+					spawnMob = "lepidodendron:prehistoric_flora_mayfly";
+				}
+				else if (spawnMob.equalsIgnoreCase("lepidodendron:prehistoric_flora_aquaticnymph@velisoptera")) {
+					spawnMob = "lepidodendron:prehistoric_flora_velisoptera";
+				}
+				else if (spawnMob.equalsIgnoreCase("lepidodendron:prehistoric_flora_aquaticnymph@argentinala")) {
+					spawnMob = "lepidodendron:prehistoric_flora_argentinala";
+				}
+				else if (spawnMob.equalsIgnoreCase("lepidodendron:prehistoric_flora_aquaticnymph@damselfly")) {
+					spawnMob = "lepidodendron:prehistoric_flora_damselfly";
+				}
+				else if (spawnMob.indexOf("_nymph") >= 1) {
 					spawnMob = spawnMob.replace("_nymph", "");
 				}
-				if (mob.contains("lepidodendron:prehistoric_flora_dragonfly")) {
+				else if (mob.contains("lepidodendron:prehistoric_flora_dragonfly")) {
 					spawnMob = "lepidodendron:prehistoric_flora_dragonfly";
 				}
 				if (SpawnLocations.spawnsHere(spawnMob, biome.getRegistryName().toString())) {

@@ -33,6 +33,9 @@ public class WorldGenSingleStaticInWaterColumn extends WorldGenerator
         if (staticBlock == null) {
             return false;
         }
+        if (columnHeight < 1) {
+            columnHeight = 1;
+        }
 
         columnHeight = rand.nextInt(columnHeight) + 1;
 
