@@ -44,10 +44,10 @@ public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraLeedsichthys(World world) {
 		super(world);
-		setSize(3F, 2.5F);
+		setSize(3F, 0.95F);
 		minWidth = 0.2F;
 		maxWidth = 3F;
-		maxHeight = 2.5F;
+		maxHeight = 0.95F;
 		maxHealthAgeable = 100.0D;
 		STAND_ANIMATION = Animation.create(385);
 		if (FMLCommonHandler.instance().getSide().isClient()) {

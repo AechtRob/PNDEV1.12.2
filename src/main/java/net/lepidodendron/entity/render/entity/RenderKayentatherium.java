@@ -30,7 +30,7 @@ public class RenderKayentatherium extends RenderLivingBaseWithBook<EntityPrehist
     protected void preRenderCallback(EntityPrehistoricFloraKayentatherium entity, float f) {
         float scale = entity.getAgeScale()*getScaler(); //This is smaller than Kayentatherium
         GlStateManager.scale(scale, scale, scale);
-        //this.shadowSize = entity.width * scale * 0.125F;
+        this.shadowSize = entity.width * scale * 0.125F;
     }
 
 }
