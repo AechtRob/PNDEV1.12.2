@@ -27,10 +27,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.NetworkManager;
-import net.minecraft.network.play.server.SPacketUpdateTileEntity;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -66,7 +62,7 @@ public class BlockOesia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		GameRegistry.registerTileEntity(BlockOesia.TileEntityCustom.class, "lepidodendron:tileentityoesia");
+		//GameRegistry.registerTileEntity(BlockOesia.TileEntityCustom.class, "lepidodendron:tileentityoesia");
 		OreDictionary.registerOre("staticdnaPNlepidodendron:oesia", BlockOesia.block);
 	}
 
@@ -114,22 +110,12 @@ public class BlockOesia extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
-			super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
-			//Assign a variant at random
-			Random rand = new Random();
-			TileEntity te = worldIn.getTileEntity(pos);
-			if (te != null) {
-				te.getTileData().setInteger("variant", rand.nextInt(11));
-			}
-			worldIn.notifyBlockUpdate(pos, state, state, 3);
-		}
-
-		@Override
-		public IBlockState getStateFromMeta(int meta) {
+		public IBlockState getStateFromMeta(int meta)
+		{
 			EnumFacing enumfacing = EnumFacing.byIndex(meta);
 
-			if (enumfacing.getAxis() == EnumFacing.Axis.Y) {
+			if (enumfacing.getAxis() == EnumFacing.Axis.Y)
+			{
 				enumfacing = EnumFacing.NORTH;
 			}
 
@@ -137,8 +123,9 @@ public class BlockOesia extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public int getMetaFromState(IBlockState state) {
-			return ((EnumFacing) state.getValue(FACING)).getIndex();
+		public int getMetaFromState(IBlockState state)
+		{
+			return ((EnumFacing)state.getValue(FACING)).getIndex();
 		}
 
 		@Override
@@ -150,43 +137,6 @@ public class BlockOesia extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public IBlockState withMirror(IBlockState state, Mirror mirrorIn) {
 			return state.withRotation(mirrorIn.toRotation(state.getValue(FACING)));
-		}
-
-		@Override
-		public boolean eventReceived(IBlockState state, World worldIn, BlockPos pos, int eventID, int eventParam) {
-			super.eventReceived(state, worldIn, pos, eventID, eventParam);
-			TileEntity tileentity = worldIn.getTileEntity(pos);
-			return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);
-		}
-
-		@Nullable
-		@Override
-		public TileEntity createTileEntity(World world, IBlockState state) {
-			return new TileEntityCustom();
-		}
-
-		public TileEntityCustom createNewTileEntity(World worldIn, int meta) {
-			return new TileEntityCustom();
-		}
-
-		@Override
-		public boolean hasTileEntity(IBlockState state) {
-			return true;
-		}
-
-		@SideOnly(Side.CLIENT)
-		@Override
-		public EnumBlockRenderType getRenderType(IBlockState state) {
-			return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
-		}
-
-		@Override
-		public void breakBlock(World world, BlockPos pos, IBlockState state) {
-			TileEntity tileentity = world.getTileEntity(pos);
-			//if (tileentity instanceof TileEntityNest)
-			//	InventoryHelper.dropInventoryItems(world, pos, (TileEntityNest) tileentity);
-			world.removeTileEntity(pos);
-			super.breakBlock(world, pos, state);
 		}
 
 		@Override
@@ -303,6 +253,11 @@ public class BlockOesia extends ElementsLepidodendronMod.ModElement {
 			return false;
 		}
 
+		@Override
+		public EnumOffsetType getOffsetType() {
+			return EnumOffsetType.XZ;
+		}
+
 		@SideOnly(Side.CLIENT)
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
@@ -315,51 +270,51 @@ public class BlockOesia extends ElementsLepidodendronMod.ModElement {
 
 	}
 
-	public static class TileEntityCustom extends TileEntity {
-		private int variant;
-
-		@Override
-		public SPacketUpdateTileEntity getUpdatePacket() {
-			NBTTagCompound tag = new NBTTagCompound();
-			this.writeToNBT(tag);
-			return new SPacketUpdateTileEntity(pos, 1, tag);
-		}
-
-		@Override
-		public void onDataPacket(NetworkManager netManager, SPacketUpdateTileEntity packet) {
-			readFromNBT(packet.getNbtCompound());
-		}
-
-		@Override
-		public NBTTagCompound getUpdateTag() {
-			return this.writeToNBT(new NBTTagCompound());
-		}
-
-		@Override
-		public void handleUpdateTag(NBTTagCompound tag) {
-			this.readFromNBT(tag);
-		}
-
-		@Override
-		public void readFromNBT(NBTTagCompound compound) {
-			super.readFromNBT(compound);
-			if (compound.hasKey("variant")) {
-				this.variant = compound.getInteger("variant");
-			}
-		}
-
-		@Override
-		public NBTTagCompound writeToNBT(NBTTagCompound compound) {
-			super.writeToNBT(compound);
-			if (this.hasVariant()) {
-				compound.setInteger("variant", this.variant);
-			}
-			return compound;
-		}
-
-		public boolean hasVariant() {
-			return (this.variant > -1);
-		}
-
-	}
+//	public static class TileEntityCustom extends TileEntity {
+//		private int variant;
+//
+//		@Override
+//		public SPacketUpdateTileEntity getUpdatePacket() {
+//			NBTTagCompound tag = new NBTTagCompound();
+//			this.writeToNBT(tag);
+//			return new SPacketUpdateTileEntity(pos, 1, tag);
+//		}
+//
+//		@Override
+//		public void onDataPacket(NetworkManager netManager, SPacketUpdateTileEntity packet) {
+//			readFromNBT(packet.getNbtCompound());
+//		}
+//
+//		@Override
+//		public NBTTagCompound getUpdateTag() {
+//			return this.writeToNBT(new NBTTagCompound());
+//		}
+//
+//		@Override
+//		public void handleUpdateTag(NBTTagCompound tag) {
+//			this.readFromNBT(tag);
+//		}
+//
+//		@Override
+//		public void readFromNBT(NBTTagCompound compound) {
+//			super.readFromNBT(compound);
+//			if (compound.hasKey("variant")) {
+//				this.variant = compound.getInteger("variant");
+//			}
+//		}
+//
+//		@Override
+//		public NBTTagCompound writeToNBT(NBTTagCompound compound) {
+//			super.writeToNBT(compound);
+//			if (this.hasVariant()) {
+//				compound.setInteger("variant", this.variant);
+//			}
+//			return compound;
+//		}
+//
+//		public boolean hasVariant() {
+//			return (this.variant > -1);
+//		}
+//
+//	}
 }

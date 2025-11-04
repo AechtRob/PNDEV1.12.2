@@ -9,7 +9,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.item.entities.ItemBivalveRaw;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
@@ -129,14 +128,8 @@ public class BlockBrachiopodGigantoproductus extends ElementsLepidodendronMod.Mo
 
 		if (biome instanceof BiomeCarboniferous)
 		{
-			BiomeCarboniferous biomeCarb = (BiomeCarboniferous) biome;
-			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean
-					|| biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Bay) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
+			biomeCriteria = false;
+
 		}
 
 		if (!biomeCriteria)

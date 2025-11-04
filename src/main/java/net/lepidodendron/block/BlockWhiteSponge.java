@@ -239,6 +239,24 @@ public class BlockWhiteSponge extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
+		if (dimID == LepidodendronConfig.dimPrecambrian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimCambrian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimOrdovician){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimSilurian) {
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimDevonian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimCarboniferous){
+			biomeCriteria = false;
+		}
 
 		if (!biomeCriteria)
 			return;

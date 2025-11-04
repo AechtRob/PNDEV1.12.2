@@ -126,6 +126,22 @@ public class BlockGreenCrustedAlgae extends ElementsLepidodendronMod.ModElement 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_china_lakes")) {
 			biomeCriteria = false;
 		}
+
+		if (dimID == LepidodendronConfig.dimCambrian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimOrdovician){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimSilurian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimDevonian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimCarboniferous){
+			biomeCriteria = false;
+		}
 		if (!biomeCriteria)
 			return;
 

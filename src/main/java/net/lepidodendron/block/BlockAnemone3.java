@@ -118,8 +118,7 @@ public class BlockAnemone3 extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = false;
 		}
 
-
-		if (biome instanceof BiomeCambrian) {
+		if (biome instanceof BiomeCambrian || biome instanceof BiomeSilurian) {
 			biomeCriteria = false;
 		}
 
@@ -131,20 +130,6 @@ public class BlockAnemone3 extends ElementsLepidodendronMod.ModElement {
 					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Bryozoan
 					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.FrozenOcean
 					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Estuary) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-
-		if (biome instanceof BiomeSilurian) {
-			BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
-			if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
-					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon
-					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
-					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
-					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
 				biomeCriteria = true;
 			}
 			else {
@@ -225,6 +210,25 @@ public class BlockAnemone3 extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
+
+		if (dimID == LepidodendronConfig.dimPrecambrian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimCambrian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimOrdovician){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimSilurian) {
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimDevonian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimCarboniferous){
+			biomeCriteria = false;
+		}
 		if (!biomeCriteria)
 			return;
 

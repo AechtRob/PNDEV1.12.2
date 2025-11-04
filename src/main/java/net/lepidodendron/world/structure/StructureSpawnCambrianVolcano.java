@@ -60,7 +60,7 @@ public class StructureSpawnCambrianVolcano extends ElementsLepidodendronMod.ModE
 					return;
 
 				BlockPos startpos = new BlockPos(i, j + 1, k);
-				int coneRadius = random.nextInt(60) + 30;
+				int coneRadius = random.nextInt(60) + 50;
 
 				//if (!world.canSeeSky(pos.add(0, (coneRadius-coneHeight) - lavaRadius, 0))) {
 				//	return;

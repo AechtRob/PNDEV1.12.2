@@ -118,11 +118,6 @@ public class BlockGreenAlgaeMat extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = true;
 		}
 
-		if (dimID == LepidodendronConfig.dimCambrian){
-			biomeCriteria = false;
-		}
-
-
 		if (biome instanceof BiomePrecambrian) {
 			BiomePrecambrian biomePrecambrian = (BiomePrecambrian) biome;
 			if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Hadean
@@ -139,6 +134,22 @@ public class BlockGreenAlgaeMat extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = false;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_china_lakes")) {
+			biomeCriteria = false;
+		}
+
+		if (dimID == LepidodendronConfig.dimCambrian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimOrdovician){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimSilurian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimDevonian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimCarboniferous){
 			biomeCriteria = false;
 		}
 

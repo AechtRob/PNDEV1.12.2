@@ -232,7 +232,9 @@ public class AcidBathOutputJunk {
         ItemStack[] itemStack = {
                 new ItemStack(ItemZircon.block, 1),
                 new ItemStack(Items.DIAMOND, 1),
-                new ItemStack(Items.EMERALD, 1)
+                new ItemStack(Items.EMERALD, 1),
+                new ItemStack(BlockTrackwayArthropodStraight.block, 1),
+                new ItemStack(BlockTrackwayArthropodBent.block, 1)
         };
         return itemStack;
     }
@@ -241,7 +243,9 @@ public class AcidBathOutputJunk {
         ItemStack[] itemStack = {
                 new ItemStack(ItemZircon.block, 1),
                 new ItemStack(Items.DIAMOND, 1),
-                new ItemStack(Items.EMERALD, 1)
+                new ItemStack(Items.EMERALD, 1),
+                new ItemStack(BlockTrackwayArthropodStraight.block, 1),
+                new ItemStack(BlockTrackwayArthropodBent.block, 1)
         };
         return itemStack;
     }
@@ -250,7 +254,9 @@ public class AcidBathOutputJunk {
         ItemStack[] itemStack = {
                 new ItemStack(ItemZircon.block, 1),
                 new ItemStack(Items.DIAMOND, 1),
-                new ItemStack(Items.EMERALD, 1)
+                new ItemStack(Items.EMERALD, 1),
+                new ItemStack(BlockTrackwayArthropodStraight.block, 1),
+                new ItemStack(BlockTrackwayArthropodBent.block, 1)
         };
         return itemStack;
     }
@@ -259,7 +265,8 @@ public class AcidBathOutputJunk {
         ItemStack[] itemStack = {
                 new ItemStack(ItemZircon.block, 1),
                 new ItemStack(Items.DIAMOND, 1),
-                new ItemStack(Items.EMERALD, 1)
+                new ItemStack(Items.EMERALD, 1),
+                new ItemStack(BlockTrackwayArthropodStraight.block, 1)
         };
         return itemStack;
     }

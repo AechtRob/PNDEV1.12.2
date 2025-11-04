@@ -81,9 +81,43 @@
 			"conditions": {
 				"biome": "lepidodendron:cambrian_sea_shore"
 			}
+		},
+		"cambrian_sea_siphusauctum": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:cambrian_sea_siphusauctum"
+			}
+		},
+		"cambrian_foreshore": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:cambrian_foreshore"
+			}
+		},
+		"cambrian_foreshore_dry": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:cambrian_foreshore_dry"
+			}
+		},
+		"cambrian_abyssal": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:cambrian_abyssal"
+			}
 		}
 	},
 	"requirements": [
+		[
+			"cambrian_sea_siphusauctum"
+		],
+		[
+			"cambrian_foreshore",
+			"cambrian_foreshore_dry"
+		],
+		[
+			"cambrian_abyssal"
+		],
 		[
 			"cambrian_land"
 		],

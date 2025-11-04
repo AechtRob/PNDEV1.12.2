@@ -1,12 +1,12 @@
 {
-	"name": "Estuary Lagoons",
+	"name": "Lagoonal Pools",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_cambrian.png",
 	"category": "lepidodendron:cambrian/cambrian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Cambrian Estuary Lagoons$(br2)$()Text here..."
+			"text": "$(l)Cambrian Lagoonal Pools$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

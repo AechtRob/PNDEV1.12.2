@@ -119,7 +119,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_river")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_coral")
-                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea_reefs")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_foreshore")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_bryozoan_reef")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_algal_reef")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")

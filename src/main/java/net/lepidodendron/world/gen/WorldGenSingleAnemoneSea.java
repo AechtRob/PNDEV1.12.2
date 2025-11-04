@@ -66,50 +66,46 @@ public class WorldGenSingleAnemoneSea extends WorldGenerator
                 if (specificVariant >= 1 && specificVariant <= 9) {
                     type = specificVariant - 1;
                 }
-                else {
-                    switch (type) {
-                        case 0:
-                        default:
-                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone1.block.getDefaultState(), 2);
-                            break;
+                switch (type) {
+                    case 0:
+                    default:
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone1.block.getDefaultState(), 2);
+                        break;
 
-                        case 1:
-                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone2.block.getDefaultState(), 2);
-                            break;
+                    case 1:
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone2.block.getDefaultState(), 2);
+                        break;
 
-                        case 2:
-                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone3.block.getDefaultState(), 2);
-                            break;
+                    case 2:
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone3.block.getDefaultState(), 2);
+                        break;
 
-                        case 3:
-                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone4.block.getDefaultState(), 2);
-                            break;
+                    case 3:
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone4.block.getDefaultState(), 2);
+                        break;
 
-                        case 4:
-                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone5.block.getDefaultState(), 2);
-                            break;
+                    case 4:
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone5.block.getDefaultState(), 2);
+                        break;
 
-                        case 5:
-                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone6.block.getDefaultState(), 2);
-                            break;
+                    case 5:
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone6.block.getDefaultState(), 2);
+                        break;
 
-                        case 6:
-                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone7.block.getDefaultState(), 2);
-                            break;
+                    case 6:
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone7.block.getDefaultState(), 2);
+                        break;
 
-                        case 7:
-                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone8.block.getDefaultState(), 2);
-                            break;
+                    case 7:
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone8.block.getDefaultState(), 2);
+                        break;
 
-                        case 8:
-                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone9.block.getDefaultState(), 2);
-                            break;
+                    case 8:
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockAnemone9.block.getDefaultState(), 2);
+                        break;
 
-                    }
                 }
-
             }
-
         }
         return true;
     }

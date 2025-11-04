@@ -3,15 +3,11 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.world.biome.ChunkGenSpawner;
-import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
-import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockLiquid;
@@ -36,12 +32,8 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -83,105 +75,6 @@ public class BlockFenestellaGiantGreen extends ElementsLepidodendronMod.ModEleme
 		OreDictionary.registerOre("staticdnaPNlepidodendron:fenestella_giant_green", BlockFenestellaGiantGreen.block);
 		OreDictionary.registerOre("pndietEncruster", BlockFenestellaGiantGreen.block);
 	}
-
-
-	@Override
-	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {		
-		
-		int weight = LepidodendronConfigPlants.weightFenestella;
-		if (weight > 100) {weight = 100;}
-		if (weight < 0) {weight = 0;}
-		if (Math.random() < ((double) (100 - (double) weight)/100)) {
-			return;
-		}
-
-		if (dimID == LepidodendronConfig.dimPrecambrian
-			|| dimID == LepidodendronConfig.dimCambrian
-			|| dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
-			|| dimID == LepidodendronConfig.dimDevonian
-			|| dimID == LepidodendronConfig.dimPermian
-			|| dimID == LepidodendronConfig.dimTriassic
-			|| dimID == LepidodendronConfig.dimJurassic
-				|| dimID == LepidodendronConfig.dimCretaceousEarly
-				|| dimID == LepidodendronConfig.dimCretaceousLate
-				|| dimID == LepidodendronConfig.dimPaleogene
-				|| dimID == LepidodendronConfig.dimNeogene
-				|| dimID == LepidodendronConfig.dimPleistocene
-		) {
-			return;
-		}
-		
-		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
-		if (!matchBiome(biome, LepidodendronConfigPlants.genFenestellaBlacklistBiomes)) {
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
-				biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
-				biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
-				biomeCriteria = false;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
-				biomeCriteria = false;
-		}
-		if (dimID == 0) {
-			biomeCriteria = false;
-		}
-		if (matchBiome(biome, LepidodendronConfigPlants.genFenestellaOverrideBiomes))
-			biomeCriteria = true;
-
-		int multiplier = 1;
-		boolean forced = false;
-
-		if (biome instanceof BiomeCarboniferous)
-		{
-			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_cliff")) {
-				biomeCriteria = true;
-				multiplier = 40;
-				forced = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-		if (!biomeCriteria)
-			return;
-
-		for (int i = 0; i < (int) 10 * multiplier; i++) {
-			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(128);
-			int l14 = chunkZ + random.nextInt(16) + 8;
-			if (forced) {
-				i11 = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, i11, l14), world).getY() + random.nextInt(10);
-			}
-			(new AlgaeGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
-		}
-	}
-
-	public static boolean matchBiome(Biome biome, String[] biomesList) {
-    	
-    	//String regName = biome.getRegistryName().toString();
-    	
-        String[] var2 = biomesList;
-        int var3 = biomesList.length;
-
-        for(int var4 = 0; var4 < var3; ++var4) {
-            String checkBiome = var2[var4];
-            if (!checkBiome.contains(":")) {
-            	//System.err.println("modid test: " + biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":") - 1));
-	            if (checkBiome.equalsIgnoreCase(
-	            	biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":"))
-	            	)) {
-	                return true;
-	            }
-        	}
-        	if (checkBiome.equalsIgnoreCase(biome.getRegistryName().toString())) {
-                return true;
-            }
-        }
-
-        return false;
-    }
 	
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 		

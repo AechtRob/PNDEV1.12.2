@@ -1,7 +1,6 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockHerpetogaster;
-import net.lepidodendron.block.BlockOesia;
 import net.lepidodendron.tileentity.TileEntityFacivermis;
 import net.lepidodendron.tileentity.TileEntityGangtoucunia;
 import net.lepidodendron.util.Functions;
@@ -92,9 +91,9 @@ public class WorldGenSingleStaticInWaterUpwards extends WorldGenerator
                     if (te instanceof BlockHerpetogaster.TileEntityCustom) {
                         te.getTileData().setInteger("rotation", worldIn.rand.nextInt(4));
                     }
-                    if (te instanceof BlockOesia.TileEntityCustom) {
-                        te.getTileData().setInteger("variant", rand.nextInt(11));
-                    }
+//                    if (te instanceof BlockOesia.TileEntityCustom) {
+//                        te.getTileData().setInteger("variant", rand.nextInt(11));
+//                    }
                 }
             }
 

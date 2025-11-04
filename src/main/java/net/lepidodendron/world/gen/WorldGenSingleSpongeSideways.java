@@ -63,7 +63,7 @@ public class WorldGenSingleSpongeSideways extends WorldGenerator
             int facer = rand.nextInt(4);
             if (canAttachToSide(BlockBlueSponge.block, worldIn, blockpos, EnumFacing.byHorizontalIndex(facer))) {
                 int type = rand.nextInt(10);
-                IBlockState state = BlockRugosa1.block.getDefaultState();
+                IBlockState state = BlockBlueSponge.block.getDefaultState();
                 if (coralIn != null) {
                     state = coralIn.getDefaultState();
                 }

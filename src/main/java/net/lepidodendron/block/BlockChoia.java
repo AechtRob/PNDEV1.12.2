@@ -101,6 +101,8 @@ public class BlockChoia extends ElementsLepidodendronMod.ModElement {
 		}
 		if ((dimID == LepidodendronConfig.dimCambrian)){
 			dimensionCriteria = false;}
+		if ((dimID == LepidodendronConfig.dimSilurian)){
+			dimensionCriteria = false;}
 
 		if (!dimensionCriteria)
 			return;

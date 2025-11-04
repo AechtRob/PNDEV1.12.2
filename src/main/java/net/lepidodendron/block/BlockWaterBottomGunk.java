@@ -118,33 +118,18 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomePrecambrian)
 		{
-//			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")) {
-//				multiplier = 30;
-//			}
 			biomeCriteria = false;
 		}
 
 		if (biome instanceof BiomeOrdovician)
 		{
-			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
-			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Algae
-				|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Bog) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
+			biomeCriteria = false;
+
 		}
 
 		if (biome instanceof BiomeDevonian)
 		{
-			BiomeDevonian biomeDevonian = (BiomeDevonian) biome;
-			if (biomeDevonian.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")) {
-				biomeCriteria = true;
-			}
-			else {
 				biomeCriteria = false;
-			}
 		}
 
 		if (biome instanceof BiomeTriassic)

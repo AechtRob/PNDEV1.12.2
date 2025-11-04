@@ -7,9 +7,11 @@ import net.minecraft.entity.MoverType;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
@@ -135,6 +137,17 @@ public class EntityVolcanoFireball extends Entity
             {
                 this.onImpact(raytraceresult);
             }
+            else if (this.world.getBlockState(this.getPosition()).getMaterial() == Material.WATER || this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.WATER) {
+                int l = this.getPosition().getX();
+                int i = this.getPosition().getY();
+                int j = this.getPosition().getZ();
+                this.world.playSound(null, this.getPosition(), SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.5F, 2.6F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
+                for (int k = 0; k < 8; ++k)
+                {
+                    this.world.spawnParticle(EnumParticleTypes.SMOKE_LARGE, (double)l + Math.random(), (double)i + Math.random(), (double)j + Math.random(), 0.0D, 0.0D, 0.0D);
+                }
+                this.setDead();
+            }
             else if (this.onGround && !this.world.isRemote) {
                 boolean doGriefing = world.getGameRules().getBoolean("mobGriefing");
                 if (!LepidodendronConfig.doVolcanoGriefing) {
@@ -149,7 +162,7 @@ public class EntityVolcanoFireball extends Entity
                     }
                 }
                 if (doGriefing) {
-                    if (this.world.getBlockState(this.getPosition()) .getMaterial() != Material.LAVA) {
+                    if (this.world.getBlockState(this.getPosition()).getMaterial() != Material.LAVA) {
                         this.world.setBlockState(this.getPosition(), Blocks.FIRE.getDefaultState(), 11);
                     }
                 }

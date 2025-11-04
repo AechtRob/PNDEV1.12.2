@@ -108,6 +108,9 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 		) {
 			dimensionCriteria = true;
 		}
+		if (dimID == LepidodendronConfig.dimCarboniferous){
+			dimensionCriteria = false;
+		}
 		if (!dimensionCriteria)
 			return;
 
@@ -274,7 +277,7 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }

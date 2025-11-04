@@ -96,6 +96,9 @@ public class BlockBivalveDark extends ElementsLepidodendronMod.ModElement {
 		) {
 			dimensionCriteria = true;
 		}
+		if (dimID == LepidodendronConfig.dimCarboniferous){
+			dimensionCriteria = false;
+		}
 		if (!dimensionCriteria)
 			return;
 

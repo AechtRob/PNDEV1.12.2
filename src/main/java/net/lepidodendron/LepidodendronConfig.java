@@ -113,8 +113,8 @@ public class LepidodendronConfig {
     public static int dimCretaceousLate = -91;
 
     public static boolean doSpawnsPrehistoricFloraDefault = true;
-    public static boolean doSpawnsFossilsArcheology = false;
-    public static boolean doSpawnsReborn = false;
+//    public static boolean doSpawnsFossilsArcheology = false;
+//    public static boolean doSpawnsReborn = false;
     public static boolean globalHomePortals = false;
     public static boolean oneWayPortals = true;
     public static boolean oneWayPortalsNether = false;
@@ -858,14 +858,14 @@ public class LepidodendronConfig {
         prop.setComment("Set to false to disable the default mob-spawns from this mod. [default: true]");
         doSpawnsPrehistoricFloraDefault = prop.getBoolean();
         propOrder.add(prop.getName());
-        prop = cfg.get("Global Mobs", "doSpawnsFossilsArcheology", doSpawnsFossilsArcheology);
-        prop.setComment("Set to true add in appropriate mob-spawns from the mod Fossils and Archeology Revival [v.8.05]. [default: false]");
-        doSpawnsFossilsArcheology = prop.getBoolean();
-        propOrder.add(prop.getName());
-        prop = cfg.get("Global Mobs", "doSpawnsReborn", doSpawnsReborn);
-        prop.setComment("Set to true add in appropriate mob-spawns from the mod Jurassic World Reborn [v.1.1.1]. [default: false]");
-        doSpawnsReborn = prop.getBoolean();
-        propOrder.add(prop.getName());
+//        prop = cfg.get("Global Mobs", "doSpawnsFossilsArcheology", doSpawnsFossilsArcheology);
+//        prop.setComment("Set to true add in appropriate mob-spawns from the mod Fossils and Archeology Revival [v.8.05]. [default: false]");
+//        doSpawnsFossilsArcheology = prop.getBoolean();
+//        propOrder.add(prop.getName());
+//        prop = cfg.get("Global Mobs", "doSpawnsReborn", doSpawnsReborn);
+//        prop.setComment("Set to true add in appropriate mob-spawns from the mod Jurassic World Reborn [v.1.1.1]. [default: false]");
+//        doSpawnsReborn = prop.getBoolean();
+//        propOrder.add(prop.getName());
 
         prop = cfg.get("Rendering and Optimisation", "renderAnimations", renderAnimations);
         prop.setComment("Set to true to animate block-like mobs fully, or to false to render them as static blocks (useful for low performance graphics cards or for conflicts with Optifine). [default: true]");
