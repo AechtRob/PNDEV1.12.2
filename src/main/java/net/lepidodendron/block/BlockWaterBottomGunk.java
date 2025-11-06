@@ -4,7 +4,6 @@ package net.lepidodendron.block;
 import net.lepidodendron.*;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.EnumBiomeTypeOrdovician;
-import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
@@ -110,6 +109,7 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimCambrian)
 				//|| (dimID == LepidodendronConfig.dimPrecambrian)
 				|| (dimID == LepidodendronConfig.dimPermian)
+				|| (dimID == LepidodendronConfig.dimTriassic)
 		) {
 			biomeCriteria = false;
 		}
@@ -134,16 +134,7 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomeTriassic)
 		{
-			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
-			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_china_lakes")) {
-				biomeCriteria = true;
-			}
+			biomeCriteria = false;
 		}
 
 		if (biome instanceof BiomeJurassic)

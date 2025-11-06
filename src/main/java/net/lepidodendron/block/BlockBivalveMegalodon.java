@@ -116,6 +116,9 @@ public class BlockBivalveMegalodon extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimPermian){
 			dimensionCriteria = false;
 		}
+		if (dimID == LepidodendronConfig.dimTriassic){
+			dimensionCriteria = false;
+		}
 		if (!dimensionCriteria)
 			return;
 
