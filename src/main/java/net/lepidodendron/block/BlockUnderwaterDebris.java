@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
@@ -111,79 +110,27 @@ public class BlockUnderwaterDebris extends ElementsLepidodendronMod.ModElement {
 		
 		if (biome instanceof BiomeDevonian)
 		{
-			BiomeDevonian biomeDevonian = (BiomeDevonian) biome;
-			if (biomeDevonian.getBiomeType() != EnumBiomeTypeDevonian.Hypersaline
-				&& biomeDevonian.getBiomeType() != EnumBiomeTypeDevonian.Brackish
-				&& biomeDevonian.getBiomeType() != EnumBiomeTypeDevonian.Ocean
-				&& biomeDevonian.getBiomeType() != EnumBiomeTypeDevonian.Lagoon
-				&& biomeDevonian.getBiomeType() != EnumBiomeTypeDevonian.Springs) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
+			biomeCriteria = false;
 		}
 
 		if (biome instanceof BiomeCarboniferous)
 		{
-			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
-			if (biomeCarboniferous.getBiomeType() != EnumBiomeTypeCarboniferous.Estuary
-					&& biomeCarboniferous.getBiomeType() != EnumBiomeTypeCarboniferous.Ocean
-					&& biomeCarboniferous.getBiomeType() != EnumBiomeTypeCarboniferous.Ice) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
+			biomeCriteria = false;
 		}
 
 		if (biome instanceof BiomePermian)
 		{
-			BiomePermian biomePermian = (BiomePermian) biome;
-			if (biomePermian.getBiomeType() != EnumBiomeTypePermian.Arid
-					&& biomePermian.getBiomeType() != EnumBiomeTypePermian.Ocean
-					&& biomePermian.getBiomeType() != EnumBiomeTypePermian.Desert) {
-				biomeCriteria = true;
-				if (biomePermian.getBiomeType() == EnumBiomeTypePermian.River) {
-					multiplier = 5;
-				}
-			}
-			else {
-				biomeCriteria = false;
-			}
+			biomeCriteria = false;
 		}
 
 		if (biome instanceof BiomeTriassic)
 		{
-			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
-			if (biomeTriassic.getBiomeType() != EnumBiomeTypeTriassic.Ocean
-					&& biomeTriassic.getBiomeType() != EnumBiomeTypeTriassic.Desert) {
-				biomeCriteria = true;
-				if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.River) {
-					multiplier = 5;
-				}
-			}
-			else {
-				biomeCriteria = false;
-			}
+			biomeCriteria = false;
 		}
 
 		if (biome instanceof BiomeJurassic)
 		{
-			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-			if (biomeJurassic.getBiomeType() != EnumBiomeTypeJurassic.Ocean
-					&& biomeJurassic.getBiomeType() != EnumBiomeTypeJurassic.Garrigue) {
-				biomeCriteria = true;
-				if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.River) {
-					multiplier = 5;
-				}
-				if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Lake) {
-					multiplier = 50;
-				}
-			}
-			else {
-				biomeCriteria = false;
-			}
+			biomeCriteria = false;
 		}
 
 		if (biome instanceof BiomeCretaceousEarly)
@@ -225,6 +172,18 @@ public class BlockUnderwaterDebris extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = false;
 		}
 		if (dimID == LepidodendronConfig.dimDevonian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimCarboniferous){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimPermian){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimTriassic){
+			biomeCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimJurassic){
 			biomeCriteria = false;
 		}
 		if (!biomeCriteria) {
