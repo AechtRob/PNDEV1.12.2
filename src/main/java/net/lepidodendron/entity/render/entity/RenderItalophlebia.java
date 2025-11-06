@@ -31,7 +31,7 @@ public class RenderItalophlebia extends RenderLivingBaseWithBook<EntityPrehistor
     protected void applyRotations(EntityPrehistoricFloraItalophlebia entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
 
-        float getOffset = 0.250F;
+        float getOffset = 0.150F;
         switch (entityLiving.getAttachmentFacing()) {
             case DOWN:
             default:

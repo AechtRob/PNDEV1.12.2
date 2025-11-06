@@ -116,7 +116,7 @@ public class ModelProtozygoptera extends ModelBasePalaeopedia {
     }
 
     public void renderStaticDisplayCase(float f) {
-        this.body.offsetZ = -0.080F;
+        this.body.offsetZ = 0.020F;
         this.setRotateAngle(hindwingR, 0.0F, (float)Math.toRadians(15), 0.0F);
         this.setRotateAngle(forewingR, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(forewingL, 0.0F, 0.0F, 0.0F);
@@ -162,7 +162,7 @@ public class ModelProtozygoptera extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 1.1F;
+        this.body.offsetY = 0F;
 
         EntityPrehistoricFloraInsectFlyingBase ee = (EntityPrehistoricFloraInsectFlyingBase) e;
         if (ee.flyProgress != 0 && ee.getAttachmentPos() == null) { //flying pose
