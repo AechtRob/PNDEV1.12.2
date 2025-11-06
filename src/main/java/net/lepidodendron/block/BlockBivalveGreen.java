@@ -218,6 +218,9 @@ public class BlockBivalveGreen extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimCarboniferous){
 			biomeCriteria = false;
 		}
+		if (dimID == LepidodendronConfig.dimPermian){
+			biomeCriteria = false;
+		}
 		if (!biomeCriteria)
 			return;
 

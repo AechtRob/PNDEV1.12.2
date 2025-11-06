@@ -73,18 +73,6 @@ public class BlockBradgatia extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("staticdnaPNlepidodendron:bradgatia", BlockBradgatia.block);
 		OreDictionary.registerOre("holdfastDrops", BlockBradgatia.block);
 	}
-
-	public boolean shouldGenerateInDimension(int id, int[] dims) {
-		int[] var2 = dims;
-		int var3 = dims.length;
-		for (int var4 = 0; var4 < var3; ++var4) {
-			int dim = var2[var4];
-			if (dim == id) {
-				return true;
-			}
-		}
-		return false;
-	}
 	
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 

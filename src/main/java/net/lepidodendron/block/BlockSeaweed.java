@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
@@ -88,33 +89,20 @@ public class BlockSeaweed extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
+		if (!Functions.shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimModernSeaBlockLife)) {
+			return;
+		}
+		
 		int weight = LepidodendronConfigPlants.weightSeaweed;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
 		if (Math.random() < ((double) (100 - (double) weight)/100)) {
 			return;
 		}
-		
-		boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAlgae))
-			dimensionCriteria = true;
-		if (!dimensionCriteria || dimID == LepidodendronConfig.dimPrecambrian
-				|| dimID == LepidodendronConfig.dimCambrian
-				|| dimID == LepidodendronConfig.dimDevonian
-				|| dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
-				|| dimID == LepidodendronConfig.dimCarboniferous
-				|| dimID == LepidodendronConfig.dimPermian
-				|| dimID == LepidodendronConfig.dimTriassic
-				|| dimID == LepidodendronConfig.dimJurassic
-				|| dimID == LepidodendronConfig.dimCretaceousEarly
-		)
-			return;
-		if (!dimensionCriteria)
-			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 15, 0, chunkZ + 15));
-		if (!matchBiome(biome, LepidodendronConfigPlants.genSeaweedBlacklistBiomes)) {
+		if (!Functions.matchBiome(biome, LepidodendronConfigPlants.genSeaweedBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
@@ -124,14 +112,16 @@ public class BlockSeaweed extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfigPlants.genSeaweedOverrideBiomes))
+		if (Functions.matchBiome(biome, LepidodendronConfigPlants.genSeaweedOverrideBiomes))
 			biomeCriteria = true;
-		if (!biomeCriteria)
+
+		if (!biomeCriteria) {
 			return;
+		}
 
 		for (int i = 0; i < 12; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(128);
+			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) * 2);
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			(new WorldGenReed() {
 				@Override
@@ -143,14 +133,16 @@ public class BlockSeaweed extends ElementsLepidodendronMod.ModElement {
 						}
 						BlockPos blockpos1 = ChunkGenSpawner.getTopSolidBlock(pos, world).up(random.nextInt(40));
 						blockpos1 = blockpos1.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
-						if (((BlockCustom) block).isWaterBlock(world, blockpos1) && ((BlockCustom) block).isWaterBlock(world, blockpos1.up())) {
-							BlockPos blockpos2 = blockpos1.down();
-							int j = 1 + random.nextInt(random.nextInt(random.nextInt(10) + 1) + 1);
-							j = Math.min(10, j);
-							for (int k = 0; k < j; ++k)
-								if (((BlockCustom) block).canBlockStay(world, blockpos1)
-								&& ((BlockCustom) block).canBlockStay(world, blockpos1.up(k)))
-									world.setBlockState(blockpos1.up(k), block.getDefaultState(), 2);
+						if (blockpos1.getY() >= Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - 15) {
+							if (((BlockCustom) block).isWaterBlock(world, blockpos1) && ((BlockCustom) block).isWaterBlock(world, blockpos1.up())) {
+								BlockPos blockpos2 = blockpos1.down();
+								int j = 1 + random.nextInt(random.nextInt(random.nextInt(10) + 1) + 1);
+								j = Math.min(10, j);
+								for (int k = 0; k < j; ++k)
+									if (((BlockCustom) block).canBlockStay(world, blockpos1)
+											&& ((BlockCustom) block).canBlockStay(world, blockpos1.up(k)))
+										world.setBlockState(blockpos1.up(k), block.getDefaultState(), 2);
+							}
 						}
 					}
 					return true;

@@ -592,4 +592,41 @@ public class Functions {
         return soundEventOut;
     }
 
+    public static boolean shouldGenerateInDimension(int id, int[] dims) {
+        int[] var2 = dims;
+        int var3 = dims.length;
+        for (int var4 = 0; var4 < var3; ++var4) {
+            int dim = var2[var4];
+            if (dim == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean matchBiome(Biome biome, String[] biomesList) {
+
+        //String regName = biome.getRegistryName().toString();
+
+        String[] var2 = biomesList;
+        int var3 = biomesList.length;
+
+        for(int var4 = 0; var4 < var3; ++var4) {
+            String checkBiome = var2[var4];
+            if (!checkBiome.contains(":")) {
+                //System.err.println("modid test: " + biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":") - 1));
+                if (checkBiome.equalsIgnoreCase(
+                        biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":"))
+                )) {
+                    return true;
+                }
+            }
+            if (checkBiome.equalsIgnoreCase(biome.getRegistryName().toString())) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 }
