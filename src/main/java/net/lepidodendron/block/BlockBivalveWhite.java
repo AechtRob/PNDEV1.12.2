@@ -97,6 +97,9 @@ public class BlockBivalveWhite extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimTriassic){
 			dimensionCriteria = false;
 		}
+		if (dimID == LepidodendronConfig.dimJurassic){
+			dimensionCriteria = false;
+		}
 		if (!dimensionCriteria)
 			return;
 

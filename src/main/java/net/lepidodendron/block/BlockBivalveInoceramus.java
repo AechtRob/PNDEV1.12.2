@@ -92,6 +92,9 @@ public class BlockBivalveInoceramus extends ElementsLepidodendronMod.ModElement 
 		) {
 			dimensionCriteria = true;
 		}
+		if (dimID == LepidodendronConfig.dimJurassic){
+			dimensionCriteria = false;
+		}
 		if (!dimensionCriteria)
 			return;
 
