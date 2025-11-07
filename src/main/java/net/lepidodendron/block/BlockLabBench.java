@@ -590,7 +590,7 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 						String oreName = OreDictionary.getOreName(oreDictID);
 						if (oreName.startsWith("plantdnaPN")
 							|| oreName.startsWith("mobdnaPN")
-							|| oreName.startsWith("plantdnaPN")) {
+							|| oreName.startsWith("staticdnaPN")) {
 							flag = true;
 						}
 					}

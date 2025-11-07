@@ -401,6 +401,9 @@ public class ModelLeedsichthys extends ModelBasePalaeopedia {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
+        if (entity.isInWater()) {
+            this.root.offsetY = this.root.offsetY + 0.7F;
+        }
         this.root.render(f5);
     }
 

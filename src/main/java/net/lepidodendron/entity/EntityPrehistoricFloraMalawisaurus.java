@@ -9,7 +9,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
@@ -18,10 +18,7 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.IEntityLivingData;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
@@ -46,7 +43,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMalawisaurus extends EntityPrehistoricFloraLandWadingBase implements IAdvancementGranter, ITrappableLand {
+public class EntityPrehistoricFloraMalawisaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 
@@ -65,37 +62,10 @@ public class EntityPrehistoricFloraMalawisaurus extends EntityPrehistoricFloraLa
 		maxHeight = 2.7F;
 		maxHealthAgeable = 75.0D;
 		NOISE_ANIMATION = Animation.create(42);
-		setgetMaxTurnDistancePerTick(7.5F);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
-	}
-
-	@Override
-	public float getSwimHeight() {
-		return this.height * 0.20F;
-	}
-
-	@Override
-	public float getgetMaxTurnDistancePerTick() {
-		if ((!this.getIsFast()) && (!this.getLaying()) && (!this.isInLove())) {
-			return 1.0F + (19F - (19F * this.getAgeScale()));
-		}
-		return super.getgetMaxTurnDistancePerTick();
-	}
-
-	@Override
-	protected float getJumpUpwardsMotion() {
-		if (this.isInWater()) {
-			return super.getJumpUpwardsMotion() * 1.5F;
-		}
-		if (this.isReallyInWater()) {
-			return super.getJumpUpwardsMotion() * 1.25F;
-		}
-		if (this.isPFAdult()) {
-			return 0.6F;
-		}
-		return super.getJumpUpwardsMotion();
+		setgetMaxTurnDistancePerTick(10.0F);
 	}
 
 	@Override
@@ -141,7 +111,7 @@ public class EntityPrehistoricFloraMalawisaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{GRAZE_ANIMATION, HURT_ANIMATION, ATTACK_ANIMATION, NOISE_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, MAKE_NEST_ANIMATION, LAY_ANIMATION, EAT_ANIMATION};
+		return new Animation[]{GRAZE_ANIMATION, ATTACK_ANIMATION, NOISE_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, MAKE_NEST_ANIMATION, LAY_ANIMATION, EAT_ANIMATION};
 	}
 
 	@Override
@@ -237,13 +207,14 @@ public class EntityPrehistoricFloraMalawisaurus extends EntityPrehistoricFloraLa
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(4, new LandWanderNestAI(this));
-		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
-		//tasks.addTask(6, new LandWanderHerd(this, 1.00D, Math.max(6, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
-		tasks.addTask(7, new LandWanderAvoidDeepWaterAI(this, 0.7D, 120));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityLookIdleAI(this, true));
+		tasks.addTask(4, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
+		tasks.addTask(5, new LandWanderNestAI(this));
+		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(7, new LandWanderHerd(this, 1.00D, Math.max(1, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
+		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(11, new EntityLookIdleAI(this, true));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -393,7 +364,7 @@ public class EntityPrehistoricFloraMalawisaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	protected float getSoundVolume() {
-		return 1.0F + (2.0F * this.getAgeScale());
+		return 1.0F;
 	}
 
 	@Override

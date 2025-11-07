@@ -39,7 +39,7 @@ public class RenderNautiloidShellEndoceras extends TileEntitySpecialRenderer<Blo
         double scale = 0.6D;
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
             //lying down
-            GlStateManager.translate(x + 0.5 , y + 0.75, z + 0.5);
+            GlStateManager.translate(x + 0.5 , y + 0.21, z + 0.5);
             GlStateManager.scale(scale,scale,scale);
             GlStateManager.rotate(90, 0F, 0F, 1F);
             GlStateManager.rotate(currentRotation, 1F, 0F, 0F);
