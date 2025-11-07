@@ -516,9 +516,9 @@ public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase exten
                 --this.inPFLove;
             }
 
-            if (this.canGrow > 0)
+            if (this.getCanGrow() > 0)
             {
-                --this.canGrow;
+                this.setCanGrow(this.getCanGrow() - 1);
             }
 
             if (this.getMateable() < 0) {

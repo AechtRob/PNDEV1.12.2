@@ -3,11 +3,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "lepidodendron:araucarioxylon_planks_petrified"
+      "item": "lepidodendron:araucarioxylon_log_petrified"
     }
   ],
   "result": {
-    "item": "lepidodendron:araucarioxylon_log_petrified",
+    "item": "lepidodendron:araucarioxylon_planks_petrified",
     "count": 4
   }
 }

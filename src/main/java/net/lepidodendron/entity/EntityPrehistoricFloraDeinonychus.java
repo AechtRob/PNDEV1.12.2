@@ -54,8 +54,8 @@ public class EntityPrehistoricFloraDeinonychus extends EntityPrehistoricFloraLan
 		super(world);
 		setSize(0.5F, 1.0F);
 		minWidth = 0.20F;
-		maxWidth = 0.5F;
-		maxHeight = 0.8F;
+		maxWidth = 0.7F;
+		maxHeight = 0.9F;
 		maxHealthAgeable = 20.0D;
 		STAND_ANIMATION = Animation.create(140);//alert
 		NOISE_ANIMATION = Animation.create(15);

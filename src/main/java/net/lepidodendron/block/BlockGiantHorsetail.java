@@ -330,6 +330,10 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes")) {
 			GenChance = 256;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_estuary")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_triassic_creek_estuary")) {
+			GenChance = 2;
+		}
 
 		int maxheight = LepidodendronConfigPlants.maxheightHorsetail;
 		int minheight = LepidodendronConfigPlants.minheightHorsetail;

@@ -57,6 +57,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private static final DataParameter<Integer> AGETICKS = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
     private static final DataParameter<Boolean> HUNTING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Integer> CANGROW = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
     private static final DataParameter<Boolean> ISFAST = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> ISSNEAKING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
@@ -90,7 +91,6 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private Animation currentAnimation;
     public EntityPrehistoricFloraAgeableBase shoalLeader;
     public int inPFLove;
-    public int canGrow;
     public boolean laying;
     public float extraStepHeight = 0F;
     public EntityItem eatTarget;
@@ -587,6 +587,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.dataManager.register(AGETICKS, getAdultAge() - 1);
         this.dataManager.register(MATEABLE, 0);
         this.dataManager.register(TICKS, 0);
+        this.dataManager.register(CANGROW, 0);
         this.dataManager.register(HUNTING, false);
         this.dataManager.register(ISFAST, false);
         this.dataManager.register(ISSNEAKING, false);
@@ -670,6 +671,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     public void setAgeTicks(int ageticks) {
         this.dataManager.set(AGETICKS, ageticks);
+    }
+
+    public int getCanGrow() {
+        return this.dataManager.get(CANGROW);
+    }
+
+    public void setCanGrow(int growticks) {
+        this.dataManager.set(CANGROW, growticks);
     }
 
     public int getMateable() {
@@ -1050,7 +1059,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         compound.setBoolean("isFast", this.getIsFast());
         compound.setBoolean("isSneaking", this.getIsSneaking());
         compound.setInteger("InPFLove", this.inPFLove);
-        compound.setInteger("canGrow", this.canGrow);
+        compound.setInteger("canGrow", this.getCanGrow());
         compound.setBoolean("laying", this.laying);
         compound.setInteger("homeCooldown", this.homeCooldown);
         compound.setBoolean("juvenile", this.getJuvenile());
@@ -1076,7 +1085,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.setIsFast(compound.getBoolean("isFast"));
         this.setIsSneaking(compound.getBoolean("isSneaking"));
         this.inPFLove = compound.getInteger("InPFLove");
-        this.canGrow = compound.getInteger("canGrow");
+        this.setCanGrow(compound.getInteger("canGrow"));
         this.laying = compound.getBoolean("laying");
         this.homeCooldown = compound.getInteger("homeCooldown");
         this.setJuvenile(compound.getBoolean("juvenile"));
@@ -1390,9 +1399,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             --this.inPFLove;
         }
 
-        if (this.canGrow > 0)
+        if (this.getCanGrow() > 0)
         {
-            --this.canGrow;
+            this.setCanGrow(this.getCanGrow() - 1);
         }
 
         if (this.getMateable() < 0) {
@@ -2215,10 +2224,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     return true;
                 }
             }
-            if (this.isBreedingItem(itemstack) && (!this.isPFAdult()) && this.canGrow <= 0) {
-                this.consumeItemFromStack(player, itemstack);
-                this.canGrow = 2400;
-                this.setAgeTicks(Math.min(this.getAdultAge(), this.getAgeTicks() + 6000));
+            if (this.isBreedingItem(itemstack) && (!this.isPFAdult()) && this.getCanGrow() <= 0) {
+                if (!this.world.isRemote) {
+                    this.consumeItemFromStack(player, itemstack);
+                    this.setCanGrow(2400);
+                    this.setAgeTicks(Math.min(this.getAdultAge(), this.getAgeTicks() + 6000));
+                }
                 if (world.isRemote) {
                     this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);
                 }
