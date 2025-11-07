@@ -16564,5 +16564,54 @@
         "stream": false
       }
     ]
+  },
+
+  "fukuivenator_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:fukuivenator_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:fukuivenator_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:fukuivenator_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:fukuivenator_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:fukuivenator_living05",
+        "stream": false
+      }
+    ]
+  },
+  "fukuivenator_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:fukuivenator_hurt01",
+        "stream": false
+      }
+    ]
+  },
+  "fukuivenator_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:fukuivenator_hurt01",
+        "stream": false
+      }
+    ]
+  },
+  "fukuivenator_social": {
+    "sounds": [
+      {
+        "name": "lepidodendron:fukuivenator_social01",
+        "stream": false
+      }
+    ]
   }
 }
