@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/heteropetalus_raw"
+    "layer0": "lepidodendron:items/entities/heteropetalus_female_raw"
   }
 }
