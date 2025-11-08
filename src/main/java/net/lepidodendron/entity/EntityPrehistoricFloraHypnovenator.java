@@ -10,8 +10,10 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -22,6 +24,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -37,7 +40,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraHypnovenator extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, ITrappableLand {
+public class EntityPrehistoricFloraHypnovenator extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, IScreamer, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -46,6 +49,8 @@ public class EntityPrehistoricFloraHypnovenator extends EntityPrehistoricFloraLa
 	public Animation SCRATCH_ANIMATION;
 	private int standCooldown;
 	public Animation GRAPPLE_ANIMATION;
+	private boolean screaming;
+	private int alarmCooldown;
 
 	public EntityPrehistoricFloraHypnovenator(World world) {
 		super(world);
@@ -59,6 +64,23 @@ public class EntityPrehistoricFloraHypnovenator extends EntityPrehistoricFloraLa
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		Entity e = ds.getTrueSource();
+		if (e instanceof EntityLivingBase) {
+			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
+			List<EntityPrehistoricFloraHypnovenator> Hypnovenator = Functions.getEntitiesWithinAABBPN(this.world, EntityPrehistoricFloraHypnovenator.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)), EntitySelectors.NOT_SPECTATING);
+			for (EntityPrehistoricFloraHypnovenator currentHypnovenator : Hypnovenator) {
+				currentHypnovenator.setAnimation(NO_ANIMATION);
+				currentHypnovenator.setRevengeTarget(ee);
+				currentHypnovenator.setAlarmTarget(ee);
+				currentHypnovenator.alarmCooldown = rand.nextInt(20);
+			}
+		}
+		return super.attackEntityFrom(ds, i);
 	}
 
 	@Override
@@ -79,8 +101,15 @@ public class EntityPrehistoricFloraHypnovenator extends EntityPrehistoricFloraLa
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 
+		if (this.alarmCooldown > 0) {
+			this.alarmCooldown -= 1;
+		}
+		if (this.getScreaming() && alarmCooldown <= 0) {
+			this.playAlarmSound();
+		}
+
 		//Alert animation
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			this.setAnimation(SCRATCH_ANIMATION);
 			this.standCooldown = 2000;
@@ -94,6 +123,14 @@ public class EntityPrehistoricFloraHypnovenator extends EntityPrehistoricFloraLa
 		if ((this.getAnimation() == GRAPPLE_ANIMATION) && this.getGrappleTarget() != null) {
 			this.faceEntity(this.getGrappleTarget(), 10F, 10F);
 		}
+	}
+
+	public void setScreaming(boolean screaming) {
+		this.screaming = screaming;
+	}
+
+	public boolean getScreaming() {
+		return this.screaming;
 	}
 
 	@Override
@@ -248,7 +285,7 @@ public class EntityPrehistoricFloraHypnovenator extends EntityPrehistoricFloraLa
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(4, new PanicAI(this, 1.0));
+		tasks.addTask(4, new PanicScreamAI(this, 1.0));
         tasks.addTask(5, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
 		tasks.addTask(6, new LandWanderNestAI(this));
 		tasks.addTask(7, new GrappleAI(this, 1.0D, false, this.getGrappleLength(), this.getGrappleAnimation(), 0.15));
@@ -313,6 +350,24 @@ public class EntityPrehistoricFloraHypnovenator extends EntityPrehistoricFloraLa
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:hypnovenator_idle"));
+	}
+
+	public SoundEvent getAlarmSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:hypnovenator_alarm"));
+	}
+
+	public void playAlarmSound()
+	{
+		SoundEvent soundevent = this.getAlarmSound();
+		//System.err.println("looking for alarm sound");
+		if (soundevent != null && this.getAnimation() == NO_ANIMATION)
+		{
+			//System.err.println("playing alarm sound");
+			this.setAnimation(ROAR_ANIMATION);
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			this.alarmCooldown = 20;
+		}
 	}
 
 	@Override
