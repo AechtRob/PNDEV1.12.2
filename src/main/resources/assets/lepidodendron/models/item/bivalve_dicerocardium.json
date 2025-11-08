@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:items/bivalve_dicerocardium_icon"
+    "layer0": "lepidodendron:items/bivalve_dicerocardium_inventory"
   }
 }

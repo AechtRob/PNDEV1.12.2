@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/shikamaia_inventory"
+    "layer0": "lepidodendron:items/bivalve_shikamaia_inventory"
   }
 }
 
