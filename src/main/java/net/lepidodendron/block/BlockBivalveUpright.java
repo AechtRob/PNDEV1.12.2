@@ -94,6 +94,13 @@ public class BlockBivalveUpright extends ElementsLepidodendronMod.ModElement {
 		) {
 			dimensionCriteria = true;
 		}
+		if (dimID == LepidodendronConfig.dimTriassic
+		) {
+			dimensionCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimJurassic){
+			dimensionCriteria = false;
+		}
 		if (!dimensionCriteria)
 			return;
 

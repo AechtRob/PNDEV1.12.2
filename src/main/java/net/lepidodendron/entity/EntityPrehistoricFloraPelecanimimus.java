@@ -9,8 +9,10 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -20,10 +22,7 @@ import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -36,9 +35,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Random;
 
-public class EntityPrehistoricFloraPelecanimimus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, ITrappableLand {
+public class EntityPrehistoricFloraPelecanimimus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, IScreamer, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -47,6 +47,8 @@ public class EntityPrehistoricFloraPelecanimimus extends EntityPrehistoricFloraL
 	public Animation SCRATCH_LEFT_ANIMATION;
 	private int standCooldown;
 	public int ambientSoundTime;
+	private boolean screaming;
+	private int alarmCooldown;
 	private Random rand = new Random();
 
 	public EntityPrehistoricFloraPelecanimimus(World world) {
@@ -111,6 +113,23 @@ public class EntityPrehistoricFloraPelecanimimus extends EntityPrehistoricFloraL
 		return 800;
 	}
 
+	@Override
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		Entity e = ds.getTrueSource();
+		if (e instanceof EntityLivingBase) {
+			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
+			List<EntityPrehistoricFloraPelecanimimus> Pelecanimimus = Functions.getEntitiesWithinAABBPN(this.world, EntityPrehistoricFloraPelecanimimus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)), EntitySelectors.NOT_SPECTATING);
+			for (EntityPrehistoricFloraPelecanimimus currentPelecanimimus : Pelecanimimus) {
+				currentPelecanimimus.setAnimation(NO_ANIMATION);
+				currentPelecanimimus.setRevengeTarget(ee);
+				currentPelecanimimus.setAlarmTarget(ee);
+				currentPelecanimimus.alarmCooldown = rand.nextInt(20);
+			}
+		}
+		return super.attackEntityFrom(ds, i);
+	}
+	
 	public boolean isDrinking()
 	{
 		//Is GRAZING!
@@ -264,7 +283,7 @@ public class EntityPrehistoricFloraPelecanimimus extends EntityPrehistoricFloraL
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(4, new PanicAI(this, 1.0));
+		tasks.addTask(4, new PanicScreamAI(this, 1.0));
         tasks.addTask(5, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
 		tasks.addTask(6, new LandWanderNestAI(this));
 		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
@@ -305,9 +324,6 @@ public class EntityPrehistoricFloraPelecanimimus extends EntityPrehistoricFloraL
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.2D);
 	}
 
-
-
-
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
@@ -329,6 +345,24 @@ public class EntityPrehistoricFloraPelecanimimus extends EntityPrehistoricFloraL
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:pelecanimimus_idle"));
+	}
+
+	public SoundEvent getAlarmSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:pelecanimimus_alarm"));
+	}
+
+	public void playAlarmSound()
+	{
+		SoundEvent soundevent = this.getAlarmSound();
+		//System.err.println("looking for alarm sound");
+		if (soundevent != null && this.getAnimation() == NO_ANIMATION)
+		{
+			//System.err.println("playing alarm sound");
+			this.setAnimation(ROAR_ANIMATION);
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			this.alarmCooldown = 20;
+		}
 	}
 
 	@Override
@@ -383,6 +417,14 @@ public class EntityPrehistoricFloraPelecanimimus extends EntityPrehistoricFloraL
 	public void onEntityUpdate() {
 		int next = rand.nextInt(10);
 		super.onEntityUpdate();
+
+		if (this.alarmCooldown > 0) {
+			this.alarmCooldown -= 1;
+		}
+		if (this.getScreaming() && alarmCooldown <= 0) {
+			this.playAlarmSound();
+		}
+
 		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
 		{
 			this.ambientSoundTime = -this.getAmbientTalkInterval();
@@ -390,7 +432,7 @@ public class EntityPrehistoricFloraPelecanimimus extends EntityPrehistoricFloraL
 		}
 		else {
 			//random idle animations
-			if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+			if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
 					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 				this.setAnimation(SCRATCH_LEFT_ANIMATION);
 				this.standCooldown = 2000;
@@ -402,6 +444,14 @@ public class EntityPrehistoricFloraPelecanimimus extends EntityPrehistoricFloraL
 
 		}
 
+	}
+
+	public void setScreaming(boolean screaming) {
+		this.screaming = screaming;
+	}
+
+	public boolean getScreaming() {
+		return this.screaming;
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;

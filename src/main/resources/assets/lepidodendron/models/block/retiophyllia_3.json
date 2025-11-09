@@ -1,5 +1,5 @@
 {
-	"ambientocclusion": false,
+	"parent": "lepidodendron:block/cube_noao",
 	"texture_size": [32, 32],
 	"textures": {
 		"0": "lepidodendron:blocks/retiophyllia",

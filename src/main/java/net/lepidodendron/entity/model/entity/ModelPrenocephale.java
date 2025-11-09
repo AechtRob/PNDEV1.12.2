@@ -481,13 +481,13 @@ public class ModelPrenocephale extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -1.0F;
-        this.main.offsetX = 0.1F;
+        this.main.offsetY = 0.0F;
+        this.main.offsetX = 0.0F;
         this.main.rotateAngleY = (float)Math.toRadians(225);
         this.main.rotateAngleX = (float)Math.toRadians(14);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 0.92F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

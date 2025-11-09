@@ -68,7 +68,7 @@ public class ItemSpawnEggAnurognathidBatrachognathus extends ElementsLepidodendr
 			return "Jurassic";
 		}
 
-		@Override
+		//@Override
 		@Nullable
 		public Entity spawnPNCreature(World worldIn, @Nullable ResourceLocation entityID, double x, double y, double z)
 		{

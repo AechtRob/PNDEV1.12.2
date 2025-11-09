@@ -255,24 +255,24 @@ public class EntityPrehistoricFloraRechnisaurus extends EntityPrehistoricFloraLa
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:stahleckeria_roar"));
+				.getObject(new ResourceLocation("lepidodendron:rechnisaurus_roar"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:stahleckeria_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:rechnisaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:stahleckeria_death"));
+	            .getObject(new ResourceLocation("lepidodendron:rechnisaurus_death"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:stahleckeria_idle"));
+				.getObject(new ResourceLocation("lepidodendron:rechnisaurus_idle"));
 	}
 
 	@Override

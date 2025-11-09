@@ -1307,7 +1307,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_adocus", EntityPrehistoricFloraAdocus.class, LepidodendronMod.ENTITY_ADOCUS, 64,-14606820,-8030387);
         registerEntity("prehistoric_flora_monjurosuchus", EntityPrehistoricFloraMonjurosuchus.class, LepidodendronMod.ENTITY_MONJUROSUCHUS, 64,-11974339,-6603759);
         registerEntity("prehistoric_flora_kaganaias", EntityPrehistoricFloraKaganaias.class, LepidodendronMod.ENTITY_KAGANAIAS, 48,-3958168,-11909569);
-        registerEntity("prehistoric_flora_megapterygius ", EntityPrehistoricFloraMegapterygius .class, LepidodendronMod.ENTITY_MEGAPTERYGIUS , 84,-13156540,-790294);
+        registerEntity("prehistoric_flora_megapterygius", EntityPrehistoricFloraMegapterygius .class, LepidodendronMod.ENTITY_MEGAPTERYGIUS , 84,-13156540,-790294);
         registerEntity("prehistoric_flora_futabasaurus", EntityPrehistoricFloraFutabasaurus.class, LepidodendronMod.ENTITY_FUTABASAURUS, 84,-10925777,-790294);
         registerEntity("prehistoric_flora_phosphorosaurus", EntityPrehistoricFloraPhosphorosaurus.class, LepidodendronMod.ENTITY_PHOSPHOROSAURUS, 84,-12500933,-11777210);
         registerEntity("prehistoric_flora_nipponites", EntityPrehistoricFloraNipponites.class, LepidodendronMod.ENTITY_NIPPONITES, 48,-11354642,-4542559);
@@ -1396,7 +1396,7 @@ public class EntityRegistries {
         // aquatic nymphs for Stonefly, Mayfly, Argentinala, Velisoptera, Damselfly
         registerEntityNoEgg("prehistoric_flora_aquaticnymph", EntityPrehistoricFloraAquaticBugNymph.class, LepidodendronMod.ENTITY_AQUATIC_NYMPH, 48);
         registerEntityNoEgg("prehistoric_flora_tadpole", EntityPrehistoricFloraTadpole.class, LepidodendronMod.ENTITY_TADPOLE, 48);
-        registerEntity("prehistoric_flora_victalimulis", EntityPrehistoricFloraVictalimulus.class, LepidodendronMod.ENTITY_VICTALIMULUS, 48,-5729963,-13492456);
+        registerEntity("prehistoric_flora_victalimulus", EntityPrehistoricFloraVictalimulus.class, LepidodendronMod.ENTITY_VICTALIMULUS, 48,-5729963,-13492456);
         registerEntity("prehistoric_flora_mosura", EntityPrehistoricFloraMosura.class, LepidodendronMod.ENTITY_MOSURA, 48,-1449513,-5141685);
 
 

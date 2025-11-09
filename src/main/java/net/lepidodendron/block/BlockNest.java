@@ -129,14 +129,21 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
-			boolean isMound = false;
-			//if (worldIn instanceof World) {
-				isMound = (isMound( worldIn, pos));
-			//}
-			boolean isBird = (worldIn.getBlockState(pos.down()).getMaterial() == Material.LEAVES
-				|| worldIn.getBlockState(pos.down()).getMaterial() == Material.WOOD);
-
+			boolean	isMound = isMound(worldIn, pos);
+			boolean isBird = isBird(worldIn, pos);
 			return state.withProperty(MOUND, isMound).withProperty(BIRD, (isBird && !isMound));
+		}
+
+		public static boolean isBird(IBlockAccess world, BlockPos pos) {
+			return !(world.getBlockState(pos.down()).getMaterial() == Material.GROUND
+					|| world.getBlockState(pos.down()).getMaterial() == Material.CLAY
+					|| world.getBlockState(pos.down()).getMaterial() == Material.SAND
+					|| world.getBlockState(pos.down()).getMaterial() == Material.ROCK
+					|| world.getBlockState(pos.down()).getMaterial() == Material.CRAFTED_SNOW
+					|| world.getBlockState(pos.down()).getMaterial() == Material.ICE
+					|| world.getBlockState(pos.down()).getMaterial() == Material.PACKED_ICE
+					|| world.getBlockState(pos.down()).getMaterial() == Material.SNOW
+					|| world.getBlockState(pos.down()).getMaterial() == Material.GRASS);
 		}
 
 		public static boolean isMound(IBlockAccess world, BlockPos pos) {

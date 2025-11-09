@@ -781,107 +781,106 @@ public class ModelJuliform extends ModelBasePalaeopedia {
 
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
-        //super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
-        //this.resetToDefaultPose();
-        //this.millipede.offsetY = 1.3F;
+        if (((EntityPrehistoricFloraMyriapod) e).getAnimation() != ((EntityPrehistoricFloraMyriapod) e).HIDE_ANIMATION) {
 
-        AdvancedModelRenderer[] legsL = {this.leftLeg1, this.leftLeg2, this.leftLeg3, this.leftLeg4, this.leftLeg5, this.leftLeg6, this.leftLeg7, this.leftLeg8, this.leftLeg9, this.leftLeg10, this.leftLeg11, this.leftLeg12, this.leftLeg13, this.leftLeg14, this.leftLeg15, this.leftLeg16, this.leftLeg17, this.leftLeg18, this.leftLeg19, this.leftLeg20, this.leftLeg21, this.leftLeg22, this.leftLeg23};
-        AdvancedModelRenderer[] legsR = {this.rightLeg1, this.rightLeg2, this.rightLeg3, this.rightLeg4, this.rightLeg5, this.rightLeg6, this.rightLeg7, this.rightLeg8, this.rightLeg9, this.rightLeg10, this.rightLeg11, this.rightLeg12, this.rightLeg13, this.rightLeg14, this.rightLeg15, this.rightLeg16, this.rightLeg17, this.rightLeg18, this.rightLeg19, this.rightLeg20, this.rightLeg21, this.rightLeg22, this.rightLeg23};
-        AdvancedModelRenderer[] BodyFull = {this.body1, this.body2, this.body3, this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.body11, this.body12};
+            AdvancedModelRenderer[] legsL = {this.leftLeg1, this.leftLeg2, this.leftLeg3, this.leftLeg4, this.leftLeg5, this.leftLeg6, this.leftLeg7, this.leftLeg8, this.leftLeg9, this.leftLeg10, this.leftLeg11, this.leftLeg12, this.leftLeg13, this.leftLeg14, this.leftLeg15, this.leftLeg16, this.leftLeg17, this.leftLeg18, this.leftLeg19, this.leftLeg20, this.leftLeg21, this.leftLeg22, this.leftLeg23};
+            AdvancedModelRenderer[] legsR = {this.rightLeg1, this.rightLeg2, this.rightLeg3, this.rightLeg4, this.rightLeg5, this.rightLeg6, this.rightLeg7, this.rightLeg8, this.rightLeg9, this.rightLeg10, this.rightLeg11, this.rightLeg12, this.rightLeg13, this.rightLeg14, this.rightLeg15, this.rightLeg16, this.rightLeg17, this.rightLeg18, this.rightLeg19, this.rightLeg20, this.rightLeg21, this.rightLeg22, this.rightLeg23};
+            AdvancedModelRenderer[] BodyFull = {this.body1, this.body2, this.body3, this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.body11, this.body12};
 
-        AdvancedModelRenderer[] Body1 = {this.body1, this.body2, this.body3, this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.body11, this.body12};
-        AdvancedModelRenderer[] Body2 = {this.body2, this.body3, this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.body11, this.body12};
-        AdvancedModelRenderer[] Body3 = {this.body3, this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.body11, this.body12};
-        AdvancedModelRenderer[] Body4 = {this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.body11, this.body12};
-        AdvancedModelRenderer[] Body5 = {this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.body11, this.body12};
-        AdvancedModelRenderer[] Body6 = {this.body6, this.body7, this.body8, this.body9, this.body10, this.body11, this.body12};
-        AdvancedModelRenderer[] Body7 = {this.body7, this.body8, this.body9, this.body10, this.body11, this.body12};
-        AdvancedModelRenderer[] Body8 = {this.body8, this.body9, this.body10, this.body11, this.body12};
-        AdvancedModelRenderer[] Body9 = {this.body9, this.body10, this.body11, this.body12};
-        AdvancedModelRenderer[] Body10 = {this.body10, this.body11, this.body12};
-        AdvancedModelRenderer[] Body11 = {this.body11, this.body12};
-        AdvancedModelRenderer[] Body12 = {this.body12};
+            AdvancedModelRenderer[] Body1 = {this.body1, this.body2, this.body3, this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.body11, this.body12};
+            AdvancedModelRenderer[] Body2 = {this.body2, this.body3, this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.body11, this.body12};
+            AdvancedModelRenderer[] Body3 = {this.body3, this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.body11, this.body12};
+            AdvancedModelRenderer[] Body4 = {this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.body11, this.body12};
+            AdvancedModelRenderer[] Body5 = {this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.body11, this.body12};
+            AdvancedModelRenderer[] Body6 = {this.body6, this.body7, this.body8, this.body9, this.body10, this.body11, this.body12};
+            AdvancedModelRenderer[] Body7 = {this.body7, this.body8, this.body9, this.body10, this.body11, this.body12};
+            AdvancedModelRenderer[] Body8 = {this.body8, this.body9, this.body10, this.body11, this.body12};
+            AdvancedModelRenderer[] Body9 = {this.body9, this.body10, this.body11, this.body12};
+            AdvancedModelRenderer[] Body10 = {this.body10, this.body11, this.body12};
+            AdvancedModelRenderer[] Body11 = {this.body11, this.body12};
+            AdvancedModelRenderer[] Body12 = {this.body12};
 
 
-        EntityPrehistoricFloraMyriapod Pneumodesmus = (EntityPrehistoricFloraMyriapod) e;
-        if (f3 == 0.0F || !Pneumodesmus.getIsMoving()) { //Not moving
-            this.head.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.4;
-            this.body4.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.3;
-            return;
-        }
+            EntityPrehistoricFloraMyriapod Pneumodesmus = (EntityPrehistoricFloraMyriapod) e;
+            if (f3 == 0.0F || !Pneumodesmus.getIsMoving()) { //Not moving
+                this.head.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.4;
+                this.body4.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.3;
+                return;
+            }
 
-        AdvancedModelRenderer[] bodySegments = new AdvancedModelRenderer[]{
-                body1, body2, body3, body4, body5, body6, body7, body8, body9, body10, body11, body12};
-        Pneumodesmus.myriapodBuffer.applyChainSwingBuffer(false, bodySegments);
+            AdvancedModelRenderer[] bodySegments = new AdvancedModelRenderer[]{
+                    body1, body2, body3, body4, body5, body6, body7, body8, body9, body10, body11, body12};
+            Pneumodesmus.myriapodBuffer.applyChainSwingBuffer(false, bodySegments);
 
-        if (e instanceof EntityLiving && (!((EntityLiving) e).isAIDisabled()) && ((EntityPrehistoricFloraMyriapod) e).getAnimation() != ((EntityPrehistoricFloraMyriapod) e).HIDE_ANIMATION) {
-            this.head.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.4;
-            this.body4.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.3;
-            if (((EntityPrehistoricFloraMyriapod) e).getIsMoving()) {
-                this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
-                this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
-                //this.chainSwing(BodyHead, 0.2F, 0.3F, -3, f2, 1);
-                //this.walk(head, 0.2F, 0.3F, false,0.3F, 0.5F, f2, 1);
+            if (e instanceof EntityLiving && (!((EntityLiving) e).isAIDisabled())) {
+                this.head.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.4;
+                this.body4.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.3;
+                if (((EntityPrehistoricFloraMyriapod) e).getIsMoving()) {
+                    this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
+                    this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
+                    //this.chainSwing(BodyHead, 0.2F, 0.3F, -3, f2, 1);
+                    //this.walk(head, 0.2F, 0.3F, false,0.3F, 0.5F, f2, 1);
 
-                this.chainSwing(Body1, 0.3F, -0.015F, -3, f2, 0.5F);
-                this.chainSwing(Body2, 0.3F, 0.015F, -3, f2, 0.5F);
-                this.chainSwing(Body3, 0.3F, -0.015F, -3, f2, 0.5F);
-                this.chainSwing(Body4, 0.3F, 0.015F, -3, f2, 0.5F);
-                this.chainSwing(Body5, 0.2F, -0.015F, -3, f2, 0.5F);
-                this.chainSwing(Body6, 0.2F, 0.015F, -3, f2, 0.5F);
-                this.chainSwing(Body7, 0.15F, -0.015F, -3, f2, 0.5F);
-                this.chainSwing(Body8, 0.15F, 0.016F, -3, f2, 0.5F);
-                this.chainSwing(Body9, 0.15F, -0.016F, -3, f2, 0.5F);
-                this.chainSwing(Body10, 0.10F, -0.016F, -3, f2, 0.5F);
-                this.chainSwing(Body11, 0.10F, -0.016F, -3, f2, 0.5F);
-                this.chainSwing(Body12, 0.10F, -0.016F, -3, f2, 0.5F);
+                    this.chainSwing(Body1, 0.3F, -0.015F, -3, f2, 0.5F);
+                    this.chainSwing(Body2, 0.3F, 0.015F, -3, f2, 0.5F);
+                    this.chainSwing(Body3, 0.3F, -0.015F, -3, f2, 0.5F);
+                    this.chainSwing(Body4, 0.3F, 0.015F, -3, f2, 0.5F);
+                    this.chainSwing(Body5, 0.2F, -0.015F, -3, f2, 0.5F);
+                    this.chainSwing(Body6, 0.2F, 0.015F, -3, f2, 0.5F);
+                    this.chainSwing(Body7, 0.15F, -0.015F, -3, f2, 0.5F);
+                    this.chainSwing(Body8, 0.15F, 0.016F, -3, f2, 0.5F);
+                    this.chainSwing(Body9, 0.15F, -0.016F, -3, f2, 0.5F);
+                    this.chainSwing(Body10, 0.10F, -0.016F, -3, f2, 0.5F);
+                    this.chainSwing(Body11, 0.10F, -0.016F, -3, f2, 0.5F);
+                    this.chainSwing(Body12, 0.10F, -0.016F, -3, f2, 0.5F);
 
-                this.flap(leftLeg1, 0.7F, -0.5F, false, 0.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg1, 0.7F, 0.5F, false, 0.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg2, 0.7F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg2, 0.7F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg3, 0.7F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg3, 0.7F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg4, 0.7F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg4, 0.7F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg5, 0.7F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg5, 0.7F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg6, 0.7F, -0.5F, false, 5.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg6, 0.7F, 0.5F, false, 5.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg7, 0.7F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg7, 0.7F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg8, 0.7F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg8, 0.7F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg9, 0.7F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg9, 0.7F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg10, 0.7F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg10, 0.7F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg11, 0.7F, -0.5F, false, 0.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg11, 0.7F, 0.5F, false, 0.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg12, 0.7F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg12, 0.7F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg13, 0.7F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg13, 0.7F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg14, 0.7F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg14, 0.7F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg15, 0.7F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg15, 0.7F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg16, 0.7F, -0.5F, false, 5.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg16, 0.7F, 0.5F, false, 5.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg17, 0.7F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg17, 0.7F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg18, 0.7F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg18, 0.7F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg19, 0.7F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg19, 0.7F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg20, 0.7F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg20, 0.7F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg21, 0.7F, -0.5F, false, 0.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg21, 0.7F, 0.5F, false, 0.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg22, 0.7F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg22, 0.7F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-                this.flap(leftLeg23, 0.7F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-                this.flap(rightLeg23, 0.7F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg1, 0.7F, -0.5F, false, 0.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg1, 0.7F, 0.5F, false, 0.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg2, 0.7F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg2, 0.7F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg3, 0.7F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg3, 0.7F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg4, 0.7F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg4, 0.7F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg5, 0.7F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg5, 0.7F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg6, 0.7F, -0.5F, false, 5.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg6, 0.7F, 0.5F, false, 5.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg7, 0.7F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg7, 0.7F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg8, 0.7F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg8, 0.7F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg9, 0.7F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg9, 0.7F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg10, 0.7F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg10, 0.7F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg11, 0.7F, -0.5F, false, 0.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg11, 0.7F, 0.5F, false, 0.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg12, 0.7F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg12, 0.7F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg13, 0.7F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg13, 0.7F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg14, 0.7F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg14, 0.7F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg15, 0.7F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg15, 0.7F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg16, 0.7F, -0.5F, false, 5.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg16, 0.7F, 0.5F, false, 5.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg17, 0.7F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg17, 0.7F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg18, 0.7F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg18, 0.7F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg19, 0.7F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg19, 0.7F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg20, 0.7F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg20, 0.7F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg21, 0.7F, -0.5F, false, 0.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg21, 0.7F, 0.5F, false, 0.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg22, 0.7F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg22, 0.7F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+                    this.flap(leftLeg23, 0.7F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+                    this.flap(rightLeg23, 0.7F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+                }
             }
         }
     }
@@ -907,22 +906,22 @@ public class ModelJuliform extends ModelBasePalaeopedia {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-         if (tickAnim >= 0 && tickAnim < 19) {
-            xx = 0 + (((tickAnim - 0) / 19) * (0-(0)));
-            yy = -Math.abs((tickAnim /20))*300 + (((tickAnim - 0) / 19) * (-Math.abs(((double)tickAnim/20)))*300-(-Math.abs(((double)tickAnim/20)))*300);
-            zz = 0 + (((tickAnim - 0) / 19) * (0-(0)));
-        }
-        else if (tickAnim >= 19 && tickAnim < 219) {
-            xx = 0 + (((tickAnim - 19) / 200) * (0-(0)));
-            yy = -Math.abs((tickAnim /20))*300 + (((tickAnim - 19) / 200) * (-288-(-Math.abs(((double)tickAnim/20)))*300));
-            zz = 0 + (((tickAnim - 19) / 200) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(millipede, millipede.rotateAngleX + (float) Math.toRadians(xx), millipede.rotateAngleY + (float) Math.toRadians(yy), millipede.rotateAngleZ + (float) Math.toRadians(zz));
+//         if (tickAnim >= 0 && tickAnim < 19) {
+//            xx = 0 + (((tickAnim - 0) / 19) * (0-(0)));
+//            yy = -Math.abs((tickAnim /20))*300 + (((tickAnim - 0) / 19) * (-Math.abs(((double)tickAnim/20)))*300-(-Math.abs(((double)tickAnim/20)))*300);
+//            zz = 0 + (((tickAnim - 0) / 19) * (0-(0)));
+//        }
+//        else if (tickAnim >= 19 && tickAnim < 219) {
+//            xx = 0 + (((tickAnim - 19) / 200) * (0-(0)));
+//            yy = -Math.abs((tickAnim /20))*300 + (((tickAnim - 19) / 200) * (-288-(-Math.abs(((double)tickAnim/20)))*300));
+//            zz = 0 + (((tickAnim - 19) / 200) * (0-(0)));
+//        }
+//        else {
+//            xx = 0;
+//            yy = 0;
+//            zz = 0;
+//        }
+//        this.setRotateAngle(millipede, millipede.rotateAngleX + (float) Math.toRadians(xx), millipede.rotateAngleY + (float) Math.toRadians(yy), millipede.rotateAngleZ + (float) Math.toRadians(zz));
 
 
 

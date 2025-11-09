@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "lepidodendron:items/entities/bucket_victalimulis"
+        "layer0": "lepidodendron:items/entities/bucket_victalimulus"
     }
 }

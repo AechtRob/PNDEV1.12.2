@@ -88,7 +88,7 @@ public class BlockBivalveDicerocardium extends ElementsLepidodendronMod.ModEleme
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimTriassic
 		) {
-			dimensionCriteria = true;
+			dimensionCriteria = false;
 		}
 		if (!dimensionCriteria)
 			return;

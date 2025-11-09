@@ -366,9 +366,19 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             && world.getBlockState(pos1).getMaterial() != MaterialLatex.LATEX
                                                             ) {
                                                                 if (locationID == 1) {
-                                                                    posCheck = true;
-                                                                    //System.err.println("Spawnable " + checkEntity);
-                                                                    spawnPos = pos1;
+                                                                    if (world.getBiome(pos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_estuary")
+                                                                        || world.getBiome(pos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_estuary")) {
+                                                                        if (pos1.getY() >= Functions.getAdjustedSeaLevel(world, pos1) + 1) { //In this biome the requirement for land spawn is one block higher
+                                                                            posCheck = true;
+                                                                            //System.err.println("Spawnable " + checkEntity);
+                                                                            spawnPos = pos1;
+                                                                        }
+                                                                    }
+                                                                    else {
+                                                                        posCheck = true;
+                                                                        //System.err.println("Spawnable " + checkEntity);
+                                                                        spawnPos = pos1;
+                                                                    }
                                                                 }
                                                                 else if (locationID == 8) {
                                                                     //Check for water:

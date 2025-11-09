@@ -2,21 +2,11 @@
   "group": "lepidodendron",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "01 ",
-    "34 ",
-    "   "
+    "##",
+    "##"
   ],
   "key": {
-    "0": {
-      "item": "lepidodendron:lava_rock"
-    },
-    "1": {
-      "item": "lepidodendron:lava_rock"
-    },
-    "3": {
-      "item": "lepidodendron:lava_rock"
-    },
-    "4": {
+    "#": {
       "item": "lepidodendron:lava_rock"
     }
   },

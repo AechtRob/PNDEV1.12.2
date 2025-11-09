@@ -100,7 +100,7 @@ public class BlockSorterFossil extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Sorts fossils and DNA into plants, mobs and static creatures");
+				tooltip.add("Sorts fossils and DNA into plants, (vertbrate and invertebrate) mobs and static creatures on its sides. Other stuff exports from the bottom.");
 				super.addInformation(stack, player, tooltip, advanced);
 			}
 		}

@@ -193,10 +193,10 @@ public class EntityPrehistoricFloraEusthenopteron extends EntityPrehistoricFlora
 		return false;
 	}
 
-	@Override
-	public float getAgeScale() {
-		return 1;
-	}
+//	@Override
+//	public float getAgeScale() {
+//		return 1;
+//	}
 
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);

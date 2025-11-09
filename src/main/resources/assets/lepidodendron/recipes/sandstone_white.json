@@ -2,21 +2,11 @@
   "group": "lepidodendron",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "01 ",
-    "34 ",
-    "   "
+    "##",
+    "##"
   ],
   "key": {
-    "0": {
-      "item": "lepidodendron:sand_white"
-    },
-    "1": {
-      "item": "lepidodendron:sand_white"
-    },
-    "3": {
-      "item": "lepidodendron:sand_white"
-    },
-    "4": {
+    "#": {
       "item": "lepidodendron:sand_white"
     }
   },

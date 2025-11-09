@@ -41,10 +41,10 @@ public class EntityPrehistoricFloraSaivodus extends EntityPrehistoricFloraAgeabl
 
 	public EntityPrehistoricFloraSaivodus(World world) {
 		super(world);
-		setSize(1.59F, 2.1F);
+		setSize(1.59F, 0.95F);
 		minWidth = 0.1F;
 		maxWidth = 1.59F;
-		maxHeight = 2.1F;
+		maxHeight = 0.95F;
 		maxHealthAgeable = 66.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

@@ -18,10 +18,14 @@
 			"multiblock": {
 				"pattern": [
 					[ "1" ],
+					[ "1" ],
+					[ "1" ],
+					[ "1" ],
+					[ "1" ],
 					[ "0" ]
 				],
 				"mapping": {
-					"1": "lepidodendron:Aulacera",
+					"1": "lepidodendron:aulacera",
 					"0": "minecraft:air"
 				}
 			}

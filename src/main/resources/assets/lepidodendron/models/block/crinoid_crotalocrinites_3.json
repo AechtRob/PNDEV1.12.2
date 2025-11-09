@@ -4,7 +4,7 @@
 	"textures": {
 		"0": "lepidodendron:blocks/crotalocrinites_4",
 		"2": "lepidodendron:blocks/crotalocrinites_2",
-		"particle": "lepidodendron:items/crotalocrinites_inventory"
+		"particle": "lepidodendron:items/crinoid_crotalocrinites_inventory"
 	},
 	"elements": [
 		{

@@ -85,116 +85,123 @@ public class GUILabCabinet extends ElementsLepidodendronMod.ModElement {
         }
 
         @Override
-        public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {
+        public ItemStack transferStackInSlot(EntityPlayer playerIn, int index)
+        {
             ItemStack itemstack = ItemStack.EMPTY;
-            Slot slot = (Slot) this.inventorySlots.get(index);
-            if (slot != null && slot.getHasStack()) {
+            Slot slot = this.inventorySlots.get(index);
+
+            if (slot != null && slot.getHasStack())
+            {
                 ItemStack itemstack1 = slot.getStack();
                 itemstack = itemstack1.copy();
-                if (index < 54) {
-                    if (!this.mergeItemStack(itemstack1, 0, this.inventorySlots.size(), true)) {
-                        return ItemStack.EMPTY;
-                    }
-                } else {
-                    if (!this.mergeItemStack(itemstack1, 0, 54, false)) {
+
+                if (index < 54)
+                {
+                    if (!this.mergeItemStack(itemstack1, 54, this.inventorySlots.size(), true))
+                    {
                         return ItemStack.EMPTY;
                     }
                 }
-                if (itemstack1.getCount() == 0) {
-                    slot.putStack(ItemStack.EMPTY);
-                } else {
-                    slot.onSlotChanged();
-                }
-                if (itemstack1.getCount() == itemstack.getCount()) {
+                else if (!this.mergeItemStack(itemstack1, 0, 54, false))
+                {
                     return ItemStack.EMPTY;
                 }
-                slot.onTake(playerIn, itemstack1);
+
+                if (itemstack1.isEmpty())
+                {
+                    slot.putStack(ItemStack.EMPTY);
+                }
+                else
+                {
+                    slot.onSlotChanged();
+                }
             }
+
             return itemstack;
         }
 
-        @Override /**
-         * Merges provided ItemStack with the first avaliable one in the
-         * container/player inventor between minIndex (included) and maxIndex
-         * (excluded). Args : stack, minIndex, maxIndex, negativDirection. /!\ the
-         * Container implementation do not check if the item is valid for the slot
-         */
-        protected boolean mergeItemStack(ItemStack stack, int startIndex, int endIndex, boolean reverseDirection) {
-            boolean flag = false;
-            int i = startIndex;
-            if (reverseDirection) {
-                i = endIndex - 1;
-            }
-            if (stack.isStackable()) {
-                while (!stack.isEmpty()) {
-                    if (reverseDirection) {
-                        if (i < startIndex) {
-                            break;
-                        }
-                    } else if (i >= endIndex) {
-                        break;
-                    }
-                    Slot slot = this.inventorySlots.get(i);
-                    ItemStack itemstack = slot.getStack();
-                    if (slot.isItemValid(itemstack) && !itemstack.isEmpty() && itemstack.getItem() == stack.getItem()
-                            && (!stack.getHasSubtypes() || stack.getMetadata() == itemstack.getMetadata())
-                            && ItemStack.areItemStackTagsEqual(stack, itemstack)) {
-                        int j = itemstack.getCount() + stack.getCount();
-                        int maxSize = Math.min(slot.getSlotStackLimit(), stack.getMaxStackSize());
-                        if (j <= maxSize) {
-                            stack.setCount(0);
-                            itemstack.setCount(j);
-                            slot.putStack(itemstack);
-                            flag = true;
-                        } else if (itemstack.getCount() < maxSize) {
-                            stack.shrink(maxSize - itemstack.getCount());
-                            itemstack.setCount(maxSize);
-                            slot.putStack(itemstack);
-                            flag = true;
-                        }
-                    }
-                    if (reverseDirection) {
-                        --i;
-                    } else {
-                        ++i;
-                    }
-                }
-            }
-            if (!stack.isEmpty()) {
-                if (reverseDirection) {
-                    i = endIndex - 1;
-                } else {
-                    i = startIndex;
-                }
-                while (true) {
-                    if (reverseDirection) {
-                        if (i < startIndex) {
-                            break;
-                        }
-                    } else if (i >= endIndex) {
-                        break;
-                    }
-                    Slot slot1 = this.inventorySlots.get(i);
-                    ItemStack itemstack1 = slot1.getStack();
-                    if (itemstack1.isEmpty() && slot1.isItemValid(stack)) {
-                        if (stack.getCount() > slot1.getSlotStackLimit()) {
-                            slot1.putStack(stack.splitStack(slot1.getSlotStackLimit()));
-                        } else {
-                            slot1.putStack(stack.splitStack(stack.getCount()));
-                        }
-                        slot1.onSlotChanged();
-                        flag = true;
-                        break;
-                    }
-                    if (reverseDirection) {
-                        --i;
-                    } else {
-                        ++i;
-                    }
-                }
-            }
-            return flag;
-        }
+//        @Override /**
+//         * Merges provided ItemStack with the first avaliable one in the
+//         * container/player inventor between minIndex (included) and maxIndex
+//         * (excluded). Args : stack, minIndex, maxIndex, negativDirection. /!\ the
+//         * Container implementation do not check if the item is valid for the slot
+//         */
+//        protected boolean mergeItemStack(ItemStack stack, int startIndex, int endIndex, boolean reverseDirection) {
+//            boolean flag = false;
+//            int i = startIndex;
+//            if (reverseDirection) {
+//                i = endIndex - 1;
+//            }
+//            if (stack.isStackable()) {
+//                while (!stack.isEmpty()) {
+//                    if (reverseDirection) {
+//                        if (i < startIndex) {
+//                            break;
+//                        }
+//                    } else if (i >= endIndex) {
+//                        break;
+//                    }
+//                    Slot slot = this.inventorySlots.get(i);
+//                    ItemStack itemstack = slot.getStack();
+//                    if (slot.isItemValid(itemstack) && !itemstack.isEmpty() && itemstack.getItem() == stack.getItem()
+//                            && (!stack.getHasSubtypes() || stack.getMetadata() == itemstack.getMetadata())
+//                            && ItemStack.areItemStackTagsEqual(stack, itemstack)) {
+//                        int j = itemstack.getCount() + stack.getCount();
+//                        int maxSize = Math.min(slot.getSlotStackLimit(), stack.getMaxStackSize());
+//                        if (j <= maxSize) {
+//                            stack.setCount(0);
+//                            itemstack.setCount(j);
+//                            slot.putStack(itemstack);
+//                            flag = true;
+//                        } else if (itemstack.getCount() < maxSize) {
+//                            stack.shrink(maxSize - itemstack.getCount());
+//                            itemstack.setCount(maxSize);
+//                            slot.putStack(itemstack);
+//                            flag = true;
+//                        }
+//                    }
+//                    if (reverseDirection) {
+//                        --i;
+//                    } else {
+//                        ++i;
+//                    }
+//                }
+//            }
+//            if (!stack.isEmpty()) {
+//                if (reverseDirection) {
+//                    i = endIndex - 1;
+//                } else {
+//                    i = startIndex;
+//                }
+//                while (true) {
+//                    if (reverseDirection) {
+//                        if (i < startIndex) {
+//                            break;
+//                        }
+//                    } else if (i >= endIndex) {
+//                        break;
+//                    }
+//                    Slot slot1 = this.inventorySlots.get(i);
+//                    ItemStack itemstack1 = slot1.getStack();
+//                    if (itemstack1.isEmpty() && slot1.isItemValid(stack)) {
+//                        if (stack.getCount() > slot1.getSlotStackLimit()) {
+//                            slot1.putStack(stack.splitStack(slot1.getSlotStackLimit()));
+//                        } else {
+//                            slot1.putStack(stack.splitStack(stack.getCount()));
+//                        }
+//                        slot1.onSlotChanged();
+//                        flag = true;
+//                        break;
+//                    }
+//                    if (reverseDirection) {
+//                        --i;
+//                    } else {
+//                        ++i;
+//                    }
+//                }
+//            }
+//            return flag;
+//        }
 
         @Override
         public void onContainerClosed(EntityPlayer playerIn) {

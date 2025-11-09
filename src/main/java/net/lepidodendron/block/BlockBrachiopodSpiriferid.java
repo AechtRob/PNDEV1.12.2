@@ -127,6 +127,9 @@ public class BlockBrachiopodSpiriferid extends ElementsLepidodendronMod.ModEleme
 		if (dimID == LepidodendronConfig.dimCarboniferous){
 			dimensionCriteria = false;
 		}
+		if (dimID == LepidodendronConfig.dimPermian){
+			dimensionCriteria = false;
+		}
 		if (!dimensionCriteria)
 			return;
 

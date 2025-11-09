@@ -2439,7 +2439,7 @@ public class LepidodendronConfigPlants {
     public static String[] genWebsteroprionOverrideBiomes = new String[0];
     public static int weightWebsteroprion = 100;
 
-    public static int[] dimAlgae = new int[]{0};
+    public static int[] dimModernSeaBlockLife = new int[]{0};
     public static String[] genMacrocystisBlacklistBiomes = new String[0];
     public static String[] genMacrocystisOverrideBiomes = new String[0];
     public static int weightMacrocystis = 100;
@@ -2538,31 +2538,11 @@ public class LepidodendronConfigPlants {
     public static String[] genBranchedSpongeBlacklistBiomes = new String[0];
     public static String[] genBranchedSpongeOverrideBiomes = new String[0];
     public static int weightBranchedSponge = 10;
-    public static String[] genGigantospongiaBlacklistBiomes = new String[0];
-    public static String[] genGigantospongiaOverrideBiomes = new String[0];
-    public static int weightGigantospongia = 10;
-
 
     public static String[] genCoralBlacklistBiomes = new String[0];
     public static String[] genCoralOverrideBiomes = new String[0];
     public static int weightCoral = 10;
 
-    public static int[] dimRugosa = new int[0];
-    public static String[] genRugosaBlacklistBiomes = new String[0];
-    public static String[] genRugosaOverrideBiomes = new String[0];
-    public static int weightRugosa = 10;
-
-    public static int[] dimTabulata = new int[0];
-    public static String[] genTabulataBlacklistBiomes = new String[0];
-    public static String[] genTabulataOverrideBiomes = new String[0];
-    public static int weightTabulata = 10;
-
-    public static int[] dimFenestella = new int[0];
-    public static String[] genFenestellaBlacklistBiomes = new String[0];
-    public static String[] genFenestellaOverrideBiomes = new String[0];
-    public static int weightFenestella = 10;
-
-    public static int[] dimAnemone = new int[]{0};
     public static String[] genAnemoneBlacklistBiomes = new String[0];
     public static String[] genAnemoneOverrideBiomes = new String[0];
     public static int weightAnemone = 10;
@@ -3110,9 +3090,9 @@ public class LepidodendronConfigPlants {
         weightEdiacaran = prop.getInt();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("WorldGen Algae-Sponges", "dimAlgae", dimAlgae);
-        prop.setComment("List of dimension IDs Algae and Sponges can generate in [default: 0]");
-        dimAlgae = prop.getIntList();
+        prop = cfg.get("WorldGen Modern Sea", "dimModernSea", dimModernSeaBlockLife);
+        prop.setComment("List of dimension IDs modern sea blocks can generate in [default: 0]");
+        dimModernSeaBlockLife = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Algae-Sponges", "genMacrocystisBlacklistBiomes", genMacrocystisBlacklistBiomes);
         prop.setComment("List of biomes Macrocystis Kelp is blacklisted from, in the format: modid:biomeid [default: empty]");
@@ -3562,29 +3542,16 @@ public class LepidodendronConfigPlants {
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Corals", "genCoralBlacklistBiomes", genCoralBlacklistBiomes);
-        prop.setComment("List of biomes Corals are blacklisted from, in the format: modid:biomeid [default: empty]");
+        prop.setComment("List of biomes Corals and similar are blacklisted from, in the format: modid:biomeid [default: empty]");
         genCoralBlacklistBiomes = prop.getStringList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Corals", "genCoralOverrideBiomes", genCoralOverrideBiomes);
-        prop.setComment("List of biomes Corals are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        prop.setComment("List of biomes Corals and similar are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
         genCoralOverrideBiomes = prop.getStringList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Corals", "weightCoral", weightCoral);
-        prop.setComment("Percentage chance that Corals generate in a suitable chunk (0 to 100) [default: 10]");
+        prop.setComment("Percentage chance that Corals and similar generate in a suitable chunk (0 to 100) [default: 10]");
         weightCoral = prop.getInt();
-        propOrder.add(prop.getName());
-
-        prop = cfg.get("WorldGen Algae-Sponges", "genGigantospongiaBlacklistBiomes", genGigantospongiaBlacklistBiomes);
-        prop.setComment("List of biomes Gigantospongia are blacklisted from, in the format: modid:biomeid [default: empty]");
-        genGigantospongiaBlacklistBiomes = prop.getStringList();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Algae-Sponges", "genGigantospongiaOverrideBiomes", genGigantospongiaOverrideBiomes);
-        prop.setComment("List of biomesGigantospongia are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
-        genGigantospongiaOverrideBiomes = prop.getStringList();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Algae-Sponges", "weightGigantospongia", weightGigantospongia);
-        prop.setComment("Percentage chance that Gigantospongia generates in a suitable chunk (0 to 100) [default: 10]");
-        weightGigantospongia = prop.getInt();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Algae-Sponges", "genBrownSpongeBlacklistBiomes", genBrownSpongeBlacklistBiomes);
@@ -3613,74 +3580,18 @@ public class LepidodendronConfigPlants {
         weightBranchedSponge = prop.getInt();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("WorldGen Corals", "dimRugosa", dimRugosa);
-        prop.setComment("List of dimension IDs Rugosa Corals can generate in [default: empty]");
-        dimRugosa = prop.getIntList();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Corals", "genRugosaBlacklistBiomes", genRugosaBlacklistBiomes);
-        prop.setComment("List of biomes Rugosa Corals are blacklisted from, in the format: modid:biomeid [default: empty]");
-        genRugosaBlacklistBiomes = prop.getStringList();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Corals", "genRugosaOverrideBiomes", genRugosaOverrideBiomes);
-        prop.setComment("List of biomes Rugosa Corals are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
-        genRugosaOverrideBiomes = prop.getStringList();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Corals", "weightRugosa", weightRugosa);
-        prop.setComment("Percentage chance that Rugosa Corals generates in a suitable chunk (0 to 100) [default: 10]");
-        weightRugosa = prop.getInt();
-        propOrder.add(prop.getName());
-
-        prop = cfg.get("WorldGen Corals", "dimTabulata", dimTabulata);
-        prop.setComment("List of dimension IDs Tabulata Corals can generate in [default: empty]");
-        dimTabulata = prop.getIntList();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Corals", "genTabulataBlacklistBiomes", genTabulataBlacklistBiomes);
-        prop.setComment("List of biomes Tabulata Corals are blacklisted from, in the format: modid:biomeid [default: empty]");
-        genTabulataBlacklistBiomes = prop.getStringList();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Corals", "genTabulataOverrideBiomes", genTabulataOverrideBiomes);
-        prop.setComment("List of biomes Tabulata Corals are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
-        genTabulataOverrideBiomes = prop.getStringList();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Corals", "weightTabulata", weightTabulata);
-        prop.setComment("Percentage chance that Tabulata Corals generates in a suitable chunk (0 to 100) [default: 10]");
-        weightTabulata = prop.getInt();
-        propOrder.add(prop.getName());
-
-        prop = cfg.get("WorldGen Fenestella Bryozoans", "dimFenestella", dimFenestella);
-        prop.setComment("List of dimension IDs Fenestella Bryozoans can generate in [default: empty]");
-        dimFenestella = prop.getIntList();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Fenestella Bryozoans", "genFenestellaBlacklistBiomes", genFenestellaBlacklistBiomes);
-        prop.setComment("List of biomes Fenestella Bryozoans are blacklisted from, in the format: modid:biomeid [default: empty]");
-        genFenestellaBlacklistBiomes = prop.getStringList();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Fenestella Bryozoans", "genFenestellaOverrideBiomes", genFenestellaOverrideBiomes);
-        prop.setComment("List of biomes Fenestella Bryozoans are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
-        genFenestellaOverrideBiomes = prop.getStringList();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Fenestella Bryozoans", "weightFenestella", weightFenestella);
-        prop.setComment("Percentage chance that Fenestella Bryozoans generates in a suitable chunk (0 to 100) [default: 10]");
-        weightFenestella = prop.getInt();
-        propOrder.add(prop.getName());
-
-        prop = cfg.get("WorldGen Sea Anemones", "dimAnemone", dimAnemone);
-        prop.setComment("List of dimension IDs Sea Anemones can generate in [default: 0]");
-        dimAnemone = prop.getIntList();
-        propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Sea Anemones", "genAnemoneBlacklistBiomes", genAnemoneBlacklistBiomes);
-        prop.setComment("List of biomes Sea Anemones are blacklisted from, in the format: modid:biomeid [default: empty]");
+        prop.setComment("List of biomes Sea Anemones and Sea Pens are blacklisted from, in the format: modid:biomeid [default: empty]");
         genAnemoneBlacklistBiomes = prop.getStringList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Sea Anemones", "genAnemoneOverrideBiomes", genAnemoneOverrideBiomes);
-        prop.setComment("List of biomes Sea Anemones are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        prop.setComment("List of biomes Sea Anemones and Sea Pens are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
         genAnemoneOverrideBiomes = prop.getStringList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Sea Anemones", "weightAnemone", weightAnemone);
-        prop.setComment("Percentage chance that Sea Anemones generates in a suitable chunk (0 to 100) [default: 10]");
+        prop.setComment("Percentage chance that Sea Anemones and Sea Pens generate in a suitable chunk (0 to 100) [default: 10]");
         weightAnemone = prop.getInt();
         propOrder.add(prop.getName());
-
 
         prop = cfg.get("WorldGen Lepidodendron", "genLepidodendron", genLepidodendron);
         prop.setComment("Set to true to generate Lepidodendron trees naturally [default: false]");

@@ -101,13 +101,13 @@ public class EntityPrehistoricFloraEuropejara extends EntityPrehistoricFloraLand
 		if (e instanceof EntityLivingBase && this.hasAlarm() && !this.world.isRemote) {
 			EntityLivingBase ee = (EntityLivingBase) e;
 			this.setAlarmTarget(ee);
-			List<EntityPrehistoricFloraEuropejara> tapejara = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraEuropejara.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-			for (EntityPrehistoricFloraEuropejara currentTapejara : tapejara) {
-				currentTapejara.setAnimation(NO_ANIMATION);
-				currentTapejara.setAlarmTarget(ee);
-				currentTapejara.setRevengeTarget(ee);
-				currentTapejara.screamAlarmCooldown = rand.nextInt(20);
-				currentTapejara.setFlying();
+			List<EntityPrehistoricFloraEuropejara> europejara = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraEuropejara.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraEuropejara currenteuropejara : europejara) {
+				currenteuropejara.setAnimation(NO_ANIMATION);
+				currenteuropejara.setAlarmTarget(ee);
+				currenteuropejara.setRevengeTarget(ee);
+				currenteuropejara.screamAlarmCooldown = rand.nextInt(20);
+				currenteuropejara.setFlying();
 			}
 		}
 		return super.attackEntityFrom(ds, i);
@@ -286,27 +286,27 @@ public class EntityPrehistoricFloraEuropejara extends EntityPrehistoricFloraLand
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:tapejara_idle"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:europejara_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:tapejara_hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:europejara_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:tapejara_death"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:europejara_death"));
 	}
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:tapejara_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:europejara_alarm"));
 	}
 
 	public SoundEvent getDisplaySound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:tapejara_display"));
+				.getObject(new ResourceLocation("lepidodendron:europejara_display"));
 	}
 
 	public void playAlarmSound()
@@ -386,7 +386,7 @@ public class EntityPrehistoricFloraEuropejara extends EntityPrehistoricFloraLand
 
 //	@Override
 //	public String getEntityId(Entity entity) {
-//		return "lepidodendron:prehistoric_flora_tapejara";
+//		return "lepidodendron:prehistoric_flora_europejara";
 //	}
 
 	@Override
