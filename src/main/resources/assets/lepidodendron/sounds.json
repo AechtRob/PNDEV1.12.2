@@ -17303,5 +17303,66 @@
         "stream": false
       }
     ]
+  },
+
+  "koleken_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:koleken_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:koleken_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:koleken_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:koleken_living04",
+        "stream": false
+      }
+    ]
+  },
+  "koleken_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:koleken_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:koleken_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:koleken_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "koleken_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:koleken_death",
+        "stream": false
+      }
+    ]
+  },
+  "koleken_alert": {
+    "sounds": [
+      {
+        "name": "lepidodendron:koleken_alert",
+        "stream": false
+      }
+    ]
+  },
+  "koleken_display": {
+    "sounds": [
+      {
+        "name": "lepidodendron:koleken_display",
+        "stream": false
+      }
+    ]
   }
 }
