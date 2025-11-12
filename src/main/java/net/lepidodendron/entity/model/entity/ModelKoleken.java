@@ -726,17 +726,15 @@ public class ModelKoleken extends ModelBasePalaeopedia {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-         if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (-4.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*2-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-        }
-        else if (tickAnim >= 20 && tickAnim < 35) {
-            xx = -4.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*2 + (((tickAnim - 20) / 15) * (0-(-4.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*2)));
-            yy = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-        }
-        else {
+        if (tickAnim >= 0 && tickAnim < 20) {
+            xx = 0 + (((tickAnim - 0) / 20) * (-4.25 + Math.sin((Math.PI / 180) * (((double) tickAnim / 20) * 120 - 50)) * 2 - (0)));
+            yy = 0 + (((tickAnim - 0) / 20) * (0 - (0)));
+            zz = 0 + (((tickAnim - 0) / 20) * (0 - (0)));
+        } else if (tickAnim >= 20 && tickAnim < 35) {
+            xx = -4.25 + Math.sin((Math.PI / 180) * (((double) tickAnim / 20) * 120 - 50)) * 2 + (((tickAnim - 20) / 15) * (0 - (-4.25 + Math.sin((Math.PI / 180) * (((double) tickAnim / 20) * 120 - 50)) * 2)));
+            yy = 0 + (((tickAnim - 20) / 15) * (0 - (0)));
+            zz = 0 + (((tickAnim - 20) / 15) * (0 - (0)));
+        } else {
             xx = 0;
             yy = 0;
             zz = 0;
@@ -744,19 +742,15 @@ public class ModelKoleken extends ModelBasePalaeopedia {
         this.setRotateAngle(body, body.rotateAngleX + (float) Math.toRadians(xx), body.rotateAngleY + (float) Math.toRadians(yy), body.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-
-
         if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (-0.85+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-120))*4-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-        }
-        else if (tickAnim >= 20 && tickAnim < 35) {
-            xx = -0.85+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-120))*4 + (((tickAnim - 20) / 15) * (0-(-0.85+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-120))*4)));
-            yy = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-        }
-        else {
+            xx = 0 + (((tickAnim - 0) / 20) * (-0.85 + Math.sin((Math.PI / 180) * (((double) tickAnim / 20) * 120 - 120)) * 4 - (0)));
+            yy = 0 + (((tickAnim - 0) / 20) * (0 - (0)));
+            zz = 0 + (((tickAnim - 0) / 20) * (0 - (0)));
+        } else if (tickAnim >= 20 && tickAnim < 35) {
+            xx = -0.85 + Math.sin((Math.PI / 180) * (((double) tickAnim / 20) * 120 - 120)) * 4 + (((tickAnim - 20) / 15) * (0 - (-0.85 + Math.sin((Math.PI / 180) * (((double) tickAnim / 20) * 120 - 120)) * 4)));
+            yy = 0 + (((tickAnim - 20) / 15) * (0 - (0)));
+            zz = 0 + (((tickAnim - 20) / 15) * (0 - (0)));
+        } else {
             xx = 0;
             yy = 0;
             zz = 0;
@@ -764,19 +758,15 @@ public class ModelKoleken extends ModelBasePalaeopedia {
         this.setRotateAngle(chest, chest.rotateAngleX + (float) Math.toRadians(xx), chest.rotateAngleY + (float) Math.toRadians(yy), chest.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-
-
         if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (-5.6+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-150))*7-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-        }
-        else if (tickAnim >= 20 && tickAnim < 35) {
-            xx = -5.6+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-150))*7 + (((tickAnim - 20) / 15) * (0-(-5.6+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-150))*7)));
-            yy = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-        }
-        else {
+            xx = 0 + (((tickAnim - 0) / 20) * (-5.6 + Math.sin((Math.PI / 180) * (((double) tickAnim / 20) * 120 - 150)) * 7 - (0)));
+            yy = 0 + (((tickAnim - 0) / 20) * (0 - (0)));
+            zz = 0 + (((tickAnim - 0) / 20) * (0 - (0)));
+        } else if (tickAnim >= 20 && tickAnim < 35) {
+            xx = -5.6 + Math.sin((Math.PI / 180) * (((double) tickAnim / 20) * 120 - 150)) * 7 + (((tickAnim - 20) / 15) * (0 - (-5.6 + Math.sin((Math.PI / 180) * (((double) tickAnim / 20) * 120 - 150)) * 7)));
+            yy = 0 + (((tickAnim - 20) / 15) * (0 - (0)));
+            zz = 0 + (((tickAnim - 20) / 15) * (0 - (0)));
+        } else {
             xx = 0;
             yy = 0;
             zz = 0;
@@ -784,19 +774,15 @@ public class ModelKoleken extends ModelBasePalaeopedia {
         this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(xx), neck.rotateAngleY + (float) Math.toRadians(yy), neck.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-
-
         if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (-5-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-        }
-        else if (tickAnim >= 20 && tickAnim < 35) {
-            xx = -5 + (((tickAnim - 20) / 15) * (0-(-5)));
-            yy = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-        }
-        else {
+            xx = 0 + (((tickAnim - 0) / 20) * (-5 - (0)));
+            yy = 0 + (((tickAnim - 0) / 20) * (0 - (0)));
+            zz = 0 + (((tickAnim - 0) / 20) * (0 - (0)));
+        } else if (tickAnim >= 20 && tickAnim < 35) {
+            xx = -5 + (((tickAnim - 20) / 15) * (0 - (-5)));
+            yy = 0 + (((tickAnim - 20) / 15) * (0 - (0)));
+            zz = 0 + (((tickAnim - 20) / 15) * (0 - (0)));
+        } else {
             xx = 0;
             yy = 0;
             zz = 0;
@@ -804,19 +790,15 @@ public class ModelKoleken extends ModelBasePalaeopedia {
         this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(xx), neck2.rotateAngleY + (float) Math.toRadians(yy), neck2.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-
-
         if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (-6.75-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-        }
-        else if (tickAnim >= 20 && tickAnim < 35) {
-            xx = -6.75 + (((tickAnim - 20) / 15) * (0-(-6.75)));
-            yy = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-        }
-        else {
+            xx = 0 + (((tickAnim - 0) / 20) * (-6.75 - (0)));
+            yy = 0 + (((tickAnim - 0) / 20) * (0 - (0)));
+            zz = 0 + (((tickAnim - 0) / 20) * (0 - (0)));
+        } else if (tickAnim >= 20 && tickAnim < 35) {
+            xx = -6.75 + (((tickAnim - 20) / 15) * (0 - (-6.75)));
+            yy = 0 + (((tickAnim - 20) / 15) * (0 - (0)));
+            zz = 0 + (((tickAnim - 20) / 15) * (0 - (0)));
+        } else {
             xx = 0;
             yy = 0;
             zz = 0;
@@ -824,24 +806,19 @@ public class ModelKoleken extends ModelBasePalaeopedia {
         this.setRotateAngle(neck3, neck3.rotateAngleX + (float) Math.toRadians(xx), neck3.rotateAngleY + (float) Math.toRadians(yy), neck3.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-
-
         if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (10.25-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-        }
-        else if (tickAnim >= 20 && tickAnim < 28) {
-            xx = 10.25 + (((tickAnim - 20) / 8) * (12.75-(10.25)));
-            yy = 0 + (((tickAnim - 20) / 8) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 8) * (0-(0)));
-        }
-        else if (tickAnim >= 28 && tickAnim < 35) {
-            xx = 12.75 + (((tickAnim - 28) / 7) * (0-(12.75)));
-            yy = 0 + (((tickAnim - 28) / 7) * (0-(0)));
-            zz = 0 + (((tickAnim - 28) / 7) * (0-(0)));
-        }
-        else {
+            xx = 0 + (((tickAnim - 0) / 20) * (10.25 - (0)));
+            yy = 0 + (((tickAnim - 0) / 20) * (0 - (0)));
+            zz = 0 + (((tickAnim - 0) / 20) * (0 - (0)));
+        } else if (tickAnim >= 20 && tickAnim < 28) {
+            xx = 10.25 + (((tickAnim - 20) / 8) * (12.75 - (10.25)));
+            yy = 0 + (((tickAnim - 20) / 8) * (0 - (0)));
+            zz = 0 + (((tickAnim - 20) / 8) * (0 - (0)));
+        } else if (tickAnim >= 28 && tickAnim < 35) {
+            xx = 12.75 + (((tickAnim - 28) / 7) * (0 - (12.75)));
+            yy = 0 + (((tickAnim - 28) / 7) * (0 - (0)));
+            zz = 0 + (((tickAnim - 28) / 7) * (0 - (0)));
+        } else {
             xx = 0;
             yy = 0;
             zz = 0;
@@ -849,19 +826,15 @@ public class ModelKoleken extends ModelBasePalaeopedia {
         this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(xx), head.rotateAngleY + (float) Math.toRadians(yy), head.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-
-
         if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (5.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1000))*2-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-        }
-        else if (tickAnim >= 20 && tickAnim < 35) {
-            xx = 5.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1000))*2 + (((tickAnim - 20) / 15) * (0-(5.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1000))*2)));
-            yy = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-        }
-        else {
+            xx = 0 + (((tickAnim - 0) / 20) * (5.25 + Math.sin((Math.PI / 180) * (((double) tickAnim / 20) * 1000)) * 2 - (0)));
+            yy = 0 + (((tickAnim - 0) / 20) * (0 - (0)));
+            zz = 0 + (((tickAnim - 0) / 20) * (0 - (0)));
+        } else if (tickAnim >= 20 && tickAnim < 35) {
+            xx = 5.25 + Math.sin((Math.PI / 180) * (((double) tickAnim / 20) * 1000)) * 2 + (((tickAnim - 20) / 15) * (0 - (5.25 + Math.sin((Math.PI / 180) * (((double) tickAnim / 20) * 1000)) * 2)));
+            yy = 0 + (((tickAnim - 20) / 15) * (0 - (0)));
+            zz = 0 + (((tickAnim - 20) / 15) * (0 - (0)));
+        } else {
             xx = 0;
             yy = 0;
             zz = 0;
@@ -869,14 +842,11 @@ public class ModelKoleken extends ModelBasePalaeopedia {
         this.setRotateAngle(jaw, jaw.rotateAngleX + (float) Math.toRadians(xx), jaw.rotateAngleY + (float) Math.toRadians(yy), jaw.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-
-
         if (tickAnim >= 0 && tickAnim < 35) {
-            xx = 0 + (((tickAnim - 0) / 35) * (0-(0)));
-            yy = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1000)) + (((tickAnim - 0) / 35) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1000)))));
-            zz = 0 + (((tickAnim - 0) / 35) * (0-(0)));
-        }
-        else {
+            xx = 0 + (((tickAnim - 0) / 35) * (0 - (0)));
+            yy = 0 + Math.sin((Math.PI / 180) * (((double) tickAnim / 20) * 1000)) + (((tickAnim - 0) / 35) * (0 - (0 + Math.sin((Math.PI / 180) * (((double) tickAnim / 20) * 1000)))));
+            zz = 0 + (((tickAnim - 0) / 35) * (0 - (0)));
+        } else {
             xx = 0;
             yy = 0;
             zz = 0;
@@ -884,20 +854,60 @@ public class ModelKoleken extends ModelBasePalaeopedia {
         this.setRotateAngle(leftArm, leftArm.rotateAngleX + (float) Math.toRadians(xx), leftArm.rotateAngleY + (float) Math.toRadians(yy), leftArm.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-
-
         if (tickAnim >= 0 && tickAnim < 35) {
-            xx = 0 + (((tickAnim - 0) / 35) * (0-(0)));
-            yy = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1000)) + (((tickAnim - 0) / 35) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1000)))));
-            zz = 0 + (((tickAnim - 0) / 35) * (0-(0)));
-        }
-        else {
+            xx = 0 + (((tickAnim - 0) / 35) * (0 - (0)));
+            yy = 0 + Math.sin((Math.PI / 180) * (((double) tickAnim / 20) * 1000)) + (((tickAnim - 0) / 35) * (0 - (0 + Math.sin((Math.PI / 180) * (((double) tickAnim / 20) * 1000)))));
+            zz = 0 + (((tickAnim - 0) / 35) * (0 - (0)));
+        } else {
             xx = 0;
             yy = 0;
             zz = 0;
         }
         this.setRotateAngle(rightArm, rightArm.rotateAngleX + (float) Math.toRadians(xx), rightArm.rotateAngleY + (float) Math.toRadians(yy), rightArm.rotateAngleZ + (float) Math.toRadians(zz));
 
+
+        if (tickAnim >= 0 && tickAnim < 9) {
+            xx = 0 + (((tickAnim - 0) / 9) * (-27 - (0)));
+            yy = 0 + (((tickAnim - 0) / 9) * (0 - (0)));
+            zz = 0 + (((tickAnim - 0) / 9) * (0 - (0)));
+        } else if (tickAnim >= 9 && tickAnim < 14) {
+            xx = -27 + (((tickAnim - 9) / 5) * (-21.5 - (-27)));
+            yy = 0 + (((tickAnim - 9) / 5) * (0 - (0)));
+            zz = 0 + (((tickAnim - 9) / 5) * (0 - (0)));
+        } else if (tickAnim >= 14 && tickAnim < 19) {
+            xx = -21.5 + (((tickAnim - 14) / 5) * (-35.5 - (-21.5)));
+            yy = 0 + (((tickAnim - 14) / 5) * (0 - (0)));
+            zz = 0 + (((tickAnim - 14) / 5) * (0 - (0)));
+        } else if (tickAnim >= 19 && tickAnim < 29) {
+            xx = -35.5 + (((tickAnim - 19) / 10) * (0 - (-35.5)));
+            yy = 0 + (((tickAnim - 19) / 10) * (0 - (0)));
+            zz = 0 + (((tickAnim - 19) / 10) * (0 - (0)));
+        } else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(throat, throat.rotateAngleX + (float) Math.toRadians(xx), throat.rotateAngleY + (float) Math.toRadians(yy), throat.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+        if (tickAnim >= 0 && tickAnim < 9) {
+            xx = 0 + (((tickAnim - 0) / 9) * (-9.25 - (0)));
+            yy = 0 + (((tickAnim - 0) / 9) * (0 - (0)));
+            zz = 0 + (((tickAnim - 0) / 9) * (0 - (0)));
+        } else if (tickAnim >= 9 && tickAnim < 19) {
+            xx = -9.25 + (((tickAnim - 9) / 10) * (-3.5 - (-9.25)));
+            yy = 0 + (((tickAnim - 9) / 10) * (0 - (0)));
+            zz = 0 + (((tickAnim - 9) / 10) * (0 - (0)));
+        } else if (tickAnim >= 19 && tickAnim < 29) {
+            xx = -3.5 + (((tickAnim - 19) / 10) * (0 - (-3.5)));
+            yy = 0 + (((tickAnim - 19) / 10) * (0 - (0)));
+            zz = 0 + (((tickAnim - 19) / 10) * (0 - (0)));
+        } else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(throat2, throat2.rotateAngleX + (float) Math.toRadians(xx), throat2.rotateAngleY + (float) Math.toRadians(yy), throat2.rotateAngleZ + (float) Math.toRadians(zz));
     }
     public void animNest(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraKoleken entity = (EntityPrehistoricFloraKoleken) entitylivingbaseIn;
@@ -3960,6 +3970,225 @@ public class ModelKoleken extends ModelBasePalaeopedia {
         }
         this.setRotateAngle(rightArm, rightArm.rotateAngleX + (float) Math.toRadians(xx), rightArm.rotateAngleY + (float) Math.toRadians(yy), rightArm.rotateAngleZ + (float) Math.toRadians(zz));
 
+
+
+
+        if (tickAnim >= 0 && tickAnim < 17) {
+            xx = 0 + (((tickAnim - 0) / 17) * (-34.25-(0)));
+            yy = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 17) * (0-(0)));
+        }
+        else if (tickAnim >= 17 && tickAnim < 23) {
+            xx = -34.25 + (((tickAnim - 17) / 6) * (-22.25-(-34.25)));
+            yy = 0 + (((tickAnim - 17) / 6) * (0-(0)));
+            zz = 0 + (((tickAnim - 17) / 6) * (0-(0)));
+        }
+        else if (tickAnim >= 23 && tickAnim < 41) {
+            xx = -22.25 + (((tickAnim - 23) / 18) * (-52.75-(-22.25)));
+            yy = 0 + (((tickAnim - 23) / 18) * (0-(0)));
+            zz = 0 + (((tickAnim - 23) / 18) * (0-(0)));
+        }
+        else if (tickAnim >= 41 && tickAnim < 46) {
+            xx = -52.75 + (((tickAnim - 41) / 5) * (-44.5-(-52.75)));
+            yy = 0 + (((tickAnim - 41) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 41) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 46 && tickAnim < 50) {
+            xx = -44.5 + (((tickAnim - 46) / 4) * (-52.75-(-44.5)));
+            yy = 0 + (((tickAnim - 46) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 46) / 4) * (0-(0)));
+        }
+        else if (tickAnim >= 50 && tickAnim < 54) {
+            xx = -52.75 + (((tickAnim - 50) / 4) * (-44.5-(-52.75)));
+            yy = 0 + (((tickAnim - 50) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 50) / 4) * (0-(0)));
+        }
+        else if (tickAnim >= 54 && tickAnim < 58) {
+            xx = -44.5 + (((tickAnim - 54) / 4) * (-52.75-(-44.5)));
+            yy = 0 + (((tickAnim - 54) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 54) / 4) * (0-(0)));
+        }
+        else if (tickAnim >= 58 && tickAnim < 62) {
+            xx = -52.75 + (((tickAnim - 58) / 4) * (-44.5-(-52.75)));
+            yy = 0 + (((tickAnim - 58) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 58) / 4) * (0-(0)));
+        }
+        else if (tickAnim >= 62 && tickAnim < 67) {
+            xx = -44.5 + (((tickAnim - 62) / 5) * (-41-(-44.5)));
+            yy = 0 + (((tickAnim - 62) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 62) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 67 && tickAnim < 71) {
+            xx = -41 + (((tickAnim - 67) / 4) * (-35-(-41)));
+            yy = 0 + (((tickAnim - 67) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 67) / 4) * (0-(0)));
+        }
+        else if (tickAnim >= 71 && tickAnim < 75) {
+            xx = -35 + (((tickAnim - 71) / 4) * (-38.75-(-35)));
+            yy = 0 + (((tickAnim - 71) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 71) / 4) * (0-(0)));
+        }
+        else if (tickAnim >= 75 && tickAnim < 79) {
+            xx = -38.75 + (((tickAnim - 75) / 4) * (-25.75-(-38.75)));
+            yy = 0 + (((tickAnim - 75) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 75) / 4) * (0-(0)));
+        }
+        else if (tickAnim >= 79 && tickAnim < 88) {
+            xx = -25.75 + (((tickAnim - 79) / 9) * (-32.25-(-25.75)));
+            yy = 0 + (((tickAnim - 79) / 9) * (0-(0)));
+            zz = 0 + (((tickAnim - 79) / 9) * (0-(0)));
+        }
+        else if (tickAnim >= 88 && tickAnim < 93) {
+            xx = -32.25 + (((tickAnim - 88) / 5) * (-22-(-32.25)));
+            yy = 0 + (((tickAnim - 88) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 88) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 93 && tickAnim < 98) {
+            xx = -22 + (((tickAnim - 93) / 5) * (-15.5-(-22)));
+            yy = 0 + (((tickAnim - 93) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 93) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 98 && tickAnim < 117) {
+            xx = -15.5 + (((tickAnim - 98) / 19) * (-18.25-(-15.5)));
+            yy = 0 + (((tickAnim - 98) / 19) * (0-(0)));
+            zz = 0 + (((tickAnim - 98) / 19) * (0-(0)));
+        }
+        else if (tickAnim >= 117 && tickAnim < 124) {
+            xx = -18.25 + (((tickAnim - 117) / 7) * (-15-(-18.25)));
+            yy = 0 + (((tickAnim - 117) / 7) * (0-(0)));
+            zz = 0 + (((tickAnim - 117) / 7) * (0-(0)));
+        }
+        else if (tickAnim >= 124 && tickAnim < 129) {
+            xx = -15 + (((tickAnim - 124) / 5) * (0-(-15)));
+            yy = 0 + (((tickAnim - 124) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 124) / 5) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(throat, throat.rotateAngleX + (float) Math.toRadians(xx), throat.rotateAngleY + (float) Math.toRadians(yy), throat.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 37) {
+            xx = 0 + (((tickAnim - 0) / 37) * (18.91071-(0)));
+            yy = 0 + (((tickAnim - 0) / 37) * (-0.43403-(0)));
+            zz = 0 + (((tickAnim - 0) / 37) * (-0.03203-(0)));
+        }
+        else if (tickAnim >= 37 && tickAnim < 49) {
+            xx = 18.91071 + (((tickAnim - 37) / 12) * (27.88027-(18.91071)));
+            yy = -0.43403 + (((tickAnim - 37) / 12) * (-0.58199-(-0.43403)));
+            zz = -0.03203 + (((tickAnim - 37) / 12) * (-0.04295-(-0.03203)));
+        }
+        else if (tickAnim >= 49 && tickAnim < 60) {
+            xx = 27.88027 + (((tickAnim - 49) / 11) * (13.60389-(27.88027)));
+            yy = -0.58199 + (((tickAnim - 49) / 11) * (-0.71023-(-0.58199)));
+            zz = -0.04295 + (((tickAnim - 49) / 11) * (-0.05242-(-0.04295)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 75) {
+            xx = 13.60389 + (((tickAnim - 60) / 15) * (6.35389-(13.60389)));
+            yy = -0.71023 + (((tickAnim - 60) / 15) * (-0.71023-(-0.71023)));
+            zz = -0.05242 + (((tickAnim - 60) / 15) * (-0.05242-(-0.05242)));
+        }
+        else if (tickAnim >= 75 && tickAnim < 79) {
+            xx = 6.35389 + (((tickAnim - 75) / 4) * (-18.64611-(6.35389)));
+            yy = -0.71023 + (((tickAnim - 75) / 4) * (-0.71023-(-0.71023)));
+            zz = -0.05242 + (((tickAnim - 75) / 4) * (-0.05242-(-0.05242)));
+        }
+        else if (tickAnim >= 79 && tickAnim < 88) {
+            xx = -18.64611 + (((tickAnim - 79) / 9) * (2.10389-(-18.64611)));
+            yy = -0.71023 + (((tickAnim - 79) / 9) * (-0.71023-(-0.71023)));
+            zz = -0.05242 + (((tickAnim - 79) / 9) * (-0.05242-(-0.05242)));
+        }
+        else if (tickAnim >= 88 && tickAnim < 93) {
+            xx = 2.10389 + (((tickAnim - 88) / 5) * (-22.14611-(2.10389)));
+            yy = -0.71023 + (((tickAnim - 88) / 5) * (-0.71023-(-0.71023)));
+            zz = -0.05242 + (((tickAnim - 88) / 5) * (-0.05242-(-0.05242)));
+        }
+        else if (tickAnim >= 93 && tickAnim < 98) {
+            xx = -22.14611 + (((tickAnim - 93) / 5) * (-21.89611-(-22.14611)));
+            yy = -0.71023 + (((tickAnim - 93) / 5) * (-0.71023-(-0.71023)));
+            zz = -0.05242 + (((tickAnim - 93) / 5) * (-0.05242-(-0.05242)));
+        }
+        else if (tickAnim >= 98 && tickAnim < 103) {
+            xx = -21.89611 + (((tickAnim - 98) / 5) * (-7.64611-(-21.89611)));
+            yy = -0.71023 + (((tickAnim - 98) / 5) * (-0.71023-(-0.71023)));
+            zz = -0.05242 + (((tickAnim - 98) / 5) * (-0.05242-(-0.05242)));
+        }
+        else if (tickAnim >= 103 && tickAnim < 117) {
+            xx = -7.64611 + (((tickAnim - 103) / 14) * (6.60389-(-7.64611)));
+            yy = -0.71023 + (((tickAnim - 103) / 14) * (-0.71023-(-0.71023)));
+            zz = -0.05242 + (((tickAnim - 103) / 14) * (-0.05242-(-0.05242)));
+        }
+        else if (tickAnim >= 117 && tickAnim < 120) {
+            xx = 6.60389 + (((tickAnim - 117) / 3) * (7.55772-(6.60389)));
+            yy = -0.71023 + (((tickAnim - 117) / 3) * (-0.39457-(-0.71023)));
+            zz = -0.05242 + (((tickAnim - 117) / 3) * (-0.02912-(-0.05242)));
+        }
+        else if (tickAnim >= 120 && tickAnim < 124) {
+            xx = 7.55772 + (((tickAnim - 120) / 4) * (-22.75-(7.55772)));
+            yy = -0.39457 + (((tickAnim - 120) / 4) * (0-(-0.39457)));
+            zz = -0.02912 + (((tickAnim - 120) / 4) * (0-(-0.02912)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(throat2, throat2.rotateAngleX + (float) Math.toRadians(xx), throat2.rotateAngleY + (float) Math.toRadians(yy), throat2.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (-1.09-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 17) {
+            xx = -1.09 + (((tickAnim - 8) / 9) * (24.25-(-1.09)));
+            yy = 0 + (((tickAnim - 8) / 9) * (0-(0)));
+            zz = 0 + (((tickAnim - 8) / 9) * (0-(0)));
+        }
+        else if (tickAnim >= 17 && tickAnim < 23) {
+            xx = 24.25 + (((tickAnim - 17) / 6) * (3.75-(24.25)));
+            yy = 0 + (((tickAnim - 17) / 6) * (0-(0)));
+            zz = 0 + (((tickAnim - 17) / 6) * (0-(0)));
+        }
+        else if (tickAnim >= 23 && tickAnim < 41) {
+            xx = 3.75 + (((tickAnim - 23) / 18) * (-0.75-(3.75)));
+            yy = 0 + (((tickAnim - 23) / 18) * (0-(0)));
+            zz = 0 + (((tickAnim - 23) / 18) * (0-(0)));
+        }
+        else if (tickAnim >= 41 && tickAnim < 98) {
+            xx = -0.75 + (((tickAnim - 41) / 57) * (-15-(-0.75)));
+            yy = 0 + (((tickAnim - 41) / 57) * (0-(0)));
+            zz = 0 + (((tickAnim - 41) / 57) * (0-(0)));
+        }
+        else if (tickAnim >= 98 && tickAnim < 124) {
+            xx = -15 + (((tickAnim - 98) / 26) * (-10.68-(-15)));
+            yy = 0 + (((tickAnim - 98) / 26) * (0-(0)));
+            zz = 0 + (((tickAnim - 98) / 26) * (0-(0)));
+        }
+        else if (tickAnim >= 124 && tickAnim < 130) {
+            xx = -10.68 + (((tickAnim - 124) / 6) * (-10.68-(-10.68)));
+            yy = 0 + (((tickAnim - 124) / 6) * (0-(0)));
+            zz = 0 + (((tickAnim - 124) / 6) * (0-(0)));
+        }
+        else if (tickAnim >= 130 && tickAnim < 135) {
+            xx = -10.68 + (((tickAnim - 130) / 5) * (0-(-10.68)));
+            yy = 0 + (((tickAnim - 130) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 130) / 5) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(throat3, throat3.rotateAngleX + (float) Math.toRadians(xx), throat3.rotateAngleY + (float) Math.toRadians(yy), throat3.rotateAngleZ + (float) Math.toRadians(zz));
     }
     public void animRunning(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraKoleken entity = (EntityPrehistoricFloraKoleken) entitylivingbaseIn;

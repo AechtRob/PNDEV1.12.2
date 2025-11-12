@@ -1,0 +1,47 @@
+{
+	"name": "Phosphorosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/phosphorosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_phosphorosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_phosphorosaurus",
+			"title": "Phosphorosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Squamata$(br)>Mosasauridae$(br)>Halisaurini"
+		},
+        	{
+            "type": "entity",
+            "name": "P. ponpetelegans",
+            "entity": "lepidodendron:prehistoric_flora_phosphorosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phosphorosaurus",
+			"type": "text",
+			"text": "Phosphorosaurus ponpetelegans is small-sized, around 3 m long mosasaur, known mainly from its skull. It is estimated to have larger eyes and probably had binocular vision, suggesting it was deep sea or nocturnal predator."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_phosphorosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_phosphorosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_phosphorosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_phosphorosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_phosphorosaurus"
+		}
+	]
+}

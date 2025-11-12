@@ -1,0 +1,47 @@
+{
+	"name": "Kuwajimalla",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kuwajimalla_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_kuwajimalla",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kuwajimalla",
+			"title": "Kuwajimalla",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Squamata$(br)>Polyglyphanodontia"
+		},
+        	{
+            "type": "entity",
+            "name": "K. kagaensis",
+            "entity": "lepidodendron:prehistoric_flora_kuwajimalla",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kuwajimalla",
+			"type": "text",
+			"text": "Kuwajimalla kagaensis is a small lizard from Kuwajima Formation, which is an earliest member of Polyglyphanodontia and the earliest known herbivorous lizard."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kuwajimalla"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kuwajimalla"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kuwajimalla"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kuwajimalla"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kuwajimalla"
+		}
+	]
+}

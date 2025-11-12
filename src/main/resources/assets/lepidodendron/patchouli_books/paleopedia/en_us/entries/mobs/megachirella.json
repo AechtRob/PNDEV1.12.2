@@ -1,0 +1,52 @@
+{
+	"name": "Megachirella",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/megachirella_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_megachirella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_megachirella",
+			"title": "Megachirella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Lepidosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "M. wachtleri",
+            "entity": "lepidodendron:prehistoric_flora_megachirella",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megachirella",
+			"type": "text",
+			"text": "Megachirella is known from small, single skeleton of front body known from Middle Triassic Dolomites of Northern Italy. When it was described in 2003, it was originally considered as a member of lepidosauromorph, which includes modern lizards, snakes and tuatara, but also many of fossil primitive members. However in a study in 2018, it is suggested that it actually can be the earliest member of the order Squamata, which includes modern lizards and snakes!"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megachirella",
+			"type": "text",
+			"text": "A 2021 study doubts that interpretation and it is still in uncertain placement, but either way this fossil is important to show the early evolution of lepidosaurs! This species name, wachtleri, is named after one who found fossil, Michael Wachtler. Wachtler is a noted palaeobotanist, some of whose publications explore the controversial possibility of stem-Angiosperms as far back as the Permian."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_megachirella"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_megachirella"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_megachirella"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_megachirella"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_megachirella"
+		}
+	]
+}

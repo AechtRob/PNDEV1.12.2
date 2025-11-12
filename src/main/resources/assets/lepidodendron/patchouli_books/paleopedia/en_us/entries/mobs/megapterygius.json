@@ -1,0 +1,57 @@
+{
+	"name": "Megapterygius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/megapterygius_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_megapterygius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_megapterygius",
+			"title": "Megapterygius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Squamata$(br)>Mosasauridae$(br)>Mosasaurinae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. wakayamaensis",
+            "entity": "lepidodendron:prehistoric_flora_megapterygius",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megapterygius",
+			"type": "text",
+			"text": "Megapterygius is a genus of mosasaur known from the Wakayama Prefecture in Japan. Around 80% of the body remains are known, and this is the first mosasaur known from mostly complete remains from Asia. Pachydiscus fossils found around it helped to determine the age of deposit as Maastrichtian. Many squaliform shark teeth have been found near the fossil, suggesting that it was scavenged by these sharks after death."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megapterygius",
+			"type": "text",
+			"text": "The most distinctive feature of this mosasaur is its highly developed flipper limbs. Both flippers are longer than its skull, and the rear flipper is longer than the front. It is believed that maneuverability gain from its flippers enabled it to efficiently prey on schools of small fish. The skull is relatively small and the jaw relatively delicate, but the skull part around the eye socket is slightly wide horizontally which suggests that it had binocular vision."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megapterygius",
+			"type": "text",
+			"text": "Part of the neural spines is clearly deformed, and a comparison with modern cetaceans suggests that Megapterygius may have had a dorsal fin. Although this is not direct evidence of a dorsal fin itself, and is merely a hypothesis, this is the first time in the history of mosasaurs that such a possibility has been suggested. Megapterygius is a mid-sized mosasaur, probably exceeding 6 m long."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_megapterygius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_megapterygius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_megapterygius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_megapterygius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_megapterygius"
+		}
+	]
+}

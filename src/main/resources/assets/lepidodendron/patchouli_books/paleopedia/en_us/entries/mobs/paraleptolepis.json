@@ -1,0 +1,47 @@
+{
+	"name": "Paraleptolepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/paraleptolepis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_paraleptolepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_paraleptolepis",
+			"title": "Paraleptolepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>(o)Leptolepiformes(?)"
+		},
+        	{
+            "type": "entity",
+            "name": "P. kikuchii",
+            "entity": "lepidodendron:prehistoric_flora_paraleptolepis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_paraleptolepis",
+			"type": "text",
+			"text": "Paraleptolepis is a genus of fish from the Wakino Formation of Japan, growing from 2-5 centimeters in length. It's name means 'Near leptolepis' due to it having some similarities with the Leptolepiformes. However it was explicitly marked as incertae sedis and has not had another phylogenetic analysis done on it. It is not to be confused with Longileptolepis, who was formerly named Paraleptolepis before being corrected due to the existence of this fish."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_paraleptolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_paraleptolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_paraleptolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_paraleptolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_paraleptolepis"
+		}
+	]
+}

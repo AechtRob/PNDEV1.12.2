@@ -1,0 +1,52 @@
+{
+	"name": "Scapanorhynchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/scapanorhynchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_scapanorhynchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_scapanorhynchus",
+			"title": "Scapanorhynchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous - Late Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Lamniformes$(br)>Mitsukurinidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. lewisii",
+            "entity": "lepidodendron:prehistoric_flora_scapanorhynchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_scapanorhynchus",
+			"type": "text",
+			"text": "Scapanorhynchus, a close relative of modern goblin shark known from late Early Cretaceous to end of Late Cretaceous! The genus is known mostly from its teeth, but S. lewisii from Lebanon shows its striking resemblance to a goblin shark, with the main differences being the shape of its pelvic fins. This genus was a wastebasket taxon, previously included taxa up to Miocene, even the modern goblin shark, Mitsukurina, was thought to be a species of Scapanorhynchus! "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_scapanorhynchus",
+			"type": "text",
+			"text": "Size varies greatly between species, with most S. lewisii measuring less than a meter, while the largest S. raphiodon is estimated to have been over 7 m long. Ingame we have gone for the average at 4.15 m long. Unlike modern goblin shark which is deep-sea predator, Scapanorhynchus is believed to have been a pelagic predator. Some species appear to have lived in shallower or deeper waters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_scapanorhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_scapanorhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_scapanorhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_scapanorhynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_scapanorhynchus"
+		}
+	]
+}

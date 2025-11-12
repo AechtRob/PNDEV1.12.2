@@ -1,0 +1,47 @@
+{
+	"name": "Harranahynchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/harranahynchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_harranahynchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_harranahynchus",
+			"title": "Harranahynchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Rajiformes$(br)>Schizorihizidae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. minutadens",
+            "entity": "lepidodendron:prehistoric_flora_harranahynchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_harranahynchus",
+			"type": "text",
+			"text": "Harranahynchus is a medium sized schizorhizid sawskate that is known from complete full body fossils found in the Muwaqqar Chalk Marl Formation of Jordan. It had extremely small rostral denticles and it is estimated to grow up to 2 meters in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_harranahynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_harranahynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_harranahynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_harranahynchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_harranahynchus"
+		}
+	]
+}

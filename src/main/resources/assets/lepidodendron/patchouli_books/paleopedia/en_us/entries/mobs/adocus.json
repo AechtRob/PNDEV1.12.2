@@ -1,0 +1,47 @@
+{
+	"name": "Adocus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/adocus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_adocus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_adocus",
+			"title": "Adocus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous - Paleogene$(br2)>Chordata$(br)>Reptilia$(br)>Testudines$(br)>Cryptodira$(br)>Adocidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. beatus",
+            "entity": "lepidodendron:prehistoric_flora_adocus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_adocus",
+			"type": "text",
+			"text": "Adocus is a widespread genus of freshwater turtle lived during the Cretaceous to Oligocene, which shell length ranges normally around 50 cm but up to over a meter. Earliest records are known from Japan, such as A. sengokuensis from Fukuoka Prefecture and unnamed remains from Kitadani Formation."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_adocus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_adocus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_adocus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_adocus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_adocus"
+		}
+	]
+}
