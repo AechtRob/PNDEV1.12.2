@@ -54,8 +54,8 @@ public class EntityPrehistoricFloraDeinonychus extends EntityPrehistoricFloraLan
 		super(world);
 		setSize(0.5F, 1.0F);
 		minWidth = 0.20F;
-		maxWidth = 0.5F;
-		maxHeight = 0.8F;
+		maxWidth = 0.7F;
+		maxHeight = 0.9F;
 		maxHealthAgeable = 20.0D;
 		STAND_ANIMATION = Animation.create(140);//alert
 		NOISE_ANIMATION = Animation.create(15);
@@ -246,7 +246,7 @@ public class EntityPrehistoricFloraDeinonychus extends EntityPrehistoricFloraLan
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(25.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(10.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}

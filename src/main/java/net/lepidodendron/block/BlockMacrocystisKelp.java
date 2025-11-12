@@ -96,7 +96,7 @@ public class BlockMacrocystisKelp extends ElementsLepidodendronMod.ModElement {
 		}
 		
 		boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAlgae))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimModernSeaBlockLife))
 			dimensionCriteria = true;
 		if (!dimensionCriteria || dimID == LepidodendronConfig.dimPrecambrian
 				|| dimID == LepidodendronConfig.dimCambrian

@@ -14,6 +14,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
+
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemMicrovenatorRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:microvenator_raw")
@@ -29,7 +31,7 @@ public class ItemMicrovenatorRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_microvenator", ItemMicrovenatorRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_microvenator@male", ItemMicrovenatorRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemMicrovenatorRaw.block);
 		OreDictionary.registerOre("pnfurnaceMeat", ItemMicrovenatorRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemMicrovenatorRaw.block);
@@ -47,5 +49,12 @@ public class ItemMicrovenatorRaw extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
+
+
+		@Nullable
+		public String getVariantStr() {
+			return "male";
+		}
+
 	}
 }

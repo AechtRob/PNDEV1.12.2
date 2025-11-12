@@ -2,6 +2,6 @@
     "parent": "item/generated",
     "textures": {
         "layer0": "lepidodendron:items/fossil_clean_background",
-        "layer1": "lepidodendron:items/fossil_vesperopterylus_clean"
+        "layer1": "lepidodendron:items/fossil_anurognathid_vesperopterylus_clean"
     }
 }

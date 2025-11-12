@@ -12,6 +12,8 @@ import net.lepidodendron.gui.*;
 import net.lepidodendron.item.ItemBatHeadItem;
 import net.lepidodendron.item.crafting.RecipeCookedMeatsandSeeds;
 import net.lepidodendron.item.crafting.RecipeOresAndBlocks;
+import net.lepidodendron.item.entities.spawneggs.ItemPNSpawnEgg;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggAnurognathidAnurognathus;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeobotanist;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeontologist;
 import net.lepidodendron.tileentity.TileEntityPortalBlock;
@@ -19,8 +21,11 @@ import net.lepidodendron.util.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDispenser;
 import net.minecraft.block.SoundType;
+import net.minecraft.dispenser.BehaviorDefaultDispenseItem;
 import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Bootstrap;
 import net.minecraft.init.SoundEvents;
@@ -3662,6 +3667,25 @@ public class LepidodendronMod {
 				return stack;
 			}
 		});
+		//TO DO LATER - CAN WE MOVE THIS INTO AN INIT CLASS FOR THE ELEMENT ITSELF?
+//		BlockDispenser.DISPENSE_BEHAVIOR_REGISTRY.putObject(ItemSpawnEggAnurognathidAnurognathus.block, new BehaviorDefaultDispenseItem()
+//		{
+//			public ItemStack dispenseStack(IBlockSource source, ItemStack stack)
+//			{
+//				EnumFacing enumfacing = (EnumFacing)source.getBlockState().getValue(BlockDispenser.FACING);
+//				double d0 = source.getX() + (double)enumfacing.getXOffset();
+//				double d1 = (double)((float)(source.getBlockPos().getY() + enumfacing.getYOffset()) + 0.2F);
+//				double d2 = source.getZ() + (double)enumfacing.getZOffset();
+//				Entity entity = ItemSpawnEggAnurognathidAnurognathus.ItemCustom.spawnPNCreature(source.getWorld(), null, d0, d1, d2);
+//				if (entity instanceof EntityLivingBase && stack.hasDisplayName())
+//				{
+//					entity.setCustomNameTag(stack.getDisplayName());
+//				}
+//
+//				stack.shrink(1);
+//				return stack;
+//			}
+//		});
 
 	}
 

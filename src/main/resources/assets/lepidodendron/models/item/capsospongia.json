@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:blocks/capsospongia_2"
+    "layer0": "lepidodendron:items/capsospongia_inventory"
   }
 }

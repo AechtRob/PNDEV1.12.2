@@ -108,6 +108,10 @@ public class BlockCrinoidCallicrinus extends ElementsLepidodendronMod.ModElement
 		) {
 			dimensionCriteria = true;
 		}
+		if (dimID == LepidodendronConfig.dimDevonian
+		) {
+			dimensionCriteria = true;
+		}
 		if (!dimensionCriteria)
 			return;
 

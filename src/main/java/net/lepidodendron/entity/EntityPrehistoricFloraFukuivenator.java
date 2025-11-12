@@ -281,7 +281,7 @@ public class EntityPrehistoricFloraFukuivenator extends EntityPrehistoricFloraLa
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:fukuivenator_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:fukuivenator_idle"));
 	}
 
 	@Override
@@ -298,7 +298,7 @@ public class EntityPrehistoricFloraFukuivenator extends EntityPrehistoricFloraLa
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:fukuivenator_idle"));
+				.getObject(new ResourceLocation("lepidodendron:fukuivenator_social"));
 	}
 
 	@Override
@@ -339,6 +339,10 @@ public class EntityPrehistoricFloraFukuivenator extends EntityPrehistoricFloraLa
 		}
 		else if ((this.getAnimation() == GRAPPLE_ANIMATION) && this.getGrappleTarget() != null) {
 			this.faceEntity(this.getGrappleTarget(), 10, 10);
+		}
+		if ((this.getAnimation() == GRAPPLE_ANIMATION) && this.getAnimationTick() == 1) {
+			SoundEvent soundevent = this.getAmbientAmbientSound();
+			this.playSound(soundevent, 1, (rand.nextFloat() - rand.nextFloat()) * 0.2F + 1.0F);
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);

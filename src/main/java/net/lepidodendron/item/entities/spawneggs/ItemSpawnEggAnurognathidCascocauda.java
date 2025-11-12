@@ -44,7 +44,7 @@ public class ItemSpawnEggAnurognathidCascocauda extends ElementsLepidodendronMod
 	}
 
 	public static class ItemCustom extends ItemPNSpawnEgg {
-		String variant;
+		public static String variant;
 		public ItemCustom() {
 			setTranslationKey("pf_spawn_egg_anurognathid_cascocauda");
 			setRegistryName("spawn_egg_anurognathid_cascocauda");

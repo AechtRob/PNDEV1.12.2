@@ -390,15 +390,15 @@ public class StaticSpawns {
         if (string.equalsIgnoreCase("primocandelabrum_1")) {
             string = "primocandelabrum";
         }
-        if (string.equalsIgnoreCase("bivalve_cream")
-                || string.equalsIgnoreCase("bivalve_dark")
-                || string.equalsIgnoreCase("bivalve_green")
-                || string.equalsIgnoreCase("bivalve_grey")
-                || string.equalsIgnoreCase("bivalve_tall")
-                || string.equalsIgnoreCase("bivalve_upright")
-                || string.equalsIgnoreCase("bivalve_white")) {
-            string = "bivalve";
-        }
+//        if (string.equalsIgnoreCase("bivalve_cream")
+//                || string.equalsIgnoreCase("bivalve_dark")
+//                || string.equalsIgnoreCase("bivalve_green")
+//                || string.equalsIgnoreCase("bivalve_grey")
+//                || string.equalsIgnoreCase("bivalve_tall")
+//                || string.equalsIgnoreCase("bivalve_upright")
+//                || string.equalsIgnoreCase("bivalve_white")) {
+//            string = "bivalve";
+//        }
         if (string.contains("fenestella_giant")) {
             return "fenestella";
         }

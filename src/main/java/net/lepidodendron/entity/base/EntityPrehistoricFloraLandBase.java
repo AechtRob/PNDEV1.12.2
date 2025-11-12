@@ -780,6 +780,11 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             --this.inPFLove;
         }
 
+        if (this.getCanGrow() > 0)
+        {
+            this.setCanGrow(this.getCanGrow() - 1);
+        }
+
         if (this.getPFDrinking() > 0)
         {
             this.setIsDrinking(this.getPFDrinking() - 1);
@@ -813,6 +818,23 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         }
         else if (this.getAnimation() == this.getGrappleAnimation() && this.getGrappleTarget() != null) {
             this.faceEntity(this.getGrappleTarget(), 10, 10);
+        }
+
+        if (this.homeCooldown > 0) {
+            this.homeCooldown -= rand.nextInt(3) + 1;
+        }
+        if (this.homeCooldown < 0) {
+            this.homeCooldown = 0;
+        }
+
+        if ((!this.world.isRemote) && this.getNestLocation() != null) {
+            if (this.world.isBlockLoaded(this.getNestLocation())) {
+                if (this.isMyNest(this.world, this.getNestLocation())) {
+                    if (this.getNestLocation().distanceSq(this.posX, this.posY, this.posZ) <= 9) {
+                        this.homeCooldown = 12000; //~5 game minutes of non-tethered movement (note the decrements are not in 1s)
+                    }
+                }
+            }
         }
 
     }

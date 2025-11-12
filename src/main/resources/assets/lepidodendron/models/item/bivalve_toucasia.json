@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:items/bivalve_toucasia_icon"
+    "layer0": "lepidodendron:items/bivalve_toucasia_inventory"
   }
 }
 

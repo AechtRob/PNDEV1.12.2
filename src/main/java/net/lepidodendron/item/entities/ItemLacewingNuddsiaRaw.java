@@ -47,7 +47,7 @@ public class ItemLacewingNuddsiaRaw extends ElementsLepidodendronMod.ModElement 
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
 			super();
-			setTranslationKey("pf_lacewing_nuddsia_raww");
+			setTranslationKey("pf_lacewing_nuddsia_raw");
 			setRegistryName("lacewing_nuddsia_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);

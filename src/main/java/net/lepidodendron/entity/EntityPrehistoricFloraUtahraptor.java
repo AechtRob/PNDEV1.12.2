@@ -255,7 +255,7 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:utahraptor_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:utahraptor_idle"));
 	}
 
 	@Override

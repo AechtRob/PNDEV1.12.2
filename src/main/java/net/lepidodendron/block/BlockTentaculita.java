@@ -126,6 +126,15 @@ public class BlockTentaculita extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimCarboniferous){
 			dimensionCriteria = false;
 		}
+		if (dimID == LepidodendronConfig.dimPermian){
+			dimensionCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimTriassic){
+			dimensionCriteria = false;
+		}
+		if (dimID == LepidodendronConfig.dimJurassic){
+			dimensionCriteria = false;
+		}
 		if (!dimensionCriteria)
 			return;
 

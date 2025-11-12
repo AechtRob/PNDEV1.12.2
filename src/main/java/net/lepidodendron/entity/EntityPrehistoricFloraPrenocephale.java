@@ -268,8 +268,6 @@ public class EntityPrehistoricFloraPrenocephale extends EntityPrehistoricFloraLa
 		return true;
 	}
 
-	
-	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
@@ -378,6 +376,20 @@ public class EntityPrehistoricFloraPrenocephale extends EntityPrehistoricFloraLa
 	            .getObject(new ResourceLocation("lepidodendron:prenocephale_death"));
 	}
 
+	public SoundEvent getGrappleSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:prenocephale_grapple"));
+	}
+
+	public SoundEvent getDisplaySound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:prenocephale_display"));
+	}
+
+	public SoundEvent getAlarmSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:prenocephale_alarm"));
+	}
 
 	@Override
 	protected float getSoundVolume() {
@@ -388,7 +400,6 @@ public class EntityPrehistoricFloraPrenocephale extends EntityPrehistoricFloraLa
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
-	
 
 	@Override
 	public void onLivingUpdate() {
@@ -405,21 +416,6 @@ public class EntityPrehistoricFloraPrenocephale extends EntityPrehistoricFloraLa
 			this.standCooldown = 0;
 		}
 
-		if ((this.getAnimation() == GRAPPLE_ANIMATION) && this.getAnimationTick() == this.headbutTick() && this.getGrappleTarget() != null) {
-			this.faceEntity(this.getGrappleTarget(), 10, 10);
-			launchGrapple();
-			if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
-				EntityPrehistoricFloraAgeableBase grappleTarget = (EntityPrehistoricFloraAgeableBase) this.getGrappleTarget();
-				grappleTarget.setGrappleTarget(null);
-				grappleTarget.willGrapple = false;
-			}
-			this.setGrappleTarget(null);
-			this.willGrapple = false;
-		}
-		else if ((this.getAnimation() == GRAPPLE_ANIMATION) && this.getGrappleTarget() != null) {
-			this.faceEntity(this.getGrappleTarget(), 10, 10);
-		}
-
 
 		//System.err.println("this.getMateable() " + this.getMateable() + " inPFLove " + this.inPFLove);
 
@@ -428,10 +424,51 @@ public class EntityPrehistoricFloraPrenocephale extends EntityPrehistoricFloraLa
 	}
 
 	@Override
-	public int headbutTick() {
-		//Just here to prevent the animation timing out:
-		return this.GRAPPLE_ANIMATION.getDuration() - 1;
+	public void launchGrapple() {
+		if (this.getGrappleTarget() != null) {
+			if (!this.world.isRemote) {
+				this.playSound((net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
+						.getObject(this.HeadbutSound()), this.getSoundVolume(), 1);
+			}
+			double d1 = this.posX - this.getGrappleTarget().posX;
+			double d0;
+
+			for (d0 = this.posZ -  this.getGrappleTarget().posZ; d1 * d1 + d0 * d0 < 1.0E-4D; d0 = (Math.random() - Math.random()) * 0.01D)
+			{
+				d1 = (Math.random() - Math.random()) * 0.01D;
+			}
+			this.getGrappleTarget().knockBack(this, 0.4F, d1, d0);
+
+			this.getGrappleTarget().addVelocity(0, 0.065, 0);
+
+		}
 	}
+
+	@Override
+	public int headbutTick() {
+		return 22;
+	}
+
+	public ResourceLocation HeadbutSound() {
+		return new ResourceLocation("lepidodendron:tapinocephalus_headbut");
+	}
+
+
+	public void playAlarmSound()
+	{
+		SoundEvent soundevent = this.getAlarmSound();
+		//System.err.println("looking for alarm sound");
+		if (soundevent != null && this.getAnimation() == NO_ANIMATION)
+		{
+			//System.err.println("playing alarm sound");
+			this.setAnimation(ROAR_ANIMATION);
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			this.alarmCooldown = 20;
+		}
+	}
+
+
+
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
@@ -471,10 +508,14 @@ public class EntityPrehistoricFloraPrenocephale extends EntityPrehistoricFloraLa
 		if (this.alarmCooldown > 0) {
 			this.alarmCooldown -= 1;
 		}
+		if (this.getScreaming() && alarmCooldown <= 0) {
+			this.playAlarmSound();
+		}
 		//Sometimes stand up and look around:
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			this.setAnimation(STAND_ANIMATION);
+			this.playSound(this.getDisplaySound(), this.getSoundVolume(), 1);
 			this.standCooldown = 3000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
@@ -482,8 +523,13 @@ public class EntityPrehistoricFloraPrenocephale extends EntityPrehistoricFloraLa
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
-		if ((this.getAnimation() == GRAPPLE_ANIMATION) && this.getGrappleTarget() != null) {
-			this.faceEntity(this.getGrappleTarget(), 10F, 10F);
+		if (this.getAnimation() == GRAPPLE_ANIMATION) {
+			if (this.getGrappleTarget() != null){
+				this.faceEntity(this.getGrappleTarget(), 10F, 10F);
+			}
+			if (this.getAnimationTick() == 1) {
+				this.playSound(this.getGrappleSound(), this.getSoundVolume(), 1);
+			}
 		}
 		super.onEntityUpdate();
 	}

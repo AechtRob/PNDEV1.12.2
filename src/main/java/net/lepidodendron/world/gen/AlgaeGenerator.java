@@ -1,12 +1,7 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.*;
-import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.Functions;
-import net.lepidodendron.world.biome.ChunkGenSpawner;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -41,121 +36,13 @@ public class AlgaeGenerator extends WorldGenerator
     //marine int: -1  = non-marine, 0 = bothk 1 = marine only
     public boolean generate(World worldIn, Random rand, BlockPos position)
     {
-		int dimID = worldIn.provider.getDimension();
-		int tries = 1;
-		if (worldIn.getBiome(position) instanceof BiomeJurassic) {
-			if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_glass_sponge_reef")
-					&& this.algae == BlockGlassSponge.block) {
-				tries = 10;
-			}
-		}
-		boolean dimensionCriteria = false;
-		boolean eukaryotic = (this.algae == BlockEukaryoticMat.block);
-		boolean huainan = (this.algae == BlockHuainanMat.block);
-		boolean algae = (this.algae == BlockGreenAlgaeMat.block || this.algae == BlockBrownAlgae.block || this.algae == BlockGreenCharaAlgae.block || this.algae == BlockGreenCodiumAlgae.block || this.algae == BlockGreenCrustedAlgae.block || this.algae == BlockGreenLeafyAlgae.block || this.algae == BlockGreenSproutingAlgae.block || this.algae == BlockPiledAlgae.block || this.algae == BlockStalkedAlgae.block || this.algae == BlockStalkyBrownAlgae.block);
-		boolean algaeRed = (this.algae == BlockRedAlgaeMat.block || this.algae == BlockRedLeafyAlgae.block || this.algae == BlockRedTuftedAlgae.block);
-		boolean gunk = (this.algae == BlockWaterBottomGunk.block);
-		boolean rugosas = (this.algae == BlockRugosa1.block || this.algae == BlockRugosa2.block || this.algae == BlockRugosa3.block || this.algae == BlockRugosa4.block || this.algae == BlockRugosa5.block);
-		boolean anemones = (this.algae == BlockAnemone1.block || this.algae == BlockAnemone2.block || this.algae == BlockAnemone3.block || this.algae == BlockAnemone4.block || this.algae == BlockAnemone5.block || this.algae == BlockAnemone6.block || this.algae == BlockAnemone7.block || this.algae == BlockAnemone8.block || this.algae == BlockAnemone9.block);
-		boolean cystoids = (this.algae == BlockCystoidAristocystites.block || this.algae == BlockCystoidBolboporites.block || this.algae == BlockCystoidEchinosphaerites.block || this.algae == BlockCystoidPseudocrinites.block);
-		boolean ediacaran = (this.algae == BlockTawuia.block);
-		boolean seagrass = (this.algae == BlockSeaGrass.block);
-		boolean mosacaulis = (this.algae == BlockMosacaulis.block);
-		boolean corals = (this.algae == BlockCoralBamboo.block || this.algae == BlockCoralBlueCrust.block || this.algae == BlockCoralBlueStaghorn.block || this.algae == BlockCoralBrain.block || this.algae == BlockCoralCarnation.block || this.algae == BlockCoralRedTree.block || this.algae == BlockCoralSoftFan.block || this.algae == BlockCoralStonyBlooming.block || this.algae == BlockCoralStonyFractalBranching.block || this.algae == BlockCoralStonyLumpy.block || this.algae == BlockCoralStonyPipeStack.block || this.algae == BlockCoralStonyPuffy.block || this.algae == BlockCoralStonyRoughBranching.block || this.algae == BlockCoralStonySparseBranching.block || this.algae == BlockCoralStonyTubular.block || this.algae == BlockCoralTanStaghorn.block);
-		int[] dimCheck = LepidodendronConfigPlants.dimAlgae;
-//		if (rugosas) {dimCheck = LepidodendronConfigPlants.dimRugosa;}
-		if (anemones) {dimCheck = LepidodendronConfigPlants.dimAnemone;}
-//		if (cystoids) {dimCheck = LepidodendronConfigPlants.dimCrinoid;}
-//		if (ediacaran) {dimCheck = LepidodendronConfigPlants.dimEdiacaran;}
-		if (seagrass) {dimCheck = LepidodendronConfigPlants.dimSeagrass;}
-//		if (mosacaulis) {dimCheck = LepidodendronConfigPlants.dimMosacaulis;}
-//		if (algalfrond) {dimCheck = LepidodendronConfigPlants.dimAlgalFrond;}
 
-		if (shouldGenerateInDimension(dimID, dimCheck)) {
-			dimensionCriteria = true;
-		}
-
-//		if ((dimID == LepidodendronConfig.dimDevonian && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
-//			|| ((dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
-//			|| (dimID == LepidodendronConfig.dimCambrian && (!rugosas) && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
-//			|| (dimID == LepidodendronConfig.dimPrecambrian && (!rugosas) && (!cystoids) && (!anemones) && (!seagrass) && (!mosacaulis))
-//			|| (dimID == LepidodendronConfig.dimCarboniferous && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
-//			|| (dimID == LepidodendronConfig.dimPermian && (!cystoids) && (!ediacaran) && (!seagrass) && (!mosacaulis) && (!algalfrond))
-//			|| (dimID == LepidodendronConfig.dimTriassic && (!cystoids) && (!ediacaran) && (!rugosas) && (!seagrass) && (!mosacaulis) && (!algalfrond))
-//			|| (dimID == LepidodendronConfig.dimJurassic && (!cystoids) && (!ediacaran) && (!rugosas) && (!seagrass) && (!mosacaulis) && (!algalfrond))
-//			|| (dimID == LepidodendronConfig.dimCretaceousEarly && (!cystoids) && (!ediacaran) && (!rugosas) && (!seagrass) && (!mosacaulis) && (!algalfrond))
-//			|| (dimID == LepidodendronConfig.dimCretaceousLate && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis) && (!algalfrond))
-//			|| (dimID == LepidodendronConfig.dimPaleogene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis) && (!algalfrond))
-//			|| (dimID == LepidodendronConfig.dimNeogene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis) && (!algalfrond))
-//			|| (dimID == LepidodendronConfig.dimPleistocene && (!cystoids) && (!ediacaran) && (!rugosas) && (!mosacaulis) && (!algalfrond))
-//			) {
-//			dimensionCriteria = true;
-//		}
-
-		if (!dimensionCriteria)
-			return true;
-
-		int bound = 4;
-		if ((this.algae == BlockDarkPinkSponge.block)
-			|| (this.algae == BlockPinkSponge.block)
-			|| (this.algae == BlockYellowSponge.block)
-			|| (this.algae == BlockDarkOrangeSponge.block)
-			|| (this.algae == BlockWhiteSponge.block)
-			|| (this.algae == BlockBlueSponge.block)
-			|| (this.algae == BlockOrangeSponge.block)
-			|| (this.algae == BlockRedSponge.block)
-			|| (this.algae == BlockBrownSponge.block)
-			//|| (this.algae == BlockGlassSponge.block)
-			|| (this.algae == BlockBranchedSponge.block)
-			|| (this.algae == BlockGigantospongia.block)
-			|| (this.algae == BlockFenestellaGiantBlue.block)
-			|| (this.algae == BlockFenestellaGiantGreen.block)
-			|| (this.algae == BlockFenestellaGiantOrange.block)
-			|| (this.algae == BlockFenestellaGiantRed.block)
-			|| (this.algae == BlockFenestellaGiantYellow.block)) {
-			bound = 2;
-		}
-
-		int multiplier = 1;
-		if (algae) {
-			multiplier = 4;
-		}
-		if (gunk) {
-			multiplier = 10;
-		}
-		if (this.algae == BlockGlassSponge.block) {
-			multiplier = 10;
-		}
-
-		if (eukaryotic) {
-			multiplier = 3;
-		}
-
-		if (huainan) {
-			multiplier = 5;
-		}
-
-//		if (this.algae == BlockTuanshanzia.block) {
-//			if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
-//					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")) {
-//				multiplier = 2;
-//			}
-//		}
-
-		for (int i = 0; i < (1 * multiplier); ++i)
+		for (int i = 0; i < 12; ++i)
 		{
 
-			int j = position.getX() + rand.nextInt(bound) - rand.nextInt(bound);
-			int k = position.getY() + rand.nextInt(4) - rand.nextInt(4);
-			int l = position.getZ() + rand.nextInt(bound) - rand.nextInt(bound);
-
-			j = position.getX();
-			k = position.getY();
-			l = position.getZ();
-
-			if (this.algae == BlockGlassSponge.block) {
-				k = ChunkGenSpawner.getTopSolidBlock(new BlockPos(j, 0, l), worldIn).getY() + 1;
-			}
+			int j = position.getX() + rand.nextInt(4) - rand.nextInt(4);
+			int k = position.getY() + rand.nextInt(4) - rand.nextInt(4);;
+			int l = position.getZ() + rand.nextInt(4) - rand.nextInt(4);;
 
 			if (worldIn.isBlockLoaded(new BlockPos(j, k, l))) {
 
@@ -166,52 +53,23 @@ public class AlgaeGenerator extends WorldGenerator
 						&& !worldIn.isAirBlock(new BlockPos(j + 1, k, l))
 						&& !worldIn.isAirBlock(new BlockPos(j - 1, k, l))) {
 
-					//Check that at least enough water is over the position (sponges):
+					//Check water levels are OK::
 					boolean waterDepthCheckMin = true;
-					if (dimID != LepidodendronConfig.dimCambrian &&
-							(this.algae == BlockDarkPinkSponge.block)
-							|| (this.algae == BlockPinkSponge.block)
-							|| (this.algae == BlockYellowSponge.block)
-							|| (this.algae == BlockDarkOrangeSponge.block)
-							|| (this.algae == BlockWhiteSponge.block)
-							|| (this.algae == BlockBlueSponge.block)
-							|| (this.algae == BlockOrangeSponge.block)
-							|| (this.algae == BlockRedSponge.block)
-							|| (this.algae == BlockBrownSponge.block)
-							|| (this.algae == BlockBranchedSponge.block)
-							|| (this.algae == BlockGlassSponge.block)
-							|| (this.algae == BlockGigantospongia.block)
-							|| (this.algae == BlockFenestellaGiantBlue.block)
-							|| (this.algae == BlockFenestellaGiantOrange.block)
-							|| (this.algae == BlockFenestellaGiantRed.block)
-							|| (this.algae == BlockFenestellaGiantYellow.block)
-							|| (this.algae == BlockFenestellaGiantGreen.block)
-							|| (this.algae == BlockAmblysiphonella.block)
+					boolean waterDepthCheckMax = true;
+					if ((this.algae == BlockDarkPinkSponge.block)
+						|| (this.algae == BlockPinkSponge.block)
+						|| (this.algae == BlockYellowSponge.block)
+						|| (this.algae == BlockDarkOrangeSponge.block)
+						|| (this.algae == BlockWhiteSponge.block)
+						|| (this.algae == BlockBlueSponge.block)
+						|| (this.algae == BlockOrangeSponge.block)
+						|| (this.algae == BlockRedSponge.block)
+						|| (this.algae == BlockBrownSponge.block)
+						|| (this.algae == BlockBranchedSponge.block)
+						|| (this.algae == BlockGlassSponge.block)
 					) {
 						int yy = 1;
-						while (yy <= 4 && waterDepthCheckMin) {
-							if (worldIn.getBlockState(new BlockPos(j, k + yy, l)).getMaterial() != Material.WATER) {
-								waterDepthCheckMin = false;
-							}
-							yy += 1;
-						}
-						if (worldIn.getBiome(new BlockPos(j, 0, l)) instanceof BiomeJurassic) {
-							if (((BiomeJurassic)((BiomeJurassic) worldIn.getBiome(new BlockPos(j, 0, l)))).getBiomeType() == EnumBiomeTypeJurassic.IslandWhite) {
-								waterDepthCheckMin = true;
-							}
-						}
-						if (worldIn.getBiome(new BlockPos(j, 0, l)) instanceof BiomeJurassic) {
-							if (worldIn.getBiome(new BlockPos(j, 0, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_glass_sponge_reef")
-								&& this.algae == BlockGlassSponge.block) {
-								waterDepthCheckMin = true;
-							}
-						}
-					}
-
-					if (this.algae == BlockCoralBamboo.block
-					) {
-						int yy = 1;
-						while (yy <= 18 && waterDepthCheckMin) {
+						while (yy <= 4 && waterDepthCheckMin) { //Sponge water must be 4 deep or more
 							if (worldIn.getBlockState(new BlockPos(j, k + yy, l)).getMaterial() != Material.WATER) {
 								waterDepthCheckMin = false;
 							}
@@ -219,54 +77,61 @@ public class AlgaeGenerator extends WorldGenerator
 						}
 					}
 
-					//And check that algae do not generate too deep and some other tests:
-					if (algae && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 10) && !worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean") && !worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")) {
-						waterDepthCheckMin = false;
+					if (this.algae == BlockCoralBamboo.block || this.algae == BlockBoneWorm.block
+					) {
+						int yy = 1;
+						while (yy <= 18 && waterDepthCheckMin) { //Coral bamboo water must be 10 deep or more
+							if (worldIn.getBlockState(new BlockPos(j, k + yy, l)).getMaterial() != Material.WATER) {
+								waterDepthCheckMin = false;
+							}
+							yy += 1;
+						}
 					}
 
-					if (rugosas && this.algae != BlockRugosa5.block && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 18) && !worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
-						waterDepthCheckMin = false;
-					}
-					if (algae && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 35) && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
-						waterDepthCheckMin = false;
-					}
-					if ((algaeRed || anemones || corals || algae) && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 15) && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean")) {
-						waterDepthCheckMin = false; //anemones, corals and algae only higher up in the deep Early C oceans
-					}
-
-					if (rugosas && this.algae != BlockRugosa5.block && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 35) && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
-						waterDepthCheckMin = false;
-					}
-					if ((!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lakes")))
-							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lake_shore")))
-							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")))
-							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")))
-							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_dead")))
-							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")))
-							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")))
-							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef")))
-							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_bog")))
-							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_creek_bog")))
-							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")))
-							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_algae")))
-							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_china_lakes")))
-							&& gunk && (k + (rand.nextInt(3) - 1)) > (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 22)) {
-						waterDepthCheckMin = false;
-					}
-					if ((worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench"))
-							&& gunk && (k + (rand.nextInt(5) - 2)) > 35) {
-						waterDepthCheckMin = false;
-					}
-					if (algae && (worldIn.getBiome(new BlockPos(j, 0, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater_water")
-							|| worldIn.getBiome(new BlockPos(j, 0, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater")
-					)) {
-						waterDepthCheckMin = true;
-					}
-					if (eukaryotic || huainan) {
-						waterDepthCheckMin = true;
+					if (waterDepthCheckMin && (this.algae == BlockGreenAlgaeMat.block
+							|| this.algae == BlockGreenCharaAlgae.block
+							|| this.algae == BlockPiledAlgae.block
+							|| this.algae == BlockStalkedAlgae.block
+							|| this.algae == BlockGreenLeafyAlgae.block
+							|| this.algae == BlockGreenCodiumAlgae.block
+							|| this.algae == BlockGreenSproutingAlgae.block
+							|| this.algae == BlockGreenStemmedAlgae.block
+							|| this.algae == BlockGreenCrustedAlgae.block
+							|| this.algae == BlockPiledAlgae.block
+							|| this.algae == BlockSeaGrass.block)
+					) {
+						int yy = 1;
+						while (yy <= 16) { //Green algae water must be 15 deep or less
+							if (worldIn.getBlockState(new BlockPos(j, k + yy, l)).getMaterial() != Material.WATER) {
+								break;
+							}
+							yy += 1;
+						}
+						if (yy > 15) {
+							waterDepthCheckMax = false;
+						}
 					}
 
-					if (waterDepthCheckMin) {
+					if (waterDepthCheckMin && (this.algae == BlockRedAlgaeMat.block
+							|| this.algae == BlockRedLeafyAlgae.block
+							|| this.algae == BlockRedTuftedAlgae.block
+							|| this.algae == BlockBrownAlgae.block
+							|| this.algae == BlockBrownAscendingAlgae.block
+							|| this.algae == BlockStalkyBrownAlgae.block)
+					) {
+						int yy = 1;
+						while (yy <= 31) { //Green algae water must be 15 deep or less
+							if (worldIn.getBlockState(new BlockPos(j, k + yy, l)).getMaterial() != Material.WATER) {
+								break;
+							}
+							yy += 1;
+						}
+						if (yy > 30) {
+							waterDepthCheckMax = false;
+						}
+					}
+
+					if (waterDepthCheckMin && waterDepthCheckMax) {
 						//figure out a position and facing to place this at!
 						//First try regular uprights and then the rotations:
 						EnumFacing enumfacing = EnumFacing.UP;
@@ -281,18 +146,8 @@ public class AlgaeGenerator extends WorldGenerator
 								|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
 								|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))
 								&& (worldIn.getBlockState(pos).getBlockFaceShape(worldIn, pos, EnumFacing.UP) == BlockFaceShape.SOLID)
-								&& (this.algae != BlockCystoidPseudocrinites.block) //this is preferred on the sides
-								&& (this.algae != BlockGigantospongia.block) //this is preferred on the sides
-								&& (this.algae != BlockFenestellaGiantBlue.block) //this is preferred on the sides
-								&& (this.algae != BlockFenestellaGiantOrange.block) //this is preferred on the sides
-								&& (this.algae != BlockFenestellaGiantRed.block) //this is preferred on the sides
-								&& (this.algae != BlockFenestellaGiantYellow.block) //this is preferred on the sides
-								&& (this.algae != BlockFenestellaGiantGreen.block) //this is preferred on the side
 						) {
-							if (this.algae != BlockCrinoidPetalocrinus.block && this.algae != BlockCrinoidVadarocrinus.block
-									&& this.algae != BlockCrinoidBoliviacrinus.block && this.algae != BlockCrinoidCrotalocrinites.block
-									&& this.algae != BlockCrinoidCalceolispongia.block
-									&& this.algae != BlockSeaGrass.block && this.algae != BlockMosacaulis.block) {
+							if (this.algae != BlockSeaGrass.block) {
 								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
 							} else {
 								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state, 2);
@@ -315,20 +170,8 @@ public class AlgaeGenerator extends WorldGenerator
 											&& (this.algae != BlockAnemone7.block)
 											&& (this.algae != BlockAnemone8.block)
 											&& (this.algae != BlockAnemone9.block)
-											&& (this.algae != BlockCystoidBolboporites.block)
-											&& (this.algae != BlockCystoidEchinosphaerites.block)
-											&& (this.algae != BlockCystoidAristocystites.block)
-											&& (this.algae != BlockCrinoidPetalocrinus.block)
-											&& (this.algae != BlockCrinoidVadarocrinus.block)
-											&& (this.algae != BlockCrinoidBoliviacrinus.block)
-											&& (this.algae != BlockCrinoidCalceolispongia.block)
-											&& (this.algae != BlockCrinoidCrotalocrinites.block)
 											&& (this.algae != BlockWaterBottomGunk.block)
-											&& (this.algae != BlockTawuia.block)
-											&& (this.algae != BlockUnderwaterDebris.block)
 											&& (this.algae != BlockSeaGrass.block)
-											&& (this.algae != BlockMosacaulis.block)
-											&& (this.algae != BlockTuanshanzia.block)
 							) {
 								for (EnumFacing enumfacing1 : FACING.getAllowedValues()) {
 									pos = new BlockPos(j, k, l);
@@ -359,10 +202,6 @@ public class AlgaeGenerator extends WorldGenerator
 											&& (worldIn.getBlockState(pos).getBlockFaceShape(worldIn, pos, enumfacing1) == BlockFaceShape.SOLID)) {
 										Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing1), 2);
 
-										tries --;
-										if (!(tries > 0)) {
-											return true;
-										}
 									}
 								}
 							}
@@ -375,15 +214,4 @@ public class AlgaeGenerator extends WorldGenerator
 		return true;
 	}
 
-	public boolean shouldGenerateInDimension(int id, int[] dims) {
-		int[] var2 = dims;
-		int var3 = dims.length;
-		for (int var4 = 0; var4 < var3; ++var4) {
-			int dim = var2[var4];
-			if (dim == id) {
-				return true;
-			}
-		}
-		return false;
-    }
 }

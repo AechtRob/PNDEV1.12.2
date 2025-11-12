@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:items/brachiopod_gigantoproductus_icon"
+    "layer0": "lepidodendron:items/brachiopod_gigantoproductus_inventory"
   }
 }

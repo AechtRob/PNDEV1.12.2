@@ -171,6 +171,16 @@ public class EntityPrehistoricFloraRhinopteraspis extends EntityPrehistoricFlora
 		super.onEntityUpdate();
 	}
 
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+
+		if (source != DamageSource.DROWN) {
+			return super.attackEntityFrom(source, (amount * 0.5F));
+		}
+		return super.attackEntityFrom(source, amount);
+
+	}
+
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.RHINOPTERASPIS_LOOT;

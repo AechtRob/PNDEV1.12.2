@@ -3,6 +3,7 @@ package net.lepidodendron.item.entities.spawneggs;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.BlockAcidBath;
 import net.lepidodendron.entity.EntityPrehistoricFloraAnurognathid;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -18,6 +19,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -41,6 +43,11 @@ public class ItemSpawnEggAnurognathidAnurognathus extends ElementsLepidodendronM
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/spawneggs/spawn_egg_anurognathid_anurognathus", "inventory"));
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		GameRegistry.registerTileEntity(BlockAcidBath.TileEntityAcidBath.class, "lepidodendron:tileentityacid_bath");
 	}
 
 	public static class ItemCustom extends ItemPNSpawnEgg {

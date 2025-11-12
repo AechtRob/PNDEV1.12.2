@@ -5966,13 +5966,13 @@ public class ModelMalawisaurus extends ModelBasePalaeopedia {
         EntityPrehistoricFloraMalawisaurus e = (EntityPrehistoricFloraMalawisaurus) entity;
         animator.update(entity);
 
-        animator.setAnimation(e.HURT_ANIMATION); //30 ticks
-        animator.startKeyframe(8);
-        animator.rotate(this.head, (float) Math.toRadians(-25), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.jaws, (float) Math.toRadians(30), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.endKeyframe();
-        animator.setStaticKeyframe(12);
-        animator.resetKeyframe(10);
+//        animator.setAnimation(e.HURT_ANIMATION); //30 ticks
+//        animator.startKeyframe(8);
+//        animator.rotate(this.head, (float) Math.toRadians(-25), (float) Math.toRadians(0), (float) Math.toRadians(0));
+//        animator.rotate(this.jaws, (float) Math.toRadians(30), (float) Math.toRadians(0), (float) Math.toRadians(0));
+//        animator.endKeyframe();
+//        animator.setStaticKeyframe(12);
+//        animator.resetKeyframe(10);
 
     }
 }

@@ -55,6 +55,15 @@ public class BiomeSpawns {
             return "";
         }
         String[] mobList = EntityLists.mobString(biome);
+        if (biomeID.equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns")) {
+            //Need to combine two biomes together for this one!
+            ObjectArrayList<String> spawnListJoiner = new ObjectArrayList<String>(Arrays.asList(mobList));
+            biome = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:carboniferous_volcanic_tarns_crater"));
+            String[] mobList1 = EntityLists.mobString(biome);
+            ObjectArrayList<String> spawnListJoiner1 = new ObjectArrayList<String>(Arrays.asList(mobList1));
+            spawnListJoiner.addAll(spawnListJoiner1);
+            mobList = spawnListJoiner.toArray(mobList);
+        }
         if (biomeID.equalsIgnoreCase("lepidodendron:jurassic_island_large_field")) {
             //Need to combine several biomes together for this one!
             ObjectArrayList<String> spawnListJoiner = new ObjectArrayList<String>(Arrays.asList(mobList));

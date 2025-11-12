@@ -105,6 +105,27 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 				else if (spawnMob.equalsIgnoreCase("lepidodendron:prehistoric_flora_aquaticnymph@damselfly")) {
 					spawnMob = "lepidodendron:prehistoric_flora_damselfly";
 				}
+				else if (spawnMob.equalsIgnoreCase("lepidodendron:prehistoric_flora_tadpole@cratopipa")) {
+					spawnMob = "lepidodendron:prehistoric_flora_cratopipa";
+				}
+				else if (spawnMob.equalsIgnoreCase("lepidodendron:prehistoric_flora_tadpole@prosalirus")) {
+					spawnMob = "lepidodendron:prehistoric_flora_prosalirus";
+				}
+				else if (spawnMob.equalsIgnoreCase("lepidodendron:prehistoric_flora_tadpole@notobatrachus")) {
+					spawnMob = "lepidodendron:prehistoric_flora_notobatrachus";
+				}
+				else if (spawnMob.equalsIgnoreCase("lepidodendron:prehistoric_flora_tadpole@rhadinosteus")) {
+					spawnMob = "lepidodendron:prehistoric_flora_rhadinosteus";
+				}
+				else if (spawnMob.equalsIgnoreCase("lepidodendron:prehistoric_flora_tadpole@hygobatrachus")) {
+					spawnMob = "lepidodendron:prehistoric_flora_hygobatrachus";
+				}
+				else if (spawnMob.equalsIgnoreCase("lepidodendron:prehistoric_flora_tadpole@kururubatrachus")) {
+					spawnMob = "lepidodendron:prehistoric_flora_kururubatrachus";
+				}
+				else if (spawnMob.equalsIgnoreCase("lepidodendron:prehistoric_flora_tadpole@genibatrachus")) {
+					spawnMob = "lepidodendron:prehistoric_flora_kururubatrachus";
+				}
 				else if (spawnMob.indexOf("_nymph") >= 1) {
 					spawnMob = spawnMob.replace("_nymph", "");
 				}
@@ -276,7 +297,7 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 			"lepidodendron:prehistoric_flora_trypanognathus",
             "lepidodendron:prehistoric_flora_brachydectes",
             "lepidodendron:prehistoric_flora_leptostyrax",
-            "lepidodendron:prehistoric_flora_gerobatrachus",
+            "lepidodendron:prehistoric_flora_gerobatrachus"
 
     };
 
