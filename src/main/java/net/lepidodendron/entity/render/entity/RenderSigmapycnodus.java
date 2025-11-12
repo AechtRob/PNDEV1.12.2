@@ -15,7 +15,7 @@ public class RenderSigmapycnodus extends RenderLivingBaseWithBook<EntityPrehisto
         super(mgr, new ModelSigmapycnodus(), 0.0f);
     }
 
-    public static float getScaler() {return 0.38F; }
+    public static float getScaler() {return 0.34F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraSigmapycnodus entity) {

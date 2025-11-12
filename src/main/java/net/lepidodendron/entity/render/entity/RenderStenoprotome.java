@@ -15,7 +15,7 @@ public class RenderStenoprotome extends RenderLivingBaseWithBook<EntityPrehistor
         super(mgr, new ModelStenoprotome(), 0.0f);
     }
 
-    public static float getScaler() {return 0.17F; }
+    public static float getScaler() {return 0.14F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraStenoprotome entity) {

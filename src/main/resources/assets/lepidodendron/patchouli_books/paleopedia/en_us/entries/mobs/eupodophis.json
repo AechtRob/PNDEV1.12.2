@@ -1,0 +1,47 @@
+{
+	"name": "Eupodophis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eupodophis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_eupodophis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eupodophis",
+			"title": "Eupodophis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Squamata$(br)>Simoliophiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. descouensi",
+            "entity": "lepidodendron:prehistoric_flora_eupodophis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eupodophis",
+			"type": "text",
+			"text": "Eupodophis is one of the first snakes which is known from the Late Cretaceous of the Namoura and Haqel localities of Lebanon. Originally described as Podophis in 2000 by Rage et al, it was soon renamed, due to preoccupation of that name by a skink. A notable feature of this genus is the presence of vestigial, though distinct, hind limbs."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eupodophis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eupodophis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eupodophis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eupodophis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eupodophis"
+		}
+	]
+}

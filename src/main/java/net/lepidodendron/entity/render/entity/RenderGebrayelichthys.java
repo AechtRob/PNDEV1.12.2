@@ -15,7 +15,7 @@ public class RenderGebrayelichthys extends RenderLivingBaseWithBook<EntityPrehis
         super(mgr, new ModelGebrayelichthys(), 0.0f);
     }
 
-    public static float getScaler() {return 0.28F; }
+    public static float getScaler() {return 0.20F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraGebrayelichthys entity) {

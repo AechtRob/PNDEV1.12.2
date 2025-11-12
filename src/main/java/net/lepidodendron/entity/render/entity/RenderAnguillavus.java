@@ -15,7 +15,7 @@ public class RenderAnguillavus extends RenderLivingBaseWithBook<EntityPrehistori
         super(mgr, new ModelAnguillavus(), 0.0f);
     }
 
-    public static float getScaler() {return 0.35F; }
+    public static float getScaler() {return 0.2F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAnguillavus entity) {

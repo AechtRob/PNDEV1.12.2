@@ -15,7 +15,7 @@ public class RenderPrionolepis extends RenderLivingBaseWithBook<EntityPrehistori
         super(mgr, new ModelPrionolepis(), 0.0f);
     }
 
-    public static float getScaler() {return 0.32F; }
+    public static float getScaler() {return 0.2F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPrionolepis entity) {

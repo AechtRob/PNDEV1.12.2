@@ -15,7 +15,7 @@ public class RenderMesiteia extends RenderLivingBaseWithBook<EntityPrehistoricFl
         super(mgr, new ModelMesiteia(), 0.0f);
     }
 
-    public static float getScaler() {return 0.42F; }
+    public static float getScaler() {return 0.31F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMesiteia entity) {

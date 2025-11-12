@@ -15,7 +15,7 @@ public class RenderRhynchodercetis extends RenderLivingBaseWithBook<EntityPrehis
         super(mgr, new ModelRhynchodercetis(), 0.0f);
     }
 
-    public static float getScaler() {return 0.26F; }
+    public static float getScaler() {return 0.18F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraRhynchodercetis entity) {

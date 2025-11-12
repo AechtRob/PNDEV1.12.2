@@ -15,7 +15,7 @@ public class RenderGladiopycnodus extends RenderLivingBaseWithBook<EntityPrehist
         super(mgr, new ModelGladiopycnodus(), 0.0f);
     }
 
-    public static float getScaler() {return 0.23F; }
+    public static float getScaler() {return 0.18F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraGladiopycnodus entity) {

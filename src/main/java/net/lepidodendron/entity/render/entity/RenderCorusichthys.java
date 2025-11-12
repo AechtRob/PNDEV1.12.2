@@ -15,7 +15,7 @@ public class RenderCorusichthys extends RenderLivingBaseWithBook<EntityPrehistor
         super(mgr, new ModelCorusichthys(), 0.0f);
     }
 
-    public static float getScaler() {return 0.18F; }
+    public static float getScaler() {return 0.15F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraCorusichthys entity) {
