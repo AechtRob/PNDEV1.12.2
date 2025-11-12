@@ -15,7 +15,7 @@ public class RenderHeterothrissa extends RenderLivingBaseWithBook<EntityPrehisto
         super(mgr, new ModelHeterothrissa(), 0.0f);
     }
 
-    public static float getScaler() {return 0.26F; }
+    public static float getScaler() {return 0.23F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraHeterothrissa entity) {

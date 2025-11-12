@@ -15,7 +15,7 @@ public class RenderJoinvillichthys extends RenderLivingBaseWithBook<EntityPrehis
         super(mgr, new ModelJoinvillichthys(), 0.0f);
     }
 
-    public static float getScaler() {return 0.26F; }
+    public static float getScaler() {return 0.20F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraJoinvillichthys entity) {

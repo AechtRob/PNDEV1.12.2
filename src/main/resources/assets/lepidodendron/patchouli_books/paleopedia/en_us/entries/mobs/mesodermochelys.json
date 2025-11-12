@@ -1,0 +1,47 @@
+{
+	"name": "Mesodermochelys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mesodermochelys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_mesodermochelys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mesodermochelys",
+			"title": "Mesodermochelys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Testudines$(br)>Cryptodira$(br)>Dermochelyidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. undulatus",
+            "entity": "lepidodendron:prehistoric_flora_mesodermochelys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mesodermochelys",
+			"type": "text",
+			"text": "Mesodermochelys undulatus is a large marine turtle with carapace length around 1.5 m, possibly up to 2 m. It is classified within Dermochelyidae which includes modern leatherback seaturtles, although it seems to share characteristics of protostegids on its unpublished skull. Although it was thought to be endemic to Japan, recently it was also found in Chile."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mesodermochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mesodermochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mesodermochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mesodermochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mesodermochelys"
+		}
+	]
+}

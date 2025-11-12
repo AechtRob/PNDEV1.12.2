@@ -15,7 +15,7 @@ public class RenderMaraldichthys extends RenderLivingBaseWithBook<EntityPrehisto
         super(mgr, new ModelMaraldichthys(), 0.0f);
     }
 
-    public static float getScaler() {return 0.26F; }
+    public static float getScaler() {return 0.18F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMaraldichthys entity) {

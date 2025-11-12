@@ -15,7 +15,7 @@ public class RenderEusebichthys extends RenderLivingBaseWithBook<EntityPrehistor
         super(mgr, new ModelEusebichthys(), 0.0f);
     }
 
-    public static float getScaler() {return 0.32F; }
+    public static float getScaler() {return 0.21F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraEusebichthys entity) {

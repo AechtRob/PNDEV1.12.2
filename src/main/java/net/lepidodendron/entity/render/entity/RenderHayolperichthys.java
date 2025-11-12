@@ -15,7 +15,7 @@ public class RenderHayolperichthys extends RenderLivingBaseWithBook<EntityPrehis
         super(mgr, new ModelHayolperichthys(), 0.0f);
     }
 
-    public static float getScaler() {return 0.22F; }
+    public static float getScaler() {return 0.18F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraHayolperichthys entity) {

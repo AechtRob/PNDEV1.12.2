@@ -15,7 +15,7 @@ public class RenderRostropycnodus extends RenderLivingBaseWithBook<EntityPrehist
         super(mgr, new ModelRostropycnodus(), 0.0f);
     }
 
-    public static float getScaler() {return 0.18F; }
+    public static float getScaler() {return 0.16F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraRostropycnodus entity) {

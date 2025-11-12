@@ -15,7 +15,7 @@ public class RenderHaqelpycnodus extends RenderLivingBaseWithBook<EntityPrehisto
         super(mgr, new ModelHaqelpycnodus(), 0.0f);
     }
 
-    public static float getScaler() {return 0.44F; }
+    public static float getScaler() {return 0.25F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraHaqelpycnodus entity) {

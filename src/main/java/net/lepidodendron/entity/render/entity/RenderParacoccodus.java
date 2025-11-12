@@ -15,7 +15,7 @@ public class RenderParacoccodus extends RenderLivingBaseWithBook<EntityPrehistor
         super(mgr, new ModelParacoccodus(), 0.0f);
     }
 
-    public static float getScaler() {return 0.28F; }
+    public static float getScaler() {return 0.20F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraParacoccodus entity) {

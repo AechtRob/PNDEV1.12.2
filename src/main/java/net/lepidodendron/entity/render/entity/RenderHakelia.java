@@ -15,7 +15,7 @@ public class RenderHakelia extends RenderLivingBaseWithBook<EntityPrehistoricFlo
         super(mgr, new ModelHakelia(), 0.0f);
     }
 
-    public static float getScaler() {return 0.36F; }
+    public static float getScaler() {return 0.23F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraHakelia entity) {

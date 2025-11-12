@@ -15,7 +15,7 @@ public class RenderArmigatus extends RenderLivingBaseWithBook<EntityPrehistoricF
         super(mgr, new ModelArmigatus(), 0.0f);
     }
 
-    public static float getScaler() {return 0.29F; }
+    public static float getScaler() {return 0.19F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraArmigatus entity) {

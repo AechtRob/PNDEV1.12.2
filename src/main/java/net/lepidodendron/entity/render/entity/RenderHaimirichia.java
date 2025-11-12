@@ -12,7 +12,7 @@ public class RenderHaimirichia extends RenderLivingBaseWithBook<EntityPrehistori
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/haimirichia.png");
 
     public static float getScaler() {
-        return 0.7F ;
+        return 0.64F ;
     }
     public RenderHaimirichia(RenderManager mgr) {
         super(mgr, new ModelHaimirichia(), 0.0f);

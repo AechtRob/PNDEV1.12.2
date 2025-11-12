@@ -15,7 +15,7 @@ public class RenderFlagellipinna extends RenderLivingBaseWithBook<EntityPrehisto
         super(mgr, new ModelFlagellipinna(), 0.0f);
     }
 
-    public static float getScaler() {return 0.5F; }
+    public static float getScaler() {return 0.27F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraFlagellipinna entity) {

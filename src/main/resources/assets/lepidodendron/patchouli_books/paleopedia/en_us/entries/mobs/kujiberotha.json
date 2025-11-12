@@ -1,0 +1,47 @@
+{
+	"name": "Kujiberotha",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kujiberotha_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_kujiberotha",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kujiberotha",
+			"title": "Kujiberotha",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Neuroptera$(br)>Euneuroptera$(br)>Rhachiberothidae"
+		},
+        	{
+            "type": "entity",
+            "name": "K. teruyukii",
+            "entity": "lepidodendron:prehistoric_flora_kujiberotha",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kujiberotha",
+			"type": "text",
+			"text": "Kujiberotha is a lacewing in the family Rhachiberothidae which is sometimes called as thorny lacewings. This species is found in a Kuji amber from Iwate Prefecture of Japan, originally considered as a mantis but found to be a lacewing later. Its species name teruyukii is named after an actor Teruyuki Kagawa, who loves insects and performed as a mantis in a certain TV program. It also became the motif of a villain in an episode of Kamen Rider Zero-One!"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kujiberotha"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kujiberotha"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kujiberotha"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kujiberotha"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kujiberotha"
+		}
+	]
+}

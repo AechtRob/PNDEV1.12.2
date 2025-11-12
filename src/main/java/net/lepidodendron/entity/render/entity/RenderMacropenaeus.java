@@ -15,7 +15,7 @@ public class RenderMacropenaeus extends RenderLivingBaseWithBook<EntityPrehistor
         super(mgr, new ModelMacropenaeus(), 0.0f);
     }
 
-    public static float getScaler() {return 0.28F; }
+    public static float getScaler() {return 0.25F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMacropenaeus entity) {
