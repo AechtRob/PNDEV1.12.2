@@ -397,14 +397,15 @@ public class EntityPrehistoricFloraFukuivenator extends EntityPrehistoricFloraLa
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_FUKUIRAPTOR;
+		return ModTriggers.CLICK_FUKUIVENATOR;
 	}
+
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.FUKUIRAPTOR_LOOT_YOUNG;
+			return LepidodendronMod.FUKUIVENATOR_LOOT_YOUNG;
 		}
-		return LepidodendronMod.FUKUIRAPTOR_LOOT;
+		return LepidodendronMod.FUKUIVENATOR_LOOT;
 	}
 
 	//Rendering taxidermy:

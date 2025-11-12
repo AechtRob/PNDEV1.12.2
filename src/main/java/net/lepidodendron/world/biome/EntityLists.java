@@ -296,7 +296,7 @@ public class EntityLists {
 
                 return MobString;
 
-            case 10:
+            case 10: //Late K
                 return new String[]{"lepidodendron:prehistoric_flora_hexanchus:0:0:0",
                         "lepidodendron:prehistoric_flora_ammonite_parapuzosia:0:0:0",
                         "lepidodendron:prehistoric_flora_ammonite_pachydiscus:0:0:0",
@@ -347,9 +347,11 @@ public class EntityLists {
                         "lepidodendron:prehistoric_flora_tessarolax:0:0:0",
                         "lepidodendron:prehistoric_flora_notopala:0:0:0",
                         "lepidodendron:prehistoric_flora_neoceratodus:0:0:0",
-                        "lepidodendron:prehistoric_flora_albanerpeton:0:0:0"};
+                        "lepidodendron:prehistoric_flora_albanerpeton:0:0:0",
+                        "lepidodendron:prehistoric_flora_prenocephale:0:0:0",
+                        "lepidodendron:prehistoric_flora_diplomoceras:0:0:0"};
 
-            case 11:
+            case 11: //Paleogene
                 return new String[]{
                         "lepidodendron:prehistoric_flora_jellyfish7:0:0:0",
                         "lepidodendron:prehistoric_flora_jellyfish3:0:0:0",
@@ -373,7 +375,7 @@ public class EntityLists {
                         "lepidodendron:prehistoric_flora_dragonfly:0:0:0"
                 };
 
-            case 12:
+            case 12: //Neogene
                 return new String[]{
                         "lepidodendron:prehistoric_flora_jellyfish7:0:0:0",
                         "lepidodendron:prehistoric_flora_jellyfish3:0:0:0",
@@ -396,7 +398,7 @@ public class EntityLists {
                         "lepidodendron:prehistoric_flora_ischyodus:0:0:0"
                 };
 
-            case 13:
+            case 13: //Pleistocene
                 return new String[]{
                         "lepidodendron:prehistoric_flora_jellyfish1:0:0:0",
                         "lepidodendron:prehistoric_flora_jellyfish2:0:0:0",
