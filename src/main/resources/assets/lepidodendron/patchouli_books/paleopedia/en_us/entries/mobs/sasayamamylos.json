@@ -1,0 +1,47 @@
+{
+	"name": "Sasayamamylos",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sasayamamylos_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sasayamamylos",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sasayamamylos",
+			"title": "Sasayamamylos",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Mammalia$(br)>Eutheria$(br)>Asioryctitheria"
+		},
+        	{
+            "type": "entity",
+            "name": "S. Kawaii",
+            "entity": "lepidodendron:prehistoric_flora_sasayamamylos",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sasayamamylos",
+			"type": "text",
+			"text": "Sasayamamylos kawaii is an early eutherian known from the Ohyamashimo Formation of Japan. This species name is named after researcher Masao Kawai, while the Genus name is in reference to the Sasayama Group."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sasayamamylos"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sasayamamylos"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sasayamamylos"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sasayamamylos"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sasayamamylos"
+		}
+	]
+}

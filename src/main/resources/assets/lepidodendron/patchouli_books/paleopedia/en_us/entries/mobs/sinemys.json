@@ -1,0 +1,52 @@
+{
+	"name": "Sinemys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sinemys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sinemys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sinemys",
+			"title": "Sinemys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pantestudines$(br)>Testidinata$(br)>Sinemydidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. gamera",
+            "entity": "lepidodendron:prehistoric_flora_sinemys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sinemys",
+			"type": "text",
+			"text": "Sinemys gamera is a sinemydid turtle known from Early Cretaceous of Inner Mongolia, China. The most distinctive feature of this species is, of course, the pair of horn-like features that grow from the rear of the carapace. Other species of Sinemys, like S. lens, known from the Jurassic to Cretaceous Shandong, and S. brevispinus, also known from the Cretaceous Inner Mongolia, have much shorter and less noticeable horns than this species."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sinemys",
+			"type": "text",
+			"text": "The function of these protrusions is thought to have been to control the rotation of the carapace in fast-flowing rivers. S. gamera was described by researchers in Canada and China and is named after Gamera, a kaiju from Japanese tokusatsu movie. The flying turtle kaiju is a fitting name for this fossil turtle with a shell shaped like a stealth bomber!"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sinemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sinemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sinemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sinemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sinemys"
+		}
+	]
+}

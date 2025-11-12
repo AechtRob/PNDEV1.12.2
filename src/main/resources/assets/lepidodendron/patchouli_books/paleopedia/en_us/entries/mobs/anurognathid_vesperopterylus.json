@@ -1,0 +1,56 @@
+{
+	"name": "Vesperopterylus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/anurognathid_vesperopterylus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_anurognathid_vesperopterylus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_anurognathid_vesperopterylus",
+			"title": "Vesperopterylus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Pterosauria$(br)>Pterodactyliformes$(br)>Anurognathidae$(br)>Anurognathinae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/vesperopterylus.png"],
+			"title": "V. lamadongensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anurognathid_vesperopterylus",
+			"type": "text",
+			"text": "Vesperopterylus is a anurognathid from the Early Cretaceous of China. Being from the Early Cretaceous, this is the youngest known anurognathid, being the last one before the group died out. It also happens to be the largest known anurognathid, having a wingspan of just under 1 meter, being slightly larger than Jeholopterus. Vesperopterylus has been reconstructed as a Derived member of the anurognathid family, in fact being placed as the sister taxon"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anurognathid_vesperopterylus",
+			"type": "text",
+			"text": "to Anurognathus itself. This animal like most other anurognathids, seems to be adapted for a arboreal lifestyle, living in more forested areas. These animals likely would hunt for insects within the trees, perhaps even preying upon other small arboreal animals. This animal very well may have hunted at night due to their large eyes, a common hypothesis for anurognathids."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anurognathid_vesperopterylus",
+			"type": "text",
+			"text": "Vesperopterylus was found in the well known Jiufotang formation, well known for producing animals such as Microraptor and chaoyangopterid pterosaurs. This environment was likely a wetter area with forested elements. This environment was effective at preserving smaller animals of the Jiufotang, and this location has provided us with many different pterosaurs, birds and dinosaurs."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@vesperopterylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@vesperopterylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@vesperopterylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@vesperopterylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@vesperopterylus"
+		}
+	]
+}

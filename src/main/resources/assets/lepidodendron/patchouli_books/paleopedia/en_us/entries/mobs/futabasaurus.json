@@ -1,0 +1,57 @@
+{
+	"name": "Futabasaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/futabasaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_futabasaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_futabasaurus",
+			"title": "Futabasaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Plesiosauria$(br)>Elasmosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "F. suzukii",
+            "entity": "lepidodendron:prehistoric_flora_futabasaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_futabasaurus",
+			"type": "text",
+			"text": "Futabasaurus suzukii is probably one of the most popular prehistoric creature in Japan. In 1968, at Futaba Group of Fukushima prefecture, Japan, Tadashi Suzuki, a high school student found a fossil of elasmosaurid plesiosaur. This was one of the first famous fossils of large reptiles in Japan, and until that it was thought that such fossils could not be found in Japan, a country with a small land area."
+		},
+			{
+			"advancement": "lepidodendron:pf_adv_book_futabasaurus",
+			"type": "text",
+			"text": "It was nicknamed as Futaba-Suzuki-ryu, this plesiosaur became so popular that it was featured in pop culture. One famous example is an episode of the Japanese manga, Doraemon, focused on this plesiosaur and was made into a movie, which became a huge hit. The fossil was officially named Futabasaurus suzukii in 2006."
+		},
+			{
+			"advancement": "lepidodendron:pf_adv_book_futabasaurus",
+			"type": "text",
+			"text": "The name Futabasaurus was also known as the scientific name of a theropod known from the same formation, but this had not been officially described, so naming the plesiosaur Futabasaurus was not an issue. Numerous Cretalamna teeth have been found around its fossil, suggesting that it was probably scavenged by these sharks after death."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_futabasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_futabasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_futabasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_futabasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_futabasaurus"
+		}
+	]
+}

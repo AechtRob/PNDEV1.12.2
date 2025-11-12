@@ -1,0 +1,47 @@
+{
+	"name": "Kokuraichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kokuraichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_kokuraichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kokuraichthys",
+			"title": "Kokuraichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Osteoglossomorpha$(br)>Hiodontiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "K. tokuriki",
+            "entity": "lepidodendron:prehistoric_flora_kokuraichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kokuraichthys",
+			"type": "text",
+			"text": "Kokuraichthys is a genus of fish from the Wakino Subgroup 1st Formation, also known as the Dobaru Formation. This fish is a member of the Hiodontiformes, related to the modern mooneye, however its family is currently unknown. It is known from a single specimen, around 10 centimeters long. Its name comes from Kokura, an old name for the district where it was found, and tokuriki after the locality."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kokuraichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kokuraichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kokuraichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kokuraichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kokuraichthys"
+		}
+	]
+}

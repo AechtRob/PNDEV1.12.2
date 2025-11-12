@@ -1,0 +1,52 @@
+{
+	"name": "Ptyktoptychion",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ptyktoptychion_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ptyktoptychion",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ptyktoptychion",
+			"title": "Ptyktoptychion",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Holocephali$(br)>Chimaeriformes$(br)>Callorhinchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. wadeae",
+            "entity": "lepidodendron:prehistoric_flora_ptyktoptychion",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ptyktoptychion",
+			"type": "text",
+			"text": "Ptyktoptychion, a chimaera known from three species, P. tayyo, P. wadeae, and P. eyrensis, all known from Early Cretaceous of Australia. P. eyrensis was originally described as a species of Edaphodon which is more widespread. Although it is only known from teeth plates, it is likely related to Ischyodus and modern Callorhinchus. Based on relatives, the largest species, P. wadeae, could have exceeded 3 m long!"
+		},
+        {
+        "advancement": "lepidodendron:pf_adv_book_ptyktoptychion",
+        "type": "text",
+        "text": "For those with keen eyes, Ptyktoptychion does indeed have sexual dimorphism"
+        },
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ptyktoptychion"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ptyktoptychion"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ptyktoptychion"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ptyktoptychion"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ptyktoptychion"
+		}
+	]
+}

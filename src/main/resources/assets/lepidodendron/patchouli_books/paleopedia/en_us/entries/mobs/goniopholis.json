@@ -1,0 +1,47 @@
+{
+	"name": "Goniopholis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/goniopholis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_goniopholis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_goniopholis",
+			"title": "Goniopholis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Goniopholididae"
+		},
+        	{
+            "type": "entity",
+            "name": "G. crassidens",
+            "entity": "lepidodendron:prehistoric_flora_goniopholis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_goniopholis",
+			"type": "text",
+			"text": "Goniopholis was a genus of crocodyliform that lived during the Late Jurassic to Early Cretaceous. Its remains have been found in Europe and Africa, mainly, though not exclusively, in freshwater deposits. It is thought to have led a lifestyle similar to many modern crocodilians, as a semi-aquatic ambush predator. The larger species of Goniopholis could reach an estimated total body length of around 3.47 metres or 11.4 feet."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_goniopholis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_goniopholis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_goniopholis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_goniopholis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_goniopholis"
+		}
+	]
+}
