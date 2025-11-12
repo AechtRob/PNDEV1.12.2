@@ -291,6 +291,7 @@ public class ModelGyrosteus extends ModelBasePalaeopedia {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+        this.main.offsetZ = this.main.offsetZ - 0.6F;
         this.main.render(f5);
     }
 

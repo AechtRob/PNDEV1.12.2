@@ -347,11 +347,7 @@ public class ModelCyclobatis extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
         EntityPrehistoricFloraCyclobatis ee = (EntityPrehistoricFloraCyclobatis) entitylivingbaseIn;
 
-        
         animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-            
-
-
         
         if (ee.getAnimation() == ee.ATTACK_ANIMATION) {
             animAttack(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());

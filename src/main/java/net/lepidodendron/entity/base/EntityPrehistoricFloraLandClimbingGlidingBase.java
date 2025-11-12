@@ -8,6 +8,7 @@ import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
 import net.lepidodendron.util.MaterialLatex;
 import net.lepidodendron.util.MaterialResin;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
@@ -204,11 +205,11 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 				this.setIsLaunching(false);
 			}
 
-			if (this.getIsFlying() && this.canRelaunch()) {
+			if (this.getIsFlying() && this.canRelaunch() && this.posY - ChunkGenSpawner.getTopSolidOrLiquidBlockIncludingLeaves(this.getPosition(), this.world).getY() <= 25) {
 				if (rand.nextInt(64) == 0) {
 					this.setIsLaunching(true);
-					this.setMoveForward(this.getAIMoveSpeed());
-					this.motionY = this.getJumpUpwardsMotion();
+					this.setMoveForward(0.1F);
+					this.motionY = this.getJumpUpwardsMotion() / 2;
 					this.launchProgress = 50;
 					if (this.getLaunchCooldown() > 0) {
 						this.launchCooldown = rand.nextInt(this.getLaunchCooldown());
