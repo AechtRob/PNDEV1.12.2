@@ -283,7 +283,7 @@ public class ModelMythunga extends ModelBasePalaeopedia {
         this.leftwing3membrane.addChild(leftwing3planemembrane);
         this.setRotateAngle(leftwing3planemembrane, -0.1309F, 0.0F, 0.0F);
         this.leftwing3planemembrane.cubeList.add(new ModelBox(leftwing3planemembrane, 94, 6, -3.5F, -0.8197F, 4.3996F, 7, 0, 4, 0.0F, true));
-        this.leftwing3planemembrane.cubeList.add(new ModelBox(leftwing3planemembrane, 60, 60, -3.5F, -0.8197F, 4.3996F, 7, 0, 4, 0.0F, true));
+        this.leftwing3planemembrane.cubeList.add(new ModelBox(leftwing3planemembrane, 60, 60, -3.5F, -0.8697F, 4.3996F, 7, 0, 4, 0.0F, true));
 
         this.leftwing4 = new AdvancedModelRenderer(this);
         this.leftwing4.setRotationPoint(6.9F, 0.0F, 0.0F);
@@ -385,7 +385,7 @@ public class ModelMythunga extends ModelBasePalaeopedia {
         this.rightwing3membrane.addChild(rightwing3planemembrane);
         this.setRotateAngle(rightwing3planemembrane, -0.1309F, 0.0F, 0.0F);
         this.rightwing3planemembrane.cubeList.add(new ModelBox(rightwing3planemembrane, 94, 6, -3.775F, -0.8218F, 4.392F, 7, 0, 4, 0.0F, false));
-        this.rightwing3planemembrane.cubeList.add(new ModelBox(rightwing3planemembrane, 60, 60, -3.775F, -0.8218F, 4.392F, 7, 0, 4, 0.0F, false));
+        this.rightwing3planemembrane.cubeList.add(new ModelBox(rightwing3planemembrane, 60, 60, -3.775F, -0.8718F, 4.392F, 7, 0, 4, 0.0F, false));
 
         this.rightwing4 = new AdvancedModelRenderer(this);
         this.rightwing4.setRotationPoint(-6.9F, 0.0F, 0.0F);

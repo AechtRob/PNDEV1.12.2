@@ -314,7 +314,7 @@ public class ModelHaliskia extends ModelBasePalaeopedia {
         this.leftwing5membrane = new AdvancedModelRenderer(this);
         this.leftwing5membrane.setRotationPoint(0.0F, 0.0F, 0.0F);
         this.leftwing5.addChild(leftwing5membrane);
-        this.leftwing5membrane.cubeList.add(new ModelBox(leftwing5membrane, -1, 16, 0.0F, -0.15F, 0.5F, 10, 1, 5, 0.0F, true));
+        this.leftwing5membrane.cubeList.add(new ModelBox(leftwing5membrane, 0, 16, 0.0F, -0.15F, 0.5F, 10, 1, 5, 0.0F, true));
 
         this.leftwing6 = new AdvancedModelRenderer(this);
         this.leftwing6.setRotationPoint(10.0F, 0.0F, 0.0F);
@@ -325,7 +325,7 @@ public class ModelHaliskia extends ModelBasePalaeopedia {
         this.leftwing6membrane = new AdvancedModelRenderer(this);
         this.leftwing6membrane.setRotationPoint(0.0F, 0.0F, 0.0F);
         this.leftwing6.addChild(leftwing6membrane);
-        this.leftwing6membrane.cubeList.add(new ModelBox(leftwing6membrane, -1, -1, -0.1F, -0.15F, 0.45F, 16, 1, 4, 0.0F, true));
+        this.leftwing6membrane.cubeList.add(new ModelBox(leftwing6membrane, 0, 0, -0.1F, -0.15F, 0.45F, 16, 1, 4, 0.0F, true));
 
         this.shoulder = new AdvancedModelRenderer(this);
         this.shoulder.setRotationPoint(0.0F, -0.7412F, -5.8124F);
@@ -657,7 +657,7 @@ public class ModelHaliskia extends ModelBasePalaeopedia {
         this.rightwing5membrane = new AdvancedModelRenderer(this);
         this.rightwing5membrane.setRotationPoint(-1.0F, 0.0F, 0.0F);
         this.rightwing5.addChild(rightwing5membrane);
-        this.rightwing5membrane.cubeList.add(new ModelBox(rightwing5membrane, -1, 16, -9.0F, -0.175F, 0.5F, 10, 1, 5, 0.0F, false));
+        this.rightwing5membrane.cubeList.add(new ModelBox(rightwing5membrane, 0, 16, -9.0F, -0.175F, 0.5F, 10, 1, 5, 0.0F, false));
 
         this.rightwing6 = new AdvancedModelRenderer(this);
         this.rightwing6.setRotationPoint(-10.0F, 0.0F, 0.0F);
@@ -668,7 +668,7 @@ public class ModelHaliskia extends ModelBasePalaeopedia {
         this.rightwing6membrane = new AdvancedModelRenderer(this);
         this.rightwing6membrane.setRotationPoint(0.0F, 0.0F, 0.0F);
         this.rightwing6.addChild(rightwing6membrane);
-        this.rightwing6membrane.cubeList.add(new ModelBox(rightwing6membrane, -1, -1, -15.9F, -0.15F, 0.45F, 16, 1, 4, 0.0F, false));
+        this.rightwing6membrane.cubeList.add(new ModelBox(rightwing6membrane, 0, 0, -15.9F, -0.15F, 0.45F, 16, 1, 4, 0.0F, false));
 
         this.leftwing5membrane.scaleChildren = true;
         this.leftwing6membrane.scaleChildren = true;
@@ -923,7 +923,7 @@ public class ModelHaliskia extends ModelBasePalaeopedia {
 
         if (ee.getAttachmentPos() == null ) {
             if (ee.getIsMoving()) {
-//                animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
 
         }

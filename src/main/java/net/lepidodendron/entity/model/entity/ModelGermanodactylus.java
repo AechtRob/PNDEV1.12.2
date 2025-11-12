@@ -412,6 +412,8 @@ public class ModelGermanodactylus extends ModelBasePalaeopedia {
         this.cube_r17.cubeList.add(new ModelBox(cube_r17, 35, 10, -1.0F, -1.025F, -1.575F, 2, 1, 3, 0.0F, false));
 
 
+        this.wing1left.scaleChildren = true;
+        this.wing1right.scaleChildren = true;
         this.leftmembranetip.scaleChildren = true;
         this.rightmembranetip.scaleChildren = true;
 

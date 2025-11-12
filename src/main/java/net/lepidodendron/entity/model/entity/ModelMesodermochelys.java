@@ -652,7 +652,7 @@ public class ModelMesodermochelys extends ModelBasePalaeopedia {
         if (ee.isReallyInWater()) {
             animSwimming(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
 
-        } else {
+        } else if (ee.getIsMoving()) {
             animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         }
 

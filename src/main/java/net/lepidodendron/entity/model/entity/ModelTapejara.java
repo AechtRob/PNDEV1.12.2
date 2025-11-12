@@ -673,6 +673,14 @@ public class ModelTapejara extends ModelBasePalaeopedia {
         setRotateAngle(upperwing5_r1, -0.0218F, -0.5794F, 0.1017F);
         upperwing5_r1.cubeList.add(new ModelBox(upperwing5_r1, 27, 0, -2.2921F, 0.4759F, -1.4343F, 5, 1, 6, 0.0F, true));
 
+        this.rightwinghidable4.scaleChildren = true;
+        this.rightwingmembrane3.scaleChildren = true;
+        this.rightwingmembrane2.scaleChildren = true;
+        this.leftwingmembranehidable1.scaleChildren = true;
+        this.leftwinghidable2.scaleChildren = true;
+        this.leftwingmembrane3.scaleChildren = true;
+        this.leftwingmembrane2.scaleChildren = true;
+        this.rightwingmembranehidable.scaleChildren = true;
 
         this.rightwinghidable4.setScale((float)1,(float)0.1,(float)1);
         this.rightwingmembrane3.setScale((float)1,(float)1,(float)0);
@@ -727,6 +735,7 @@ public class ModelTapejara extends ModelBasePalaeopedia {
         this.root.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         resetToDefaultPose();
     }
