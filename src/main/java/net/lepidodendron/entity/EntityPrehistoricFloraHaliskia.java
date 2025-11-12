@@ -217,23 +217,23 @@ public class EntityPrehistoricFloraHaliskia extends EntityPrehistoricFloraLandCl
 
 	@Override
 	public float getAISpeedLand() {
-		if (this.getTicks() < 0) {
-			return 0.0F; //Is laying eggs
-		}
-		if (this.getAttachmentPos() != null) {
-			if (this.getAttachmentFacing() == EnumFacing.UP) {
-				//Walking:
-				if (this.getIsFast()) {
-					return 0.35f;
-				}
-				return 0.24F;
-			}
-		}
-		//Otherwise we are flying:
-		if (this.getIsFast()) {
-			return 0.295f;
-		}
-		return 0.225f;
+//		if (this.getTicks() < 0) {
+//			return 0.0F; //Is laying eggs
+//		}
+//		if (this.getAttachmentPos() != null) {
+//			if (this.getAttachmentFacing() == EnumFacing.UP) {
+//				//Walking:
+//				if (this.getIsFast()) {
+//					return 0.35f;
+//				}
+//				return 0.24F;
+//			}
+//		}
+//		//Otherwise we are flying:
+//		if (this.getIsFast()) {
+//			return 0.295f;
+//		}
+		return 0;
 	}
 
 	@Override
