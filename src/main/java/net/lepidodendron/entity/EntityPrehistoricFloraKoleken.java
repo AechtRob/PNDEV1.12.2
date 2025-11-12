@@ -301,7 +301,7 @@ public class EntityPrehistoricFloraKoleken extends EntityPrehistoricFloraLandCar
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:allosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:koleken_roar"));
 	}
 
 	@Override
@@ -322,6 +322,34 @@ public class EntityPrehistoricFloraKoleken extends EntityPrehistoricFloraLandCar
 	            .getObject(new ResourceLocation("lepidodendron:koleken_death"));
 	}
 
+	public SoundEvent getDisplaySound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:koleken_display"));
+	}
+
+	public SoundEvent getAlertSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:koleken_alert"));
+	}
+
+	public void playAlertSound()
+	{
+		SoundEvent soundevent = this.getAlertSound();
+		if (soundevent != null)
+		{
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+		}
+	}
+
+	public void playDisplaySound()
+	{
+		SoundEvent soundevent = this.getDisplaySound();
+		if (soundevent != null)
+		{
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+		}
+	}
+
 	@Override
 	protected float getSoundVolume() {
 		return 1.0F;
@@ -339,6 +367,7 @@ public class EntityPrehistoricFloraKoleken extends EntityPrehistoricFloraLandCar
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			this.setAnimation(STAND_ANIMATION);
+			this.playAlertSound();
 			this.standCooldown = 3000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
@@ -387,8 +416,13 @@ public class EntityPrehistoricFloraKoleken extends EntityPrehistoricFloraLandCar
 			this.setGrappleTarget(null);
 			this.willGrapple = false;
 		}
-		else if ((this.getAnimation() == GRAPPLE_ANIMATION) && this.getGrappleTarget() != null) {
-			this.faceEntity(this.getGrappleTarget(), 10, 10);
+		else if (this.getAnimation() == GRAPPLE_ANIMATION) {
+			if (this.getGrappleTarget() != null) {
+				this.faceEntity(this.getGrappleTarget(), 10, 10);
+			}
+			if (this.getAnimationTick() == 1) {
+				this.playDisplaySound();
+			}
 		}
 
 
