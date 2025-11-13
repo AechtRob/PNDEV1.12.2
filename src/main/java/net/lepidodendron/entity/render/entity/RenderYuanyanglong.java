@@ -7,9 +7,11 @@ import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TextFormatting;
 
 public class RenderYuanyanglong extends RenderLivingBaseWithBook<EntityPrehistoricFloraYuanyanglong> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yuanyanglong.png");
+    public static final ResourceLocation TEXTURE_ZOMBIE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yuanyanglong_zombie.png");
 
     public RenderYuanyanglong(RenderManager mgr) {
         super(mgr, new ModelYuanyanglong(), 0.3f);
@@ -21,6 +23,12 @@ public class RenderYuanyanglong extends RenderLivingBaseWithBook<EntityPrehistor
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraYuanyanglong entity) {
+        String s = TextFormatting.getTextWithoutFormattingCodes(entity.getName());
+        if (s != null &&
+                (("zombie".equalsIgnoreCase(s)))
+        ) {
+            return RenderYuanyanglong.TEXTURE_ZOMBIE;
+        }
         return RenderYuanyanglong.TEXTURE;
     }
 
