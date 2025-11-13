@@ -68,6 +68,12 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 				if (stack.getTagCompound().hasKey("PFPlant")) {
 					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
 					String resourcelocation = (blockNBT.getString("id"));
+					if (resourcelocation.equalsIgnoreCase("lepidodendron:sapling")) {
+						resourcelocation = "lepidodendron:lepidodendron_sapling";
+					}
+					if (resourcelocation.equalsIgnoreCase("lepidodendron:glossopterissapling")) {
+						resourcelocation = "lepidodendron:glossopteris_sapling";
+					}
 					if (!(I18n.translateToLocal("tile.pf_" + getDNAStr(resourcelocation) + ".name")
 							.equalsIgnoreCase("tile.pf_" + getDNAStr(resourcelocation) + ".name"))) {
 						return I18n.translateToLocal("item.pf_placeable_living_full.name").trim()

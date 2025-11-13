@@ -281,11 +281,41 @@ public class GUITimeResearcherFinderSelector extends GuiScreen
         }
         
         public String translateMob(String mobIn) {
+            if (mobIn.equalsIgnoreCase("lepidodendron:sapling")) {
+                mobIn = "lepidodendron:lepidodendron_sapling";
+            }
+            if (mobIn.equalsIgnoreCase("lepidodendron:glossopterissapling")) {
+                mobIn = "lepidodendron:glossopteris_sapling";
+            }
             if (mobIn.equalsIgnoreCase("- NONE -") || mobIn.equalsIgnoreCase("")) {
                 mobIn = "- NONE -";
             }
             else if (mobIn.substring(0,10).equalsIgnoreCase("minecraft:")) {
                 mobIn = mobIn.replace("@", "_").substring(10);
+                if (mobIn.equalsIgnoreCase("acacia_sapling")) {
+                    return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.acacia.name");
+                }
+                if (mobIn.equalsIgnoreCase("birch_sapling")) {
+                    return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.birch.name");
+                }
+                if (mobIn.equalsIgnoreCase("dark_oak_sapling")) {
+                    return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.big_oak.name");
+                }
+                if (mobIn.equalsIgnoreCase("jungle_sapling")) {
+                    return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.jungle.name");
+                }
+                if (mobIn.equalsIgnoreCase("oak_sapling")) {
+                    return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.oak.name");
+                }
+                if (mobIn.equalsIgnoreCase("spruce_sapling")) {
+                    return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.spruce.name");
+                }
+                if (mobIn.equalsIgnoreCase("large_fern")) {
+                    return net.minecraft.util.text.translation.I18n.translateToLocal("tile.doublePlant.fern.name");
+                }
+                if (mobIn.equalsIgnoreCase("small_fern")) {
+                    return net.minecraft.util.text.translation.I18n.translateToLocal("tile.tallgrass.fern.name");
+                }
             }
             else {
                 int colonPos = mobIn.indexOf(":");
