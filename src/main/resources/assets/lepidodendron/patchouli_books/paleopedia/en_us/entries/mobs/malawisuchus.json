@@ -1,0 +1,47 @@
+{
+	"name": "Malawisuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/malawisuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_malawisuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_malawisuchus",
+			"title": "Malawisuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Notosuchia$(br)>Candidodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. mwakasyungutiensis",
+            "entity": "lepidodendron:prehistoric_flora_malawisuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_malawisuchus",
+			"type": "text",
+			"text": "Malawisuchus is an Early Cretaceous Candidodont, that is known for its mammal-like teeth, including the notable multi-cusped teeth in the back of the jaw. It is thought to have been a burrower based on specimens that are suggested to have been preserved in burrows and used their arms to dig for food to eat. Malawisuchus’s neck was strong and their teeth suggested food processing with a forward motion."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_malawisuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_malawisuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_malawisuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_malawisuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_malawisuchus"
+		}
+	]
+}

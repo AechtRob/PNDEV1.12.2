@@ -1,0 +1,47 @@
+{
+	"name": "Rhinobatos",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rhinobatos_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_rhinobatos",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rhinobatos",
+			"title": "Rhinobatos",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous - Present$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Rhinopristiformes$(br)>Rhinobatidae"
+		},
+        	{
+            "type": "entity",
+            "name": "R. rhinobatos",
+            "entity": "lepidodendron:prehistoric_flora_rhinobatos",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhinobatos",
+			"type": "text",
+			"text": "Rhinobatos is a genus of Guitarfish that has existed from the Early Cretaceous till present day. These benthic fish cruise just above the ocean floor foraging for any food that can fit into their mouth. Many extant species of Rhinobatos have become endangered due to overfishing."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rhinobatos"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rhinobatos"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rhinobatos"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rhinobatos"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rhinobatos"
+		}
+	]
+}

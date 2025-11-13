@@ -1,0 +1,47 @@
+{
+	"name": "Cryptoclidus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cryptoclidus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_cryptoclidus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cryptoclidus",
+			"title": "Cryptoclidus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Plesiosauria$(br)>Cryptoclididae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. eurymerus",
+            "entity": "lepidodendron:prehistoric_flora_cryptoclidus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cryptoclidus",
+			"type": "text",
+			"text": "Cryptoclidus is a genus of plesiosaur known from the Jurassic of Europe. There was a fossil of Cryptoclidus originally described from Cuba, however it is now considered undiagnostic.  Its name, which roughly translates to hidden clavicles, is in reference to its small and almost unperceivable clavicles hidden in its front limb girdle."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cryptoclidus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cryptoclidus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cryptoclidus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cryptoclidus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cryptoclidus"
+		}
+	]
+}

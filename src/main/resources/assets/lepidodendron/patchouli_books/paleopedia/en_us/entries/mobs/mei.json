@@ -1,0 +1,47 @@
+{
+	"name": "Mei",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mei_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_mei",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mei",
+			"title": "Mei",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Dinosauria$(br)>Theropoda$(br)>Troodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. long",
+            "entity": "lepidodendron:prehistoric_flora_mei",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mei",
+			"type": "text",
+			"text": "Mei long is a genus of troodontid dinosaur from the Yixian Formation of Early Cretaceous China. Its name Mei long translates to sleepy or sleeping dragon. The type fossil of the creature is a juvenile neatly folded in a resting posture similar to modern birds. The chemistry of the matrix stone and the resting pose indicate that while living the animal was buried instantly in volcanic ash."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mei"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mei"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mei"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mei"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mei"
+		}
+	]
+}
