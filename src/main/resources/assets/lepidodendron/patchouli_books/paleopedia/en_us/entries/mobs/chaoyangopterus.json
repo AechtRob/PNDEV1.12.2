@@ -1,0 +1,47 @@
+{
+	"name": "Chaoyangopterus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/chaoyangopterus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_chaoyangopterus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_chaoyangopterus",
+			"title": "Chaoyangopterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pterosauria$(br)>Azhdarchoidea$(br)>Chaoyangopteridae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. zhangi",
+            "entity": "lepidodendron:prehistoric_flora_chaoyangopterus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_chaoyangopterus",
+			"type": "text",
+			"text": "Chaoyangopterus is a genus of chaoyangopterid pterosaur that is known from the Jiufotang Formation of Early Cretaceous China. Its genus name is derived from Chaoyang, after the region from which it was found, and pteron which translates to wing. Its species name is in honor of journalist Zhang Wanlian for his efforts in protecting fossil sites."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_chaoyangopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_chaoyangopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_chaoyangopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_chaoyangopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_chaoyangopterus"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Tlalocbatos",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tlalocbatos_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tlalocbatos",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tlalocbatos",
+			"title": "Tlalocbatos",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Rhinopristiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "T. applegatei",
+            "entity": "lepidodendron:prehistoric_flora_tlalocbatos",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tlalocbatos",
+			"type": "text",
+			"text": "Tlalocbatos is a genus of Rhinopristiform that was found in the Tlayúa Formation of Early Cretaceous Mexico. The formation preserved a lagoonal environment that preserved high diversity, however Tlalocbatos is the only chondrichthyan to have been described from Tlayúa so far."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tlalocbatos"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tlalocbatos"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tlalocbatos"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tlalocbatos"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tlalocbatos"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Angelacanthus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/angelacanthus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_angelacanthus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_angelacanthus",
+			"title": "Angelacanthus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Chondrichthyes$(br)>Diplacanthoformes$(br)>Diplacanthidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. acus",
+            "entity": "lepidodendron:prehistoric_flora_angelacanthus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_angelacanthus",
+			"type": "text",
+			"text": "Angelacanthus is a genus of acanthodian known from the Devonian of South Africa. D. acus had extremely deep body and long spine compared to any other acanthodians. Originally Angelacanthus acus was in the mod under the name Diplacanthus acus, however in 2025 the species was split out into the new genus Angleacanthus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_angelacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_angelacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_angelacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_angelacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_angelacanthus"
+		}
+	]
+}

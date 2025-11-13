@@ -1,0 +1,52 @@
+{
+	"name": "Iguanodon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/iguanodon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_iguanodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_iguanodon",
+			"title": "Iguanodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Ornithopoda$(br)>Iguanodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "I. bernissartensis",
+            "entity": "lepidodendron:prehistoric_flora_iguanodon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_iguanodon",
+			"type": "text",
+			"text": "Iguanodon is a genus of iguanodontian dinosaur known from the Early Cretaceous Europe. Iguanodon was the second formally named dinosaur in 1825, joining Megalosaurus and Hylaeosaurus as the founding fathers of dinosaurs. Its genus name is derived from Iguana tooth. And its species name was given based on the it being found near Bernissart."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_iguanodon",
+			"type": "text",
+			"text": "The arms of Iguanodon were long and robust, with fairly inflexible hands to bear its wait. Its thumbs were conical spikes that stuck out away from its other fingers and their use is still debated to this day. Original depictions of the animal placed the thumb spike on its nose."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_iguanodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_iguanodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_iguanodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_iguanodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_iguanodon"
+		}
+	]
+}

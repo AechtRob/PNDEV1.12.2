@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "entity",
-			"name": "D. acus",
+			"name": "D. crassisimus",
 			"entity": "lepidodendron:prehistoric_flora_diplacanthus",
 			"rotate": false,
 			"default_rotation": 0
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_diplacanthus",
 			"type": "text",
-			"text": "Diplacanthus is freshwater to brackish acanthodian from the Devonian. Although the genus itself is mainly known from Europe, in the mod it is based on D. acus from South Africa. D. acus had extremely deep body and long spine compared to any other acanthodians. Restudy of Diplacanthus did not include D. acus as a species, so it may be possible that it will be reclassified."
+			"text": "Diplacanthus crassisimus is freshwater to brackish acanthodian known from Europe and North America between Middle and Late Devonian. In 2025 D. acus was split into the new genus Angelacanthus."
 		},
 		{
 			"type": "lepidodendron:diet",

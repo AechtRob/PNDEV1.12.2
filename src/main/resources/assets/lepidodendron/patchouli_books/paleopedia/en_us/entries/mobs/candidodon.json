@@ -1,0 +1,47 @@
+{
+	"name": "Candidodon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/candidodon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_candidodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_candidodon",
+			"title": "Candidodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Notosuchia$(br)>Candidodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. itapecuruense",
+            "entity": "lepidodendron:prehistoric_flora_candidodon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_candidodon",
+			"type": "text",
+			"text": "Candidodon is an Early Cretaceous Candidodont, which is known for its mammal-like teeth, including the notable multi-cusped teeth in the back of the jaw. They are thought to have been burrowers based on specimens that are suggested to have been preserved in burrows and used their arms to dig for food to eat. Its necks were strong and their teeth suggested food processing with a forward motion."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_candidodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_candidodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_candidodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_candidodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_candidodon"
+		}
+	]
+}
