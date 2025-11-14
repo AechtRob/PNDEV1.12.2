@@ -1174,7 +1174,8 @@ public class EntityLists {
 //            if ((LepidodendronConfig.doSpawnsReborn && Loader.isModLoaded("rebornmod"))) {
 //                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsBurntSwampReborn);
 //            }
-        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_cold_woodland")) {
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_cold_woodland")
+                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_cold_woodland")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsWoodlandPF);
             }
