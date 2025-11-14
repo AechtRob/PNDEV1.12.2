@@ -2180,6 +2180,24 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "koleken_alert")));
 		sounds.put(new ResourceLocation("lepidodendron", "koleken_display"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "koleken_display")));
+		sounds.put(new ResourceLocation("lepidodendron", "microvenator_idle"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "microvenator_idle")));
+		sounds.put(new ResourceLocation("lepidodendron", "microvenator_hurt"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "microvenator_hurt")));
+		sounds.put(new ResourceLocation("lepidodendron", "microvenator_death"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "microvenator_death")));
+		sounds.put(new ResourceLocation("lepidodendron", "microvenator_social"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "microvenator_social")));
+		sounds.put(new ResourceLocation("lepidodendron", "incisivosaurus_idle"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "incisivosaurus_idle")));
+		sounds.put(new ResourceLocation("lepidodendron", "incisivosaurus_hurt"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "incisivosaurus_hurt")));
+		sounds.put(new ResourceLocation("lepidodendron", "incisivosaurus_death"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "incisivosaurus_death")));
+		sounds.put(new ResourceLocation("lepidodendron", "incisivosaurus_social"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "incisivosaurus_social")));
+		sounds.put(new ResourceLocation("lepidodendron", "incisivosaurus_alarm"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "incisivosaurus_alarm")));
 
 	}
 

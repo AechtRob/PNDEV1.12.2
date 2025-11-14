@@ -502,6 +502,11 @@ public class EntityPrehistoricFloraMicrovenator extends EntityPrehistoricFloraLa
 	            .getObject(new ResourceLocation("lepidodendron:microvenator_death"));
 	}
 
+	public SoundEvent getAmbientAmbientSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:microvenator_social"));
+	}
+
 	@Override
 	protected float getSoundVolume() {
 		return 1.0F;
@@ -534,6 +539,10 @@ public class EntityPrehistoricFloraMicrovenator extends EntityPrehistoricFloraLa
 		}
 		else if ((this.getAnimation() == GRAPPLE_ANIMATION) && this.getGrappleTarget() != null) {
 			this.faceEntity(this.getGrappleTarget(), 10, 10);
+		}
+		if ((this.getAnimation() == GRAPPLE_ANIMATION) && this.getAnimationTick() == 1) {
+			SoundEvent soundevent = this.getAmbientAmbientSound();
+			this.playSound(soundevent, 1, (rand.nextFloat() - rand.nextFloat()) * 0.2F + 1.0F);
 		}
 
 

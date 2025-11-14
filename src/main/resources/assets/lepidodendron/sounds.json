@@ -17364,5 +17364,119 @@
         "stream": false
       }
     ]
+  },
+
+  "microvenator_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:microvenator_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:microvenator_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:microvenator_living03",
+        "stream": false
+      }
+    ]
+  },
+  "microvenator_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:microvenator_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:microvenator_hurt02",
+        "stream": false
+      }
+    ]
+  },
+  "microvenator_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:microvenator_death",
+        "stream": false
+      }
+    ]
+  },
+  "microvenator_social": {
+    "sounds": [
+      {
+        "name": "lepidodendron:microvenator_social01",
+        "stream": false
+      }
+    ]
+  },
+
+  "incisivosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:incisivosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:incisivosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:incisivosaurus_living03",
+        "stream": false
+      }
+    ]
+  },
+  "incisivosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:incisivosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:incisivosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:incisivosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "incisivosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:incisivosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "incisivosaurus_social": {
+    "sounds": [
+      {
+        "name": "lepidodendron:incisivosaurus_display01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:incisivosaurus_display02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:incisivosaurus_display03",
+        "stream": false
+      }
+    ]
+  },
+  "incisivosaurus_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:incisivosaurus_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:incisivosaurus_alarm02",
+        "stream": false
+      }
+    ]
   }
 }

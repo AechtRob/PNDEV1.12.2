@@ -390,7 +390,10 @@ public class EntityPrehistoricFloraIncisivosaurus extends EntityPrehistoricFlora
 				.getObject(new ResourceLocation("lepidodendron:incisivosaurus_alarm"));
 	}
 
-
+	public SoundEvent getAmbientAmbientSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:incisivosaurus_social"));
+	}
 
 	public void playAlarmSound()
 	{
@@ -429,6 +432,10 @@ public class EntityPrehistoricFloraIncisivosaurus extends EntityPrehistoricFlora
 		}
 		else if ((this.getAnimation() == GRAPPLE_ANIMATION) && this.getGrappleTarget() != null) {
 			this.faceEntity(this.getGrappleTarget(), 10, 10);
+		}
+		if ((this.getAnimation() == GRAPPLE_ANIMATION) && this.getAnimationTick() == 1) {
+			SoundEvent soundevent = this.getAmbientAmbientSound();
+			this.playSound(soundevent, 1, (rand.nextFloat() - rand.nextFloat()) * 0.2F + 1.0F);
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
