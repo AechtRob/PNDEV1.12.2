@@ -284,7 +284,7 @@ public class EntityPrehistoricFloraFukuisaurus extends EntityPrehistoricFloraBiQ
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:fukuisaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:tenontosaurus_hurt"));
 	}
 
 	@Override

@@ -17478,5 +17478,42 @@
         "stream": false
       }
     ]
+  },
+
+  "fukuisaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:fukuisaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:fukuisaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:fukuisaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:fukuisaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:fukuisaurus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:fukuisaurus_living06",
+        "stream": false
+      }
+    ]
+  },
+  "fukuisaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:fukuisaurus_death",
+        "stream": false
+      }
+    ]
   }
 }
