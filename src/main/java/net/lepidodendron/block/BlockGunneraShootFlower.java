@@ -204,7 +204,6 @@ public class BlockGunneraShootFlower extends ElementsLepidodendronMod.ModElement
 			return 5;
 		}
 
-
 		@Override
 		public Block planted() {
 			return BlockGunneraSapling.block;
@@ -212,7 +211,7 @@ public class BlockGunneraShootFlower extends ElementsLepidodendronMod.ModElement
 
 		@Override
 		public int offsetY() {
-			return 0;
+			return 1;
 		}
 	}
 	
