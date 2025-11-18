@@ -171,7 +171,7 @@ public class EntityPrehistoricFloraLeaellynasaura extends EntityPrehistoricFlora
 	@Override
 	public AxisAlignedBB getGrappleBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
+		return this.getEntityBoundingBox().grow(2.0F + size, 2.0F + size, 1.0F + size);
 	}
 
 	public boolean findGrappleTarget() {
@@ -217,7 +217,7 @@ public class EntityPrehistoricFloraLeaellynasaura extends EntityPrehistoricFlora
 
 	@Override
 	public int getTalkInterval() {
-		return 80;
+		return 180;
 	}
 
 	@Override
@@ -357,6 +357,7 @@ public class EntityPrehistoricFloraLeaellynasaura extends EntityPrehistoricFlora
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
+
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
@@ -377,12 +378,12 @@ public class EntityPrehistoricFloraLeaellynasaura extends EntityPrehistoricFlora
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:leaellynasaura_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:leaellynasaura_idle"));
 	}
 
 	public SoundEvent getChatterSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:leaellynasaura_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:leaellynasaura_display"));
 	}
 
 	public void playAlarmSound()

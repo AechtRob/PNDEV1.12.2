@@ -17515,5 +17515,91 @@
         "stream": false
       }
     ]
+  },
+
+  "leaellynasaura_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:leaellynasaura_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:leaellynasaura_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:leaellynasaura_living03",
+        "stream": false
+      }
+    ]
+  },
+  "leaellynasaura_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:leaellynasaura_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:leaellynasaura_hurt02",
+        "stream": false
+      }
+    ]
+  },
+  "leaellynasaura_display": {
+    "sounds": [
+      {
+        "name": "lepidodendron:leaellynasaura_display01",
+        "stream": false
+      }
+    ]
+  },
+  "leaellynasaura_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:leaellynasaura_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "fukuipteryx_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:fukuipteryx_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:fukuipteryx_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:fukuipteryx_living03",
+        "stream": false
+      }
+    ]
+  },
+  "fukuipteryx_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:fukuipteryx_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:fukuipteryx_hurt02",
+        "stream": false
+      }
+    ]
+  },
+  "fukuipteryx_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:fukuipteryx_death01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:fukuipteryx_death02",
+        "stream": false
+      }
+    ]
   }
 }
