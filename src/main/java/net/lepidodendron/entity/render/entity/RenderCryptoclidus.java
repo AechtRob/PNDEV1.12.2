@@ -29,7 +29,7 @@ public class RenderCryptoclidus extends RenderLivingBaseWithBook<EntityPrehistor
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCryptoclidus entity, float f) {
-        float scale = this.getScaler();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
     }
 }

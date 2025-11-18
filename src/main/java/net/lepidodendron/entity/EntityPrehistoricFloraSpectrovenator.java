@@ -61,7 +61,6 @@ public class EntityPrehistoricFloraSpectrovenator extends EntityPrehistoricFlora
 			tailBuffer = new ChainBuffer();
 		}
 		GRAPPLE_ANIMATION = Animation.create(this.getGrappleLength());
-
 	}
 
 	@Override
