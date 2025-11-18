@@ -374,7 +374,7 @@ public class BlockTribrachidium extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Undetermined sessile organism");
+				tooltip.add("Type: Undetermined sponge-like organism");
 				tooltip.add("Periods: Neoproterozoic (Ediacaran)");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);

@@ -1,0 +1,52 @@
+{
+	"name": "Chuhsiungichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/chuhsiungichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_chuhsiungichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_chuhsiungichthys",
+			"title": "Chuhsiungichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>$(o)Ichthyodectiformes (?)$()$(br)>Chuhsiungichthiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. yanagidai",
+            "entity": "lepidodendron:prehistoric_flora_chuhsiungichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_chuhsiungichthys",
+			"type": "text",
+			"text": "Chuhsiungichthys, meaning 'fish from Chuhsiung' is a genus of fish living in the Early Cretaceous Wakino Subgroup and the Late Cretaceous Yunnan Province. It contains three species. C. tsanglingensis is the type species, and as the name suggests was discovered in Tsangling, China. It is the smallest of the three, ranging from 5 to 14 centimeters in length, and with a distinctly long anal fin base."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_chuhsiungichthys",
+			"type": "text",
+			"text": "The second species, and the one represented here, is C. yanagidai. It grew to about 17 centimeters long, and was named after Dr. Juichi Yanagida, who helped the describer of this species in their studies. Lastly, C. japonicus, named after Japan, where this animal and C. yanagidai were discovered. It was the largest species, 22 centimeters in length, and was also proportioned very deeply compared to the rest of the genera, but with unfortunately bad preservation."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_chuhsiungichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_chuhsiungichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_chuhsiungichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_chuhsiungichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_chuhsiungichthys"
+		}
+	]
+}

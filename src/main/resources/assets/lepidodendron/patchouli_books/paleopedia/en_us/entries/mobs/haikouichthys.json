@@ -21,7 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_haikouichthys",
 			"type": "text",
-			"text": "Haikouichthys is a genus of craniate fish-like animal from the Cambrian period. It had a body plan that resembled that of modern lancelot fish."
+			"text": "Haikouichthys ercaicunensis comes from the middle Cambrian, with fossils found in the Qiongzhusi Formation, China. It is a small myllokunmingiid, growing up to 2.5 cm in length. Over 500 specimens are known, which has given palaeontologists a good look at its anatomy, for example it was amongst the earliest chordates with a defined skull, with it being postured as a basal stem-craniate. It is also suggested that it may have had the same brain divisions as modern"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_haikouichthys",
+			"type": "text",
+			"text": "vertrebrates. The generic name dervies from the place name 'Haikou', near to where the fossils were found; and the Greek word 'ichthys', to mean 'fish'. The specific name derives from the place name of 'Ercaicun', again near to where the fossils were found; and the Latin word 'ensis', to mean 'belonging to'."
 		},
 		{
 			"type": "lepidodendron:diet",
