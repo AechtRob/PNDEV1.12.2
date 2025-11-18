@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_ordosemys",
 			"type": "text",
-			"text": "Ordosemys comes from the Early Cretaceous, with fossils found in the Yixian Formation, Northeast China. It is a small, flat shelled sinemydiid turtle, and grew up to 40 cm in overall size, with a shell that grew to roughly 30 cm in length. The generic name derives from the place name 'Ordos Basin', where the fossils were found."
+			"text": "Ordosemys comes from the Early Cretaceous, with fossils found in the Yixian Formation, Northeast China. It is a small, flat shelled sinemydid turtle, and grew up to 40 cm in overall size, with a shell that grew to roughly 30 cm in length. It is amongst the most common and prolific of the sinemydid turtles, with one specimen even being found alongside a Psittacosaurus. The generic name derives from the place name 'Ordos Basin', where the fossils were found."
 		},
 		{
 			"type": "lepidodendron:diet",

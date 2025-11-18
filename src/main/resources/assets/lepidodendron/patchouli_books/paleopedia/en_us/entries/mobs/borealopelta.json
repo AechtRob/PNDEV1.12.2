@@ -1,0 +1,72 @@
+{
+	"name": "Borealopelta",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/borealopelta_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_borealopelta",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_borealopelta",
+			"title": "Borealopelta",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Ankylosauria$(br)>Nodosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. markmitchelli",
+            "entity": "lepidodendron:prehistoric_flora_borealopelta",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_borealopelta",
+			"type": "text",
+			"text": "Borealopelta markmitchelli, meaning 'northern shield' is a species of nodosaurid discovered in the Suncor Millenium Mine in Alberta Canada. The mine is no stranger to fossils, as it is part of the Clearwater Formation, which preserves several marine reptiles, but Borealopelta was the first dinosaur discovered there. The specimen was found in 2011. However, it needed to be prepared before it could be described, a job which was taken on by Mark Mitchell. He spent over"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_borealopelta",
+			"type": "text",
+			"text": "7000 hours preparing the fossil, and being honored in the species name as gratitude for his work. Once preparation work was done, it unveiled one of the most well preserved dinosaur fossils ever discovered. Borealopelta's holotype, the only fossil known so far, was preserved three dimensionally, consisting of the entire head, osteoderms, postcrania, epidermal skin scales, and even stomach contents."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_borealopelta",
+			"type": "text",
+			"text": "Borelopelta is also the second Ornithischian to have its color in life determined, the first being Psittacosaurus sp.; or the 'Common Psittacosaurus'. Although the fossil did not preserve melanosomes, what are usually used to determine color in fossils, it preserved several other chemicals and minerals that implied the existence of them. They found it exhibited counter-shading, with the osteoderms being light in color and the lower unarmoured parts of its body"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_borealopelta",
+			"type": "text",
+			"text": "being reddish-brown. Counter-shading is usually a defense against predators made to confuse their sense of sight. However at 5.5 meters long and 1300 kilograms in weight, it is the largest known animal with counter-shading, proving that even these heavily armoured animals needed protection from the sight-relying theropods. Borelopelta also preserved evidence of keratin on 97% of its bony osteoderms."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_borealopelta",
+			"type": "text",
+			"text": "This is supportive of Thyreophora having keratin covering their osteoderms and other bony structures. It has also been suggested that due to the different coloration on Borealopelta's osteoderms, these could have been used for mating displays. The stomach of Borealopelta also provided rare direct data on dinosaur herbivory. The animal's stomach had many gastroliths, taking up 55% of its volume. Of the plant matter preserved, 84.9% of them were ferns, indicating a selective diet."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_borealopelta",
+			"type": "text",
+			"text": "Traces of charcoal and fusinite were also preserved, suggesting it ate after a wildfire before it died, eating the ground covering ferns that were more abundant with burnt competition. This beautiful animal has significantly increased our understanding of dinosaur behavior and looks, making its holotype one of the most important fossils ever found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_borealopelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_borealopelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_borealopelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_borealopelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_borealopelta"
+		}
+	]
+}

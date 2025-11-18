@@ -1,0 +1,40 @@
+{
+	"name": "Retiophyllia",
+	"read_by_default": true,
+	"icon": "lepidodendron:retiophyllia",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_retiophyllia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_retiophyllia",
+			"title": "Retiophyllia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic - [Jurassic]$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Cnidaria$(br)>Anthozoa$(br)>Scleractinia$(br)>Distichophylliina$(br)>Reimaniphylliidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "Retiophyllia sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:retiophyllia",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_retiophyllia",
+			"type": "text",
+			"text": "Retiophyllia comes from the Triassic, with fossils found across the globe. It is branching stony coral, growing in varying shapes and sizes. There are also Middle Jurassic records, although these are not represented."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_retiophyllia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

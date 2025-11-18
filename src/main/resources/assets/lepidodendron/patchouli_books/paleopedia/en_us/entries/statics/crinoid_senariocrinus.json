@@ -1,0 +1,42 @@
+{
+	"name": "Senariocrinus",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_senariocrinus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_senariocrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_senariocrinus",
+			"title": "Senariocrinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Echinodermata$(br)>Crinoidea$(br)>Calcerocrinida$(br)>Calceocrinidae"
+		},
+        {
+        	"type": "multiblock",
+        	"name": "S. maucheri",
+        	"enable_visualize": false,
+        	"multiblock": {
+        		"pattern": [
+        			[ "2" ],
+        			[ "1" ],
+        			[ "0" ]
+        		],
+        		"mapping": {
+        			"2": "lepidodendron:crinoid_senariocrinus[topshoot=true]",
+        			"1": "lepidodendron:crinoid_senariocrinus[topshoot=false]",
+        			"0": "minecraft:air"
+        		}
+        	}
+        },
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_senariocrinus",
+			"type": "text",
+			"text": "Senariocrinus maucheri is a species of calceocrinid crinoid, known from one specimen from the Hunsrück Shale of lower Devonian Germany. It is an odd member of calceocrinids, mixing extremely derived features with basal ones, and as such it is thought to be a basal offshoot of calceocrinids. Its original description thought it would have used its anal tube and left anterior arm to propel itself as a swimmer, but later publications have disproven this."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_senariocrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

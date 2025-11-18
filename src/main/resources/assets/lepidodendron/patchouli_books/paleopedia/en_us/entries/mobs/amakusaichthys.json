@@ -1,0 +1,47 @@
+{
+	"name": "Amakusaichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/amakusaichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_amakusaichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_amakusaichthys",
+			"title": "Amakusaichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>Ichthyodectiformes$(br)>Heckelichthyidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. goshouraensis",
+            "entity": "lepidodendron:prehistoric_flora_amakusaichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_amakusaichthys",
+			"type": "text",
+			"text": "Amakusaichthys is a genus of ichthyodectiform fish from Amakusa city in Japan, referenced in the name, and the Tzimol Quarry in Mexico. This fish is extremly unique, obviously different from other Ichthyodectiformes with its small tightly packed conical teeth and its strangely elongated snout unlike any other ichthyodectiform. It is known from several very well preserved fossils all grouped together, suggesting it was a schooling fish."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_amakusaichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_amakusaichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_amakusaichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_amakusaichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_amakusaichthys"
+		}
+	]
+}
