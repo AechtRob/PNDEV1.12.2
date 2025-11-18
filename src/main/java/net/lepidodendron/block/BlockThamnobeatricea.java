@@ -27,8 +27,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -105,15 +103,15 @@ public class BlockThamnobeatricea extends ElementsLepidodendronMod.ModElement {
 			return ModTriggers.CLICK_THAMNOBEATRICEA;
 		}
 
-		@Override
-		@Nullable
-		public RayTraceResult collisionRayTrace(IBlockState blockState, World worldIn, BlockPos pos, Vec3d start, Vec3d end)
-		{
-			if (worldIn.getBlockState(new BlockPos(start)).getBlock() == this) {
-				return null;
-			}
-			return super.collisionRayTrace(blockState, worldIn, pos, start, end);
-		}
+//		@Override
+//		@Nullable
+//		public RayTraceResult collisionRayTrace(IBlockState blockState, World worldIn, BlockPos pos, Vec3d start, Vec3d end)
+//		{
+//			if (worldIn.getBlockState(new BlockPos(start)).getBlock() == this) {
+//				return null;
+//			}
+//			return super.collisionRayTrace(blockState, worldIn, pos, start, end);
+//		}
 
 		@Override
 		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
@@ -129,60 +127,56 @@ public class BlockThamnobeatricea extends ElementsLepidodendronMod.ModElement {
 	        return state.withProperty(LEVEL, 0).withProperty(DOWN, Boolean.valueOf(block == this || (block != Blocks.AIR && material != Material.WATER))).withProperty(UP, Boolean.valueOf(block1 == this)).withProperty(NORTH, Boolean.valueOf(block2 == this)).withProperty(EAST, Boolean.valueOf(block3 == this)).withProperty(SOUTH, Boolean.valueOf(block4 == this)).withProperty(WEST, Boolean.valueOf(block5 == this));
 	    }
 
-	    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
+		@Override
+		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
 	    {
-	        state = state.getActualState(source, pos);
-	        float f = 0.1875F;
-	        float f1 = ((Boolean)state.getValue(WEST)).booleanValue() ? 0.0F : 0.1875F;
-	        float f2 = ((Boolean)state.getValue(DOWN)).booleanValue() ? 0.0F : 0.1875F;
-	        float f3 = ((Boolean)state.getValue(NORTH)).booleanValue() ? 0.0F : 0.1875F;
-	        float f4 = ((Boolean)state.getValue(EAST)).booleanValue() ? 1.0F : 0.8125F;
-	        float f5 = ((Boolean)state.getValue(UP)).booleanValue() ? 1.0F : 0.8125F;
-	        float f6 = ((Boolean)state.getValue(SOUTH)).booleanValue() ? 1.0F : 0.8125F;
-	        return new AxisAlignedBB((double)f1, (double)f2, (double)f3, (double)f4, (double)f5, (double)f6);
+//	        state = state.getActualState(source, pos);
+//	        float f = 0.1875F;
+//	        float f1 = ((Boolean)state.getValue(WEST)).booleanValue() ? 0.0F : 0.1875F;
+//	        float f2 = ((Boolean)state.getValue(DOWN)).booleanValue() ? 0.0F : 0.1875F;
+//	        float f3 = ((Boolean)state.getValue(NORTH)).booleanValue() ? 0.0F : 0.1875F;
+//	        float f4 = ((Boolean)state.getValue(EAST)).booleanValue() ? 1.0F : 0.8125F;
+//	        float f5 = ((Boolean)state.getValue(UP)).booleanValue() ? 1.0F : 0.8125F;
+//	        float f6 = ((Boolean)state.getValue(SOUTH)).booleanValue() ? 1.0F : 0.8125F;
+//	        return new AxisAlignedBB((double)f1, (double)f2, (double)f3, (double)f4, (double)f5, (double)f6);
+
+			return new AxisAlignedBB(0,0,0,1,1,1);
 	    }
-	
-	    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState)
+
+		@Override
+		public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos)
+		{
+			return false;
+		}
+
+		@Nullable
+		@Override
+		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
+			return NULL_AABB;
+		}
+
+		public AxisAlignedBB getColl(IBlockState state, IBlockAccess source, BlockPos pos)
+		{
+//	        state = state.getActualState(source, pos);
+//	        float f = 0.1875F;
+//	        float f1 = ((Boolean)state.getValue(WEST)).booleanValue() ? 0.0F : 0.1875F;
+//	        float f2 = ((Boolean)state.getValue(DOWN)).booleanValue() ? 0.0F : 0.1875F;
+//	        float f3 = ((Boolean)state.getValue(NORTH)).booleanValue() ? 0.0F : 0.1875F;
+//	        float f4 = ((Boolean)state.getValue(EAST)).booleanValue() ? 1.0F : 0.8125F;
+//	        float f5 = ((Boolean)state.getValue(UP)).booleanValue() ? 1.0F : 0.8125F;
+//	        float f6 = ((Boolean)state.getValue(SOUTH)).booleanValue() ? 1.0F : 0.8125F;
+//	        return new AxisAlignedBB((double)f1, (double)f2, (double)f3, (double)f4, (double)f5, (double)f6);
+
+			return new AxisAlignedBB(0,0,0,1,1,1);
+		}
+
+		@Override
+		public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState)
 	    {
-	        if (!isActualState)
-	        {
-	            state = state.getActualState(worldIn, pos);
-	        }
-	
-	        float f = 0.1875F;
-	        float f1 = 0.8125F;
-	        addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.1875D, 0.1875D, 0.1875D, 0.8125D, 0.8125D, 0.8125D));
-	
-	        if (((Boolean)state.getValue(WEST)).booleanValue())
-	        {
-	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.0D, 0.1875D, 0.1875D, 0.1875D, 0.8125D, 0.8125D));
-	        }
-	
-	        if (((Boolean)state.getValue(EAST)).booleanValue())
-	        {
-	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.8125D, 0.1875D, 0.1875D, 1.0D, 0.8125D, 0.8125D));
-	        }
-	
-	        if (((Boolean)state.getValue(UP)).booleanValue())
-	        {
-	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.1875D, 0.8125D, 0.1875D, 0.8125D, 1.0D, 0.8125D));
-	        }
-	
-	        if (((Boolean)state.getValue(DOWN)).booleanValue())
-	        {
-	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.1875D, 0.0D, 0.1875D, 0.8125D, 0.1875D, 0.8125D));
-	        }
-	
-	        if (((Boolean)state.getValue(NORTH)).booleanValue())
-	        {
-	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.1875D, 0.1875D, 0.0D, 0.8125D, 0.8125D, 0.1875D));
-	        }
-	
-	        if (((Boolean)state.getValue(SOUTH)).booleanValue())
-	        {
-	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.1875D, 0.1875D, 0.8125D, 0.8125D, 0.8125D, 1.0D));
-	        }
+
 	    }
+
+
 	
 	    /**
 	     * Convert the BlockState into the correct metadata value
@@ -255,6 +249,7 @@ public class BlockThamnobeatricea extends ElementsLepidodendronMod.ModElement {
 			}
 			return false;
 		}
+
 
 
 		@Override
