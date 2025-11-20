@@ -262,7 +262,7 @@ public class EntityPrehistoricFloraPtyktoptychion extends EntityPrehistoricFlora
 		return true;
 	}
 
-	public static String getPeriod() {return "Jurassic - Early Cretaceous - Late Cretaceous - Paleogene  - Neogene";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

@@ -105,15 +105,15 @@ public class EntityPrehistoricFloraTrimeroceras extends EntityPrehistoricFloraNa
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.HYPHANTOCERAS_LOOT_YOUNG;
+			return LepidodendronMod.TRIMEROCERAS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.HYPHANTOCERAS_LOOT;
+		return LepidodendronMod.TRIMEROCERAS_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_HYPHANTOCERAS;
+		return ModTriggers.CLICK_TRIMEROCERAS;
 	}
 
 	//Rendering taxidermy:

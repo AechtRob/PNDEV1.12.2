@@ -82,6 +82,11 @@ public class EntityPrehistoricFloraCretosaja extends EntityPrehistoricFloraLandC
 	}
 
 	@Override
+	public boolean canJar() {
+		return true;
+	}
+
+	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;

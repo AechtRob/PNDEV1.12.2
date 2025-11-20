@@ -473,7 +473,7 @@ public class EntityPrehistoricFloraEoconfuciusornis extends EntityPrehistoricFlo
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_CONFUCIUSORNIS;
+		return ModTriggers.CLICK_EOCONFUCIUSORNIS;
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
