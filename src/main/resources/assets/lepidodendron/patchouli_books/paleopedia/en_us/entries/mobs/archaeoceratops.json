@@ -1,0 +1,47 @@
+{
+	"name": "Archaeoceratops",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/archaeoceratops_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_archaeoceratops",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_archaeoceratops",
+			"title": "Archaeoceratops",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ceratopsia$(br)>Neoceratopsia$(br)>Arachaeoceratopsidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. oshimi",
+            "entity": "lepidodendron:prehistoric_flora_archaeoceratops",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archaeoceratops",
+			"type": "text",
+			"text": "Archaeoceratops is a genus of basal Neoceratopsian from Early Cretaceous China. It was a small bipedal herbivore that most likely fed on ferns, cycads, and conifers. It’s head possessed  a small bony frill, however it lacked a horn like more derived ceratopsians. Archaeoceratops’s name ironically means Ancient Horned Face."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_archaeoceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_archaeoceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_archaeoceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_archaeoceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_archaeoceratops"
+		}
+	]
+}

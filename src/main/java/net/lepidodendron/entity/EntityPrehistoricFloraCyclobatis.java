@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraCyclobatis extends EntityPrehistoricFloraSwim
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 4.0D;
+		maxHealthAgeable = 2.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
