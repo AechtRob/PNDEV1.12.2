@@ -40,7 +40,7 @@ public class EntityPrehistoricFloraLuskhan extends EntityPrehistoricFloraAgeable
 
 	public EntityPrehistoricFloraLuskhan(World world) {
 		super(world);
-		setSize(1F, 0.95F);
+		setSize(1F, 0.90F);
 		minWidth = 0.2F;
 		maxWidth = 2F;
 		maxHeight = 0.95F;

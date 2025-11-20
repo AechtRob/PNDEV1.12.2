@@ -73,6 +73,11 @@ public abstract class EntityPrehistoricFloraLeapingInsectBase extends EntityPreh
 
 	}
 
+	@Override
+	public boolean canJar() {
+		return true;
+	}
+
 	/**
 	 * set the jump cooldown on first spawn
 	 * @param difficulty

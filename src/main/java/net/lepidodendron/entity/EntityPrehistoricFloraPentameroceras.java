@@ -105,15 +105,15 @@ public class EntityPrehistoricFloraPentameroceras extends EntityPrehistoricFlora
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.HYPHANTOCERAS_LOOT_YOUNG;
+			return LepidodendronMod.PENTAMEROCERAS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.HYPHANTOCERAS_LOOT;
+		return LepidodendronMod.PENTAMEROCERAS_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_HYPHANTOCERAS;
+		return ModTriggers.CLICK_PENTAMEROCERAS;
 	}
 
 	//Rendering taxidermy:

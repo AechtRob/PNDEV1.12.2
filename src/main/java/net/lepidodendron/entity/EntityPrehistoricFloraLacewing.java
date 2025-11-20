@@ -4,6 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.render.entity.RenderLacewing;
@@ -11,6 +12,8 @@ import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.ItemUnknownEggLand;
 import net.lepidodendron.item.entities.spawneggs.*;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -37,7 +40,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsectFlyingBase implements ITrappableAir {
+public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsectFlyingBase implements ITrappableAir, IAdvancementGranter {
 
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
@@ -138,6 +141,32 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 			}
 		}
 		return ItemStack.EMPTY;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		switch (this.getPNType()) {
+			case AETHEOGRAMMA: default:
+				return ModTriggers.CLICK_LACEWING_AETHEOGRAMMA;
+			case CRETAPSYCHOPS:
+				return ModTriggers.CLICK_LACEWING_CRETAPSYCHOPS;
+			case LACCOSMYLUS:
+				return ModTriggers.CLICK_LACEWING_LACCOSMYLUS;
+			case LICHENIPOLYSTOECHOTES:
+				return ModTriggers.CLICK_LACEWING_LICHENIPOLYSTOECHOTES;
+			case BELLINYMPHA:
+				return ModTriggers.CLICK_LACEWING_BELLINYMPHA;
+			case GRAMMOLINGIA:
+				return ModTriggers.CLICK_LACEWING_GRAMMOLINGIA;
+			case KRIKA:
+				return ModTriggers.CLICK_KRIKA;
+			case NUDDSIA:
+				return ModTriggers.CLICK_NUDDSIA;
+			case KARENINA:
+				return ModTriggers.CLICK_KARENINA;
+
+		}
 	}
 
 	@Override

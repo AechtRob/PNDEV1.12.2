@@ -105,15 +105,15 @@ public class EntityPrehistoricFloraJeppssonoceras extends EntityPrehistoricFlora
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.HYPHANTOCERAS_LOOT_YOUNG;
+			return LepidodendronMod.JEPPSSONOCERAS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.HYPHANTOCERAS_LOOT;
+		return LepidodendronMod.JEPPSSONOCERAS_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_HYPHANTOCERAS;
+		return ModTriggers.CLICK_JEPPSSONOCERAS;
 	}
 
 	//Rendering taxidermy:
