@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/liopleurodon_icon"
+        "layer0": "lepidodendron:items/entities/liopleurodon_raw"
     }
 }

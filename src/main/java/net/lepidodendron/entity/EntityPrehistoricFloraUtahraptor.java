@@ -156,7 +156,7 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.45F;
+		float speedBase = 0.44F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

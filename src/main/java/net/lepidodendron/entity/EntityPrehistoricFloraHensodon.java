@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraHensodon extends EntityPrehistoricFloraAgeabl
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 7.0D;
+		maxHealthAgeable = 2.0D;
 	}
 
 	@Override

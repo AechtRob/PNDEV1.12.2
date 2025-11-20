@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraMesiteia extends EntityPrehistoricFloraAgeabl
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 3.0D;
+		maxHealthAgeable = 2.0D;
 	}
 
 
