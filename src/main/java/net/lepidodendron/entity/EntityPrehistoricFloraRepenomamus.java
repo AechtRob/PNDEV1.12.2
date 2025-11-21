@@ -51,17 +51,46 @@ public class EntityPrehistoricFloraRepenomamus extends EntityPrehistoricFloraLan
 		STAND_ANIMATION = Animation.create(95);
 	}
 
-	@Nullable
 	@Override
-	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_REPENOMAMUS;
+	public Animation[] getAnimations() {
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, MAKE_NEST_ANIMATION, EAT_ANIMATION, STAND_ANIMATION};
+	}
+
+	@Override
+	public int getRoarLength() {
+		return 15;
+	}
+
+	@Override
+	public int getEatLength() {
+		return 15;
 	}
 
 	public static String getPeriod() {return "Early Cretaceous";}
 
 	@Override
-	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.BUG, DietString.MEAT), DietString.FRUIT);
+	public boolean hasNest() {
+		return true;
+	}
+
+	@Override
+	public int getAttackLength() {
+		return 11;
+	}
+
+	@Override
+	public String getTexture() {
+		return this.getTexture();
+	}
+
+	@Override
+	public boolean dropsEggs() {
+		return false;
+	}
+
+	@Override
+	public boolean laysEggs() {
+		return true;
 	}
 
 	public float getAISpeedLand() {
@@ -73,9 +102,32 @@ public class EntityPrehistoricFloraRepenomamus extends EntityPrehistoricFloraLan
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.8F;
+			speedBase = speedBase * 2.55F;
 		}
 		return speedBase;
+	}
+
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+
+		//Sometimes stand up and look around:
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+			this.setAnimation(STAND_ANIMATION);
+			this.standCooldown = 2000;
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 2000;
+			this.setAnimation(NO_ANIMATION);
+		}
+
+	}
+
+	@Override
+	public int getAdultAge() {
+		return 64000;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
@@ -83,21 +135,54 @@ public class EntityPrehistoricFloraRepenomamus extends EntityPrehistoricFloraLan
 		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
 	}
 
-	@Override
-	public int getAdultAge() {
-		return 0;
+	protected void initEntityAI() {
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
+		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
+		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
+		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(4, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
+		tasks.addTask(5, new LandWanderNestAI(this));
+		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(7, new LandWanderHerd(this, 1.00D, Math.max(1F, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
+		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(11, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
+		//this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.15));
+		//this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
 	}
 
 	@Override
-	public int getAttackLength() {
-		return 11;
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.BUG, DietString.MEAT), DietString.FRUIT);
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_REPENOMAMUS;
 	}
 
 	@Override
-	public int getEatLength() {
-		return 15;
+	public EnumCreatureAttribute getCreatureAttribute() {
+		return EnumCreatureAttribute.UNDEFINED;
 	}
 
+	@Override
+	protected boolean canDespawn() {
+		return false;
+	}
+
+	@Override
+	protected void applyEntityAttributes() {
+		super.applyEntityAttributes();
+		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
@@ -118,93 +203,23 @@ public class EntityPrehistoricFloraRepenomamus extends EntityPrehistoricFloraLan
 	            .getObject(new ResourceLocation("lepidodendron:repenomamus_death"));
 	}
 
-	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
-		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
-		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		//tasks.addTask(4, new PanicAI(this, 1.0));
-		tasks.addTask(5, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
-		tasks.addTask(6, new LandWanderNestAI(this));
-		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(8, new LandWanderHerd(this, 1.00D, Math.max(1F, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
-		tasks.addTask(9, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(11, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(12, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		//this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.15));
-		//this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+	@Override
+	protected float getSoundVolume() {
+		return 1.0F;
 	}
 
 	@Override
-	public String getTexture() {
-		return this.getTexture();
+	public boolean getCanSpawnHere() {
+		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
 
-	@Override
-	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
-	}
-
-	@Override
-	protected boolean canDespawn() {
-		return false;
-	}
-
-	@Override
-	public boolean hasAlarm() {
-		return false;
-	}
-
-	@Override
-	public boolean dropsEggs() {
-		return false;
-	}
-
-	@Override
-	public boolean laysEggs() {
-		return true;
-	}
-
-	@Override
-	protected void applyEntityAttributes() {
-		super.applyEntityAttributes();
-		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-	}
-
-	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-
-		//Sometimes stand up and look around:
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			this.setAnimation(STAND_ANIMATION);
-			this.standCooldown = 2000;
-		}
-		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 2000;
-			this.setAnimation(NO_ANIMATION);
-		}
-
-	}
-	@Override
-	public int getRoarLength() {
-		return 15;
-	}
 
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 8 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
 
@@ -239,10 +254,6 @@ public class EntityPrehistoricFloraRepenomamus extends EntityPrehistoricFloraLan
 		this.standCooldown = compound.getInteger("standCooldown");
 	}
 
-	@Override
-	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, MAKE_NEST_ANIMATION, EAT_ANIMATION, STAND_ANIMATION};
-	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 

@@ -111,6 +111,9 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                     && biome.getRegistryName().toString().indexOf("creek") > 0) {
                     Creeks = true;
                 }
+                if (genLakes) {
+                    Creeks = true;
+                }
                 if (biome.getRegistryName().toString().equalsIgnoreCase("lepidoendron:ediacaran_stromatolite_pavement")
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidoendron:ediacaran_shallow_reef")) {
                     Stromatolites = true;
