@@ -117,6 +117,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         getMaxTurnDistancePerTick = 20.0F;
     }
 
+    public boolean ighnoreSizeForAvoidance() {
+        return false;
+    }
+
     @Nullable
     public String getPNTypeName()
     {
@@ -1157,6 +1161,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     @Override
     public boolean attackEntityFrom(DamageSource ds, float i) {
+
+        if (ds == DamageSource.IN_WALL) {
+            if (this.isInWater()) {
+                return false;
+            }
+        }
 
         if (ds == DamageSource.FLY_INTO_WALL) {// || ds == DamageSource.IN_WALL) {
             if (ds.getDamageLocation() != null) {

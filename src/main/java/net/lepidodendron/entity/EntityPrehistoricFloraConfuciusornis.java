@@ -434,19 +434,19 @@ public class EntityPrehistoricFloraConfuciusornis extends EntityPrehistoricFlora
 	@Override
 	public net.minecraft.util.SoundEvent getAmbientSound() {
 		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-			.getObject(new ResourceLocation("lepidodendron:confuciusornis_idle"));
+			.getObject(new ResourceLocation("lepidodendron:eoconfuciusornis_idle"));
 	}
 
 	@Override
 	public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
 		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-			.getObject(new ResourceLocation("lepidodendron:confuciusornis_hurt"));
+			.getObject(new ResourceLocation("lepidodendron:eoconfuciusornis_hurt"));
 	}
 
 	@Override
 	public net.minecraft.util.SoundEvent getDeathSound() {
 		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-			.getObject(new ResourceLocation("lepidodendron:confuciusornis_death"));
+			.getObject(new ResourceLocation("lepidodendron:eoconfuciusornis_death"));
 	}
 
 	@Override

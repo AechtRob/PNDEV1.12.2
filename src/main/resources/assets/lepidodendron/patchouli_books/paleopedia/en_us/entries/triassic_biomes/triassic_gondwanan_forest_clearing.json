@@ -1,12 +1,12 @@
 {
-	"name": "Cool Temperate Forest Clearing",
+	"name": "Southern Lacustrine Clearing",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
 	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Triassic Cool Temperate Forest Clearing$(br2)$()Text here..."
+			"text": "$(l)Triassic Southern Lacustrine Clearing$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

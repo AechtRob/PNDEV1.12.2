@@ -212,7 +212,6 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraDi
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
 
-
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();

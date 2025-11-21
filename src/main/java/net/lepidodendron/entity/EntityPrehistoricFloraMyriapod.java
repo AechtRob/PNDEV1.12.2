@@ -184,6 +184,11 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 
 	@Override
 	public String[] getFoodOreDicts() {
+		if (this.getPNType() == Type.DEVONOBIUS
+			|| this.getPNType() == Type.CRUSSOLUM) {
+			return ArrayUtils.addAll(DietString.BUG);
+		}
+
 		return ArrayUtils.addAll(DietString.MOSS);
 	}
 
@@ -249,12 +254,16 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 		this.setSizer(this.getHitBoxSize()[0], this.getHitBoxSize()[1]);
 		
 		//Eat moss!
-		BlockPos pos = this.getPosition();
-		if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote)
-			&& ((world.getBlockState(pos).getBlock() instanceof ILayableMoss))
-		) {
-			this.world.destroyBlock(pos,false);
-			this.setHealth(this.getHealth() + 0.5F);
+
+		if (this.getPNType() != Type.DEVONOBIUS
+			&& this.getPNType() != Type.CRUSSOLUM) {
+			BlockPos pos = this.getPosition();
+			if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote)
+					&& ((world.getBlockState(pos).getBlock() instanceof ILayableMoss))
+			) {
+				this.world.destroyBlock(pos, false);
+				this.setHealth(this.getHealth() + 0.5F);
+			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
