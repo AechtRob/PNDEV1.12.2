@@ -185,7 +185,10 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 	@Override
 	public String[] getFoodOreDicts() {
 		if (this.getPNType() == Type.DEVONOBIUS
-			|| this.getPNType() == Type.CRUSSOLUM) {
+			|| this.getPNType() == Type.CRUSSOLUM
+				|| this.getPNType() == Type.FULMENOCURSOR
+				|| this.getPNType() == Type.VELOCIPEDE
+				|| this.getPNType() == Type.LATZELIA) {
 			return ArrayUtils.addAll(DietString.BUG);
 		}
 
@@ -256,7 +259,10 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 		//Eat moss!
 
 		if (this.getPNType() != Type.DEVONOBIUS
-			&& this.getPNType() != Type.CRUSSOLUM) {
+				&& this.getPNType() != Type.CRUSSOLUM
+				&& this.getPNType() != Type.FULMENOCURSOR
+				&& this.getPNType() != Type.VELOCIPEDE
+				&& this.getPNType() != Type.LATZELIA) {
 			BlockPos pos = this.getPosition();
 			if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote)
 					&& ((world.getBlockState(pos).getBlock() instanceof ILayableMoss))

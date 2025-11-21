@@ -51,6 +51,11 @@ public class EntityPrehistoricFloraPliosaurus extends EntityPrehistoricFloraAgea
 	}
 
 	@Override
+	public float getEyeHeight() {
+		return this.height * 1.25F;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
