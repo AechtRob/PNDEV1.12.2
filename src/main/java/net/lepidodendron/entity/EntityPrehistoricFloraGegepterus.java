@@ -298,7 +298,7 @@ public class EntityPrehistoricFloraGegepterus extends EntityPrehistoricFloraLand
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FRUIT);
+		return ArrayUtils.addAll(DietString.FISH);
 	}
 
 	protected void initEntityAI() {

@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraHangingfly extends EntityPrehistoricFloraInse
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.PLANTS);
+		return ArrayUtils.addAll(DietString.BUG);
 	}
 
 	@Override

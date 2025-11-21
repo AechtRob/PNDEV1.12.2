@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraJuracimbrophlebia extends EntityPrehistoricFl
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.PLANTS);
+		return ArrayUtils.addAll(DietString.BUG);
 	}
 
 	@Override

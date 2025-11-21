@@ -386,7 +386,7 @@ public class EntityPrehistoricFloraPterodaustro extends EntityPrehistoricFloraLa
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FRUIT);
+		return ArrayUtils.addAll(DietString.CRUSTACEAN);
 	}
 
 	protected void initEntityAI() {
