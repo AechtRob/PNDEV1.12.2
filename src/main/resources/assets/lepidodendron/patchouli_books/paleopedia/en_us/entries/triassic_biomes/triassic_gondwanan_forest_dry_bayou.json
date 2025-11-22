@@ -1,12 +1,12 @@
 {
-	"name": "Seasonal Bayou",
+	"name": "Southern Seasonal Bayou",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
 	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Triassic Seasonal Bayou$(br2)$()Text here..."
+			"text": "$(l)Triassic Southern Seasonal Bayou$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

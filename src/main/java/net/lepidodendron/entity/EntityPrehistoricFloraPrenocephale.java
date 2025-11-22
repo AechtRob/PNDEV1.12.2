@@ -151,7 +151,7 @@ public class EntityPrehistoricFloraPrenocephale extends EntityPrehistoricFloraLa
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.29F;
+		float speedBase = 0.31F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

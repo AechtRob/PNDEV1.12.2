@@ -64,6 +64,11 @@ public class EntityPrehistoricFloraSpectrovenator extends EntityPrehistoricFlora
 	}
 
 	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{GRAPPLE_ANIMATION, ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, HURT_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, MAKE_NEST_ANIMATION};
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
@@ -79,7 +84,7 @@ public class EntityPrehistoricFloraSpectrovenator extends EntityPrehistoricFlora
 	@Override
 	public AxisAlignedBB getGrappleBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
+		return this.getEntityBoundingBox().grow(2.5F + size, 0.5F + size, 2.5F + size);
 	}
 
 	public boolean findGrappleTarget() {
@@ -199,6 +204,9 @@ public class EntityPrehistoricFloraSpectrovenator extends EntityPrehistoricFlora
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
+		if ((this.getAnimation() == GRAPPLE_ANIMATION) && (this.willGrapple) && this.getGrappleTarget() != null) {
+			return 0.0F; //Is talking to a colleague!
+		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
@@ -254,13 +262,14 @@ public class EntityPrehistoricFloraSpectrovenator extends EntityPrehistoricFlora
         tasks.addTask(5, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
 		tasks.addTask(6, new LandWanderNestAI(this));
 		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D, 45));
-		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(11, new EntityLookIdleAI(this));
+		tasks.addTask(8, new GrappleAI(this, 1.0D, false, this.getGrappleLength(), this.getGrappleAnimation(), 0.75));
+		tasks.addTask(9, new LandWanderAvoidWaterAI(this, 1.0D, 45));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(11, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(12, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
 //		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 //		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
@@ -368,6 +377,12 @@ public class EntityPrehistoricFloraSpectrovenator extends EntityPrehistoricFlora
 
 		//System.err.println("Eating: " + this.getEatTarget() + " isFast " + this.getIsFast());
 
+	}
+
+	@Override
+	public int headbutTick() {
+		//Just here to prevent the animation timing out:
+		return this.GRAPPLE_ANIMATION.getDuration() - 1;
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;

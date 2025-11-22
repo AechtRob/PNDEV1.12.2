@@ -54,6 +54,11 @@ public class EntityPrehistoricFloraIchthyosaurus extends EntityPrehistoricFloraA
 	}
 
 	@Override
+	public float getEyeHeight() {
+		return this.height * 1.25F;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {

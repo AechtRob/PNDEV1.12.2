@@ -40,7 +40,7 @@ public class EntityPrehistoricFloraLuskhan extends EntityPrehistoricFloraAgeable
 
 	public EntityPrehistoricFloraLuskhan(World world) {
 		super(world);
-		setSize(1F, 0.90F);
+		setSize(1F, 0.95F);
 		minWidth = 0.2F;
 		maxWidth = 2F;
 		maxHeight = 0.95F;
@@ -51,19 +51,16 @@ public class EntityPrehistoricFloraLuskhan extends EntityPrehistoricFloraAgeable
 	}
 
 	@Override
+	public float getEyeHeight() {
+		return this.height * 1.25F;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
 			tailBuffer.calculateChainSwingBuffer(20, 10, 5F, this);
 		}
-	}
-
-	@Override
-	public float getEyeHeight() {
-		if (this.height >= 0.85) {
-			return 0.333F;
-		}
-		return super.getEyeHeight();
 	}
 
 	@Override

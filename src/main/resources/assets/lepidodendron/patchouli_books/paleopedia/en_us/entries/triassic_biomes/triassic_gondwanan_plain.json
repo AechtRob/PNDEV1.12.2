@@ -1,12 +1,12 @@
 {
-	"name": "Temperate Moss Meadows",
+	"name": "Southern Moss Meadows",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
 	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Triassic Temperate Moss Meadows$(br2)$()Text here..."
+			"text": "$(l)Triassic Southern Moss Meadows$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

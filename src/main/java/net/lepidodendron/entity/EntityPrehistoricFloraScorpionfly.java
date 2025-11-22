@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraScorpionfly extends EntityPrehistoricFloraIns
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.PLANTS);
+		return ArrayUtils.addAll(DietString.BUG);
 	}
 
 	@Override

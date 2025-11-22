@@ -24,6 +24,11 @@ public class TestPrey {
 
     public static Entity result(Entity entityThem, Entity entityMe) {
 
+        boolean hasOverride = false;
+        if (entityThem instanceof EntityPrehistoricFloraAgeableBase) {
+            hasOverride = ((EntityPrehistoricFloraAgeableBase) entityThem).ighnoreSizeForAvoidance();
+        }
+
         if (entityThem instanceof EntityPrehistoricFloraAgeableBase
             || entityThem instanceof EntityPrehistoricFloraInsectFlyingBase) {
 
@@ -71,7 +76,7 @@ public class TestPrey {
                     targetOK = false;
                 }
                 if ((entityMe.getEntityBoundingBox().getAverageEdgeLength() >= entityThem.getEntityBoundingBox().getAverageEdgeLength() * 1.2F) //hard coded - not accurate for all AI
-                ) {
+                    & !hasOverride) {
                     //entityThem.setIsFast(false);
                     targetOK = false;
                 }

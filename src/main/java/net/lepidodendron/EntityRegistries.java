@@ -352,7 +352,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_hupehsuchus", EntityPrehistoricFloraHupehsuchus.class, LepidodendronMod.ENTITY_HUPEHSUCHUS, 48,-4480401,-10663884);
         registerEntity("prehistoric_flora_hurdia", EntityPrehistoricFloraHurdia.class, LepidodendronMod.ENTITY_HURDIA, 64,-9940927,-1);
         registerEntity("prehistoric_flora_hybodus", EntityPrehistoricFloraHybodus.class, LepidodendronMod.ENTITY_HYBODUS, 64,-10859468,-4540501);
-        registerEntity("prehistoric_flora_hylonomus", EntityPrehistoricFloraHylonomus.class, LepidodendronMod.ENTITY_HYLONOMUS, 48,-13359321,-2741975);
+        registerEntity("prehistoric_flora_hylonomus", EntityPrehistoricFloraHylonomus.class, LepidodendronMod.ENTITY_HYLONOMUS, 48,-2242697,-9602251);
         registerEntity("prehistoric_flora_hyneria", EntityPrehistoricFloraHyneria.class, LepidodendronMod.ENTITY_HYNERIA, 82,-10271709,-5662845);
         registerEntity("prehistoric_flora_hyperodapedon", EntityPrehistoricFloraHyperodapedon.class, LepidodendronMod.ENTITY_HYPERODAPEDON, 64,-8299196, -13688296);
         registerEntity("prehistoric_flora_hypsognathus", EntityPrehistoricFloraHypsognathus.class, LepidodendronMod.ENTITY_HYPSOGNATHUS, 48,-5933501,-1780794);

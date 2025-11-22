@@ -191,6 +191,7 @@ public class ModelOrthoceras extends ModelBasePalaeopedia {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
+        this.body.offsetY = this.body.offsetY - 0.5F;
         this.body.render(f5);
     }
 
@@ -251,11 +252,9 @@ public class ModelOrthoceras extends ModelBasePalaeopedia {
             animWalking(entitylivingbodyIn, limbSwing, limbSwingAmount, partialTickTime);
         }
 
-        if(ee.isAtBottom() && ee.canBeVertical() && ee.bodyAngle >= 90) {
+        if (ee.isAtBottom() && ee.canBeVertical() && ee.bodyAngle >= 90) {
             animWalkingForage(entitylivingbodyIn, limbSwing, limbSwingAmount, partialTickTime);
         }
-
-
 
     }
 

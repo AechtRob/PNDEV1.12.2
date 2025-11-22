@@ -297,7 +297,7 @@ public class EntityPrehistoricFloraPelecanimimus extends EntityPrehistoricFloraL
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.PLANTS);
+		return ArrayUtils.addAll(DietString.PLANTS, DietString.FISH);
 	}
 
 	@Override

@@ -63,7 +63,7 @@ public class EntityPrehistoricFloraDamselfly extends EntityPrehistoricFloraMegan
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.MEAT, DietString.BUG);
+		return ArrayUtils.addAll(DietString.BUG);
 	}
 
 	@Override

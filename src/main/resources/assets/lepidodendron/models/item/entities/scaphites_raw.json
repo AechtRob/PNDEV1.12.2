@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/scaphites_icon"
+        "layer0": "lepidodendron:items/entities/scaphites_raw"
     }
 }

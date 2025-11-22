@@ -1,12 +1,12 @@
 {
-	"name": "Cool Temperate Forest",
+	"name": "Polar Forest",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
 	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Triassic Cool Temperate Forest$(br2)$()Text here..."
+			"text": "$(l)Triassic Polar Forest$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

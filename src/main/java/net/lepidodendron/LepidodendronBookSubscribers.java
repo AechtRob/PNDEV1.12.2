@@ -70,7 +70,7 @@ public class LepidodendronBookSubscribers {
 			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderCambrianCompleted.StatsPacket(statsFloat), (EntityPlayerMP)player);
 		}
 		IPaleopediaStatsOrdovician stats5 = player.getCapability(PaleopediaStatsProviderOrdovician.PALEOPEDIA_STATS, null);
-		stats3.setStats(PercentageCollected.getPercentagePerDimensionTotal(player, 2, false));
+		stats5.setStats(PercentageCollected.getPercentagePerDimensionTotal(player, 2, false));
 		if (player instanceof EntityPlayerMP) {
 			float statsFloat = stats5.getStats();
 			LepidodendronMod.PACKET_HANDLER.sendTo(new PaleopediaStatsProviderOrdovician.StatsPacket(statsFloat), (EntityPlayerMP)player);
@@ -1254,15 +1254,6 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			else if (entityClicked instanceof EntityPrehistoricFloraCoelophysis) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_COELOPHYSIS.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				deliverStatsEntity(event);
-				event.setCanceled(true);
-				return;
-			}
 			else if (entityClicked instanceof EntityPrehistoricFloraCothurnocystis) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_COTHURNOCYSTIS.trigger((EntityPlayerMP) event.getEntityPlayer());
@@ -1365,15 +1356,6 @@ public class LepidodendronBookSubscribers {
 			else if (entityClicked instanceof EntityPrehistoricFloraDidymograptus) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_DIDYMOGRAPTUS.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				deliverStatsEntity(event);
-				event.setCanceled(true);
-				return;
-			}
-			else if (entityClicked instanceof EntityPrehistoricFloraDimetrodon) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_DIMETRODON.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
 				deliverStatsEntity(event);
@@ -3153,15 +3135,6 @@ public class LepidodendronBookSubscribers {
 		else if (entityClicked instanceof EntityPrehistoricFloraBatrachotomus) {
 		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 		ModTriggers.CLICK_BATRACHOTOMUS.trigger((EntityPlayerMP) event.getEntityPlayer());
-		}
-		event.getEntityPlayer().swingArm(event.getHand());
-				deliverStatsEntity(event);
-		event.setCanceled(true);
-		return;
-		}
-		else if (entityClicked instanceof EntityPrehistoricFloraClevosaurus) {
-		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-		ModTriggers.CLICK_CLEVOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
 				deliverStatsEntity(event);

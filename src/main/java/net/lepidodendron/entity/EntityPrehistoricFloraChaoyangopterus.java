@@ -298,7 +298,7 @@ public class EntityPrehistoricFloraChaoyangopterus extends EntityPrehistoricFlor
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FRUIT);
+		return ArrayUtils.addAll(DietString.MEAT);
 	}
 
 	protected void initEntityAI() {

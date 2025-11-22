@@ -63,24 +63,24 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 	public MillipedeBuffer myriapodBuffer;
 	public Animation HIDE_ANIMATION;
 
-	private static final float[] PNEUMODESMUS_SIZE = new float[]{0.30F, 0.30F};
-	private static final float[] EOARTHROPLEURA_SIZE = new float[]{0.30F, 0.30F};
-	private static final float[] LATZELIA_SIZE = new float[]{0.30F, 0.30F};
-	private static final float[] CRUSSOLUM_SIZE = new float[]{0.30F, 0.30F};
-	private static final float[] VELOCIPEDE_SIZE = new float[]{0.30F, 0.30F};
-	private static final float[] FULMENOCURSOR_SIZE = new float[]{0.30F, 0.30F};
-	private static final float[] DEVONOBIUS_SIZE = new float[]{0.30F, 0.30F};
-	private static final float[] JULIFORM_SIZE = new float[]{0.30F, 0.30F};
-	private static final float[] POLYDESMID_SIZE = new float[]{0.30F, 0.30F};
+	private static final float[] PNEUMODESMUS_SIZE = new float[]{0.30F, 0.15F};
+	private static final float[] EOARTHROPLEURA_SIZE = new float[]{0.30F, 0.15F};
+	private static final float[] LATZELIA_SIZE = new float[]{0.30F, 0.15F};
+	private static final float[] CRUSSOLUM_SIZE = new float[]{0.30F, 0.15F};
+	private static final float[] VELOCIPEDE_SIZE = new float[]{0.30F, 0.15F};
+	private static final float[] FULMENOCURSOR_SIZE = new float[]{0.30F, 0.15F};
+	private static final float[] DEVONOBIUS_SIZE = new float[]{0.30F, 0.15F};
+	private static final float[] JULIFORM_SIZE = new float[]{0.30F, 0.15F};
+	private static final float[] POLYDESMID_SIZE = new float[]{0.30F, 0.15F};
 
 	private static final DataParameter<Integer> INSECT_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraMyriapod.class, DataSerializers.VARINT);
 
 	public EntityPrehistoricFloraMyriapod(World world) {
 		super(world);
-		setSize(0.3F, 0.3F);
+		setSize(0.3F, 0.15F);
 		minWidth = 0.3F;
 		maxWidth = 0.3F;
-		maxHeight = 0.3F;
+		maxHeight = 0.15F;
 		maxHealthAgeable = 2D;
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -184,6 +184,14 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 
 	@Override
 	public String[] getFoodOreDicts() {
+		if (this.getPNType() == Type.DEVONOBIUS
+			|| this.getPNType() == Type.CRUSSOLUM
+				|| this.getPNType() == Type.FULMENOCURSOR
+				|| this.getPNType() == Type.VELOCIPEDE
+				|| this.getPNType() == Type.LATZELIA) {
+			return ArrayUtils.addAll(DietString.BUG);
+		}
+
 		return ArrayUtils.addAll(DietString.MOSS);
 	}
 
@@ -249,12 +257,19 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 		this.setSizer(this.getHitBoxSize()[0], this.getHitBoxSize()[1]);
 		
 		//Eat moss!
-		BlockPos pos = this.getPosition();
-		if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote)
-			&& ((world.getBlockState(pos).getBlock() instanceof ILayableMoss))
-		) {
-			this.world.destroyBlock(pos,false);
-			this.setHealth(this.getHealth() + 0.5F);
+
+		if (this.getPNType() != Type.DEVONOBIUS
+				&& this.getPNType() != Type.CRUSSOLUM
+				&& this.getPNType() != Type.FULMENOCURSOR
+				&& this.getPNType() != Type.VELOCIPEDE
+				&& this.getPNType() != Type.LATZELIA) {
+			BlockPos pos = this.getPosition();
+			if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote)
+					&& ((world.getBlockState(pos).getBlock() instanceof ILayableMoss))
+			) {
+				this.world.destroyBlock(pos, false);
+				this.setHealth(this.getHealth() + 0.5F);
+			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);

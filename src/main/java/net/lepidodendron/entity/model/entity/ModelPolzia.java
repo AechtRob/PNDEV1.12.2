@@ -145,11 +145,13 @@ public class ModelPolzia extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5 );
     }
+
     public void renderStaticDisplayCase(float f) {
         this.body.offsetZ = -0.05F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
         this.body.offsetY = -0.08F;
@@ -157,6 +159,7 @@ public class ModelPolzia extends ModelBasePalaeopedia {
         this.body.render(0.01F);
         resetToDefaultPose();
     }
+
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
@@ -189,7 +192,7 @@ public class ModelPolzia extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.4F;
+        this.body.offsetY = 0.2F;
 
         float speed = 0.4F;
         if (!e.isInWater()) {
@@ -225,12 +228,12 @@ public class ModelPolzia extends ModelBasePalaeopedia {
 
 
                 if (f3 == 0.0F) {
-                    this.bob(body, -speed, 0.3F, false, f2, 2);
+                    this.bob(body, -speed, 0.3F * 0.66F, false, f2, 2);
 
                 }
                 else
                 {
-                    this.bob(body, -speed, 1F, false, f2, 2);
+                    this.bob(body, -speed, 1F * 0.66F, false, f2, 2);
                 }
 
         }

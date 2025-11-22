@@ -292,7 +292,7 @@ public class EntityPrehistoricFloraStolokrosuchus extends EntityPrehistoricFlora
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 8 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
 

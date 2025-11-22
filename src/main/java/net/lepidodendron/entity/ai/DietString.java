@@ -25,6 +25,7 @@ public class DietString {
     public static final String[] FUNGI = new String[]{"pndietFungus","listAllmushroom"};
     public static final String[] CRINOID = new String[]{"pndietCrinoid"}; //Cystoids, Crinoids, Blastoids, Echinoderms
     public static final String[] ENCRUSTER = new String[]{"pndietEncruster"};
+    public static final String[] SUGAR = new String[]{"pndietSugar"};
 
 
 }

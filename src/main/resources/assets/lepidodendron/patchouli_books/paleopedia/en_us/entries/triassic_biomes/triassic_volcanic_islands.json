@@ -1,12 +1,12 @@
 {
-	"name": "Volcanic Islands",
+	"name": "Shattered Islands",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
 	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Triassic Volcanic Islands$(br2)$()Text here..."
+			"text": "$(l)Triassic Shattered Islands$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraDocodon extends EntityPrehistoricFloraMorganu
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.25F;
+			speedBase = speedBase * 2.25F;
 		}
 		return speedBase;
 	}

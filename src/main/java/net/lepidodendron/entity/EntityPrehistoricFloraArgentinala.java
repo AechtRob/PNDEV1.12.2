@@ -74,7 +74,7 @@ public class EntityPrehistoricFloraArgentinala extends EntityPrehistoricFloraMeg
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.MEAT, DietString.BUG);
+		return ArrayUtils.addAll(DietString.PLANTS, DietString.MOSS);
 	}
 
 	@Override

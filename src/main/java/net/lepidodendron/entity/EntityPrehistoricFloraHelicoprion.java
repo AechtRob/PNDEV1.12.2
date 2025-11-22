@@ -49,6 +49,11 @@ public class EntityPrehistoricFloraHelicoprion extends EntityPrehistoricFloraAge
 	}
 
 	@Override
+	public float getEyeHeight() {
+		return this.height * 1.25F;
+	}
+
+	@Override
 	public int getEggType(@Nullable String variantIn) {
 		return 45; //cylinder type
 	}

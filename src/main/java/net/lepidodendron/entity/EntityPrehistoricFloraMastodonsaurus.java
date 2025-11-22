@@ -58,6 +58,11 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 	}
 
 	@Override
+	public float getEyeHeight() {
+		return this.height * 1.25F;
+	}
+
+	@Override
 	public int getEggType(@Nullable String variantIn) {
 		return 40; //normal spawn
 	}

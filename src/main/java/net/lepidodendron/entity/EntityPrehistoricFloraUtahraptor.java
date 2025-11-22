@@ -89,7 +89,7 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 
 
 	public int getAmbientTalkInterval() {
-		return 160;
+		return 2500;
 	}
 
 	@Override
@@ -156,7 +156,7 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.45F;
+		float speedBase = 0.44F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -171,8 +171,13 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 	}
 
 	@Override
+	public boolean ighnoreSizeForAvoidance() {
+		return true;
+	}
+
+	@Override
 	public int getTalkInterval() {
-		return 360;
+		return 2500;
 	}
 
 	//This is how many ticks it takes for a young mob to become an adult
@@ -302,7 +307,7 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 			{
 				//Random sound animations
 				if (this.getAnimation() == NO_ANIMATION) {
-					if(next > 7) {
+					if (next > 7) {
 						this.setAnimation(NOISE_ANIMATION);
 					} else {
 						this.setAnimation(ROAR_ANIMATION);
@@ -317,20 +322,20 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			int num = rand.nextInt(10);
 			System.out.println(num);
-			if(num >=0 && num < 5) {
+			if (num >=0 && num < 5) {
 				this.setAnimation(STAND_ANIMATION);
 			} else {
 				this.setAnimation(PREEN_ANIMATION);
 			}
-			this.standCooldown = 1500;
+			this.standCooldown = 2000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
 		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 1500;
+			this.standCooldown = 2000;
 			this.setAnimation(NO_ANIMATION);
 		}
 		if ((!this.world.isRemote) && this.getAnimation() == PREEN_ANIMATION && this.getAnimationTick() == PREEN_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 1500;
+			this.standCooldown = 2000;
 			this.setAnimation(NO_ANIMATION);
 		}
 

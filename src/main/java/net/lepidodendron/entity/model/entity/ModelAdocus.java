@@ -2273,10 +2273,20 @@ public class ModelAdocus extends ModelBasePalaeopedia {
         this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(xx), neck.rotateAngleY + (float) Math.toRadians(yy), neck.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 480) {
-            xx = 0 + (((tickAnim - 0) / 480) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 480) * (0-(0)));
-            zz = -0.75 + (((tickAnim - 0) / 480) * (-0.75-(-0.75)));
+        if (tickAnim >= 0 && tickAnim < 438) {
+            xx = 0 + (((tickAnim - 0) / 438) * (0-(0)));
+            yy = -0.5 + (((tickAnim - 0) / 438) * (-0.49-(-0.5)));
+            zz = -0.275 + (((tickAnim - 0) / 438) * (-0.36-(-0.275)));
+        }
+        else if (tickAnim >= 438 && tickAnim < 474) {
+            xx = 0 + (((tickAnim - 438) / 36) * (0-(0)));
+            yy = -0.49 + (((tickAnim - 438) / 36) * (-0.335-(-0.49)));
+            zz = -0.36 + (((tickAnim - 438) / 36) * (-0.25-(-0.36)));
+        }
+        else if (tickAnim >= 474 && tickAnim < 480) {
+            xx = 0 + (((tickAnim - 474) / 6) * (0-(0)));
+            yy = -0.335 + (((tickAnim - 474) / 6) * (-0.5-(-0.335)));
+            zz = -0.25 + (((tickAnim - 474) / 6) * (-0.275-(-0.25)));
         }
         else {
             xx = 0;

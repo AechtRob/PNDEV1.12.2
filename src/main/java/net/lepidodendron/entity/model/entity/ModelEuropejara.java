@@ -803,6 +803,7 @@ public class ModelEuropejara extends ModelBasePalaeopedia {
         this.root.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         resetToDefaultPose();
     }
@@ -831,10 +832,10 @@ public class ModelEuropejara extends ModelBasePalaeopedia {
         //Animations:
 
         if (flier.isReallyFlying()) { //flying
-            this.faceTarget(f3, f4, 8, neck1);
-            this.faceTarget(f3, f4, 8, neck2);
-            this.faceTarget(f3, f4, 8, neck3);
-            this.faceTarget(f3, f4, 4, head);
+            this.faceTarget(f3, f4, 14, neck1);
+            this.faceTarget(f3, f4, 14, neck2);
+            this.faceTarget(f3, f4, 14, neck3);
+            this.faceTarget(f3, f4, 7, head);
 
         }
         else { //not flying

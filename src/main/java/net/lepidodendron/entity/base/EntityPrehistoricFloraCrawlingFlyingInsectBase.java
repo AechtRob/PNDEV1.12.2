@@ -546,6 +546,7 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
                 entityToSpawn.setPickupDelay(10);
                 this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                 world.spawnEntity(entityToSpawn);
+                this.setLaying(false);
             }
             this.setTicks(0);
         }

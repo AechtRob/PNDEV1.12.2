@@ -22,6 +22,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -46,10 +47,14 @@ public class EntityPrehistoricFloraCyclobatis extends EntityPrehistoricFloraSwim
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 4.0D;
+		maxHealthAgeable = 2.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	public static String getHabitat() {
+		return I18n.translateToLocal("helper.pf_aquatic.name");
 	}
 
 	@Override
@@ -66,7 +71,21 @@ public class EntityPrehistoricFloraCyclobatis extends EntityPrehistoricFloraSwim
 
 	public void onEntityUpdate() {
 
+		int i = this.getAir();
 		super.onEntityUpdate();
+
+		if (this.isEntityAlive() && !isInWater()) {
+			--i;
+			this.setAir(i);
+
+			if (this.getAir() == -20) {
+				this.setAir(0);
+				this.attackEntityFrom(DamageSource.DROWN, 2.0F);
+			}
+		} else {
+			this.setAir(300);
+		}
+
 		if (!world.isRemote) {
 
 			if (!this.isReallyInWater()) {

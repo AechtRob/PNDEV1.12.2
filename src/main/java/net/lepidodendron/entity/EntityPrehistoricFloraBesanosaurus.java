@@ -47,6 +47,11 @@ public class EntityPrehistoricFloraBesanosaurus extends EntityPrehistoricFloraAg
 		maxHealthAgeable = 70.0D;
 	}
 
+	@Override
+	public float getEyeHeight() {
+		return this.height * 1.25F;
+	}
+
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox()
 	{
