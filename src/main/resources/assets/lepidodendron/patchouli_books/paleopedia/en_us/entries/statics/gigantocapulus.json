@@ -1,7 +1,7 @@
 {
 	"name": "Gigantocapulus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/gigantocapulus_icon.png",
+	"icon": "lepidodendron:textures/items/bivalve_inoceramus_inventory.png",
 	"category": "lepidodendron:statics",
 	"turnin": "lepidodendron:pf_adv_book_bivalve_inoceramus_gigantocapulus",
 	"pages": [

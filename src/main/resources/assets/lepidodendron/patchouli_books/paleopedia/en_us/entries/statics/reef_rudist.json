@@ -1,7 +1,7 @@
 {
 	"name": "Rudist Reef",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/reef_rudist_icon.png",
+	"icon": "lepidodendron:reef_rudist",
 	"category": "lepidodendron:statics",
 	"turnin": "lepidodendron:pf_adv_book_reef_rudist",
 	"pages": [
