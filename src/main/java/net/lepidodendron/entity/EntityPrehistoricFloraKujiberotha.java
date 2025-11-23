@@ -273,9 +273,9 @@ public class EntityPrehistoricFloraKujiberotha extends EntityPrehistoricFloraIns
 	//-------------------
 	//Taxidermy:
 	public static double offsetCase(@Nullable String variant) {
-		return 0.32F;
+		return 0.25F;
 	}
-	public static double offsetCaseMagnified(@Nullable String variant) { return 1.152; }
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.0; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.0;
 	}
@@ -324,7 +324,7 @@ public class EntityPrehistoricFloraKujiberotha extends EntityPrehistoricFloraIns
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.012F;}
 	public static float getScalerMagnified(@Nullable String variant) {
-		return RenderKujiberotha.getScaler() * 2.5F;
+		return RenderKujiberotha.getScaler() * 4.0F;
 	}
 
 }

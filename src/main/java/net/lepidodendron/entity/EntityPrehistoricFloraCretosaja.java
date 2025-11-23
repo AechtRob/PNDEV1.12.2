@@ -337,9 +337,9 @@ public class EntityPrehistoricFloraCretosaja extends EntityPrehistoricFloraLandC
 	//-------------------
 	//Taxidermy:
 	public static double offsetCase(@Nullable String variant) {
-		return 0.32F;
+		return 0.27F;
 	}
-	public static double offsetCaseMagnified(@Nullable String variant) { return 1.152; }
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.31; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.0;
 	}
@@ -388,7 +388,7 @@ public class EntityPrehistoricFloraCretosaja extends EntityPrehistoricFloraLandC
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.012F;}
 	public static float getScalerMagnified(@Nullable String variant) {
-		return RenderCretosaja.getScaler() * 2.5F;
+		return RenderCretosaja.getScaler() * 5.0F;
 	}
 
 }

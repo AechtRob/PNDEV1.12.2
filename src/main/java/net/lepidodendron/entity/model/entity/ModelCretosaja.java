@@ -232,11 +232,14 @@ public class ModelCretosaja extends ModelBasePalaeopedia {
         modelRenderer.rotateAngleY = y;
         modelRenderer.rotateAngleZ = z;
     }
+
     public void renderStaticWall(float f) {
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 1.0F, 0.0F, 0.0F);
+        this.body.offsetY = -0.25F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.body.render(0.01F);
         resetToDefaultPose();

@@ -133,7 +133,7 @@ public class EntityPrehistoricFloraDamselfly extends EntityPrehistoricFloraMegan
 	public static double offsetCase(@Nullable String variant) {
 		return 0.30F;
 	}
-	public static double offsetCaseMagnified(@Nullable String variant) { return 1.152; }
+	public static double offsetCaseMagnified(@Nullable String variant) { return 0.87; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.0;
 	}

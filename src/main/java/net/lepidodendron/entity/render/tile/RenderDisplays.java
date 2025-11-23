@@ -11,6 +11,7 @@ public class RenderDisplays {
     public static final ModelVelocipede modelVelocipede = new ModelVelocipede();
     public static final ModelFulmenocursor modelFulmenocursor = new ModelFulmenocursor();
     public static final ModelDevonobius modelDevonobius = new ModelDevonobius();
+    public static final ModelBorealopelta modelBorealopelta = new ModelBorealopelta();
     public static final ModelJuliform modelJuliform = new ModelJuliform();
     public static final ModelPolydesmid modelPolydesmid = new ModelPolydesmid();
     public static final ModelStonefly modelStonefly = new ModelStonefly();
