@@ -13,6 +13,7 @@ public class RenderDisplays {
     public static final ModelDevonobius modelDevonobius = new ModelDevonobius();
     public static final ModelBorealopelta modelBorealopelta = new ModelBorealopelta();
     public static final ModelJuliform modelJuliform = new ModelJuliform();
+    public static final ModelVesperopterylus modelVesperopterylus = new ModelVesperopterylus();
     public static final ModelPolydesmid modelPolydesmid = new ModelPolydesmid();
     public static final ModelStonefly modelStonefly = new ModelStonefly();
     public static final ModelMayfly modelMayfly = new ModelMayfly();

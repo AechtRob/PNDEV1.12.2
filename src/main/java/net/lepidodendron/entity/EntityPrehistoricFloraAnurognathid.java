@@ -759,6 +759,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 			case SINOMACROPS:
 				return 0.01;
+				
 			case VESPEROPTERYLUS:
 				return 0.01;
 
@@ -825,6 +826,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 			case SINOMACROPS:
 				return RenderAnurognathid.TEXTURE_SINOMACROPS;
+
 			case VESPEROPTERYLUS:
 				return RenderAnurognathid.TEXTURE_VESPEROPTERYLUS;
 
@@ -852,6 +854,9 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 			case SINOMACROPS:
 				return RenderDisplays.modelSinomacrops;
+
+			case VESPEROPTERYLUS:
+				return RenderDisplays.modelVesperopterylus;
 
 		}
 	}
