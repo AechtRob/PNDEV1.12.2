@@ -270,7 +270,7 @@ public class ModelHelenodora extends ModelBasePalaeopedia {
         this.setRotateAngle(body8, 0.0F, -0.15F, 0.0F);
         this.setRotateAngle(body9, 0.0F, 0.15F, 0.0F);
         this.setRotateAngle(body10, 0.0F, 0.15F, 0.0F);
-        this.body5.offsetZ = -0.080F;
+        this.body5.offsetZ = -0.030F;
         this.body5.render(0.01f);
         resetToDefaultPose();
     }

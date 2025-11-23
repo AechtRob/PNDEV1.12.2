@@ -432,6 +432,8 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 
 		}
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.76; }
+
 	public static double offsetWall(@Nullable String variant) {
 		switch (EntityPrehistoricFloraMegasecoptera.Type.getTypeFromString(variant)) {
 			case SYLVOHYMEN:
@@ -508,6 +510,9 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 		return RenderMegasecoptera.getScaler(EntityPrehistoricFloraMegasecoptera.Type.getTypeFromString(variant));
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.012F;}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return  RenderMegasecoptera.getScaler(EntityPrehistoricFloraMegasecoptera.Type.getTypeFromString(variant)) * 4.0F;
+	}
 
 	
 }

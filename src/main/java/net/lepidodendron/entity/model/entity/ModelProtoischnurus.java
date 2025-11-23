@@ -348,7 +348,7 @@ public class ModelProtoischnurus extends ModelBasePalaeopedia {
     }
 
     public void renderStaticDisplayCase(float f) {
-        this.Protoischnurus.offsetZ = -0.080F;
+        this.Protoischnurus.offsetZ = -0.020F;
         this.Protoischnurus.render(0.01f);
         resetToDefaultPose();
     }

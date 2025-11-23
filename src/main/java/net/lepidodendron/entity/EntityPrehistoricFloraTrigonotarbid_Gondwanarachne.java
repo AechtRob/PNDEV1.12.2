@@ -205,6 +205,7 @@ public class EntityPrehistoricFloraTrigonotarbid_Gondwanarachne extends EntityPr
 	//-------------------
 	//Taxidermy:
 	public static double offsetWall(@Nullable String variant) {return 0.075;}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.29; }
 	public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.59;}
 	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}
 	public static double upperfrontlineoffset(@Nullable String variant) {return 0.02;}
@@ -218,6 +219,9 @@ public class EntityPrehistoricFloraTrigonotarbid_Gondwanarachne extends EntityPr
 	public static double lowerbacklineoffset(@Nullable String variant) {return -0.0;}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0F;}
 	public static float widthSupport(@Nullable String variant) {return 0.02F;}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderTrigonotarbid_Gondwanarachne.getScaler() * 5.0F;
+	}
 	//-------------------
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;

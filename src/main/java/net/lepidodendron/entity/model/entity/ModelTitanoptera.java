@@ -159,7 +159,7 @@ public class ModelTitanoptera extends ModelBasePalaeopedia {
     }
 
     public void renderStaticDisplayCase(float f) {
-        this.body.offsetZ = -0.080F;
+        this.body.offsetZ = 0.030F;
         this.setRotateAngle(forelegR, (float) Math.toRadians(40), -(float) Math.toRadians(20), 0.0F);
         this.setRotateAngle(forelegR2, -(float) Math.toRadians(75), 0.0F, 0.0F);
         this.setRotateAngle(forelegL, (float) Math.toRadians(40), (float) Math.toRadians(20), 0.0F);

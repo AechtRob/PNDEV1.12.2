@@ -209,6 +209,7 @@ public class ModelCrussolum extends ModelBasePalaeopedia {
     public void renderStaticFloor(float f) {
         this.resetToDefaultPose();
     }
+
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
@@ -230,6 +231,12 @@ public class ModelCrussolum extends ModelBasePalaeopedia {
         this.body.scaleChildren = false;
         resetToDefaultPose();
 
+    }
+
+    public void renderStaticDisplayCase(float f) {
+        //this.body.offsetZ = -0.080F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

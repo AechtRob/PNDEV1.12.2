@@ -886,7 +886,7 @@ public class ModelPolydesmid extends ModelBasePalaeopedia {
     }
 
     public void renderStaticDisplayCase(float f) {
-        this.millipede.offsetZ = -0.080F;
+        //this.millipede.offsetZ = -0.080F;
         this.millipede.render(0.01f);
         resetToDefaultPose();
     }

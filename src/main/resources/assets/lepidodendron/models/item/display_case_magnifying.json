@@ -1,5 +1,5 @@
 {
-  "parent": "lepidodendron:block/display_case_magnifying",
+  "parent": "lepidodendron:block/display_case_magnifying_inventory",
   "display": {
     "thirdperson": {
       "rotation": [

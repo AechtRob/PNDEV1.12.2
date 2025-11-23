@@ -150,6 +150,7 @@ public class ModelDragonfly extends ModelBasePalaeopedia {
 
     public void renderStaticDisplayCase(float f) {
         this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.body.offsetZ = 0.035F;
         this.body.offsetY = -0.05F;
         this.body.render(0.01f);
         resetToDefaultPose();

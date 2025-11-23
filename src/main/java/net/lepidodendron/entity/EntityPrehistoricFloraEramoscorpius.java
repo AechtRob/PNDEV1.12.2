@@ -211,6 +211,7 @@ public class EntityPrehistoricFloraEramoscorpius extends EntityPrehistoricFloraW
 	public static double offsetCase(@Nullable String variant) {
 		return 0.2;
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 0.51; }
 	public static double offsetWall(@Nullable String variant) {
 		return -1.36;
 	}
@@ -258,6 +259,9 @@ public class EntityPrehistoricFloraEramoscorpius extends EntityPrehistoricFloraW
 	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelEramoscorpius;}
 	public static float getScaler(@Nullable String variant) {
 		return RenderEramoscorpius.getScaler();
+	}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderEramoscorpius.getScaler() * 2.5F;
 	}
 
 	@Override

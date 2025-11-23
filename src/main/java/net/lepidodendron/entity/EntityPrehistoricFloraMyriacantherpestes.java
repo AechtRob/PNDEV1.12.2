@@ -293,6 +293,7 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 	public static double offsetCase(@Nullable String variant) {
 		return 0.50F;
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.47; }
 	public static double offsetWall(@Nullable String variant) {
 		return -0.3;
 	}
@@ -341,5 +342,8 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 		return RenderDisplays.modelMyriacantherpestes;
 	}
 	public static float getScaler(@Nullable String variant) {return RenderMyriacantherpestes.getScaler();}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderMyriacantherpestes.getScaler() * 3.0F;
+	}
 
 }

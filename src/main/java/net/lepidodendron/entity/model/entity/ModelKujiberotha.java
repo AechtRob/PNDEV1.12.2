@@ -186,6 +186,12 @@ public class ModelKujiberotha extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    public void renderStaticDisplayCase(float f) {
+        //this.body.offsetZ = -0.080F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
+
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:

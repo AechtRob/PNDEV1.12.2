@@ -184,6 +184,7 @@ public class EntityPrehistoricFloraScorpion_Pulmonoscorpius extends EntityPrehis
 	public static double offsetCase(@Nullable String variant) {
 		return 0.410;
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 0.65; }
 	//-------------------
 
 
@@ -193,7 +194,7 @@ public class EntityPrehistoricFloraScorpion_Pulmonoscorpius extends EntityPrehis
 		return 0.075;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 1.4;
+		return 1.5;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 0.8;
@@ -227,6 +228,9 @@ public class EntityPrehistoricFloraScorpion_Pulmonoscorpius extends EntityPrehis
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0F;
+	}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderScorpion_Pulmonoscorpius.getScaler() * 1.5F;
 	}
 	//-------------------
 

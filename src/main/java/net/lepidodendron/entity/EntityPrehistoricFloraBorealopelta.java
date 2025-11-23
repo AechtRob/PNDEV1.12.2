@@ -395,7 +395,7 @@ public class EntityPrehistoricFloraBorealopelta extends EntityPrehistoricFloraLa
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_MYMOORAPELTA;
+		return ModTriggers.CLICK_BOREALOPELTA;
 	}
 
 	//Rendering taxidermy:

@@ -18,8 +18,6 @@ public class RenderTitanoptera extends RenderLivingBaseWithBook<EntityPrehistori
         this.addLayer(new LayerTitanopteraWing(this));
     }
 
-    public static float getScaler() {return 0.180f;}
-
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraTitanoptera entity) {
         switch (entity.getPNType()) {
@@ -42,25 +40,22 @@ public class RenderTitanoptera extends RenderLivingBaseWithBook<EntityPrehistori
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraTitanoptera entity, float f) {
-        float scaler = this.getScaler();
-        switch (entity.getPNType()) {
-            case CLATROTITAN: default:
-                scaler = 0.255F;
-                break;
+        float scale = 1.0F * getScaler(entity.getPNType());;
+        GlStateManager.scale(scale, scale, scale);
+    }
+
+    public static float getScaler(EntityPrehistoricFloraTitanoptera.Type variant) {
+        switch (variant) {
+            case CLATROTITAN:
+            default:
+                return 0.255F;
 
             case GIGATITAN:
-                scaler = 0.280F;
-                break;
+                return 0.280F;
 
             case MESOTITAN:
-                scaler = 0.270F;
-                break;
+                return 0.270F;
         }
-        float scale = 1.0F * scaler;
-//        if (entity.world.getBlockState(entity.getPosition()).getBlock() == BlockGlassJar.block) {
-//            scale = Math.min() 0.8F * scaler;
-//        }
-        GlStateManager.scale(scale, scale, scale);
     }
 
 }

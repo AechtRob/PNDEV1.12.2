@@ -223,6 +223,7 @@ public class EntityPrehistoricFloraTrigonotarbid_Kreischeria extends EntityPrehi
 	public static double offsetCase(@Nullable String variant) {
 		return 0.50F;
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.29; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.0;
 	}
@@ -270,6 +271,9 @@ public class EntityPrehistoricFloraTrigonotarbid_Kreischeria extends EntityPrehi
 		return RenderTrigonotarbid_Kreischeria.getScaler();
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.012F;}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderTrigonotarbid_Kreischeria.getScaler() * 5.0F;
+	}
 
 	@Nullable
 	@Override

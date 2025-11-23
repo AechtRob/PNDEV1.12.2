@@ -96,7 +96,7 @@ public class BlockDisplayCaseMagnifying extends ElementsLepidodendronMod.ModElem
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Place Taxidermy kits into the display");
+				tooltip.add("Place bugs into the display. Also can display an item.");
 				super.addInformation(stack, player, tooltip, advanced);
 			}
 		}
@@ -104,22 +104,22 @@ public class BlockDisplayCaseMagnifying extends ElementsLepidodendronMod.ModElem
 		@Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
 			if (state.getValue(FACING) == EnumFacing.UP) {
-				return new AxisAlignedBB(0, 0, 0, 1, 0.1875, 1);
+				return new AxisAlignedBB(0, 0, 0, 1, 0.3, 1);
 			}
 			if (state.getValue(FACING) == EnumFacing.DOWN) {
-				return new AxisAlignedBB(0, 0.8125, 0, 1, 1, 1);
+				return new AxisAlignedBB(0, 0.7, 0, 1, 1, 1);
 			}
 			if (state.getValue(FACING) == EnumFacing.NORTH) {
-				return new AxisAlignedBB(0, 0, 0.8125, 1, 1, 1);
+				return new AxisAlignedBB(0, 0, 0.7, 1, 1, 1);
 			}
 			if (state.getValue(FACING) == EnumFacing.SOUTH) {
-				return new AxisAlignedBB(0, 0, 0, 1, 1, 0.1875);
+				return new AxisAlignedBB(0, 0, 0, 1, 1, 0.3);
 			}
 			if (state.getValue(FACING) == EnumFacing.EAST) {
-				return new AxisAlignedBB(0, 0, 0, 0.1875, 1, 1);
+				return new AxisAlignedBB(0, 0, 0, 0.3, 1, 1);
 			}
 			else { //WEST
-				return new AxisAlignedBB(0.8125, 0, 0, 1, 1, 1);
+				return new AxisAlignedBB(0.7, 0, 0, 1, 1, 1);
 			}
 		}
 

@@ -363,7 +363,7 @@ public class ModelDevonobius extends ModelBasePalaeopedia {
     }
 
     public void renderStaticDisplayCase(float f) {
-        this.body1.offsetZ = -0.080F;
+        //this.body1.offsetZ = -0.080F;
         this.body1.render(0.01f);
         resetToDefaultPose();
     }

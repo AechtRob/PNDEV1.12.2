@@ -55,13 +55,13 @@ public class ItemProtoischnurusRaw extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public String getMobStr() {
-			return "lepidodendron:prehistoric_flora_myriapod";
+			return "lepidodendron:prehistoric_flora_protoischnurus";
 		}
 
 		@Nullable
 		@Override
 		public String getVariantStr() {
-			return "protoischnurus";
+			return null;
 		}
 	}
 }

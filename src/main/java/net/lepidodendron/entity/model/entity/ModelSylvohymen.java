@@ -158,7 +158,7 @@ public class ModelSylvohymen extends ModelBasePalaeopedia {
     }
 
     public void renderStaticDisplayCase(float f) {
-        this.body.offsetZ = -0.080F;
+        this.body.offsetZ = -0.020F;
         this.body.render(0.01f);
         resetToDefaultPose();
     }

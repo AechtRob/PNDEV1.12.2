@@ -97,7 +97,7 @@ public class BlockDisplayCase extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Place bugs into the display");
+				tooltip.add("Place bugs into the display. Also can display an item.");
 				super.addInformation(stack, player, tooltip, advanced);
 			}
 		}

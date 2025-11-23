@@ -253,6 +253,7 @@ public class EntityPrehistoricFloraProtozygoptera extends EntityPrehistoricFlora
 	public static double offsetCase(@Nullable String variant) {
 		return 0.32F;
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.152; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.0;
 	}
@@ -304,5 +305,8 @@ public class EntityPrehistoricFloraProtozygoptera extends EntityPrehistoricFlora
 		return RenderProtozygoptera.getScaler();
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.012F;}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderProtozygoptera.getScaler() * 4.0F;
+	}
 	
 }

@@ -184,6 +184,7 @@ public class EntityPrehistoricFloraScorpion_Opsieobuthus extends EntityPrehistor
 	public static double offsetCase(@Nullable String variant) {
 		return 0.185;
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 0.45; }
 	//-------------------
 
 
@@ -227,6 +228,9 @@ public class EntityPrehistoricFloraScorpion_Opsieobuthus extends EntityPrehistor
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0F;
+	}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderScorpion_Opsieobuthus.getScaler() * 2.5F;
 	}
 	//-------------------
 

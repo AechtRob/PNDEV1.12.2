@@ -113,7 +113,7 @@ public class ModelPalaeontinid extends ModelBasePalaeopedia {
 
 
     public void renderStaticDisplayCase(float f) {
-        this.body.offsetZ = -0.080F;
+        //this.body.offsetZ = -0.080F;
         this.setRotateAngle(hindwingR, 0.0F, (float)Math.toRadians(30), -(float)Math.toRadians(20));
         this.setRotateAngle(forewingR, 0.0F, (float)Math.toRadians(15), (float)Math.toRadians(20));
         this.setRotateAngle(forewingL, 0.0F, -(float)Math.toRadians(15), -(float)Math.toRadians(20));

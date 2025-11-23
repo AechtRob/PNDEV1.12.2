@@ -134,6 +134,7 @@ public class EntityPrehistoricFloraErasipteroides extends EntityPrehistoricFlora
 	//Taxidermy:
 
 	public static double offsetWall(@Nullable String variant) {return 0.075;}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.28; }
 	public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.59;}
 	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}
 	public static double upperfrontlineoffset(@Nullable String variant) {return 0.02;}
@@ -147,5 +148,8 @@ public class EntityPrehistoricFloraErasipteroides extends EntityPrehistoricFlora
 	public static double lowerbacklineoffset(@Nullable String variant) {return -0.0;}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0F;}
 	public static float widthSupport(@Nullable String variant) {return 0.02F;}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderErasipteroides.getScaler() * 3.5F;
+	}
 	//-------------------
 }

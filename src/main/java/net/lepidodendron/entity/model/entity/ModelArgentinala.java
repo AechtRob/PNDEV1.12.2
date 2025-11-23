@@ -178,11 +178,13 @@ public class ModelArgentinala extends ModelBasePalaeopedia {
         this.body.render(0.01f);
         resetToDefaultPose();
     }
+
     public void renderStaticDisplayCase(float f) {
-        this.body.offsetZ = -0.080F;
+        //this.body.offsetZ = -0.080F;
         this.body.render(0.01f);
         resetToDefaultPose();
     }
+
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);

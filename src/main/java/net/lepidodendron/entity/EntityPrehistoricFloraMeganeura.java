@@ -126,6 +126,7 @@ public class EntityPrehistoricFloraMeganeura extends EntityPrehistoricFloraMegan
 	public static double offsetCase(@Nullable String variant) {
 		return 0.385;
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 0.57; }
 	//-------------------
 
 
@@ -171,6 +172,9 @@ public class EntityPrehistoricFloraMeganeura extends EntityPrehistoricFloraMegan
 		return 0F;
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.016F;}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderMeganeura.getScaler() * 1.5F;
+	}
 	//-------------------
 
 }

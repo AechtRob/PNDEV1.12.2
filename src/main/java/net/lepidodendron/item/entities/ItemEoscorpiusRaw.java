@@ -55,13 +55,13 @@ public class ItemEoscorpiusRaw extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public String getMobStr() {
-			return "lepidodendron:prehistoric_flora_myriapod";
+			return "lepidodendron:prehistoric_flora_eoscorpius";
 		}
 
 		@Nullable
 		@Override
 		public String getVariantStr() {
-			return "eoscorpius";
+			return null;
 		}
 	}
 }

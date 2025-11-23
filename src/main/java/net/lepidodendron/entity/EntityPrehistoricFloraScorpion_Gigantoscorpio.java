@@ -182,6 +182,7 @@ public class EntityPrehistoricFloraScorpion_Gigantoscorpio extends EntityPrehist
 	public static double offsetCase(@Nullable String variant) {
 		return 0.305;
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 0.55; }
 	//-------------------
 
 
@@ -225,6 +226,9 @@ public class EntityPrehistoricFloraScorpion_Gigantoscorpio extends EntityPrehist
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0F;
+	}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderScorpion_Gigantoscorpio.getScaler() * 2.0F;
 	}
 	//-------------------
 

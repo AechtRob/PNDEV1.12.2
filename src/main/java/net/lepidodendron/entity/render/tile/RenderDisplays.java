@@ -5,7 +5,27 @@ import net.lepidodendron.entity.model.entity.*;
 public class RenderDisplays {
 
     public static final ModelAcanthodes modelAcanthodes = new ModelAcanthodes();
+    public static final ModelProtoischnurus modelProtoischnurus = new ModelProtoischnurus();
+    public static final ModelLatzelia modelLatzelia = new ModelLatzelia();
+    public static final ModelCrussolum modelCrussolum = new ModelCrussolum();
+    public static final ModelVelocipede modelVelocipede = new ModelVelocipede();
+    public static final ModelFulmenocursor modelFulmenocursor = new ModelFulmenocursor();
+    public static final ModelDevonobius modelDevonobius = new ModelDevonobius();
+    public static final ModelJuliform modelJuliform = new ModelJuliform();
+    public static final ModelPolydesmid modelPolydesmid = new ModelPolydesmid();
+    public static final ModelStonefly modelStonefly = new ModelStonefly();
+    public static final ModelMayfly modelMayfly = new ModelMayfly();
+    public static final ModelCretosaja modelCretosaja = new ModelCretosaja();
+    public static final ModelKujiberotha modelKujiberotha = new ModelKujiberotha();
+    public static final ModelDamselfly modelDamselfly = new ModelDamselfly();
+    public static final ModelVelisoptera modelVelisoptera = new ModelVelisoptera();
+    public static final ModelArgentinala modelArgentinala = new ModelArgentinala();
+    public static final ModelHangingfly modelHangingfly = new ModelHangingfly();
+    public static final ModelFortiholcorpa modelFortiholcorpa = new ModelFortiholcorpa();
+    public static final ModelJuracimbrophlebia modelJuracimbrophlebia = new ModelJuracimbrophlebia();
+    public static final ModelEoscorpius modelEoscorpius = new ModelEoscorpius();
     public static final ModelAcanthostega modelAcanthostega = new ModelAcanthostega();
+    public static final ModelSantanmantis modelSantanmantis = new ModelSantanmantis();
     public static final ModelAcanthostomatops modelAcanthostomatops = new ModelAcanthostomatops();
     public static final ModelAcrolepis modelAcrolepis = new ModelAcrolepis();
     public static final ModelAcutiramus modelAcutiramus = new ModelAcutiramus();
@@ -679,6 +699,7 @@ public class RenderDisplays {
     public static final ModelParexus modelParexus = new ModelParexus();
     public static final ModelParhybodus modelParhybodus = new ModelParhybodus();
     public static final ModelParioscorpio modelParioscorpio = new ModelParioscorpio();
+    public static final ModelScorpionfly modelScorpionfly = new ModelScorpionfly();
     public static final ModelParmastega modelParmastega = new ModelParmastega();
     public static final ModelParnaibaia modelParnaibaia = new ModelParnaibaia();
     public static final ModelParvancorina modelParvancorina = new ModelParvancorina();

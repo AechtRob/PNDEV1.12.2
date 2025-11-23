@@ -631,6 +631,37 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetCaseMagnified(@Nullable String variant) { switch (EntityPrehistoricFloraMyriapod.Type.getTypeFromString(variant)) {
+		case PNEUMODESMUS:
+		default:
+			return 1.05;
+
+		case EOARTHROPLEURA:
+			return 1.55;
+
+		case LATZELIA:
+			return 0.58;
+
+		case CRUSSOLUM:
+			return 0.72;
+
+		case VELOCIPEDE:
+			return 0.74;
+
+		case FULMENOCURSOR:
+			return 0.74;
+
+		case DEVONOBIUS:
+			return 1.15;
+
+		case JULIFORM:
+			return 0.85;
+
+		case POLYDESMID:
+			return 0.86;
+
+	}}
+
 	public static double offsetCase(@Nullable String variant) {
 		switch (EntityPrehistoricFloraMyriapod.Type.getTypeFromString(variant)) {
 			case PNEUMODESMUS:
@@ -640,8 +671,30 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 			case EOARTHROPLEURA:
 				return 0.40;
 
+			case LATZELIA:
+				return 0.20;
+
+			case CRUSSOLUM:
+				return 0.24;
+
+			case VELOCIPEDE:
+				return 0.25;
+
+			case FULMENOCURSOR:
+				return 0.40;
+
+			case DEVONOBIUS:
+				return 0.40;
+
+			case JULIFORM:
+				return 0.30;
+
+			case POLYDESMID:
+				return 0.29;
+
 		}
 	}
+
 	public static double offsetWall(@Nullable String variant) {
 		switch (EntityPrehistoricFloraMyriapod.Type.getTypeFromString(variant)) {
 			case PNEUMODESMUS:
@@ -651,8 +704,30 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 			case EOARTHROPLEURA:
 				return 0.0;
 
+			case LATZELIA:
+				return 0.0;
+
+			case CRUSSOLUM:
+				return 0.0;
+
+			case VELOCIPEDE:
+				return 0.0;
+
+			case FULMENOCURSOR:
+				return 0.0;
+
+			case DEVONOBIUS:
+				return 0.0;
+
+			case JULIFORM:
+				return 0.0;
+
+			case POLYDESMID:
+				return 0.0;
+
 		}
 	}
+
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 0.0;
 	}
@@ -699,6 +774,27 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 			case EOARTHROPLEURA:
 				return RenderMyriapod.TEXTURE_EOARTHROPLEURA;
 
+			case LATZELIA:
+				return RenderMyriapod.TEXTURE_LATZELIA;
+
+			case CRUSSOLUM:
+				return RenderMyriapod.TEXTURE_CRUSSOLUM;
+
+			case VELOCIPEDE:
+				return RenderMyriapod.TEXTURE_VELOCIPEDE;
+
+			case FULMENOCURSOR:
+				return RenderMyriapod.TEXTURE_FULMENOCURSOR;
+
+			case DEVONOBIUS:
+				return RenderMyriapod.TEXTURE_DEVONOBIUS;
+
+			case JULIFORM:
+				return RenderMyriapod.TEXTURE_JULIFORM;
+
+			case POLYDESMID:
+				return RenderMyriapod.TEXTURE_POLYDESMID;
+
 		}
 	}
 	@SideOnly(Side.CLIENT)
@@ -711,6 +807,27 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 			case EOARTHROPLEURA:
 				return RenderDisplays.modelEoarthropleura;
 
+			case LATZELIA:
+				return RenderDisplays.modelLatzelia;
+
+			case CRUSSOLUM:
+				return RenderDisplays.modelCrussolum;
+
+			case VELOCIPEDE:
+				return RenderDisplays.modelVelocipede;
+
+			case FULMENOCURSOR:
+				return RenderDisplays.modelFulmenocursor;
+
+			case DEVONOBIUS:
+				return RenderDisplays.modelDevonobius;
+
+			case JULIFORM:
+				return RenderDisplays.modelJuliform;
+
+			case POLYDESMID:
+				return RenderDisplays.modelPolydesmid;
+
 		}
 	}
 	public static float getScaler(@Nullable String variant) {
@@ -718,5 +835,8 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.012F;}
 
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderMyriapod.getScaler(EntityPrehistoricFloraMyriapod.Type.getTypeFromString(variant)) * 3.0F;
+	}
 
 }

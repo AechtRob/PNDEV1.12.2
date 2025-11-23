@@ -331,6 +331,7 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetCaseMagnified(@Nullable String variant) { return -0.05; }
 	public static double offsetCase(@Nullable String variant) {
 		switch (EntityPrehistoricFloraKalligrammatid.Type.getTypeFromString(variant)) {
 			case KALLIGRAMMA: default:
@@ -503,6 +504,10 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 
 	public static float getScaler(@Nullable String variant) {
 		return RenderKalligrammatid.getScaler(EntityPrehistoricFloraKalligrammatid.Type.getTypeFromString(variant));
+	}
+
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderKalligrammatid.getScaler(EntityPrehistoricFloraKalligrammatid.Type.getTypeFromString(variant)) * 3.0F;
 	}
 
 	@Override

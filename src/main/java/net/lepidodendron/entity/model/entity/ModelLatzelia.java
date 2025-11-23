@@ -358,6 +358,12 @@ public class ModelLatzelia extends ModelBasePalaeopedia {
 
     }
 
+    public void renderStaticDisplayCase(float f) {
+        this.body.offsetZ = -0.020F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

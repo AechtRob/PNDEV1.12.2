@@ -243,6 +243,7 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 	public static double offsetCase(@Nullable String variant) {
 		return 0.32F;
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.15; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.0;
 	}
@@ -290,5 +291,8 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 		return RenderArchoblattina.getScaler();
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.012F;}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderArchoblattina.getScaler() * 3.5F;
+	}
 
 }

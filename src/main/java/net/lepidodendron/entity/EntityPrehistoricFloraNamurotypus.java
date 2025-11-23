@@ -130,6 +130,7 @@ public class EntityPrehistoricFloraNamurotypus extends EntityPrehistoricFloraMeg
 		//-------------------
 		//Taxidermy:
 		public static double offsetWall(@Nullable String variant) {return 0.075;}
+		public static double offsetCaseMagnified(@Nullable String variant) { return 0.93; }
 		public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.59;}
 		public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}
 		public static double upperfrontlineoffset(@Nullable String variant) {return 0.02;}
@@ -142,6 +143,9 @@ public class EntityPrehistoricFloraNamurotypus extends EntityPrehistoricFloraMeg
 		public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return -0.6F;}
 		public static double lowerbacklineoffset(@Nullable String variant) {return -0.0;}
 		public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0F;}
-	public static float widthSupport(@Nullable String variant) {return 0.02F;}
+		public static float widthSupport(@Nullable String variant) {return 0.02F;}
+		public static float getScalerMagnified(@Nullable String variant) {
+			return RenderNamurotypus.getScaler() * 2.5F;
+		}
 		//-------------------
 	}

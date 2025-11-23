@@ -189,6 +189,7 @@ public class EntityPrehistoricFloraIdmonarachne extends EntityPrehistoricFloraLa
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetCase(@Nullable String variant) {return 0.2;}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.22; }
 	public static double offsetWall(@Nullable String variant) {return -0.45;}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.0;}
 	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}
@@ -207,6 +208,9 @@ public class EntityPrehistoricFloraIdmonarachne extends EntityPrehistoricFloraLa
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelIdmonarachne;}
 	public static float getScaler(@Nullable String variant) {return RenderIdmonarachne.getScaler();}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderIdmonarachne.getScaler() * 7.0F;
+	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 

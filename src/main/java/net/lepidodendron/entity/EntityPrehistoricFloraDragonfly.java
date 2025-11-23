@@ -551,6 +551,7 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.14; }
 	public static double offsetCase(@Nullable String variant) {
 		switch (EntityPrehistoricFloraDragonfly.Type.getTypeFromString(variant)) {
 			case DRAGONFLY1: default:
@@ -765,5 +766,8 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 
 	public static float getScaler(@Nullable String variant) {
 		return RenderDragonfly.getScaler(EntityPrehistoricFloraDragonfly.Type.getTypeFromString(variant));
+	}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderDragonfly.getScaler(EntityPrehistoricFloraDragonfly.Type.getTypeFromString(variant)) * 3.5F;
 	}
 }

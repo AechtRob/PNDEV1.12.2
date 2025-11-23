@@ -128,6 +128,7 @@ public class EntityPrehistoricFloraRoachoidAridInsect extends EntityPrehistoricF
 	public static double offsetCase(@Nullable String variant) {
 		return 0.25F;
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.05; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.0;
 	}
@@ -175,5 +176,8 @@ public class EntityPrehistoricFloraRoachoidAridInsect extends EntityPrehistoricF
 		return RenderRoachoidArid.getScaler();
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.012F;}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderRoachoidArid.getScaler() * 4.0F;
+	}
 
 }

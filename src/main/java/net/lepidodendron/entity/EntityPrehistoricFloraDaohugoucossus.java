@@ -207,6 +207,7 @@ public class EntityPrehistoricFloraDaohugoucossus extends EntityPrehistoricFlora
 	public static double offsetCase(@Nullable String variant) {
 		return 0.295F;
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.16; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.0;
 	}
@@ -254,5 +255,8 @@ public class EntityPrehistoricFloraDaohugoucossus extends EntityPrehistoricFlora
 		return RenderDaohugoucossus.getScaler();
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.012F;}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderDaohugoucossus.getScaler() * 4.0F;
+	}
 
 }

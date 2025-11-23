@@ -260,6 +260,7 @@ public class ModelPalaeodictyopteraMedium extends ModelBasePalaeopedia {
         this.setRotateAngle(hindwingL, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(hindwingR, 0.0F, 0.0F, 0.0F);
         this.body.offsetY = -0.0F;
+        this.body.offsetZ = -0.05F;
         this.body.render(0.01f);
         resetToDefaultPose();
     }

@@ -308,7 +308,7 @@ public class ModelGerarus extends ModelBasePalaeopedia {
     }
 
     public void renderStaticDisplayCase(float f) {
-        this.gerarus.offsetZ = -0.080F;
+        this.gerarus.offsetZ = 0.010F;
         this.setRotateAngle(abdomen, -0.2182F, 0.0F, 0.0F);
         this.setRotateAngle(head, 0.3927F, 0.0F, 0.0F);
         this.setRotateAngle(leftCercus, 0.0F, 0.5236F, 0.0F);

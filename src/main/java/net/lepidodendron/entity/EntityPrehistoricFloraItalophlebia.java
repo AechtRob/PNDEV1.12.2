@@ -248,6 +248,7 @@ public class EntityPrehistoricFloraItalophlebia extends EntityPrehistoricFloraIn
 	public static double offsetCase(@Nullable String variant) {
 		return 0.32F;
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.02; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.0;
 	}
@@ -299,6 +300,9 @@ public class EntityPrehistoricFloraItalophlebia extends EntityPrehistoricFloraIn
 		return RenderItalophlebia.getScaler();
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.012F;}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderItalophlebia.getScaler() * 3.5F;
+	}
 
 	@Override
 	public String[] getFoodOreDicts() {

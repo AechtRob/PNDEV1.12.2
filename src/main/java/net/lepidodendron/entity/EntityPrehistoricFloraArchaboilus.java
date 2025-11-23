@@ -296,6 +296,7 @@ public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArc
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetCase(@Nullable String variant) { return 0.46; }
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.3; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.0;
 	}
@@ -350,5 +351,12 @@ public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArc
 			return RenderArchaboilus.getScaler() * 0.6F;
 		}
 		return RenderArchaboilus.getScaler();
+	}
+	public static float getScalerMagnified(@Nullable String variant) {
+		float result = RenderArchaboilus.getScaler() * 2.8F;
+		if (variant.equalsIgnoreCase("female")) {
+			return result * 0.6F;
+		}
+		return result;
 	}
 }

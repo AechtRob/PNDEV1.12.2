@@ -419,16 +419,29 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetCaseMagnified(@Nullable String variant) {
+		switch (EntityPrehistoricFloraTitanoptera.Type.getTypeFromString(variant)) {
+			case CLATROTITAN: default:
+				return 1.00;
+
+			case GIGATITAN:
+				return 1.00;
+
+			case MESOTITAN:
+				return 1.00;
+
+		}
+	}
 	public static double offsetCase(@Nullable String variant) {
 		switch (EntityPrehistoricFloraTitanoptera.Type.getTypeFromString(variant)) {
 			case CLATROTITAN: default:
-				return 0.30;
+				return 0.42;
 
 			case GIGATITAN:
-				return 0.30;
+				return 0.42;
 
 			case MESOTITAN:
-				return 0.30;
+				return 0.42;
 
 		}
 	}
@@ -515,6 +528,14 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 				return LayerTitanopteraWing.TEXTURE_MESOTITAN;
 
 		}
+	}
+
+	public static float getScaler(@Nullable String variant) {
+		return RenderTitanoptera.getScaler(EntityPrehistoricFloraTitanoptera.Type.getTypeFromString(variant));
+	}
+
+	public static float getScalerMagnifiied(@Nullable String variant) {
+		return RenderTitanoptera.getScaler(EntityPrehistoricFloraTitanoptera.Type.getTypeFromString(variant)) * 2.5F;
 	}
 
 	@SideOnly(Side.CLIENT)

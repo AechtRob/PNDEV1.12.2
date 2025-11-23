@@ -212,7 +212,7 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
         this.renderYawOffset = this.rotationYaw;
 
         if (this.getAnimation() == this.MAKE_NEST_ANIMATION) {
-            if (this.getAnimationTick() >= this.MAKE_NEST_ANIMATION.getDuration() - 5) {
+            if (this.getAnimationTick() == this.MAKE_NEST_ANIMATION.getDuration() - 5) {
                 if (!world.isRemote) {
                     this.world.setBlockState(this.getPosition(), BlockNest.block.getDefaultState());
                     TileEntity te = world.getTileEntity(this.getPosition());

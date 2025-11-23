@@ -276,7 +276,7 @@ public class EntityPrehistoricFloraHaldanodon extends EntityPrehistoricFloraSwim
 	public void onLivingUpdate() {
 
 		if (this.getAnimation() == this.MAKE_NEST_ANIMATION) {
-			if (this.getAnimationTick() >= this.MAKE_NEST_ANIMATION.getDuration() - 5) {
+			if (this.getAnimationTick() == this.MAKE_NEST_ANIMATION.getDuration() - 5) {
 				if (!world.isRemote && this.getPosition().getY() > 8) {
 					BlockPos pos = this.buildBurrow(this.world, this.getPosition(), this.hasLargeBurrow());
 					this.world.setBlockState(pos, BlockNest.block.getDefaultState());

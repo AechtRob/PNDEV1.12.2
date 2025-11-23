@@ -12,6 +12,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.render.entity.LayerMeganeuropsisWing;
+import net.lepidodendron.entity.render.entity.RenderMeganeurites;
 import net.lepidodendron.entity.render.entity.RenderMeganeuropsis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
@@ -511,6 +512,7 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 		public static double offsetCase(@Nullable String variant) {
 			return 0.40;
 		}
+		public static double offsetCaseMagnified(@Nullable String variant) { return 0.57; }
 		public static double offsetWall(@Nullable String variant) {return 0.075;}
 		public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.55;}
 		public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}
@@ -524,6 +526,9 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 		public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return -0.6F;}
 		public static double lowerbacklineoffset(@Nullable String variant) {return -0.0;}
 	    public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0F;}
+		public static float getScalerMagnified(@Nullable String variant) {
+			return RenderMeganeurites.getScaler() * 1.5F;
+		}
 		//-------------------
 
 	}

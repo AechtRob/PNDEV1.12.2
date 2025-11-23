@@ -165,7 +165,7 @@ public class ModelVelisoptera extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
     public void renderStaticDisplayCase(float f) {
-        this.body.offsetZ = -0.080F;
+        this.body.offsetZ = -0.040F;
         this.body.render(0.01f);
         resetToDefaultPose();
     }

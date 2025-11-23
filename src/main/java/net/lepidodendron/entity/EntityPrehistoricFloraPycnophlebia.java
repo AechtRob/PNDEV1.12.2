@@ -272,6 +272,7 @@ public class EntityPrehistoricFloraPycnophlebia extends EntityPrehistoricFloraAr
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetCase(@Nullable String variant) { return 0.46; }
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.47; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.0;
 	}
@@ -325,5 +326,12 @@ public class EntityPrehistoricFloraPycnophlebia extends EntityPrehistoricFloraAr
 			return RenderPycnophlebia.getScaler() * 0.6F;
 		}
 		return RenderPycnophlebia.getScaler();
+	}
+	public static float getScalerMagnified(@Nullable String variant) {
+		float result = RenderPycnophlebia.getScaler() * 3.2F;
+		if (variant.equalsIgnoreCase("female")) {
+			return result * 0.6F;
+		}
+		return result;
 	}
 }

@@ -626,6 +626,40 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetCaseMagnified(@Nullable String variant) {
+		switch (EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variant)) {
+			case DELITZSCHALA: default:
+				return 0.650;
+
+			case DUNBARIA:
+				return 0.73;
+
+			case HOMALONEURA:
+				return 0.73;
+
+			case HOMOIOPTERA:
+				return 0.44;
+
+			case LITHOMANTIS:
+				return 0.73;
+
+			case LYCOCERCUS:
+				return 0.73;
+
+			case SINODUNBARIA:
+				return 0.650;
+
+			case STENODICTYA:
+				return 0.73;
+
+			case MAZOTHAIROS:
+				return 0.44;
+
+			case PSYCHROPTILUS:
+				return 0.650;
+		}
+	}
+
 	public static double offsetCase(@Nullable String variant) {
 		switch (EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variant)) {
 			case DELITZSCHALA: default:
@@ -650,6 +684,9 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 				return 0.27;
 
 			case STENODICTYA:
+				return 0.36;
+
+			case MAZOTHAIROS:
 				return 0.36;
 
 			case PSYCHROPTILUS:
@@ -839,6 +876,41 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 
 	public static float getScaler(@Nullable String variant) {
 		return RenderPalaeodictyoptera.getScaler(EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variant));
+	}
+
+	public static float getScalerMagnified(@Nullable String variant) {
+		switch (EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variant)) {
+			case DELITZSCHALA:
+			default:
+				return 0.60F;
+
+			case DUNBARIA:
+				return 0.5F;
+
+			case HOMALONEURA:
+				return 0.5F;
+
+			case HOMOIOPTERA:
+				return 0.30F;
+
+			case LITHOMANTIS:
+				return 0.5F;
+
+			case LYCOCERCUS:
+				return 0.5F;
+
+			case SINODUNBARIA:
+				return 0.60F;
+
+			case STENODICTYA:
+				return 0.5F;
+
+			case MAZOTHAIROS:
+				return 0.3F;
+
+			case PSYCHROPTILUS:
+				return 0.60F;
+		}
 	}
 
 	@Override

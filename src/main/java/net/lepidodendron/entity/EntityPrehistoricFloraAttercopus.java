@@ -218,6 +218,7 @@ public class EntityPrehistoricFloraAttercopus extends EntityPrehistoricFloraLand
 	public static double offsetCase(@Nullable String variant) {
 		return 0.26F;
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.29; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.0;
 	}
@@ -265,5 +266,8 @@ public class EntityPrehistoricFloraAttercopus extends EntityPrehistoricFloraLand
 		return RenderAttercopus.getScaler();
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.012F;}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderAttercopus.getScaler() * 5.0F;
+	}
 
 }

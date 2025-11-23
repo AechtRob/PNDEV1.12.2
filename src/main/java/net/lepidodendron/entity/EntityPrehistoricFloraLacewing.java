@@ -348,6 +348,7 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetCaseMagnified(@Nullable String variant) { return -0.21; }
 	public static double offsetCase(@Nullable String variant) {
 		switch (EntityPrehistoricFloraLacewing.Type.getTypeFromString(variant)) {
 			case AETHEOGRAMMA: default:
@@ -496,6 +497,10 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 
 	public static float getScaler(@Nullable String variant) {
 		return RenderLacewing.getScaler(EntityPrehistoricFloraLacewing.Type.getTypeFromString(variant));
+	}
+
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderLacewing.getScaler(EntityPrehistoricFloraLacewing.Type.getTypeFromString(variant)) * 3.0F;
 	}
 
 	

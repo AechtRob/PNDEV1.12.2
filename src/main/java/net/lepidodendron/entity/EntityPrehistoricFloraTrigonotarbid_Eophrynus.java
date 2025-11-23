@@ -223,6 +223,7 @@ public class EntityPrehistoricFloraTrigonotarbid_Eophrynus extends EntityPrehist
 	public static double offsetCase(@Nullable String variant) {
 		return 0.32F;
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.29; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.0;
 	}
@@ -270,6 +271,9 @@ public class EntityPrehistoricFloraTrigonotarbid_Eophrynus extends EntityPrehist
 		return RenderTrigonotarbid_Eophrynus.getScaler();
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.012F;}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderTrigonotarbid_Eophrynus.getScaler() * 5.0F;
+	}
 
 	@Nullable
 	@Override

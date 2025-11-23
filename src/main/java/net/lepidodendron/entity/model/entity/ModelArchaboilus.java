@@ -196,6 +196,7 @@ public class ModelArchaboilus extends ModelBasePalaeopedia {
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
+
     public void renderStaticSuspended(float f) {
         this.setRotateAngle(main, -0.2F, 0.0F, 0.0F);
         this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);

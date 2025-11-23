@@ -214,6 +214,7 @@ public class EntityPrehistoricFloraHarvestman extends EntityPrehistoricFloraLand
 	public static double offsetCase(@Nullable String variant) {
 		return 0.20F;
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 0.39; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.0;
 	}
@@ -261,5 +262,8 @@ public class EntityPrehistoricFloraHarvestman extends EntityPrehistoricFloraLand
 		return RenderHarvestman.getScaler();
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.012F;}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderHarvestman.getScaler() * 2.0F;
+	}
 
 }

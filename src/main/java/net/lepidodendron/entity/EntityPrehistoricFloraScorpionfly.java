@@ -8,12 +8,15 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.entity.render.entity.RenderScorpionfly;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EggLayingConditions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -367,8 +370,63 @@ public class EntityPrehistoricFloraScorpionfly extends EntityPrehistoricFloraIns
 		return EggLayingConditions.testLayMossAndWoodInsectFlying(this, world, pos);
 	}
 
+
 	//Rendering taxidermy:
 	//--------------------
-
+	public static double offsetCase(@Nullable String variant) {
+		return 0.2;
+	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 0.76; }
+	public static double offsetWall(@Nullable String variant) {
+		return -1.36;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.9;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.0F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderScorpionfly.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelScorpionfly;}
+	public static float getScaler(@Nullable String variant) {
+		return RenderScorpionfly.getScaler();
+	}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderScorpionfly.getScaler() * 4.0F;
+	}
 
 }

@@ -221,6 +221,7 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 	public static double offsetCase(@Nullable String variant) {
 		return 0.40;
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.0; }
 
 	public static double offsetWall(@Nullable String variant) {
 		return -1.36;
@@ -286,6 +287,9 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 
 	public static float getScaler(@Nullable String variant) {
 		return RenderHelenodora.getScaler();
+	}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderHelenodora.getScaler() * 2.5F;
 	}
 
 

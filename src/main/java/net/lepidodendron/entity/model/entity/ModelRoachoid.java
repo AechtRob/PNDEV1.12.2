@@ -137,7 +137,7 @@ public class ModelRoachoid extends ModelBasePalaeopedia {
     }
 
     public void renderStaticDisplayCase(float f) {
-        this.thorax.offsetZ = -0.080F;
+        this.thorax.offsetZ = 0.010F;
         this.setRotateAngle(legR3, 0.0F, 0.0F, -0.7854F);
         this.setRotateAngle(legR2, 0.0F, 0.0F, -0.7854F);
         this.setRotateAngle(legL3, 0.0F, 0.0F, 0.7854F);

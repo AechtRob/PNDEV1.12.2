@@ -782,6 +782,12 @@ public class ModelVelocipede extends ModelBasePalaeopedia {
 
     }
 
+    public void renderStaticDisplayCase(float f) {
+        //this.Velocipede.offsetZ = -0.080F;
+        this.Velocipede.render(0.01f);
+        resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

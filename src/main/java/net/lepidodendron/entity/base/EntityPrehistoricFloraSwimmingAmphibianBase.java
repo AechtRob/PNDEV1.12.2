@@ -260,7 +260,7 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
     public void onLivingUpdate() {
 
         if (this.getAnimation() == this.MAKE_NEST_ANIMATION) {
-            if (this.getAnimationTick() >= this.MAKE_NEST_ANIMATION.getDuration() - 5) {
+            if (this.getAnimationTick() == this.MAKE_NEST_ANIMATION.getDuration() - 5) {
                 if (this instanceof EntityPrehistoricFloraHaldanodon) { //Burrowing creatures:
                     EntityPrehistoricFloraHaldanodon burrower = (EntityPrehistoricFloraHaldanodon) this;
                     if (!world.isRemote && this.getPosition().getY() > 8) {

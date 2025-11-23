@@ -208,15 +208,24 @@ public class ModelSantanmantis extends ModelBasePalaeopedia {
         modelRenderer.rotateAngleY = y;
         modelRenderer.rotateAngleZ = z;
     }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(base, 0.0F, 0.0F, 0.0F);
         this.base.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.base.render(0.01F);
         resetToDefaultPose();
     }
+
+    public void renderStaticDisplayCase(float f) {
+        this.base.render(0.01f);
+        resetToDefaultPose();
+
+    }
+
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:

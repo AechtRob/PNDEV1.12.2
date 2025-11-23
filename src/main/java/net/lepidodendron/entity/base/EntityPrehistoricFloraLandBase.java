@@ -543,7 +543,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         this.renderYawOffset = this.rotationYaw;
 
         if (this.getAnimation() == this.MAKE_NEST_ANIMATION) {
-            if (this.getAnimationTick() >= this.MAKE_NEST_ANIMATION.getDuration() - 5) {
+            if (this.getAnimationTick() == this.MAKE_NEST_ANIMATION.getDuration() - 5) {
                 if (this instanceof EntityPrehistoricFloraDiictodon) { //Burrowing creatures:
                     EntityPrehistoricFloraDiictodon burrower = (EntityPrehistoricFloraDiictodon) this;
                     if (!world.isRemote && this.getPosition().getY() > 8) {

@@ -213,6 +213,7 @@ public class EntityPrehistoricFloraPalaeontinid extends EntityPrehistoricFloraIn
 	public static double offsetCase(@Nullable String variant) {
 		return 0.32F;
 	}
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.01; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.0;
 	}
@@ -260,5 +261,8 @@ public class EntityPrehistoricFloraPalaeontinid extends EntityPrehistoricFloraIn
 		return RenderPalaeontinid.getScaler();
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.012F;}
+	public static float getScalerMagnified(@Nullable String variant) {
+		return RenderPalaeontinid.getScaler() * 3.5F;
+	}
 	
 }
