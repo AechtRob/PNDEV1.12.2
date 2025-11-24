@@ -153,6 +153,19 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 		this.launchProgress = compound.getInteger("launchProgress");
 	}
 
+	public boolean canLaunch() {
+		for (int xx = -2; xx <= 2; xx--) {
+			for (int yy = 0; yy <= 3; yy--) {
+				for (int zz = -2; zz <= 2; zz--) {
+					if (this.world.getBlockState(this.getPosition().add(xx, yy, zz)).causesSuffocation()) {
+						return false;
+					}
+				}
+			}
+		}
+		return true;
+	}
+
 	@Override
 	public void onLivingUpdate()
 	{
@@ -181,6 +194,7 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 					&& this.onGround
 					&& (!this.collidedHorizontally)
 					&& this.getAnimation() == NO_ANIMATION
+					&& this.canLaunch()
 					//&& (!this.world.getBlockState(this.getPosition().up()).causesSuffocation())
 			) {
 				this.setIsLaunching(true);
@@ -191,7 +205,8 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 					this.launchCooldown = rand.nextInt(this.getLaunchCooldown());
 				}
 			}
-			if (this.isReallyInWater()) {
+			if (this.isReallyInWater()
+					&& this.canLaunch()) {
 				this.setIsLaunching(true);
 				this.motionY = this.getJumpUpwardsMotion();
 				this.setMoveForward(this.getAIMoveSpeed());
@@ -205,7 +220,9 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 				this.setIsLaunching(false);
 			}
 
-			if (this.getIsFlying() && this.canRelaunch() && this.posY - ChunkGenSpawner.getTopSolidOrLiquidBlockIncludingLeaves(this.getPosition(), this.world).getY() <= 25) {
+			if (this.getIsFlying() && this.canRelaunch()
+					&& this.posY - ChunkGenSpawner.getTopSolidOrLiquidBlockIncludingLeaves(this.getPosition(), this.world).getY() <= 25
+					&& this.canLaunch()) {
 				if (rand.nextInt(64) == 0) {
 					this.setIsLaunching(true);
 					this.setMoveForward(0.1F);
