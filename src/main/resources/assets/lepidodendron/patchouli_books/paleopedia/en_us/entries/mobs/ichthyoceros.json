@@ -1,0 +1,47 @@
+{
+	"name": "Ichthyoceros",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ichthyoceros_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ichthyoceros",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ichthyoceros",
+			"title": "Ichthyoceros",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Gladiopycnodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "I. spinosus",
+            "entity": "lepidodendron:prehistoric_flora_ichthyoceros",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ichthyoceros",
+			"type": "text",
+			"text": "Ichthyoceros is a genus of pycnodont from the Late Cretaceous Sannine Formation of Lebanon. It had a triple pointed horn like spine over each of its eyes and a massive multipointed spine emanating from the back of its head."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ichthyoceros"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ichthyoceros"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ichthyoceros"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ichthyoceros"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ichthyoceros"
+		}
+	]
+}

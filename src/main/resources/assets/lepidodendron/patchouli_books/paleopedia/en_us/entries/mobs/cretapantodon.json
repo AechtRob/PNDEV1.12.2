@@ -1,0 +1,47 @@
+{
+	"name": "Cretapantodon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cretapantodon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_cretapantodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cretapantodon",
+			"title": "Cretapantodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Osteoglossiformes$(br)>Pantodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. polli",
+            "entity": "lepidodendron:prehistoric_flora_cretapantodon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cretapantodon",
+			"type": "text",
+			"text": "Cretapantodon is a genus of pantodontid fish from the Late Cretaceous, Sannine Formation of Lebanon. It is a relative of the modern day african butterfly fish, however unlike its modern day freshwater relative Cretapantodon lived in a marine reef environment."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cretapantodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cretapantodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cretapantodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cretapantodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cretapantodon"
+		}
+	]
+}

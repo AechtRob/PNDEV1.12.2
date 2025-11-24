@@ -1,0 +1,47 @@
+{
+	"name": "Scelidosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/scelidosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_scelidosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_scelidosaurus",
+			"title": "Scelidosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Dinosauria$(br)>Ornithischia$(br)>Thyreophora"
+		},
+        	{
+            "type": "entity",
+            "name": "S. harrisonii",
+            "entity": "lepidodendron:prehistoric_flora_scelidosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_scelidosaurus",
+			"type": "text",
+			"text": "Scelidosaurus is a genus of thyreophoran that is known from the Jurassic of England. Scelidosaurus was capable of both quadrupedal and bipedal locomotion, though it was thought to only walk quadrupedally until trackways preserved scelidosaurs walking in a bipedal manner."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_scelidosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_scelidosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_scelidosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_scelidosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_scelidosaurus"
+		}
+	]
+}

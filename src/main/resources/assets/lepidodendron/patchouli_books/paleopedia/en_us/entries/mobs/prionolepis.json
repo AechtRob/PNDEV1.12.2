@@ -1,0 +1,47 @@
+{
+	"name": "Prionolepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/prionolepis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_prionolepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_prionolepis",
+			"title": "Prionolepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Alepisauriformes"
+		},
+        	{
+            "type": "entity",
+            "name": "P. angustus",
+            "entity": "lepidodendron:prehistoric_flora_prionolepis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_prionolepis",
+			"type": "text",
+			"text": "Prionolepis is a genus of alepisauriform fish from the Late Cretaceous, Sannine Formation of Lebanon as well as England. Its long body was covered in a series of serrated scales which led to its name, saw scale."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_prionolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_prionolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_prionolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_prionolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_prionolepis"
+		}
+	]
+}

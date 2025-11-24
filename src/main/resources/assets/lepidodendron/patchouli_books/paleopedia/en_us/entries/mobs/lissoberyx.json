@@ -1,0 +1,47 @@
+{
+	"name": "Lissoberyx",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lissoberyx_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_lissoberyx",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lissoberyx",
+			"title": "Lissoberyx",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Trachichthyiformes$(br)>Trachichthyidae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. dayi",
+            "entity": "lepidodendron:prehistoric_flora_lissoberyx",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lissoberyx",
+			"type": "text",
+			"text": "Lissoberyx is a genus of trachichthyid fish from the Late Cretaceous, Sannine Formation of Lebanon as well as the Calcari di Melissano Formation in Italy. It had a small deep body and its fins were adorned with spines."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lissoberyx"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lissoberyx"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lissoberyx"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lissoberyx"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lissoberyx"
+		}
+	]
+}

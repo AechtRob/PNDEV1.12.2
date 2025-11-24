@@ -1,0 +1,47 @@
+{
+	"name": "Tawa",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tawa_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tawa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tawa",
+			"title": "Tawa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda?"
+		},
+        	{
+            "type": "entity",
+            "name": "T. hallae",
+            "entity": "lepidodendron:prehistoric_flora_tawa",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tawa",
+			"type": "text",
+			"text": "Tawa is most likely genus of basal theropod that is know from the Ghost Ranch Formation of Triassic South West United States. Its discovery, as well as the discovery of Coelophysis nad Herrasaurus, supports the hypothesis that the earliest dinosaurs started out in the Late Triassic of Gondwana, modern day South America, before spreading across the globe. It is named after the Hopi word for Puebloan sun god."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tawa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tawa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tawa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tawa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tawa"
+		}
+	]
+}

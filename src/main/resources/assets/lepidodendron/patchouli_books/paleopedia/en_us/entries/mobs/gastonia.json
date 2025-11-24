@@ -1,0 +1,47 @@
+{
+	"name": "Gastonia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gastonia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_gastonia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gastonia",
+			"title": "Gastonia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Thyreophora$(br)>Ankylosauria$(br)>Nodosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "G. burgei",
+            "entity": "lepidodendron:prehistoric_flora_gastonia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gastonia",
+			"type": "text",
+			"text": "Gastonia is a genus of Ankylosaurian from Early Cretaceous North America. The type specimen of Gastonia was found along side the type specimen of Utahraptor in the Cedar Mountain Formation. Gastonia is one of the most common dinosaurs to be found in the Cedar Mountain Formatin. Ankylosaurs are often assumed to solitary animals, however concentrations of Gastonia fossils seems to contradict this."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gastonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gastonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gastonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gastonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gastonia"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Hensodon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hensodon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hensodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hensodon",
+			"title": "Hensodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Coccodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. spinosus",
+            "entity": "lepidodendron:prehistoric_flora_hensodon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hensodon",
+			"type": "text",
+			"text": "Hensodon is a genus of pycnodont from the Late Cretaceous Sannine Formation of Lebanon. It is sexually dimorphic with the male having horns similar to a ceratopsian while the females horns are more similar to that of a rhino."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hensodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hensodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hensodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hensodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hensodon"
+		}
+	]
+}

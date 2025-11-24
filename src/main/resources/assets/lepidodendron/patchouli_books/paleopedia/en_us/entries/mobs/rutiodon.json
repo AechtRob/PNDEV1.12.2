@@ -1,0 +1,47 @@
+{
+	"name": "Rutiodon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rutiodon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_rutiodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rutiodon",
+			"title": "Rutiodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Phytosauria$(br)>Parasuchidae$(br)>Mystriosuchinae"
+		},
+        	{
+            "type": "entity",
+            "name": "R. carolinensis",
+            "entity": "lepidodendron:prehistoric_flora_rutiodon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rutiodon",
+			"type": "text",
+			"text": "Rutiodon is a genus of mystriosuchine phytosaur from the Triassic of the eastern United States. Not unlike other phytosaurs, Rutiodon bears strong resemblance to modern crocodiles except for the positioning of its nostrils. Its nostrils were positioned quite far back on the head rather than at the tip of the snot. Its name roughly translates to wrinkle tooth."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rutiodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rutiodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rutiodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rutiodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rutiodon"
+		}
+	]
+}

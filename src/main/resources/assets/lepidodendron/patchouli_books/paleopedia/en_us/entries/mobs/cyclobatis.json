@@ -1,0 +1,47 @@
+{
+	"name": "Cyclobatis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cyclobatis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_cyclobatis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cyclobatis",
+			"title": "Cyclobatis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Rajiformes$(br)>Cyclobatidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. major",
+            "entity": "lepidodendron:prehistoric_flora_cyclobatis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cyclobatis",
+			"type": "text",
+			"text": "Cyclobatis is a genus of Rajiform from the Late Cretaceous, Sannine Formation of Lebanon. This stingray-like skate, which was adorned with a serrated tail, lived and hunted within the shallow waters and reefs of Sannine."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cyclobatis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cyclobatis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cyclobatis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cyclobatis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cyclobatis"
+		}
+	]
+}

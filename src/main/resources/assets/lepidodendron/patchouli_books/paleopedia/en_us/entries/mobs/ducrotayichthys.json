@@ -1,0 +1,47 @@
+{
+	"name": "Ducrotayichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ducrotayichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ducrotayichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ducrotayichthys",
+			"title": "Ducrotayichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Gladiopycnodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. cornutus",
+            "entity": "lepidodendron:prehistoric_flora_ducrotayichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ducrotayichthys",
+			"type": "text",
+			"text": "Ducrotayichthys is a genus of pycnodont from the Late Cretaceous, Sannine Formation of Lebanon. Like most other Gladiopycnodontids, Ducrotayichthys had an elongated Rostrum and its pectoral fins have been modified into large spines. Ducrotayichthys also had a large dorsal spine along with a paired vertical spine above each of its eyes."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ducrotayichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ducrotayichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ducrotayichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ducrotayichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ducrotayichthys"
+		}
+	]
+}

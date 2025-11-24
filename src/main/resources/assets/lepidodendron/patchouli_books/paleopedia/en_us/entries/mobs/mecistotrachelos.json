@@ -1,0 +1,47 @@
+{
+	"name": "Mecistotrachelos",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mecistotrachelos_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_mecistotrachelos",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mecistotrachelos",
+			"title": "Mecistotrachelos",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauromorpha?"
+		},
+        	{
+            "type": "entity",
+            "name": "M. apeoros",
+            "entity": "lepidodendron:prehistoric_flora_mecistotrachelos",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mecistotrachelos",
+			"type": "text",
+			"text": "Mecistotrachelos is a genus of gliding reptile for the Triassic of Virginia. Its specific name translates to soaring longest neck. It was most likely an arboeal insectivore that used its elongated ribs covered in skin to glide from tree to tree or to make a quick escape."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mecistotrachelos"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mecistotrachelos"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mecistotrachelos"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mecistotrachelos"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mecistotrachelos"
+		}
+	]
+}

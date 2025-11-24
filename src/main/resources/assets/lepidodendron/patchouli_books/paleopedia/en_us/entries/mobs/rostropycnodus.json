@@ -1,0 +1,47 @@
+{
+	"name": "Rostropycnodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rostropycnodus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_rostropycnodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rostropycnodus",
+			"title": "Rostropycnodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Gladiopycnodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "R. gayeti",
+            "entity": "lepidodendron:prehistoric_flora_rostropycnodus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rostropycnodus",
+			"type": "text",
+			"text": "Rostropycnodus is a genus of pycnodont from the Late Cretaceous, Sannine Formation of Lebanon. Like most other Gladiopycnodontids, Rostropycnodus had an elongated Rostrum and is pectoral fins have been modified into large spines."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rostropycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rostropycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rostropycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rostropycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rostropycnodus"
+		}
+	]
+}

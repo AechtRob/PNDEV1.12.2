@@ -1,0 +1,47 @@
+{
+	"name": "Heterothrissa",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/heterothrissa_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_heterothrissa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_heterothrissa",
+			"title": "Heterothrissa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Ctenothrissiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "H. signeuxae",
+            "entity": "lepidodendron:prehistoric_flora_heterothrissa",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_heterothrissa",
+			"type": "text",
+			"text": "Heterothrissa is a genus of ctenothrissiform fish from the Late Cretaceous, Sannine Formation of Lebanon. It had a short deep body adorned with large pelvic and dorsal fins."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_heterothrissa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_heterothrissa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_heterothrissa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_heterothrissa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_heterothrissa"
+		}
+	]
+}

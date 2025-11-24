@@ -1,0 +1,47 @@
+{
+	"name": "Macropenaeus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/macropenaeus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_macropenaeus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_macropenaeus",
+			"title": "Macropenaeus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous - Late Cretaceous$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Penaeidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. incertus",
+            "entity": "lepidodendron:prehistoric_flora_macropenaeus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_macropenaeus",
+			"type": "text",
+			"text": "Macropenaeus is a genus of prawn from the Early and Late Cretaceous, and was found throughout the African Tethys Sea. Like many other prawns, Macropenaeus had long legs and long slender antennae. Based on other fossils found around its discovery it is thought to have inhabited coastal reefs."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_macropenaeus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_macropenaeus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_macropenaeus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_macropenaeus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_macropenaeus"
+		}
+	]
+}

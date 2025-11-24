@@ -1,0 +1,47 @@
+{
+	"name": "Paracoccodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/paracoccodus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_paracoccodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_paracoccodus",
+			"title": "Paracoccodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Coccodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. woodwardi",
+            "entity": "lepidodendron:prehistoric_flora_paracoccodus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_paracoccodus",
+			"type": "text",
+			"text": "Paracoccodus is a genus of pycnodont from the Late Cretaceous, Sannine Formation of Lebanon. This pycnodont is easily recognizable for its horn like spine on its head that bares resemblance to a unicorn."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_paracoccodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_paracoccodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_paracoccodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_paracoccodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_paracoccodus"
+		}
+	]
+}

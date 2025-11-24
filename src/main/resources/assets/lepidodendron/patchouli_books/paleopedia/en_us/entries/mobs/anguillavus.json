@@ -1,0 +1,47 @@
+{
+	"name": "Anguillavus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/anguillavus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_anguillavus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_anguillavus",
+			"title": "Anguillavus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Aguilliformes$(br)>Anguillavidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. quadripinnis",
+            "entity": "lepidodendron:prehistoric_flora_anguillavus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anguillavus",
+			"type": "text",
+			"text": "Anguillavus is a genus of basal eel from the Late Cretaceous, Sannine Formation of Lebanon. Unlike modern eels, Anguillavus still retains pelvic fins, a sign of its primitive nature."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anguillavus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anguillavus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anguillavus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anguillavus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anguillavus"
+		}
+	]
+}

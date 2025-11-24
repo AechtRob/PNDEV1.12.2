@@ -1,0 +1,47 @@
+{
+	"name": "Anomalochelys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/anomalochelys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_anomalochelys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_anomalochelys",
+			"title": "Anomalochelys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Testudines$(br)>Cryptodira$(br)>Nanhsiungchelyidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. angulata",
+            "entity": "lepidodendron:prehistoric_flora_anomalochelys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anomalochelys",
+			"type": "text",
+			"text": "Anomalochelys is a genus of land turtle that is known from the Late Cretaceous of Japan and China. This creature is immediately recognizable for the forward facing horn like structures of the shell on either side of its neck."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anomalochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anomalochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anomalochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anomalochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anomalochelys"
+		}
+	]
+}

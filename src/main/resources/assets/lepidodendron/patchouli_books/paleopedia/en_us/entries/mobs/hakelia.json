@@ -1,0 +1,47 @@
+{
+	"name": "Hakelia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hakelia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hakelia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hakelia",
+			"title": "Hakelia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Myctophiformes$(br)>Myctophidae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. laticuda",
+            "entity": "lepidodendron:prehistoric_flora_hakelia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hakelia",
+			"type": "text",
+			"text": "Hakelia is a genus of chlorophthalmid fish from the Late Cretaceous, Sannine Formation of Lebanon. Hakelia fossils are rare, however most are beautifully preserved, frequently showing soft bodied preservation."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hakelia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hakelia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hakelia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hakelia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hakelia"
+		}
+	]
+}

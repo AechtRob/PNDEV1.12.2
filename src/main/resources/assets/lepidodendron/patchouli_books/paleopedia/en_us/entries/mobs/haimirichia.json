@@ -1,0 +1,47 @@
+{
+	"name": "Haimirichia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/haimirichia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_haimirichia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_haimirichia",
+			"title": "Haimirichia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Lamniformes$(br)>Haimirichiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. amonensis",
+            "entity": "lepidodendron:prehistoric_flora_haimirichia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_haimirichia",
+			"type": "text",
+			"text": "Haimirichia is a genus of mackerel shark from the Late Cretaceous, Sannine Formation of Lebanon as well as the Akrabou Formation of Morocco. Originally teeth now assigned to the genus were assigned to the modern genus Odontaspis, however after an amazingly preservered specimen was discovered in the Akrabou Formation, it was able to be split into its own genus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_haimirichia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_haimirichia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_haimirichia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_haimirichia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_haimirichia"
+		}
+	]
+}
