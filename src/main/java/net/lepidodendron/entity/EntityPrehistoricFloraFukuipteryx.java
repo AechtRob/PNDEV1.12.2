@@ -68,6 +68,13 @@ public class EntityPrehistoricFloraFukuipteryx extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public boolean getIsClimbing() {
+		this.setStartingToClimb(false);
+		this.setIsClimbing(false);
+		return false;
+	}
+
+	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
