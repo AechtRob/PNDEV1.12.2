@@ -473,12 +473,12 @@ public class ModelBrachytrachelopan extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Brachytrachelopan.offsetY = 0.8F;
-        this.Brachytrachelopan.offsetX = -0.25F;
-        this.Brachytrachelopan.rotateAngleY = (float)Math.toRadians(-68);
-        this.Brachytrachelopan.rotateAngleX = (float)Math.toRadians(15);
-        this.Brachytrachelopan.rotateAngleZ = (float)Math.toRadians(-10);
+        this.Brachytrachelopan.offsetX = 0.35F;
+        this.Brachytrachelopan.rotateAngleY = (float)Math.toRadians(240);
+        this.Brachytrachelopan.rotateAngleX = (float)Math.toRadians(0);
+        this.Brachytrachelopan.rotateAngleZ = (float)Math.toRadians(00);
         this.Brachytrachelopan.scaleChildren = true;
-        float scaler = 0.35F;
+        float scaler = 0.31F;
         this.Brachytrachelopan.setScale(scaler, scaler, scaler);
         //Start of pose:
 

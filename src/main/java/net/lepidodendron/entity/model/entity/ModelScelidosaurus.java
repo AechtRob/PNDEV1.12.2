@@ -1407,13 +1407,13 @@ public class ModelScelidosaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = -0.5F;
-        this.hips.offsetX = 0.2F;
-        this.hips.rotateAngleY = (float)Math.toRadians(125);
+        this.hips.offsetY = 0.5F;
+        this.hips.offsetX = -0.1F;
+        this.hips.rotateAngleY = (float)Math.toRadians(135);
         this.hips.rotateAngleX = (float)Math.toRadians(0);
         this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;
-        float scaler = 1.5F;
+        float scaler = 0.4F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
         //this.setRotateAngle(root, 0.2618F, 0.0F, 0.0F);

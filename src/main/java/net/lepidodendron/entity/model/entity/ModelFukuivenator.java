@@ -492,7 +492,7 @@ public class ModelFukuivenator extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hip.offsetY = 0.1F;
-        this.hip.offsetX = 0.55F;
+        this.hip.offsetX = 0.2F;
         this.hip.offsetZ = 2.0F;
         this.hip.rotateAngleY = (float)Math.toRadians(240);
         this.hip.rotateAngleX = (float)Math.toRadians(-0);

@@ -1125,12 +1125,12 @@ public class ModelLoricatosaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Loricatosaurus.offsetY = 0.F;
-        this.Loricatosaurus.offsetX = 1.3F;
-        this.Loricatosaurus.rotateAngleY = (float)Math.toRadians(180);
-        this.Loricatosaurus.rotateAngleX = (float)Math.toRadians(10);
-        this.Loricatosaurus.rotateAngleZ = (float)Math.toRadians(-10);
+        this.Loricatosaurus.offsetX = 0.4F;
+        this.Loricatosaurus.rotateAngleY = (float)Math.toRadians(230);
+        this.Loricatosaurus.rotateAngleX = (float)Math.toRadians(0);
+        this.Loricatosaurus.rotateAngleZ = (float)Math.toRadians(0);
         this.Loricatosaurus.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.55F;
         this.Loricatosaurus.setScale(scaler, scaler, scaler);
         //Start of pose:
 

@@ -573,13 +573,13 @@ public class ModelMegateuthis extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = 0.F;
-        this.root.offsetX = 1.3F;
-        this.root.rotateAngleY = (float)Math.toRadians(180);
-        this.root.rotateAngleX = (float)Math.toRadians(10);
+        this.root.offsetY = -0.7F;
+        this.root.offsetX = 0.3F;
+        this.root.rotateAngleY = (float)Math.toRadians(140);
+        this.root.rotateAngleX = (float)Math.toRadians(40);
         this.root.rotateAngleZ = (float)Math.toRadians(-10);
         this.root.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.7F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
 

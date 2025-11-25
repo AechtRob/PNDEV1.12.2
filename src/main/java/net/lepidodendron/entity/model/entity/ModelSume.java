@@ -226,8 +226,8 @@ public class ModelSume extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -2.0F;
-        this.body.offsetX = -0.9F;
-        this.body.rotateAngleY = (float)Math.toRadians(200);
+        this.body.offsetX = -0.6F;
+        this.body.rotateAngleY = (float)Math.toRadians(240);
         this.body.rotateAngleX = (float)Math.toRadians(8);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);
         this.body.scaleChildren = true;

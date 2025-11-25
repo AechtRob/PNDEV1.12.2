@@ -556,7 +556,7 @@ public class ModelMesodermochelys extends ModelBasePalaeopedia {
         this.base.rotateAngleX = (float)Math.toRadians(0);
         this.base.rotateAngleZ = (float)Math.toRadians(0);
         this.base.scaleChildren = true;
-        float scaler = 1.0F;
+        float scaler = 0.5F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
         

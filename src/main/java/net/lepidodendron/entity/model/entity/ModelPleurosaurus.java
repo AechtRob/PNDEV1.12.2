@@ -376,13 +376,13 @@ public class ModelPleurosaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Root.offsetY = -2.3F;
-        this.Root.offsetX = -0.10F;
-        this.Root.rotateAngleY = (float)Math.toRadians(200);
-        this.Root.rotateAngleX = (float)Math.toRadians(20);
-        this.Root.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Root.offsetY = -1.3F;
+        this.Root.offsetX = 1.1F;
+        this.Root.rotateAngleY = (float)Math.toRadians(240);
+        this.Root.rotateAngleX = (float)Math.toRadians(5);
+        this.Root.rotateAngleZ = (float)Math.toRadians(2);
         this.Root.scaleChildren = true;
-        float scaler = 2.95F;
+        float scaler = 0.85F;
         this.Root.setScale(scaler, scaler, scaler);
         //Start of pose:
 

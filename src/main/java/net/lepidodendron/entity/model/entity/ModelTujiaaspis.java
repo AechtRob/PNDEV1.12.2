@@ -254,8 +254,8 @@ public class ModelTujiaaspis extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.main.offsetY = -1.2F;
         this.main.offsetX = 0.238F;
-        this.main.rotateAngleY = (float)Math.toRadians(242);
-        this.main.rotateAngleX = (float)Math.toRadians(8);
+        this.main.rotateAngleY = (float)Math.toRadians(222);
+        this.main.rotateAngleX = (float)Math.toRadians(30);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
         float scaler = 3.63F;

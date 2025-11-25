@@ -303,13 +303,13 @@ public class ModelRhinobatos extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = 0.F;
-        this.main.offsetX = 1.3F;
-        this.main.rotateAngleY = (float)Math.toRadians(180);
-        this.main.rotateAngleX = (float)Math.toRadians(10);
+        this.main.offsetY = -0.4F;
+        this.main.offsetX = 0.3F;
+        this.main.rotateAngleY = (float)Math.toRadians(220);
+        this.main.rotateAngleX = (float)Math.toRadians(40);
         this.main.rotateAngleZ = (float)Math.toRadians(-10);
         this.main.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 1.F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

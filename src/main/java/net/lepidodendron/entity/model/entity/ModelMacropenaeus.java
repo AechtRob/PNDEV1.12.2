@@ -351,13 +351,13 @@ public class ModelMacropenaeus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -7.0F;
+        this.base.offsetY = -2.0F;
         this.base.offsetX = 0.1F;
-        this.base.rotateAngleY = (float) Math.toRadians(210);
+        this.base.rotateAngleY = (float) Math.toRadians(230);
         this.base.rotateAngleX = (float) Math.toRadians(8);
         this.base.rotateAngleZ = (float) Math.toRadians(-4);
         this.base.scaleChildren = true;
-        float scaler = 10F;
+        float scaler = 4F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(base, 0.5F, 3.7F, 0.0F);

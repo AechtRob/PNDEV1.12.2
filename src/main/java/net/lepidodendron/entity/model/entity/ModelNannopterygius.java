@@ -361,13 +361,14 @@ public class ModelNannopterygius extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.40F;
-        this.main.offsetX = -0.06F;
-        this.main.rotateAngleY = (float)Math.toRadians(240);
+        this.main.offsetY = -0.10F;
+        this.main.offsetX = 0.3F;
+        this.main.offsetZ = 0.3F;
+        this.main.rotateAngleY = (float)Math.toRadians(250);
         this.main.rotateAngleX = (float)Math.toRadians(28);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 0.4F;
+        float scaler = 0.35F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

@@ -349,12 +349,12 @@ public class ModelDiplomoceras extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.base.offsetY = -1.2F;
-        this.base.offsetX = 1.2F;
-        this.base.rotateAngleY = (float)Math.toRadians(242);
-        this.base.rotateAngleX = (float)Math.toRadians(-18);
-        this.base.rotateAngleZ = (float)Math.toRadians(-8);
+        this.base.offsetX = 0.6F;
+        this.base.rotateAngleY = (float)Math.toRadians(270);
+        this.base.rotateAngleX = (float)Math.toRadians(-25);
+        this.base.rotateAngleZ = (float)Math.toRadians(0);
         this.base.scaleChildren = true;
-        float scaler = 1.23F;
+        float scaler = 0.67F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
 

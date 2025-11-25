@@ -469,8 +469,8 @@ public class ModelOmeisaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = 0.6F;
-        this.root.offsetX = -0.45F;
+        this.root.offsetY = 0.4F;
+        this.root.offsetX = -0.15F;
         this.root.rotateAngleY = (float)Math.toRadians(225);
         this.root.rotateAngleX = (float)Math.toRadians(8);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);

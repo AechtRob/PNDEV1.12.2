@@ -519,9 +519,9 @@ public class ModelNoripterus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.5F;
-        this.main.offsetX = 0.2F;
+        this.main.offsetX = 0.3F;
         this.main.rotateAngleY = (float)Math.toRadians(125);
-        this.main.rotateAngleX = (float)Math.toRadians(0);
+        this.main.rotateAngleX = (float)Math.toRadians(-30);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
         float scaler = 1.5F;

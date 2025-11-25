@@ -687,10 +687,13 @@ public class ModelLiopleurodon extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = -2.0F;
-        this.hips.offsetX = -1.338F;
+        this.hips.offsetY = -1.0F;
+        this.hips.offsetX = -0.5F;
+        this.hips.rotateAngleY = (float)Math.toRadians(230);
+        this.hips.rotateAngleX = (float)Math.toRadians(20);
+        this.hips.rotateAngleZ = (float)Math.toRadians(-8);
         this.hips.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 0.56F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
 
