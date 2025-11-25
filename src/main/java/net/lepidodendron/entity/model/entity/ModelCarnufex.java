@@ -493,12 +493,12 @@ public class ModelCarnufex extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Main.offsetY = 0.00F;
-        this.Main.offsetX = 0.0F;
-        this.Main.rotateAngleY = (float)Math.toRadians(280);
-        this.Main.rotateAngleX = (float)Math.toRadians(-1);
-        this.Main.rotateAngleZ = (float)Math.toRadians(12);
+        this.Main.offsetX = -0.10F;
+        this.Main.rotateAngleY = (float)Math.toRadians(310);
+        this.Main.rotateAngleX = (float)Math.toRadians(0);
+        this.Main.rotateAngleZ = (float)Math.toRadians(0);
         this.Main.scaleChildren = true;
-        float scaler = 0.7F;
+        float scaler = 0.6F;
         this.Main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

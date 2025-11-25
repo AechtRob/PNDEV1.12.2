@@ -1,0 +1,47 @@
+{
+	"name": "Carnufex",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/carnufex_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_carnufex",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_carnufex",
+			"title": "Carnufex",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Crocodylomorpha"
+		},
+        	{
+            "type": "entity",
+            "name": "C. carolinensis",
+            "entity": "lepidodendron:prehistoric_flora_carnufex",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_carnufex",
+			"type": "text",
+			"text": "Carnufex is a genus of crocodylomorph that is known from the Triassic of North America. This crocodylomorph is recongnizable for its triangular skull which ends in a thin point at the tip of the snout. Its name roughly translates to Carolina Butcher."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_carnufex"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_carnufex"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_carnufex"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_carnufex"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_carnufex"
+		}
+	]
+}

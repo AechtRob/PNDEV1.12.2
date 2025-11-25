@@ -1,0 +1,57 @@
+{
+	"name": "Notelops",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/notelops_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_notelops",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_notelops",
+			"title": "Notelops",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Actinopterygii$(br)>Teleostei$(br)>Elopomorpha$(br)>Notelopidae"
+		},
+        	{
+            "type": "entity",
+            "name": "N. brama",
+            "entity": "lepidodendron:prehistoric_flora_notelops",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_notelops",
+			"type": "text",
+			"text": "Notelops is a genus of elopomorph Teleost from the Late Cretaceous. The animal is known from hundreds of well preserved specimens from the Santana Formation in the famous Araripe Basin of Brazil, along with a single extralimitary record from the Mexican Tlayúa Quarry. Currently only one species is named, N. brama, that can grow up to 60 centimeters long. As the name suggests, the animal is related to the modern elops, also known as the ladyfish."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_notelops",
+			"type": "text",
+			"text": "One particularly remarkable thing about this taxon is the large amount of stomach preserving fossils. We have a detailed record of what Notelops ate, which included shrimp, small teleost fish, shrimp eggs, and even the contemporary fish Rhacolepis. Coprolites have also been preserved inside the gut of these fish, growing up to 10 centimeters in length. Portions of the animal's stomach and intestines have been preserved as well, in their original morphology."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_notelops",
+			"type": "text",
+			"text": "Muscular fibers of the fish have also potentially been found, but were unable to be differentiated from Rhacolepis by the researchers who studied those fossils. The animal likely would have been a fast hunter when looking for prey."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_notelops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_notelops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_notelops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_notelops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_notelops"
+		}
+	]
+}

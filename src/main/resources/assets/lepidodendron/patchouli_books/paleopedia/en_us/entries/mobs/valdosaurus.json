@@ -1,0 +1,47 @@
+{
+	"name": "Valdosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/valdosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_valdosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_valdosaurus",
+			"title": "Valdosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Ornithopoda$(br)>Dryosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "V. canaliculatus",
+            "entity": "lepidodendron:prehistoric_flora_valdosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_valdosaurus",
+			"type": "text",
+			"text": "Valdosaurus is a genus of dryosaurid that was known from the Early Cretaceous of the Isle of Wight as well as other parts of England. Before being discribed as its own genus, Valdosaurs was placed in Hypsilophodon, Camptosaurus, and Dryosaurs in that order."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_valdosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_valdosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_valdosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_valdosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_valdosaurus"
+		}
+	]
+}

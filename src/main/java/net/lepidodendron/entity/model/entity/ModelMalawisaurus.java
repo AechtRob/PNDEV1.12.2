@@ -683,10 +683,10 @@ public class ModelMalawisaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Malawisaurus.offsetY = 0.6F;
-        this.Malawisaurus.offsetX = -0.45F;
+        this.Malawisaurus.offsetX = 0.F;
         this.Malawisaurus.rotateAngleY = (float)Math.toRadians(225);
-        this.Malawisaurus.rotateAngleX = (float)Math.toRadians(8);
-        this.Malawisaurus.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Malawisaurus.rotateAngleX = (float)Math.toRadians(0);
+        this.Malawisaurus.rotateAngleZ = (float)Math.toRadians(0);
         this.Malawisaurus.scaleChildren = true;
         float scaler = 0.48F;
         this.Malawisaurus.setScale(scaler, scaler, scaler);
