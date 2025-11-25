@@ -452,14 +452,14 @@ public class ModelKoleken extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = -0.0F;
+        this.hips.offsetY = 0.3F;
         this.hips.offsetX = -0.2F;
         this.hips.offsetZ = 2.0F;
-        this.hips.rotateAngleY = (float)Math.toRadians(120);
+        this.hips.rotateAngleY = (float)Math.toRadians(140);
         this.hips.rotateAngleX = (float)Math.toRadians(1);
         this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;
-        float scaler = 0.8F;
+        float scaler = 0.5F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
 

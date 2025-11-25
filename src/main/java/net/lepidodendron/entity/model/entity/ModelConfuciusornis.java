@@ -758,12 +758,13 @@ public class ModelConfuciusornis extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.confuciusornis.offsetY = -2.30F;
-        this.confuciusornis.offsetX = -0.05F;
-        this.confuciusornis.rotateAngleY = (float)Math.toRadians(210);
-        this.confuciusornis.rotateAngleX = (float)Math.toRadians(8);
+        this.confuciusornis.offsetX = 1.55F;
+        this.confuciusornis.offsetZ = 2.05F;
+        this.confuciusornis.rotateAngleY = (float)Math.toRadians(230);
+        this.confuciusornis.rotateAngleX = (float)Math.toRadians(9);
         this.confuciusornis.rotateAngleZ = (float)Math.toRadians(-8);
         this.confuciusornis.scaleChildren = true;
-        float scaler = 2.9F;
+        float scaler = 2.2F;
         this.confuciusornis.setScale(scaler, scaler, scaler);
         //Start of pose:
 

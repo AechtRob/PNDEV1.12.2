@@ -257,10 +257,10 @@ public class ModelCretosaja extends ModelBasePalaeopedia {
         this.body.offsetY = -2.30F;
         this.body.offsetX = -0.05F;
         this.body.rotateAngleY = (float)Math.toRadians(210);
-        this.body.rotateAngleX = (float)Math.toRadians(8);
+        this.body.rotateAngleX = (float)Math.toRadians(40);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);
         this.body.scaleChildren = true;
-        float scaler = 2.9F;
+        float scaler = 3.9F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
 

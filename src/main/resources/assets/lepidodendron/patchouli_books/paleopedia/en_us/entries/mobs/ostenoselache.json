@@ -1,0 +1,72 @@
+{
+	"name": "Ostenoselache",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ostenoselache_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ostenoselache",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ostenoselache",
+			"title": "Ostenoselache",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>(o)incertae sedis$()$(br)>Ostenoselachidae"
+		},
+        	{
+            "type": "entity",
+            "name": "O. stenosoma",
+            "entity": "lepidodendron:prehistoric_flora_ostenoselache",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ostenoselache",
+			"type": "text",
+			"text": "Ostenoselache is a bizarre genus of Elasmobranch from the Early Jurassic Lombardische Kieselkalk Formation in Northern Italy. The animal is named simply after where it was found, being the Osteno commune, and with the specific name literally meaning thin body. Growing to 2.5 meters in length, it is the sole member of the family Ostenoselachidae. It has many traits completely unique to itself, little derived traits non-unique to the animal, and poorly preserved teeth"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ostenoselache",
+			"type": "text",
+			"text": "all of which make it difficult for it to be classified. As such, it is placed as an incertae sedis elasmobranch. The animal has a long skull, measuring up to 8.5 centimeters in some specimens, with a pronged rostrum: multiple parts of it branching off before aligning themselves back with the median cartilage. Unlike most elasmobranchs, the animal does not have any dorsal fins, an elongated and lobeless tail, and an anal fin that stretches to the end of its body."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ostenoselache",
+			"type": "text",
+			"text": "Along with cartilage, the animal has some soft tissue preserved as well, with remains of the eye, growing up to a centimeter in diameter; and some scales preserved. The strange anatomy of Ostenoselache resembles less of sharks, and more of animals like knifefish. The area where Ostenoselache lived was also likely murky, with some other co-occurring animals even having bioluminescence to deal with it. Ostenoselache also has its cloaca far forward, potentially"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ostenoselache",
+			"type": "text",
+			"text": "allowing for more internal space. These traits seen in modern electric fish, as the closest modern analogue, has created the as of yet unchallenged theory of the Ostenoselache being an electric animal. All modern chondrichthyans are able to passively generate electric force with Ampullae of Lorenzinii, and the theory is that this strange elasmobranch had specialized electricity generating organs that it could have discharged to protect itself."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ostenoselache",
+			"type": "text",
+			"text": "The largest noted flaw for this theory is the environment Ostenoselache lived in. It lived in a deep sea area, whereas all electric fish today are freshwater. In fact seawater's high conductivity is too much for electric fish, reducing range and effectiveness of the tactic. However it could be possible the animal surpassed this weakness, and was able to discharge to defend itself."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ostenoselache",
+			"type": "text",
+			"text": "Electric or not, this animal was also likely preyed upon by the giant thylacocephalian arthropod Ostenocaris, as teeth of the animal are found in gastric areas of the crustacean."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ostenoselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ostenoselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ostenoselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ostenoselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ostenoselache"
+		}
+	]
+}

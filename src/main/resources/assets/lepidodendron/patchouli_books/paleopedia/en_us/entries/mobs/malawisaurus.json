@@ -1,0 +1,47 @@
+{
+	"name": "Malawisaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/malawisaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_malawisaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_malawisaurus",
+			"title": "Malawisaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Sauropoda$(br)>Macronaria$(br)>Titanosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "M. dixeyi",
+            "entity": "lepidodendron:prehistoric_flora_malawisaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_malawisaurus",
+			"type": "text",
+			"text": "Malawisaurus is a genus of titanosaur that is known from the Early Cretaceous, Dinosaur Beds of Africa. For sauropod standards, Malawisaurus is relatively small, only reaching lengths of around 8 and a half meters long. Its genus name refers to the country of Malawi where it was found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_malawisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_malawisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_malawisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_malawisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_malawisaurus"
+		}
+	]
+}

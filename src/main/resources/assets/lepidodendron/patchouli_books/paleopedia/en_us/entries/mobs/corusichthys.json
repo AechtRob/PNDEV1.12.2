@@ -1,0 +1,47 @@
+{
+	"name": "Corusichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/corusichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_corusichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_corusichthys",
+			"title": "Corusichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Coccodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. megacephalus",
+            "entity": "lepidodendron:prehistoric_flora_corusichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_corusichthys",
+			"type": "text",
+			"text": "Corusichthys is a genus of pycnodont from the Late Cretaceous, Sannine Formation of Lebanon. This fish had plates arranged like a helmet around its head and had a massive, triangular spine on its back."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_corusichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_corusichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_corusichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_corusichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_corusichthys"
+		}
+	]
+}

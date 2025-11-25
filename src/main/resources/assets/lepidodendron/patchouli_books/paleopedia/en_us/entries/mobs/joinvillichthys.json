@@ -1,0 +1,47 @@
+{
+	"name": "Joinvillichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/joinvillichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_joinvillichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_joinvillichthys",
+			"title": "Joinvillichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Gladiopycnodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "J. lindstroemi",
+            "entity": "lepidodendron:prehistoric_flora_joinvillichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_joinvillichthys",
+			"type": "text",
+			"text": "Joinvillichthys is a genus of pycnodont from the Late Cretaceous, Sannine Formation of Lebanon. Like most other Gladiopycnodontids, Joinvillichthys had an elongated Rostrum and its pectoral fins have been modified into large spines. Joinvillichthys has a much deeper body than other Gladiopycnodontids, as well as having a dorsal spine."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_joinvillichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_joinvillichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_joinvillichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_joinvillichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_joinvillichthys"
+		}
+	]
+}

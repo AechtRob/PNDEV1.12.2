@@ -1,0 +1,47 @@
+{
+	"name": "Yezoceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/yezoceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_yezoceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_yezoceras",
+			"title": "Yezoceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Nostoceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Y. elegens",
+            "entity": "lepidodendron:prehistoric_flora_yezoceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yezoceras",
+			"type": "text",
+			"text": "Yezoceras is a genus of nostoceratid ammonite from the Late Cretaceous of Japan. Like other nostoceratids Yezoceras had a bizarrely coiled shell. Most nostoceratids have been theorized to have been extraordinarily bad swimmers, and that they most likely just floated throught eh water column."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_yezoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_yezoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_yezoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_yezoceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_yezoceras"
+		}
+	]
+}

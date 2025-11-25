@@ -373,13 +373,13 @@ public class ModelPtyktoptychion extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -0.5F;
-        this.body.offsetX = 0.35F;
-        this.body.rotateAngleY = (float)Math.toRadians(200);
-        this.body.rotateAngleX = (float)Math.toRadians(8);
-        this.body.rotateAngleZ = (float)Math.toRadians(-8);
+        this.body.offsetY = -0.3F;
+        this.body.offsetX = 0.30F;
+        this.body.rotateAngleY = (float)Math.toRadians(240);
+        this.body.rotateAngleX = (float)Math.toRadians(0);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
         this.body.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.35F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
         

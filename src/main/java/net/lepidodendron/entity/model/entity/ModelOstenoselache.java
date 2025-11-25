@@ -158,7 +158,7 @@ public class ModelOstenoselache extends ModelBasePalaeopedia {
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 3.63F;
+        float scaler = 2.8F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

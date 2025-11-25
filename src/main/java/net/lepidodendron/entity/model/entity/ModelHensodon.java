@@ -349,7 +349,7 @@ public class ModelHensodon extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.25F;
-        this.main.offsetX = 1.4F;
+        this.main.offsetX = 0.4F;
         this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(120);
         this.main.rotateAngleX = (float)Math.toRadians(1);

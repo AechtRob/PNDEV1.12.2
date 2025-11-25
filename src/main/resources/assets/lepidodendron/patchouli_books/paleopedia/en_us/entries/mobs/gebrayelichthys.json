@@ -1,0 +1,47 @@
+{
+	"name": "Gebrayelichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gebrayelichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_gebrayelichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gebrayelichthys",
+			"title": "Gebrayelichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Gebratelichthyidae"
+		},
+        	{
+            "type": "entity",
+            "name": "G. uyenoi",
+            "entity": "lepidodendron:prehistoric_flora_gebrayelichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gebrayelichthys",
+			"type": "text",
+			"text": "Gebrayelichthys is a genus of pycnodont from the Late Cretaceous, Sannine Formation of Lebanon. This creature is notable its vertically tall and horizontally short body. Unlike Maraldichthys, which it shares many morphological similarities with, Gebrayelichthys tail rotated in a more traditional horizontal position."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gebrayelichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gebrayelichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gebrayelichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gebrayelichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gebrayelichthys"
+		}
+	]
+}

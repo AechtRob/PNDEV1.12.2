@@ -1,0 +1,47 @@
+{
+	"name": "Hoyasemys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hoyasemys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hoyasemys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hoyasemys",
+			"title": "Hoyasemys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Testudines$(br)>Cryptodira$(br)>Eucryptodira"
+		},
+        	{
+            "type": "entity",
+            "name": "H. jimenezi",
+            "entity": "lepidodendron:prehistoric_flora_hoyasemys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hoyasemys",
+			"type": "text",
+			"text": "Hoyasemys is a genus of basal eucryptodiran turtle from the Early Cretaceous Las Hoyas Formation of Spain. This tiny freshwater turtle is known from a nearly complete and articulated skeleton including its skull. Its genus name is derived from the word Hoyas (which means the basin, in spanish) which refers to the Las Hoyas site where it was found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hoyasemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hoyasemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hoyasemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hoyasemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hoyasemys"
+		}
+	]
+}

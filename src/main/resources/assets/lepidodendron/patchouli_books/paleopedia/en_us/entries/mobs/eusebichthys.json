@@ -1,0 +1,47 @@
+{
+	"name": "Eusebichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eusebichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_eusebichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eusebichthys",
+			"title": "Eusebichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Tselfatiiformes$(br)>Protobramidae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. byblosi",
+            "entity": "lepidodendron:prehistoric_flora_eusebichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eusebichthys",
+			"type": "text",
+			"text": "Eusebichthys is a genus of tselfatiiform fish from the Late Cretaceous, Sannine Formation of Lebanon. This fish had a deep body and relatively short fins compared to the other tselfatiiform fish of the time."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eusebichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eusebichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eusebichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eusebichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eusebichthys"
+		}
+	]
+}

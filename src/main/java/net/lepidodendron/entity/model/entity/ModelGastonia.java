@@ -2337,13 +2337,13 @@ public class ModelGastonia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = 0.F;
-        this.root.offsetX = 1.3F;
-        this.root.rotateAngleY = (float)Math.toRadians(180);
-        this.root.rotateAngleX = (float)Math.toRadians(10);
-        this.root.rotateAngleZ = (float)Math.toRadians(-10);
+        this.root.offsetY = 0.6F;
+        this.root.offsetX = 0.1F;
+        this.root.rotateAngleY = (float)Math.toRadians(220);
+        this.root.rotateAngleX = (float)Math.toRadians(0);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
         this.root.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.5F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
 

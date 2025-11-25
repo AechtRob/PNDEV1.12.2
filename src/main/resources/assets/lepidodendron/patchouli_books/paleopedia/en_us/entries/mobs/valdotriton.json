@@ -1,0 +1,47 @@
+{
+	"name": "Valdotriton",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/valdotriton_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_valdotriton",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_valdotriton",
+			"title": "Valdotriton",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Amphibia$(br)>Urodela"
+		},
+        	{
+            "type": "entity",
+            "name": "V. gracilis",
+            "entity": "lepidodendron:prehistoric_flora_valdotriton",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_valdotriton",
+			"type": "text",
+			"text": "Valdotriton is a genus of salamander known from the Early Cretaceous, Las Hoyas Formation of Spain. This small, slender creature is one of the oldest known members of Salamandroidea."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_valdotriton"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_valdotriton"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_valdotriton"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_valdotriton"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_valdotriton"
+		}
+	]
+}

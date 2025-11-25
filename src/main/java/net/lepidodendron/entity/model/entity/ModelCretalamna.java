@@ -481,12 +481,12 @@ public class ModelCretalamna extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.base.offsetY = -0.08F;
-        this.base.offsetX = 0.408F;
-        this.base.rotateAngleY = (float)Math.toRadians(260);
-        this.base.rotateAngleX = (float)Math.toRadians(8);
+        this.base.offsetX = 0.308F;
+        this.base.rotateAngleY = (float)Math.toRadians(268);
+        this.base.rotateAngleX = (float)Math.toRadians(20);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
         this.base.scaleChildren = true;
-        float scaler = 0.50F;
+        float scaler = 0.32F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
 

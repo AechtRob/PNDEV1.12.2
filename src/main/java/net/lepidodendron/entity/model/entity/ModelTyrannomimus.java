@@ -526,7 +526,7 @@ public class ModelTyrannomimus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = 0.55F;
+        this.hips.offsetY = 0.35F;
         this.hips.offsetX = 0.15F;
         this.hips.rotateAngleY = (float)Math.toRadians(220);
         this.hips.rotateAngleX = (float)Math.toRadians(-2);

@@ -1,0 +1,47 @@
+{
+	"name": "Maraldichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/maraldichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_maraldichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_maraldichthys",
+			"title": "Maraldichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Gebratelichthyidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. verticalis",
+            "entity": "lepidodendron:prehistoric_flora_maraldichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_maraldichthys",
+			"type": "text",
+			"text": "Maraldichthys is a genus of pycnodont from the Late Cretaceous, Sannine Formation of Lebanon. This creature is notable its vertically tall and horizontally short body. Unlike Gerbrayelichthys, which it shares many morphological similarities with, Maraldichthys tail and anal fin are both rotated in a vertical position."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_maraldichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_maraldichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_maraldichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_maraldichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_maraldichthys"
+		}
+	]
+}

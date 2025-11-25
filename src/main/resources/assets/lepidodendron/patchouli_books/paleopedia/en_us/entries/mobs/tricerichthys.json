@@ -1,0 +1,47 @@
+{
+	"name": "Tricerichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tricerichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tricerichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tricerichthys",
+			"title": "Tricerichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Gladiopycnodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. wenzi",
+            "entity": "lepidodendron:prehistoric_flora_tricerichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tricerichthys",
+			"type": "text",
+			"text": "Tricerichthys is a genus of pycnodont from the Late Cretaceous, Sannine Formation of Lebanon. Like most other Gladiopycnodontids, Tricerichthys had an elongated Rostrum and its pectoral fins have been modified into large spines. Tricerichthys also has a dorsal spine that bares resemblance to a check mark."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tricerichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tricerichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tricerichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tricerichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tricerichthys"
+		}
+	]
+}

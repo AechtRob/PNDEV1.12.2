@@ -546,13 +546,13 @@ public class ModelPterodaustro extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.5F;
-        this.main.offsetX = 0.2F;
-        this.main.rotateAngleY = (float)Math.toRadians(125);
-        this.main.rotateAngleX = (float)Math.toRadians(0);
+        this.main.offsetY = -0.2F;
+        this.main.offsetX = -0.4F;
+        this.main.rotateAngleY = (float)Math.toRadians(240);
+        this.main.rotateAngleX = (float)Math.toRadians(-20);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 1.5F;
+        float scaler = 0.9F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
         //this.setRotateAngle(root, 0.2618F, 0.0F, 0.0F);

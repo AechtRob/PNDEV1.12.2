@@ -530,13 +530,13 @@ public class ModelSauroposeidon extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = 0.8F;
+        this.hips.offsetY = 3.0F;
         this.hips.offsetX = -0.25F;
-        this.hips.rotateAngleY = (float)Math.toRadians(-68);
-        this.hips.rotateAngleX = (float)Math.toRadians(15);
-        this.hips.rotateAngleZ = (float)Math.toRadians(-10);
+        this.hips.rotateAngleY = (float)Math.toRadians(230);
+        this.hips.rotateAngleX = (float)Math.toRadians(0);
+        this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;
-        float scaler = 0.35F;
+        float scaler = 0.3F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
 

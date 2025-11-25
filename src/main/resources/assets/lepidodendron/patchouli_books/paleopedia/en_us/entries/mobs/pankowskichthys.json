@@ -1,0 +1,47 @@
+{
+	"name": "Pankowskichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pankowskichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_pankowskichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pankowskichthys",
+			"title": "Pankowskichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Gladiopycnodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. libanicus",
+            "entity": "lepidodendron:prehistoric_flora_pankowskichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pankowskichthys",
+			"type": "text",
+			"text": "Pankowskichthys is a genus of pycnodont from the Late Cretaceous, Sannine Formation of Lebanon. Like most other Gladiopycnodontids, Pankowskichthys had an elongated Rostrum and its pectoral fins have been modified into large spines. Pankowskichthys is notable for its dorsal spine that is more than twice the height of its body."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pankowskichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pankowskichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pankowskichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pankowskichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pankowskichthys"
+		}
+	]
+}

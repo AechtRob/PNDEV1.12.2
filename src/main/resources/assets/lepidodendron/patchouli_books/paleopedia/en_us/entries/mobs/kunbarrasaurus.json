@@ -1,0 +1,47 @@
+{
+	"name": "Kunbarrasaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kunbarrasaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_kunbarrasaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kunbarrasaurus",
+			"title": "Kunbarrasaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Thyreophora$(br)>Ankylosauria$(br)>Parankylosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "K. ieversi",
+            "entity": "lepidodendron:prehistoric_flora_kunbarrasaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kunbarrasaurus",
+			"type": "text",
+			"text": "Kunbarrasaurus is a genus of ankylosaurian that is know from the Early Cretaceous of Australia. This small creature is the most complete ankylosaurian from the entirety of the Gondwanan continents, even preserving its stomach contents. Its genus name roughly translates to shield lizard."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kunbarrasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kunbarrasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kunbarrasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kunbarrasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kunbarrasaurus"
+		}
+	]
+}

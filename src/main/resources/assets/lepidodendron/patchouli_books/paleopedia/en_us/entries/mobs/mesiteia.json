@@ -1,0 +1,47 @@
+{
+	"name": "Mesiteia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mesiteia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_mesiteia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mesiteia",
+			"title": "Mesiteia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Orectolobiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "M. emiliae",
+            "entity": "lepidodendron:prehistoric_flora_mesiteia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mesiteia",
+			"type": "text",
+			"text": "Mesiteia is a genus of carpet shark from the Late Cretaceous, Sannine Formation of Lebanon. Many specimens have been discovered from the Haqel locality of the Sannine Formation, as well as a potential Eocene fossil. However it is very likely that it was a Late Cretaceous specimen that was miss attributed to Monte Bolca."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mesiteia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mesiteia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mesiteia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mesiteia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mesiteia"
+		}
+	]
+}

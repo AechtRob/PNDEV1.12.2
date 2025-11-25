@@ -1,0 +1,47 @@
+{
+	"name": "Stolokrosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/stolokrosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_stolokrosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_stolokrosuchus",
+			"title": "Stolokrosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Crocodylomorpha$(br)>Notosuchia$(br)>Peirosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. lapparenti",
+            "entity": "lepidodendron:prehistoric_flora_stolokrosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stolokrosuchus",
+			"type": "text",
+			"text": "Stolokrosuchus is a genus of Notosuchian from the Early Cretaceous Elrhaz Formation of Niger. It had long thin snout and bony knobs on its prefrontal. Stolokrosuchus was capable of both terrestrial and aquatic locomotion. It was also most likely a galloper moving quickly to chase down prey."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_stolokrosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_stolokrosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_stolokrosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_stolokrosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_stolokrosuchus"
+		}
+	]
+}

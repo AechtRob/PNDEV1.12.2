@@ -1,0 +1,47 @@
+{
+	"name": "Plectocretacicus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/plectocretacicus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_plectocretacicus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_plectocretacicus",
+			"title": "Plectocretacicus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Tetradontiformes$(br)>Plectocretacicidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. clarae",
+            "entity": "lepidodendron:prehistoric_flora_plectocretacicus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_plectocretacicus",
+			"type": "text",
+			"text": "Plectocretacicus is a genus of tetradontiform from the Late Cretaceous, Sannine Formation of Lebanon. This small 2.5cm fish is possibly the earliest known member of the order Tetradontiformes, the order that contains boxfish, pufferfish, and triggerfish."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_plectocretacicus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_plectocretacicus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_plectocretacicus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_plectocretacicus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_plectocretacicus"
+		}
+	]
+}

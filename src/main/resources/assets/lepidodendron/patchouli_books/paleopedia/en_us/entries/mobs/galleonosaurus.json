@@ -1,0 +1,47 @@
+{
+	"name": "Galleonosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/galleonosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_galleonosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_galleonosaurus",
+			"title": "Galleonosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Ornithopoda$(br)>Elasmaria"
+		},
+        	{
+            "type": "entity",
+            "name": "G. dorisae",
+            "entity": "lepidodendron:prehistoric_flora_galleonosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_galleonosaurus",
+			"type": "text",
+			"text": "Galleonosaurus is a genus of elasmarian dinosaur known from the Early Cretaceous, Wonthaggi Formation of Victoria, Australia. Its Genus name refers to galleon in reference to the appearance of the holotype maxilla that looks like the upside down hull of a galleon."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_galleonosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_galleonosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_galleonosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_galleonosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_galleonosaurus"
+		}
+	]
+}

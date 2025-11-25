@@ -1,0 +1,47 @@
+{
+	"name": "Brachytrachelopan",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/brachytrachelopan_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_brachytrachelopan",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_brachytrachelopan",
+			"title": "Brachytrachelopan",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Sauropoda$(br)>Diplodocoidea$(br)>Dicraeosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. mesai",
+            "entity": "lepidodendron:prehistoric_flora_brachytrachelopan",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brachytrachelopan",
+			"type": "text",
+			"text": "Brachytrachelopan is a genus of dicraeosaurid sauropod that is known from the Jurassic of Argentina. This creatures short neck was approximately forty percent shorter than other dicraeosaurids and the shortest neck of any known sauropod. It has been theorized that Brachytrachelopan and other dicraeosaurids shorter necks were do to evolving towards low browsing and specialized diets."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_brachytrachelopan"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_brachytrachelopan"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_brachytrachelopan"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_brachytrachelopan"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_brachytrachelopan"
+		}
+	]
+}

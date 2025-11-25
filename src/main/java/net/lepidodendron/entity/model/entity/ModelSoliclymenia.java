@@ -283,13 +283,13 @@ public class ModelSoliclymenia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -1.2F;
+        this.root.offsetY = -3.8F;
         this.root.offsetX = 1.2F;
-        this.root.rotateAngleY = (float)Math.toRadians(242);
+        this.root.rotateAngleY = (float)Math.toRadians(272);
         this.root.rotateAngleX = (float)Math.toRadians(-18);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 1.23F;
+        float scaler = 3.23F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
 

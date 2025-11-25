@@ -527,12 +527,12 @@ public class ModelPlumulites extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.base.offsetY = -1.2F;
-        this.base.offsetX = 0.238F;
-        this.base.rotateAngleY = (float)Math.toRadians(242);
-        this.base.rotateAngleX = (float)Math.toRadians(8);
-        this.base.rotateAngleZ = (float)Math.toRadians(-8);
+        this.base.offsetX = 0.538F;
+        this.base.rotateAngleY = (float)Math.toRadians(232);
+        this.base.rotateAngleX = (float)Math.toRadians(40);
+        this.base.rotateAngleZ = (float)Math.toRadians(0);
         this.base.scaleChildren = true;
-        float scaler = 3.63F;
+        float scaler = 2.63F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
 

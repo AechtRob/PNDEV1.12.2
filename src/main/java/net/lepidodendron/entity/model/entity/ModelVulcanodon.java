@@ -362,10 +362,10 @@ public class ModelVulcanodon extends ModelBasePalaeopedia {
         this.hips.offsetY = 0.55F;
         this.hips.offsetX = 0.15F;
         this.hips.rotateAngleY = (float)Math.toRadians(220);
-        this.hips.rotateAngleX = (float)Math.toRadians(-2);
-        this.hips.rotateAngleZ = (float)Math.toRadians(2);
+        this.hips.rotateAngleX = (float)Math.toRadians(0);
+        this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;
-        float scaler = 0.8F;
+        float scaler = 0.4F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
         

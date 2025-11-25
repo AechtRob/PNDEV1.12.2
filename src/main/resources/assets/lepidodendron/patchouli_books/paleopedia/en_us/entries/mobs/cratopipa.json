@@ -1,0 +1,47 @@
+{
+	"name": "Cratopipa",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cratopipa_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_cratopipa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cratopipa",
+			"title": "Cratopipa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Amphibia$(br)>Anura$(br)>Pipoidea$(br)>Pipimorpha"
+		},
+        	{
+            "type": "entity",
+            "name": "C. novaolindensis",
+            "entity": "lepidodendron:prehistoric_flora_cratopipa",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cratopipa",
+			"type": "text",
+			"text": "Cratopipa is a genus of pipimorph frog from the Early Cretaceous, Crato Formation of Brazil. Cratopipa is one of the best preserved anurans from the Araripe Basin as well as being the oldest pipimorph in South America."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cratopipa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cratopipa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cratopipa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cratopipa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cratopipa"
+		}
+	]
+}

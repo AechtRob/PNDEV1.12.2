@@ -1,0 +1,47 @@
+{
+	"name": "Acrognathus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/acrognathus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_acrognathus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_acrognathus",
+			"title": "Acrognathus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Aulopiformes$(br)>Cholorophthalmidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. boops",
+            "entity": "lepidodendron:prehistoric_flora_acrognathus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acrognathus",
+			"type": "text",
+			"text": "Acrognathus is a genus of chlorophthalmid fish from the Late Cretaceous, Sannine Formation of Lebanon as well as England. Acrognathus has tentatively been placed with greeneyes in the family Chlorophthalmidae which would make it the oldest representative of the family, however a more extensive systematic analysis as yet to have been preformed."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_acrognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_acrognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_acrognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_acrognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_acrognathus"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Rhamphoichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rhamphoichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_rhamphoichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rhamphoichthys",
+			"title": "Rhamphoichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Tselfatiiformes$(br)>Plethodidae"
+		},
+        	{
+            "type": "entity",
+            "name": "R. taxidiotis",
+            "entity": "lepidodendron:prehistoric_flora_rhamphoichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhamphoichthys",
+			"type": "text",
+			"text": "Rhamphoichthys is a genus of plethodid ray-finned fish from the Late Cretaceous, Sannine Formation of Lebanon as well as parts of Europe. It had a long body with an elongated rostrum reminiscent of modern day billfish and swordfish."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rhamphoichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rhamphoichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rhamphoichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rhamphoichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rhamphoichthys"
+		}
+	]
+}

@@ -550,13 +550,13 @@ public class ModelKeurbos extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.head.offsetY = -1.0F;
-        this.head.offsetX = 1.25F;
-        this.head.offsetZ = 1.0F;
+        this.head.offsetX = 1.7F;
+        this.head.offsetZ = 10.0F;
         this.head.rotateAngleY = (float)Math.toRadians(225);
         this.head.rotateAngleX = (float)Math.toRadians(28);
         this.head.rotateAngleZ = (float)Math.toRadians(-8);
         this.head.scaleChildren = true;
-        float scaler = 5.63F;
+        float scaler = 2.63F;
         this.head.setScale(scaler, scaler, scaler);
         //Start of pose:
 

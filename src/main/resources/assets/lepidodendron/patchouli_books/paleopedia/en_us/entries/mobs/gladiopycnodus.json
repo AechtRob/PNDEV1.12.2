@@ -1,0 +1,47 @@
+{
+	"name": "Gladiopycnodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gladiopycnodus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_gladiopycnodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gladiopycnodus",
+			"title": "Gladiopycnodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Gladiopycnodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "G. byrnei",
+            "entity": "lepidodendron:prehistoric_flora_gladiopycnodus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gladiopycnodus",
+			"type": "text",
+			"text": "Gladiopycnodus is a genus of pycnodont from the Late Cretaceous, Sannine Formation of Lebanon. This fish is easily recognizable for its long rostrum on its face and twin spines on its rear. It has been suggested that Gladiopycnodus would have had a demersal ecology and that it would have occupied a niche similar to modern snipefish and bellowsfish."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gladiopycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gladiopycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gladiopycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gladiopycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gladiopycnodus"
+		}
+	]
+}

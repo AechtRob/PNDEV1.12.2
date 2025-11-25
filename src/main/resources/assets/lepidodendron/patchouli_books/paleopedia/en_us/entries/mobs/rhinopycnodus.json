@@ -1,0 +1,47 @@
+{
+	"name": "Rhinopycnodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rhinopycnodus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_rhinopycnodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rhinopycnodus",
+			"title": "Rhinopycnodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Pycnodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "R. gabrielle",
+            "entity": "lepidodendron:prehistoric_flora_rhinopycnodus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhinopycnodus",
+			"type": "text",
+			"text": "Rhinopycnodus is a genus of pycnodont from the Late Cretaceous, Sannine Formation of Lebanon. Rhinopycnodus is characterized by a long snot comparable to what is seen on modern day Zebrasoma tangs. The species name is dedicated to Mrs. Gabriella di Tota, the co-author’s wife."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rhinopycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rhinopycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rhinopycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rhinopycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rhinopycnodus"
+		}
+	]
+}

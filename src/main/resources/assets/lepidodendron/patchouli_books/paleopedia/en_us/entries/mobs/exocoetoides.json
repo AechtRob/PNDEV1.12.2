@@ -1,0 +1,47 @@
+{
+	"name": "Exocoetoides",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/exocoetoides_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_exocoetoides",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_exocoetoides",
+			"title": "Exocoetoides",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Aulopiformes?$(br)>Cheirothricidae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. minor",
+            "entity": "lepidodendron:prehistoric_flora_exocoetoides",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_exocoetoides",
+			"type": "text",
+			"text": "Exocoetoides is a genus of cheirothricid fish known from the Late Cretaceous Sannine Formation of Lebanon. It was most likely a small flying using its pectoral gins to glide over the surface of the water to escape from predators."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_exocoetoides"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_exocoetoides"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_exocoetoides"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_exocoetoides"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_exocoetoides"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Paulchoffatia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/paulchoffatia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_paulchoffatia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_paulchoffatia",
+			"title": "Paulchoffatia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Mammalia$(br)>Multituberculata$(br)>Paulchoffatiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. delgadoi",
+            "entity": "lepidodendron:prehistoric_flora_paulchoffatia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_paulchoffatia",
+			"type": "text",
+			"text": "Paulchoffatia is a genus of multituberculate that is known from both the Early and Late Cretaceous of Europe. This small creature is characterized by a massive Corpus mandibulae and large incisors."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_paulchoffatia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_paulchoffatia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_paulchoffatia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_paulchoffatia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_paulchoffatia"
+		}
+	]
+}

@@ -238,10 +238,13 @@ public class ModelMagnipterygius extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.25F;
-        this.main.offsetX = 1.4F;
+        this.main.offsetX = 0.1F;
         this.main.offsetZ = 2.0F;
         this.main.scaleChildren = true;
-        float scaler = 5.0F;
+        this.main.rotateAngleY = (float)Math.toRadians(268);
+        this.main.rotateAngleX = (float)Math.toRadians(20);
+        this.main.rotateAngleZ = (float)Math.toRadians(-8);
+        float scaler = 0.7F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

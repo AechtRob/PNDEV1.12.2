@@ -308,13 +308,13 @@ public class ModelValdotriton extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = -1.5F;
-        this.hips.offsetX = 1.5F;
+        this.hips.offsetX = 0F;
         this.hips.offsetZ = 2.5F;
         this.hips.rotateAngleY = (float)Math.toRadians(235);
-        this.hips.rotateAngleX = (float)Math.toRadians(18);
-        this.hips.rotateAngleZ = (float)Math.toRadians(-8);
+        this.hips.rotateAngleX = (float)Math.toRadians(0);
+        this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;
-        float scaler = 1.7F;
+        float scaler = 3.7F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
 
