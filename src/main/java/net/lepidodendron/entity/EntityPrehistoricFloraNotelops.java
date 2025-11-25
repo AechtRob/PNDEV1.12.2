@@ -7,7 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderWardichthys;
+import net.lepidodendron.entity.render.entity.RenderNotelops;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
@@ -173,7 +173,7 @@ public class EntityPrehistoricFloraNotelops extends EntityPrehistoricFloraFishBa
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.WARDICHTHYS_LOOT;
+		return LepidodendronMod.NOTELOPS_LOOT;
 	}
 
 	//Rendering taxidermy:
@@ -192,15 +192,16 @@ public class EntityPrehistoricFloraNotelops extends EntityPrehistoricFloraFishBa
 	public static double lowerbacklineoffset(@Nullable String variant) {return 0.0;}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return -0.0;}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderWardichthys.TEXTURE;}
+	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderNotelops.TEXTURE;}
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelWardichthys;}
-	public static float getScaler(@Nullable String variant) {return RenderWardichthys.getScaler();}
+	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelNotelops;}
+	public static float getScaler(@Nullable String variant) {return RenderNotelops.getScaler();}
 	public static float widthSupport(@Nullable String variant) {return 0.015F;}
+
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_WARDICHTHYS;
+		return ModTriggers.CLICK_NOTELOPS;
 	}
 }
 
