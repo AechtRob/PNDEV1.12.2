@@ -612,6 +612,9 @@ public class ModelAcanthostega extends ModelBasePalaeopedia {
     public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraAcanthostega entity = (EntityPrehistoricFloraAcanthostega) entitylivingbaseIn;
         int animCycle = 70;
+        if (entity.animSpeedAdder() <= 0) {
+            partialTickTime = 0; //If it's static don't increment partial ticks either
+        }
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;
         double yy = 0;
