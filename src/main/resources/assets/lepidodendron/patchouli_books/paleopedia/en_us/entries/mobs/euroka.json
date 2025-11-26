@@ -1,0 +1,52 @@
+{
+	"name": "Euroka",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/euroka_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_euroka",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_euroka",
+			"title": "Euroka",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Actinopterygii$(br)>Teleostei$(br)>Elopiformes$(br)>Eurokidae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. dunravenensis",
+            "entity": "lepidodendron:prehistoric_flora_euroka",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_euroka",
+			"type": "text",
+			"text": "Euroka dunravenensis is a species of elopiform fish known from the Albian Toolebuc Formation of Australia. Its name comes from the Euroka Arch that was near where it was found, whilst the specific name comes from Dunraven Station, where many fossil fish including the holotype of Euroka have been found. The fish is known from a 30 centimeter long shallow skull, with the total animal likely growing to a meter in length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_euroka",
+			"type": "text",
+			"text": "Euroka also has particularly large pointed teeth, sometimes growing to 15 centimeters and having been compared to tusks. Unfortunately no postcranial skeleton is found, however researchers suggest it may have had an eel-like body plan, lying in wait for prey then ambushing them. The large teeth of the animal would have made it harder for them to escape. Being a member of Elopiformes, it may have been a stem-group ancestor to eels."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_euroka"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_euroka"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_euroka"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_euroka"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_euroka"
+		}
+	]
+}

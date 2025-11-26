@@ -235,9 +235,9 @@ public class ModelLiaoningogriphus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -2.0F;
-        this.body.offsetX = -0.9F;
-        this.body.rotateAngleY = (float)Math.toRadians(200);
-        this.body.rotateAngleX = (float)Math.toRadians(8);
+        this.body.offsetX = 0.7F;
+        this.body.rotateAngleY = (float)Math.toRadians(220);
+        this.body.rotateAngleX = (float)Math.toRadians(20);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);
         this.body.scaleChildren = true;
         float scaler = 4.5F;

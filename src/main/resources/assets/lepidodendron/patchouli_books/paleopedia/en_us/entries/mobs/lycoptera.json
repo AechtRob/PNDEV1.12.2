@@ -1,0 +1,47 @@
+{
+	"name": "Lycoptera",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lycoptera_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_lycoptera",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lycoptera",
+			"title": "Lycoptera",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Lycopteriformes$(br)>Lycopteridae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. middendorffi",
+            "entity": "lepidodendron:prehistoric_flora_lycoptera",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lycoptera",
+			"type": "text",
+			"text": "Lycoptera is a genus of fish that is known from many formations across Early Cretaceous Asia. These small fish are commonly found in large groups buried together in what is likely to be mass death events from seasonal upwelling of anoxic waters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lycoptera"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lycoptera"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lycoptera"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lycoptera"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lycoptera"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Mortoniceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mortoniceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_mortoniceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mortoniceras",
+			"title": "Mortoniceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Acanthoceratoidea$(br)>Brancoceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. rostratum",
+            "entity": "lepidodendron:prehistoric_flora_mortoniceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mortoniceras",
+			"type": "text",
+			"text": "Mortoniceras is a genus of brancoceratid ammonite that was known from all over the world during the Early Cretaceous. Mortoniceras is so widely spread and common that it has been spilt up into several subgenera."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mortoniceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mortoniceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mortoniceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mortoniceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mortoniceras"
+		}
+	]
+}

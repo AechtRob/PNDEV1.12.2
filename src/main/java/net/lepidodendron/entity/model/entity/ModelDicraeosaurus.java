@@ -711,7 +711,7 @@ public class ModelDicraeosaurus extends ModelBasePalaeopedia {
                         && camara.getAnimation() != camara.ATTACK_ANIMATION) {
                         this.chainFlap(Neck, 0.05F, 0.05F, 0.5, f2, 0.8F);
                         this.chainWave(Neck, 0.04F * 2, -0.02F, 0.5F, f2, 0.8F);
-                        this.walk(lowerjaw, (float) ( 0.04), 0.1F, true, 0, 0, f2, 1);
+                        this.walk(lowerjaw, (float) ( 0.04), 0.1F, true, 0, 0.15F, f2, 1);
                     }
 
                     if (camara.getAnimation() != camara.ATTACK_ANIMATION) {

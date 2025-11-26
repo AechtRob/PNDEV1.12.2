@@ -333,7 +333,7 @@ public class ModelAngelacanthus extends ModelBasePalaeopedia {
             this.swing(frontrightfin, (float) (speed * 0.75), 0.1F, true, -3, 0, f2, 1);
             if (!e.isInWater()) {
                 this.main.rotateAngleZ = (float) Math.toRadians(90);
-                this.main.offsetY = 0.2F;
+                this.main.offsetY = -0.2F;
                 this.bob(main, speed, 0.1F, false, f2, 1);
 
             }

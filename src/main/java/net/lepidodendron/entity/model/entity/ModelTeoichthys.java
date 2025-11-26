@@ -234,7 +234,7 @@ public class ModelTeoichthys extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -1.2F;
-        this.body.offsetX = 0.238F;
+        this.body.offsetX = 1.238F;
         this.body.rotateAngleY = (float)Math.toRadians(242);
         this.body.rotateAngleX = (float)Math.toRadians(8);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);

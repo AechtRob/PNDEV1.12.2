@@ -138,7 +138,7 @@ public class EntityPrehistoricFloraNotobatrachus extends EntityPrehistoricFloraS
 		}
 		//this is needed to control the distance of the jump, higher number = larger blocks jumped
 		if (!this.isWalking && (!this.isReallyInWater())) {
-			calcSpeed = 0.3F;
+			calcSpeed = 0.4F;
 		}
 		if(this.getIsFast()){
 			calcSpeed *=1.4F;

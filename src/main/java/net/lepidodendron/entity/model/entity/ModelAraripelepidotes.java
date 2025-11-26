@@ -268,7 +268,7 @@ public class ModelAraripelepidotes extends ModelBasePalaeopedia {
         this.body.rotateAngleX = (float)Math.toRadians(8);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);
         this.body.scaleChildren = true;
-        float scaler = 3.63F;
+        float scaler = 1.63F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
 

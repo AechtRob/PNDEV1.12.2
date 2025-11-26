@@ -1,0 +1,47 @@
+{
+	"name": "Anglaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/anglaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_anglaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_anglaspis",
+			"title": "Anglaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Chordata$(br)>Pterapidomorphi$(br)>Cyanthaspidiformes$(br)>Cyathaspidida$(br)>Ariaspidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. macculloughi",
+            "entity": "lepidodendron:prehistoric_flora_anglaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anglaspis",
+			"type": "text",
+			"text": "Anglaspis is a genus of cyathaspidiform heterostracan agathan that is known from the Late Silurian to Early Devonian of Europe. Like other members of Cyathaspidiformes, Anglaspis had dorsal and ventral plates covering its forebody as well as gill pouches, and nasal openings that were on the roof of the oral cavity."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anglaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anglaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anglaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anglaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anglaspis"
+		}
+	]
+}

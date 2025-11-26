@@ -1,0 +1,47 @@
+{
+	"name": "Tropites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tropites_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tropites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tropites",
+			"title": "Tropites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Ceratitida$(br)>Tropitoidea"
+		},
+        	{
+            "type": "entity",
+            "name": "T. subbullatus",
+            "entity": "lepidodendron:prehistoric_flora_tropites",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tropites",
+			"type": "text",
+			"text": "Tropites is genus of tropitoid ammonite that existed during the Late Triassic period. This ammonite is characterized by a distinctly globular shell within a central keel. Because of its narrow time range, existing between 230 to 208 million years ago, Tropites is a excellent index fossil."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tropites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tropites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tropites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tropites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tropites"
+		}
+	]
+}

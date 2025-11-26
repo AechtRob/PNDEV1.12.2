@@ -1,0 +1,47 @@
+{
+	"name": "Araripelepidotes",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/araripelepidotes_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_araripelepidotes",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_araripelepidotes",
+			"title": "Araripelepidotes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Ginglymodi$(br)>Lepisosteiformes$(br)>Lepisosteioidei"
+		},
+        	{
+            "type": "entity",
+            "name": "A. temnurus",
+            "entity": "lepidodendron:prehistoric_flora_araripelepidotes",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_araripelepidotes",
+			"type": "text",
+			"text": "Araripelepidotes is a genus of ginglymodian fish that was known from multiple formations in the Early Cretaceous, Araripe Basin of South America. It was most likely a toothless suction feeder, due to the development of its mobile maxilla and the presence of an interoperculum."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_araripelepidotes"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_araripelepidotes"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_araripelepidotes"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_araripelepidotes"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_araripelepidotes"
+		}
+	]
+}

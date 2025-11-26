@@ -1,0 +1,47 @@
+{
+	"name": "Siamamia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/siamamia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_siamamia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_siamamia",
+			"title": "Siamamia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Actinopterygii$(br)>Halecomorphi$(br)>Amiiformes$(br)>Amiidae$(br)>Sinamiinae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. naga",
+            "entity": "lepidodendron:prehistoric_flora_siamamia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_siamamia",
+			"type": "text",
+			"text": "Siamamia naga is a species of bowfin found in the Early Cretaceous Sao Khua Formation, and potentially the Barremian Phu Din Daeng Locality. The animal's name comes from the old name of Thailand, with the specific name being named after the famous mythological creature. The animal is known from various partially articulated skulls, and would have grown to 73 centimeters in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_siamamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_siamamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_siamamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_siamamia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_siamamia"
+		}
+	]
+}

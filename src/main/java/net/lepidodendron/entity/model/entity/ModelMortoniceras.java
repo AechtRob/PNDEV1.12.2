@@ -416,8 +416,8 @@ public class ModelMortoniceras extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -1.2F;
-        this.root.offsetX = 1.2F;
-        this.root.rotateAngleY = (float)Math.toRadians(242);
+        this.root.offsetX = 0.2F;
+        this.root.rotateAngleY = (float)Math.toRadians(302);
         this.root.rotateAngleX = (float)Math.toRadians(-18);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;

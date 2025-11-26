@@ -1,0 +1,47 @@
+{
+	"name": "Chanopsis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/chanopsis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_chanopsis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_chanopsis",
+			"title": "Chanopsis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Actinopterygii$(br)>Teleosti$(br)>Osteoglossiformes$(br)>Osteoglossidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. lombardi",
+            "entity": "lepidodendron:prehistoric_flora_chanopsis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_chanopsis",
+			"type": "text",
+			"text": "Chanopsis is a genus of Osteoglossiform fish known from the riverside Loia and Bokungu Formations in the Democratic Republic of the Congo, dated Aptian to Albian. The animal is large, growing to 1 meter in length, and is thought to be the most basal osteoglossiform, only distantly related to those of today. Some scales of the animal have been preserved showing large scales coexisting with small ones."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_chanopsis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_chanopsis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_chanopsis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_chanopsis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_chanopsis"
+		}
+	]
+}

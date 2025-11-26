@@ -835,8 +835,8 @@ public class ModelDissimilites extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Root.offsetY = -1.2F;
-        this.Root.offsetX = 1.2F;
-        this.Root.rotateAngleY = (float)Math.toRadians(242);
+        this.Root.offsetX = 0.2F;
+        this.Root.rotateAngleY = (float)Math.toRadians(260);
         this.Root.rotateAngleX = (float)Math.toRadians(-18);
         this.Root.rotateAngleZ = (float)Math.toRadians(-8);
         this.Root.scaleChildren = true;
