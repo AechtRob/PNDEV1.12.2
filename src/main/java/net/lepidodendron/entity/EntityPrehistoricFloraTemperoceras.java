@@ -12,7 +12,7 @@ import net.lepidodendron.entity.ai.NautiloidWanderBottomFeed;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
-import net.lepidodendron.item.entities.ItemNautiloidEggsOrthoceras;
+import net.lepidodendron.item.entities.ItemNautiloidEggsTemperoceras;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
@@ -72,7 +72,6 @@ public class EntityPrehistoricFloraTemperoceras extends EntityPrehistoricFloraNa
 		int waterTest = Math.round(1 * this.getAgeScale());
 		boolean check2 = this.world.getBlockState(this.getPosition().up(waterTest)).getMaterial() != Material.WATER;
 
-
 		return check1 && !check2;
 	}
 
@@ -105,7 +104,7 @@ public class EntityPrehistoricFloraTemperoceras extends EntityPrehistoricFloraNa
 
 	@Override
 	public int getAdultAge() {
-		return 72000;
+		return 48000;
 	}
 
 	@Override
@@ -123,8 +122,6 @@ public class EntityPrehistoricFloraTemperoceras extends EntityPrehistoricFloraNa
 	public String[] getFoodOreDicts() {
 		return DietString.FISHFOOD;
 	}
-
-	
 
 	@Override
 	public boolean isAIDisabled() {
@@ -157,7 +154,7 @@ public class EntityPrehistoricFloraTemperoceras extends EntityPrehistoricFloraNa
 
 	@Override
 	public ItemStack getPropagule() {
-		return new ItemStack(ItemNautiloidEggsOrthoceras.block, (int) (1));
+		return new ItemStack(ItemNautiloidEggsTemperoceras.block, (int) (1));
 	}
 
 	@Override

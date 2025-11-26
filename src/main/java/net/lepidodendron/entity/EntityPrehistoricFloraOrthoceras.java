@@ -105,7 +105,7 @@ public class EntityPrehistoricFloraOrthoceras extends EntityPrehistoricFloraNaut
 
 	@Override
 	public int getAdultAge() {
-		return 72000;
+		return 48000;
 	}
 
 	@Override
@@ -123,8 +123,6 @@ public class EntityPrehistoricFloraOrthoceras extends EntityPrehistoricFloraNaut
 	public String[] getFoodOreDicts() {
 		return DietString.FISHFOOD;
 	}
-
-	
 
 	@Override
 	public boolean isAIDisabled() {
