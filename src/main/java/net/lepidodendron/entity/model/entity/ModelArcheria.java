@@ -277,8 +277,10 @@ public class ModelArcheria extends ModelBasePalaeopedia {
     }
     public void renderStaticFloor(float f) {
 
+        this.hips.render(f);
         resetToDefaultPose();
     }
+
     @Override
     public void renderStaticBook(float f) {
     //Rotations, positions and sizing:

@@ -10,6 +10,7 @@ public class RenderDisplays {
     public static final ModelCrussolum modelCrussolum = new ModelCrussolum();
     public static final ModelVelocipede modelVelocipede = new ModelVelocipede();
     public static final ModelFulmenocursor modelFulmenocursor = new ModelFulmenocursor();
+    public static final ModelArcheria modelArcheria = new ModelArcheria();
     public static final ModelDevonobius modelDevonobius = new ModelDevonobius();
     public static final ModelNotelops modelNotelops = new ModelNotelops();
     public static final ModelBorealopelta modelBorealopelta = new ModelBorealopelta();
