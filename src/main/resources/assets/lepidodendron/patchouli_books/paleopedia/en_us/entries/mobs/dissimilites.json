@@ -1,0 +1,47 @@
+{
+	"name": "Dissimilites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dissimilites_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_dissimilites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dissimilites",
+			"title": "Dissimilites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Ancyloceratina$(br)>Acrioceratid"
+		},
+        	{
+            "type": "entity",
+            "name": "D. intermedius",
+            "entity": "lepidodendron:prehistoric_flora_dissimilites",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dissimilites",
+			"type": "text",
+			"text": "Dissimilites is a genus of heteromorph ammonite that is known from the Early Cretaceous of Europe. Acrioceratid ammonites start off with a coiled section and then grow a straight or curved shaft which ends in a hook."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dissimilites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dissimilites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dissimilites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dissimilites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dissimilites"
+		}
+	]
+}

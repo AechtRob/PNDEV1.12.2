@@ -1,0 +1,47 @@
+{
+	"name": "Liaoningogriphus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/liaoningogriphus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_liaoningogriphus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_liaoningogriphus",
+			"title": "Liaoningogriphus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Malacostraca$(br)>Hemicaridea$(br)>Spelaeogriphidae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. quadripartitus",
+            "entity": "lepidodendron:prehistoric_flora_liaoningogriphus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_liaoningogriphus",
+			"type": "text",
+			"text": "Liaoningogriphus is a genus of Spelaeogriphid crustacean from the Early Cretaceous, Yixan Formation of China. All four extant family members of Liaoningogriphus have been found in subterranean conditions, where they have managed to cling on till modern day."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_liaoningogriphus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_liaoningogriphus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_liaoningogriphus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_liaoningogriphus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_liaoningogriphus"
+		}
+	]
+}

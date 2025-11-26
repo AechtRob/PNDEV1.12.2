@@ -615,7 +615,8 @@ public class ModelAcanthostega extends ModelBasePalaeopedia {
         if (entity.animSpeedAdder() <= 0) {
             partialTickTime = 0; //If it's static don't increment partial ticks either
         }
-        double tickAnim = (entity.ticksExistedAnimated + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExistedAnimated + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;        double xx = 0;
+        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        double xx = 0;
         double yy = 0;
         double zz = 0;
         this.setRotateAngle(root, root.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*103/0.5-170))*0.59), root.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*103-170))*2), root.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*103-50))*2));
@@ -628,13 +629,17 @@ public class ModelAcanthostega extends ModelBasePalaeopedia {
 
 
 
-
-
-
-
-
-
-        if (tickAnim >= 31 && tickAnim < 70) {
+        if (tickAnim >= 0 && tickAnim < 16) {
+            xx = 0 + (((tickAnim - 0) / 16) * (2.7164+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50-50))*-50-(0)));
+            yy = 0 + (((tickAnim - 0) / 16) * (-127.6834+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50-90))*-90-(0)));
+            zz = -5.5 + (((tickAnim - 0) / 16) * (-6.1796+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50-70))*-30-(-5.5)));
+        }
+        else if (tickAnim >= 16 && tickAnim < 31) {
+            xx = 2.7164+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50-50))*-50 + (((tickAnim - 16) / 15) * (0.36431-(2.7164+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50-50))*-50)));
+            yy = -127.6834+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50-90))*-90 + (((tickAnim - 16) / 15) * (-76.321-(-127.6834+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50-90))*-90)));
+            zz = -6.1796+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50-70))*-30 + (((tickAnim - 16) / 15) * (-2.05199817+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50-70))*10-(-6.1796+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50-70))*-30)));
+        }
+        else if (tickAnim >= 31 && tickAnim < 70) {
             xx = 0.36431 + (((tickAnim - 31) / 39) * (0-(0.36431)));
             yy = -76.321 + (((tickAnim - 31) / 39) * (0-(-76.321)));
             zz = -2.05199817+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50-70))*10 + (((tickAnim - 31) / 39) * (-5.5-(-2.05199817+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50-70))*10)));
@@ -955,7 +960,6 @@ public class ModelAcanthostega extends ModelBasePalaeopedia {
             zz = 0;
         }
         this.setRotateAngle(leftleg3, leftleg3.rotateAngleX + (float) Math.toRadians(xx), leftleg3.rotateAngleY + (float) Math.toRadians(yy), leftleg3.rotateAngleZ + (float) Math.toRadians(zz));
-
     }
     public void animSwim(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraAcanthostega entity = (EntityPrehistoricFloraAcanthostega) entitylivingbaseIn;

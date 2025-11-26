@@ -1,0 +1,47 @@
+{
+	"name": "Apankura",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/apankura_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_apankura",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_apankura",
+			"title": "Apankura",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Euthycarcinoidea"
+		},
+        	{
+            "type": "entity",
+            "name": "A. machu",
+            "entity": "lepidodendron:prehistoric_flora_apankura",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_apankura",
+			"type": "text",
+			"text": "Apankura is a genus of euthycarcinoid from the Cambrian, Santa Rosita Formation of Argentina. At one point Apankura was the only Cambrian euthycarcinoid, however Mosineia and Micyomerus are likely older. Apankura derices from a Quechua word meaning crab, whilst machu derives from a word meaning grandfather."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_apankura"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_apankura"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_apankura"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_apankura"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_apankura"
+		}
+	]
+}

@@ -242,13 +242,13 @@ public class ModelTropites extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -1.2F;
+        this.main.offsetY = -2.2F;
         this.main.offsetX = 1.2F;
-        this.main.rotateAngleY = (float)Math.toRadians(242);
+        this.main.rotateAngleY = (float)Math.toRadians(292);
         this.main.rotateAngleX = (float)Math.toRadians(-18);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 1.23F;
+        float scaler = 2.23F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

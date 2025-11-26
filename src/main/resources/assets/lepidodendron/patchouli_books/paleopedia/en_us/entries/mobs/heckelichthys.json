@@ -1,0 +1,52 @@
+{
+	"name": "Hecklichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/heckelichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_heckelichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_heckelichthys",
+			"title": "Hecklichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Actinopterygii$(br)>Teleostei(br)>Ichthyodectiformes$(br)>(o)incertae sedis"
+		},
+        	{
+            "type": "entity",
+            "name": "H. preopercularis",
+            "entity": "lepidodendron:prehistoric_flora_heckelichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_heckelichthys",
+			"type": "text",
+			"text": "Heclichthys is a genus of ichthyodectiform fish from the Muhi Quarry in Mexico and various locations in Southern Europe, dating the fish from the Albian-Turonian. It is a mid-sized ichthyodectiform, its slender body only growing from 25-50 centimeters in length. This animal was originally described in 2008 to make a new genus for species not belonging to the genus Chirocentrites. As such the animal contains the species:"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_heckelichthys",
+			"type": "text",
+			"text": "H. microdon is a species with rows of small small teeth on both jaws. H. vexillifer is the smallest species, with extremely elongate anal and dorsal fins and being occasionally toothless. H. preopercularis, our species, is the only one known from the Muhi Quarries, and with a tail fin where the ventral lobe is longer than the dorsal one, as also seen in eubiodectes."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_heckelichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_heckelichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_heckelichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_heckelichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_heckelichthys"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Proscinetes",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/proscinetes_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_proscinetes",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_proscinetes",
+			"title": "Proscinetes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Pycnodontidae$(br)>Proscinetinae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. elegans",
+            "entity": "lepidodendron:prehistoric_flora_proscinetes",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_proscinetes",
+			"type": "text",
+			"text": "Proscinetes is a genus of pycnodontiform fish that is known from the Jurassic of Germany, France, and England. Like many other pycnodonts, Proscinetes was a schooling fish with a tall yet slim body."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_proscinetes"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_proscinetes"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_proscinetes"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_proscinetes"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_proscinetes"
+		}
+	]
+}
