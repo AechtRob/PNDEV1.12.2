@@ -172,7 +172,7 @@ public class DimensionSpawns {
     @Nullable
     public static String[] getMobName(String mobStr, String nbtStr) {
         String[] mobName = new String[]{};
-        if (nbtStr.contains("PNType:\"male\"") || nbtStr.contains("PNType:\"female\"")) {
+        if (nbtStr.contains("PNType:\"male\"") || nbtStr.contains("PNType:\"female\"") || nbtStr.contains("PNType:\"gendered\"")) {
             nbtStr = "";
         }
         EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobStr));
