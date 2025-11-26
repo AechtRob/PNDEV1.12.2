@@ -156,6 +156,7 @@ public class EntityPrehistoricFloraPterodaustro extends EntityPrehistoricFloraLa
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 8 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
@@ -256,9 +257,13 @@ public class EntityPrehistoricFloraPterodaustro extends EntityPrehistoricFloraLa
 			return false;
 		}
 
+		if (this.isReallyFlying()) {
+			return false;
+		}
+
 		BlockPos entityPos = Functions.getEntityBlockPos(this);
 
-		boolean test2 = false;
+		//boolean test2 = false;
 		boolean test = (this.getPFDrinking() <= 0
 				&& !world.isRemote
 				&& !this.getIsFast()
@@ -299,12 +304,12 @@ public class EntityPrehistoricFloraPterodaustro extends EntityPrehistoricFloraLa
 				facing = EnumFacing.WEST;
 
 			}
-			if (facing != null && test & test2) {
+			if (facing != null && test) { // & test2) {
 				this.setDrinkingFrom(entityPos.offset(facing).offset(facing));
 				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 			}
 		}
-		return test && test2;
+		return test;// && test2;
 	}
 
 	@Override

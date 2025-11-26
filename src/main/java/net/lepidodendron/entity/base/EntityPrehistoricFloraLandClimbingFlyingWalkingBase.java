@@ -645,6 +645,10 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
                             this.setAnimation(UNFLY_ANIMATION);
                         }
                     }
+                    else if ((!this.onGround) && this.canWalk() && this.world.getBlockState(this.getPosition().down()).getMaterial() != Material.LAVA  && this.world.getBlockState(this.getPosition().down()).getMaterial() != Material.WATER) {
+                        this.motionY = this.motionY - 0.1F;
+                        sitCooldown = 0;
+                    }
                     else if (this.canClimb()) {
                         Vec3d vec3d = this.getPositionEyes(0);
                         Vec3d vec3d1 = this.getLook(0);
