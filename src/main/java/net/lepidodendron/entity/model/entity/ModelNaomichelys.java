@@ -523,7 +523,7 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
                     animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
 
                 } else {
-                    animIdlePose(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+//                    animIdlePose(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
             }
         }
@@ -558,10 +558,15 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-         if (tickAnim >= 0 && tickAnim < 10) {
-            xx = -5 + (((tickAnim - 0) / 10) * (-2.5-(-5)));
-            yy = 0 + (((tickAnim - 0) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 10) * (0-(0)));
+         if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-5-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 10) {
+            xx = -5 + (((tickAnim - 5) / 5) * (-2.5-(-5)));
+            yy = 0 + (((tickAnim - 5) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 5) / 5) * (0-(0)));
         }
         else if (tickAnim >= 10 && tickAnim < 16) {
             xx = -2.5 + (((tickAnim - 10) / 6) * (0.41627-(-2.5)));
@@ -578,30 +583,35 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
             yy = 0 + (((tickAnim - 20) / 3) * (-0.10361-(0)));
             zz = 0 + (((tickAnim - 20) / 3) * (2.49785-(0)));
         }
-        else if (tickAnim >= 23 && tickAnim < 33) {
-            xx = 2.37374 + (((tickAnim - 23) / 10) * (1.88-(2.37374)));
-            yy = -0.10361 + (((tickAnim - 23) / 10) * (0-(-0.10361)));
-            zz = 2.49785 + (((tickAnim - 23) / 10) * (0-(2.49785)));
+        else if (tickAnim >= 23 && tickAnim < 30) {
+            xx = 2.37374 + (((tickAnim - 23) / 7) * (1.88-(2.37374)));
+            yy = -0.10361 + (((tickAnim - 23) / 7) * (0-(-0.10361)));
+            zz = 2.49785 + (((tickAnim - 23) / 7) * (0-(2.49785)));
         }
-        else if (tickAnim >= 33 && tickAnim < 38) {
-            xx = 1.88 + (((tickAnim - 33) / 5) * (0.42127-(1.88)));
-            yy = 0 + (((tickAnim - 33) / 5) * (0.01839-(0)));
-            zz = 0 + (((tickAnim - 33) / 5) * (-2.49993-(0)));
+        else if (tickAnim >= 30 && tickAnim < 36) {
+            xx = 1.88 + (((tickAnim - 30) / 6) * (0.42127-(1.88)));
+            yy = 0 + (((tickAnim - 30) / 6) * (0.01839-(0)));
+            zz = 0 + (((tickAnim - 30) / 6) * (-2.49993-(0)));
         }
-        else if (tickAnim >= 38 && tickAnim < 43) {
-            xx = 0.42127 + (((tickAnim - 38) / 5) * (-0.62-(0.42127)));
-            yy = 0.01839 + (((tickAnim - 38) / 5) * (0-(0.01839)));
-            zz = -2.49993 + (((tickAnim - 38) / 5) * (0-(-2.49993)));
+        else if (tickAnim >= 36 && tickAnim < 38) {
+            xx = 0.42127 + (((tickAnim - 36) / 2) * (-0.62-(0.42127)));
+            yy = 0.01839 + (((tickAnim - 36) / 2) * (0-(0.01839)));
+            zz = -2.49993 + (((tickAnim - 36) / 2) * (0-(-2.49993)));
         }
-        else if (tickAnim >= 43 && tickAnim < 45) {
-            xx = -0.62 + (((tickAnim - 43) / 2) * (-2.07802-(-0.62)));
-            yy = 0 + (((tickAnim - 43) / 2) * (0.09071-(0)));
-            zz = 0 + (((tickAnim - 43) / 2) * (2.49835-(0)));
+        else if (tickAnim >= 38 && tickAnim < 41) {
+            xx = -0.62 + (((tickAnim - 38) / 3) * (-2.07802-(-0.62)));
+            yy = 0 + (((tickAnim - 38) / 3) * (0.09071-(0)));
+            zz = 0 + (((tickAnim - 38) / 3) * (2.49835-(0)));
         }
-        else if (tickAnim >= 45 && tickAnim < 50) {
-            xx = -2.07802 + (((tickAnim - 45) / 5) * (-5-(-2.07802)));
-            yy = 0.09071 + (((tickAnim - 45) / 5) * (0-(0.09071)));
-            zz = 2.49835 + (((tickAnim - 45) / 5) * (0-(2.49835)));
+        else if (tickAnim >= 41 && tickAnim < 44) {
+            xx = -2.07802 + (((tickAnim - 41) / 3) * (-5-(-2.07802)));
+            yy = 0.09071 + (((tickAnim - 41) / 3) * (0-(0.09071)));
+            zz = 2.49835 + (((tickAnim - 41) / 3) * (0-(2.49835)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 50) {
+            xx = -5 + (((tickAnim - 44) / 6) * (0-(-5)));
+            yy = 0 + (((tickAnim - 44) / 6) * (0-(0)));
+            zz = 0 + (((tickAnim - 44) / 6) * (0-(0)));
         }
         else {
             xx = 0;
@@ -611,30 +621,40 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
         this.setRotateAngle(main, main.rotateAngleX + (float) Math.toRadians(xx), main.rotateAngleY + (float) Math.toRadians(yy), main.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 10) {
-            xx = 0 + (((tickAnim - 0) / 10) * (0-(0)));
-            yy = -3 + (((tickAnim - 0) / 10) * (-3-(-3)));
-            zz = 0 + (((tickAnim - 0) / 10) * (0.45-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-3-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 5) / 5) * (0-(0)));
+            yy = -3 + (((tickAnim - 5) / 5) * (-3-(-3)));
+            zz = 0 + (((tickAnim - 5) / 5) * (0.45-(0)));
         }
         else if (tickAnim >= 10 && tickAnim < 20) {
             xx = 0 + (((tickAnim - 10) / 10) * (0-(0)));
             yy = -3 + (((tickAnim - 10) / 10) * (-3-(-3)));
             zz = 0.45 + (((tickAnim - 10) / 10) * (1.2-(0.45)));
         }
-        else if (tickAnim >= 20 && tickAnim < 38) {
-            xx = 0 + (((tickAnim - 20) / 18) * (0-(0)));
-            yy = -3 + (((tickAnim - 20) / 18) * (-3-(-3)));
-            zz = 1.2 + (((tickAnim - 20) / 18) * (1.14-(1.2)));
+        else if (tickAnim >= 20 && tickAnim < 36) {
+            xx = 0 + (((tickAnim - 20) / 16) * (0-(0)));
+            yy = -3 + (((tickAnim - 20) / 16) * (-3-(-3)));
+            zz = 1.2 + (((tickAnim - 20) / 16) * (1.14-(1.2)));
         }
-        else if (tickAnim >= 38 && tickAnim < 45) {
-            xx = 0 + (((tickAnim - 38) / 7) * (0-(0)));
-            yy = -3 + (((tickAnim - 38) / 7) * (-3-(-3)));
-            zz = 1.14 + (((tickAnim - 38) / 7) * (0.2-(1.14)));
+        else if (tickAnim >= 36 && tickAnim < 41) {
+            xx = 0 + (((tickAnim - 36) / 5) * (0-(0)));
+            yy = -3 + (((tickAnim - 36) / 5) * (-3-(-3)));
+            zz = 1.14 + (((tickAnim - 36) / 5) * (0.2-(1.14)));
         }
-        else if (tickAnim >= 45 && tickAnim < 50) {
-            xx = 0 + (((tickAnim - 45) / 5) * (0-(0)));
-            yy = -3 + (((tickAnim - 45) / 5) * (-3-(-3)));
-            zz = 0.2 + (((tickAnim - 45) / 5) * (0-(0.2)));
+        else if (tickAnim >= 41 && tickAnim < 44) {
+            xx = 0 + (((tickAnim - 41) / 3) * (0-(0)));
+            yy = -3 + (((tickAnim - 41) / 3) * (-3-(-3)));
+            zz = 0.2 + (((tickAnim - 41) / 3) * (0-(0.2)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 50) {
+            xx = 0 + (((tickAnim - 44) / 6) * (0-(0)));
+            yy = -3 + (((tickAnim - 44) / 6) * (0-(-3)));
+            zz = 0 + (((tickAnim - 44) / 6) * (0-(0)));
         }
         else {
             xx = 0;
@@ -647,24 +667,51 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(-15), neck.rotateAngleY + (float) Math.toRadians(0), neck.rotateAngleZ + (float) Math.toRadians(0));
 
-
-
-        if (tickAnim >= 0 && tickAnim < 21) {
-            xx = -10 + (((tickAnim - 0) / 21) * (-12.5-(-10)));
-            yy = 0 + (((tickAnim - 0) / 21) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 21) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-15-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 21 && tickAnim < 42) {
-            xx = -12.5 + (((tickAnim - 21) / 21) * (2.14-(-12.5)));
-            yy = 0 + (((tickAnim - 21) / 21) * (0-(0)));
-            zz = 0 + (((tickAnim - 21) / 21) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 50) {
+            xx = -15 + (((tickAnim - 5) / 45) * (0-(-15)));
+            yy = 0 + (((tickAnim - 5) / 45) * (0-(0)));
+            zz = 0 + (((tickAnim - 5) / 45) * (0-(0)));
         }
-        else if (tickAnim >= 42 && tickAnim < 50) {
-            xx = 2.14 + (((tickAnim - 42) / 8) * (-10-(2.14)));
-            yy = 0 + (((tickAnim - 42) / 8) * (0-(0)));
-            zz = 0 + (((tickAnim - 42) / 8) * (0-(0)));
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(xx), neck.rotateAngleY + (float) Math.toRadians(yy), neck.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-10-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 21) {
+            xx = -10 + (((tickAnim - 5) / 16) * (-12.5-(-10)));
+            yy = 0 + (((tickAnim - 5) / 16) * (0-(0)));
+            zz = 0 + (((tickAnim - 5) / 16) * (0-(0)));
+        }
+        else if (tickAnim >= 21 && tickAnim < 38) {
+            xx = -12.5 + (((tickAnim - 21) / 17) * (2.14-(-12.5)));
+            yy = 0 + (((tickAnim - 21) / 17) * (0-(0)));
+            zz = 0 + (((tickAnim - 21) / 17) * (0-(0)));
+        }
+        else if (tickAnim >= 38 && tickAnim < 44) {
+            xx = 2.14 + (((tickAnim - 38) / 6) * (-10-(2.14)));
+            yy = 0 + (((tickAnim - 38) / 6) * (0-(0)));
+            zz = 0 + (((tickAnim - 38) / 6) * (0-(0)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 50) {
+            xx = -10 + (((tickAnim - 44) / 6) * (0-(-10)));
+            yy = 0 + (((tickAnim - 44) / 6) * (0-(0)));
+            zz = 0 + (((tickAnim - 44) / 6) * (0-(0)));
         }
         else {
             xx = 0;
@@ -676,30 +723,40 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 16) {
-            xx = -0.19053 + (((tickAnim - 0) / 16) * (-5.09474-(-0.19053)));
-            yy = 46.46328 + (((tickAnim - 0) / 16) * (41.03005-(46.46328)));
-            zz = -43.0358 + (((tickAnim - 0) / 16) * (-41.32485-(-43.0358)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-0.19053-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (46.46328-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (-43.0358-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 16) {
+            xx = -0.19053 + (((tickAnim - 5) / 11) * (-5.09474-(-0.19053)));
+            yy = 46.46328 + (((tickAnim - 5) / 11) * (41.03005-(46.46328)));
+            zz = -43.0358 + (((tickAnim - 5) / 11) * (-41.32485-(-43.0358)));
         }
         else if (tickAnim >= 16 && tickAnim < 23) {
             xx = -5.09474 + (((tickAnim - 16) / 7) * (-11.61612-(-5.09474)));
             yy = 41.03005 + (((tickAnim - 16) / 7) * (37.00707-(41.03005)));
             zz = -41.32485 + (((tickAnim - 16) / 7) * (-41.24001-(-41.32485)));
         }
-        else if (tickAnim >= 23 && tickAnim < 38) {
-            xx = -11.61612 + (((tickAnim - 23) / 15) * (-3.69441-(-11.61612)));
-            yy = 37.00707 + (((tickAnim - 23) / 15) * (44.16646-(37.00707)));
-            zz = -41.24001 + (((tickAnim - 23) / 15) * (-41.48258-(-41.24001)));
+        else if (tickAnim >= 23 && tickAnim < 36) {
+            xx = -11.61612 + (((tickAnim - 23) / 13) * (-3.69441-(-11.61612)));
+            yy = 37.00707 + (((tickAnim - 23) / 13) * (44.16646-(37.00707)));
+            zz = -41.24001 + (((tickAnim - 23) / 13) * (-41.48258-(-41.24001)));
         }
-        else if (tickAnim >= 38 && tickAnim < 45) {
-            xx = -3.69441 + (((tickAnim - 38) / 7) * (-6.94733-(-3.69441)));
-            yy = 44.16646 + (((tickAnim - 38) / 7) * (45.36146-(44.16646)));
-            zz = -41.48258 + (((tickAnim - 38) / 7) * (-47.59884-(-41.48258)));
+        else if (tickAnim >= 36 && tickAnim < 40) {
+            xx = -3.69441 + (((tickAnim - 36) / 4) * (-6.94733-(-3.69441)));
+            yy = 44.16646 + (((tickAnim - 36) / 4) * (45.36146-(44.16646)));
+            zz = -41.48258 + (((tickAnim - 36) / 4) * (-47.59884-(-41.48258)));
         }
-        else if (tickAnim >= 45 && tickAnim < 50) {
-            xx = -6.94733 + (((tickAnim - 45) / 5) * (-0.19053-(-6.94733)));
-            yy = 45.36146 + (((tickAnim - 45) / 5) * (46.46328-(45.36146)));
-            zz = -47.59884 + (((tickAnim - 45) / 5) * (-43.0358-(-47.59884)));
+        else if (tickAnim >= 40 && tickAnim < 44) {
+            xx = -6.94733 + (((tickAnim - 40) / 4) * (-0.19053-(-6.94733)));
+            yy = 45.36146 + (((tickAnim - 40) / 4) * (46.46328-(45.36146)));
+            zz = -47.59884 + (((tickAnim - 40) / 4) * (-43.0358-(-47.59884)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 50) {
+            xx = -0.19053 + (((tickAnim - 44) / 6) * (0-(-0.19053)));
+            yy = 46.46328 + (((tickAnim - 44) / 6) * (0-(46.46328)));
+            zz = -43.0358 + (((tickAnim - 44) / 6) * (0-(-43.0358)));
         }
         else {
             xx = 0;
@@ -711,25 +768,35 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 16.20309 + (((tickAnim - 0) / 20) * (16.1151-(16.20309)));
-            yy = 3.06523 + (((tickAnim - 0) / 20) * (3.38416-(3.06523)));
-            zz = 12.89167 + (((tickAnim - 0) / 20) * (12.79582-(12.89167)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (16.20309-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (3.06523-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (12.89167-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 38) {
-            xx = 16.1151 + (((tickAnim - 20) / 18) * (8.31913-(16.1151)));
-            yy = 3.38416 + (((tickAnim - 20) / 18) * (-7.09997-(3.38416)));
-            zz = 12.79582 + (((tickAnim - 20) / 18) * (6.33563-(12.79582)));
+        else if (tickAnim >= 5 && tickAnim < 20) {
+            xx = 16.20309 + (((tickAnim - 5) / 15) * (16.1151-(16.20309)));
+            yy = 3.06523 + (((tickAnim - 5) / 15) * (3.38416-(3.06523)));
+            zz = 12.89167 + (((tickAnim - 5) / 15) * (12.79582-(12.89167)));
         }
-        else if (tickAnim >= 38 && tickAnim < 45) {
-            xx = 8.31913 + (((tickAnim - 38) / 7) * (25.99448-(8.31913)));
-            yy = -7.09997 + (((tickAnim - 38) / 7) * (3.69433-(-7.09997)));
-            zz = 6.33563 + (((tickAnim - 38) / 7) * (19.77416-(6.33563)));
+        else if (tickAnim >= 20 && tickAnim < 36) {
+            xx = 16.1151 + (((tickAnim - 20) / 16) * (8.31913-(16.1151)));
+            yy = 3.38416 + (((tickAnim - 20) / 16) * (-7.09997-(3.38416)));
+            zz = 12.79582 + (((tickAnim - 20) / 16) * (6.33563-(12.79582)));
         }
-        else if (tickAnim >= 45 && tickAnim < 50) {
-            xx = 25.99448 + (((tickAnim - 45) / 5) * (16.20309-(25.99448)));
-            yy = 3.69433 + (((tickAnim - 45) / 5) * (3.06523-(3.69433)));
-            zz = 19.77416 + (((tickAnim - 45) / 5) * (12.89167-(19.77416)));
+        else if (tickAnim >= 36 && tickAnim < 40) {
+            xx = 8.31913 + (((tickAnim - 36) / 4) * (25.99448-(8.31913)));
+            yy = -7.09997 + (((tickAnim - 36) / 4) * (3.69433-(-7.09997)));
+            zz = 6.33563 + (((tickAnim - 36) / 4) * (19.77416-(6.33563)));
+        }
+        else if (tickAnim >= 40 && tickAnim < 44) {
+            xx = 25.99448 + (((tickAnim - 40) / 4) * (16.20309-(25.99448)));
+            yy = 3.69433 + (((tickAnim - 40) / 4) * (3.06523-(3.69433)));
+            zz = 19.77416 + (((tickAnim - 40) / 4) * (12.89167-(19.77416)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 50) {
+            xx = 16.20309 + (((tickAnim - 44) / 6) * (0-(16.20309)));
+            yy = 3.06523 + (((tickAnim - 44) / 6) * (0-(3.06523)));
+            zz = 12.89167 + (((tickAnim - 44) / 6) * (0-(12.89167)));
         }
         else {
             xx = 0;
@@ -741,30 +808,40 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = -24.13272 + (((tickAnim - 0) / 20) * (-22.89165-(-24.13272)));
-            yy = 34.71167 + (((tickAnim - 0) / 20) * (37.3127-(34.71167)));
-            zz = 9.84164 + (((tickAnim - 0) / 20) * (8.63832-(9.84164)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-24.13272-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (34.71167-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (9.84164-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 20) {
+            xx = -24.13272 + (((tickAnim - 5) / 15) * (-22.89165-(-24.13272)));
+            yy = 34.71167 + (((tickAnim - 5) / 15) * (37.3127-(34.71167)));
+            zz = 9.84164 + (((tickAnim - 5) / 15) * (8.63832-(9.84164)));
         }
         else if (tickAnim >= 20 && tickAnim < 23) {
             xx = -22.89165 + (((tickAnim - 20) / 3) * (-18.60125-(-22.89165)));
             yy = 37.3127 + (((tickAnim - 20) / 3) * (32.34674-(37.3127)));
             zz = 8.63832 + (((tickAnim - 20) / 3) * (10.81099-(8.63832)));
         }
-        else if (tickAnim >= 23 && tickAnim < 38) {
-            xx = -18.60125 + (((tickAnim - 23) / 15) * (-21.75502-(-18.60125)));
-            yy = 32.34674 + (((tickAnim - 23) / 15) * (41.38677-(32.34674)));
-            zz = 10.81099 + (((tickAnim - 23) / 15) * (5.51366-(10.81099)));
+        else if (tickAnim >= 23 && tickAnim < 36) {
+            xx = -18.60125 + (((tickAnim - 23) / 13) * (-21.75502-(-18.60125)));
+            yy = 32.34674 + (((tickAnim - 23) / 13) * (41.38677-(32.34674)));
+            zz = 10.81099 + (((tickAnim - 23) / 13) * (5.51366-(10.81099)));
         }
-        else if (tickAnim >= 38 && tickAnim < 45) {
-            xx = -21.75502 + (((tickAnim - 38) / 7) * (-26.42831-(-21.75502)));
-            yy = 41.38677 + (((tickAnim - 38) / 7) * (33.80209-(41.38677)));
-            zz = 5.51366 + (((tickAnim - 38) / 7) * (10.21447-(5.51366)));
+        else if (tickAnim >= 36 && tickAnim < 40) {
+            xx = -21.75502 + (((tickAnim - 36) / 4) * (-26.42831-(-21.75502)));
+            yy = 41.38677 + (((tickAnim - 36) / 4) * (33.80209-(41.38677)));
+            zz = 5.51366 + (((tickAnim - 36) / 4) * (10.21447-(5.51366)));
         }
-        else if (tickAnim >= 45 && tickAnim < 50) {
-            xx = -26.42831 + (((tickAnim - 45) / 5) * (-24.13272-(-26.42831)));
-            yy = 33.80209 + (((tickAnim - 45) / 5) * (34.71167-(33.80209)));
-            zz = 10.21447 + (((tickAnim - 45) / 5) * (9.84164-(10.21447)));
+        else if (tickAnim >= 40 && tickAnim < 44) {
+            xx = -26.42831 + (((tickAnim - 40) / 4) * (-24.13272-(-26.42831)));
+            yy = 33.80209 + (((tickAnim - 40) / 4) * (34.71167-(33.80209)));
+            zz = 10.21447 + (((tickAnim - 40) / 4) * (9.84164-(10.21447)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 50) {
+            xx = -24.13272 + (((tickAnim - 44) / 6) * (0-(-24.13272)));
+            yy = 34.71167 + (((tickAnim - 44) / 6) * (0-(34.71167)));
+            zz = 9.84164 + (((tickAnim - 44) / 6) * (0-(9.84164)));
         }
         else {
             xx = 0;
@@ -776,10 +853,15 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 10) {
-            xx = -0.19053 + (((tickAnim - 0) / 10) * (-3.13285-(-0.19053)));
-            yy = -46.46328 + (((tickAnim - 0) / 10) * (-44.27766-(-46.46328)));
-            zz = 43.0358 + (((tickAnim - 0) / 10) * (43.33281-(43.0358)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-0.19053-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-46.46328-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (43.0358-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 10) {
+            xx = -0.19053 + (((tickAnim - 5) / 5) * (-3.13285-(-0.19053)));
+            yy = -46.46328 + (((tickAnim - 5) / 5) * (-44.27766-(-46.46328)));
+            zz = 43.0358 + (((tickAnim - 5) / 5) * (43.33281-(43.0358)));
         }
         else if (tickAnim >= 10 && tickAnim < 16) {
             xx = -3.13285 + (((tickAnim - 10) / 6) * (-8.92872-(-3.13285)));
@@ -796,20 +878,25 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
             yy = -39.17758 + (((tickAnim - 20) / 3) * (-40.1792-(-39.17758)));
             zz = 43.46296 + (((tickAnim - 20) / 3) * (43.41741-(43.46296)));
         }
-        else if (tickAnim >= 23 && tickAnim < 38) {
-            xx = -5.98386 + (((tickAnim - 23) / 15) * (-8.92875-(-5.98386)));
-            yy = -40.1792 + (((tickAnim - 23) / 15) * (-41.15825-(-40.1792)));
-            zz = 43.41741 + (((tickAnim - 23) / 15) * (43.48042-(43.41741)));
+        else if (tickAnim >= 23 && tickAnim < 36) {
+            xx = -5.98386 + (((tickAnim - 23) / 13) * (-8.92875-(-5.98386)));
+            yy = -40.1792 + (((tickAnim - 23) / 13) * (-41.15825-(-40.1792)));
+            zz = 43.41741 + (((tickAnim - 23) / 13) * (43.48042-(43.41741)));
         }
-        else if (tickAnim >= 38 && tickAnim < 45) {
-            xx = -8.92875 + (((tickAnim - 38) / 7) * (-1.25326-(-8.92875)));
-            yy = -41.15825 + (((tickAnim - 38) / 7) * (-44.36828-(-41.15825)));
-            zz = 43.48042 + (((tickAnim - 38) / 7) * (43.31672-(43.48042)));
+        else if (tickAnim >= 36 && tickAnim < 40) {
+            xx = -8.92875 + (((tickAnim - 36) / 4) * (-1.25326-(-8.92875)));
+            yy = -41.15825 + (((tickAnim - 36) / 4) * (-44.36828-(-41.15825)));
+            zz = 43.48042 + (((tickAnim - 36) / 4) * (43.31672-(43.48042)));
         }
-        else if (tickAnim >= 45 && tickAnim < 50) {
-            xx = -1.25326 + (((tickAnim - 45) / 5) * (-0.19053-(-1.25326)));
-            yy = -44.36828 + (((tickAnim - 45) / 5) * (-46.46328-(-44.36828)));
-            zz = 43.31672 + (((tickAnim - 45) / 5) * (43.0358-(43.31672)));
+        else if (tickAnim >= 40 && tickAnim < 44) {
+            xx = -1.25326 + (((tickAnim - 40) / 4) * (-0.19053-(-1.25326)));
+            yy = -44.36828 + (((tickAnim - 40) / 4) * (-46.46328-(-44.36828)));
+            zz = 43.31672 + (((tickAnim - 40) / 4) * (43.0358-(43.31672)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 50) {
+            xx = -0.19053 + (((tickAnim - 44) / 6) * (0-(-0.19053)));
+            yy = -46.46328 + (((tickAnim - 44) / 6) * (0-(-46.46328)));
+            zz = 43.0358 + (((tickAnim - 44) / 6) * (0-(43.0358)));
         }
         else {
             xx = 0;
@@ -820,47 +907,101 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        this.setRotateAngle(frontrightleg2, frontrightleg2.rotateAngleX + (float) Math.toRadians(16.20309), frontrightleg2.rotateAngleY + (float) Math.toRadians(-3.06523), frontrightleg2.rotateAngleZ + (float) Math.toRadians(-12.89167));
+
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (16.20309-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-3.06523-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (-12.89167-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 50) {
+            xx = 16.20309 + (((tickAnim - 5) / 45) * (0-(16.20309)));
+            yy = -3.06523 + (((tickAnim - 5) / 45) * (0-(-3.06523)));
+            zz = -12.89167 + (((tickAnim - 5) / 45) * (0-(-12.89167)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(frontrightleg2, frontrightleg2.rotateAngleX + (float) Math.toRadians(xx), frontrightleg2.rotateAngleY + (float) Math.toRadians(yy), frontrightleg2.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        this.setRotateAngle(frontrightleg3, frontrightleg3.rotateAngleX + (float) Math.toRadians(-24.13272), frontrightleg3.rotateAngleY + (float) Math.toRadians(-34.71167), frontrightleg3.rotateAngleZ + (float) Math.toRadians(-9.84164));
+
+
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-24.13272-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-34.71167-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (-9.84164-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 50) {
+            xx = -24.13272 + (((tickAnim - 5) / 45) * (0-(-24.13272)));
+            yy = -34.71167 + (((tickAnim - 5) / 45) * (0-(-34.71167)));
+            zz = -9.84164 + (((tickAnim - 5) / 45) * (0-(-9.84164)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(frontrightleg3, frontrightleg3.rotateAngleX + (float) Math.toRadians(xx), frontrightleg3.rotateAngleY + (float) Math.toRadians(yy), frontrightleg3.rotateAngleZ + (float) Math.toRadians(zz));
 
 
 
-        if (tickAnim >= 0 && tickAnim < 6) {
-            xx = 64.75252 + (((tickAnim - 0) / 6) * (102.73077-(64.75252)));
-            yy = -48.73922 + (((tickAnim - 0) / 6) * (-45.46896-(-48.73922)));
-            zz = 83.31978 + (((tickAnim - 0) / 6) * (98.94704-(83.31978)));
+
+        if (tickAnim >= 0 && tickAnim < 3) {
+            xx = 0 + (((tickAnim - 0) / 3) * (42.54055-(0)));
+            yy = 0 + (((tickAnim - 0) / 3) * (-26.85091-(0)));
+            zz = 0 + (((tickAnim - 0) / 3) * (45.90167-(0)));
         }
-        else if (tickAnim >= 6 && tickAnim < 10) {
-            xx = 102.73077 + (((tickAnim - 6) / 4) * (96.32422-(102.73077)));
-            yy = -45.46896 + (((tickAnim - 6) / 4) * (-43.75119-(-45.46896)));
-            zz = 98.94704 + (((tickAnim - 6) / 4) * (95.62677-(98.94704)));
+        else if (tickAnim >= 3 && tickAnim < 5) {
+            xx = 42.54055 + (((tickAnim - 3) / 2) * (64.75252-(42.54055)));
+            yy = -26.85091 + (((tickAnim - 3) / 2) * (-48.73922-(-26.85091)));
+            zz = 45.90167 + (((tickAnim - 3) / 2) * (83.31978-(45.90167)));
         }
-        else if (tickAnim >= 10 && tickAnim < 16) {
-            xx = 96.32422 + (((tickAnim - 10) / 6) * (44.74869-(96.32422)));
-            yy = -43.75119 + (((tickAnim - 10) / 6) * (-46.61922-(-43.75119)));
-            zz = 95.62677 + (((tickAnim - 10) / 6) * (84.72831-(95.62677)));
+        else if (tickAnim >= 5 && tickAnim < 8) {
+            xx = 64.75252 + (((tickAnim - 5) / 3) * (102.73077-(64.75252)));
+            yy = -48.73922 + (((tickAnim - 5) / 3) * (-45.46896-(-48.73922)));
+            zz = 83.31978 + (((tickAnim - 5) / 3) * (98.94704-(83.31978)));
         }
-        else if (tickAnim >= 16 && tickAnim < 28) {
-            xx = 44.74869 + (((tickAnim - 16) / 12) * (87.71498-(44.74869)));
-            yy = -46.61922 + (((tickAnim - 16) / 12) * (-44.26504-(-46.61922)));
-            zz = 84.72831 + (((tickAnim - 16) / 12) * (92.90411-(84.72831)));
+        else if (tickAnim >= 8 && tickAnim < 13) {
+            xx = 102.73077 + (((tickAnim - 8) / 5) * (96.32422-(102.73077)));
+            yy = -45.46896 + (((tickAnim - 8) / 5) * (-43.75119-(-45.46896)));
+            zz = 98.94704 + (((tickAnim - 8) / 5) * (95.62677-(98.94704)));
         }
-        else if (tickAnim >= 28 && tickAnim < 32) {
-            xx = 87.71498 + (((tickAnim - 28) / 4) * (82.75067-(87.71498)));
-            yy = -44.26504 + (((tickAnim - 28) / 4) * (-44.66307-(-44.26504)));
-            zz = 92.90411 + (((tickAnim - 28) / 4) * (93.09233-(92.90411)));
+        else if (tickAnim >= 13 && tickAnim < 17) {
+            xx = 96.32422 + (((tickAnim - 13) / 4) * (44.74869-(96.32422)));
+            yy = -43.75119 + (((tickAnim - 13) / 4) * (-46.61922-(-43.75119)));
+            zz = 95.62677 + (((tickAnim - 13) / 4) * (84.72831-(95.62677)));
         }
-        else if (tickAnim >= 32 && tickAnim < 38) {
-            xx = 82.75067 + (((tickAnim - 32) / 6) * (43.85341-(82.75067)));
-            yy = -44.66307 + (((tickAnim - 32) / 6) * (-50.86951-(-44.66307)));
-            zz = 93.09233 + (((tickAnim - 32) / 6) * (81.9463-(93.09233)));
+        else if (tickAnim >= 17 && tickAnim < 26) {
+            xx = 44.74869 + (((tickAnim - 17) / 9) * (87.71498-(44.74869)));
+            yy = -46.61922 + (((tickAnim - 17) / 9) * (-44.26504-(-46.61922)));
+            zz = 84.72831 + (((tickAnim - 17) / 9) * (92.90411-(84.72831)));
         }
-        else if (tickAnim >= 38 && tickAnim < 50) {
-            xx = 43.85341 + (((tickAnim - 38) / 12) * (64.75252-(43.85341)));
-            yy = -50.86951 + (((tickAnim - 38) / 12) * (-48.73922-(-50.86951)));
-            zz = 81.9463 + (((tickAnim - 38) / 12) * (83.31978-(81.9463)));
+        else if (tickAnim >= 26 && tickAnim < 29) {
+            xx = 87.71498 + (((tickAnim - 26) / 3) * (82.75067-(87.71498)));
+            yy = -44.26504 + (((tickAnim - 26) / 3) * (-44.66307-(-44.26504)));
+            zz = 92.90411 + (((tickAnim - 26) / 3) * (93.09233-(92.90411)));
+        }
+        else if (tickAnim >= 29 && tickAnim < 36) {
+            xx = 82.75067 + (((tickAnim - 29) / 7) * (43.85341-(82.75067)));
+            yy = -44.66307 + (((tickAnim - 29) / 7) * (-50.86951-(-44.66307)));
+            zz = 93.09233 + (((tickAnim - 29) / 7) * (81.9463-(93.09233)));
+        }
+        else if (tickAnim >= 36 && tickAnim < 44) {
+            xx = 43.85341 + (((tickAnim - 36) / 8) * (64.75252-(43.85341)));
+            yy = -50.86951 + (((tickAnim - 36) / 8) * (-48.73922-(-50.86951)));
+            zz = 81.9463 + (((tickAnim - 36) / 8) * (83.31978-(81.9463)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 48) {
+            xx = 64.75252 + (((tickAnim - 44) / 4) * (37.00108-(64.75252)));
+            yy = -48.73922 + (((tickAnim - 44) / 4) * (-20.88824-(-48.73922)));
+            zz = 83.31978 + (((tickAnim - 44) / 4) * (35.70848-(83.31978)));
+        }
+        else if (tickAnim >= 48 && tickAnim < 50) {
+            xx = 37.00108 + (((tickAnim - 48) / 2) * (0-(37.00108)));
+            yy = -20.88824 + (((tickAnim - 48) / 2) * (0-(-20.88824)));
+            zz = 35.70848 + (((tickAnim - 48) / 2) * (0-(35.70848)));
         }
         else {
             xx = 0;
@@ -872,45 +1013,55 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 6) {
-            xx = 44.99412 + (((tickAnim - 0) / 6) * (26.09045-(44.99412)));
-            yy = 53.19349 + (((tickAnim - 0) / 6) * (10.84582-(53.19349)));
-            zz = -55.40601 + (((tickAnim - 0) / 6) * (-88.44274-(-55.40601)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (44.99412-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (53.19349-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (-55.40601-(0)));
         }
-        else if (tickAnim >= 6 && tickAnim < 12) {
-            xx = 26.09045 + (((tickAnim - 6) / 6) * (10.52643-(26.09045)));
-            yy = 10.84582 + (((tickAnim - 6) / 6) * (1.53371-(10.84582)));
-            zz = -88.44274 + (((tickAnim - 6) / 6) * (-101.55949-(-88.44274)));
+        else if (tickAnim >= 5 && tickAnim < 8) {
+            xx = 44.99412 + (((tickAnim - 5) / 3) * (26.09045-(44.99412)));
+            yy = 53.19349 + (((tickAnim - 5) / 3) * (10.84582-(53.19349)));
+            zz = -55.40601 + (((tickAnim - 5) / 3) * (-88.44274-(-55.40601)));
         }
-        else if (tickAnim >= 12 && tickAnim < 16) {
-            xx = 10.52643 + (((tickAnim - 12) / 4) * (-34.87644-(10.52643)));
-            yy = 1.53371 + (((tickAnim - 12) / 4) * (-5.1178-(1.53371)));
-            zz = -101.55949 + (((tickAnim - 12) / 4) * (-110.92859-(-101.55949)));
+        else if (tickAnim >= 8 && tickAnim < 13) {
+            xx = 26.09045 + (((tickAnim - 8) / 5) * (10.52643-(26.09045)));
+            yy = 10.84582 + (((tickAnim - 8) / 5) * (1.53371-(10.84582)));
+            zz = -88.44274 + (((tickAnim - 8) / 5) * (-101.55949-(-88.44274)));
         }
-        else if (tickAnim >= 16 && tickAnim < 23) {
-            xx = -34.87644 + (((tickAnim - 16) / 7) * (-32.37644-(-34.87644)));
-            yy = -5.1178 + (((tickAnim - 16) / 7) * (-5.1178-(-5.1178)));
-            zz = -110.92859 + (((tickAnim - 16) / 7) * (-110.92859-(-110.92859)));
+        else if (tickAnim >= 13 && tickAnim < 17) {
+            xx = 10.52643 + (((tickAnim - 13) / 4) * (-34.87644-(10.52643)));
+            yy = 1.53371 + (((tickAnim - 13) / 4) * (-5.1178-(1.53371)));
+            zz = -101.55949 + (((tickAnim - 13) / 4) * (-110.92859-(-101.55949)));
         }
-        else if (tickAnim >= 23 && tickAnim < 31) {
-            xx = -32.37644 + (((tickAnim - 23) / 8) * (25.12356-(-32.37644)));
-            yy = -5.1178 + (((tickAnim - 23) / 8) * (-5.1178-(-5.1178)));
-            zz = -110.92859 + (((tickAnim - 23) / 8) * (-110.92859-(-110.92859)));
+        else if (tickAnim >= 17 && tickAnim < 23) {
+            xx = -34.87644 + (((tickAnim - 17) / 6) * (-32.37644-(-34.87644)));
+            yy = -5.1178 + (((tickAnim - 17) / 6) * (-5.1178-(-5.1178)));
+            zz = -110.92859 + (((tickAnim - 17) / 6) * (-110.92859-(-110.92859)));
         }
-        else if (tickAnim >= 31 && tickAnim < 35) {
-            xx = 25.12356 + (((tickAnim - 31) / 4) * (12.49973-(25.12356)));
-            yy = -5.1178 + (((tickAnim - 31) / 4) * (10.91731-(-5.1178)));
-            zz = -110.92859 + (((tickAnim - 31) / 4) * (-118.16244-(-110.92859)));
+        else if (tickAnim >= 23 && tickAnim < 28) {
+            xx = -32.37644 + (((tickAnim - 23) / 5) * (25.12356-(-32.37644)));
+            yy = -5.1178 + (((tickAnim - 23) / 5) * (-5.1178-(-5.1178)));
+            zz = -110.92859 + (((tickAnim - 23) / 5) * (-110.92859-(-110.92859)));
         }
-        else if (tickAnim >= 35 && tickAnim < 39) {
-            xx = 12.49973 + (((tickAnim - 35) / 4) * (-38.24736-(12.49973)));
-            yy = 10.91731 + (((tickAnim - 35) / 4) * (14.36458-(10.91731)));
-            zz = -118.16244 + (((tickAnim - 35) / 4) * (-148.49687-(-118.16244)));
+        else if (tickAnim >= 28 && tickAnim < 33) {
+            xx = 25.12356 + (((tickAnim - 28) / 5) * (12.49973-(25.12356)));
+            yy = -5.1178 + (((tickAnim - 28) / 5) * (10.91731-(-5.1178)));
+            zz = -110.92859 + (((tickAnim - 28) / 5) * (-118.16244-(-110.92859)));
         }
-        else if (tickAnim >= 39 && tickAnim < 50) {
-            xx = -38.24736 + (((tickAnim - 39) / 11) * (44.99412-(-38.24736)));
-            yy = 14.36458 + (((tickAnim - 39) / 11) * (53.19349-(14.36458)));
-            zz = -148.49687 + (((tickAnim - 39) / 11) * (-55.40601-(-148.49687)));
+        else if (tickAnim >= 33 && tickAnim < 37) {
+            xx = 12.49973 + (((tickAnim - 33) / 4) * (-38.24736-(12.49973)));
+            yy = 10.91731 + (((tickAnim - 33) / 4) * (14.36458-(10.91731)));
+            zz = -118.16244 + (((tickAnim - 33) / 4) * (-148.49687-(-118.16244)));
+        }
+        else if (tickAnim >= 37 && tickAnim < 44) {
+            xx = -38.24736 + (((tickAnim - 37) / 7) * (44.99412-(-38.24736)));
+            yy = 14.36458 + (((tickAnim - 37) / 7) * (53.19349-(14.36458)));
+            zz = -148.49687 + (((tickAnim - 37) / 7) * (-55.40601-(-148.49687)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 50) {
+            xx = 44.99412 + (((tickAnim - 44) / 6) * (0-(44.99412)));
+            yy = 53.19349 + (((tickAnim - 44) / 6) * (0-(53.19349)));
+            zz = -55.40601 + (((tickAnim - 44) / 6) * (0-(-55.40601)));
         }
         else {
             xx = 0;
@@ -922,10 +1073,20 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 13) {
-            xx = 64.75252 + (((tickAnim - 0) / 13) * (102.73077-(64.75252)));
-            yy = 48.73922 + (((tickAnim - 0) / 13) * (45.46896-(48.73922)));
-            zz = -83.31978 + (((tickAnim - 0) / 13) * (-98.94704-(-83.31978)));
+        if (tickAnim >= 0 && tickAnim < 3) {
+            xx = 0 + (((tickAnim - 0) / 3) * (43.69928-(0)));
+            yy = 0 + (((tickAnim - 0) / 3) * (26.85091-(0)));
+            zz = 0 + (((tickAnim - 0) / 3) * (-45.90167-(0)));
+        }
+        else if (tickAnim >= 3 && tickAnim < 5) {
+            xx = 43.69928 + (((tickAnim - 3) / 2) * (64.75252-(43.69928)));
+            yy = 26.85091 + (((tickAnim - 3) / 2) * (48.73922-(26.85091)));
+            zz = -45.90167 + (((tickAnim - 3) / 2) * (-83.31978-(-45.90167)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 13) {
+            xx = 64.75252 + (((tickAnim - 5) / 8) * (102.73077-(64.75252)));
+            yy = 48.73922 + (((tickAnim - 5) / 8) * (45.46896-(48.73922)));
+            zz = -83.31978 + (((tickAnim - 5) / 8) * (-98.94704-(-83.31978)));
         }
         else if (tickAnim >= 13 && tickAnim < 17) {
             xx = 102.73077 + (((tickAnim - 13) / 4) * (96.32422-(102.73077)));
@@ -937,25 +1098,35 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
             yy = 43.75119 + (((tickAnim - 17) / 6) * (46.61922-(43.75119)));
             zz = -95.62677 + (((tickAnim - 17) / 6) * (-84.72831-(-95.62677)));
         }
-        else if (tickAnim >= 23 && tickAnim < 35) {
-            xx = 44.74869 + (((tickAnim - 23) / 12) * (87.71498-(44.74869)));
-            yy = 46.61922 + (((tickAnim - 23) / 12) * (44.26504-(46.61922)));
-            zz = -84.72831 + (((tickAnim - 23) / 12) * (-92.90411-(-84.72831)));
+        else if (tickAnim >= 23 && tickAnim < 33) {
+            xx = 44.74869 + (((tickAnim - 23) / 10) * (87.71498-(44.74869)));
+            yy = 46.61922 + (((tickAnim - 23) / 10) * (44.26504-(46.61922)));
+            zz = -84.72831 + (((tickAnim - 23) / 10) * (-92.90411-(-84.72831)));
         }
-        else if (tickAnim >= 35 && tickAnim < 38) {
-            xx = 87.71498 + (((tickAnim - 35) / 3) * (82.75067-(87.71498)));
-            yy = 44.26504 + (((tickAnim - 35) / 3) * (44.66307-(44.26504)));
-            zz = -92.90411 + (((tickAnim - 35) / 3) * (-93.09233-(-92.90411)));
+        else if (tickAnim >= 33 && tickAnim < 36) {
+            xx = 87.71498 + (((tickAnim - 33) / 3) * (82.75067-(87.71498)));
+            yy = 44.26504 + (((tickAnim - 33) / 3) * (44.66307-(44.26504)));
+            zz = -92.90411 + (((tickAnim - 33) / 3) * (-93.09233-(-92.90411)));
         }
-        else if (tickAnim >= 38 && tickAnim < 45) {
-            xx = 82.75067 + (((tickAnim - 38) / 7) * (43.85341-(82.75067)));
-            yy = 44.66307 + (((tickAnim - 38) / 7) * (50.86951-(44.66307)));
-            zz = -93.09233 + (((tickAnim - 38) / 7) * (-81.9463-(-93.09233)));
+        else if (tickAnim >= 36 && tickAnim < 41) {
+            xx = 82.75067 + (((tickAnim - 36) / 5) * (43.85341-(82.75067)));
+            yy = 44.66307 + (((tickAnim - 36) / 5) * (50.86951-(44.66307)));
+            zz = -93.09233 + (((tickAnim - 36) / 5) * (-81.9463-(-93.09233)));
         }
-        else if (tickAnim >= 45 && tickAnim < 50) {
-            xx = 43.85341 + (((tickAnim - 45) / 5) * (64.75252-(43.85341)));
-            yy = 50.86951 + (((tickAnim - 45) / 5) * (48.73922-(50.86951)));
-            zz = -81.9463 + (((tickAnim - 45) / 5) * (-83.31978-(-81.9463)));
+        else if (tickAnim >= 41 && tickAnim < 44) {
+            xx = 43.85341 + (((tickAnim - 41) / 3) * (64.75252-(43.85341)));
+            yy = 50.86951 + (((tickAnim - 41) / 3) * (48.73922-(50.86951)));
+            zz = -81.9463 + (((tickAnim - 41) / 3) * (-83.31978-(-81.9463)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 48) {
+            xx = 64.75252 + (((tickAnim - 44) / 4) * (37.00108-(64.75252)));
+            yy = 48.73922 + (((tickAnim - 44) / 4) * (20.88824-(48.73922)));
+            zz = -83.31978 + (((tickAnim - 44) / 4) * (-35.70848-(-83.31978)));
+        }
+        else if (tickAnim >= 48 && tickAnim < 50) {
+            xx = 37.00108 + (((tickAnim - 48) / 2) * (0-(37.00108)));
+            yy = 20.88824 + (((tickAnim - 48) / 2) * (0-(20.88824)));
+            zz = -35.70848 + (((tickAnim - 48) / 2) * (0-(-35.70848)));
         }
         else {
             xx = 0;
@@ -967,10 +1138,15 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 13) {
-            xx = 44.99412 + (((tickAnim - 0) / 13) * (26.09045-(44.99412)));
-            yy = -53.19349 + (((tickAnim - 0) / 13) * (-10.84582-(-53.19349)));
-            zz = 55.40601 + (((tickAnim - 0) / 13) * (88.44274-(55.40601)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (44.99412-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-53.19349-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (55.40601-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 13) {
+            xx = 44.99412 + (((tickAnim - 5) / 8) * (26.09045-(44.99412)));
+            yy = -53.19349 + (((tickAnim - 5) / 8) * (-10.84582-(-53.19349)));
+            zz = 55.40601 + (((tickAnim - 5) / 8) * (88.44274-(55.40601)));
         }
         else if (tickAnim >= 13 && tickAnim < 18) {
             xx = 26.09045 + (((tickAnim - 13) / 5) * (10.52643-(26.09045)));
@@ -982,30 +1158,35 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
             yy = -1.53371 + (((tickAnim - 18) / 5) * (5.1178-(-1.53371)));
             zz = 101.55949 + (((tickAnim - 18) / 5) * (110.92859-(101.55949)));
         }
-        else if (tickAnim >= 23 && tickAnim < 30) {
-            xx = -34.87644 + (((tickAnim - 23) / 7) * (-32.37644-(-34.87644)));
-            yy = 5.1178 + (((tickAnim - 23) / 7) * (5.1178-(5.1178)));
-            zz = 110.92859 + (((tickAnim - 23) / 7) * (110.92859-(110.92859)));
+        else if (tickAnim >= 23 && tickAnim < 28) {
+            xx = -34.87644 + (((tickAnim - 23) / 5) * (-32.37644-(-34.87644)));
+            yy = 5.1178 + (((tickAnim - 23) / 5) * (5.1178-(5.1178)));
+            zz = 110.92859 + (((tickAnim - 23) / 5) * (110.92859-(110.92859)));
         }
-        else if (tickAnim >= 30 && tickAnim < 38) {
-            xx = -32.37644 + (((tickAnim - 30) / 8) * (25.12356-(-32.37644)));
-            yy = 5.1178 + (((tickAnim - 30) / 8) * (5.1178-(5.1178)));
-            zz = 110.92859 + (((tickAnim - 30) / 8) * (110.92859-(110.92859)));
+        else if (tickAnim >= 28 && tickAnim < 35) {
+            xx = -32.37644 + (((tickAnim - 28) / 7) * (25.12356-(-32.37644)));
+            yy = 5.1178 + (((tickAnim - 28) / 7) * (5.1178-(5.1178)));
+            zz = 110.92859 + (((tickAnim - 28) / 7) * (110.92859-(110.92859)));
         }
-        else if (tickAnim >= 38 && tickAnim < 42) {
-            xx = 25.12356 + (((tickAnim - 38) / 4) * (12.49973-(25.12356)));
-            yy = 5.1178 + (((tickAnim - 38) / 4) * (-10.91731-(5.1178)));
-            zz = 110.92859 + (((tickAnim - 38) / 4) * (118.16244-(110.92859)));
+        else if (tickAnim >= 35 && tickAnim < 38) {
+            xx = 25.12356 + (((tickAnim - 35) / 3) * (12.49973-(25.12356)));
+            yy = 5.1178 + (((tickAnim - 35) / 3) * (-10.91731-(5.1178)));
+            zz = 110.92859 + (((tickAnim - 35) / 3) * (118.16244-(110.92859)));
         }
-        else if (tickAnim >= 42 && tickAnim < 46) {
-            xx = 12.49973 + (((tickAnim - 42) / 4) * (-38.24736-(12.49973)));
-            yy = -10.91731 + (((tickAnim - 42) / 4) * (-14.36458-(-10.91731)));
-            zz = 118.16244 + (((tickAnim - 42) / 4) * (148.49687-(118.16244)));
+        else if (tickAnim >= 38 && tickAnim < 41) {
+            xx = 12.49973 + (((tickAnim - 38) / 3) * (-38.24736-(12.49973)));
+            yy = -10.91731 + (((tickAnim - 38) / 3) * (-14.36458-(-10.91731)));
+            zz = 118.16244 + (((tickAnim - 38) / 3) * (148.49687-(118.16244)));
         }
-        else if (tickAnim >= 46 && tickAnim < 50) {
-            xx = -38.24736 + (((tickAnim - 46) / 4) * (44.99412-(-38.24736)));
-            yy = -14.36458 + (((tickAnim - 46) / 4) * (-53.19349-(-14.36458)));
-            zz = 148.49687 + (((tickAnim - 46) / 4) * (55.40601-(148.49687)));
+        else if (tickAnim >= 41 && tickAnim < 44) {
+            xx = -38.24736 + (((tickAnim - 41) / 3) * (44.99412-(-38.24736)));
+            yy = -14.36458 + (((tickAnim - 41) / 3) * (-53.19349-(-14.36458)));
+            zz = 148.49687 + (((tickAnim - 41) / 3) * (55.40601-(148.49687)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 50) {
+            xx = 44.99412 + (((tickAnim - 44) / 6) * (0-(44.99412)));
+            yy = -53.19349 + (((tickAnim - 44) / 6) * (0-(-53.19349)));
+            zz = 55.40601 + (((tickAnim - 44) / 6) * (0-(55.40601)));
         }
         else {
             xx = 0;
@@ -1017,10 +1198,15 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 10) {
-            xx = -2.90089 + (((tickAnim - 0) / 10) * (-4.84534-(-2.90089)));
-            yy = -7.74934 + (((tickAnim - 0) / 10) * (0.25066-(-7.74934)));
-            zz = 1.90251 + (((tickAnim - 0) / 10) * (1.90251-(1.90251)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-2.90089-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-7.74934-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (1.90251-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 10) {
+            xx = -2.90089 + (((tickAnim - 5) / 5) * (-4.84534-(-2.90089)));
+            yy = -7.74934 + (((tickAnim - 5) / 5) * (0.25066-(-7.74934)));
+            zz = 1.90251 + (((tickAnim - 5) / 5) * (1.90251-(1.90251)));
         }
         else if (tickAnim >= 10 && tickAnim < 20) {
             xx = -4.84534 + (((tickAnim - 10) / 10) * (-13.78978-(-4.84534)));
@@ -1032,15 +1218,20 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
             yy = 3.25066 + (((tickAnim - 20) / 3) * (2.15066-(3.25066)));
             zz = 1.90251 + (((tickAnim - 20) / 3) * (1.90251-(1.90251)));
         }
-        else if (tickAnim >= 23 && tickAnim < 38) {
-            xx = -12.90089 + (((tickAnim - 23) / 15) * (-9.64332-(-12.90089)));
-            yy = 2.15066 + (((tickAnim - 23) / 15) * (-6.94934-(2.15066)));
-            zz = 1.90251 + (((tickAnim - 23) / 15) * (1.90251-(1.90251)));
+        else if (tickAnim >= 23 && tickAnim < 36) {
+            xx = -12.90089 + (((tickAnim - 23) / 13) * (-9.64332-(-12.90089)));
+            yy = 2.15066 + (((tickAnim - 23) / 13) * (-6.94934-(2.15066)));
+            zz = 1.90251 + (((tickAnim - 23) / 13) * (1.90251-(1.90251)));
         }
-        else if (tickAnim >= 38 && tickAnim < 50) {
-            xx = -9.64332 + (((tickAnim - 38) / 12) * (-2.90089-(-9.64332)));
-            yy = -6.94934 + (((tickAnim - 38) / 12) * (-7.74934-(-6.94934)));
-            zz = 1.90251 + (((tickAnim - 38) / 12) * (1.90251-(1.90251)));
+        else if (tickAnim >= 36 && tickAnim < 44) {
+            xx = -9.64332 + (((tickAnim - 36) / 8) * (-2.90089-(-9.64332)));
+            yy = -6.94934 + (((tickAnim - 36) / 8) * (-7.74934-(-6.94934)));
+            zz = 1.90251 + (((tickAnim - 36) / 8) * (1.90251-(1.90251)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 50) {
+            xx = -2.90089 + (((tickAnim - 44) / 6) * (0-(-2.90089)));
+            yy = -7.74934 + (((tickAnim - 44) / 6) * (0-(-7.74934)));
+            zz = 1.90251 + (((tickAnim - 44) / 6) * (0-(1.90251)));
         }
         else {
             xx = 0;
@@ -1052,20 +1243,30 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 18) {
-            xx = 0 + (((tickAnim - 0) / 18) * (0-(0)));
-            yy = -25 + (((tickAnim - 0) / 18) * (-12.5-(-25)));
-            zz = 0 + (((tickAnim - 0) / 18) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-25-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 18 && tickAnim < 33) {
-            xx = 0 + (((tickAnim - 18) / 15) * (0-(0)));
-            yy = -12.5 + (((tickAnim - 18) / 15) * (2.5-(-12.5)));
-            zz = 0 + (((tickAnim - 18) / 15) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 18) {
+            xx = 0 + (((tickAnim - 5) / 13) * (0-(0)));
+            yy = -25 + (((tickAnim - 5) / 13) * (-12.5-(-25)));
+            zz = 0 + (((tickAnim - 5) / 13) * (0-(0)));
         }
-        else if (tickAnim >= 33 && tickAnim < 50) {
-            xx = 0 + (((tickAnim - 33) / 17) * (0-(0)));
-            yy = 2.5 + (((tickAnim - 33) / 17) * (-25-(2.5)));
-            zz = 0 + (((tickAnim - 33) / 17) * (0-(0)));
+        else if (tickAnim >= 18 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 18) / 12) * (0-(0)));
+            yy = -12.5 + (((tickAnim - 18) / 12) * (2.5-(-12.5)));
+            zz = 0 + (((tickAnim - 18) / 12) * (0-(0)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 44) {
+            xx = 0 + (((tickAnim - 30) / 14) * (0-(0)));
+            yy = 2.5 + (((tickAnim - 30) / 14) * (-25-(2.5)));
+            zz = 0 + (((tickAnim - 30) / 14) * (0-(0)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 50) {
+            xx = 0 + (((tickAnim - 44) / 6) * (0-(0)));
+            yy = -25 + (((tickAnim - 44) / 6) * (0-(-25)));
+            zz = 0 + (((tickAnim - 44) / 6) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1077,20 +1278,30 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 23) {
-            xx = 0 + (((tickAnim - 0) / 23) * (0-(0)));
-            yy = -20 + (((tickAnim - 0) / 23) * (5-(-20)));
-            zz = 0 + (((tickAnim - 0) / 23) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-20-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 23 && tickAnim < 37) {
-            xx = 0 + (((tickAnim - 23) / 14) * (0-(0)));
-            yy = 5 + (((tickAnim - 23) / 14) * (10-(5)));
-            zz = 0 + (((tickAnim - 23) / 14) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 23) {
+            xx = 0 + (((tickAnim - 5) / 18) * (0-(0)));
+            yy = -20 + (((tickAnim - 5) / 18) * (5-(-20)));
+            zz = 0 + (((tickAnim - 5) / 18) * (0-(0)));
         }
-        else if (tickAnim >= 37 && tickAnim < 50) {
-            xx = 0 + (((tickAnim - 37) / 13) * (0-(0)));
-            yy = 10 + (((tickAnim - 37) / 13) * (-20-(10)));
-            zz = 0 + (((tickAnim - 37) / 13) * (0-(0)));
+        else if (tickAnim >= 23 && tickAnim < 34) {
+            xx = 0 + (((tickAnim - 23) / 11) * (0-(0)));
+            yy = 5 + (((tickAnim - 23) / 11) * (10-(5)));
+            zz = 0 + (((tickAnim - 23) / 11) * (0-(0)));
+        }
+        else if (tickAnim >= 34 && tickAnim < 44) {
+            xx = 0 + (((tickAnim - 34) / 10) * (0-(0)));
+            yy = 10 + (((tickAnim - 34) / 10) * (-20-(10)));
+            zz = 0 + (((tickAnim - 34) / 10) * (0-(0)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 50) {
+            xx = 0 + (((tickAnim - 44) / 6) * (0-(0)));
+            yy = -20 + (((tickAnim - 44) / 6) * (0-(-20)));
+            zz = 0 + (((tickAnim - 44) / 6) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1102,35 +1313,45 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 13) {
-            xx = 0 + (((tickAnim - 0) / 13) * (0.83-(0)));
-            yy = 0 + (((tickAnim - 0) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 13) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 13) {
+            xx = 0 + (((tickAnim - 5) / 8) * (0.83-(0)));
+            yy = 0 + (((tickAnim - 5) / 8) * (0-(0)));
+            zz = 0 + (((tickAnim - 5) / 8) * (0-(0)));
         }
         else if (tickAnim >= 13 && tickAnim < 16) {
             xx = 0.83 + (((tickAnim - 13) / 3) * (40-(0.83)));
             yy = 0 + (((tickAnim - 13) / 3) * (0-(0)));
             zz = 0 + (((tickAnim - 13) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 16 && tickAnim < 27) {
-            xx = 40 + (((tickAnim - 16) / 11) * (-7.5-(40)));
-            yy = 0 + (((tickAnim - 16) / 11) * (0-(0)));
-            zz = 0 + (((tickAnim - 16) / 11) * (0-(0)));
+        else if (tickAnim >= 16 && tickAnim < 24) {
+            xx = 40 + (((tickAnim - 16) / 8) * (-7.5-(40)));
+            yy = 0 + (((tickAnim - 16) / 8) * (0-(0)));
+            zz = 0 + (((tickAnim - 16) / 8) * (0-(0)));
         }
-        else if (tickAnim >= 27 && tickAnim < 34) {
-            xx = -7.5 + (((tickAnim - 27) / 7) * (1.07-(-7.5)));
-            yy = 0 + (((tickAnim - 27) / 7) * (0-(0)));
-            zz = 0 + (((tickAnim - 27) / 7) * (0-(0)));
+        else if (tickAnim >= 24 && tickAnim < 32) {
+            xx = -7.5 + (((tickAnim - 24) / 8) * (1.07-(-7.5)));
+            yy = 0 + (((tickAnim - 24) / 8) * (0-(0)));
+            zz = 0 + (((tickAnim - 24) / 8) * (0-(0)));
         }
-        else if (tickAnim >= 34 && tickAnim < 38) {
-            xx = 1.07 + (((tickAnim - 34) / 4) * (25-(1.07)));
-            yy = 0 + (((tickAnim - 34) / 4) * (0-(0)));
-            zz = 0 + (((tickAnim - 34) / 4) * (0-(0)));
+        else if (tickAnim >= 32 && tickAnim < 36) {
+            xx = 1.07 + (((tickAnim - 32) / 4) * (25-(1.07)));
+            yy = 0 + (((tickAnim - 32) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 32) / 4) * (0-(0)));
         }
-        else if (tickAnim >= 38 && tickAnim < 50) {
-            xx = 25 + (((tickAnim - 38) / 12) * (0-(25)));
-            yy = 0 + (((tickAnim - 38) / 12) * (0-(0)));
-            zz = 0 + (((tickAnim - 38) / 12) * (0-(0)));
+        else if (tickAnim >= 36 && tickAnim < 44) {
+            xx = 25 + (((tickAnim - 36) / 8) * (0-(25)));
+            yy = 0 + (((tickAnim - 36) / 8) * (0-(0)));
+            zz = 0 + (((tickAnim - 36) / 8) * (0-(0)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 50) {
+            xx = 0 + (((tickAnim - 44) / 6) * (0-(0)));
+            yy = 0 + (((tickAnim - 44) / 6) * (0-(0)));
+            zz = 0 + (((tickAnim - 44) / 6) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1142,35 +1363,45 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 19) {
-            xx = 0 + (((tickAnim - 0) / 19) * (0.83-(0)));
-            yy = 0 + (((tickAnim - 0) / 19) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 19) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 19) {
+            xx = 0 + (((tickAnim - 5) / 14) * (0.83-(0)));
+            yy = 0 + (((tickAnim - 5) / 14) * (0-(0)));
+            zz = 0 + (((tickAnim - 5) / 14) * (0-(0)));
         }
         else if (tickAnim >= 19 && tickAnim < 23) {
             xx = 0.83 + (((tickAnim - 19) / 4) * (40-(0.83)));
             yy = 0 + (((tickAnim - 19) / 4) * (0-(0)));
             zz = 0 + (((tickAnim - 19) / 4) * (0-(0)));
         }
-        else if (tickAnim >= 23 && tickAnim < 33) {
-            xx = 40 + (((tickAnim - 23) / 10) * (-7.5-(40)));
-            yy = 0 + (((tickAnim - 23) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 23) / 10) * (0-(0)));
+        else if (tickAnim >= 23 && tickAnim < 31) {
+            xx = 40 + (((tickAnim - 23) / 8) * (-7.5-(40)));
+            yy = 0 + (((tickAnim - 23) / 8) * (0-(0)));
+            zz = 0 + (((tickAnim - 23) / 8) * (0-(0)));
         }
-        else if (tickAnim >= 33 && tickAnim < 41) {
-            xx = -7.5 + (((tickAnim - 33) / 8) * (1.07-(-7.5)));
-            yy = 0 + (((tickAnim - 33) / 8) * (0-(0)));
-            zz = 0 + (((tickAnim - 33) / 8) * (0-(0)));
+        else if (tickAnim >= 31 && tickAnim < 37) {
+            xx = -7.5 + (((tickAnim - 31) / 6) * (1.07-(-7.5)));
+            yy = 0 + (((tickAnim - 31) / 6) * (0-(0)));
+            zz = 0 + (((tickAnim - 31) / 6) * (0-(0)));
         }
-        else if (tickAnim >= 41 && tickAnim < 45) {
-            xx = 1.07 + (((tickAnim - 41) / 4) * (25-(1.07)));
-            yy = 0 + (((tickAnim - 41) / 4) * (0-(0)));
-            zz = 0 + (((tickAnim - 41) / 4) * (0-(0)));
+        else if (tickAnim >= 37 && tickAnim < 41) {
+            xx = 1.07 + (((tickAnim - 37) / 4) * (25-(1.07)));
+            yy = 0 + (((tickAnim - 37) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 37) / 4) * (0-(0)));
         }
-        else if (tickAnim >= 45 && tickAnim < 50) {
-            xx = 25 + (((tickAnim - 45) / 5) * (0-(25)));
-            yy = 0 + (((tickAnim - 45) / 5) * (0-(0)));
-            zz = 0 + (((tickAnim - 45) / 5) * (0-(0)));
+        else if (tickAnim >= 41 && tickAnim < 44) {
+            xx = 25 + (((tickAnim - 41) / 3) * (0-(25)));
+            yy = 0 + (((tickAnim - 41) / 3) * (0-(0)));
+            zz = 0 + (((tickAnim - 41) / 3) * (0-(0)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 50) {
+            xx = 0 + (((tickAnim - 44) / 6) * (0-(0)));
+            yy = 0 + (((tickAnim - 44) / 6) * (0-(0)));
+            zz = 0 + (((tickAnim - 44) / 6) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1178,79 +1409,88 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
             zz = 0;
         }
         this.setRotateAngle(backrightleg2, backrightleg2.rotateAngleX + (float) Math.toRadians(xx), backrightleg2.rotateAngleY + (float) Math.toRadians(yy), backrightleg2.rotateAngleZ + (float) Math.toRadians(zz));
-
     }
     public void animHide(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraNaomichelys entity = (EntityPrehistoricFloraNaomichelys) entitylivingbaseIn;
-        int animCycle = 310;
+        int animCycle = 315;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
         double yy = 0;
         double zz = 0;
-         if (tickAnim >= 0 && tickAnim < 2) {
-            xx = -5 + (((tickAnim - 0) / 2) * (-2.42103-(-5)));
-            yy = 0 + (((tickAnim - 0) / 2) * (-0.10567-(0)));
-            zz = 0 + (((tickAnim - 0) / 2) * (-2.49777-(0)));
-        }
-        else if (tickAnim >= 2 && tickAnim < 5) {
-            xx = -2.42103 + (((tickAnim - 2) / 3) * (2.73-(-2.42103)));
-            yy = -0.10567 + (((tickAnim - 2) / 3) * (0-(-0.10567)));
-            zz = -2.49777 + (((tickAnim - 2) / 3) * (0-(-2.49777)));
+         if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-5-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
         else if (tickAnim >= 5 && tickAnim < 7) {
-            xx = 2.73 + (((tickAnim - 5) / 2) * (1.63644-(2.73)));
-            yy = 0 + (((tickAnim - 5) / 2) * (-0.07144-(0)));
-            zz = 0 + (((tickAnim - 5) / 2) * (2.49898-(0)));
+            xx = -5 + (((tickAnim - 5) / 2) * (-2.42103-(-5)));
+            yy = 0 + (((tickAnim - 5) / 2) * (-0.10567-(0)));
+            zz = 0 + (((tickAnim - 5) / 2) * (-2.49777-(0)));
         }
-        else if (tickAnim >= 7 && tickAnim < 9) {
-            xx = 1.63644 + (((tickAnim - 7) / 2) * (0-(1.63644)));
-            yy = -0.07144 + (((tickAnim - 7) / 2) * (0-(-0.07144)));
-            zz = 2.49898 + (((tickAnim - 7) / 2) * (0-(2.49898)));
+        else if (tickAnim >= 7 && tickAnim < 10) {
+            xx = -2.42103 + (((tickAnim - 7) / 3) * (2.73-(-2.42103)));
+            yy = -0.10567 + (((tickAnim - 7) / 3) * (0-(-0.10567)));
+            zz = -2.49777 + (((tickAnim - 7) / 3) * (0-(-2.49777)));
         }
-        else if (tickAnim >= 9 && tickAnim < 12) {
-            xx = 0 + (((tickAnim - 9) / 3) * (0-(0)));
-            yy = 0 + (((tickAnim - 9) / 3) * (0-(0)));
-            zz = 0 + (((tickAnim - 9) / 3) * (-0.5-(0)));
+        else if (tickAnim >= 10 && tickAnim < 12) {
+            xx = 2.73 + (((tickAnim - 10) / 2) * (1.63644-(2.73)));
+            yy = 0 + (((tickAnim - 10) / 2) * (-0.07144-(0)));
+            zz = 0 + (((tickAnim - 10) / 2) * (2.49898-(0)));
         }
-        else if (tickAnim >= 12 && tickAnim < 15) {
-            xx = 0 + (((tickAnim - 12) / 3) * (0-(0)));
-            yy = 0 + (((tickAnim - 12) / 3) * (0-(0)));
-            zz = -0.5 + (((tickAnim - 12) / 3) * (0-(-0.5)));
+        else if (tickAnim >= 12 && tickAnim < 14) {
+            xx = 1.63644 + (((tickAnim - 12) / 2) * (0-(1.63644)));
+            yy = -0.07144 + (((tickAnim - 12) / 2) * (0-(-0.07144)));
+            zz = 2.49898 + (((tickAnim - 12) / 2) * (0-(2.49898)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = 0 + (((tickAnim - 15) / 265) * (0-(0)));
-            yy = 0 + (((tickAnim - 15) / 265) * (0-(0)));
-            zz = 0 + (((tickAnim - 15) / 265) * (0-(0)));
+        else if (tickAnim >= 14 && tickAnim < 17) {
+            xx = 0 + (((tickAnim - 14) / 3) * (0-(0)));
+            yy = 0 + (((tickAnim - 14) / 3) * (0-(0)));
+            zz = 0 + (((tickAnim - 14) / 3) * (-0.5-(0)));
         }
-        else if (tickAnim >= 280 && tickAnim < 283) {
-            xx = 0 + (((tickAnim - 280) / 3) * (0-(0)));
-            yy = 0 + (((tickAnim - 280) / 3) * (0-(0)));
-            zz = 0 + (((tickAnim - 280) / 3) * (1.5-(0)));
+        else if (tickAnim >= 17 && tickAnim < 20) {
+            xx = 0 + (((tickAnim - 17) / 3) * (0-(0)));
+            yy = 0 + (((tickAnim - 17) / 3) * (0-(0)));
+            zz = -0.5 + (((tickAnim - 17) / 3) * (0-(-0.5)));
+        }
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = 0 + (((tickAnim - 20) / 255) * (0-(0)));
+            yy = 0 + (((tickAnim - 20) / 255) * (0-(0)));
+            zz = 0 + (((tickAnim - 20) / 255) * (0-(0)));
+        }
+        else if (tickAnim >= 275 && tickAnim < 278) {
+            xx = 0 + (((tickAnim - 275) / 3) * (0-(0)));
+            yy = 0 + (((tickAnim - 275) / 3) * (0-(0)));
+            zz = 0 + (((tickAnim - 275) / 3) * (1.5-(0)));
+        }
+        else if (tickAnim >= 278 && tickAnim < 281) {
+            xx = 0 + (((tickAnim - 278) / 3) * (0-(0)));
+            yy = 0 + (((tickAnim - 278) / 3) * (0-(0)));
+            zz = 1.5 + (((tickAnim - 278) / 3) * (0-(1.5)));
+        }
+        else if (tickAnim >= 281 && tickAnim < 283) {
+            xx = 0 + (((tickAnim - 281) / 2) * (-2.99715-(0)));
+            yy = 0 + (((tickAnim - 281) / 2) * (0.1308-(0)));
+            zz = 0 + (((tickAnim - 281) / 2) * (2.49658-(0)));
         }
         else if (tickAnim >= 283 && tickAnim < 286) {
-            xx = 0 + (((tickAnim - 283) / 3) * (0-(0)));
-            yy = 0 + (((tickAnim - 283) / 3) * (0-(0)));
-            zz = 1.5 + (((tickAnim - 283) / 3) * (0-(1.5)));
+            xx = -2.99715 + (((tickAnim - 283) / 3) * (-6.69886-(-2.99715)));
+            yy = 0.1308 + (((tickAnim - 283) / 3) * (0.05232-(0.1308)));
+            zz = 2.49658 + (((tickAnim - 283) / 3) * (0.99863-(2.49658)));
         }
         else if (tickAnim >= 286 && tickAnim < 288) {
-            xx = 0 + (((tickAnim - 286) / 2) * (-2.99715-(0)));
-            yy = 0 + (((tickAnim - 286) / 2) * (0.1308-(0)));
-            zz = 0 + (((tickAnim - 286) / 2) * (2.49658-(0)));
+            xx = -6.69886 + (((tickAnim - 286) / 2) * (-5-(-6.69886)));
+            yy = 0.05232 + (((tickAnim - 286) / 2) * (0-(0.05232)));
+            zz = 0.99863 + (((tickAnim - 286) / 2) * (0-(0.99863)));
         }
-        else if (tickAnim >= 288 && tickAnim < 291) {
-            xx = -2.99715 + (((tickAnim - 288) / 3) * (-6.69886-(-2.99715)));
-            yy = 0.1308 + (((tickAnim - 288) / 3) * (0.05232-(0.1308)));
-            zz = 2.49658 + (((tickAnim - 288) / 3) * (0.99863-(2.49658)));
+        else if (tickAnim >= 288 && tickAnim < 305) {
+            xx = -5 + (((tickAnim - 288) / 17) * (-5-(-5)));
+            yy = 0 + (((tickAnim - 288) / 17) * (0-(0)));
+            zz = 0 + (((tickAnim - 288) / 17) * (0-(0)));
         }
-        else if (tickAnim >= 291 && tickAnim < 293) {
-            xx = -6.69886 + (((tickAnim - 291) / 2) * (-5-(-6.69886)));
-            yy = 0.05232 + (((tickAnim - 291) / 2) * (0-(0.05232)));
-            zz = 0.99863 + (((tickAnim - 291) / 2) * (0-(0.99863)));
-        }
-        else if (tickAnim >= 293 && tickAnim < 310) {
-            xx = -5 + (((tickAnim - 293) / 17) * (-5-(-5)));
-            yy = 0 + (((tickAnim - 293) / 17) * (0-(0)));
-            zz = 0 + (((tickAnim - 293) / 17) * (0-(0)));
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = -5 + (((tickAnim - 305) / 10) * (0-(-5)));
+            yy = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 305) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1260,35 +1500,45 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
         this.setRotateAngle(main, main.rotateAngleX + (float) Math.toRadians(xx), main.rotateAngleY + (float) Math.toRadians(yy), main.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 9) {
-            xx = 0 + (((tickAnim - 0) / 9) * (0-(0)));
-            yy = -3 + (((tickAnim - 0) / 9) * (-3.35-(-3)));
-            zz = 0 + (((tickAnim - 0) / 9) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-3-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 9 && tickAnim < 15) {
-            xx = 0 + (((tickAnim - 9) / 6) * (0-(0)));
-            yy = -3.35 + (((tickAnim - 9) / 6) * (-3.35-(-3.35)));
-            zz = 0 + (((tickAnim - 9) / 6) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 14) {
+            xx = 0 + (((tickAnim - 5) / 9) * (0-(0)));
+            yy = -3 + (((tickAnim - 5) / 9) * (-3.35-(-3)));
+            zz = 0 + (((tickAnim - 5) / 9) * (0-(0)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = 0 + (((tickAnim - 15) / 265) * (0-(0)));
-            yy = -3.35 + (((tickAnim - 15) / 265) * (-3.35-(-3.35)));
-            zz = 0 + (((tickAnim - 15) / 265) * (0-(0)));
+        else if (tickAnim >= 14 && tickAnim < 20) {
+            xx = 0 + (((tickAnim - 14) / 6) * (0-(0)));
+            yy = -3.35 + (((tickAnim - 14) / 6) * (-3.35-(-3.35)));
+            zz = 0 + (((tickAnim - 14) / 6) * (0-(0)));
         }
-        else if (tickAnim >= 280 && tickAnim < 286) {
-            xx = 0 + (((tickAnim - 280) / 6) * (0-(0)));
-            yy = -3.35 + (((tickAnim - 280) / 6) * (-3.35-(-3.35)));
-            zz = 0 + (((tickAnim - 280) / 6) * (0-(0)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = 0 + (((tickAnim - 20) / 255) * (0-(0)));
+            yy = -3.35 + (((tickAnim - 20) / 255) * (-3.35-(-3.35)));
+            zz = 0 + (((tickAnim - 20) / 255) * (0-(0)));
         }
-        else if (tickAnim >= 286 && tickAnim < 293) {
-            xx = 0 + (((tickAnim - 286) / 7) * (0-(0)));
-            yy = -3.35 + (((tickAnim - 286) / 7) * (-3-(-3.35)));
-            zz = 0 + (((tickAnim - 286) / 7) * (0-(0)));
+        else if (tickAnim >= 275 && tickAnim < 281) {
+            xx = 0 + (((tickAnim - 275) / 6) * (0-(0)));
+            yy = -3.35 + (((tickAnim - 275) / 6) * (-3.35-(-3.35)));
+            zz = 0 + (((tickAnim - 275) / 6) * (0-(0)));
         }
-        else if (tickAnim >= 293 && tickAnim < 310) {
-            xx = 0 + (((tickAnim - 293) / 17) * (0-(0)));
-            yy = -3 + (((tickAnim - 293) / 17) * (-3-(-3)));
-            zz = 0 + (((tickAnim - 293) / 17) * (0-(0)));
+        else if (tickAnim >= 281 && tickAnim < 288) {
+            xx = 0 + (((tickAnim - 281) / 7) * (0-(0)));
+            yy = -3.35 + (((tickAnim - 281) / 7) * (-3-(-3.35)));
+            zz = 0 + (((tickAnim - 281) / 7) * (0-(0)));
+        }
+        else if (tickAnim >= 288 && tickAnim < 305) {
+            xx = 0 + (((tickAnim - 288) / 17) * (0-(0)));
+            yy = -3 + (((tickAnim - 288) / 17) * (-3-(-3)));
+            zz = 0 + (((tickAnim - 288) / 17) * (0-(0)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            yy = -3 + (((tickAnim - 305) / 10) * (0-(-3)));
+            zz = 0 + (((tickAnim - 305) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1302,45 +1552,55 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 3) {
-            xx = -15 + (((tickAnim - 0) / 3) * (13.45344-(-15)));
-            yy = 0 + (((tickAnim - 0) / 3) * (-42.87499-(0)));
-            zz = 0 + (((tickAnim - 0) / 3) * (-11.20122-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-15-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 3 && tickAnim < 9) {
-            xx = 13.45344 + (((tickAnim - 3) / 6) * (105.51813-(13.45344)));
-            yy = -42.87499 + (((tickAnim - 3) / 6) * (-74.20678-(-42.87499)));
-            zz = -11.20122 + (((tickAnim - 3) / 6) * (-108.67681-(-11.20122)));
+        else if (tickAnim >= 5 && tickAnim < 8) {
+            xx = -15 + (((tickAnim - 5) / 3) * (13.45344-(-15)));
+            yy = 0 + (((tickAnim - 5) / 3) * (-42.87499-(0)));
+            zz = 0 + (((tickAnim - 5) / 3) * (-11.20122-(0)));
         }
-        else if (tickAnim >= 9 && tickAnim < 15) {
-            xx = 105.51813 + (((tickAnim - 9) / 6) * (105.51813-(105.51813)));
-            yy = -74.20678 + (((tickAnim - 9) / 6) * (-74.20678-(-74.20678)));
-            zz = -108.67681 + (((tickAnim - 9) / 6) * (-108.67681-(-108.67681)));
+        else if (tickAnim >= 8 && tickAnim < 14) {
+            xx = 13.45344 + (((tickAnim - 8) / 6) * (23.11525-(13.45344)));
+            yy = -42.87499 + (((tickAnim - 8) / 6) * (-44.93923-(-42.87499)));
+            zz = -11.20122 + (((tickAnim - 8) / 6) * (-0.18735-(-11.20122)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = 105.51813 + (((tickAnim - 15) / 265) * (105.51813-(105.51813)));
-            yy = -74.20678 + (((tickAnim - 15) / 265) * (-74.20678-(-74.20678)));
-            zz = -108.67681 + (((tickAnim - 15) / 265) * (-108.67681-(-108.67681)));
+        else if (tickAnim >= 14 && tickAnim < 20) {
+            xx = 23.11525 + (((tickAnim - 14) / 6) * (23.11525-(23.11525)));
+            yy = -44.93923 + (((tickAnim - 14) / 6) * (-44.93923-(-44.93923)));
+            zz = -0.18735 + (((tickAnim - 14) / 6) * (-0.18735-(-0.18735)));
         }
-        else if (tickAnim >= 280 && tickAnim < 288) {
-            xx = 105.51813 + (((tickAnim - 280) / 8) * (15.40113-(105.51813)));
-            yy = -74.20678 + (((tickAnim - 280) / 8) * (-49.76258-(-74.20678)));
-            zz = -108.67681 + (((tickAnim - 280) / 8) * (-11.26997-(-108.67681)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = 23.11525 + (((tickAnim - 20) / 255) * (23.11525-(23.11525)));
+            yy = -44.93923 + (((tickAnim - 20) / 255) * (-44.93923-(-44.93923)));
+            zz = -0.18735 + (((tickAnim - 20) / 255) * (-0.18735-(-0.18735)));
         }
-        else if (tickAnim >= 288 && tickAnim < 294) {
-            xx = 15.40113 + (((tickAnim - 288) / 6) * (-14.77905-(15.40113)));
-            yy = -49.76258 + (((tickAnim - 288) / 6) * (7.85993-(-49.76258)));
-            zz = -11.26997 + (((tickAnim - 288) / 6) * (0.83067-(-11.26997)));
+        else if (tickAnim >= 275 && tickAnim < 283) {
+            xx = 23.11525 + (((tickAnim - 275) / 8) * (15.40113-(23.11525)));
+            yy = -44.93923 + (((tickAnim - 275) / 8) * (-49.76258-(-44.93923)));
+            zz = -0.18735 + (((tickAnim - 275) / 8) * (-11.26997-(-0.18735)));
         }
-        else if (tickAnim >= 294 && tickAnim < 302) {
-            xx = -14.77905 + (((tickAnim - 294) / 8) * (-19.88371-(-14.77905)));
-            yy = 7.85993 + (((tickAnim - 294) / 8) * (4.13679-(7.85993)));
-            zz = 0.83067 + (((tickAnim - 294) / 8) * (0.43719-(0.83067)));
+        else if (tickAnim >= 283 && tickAnim < 289) {
+            xx = 15.40113 + (((tickAnim - 283) / 6) * (-14.77905-(15.40113)));
+            yy = -49.76258 + (((tickAnim - 283) / 6) * (7.85993-(-49.76258)));
+            zz = -11.26997 + (((tickAnim - 283) / 6) * (0.83067-(-11.26997)));
         }
-        else if (tickAnim >= 302 && tickAnim < 310) {
-            xx = -19.88371 + (((tickAnim - 302) / 8) * (-15-(-19.88371)));
-            yy = 4.13679 + (((tickAnim - 302) / 8) * (0-(4.13679)));
-            zz = 0.43719 + (((tickAnim - 302) / 8) * (0-(0.43719)));
+        else if (tickAnim >= 289 && tickAnim < 297) {
+            xx = -14.77905 + (((tickAnim - 289) / 8) * (-19.88371-(-14.77905)));
+            yy = 7.85993 + (((tickAnim - 289) / 8) * (4.13679-(7.85993)));
+            zz = 0.83067 + (((tickAnim - 289) / 8) * (0.43719-(0.83067)));
+        }
+        else if (tickAnim >= 297 && tickAnim < 305) {
+            xx = -19.88371 + (((tickAnim - 297) / 8) * (-15-(-19.88371)));
+            yy = 4.13679 + (((tickAnim - 297) / 8) * (0-(4.13679)));
+            zz = 0.43719 + (((tickAnim - 297) / 8) * (0-(0.43719)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = -15 + (((tickAnim - 305) / 10) * (0-(-15)));
+            yy = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 305) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1350,32 +1610,72 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
         this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(xx), neck.rotateAngleY + (float) Math.toRadians(yy), neck.rotateAngleZ + (float) Math.toRadians(zz));
 
 
+        if (tickAnim >= 0 && tickAnim < 14) {
+            xx = 0 + (((tickAnim - 0) / 14) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 14) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 14) * (1.7-(0)));
+        }
+        else if (tickAnim >= 14 && tickAnim < 20) {
+            xx = 0 + (((tickAnim - 14) / 6) * (0-(0)));
+            yy = 0 + (((tickAnim - 14) / 6) * (0-(0)));
+            zz = 1.7 + (((tickAnim - 14) / 6) * (1.7-(1.7)));
+        }
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = 0 + (((tickAnim - 20) / 255) * (0-(0)));
+            yy = 0 + (((tickAnim - 20) / 255) * (0-(0)));
+            zz = 1.7 + (((tickAnim - 20) / 255) * (1.7-(1.7)));
+        }
+        else if (tickAnim >= 275 && tickAnim < 315) {
+            xx = 0 + (((tickAnim - 275) / 40) * (0-(0)));
+            yy = 0 + (((tickAnim - 275) / 40) * (0-(0)));
+            zz = 1.7 + (((tickAnim - 275) / 40) * (0-(1.7)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.neck.rotationPointX = this.neck.rotationPointX + (float)(xx);
+        this.neck.rotationPointY = this.neck.rotationPointY - (float)(yy);
+        this.neck.rotationPointZ = this.neck.rotationPointZ + (float)(zz);
 
 
-        if (tickAnim >= 0 && tickAnim < 9) {
-            xx = -10 + (((tickAnim - 0) / 9) * (15.50409-(-10)));
-            yy = 0 + (((tickAnim - 0) / 9) * (-14.47751-(0)));
-            zz = 0 + (((tickAnim - 0) / 9) * (-3.96713-(0)));
+
+
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-10-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 9 && tickAnim < 15) {
-            xx = 15.50409 + (((tickAnim - 9) / 6) * (15.50409-(15.50409)));
-            yy = -14.47751 + (((tickAnim - 9) / 6) * (-14.47751-(-14.47751)));
-            zz = -3.96713 + (((tickAnim - 9) / 6) * (-3.96713-(-3.96713)));
+        else if (tickAnim >= 5 && tickAnim < 14) {
+            xx = -10 + (((tickAnim - 5) / 9) * (-5.85472-(-10)));
+            yy = 0 + (((tickAnim - 5) / 9) * (-33.5504-(0)));
+            zz = 0 + (((tickAnim - 5) / 9) * (-0.58298-(0)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = 15.50409 + (((tickAnim - 15) / 265) * (15.50409-(15.50409)));
-            yy = -14.47751 + (((tickAnim - 15) / 265) * (-14.47751-(-14.47751)));
-            zz = -3.96713 + (((tickAnim - 15) / 265) * (-3.96713-(-3.96713)));
+        else if (tickAnim >= 14 && tickAnim < 20) {
+            xx = -5.85472 + (((tickAnim - 14) / 6) * (-5.85472-(-5.85472)));
+            yy = -33.5504 + (((tickAnim - 14) / 6) * (-33.5504-(-33.5504)));
+            zz = -0.58298 + (((tickAnim - 14) / 6) * (-0.58298-(-0.58298)));
         }
-        else if (tickAnim >= 280 && tickAnim < 294) {
-            xx = 15.50409 + (((tickAnim - 280) / 14) * (5.22074-(15.50409)));
-            yy = -14.47751 + (((tickAnim - 280) / 14) * (9.65594-(-14.47751)));
-            zz = -3.96713 + (((tickAnim - 280) / 14) * (2.61298-(-3.96713)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = -5.85472 + (((tickAnim - 20) / 255) * (-5.85472-(-5.85472)));
+            yy = -33.5504 + (((tickAnim - 20) / 255) * (-33.5504-(-33.5504)));
+            zz = -0.58298 + (((tickAnim - 20) / 255) * (-0.58298-(-0.58298)));
         }
-        else if (tickAnim >= 294 && tickAnim < 310) {
-            xx = 5.22074 + (((tickAnim - 294) / 16) * (-10-(5.22074)));
-            yy = 9.65594 + (((tickAnim - 294) / 16) * (0-(9.65594)));
-            zz = 2.61298 + (((tickAnim - 294) / 16) * (0-(2.61298)));
+        else if (tickAnim >= 275 && tickAnim < 289) {
+            xx = -5.85472 + (((tickAnim - 275) / 14) * (5.22074-(-5.85472)));
+            yy = -33.5504 + (((tickAnim - 275) / 14) * (9.65594-(-33.5504)));
+            zz = -0.58298 + (((tickAnim - 275) / 14) * (2.61298-(-0.58298)));
+        }
+        else if (tickAnim >= 289 && tickAnim < 305) {
+            xx = 5.22074 + (((tickAnim - 289) / 16) * (-10-(5.22074)));
+            yy = 9.65594 + (((tickAnim - 289) / 16) * (0-(9.65594)));
+            zz = 2.61298 + (((tickAnim - 289) / 16) * (0-(2.61298)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = -10 + (((tickAnim - 305) / 10) * (0-(-10)));
+            yy = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 305) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1385,32 +1685,72 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
         this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(xx), head.rotateAngleY + (float) Math.toRadians(yy), head.rotateAngleZ + (float) Math.toRadians(zz));
 
 
+        if (tickAnim >= 0 && tickAnim < 14) {
+            xx = 0 + (((tickAnim - 0) / 14) * (-0.25-(0)));
+            yy = 0 + (((tickAnim - 0) / 14) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 14) * (1.775-(0)));
+        }
+        else if (tickAnim >= 14 && tickAnim < 20) {
+            xx = -0.25 + (((tickAnim - 14) / 6) * (-0.25-(-0.25)));
+            yy = 0 + (((tickAnim - 14) / 6) * (0-(0)));
+            zz = 1.775 + (((tickAnim - 14) / 6) * (1.775-(1.775)));
+        }
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = -0.25 + (((tickAnim - 20) / 255) * (-0.25-(-0.25)));
+            yy = 0 + (((tickAnim - 20) / 255) * (0-(0)));
+            zz = 1.775 + (((tickAnim - 20) / 255) * (1.775-(1.775)));
+        }
+        else if (tickAnim >= 275 && tickAnim < 315) {
+            xx = -0.25 + (((tickAnim - 275) / 40) * (0-(-0.25)));
+            yy = 0 + (((tickAnim - 275) / 40) * (0-(0)));
+            zz = 1.775 + (((tickAnim - 275) / 40) * (0-(1.775)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.head.rotationPointX = this.head.rotationPointX + (float)(xx);
+        this.head.rotationPointY = this.head.rotationPointY - (float)(yy);
+        this.head.rotationPointZ = this.head.rotationPointZ + (float)(zz);
 
 
-        if (tickAnim >= 0 && tickAnim < 6) {
-            xx = -0.19053 + (((tickAnim - 0) / 6) * (-60.04162-(-0.19053)));
-            yy = 46.46328 + (((tickAnim - 0) / 6) * (44.93721-(46.46328)));
-            zz = -43.0358 + (((tickAnim - 0) / 6) * (-45.02163-(-43.0358)));
+
+
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-0.19053-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (46.46328-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (-43.0358-(0)));
         }
-        else if (tickAnim >= 6 && tickAnim < 15) {
-            xx = -60.04162 + (((tickAnim - 6) / 9) * (-60.04162-(-60.04162)));
-            yy = 44.93721 + (((tickAnim - 6) / 9) * (44.93721-(44.93721)));
-            zz = -45.02163 + (((tickAnim - 6) / 9) * (-45.02163-(-45.02163)));
+        else if (tickAnim >= 5 && tickAnim < 11) {
+            xx = -0.19053 + (((tickAnim - 5) / 6) * (-60.04162-(-0.19053)));
+            yy = 46.46328 + (((tickAnim - 5) / 6) * (44.93721-(46.46328)));
+            zz = -43.0358 + (((tickAnim - 5) / 6) * (-45.02163-(-43.0358)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = -60.04162 + (((tickAnim - 15) / 265) * (-60.04162-(-60.04162)));
-            yy = 44.93721 + (((tickAnim - 15) / 265) * (44.93721-(44.93721)));
-            zz = -45.02163 + (((tickAnim - 15) / 265) * (-45.02163-(-45.02163)));
+        else if (tickAnim >= 11 && tickAnim < 20) {
+            xx = -60.04162 + (((tickAnim - 11) / 9) * (-60.04162-(-60.04162)));
+            yy = 44.93721 + (((tickAnim - 11) / 9) * (44.93721-(44.93721)));
+            zz = -45.02163 + (((tickAnim - 11) / 9) * (-45.02163-(-45.02163)));
         }
-        else if (tickAnim >= 280 && tickAnim < 290) {
-            xx = -60.04162 + (((tickAnim - 280) / 10) * (-0.19053-(-60.04162)));
-            yy = 44.93721 + (((tickAnim - 280) / 10) * (46.46328-(44.93721)));
-            zz = -45.02163 + (((tickAnim - 280) / 10) * (-43.0358-(-45.02163)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = -60.04162 + (((tickAnim - 20) / 255) * (-60.04162-(-60.04162)));
+            yy = 44.93721 + (((tickAnim - 20) / 255) * (44.93721-(44.93721)));
+            zz = -45.02163 + (((tickAnim - 20) / 255) * (-45.02163-(-45.02163)));
         }
-        else if (tickAnim >= 290 && tickAnim < 310) {
-            xx = -0.19053 + (((tickAnim - 290) / 20) * (-0.19053-(-0.19053)));
-            yy = 46.46328 + (((tickAnim - 290) / 20) * (46.46328-(46.46328)));
-            zz = -43.0358 + (((tickAnim - 290) / 20) * (-43.0358-(-43.0358)));
+        else if (tickAnim >= 275 && tickAnim < 285) {
+            xx = -60.04162 + (((tickAnim - 275) / 10) * (-0.19053-(-60.04162)));
+            yy = 44.93721 + (((tickAnim - 275) / 10) * (46.46328-(44.93721)));
+            zz = -45.02163 + (((tickAnim - 275) / 10) * (-43.0358-(-45.02163)));
+        }
+        else if (tickAnim >= 285 && tickAnim < 305) {
+            xx = -0.19053 + (((tickAnim - 285) / 20) * (-0.19053-(-0.19053)));
+            yy = 46.46328 + (((tickAnim - 285) / 20) * (46.46328-(46.46328)));
+            zz = -43.0358 + (((tickAnim - 285) / 20) * (-43.0358-(-43.0358)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = -0.19053 + (((tickAnim - 305) / 10) * (0-(-0.19053)));
+            yy = 46.46328 + (((tickAnim - 305) / 10) * (0-(46.46328)));
+            zz = -43.0358 + (((tickAnim - 305) / 10) * (0-(-43.0358)));
         }
         else {
             xx = 0;
@@ -1420,30 +1760,40 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
         this.setRotateAngle(frontleftleg, frontleftleg.rotateAngleX + (float) Math.toRadians(xx), frontleftleg.rotateAngleY + (float) Math.toRadians(yy), frontleftleg.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 6) {
-            xx = 0 + (((tickAnim - 0) / 6) * (1-(0)));
-            yy = 0 + (((tickAnim - 0) / 6) * (-1-(0)));
-            zz = 0 + (((tickAnim - 0) / 6) * (4-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 6 && tickAnim < 15) {
-            xx = 1 + (((tickAnim - 6) / 9) * (1-(1)));
-            yy = -1 + (((tickAnim - 6) / 9) * (-1-(-1)));
-            zz = 4 + (((tickAnim - 6) / 9) * (4-(4)));
+        else if (tickAnim >= 5 && tickAnim < 11) {
+            xx = 0 + (((tickAnim - 5) / 6) * (1-(0)));
+            yy = 0 + (((tickAnim - 5) / 6) * (-1-(0)));
+            zz = 0 + (((tickAnim - 5) / 6) * (4-(0)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = 1 + (((tickAnim - 15) / 265) * (1-(1)));
-            yy = -1 + (((tickAnim - 15) / 265) * (-1-(-1)));
-            zz = 4 + (((tickAnim - 15) / 265) * (4-(4)));
+        else if (tickAnim >= 11 && tickAnim < 20) {
+            xx = 1 + (((tickAnim - 11) / 9) * (1-(1)));
+            yy = -1 + (((tickAnim - 11) / 9) * (-1-(-1)));
+            zz = 4 + (((tickAnim - 11) / 9) * (4-(4)));
         }
-        else if (tickAnim >= 280 && tickAnim < 290) {
-            xx = 1 + (((tickAnim - 280) / 10) * (0-(1)));
-            yy = -1 + (((tickAnim - 280) / 10) * (0-(-1)));
-            zz = 4 + (((tickAnim - 280) / 10) * (0-(4)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = 1 + (((tickAnim - 20) / 255) * (1-(1)));
+            yy = -1 + (((tickAnim - 20) / 255) * (-1-(-1)));
+            zz = 4 + (((tickAnim - 20) / 255) * (4-(4)));
         }
-        else if (tickAnim >= 290 && tickAnim < 310) {
-            xx = 0 + (((tickAnim - 290) / 20) * (0-(0)));
-            yy = 0 + (((tickAnim - 290) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 290) / 20) * (0-(0)));
+        else if (tickAnim >= 275 && tickAnim < 285) {
+            xx = 1 + (((tickAnim - 275) / 10) * (0-(1)));
+            yy = -1 + (((tickAnim - 275) / 10) * (0-(-1)));
+            zz = 4 + (((tickAnim - 275) / 10) * (0-(4)));
+        }
+        else if (tickAnim >= 285 && tickAnim < 305) {
+            xx = 0 + (((tickAnim - 285) / 20) * (0-(0)));
+            yy = 0 + (((tickAnim - 285) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 285) / 20) * (0-(0)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            yy = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 305) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1457,30 +1807,40 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 6) {
-            xx = 16.20309 + (((tickAnim - 0) / 6) * (57.0939-(16.20309)));
-            yy = 3.06523 + (((tickAnim - 0) / 6) * (-4.17252-(3.06523)));
-            zz = 12.89167 + (((tickAnim - 0) / 6) * (40.97682-(12.89167)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (16.20309-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (3.06523-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (12.89167-(0)));
         }
-        else if (tickAnim >= 6 && tickAnim < 15) {
-            xx = 57.0939 + (((tickAnim - 6) / 9) * (57.0939-(57.0939)));
-            yy = -4.17252 + (((tickAnim - 6) / 9) * (-4.17252-(-4.17252)));
-            zz = 40.97682 + (((tickAnim - 6) / 9) * (40.97682-(40.97682)));
+        else if (tickAnim >= 5 && tickAnim < 11) {
+            xx = 16.20309 + (((tickAnim - 5) / 6) * (57.0939-(16.20309)));
+            yy = 3.06523 + (((tickAnim - 5) / 6) * (-4.17252-(3.06523)));
+            zz = 12.89167 + (((tickAnim - 5) / 6) * (40.97682-(12.89167)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = 57.0939 + (((tickAnim - 15) / 265) * (57.0939-(57.0939)));
-            yy = -4.17252 + (((tickAnim - 15) / 265) * (-4.17252-(-4.17252)));
-            zz = 40.97682 + (((tickAnim - 15) / 265) * (40.97682-(40.97682)));
+        else if (tickAnim >= 11 && tickAnim < 20) {
+            xx = 57.0939 + (((tickAnim - 11) / 9) * (57.0939-(57.0939)));
+            yy = -4.17252 + (((tickAnim - 11) / 9) * (-4.17252-(-4.17252)));
+            zz = 40.97682 + (((tickAnim - 11) / 9) * (40.97682-(40.97682)));
         }
-        else if (tickAnim >= 280 && tickAnim < 290) {
-            xx = 57.0939 + (((tickAnim - 280) / 10) * (16.20309-(57.0939)));
-            yy = -4.17252 + (((tickAnim - 280) / 10) * (3.06523-(-4.17252)));
-            zz = 40.97682 + (((tickAnim - 280) / 10) * (12.89167-(40.97682)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = 57.0939 + (((tickAnim - 20) / 255) * (57.0939-(57.0939)));
+            yy = -4.17252 + (((tickAnim - 20) / 255) * (-4.17252-(-4.17252)));
+            zz = 40.97682 + (((tickAnim - 20) / 255) * (40.97682-(40.97682)));
         }
-        else if (tickAnim >= 290 && tickAnim < 310) {
-            xx = 16.20309 + (((tickAnim - 290) / 20) * (16.20309-(16.20309)));
-            yy = 3.06523 + (((tickAnim - 290) / 20) * (3.06523-(3.06523)));
-            zz = 12.89167 + (((tickAnim - 290) / 20) * (12.89167-(12.89167)));
+        else if (tickAnim >= 275 && tickAnim < 285) {
+            xx = 57.0939 + (((tickAnim - 275) / 10) * (16.20309-(57.0939)));
+            yy = -4.17252 + (((tickAnim - 275) / 10) * (3.06523-(-4.17252)));
+            zz = 40.97682 + (((tickAnim - 275) / 10) * (12.89167-(40.97682)));
+        }
+        else if (tickAnim >= 285 && tickAnim < 305) {
+            xx = 16.20309 + (((tickAnim - 285) / 20) * (16.20309-(16.20309)));
+            yy = 3.06523 + (((tickAnim - 285) / 20) * (3.06523-(3.06523)));
+            zz = 12.89167 + (((tickAnim - 285) / 20) * (12.89167-(12.89167)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = 16.20309 + (((tickAnim - 305) / 10) * (0-(16.20309)));
+            yy = 3.06523 + (((tickAnim - 305) / 10) * (0-(3.06523)));
+            zz = 12.89167 + (((tickAnim - 305) / 10) * (0-(12.89167)));
         }
         else {
             xx = 0;
@@ -1492,35 +1852,45 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 3) {
-            xx = -24.13272 + (((tickAnim - 0) / 3) * (128.32036-(-24.13272)));
-            yy = 34.71167 + (((tickAnim - 0) / 3) * (18.47143-(34.71167)));
-            zz = 9.84164 + (((tickAnim - 0) / 3) * (36.23137-(9.84164)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-24.13272-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (34.71167-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (9.84164-(0)));
         }
-        else if (tickAnim >= 3 && tickAnim < 6) {
-            xx = 128.32036 + (((tickAnim - 3) / 3) * (140.87613-(128.32036)));
-            yy = 18.47143 + (((tickAnim - 3) / 3) * (20.08488-(18.47143)));
-            zz = 36.23137 + (((tickAnim - 3) / 3) * (35.83554-(36.23137)));
+        else if (tickAnim >= 5 && tickAnim < 8) {
+            xx = -24.13272 + (((tickAnim - 5) / 3) * (128.32036-(-24.13272)));
+            yy = 34.71167 + (((tickAnim - 5) / 3) * (18.47143-(34.71167)));
+            zz = 9.84164 + (((tickAnim - 5) / 3) * (36.23137-(9.84164)));
         }
-        else if (tickAnim >= 6 && tickAnim < 15) {
-            xx = 140.87613 + (((tickAnim - 6) / 9) * (140.87613-(140.87613)));
-            yy = 20.08488 + (((tickAnim - 6) / 9) * (20.08488-(20.08488)));
-            zz = 35.83554 + (((tickAnim - 6) / 9) * (35.83554-(35.83554)));
+        else if (tickAnim >= 8 && tickAnim < 11) {
+            xx = 128.32036 + (((tickAnim - 8) / 3) * (140.87613-(128.32036)));
+            yy = 18.47143 + (((tickAnim - 8) / 3) * (20.08488-(18.47143)));
+            zz = 36.23137 + (((tickAnim - 8) / 3) * (35.83554-(36.23137)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = 140.87613 + (((tickAnim - 15) / 265) * (140.87613-(140.87613)));
-            yy = 20.08488 + (((tickAnim - 15) / 265) * (20.08488-(20.08488)));
-            zz = 35.83554 + (((tickAnim - 15) / 265) * (35.83554-(35.83554)));
+        else if (tickAnim >= 11 && tickAnim < 20) {
+            xx = 140.87613 + (((tickAnim - 11) / 9) * (140.87613-(140.87613)));
+            yy = 20.08488 + (((tickAnim - 11) / 9) * (20.08488-(20.08488)));
+            zz = 35.83554 + (((tickAnim - 11) / 9) * (35.83554-(35.83554)));
         }
-        else if (tickAnim >= 280 && tickAnim < 290) {
-            xx = 140.87613 + (((tickAnim - 280) / 10) * (-24.13272-(140.87613)));
-            yy = 20.08488 + (((tickAnim - 280) / 10) * (34.71167-(20.08488)));
-            zz = 35.83554 + (((tickAnim - 280) / 10) * (9.84164-(35.83554)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = 140.87613 + (((tickAnim - 20) / 255) * (140.87613-(140.87613)));
+            yy = 20.08488 + (((tickAnim - 20) / 255) * (20.08488-(20.08488)));
+            zz = 35.83554 + (((tickAnim - 20) / 255) * (35.83554-(35.83554)));
         }
-        else if (tickAnim >= 290 && tickAnim < 310) {
-            xx = -24.13272 + (((tickAnim - 290) / 20) * (-24.13272-(-24.13272)));
-            yy = 34.71167 + (((tickAnim - 290) / 20) * (34.71167-(34.71167)));
-            zz = 9.84164 + (((tickAnim - 290) / 20) * (9.84164-(9.84164)));
+        else if (tickAnim >= 275 && tickAnim < 285) {
+            xx = 140.87613 + (((tickAnim - 275) / 10) * (-24.13272-(140.87613)));
+            yy = 20.08488 + (((tickAnim - 275) / 10) * (34.71167-(20.08488)));
+            zz = 35.83554 + (((tickAnim - 275) / 10) * (9.84164-(35.83554)));
+        }
+        else if (tickAnim >= 285 && tickAnim < 305) {
+            xx = -24.13272 + (((tickAnim - 285) / 20) * (-24.13272-(-24.13272)));
+            yy = 34.71167 + (((tickAnim - 285) / 20) * (34.71167-(34.71167)));
+            zz = 9.84164 + (((tickAnim - 285) / 20) * (9.84164-(9.84164)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = -24.13272 + (((tickAnim - 305) / 10) * (0-(-24.13272)));
+            yy = 34.71167 + (((tickAnim - 305) / 10) * (0-(34.71167)));
+            zz = 9.84164 + (((tickAnim - 305) / 10) * (0-(9.84164)));
         }
         else {
             xx = 0;
@@ -1532,40 +1902,50 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 6) {
-            xx = -0.19053 + (((tickAnim - 0) / 6) * (-60.04162-(-0.19053)));
-            yy = -46.46328 + (((tickAnim - 0) / 6) * (-44.93721-(-46.46328)));
-            zz = 43.0358 + (((tickAnim - 0) / 6) * (45.02163-(43.0358)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-0.19053-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-46.46328-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (43.0358-(0)));
         }
-        else if (tickAnim >= 6 && tickAnim < 15) {
-            xx = -60.04162 + (((tickAnim - 6) / 9) * (-60.04162-(-60.04162)));
-            yy = -44.93721 + (((tickAnim - 6) / 9) * (-44.93721-(-44.93721)));
-            zz = 45.02163 + (((tickAnim - 6) / 9) * (45.02163-(45.02163)));
+        else if (tickAnim >= 5 && tickAnim < 11) {
+            xx = -0.19053 + (((tickAnim - 5) / 6) * (-60.04162-(-0.19053)));
+            yy = -46.46328 + (((tickAnim - 5) / 6) * (-44.93721-(-46.46328)));
+            zz = 43.0358 + (((tickAnim - 5) / 6) * (45.02163-(43.0358)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = -60.04162 + (((tickAnim - 15) / 265) * (-60.04162-(-60.04162)));
-            yy = -44.93721 + (((tickAnim - 15) / 265) * (-44.93721-(-44.93721)));
-            zz = 45.02163 + (((tickAnim - 15) / 265) * (45.02163-(45.02163)));
+        else if (tickAnim >= 11 && tickAnim < 20) {
+            xx = -60.04162 + (((tickAnim - 11) / 9) * (-60.04162-(-60.04162)));
+            yy = -44.93721 + (((tickAnim - 11) / 9) * (-44.93721-(-44.93721)));
+            zz = 45.02163 + (((tickAnim - 11) / 9) * (45.02163-(45.02163)));
         }
-        else if (tickAnim >= 280 && tickAnim < 287) {
-            xx = -60.04162 + (((tickAnim - 280) / 7) * (-18.43484-(-60.04162)));
-            yy = -44.93721 + (((tickAnim - 280) / 7) * (-47.67513-(-44.93721)));
-            zz = 45.02163 + (((tickAnim - 280) / 7) * (73.69693-(45.02163)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = -60.04162 + (((tickAnim - 20) / 255) * (-60.04162-(-60.04162)));
+            yy = -44.93721 + (((tickAnim - 20) / 255) * (-44.93721-(-44.93721)));
+            zz = 45.02163 + (((tickAnim - 20) / 255) * (45.02163-(45.02163)));
+        }
+        else if (tickAnim >= 275 && tickAnim < 282) {
+            xx = -60.04162 + (((tickAnim - 275) / 7) * (-18.43484-(-60.04162)));
+            yy = -44.93721 + (((tickAnim - 275) / 7) * (-47.67513-(-44.93721)));
+            zz = 45.02163 + (((tickAnim - 275) / 7) * (73.69693-(45.02163)));
+        }
+        else if (tickAnim >= 282 && tickAnim < 287) {
+            xx = -18.43484 + (((tickAnim - 282) / 5) * (-9.29433-(-18.43484)));
+            yy = -47.67513 + (((tickAnim - 282) / 5) * (-54.43925-(-47.67513)));
+            zz = 73.69693 + (((tickAnim - 282) / 5) * (56.97516-(73.69693)));
         }
         else if (tickAnim >= 287 && tickAnim < 292) {
-            xx = -18.43484 + (((tickAnim - 287) / 5) * (-9.29433-(-18.43484)));
-            yy = -47.67513 + (((tickAnim - 287) / 5) * (-54.43925-(-47.67513)));
-            zz = 73.69693 + (((tickAnim - 287) / 5) * (56.97516-(73.69693)));
+            xx = -9.29433 + (((tickAnim - 287) / 5) * (-0.19053-(-9.29433)));
+            yy = -54.43925 + (((tickAnim - 287) / 5) * (-46.46328-(-54.43925)));
+            zz = 56.97516 + (((tickAnim - 287) / 5) * (43.0358-(56.97516)));
         }
-        else if (tickAnim >= 292 && tickAnim < 297) {
-            xx = -9.29433 + (((tickAnim - 292) / 5) * (-0.19053-(-9.29433)));
-            yy = -54.43925 + (((tickAnim - 292) / 5) * (-46.46328-(-54.43925)));
-            zz = 56.97516 + (((tickAnim - 292) / 5) * (43.0358-(56.97516)));
+        else if (tickAnim >= 292 && tickAnim < 305) {
+            xx = -0.19053 + (((tickAnim - 292) / 13) * (-0.19053-(-0.19053)));
+            yy = -46.46328 + (((tickAnim - 292) / 13) * (-46.46328-(-46.46328)));
+            zz = 43.0358 + (((tickAnim - 292) / 13) * (43.0358-(43.0358)));
         }
-        else if (tickAnim >= 297 && tickAnim < 310) {
-            xx = -0.19053 + (((tickAnim - 297) / 13) * (-0.19053-(-0.19053)));
-            yy = -46.46328 + (((tickAnim - 297) / 13) * (-46.46328-(-46.46328)));
-            zz = 43.0358 + (((tickAnim - 297) / 13) * (43.0358-(43.0358)));
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = -0.19053 + (((tickAnim - 305) / 10) * (0-(-0.19053)));
+            yy = -46.46328 + (((tickAnim - 305) / 10) * (0-(-46.46328)));
+            zz = 43.0358 + (((tickAnim - 305) / 10) * (0-(43.0358)));
         }
         else {
             xx = 0;
@@ -1575,30 +1955,40 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
         this.setRotateAngle(frontrightleg, frontrightleg.rotateAngleX + (float) Math.toRadians(xx), frontrightleg.rotateAngleY + (float) Math.toRadians(yy), frontrightleg.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 6) {
-            xx = 0 + (((tickAnim - 0) / 6) * (-1-(0)));
-            yy = 0 + (((tickAnim - 0) / 6) * (-1-(0)));
-            zz = 0 + (((tickAnim - 0) / 6) * (4-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 6 && tickAnim < 15) {
-            xx = -1 + (((tickAnim - 6) / 9) * (-1-(-1)));
-            yy = -1 + (((tickAnim - 6) / 9) * (-1-(-1)));
-            zz = 4 + (((tickAnim - 6) / 9) * (4-(4)));
+        else if (tickAnim >= 5 && tickAnim < 11) {
+            xx = 0 + (((tickAnim - 5) / 6) * (-1-(0)));
+            yy = 0 + (((tickAnim - 5) / 6) * (-1-(0)));
+            zz = 0 + (((tickAnim - 5) / 6) * (4-(0)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = -1 + (((tickAnim - 15) / 265) * (-1-(-1)));
-            yy = -1 + (((tickAnim - 15) / 265) * (-1-(-1)));
-            zz = 4 + (((tickAnim - 15) / 265) * (4-(4)));
+        else if (tickAnim >= 11 && tickAnim < 20) {
+            xx = -1 + (((tickAnim - 11) / 9) * (-1-(-1)));
+            yy = -1 + (((tickAnim - 11) / 9) * (-1-(-1)));
+            zz = 4 + (((tickAnim - 11) / 9) * (4-(4)));
         }
-        else if (tickAnim >= 280 && tickAnim < 297) {
-            xx = -1 + (((tickAnim - 280) / 17) * (0-(-1)));
-            yy = -1 + (((tickAnim - 280) / 17) * (0-(-1)));
-            zz = 4 + (((tickAnim - 280) / 17) * (0-(4)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = -1 + (((tickAnim - 20) / 255) * (-1-(-1)));
+            yy = -1 + (((tickAnim - 20) / 255) * (-1-(-1)));
+            zz = 4 + (((tickAnim - 20) / 255) * (4-(4)));
         }
-        else if (tickAnim >= 297 && tickAnim < 310) {
-            xx = 0 + (((tickAnim - 297) / 13) * (0-(0)));
-            yy = 0 + (((tickAnim - 297) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 297) / 13) * (0-(0)));
+        else if (tickAnim >= 275 && tickAnim < 292) {
+            xx = -1 + (((tickAnim - 275) / 17) * (0-(-1)));
+            yy = -1 + (((tickAnim - 275) / 17) * (0-(-1)));
+            zz = 4 + (((tickAnim - 275) / 17) * (0-(4)));
+        }
+        else if (tickAnim >= 292 && tickAnim < 305) {
+            xx = 0 + (((tickAnim - 292) / 13) * (0-(0)));
+            yy = 0 + (((tickAnim - 292) / 13) * (0-(0)));
+            zz = 0 + (((tickAnim - 292) / 13) * (0-(0)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            yy = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 305) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1612,30 +2002,40 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 6) {
-            xx = 16.20309 + (((tickAnim - 0) / 6) * (57.0939-(16.20309)));
-            yy = -3.06523 + (((tickAnim - 0) / 6) * (4.17252-(-3.06523)));
-            zz = -12.89167 + (((tickAnim - 0) / 6) * (-40.97682-(-12.89167)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (16.20309-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-3.06523-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (-12.89167-(0)));
         }
-        else if (tickAnim >= 6 && tickAnim < 15) {
-            xx = 57.0939 + (((tickAnim - 6) / 9) * (57.0939-(57.0939)));
-            yy = 4.17252 + (((tickAnim - 6) / 9) * (4.17252-(4.17252)));
-            zz = -40.97682 + (((tickAnim - 6) / 9) * (-40.97682-(-40.97682)));
+        else if (tickAnim >= 5 && tickAnim < 11) {
+            xx = 16.20309 + (((tickAnim - 5) / 6) * (57.0939-(16.20309)));
+            yy = -3.06523 + (((tickAnim - 5) / 6) * (4.17252-(-3.06523)));
+            zz = -12.89167 + (((tickAnim - 5) / 6) * (-40.97682-(-12.89167)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = 57.0939 + (((tickAnim - 15) / 265) * (57.0939-(57.0939)));
-            yy = 4.17252 + (((tickAnim - 15) / 265) * (4.17252-(4.17252)));
-            zz = -40.97682 + (((tickAnim - 15) / 265) * (-40.97682-(-40.97682)));
+        else if (tickAnim >= 11 && tickAnim < 20) {
+            xx = 57.0939 + (((tickAnim - 11) / 9) * (57.0939-(57.0939)));
+            yy = 4.17252 + (((tickAnim - 11) / 9) * (4.17252-(4.17252)));
+            zz = -40.97682 + (((tickAnim - 11) / 9) * (-40.97682-(-40.97682)));
         }
-        else if (tickAnim >= 280 && tickAnim < 290) {
-            xx = 57.0939 + (((tickAnim - 280) / 10) * (16.20309-(57.0939)));
-            yy = 4.17252 + (((tickAnim - 280) / 10) * (-3.06523-(4.17252)));
-            zz = -40.97682 + (((tickAnim - 280) / 10) * (-12.89167-(-40.97682)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = 57.0939 + (((tickAnim - 20) / 255) * (57.0939-(57.0939)));
+            yy = 4.17252 + (((tickAnim - 20) / 255) * (4.17252-(4.17252)));
+            zz = -40.97682 + (((tickAnim - 20) / 255) * (-40.97682-(-40.97682)));
         }
-        else if (tickAnim >= 290 && tickAnim < 310) {
-            xx = 16.20309 + (((tickAnim - 290) / 20) * (16.20309-(16.20309)));
-            yy = -3.06523 + (((tickAnim - 290) / 20) * (-3.06523-(-3.06523)));
-            zz = -12.89167 + (((tickAnim - 290) / 20) * (-12.89167-(-12.89167)));
+        else if (tickAnim >= 275 && tickAnim < 285) {
+            xx = 57.0939 + (((tickAnim - 275) / 10) * (16.20309-(57.0939)));
+            yy = 4.17252 + (((tickAnim - 275) / 10) * (-3.06523-(4.17252)));
+            zz = -40.97682 + (((tickAnim - 275) / 10) * (-12.89167-(-40.97682)));
+        }
+        else if (tickAnim >= 285 && tickAnim < 305) {
+            xx = 16.20309 + (((tickAnim - 285) / 20) * (16.20309-(16.20309)));
+            yy = -3.06523 + (((tickAnim - 285) / 20) * (-3.06523-(-3.06523)));
+            zz = -12.89167 + (((tickAnim - 285) / 20) * (-12.89167-(-12.89167)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = 16.20309 + (((tickAnim - 305) / 10) * (0-(16.20309)));
+            yy = -3.06523 + (((tickAnim - 305) / 10) * (0-(-3.06523)));
+            zz = -12.89167 + (((tickAnim - 305) / 10) * (0-(-12.89167)));
         }
         else {
             xx = 0;
@@ -1647,35 +2047,45 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 3) {
-            xx = -24.13272 + (((tickAnim - 0) / 3) * (128.32036-(-24.13272)));
-            yy = -34.71167 + (((tickAnim - 0) / 3) * (-18.47143-(-34.71167)));
-            zz = -9.84164 + (((tickAnim - 0) / 3) * (-36.23137-(-9.84164)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-24.13272-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-34.71167-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (-9.84164-(0)));
         }
-        else if (tickAnim >= 3 && tickAnim < 6) {
-            xx = 128.32036 + (((tickAnim - 3) / 3) * (140.87613-(128.32036)));
-            yy = -18.47143 + (((tickAnim - 3) / 3) * (-20.08488-(-18.47143)));
-            zz = -36.23137 + (((tickAnim - 3) / 3) * (-35.83554-(-36.23137)));
+        else if (tickAnim >= 5 && tickAnim < 8) {
+            xx = -24.13272 + (((tickAnim - 5) / 3) * (128.32036-(-24.13272)));
+            yy = -34.71167 + (((tickAnim - 5) / 3) * (-18.47143-(-34.71167)));
+            zz = -9.84164 + (((tickAnim - 5) / 3) * (-36.23137-(-9.84164)));
         }
-        else if (tickAnim >= 6 && tickAnim < 15) {
-            xx = 140.87613 + (((tickAnim - 6) / 9) * (140.87613-(140.87613)));
-            yy = -20.08488 + (((tickAnim - 6) / 9) * (-20.08488-(-20.08488)));
-            zz = -35.83554 + (((tickAnim - 6) / 9) * (-35.83554-(-35.83554)));
+        else if (tickAnim >= 8 && tickAnim < 11) {
+            xx = 128.32036 + (((tickAnim - 8) / 3) * (140.87613-(128.32036)));
+            yy = -18.47143 + (((tickAnim - 8) / 3) * (-20.08488-(-18.47143)));
+            zz = -36.23137 + (((tickAnim - 8) / 3) * (-35.83554-(-36.23137)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = 140.87613 + (((tickAnim - 15) / 265) * (140.87613-(140.87613)));
-            yy = -20.08488 + (((tickAnim - 15) / 265) * (-20.08488-(-20.08488)));
-            zz = -35.83554 + (((tickAnim - 15) / 265) * (-35.83554-(-35.83554)));
+        else if (tickAnim >= 11 && tickAnim < 20) {
+            xx = 140.87613 + (((tickAnim - 11) / 9) * (140.87613-(140.87613)));
+            yy = -20.08488 + (((tickAnim - 11) / 9) * (-20.08488-(-20.08488)));
+            zz = -35.83554 + (((tickAnim - 11) / 9) * (-35.83554-(-35.83554)));
         }
-        else if (tickAnim >= 280 && tickAnim < 290) {
-            xx = 140.87613 + (((tickAnim - 280) / 10) * (-24.13272-(140.87613)));
-            yy = -20.08488 + (((tickAnim - 280) / 10) * (-34.71167-(-20.08488)));
-            zz = -35.83554 + (((tickAnim - 280) / 10) * (-9.84164-(-35.83554)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = 140.87613 + (((tickAnim - 20) / 255) * (140.87613-(140.87613)));
+            yy = -20.08488 + (((tickAnim - 20) / 255) * (-20.08488-(-20.08488)));
+            zz = -35.83554 + (((tickAnim - 20) / 255) * (-35.83554-(-35.83554)));
         }
-        else if (tickAnim >= 290 && tickAnim < 310) {
-            xx = -24.13272 + (((tickAnim - 290) / 20) * (-24.13272-(-24.13272)));
-            yy = -34.71167 + (((tickAnim - 290) / 20) * (-34.71167-(-34.71167)));
-            zz = -9.84164 + (((tickAnim - 290) / 20) * (-9.84164-(-9.84164)));
+        else if (tickAnim >= 275 && tickAnim < 285) {
+            xx = 140.87613 + (((tickAnim - 275) / 10) * (-24.13272-(140.87613)));
+            yy = -20.08488 + (((tickAnim - 275) / 10) * (-34.71167-(-20.08488)));
+            zz = -35.83554 + (((tickAnim - 275) / 10) * (-9.84164-(-35.83554)));
+        }
+        else if (tickAnim >= 285 && tickAnim < 305) {
+            xx = -24.13272 + (((tickAnim - 285) / 20) * (-24.13272-(-24.13272)));
+            yy = -34.71167 + (((tickAnim - 285) / 20) * (-34.71167-(-34.71167)));
+            zz = -9.84164 + (((tickAnim - 285) / 20) * (-9.84164-(-9.84164)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = -24.13272 + (((tickAnim - 305) / 10) * (0-(-24.13272)));
+            yy = -34.71167 + (((tickAnim - 305) / 10) * (0-(-34.71167)));
+            zz = -9.84164 + (((tickAnim - 305) / 10) * (0-(-9.84164)));
         }
         else {
             xx = 0;
@@ -1687,30 +2097,50 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 5) {
-            xx = 64.75252 + (((tickAnim - 0) / 5) * (95.65166-(64.75252)));
-            yy = -48.73922 + (((tickAnim - 0) / 5) * (-36.72154-(-48.73922)));
-            zz = 83.31978 + (((tickAnim - 0) / 5) * (79.52099-(83.31978)));
+        if (tickAnim >= 0 && tickAnim < 3) {
+            xx = 0 + (((tickAnim - 0) / 3) * (42.37626-(0)));
+            yy = 0 + (((tickAnim - 0) / 3) * (-24.36961-(0)));
+            zz = 0 + (((tickAnim - 0) / 3) * (41.65989-(0)));
         }
-        else if (tickAnim >= 5 && tickAnim < 15) {
-            xx = 95.65166 + (((tickAnim - 5) / 10) * (95.65166-(95.65166)));
-            yy = -36.72154 + (((tickAnim - 5) / 10) * (-36.72154-(-36.72154)));
-            zz = 79.52099 + (((tickAnim - 5) / 10) * (79.52099-(79.52099)));
+        else if (tickAnim >= 3 && tickAnim < 5) {
+            xx = 42.37626 + (((tickAnim - 3) / 2) * (64.75252-(42.37626)));
+            yy = -24.36961 + (((tickAnim - 3) / 2) * (-48.73922-(-24.36961)));
+            zz = 41.65989 + (((tickAnim - 3) / 2) * (83.31978-(41.65989)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = 95.65166 + (((tickAnim - 15) / 265) * (95.65166-(95.65166)));
-            yy = -36.72154 + (((tickAnim - 15) / 265) * (-36.72154-(-36.72154)));
-            zz = 79.52099 + (((tickAnim - 15) / 265) * (79.52099-(79.52099)));
+        else if (tickAnim >= 5 && tickAnim < 10) {
+            xx = 64.75252 + (((tickAnim - 5) / 5) * (95.65166-(64.75252)));
+            yy = -48.73922 + (((tickAnim - 5) / 5) * (-36.72154-(-48.73922)));
+            zz = 83.31978 + (((tickAnim - 5) / 5) * (79.52099-(83.31978)));
         }
-        else if (tickAnim >= 280 && tickAnim < 292) {
-            xx = 95.65166 + (((tickAnim - 280) / 12) * (64.75252-(95.65166)));
-            yy = -36.72154 + (((tickAnim - 280) / 12) * (-48.73922-(-36.72154)));
-            zz = 79.52099 + (((tickAnim - 280) / 12) * (83.31978-(79.52099)));
+        else if (tickAnim >= 10 && tickAnim < 20) {
+            xx = 95.65166 + (((tickAnim - 10) / 10) * (95.65166-(95.65166)));
+            yy = -36.72154 + (((tickAnim - 10) / 10) * (-36.72154-(-36.72154)));
+            zz = 79.52099 + (((tickAnim - 10) / 10) * (79.52099-(79.52099)));
         }
-        else if (tickAnim >= 292 && tickAnim < 310) {
-            xx = 64.75252 + (((tickAnim - 292) / 18) * (64.75252-(64.75252)));
-            yy = -48.73922 + (((tickAnim - 292) / 18) * (-48.73922-(-48.73922)));
-            zz = 83.31978 + (((tickAnim - 292) / 18) * (83.31978-(83.31978)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = 95.65166 + (((tickAnim - 20) / 255) * (95.65166-(95.65166)));
+            yy = -36.72154 + (((tickAnim - 20) / 255) * (-36.72154-(-36.72154)));
+            zz = 79.52099 + (((tickAnim - 20) / 255) * (79.52099-(79.52099)));
+        }
+        else if (tickAnim >= 275 && tickAnim < 287) {
+            xx = 95.65166 + (((tickAnim - 275) / 12) * (64.75252-(95.65166)));
+            yy = -36.72154 + (((tickAnim - 275) / 12) * (-48.73922-(-36.72154)));
+            zz = 79.52099 + (((tickAnim - 275) / 12) * (83.31978-(79.52099)));
+        }
+        else if (tickAnim >= 287 && tickAnim < 305) {
+            xx = 64.75252 + (((tickAnim - 287) / 18) * (64.75252-(64.75252)));
+            yy = -48.73922 + (((tickAnim - 287) / 18) * (-48.73922-(-48.73922)));
+            zz = 83.31978 + (((tickAnim - 287) / 18) * (83.31978-(83.31978)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 310) {
+            xx = 64.75252 + (((tickAnim - 305) / 5) * (42.37626-(64.75252)));
+            yy = -48.73922 + (((tickAnim - 305) / 5) * (-24.36961-(-48.73922)));
+            zz = 83.31978 + (((tickAnim - 305) / 5) * (41.65989-(83.31978)));
+        }
+        else if (tickAnim >= 310 && tickAnim < 315) {
+            xx = 42.37626 + (((tickAnim - 310) / 5) * (0-(42.37626)));
+            yy = -24.36961 + (((tickAnim - 310) / 5) * (0-(-24.36961)));
+            zz = 41.65989 + (((tickAnim - 310) / 5) * (0-(41.65989)));
         }
         else {
             xx = 0;
@@ -1721,29 +2151,39 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 5) {
-            xx = 0 + (((tickAnim - 0) / 5) * (-3.5-(0)));
-            yy = 0 + (((tickAnim - 0) / 5) * (-0.5-(0)));
-            zz = 0 + (((tickAnim - 0) / 5) * (-2-(0)));
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 5 && tickAnim < 15) {
-            xx = -3.5 + (((tickAnim - 5) / 10) * (-3.5-(-3.5)));
-            yy = -0.5 + (((tickAnim - 5) / 10) * (-0.5-(-0.5)));
-            zz = -2 + (((tickAnim - 5) / 10) * (-2-(-2)));
+        else if (tickAnim >= 5 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 5) / 5) * (-3.5-(0)));
+            yy = 0 + (((tickAnim - 5) / 5) * (-0.5-(0)));
+            zz = 0 + (((tickAnim - 5) / 5) * (-2-(0)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = -3.5 + (((tickAnim - 15) / 265) * (-3.5-(-3.5)));
-            yy = -0.5 + (((tickAnim - 15) / 265) * (-0.5-(-0.5)));
-            zz = -2 + (((tickAnim - 15) / 265) * (-2-(-2)));
+        else if (tickAnim >= 10 && tickAnim < 20) {
+            xx = -3.5 + (((tickAnim - 10) / 10) * (-3.5-(-3.5)));
+            yy = -0.5 + (((tickAnim - 10) / 10) * (-0.5-(-0.5)));
+            zz = -2 + (((tickAnim - 10) / 10) * (-2-(-2)));
         }
-        else if (tickAnim >= 280 && tickAnim < 292) {
-            xx = -3.5 + (((tickAnim - 280) / 12) * (0-(-3.5)));
-            yy = -0.5 + (((tickAnim - 280) / 12) * (0-(-0.5)));
-            zz = -2 + (((tickAnim - 280) / 12) * (0-(-2)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = -3.5 + (((tickAnim - 20) / 255) * (-3.5-(-3.5)));
+            yy = -0.5 + (((tickAnim - 20) / 255) * (-0.5-(-0.5)));
+            zz = -2 + (((tickAnim - 20) / 255) * (-2-(-2)));
         }
-        else if (tickAnim >= 292 && tickAnim < 310) {
-            xx = 0 + (((tickAnim - 292) / 18) * (0-(0)));
-            yy = 0 + (((tickAnim - 292) / 18) * (0-(0)));
-            zz = 0 + (((tickAnim - 292) / 18) * (0-(0)));
+        else if (tickAnim >= 275 && tickAnim < 287) {
+            xx = -3.5 + (((tickAnim - 275) / 12) * (0-(-3.5)));
+            yy = -0.5 + (((tickAnim - 275) / 12) * (0-(-0.5)));
+            zz = -2 + (((tickAnim - 275) / 12) * (0-(-2)));
+        }
+        else if (tickAnim >= 287 && tickAnim < 305) {
+            xx = 0 + (((tickAnim - 287) / 18) * (0-(0)));
+            yy = 0 + (((tickAnim - 287) / 18) * (0-(0)));
+            zz = 0 + (((tickAnim - 287) / 18) * (0-(0)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            yy = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 305) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1758,29 +2198,39 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 5) {
-            xx = 0 + (((tickAnim - 0) / 5) * (-57.5-(0)));
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
             yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 5 && tickAnim < 15) {
-            xx = -57.5 + (((tickAnim - 5) / 10) * (-57.5-(-57.5)));
-            yy = 0 + (((tickAnim - 5) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 5) / 10) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 5) / 5) * (-57.5-(0)));
+            yy = 0 + (((tickAnim - 5) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 5) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = -57.5 + (((tickAnim - 15) / 265) * (-57.5-(-57.5)));
-            yy = 0 + (((tickAnim - 15) / 265) * (0-(0)));
-            zz = 0 + (((tickAnim - 15) / 265) * (0-(0)));
+        else if (tickAnim >= 10 && tickAnim < 20) {
+            xx = -57.5 + (((tickAnim - 10) / 10) * (-57.5-(-57.5)));
+            yy = 0 + (((tickAnim - 10) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 10) / 10) * (0-(0)));
         }
-        else if (tickAnim >= 280 && tickAnim < 292) {
-            xx = -57.5 + (((tickAnim - 280) / 12) * (0-(-57.5)));
-            yy = 0 + (((tickAnim - 280) / 12) * (0-(0)));
-            zz = 0 + (((tickAnim - 280) / 12) * (0-(0)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = -57.5 + (((tickAnim - 20) / 255) * (-57.5-(-57.5)));
+            yy = 0 + (((tickAnim - 20) / 255) * (0-(0)));
+            zz = 0 + (((tickAnim - 20) / 255) * (0-(0)));
         }
-        else if (tickAnim >= 292 && tickAnim < 310) {
-            xx = 0 + (((tickAnim - 292) / 18) * (0-(0)));
-            yy = 0 + (((tickAnim - 292) / 18) * (0-(0)));
-            zz = 0 + (((tickAnim - 292) / 18) * (0-(0)));
+        else if (tickAnim >= 275 && tickAnim < 287) {
+            xx = -57.5 + (((tickAnim - 275) / 12) * (0-(-57.5)));
+            yy = 0 + (((tickAnim - 275) / 12) * (0-(0)));
+            zz = 0 + (((tickAnim - 275) / 12) * (0-(0)));
+        }
+        else if (tickAnim >= 287 && tickAnim < 305) {
+            xx = 0 + (((tickAnim - 287) / 18) * (0-(0)));
+            yy = 0 + (((tickAnim - 287) / 18) * (0-(0)));
+            zz = 0 + (((tickAnim - 287) / 18) * (0-(0)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            yy = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 305) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1792,25 +2242,35 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 6) {
-            xx = 44.99412 + (((tickAnim - 0) / 6) * (44.99412-(44.99412)));
-            yy = 53.19349 + (((tickAnim - 0) / 6) * (53.19349-(53.19349)));
-            zz = -55.40601 + (((tickAnim - 0) / 6) * (-55.40601-(-55.40601)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (44.99412-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (53.19349-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (-55.40601-(0)));
         }
-        else if (tickAnim >= 6 && tickAnim < 280) {
-            xx = 44.99412 + (((tickAnim - 6) / 274) * (44.99412-(44.99412)));
-            yy = 53.19349 + (((tickAnim - 6) / 274) * (53.19349-(53.19349)));
-            zz = -55.40601 + (((tickAnim - 6) / 274) * (-55.40601-(-55.40601)));
+        else if (tickAnim >= 5 && tickAnim < 11) {
+            xx = 44.99412 + (((tickAnim - 5) / 6) * (44.99412-(44.99412)));
+            yy = 53.19349 + (((tickAnim - 5) / 6) * (53.19349-(53.19349)));
+            zz = -55.40601 + (((tickAnim - 5) / 6) * (-55.40601-(-55.40601)));
         }
-        else if (tickAnim >= 280 && tickAnim < 292) {
-            xx = 44.99412 + (((tickAnim - 280) / 12) * (44.99412-(44.99412)));
-            yy = 53.19349 + (((tickAnim - 280) / 12) * (53.19349-(53.19349)));
-            zz = -55.40601 + (((tickAnim - 280) / 12) * (-55.40601-(-55.40601)));
+        else if (tickAnim >= 11 && tickAnim < 275) {
+            xx = 44.99412 + (((tickAnim - 11) / 264) * (44.99412-(44.99412)));
+            yy = 53.19349 + (((tickAnim - 11) / 264) * (53.19349-(53.19349)));
+            zz = -55.40601 + (((tickAnim - 11) / 264) * (-55.40601-(-55.40601)));
         }
-        else if (tickAnim >= 292 && tickAnim < 310) {
-            xx = 44.99412 + (((tickAnim - 292) / 18) * (44.99412-(44.99412)));
-            yy = 53.19349 + (((tickAnim - 292) / 18) * (53.19349-(53.19349)));
-            zz = -55.40601 + (((tickAnim - 292) / 18) * (-55.40601-(-55.40601)));
+        else if (tickAnim >= 275 && tickAnim < 287) {
+            xx = 44.99412 + (((tickAnim - 275) / 12) * (44.99412-(44.99412)));
+            yy = 53.19349 + (((tickAnim - 275) / 12) * (53.19349-(53.19349)));
+            zz = -55.40601 + (((tickAnim - 275) / 12) * (-55.40601-(-55.40601)));
+        }
+        else if (tickAnim >= 287 && tickAnim < 305) {
+            xx = 44.99412 + (((tickAnim - 287) / 18) * (44.99412-(44.99412)));
+            yy = 53.19349 + (((tickAnim - 287) / 18) * (53.19349-(53.19349)));
+            zz = -55.40601 + (((tickAnim - 287) / 18) * (-55.40601-(-55.40601)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = 44.99412 + (((tickAnim - 305) / 10) * (0-(44.99412)));
+            yy = 53.19349 + (((tickAnim - 305) / 10) * (0-(53.19349)));
+            zz = -55.40601 + (((tickAnim - 305) / 10) * (0-(-55.40601)));
         }
         else {
             xx = 0;
@@ -1822,30 +2282,50 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 5) {
-            xx = 64.75252 + (((tickAnim - 0) / 5) * (95.65166-(64.75252)));
-            yy = 48.73922 + (((tickAnim - 0) / 5) * (36.72154-(48.73922)));
-            zz = -83.31978 + (((tickAnim - 0) / 5) * (-79.52099-(-83.31978)));
+        if (tickAnim >= 0 && tickAnim < 3) {
+            xx = 0 + (((tickAnim - 0) / 3) * (42.87626-(0)));
+            yy = 0 + (((tickAnim - 0) / 3) * (24.36961-(0)));
+            zz = 0 + (((tickAnim - 0) / 3) * (-41.65989-(0)));
         }
-        else if (tickAnim >= 5 && tickAnim < 15) {
-            xx = 95.65166 + (((tickAnim - 5) / 10) * (95.65166-(95.65166)));
-            yy = 36.72154 + (((tickAnim - 5) / 10) * (36.72154-(36.72154)));
-            zz = -79.52099 + (((tickAnim - 5) / 10) * (-79.52099-(-79.52099)));
+        else if (tickAnim >= 3 && tickAnim < 5) {
+            xx = 42.87626 + (((tickAnim - 3) / 2) * (64.75252-(42.87626)));
+            yy = 24.36961 + (((tickAnim - 3) / 2) * (48.73922-(24.36961)));
+            zz = -41.65989 + (((tickAnim - 3) / 2) * (-83.31978-(-41.65989)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = 95.65166 + (((tickAnim - 15) / 265) * (95.65166-(95.65166)));
-            yy = 36.72154 + (((tickAnim - 15) / 265) * (36.72154-(36.72154)));
-            zz = -79.52099 + (((tickAnim - 15) / 265) * (-79.52099-(-79.52099)));
+        else if (tickAnim >= 5 && tickAnim < 10) {
+            xx = 64.75252 + (((tickAnim - 5) / 5) * (95.65166-(64.75252)));
+            yy = 48.73922 + (((tickAnim - 5) / 5) * (36.72154-(48.73922)));
+            zz = -83.31978 + (((tickAnim - 5) / 5) * (-79.52099-(-83.31978)));
         }
-        else if (tickAnim >= 280 && tickAnim < 290) {
-            xx = 95.65166 + (((tickAnim - 280) / 10) * (64.75252-(95.65166)));
-            yy = 36.72154 + (((tickAnim - 280) / 10) * (48.73922-(36.72154)));
-            zz = -79.52099 + (((tickAnim - 280) / 10) * (-83.31978-(-79.52099)));
+        else if (tickAnim >= 10 && tickAnim < 20) {
+            xx = 95.65166 + (((tickAnim - 10) / 10) * (95.65166-(95.65166)));
+            yy = 36.72154 + (((tickAnim - 10) / 10) * (36.72154-(36.72154)));
+            zz = -79.52099 + (((tickAnim - 10) / 10) * (-79.52099-(-79.52099)));
         }
-        else if (tickAnim >= 290 && tickAnim < 310) {
-            xx = 64.75252 + (((tickAnim - 290) / 20) * (64.75252-(64.75252)));
-            yy = 48.73922 + (((tickAnim - 290) / 20) * (48.73922-(48.73922)));
-            zz = -83.31978 + (((tickAnim - 290) / 20) * (-83.31978-(-83.31978)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = 95.65166 + (((tickAnim - 20) / 255) * (95.65166-(95.65166)));
+            yy = 36.72154 + (((tickAnim - 20) / 255) * (36.72154-(36.72154)));
+            zz = -79.52099 + (((tickAnim - 20) / 255) * (-79.52099-(-79.52099)));
+        }
+        else if (tickAnim >= 275 && tickAnim < 285) {
+            xx = 95.65166 + (((tickAnim - 275) / 10) * (64.75252-(95.65166)));
+            yy = 36.72154 + (((tickAnim - 275) / 10) * (48.73922-(36.72154)));
+            zz = -79.52099 + (((tickAnim - 275) / 10) * (-83.31978-(-79.52099)));
+        }
+        else if (tickAnim >= 285 && tickAnim < 305) {
+            xx = 64.75252 + (((tickAnim - 285) / 20) * (64.75252-(64.75252)));
+            yy = 48.73922 + (((tickAnim - 285) / 20) * (48.73922-(48.73922)));
+            zz = -83.31978 + (((tickAnim - 285) / 20) * (-83.31978-(-83.31978)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 310) {
+            xx = 64.75252 + (((tickAnim - 305) / 5) * (42.37626-(64.75252)));
+            yy = 48.73922 + (((tickAnim - 305) / 5) * (24.36961-(48.73922)));
+            zz = -83.31978 + (((tickAnim - 305) / 5) * (-41.65989-(-83.31978)));
+        }
+        else if (tickAnim >= 310 && tickAnim < 315) {
+            xx = 42.37626 + (((tickAnim - 310) / 5) * (0-(42.37626)));
+            yy = 24.36961 + (((tickAnim - 310) / 5) * (0-(24.36961)));
+            zz = -41.65989 + (((tickAnim - 310) / 5) * (0-(-41.65989)));
         }
         else {
             xx = 0;
@@ -1856,29 +2336,39 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 5) {
-            xx = 0 + (((tickAnim - 0) / 5) * (3.5-(0)));
-            yy = 0 + (((tickAnim - 0) / 5) * (-0.5-(0)));
-            zz = 0 + (((tickAnim - 0) / 5) * (-2-(0)));
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 5 && tickAnim < 15) {
-            xx = 3.5 + (((tickAnim - 5) / 10) * (3.5-(3.5)));
-            yy = -0.5 + (((tickAnim - 5) / 10) * (-0.5-(-0.5)));
-            zz = -2 + (((tickAnim - 5) / 10) * (-2-(-2)));
+        else if (tickAnim >= 5 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 5) / 5) * (3.5-(0)));
+            yy = 0 + (((tickAnim - 5) / 5) * (-0.5-(0)));
+            zz = 0 + (((tickAnim - 5) / 5) * (-2-(0)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = 3.5 + (((tickAnim - 15) / 265) * (3.5-(3.5)));
-            yy = -0.5 + (((tickAnim - 15) / 265) * (-0.5-(-0.5)));
-            zz = -2 + (((tickAnim - 15) / 265) * (-2-(-2)));
+        else if (tickAnim >= 10 && tickAnim < 20) {
+            xx = 3.5 + (((tickAnim - 10) / 10) * (3.5-(3.5)));
+            yy = -0.5 + (((tickAnim - 10) / 10) * (-0.5-(-0.5)));
+            zz = -2 + (((tickAnim - 10) / 10) * (-2-(-2)));
         }
-        else if (tickAnim >= 280 && tickAnim < 290) {
-            xx = 3.5 + (((tickAnim - 280) / 10) * (0-(3.5)));
-            yy = -0.5 + (((tickAnim - 280) / 10) * (0-(-0.5)));
-            zz = -2 + (((tickAnim - 280) / 10) * (0-(-2)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = 3.5 + (((tickAnim - 20) / 255) * (3.5-(3.5)));
+            yy = -0.5 + (((tickAnim - 20) / 255) * (-0.5-(-0.5)));
+            zz = -2 + (((tickAnim - 20) / 255) * (-2-(-2)));
         }
-        else if (tickAnim >= 290 && tickAnim < 310) {
-            xx = 0 + (((tickAnim - 290) / 20) * (0-(0)));
-            yy = 0 + (((tickAnim - 290) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 290) / 20) * (0-(0)));
+        else if (tickAnim >= 275 && tickAnim < 285) {
+            xx = 3.5 + (((tickAnim - 275) / 10) * (0-(3.5)));
+            yy = -0.5 + (((tickAnim - 275) / 10) * (0-(-0.5)));
+            zz = -2 + (((tickAnim - 275) / 10) * (0-(-2)));
+        }
+        else if (tickAnim >= 285 && tickAnim < 305) {
+            xx = 0 + (((tickAnim - 285) / 20) * (0-(0)));
+            yy = 0 + (((tickAnim - 285) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 285) / 20) * (0-(0)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            yy = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 305) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1893,29 +2383,39 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 5) {
-            xx = 0 + (((tickAnim - 0) / 5) * (-57.5-(0)));
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
             yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 5 && tickAnim < 15) {
-            xx = -57.5 + (((tickAnim - 5) / 10) * (-57.5-(-57.5)));
-            yy = 0 + (((tickAnim - 5) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 5) / 10) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 5) / 5) * (-57.5-(0)));
+            yy = 0 + (((tickAnim - 5) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 5) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = -57.5 + (((tickAnim - 15) / 265) * (-57.5-(-57.5)));
-            yy = 0 + (((tickAnim - 15) / 265) * (0-(0)));
-            zz = 0 + (((tickAnim - 15) / 265) * (0-(0)));
+        else if (tickAnim >= 10 && tickAnim < 20) {
+            xx = -57.5 + (((tickAnim - 10) / 10) * (-57.5-(-57.5)));
+            yy = 0 + (((tickAnim - 10) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 10) / 10) * (0-(0)));
         }
-        else if (tickAnim >= 280 && tickAnim < 290) {
-            xx = -57.5 + (((tickAnim - 280) / 10) * (0-(-57.5)));
-            yy = 0 + (((tickAnim - 280) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 280) / 10) * (0-(0)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = -57.5 + (((tickAnim - 20) / 255) * (-57.5-(-57.5)));
+            yy = 0 + (((tickAnim - 20) / 255) * (0-(0)));
+            zz = 0 + (((tickAnim - 20) / 255) * (0-(0)));
         }
-        else if (tickAnim >= 290 && tickAnim < 310) {
-            xx = 0 + (((tickAnim - 290) / 20) * (0-(0)));
-            yy = 0 + (((tickAnim - 290) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 290) / 20) * (0-(0)));
+        else if (tickAnim >= 275 && tickAnim < 285) {
+            xx = -57.5 + (((tickAnim - 275) / 10) * (0-(-57.5)));
+            yy = 0 + (((tickAnim - 275) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 275) / 10) * (0-(0)));
+        }
+        else if (tickAnim >= 285 && tickAnim < 305) {
+            xx = 0 + (((tickAnim - 285) / 20) * (0-(0)));
+            yy = 0 + (((tickAnim - 285) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 285) / 20) * (0-(0)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            yy = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 305) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1927,25 +2427,35 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 15) {
-            xx = 44.99412 + (((tickAnim - 0) / 15) * (44.99412-(44.99412)));
-            yy = -53.19349 + (((tickAnim - 0) / 15) * (-53.19349-(-53.19349)));
-            zz = 55.40601 + (((tickAnim - 0) / 15) * (55.40601-(55.40601)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (44.99412-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-53.19349-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (55.40601-(0)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = 44.99412 + (((tickAnim - 15) / 265) * (44.99412-(44.99412)));
-            yy = -53.19349 + (((tickAnim - 15) / 265) * (-53.19349-(-53.19349)));
-            zz = 55.40601 + (((tickAnim - 15) / 265) * (55.40601-(55.40601)));
+        else if (tickAnim >= 5 && tickAnim < 20) {
+            xx = 44.99412 + (((tickAnim - 5) / 15) * (44.99412-(44.99412)));
+            yy = -53.19349 + (((tickAnim - 5) / 15) * (-53.19349-(-53.19349)));
+            zz = 55.40601 + (((tickAnim - 5) / 15) * (55.40601-(55.40601)));
         }
-        else if (tickAnim >= 280 && tickAnim < 290) {
-            xx = 44.99412 + (((tickAnim - 280) / 10) * (44.99412-(44.99412)));
-            yy = -53.19349 + (((tickAnim - 280) / 10) * (-53.19349-(-53.19349)));
-            zz = 55.40601 + (((tickAnim - 280) / 10) * (55.40601-(55.40601)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = 44.99412 + (((tickAnim - 20) / 255) * (44.99412-(44.99412)));
+            yy = -53.19349 + (((tickAnim - 20) / 255) * (-53.19349-(-53.19349)));
+            zz = 55.40601 + (((tickAnim - 20) / 255) * (55.40601-(55.40601)));
         }
-        else if (tickAnim >= 290 && tickAnim < 310) {
-            xx = 44.99412 + (((tickAnim - 290) / 20) * (44.99412-(44.99412)));
-            yy = -53.19349 + (((tickAnim - 290) / 20) * (-53.19349-(-53.19349)));
-            zz = 55.40601 + (((tickAnim - 290) / 20) * (55.40601-(55.40601)));
+        else if (tickAnim >= 275 && tickAnim < 285) {
+            xx = 44.99412 + (((tickAnim - 275) / 10) * (44.99412-(44.99412)));
+            yy = -53.19349 + (((tickAnim - 275) / 10) * (-53.19349-(-53.19349)));
+            zz = 55.40601 + (((tickAnim - 275) / 10) * (55.40601-(55.40601)));
+        }
+        else if (tickAnim >= 285 && tickAnim < 305) {
+            xx = 44.99412 + (((tickAnim - 285) / 20) * (44.99412-(44.99412)));
+            yy = -53.19349 + (((tickAnim - 285) / 20) * (-53.19349-(-53.19349)));
+            zz = 55.40601 + (((tickAnim - 285) / 20) * (55.40601-(55.40601)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = 44.99412 + (((tickAnim - 305) / 10) * (0-(44.99412)));
+            yy = -53.19349 + (((tickAnim - 305) / 10) * (0-(-53.19349)));
+            zz = 55.40601 + (((tickAnim - 305) / 10) * (0-(55.40601)));
         }
         else {
             xx = 0;
@@ -1957,35 +2467,45 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 2) {
-            xx = -2.90089 + (((tickAnim - 0) / 2) * (2.33859-(-2.90089)));
-            yy = -7.74934 + (((tickAnim - 0) / 2) * (-20.10563-(-7.74934)));
-            zz = 1.90251 + (((tickAnim - 0) / 2) * (-7.147-(1.90251)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-2.90089-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-7.74934-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (1.90251-(0)));
         }
-        else if (tickAnim >= 2 && tickAnim < 3) {
-            xx = 2.33859 + (((tickAnim - 2) / 1) * (6.96153-(2.33859)));
-            yy = -20.10563 + (((tickAnim - 2) / 1) * (-7.50909-(-20.10563)));
-            zz = -7.147 + (((tickAnim - 2) / 1) * (-15.75337-(-7.147)));
+        else if (tickAnim >= 5 && tickAnim < 7) {
+            xx = -2.90089 + (((tickAnim - 5) / 2) * (2.33859-(-2.90089)));
+            yy = -7.74934 + (((tickAnim - 5) / 2) * (-20.10563-(-7.74934)));
+            zz = 1.90251 + (((tickAnim - 5) / 2) * (-7.147-(1.90251)));
         }
-        else if (tickAnim >= 3 && tickAnim < 15) {
-            xx = 6.96153 + (((tickAnim - 3) / 12) * (6.96153-(6.96153)));
-            yy = -7.50909 + (((tickAnim - 3) / 12) * (-7.50909-(-7.50909)));
-            zz = -15.75337 + (((tickAnim - 3) / 12) * (-15.75337-(-15.75337)));
+        else if (tickAnim >= 7 && tickAnim < 8) {
+            xx = 2.33859 + (((tickAnim - 7) / 1) * (6.96153-(2.33859)));
+            yy = -20.10563 + (((tickAnim - 7) / 1) * (-7.50909-(-20.10563)));
+            zz = -7.147 + (((tickAnim - 7) / 1) * (-15.75337-(-7.147)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = 6.96153 + (((tickAnim - 15) / 265) * (6.96153-(6.96153)));
-            yy = -7.50909 + (((tickAnim - 15) / 265) * (-7.50909-(-7.50909)));
-            zz = -15.75337 + (((tickAnim - 15) / 265) * (-15.75337-(-15.75337)));
+        else if (tickAnim >= 8 && tickAnim < 20) {
+            xx = 6.96153 + (((tickAnim - 8) / 12) * (6.96153-(6.96153)));
+            yy = -7.50909 + (((tickAnim - 8) / 12) * (-7.50909-(-7.50909)));
+            zz = -15.75337 + (((tickAnim - 8) / 12) * (-15.75337-(-15.75337)));
         }
-        else if (tickAnim >= 280 && tickAnim < 293) {
-            xx = 6.96153 + (((tickAnim - 280) / 13) * (-2.8284-(6.96153)));
-            yy = -7.50909 + (((tickAnim - 280) / 13) * (-0.31969-(-7.50909)));
-            zz = -15.75337 + (((tickAnim - 280) / 13) * (0.87443-(-15.75337)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = 6.96153 + (((tickAnim - 20) / 255) * (6.96153-(6.96153)));
+            yy = -7.50909 + (((tickAnim - 20) / 255) * (-7.50909-(-7.50909)));
+            zz = -15.75337 + (((tickAnim - 20) / 255) * (-15.75337-(-15.75337)));
         }
-        else if (tickAnim >= 293 && tickAnim < 310) {
-            xx = -2.8284 + (((tickAnim - 293) / 17) * (-2.90089-(-2.8284)));
-            yy = -0.31969 + (((tickAnim - 293) / 17) * (-7.74934-(-0.31969)));
-            zz = 0.87443 + (((tickAnim - 293) / 17) * (1.90251-(0.87443)));
+        else if (tickAnim >= 275 && tickAnim < 288) {
+            xx = 6.96153 + (((tickAnim - 275) / 13) * (-2.8284-(6.96153)));
+            yy = -7.50909 + (((tickAnim - 275) / 13) * (-0.31969-(-7.50909)));
+            zz = -15.75337 + (((tickAnim - 275) / 13) * (0.87443-(-15.75337)));
+        }
+        else if (tickAnim >= 288 && tickAnim < 305) {
+            xx = -2.8284 + (((tickAnim - 288) / 17) * (-2.90089-(-2.8284)));
+            yy = -0.31969 + (((tickAnim - 288) / 17) * (-7.74934-(-0.31969)));
+            zz = 0.87443 + (((tickAnim - 288) / 17) * (1.90251-(0.87443)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = -2.90089 + (((tickAnim - 305) / 10) * (0-(-2.90089)));
+            yy = -7.74934 + (((tickAnim - 305) / 10) * (0-(-7.74934)));
+            zz = 1.90251 + (((tickAnim - 305) / 10) * (0-(1.90251)));
         }
         else {
             xx = 0;
@@ -1995,30 +2515,40 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
         this.setRotateAngle(tail, tail.rotateAngleX + (float) Math.toRadians(xx), tail.rotateAngleY + (float) Math.toRadians(yy), tail.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 3) {
-            xx = 0 + (((tickAnim - 0) / 3) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 3) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 3) * (-7-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 3 && tickAnim < 15) {
-            xx = 0 + (((tickAnim - 3) / 12) * (0-(0)));
-            yy = 0 + (((tickAnim - 3) / 12) * (0-(0)));
-            zz = -7 + (((tickAnim - 3) / 12) * (-7-(-7)));
+        else if (tickAnim >= 5 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 5) / 3) * (0-(0)));
+            yy = 0 + (((tickAnim - 5) / 3) * (0-(0)));
+            zz = 0 + (((tickAnim - 5) / 3) * (-7-(0)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = 0 + (((tickAnim - 15) / 265) * (0-(0)));
-            yy = 0 + (((tickAnim - 15) / 265) * (0-(0)));
-            zz = -7 + (((tickAnim - 15) / 265) * (-7-(-7)));
+        else if (tickAnim >= 8 && tickAnim < 20) {
+            xx = 0 + (((tickAnim - 8) / 12) * (0-(0)));
+            yy = 0 + (((tickAnim - 8) / 12) * (0-(0)));
+            zz = -7 + (((tickAnim - 8) / 12) * (-7-(-7)));
         }
-        else if (tickAnim >= 280 && tickAnim < 293) {
-            xx = 0 + (((tickAnim - 280) / 13) * (0-(0)));
-            yy = 0 + (((tickAnim - 280) / 13) * (0-(0)));
-            zz = -7 + (((tickAnim - 280) / 13) * (0-(-7)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = 0 + (((tickAnim - 20) / 255) * (0-(0)));
+            yy = 0 + (((tickAnim - 20) / 255) * (0-(0)));
+            zz = -7 + (((tickAnim - 20) / 255) * (-7-(-7)));
         }
-        else if (tickAnim >= 293 && tickAnim < 310) {
-            xx = 0 + (((tickAnim - 293) / 17) * (0-(0)));
-            yy = 0 + (((tickAnim - 293) / 17) * (0-(0)));
-            zz = 0 + (((tickAnim - 293) / 17) * (0-(0)));
+        else if (tickAnim >= 275 && tickAnim < 288) {
+            xx = 0 + (((tickAnim - 275) / 13) * (0-(0)));
+            yy = 0 + (((tickAnim - 275) / 13) * (0-(0)));
+            zz = -7 + (((tickAnim - 275) / 13) * (0-(-7)));
+        }
+        else if (tickAnim >= 288 && tickAnim < 305) {
+            xx = 0 + (((tickAnim - 288) / 17) * (0-(0)));
+            yy = 0 + (((tickAnim - 288) / 17) * (0-(0)));
+            zz = 0 + (((tickAnim - 288) / 17) * (0-(0)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            yy = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 305) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -2032,40 +2562,50 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 3) {
-            xx = 0 + (((tickAnim - 0) / 3) * (0-(0)));
-            yy = -25 + (((tickAnim - 0) / 3) * (-4.55-(-25)));
-            zz = 0 + (((tickAnim - 0) / 3) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-25-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 3 && tickAnim < 5) {
-            xx = 0 + (((tickAnim - 3) / 2) * (0-(0)));
-            yy = -4.55 + (((tickAnim - 3) / 2) * (-97.5-(-4.55)));
-            zz = 0 + (((tickAnim - 3) / 2) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 5) / 3) * (0-(0)));
+            yy = -25 + (((tickAnim - 5) / 3) * (-4.55-(-25)));
+            zz = 0 + (((tickAnim - 5) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 5 && tickAnim < 15) {
-            xx = 0 + (((tickAnim - 5) / 10) * (0-(0)));
-            yy = -97.5 + (((tickAnim - 5) / 10) * (-97.5-(-97.5)));
-            zz = 0 + (((tickAnim - 5) / 10) * (0-(0)));
+        else if (tickAnim >= 8 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 8) / 2) * (0-(0)));
+            yy = -4.55 + (((tickAnim - 8) / 2) * (-97.5-(-4.55)));
+            zz = 0 + (((tickAnim - 8) / 2) * (0-(0)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = 0 + (((tickAnim - 15) / 265) * (0-(0)));
-            yy = -97.5 + (((tickAnim - 15) / 265) * (-97.5-(-97.5)));
-            zz = 0 + (((tickAnim - 15) / 265) * (0-(0)));
+        else if (tickAnim >= 10 && tickAnim < 20) {
+            xx = 0 + (((tickAnim - 10) / 10) * (0-(0)));
+            yy = -97.5 + (((tickAnim - 10) / 10) * (-97.5-(-97.5)));
+            zz = 0 + (((tickAnim - 10) / 10) * (0-(0)));
         }
-        else if (tickAnim >= 280 && tickAnim < 293) {
-            xx = 0 + (((tickAnim - 280) / 13) * (0-(0)));
-            yy = -97.5 + (((tickAnim - 280) / 13) * (15-(-97.5)));
-            zz = 0 + (((tickAnim - 280) / 13) * (0-(0)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = 0 + (((tickAnim - 20) / 255) * (0-(0)));
+            yy = -97.5 + (((tickAnim - 20) / 255) * (-97.5-(-97.5)));
+            zz = 0 + (((tickAnim - 20) / 255) * (0-(0)));
         }
-        else if (tickAnim >= 293 && tickAnim < 298) {
-            xx = 0 + (((tickAnim - 293) / 5) * (0-(0)));
-            yy = 15 + (((tickAnim - 293) / 5) * (13.5-(15)));
-            zz = 0 + (((tickAnim - 293) / 5) * (0-(0)));
+        else if (tickAnim >= 275 && tickAnim < 288) {
+            xx = 0 + (((tickAnim - 275) / 13) * (0-(0)));
+            yy = -97.5 + (((tickAnim - 275) / 13) * (15-(-97.5)));
+            zz = 0 + (((tickAnim - 275) / 13) * (0-(0)));
         }
-        else if (tickAnim >= 298 && tickAnim < 310) {
-            xx = 0 + (((tickAnim - 298) / 12) * (0-(0)));
-            yy = 13.5 + (((tickAnim - 298) / 12) * (-25-(13.5)));
-            zz = 0 + (((tickAnim - 298) / 12) * (0-(0)));
+        else if (tickAnim >= 288 && tickAnim < 293) {
+            xx = 0 + (((tickAnim - 288) / 5) * (0-(0)));
+            yy = 15 + (((tickAnim - 288) / 5) * (13.5-(15)));
+            zz = 0 + (((tickAnim - 288) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 293 && tickAnim < 305) {
+            xx = 0 + (((tickAnim - 293) / 12) * (0-(0)));
+            yy = 13.5 + (((tickAnim - 293) / 12) * (-25-(13.5)));
+            zz = 0 + (((tickAnim - 293) / 12) * (0-(0)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            yy = -25 + (((tickAnim - 305) / 10) * (0-(-25)));
+            zz = 0 + (((tickAnim - 305) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -2077,40 +2617,50 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 3) {
-            xx = 0 + (((tickAnim - 0) / 3) * (0-(0)));
-            yy = -20 + (((tickAnim - 0) / 3) * (20-(-20)));
-            zz = 0 + (((tickAnim - 0) / 3) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-20-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 3 && tickAnim < 8) {
-            xx = 0 + (((tickAnim - 3) / 5) * (0-(0)));
-            yy = 20 + (((tickAnim - 3) / 5) * (-30-(20)));
-            zz = 0 + (((tickAnim - 3) / 5) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 5) / 3) * (0-(0)));
+            yy = -20 + (((tickAnim - 5) / 3) * (20-(-20)));
+            zz = 0 + (((tickAnim - 5) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 8 && tickAnim < 15) {
-            xx = 0 + (((tickAnim - 8) / 7) * (0-(0)));
-            yy = -30 + (((tickAnim - 8) / 7) * (-30-(-30)));
-            zz = 0 + (((tickAnim - 8) / 7) * (0-(0)));
+        else if (tickAnim >= 8 && tickAnim < 13) {
+            xx = 0 + (((tickAnim - 8) / 5) * (0-(0)));
+            yy = 20 + (((tickAnim - 8) / 5) * (-30-(20)));
+            zz = 0 + (((tickAnim - 8) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 15 && tickAnim < 280) {
-            xx = 0 + (((tickAnim - 15) / 265) * (0-(0)));
-            yy = -30 + (((tickAnim - 15) / 265) * (-30-(-30)));
-            zz = 0 + (((tickAnim - 15) / 265) * (0-(0)));
+        else if (tickAnim >= 13 && tickAnim < 20) {
+            xx = 0 + (((tickAnim - 13) / 7) * (0-(0)));
+            yy = -30 + (((tickAnim - 13) / 7) * (-30-(-30)));
+            zz = 0 + (((tickAnim - 13) / 7) * (0-(0)));
         }
-        else if (tickAnim >= 280 && tickAnim < 293) {
-            xx = 0 + (((tickAnim - 280) / 13) * (0-(0)));
-            yy = -30 + (((tickAnim - 280) / 13) * (22.5-(-30)));
-            zz = 0 + (((tickAnim - 280) / 13) * (0-(0)));
+        else if (tickAnim >= 20 && tickAnim < 275) {
+            xx = 0 + (((tickAnim - 20) / 255) * (0-(0)));
+            yy = -30 + (((tickAnim - 20) / 255) * (-30-(-30)));
+            zz = 0 + (((tickAnim - 20) / 255) * (0-(0)));
         }
-        else if (tickAnim >= 293 && tickAnim < 298) {
-            xx = 0 + (((tickAnim - 293) / 5) * (0-(0)));
-            yy = 22.5 + (((tickAnim - 293) / 5) * (12-(22.5)));
-            zz = 0 + (((tickAnim - 293) / 5) * (0-(0)));
+        else if (tickAnim >= 275 && tickAnim < 288) {
+            xx = 0 + (((tickAnim - 275) / 13) * (0-(0)));
+            yy = -30 + (((tickAnim - 275) / 13) * (22.5-(-30)));
+            zz = 0 + (((tickAnim - 275) / 13) * (0-(0)));
         }
-        else if (tickAnim >= 298 && tickAnim < 310) {
-            xx = 0 + (((tickAnim - 298) / 12) * (0-(0)));
-            yy = 12 + (((tickAnim - 298) / 12) * (-20-(12)));
-            zz = 0 + (((tickAnim - 298) / 12) * (0-(0)));
+        else if (tickAnim >= 288 && tickAnim < 293) {
+            xx = 0 + (((tickAnim - 288) / 5) * (0-(0)));
+            yy = 22.5 + (((tickAnim - 288) / 5) * (12-(22.5)));
+            zz = 0 + (((tickAnim - 288) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 293 && tickAnim < 305) {
+            xx = 0 + (((tickAnim - 293) / 12) * (0-(0)));
+            yy = 12 + (((tickAnim - 293) / 12) * (-20-(12)));
+            zz = 0 + (((tickAnim - 293) / 12) * (0-(0)));
+        }
+        else if (tickAnim >= 305 && tickAnim < 315) {
+            xx = 0 + (((tickAnim - 305) / 10) * (0-(0)));
+            yy = -20 + (((tickAnim - 305) / 10) * (0-(-20)));
+            zz = 0 + (((tickAnim - 305) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -2118,7 +2668,6 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
             zz = 0;
         }
         this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(xx), tail3.rotateAngleY + (float) Math.toRadians(yy), tail3.rotateAngleZ + (float) Math.toRadians(zz));
-
     }
     public void animEat(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraNaomichelys entity = (EntityPrehistoricFloraNaomichelys) entitylivingbaseIn;
@@ -3008,35 +3557,7 @@ public class ModelNaomichelys extends ModelBasePalaeopedia {
 
 
     }
-    public void animIdlePose(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
-        EntityPrehistoricFloraNaomichelys entity = (EntityPrehistoricFloraNaomichelys) entitylivingbaseIn;
-        int animCycle = 60;
-        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
-        double xx = 0;
-        double yy = 0;
-        double zz = 0;
-        this.setRotateAngle(main, main.rotateAngleX + (float) Math.toRadians(-5), main.rotateAngleY + (float) Math.toRadians(0), main.rotateAngleZ + (float) Math.toRadians(0));
-        this.main.rotationPointX = this.main.rotationPointX + (float)(0);
-        this.main.rotationPointY = this.main.rotationPointY - (float)(-3);
-        this.main.rotationPointZ = this.main.rotationPointZ + (float)(0);
-        this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(-15), neck.rotateAngleY + (float) Math.toRadians(0), neck.rotateAngleZ + (float) Math.toRadians(0));
-        this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(-10), head.rotateAngleY + (float) Math.toRadians(0), head.rotateAngleZ + (float) Math.toRadians(0));
-        this.setRotateAngle(frontleftleg, frontleftleg.rotateAngleX + (float) Math.toRadians(-0.19053), frontleftleg.rotateAngleY + (float) Math.toRadians(46.46328), frontleftleg.rotateAngleZ + (float) Math.toRadians(-43.0358));
-        this.setRotateAngle(frontleftleg2, frontleftleg2.rotateAngleX + (float) Math.toRadians(16.20309), frontleftleg2.rotateAngleY + (float) Math.toRadians(3.06523), frontleftleg2.rotateAngleZ + (float) Math.toRadians(12.89167));
-        this.setRotateAngle(frontleftleg3, frontleftleg3.rotateAngleX + (float) Math.toRadians(-24.13272), frontleftleg3.rotateAngleY + (float) Math.toRadians(34.71167), frontleftleg3.rotateAngleZ + (float) Math.toRadians(9.84164));
-        this.setRotateAngle(frontrightleg, frontrightleg.rotateAngleX + (float) Math.toRadians(-0.19053), frontrightleg.rotateAngleY + (float) Math.toRadians(-46.46328), frontrightleg.rotateAngleZ + (float) Math.toRadians(43.0358));
-        this.setRotateAngle(frontrightleg2, frontrightleg2.rotateAngleX + (float) Math.toRadians(16.20309), frontrightleg2.rotateAngleY + (float) Math.toRadians(-3.06523), frontrightleg2.rotateAngleZ + (float) Math.toRadians(-12.89167));
-        this.setRotateAngle(frontrightleg3, frontrightleg3.rotateAngleX + (float) Math.toRadians(-24.13272), frontrightleg3.rotateAngleY + (float) Math.toRadians(-34.71167), frontrightleg3.rotateAngleZ + (float) Math.toRadians(-9.84164));
-        this.setRotateAngle(backleftleg, backleftleg.rotateAngleX + (float) Math.toRadians(64.75252), backleftleg.rotateAngleY + (float) Math.toRadians(-48.73922), backleftleg.rotateAngleZ + (float) Math.toRadians(83.31978));
-        this.setRotateAngle(backleftleg3, backleftleg3.rotateAngleX + (float) Math.toRadians(44.99412), backleftleg3.rotateAngleY + (float) Math.toRadians(53.19349), backleftleg3.rotateAngleZ + (float) Math.toRadians(-55.40601));
-        this.setRotateAngle(backrightleg, backrightleg.rotateAngleX + (float) Math.toRadians(64.75252), backrightleg.rotateAngleY + (float) Math.toRadians(48.73922), backrightleg.rotateAngleZ + (float) Math.toRadians(-83.31978));
-        this.setRotateAngle(backrightleg3, backrightleg3.rotateAngleX + (float) Math.toRadians(44.99412), backrightleg3.rotateAngleY + (float) Math.toRadians(-53.19349), backrightleg3.rotateAngleZ + (float) Math.toRadians(55.40601));
-        this.setRotateAngle(tail, tail.rotateAngleX + (float) Math.toRadians(-2.90089), tail.rotateAngleY + (float) Math.toRadians(-7.74934), tail.rotateAngleZ + (float) Math.toRadians(1.90251));
-        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(0), tail2.rotateAngleY + (float) Math.toRadians(-25), tail2.rotateAngleZ + (float) Math.toRadians(0));
-        this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(0), tail3.rotateAngleY + (float) Math.toRadians(-20), tail3.rotateAngleZ + (float) Math.toRadians(0));
 
-
-    }
 
         public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         EntityPrehistoricFloraNaomichelys e = (EntityPrehistoricFloraNaomichelys) entity;
