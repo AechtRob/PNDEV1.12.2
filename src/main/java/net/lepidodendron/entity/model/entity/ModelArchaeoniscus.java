@@ -306,7 +306,14 @@ public class ModelArchaeoniscus extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.bone.render(f5);
     }
+
     public void renderStaticFloor(float f) {
+        this.bone.offsetY = 0.04F;
+        this.bone.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticWall(float f) {
         this.bone.offsetY = 0.04F;
         this.bone.render(0.01F);
         resetToDefaultPose();

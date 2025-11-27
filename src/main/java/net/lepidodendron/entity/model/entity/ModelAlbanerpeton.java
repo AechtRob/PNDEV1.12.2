@@ -295,10 +295,6 @@ public class ModelAlbanerpeton extends ModelBasePalaeopedia {
         this.Hips.render(f5);
     }
 
-    public void renderStaticFloor(float f) {
-        this.resetToDefaultPose();
-    }
-
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
@@ -319,6 +315,20 @@ public class ModelAlbanerpeton extends ModelBasePalaeopedia {
         this.Hips.scaleChildren = false;
         resetToDefaultPose();
 
+    }
+
+    public void renderStaticFloor(float f) {
+
+        this.Hips.offsetY = 0.17F;
+        this.Hips.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticWall(float f) {
+
+        this.Hips.offsetY = 0.17F;
+        this.Hips.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

@@ -60,11 +60,11 @@ public class EntityPrehistoricFloraFukuititan extends EntityPrehistoricFloraLand
 
 	public EntityPrehistoricFloraFukuititan(World world) {
 		super(world);
-		setSize(1.8F, 2.7F);
+		setSize(1.95F, 2.9F);
 		extraStepHeight = 1F;
 		minWidth = 0.1F;
-		maxWidth = 1.8F;
-		maxHeight = 2.7F;
+		maxWidth = 1.95F;
+		maxHeight = 2.9F;
 		maxHealthAgeable = 75.0D;
 		setgetMaxTurnDistancePerTick(15.5F);
 		if (FMLCommonHandler.instance().getSide().isClient()) {

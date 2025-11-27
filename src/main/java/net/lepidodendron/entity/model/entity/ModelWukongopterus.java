@@ -749,7 +749,7 @@ public class ModelWukongopterus extends ModelBasePalaeopedia {
                 this.setRotateAngle(cube_r6, 0.0436F, 0.0F, 0.0F);
                 this.setRotateAngle(cube_r7, 0.1571F, 0.0F, 0.0F);
                 this.setRotateAngle(cube_r8, 0.1309F, 0.0F, 0.0F);
-                this.setRotateAngle(head3, -0.1309F, 0.0F, 0.0F);
+                //this.setRotateAngle(head3, -0.1309F, 0.0F, 0.0F);
                 this.setRotateAngle(cube_r9, 0.0F, 0.0F, -0.4363F);
                 this.setRotateAngle(cube_r10, 0.0F, 0.0F, 0.4363F);
                 this.setRotateAngle(cube_r11, 0.144F, 0.0F, 0.0F);

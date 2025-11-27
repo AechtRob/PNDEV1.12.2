@@ -12,6 +12,7 @@ public class RenderArcheria extends RenderLivingBaseWithBook<EntityPrehistoricFl
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/archeria.png");
 
     public static float getScaler() {return 0.5333f;}
+
     public RenderArcheria(RenderManager mgr) {
         super(mgr, new ModelArcheria(), 0.3f);
     }

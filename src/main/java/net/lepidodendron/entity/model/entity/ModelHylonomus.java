@@ -284,12 +284,21 @@ public class ModelHylonomus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.hip.render(f5);
     }
+
     public void renderStaticFloor(float f) {
 
         this.hip.offsetY = 0.17F;
         this.hip.render(0.01F);
         resetToDefaultPose();
     }
+
+    public void renderStaticWall(float f) {
+
+        this.hip.offsetY = 0.17F;
+        this.hip.render(0.01F);
+        resetToDefaultPose();
+    }
+
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
