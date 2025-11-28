@@ -218,6 +218,18 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 					else if (stringDNA.equalsIgnoreCase("minecraft:large_fern")) {
 						blockOut = Blocks.DOUBLE_PLANT.getStateFromMeta(3);
 					}
+					else if (stringDNA.equalsIgnoreCase("minecraft:rose")) {
+						blockOut = Blocks.DOUBLE_PLANT.getStateFromMeta(4);
+					}
+					else if (stringDNA.equalsIgnoreCase("minecraft:lilac")) {
+						blockOut = Blocks.DOUBLE_PLANT.getStateFromMeta(1);
+					}
+					else if (stringDNA.equalsIgnoreCase("minecraft:peony")) {
+						blockOut = Blocks.DOUBLE_PLANT.getStateFromMeta(5);
+					}
+					else if (stringDNA.equalsIgnoreCase("minecraft:sunflower")) {
+						blockOut = Blocks.DOUBLE_PLANT.getStateFromMeta(0);
+					}
 					else {
 						blockOut = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(stringDNA)).getDefaultState();
 					}

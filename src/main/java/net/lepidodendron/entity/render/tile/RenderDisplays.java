@@ -6,9 +6,13 @@ public class RenderDisplays {
 
     public static final ModelAcanthodes modelAcanthodes = new ModelAcanthodes();
     public static final ModelProtoischnurus modelProtoischnurus = new ModelProtoischnurus();
+    public static final ModelAquilops modelAquilops = new ModelAquilops();
+    public static final ModelAnhanguera modelAnhanguera = new ModelAnhanguera();
     public static final ModelLatzelia modelLatzelia = new ModelLatzelia();
     public static final ModelCrussolum modelCrussolum = new ModelCrussolum();
     public static final ModelVelocipede modelVelocipede = new ModelVelocipede();
+    public static final ModelAraxoceras modelAraxoceras = new ModelAraxoceras();
+    public static final ModelAraripesuchus modelAraripesuchus = new ModelAraripesuchus();
     public static final ModelAnkylosphenodon modelAnkylosphenodon = new ModelAnkylosphenodon();
     public static final ModelAlbanerpeton modelAlbanerpeton = new ModelAlbanerpeton();
     public static final ModelFulmenocursor modelFulmenocursor = new ModelFulmenocursor();

@@ -327,6 +327,13 @@ public class ModelAusktribosphenos extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    public void renderStaticWall(float f) {
+        this.root.offsetY = -0.2F;
+        this.root.rotateAngleY  = (float)Math.toRadians(90);
+        this.root.render(0.01F);
+        resetToDefaultPose();
+    }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

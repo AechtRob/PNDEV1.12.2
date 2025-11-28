@@ -524,6 +524,7 @@ public class ModelPterodactylus extends ModelBasePalaeopedia {
         this.root.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(tail, -0.3054F, 0.0F, 0.0F);
         this.setRotateAngle(root, -0.0436F, 0.0F, 0.0F);

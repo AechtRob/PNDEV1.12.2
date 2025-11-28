@@ -306,7 +306,7 @@ public class EntityPrehistoricFloraArcestes extends EntityPrehistoricFloraSwimmi
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {
-		return -1.36;
+		return 0.07;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 0.0;

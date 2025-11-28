@@ -564,6 +564,12 @@ public class ModelAquilops extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    public void renderStaticWall(float f) {
+        this.neck.offsetY = -0.054F;
+        this.neck.render(0.01F);
+        resetToDefaultPose();
+    }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

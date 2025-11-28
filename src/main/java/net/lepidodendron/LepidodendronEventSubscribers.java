@@ -806,7 +806,8 @@ public class LepidodendronEventSubscribers {
 	public void onSheared(PlayerInteractEvent.RightClickBlock event) {
 		if (event.getWorld().getBlockState(event.getPos()).getBlock() == Blocks.DOUBLE_PLANT
 				&& LepidodendronConfig.doPropagationVanilla
-				&& event.getHand() == EnumHand.MAIN_HAND) {
+				&& event.getHand() == EnumHand.MAIN_HAND
+				&& !(event.getItemStack().getItem() instanceof ItemShears)) {
 			BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType) event.getWorld().getBlockState(event.getPos()).getValue(BlockDoublePlant.VARIANT);
 			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.ROSE && event.getItemStack().getItem() == ItemRoseFlower.block) {
 				event.getEntityPlayer().swingArm(event.getHand());

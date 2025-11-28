@@ -299,6 +299,10 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plantdnaPNminecraft:small_fern", new ItemStack(Blocks.TALLGRASS, 1, 2));
 		OreDictionary.registerOre("plantFern", new ItemStack(Blocks.DOUBLE_PLANT, 1, 3));
 		OreDictionary.registerOre("plantdnaPNminecraft:large_fern", new ItemStack(Blocks.DOUBLE_PLANT, 1, 3));
+		OreDictionary.registerOre("plantdnaPNminecraft:rose", new ItemStack(Blocks.DOUBLE_PLANT, 1, 4));
+		OreDictionary.registerOre("plantdnaPNminecraft:lilac", new ItemStack(Blocks.DOUBLE_PLANT, 1, 1));
+		OreDictionary.registerOre("plantdnaPNminecraft:peony", new ItemStack(Blocks.DOUBLE_PLANT, 1, 5));
+		OreDictionary.registerOre("plantdnaPNminecraft:sunflower", new ItemStack(Blocks.DOUBLE_PLANT, 1, 0));
 
 		//Moss:
 		OreDictionary.registerOre("itemMossForStone", new ItemStack(Blocks.VINE, 1, 0));

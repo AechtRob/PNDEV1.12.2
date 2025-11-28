@@ -374,10 +374,14 @@ public class ModelAraripesuchus extends ModelBasePalaeopedia {
 
     public void renderStaticFloor(float f) {
 
+        this.main.offsetY = -0.054F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticWall(float f) {
 
+        this.body2.offsetY = -0.054F;
+        this.body2.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

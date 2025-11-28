@@ -241,7 +241,7 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 	@Override
 	public AxisAlignedBB getGrappleBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(8.0F + size, 6.0F + size, 8.0F + size);
+		return this.getEntityBoundingBox().grow(8.0F + size, 3.0F + size, 8.0F + size);
 	}
 
 	//TODO find a way to delay the other partner's animation and sound running, maybe with a variable with a randomized integer?

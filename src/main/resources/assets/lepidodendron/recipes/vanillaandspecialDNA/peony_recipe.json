@@ -3,7 +3,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "lepidodendron:rose_ancient_seeds"
+      "item": "lepidodendron:peony_seeds"
     },
     {
       "type": "forge:ore_dict",
@@ -11,7 +11,8 @@
     }
   ],
   "result": {
-    "item": "lepidodendron:rose_ancient",
-    "count": 1
+    "item": "minecraft:double_plant",
+    "count": 1,
+    "data": 5
   }
 }

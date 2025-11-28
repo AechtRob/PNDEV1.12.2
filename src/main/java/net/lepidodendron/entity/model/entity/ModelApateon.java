@@ -341,21 +341,14 @@ public class ModelApateon extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.base.render(f5);
     }
+
     public void renderStaticWall(float f) {
-        this.setRotateAngle(head, -0.2F, 0.0F, 0.0F);
-        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
-        this.upperarmleft.setScale(0,0,0);
-        this.upperarmright.setScale(0,0,0);
-        this.upperarmleft.scaleChildren = true;
-        this.upperarmright.scaleChildren = true;
-        this.chest.offsetX = -0.0F;
-        this.chest.offsetY = -0.0F;
-        this.chest.offsetZ = -1.07F;
-        this.chest.render(0.01F);
-        this.upperarmleft.setScale(1,1,1);
-        this.upperarmright.setScale(1,1,1);
+        this.base.rotateAngleX = (float)Math.toRadians(90);
+        this.base.offsetY = -0.25F;
+        this.base.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(base, 0.1F, 0.0F, 0.2F);
         this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);

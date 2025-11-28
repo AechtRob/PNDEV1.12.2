@@ -550,6 +550,7 @@ public class ModelArcestes extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(root, 0.2F, 0.0F, 0.0F);
         this.setRotateAngle(Leg1left, -0.7F, -0.3F, 0.0F);
@@ -564,6 +565,23 @@ public class ModelArcestes extends ModelBasePalaeopedia {
         this.root.render(0.01F);
         resetToDefaultPose();
     }
+
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(root, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Leg1left, -0.7F, -0.3F, 0.0F);
+        this.setRotateAngle(Leg2left, -0.3F, 0.1F, 0.0F);
+        this.setRotateAngle(Leg3left, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(Leg4left, -0.0F, 1.5F, 0.0F);
+        this.setRotateAngle(Leg1right, -1.5F, 0.3F, -0.4F);
+        this.setRotateAngle(Leg2right, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(Leg3right, 0.0F, -0.8F, 0.0F);
+        this.setRotateAngle(Leg4right, 0.0F, -0.8F, 0.0F);
+        this.root.offsetY = -0.175F;
+        this.root.rotateAngleY = (float)Math.toRadians(180);
+        this.root.render(0.01F);
+        resetToDefaultPose();
+    }
+
     public void renderStaticSuspended(float f) {
         this.setRotateAngle(root, -0.4F, 0.2F, -0.3F);
         this.setRotateAngle(Leg1left, 0.0F, 0.1F, 0.0F);
