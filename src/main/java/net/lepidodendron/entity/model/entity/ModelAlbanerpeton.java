@@ -318,15 +318,14 @@ public class ModelAlbanerpeton extends ModelBasePalaeopedia {
     }
 
     public void renderStaticFloor(float f) {
-
         this.Hips.offsetY = 0.17F;
         this.Hips.render(0.01F);
         resetToDefaultPose();
     }
 
     public void renderStaticWall(float f) {
-
-        this.Hips.offsetY = 0.17F;
+        this.Hips.rotateAngleX = (float)Math.toRadians(90);
+        this.Hips.offsetY = -0.30F;
         this.Hips.render(0.01F);
         resetToDefaultPose();
     }

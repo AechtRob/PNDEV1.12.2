@@ -286,15 +286,15 @@ public class ModelHylonomus extends ModelBasePalaeopedia {
     }
 
     public void renderStaticFloor(float f) {
-
         this.hip.offsetY = 0.17F;
         this.hip.render(0.01F);
         resetToDefaultPose();
     }
 
     public void renderStaticWall(float f) {
-
-        this.hip.offsetY = 0.17F;
+        this.hip.rotateAngleX = (float)Math.toRadians(90);
+        //this.hip.rotateAngleY = (float)Math.toRadians(90);
+        this.hip.offsetY = -0.20F;
         this.hip.render(0.01F);
         resetToDefaultPose();
     }

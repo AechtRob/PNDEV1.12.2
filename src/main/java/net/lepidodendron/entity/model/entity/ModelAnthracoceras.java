@@ -384,6 +384,15 @@ public class ModelAnthracoceras extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    public void renderStaticWall(float f) {
+        this.Root.offsetY = -0.1F;
+        this.Root.offsetX = 0.06F;
+        this.Root.offsetZ = 0.1F;
+        this.Root.rotateAngleY = (float)Math.toRadians(90);
+        this.Root.render(0.01f);
+        resetToDefaultPose();
+    }
+
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:

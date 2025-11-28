@@ -239,7 +239,7 @@ public class EntityPrehistoricFloraAlbanerpeton extends EntityPrehistoricFloraLa
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall(@Nullable String variant) {return -0.45;}
+	public static double offsetWall(@Nullable String variant) {return 0.097;}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.0;}
 	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}
 	public static double upperfrontlineoffset(@Nullable String variant) {return 0.0;}

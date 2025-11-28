@@ -434,13 +434,14 @@ public class ModelAnkylosphenodon extends ModelBasePalaeopedia {
 
     public void renderStaticWall(float f) {
         this.Ankylosphenodon.rotateAngleX = (float) Math.toRadians(90);
-        this.Ankylosphenodon.offsetY = -0.2F;
+        this.Ankylosphenodon.offsetY = -0.02F;
         this.Ankylosphenodon.render(0.01F);
         resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
-        this.Ankylosphenodon.offsetY = -0.105F;
+        this.Ankylosphenodon.offsetY = 0.12F;
+        this.Ankylosphenodon.offsetZ = -0.205F;
         this.Ankylosphenodon.render(0.01F);
         resetToDefaultPose();
     }
