@@ -4,6 +4,7 @@ package net.lepidodendron.item;
 import net.lepidodendron.block.*;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.block.BlockVine;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -100,6 +101,9 @@ public class ItemPrehistoricPlantable extends Item {
 				itemstack.shrink(1);
 				worldIn.setBlockState(pos.up(this.offsetY), this.plantBlock);
 				this.plantBlock.getBlock().onBlockAdded(worldIn, pos.up(this.offsetY), this.plantBlock);
+				if (plantBlock.getBlock() instanceof BlockDoublePlant) {
+					((BlockDoublePlant)this.plantBlock.getBlock()).placeAt(worldIn, pos.up(this.offsetY), this.plantBlock.getValue(BlockDoublePlant.VARIANT), 2);
+				}
 				return EnumActionResult.SUCCESS;
 			}
 		}
