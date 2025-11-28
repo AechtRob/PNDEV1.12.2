@@ -287,11 +287,13 @@ public class EntityPrehistoricFloraStenokranio extends EntityPrehistoricFloraSwi
 			this.standCooldown = 1000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == SCRATCH_ANIMATION && this.getAnimationTick() == SCRATCH_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == SCRATCH_ANIMATION
+				&& (this.getAnimationTick() == SCRATCH_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 1000;
 			this.setAnimation(NO_ANIMATION);
 		}
-		if ((!this.world.isRemote) && this.getAnimation() == RELAX_ANIMATION && this.getAnimationTick() == RELAX_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == RELAX_ANIMATION
+				&& (this.getAnimationTick() == RELAX_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 1000;
 			this.setAnimation(NO_ANIMATION);
 		}

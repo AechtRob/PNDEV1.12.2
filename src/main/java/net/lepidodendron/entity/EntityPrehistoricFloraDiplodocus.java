@@ -598,11 +598,13 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 			this.standCooldown = 3000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == IDLE2_ANIMATION && this.getAnimationTick() == IDLE2_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == IDLE2_ANIMATION
+				&& (this.getAnimationTick() == IDLE2_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
-		if ((!this.world.isRemote) && this.getAnimation() == IDLE1_ANIMATION && this.getAnimationTick() == IDLE1_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == IDLE1_ANIMATION
+				&& (this.getAnimationTick() == IDLE1_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}

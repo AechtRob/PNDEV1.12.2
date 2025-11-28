@@ -553,12 +553,14 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 			this.standCooldown = 2000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == PREEN_ANIMATION && this.getAnimationTick() == PREEN_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == PREEN_ANIMATION
+				&& (this.getAnimationTick() == PREEN_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == ALERT_ANIMATION && this.getAnimationTick() == ALERT_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == ALERT_ANIMATION
+				&& (this.getAnimationTick() == ALERT_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}

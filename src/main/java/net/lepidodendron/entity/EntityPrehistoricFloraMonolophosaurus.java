@@ -124,7 +124,8 @@ public class EntityPrehistoricFloraMonolophosaurus extends EntityPrehistoricFlor
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == SCRATCH_ANIMATION && this.getAnimationTick() == SCRATCH_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == SCRATCH_ANIMATION
+				&& (this.getAnimationTick() == SCRATCH_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}

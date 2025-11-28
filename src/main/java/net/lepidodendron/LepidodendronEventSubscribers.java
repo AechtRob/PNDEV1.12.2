@@ -1026,25 +1026,28 @@ public class LepidodendronEventSubscribers {
 
 			block = Block.getBlockFromItem(item);
 			if (block instanceof BlockSapling && LepidodendronConfig.doPropagationVanilla) {
+				//Need to check WHAT has been broken, as we do want a sapling to drop when a sapling is broken
+				//This needs to detect the leafblock only
+
 				if (item == (new ItemStack(Blocks.SAPLING, (int) (1), 0).getItem())) { //Oak
 					event.getDrops().remove(i);
 					event.getDrops().add(i, new ItemStack(ItemOakAcorn.block, 1));
 				}
 				if (item == (new ItemStack(Blocks.SAPLING, (int) (2), 1).getItem())) { //Spruce
 					event.getDrops().remove(i);
-					event.getDrops().add(i, new ItemStack(Blocks.AIR, 1));
+					event.getDrops().add(i, new ItemStack(ItemSpruceFruit.block, 1));
 				}
 				if (item == (new ItemStack(Blocks.SAPLING, (int) (2), 2).getItem())) { //Birch
 					event.getDrops().remove(i);
-					event.getDrops().add(i, new ItemStack(Blocks.AIR, 1));
+					event.getDrops().add(i, new ItemStack(ItemBirchFruit.block, 1));
 				}
 				if (item == (new ItemStack(Blocks.SAPLING, (int) (2), 3).getItem())) { //Jungle
 					event.getDrops().remove(i);
-					event.getDrops().add(i, new ItemStack(Blocks.AIR, 1));
+					event.getDrops().add(i, new ItemStack(ItemJungleFruit.block, 1));
 				}
 				if (item == (new ItemStack(Blocks.SAPLING, (int) (2), 4).getItem())) { //Acacia
 					event.getDrops().remove(i);
-					event.getDrops().add(i, new ItemStack(Blocks.AIR, 1));
+					event.getDrops().add(i, new ItemStack(ItemAcaciaFruit.block, 1));
 				}
 				if (item == (new ItemStack(Blocks.SAPLING, (int) (2), 6).getItem())) { //Dark Oak
 					event.getDrops().remove(i);

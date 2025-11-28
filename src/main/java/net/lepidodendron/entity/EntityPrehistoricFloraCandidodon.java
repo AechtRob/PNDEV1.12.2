@@ -310,7 +310,8 @@ public class EntityPrehistoricFloraCandidodon extends EntityPrehistoricFloraDiic
 			this.standCooldown = 3000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION
+				&& (this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}

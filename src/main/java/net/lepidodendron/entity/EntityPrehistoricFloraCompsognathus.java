@@ -609,19 +609,23 @@ public class EntityPrehistoricFloraCompsognathus extends EntityPrehistoricFloraL
 			this.standCooldown = 2000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == IDLE1 && this.getAnimationTick() == IDLE1.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == IDLE1
+				&& (this.getAnimationTick() == IDLE1.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
-		if ((!this.world.isRemote) && this.getAnimation() == IDLE2 && this.getAnimationTick() == IDLE2.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == IDLE2
+				&& (this.getAnimationTick() == IDLE2.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
-		if ((!this.world.isRemote) && this.getAnimation() == IDLE3 && this.getAnimationTick() == IDLE3.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == IDLE3
+				&& (this.getAnimationTick() == IDLE3.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
-		if ((!this.world.isRemote) && this.getAnimation() == IDLE4 && this.getAnimationTick() == IDLE4.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == IDLE4
+				&& (this.getAnimationTick() == IDLE4.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}

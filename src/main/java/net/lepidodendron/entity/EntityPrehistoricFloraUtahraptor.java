@@ -330,11 +330,13 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 			this.standCooldown = 2000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION
+				&& (this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 2000;
 			this.setAnimation(NO_ANIMATION);
 		}
-		if ((!this.world.isRemote) && this.getAnimation() == PREEN_ANIMATION && this.getAnimationTick() == PREEN_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == PREEN_ANIMATION
+				&& (this.getAnimationTick() == PREEN_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 2000;
 			this.setAnimation(NO_ANIMATION);
 		}

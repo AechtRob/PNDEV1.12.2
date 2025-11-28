@@ -279,16 +279,19 @@ public class EntityPrehistoricFloraPlatyhystrix extends EntityPrehistoricFloraSw
 			this.standCooldown = 1000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == LICK_LEFT_ANIMATION && this.getAnimationTick() == LICK_LEFT_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == LICK_LEFT_ANIMATION
+				&& (this.getAnimationTick() == LICK_LEFT_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 1000;
 			this.setAnimation(NO_ANIMATION);
 		}
-		if ((!this.world.isRemote) && this.getAnimation() == LICK_RIGHT_ANIMATION && this.getAnimationTick() == LICK_RIGHT_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == LICK_RIGHT_ANIMATION
+				&& (this.getAnimationTick() == LICK_RIGHT_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 1000;
 			this.setAnimation(NO_ANIMATION);
 		}
 
-		if ((!this.world.isRemote) && this.getAnimation() == LOOK_ANIMATION && this.getAnimationTick() == LOOK_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == LOOK_ANIMATION
+				&& (this.getAnimationTick() == LOOK_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 1000;
 			this.setAnimation(NO_ANIMATION);
 		}

@@ -183,17 +183,20 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 			this.standCooldown = 2000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == IDLE_1 && this.getAnimationTick() == IDLE_1.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == IDLE_1
+				&& (this.getAnimationTick() == IDLE_1.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == IDLE_2 && this.getAnimationTick() == IDLE_2.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == IDLE_2
+				&& (this.getAnimationTick() == IDLE_2.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == IDLE_3 && this.getAnimationTick() == IDLE_3.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == IDLE_3
+				&& (this.getAnimationTick() == IDLE_3.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}

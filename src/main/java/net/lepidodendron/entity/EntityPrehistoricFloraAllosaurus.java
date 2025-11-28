@@ -306,23 +306,28 @@ public class EntityPrehistoricFloraAllosaurus extends EntityPrehistoricFloraLand
 			this.standCooldown = 3000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION
+				&& (this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
-		if ((!this.world.isRemote) && this.getAnimation() == SNIFF_ANIMATION && this.getAnimationTick() == SNIFF_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == SNIFF_ANIMATION
+				&& (this.getAnimationTick() == SNIFF_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
-		if ((!this.world.isRemote) && this.getAnimation() == LOOKDOWNLEFT_ANIMATION && this.getAnimationTick() == LOOKDOWNLEFT_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == LOOKDOWNLEFT_ANIMATION
+				&& (this.getAnimationTick() == LOOKDOWNLEFT_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
-		if (this.getAnimation() == LOOKDOWNRIGHT_ANIMATION && this.getAnimationTick() == LOOKDOWNRIGHT_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == LOOKDOWNRIGHT_ANIMATION
+				&& (this.getAnimationTick() == LOOKDOWNRIGHT_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
-		if (this.getAnimation() == LOOK_RIGHT_ANIMATION && this.getAnimationTick() == LOOK_RIGHT_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == LOOK_RIGHT_ANIMATION
+				&& (this.getAnimationTick() == LOOK_RIGHT_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
