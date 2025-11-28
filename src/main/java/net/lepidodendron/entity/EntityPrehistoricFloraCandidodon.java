@@ -183,9 +183,6 @@ public class EntityPrehistoricFloraCandidodon extends EntityPrehistoricFloraDiic
 		return true;
 	}
 
-	
-
-
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;

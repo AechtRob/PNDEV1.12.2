@@ -9,6 +9,9 @@ public class RenderDisplays {
     public static final ModelAquilops modelAquilops = new ModelAquilops();
     public static final ModelAnhanguera modelAnhanguera = new ModelAnhanguera();
     public static final ModelLatzelia modelLatzelia = new ModelLatzelia();
+    public static final ModelKrika modelKrika = new ModelKrika();
+    public static final ModelNuddsia modelNuddsia = new ModelNuddsia();
+    public static final ModelKarenina modelKarenina = new ModelKarenina();
     public static final ModelCrussolum modelCrussolum = new ModelCrussolum();
     public static final ModelVelocipede modelVelocipede = new ModelVelocipede();
     public static final ModelAraxoceras modelAraxoceras = new ModelAraxoceras();

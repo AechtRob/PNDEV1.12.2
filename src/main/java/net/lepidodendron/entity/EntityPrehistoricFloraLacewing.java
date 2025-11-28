@@ -469,6 +469,15 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 
 			case GRAMMOLINGIA:
 				return RenderLacewing.TEXTURE_GRAMMOLINGIA;
+
+			case KRIKA:
+				return RenderLacewing.TEXTURE_KRIKA;
+
+			case NUDDSIA:
+				return RenderLacewing.TEXTURE_NUDDSIA;
+
+			case KARENINA:
+				return RenderLacewing.TEXTURE_KARENINA;
 		}
 	}
 	@SideOnly(Side.CLIENT)
@@ -492,6 +501,15 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 
 			case GRAMMOLINGIA:
 				return RenderDisplays.modelLacewing;
+
+			case KRIKA:
+				return RenderDisplays.modelKrika;
+
+			case NUDDSIA:
+				return RenderDisplays.modelNuddsia;
+
+			case KARENINA:
+				return RenderDisplays.modelKarenina;
 		}
 	}
 
