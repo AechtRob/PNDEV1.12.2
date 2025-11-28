@@ -8,6 +8,7 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.entity.render.entity.LayerHangingflyWing;
 import net.lepidodendron.entity.render.entity.RenderHangingfly;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
@@ -263,6 +264,8 @@ public class EntityPrehistoricFloraHangingfly extends EntityPrehistoricFloraInse
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderHangingfly.TEXTURE;}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplayTransparent(@Nullable String variant) {return LayerHangingflyWing.TEXTURE;}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelHangingfly;}
 	public static float getScaler(@Nullable String variant) {

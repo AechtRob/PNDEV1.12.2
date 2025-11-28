@@ -38,7 +38,7 @@ public class ItemSantanmantisRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_myriapod@santanmantis", ItemSantanmantisRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_santanmantis", ItemSantanmantisRaw.block);
 		OreDictionary.registerOre("pnfurnaceBug", ItemSantanmantisRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemSantanmantisRaw.block);
 	}
@@ -55,13 +55,13 @@ public class ItemSantanmantisRaw extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public String getMobStr() {
-			return "lepidodendron:prehistoric_flora_myriapod";
+			return "lepidodendron:prehistoric_flora_santanmantis";
 		}
 
 		@Nullable
 		@Override
 		public String getVariantStr() {
-			return "santanmantis";
+			return null;
 		}
 	}
 }

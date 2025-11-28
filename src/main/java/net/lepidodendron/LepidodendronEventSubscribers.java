@@ -1067,15 +1067,7 @@ public class LepidodendronEventSubscribers {
 			int stackSize = itemStack.getCount();
 			itemStack.setCount(1);
 			if (event.getState().getBlock() instanceof BlockDoublePlant && LepidodendronConfig.doPropagationVanilla) {
-				BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType) event.getState().getValue(BlockDoublePlant.VARIANT);
-				if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.FERN
-						&& ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.DOUBLE_PLANT, 1, 3))) {
-					dropSelf = true; //a drop already exists so no need to add a new one
-				}
-				if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.GRASS
-						&& ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.DOUBLE_PLANT, 1, 2)) && LepidodendronConfig.doPropagationVanilla) {
-					dropSelf = true; //a drop already exists so no need to add a new one
-				}
+				dropSelf = true; //a drop already exists so no need to add a new one
 			}
 
 			if (event.getState().getBlock() instanceof BlockTallGrass && LepidodendronConfig.doPropagationVanilla) {
@@ -1144,6 +1136,18 @@ public class LepidodendronEventSubscribers {
 			}
 			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.GRASS) {
 				event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, 1, 2));
+			}
+			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.ROSE) {
+				event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, 1, 4));
+			}
+			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.SYRINGA) {
+				event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, 1, 1));
+			}
+			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.PAEONIA) {
+				event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, 1, 5));
+			}
+			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.SUNFLOWER) {
+				event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, 1, 0));
 			}
 		}
 		if (event.getState().getBlock() instanceof BlockTallGrass && (!dropSelf) && LepidodendronConfig.doPropagationVanilla) {
