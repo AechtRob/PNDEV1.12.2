@@ -2,7 +2,7 @@ package net.lepidodendron.gui;
 
 import com.google.common.collect.Lists;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockTimeResearcherFinderBottom;
+import net.lepidodendron.block.*;
 import net.lepidodendron.util.AcidBathOutputMobs;
 import net.lepidodendron.util.AcidBathOutputPlants;
 import net.lepidodendron.util.AcidBathOutputStatics;
@@ -12,6 +12,7 @@ import net.minecraft.client.gui.GuiOptionButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiSlot;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.item.Item;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -74,199 +75,173 @@ public class GUITimeResearcherFinderSelector extends GuiScreen
         {
             super(mcIn, GUITimeResearcherFinderSelector.this.width, GUITimeResearcherFinderSelector.this.height, 32, GUITimeResearcherFinderSelector.this.height - 65 + 4, 18);
             this.lifeList.add("- NONE -");
-            //Loop over all life possible in the mod and offer ti here:
-            for (String stringLife : AcidBathOutputMobs.getPrecambrianCleanedFossilsMobs()) {
-                this.lifeList.add(stringLife);
-            }
-            for (String stringLife : AcidBathOutputMobs.getCambrianCleanedFossilsMobs()) {
-                if (!this.lifeList.contains(stringLife)) {
+            //Loop over all life possible in the mod and offer here:
+            if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPrecambrian.block)
+                || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilPrecambrian.block)
+                    && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
+                for (String stringLife : AcidBathOutputMobs.getPrecambrianCleanedFossilsMobs()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputStatics.getPrecambrianCleanedFossilsStatics()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputPlants.getPrecambrianCleanedFossilsPlants()) {
                     this.lifeList.add(stringLife);
                 }
             }
-            for (String stringLife : AcidBathOutputMobs.getOrdovicianCleanedFossilsMobs()) {
-                if (!this.lifeList.contains(stringLife)) {
+            else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilCambrian.block)
+                    || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilCambrian.block)
+                    && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
+                for (String stringLife : AcidBathOutputMobs.getCambrianCleanedFossilsMobs()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputStatics.getCambrianCleanedFossilsStatics()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputPlants.getCambrianCleanedFossilsPlants()) {
                     this.lifeList.add(stringLife);
                 }
             }
-            for (String stringLife : AcidBathOutputMobs.getSilurianCleanedFossilsMobs()) {
-                if (!this.lifeList.contains(stringLife)) {
+            else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilOrdovician.block)
+                    || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilOrdovician.block)
+                    && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
+                for (String stringLife : AcidBathOutputMobs.getOrdovicianCleanedFossilsMobs()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputStatics.getOrdovicianCleanedFossilsStatics()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputPlants.getOrdovicianCleanedFossilsPlants()) {
                     this.lifeList.add(stringLife);
                 }
             }
-            for (String stringLife : AcidBathOutputMobs.getDevonianCleanedFossilsMobs()) {
-                if (!this.lifeList.contains(stringLife)) {
+            else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilSilurian.block)
+                    || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilSilurian.block)
+                    && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
+                for (String stringLife : AcidBathOutputMobs.getSilurianCleanedFossilsMobs()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputStatics.getSilurianCleanedFossilsStatics()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputPlants.getSilurianCleanedFossilsPlants()) {
                     this.lifeList.add(stringLife);
                 }
             }
-            for (String stringLife : AcidBathOutputMobs.getCarboniferousCleanedFossilsMobs()) {
-                if (!this.lifeList.contains(stringLife)) {
+            else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilDevonian.block)
+                    || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilDevonian.block)
+                    && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
+                for (String stringLife : AcidBathOutputMobs.getDevonianCleanedFossilsMobs()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputStatics.getDevonianCleanedFossilsStatics()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputPlants.getDevonianCleanedFossilsPlants()) {
                     this.lifeList.add(stringLife);
                 }
             }
-            for (String stringLife : AcidBathOutputMobs.getPermianCleanedFossilsMobs()) {
-                if (!this.lifeList.contains(stringLife)) {
+            else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilCarboniferous.block)
+                    || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilCarboniferous.block)
+                    && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
+                for (String stringLife : AcidBathOutputMobs.getCarboniferousCleanedFossilsMobs()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputStatics.getCarboniferousCleanedFossilsStatics()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputPlants.getCarboniferousCleanedFossilsPlants()) {
                     this.lifeList.add(stringLife);
                 }
             }
-            for (String stringLife : AcidBathOutputMobs.getTriassicCleanedFossilsMobs()) {
-                if (!this.lifeList.contains(stringLife)) {
+            else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPermian.block)
+                    || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilPermian.block)
+                    && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
+                for (String stringLife : AcidBathOutputMobs.getPermianCleanedFossilsMobs()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputStatics.getPermianCleanedFossilsStatics()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputPlants.getPermianCleanedFossilsPlants()) {
                     this.lifeList.add(stringLife);
                 }
             }
-            for (String stringLife : AcidBathOutputMobs.getJurassicCleanedFossilsMobs()) {
-                if (!this.lifeList.contains(stringLife)) {
+            else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilTriassic.block)
+                    || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilTriassic.block)
+                    && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
+                for (String stringLife : AcidBathOutputMobs.getTriassicCleanedFossilsMobs()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputStatics.getTriassicCleanedFossilsStatics()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputPlants.getTriassicCleanedFossilsPlants()) {
                     this.lifeList.add(stringLife);
                 }
             }
-            for (String stringLife : AcidBathOutputMobs.getCretaceousCleanedFossilsMobs()) {
-                if (!this.lifeList.contains(stringLife)) {
+            else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilJurassic.block)
+                    || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilJurassic.block)
+                    && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
+                for (String stringLife : AcidBathOutputMobs.getJurassicCleanedFossilsMobs()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputStatics.getJurassicCleanedFossilsStatics()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputPlants.getJurassicCleanedFossilsPlants()) {
                     this.lifeList.add(stringLife);
                 }
             }
-            for (String stringLife : AcidBathOutputMobs.getPaleogeneCleanedFossilsMobs()) {
-                if (!this.lifeList.contains(stringLife)) {
+            else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilCretaceous.block)
+                    || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilCretaceous.block)
+                    && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
+                for (String stringLife : AcidBathOutputMobs.getCretaceousCleanedFossilsMobs()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputStatics.getCretaceousCleanedFossilsStatics()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputPlants.getCretaceousCleanedFossilsPlants()) {
                     this.lifeList.add(stringLife);
                 }
             }
-            for (String stringLife : AcidBathOutputMobs.getNeogeneCleanedFossilsMobs()) {
-                if (!this.lifeList.contains(stringLife)) {
+            else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPaleogene.block)
+                    || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilPaleogene.block)
+                    && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
+                for (String stringLife : AcidBathOutputMobs.getPaleogeneCleanedFossilsMobs()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputStatics.getPaleogeneCleanedFossilsStatics()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputPlants.getPaleogeneCleanedFossilsPlants()) {
                     this.lifeList.add(stringLife);
                 }
             }
-            for (String stringLife : AcidBathOutputMobs.getPleistoceneCleanedFossilsMobs()) {
-                if (!this.lifeList.contains(stringLife)) {
+            else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilNeogene.block)
+                    || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilNeogene.block)
+                    && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
+                for (String stringLife : AcidBathOutputMobs.getNeogeneCleanedFossilsMobs()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputStatics.getNeogeneCleanedFossilsStatics()) {
+                    this.lifeList.add(stringLife);
+                }
+                for (String stringLife : AcidBathOutputPlants.getNeogeneCleanedFossilsPlants()) {
                     this.lifeList.add(stringLife);
                 }
             }
-
-            for (String stringLife : AcidBathOutputPlants.getPrecambrianCleanedFossilsPlants()) {
-                if (!this.lifeList.contains(stringLife)) {
+            else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPleistocene.block)
+                    || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilPleistocene.block)
+                    && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
+                for (String stringLife : AcidBathOutputMobs.getPleistoceneCleanedFossilsMobs()) {
                     this.lifeList.add(stringLife);
                 }
-            }
-            for (String stringLife : AcidBathOutputPlants.getCambrianCleanedFossilsPlants()) {
-                if (!this.lifeList.contains(stringLife)) {
+                for (String stringLife : AcidBathOutputStatics.getPleistoceneCleanedFossilsStatics()) {
                     this.lifeList.add(stringLife);
                 }
-            }
-            for (String stringLife : AcidBathOutputPlants.getOrdovicianCleanedFossilsPlants()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputPlants.getSilurianCleanedFossilsPlants()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputPlants.getDevonianCleanedFossilsPlants()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputPlants.getCarboniferousCleanedFossilsPlants()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputPlants.getPermianCleanedFossilsPlants()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputPlants.getTriassicCleanedFossilsPlants()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputPlants.getJurassicCleanedFossilsPlants()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputPlants.getCretaceousCleanedFossilsPlants()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputPlants.getPaleogeneCleanedFossilsPlants()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputPlants.getNeogeneCleanedFossilsPlants()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputPlants.getPleistoceneCleanedFossilsPlants()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-
-            for (String stringLife : AcidBathOutputStatics.getPrecambrianCleanedFossilsStatics()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputStatics.getCambrianCleanedFossilsStatics()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputStatics.getOrdovicianCleanedFossilsStatics()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputStatics.getSilurianCleanedFossilsStatics()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputStatics.getDevonianCleanedFossilsStatics()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputStatics.getCarboniferousCleanedFossilsStatics()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputStatics.getPermianCleanedFossilsStatics()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputStatics.getTriassicCleanedFossilsStatics()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputStatics.getJurassicCleanedFossilsStatics()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputStatics.getCretaceousCleanedFossilsStatics()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputStatics.getPaleogeneCleanedFossilsStatics()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputStatics.getNeogeneCleanedFossilsStatics()) {
-                if (!this.lifeList.contains(stringLife)) {
-                    this.lifeList.add(stringLife);
-                }
-            }
-            for (String stringLife : AcidBathOutputStatics.getPleistoceneCleanedFossilsStatics()) {
-                if (!this.lifeList.contains(stringLife)) {
+                for (String stringLife : AcidBathOutputPlants.getPleistoceneCleanedFossilsPlants()) {
                     this.lifeList.add(stringLife);
                 }
             }

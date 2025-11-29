@@ -636,48 +636,50 @@ public class GUITimeResearcherFinder extends ElementsLepidodendronMod.ModElement
             return 0;
         }
 
-        public String translateMob(String mobIn) {
-            if (mobIn.equalsIgnoreCase("lepidodendron:sapling")) {
-                mobIn = "lepidodendron:lepidodendron_sapling";
-            }
-            if (mobIn.equalsIgnoreCase("lepidodendron:glossopterissapling")) {
-                mobIn = "lepidodendron:glossopteris_sapling";
-            }
-            else if (mobIn.substring(0,10).equalsIgnoreCase("minecraft:")) {
-                mobIn = mobIn.replace("@", "_").substring(10);
-                if (mobIn.equalsIgnoreCase("acacia_sapling")) {
-                    return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.acacia.name");
+        public String translateMob(@Nullable String mobIn) {
+            if (mobIn != null) {
+                if (mobIn.equalsIgnoreCase("lepidodendron:sapling")) {
+                    mobIn = "lepidodendron:lepidodendron_sapling";
                 }
-                if (mobIn.equalsIgnoreCase("birch_sapling")) {
-                    return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.birch.name");
-                }
-                if (mobIn.equalsIgnoreCase("dark_oak_sapling")) {
-                    return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.big_oak.name");
-                }
-                if (mobIn.equalsIgnoreCase("jungle_sapling")) {
-                    return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.jungle.name");
-                }
-                if (mobIn.equalsIgnoreCase("oak_sapling")) {
-                    return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.oak.name");
-                }
-                if (mobIn.equalsIgnoreCase("spruce_sapling")) {
-                    return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.spruce.name");
-                }
-                if (mobIn.equalsIgnoreCase("large_fern")) {
-                    return net.minecraft.util.text.translation.I18n.translateToLocal("tile.doublePlant.fern.name");
-                }
-                if (mobIn.equalsIgnoreCase("small_fern")) {
-                    return net.minecraft.util.text.translation.I18n.translateToLocal("tile.tallgrass.fern.name");
+                if (mobIn.equalsIgnoreCase("lepidodendron:glossopterissapling")) {
+                    mobIn = "lepidodendron:glossopteris_sapling";
+                } else if (mobIn.contains("minecraft:") && mobIn.substring(0, 10).equalsIgnoreCase("minecraft:")) {
+                    mobIn = mobIn.replace("@", "_").substring(10);
+                    if (mobIn.equalsIgnoreCase("acacia_sapling")) {
+                        return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.acacia.name");
+                    }
+                    if (mobIn.equalsIgnoreCase("birch_sapling")) {
+                        return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.birch.name");
+                    }
+                    if (mobIn.equalsIgnoreCase("dark_oak_sapling")) {
+                        return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.big_oak.name");
+                    }
+                    if (mobIn.equalsIgnoreCase("jungle_sapling")) {
+                        return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.jungle.name");
+                    }
+                    if (mobIn.equalsIgnoreCase("oak_sapling")) {
+                        return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.oak.name");
+                    }
+                    if (mobIn.equalsIgnoreCase("spruce_sapling")) {
+                        return net.minecraft.util.text.translation.I18n.translateToLocal("tile.sapling.spruce.name");
+                    }
+                    if (mobIn.equalsIgnoreCase("large_fern")) {
+                        return net.minecraft.util.text.translation.I18n.translateToLocal("tile.doublePlant.fern.name");
+                    }
+                    if (mobIn.equalsIgnoreCase("small_fern")) {
+                        return net.minecraft.util.text.translation.I18n.translateToLocal("tile.tallgrass.fern.name");
+                    }
+                } else {
+                    int colonPos = mobIn.indexOf(":");
+                    if (!(colonPos > 0)) {
+                        mobIn = "- NONE -";
+                    } else {
+                        mobIn = mobIn.replace("@", "_").substring(colonPos + 1);
+                    }
                 }
             }
             else {
-                int colonPos = mobIn.indexOf(":");
-                if (!(colonPos > 0)) {
-                    mobIn = "- NONE -";
-                }
-                else {
-                    mobIn = mobIn.replace("@", "_").substring(colonPos + 1);
-                }
+                mobIn = "- NONE -";
             }
 
             String name = "entity." + mobIn + ".name";
@@ -722,7 +724,10 @@ public class GUITimeResearcherFinder extends ElementsLepidodendronMod.ModElement
                 TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
                 if (tileEntity != null) {
                     if (tileEntity instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
-                        this.mc.displayGuiScreen(new GUITimeResearcherFinderSelector(this,  (BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) tileEntity));
+                        if ((!((BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) tileEntity).getStackInSlot(0).isEmpty())
+                            || !((BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) tileEntity).getStackInSlot(1).isEmpty()) {
+                            this.mc.displayGuiScreen(new GUITimeResearcherFinderSelector(this, (BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) tileEntity));
+                        }
                     }
                 }
             }
@@ -809,6 +814,10 @@ public class GUITimeResearcherFinder extends ElementsLepidodendronMod.ModElement
             if (te != null) {
                 if (te instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
                     ((BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) te).setSelectedLife(message.mobID);
+                    ((BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) te).processTick = 0;
+                    ((BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) te).isProcessing = false;
+                    ((BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) te).trayheight = 0;
+                    ((BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) te).processTickTime = -1;
                     te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
                     te.markDirty();
                 }

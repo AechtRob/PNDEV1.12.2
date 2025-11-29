@@ -4,6 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
@@ -393,6 +394,15 @@ public class EntityPrehistoricFloraBorealopelta extends EntityPrehistoricFloraLa
 			return LepidodendronMod.MYMOORAPELTA_LOOT_YOUNG;
 		}
 		return LepidodendronMod.MYMOORAPELTA_LOOT;
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public AxisAlignedBB getRenderBoundingBox() {
+		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
+			return this.getEntityBoundingBox().grow(6.0, 4.00, 6.0);
+		}
+		return this.getEntityBoundingBox();
 	}
 
 	@Nullable

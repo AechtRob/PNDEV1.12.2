@@ -253,8 +253,8 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(6, ItemStack.EMPTY);
 
 		protected String selectedLife;
-		protected int trayheight;
-		protected boolean isProcessing;
+		public int trayheight;
+		public boolean isProcessing;
 		public int processTick;
 		public boolean renderZap;
 		private int minEnergyNeeded = 1000;
@@ -305,10 +305,267 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			return true;
 		}
 
+		public boolean doesLifeChosenMatch() {
+			if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPrecambrian.block)
+					|| (this.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilPrecambrian.block)
+					&& this.getStackInSlot(1).isEmpty())) {
+				for (String stringLife : AcidBathOutputMobs.getPrecambrianCleanedFossilsMobs()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputStatics.getPrecambrianCleanedFossilsStatics()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputPlants.getPrecambrianCleanedFossilsPlants()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+			}
+			else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilCambrian.block)
+					|| (this.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilCambrian.block)
+					&& this.getStackInSlot(1).isEmpty())) {
+				for (String stringLife : AcidBathOutputMobs.getCambrianCleanedFossilsMobs()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputStatics.getCambrianCleanedFossilsStatics()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputPlants.getCambrianCleanedFossilsPlants()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+			}
+			else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilOrdovician.block)
+					|| (this.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilOrdovician.block)
+					&& this.getStackInSlot(1).isEmpty())) {
+				for (String stringLife : AcidBathOutputMobs.getOrdovicianCleanedFossilsMobs()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputStatics.getOrdovicianCleanedFossilsStatics()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputPlants.getOrdovicianCleanedFossilsPlants()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+			}
+			else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilSilurian.block)
+					|| (this.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilSilurian.block)
+					&& this.getStackInSlot(1).isEmpty())) {
+				for (String stringLife : AcidBathOutputMobs.getSilurianCleanedFossilsMobs()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputStatics.getSilurianCleanedFossilsStatics()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputPlants.getSilurianCleanedFossilsPlants()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+			}
+			else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilDevonian.block)
+					|| (this.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilDevonian.block)
+					&& this.getStackInSlot(1).isEmpty())) {
+				for (String stringLife : AcidBathOutputMobs.getDevonianCleanedFossilsMobs()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputStatics.getDevonianCleanedFossilsStatics()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputPlants.getDevonianCleanedFossilsPlants()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+			}
+			else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilCarboniferous.block)
+					|| (this.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilCarboniferous.block)
+					&& this.getStackInSlot(1).isEmpty())) {
+				for (String stringLife : AcidBathOutputMobs.getCarboniferousCleanedFossilsMobs()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputStatics.getCarboniferousCleanedFossilsStatics()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputPlants.getCarboniferousCleanedFossilsPlants()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+			}
+			else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPermian.block)
+					|| (this.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilPermian.block)
+					&& this.getStackInSlot(1).isEmpty())) {
+				for (String stringLife : AcidBathOutputMobs.getPermianCleanedFossilsMobs()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputStatics.getPermianCleanedFossilsStatics()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputPlants.getPermianCleanedFossilsPlants()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+			}
+			else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilTriassic.block)
+					|| (this.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilTriassic.block)
+					&& this.getStackInSlot(1).isEmpty())) {
+				for (String stringLife : AcidBathOutputMobs.getTriassicCleanedFossilsMobs()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputStatics.getTriassicCleanedFossilsStatics()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputPlants.getTriassicCleanedFossilsPlants()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+			}
+			else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilJurassic.block)
+					|| (this.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilJurassic.block)
+					&& this.getStackInSlot(1).isEmpty())) {
+				for (String stringLife : AcidBathOutputMobs.getJurassicCleanedFossilsMobs()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputStatics.getJurassicCleanedFossilsStatics()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputPlants.getJurassicCleanedFossilsPlants()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+			}
+			else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilCretaceous.block)
+					|| (this.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilCretaceous.block)
+					&& this.getStackInSlot(1).isEmpty())) {
+				for (String stringLife : AcidBathOutputMobs.getCretaceousCleanedFossilsMobs()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputStatics.getCretaceousCleanedFossilsStatics()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputPlants.getCretaceousCleanedFossilsPlants()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+			}
+			else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPaleogene.block)
+					|| (this.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilPaleogene.block)
+					&& this.getStackInSlot(1).isEmpty())) {
+				for (String stringLife : AcidBathOutputMobs.getPaleogeneCleanedFossilsMobs()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputStatics.getPaleogeneCleanedFossilsStatics()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputPlants.getPaleogeneCleanedFossilsPlants()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+			}
+			else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilNeogene.block)
+					|| (this.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilNeogene.block)
+					&& this.getStackInSlot(1).isEmpty())) {
+				for (String stringLife : AcidBathOutputMobs.getNeogeneCleanedFossilsMobs()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputStatics.getNeogeneCleanedFossilsStatics()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputPlants.getNeogeneCleanedFossilsPlants()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+			}
+			else if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPleistocene.block)
+					|| (this.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilPleistocene.block)
+					&& this.getStackInSlot(1).isEmpty())) {
+				for (String stringLife : AcidBathOutputMobs.getPleistoceneCleanedFossilsMobs()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputStatics.getPleistoceneCleanedFossilsStatics()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+				for (String stringLife : AcidBathOutputPlants.getPleistoceneCleanedFossilsPlants()) {
+					if (stringLife.equalsIgnoreCase(this.getSelectedLife().toString())) {
+						return true;
+					}
+				}
+			}
+			return false;
+		}
+
 		public boolean canStartProcess() {
 
 			if (this.getSelectedLife().toString().equalsIgnoreCase("")
 				|| this.getSelectedLife().toString().equalsIgnoreCase("- NONE -")) {
+				return false;
+			}
+			
+			if ((!doesLifeChosenMatch()) && (!this.isProcessing)) {
+				this.setSelectedLife("- NONE -");
+				LepidodendronMod.PACKET_HANDLER.sendToAll(new BlockTimeResearcherFinderBottom.LifeSelectionPacket(this.getPos().getX(), this.getPos().getY(), this.getPos().getZ()));
 				return false;
 			}
 
@@ -331,8 +588,9 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			}
 
 			if ((!this.isProcessing)
-					&& this.isItemValidForSlot(0, this.getStackInSlot(0))
-					&& (this.getStackInSlot(1).isEmpty())
+					&& ((!this.getStackInSlot(1).isEmpty())
+					|| (this.isItemValidForSlot(0, this.getStackInSlot(0))
+						&& this.getStackInSlot(1).isEmpty()))
 			) {
 				return true;
 			}
@@ -431,10 +689,12 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			if (this.canStartProcess()) {
 				this.isProcessing = true;
 				this.processTick = 0;
-				ItemStack stack = this.getStackInSlot(0).copy();
-				stack.setCount(1);
-				this.setInventorySlotContents(1, stack);
-				this.getStackInSlot(0).shrink(1);
+				if (this.getStackInSlot(1).isEmpty()) {
+					ItemStack stack = this.getStackInSlot(0).copy();
+					stack.setCount(1);
+					this.setInventorySlotContents(1, stack);
+					this.getStackInSlot(0).shrink(1);
+				}
 
 				updated = true;
 				//System.err.println("Process started");
@@ -1552,5 +1812,69 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 
 		}
 
+	}
+
+	public static class LifeSelectionPacket implements IMessage {
+
+		int x, y, z;
+
+		public LifeSelectionPacket()
+		{
+		}
+
+		public LifeSelectionPacket(int x, int y, int z) {
+			this.x = x;
+			this.y = y;
+			this.z = z;
+		}
+
+		@Override
+		public void toBytes(ByteBuf buf)
+		{
+			buf.writeInt(x);
+			buf.writeInt(y);
+			buf.writeInt(z);
+		}
+
+		@Override
+		public void fromBytes(io.netty.buffer.ByteBuf buf) {
+			try
+			{
+				this.x = buf.readInt();
+				this.y = buf.readInt();
+				this.z = buf.readInt();
+			}
+			catch(IndexOutOfBoundsException ioe)
+			{
+				return;
+			}
+		}
+
+		public static class Handler implements IMessageHandler<LifeSelectionPacket, IMessage>
+		{
+
+			@Override
+			public IMessage onMessage(LifeSelectionPacket message, MessageContext ctx)
+			{
+
+				Minecraft minecraft = Minecraft.getMinecraft();
+				final WorldClient worldClient = minecraft.world;
+
+				minecraft.addScheduledTask(() -> processMessage(message, worldClient));
+
+				return null;
+			}
+
+			void processMessage(LifeSelectionPacket message, WorldClient worldClient)
+			{
+				TileEntity tileEntity = worldClient.getTileEntity(new BlockPos(message.x, message.y, message.z));
+				if (tileEntity != null) {
+					if (tileEntity instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
+						BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom timeResearcher = (BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) tileEntity;
+						timeResearcher.setSelectedLife("- NONE -");
+					}
+				}
+			}
+		}
 	}
 }

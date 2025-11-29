@@ -28,11 +28,14 @@ public class LandWanderHerd extends EntityAIBase
         this.followingAnimal = animal;
         this.moveSpeed = speed;
         this.herdDist = herdDist;
-        this.herdSize = 15;
+        this.herdSize = 5;
     }
 
     public boolean shouldExecute()
     {
+        if (!((double)(this.herdDist) > 0)) {
+            this.herdDist = Math.max(1, this.followingAnimal.width) * this.followingAnimal.getNavigator().getPathSearchRange() * 0.75F;
+        }
 
         if (this.followingAnimal.isAnimationDirectionLocked(this.followingAnimal.getAnimation())) {
             return false;
@@ -87,6 +90,7 @@ public class LandWanderHerd extends EntityAIBase
         }
         else if (d0 < Math.pow(this.herdDist, 2))
         {
+            this.followingAnimal.getNavigator().clearPath();
             return false;
         }
         else
