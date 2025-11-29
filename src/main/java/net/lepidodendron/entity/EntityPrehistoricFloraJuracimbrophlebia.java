@@ -8,6 +8,7 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.entity.render.entity.LayerJuracimbrophlebiaWing;
 import net.lepidodendron.entity.render.entity.RenderJuracimbrophlebia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
@@ -263,6 +264,8 @@ public class EntityPrehistoricFloraJuracimbrophlebia extends EntityPrehistoricFl
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderJuracimbrophlebia.TEXTURE;}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplayTransparent(@Nullable String variant) {return LayerJuracimbrophlebiaWing.TEXTURE;}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelJuracimbrophlebia;}
 	public static float getScaler(@Nullable String variant) {

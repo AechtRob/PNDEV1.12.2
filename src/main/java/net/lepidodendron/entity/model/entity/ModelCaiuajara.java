@@ -480,6 +480,18 @@ public class ModelCaiuajara extends ModelBasePalaeopedia {
         this.throat.cubeList.add(new ModelBox(throat, 0, 66, 0.0F, -0.3406F, -0.0421F, 1, 1, 4, 0.0F, false));
         this.throat.cubeList.add(new ModelBox(throat, 68, 33, 0.0F, -1.0906F, 1.4579F, 1, 1, 2, -0.001F, false));
 
+        this.leftmembrane2.scaleChildren = true;
+        this.leftmplane3.scaleChildren = true;
+        this.leftmplane2.scaleChildren = true;
+        this.leftmembrane4.scaleChildren = true;
+        this.leftmembrane5.scaleChildren = true;
+        this.leftmembrane3.scaleChildren = true;
+        this.rightmembrane2.scaleChildren = true;
+        this.rightmplane3.scaleChildren = true;
+        this.rightmplane2.scaleChildren = true;
+        this.rightmembrane4.scaleChildren = true;
+        this.rightmembrane5.scaleChildren = true;
+        this.rightmembrane3.scaleChildren = true;
 
         this.leftmembrane2.setScale((float)1,(float)0,(float)0);
         this.leftmplane3.setScale((float)1,(float)0,(float)0);
@@ -972,8 +984,6 @@ public class ModelCaiuajara extends ModelBasePalaeopedia {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-
-
 
 
         if (tickAnim >= 0 && tickAnim < 10) {

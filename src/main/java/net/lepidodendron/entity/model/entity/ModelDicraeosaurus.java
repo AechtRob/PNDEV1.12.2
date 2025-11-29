@@ -500,7 +500,7 @@ public class ModelDicraeosaurus extends ModelBasePalaeopedia {
         this.tail8.setRotationPoint(-0.6F, 0.601F, -23.4303F);
         this.tail7.addChild(tail8);
         this.setRotateAngle(tail8, 0.2447F, 0.0F, 0.0F);
-        this.tail8.cubeList.add(new ModelBox(tail8, 183, 229, -0.6F, -0.5837F, -17.7723F, 1, 1, 18, 0.0F, false));
+        this.tail8.cubeList.add(new ModelBox(tail8, 184, 230, -0.6F, -0.5837F, -17.7723F, 1, 1, 18, 0.0F, false));
 
         this.upperlegR = new AdvancedModelRenderer(this);
         this.upperlegR.setRotationPoint(11.975F, -4.4352F, -2.0325F);
