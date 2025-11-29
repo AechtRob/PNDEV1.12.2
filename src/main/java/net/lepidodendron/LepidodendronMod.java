@@ -2047,7 +2047,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation AGNURONATHID_DENDRORHYNCHOIDES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dendrorhynchoides"));
 	public static final ResourceLocation AGNURONATHID_JEHOLOPTERUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/jeholopterus"));
 	public static final ResourceLocation AGNURONATHID_SINOMACROPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sinomacrops"));
-	public static final ResourceLocation VESPEROPTERYLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/vesperopterylus"));
+	public static final ResourceLocation ANUROGANTHID_VESPEROPTERYLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/vesperopterylus"));
 	public static final int ENTITY_LIMUSAURUS = 815;
 	public static final ResourceLocation LIMUSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/limusaurus"));
 	public static final ResourceLocation LIMUSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/limusaurus_young"));

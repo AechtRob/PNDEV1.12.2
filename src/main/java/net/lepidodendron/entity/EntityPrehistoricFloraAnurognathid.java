@@ -142,6 +142,9 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 			case SINOMACROPS:
 				return 0.0035F;
+
+			case VESPEROPTERYLUS:
+				return 0.0035F;
 		}
 
 		//return 0.01F;
@@ -224,6 +227,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 			case SINOMACROPS:
 				return ModTriggers.CLICK_SINOMACROPS;
+
 			case VESPEROPTERYLUS:
 				return ModTriggers.CLICK_VESPEROPTERYLUS;
 
@@ -313,8 +317,9 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 			case SINOMACROPS:
 				return LepidodendronMod.AGNURONATHID_SINOMACROPS_LOOT;
+
 			case VESPEROPTERYLUS:
-				return LepidodendronMod.VESPEROPTERYLUS_LOOT;
+				return LepidodendronMod.ANUROGANTHID_VESPEROPTERYLUS_LOOT;
 		}
 	}
 
@@ -337,6 +342,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 			case SINOMACROPS:
 				return 1.6f;
+
 			case VESPEROPTERYLUS:
 				return 1.6f;
 
@@ -363,6 +369,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 			case SINOMACROPS:
 				return SINOMACROPS_SIZE;
+
 			case VESPEROPTERYLUS:
 				return VESPEROPTERYLUS_SIZE;
 
@@ -419,6 +426,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 			case SINOMACROPS:
 				return SINOMACROPS_SIZE[0];
+
 			case VESPEROPTERYLUS:
 				return VESPEROPTERYLUS_SIZE[0];
 
@@ -452,6 +460,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 			case SINOMACROPS:
 				return SINOMACROPS_SIZE[1];
+
 			case VESPEROPTERYLUS:
 				return VESPEROPTERYLUS_SIZE[1];
 
@@ -499,6 +508,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 				case SINOMACROPS:
 					return new ItemStack(ItemSpawnEggAnurognathidSinomacrops.block, 1);
+
 				case VESPEROPTERYLUS:
 					return new ItemStack(ItemSpawnEggAnurognathidVesperopterylus.block, 1);
 
