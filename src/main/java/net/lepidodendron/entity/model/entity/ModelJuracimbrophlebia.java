@@ -268,21 +268,66 @@ public class ModelJuracimbrophlebia extends ModelBasePalaeopedia {
         GlStateManager.popMatrix();
     }
     public void renderStaticSuspended(float f) {
+
         this.Juracimbrophlebia.render(0.01f);
     }
 
     public void renderStaticFloor(float f) {
+
         this.Juracimbrophlebia.render(0.01f);
     }
 
     public void renderStaticDisplayCase(float f) {
+        setRotateAngle(abdomen1, 0.0436F, 0.0F, 0.0F);
+        setRotateAngle(abdomen2, -0.1047F, 0.0F, 0.0F);
+        setRotateAngle(abdomen3, -0.2182F, 0.0F, 0.0F);
+        setRotateAngle(abdomen4, -0.2182F, 0.0F, 0.0F);
+        setRotateAngle(cube_r1, 0.2182F, 0.0F, 0.0F);
+        setRotateAngle(rightForewing, 0.0F, 0.2182F, 0.0F);
+        setRotateAngle(rightHindwing, 0.0F, 0.9599F, 0.0F);
+        setRotateAngle(leftForewing, 0.0F, -0.2182F, 0.0F);
+        setRotateAngle(leftHindwing, 0.0F, -0.9599F, 0.0F);
+        setRotateAngle(cube_r2, 0.0F, -0.7418F, 0.0F);
+        setRotateAngle(cube_r3, 0.0F, 0.7418F, 0.0F);
+        setRotateAngle(cube_r4, 0.0F, -2.3126F, 0.0F);
+        setRotateAngle(cube_r5, 0.0F, -2.9671F, 0.0F);
+        setRotateAngle(cube_r6, 0.0F, 2.3126F, 0.0F);
+        setRotateAngle(cube_r7, 0.0F, 2.9671F, 0.0F);
+        setRotateAngle(cube_r8, 0.3054F, 0.0F, 0.0F);
+        setRotateAngle(cube_r9, 0.0F, 0.5236F, 0.0F);
+        setRotateAngle(cube_r10, 0.0F, -0.5236F, 0.0F);
+        setRotateAngle(cube_r11, -0.2182F, 0.0F, 0.0F);
+        setRotateAngle(cube_r12, -0.1309F, 0.3927F, 0.0F);
+        setRotateAngle(cube_r13, -0.1309F, -0.3927F, 0.0F);
         this.Juracimbrophlebia.render(0.01f);
         resetToDefaultPose();
     }
 
     @Override
     public void renderStaticBook(float f) {
-
+        setRotateAngle(abdomen1, 0.0436F, 0.0F, 0.0F);
+        setRotateAngle(abdomen2, -0.1047F, 0.0F, 0.0F);
+        setRotateAngle(abdomen3, -0.2182F, 0.0F, 0.0F);
+        setRotateAngle(abdomen4, -0.2182F, 0.0F, 0.0F);
+        setRotateAngle(cube_r1, 0.2182F, 0.0F, 0.0F);
+        setRotateAngle(rightForewing, 0.0F, 0.2182F, 0.0F);
+        setRotateAngle(rightHindwing, 0.0F, 0.9599F, 0.0F);
+        setRotateAngle(leftForewing, 0.0F, -0.2182F, 0.0F);
+        setRotateAngle(leftHindwing, 0.0F, -0.9599F, 0.0F);
+        setRotateAngle(cube_r2, 0.0F, -0.7418F, 0.0F);
+        setRotateAngle(cube_r3, 0.0F, 0.7418F, 0.0F);
+        setRotateAngle(cube_r4, 0.0F, -2.3126F, 0.0F);
+        setRotateAngle(cube_r5, 0.0F, -2.9671F, 0.0F);
+        setRotateAngle(cube_r6, 0.0F, 2.3126F, 0.0F);
+        setRotateAngle(cube_r7, 0.0F, 2.9671F, 0.0F);
+        setRotateAngle(cube_r8, 0.3054F, 0.0F, 0.0F);
+        setRotateAngle(cube_r9, 0.0F, 0.5236F, 0.0F);
+        setRotateAngle(cube_r10, 0.0F, -0.5236F, 0.0F);
+        setRotateAngle(cube_r11, -0.2182F, 0.0F, 0.0F);
+        setRotateAngle(cube_r12, -0.1309F, 0.3927F, 0.0F);
+        setRotateAngle(cube_r13, -0.1309F, -0.3927F, 0.0F);
+        this.Juracimbrophlebia.render(f);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -303,7 +348,27 @@ public class ModelJuracimbrophlebia extends ModelBasePalaeopedia {
 
 
         } else {//not flying
-
+            setRotateAngle(abdomen1, 0.0436F, 0.0F, 0.0F);
+            setRotateAngle(abdomen2, -0.1047F, 0.0F, 0.0F);
+            setRotateAngle(abdomen3, -0.2182F, 0.0F, 0.0F);
+            setRotateAngle(abdomen4, -0.2182F, 0.0F, 0.0F);
+            setRotateAngle(cube_r1, 0.2182F, 0.0F, 0.0F);
+            setRotateAngle(rightForewing, 0.0F, 0.2182F, 0.0F);
+            setRotateAngle(rightHindwing, 0.0F, 0.9599F, 0.0F);
+            setRotateAngle(leftForewing, 0.0F, -0.2182F, 0.0F);
+            setRotateAngle(leftHindwing, 0.0F, -0.9599F, 0.0F);
+            setRotateAngle(cube_r2, 0.0F, -0.7418F, 0.0F);
+            setRotateAngle(cube_r3, 0.0F, 0.7418F, 0.0F);
+            setRotateAngle(cube_r4, 0.0F, -2.3126F, 0.0F);
+            setRotateAngle(cube_r5, 0.0F, -2.9671F, 0.0F);
+            setRotateAngle(cube_r6, 0.0F, 2.3126F, 0.0F);
+            setRotateAngle(cube_r7, 0.0F, 2.9671F, 0.0F);
+            setRotateAngle(cube_r8, 0.3054F, 0.0F, 0.0F);
+            setRotateAngle(cube_r9, 0.0F, 0.5236F, 0.0F);
+            setRotateAngle(cube_r10, 0.0F, -0.5236F, 0.0F);
+            setRotateAngle(cube_r11, -0.2182F, 0.0F, 0.0F);
+            setRotateAngle(cube_r12, -0.1309F, 0.3927F, 0.0F);
+            setRotateAngle(cube_r13, -0.1309F, -0.3927F, 0.0F);
         }
 
     }
