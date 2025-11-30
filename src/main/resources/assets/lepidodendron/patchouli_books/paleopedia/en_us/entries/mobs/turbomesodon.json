@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_turbomesodon",
 			"title": "Turbomesodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Pycnodontidae"
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Pycnodontidae"
 		},
         	{
             "type": "entity",

@@ -247,7 +247,7 @@ public class ModelTriodus extends ModelBasePalaeopedia {
         this.base.rotateAngleX = (float)Math.toRadians(9);
         this.base.rotateAngleZ = (float)Math.toRadians(-2);
         this.base.scaleChildren = true;
-        float scaler = 1.2F;
+        float scaler = 1.4F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(base, 0.2F, 2.5F, 0.0F);

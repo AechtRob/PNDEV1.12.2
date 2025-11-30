@@ -212,12 +212,12 @@ public class ModelBrachydectes extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -1.5F;
-        this.root.offsetX = 1.85F;
+        this.root.offsetX = 0.8F;
         this.root.rotateAngleY = (float)Math.toRadians(245);
         this.root.rotateAngleX = (float)Math.toRadians(28);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 1.50F;
+        float scaler = 0.90F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(neck, 0.0F, -0.2F, 0.05F);

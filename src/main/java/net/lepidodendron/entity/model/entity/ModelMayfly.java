@@ -339,7 +339,24 @@ public class ModelMayfly extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.mayfly.offsetY = -1.6F;
+        this.mayfly.offsetX = -0.6F;
+        this.mayfly.offsetZ = 2.0F;
+        this.mayfly.rotateAngleY = (float)Math.toRadians(220);
+        this.mayfly.rotateAngleX = (float)Math.toRadians(20);
+        this.mayfly.rotateAngleZ = (float)Math.toRadians(0);
+        this.mayfly.scaleChildren = true;
+        float scaler = 4.2F;
+        this.mayfly.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
+        //End of pose, now render the model:
+        this.mayfly.render(f);
+        //Reset rotations, positions and sizing:
+        this.mayfly.setScale(1.0F, 1.0F, 1.0F);
+        this.mayfly.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

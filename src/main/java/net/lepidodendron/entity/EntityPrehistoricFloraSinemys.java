@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraSinemys extends EntityPrehistoricFloraSwimmin
 	}
 
 	public int hideAnimationLength() {
-		return 310;
+		return 312;
 	}
 
 	@Override

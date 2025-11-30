@@ -1,0 +1,52 @@
+{
+	"name": "Procompsognathus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/procompsognathus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_procompsognathus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_procompsognathus",
+			"title": "Procompsognathus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Coelophysidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. triassicus",
+            "entity": "lepidodendron:prehistoric_flora_procompsognathus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_procompsognathus",
+			"type": "text",
+			"text": "Procompsognathus, despite its name, is not actually a compsognathid, but rather a coelophysid. It is known from the Triassic of Germany and was quite small, at only around 1 meter in length. The taxonomic history of this animal is complex. Originally regarded as a species of Hallopus, it was eventually named Procompsognathus under the assumption that it was the direct ancestor to the Jurassic Compsognathus."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_procompsognathus",
+			"type": "text",
+			"text": "However, this was not supported by further research, and it has since landed closer to Coelophysis. Like other coelophysids, this dinosaur was likely a hunter, though, due to its size, it probably hunted much smaller animals like insects and early squamates. Procompsognathus is also thought to be a good runner on account of a proportionally lengthened tibia as compared to its relatives."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_procompsognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_procompsognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_procompsognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_procompsognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_procompsognathus"
+		}
+	]
+}

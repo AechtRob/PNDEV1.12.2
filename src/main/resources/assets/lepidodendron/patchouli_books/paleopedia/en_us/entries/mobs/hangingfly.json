@@ -1,0 +1,52 @@
+{
+	"name": "Hangingfly",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hangingfly_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hangingfly",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hangingfly",
+			"title": "Hangingfly",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic - Present$(br2)>Arthropoda$(br)>Insecta$(br)>Mecoptera$(br)>Bittacidae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. sp",
+            "entity": "lepidodendron:prehistoric_flora_hangingfly",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hangingfly",
+			"type": "text",
+			"text": "Hangingflies are a group of scorpionflies (in the widest sense of the word) belonging to the family Bittacidae. They are named as such for their unusual habit of hanging from vegetation with their front legs while using their hind legs to snag prey from the air. Their feet are divided into many segments and highly flexible, allowing for prehensile behavior not dissimilar to that of a primate’s. In addition to feeding, prey capture plays a role in courtship."
+		},
+			{
+			"advancement": "lepidodendron:pf_adv_book_hangingfly",
+			"type": "text",
+			"text": "Before breeding, males present nuptial gifts to females, with larger prey offerings resulting in a better chance of mating. The name Bittacidae derives from the Greek bíttakos, an alternative form of psittăkós, meaning “parrot.” This is apparently derived from the beak-like mouth present in these insects, though it is also fitting for hanging behavior which isn’t dissimilar to certain play behaviors in parrots."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hangingfly"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hangingfly"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hangingfly"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hangingfly"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hangingfly"
+		}
+	]
+}
