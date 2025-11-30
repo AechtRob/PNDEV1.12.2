@@ -1,0 +1,47 @@
+{
+	"name": "Damselfly",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/damselfly_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_damselfly",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_damselfly",
+			"title": "Damselfly",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Present$(br2)>Arthropoda$(br)>Insecta$(br)>Odonata$(br)>Zygoptera"
+		},
+        	{
+            "type": "entity",
+            "name": "D. sp",
+            "entity": "lepidodendron:prehistoric_flora_damselfly",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_damselfly",
+			"type": "text",
+			"text": "Damselflies are order of flying insects commonly compared to dragonflies. Like Dragonflies, Damselfies are earliest known from the Jurassic period. They can be distinguished from Dragonflies by their smaller and slimmer bodies as well as the way they hold their wings. Unlike Dragonflies that hold their wings out to the side, Damselflies hold their wings in a vertical position when perched."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_damselfly"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_damselfly"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_damselfly"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_damselfly"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_damselfly"
+		}
+	]
+}

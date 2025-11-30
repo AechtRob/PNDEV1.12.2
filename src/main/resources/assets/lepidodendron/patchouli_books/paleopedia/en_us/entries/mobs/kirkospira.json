@@ -1,0 +1,47 @@
+{
+	"name": "Kirkospira",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kirkospira_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_kirkospira",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kirkospira",
+			"title": "Kirkospira",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Mollusca$(br)>Gastropoda$(br)>Murchisoniina$(br)>Plethospiridae"
+		},
+        	{
+            "type": "entity",
+            "name": "K. glacialis",
+            "entity": "lepidodendron:prehistoric_flora_kirkospira",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kirkospira",
+			"type": "text",
+			"text": "Kirkospira is a genus of gastropod that is known from the Silurian of Canada and Alaska, USA."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kirkospira"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kirkospira"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kirkospira"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kirkospira"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kirkospira"
+		}
+	]
+}

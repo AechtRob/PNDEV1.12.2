@@ -1,0 +1,52 @@
+{
+	"name": "Eoconfuciusornis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eoconfuciusornis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_eoconfuciusornis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eoconfuciusornis",
+			"title": "Eoconfuciusornis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Theropoda$(br)>Avialae$(br)>Confuciusornithiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "E. zhengi",
+            "entity": "lepidodendron:prehistoric_flora_eoconfuciusornis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eoconfuciusornis",
+			"type": "text",
+			"text": "Eoconfuciusornis is a confuciusornithiform bird very closely related to the better-known Confuciusornis. This animal is found in the Early Cretaceous Dabeigou Formation of China. It is differentiated from Confuciusornis based on its smaller size and longer legs, among other skeletal differences not visible in the living animal. Eoconfuciusornis is furthermore the oldest and most primitive member of the Confuciusornithiformes, appearing 6 million years before Confuciusornis."
+		},
+			{
+			"advancement": "lepidodendron:pf_adv_book_eoconfuciusornis",
+			"type": "text",
+			"text": "It is known from very well-preserved specimens which give us an indication of the coloration, and have been used in guiding our reconstruction here."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eoconfuciusornis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eoconfuciusornis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eoconfuciusornis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eoconfuciusornis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eoconfuciusornis"
+		}
+	]
+}

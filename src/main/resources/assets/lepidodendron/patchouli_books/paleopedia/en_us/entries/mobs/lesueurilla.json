@@ -1,0 +1,47 @@
+{
+	"name": "Lesueurilla",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lesueurilla_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_lesueurilla",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lesueurilla",
+			"title": "Lesueurilla",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Mollusca$(br)>Gastropoda$(br)>Euomphaloidea$(br)>Lesueurillidae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. infundibulum",
+            "entity": "lepidodendron:prehistoric_flora_lesueurilla",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lesueurilla",
+			"type": "text",
+			"text": "Lesueurilla is a genus of gastropod that is known from the Ordovician of the northern hemisphere. Fossils of family Lesueurillidae have a sharp peripheral band and a short notch formed from deep V-shaped sinus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lesueurilla"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lesueurilla"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lesueurilla"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lesueurilla"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lesueurilla"
+		}
+	]
+}

@@ -194,7 +194,7 @@ public class ModelPentameroceras extends ModelBasePalaeopedia {
         this.base.rotateAngleX = (float)Math.toRadians(-18);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
         this.base.scaleChildren = true;
-        float scaler = 1.23F;
+        float scaler = 2.23F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
 

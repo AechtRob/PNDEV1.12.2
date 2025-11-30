@@ -1,0 +1,42 @@
+{
+	"name": "Acanthocrinus",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_acanthocrinus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_acanthocrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_acanthocrinus",
+			"title": "Acanthocrinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Estuarine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Diplobathruida"
+		},
+		{
+			"type": "multiblock",
+			"name": "A. rex",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_acanthocrinus[topshoot=true]",
+					"1": "lepidodendron:crinoid_acanthocrinus[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_acanthocrinus",
+			"type": "text",
+			"text": "Acanthocrinus is a crinoid from the Devonian Hunsruck Slate of Germany. It is known from multiple well preserved specimens on slabs, which showcase its spiny calyx. Le Mann (1990) considered Acanthocrinus to be representative of a precursor form to the later long spine and bladed Monstrocrinus. One famous beautifully preserved specimen of Acanthocrinus rex was lost during the bombings in World War II. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_acanthocrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

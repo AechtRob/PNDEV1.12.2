@@ -179,8 +179,8 @@ public class ModelAnjiaspis extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.head.offsetY = -1.2F;
         this.head.offsetX = 0.238F;
-        this.head.rotateAngleY = (float)Math.toRadians(242);
-        this.head.rotateAngleX = (float)Math.toRadians(8);
+        this.head.rotateAngleY = (float)Math.toRadians(220);
+        this.head.rotateAngleX = (float)Math.toRadians(20);
         this.head.rotateAngleZ = (float)Math.toRadians(-8);
         this.head.scaleChildren = true;
         float scaler = 3.63F;

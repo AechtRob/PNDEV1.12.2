@@ -1,0 +1,46 @@
+{
+	"name": "Krika",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lacewing_krika_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_lacewing_krika",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lacewing_krika",
+			"title": "Krika",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Neuroptera$(br)>Nemopteridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/krika.png"],
+			"title": "K. pilosa",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lacewing_krika",
+			"type": "text",
+			"text": "Krika pilosa is a species of neuropteran known from the Aptian Crato formation in Brazil, known from both body and wing elements."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@krika"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@krika"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@krika"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@krika"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@krika"
+		}
+	]
+}
