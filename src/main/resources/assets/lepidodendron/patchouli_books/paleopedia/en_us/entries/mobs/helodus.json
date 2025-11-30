@@ -1,0 +1,57 @@
+{
+	"name": "Helodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/helodus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_helodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_helodus",
+			"title": "Helodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Holocephali$(br)>Helodontiformes$(br)>Helodontidae"
+		},
+		{
+			"type": "entity",
+			"name": "H. simplex",
+			"entity": "lepidodendron:prehistoric_flora_helodus",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_apatosaurus",
+			"type": "text",
+			"text": "Apatosaurus is a famous sauropod from the Upper Jurassic Morrison Formation. A. ajax was named by Othniel Charles Marsh in 1877 and A. louisae was named by William Holland in 1916. Although many may feel more familiar with A. ajax, A. louisae is known from more complete remains. Apatosaurus gives name to the subfamily of Apatosaurinae which was only considered a valid grouping since 2015. Apatosaurus is well known for the controversy involving the disputed genus of"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_helodus",
+			"type": "text",
+			"text": "Helodus simplex comes from the upper Carboniferous, with fossils found across Europe. It is a small holocephalian shark, growing up to 50 cm in length. Since its naming, Helodus has been used as a wastebasket for various teeth taxon, although many dispute these assignments and only accept the type species, which is known from an articulated specimen. Males of this genus are known to have a tooth-bearing clasper on their heads. The teeth of this genus are also"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_helodus",
+			"type": "text",
+			"text": "unique, in that they represent a transitional appearance between the separated teeth of elasmobranchs, and the tooth plates of chimaeras. The generic name derives from the Greek words 'helos', to mean 'stud'; and 'odous', to mean 'tooth'. The specific name derives directly from the Latin word 'simplex', to mean 'simple'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_helodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_helodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_helodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_helodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_helodus"
+		}
+	]
+}

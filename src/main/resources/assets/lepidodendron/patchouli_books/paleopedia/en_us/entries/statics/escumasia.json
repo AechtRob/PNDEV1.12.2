@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_escumasia",
 			"title": "Escumasia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Estuarine(br2)>Cnidaria$(br)>$(o)incertae sedis"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Estuarine$(br2)>Cnidaria$(br)>$(o)incertae sedis"
 		},
 		{
 			"type": "multiblock",

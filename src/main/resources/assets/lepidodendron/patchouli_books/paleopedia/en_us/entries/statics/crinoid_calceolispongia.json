@@ -1,0 +1,40 @@
+{
+	"name": "Calceolispongia",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_calceolispongia",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_calceolispongia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_calceolispongia",
+			"title": "Calceolispongia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Camerata$(br)>Cladida$(br)>Calceolispongiidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "Calceolispongia sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:crinoid_calceolispongia",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_calceolispongia",
+			"type": "text",
+			"text": "Calceolispongia comes from the Permian, with fossils found from the Northwest Basin, Western Australia. It is most notable for the appearance of its crown, which made the researchers who discovered it think that it was a sponge, similar to Brachiospongia. It was until later one that more complete material was found for it to be reassigned as a crinoid. The generic name derives from the Latin words 'calceolus', to mean 'shoe'; and 'spongia', to mean 'sponge'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_calceolispongia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

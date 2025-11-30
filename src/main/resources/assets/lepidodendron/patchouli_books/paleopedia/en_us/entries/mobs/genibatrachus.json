@@ -1,0 +1,52 @@
+{
+	"name": "Genibatrachus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/genibatrachus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_genibatrachus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_genibatrachus",
+			"title": "Genibatrachus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Amphibia$(br)>Salientia$(br)>Anura"
+		},
+        	{
+            "type": "entity",
+            "name": "G. baoshanensis",
+            "entity": "lepidodendron:prehistoric_flora_genibatrachus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_genibatrachus",
+			"type": "text",
+			"text": "Genibatrachus baoshanensis comes from the Early Cretaceous, with fossils found in the Guanghua Formation, China. It is a small frog, growing up to 7 cm in size. It is known for being a stem-member of Pipanura, having a combination of various features found in various younger relatives. The generic name derives from the name 'Geni River', near to where the fossils where found; and the Greek word 'batrachos', to mean 'frog'. The specific name derives from the"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_genibatrachus",
+			"type": "text",
+			"text": "place name 'Baoshan', near to where the fossil where found; and the Latin word 'ensis', to mean 'belonging to'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_genibatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_genibatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_genibatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_genibatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_genibatrachus"
+		}
+	]
+}

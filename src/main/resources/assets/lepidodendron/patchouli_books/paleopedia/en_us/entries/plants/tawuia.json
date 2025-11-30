@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tawuia",
 			"title": "Tawuia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Paleoproterozoic (Statherian) - Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis$(br2)$(l)Propagation:$() Craft with a bucket of water.$(br)$(l)Method of Obtaining:$() Shears"
+			"text": "$(l)Temporal Range:$() Paleoproterozoic (Statherian) - Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis$(br2)$(l)Propagation:$() Craft with a bucket of water.$(br)$(l)Method of Obtaining:$() Shears"
 		},
 		{
 			"type": "multiblock",

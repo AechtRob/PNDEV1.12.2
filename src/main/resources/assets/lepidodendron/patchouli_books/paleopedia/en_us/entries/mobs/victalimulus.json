@@ -1,0 +1,52 @@
+{
+	"name": "Victalimulus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/victalimulus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_victalimulus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_victalimulus",
+			"title": "Victalimulus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Chelicerata$(br)>Merostomata$(br)>Xiphosura$(br)>Limulidae"
+		},
+        	{
+            "type": "entity",
+            "name": "V. mcqueeni",
+            "entity": "lepidodendron:prehistoric_flora_victalimulus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_victalimulus",
+			"type": "text",
+			"text": "Victalimulus mcqueeni comes from the Early Cretaceous, with fossils found in the Koonwarra Fossil Beds, Australia. It is a small limulid, growing up to 20 cm in size. The general morphology of Victalimulus sees it placed between the extinct Mesolimulus and extant Limulus. It is also notable for being found in a freshwater environment, although some researchers suggest it may have been coming in from marine waters to breed."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_victalimulus",
+			"type": "text",
+			"text": "The generic name derives from the state name 'Victoria', where the fossil was found; and the genus name 'Limulus', and extant horseshoe crab. The specific name derives from the surname of James McQueen, who had found and donated the fossil material."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_victalimulus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_victalimulus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_victalimulus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_victalimulus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_victalimulus"
+		}
+	]
+}
