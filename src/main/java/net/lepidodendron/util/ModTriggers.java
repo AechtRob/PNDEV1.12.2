@@ -1364,7 +1364,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ADAMANTERYON = new CustomTrigger("pf_book_adamanteryon");
     public static final CustomTrigger CLICK_SCHEENSTIA = new CustomTrigger("pf_book_scheenstia");
     public static final CustomTrigger CLICK_PLECTRONOCERAS = new CustomTrigger("pf_book_plectronoceras");
-    public static final CustomTrigger CLICK_CALCEOLISPONGIA = new CustomTrigger("pf_book_calceolispongia");
+    public static final CustomTrigger CLICK_CRINOID_CALCEOLISPONGIA = new CustomTrigger("pf_book_crinoid_calceolispongia");
+
     public static final CustomTrigger CLICK_PSEUDORHINA = new CustomTrigger("pf_book_pseudorhina");
     public static final CustomTrigger CLICK_PHORCYNIS = new CustomTrigger("pf_book_phorcynis");
     public static final CustomTrigger CLICK_TEMNODONTOSAURUS = new CustomTrigger("pf_book_temnodontosaurus");
@@ -3453,7 +3454,7 @@ public class ModTriggers
             CLICK_ADAMANTERYON,
             CLICK_SCHEENSTIA,
             CLICK_PLECTRONOCERAS,
-            CLICK_CALCEOLISPONGIA,
+            CLICK_CRINOID_CALCEOLISPONGIA,
             CLICK_PSEUDORHINA,
             CLICK_PHORCYNIS,
             CLICK_TEMNODONTOSAURUS,

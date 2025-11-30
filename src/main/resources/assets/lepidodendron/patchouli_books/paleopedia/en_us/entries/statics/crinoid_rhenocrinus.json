@@ -1,0 +1,42 @@
+{
+	"name": "Rhenocrinus",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_rhenocrinus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_rhenocrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_rhenocrinus",
+			"title": "Rhenocrinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Pentacrinoidea"
+		},
+		{
+			"type": "multiblock",
+			"name": "Rhenocrinus sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "1" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:crinoid_rhenocrinus",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_rhenocrinus",
+			"type": "text",
+			"text": "Rhenocrinus comes from the Lower Devonian, with fossils found in the Hunsrück Slate, Germany."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_rhenocrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

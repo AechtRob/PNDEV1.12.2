@@ -17,12 +17,11 @@
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [
-					[ "2  " ],
-					[ "102" ]
+					[ "1  " ],
+					[ "101" ]
 				],
 				"mapping": {
-					"2": "lepidodendron:stromatolite[topshoot=true]",
-					"1": "lepidodendron:stromatolite[topshoot=false]",
+					"1": "lepidodendron:stromatolite",
 					"0": "minecraft:air"
 				}
 			}

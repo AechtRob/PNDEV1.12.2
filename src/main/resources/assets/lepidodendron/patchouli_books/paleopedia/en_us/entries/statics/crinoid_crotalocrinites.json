@@ -1,0 +1,40 @@
+{
+	"name": "Crotalocrinites",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_crotalocrinites",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_crotalocrinites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_crotalocrinites",
+			"title": "Crotalocrinites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Cyathocrinida$(br)>Crotalocrinitidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "C. rugosus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:crinoid_crotalocrinites",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_crotalocrinites",
+			"type": "text",
+			"text": "Crotalocrinites comes from the Silurian, with fossils found from across the Globe."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_crotalocrinites",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

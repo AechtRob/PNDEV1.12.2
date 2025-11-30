@@ -1,0 +1,42 @@
+{
+	"name": "Hapalocrinus",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_hapalocrinus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_hapalocrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_hapalocrinus",
+			"title": "Hapalocrinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Hapalocrinidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "Hapalocrinus sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "1" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:crinoid_hapalocrinus",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_hapalocrinus",
+			"type": "text",
+			"text": "Hapalocrinus comes from the Lower Devonian, with fossils found in the Hunsrück Slate, Germany."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_hapalocrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

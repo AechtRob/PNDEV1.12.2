@@ -1,0 +1,47 @@
+{
+	"name": "Brachydectes",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/brachydectes_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_brachydectes",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_brachydectes",
+			"title": "Brachydectes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() [Carbonfierous] - Permian$(br2)>Chordata$(br)>Reptiliomorpha$(br)>Recumbirostra$(br)>Lysorophia$(br)>Molgophidae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. newberryi",
+            "entity": "lepidodendron:prehistoric_flora_brachydectes",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brachydectes",
+			"type": "text",
+			"text": "Brachydectes hails from the upper Carboniferous into the lower Permian, with fossils found in the Council Grove Group, Kansas, Oklahoma, Nebraska and Colorado (US). It is a large molgophid lysorophian, growing up to 1.5 m in length. This larger of the two species, B. elongatus, is what is represented in the mod, and as such can only be found in the Permian"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_brachydectes"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_brachydectes"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_brachydectes"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_brachydectes"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_brachydectes"
+		}
+	]
+}

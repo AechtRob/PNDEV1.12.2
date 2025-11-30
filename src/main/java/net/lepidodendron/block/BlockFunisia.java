@@ -297,7 +297,7 @@ public class BlockFunisia extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Segmented organism");
+				tooltip.add("Type: Segmented sponge-like organism");
 				tooltip.add("Periods: Neoproterozoic (Ediacaran)");
 			}
 			super.addInformation(stack, player, tooltip, advanced);

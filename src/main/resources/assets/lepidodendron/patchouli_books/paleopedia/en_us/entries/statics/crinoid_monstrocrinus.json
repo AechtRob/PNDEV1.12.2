@@ -1,0 +1,42 @@
+{
+	"name": "Bladed Monstrocrinus",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_monstrocrinus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_monstrocrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_monstrocrinus",
+			"title": "Monstrocrinus granosus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Diplobathrida$(br)>Rhodocrinitidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "M. granosus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "1" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:crinoid_monstrocrinus",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_monstrocrinus",
+			"type": "text",
+			"text": "Monstrocrinus granosus comes from the Devonian, with fossils found in the Orthocrinus and Mandeln Formations, Germany. It is most unique from other crinoids due to the large, flattened bladed spines attached to the base of its theca, giving it a rather strange appearance."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_monstrocrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

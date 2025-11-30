@@ -1,0 +1,52 @@
+{
+	"name": "Pseudomonocentris",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pseudomonocentris_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_pseudomonocentris",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pseudomonocentris",
+			"title": "Pseudomonocentris",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Actinopterygii$(br)>Teleostei$(br)>Trachichthyiformes$(br)>Pseudomonocentrididae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. microspinosus",
+            "entity": "lepidodendron:prehistoric_flora_pseudomonocentris",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pseudomonocentris",
+			"type": "text",
+			"text": "Pseudomonocentris is a genus of trachyichtyiform fish living in the Albian-Cenomanian El Doctor Formation in Mexico. This animal is rotund, growing to 4.1 centimeters in length and being quite deep, with large rows of extremely overlapping shield-shaped bones, starting extremely large towards the front of the fish before shrinking in size towards the back. This animal, along with Handuichthys form the family Pseudomonocentrididae, closely related to modern pineapple"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pseudomonocentris",
+			"type": "text",
+			"text": "fish in the family Monocentrididae. This is referenced in the name of Pseudomonocentris, literally meaning 'close to Monocentris,' while the specific name refers to miniscule spines on the skull roof. Like pineapple fish, it is likely the animals would have inhabited deeper water enviroments, such as ocena drop offs and caves."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pseudomonocentris"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pseudomonocentris"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pseudomonocentris"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pseudomonocentris"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pseudomonocentris"
+		}
+	]
+}

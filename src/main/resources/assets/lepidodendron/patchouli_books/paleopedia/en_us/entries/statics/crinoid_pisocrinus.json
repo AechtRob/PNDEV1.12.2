@@ -17,13 +17,12 @@
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [
-					[ "2" ],
+					[ "1" ],
 					[ "1" ],
 					[ "0" ]
 				],
 				"mapping": {
-					"2": "lepidodendron:crinoid_pisocrinus[topshoot=true]",
-					"1": "lepidodendron:crinoid_pisocrinus[topshoot=false]",
+					"1": "lepidodendron:crinoid_pisocrinus",
 					"0": "minecraft:air"
 				}
 			}

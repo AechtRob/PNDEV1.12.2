@@ -1,0 +1,40 @@
+{
+	"name": "Boliviacrinus",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_boliviacrinus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_boliviacrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_boliviacrinus",
+			"title": "Boliviacrinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Patelliocrinoidea"
+		},
+		{
+			"type": "multiblock",
+			"name": "B. isaacsoni",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:crinoid_boliviacrinus",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_boliviacrinus",
+			"type": "text",
+			"text": "Boliviacrinus isaacsoni comes from the Devonian, with fossils found in the Belen Formation, Bolivia. The generic name derives from the place name 'Bolivia', the country where the fossil material was found; and the Greek word 'crinus', to mean 'Lily'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_boliviacrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

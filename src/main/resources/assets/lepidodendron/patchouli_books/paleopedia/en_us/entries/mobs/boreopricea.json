@@ -1,0 +1,52 @@
+{
+	"name": "Boreopricea",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/boreopricea_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_boreopricea",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_boreopricea",
+			"title": "Boreopricea",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauromorpha$(br)>Crocopoda"
+		},
+        	{
+            "type": "entity",
+            "name": "B. funerea",
+            "entity": "lepidodendron:prehistoric_flora_boreopricea",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_boreopricea",
+			"type": "text",
+			"text": "Boreopricea funerea comes from the Lower Triassic, with fossils found on Kolguyev Island, Russia. It is a small archosauromorph, growing up to 44 cm in length. Boreopricea is fairly unique in the fact it was found inside a bore-hole sample that had been taken on Kolguyyev Island, and is fairly complete, only missing a few bits of its skeleton, and since its description, more bones had been lost or crushed in storage, muddying the waters in its assignment and slowing"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_boreopricea",
+			"type": "text",
+			"text": "down all future restudies. As such, many have either placed it as a close relative of Prolacerta and/or tanystropheids, and perhaps neither all together. It is also unique in that it has a contact between its jugal and squamosal bones and the rear of its skull, something not seen in early archosauromorphs. There is also a probable second specimen, consisting of a snout, although no one has been able to locate this, and is considered lost."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_boreopricea"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_boreopricea"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_boreopricea"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_boreopricea"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_boreopricea"
+		}
+	]
+}
