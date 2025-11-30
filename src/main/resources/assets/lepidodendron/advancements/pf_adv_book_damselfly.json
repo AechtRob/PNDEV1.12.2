@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:damselfly"
+			"item": "lepidodendron:damselfly_raw"
 		 },
 		"title": {
 			"translate": "advancements.pf_adv_book_damselfly.title"
