@@ -1410,35 +1410,40 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-         if (tickAnim >= 0 && tickAnim < 3) {
-            xx = 0 + (((tickAnim - 0) / 3) * (1.25-(0)));
-            yy = 0 + (((tickAnim - 0) / 3) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 3) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 3 && tickAnim < 3) {
-            xx = 1.25 + (((tickAnim - 3) / 0) * (0-(1.25)));
-            yy = 0 + (((tickAnim - 3) / 0) * (0-(0)));
-            zz = 0 + (((tickAnim - 3) / 0) * (2.5-(0)));
+        else if (tickAnim >= 5 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 5) / 3) * (1.25-(0)));
+            yy = 0 + (((tickAnim - 5) / 3) * (0-(0)));
+            zz = 0 + (((tickAnim - 5) / 3) * (0-(0)));
         }
-        else if (tickAnim >= 3 && tickAnim < 5) {
-            xx = 0 + (((tickAnim - 3) / 2) * (-2.5-(0)));
-            yy = 0 + (((tickAnim - 3) / 2) * (0-(0)));
-            zz = 2.5 + (((tickAnim - 3) / 2) * (0-(2.5)));
+        else if (tickAnim >= 8 && tickAnim < 8) {
+            xx = 1.25 + (((tickAnim - 8) / 0) * (0-(1.25)));
+            yy = 0 + (((tickAnim - 8) / 0) * (0-(0)));
+            zz = 0 + (((tickAnim - 8) / 0) * (2.5-(0)));
         }
-        else if (tickAnim >= 5 && tickAnim < 7) {
-            xx = -2.5 + (((tickAnim - 5) / 2) * (-1.66508-(-2.5)));
-            yy = 0 + (((tickAnim - 5) / 2) * (-0.07269-(0)));
-            zz = 0 + (((tickAnim - 5) / 2) * (-2.49894-(0)));
+        else if (tickAnim >= 8 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 8) / 2) * (-2.5-(0)));
+            yy = 0 + (((tickAnim - 8) / 2) * (0-(0)));
+            zz = 2.5 + (((tickAnim - 8) / 2) * (0-(2.5)));
         }
-        else if (tickAnim >= 7 && tickAnim < 10) {
-            xx = -1.66508 + (((tickAnim - 7) / 3) * (0-(-1.66508)));
-            yy = -0.07269 + (((tickAnim - 7) / 3) * (0-(-0.07269)));
-            zz = -2.49894 + (((tickAnim - 7) / 3) * (0-(-2.49894)));
+        else if (tickAnim >= 10 && tickAnim < 12) {
+            xx = -2.5 + (((tickAnim - 10) / 2) * (-1.66508-(-2.5)));
+            yy = 0 + (((tickAnim - 10) / 2) * (-0.07269-(0)));
+            zz = 0 + (((tickAnim - 10) / 2) * (-2.49894-(0)));
         }
-        else if (tickAnim >= 10 && tickAnim < 290) {
-            xx = 0 + (((tickAnim - 10) / 280) * (0-(0)));
-            yy = 0 + (((tickAnim - 10) / 280) * (0-(0)));
-            zz = 0 + (((tickAnim - 10) / 280) * (0-(0)));
+        else if (tickAnim >= 12 && tickAnim < 15) {
+            xx = -1.66508 + (((tickAnim - 12) / 3) * (0-(-1.66508)));
+            yy = -0.07269 + (((tickAnim - 12) / 3) * (0-(-0.07269)));
+            zz = -2.49894 + (((tickAnim - 12) / 3) * (0-(-2.49894)));
+        }
+        else if (tickAnim >= 15 && tickAnim < 290) {
+            xx = 0 + (((tickAnim - 15) / 275) * (0-(0)));
+            yy = 0 + (((tickAnim - 15) / 275) * (0-(0)));
+            zz = 0 + (((tickAnim - 15) / 275) * (0-(0)));
         }
         else if (tickAnim >= 290 && tickAnim < 294) {
             xx = 0 + (((tickAnim - 290) / 4) * (0-(0)));
@@ -1476,14 +1481,19 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 5) {
-            xx = -25 + (((tickAnim - 0) / 5) * (10-(-25)));
-            yy = 0 + (((tickAnim - 0) / 5) * (72.5-(0)));
+            xx = 0 + (((tickAnim - 0) / 5) * (-25-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 5 && tickAnim < 290) {
-            xx = 10 + (((tickAnim - 5) / 285) * (10-(10)));
-            yy = 72.5 + (((tickAnim - 5) / 285) * (72.5-(72.5)));
-            zz = 0 + (((tickAnim - 5) / 285) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 10) {
+            xx = -25 + (((tickAnim - 5) / 5) * (10-(-25)));
+            yy = 0 + (((tickAnim - 5) / 5) * (72.5-(0)));
+            zz = 0 + (((tickAnim - 5) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 290) {
+            xx = 10 + (((tickAnim - 10) / 280) * (10-(10)));
+            yy = 72.5 + (((tickAnim - 10) / 280) * (72.5-(72.5)));
+            zz = 0 + (((tickAnim - 10) / 280) * (0-(0)));
         }
         else if (tickAnim >= 290 && tickAnim < 293) {
             xx = 10 + (((tickAnim - 290) / 3) * (10-(10)));
@@ -1491,7 +1501,7 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 290) / 3) * (0-(0)));
         }
         else if (tickAnim >= 293 && tickAnim < 310) {
-            xx = 10 + (((tickAnim - 293) / 17) * (-25-(10)));
+            xx = 10 + (((tickAnim - 293) / 17) * (0-(10)));
             yy = 72.5 + (((tickAnim - 293) / 17) * (0-(72.5)));
             zz = 0 + (((tickAnim - 293) / 17) * (0-(0)));
         }
@@ -1503,20 +1513,30 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
         this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(xx), neck.rotateAngleY + (float) Math.toRadians(yy), neck.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 290) {
-            xx = 0 + (((tickAnim - 0) / 290) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 290) * (0-(0)));
-            zz = -1 + (((tickAnim - 0) / 290) * (-1-(-1)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (-1-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 5) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 5) / 5) * (0-(0)));
+            zz = -1 + (((tickAnim - 5) / 5) * (-0.45-(-1)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 290) {
+            xx = 0 + (((tickAnim - 10) / 280) * (0-(0)));
+            yy = 0 + (((tickAnim - 10) / 280) * (0-(0)));
+            zz = -0.45 + (((tickAnim - 10) / 280) * (-0.45-(-0.45)));
         }
         else if (tickAnim >= 290 && tickAnim < 293) {
             xx = 0 + (((tickAnim - 290) / 3) * (0-(0)));
             yy = 0 + (((tickAnim - 290) / 3) * (0-(0)));
-            zz = -1 + (((tickAnim - 290) / 3) * (-1-(-1)));
+            zz = -0.45 + (((tickAnim - 290) / 3) * (-1-(-0.45)));
         }
         else if (tickAnim >= 293 && tickAnim < 310) {
             xx = 0 + (((tickAnim - 293) / 17) * (0-(0)));
             yy = 0 + (((tickAnim - 293) / 17) * (0-(0)));
-            zz = -1 + (((tickAnim - 293) / 17) * (-1-(-1)));
+            zz = -1 + (((tickAnim - 293) / 17) * (0-(-1)));
         }
         else {
             xx = 0;
@@ -1530,23 +1550,33 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 3) {
-            xx = -17.5 + (((tickAnim - 0) / 3) * (0-(-17.5)));
-            yy = 0 + (((tickAnim - 0) / 3) * (57.5-(0)));
-            zz = 0 + (((tickAnim - 0) / 3) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-17.5-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 3 && tickAnim < 290) {
-            xx = 0 + (((tickAnim - 3) / 287) * (0-(0)));
-            yy = 57.5 + (((tickAnim - 3) / 287) * (57.5-(57.5)));
-            zz = 0 + (((tickAnim - 3) / 287) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 8) {
+            xx = -17.5 + (((tickAnim - 5) / 3) * (0-(-17.5)));
+            yy = 0 + (((tickAnim - 5) / 3) * (57.5-(0)));
+            zz = 0 + (((tickAnim - 5) / 3) * (0-(0)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 8) / 2) * (0-(0)));
+            yy = 57.5 + (((tickAnim - 8) / 2) * (21.5-(57.5)));
+            zz = 0 + (((tickAnim - 8) / 2) * (0-(0)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 290) {
+            xx = 0 + (((tickAnim - 10) / 280) * (0-(0)));
+            yy = 21.5 + (((tickAnim - 10) / 280) * (21.5-(21.5)));
+            zz = 0 + (((tickAnim - 10) / 280) * (0-(0)));
         }
         else if (tickAnim >= 290 && tickAnim < 306) {
             xx = 0 + (((tickAnim - 290) / 16) * (-13.87198-(0)));
-            yy = 57.5 + (((tickAnim - 290) / 16) * (-12.31454-(57.5)));
+            yy = 21.5 + (((tickAnim - 290) / 16) * (-12.31454-(21.5)));
             zz = 0 + (((tickAnim - 290) / 16) * (5.94535-(0)));
         }
         else if (tickAnim >= 306 && tickAnim < 310) {
-            xx = -13.87198 + (((tickAnim - 306) / 4) * (-17.5-(-13.87198)));
+            xx = -13.87198 + (((tickAnim - 306) / 4) * (0-(-13.87198)));
             yy = -12.31454 + (((tickAnim - 306) / 4) * (0-(-12.31454)));
             zz = 5.94535 + (((tickAnim - 306) / 4) * (0-(5.94535)));
         }
@@ -1558,12 +1588,52 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
         this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(xx), head.rotateAngleY + (float) Math.toRadians(yy), head.rotateAngleZ + (float) Math.toRadians(zz));
 
 
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0.3-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 5) / 3) * (1.095-(0)));
+            yy = 0 + (((tickAnim - 5) / 3) * (0-(0)));
+            zz = 0.3 + (((tickAnim - 5) / 3) * (2.06-(0.3)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 10) {
+            xx = 1.095 + (((tickAnim - 8) / 2) * (0.15-(1.095)));
+            yy = 0 + (((tickAnim - 8) / 2) * (0-(0)));
+            zz = 2.06 + (((tickAnim - 8) / 2) * (1.275-(2.06)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 290) {
+            xx = 0.15 + (((tickAnim - 10) / 280) * (0.15-(0.15)));
+            yy = 0 + (((tickAnim - 10) / 280) * (0-(0)));
+            zz = 1.275 + (((tickAnim - 10) / 280) * (1.275-(1.275)));
+        }
+        else if (tickAnim >= 290 && tickAnim < 310) {
+            xx = 0.15 + (((tickAnim - 290) / 20) * (0-(0.15)));
+            yy = 0 + (((tickAnim - 290) / 20) * (0-(0)));
+            zz = 1.275 + (((tickAnim - 290) / 20) * (0-(1.275)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.head.rotationPointX = this.head.rotationPointX + (float)(xx);
+        this.head.rotationPointY = this.head.rotationPointY - (float)(yy);
+        this.head.rotationPointZ = this.head.rotationPointZ + (float)(zz);
 
 
-        if (tickAnim >= 0 && tickAnim < 290) {
-            xx = -95.5114 + (((tickAnim - 0) / 290) * (-95.5114-(-95.5114)));
-            yy = -34.18897 + (((tickAnim - 0) / 290) * (-34.18897-(-34.18897)));
-            zz = 97.725 + (((tickAnim - 0) / 290) * (97.725-(97.725)));
+
+
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-95.5114-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-34.18897-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (97.725-(0)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 290) {
+            xx = -95.5114 + (((tickAnim - 5) / 285) * (-95.5114-(-95.5114)));
+            yy = -34.18897 + (((tickAnim - 5) / 285) * (-34.18897-(-34.18897)));
+            zz = 97.725 + (((tickAnim - 5) / 285) * (97.725-(97.725)));
         }
         else if (tickAnim >= 290 && tickAnim < 293) {
             xx = -95.5114 + (((tickAnim - 290) / 3) * (-95.5114-(-95.5114)));
@@ -1575,6 +1645,11 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             yy = -34.18897 + (((tickAnim - 293) / 10) * (-34.18897-(-34.18897)));
             zz = 97.725 + (((tickAnim - 293) / 10) * (97.725-(97.725)));
         }
+        else if (tickAnim >= 303 && tickAnim < 310) {
+            xx = -95.5114 + (((tickAnim - 303) / 7) * (0-(-95.5114)));
+            yy = -34.18897 + (((tickAnim - 303) / 7) * (0-(-34.18897)));
+            zz = 97.725 + (((tickAnim - 303) / 7) * (0-(97.725)));
+        }
         else {
             xx = 0;
             yy = 0;
@@ -1584,14 +1659,19 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 5) {
-            xx = -2.25 + (((tickAnim - 0) / 5) * (-6-(-2.25)));
-            yy = 0.25 + (((tickAnim - 0) / 5) * (1-(0.25)));
-            zz = -3 + (((tickAnim - 0) / 5) * (6-(-3)));
+            xx = 0 + (((tickAnim - 0) / 5) * (-2.25-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0.25-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (-3-(0)));
         }
-        else if (tickAnim >= 5 && tickAnim < 290) {
-            xx = -6 + (((tickAnim - 5) / 285) * (-6-(-6)));
-            yy = 1 + (((tickAnim - 5) / 285) * (1-(1)));
-            zz = 6 + (((tickAnim - 5) / 285) * (6-(6)));
+        else if (tickAnim >= 5 && tickAnim < 10) {
+            xx = -2.25 + (((tickAnim - 5) / 5) * (-6-(-2.25)));
+            yy = 0.25 + (((tickAnim - 5) / 5) * (1-(0.25)));
+            zz = -3 + (((tickAnim - 5) / 5) * (6-(-3)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 290) {
+            xx = -6 + (((tickAnim - 10) / 280) * (-6-(-6)));
+            yy = 1 + (((tickAnim - 10) / 280) * (1-(1)));
+            zz = 6 + (((tickAnim - 10) / 280) * (6-(6)));
         }
         else if (tickAnim >= 290 && tickAnim < 293) {
             xx = -6 + (((tickAnim - 290) / 3) * (-6-(-6)));
@@ -1602,6 +1682,11 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             xx = -6 + (((tickAnim - 293) / 10) * (-2.25-(-6)));
             yy = 1 + (((tickAnim - 293) / 10) * (0.25-(1)));
             zz = 6 + (((tickAnim - 293) / 10) * (-3-(6)));
+        }
+        else if (tickAnim >= 303 && tickAnim < 310) {
+            xx = -2.25 + (((tickAnim - 303) / 7) * (0-(-2.25)));
+            yy = 0.25 + (((tickAnim - 303) / 7) * (0-(0.25)));
+            zz = -3 + (((tickAnim - 303) / 7) * (0-(-3)));
         }
         else {
             xx = 0;
@@ -1615,25 +1700,25 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 290) {
-            xx = -121.41336 + (((tickAnim - 0) / 290) * (-121.41336-(-121.41336)));
-            yy = 37.02788 + (((tickAnim - 0) / 290) * (37.02788-(37.02788)));
-            zz = 228.55189 + (((tickAnim - 0) / 290) * (228.55189-(228.55189)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-8.92117-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (15.30386-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (-11.87542-(0)));
         }
-        else if (tickAnim >= 290 && tickAnim < 293) {
-            xx = -121.41336 + (((tickAnim - 290) / 3) * (-121.41336-(-121.41336)));
-            yy = 37.02788 + (((tickAnim - 290) / 3) * (37.02788-(37.02788)));
-            zz = 228.55189 + (((tickAnim - 290) / 3) * (228.55189-(228.55189)));
+        else if (tickAnim >= 5 && tickAnim < 290) {
+            xx = -8.92117 + (((tickAnim - 5) / 285) * (-8.92117-(-8.92117)));
+            yy = 15.30386 + (((tickAnim - 5) / 285) * (-15.30386-(15.30386)));
+            zz = -11.87542 + (((tickAnim - 5) / 285) * (11.87542-(-11.87542)));
         }
-        else if (tickAnim >= 293 && tickAnim < 298) {
-            xx = -121.41336 + (((tickAnim - 293) / 5) * (-7.15647-(-121.41336)));
-            yy = 37.02788 + (((tickAnim - 293) / 5) * (-14.14229-(37.02788)));
-            zz = 228.55189 + (((tickAnim - 293) / 5) * (323.2785-(228.55189)));
+        else if (tickAnim >= 290 && tickAnim < 298) {
+            xx = -8.92117 + (((tickAnim - 290) / 8) * (-8.92117-(-8.92117)));
+            yy = -15.30386 + (((tickAnim - 290) / 8) * (-15.30386-(-15.30386)));
+            zz = 11.87542 + (((tickAnim - 290) / 8) * (11.87542-(11.87542)));
         }
-        else if (tickAnim >= 298 && tickAnim < 303) {
-            xx = -7.15647 + (((tickAnim - 298) / 5) * (-121.41336-(-7.15647)));
-            yy = -14.14229 + (((tickAnim - 298) / 5) * (37.02788-(-14.14229)));
-            zz = 323.2785 + (((tickAnim - 298) / 5) * (228.55189-(323.2785)));
+        else if (tickAnim >= 298 && tickAnim < 310) {
+            xx = -8.92117 + (((tickAnim - 298) / 12) * (0-(-8.92117)));
+            yy = -15.30386 + (((tickAnim - 298) / 12) * (0-(-15.30386)));
+            zz = 11.87542 + (((tickAnim - 298) / 12) * (0-(11.87542)));
         }
         else {
             xx = 0;
@@ -1645,20 +1730,30 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 2) {
-            xx = -95.5114 + (((tickAnim - 0) / 2) * (-95.5114-(-95.5114)));
-            yy = 34.18897 + (((tickAnim - 0) / 2) * (34.18897-(34.18897)));
-            zz = -97.725 + (((tickAnim - 0) / 2) * (-97.725-(-97.725)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-95.5114-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (34.18897-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (-97.725-(0)));
         }
-        else if (tickAnim >= 2 && tickAnim < 290) {
-            xx = -95.5114 + (((tickAnim - 2) / 288) * (-95.5114-(-95.5114)));
-            yy = 34.18897 + (((tickAnim - 2) / 288) * (34.18897-(34.18897)));
-            zz = -97.725 + (((tickAnim - 2) / 288) * (-97.725-(-97.725)));
+        else if (tickAnim >= 5 && tickAnim < 7) {
+            xx = -95.5114 + (((tickAnim - 5) / 2) * (-95.5114-(-95.5114)));
+            yy = 34.18897 + (((tickAnim - 5) / 2) * (34.18897-(34.18897)));
+            zz = -97.725 + (((tickAnim - 5) / 2) * (-97.725-(-97.725)));
+        }
+        else if (tickAnim >= 7 && tickAnim < 290) {
+            xx = -95.5114 + (((tickAnim - 7) / 283) * (-95.5114-(-95.5114)));
+            yy = 34.18897 + (((tickAnim - 7) / 283) * (34.18897-(34.18897)));
+            zz = -97.725 + (((tickAnim - 7) / 283) * (-97.725-(-97.725)));
         }
         else if (tickAnim >= 290 && tickAnim < 300) {
             xx = -95.5114 + (((tickAnim - 290) / 10) * (-95.5114-(-95.5114)));
             yy = 34.18897 + (((tickAnim - 290) / 10) * (34.18897-(34.18897)));
             zz = -97.725 + (((tickAnim - 290) / 10) * (-97.725-(-97.725)));
+        }
+        else if (tickAnim >= 300 && tickAnim < 310) {
+            xx = -95.5114 + (((tickAnim - 300) / 10) * (0-(-95.5114)));
+            yy = 34.18897 + (((tickAnim - 300) / 10) * (0-(34.18897)));
+            zz = -97.725 + (((tickAnim - 300) / 10) * (0-(-97.725)));
         }
         else {
             xx = 0;
@@ -1668,25 +1763,35 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
         this.setRotateAngle(frontrightleg, frontrightleg.rotateAngleX + (float) Math.toRadians(xx), frontrightleg.rotateAngleY + (float) Math.toRadians(yy), frontrightleg.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 2) {
-            xx = 2.25 + (((tickAnim - 0) / 2) * (2.25-(2.25)));
-            yy = 0.25 + (((tickAnim - 0) / 2) * (0.25-(0.25)));
-            zz = -3 + (((tickAnim - 0) / 2) * (-3-(-3)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (2.25-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (0.25-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (-3-(0)));
         }
-        else if (tickAnim >= 2 && tickAnim < 7) {
-            xx = 2.25 + (((tickAnim - 2) / 5) * (6-(2.25)));
-            yy = 0.25 + (((tickAnim - 2) / 5) * (1-(0.25)));
-            zz = -3 + (((tickAnim - 2) / 5) * (6-(-3)));
+        else if (tickAnim >= 5 && tickAnim < 7) {
+            xx = 2.25 + (((tickAnim - 5) / 2) * (2.25-(2.25)));
+            yy = 0.25 + (((tickAnim - 5) / 2) * (0.25-(0.25)));
+            zz = -3 + (((tickAnim - 5) / 2) * (-3-(-3)));
         }
-        else if (tickAnim >= 7 && tickAnim < 290) {
-            xx = 6 + (((tickAnim - 7) / 283) * (6-(6)));
-            yy = 1 + (((tickAnim - 7) / 283) * (1-(1)));
-            zz = 6 + (((tickAnim - 7) / 283) * (6-(6)));
+        else if (tickAnim >= 7 && tickAnim < 12) {
+            xx = 2.25 + (((tickAnim - 7) / 5) * (6-(2.25)));
+            yy = 0.25 + (((tickAnim - 7) / 5) * (1-(0.25)));
+            zz = -3 + (((tickAnim - 7) / 5) * (6-(-3)));
+        }
+        else if (tickAnim >= 12 && tickAnim < 290) {
+            xx = 6 + (((tickAnim - 12) / 278) * (6-(6)));
+            yy = 1 + (((tickAnim - 12) / 278) * (1-(1)));
+            zz = 6 + (((tickAnim - 12) / 278) * (6-(6)));
         }
         else if (tickAnim >= 290 && tickAnim < 300) {
             xx = 6 + (((tickAnim - 290) / 10) * (2.25-(6)));
             yy = 1 + (((tickAnim - 290) / 10) * (0.25-(1)));
             zz = 6 + (((tickAnim - 290) / 10) * (-3-(6)));
+        }
+        else if (tickAnim >= 300 && tickAnim < 310) {
+            xx = 2.25 + (((tickAnim - 300) / 10) * (0-(2.25)));
+            yy = 0.25 + (((tickAnim - 300) / 10) * (0-(0.25)));
+            zz = -3 + (((tickAnim - 300) / 10) * (0-(-3)));
         }
         else {
             xx = 0;
@@ -1700,25 +1805,30 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 2) {
-            xx = -121.41336 + (((tickAnim - 0) / 2) * (-121.41336-(-121.41336)));
-            yy = -37.02788 + (((tickAnim - 0) / 2) * (-37.02788-(-37.02788)));
-            zz = -228.55189 + (((tickAnim - 0) / 2) * (-228.55189-(-228.55189)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-8.92117-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-15.30386-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (11.87542-(0)));
         }
-        else if (tickAnim >= 2 && tickAnim < 290) {
-            xx = -121.41336 + (((tickAnim - 2) / 288) * (-121.41336-(-121.41336)));
-            yy = -37.02788 + (((tickAnim - 2) / 288) * (-37.02788-(-37.02788)));
-            zz = -228.55189 + (((tickAnim - 2) / 288) * (-228.55189-(-228.55189)));
+        else if (tickAnim >= 5 && tickAnim < 7) {
+            xx = -8.92117 + (((tickAnim - 5) / 2) * (-8.92117-(-8.92117)));
+            yy = -15.30386 + (((tickAnim - 5) / 2) * (-15.30386-(-15.30386)));
+            zz = 11.87542 + (((tickAnim - 5) / 2) * (11.87542-(11.87542)));
         }
-        else if (tickAnim >= 290 && tickAnim < 297) {
-            xx = -121.41336 + (((tickAnim - 290) / 7) * (-22.90309-(-121.41336)));
-            yy = -37.02788 + (((tickAnim - 290) / 7) * (14.83599-(-37.02788)));
-            zz = -228.55189 + (((tickAnim - 290) / 7) * (-314.21207-(-228.55189)));
+        else if (tickAnim >= 7 && tickAnim < 290) {
+            xx = -8.92117 + (((tickAnim - 7) / 283) * (-8.92117-(-8.92117)));
+            yy = -15.30386 + (((tickAnim - 7) / 283) * (-15.30386-(-15.30386)));
+            zz = 11.87542 + (((tickAnim - 7) / 283) * (11.87542-(11.87542)));
         }
-        else if (tickAnim >= 297 && tickAnim < 300) {
-            xx = -22.90309 + (((tickAnim - 297) / 3) * (-121.41336-(-22.90309)));
-            yy = 14.83599 + (((tickAnim - 297) / 3) * (-37.02788-(14.83599)));
-            zz = -314.21207 + (((tickAnim - 297) / 3) * (-228.55189-(-314.21207)));
+        else if (tickAnim >= 290 && tickAnim < 298) {
+            xx = -8.92117 + (((tickAnim - 290) / 8) * (-8.92117-(-8.92117)));
+            yy = -15.30386 + (((tickAnim - 290) / 8) * (-15.30386-(-15.30386)));
+            zz = 11.87542 + (((tickAnim - 290) / 8) * (11.87542-(11.87542)));
+        }
+        else if (tickAnim >= 298 && tickAnim < 310) {
+            xx = -8.92117 + (((tickAnim - 298) / 12) * (0-(-8.92117)));
+            yy = -15.30386 + (((tickAnim - 298) / 12) * (0-(-15.30386)));
+            zz = 11.87542 + (((tickAnim - 298) / 12) * (0-(11.87542)));
         }
         else {
             xx = 0;
@@ -1730,25 +1840,35 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 2) {
-            xx = 2.49999 + (((tickAnim - 0) / 2) * (2.49999-(2.49999)));
-            yy = -67.5 + (((tickAnim - 0) / 2) * (-67.5-(-67.5)));
-            zz = 0.00003 + (((tickAnim - 0) / 2) * (0.00003-(0.00003)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (2.49999-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-67.5-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0.00003-(0)));
         }
-        else if (tickAnim >= 2 && tickAnim < 5) {
-            xx = 2.49999 + (((tickAnim - 2) / 3) * (0-(2.49999)));
-            yy = -67.5 + (((tickAnim - 2) / 3) * (-27.5-(-67.5)));
-            zz = 0.00003 + (((tickAnim - 2) / 3) * (0-(0.00003)));
+        else if (tickAnim >= 5 && tickAnim < 7) {
+            xx = 2.49999 + (((tickAnim - 5) / 2) * (2.49999-(2.49999)));
+            yy = -67.5 + (((tickAnim - 5) / 2) * (-67.5-(-67.5)));
+            zz = 0.00003 + (((tickAnim - 5) / 2) * (0.00003-(0.00003)));
         }
-        else if (tickAnim >= 5 && tickAnim < 290) {
-            xx = 0 + (((tickAnim - 5) / 285) * (0-(0)));
-            yy = -27.5 + (((tickAnim - 5) / 285) * (-27.5-(-27.5)));
-            zz = 0 + (((tickAnim - 5) / 285) * (0-(0)));
+        else if (tickAnim >= 7 && tickAnim < 10) {
+            xx = 2.49999 + (((tickAnim - 7) / 3) * (0-(2.49999)));
+            yy = -67.5 + (((tickAnim - 7) / 3) * (-27.5-(-67.5)));
+            zz = 0.00003 + (((tickAnim - 7) / 3) * (0-(0.00003)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 290) {
+            xx = 0 + (((tickAnim - 10) / 280) * (0-(0)));
+            yy = -27.5 + (((tickAnim - 10) / 280) * (-27.5-(-27.5)));
+            zz = 0 + (((tickAnim - 10) / 280) * (0-(0)));
         }
         else if (tickAnim >= 290 && tickAnim < 300) {
             xx = 0 + (((tickAnim - 290) / 10) * (2.49999-(0)));
             yy = -27.5 + (((tickAnim - 290) / 10) * (-67.5-(-27.5)));
             zz = 0 + (((tickAnim - 290) / 10) * (0.00003-(0)));
+        }
+        else if (tickAnim >= 300 && tickAnim < 310) {
+            xx = 2.49999 + (((tickAnim - 300) / 10) * (0-(2.49999)));
+            yy = -67.5 + (((tickAnim - 300) / 10) * (0-(-67.5)));
+            zz = 0.00003 + (((tickAnim - 300) / 10) * (0-(0.00003)));
         }
         else {
             xx = 0;
@@ -1758,25 +1878,35 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
         this.setRotateAngle(backleftleg, backleftleg.rotateAngleX + (float) Math.toRadians(xx), backleftleg.rotateAngleY + (float) Math.toRadians(yy), backleftleg.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 2) {
-            xx = 2 + (((tickAnim - 0) / 2) * (2-(2)));
-            yy = -0.5 + (((tickAnim - 0) / 2) * (-0.5-(-0.5)));
-            zz = 0 + (((tickAnim - 0) / 2) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (2-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-0.5-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 2 && tickAnim < 5) {
-            xx = 2 + (((tickAnim - 2) / 3) * (-5-(2)));
-            yy = -0.5 + (((tickAnim - 2) / 3) * (1-(-0.5)));
-            zz = 0 + (((tickAnim - 2) / 3) * (-5-(0)));
+        else if (tickAnim >= 5 && tickAnim < 7) {
+            xx = 2 + (((tickAnim - 5) / 2) * (2-(2)));
+            yy = -0.5 + (((tickAnim - 5) / 2) * (-0.5-(-0.5)));
+            zz = 0 + (((tickAnim - 5) / 2) * (0-(0)));
         }
-        else if (tickAnim >= 5 && tickAnim < 290) {
-            xx = -5 + (((tickAnim - 5) / 285) * (-5-(-5)));
-            yy = 1 + (((tickAnim - 5) / 285) * (1-(1)));
-            zz = -5 + (((tickAnim - 5) / 285) * (-5-(-5)));
+        else if (tickAnim >= 7 && tickAnim < 10) {
+            xx = 2 + (((tickAnim - 7) / 3) * (-5-(2)));
+            yy = -0.5 + (((tickAnim - 7) / 3) * (1-(-0.5)));
+            zz = 0 + (((tickAnim - 7) / 3) * (-5-(0)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 290) {
+            xx = -5 + (((tickAnim - 10) / 280) * (-5-(-5)));
+            yy = 1 + (((tickAnim - 10) / 280) * (1-(1)));
+            zz = -5 + (((tickAnim - 10) / 280) * (-5-(-5)));
         }
         else if (tickAnim >= 290 && tickAnim < 300) {
             xx = -5 + (((tickAnim - 290) / 10) * (2-(-5)));
             yy = 1 + (((tickAnim - 290) / 10) * (-0.5-(1)));
             zz = -5 + (((tickAnim - 290) / 10) * (0-(-5)));
+        }
+        else if (tickAnim >= 300 && tickAnim < 310) {
+            xx = 2 + (((tickAnim - 300) / 10) * (0-(2)));
+            yy = -0.5 + (((tickAnim - 300) / 10) * (0-(-0.5)));
+            zz = 0 + (((tickAnim - 300) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1790,25 +1920,35 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 2) {
-            xx = 71.04414 + (((tickAnim - 0) / 2) * (71.04414-(71.04414)));
-            yy = 102.09003 + (((tickAnim - 0) / 2) * (102.09003-(102.09003)));
-            zz = 73.7627 + (((tickAnim - 0) / 2) * (73.7627-(73.7627)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (71.04414-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (102.09003-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (73.7627-(0)));
         }
-        else if (tickAnim >= 2 && tickAnim < 5) {
-            xx = 71.04414 + (((tickAnim - 2) / 3) * (0-(71.04414)));
-            yy = 102.09003 + (((tickAnim - 2) / 3) * (90-(102.09003)));
-            zz = 73.7627 + (((tickAnim - 2) / 3) * (0-(73.7627)));
+        else if (tickAnim >= 5 && tickAnim < 7) {
+            xx = 71.04414 + (((tickAnim - 5) / 2) * (71.04414-(71.04414)));
+            yy = 102.09003 + (((tickAnim - 5) / 2) * (102.09003-(102.09003)));
+            zz = 73.7627 + (((tickAnim - 5) / 2) * (73.7627-(73.7627)));
         }
-        else if (tickAnim >= 5 && tickAnim < 290) {
-            xx = 0 + (((tickAnim - 5) / 285) * (0-(0)));
-            yy = 90 + (((tickAnim - 5) / 285) * (90-(90)));
-            zz = 0 + (((tickAnim - 5) / 285) * (0-(0)));
+        else if (tickAnim >= 7 && tickAnim < 10) {
+            xx = 71.04414 + (((tickAnim - 7) / 3) * (0-(71.04414)));
+            yy = 102.09003 + (((tickAnim - 7) / 3) * (90-(102.09003)));
+            zz = 73.7627 + (((tickAnim - 7) / 3) * (0-(73.7627)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 290) {
+            xx = 0 + (((tickAnim - 10) / 280) * (0-(0)));
+            yy = 90 + (((tickAnim - 10) / 280) * (90-(90)));
+            zz = 0 + (((tickAnim - 10) / 280) * (0-(0)));
         }
         else if (tickAnim >= 290 && tickAnim < 300) {
             xx = 0 + (((tickAnim - 290) / 10) * (71.04414-(0)));
             yy = 90 + (((tickAnim - 290) / 10) * (102.09003-(90)));
             zz = 0 + (((tickAnim - 290) / 10) * (73.7627-(0)));
+        }
+        else if (tickAnim >= 300 && tickAnim < 310) {
+            xx = 71.04414 + (((tickAnim - 300) / 10) * (0-(71.04414)));
+            yy = 102.09003 + (((tickAnim - 300) / 10) * (0-(102.09003)));
+            zz = 73.7627 + (((tickAnim - 300) / 10) * (0-(73.7627)));
         }
         else {
             xx = 0;
@@ -1820,20 +1960,30 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 4) {
-            xx = 2.49999 + (((tickAnim - 0) / 4) * (0-(2.49999)));
-            yy = 67.5 + (((tickAnim - 0) / 4) * (27.5-(67.5)));
-            zz = -0.00003 + (((tickAnim - 0) / 4) * (0-(-0.00003)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (2.49999-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (67.5-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (-0.00003-(0)));
         }
-        else if (tickAnim >= 4 && tickAnim < 290) {
-            xx = 0 + (((tickAnim - 4) / 286) * (0-(0)));
-            yy = 27.5 + (((tickAnim - 4) / 286) * (27.5-(27.5)));
-            zz = 0 + (((tickAnim - 4) / 286) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 9) {
+            xx = 2.49999 + (((tickAnim - 5) / 4) * (0-(2.49999)));
+            yy = 67.5 + (((tickAnim - 5) / 4) * (27.5-(67.5)));
+            zz = -0.00003 + (((tickAnim - 5) / 4) * (0-(-0.00003)));
+        }
+        else if (tickAnim >= 9 && tickAnim < 290) {
+            xx = 0 + (((tickAnim - 9) / 281) * (0-(0)));
+            yy = 27.5 + (((tickAnim - 9) / 281) * (27.5-(27.5)));
+            zz = 0 + (((tickAnim - 9) / 281) * (0-(0)));
         }
         else if (tickAnim >= 290 && tickAnim < 300) {
             xx = 0 + (((tickAnim - 290) / 10) * (2.49999-(0)));
             yy = 27.5 + (((tickAnim - 290) / 10) * (67.5-(27.5)));
             zz = 0 + (((tickAnim - 290) / 10) * (-0.00003-(0)));
+        }
+        else if (tickAnim >= 300 && tickAnim < 310) {
+            xx = 2.49999 + (((tickAnim - 300) / 10) * (0-(2.49999)));
+            yy = 67.5 + (((tickAnim - 300) / 10) * (0-(67.5)));
+            zz = -0.00003 + (((tickAnim - 300) / 10) * (0-(-0.00003)));
         }
         else {
             xx = 0;
@@ -1843,20 +1993,30 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
         this.setRotateAngle(backrightleg, backrightleg.rotateAngleX + (float) Math.toRadians(xx), backrightleg.rotateAngleY + (float) Math.toRadians(yy), backrightleg.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 4) {
-            xx = -2 + (((tickAnim - 0) / 4) * (5-(-2)));
-            yy = -0.5 + (((tickAnim - 0) / 4) * (1-(-0.5)));
-            zz = 0 + (((tickAnim - 0) / 4) * (-5-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (-2-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-0.5-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 4 && tickAnim < 290) {
-            xx = 5 + (((tickAnim - 4) / 286) * (5-(5)));
-            yy = 1 + (((tickAnim - 4) / 286) * (1-(1)));
-            zz = -5 + (((tickAnim - 4) / 286) * (-5-(-5)));
+        else if (tickAnim >= 5 && tickAnim < 9) {
+            xx = -2 + (((tickAnim - 5) / 4) * (5-(-2)));
+            yy = -0.5 + (((tickAnim - 5) / 4) * (1-(-0.5)));
+            zz = 0 + (((tickAnim - 5) / 4) * (-5-(0)));
+        }
+        else if (tickAnim >= 9 && tickAnim < 290) {
+            xx = 5 + (((tickAnim - 9) / 281) * (5-(5)));
+            yy = 1 + (((tickAnim - 9) / 281) * (1-(1)));
+            zz = -5 + (((tickAnim - 9) / 281) * (-5-(-5)));
         }
         else if (tickAnim >= 290 && tickAnim < 300) {
             xx = 5 + (((tickAnim - 290) / 10) * (-2-(5)));
             yy = 1 + (((tickAnim - 290) / 10) * (-0.5-(1)));
             zz = -5 + (((tickAnim - 290) / 10) * (0-(-5)));
+        }
+        else if (tickAnim >= 300 && tickAnim < 310) {
+            xx = -2 + (((tickAnim - 300) / 10) * (0-(-2)));
+            yy = -0.5 + (((tickAnim - 300) / 10) * (0-(-0.5)));
+            zz = 0 + (((tickAnim - 300) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1870,20 +2030,30 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 4) {
-            xx = 71.04414 + (((tickAnim - 0) / 4) * (0-(71.04414)));
-            yy = -102.09003 + (((tickAnim - 0) / 4) * (-90-(-102.09003)));
-            zz = -73.7627 + (((tickAnim - 0) / 4) * (0-(-73.7627)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (71.04414-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (-102.09003-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (-73.7627-(0)));
         }
-        else if (tickAnim >= 4 && tickAnim < 290) {
-            xx = 0 + (((tickAnim - 4) / 286) * (0-(0)));
-            yy = -90 + (((tickAnim - 4) / 286) * (-90-(-90)));
-            zz = 0 + (((tickAnim - 4) / 286) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 9) {
+            xx = 71.04414 + (((tickAnim - 5) / 4) * (0-(71.04414)));
+            yy = -102.09003 + (((tickAnim - 5) / 4) * (-90-(-102.09003)));
+            zz = -73.7627 + (((tickAnim - 5) / 4) * (0-(-73.7627)));
+        }
+        else if (tickAnim >= 9 && tickAnim < 290) {
+            xx = 0 + (((tickAnim - 9) / 281) * (0-(0)));
+            yy = -90 + (((tickAnim - 9) / 281) * (-90-(-90)));
+            zz = 0 + (((tickAnim - 9) / 281) * (0-(0)));
         }
         else if (tickAnim >= 290 && tickAnim < 300) {
             xx = 0 + (((tickAnim - 290) / 10) * (71.04414-(0)));
             yy = -90 + (((tickAnim - 290) / 10) * (-102.09003-(-90)));
             zz = 0 + (((tickAnim - 290) / 10) * (-73.7627-(0)));
+        }
+        else if (tickAnim >= 300 && tickAnim < 310) {
+            xx = 71.04414 + (((tickAnim - 300) / 10) * (0-(71.04414)));
+            yy = -102.09003 + (((tickAnim - 300) / 10) * (0-(-102.09003)));
+            zz = -73.7627 + (((tickAnim - 300) / 10) * (0-(-73.7627)));
         }
         else {
             xx = 0;
@@ -1896,14 +2066,19 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 5) {
-            xx = -5 + (((tickAnim - 0) / 5) * (0-(-5)));
-            yy = 10 + (((tickAnim - 0) / 5) * (-107.5-(10)));
+            xx = 0 + (((tickAnim - 0) / 5) * (-5-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (10-(0)));
             zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 5 && tickAnim < 290) {
-            xx = 0 + (((tickAnim - 5) / 285) * (0-(0)));
-            yy = -107.5 + (((tickAnim - 5) / 285) * (-107.5-(-107.5)));
-            zz = 0 + (((tickAnim - 5) / 285) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 10) {
+            xx = -5 + (((tickAnim - 5) / 5) * (0-(-5)));
+            yy = 10 + (((tickAnim - 5) / 5) * (-107.5-(10)));
+            zz = 0 + (((tickAnim - 5) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 290) {
+            xx = 0 + (((tickAnim - 10) / 280) * (0-(0)));
+            yy = -107.5 + (((tickAnim - 10) / 280) * (-107.5-(-107.5)));
+            zz = 0 + (((tickAnim - 10) / 280) * (0-(0)));
         }
         else if (tickAnim >= 290 && tickAnim < 294) {
             xx = 0 + (((tickAnim - 290) / 4) * (0-(0)));
@@ -1921,8 +2096,8 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 298) / 5) * (0-(0)));
         }
         else if (tickAnim >= 303 && tickAnim < 310) {
-            xx = -2.5 + (((tickAnim - 303) / 7) * (-5-(-2.5)));
-            yy = 7.5 + (((tickAnim - 303) / 7) * (10-(7.5)));
+            xx = -2.5 + (((tickAnim - 303) / 7) * (0-(-2.5)));
+            yy = 7.5 + (((tickAnim - 303) / 7) * (0-(7.5)));
             zz = 0 + (((tickAnim - 303) / 7) * (0-(0)));
         }
         else {
@@ -1935,20 +2110,25 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 2) {
-            xx = 0 + (((tickAnim - 0) / 2) * (0-(0)));
-            yy = 10 + (((tickAnim - 0) / 2) * (19.17-(10)));
-            zz = 0 + (((tickAnim - 0) / 2) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (10-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 2 && tickAnim < 5) {
-            xx = 0 + (((tickAnim - 2) / 3) * (0-(0)));
-            yy = 19.17 + (((tickAnim - 2) / 3) * (-70-(19.17)));
-            zz = 0 + (((tickAnim - 2) / 3) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 7) {
+            xx = 0 + (((tickAnim - 5) / 2) * (0-(0)));
+            yy = 10 + (((tickAnim - 5) / 2) * (19.17-(10)));
+            zz = 0 + (((tickAnim - 5) / 2) * (0-(0)));
         }
-        else if (tickAnim >= 5 && tickAnim < 290) {
-            xx = 0 + (((tickAnim - 5) / 285) * (0-(0)));
-            yy = -70 + (((tickAnim - 5) / 285) * (-70-(-70)));
-            zz = 0 + (((tickAnim - 5) / 285) * (0-(0)));
+        else if (tickAnim >= 7 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 7) / 3) * (0-(0)));
+            yy = 19.17 + (((tickAnim - 7) / 3) * (-70-(19.17)));
+            zz = 0 + (((tickAnim - 7) / 3) * (0-(0)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 290) {
+            xx = 0 + (((tickAnim - 10) / 280) * (0-(0)));
+            yy = -70 + (((tickAnim - 10) / 280) * (-70-(-70)));
+            zz = 0 + (((tickAnim - 10) / 280) * (0-(0)));
         }
         else if (tickAnim >= 290 && tickAnim < 303) {
             xx = 0 + (((tickAnim - 290) / 13) * (0-(0)));
@@ -1962,7 +2142,7 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
         }
         else if (tickAnim >= 308 && tickAnim < 310) {
             xx = 0 + (((tickAnim - 308) / 2) * (0-(0)));
-            yy = 13.44 + (((tickAnim - 308) / 2) * (10-(13.44)));
+            yy = 13.44 + (((tickAnim - 308) / 2) * (0-(13.44)));
             zz = 0 + (((tickAnim - 308) / 2) * (0-(0)));
         }
         else {
@@ -1975,20 +2155,25 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 2) {
-            xx = 0 + (((tickAnim - 0) / 2) * (0-(0)));
-            yy = 7.5 + (((tickAnim - 0) / 2) * (28.33-(7.5)));
-            zz = 0 + (((tickAnim - 0) / 2) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 5) * (7.5-(0)));
+            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
         }
-        else if (tickAnim >= 2 && tickAnim < 5) {
-            xx = 0 + (((tickAnim - 2) / 3) * (0-(0)));
-            yy = 28.33 + (((tickAnim - 2) / 3) * (-5-(28.33)));
-            zz = 0 + (((tickAnim - 2) / 3) * (0-(0)));
+        else if (tickAnim >= 5 && tickAnim < 7) {
+            xx = 0 + (((tickAnim - 5) / 2) * (0-(0)));
+            yy = 7.5 + (((tickAnim - 5) / 2) * (28.33-(7.5)));
+            zz = 0 + (((tickAnim - 5) / 2) * (0-(0)));
         }
-        else if (tickAnim >= 5 && tickAnim < 290) {
-            xx = 0 + (((tickAnim - 5) / 285) * (0-(0)));
-            yy = -5 + (((tickAnim - 5) / 285) * (-5-(-5)));
-            zz = 0 + (((tickAnim - 5) / 285) * (0-(0)));
+        else if (tickAnim >= 7 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 7) / 3) * (0-(0)));
+            yy = 28.33 + (((tickAnim - 7) / 3) * (-5-(28.33)));
+            zz = 0 + (((tickAnim - 7) / 3) * (0-(0)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 290) {
+            xx = 0 + (((tickAnim - 10) / 280) * (0-(0)));
+            yy = -5 + (((tickAnim - 10) / 280) * (-5-(-5)));
+            zz = 0 + (((tickAnim - 10) / 280) * (0-(0)));
         }
         else if (tickAnim >= 290 && tickAnim < 303) {
             xx = 0 + (((tickAnim - 290) / 13) * (0-(0)));
@@ -2002,7 +2187,7 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
         }
         else if (tickAnim >= 308 && tickAnim < 310) {
             xx = 0 + (((tickAnim - 308) / 2) * (0-(0)));
-            yy = 9.38 + (((tickAnim - 308) / 2) * (7.5-(9.38)));
+            yy = 9.38 + (((tickAnim - 308) / 2) * (0-(9.38)));
             zz = 0 + (((tickAnim - 308) / 2) * (0-(0)));
         }
         else {
@@ -2011,7 +2196,6 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             zz = 0;
         }
         this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(xx), tail3.rotateAngleY + (float) Math.toRadians(yy), tail3.rotateAngleZ + (float) Math.toRadians(zz));
-
     }
     public void animBask(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraBrodiechelys entity = (EntityPrehistoricFloraBrodiechelys) entitylivingbaseIn;
@@ -2020,20 +2204,20 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-         if (tickAnim >= 0 && tickAnim < 56) {
-            xx = -95.5114 + (((tickAnim - 0) / 56) * (-95.5114-(-95.5114)));
-            yy = 34.18897 + (((tickAnim - 0) / 56) * (34.18897-(34.18897)));
-            zz = -97.725 + (((tickAnim - 0) / 56) * (-97.725-(-97.725)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (-9.18389-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (3.50189-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (-13.23176-(0)));
         }
-        else if (tickAnim >= 56 && tickAnim < 66) {
-            xx = -95.5114 + (((tickAnim - 56) / 10) * (-94.69546-(-95.5114)));
-            yy = 34.18897 + (((tickAnim - 56) / 10) * (36.66586-(34.18897)));
-            zz = -97.725 + (((tickAnim - 56) / 10) * (-93.30514-(-97.725)));
+        else if (tickAnim >= 8 && tickAnim < 64) {
+            xx = -9.18389 + (((tickAnim - 8) / 56) * (-9.18389-(-9.18389)));
+            yy = 3.50189 + (((tickAnim - 8) / 56) * (3.50189-(3.50189)));
+            zz = -13.23176 + (((tickAnim - 8) / 56) * (-13.23176-(-13.23176)));
         }
-        else if (tickAnim >= 66 && tickAnim < 78) {
-            xx = -94.69546 + (((tickAnim - 66) / 12) * (-98.18361-(-94.69546)));
-            yy = 36.66586 + (((tickAnim - 66) / 12) * (33.3877-(36.66586)));
-            zz = -93.30514 + (((tickAnim - 66) / 12) * (-98.85587-(-93.30514)));
+        else if (tickAnim >= 64 && tickAnim < 78) {
+            xx = -9.18389 + (((tickAnim - 64) / 14) * (-98.18361-(-9.18389)));
+            yy = 3.50189 + (((tickAnim - 64) / 14) * (33.3877-(3.50189)));
+            zz = -13.23176 + (((tickAnim - 64) / 14) * (-98.85587-(-13.23176)));
         }
         else if (tickAnim >= 78 && tickAnim < 102) {
             xx = -98.18361 + (((tickAnim - 78) / 24) * (-100.5114-(-98.18361)));
@@ -2050,10 +2234,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             yy = 34.18897 + (((tickAnim - 398) / 33) * (34.18897-(34.18897)));
             zz = -97.725 + (((tickAnim - 398) / 33) * (-97.725-(-97.725)));
         }
-        else if (tickAnim >= 431 && tickAnim < 480) {
-            xx = -95.5114 + (((tickAnim - 431) / 49) * (-95.5114-(-95.5114)));
-            yy = 34.18897 + (((tickAnim - 431) / 49) * (34.18897-(34.18897)));
-            zz = -97.725 + (((tickAnim - 431) / 49) * (-97.725-(-97.725)));
+        else if (tickAnim >= 431 && tickAnim < 470) {
+            xx = -95.5114 + (((tickAnim - 431) / 39) * (-95.5114-(-95.5114)));
+            yy = 34.18897 + (((tickAnim - 431) / 39) * (34.18897-(34.18897)));
+            zz = -97.725 + (((tickAnim - 431) / 39) * (-97.725-(-97.725)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = -95.5114 + (((tickAnim - 470) / 10) * (0-(-95.5114)));
+            yy = 34.18897 + (((tickAnim - 470) / 10) * (0-(34.18897)));
+            zz = -97.725 + (((tickAnim - 470) / 10) * (0-(-97.725)));
         }
         else {
             xx = 0;
@@ -2063,15 +2252,30 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
         this.setRotateAngle(frontrightleg, frontrightleg.rotateAngleX + (float) Math.toRadians(xx), frontrightleg.rotateAngleY + (float) Math.toRadians(yy), frontrightleg.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 56) {
-            xx = 2.25 + (((tickAnim - 0) / 56) * (2.25-(2.25)));
-            yy = 0.25 + (((tickAnim - 0) / 56) * (0.25-(0.25)));
-            zz = -3 + (((tickAnim - 0) / 56) * (-3-(-3)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (2.25-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (0.25-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (0.625-(0)));
         }
-        else if (tickAnim >= 56 && tickAnim < 480) {
-            xx = 2.25 + (((tickAnim - 56) / 424) * (2.25-(2.25)));
-            yy = 0.25 + (((tickAnim - 56) / 424) * (0.25-(0.25)));
-            zz = -3 + (((tickAnim - 56) / 424) * (-3-(-3)));
+        else if (tickAnim >= 8 && tickAnim < 64) {
+            xx = 2.25 + (((tickAnim - 8) / 56) * (2.25-(2.25)));
+            yy = 0.25 + (((tickAnim - 8) / 56) * (0.25-(0.25)));
+            zz = 0.625 + (((tickAnim - 8) / 56) * (0.625-(0.625)));
+        }
+        else if (tickAnim >= 64 && tickAnim < 398) {
+            xx = 2.25 + (((tickAnim - 64) / 334) * (2.25-(2.25)));
+            yy = 0.25 + (((tickAnim - 64) / 334) * (0.25-(0.25)));
+            zz = 0.625 + (((tickAnim - 64) / 334) * (0.625-(0.625)));
+        }
+        else if (tickAnim >= 398 && tickAnim < 470) {
+            xx = 2.25 + (((tickAnim - 398) / 72) * (0-(2.25)));
+            yy = 0.25 + (((tickAnim - 398) / 72) * (0-(0.25)));
+            zz = 0.625 + (((tickAnim - 398) / 72) * (0-(0.625)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = 0 + (((tickAnim - 470) / 10) * (0-(0)));
+            yy = 0 + (((tickAnim - 470) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 470) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -2085,30 +2289,50 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 56) {
-            xx = -121.41336 + (((tickAnim - 0) / 56) * (-121.41336-(-121.41336)));
-            yy = -37.02788 + (((tickAnim - 0) / 56) * (-37.02788-(-37.02788)));
-            zz = -228.55189 + (((tickAnim - 0) / 56) * (-228.55189-(-228.55189)));
+        if (tickAnim >= 0 && tickAnim < 4) {
+            xx = 0 + (((tickAnim - 0) / 4) * (-10.25-(0)));
+            yy = 0 + (((tickAnim - 0) / 4) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 4) * (10.5-(0)));
         }
-        else if (tickAnim >= 56 && tickAnim < 102) {
-            xx = -121.41336 + (((tickAnim - 56) / 46) * (-136.14137-(-121.41336)));
-            yy = -37.02788 + (((tickAnim - 56) / 46) * (-42.18485-(-37.02788)));
-            zz = -228.55189 + (((tickAnim - 56) / 46) * (-212.85392-(-228.55189)));
+        else if (tickAnim >= 4 && tickAnim < 8) {
+            xx = -10.25 + (((tickAnim - 4) / 4) * (-10.25-(-10.25)));
+            yy = 0 + (((tickAnim - 4) / 4) * (0-(0)));
+            zz = 10.5 + (((tickAnim - 4) / 4) * (12.25-(10.5)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 64) {
+            xx = -10.25 + (((tickAnim - 8) / 56) * (-10.25-(-10.25)));
+            yy = 0 + (((tickAnim - 8) / 56) * (0-(0)));
+            zz = 12.25 + (((tickAnim - 8) / 56) * (12.25-(12.25)));
+        }
+        else if (tickAnim >= 64 && tickAnim < 78) {
+            xx = -10.25 + (((tickAnim - 64) / 14) * (-10.25-(-10.25)));
+            yy = 0 + (((tickAnim - 64) / 14) * (0-(0)));
+            zz = 12.25 + (((tickAnim - 64) / 14) * (12.25-(12.25)));
+        }
+        else if (tickAnim >= 78 && tickAnim < 102) {
+            xx = -10.25 + (((tickAnim - 78) / 24) * (-10.25-(-10.25)));
+            yy = 0 + (((tickAnim - 78) / 24) * (0-(0)));
+            zz = 12.25 + (((tickAnim - 78) / 24) * (12.25-(12.25)));
         }
         else if (tickAnim >= 102 && tickAnim < 398) {
-            xx = -136.14137 + (((tickAnim - 102) / 296) * (-136.14137-(-136.14137)));
-            yy = -42.18485 + (((tickAnim - 102) / 296) * (-42.18485-(-42.18485)));
-            zz = -212.85392 + (((tickAnim - 102) / 296) * (-212.85392-(-212.85392)));
+            xx = -10.25 + (((tickAnim - 102) / 296) * (-10.25-(-10.25)));
+            yy = 0 + (((tickAnim - 102) / 296) * (0-(0)));
+            zz = 12.25 + (((tickAnim - 102) / 296) * (12.25-(12.25)));
         }
         else if (tickAnim >= 398 && tickAnim < 431) {
-            xx = -136.14137 + (((tickAnim - 398) / 33) * (-121.41336-(-136.14137)));
-            yy = -42.18485 + (((tickAnim - 398) / 33) * (-37.02788-(-42.18485)));
-            zz = -212.85392 + (((tickAnim - 398) / 33) * (-228.55189-(-212.85392)));
+            xx = -10.25 + (((tickAnim - 398) / 33) * (-10.25-(-10.25)));
+            yy = 0 + (((tickAnim - 398) / 33) * (0-(0)));
+            zz = 12.25 + (((tickAnim - 398) / 33) * (12.25-(12.25)));
         }
-        else if (tickAnim >= 431 && tickAnim < 480) {
-            xx = -121.41336 + (((tickAnim - 431) / 49) * (-121.41336-(-121.41336)));
-            yy = -37.02788 + (((tickAnim - 431) / 49) * (-37.02788-(-37.02788)));
-            zz = -228.55189 + (((tickAnim - 431) / 49) * (-228.55189-(-228.55189)));
+        else if (tickAnim >= 431 && tickAnim < 470) {
+            xx = -10.25 + (((tickAnim - 431) / 39) * (-10.25-(-10.25)));
+            yy = 0 + (((tickAnim - 431) / 39) * (0-(0)));
+            zz = 12.25 + (((tickAnim - 431) / 39) * (12.25-(12.25)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = -10.25 + (((tickAnim - 470) / 10) * (0-(-10.25)));
+            yy = 0 + (((tickAnim - 470) / 10) * (0-(0)));
+            zz = 12.25 + (((tickAnim - 470) / 10) * (0-(12.25)));
         }
         else {
             xx = 0;
@@ -2120,15 +2344,20 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 56) {
-            xx = 2.49999 + (((tickAnim - 0) / 56) * (2.49999-(2.49999)));
-            yy = 67.5 + (((tickAnim - 0) / 56) * (67.5-(67.5)));
-            zz = -0.00003 + (((tickAnim - 0) / 56) * (-0.00003-(-0.00003)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (2.49999-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (67.5-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (-0.00003-(0)));
         }
-        else if (tickAnim >= 56 && tickAnim < 90) {
-            xx = 2.49999 + (((tickAnim - 56) / 34) * (12.49999-(2.49999)));
-            yy = 67.5 + (((tickAnim - 56) / 34) * (37.5-(67.5)));
-            zz = -0.00003 + (((tickAnim - 56) / 34) * (-0.00002-(-0.00003)));
+        else if (tickAnim >= 8 && tickAnim < 64) {
+            xx = 2.49999 + (((tickAnim - 8) / 56) * (2.49999-(2.49999)));
+            yy = 67.5 + (((tickAnim - 8) / 56) * (67.5-(67.5)));
+            zz = -0.00003 + (((tickAnim - 8) / 56) * (-0.00003-(-0.00003)));
+        }
+        else if (tickAnim >= 64 && tickAnim < 90) {
+            xx = 2.49999 + (((tickAnim - 64) / 26) * (12.49999-(2.49999)));
+            yy = 67.5 + (((tickAnim - 64) / 26) * (37.5-(67.5)));
+            zz = -0.00003 + (((tickAnim - 64) / 26) * (-0.00002-(-0.00003)));
         }
         else if (tickAnim >= 90 && tickAnim < 398) {
             xx = 12.49999 + (((tickAnim - 90) / 308) * (12.49999-(12.49999)));
@@ -2140,10 +2369,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             yy = 37.5 + (((tickAnim - 398) / 18) * (67.5-(37.5)));
             zz = -0.00002 + (((tickAnim - 398) / 18) * (-0.00003-(-0.00002)));
         }
-        else if (tickAnim >= 416 && tickAnim < 480) {
-            xx = 2.49999 + (((tickAnim - 416) / 64) * (2.49999-(2.49999)));
-            yy = 67.5 + (((tickAnim - 416) / 64) * (67.5-(67.5)));
-            zz = -0.00003 + (((tickAnim - 416) / 64) * (-0.00003-(-0.00003)));
+        else if (tickAnim >= 416 && tickAnim < 470) {
+            xx = 2.49999 + (((tickAnim - 416) / 54) * (2.49999-(2.49999)));
+            yy = 67.5 + (((tickAnim - 416) / 54) * (67.5-(67.5)));
+            zz = -0.00003 + (((tickAnim - 416) / 54) * (-0.00003-(-0.00003)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = 2.49999 + (((tickAnim - 470) / 10) * (0-(2.49999)));
+            yy = 67.5 + (((tickAnim - 470) / 10) * (0-(67.5)));
+            zz = -0.00003 + (((tickAnim - 470) / 10) * (0-(-0.00003)));
         }
         else {
             xx = 0;
@@ -2153,15 +2387,20 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
         this.setRotateAngle(backrightleg, backrightleg.rotateAngleX + (float) Math.toRadians(xx), backrightleg.rotateAngleY + (float) Math.toRadians(yy), backrightleg.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 56) {
-            xx = -2 + (((tickAnim - 0) / 56) * (-2-(-2)));
-            yy = -0.5 + (((tickAnim - 0) / 56) * (-0.5-(-0.5)));
-            zz = 0 + (((tickAnim - 0) / 56) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (-2-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (-0.5-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
         }
-        else if (tickAnim >= 56 && tickAnim < 90) {
-            xx = -2 + (((tickAnim - 56) / 34) * (0-(-2)));
-            yy = -0.5 + (((tickAnim - 56) / 34) * (-0.5-(-0.5)));
-            zz = 0 + (((tickAnim - 56) / 34) * (3-(0)));
+        else if (tickAnim >= 8 && tickAnim < 64) {
+            xx = -2 + (((tickAnim - 8) / 56) * (-2-(-2)));
+            yy = -0.5 + (((tickAnim - 8) / 56) * (-0.5-(-0.5)));
+            zz = 0 + (((tickAnim - 8) / 56) * (0-(0)));
+        }
+        else if (tickAnim >= 64 && tickAnim < 90) {
+            xx = -2 + (((tickAnim - 64) / 26) * (0-(-2)));
+            yy = -0.5 + (((tickAnim - 64) / 26) * (-0.5-(-0.5)));
+            zz = 0 + (((tickAnim - 64) / 26) * (3-(0)));
         }
         else if (tickAnim >= 90 && tickAnim < 398) {
             xx = 0 + (((tickAnim - 90) / 308) * (0-(0)));
@@ -2173,10 +2412,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             yy = -0.5 + (((tickAnim - 398) / 18) * (-0.5-(-0.5)));
             zz = 3 + (((tickAnim - 398) / 18) * (0-(3)));
         }
-        else if (tickAnim >= 416 && tickAnim < 480) {
-            xx = -2 + (((tickAnim - 416) / 64) * (-2-(-2)));
-            yy = -0.5 + (((tickAnim - 416) / 64) * (-0.5-(-0.5)));
-            zz = 0 + (((tickAnim - 416) / 64) * (0-(0)));
+        else if (tickAnim >= 416 && tickAnim < 470) {
+            xx = -2 + (((tickAnim - 416) / 54) * (-2-(-2)));
+            yy = -0.5 + (((tickAnim - 416) / 54) * (-0.5-(-0.5)));
+            zz = 0 + (((tickAnim - 416) / 54) * (0-(0)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = -2 + (((tickAnim - 470) / 10) * (0-(-2)));
+            yy = -0.5 + (((tickAnim - 470) / 10) * (0-(-0.5)));
+            zz = 0 + (((tickAnim - 470) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -2190,15 +2434,20 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 56) {
-            xx = 71.04414 + (((tickAnim - 0) / 56) * (71.04414-(71.04414)));
-            yy = -102.09003 + (((tickAnim - 0) / 56) * (-102.09003-(-102.09003)));
-            zz = -73.7627 + (((tickAnim - 0) / 56) * (-73.7627-(-73.7627)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (71.04414-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (-102.09003-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (-73.7627-(0)));
         }
-        else if (tickAnim >= 56 && tickAnim < 90) {
-            xx = 71.04414 + (((tickAnim - 56) / 34) * (8.44548-(71.04414)));
-            yy = -102.09003 + (((tickAnim - 56) / 34) * (-46.6261-(-102.09003)));
-            zz = -73.7627 + (((tickAnim - 56) / 34) * (-4.99847-(-73.7627)));
+        else if (tickAnim >= 8 && tickAnim < 64) {
+            xx = 71.04414 + (((tickAnim - 8) / 56) * (71.04414-(71.04414)));
+            yy = -102.09003 + (((tickAnim - 8) / 56) * (-102.09003-(-102.09003)));
+            zz = -73.7627 + (((tickAnim - 8) / 56) * (-73.7627-(-73.7627)));
+        }
+        else if (tickAnim >= 64 && tickAnim < 90) {
+            xx = 71.04414 + (((tickAnim - 64) / 26) * (8.44548-(71.04414)));
+            yy = -102.09003 + (((tickAnim - 64) / 26) * (-46.6261-(-102.09003)));
+            zz = -73.7627 + (((tickAnim - 64) / 26) * (-4.99847-(-73.7627)));
         }
         else if (tickAnim >= 90 && tickAnim < 398) {
             xx = 8.44548 + (((tickAnim - 90) / 308) * (8.44548-(8.44548)));
@@ -2210,10 +2459,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             yy = -46.6261 + (((tickAnim - 398) / 18) * (-102.09003-(-46.6261)));
             zz = -4.99847 + (((tickAnim - 398) / 18) * (-73.7627-(-4.99847)));
         }
-        else if (tickAnim >= 416 && tickAnim < 480) {
-            xx = 71.04414 + (((tickAnim - 416) / 64) * (71.04414-(71.04414)));
-            yy = -102.09003 + (((tickAnim - 416) / 64) * (-102.09003-(-102.09003)));
-            zz = -73.7627 + (((tickAnim - 416) / 64) * (-73.7627-(-73.7627)));
+        else if (tickAnim >= 416 && tickAnim < 470) {
+            xx = 71.04414 + (((tickAnim - 416) / 54) * (71.04414-(71.04414)));
+            yy = -102.09003 + (((tickAnim - 416) / 54) * (-102.09003-(-102.09003)));
+            zz = -73.7627 + (((tickAnim - 416) / 54) * (-73.7627-(-73.7627)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = 71.04414 + (((tickAnim - 470) / 10) * (0-(71.04414)));
+            yy = -102.09003 + (((tickAnim - 470) / 10) * (0-(-102.09003)));
+            zz = -73.7627 + (((tickAnim - 470) / 10) * (0-(-73.7627)));
         }
         else {
             xx = 0;
@@ -2225,40 +2479,45 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 7) {
-            xx = -25 + (((tickAnim - 0) / 7) * (-24.04468-(-25)));
-            yy = 0 + (((tickAnim - 0) / 7) * (2.41627-(0)));
-            zz = 0 + (((tickAnim - 0) / 7) * (-1.12934-(0)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (-25-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
         }
-        else if (tickAnim >= 7 && tickAnim < 13) {
-            xx = -24.04468 + (((tickAnim - 7) / 6) * (-25.08377-(-24.04468)));
-            yy = 2.41627 + (((tickAnim - 7) / 6) * (4.53051-(2.41627)));
-            zz = -1.12934 + (((tickAnim - 7) / 6) * (-2.11751-(-1.12934)));
+        else if (tickAnim >= 8 && tickAnim < 15) {
+            xx = -25 + (((tickAnim - 8) / 7) * (-24.04468-(-25)));
+            yy = 0 + (((tickAnim - 8) / 7) * (2.41627-(0)));
+            zz = 0 + (((tickAnim - 8) / 7) * (-1.12934-(0)));
         }
-        else if (tickAnim >= 13 && tickAnim < 23) {
-            xx = -25.08377 + (((tickAnim - 13) / 10) * (-25.1108-(-25.08377)));
-            yy = 4.53051 + (((tickAnim - 13) / 10) * (4.69146-(4.53051)));
-            zz = -2.11751 + (((tickAnim - 13) / 10) * (-2.19598-(-2.11751)));
+        else if (tickAnim >= 15 && tickAnim < 21) {
+            xx = -24.04468 + (((tickAnim - 15) / 6) * (-25.08377-(-24.04468)));
+            yy = 2.41627 + (((tickAnim - 15) / 6) * (4.53051-(2.41627)));
+            zz = -1.12934 + (((tickAnim - 15) / 6) * (-2.11751-(-1.12934)));
         }
-        else if (tickAnim >= 23 && tickAnim < 29) {
-            xx = -25.1108 + (((tickAnim - 23) / 6) * (-24.05909-(-25.1108)));
-            yy = 4.69146 + (((tickAnim - 23) / 6) * (2.50214-(4.69146)));
-            zz = -2.19598 + (((tickAnim - 23) / 6) * (-1.1712-(-2.19598)));
+        else if (tickAnim >= 21 && tickAnim < 32) {
+            xx = -25.08377 + (((tickAnim - 21) / 11) * (-25.1108-(-25.08377)));
+            yy = 4.53051 + (((tickAnim - 21) / 11) * (4.69146-(4.53051)));
+            zz = -2.11751 + (((tickAnim - 21) / 11) * (-2.19598-(-2.11751)));
         }
-        else if (tickAnim >= 29 && tickAnim < 36) {
-            xx = -24.05909 + (((tickAnim - 29) / 7) * (-25-(-24.05909)));
-            yy = 2.50214 + (((tickAnim - 29) / 7) * (0-(2.50214)));
-            zz = -1.1712 + (((tickAnim - 29) / 7) * (0-(-1.1712)));
+        else if (tickAnim >= 32 && tickAnim < 38) {
+            xx = -25.1108 + (((tickAnim - 32) / 6) * (-24.05909-(-25.1108)));
+            yy = 4.69146 + (((tickAnim - 32) / 6) * (2.50214-(4.69146)));
+            zz = -2.19598 + (((tickAnim - 32) / 6) * (-1.1712-(-2.19598)));
         }
-        else if (tickAnim >= 36 && tickAnim < 49) {
-            xx = -25 + (((tickAnim - 36) / 13) * (-25.67-(-25)));
-            yy = 0 + (((tickAnim - 36) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 36) / 13) * (0-(0)));
+        else if (tickAnim >= 38 && tickAnim < 44) {
+            xx = -24.05909 + (((tickAnim - 38) / 6) * (-25-(-24.05909)));
+            yy = 2.50214 + (((tickAnim - 38) / 6) * (0-(2.50214)));
+            zz = -1.1712 + (((tickAnim - 38) / 6) * (0-(-1.1712)));
         }
-        else if (tickAnim >= 49 && tickAnim < 60) {
-            xx = -25.67 + (((tickAnim - 49) / 11) * (-24.41-(-25.67)));
-            yy = 0 + (((tickAnim - 49) / 11) * (0-(0)));
-            zz = 0 + (((tickAnim - 49) / 11) * (0-(0)));
+        else if (tickAnim >= 44 && tickAnim < 58) {
+            xx = -25 + (((tickAnim - 44) / 14) * (-25.67-(-25)));
+            yy = 0 + (((tickAnim - 44) / 14) * (0-(0)));
+            zz = 0 + (((tickAnim - 44) / 14) * (0-(0)));
+        }
+        else if (tickAnim >= 58 && tickAnim < 60) {
+            xx = -25.67 + (((tickAnim - 58) / 2) * (-24.41-(-25.67)));
+            yy = 0 + (((tickAnim - 58) / 2) * (0-(0)));
+            zz = 0 + (((tickAnim - 58) / 2) * (0-(0)));
         }
         else if (tickAnim >= 60 && tickAnim < 116) {
             xx = -24.41 + (((tickAnim - 60) / 56) * (-6.48-(-24.41)));
@@ -2285,10 +2544,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             yy = 0 + (((tickAnim - 434) / 22) * (-9.88695-(0)));
             zz = 0 + (((tickAnim - 434) / 22) * (1.50689-(0)));
         }
-        else if (tickAnim >= 456 && tickAnim < 480) {
-            xx = -16.21035 + (((tickAnim - 456) / 24) * (-25-(-16.21035)));
-            yy = -9.88695 + (((tickAnim - 456) / 24) * (0-(-9.88695)));
-            zz = 1.50689 + (((tickAnim - 456) / 24) * (0-(1.50689)));
+        else if (tickAnim >= 456 && tickAnim < 470) {
+            xx = -16.21035 + (((tickAnim - 456) / 14) * (-25-(-16.21035)));
+            yy = -9.88695 + (((tickAnim - 456) / 14) * (0-(-9.88695)));
+            zz = 1.50689 + (((tickAnim - 456) / 14) * (0-(1.50689)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = -25 + (((tickAnim - 470) / 10) * (0-(-25)));
+            yy = 0 + (((tickAnim - 470) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 470) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -2298,15 +2562,25 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
         this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(xx), neck.rotateAngleY + (float) Math.toRadians(yy), neck.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 36) {
-            xx = 0 + (((tickAnim - 0) / 36) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 36) * (0-(0)));
-            zz = -1 + (((tickAnim - 0) / 36) * (-1-(-1)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (-1-(0)));
         }
-        else if (tickAnim >= 36 && tickAnim < 480) {
-            xx = 0 + (((tickAnim - 36) / 444) * (0-(0)));
-            yy = 0 + (((tickAnim - 36) / 444) * (0-(0)));
-            zz = -1 + (((tickAnim - 36) / 444) * (-1-(-1)));
+        else if (tickAnim >= 8 && tickAnim < 44) {
+            xx = 0 + (((tickAnim - 8) / 36) * (0-(0)));
+            yy = 0 + (((tickAnim - 8) / 36) * (0-(0)));
+            zz = -1 + (((tickAnim - 8) / 36) * (-1-(-1)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 470) {
+            xx = 0 + (((tickAnim - 44) / 426) * (0-(0)));
+            yy = 0 + (((tickAnim - 44) / 426) * (0-(0)));
+            zz = -1 + (((tickAnim - 44) / 426) * (-1-(-1)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = 0 + (((tickAnim - 470) / 10) * (0-(0)));
+            yy = 0 + (((tickAnim - 470) / 10) * (0-(0)));
+            zz = -1 + (((tickAnim - 470) / 10) * (0-(-1)));
         }
         else {
             xx = 0;
@@ -2320,20 +2594,25 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 18) {
-            xx = -17.5 + (((tickAnim - 0) / 18) * (-17.576-(-17.5)));
-            yy = 0 + (((tickAnim - 0) / 18) * (3.10457-(0)));
-            zz = 0 + (((tickAnim - 0) / 18) * (-0.98697-(0)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (-17.5-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
         }
-        else if (tickAnim >= 18 && tickAnim < 36) {
-            xx = -17.576 + (((tickAnim - 18) / 18) * (-17.5-(-17.576)));
-            yy = 3.10457 + (((tickAnim - 18) / 18) * (0-(3.10457)));
-            zz = -0.98697 + (((tickAnim - 18) / 18) * (0-(-0.98697)));
+        else if (tickAnim >= 8 && tickAnim < 27) {
+            xx = -17.5 + (((tickAnim - 8) / 19) * (-17.576-(-17.5)));
+            yy = 0 + (((tickAnim - 8) / 19) * (3.10457-(0)));
+            zz = 0 + (((tickAnim - 8) / 19) * (-0.98697-(0)));
         }
-        else if (tickAnim >= 36 && tickAnim < 116) {
-            xx = -17.5 + (((tickAnim - 36) / 80) * (-2.5-(-17.5)));
-            yy = 0 + (((tickAnim - 36) / 80) * (0-(0)));
-            zz = 0 + (((tickAnim - 36) / 80) * (0-(0)));
+        else if (tickAnim >= 27 && tickAnim < 44) {
+            xx = -17.576 + (((tickAnim - 27) / 17) * (-17.5-(-17.576)));
+            yy = 3.10457 + (((tickAnim - 27) / 17) * (0-(3.10457)));
+            zz = -0.98697 + (((tickAnim - 27) / 17) * (0-(-0.98697)));
+        }
+        else if (tickAnim >= 44 && tickAnim < 116) {
+            xx = -17.5 + (((tickAnim - 44) / 72) * (-2.5-(-17.5)));
+            yy = 0 + (((tickAnim - 44) / 72) * (0-(0)));
+            zz = 0 + (((tickAnim - 44) / 72) * (0-(0)));
         }
         else if (tickAnim >= 116 && tickAnim < 413) {
             xx = -2.5 + (((tickAnim - 116) / 297) * (-1.49-(-2.5)));
@@ -2355,15 +2634,20 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             yy = 4.70392 + (((tickAnim - 448) / 8) * (0-(4.70392)));
             zz = -1.69694 + (((tickAnim - 448) / 8) * (0-(-1.69694)));
         }
-        else if (tickAnim >= 456 && tickAnim < 465) {
-            xx = -21.77 + (((tickAnim - 456) / 9) * (-20.168-(-21.77)));
-            yy = 0 + (((tickAnim - 456) / 9) * (-2.34689-(0)));
-            zz = 0 + (((tickAnim - 456) / 9) * (0.86169-(0)));
+        else if (tickAnim >= 456 && tickAnim < 463) {
+            xx = -21.77 + (((tickAnim - 456) / 7) * (-20.168-(-21.77)));
+            yy = 0 + (((tickAnim - 456) / 7) * (-2.34689-(0)));
+            zz = 0 + (((tickAnim - 456) / 7) * (0.86169-(0)));
         }
-        else if (tickAnim >= 465 && tickAnim < 480) {
-            xx = -20.168 + (((tickAnim - 465) / 15) * (-17.5-(-20.168)));
-            yy = -2.34689 + (((tickAnim - 465) / 15) * (0-(-2.34689)));
-            zz = 0.86169 + (((tickAnim - 465) / 15) * (0-(0.86169)));
+        else if (tickAnim >= 463 && tickAnim < 470) {
+            xx = -20.168 + (((tickAnim - 463) / 7) * (-17.5-(-20.168)));
+            yy = -2.34689 + (((tickAnim - 463) / 7) * (0-(-2.34689)));
+            zz = 0.86169 + (((tickAnim - 463) / 7) * (0-(0.86169)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = -17.5 + (((tickAnim - 470) / 10) * (0-(-17.5)));
+            yy = 0 + (((tickAnim - 470) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 470) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -2375,20 +2659,20 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 56) {
-            xx = -95.5114 + (((tickAnim - 0) / 56) * (-95.5114-(-95.5114)));
-            yy = -34.18897 + (((tickAnim - 0) / 56) * (-34.18897-(-34.18897)));
-            zz = 97.725 + (((tickAnim - 0) / 56) * (97.725-(97.725)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (-9.18389-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (-3.50189-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (13.23176-(0)));
         }
-        else if (tickAnim >= 56 && tickAnim < 66) {
-            xx = -95.5114 + (((tickAnim - 56) / 10) * (-90.87663-(-95.5114)));
-            yy = -34.18897 + (((tickAnim - 56) / 10) * (-36.64232-(-34.18897)));
-            zz = 97.725 + (((tickAnim - 56) / 10) * (91.48082-(97.725)));
+        else if (tickAnim >= 8 && tickAnim < 64) {
+            xx = -9.18389 + (((tickAnim - 8) / 56) * (-9.18389-(-9.18389)));
+            yy = -3.50189 + (((tickAnim - 8) / 56) * (-3.50189-(-3.50189)));
+            zz = 13.23176 + (((tickAnim - 8) / 56) * (13.23176-(13.23176)));
         }
-        else if (tickAnim >= 66 && tickAnim < 78) {
-            xx = -90.87663 + (((tickAnim - 66) / 12) * (-98.95325-(-90.87663)));
-            yy = -36.64232 + (((tickAnim - 66) / 12) * (-33.85093-(-36.64232)));
-            zz = 91.48082 + (((tickAnim - 66) / 12) * (95.4611-(91.48082)));
+        else if (tickAnim >= 64 && tickAnim < 78) {
+            xx = -9.18389 + (((tickAnim - 64) / 14) * (-98.95325-(-9.18389)));
+            yy = -3.50189 + (((tickAnim - 64) / 14) * (-33.85093-(-3.50189)));
+            zz = 13.23176 + (((tickAnim - 64) / 14) * (95.4611-(13.23176)));
         }
         else if (tickAnim >= 78 && tickAnim < 102) {
             xx = -98.95325 + (((tickAnim - 78) / 24) * (-100.5114-(-98.95325)));
@@ -2400,15 +2684,25 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             yy = -34.18897 + (((tickAnim - 102) / 296) * (-34.18897-(-34.18897)));
             zz = 97.725 + (((tickAnim - 102) / 296) * (97.725-(97.725)));
         }
-        else if (tickAnim >= 398 && tickAnim < 431) {
-            xx = -100.5114 + (((tickAnim - 398) / 33) * (-95.5114-(-100.5114)));
-            yy = -34.18897 + (((tickAnim - 398) / 33) * (-34.18897-(-34.18897)));
-            zz = 97.725 + (((tickAnim - 398) / 33) * (97.725-(97.725)));
+        else if (tickAnim >= 398 && tickAnim < 413) {
+            xx = -100.5114 + (((tickAnim - 398) / 15) * (-29.4348-(-100.5114)));
+            yy = -34.18897 + (((tickAnim - 398) / 15) * (-16.05572-(-34.18897)));
+            zz = 97.725 + (((tickAnim - 398) / 15) * (18.69015-(97.725)));
         }
-        else if (tickAnim >= 431 && tickAnim < 480) {
-            xx = -95.5114 + (((tickAnim - 431) / 49) * (-95.5114-(-95.5114)));
-            yy = -34.18897 + (((tickAnim - 431) / 49) * (-34.18897-(-34.18897)));
-            zz = 97.725 + (((tickAnim - 431) / 49) * (97.725-(97.725)));
+        else if (tickAnim >= 413 && tickAnim < 431) {
+            xx = -29.4348 + (((tickAnim - 413) / 18) * (-11.07906-(-29.4348)));
+            yy = -16.05572 + (((tickAnim - 413) / 18) * (-24.83034-(-16.05572)));
+            zz = 18.69015 + (((tickAnim - 413) / 18) * (11.64431-(18.69015)));
+        }
+        else if (tickAnim >= 431 && tickAnim < 470) {
+            xx = -11.07906 + (((tickAnim - 431) / 39) * (-95.5114-(-11.07906)));
+            yy = -24.83034 + (((tickAnim - 431) / 39) * (-34.18897-(-24.83034)));
+            zz = 11.64431 + (((tickAnim - 431) / 39) * (97.725-(11.64431)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = -95.5114 + (((tickAnim - 470) / 10) * (0-(-95.5114)));
+            yy = -34.18897 + (((tickAnim - 470) / 10) * (0-(-34.18897)));
+            zz = 97.725 + (((tickAnim - 470) / 10) * (0-(97.725)));
         }
         else {
             xx = 0;
@@ -2418,15 +2712,30 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
         this.setRotateAngle(frontleftleg, frontleftleg.rotateAngleX + (float) Math.toRadians(xx), frontleftleg.rotateAngleY + (float) Math.toRadians(yy), frontleftleg.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 56) {
-            xx = -2.25 + (((tickAnim - 0) / 56) * (-2.25-(-2.25)));
-            yy = 0.25 + (((tickAnim - 0) / 56) * (0.25-(0.25)));
-            zz = -3 + (((tickAnim - 0) / 56) * (-3-(-3)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (-2.25-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (0.25-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (-0.625-(0)));
         }
-        else if (tickAnim >= 56 && tickAnim < 480) {
-            xx = -2.25 + (((tickAnim - 56) / 424) * (-2.25-(-2.25)));
-            yy = 0.25 + (((tickAnim - 56) / 424) * (0.25-(0.25)));
-            zz = -3 + (((tickAnim - 56) / 424) * (-3-(-3)));
+        else if (tickAnim >= 8 && tickAnim < 64) {
+            xx = -2.25 + (((tickAnim - 8) / 56) * (-2.25-(-2.25)));
+            yy = 0.25 + (((tickAnim - 8) / 56) * (0.25-(0.25)));
+            zz = -0.625 + (((tickAnim - 8) / 56) * (-0.625-(-0.625)));
+        }
+        else if (tickAnim >= 64 && tickAnim < 398) {
+            xx = -2.25 + (((tickAnim - 64) / 334) * (-2.25-(-2.25)));
+            yy = 0.25 + (((tickAnim - 64) / 334) * (0.25-(0.25)));
+            zz = -0.625 + (((tickAnim - 64) / 334) * (0.625-(-0.625)));
+        }
+        else if (tickAnim >= 398 && tickAnim < 470) {
+            xx = -2.25 + (((tickAnim - 398) / 72) * (0-(-2.25)));
+            yy = 0.25 + (((tickAnim - 398) / 72) * (0-(0.25)));
+            zz = 0.625 + (((tickAnim - 398) / 72) * (0-(0.625)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = 0 + (((tickAnim - 470) / 10) * (0-(0)));
+            yy = 0 + (((tickAnim - 470) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 470) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -2440,35 +2749,55 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 56) {
-            xx = -121.41336 + (((tickAnim - 0) / 56) * (-121.41336-(-121.41336)));
-            yy = 37.02788 + (((tickAnim - 0) / 56) * (37.02788-(37.02788)));
-            zz = 228.55189 + (((tickAnim - 0) / 56) * (228.55189-(228.55189)));
+        if (tickAnim >= 0 && tickAnim < 4) {
+            xx = 0 + (((tickAnim - 0) / 4) * (-5.69119-(0)));
+            yy = 0 + (((tickAnim - 0) / 4) * (4.19721-(0)));
+            zz = 0 + (((tickAnim - 0) / 4) * (-6.35471-(0)));
         }
-        else if (tickAnim >= 56 && tickAnim < 78) {
-            xx = -121.41336 + (((tickAnim - 56) / 22) * (-131.54397-(-121.41336)));
-            yy = 37.02788 + (((tickAnim - 56) / 22) * (40.78357-(37.02788)));
-            zz = 228.55189 + (((tickAnim - 56) / 22) * (217.72302-(228.55189)));
+        else if (tickAnim >= 4 && tickAnim < 8) {
+            xx = -5.69119 + (((tickAnim - 4) / 4) * (-8.5-(-5.69119)));
+            yy = 4.19721 + (((tickAnim - 4) / 4) * (0-(4.19721)));
+            zz = -6.35471 + (((tickAnim - 4) / 4) * (-11.5-(-6.35471)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 64) {
+            xx = -8.5 + (((tickAnim - 8) / 56) * (-8.5-(-8.5)));
+            yy = 0 + (((tickAnim - 8) / 56) * (0-(0)));
+            zz = -11.5 + (((tickAnim - 8) / 56) * (-11.5-(-11.5)));
+        }
+        else if (tickAnim >= 64 && tickAnim < 78) {
+            xx = -8.5 + (((tickAnim - 64) / 14) * (-8.5-(-8.5)));
+            yy = 0 + (((tickAnim - 64) / 14) * (0-(0)));
+            zz = -11.5 + (((tickAnim - 64) / 14) * (-11.5-(-11.5)));
         }
         else if (tickAnim >= 78 && tickAnim < 102) {
-            xx = -131.54397 + (((tickAnim - 78) / 24) * (-130.36264-(-131.54397)));
-            yy = 40.78357 + (((tickAnim - 78) / 24) * (40.62714-(40.78357)));
-            zz = 217.72302 + (((tickAnim - 78) / 24) * (218.95428-(217.72302)));
+            xx = -8.5 + (((tickAnim - 78) / 24) * (-8.5-(-8.5)));
+            yy = 0 + (((tickAnim - 78) / 24) * (0-(0)));
+            zz = -11.5 + (((tickAnim - 78) / 24) * (-11.5-(-11.5)));
         }
         else if (tickAnim >= 102 && tickAnim < 398) {
-            xx = -130.36264 + (((tickAnim - 102) / 296) * (-130.36264-(-130.36264)));
-            yy = 40.62714 + (((tickAnim - 102) / 296) * (40.62714-(40.62714)));
-            zz = 218.95428 + (((tickAnim - 102) / 296) * (218.95428-(218.95428)));
+            xx = -8.5 + (((tickAnim - 102) / 296) * (-8.5-(-8.5)));
+            yy = 0 + (((tickAnim - 102) / 296) * (0-(0)));
+            zz = -11.5 + (((tickAnim - 102) / 296) * (-11.5-(-11.5)));
         }
-        else if (tickAnim >= 398 && tickAnim < 431) {
-            xx = -130.36264 + (((tickAnim - 398) / 33) * (-121.41336-(-130.36264)));
-            yy = 40.62714 + (((tickAnim - 398) / 33) * (37.02788-(40.62714)));
-            zz = 218.95428 + (((tickAnim - 398) / 33) * (228.55189-(218.95428)));
+        else if (tickAnim >= 398 && tickAnim < 413) {
+            xx = -8.5 + (((tickAnim - 398) / 15) * (14.19416-(-8.5)));
+            yy = 0 + (((tickAnim - 398) / 15) * (-0.46303-(0)));
+            zz = -11.5 + (((tickAnim - 398) / 15) * (-4.0389-(-11.5)));
         }
-        else if (tickAnim >= 431 && tickAnim < 480) {
-            xx = -121.41336 + (((tickAnim - 431) / 49) * (-121.41336-(-121.41336)));
-            yy = 37.02788 + (((tickAnim - 431) / 49) * (37.02788-(37.02788)));
-            zz = 228.55189 + (((tickAnim - 431) / 49) * (228.55189-(228.55189)));
+        else if (tickAnim >= 413 && tickAnim < 431) {
+            xx = 14.19416 + (((tickAnim - 413) / 18) * (-8.5-(14.19416)));
+            yy = -0.46303 + (((tickAnim - 413) / 18) * (0-(-0.46303)));
+            zz = -4.0389 + (((tickAnim - 413) / 18) * (-11.5-(-4.0389)));
+        }
+        else if (tickAnim >= 431 && tickAnim < 470) {
+            xx = -8.5 + (((tickAnim - 431) / 39) * (-8.5-(-8.5)));
+            yy = 0 + (((tickAnim - 431) / 39) * (0-(0)));
+            zz = -11.5 + (((tickAnim - 431) / 39) * (-11.5-(-11.5)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = -8.5 + (((tickAnim - 470) / 10) * (0-(-8.5)));
+            yy = 0 + (((tickAnim - 470) / 10) * (0-(0)));
+            zz = -11.5 + (((tickAnim - 470) / 10) * (0-(-11.5)));
         }
         else {
             xx = 0;
@@ -2478,12 +2807,52 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
         this.setRotateAngle(frontleftleg2, frontleftleg2.rotateAngleX + (float) Math.toRadians(xx), frontleftleg2.rotateAngleY + (float) Math.toRadians(yy), frontleftleg2.rotateAngleZ + (float) Math.toRadians(zz));
 
 
+        if (tickAnim >= 64 && tickAnim < 78) {
+            xx = 0 + (((tickAnim - 64) / 14) * (0-(0)));
+            yy = 0 + (((tickAnim - 64) / 14) * (0-(0)));
+            zz = 0 + (((tickAnim - 64) / 14) * (0-(0)));
+        }
+        else if (tickAnim >= 78 && tickAnim < 102) {
+            xx = 0 + (((tickAnim - 78) / 24) * (0-(0)));
+            yy = 0 + (((tickAnim - 78) / 24) * (0-(0)));
+            zz = 0 + (((tickAnim - 78) / 24) * (0-(0)));
+        }
+        else if (tickAnim >= 102 && tickAnim < 398) {
+            xx = 0 + (((tickAnim - 102) / 296) * (0-(0)));
+            yy = 0 + (((tickAnim - 102) / 296) * (0-(0)));
+            zz = 0 + (((tickAnim - 102) / 296) * (0-(0)));
+        }
+        else if (tickAnim >= 398 && tickAnim < 431) {
+            xx = 0 + (((tickAnim - 398) / 33) * (0-(0)));
+            yy = 0 + (((tickAnim - 398) / 33) * (0-(0)));
+            zz = 0 + (((tickAnim - 398) / 33) * (0-(0)));
+        }
+        else if (tickAnim >= 431 && tickAnim < 470) {
+            xx = 0 + (((tickAnim - 431) / 39) * (0-(0)));
+            yy = 0 + (((tickAnim - 431) / 39) * (0-(0)));
+            zz = 0 + (((tickAnim - 431) / 39) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.frontleftleg2.rotationPointX = this.frontleftleg2.rotationPointX + (float)(xx);
+        this.frontleftleg2.rotationPointY = this.frontleftleg2.rotationPointY - (float)(yy);
+        this.frontleftleg2.rotationPointZ = this.frontleftleg2.rotationPointZ + (float)(zz);
 
 
-        if (tickAnim >= 0 && tickAnim < 79) {
-            xx = 2.49999 + (((tickAnim - 0) / 79) * (2.49999-(2.49999)));
-            yy = -67.5 + (((tickAnim - 0) / 79) * (-67.5-(-67.5)));
-            zz = 0.00003 + (((tickAnim - 0) / 79) * (0.00003-(0.00003)));
+
+
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (2.49999-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (-67.5-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (0.00003-(0)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 79) {
+            xx = 2.49999 + (((tickAnim - 8) / 71) * (2.49999-(2.49999)));
+            yy = -67.5 + (((tickAnim - 8) / 71) * (-67.5-(-67.5)));
+            zz = 0.00003 + (((tickAnim - 8) / 71) * (0.00003-(0.00003)));
         }
         else if (tickAnim >= 79 && tickAnim < 113) {
             xx = 2.49999 + (((tickAnim - 79) / 34) * (12.49999-(2.49999)));
@@ -2500,10 +2869,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             yy = -37.5 + (((tickAnim - 415) / 17) * (-67.5-(-37.5)));
             zz = 0.00002 + (((tickAnim - 415) / 17) * (0.00003-(0.00002)));
         }
-        else if (tickAnim >= 432 && tickAnim < 480) {
-            xx = 2.49999 + (((tickAnim - 432) / 48) * (2.49999-(2.49999)));
-            yy = -67.5 + (((tickAnim - 432) / 48) * (-67.5-(-67.5)));
-            zz = 0.00003 + (((tickAnim - 432) / 48) * (0.00003-(0.00003)));
+        else if (tickAnim >= 432 && tickAnim < 470) {
+            xx = 2.49999 + (((tickAnim - 432) / 38) * (2.49999-(2.49999)));
+            yy = -67.5 + (((tickAnim - 432) / 38) * (-67.5-(-67.5)));
+            zz = 0.00003 + (((tickAnim - 432) / 38) * (0.00003-(0.00003)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = 2.49999 + (((tickAnim - 470) / 10) * (0-(2.49999)));
+            yy = -67.5 + (((tickAnim - 470) / 10) * (0-(-67.5)));
+            zz = 0.00003 + (((tickAnim - 470) / 10) * (0-(0.00003)));
         }
         else {
             xx = 0;
@@ -2513,10 +2887,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
         this.setRotateAngle(backleftleg, backleftleg.rotateAngleX + (float) Math.toRadians(xx), backleftleg.rotateAngleY + (float) Math.toRadians(yy), backleftleg.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 79) {
-            xx = 2 + (((tickAnim - 0) / 79) * (2-(2)));
-            yy = -0.5 + (((tickAnim - 0) / 79) * (-0.5-(-0.5)));
-            zz = 0 + (((tickAnim - 0) / 79) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (2-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (-0.5-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 79) {
+            xx = 2 + (((tickAnim - 8) / 71) * (2-(2)));
+            yy = -0.5 + (((tickAnim - 8) / 71) * (-0.5-(-0.5)));
+            zz = 0 + (((tickAnim - 8) / 71) * (0-(0)));
         }
         else if (tickAnim >= 79 && tickAnim < 113) {
             xx = 2 + (((tickAnim - 79) / 34) * (0-(2)));
@@ -2533,10 +2912,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             yy = -0.5 + (((tickAnim - 415) / 17) * (-0.5-(-0.5)));
             zz = 3 + (((tickAnim - 415) / 17) * (0-(3)));
         }
-        else if (tickAnim >= 432 && tickAnim < 480) {
-            xx = 2 + (((tickAnim - 432) / 48) * (2-(2)));
-            yy = -0.5 + (((tickAnim - 432) / 48) * (-0.5-(-0.5)));
-            zz = 0 + (((tickAnim - 432) / 48) * (0-(0)));
+        else if (tickAnim >= 432 && tickAnim < 470) {
+            xx = 2 + (((tickAnim - 432) / 38) * (2-(2)));
+            yy = -0.5 + (((tickAnim - 432) / 38) * (-0.5-(-0.5)));
+            zz = 0 + (((tickAnim - 432) / 38) * (0-(0)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = 2 + (((tickAnim - 470) / 10) * (0-(2)));
+            yy = -0.5 + (((tickAnim - 470) / 10) * (0-(-0.5)));
+            zz = 0 + (((tickAnim - 470) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -2550,10 +2934,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 79) {
-            xx = 71.04414 + (((tickAnim - 0) / 79) * (71.04414-(71.04414)));
-            yy = 102.09003 + (((tickAnim - 0) / 79) * (102.09003-(102.09003)));
-            zz = 73.7627 + (((tickAnim - 0) / 79) * (73.7627-(73.7627)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (71.04414-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (102.09003-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (73.7627-(0)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 79) {
+            xx = 71.04414 + (((tickAnim - 8) / 71) * (71.04414-(71.04414)));
+            yy = 102.09003 + (((tickAnim - 8) / 71) * (102.09003-(102.09003)));
+            zz = 73.7627 + (((tickAnim - 8) / 71) * (73.7627-(73.7627)));
         }
         else if (tickAnim >= 79 && tickAnim < 113) {
             xx = 71.04414 + (((tickAnim - 79) / 34) * (7.61562-(71.04414)));
@@ -2570,10 +2959,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             yy = 31.87555 + (((tickAnim - 415) / 17) * (102.09003-(31.87555)));
             zz = 2.14347 + (((tickAnim - 415) / 17) * (73.7627-(2.14347)));
         }
-        else if (tickAnim >= 432 && tickAnim < 480) {
-            xx = 71.04414 + (((tickAnim - 432) / 48) * (71.04414-(71.04414)));
-            yy = 102.09003 + (((tickAnim - 432) / 48) * (102.09003-(102.09003)));
-            zz = 73.7627 + (((tickAnim - 432) / 48) * (73.7627-(73.7627)));
+        else if (tickAnim >= 432 && tickAnim < 470) {
+            xx = 71.04414 + (((tickAnim - 432) / 38) * (71.04414-(71.04414)));
+            yy = 102.09003 + (((tickAnim - 432) / 38) * (102.09003-(102.09003)));
+            zz = 73.7627 + (((tickAnim - 432) / 38) * (73.7627-(73.7627)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = 71.04414 + (((tickAnim - 470) / 10) * (0-(71.04414)));
+            yy = 102.09003 + (((tickAnim - 470) / 10) * (0-(102.09003)));
+            zz = 73.7627 + (((tickAnim - 470) / 10) * (0-(73.7627)));
         }
         else {
             xx = 0;
@@ -2585,15 +2979,20 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 56) {
-            xx = -5 + (((tickAnim - 0) / 56) * (-5-(-5)));
-            yy = 10 + (((tickAnim - 0) / 56) * (10-(10)));
-            zz = 0 + (((tickAnim - 0) / 56) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (-5-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (10-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
         }
-        else if (tickAnim >= 56 && tickAnim < 88) {
-            xx = -5 + (((tickAnim - 56) / 32) * (-7.5-(-5)));
-            yy = 10 + (((tickAnim - 56) / 32) * (3.56-(10)));
-            zz = 0 + (((tickAnim - 56) / 32) * (0-(0)));
+        else if (tickAnim >= 8 && tickAnim < 64) {
+            xx = -5 + (((tickAnim - 8) / 56) * (-5-(-5)));
+            yy = 10 + (((tickAnim - 8) / 56) * (10-(10)));
+            zz = 0 + (((tickAnim - 8) / 56) * (0-(0)));
+        }
+        else if (tickAnim >= 64 && tickAnim < 88) {
+            xx = -5 + (((tickAnim - 64) / 24) * (-7.5-(-5)));
+            yy = 10 + (((tickAnim - 64) / 24) * (3.56-(10)));
+            zz = 0 + (((tickAnim - 64) / 24) * (0-(0)));
         }
         else if (tickAnim >= 88 && tickAnim < 111) {
             xx = -7.5 + (((tickAnim - 88) / 23) * (-8-(-7.5)));
@@ -2620,10 +3019,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             yy = 10 + (((tickAnim - 415) / 16) * (10-(10)));
             zz = 0 + (((tickAnim - 415) / 16) * (0-(0)));
         }
-        else if (tickAnim >= 431 && tickAnim < 480) {
-            xx = -5 + (((tickAnim - 431) / 49) * (-5-(-5)));
-            yy = 10 + (((tickAnim - 431) / 49) * (10-(10)));
-            zz = 0 + (((tickAnim - 431) / 49) * (0-(0)));
+        else if (tickAnim >= 431 && tickAnim < 470) {
+            xx = -5 + (((tickAnim - 431) / 39) * (-5-(-5)));
+            yy = 10 + (((tickAnim - 431) / 39) * (10-(10)));
+            zz = 0 + (((tickAnim - 431) / 39) * (0-(0)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = -5 + (((tickAnim - 470) / 10) * (0-(-5)));
+            yy = 10 + (((tickAnim - 470) / 10) * (0-(10)));
+            zz = 0 + (((tickAnim - 470) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -2635,15 +3039,20 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 56) {
-            xx = 0 + (((tickAnim - 0) / 56) * (0-(0)));
-            yy = 10 + (((tickAnim - 0) / 56) * (10-(10)));
-            zz = 0 + (((tickAnim - 0) / 56) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (10-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
         }
-        else if (tickAnim >= 56 && tickAnim < 88) {
-            xx = 0 + (((tickAnim - 56) / 32) * (0-(0)));
-            yy = 10 + (((tickAnim - 56) / 32) * (5.98-(10)));
-            zz = 0 + (((tickAnim - 56) / 32) * (0-(0)));
+        else if (tickAnim >= 8 && tickAnim < 64) {
+            xx = 0 + (((tickAnim - 8) / 56) * (0-(0)));
+            yy = 10 + (((tickAnim - 8) / 56) * (10-(10)));
+            zz = 0 + (((tickAnim - 8) / 56) * (0-(0)));
+        }
+        else if (tickAnim >= 64 && tickAnim < 88) {
+            xx = 0 + (((tickAnim - 64) / 24) * (0-(0)));
+            yy = 10 + (((tickAnim - 64) / 24) * (5.98-(10)));
+            zz = 0 + (((tickAnim - 64) / 24) * (0-(0)));
         }
         else if (tickAnim >= 88 && tickAnim < 111) {
             xx = 0 + (((tickAnim - 88) / 23) * (0-(0)));
@@ -2670,10 +3079,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             yy = 7.5 + (((tickAnim - 415) / 16) * (10-(7.5)));
             zz = 0 + (((tickAnim - 415) / 16) * (0-(0)));
         }
-        else if (tickAnim >= 431 && tickAnim < 480) {
-            xx = 0 + (((tickAnim - 431) / 49) * (0-(0)));
-            yy = 10 + (((tickAnim - 431) / 49) * (10-(10)));
-            zz = 0 + (((tickAnim - 431) / 49) * (0-(0)));
+        else if (tickAnim >= 431 && tickAnim < 470) {
+            xx = 0 + (((tickAnim - 431) / 39) * (0-(0)));
+            yy = 10 + (((tickAnim - 431) / 39) * (10-(10)));
+            zz = 0 + (((tickAnim - 431) / 39) * (0-(0)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = 0 + (((tickAnim - 470) / 10) * (0-(0)));
+            yy = 10 + (((tickAnim - 470) / 10) * (0-(10)));
+            zz = 0 + (((tickAnim - 470) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -2685,15 +3099,20 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 56) {
-            xx = 0 + (((tickAnim - 0) / 56) * (0-(0)));
-            yy = 7.5 + (((tickAnim - 0) / 56) * (7.5-(7.5)));
-            zz = 0 + (((tickAnim - 0) / 56) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (7.5-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
         }
-        else if (tickAnim >= 56 && tickAnim < 88) {
-            xx = 0 + (((tickAnim - 56) / 32) * (0-(0)));
-            yy = 7.5 + (((tickAnim - 56) / 32) * (9.55-(7.5)));
-            zz = 0 + (((tickAnim - 56) / 32) * (0-(0)));
+        else if (tickAnim >= 8 && tickAnim < 64) {
+            xx = 0 + (((tickAnim - 8) / 56) * (0-(0)));
+            yy = 7.5 + (((tickAnim - 8) / 56) * (7.5-(7.5)));
+            zz = 0 + (((tickAnim - 8) / 56) * (0-(0)));
+        }
+        else if (tickAnim >= 64 && tickAnim < 88) {
+            xx = 0 + (((tickAnim - 64) / 24) * (0-(0)));
+            yy = 7.5 + (((tickAnim - 64) / 24) * (9.55-(7.5)));
+            zz = 0 + (((tickAnim - 64) / 24) * (0-(0)));
         }
         else if (tickAnim >= 88 && tickAnim < 111) {
             xx = 0 + (((tickAnim - 88) / 23) * (0-(0)));
@@ -2720,10 +3139,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             yy = 17.5 + (((tickAnim - 415) / 16) * (7.5-(17.5)));
             zz = 0 + (((tickAnim - 415) / 16) * (0-(0)));
         }
-        else if (tickAnim >= 431 && tickAnim < 480) {
-            xx = 0 + (((tickAnim - 431) / 49) * (0-(0)));
-            yy = 7.5 + (((tickAnim - 431) / 49) * (7.5-(7.5)));
-            zz = 0 + (((tickAnim - 431) / 49) * (0-(0)));
+        else if (tickAnim >= 431 && tickAnim < 470) {
+            xx = 0 + (((tickAnim - 431) / 39) * (0-(0)));
+            yy = 7.5 + (((tickAnim - 431) / 39) * (7.5-(7.5)));
+            zz = 0 + (((tickAnim - 431) / 39) * (0-(0)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = 0 + (((tickAnim - 470) / 10) * (0-(0)));
+            yy = 7.5 + (((tickAnim - 470) / 10) * (0-(7.5)));
+            zz = 0 + (((tickAnim - 470) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -2735,15 +3159,20 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 56) {
-            xx = 0 + (((tickAnim - 0) / 56) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 56) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 56) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
         }
-        else if (tickAnim >= 56 && tickAnim < 66) {
-            xx = 0 + (((tickAnim - 56) / 10) * (0.82997-(0)));
-            yy = 0 + (((tickAnim - 56) / 10) * (-0.01068-(0)));
-            zz = 0 + (((tickAnim - 56) / 10) * (-0.42344-(0)));
+        else if (tickAnim >= 8 && tickAnim < 64) {
+            xx = 0 + (((tickAnim - 8) / 56) * (0-(0)));
+            yy = 0 + (((tickAnim - 8) / 56) * (0-(0)));
+            zz = 0 + (((tickAnim - 8) / 56) * (0-(0)));
+        }
+        else if (tickAnim >= 64 && tickAnim < 66) {
+            xx = 0 + (((tickAnim - 64) / 2) * (0.82997-(0)));
+            yy = 0 + (((tickAnim - 64) / 2) * (-0.01068-(0)));
+            zz = 0 + (((tickAnim - 64) / 2) * (-0.42344-(0)));
         }
         else if (tickAnim >= 66 && tickAnim < 78) {
             xx = 0.82997 + (((tickAnim - 66) / 12) * (1.79759-(0.82997)));
@@ -2770,10 +3199,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             yy = -0.07489 + (((tickAnim - 418) / 13) * (0-(-0.07489)));
             zz = 2.49888 + (((tickAnim - 418) / 13) * (0-(2.49888)));
         }
-        else if (tickAnim >= 431 && tickAnim < 480) {
-            xx = 0 + (((tickAnim - 431) / 49) * (0-(0)));
-            yy = 0 + (((tickAnim - 431) / 49) * (0-(0)));
-            zz = 0 + (((tickAnim - 431) / 49) * (0-(0)));
+        else if (tickAnim >= 431 && tickAnim < 470) {
+            xx = 0 + (((tickAnim - 431) / 39) * (0-(0)));
+            yy = 0 + (((tickAnim - 431) / 39) * (0-(0)));
+            zz = 0 + (((tickAnim - 431) / 39) * (0-(0)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = 0 + (((tickAnim - 470) / 10) * (0-(0)));
+            yy = 0 + (((tickAnim - 470) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 470) / 10) * (0-(0)));
         }
         else {
             xx = 0;
@@ -2785,10 +3219,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 58) {
-            xx = 1 + (((tickAnim - 0) / 58) * (1-(1)));
-            yy = 1 + (((tickAnim - 0) / 58) * (1-(1)));
-            zz = 1 + (((tickAnim - 0) / 58) * (1-(1)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 1 + (((tickAnim - 0) / 8) * (1-(1)));
+            yy = 1 + (((tickAnim - 0) / 8) * (1-(1)));
+            zz = 1 + (((tickAnim - 0) / 8) * (1-(1)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 58) {
+            xx = 1 + (((tickAnim - 8) / 50) * (1-(1)));
+            yy = 1 + (((tickAnim - 8) / 50) * (1-(1)));
+            zz = 1 + (((tickAnim - 8) / 50) * (1-(1)));
         }
         else if (tickAnim >= 58 && tickAnim < 116) {
             xx = 1 + (((tickAnim - 58) / 58) * (1-(1)));
@@ -2800,10 +3239,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             yy = 0.2 + (((tickAnim - 116) / 280) * (0.2-(0.2)));
             zz = 1 + (((tickAnim - 116) / 280) * (1-(1)));
         }
-        else if (tickAnim >= 396 && tickAnim < 480) {
-            xx = 1 + (((tickAnim - 396) / 84) * (1-(1)));
-            yy = 0.2 + (((tickAnim - 396) / 84) * (1-(0.2)));
-            zz = 1 + (((tickAnim - 396) / 84) * (1-(1)));
+        else if (tickAnim >= 396 && tickAnim < 470) {
+            xx = 1 + (((tickAnim - 396) / 74) * (1-(1)));
+            yy = 0.2 + (((tickAnim - 396) / 74) * (1-(0.2)));
+            zz = 1 + (((tickAnim - 396) / 74) * (1-(1)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = 1 + (((tickAnim - 470) / 10) * (1-(1)));
+            yy = 1 + (((tickAnim - 470) / 10) * (1-(1)));
+            zz = 1 + (((tickAnim - 470) / 10) * (1-(1)));
         }
         else {
             xx = 1;
@@ -2815,10 +3259,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 58) {
-            xx = 1 + (((tickAnim - 0) / 58) * (1-(1)));
-            yy = 1 + (((tickAnim - 0) / 58) * (1-(1)));
-            zz = 1 + (((tickAnim - 0) / 58) * (1-(1)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 1 + (((tickAnim - 0) / 8) * (1-(1)));
+            yy = 1 + (((tickAnim - 0) / 8) * (1-(1)));
+            zz = 1 + (((tickAnim - 0) / 8) * (1-(1)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 58) {
+            xx = 1 + (((tickAnim - 8) / 50) * (1-(1)));
+            yy = 1 + (((tickAnim - 8) / 50) * (1-(1)));
+            zz = 1 + (((tickAnim - 8) / 50) * (1-(1)));
         }
         else if (tickAnim >= 58 && tickAnim < 116) {
             xx = 1 + (((tickAnim - 58) / 58) * (1-(1)));
@@ -2830,10 +3279,15 @@ public class ModelBrodiechelys extends ModelBasePalaeopedia {
             yy = 0.2 + (((tickAnim - 116) / 280) * (0.2-(0.2)));
             zz = 1 + (((tickAnim - 116) / 280) * (1-(1)));
         }
-        else if (tickAnim >= 396 && tickAnim < 480) {
-            xx = 1 + (((tickAnim - 396) / 84) * (1-(1)));
-            yy = 0.2 + (((tickAnim - 396) / 84) * (1-(0.2)));
-            zz = 1 + (((tickAnim - 396) / 84) * (1-(1)));
+        else if (tickAnim >= 396 && tickAnim < 470) {
+            xx = 1 + (((tickAnim - 396) / 74) * (1-(1)));
+            yy = 0.2 + (((tickAnim - 396) / 74) * (1-(0.2)));
+            zz = 1 + (((tickAnim - 396) / 74) * (1-(1)));
+        }
+        else if (tickAnim >= 470 && tickAnim < 480) {
+            xx = 1 + (((tickAnim - 470) / 10) * (1-(1)));
+            yy = 1 + (((tickAnim - 470) / 10) * (1-(1)));
+            zz = 1 + (((tickAnim - 470) / 10) * (1-(1)));
         }
         else {
             xx = 1;
