@@ -17,12 +17,12 @@
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [
-					[ "1  " ],
-					[ "1 1" ],
-					[ "111" ],
-					[ " 1 " ],
-					[ " 1 " ],
-					[ " 0 " ]
+					[ "1" ],
+					[ "1" ],
+					[ "1" ],
+					[ "1" ],
+					[ "1" ],
+					[ "0" ]
 				],
 				"mapping": {
 					"1": "lepidodendron:aulacera",
