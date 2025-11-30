@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eukaryotic_mat",
 			"title": "Eukaryotic Mat",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Precambrian$(br2)$(l)Habitat:$() Marine$(br)$(l)Method of Obtaining:$() Shears"
+			"text": "$(l)Temporal Range:$() Paleoproterozoic (Statherian) - Cambrian$(br2)$(l)Habitat:$() Marine$(br)$(l)Method of Obtaining:$() Shears"
 		},
 		{
 			"type": "multiblock",

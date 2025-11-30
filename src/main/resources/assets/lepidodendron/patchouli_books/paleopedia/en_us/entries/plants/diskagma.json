@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_diskagma",
 			"title": "Diskagma",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Rhyacian$(br2)$(l)Habitat:$() Terrestrial$(br)$(l)Propagation:$() $(l:basics/collecting_plants)Spore-bearing plants$(/l)$(br)$(l)Method of Obtaining:$() Shears"
+			"text": "$(l)Temporal Range:$() Paleoproterozoic (Rhyacian)$(br2)$(l)Habitat:$() Terrestrial$(br)$(l)Propagation:$() $(l:basics/collecting_plants)Spore-bearing plants$(/l)$(br)$(l)Method of Obtaining:$() Shears"
 		},
 		{
 			"type": "multiblock",

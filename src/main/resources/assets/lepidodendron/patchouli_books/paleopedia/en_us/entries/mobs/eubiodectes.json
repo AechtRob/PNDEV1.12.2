@@ -1,0 +1,52 @@
+{
+	"name": "Eubiodectes",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eubiodectes_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_eubiodectes",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eubiodectes",
+			"title": "Eubiodectes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei(br)>Ichthyodectiformes$(br)>Cladocyclidae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. libanicus",
+            "entity": "lepidodendron:prehistoric_flora_eubiodectes",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eubiodectes",
+			"type": "text",
+			"text": "Eubiodectes is a genus of Cenomanian ichtyodectiform fish found in the Haquel and Namoura areas of Lebanon. The animal is slender and elongate, growing from 9.9 centimeters to almost half a meter in length. The animal was predatory, with multiple fossils showing Eubiodectes with other fish within its stomach, genera such as Gaudryella and Armigatus. One interesting feature of Eubiodectes is its asymmetrical tail, with the Ventral lobe of the fin being much longer"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eubiodectes",
+			"type": "text",
+			"text": "than the dorsal lobe. It has been noted that this feature represents certain fish taxa that have a tendency to jump out of the water, for example the Jurassic Aspidorhynchus and modern flying fish. But it is much more likely this resemblance is superficial."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eubiodectes"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eubiodectes"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eubiodectes"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eubiodectes"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eubiodectes"
+		}
+	]
+}

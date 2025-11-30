@@ -1,0 +1,41 @@
+{
+	"name": "Marsupiocrinus",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_marsupiocrinus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_marsupiocrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_marsupiocrinus",
+			"title": "Marsupiocrinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Monobathrida"
+		},
+		{
+			"type": "multiblock",
+			"name": "Marsupiocrinus sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:crinoid_marsupiocrinus",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_marsupiocrinus",
+			"type": "text",
+			"text": "Marsupiocrinus hails from the Silurian into the Lower Devonian, with fossils found from across North America."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_marsupiocrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

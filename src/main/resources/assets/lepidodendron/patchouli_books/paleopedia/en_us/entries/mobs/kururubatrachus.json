@@ -1,0 +1,52 @@
+{
+	"name": "Kururubatrachus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kururubatrachus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_kururubatrachus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kururubatrachus",
+			"title": "Kururubatrachus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Amphibia$(br)>Anura$(br)>Neobatrachia"
+		},
+		{
+			"type": "entity",
+			"name": "K. gondwanicus",
+			"entity": "lepidodendron:prehistoric_flora_kururubatrachus",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kururubatrachus",
+			"type": "text",
+			"text": "Kururubatrachus gondwanicus comes from the Early Cretaceous, with fossils found in the Crato Formation, Brazil. It is a small neobatrach frog, growing up to 4.5 cm in length. It is most unique from other anurans from the Cato Formation due to its elongated skull, low premaxlia, and several other elongated bones. The generic name derives from the common name 'Kururu', given to an extant species of toad; and the Latin word 'batrachus', to mean 'toad'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kururubatrachus",
+			"type": "text",
+			"text": "The specific name derives from the Latinised place name 'Gondwana'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kururubatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kururubatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kururubatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kururubatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kururubatrachus"
+		}
+	]
+}
