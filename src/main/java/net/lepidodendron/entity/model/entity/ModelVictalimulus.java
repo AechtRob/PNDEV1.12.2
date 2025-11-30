@@ -292,7 +292,7 @@ public class ModelVictalimulus extends ModelBasePalaeopedia {
         this.carapace.rotateAngleX = (float)Math.toRadians(1);
         this.carapace.rotateAngleZ = (float)Math.toRadians(0);
         this.carapace.scaleChildren = true;
-        float scaler = 1.2F;
+        float scaler = 2.2F;
         this.carapace.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(carapace, 0.6F, 3.8F, -0.2F);

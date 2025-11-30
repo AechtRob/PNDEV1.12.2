@@ -1,0 +1,47 @@
+{
+	"name": "Bathrotomaria",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bathrotomaria_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_bathrotomaria",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bathrotomaria",
+			"title": "Bathrotomaria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Late Cretaceous$(br2)>Mollusca$(br)>Gastropoda$(br)>Pleurotomariida$(br)>Pleurotomariidae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. reticulata",
+            "entity": "lepidodendron:prehistoric_flora_bathrotomaria",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bathrotomaria",
+			"type": "text",
+			"text": "Bathrotomaria is a genus of gastropod that is was found worldwide throughout the Jurassic and Cretaceous periods."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bathrotomaria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bathrotomaria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bathrotomaria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bathrotomaria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bathrotomaria"
+		}
+	]
+}

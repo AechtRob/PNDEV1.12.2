@@ -1,0 +1,47 @@
+{
+	"name": "Fortiholcorpa",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/fortiholcorpa_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_fortiholcorpa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_fortiholcorpa",
+			"title": "Fortiholcorpa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Insecta$(br)>Antliophora$(br)>Mecoptera"
+		},
+        	{
+            "type": "entity",
+            "name": "F. paradoxa",
+            "entity": "lepidodendron:prehistoric_flora_fortiholcorpa",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fortiholcorpa",
+			"type": "text",
+			"text": "Fortiholcorpa is a extinct genus of scorpionfly that is known from the Jurassic, Jiulongshan Formation of China. This insect is recognizable for the quite impressive length of its genitals, which are more that twice the length of its body. Like other scorpionflies, the family gets it’s name from the enlarged genitals that males have, raised over the body which look similar to the stingers of scorpions."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_fortiholcorpa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_fortiholcorpa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_fortiholcorpa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_fortiholcorpa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_fortiholcorpa"
+		}
+	]
+}

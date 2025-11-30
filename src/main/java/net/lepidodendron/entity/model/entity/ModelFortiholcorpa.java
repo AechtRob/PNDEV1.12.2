@@ -344,7 +344,23 @@ public class ModelFortiholcorpa extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.scorpionfly.offsetY = -2.8F;
+        this.scorpionfly.offsetX = 1.2F;
+        this.scorpionfly.rotateAngleY = (float)Math.toRadians(230);
+        this.scorpionfly.rotateAngleX = (float)Math.toRadians(10);
+        this.scorpionfly.rotateAngleZ = (float)Math.toRadians(0);
+        this.scorpionfly.scaleChildren = true;
+        float scaler = 4.23F;
+        this.scorpionfly.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
+        //End of pose, now render the model:
+        this.scorpionfly.render(f);
+        //Reset rotations, positions and sizing:
+        this.scorpionfly.setScale(1.0F, 1.0F, 1.0F);
+        this.scorpionfly.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

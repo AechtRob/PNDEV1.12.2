@@ -1,0 +1,46 @@
+{
+	"name": "Nuddsia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lacewing_nuddsia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_lacewing_nuddsia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lacewing_nuddsia",
+			"title": "Nuddsia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Neuroptera$(br)>Osmylidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/nuddsia.png"],
+			"title": "N. longiantennata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lacewing_nuddsia",
+			"type": "text",
+			"text": "Nuddsia is a genus of osmylid neuropteran that is know from the Early Cretaceous, Crato Formation of Brazil."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@nuddsia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@nuddsia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@nuddsia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@nuddsia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lacewing@nuddsia"
+		}
+	]
+}

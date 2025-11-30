@@ -1,0 +1,47 @@
+{
+	"name": "Scorpionfly",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/scorpionfly_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_scorpionfly",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_scorpionfly",
+			"title": "Scorpionfly",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Present$(br2)>Arthropoda$(br)>Insecta$(br)>Antliophora$(br)>Mecoptera"
+		},
+        	{
+            "type": "entity",
+            "name": "S. sp",
+            "entity": "lepidodendron:prehistoric_flora_scorpionfly",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_scorpionfly",
+			"type": "text",
+			"text": "Scorpionflies are an order of Insects that have existed for millions of years, and are reliably known from as far back as the Jurassic period. They get their name from the enlarged genitals that males have, raised over the body which look similar to the stingers of scorpions."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_scorpionfly"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_scorpionfly"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_scorpionfly"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_scorpionfly"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_scorpionfly"
+		}
+	]
+}

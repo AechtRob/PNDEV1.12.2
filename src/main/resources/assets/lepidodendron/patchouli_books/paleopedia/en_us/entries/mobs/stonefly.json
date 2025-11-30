@@ -1,0 +1,57 @@
+{
+	"name": "Stonefly",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/stonefly_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_stonefly",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_stonefly",
+			"title": "Stonefly",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian - Present$(br2)>Arthropoda$(br)>Insecta$(br)>Pterygota$(br)>Plethodidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. sp",
+            "entity": "lepidodendron:prehistoric_flora_stonefly",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stonefly",
+			"type": "text",
+			"text": "Stoneflies are an ancient order of winged insects. They likely diverged from their relatives during the Carboniferous, with modern members of the lineage appearing as early as the Permian. Like the similarly basal mayflies, Stoneflies begin life as aquatic nymphs and spend only a short fraction of their life above water. Additionally, many do not feed as adults. However, in contrast to mayflies, stoneflies are neopterous, bearing folding wings, a trait that"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stonefly",
+			"type": "text",
+			"text": "unites them with the remaining 90% of insect diversity. Given this fact, they were once regarded as a transitional form, indicating a shared ancestral aquatic juvenile stage between odonates, mayflies, and the Neoptera. This is no longer considered likely, with stoneflies taking a more derived position among the orthopteroids, likely independently adapting to aquatic conditions."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stonefly",
+			"type": "text",
+			"text": "Stoneflies make up the order Plecoptera, meaning “braided wings,” named in reference to their complex wing venation. Today, they remain a dominant component of freshwater ecology worldwide."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_stonefly"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_stonefly"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_stonefly"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_stonefly"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_stonefly"
+		}
+	]
+}

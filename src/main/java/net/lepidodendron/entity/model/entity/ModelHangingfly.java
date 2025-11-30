@@ -282,6 +282,23 @@ public class ModelHangingfly extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Juracimbrophlebia.offsetY = -3.8F;
+        this.Juracimbrophlebia.offsetX = 1.2F;
+        this.Juracimbrophlebia.rotateAngleY = (float)Math.toRadians(272);
+        this.Juracimbrophlebia.rotateAngleX = (float)Math.toRadians(0);
+        this.Juracimbrophlebia.rotateAngleZ = (float)Math.toRadians(0);
+        this.Juracimbrophlebia.scaleChildren = true;
+        float scaler = 3.23F;
+        this.Juracimbrophlebia.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.Juracimbrophlebia.render(f);
+        //Reset rotations, positions and sizing:
+        this.Juracimbrophlebia.setScale(1.0F, 1.0F, 1.0F);
+        this.Juracimbrophlebia.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 

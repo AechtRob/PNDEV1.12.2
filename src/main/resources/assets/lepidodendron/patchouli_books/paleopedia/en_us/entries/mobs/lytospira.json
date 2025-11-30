@@ -1,0 +1,47 @@
+{
+	"name": "Lytospira",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lytospira_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_lytospira",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lytospira",
+			"title": "Lytospira",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Mollusca$(br)>Gastropoda$(br)>Ophiletoidea$(br)>Ophiletidae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. angelini",
+            "entity": "lepidodendron:prehistoric_flora_lytospira",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lytospira",
+			"type": "text",
+			"text": "Lytospira is a genus of gastropod that is known from the Ordovician and Silurian of the northern hemisphere."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lytospira"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lytospira"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lytospira"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lytospira"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lytospira"
+		}
+	]
+}
