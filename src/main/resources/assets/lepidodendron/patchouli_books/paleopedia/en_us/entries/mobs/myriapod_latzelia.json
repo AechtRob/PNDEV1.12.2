@@ -28,19 +28,19 @@
 		},
 		{
 			"type": "lepidodendron:biomelocations1",
-			"mob": "lepidodendron::prehistoric_flora_myriapod@latzelia"
+			"mob": "lepidodendron:prehistoric_flora_myriapod@latzelia"
 		},
 		{
 			"type": "lepidodendron:biomelocations2",
-			"mob": "lepidodendron::prehistoric_flora_myriapod@latzelia"
+			"mob": "lepidodendron:prehistoric_flora_myriapod@latzelia"
 		},
 		{
 			"type": "lepidodendron:biomelocations3",
-			"mob": "lepidodendron::prehistoric_flora_myriapod@latzelia"
+			"mob": "lepidodendron:prehistoric_flora_myriapod@latzelia"
 		},
 		{
 			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron::prehistoric_flora_myriapod@latzelia"
+			"mob": "lepidodendron:prehistoric_flora_myriapod@latzelia"
 		}
 	]
 }

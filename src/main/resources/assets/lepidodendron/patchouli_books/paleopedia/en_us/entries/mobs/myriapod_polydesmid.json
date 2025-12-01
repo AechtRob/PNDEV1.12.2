@@ -43,19 +43,19 @@
 		},
 		{
 			"type": "lepidodendron:biomelocations1",
-			"mob": "lepidodendron::prehistoric_flora_myriapod@polydesmid"
+			"mob": "lepidodendron:prehistoric_flora_myriapod@polydesmid"
 		},
 		{
 			"type": "lepidodendron:biomelocations2",
-			"mob": "lepidodendron::prehistoric_flora_myriapod@polydesmid"
+			"mob": "lepidodendron:prehistoric_flora_myriapod@polydesmid"
 		},
 		{
 			"type": "lepidodendron:biomelocations3",
-			"mob": "lepidodendron::prehistoric_flora_myriapod@polydesmid"
+			"mob": "lepidodendron:prehistoric_flora_myriapod@polydesmid"
 		},
 		{
 			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron::prehistoric_flora_myriapod@polydesmid"
+			"mob": "lepidodendron:prehistoric_flora_myriapod@polydesmid"
 		}
 	]
 }
