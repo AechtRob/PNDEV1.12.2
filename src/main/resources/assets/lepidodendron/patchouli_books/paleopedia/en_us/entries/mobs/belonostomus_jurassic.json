@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_belonostomus_jurassic",
 			"title": "Belonostomus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Aspidorhynchiformes$(br)>Aspidorhynchidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Aspidorhynchiformes$(br)>Aspidorhynchidae"
 		},
 		{
 			"type": "entity",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_armigatus",
 			"title": "Armigatus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Early Cretaceous - Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Ellimmichthyiformes$(br)>Armigatidae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Ellimmichthyiformes$(br)>Armigatidae"
 		},
         	{
             "type": "entity",

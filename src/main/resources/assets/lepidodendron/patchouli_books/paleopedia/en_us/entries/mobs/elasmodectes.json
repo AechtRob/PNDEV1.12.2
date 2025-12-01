@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_elasmodectes",
 			"title": "Elasmodectes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Chimaeriformes$(br)>Chimaeridae"
+			"text": "$(l)Temporal Range:$() Jurassic - Late Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Chimaeriformes$(br)>Chimaeridae"
 		},
 		{
 			"type": "entity",

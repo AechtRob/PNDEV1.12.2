@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_saccocoma",
 			"title": "Saccocoma",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Echinodermata$(br)>Crinozoa$(br)>Crinoidea$(br)>Roveacrinida"
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Echinodermata$(br)>Crinozoa$(br)>Crinoidea$(br)>Roveacrinida"
 		},
 		{
 			"type": "entity",

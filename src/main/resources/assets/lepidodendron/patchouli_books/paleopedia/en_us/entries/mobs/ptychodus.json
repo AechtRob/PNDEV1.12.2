@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ptychodus",
 			"title": "Ptychodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Lamniformes$(br)>Ptychodontidae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Lamniformes$(br)>Ptychodontidae"
 		},
         	{
             "type": "entity",
