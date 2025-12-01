@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_mawsonia",
 			"title": "Mawsonia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Actinistia$(br)>Coelacanthiformes$(br)>Mawsoniidae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Sarcopterygii$(br)>Actinistia$(br)>Coelacanthiformes$(br)>Mawsoniidae"
 		},
         	{
             "type": "entity",

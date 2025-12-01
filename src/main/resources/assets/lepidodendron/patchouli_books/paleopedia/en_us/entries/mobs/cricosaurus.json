@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cricosaurus",
 			"title": "Cricosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Crocodyliformes$(br)>Thalattosuchia$(br)>Metriorhynchidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Crocodyliformes$(br)>Thalattosuchia$(br)>Metriorhynchidae"
 		},
         	{
             "type": "entity",

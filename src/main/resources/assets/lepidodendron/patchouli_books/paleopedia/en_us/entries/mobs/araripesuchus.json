@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_araripesuchus",
 			"title": "Araripesuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Crocodyliformes$(br)>Notosuchia$(br)>Uruguaysuchidae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Crocodyliformes$(br)>Notosuchia$(br)>Uruguaysuchidae"
 		},
         	{
             "type": "entity",

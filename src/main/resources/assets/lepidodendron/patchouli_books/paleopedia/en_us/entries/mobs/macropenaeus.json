@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_macropenaeus",
 			"title": "Macropenaeus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Early Cretaceous - Late Cretaceous$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Penaeidae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Penaeidae"
 		},
         	{
             "type": "entity",
