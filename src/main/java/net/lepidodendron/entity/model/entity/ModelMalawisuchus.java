@@ -430,13 +430,15 @@ public class ModelMalawisuchus extends ModelBasePalaeopedia {
     }
 
     public void renderStaticFloor(float f) {
-
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
-    public void renderStaticWall(float f) {
 
-        resetToDefaultPose();
-    }
+//    public void renderStaticWall(float f) {
+//
+//        resetToDefaultPose();
+//    }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

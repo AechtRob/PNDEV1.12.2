@@ -352,21 +352,20 @@ public class ModelPerisphinctes extends ModelBasePalaeopedia {
 
     public void renderStaticWall(float f) {
         this.Root.rotateAngleY = (float) Math.toRadians(90);
-        this.Root.offsetY = -0.2F;
-        this.Root.offsetX = -0.15F;
-        this.Root.offsetZ = -0.4F;
+        this.Root.offsetY = -0.145F;
+        this.Root.offsetX = -0.02F;
         this.Root.render(0.01F);
         resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
-        this.Root.offsetZ = -0.1F;
-        this.Root.offsetY = -0.03F;
-        this.Root.offsetX = -0.02F;
+        this.Root.offsetY = -0.153F;
+        this.Root.offsetZ = -0.10F;
         this.Root.render(0.01F);
         resetToDefaultPose();
 
     }
+
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:

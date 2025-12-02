@@ -1935,11 +1935,13 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 //this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                 if (this.testLay(world, this.getPosition())) {
                     BlockPos nestPos = this.getPosition();
-                    if (this.placesNest()) {
+                    if (this.placesNest() && nestPos != null ) {
                         world.setBlockState(nestPos, BlockNest.block.getDefaultState(), 3);
                         TileEntity te = world.getTileEntity(nestPos);
-                        te.getTileData().setString("creature", getEntityId(this));
-                        te.getTileData().setBoolean("isMound", this.isNestMound());
+                        if (te != null) {
+                            te.getTileData().setString("creature", getEntityId(this));
+                            te.getTileData().setBoolean("isMound", this.isNestMound());
+                        }
                     }
                     this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                     TileEntity te = world.getTileEntity(nestPos);
