@@ -160,14 +160,4 @@ public class EntityPrehistoricFloraTokummia extends EntityPrehistoricFloraFishBa
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.TOKUMMIA_LOOT;
 	}
-
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.75F));
-		}
-		return super.attackEntityFrom(source, amount);
-	}
-
-
 }

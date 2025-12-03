@@ -176,14 +176,6 @@ public class EntityPrehistoricFloraBoothiaspis extends EntityPrehistoricFloraFis
 		return LepidodendronMod.BOOTHIASPIS_LOOT;
 	}
 
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
-		}
-		return super.attackEntityFrom(source, amount);
-	}
-
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {

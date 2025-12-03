@@ -149,9 +149,6 @@ public class EntityPrehistoricFloraCyclobatis extends EntityPrehistoricFloraSwim
 			this.setIsSwimming(true);
 			this.setSwimTick(this.swimLength());
 		}
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
-		}
 		return super.attackEntityFrom(source, amount);
 	}
 

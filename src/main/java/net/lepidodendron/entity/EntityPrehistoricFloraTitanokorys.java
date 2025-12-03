@@ -217,14 +217,6 @@ public class EntityPrehistoricFloraTitanokorys extends EntityPrehistoricFloraFis
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.04F;}
 
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.75F));
-		}
-		return super.attackEntityFrom(source, amount);
-	}
-
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {

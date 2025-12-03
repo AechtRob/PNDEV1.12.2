@@ -127,19 +127,6 @@ public class EntityPrehistoricFloraKleptothule extends EntityPrehistoricFloraEur
 	}
 
 	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-
-		return super.attackEntityFrom(source, (amount * 0.7F));
-
-	}
-
-	//@Override
-	//public net.minecraft.util.SoundEvent getAmbientSound() {
-	//    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	//            .getObject(new ResourceLocation("lepidodendron:eurypterus_idle"));
-	//}
-
-	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
 	}

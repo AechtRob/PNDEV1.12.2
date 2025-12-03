@@ -107,14 +107,6 @@ public class EntityPrehistoricFloraDeltoptychius extends EntityPrehistoricFloraA
 		return false;
 	}
 
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
-		}
-		return super.attackEntityFrom(source, amount);
-	}
-
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAI(this, 1));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));

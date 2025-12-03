@@ -136,13 +136,6 @@ public class EntityPrehistoricFloraDaidal extends EntityPrehistoricFloraEurypter
 	}
 
 	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-
-		return super.attackEntityFrom(source, (amount * 0.7F));
-
-	}
-
-	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
 	}
