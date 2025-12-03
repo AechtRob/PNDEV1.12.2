@@ -922,8 +922,8 @@ public class ModelPatagotitan extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Patagotitan.offsetY = 0.8F;
-        this.Patagotitan.offsetX = -0.25F;
+        this.Patagotitan.offsetY = 1.8F;
+        this.Patagotitan.offsetX = 0.2F;
         this.Patagotitan.rotateAngleY = (float)Math.toRadians(-68);
         this.Patagotitan.rotateAngleX = (float)Math.toRadians(15);
         this.Patagotitan.rotateAngleZ = (float)Math.toRadians(-10);
@@ -931,8 +931,7 @@ public class ModelPatagotitan extends ModelBasePalaeopedia {
         float scaler = 0.35F;
         this.Patagotitan.setScale(scaler, scaler, scaler);
         //Start of pose:
-
-
+        this.setRotateAngle(Patagotitan, 0.4F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.Patagotitan.render(f);
         //Reset rotations, positions and sizing:
