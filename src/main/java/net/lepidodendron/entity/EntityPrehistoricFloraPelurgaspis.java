@@ -186,7 +186,7 @@ public class EntityPrehistoricFloraPelurgaspis extends EntityPrehistoricFloraFis
 		setBuried(false);
 		setBuryCount(0);
 		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
+			return super.attackEntityFrom(source, (amount * 0.85F));
 		}
 		return super.attackEntityFrom(source, amount);
 	}

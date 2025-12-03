@@ -167,40 +167,15 @@ public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraEurypteri
 	}
 
 	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-
-		return super.attackEntityFrom(source, (amount * 0.7F));
-
-	}
-
-	//@Override
-	//public net.minecraft.util.SoundEvent getAmbientSound() {
-	//    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	//            .getObject(new ResourceLocation("lepidodendron:eurypterus_idle"));
-	//}
-
-	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
 	}
-
-
-	//@Override
-	//public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
-	//    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	//            .getObject(new ResourceLocation("lepidodendron:eurypterus_hurt"));
-	//}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
 	}
 
-	//@Override
-	//public net.minecraft.util.SoundEvent getDeathSound() {
-	//    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	//            .getObject(new ResourceLocation("lepidodendron:eurypterus_death"));
-	//}
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));

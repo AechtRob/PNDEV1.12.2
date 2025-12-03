@@ -221,15 +221,6 @@ public class EntityPrehistoricFloraCapinatator extends EntityPrehistoricFloraFis
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.03F;}
 
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
-		}
-		return super.attackEntityFrom(source, amount);
-	}
-
-
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {

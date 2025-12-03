@@ -115,14 +115,6 @@ public class EntityPrehistoricFloraNipponamia extends EntityPrehistoricFloraAgea
 	}
 
 	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
-		}
-		return super.attackEntityFrom(source, amount);
-	}
-
-	@Override
 	public int getAttackLength() {
 		return 10;
 	}

@@ -172,13 +172,6 @@ public class EntityPrehistoricFloraIniopteryx extends EntityPrehistoricFloraFish
 		super.onEntityUpdate();
 	}
 
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-
-		return super.attackEntityFrom(source, amount);
-
-	}
-
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.INIOPTERYX_LOOT;

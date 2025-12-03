@@ -201,7 +201,7 @@ public class EntityPrehistoricFloraTartuosteus extends EntityPrehistoricFloraFis
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		this.setFeedTicks(0);
 		this.isFeeding = false;
-		return super.attackEntityFrom(source, amount);
+		return super.attackEntityFrom(source, (amount * 0.85F));
 	}
 
 	@Override

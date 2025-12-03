@@ -158,7 +158,7 @@ public class EntityPrehistoricFloraKokomopterus extends EntityPrehistoricFloraEu
 
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
-		return super.attackEntityFrom(source, (amount * 0.7F));
+		return super.attackEntityFrom(source, (amount * 0.8F));
 
 	}
 

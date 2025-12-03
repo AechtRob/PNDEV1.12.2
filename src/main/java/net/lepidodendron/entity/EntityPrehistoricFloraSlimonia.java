@@ -95,7 +95,7 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 			this.setSwimTick(this.swimLength() + this.SWIM_ANIMATION.getDuration());
 		}
 
-		return super.attackEntityFrom(source, amount);
+		return super.attackEntityFrom(source, (amount * 0.8F));
 	}
 
 	public void onEntityUpdate() {
