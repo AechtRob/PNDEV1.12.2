@@ -105,7 +105,7 @@ public class EntityPrehistoricFloraParameteoraspis extends EntityPrehistoricFlor
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
+			return super.attackEntityFrom(source, (amount * 0.85F));
 		}
 		return super.attackEntityFrom(source, amount);
 	}

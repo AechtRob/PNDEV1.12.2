@@ -47,7 +47,9 @@ public class EntityPrehistoricFloraNectocaris extends EntityPrehistoricFloraFish
 		return true;
 	}
 
-	public static String getPeriod() {return "Cambrian";}
+	public static String getPeriod() {
+		return "Cambrian";
+	}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -164,10 +166,4 @@ public class EntityPrehistoricFloraNectocaris extends EntityPrehistoricFloraFish
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.NECTOCARIS_LOOT;
 	}
-
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		return super.attackEntityFrom(source, amount);
-	}
-
 }

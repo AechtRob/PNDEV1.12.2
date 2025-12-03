@@ -125,14 +125,6 @@ public class EntityPrehistoricFloraLaccognathus extends EntityPrehistoricFloraSw
 	}
 
 	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
-		}
-		return super.attackEntityFrom(source, amount);
-	}
-
-	@Override
 	public int WaterDist() {
 		int i = (int) LepidodendronConfig.waterLaccognathus;
 		if (i > 16) {i = 16;}

@@ -168,7 +168,7 @@ public class EntityPrehistoricFloraAcutiramus extends EntityPrehistoricFloraEury
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 
-		return super.attackEntityFrom(source, (amount * 0.7F));
+		return super.attackEntityFrom(source, (amount * 0.8F));
 
 	}
 

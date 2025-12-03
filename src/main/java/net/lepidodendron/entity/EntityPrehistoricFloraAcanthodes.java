@@ -137,15 +137,6 @@ public class EntityPrehistoricFloraAcanthodes extends EntityPrehistoricFloraAgea
 		return 20000;
 	}
 
-
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
-		}
-		return super.attackEntityFrom(source, amount);
-	}
-
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new ShoalFishAgeableAI(this, 1, true));

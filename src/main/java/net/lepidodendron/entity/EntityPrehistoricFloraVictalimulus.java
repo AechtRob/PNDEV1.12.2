@@ -166,14 +166,5 @@ public class EntityPrehistoricFloraVictalimulus extends EntityPrehistoricFloraWa
 	public CustomTrigger getModTrigger() {
 		return ModTriggers.CLICK_VICTALIMULUS;
 	}
-
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
-		}
-		return super.attackEntityFrom(source, amount);
-	}
-
 }
 
