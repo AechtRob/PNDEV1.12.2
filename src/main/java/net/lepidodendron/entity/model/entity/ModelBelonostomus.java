@@ -288,7 +288,7 @@ public class ModelBelonostomus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Root.offsetY = -1.5F;
+        this.Root.offsetY = -1.0F;
         this.Root.offsetX = 0.6F;
         this.Root.offsetZ = 1.0F;
         this.Root.rotateAngleY = (float)Math.toRadians(120);

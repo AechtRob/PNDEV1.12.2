@@ -260,10 +260,10 @@ public class ModelAnglaspis extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.8F;
-        this.main.offsetX = 0.1F;
+        this.main.offsetY = -1.8F;
+        this.main.offsetX = 0.6F;
         this.main.rotateAngleY = (float)Math.toRadians(242);
-        this.main.rotateAngleX = (float)Math.toRadians(8);
+        this.main.rotateAngleX = (float)Math.toRadians(20);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
         float scaler = 3.0F;
