@@ -1,0 +1,47 @@
+{
+	"name": "Polzia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/polzia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_polzia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_polzia",
+			"title": "Polzia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Thylacocephala"
+		},
+        	{
+            "type": "entity",
+            "name": "P. eldoctorensis",
+            "entity": "lepidodendron:prehistoric_flora_polzia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_polzia",
+			"type": "text",
+			"text": "Polzia is a genus of thylacocephalian known from the Albian to Cenomanian aged El Doctor Formation, located in Mexico. The animal could grow to 2.5 centimeters long, and is named for Hermann Polz, who was a major contributor to Mesozoic thylacocephalian palaeontology."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_polzia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_polzia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_polzia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_polzia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_polzia"
+		}
+	]
+}

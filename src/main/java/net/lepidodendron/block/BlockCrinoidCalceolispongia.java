@@ -94,7 +94,7 @@ public class BlockCrinoidCalceolispongia extends ElementsLepidodendronMod.ModEle
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_CRINOID_BOLIVIACRINUS;
+			return ModTriggers.CLICK_CRINOID_CALCEOLISPONGIA;
 		}
 
 		

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_enchodus",
 			"title": "Enchodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Aulopiformes$(br)>Enchodontidae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Aulopiformes$(br)>Enchodontidae"
 		},
         	{
             "type": "entity",

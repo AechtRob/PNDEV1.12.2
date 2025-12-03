@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_mecochirus",
 			"title": "Mecochirus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Mechochiridae"
+			"text": "$(l)Temporal Range:$() Jurassic - Late Cretaceous$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Mechochiridae"
 		},
 		{
 			"type": "entity",

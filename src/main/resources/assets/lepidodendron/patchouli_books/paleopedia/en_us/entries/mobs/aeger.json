@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_aeger",
 			"title": "Aeger",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic - Cretaceous$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Dendrobranchiata$(br)>Penaeoidea$(br)>Aegeridae"
+			"text": "$(l)Temporal Range:$() Triassic - Late Cretaceous$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Dendrobranchiata$(br)>Penaeoidea$(br)>Aegeridae"
 		},
 		{
 			"type": "entity",

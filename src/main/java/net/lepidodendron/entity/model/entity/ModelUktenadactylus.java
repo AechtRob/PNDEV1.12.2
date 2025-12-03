@@ -638,6 +638,7 @@ public class ModelUktenadactylus extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.2F;
         this.main.offsetX = -0.2F;
+        this.main.offsetZ = 0.2F;
         this.main.rotateAngleY = (float)Math.toRadians(125);
         this.main.rotateAngleX = (float)Math.toRadians(0);
         this.main.rotateAngleZ = (float)Math.toRadians(0);

@@ -363,7 +363,7 @@ public class ModelHomalonotus extends ModelBasePalaeopedia {
         this.main.rotateAngleY = (float)Math.toRadians(220);
         this.main.rotateAngleZ = (float)Math.toRadians(-20);
         this.main.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 1.0F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);

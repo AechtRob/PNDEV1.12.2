@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraTurbomesodon extends EntityPrehistoricFloraFi
 		return true;
 	}
 
-	public static String getPeriod() {return "Early Cretaceous";}
+	public static String getPeriod() {return "[Jurassic] - Early Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

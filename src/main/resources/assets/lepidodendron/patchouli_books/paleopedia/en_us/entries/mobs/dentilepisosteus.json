@@ -1,0 +1,47 @@
+{
+	"name": "Dentilepisosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dentilepisosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_dentilepisosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dentilepisosteus",
+			"title": "Dentilepisosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Testudines$(br)>Pleurodira$(br)>Araripemydidae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. laevis",
+            "entity": "lepidodendron:prehistoric_flora_dentilepisosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dentilepisosteus",
+			"type": "text",
+			"text": "Dentilepisosteus decorata comes from the Cretaceous, with fossils found in the Santana Formation, Brazil, and the Kem Kem Beds, Morocco. It is a small araripemydid turtle, with its shell growing up to 14 cm in size. The generic name derives from the the Latin word 'dent', to mean 'tooth'; and the genus name 'lepisosteus', an extant gar."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dentilepisosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dentilepisosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dentilepisosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dentilepisosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dentilepisosteus"
+		}
+	]
+}

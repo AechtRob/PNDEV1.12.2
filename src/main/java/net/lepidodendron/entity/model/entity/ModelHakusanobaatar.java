@@ -402,8 +402,8 @@ public class ModelHakusanobaatar extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -4.80F;
-        this.root.offsetX = 1.0F;
+        this.root.offsetY = -1.80F;
+        this.root.offsetX = 0F;
         this.root.rotateAngleY = (float)Math.toRadians(250);
         this.root.rotateAngleX = (float)Math.toRadians(-8);
         this.root.rotateAngleZ = (float)Math.toRadians(0);
@@ -422,10 +422,15 @@ public class ModelHakusanobaatar extends ModelBasePalaeopedia {
     }
 
     public void renderStaticFloor(float f) {
-        this.root.offsetY = 0.22F;
+        this.root.offsetY = 0.172F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }
+
+//    public void renderStaticWall(float f) {
+//
+//        resetToDefaultPose();
+//    }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ptychoceras",
 			"title": "Ptychoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Ancyloceratina$(br)>Ancyloceratoidea$(br)>Ptychoceratidae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Ancyloceratina$(br)>Ancyloceratoidea$(br)>Ptychoceratidae"
 		},
         	{
             "type": "entity",

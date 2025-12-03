@@ -391,14 +391,14 @@ public class ModelOrthacanthus extends ModelBasePalaeopedia {
         this.base.offsetY = -0.05F;
         this.base.offsetX = 0.3F;
         this.base.offsetZ = 2.0F;
-        this.base.rotateAngleY = (float)Math.toRadians(120);
+        this.base.rotateAngleY = (float)Math.toRadians(220);
         this.base.rotateAngleX = (float)Math.toRadians(1);
         this.base.rotateAngleZ = (float)Math.toRadians(0);
         this.base.scaleChildren = true;
         float scaler = 0.75F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body, 0.4F, 6.F, -0.2F);
         this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
         this.setRotateAngle(body3, 0.0F, -0.3F, 0.0F);
         this.setRotateAngle(body4, 0.0F, -0.5F, 0.0F);

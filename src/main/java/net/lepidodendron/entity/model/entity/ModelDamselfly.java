@@ -133,8 +133,8 @@ public class ModelDamselfly extends ModelBasePalaeopedia {
         this.body.offsetY = -1.6F;
         this.body.offsetX = -0.6F;
         this.body.offsetZ = 2.0F;
-        this.body.rotateAngleY = (float)Math.toRadians(120);
-        this.body.rotateAngleX = (float)Math.toRadians(1);
+        this.body.rotateAngleY = (float)Math.toRadians(220);
+        this.body.rotateAngleX = (float)Math.toRadians(20);
         this.body.rotateAngleZ = (float)Math.toRadians(0);
         this.body.scaleChildren = true;
         float scaler = 4.2F;

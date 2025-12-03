@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ichthyotringa",
 			"title": "Ichthyotringa",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Alepisauriformes"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Alepisauriformes"
 		},
         	{
             "type": "entity",

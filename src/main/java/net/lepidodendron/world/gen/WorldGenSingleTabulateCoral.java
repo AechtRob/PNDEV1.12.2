@@ -1,6 +1,9 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockTabulata_1;
+import net.lepidodendron.block.BlockTabulata_2;
+import net.lepidodendron.block.BlockTabulata_3;
+import net.lepidodendron.block.BlockTabulata_4;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;

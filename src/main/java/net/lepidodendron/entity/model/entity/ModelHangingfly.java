@@ -10,7 +10,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
 public class ModelHangingfly extends ModelBasePalaeopedia {
-    private final AdvancedModelRenderer Juracimbrophlebia;
+    private final AdvancedModelRenderer Hangingfly;
     private final AdvancedModelRenderer abdomen1;
     private final AdvancedModelRenderer abdomen2;
     private final AdvancedModelRenderer abdomen3;
@@ -51,13 +51,13 @@ public class ModelHangingfly extends ModelBasePalaeopedia {
         this.textureWidth = 64;
         this.textureHeight = 64;
 
-        this.Juracimbrophlebia = new AdvancedModelRenderer(this);
-        this.Juracimbrophlebia.setRotationPoint(0.0F, 18.8F, -5.0F);
+        this.Hangingfly = new AdvancedModelRenderer(this);
+        this.Hangingfly.setRotationPoint(0.0F, 18.8F, -5.0F);
 
 
         this.abdomen1 = new AdvancedModelRenderer(this);
         this.abdomen1.setRotationPoint(0.0F, -1.0F, 1.0F);
-        this.Juracimbrophlebia.addChild(abdomen1);
+        this.Hangingfly.addChild(abdomen1);
         this.setRotateAngle(abdomen1, 0.0436F, 0.0F, 0.0F);
         this.abdomen1.cubeList.add(new ModelBox(abdomen1, 9, 10, -0.5F, 0.0F, 0.0F, 1, 1, 2, 0.01F, false));
         this.abdomen1.cubeList.add(new ModelBox(abdomen1, 9, 0, -0.5F, 0.3F, 0.0F, 1, 1, 2, 0.0F, false));
@@ -86,7 +86,7 @@ public class ModelHangingfly extends ModelBasePalaeopedia {
 
         this.thorax = new AdvancedModelRenderer(this);
         this.thorax.setRotationPoint(0.0F, -0.0433F, 0.1953F);
-        this.Juracimbrophlebia.addChild(thorax);
+        this.Hangingfly.addChild(thorax);
 
 
         this.cube_r1 = new AdvancedModelRenderer(this);
@@ -263,25 +263,43 @@ public class ModelHangingfly extends ModelBasePalaeopedia {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.Juracimbrophlebia.render(f5);
+        this.Hangingfly.render(f5);
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
+    
     public void renderStaticSuspended(float f) {
-        this.Juracimbrophlebia.render(0.01f);
+        this.Hangingfly.render(0.01f);
     }
 
     public void renderStaticFloor(float f) {
-        this.Juracimbrophlebia.render(0.01f);
+        this.Hangingfly.render(0.01f);
     }
 
     public void renderStaticDisplayCase(float f) {
-        this.Juracimbrophlebia.render(0.01f);
+        this.Hangingfly.render(0.01f);
         resetToDefaultPose();
     }
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hangingfly.offsetY = -3.8F;
+        this.Hangingfly.offsetX = 1.2F;
+        this.Hangingfly.rotateAngleY = (float)Math.toRadians(272);
+        this.Hangingfly.rotateAngleX = (float)Math.toRadians(0);
+        this.Hangingfly.rotateAngleZ = (float)Math.toRadians(0);
+        this.Hangingfly.scaleChildren = true;
+        float scaler = 3.23F;
+        this.Hangingfly.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.Hangingfly.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hangingfly.setScale(1.0F, 1.0F, 1.0F);
+        this.Hangingfly.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 
@@ -315,10 +333,10 @@ public class ModelHangingfly extends ModelBasePalaeopedia {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-        this.setRotateAngle(Juracimbrophlebia, Juracimbrophlebia.rotateAngleX + (float) Math.toRadians(-5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*(562))+40))*4, Juracimbrophlebia.rotateAngleY + (float) Math.toRadians(0), Juracimbrophlebia.rotateAngleZ + (float) Math.toRadians(0));
-//        this.Juracimbrophlebia.rotationPointX = this.Juracimbrophlebia.rotationPointX + (float)(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*187-60))*1);
-//        this.Juracimbrophlebia.rotationPointY = this.Juracimbrophlebia.rotationPointY - (float)(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*374+40))*0.8);
-//        this.Juracimbrophlebia.rotationPointZ = this.Juracimbrophlebia.rotationPointZ + (float)(0);
+        this.setRotateAngle(Hangingfly, Hangingfly.rotateAngleX + (float) Math.toRadians(-5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*(562))+40))*4, Hangingfly.rotateAngleY + (float) Math.toRadians(0), Hangingfly.rotateAngleZ + (float) Math.toRadians(0));
+//        this.Hangingfly.rotationPointX = this.Hangingfly.rotationPointX + (float)(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*187-60))*1);
+//        this.Hangingfly.rotationPointY = this.Hangingfly.rotationPointY - (float)(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*374+40))*0.8);
+//        this.Hangingfly.rotationPointZ = this.Hangingfly.rotationPointZ + (float)(0);
 
 
         this.setRotateAngle(abdomen2, abdomen2.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*374+50))*5), abdomen2.rotateAngleY + (float) Math.toRadians(0), abdomen2.rotateAngleZ + (float) Math.toRadians(0));

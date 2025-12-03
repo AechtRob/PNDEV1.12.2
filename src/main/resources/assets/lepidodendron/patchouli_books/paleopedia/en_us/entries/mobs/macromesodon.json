@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_macromesodon",
 			"title": "Macromesodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Pycnodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Pycnodontidae"
 		},
 		{
 			"type": "entity",

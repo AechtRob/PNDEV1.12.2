@@ -1,0 +1,52 @@
+{
+	"name": "Aetosauroides",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/aetosauroides_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_aetosauroides",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_aetosauroides",
+			"title": "Aetosauroides",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Aetosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "A. scagliai",
+            "entity": "lepidodendron:prehistoric_flora_aetosauroides",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aetosauroides",
+			"type": "text",
+			"text": "Aetosauroides scagliai comes from the Upper Triassic, with fossils found in the Ischigualasto Formation, Argentina, and Maria Formation, Brazil. It is a small aetosaur, growing up to 1 m with females, and 2 m with males. They are the oldest and most basal member of its group, showing less derived characteristics than its other relatives, like its serrated teeth, indicating a less herbivorous diet than later aetosaurs. Alongside this, its skull was also thinner,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aetosauroides",
+			"type": "text",
+			"text": "including its mandibles, which would have not been able to support the beaks that its later relatives would evolve. The generic name derives from the genus name 'Aetosaurus'; and the Latin word 'oides', to mean 'like'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_aetosauroides"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_aetosauroides"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_aetosauroides"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_aetosauroides"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_aetosauroides"
+		}
+	]
+}

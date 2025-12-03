@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dimitobelus",
 			"title": "Dimitobelus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Belemnoidea$(br)>Dimitobelidae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Belemnoidea$(br)>Dimitobelidae"
 		},
         	{
             "type": "entity",

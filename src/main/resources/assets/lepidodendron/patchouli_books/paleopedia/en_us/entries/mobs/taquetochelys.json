@@ -1,0 +1,52 @@
+{
+	"name": "Taquetochelys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/taquetochelys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_taquetochelys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_taquetochelys",
+			"title": "Taquetochelys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Testudines$(br)>Pleurodira$(br)>Araripemydidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. decorata",
+            "entity": "lepidodendron:prehistoric_flora_taquetochelys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_taquetochelys",
+			"type": "text",
+			"text": "Taquetochelys decorata comes from the Early Cretaceous, with fossils found in the Elrhaz Formation, Niger. It is a small araripemydid turtle, with its shell growing up to 14 cm in size. The generic name derives from the surname of Philippe Taquet, a French paleontologist known for the research they did on African dinosaurs; and the Greek word 'chelys', to mean 'tortoise'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_taquetochelys",
+			"type": "text",
+			"text": "The specific name derives from the Latin word 'decoratus', to mean 'adorned'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_taquetochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_taquetochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_taquetochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_taquetochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_taquetochelys"
+		}
+	]
+}

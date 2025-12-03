@@ -1,0 +1,57 @@
+{
+	"name": "Mayfly",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mayfly_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_mayfly",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mayfly",
+			"title": "Mayfly",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous - Present$(br2)>Arthropoda$(br)>Insecta$(br)>Pterygota$(br)>Ephemeroptera"
+		},
+        	{
+            "type": "entity",
+            "name": "Ephemeroptera",
+            "entity": "lepidodendron:prehistoric_flora_mayfly",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mayfly",
+			"type": "text",
+			"text": "Mayflies are insects belonging to the order Ephemeroptera. The record of them goes back to the Carboniferous, with a trace fossil likely with a stem-mayfly maker being found in the Westphalian Wamsutta Formation in Massachusetts, with the first body fossil is known from the Stephanian Montceau-les-Mines Lagerstätte. From there we have over 150 fossil genera of mayfly, the majority of which is wing taxa, and over 400 modern genera."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mayfly",
+			"type": "text",
+			"text": "Mayflies begin their lives in water, with the females laying up to thousands of eggs in watery areas. These eggs hatch into larvae, which are usually herbivorous, though there are some carnivorous species, and even a fossil preserved with a diet of sediment. These larvae serve as food for many other species, such as fish, other insect larvae, parasites, and amphibians."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mayfly",
+			"type": "text",
+			"text": "These larvae slowly mature and grow, a process that can take from 2 weeks to 2 years, before finally developing into a winged adult form. This form famously lives very briefly, only 24 hours in some species, which gives these animals just enough time to mate and lay eggs. They do not have a working mouth at this stage. Due to the timed nature of the life cycle, sometimes billions of mayflies hatching at once can be seen with weather radar."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mayfly"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mayfly"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mayfly"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mayfly"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mayfly"
+		}
+	]
+}

@@ -305,6 +305,15 @@ public class ModelJuracimbrophlebia extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        this.Juracimbrophlebia.offsetY = -2.5F;
+        this.Juracimbrophlebia.offsetX = -0.038F;
+        this.Juracimbrophlebia.rotateAngleY = (float)Math.toRadians(200);
+        this.Juracimbrophlebia.rotateAngleX = (float)Math.toRadians(38);
+        this.Juracimbrophlebia.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Juracimbrophlebia.scaleChildren = true;
+        float scaler = 4.0F;
+        this.Juracimbrophlebia.setScale(scaler, scaler, scaler);
+        //Start of pose:
         setRotateAngle(abdomen1, 0.0436F, 0.0F, 0.0F);
         setRotateAngle(abdomen2, -0.1047F, 0.0F, 0.0F);
         setRotateAngle(abdomen3, -0.2182F, 0.0F, 0.0F);
@@ -326,7 +335,11 @@ public class ModelJuracimbrophlebia extends ModelBasePalaeopedia {
         setRotateAngle(cube_r11, -0.2182F, 0.0F, 0.0F);
         setRotateAngle(cube_r12, -0.1309F, 0.3927F, 0.0F);
         setRotateAngle(cube_r13, -0.1309F, -0.3927F, 0.0F);
+        //End of pose, now render the model:
         this.Juracimbrophlebia.render(f);
+        //Reset rotations, positions and sizing:
+        this.Juracimbrophlebia.setScale(1.0F, 1.0F, 1.0F);
+        this.Juracimbrophlebia.scaleChildren = false;
         resetToDefaultPose();
     }
 

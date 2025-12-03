@@ -1,0 +1,52 @@
+{
+	"name": "Europejara",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/europejara_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_europejara",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_europejara",
+			"title": "Europejara",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pterosauria$(br)>Azhdarchoidea$(br)>Tapejaridae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. olcadesorum",
+            "entity": "lepidodendron:prehistoric_flora_europejara",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_europejara",
+			"type": "text",
+			"text": "Europejara is a genus of tapejarid pterosaur found in the Early Cretaceous of Spain. Identified from a partial jaw and skull, it was the first tapejarid to be found in Europe. Given its fragmentary nature, much of the animal is reconstructed from the related Tapejara. With an estimated wingspan of 2 meters, it is larger than this cousin, though smaller than giants like Tupandactylus."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_europejara",
+			"type": "text",
+			"text": "Given its placement in Tapejaridae, Europejara is suspected to have been a frugivore, likely taking advantage of the Cretaceous Terrestrial Revolution during which Angiosperms were becoming more widespread."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_europejara"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_europejara"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_europejara"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_europejara"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_europejara"
+		}
+	]
+}
