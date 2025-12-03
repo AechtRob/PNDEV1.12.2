@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_asteracanthus",
 			"title": "Asteracanthus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Hybodontiformes$(br)>Hybodontidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Hybodontiformes$(br)>Hybodontidae"
 		},
 		{
 			"type": "entity",

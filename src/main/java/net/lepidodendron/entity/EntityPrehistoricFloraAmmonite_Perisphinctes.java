@@ -129,37 +129,37 @@ public class EntityPrehistoricFloraAmmonite_Perisphinctes extends EntityPrehisto
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {
-		return 0.05;
+		return 0.025;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 0.0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.00;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.02;
+		return 0.00;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return 0.0F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return -0.07;
+		return 0.00;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0.0F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.39;
+		return 0.40;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.0;
+		return 0.00;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.03F;
+		return -0.15F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0;

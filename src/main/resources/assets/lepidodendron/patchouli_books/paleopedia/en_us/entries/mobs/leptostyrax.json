@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_leptostyrax",
 			"title": "Leptostyrax",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Selachii$(br)>Lamniformes$(br)>Pseudoscapanorhynchidae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Selachii$(br)>Lamniformes$(br)>Pseudoscapanorhynchidae"
 		},
         	{
             "type": "entity",

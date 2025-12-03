@@ -10,6 +10,11 @@ public class RenderDisplays {
     public static final ModelAcanthostomatops modelAcanthostomatops = new ModelAcanthostomatops();
     public static final ModelAcheronauta modelAcheronauta = new ModelAcheronauta();
     public static final ModelAcherontiscus modelAcherontiscus = new ModelAcherontiscus();
+    public static final ModelMalawisuchus modelMalawisuchus = new ModelMalawisuchus();
+    public static final ModelCandidodon modelCandidodon = new ModelCandidodon();
+    public static final ModelSasayamamylos modelSasayamamylos = new ModelSasayamamylos();
+    public static final ModelPaulchoffatia modelPaulchoffatia = new ModelPaulchoffatia();
+    public static final ModelHakusanobaatar modelHakusanobaatar = new ModelHakusanobaatar();
     public static final ModelAcrocanthosaurus modelAcrocanthosaurus = new ModelAcrocanthosaurus();
     public static final ModelAcrolepis modelAcrolepis = new ModelAcrolepis();
     public static final ModelAcutiramus modelAcutiramus = new ModelAcutiramus();
@@ -30,7 +35,7 @@ public class RenderDisplays {
     public static final ModelAlienum modelAlienum = new ModelAlienum();
     public static final ModelAllenypterus modelAllenypterus = new ModelAllenypterus();
     public static final ModelAllosaurus modelAllosaurus = new ModelAllosaurus();
-    public static final ModelAmmonite_Perisphinctes modelAmmonitePerisphinctes = new ModelAmmonite_Perisphinctes();
+    public static final ModelPerisphinctes modelAmmonitePerisphinctes = new ModelPerisphinctes();
     public static final ModelAmmonite100cm modelAmmonite100cm = new ModelAmmonite100cm();
     public static final ModelAmmonite150cm modelAmmonite150cm = new ModelAmmonite150cm();
     public static final ModelAmmonite15cm modelAmmonite15cm = new ModelAmmonite15cm();

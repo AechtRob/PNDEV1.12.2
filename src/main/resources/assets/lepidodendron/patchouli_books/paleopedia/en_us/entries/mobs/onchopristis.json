@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_onchopristis",
 			"title": "Onchopristis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Batoidea$(br)>Rajiformes$(br)>Sclerorhynchoidei$(br)>Onchopristidae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Batoidea$(br)>Rajiformes$(br)>Sclerorhynchoidei$(br)>Onchopristidae"
 		},
 		{
             "type": "entity",

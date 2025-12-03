@@ -1,7 +1,7 @@
 {
 	"name": "Eoscorpius",
 	"read_by_default": true,
-	"icon": "lepidodendron:eoscorpius_icon",
+	"icon": "paleopedia:textures/items/eoscorpius_icon.png",
 	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_eoscorpius",
 	"pages": [

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_murex",
 			"title": "Murex",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous - Present$(br2)>Mollusca$(br)>Gastropoda$(br)>Neogastropoda$(br)>Muricidae"
+			"text": "$(l)Temporal Range:$() Early Cretaceous - Present$(br2)>Mollusca$(br)>Gastropoda$(br)>Neogastropoda$(br)>Muricidae"
 		},
 		{
 			"type": "entity",

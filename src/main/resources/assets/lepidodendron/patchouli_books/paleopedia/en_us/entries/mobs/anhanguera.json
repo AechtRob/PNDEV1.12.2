@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_anhanguera",
 			"title": "Anhanguera",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Pterosauria$(br)>Pterodactyloidea$(br)>Anhangueridae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Pterosauria$(br)>Pterodactyloidea$(br)>Anhangueridae"
 		},
         	{
             "type": "entity",

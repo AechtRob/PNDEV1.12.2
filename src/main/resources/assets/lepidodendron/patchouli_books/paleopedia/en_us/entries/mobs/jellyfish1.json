@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_jellyfish1",
 			"title": "Moon Jelly",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous - Present$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Ulmaridae$(br)>$(o)Aurelia"
+			"text": "$(l)Temporal Range:$() Early Cretaceous - Present$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Ulmaridae$(br)>$(o)Aurelia"
 		},
 		{
 			"type": "entity",

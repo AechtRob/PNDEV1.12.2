@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_naomichelys",
 			"title": "Naomichelys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pantestudines$(br)>Testudinata$(br)>Helochelydridae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pantestudines$(br)>Testudinata$(br)>Helochelydridae"
 		},
         	{
             "type": "entity",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_leviathania",
 			"title": "Leviathania",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Mollusca$(br)>Gastropoda$(br)>Purpurinidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Mollusca$(br)>Gastropoda$(br)>Purpurinidae"
 		},
 		{
 			"type": "entity",

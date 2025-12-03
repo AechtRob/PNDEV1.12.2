@@ -342,12 +342,6 @@ public class DimensionSpawns {
         if (string.equalsIgnoreCase("saurichthys_marine")) {
             return "saurichthys";
         }
-        if (string.equalsIgnoreCase("myriapod_eoarthropleura")) {
-            return "eoarthropleura";
-        }
-        if (string.equalsIgnoreCase("myriapod_pneumodesmus")) {
-            return "pneumodesmus";
-        }
         if (string.equalsIgnoreCase("notostracan_strudops")) {
             return "strudops";
         }
