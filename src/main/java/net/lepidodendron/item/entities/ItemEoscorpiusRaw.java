@@ -38,7 +38,7 @@ public class ItemEoscorpiusRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_myriapod@eoscorpius", ItemEoscorpiusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_eoscorpius", ItemEoscorpiusRaw.block);
 		OreDictionary.registerOre("pnfurnaceBug", ItemEoscorpiusRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemEoscorpiusRaw.block);
 	}

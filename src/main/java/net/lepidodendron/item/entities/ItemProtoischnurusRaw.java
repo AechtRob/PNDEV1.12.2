@@ -38,7 +38,7 @@ public class ItemProtoischnurusRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_myriapod@protoischnurus", ItemProtoischnurusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_protoischnurus", ItemProtoischnurusRaw.block);
 		OreDictionary.registerOre("pnfurnaceBug", ItemProtoischnurusRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemProtoischnurusRaw.block);
 	}
