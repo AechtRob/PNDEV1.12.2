@@ -154,9 +154,9 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 	}
 
 	public boolean canLaunch() {
-		for (int xx = -2; xx <= 2; xx--) {
-			for (int yy = 0; yy <= 3; yy--) {
-				for (int zz = -2; zz <= 2; zz--) {
+		for (int xx = -2; xx <= 2; xx++) {
+			for (int yy = 0; yy <= 3; yy++) {
+				for (int zz = -2; zz <= 2; zz++) {
 					if (this.world.getBlockState(this.getPosition().add(xx, yy, zz)).causesSuffocation()) {
 						return false;
 					}
