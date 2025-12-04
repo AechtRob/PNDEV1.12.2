@@ -1,0 +1,67 @@
+{
+	"name": "Patagotitan",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/patagotitan_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_patagotitan",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_patagotitan",
+			"title": "Patagotitan",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Sauropoda$(br)>Titanosauria$(br)>Lognkosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "P. mayorum",
+            "entity": "lepidodendron:prehistoric_flora_patagotitan",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_patagotitan",
+			"type": "text",
+			"text": "Patagotitan mayorum, meaning 'South American titan' and honoring the hospitality of the Mayo family, is a species of titanosaur found in the Cerro Barcino Formation of Late Albian age. 6 separate individuals of Patagotitan are known, all retrieved from the same quarry. It is speculated that they all died around a certain important water source, like elephants do today."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_patagotitan",
+			"type": "text",
+			"text": "It is known as one of the most complete titanosaurs of all time, with most of the vertebrae, some ribs, a complete scapula, forelimbs, hindlimbs, and pubes. This completion makes it one of the most taxonomically stable Titanosaurs known, and allowing comparisons, phylogenetic insight, and better reconstructions of the group as a whole."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_patagotitan",
+			"type": "text",
+			"text": "However what Patagotitan is most famous for is its size, once being considered the largest terrestrial animal to have ever lived. Its describing paper from 2017 predicted that the animal would have grown to 37 meters in length, and weighed around 69 tonnes. The paper claimed that Patagotitan was the largest known dinosaur species, surpassing animals like Argentinosaurus."
+		},		
+		{
+			"advancement": "lepidodendron:pf_adv_book_patagotitan",
+			"type": "text",
+			"text": "These claims have been heavily criticised, particularly for their faulty measuring methods. For example the claim that Patagotitan's vertebrae were larger than Argentinosaurus's, which they provably were not. Most modern estimates place it at 55 tonnes in weight and 31 meters in length, smaller than a few other sauropods."
+		},		
+		{
+			"advancement": "lepidodendron:pf_adv_book_patagotitan",
+			"type": "text",
+			"text": "These estimates would still make Patagotitan one of the largest terrestrial animals of all time, with most other rivaling animals being fragmentary with much less known about them. This enormity combined with its impressive preservation makes Patagotitan one of the best examples of the sheer magnitudes that the sauropods went to."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_patagotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_patagotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_patagotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_patagotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_patagotitan"
+		}
+	]
+}
