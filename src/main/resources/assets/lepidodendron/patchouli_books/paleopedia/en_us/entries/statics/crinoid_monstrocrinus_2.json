@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_monstrocrinus_2",
 			"title": "Monstrocrinus securifer",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Diplobathrida$(br)>Rhodocrinitidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Diplobathrida$(br)>Rhodocrinitidae"
 		},
 		{
 			"type": "multiblock",
