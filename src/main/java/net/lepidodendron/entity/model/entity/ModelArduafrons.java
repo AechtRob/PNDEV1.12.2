@@ -205,7 +205,7 @@ public class ModelArduafrons extends ModelBasePalaeopedia {
         float scaler = 2.0F;
         this.Arduafrons.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(Arduafrons, 0.2F, 3.9F, 0.0F);
+        this.setRotateAngle(Arduafrons, 0.2F, 4.2F, 0.0F);
         this.setRotateAngle(cube_r1, -0.5585F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r2, -0.8552F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r3, 1.2741F, 0.0F, 0.0F);

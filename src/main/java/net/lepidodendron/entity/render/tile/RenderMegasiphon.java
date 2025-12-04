@@ -28,7 +28,7 @@ public class RenderMegasiphon extends TileEntitySpecialRenderer<BlockMegasiphon.
     @Override
     public void render(BlockMegasiphon.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
 
-        float PPscaler = 3.6f;
+        float PPscaler = 3.1f;
         float PPoffset = -16.0f;
         try { //to support book rendering:
             BlockPos pos = entity.getPos();
@@ -101,6 +101,7 @@ public class RenderMegasiphon extends TileEntitySpecialRenderer<BlockMegasiphon.
                 if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
                     GlStateManager.enableBlend();
                     GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+                    GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(PPscaler, PPscaler, PPscaler);
                     GlStateManager.translate(0,PPoffset,0);
                 }
@@ -123,6 +124,7 @@ public class RenderMegasiphon extends TileEntitySpecialRenderer<BlockMegasiphon.
                 if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
                     GlStateManager.enableBlend();
                     GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+                    GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(PPscaler, PPscaler, PPscaler);
                     GlStateManager.translate(0,PPoffset,0);
                 }

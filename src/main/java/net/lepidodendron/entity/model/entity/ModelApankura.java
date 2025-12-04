@@ -272,13 +272,13 @@ public class ModelApankura extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -0.3F;
-        this.body.offsetX = 0.1F;
-        this.body.rotateAngleY = (float) Math.toRadians(210);
-        this.body.rotateAngleX = (float) Math.toRadians(30);
+        this.body.offsetY = -1.0F;
+        this.body.offsetX = 0.8F;
+        this.body.rotateAngleY = (float) Math.toRadians(205);
+        this.body.rotateAngleX = (float) Math.toRadians(25);
         this.body.rotateAngleZ = (float) Math.toRadians(-4);
         this.body.scaleChildren = true;
-        float scaler = 3.0F;
+        float scaler = 5.0F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
 

@@ -17,10 +17,12 @@
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [
+					[ "2" ],
 					[ "1" ],
 					[ "0" ]
 				],
 				"mapping": {
+					"2": "minecraft:air",
 					"1": "lepidodendron:crinoid_crotalocrinites",
 					"0": "minecraft:air"
 				}
