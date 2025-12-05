@@ -77,7 +77,8 @@ public class RenderGangtoucunia extends TileEntitySpecialRenderer<TileEntityGang
         String callerClass = elements[5].getClassName();
         this.bindTexture(TEXTURE_GANGTOUCUNIA);
         if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
-
+            GlStateManager.scale(5.0, 5., 5.);
+            GlStateManager.translate(0,-1.83,0);
         }
         //----End PP Page adjustment
         else {
@@ -94,7 +95,8 @@ public class RenderGangtoucunia extends TileEntitySpecialRenderer<TileEntityGang
             GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
             modelGangtoucunia.scaler = scaler;
             if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
-
+                GlStateManager.scale(5.0, 5., 5.);
+                GlStateManager.translate(0,-1.83,0);
             }
             //----End PP Page adjustment
             else {
@@ -112,7 +114,8 @@ public class RenderGangtoucunia extends TileEntitySpecialRenderer<TileEntityGang
             GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
             modelGangtoucunia.scaler = scaler;
             if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
-
+                GlStateManager.scale(5.0, 5., 5.);
+                GlStateManager.translate(0,-1.83,0);
             }
             //----End PP Page adjustment
             else {
