@@ -12,7 +12,7 @@ public class RenderUtahraptor extends RenderLivingBaseWithBook<EntityPrehistoric
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/utahraptor.png");
 
     public static float getScaler() {
-        return 1f;
+        return 0.85f;
     }
 
     public RenderUtahraptor(RenderManager mgr) {
