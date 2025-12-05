@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Archean Abyssal Chasm$(br2)$()No mobile lifeforms can be found here..."
+			"text": "$(l)Archean Abyssal Chasm$(br2)$()All mobile creatures that can be found here in the mod, in alphabetical order."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
