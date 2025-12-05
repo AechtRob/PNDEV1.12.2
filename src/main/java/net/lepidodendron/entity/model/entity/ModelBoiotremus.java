@@ -210,8 +210,8 @@ public class ModelBoiotremus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Snail.offsetY = -1.4F;
-        this.Snail.offsetX = 0.1F;
+        this.Snail.offsetY = -2.2F;
+        this.Snail.offsetX = -0.1F;
         this.Snail.rotateAngleY = (float)Math.toRadians(-68);
         this.Snail.rotateAngleX = (float)Math.toRadians(30);
         this.Snail.rotateAngleZ = (float)Math.toRadians(0);
@@ -219,7 +219,7 @@ public class ModelBoiotremus extends ModelBasePalaeopedia {
         this.Snail.scaleChildren = true;
         this.Snail.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(Snail, 0.2F, 3.8F, -0.1F);
+        this.setRotateAngle(Snail, 0.6F, 3.8F, -0.4F);
         //End of pose, now render the model:
         this.Snail.render(f);
         //Reset rotations, positions and sizing:

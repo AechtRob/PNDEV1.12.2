@@ -785,16 +785,16 @@ public class ModelEuropejara extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.5F;
-        this.root.offsetX = 0.2F;
+        this.root.offsetY = -0.2F;
+        this.root.offsetX = -0.1F;
         this.root.rotateAngleY = (float)Math.toRadians(125);
         this.root.rotateAngleX = (float)Math.toRadians(-10);
         this.root.rotateAngleZ = (float)Math.toRadians(0);
         this.root.scaleChildren = true;
-        float scaler = 1.F;
+        float scaler = 1.2F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-        //this.setRotateAngle(root, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(root, 0.2F, 3.8F, -0.2F);
 
         //End of pose, now render the model:
         this.root.render(f);

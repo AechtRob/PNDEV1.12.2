@@ -234,16 +234,30 @@ public class ModelEupodophis extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -2.4F;
-        this.main.offsetX = -0.2F;
+        this.main.offsetX = 0.4F;
         this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(90);
         this.main.rotateAngleX = (float)Math.toRadians(0);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 1.F;
+        float scaler = 2.0F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-       
+        this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(front, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(back, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(back2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(back3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(back4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(back5, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(back6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(back7, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(back8, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(back9, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(back10, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(back11, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(back12, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(back13, 0.0F, -0.2F, 0.0F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

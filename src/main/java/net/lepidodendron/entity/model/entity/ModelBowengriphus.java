@@ -126,7 +126,7 @@ public class ModelBowengriphus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.all.offsetY = -2.7F;
+        this.all.offsetY = -2.2F;
         this.all.offsetX = 0.0F;
         this.all.rotateAngleY = (float)Math.toRadians(200);
         this.all.rotateAngleX = (float)Math.toRadians(8);
@@ -135,7 +135,7 @@ public class ModelBowengriphus extends ModelBasePalaeopedia {
         float scaler = 9.5F;
         this.all.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(all, -0.4F, -0.5F, 0.3F);
+        this.setRotateAngle(all, 0.6F, 3.8F, -0.2F);
         this.setRotateAngle(frontbit, 0.1F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.all.render(f);

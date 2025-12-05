@@ -178,14 +178,15 @@ public class ModelAnjiaspis extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.head.offsetY = -1.2F;
-        this.head.offsetX = 0.238F;
+        this.head.offsetX = 0.4F;
         this.head.rotateAngleY = (float)Math.toRadians(220);
         this.head.rotateAngleX = (float)Math.toRadians(20);
         this.head.rotateAngleZ = (float)Math.toRadians(-8);
         this.head.scaleChildren = true;
-        float scaler = 3.63F;
+        float scaler = 5.2F;
         this.head.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(head, 0.6F, 3.8F, -0.2F);
 
         //End of pose, now render the model:
         this.head.render(f);

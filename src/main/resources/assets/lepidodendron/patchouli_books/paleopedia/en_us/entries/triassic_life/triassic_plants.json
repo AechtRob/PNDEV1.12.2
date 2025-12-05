@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Triassic Flora, Fungi, etc.$(br2)$()Text here..."
+			"text": "$(l)Triassic Flora, Fungi, etc.$(br2)$()All flora found from the Triassic period in the mod, in alphabetical order."
 		},
 		{
 			"type": "lepidodendron:plantspawns1",

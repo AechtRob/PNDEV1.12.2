@@ -13,7 +13,7 @@
 		},
         	{
             "type": "entity",
-            "name": "D. sp",
+            "name": "Damselfly sp.",
             "entity": "lepidodendron:prehistoric_flora_damselfly",
             "rotate": false,
             "default_rotation": 0

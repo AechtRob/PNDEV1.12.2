@@ -327,15 +327,16 @@ public class ModelAraxoceras extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -1.2F;
-        this.base.offsetX = 0F;
+        this.base.offsetY = -0.8F;
+        this.base.offsetX = -0.4F;
         this.base.rotateAngleY = (float)Math.toRadians(310);
         this.base.rotateAngleX = (float)Math.toRadians(-18);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
         this.base.scaleChildren = true;
-        float scaler = 1.5F;
+        float scaler = 2.6F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(base, -0.6F, 0.8F, -0.2F);
 
         //End of pose, now render the model:
         this.base.render(f);

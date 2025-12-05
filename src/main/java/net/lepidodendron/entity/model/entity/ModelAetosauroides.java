@@ -383,15 +383,17 @@ public class ModelAetosauroides extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.10F;
-        this.main.offsetX = 0F;
+        this.main.offsetY = -0.2F;
+        this.main.offsetX = 0.1F;
+        this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(222);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 0.7F;
+        float scaler = 0.8F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(main, 0.4F, 3.8F, -0.2F);
 
         //End of pose, now render the model:
         this.main.render(f);
