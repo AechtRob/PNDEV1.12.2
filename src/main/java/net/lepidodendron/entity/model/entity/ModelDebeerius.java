@@ -322,16 +322,16 @@ public class ModelDebeerius extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -1.0F;
-        this.root.offsetX = -0.05F;
+        this.root.offsetY = -1.2F;
+        this.root.offsetX = 0.2F;
         this.root.rotateAngleY = (float)Math.toRadians(200);
         this.root.rotateAngleX = (float)Math.toRadians(8);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 3.3F;
+        float scaler = 2.0F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(root, -0.2F, 2.1F, 0.0F);
+        this.setRotateAngle(root, 0.6F, 3.8F, -0.2F);
         this.setRotateAngle(head, 0.0F, 0.05F, 0.0F);
         this.setRotateAngle(tail, 0.0F, 0.3F, 0.0F);
         this.setRotateAngle(tail2, 0.0F, 0.4F, 0.0F);

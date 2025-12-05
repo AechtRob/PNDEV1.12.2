@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Precambrian Mobile Creatures$(br2)$()Text here..."
+			"text": "$(l)Precambrian Mobile Creatures$(br2)$()All the mobile creatures found from the Precambrian Supereon in the mod, in alphabetical order."
 		},
 		{
 			"type": "lepidodendron:dimensionspawns1",

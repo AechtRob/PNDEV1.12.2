@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Carboniferous Flora, Fungi, etc.$(br2)$()Text here..."
+			"text": "$(l)Carboniferous Flora, Fungi, etc.$(br2)$()All flora found from the Carboniferous period in the mod, in alphabetical order."
 		},
 		{
 			"type": "lepidodendron:plantspawns1",

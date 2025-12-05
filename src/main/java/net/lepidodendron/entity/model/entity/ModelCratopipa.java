@@ -317,14 +317,15 @@ public class ModelCratopipa extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Hips.offsetY = -1.8F;
-        this.Hips.offsetX = -0.138F;
+        this.Hips.offsetX = 0.2F;
         this.Hips.rotateAngleY = (float)Math.toRadians(200);
         this.Hips.rotateAngleX = (float)Math.toRadians(48);
         this.Hips.rotateAngleZ = (float)Math.toRadians(-8);
         this.Hips.scaleChildren = true;
-        float scaler = 2.63F;
+        float scaler = 4.2F;
         this.Hips.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(Hips, 0.6F, 3.8F, -0.2F);
 
         //End of pose, now render the model:
         this.Hips.render(f);

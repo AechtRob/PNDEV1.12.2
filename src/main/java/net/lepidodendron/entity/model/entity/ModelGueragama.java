@@ -304,7 +304,7 @@ public class ModelGueragama extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = -1.70F;
-        this.hips.offsetX = 0.2F;
+        this.hips.offsetX = 0.0F;
         this.hips.rotateAngleY = (float)Math.toRadians(130);
         this.hips.rotateAngleX = (float)Math.toRadians(10);
         this.hips.rotateAngleZ = (float)Math.toRadians(0);
@@ -312,6 +312,7 @@ public class ModelGueragama extends ModelBasePalaeopedia {
         float scaler = 2.8F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(hips, 0.6F, 3.8F, -0.2F);
 
         //End of pose, now render the model:
         this.hips.render(f);

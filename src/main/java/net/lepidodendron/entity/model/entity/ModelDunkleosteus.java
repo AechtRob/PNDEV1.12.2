@@ -330,14 +330,14 @@ public class ModelDunkleosteus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Bodyfront.offsetY = 0.9F;
-        this.Bodyfront.offsetX = 0.3F;
+        this.Bodyfront.offsetY = 1.1F;
+        this.Bodyfront.offsetX = 0.25F;
         this.Bodyfront.offsetZ = 2.0F;
         this.Bodyfront.rotateAngleY = (float)Math.toRadians(120);
         this.Bodyfront.rotateAngleX = (float)Math.toRadians(1);
         this.Bodyfront.rotateAngleZ = (float)Math.toRadians(0);
         this.Bodyfront.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 0.45F;
         this.Bodyfront.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(Bodyfront, 0.6F, 3.8F, -0.2F);

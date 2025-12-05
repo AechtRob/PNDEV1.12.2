@@ -395,14 +395,16 @@ public class ModelAnoualerpeton extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -2.5F;
-        this.root.offsetX = -0.3F;
+        this.root.offsetX = 0.4F;
+        this.root.offsetZ = 2.0F;
         this.root.rotateAngleY = (float)Math.toRadians(200);
         this.root.rotateAngleX = (float)Math.toRadians(20);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 6.2F;
+        float scaler = 6.8F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(root, 0.4F, 3.8F, -0.2F);
 
         //End of pose, now render the model:
         this.root.render(f);

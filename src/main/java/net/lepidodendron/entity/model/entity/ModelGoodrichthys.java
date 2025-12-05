@@ -207,16 +207,16 @@ public class ModelGoodrichthys extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
 
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.4F;
+        this.main.offsetY = -0.55F;
         this.main.offsetX = 0.0F;
         this.main.rotateAngleY = (float)Math.toRadians(-68);
         this.main.rotateAngleX = (float)Math.toRadians(15);
         this.main.rotateAngleZ = (float)Math.toRadians(-10);
-        float scaler = 0.9F;
+        float scaler = 0.6F;
         this.main.scaleChildren = true;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(main, 0.15F, -3.3F, 0.1F);
+        this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);
         this.setRotateAngle(tail, 0.1F, 0.2F, 0.0F);
         this.setRotateAngle(tail2, 0.1F, -0.2F, 0.0F);
         this.setRotateAngle(tail3, 0.1F, -0.2F, 0.0F);

@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Cambrian Mobile Creatures$(br2)$()Text here..."
+			"text": "$(l)Cambrian Mobile Creatures$(br2)$()All the mobile creatures found from the Cambrian period in the mod, in alphabetical order."
 		},
 		{
 			"type": "lepidodendron:dimensionspawns1",

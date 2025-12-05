@@ -445,9 +445,10 @@ public class ModelArchaeoceratops extends ModelBasePalaeopedia {
         this.body.rotateAngleX = (float)Math.toRadians(0);
         this.body.rotateAngleZ = (float)Math.toRadians(0);
         this.body.scaleChildren = true;
-        float scaler = 1.0F;
+        float scaler = 1.6F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(body, 0.4F, 3.8F, -0.2F);
 
         //End of pose, now render the model:
         this.body.render(f);

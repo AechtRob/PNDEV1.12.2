@@ -94,16 +94,16 @@ public class ModelBathrotomaria extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.snail.offsetY = -0.3F;
-        this.snail.offsetX = 0.1F;
+        this.snail.offsetY = -1.2F;
+        this.snail.offsetX = -0.2F;
         this.snail.rotateAngleY = (float)Math.toRadians(-68);
         this.snail.rotateAngleX = (float)Math.toRadians(15);
         this.snail.rotateAngleZ = (float)Math.toRadians(-10);
-        float scaler = 2.5F;
+        float scaler = 4.6F;
         this.snail.scaleChildren = true;
         this.snail.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(snail, 0.2F, 3.8F, -0.1F);
+        this.setRotateAngle(snail, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.snail.render(f);
         //Reset rotations, positions and sizing:

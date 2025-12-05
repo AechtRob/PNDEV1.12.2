@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Cambrian Dusty Wastes$(br2)$()Text here..."
+			"text": "$(l)Cambrian Dusty Wastes$(br2)$()No lifeforms can be found here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

@@ -534,7 +534,7 @@ public class ModelCaiuajara extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.4F;
-        this.main.offsetX = 0.2F;
+        this.main.offsetX = -0.2F;
         this.main.rotateAngleY = (float)Math.toRadians(125);
         this.main.rotateAngleX = (float)Math.toRadians(-50);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
@@ -542,7 +542,7 @@ public class ModelCaiuajara extends ModelBasePalaeopedia {
         float scaler = 1.4F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-        //this.setRotateAngle(root, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(main, -0.6F, 3.8F, -0.2F);
 
         //End of pose, now render the model:
         this.main.render(f);

@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Late Cretaceous Mobile Creatures$(br2)$()Text here..."
+			"text": "$(l)Late Cretaceous Mobile Creatures$(br2)$()All the mobile creatures found from the Late Cretaceous period in the mod, in alphabetical order."
 		},
 		{
 			"type": "lepidodendron:dimensionspawns1",

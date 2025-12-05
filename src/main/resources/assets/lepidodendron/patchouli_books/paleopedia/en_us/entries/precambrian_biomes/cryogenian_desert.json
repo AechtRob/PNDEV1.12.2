@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Cryogenian Ice Desert$(br2)$()Text here..."
+			"text": "$(l)Cryogenian Ice Desert$(br2)$()No mobile lifeforms can be found here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

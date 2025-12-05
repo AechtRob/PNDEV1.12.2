@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Cambrian Flora, Fungi, etc.$(br2)$()Text here..."
+			"text": "$(l)Cambrian Flora, Fungi, etc.$(br2)$()All flora found from the Cambrian period in the mod, in alphabetical order."
 		},
 		{
 			"type": "lepidodendron:plantspawns1",

@@ -377,16 +377,17 @@ public class ModelFutabasaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Hips.offsetY = 0.25F;
-        this.Hips.offsetX = 0.4F;
+        this.Hips.offsetY = -0.2F;
+        this.Hips.offsetX = -0.3F;
         this.Hips.offsetZ = 1.0F;
         this.Hips.rotateAngleY = (float)Math.toRadians(120);
         this.Hips.rotateAngleX = (float)Math.toRadians(1);
         this.Hips.rotateAngleZ = (float)Math.toRadians(0);
         this.Hips.scaleChildren = true;
-        float scaler = 0.28F;
+        float scaler = 0.35F;
         this.Hips.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(Hips, 0.6F, 3.8F, -0.2F);
 
         //End of pose, now render the model:
         this.Hips.render(f);

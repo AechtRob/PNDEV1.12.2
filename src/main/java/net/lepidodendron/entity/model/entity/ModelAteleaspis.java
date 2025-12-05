@@ -198,7 +198,7 @@ public class ModelAteleaspis extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.head.offsetY = -1.0F;
-        this.head.offsetX = 0.8F;
+        this.head.offsetX = 0.7F;
         this.head.rotateAngleY = (float)Math.toRadians(120);
         this.head.rotateAngleX = (float)Math.toRadians(1);
         this.head.rotateAngleZ = (float)Math.toRadians(0);
@@ -206,7 +206,7 @@ public class ModelAteleaspis extends ModelBasePalaeopedia {
         float scaler = 2.5F;
         this.head.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(head, 0.2F, 3.8F, 0.0F);
+        this.setRotateAngle(head, 0.6F, 3.8F, -0.2F);
         this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);
         this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
         this.setRotateAngle(body3, 0.0F, 0.1F, 0.0F);

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_roachoid",
 			"title": "Roach",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous - Late Cretaceous(br2)>Arthropoda$(br)>Insecta$(br)>Dictyoptera$(br)>$(o)Roachoid"
+			"text": "$(l)Temporal Range:$() Carboniferous - Late Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Dictyoptera$(br)>$(o)Roachoid"
 		},
 		{
 			"type": "entity",
