@@ -356,8 +356,8 @@ public class ModelPlatyhystrix extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Hip.offsetY = -0.4F;
-        this.Hip.offsetX = 0.35F;
+        this.Hip.offsetY = -0.6F;
+        this.Hip.offsetX = -0.2F;
         this.Hip.rotateAngleY = (float)Math.toRadians(-250);
         this.Hip.rotateAngleX = (float)Math.toRadians(3);
         this.Hip.rotateAngleZ = (float)Math.toRadians(12);
@@ -365,7 +365,7 @@ public class ModelPlatyhystrix extends ModelBasePalaeopedia {
         float scaler = 1.2F;
         this.Hip.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Hip, 0.2F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.Hip.render(f);
         //Reset rotations, positions and sizing:

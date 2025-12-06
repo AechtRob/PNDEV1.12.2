@@ -301,10 +301,10 @@ public class ModelMarmorerpeton extends ModelBasePalaeopedia {
         this.Hips.rotateAngleX = (float)Math.toRadians(1);
         this.Hips.rotateAngleZ = (float)Math.toRadians(0);
         this.Hips.scaleChildren = true;
-        float scaler = 3.0F;
+        float scaler = 2.0F;
         this.Hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(Hips, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(Hips, 0.4F, 3.8F, -0.2F);
         this.setRotateAngle(Tail1, 0.0F, -0.2F, 0.0F);
         this.setRotateAngle(Tail2, 0.0F, -0.2F, 0.0F);
         this.setRotateAngle(Tail3, 0.0F, -0.2F, 0.0F);

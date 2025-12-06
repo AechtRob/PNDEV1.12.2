@@ -191,8 +191,8 @@ public class ModelTurfania extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -1.6F;
-        this.main.offsetX = 0.1F;
+        this.main.offsetY = -1.2F;
+        this.main.offsetX = -0.2F;
         this.main.rotateAngleY = (float)Math.toRadians(230);
         this.main.rotateAngleX = (float)Math.toRadians(20);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);

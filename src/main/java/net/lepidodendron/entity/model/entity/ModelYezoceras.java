@@ -1087,12 +1087,12 @@ public class ModelYezoceras extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Shell.offsetY = -1.2F;
-        this.Shell.offsetX = 1.2F;
+        this.Shell.offsetX = 0.8F;
         this.Shell.rotateAngleY = (float)Math.toRadians(242);
         this.Shell.rotateAngleX = (float)Math.toRadians(-18);
         this.Shell.rotateAngleZ = (float)Math.toRadians(-8);
         this.Shell.scaleChildren = true;
-        float scaler = 1.23F;
+        float scaler = 2.4F;
         this.Shell.setScale(scaler, scaler, scaler);
         //Start of pose:
 

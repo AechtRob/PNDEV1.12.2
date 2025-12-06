@@ -530,16 +530,17 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.5F;
+        this.root.offsetY = -0.8F;
         this.root.offsetX = 0F;
+        this.root.offsetZ = 2.0F;
         this.root.rotateAngleY = (float)Math.toRadians(130);
         this.root.rotateAngleX = (float)Math.toRadians(10);
         this.root.rotateAngleZ = (float)Math.toRadians(2);
         this.root.scaleChildren = true;
-        float scaler = 0.65F;
+        float scaler = 1.2F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(root, 0.4F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:

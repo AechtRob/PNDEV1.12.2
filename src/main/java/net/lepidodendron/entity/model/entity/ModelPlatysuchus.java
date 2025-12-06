@@ -494,7 +494,7 @@ public class ModelPlatysuchus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = 0.0F;
-        this.root.offsetX = 0.2F;
+        this.root.offsetX = 0.25F;
         this.root.offsetZ = 2.0F;
         this.root.rotateAngleY = (float)Math.toRadians(120);
         this.root.rotateAngleX = (float)Math.toRadians(0);
@@ -503,7 +503,7 @@ public class ModelPlatysuchus extends ModelBasePalaeopedia {
         float scaler = 0.6F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(root, 0.0F, 3.6F, -0.0F);
+        this.setRotateAngle(root, 0.4F, 3.6F, -0.1F);
         this.setRotateAngle(Neck, 0.0F, 0.2F, 0.0F);
         this.setRotateAngle(Head, -0.2F, 0.2F, 0.0F);
         this.setRotateAngle(Lowerjawback, 0.2F, 0.0F, 0.0F);

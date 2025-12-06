@@ -302,8 +302,8 @@ public class ModelScorpionfly extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.scorpionfly.offsetY = -3.8F;
-        this.scorpionfly.offsetX = 1.2F;
+        this.scorpionfly.offsetY = -3.2F;
+        this.scorpionfly.offsetX = 0.2F;
         this.scorpionfly.rotateAngleY = (float)Math.toRadians(230);
         this.scorpionfly.rotateAngleX = (float)Math.toRadians(10);
         this.scorpionfly.rotateAngleZ = (float)Math.toRadians(0);
@@ -311,7 +311,7 @@ public class ModelScorpionfly extends ModelBasePalaeopedia {
         float scaler = 4.23F;
         this.scorpionfly.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(scorpionfly, 0.2F, 3.8F, -0.1F);
         //End of pose, now render the model:
         this.scorpionfly.render(f);
         //Reset rotations, positions and sizing:

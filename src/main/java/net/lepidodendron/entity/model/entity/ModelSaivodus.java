@@ -233,14 +233,14 @@ public class ModelSaivodus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.all.offsetY = 0.15F;
-        this.all.offsetX = 0.4F;
+        this.all.offsetY = 0.2F;
+        this.all.offsetX = 0.25F;
         this.all.offsetZ = 2.0F;
         this.all.rotateAngleY = (float)Math.toRadians(120);
         this.all.rotateAngleX = (float)Math.toRadians(0);
         this.all.rotateAngleZ = (float)Math.toRadians(0);
         this.all.scaleChildren = true;
-        float scaler = 0.4F;
+        float scaler = 0.3F;
         this.all.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(all, 0.6F, 3.8F, -0.2F);

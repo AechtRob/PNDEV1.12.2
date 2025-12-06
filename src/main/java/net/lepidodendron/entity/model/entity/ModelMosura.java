@@ -491,17 +491,21 @@ public class ModelMosura extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -0.5F;
-        this.body.offsetX = -0.05F;
+        this.body.offsetY = -0.4F;
+        this.body.offsetX = 0.15F;
         this.body.offsetZ = 2.0F;
         this.body.rotateAngleY = (float)Math.toRadians(120);
         this.body.rotateAngleX = (float)Math.toRadians(1);
         this.body.rotateAngleZ = (float)Math.toRadians(0);
         this.body.scaleChildren = true;
-        float scaler = 0.8F;
+        float scaler = 1.0F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(appendageright, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(appendageleft2, 0.4F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.body.render(f);
         //Reset rotations, positions and sizing:

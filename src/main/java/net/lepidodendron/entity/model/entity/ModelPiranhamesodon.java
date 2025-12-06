@@ -419,7 +419,7 @@ public class ModelPiranhamesodon extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Piranhamesodon.offsetY = -0.4F;
+        this.Piranhamesodon.offsetY = -1.8F;
         this.Piranhamesodon.offsetX = 0.0F;
         this.Piranhamesodon.offsetZ = 2.0F;
         this.Piranhamesodon.rotateAngleY = (float)Math.toRadians(120);

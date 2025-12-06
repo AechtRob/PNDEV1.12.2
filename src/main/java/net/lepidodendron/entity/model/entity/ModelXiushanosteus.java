@@ -210,8 +210,8 @@ public class ModelXiushanosteus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -1.2F;
-        this.root.offsetX = 0.238F;
+        this.root.offsetY = -2.0F;
+        this.root.offsetX = -0.4F;
         this.root.rotateAngleY = (float)Math.toRadians(242);
         this.root.rotateAngleX = (float)Math.toRadians(8);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
@@ -219,7 +219,7 @@ public class ModelXiushanosteus extends ModelBasePalaeopedia {
         float scaler = 3.63F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(root, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:

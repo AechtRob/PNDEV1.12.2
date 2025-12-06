@@ -493,8 +493,8 @@ public class ModelRechnisaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = 0.60F;
-        this.hips.offsetX = 0.35F;
+        this.hips.offsetY = 0.3F;
+        this.hips.offsetX = -0.3F;
         this.hips.rotateAngleY = (float)Math.toRadians(130);
         this.hips.rotateAngleX = (float)Math.toRadians(2);
         this.hips.rotateAngleZ = (float)Math.toRadians(0);
@@ -502,7 +502,7 @@ public class ModelRechnisaurus extends ModelBasePalaeopedia {
         float scaler = 0.6F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(hips, 0.2F, 3.8F, -0.1F);
         //End of pose, now render the model:
         this.hips.render(f);
         //Reset rotations, positions and sizing:

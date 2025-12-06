@@ -277,7 +277,7 @@ public class ModelPhorcynis extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -1.0F;
+        this.body.offsetY = -1.8F;
         this.body.offsetX = 0.4F;
         this.body.offsetZ = 2.0F;
         this.body.rotateAngleY = (float)Math.toRadians(120);

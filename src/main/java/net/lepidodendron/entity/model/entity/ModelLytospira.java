@@ -94,16 +94,16 @@ public class ModelLytospira extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -0.3F;
-        this.body.offsetX = 0.1F;
+        this.body.offsetY = -1.8F;
+        this.body.offsetX = 0.8F;
         this.body.rotateAngleY = (float)Math.toRadians(-68);
         this.body.rotateAngleX = (float)Math.toRadians(15);
         this.body.rotateAngleZ = (float)Math.toRadians(-10);
-        float scaler = 2.5F;
+        float scaler = 4.8F;
         this.body.scaleChildren = true;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(body, 0.2F, 3.8F, -0.1F);
+        this.setRotateAngle(body, 0.4F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.body.render(f);
         //Reset rotations, positions and sizing:
