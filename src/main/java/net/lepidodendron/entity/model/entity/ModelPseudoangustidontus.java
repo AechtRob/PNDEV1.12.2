@@ -810,16 +810,17 @@ public class ModelPseudoangustidontus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.bone.offsetY = -0.5F;
-        this.bone.offsetX = 0.0F;
+        this.bone.offsetY = -1.0F;
+        this.bone.offsetX = 0.2F;
+        this.bone.offsetZ = 2.0F;
         this.bone.rotateAngleY = (float)Math.toRadians(200);
         this.bone.rotateAngleX = (float)Math.toRadians(8);
         this.bone.rotateAngleZ = (float)Math.toRadians(-8);
         this.bone.scaleChildren = true;
-        float scaler = 1.5F;
+        float scaler = 1.2F;
         this.bone.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(bone, -0.1F, 2.5F, 0.1F);
+        this.setRotateAngle(bone, 0.6F, 3.8F, -0.2F);
         this.setRotateAngle(head, 0.0F, 0.1F, 0.0F);
         this.setRotateAngle(body, 0.0F, -0.1F, 0.0F);
         this.setRotateAngle(segment1, 0.0F, 0.1F, 0.0F);

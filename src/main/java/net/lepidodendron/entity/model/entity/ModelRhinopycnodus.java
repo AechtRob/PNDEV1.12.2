@@ -279,7 +279,7 @@ public class ModelRhinopycnodus extends ModelBasePalaeopedia {
         float scaler = 3.0F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

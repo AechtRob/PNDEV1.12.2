@@ -312,8 +312,8 @@ public class ModelPinacoceras extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Root.offsetY = -1.2F;
-        this.Root.offsetX = 1.2F;
+        this.Root.offsetY = -0.8F;
+        this.Root.offsetX = -0.6F;
         this.Root.rotateAngleY = (float)Math.toRadians(242);
         this.Root.rotateAngleX = (float)Math.toRadians(-18);
         this.Root.rotateAngleZ = (float)Math.toRadians(-8);

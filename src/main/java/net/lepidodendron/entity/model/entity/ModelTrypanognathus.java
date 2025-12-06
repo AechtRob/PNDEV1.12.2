@@ -444,8 +444,8 @@ public class ModelTrypanognathus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -0.4F;
-        this.base.offsetX = 0.0F;
+        this.base.offsetY = -1.2F;
+        this.base.offsetX = 0.2F;
         this.base.offsetZ = 2.0F;
         this.base.rotateAngleY = (float)Math.toRadians(120);
         this.base.rotateAngleX = (float)Math.toRadians(1);

@@ -184,16 +184,16 @@ public class ModelParaleptolepis extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -0.8F;
-        this.body.offsetX = 0.0F;
+        this.body.offsetX = 0.8F;
         this.body.offsetZ = 2.0F;
         this.body.rotateAngleY = (float)Math.toRadians(120);
         this.body.rotateAngleX = (float)Math.toRadians(1);
         this.body.rotateAngleZ = (float)Math.toRadians(0);
         this.body.scaleChildren = true;
-        float scaler = 4.2F;
+        float scaler = 6.0F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.body.render(f);
         //Reset rotations, positions and sizing:

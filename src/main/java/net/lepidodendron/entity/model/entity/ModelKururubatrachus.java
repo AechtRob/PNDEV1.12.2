@@ -305,15 +305,15 @@ public class ModelKururubatrachus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = -1.8F;
-        this.hips.offsetX = -0.138F;
+        this.hips.offsetX = 0.2F;
         this.hips.rotateAngleY = (float)Math.toRadians(200);
         this.hips.rotateAngleX = (float)Math.toRadians(48);
         this.hips.rotateAngleZ = (float)Math.toRadians(-8);
         this.hips.scaleChildren = true;
-        float scaler = 2.63F;
+        float scaler = 4.8F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(hips, 0.4F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.hips.render(f);
         //Reset rotations, positions and sizing:

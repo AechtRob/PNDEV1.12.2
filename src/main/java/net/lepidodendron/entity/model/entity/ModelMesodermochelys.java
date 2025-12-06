@@ -559,7 +559,7 @@ public class ModelMesodermochelys extends ModelBasePalaeopedia {
         float scaler = 0.5F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-        
+        this.setRotateAngle(base, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.base.render(f);
         //Reset rotations, positions and sizing:

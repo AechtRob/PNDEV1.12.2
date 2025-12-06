@@ -283,7 +283,7 @@ public class ModelHayolperichthys extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -1.25F;
+        this.main.offsetY = -1.8F;
         this.main.offsetX = -0.4F;
         this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(120);
@@ -293,7 +293,7 @@ public class ModelHayolperichthys extends ModelBasePalaeopedia {
         float scaler = 4.0F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

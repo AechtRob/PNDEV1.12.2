@@ -220,8 +220,8 @@ public class ModelTanaocrossus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -1.0F;
-        this.body.offsetX = -1.3F;
+        this.body.offsetY = -0.8F;
+        this.body.offsetX = 1.0F;
         this.body.rotateAngleY = (float)Math.toRadians(200);
         this.body.rotateAngleX = (float)Math.toRadians(8);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);
@@ -229,7 +229,7 @@ public class ModelTanaocrossus extends ModelBasePalaeopedia {
         float scaler = 4.0F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(body, 0.1F, 2.0F, 0.0F);
+        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
         this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
         this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
         this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);

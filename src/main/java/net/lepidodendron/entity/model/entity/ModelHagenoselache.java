@@ -177,16 +177,16 @@ public class ModelHagenoselache extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -0.50F;
-        this.base.offsetX = -0.3F;
+        this.base.offsetY = -0.20F;
+        this.base.offsetX = 0.1F;
         this.base.rotateAngleY = (float)Math.toRadians(130);
         this.base.rotateAngleX = (float)Math.toRadians(9);
         this.base.rotateAngleZ = (float)Math.toRadians(-2);
         this.base.scaleChildren = true;
-        float scaler = 1.2F;
+        float scaler = 1.4F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(base, 0.2F, 2.5F, 0.0F);
+        this.setRotateAngle(base, 0.6F, 3.8F, -0.2F);
         this.setRotateAngle(body, 0.01F, 0.4F, 0.0F);
         this.setRotateAngle(body2, 0.01F, -0.7F, 0.0F);
         this.setRotateAngle(body3, 0.02F, -0.6F, 0.0F);

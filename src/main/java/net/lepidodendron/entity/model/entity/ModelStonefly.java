@@ -279,16 +279,16 @@ public class ModelStonefly extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.stonefly.offsetY = -3.8F;
-        this.stonefly.offsetX = 1.2F;
+        this.stonefly.offsetY = -3.2F;
+        this.stonefly.offsetX = -0.2F;
         this.stonefly.rotateAngleY = (float)Math.toRadians(210);
         this.stonefly.rotateAngleX = (float)Math.toRadians(20);
         this.stonefly.rotateAngleZ = (float)Math.toRadians(0);
         this.stonefly.scaleChildren = true;
-        float scaler = 3.23F;
+        float scaler = 4.0F;
         this.stonefly.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(stonefly, 0.2F, 3.8F, -0.1F);
         //End of pose, now render the model:
         this.stonefly.render(f);
         //Reset rotations, positions and sizing:

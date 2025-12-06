@@ -217,7 +217,7 @@ public class ModelSenekichthys extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -1.8F;
-        this.root.offsetX = -1.1F;
+        this.root.offsetX = -0.4F;
         this.root.rotateAngleY = (float)Math.toRadians(200);
         this.root.rotateAngleX = (float)Math.toRadians(8);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
@@ -225,7 +225,7 @@ public class ModelSenekichthys extends ModelBasePalaeopedia {
         float scaler = 5.5F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(root, -0.3F, 2.5F, 0.0F);
+        this.setRotateAngle(root, 0.6F, 3.8F, -0.2F);
         this.setRotateAngle(head, 0.05F, 0.1F, 0.0F);
         this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
         this.setRotateAngle(tail2, 0.0F, -0.3F, 0.0F);

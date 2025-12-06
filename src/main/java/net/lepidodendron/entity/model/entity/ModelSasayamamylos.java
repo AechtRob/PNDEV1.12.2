@@ -371,17 +371,16 @@ public class ModelSasayamamylos extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.80F;
-        this.root.offsetX = 0.4F;
+        this.root.offsetY = -2.20F;
+        this.root.offsetX = -0.2F;
         this.root.rotateAngleY = (float)Math.toRadians(250);
         this.root.rotateAngleX = (float)Math.toRadians(0);
         this.root.rotateAngleZ = (float)Math.toRadians(0);
         this.root.scaleChildren = true;
-        float scaler = 3.6F;
+        float scaler = 4.2F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
-        
+        this.setRotateAngle(root, 0.2F, 3.8F, -0.1F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:

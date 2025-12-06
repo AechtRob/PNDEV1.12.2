@@ -450,7 +450,7 @@ public class ModelScaphites extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.base.offsetY = -1.2F;
-        this.base.offsetX = 1.2F;
+        this.base.offsetX = 0.2F;
         this.base.rotateAngleY = (float)Math.toRadians(300);
         this.base.rotateAngleX = (float)Math.toRadians(-18);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);

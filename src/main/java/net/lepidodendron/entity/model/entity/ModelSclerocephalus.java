@@ -461,8 +461,8 @@ public class ModelSclerocephalus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hip.offsetY = -0.9F;
-        this.hip.offsetX = 0.2F;
+        this.hip.offsetY = -0.8F;
+        this.hip.offsetX = -0.2F;
         this.hip.rotateAngleY = (float)Math.toRadians(140);
         this.hip.rotateAngleX = (float)Math.toRadians(24);
         this.hip.rotateAngleZ = (float)Math.toRadians(5);
@@ -470,7 +470,7 @@ public class ModelSclerocephalus extends ModelBasePalaeopedia {
         float scaler = 0.98F;
         this.hip.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(hip, 0.2F, 3.8F, -0.1F);
         //End of pose, now render the model:
         this.hip.render(f);
         //Reset rotations, positions and sizing:

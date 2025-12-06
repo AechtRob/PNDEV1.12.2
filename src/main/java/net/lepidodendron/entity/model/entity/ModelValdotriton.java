@@ -314,10 +314,10 @@ public class ModelValdotriton extends ModelBasePalaeopedia {
         this.hips.rotateAngleX = (float)Math.toRadians(0);
         this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;
-        float scaler = 3.7F;
+        float scaler = 4.2F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(hips, 0.2F, 3.8F, -0.1F);
         //End of pose, now render the model:
         this.hips.render(f);
         //Reset rotations, positions and sizing:
