@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraMawsonia extends EntityPrehistoricFloraAgeabl
 		setSize(1.5F, 1.5F);
 		minWidth = 0.2F;
 		maxWidth = 1.5F;
-		maxHeight = 1.5F;
+		maxHeight = 1F;
 		maxHealthAgeable = 50.0D;
 	}
 
