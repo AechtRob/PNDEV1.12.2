@@ -164,6 +164,7 @@ public class BlockSpongeReef extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(255);
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronMisc.tab);
+			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		}
 
 		@Nullable

@@ -80,6 +80,7 @@ public class BlockGlassSpongeReefSticky extends ElementsLepidodendronMod.ModElem
 			//setLightLevel(0.5F);
 			setLightOpacity(0);
 			//this.setTickRandomly(true);
+			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		}
 
 		@Nullable

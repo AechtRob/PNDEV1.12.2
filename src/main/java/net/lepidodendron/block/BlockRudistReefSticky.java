@@ -87,7 +87,8 @@ public class BlockRudistReefSticky extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(255);
 			//this.setTickRandomly(true);
-			setCreativeTab(TabLepidodendronMisc.tab);this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(WATER, 0));
+			setCreativeTab(TabLepidodendronMisc.tab);
+			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(WATER, 0));
 		}
 
 		@Override

@@ -86,6 +86,7 @@ public class BlockAlgalReefSticky extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(255);
 			//this.setTickRandomly(true);
 			setCreativeTab(null);
+			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		}
 
 		@Nullable
