@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraTenontosaurus;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraBiQuadLandBase;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -550,10 +549,12 @@ public class ModelTenontosaurus extends ModelBasePalaeopedia {
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
 
-        EntityPrehistoricFloraBiQuadLandBase walker = (EntityPrehistoricFloraBiQuadLandBase) e;
+        EntityPrehistoricFloraTenontosaurus walker = (EntityPrehistoricFloraTenontosaurus) e;
 
         AdvancedModelRenderer[] tailFull = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5, this.tail6};
         AdvancedModelRenderer[] Neck = {this.neck3, this.neck2, this.neck, this.head};
+
+        walker.tailBuffer.applyChainSwingBuffer(tailFull);
 
         float speed = 0.2F;
 
