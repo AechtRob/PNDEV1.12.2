@@ -143,7 +143,7 @@ public class EntityPrehistoricFloraAcanthostega extends EntityPrehistoricFloraSw
 		return this.getAgeScale() < 0.7;
 	}
 
-	public static String getPeriod() {return "Carboniferous";}
+	public static String getPeriod() {return "Devonian";}
 
 	//public static String getHabitat() {return "Amphibious";}
 	@Override
