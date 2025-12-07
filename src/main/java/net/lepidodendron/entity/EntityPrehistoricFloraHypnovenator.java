@@ -333,7 +333,7 @@ public class EntityPrehistoricFloraHypnovenator extends EntityPrehistoricFloraLa
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:hypnovenator_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:hypnovenator_idle"));
 	}
 
 	@Override
