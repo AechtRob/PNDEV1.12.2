@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_bivalve_requienia",
 			"title": "Requienia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Hippuritida$(br)>Requieniidae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Hippuritida$(br)>Requieniidae"
 		},
 		{
 			"type": "multiblock",

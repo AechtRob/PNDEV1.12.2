@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kururubatrachus",
 			"title": "Kururubatrachus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Amphibia$(br)>Anura$(br)>Neobatrachia"
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Amphibia$(br)>Anura$(br)>Neobatrachia"
 		},
 		{
 			"type": "entity",
