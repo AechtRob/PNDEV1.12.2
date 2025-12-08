@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_brachydectes",
 			"title": "Brachydectes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() [Carbonfierous] - Permian$(br2)>Chordata$(br)>Reptiliomorpha$(br)>Recumbirostra$(br)>Lysorophia$(br)>Molgophidae"
+			"text": "$(l)Temporal Range:$() [Carboniferous] - Permian$(br2)>Chordata$(br)>Reptiliomorpha$(br)>Recumbirostra$(br)>Lysorophia$(br)>Molgophidae"
 		},
         	{
             "type": "entity",
