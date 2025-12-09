@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tietasaura",
 			"title": "Tietasaura",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Neornithischia$(br)>Ornithopoda$(br)>Elasmaria"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Neornithischia$(br)>Ornithopoda$(br)>Elasmaria"
 		},
         	{
             "type": "entity",

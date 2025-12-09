@@ -104,7 +104,7 @@ public class EntityPrehistoricFloraYangchuanosaurus extends EntityPrehistoricFlo
 	public Animation[] getAnimations() {
 		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, HURT_ANIMATION, SCRATCH_RIGHT_ANIMATION};
 	}
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Jurassic [ - Early Cretaceous]";}
 
 	@Override
 	public int getEatLength() {

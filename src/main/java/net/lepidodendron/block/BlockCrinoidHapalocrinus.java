@@ -417,7 +417,7 @@ public class BlockCrinoidHapalocrinus extends ElementsLepidodendronMod.ModElemen
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Crinoid");
-				tooltip.add("Periods: Late Silurian - Early Devonian");
+				tooltip.add("Periods: Silurian - Early Devonian");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

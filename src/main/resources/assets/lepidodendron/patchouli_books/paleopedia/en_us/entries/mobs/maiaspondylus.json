@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_maiaspondylus",
 			"title": "Maiaspondylus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Ichthyosauria$(br)>Ophthalmosauridae$(br)>Platypterygiinae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Ichthyosauria$(br)>Ophthalmosauridae$(br)>Platypterygiinae"
 		},
         	{
             "type": "entity",

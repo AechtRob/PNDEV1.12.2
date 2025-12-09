@@ -65,7 +65,7 @@ public class ItemSpawnEggMyriapodPolydesmid extends ElementsLepidodendronMod.Mod
 
 		@Override
 		public String getPeriod() {
-			return "Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]";
+			return "[Devonian (?) - ] Carboniferous - Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]";
 		}
 
 		@Override

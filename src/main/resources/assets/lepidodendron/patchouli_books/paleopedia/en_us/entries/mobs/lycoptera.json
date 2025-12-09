@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lycoptera",
 			"title": "Lycoptera",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Lycopteriformes$(br)>Lycopteridae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Lycopteriformes$(br)>Lycopteridae"
 		},
         	{
             "type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_lycoptera",
 			"type": "text",
-			"text": "Lycoptera is a genus of fish that is known from many formations across Early Cretaceous Asia. These small fish are commonly found in large groups buried together in what is likely to be mass death events from seasonal upwelling of anoxic waters."
+			"text": "Lycoptera is a genus of fish that is known from many formations across Cretaceous Asia. These small fish are commonly found in large groups buried together in what is likely to be mass death events from seasonal upwelling of anoxic waters."
 		},
 		{
 			"type": "lepidodendron:diet",

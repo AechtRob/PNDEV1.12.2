@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cladocyclus",
 			"title": "Cladocyclus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Ichthyodectiformes$(br)>Cladocyclidae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Ichthyodectiformes$(br)>Cladocyclidae"
 		},
         	{
             "type": "entity",

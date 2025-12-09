@@ -13,7 +13,7 @@
 		},
         	{
             "type": "entity",
-            "name": "Y. elegens",
+            "name": "Y. elegans",
             "entity": "lepidodendron:prehistoric_flora_yezoceras",
             "rotate": false,
             "default_rotation": 0

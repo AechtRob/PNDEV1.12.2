@@ -13,7 +13,7 @@
 		},
         	{
             "type": "entity",
-            "name": "P. polydon",
+            "name": "P. polyodon",
             "entity": "lepidodendron:prehistoric_flora_pelecanimimus",
             "rotate": false,
             "default_rotation": 0
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_pelecanimimus",
 			"type": "text",
-			"text": "Pelecanimimus is a genus of basal ornithomimosaur from the Early Cretaceous of Spain. Its name, Pelican Mimic, refers to its gular pouch which is similar to the much larger pouches found in modern pelicans. Pelecanimimus was extremely unsual for an ornithomimosaur as it possessed 220 teeth. Only one other ornithomimosaur was found to have teeth, which was Harpymimus, however it only had as many as 11 teeth."
+			"text": "Pelecanimimus polyodon is a genus of basal ornithomimosaur from the Early Cretaceous of Spain. Its name, Pelican Mimic, refers to its gular pouch which is similar to the much larger pouches found in modern pelicans. Pelecanimimus was extremely unsual for an ornithomimosaur as it possessed 220 teeth. Only one other ornithomimosaur was found to have teeth, which was Harpymimus, however it only had as many as 11 teeth."
 		},
 		{
 			"type": "lepidodendron:diet",
