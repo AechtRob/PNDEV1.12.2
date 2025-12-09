@@ -39,7 +39,7 @@ public class ItemScorpionflyRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_scorpionfly", ItemScorpionflyRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_scorpionfly@gendered", ItemScorpionflyRaw.block);
 		OreDictionary.registerOre("pnfurnaceBug", ItemScorpionflyRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemScorpionflyRaw.block);
 	}
@@ -60,9 +60,8 @@ public class ItemScorpionflyRaw extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Nullable
-		@Override
 		public String getVariantStr() {
-			return null;
+			return "gendered";
 		}
 	}
 }
