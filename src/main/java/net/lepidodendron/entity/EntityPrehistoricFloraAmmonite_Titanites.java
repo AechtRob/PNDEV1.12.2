@@ -34,7 +34,7 @@ public class EntityPrehistoricFloraAmmonite_Titanites extends EntityPrehistoricF
 		minWidth = 0.1F;
 		maxWidth = 0.7F;
 		maxHeight = 0.8F;
-		maxHealthAgeable = 10;
+		maxHealthAgeable = 20;
 	}
 
 	@Override

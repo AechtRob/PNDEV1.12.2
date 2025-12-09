@@ -314,6 +314,7 @@ public class BlockCooksonia extends ElementsLepidodendronMod.ModElement {
 	    	if ((worldIn.getBlockState(pos.down()).getMaterial() != Material.GROUND) 
 	    		&& (worldIn.getBlockState(pos.down()).getMaterial() != Material.GRASS)
 				&& (worldIn.getBlockState(pos.down()).getMaterial() != Material.CLAY)
+					&& (worldIn.getBlockState(pos.down()).getBlock() != BlockGravelSticky.block)
 	    		&& (worldIn.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL.getDefaultState().getBlock()))
 	    	{
 	    		return false;

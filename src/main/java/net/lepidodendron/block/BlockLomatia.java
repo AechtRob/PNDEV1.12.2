@@ -162,6 +162,7 @@ public class BlockLomatia extends ElementsLepidodendronMod.ModElement {
 
 			if ((world.getBlockState(pos.down()).getMaterial() != Material.GROUND)
 				&& (world.getBlockState(pos.down()).getMaterial() != Material.GRASS)
+					&& (world.getBlockState(pos.down()).getBlock() != BlockGravelSticky.block)
 				&& (world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL.getDefaultState().getBlock()))
 			{
 				world.destroyBlock(pos, false);
@@ -362,6 +363,7 @@ public class BlockLomatia extends ElementsLepidodendronMod.ModElement {
 
 			if ((worldIn.getBlockState(pos.down()).getMaterial() != Material.GROUND)
 				&& (worldIn.getBlockState(pos.down()).getMaterial() != Material.GRASS)
+					&& (worldIn.getBlockState(pos.down()).getBlock() != BlockGravelSticky.block)
 				&& (worldIn.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL.getDefaultState().getBlock()))
 			{
 				return false;
