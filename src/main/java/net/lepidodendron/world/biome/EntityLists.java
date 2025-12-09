@@ -14,7 +14,7 @@ public class EntityLists {
             default:
                 return MobString;
 
-            case 0:
+            case 0: //Precambrian
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimHadeanMobsPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimArcheanMobsPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimPaleoproterozoicMobsPF);
@@ -30,7 +30,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranShallowReefMobsPF);
                 return MobString;
 
-            case 1:
+            case 1: //Cambrian
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsSiltyShorePF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsLagoonsPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsReefPF);
@@ -40,7 +40,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsDeepOceanAbyssPF);
                 return MobString;
 
-            case 2:
+            case 2: //Ordovician
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsOrdovician.dimOrdovicianMobsOceanDeepPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsOrdovician.dimOrdovicianMobsOceanShallowPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsOrdovician.dimOrdovicianMobsOceanIceDeepPF);
@@ -52,7 +52,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsOrdovician.dimOrdovicianMobsBogPF);
                 return MobString;
 
-            case 3:
+            case 3: //Silurian
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsSilurian.dimSilurianMobsOceanDeepRockPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsSilurian.dimSilurianMobsOceanDeepSandPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsSilurian.dimSilurianMobsCreekBeachPF);
@@ -65,7 +65,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsSilurian.dimSilurianMobsCreekLandPF);
                 return MobString;
 
-            case 4:
+            case 4: //Devonian
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsOceanAlgaePF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsOceanPolarPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsLagoonPF);
@@ -92,7 +92,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsHypersalinePF);
                 return MobString;
 
-            case 5:
+            case 5: //Carboniferous
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsOceanDeepPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsOceanShallowPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsOceanCliffPF);
@@ -110,7 +110,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsTarnsWaterPF);
                 return MobString;
 
-            case 6:
+            case 6: //Permian
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsGlossopterisFrozenPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsAridHillsPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsAridKettlesPF);
@@ -142,7 +142,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsWoodedScrubPF);
                 return MobString;
 
-            case 7:
+            case 7: //Triassic
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsChinleDryPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsChinleWetPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsChinaIslandPF);
@@ -177,7 +177,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsWoodlandPF);
                 return MobString;
 
-            case 8:
+            case 8: //Jurassic
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsOceanDeepPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsOceanShallowPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsOceanGlassSpongePF);
@@ -219,7 +219,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsForestIslandBeachPF);
                 return MobString;
 
-            case 9:
+            case 9: //Early K
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyOceanDeepPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyOceanPacificPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyOceanTethysPF);
