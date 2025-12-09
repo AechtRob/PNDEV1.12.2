@@ -75,7 +75,7 @@ public class EntityPrehistoricFloraMayfly extends EntityPrehistoricFloraMeganeur
 	}
 
 	public static String getPeriod() {
-		return "Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene - present";
+		return "Carboniferous - Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene - present";
 	}
 
 	@Nullable
