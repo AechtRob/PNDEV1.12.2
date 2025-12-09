@@ -754,6 +754,8 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveUpright.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveInoceramus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveActinoceramus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveChama.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCoralStonyTubular.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCoralTanStaghorn.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCoralBrain.block).toString(),
