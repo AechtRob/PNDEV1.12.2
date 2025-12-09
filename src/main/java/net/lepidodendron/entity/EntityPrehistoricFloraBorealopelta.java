@@ -391,9 +391,9 @@ public class EntityPrehistoricFloraBorealopelta extends EntityPrehistoricFloraLa
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.MYMOORAPELTA_LOOT_YOUNG;
+			return LepidodendronMod.BOREALOPELTA_LOOT_YOUNG;
 		}
-		return LepidodendronMod.MYMOORAPELTA_LOOT;
+		return LepidodendronMod.BOREALOPELTA_LOOT;
 	}
 
 	@Override
