@@ -332,14 +332,16 @@ public class ModelEucritta extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hip.offsetY = -1.7F;
-        this.hip.offsetX = -0.0F;
+        this.hip.offsetX = 0.2F;
+        this.hip.offsetZ = 2.0F;
         this.hip.rotateAngleY = (float)Math.toRadians(200);
         this.hip.rotateAngleX = (float)Math.toRadians(8);
         this.hip.rotateAngleZ = (float)Math.toRadians(-8);
         this.hip.scaleChildren = true;
-        float scaler = 3.63F;
+        float scaler = 3.4F;
         this.hip.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(hip, 0.6F, 3.8F, -0.2F);
 
         //End of pose, now render the model:
         this.hip.render(f);

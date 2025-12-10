@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraScelidosaurus;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraBiQuadLandBase;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -1408,7 +1407,7 @@ public class ModelScelidosaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = 0.5F;
-        this.hips.offsetX = -0.1F;
+        this.hips.offsetX = 0.F;
         this.hips.rotateAngleY = (float)Math.toRadians(135);
         this.hips.rotateAngleX = (float)Math.toRadians(0);
         this.hips.rotateAngleZ = (float)Math.toRadians(0);
@@ -1416,8 +1415,7 @@ public class ModelScelidosaurus extends ModelBasePalaeopedia {
         float scaler = 0.4F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-        //this.setRotateAngle(root, 0.2618F, 0.0F, 0.0F);
-
+        this.setRotateAngle(hips, 0.2F, 3.8F, -0.1F);
         //End of pose, now render the model:
         this.hips.render(f);
         //Reset rotations, positions and sizing:
@@ -1444,10 +1442,12 @@ public class ModelScelidosaurus extends ModelBasePalaeopedia {
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
 
-        EntityPrehistoricFloraBiQuadLandBase walker = (EntityPrehistoricFloraBiQuadLandBase) e;
+        EntityPrehistoricFloraScelidosaurus walker = (EntityPrehistoricFloraScelidosaurus) e;
 
         AdvancedModelRenderer[] tailFull = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
         AdvancedModelRenderer[] Neck = {this.neck3, this.neck2, this.neck, this.head};
+
+        walker.tailBuffer.applyChainSwingBuffer(tailFull);
 
         float speed = 0.2F;
 

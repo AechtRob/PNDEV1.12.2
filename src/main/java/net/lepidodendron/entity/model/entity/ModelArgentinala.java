@@ -193,7 +193,7 @@ public class ModelArgentinala extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -2.F;
+        this.body.offsetY = -2.6F;
         this.body.offsetX = 0.15F;
         this.body.rotateAngleY = (float)Math.toRadians(-10);
         this.body.rotateAngleX = (float)Math.toRadians(60);
@@ -202,6 +202,7 @@ public class ModelArgentinala extends ModelBasePalaeopedia {
         this.body.scaleChildren = true;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
 
         //End of pose, now render the model:
         this.body.render(f);

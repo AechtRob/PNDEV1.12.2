@@ -272,16 +272,17 @@ public class ModelAcanthodes extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -2.0F;
-        this.base.offsetX = -1.338F;
+        this.base.offsetY = -0.2F;
+        this.base.offsetX = 0.8F;
+        this.base.offsetZ = 2.0F;
         this.base.rotateAngleY = (float)Math.toRadians(200);
         this.base.rotateAngleX = (float)Math.toRadians(8);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
         this.base.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 2.8F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(base, (float)Math.toRadians(5), (float)Math.toRadians(110), (float)Math.toRadians(-5));
+        this.setRotateAngle(base, 0.6F, 3.8F, -0.2F);
         this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);
         this.setRotateAngle(body2, 0.0F, -0.2F, 0.0F);
         this.setRotateAngle(body3, 0.0F, -0.2F, 0.0F);

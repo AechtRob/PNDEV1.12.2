@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Silurian Flora, Fungi, etc.$(br2)$()Text here..."
+			"text": "$(l)Silurian Flora, Fungi, etc.$(br2)$()All flora found from the Silurian period in the mod, in alphabetical order."
 		},
 		{
 			"type": "lepidodendron:plantspawns1",

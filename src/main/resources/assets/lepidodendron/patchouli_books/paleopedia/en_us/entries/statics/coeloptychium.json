@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_coeloptychium",
 			"title": "Coeloptychium",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Porifera)$(br)>Hexactinellida$(br)>Hexasterophora$(br)>Lychniscosida$(br)>Coeloptychidae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Porifera)$(br)>Hexactinellida$(br)>Hexasterophora$(br)>Lychniscosida$(br)>Coeloptychidae"
 		},
         {
         "type": "multiblock",

@@ -333,7 +333,7 @@ public class ModelTeyujagua extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Root.offsetY = -0.80F;
-        this.Root.offsetX = -0.4F;
+        this.Root.offsetX = 0.3F;
         this.Root.rotateAngleY = (float)Math.toRadians(130);
         this.Root.rotateAngleX = (float)Math.toRadians(16);
         this.Root.rotateAngleZ = (float)Math.toRadians(12);
@@ -341,7 +341,7 @@ public class ModelTeyujagua extends ModelBasePalaeopedia {
         float scaler = 1.0F;
         this.Root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Root, 0.2F, 3.8F, -0.1F);
         //End of pose, now render the model:
         this.Root.render(f);
         //Reset rotations, positions and sizing:

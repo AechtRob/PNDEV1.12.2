@@ -1,12 +1,12 @@
 {
-	"name": "Southern Southern Marsh",
+	"name": "Southern Marsh",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
 	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Triassic Southern Southern Marsh$(br2)$()Text here..."
+			"text": "$(l)Triassic Southern Marsh$(br2)$()All mobile creatures that can be found here in the mod, in alphabetical order."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

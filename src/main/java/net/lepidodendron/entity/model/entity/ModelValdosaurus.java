@@ -634,7 +634,7 @@ public class ModelValdosaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Root.offsetY = 0.30F;
-        this.Root.offsetX = -0.32F;
+        this.Root.offsetX = 0.1F;
         this.Root.rotateAngleY = (float)Math.toRadians(130);
         this.Root.rotateAngleX = (float)Math.toRadians(0);
         this.Root.rotateAngleZ = (float)Math.toRadians(0);
@@ -642,7 +642,7 @@ public class ModelValdosaurus extends ModelBasePalaeopedia {
         float scaler = 0.47F;
         this.Root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Root, 0.2F, 3.8F, -0.1F);
         //End of pose, now render the model:
         this.Root.render(f);
         //Reset rotations, positions and sizing:

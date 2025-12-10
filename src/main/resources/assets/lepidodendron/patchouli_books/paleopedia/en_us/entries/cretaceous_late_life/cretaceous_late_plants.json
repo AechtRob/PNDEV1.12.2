@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Late Cretaceous Flora, Fungi, etc.$(br2)$()Text here..."
+			"text": "$(l)Late Cretaceous Flora, Fungi, etc.$(br2)$()All flora found from the Late Cretaceous period in the mod, in alphabetical order."
 		},
 		{
 			"type": "lepidodendron:plantspawns1",

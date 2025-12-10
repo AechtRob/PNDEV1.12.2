@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Precambrian Static Creatures$(br2)$()Text here..."
+			"text": "$(l)Precambrian Static Creatures$(br2)$()All sessile creatures found from the Precambrian Supereon in the mod, in alphabetical order."
 		},
 		{
 			"type": "lepidodendron:staticspawns1",

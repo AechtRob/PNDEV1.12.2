@@ -13,7 +13,7 @@
 		},
         	{
             "type": "entity",
-            "name": "S. Kawaii",
+            "name": "S. kawaii",
             "entity": "lepidodendron:prehistoric_flora_sasayamamylos",
             "rotate": false,
             "default_rotation": 0

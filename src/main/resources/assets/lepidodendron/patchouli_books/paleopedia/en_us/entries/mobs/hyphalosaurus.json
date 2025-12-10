@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hyphalosaurus",
 			"title": "Hyphalosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Choristodera$(br)>Hyphalosauridae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Choristodera$(br)>Hyphalosauridae"
 		},
         	{
             "type": "entity",

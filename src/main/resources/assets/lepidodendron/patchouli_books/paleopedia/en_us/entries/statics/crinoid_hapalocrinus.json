@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_hapalocrinus",
 			"title": "Hapalocrinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Hapalocrinidae"
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Hapalocrinidae"
 		},
 		{
 			"type": "multiblock",
@@ -31,7 +31,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_hapalocrinus",
 			"type": "text",
-			"text": "Hapalocrinus comes from the Lower Devonian, with fossils found in the Hunsrück Slate, Germany."
+			"text": "Hapalocrinus is a crinoid known from the Silurian into the Lower Devonian, with fossils found in the Leintwardine and Damery Beds Formations, England (UK), Keyser Limestone Formation, West Virginia (US), Hunsrück Slate, Germany."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_hapalocrinus",

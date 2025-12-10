@@ -225,7 +225,7 @@ public class ModelEochondrosteus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -2.4F;
-        this.main.offsetX = -0.7F;
+        this.main.offsetX = -0.4F;
         this.main.rotateAngleY = (float)Math.toRadians(200);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
@@ -233,7 +233,7 @@ public class ModelEochondrosteus extends ModelBasePalaeopedia {
         float scaler = 6.0F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(main, 0.2F, 2.5F, 0.0F);
+        this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);
         this.setRotateAngle(head, 0.0F, 0.1F, 0.0F);
         this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
         this.setRotateAngle(tail2, 0.0F, -0.7F, 0.0F);

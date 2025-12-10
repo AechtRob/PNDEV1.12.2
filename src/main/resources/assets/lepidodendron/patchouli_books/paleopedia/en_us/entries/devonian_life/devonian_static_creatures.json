@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Devonian Static Creatures$(br2)$()Text here..."
+			"text": "$(l)Devonian Static Creatures$(br2)$()All sessile creatures found from the Devonian period in the mod, in alphabetical order."
 		},
 		{
 			"type": "lepidodendron:staticspawns1",

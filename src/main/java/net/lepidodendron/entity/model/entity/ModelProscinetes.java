@@ -241,8 +241,8 @@ public class ModelProscinetes extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Proscinetes.offsetY = -1.2F;
-        this.Proscinetes.offsetX = 0.238F;
+        this.Proscinetes.offsetY = -0.2F;
+        this.Proscinetes.offsetX = 1.2F;
         this.Proscinetes.rotateAngleY = (float)Math.toRadians(242);
         this.Proscinetes.rotateAngleX = (float)Math.toRadians(8);
         this.Proscinetes.rotateAngleZ = (float)Math.toRadians(-8);

@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Jurassic Static Creatures$(br2)$()Text here..."
+			"text": "$(l)Jurassic Static Creatures$(br2)$()All sessile creatures found from the Jurassic period in the mod, in alphabetical order."
 		},
 		{
 			"type": "lepidodendron:staticspawns1",

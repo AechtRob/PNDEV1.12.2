@@ -184,8 +184,8 @@ public class ModelWakinoichthys extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -1.8F;
-        this.body.offsetX = -2.3F;
+        this.body.offsetY = -1.2F;
+        this.body.offsetX = 1.6F;
         this.body.offsetZ = 2.0F;
         this.body.rotateAngleY = (float)Math.toRadians(120);
         this.body.rotateAngleX = (float)Math.toRadians(1);
@@ -194,7 +194,7 @@ public class ModelWakinoichthys extends ModelBasePalaeopedia {
         float scaler = 4.2F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(body, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.body.render(f);
         //Reset rotations, positions and sizing:

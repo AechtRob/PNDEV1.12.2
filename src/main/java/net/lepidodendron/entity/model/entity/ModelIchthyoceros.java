@@ -352,8 +352,8 @@ public class ModelIchthyoceros extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.25F;
-        this.main.offsetX = 0.7F;
+        this.main.offsetY = -1.4F;
+        this.main.offsetX = 0.0F;
         this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(120);
         this.main.rotateAngleX = (float)Math.toRadians(1);
@@ -362,7 +362,7 @@ public class ModelIchthyoceros extends ModelBasePalaeopedia {
         float scaler = 5.0F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

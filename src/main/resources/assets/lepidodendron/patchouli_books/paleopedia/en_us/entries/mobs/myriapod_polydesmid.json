@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_myriapod_polydesmid",
 			"title": "Polydesmida",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian - Present$(br2)>Arthropoda$(br)>Myriapoda$(br)>Diplopoda$(br)>Chilognatha$(br)>Helminthomorpha$(br)>Merocheta$(br)>$(o)Polydesmida"
+			"text": "$(l)Temporal Range:$() Carboniferous - Present$(br2)>Arthropoda$(br)>Myriapoda$(br)>Diplopoda$(br)>Chilognatha$(br)>Helminthomorpha$(br)>Merocheta$(br)>$(o)Polydesmida"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_myriapod_polydesmid",
 			"type": "text",
-			"text": "Polydesmids are an old order of Myriapoda, and the largest, hailing from the Devonian up until the present day, with fossils found across the globe. They can grow from size of 0.2 cm up to 13.5 cm in length. Even though most myriapods are simple in appearance, the polydesmids boast the most diverse morphologies within the Myriapoda. Despite this, there are still some defining features that connect them all together, like for example that adults have 20 segments, with"
+			"text": "Polydesmids are an old order of Myriapoda, and the largest, hailing from the Carboniferous up until the present day, with fossils found across the globe. They can grow from size of 0.2 cm up to 13.5 cm in length. Even though most myriapods are simple in appearance, the polydesmids boast the most diverse morphologies within the Myriapoda. Despite this, there are still some defining features that connect them all together, like for example that adults have 20 segments, with"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_myriapod_polydesmid",

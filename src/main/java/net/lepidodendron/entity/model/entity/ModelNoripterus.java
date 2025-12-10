@@ -518,8 +518,8 @@ public class ModelNoripterus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.5F;
-        this.main.offsetX = 0.3F;
+        this.main.offsetY = -0.8F;
+        this.main.offsetX = -0.3F;
         this.main.rotateAngleY = (float)Math.toRadians(125);
         this.main.rotateAngleX = (float)Math.toRadians(-30);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
@@ -527,7 +527,7 @@ public class ModelNoripterus extends ModelBasePalaeopedia {
         float scaler = 1.5F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-        //this.setRotateAngle(root, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(main, -0.2F, 3.8F, -0.2F);
 
         //End of pose, now render the model:
         this.main.render(f);

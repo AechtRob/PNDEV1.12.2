@@ -231,7 +231,7 @@ public class ModelHeterostrophus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Heterostrophus.offsetY = -1.0F;
+        this.Heterostrophus.offsetY = -1.6F;
         this.Heterostrophus.offsetX = -0.35F;
         this.Heterostrophus.rotateAngleY = (float)Math.toRadians(200);
         this.Heterostrophus.rotateAngleX = (float)Math.toRadians(8);
@@ -240,7 +240,7 @@ public class ModelHeterostrophus extends ModelBasePalaeopedia {
         float scaler = 3.5F;
         this.Heterostrophus.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(Heterostrophus, 0.0F, 2.0F, 0.0F);
+        this.setRotateAngle(Heterostrophus, 0.6F, 3.8F, -0.2F);
         this.setRotateAngle(Head, 0.0F, 0.2F, 0.0F);
         this.setRotateAngle(Body1, 0.0F, 0.2F, 0.0F);
         this.setRotateAngle(Body2, 0.0F, -0.2F, 0.0F);

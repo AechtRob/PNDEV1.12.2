@@ -253,7 +253,7 @@ public class ModelKichkassia extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -1.4F;
-        this.root.offsetX = -0.3F;
+        this.root.offsetX = 0.4F;
         this.root.rotateAngleY = (float)Math.toRadians(200);
         this.root.rotateAngleX = (float)Math.toRadians(8);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
@@ -261,7 +261,7 @@ public class ModelKichkassia extends ModelBasePalaeopedia {
         float scaler = 3.2F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(root, -0.3F, 2.0F, 0.1F);
+        this.setRotateAngle(root, 0.6F, 3.8F, -0.2F);
         this.setRotateAngle(head, 0.0F, 0.02F, 0.0F);
         this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
         this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);

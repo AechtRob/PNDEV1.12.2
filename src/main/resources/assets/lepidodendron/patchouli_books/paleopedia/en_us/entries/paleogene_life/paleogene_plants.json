@@ -1,15 +1,15 @@
 {
-	"name": "Paleogene Mobile Creatures",
+	"name": "Paleogene Flora, Fungi, etc.",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_paleogene.png",
 	"category": "lepidodendron:paleogene/paleogene_life",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Paleogene Mobile Creatures$(br2)$()Text here..."
+			"text": "$(l)Paleogene Flora, Fungi, etc.$(br2)$()All flora found from the Paleogene period in the mod, in alphabetical order."
 		},
 		{
-			"type": "lepidodendron:dimensionspawns1",
+			"type": "lepidodendron:plantspawns1",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -27,7 +27,7 @@
 			"imageid13": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns2",
+			"type": "lepidodendron:plantspawns2",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -46,7 +46,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns3",
+			"type": "lepidodendron:plantspawns3",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -65,7 +65,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns4",
+			"type": "lepidodendron:plantspawns4",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -84,7 +84,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns5",
+			"type": "lepidodendron:plantspawns5",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -103,7 +103,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns6",
+			"type": "lepidodendron:plantspawns6",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -122,7 +122,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns7",
+			"type": "lepidodendron:plantspawns7",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -141,7 +141,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns8",
+			"type": "lepidodendron:plantspawns8",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -160,7 +160,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns9",
+			"type": "lepidodendron:plantspawns9",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -179,7 +179,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns10",
+			"type": "lepidodendron:plantspawns10",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -198,7 +198,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns11",
+			"type": "lepidodendron:plantspawns11",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -217,7 +217,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns12",
+			"type": "lepidodendron:plantspawns12",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -236,7 +236,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns13",
+			"type": "lepidodendron:plantspawns13",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -255,7 +255,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns14",
+			"type": "lepidodendron:plantspawns14",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -274,7 +274,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns15",
+			"type": "lepidodendron:plantspawns15",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -293,7 +293,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns16",
+			"type": "lepidodendron:plantspawns16",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -312,7 +312,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns17",
+			"type": "lepidodendron:plantspawns17",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -331,7 +331,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns18",
+			"type": "lepidodendron:plantspawns18",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -350,7 +350,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns19",
+			"type": "lepidodendron:plantspawns19",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",
@@ -369,7 +369,7 @@
 			"imageid14": "11"
 		},
 		{
-			"type": "lepidodendron:dimensionspawns20",
+			"type": "lepidodendron:plantspawns20",
 			"dimid": "11",
 			"imageid0": "11",
 			"imageid1": "11",

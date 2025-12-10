@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cyclonema",
 			"title": "Cyclonema",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Mollusca$(br)>Gastropoda$(br)>Euomphalina$(br)>Platyceratidae"
+			"text": "$(l)Temporal Range:$() Ordovician - Devonian$(br2)>Mollusca$(br)>Gastropoda$(br)>Euomphalina$(br)>Platyceratidae"
 		},
 		{
 			"type": "entity",

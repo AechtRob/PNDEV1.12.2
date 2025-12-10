@@ -87,6 +87,7 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 			setLightOpacity(255);
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronMisc.tab);
+			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		}
 
 		@Nullable

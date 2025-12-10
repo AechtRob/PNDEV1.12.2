@@ -13,7 +13,7 @@
 		},
         	{
             "type": "entity",
-            "name": "S. sp",
+            "name": "Scorpionfly sp.",
             "entity": "lepidodendron:prehistoric_flora_scorpionfly",
             "rotate": false,
             "default_rotation": 0

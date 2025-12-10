@@ -161,16 +161,16 @@ public class ModelInversoceras extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -1.2F;
-        this.base.offsetX = 1.2F;
+        this.base.offsetY = -1.0F;
+        this.base.offsetX = -0.2F;
         this.base.rotateAngleY = (float)Math.toRadians(242);
         this.base.rotateAngleX = (float)Math.toRadians(-18);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
         this.base.scaleChildren = true;
-        float scaler = 2.23F;
+        float scaler = 4.2F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(base, 0.6F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.base.render(f);
         //Reset rotations, positions and sizing:

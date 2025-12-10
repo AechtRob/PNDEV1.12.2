@@ -913,8 +913,7 @@ public class ModelSapeornis extends ModelBasePalaeopedia {
         float scaler = 1.5F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-        //this.setRotateAngle(root, 0.2618F, 0.0F, 0.0F);
-
+        this.setRotateAngle(hips, 0.2F, 3.8F, -0.2F);
         //End of pose, now render the model:
         this.hips.render(f);
         //Reset rotations, positions and sizing:

@@ -13,7 +13,7 @@
 		},
         	{
             "type": "entity",
-            "name": "H. sp",
+            "name": "Hangingfly sp.",
             "entity": "lepidodendron:prehistoric_flora_hangingfly",
             "rotate": false,
             "default_rotation": 0

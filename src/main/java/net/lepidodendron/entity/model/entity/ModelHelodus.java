@@ -312,16 +312,16 @@ public class ModelHelodus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -1.0F;
-        this.main.offsetX = -0.05F;
+        this.main.offsetY = -0.8F;
+        this.main.offsetX = 0.8F;
         this.main.rotateAngleY = (float)Math.toRadians(200);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 3.3F;
+        float scaler = 2.2F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(main, -0.2F, 2.1F, 0.0F);
+        this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);
         this.setRotateAngle(tail, 0.0F, 0.3F, 0.0F);
         this.setRotateAngle(tail2, 0.0F, 0.4F, 0.0F);
         this.setRotateAngle(jaw, 0.1F, 0.0F, 0.0F);

@@ -212,7 +212,7 @@ public class ModelTemperoceras extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = 0.2F;
+        this.body.offsetY = 0.6F;
         this.body.offsetX = 0.2F;
         this.body.offsetZ = 2.0F;
         this.body.rotateAngleY = (float)Math.toRadians(120);

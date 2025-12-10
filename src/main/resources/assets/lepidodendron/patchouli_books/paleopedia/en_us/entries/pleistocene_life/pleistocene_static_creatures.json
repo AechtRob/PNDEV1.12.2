@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Pleistocene Static Creatures$(br2)$()Text here..."
+			"text": "$(l)Pleistocene Static Creatures$(br2)$()All sessile creatures found from the Pleistocene period in the mod, in alphabetical order."
 		},
 		{
 			"type": "lepidodendron:staticspawns1",

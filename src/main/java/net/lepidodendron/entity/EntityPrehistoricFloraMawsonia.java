@@ -38,11 +38,16 @@ public class EntityPrehistoricFloraMawsonia extends EntityPrehistoricFloraAgeabl
 
 	public EntityPrehistoricFloraMawsonia(World world) {
 		super(world);
-		setSize(1.5F, 1.5F);
+		setSize(1.5F, 0.95F);
 		minWidth = 0.2F;
 		maxWidth = 1.5F;
-		maxHeight = 1.5F;
+		maxHeight = 0.95F;
 		maxHealthAgeable = 50.0D;
+	}
+
+	@Override
+	public float getEyeHeight() {
+		return this.height * 1.25F;
 	}
 
 	@Override

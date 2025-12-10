@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Ordovician Frozen Shallow Ocean$(br2)$()Text here..."
+			"text": "$(l)Ordovician Frozen Shallow Ocean$(br2)$()All mobile creatures that can be found here in the mod, in alphabetical order."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

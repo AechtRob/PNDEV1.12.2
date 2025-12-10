@@ -9,6 +9,8 @@ import net.lepidodendron.entity.util.*;
 import net.lepidodendron.item.*;
 import net.lepidodendron.item.entities.ItemBugRaw;
 import net.lepidodendron.item.entities.ItemPNTaxidermyItem;
+import net.lepidodendron.item.entities.ItemSquidRaw;
+import net.lepidodendron.item.entities.ItemWolfRaw;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.WorldOverworldPortal;
 import net.lepidodendron.world.biome.FishingRodDrops;
@@ -36,9 +38,7 @@ import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.entity.monster.EntitySilverfish;
 import net.minecraft.entity.monster.EntitySpider;
-import net.minecraft.entity.passive.EntityBat;
-import net.minecraft.entity.passive.EntitySkeletonHorse;
-import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
@@ -324,6 +324,12 @@ public class LepidodendronEventSubscribers {
 				|| event.getEntity().getClass() == EntitySpider.class
 				|| event.getEntity().getClass() == EntityCaveSpider.class) {
 			event.getDrops().add(new EntityItem(event.getEntity().getEntityWorld(), event.getEntity().posX, event.getEntity().posY, event.getEntity().posZ, new ItemStack(ItemBugRaw.block, 1)));
+		}
+		if (event.getEntity().getClass() == EntitySquid.class) {
+			event.getDrops().add(new EntityItem(event.getEntity().getEntityWorld(), event.getEntity().posX, event.getEntity().posY, event.getEntity().posZ, new ItemStack(ItemSquidRaw.block, 1)));
+		}
+		if (event.getEntity().getClass() == EntityWolf.class) {
+			event.getDrops().add(new EntityItem(event.getEntity().getEntityWorld(), event.getEntity().posX, event.getEntity().posY, event.getEntity().posZ, new ItemStack(ItemWolfRaw.block, 1)));
 		}
 	}
 

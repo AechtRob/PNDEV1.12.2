@@ -164,7 +164,7 @@ public class ModelPolzia extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -1.5F;
-        this.body.offsetX = -0.338F;
+        this.body.offsetX = -0.1F;
         this.body.rotateAngleY = (float)Math.toRadians(220);
         this.body.rotateAngleX = (float)Math.toRadians(28);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);

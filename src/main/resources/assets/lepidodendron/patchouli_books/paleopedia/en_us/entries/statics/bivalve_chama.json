@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_bivalve_Chama",
 			"title": "Chama",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous - Present$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Venerida$(br)>Chamidae"
+			"text": "$(l)Temporal Range:$() Early Cretaceous - Present$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Venerida$(br)>Chamidae"
 		},
 		{
 			"type": "multiblock",

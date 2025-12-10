@@ -239,7 +239,7 @@ public class ModelHuanghelepis extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -1.0F;
-        this.body.offsetX = 1.2F;
+        this.body.offsetX = 2.0F;
         this.body.rotateAngleY = (float)Math.toRadians(130);
         this.body.rotateAngleX = (float)Math.toRadians(-6);
         this.body.rotateAngleZ = (float)Math.toRadians(-2);

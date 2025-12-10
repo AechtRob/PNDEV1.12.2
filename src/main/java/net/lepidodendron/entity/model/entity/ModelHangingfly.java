@@ -284,8 +284,8 @@ public class ModelHangingfly extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Hangingfly.offsetY = -3.8F;
-        this.Hangingfly.offsetX = 1.2F;
+        this.Hangingfly.offsetY = -3.2F;
+        this.Hangingfly.offsetX = 0.2F;
         this.Hangingfly.rotateAngleY = (float)Math.toRadians(272);
         this.Hangingfly.rotateAngleX = (float)Math.toRadians(0);
         this.Hangingfly.rotateAngleZ = (float)Math.toRadians(0);
@@ -293,6 +293,7 @@ public class ModelHangingfly extends ModelBasePalaeopedia {
         float scaler = 3.23F;
         this.Hangingfly.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(Hangingfly, 0.4F, 3.8F, -0.2F);
 
         //End of pose, now render the model:
         this.Hangingfly.render(f);

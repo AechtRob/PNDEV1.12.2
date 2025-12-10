@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Ordovician Static Creatures$(br2)$()Text here..."
+			"text": "$(l)Ordovician Static Creatures$(br2)$()All sessile creatures found from the Ordovician period in the mod, in alphabetical order."
 		},
 		{
 			"type": "lepidodendron:staticspawns1",

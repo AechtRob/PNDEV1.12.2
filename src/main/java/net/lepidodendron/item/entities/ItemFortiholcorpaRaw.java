@@ -39,7 +39,7 @@ public class ItemFortiholcorpaRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_fortiholcorpa", ItemFortiholcorpaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_fortiholcorpa@gendered", ItemFortiholcorpaRaw.block);
 		OreDictionary.registerOre("pnfurnaceBug", ItemFortiholcorpaRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemFortiholcorpaRaw.block);
 	}
@@ -60,9 +60,8 @@ public class ItemFortiholcorpaRaw extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Nullable
-		@Override
 		public String getVariantStr() {
-			return null;
+			return "gendered";
 		}
 	}
 }

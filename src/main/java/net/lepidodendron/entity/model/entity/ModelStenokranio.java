@@ -539,7 +539,7 @@ public class ModelStenokranio extends ModelBasePalaeopedia {
         float scaler = 0.8F;
         this.hip.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(hip, 0.2F, 3.8F, -0.1F);
         //End of pose, now render the model:
         this.hip.render(f);
         //Reset rotations, positions and sizing:

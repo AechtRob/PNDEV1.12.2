@@ -308,7 +308,7 @@ public class ModelHaimirichia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.6F;
+        this.main.offsetY = -0.3F;
         this.main.offsetX = 0.4F;
         this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(220);

@@ -14,7 +14,7 @@ public class EntityLists {
             default:
                 return MobString;
 
-            case 0:
+            case 0: //Precambrian
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimHadeanMobsPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimArcheanMobsPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimPaleoproterozoicMobsPF);
@@ -30,7 +30,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranShallowReefMobsPF);
                 return MobString;
 
-            case 1:
+            case 1: //Cambrian
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsSiltyShorePF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsLagoonsPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsReefPF);
@@ -40,7 +40,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCambrian.dimCambrianMobsDeepOceanAbyssPF);
                 return MobString;
 
-            case 2:
+            case 2: //Ordovician
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsOrdovician.dimOrdovicianMobsOceanDeepPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsOrdovician.dimOrdovicianMobsOceanShallowPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsOrdovician.dimOrdovicianMobsOceanIceDeepPF);
@@ -52,7 +52,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsOrdovician.dimOrdovicianMobsBogPF);
                 return MobString;
 
-            case 3:
+            case 3: //Silurian
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsSilurian.dimSilurianMobsOceanDeepRockPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsSilurian.dimSilurianMobsOceanDeepSandPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsSilurian.dimSilurianMobsCreekBeachPF);
@@ -65,7 +65,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsSilurian.dimSilurianMobsCreekLandPF);
                 return MobString;
 
-            case 4:
+            case 4: //Devonian
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsOceanAlgaePF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsOceanPolarPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsLagoonPF);
@@ -92,7 +92,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsHypersalinePF);
                 return MobString;
 
-            case 5:
+            case 5: //Carboniferous
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsOceanDeepPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsOceanShallowPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsOceanCliffPF);
@@ -110,7 +110,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsTarnsWaterPF);
                 return MobString;
 
-            case 6:
+            case 6: //Permian
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsGlossopterisFrozenPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsAridHillsPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsAridKettlesPF);
@@ -142,7 +142,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsWoodedScrubPF);
                 return MobString;
 
-            case 7:
+            case 7: //Triassic
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsChinleDryPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsChinleWetPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsChinaIslandPF);
@@ -177,7 +177,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsWoodlandPF);
                 return MobString;
 
-            case 8:
+            case 8: //Jurassic
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsOceanDeepPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsOceanShallowPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsOceanGlassSpongePF);
@@ -219,7 +219,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsForestIslandBeachPF);
                 return MobString;
 
-            case 9:
+            case 9: //Early K
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyOceanDeepPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyOceanPacificPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyOceanTethysPF);
@@ -293,7 +293,284 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyAsiaYixianLakesGinkgoPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyAsiaYixianLakesBurnedPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyAsiaYixianBeachPF);
-
+                MobString = ArrayUtils.addAll(MobString,
+                    new String[]{"lepidodendron:prehistoric_flora_acrocanthosaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_aeger:0:0:0",
+                            "lepidodendron:prehistoric_flora_albalophosaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_albanerpeton:0:0:0",
+                            "lepidodendron:prehistoric_flora_anaethalion:0:0:0",
+                            "lepidodendron:prehistoric_flora_anatosuchus:0:0:0",
+                            "lepidodendron:prehistoric_flora_anchura:0:0:0",
+                            "lepidodendron:prehistoric_flora_anhanguera:0:0:0",
+                            "lepidodendron:prehistoric_flora_ankylosphenodon:0:0:0",
+                            "lepidodendron:prehistoric_flora_aquilops:0:0:0",
+                            "lepidodendron:prehistoric_flora_araripesuchus:0:0:0",
+                            "lepidodendron:prehistoric_flora_archaeoniscus:0:0:0",
+                            "lepidodendron:prehistoric_flora_arratiaelops:0:0:0",
+                            "lepidodendron:prehistoric_flora_aspidorhynchus:0:0:0",
+                            "lepidodendron:prehistoric_flora_asteracanthus:0:0:0",
+                            "lepidodendron:prehistoric_flora_ausktribosphenos:0:0:0",
+                            "lepidodendron:prehistoric_flora_australiceras:0:0:0",
+                            "lepidodendron:prehistoric_flora_bannykus:0:0:0",
+                            "lepidodendron:prehistoric_flora_belonostomuscretaceous:0:0:0",
+                            "lepidodendron:prehistoric_flora_belonostomusjurassic:0:0:0",
+                            "lepidodendron:prehistoric_flora_berthasaura:0:0:0",
+                            "lepidodendron:prehistoric_flora_brannerion:0:0:0",
+                            "lepidodendron:prehistoric_flora_calamopleurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_caririsuchus:0:0:0",
+                            "lepidodendron:prehistoric_flora_celtedens:0:0:0",
+                            "lepidodendron:prehistoric_flora_ceratodus:0:0:0",
+                            "lepidodendron:prehistoric_flora_cidaroida:0:0:0",
+                            "lepidodendron:prehistoric_flora_cladocyclus:0:0:0",
+                            "lepidodendron:prehistoric_flora_cooyoo:0:0:0",
+                            "lepidodendron:prehistoric_flora_cratoamia:0:0:0",
+                            "lepidodendron:prehistoric_flora_cretoxyrhina:0:0:0",
+                            "lepidodendron:prehistoric_flora_cricosaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_dastilbe:0:0:0",
+                            "lepidodendron:prehistoric_flora_deinonychus:0:0:0",
+                            "lepidodendron:prehistoric_flora_dimitobelus:0:0:0",
+                            "lepidodendron:prehistoric_flora_dragonfly:0:0:0",
+                            "lepidodendron:prehistoric_flora_dugaldia:0:0:0",
+                            "lepidodendron:prehistoric_flora_edentosuchus:0:0:0",
+                            "lepidodendron:prehistoric_flora_egertonodus:0:0:0",
+                            "lepidodendron:prehistoric_flora_elasmodectes:0:0:0",
+                            "lepidodendron:prehistoric_flora_enchodus:0:0:0",
+                            "lepidodendron:prehistoric_flora_eocarcharia:0:0:0",
+                            "lepidodendron:prehistoric_flora_eryma:0:0:0",
+                            "lepidodendron:prehistoric_flora_euspira:0:0:0",
+                            "lepidodendron:prehistoric_flora_ezkutuberezi:0:0:0",
+                            "lepidodendron:prehistoric_flora_falcarius:0:0:0",
+                            "lepidodendron:prehistoric_flora_geosaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_gobiconodon:0:0:0",
+                            "lepidodendron:prehistoric_flora_gueragama:0:0:0",
+                            "lepidodendron:prehistoric_flora_gyrodus:0:0:0",
+                            "lepidodendron:prehistoric_flora_haliskia:0:0:0",
+                            "lepidodendron:prehistoric_flora_hamulina:0:0:0",
+                            "lepidodendron:prehistoric_flora_harpagodes:0:0:0",
+                            "lepidodendron:prehistoric_flora_harvestman:0:0:0",
+                            "lepidodendron:prehistoric_flora_hemiaster:0:0:0",
+                            "lepidodendron:prehistoric_flora_hispanamia:0:0:0",
+                            "lepidodendron:prehistoric_flora_homoeosaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_hoyasotes:0:0:0",
+                            "lepidodendron:prehistoric_flora_hyphalosaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_hypophylloceras:0:0:0",
+                            "lepidodendron:prehistoric_flora_hypsilophodon:0:0:0",
+                            "lepidodendron:prehistoric_flora_ichthyemidion:0:0:0",
+                            "lepidodendron:prehistoric_flora_ichthyotringa:0:0:0",
+                            "lepidodendron:prehistoric_flora_iemanja:0:0:0",
+                            "lepidodendron:prehistoric_flora_ikechaoamia:0:0:0",
+                            "lepidodendron:prehistoric_flora_ikechosaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_isanichthys:0:0:0",
+                            "lepidodendron:prehistoric_flora_ischyodus{PNType:\"gendered\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_iyuku:0:0:0",
+                            "lepidodendron:prehistoric_flora_jellyfish1:0:0:0",
+                            "lepidodendron:prehistoric_flora_jinyunpelta:0:0:0",
+                            "lepidodendron:prehistoric_flora_kalligrammatid{PNType:\"abrigramma\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_kalligrammatid{PNType:\"ithigramma\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_kalligrammatid{PNType:\"kalligramma\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_kalligrammatid{PNType:\"makarkinia\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_kalligrammatid{PNType:\"oregramma\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_kalligrammatid{PNType:\"sophogramma\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_khoratamia:0:0:0",
+                            "lepidodendron:prehistoric_flora_koolasuchus:0:0:0",
+                            "lepidodendron:prehistoric_flora_koonwarria:0:0:0",
+                            "lepidodendron:prehistoric_flora_lacewing{PNType:\"aetheogramma\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_lacewing{PNType:\"cretapsychops\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_landsnail:0:0:0",
+                            "lepidodendron:prehistoric_flora_lanxangichthys:0:0:0",
+                            "lepidodendron:prehistoric_flora_lepidohyas:0:0:0",
+                            "lepidodendron:prehistoric_flora_leptocleidus:0:0:0",
+                            "lepidodendron:prehistoric_flora_leviathania:0:0:0",
+                            "lepidodendron:prehistoric_flora_liaoceratops:0:0:0",
+                            "lepidodendron:prehistoric_flora_limulid:0:0:0",
+                            "lepidodendron:prehistoric_flora_lonchidion:0:0:0",
+                            "lepidodendron:prehistoric_flora_luskhan:0:0:0",
+                            "lepidodendron:prehistoric_flora_machimosaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_macromesodon:0:0:0",
+                            "lepidodendron:prehistoric_flora_maiaspondylus:0:0:0",
+                            "lepidodendron:prehistoric_flora_mawsonia:0:0:0",
+                            "lepidodendron:prehistoric_flora_mecochirus:0:0:0",
+                            "lepidodendron:prehistoric_flora_mesomyzon:0:0:0",
+                            "lepidodendron:prehistoric_flora_moutoniceras:0:0:0",
+                            "lepidodendron:prehistoric_flora_murex:0:0:0",
+                            "lepidodendron:prehistoric_flora_muttaburrasaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_mythunga:0:0:0",
+                            "lepidodendron:prehistoric_flora_neoceratodus:0:0:0",
+                            "lepidodendron:prehistoric_flora_nerinea:0:0:0",
+                            "lepidodendron:prehistoric_flora_nigersaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_notopala:0:0:0",
+                            "lepidodendron:prehistoric_flora_notostracan{PNType:\"triops1\"}@{PNType:\"triops2\"}@{PNType:\"triops3\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_onchopristis:0:0:0",
+                            "lepidodendron:prehistoric_flora_pachyamia:0:0:0",
+                            "lepidodendron:prehistoric_flora_palaeocambarus:0:0:0",
+                            "lepidodendron:prehistoric_flora_palaeontinid:0:0:0",
+                            "lepidodendron:prehistoric_flora_paracestracion:0:0:0",
+                            "lepidodendron:prehistoric_flora_paraclupea:0:0:0",
+                            "lepidodendron:prehistoric_flora_phylloceras:0:0:0",
+                            "lepidodendron:prehistoric_flora_pietraroiasuchus:0:0:0",
+                            "lepidodendron:prehistoric_flora_pliodetes:0:0:0",
+                            "lepidodendron:prehistoric_flora_protopsephurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_protospinax:0:0:0",
+                            "lepidodendron:prehistoric_flora_pseudorhina{PNType:\"gendered\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_psilichthys:0:0:0",
+                            "lepidodendron:prehistoric_flora_psittacosaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_psittacosaurus_sibiricus:0:0:0",
+                            "lepidodendron:prehistoric_flora_psittacosaurus_sinensis:0:0:0",
+                            "lepidodendron:prehistoric_flora_ptychodus:0:0:0",
+                            "lepidodendron:prehistoric_flora_repenomamus:0:0:0",
+                            "lepidodendron:prehistoric_flora_rhacolepis:0:0:0",
+                            "lepidodendron:prehistoric_flora_roachoidaridinsect:0:0:0",
+                            "lepidodendron:prehistoric_flora_roachoidforestinsect:0:0:0",
+                            "lepidodendron:prehistoric_flora_roachoidswampinsect:0:0:0",
+                            "lepidodendron:prehistoric_flora_saccocoma:0:0:0",
+                            "lepidodendron:prehistoric_flora_scheenstia:0:0:0",
+                            "lepidodendron:prehistoric_flora_shantungosuchus:0:0:0",
+                            "lepidodendron:prehistoric_flora_sinamia:0:0:0",
+                            "lepidodendron:prehistoric_flora_squalicorax:0:0:0",
+                            "lepidodendron:prehistoric_flora_stenamara:0:0:0",
+                            "lepidodendron:prehistoric_flora_strombus:0:0:0",
+                            "lepidodendron:prehistoric_flora_tapejara:0:0:0",
+                            "lepidodendron:prehistoric_flora_tessarolax:0:0:0",
+                            "lepidodendron:prehistoric_flora_tetrapodophis:0:0:0",
+                            "lepidodendron:prehistoric_flora_thaiodus:0:0:0",
+                            "lepidodendron:prehistoric_flora_tietasaura:0:0:0",
+                            "lepidodendron:prehistoric_flora_tomognathus:0:0:0",
+                            "lepidodendron:prehistoric_flora_toxolophosaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_tribodus:0:0:0",
+                            "lepidodendron:prehistoric_flora_tropaeum:0:0:0",
+                            "lepidodendron:prehistoric_flora_tyrannotitan:0:0:0",
+                            "lepidodendron:prehistoric_flora_uighuroniscus:0:0:0",
+                            "lepidodendron:prehistoric_flora_vidalamia:0:0:0",
+                            "lepidodendron:prehistoric_flora_vinctifer:0:0:0",
+                            "lepidodendron:prehistoric_flora_viviparus:0:0:0",
+                            "lepidodendron:prehistoric_flora_wenzichthys:0:0:0",
+                            "lepidodendron:prehistoric_flora_xeneichthys:0:0:0",
+                            "lepidodendron:prehistoric_flora_yanosteus:0:0:0",
+                            "lepidodendron:prehistoric_flora_foreyclupea:0:0:0",
+                            "lepidodendron:prehistoric_flora_chalawan:0:0:0",
+                            "lepidodendron:prehistoric_flora_dentilepisosteus:0:0:0",
+                            "lepidodendron:prehistoric_flora_eoconfuciusornis{PNType:\"gendered\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_kururubatrachus:0:0:0",
+                            "lepidodendron:prehistoric_flora_victalimulus:0:0:0",
+                            "lepidodendron:prehistoric_flora_araripemys:0:0:0",
+                            "lepidodendron:prehistoric_flora_ptyktoptychion{PNType:\"gendered\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_genibatrachus:0:0:0",
+                            "lepidodendron:prehistoric_flora_leptostyrax:0:0:0",
+                            "lepidodendron:prehistoric_flora_scapanorhynchus:0:0:0",
+                            "lepidodendron:prehistoric_flora_taquetochelys:0:0:0",
+                            "lepidodendron:prehistoric_flora_scorpionfly{PNType:\"gendered\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_lacewing{PNType:\"krika\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_lacewing{PNType:\"karenina\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_lacewing{PNType:\"nuddsia\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_confuciusornis{PNType:\"gendered\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_microvenato{PNType:\"gendered\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_fortiholcorpa{PNType:\"gendered\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_kronosaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_utahraptor:0:0:0",
+                            "lepidodendron:prehistoric_flora_sume:0:0:0",
+                            "lepidodendron:prehistoric_flora_pseudomonocentris:0:0:0",
+                            "lepidodendron:prehistoric_flora_turbomesodon:0:0:0",
+                            "lepidodendron:prehistoric_flora_cretalamna:0:0:0",
+                            "lepidodendron:prehistoric_flora_tenontosaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_europejara:0:0:0",
+                            "lepidodendron:prehistoric_flora_valdosaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_palaeoechinastacus:0:0:0",
+                            "lepidodendron:prehistoric_flora_polzia:0:0:0",
+                            "lepidodendron:prehistoric_flora_lycoptera:0:0:0",
+                            "lepidodendron:prehistoric_flora_teoichthys:0:0:0",
+                            "lepidodendron:prehistoric_flora_gegepterus:0:0:0",
+                            "lepidodendron:prehistoric_flora_pterodaustro:0:0:0",
+                            "lepidodendron:prehistoric_flora_kunbarrasaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_rhinobatos:0:0:0",
+                            "lepidodendron:prehistoric_flora_tlalocbatos:0:0:0",
+                            "lepidodendron:prehistoric_flora_patagotitan:0:0:0",
+                            "lepidodendron:prehistoric_flora_galleonosaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_caiuajara:0:0:0",
+                            "lepidodendron:prehistoric_flora_cratopipa:0:0:0",
+                            "lepidodendron:prehistoric_flora_malawisaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_uktenadactylus:0:0:0",
+                            "lepidodendron:prehistoric_flora_archaeoceratops:0:0:0",
+                            "lepidodendron:prehistoric_flora_anoualerpeton:0:0:0",
+                            "lepidodendron:prehistoric_flora_candidodon:0:0:0",
+                            "lepidodendron:prehistoric_flora_malawisuchus:0:0:0",
+                            "lepidodendron:prehistoric_flora_stolokrosuchus:0:0:0",
+                            "lepidodendron:prehistoric_flora_notelops:0:0:0",
+                            "lepidodendron:prehistoric_flora_euroka:0:0:0",
+                            "lepidodendron:prehistoric_flora_heckelichthys:0:0:0",
+                            "lepidodendron:prehistoric_flora_chanopsis:0:0:0",
+                            "lepidodendron:prehistoric_flora_siamamia:0:0:0",
+                            "lepidodendron:prehistoric_flora_hoyasemys:0:0:0",
+                            "lepidodendron:prehistoric_flora_gastonia:0:0:0",
+                            "lepidodendron:prehistoric_flora_eichstaettisaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_paulchoffatia:0:0:0",
+                            "lepidodendron:prehistoric_flora_yuanyanglong:0:0:0",
+                            "lepidodendron:prehistoric_flora_caudipteryx:0:0:0",
+                            "lepidodendron:prehistoric_flora_incisivosaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_mei:0:0:0",
+                            "lepidodendron:prehistoric_flora_leaellynasaura:0:0:0",
+                            "lepidodendron:prehistoric_flora_iguanodon:0:0:0",
+                            "lepidodendron:prehistoric_flora_borealopelta:0:0:0",
+                            "lepidodendron:prehistoric_flora_naomichelys:0:0:0",
+                            "lepidodendron:prehistoric_flora_brodiechelys:0:0:0",
+                            "lepidodendron:prehistoric_flora_ordosemys:0:0:0",
+                            "lepidodendron:prehistoric_flora_goniopholis:0:0:0",
+                            "lepidodendron:prehistoric_flora_sauroposeidon:0:0:0",
+                            "lepidodendron:prehistoric_flora_araripelepidotes:0:0:0",
+                            "lepidodendron:prehistoric_flora_liaoningogriphus:0:0:0",
+                            "lepidodendron:prehistoric_flora_valdotriton:0:0:0",
+                            "lepidodendron:prehistoric_flora_austropotamobius:0:0:0",
+                            "lepidodendron:prehistoric_flora_pelecanimimus:0:0:0",
+                            "lepidodendron:prehistoric_flora_spectrovenator:0:0:0",
+                            "lepidodendron:prehistoric_flora_sarcosuchus:0:0:0",
+                            "lepidodendron:prehistoric_flora_chaoyangopterus:0:0:0",
+                            "lepidodendron:prehistoric_flora_dissimilites:0:0:0",
+                            "lepidodendron:prehistoric_flora_anurognathid{PNType:\"vesperopterylus\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_mortoniceras:0:0:0",
+                            "lepidodendron:prehistoric_flora_ptychoceras:0:0:0",
+                            "lepidodendron:prehistoric_flora_mariella:0:0:0",
+                            "lepidodendron:prehistoric_flora_bathrotomaria:0:0:0",
+                            "lepidodendron:prehistoric_flora_lytoceras:0:0:0",
+                            "lepidodendron:prehistoric_flora_santanmantis:0:0:0",
+                            "lepidodendron:prehistoric_flora_protechiurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_myriapod{PNType:\"velocipede\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_myriapod{PNType:\"fulmenocursor\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_myriapod{PNType:\"juliform\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_myriapod{PNType:\"polydesmid\"}:0:0:0",
+                            "lepidodendron:prehistoric_flora_stonefly:0:0:0",
+                            "lepidodendron:prehistoric_flora_mayfly:0:0:0",
+                            "lepidodendron:prehistoric_flora_hangingfly:0:0:0",
+                            "lepidodendron:prehistoric_flora_damselfly:0:0:0",
+                            "lepidodendron:prehistoric_flora_sasayamagnomus:0:0:0",
+                            "lepidodendron:prehistoric_flora_shokawa:0:0:0",
+                            "lepidodendron:prehistoric_flora_chuhsiungichthys:0:0:0",
+                            "lepidodendron:prehistoric_flora_jinjuichthys:0:0:0",
+                            "lepidodendron:prehistoric_flora_kokuraichthys:0:0:0",
+                            "lepidodendron:prehistoric_flora_nipponamia:0:0:0",
+                            "lepidodendron:prehistoric_flora_paraleptolepis:0:0:0",
+                            "lepidodendron:prehistoric_flora_wakinoichthys:0:0:0",
+                            "lepidodendron:prehistoric_flora_sasayamamylos:0:0:0",
+                            "lepidodendron:prehistoric_flora_hakusanobaatar:0:0:0",
+                            "lepidodendron:prehistoric_flora_hyogobatrachus:0:0:0",
+                            "lepidodendron:prehistoric_flora_shirerpeton:0:0:0",
+                            "lepidodendron:prehistoric_flora_fukuipteryx:0:0:0",
+                            "lepidodendron:prehistoric_flora_kuwajimalla:0:0:0",
+                            "lepidodendron:prehistoric_flora_fukuisaurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_fukuititan:0:0:0",
+                            "lepidodendron:prehistoric_flora_tambatitanis:0:0:0",
+                            "lepidodendron:prehistoric_flora_fukuiraptor:0:0:0",
+                            "lepidodendron:prehistoric_flora_fukuivenator:0:0:0",
+                            "lepidodendron:prehistoric_flora_hypnovenator:0:0:0",
+                            "lepidodendron:prehistoric_flora_tyrannomimus:0:0:0",
+                            "lepidodendron:prehistoric_flora_sinemys:0:0:0",
+                            "lepidodendron:prehistoric_flora_cretosaja:0:0:0",
+                            "lepidodendron:prehistoric_flora_adocus:0:0:0",
+                            "lepidodendron:prehistoric_flora_monjurosuchus:0:0:0",
+                            "lepidodendron:prehistoric_flora_kaganaias:0:0:0",
+                            "lepidodendron:prehistoric_flora_sapeornis:0:0:0",
+                            "lepidodendron:prehistoric_flora_noripterus:0:0:0",
+                            "lepidodendron:prehistoric_flora_macropenaeus:0:0:0",
+                            "lepidodendron:prehistoric_flora_armigatus:0:0:0"
+                    });
                 return MobString;
 
             case 10: //Late K

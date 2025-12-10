@@ -323,8 +323,8 @@ public class ModelBaculites extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -0F;
-        this.base.offsetX = 0F;
+        this.base.offsetY = 0.1F;
+        this.base.offsetX = 0.2F;
         this.base.rotateAngleY = (float)Math.toRadians(242);
         this.base.rotateAngleX = (float)Math.toRadians(-18);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
@@ -332,6 +332,7 @@ public class ModelBaculites extends ModelBasePalaeopedia {
         float scaler = 0.53F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(base, -0.2F, 3.8F, -0.2F);
 
         //End of pose, now render the model:
         this.base.render(f);
