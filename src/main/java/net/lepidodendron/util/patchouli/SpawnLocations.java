@@ -8,6 +8,11 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 public class SpawnLocations {
 
     public static boolean spawnsHere(String mobID, String biomeID) {
+        if (biomeID.startsWith("lepidodendron:")) { //We exclude creeks as seperate spawn biomes for the purposes of the book lists
+            if (biomeID.contains("_creek_")) {
+                return false;
+            }
+        }
         Biome biome = ForgeRegistries.BIOMES.getValue(new ResourceLocation(biomeID));
         String[] possibleMobs = EntityLists.mobString(biome);
         boolean spawns = false;

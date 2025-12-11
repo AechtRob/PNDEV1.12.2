@@ -342,10 +342,10 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 	public static double offsetPlinth() { return 0.16; }
 	public static double offsetWall(@Nullable String variant) { return 0.05; }
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.5;
+		return 0.0;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.2;
@@ -360,7 +360,7 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 		return 0.0F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.1;
+		return 0.36;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
@@ -381,13 +381,11 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
 		return RenderDvinia.TEXTURE;
 	}
-
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
 		return RenderDisplays.modelDvinia;
 	}
-	public static float getScaler(@Nullable String variant) {
-		return 0;
-	}
+	public static float getScaler(@Nullable String variant) {return RenderDvinia.getScaler();}
+	public static float widthSupport(@Nullable String variant) {return 0.0175F;}
 
 }

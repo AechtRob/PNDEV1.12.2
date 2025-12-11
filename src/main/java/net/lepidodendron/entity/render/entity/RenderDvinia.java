@@ -11,6 +11,10 @@ import net.minecraft.util.ResourceLocation;
 public class RenderDvinia extends RenderLivingBaseWithBook<EntityPrehistoricFloraDvinia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dvinia.png");
 
+    public static float getScaler() {
+        return 0.30F;
+    }
+
     public RenderDvinia(RenderManager mgr) {
         super(mgr, new ModelDvinia(), 0.5f);
     }
@@ -27,7 +31,7 @@ public class RenderDvinia extends RenderLivingBaseWithBook<EntityPrehistoricFlor
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraDvinia entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * getScaler();;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

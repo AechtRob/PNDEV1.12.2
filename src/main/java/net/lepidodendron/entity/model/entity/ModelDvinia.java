@@ -181,9 +181,10 @@ public class ModelDvinia extends ModelBasePalaeopedia {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.basin.render(f5 * 0.30f);
+        this.basin.render(f5);
     }
-    public void renderStatic(float f) {
+
+    public void renderStaticFloor(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
@@ -200,7 +201,8 @@ public class ModelDvinia extends ModelBasePalaeopedia {
         this.hand1.rotateAngleX = (float) Math.toRadians(75);
         this.tail1.rotateAngleX = (float) Math.toRadians(38);
         this.tail2.rotateAngleX = (float) Math.toRadians(25);
-        this.basin.render(0.1F);
+        this.basin.render(0.01F);
+        resetToDefaultPose();
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
