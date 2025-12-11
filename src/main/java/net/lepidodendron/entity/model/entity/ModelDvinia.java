@@ -211,14 +211,14 @@ public class ModelDvinia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.basin.offsetY = -0.1F;
+        this.basin.offsetY = -0.8F;
         this.basin.offsetX = -0.1F;
         this.basin.offsetZ = 2.0F;
         this.basin.rotateAngleY = (float)Math.toRadians(120);
         this.basin.rotateAngleX = (float)Math.toRadians(1);
         this.basin.rotateAngleZ = (float)Math.toRadians(0);
         this.basin.scaleChildren = true;
-        float scaler = 0.8F;
+        float scaler = 1.8F;
         this.basin.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(basin, 0.0F, 3.8F, -0.0F);
@@ -252,7 +252,7 @@ public class ModelDvinia extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.basin.offsetY = 1.05F;
+        //this.basin.offsetY = 1.05F;
 
         EntityPrehistoricFloraDvinia Dvinia = (EntityPrehistoricFloraDvinia) e;
         float masterSpeed = Dvinia.getTravelSpeed();
