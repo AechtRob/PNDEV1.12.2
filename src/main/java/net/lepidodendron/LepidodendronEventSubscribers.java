@@ -978,8 +978,10 @@ public class LepidodendronEventSubscribers {
 				&& (!(event.getItemStack().getItem() instanceof ItemShears)) && LepidodendronConfig.doPropagationVanilla
 				&& event.getHand() == EnumHand.MAIN_HAND) {
 			BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType) event.getWorld().getBlockState(event.getPos()).getValue(BlockDoublePlant.VARIANT);
-			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.GRASS
-					|| blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.FERN) {
+			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.GRASS) {
+
+			}
+			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.FERN) {
 
 			}
 		}
@@ -988,6 +990,31 @@ public class LepidodendronEventSubscribers {
 	@SubscribeEvent
 	public void onBlockPreBreak(BlockEvent.BreakEvent event) {
 		if ((!event.getWorld().isRemote)) {
+			//Make large ferns and large grass drop themselv es with shears:
+			if (event.getState().getBlock() instanceof BlockDoublePlant && LepidodendronConfig.doPropagationVanilla) {
+				BlockDoublePlant.EnumPlantType blockdoubleplant$enumtype = (BlockDoublePlant.EnumPlantType) event.getState().getValue(BlockDoublePlant.VARIANT);
+				if (blockdoubleplant$enumtype == BlockDoublePlant.EnumPlantType.FERN
+						&& event.getPlayer().getHeldItemMainhand().getItem() instanceof ItemShears && LepidodendronConfig.doPropagationVanilla) {
+					event.getWorld().destroyBlock(event.getPos(), false);
+					EntityItem entityToSpawn = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(Blocks.DOUBLE_PLANT, 1, 3));
+					entityToSpawn.setPickupDelay(10);
+					event.getWorld().spawnEntity(entityToSpawn);
+					event.setCanceled(true);
+				}
+			}
+
+			if (event.getState().getBlock() instanceof BlockDoublePlant && LepidodendronConfig.doPropagationVanilla) {
+				BlockDoublePlant.EnumPlantType blockdoubleplant$enumtype = (BlockDoublePlant.EnumPlantType) event.getState().getValue(BlockDoublePlant.VARIANT);
+				if (blockdoubleplant$enumtype == BlockDoublePlant.EnumPlantType.GRASS
+						&& event.getPlayer().getHeldItemMainhand().getItem() instanceof ItemShears && LepidodendronConfig.doPropagationVanilla) {
+					event.getWorld().destroyBlock(event.getPos(), false);
+					EntityItem entityToSpawn = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(Blocks.DOUBLE_PLANT, 1, 2));
+					entityToSpawn.setPickupDelay(10);
+					event.getWorld().spawnEntity(entityToSpawn);
+					event.setCanceled(true);
+				}
+			}
+
 			//Drop holdfasts from the right blocks:
 			if (event.getWorld().rand.nextInt(10) == 0
 					&& OreDictionary.containsMatch(false,
@@ -1063,12 +1090,12 @@ public class LepidodendronEventSubscribers {
 				dropSelf = false; //the large fern and large grass don't drop themselves, but we want to make it so that they do
 			}
 		}
-		if (event.getState().getBlock() instanceof BlockTallGrass && LepidodendronConfig.doPropagationVanilla) {
-			BlockTallGrass.EnumType blocktallgrass$enumtype = (BlockTallGrass.EnumType) event.getState().getValue(BlockTallGrass.TYPE);
-			if (blocktallgrass$enumtype == BlockTallGrass.EnumType.GRASS) {
-				dropSelf = false; //the grass needs shears but we want to drop it without needing them
-			}
-		}
+//		if (event.getState().getBlock() instanceof BlockTallGrass && LepidodendronConfig.doPropagationVanilla) {
+//			BlockTallGrass.EnumType blocktallgrass$enumtype = (BlockTallGrass.EnumType) event.getState().getValue(BlockTallGrass.TYPE);
+//			if (blocktallgrass$enumtype == BlockTallGrass.EnumType.GRASS) {
+//				dropSelf = false; //the grass needs shears but we want to drop it without needing them
+//			}
+//		}
 		int i = 0;
 		while (i + 1 <= event.getDrops().size()) {
 			ItemStack itemStack = event.getDrops().get(i);
@@ -1083,6 +1110,22 @@ public class LepidodendronEventSubscribers {
 				if (blocktallgrass$enumtype == BlockTallGrass.EnumType.GRASS
 						&& ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.TALLGRASS, 1, 1))) {
 					dropSelf = true; //a drop already exists so no need to add a new one
+				}
+			}
+
+			if (event.getState().getBlock() instanceof BlockTallGrass && LepidodendronConfig.doPropagationVanilla) {
+				BlockTallGrass.EnumType blocktallgrass$enumtype = (BlockTallGrass.EnumType) event.getState().getValue(BlockTallGrass.TYPE);
+				if (blocktallgrass$enumtype == BlockTallGrass.EnumType.FERN
+						&& ItemStack.areItemStacksEqual(itemStack, new ItemStack(Items.WHEAT_SEEDS, 1))) {
+					event.getDrops().remove(i); //wheat seeds from ferns dont make sense
+				}
+			}
+
+			if (event.getState().getBlock() instanceof BlockDoublePlant && LepidodendronConfig.doPropagationVanilla) {
+				BlockDoublePlant.EnumPlantType blockdoubleplant$enumtype = (BlockDoublePlant.EnumPlantType) event.getState().getValue(BlockDoublePlant.VARIANT);
+				if (blockdoubleplant$enumtype == BlockDoublePlant.EnumPlantType.FERN
+						&& ItemStack.areItemStacksEqual(itemStack, new ItemStack(Items.WHEAT_SEEDS, 1))) {
+					event.getDrops().remove(i); //wheat seeds from ferns dont make sense
 				}
 			}
 
@@ -1140,10 +1183,10 @@ public class LepidodendronEventSubscribers {
 		if (event.getState().getBlock() instanceof BlockDoublePlant && (!dropSelf) && LepidodendronConfig.doPropagationVanilla) { //Spawn the block drop for these ones
 			BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType) event.getState().getValue(BlockDoublePlant.VARIANT);
 			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.FERN) {
-				event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, 1, 3));
+				//event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, 1, 3));
 			}
 			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.GRASS) {
-				event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, 1, 2));
+				//event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, 1, 2));
 			}
 			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.ROSE) {
 				event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, 1, 4));
@@ -1161,7 +1204,7 @@ public class LepidodendronEventSubscribers {
 		if (event.getState().getBlock() instanceof BlockTallGrass && (!dropSelf) && LepidodendronConfig.doPropagationVanilla) {
 			BlockTallGrass.EnumType blocktallgrass$enumtype = (BlockTallGrass.EnumType) event.getState().getValue(BlockTallGrass.TYPE);
 			if (blocktallgrass$enumtype == BlockTallGrass.EnumType.GRASS) {
-				event.getDrops().add(i, new ItemStack(Blocks.TALLGRASS, 1, 1));
+				//event.getDrops().add(i, new ItemStack(Blocks.TALLGRASS, 1, 1));
 			}
 		}
 		//if (event.getState().getBlock() == Blocks.VINE) {
