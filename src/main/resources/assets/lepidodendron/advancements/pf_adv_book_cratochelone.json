@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:cratochelone_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_cratochelone.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_cratochelone.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_cratochelone"
+        }
+    }
+}

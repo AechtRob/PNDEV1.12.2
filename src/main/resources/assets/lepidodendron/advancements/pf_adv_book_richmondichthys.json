@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:richmondichthys_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_richmondichthys.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_richmondichthys.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_richmondichthys"
+        }
+    }
+}

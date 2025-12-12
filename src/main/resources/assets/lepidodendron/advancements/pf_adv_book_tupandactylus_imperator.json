@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:tupandactylus_imperator_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_tupandactylus_imperator.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_tupandactylus_imperator.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_tupandactylus_imperator"
+        }
+    }
+}
