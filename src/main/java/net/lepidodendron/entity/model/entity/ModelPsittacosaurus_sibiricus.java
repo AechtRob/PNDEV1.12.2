@@ -419,6 +419,7 @@ public class ModelPsittacosaurus_sibiricus extends ModelBasePalaeopedia {
         this.rightarm.setScale(1,1,1);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body, -0.1F, 0.0F, 0.05F);
         this.setRotateAngle(upperbody2, 0.2F, 0.1F, 0.05F);
