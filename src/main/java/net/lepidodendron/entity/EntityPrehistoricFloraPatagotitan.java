@@ -474,7 +474,7 @@ public class EntityPrehistoricFloraPatagotitan extends EntityPrehistoricFloraLan
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox() {
 		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
-			return this.getEntityBoundingBox().grow(15.0, 15.00, 15.0);
+			return this.getEntityBoundingBox().grow(20.0, 15.00, 20.0);
 		}
 		return this.getEntityBoundingBox();
 	}

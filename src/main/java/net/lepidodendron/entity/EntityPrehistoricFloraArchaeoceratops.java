@@ -306,7 +306,7 @@ public class EntityPrehistoricFloraArchaeoceratops extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:chaoyangsauridae_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:alpsub_idle"));
 	}
 
 	@Override

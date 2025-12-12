@@ -20,7 +20,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 //apply plugin: 'org.spongepowered.mixin'
 
-version = '1.12.2-63.01'
+version = '1.12.2-63.02'
 group = 'com.github.aechtrob.prehistoricflora' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'lepidodendron'
 

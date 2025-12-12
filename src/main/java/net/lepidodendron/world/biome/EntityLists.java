@@ -530,7 +530,7 @@ public class EntityLists {
                             "lepidodendron:prehistoric_flora_bathrotomaria:0:0:0",
                             "lepidodendron:prehistoric_flora_lytoceras:0:0:0",
                             "lepidodendron:prehistoric_flora_santanmantis:0:0:0",
-                            "lepidodendron:prehistoric_flora_protechiurus:0:0:0",
+                            "lepidodendron:prehistoric_flora_protoischnurus :0:0:0",
                             "lepidodendron:prehistoric_flora_myriapod{PNType:\"velocipede\"}:0:0:0",
                             "lepidodendron:prehistoric_flora_myriapod{PNType:\"fulmenocursor\"}:0:0:0",
                             "lepidodendron:prehistoric_flora_myriapod{PNType:\"juliform\"}:0:0:0",
