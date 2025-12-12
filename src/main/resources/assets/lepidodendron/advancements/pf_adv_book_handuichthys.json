@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:handuichthys_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_handuichthys.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_handuichthys.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_handuichthys"
+        }
+    }
+}

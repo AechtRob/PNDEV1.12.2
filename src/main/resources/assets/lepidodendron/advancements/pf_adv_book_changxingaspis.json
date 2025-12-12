@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:changxingaspis_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_changxingaspis.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_changxingaspis.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_changxingaspis"
+        }
+    }
+}
