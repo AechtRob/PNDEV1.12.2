@@ -324,6 +324,7 @@ public class EntityPrehistoricFloraHyperodapedon extends EntityPrehistoricFloraD
 		super.onLivingUpdate();
 
 		if (this.getAnimation() == DRINK_ANIMATION) {
+			//roots are generated with this block of code
 			if ((!world.isRemote) && this.getAnimationTick() == Math.round(this.getAnimation().getDuration() * 0.75F)) {
 				ItemStack stack = new ItemStack(ItemRoots.block, 1);
 				int i = this.rand.nextInt(8);
