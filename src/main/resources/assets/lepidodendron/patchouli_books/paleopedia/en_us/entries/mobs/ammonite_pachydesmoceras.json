@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ammonite_pachydesmoceras",
 			"title": "Pachydesmoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Desmoceratidae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Desmoceratidae"
 		},
 		{
 			"type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_pachydesmoceras",
 			"type": "text",
-			"text": "Pachydesmoceras is a genus of medium sized ammonites from the Middle Cretaceous, during the Albian to Santonian stages. They had rugged shells with many ridges and their fossils have been found all over the world, from Japan to Africa, India and the West Coast of the United States. They were fast moving nektonic predators, that likely preyed upon smaller fish."
+			"text": "Pachydesmoceras is a genus of medium sized ammonites from the Cretaceous, during the Albian to Santonian stages. They had rugged shells with many ridges and their fossils have been found all over the world, from Japan to Africa, India and the West Coast of the United States. They were fast moving nektonic predators, that likely preyed upon smaller fish."
 		},
 		{
 			"type": "lepidodendron:diet",

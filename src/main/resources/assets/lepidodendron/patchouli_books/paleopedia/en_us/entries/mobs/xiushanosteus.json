@@ -21,8 +21,13 @@
 {
 "advancement": "lepidodendron:pf_adv_book_xiushanosteus",
 "type": "text",
-"text": "Xiushanosteus is a genus of placoderm from the Silurian Huixingshao Formation of China. It is one of the earliest known jawed vertebrates, being roughly 435 million years old. Xiushanosteus grew to roughly 3cm in length and body was covered in small diamond shaped scales or scutes Its name is derived from Xiushan County where its fossils were found aswell as osteus meaning bone."
+"text": "Xiushanosteus is a genus of placoderm from the Silurian Huixingshao Formation of China. It is one of the earliest known jawed vertebrates, being roughly 435 million years old. Xiushanosteus grew to roughly 3 cm in length and body was covered in small diamond shaped scales or scutes."
 },
+  {
+    "advancement": "lepidodendron:pf_adv_book_xiushanosteus",
+    "type": "text",
+    "text": "Its generic name derives from the place name 'Xiushan County', where its fossils were found; and the Greek word 'osteus', to mean 'bone. The specific name derives directly from the Latin word 'mirabilis', to mean 'miracle'."
+  },
 {
 "type": "lepidodendron:diet",
 "mob": "lepidodendron:prehistoric_flora_xiushanosteus"

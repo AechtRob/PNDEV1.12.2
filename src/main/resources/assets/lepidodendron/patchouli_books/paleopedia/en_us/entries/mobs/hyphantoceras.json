@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hyphantoceras",
 			"title": "Hyphantoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Ammonitida$(br)>Ancyloceratina>$(br)>Nostoceratidae"
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Ammonitida$(br)>Ancyloceratina$(br)>Nostoceratidae"
 		},
         	{
             "type": "entity",

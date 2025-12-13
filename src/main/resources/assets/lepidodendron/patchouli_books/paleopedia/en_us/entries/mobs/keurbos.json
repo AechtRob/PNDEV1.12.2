@@ -9,7 +9,7 @@
 "trigger": "lepidodendron:pf_adv_book_keurbos",
 "title": "Keurbos",
 "type": "quest",
-"text": "$(l)Temporal Range:$()  Ordovician$(br2)>Arthropoda$(br)>$(o)incertae sedis"
+"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>$(o)incertae sedis"
 },
         {
             "type": "entity",
@@ -21,12 +21,12 @@
 {
 "advancement": "lepidodendron:pf_adv_book_keurbos",
 "type": "text",
-"text": "Keurbos is a genus of arthropod of uncertain placement that is known from the Ordovician Soom Shale. In 2007, illustrator Alan Male published art of two enigmatic fossil animals. One was Carboniferous Typhloesus, and another animal is titled as Keurbosia susanae. This is an enigmatic fossil known from Ordovician fossil site Soom Shale in South Africa, nicknamed as Sue."
+"text": "Keurbos is a genus of arthropod of uncertain placement that is known from the Ordovician Soom Shale. In 2007, illustrator Alan Male published art of two enigmatic fossil animals. One was the Carboniferous Typhloesus, and another animal was titled as 'Keurbosia susanae'. This is an enigmatic fossil known from Ordovician fossil site Soom Shale in South Africa, nicknamed as Sue."
 },
 {
 "advancement": "lepidodendron:pf_adv_book_keurbos",
 "type": "text",
-"text": "This is extremely rare fossil, currently only two are known, and both are poorly preserved, so it remained long time undescribed. However, in 2025, it finally got described and was given the valid name Keurbos susanae. This pretty large, around 43 cm long critter is identified as an arthropod, though it is not known what group it belongs to."
+"text": "This is extremely rare fossil, currently only two are known, and both are poorly preserved, so for a long time it remained undescribed. However, in 2025, it finally got described and was given the valid name Keurbos susanae. This pretty large, around 43 cm long, critter is identified as an arthropod, though it is not known what group it belongs to, again due to the poor preservation of the sparse fossil material."
 },
 {
 "type": "lepidodendron:diet",
