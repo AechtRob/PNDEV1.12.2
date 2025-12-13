@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:proterochampsa_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_proterochampsa.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_proterochampsa.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_proterochampsa"
+        }
+    }
+}

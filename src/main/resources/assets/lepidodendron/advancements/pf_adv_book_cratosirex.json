@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:cratosirex_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_cratosirex.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_cratosirex.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_cratosirex"
+        }
+    }
+}
