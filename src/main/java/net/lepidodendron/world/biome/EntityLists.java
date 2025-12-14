@@ -568,7 +568,10 @@ public class EntityLists {
                             "lepidodendron:prehistoric_flora_sapeornis:0:0:0",
                             "lepidodendron:prehistoric_flora_noripterus:0:0:0",
                             "lepidodendron:prehistoric_flora_macropenaeus:0:0:0",
-                            "lepidodendron:prehistoric_flora_armigatus:0:0:0"
+                            "lepidodendron:prehistoric_flora_armigatus:0:0:0",
+                            "lepidodendron:prehistoric_flora_irritator:0:0:0",
+                            "lepidodendron:prehistoric_flora_suchomimus:0:0:0",
+                            "lepidodendron:prehistoric_flora_baryonyx:0:0:0",
                     });
                 return MobString;
 
@@ -694,7 +697,10 @@ public class EntityLists {
                         "lepidodendron:prehistoric_flora_bathrotomaria:0:0:0",
                         "lepidodendron:prehistoric_flora_chuhsiungichthys:0:0:0",
                         "lepidodendron:prehistoric_flora_scorpionfly{PNType:\"gendered\"}:0:0:0",
-                        "lepidodendron:prehistoric_flora_myriapod{PNType:\"juliform\"}@{PNType:\"polydesmid\"}:0:0:0"};
+                        "lepidodendron:prehistoric_flora_myriapod{PNType:\"juliform\"}@{PNType:\"polydesmid\"}:0:0:0",
+                        "lepidodendron:prehistoric_flora_spinosaurus:0:0:0",
+                };
+
 
 
             case 11: //Paleogene

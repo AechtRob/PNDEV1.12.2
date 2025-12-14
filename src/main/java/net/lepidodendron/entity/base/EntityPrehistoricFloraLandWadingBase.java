@@ -20,6 +20,7 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ReportedException;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.*;
@@ -27,12 +28,15 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
+
 public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehistoricFloraLandBase {
 
     @SideOnly(Side.CLIENT)
     public ChainBuffer tailBuffer;
     private int jumpTicks;
     public Animation HURT_ANIMATION;
+    public static Animation NOISE_ANIMATION; //Ambient noises (roar is re-purposed for warning)
 
     public EntityPrehistoricFloraLandWadingBase(World world) {
         super(world);
@@ -53,11 +57,46 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
             }
         }
         this.setPathPriority(PathNodeType.WATER, 10F);
+        NOISE_ANIMATION = Animation.create(this.getNoiseLength());
         HURT_ANIMATION = Animation.create(this.getHurtLength());
     }
 
     public int getHurtLength() {
         return 30;
+    }
+
+    public int getNoiseLength() {
+        return 60;
+    }
+
+    public int getRoarLength() {
+        return 60;
+    }
+
+    @Override
+    public void playLivingSound() {
+        if (this.getAnimation() == NO_ANIMATION && (!this.getIsSneaking())) {
+            if (!this.world.isRemote) {
+                this.setAnimation(NOISE_ANIMATION);
+                SoundEvent soundevent = this.getAmbientSound();
+                if (soundevent != null)
+                {
+                    this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+                }
+            }
+        }
+    }
+
+    @Nullable
+    public SoundEvent getRoarSound() { //Roar
+        return (SoundEvent) SoundEvent.REGISTRY
+                .getObject(new ResourceLocation(""));
+    }
+
+    @Override
+    public SoundEvent getAmbientSound() { //Noise
+        return (SoundEvent) SoundEvent.REGISTRY
+                .getObject(new ResourceLocation(""));
     }
     
     @Override
@@ -81,7 +120,12 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
 
     @Override
     public Animation[] getAnimations() {
-        return new Animation[]{DRINK_ANIMATION, GRAZE_ANIMATION, HURT_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION};
+        return new Animation[]{DRINK_ANIMATION, GRAZE_ANIMATION, HURT_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, NOISE_ANIMATION};
+    }
+
+    @Override
+    public boolean isAnimationDirectionLocked(Animation animation) {
+        return animation == ROAR_ANIMATION || animation == DRINK_ANIMATION; //warning a player
     }
 
     @Override
@@ -194,9 +238,23 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
         super.fall(distance, damageMultiplier);
     }
 
+    public int getEatTick() {return 1;}
+
     @Override
     public void onEntityUpdate() {
         super.onEntityUpdate();
+
+        if (this.getAnimation() == EAT_ANIMATION) {
+            if (this.getAnimationTick() == getEatTick()) {
+                SoundEvent soundevent = SoundEvents.ENTITY_GENERIC_EAT;
+                this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            }
+        }
+
+        if (this.getAnimation() == ROAR_ANIMATION && this.getWarnTarget() != null) {
+            this.faceEntity(this.getWarnTarget(), 10, 10);
+        }
+
     }
 
     @Override

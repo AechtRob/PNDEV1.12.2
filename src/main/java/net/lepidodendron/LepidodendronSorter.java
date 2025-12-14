@@ -5948,6 +5948,20 @@ public class LepidodendronSorter {
 
     public static final int eggs_megachirella = 5626;
     public static final int eggs_orthcanthus = 5627;
+    public static final int irritator_raw = 5800;
+    public static final int spinosaurus_raw = 5801;
+    public static final int eggs_irritator = 5802;
+    public static final int eggs_spinosaurus = 5803;
+    public static final int eggs_suchomimus = 5804;
+    public static final int eggs_baryonyx = 5805;
+    public static final int eggs_ichthyovenator = 5806;
+    public static final int eggs_iberospinus = 5807;
+    public static final int eggs_vallibonavenatrix = 5808;
+    public static final int suchomimus_raw = 5809;
+    public static final int ichthyovenator_raw = 5810;
+    public static final int baryonyx_raw = 5811;
+    public static final int iberospinus_raw = 5812;
+    public static final int vallibonavenatrix_raw = 5813;
 
     public static final int bivalve_toucasia = 6000;
     public static final int coeloptychium = 6001;

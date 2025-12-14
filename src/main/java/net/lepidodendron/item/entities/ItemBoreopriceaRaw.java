@@ -15,7 +15,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemBoreopriceaRaw extends ElementsLepidodendronMod.ModElement {
+public class
+ItemBoreopriceaRaw extends ElementsLepidodendronMod.ModElement {
     @GameRegistry.ObjectHolder("lepidodendron:boreopricea_raw")
     public static final Item block = null;
     public ItemBoreopriceaRaw(ElementsLepidodendronMod instance) {super(instance, LepidodendronSorter.boreopricea_raw);
