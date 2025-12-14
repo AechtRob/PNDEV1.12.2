@@ -226,7 +226,7 @@ public class EntityPrehistoricFloraSauroposeidon extends EntityPrehistoricFloraL
 
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * getAgeScale() * 1F;
-		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
+		return this.getEntityBoundingBox().grow(2.0F + size, 2.0F + size, 2.0F + size);
 	}
 
 	public AxisAlignedBB getAttackBoundingBoxForDamage() {

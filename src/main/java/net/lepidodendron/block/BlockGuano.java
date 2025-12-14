@@ -12,6 +12,7 @@ import net.minecraft.block.BlockSnow;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
@@ -21,8 +22,10 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -71,7 +74,50 @@ public class BlockGuano extends ElementsLepidodendronMod.ModElement {
 			setHardness(0.1F);
 			setLightOpacity(0);
 			this.setTickRandomly(true);
-			this.setDefaultState(this.blockState.getBaseState().withProperty(DECAYABLE, false) .withProperty(NORTH, false).withProperty(EAST, false).withProperty(SOUTH, false).withProperty(WEST, false).withProperty(LAYERS, Integer.valueOf(1)));
+			this.setDefaultState(this.blockState.getBaseState().withProperty(DECAYABLE, false).withProperty(NORTH, false).withProperty(EAST, false).withProperty(SOUTH, false).withProperty(WEST, false).withProperty(LAYERS, Integer.valueOf(1)));
+		}
+
+		@Override
+		@Nullable
+		protected RayTraceResult rayTrace(BlockPos pos, Vec3d start, Vec3d end, AxisAlignedBB boundingBox)
+		{
+			return null;
+		}
+
+		@Override
+		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
+		{
+			return SNOW_AABB[((Integer)state.getValue(LAYERS)).intValue()];
+		}
+
+		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos)
+		{
+			return ((Integer)worldIn.getBlockState(pos).getValue(LAYERS)).intValue() < 5;
+		}
+
+		@Override
+		public boolean isTopSolid(IBlockState state)
+		{
+			return ((Integer)state.getValue(LAYERS)).intValue() == 8;
+		}
+
+		@Override
+		public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
+		{
+			return face == EnumFacing.DOWN ? BlockFaceShape.SOLID : BlockFaceShape.UNDEFINED;
+		}
+
+		@Override
+		public boolean isOpaqueCube(IBlockState state)
+		{
+			return false;
+		}
+
+		@Override
+		public boolean isFullCube(IBlockState state)
+		{
+			return false;
 		}
 
 		@Override
@@ -146,11 +192,13 @@ public class BlockGuano extends ElementsLepidodendronMod.ModElement {
 
 		public boolean renderGuanoSide(IBlockAccess world, BlockPos pos, EnumFacing facing) {
 			try {
-				return !world.getBlockState(pos.offset(facing)).doesSideBlockRendering(world, pos.offset(facing), facing.getOpposite());
+				return (!world.getBlockState(pos.offset(facing)).doesSideBlockRendering(world, pos.offset(facing), facing.getOpposite()))
+						&& (world.getBlockState(pos.offset(facing)).getBlockFaceShape(world, pos.offset(facing), facing.getOpposite()) != BlockFaceShape.SOLID);
 			}
 			catch (Throwable e) {
 				return true;
 			}
+
 		}
 
 		@Override
