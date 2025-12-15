@@ -249,6 +249,9 @@ public class PlantSpawns {
     }
 
     public static String getIconPath(String plantStr) {
+        if (plantStr.equalsIgnoreCase("lepidodendron:pachypteris")) {
+            return "paleopedia:textures/items/weichselia_icon.png";
+        }
         plantStr = plantStr.replace("_sapling", "");
         plantStr = plantStr.replace("_item", "");
         if (plantStr.indexOf(":") >= 0) {
@@ -259,33 +262,39 @@ public class PlantSpawns {
     }
 
    public static String getPlantName(String plantStr) {
-       plantStr = plantStr.replace("_sapling", "");
-       if (plantStr.indexOf(":") >= 0) {
-           plantStr = plantStr.substring(plantStr.indexOf(":") + 1);
+       String tmpName;
+       if (plantStr.equalsIgnoreCase("lepidodendron:pachypteris")) {
+           tmpName = I18n.translateToLocal("tile.pf_weichselia.name");
        }
-       plantStr = nameOverrides(plantStr);
+       else {
+           plantStr = plantStr.replace("_sapling", "");
+           if (plantStr.indexOf(":") >= 0) {
+               plantStr = plantStr.substring(plantStr.indexOf(":") + 1);
+           }
+           plantStr = nameOverrides(plantStr);
 
-       String endName = plantStr;
-       boolean flag = false;
-       //Simple translations here. First we try as a block:
-       String tmpName = I18n.translateToLocal("icon.pf_" + plantStr + ".name");
-       if (!tmpName.equalsIgnoreCase("icon.pf_" + plantStr + ".name")) {
-           flag = true;
-       }
-       if (!flag) {
-           tmpName = I18n.translateToLocal("item.pf_" + plantStr + ".name");
-           if (!tmpName.equalsIgnoreCase("item.pf_" + plantStr + ".name")) {
+           String endName = plantStr;
+           boolean flag = false;
+           //Simple translations here. First we try as a block:
+           tmpName = I18n.translateToLocal("icon.pf_" + plantStr + ".name");
+           if (!tmpName.equalsIgnoreCase("icon.pf_" + plantStr + ".name")) {
                flag = true;
            }
-       }
-       if (!flag) {
-           tmpName = I18n.translateToLocal("tile.pf_" + plantStr + ".name");
-           if (!tmpName.equalsIgnoreCase("tile.pf_" + plantStr + ".name")) {
-               flag = true;
+           if (!flag) {
+               tmpName = I18n.translateToLocal("item.pf_" + plantStr + ".name");
+               if (!tmpName.equalsIgnoreCase("item.pf_" + plantStr + ".name")) {
+                   flag = true;
+               }
            }
-       }
-        if (!flag) {
-            return endName;
+           if (!flag) {
+               tmpName = I18n.translateToLocal("tile.pf_" + plantStr + ".name");
+               if (!tmpName.equalsIgnoreCase("tile.pf_" + plantStr + ".name")) {
+                   flag = true;
+               }
+           }
+            if (!flag) {
+               return endName;
+            }
         }
 
         return "$(l:plants/" + getHyperlink(plantStr)  + ")" + tmpName + "$(/l)";
