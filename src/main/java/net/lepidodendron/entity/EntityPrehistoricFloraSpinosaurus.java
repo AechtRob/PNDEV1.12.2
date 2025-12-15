@@ -10,6 +10,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
@@ -48,6 +49,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLandWadingBase implements IAdvancementGranter, ITrappableLand {
 
@@ -56,23 +58,27 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 	public ChainBuffer tailBuffer;
 	public Animation STAND_ANIMATION;
 	private int standCooldown;
+	public Animation GRAPPLE_ANIMATION;
+	public Animation SECOND_GRAPPLE_ANIMATION;
 
 	public EntityPrehistoricFloraSpinosaurus(World world) {
 		super(world);
-		setSize(0.95F, 2.5F);
+		setSize(2F, 2.5F);
 		minWidth = 0.20F;
-		maxWidth = 0.95F;
+		maxWidth = 2F;
 		maxHeight = 2.5F;
 		maxHealthAgeable = 170;
 		STAND_ANIMATION = Animation.create(550);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		GRAPPLE_ANIMATION = Animation.create(this.getGrappleLength());
+		SECOND_GRAPPLE_ANIMATION = Animation.create(this.getSecondGrappleLength());
 	}
 
 	@Override
 	public float getSwimHeight() {
-		return this.height * 0.20F;
+		return this.height * 0.05F;
 	}
 
 	@Override
@@ -99,14 +105,14 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 		super.onEntityUpdate();
 		//random idle animations
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0 && !this.isInWater()) {
 			if (this.getAnimation() == NO_ANIMATION) {
 				this.setAnimation(STAND_ANIMATION);
 			}
-			this.standCooldown = 2000;
+			this.standCooldown = 4000;
 		}
 		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 2000;
+			this.standCooldown = 4000;
 			this.setAnimation(NO_ANIMATION);
 		}
 
@@ -295,11 +301,74 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == STAND_ANIMATION) {
 			return 0.0F;
 		}
+		if ((this.getAnimation() == GRAPPLE_ANIMATION) && (this.willGrapple) && this.getGrappleTarget() != null) {
+			return 0.0F; //Is talking to a colleague!
+		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 2.32F;
 
 		}
 		return speedBase;
+	}
+
+	@Override
+	public int grappleChance() {
+		return 4000;
+	}
+
+	@Override
+	public AxisAlignedBB getGrappleBoundingBox() {
+		float size = this.getRenderSizeModifier() * 0.25F;
+		return this.getEntityBoundingBox().grow(4.0F + size, 4.0F + size, 4.0F + size);
+	}
+
+	public boolean findGrappleTarget() {
+		//System.err.println("finding grapple target");
+		if (this.willGrapple || this.getIsCuriousWalking()) {
+			return false;
+		}
+		List<EntityPrehistoricFloraSpinosaurus> Spinosaurus = world.getEntitiesWithinAABB(EntityPrehistoricFloraSpinosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+		for (EntityPrehistoricFloraSpinosaurus currentSpinosaurus : Spinosaurus) {
+			if ((!currentSpinosaurus.getIsCuriousWalking()) && currentSpinosaurus.isPFAdult() && this.isPFAdult() && currentSpinosaurus != this && (!currentSpinosaurus.willGrapple) && this.canEntityBeSeen(currentSpinosaurus)) {
+				this.setGrappleTarget(currentSpinosaurus);
+				currentSpinosaurus.willGrapple = true;
+				currentSpinosaurus.secondGrappleTarget = true;
+				this.willGrapple = true;
+				currentSpinosaurus.setGrappleTarget(this);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public boolean grappleEntityAsMob(Entity entity) {
+		if (this.getAnimation() == NO_ANIMATION) {
+			this.setAnimation(this.getGrappleAnimation());
+			//System.err.println("set attack");
+		}
+		return false;
+	}
+	@Override
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return animation == GRAPPLE_ANIMATION || animation == SECOND_GRAPPLE_ANIMATION
+				|| super.isAnimationDirectionLocked(animation);
+	}
+
+	public int getGrappleLength() {
+		return 150;
+	}
+
+	public int getSecondGrappleLength() {
+		return 150;
+	}
+
+	@Override
+	public Animation getGrappleAnimation() {
+		if(this.secondGrappleTarget) {
+			return this.SECOND_GRAPPLE_ANIMATION;
+		}
+		return this.GRAPPLE_ANIMATION;
 	}
 
 	@Override
@@ -320,8 +389,8 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 	@Override
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox() {
-		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
-			return this.getEntityBoundingBox().grow(3.0, 1.00, 3.0);
+		if (LepidodendronConfig.renderBigMobsProperly) {
+			return this.getEntityBoundingBox().grow(10.0, 6.00, 10.0);
 		}
 		return this.getEntityBoundingBox();
 	}
@@ -339,12 +408,12 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 		tasks.addTask(3, new AgeableWarnEntity(this, EntityPlayer.class, 4));
 		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(7, new LandWanderAvoidDeepWaterAI(this, 0.7D, 120));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 6.0F));
-		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableFishBase.class, 8.0F));
-		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPlayer.class, 8.0F));
-		tasks.addTask(11, new EntityWatchClosestAI(this, EntityLivingBase.class, 8.0F));
+		tasks.addTask(6, new GrappleAI(this, 1.0D, false, this.getGrappleLength(), this.getGrappleAnimation(), 0.15));
+		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(8, new LandWanderAvoidDeepWaterAI(this, 0.7D, 120));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 6.0F));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableFishBase.class, 8.0F));
+		tasks.addTask(11, new EntityWatchClosestAI(this, EntityPlayer.class, 8.0F));
 		tasks.addTask(12, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
@@ -396,6 +465,11 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 	            .getObject(new ResourceLocation("lepidodendron:spinosaurus_hurt"));
 	}
 
+	public SoundEvent getDisplaySound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:spinosaurus_display"));
+	}
+
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
@@ -414,7 +488,7 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, HURT_ANIMATION, STAND_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, HURT_ANIMATION, STAND_ANIMATION, GRAPPLE_ANIMATION};
 	}
 
 	@Override
@@ -440,6 +514,15 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 		return itemstack.getItem();
 	}
 
+	public void playDisplaySound()
+	{
+		SoundEvent soundevent = this.getDisplaySound();
+		if (soundevent != null)
+		{
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+		}
+	}
+
 	@Override
 	public void onLivingUpdate() {
 
@@ -462,6 +545,27 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 				this.getAttackTarget().knockBack(this, 0.15F, d1, d0);
 				this.getAttackTarget().addVelocity(0, 0.115, 0);
 				launchAttack();
+			}
+		}
+
+		if ((this.getAnimation() == GRAPPLE_ANIMATION) && this.getAnimationTick() == this.headbutTick() && this.getGrappleTarget() != null) {
+			this.faceEntity(this.getGrappleTarget(), 10, 10);
+			launchGrapple();
+			if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
+				EntityPrehistoricFloraAgeableBase grappleTarget = (EntityPrehistoricFloraAgeableBase) this.getGrappleTarget();
+				grappleTarget.setGrappleTarget(null);
+				grappleTarget.willGrapple = false;
+				grappleTarget.secondGrappleTarget = false;
+			}
+			this.setGrappleTarget(null);
+			this.willGrapple = false;
+		}
+		else if (this.getAnimation() == GRAPPLE_ANIMATION) {
+			if (this.getGrappleTarget() != null) {
+				this.faceEntity(this.getGrappleTarget(), 10, 10);
+			}
+			if (this.getAnimationTick() == 1) {
+				this.playDisplaySound();
 			}
 		}
 
@@ -494,6 +598,12 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
+
+	@Override
+	public int headbutTick() {
+		//Just here to prevent the animation timing out:
+		return this.GRAPPLE_ANIMATION.getDuration() - 1;
+	}
 
 	public boolean testLay(World world, BlockPos pos) {
 		//System.err.println("Testing laying conditions");

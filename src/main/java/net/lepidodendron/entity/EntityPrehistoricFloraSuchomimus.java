@@ -277,7 +277,7 @@ public class EntityPrehistoricFloraSuchomimus extends EntityPrehistoricFloraLand
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.6F;
+		float speedBase = 0.65F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -309,8 +309,8 @@ public class EntityPrehistoricFloraSuchomimus extends EntityPrehistoricFloraLand
 	@Override
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox() {
-		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
-			return this.getEntityBoundingBox().grow(3.0, 1.00, 3.0);
+		if (LepidodendronConfig.renderBigMobsProperly) {
+			return this.getEntityBoundingBox().grow(6.0, 3.00, 6.0);
 		}
 		return this.getEntityBoundingBox();
 	}

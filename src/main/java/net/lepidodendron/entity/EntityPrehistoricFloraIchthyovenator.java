@@ -10,14 +10,12 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
-import net.lepidodendron.entity.render.entity.RenderDubreuillosaurus;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.PathNavigateGroundNoDeepWater;
-import net.lepidodendron.item.ItemRoots;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
@@ -26,7 +24,6 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.EnumPushReaction;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -36,7 +33,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFishFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
@@ -52,28 +48,31 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
-public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandWadingBase implements IAdvancementGranter, ITrappableLand {
+public class EntityPrehistoricFloraIchthyovenator extends EntityPrehistoricFloraLandWadingBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
+	public Animation GRAPPLE_ANIMATION;
 
-	public EntityPrehistoricFloraIrritator(World world) {
+	public EntityPrehistoricFloraIchthyovenator(World world) {
 		super(world);
 		setSize(0.95F, 1.975F);
 		minWidth = 0.20F;
 		maxWidth = 0.95F;
 		maxHeight = 1.975F;
-		maxHealthAgeable = 70;
+		maxHealthAgeable = 135;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		GRAPPLE_ANIMATION = Animation.create(this.getGrappleLength());
 	}
 
 	@Override
 	public float getSwimHeight() {
-		return this.height * 0.15F;
+		return this.height * 0.20F;
 	}
 
 	@Override
@@ -272,11 +271,66 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
 			return 0.0F;
 		}
+		if ((this.getAnimation() == GRAPPLE_ANIMATION) && (this.willGrapple) && this.getGrappleTarget() != null) {
+			return 0.0F; //Is talking to a colleague!
+		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 2.32F;
 
 		}
 		return speedBase;
+	}
+
+	@Override
+	public int grappleChance() {
+		return 4000;
+	}
+
+	@Override
+	public AxisAlignedBB getGrappleBoundingBox() {
+		float size = this.getRenderSizeModifier() * 0.25F;
+		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
+	}
+
+	public boolean findGrappleTarget() {
+		//System.err.println("finding grapple target");
+		if (this.willGrapple || this.getIsCuriousWalking()) {
+			return false;
+		}
+		List<EntityPrehistoricFloraIchthyovenator> Ichthyovenator = world.getEntitiesWithinAABB(EntityPrehistoricFloraIchthyovenator.class, new AxisAlignedBB(this.getPosition().add(-12, -4, -12), this.getPosition().add(12, 4, 12)));
+		for (EntityPrehistoricFloraIchthyovenator currentIchthyovenator : Ichthyovenator) {
+			if ((!currentIchthyovenator.getIsCuriousWalking()) && currentIchthyovenator.isPFAdult() && this.isPFAdult() && currentIchthyovenator != this && (!currentIchthyovenator.willGrapple) && this.canEntityBeSeen(currentIchthyovenator)) {
+				this.setGrappleTarget(currentIchthyovenator);
+				currentIchthyovenator.willGrapple = true;
+				this.willGrapple = true;
+				currentIchthyovenator.setGrappleTarget(this);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public boolean grappleEntityAsMob(Entity entity) {
+		if (this.getAnimation() == NO_ANIMATION) {
+			this.setAnimation(this.getGrappleAnimation());
+			//System.err.println("set attack");
+		}
+		return false;
+	}
+	@Override
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return animation == GRAPPLE_ANIMATION
+				|| super.isAnimationDirectionLocked(animation);
+	}
+
+	public int getGrappleLength() {
+		return 160;
+	}
+
+	@Override
+	public Animation getGrappleAnimation() {
+		return this.GRAPPLE_ANIMATION;
 	}
 
 	@Override
@@ -297,8 +351,8 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 	@Override
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox() {
-		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
-			return this.getEntityBoundingBox().grow(6.0, 3.00, 6.0);
+		if (LepidodendronConfig.renderBigMobsProperly) {
+			return this.getEntityBoundingBox().grow(8.0, 4.00, 8.0);
 		}
 		return this.getEntityBoundingBox();
 	}
@@ -316,12 +370,12 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 		tasks.addTask(3, new AgeableWarnEntity(this, EntityPlayer.class, 4));
 		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(7, new LandWanderAvoidDeepWaterAI(this, 0.7D, 120));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 6.0F));
-		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableFishBase.class, 8.0F));
-		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPlayer.class, 8.0F));
-		tasks.addTask(11, new EntityWatchClosestAI(this, EntityLivingBase.class, 8.0F));
+		tasks.addTask(6, new GrappleAI(this, 1.0D, false, this.getGrappleLength(), this.getGrappleAnimation(), 0.15));
+		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(8, new LandWanderAvoidDeepWaterAI(this, 0.7D, 120));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 6.0F));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableFishBase.class, 8.0F));
+		tasks.addTask(11, new EntityWatchClosestAI(this, EntityPlayer.class, 8.0F));
 		tasks.addTask(12, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
@@ -391,12 +445,12 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, HURT_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, HURT_ANIMATION, GRAPPLE_ANIMATION};
 	}
 
 	@Override
 	public int getNoiseLength() {
-		return 60;
+		return 35;
 	}
 
 	@Nullable
@@ -437,6 +491,23 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 			}
 		}
 
+		if ((this.getAnimation() == GRAPPLE_ANIMATION) && this.getAnimationTick() == this.headbutTick() && this.getGrappleTarget() != null) {
+			this.faceEntity(this.getGrappleTarget(), 10, 10);
+			launchGrapple();
+			if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
+				EntityPrehistoricFloraAgeableBase grappleTarget = (EntityPrehistoricFloraAgeableBase) this.getGrappleTarget();
+				grappleTarget.setGrappleTarget(null);
+				grappleTarget.willGrapple = false;
+			}
+			this.setGrappleTarget(null);
+			this.willGrapple = false;
+		}
+		else if (this.getAnimation() == GRAPPLE_ANIMATION) {
+			if (this.getGrappleTarget() != null) {
+				this.faceEntity(this.getGrappleTarget(), 10, 10);
+			}
+		}
+
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			//fish are generated with this block of code
 			if ((!world.isRemote) && this.getAnimationTick() == Math.round(this.getAnimation().getDuration() * 0.9F)) {
@@ -467,6 +538,12 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
+	@Override
+	public int headbutTick() {
+		//Just here to prevent the animation timing out:
+		return this.GRAPPLE_ANIMATION.getDuration() - 1;
+	}
+
 	public boolean testLay(World world, BlockPos pos) {
 		//System.err.println("Testing laying conditions");
 		BlockPos posNest = pos;
@@ -494,9 +571,9 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.IRRITATOR_LOOT_YOUNG;
+			return LepidodendronMod.ICHTHYOVENATOR_LOOT_YOUNG;
 		}
-		return LepidodendronMod.IRRITATOR_LOOT;
+		return LepidodendronMod.ICHTHYOVENATOR_LOOT;
 	}
 
 	//Rendering taxidermy:
@@ -506,7 +583,7 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_IRRITATOR;
+		return ModTriggers.CLICK_ICHTHYOVENATOR;
 	}
 	//Rendering taxidermy:
 	//--------------------

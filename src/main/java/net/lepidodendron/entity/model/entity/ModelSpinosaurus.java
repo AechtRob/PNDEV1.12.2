@@ -1301,8 +1301,8 @@ public class ModelSpinosaurus extends ModelBasePalaeopedia {
 
         AdvancedModelRenderer[] Tail = {this.tail1, this.tail2, this.tail3, this.tail4, this.tail5, this.tail6, this.tail7};
         AdvancedModelRenderer[] Neck = {this.neck1, this.neck2, this.neck3, this.neck4, this.head};
-        AdvancedModelRenderer[] ArmL = {this.leftArm1, this.leftArm2, this.leftLeg3};
-        AdvancedModelRenderer[] ArmR = {this.rightArm1, this.rightArm2, this.rightLeg3};
+        AdvancedModelRenderer[] ArmL = {this.leftArm1, this.leftArm2, this.leftHand};
+        AdvancedModelRenderer[] ArmR = {this.rightArm1, this.rightArm2, this.rightHand};
 
         EntitySpinosaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
@@ -1311,7 +1311,7 @@ public class ModelSpinosaurus extends ModelBasePalaeopedia {
             this.chainWave(Neck, 0.5F * 2, -0.02F, 0.5F, f2, 0.8F);
         }
         else {
-            if (!EntitySpinosaurus.isReallyInWater()) {
+            if (!EntitySpinosaurus.isReallyInWater() && EntitySpinosaurus.getAnimation() != EntitySpinosaurus.STAND_ANIMATION && EntitySpinosaurus.getAnimation() != EntitySpinosaurus.GRAPPLE_ANIMATION) {
 
                 if (f3 == 0.0F || !EntitySpinosaurus.getIsMoving()) { //Is moving at all
                     this.chainSwing(Neck, 0.05F, 0.10F, 0.5, f2, 0.8F);
@@ -10846,9 +10846,12 @@ public class ModelSpinosaurus extends ModelBasePalaeopedia {
         else if (ee.getAnimation() == ee.STAND_ANIMATION) { //Ambient
             animRelax(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-//        else if (ee.getAnimation() == ee.DISPLAY_ANIMATION) { //Ambient
-//            animDisplay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
-//        }
+        else if (ee.getAnimation() == ee.GRAPPLE_ANIMATION) { //Ambient
+            animDisplay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
+        else if (ee.getAnimation() == ee.SECOND_GRAPPLE_ANIMATION) { //Ambient
+            animRelax(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
         else if (ee.getAnimation() == ee.DRINK_ANIMATION) {
             animFishing(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }

@@ -98,6 +98,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public EntityLivingBase avoidTarget;
     public EntityLiving grappleTarget;
     public boolean willGrapple;
+    public boolean secondGrappleTarget = false;
     public int alarmCooldown;
     public int warnCooldown;
     public int ticksExistedAnimated;
