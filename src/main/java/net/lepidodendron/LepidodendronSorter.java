@@ -5948,6 +5948,10 @@ public class LepidodendronSorter {
 
     public static final int eggs_megachirella = 5626;
     public static final int eggs_orthcanthus = 5627;
+    public static final int changxingaspis_raw = 5628;
+    public static final int loganellia_raw = 5629;
+    public static final int bianchengichthys_raw = 5630;
+    public static final int archipelepis_raw = 5631;
     public static final int irritator_raw = 5800;
     public static final int spinosaurus_raw = 5801;
     public static final int eggs_irritator = 5802;
