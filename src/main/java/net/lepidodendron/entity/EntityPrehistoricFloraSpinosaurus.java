@@ -63,9 +63,9 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraSpinosaurus(World world) {
 		super(world);
-		setSize(0.95F, 2.5F);
+		setSize(2F, 2.5F);
 		minWidth = 0.20F;
-		maxWidth = 0.95F;
+		maxWidth = 2F;
 		maxHeight = 2.5F;
 		maxHealthAgeable = 170;
 		STAND_ANIMATION = Animation.create(550);
@@ -78,7 +78,7 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public float getSwimHeight() {
-		return this.height * 0.20F;
+		return this.height * 0.05F;
 	}
 
 	@Override
@@ -105,14 +105,14 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 		super.onEntityUpdate();
 		//random idle animations
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0 && !this.isInWater()) {
 			if (this.getAnimation() == NO_ANIMATION) {
 				this.setAnimation(STAND_ANIMATION);
 			}
-			this.standCooldown = 2000;
+			this.standCooldown = 4000;
 		}
 		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 2000;
+			this.standCooldown = 4000;
 			this.setAnimation(NO_ANIMATION);
 		}
 
@@ -414,8 +414,7 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 6.0F));
 		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableFishBase.class, 8.0F));
 		tasks.addTask(11, new EntityWatchClosestAI(this, EntityPlayer.class, 8.0F));
-		tasks.addTask(12, new EntityWatchClosestAI(this, EntityLivingBase.class, 8.0F));
-		tasks.addTask(13, new EntityLookIdleAI(this));
+		tasks.addTask(12, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

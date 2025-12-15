@@ -13,11 +13,8 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
-import net.lepidodendron.entity.render.entity.RenderDubreuillosaurus;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.PathNavigateGroundNoDeepWater;
-import net.lepidodendron.item.ItemRoots;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
@@ -26,7 +23,6 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.EnumPushReaction;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -36,7 +32,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFishFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
@@ -53,18 +48,18 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandWadingBase implements IAdvancementGranter, ITrappableLand {
+public class EntityPrehistoricFloraVallibonavenatrix extends EntityPrehistoricFloraLandWadingBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	public EntityPrehistoricFloraIrritator(World world) {
+	public EntityPrehistoricFloraVallibonavenatrix(World world) {
 		super(world);
-		setSize(0.95F, 1.975F);
+		setSize(0.95F, 1.6F);
 		minWidth = 0.20F;
 		maxWidth = 0.95F;
-		maxHeight = 1.975F;
+		maxHeight = 1.6F;
 		maxHealthAgeable = 70;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -73,7 +68,7 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 
 	@Override
 	public float getSwimHeight() {
-		return this.height * 0.15F;
+		return this.height * 0.20F;
 	}
 
 	@Override
@@ -265,7 +260,7 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.64F;
+		float speedBase = 0.59F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -297,8 +292,8 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 	@Override
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox() {
-		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
-			return this.getEntityBoundingBox().grow(6.0, 3.00, 6.0);
+		if (LepidodendronConfig.renderBigMobsProperly) {
+			return this.getEntityBoundingBox().grow(9.0, 8.00, 9.0);
 		}
 		return this.getEntityBoundingBox();
 	}
@@ -494,9 +489,9 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.IRRITATOR_LOOT_YOUNG;
+			return LepidodendronMod.VALLIBONAVENATRIX_LOOT_YOUNG;
 		}
-		return LepidodendronMod.IRRITATOR_LOOT;
+		return LepidodendronMod.VALLIBONAVENATRIX_LOOT;
 	}
 
 	//Rendering taxidermy:
@@ -506,7 +501,7 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_IRRITATOR;
+		return ModTriggers.CLICK_VALLIBONAVENATRIX;
 	}
 	//Rendering taxidermy:
 	//--------------------
