@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraEotyrannus;
-import net.lepidodendron.entity.EntityPrehistoricFloraMicrovenator;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
@@ -821,7 +820,7 @@ public class ModelEotyrannus extends ModelBasePalaeopedia {
         
     }
     public void animDisp(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraMicrovenator entity = (EntityPrehistoricFloraMicrovenator) entitylivingbaseIn;
+        EntityPrehistoricFloraEotyrannus entity = (EntityPrehistoricFloraEotyrannus) entitylivingbaseIn;
         int animCycle = 170;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
