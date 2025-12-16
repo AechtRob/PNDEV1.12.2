@@ -10,6 +10,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
@@ -48,6 +49,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLandWadingBase implements IAdvancementGranter, ITrappableLand {
 
@@ -59,9 +61,9 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraSpinosaurus(World world) {
 		super(world);
-		setSize(0.95F, 2.5F);
+		setSize(2F, 2.5F);
 		minWidth = 0.20F;
-		maxWidth = 0.95F;
+		maxWidth = 2F;
 		maxHeight = 2.5F;
 		maxHealthAgeable = 170;
 		STAND_ANIMATION = Animation.create(550);
@@ -72,7 +74,7 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public float getSwimHeight() {
-		return this.height * 0.20F;
+		return this.height * 0.05F;
 	}
 
 	@Override
@@ -99,14 +101,14 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 		super.onEntityUpdate();
 		//random idle animations
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0 && !this.isInWater()) {
 			if (this.getAnimation() == NO_ANIMATION) {
 				this.setAnimation(STAND_ANIMATION);
 			}
-			this.standCooldown = 2000;
+			this.standCooldown = 4000;
 		}
 		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 2000;
+			this.standCooldown = 4000;
 			this.setAnimation(NO_ANIMATION);
 		}
 
@@ -127,7 +129,7 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getDrinkLength() {
-		return 739;
+		return 585;
 	}
 
 	@Override
@@ -259,7 +261,7 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
-	public int getRoarLength() { return 95; } //Warn/threat
+	public int getRoarLength() { return 110; } //Warn/threat
 
 
 	@Override
@@ -320,8 +322,8 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 	@Override
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox() {
-		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
-			return this.getEntityBoundingBox().grow(3.0, 1.00, 3.0);
+		if (LepidodendronConfig.renderBigMobsProperly) {
+			return this.getEntityBoundingBox().grow(10.0, 6.00, 10.0);
 		}
 		return this.getEntityBoundingBox();
 	}
@@ -344,8 +346,7 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableFishBase.class, 8.0F));
 		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPlayer.class, 8.0F));
-		tasks.addTask(11, new EntityWatchClosestAI(this, EntityLivingBase.class, 8.0F));
-		tasks.addTask(12, new EntityLookIdleAI(this));
+		tasks.addTask(11, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -396,6 +397,11 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 	            .getObject(new ResourceLocation("lepidodendron:spinosaurus_hurt"));
 	}
 
+	public SoundEvent getDisplaySound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:spinosaurus_display"));
+	}
+
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
@@ -438,6 +444,15 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 		}
 
 		return itemstack.getItem();
+	}
+
+	public void playDisplaySound()
+	{
+		SoundEvent soundevent = this.getDisplaySound();
+		if (soundevent != null)
+		{
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+		}
 	}
 
 	@Override

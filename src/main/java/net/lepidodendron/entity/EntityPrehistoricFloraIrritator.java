@@ -73,7 +73,7 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 
 	@Override
 	public float getSwimHeight() {
-		return this.height * 0.20F;
+		return this.height * 0.15F;
 	}
 
 	@Override
@@ -298,7 +298,7 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox() {
 		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
-			return this.getEntityBoundingBox().grow(3.0, 1.00, 3.0);
+			return this.getEntityBoundingBox().grow(6.0, 3.00, 6.0);
 		}
 		return this.getEntityBoundingBox();
 	}

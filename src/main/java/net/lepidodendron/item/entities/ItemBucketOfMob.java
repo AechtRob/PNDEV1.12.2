@@ -1109,6 +1109,10 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/plexus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/karakhtia_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/ectenaspis_bucket", "inventory"),
+                new ModelResourceLocation("lepidodendron:entities/changxingaspis_bucket", "inventory"),
+                new ModelResourceLocation("lepidodendron:entities/loganellia_bucket", "inventory"),
+                new ModelResourceLocation("lepidodendron:entities/bianchengichthys_bucket", "inventory"),
+                new ModelResourceLocation("lepidodendron:entities/archipelepis_bucket", "inventory"),
 
 				//new ModelResourceLocation("lepidodendron:entities/_bucket", "inventory"), (Keep here as template)
 

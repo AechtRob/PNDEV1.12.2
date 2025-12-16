@@ -3559,10 +3559,14 @@ public class LepidodendronMod {
 	static final int ENTITY_MYXINEIDUS = 1498;
 	static final int ENTITY_TREMATASPIS = 1499;
 	static final int ENTITY_LOGANELLIA = 1500;
+    public static final ResourceLocation LOGANELLIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/loganellia"));
 	static final int ENTITY_CHANGXINGASPIS = 1501;
+    public static final ResourceLocation CHANGXINGASPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/changxingaspis"));
 	static final int ENTITY_CONCENTRILEPIS = 1502;
 	static final int ENTITY_BIANCHENGICHTHYS = 1503;
+    public static final ResourceLocation BIANCHENGICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bianchengichthys"));
 	static final int ENTITY_ARCHIPELEPIS = 1504;
+    public static final ResourceLocation ARCHIPELEPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/archipelepis"));
 	static final int ENTITY_ARCHAEOGRACILIDENS = 1505;
 	static final int ENTITY_CRATOSIREX = 1506;
 	static final int ENTITY_RAFAELIANA = 1507;

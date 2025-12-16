@@ -260,7 +260,7 @@ public class EntityPrehistoricFloraBaryonyx extends EntityPrehistoricFloraLandWa
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.6F;
+		float speedBase = 0.67F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -292,8 +292,8 @@ public class EntityPrehistoricFloraBaryonyx extends EntityPrehistoricFloraLandWa
 	@Override
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox() {
-		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
-			return this.getEntityBoundingBox().grow(3.0, 1.00, 3.0);
+		if (LepidodendronConfig.renderBigMobsProperly) {
+			return this.getEntityBoundingBox().grow(8.0, 6.00, 8.0);
 		}
 		return this.getEntityBoundingBox();
 	}
