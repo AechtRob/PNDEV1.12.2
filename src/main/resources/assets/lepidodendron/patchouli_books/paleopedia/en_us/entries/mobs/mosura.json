@@ -21,7 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_mosura",
 			"type": "text",
-			"text": "Mosura fentoni is a newly described, in 2025, hurdiid/peytoiid radiodont from Burgess Shale. This small, up to around 6 cm long radiodont was originally referred to as, sea moth, due to its weird looking middle body with especially large flaps, and abdomen-like densely segmented posterior body. Three eyes like Stanleycaris, and relatively simple frontal appendages with long spines, makes it such a unique appearance. Yes, of course, it is named after Mothra."
+			"text": "Mosura fentoni is a newly described, in 2025, hurdiid/peytoiid radiodont from Burgess Shale. This small, up to around 6 cm long, radiodont was originally referred to as 'Sea Moth', due to its weird looking middle body with especially large flaps, and abdomen-like densely segmented posterior body. It bears three eyes like Stanleycaris, and relatively simple frontal appendages with long spines, giving it a unique appearance."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mosura",
+			"type": "text",
+			"text": "The generic name derives directly from the Japanese Roman name of 'Mothra', a fictional kaiju made by the Japanese company Toho. The specific name derives from the surname of Peter E. Fenton, in honour of his work in the Royal Ontario Museum Invertebrate Palaeontology section, and friendship towards the researchers who described Mosura."
 		},
 		{
 			"type": "lepidodendron:diet",

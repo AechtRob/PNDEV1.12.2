@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_tesnusocaris",
 			"type": "text",
-			"text": "Tesnusocaris goldichi comes from the Upper Carboniferous, with fossils found in the Tesnus Formation, Texas (USA). It is a small enantiopoda, growing up to 10 cm in length, with a full estimated length of 15 cm overall. The generic name derives from the name of the Tenus Formation, which the specimens are found in, and the Greek word 'caris', to mean 'shrimp'. The specific name derives from the surname of Dr. S. S. Goldich, the discoverer of the first specimens."
+			"text": "Tesnusocaris goldichi comes from the upper Carboniferous, with fossils found in the Tesnus Formation, Texas (USA). It is a small enantiopoda, growing up to 10 cm in length, with a full estimated length of 15 cm overall. The generic name derives from the name of the Tenus Formation, which the specimens are found in, and the Greek word 'caris', to mean 'shrimp'. The specific name derives from the surname of Dr. S. S. Goldich, the discoverer of the first specimens."
 		},
 		{
 			"type": "lepidodendron:diet",
