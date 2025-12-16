@@ -78,6 +78,7 @@ public class RenderDisplays {
     public static final ModelArchaeoniscus modelArchaeoniscus = new ModelArchaeoniscus();
     public static final ModelArchaeopteryx modelArchaeopteryx = new ModelArchaeopteryx();
     public static final ModelArchaeothyris modelArchaeothyris = new ModelArchaeothyris();
+    public static final ModelArchipelepis modelArchipelepis = new ModelArchipelepis();
     public static final ModelArcheria modelArcheria = new ModelArcheria();
     public static final ModelArchoblattina modelArchoblattina = new ModelArchoblattina();
     public static final ModelArchocyrtus modelArchocyrtus = new ModelArchocyrtus();
@@ -122,6 +123,7 @@ public class RenderDisplays {
     public static final ModelBertratis modelBertratis = new ModelBertratis();
     public static final ModelBesanosaurus modelBesanosaurus = new ModelBesanosaurus();
     public static final ModelBethesdaichthys modelBethesdaichthys = new ModelBethesdaichthys();
+    public static final ModelBianchengichthys modelBianchengichthys = new ModelBianchengichthys();
     public static final ModelBirgeria modelBirgeria = new ModelBirgeria();
     public static final ModelBirkenia modelBirkenia = new ModelBirkenia();
     public static final ModelBishanopliosaurus modelBishanopliosaurus = new ModelBishanopliosaurus();
@@ -186,6 +188,7 @@ public class RenderDisplays {
     public static final ModelCeratodus modelCeratodus = new ModelCeratodus();
     public static final ModelCeratosaurus modelCeratosaurus = new ModelCeratosaurus();
     public static final ModelCervifurca modelCervifurca = new ModelCervifurca();
+    public static final ModelChangxingaspis modelChangxingaspis = new ModelChangxingaspis();
     public static final ModelChaoyangsaurus modelChaoyangsaurus = new ModelChaoyangsaurus();
     public static final ModelChasmataspis modelChasmataspis = new ModelChasmataspis();
     public static final ModelCheirurus modelCheirurus = new ModelCheirurus();
@@ -550,6 +553,7 @@ public class RenderDisplays {
     public static final ModelLitargosuchus modelLitargosuchus = new ModelLitargosuchus();
     public static final ModelLituites modelLituites = new ModelLituites();
     public static final ModelLochmanolenellus modelLochmanolenellus = new ModelLochmanolenellus();
+    public static final ModelLoganellia modelLoganellia = new ModelLoganellia();
     public static final ModelLonchidion modelLonchidion = new ModelLonchidion();
     public static final ModelLonchodomas modelLonchodomas = new ModelLonchodomas();
     public static final ModelLongisquama modelLongisquama = new ModelLongisquama();
