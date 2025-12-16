@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_australichthys",
 			"type": "text",
-			"text": "Australichthys longidorsalis comes from the Lower Carboniferous, with fossils found in the Witteberg series, South Africa. The generic name derives from the Latin word 'austral', to mean 'southern': and the Greek word 'ichthys', to mean 'fish'. The specific name derives from the Latin words 'longus', to mean 'long'; and 'dorsalis', to mean 'dorsal'."
+			"text": "Australichthys longidorsalis comes from the lower Carboniferous, with fossils found in the Witteberg series, South Africa. The generic name derives from the Latin word 'austral', to mean 'southern': and the Greek word 'ichthys', to mean 'fish'. The specific name derives from the Latin words 'longus', to mean 'long'; and 'dorsalis', to mean 'dorsal'."
 		},
 		{
 			"type": "lepidodendron:diet",

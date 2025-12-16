@@ -3526,6 +3526,7 @@ public class LepidodendronMod {
 	static final int ENTITY_PAPILIOMARIS = 1466;
 	static final int ENTITY_BUMASTUS = 1467;
 	static final int ENTITY_ECTENASPIS = 1468;
+	public static final ResourceLocation ECTENASPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ectenaspis"));
 	static final int ENTITY_PALAEOPALAEMON = 1469;
 	static final int ENTITY_PRIAPULITES = 1470;
 	static final int ENTITY_PALAEOCAMPA = 1471;
@@ -3640,6 +3641,8 @@ public class LepidodendronMod {
 	static final int ENTITY_SINOCALLIOPTERYX = 1576;
 	static final int ENTITY_NEDCOLBERTIA = 1577;
 	static final int ENTITY_YUTYRANNUS = 1578;
+	public static final ResourceLocation YUTYRANNUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/yutyrannus"));
+	public static final ResourceLocation YUTYRANNUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/yutyrannus_young"));
 	static final int ENTITY_SINOSAUROPTERYX = 1579;
 	static final int ENTITY_AUSTRALOVENATOR = 1580;
 	static final int ENTITY_PHUWIANGVENATOR = 1581;
@@ -3647,6 +3650,8 @@ public class LepidodendronMod {
 	static final int ENTITY_SINOTYRANNUS = 1583;
 	static final int ENTITY_SHAOCHILONG = 1584;
 	static final int ENTITY_EOTYRANNUS = 1585;
+	public static final ResourceLocation EOTYRANNUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eotyrannus"));
+	public static final ResourceLocation EOTYRANNUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eotyrannus_young"));
 	static final int ENTITY_BEIPIAOSAURUS = 1586;
 	static final int ENTITY_LIAONINGOTITAN = 1587;
 	static final int ENTITY_ARAGOSAURUS = 1588;
