@@ -5971,6 +5971,18 @@ public class LepidodendronSorter {
     public static final int baryonyx_raw = 5811;
     public static final int iberospinus_raw = 5812;
     public static final int vallibonavenatrix_raw = 5813;
+    public static final int olorotitan_raw = 5814;
+    public static final int concavenator_raw = 5815;
+    public static final int ouranosaurus_raw = 5816;
+    public static final int eggs_ouranosaurus = 5817;
+    public static final int eggs_concavenator = 5818;
+    public static final int eggs_olorotitan = 5819;
+    public static final int eggs_xilousuchus = 5820;
+    public static final int eggs_ctenosauriscus = 5821;
+    public static final int xilousuchus_raw = 5822;
+    public static final int ctenosauriscus_raw = 5823;
+    public static final int iansan_raw = 5824;
+    public static final int aellopobatis_raw = 5825;
 
     public static final int bivalve_toucasia = 6000;
     public static final int coeloptychium = 6001;

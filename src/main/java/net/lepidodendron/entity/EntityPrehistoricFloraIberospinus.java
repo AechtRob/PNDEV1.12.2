@@ -64,6 +64,7 @@ public class EntityPrehistoricFloraIberospinus extends EntityPrehistoricFloraLan
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		this.canWarn = true;
 	}
 
 	@Override
