@@ -1511,7 +1511,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
 
                                                                     //System.err.println("Spawned in " + world.getBiome(spawnPos).getBiomeName() + " at locID " + locationID + " " + mobToSpawn + " at " + spawnPos.getX() + " " + (spawnPos.getY() + 1) + " " + spawnPos.getZ());
                                                                 }
-                                                                if (spawnQty > 1 && rand.nextInt(spawnQty) != 0) {
+                                                                if (spawnQty > 2 && rand.nextInt(spawnQty) > 1) {
                                                                     spawnCounter = spawnCounter + spawnQty - 1;
                                                                 }
                                                                 spawnCounter ++;

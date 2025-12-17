@@ -528,12 +528,12 @@ public class LepidodendronConfig {
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "doGuanoGriefing", doGuanoGriefing);
-        prop.setComment("Frequency (0.00-1000.00) at which some appropriate flying creatures drop guano ambiently, causing blocks of it to build up (note that guano is also tied to the more general mobGriefing gamerule) [default: 1.00]");
+        prop.setComment("Frequency (0.00-1000.00) at which some appropriate flying creatures drop guano ambiently (note that guano is also tied to the more general mobGriefing gamerule) [default: 1.00]");
         doGuanoGriefing = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "doGuanoBats", doGuanoBats);
-        prop.setComment("Frequency (0.00-1000.00) at which vanilla bats drop guano ambiently while roosting, causing blocks of it to build up (note that guano is also tied to the more general mobGriefing gamerule) [default: 1.00]");
+        prop.setComment("Frequency (0.00-1000.00) at which vanilla bats drop guano ambiently while roosting (note that guano is also tied to the more general mobGriefing gamerule) [default: 1.00]");
         doGuanoBats = prop.getDouble();
         propOrder.add(prop.getName());
 
