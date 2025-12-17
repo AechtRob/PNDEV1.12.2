@@ -1,31 +1,31 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraEichstaettisaurus;
-import net.lepidodendron.entity.model.entity.ModelEichstaettisaurus;
+import net.lepidodendron.entity.EntityPrehistoricFloraNorellius;
+import net.lepidodendron.entity.model.entity.ModelNorellius;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderEichstaettisaurus extends RenderLivingBaseWithBook<EntityPrehistoricFloraEichstaettisaurus> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eichstaettisaurus.png");
+public class RenderNorellius extends RenderLivingBaseWithBook<EntityPrehistoricFloraNorellius> {
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/norellius.png");
 
     public static float getScaler() {
         return 0.1f;
     }
 
-    public RenderEichstaettisaurus(RenderManager mgr) {
-        super(mgr, new ModelEichstaettisaurus(), 0.5f);
+    public RenderNorellius(RenderManager mgr) {
+        super(mgr, new ModelNorellius(), 0.5f);
     }
 
     @Override
-    public ResourceLocation getEntityTexture(EntityPrehistoricFloraEichstaettisaurus entity) {
-        return RenderEichstaettisaurus.TEXTURE;
+    public ResourceLocation getEntityTexture(EntityPrehistoricFloraNorellius entity) {
+        return RenderNorellius.TEXTURE;
     }
 
     @Override
-    protected void applyRotations(EntityPrehistoricFloraEichstaettisaurus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
+    protected void applyRotations(EntityPrehistoricFloraNorellius entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
 
         switch (entityLiving.getClimbFacing()) {
@@ -47,7 +47,7 @@ public class RenderEichstaettisaurus extends RenderLivingBaseWithBook<EntityPreh
 
 
     @Override
-    protected void preRenderCallback(EntityPrehistoricFloraEichstaettisaurus entity, float f) {
+    protected void preRenderCallback(EntityPrehistoricFloraNorellius entity, float f) {
         float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;

@@ -3532,6 +3532,7 @@ public class LepidodendronMod {
 	static final int ENTITY_PALAEOCAMPA = 1471;
 	static final int ENTITY_MACROMYZON = 1472;
 	static final int ENTITY_PETROLACOSAURUS = 1473;
+    public static final ResourceLocation PETROLACOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/petrolacosaurus"));
 	static final int ENTITY_TUDITANUS = 1474;
 	static final int ENTITY_PELTOBATRACHUS = 1475;
 	static final int ENTITY_GAIASIA = 1476;
@@ -3563,6 +3564,7 @@ public class LepidodendronMod {
 	static final int ENTITY_CHANGXINGASPIS = 1501;
     public static final ResourceLocation CHANGXINGASPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/changxingaspis"));
 	static final int ENTITY_CONCENTRILEPIS = 1502;
+    public static final ResourceLocation CONCENTRILEPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/concentrilepis"));
 	static final int ENTITY_BIANCHENGICHTHYS = 1503;
     public static final ResourceLocation BIANCHENGICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bianchengichthys"));
 	static final int ENTITY_ARCHIPELEPIS = 1504;
@@ -3638,6 +3640,7 @@ public class LepidodendronMod {
 	static final int ENTITY_CALLAWAYASAURUS = 1573;
 	static final int ENTITY_ABYSSOSAURUS = 1574;
 	static final int ENTITY_AEGIROSAURUS = 1575;
+    public static final ResourceLocation AEGIROSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/aegirosaurus"));
 	static final int ENTITY_SINOCALLIOPTERYX = 1576;
 	static final int ENTITY_NEDCOLBERTIA = 1577;
 	static final int ENTITY_YUTYRANNUS = 1578;
@@ -3659,6 +3662,7 @@ public class LepidodendronMod {
 	static final int ENTITY_PHUWIANGOSAURUS = 1590;
 	static final int ENTITY_SAUROPELTA = 1591;
 	static final int ENTITY_NORELLIUS = 1592;
+    public static final ResourceLocation NORELLIUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/norellius"));
 	static final int ENTITY_SLAVOIA = 1593;
 	static final int ENTITY_IBEROBATRACHUS = 1594;
 	static final int ENTITY_LIAOBATRACHUS = 1595;

@@ -1875,7 +1875,7 @@ public class ModelSuchomimus extends ModelBasePalaeopedia {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-         if (tickAnim >= 0 && tickAnim < 60) {
+        if (tickAnim >= 0 && tickAnim < 60) {
             xx = 0 + (((tickAnim - 0) / 60) * (3.5-(0)));
             yy = 0 + (((tickAnim - 0) / 60) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 60) * (0-(0)));
@@ -2497,17 +2497,17 @@ public class ModelSuchomimus extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 0) / 60) * (0-(0)));
         }
         else if (tickAnim >= 60 && tickAnim < 180) {
-            xx = 5.25 + (((tickAnim - 60) / 120) * (11-(5.25)));
+            xx = 5.25 + (((tickAnim - 60) / 120) * (9-(5.25)));
             yy = 0 + (((tickAnim - 60) / 120) * (0-(0)));
             zz = 0 + (((tickAnim - 60) / 120) * (0-(0)));
         }
         else if (tickAnim >= 180 && tickAnim < 600) {
-            xx = 11 + (((tickAnim - 180) / 420) * (11-(11)));
+            xx = 9 + (((tickAnim - 180) / 420) * (9-(9)));
             yy = 0 + (((tickAnim - 180) / 420) * (0-(0)));
             zz = 0 + (((tickAnim - 180) / 420) * (0-(0)));
         }
         else if (tickAnim >= 600 && tickAnim < 650) {
-            xx = 11 + (((tickAnim - 600) / 50) * (0-(11)));
+            xx = 9 + (((tickAnim - 600) / 50) * (0-(9)));
             yy = 0 + (((tickAnim - 600) / 50) * (0-(0)));
             zz = 0 + (((tickAnim - 600) / 50) * (0-(0)));
         }
@@ -2527,24 +2527,24 @@ public class ModelSuchomimus extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 0) / 60) * (0-(0)));
         }
         else if (tickAnim >= 60 && tickAnim < 180) {
-            xx = 5.75 + (((tickAnim - 60) / 120) * (4.4559+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10-(5.75)));
+            xx = 5.75 + (((tickAnim - 60) / 120) * (-3.6191+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10-(5.75)));
             yy = 0 + (((tickAnim - 60) / 120) * (8.46491-(0)));
-            zz = 0 + (((tickAnim - 60) / 120) * (2.55576-(0)));
+            zz = 0 + (((tickAnim - 60) / 120) * (0.28076-(0)));
         }
         else if (tickAnim >= 180 && tickAnim < 181) {
-            xx = 4.4559+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10 + (((tickAnim - 180) / 1) * (9.5309-(4.4559+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10)));
-            yy = 8.46491 + (((tickAnim - 180) / 1) * (8.46491-(8.46491)));
-            zz = 2.55576 + (((tickAnim - 180) / 1) * (2.55576-(2.55576)));
+            xx = -3.6191+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10 + (((tickAnim - 180) / 1) * (1.34492-(-3.6191+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10)));
+            yy = 8.46491 + (((tickAnim - 180) / 1) * (8.52433-(8.46491)));
+            zz = 0.28076 + (((tickAnim - 180) / 1) * (0.28159-(0.28076)));
         }
         else if (tickAnim >= 181 && tickAnim < 600) {
-            xx = 9.5309 + (((tickAnim - 181) / 419) * (9.3309-(9.5309)));
-            yy = 8.46491 + (((tickAnim - 181) / 419) * (8.46491-(8.46491)));
-            zz = 2.55576 + (((tickAnim - 181) / 419) * (2.55576-(2.55576)));
+            xx = 1.34492 + (((tickAnim - 181) / 419) * (1.34492-(1.34492)));
+            yy = 8.52433 + (((tickAnim - 181) / 419) * (8.52433-(8.52433)));
+            zz = 0.28159 + (((tickAnim - 181) / 419) * (0.28159-(0.28159)));
         }
         else if (tickAnim >= 600 && tickAnim < 650) {
-            xx = 9.3309 + (((tickAnim - 600) / 50) * (0-(9.3309)));
-            yy = 8.46491 + (((tickAnim - 600) / 50) * (0-(8.46491)));
-            zz = 2.55576 + (((tickAnim - 600) / 50) * (0-(2.55576)));
+            xx = 1.34492 + (((tickAnim - 600) / 50) * (0-(1.34492)));
+            yy = 8.52433 + (((tickAnim - 600) / 50) * (0-(8.52433)));
+            zz = 0.28159 + (((tickAnim - 600) / 50) * (0-(0.28159)));
         }
         else {
             xx = 0;
@@ -2592,27 +2592,27 @@ public class ModelSuchomimus extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 0) / 60) * (0-(0)));
         }
         else if (tickAnim >= 60 && tickAnim < 180) {
-            xx = 3.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10 + (((tickAnim - 60) / 120) * (25.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10-(3.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10)));
+            xx = 3.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10 + (((tickAnim - 60) / 120) * (19.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10-(3.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10)));
             yy = 0 + (((tickAnim - 60) / 120) * (0-(0)));
             zz = 0 + (((tickAnim - 60) / 120) * (0-(0)));
         }
         else if (tickAnim >= 180 && tickAnim < 181) {
-            xx = 25.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10 + (((tickAnim - 180) / 1) * (30.2-(25.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10)));
+            xx = 19.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10 + (((tickAnim - 180) / 1) * (24.125-(19.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10)));
             yy = 0 + (((tickAnim - 180) / 1) * (0-(0)));
             zz = 0 + (((tickAnim - 180) / 1) * (0-(0)));
         }
         else if (tickAnim >= 181 && tickAnim < 600) {
-            xx = 30.2 + (((tickAnim - 181) / 419) * (30.2-(30.2)));
+            xx = 24.125 + (((tickAnim - 181) / 419) * (24.125-(24.125)));
             yy = 0 + (((tickAnim - 181) / 419) * (0-(0)));
             zz = 0 + (((tickAnim - 181) / 419) * (0-(0)));
         }
         else if (tickAnim >= 600 && tickAnim < 603) {
-            xx = 30.2 + (((tickAnim - 600) / 3) * (32.68-(30.2)));
+            xx = 24.125 + (((tickAnim - 600) / 3) * (24.13-(24.125)));
             yy = 0 + (((tickAnim - 600) / 3) * (0-(0)));
             zz = 0 + (((tickAnim - 600) / 3) * (0-(0)));
         }
         else if (tickAnim >= 603 && tickAnim < 627) {
-            xx = 32.68 + (((tickAnim - 603) / 24) * (6.625+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*-20-(32.68)));
+            xx = 24.13 + (((tickAnim - 603) / 24) * (6.625+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*-20-(24.13)));
             yy = 0 + (((tickAnim - 603) / 24) * (0-(0)));
             zz = 0 + (((tickAnim - 603) / 24) * (0-(0)));
         }

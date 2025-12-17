@@ -61,6 +61,8 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 		//ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:brasilodendron_spores", "inventory"));
 
 		ModelBakery.registerItemVariants(block,
+                new ModelResourceLocation("lepidodendron:entities/concentrilepis_bucket", "inventory"),
+                new ModelResourceLocation("lepidodendron:entities/aegirosaurus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/homalonotus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/taquetochelys_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/scapanorhynchus_bucket", "inventory"),
@@ -74,7 +76,7 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
                 new ModelResourceLocation("lepidodendron:entities/helodus_bucket", "inventory"),
                 new ModelResourceLocation("lepidodendron:entities/americaspis_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/angelacanthus_bucket", "inventory"),
-        new ModelResourceLocation("lepidodendron:entities/americaspis_bucket", "inventory"),
+                new ModelResourceLocation("lepidodendron:entities/americaspis_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/genibatrachus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/ptyktoptychion_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/araripemys_bucket", "inventory"),
