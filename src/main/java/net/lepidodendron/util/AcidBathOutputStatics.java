@@ -458,7 +458,8 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidHapalocrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidGennaeocrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidBoliviacrinus.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockCrinoidAcanthocrinus.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidAcanthocrinus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockDictyonema.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsDevonian);
         return resLoc;
