@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_siphonocrinus",
 			"title": "Siphonocrinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Diplobathrida"
+			"text": "$(l)Temporal Range:$() Silurian(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Diplobathrida"
 		},
 		{
 			"type": "multiblock",
@@ -30,7 +30,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_siphonocrinus",
 			"type": "text",
-			"text": "Siphonocrinus is a Silurian to Devonian crinoid that was a suspension feeder which grew from the seafloor. It had several arms growing from its bulb which themselves were lined with spines."
+			"text": "Siphonocrinus is a Silurian crinoid that was a suspension feeder which grew from the seafloor. It had several arms growing from its bulb which themselves were lined with spines."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_siphonocrinus",
