@@ -68,6 +68,7 @@ public class EntityPrehistoricFloraIchthyovenator extends EntityPrehistoricFlora
 			tailBuffer = new ChainBuffer();
 		}
 		GRAPPLE_ANIMATION = Animation.create(this.getGrappleLength());
+		this.canWarn = true;
 	}
 
 	@Override
