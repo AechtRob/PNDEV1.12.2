@@ -790,10 +790,114 @@ public class ModelSuchomimus extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
+        this.neck.offsetY = -0.05F;
+        this.neck.offsetZ = 0.04F;
+        this.neck.render(0.01F);
         resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.0785F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, -0.0393F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.0087F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, 0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r17, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r18, -0.3665F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r19, 0.3316F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r20, 0.1571F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r21, 0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r22, 0.5323F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r23, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r24, -0.1571F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r25, 0.3665F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r26, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r27, 0.1833F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r28, 0.6226F, -0.2875F, -0.2008F);
+        this.setRotateAngle(cube_r29, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r30, 0.2705F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r31, 0.6226F, 0.2875F, 0.2008F);
+        this.setRotateAngle(cube_r32, 0.0262F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r33, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r34, -0.0698F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r35, 0.0698F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r36, 0.0349F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r37, -0.0175F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r38, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r39, -0.1658F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r40, -0.2111F, 0.3052F, -0.011F);
+        this.setRotateAngle(cube_r41, -0.1658F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r42, 0.3403F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r43, 0.0087F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r44, -0.1222F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r45, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r46, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r47, -0.1658F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r48, -0.2111F, -0.3052F, 0.011F);
+        this.setRotateAngle(cube_r49, -0.1658F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r50, 0.3403F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r51, 0.0087F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r52, -0.1222F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r53, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r54, 0.9595F, 0.0357F, -0.025F);
+        this.setRotateAngle(cube_r55, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r56, -0.1265F, 0.0338F, 0.2597F);
+        this.setRotateAngle(cube_r57, -0.1106F, 0.0702F, 0.5633F);
+        this.setRotateAngle(cube_r58, -0.2785F, 0.0969F, 0.4691F);
+        this.setRotateAngle(cube_r59, 0.9595F, -0.0357F, 0.025F);
+        this.setRotateAngle(cube_r6, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r60, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r61, -0.1265F, -0.0338F, -0.2597F);
+        this.setRotateAngle(cube_r62, -0.1106F, -0.0702F, -0.5633F);
+        this.setRotateAngle(cube_r63, -0.2785F, -0.0969F, -0.4691F);
+        this.setRotateAngle(cube_r7, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.1876F, 0.0F, 0.0F);
+        this.setRotateAngle(head, -0.336F, 0.0F, 0.0F);
+        this.setRotateAngle(hips, -0.2836F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.4145F, 0.0F, 0.0F);
+        this.setRotateAngle(leftarm, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(leftarm2, 0.4494F, 0.0F, 0.0F);
+        this.setRotateAngle(leftfoot, -0.1004F, 0.0F, 0.0F);
+        this.setRotateAngle(lefthand, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(leftJaw1, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg, 0.3752F, 0.0F, 0.0F);
+        this.setRotateAngle(leftMasseter, -1.0036F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.5682F, 0.007F, -0.1224F);
+        this.setRotateAngle(neck2, -0.4154F, 0.1147F, 0.0112F);
+        this.setRotateAngle(neck3, 0.1508F, -0.1191F, -0.0885F);
+        this.setRotateAngle(neck4, 0.3502F, -0.0779F, -0.0284F);
+        this.setRotateAngle(neck5, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(rightarm, -0.3272F, 0.0F, 0.0F);
+        this.setRotateAngle(rightarm2, 0.4669F, 0.0F, 0.0F);
+        this.setRotateAngle(rightfoot, 0.192F, 0.0F, 0.0F);
+        this.setRotateAngle(righthand, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(rightJaw1, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg, -0.0742F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg2, -0.1658F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg3, 0.3229F, 0.0F, 0.0F);
+        this.setRotateAngle(rightMasseter, -1.0036F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.0829F, -0.0304F, 0.0025F);
+        this.setRotateAngle(tail2, -0.0089F, -0.0695F, 0.0061F);
+        this.setRotateAngle(tail3, 0.1047F, -0.0261F, -0.0023F);
+        this.setRotateAngle(tail4, 0.0699F, -0.0654F, -0.0029F);
+        this.setRotateAngle(tail5, 0.0832F, -0.0783F, -0.0065F);
+        this.setRotateAngle(tail6, 0.165F, -0.1347F, 0.0119F);
+        this.setRotateAngle(tail7, 0.0567F, 0.0F, 0.0F);
+        this.setRotateAngle(tail8, 0.0131F, 0.0002F, -0.0131F);
+        this.setRotateAngle(throat, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(throat2, -0.0654F, 0.0F, 0.0F);
+        this.hips.offsetY = -0.156F;
+        this.hips.render(0.01F);
         resetToDefaultPose();
     }
 
@@ -1875,7 +1979,7 @@ public class ModelSuchomimus extends ModelBasePalaeopedia {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-         if (tickAnim >= 0 && tickAnim < 60) {
+        if (tickAnim >= 0 && tickAnim < 60) {
             xx = 0 + (((tickAnim - 0) / 60) * (3.5-(0)));
             yy = 0 + (((tickAnim - 0) / 60) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 60) * (0-(0)));
@@ -2497,17 +2601,17 @@ public class ModelSuchomimus extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 0) / 60) * (0-(0)));
         }
         else if (tickAnim >= 60 && tickAnim < 180) {
-            xx = 5.25 + (((tickAnim - 60) / 120) * (11-(5.25)));
+            xx = 5.25 + (((tickAnim - 60) / 120) * (9-(5.25)));
             yy = 0 + (((tickAnim - 60) / 120) * (0-(0)));
             zz = 0 + (((tickAnim - 60) / 120) * (0-(0)));
         }
         else if (tickAnim >= 180 && tickAnim < 600) {
-            xx = 11 + (((tickAnim - 180) / 420) * (11-(11)));
+            xx = 9 + (((tickAnim - 180) / 420) * (9-(9)));
             yy = 0 + (((tickAnim - 180) / 420) * (0-(0)));
             zz = 0 + (((tickAnim - 180) / 420) * (0-(0)));
         }
         else if (tickAnim >= 600 && tickAnim < 650) {
-            xx = 11 + (((tickAnim - 600) / 50) * (0-(11)));
+            xx = 9 + (((tickAnim - 600) / 50) * (0-(9)));
             yy = 0 + (((tickAnim - 600) / 50) * (0-(0)));
             zz = 0 + (((tickAnim - 600) / 50) * (0-(0)));
         }
@@ -2527,24 +2631,24 @@ public class ModelSuchomimus extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 0) / 60) * (0-(0)));
         }
         else if (tickAnim >= 60 && tickAnim < 180) {
-            xx = 5.75 + (((tickAnim - 60) / 120) * (4.4559+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10-(5.75)));
+            xx = 5.75 + (((tickAnim - 60) / 120) * (-3.6191+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10-(5.75)));
             yy = 0 + (((tickAnim - 60) / 120) * (8.46491-(0)));
-            zz = 0 + (((tickAnim - 60) / 120) * (2.55576-(0)));
+            zz = 0 + (((tickAnim - 60) / 120) * (0.28076-(0)));
         }
         else if (tickAnim >= 180 && tickAnim < 181) {
-            xx = 4.4559+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10 + (((tickAnim - 180) / 1) * (9.5309-(4.4559+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10)));
-            yy = 8.46491 + (((tickAnim - 180) / 1) * (8.46491-(8.46491)));
-            zz = 2.55576 + (((tickAnim - 180) / 1) * (2.55576-(2.55576)));
+            xx = -3.6191+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10 + (((tickAnim - 180) / 1) * (1.34492-(-3.6191+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10)));
+            yy = 8.46491 + (((tickAnim - 180) / 1) * (8.52433-(8.46491)));
+            zz = 0.28076 + (((tickAnim - 180) / 1) * (0.28159-(0.28076)));
         }
         else if (tickAnim >= 181 && tickAnim < 600) {
-            xx = 9.5309 + (((tickAnim - 181) / 419) * (9.3309-(9.5309)));
-            yy = 8.46491 + (((tickAnim - 181) / 419) * (8.46491-(8.46491)));
-            zz = 2.55576 + (((tickAnim - 181) / 419) * (2.55576-(2.55576)));
+            xx = 1.34492 + (((tickAnim - 181) / 419) * (1.34492-(1.34492)));
+            yy = 8.52433 + (((tickAnim - 181) / 419) * (8.52433-(8.52433)));
+            zz = 0.28159 + (((tickAnim - 181) / 419) * (0.28159-(0.28159)));
         }
         else if (tickAnim >= 600 && tickAnim < 650) {
-            xx = 9.3309 + (((tickAnim - 600) / 50) * (0-(9.3309)));
-            yy = 8.46491 + (((tickAnim - 600) / 50) * (0-(8.46491)));
-            zz = 2.55576 + (((tickAnim - 600) / 50) * (0-(2.55576)));
+            xx = 1.34492 + (((tickAnim - 600) / 50) * (0-(1.34492)));
+            yy = 8.52433 + (((tickAnim - 600) / 50) * (0-(8.52433)));
+            zz = 0.28159 + (((tickAnim - 600) / 50) * (0-(0.28159)));
         }
         else {
             xx = 0;
@@ -2592,27 +2696,27 @@ public class ModelSuchomimus extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 0) / 60) * (0-(0)));
         }
         else if (tickAnim >= 60 && tickAnim < 180) {
-            xx = 3.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10 + (((tickAnim - 60) / 120) * (25.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10-(3.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10)));
+            xx = 3.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10 + (((tickAnim - 60) / 120) * (19.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10-(3.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10)));
             yy = 0 + (((tickAnim - 60) / 120) * (0-(0)));
             zz = 0 + (((tickAnim - 60) / 120) * (0-(0)));
         }
         else if (tickAnim >= 180 && tickAnim < 181) {
-            xx = 25.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10 + (((tickAnim - 180) / 1) * (30.2-(25.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10)));
+            xx = 19.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10 + (((tickAnim - 180) / 1) * (24.125-(19.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*20-30))*10)));
             yy = 0 + (((tickAnim - 180) / 1) * (0-(0)));
             zz = 0 + (((tickAnim - 180) / 1) * (0-(0)));
         }
         else if (tickAnim >= 181 && tickAnim < 600) {
-            xx = 30.2 + (((tickAnim - 181) / 419) * (30.2-(30.2)));
+            xx = 24.125 + (((tickAnim - 181) / 419) * (24.125-(24.125)));
             yy = 0 + (((tickAnim - 181) / 419) * (0-(0)));
             zz = 0 + (((tickAnim - 181) / 419) * (0-(0)));
         }
         else if (tickAnim >= 600 && tickAnim < 603) {
-            xx = 30.2 + (((tickAnim - 600) / 3) * (32.68-(30.2)));
+            xx = 24.125 + (((tickAnim - 600) / 3) * (24.13-(24.125)));
             yy = 0 + (((tickAnim - 600) / 3) * (0-(0)));
             zz = 0 + (((tickAnim - 600) / 3) * (0-(0)));
         }
         else if (tickAnim >= 603 && tickAnim < 627) {
-            xx = 32.68 + (((tickAnim - 603) / 24) * (6.625+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*-20-(32.68)));
+            xx = 24.13 + (((tickAnim - 603) / 24) * (6.625+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*-20-(24.13)));
             yy = 0 + (((tickAnim - 603) / 24) * (0-(0)));
             zz = 0 + (((tickAnim - 603) / 24) * (0-(0)));
         }
