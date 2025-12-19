@@ -12,7 +12,7 @@ public class RenderArizonasaurus extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/arizonasaurus.png");
 
     public static float getScaler() {
-        return 0.615F;
+        return 0.8F;
     }
 
     public RenderArizonasaurus(RenderManager mgr) {

@@ -2125,7 +2125,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_TUPANDACTYLUS_NAVIGANS = new CustomTrigger("pf_book_tupandactylus_navigans");
     public static final CustomTrigger CLICK_AMARGASAURUS = new CustomTrigger("pf_book_amargasaurus");
     public static final CustomTrigger CLICK_BAJADASAURUS = new CustomTrigger("pf_book_bajadasaurus");
-    public static final CustomTrigger CLICK_MIRASAURA  = new CustomTrigger("pf_book_mirasaura ");
+    public static final CustomTrigger CLICK_MIRASAURA = new CustomTrigger("pf_book_mirasaura");
     public static final CustomTrigger CLICK_ICAROSAURUS = new CustomTrigger("pf_book_icarosaurus");
     public static final CustomTrigger CLICK_KUEHNEOSUCHUS = new CustomTrigger("pf_book_kuehneosuchus");
     public static final CustomTrigger CLICK_KUEHNEOSAURUS = new CustomTrigger("pf_book_kuehneosaurus");
@@ -4414,7 +4414,7 @@ public class ModTriggers
             CLICK_TUPANDACTYLUS_NAVIGANS,
             CLICK_AMARGASAURUS,
             CLICK_BAJADASAURUS,
-            CLICK_MIRASAURA ,
+            CLICK_MIRASAURA,
             CLICK_ICAROSAURUS,
             CLICK_KUEHNEOSUCHUS,
             CLICK_KUEHNEOSAURUS,

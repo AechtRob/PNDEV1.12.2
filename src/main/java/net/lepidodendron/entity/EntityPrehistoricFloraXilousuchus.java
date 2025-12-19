@@ -120,7 +120,7 @@ public class EntityPrehistoricFloraXilousuchus extends EntityPrehistoricFloraLan
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.498F;
+		float speedBase = 0.38F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
