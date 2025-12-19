@@ -8,8 +8,10 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
+import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
@@ -102,7 +104,7 @@ public class BlockCrinoidGennaeocrinus extends ElementsLepidodendronMod.ModEleme
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCrinoid)) {
 			dimensionCriteria = true;
 		}
-		if (dimID == LepidodendronConfig.dimDevonian
+		if (dimID == LepidodendronConfig.dimDevonian || dimID == LepidodendronConfig.dimCarboniferous
 		) {
 			dimensionCriteria = true;
 		}
@@ -134,6 +136,17 @@ public class BlockCrinoidGennaeocrinus extends ElementsLepidodendronMod.ModEleme
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")) {
 				biomeCriteria = true;
 				multiplier = 5;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeCarboniferous)
+		{
+			BiomeCarboniferous biomeCarb = (BiomeCarboniferous) biome;
+			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
+				biomeCriteria = true;
 			}
 			else {
 				biomeCriteria = false;
