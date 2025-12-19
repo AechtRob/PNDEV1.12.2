@@ -105,10 +105,23 @@ public class ModelArchipelepis extends ModelBasePalaeopedia {
     }
     public void renderStaticWall(float f) {
         this.root.rotateAngleY = (float) Math.toRadians(90);
+        this.root.offsetZ = -0.2F;
+        this.root.offsetY = -0.2F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, -0.1658F, -0.1134F);
+        this.setRotateAngle(cube_r1, 0.0F, -0.5236F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.5236F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0611F, 0.1745F, 0.0F);
+        this.setRotateAngle(tail2, 0.2051F, 0.1963F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.3185F, 0.0F);
+        this.setRotateAngle(tail4, 0.2356F, -0.4058F, 0.0F);
         this.root.render(0.01F);
         resetToDefaultPose();
     }

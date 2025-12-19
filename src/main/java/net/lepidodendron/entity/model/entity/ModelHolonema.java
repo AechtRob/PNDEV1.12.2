@@ -356,15 +356,26 @@ public class ModelHolonema extends ModelBasePalaeopedia {
 
     public void renderStaticWall(float f) {
         this.main.rotateAngleY = (float) Math.toRadians(90);
-        this.main.offsetX = -0.14F;
+        this.main.offsetX = -0.F;
         this.main.offsetY = -0.19F;
-        this.main.offsetZ = 0.06F;
+        this.main.offsetZ = -0.07F;
         this.main.render(0.01F);
         this.resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
-        this.main.offsetY = -0.18F;
+        this.setRotateAngle(backLeftFin, 0.44F, 0.1853F, -0.9009F);
+        this.setRotateAngle(backRightFin, 0.44F, -0.1853F, 0.9009F);
+
+        this.setRotateAngle(frontLeftFin, 0.2145F, -0.2376F, -0.8488F);
+        this.setRotateAngle(frontRightFin, 0.4024F, 0.2068F, 0.9451F);
+        this.setRotateAngle(jaw, 0.8247F, 0.0F, 0.0F);
+        this.setRotateAngle(main, 0.494F, -0.0986F, 0.1912F);
+        this.setRotateAngle(tail, 0.0F, -0.1353F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1789F, 0.0F);
+        this.setRotateAngle(tail4, 0.2697F, 0.2401F, 0.0656F);
+        this.main.offsetY = -0.3F;
         this.main.render(0.01F);
         this.resetToDefaultPose();
     }

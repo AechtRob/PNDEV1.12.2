@@ -1066,6 +1066,13 @@ public class RenderDisplays {
     public static final ModelPetrolacosaurus modelPetrolacosaurus = new ModelPetrolacosaurus();
     public static final ModelNorellius modelNorellius = new ModelNorellius();
     public static final ModelConcentrilepis modelConcentrilepis = new ModelConcentrilepis();
+    public static final ModelSpinosaurus modelSpinosaurus = new ModelSpinosaurus();
+    public static final ModelIrritator modelIrritator = new ModelIrritator();
+    public static final ModelSuchomimus modelSuchomimus = new ModelSuchomimus();
+    public static final ModelBaryonyx modelBaryonyx = new ModelBaryonyx();
+    public static final ModelIchthyovenator modelIchthyovenator = new ModelIchthyovenator();
+    public static final ModelVallibonavenatrix modelVallibonavenatrix = new ModelVallibonavenatrix();
+    public static final ModelIberospinus modelIberospinus = new ModelIberospinus();
 
 
 

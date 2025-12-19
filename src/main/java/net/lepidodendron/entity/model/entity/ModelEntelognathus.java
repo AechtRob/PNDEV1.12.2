@@ -254,19 +254,50 @@ public class ModelEntelognathus extends ModelBasePalaeopedia {
         this.Root.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.Root.rotateAngleX = (float) Math.toRadians(90);
-        this.Root.rotateAngleZ = (float) Math.toRadians(90);
-        this.Root.offsetX = -0.1F;
-        this.Root.offsetY = -0.21F;
-        this.Root.offsetZ = 0.02F;
+        this.Root.rotateAngleX = (float) Math.toRadians(0);
+        this.Root.rotateAngleZ = (float) Math.toRadians(0);
+        this.Root.offsetX = -0.F;
+        this.Root.offsetY = -0.25F;
+        this.Root.offsetZ = -0.13F;
         this.Root.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(Body, 0.0961F, -0.0565F, -0.0054F);
+        this.setRotateAngle(cube_r1, -0.0742F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.192F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.1833F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0087F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -1.309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(eye, 0.0F, 0.0F, 0.5672F);
+        this.setRotateAngle(eye2, 0.0F, 0.0F, -0.5672F);
+        this.setRotateAngle(forehead, -0.2531F, 0.0F, 0.0F);
+        this.setRotateAngle(forehead2, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Headshouldnotmove, -0.1004F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, -0.2923F, 0.0F, 0.0F);
+        this.setRotateAngle(lips, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(nose, -0.5672F, 0.0F, 0.0F);
+        this.setRotateAngle(pectralfinleft, -0.2613F, -0.4966F, 0.5324F);
+        this.setRotateAngle(pectralfinright, -0.1724F, 0.7702F, -0.3812F);
+        this.setRotateAngle(pelvicfinleft, -0.0562F, -0.8653F, 0.2282F);
+        this.setRotateAngle(pelvicfinright, -0.0562F, 0.8653F, -0.2282F);
+        this.setRotateAngle(rfinspike, 0.0F, 0.7854F, 0.0F);
+        this.setRotateAngle(rfinspike2, 0.0F, -0.7854F, 0.0F);
+        this.setRotateAngle(Root, -0.2397F, 0.0114F, 0.0466F);
+        this.setRotateAngle(Tail, 0.0933F, -0.3607F, -0.033F);
+        this.setRotateAngle(Tail2, 0.1655F, -0.1183F, 0.0186F);
         this.Root.rotateAngleY = (float) Math.toRadians(90);
         this.Root.offsetX = -0.F;
-        this.Root.offsetY = 0.1F;
+        this.Root.offsetY = -0.1F;
         this.Root.offsetZ = -0.0F;
         this.Root.render(0.01F);
         resetToDefaultPose();
