@@ -37,6 +37,7 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
     private int jumpTicks;
     public Animation HURT_ANIMATION;
     public static Animation NOISE_ANIMATION; //Ambient noises (roar is re-purposed for warning)
+    public boolean canWarn = false;
 
     public EntityPrehistoricFloraLandWadingBase(World world) {
         super(world);
@@ -77,12 +78,13 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
     public void playLivingSound() {
         if (this.getAnimation() == NO_ANIMATION && (!this.getIsSneaking())) {
             if (!this.world.isRemote) {
-                this.setAnimation(NOISE_ANIMATION);
-                SoundEvent soundevent = this.getAmbientSound();
-                if (soundevent != null)
-                {
-                    this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+                if (this.canWarn) {
+                    this.setAnimation(EntityPrehistoricFloraLandCarnivoreBase.NOISE_ANIMATION);
                 }
+                else {
+                    this.setAnimation(ROAR_ANIMATION);
+                }
+                super.playLivingSound();
             }
         }
     }

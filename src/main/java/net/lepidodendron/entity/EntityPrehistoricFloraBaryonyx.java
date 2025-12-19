@@ -68,6 +68,7 @@ public class EntityPrehistoricFloraBaryonyx extends EntityPrehistoricFloraLandWa
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		this.canWarn = true;
 	}
 
 	@Override

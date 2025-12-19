@@ -71,6 +71,7 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		this.canWarn = true;
 	}
 
 	@Override
