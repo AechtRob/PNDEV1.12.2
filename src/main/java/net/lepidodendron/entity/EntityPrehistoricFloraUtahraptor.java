@@ -171,7 +171,7 @@ public class EntityPrehistoricFloraUtahraptor extends EntityPrehistoricFloraLand
 	}
 
 	@Override
-	public boolean ighnoreSizeForAvoidance() {
+	public boolean ignoreSizeForAvoidance() {
 		return true;
 	}
 

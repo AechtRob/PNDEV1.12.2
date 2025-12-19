@@ -117,7 +117,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         getMaxTurnDistancePerTick = 20.0F;
     }
 
-    public boolean ighnoreSizeForAvoidance() {
+    public boolean ignoreSizeForAvoidance() {
         return false;
     }
 
