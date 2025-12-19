@@ -134,7 +134,7 @@ public class WorldGenPrehistoricLakes extends WorldGenerator
                                     Method method = Functions.testAndGetMethod(classGenerator, "getIBlockstateForWater", params);
                                     if (method != null) {
                                         try {
-                                            iBlockState = (IBlockState) method.invoke(null, worldIn.getBiome(position).toString(), position.getY(), iBlockState, rand);
+                                            iBlockState = (IBlockState) method.invoke(null, worldIn.getBiome(position).getRegistryName().toString(), position.getY(), iBlockState, rand);
                                             Functions.setBlockStateAndCheckForDoublePlant(worldIn, position.add(l1, i4, i3).down(), iBlockState, 2);
                                         } catch (Exception e) {
                                         }
