@@ -282,7 +282,7 @@ public class BlockRudistReefSticky extends ElementsLepidodendronMod.ModElement {
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Marine reef bivalves");
-				tooltip.add("Periods: [Jurassic -] Early Cretaceous - Late Cretaceous");
+				tooltip.add("Periods: Late Cretaceous");
 			}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
