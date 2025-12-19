@@ -67,7 +67,7 @@ public class EntityPrehistoricFloraOuranosaurus extends EntityPrehistoricFloraBi
 	}
 
 	public int getNoiseLength() {
-		return 55;
+		return 20;
 	}
 
 	@Override
@@ -139,7 +139,7 @@ public class EntityPrehistoricFloraOuranosaurus extends EntityPrehistoricFloraBi
 	@Override
 	public boolean isDrinking()
 	{
-		if (this.getAnimation() == this.TOBI_ANIMATION || this.getAnimation() == this.TOQUAD_ANIMATION || !this.isQuad()) {
+		if (this.getAnimation() == this.TOBI_ANIMATION || this.getAnimation() == this.TOQUAD_ANIMATION || this.isQuad()) {
 			return false;
 		}
 		return super.isDrinking();
@@ -174,10 +174,10 @@ public class EntityPrehistoricFloraOuranosaurus extends EntityPrehistoricFloraBi
 
 	@Override
 	public int getRoarLength() {
-		return 20;
+		return 55;
 	}
 
-	public static String getPeriod() {return "Late Cretaceous";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	@Override
 	public int getDrinkLength() {
@@ -220,7 +220,7 @@ public class EntityPrehistoricFloraOuranosaurus extends EntityPrehistoricFloraBi
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.45F;
+		float speedBase = 0.4F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -229,7 +229,7 @@ public class EntityPrehistoricFloraOuranosaurus extends EntityPrehistoricFloraBi
 		}
 
 		if(!this.isQuad()) {
-			speedBase = 0.4F;
+			speedBase = 0.55F;
 		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 1.5F;

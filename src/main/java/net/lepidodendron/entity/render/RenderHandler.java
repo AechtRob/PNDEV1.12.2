@@ -8667,6 +8667,30 @@ public class RenderHandler {
                 return new RenderOuranosaurus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCtenosauriscus.class, new IRenderFactory<EntityPrehistoricFloraCtenosauriscus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCtenosauriscus> createRenderFor(RenderManager manager) {
+                return new RenderCtenosauriscus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraXilousuchus.class, new IRenderFactory<EntityPrehistoricFloraXilousuchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraXilousuchus> createRenderFor(RenderManager manager) {
+                return new RenderXilousuchus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAellopobatis.class, new IRenderFactory<EntityPrehistoricFloraAellopobatis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAellopobatis> createRenderFor(RenderManager manager) {
+                return new RenderAellopobatis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraIansan.class, new IRenderFactory<EntityPrehistoricFloraIansan>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraIansan> createRenderFor(RenderManager manager) {
+                return new RenderIansan(manager);
+            }
+        });
 
 
 
