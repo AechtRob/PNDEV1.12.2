@@ -496,14 +496,14 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 
     @Override
     public void onLivingUpdate() {
-        double chancer = LepidodendronConfig.doGuanoBats;
+        double chancer = LepidodendronConfig.doGuanoGriefing;
         if (chancer < 0.0D) {
             chancer = 0.0D;
         }
         if (chancer > 1000.0D) {
             chancer = 1000.0D;
         }
-        if ((this instanceof IGuano) && this.rand.nextInt((int)Math.floor(6000 / chancer)) == 0 && (!this.world.isRemote)
+        if ((this instanceof IGuano) && this.rand.nextInt((int)Math.floor(6000 / chancer)) == 0 && (!this.world.isRemote) && world.getGameRules().getBoolean("mobGriefing")
             && this.getAttachmentFacing() != EnumFacing.UP && this.world.isAirBlock(this.getPosition().down())) {
             EntityPrehistoricFloraGuanoBall guanoBall = new EntityPrehistoricFloraGuanoBall(this.world, this.posX, this.posY - 0.5, this.posZ);
             guanoBall.setFromMob(true);

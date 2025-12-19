@@ -535,7 +535,7 @@ public class LepidodendronEventSubscribers {
 		if (chancer > 1000.0D) {
 			chancer = 1000.0D;
 		}
-		if (event.getEntity() instanceof EntityBat && chancer > 0.0D) {
+		if (event.getEntity() instanceof EntityBat && chancer > 0.0D && event.getEntity().world.getGameRules().getBoolean("mobGriefing")) {
 			EntityBat bat = (EntityBat) event.getEntity();
 			if (bat.world.rand.nextInt((int)Math.floor(6000 / chancer)) == 0 && (!bat.world.isRemote)
 					&& bat.getIsBatHanging() && bat.world.isAirBlock(bat.getPosition().down())) {
