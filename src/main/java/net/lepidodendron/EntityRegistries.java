@@ -1422,9 +1422,9 @@ public class EntityRegistries {
 //        registerEntity("prehistoric_flora_thalassodromeus", EntityPrehistoricFloraThalassodromeus.class, LepidodendronMod.ENTITY_THALASSODROMEUS, 48,-11354642,-15131876);
 //        registerEntity("prehistoric_flora_tupandactylus_imperator", EntityPrehistoricFloraTupandactylus_imperator.class, LepidodendronMod.ENTITY_TUPANDACTYLUS_IMPERATOR, 48,-11354642,-15131876);
 //        registerEntity("prehistoric_flora_tupandactylus_navigans", EntityPrehistoricFloraTupandactylus_navigans.class, LepidodendronMod.ENTITY_TUPANDACTYLUS_NAVIGANS, 48,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_amargasaurus", EntityPrehistoricFloraAmargasaurus.class, LepidodendronMod.ENTITY_AMARGASAURUS, 48,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_bajadasaurus", EntityPrehistoricFloraBajadasaurus.class, LepidodendronMod.ENTITY_BAJADASAURUS, 48,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_mirasaura ", EntityPrehistoricFloraMirasaura .class, LepidodendronMod.ENTITY_MIRASAURA , 48,-11354642,-15131876);
+        registerEntity("prehistoric_flora_amargasaurus", EntityPrehistoricFloraAmargasaurus.class, LepidodendronMod.ENTITY_AMARGASAURUS, 184,-8294048,-9883643);
+        registerEntity("prehistoric_flora_bajadasaurus", EntityPrehistoricFloraBajadasaurus.class, LepidodendronMod.ENTITY_BAJADASAURUS, 184,-7577540,-2311312);
+        registerEntity("prehistoric_flora_mirasaura", EntityPrehistoricFloraMirasaura.class, LepidodendronMod.ENTITY_MIRASAURA, 48,-13093595,-13281135);
 //        registerEntity("prehistoric_flora_icarosaurus", EntityPrehistoricFloraIcarosaurus.class, LepidodendronMod.ENTITY_ICAROSAURUS, 48,-11354642,-15131876);
 //        registerEntity("prehistoric_flora_kuehneosuchus", EntityPrehistoricFloraKuehneosuchus.class, LepidodendronMod.ENTITY_KUEHNEOSUCHUS, 48,-11354642,-15131876);
 //        registerEntity("prehistoric_flora_kuehneosaurus", EntityPrehistoricFloraKuehneosaurus.class, LepidodendronMod.ENTITY_KUEHNEOSAURUS, 48,-11354642,-15131876);
