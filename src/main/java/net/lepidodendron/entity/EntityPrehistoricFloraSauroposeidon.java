@@ -472,7 +472,7 @@ public class EntityPrehistoricFloraSauroposeidon extends EntityPrehistoricFloraL
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox() {
 		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
-			return this.getEntityBoundingBox().grow(20.0, 35.00, 20.0);
+			return this.getEntityBoundingBox().grow(25.0, 40.00, 25.0);
 		}
 		return this.getEntityBoundingBox();
 	}
