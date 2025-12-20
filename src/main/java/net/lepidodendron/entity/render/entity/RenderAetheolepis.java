@@ -12,7 +12,7 @@ public class RenderAetheolepis extends RenderLivingBaseWithBook<EntityPrehistori
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aetheolepis.png");
 
     public static float getScaler() {
-        return 0.7F * 0.275F;
+        return 0.35F;
     }
     public RenderAetheolepis(RenderManager mgr) {
         super(mgr, new ModelAetheolepis(), 0.0f);
