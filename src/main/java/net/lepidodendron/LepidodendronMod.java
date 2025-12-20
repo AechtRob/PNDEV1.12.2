@@ -3627,6 +3627,7 @@ public class LepidodendronMod {
 	static final int ENTITY_YANORNIS = 1562;
 	static final int ENTITY_CRATOAVIS = 1563;
 	static final int ENTITY_MICRORAPTOR = 1564;
+	public static final ResourceLocation MICRORAPTOR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/microraptor"));
 	static final int ENTITY_CRATOCHELONE = 1565;
 	static final int ENTITY_OTWAYEMYS = 1566;
 	static final int ENTITY_DESMATOCHELYS = 1567;

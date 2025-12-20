@@ -8584,6 +8584,12 @@ public class RenderHandler {
                 return new RenderYutyrannus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMicroraptor.class, new IRenderFactory<EntityPrehistoricFloraMicroraptor>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMicroraptor> createRenderFor(RenderManager manager) {
+                return new RenderMicroraptor(manager);
+            }
+        });
 
 
 
