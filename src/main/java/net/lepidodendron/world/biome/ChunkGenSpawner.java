@@ -64,7 +64,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
         int spawnerCycle = 0;
         int spawnCounter = 0;
         int throttle = 0; //Used as an absolute maximum and for dealing with invalid entries on the list etc.
-        while (throttle <= 100 && spawnerCycle < (int)Math.ceil((4.0D * spawnDensity))) {
+        while (throttle <= 100 && spawnerCycle < (int)Math.ceil((5.0D * spawnDensity))) {
             BlockPos spawnPos = pos.add(16, 0, 16); //move to the centre of the 2x2 of chunks we are populating
             spawnPos = spawnPos.add(rand.nextInt(16) - 8, 0, rand.nextInt(16) - 8); //Pick a random coordinate around
             if (genLakes) {
@@ -171,6 +171,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_basalt")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_hills")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy_hills")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean")
                     ) {
                     LowerSpawnBiomes = true;
                 }

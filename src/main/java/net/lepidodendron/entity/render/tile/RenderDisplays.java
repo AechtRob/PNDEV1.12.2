@@ -1061,6 +1061,7 @@ public class RenderDisplays {
     public static final ModelZenaspis modelZenaspis = new ModelZenaspis();
     public static final ModelEctenaspis modelEctenaspis = new ModelEctenaspis();
     public static final ModelEotyrannus modelEotyrannus = new ModelEotyrannus();
+    public static final ModelMicroraptor modelMicroraptor = new ModelMicroraptor();
     public static final ModelYutyrannus modelYutyrannus = new ModelYutyrannus();
     public static final ModelAegirosaurus modelAegirosaurus = new ModelAegirosaurus();
     public static final ModelPetrolacosaurus modelPetrolacosaurus = new ModelPetrolacosaurus();

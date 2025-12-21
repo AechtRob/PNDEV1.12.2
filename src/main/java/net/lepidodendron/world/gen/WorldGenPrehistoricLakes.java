@@ -10,7 +10,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
@@ -127,7 +126,7 @@ public class WorldGenPrehistoricLakes extends WorldGenerator
                                     IChunkGenerator chunkGenerator = worldIn.provider.createChunkGenerator();
                                     Class classGenerator = chunkGenerator.getClass();
                                     Class[] params = new Class[4];
-                                    params[0] = Biome.class;
+                                    params[0] = String.class;
                                     params[1] = int.class;
                                     params[2] = IBlockState.class;
                                     params[3] = Random.class;
@@ -135,7 +134,7 @@ public class WorldGenPrehistoricLakes extends WorldGenerator
                                     Method method = Functions.testAndGetMethod(classGenerator, "getIBlockstateForWater", params);
                                     if (method != null) {
                                         try {
-                                            iBlockState = (IBlockState) method.invoke(null, worldIn.getBiome(position), position.getY(), iBlockState, rand);
+                                            iBlockState = (IBlockState) method.invoke(null, worldIn.getBiome(position).getRegistryName().toString(), position.getY(), iBlockState, rand);
                                             Functions.setBlockStateAndCheckForDoublePlant(worldIn, position.add(l1, i4, i3).down(), iBlockState, 2);
                                         } catch (Exception e) {
                                         }
