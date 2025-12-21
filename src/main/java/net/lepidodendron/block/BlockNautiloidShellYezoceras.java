@@ -5,12 +5,9 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.BlockPNTaxidermyItem;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
-import net.lepidodendron.util.Functions;
-import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
@@ -31,7 +28,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -79,35 +75,35 @@ public class BlockNautiloidShellYezoceras extends ElementsLepidodendronMod.ModEl
 			return; //shells
 		}
 
-		for (int i = 0; i < 10; i++) {
-			int l6 = chunkX + random.nextInt(16) + 8;
-			int l14 = chunkZ + random.nextInt(16) + 8;
-			Biome biome = world.getBiome(new BlockPos(l6, 0, l14));
-			if (!(
-					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_forest")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_beach")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef_transition")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef")
-			)
-			) {
-				break;
-			}
-			BlockPos pos = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world).up();
-			if (world.isAirBlock(pos) && pos.getY() < Functions.getAdjustedSeaLevel(world, pos) + 3
-					&& world.isSideSolid(pos.down(), EnumFacing.UP) 
-					&& world.getBlockState(pos.down()).getMaterial() != Material.ICE
-					&& world.getBlockState(pos.down()).getMaterial() != Material.PACKED_ICE) {
-				world.setBlockState(pos, block.getDefaultState());
-				TileEntity tileEntity = world.getTileEntity(pos);
-				if (tileEntity != null) {
-					TileEntityCustom te = (TileEntityCustom) tileEntity;
-					//get a random rotation in increments of 15 degrees:
-					int rotation = random.nextInt(24) * 15;
-					te.getTileData().setInteger("rotation", rotation);
-					return;
-				}
-			}
-		}
+//		for (int i = 0; i < 10; i++) {
+//			int l6 = chunkX + random.nextInt(16) + 8;
+//			int l14 = chunkZ + random.nextInt(16) + 8;
+//			Biome biome = world.getBiome(new BlockPos(l6, 0, l14));
+//			if (!(
+//					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_forest")
+//							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_beach")
+//							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef_transition")
+//							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef")
+//			)
+//			) {
+//				break;
+//			}
+//			BlockPos pos = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world).up();
+//			if (world.isAirBlock(pos) && pos.getY() < Functions.getAdjustedSeaLevel(world, pos) + 3
+//					&& world.isSideSolid(pos.down(), EnumFacing.UP)
+//					&& world.getBlockState(pos.down()).getMaterial() != Material.ICE
+//					&& world.getBlockState(pos.down()).getMaterial() != Material.PACKED_ICE) {
+//				world.setBlockState(pos, block.getDefaultState());
+//				TileEntity tileEntity = world.getTileEntity(pos);
+//				if (tileEntity != null) {
+//					TileEntityCustom te = (TileEntityCustom) tileEntity;
+//					//get a random rotation in increments of 15 degrees:
+//					int rotation = random.nextInt(24) * 15;
+//					te.getTileData().setInteger("rotation", rotation);
+//					return;
+//				}
+//			}
+//		}
 	}
 
 	public static class BlockCustom extends BlockPNTaxidermyItem {

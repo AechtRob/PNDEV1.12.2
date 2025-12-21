@@ -11,6 +11,9 @@ import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
+
+import java.util.List;
 
 public class EntityWatchClosestAI extends EntityAIBase
 {
@@ -18,6 +21,7 @@ public class EntityWatchClosestAI extends EntityAIBase
     protected Entity closestEntity;
     protected float maxDistance;
     private boolean noSpin;
+    private boolean watchesSelf;
     private int lookTime;
     private final float chance;
     protected Class <? extends Entity > watchedClass;
@@ -34,6 +38,7 @@ public class EntityWatchClosestAI extends EntityAIBase
          * typically some lizards which have to freeze in place when not moving
          */
         this.noSpin = false;
+        this.watchesSelf = true;
     }
 
     public EntityWatchClosestAI(EntityLiving entityIn, Class <? extends Entity > watchTargetClass, float maxDistance, boolean nospinIn)
@@ -44,6 +49,18 @@ public class EntityWatchClosestAI extends EntityAIBase
         this.chance = 0.02F;
         this.setMutexBits(2);
         this.noSpin = nospinIn;
+        this.watchesSelf = true;
+    }
+
+    public EntityWatchClosestAI(EntityLiving entityIn, Class <? extends Entity > watchTargetClass, float maxDistance, boolean nospinIn, boolean watchesSelfIn)
+    {
+        this.entity = entityIn;
+        this.watchedClass = watchTargetClass;
+        this.maxDistance = maxDistance;
+        this.chance = 0.02F;
+        this.setMutexBits(2);
+        this.noSpin = nospinIn;
+        this.watchesSelf = watchesSelfIn;
     }
 
     public EntityWatchClosestAI(EntityLiving entityIn, Class <? extends Entity > watchTargetClass, float maxDistance, float chanceIn)
@@ -54,9 +71,10 @@ public class EntityWatchClosestAI extends EntityAIBase
         this.chance = chanceIn;
         this.setMutexBits(2);
         this.noSpin = false;
+        this.watchesSelf = true;
     }
 
-    public EntityWatchClosestAI(EntityLiving entityIn, Class <? extends Entity > watchTargetClass, float maxDistance, float chanceIn, boolean nospinIn)
+    public EntityWatchClosestAI(EntityLiving entityIn, Class <? extends Entity > watchTargetClass, float maxDistance, float chanceIn, boolean nospinIn, boolean watchesSelfIn)
     {
         this.entity = entityIn;
         this.watchedClass = watchTargetClass;
@@ -64,6 +82,7 @@ public class EntityWatchClosestAI extends EntityAIBase
         this.chance = chanceIn;
         this.setMutexBits(2);
         this.noSpin = nospinIn;
+        this.watchesSelf = watchesSelfIn;
     }
 
     public boolean shouldExecute()
@@ -116,6 +135,9 @@ public class EntityWatchClosestAI extends EntityAIBase
             if (this.watchedClass == EntityPlayer.class)
             {
                 this.closestEntity = this.entity.world.getClosestPlayer(this.entity.posX, this.entity.posY, this.entity.posZ, (double)this.maxDistance, Predicates.and(EntitySelectors.CAN_AI_TARGET, EntitySelectors.notRiding(this.entity)));
+            }
+            else if (!this.watchesSelf) {
+                this.closestEntity = findNearestEntityWithinAABBNotMe(this.watchedClass, this.entity.getEntityBoundingBox().grow((double)this.maxDistance, 3.0D, (double)this.maxDistance), this.entity);
             }
             else
             {
@@ -172,5 +194,30 @@ public class EntityWatchClosestAI extends EntityAIBase
         this.entity.faceEntity(this.closestEntity, 10F, 10F);
         this.entity.getLookHelper().setLookPosition(this.closestEntity.posX, this.closestEntity.posY + (double)this.closestEntity.getEyeHeight(), this.closestEntity.posZ, (float)this.entity.getHorizontalFaceSpeed(), (float)this.entity.getVerticalFaceSpeed());
         --this.lookTime;
+    }
+
+    public <T extends Entity> T findNearestEntityWithinAABBNotMe(Class <? extends T > entityType, AxisAlignedBB aabb, T closestTo)
+    {
+        List<T> list = this.entity.world.<T>getEntitiesWithinAABB(entityType, aabb);
+        T t = null;
+        double d0 = Double.MAX_VALUE;
+
+        for (int j2 = 0; j2 < list.size(); ++j2)
+        {
+            T t1 = list.get(j2);
+
+            if (t1 != closestTo && EntitySelectors.NOT_SPECTATING.apply(t1) && t1.getClass() != this.entity.getClass())
+            {
+                double d1 = closestTo.getDistanceSq(t1);
+
+                if (d1 <= d0)
+                {
+                    t = t1;
+                    d0 = d1;
+                }
+            }
+        }
+
+        return t;
     }
 }

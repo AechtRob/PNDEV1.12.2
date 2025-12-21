@@ -26,7 +26,7 @@ public class TestPrey {
 
         boolean hasOverride = false;
         if (entityThem instanceof EntityPrehistoricFloraAgeableBase) {
-            hasOverride = ((EntityPrehistoricFloraAgeableBase) entityThem).ighnoreSizeForAvoidance();
+            hasOverride = ((EntityPrehistoricFloraAgeableBase) entityThem).ignoreSizeForAvoidance();
         }
 
         if (entityThem instanceof EntityPrehistoricFloraAgeableBase

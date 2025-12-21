@@ -22,11 +22,23 @@
     ],
     "facing=up": [
       {"model": "lepidodendron:bivalve_toucasia"},
-      {"model": "lepidodendron:bivalve_toucasia_var"}
+      {"model": "lepidodendron:bivalve_toucasia_var"},
+      {"model": "lepidodendron:bivalve_toucasia", "y": 90},
+      {"model": "lepidodendron:bivalve_toucasia_var", "y": 90},
+      {"model": "lepidodendron:bivalve_toucasia", "y": 180},
+      {"model": "lepidodendron:bivalve_toucasia_var", "y": 180},
+      {"model": "lepidodendron:bivalve_toucasia", "y": 270},
+      {"model": "lepidodendron:bivalve_toucasia_var", "y": 270}
     ],
     "facing=down": [
       {"model": "lepidodendron:bivalve_toucasia", "x": 180},
-      {"model": "lepidodendron:bivalve_toucasia_var", "x": 180}
+      {"model": "lepidodendron:bivalve_toucasia_var", "x": 180},
+      {"model": "lepidodendron:bivalve_toucasia", "x": 180, "y": 90},
+      {"model": "lepidodendron:bivalve_toucasia_var", "x": 180, "y": 90},
+      {"model": "lepidodendron:bivalve_toucasia", "x": 180, "y": 180},
+      {"model": "lepidodendron:bivalve_toucasia_var", "x": 180, "y": 180},
+      {"model": "lepidodendron:bivalve_toucasia", "x": 180, "y": 270},
+      {"model": "lepidodendron:bivalve_toucasia_var", "x": 180, "y": 270}
     ]
   }
 }
