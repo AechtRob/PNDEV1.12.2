@@ -35,20 +35,20 @@ public class EntityPrehistoricFloraOstenoselache extends EntityPrehistoricFloraF
 		setSize(0.15F, 0.15F);
 	}
 
-	@Override
-	public boolean canShoal() {
-		return (!(this.getAlarmCooldown() > 0));
-	}
-
-	@Override
-	public int getShoalSize() {
-		return 16;
-	}
-
-	@Override
-	public int getShoalDist() {
-		return 5;
-	}
+//	@Override
+//	public boolean canShoal() {
+//		return false;
+//	}
+//
+//	@Override
+//	public int getShoalSize() {
+//		return 16;
+//	}
+//
+//	@Override
+//	public int getShoalDist() {
+//		return 5;
+//	}
 
 	@Override
 	public boolean isSmall() {

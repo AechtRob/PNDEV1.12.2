@@ -33,7 +33,7 @@ public class RenderMamenchisaurus extends RenderLivingBaseWithBook<EntityPrehist
     protected void preRenderCallback(EntityPrehistoricFloraMamenchisaurus entity, float f) {
         float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.80F;
+        this.shadowSize = entity.width * scale * 0.55F;
     }
 
 }

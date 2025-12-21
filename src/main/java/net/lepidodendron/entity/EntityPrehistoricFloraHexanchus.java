@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderHexanchus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
@@ -82,17 +83,27 @@ public class EntityPrehistoricFloraHexanchus extends EntityPrehistoricFloraAgeab
 	}
 
 	@Override
+	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
+		return new EntityPrehistoricFloraHexanchus(this.world);
+	}
+
+	@Override
 	public int getAttackLength() {
 		return 9;
 	}
 
 	@Override
 	public boolean dropsEggs() {
-		return true;
+		return false;
 	}
 
 	@Override
 	public boolean laysEggs() {
+		return false;
+	}
+
+	@Override
+	public boolean divesToLay() {
 		return false;
 	}
 
@@ -115,9 +126,9 @@ public class EntityPrehistoricFloraHexanchus extends EntityPrehistoricFloraAgeab
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
-		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
+		tasks.addTask(0, new EntityMateAI(this, 1));
+		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(2, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
