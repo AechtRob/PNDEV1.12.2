@@ -3582,6 +3582,8 @@ public class LepidodendronMod {
 	static final int ENTITY_COLOSSOSUCHUS = 1488;
 	static final int ENTITY_RIOJASUCHUS = 1489;
 	static final int ENTITY_PROTEROCHAMPSA = 1490;
+    public static final ResourceLocation PROTEROCHAMPSA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/proterochampsa"));
+    public static final ResourceLocation PROTEROCHAMPSA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/proterochampsa_young"));
 	static final int ENTITY_NUNDASUCHUS = 1491;
 	static final int ENTITY_LITOROSUCHUS = 1492;
 	static final int ENTITY_LANGOBARDISAURUS = 1493;
@@ -3646,9 +3648,12 @@ public class LepidodendronMod {
 	static final int ENTITY_BEURLENIA = 1547;
 	static final int ENTITY_CAERULEUM = 1548;
 	static final int ENTITY_HANDUICHTHYS = 1549;
+    public static final ResourceLocation HANDUICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hundichthys"));
 	static final int ENTITY_SHULEICHTHYS = 1550;
 	static final int ENTITY_STEMMATODUS = 1551;
+    public static final ResourceLocation STEMMATODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/stemmatodus"));
 	static final int ENTITY_RICHMONDICHTHYS = 1552;
+    public static final ResourceLocation RICHMONDICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/richmondichthys"));
 	static final int ENTITY_PROTOSPHYRAENA = 1553;
 	static final int ENTITY_PEIPIAOSTEUS = 1554;
 	static final int ENTITY_STICHOPTERUS = 1555;

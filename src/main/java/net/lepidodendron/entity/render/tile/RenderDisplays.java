@@ -1074,8 +1074,9 @@ public class RenderDisplays {
     public static final ModelIchthyovenator modelIchthyovenator = new ModelIchthyovenator();
     public static final ModelVallibonavenatrix modelVallibonavenatrix = new ModelVallibonavenatrix();
     public static final ModelIberospinus modelIberospinus = new ModelIberospinus();
-
-
-
+    public static final ModelProterochampsa modelProterochampsa = new ModelProterochampsa();
+    public static final ModelHanduichthys modelHanduichthys = new ModelHanduichthys();
+    public static final ModelStemmatodus modelStemmatodus = new ModelStemmatodus();
+    public static final ModelRichmondichthys modelRichmondichthys = new ModelRichmondichthys();
 
 }

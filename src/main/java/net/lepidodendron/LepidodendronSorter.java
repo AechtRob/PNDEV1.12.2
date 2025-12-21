@@ -5965,9 +5965,11 @@ public class LepidodendronSorter {
     public static final int eggs_norellius = 5635;
     public static final int aegirosaurus_raw = 5636;
     public static final int concentrilepis_raw = 5637;
-
-
-
+    public static final int handuichthys_raw = 5638;
+    public static final int richmondichthys_raw = 5639;
+    public static final int stemmatodus_raw = 5640;
+    public static final int eggs_proterochampsa = 5641;
+    public static final int proterochampsa_raw = 5642;
 
     public static final int irritator_raw = 5800;
     public static final int spinosaurus_raw = 5801;
