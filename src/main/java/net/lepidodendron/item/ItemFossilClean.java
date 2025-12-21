@@ -41,6 +41,10 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 
 		ModelBakery.registerItemVariants(block,
+                new ModelResourceLocation("lepidodendron:fossils/fossil_concentrilepis_clean", "inventory"),
+                new ModelResourceLocation("lepidodendron:fossils/fossil_petrolacosaurus_clean", "inventory"),
+                new ModelResourceLocation("lepidodendron:fossils/fossil_aegirosaurus_clean", "inventory"),
+                new ModelResourceLocation("lepidodendron:fossils/fossil_norellius_clean", "inventory"),
                 new ModelResourceLocation("lepidodendron:fossils/fossil_archipelepis_clean", "inventory"),
                 new ModelResourceLocation("lepidodendron:fossils/fossil_bianchengichthys_clean", "inventory"),
                 new ModelResourceLocation("lepidodendron:fossils/fossil_loganellia_clean", "inventory"),
@@ -69,7 +73,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_tupandactylus_navigans_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_amargasaurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_bajadasaurus_clean", "inventory"),
-				new ModelResourceLocation("lepidodendron:fossils/fossil_mirasaura _clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_mirasaura_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_icarosaurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_kuehneosuchus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_kuehneosaurus_clean", "inventory"),

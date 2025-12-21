@@ -237,16 +237,39 @@ public class ModelBianchengichthys extends ModelBasePalaeopedia {
 
     public void renderStaticWall(float f) {
         this.main.rotateAngleY = (float) Math.toRadians(90);
-        this.main.offsetZ = -0.34F;
+        this.main.offsetZ = -0.24F;
         this.main.offsetY = -0.18F;
         this.main.offsetX = -0.0F;
         this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(main, -0.1F, 0.0F, 0.0F);
-        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
-        this.setRotateAngle(tail2, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0F, -1.1257F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.0F, -0.1178F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.5672F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.3916F, 0.8576F, 0.4959F);
+        this.setRotateAngle(cube_r15, 0.0026F, -0.0975F, 0.4381F);
+        this.setRotateAngle(cube_r16, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r17, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r18, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, 1.1257F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.3916F, -0.8576F, -0.4959F);
+        this.setRotateAngle(cube_r4, 0.0026F, 0.0975F, -0.4381F);
+        this.setRotateAngle(cube_r5, 0.0F, 0.1178F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0F, -1.0603F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.0F, -0.4058F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0F, 0.4058F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.0F, 1.0603F, 0.0F);
+        this.setRotateAngle(frontleftfin, -0.2721F, -0.3455F, 0.6892F);
+        this.setRotateAngle(frontrightfin, -0.1026F, 0.4249F, -0.2447F);
+        this.setRotateAngle(jaw, 0.4712F, 0.0F, 0.0F);
+        this.setRotateAngle(main, -0.1716F, -0.3604F, 0.1026F);
+        this.setRotateAngle(tail, 0.0F, -0.1353F, 0.0F);
+        this.setRotateAngle(tail2, 0.144F, 0.24F, 0.0F);
+        this.setRotateAngle(tail3, 0.1745F, 0.4145F, 0.0F);
+        this.setRotateAngle(tail4, 0.0297F, 0.3128F, 0.1094F);
         this.main.render(0.01F);
         resetToDefaultPose();
     }

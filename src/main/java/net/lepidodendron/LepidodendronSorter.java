@@ -5959,6 +5959,16 @@ public class LepidodendronSorter {
     public static final int loganellia_raw = 5629;
     public static final int bianchengichthys_raw = 5630;
     public static final int archipelepis_raw = 5631;
+    public static final int petrolacosaurus_raw = 5632;
+    public static final int eggs_petrolacosaurus = 5633;
+    public static final int norellius_raw = 5634;
+    public static final int eggs_norellius = 5635;
+    public static final int aegirosaurus_raw = 5636;
+    public static final int concentrilepis_raw = 5637;
+
+
+
+
     public static final int irritator_raw = 5800;
     public static final int spinosaurus_raw = 5801;
     public static final int eggs_irritator = 5802;
@@ -5973,6 +5983,44 @@ public class LepidodendronSorter {
     public static final int baryonyx_raw = 5811;
     public static final int iberospinus_raw = 5812;
     public static final int vallibonavenatrix_raw = 5813;
+    public static final int olorotitan_raw = 5814;
+    public static final int concavenator_raw = 5815;
+    public static final int ouranosaurus_raw = 5816;
+    public static final int eggs_ouranosaurus = 5817;
+    public static final int eggs_concavenator = 5818;
+    public static final int eggs_olorotitan = 5819;
+    public static final int eggs_xilousuchus = 5820;
+    public static final int eggs_ctenosauriscus = 5821;
+    public static final int xilousuchus_raw = 5822;
+    public static final int ctenosauriscus_raw = 5823;
+    public static final int iansan_raw = 5824;
+    public static final int aellopobatis_raw = 5825;
+    public static final int mirasaura_raw = 5826;
+    public static final int amargasaurus_raw = 5827;
+    public static final int bajadasaurus_raw = 5828;
+    public static final int eggs_mirasaura = 5829;
+    public static final int eggs_amargasaurus = 5830;
+    public static final int eggs_bajadasaurus = 5831;
+    public static final int rhenonema_raw = 5832;
+    public static final int tropidosteus_raw = 5833;
+    public static final int scanilepis_raw = 5834;
+    public static final int grossaspis_raw = 5835;
+    public static final int kuehneosaurus_raw = 5836;
+    public static final int kuehneosuchus_raw = 5837;
+    public static final int ozimek_raw = 5838;
+    public static final int xianglong_raw = 5839;
+    public static final int eggs_xianglong = 5840;
+    public static final int eggs_ozimek = 5841;
+    public static final int eggs_kuehneosaurus = 5842;
+    public static final int eggs_kuehneosuchus = 5843;
+    public static final int eggs_sharovipteryx = 5844;
+    public static final int melvius_raw = 5845;
+    public static final int pentanogmius_raw = 5846;
+    public static final int cyclurus_raw = 5847;
+    public static final int tethybatis_raw = 5848;
+    public static final int bananogmius_raw = 5849;
+    public static final int thryptodus_raw = 5850;
+    public static final int concavotectum_raw = 5851;
 
     public static final int bivalve_toucasia = 6000;
     public static final int coeloptychium = 6001;

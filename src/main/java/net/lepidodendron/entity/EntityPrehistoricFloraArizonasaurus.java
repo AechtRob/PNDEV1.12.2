@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraArizonasaurus extends EntityPrehistoricFloraL
 		minWidth = 0.15F;
 		maxWidth = 0.85F;
 		maxHeight = 0.65F;
-		maxHealthAgeable = 40.0D;
+		maxHealthAgeable = 35.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -75,7 +75,7 @@ public class EntityPrehistoricFloraArizonasaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getRoarLength() {
-		return 30;
+		return 50;
 	}
 
 	public static String getPeriod() {return "Triassic";}
@@ -94,7 +94,7 @@ public class EntityPrehistoricFloraArizonasaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getAttackLength() {
-		return 20;
+		return 11;
 	}
 
 	@Override
@@ -113,7 +113,7 @@ public class EntityPrehistoricFloraArizonasaurus extends EntityPrehistoricFloraL
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.498F;
+		float speedBase = 0.39F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -223,7 +223,7 @@ public class EntityPrehistoricFloraArizonasaurus extends EntityPrehistoricFloraL
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 8 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
 

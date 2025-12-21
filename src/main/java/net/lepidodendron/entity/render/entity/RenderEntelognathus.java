@@ -12,7 +12,7 @@ public class RenderEntelognathus extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/entelognathus.png");
 
     public static float getScaler() {
-        return 0.7F * 0.35F;
+        return 0.24F;
     }
     public RenderEntelognathus(RenderManager mgr) {
         super(mgr, new ModelEntelognathus(), 0.0f);
@@ -29,7 +29,7 @@ public class RenderEntelognathus extends RenderLivingBaseWithBook<EntityPrehisto
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraEntelognathus entity, float f) {
-        float scale = this.getScaler()*entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler() ;
         if (scale < 0.1f) {
             scale = 0.1f;
         }

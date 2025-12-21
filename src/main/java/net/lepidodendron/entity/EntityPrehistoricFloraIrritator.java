@@ -13,7 +13,9 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
+import net.lepidodendron.entity.render.entity.RenderAegirosaurus;
 import net.lepidodendron.entity.render.entity.RenderDubreuillosaurus;
+import net.lepidodendron.entity.render.entity.RenderIrritator;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.PathNavigateGroundNoDeepWater;
@@ -69,6 +71,7 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		this.canWarn = true;
 	}
 
 	@Override
@@ -499,8 +502,49 @@ public class EntityPrehistoricFloraIrritator extends EntityPrehistoricFloraLandW
 		return LepidodendronMod.IRRITATOR_LOOT;
 	}
 
-	//Rendering taxidermy:
-	//--------------------
+    //Rendering taxidermy:
+    //--------------------
+    public static double offsetWall(@Nullable String variant) {
+        return -0.225;
+    }
+    public static double upperfrontverticallinedepth(@Nullable String variant) {
+        return 0;
+    }
+    public static double upperbackverticallinedepth(@Nullable String variant) {
+        return 0.0;
+    }
+    public static double upperfrontlineoffset(@Nullable String variant) {
+        return 0.0;
+    }
+    public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {        return 0.0;    }
+    public static double upperbacklineoffset(@Nullable String variant) {        return 0.0;}
+    public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+        return 0.0;
+    }
+    public static double lowerfrontverticallinedepth(@Nullable String variant) {
+        return 0.0;
+    }
+    public static double lowerbackverticallinedepth(@Nullable String variant) { return 0;  }
+    public static double lowerfrontlineoffset(@Nullable String variant) {return -0.0;}
+    public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+        return -0.0;
+    }
+    public static double lowerbacklineoffset(@Nullable String variant) {
+        return -0.0;
+    }
+    public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+        return 0.0;
+    }
+    @SideOnly(Side.CLIENT)
+    public static ResourceLocation textureDisplay(@Nullable String variant) { return RenderIrritator.TEXTURE;
+    }
+    @SideOnly(Side.CLIENT)
+    public static ModelBase modelDisplay(@Nullable String variant) {
+        return RenderDisplays.modelIrritator;
+    }
+    public static float getScaler(@Nullable String variant) {
+        return RenderIrritator.getScaler();
+    }
 
 
 	@Nullable

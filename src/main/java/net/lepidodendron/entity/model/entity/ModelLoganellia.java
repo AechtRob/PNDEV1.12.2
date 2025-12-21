@@ -188,7 +188,7 @@ public class ModelLoganellia extends ModelBasePalaeopedia {
 
     public void renderStaticWall(float f) {
         this.main.rotateAngleY = (float) Math.toRadians(90);
-        this.main.offsetZ = -1.1F;
+        this.main.offsetZ = -0.08F;
         this.main.offsetY = -0.22F;
         this.main.offsetX = -0.05F;
         this.main.render(0.01F);
@@ -196,9 +196,26 @@ public class ModelLoganellia extends ModelBasePalaeopedia {
     }
 
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
-        this.setRotateAngle(tail3, 0.0F, -0.12F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.3272F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.1265F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.3316F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, -0.6283F, -0.2618F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.6283F, 0.2618F);
+        this.setRotateAngle(cube_r5, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.1963F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(main, 0.637F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.0779F, -0.0524F, -0.0131F);
+        this.setRotateAngle(tail2, -0.0995F, -0.092F, -0.0066F);
+        this.setRotateAngle(tail3, 0.0F, 0.3185F, 0.0F);
         this.main.offsetY = -0.35F;
         this.main.render(0.01F);
         resetToDefaultPose();
