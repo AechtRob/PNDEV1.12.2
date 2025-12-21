@@ -171,6 +171,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_basalt")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_hills")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy_hills")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean")
                     ) {
                     LowerSpawnBiomes = true;
                 }
