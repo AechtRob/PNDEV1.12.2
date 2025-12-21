@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_arandaspis",
 			"title": "Arandaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorphi$(br)>Arandaspidiformes$(br)>Arandaspididae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorpha$(br)>Arandaspidiformes$(br)>Arandaspididae"
 		},
 		{
 			"type": "entity",

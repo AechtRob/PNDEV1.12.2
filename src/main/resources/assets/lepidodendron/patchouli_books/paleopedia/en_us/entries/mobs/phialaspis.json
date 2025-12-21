@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_phialaspis",
 			"title": "Phialaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorphi$(br)>Traquairaspidiformes$(br)>Phialaspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorpha$(br)>Traquairaspidiformes$(br)>Phialaspididae"
 		},
 		{
 			"type": "entity",

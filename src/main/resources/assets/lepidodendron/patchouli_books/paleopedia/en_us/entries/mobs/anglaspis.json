@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_anglaspis",
 			"title": "Anglaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Chordata$(br)>Pterapidomorphi$(br)>Cyanthaspidiformes$(br)>Cyathaspidida$(br)>Ariaspidae"
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Chordata$(br)>Pteraspidomorpha$(br)>Cyanthaspidiformes$(br)>Cyathaspidida$(br)>Ariaspidae"
 		},
         	{
             "type": "entity",
