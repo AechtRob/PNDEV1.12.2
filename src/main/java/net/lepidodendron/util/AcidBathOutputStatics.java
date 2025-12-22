@@ -777,7 +777,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockSeaPenYellow.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBoneWorm.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidHemicrinus.block).toString(),
-                //ForgeRegistries.BLOCKS.getKey(BlockCrinoidRoveacrinus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidNielsenicrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveRequienia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveToucasia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCoeloptychium.block).toString()
@@ -839,7 +839,8 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveInoceramusGigantocapulus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveRequienia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveToucasia.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockCoeloptychium.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockCoeloptychium.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidNielsenicrinus.block).toString()
         };
         return resLoc;
     }
@@ -891,7 +892,8 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCoralStonySparseBranching.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSeaPenPink.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSeaPenYellow.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBoneWorm.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBoneWorm.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidNielsenicrinus.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPaleogene);
         return resLoc;

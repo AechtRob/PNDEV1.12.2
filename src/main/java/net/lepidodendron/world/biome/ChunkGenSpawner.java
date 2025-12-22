@@ -737,21 +737,22 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 }
 
                                                                 //Finally validate it's not just a tiny puddle:
-                                                                int xx = -1;
-                                                                while (xx <= 1 && posCheck) {
-                                                                    int zz = -1;
-                                                                    while (zz <= 1 && posCheck) {
-                                                                        if (world.isBlockLoaded(pos1.add(xx, 0, zz))) {
-                                                                            if (world.getBlockState(pos1.add(xx, 0, zz)).getMaterial() != Material.WATER) {
+                                                                if (!Stromatolites) {
+                                                                    int xx = -1;
+                                                                    while (xx <= 1 && posCheck) {
+                                                                        int zz = -1;
+                                                                        while (zz <= 1 && posCheck) {
+                                                                            if (world.isBlockLoaded(pos1.add(xx, 0, zz))) {
+                                                                                if (world.getBlockState(pos1.add(xx, 0, zz)).getMaterial() != Material.WATER) {
+                                                                                    posCheck = false;
+                                                                                }
+                                                                            } else {
                                                                                 posCheck = false;
                                                                             }
+                                                                            zz = zz + 1;
                                                                         }
-                                                                        else {
-                                                                            posCheck = false;
-                                                                        }
-                                                                        zz = zz + 1;
+                                                                        xx = xx + 1;
                                                                     }
-                                                                    xx = xx + 1;
                                                                 }
                                                             }
                                                             spawnPos = pos1;

@@ -5903,7 +5903,7 @@ public class LepidodendronSorter {
     public static final int anjiaspis_raw = 5583;
     public static final int mackenzia = 5584;
     public static final int crinoid_hemicrinus = 5585;
-    public static final int crinoid_roveacrinus = 5586;
+    public static final int crinoid_nielsenicrinus = 5586;
     public static final int pseudarthron_raw = 5587;
     public static final int halichondrites = 5588;
     public static final int trypanognathus_raw = 5589;
