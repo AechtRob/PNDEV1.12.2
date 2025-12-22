@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_pelurgaspis",
 			"title": "Pelurgaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorphi$(br)>Heterostraci$(br)>Cyathaspidiformes$(br)>Amphiaspidida$(br)>Hibernaspidoidei$(br)>Eglonaspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorpha$(br)>Heterostraci$(br)>Cyathaspidiformes$(br)>Amphiaspidida$(br)>Hibernaspidoidei$(br)>Eglonaspididae"
 		},
 		{
 			"type": "entity",

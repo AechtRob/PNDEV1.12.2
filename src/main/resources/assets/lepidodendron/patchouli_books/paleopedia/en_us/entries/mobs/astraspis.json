@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_astraspis",
 			"title": "Astraspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorphi$(br)>Pteraspidiformes"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorpha$(br)>Pteraspidiformes"
 		},
 		{
 			"type": "entity",
