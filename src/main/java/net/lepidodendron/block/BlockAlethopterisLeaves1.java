@@ -95,8 +95,7 @@ public class BlockAlethopterisLeaves1 extends ElementsLepidodendronMod.ModElemen
 		@Override
 		public void breakBlock(World worldIn, BlockPos pos, IBlockState state)  {
 			super.breakBlock(worldIn, pos, state);
-			if (state.getBlock() != this
-			&& state.getBlock() != BlockAlethopterisLeaves.block)
+			if (state.getBlock() != BlockAlethopterisLeaves.block)
 			{
 				//Replace surrounding blocks with decayable variants:
 				int k = pos.getX();

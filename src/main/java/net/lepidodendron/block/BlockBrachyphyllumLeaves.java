@@ -91,8 +91,7 @@ public class BlockBrachyphyllumLeaves extends ElementsLepidodendronMod.ModElemen
 		public void breakBlock(World worldIn, BlockPos pos, IBlockState state)  {
 			super.breakBlock(worldIn, pos, state);
 			
-			if (state.getBlock() != this
-			&& state.getBlock() != BlockBrachyphyllumLeaves1.block) {
+			if (state.getBlock() != BlockBrachyphyllumLeaves1.block) {
 				
 				//Replace surrounding blocks with decayable variants:
 				int k = pos.getX();
