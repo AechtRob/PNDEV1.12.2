@@ -1,0 +1,48 @@
+{
+	"name": "Stromatoporoidea Reef",
+	"read_by_default": true,
+	"icon": "lepidodendron:stromatoporoidea_reef",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_reef_stromatoporoidea",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_reef_stromatoporoidea",
+			"title": "Stromatoporoidea Reef",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician - Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Porifera$(br)>$(o)Stromatoporoidea"
+		},
+		{
+			"type": "multiblock",
+			"name": "Stromatoporoidea",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "   ","   ","   ","   ","   " ],
+					[ "   ","   ","  1","   ","   " ],
+					[ "   "," 1 ","  1","   ","   " ],
+					[ "   "," 1 ","111"," 1 ","   " ],
+					[ "   ","   "," 0 ","   ","   " ]
+				],
+				"mapping": {
+					"1": "lepidodendron:stromatoporoidea_reef",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_stromatoporoidea",
+			"type": "text",
+			"text": "Stromatoporoids are a class of prominent reef-building sponges, hailing from the Ordovician into the Devonian, will possible records going into the Carboniferous, and possibly as far back as the Late Cretaceous. At their height, they were amongst the most important reef-builders, alongside Rugose and Tabulate Corals, competing and co-existing alongside each other. Although this was not to last, and the stromatoporoids would die out during the Hangenberg event at"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_stromatoporoidea",
+			"type": "text",
+			"text": "the end of the Devonian. Although, there are tentative records have been found sporadically in later periods, although most agree that they likely persisted into the Carboniferous at the latest, with possible Cretaceous forms only bearing a striking resemblance to the stromatoporoids at best."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_stromatoporoidea",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Silktouch Pickaxe"
+		}
+	]
+}

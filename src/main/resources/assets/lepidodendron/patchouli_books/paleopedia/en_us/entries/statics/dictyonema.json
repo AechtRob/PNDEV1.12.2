@@ -17,6 +17,7 @@
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [
+					[ " " ],
 					[ "1" ],
 					[ "0" ]
 				],

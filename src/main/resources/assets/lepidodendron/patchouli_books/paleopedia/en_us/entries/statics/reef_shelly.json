@@ -1,0 +1,42 @@
+{
+	"name": "Shelly Reef",
+	"read_by_default": true,
+	"icon": "lepidodendron:shelly_reef",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_reef_shelly",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_reef_shelly",
+			"title": "Shelly Reef",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Present$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Conchifera$(br)>Bivalvia"
+		},
+		{
+			"type": "multiblock",
+			"name": "Bivalvia",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "   ","   ","   " ],
+					[ "   "," 1 ","   " ],
+					[ " 11","111"," 1 " ],
+					[ "   "," 0 ","   " ]
+				],
+				"mapping": {
+					"1": "lepidodendron:shelly_reef",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_shelly",
+			"type": "text",
+			"text": "Shelly Reefs are a general representation of the Conchifera, more specifically the more sessile forms, such as Bivalves, and can be found from the Jurassic onwards."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_shelly",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Silktouch Pickaxe"
+		}
+	]
+}
