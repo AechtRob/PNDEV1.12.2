@@ -1,0 +1,43 @@
+{
+	"name": "Sponge Reef",
+	"read_by_default": true,
+	"icon": "lepidodendron:sponge_reef",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_reef_sponge",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_reef_sponge",
+			"title": "Sponge Reef",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian - Present$(br2)$(l)Habitat:$() Marine$(br2)>$(o)Porifera"
+		},
+		{
+			"type": "multiblock",
+			"name": "Sponge",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "   ","   ","   ","   ","   " ],
+					[ "   ","   ","   ","   ","   " ],
+					[ "   ","  1","   "," 1 ","   " ],
+					[ "   "," 11","111"," 1 ","   " ],
+					[ "   ","   "," 0 ","   ","   " ]
+				],
+				"mapping": {
+					"1": "lepidodendron:sponge_reef",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_sponge",
+			"type": "text",
+			"text": "Sponges, also known as Porifera, are possibly amongst the oldest known macroscopic animals still around today, with suggestions of their origins dating as far back as the Tonian period. Despite this, sponges didn't start forming proper reefs until the Permian period, although ever since then, they have become important reef-building organisms alongside corals, although have become much rarer since."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_sponge",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Silktouch Pickaxe"
+		}
+	]
+}

@@ -1,0 +1,42 @@
+{
+	"name": "Archaeocyatha Reef",
+	"read_by_default": true,
+	"icon": "lepidodendron:archaeocyatha",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_reef_archaeocyatha",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_reef_archaeocyatha",
+			"title": "Archaeocyatha Reef",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Porifera$(br)>$(o)Archaeocyatha"
+		},
+		{
+			"type": "multiblock",
+			"name": "Archaeocyatha",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "   ","   ","   " ],
+					[ "   "," 1 ","   " ],
+					[ "  1","11 "," 1 " ],
+					[ "   "," 0 ","   " ]
+				],
+				"mapping": {
+					"1": "lepidodendron:archaeocyatha",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_archaeocyatha",
+			"type": "text",
+			"text": "Archaeocyatha come from the lower to middle Cambrian, with fossils found across the globe. These sponges were the first true reef-builders, and due to their distinctive appearances between each genus and wide range, they are used as index fossils, predominately in the lower Cambrian. Despite this immediate success, the archaeocyathans would go on to become entirely extinct by the middle Cambrian, leaving behind their instantly recognisable tube-like bodies."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_archaeocyatha",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Silktouch Pickaxe"
+		}
+	]
+}

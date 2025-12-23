@@ -17,8 +17,8 @@
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [
-					[ "1" ],
-					[ "0" ]
+					[ " ","1"," " ],
+					[ " ","0"," " ]
 				],
 				"mapping": {
 					"1": "lepidodendron:bivalve_shikamaia",
