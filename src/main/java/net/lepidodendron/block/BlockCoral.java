@@ -153,7 +153,7 @@ public class BlockCoral extends ElementsLepidodendronMod.ModElement {
 
 		public BlockCustom() {
 			super(Material.CORAL);
-			setTranslationKey("pf_coral");
+			setTranslationKey("pf_reef_coral");
 			setSoundType(SoundType.STONE);
 			setHardness(2.0F);
 			setResistance(2.0F);

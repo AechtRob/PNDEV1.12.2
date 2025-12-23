@@ -180,7 +180,7 @@ public class BlockBryozoanReef extends ElementsLepidodendronMod.ModElement {
 
 		public BlockCustom() {
 			super(Material.CORAL);
-			setTranslationKey("pf_bryozoan_reef");
+			setTranslationKey("pf_reef_bryozoan");
 			setSoundType(SoundType.STONE);
 			setHardness(2.0F);
 			setResistance(2.0F);

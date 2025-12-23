@@ -161,7 +161,7 @@ public class BlockAlgalReef extends ElementsLepidodendronMod.ModElement {
 
 		public BlockCustom() {
 			super(Material.CORAL);
-			setTranslationKey("pf_algal_reef");
+			setTranslationKey("pf_reef_algal");
 			setSoundType(SoundType.STONE);
 			setHardness(2.0F);
 			setResistance(2.0F);

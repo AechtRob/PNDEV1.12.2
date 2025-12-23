@@ -361,19 +361,19 @@ public class EntityPrehistoricFloraAetosauroides extends EntityPrehistoricFloraL
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:aetosauroides_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:desmatosuchus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:aetosauroides_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:desmatosuchus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:aetosauroides_death"));
+	            .getObject(new ResourceLocation("lepidodendron:desmatosuchus_death"));
 	}
 
 	@Override

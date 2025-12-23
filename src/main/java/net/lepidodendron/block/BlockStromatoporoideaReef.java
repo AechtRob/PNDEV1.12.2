@@ -79,7 +79,7 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 
 		public BlockCustom() {
 			super(Material.CORAL);
-			setTranslationKey("pf_stromatoporoidea_reef");
+			setTranslationKey("pf_reef_stromatoporoidea");
 			setSoundType(SoundType.STONE);
 			setHardness(1.0F);
 			setResistance(1.5F);

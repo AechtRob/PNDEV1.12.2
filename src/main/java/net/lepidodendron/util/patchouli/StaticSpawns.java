@@ -268,6 +268,34 @@ public class StaticSpawns {
                 || staticStr.equalsIgnoreCase("coral_sticky")) {
             return "reef_coral";
         }
+        if (staticStr.equalsIgnoreCase("stromatoporoidea_reef")
+                || staticStr.equalsIgnoreCase("stromatoporoidea_reef_sticky")) {
+            return "reef_stromatoporoidea";
+        }
+        if (staticStr.equalsIgnoreCase("bryozoan_reef")
+                || staticStr.equalsIgnoreCase("bryozoan_reef_sticky")) {
+            return "reef_bryozoan";
+        }
+        if (staticStr.equalsIgnoreCase("sponge_reef")
+                || staticStr.equalsIgnoreCase("sponge_reef_sticky")) {
+            return "reef_sponge";
+        }
+        if (staticStr.equalsIgnoreCase("shelly_reef")
+                || staticStr.equalsIgnoreCase("shelly_reef_sticky")) {
+            return "reef_shelly";
+        }
+        if (staticStr.equalsIgnoreCase("glass_sponge_reef")
+                || staticStr.equalsIgnoreCase("glass_sponge_reef_sticky")) {
+            return "reef_glass_sponge";
+        }
+        if (staticStr.equalsIgnoreCase("archaeocyatha")
+                || staticStr.equalsIgnoreCase("archaeocyatha_sticky")) {
+            return "reef_archaeocyatha";
+        }
+        if (staticStr.equalsIgnoreCase("rudist_reef")
+                || staticStr.equalsIgnoreCase("rudist_reef_sticky")) {
+            return "reef_rudist";
+        }
         if (staticStr.equalsIgnoreCase("oesia")) {
             return "oesiamargaretia";
         }
@@ -388,17 +416,32 @@ public class StaticSpawns {
 
     public static String getAmendedAdv(String string) {
         if (string.equalsIgnoreCase("primocandelabrum_1")) {
-            string = "primocandelabrum";
+            return "primocandelabrum";
         }
-//        if (string.equalsIgnoreCase("bivalve_cream")
-//                || string.equalsIgnoreCase("bivalve_dark")
-//                || string.equalsIgnoreCase("bivalve_green")
-//                || string.equalsIgnoreCase("bivalve_grey")
-//                || string.equalsIgnoreCase("bivalve_tall")
-//                || string.equalsIgnoreCase("bivalve_upright")
-//                || string.equalsIgnoreCase("bivalve_white")) {
-//            string = "bivalve";
-//        }
+        if (string.equalsIgnoreCase("bryozoan_reef")) {
+            return "reef_bryozoan";
+        }
+        if (string.equalsIgnoreCase("stromatoporoidea_reef")) {
+            return "reef_stromatoporoidea";
+        }
+        if (string.equalsIgnoreCase("sponge_reef")) {
+            return "reef_sponge";
+        }
+        if (string.equalsIgnoreCase("shelly_reef")) {
+            return "reef_shelly";
+        }
+        if (string.equalsIgnoreCase("glass_sponge_reef")) {
+            return "reef_glass_sponge";
+        }
+        if (string.equalsIgnoreCase("archaeocyatha")) {
+            return "reef_archaeocyatha";
+        }
+        if (string.equalsIgnoreCase("shelly_reef")) {
+            return "reef_shelly";
+        }
+        if (string.equalsIgnoreCase("rudist_reef")) {
+            return "reef_rudist";
+        }
         if (string.contains("fenestella_giant")) {
             return "fenestella";
         }
