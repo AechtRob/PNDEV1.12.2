@@ -115,7 +115,9 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                     Creeks = true;
                 }
                 if (biome.getRegistryName().toString().equalsIgnoreCase("lepidoendron:ediacaran_stromatolite_pavement")
-                || biome.getRegistryName().toString().equalsIgnoreCase("lepidoendron:ediacaran_shallow_reef")) {
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidoendron:ediacaran_shallow_reef")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_coral")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_rudist")) {
                     Stromatolites = true;
                 }
                 if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
@@ -735,21 +737,22 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 }
 
                                                                 //Finally validate it's not just a tiny puddle:
-                                                                int xx = -1;
-                                                                while (xx <= 1 && posCheck) {
-                                                                    int zz = -1;
-                                                                    while (zz <= 1 && posCheck) {
-                                                                        if (world.isBlockLoaded(pos1.add(xx, 0, zz))) {
-                                                                            if (world.getBlockState(pos1.add(xx, 0, zz)).getMaterial() != Material.WATER) {
+                                                                if (!Stromatolites) {
+                                                                    int xx = -1;
+                                                                    while (xx <= 1 && posCheck) {
+                                                                        int zz = -1;
+                                                                        while (zz <= 1 && posCheck) {
+                                                                            if (world.isBlockLoaded(pos1.add(xx, 0, zz))) {
+                                                                                if (world.getBlockState(pos1.add(xx, 0, zz)).getMaterial() != Material.WATER) {
+                                                                                    posCheck = false;
+                                                                                }
+                                                                            } else {
                                                                                 posCheck = false;
                                                                             }
+                                                                            zz = zz + 1;
                                                                         }
-                                                                        else {
-                                                                            posCheck = false;
-                                                                        }
-                                                                        zz = zz + 1;
+                                                                        xx = xx + 1;
                                                                     }
-                                                                    xx = xx + 1;
                                                                 }
                                                             }
                                                             spawnPos = pos1;
@@ -1190,7 +1193,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 if (((EntityPrehistoricFloraAgeableBase)entity).canShoal() && ((EntityPrehistoricFloraAgeableBase)entity).getShoalSize() != 0) {
                                                                     int halfShoal = (int)Math.round((double)(((EntityPrehistoricFloraAgeableBase)entity).getShoalSize())/2D);
                                                                     int remainingShoal = ((EntityPrehistoricFloraAgeableBase)entity).getShoalSize() - halfShoal;
-                                                                    spawnQty = Math.max(1, halfShoal + rand.nextInt(remainingShoal + 1));
+                                                                    spawnQty = Math.min(Math.max(1, halfShoal + rand.nextInt(remainingShoal + 1)), 15);
                                                                 }
                                                                 if ((!((EntityPrehistoricFloraAgeableBase)entity).canShoal()) && spawnQty == 0) {
                                                                     spawnQty = rand.nextInt(5);
@@ -1200,7 +1203,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 if (((EntityPrehistoricFloraFishBase)entity).canShoal() && ((EntityPrehistoricFloraFishBase)entity).getShoalSize() != 0) {
                                                                     int halfShoal = (int)Math.round((double)(((EntityPrehistoricFloraFishBase)entity).getShoalSize())/2D);
                                                                     int remainingShoal = ((EntityPrehistoricFloraFishBase)entity).getShoalSize() - halfShoal;
-                                                                    spawnQty = Math.max(1, halfShoal + rand.nextInt(remainingShoal + 1));
+                                                                    spawnQty = Math.min(Math.max(1, halfShoal + rand.nextInt(remainingShoal + 1)), 15);
                                                                 }
                                                                 if ((!((EntityPrehistoricFloraFishBase)entity).canShoal()) && spawnQty == 0) {
                                                                     spawnQty = rand.nextInt(5);
@@ -1210,7 +1213,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 if (((EntityPrehistoricFloraTrilobiteBottomBase)entity).canShoal() && ((EntityPrehistoricFloraTrilobiteBottomBase)entity).getShoalSize() != 0) {
                                                                     int halfShoal = (int)Math.round((double)(((EntityPrehistoricFloraTrilobiteBottomBase)entity).getShoalSize())/2D);
                                                                     int remainingShoal = ((EntityPrehistoricFloraTrilobiteBottomBase)entity).getShoalSize() - halfShoal;
-                                                                    spawnQty = Math.max(1, halfShoal + rand.nextInt(remainingShoal + 1));
+                                                                    spawnQty = Math.min(Math.max(1, halfShoal + rand.nextInt(remainingShoal + 1)), 15);
                                                                 }
                                                                 if ((!((EntityPrehistoricFloraTrilobiteBottomBase)entity).canShoal()) && spawnQty == 0) {
                                                                     spawnQty = rand.nextInt(5);

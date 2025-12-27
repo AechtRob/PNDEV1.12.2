@@ -1,8 +1,8 @@
 {
     "ambientocclusion":false,
     "textures":{
-        "particle":"lepidodendron:items/crinoid_roveacrinus_inventory",
-        "c": "lepidodendron:blocks/roveacrinus_stem"
+        "particle":"lepidodendron:items/crinoid_nielsenicrinus_inventory",
+        "c": "lepidodendron:blocks/nielsenicrinus_stem"
     },
     "elements":[
 

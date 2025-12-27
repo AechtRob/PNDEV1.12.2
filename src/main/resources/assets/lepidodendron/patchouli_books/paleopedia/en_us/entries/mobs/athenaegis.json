@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_athenaegis",
 			"title": "Athenaegis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Pteraspidomorphi$(br)>Heterostraci$(br)>Tolypelepidida$(br)>Tolypelepididae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorpha$(br)>Heterostraci$(br)>Tolypelepidida$(br)>Tolypelepididae"
 		},
 		{
 			"type": "entity",

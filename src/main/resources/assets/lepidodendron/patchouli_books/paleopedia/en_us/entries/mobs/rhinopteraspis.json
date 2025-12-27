@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_rhinopteraspis",
 			"title": "Rhinopteraspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorphi$(br)>Heterostraci$(br)>Pteraspidiformes$(br)>Pteraspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorpha$(br)>Heterostraci$(br)>Pteraspidiformes$(br)>Pteraspididae"
 		},
 		{
 			"type": "entity",

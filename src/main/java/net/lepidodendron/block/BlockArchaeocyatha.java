@@ -159,7 +159,7 @@ public class BlockArchaeocyatha extends ElementsLepidodendronMod.ModElement {
 
 		public BlockCustom() {
 			super(Material.CORAL);
-			setTranslationKey("pf_archaeocyatha");
+			setTranslationKey("pf_reef_archaeocyatha");
 			setSoundType(SoundType.STONE);
 			setHardness(2.0F);
 			setResistance(2.0F);

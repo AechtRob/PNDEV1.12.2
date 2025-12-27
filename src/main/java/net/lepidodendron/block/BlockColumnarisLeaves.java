@@ -92,8 +92,7 @@ public class BlockColumnarisLeaves extends ElementsLepidodendronMod.ModElement {
 		public void breakBlock(World worldIn, BlockPos pos, IBlockState state)  {
 			super.breakBlock(worldIn, pos, state);
 			
-			if (state.getBlock() != this
-			&& state.getBlock() != BlockColumnarisLeaves1.block) {
+			if (state.getBlock() != BlockColumnarisLeaves1.block) {
 
 				int k = pos.getX();
 		        int l = pos.getY();

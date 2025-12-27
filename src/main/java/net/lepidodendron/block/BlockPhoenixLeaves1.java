@@ -100,8 +100,7 @@ public class BlockPhoenixLeaves1 extends ElementsLepidodendronMod.ModElement {
 		public void breakBlock(World worldIn, BlockPos pos, IBlockState state)  {
 			super.breakBlock(worldIn, pos, state);
 			
-			if (state.getBlock() != this
-			&& state.getBlock() != BlockPhoenixLeaves.block) {
+			if (state.getBlock() != BlockPhoenixLeaves.block) {
 					
 				
 				//Replace surrounding blocks with decayable variants:

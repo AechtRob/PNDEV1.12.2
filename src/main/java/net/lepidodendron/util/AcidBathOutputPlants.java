@@ -179,7 +179,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockRedTuftedAlgae.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockStalkedAlgae.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockLiverwort.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBacterialCrust.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBacterialCrust.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAlgalReef.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsOrdovician);
         return resLoc;

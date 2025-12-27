@@ -261,7 +261,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CRINOID_VADAROCRINUS = new CustomTrigger("pf_book_crinoid_vadarocrinus");
     public static final CustomTrigger CLICK_CRINOID_VOSTOCOVACRINUS = new CustomTrigger("pf_book_crinoid_vostocovacrinus");
     public static final CustomTrigger CLICK_CRINOID_HEMICRINUS = new CustomTrigger("pf_book_crinoid_hemicrinus");
-    public static final CustomTrigger CLICK_CRINOID_ROVEACRINUS = new CustomTrigger("pf_book_crinoid_roveacrinus");
+    public static final CustomTrigger CLICK_CRINOID_NIELSENICRINUS = new CustomTrigger("pf_book_crinoid_nielsenicrinus");
     public static final CustomTrigger CLICK_CTENIS = new CustomTrigger("pf_book_ctenis");
     public static final CustomTrigger CLICK_CYCADEOIDEA = new CustomTrigger("pf_book_cycadeoidea");
     public static final CustomTrigger CLICK_CYCADOPTERIS = new CustomTrigger("pf_book_cycadopteris");
@@ -2562,7 +2562,7 @@ public class ModTriggers
             CLICK_CRINOID_VADAROCRINUS,
             CLICK_CRINOID_VOSTOCOVACRINUS,
             CLICK_CRINOID_HEMICRINUS,
-            CLICK_CRINOID_ROVEACRINUS,
+            CLICK_CRINOID_NIELSENICRINUS,
             CLICK_CTENIS,
             CLICK_CYCADEOIDEA,
             CLICK_CYCADOPTERIS,
