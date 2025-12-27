@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
-import net.lepidodendron.entity.render.entity.RenderAegirosaurus;
 import net.lepidodendron.entity.render.entity.RenderBothriolepis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
@@ -35,7 +34,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase implements IAdvancementGranter, ITrappableWater {
+public class EntityPrehistoricFloraGrossaspis extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase implements IAdvancementGranter, ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -45,13 +44,13 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraSw
 	private static final DataParameter<Boolean> SWIMMINGPN = EntityDataManager.createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.BOOLEAN);
 	//Needs to be here because it is not loaded in time to be accessed by the client if it's on the parent class!
 
-	public EntityPrehistoricFloraBothriolepis(World world) {
+	public EntityPrehistoricFloraGrossaspis(World world) {
 		super(world);
-		setSize(0.6F, 0.2F);
+		setSize(0.2F, 0.2F);
 		minWidth = 0.1F;
-		maxWidth = 0.6F;
+		maxWidth = 0.2F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 8.0D;
+		maxHealthAgeable = 4.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -341,7 +340,7 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraSw
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.BOTHRIOLEPIS_LOOT;
+		return LepidodendronMod.GROSSASPIS_LOOT;
 	}
 
     //Rendering taxidermy:
@@ -379,21 +378,12 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraSw
     public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
         return 0.;
     }
-    @SideOnly(Side.CLIENT)
-    public static ResourceLocation textureDisplay(@Nullable String variant) { return RenderBothriolepis.TEXTURE;
-    }
-    @SideOnly(Side.CLIENT)
-    public static ModelBase modelDisplay(@Nullable String variant) {
-        return RenderDisplays.modelBothriolepis;
-    }
-    public static float getScaler(@Nullable String variant) {
-        return RenderBothriolepis.getScaler();
-    }
+
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_BOTHRIOLEPIS;
+		return ModTriggers.CLICK_GROSSASPIS;
 	}
 
 

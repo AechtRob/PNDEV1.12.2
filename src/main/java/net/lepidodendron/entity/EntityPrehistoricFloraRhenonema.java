@@ -30,7 +30,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraHaimirichia extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater, IAdvancementGranter {
+public class EntityPrehistoricFloraRhenonema extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater, IAdvancementGranter {
 
 
 	public BlockPos currentTarget;
@@ -39,17 +39,17 @@ public class EntityPrehistoricFloraHaimirichia extends EntityPrehistoricFloraAge
 	int bottomCooldown;
 	boolean bottomFlag;
 
-	public EntityPrehistoricFloraHaimirichia(World world) {
+	public EntityPrehistoricFloraRhenonema(World world) {
 		super(world);
 		if (world != null) {
-			this.moveHelper = new EntityPrehistoricFloraHaimirichia.SwimmingMoveHelperBase();
+			this.moveHelper = new EntityPrehistoricFloraRhenonema.SwimmingMoveHelperBase();
 			this.navigator = new PathNavigateSwimmer(this, world);
 		}
 		setSize(0.5F, 0.3F);
 		minWidth = 0.2F;
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 12.0D;
 	}
 
 
@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraHaimirichia extends EntityPrehistoricFloraAge
 		return true;
 	}
 
-	public static String getPeriod() {return "Late Cretaceous";}
+	public static String getPeriod() {return "Devonian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -112,7 +112,7 @@ public class EntityPrehistoricFloraHaimirichia extends EntityPrehistoricFloraAge
 
 	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraHaimirichia(this.world);
+		return new EntityPrehistoricFloraRhenonema(this.world);
 	}
 
 	@Override
@@ -212,7 +212,7 @@ public class EntityPrehistoricFloraHaimirichia extends EntityPrehistoricFloraAge
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.HAIMIRICHIA_LOOT;
+		return LepidodendronMod.RHENONEMA_LOOT;
 	}
 
 	@Override
@@ -264,14 +264,14 @@ public class EntityPrehistoricFloraHaimirichia extends EntityPrehistoricFloraAge
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_HAIMIRICHIA;
+		return ModTriggers.CLICK_RHENONEMA;
 	}
 
 	class SwimmingMoveHelperBase extends EntityMoveHelper {
-		private final EntityPrehistoricFloraHaimirichia EntityBase = EntityPrehistoricFloraHaimirichia.this;
+		private final EntityPrehistoricFloraRhenonema EntityBase = EntityPrehistoricFloraRhenonema.this;
 
 		public SwimmingMoveHelperBase() {
-			super(EntityPrehistoricFloraHaimirichia.this);
+			super(EntityPrehistoricFloraRhenonema.this);
 		}
 
 		@Override
