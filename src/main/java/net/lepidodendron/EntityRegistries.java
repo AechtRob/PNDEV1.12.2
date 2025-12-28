@@ -1460,6 +1460,9 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_handuichthys", EntityPrehistoricFloraHanduichthys.class, LepidodendronMod.ENTITY_HANDUICHTHYS, 48,-13683374,-1978787);
         registerEntity("prehistoric_flora_stemmatodus", EntityPrehistoricFloraStemmatodus.class, LepidodendronMod.ENTITY_STEMMATODUS, 48,-196784,-7903255);
         registerEntity("prehistoric_flora_richmondichthys", EntityPrehistoricFloraRichmondichthys.class, LepidodendronMod.ENTITY_RICHMONDICHTHYS, 48,-8025458,-2433826);
+        registerEntity("prehistoric_flora_gaiasia", EntityPrehistoricFloraGaiasia.class, LepidodendronMod.ENTITY_GAIASIA, 48,-13161178,-5337775);
+        registerEntity("prehistoric_flora_shuleichthys", EntityPrehistoricFloraShuleichthys.class, LepidodendronMod.ENTITY_SHULEICHTHYS, 48,-8488859,-11186108);
+        registerEntity("prehistoric_flora_protosphyraena", EntityPrehistoricFloraProtosphyraena.class, LepidodendronMod.ENTITY_PROTOSPHYRAENA, 48,-12768472,-3302566);
 
 
 

@@ -8771,7 +8771,24 @@ public class RenderHandler {
                 return new RenderRhenonema(manager);
             }
         });
-
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGaiasia.class, new IRenderFactory<EntityPrehistoricFloraGaiasia>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraGaiasia> createRenderFor(RenderManager manager) {
+                return new RenderGaiasia(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraShuleichthys.class, new IRenderFactory<EntityPrehistoricFloraShuleichthys>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraShuleichthys> createRenderFor(RenderManager manager) {
+                return new RenderShuleichthys(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraProtosphyraena.class, new IRenderFactory<EntityPrehistoricFloraProtosphyraena>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraProtosphyraena> createRenderFor(RenderManager manager) {
+                return new RenderProtosphyraena(manager);
+            }
+        });
 
 
 

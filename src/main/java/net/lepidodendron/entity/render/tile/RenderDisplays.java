@@ -1078,5 +1078,8 @@ public class RenderDisplays {
     public static final ModelHanduichthys modelHanduichthys = new ModelHanduichthys();
     public static final ModelStemmatodus modelStemmatodus = new ModelStemmatodus();
     public static final ModelRichmondichthys modelRichmondichthys = new ModelRichmondichthys();
+    public static final ModelProtosphyraena modelProtosphyraena = new ModelProtosphyraena();
+    public static final ModelShuleichthys modelShuleichthys = new ModelShuleichthys();
+    public static final ModelGaiasia modelGaiasia = new ModelGaiasia();
 
 }

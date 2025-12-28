@@ -297,7 +297,8 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 			"lepidodendron:prehistoric_flora_trypanognathus",
             "lepidodendron:prehistoric_flora_brachydectes",
             "lepidodendron:prehistoric_flora_leptostyrax",
-            "lepidodendron:prehistoric_flora_gerobatrachus"
+            "lepidodendron:prehistoric_flora_gerobatrachus",
+            "lepidodendron:prehistoric_flora_gaiasia",
 
     };
 

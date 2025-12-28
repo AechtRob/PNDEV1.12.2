@@ -5970,6 +5970,10 @@ public class LepidodendronSorter {
     public static final int stemmatodus_raw = 5640;
     public static final int eggs_proterochampsa = 5641;
     public static final int proterochampsa_raw = 5642;
+    public static final int eggs_gaiasia = 5643;
+    public static final int gaiasia_raw = 5644;
+    public static final int protosphyraena_raw = 5645;
+    public static final int shuleichthys_raw= 5646;
 
     public static final int irritator_raw = 5800;
     public static final int spinosaurus_raw = 5801;
