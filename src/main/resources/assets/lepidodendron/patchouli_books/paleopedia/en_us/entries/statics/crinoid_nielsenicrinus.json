@@ -1,0 +1,42 @@
+{
+	"name": "Nielsenicrinus",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_nielsenicrinus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_nielsenicrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_nielsenicrinus",
+			"title": "Nielsenicrinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous - Paleogene$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Isocrinida$(br)>Balanocrinidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "N. obsoletus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "1" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:crinoid_nielsenicrinus",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_nielsenicrinus",
+			"type": "text",
+			"text": "Nielsenicrinus can be found from the Cretaceous into the Paleogene, with fossils found in formations across the Northern Hemisphere."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_nielsenicrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

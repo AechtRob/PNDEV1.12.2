@@ -1,0 +1,47 @@
+{
+	"name": "Bryozoan Reef",
+	"read_by_default": true,
+	"icon": "lepidodendron:bryozoan_reef",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_reef_bryozoan",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_reef_bryozoan",
+			"title": "Bryozoan Reef",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Lophophorata$(br)>$(o)Bryozoa$(br)>Stenolaemata"
+		},
+		{
+			"type": "multiblock",
+			"name": "Stenolaemata",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "   ","   ","   " ],
+					[ "   "," 1 "," 1 " ],
+					[ " 1 ","11 "," 1 " ],
+					[ "   "," 0 ","   " ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bryozoan_reef",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_bryozoan",
+			"type": "text",
+			"text": "Bryozoans hail from the Ordovician right up until the present day, although reef forming bryozoans were mostly restricted to earlier periods, before this niche were taken over by corals and the like. Bryozoans themselves are predominately sessile organisms, and can be split into three groups, the freshwater Phylactolaematans, partially-marine Gymnolaematans, and the marine Stenolaematans, which are not only the oldest group but also the ones who became the reef builders"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_bryozoan",
+			"type": "text",
+			"text": "of the Ordovician and Silurian."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_bryozoan",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Silktouch Pickaxe"
+		}
+	]
+}

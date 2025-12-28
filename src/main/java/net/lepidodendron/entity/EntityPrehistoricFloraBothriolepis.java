@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraSw
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 2.0D;
+		maxHealthAgeable = 8.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -152,6 +152,9 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraSw
 		if (!this.world.isRemote && !this.isReallySwimming()) {
 			this.setIsSwimming(true);
 			this.setSwimTick(this.swimLength());
+		}
+		if (source != DamageSource.DROWN) {
+			return super.attackEntityFrom(source, (amount * 0.5F));
 		}
 		return super.attackEntityFrom(source, amount);
 	}

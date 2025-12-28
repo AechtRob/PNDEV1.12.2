@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_poraspis",
 			"title": "Poraspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorphi$(br)>Cyathaspidiformes$(br)>Cyathaspidae"
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Pteraspidomorpha$(br)>Cyathaspidiformes$(br)>Cyathaspidae"
 		},
 		{
 			"type": "entity",

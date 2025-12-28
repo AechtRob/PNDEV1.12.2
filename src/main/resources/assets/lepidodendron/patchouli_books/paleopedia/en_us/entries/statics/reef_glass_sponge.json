@@ -1,0 +1,47 @@
+{
+	"name": "Glass Sponge Reef",
+	"read_by_default": true,
+	"icon": "lepidodendron:glass_sponge_reef",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_reef_glass_sponge",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_reef_glass_sponge",
+			"title": "Glass Sponge Reef",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Present$(br2)$(l)Habitat:$() Marine$(br2)>Porifera$(br)>$(o)Hexactinellida"
+		},
+		{
+			"type": "multiblock",
+			"name": "Hexactinellid",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "   ","   ","   " ],
+					[ "   ","   ","   " ],
+					[ " 1 ","11 "," 11" ],
+					[ "   "," 0 ","   " ]
+				],
+				"mapping": {
+					"1": "lepidodendron:glass_sponge_reef",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_glass_sponge",
+			"type": "text",
+			"text": "Glass sponges, also known as hexactinellids, are a form of sponge. They bear siliceous spicules, their skeletons, that feature four and/or six rays, and may be the oldest of the sponges. They are usually found in deeper waters, and have an off-white colour due to the composition of their spicules. Although possible glass sponges are known as far back as the Ediacaran, reef forming glass sponges only arose in the Jurassic, although for a long time it was thought"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_glass_sponge",
+			"type": "text",
+			"text": "that they didn't last long, vanishing as quickly as they appeared at the end of the Jurassic, until the discovery of large reefs off the coasts of British Columbia in Canada, as well as Alaska and Washington in the US. These modern analogues have been recorded getting up to 7 km long and up to 20 m high, going to show just how big some of these glass sponge reefs could get."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_glass_sponge",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Silktouch Pickaxe"
+		}
+	]
+}

@@ -1,0 +1,43 @@
+{
+	"name": "Algal Reef",
+	"read_by_default": true,
+	"icon": "lepidodendron:algal_reef",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_reef_algal",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_reef_algal",
+			"title": "Algal Reef",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)$(l)Method of Obtaining:$() Silktouch Pickaxe"
+		},
+		{
+			"type": "multiblock",
+			"name": "Algal Reef",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "   ","   ","   " ],
+					[ "   "," 1 ","   " ],
+					[ "1  ","11 "," 1 " ],
+					[ "11 ","111"," 1 " ],
+					[ "   "," 0 ","   " ]
+				],
+				"mapping": {
+					"1": "lepidodendron:algal_reef",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_algal",
+			"type": "text",
+			"text": "Algal reefs are a dense collection of photosynthetic eukaryotic organisms, not necessarily closely related to each other, nor sharing a common ancestor. It mostly consists of Brown and Red algae, stuck to loose rocks. Brown algae fossilises less readily, due to a more soft tissue: there are proposed fossils from several periods from the Ordovician onwards, although none have been reliably shown to be brown algae."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_algae_green",
+			"type": "text",
+			"text": "The earliest fossils with certain-knowledge date only from the Miocene, although there is a more general consensus that macroscopic brown algae existed by the Jurassic period. Meanwhile Red algae has records dating as far back as 1.6 billion years ago, although these early forms most likely didn't form great reefs."
+		}
+	]
+}

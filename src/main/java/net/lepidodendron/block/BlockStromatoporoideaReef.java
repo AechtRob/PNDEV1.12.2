@@ -79,7 +79,7 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 
 		public BlockCustom() {
 			super(Material.CORAL);
-			setTranslationKey("pf_stromatoporoidea_reef");
+			setTranslationKey("pf_reef_stromatoporoidea");
 			setSoundType(SoundType.STONE);
 			setHardness(1.0F);
 			setResistance(1.5F);
@@ -267,7 +267,7 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Marine reef sponges");
-				tooltip.add("Periods: Ordovician - Silurian - Devonian [ - Carboniferous (?) - Permian (?) - Triassic (?) - Jurassic (?) - Early Cretaceous (?) - Late Cretaceous (?)]");
+				tooltip.add("Periods: Ordovician - Silurian - Devonian [ - Carboniferous (?)]");
 			}
 			super.addInformation(stack, player, tooltip, advanced);
 		}

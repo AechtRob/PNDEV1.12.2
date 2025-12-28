@@ -1,0 +1,116 @@
+{
+  "variants": {
+    "age=0,topshoot=false": {
+      "model": "lepidodendron:crinoid_nielsenicrinus"
+    },
+    "age=1,topshoot=false": {
+      "model": "lepidodendron:crinoid_nielsenicrinus"
+    },
+    "age=2,topshoot=false": {
+      "model": "lepidodendron:crinoid_nielsenicrinus"
+    },
+    "age=3,topshoot=false": {
+      "model": "lepidodendron:crinoid_nielsenicrinus"
+    },
+    "age=4,topshoot=false": {
+      "model": "lepidodendron:crinoid_nielsenicrinus"
+    },
+    "age=5,topshoot=false": {
+      "model": "lepidodendron:crinoid_nielsenicrinus"
+    },
+    "age=6,topshoot=false": {
+      "model": "lepidodendron:crinoid_nielsenicrinus"
+    },
+    "age=7,topshoot=false": {
+      "model": "lepidodendron:crinoid_nielsenicrinus"
+    },
+    "age=8,topshoot=false": {
+      "model": "lepidodendron:crinoid_nielsenicrinus"
+    },
+    "age=9,topshoot=false": {
+      "model": "lepidodendron:crinoid_nielsenicrinus"
+    },
+    "age=10,topshoot=false": {
+      "model": "lepidodendron:crinoid_nielsenicrinus"
+    },
+    "age=11,topshoot=false": {
+      "model": "lepidodendron:crinoid_nielsenicrinus"
+    },
+    "age=12,topshoot=false": {
+      "model": "lepidodendron:crinoid_nielsenicrinus"
+    },
+    "age=13,topshoot=false": {
+      "model": "lepidodendron:crinoid_nielsenicrinus"
+    },
+    "age=14,topshoot=false": {
+      "model": "lepidodendron:crinoid_nielsenicrinus"
+    },
+    "age=15,topshoot=false": {
+      "model": "lepidodendron:crinoid_nielsenicrinus"
+    },
+    "age=0,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top"},
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top_var"}
+    ],
+    "age=1,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top"},
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top_var"}
+    ],
+    "age=2,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top"},
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top_var"}
+    ],
+    "age=3,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top"},
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top_var"}
+    ],
+    "age=4,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top"},
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top_var"}
+    ],
+    "age=5,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top"},
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top_var"}
+    ],
+    "age=6,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top"},
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top_var"}
+    ],
+    "age=7,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top"},
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top_var"}
+    ],
+    "age=8,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top"},
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top_var"}
+    ],
+    "age=9,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top"},
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top_var"}
+    ],
+    "age=10,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top"},
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top_var"}
+    ],
+    "age=11,topshoot=true": [
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top"},
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top_var"}
+    ],
+    "age=12,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top"},
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top_var"}
+    ],
+    "age=13,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top"},
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top_var"}
+    ],
+    "age=14,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top"},
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top_var"}
+    ],
+    "age=15,topshoot=true":  [
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top"},
+      {"model": "lepidodendron:crinoid_nielsenicrinus_top_var"}
+    ]
+  }
+}

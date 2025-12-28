@@ -217,6 +217,10 @@ public class PlantSpawns {
                 || plantStr.equalsIgnoreCase("liriodendronsapling")) {
             return "liriodendron";
         }
+        if (plantStr.equalsIgnoreCase("algal_reef")
+                || plantStr.equalsIgnoreCase("algal_reef_sticky")) {
+            return "reef_algal";
+        }
         if (plantStr.equalsIgnoreCase("protea")
                 || plantStr.equalsIgnoreCase("protea_1")) {
             return "protea";
@@ -366,6 +370,9 @@ public class PlantSpawns {
                 || string.equalsIgnoreCase("leafy_brown_algae")
                 || string.equalsIgnoreCase("stalky_brown_algae")) {
             string = "algae_brown";
+        }
+        if (string.equalsIgnoreCase("algal_reef")) {
+            string = "reef_algal";
         }
         if (string.contains("sphenophyllales")) {
             string = "sphenophyllales";

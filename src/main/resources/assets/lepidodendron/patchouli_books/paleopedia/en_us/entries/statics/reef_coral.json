@@ -1,0 +1,61 @@
+{
+	"name": "Mixed Reef",
+	"read_by_default": true,
+	"icon": "lepidodendron:coral",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_reef_coral",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_reef_coral",
+			"title": "Mixed Reef",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian - Present$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>$(o)Anthozoa"
+		},
+		{
+			"type": "multiblock",
+			"name": "Anthozoa",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "   ","   ","   ","   ","   " ],
+					[ "   ","   "," 1 ","   ","   " ],
+					[ "   "," 1 "," 1 ","   ","   " ],
+					[ "   "," 11","111"," 1 ","   " ],
+					[ "   ","   "," 0 ","   ","   " ]
+				],
+				"mapping": {
+					"1": "lepidodendron:coral",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Anthozoa (Bleached)",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "   ","   ","   ","   ","   " ],
+					[ "   ","   "," 1 ","   ","   " ],
+					[ "   "," 1 "," 1 ","   ","   " ],
+					[ "   "," 11","111"," 1 ","   " ],
+					[ "   ","   "," 0 ","   ","   " ]
+				],
+				"mapping": {
+					"1": "lepidodendron:coral_bleached",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_coral",
+			"type": "text",
+			"text": "Corals, also known as anthozoans, are a form of sessile cnidarians, dating back as far as the Cambrian period, and include a myriad of classes. Corals started to only form reefs from the Permian onwards, alongside other common reef builders such as algae and sponges, hence 'Mixed Reef', although remain the main reef builders."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_reef_coral",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Silktouch Pickaxe"
+		}
+	]
+}

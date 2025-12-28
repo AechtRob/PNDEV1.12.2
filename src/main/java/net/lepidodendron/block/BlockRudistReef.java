@@ -81,7 +81,7 @@ public class BlockRudistReef extends ElementsLepidodendronMod.ModElement {
 
 		public BlockCustom() {
 			super(Material.CORAL);
-			setTranslationKey("pf_rudist_reef");
+			setTranslationKey("pf_reef_rudist");
 			setSoundType(SoundType.STONE);
 			setHardness(1.0F);
 			setResistance(1.5F);

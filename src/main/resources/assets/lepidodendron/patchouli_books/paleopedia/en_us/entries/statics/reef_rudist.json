@@ -1,13 +1,13 @@
 {
 	"name": "Hippuritid Reef",
 	"read_by_default": true,
-	"icon": "lepidodendron:reef_rudist",
+	"icon": "lepidodendron:rudist_reef",
 	"category": "lepidodendron:statics",
 	"turnin": "lepidodendron:pf_adv_book_reef_rudist",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_reef_rudist",
-			"title": "Requienia",
+			"title": "Hippuritid Reef",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Hippuritida$(br)>Radiolitoidea$(br)>$(o)Hippuritidae"
 		},
@@ -17,10 +17,13 @@
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [
-					[ "1" ],
-					[ "0" ]
+					[ "   ","   ","   " ],
+					[ "   ","   ","   " ],
+					[ " 1 ","1 1"," 11" ],
+					[ "   "," 0 ","   " ]
 				],
 				"mapping": {
+					"2": "minecraft:sand",
 					"1": "lepidodendron:rudist_reef",
 					"0": "minecraft:air"
 				}
@@ -34,7 +37,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_reef_rudist",
 			"type": "text",
-			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Silktouch Pickaxe"
 		}
 	]
 }
