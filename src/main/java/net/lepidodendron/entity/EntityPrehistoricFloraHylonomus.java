@@ -147,7 +147,7 @@ public class EntityPrehistoricFloraHylonomus extends EntityPrehistoricFloraLandB
 		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(8, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		}
+	}
 
 	@Override
 	public String[] getFoodOreDicts() {
