@@ -58,12 +58,6 @@
 		"biome": "lepidodendron:permian_stony_depression"
 		}
 		},
-		"permian_stony_depression_rim": {
-		"trigger": "minecraft:location",
-		"conditions": {
-		"biome": "lepidodendron:permian_stony_depression_rim"
-		}
-		},
 		"permian_arid_hills": {
 		"trigger": "minecraft:location",
 		"conditions": {
