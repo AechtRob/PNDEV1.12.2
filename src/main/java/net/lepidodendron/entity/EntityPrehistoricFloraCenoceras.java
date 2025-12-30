@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.render.entity.RenderCenoceras;
@@ -10,6 +11,8 @@ import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemNautiloidEggsCenoceras;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -23,7 +26,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraCenoceras extends EntityPrehistoricFloraNautiloidBase implements ITrappableWater {
+public class EntityPrehistoricFloraCenoceras extends EntityPrehistoricFloraNautiloidBase implements IAdvancementGranter, ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -32,7 +35,7 @@ public class EntityPrehistoricFloraCenoceras extends EntityPrehistoricFloraNauti
 	public EntityPrehistoricFloraCenoceras(World world) {
 		super(world);
 		setSize(0.325F, 0.375F);
-		minWidth = 0.07F;
+		minWidth = 0.325F;
 		maxWidth = 0.325F;
 		maxHeight = 0.375F;
 		maxHealthAgeable = 3.0D;
@@ -64,7 +67,7 @@ public class EntityPrehistoricFloraCenoceras extends EntityPrehistoricFloraNauti
 
 	@Override
 	public int getAdultAge() {
-		return -1;
+		return 1;
 	}
 
 	@Override
@@ -84,8 +87,6 @@ public class EntityPrehistoricFloraCenoceras extends EntityPrehistoricFloraNauti
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
-
-	
 
 	@Override
 	public boolean isAIDisabled() {
@@ -180,5 +181,11 @@ public class EntityPrehistoricFloraCenoceras extends EntityPrehistoricFloraNauti
 	}
 	public static float getScaler(@Nullable String variant) {
 		return RenderCenoceras.getScaler();
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_CENOCERAS;
 	}
 }

@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraCeratodus extends EntityPrehistoricFloraSwimm
 	public EntityPrehistoricFloraCeratodus(World world) {
 		super(world);
 		setSize(1.0F, 1.0F);
-		minWidth = 0.5F;
+		minWidth = 1.0F;
 		maxWidth = 1.0F;
 		maxHeight = 1.0F;
 		maxHealthAgeable = 8.0D;
@@ -100,7 +100,7 @@ public class EntityPrehistoricFloraCeratodus extends EntityPrehistoricFloraSwimm
 
 	@Override
 	public int getAdultAge() {
-		return -1;
+		return 1;
 	}
 
 	@Override
