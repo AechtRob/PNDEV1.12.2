@@ -31,13 +31,13 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
+public class EntityPrehistoricFloraIanthasaurus extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	public EntityPrehistoricFloraRemigiomontanus(World world) {
+	public EntityPrehistoricFloraIanthasaurus(World world) {
 		super(world);
 		setSize(0.46F, 0.55F);
 		minWidth = 0.10F;
@@ -103,7 +103,7 @@ public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFlor
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.25F;
+		float speedBase = 0.26F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -156,7 +156,7 @@ public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFlor
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.PLANTS);
+		return ArrayUtils.addAll(DietString.BUG);
 	}
 
 	
@@ -182,19 +182,19 @@ public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:remigiomontanus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:edaphosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:remigiomontanus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:edaphosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:remigiomontanus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:edaphosaurus_death"));
 	}
 
 	@Override
@@ -239,15 +239,12 @@ public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFlor
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		if (!this.isPFAdult()) {
-			return LepidodendronMod.REMIGIOMONTANUS_LOOT_YOUNG;
-		}
-		return LepidodendronMod.REMIGIOMONTANUS_LOOT;
+		return LepidodendronMod.IANTHASAURUS_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_REMIGIOMONTANUS;
+		return ModTriggers.CLICK_IANTHASAURUS;
 	}
 }

@@ -31,13 +31,13 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
+public class EntityPrehistoricFloraMelanedaphodon extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	public EntityPrehistoricFloraRemigiomontanus(World world) {
+	public EntityPrehistoricFloraMelanedaphodon(World world) {
 		super(world);
 		setSize(0.46F, 0.55F);
 		minWidth = 0.10F;
@@ -239,15 +239,12 @@ public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFlor
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		if (!this.isPFAdult()) {
-			return LepidodendronMod.REMIGIOMONTANUS_LOOT_YOUNG;
-		}
-		return LepidodendronMod.REMIGIOMONTANUS_LOOT;
+		return LepidodendronMod.MELANEDAPHODON_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_REMIGIOMONTANUS;
+		return ModTriggers.CLICK_MELANEDAPHODON;
 	}
 }

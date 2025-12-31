@@ -2,6 +2,7 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
@@ -11,12 +12,14 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -31,19 +34,19 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
+public class EntityPrehistoricFloraLupeosaurus extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	public EntityPrehistoricFloraRemigiomontanus(World world) {
+	public EntityPrehistoricFloraLupeosaurus(World world) {
 		super(world);
-		setSize(0.46F, 0.55F);
+		setSize(0.7F, 0.7F);
 		minWidth = 0.10F;
-		maxWidth = 0.46F;
-		maxHeight = 0.55F;
-		maxHealthAgeable = 15.0D;
+		maxWidth = 0.7F;
+		maxHeight = 0.7F;
+		maxHealthAgeable = 28.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -73,7 +76,7 @@ public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFlor
 		);
 	}
 
-	public static String getPeriod() {return "Carboniferous";}
+	public static String getPeriod() {return "Permian";}
 
 	//public static String getHabitat() {return "Terrestrial Synapsid";}
 
@@ -103,9 +106,12 @@ public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFlor
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.25F;
+		float speedBase = 0.27F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
+		}
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+			return 0.0F;
 		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 1.67F;
@@ -159,7 +165,10 @@ public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFlor
 		return ArrayUtils.addAll(DietString.PLANTS);
 	}
 
-	
+	@Override
+	public int getRoarLength() {
+		return 27;
+	}
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -182,19 +191,19 @@ public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:remigiomontanus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:edaphosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:remigiomontanus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:edaphosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:remigiomontanus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:edaphosaurus_death"));
 	}
 
 	@Override
@@ -206,7 +215,11 @@ public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFlor
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
-	
+
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION};
+	}
 
 	@Override
 	public void onLivingUpdate() {
@@ -232,6 +245,64 @@ public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFlor
 		return false;
 	}
 
+	@Override
+	public boolean drinksWater() {
+		return false; //grazes, does not drink
+	}
+
+	@Override
+	public int getDrinkLength() {
+		return 160;
+	}
+
+	@Override
+	public int getDrinkCooldown() {
+		return 2000;
+	}
+
+	public boolean isDrinking()
+	{
+		//Is GRAZING!
+		EnumFacing facing = this.getAdjustedHorizontalFacing();
+		boolean test = (this.getPFDrinking() <= 0
+				&& !world.isRemote
+				&& !this.getIsFast()
+				&& !this.getIsMoving()
+				&& this.DRINK_ANIMATION.getDuration() > 0
+				&& this.getAnimation() == NO_ANIMATION
+				&& !this.isReallyInWater()
+				&& (this.world.getBlockState(this.getPosition().offset(facing)).getMaterial() == Material.PLANTS
+				|| this.world.getBlockState(this.getPosition().offset(facing)).getMaterial() == Material.LEAVES)
+				//|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.SAND)
+		);
+		if (test) {
+			//Which one is water?
+			facing = null;
+			if (this.world.getBlockState(this.getPosition().north()).getMaterial() == Material.PLANTS
+					|| this.world.getBlockState(this.getPosition().north()).getMaterial() == Material.LEAVES) {
+				facing = EnumFacing.NORTH;
+			}
+			else if (this.world.getBlockState(this.getPosition().south()).getMaterial() == Material.PLANTS
+					|| this.world.getBlockState(this.getPosition().south()).getMaterial() == Material.LEAVES) {
+				facing = EnumFacing.SOUTH;
+			}
+			else if (this.world.getBlockState(this.getPosition().east()).getMaterial() == Material.PLANTS
+					|| this.world.getBlockState(this.getPosition().east()).getMaterial() == Material.LEAVES) {
+				facing = EnumFacing.EAST;
+			}
+			else if (this.world.getBlockState(this.getPosition().west()).getMaterial() == Material.PLANTS
+					|| this.world.getBlockState(this.getPosition().west()).getMaterial() == Material.LEAVES) {
+				facing = EnumFacing.WEST;
+			}
+			if (facing != null) {
+				this.setDrinkingFrom(this.getPosition().offset(facing));
+				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
+			}
+		}
+		return test;
+
+	}
+
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
@@ -240,14 +311,14 @@ public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFlor
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.REMIGIOMONTANUS_LOOT_YOUNG;
+			return LepidodendronMod.LUPEOSAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.REMIGIOMONTANUS_LOOT;
+		return LepidodendronMod.LUPEOSAURUS_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_REMIGIOMONTANUS;
+		return ModTriggers.CLICK_LUPEOSAURUS;
 	}
 }
