@@ -14,6 +14,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.pathfinding.NodeProcessor;
 import net.minecraft.pathfinding.PathNavigate;
@@ -309,6 +310,153 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
             super.onLivingUpdate();
         }
         else {
+            this.renderYawOffset = this.rotationYaw;
+
+            if (!world.isRemote) {
+                double width = this.getEntityBoundingBox().maxX - this.getEntityBoundingBox().minX;
+                double depth = this.getEntityBoundingBox().maxZ - this.getEntityBoundingBox().minZ;
+                double height = this.getEntityBoundingBox().maxY - this.getEntityBoundingBox().minY;
+                if (height <= 0.9375 && width <= 1.0 && depth <= 1.0) {
+                    if (!this.getJuvenile()) {
+                        this.setJuvenile(true);
+                    }
+                }
+                else if (this.getJuvenile()) {
+                    this.setJuvenile(false);
+                }
+            }
+
+            if (!world.isRemote) {
+                if (this.getAttackTarget() != null) {
+                    if (this.getAttackTarget().isDead) {
+                        this.setAttackTarget(null);
+                    }
+                    else if (this.getAttackTarget() instanceof EntityPlayer) {
+                        if (((EntityPlayer)this.getAttackTarget()).isCreative()) {
+                            this.setAttackTarget(null);
+                        }
+                    }
+                }
+                if (this.getEatTarget() != null) {
+                    if (this.getEatTarget().isDead) {
+                        this.setEatTarget(null);
+                    }
+                }
+                if (this.getWarnTarget() != null) {
+                    if (this.getWarnTarget().isDead) {
+                        this.setWarnTarget(null);
+                    }
+                }
+                if (this.getWarnTarget() != null) {
+                    if (this.getWarnTarget().isDead) {
+                        this.setWarnTarget(null);
+                    }
+                    else if (this.getWarnTarget() instanceof EntityPlayer) {
+                        if (((EntityPlayer)this.getWarnTarget()).isCreative()) {
+                            this.setWarnTarget(null);
+                        }
+                    }
+                    if ((!(this.getWarnCooldown() > 0)) && this.getAttackTarget() == null) {
+                        this.setWarnTarget(null);
+                    }
+                }
+                if (this.getRevengeTarget() != null) {
+                    if (this.getRevengeTarget().isDead) {
+                        this.setRevengeTarget(null);
+                    }
+                    else if (this.getRevengeTarget() instanceof EntityPlayer) {
+                        if (((EntityPlayer)this.getRevengeTarget()).isCreative()) {
+                            this.setRevengeTarget(null);
+                        }
+                    }
+                }
+                this.setIsFast(this.getAvoidTarget() != null || this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & (this.panics() || this.sneakOnRevenge())) || (this.isBurning() & this.panics()));
+
+                if (this.getSneakRange() > 0 && this.getIsFast()
+                        && (this.getAttackTarget() != null || (this.getRevengeTarget() != null && this.sneakOnRevenge()))
+                        && ((!this.getOneHit()) || this.sneakOnRevenge())
+                ) {
+                    //If this is hunting and is not close enough, sneak up:
+
+                    float distEntity;
+                    if (this.getAttackTarget() != null) {
+                        distEntity = this.getDistancePrey(this.getAttackTarget());
+                    }
+                    else {
+                        distEntity = this.getDistancePrey(this.getRevengeTarget());
+                    }
+                    if (distEntity >= this.getUnSneakRange() && distEntity <= (this.getSneakRange())) {
+                        this.setIsSneaking(true);
+                    }
+                    if (this.getIsSneaking() &&
+                            (distEntity >= (this.getSneakRange() * 2.0D) + 2) || distEntity < this.getUnSneakRange()
+                    ) {
+                        this.setIsSneaking(false);
+                    }
+                }
+                else {
+                    this.setIsSneaking(false);
+                }
+
+                if ((!this.getIsFast())
+                        || (this.getAttackTarget() == this.getRevengeTarget() && !this.sneakOnRevenge())
+                        || (this.getOneHit() && !this.sneakOnRevenge())
+                ) {
+                    this.setIsSneaking(false);
+                }
+
+            }
+
+            if (!this.isPFAdult())
+            {
+                this.inPFLove = 0;
+            }
+
+            if (this.inPFLove > 0)
+            {
+                --this.inPFLove;
+            }
+
+            if (this.getCanGrow() > 0)
+            {
+                this.setCanGrow(this.getCanGrow() - 1);
+            }
+
+            if (this.getMateable() < 0) {
+                this.setMateable(this.getMateable() + 1);
+            }
+
+            //Grapple with mates?
+            if (rand.nextInt(this.grappleChance()) == 0) {
+                //Are there any nearby to grapple with?
+                this.findGrappleTarget();
+            }
+
+            if (this.willGrapple && this.getAnimation() == this.getGrappleAnimation() && this.getAnimationTick() == 5 && this.getGrappleTarget() != null) {
+                this.faceEntity(this.getGrappleTarget(), 10, 10);
+                launchGrapple();
+                if (this.getOneHit()) {
+                    this.setGrappleTarget(null);
+                }
+            }
+
+            if (this.homeCooldown > 0) {
+                this.homeCooldown -= rand.nextInt(3) + 1;
+            }
+            if (this.homeCooldown < 0) {
+                this.homeCooldown = 0;
+            }
+
+            if ((!this.world.isRemote) && this.getNestLocation() != null) {
+                if (this.world.isBlockLoaded(this.getNestLocation())) {
+                    if (this.isMyNest(this.world, this.getNestLocation())) {
+                        if (this.getNestLocation().distanceSq(this.posX, this.posY, this.posZ) <= 9) {
+                            this.homeCooldown = 12000; //~5 game minutes of non-tethered movement (note the decrements are not in 1s)
+                        }
+                    }
+                }
+            }
+
             //Updated from vanilla to allow underwater jumping:
             if (this.jumpTicks > 0) {
                 --this.jumpTicks;

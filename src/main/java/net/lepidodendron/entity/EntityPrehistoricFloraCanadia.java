@@ -31,7 +31,7 @@ public class EntityPrehistoricFloraCanadia extends EntityPrehistoricFloraEurypte
 	public EntityPrehistoricFloraCanadia(World world) {
 		super(world);
 		setSize(0.25F, 0.15F);
-		minWidth = 0.1F;
+		minWidth = 0.25F;
 		maxWidth = 0.25F;
 		maxHeight = 0.15F;
 		maxHealthAgeable = 2.0D;

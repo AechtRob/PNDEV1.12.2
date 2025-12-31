@@ -33,7 +33,7 @@ public class EntityPrehistoricFloraTurboscinetes extends EntityPrehistoricFloraA
 	public EntityPrehistoricFloraTurboscinetes(World world) {
 		super(world);
 		setSize(0.2F, 0.2F);
-		minWidth = 0.1F;
+		minWidth = 0.2F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
 		maxHealthAgeable = 3.0D;
@@ -81,7 +81,7 @@ public class EntityPrehistoricFloraTurboscinetes extends EntityPrehistoricFloraA
 
 	@Override
 	public int getAdultAge() {
-		return -1;
+		return 1;
 	}
 
 	@Override

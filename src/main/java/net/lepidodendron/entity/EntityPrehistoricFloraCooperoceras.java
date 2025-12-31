@@ -35,7 +35,7 @@ public class EntityPrehistoricFloraCooperoceras extends EntityPrehistoricFloraNa
 	public EntityPrehistoricFloraCooperoceras(World world) {
 		super(world);
 		setSize(0.225F, 0.225F);
-		minWidth = 0.1F;
+		minWidth = 0.225F;
 		maxWidth = 0.225F;
 		maxHeight = 0.225F;
 		maxHealthAgeable = 2.0D;

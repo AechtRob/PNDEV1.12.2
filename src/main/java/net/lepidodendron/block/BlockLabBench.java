@@ -349,10 +349,11 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 								mobtype = stackProcessing1.getTagCompound().getString("mobtype");
 							}
 							else {
+								String id_dna_raw = id_dna;
 								if (id_dna.indexOf("@") > 0) {
-									id_dna = id_dna.substring(0, id_dna.indexOf("@"));
+									id_dna_raw = id_dna.substring(0, id_dna.indexOf("@"));
 								}
-								boolean isArthropod = LepidodendronRecipeFossils.isArthropod(world, id_dna);
+								boolean isArthropod = LepidodendronRecipeFossils.isArthropod(world, id_dna_raw);
 								if (isArthropod) {
 									mobtype = "invertebrate";
 								} else {

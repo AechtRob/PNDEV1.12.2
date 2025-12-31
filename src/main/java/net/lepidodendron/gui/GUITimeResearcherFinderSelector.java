@@ -80,169 +80,208 @@ public class GUITimeResearcherFinderSelector extends GuiScreen
                 || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilPrecambrian.block)
                     && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
                 for (String stringLife : AcidBathOutputMobs.getPrecambrianCleanedFossilsMobs()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputStatics.getPrecambrianCleanedFossilsStatics()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputPlants.getPrecambrianCleanedFossilsPlants()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
             }
             else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilCambrian.block)
                     || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilCambrian.block)
                     && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
                 for (String stringLife : AcidBathOutputMobs.getCambrianCleanedFossilsMobs()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputStatics.getCambrianCleanedFossilsStatics()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputPlants.getCambrianCleanedFossilsPlants()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
             }
             else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilOrdovician.block)
                     || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilOrdovician.block)
                     && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
                 for (String stringLife : AcidBathOutputMobs.getOrdovicianCleanedFossilsMobs()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputStatics.getOrdovicianCleanedFossilsStatics()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputPlants.getOrdovicianCleanedFossilsPlants()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
             }
             else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilSilurian.block)
                     || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilSilurian.block)
                     && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
                 for (String stringLife : AcidBathOutputMobs.getSilurianCleanedFossilsMobs()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputStatics.getSilurianCleanedFossilsStatics()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputPlants.getSilurianCleanedFossilsPlants()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
             }
             else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilDevonian.block)
                     || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilDevonian.block)
                     && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
                 for (String stringLife : AcidBathOutputMobs.getDevonianCleanedFossilsMobs()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputStatics.getDevonianCleanedFossilsStatics()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputPlants.getDevonianCleanedFossilsPlants()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
             }
             else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilCarboniferous.block)
                     || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilCarboniferous.block)
                     && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
                 for (String stringLife : AcidBathOutputMobs.getCarboniferousCleanedFossilsMobs()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputStatics.getCarboniferousCleanedFossilsStatics()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputPlants.getCarboniferousCleanedFossilsPlants()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
             }
             else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPermian.block)
                     || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilPermian.block)
                     && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
                 for (String stringLife : AcidBathOutputMobs.getPermianCleanedFossilsMobs()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputStatics.getPermianCleanedFossilsStatics()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputPlants.getPermianCleanedFossilsPlants()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
             }
             else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilTriassic.block)
                     || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilTriassic.block)
                     && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
                 for (String stringLife : AcidBathOutputMobs.getTriassicCleanedFossilsMobs()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputStatics.getTriassicCleanedFossilsStatics()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputPlants.getTriassicCleanedFossilsPlants()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
             }
             else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilJurassic.block)
                     || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilJurassic.block)
                     && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
                 for (String stringLife : AcidBathOutputMobs.getJurassicCleanedFossilsMobs()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputStatics.getJurassicCleanedFossilsStatics()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputPlants.getJurassicCleanedFossilsPlants()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
             }
             else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilCretaceous.block)
                     || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilCretaceous.block)
                     && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
                 for (String stringLife : AcidBathOutputMobs.getCretaceousCleanedFossilsMobs()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputStatics.getCretaceousCleanedFossilsStatics()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputPlants.getCretaceousCleanedFossilsPlants()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
             }
             else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPaleogene.block)
                     || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilPaleogene.block)
                     && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
                 for (String stringLife : AcidBathOutputMobs.getPaleogeneCleanedFossilsMobs()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputStatics.getPaleogeneCleanedFossilsStatics()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputPlants.getPaleogeneCleanedFossilsPlants()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
             }
             else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilNeogene.block)
                     || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilNeogene.block)
                     && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
                 for (String stringLife : AcidBathOutputMobs.getNeogeneCleanedFossilsMobs()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputStatics.getNeogeneCleanedFossilsStatics()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputPlants.getNeogeneCleanedFossilsPlants()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
             }
             else if (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPleistocene.block)
                     || (GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(0).getItem() == Item.getItemFromBlock(BlockFossilPleistocene.block)
                     && GUITimeResearcherFinderSelector.this.tileEntity.getStackInSlot(1).isEmpty())) {
                 for (String stringLife : AcidBathOutputMobs.getPleistoceneCleanedFossilsMobs()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputStatics.getPleistoceneCleanedFossilsStatics()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
                 for (String stringLife : AcidBathOutputPlants.getPleistoceneCleanedFossilsPlants()) {
-                    this.lifeList.add(stringLife);
+                    if (!this.lifeList.contains(stringLife))
+                        this.lifeList.add(stringLife);
                 }
             }
 
@@ -261,6 +300,30 @@ public class GUITimeResearcherFinderSelector extends GuiScreen
             }
             if (mobIn.equalsIgnoreCase("lepidodendron:glossopterissapling")) {
                 mobIn = "lepidodendron:glossopteris_sapling";
+            }
+            if (mobIn.equalsIgnoreCase("lepidodendron:coral")) {
+                mobIn = "lepidodendron:reef_coral";
+            }
+            if (mobIn.equalsIgnoreCase("lepidodendron:stromatoporoidea_reef")) {
+                mobIn = "lepidodendron:reef_stromatoporoidea";
+            }
+            if (mobIn.equalsIgnoreCase("lepidodendron:archaeocyatha_reef")) {
+                mobIn = "lepidodendron:reef_archaeocyatha";
+            }
+            if (mobIn.equalsIgnoreCase("lepidodendron:glass_sponge_reef")) {
+                mobIn = "lepidodendron:reef_glass_sponge";
+            }
+            if (mobIn.equalsIgnoreCase("lepidodendron:sponge_reef")) {
+                mobIn = "lepidodendron:reef_sponge";
+            }
+            if (mobIn.equalsIgnoreCase("lepidodendron:algal_reef")) {
+                mobIn = "lepidodendron:reef_algal";
+            }
+            if (mobIn.equalsIgnoreCase("lepidodendron:shelly_reef")) {
+                mobIn = "lepidodendron:reef_shelly";
+            }
+            if (mobIn.equalsIgnoreCase("lepidodendron:rudist_reef")) {
+                mobIn = "lepidodendron:reef_rudist";
             }
             if (mobIn.equalsIgnoreCase("- NONE -") || mobIn.equalsIgnoreCase("")) {
                 mobIn = "- NONE -";
