@@ -19,7 +19,7 @@ public class AcidBathOutputJunk {
                     int ii = (new Random()).nextInt(getPrecambrianJunkBonus().length);
                     return getPrecambrianJunkBonus()[ii];
                 }
-                int ii = (new Random()).nextInt(getJunk().length);
+                int ii = (new Random()).nextInt(getJunkPalaeozoic().length);
                 ItemStack stackOut = getJunk()[ii];
                 if (stackOut.getMaxStackSize() <= 16) {
                     stackOut.setCount((new Random()).nextInt(16) + 1);
@@ -32,7 +32,7 @@ public class AcidBathOutputJunk {
                     return getCambrianJunkBonus()[ii];
                 }
                 ii = (new Random()).nextInt(getJunk().length);
-                stackOut = getJunk()[ii];
+                stackOut = getJunkPalaeozoic()[ii];
                 if (stackOut.getMaxStackSize() <= 16) {
                     stackOut.setCount((new Random()).nextInt(16) + 1);
                 }
@@ -44,7 +44,7 @@ public class AcidBathOutputJunk {
                     return getOrdovicianJunkBonus()[ii];
                 }
                 ii = (new Random()).nextInt(getJunk().length);
-                stackOut = getJunk()[ii];
+                stackOut = getJunkPalaeozoic()[ii];
                 if (stackOut.getMaxStackSize() <= 16) {
                     stackOut.setCount((new Random()).nextInt(16) + 1);
                 }
@@ -56,7 +56,7 @@ public class AcidBathOutputJunk {
                     return getSilurianJunkBonus()[ii];
                 }
                 ii = (new Random()).nextInt(getJunk().length);
-                stackOut = getJunk()[ii];
+                stackOut = getJunkPalaeozoic()[ii];
                 if (stackOut.getMaxStackSize() <= 16) {
                     stackOut.setCount((new Random()).nextInt(16) + 1);
                 }
@@ -68,7 +68,7 @@ public class AcidBathOutputJunk {
                     return getDevonianJunkBonus()[ii];
                 }
                 ii = (new Random()).nextInt(getJunk().length);
-                stackOut = getJunk()[ii];
+                stackOut = getJunkPalaeozoic()[ii];
                 if (stackOut.getMaxStackSize() <= 16) {
                     stackOut.setCount((new Random()).nextInt(16) + 1);
                 }
@@ -172,6 +172,52 @@ public class AcidBathOutputJunk {
         }
     }
 
+    public static ItemStack[] getJunkPalaeozoic() {
+        ItemStack[] itemStack = {
+                new ItemStack(BlockSandyDirt.block, 1),
+                new ItemStack(BlockSandyDirtPangaean.block, 1),
+                new ItemStack(BlockSandyDirtRed.block, 1),
+                new ItemStack(BlockSiltyDirt.block, 1),
+                new ItemStack(BlockSandyDirtBlack.block, 1),
+                new ItemStack(BlockSandyDirtWhite.block, 1),
+                new ItemStack(BlockSandyDirtGrey.block, 1),
+                new ItemStack(BlockLavaRock.block, 1),
+                new ItemStack(Blocks.DIRT, 1, 1),
+                //new ItemStack(Blocks.DIRT, 1, 2), //Removal of Podzol
+                new ItemStack(Blocks.GRAVEL, 1),
+                new ItemStack(Blocks.OBSIDIAN, 1),
+                new ItemStack(Blocks.SAND, 1, 0),
+                new ItemStack(Blocks.SAND, 1, 1),
+                new ItemStack(Blocks.STONE, 1, 0),
+                new ItemStack(Blocks.STONE, 1, 1),
+                new ItemStack(Blocks.STONE, 1, 2),
+                new ItemStack(Blocks.STONE, 1, 3),
+                new ItemStack(BlockSandBlack.block, 1),
+                new ItemStack(BlockSandPangaean.block, 1),
+                //new ItemStack(BlockSandPaleoproterozoic.block, 1), //Removal of Ferric sand
+                new ItemStack(BlockSandWhite.block, 1),
+                new ItemStack(BlockSandGrey.block, 1),
+                new ItemStack(BlockStonePeridotite.block, 1),
+                new ItemStack(BlockStonePorphyry.block, 1),
+                new ItemStack(BlockStoneScoria.block, 1),
+                new ItemStack(ItemAnthracite.block, 1),
+                new ItemStack(ItemClayBallBrown.block, 1),
+                new ItemStack(ItemClayBallRed.block, 1),
+                new ItemStack(Items.CLAY_BALL, 1),
+                new ItemStack(Items.COAL, 1, 0),
+                new ItemStack(Items.COAL, 1, 1),
+                new ItemStack(Items.DYE, 1, 4),
+                new ItemStack(Items.FLINT, 1),
+                new ItemStack(Items.GOLD_NUGGET, 1),
+                new ItemStack(Items.IRON_NUGGET, 1),
+                new ItemStack(Items.QUARTZ, 1),
+                new ItemStack(Items.REDSTONE, 1),
+                new ItemStack(ItemSalt.block, 1),
+                new ItemStack(ItemSulphur.block, 1)
+        };
+        return itemStack;
+    }
+
     public static ItemStack[] getJunk() {
         ItemStack[] itemStack = {
                 new ItemStack(BlockSandyDirt.block, 1),
@@ -194,7 +240,7 @@ public class AcidBathOutputJunk {
                 new ItemStack(Blocks.STONE, 1, 3),
                 new ItemStack(BlockSandBlack.block, 1),
                 new ItemStack(BlockSandPangaean.block, 1),
-                new ItemStack(BlockSandPaleoproterozoic.block, 1),
+                //new ItemStack(BlockSandPaleoproterozoic.block, 1), //Removal of Ferric sand
                 new ItemStack(BlockSandWhite.block, 1),
                 new ItemStack(BlockSandGrey.block, 1),
                 new ItemStack(BlockStonePeridotite.block, 1),
@@ -223,7 +269,8 @@ public class AcidBathOutputJunk {
                 new ItemStack(ItemZircon.block, 1),
                 new ItemStack(Items.DIAMOND, 1),
                 new ItemStack(BlockMeteorite.block, 1),
-                new ItemStack(Items.EMERALD, 1)
+                new ItemStack(Items.EMERALD, 1),
+                new ItemStack(BlockSandPaleoproterozoic.block, 1)
         };
         return itemStack;
     }
