@@ -1426,10 +1426,10 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_bajadasaurus", EntityPrehistoricFloraBajadasaurus.class, LepidodendronMod.ENTITY_BAJADASAURUS, 184,-7577540,-2311312);
         registerEntity("prehistoric_flora_mirasaura", EntityPrehistoricFloraMirasaura.class, LepidodendronMod.ENTITY_MIRASAURA, 48,-13093595,-13281135);
 //        registerEntity("prehistoric_flora_icarosaurus", EntityPrehistoricFloraIcarosaurus.class, LepidodendronMod.ENTITY_ICAROSAURUS, 48,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_kuehneosuchus", EntityPrehistoricFloraKuehneosuchus.class, LepidodendronMod.ENTITY_KUEHNEOSUCHUS, 48,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_kuehneosaurus", EntityPrehistoricFloraKuehneosaurus.class, LepidodendronMod.ENTITY_KUEHNEOSAURUS, 48,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_ozimek", EntityPrehistoricFloraOzimek.class, LepidodendronMod.ENTITY_OZIMEK, 48,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_sharovipteryx", EntityPrehistoricFloraSharovipteryx.class, LepidodendronMod.ENTITY_SHAROVIPTERYX, 48,-11354642,-15131876);
+        registerEntity("prehistoric_flora_kuehneosuchus", EntityPrehistoricFloraKuehneosuchus.class, LepidodendronMod.ENTITY_KUEHNEOSUCHUS, 48,-16250875,-15590857);
+        registerEntity("prehistoric_flora_kuehneosaurus", EntityPrehistoricFloraKuehneosaurus.class, LepidodendronMod.ENTITY_KUEHNEOSAURUS, 48,-1513240,-8639187);
+        registerEntity("prehistoric_flora_ozimek", EntityPrehistoricFloraOzimek.class, LepidodendronMod.ENTITY_OZIMEK, 48,-11515585,-7639480);
+        registerEntity("prehistoric_flora_sharovipteryx", EntityPrehistoricFloraSharovipteryx.class, LepidodendronMod.ENTITY_SHAROVIPTERYX, 48,-10462904,-3747506);
         registerEntity("prehistoric_flora_xianglong", EntityPrehistoricFloraXianglong.class, LepidodendronMod.ENTITY_XIANGLONG, 48,-14174274,-2111728);
         registerEntity("prehistoric_flora_rhenonema", EntityPrehistoricFloraRhenonema.class, LepidodendronMod.ENTITY_RHENONEMA, 64,-9940923,-531264);
         registerEntity("prehistoric_flora_tropidosteus", EntityPrehistoricFloraTropidosteus.class, LepidodendronMod.ENTITY_TROPIDOSTEUS, 64,-14745088,-8960722);

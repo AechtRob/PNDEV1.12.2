@@ -15,11 +15,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemSharovipteryxRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:sharovipteryx_raw")
+public class ItemKuehneosuchusRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:kuehneosuchus_raw")
 	public static final Item block = null;
-	public ItemSharovipteryxRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.sharovipteryx_raw);
+	public ItemKuehneosuchusRaw(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.kuehneosuchus_raw);
 	}
 
 	@Override
@@ -30,23 +30,23 @@ public class ItemSharovipteryxRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/sharovipteryx_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/kuehneosuchus_raw", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_sharovipteryx", ItemSharovipteryxRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemSharovipteryxRaw.block);
-		OreDictionary.registerOre("pnfurnaceAmphibian", ItemSharovipteryxRaw.block);
-		OreDictionary.registerOre("pndietMeat", ItemSharovipteryxRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_kuehneosuchus", ItemKuehneosuchusRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemKuehneosuchusRaw.block);
+		OreDictionary.registerOre("pnfurnaceAmphibian", ItemKuehneosuchusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemKuehneosuchusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_sharovipteryx_raw");
-			setRegistryName("sharovipteryx_raw");
+			setTranslationKey("pf_kuehneosuchus_raw");
+			setRegistryName("kuehneosuchus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

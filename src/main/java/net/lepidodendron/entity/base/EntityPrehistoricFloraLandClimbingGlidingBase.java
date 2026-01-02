@@ -252,6 +252,10 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 			state.getBlockFaceShape(this.world, this.getPosition().down(), EnumFacing.UP) == BlockFaceShape.SOLID;
 	}
 
+	public double descentSpeed() {
+		return -0.035D;
+	}
+
 	@Override
 	public boolean isAIDisabled() {
 		return false;
@@ -399,7 +403,7 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 										this.motionY = 0.045D;
 									}
 									else {
-										this.motionY = -0.035D;
+										this.motionY = this.descentSpeed();
 									}
 								}
 							}

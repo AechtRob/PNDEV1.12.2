@@ -1,12 +1,12 @@
 {
     "pools": [
         {
-            "name": "sharovipteryx",
+            "name": "ozimek",
             "rolls": 1,
             "entries": [
                 {
                     "type": "item",
-                    "name": "lepidodendron:sharovipteryx_raw",
+                    "name": "lepidodendron:ozimek_raw",
                     "weight": 1,
                     "functions": [
                         {

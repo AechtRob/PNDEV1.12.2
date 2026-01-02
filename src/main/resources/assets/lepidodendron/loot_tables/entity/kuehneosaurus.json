@@ -1,12 +1,12 @@
 {
     "pools": [
         {
-            "name": "sharovipteryx",
+            "name": "kuehneosaurus",
             "rolls": 1,
             "entries": [
                 {
                     "type": "item",
-                    "name": "lepidodendron:sharovipteryx_raw",
+                    "name": "lepidodendron:kuehneosaurus_raw",
                     "weight": 1,
                     "functions": [
                         {

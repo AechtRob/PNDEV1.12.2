@@ -1803,7 +1803,8 @@ public class ModelXianglong extends ModelBasePalaeopedia {
         double tickAnim = 0;
         if (!isStatic) {
             tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
-        }        double xx = 0;
+        }
+        double xx = 0;
         double yy = 0;
         double zz = 0;
         this.setRotateAngle(root, root.rotateAngleX + (float) Math.toRadians(0), root.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360))*5), root.rotateAngleZ + (float) Math.toRadians(0));

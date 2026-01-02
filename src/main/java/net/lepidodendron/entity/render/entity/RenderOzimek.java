@@ -1,36 +1,36 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraSharovipteryx;
-import net.lepidodendron.entity.model.entity.ModelSharovipteryx;
+import net.lepidodendron.entity.EntityPrehistoricFloraOzimek;
+import net.lepidodendron.entity.model.entity.ModelOzimek;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderSharovipteryx extends RenderLivingBaseWithBook<EntityPrehistoricFloraSharovipteryx> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sharovipteryx.png");
+public class RenderOzimek extends RenderLivingBaseWithBook<EntityPrehistoricFloraOzimek> {
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ozimek.png");
 
     public static float getScaler() {return 0.15f; }
 
-    public RenderSharovipteryx(RenderManager mgr) {
-        super(mgr, new ModelSharovipteryx(), 0.0f);
+    public RenderOzimek(RenderManager mgr) {
+        super(mgr, new ModelOzimek(), 0.0f);
     }
 
     @Override
-    public ResourceLocation getEntityTexture(EntityPrehistoricFloraSharovipteryx entity) {
-        return RenderSharovipteryx.TEXTURE;
+    public ResourceLocation getEntityTexture(EntityPrehistoricFloraOzimek entity) {
+        return RenderOzimek.TEXTURE;
     }
 
     @Override
-    protected void preRenderCallback(EntityPrehistoricFloraSharovipteryx entity, float f) {
+    protected void preRenderCallback(EntityPrehistoricFloraOzimek entity, float f) {
         float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.3F;
     }
 
     @Override
-    protected void applyRotations(EntityPrehistoricFloraSharovipteryx entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
+    protected void applyRotations(EntityPrehistoricFloraOzimek entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
 
         switch (entityLiving.getClimbFacing()) {
