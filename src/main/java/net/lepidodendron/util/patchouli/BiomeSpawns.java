@@ -55,12 +55,17 @@ public class BiomeSpawns {
             return "";
         }
         String[] mobList = EntityLists.mobString(biome);
-        if (biomeID.equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns")) {
+        if (biomeID.equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater_water")) {
             //Need to combine two biomes together for this one!
             ObjectArrayList<String> spawnListJoiner = new ObjectArrayList<String>(Arrays.asList(mobList));
             biome = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:carboniferous_volcanic_tarns_crater"));
             String[] mobList1 = EntityLists.mobString(biome);
             ObjectArrayList<String> spawnListJoiner1 = new ObjectArrayList<String>(Arrays.asList(mobList1));
+            spawnListJoiner.addAll(spawnListJoiner1);
+            mobList = spawnListJoiner.toArray(mobList);
+            biome = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:carboniferous_volcanic_tarns"));
+            mobList1 = EntityLists.mobString(biome);
+            spawnListJoiner1 = new ObjectArrayList<String>(Arrays.asList(mobList1));
             spawnListJoiner.addAll(spawnListJoiner1);
             mobList = spawnListJoiner.toArray(mobList);
         }
@@ -105,15 +110,7 @@ public class BiomeSpawns {
             mobList = spawnListJoiner.toArray(mobList);
         }
         //Websteroprioin spawns as a block, so this needs an overrride here:
-        if (biomeID.equalsIgnoreCase("lepidodendron:devonian_creek_coastal")
-                || biomeID.equalsIgnoreCase("lepidodendron:devonian_forest")
-                || biomeID.equalsIgnoreCase("lepidodendron:devonian_ocean")
-                || biomeID.equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")
-                || biomeID.equalsIgnoreCase("lepidodendron:devonian_ocean_deep")
-                || biomeID.equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
-                || biomeID.equalsIgnoreCase("lepidodendron:devonian_reef")
-                || biomeID.equalsIgnoreCase("lepidodendron:devonian_reef_transition")
-                || biomeID.equalsIgnoreCase("lepidodendron:devonian_beach"))
+        if (biomeID.equalsIgnoreCase("lepidodendron:devonian_ocean"))
         {
             ObjectArrayList<String> spawnListJoiner = new ObjectArrayList<String>(Arrays.asList(mobList));
             spawnListJoiner.add("lepidodendron:prehistoric_flora_websteroprion");
