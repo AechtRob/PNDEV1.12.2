@@ -593,7 +593,7 @@ public class EntityLists {
                         "lepidodendron:prehistoric_flora_limulid:0:0:0",
                         "lepidodendron:prehistoric_flora_euspira:0:0:0",
                         "lepidodendron:prehistoric_flora_belonostomus_jurassic:0:0:0",
-                        "lepidodendron:prehistoric_flora_belonostomuscretaceous:0:0:0",
+                        "lepidodendron:prehistoric_flora_belonostomus_cretaceous:0:0:0",
                         "lepidodendron:prehistoric_flora_phylloceras:0:0:0",
                         "lepidodendron:prehistoric_flora_mecochirus:0:0:0",
                         "lepidodendron:prehistoric_flora_elasmodectes:0:0:0",
@@ -693,6 +693,10 @@ public class EntityLists {
                         "lepidodendron:prehistoric_flora_mariella:0:0:0",
                         "lepidodendron:prehistoric_flora_bathrotomaria:0:0:0",
                         "lepidodendron:prehistoric_flora_chuhsiungichthys:0:0:0",
+                        "lepidodendron:prehistoric_flora_ducrotayichthys:0:0:0",
+                        "lepidodendron:prehistoric_flora_joinvillichthys:0:0:0",
+                        "lepidodendron:prehistoric_flora_rhinopycnodus:0:0:0",
+                        "lepidodendron:prehistoric_flora_rhynchodercetis:0:0:0",
                         "lepidodendron:prehistoric_flora_scorpionfly{PNType:\"gendered\"}:0:0:0",
                         "lepidodendron:prehistoric_flora_myriapod{PNType:\"juliform\"}@{PNType:\"polydesmid\"}:0:0:0"};
 
