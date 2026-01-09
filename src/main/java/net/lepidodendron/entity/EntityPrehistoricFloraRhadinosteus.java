@@ -68,6 +68,7 @@ public class EntityPrehistoricFloraRhadinosteus extends EntityPrehistoricFloraSw
 	public int getEggType(@Nullable String variantIn) {
 		return 47; //Surface spawn
 	}
+
 	@Override
 	public int getRoarLength() {
 		return 20;

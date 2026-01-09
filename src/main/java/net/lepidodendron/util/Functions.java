@@ -63,6 +63,12 @@ public class Functions {
                 return 140;
             }
         }
+        if (world.provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
+            return 110;
+        }
+        if (world.provider.getDimension() == LepidodendronConfig.dimCambrian) {
+            return 86;
+        }
         return world.getSeaLevel();
     }
 

@@ -127,6 +127,7 @@ public class EntityPrehistoricFloraHelicoprion extends EntityPrehistoricFloraAge
 		return false;
 	}
 
+
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
