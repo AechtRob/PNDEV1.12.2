@@ -407,7 +407,7 @@ public class ModelProtosphyraena extends ModelBasePalaeopedia {
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.chainWave(fishTail, speed, 0.03F, -3, f2, 1);
             this.chainSwing(fishTail, speed, 0.265F, -2, f2, 1);
-            this.swing(body, speed, 0.2F, true, 0, 0, f2, 1);
+            this.swing(body, speed, 0.05F, true, 0, 0, f2, 1);
             this.walk(jaw, (float) (speed * 0.75), 0.05F, true, 0, 0, f2, 1);
             this.walk(pectoralfinleft, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             this.swing(pectoralfinleft, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);

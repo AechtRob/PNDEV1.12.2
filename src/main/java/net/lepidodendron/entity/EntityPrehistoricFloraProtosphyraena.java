@@ -43,9 +43,9 @@ public class EntityPrehistoricFloraProtosphyraena extends EntityPrehistoricFlora
 	public EntityPrehistoricFloraProtosphyraena(World world) {
 		super(world);
 		setSize(0.5F, 0.3F);
-		minWidth = 0.2F;
-		maxWidth = 0.5F;
-		maxHeight = 0.3F;
+		minWidth = 0.5F;
+		maxWidth = 1F;
+		maxHeight = 0.9F;
 		maxHealthAgeable = 10.0D;
 	}
 
@@ -213,7 +213,7 @@ public class EntityPrehistoricFloraProtosphyraena extends EntityPrehistoricFlora
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
+			return super.attackEntityFrom(source, (amount));
 		}
 		return super.attackEntityFrom(source, amount);
 	}

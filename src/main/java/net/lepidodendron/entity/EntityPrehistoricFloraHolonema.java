@@ -7,6 +7,7 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
 import net.lepidodendron.entity.render.entity.RenderAegirosaurus;
 import net.lepidodendron.entity.render.entity.RenderHolonema;
@@ -85,7 +86,9 @@ public class EntityPrehistoricFloraHolonema extends EntityPrehistoricFloraSwimmi
 			if (this.getAir() == -20) {
 				this.setAir(0);
 				this.attackEntityFrom(DamageSource.DROWN, 2.0F);
+
 			}
+
 		} else {
 			this.setAir(300);
 		}
@@ -153,6 +156,9 @@ public class EntityPrehistoricFloraHolonema extends EntityPrehistoricFloraSwimmi
 			this.setIsSwimming(true);
 			this.setSwimTick(this.swimLength());
 		}
+        if (source != DamageSource.DROWN) {
+            return super.attackEntityFrom(source, (amount * 0.5F));
+        }
 		return super.attackEntityFrom(source, amount);
 	}
 
@@ -183,7 +189,10 @@ public class EntityPrehistoricFloraHolonema extends EntityPrehistoricFloraSwimmi
 	@Override
 	public void playLivingSound() {
 	}
-
+    @Override
+    public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
+        return new EntityPrehistoricFloraHolonema(this.world);
+    }
 	@Override
 	public boolean dropsEggs() {
 		return true;

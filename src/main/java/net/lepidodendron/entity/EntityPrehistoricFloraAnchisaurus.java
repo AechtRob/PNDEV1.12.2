@@ -109,9 +109,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
-	public boolean drinksWater() {
-		return true;
-	}
+	public boolean drinksWater() {return true;}
 
 	@Override
 	public int getDrinkCooldown() {

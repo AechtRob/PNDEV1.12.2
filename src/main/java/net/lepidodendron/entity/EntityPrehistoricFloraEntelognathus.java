@@ -7,6 +7,7 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
 import net.lepidodendron.entity.render.entity.RenderAegirosaurus;
 import net.lepidodendron.entity.render.entity.RenderEntelognathus;
@@ -153,6 +154,9 @@ public class EntityPrehistoricFloraEntelognathus extends EntityPrehistoricFloraS
 			this.setIsSwimming(true);
 			this.setSwimTick(this.swimLength());
 		}
+        if (source != DamageSource.DROWN) {
+            return super.attackEntityFrom(source, (amount * 0.5F));
+        }
 		return super.attackEntityFrom(source, amount);
 	}
 
@@ -183,7 +187,10 @@ public class EntityPrehistoricFloraEntelognathus extends EntityPrehistoricFloraS
 	@Override
 	public void playLivingSound() {
 	}
-
+    @Override
+    public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
+        return new EntityPrehistoricFloraEntelognathus(this.world);
+    }
 	@Override
 	public boolean dropsEggs() {
 		return true;

@@ -54,8 +54,8 @@ public class EntityPrehistoricFloraGaiasia extends EntityPrehistoricFloraSwimmin
 		super(world);
 		setSize(0.5F, 0.35F);
 		minWidth = 0.12F;
-		maxWidth = 0.5F;
-		maxHeight = 0.35F;
+		maxWidth = 1.5F;
+		maxHeight = 0.5F;
 		maxHealthAgeable = 13.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
