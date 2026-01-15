@@ -3,11 +3,14 @@
     "normal": [
       {"model": "lepidodendron:orchid_mirror" }
     ],
-    "seeds=false": {
-      "model": "lepidodendron:orchid_mirror"
-    },
-    "seeds=true": {
-      "model": "lepidodendron:orchid_mirror_seeds"
-    }
+    "seeds=false": [
+      {"model": "lepidodendron:orchid_mirror"},
+      {"model": "lepidodendron:orchid_mirror", "y": 90 },
+      {"model": "lepidodendron:orchid_mirror", "y": 180 },
+      {"model": "lepidodendron:orchid_mirror", "y": 270 }
+    ],
+    "seeds=true": [
+      {"model": "lepidodendron:orchid_mirror_seeds"}
+    ]
   }
 }

@@ -5342,6 +5342,10 @@ public class LepidodendronSorter {
     public static final int conospermum = 8275;
     public static final int conospermum_seeds = 8276;
     public static final int orchid_fen = 8277;
+    public static final int calochortus = 8278;
+    public static final int calochortus_seeds = 8279;
+    public static final int eschscholzia = 8280;
+    public static final int eschscholzia_seeds = 8281;
 
     //Rob list ends-----
 

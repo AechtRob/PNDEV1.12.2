@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:eschscholzia01" },
+      {"model": "lepidodendron:eschscholzia01_var" },
+      {"model": "lepidodendron:eschscholzia02" },
+      {"model": "lepidodendron:eschscholzia02_var" }
+    ]
+  }
+}

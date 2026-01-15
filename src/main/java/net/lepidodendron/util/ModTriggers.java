@@ -80,6 +80,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_BELTANELLIFORMIS = new CustomTrigger("pf_book_beltanelliformis");
     public static final CustomTrigger CLICK_ARAUCARIOXYLON = new CustomTrigger("pf_book_araucarioxylon");
     public static final CustomTrigger CLICK_ANEMONE = new CustomTrigger("pf_book_anemone");
+    public static final CustomTrigger CLICK_CALOCHORTUS = new CustomTrigger("pf_book_calochortus");
+    public static final CustomTrigger CLICK_ESCHACHOLZIA = new CustomTrigger("pf_book_eschscholzia");
     public static final CustomTrigger CLICK_IRIS_DWARF = new CustomTrigger("pf_book_iris_dwarf");
     public static final CustomTrigger CLICK_ORCHID_BEE = new CustomTrigger("pf_book_orchid_bee");
     public static final CustomTrigger CLICK_ORCHID_MIRROR = new CustomTrigger("pf_book_orchid_mirror");
@@ -2194,6 +2196,8 @@ public class ModTriggers
             CLICK_BELTANELLIFORMIS,
             CLICK_ARAUCARIOXYLON,
             CLICK_ANEMONE,
+            CLICK_CALOCHORTUS,
+            CLICK_ESCHACHOLZIA,
             CLICK_IRIS_DWARF,
             CLICK_ORCHID_BEE,
             CLICK_ORCHID_FEN,

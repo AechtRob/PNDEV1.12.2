@@ -1,9 +1,9 @@
 {
 	"ambientocclusion": "false",
 	"textures": {
-		"0": "lepidodendron:blocks/bee_orchid_back",
-		"1": "lepidodendron:blocks/bee_orchid",
-		"particle": "lepidodendron:blocks/bee_orchid_back"
+		"0": "lepidodendron:blocks/calochortus08_back",
+		"1": "lepidodendron:blocks/calochortus08",
+		"particle": "lepidodendron:blocks/calochortus08"
 	},
 	"elements": [
 		{
