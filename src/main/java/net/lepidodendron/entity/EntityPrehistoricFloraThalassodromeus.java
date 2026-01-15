@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraThalassodromeus extends EntityPrehistoricFlor
 
 	@Override
 	public int getTalkInterval() {
-		return 90;
+		return 350;
 	}
 
 	@Override
@@ -268,6 +268,11 @@ public class EntityPrehistoricFloraThalassodromeus extends EntityPrehistoricFlor
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(6);
 		//this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(5.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+	}
+
+	@Override
+	public float interimRandomness(){
+		return 0.1F;
 	}
 
 	@Override

@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraTropidosteus extends EntityPrehistoricFloraAg
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.55;
 	}
 
 	public static String getPeriod() {return "Devonian";}
@@ -99,8 +99,13 @@ public class EntityPrehistoricFloraTropidosteus extends EntityPrehistoricFloraAg
 		return false;
 	}
 
-
-
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+		if (source != DamageSource.DROWN) {
+			return super.attackEntityFrom(source, (amount * 0.5F));
+		}
+		return super.attackEntityFrom(source, amount);
+	}
 
 
 	protected void initEntityAI() {
