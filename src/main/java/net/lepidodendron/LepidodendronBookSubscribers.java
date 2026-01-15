@@ -5472,15 +5472,6 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			else if (entityClicked instanceof EntityPrehistoricFloraCenoceras) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_CENOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				deliverStatsEntity(event);
-				event.setCanceled(true);
-				return;
-			}
 			else if (entityClicked instanceof EntityPrehistoricFloraCoccoderma) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_COCCODERMA.trigger((EntityPlayerMP) event.getEntityPlayer());

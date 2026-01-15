@@ -63,7 +63,7 @@ public class EntityPrehistoricFloraWebsteroprion extends EntityPrehistoricFloraE
 			this.navigator = new PathNavigateWaterBottom(this, world);
 		}
 		setSize(0.6F, 0.6F);
-		minWidth = 0.2F;
+		minWidth = 0.6F;
 		maxWidth = 0.6F;
 		maxHeight = 0.6F;
 		maxHealthAgeable = 12D;

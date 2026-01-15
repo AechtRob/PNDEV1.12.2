@@ -2,9 +2,7 @@
   "group": "lepidodendron",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "   ",
-    "345",
-    "   "
+    "345"
   ],
   "key": {
     "3": {

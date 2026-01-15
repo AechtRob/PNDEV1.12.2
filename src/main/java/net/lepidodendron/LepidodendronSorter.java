@@ -6039,6 +6039,20 @@ public class LepidodendronSorter {
     public static final int bananogmius_raw = 5849;
     public static final int thryptodus_raw = 5850;
     public static final int concavotectum_raw = 5851;
+    public static final int secodontosaurus_raw = 5852;
+    public static final int melanedaphodon_raw = 5853;
+    public static final int ianthasaurus_raw = 5854;
+    public static final int lupeosaurus_raw = 5855;
+    public static final int dimetrodon_teutonis_raw = 5856;
+    public static final int gordodon_raw = 5857;
+    public static final int eggs_secodontosaurus = 5858;
+    public static final int eggs_melanedaphodon = 5859;
+    public static final int eggs_ianthasaurus = 5860;
+    public static final int eggs_lupeosaurus = 5861;
+    public static final int eggs_dimetrodon_teutonis = 5862;
+    public static final int eggs_gordodon = 5863;
+    public static final int eggs_thalassodromeus = 5864;
+    public static final int thalassodromeus_raw = 5865;
 
     public static final int bivalve_toucasia = 6000;
     public static final int coeloptychium = 6001;

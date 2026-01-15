@@ -199,14 +199,14 @@ public class EntityPrehistoricFloraProsalirus extends EntityPrehistoricFloraSwim
 		}
 
 		//switch to walking if currently in jump mode
-		if(this.walkCooldown <= 0 && this.jumpCooldown <=0 && !this.isWalking) {
-			this.jumpCooldown = rand.nextInt(800);
+		if(this.walkCooldown <= 0 && this.jumpCooldown <=0 && !this.isWalking && !this.world.isRemote) {
+			this.jumpCooldown = rand.nextInt(1000);
 			this.isWalking = true;
 			this.getNavigator().clearPath();
 		}
 		//switch to jumping if currently in walk mode
-		else if(this.walkCooldown <= 0 && this.jumpCooldown <=0 && this.isWalking) {
-			this.walkCooldown = rand.nextInt(1200);
+		else if(this.walkCooldown <= 0 && this.jumpCooldown <=0 && this.isWalking && !this.world.isRemote) {
+			this.walkCooldown = rand.nextInt(800);
 			this.isWalking = false;
 			this.getNavigator().clearPath();
 		}

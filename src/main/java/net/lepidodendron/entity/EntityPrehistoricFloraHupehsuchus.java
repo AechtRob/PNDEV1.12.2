@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraHupehsuchus extends EntityPrehistoricFloraAge
 	public EntityPrehistoricFloraHupehsuchus(World world) {
 		super(world);
 		setSize(0.2F, 0.2F);
-		minWidth = 0.1F;
+		minWidth = 0.2F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
 		maxHealthAgeable = 6.0D;
@@ -88,7 +88,7 @@ public class EntityPrehistoricFloraHupehsuchus extends EntityPrehistoricFloraAge
 
 	@Override
 	public int getAdultAge() {
-		return -1;
+		return 1;
 	}
 
 	@Override

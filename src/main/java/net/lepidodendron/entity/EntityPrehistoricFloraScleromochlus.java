@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraScleromochlus extends EntityPrehistoricFloraL
 	public EntityPrehistoricFloraScleromochlus(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);
-		minWidth = 0.1F;
+		minWidth = 0.3F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 6.0D;
@@ -184,7 +184,7 @@ public class EntityPrehistoricFloraScleromochlus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getAdultAge() {
-		return -1;
+		return 1;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {

@@ -4,10 +4,13 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -28,7 +31,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFloraLandBase implements ITrappableLand {
+public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -100,7 +103,7 @@ public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFlor
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.322F;
+		float speedBase = 0.25F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -242,4 +245,9 @@ public class EntityPrehistoricFloraRemigiomontanus extends EntityPrehistoricFlor
 		return LepidodendronMod.REMIGIOMONTANUS_LOOT;
 	}
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_REMIGIOMONTANUS;
+	}
 }

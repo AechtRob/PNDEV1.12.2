@@ -21,6 +21,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -33,7 +34,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
@@ -65,17 +65,15 @@ public class EntityPrehistoricFloraHylonomus extends EntityPrehistoricFloraLandB
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 47; //surface spawn
+		return 10; //rotten wood
+	}
+
+	@Override
+	public boolean noMossEggs() {
+		return true;
 	}
 
 	public static String getPeriod() {return "Carboniferous";}
-
-	//public static String getHabitat() {return "Terrestrial Diadectomorph";}
-
-	@Override
-	public boolean hasNest() {
-		return false;
-	}
 
 	@Override
 	public String getTexture() {
@@ -89,7 +87,7 @@ public class EntityPrehistoricFloraHylonomus extends EntityPrehistoricFloraLandB
 
 	@Override
 	public boolean laysEggs() {
-		return false;
+		return true;
 	}
 
 	public float getAISpeedLand() {
@@ -113,13 +111,14 @@ public class EntityPrehistoricFloraHylonomus extends EntityPrehistoricFloraLandB
 
 	@Override
 	public int getAdultAge() {
-		return 72000;
+		return 32000;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
 		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
 	}
+
 	@Override
 	public int getAttackLength() {
 		return 7;
@@ -138,28 +137,21 @@ public class EntityPrehistoricFloraHylonomus extends EntityPrehistoricFloraLandB
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new EntityTemptAI(this, 1, false, false, 0));
-		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
-		tasks.addTask(3, new AttackAI(this, 1.6D, false, this.getAttackLength()));
-		tasks.addTask(4, new PanicAI(this, 1.0));
-        tasks.addTask(5, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
-		tasks.addTask(6, new LandWanderLayInWater(this));
-		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D, 60));
-		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(11, new EntityLookIdleAI(this));
+		tasks.addTask(1, new EntityTemptAI(this, 1, true, true, 0));
+		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, true));
+		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(5, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
+		tasks.addTask(4, new LandWanderNestInBlockAI(this));
+		tasks.addTask(5, new EntityAIWanderAvoidWater(this, 1.0D));
+		tasks.addTask(6, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(8, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		}
-
-	@Override
-	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.PLANTS, DietString.ALGAE);
 	}
 
 	@Override
-	public boolean panics() {
-		return true;
+	public String[] getFoodOreDicts() {
+		return DietString.BUG;
 	}
 	
 	@Override
@@ -224,6 +216,15 @@ public class EntityPrehistoricFloraHylonomus extends EntityPrehistoricFloraLandB
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
+	public boolean testLay(World world, BlockPos pos) {
+		return EggLayingConditions.testLayMossAndWood(this, world, pos);
+	}
+
+	@Override
+	public boolean nestBlockMatch(World world, BlockPos pos) {
+		return (testLay(world, pos.down()) || testLay(world, pos)) ;
+	}
+
 	@Override
 	public boolean attackEntityAsMob(Entity entity) {
 		if (this.getAnimation() == NO_ANIMATION) {
@@ -233,15 +234,6 @@ public class EntityPrehistoricFloraHylonomus extends EntityPrehistoricFloraLandB
 		return false;
 	}
 
-	public void onEntityUpdate()
-	{
-		super.onEntityUpdate();
-
-		//Lay eggs perhaps:
-		EggLayingConditions.layWaterSurfaceEggs(this);
-
-	}
-
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
@@ -249,6 +241,9 @@ public class EntityPrehistoricFloraHylonomus extends EntityPrehistoricFloraLandB
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			return LepidodendronMod.HYLONOMUS_LOOT_YOUNG;
+		}
 		return LepidodendronMod.HYLONOMUS_LOOT;
 	}
 
