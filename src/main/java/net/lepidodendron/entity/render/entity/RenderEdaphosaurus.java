@@ -15,7 +15,7 @@ public class RenderEdaphosaurus extends RenderLivingBaseWithBook<EntityPrehistor
         super(mgr, new ModelEdaphosaurus(), 0.5f);
     }
     public static float getScaler() {
-        return 0.8f;
+        return 0.6f;
     }
 
     @Override
