@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:orchid_bee"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_orchid_bee.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_orchid_bee.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_orchid_bee"
+		}
+	}
+}

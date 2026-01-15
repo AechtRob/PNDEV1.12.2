@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/bee_orchid",
+    "particle": "lepidodendron:blocks/bee_orchid"
+  }
+}

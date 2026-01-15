@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "3": {
+      "item": "lepidodendron:dasypogon_log"
+    },
+    "4": {
+      "item": "lepidodendron:dasypogon_log"
+    },
+    "5": {
+      "item": "lepidodendron:dasypogon_log"
+    },
+    "6": {
+      "item": "lepidodendron:dasypogon_log"
+    },
+    "7": {
+      "item": "lepidodendron:dasypogon_log"
+    },
+    "8": {
+      "item": "lepidodendron:dasypogon_log"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:dasypogon_pallisade",
+    "count": 4
+  }
+}

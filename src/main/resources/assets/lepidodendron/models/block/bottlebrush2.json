@@ -1,0 +1,8 @@
+{
+  "parent":"lepidodendron:block/3x3_6pointedplant",
+  "textures": {
+    "c": "lepidodendron:blocks/bottlebrush_2_c",
+    "w": "lepidodendron:blocks/bottlebrush_2_w",
+    "e": "lepidodendron:blocks/bottlebrush_2_e"
+  }
+}

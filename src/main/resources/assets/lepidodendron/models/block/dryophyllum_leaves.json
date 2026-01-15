@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/dryophyllum_leaves",
+    "particle": "lepidodendron:blocks/dryophyllum_leaves"
+  }
+}

@@ -160,7 +160,7 @@ public class BlockGlassSpongeReef extends ElementsLepidodendronMod.ModElement {
 
 		public BlockCustom() {
 			super(Material.CORAL);
-			setTranslationKey("pf_greef_lass_sponge");
+			setTranslationKey("pf_reef_glass_sponge");
 			setSoundType(SoundType.GLASS);
 			setHardness(1.0F);
 			setResistance(1.5F);

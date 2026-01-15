@@ -134,6 +134,7 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 		public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 		{
 			ItemStack itemstack = player.getHeldItem(hand);
+			IBlockState interactionState = worldIn.getBlockState(pos);
 
 			if (itemstack.hasTagCompound()) {
 				NBTTagCompound compound = itemstack.getTagCompound();
@@ -165,10 +166,12 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 								}
 							}
 							else if (plantBlock instanceof SeedSporeBushBase) {
-								SeedSporeBushBase blockPlant = (SeedSporeBushBase) plantBlock;
-								Item itemPlant = blockPlant.blockItem(); //The item used to place this block
-								if (itemPlant != null) {
-									doPlacer = true;
+								if (((SeedSporeBushBase)plantBlock).canGive(interactionState)) {
+									SeedSporeBushBase blockPlant = (SeedSporeBushBase) plantBlock;
+									Item itemPlant = blockPlant.blockItem(); //The item used to place this block
+									if (itemPlant != null) {
+										doPlacer = true;
+									}
 								}
 							}
 							else if (plantBlock instanceof SeedSporeLeavesBase) {
@@ -278,17 +281,19 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 								}
 							}
 							else if (doPlacer && plantBlock instanceof SeedSporeBushBase) {
-								SeedSporeBushBase blockPlant = (SeedSporeBushBase) plantBlock;
-								Item itemPlant = blockPlant.blockItem(); //The item used to place this block
-								if (itemPlant != null) {
-									EnumActionResult result = itemPlant.onItemUse(player, worldIn, pos, hand, facing, 0.5F, 0F, 0.5F);
-									ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
-									if (!player.isCreative() && willEmpty && result == EnumActionResult.SUCCESS) {
-										itemstack.shrink(1);
-										ItemHandlerHelper.giveItemToPlayer(player, envelope);
-									}
-									if (result == EnumActionResult.SUCCESS) {
-										return EnumActionResult.SUCCESS;
+								if (((SeedSporeBushBase)plantBlock).canGive(interactionState)) {
+									SeedSporeBushBase blockPlant = (SeedSporeBushBase) plantBlock;
+									Item itemPlant = blockPlant.blockItem(); //The item used to place this block
+									if (itemPlant != null) {
+										EnumActionResult result = itemPlant.onItemUse(player, worldIn, pos, hand, facing, 0.5F, 0F, 0.5F);
+										ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
+										if (!player.isCreative() && willEmpty && result == EnumActionResult.SUCCESS) {
+											itemstack.shrink(1);
+											ItemHandlerHelper.giveItemToPlayer(player, envelope);
+										}
+										if (result == EnumActionResult.SUCCESS) {
+											return EnumActionResult.SUCCESS;
+										}
 									}
 								}
 							}
@@ -390,10 +395,12 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 				ItemStack spores = null;
 
 				if (blockTarget instanceof SeedSporeBushBase) {
-					SeedSporeBushBase blockEnvelope = (SeedSporeBushBase) blockTarget;
-					nbtBlock = blockEnvelope.planted().getRegistryName().toString();
-					nbtOffsetY = blockEnvelope.offsetY();
-					collected = true;
+					if (((SeedSporeBushBase)blockTarget).canGive(iblockstate)) {
+						SeedSporeBushBase blockEnvelope = (SeedSporeBushBase) blockTarget;
+						nbtBlock = blockEnvelope.planted().getRegistryName().toString();
+						nbtOffsetY = blockEnvelope.offsetY();
+						collected = true;
+					}
 				}
 				else if (blockTarget instanceof SeedSporeLeavesBase) {
 					SeedSporeLeavesBase blockEnvelope = (SeedSporeLeavesBase) blockTarget;

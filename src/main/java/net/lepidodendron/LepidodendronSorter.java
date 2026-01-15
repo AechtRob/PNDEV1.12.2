@@ -5289,6 +5289,60 @@ public class LepidodendronSorter {
     public static final int crinoid_marsupiocrinus = 8228;
     public static final int crinoid_crotalocrinites = 8229;
     public static final int crinoid_calceolispongia = 8230;
+
+    public static final int dasypogon_shoot = 8231;
+    public static final int dasypogon_shoot_flower = 8232;
+    public static final int dasypogon_shoot_worldgen = 8233;
+    public static final int dasypogon_log = 8234;
+    public static final int dasypogon_pallisade = 8235;
+    public static final int dasypogon_sapling = 8236;
+
+    public static final int dryophyllum_bench = 8237;
+    public static final int dryophyllum_boat_item = 8238;
+    public static final int dryophyllum_bridge = 8239;
+    public static final int dryophyllum_door = 8240;
+    public static final int dryophyllum_door_item = 8241;
+    public static final int dryophyllum_fence = 8242;
+    public static final int dryophyllum_fence_gate = 8243;
+    public static final int dryophyllum_leaves = 8244;
+    public static final int dryophyllum_litterbin = 8245;
+    public static final int dryophyllum_log = 8246;
+    public static final int dryophyllum_planks = 8247;
+    public static final int dryophyllum_planter1 = 8248;
+    public static final int dryophyllum_planter1_peat = 8249;
+    public static final int dryophyllum_planter1_sand = 8250;
+    public static final int dryophyllum_planter2 = 8251;
+    public static final int dryophyllum_planter2_peat = 8252;
+    public static final int dryophyllum_planter2_sand = 8253;
+    public static final int dryophyllum_sapling = 8254;
+    public static final int dryophyllum = 8255;
+    public static final int dryophyllum_slab = 8256;
+    public static final int dryophyllum_stairs = 8257;
+    public static final int dryophyllum_trapdoor = 8258;
+
+    public static final int orchid_bee = 8259;
+    public static final int orchid_mirror = 8260;
+    public static final int orchid_pyramidal = 8261;
+    public static final int hyacinth = 8262;
+    public static final int iris_dwarf = 8263;
+    public static final int isopogon_yellow = 8264;
+    public static final int isopogon_pink = 8265;
+    public static final int isopogon_yellow_flower = 8266;
+    public static final int isopogon_pink_flower = 8267;
+    public static final int isopogon_yellow_seeds = 8268;
+    public static final int isopogon_pink_seeds = 8269;
+    public static final int grevillea = 8270;
+    public static final int grevillea_flower = 8271;
+    public static final int grevillea_seeds = 8272;
+    public static final int mimetes = 8273;
+    public static final int mimetes_top = 8274;
+    public static final int bottlebrush = 8274;
+    public static final int bottlebrush_centre = 8274;
+    public static final int bottlebrush_top = 8274;
+    public static final int conospermum = 8275;
+    public static final int conospermum_seeds = 8276;
+    public static final int orchid_fen = 8277;
+
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;

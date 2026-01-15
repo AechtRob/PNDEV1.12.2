@@ -355,6 +355,8 @@ public class EntityPNBoat extends EntityBoat
                 return ItemArboramosaBoatItem.block;
             case SCHILDERIA:
                 return ItemSchilderiaBoatItem.block;
+            case DRYOPHYLLUM:
+                return ItemDryophyllumBoatItem.block;
 
         }
     }
@@ -529,6 +531,8 @@ public class EntityPNBoat extends EntityBoat
                 return BlockArboramosaPlanks.block;
             case SCHILDERIA:
                 return BlockSchilderiaPlanks.block;
+            case DRYOPHYLLUM:
+                return BlockDryophyllumPlanks.block;
 
         }
     }
@@ -1410,7 +1414,8 @@ public class EntityPNBoat extends EntityBoat
         ALBERTIA(79, "albertia"),
         WOODWORTHIA(80, "woodworthia"),
         ARBORAMOSA(81, "arboramosa"),
-        SCHILDERIA(82, "schilderia")
+        SCHILDERIA(82, "schilderia"),
+        DRYOPHYLLUM(83, "dryophyllum")
         ;
 
         private final String name;

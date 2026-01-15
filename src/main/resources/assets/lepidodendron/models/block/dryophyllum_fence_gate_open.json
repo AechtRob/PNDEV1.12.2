@@ -1,0 +1,8 @@
+{
+    "parent": "block/fence_gate_open",
+    "textures": {
+        "texture": "lepidodendron:blocks/dryophyllum_planks",
+    "particle": "lepidodendron:blocks/dryophyllum_planks"
+    }
+}
+
