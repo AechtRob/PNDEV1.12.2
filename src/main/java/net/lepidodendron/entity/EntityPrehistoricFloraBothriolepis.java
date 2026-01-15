@@ -7,6 +7,7 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
 import net.lepidodendron.entity.render.entity.RenderAegirosaurus;
 import net.lepidodendron.entity.render.entity.RenderBothriolepis;
@@ -186,10 +187,13 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraSw
 	@Override
 	public void playLivingSound() {
 	}
-
+    @Override
+    public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
+        return new EntityPrehistoricFloraBothriolepis(this.world);
+    }
 	@Override
 	public boolean dropsEggs() {
-		return true;
+		return false;
 	}
 	
 	@Override

@@ -1078,5 +1078,18 @@ public class RenderDisplays {
     public static final ModelHanduichthys modelHanduichthys = new ModelHanduichthys();
     public static final ModelStemmatodus modelStemmatodus = new ModelStemmatodus();
     public static final ModelRichmondichthys modelRichmondichthys = new ModelRichmondichthys();
+    public static final ModelProtosphyraena modelProtosphyraena = new ModelProtosphyraena();
+    public static final ModelShuleichthys modelShuleichthys = new ModelShuleichthys();
+    public static final ModelGaiasia modelGaiasia = new ModelGaiasia();
+    public static final ModelMyxineidus modelMyxineidus = new ModelMyxineidus();
+    public static final ModelShaochilong modelShaochilong = new ModelShaochilong();
+    public static final ModelBeipiaosaurus modelBeipiaosaurus = new ModelBeipiaosaurus();
+    public static final ModelArchaeogracilidens modelArchaeogracilidens = new ModelArchaeogracilidens();
+    public static final ModelCaeruleum modelCaeruleum = new ModelCaeruleum();
+    public static final ModelStichopterus modelStichopterus = new ModelStichopterus();
+    public static final ModelMotlayoichthys modelMotlayoichthys = new ModelMotlayoichthys();
+    public static final ModelMuhichthys modelMuhichthys = new ModelMuhichthys();
+    public static final ModelDemandasaurus modelDemandasaurus = new ModelDemandasaurus();
+
 
 }
