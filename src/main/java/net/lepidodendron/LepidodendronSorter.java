@@ -5347,6 +5347,29 @@ public class LepidodendronSorter {
     public static final int eschscholzia = 8280;
     public static final int eschscholzia_seeds = 8281;
 
+    public static final int beauprea_bench = 8282;
+    public static final int beauprea_boat_item = 8283;
+    public static final int beauprea_bridge = 8284;
+    public static final int beauprea_door = 8285;
+    public static final int beauprea_door_item = 8286;
+    public static final int beauprea_fence = 8287;
+    public static final int beauprea_fence_gate = 8288;
+    public static final int beauprea_leaves = 8289;
+    public static final int beauprea_litterbin = 8290;
+    public static final int beauprea_log = 8291;
+    public static final int beauprea_planks = 8292;
+    public static final int beauprea_planter1 = 8293;
+    public static final int beauprea_planter1_peat = 8294;
+    public static final int beauprea_planter1_sand = 8295;
+    public static final int beauprea_planter2 = 8296;
+    public static final int beauprea_planter2_peat = 8297;
+    public static final int beauprea_planter2_sand = 8298;
+    public static final int beauprea_sapling = 8299;
+    public static final int beauprea_seeds = 8300;
+    public static final int beauprea_slab = 8301;
+    public static final int beauprea_stairs = 8302;
+    public static final int beauprea_trapdoor = 8303;
+
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;

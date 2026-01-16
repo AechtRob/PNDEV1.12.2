@@ -2634,6 +2634,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightLaurus = 110;
     public static double multiplierLaurus = 1;
 
+    public static boolean genBeauprea = false;
+    public static String[] genBeaupreaBlacklistBiomes = new String[0];
+    public static String[] genBeaupreaOverrideBiomes = new String[0];
+    public static int[] dimBeauprea = new int[]{0};
+    public static int minheightBeauprea = 1;
+    public static int maxheightBeauprea = 110;
+    public static double multiplierBeauprea = 1;
+
     public static boolean genPagiophyllum = false;
     public static String[] genPagiophyllumBlacklistBiomes = new String[0];
     public static String[] genPagiophyllumOverrideBiomes = new String[0];
@@ -13888,6 +13896,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Dasypogon", "multiplierDasypogon", multiplierDasypogon);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierDasypogon = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Beauprea", "genBeauprea", genBeauprea);
+        prop.setComment("Set to true to generate Beauprea trees naturally [default: false]");
+        genBeauprea = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Beauprea", "genBeaupreaBlacklistBiomes", genBeaupreaBlacklistBiomes);
+        prop.setComment("List of biomes Beauprea trees are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genBeaupreaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Beauprea", "genBeaupreaOverrideBiomes", genBeaupreaOverrideBiomes);
+        prop.setComment("List of biomes Beauprea trees are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genBeaupreaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Beauprea", "dimBeauprea", dimBeauprea);
+        prop.setComment("List of dimension IDs Beauprea trees can generate in [default: 0]");
+        dimBeauprea = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Beauprea", "minheightBeauprea", minheightBeauprea);
+        prop.setComment("Minimum height that Beauprea trees can generate (1 to 250) [default: 1]");
+        minheightBeauprea = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Beauprea", "maxheightBeauprea", maxheightBeauprea);
+        prop.setComment("Maximum height that Beauprea trees can generate (1 to 250, or set to 0 for unlimited) [default: 110]");
+        maxheightBeauprea = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Beauprea", "multiplierBeauprea", multiplierBeauprea);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierBeauprea = prop.getDouble();
         propOrder.add(prop.getName());
 
 
