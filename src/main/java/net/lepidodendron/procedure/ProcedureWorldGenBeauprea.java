@@ -39,13 +39,13 @@ public class ProcedureWorldGenBeauprea extends ElementsLepidodendronMod.ModEleme
     //private static double leafDensity = 1.0D;
 
     //private static double leafDensity = 0.40D;
-    private static double leafDensity = 0.50D;
+    private static double leafDensity = 0.20D;
     private static int leafDistanceLimit = 4;
     private static List<ProcedureWorldGenBeauprea.FoliageCoordinates> foliageCoords;
     //private static double branchSlope = 0.381D;
     private static double branchSlope = 0.781D;
     //private static double scaleWidth = 1.0D;
-    private static double scaleWidth = 0.225D;
+    private static double scaleWidth = 0.825D;
     private static int trunkSize = 1;
 
 	public static void executeProcedure(World WorldIn, BlockPos position, int TreeHeight) {
@@ -72,11 +72,65 @@ public class ProcedureWorldGenBeauprea extends ElementsLepidodendronMod.ModEleme
             generateLeaves();
             generateTrunk();
             generateLeafNodeBases();
+            generateBasalBranches(position);
             //world = null; //Fix vanilla Mem leak, holds latest world
             //return true;
         }
 
 	}
+
+    static void generateBasalBranches(BlockPos pos) {
+        for (int r = 0; r <= 3; r++) {
+            //Are there leaves above to join to?
+            EnumFacing facing = EnumFacing.byHorizontalIndex(r);
+            boolean leaves = false;
+            int i = 0;
+            for (i = 0; i <= 6; i++) {
+                if (world.getBlockState(pos.offset(facing, 2).up(i)).getBlock() == BlockBeaupreaLeaves.block) {
+                    leaves = true;
+                }
+            }
+            if (!leaves) {
+                return;
+            }
+            int nub = rand.nextInt(3) + 1;
+            if (world.isAirBlock(pos.offset(facing).up(nub))) {
+                if (facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH) {
+                    Functions.setBlockStateAndCheckForDoublePlant(world, pos.offset(facing).up(nub), BlockBeaupreaLog.block.getDefaultState().withProperty(BlockBeaupreaLog.BlockCustom.FACING, EnumFacing.EAST), 3);
+                }
+                else {
+                    Functions.setBlockStateAndCheckForDoublePlant(world, pos.offset(facing).up(nub), BlockBeaupreaLog.block.getDefaultState().withProperty(BlockBeaupreaLog.BlockCustom.FACING, EnumFacing.UP), 3);
+                }
+            }
+            if (world.isAirBlock(pos.offset(facing, 2).up(nub + 1))) {
+                Functions.setBlockStateAndCheckForDoublePlant(world, pos.offset(facing, 2).up(nub + 1), BlockBeaupreaLog.block.getDefaultState().withProperty(BlockBeaupreaLog.BlockCustom.FACING, EnumFacing.NORTH), 3);
+                if (!world.isAirBlock(pos.offset(facing, 2).up(nub + 2))) {
+                    continue;
+                }
+            }
+            if (world.isAirBlock(pos.offset(facing, 2).up(nub + 2))) {
+                Functions.setBlockStateAndCheckForDoublePlant(world, pos.offset(facing, 2).up(nub + 2), BlockBeaupreaLog.block.getDefaultState().withProperty(BlockBeaupreaLog.BlockCustom.FACING, EnumFacing.NORTH), 3);
+                if (!world.isAirBlock(pos.offset(facing, 2).up(nub + 3))) {
+                    continue;
+                }
+            }
+            if (world.isAirBlock(pos.offset(facing, 2).up(nub + 3))) {
+                Functions.setBlockStateAndCheckForDoublePlant(world, pos.offset(facing, 2).up(nub + 3), BlockBeaupreaLog.block.getDefaultState().withProperty(BlockBeaupreaLog.BlockCustom.FACING, EnumFacing.NORTH), 3);
+                if (!world.isAirBlock(pos.offset(facing, 2).up(nub + 4))) {
+                    continue;
+                }
+            }
+            if (world.isAirBlock(pos.offset(facing, 2).up(nub + 4))) {
+                Functions.setBlockStateAndCheckForDoublePlant(world, pos.offset(facing, 2).up(nub + 4), BlockBeaupreaLog.block.getDefaultState().withProperty(BlockBeaupreaLog.BlockCustom.FACING, EnumFacing.NORTH), 3);
+                if (!world.isAirBlock(pos.offset(facing, 2).up(nub + 5))) {
+                    continue;
+                }
+            }
+            if (world.isAirBlock(pos.offset(facing, 2).up(nub + 5))) {
+                Functions.setBlockStateAndCheckForDoublePlant(world, pos.offset(facing, 2).up(nub + 5), BlockBeaupreaLog.block.getDefaultState().withProperty(BlockBeaupreaLog.BlockCustom.FACING, EnumFacing.NORTH), 3);
+            }
+        }
+    }
 
 	/**
      * Generates a list of leaf nodes for the tree, to be populated by generateLeaves.
@@ -89,7 +143,7 @@ public class ProcedureWorldGenBeauprea extends ElementsLepidodendronMod.ModEleme
             height = heightLimit - 1;
         }
 		
-        int i = (int)(1.382D + Math.pow(leafDensity * (double)heightLimit / 13.0D, 2.0D));
+        int i = (int)(1.382D + Math.pow(0.20D * (double)heightLimit / 13.0D, 2.0D));
 
         if (i < 1)
         {
@@ -109,7 +163,7 @@ public class ProcedureWorldGenBeauprea extends ElementsLepidodendronMod.ModEleme
             {
                 for (int l = 0; l < i; ++l)
                 {
-                    double d0 = scaleWidth * (double)f * ((double)rand.nextFloat() + 0.328D);
+                    double d0 = 0.825D * (double)f * ((double)rand.nextFloat() + 0.328D);
                     double d1 = (double)(rand.nextFloat() * 2.0F) * Math.PI;
                     double d2 = d0 * Math.sin(d1) + 0.5D;
                     double d3 = d0 * Math.cos(d1) + 0.5D;
