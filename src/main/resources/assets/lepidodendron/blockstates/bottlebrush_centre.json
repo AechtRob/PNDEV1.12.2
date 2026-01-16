@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:bottlebrush2"}
+    ],
+    "flowers=false": {
+      "model": "lepidodendron:bottlebrush2"
+    },
+    "flowers=true": {
+      "model": "lepidodendron:bottlebrush2_flower"
+    }
+  }
+}

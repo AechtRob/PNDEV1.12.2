@@ -602,6 +602,13 @@ public class LepidodendronConfigPlants {
     public static int minheightBlueCycad = 1;
     public static int maxheightBlueCycad = 90;
     public static double multiplierBlueCycad = 1;
+    public static boolean genDasypogon = false;
+    public static String[] genDasypogonBlacklistBiomes = new String[0];
+    public static String[] genDasypogonOverrideBiomes = new String[0];
+    public static int[] dimDasypogon = new int[]{0};
+    public static int minheightDasypogon = 1;
+    public static int maxheightDasypogon = 90;
+    public static double multiplierDasypogon = 1;
     public static boolean genAntarcticycas = false;
     public static String[] genAntarcticycasBlacklistBiomes = new String[0];
     public static String[] genAntarcticycasOverrideBiomes = new String[0];
@@ -13853,6 +13860,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Sawdonia", "spreadSawdonia", spreadSawdonia);
         prop.setComment("Set to true for Sawdonia to spread naturally, and to false to require bonemeal to spread [default: true]");
         spreadSawdonia = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Dasypogon", "genDasypogon", genDasypogon);
+        prop.setComment("Set to true to generate Dasypogon naturally [default: false]");
+        genDasypogon = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dasypogon", "genDasypogonBlacklistBiomes", genDasypogonBlacklistBiomes);
+        prop.setComment("List of biomes Dasypogon are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genDasypogonBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dasypogon", "genDasypogonOverrideBiomes", genDasypogonOverrideBiomes);
+        prop.setComment("List of biomes Dasypogon are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genDasypogonOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Dasypogon", "dimDasypogon", dimDasypogon);
+        prop.setComment("List of dimension IDs Dasypogon can generate in [default: 0]");
+        dimDasypogon = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dasypogon", "minheightDasypogon", minheightDasypogon);
+        prop.setComment("Minimum height that Dasypogon can generate (1 to 250) [default: 1]");
+        minheightDasypogon = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dasypogon", "maxheightDasypogon", maxheightDasypogon);
+        prop.setComment("Maximum height that Dasypogon can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightDasypogon = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dasypogon", "multiplierDasypogon", multiplierDasypogon);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierDasypogon = prop.getDouble();
         propOrder.add(prop.getName());
 
 

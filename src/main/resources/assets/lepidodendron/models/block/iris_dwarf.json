@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/iris_dwarf",
+    "particle": "lepidodendron:blocks/iris_dwarf"
+  }
+}

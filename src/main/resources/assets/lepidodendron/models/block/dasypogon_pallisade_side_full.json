@@ -1,0 +1,6 @@
+{
+    "parent": "lepidodendron:block/pallisade_side_full",
+    "textures": {
+        "pallisade": "lepidodendron:blocks/dasypogon_log"
+    }
+}

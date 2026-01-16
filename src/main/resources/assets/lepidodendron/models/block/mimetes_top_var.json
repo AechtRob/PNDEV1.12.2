@@ -1,0 +1,9 @@
+{
+"parent":"lepidodendron:block/8pointedplanttwoblockhigh",
+"textures":{
+"e":"lepidodendron:blocks/mimetes_c_e_var",
+"w":"lepidodendron:blocks/mimetes_c_w_var",
+  "eu":"lepidodendron:blocks/mimetes_t_e_var",
+  "wu":"lepidodendron:blocks/mimetes_t_w_var"
+}
+}

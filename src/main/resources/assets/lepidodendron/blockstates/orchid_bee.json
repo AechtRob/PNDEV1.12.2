@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:orchid_bee" }
+    ],
+    "seeds=false": [
+      {"model": "lepidodendron:orchid_bee"},
+      {"model": "lepidodendron:orchid_bee", "y": 90 },
+      {"model": "lepidodendron:orchid_bee", "y": 180 },
+      {"model": "lepidodendron:orchid_bee", "y": 270 }
+    ],
+    "seeds=true": [
+      {"model": "lepidodendron:orchid_bee_seeds"}
+    ]
+  }
+}

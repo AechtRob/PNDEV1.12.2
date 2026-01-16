@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/dasypogon_shoot_inventory",
+    "particle": "lepidodendron:items/dasypogon_shoot_inventory"
+  }
+}

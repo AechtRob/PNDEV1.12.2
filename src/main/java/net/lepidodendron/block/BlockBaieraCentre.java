@@ -163,6 +163,7 @@ public class BlockBaieraCentre extends ElementsLepidodendronMod.ModElement {
 		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
 			return 60;
 		}
+
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
 			return new ItemStack(BlockBaiera.block, (int) (1));

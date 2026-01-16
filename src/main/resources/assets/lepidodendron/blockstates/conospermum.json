@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:conospermum"}
+    ],
+    "flowers=false":
+      [{"model": "lepidodendron:conospermum"},
+        {"model": "lepidodendron:conospermum_var"}
+      ],
+    "flowers=true":
+      [{"model": "lepidodendron:conospermum_flower"},
+      {"model": "lepidodendron:conospermum_flower_var"}
+    ]
+  }
+}

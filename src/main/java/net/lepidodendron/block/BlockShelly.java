@@ -178,7 +178,7 @@ public class BlockShelly extends ElementsLepidodendronMod.ModElement {
 
 		public BlockCustom() {
 			super(Material.CORAL);
-			setTranslationKey("pf_shelly_reef");
+			setTranslationKey("pf_reef_shelly");
 			setSoundType(SoundType.STONE);
 			setHardness(2.0F);
 			setResistance(2.0F);

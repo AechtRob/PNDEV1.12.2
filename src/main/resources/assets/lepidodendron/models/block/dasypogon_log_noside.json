@@ -1,0 +1,16 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "texture": "lepidodendron:blocks/dasypogon_log",
+        "inside": "lepidodendron:blocks/dasypogon_log",
+        "particle": "lepidodendron:blocks/dasypogon_log"
+    },
+    "elements": [
+        {   "from": [ 7, 7, 7 ],
+            "to": [ 9, 9, 9 ],
+            "faces": {
+                "north": { "texture": "#inside" }
+            }
+        }
+    ]
+}

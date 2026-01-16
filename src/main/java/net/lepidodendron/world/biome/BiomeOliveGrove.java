@@ -3,9 +3,7 @@ package net.lepidodendron.world.biome;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.block.BlockAnemone;
-import net.lepidodendron.block.BlockButtercup;
-import net.lepidodendron.block.BlockDaisy;
+import net.lepidodendron.block.*;
 import net.lepidodendron.world.gen.*;
 import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.util.math.BlockPos;
@@ -164,6 +162,51 @@ public class BiomeOliveGrove extends ElementsLepidodendronMod.ModElement {
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					PLANTS_GENERATOR.generate(BlockAnemone.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 8; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					PLANTS_GENERATOR.generate(BlockOrchidBee.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 8; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					PLANTS_GENERATOR.generate(BlockOrchidMirror.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 12; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					PLANTS_GENERATOR.generate(BlockOrchidPyramidal.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 45; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					PLANTS_GENERATOR.generate(BlockHyacinth.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 7; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					PLANTS_GENERATOR.generate(BlockIrisDwarf.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
 
 			int i = rand.nextInt(5) - 3;

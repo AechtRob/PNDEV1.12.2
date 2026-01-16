@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/conospermum_var",
+    "particle": "lepidodendron:blocks/conospermum_var"
+  }
+}

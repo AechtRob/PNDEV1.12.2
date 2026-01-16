@@ -73,7 +73,7 @@ public class BlockShellySticky extends ElementsLepidodendronMod.ModElement {
 
 		public BlockCustom() {
 			super(Material.CORAL);
-			setTranslationKey("pf_shelly_sticky");
+			setTranslationKey("pf_reef_shelly_sticky");
 			setSoundType(SoundType.STONE);
 			setHardness(2.0F);
 			setResistance(2.0F);

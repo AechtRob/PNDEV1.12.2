@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:mimetes_inventory"
+    },
+    "var=false": {"model": "lepidodendron:mimetes"},
+    "var=true": {"model": "lepidodendron:mimetes_var"}
+  }
+}

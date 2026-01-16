@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:isopogon"}
+    ],
+    "flowers=false": {
+      "model": "lepidodendron:isopogon"
+    },
+    "flowers=true": {
+      "model": "lepidodendron:isopogon_yellow"
+    }
+  }
+}

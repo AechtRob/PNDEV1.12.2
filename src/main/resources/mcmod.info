@@ -3,7 +3,7 @@
     "modid": "lepidodendron",
     "name": "Prehistoric Nature",
     "description": "Adds prehistoric plants, creatures and dimensions. For config, find the file lepidodendron.cfg in your config folder, edit that, and then restart Minecraft. There is no in-game config option available.",
-    "version": "63.02",
+    "version": "64.0",
     "credits": "Aecht Rob",
     "logoFile": "assets/lepidodendron/textures/packlogo.png",
     "mcversion": "1.12.2",

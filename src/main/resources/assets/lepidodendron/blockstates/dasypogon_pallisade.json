@@ -1,0 +1,37 @@
+{
+    "multipart": [
+        {   "when": { "up": "false", "bottom": "false", "north": "false", "south": "false", "east": "false", "west": "false"},
+            "apply": { "model": "lepidodendron:dasypogon_pallisade_post_small" }
+        },
+        {   "when": { "up": "true" },
+            "apply": { "model": "lepidodendron:dasypogon_pallisade_post" }
+        },
+        {   "when": { "north": "true", "bottom": "false" },
+            "apply": { "model": "lepidodendron:dasypogon_pallisade_side", "uvlock": true }
+        },
+        {   "when": { "east": "true", "bottom": "false" },
+            "apply": { "model": "lepidodendron:dasypogon_pallisade_side", "y": 90, "uvlock": true }
+        },
+        {   "when": { "south": "true", "bottom": "false" },
+            "apply": { "model": "lepidodendron:dasypogon_pallisade_side", "y": 180, "uvlock": true }
+        },
+        {   "when": {"west": "true", "bottom": "false" },
+            "apply": { "model": "lepidodendron:dasypogon_pallisade_side", "y": 270, "uvlock": true }
+        },
+        {   "when": { "north": "true", "bottom": "true" },
+            "apply": { "model": "lepidodendron:dasypogon_pallisade_side_full", "uvlock": true }
+        },
+        {   "when": { "east": "true", "bottom": "true" },
+            "apply": { "model": "lepidodendron:dasypogon_pallisade_side_full", "y": 90, "uvlock": true }
+        },
+        {   "when": { "south": "true", "bottom": "true" },
+            "apply": { "model": "lepidodendron:dasypogon_pallisade_side_full", "y": 180, "uvlock": true }
+        },
+        {   "when": {"west": "true", "bottom": "true" },
+            "apply": { "model": "lepidodendron:dasypogon_pallisade_side_full", "y": 270, "uvlock": true }
+        },
+        {   "when": {"bottom": "true", "up": "false" },
+            "apply": { "model": "lepidodendron:dasypogon_pallisade_post_small_tall" }
+        }
+    ]
+}
