@@ -2,6 +2,7 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
@@ -10,12 +11,14 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderEdaphosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -77,6 +80,11 @@ public class EntityPrehistoricFloraEdaphosaurus extends EntityPrehistoricFloraLa
 		);
 	}
 
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION};
+	}
+
 	public static String getPeriod() {return "[Carboniferous - ] Permian";}
 
 	//public static String getHabitat() {return "Terrestrial Synapsid";}
@@ -89,6 +97,11 @@ public class EntityPrehistoricFloraEdaphosaurus extends EntityPrehistoricFloraLa
 	@Override
 	public int getAttackLength() {
 		return 20;
+	}
+
+	@Override
+	public int getRoarLength() {
+		return 27;
 	}
 
 	@Override
@@ -107,14 +120,75 @@ public class EntityPrehistoricFloraEdaphosaurus extends EntityPrehistoricFloraLa
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.325F;
+		float speedBase = 0.3F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
+		}
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+			return 0.0F;
 		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 1.83F;
 		}
 		return speedBase;
+	}
+
+	@Override
+	public boolean drinksWater() {
+		return false; //grazes, does not drink
+	}
+
+	@Override
+	public int getDrinkLength() {
+		return 160;
+	}
+
+	@Override
+	public int getDrinkCooldown() {
+		return 2000;
+	}
+
+	public boolean isDrinking()
+	{
+		//Is GRAZING!
+		EnumFacing facing = this.getAdjustedHorizontalFacing();
+		boolean test = (this.getPFDrinking() <= 0
+				&& !world.isRemote
+				&& !this.getIsFast()
+				&& !this.getIsMoving()
+				&& this.DRINK_ANIMATION.getDuration() > 0
+				&& this.getAnimation() == NO_ANIMATION
+				&& !this.isReallyInWater()
+				&& (this.world.getBlockState(this.getPosition().offset(facing)).getMaterial() == Material.PLANTS
+				|| this.world.getBlockState(this.getPosition().offset(facing)).getMaterial() == Material.LEAVES)
+				//|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.SAND)
+		);
+		if (test) {
+			//Which one is water?
+			facing = null;
+			if (this.world.getBlockState(this.getPosition().north()).getMaterial() == Material.PLANTS
+					|| this.world.getBlockState(this.getPosition().north()).getMaterial() == Material.LEAVES) {
+				facing = EnumFacing.NORTH;
+			}
+			else if (this.world.getBlockState(this.getPosition().south()).getMaterial() == Material.PLANTS
+					|| this.world.getBlockState(this.getPosition().south()).getMaterial() == Material.LEAVES) {
+				facing = EnumFacing.SOUTH;
+			}
+			else if (this.world.getBlockState(this.getPosition().east()).getMaterial() == Material.PLANTS
+					|| this.world.getBlockState(this.getPosition().east()).getMaterial() == Material.LEAVES) {
+				facing = EnumFacing.EAST;
+			}
+			else if (this.world.getBlockState(this.getPosition().west()).getMaterial() == Material.PLANTS
+					|| this.world.getBlockState(this.getPosition().west()).getMaterial() == Material.LEAVES) {
+				facing = EnumFacing.WEST;
+			}
+			if (facing != null) {
+				this.setDrinkingFrom(this.getPosition().offset(facing));
+				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
+			}
+		}
+		return test;
+
 	}
 
 	@Override

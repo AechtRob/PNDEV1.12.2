@@ -11,8 +11,9 @@ import net.minecraft.util.ResourceLocation;
 public class RenderRemigiomontanus extends RenderLivingBaseWithBook<EntityPrehistoricFloraRemigiomontanus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/remigiomontanus.png");
 
+    public static float getScaler() {return 0.44f;}
     public RenderRemigiomontanus(RenderManager mgr) {
-        super(mgr, new ModelRemigiomontanus(), 0.5f);
+        super(mgr, new ModelRemigiomontanus(), 0.3f);
     }
 
     @Override
@@ -27,9 +28,9 @@ public class RenderRemigiomontanus extends RenderLivingBaseWithBook<EntityPrehis
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraRemigiomontanus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.210F;
+        this.shadowSize = 0;
     }
 
 }

@@ -2496,7 +2496,6 @@ public class ModelDrepanosaurus extends ModelBasePalaeopedia {
 
 
     }
-
     public void animClimb(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isStatic) {
         EntityPrehistoricFloraDrepanosaurus entity = (EntityPrehistoricFloraDrepanosaurus) entitylivingbaseIn;
         int animCycle = 50;

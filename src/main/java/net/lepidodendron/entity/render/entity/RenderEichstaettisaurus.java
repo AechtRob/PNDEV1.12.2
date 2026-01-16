@@ -29,11 +29,11 @@ public class RenderEichstaettisaurus extends RenderLivingBaseWithBook<EntityPreh
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
 
         switch (entityLiving.getClimbFacing()) {
-            case DOWN:
+
             default:
                 break;
 
-            case EAST: case WEST: case NORTH: case SOUTH:
+            case EAST: case WEST: case NORTH: case SOUTH: case DOWN:
                 GlStateManager.translate(0.0F, 0.05F, -0.1F);
                 GlStateManager.rotate(0, 1.0F, 0.0F, 0.0F);
                 break;

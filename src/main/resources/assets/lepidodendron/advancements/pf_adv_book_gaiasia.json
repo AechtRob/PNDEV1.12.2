@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:gaiasia_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_gaiasia.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_gaiasia.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_gaiasia"
+        }
+    }
+}

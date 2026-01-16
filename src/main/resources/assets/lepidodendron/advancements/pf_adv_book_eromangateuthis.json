@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:eromangateuthis_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_eromangateuthis.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_eromangateuthis.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_eromangateuthis"
+        }
+    }
+}

@@ -1214,10 +1214,14 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         return f * f + f1 * f1 + f2 * f2;
     }
 
+    public float interimRandomness(){
+        return 1F;
+    }
+
     public static BlockPos getInterimBlockTarget(EntityPrehistoricFloraLandClimbingFlyingWalkingBase flier) {
         float f = flier.getRNG().nextBoolean() ? 1 : -1;
         float radius = 0.75F * (0.7F * 4) * -3 - flier.rand.nextInt(20);
-        float angle = (0.01745329251F * flier.renderYawOffset) + 3.15F + (flier.rand.nextFloat() * f);
+        float angle = (0.01745329251F * flier.renderYawOffset) + 3.15F + (flier.rand.nextFloat() * f * flier.interimRandomness());
         double dX = radius * MathHelper.sin((float) (Math.PI + angle));
         double dZ = radius * MathHelper.cos(angle);
         BlockPos pos = new BlockPos(flier.posX + dX, 0, flier.posZ + dZ);

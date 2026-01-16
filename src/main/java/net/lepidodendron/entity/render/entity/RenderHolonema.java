@@ -15,7 +15,7 @@ public class RenderHolonema extends RenderLivingBaseWithBook<EntityPrehistoricFl
         super(mgr, new ModelHolonema(), 0.0f);
     }
 
-    public static float getScaler() {return 1.3F * 0.4F; }
+    public static float getScaler() {return 0.55F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraHolonema entity) {
@@ -29,11 +29,15 @@ public class RenderHolonema extends RenderLivingBaseWithBook<EntityPrehistoricFl
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraHolonema entity, float f) {
-        float scale = entity.getAgeScale() * this.getScaler();
+        float scale = this.getScaler();
+        if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.35F;
+        this.shadowSize = entity.width * scale * 0.0F;
     }
 
 }
+
+
+
 
 

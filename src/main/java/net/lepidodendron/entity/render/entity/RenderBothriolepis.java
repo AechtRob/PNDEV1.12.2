@@ -10,13 +10,12 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderBothriolepis extends RenderLivingBaseWithBook<EntityPrehistoricFloraBothriolepis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bothriolepis.png");
-    public static float getScaler() {
-        return 0.4F;
-    }
 
     public RenderBothriolepis(RenderManager mgr) {
-        super(mgr, new ModelBothriolepis(), 0.3f);
+        super(mgr, new ModelBothriolepis(), 0.0f);
     }
+
+    public static float getScaler() {return 0.8F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraBothriolepis entity) {
@@ -30,10 +29,13 @@ public class RenderBothriolepis extends RenderLivingBaseWithBook<EntityPrehistor
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraBothriolepis entity, float f) {
-        float scale = entity.getAgeScale() * this.getScaler();
+        float scale = this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.3f;
+        this.shadowSize = entity.width * scale * 0.0F;
     }
-    
+
 }
+
+
+
