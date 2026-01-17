@@ -96,7 +96,7 @@ public class BlockCtenisShoot extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public NonNullList<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
-			return NonNullList.withSize(1, new ItemStack(BlockDioonShootPlaceable.block, (int) (1)));
+			return NonNullList.withSize(1, new ItemStack(BlockCtenisShootPlaceable.block, (int) (1)));
 		}
 
 		@Override

@@ -1592,6 +1592,13 @@ public class LepidodendronConfigPlants {
     public static int minheightMatonia = 1;
     public static int maxheightMatonia = 100;
     public static double multiplierMatonia = 1;
+    public static boolean genDipteris = false;
+    public static String[] genDipterisBlacklistBiomes = new String[0];
+    public static String[] genDipterisOverrideBiomes = new String[0];
+    public static int[] dimDipteris = new int[]{0};
+    public static int minheightDipteris = 1;
+    public static int maxheightDipteris = 100;
+    public static double multiplierDipteris = 1;
     public static boolean genArchaeopteris = false;
     public static String[] genArchaeopterisBlacklistBiomes = new String[0];
     public static String[] genArchaeopterisOverrideBiomes = new String[0];
@@ -13924,6 +13931,35 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Beauprea", "multiplierBeauprea", multiplierBeauprea);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierBeauprea = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Dipteris", "genDipteris", genDipteris);
+        prop.setComment("Set to true to generate Dipteris naturally [default: false]");
+        genDipteris = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dipteris", "genDipterisBlacklistBiomes", genDipterisBlacklistBiomes);
+        prop.setComment("List of biomes Dipteris are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genDipterisBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dipteris", "genDipterisOverrideBiomes", genDipterisOverrideBiomes);
+        prop.setComment("List of biomes Dipteris are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genDipterisOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dipteris", "dimDipteris", dimDipteris);
+        prop.setComment("List of dimension IDs Dipteris can generate in [default: 0]");
+        dimDipteris = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dipteris", "minheightDipteris", minheightDipteris);
+        prop.setComment("Minimum height that Dipteris can generate (1 to 250) [default: 1]");
+        minheightDipteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dipteris", "maxheightDipteris", maxheightDipteris);
+        prop.setComment("Minimum height that Dipteris can generate (1 to 250, or set to 0 for unlimited) [default: 100]");
+        maxheightDipteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dipteris", "multiplierDipteris", multiplierDipteris);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierDipteris = prop.getDouble();
         propOrder.add(prop.getName());
 
 

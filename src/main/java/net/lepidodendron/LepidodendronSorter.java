@@ -5369,6 +5369,13 @@ public class LepidodendronSorter {
     public static final int beauprea_slab = 8301;
     public static final int beauprea_stairs = 8302;
     public static final int beauprea_trapdoor = 8303;
+    public static final int dipteris = 8304;
+
+    public static final int palaeoaster = 8305;
+
+    public static final int palaeoclusia = 8306;
+    public static final int palaeoclusia_flower = 8307;
+    public static final int palaeoclusia_seeds = 8308;
 
     //Rob list ends-----
 
