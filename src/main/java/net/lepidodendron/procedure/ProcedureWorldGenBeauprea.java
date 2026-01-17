@@ -102,31 +102,31 @@ public class ProcedureWorldGenBeauprea extends ElementsLepidodendronMod.ModEleme
                     Functions.setBlockStateAndCheckForDoublePlant(world, pos.offset(facing).up(nub), BlockBeaupreaLog.block.getDefaultState().withProperty(BlockBeaupreaLog.BlockCustom.FACING, EnumFacing.UP), 3);
                 }
             }
-            if (world.isAirBlock(pos.offset(facing, 2).up(nub + 1))) {
+            if (world.isAirBlock(pos.offset(facing, 2).up(nub + 1)) && world.getBlockState(pos.offset(facing, 2).up(nub)).getBlock() != BlockBeaupreaLeaves.block) {
                 Functions.setBlockStateAndCheckForDoublePlant(world, pos.offset(facing, 2).up(nub + 1), BlockBeaupreaLog.block.getDefaultState().withProperty(BlockBeaupreaLog.BlockCustom.FACING, EnumFacing.NORTH), 3);
                 if (!world.isAirBlock(pos.offset(facing, 2).up(nub + 2))) {
                     continue;
                 }
             }
-            if (world.isAirBlock(pos.offset(facing, 2).up(nub + 2))) {
+            if (world.isAirBlock(pos.offset(facing, 2).up(nub + 2)) && world.getBlockState(pos.offset(facing, 2).up(nub + 1)).getBlock() != BlockBeaupreaLeaves.block) {
                 Functions.setBlockStateAndCheckForDoublePlant(world, pos.offset(facing, 2).up(nub + 2), BlockBeaupreaLog.block.getDefaultState().withProperty(BlockBeaupreaLog.BlockCustom.FACING, EnumFacing.NORTH), 3);
                 if (!world.isAirBlock(pos.offset(facing, 2).up(nub + 3))) {
                     continue;
                 }
             }
-            if (world.isAirBlock(pos.offset(facing, 2).up(nub + 3))) {
+            if (world.isAirBlock(pos.offset(facing, 2).up(nub + 3)) && world.getBlockState(pos.offset(facing, 2).up(nub + 2)).getBlock() != BlockBeaupreaLeaves.block) {
                 Functions.setBlockStateAndCheckForDoublePlant(world, pos.offset(facing, 2).up(nub + 3), BlockBeaupreaLog.block.getDefaultState().withProperty(BlockBeaupreaLog.BlockCustom.FACING, EnumFacing.NORTH), 3);
                 if (!world.isAirBlock(pos.offset(facing, 2).up(nub + 4))) {
                     continue;
                 }
             }
-            if (world.isAirBlock(pos.offset(facing, 2).up(nub + 4))) {
+            if (world.isAirBlock(pos.offset(facing, 2).up(nub + 4)) && world.getBlockState(pos.offset(facing, 2).up(nub + 3)).getBlock() != BlockBeaupreaLeaves.block) {
                 Functions.setBlockStateAndCheckForDoublePlant(world, pos.offset(facing, 2).up(nub + 4), BlockBeaupreaLog.block.getDefaultState().withProperty(BlockBeaupreaLog.BlockCustom.FACING, EnumFacing.NORTH), 3);
                 if (!world.isAirBlock(pos.offset(facing, 2).up(nub + 5))) {
                     continue;
                 }
             }
-            if (world.isAirBlock(pos.offset(facing, 2).up(nub + 5))) {
+            if (world.isAirBlock(pos.offset(facing, 2).up(nub + 5)) && world.getBlockState(pos.offset(facing, 2).up(nub + 4)).getBlock() != BlockBeaupreaLeaves.block) {
                 Functions.setBlockStateAndCheckForDoublePlant(world, pos.offset(facing, 2).up(nub + 5), BlockBeaupreaLog.block.getDefaultState().withProperty(BlockBeaupreaLog.BlockCustom.FACING, EnumFacing.NORTH), 3);
             }
         }
