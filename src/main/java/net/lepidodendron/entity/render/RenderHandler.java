@@ -8981,6 +8981,24 @@ public class RenderHandler {
                 return new RenderTaeniaster(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTethybatis.class, new IRenderFactory<EntityPrehistoricFloraTethybatis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTethybatis> createRenderFor(RenderManager manager) {
+                return new RenderTethybatis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTorukjara.class, new IRenderFactory<EntityPrehistoricFloraTorukjara>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTorukjara> createRenderFor(RenderManager manager) {
+                return new RenderTorukjara(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraIstiodactylus.class, new IRenderFactory<EntityPrehistoricFloraIstiodactylus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraIstiodactylus> createRenderFor(RenderManager manager) {
+                return new RenderIstiodactylus(manager);
+            }
+        });
 
 
 

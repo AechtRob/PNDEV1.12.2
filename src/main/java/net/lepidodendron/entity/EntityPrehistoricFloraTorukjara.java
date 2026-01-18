@@ -8,15 +8,12 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
-import net.lepidodendron.entity.render.entity.RenderAnhanguera;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IGuano;
 import net.lepidodendron.entity.util.IScreamerFlier;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.state.BlockFaceShape;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -28,38 +25,35 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraThalassodromeus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IGuano, IScreamerFlier, ITrappableLand {
+public class EntityPrehistoricFloraTorukjara extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IGuano, IScreamerFlier, ITrappableLand {
 
 	private boolean screaming;
 	public int screamAlarmCooldown;
-	public int standCooldown;
 
-	public EntityPrehistoricFloraThalassodromeus(World world) {
+	public EntityPrehistoricFloraTorukjara(World world) {
 		super(world);
-		setSize(0.9F, 1.9F);
+		setSize(0.85F, 0.5F);
 		minWidth = 0.10F;
-		maxWidth = 0.9F;
-		maxHeight = 1.9F;
-		maxHealthAgeable = 38.0;
+		maxWidth = 0.85F;
+		maxHeight = 0.5F;
+		maxHealthAgeable = 10.0D;
 		setNoAI(!true);
 		enablePersistence();
 	}
 
 	@Override
 	public int getTalkInterval() {
-		return 350;
+		return 90;
 	}
 
 	@Override
 	public int getEatLength() {
-		return 20;
+		return 35;
 	}
 
 	@Override
@@ -73,25 +67,14 @@ public class EntityPrehistoricFloraThalassodromeus extends EntityPrehistoricFlor
 		return true;
 	}
 
-	//Walking for very long as opposed to flight
-	@Override
-	public int sitTickCtMax() {
-		return 800 + rand.nextInt(5000);
-	}
-	//lower number =  less flight
-	@Override
-	public int sitCooldownSetter() {
-		return 200 + rand.nextInt(800);
-	}
-
 	@Override
 	public int flyTransitionLength() {
-		return 15;
+		return 5;
 	}
 
 	@Override
 	public int unflyTransitionLength() {
-		return 40;
+		return 5;
 	}
 
 	@Override
@@ -115,8 +98,8 @@ public class EntityPrehistoricFloraThalassodromeus extends EntityPrehistoricFlor
 		if (e instanceof EntityLivingBase && this.hasAlarm() && !this.world.isRemote) {
 			EntityLivingBase ee = (EntityLivingBase) e;
 			this.setAlarmTarget(ee);
-			List<EntityPrehistoricFloraThalassodromeus> thalassodromeus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraThalassodromeus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-			for (EntityPrehistoricFloraThalassodromeus currentTapejara : thalassodromeus) {
+			List<EntityPrehistoricFloraTorukjara> tapejara = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraTorukjara.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraTorukjara currentTapejara : tapejara) {
 				currentTapejara.setAnimation(NO_ANIMATION);
 				currentTapejara.setAlarmTarget(ee);
 				currentTapejara.setRevengeTarget(ee);
@@ -125,11 +108,6 @@ public class EntityPrehistoricFloraThalassodromeus extends EntityPrehistoricFlor
 			}
 		}
 		return super.attackEntityFrom(ds, i);
-	}
-
-	@Override
-	public boolean isAnimationDirectionLocked(Animation animation) {
-		return animation == DRINK_ANIMATION || animation == GRAZE_ANIMATION;
 	}
 
 	public void setScreaming(boolean screaming) {
@@ -148,15 +126,15 @@ public class EntityPrehistoricFloraThalassodromeus extends EntityPrehistoricFlor
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_THALASSODROMEUS;
+		return ModTriggers.CLICK_TORUKJARA;
 	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.THALASSODROMEUS_LOOT_YOUNG;
+			return LepidodendronMod.TORUKJARA_LOOT_YOUNG;
 		}
-		return LepidodendronMod.THALASSODROMEUS_LOOT;
+		return LepidodendronMod.TORUKJARA_LOOT;
 	}
 
 	@Override
@@ -171,14 +149,6 @@ public class EntityPrehistoricFloraThalassodromeus extends EntityPrehistoricFlor
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 8 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
-
-		if (this.standCooldown > 0) {
-			this.standCooldown -= rand.nextInt(3) + 1;
-		}
-		if (this.standCooldown < 0) {
-			this.standCooldown = 0;
-		}
-
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
@@ -239,20 +209,17 @@ public class EntityPrehistoricFloraThalassodromeus extends EntityPrehistoricFlor
 		if (this.getAttachmentPos() != null) {
 			if (this.getAttachmentFacing() == EnumFacing.UP) {
 				//Walking:
-//				if(this.getAnimation() == ROAR_ANIMATION) {
-//					return 0F;
-//				}
 				if (this.getIsFast()) {
 					return 0.35f;
 				}
-				return 0.27F;
+				return 0.24F;
 			}
 		}
 		//Otherwise we are flying:
 		if (this.getIsFast()) {
-			return 0.5f;
+			return 0.15f;
 		}
-		return 0.9f;
+		return 0.2f;
 	}
 
 	@Override
@@ -271,23 +238,18 @@ public class EntityPrehistoricFloraThalassodromeus extends EntityPrehistoricFlor
 	}
 
 	@Override
-	public float interimRandomness(){
-		return 0.1F;
-	}
-
-	@Override
 	public String getTexture() {
 		return this.getTexture();
 	}
 
 	@Override
 	public int getRoarLength() {
-		return 117;
+		return 40;
 	}
 
 	@Override
 	public int getAttackLength() {
-		return 15;
+		return 8;
 	}
 
 	@Override
@@ -295,7 +257,7 @@ public class EntityPrehistoricFloraThalassodromeus extends EntityPrehistoricFlor
 		if (this.getAnimation() == NO_ANIMATION && ((this.getAttachmentPos() != null && this.checkFlyConditions())
 				|| this.getAttachmentPos() == null)) {
 			if (!this.world.isRemote) {
-//				this.setAnimation(ROAR_ANIMATION);
+				this.setAnimation(ROAR_ANIMATION);
 				SoundEvent soundevent = this.getAmbientSound();
 				if (soundevent != null)
 				{
@@ -307,22 +269,22 @@ public class EntityPrehistoricFloraThalassodromeus extends EntityPrehistoricFlor
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:thalassodromeus_idle"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:caiuajara_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:thalassodromeus_hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:caiuajara_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:thalassodromeus_death"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:caiuajara_death"));
 	}
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:thalassodromeus_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:caiuajara_alarm"));
 	}
 
 	public void playAlarmSound()
@@ -339,7 +301,7 @@ public class EntityPrehistoricFloraThalassodromeus extends EntityPrehistoricFlor
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.MEAT);
+		return ArrayUtils.addAll(DietString.FRUIT);
 	}
 
 	protected void initEntityAI() {
@@ -347,11 +309,12 @@ public class EntityPrehistoricFloraThalassodromeus extends EntityPrehistoricFlor
 		tasks.addTask(1, new EntityAISwimming(this));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new PanicScreamAI(this, 1.5F));
-		tasks.addTask(4, new LandWanderNestInBlockAI(this));
-		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 20));
-		tasks.addTask(6, new AgeableClimbingFlyingWalkingFlyHigh(this, false));
-		tasks.addTask(7, new LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI(this, false, false));
-//		tasks.addTask(8, new EntityLookIdleAI(this));
+        tasks.addTask(4, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
+		tasks.addTask(5, new LandWanderNestInBlockAI(this));
+		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 20));
+		tasks.addTask(7, new AgeableClimbingFlyingWalkingFlyHigh(this, false));
+		tasks.addTask(8, new LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI(this, false, false));
+		tasks.addTask(9, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
 	}
@@ -373,13 +336,12 @@ public class EntityPrehistoricFloraThalassodromeus extends EntityPrehistoricFlor
 		if (this.getScreaming() && screamAlarmCooldown <= 0) {
 			this.playAlarmSound();
 		}
-
 		super.onEntityUpdate();
 	}
 
 //	@Override
 //	public String getEntityId(Entity entity) {
-//		return "lepidodendron:prehistoric_flora_thalassodromeus";
+//		return "lepidodendron:prehistoric_flora_tapejara";
 //	}
 
 	@Override
@@ -389,45 +351,6 @@ public class EntityPrehistoricFloraThalassodromeus extends EntityPrehistoricFlor
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall(@Nullable String variant) {
-		return -0.05;
-	}
-	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 1.85;
-	}
-	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.04;
-	}
-	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1.55;
-	}
-	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.;
-	}
-	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.03;
-	}
-	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
-	}
 	
 
 
