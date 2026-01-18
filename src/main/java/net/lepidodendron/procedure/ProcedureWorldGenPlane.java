@@ -43,7 +43,7 @@ public class ProcedureWorldGenPlane extends ElementsLepidodendronMod.ModElement 
     //private static double branchSlope = 0.381D;
     private static double branchSlope = 0.581D;
     //private static double scaleWidth = 1.0D;
-    private static double scaleWidth = 0.875D;
+    private static double scaleWidth = 0.775D;
     private static int trunkSize = 1;
 
 	public static void executeProcedure(World WorldIn, BlockPos position, int TreeHeight) {
