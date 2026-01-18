@@ -359,6 +359,8 @@ public class EntityPNBoat extends EntityBoat
                 return ItemDryophyllumBoatItem.block;
             case BEAUPREA:
                 return ItemBeaupreaBoatItem.block;
+            case POPULUS:
+                return ItemPopulusBoatItem.block;
 
         }
     }
@@ -537,6 +539,8 @@ public class EntityPNBoat extends EntityBoat
                 return BlockDryophyllumPlanks.block;
             case BEAUPREA:
                 return BlockBeaupreaPlanks.block;
+            case POPULUS:
+                return BlockPopulusPlanks.block;
 
         }
     }
@@ -1420,7 +1424,8 @@ public class EntityPNBoat extends EntityBoat
         ARBORAMOSA(81, "arboramosa"),
         SCHILDERIA(82, "schilderia"),
         DRYOPHYLLUM(83, "dryophyllum"),
-        BEAUPREA(84, "beauprea")
+        BEAUPREA(84, "beauprea"),
+        POPULUS(85, "populus")
         ;
 
         private final String name;

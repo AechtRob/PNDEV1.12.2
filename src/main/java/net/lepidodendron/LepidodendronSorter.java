@@ -5377,6 +5377,37 @@ public class LepidodendronSorter {
     public static final int palaeoclusia_flower = 8307;
     public static final int palaeoclusia_seeds = 8308;
 
+    public static final int populus_bench = 8309;
+    public static final int populus_boat_item = 8310;
+    public static final int populus_bridge = 8311;
+    public static final int populus_door = 8312;
+    public static final int populus_door_item = 8313;
+    public static final int populus_fence = 8314;
+    public static final int populus_fence_gate = 8315;
+    public static final int populus_leaves = 8316;
+    public static final int populus_litterbin = 8317;
+    public static final int populus_log = 8318;
+    public static final int populus_planks = 8319;
+    public static final int populus_planter1 = 8320;
+    public static final int populus_planter1_peat = 8321;
+    public static final int populus_planter1_sand = 8322;
+    public static final int populus_planter2 = 8323;
+    public static final int populus_planter2_peat = 8324;
+    public static final int populus_planter2_sand = 8325;
+    public static final int populus_sapling = 8326;
+    public static final int populus_seeds = 8327;
+    public static final int populus_slab = 8328;
+    public static final int populus_stairs = 8329;
+    public static final int populus_trapdoor = 8330;
+
+    public static final int credneria_sapling = 8331;
+    public static final int credneria_seeds = 8332;
+    public static final int credneria_fruit = 8333;
+    public static final int credneria_leaves = 8334;
+
+    public static final int populus_fruit = 8335;
+
+
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;

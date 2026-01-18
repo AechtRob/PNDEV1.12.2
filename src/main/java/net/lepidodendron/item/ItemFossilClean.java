@@ -2027,6 +2027,8 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_placerias_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_placodus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_plane_sapling_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_credneria_sapling_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_populus_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_plateosaurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_platycaraspis_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_platyhystrix_clean", "inventory"),

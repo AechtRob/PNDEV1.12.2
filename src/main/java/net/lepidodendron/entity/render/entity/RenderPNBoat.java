@@ -98,6 +98,7 @@ public class RenderPNBoat extends RenderBoat {
 
     private static final ResourceLocation TEXTURE_DRYOPHYLLUM = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_dryophyllum.png");
     private static final ResourceLocation TEXTURE_BEAUPREA = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_beauprea.png");
+    private static final ResourceLocation TEXTURE_POPULUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_populus.png");
 
 
     public RenderPNBoat(RenderManager renderManagerIn) {
@@ -279,6 +280,8 @@ public class RenderPNBoat extends RenderBoat {
                 return TEXTURE_DRYOPHYLLUM;
             case BEAUPREA:
                 return TEXTURE_BEAUPREA;
+            case POPULUS:
+                return TEXTURE_POPULUS;
         }
     }
 }

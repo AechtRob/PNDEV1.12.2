@@ -7,7 +7,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.procedure.ProcedureWorldGenPlane;
+import net.lepidodendron.procedure.ProcedureWorldGenPopulus;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
@@ -48,32 +48,32 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockPlaneSapling extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:plane_sapling")
+public class BlockPopulusSapling extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:populus_sapling")
 	public static final Block block = null;
-	public BlockPlaneSapling(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.plane_sapling);
+	public BlockPopulusSapling(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.populus_sapling);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("plane_sapling"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("populus_sapling"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:plane_sapling", "inventory"));
+				new ModelResourceLocation("lepidodendron:populus_sapling", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:plane_sapling", BlockPlaneSapling.block);
-		OreDictionary.registerOre("treeSapling", BlockPlaneSapling.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockPlaneSapling.block);
-		OreDictionary.registerOre("plant", BlockPlaneSapling.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:populus_sapling", BlockPopulusSapling.block);
+		OreDictionary.registerOre("treeSapling", BlockPopulusSapling.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockPopulusSapling.block);
+		OreDictionary.registerOre("plant", BlockPopulusSapling.block);
 	}
 
 
@@ -87,7 +87,7 @@ public class BlockPlaneSapling extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0.2F);
         	setResistance(1F);
-			setTranslationKey("pf_plane_sapling");
+			setTranslationKey("pf_populus_sapling");
 			setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
 		}
 
@@ -99,7 +99,7 @@ public class BlockPlaneSapling extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_PLANE;
+			return ModTriggers.CLICK_POPULUS;
 		}
 
 		@Override
@@ -150,9 +150,12 @@ public class BlockPlaneSapling extends ElementsLepidodendronMod.ModElement {
 	        }
 	        else
 	        {
-				int TreeHeight = 16 + rand.nextInt(18);
-				ProcedureWorldGenPlane.executeProcedure(world, pos, TreeHeight);
-
+	           	int TreeHeight = 20 + rand.nextInt(18);
+				if (TreeHeight > 30 && Math.random() > 0.5) {
+					TreeHeight = 10 + rand.nextInt(18);
+				}
+				ProcedureWorldGenPopulus.executeProcedure(world, pos, TreeHeight);
+				//}
 	        }
 	    }
 	    
@@ -204,7 +207,7 @@ public class BlockPlaneSapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering tree");
-				tooltip.add("Periods: Paleogene - Neogene - Pleistocene [ - present]");
+				tooltip.add("Periods: Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]");
 				tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

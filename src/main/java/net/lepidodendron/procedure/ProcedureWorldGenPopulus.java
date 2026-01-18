@@ -2,8 +2,8 @@ package net.lepidodendron.procedure;
 
 import com.google.common.collect.Lists;
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.block.BlockPlaneLeaves;
-import net.lepidodendron.block.BlockPlaneLog;
+import net.lepidodendron.block.BlockPopulusLeaves;
+import net.lepidodendron.block.BlockPopulusLog;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -21,8 +21,8 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ProcedureWorldGenPlane extends ElementsLepidodendronMod.ModElement {
-	public ProcedureWorldGenPlane(ElementsLepidodendronMod instance) {
+public class ProcedureWorldGenPopulus extends ElementsLepidodendronMod.ModElement {
+	public ProcedureWorldGenPopulus(ElementsLepidodendronMod instance) {
 		super(instance, 42);
 	}
 
@@ -33,17 +33,17 @@ public class ProcedureWorldGenPlane extends ElementsLepidodendronMod.ModElement 
     private static BlockPos basePos = BlockPos.ORIGIN;
     private static int height;
     private static int heightLimit;
-   	private static int heightLimitLimit = 14;
+   	private static int heightLimitLimit = 18;
     //private static double heightAttenuation = 0.618D;
     private static double heightAttenuation = 0.818D;
     //private static double leafDensity = 1.0D;
-    private static double leafDensity = 0.480D;
+    private static double leafDensity = 0.40D;
     private static int leafDistanceLimit = 4;
-    private static List<ProcedureWorldGenPlane.FoliageCoordinates> foliageCoords;
+    private static List<ProcedureWorldGenPopulus.FoliageCoordinates> foliageCoords;
     //private static double branchSlope = 0.381D;
-    private static double branchSlope = 0.581D;
+    private static double branchSlope = 0.781D;
     //private static double scaleWidth = 1.0D;
-    private static double scaleWidth = 0.875D;
+    private static double scaleWidth = 0.275D;
     private static int trunkSize = 1;
 
 	public static void executeProcedure(World WorldIn, BlockPos position, int TreeHeight) {
@@ -96,8 +96,8 @@ public class ProcedureWorldGenPlane extends ElementsLepidodendronMod.ModElement 
 
         int j = basePos.getY() + height;
         int k = heightLimit - leafDistanceLimit;
-        foliageCoords = Lists.<ProcedureWorldGenPlane.FoliageCoordinates>newArrayList();
-        foliageCoords.add(new ProcedureWorldGenPlane.FoliageCoordinates(basePos.up(k), j));
+        foliageCoords = Lists.<ProcedureWorldGenPopulus.FoliageCoordinates>newArrayList();
+        foliageCoords.add(new ProcedureWorldGenPopulus.FoliageCoordinates(basePos.up(k), j));
 
         for (; k >= 0; --k)
         {
@@ -124,7 +124,7 @@ public class ProcedureWorldGenPlane extends ElementsLepidodendronMod.ModElement 
 
                         if (checkBlockLine(blockpos2, blockpos) == -1)
                         {
-                            foliageCoords.add(new ProcedureWorldGenPlane.FoliageCoordinates(blockpos, blockpos2.getY()));
+                            foliageCoords.add(new ProcedureWorldGenPopulus.FoliageCoordinates(blockpos, blockpos2.getY()));
                         }
                     }
                 }
@@ -233,9 +233,9 @@ public class ProcedureWorldGenPlane extends ElementsLepidodendronMod.ModElement 
      */
     static void generateLeaves()
     {
-        for (ProcedureWorldGenPlane.FoliageCoordinates procedureworldgenplane$foliagecoordinates : foliageCoords)
+        for (ProcedureWorldGenPopulus.FoliageCoordinates procedureworldgenpopulus$foliagecoordinates : foliageCoords)
         {
-            generateLeafNode(procedureworldgenplane$foliagecoordinates);
+            generateLeafNode(procedureworldgenpopulus$foliagecoordinates);
         }
     }
     
@@ -246,8 +246,8 @@ public class ProcedureWorldGenPlane extends ElementsLepidodendronMod.ModElement 
     {
         for (int i = 0; i < leafDistanceLimit; ++i)
         {
-            //crosSection(pos.up(i), leafSize(i), BlockPlaneLeaves.block.getDefaultState().withProperty(CHECK_DECAY, Boolean.valueOf(false)));
-            crosSection(pos.up(i), leafSize(i), BlockPlaneLeaves.block.getDefaultState().withProperty(CHECK_DECAY, Boolean.valueOf(false)));
+            //crosSection(pos.up(i), leafSize(i), BlockPopulusLeaves.block.getDefaultState().withProperty(CHECK_DECAY, Boolean.valueOf(false)));
+            crosSection(pos.up(i), leafSize(i), BlockPopulusLeaves.block.getDefaultState().withProperty(CHECK_DECAY, Boolean.valueOf(false)));
         }
     }
 
@@ -295,7 +295,7 @@ public class ProcedureWorldGenPlane extends ElementsLepidodendronMod.ModElement 
     {
         BlockPos blockpos = basePos;
         BlockPos blockpos1 = basePos.up(height);
-        Block block = BlockPlaneLog.block;
+        Block block = BlockPopulusLog.block;
         limb(blockpos, blockpos1, block);
 
         if (trunkSize == 2)
@@ -319,7 +319,7 @@ public class ProcedureWorldGenPlane extends ElementsLepidodendronMod.ModElement 
             BlockPos blockpos1 = p_175937_1_.add((double)(0.5F + (float)j * f), (double)(0.5F + (float)j * f1), (double)(0.5F + (float)j * f2));
             EnumFacing blocklog$enumaxis = getLogAxis(p_175937_1_, blockpos1);
             
-            Functions.setBlockStateAndCheckForDoublePlant(world,blockpos1, BlockPlaneLog.block.getDefaultState().withProperty(FACING,blocklog$enumaxis), 3);
+            Functions.setBlockStateAndCheckForDoublePlant(world,blockpos1, BlockPopulusLog.block.getDefaultState().withProperty(FACING,blocklog$enumaxis), 3);
 			//System.err.println("limb set "  + blockpos1.getX() + " " + blockpos1.getY() + " " + blockpos1.getZ());
         }
     }
@@ -351,17 +351,17 @@ public class ProcedureWorldGenPlane extends ElementsLepidodendronMod.ModElement 
      */
     static void generateLeafNodeBases()
     {
-        for (ProcedureWorldGenPlane.FoliageCoordinates procedureworldgenplane$foliagecoordinates : foliageCoords)
+        for (ProcedureWorldGenPopulus.FoliageCoordinates procedureworldgenpopulus$foliagecoordinates : foliageCoords)
         {
-            int i = procedureworldgenplane$foliagecoordinates.getBranchBase();
+            int i = procedureworldgenpopulus$foliagecoordinates.getBranchBase();
             BlockPos blockpos = new BlockPos(basePos.getX(), i, basePos.getZ());
 
 			//System.err.println("Branch height? " + i);
 
-            if (!blockpos.equals(procedureworldgenplane$foliagecoordinates) && leafNodeNeedsBase(i - basePos.getY()))
+            if (!blockpos.equals(procedureworldgenpopulus$foliagecoordinates) && leafNodeNeedsBase(i - basePos.getY()))
             {
             	//System.err.println("limb called " + blockpos.getX() + " " + blockpos.getY() + " " + blockpos.getZ());
-                limb(blockpos, procedureworldgenplane$foliagecoordinates, BlockPlaneLog.block);
+                limb(blockpos, procedureworldgenpopulus$foliagecoordinates, BlockPopulusLog.block);
             }
         }
     } 

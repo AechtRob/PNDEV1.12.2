@@ -493,6 +493,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_RETIOPHYLLIA = new CustomTrigger("pf_book_retiophyllia");
     public static final CustomTrigger CLICK_PITYS = new CustomTrigger("pf_book_pitys");
     public static final CustomTrigger CLICK_PLANE = new CustomTrigger("pf_book_plane");
+    public static final CustomTrigger CLICK_CREDNERIA = new CustomTrigger("pf_book_credneria");
+    public static final CustomTrigger CLICK_POPULUS = new CustomTrigger("pf_book_populus");
     public static final CustomTrigger CLICK_FIG = new CustomTrigger("pf_book_fig");
     public static final CustomTrigger CLICK_FIG_BANYAN = new CustomTrigger("pf_book_fig_banyan");
     public static final CustomTrigger CLICK_PLEUROMEIA = new CustomTrigger("pf_book_pleuromeia");
@@ -2900,6 +2902,8 @@ public class ModTriggers
             CLICK_RETIOPHYLLIA,
             CLICK_PITYS,
             CLICK_PLANE,
+            CLICK_CREDNERIA,
+            CLICK_POPULUS,
             CLICK_FIG,
             CLICK_FIG_BANYAN,
             CLICK_PLEUROMEIA,
