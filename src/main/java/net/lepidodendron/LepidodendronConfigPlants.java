@@ -2674,6 +2674,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightCunninghamia = 110;
     public static double multiplierCunninghamia = 1;
 
+    public static boolean genAbies = false;
+    public static String[] genAbiesBlacklistBiomes = new String[0];
+    public static String[] genAbiesOverrideBiomes = new String[0];
+    public static int[] dimAbies = new int[]{0};
+    public static int minheightAbies = 1;
+    public static int maxheightAbies = 110;
+    public static double multiplierAbies = 1;
+
     public static boolean genElatocladus = false;
     public static String[] genElatocladusBlacklistBiomes = new String[0];
     public static String[] genElatocladusOverrideBiomes = new String[0];
@@ -14028,6 +14036,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen WaterPoppy", "spreadWaterPoppy", spreadWaterPoppy);
         prop.setComment("Set to true for Water Poppy to spread naturally, and to false to require bonemeal to spread [default: true]");
         spreadWaterPoppy = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Abies", "genAbies", genAbies);
+        prop.setComment("Set to true to generate Abies trees naturally [default: false]");
+        genAbies = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Abies", "genAbiesBlacklistBiomes", genAbiesBlacklistBiomes);
+        prop.setComment("List of biomes Abies trees are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genAbiesBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Abies", "genAbiesOverrideBiomes", genAbiesOverrideBiomes);
+        prop.setComment("List of biomes Abies trees are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genAbiesOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Abies", "dimAbies", dimAbies);
+        prop.setComment("List of dimension IDs Abies trees can generate in [default: 0]");
+        dimAbies = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Abies", "minheightAbies", minheightAbies);
+        prop.setComment("Minimum height that Abies trees can generate (1 to 250) [default: 1]");
+        minheightAbies = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Abies", "maxheightAbies", maxheightAbies);
+        prop.setComment("Maximum height that Abies trees can generate (1 to 250, or set to 0 for unlimited) [default: 110]");
+        maxheightAbies = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Abies", "multiplierAbies", multiplierAbies);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierAbies = prop.getDouble();
         propOrder.add(prop.getName());
 
 

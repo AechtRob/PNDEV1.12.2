@@ -363,6 +363,8 @@ public class EntityPNBoat extends EntityBoat
                 return ItemPopulusBoatItem.block;
             case SAURAUIA:
                 return ItemSaurauiaBoatItem.block;
+            case ABIES:
+                return ItemAbiesBoatItem.block;
 
         }
     }
@@ -545,6 +547,8 @@ public class EntityPNBoat extends EntityBoat
                 return BlockPopulusPlanks.block;
             case SAURAUIA:
                 return BlockSaurauiaPlanks.block;
+            case ABIES:
+                return BlockAbiesPlanks.block;
 
         }
     }
@@ -1430,7 +1434,8 @@ public class EntityPNBoat extends EntityBoat
         DRYOPHYLLUM(83, "dryophyllum"),
         BEAUPREA(84, "beauprea"),
         POPULUS(85, "populus"),
-        SAURAUIA(86, "saurauia")
+        SAURAUIA(86, "saurauia"),
+        ABIES(87, "saurauia")
         ;
 
         private final String name;

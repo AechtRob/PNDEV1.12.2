@@ -549,6 +549,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SCHIZONEURA = new CustomTrigger("pf_book_schizoneura");
     public static final CustomTrigger CLICK_SCHMEISSNERIA = new CustomTrigger("pf_book_schmeissneria");
     public static final CustomTrigger CLICK_SCIADOPITYS = new CustomTrigger("pf_book_sciadopitys");
+    public static final CustomTrigger CLICK_ABIES = new CustomTrigger("pf_book_abies");
     public static final CustomTrigger CLICK_WOODWORTHIA = new CustomTrigger("pf_book_woodworthia");
     public static final CustomTrigger CLICK_ARBORAMOSA = new CustomTrigger("pf_book_arboramosa");
     public static final CustomTrigger CLICK_SCHILDERIA = new CustomTrigger("pf_book_schilderia");
@@ -2961,6 +2962,7 @@ public class ModTriggers
             CLICK_SCHIZONEURA,
             CLICK_SCHMEISSNERIA,
             CLICK_SCIADOPITYS,
+            CLICK_ABIES,
             CLICK_WOODWORTHIA,
             CLICK_ARBORAMOSA,
             CLICK_SCHILDERIA,

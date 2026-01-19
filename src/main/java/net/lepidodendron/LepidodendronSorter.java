@@ -5436,6 +5436,30 @@ public class LepidodendronSorter {
 
     public static final int water_poppy = 8361;
 
+    public static final int abies_bench = 8336;
+    public static final int abies_boat_item = 8337;
+    public static final int abies_bridge = 8338;
+    public static final int abies_door = 8339;
+    public static final int abies_door_item = 8340;
+    public static final int abies_fence = 8341;
+    public static final int abies_fence_gate = 8342;
+    public static final int abies_leaves = 8343;
+    public static final int abies_litterbin = 8344;
+    public static final int abies_log = 8345;
+    public static final int abies_planks = 8346;
+    public static final int abies_planter1 = 8347;
+    public static final int abies_planter1_peat = 8348;
+    public static final int abies_planter1_sand = 8349;
+    public static final int abies_planter2 = 8350;
+    public static final int abies_planter2_peat = 8351;
+    public static final int abies_planter2_sand = 8352;
+    public static final int abies_sapling = 8353;
+    public static final int abies_nuts = 8354;
+    public static final int abies_slab = 8355;
+    public static final int abies_stairs = 8386;
+    public static final int abies_trapdoor = 8357;
+    public static final int abies_fruit = 8358;
+
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;
