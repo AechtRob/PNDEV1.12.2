@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/beauprea_fruit"
+    "layer0": "lepidodendron:items/saurauia_fruit"
   }
 }
 

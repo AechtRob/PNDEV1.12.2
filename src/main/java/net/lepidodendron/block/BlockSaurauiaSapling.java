@@ -7,7 +7,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.procedure.ProcedureWorldGenApple;
+import net.lepidodendron.procedure.ProcedureWorldGenSaurauia;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
@@ -48,32 +48,32 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockAppleSapling extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:apple_sapling")
+public class BlockSaurauiaSapling extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:saurauia_sapling")
 	public static final Block block = null;
-	public BlockAppleSapling(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.apple_sapling);
+	public BlockSaurauiaSapling(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.saurauia_sapling);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("apple_sapling"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("saurauia_sapling"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:apple_sapling", "inventory"));
+				new ModelResourceLocation("lepidodendron:saurauia_sapling", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:apple_sapling", BlockAppleSapling.block);
-		OreDictionary.registerOre("treeSapling", BlockAppleSapling.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockAppleSapling.block);
-		OreDictionary.registerOre("plant", BlockAppleSapling.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:saurauia_sapling", BlockSaurauiaSapling.block);
+		OreDictionary.registerOre("treeSapling", BlockSaurauiaSapling.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockSaurauiaSapling.block);
+		OreDictionary.registerOre("plant", BlockSaurauiaSapling.block);
 	}
 
 
@@ -87,7 +87,7 @@ public class BlockAppleSapling extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0.2F);
         	setResistance(1F);
-			setTranslationKey("pf_apple_sapling");
+			setTranslationKey("pf_saurauia_sapling");
 			setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
 		}
 
@@ -99,7 +99,7 @@ public class BlockAppleSapling extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_APPLE;
+			return ModTriggers.CLICK_SAURAUIA;
 		}
 
 		@Override
@@ -160,8 +160,8 @@ public class BlockAppleSapling extends ElementsLepidodendronMod.ModElement {
 	        }
 	        else
 	        {
-	           	int TreeHeight = 4 + rand.nextInt(8);
-				ProcedureWorldGenApple.executeProcedure(world, pos, TreeHeight);
+				int TreeHeight = 10 + rand.nextInt(5);
+				ProcedureWorldGenSaurauia.executeProcedure(world, pos, TreeHeight);
 				//}
 	        }
 	    }
@@ -214,7 +214,7 @@ public class BlockAppleSapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering tree");
-				tooltip.add("Periods: Neogene - Pleistocene [ - present]");
+				tooltip.add("Periods: Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]");
 				tooltip.add("Propagation: Fruit/Cone");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);

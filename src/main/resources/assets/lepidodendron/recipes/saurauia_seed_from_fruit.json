@@ -3,11 +3,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "lepidodendron:beauprea_fruit"
+      "item": "lepidodendron:saurauia_fruit"
     }
   ],
   "result": {
-    "item": "lepidodendron:beauprea_seeds",
+    "item": "lepidodendron:saurauia_seeds",
     "count": 1
   }
 }

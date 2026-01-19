@@ -1,0 +1,7 @@
+{
+ "variants": {
+ "variant=default": {
+ "model": "lepidodendron:saurauia_slab_double"
+ }
+ }
+}

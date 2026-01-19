@@ -5407,6 +5407,29 @@ public class LepidodendronSorter {
 
     public static final int populus_fruit = 8335;
 
+    public static final int saurauia_bench = 8336;
+    public static final int saurauia_boat_item = 8337;
+    public static final int saurauia_bridge = 8338;
+    public static final int saurauia_door = 8339;
+    public static final int saurauia_door_item = 8340;
+    public static final int saurauia_fence = 8341;
+    public static final int saurauia_fence_gate = 8342;
+    public static final int saurauia_leaves = 8343;
+    public static final int saurauia_litterbin = 8344;
+    public static final int saurauia_log = 8345;
+    public static final int saurauia_planks = 8346;
+    public static final int saurauia_planter1 = 8347;
+    public static final int saurauia_planter1_peat = 8348;
+    public static final int saurauia_planter1_sand = 8349;
+    public static final int saurauia_planter2 = 8350;
+    public static final int saurauia_planter2_peat = 8351;
+    public static final int saurauia_planter2_sand = 8352;
+    public static final int saurauia_sapling = 8353;
+    public static final int saurauia_seeds = 8354;
+    public static final int saurauia_slab = 8355;
+    public static final int saurauia_stairs = 8386;
+    public static final int saurauia_trapdoor = 8357;
+    public static final int saurauia_fruit = 8358;
 
     //Rob list ends-----
 
