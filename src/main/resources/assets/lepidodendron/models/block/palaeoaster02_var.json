@@ -1,0 +1,7 @@
+{
+  "parent": "lepidodendron:block/cross_flipped",
+  "textures": {
+    "cross": "lepidodendron:blocks/palaeoaster_var",
+    "particle": "lepidodendron:blocks/palaeoaster_var"
+  }
+}

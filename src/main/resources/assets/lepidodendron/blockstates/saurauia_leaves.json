@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:saurauia_leaves_flowers"},
+      {"model": "lepidodendron:saurauia_leaves", "weight": 3}
+    ]
+  }
+}
+

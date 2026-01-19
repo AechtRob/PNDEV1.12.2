@@ -1,0 +1,8 @@
+{
+ "parent": "block/stairs",
+ "textures": {
+ "bottom": "lepidodendron:blocks/saurauia_planks",
+ "top": "lepidodendron:blocks/saurauia_planks",
+ "side": "lepidodendron:blocks/saurauia_planks"
+ }
+}

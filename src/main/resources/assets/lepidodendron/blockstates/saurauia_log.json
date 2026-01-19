@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:saurauia_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:saurauia_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:saurauia_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:saurauia_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:saurauia_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:saurauia_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:saurauia_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

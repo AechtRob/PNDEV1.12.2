@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:beauprea_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:beauprea_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:beauprea_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:beauprea_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:beauprea_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:beauprea_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:beauprea_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}
