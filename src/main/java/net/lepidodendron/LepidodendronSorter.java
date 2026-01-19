@@ -5431,6 +5431,11 @@ public class LepidodendronSorter {
     public static final int saurauia_trapdoor = 8357;
     public static final int saurauia_fruit = 8358;
 
+    public static final int schisandra = 8359;
+    public static final int schisandra_fruit = 8360;
+
+    public static final int water_poppy = 8361;
+
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;

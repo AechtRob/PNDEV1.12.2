@@ -934,6 +934,15 @@ public class LepidodendronConfigPlants {
     public static double multiplierSalvinia = 1;
     public static boolean spreadSalvinia = true;
 
+    public static boolean genWaterPoppy = false;
+    public static String[] genWaterPoppyBlacklistBiomes = new String[0];
+    public static String[] genWaterPoppyOverrideBiomes = new String[0];
+    public static int[] dimWaterPoppy = new int[]{0};
+    public static int minheightWaterPoppy = 1;
+    public static int maxheightWaterPoppy = 0;
+    public static double multiplierWaterPoppy = 1;
+    public static boolean spreadWaterPoppy = true;
+
     public static boolean genFoozia = false;
     public static String[] genFooziaBlacklistBiomes = new String[0];
     public static String[] genFooziaOverrideBiomes = new String[0];
@@ -2877,6 +2886,12 @@ public class LepidodendronConfigPlants {
     public static String[] genActinideaBlacklistBiomes = new String[0];
     public static String[] genActinideaOverrideBiomes = new String[0];
     public static double multiplierActinidea = 1;
+
+    public static int[] dimSchisandra = new int[]{0};
+    public static boolean genSchisandra = false;
+    public static String[] genSchisandraBlacklistBiomes = new String[0];
+    public static String[] genSchisandraOverrideBiomes = new String[0];
+    public static double multiplierSchisandra = 1;
 
     public static int[] dimYam = new int[]{0};
     public static boolean genYam = false;
@@ -13960,6 +13975,59 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Dipteris", "multiplierDipteris", multiplierDipteris);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierDipteris = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Schisandra", "dimSchisandra", dimSchisandra);
+        prop.setComment("List of dimension IDs Schisandra can generate in [default: 0]");
+        dimSchisandra = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Schisandra", "genSchisandra", genSchisandra);
+        prop.setComment("Set to true to generate Schisandra naturally [default: false]");
+        genSchisandra = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Schisandra", "genSchisandraBlacklistBiomes", genSchisandraBlacklistBiomes);
+        prop.setComment("List of biomes Schisandra are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genSchisandraBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Schisandra", "genSchisandraOverrideBiomes", genSchisandraOverrideBiomes);
+        prop.setComment("List of biomes Schisandra are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genSchisandraOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Schisandra", "multiplierSchisandra", multiplierSchisandra);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierSchisandra = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen WaterPoppy", "genWaterPoppy", genWaterPoppy);
+        prop.setComment("Set to true to generate Water Poppy naturally [default: false]");
+        genWaterPoppy = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen WaterPoppy", "genWaterPoppyBlacklistBiomes", genWaterPoppyBlacklistBiomes);
+        prop.setComment("List of biomes Water Poppy is blacklisted from, in the format: modid:biomeid [default: empty]");
+        genWaterPoppyBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen WaterPoppy", "genWaterPoppyOverrideBiomes", genWaterPoppyOverrideBiomes);
+        prop.setComment("List of biomes Water Poppy is forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genWaterPoppyOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen WaterPoppy", "dimWaterPoppy", dimWaterPoppy);
+        prop.setComment("List of dimension IDs Water Poppy can generate in [default: 0]");
+        dimWaterPoppy = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen WaterPoppy", "minheightWaterPoppy", minheightWaterPoppy);
+        prop.setComment("Minimum height that Water Poppy can generate (1 to 250) [default: 1]");
+        minheightWaterPoppy = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen WaterPoppy", "maxheightWaterPoppy", maxheightWaterPoppy);
+        prop.setComment("Maximum height that Water Poppy can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightWaterPoppy = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen WaterPoppy", "multiplierWaterPoppy", multiplierWaterPoppy);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierWaterPoppy = prop.getDouble();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen WaterPoppy", "spreadWaterPoppy", spreadWaterPoppy);
+        prop.setComment("Set to true for Water Poppy to spread naturally, and to false to require bonemeal to spread [default: true]");
+        spreadWaterPoppy = prop.getBoolean();
         propOrder.add(prop.getName());
 
 
