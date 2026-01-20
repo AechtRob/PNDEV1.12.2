@@ -184,6 +184,14 @@ public class LepidodendronConfigPlants {
     public static int minheightPachypteris = 1;
     public static int maxheightPachypteris = 100;
     public static double multiplierPachypteris = 1;
+    
+    public static boolean genGlyptostrobus = false;
+    public static String[] genGlyptostrobusBlacklistBiomes = new String[0];
+    public static String[] genGlyptostrobusOverrideBiomes = new String[0];
+    public static int[] dimGlyptostrobus = new int[]{0};
+    public static int minheightGlyptostrobus = 1;
+    public static int maxheightGlyptostrobus = 100;
+    public static double multiplierGlyptostrobus = 1;
 
     public static boolean genPitys = false;
     public static String[] genPitysBlacklistBiomes = new String[0];
@@ -2681,6 +2689,14 @@ public class LepidodendronConfigPlants {
     public static int minheightAbies = 1;
     public static int maxheightAbies = 110;
     public static double multiplierAbies = 1;
+
+    public static boolean genTsuga = false;
+    public static String[] genTsugaBlacklistBiomes = new String[0];
+    public static String[] genTsugaOverrideBiomes = new String[0];
+    public static int[] dimTsuga = new int[]{0};
+    public static int minheightTsuga = 1;
+    public static int maxheightTsuga = 110;
+    public static double multiplierTsuga = 1;
 
     public static boolean genElatocladus = false;
     public static String[] genElatocladusBlacklistBiomes = new String[0];
@@ -14064,6 +14080,62 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Abies", "multiplierAbies", multiplierAbies);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierAbies = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Glyptostrobus", "genGlyptostrobus", genGlyptostrobus);
+        prop.setComment("Set to true to generate Glyptostrobus trees naturally [default: false]");
+        genGlyptostrobus = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Glyptostrobus", "genGlyptostrobusBlacklistBiomes", genGlyptostrobusBlacklistBiomes);
+        prop.setComment("List of biomes Glyptostrobus trees are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genGlyptostrobusBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Glyptostrobus", "genGlyptostrobusOverrideBiomes", genGlyptostrobusOverrideBiomes);
+        prop.setComment("List of biomes Glyptostrobus trees are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genGlyptostrobusOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Glyptostrobus", "dimGlyptostrobus", dimGlyptostrobus);
+        prop.setComment("List of dimension IDs Glyptostrobus trees can generate in [default: 0]");
+        dimGlyptostrobus = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Glyptostrobus", "minheightGlyptostrobus", minheightGlyptostrobus);
+        prop.setComment("Minimum height that Glyptostrobus trees can generate (1 to 250) [default: 1]");
+        minheightGlyptostrobus = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Glyptostrobus", "maxheightGlyptostrobus", maxheightGlyptostrobus);
+        prop.setComment("Maximum height that Glyptostrobus trees can generate (1 to 250, or set to 0 for unlimited) [default: 100]");
+        maxheightGlyptostrobus = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Glyptostrobus", "multiplierGlyptostrobus", multiplierGlyptostrobus);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierGlyptostrobus = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Tsuga", "genTsuga", genTsuga);
+        prop.setComment("Set to true to generate Tsuga trees naturally [default: false]");
+        genTsuga = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Tsuga", "genTsugaBlacklistBiomes", genTsugaBlacklistBiomes);
+        prop.setComment("List of biomes Tsuga trees are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genTsugaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Tsuga", "genTsugaOverrideBiomes", genTsugaOverrideBiomes);
+        prop.setComment("List of biomes Tsuga trees are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genTsugaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Tsuga", "dimTsuga", dimTsuga);
+        prop.setComment("List of dimension IDs Tsuga trees can generate in [default: 0]");
+        dimTsuga = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Tsuga", "minheightTsuga", minheightTsuga);
+        prop.setComment("Minimum height that Tsuga trees can generate (1 to 250) [default: 1]");
+        minheightTsuga = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Tsuga", "maxheightTsuga", maxheightTsuga);
+        prop.setComment("Maximum height that Tsuga trees can generate (1 to 250, or set to 0 for unlimited) [default: 110]");
+        maxheightTsuga = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Tsuga", "multiplierTsuga", multiplierTsuga);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierTsuga = prop.getDouble();
         propOrder.add(prop.getName());
 
 

@@ -8,7 +8,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.procedure.ProcedureWorldGenAbies;
+import net.lepidodendron.procedure.ProcedureWorldGenTsuga;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
@@ -49,32 +49,32 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockAbiesSapling extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:abies_sapling")
+public class BlockTsugaSapling extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:tsuga_sapling")
 	public static final Block block = null;
-	public BlockAbiesSapling(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.abies_sapling);
+	public BlockTsugaSapling(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.tsuga_sapling);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("abies_sapling"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("tsuga_sapling"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:abies_sapling", "inventory"));
+				new ModelResourceLocation("lepidodendron:tsuga_sapling", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:abies_sapling", BlockAbiesSapling.block);
-		OreDictionary.registerOre("treeSapling", BlockAbiesSapling.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockAbiesSapling.block);
-		OreDictionary.registerOre("plant", BlockAbiesSapling.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:tsuga_sapling", BlockTsugaSapling.block);
+		OreDictionary.registerOre("treeSapling", BlockTsugaSapling.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockTsugaSapling.block);
+		OreDictionary.registerOre("plant", BlockTsugaSapling.block);
 	}
 
 
@@ -88,7 +88,7 @@ public class BlockAbiesSapling extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0.2F);
         	setResistance(1F);
-			setTranslationKey("pf_abies_sapling");
+			setTranslationKey("pf_tsuga_sapling");
 			setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
 		}
 
@@ -100,7 +100,7 @@ public class BlockAbiesSapling extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_ABIES;
+			return ModTriggers.CLICK_TSUGA;
 		}
 
 		@Override
@@ -160,7 +160,7 @@ public class BlockAbiesSapling extends ElementsLepidodendronMod.ModElement {
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
-					ProcedureWorldGenAbies.executeProcedure($_dependencies);
+					ProcedureWorldGenTsuga.executeProcedure($_dependencies);
 				}
 	        }
 	    }

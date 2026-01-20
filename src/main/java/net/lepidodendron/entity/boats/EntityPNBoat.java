@@ -365,6 +365,10 @@ public class EntityPNBoat extends EntityBoat
                 return ItemSaurauiaBoatItem.block;
             case ABIES:
                 return ItemAbiesBoatItem.block;
+            case GLYPTOSTROBUS:
+                return ItemGlyptostrobusBoatItem.block;
+            case TSUGA:
+                return ItemTsugaBoatItem.block;
 
         }
     }
@@ -549,6 +553,10 @@ public class EntityPNBoat extends EntityBoat
                 return BlockSaurauiaPlanks.block;
             case ABIES:
                 return BlockAbiesPlanks.block;
+            case GLYPTOSTROBUS:
+                return BlockGlyptostrobusPlanks.block;
+            case TSUGA:
+                return BlockTsugaPlanks.block;
 
         }
     }
@@ -1435,7 +1443,9 @@ public class EntityPNBoat extends EntityBoat
         BEAUPREA(84, "beauprea"),
         POPULUS(85, "populus"),
         SAURAUIA(86, "saurauia"),
-        ABIES(87, "saurauia")
+        ABIES(87, "saurauia"),
+        GLYPTOSTROBUS(88, "glyptostrobus"),
+        TSUGA(89, "tsuga")
         ;
 
         private final String name;
