@@ -577,6 +577,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SPINY_CYCAD = new CustomTrigger("pf_book_spiny_cycad");
     public static final CustomTrigger CLICK_SPRUCE = new CustomTrigger("pf_book_spruce");
     public static final CustomTrigger CLICK_STAUROPTERIS = new CustomTrigger("pf_book_stauropteris");
+    public static final CustomTrigger CLICK_DROSERA = new CustomTrigger("pf_book_drosera");
     public static final CustomTrigger CLICK_XINHANGIA = new CustomTrigger("pf_book_xinhangia");
     public static final CustomTrigger CLICK_COLPODEXYLON = new CustomTrigger("pf_book_colpodexylon");
     public static final CustomTrigger CLICK_COSMOSPERMA = new CustomTrigger("pf_book_cosmosperma");
@@ -2992,6 +2993,7 @@ public class ModTriggers
             CLICK_SPINY_CYCAD,
             CLICK_SPRUCE,
             CLICK_STAUROPTERIS,
+            CLICK_DROSERA,
             CLICK_XINHANGIA,
             CLICK_COLPODEXYLON,
             CLICK_COSMOSPERMA,
