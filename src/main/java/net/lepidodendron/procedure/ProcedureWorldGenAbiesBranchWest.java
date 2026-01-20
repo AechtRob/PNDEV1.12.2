@@ -41,12 +41,12 @@ public class ProcedureWorldGenAbiesBranchWest extends ElementsLepidodendronMod.M
 		int yy = y;
 		int zz = z;
 		int reflector = 1;
-		
+
 		reflector = 1;
 			if (Math.random() > 0.5) {
 				reflector = -1;
 			}
-			
+
 		randomiser = Math.random();
 		if (randomiser >= 0.875) {
 				option = 1;
@@ -89,7 +89,7 @@ public class ProcedureWorldGenAbiesBranchWest extends ElementsLepidodendronMod.M
 		if (Math.random() > 0.5) {
 			reflector = -1;
 		}
-			
+
 		if (option == 1) {
 			xx = x;
 			yy = y;
@@ -122,7 +122,7 @@ public class ProcedureWorldGenAbiesBranchWest extends ElementsLepidodendronMod.M
 			yy = y + 1;
 			zz = z;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 
 			}
 
@@ -131,12 +131,12 @@ public class ProcedureWorldGenAbiesBranchWest extends ElementsLepidodendronMod.M
 			yy = y;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.UP);
-				
+
 			xx = x - 1;
 			yy = y;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.UP);
-				
+
 			xx = x - 1;
 			yy = y;
 			zz = z - (1 * reflector);
@@ -147,32 +147,32 @@ public class ProcedureWorldGenAbiesBranchWest extends ElementsLepidodendronMod.M
 			yy = y;
 			zz = z - (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y;
 			zz = z + (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 2;
 			yy = y;
 			zz = z;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 2;
 			yy = y;
 			zz = z - (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y;
 			zz = z - (2 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y + 1;
 			zz = z - (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			}
 
 		if (option == 3) {
@@ -180,17 +180,17 @@ public class ProcedureWorldGenAbiesBranchWest extends ElementsLepidodendronMod.M
 			yy = y;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.UP);
-				
+
 			xx = x - 1;
 			yy = y;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.UP);
-				
+
 			xx = x - 1;
 			yy = y;
 			zz = z - (1 * reflector);
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.WEST);
-				
+
 			xx = x - 1;
 			yy = y + 1;
 			zz = z - (1 * reflector);
@@ -201,32 +201,32 @@ public class ProcedureWorldGenAbiesBranchWest extends ElementsLepidodendronMod.M
 			yy = y;
 			zz = z + (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 2;
 			yy = y;
 			zz = z;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y + 1;
 			zz = z;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 2;
 			yy = y + 1;
 			zz = z - (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y + 1;
 			zz = z - (2 * reflector);;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y + 2;
 			zz = z - (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x;
 			yy = y + 1;
 			zz = z - (1 * reflector);
@@ -238,23 +238,23 @@ public class ProcedureWorldGenAbiesBranchWest extends ElementsLepidodendronMod.M
 			yy = y;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.UP);
-				
+
 			xx = x - 1;
 			yy = y;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.UP);
-				
+
 			xx = x - 1;
 			yy = y + 1;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.SOUTH);
-				
+
 			//Leaves:
 			xx = x;
 			yy = y + 1;
 			zz = z;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 2;
 			yy = y + 1;
 			zz = z;
@@ -274,7 +274,7 @@ public class ProcedureWorldGenAbiesBranchWest extends ElementsLepidodendronMod.M
 			yy = y + 2;
 			zz = z;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 		}
 
 		if (option == 5) {
@@ -282,58 +282,58 @@ public class ProcedureWorldGenAbiesBranchWest extends ElementsLepidodendronMod.M
 			yy = y;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.UP);
-				
+
 			xx = x - 1;
 			yy = y;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.UP);
-				
+
 			xx = x - 1;
 			yy = y + 1;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.SOUTH);
-				
+
 			xx = x - 1;
 			yy = y + 1;
 			zz = z - (1 * reflector);
-			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.WEST);	
-				
+			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.WEST);
+
 			//Leaves:
 			xx = x - 1;
 			yy = y;
 			zz = z + (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 2;
 			yy = y;
 			zz = z;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y;
 			zz = z - (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 2;
 			yy = y + 1;
 			zz = z - (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x;
 			yy = y + 1;
 			zz = z - (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y + 1;
 			zz = z - (2 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y + 2;
 			zz = z - (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-			
+
 		}
 
 		if (option == 6) {
@@ -341,73 +341,73 @@ public class ProcedureWorldGenAbiesBranchWest extends ElementsLepidodendronMod.M
 			yy = y;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.UP);
-				
+
 			xx = x;
 			yy = y + 1;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.SOUTH);
-				
+
 			xx = x - 1;
 			yy = y + 1;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.UP);
-				
+
 			xx = x;
 			yy = y + 1;
 			zz = z + 1;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.WEST);
-				
+
 			xx = x;
 			yy = y + 1;
 			zz = z - 1;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.WEST);
-				
+
 			//Leaves:
 			xx = x;
 			yy = y + 1;
 			zz = z + 2;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y + 1;
 			zz = z + 1;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 2;
 			yy = y + 1;
 			zz = z;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y + 1;
 			zz = z - 1;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x;
 			yy = y + 1;
 			zz = z - 2;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x;
 			yy = y + 2;
 			zz = z - 1;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x;
 			yy = y + 2;
 			zz = z + 1;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y + 2;
 			zz = z;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x;
 			yy = y + 3;
 			zz = z;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-			
+
 		}
 
 		if (option == 7) {
@@ -415,94 +415,94 @@ public class ProcedureWorldGenAbiesBranchWest extends ElementsLepidodendronMod.M
 			yy = y;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.UP);
-				
+
 			xx = x - 1;
 			yy = y;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.UP);
-				
+
 			xx = x - 2;
 			yy = y;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.UP);
-				
+
 			xx = x - 1;
 			yy = y;
 			zz = z + 1;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.EAST);
-				
+
 			xx = x - 1;
 			yy = y;
 			zz = z - 1;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.EAST);
-				
+
 			xx = x - 1;
 			yy = y + 1;
 			zz = z + 1;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.SOUTH);
-				
+
 			xx = x - 1;
 			yy = y + 1;
 			zz = z - 1;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.SOUTH);
-				
-				
+
+
 			//Leaves:
 			xx = x - 2;
 			yy = y;
 			zz = z + 1;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 2;
 			yy = y;
 			zz = z - 1;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 3;
 			yy = y;
 			zz = z;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y + 1;
 			zz = z + 2;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y + 1;
 			zz = z;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 2;
 			yy = y + 1;
 			zz = z;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y + 1;
 			zz = z - 2;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x;
 			yy = y + 1;
 			zz = z - 1;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x;
 			yy = y + 1;
 			zz = z + 1;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y + 2;
 			zz = z - 1;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y + 2;
 			zz = z + 1;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 		}
 
 		if (option == 8) {
@@ -510,66 +510,66 @@ public class ProcedureWorldGenAbiesBranchWest extends ElementsLepidodendronMod.M
 			yy = y;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.UP);
-				
+
 			xx = x - 1;
 			yy = y;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.UP);
-				
+
 			xx = x - 2;
 			yy = y;
 			zz = z;
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.UP);
-				
+
 			xx = x - 1;
 			yy = y;
 			zz = z - (1 * reflector);
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.WEST);
-				
+
 			xx = x - 1;
-			yy = y + 1;
+			yy = y - 1;
 			zz = z - (1 * reflector);
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.SOUTH);
-				
-				
+
+
 			//Leaves:
 			xx = x - 2;
 			yy = y;
 			zz = z + (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 3;
 			yy = y;
 			zz = z;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 2;
 			yy = y;
 			zz = z - (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
 			yy = y + 1;
 			zz = z;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 2;
-			yy = y + 1;
+			yy = y - 1;
 			zz = z;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 2;
-			yy = y + 1;
+			yy = y - 1;
 			zz = z - (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
-			yy = y + 1;
+			yy = y - 1;
 			zz = z - (2 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
-				
+
 			xx = x - 1;
-			yy = y + 2;
+			yy = y - 2;
 			zz = z - (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
 				
