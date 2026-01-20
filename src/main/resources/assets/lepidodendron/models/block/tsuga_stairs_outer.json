@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/tsuga_planks",
+    "top": "lepidodendron:blocks/tsuga_planks",
+    "side": "lepidodendron:blocks/tsuga_planks"
+  }
+}

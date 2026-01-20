@@ -2,10 +2,7 @@ package net.lepidodendron.procedure;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.block.BlockGlyptostrobusKnee;
-import net.lepidodendron.block.BlockGlyptostrobusLeaves;
-import net.lepidodendron.block.BlockGlyptostrobusLog;
-import net.lepidodendron.block.BlockGlyptostrobusSapling;
+import net.lepidodendron.block.*;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
@@ -61,7 +58,7 @@ public class ProcedureWorldGenGlyptostrobus extends ElementsLepidodendronMod.Mod
 			boolean variantSize = (Math.random() > 0.9);
 
 			//Trunk:
-			TrunkHeight = 16 + (int) Math.round(Math.random() * 6);
+			TrunkHeight = 18 + (int) Math.round(Math.random() * 8);
 			if (variantSize) TrunkHeight = (int)Math.round((double)TrunkHeight * 1.33D);
 			while (counter < TrunkHeight) {
 				ProcedureTreeLog.executeProcedure((int) x, (int) y + (int) counter, (int) z, world, BlockGlyptostrobusLog.block, EnumFacing.NORTH);
@@ -361,6 +358,275 @@ public class ProcedureWorldGenGlyptostrobus extends ElementsLepidodendronMod.Mod
 					doShoot(world, new BlockPos(x + xct, yy, z), false);
 				}
 			}
+
+
+
+
+			//Lower round of ascending branches:
+
+			//North:
+			//Get an attachment point:
+			attach = rand.nextInt((int)TrunkHeight - 6) + 6;
+			if (variantSize) {attach = attach - (int) Math.round(5D * Math.random());}
+			//attach = (int) Math.round((Math.random() * (double)(TrunkHeight - 2) * 0.6) + (0.4 * (double)(TrunkHeight - 2)));
+			if (attach <= (int) Math.round((0.6 * (double)TrunkHeight))) {
+				seg = 4;
+			}
+			else {
+				if (attach <= (int) Math.round((0.75 * (double)TrunkHeight))) {
+					seg = 3;
+				}
+				else {
+					seg = 2;
+				}
+			}
+			//System.err.println("HERE seg: " + seg);
+			yy = y + attach;
+			ProcedureLeavesAroundLog.executeProcedure(x, y + attach, z - 1, world, BlockGlyptostrobusLeaves.block, 1, 0.6);
+			zct = 1;
+			while (zct <= seg) {
+				ProcedureTreeLog.executeProcedure((int) x, yy, (int) z - zct, world, BlockGlyptostrobusLog.block, EnumFacing.WEST);
+				zct += 1;
+				yy += 1;
+			}
+			zct -= 1;
+			ProcedureTreeLog.executeProcedure((int) x, yy, (int) z - zct, world, BlockGlyptostrobusLog.block, EnumFacing.NORTH);
+			if (Math.random() > 0.5) {
+				doShoot(world, new BlockPos(x, yy, z - zct), true);
+			}
+			else {
+				doShoot(world, new BlockPos(x, yy, z - zct), false);
+			}
+
+			if ((Math.random() > 0.5) && (variantSize) && (attach < TrunkHeight - 6)) {
+				//Second branch on this axis, perhaps:
+				attach = rand.nextInt((int)TrunkHeight - 6) + 2;
+				//attach = (int) Math.round((Math.random() * (double)(TrunkHeight - 2) * 0.6) + (0.4 * (double)(TrunkHeight - 2)));
+				if (attach <= (int) Math.round((0.6 * (double)TrunkHeight))) {
+					seg = 4;
+				}
+				else {
+					if (attach <= (int) Math.round((0.75 * (double)TrunkHeight))) {
+						seg = 3;
+					}
+					else {
+						seg = 2;
+					}
+				}
+				//System.err.println("HERE seg: " + seg);
+				yy = y + attach;
+				ProcedureLeavesAroundLog.executeProcedure(x, y + attach, z - 1, world, BlockGlyptostrobusLeaves.block, 1, 0.6);
+				zct = 1;
+				while (zct <= seg) {
+					ProcedureTreeLog.executeProcedure((int) x, yy, (int) z - zct, world, BlockGlyptostrobusLog.block, EnumFacing.WEST);
+					zct += 1;
+					yy += 1;
+				}
+				zct -= 1;
+				ProcedureTreeLog.executeProcedure((int) x, yy, (int) z - zct, world, BlockGlyptostrobusLog.block, EnumFacing.NORTH);
+				if (Math.random() > 0.5) {
+					doShoot(world, new BlockPos(x, yy, z - zct), true);
+				}
+				else {
+					doShoot(world, new BlockPos(x, yy, z - zct), false);
+				}
+			}
+
+			//South:
+			//Get an attachment point:
+			attach = rand.nextInt((int)TrunkHeight - 6) + 6;
+			if (variantSize) {attach = attach - (int) Math.round(5D * Math.random());}
+			if (attach <= (int) Math.round((0.6 * (double)TrunkHeight))) {
+				seg = 4;
+			}
+			else {
+				if (attach <= (int) Math.round((0.75 * (double)TrunkHeight))) {
+					seg = 3;
+				}
+				else {
+					seg = 2;
+				}
+			}
+			yy = y + attach;
+			ProcedureLeavesAroundLog.executeProcedure(x, y + attach, z + 1, world, BlockGlyptostrobusLeaves.block, 1, 0.6);
+			zct = 1;
+			while (zct <= seg) {
+				ProcedureTreeLog.executeProcedure((int) x, yy, (int) z + zct, world, BlockGlyptostrobusLog.block, EnumFacing.WEST);
+				zct += 1;
+				yy += 1;
+			}
+			zct -= 1;
+			ProcedureTreeLog.executeProcedure((int) x, yy, (int) z + zct, world, BlockGlyptostrobusLog.block, EnumFacing.NORTH);
+			if (Math.random() > 0.5) {
+				doShoot(world, new BlockPos(x, yy, z + zct), true);
+			}
+			else {
+				doShoot(world, new BlockPos(x, yy, z + zct), false);
+			}
+
+			if ((Math.random() > 0.5) && (variantSize) && (attach < TrunkHeight - 6)) {
+				//Second branch on this axis, perhaps:
+				attach = rand.nextInt((int)TrunkHeight - 6) + 2;
+				//attach = (int) Math.round((Math.random() * (double)(TrunkHeight - 2) * 0.6) + (0.4 * (double)(TrunkHeight - 2)));
+				if (attach <= (int) Math.round((0.6 * (double)TrunkHeight))) {
+					seg = 4;
+				}
+				else {
+					if (attach <= (int) Math.round((0.75 * (double)TrunkHeight))) {
+						seg = 3;
+					}
+					else {
+						seg = 2;
+					}
+				}
+				yy = y + attach;
+				ProcedureLeavesAroundLog.executeProcedure(x, y + attach, z + 1, world, BlockGlyptostrobusLeaves.block, 1, 0.6);
+				zct = 1;
+				while (zct <= seg) {
+					ProcedureTreeLog.executeProcedure((int) x, yy, (int) z + zct, world, BlockGlyptostrobusLog.block, EnumFacing.WEST);
+					zct += 1;
+					yy += 1;
+				}
+				zct -= 1;
+				ProcedureTreeLog.executeProcedure((int) x, yy, (int) z + zct, world, BlockGlyptostrobusLog.block, EnumFacing.NORTH);
+				if (Math.random() > 0.5) {
+					doShoot(world, new BlockPos(x, yy, z + zct), true);
+				}
+				else {
+					doShoot(world, new BlockPos(x, yy, z + zct), false);
+				}
+			}
+
+			//West:
+			//Get an attachment point:
+			attach = rand.nextInt((int)TrunkHeight - 6) + 6;
+			if (variantSize) {attach = attach - (int) Math.round(5D * Math.random());}
+			if (attach <= (int) Math.round((0.6 * (double)TrunkHeight))) {
+				seg = 4;
+			}
+			else {
+				if (attach <= (int) Math.round((0.75 * (double)TrunkHeight))) {
+					seg = 3;
+				}
+				else {
+					seg = 2;
+				}
+			}
+			//System.err.println("HERE seg: " + seg);
+			yy = y + attach;
+			ProcedureLeavesAroundLog.executeProcedure(x - 1, y + attach, z, world, BlockGlyptostrobusLeaves.block, 1, 0.6);
+			xct = 1;
+			while (xct <= seg) {
+				ProcedureTreeLog.executeProcedure((int) x - xct, yy, (int) z, world, BlockGlyptostrobusLog.block, EnumFacing.UP);
+				xct += 1;
+				yy += 1;
+			}
+			xct -= 1;
+			ProcedureTreeLog.executeProcedure((int) x - xct, yy, (int) z, world, BlockGlyptostrobusLog.block, EnumFacing.NORTH);
+			if (Math.random() > 0.5) {
+				doShoot(world, new BlockPos(x - xct, yy, z), true);
+			}
+			else {
+				doShoot(world, new BlockPos(x - xct, yy, z), false);
+			}
+
+			if ((Math.random() > 0.5) && (variantSize) && (attach < TrunkHeight - 6)) {
+				//Second branch on this axis, perhaps:
+				attach = rand.nextInt((int) TrunkHeight - 6) + 2;
+				if (attach <= (int) Math.round((0.6 * (double) TrunkHeight))) {
+					seg = 4;
+				} else {
+					if (attach <= (int) Math.round((0.75 * (double) TrunkHeight))) {
+						seg = 3;
+					} else {
+						seg = 2;
+					}
+				}
+				//System.err.println("HERE seg: " + seg);
+				yy = y + attach;
+				ProcedureLeavesAroundLog.executeProcedure(x - 1, y + attach, z, world, BlockGlyptostrobusLeaves.block, 1, 0.6);
+				xct = 1;
+				while (xct <= seg) {
+					ProcedureTreeLog.executeProcedure((int) x - xct, yy, (int) z, world, BlockGlyptostrobusLog.block, EnumFacing.UP);
+					xct += 1;
+					yy += 1;
+				}
+				xct -= 1;
+				ProcedureTreeLog.executeProcedure((int) x - xct, yy, (int) z, world, BlockGlyptostrobusLog.block, EnumFacing.NORTH);
+				if (Math.random() > 0.5) {
+					doShoot(world, new BlockPos(x - xct, yy, z), true);
+				} else {
+					doShoot(world, new BlockPos(x - xct, yy, z), false);
+				}
+			}
+
+			//East:
+			//Get an attachment point:
+			attach = rand.nextInt((int)TrunkHeight - 6) + 6;
+			if (variantSize) {attach = attach - (int) Math.round(5D * Math.random());}
+			if (attach <= (int) Math.round((0.6 * (double)TrunkHeight))) {
+				seg = 4;
+			}
+			else {
+				if (attach <= (int) Math.round((0.75 * (double)TrunkHeight))) {
+					seg = 3;
+				}
+				else {
+					seg = 2;
+				}
+			}
+			//System.err.println("HERE seg: " + seg);
+			yy = y + attach;
+			ProcedureLeavesAroundLog.executeProcedure(x + 1, y + attach, z, world, BlockGlyptostrobusLeaves.block, 1, 0.6);
+			xct = 1;
+			while (xct <= seg) {
+				ProcedureTreeLog.executeProcedure((int) x + xct, yy, (int) z, world, BlockGlyptostrobusLog.block, EnumFacing.UP);
+				xct += 1;
+				yy += 1;
+			}
+			xct -= 1;
+			ProcedureTreeLog.executeProcedure((int) x + xct, yy, (int) z, world, BlockGlyptostrobusLog.block, EnumFacing.NORTH);
+			if (Math.random() > 0.5) {
+				doShoot(world, new BlockPos(x + xct, yy, z), true);
+			}
+			else {
+				doShoot(world, new BlockPos(x + xct, yy, z), false);
+			}
+
+			if ((Math.random() > 0.5) && (variantSize) && (attach < TrunkHeight - 6)) {
+				//Second branch on this axis, perhaps:
+				attach = rand.nextInt((int) TrunkHeight - 6) + 2;
+				if (attach <= (int) Math.round((0.6 * (double) TrunkHeight))) {
+					seg = 4;
+				} else {
+					if (attach <= (int) Math.round((0.75 * (double) TrunkHeight))) {
+						seg = 3;
+					} else {
+						seg = 2;
+					}
+				}
+				//System.err.println("HERE seg: " + seg);
+				yy = y + attach;
+				ProcedureLeavesAroundLog.executeProcedure(x + 1, y + attach, z, world, BlockGlyptostrobusLeaves.block, 1, 0.6);
+				xct = 1;
+				while (xct <= seg) {
+					ProcedureTreeLog.executeProcedure((int) x + xct, yy, (int) z, world, BlockGlyptostrobusLog.block, EnumFacing.UP);
+					xct += 1;
+					yy += 1;
+				}
+				xct -= 1;
+				ProcedureTreeLog.executeProcedure((int) x + xct, yy, (int) z, world, BlockGlyptostrobusLog.block, EnumFacing.NORTH);
+				if (Math.random() > 0.5) {
+					doShoot(world, new BlockPos(x + xct, yy, z), true);
+				} else {
+					doShoot(world, new BlockPos(x + xct, yy, z), false);
+				}
+			}
+
+
+
+
+
 
 			//Base:
 			zz = z;
@@ -785,6 +1051,135 @@ public class ProcedureWorldGenGlyptostrobus extends ElementsLepidodendronMod.Mod
 					zct += 1;
 				}
 				xct += 1;
+			}
+
+
+			double randomiser = 0;
+			String BranchAxis = "";
+			counter = (int)(TrunkHeight - TrunkHeight / 7);
+			//Generate branches:
+			//We spiral round the tree, skipping one to three rows each time, picking a random point of attachment and adding 0-2 nubs of branch befor the main end:
+			//Pick a direction to start:
+			randomiser = Math.random();
+			if (randomiser >= 0.75) {
+				BranchAxis = "north";
+			}
+			else {
+				if (randomiser >= 0.5) {
+					BranchAxis = "east";
+				}
+				else {
+					if (randomiser >= 0.25) {
+						BranchAxis = "south";
+					}
+					else {
+						BranchAxis = "west";
+					}
+				}
+			}
+
+
+			while (counter >= TrunkHeight / 7) {
+				//rotate to the next axis
+				if (BranchAxis == "north") {
+					BranchAxis = "east";
+				}
+				else {
+					if (BranchAxis == "east") {
+						BranchAxis = "south";
+					}
+					else {
+						if (BranchAxis == "south") {
+							BranchAxis = "west";
+						}
+						else {
+							BranchAxis = "north";
+						}
+					}
+				}
+				//Get our attachment position:
+				if (BranchAxis == "east") {
+					xx = x + 1;
+					zz = z;
+					randomiser = Math.random();
+					if (randomiser >= 0.5) {
+						ProcedureTreeLog.executeProcedure((int) xx, (int) (y + counter), (int) zz, world, BlockGlyptostrobusLog.block, EnumFacing.UP);
+						xx = xx + 1;
+					}
+					if ((randomiser >= 0.8) && (counter/TrunkHeight < 0.75)) {
+						ProcedureTreeLog.executeProcedure((int) xx, (int) (y + counter), (int) zz, world, BlockGlyptostrobusLog.block, EnumFacing.UP);
+						xx = xx + 1;
+					}
+					Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
+					$_dependencies.put("x", xx);
+					$_dependencies.put("y", (int) (y + counter));
+					$_dependencies.put("z", z);
+					$_dependencies.put("world", world);
+					ProcedureWorldGenGlyptostrobusBranchEast.executeProcedure($_dependencies);
+				}
+
+				if (BranchAxis == "west") {
+					xx = x - 1;
+					zz = z;
+					randomiser = Math.random();
+					if (randomiser >= 0.5) {
+						ProcedureTreeLog.executeProcedure((int) xx, (int) (y + counter), (int) zz, world, BlockGlyptostrobusLog.block, EnumFacing.UP);
+						xx = xx - 1;
+					}
+					if ((randomiser >= 0.8) && (counter/TrunkHeight < 0.75)) {
+						ProcedureTreeLog.executeProcedure((int) xx, (int) (y + counter), (int) zz, world, BlockGlyptostrobusLog.block, EnumFacing.UP);
+						xx = xx - 1;
+					}
+					Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
+					$_dependencies.put("x", xx);
+					$_dependencies.put("y", (int) (y + counter));
+					$_dependencies.put("z", z);
+					$_dependencies.put("world", world);
+					ProcedureWorldGenGlyptostrobusBranchWest.executeProcedure($_dependencies);
+				}
+
+				if (BranchAxis == "north") {
+					xx = x;
+					zz = z - 1;
+					randomiser = Math.random();
+					if (randomiser >= 0.5) {
+						ProcedureTreeLog.executeProcedure((int) xx, (int) (y + counter), (int) zz, world, BlockGlyptostrobusLog.block, EnumFacing.WEST);
+						zz = zz - 1;
+					}
+					if ((randomiser >= 0.8) && (counter/TrunkHeight < 0.75)) {
+						ProcedureTreeLog.executeProcedure((int) xx, (int) (y + counter), (int) zz, world, BlockGlyptostrobusLog.block, EnumFacing.WEST);
+						zz = zz - 1;
+					}
+					Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
+					$_dependencies.put("x", x);
+					$_dependencies.put("y", (int) (y + counter));
+					$_dependencies.put("z", zz);
+					$_dependencies.put("world", world);
+					ProcedureWorldGenGlyptostrobusBranchNorth.executeProcedure($_dependencies);
+				}
+
+				if (BranchAxis == "south") {
+					xx = x;
+					zz = z + 1;
+					randomiser = Math.random();
+					if (randomiser >= 0.5) {
+						ProcedureTreeLog.executeProcedure((int) xx, (int) (y + counter), (int) zz, world, BlockGlyptostrobusLog.block, EnumFacing.WEST);
+						zz = zz + 1;
+					}
+					if ((randomiser >= 0.8) && (counter/TrunkHeight < 0.75)) {
+						ProcedureTreeLog.executeProcedure((int) xx, (int) (y + counter), (int) zz, world, BlockGlyptostrobusLog.block, EnumFacing.WEST);
+						zz = zz + 1;
+					}
+					Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
+					$_dependencies.put("x", x);
+					$_dependencies.put("y", (int) (y + counter));
+					$_dependencies.put("z", zz);
+					$_dependencies.put("world", world);
+					ProcedureWorldGenGlyptostrobusBranchSouth.executeProcedure($_dependencies);
+				}
+
+				//Skip 1 to three rows and then trigger next branch
+				counter = counter - Math.round(Math.random() * 2);
 			}
 
 		}
