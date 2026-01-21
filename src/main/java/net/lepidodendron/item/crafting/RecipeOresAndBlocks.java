@@ -70,6 +70,7 @@ public class RecipeOresAndBlocks  {
 		GameRegistry.addSmelting(new ItemStack(BlockSaltBlock.block, (int) (1)), new ItemStack(ItemSodiumIngot.block, (int) (1)), 0.5F);
 		GameRegistry.addSmelting(new ItemStack(ItemSalt.block, (int) (1)), new ItemStack(ItemSodiumNugget.block, (int) (1)), 0.5F);
 
+		GameRegistry.addSmelting(new ItemStack(BlockStickBundle.block, (int) (1)), new ItemStack(Items.COAL, (int) (1), 1), 0.5F);
 
 	}
 }

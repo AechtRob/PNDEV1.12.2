@@ -1,6 +1,5 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
@@ -34,17 +33,17 @@ public class SalviniaGenerator extends WorldGenerator
     	boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimSalvinia))
 			dimensionCriteria = true;
-		if ((dimID == LepidodendronConfig.dimCretaceousEarly))
-			{
-				dimensionCriteria = true;
-			}
+//		if ((dimID == LepidodendronConfig.dimCretaceousEarly))
+//			{
+//				dimensionCriteria = true;
+//			}
 
 		if (!dimensionCriteria)
 			return true;
 
 		int multiplier = 1;
-		if (dimID == LepidodendronConfig.dimCretaceousEarly
-		) {multiplier = 4;}
+//		if (dimID == LepidodendronConfig.dimCretaceousEarly
+//		) {multiplier = 4;}
 
         for (int i = 0; i < (32 * multiplier); ++i)
         {

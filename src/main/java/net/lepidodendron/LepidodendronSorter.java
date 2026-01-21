@@ -5536,6 +5536,8 @@ public class LepidodendronSorter {
     public static final int torreya_trapdoor = 8404;
     public static final int torreya_berries = 8405;
 
+    public static final int azolla = 8406;
+
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;

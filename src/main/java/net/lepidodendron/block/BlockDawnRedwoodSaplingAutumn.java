@@ -49,32 +49,32 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockDawnRedwoodSapling extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:dawn_redwood_sapling")
+public class BlockDawnRedwoodSaplingAutumn extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:dawn_redwood_sapling_autumn")
 	public static final Block block = null;
-	public BlockDawnRedwoodSapling(ElementsLepidodendronMod instance) {
+	public BlockDawnRedwoodSaplingAutumn(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.dawn_redwood_sapling);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("dawn_redwood_sapling"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("dawn_redwood_sapling_autumn"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:dawn_redwood_sapling", "inventory"));
+				new ModelResourceLocation("lepidodendron:dawn_redwood_sapling_autumn", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:dawn_redwood_sapling", BlockDawnRedwoodSapling.block);
-		OreDictionary.registerOre("treeSapling", BlockDawnRedwoodSapling.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockDawnRedwoodSapling.block);
-		OreDictionary.registerOre("plant", BlockDawnRedwoodSapling.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:dawn_redwood_sapling", BlockDawnRedwoodSaplingAutumn.block);
+		OreDictionary.registerOre("treeSapling", BlockDawnRedwoodSaplingAutumn.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockDawnRedwoodSaplingAutumn.block);
+		OreDictionary.registerOre("plant", BlockDawnRedwoodSaplingAutumn.block);
 	}
 
 
@@ -88,7 +88,7 @@ public class BlockDawnRedwoodSapling extends ElementsLepidodendronMod.ModElement
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0.2F);
         	setResistance(1F);
-			setTranslationKey("pf_dawn_redwood_sapling");
+			setTranslationKey("pf_dawn_redwood_sapling_autumn");
 			setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
 		}
 
@@ -170,7 +170,7 @@ public class BlockDawnRedwoodSapling extends ElementsLepidodendronMod.ModElement
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
-					ProcedureWorldGenDawnRedwood.executeProcedure($_dependencies, false);
+					ProcedureWorldGenDawnRedwood.executeProcedure($_dependencies, true);
 				}
 	        }
 	    }

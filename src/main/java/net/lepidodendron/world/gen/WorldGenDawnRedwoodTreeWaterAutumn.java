@@ -17,10 +17,10 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import java.util.Random;
 
-public class WorldGenDawnRedwoodTreeWater extends WorldGenAbstractTree
+public class WorldGenDawnRedwoodTreeWaterAutumn extends WorldGenAbstractTree
 {
 
-    public WorldGenDawnRedwoodTreeWater(boolean notify)
+    public WorldGenDawnRedwoodTreeWaterAutumn(boolean notify)
     {
         super(notify);
     }
@@ -121,7 +121,7 @@ public class WorldGenDawnRedwoodTreeWater extends WorldGenAbstractTree
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
-					ProcedureWorldGenDawnRedwood.executeProcedure($_dependencies, false);
+					ProcedureWorldGenDawnRedwood.executeProcedure($_dependencies, true);
                     return true;
                 }
                 else

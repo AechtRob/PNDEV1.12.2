@@ -85,7 +85,7 @@ public class WorldGenDawnRedwoodTree extends WorldGenAbstractTree
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
                     $_dependencies.put("SaplingSpawn", false);
-					ProcedureWorldGenDawnRedwood.executeProcedure($_dependencies);
+					ProcedureWorldGenDawnRedwood.executeProcedure($_dependencies, false);
 
                     return true;
                 }

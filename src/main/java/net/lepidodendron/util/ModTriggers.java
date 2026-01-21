@@ -535,6 +535,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_RHYNIA = new CustomTrigger("pf_book_rhynia");
     public static final CustomTrigger CLICK_WATER_CLOVER = new CustomTrigger("pf_book_water_clover");
     public static final CustomTrigger CLICK_SALVINIA = new CustomTrigger("pf_book_salvinia");
+    public static final CustomTrigger CLICK_AZOLLA = new CustomTrigger("pf_book_azolla");
     public static final CustomTrigger CLICK_RUFLORIA = new CustomTrigger("pf_book_rufloria");
     public static final CustomTrigger CLICK_WATER_POPPY = new CustomTrigger("pf_book_water_poppy");
     public static final CustomTrigger CLICK_YUCCITES = new CustomTrigger("pf_book_yuccites");
@@ -2952,6 +2953,7 @@ public class ModTriggers
             CLICK_RHYNIA,
             CLICK_WATER_CLOVER,
             CLICK_SALVINIA,
+            CLICK_AZOLLA,
             CLICK_RUFLORIA,
             CLICK_WATER_POPPY,
             CLICK_YUCCITES,

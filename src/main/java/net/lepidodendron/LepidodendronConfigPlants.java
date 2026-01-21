@@ -942,6 +942,15 @@ public class LepidodendronConfigPlants {
     public static double multiplierSalvinia = 1;
     public static boolean spreadSalvinia = true;
 
+    public static boolean genAzolla = false;
+    public static String[] genAzollaBlacklistBiomes = new String[0];
+    public static String[] genAzollaOverrideBiomes = new String[0];
+    public static int[] dimAzolla = new int[]{0};
+    public static int minheightAzolla = 1;
+    public static int maxheightAzolla = 0;
+    public static double multiplierAzolla = 1;
+    public static boolean spreadAzolla = true;
+
     public static boolean genWaterPoppy = false;
     public static String[] genWaterPoppyBlacklistBiomes = new String[0];
     public static String[] genWaterPoppyOverrideBiomes = new String[0];
@@ -14172,6 +14181,38 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Torreya", "multiplierTorreya", multiplierTorreya);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierTorreya = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Azolla", "genAzolla", genAzolla);
+        prop.setComment("Set to true to generate Azolla naturally [default: false]");
+        genAzolla = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Azolla", "genAzollaBlacklistBiomes", genAzollaBlacklistBiomes);
+        prop.setComment("List of biomes Azolla are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genAzollaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Azolla", "genAzollaOverrideBiomes", genAzollaOverrideBiomes);
+        prop.setComment("List of biomes Azolla are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genAzollaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Azolla", "dimAzolla", dimAzolla);
+        prop.setComment("List of dimension IDs Azolla can generate in [default: 0]");
+        dimAzolla = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Azolla", "minheightAzolla", minheightAzolla);
+        prop.setComment("Minimum height that Azolla can generate (1 to 250) [default: 1]");
+        minheightAzolla = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Azolla", "maxheightAzolla", maxheightAzolla);
+        prop.setComment("Maximum height that Azolla can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightAzolla = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Azolla", "multiplierAzolla", multiplierAzolla);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierAzolla = prop.getDouble();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Azolla", "spreadAzolla", spreadAzolla);
+        prop.setComment("Set to true for Azolla to spread naturally, and to false to require bonemeal to spread [default: true]");
+        spreadAzolla = prop.getBoolean();
         propOrder.add(prop.getName());
 
 
