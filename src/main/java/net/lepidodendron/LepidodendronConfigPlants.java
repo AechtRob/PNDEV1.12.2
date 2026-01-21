@@ -2642,6 +2642,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightYew = 110;
     public static double multiplierYew = 1;
 
+    public static boolean genTorreya = false;
+    public static String[] genTorreyaBlacklistBiomes = new String[0];
+    public static String[] genTorreyaOverrideBiomes = new String[0];
+    public static int[] dimTorreya = new int[]{0};
+    public static int minheightTorreya = 1;
+    public static int maxheightTorreya = 110;
+    public static double multiplierTorreya = 1;
+
     public static boolean genChestnut = false;
     public static String[] genChestnutBlacklistBiomes = new String[0];
     public static String[] genChestnutOverrideBiomes = new String[0];
@@ -14136,6 +14144,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Tsuga", "multiplierTsuga", multiplierTsuga);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierTsuga = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Torreya", "genTorreya", genTorreya);
+        prop.setComment("Set to true to generate Torreya trees naturally [default: false]");
+        genTorreya = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Torreya", "genTorreyaBlacklistBiomes", genTorreyaBlacklistBiomes);
+        prop.setComment("List of biomes Torreya trees are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genTorreyaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Torreya", "genTorreyaOverrideBiomes", genTorreyaOverrideBiomes);
+        prop.setComment("List of biomes Torreya trees are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genTorreyaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Torreya", "dimTorreya", dimTorreya);
+        prop.setComment("List of dimension IDs Torreya trees can generate in [default: 0]");
+        dimTorreya = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Torreya", "minheightTorreya", minheightTorreya);
+        prop.setComment("Minimum height that Torreya trees can generate (1 to 250) [default: 1]");
+        minheightTorreya = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Torreya", "maxheightTorreya", maxheightTorreya);
+        prop.setComment("Maximum height that Torreya trees can generate (1 to 250, or set to 0 for unlimited) [default: 110]");
+        maxheightTorreya = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Torreya", "multiplierTorreya", multiplierTorreya);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierTorreya = prop.getDouble();
         propOrder.add(prop.getName());
 
 
