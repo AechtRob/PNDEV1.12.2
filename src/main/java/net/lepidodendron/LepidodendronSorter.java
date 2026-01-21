@@ -5512,6 +5512,30 @@ public class LepidodendronSorter {
     public static final int drosera = 8406;
     public static final int abies_sapling_mighty = 8407;
 
+    public static final int torreya_bench = 8383;
+    public static final int torreya_boat_item = 8384;
+    public static final int torreya_bridge = 8385;
+    public static final int torreya_door = 8386;
+    public static final int torreya_door_item = 8387;
+    public static final int torreya_fence = 8388;
+    public static final int torreya_fence_gate = 8389;
+    public static final int torreya_leaves = 8390;
+    public static final int torreya_litterbin = 8391;
+    public static final int torreya_log = 8392;
+    public static final int torreya_planks = 8393;
+    public static final int torreya_planter1 = 8394;
+    public static final int torreya_planter1_peat = 8395;
+    public static final int torreya_planter1_sand = 8396;
+    public static final int torreya_planter2 = 8397;
+    public static final int torreya_planter2_peat = 8398;
+    public static final int torreya_planter2_sand = 8399;
+    public static final int torreya_sapling = 8400;
+    public static final int torreya_seed = 8401;
+    public static final int torreya_slab = 8402;
+    public static final int torreya_stairs = 8403;
+    public static final int torreya_trapdoor = 8404;
+    public static final int torreya_berries = 8405;
+
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;

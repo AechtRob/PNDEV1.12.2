@@ -1,17 +1,17 @@
 {
- "group": "lepidodendron",
- "type": "minecraft:crafting_shapeless",
- "ingredients": [
- {
- "item": "lepidodendron:torreya_nuts"
- },
- {
- "type": "forge:ore_dict",
- "ore": "dirt"
- }
- ],
- "result": {
- "item": "lepidodendron:torreya_sapling",
- "count": 1
- }
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:torreya_seed"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "dirt"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:torreya_sapling",
+    "count": 1
+  }
 }

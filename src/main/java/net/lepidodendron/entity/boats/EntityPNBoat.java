@@ -369,6 +369,8 @@ public class EntityPNBoat extends EntityBoat
                 return ItemGlyptostrobusBoatItem.block;
             case TSUGA:
                 return ItemTsugaBoatItem.block;
+            case TORREYA:
+                return ItemTorreyaBoatItem.block;
 
         }
     }
@@ -557,6 +559,8 @@ public class EntityPNBoat extends EntityBoat
                 return BlockGlyptostrobusPlanks.block;
             case TSUGA:
                 return BlockTsugaPlanks.block;
+            case TORREYA:
+                return BlockTorreyaPlanks.block;
 
         }
     }
@@ -1445,7 +1449,8 @@ public class EntityPNBoat extends EntityBoat
         SAURAUIA(86, "saurauia"),
         ABIES(87, "saurauia"),
         GLYPTOSTROBUS(88, "glyptostrobus"),
-        TSUGA(89, "tsuga")
+        TSUGA(89, "tsuga"),
+        TORREYA(90, "torreya")
         ;
 
         private final String name;

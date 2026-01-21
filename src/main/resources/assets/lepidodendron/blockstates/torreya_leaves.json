@@ -1,7 +1,7 @@
 {
   "variants": {
-    "normal": {
-      "model": "lepidodendron:torreya_leaves"
-    }
+    "normal": [
+      {"model": "lepidodendron:torreya_leaves"}
+    ]
   }
 }

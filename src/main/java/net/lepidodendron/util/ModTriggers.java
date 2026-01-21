@@ -635,6 +635,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_XIANGUANGIA = new CustomTrigger("pf_book_xianguangia");
     public static final CustomTrigger CLICK_XIHUPHYLLUM = new CustomTrigger("pf_book_xihuphyllum");
     public static final CustomTrigger CLICK_YEW = new CustomTrigger("pf_book_yew");
+    public static final CustomTrigger CLICK_TORREYA = new CustomTrigger("pf_book_torreya");
     public static final CustomTrigger CLICK_ZAMITES = new CustomTrigger("pf_book_zamites");
     public static final CustomTrigger CLICK_ZOSTEROPHYLLUM = new CustomTrigger("pf_book_zosterophyllum");
     public static final CustomTrigger CLICK_ZYGOPTERIDACEAE = new CustomTrigger("pf_book_zygopteridaceae");
@@ -3051,6 +3052,7 @@ public class ModTriggers
             CLICK_XIANGUANGIA,
             CLICK_XIHUPHYLLUM,
             CLICK_YEW,
+            CLICK_TORREYA,
             CLICK_ZAMITES,
             CLICK_ZOSTEROPHYLLUM,
             CLICK_ZYGOPTERIDACEAE,
