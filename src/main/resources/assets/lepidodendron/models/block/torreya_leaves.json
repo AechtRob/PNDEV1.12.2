@@ -1,7 +1,6 @@
 {
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "lepidodendron:blocks/torreya_leaves",
-    "particle": "lepidodendron:blocks/torreya_leaves"
-  }
+    "parent": "block/leaves",
+    "textures": {
+        "all": "lepidodendron:blocks/torreya_leaves"
+    }
 }
