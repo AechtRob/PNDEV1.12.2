@@ -5510,6 +5510,7 @@ public class LepidodendronSorter {
     public static final int tsuga_fruit = 8405;
 
     public static final int drosera = 8406;
+    public static final int abies_sapling_mighty = 8407;
 
     //Rob list ends-----
 
