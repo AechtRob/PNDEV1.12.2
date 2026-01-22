@@ -7,7 +7,8 @@
   ],
   "key": {
     "3": {
-      "item": "lepidodendron:anthracite"
+      "type": "forge:ore_dict",
+      "ore": "itemCoal"
     },
     "6": {
       "type": "forge:ore_dict",
