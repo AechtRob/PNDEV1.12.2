@@ -296,7 +296,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("saplingAutumnifier", new ItemStack(Blocks.SNOW, 1));
 		OreDictionary.registerOre("saplingAutumnifier", new ItemStack(Blocks.SNOW_LAYER, 1));
 		OreDictionary.registerOre("saplingAutumnifier", new ItemStack(Blocks.ICE, 1));
-		OreDictionary.registerOre("saplingAutumnifier", new ItemStack(Blocks.FROSTED_ICE, 1));
 
 		//Fungi:
 		OreDictionary.registerOre("itemFungus", new ItemStack(Blocks.BROWN_MUSHROOM, 1));

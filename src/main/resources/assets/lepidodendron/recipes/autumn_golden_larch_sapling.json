@@ -3,7 +3,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:golden_larch_sapling",
+      "item": "lepidodendron:golden_larch_sapling",
       "data": 0
     },
     {

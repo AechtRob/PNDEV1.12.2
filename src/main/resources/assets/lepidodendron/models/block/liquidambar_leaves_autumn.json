@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/liquidambar_leaves_autumn",
+    "particle": "lepidodendron:blocks/liquidambar_leaves_autumn"
+  }
+}
