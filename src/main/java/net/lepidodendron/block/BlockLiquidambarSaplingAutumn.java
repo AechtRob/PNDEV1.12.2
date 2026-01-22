@@ -48,32 +48,32 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockLiquidambarSapling extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:liquidambar_sapling")
+public class BlockLiquidambarSaplingAutumn extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:liquidambar_sapling_autumn")
 	public static final Block block = null;
-	public BlockLiquidambarSapling(ElementsLepidodendronMod instance) {
+	public BlockLiquidambarSaplingAutumn(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.liquidambar_sapling);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("liquidambar_sapling"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("liquidambar_sapling_autumn"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:liquidambar_sapling", "inventory"));
+				new ModelResourceLocation("lepidodendron:liquidambar_sapling_autumn", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:liquidambar_sapling", BlockLiquidambarSapling.block);
-		OreDictionary.registerOre("treeSapling", BlockLiquidambarSapling.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockLiquidambarSapling.block);
-		OreDictionary.registerOre("plant", BlockLiquidambarSapling.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:liquidambar_sapling", BlockLiquidambarSaplingAutumn.block);
+		OreDictionary.registerOre("treeSapling", BlockLiquidambarSaplingAutumn.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockLiquidambarSaplingAutumn.block);
+		OreDictionary.registerOre("plant", BlockLiquidambarSaplingAutumn.block);
 	}
 
 
@@ -87,7 +87,7 @@ public class BlockLiquidambarSapling extends ElementsLepidodendronMod.ModElement
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0.2F);
         	setResistance(1F);
-			setTranslationKey("pf_liquidambar_sapling");
+			setTranslationKey("pf_liquidambar_sapling_autumn");
 			setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
 		}
 
@@ -154,7 +154,7 @@ public class BlockLiquidambarSapling extends ElementsLepidodendronMod.ModElement
 				if (TreeHeight > 25 && Math.random() > 0.4) {
 					TreeHeight = 12 + rand.nextInt(8);
 				}
-				ProcedureWorldGenLiquidambar.executeProcedure(world, pos, TreeHeight, false);
+				ProcedureWorldGenLiquidambar.executeProcedure(world, pos, TreeHeight, true);
 				//}
 	        }
 	    }

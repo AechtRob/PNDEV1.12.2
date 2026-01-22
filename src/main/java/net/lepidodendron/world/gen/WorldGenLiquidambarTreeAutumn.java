@@ -1,7 +1,6 @@
 package net.lepidodendron.world.gen;
 
-import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
-import net.lepidodendron.procedure.ProcedureWorldGenGoldenLarch;
+import net.lepidodendron.procedure.ProcedureWorldGenLiquidambar;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -11,10 +10,10 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import java.util.Random;
 
-public class WorldGenGoldenLarchTree extends WorldGenAbstractTree
+public class WorldGenLiquidambarTreeAutumn extends WorldGenAbstractTree
 {
 
-    public WorldGenGoldenLarchTree(boolean notify)
+    public WorldGenLiquidambarTreeAutumn(boolean notify)
     {
         super(notify);
     }
@@ -79,12 +78,11 @@ public class WorldGenGoldenLarchTree extends WorldGenAbstractTree
 
                 if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
-                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
-					$_dependencies.put("x", position.getX());
-					$_dependencies.put("y", position.getY());
-					$_dependencies.put("z", position.getZ());
-					$_dependencies.put("world", worldIn);
-					ProcedureWorldGenGoldenLarch.executeProcedure($_dependencies, false);
+                    int TreeHeight = 15 + rand.nextInt(14);
+                    if (TreeHeight > 25 && Math.random() > 0.4) {
+                        TreeHeight = 12 + rand.nextInt(8);
+                    }
+                    ProcedureWorldGenLiquidambar.executeProcedure(worldIn, position, TreeHeight, true);
                     return true;
                 }
                 else

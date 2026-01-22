@@ -1,13 +1,14 @@
 
 package net.lepidodendron.block;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.procedure.ProcedureWorldGenLiquidambar;
+import net.lepidodendron.procedure.ProcedureWorldGenGoldenLarch;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
@@ -48,32 +49,32 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockLiquidambarSapling extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:liquidambar_sapling")
+public class BlockGoldenLarchSaplingAutumn extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:golden_larch_sapling_autumn")
 	public static final Block block = null;
-	public BlockLiquidambarSapling(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.liquidambar_sapling);
+	public BlockGoldenLarchSaplingAutumn(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.golden_larch_sapling);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("liquidambar_sapling"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("golden_larch_sapling_autumn"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:liquidambar_sapling", "inventory"));
+				new ModelResourceLocation("lepidodendron:golden_larch_sapling_autumn", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:liquidambar_sapling", BlockLiquidambarSapling.block);
-		OreDictionary.registerOre("treeSapling", BlockLiquidambarSapling.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockLiquidambarSapling.block);
-		OreDictionary.registerOre("plant", BlockLiquidambarSapling.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:golden_larch_sapling", BlockGoldenLarchSaplingAutumn.block);
+		OreDictionary.registerOre("treeSapling", BlockGoldenLarchSaplingAutumn.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockGoldenLarchSaplingAutumn.block);
+		OreDictionary.registerOre("plant", BlockGoldenLarchSaplingAutumn.block);
 	}
 
 
@@ -87,7 +88,7 @@ public class BlockLiquidambarSapling extends ElementsLepidodendronMod.ModElement
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0.2F);
         	setResistance(1F);
-			setTranslationKey("pf_liquidambar_sapling");
+			setTranslationKey("pf_golden_larch_sapling_autumn");
 			setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
 		}
 
@@ -99,7 +100,7 @@ public class BlockLiquidambarSapling extends ElementsLepidodendronMod.ModElement
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_LIQUIDAMBAR;
+			return ModTriggers.CLICK_GOLDEN_LARCH;
 		}
 
 		@Override
@@ -150,12 +151,19 @@ public class BlockLiquidambarSapling extends ElementsLepidodendronMod.ModElement
 	        }
 	        else
 	        {
-	           	int TreeHeight = 15 + rand.nextInt(14);
-				if (TreeHeight > 25 && Math.random() > 0.4) {
-					TreeHeight = 12 + rand.nextInt(8);
+	            int x = pos.getX();
+				int y = pos.getY();
+				int z = pos.getZ();
+				boolean SaplingSpawn = true;
+				{
+					Object2ObjectOpenHashMap <String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
+					$_dependencies.put("x", x);
+					$_dependencies.put("y", y);
+					$_dependencies.put("z", z);
+					$_dependencies.put("world", world);
+					$_dependencies.put("SaplingSpawn", SaplingSpawn);
+					ProcedureWorldGenGoldenLarch.executeProcedure($_dependencies, true);
 				}
-				ProcedureWorldGenLiquidambar.executeProcedure(world, pos, TreeHeight, false);
-				//}
 	        }
 	    }
 	    
@@ -206,9 +214,9 @@ public class BlockLiquidambarSapling extends ElementsLepidodendronMod.ModElement
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Flowering tree");
+				tooltip.add("Type: Coniferous tree");
 				tooltip.add("Periods: Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]");
-				tooltip.add("Propagation: Fruit/Cone");}
+				tooltip.add("Propagation: Fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

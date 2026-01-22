@@ -11,10 +11,10 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import java.util.Random;
 
-public class WorldGenGoldenLarchTree extends WorldGenAbstractTree
+public class WorldGenGoldenLarchTreeAutumn extends WorldGenAbstractTree
 {
 
-    public WorldGenGoldenLarchTree(boolean notify)
+    public WorldGenGoldenLarchTreeAutumn(boolean notify)
     {
         super(notify);
     }
@@ -84,7 +84,7 @@ public class WorldGenGoldenLarchTree extends WorldGenAbstractTree
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
-					ProcedureWorldGenGoldenLarch.executeProcedure($_dependencies, false);
+					ProcedureWorldGenGoldenLarch.executeProcedure($_dependencies, true);
                     return true;
                 }
                 else

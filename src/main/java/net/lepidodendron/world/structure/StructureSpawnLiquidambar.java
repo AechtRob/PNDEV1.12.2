@@ -173,7 +173,13 @@ public class StructureSpawnLiquidambar extends ElementsLepidodendronMod.ModEleme
 					if (TreeHeight > 25 && Math.random() > 0.4) {
 						TreeHeight = 12 + random.nextInt(8);
 					}
-					ProcedureWorldGenLiquidambar.executeProcedure(world, spawnTo, TreeHeight);
+
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.COLD) || BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY)) {
+						ProcedureWorldGenLiquidambar.executeProcedure(world, spawnTo, TreeHeight, true);
+					}
+					else {
+						ProcedureWorldGenLiquidambar.executeProcedure(world, spawnTo, TreeHeight, false);
+					}
 				}
 
 			}
