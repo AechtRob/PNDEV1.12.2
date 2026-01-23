@@ -1,7 +1,7 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "lepidodendron:items/saururus_inventory",
+        "particle": "lepidodendron:blocks/saururus_land_t",
         "top": "lepidodendron:blocks/saururus_land_t",
         "bottom": "lepidodendron:blocks/saururus_land_b"
     },

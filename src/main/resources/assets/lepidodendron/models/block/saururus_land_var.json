@@ -1,7 +1,7 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "lepidodendron:items/saururus_inventory",
+        "particle": "lepidodendron:blocks/saururus_land_var_t",
         "top": "lepidodendron:blocks/saururus_land_var_t",
         "bottom": "lepidodendron:blocks/saururus_land_var_b"
     },
@@ -24,7 +24,7 @@
                 "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#top" }
             }
         },        {   "from": [ 0, 0, 8 ],
-            "to": [ 16, 176, 8 ],
+            "to": [ 16, 16, 8 ],
             "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
             "shade": false,
             "faces": {

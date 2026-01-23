@@ -4,8 +4,8 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockReedsLand;
-import net.lepidodendron.block.BlockReedsWater;
+import net.lepidodendron.block.BlockSeedyGrassLand;
+import net.lepidodendron.block.BlockSeedyGrassWater;
 import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -94,8 +94,8 @@ public class ItemSeedyGrassItem extends ElementsLepidodendronMod.ModElement {
 	                BlockPos blockpos1 = blockpos.up();
 	                IBlockState iblockstate = worldIn.getBlockState(blockpos);
 	                IBlockState iblockstate1 = worldIn.getBlockState(blockpos1);
-					if (BlockReedsLand.BlockCustom.canSurviveAt(worldIn, blockpos1) && (iblockstate1.getMaterial().isReplaceable())) {
-						worldIn.setBlockState(blockpos1, BlockReedsLand.block.getDefaultState(), 3);
+					if (BlockSeedyGrassLand.BlockCustom.canSurviveAt(worldIn, blockpos1) && (iblockstate1.getMaterial().isReplaceable())) {
+						worldIn.setBlockState(blockpos1, BlockSeedyGrassLand.block.getDefaultState(), 3);
 						if (!playerIn.capabilities.isCreativeMode)
 		                    {
 		                        itemstack.shrink(1);
@@ -109,14 +109,14 @@ public class ItemSeedyGrassItem extends ElementsLepidodendronMod.ModElement {
 		                {
 		                    // special case for handling block placement with water lilies
 		                    net.minecraftforge.common.util.BlockSnapshot blocksnapshot = net.minecraftforge.common.util.BlockSnapshot.getBlockSnapshot(worldIn, blockpos1);
-		                    worldIn.setBlockState(blockpos1, BlockReedsWater.block.getDefaultState());
+		                    worldIn.setBlockState(blockpos1, BlockSeedyGrassWater.block.getDefaultState());
 		                    if (net.minecraftforge.event.ForgeEventFactory.onPlayerBlockPlace(playerIn, blocksnapshot, net.minecraft.util.EnumFacing.UP, handIn).isCanceled())
 		                    {
 		                        blocksnapshot.restore(true, false);
 		                        return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
 		                    }
 		
-		                    worldIn.setBlockState(blockpos1, BlockReedsWater.block.getDefaultState(), 11);
+		                    worldIn.setBlockState(blockpos1, BlockSeedyGrassWater.block.getDefaultState(), 11);
 		
 		                    if (playerIn instanceof EntityPlayerMP)
 		                    {
@@ -152,7 +152,7 @@ public class ItemSeedyGrassItem extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public IBlockState getPotState() {
-			return BlockReedsLand.block.getDefaultState();
+			return BlockSeedyGrassLand.block.getDefaultState();
 		}
 	}
 
