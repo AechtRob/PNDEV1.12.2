@@ -5538,6 +5538,21 @@ public class LepidodendronSorter {
 
     public static final int azolla = 8406;
 
+    public static final int cornus_flower = 8406;
+    public static final int cornus_seeds = 8407;
+    public static final int cornus_leaves = 8409;
+    public static final int cornus_sapling = 8410;
+
+    public static final int cornusmas_berries = 8411;
+    public static final int cornusmas_seeds = 8412;
+    public static final int cornusmas = 8413;
+
+    public static final int saururus = 8414;
+    public static final int saururus_seeds = 8415;
+    public static final int reeds = 8415;
+    public static final int reeds_seeds = 8416;
+    public static final int seedy_grass = 8417;
+    public static final int seedy_grass_seeds = 8418;
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;

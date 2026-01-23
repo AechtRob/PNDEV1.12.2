@@ -171,6 +171,9 @@ public class ModTriggers
     public static final CustomTrigger CLICK_BLACK_TREEFERN = new CustomTrigger("pf_book_black_treefern");
     public static final CustomTrigger CLICK_BOLBITIS = new CustomTrigger("pf_book_bolbitis");
     public static final CustomTrigger CLICK_SEAGRASS = new CustomTrigger("pf_book_seagrass");
+    public static final CustomTrigger CLICK_SAURURUS = new CustomTrigger("pf_book_saururus");
+    public static final CustomTrigger CLICK_SEEDY_GRASS = new CustomTrigger("pf_book_seedy_grass");
+    public static final CustomTrigger CLICK_REEDS = new CustomTrigger("pf_book_reeds");
     public static final CustomTrigger CLICK_MOSACAULIS = new CustomTrigger("pf_book_mosacaulis");
     public static final CustomTrigger CLICK_BOMAKELLIA = new CustomTrigger("pf_book_bomakellia");
     public static final CustomTrigger CLICK_BOTHRODENDRON = new CustomTrigger("pf_book_bothrodendron");
@@ -404,6 +407,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_HERPETOGASTER = new CustomTrigger("pf_book_herpetogaster");
     public static final CustomTrigger CLICK_BRACHIOSPONGIA = new CustomTrigger("pf_book_brachiospongia");
     public static final CustomTrigger CLICK_HIRONOIA = new CustomTrigger("pf_book_hironoia");
+    public static final CustomTrigger CLICK_CORNUS = new CustomTrigger("pf_book_cornus");
+    public static final CustomTrigger CLICK_CORNUSMAS = new CustomTrigger("pf_book_cornusmas");
     public static final CustomTrigger CLICK_HYMENAEA = new CustomTrigger("pf_book_hymenaea");
     public static final CustomTrigger CLICK_IBYKA = new CustomTrigger("pf_book_ibyka");
     public static final CustomTrigger CLICK_INARIA = new CustomTrigger("pf_book_inaria");
@@ -2590,6 +2595,9 @@ public class ModTriggers
             CLICK_BLACK_TREEFERN,
             CLICK_BOLBITIS,
             CLICK_SEAGRASS,
+            CLICK_SAURURUS,
+            CLICK_SEEDY_GRASS,
+            CLICK_REEDS,
             CLICK_BOMAKELLIA,
             CLICK_MOSACAULIS,
             CLICK_BOTHRODENDRON,
@@ -2825,6 +2833,8 @@ public class ModTriggers
             CLICK_HERPETOGASTER,
             CLICK_BRACHIOSPONGIA,
             CLICK_HIRONOIA,
+            CLICK_CORNUS,
+            CLICK_CORNUSMAS,
             CLICK_HYMENAEA,
             CLICK_IBYKA,
             CLICK_INARIA,
