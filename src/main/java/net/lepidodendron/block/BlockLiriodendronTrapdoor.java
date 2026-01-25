@@ -17,9 +17,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockLiriodendronTrapdoor extends ElementsLepidodendronMod.ModElement {
@@ -33,6 +35,12 @@ public class BlockLiriodendronTrapdoor extends ElementsLepidodendronMod.ModEleme
 	public void initElements() {
 		elements.blocks.add(() -> new BlockCustom().setRegistryName("liriodendron_trapdoor"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("trapdoorWood", BlockLiriodendronTrapdoor.block);
 	}
 
 	@SideOnly(Side.CLIENT)

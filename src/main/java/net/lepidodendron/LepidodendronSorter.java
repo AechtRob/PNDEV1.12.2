@@ -5460,6 +5460,99 @@ public class LepidodendronSorter {
     public static final int abies_trapdoor = 8357;
     public static final int abies_fruit = 8358;
 
+    public static final int glyptostrobus_bench = 8359;
+    public static final int glyptostrobus_boat_item = 8360;
+    public static final int glyptostrobus_bridge = 8361;
+    public static final int glyptostrobus_door = 8362;
+    public static final int glyptostrobus_door_item = 8363;
+    public static final int glyptostrobus_fence = 8364;
+    public static final int glyptostrobus_fence_gate = 8365;
+    public static final int glyptostrobus_leaves = 8366;
+    public static final int glyptostrobus_litterbin = 8367;
+    public static final int glyptostrobus_log = 8368;
+    public static final int glyptostrobus_planks = 8369;
+    public static final int glyptostrobus_planter1 = 8370;
+    public static final int glyptostrobus_planter1_peat = 8371;
+    public static final int glyptostrobus_planter1_sand = 8372;
+    public static final int glyptostrobus_planter2 = 8373;
+    public static final int glyptostrobus_planter2_peat = 8374;
+    public static final int glyptostrobus_planter2_sand = 8375;
+    public static final int glyptostrobus_sapling = 8376;
+    public static final int glyptostrobus_seed = 8377;
+    public static final int glyptostrobus_slab = 8378;
+    public static final int glyptostrobus_stairs = 8379;
+    public static final int glyptostrobus_trapdoor = 8380;
+    public static final int glyptostrobus_fruit = 8381;
+    public static final int glyptostrobus_knee = 8382;
+    
+    public static final int tsuga_bench = 8383;
+    public static final int tsuga_boat_item = 8384;
+    public static final int tsuga_bridge = 8385;
+    public static final int tsuga_door = 8386;
+    public static final int tsuga_door_item = 8387;
+    public static final int tsuga_fence = 8388;
+    public static final int tsuga_fence_gate = 8389;
+    public static final int tsuga_leaves = 8390;
+    public static final int tsuga_litterbin = 8391;
+    public static final int tsuga_log = 8392;
+    public static final int tsuga_planks = 8393;
+    public static final int tsuga_planter1 = 8394;
+    public static final int tsuga_planter1_peat = 8395;
+    public static final int tsuga_planter1_sand = 8396;
+    public static final int tsuga_planter2 = 8397;
+    public static final int tsuga_planter2_peat = 8398;
+    public static final int tsuga_planter2_sand = 8399;
+    public static final int tsuga_sapling = 8400;
+    public static final int tsuga_nuts = 8401;
+    public static final int tsuga_slab = 8402;
+    public static final int tsuga_stairs = 8403;
+    public static final int tsuga_trapdoor = 8404;
+    public static final int tsuga_fruit = 8405;
+
+    public static final int drosera = 8406;
+    public static final int abies_sapling_mighty = 8407;
+
+    public static final int torreya_bench = 8383;
+    public static final int torreya_boat_item = 8384;
+    public static final int torreya_bridge = 8385;
+    public static final int torreya_door = 8386;
+    public static final int torreya_door_item = 8387;
+    public static final int torreya_fence = 8388;
+    public static final int torreya_fence_gate = 8389;
+    public static final int torreya_leaves = 8390;
+    public static final int torreya_litterbin = 8391;
+    public static final int torreya_log = 8392;
+    public static final int torreya_planks = 8393;
+    public static final int torreya_planter1 = 8394;
+    public static final int torreya_planter1_peat = 8395;
+    public static final int torreya_planter1_sand = 8396;
+    public static final int torreya_planter2 = 8397;
+    public static final int torreya_planter2_peat = 8398;
+    public static final int torreya_planter2_sand = 8399;
+    public static final int torreya_sapling = 8400;
+    public static final int torreya_seed = 8401;
+    public static final int torreya_slab = 8402;
+    public static final int torreya_stairs = 8403;
+    public static final int torreya_trapdoor = 8404;
+    public static final int torreya_berries = 8405;
+
+    public static final int azolla = 8406;
+
+    public static final int cornus_flower = 8406;
+    public static final int cornus_seeds = 8407;
+    public static final int cornus_leaves = 8409;
+    public static final int cornus_sapling = 8410;
+
+    public static final int cornusmas_berries = 8411;
+    public static final int cornusmas_seeds = 8412;
+    public static final int cornusmas = 8413;
+
+    public static final int saururus = 8414;
+    public static final int saururus_seeds = 8415;
+    public static final int reeds = 8415;
+    public static final int reeds_seeds = 8416;
+    public static final int seedy_grass = 8417;
+    public static final int seedy_grass_seeds = 8418;
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;

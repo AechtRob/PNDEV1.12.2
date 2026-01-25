@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/golden_larch_sapling_autumn",
+    "particle": "lepidodendron:blocks/golden_larch_sapling_autumn"
+  }
+}

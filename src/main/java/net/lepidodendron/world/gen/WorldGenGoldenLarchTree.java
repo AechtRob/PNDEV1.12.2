@@ -84,7 +84,7 @@ public class WorldGenGoldenLarchTree extends WorldGenAbstractTree
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
-					ProcedureWorldGenGoldenLarch.executeProcedure($_dependencies);
+					ProcedureWorldGenGoldenLarch.executeProcedure($_dependencies, false);
                     return true;
                 }
                 else

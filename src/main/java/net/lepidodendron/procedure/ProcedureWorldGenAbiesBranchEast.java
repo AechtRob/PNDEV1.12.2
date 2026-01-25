@@ -527,7 +527,7 @@ public class ProcedureWorldGenAbiesBranchEast extends ElementsLepidodendronMod.M
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.WEST);
 				
 			xx = x + 1;
-			yy = y + 1;
+			yy = y - 1;
 			zz = z - (1 * reflector);
 			ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLog.block, EnumFacing.SOUTH);
 				
@@ -554,22 +554,22 @@ public class ProcedureWorldGenAbiesBranchEast extends ElementsLepidodendronMod.M
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
 				
 			xx = x + 2;
-			yy = y + 1;
+			yy = y - 1;
 			zz = z;
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
 				
 			xx = x + 2;
-			yy = y + 1;
+			yy = y - 1;
 			zz = z - (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
 				
 			xx = x + 1;
-			yy = y + 1;
+			yy = y - 1;
 			zz = z - (2 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
 				
 			xx = x + 1;
-			yy = y + 2;
+			yy = y - 2;
 			zz = z - (1 * reflector);
 			ProcedureTreeLeaf.executeProcedure((int) xx, (int) yy, (int) zz, world, BlockAbiesLeaves.block);
 				

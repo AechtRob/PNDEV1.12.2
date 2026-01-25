@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:torreya_fruit_1"},
+      {"model": "lepidodendron:torreya_fruit_2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:torreya_fruit_block_inventory"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:glyptostrobus_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:glyptostrobus_slab_top"
+    }
+  }
+}

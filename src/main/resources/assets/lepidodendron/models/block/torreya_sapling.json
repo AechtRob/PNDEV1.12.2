@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/torreya_sapling",
+    "particle": "lepidodendron:blocks/torreya_sapling"
+  }
+}

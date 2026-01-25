@@ -8,7 +8,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
-import net.lepidodendron.entity.render.entity.RenderEichstaettisaurus;
 import net.lepidodendron.entity.render.entity.RenderPetrolacosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;

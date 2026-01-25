@@ -162,7 +162,7 @@ public class BlockGoldenLarchSapling extends ElementsLepidodendronMod.ModElement
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
 					$_dependencies.put("SaplingSpawn", SaplingSpawn);
-					ProcedureWorldGenGoldenLarch.executeProcedure($_dependencies);
+					ProcedureWorldGenGoldenLarch.executeProcedure($_dependencies, false);
 				}
 	        }
 	    }

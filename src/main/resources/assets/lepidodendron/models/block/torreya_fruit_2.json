@@ -1,0 +1,47 @@
+{
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "lepidodendron:blocks/torreya_fruit",
+		"all": "lepidodendron:blocks/torreya_fruit"
+	},
+	"elements": [
+		{
+			"from": [7, 5, 7],
+			"to": [9, 6, 9],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 3, 8]},
+			"faces": {
+				"north": {"uv": [7, 4, 9, 5], "texture": "#all"},
+				"east": {"uv": [7, 4, 9, 5], "texture": "#all"},
+				"south": {"uv": [7, 4, 9, 5], "texture": "#all"},
+				"west": {"uv": [7, 4, 9, 5], "texture": "#all"},
+				"up": {"uv": [7, 7, 9, 9], "texture": "#all"}
+			}
+		},
+		{
+			"from": [6, 1, 6],
+			"to": [10, 5, 10],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 3, 8]},
+			"faces": {
+				"north": {"uv": [5, 5, 9, 9], "texture": "#all"},
+				"east": {"uv": [5, 5, 9, 9], "texture": "#all"},
+				"south": {"uv": [5, 5, 9, 9], "texture": "#all"},
+				"west": {"uv": [5, 5, 9, 9], "texture": "#all"},
+				"up": {"uv": [6, 6, 10, 10], "texture": "#all"},
+				"down": {"uv": [6, 6, 10, 10], "texture": "#all"}
+			}
+		},
+		{
+			"from": [7, 0, 7],
+			"to": [9, 1, 9],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 3, 8]},
+			"faces": {
+				"north": {"uv": [7, 4, 9, 5], "texture": "#all"},
+				"east": {"uv": [7, 4, 9, 5], "texture": "#all"},
+				"south": {"uv": [7, 4, 9, 5], "texture": "#all"},
+				"west": {"uv": [7, 4, 9, 5], "texture": "#all"},
+				"down": {"uv": [7, 7, 9, 9], "texture": "#all"}
+			}
+		}
+	]
+}

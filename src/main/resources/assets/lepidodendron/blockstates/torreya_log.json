@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:torreya_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:torreya_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:torreya_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:torreya_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:torreya_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:torreya_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:torreya_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

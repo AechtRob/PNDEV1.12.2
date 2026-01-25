@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:tsuga_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:tsuga_slab_top"
+    }
+  }
+}

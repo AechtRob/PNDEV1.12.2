@@ -3,7 +3,9 @@ package net.lepidodendron.procedure;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockDawnRedwoodLeaves;
+import net.lepidodendron.block.BlockDawnRedwoodLeavesAutumn;
 import net.lepidodendron.block.BlockDawnRedwoodLog;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -15,7 +17,7 @@ public class ProcedureWorldGenDawnRedwood extends ElementsLepidodendronMod.ModEl
 		super(instance, 42);
 	}
 
-	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies, boolean isAutumn) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenDawnRedwood!");
 			return;
@@ -441,9 +443,9 @@ public class ProcedureWorldGenDawnRedwood extends ElementsLepidodendronMod.ModEl
 				ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) z, world, BlockDawnRedwoodLog.block, EnumFacing.NORTH);
 				counter = counter + 1;
 			}
-			ProcedureTreeLeaf.executeProcedure(x, (y + (int) counter), z, world, BlockDawnRedwoodLeaves.block);
-			ProcedureTreeLeaf.executeProcedure(x, (y + (int) counter + 1), z, world, BlockDawnRedwoodLeaves.block);
-			ProcedureTreeLeaf.executeProcedure(x, (y + (int) counter + 2), z, world, BlockDawnRedwoodLeaves.block);
+			ProcedureTreeLeaf.executeProcedure(x, (y + (int) counter), z, world, getLeaves(isAutumn));
+			ProcedureTreeLeaf.executeProcedure(x, (y + (int) counter + 1), z, world, getLeaves(isAutumn));
+			ProcedureTreeLeaf.executeProcedure(x, (y + (int) counter + 2), z, world, getLeaves(isAutumn));
 			
 			counterbase = 0;
 			if (Math.random() > 0.3) counterbase = 1;
@@ -503,7 +505,7 @@ public class ProcedureWorldGenDawnRedwood extends ElementsLepidodendronMod.ModEl
 					zct = -3;
 					while (zct <=3) {
 						if ((Math.abs(xct) + Math.abs(zct)) <= 5) {
-							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, BlockDawnRedwoodLeaves.block, 1, 0.1);
+							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, getLeaves(isAutumn), 1, 0.1);
 						}
 						zct = zct + 1;
 					}
@@ -518,7 +520,7 @@ public class ProcedureWorldGenDawnRedwood extends ElementsLepidodendronMod.ModEl
 					zct = -3;
 					while (zct <=3) {
 						if ((Math.abs(xct) + Math.abs(zct)) <= 4) {
-							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, BlockDawnRedwoodLeaves.block, 1, 0.1);
+							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, getLeaves(isAutumn), 1, 0.1);
 						}
 						zct = zct + 1;
 					}
@@ -533,7 +535,7 @@ public class ProcedureWorldGenDawnRedwood extends ElementsLepidodendronMod.ModEl
 					zct = -3;
 					while (zct <=3) {
 						if ((Math.abs(xct) + Math.abs(zct)) <= 3) {
-							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, BlockDawnRedwoodLeaves.block, 1, 0.1);
+							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, getLeaves(isAutumn), 1, 0.1);
 						}
 						zct = zct + 1;
 					}
@@ -548,7 +550,7 @@ public class ProcedureWorldGenDawnRedwood extends ElementsLepidodendronMod.ModEl
 					zct = -3;
 					while (zct <=3) {
 						if ((Math.abs(xct) + Math.abs(zct)) <= 2) {
-							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, BlockDawnRedwoodLeaves.block, 1, 0.1);
+							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, getLeaves(isAutumn), 1, 0.1);
 						}
 						zct = zct + 1;
 					}
@@ -563,7 +565,7 @@ public class ProcedureWorldGenDawnRedwood extends ElementsLepidodendronMod.ModEl
 					zct = -3;
 					while (zct <=3) {
 						if ((Math.abs(xct) + Math.abs(zct)) <= 1) {
-							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, BlockDawnRedwoodLeaves.block, 1, 0.1);
+							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, getLeaves(isAutumn), 1, 0.1);
 						}
 						zct = zct + 1;
 					}
@@ -575,4 +577,12 @@ public class ProcedureWorldGenDawnRedwood extends ElementsLepidodendronMod.ModEl
 		}
 			
 	}
+	
+	static Block getLeaves(boolean isAutumn) {
+		if (isAutumn) {
+			return BlockDawnRedwoodLeavesAutumn.block;
+		}
+		return BlockDawnRedwoodLeaves.block;
+	}
+	
 }

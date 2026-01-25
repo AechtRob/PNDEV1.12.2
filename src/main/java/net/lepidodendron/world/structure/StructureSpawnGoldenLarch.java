@@ -190,7 +190,12 @@ public class StructureSpawnGoldenLarch extends ElementsLepidodendronMod.ModEleme
 						world.setBlockToAir(spawnTo);
 						world.setBlockToAir(spawnTo.up());
 					}
-					ProcedureWorldGenGoldenLarch.executeProcedure($_dependencies);
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.COLD) || BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY)) {
+						ProcedureWorldGenGoldenLarch.executeProcedure($_dependencies, true);
+					}
+					else {
+						ProcedureWorldGenGoldenLarch.executeProcedure($_dependencies, false);
+					}
 				}
 
 			}

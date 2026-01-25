@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "fruits=true":  [
+      { "model": "lepidodendron:torreya_leaves_berries" },
+      { "model": "lepidodendron:torreya_leaves_berries_var" }
+      ],
+    "fruits=false":  { "model": "lepidodendron:torreya_leaves" },
+    "normal": [
+      {"model": "lepidodendron:torreya_leaves_berries"}
+    ]
+  }
+}

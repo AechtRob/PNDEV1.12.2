@@ -1,0 +1,19 @@
+{
+  "group": "lepidodendron",
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "type": "minecraft:item_nbt",
+      "item": "lepidodendron:spore_collection_envelope",
+	  "nbt": {"plant":"lepidodendron:azolla_item", "offsetY":1}
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "dirt"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:azolla_item",
+    "count": 1
+  }
+}

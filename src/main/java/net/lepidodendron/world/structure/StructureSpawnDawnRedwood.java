@@ -166,7 +166,12 @@ public class StructureSpawnDawnRedwood extends ElementsLepidodendronMod.ModEleme
 						world.setBlockToAir(spawnTo);
 						world.setBlockToAir(spawnTo.up());
 					}
-					ProcedureWorldGenDawnRedwood.executeProcedure($_dependencies);
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.COLD) || BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY)) {
+						ProcedureWorldGenDawnRedwood.executeProcedure($_dependencies, true);
+					}
+					else {
+						ProcedureWorldGenDawnRedwood.executeProcedure($_dependencies, false);
+					}
 				}
 
 			}
