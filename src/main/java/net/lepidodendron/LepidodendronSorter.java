@@ -5347,6 +5347,119 @@ public class LepidodendronSorter {
     public static final int eschscholzia = 8280;
     public static final int eschscholzia_seeds = 8281;
 
+    public static final int beauprea_bench = 8282;
+    public static final int beauprea_boat_item = 8283;
+    public static final int beauprea_bridge = 8284;
+    public static final int beauprea_door = 8285;
+    public static final int beauprea_door_item = 8286;
+    public static final int beauprea_fence = 8287;
+    public static final int beauprea_fence_gate = 8288;
+    public static final int beauprea_leaves = 8289;
+    public static final int beauprea_litterbin = 8290;
+    public static final int beauprea_log = 8291;
+    public static final int beauprea_planks = 8292;
+    public static final int beauprea_planter1 = 8293;
+    public static final int beauprea_planter1_peat = 8294;
+    public static final int beauprea_planter1_sand = 8295;
+    public static final int beauprea_planter2 = 8296;
+    public static final int beauprea_planter2_peat = 8297;
+    public static final int beauprea_planter2_sand = 8298;
+    public static final int beauprea_sapling = 8299;
+    public static final int beauprea_seeds = 8300;
+    public static final int beauprea_slab = 8301;
+    public static final int beauprea_stairs = 8302;
+    public static final int beauprea_trapdoor = 8303;
+    public static final int dipteris = 8304;
+
+    public static final int palaeoaster = 8305;
+
+    public static final int palaeoclusia = 8306;
+    public static final int palaeoclusia_flower = 8307;
+    public static final int palaeoclusia_seeds = 8308;
+
+    public static final int populus_bench = 8309;
+    public static final int populus_boat_item = 8310;
+    public static final int populus_bridge = 8311;
+    public static final int populus_door = 8312;
+    public static final int populus_door_item = 8313;
+    public static final int populus_fence = 8314;
+    public static final int populus_fence_gate = 8315;
+    public static final int populus_leaves = 8316;
+    public static final int populus_litterbin = 8317;
+    public static final int populus_log = 8318;
+    public static final int populus_planks = 8319;
+    public static final int populus_planter1 = 8320;
+    public static final int populus_planter1_peat = 8321;
+    public static final int populus_planter1_sand = 8322;
+    public static final int populus_planter2 = 8323;
+    public static final int populus_planter2_peat = 8324;
+    public static final int populus_planter2_sand = 8325;
+    public static final int populus_sapling = 8326;
+    public static final int populus_seeds = 8327;
+    public static final int populus_slab = 8328;
+    public static final int populus_stairs = 8329;
+    public static final int populus_trapdoor = 8330;
+
+    public static final int credneria_sapling = 8331;
+    public static final int credneria_seeds = 8332;
+    public static final int credneria_fruit = 8333;
+    public static final int credneria_leaves = 8334;
+
+    public static final int populus_fruit = 8335;
+
+    public static final int saurauia_bench = 8336;
+    public static final int saurauia_boat_item = 8337;
+    public static final int saurauia_bridge = 8338;
+    public static final int saurauia_door = 8339;
+    public static final int saurauia_door_item = 8340;
+    public static final int saurauia_fence = 8341;
+    public static final int saurauia_fence_gate = 8342;
+    public static final int saurauia_leaves = 8343;
+    public static final int saurauia_litterbin = 8344;
+    public static final int saurauia_log = 8345;
+    public static final int saurauia_planks = 8346;
+    public static final int saurauia_planter1 = 8347;
+    public static final int saurauia_planter1_peat = 8348;
+    public static final int saurauia_planter1_sand = 8349;
+    public static final int saurauia_planter2 = 8350;
+    public static final int saurauia_planter2_peat = 8351;
+    public static final int saurauia_planter2_sand = 8352;
+    public static final int saurauia_sapling = 8353;
+    public static final int saurauia_seeds = 8354;
+    public static final int saurauia_slab = 8355;
+    public static final int saurauia_stairs = 8386;
+    public static final int saurauia_trapdoor = 8357;
+    public static final int saurauia_fruit = 8358;
+
+    public static final int schisandra = 8359;
+    public static final int schisandra_fruit = 8360;
+
+    public static final int water_poppy = 8361;
+
+    public static final int abies_bench = 8336;
+    public static final int abies_boat_item = 8337;
+    public static final int abies_bridge = 8338;
+    public static final int abies_door = 8339;
+    public static final int abies_door_item = 8340;
+    public static final int abies_fence = 8341;
+    public static final int abies_fence_gate = 8342;
+    public static final int abies_leaves = 8343;
+    public static final int abies_litterbin = 8344;
+    public static final int abies_log = 8345;
+    public static final int abies_planks = 8346;
+    public static final int abies_planter1 = 8347;
+    public static final int abies_planter1_peat = 8348;
+    public static final int abies_planter1_sand = 8349;
+    public static final int abies_planter2 = 8350;
+    public static final int abies_planter2_peat = 8351;
+    public static final int abies_planter2_sand = 8352;
+    public static final int abies_sapling = 8353;
+    public static final int abies_nuts = 8354;
+    public static final int abies_slab = 8355;
+    public static final int abies_stairs = 8386;
+    public static final int abies_trapdoor = 8357;
+    public static final int abies_fruit = 8358;
+
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;

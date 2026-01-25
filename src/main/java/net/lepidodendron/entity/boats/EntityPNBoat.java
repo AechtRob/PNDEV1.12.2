@@ -357,6 +357,14 @@ public class EntityPNBoat extends EntityBoat
                 return ItemSchilderiaBoatItem.block;
             case DRYOPHYLLUM:
                 return ItemDryophyllumBoatItem.block;
+            case BEAUPREA:
+                return ItemBeaupreaBoatItem.block;
+            case POPULUS:
+                return ItemPopulusBoatItem.block;
+            case SAURAUIA:
+                return ItemSaurauiaBoatItem.block;
+            case ABIES:
+                return ItemAbiesBoatItem.block;
 
         }
     }
@@ -533,6 +541,14 @@ public class EntityPNBoat extends EntityBoat
                 return BlockSchilderiaPlanks.block;
             case DRYOPHYLLUM:
                 return BlockDryophyllumPlanks.block;
+            case BEAUPREA:
+                return BlockBeaupreaPlanks.block;
+            case POPULUS:
+                return BlockPopulusPlanks.block;
+            case SAURAUIA:
+                return BlockSaurauiaPlanks.block;
+            case ABIES:
+                return BlockAbiesPlanks.block;
 
         }
     }
@@ -1415,7 +1431,11 @@ public class EntityPNBoat extends EntityBoat
         WOODWORTHIA(80, "woodworthia"),
         ARBORAMOSA(81, "arboramosa"),
         SCHILDERIA(82, "schilderia"),
-        DRYOPHYLLUM(83, "dryophyllum")
+        DRYOPHYLLUM(83, "dryophyllum"),
+        BEAUPREA(84, "beauprea"),
+        POPULUS(85, "populus"),
+        SAURAUIA(86, "saurauia"),
+        ABIES(87, "saurauia")
         ;
 
         private final String name;
