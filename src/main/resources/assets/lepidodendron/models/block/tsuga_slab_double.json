@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/tsuga_planks",
+    "particle": "lepidodendron:blocks/tsuga_planks"
+  }
+}

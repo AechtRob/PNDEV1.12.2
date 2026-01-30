@@ -170,7 +170,7 @@ public class BlockDawnRedwoodSapling extends ElementsLepidodendronMod.ModElement
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
-					ProcedureWorldGenDawnRedwood.executeProcedure($_dependencies);
+					ProcedureWorldGenDawnRedwood.executeProcedure($_dependencies, false);
 				}
 	        }
 	    }
@@ -223,7 +223,7 @@ public class BlockDawnRedwoodSapling extends ElementsLepidodendronMod.ModElement
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Coniferous tree");
-				tooltip.add("Periods: Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]");
+				tooltip.add("Periods: [Early Cretaceous (?) -] Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]");
 				tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

@@ -1,0 +1,7 @@
+{
+ "parent": "block/cube_all",
+ "textures": {
+ "all": "lepidodendron:blocks/saurauia_planks",
+ "particle": "lepidodendron:blocks/saurauia_planks"
+ }
+}

@@ -277,7 +277,7 @@ public class EntityPrehistoricFloraTupandactylus_imperator extends EntityPrehist
 		if (this.getIsFast()) {
 			return 0.2f;
 		}
-		return 0.9f;
+		return 0.7f;
 	}
 
 	@Override
@@ -411,7 +411,7 @@ public class EntityPrehistoricFloraTupandactylus_imperator extends EntityPrehist
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH);
+		return ArrayUtils.addAll(DietString.MEAT);
 	}
 
 	protected void initEntityAI() {

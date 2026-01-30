@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:dryophyllum_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:dryophyllum_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:dryophyllum_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:dryophyllum_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:dryophyllum_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:dryophyllum_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:dryophyllum_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

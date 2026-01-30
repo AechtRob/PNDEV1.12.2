@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:orchid_mirror"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_orchid_mirror.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_orchid_mirror.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_orchid_mirror"
+		}
+	}
+}

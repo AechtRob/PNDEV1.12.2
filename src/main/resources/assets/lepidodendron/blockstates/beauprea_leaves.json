@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:beauprea_leaves_flowers"},
+      {"model": "lepidodendron:beauprea_leaves", "weight": 3}
+    ]
+  }
+}
+

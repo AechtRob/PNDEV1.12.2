@@ -17,9 +17,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockCzekanowskiaTrapdoor extends ElementsLepidodendronMod.ModElement {
@@ -27,6 +29,12 @@ public class BlockCzekanowskiaTrapdoor extends ElementsLepidodendronMod.ModEleme
 	public static final Block block = null;
 	public BlockCzekanowskiaTrapdoor(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.czekanowskia_trapdoor);
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("trapdoorWood", BlockCzekanowskiaTrapdoor.block);
 	}
 
 	@Override

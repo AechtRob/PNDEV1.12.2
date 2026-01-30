@@ -193,6 +193,12 @@ public class PlantSpawns {
         if (plantStr.contains("caytoniales")) {
             return "caytoniales";
         }
+        if (plantStr.contains("drosera")) {
+            return "drosera";
+        }
+        if (plantStr.contains("isopogon")) {
+            return "isopogon";
+        }
         if (plantStr.equalsIgnoreCase("large_fern")
                 || plantStr.equalsIgnoreCase("small_fern")) {
             return "fern";

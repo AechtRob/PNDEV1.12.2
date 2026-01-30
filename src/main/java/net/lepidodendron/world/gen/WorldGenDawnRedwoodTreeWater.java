@@ -121,7 +121,7 @@ public class WorldGenDawnRedwoodTreeWater extends WorldGenAbstractTree
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
-					ProcedureWorldGenDawnRedwood.executeProcedure($_dependencies);
+					ProcedureWorldGenDawnRedwood.executeProcedure($_dependencies, false);
                     return true;
                 }
                 else

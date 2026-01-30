@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:orchid_fen" }
+    ],
+    "seeds=false": {
+      "model": "lepidodendron:orchid_fen"
+    },
+    "seeds=true": {
+      "model": "lepidodendron:orchid_fen_seeds"
+    }
+  }
+}

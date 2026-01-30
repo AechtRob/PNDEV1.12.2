@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/mirror_orchid_seeds",
+    "particle": "lepidodendron:blocks/mirror_orchid_seeds"
+  }
+}

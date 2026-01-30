@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:tsuga_slab_double"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "3",
+    "6"
+  ],
+  "key": {
+    "3": {
+      "type": "forge:ore_dict",
+      "ore": "itemCoal"
+    },
+    "6": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    }
+  },
+  "result": {
+    "item": "minecraft:torch",
+    "count": 4
+  }
+}

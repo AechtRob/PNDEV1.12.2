@@ -1,0 +1,40 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:cornus_flower"},
+      	{"model": "lepidodendron:cornus_flower_angle"},
+      	{"model": "lepidodendron:cornus_flower_rot"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:cornus_flower", "x": 90},
+      	{"model": "lepidodendron:cornus_flower_angle", "x": 90},
+       	{"model": "lepidodendron:cornus_flower_rot", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:cornus_flower", "x": 90, "y": 90},
+      	{"model": "lepidodendron:cornus_flower_angle", "x": 90, "y": 90},
+      	{"model": "lepidodendron:cornus_flower_rot", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:cornus_flower", "x": 90, "y": 180},
+      	{"model": "lepidodendron:cornus_flower_angle", "x": 90, "y": 180},
+      	{"model": "lepidodendron:cornus_flower_rot", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:cornus_flower", "x": 90, "y": 270},
+      	{"model": "lepidodendron:cornus_flower_angle", "x": 90, "y": 270},
+      	{"model": "lepidodendron:cornus_flower_rot", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      	{"model": "lepidodendron:cornus_flower"},
+      	{"model": "lepidodendron:cornus_flower_angle"},
+      	{"model": "lepidodendron:cornus_flower_rot"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:cornus_flower", "x": 180},
+      	{"model": "lepidodendron:cornus_flower_angle", "x": 180},
+      	{"model": "lepidodendron:cornus_flower_rot", "x": 180}
+    ]
+  }
+}

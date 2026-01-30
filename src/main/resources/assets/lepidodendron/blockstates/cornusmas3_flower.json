@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:cornusmas3_flower"},
+      {"model": "lepidodendron:cornusmas3_var_flower"}
+    ]
+  }
+}

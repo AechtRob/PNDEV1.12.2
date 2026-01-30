@@ -2793,6 +2793,11 @@ public class ModelTupandactylus_imperator extends ModelBasePalaeopedia {
             yy = -0.085 + (((tickAnim - 36) / 10) * (-0.975-(-0.085)));
             zz = 0.18 + (((tickAnim - 36) / 10) * (0.1-(0.18)));
         }
+        else if (tickAnim >= 46 && tickAnim < 60) {
+            xx = 0 + (((tickAnim - 46) / 14) * (0-(0)));
+            yy = -0.975 + (((tickAnim - 46) / 14) * (-0.975-(-0.975)));
+            zz = 0.1 + (((tickAnim - 46) / 14) * (0.1-(0.1)));
+        }
         else {
             xx = 0;
             yy = 0;
@@ -3431,7 +3436,6 @@ public class ModelTupandactylus_imperator extends ModelBasePalaeopedia {
 
 
         this.setRotateAngle(tail, tail.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*120/0.5-30))*4), tail.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*120-80))*4), tail.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*120))*4));
-
     }
     public void animFly(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraTupandactylus_imperator entity = (EntityPrehistoricFloraTupandactylus_imperator) entitylivingbaseIn;

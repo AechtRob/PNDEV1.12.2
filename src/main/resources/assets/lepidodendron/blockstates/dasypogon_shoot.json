@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:dasypogon_shoot"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:items/dasypogon_shoot_inventory"
+    }
+  }
+}

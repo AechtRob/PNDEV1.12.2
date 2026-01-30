@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:grevillea"}
+    ],
+    "flowers=false": {
+      "model": "lepidodendron:grevillea"
+    },
+    "flowers=true": {
+      "model": "lepidodendron:grevillea_flower"
+    }
+  }
+}

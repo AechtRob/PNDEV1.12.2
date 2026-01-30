@@ -1,0 +1,17 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:isopogon_yellow_seeds"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "dirt"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:isopogon_yellow",
+    "count": 1
+  }
+}

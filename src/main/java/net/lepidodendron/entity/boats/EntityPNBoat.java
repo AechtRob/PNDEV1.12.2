@@ -355,6 +355,22 @@ public class EntityPNBoat extends EntityBoat
                 return ItemArboramosaBoatItem.block;
             case SCHILDERIA:
                 return ItemSchilderiaBoatItem.block;
+            case DRYOPHYLLUM:
+                return ItemDryophyllumBoatItem.block;
+            case BEAUPREA:
+                return ItemBeaupreaBoatItem.block;
+            case POPULUS:
+                return ItemPopulusBoatItem.block;
+            case SAURAUIA:
+                return ItemSaurauiaBoatItem.block;
+            case ABIES:
+                return ItemAbiesBoatItem.block;
+            case GLYPTOSTROBUS:
+                return ItemGlyptostrobusBoatItem.block;
+            case TSUGA:
+                return ItemTsugaBoatItem.block;
+            case TORREYA:
+                return ItemTorreyaBoatItem.block;
 
         }
     }
@@ -529,6 +545,22 @@ public class EntityPNBoat extends EntityBoat
                 return BlockArboramosaPlanks.block;
             case SCHILDERIA:
                 return BlockSchilderiaPlanks.block;
+            case DRYOPHYLLUM:
+                return BlockDryophyllumPlanks.block;
+            case BEAUPREA:
+                return BlockBeaupreaPlanks.block;
+            case POPULUS:
+                return BlockPopulusPlanks.block;
+            case SAURAUIA:
+                return BlockSaurauiaPlanks.block;
+            case ABIES:
+                return BlockAbiesPlanks.block;
+            case GLYPTOSTROBUS:
+                return BlockGlyptostrobusPlanks.block;
+            case TSUGA:
+                return BlockTsugaPlanks.block;
+            case TORREYA:
+                return BlockTorreyaPlanks.block;
 
         }
     }
@@ -1410,7 +1442,15 @@ public class EntityPNBoat extends EntityBoat
         ALBERTIA(79, "albertia"),
         WOODWORTHIA(80, "woodworthia"),
         ARBORAMOSA(81, "arboramosa"),
-        SCHILDERIA(82, "schilderia")
+        SCHILDERIA(82, "schilderia"),
+        DRYOPHYLLUM(83, "dryophyllum"),
+        BEAUPREA(84, "beauprea"),
+        POPULUS(85, "populus"),
+        SAURAUIA(86, "saurauia"),
+        ABIES(87, "saurauia"),
+        GLYPTOSTROBUS(88, "glyptostrobus"),
+        TSUGA(89, "tsuga"),
+        TORREYA(90, "torreya")
         ;
 
         private final String name;

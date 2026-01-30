@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:tsuga_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:tsuga_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:tsuga_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:tsuga_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:tsuga_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:tsuga_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:tsuga_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}
