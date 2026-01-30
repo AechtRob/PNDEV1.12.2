@@ -1,0 +1,57 @@
+{
+	"name": "Mirasaura",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mirasaura_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_mirasaura",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mirasaura",
+			"title": "Mirasaura",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Neodiapsida$(br)>Drepanosauromorpha"
+		},
+        	{
+            "type": "entity",
+            "name": "M. grauvogeli",
+            "entity": "lepidodendron:prehistoric_flora_mirasaura",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mirasaura",
+			"type": "text",
+			"text": "Mirasaura is a fascinating little reptile recently described from the Grès à Voltzia Formation of France. It is not only interesting in its own right, but also noteworthy for helping solve the long-standing mystery that is Longisquama. That animal, known from only one partial specimen, has remained contentious for over 50 years, with uncertain taxonomic position and unusual anatomy."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mirasaura",
+			"type": "text",
+			"text": "In particular, the large, filamentous structures present in Longisquama have attracted a myriad of hypotheses, explaining them as everything from true feathers to unassociated plant fossils. The discovery of Mirasaura shows that those filaments are indeed a genuine anatomical feature of Longisquama and its close relatives. Not only that, but they appear to have been a novel integumentary structure of this clade, not homologous to scales or feathers."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mirasaura",
+			"type": "text",
+			"text": "Mirasaura shows phylogenetic affinity to other Triassic weirdos such as Drepanosaurus, tying Longisquama into the drepanosauromorph clade. While such a relationship has been suggested before, this additional evidence from Mirasaura limits plausible alternatives, suggesting that Longisquama has finally found its home in the reptile family tree."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mirasaura"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mirasaura"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mirasaura"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mirasaura"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mirasaura"
+		}
+	]
+}

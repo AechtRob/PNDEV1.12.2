@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:umoonasaurus_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_umoonasaurus.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_umoonasaurus.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_umoonasaurus"
+        }
+    }
+}

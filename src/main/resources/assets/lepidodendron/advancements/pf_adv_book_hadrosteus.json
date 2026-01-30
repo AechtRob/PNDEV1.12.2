@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:hadrosteus_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_hadrosteus.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_hadrosteus.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_hadrosteus"
+        }
+    }
+}

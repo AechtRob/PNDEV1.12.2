@@ -3672,6 +3672,7 @@ public class LepidodendronMod {
 	static final int ENTITY_MARSHOSAURUS = 1538;
 	public static final ResourceLocation MARSHOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/marshosaurus"));
 	static final int ENTITY_HAUFFIOSAURUS = 1539;
+    public static final ResourceLocation HAUFFIOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hauffiosaurus"));
 	static final int ENTITY_GUIZHOUICHTHYOSAURUS = 1540;
 	static final int ENTITY_ANYCLOCERAS = 1541;
 	static final int ENTITY_EROMANGATEUTHIS = 1542;
@@ -3723,6 +3724,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation CHANGCHUNSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/changchunsaurus"));
 	static final int ENTITY_JINZHOUSAURUS = 1572;
 	static final int ENTITY_CALLAWAYASAURUS = 1573;
+    public static final ResourceLocation CALLAWAYASAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/callawayasaurus"));
 	static final int ENTITY_ABYSSOSAURUS = 1574;
 	static final int ENTITY_AEGIROSAURUS = 1575;
     public static final ResourceLocation AEGIROSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/aegirosaurus"));
@@ -3786,20 +3788,103 @@ public class LepidodendronMod {
 	public static final ResourceLocation THRYPTODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thryptodus"));
 	static final int ENTITY_BOLIVOSTEUS = 1615;
 	public static final ResourceLocation BOLIVOSTEUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bolivosteus"));
+    static final int ENTITY_PHOLIDOSAURUS = 1616;
+    static final int ENTITY_NQWEBSAURUS = 1617;
+    static final int ENTITY_ELRHAZOSAURUS = 1618;
+    static final int ENTITY_TEINOLOPHOS = 1619;
+    static final int ENTITY_SANTANACHELYS = 1620;
+    static final int ENTITY_MYOBRADYPTERYGIUS = 1621;
+    public static final ResourceLocation MYOBRADYPTERYGIUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/myobradypterygius"));
+    public static final ResourceLocation MYOBRADYPTERYGIUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/myobradyoterygius_young"));
+    static final int ENTITY_UMOONASAURUS = 1622;
+    public static final ResourceLocation UMOONASAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/umoonasaurus"));
+    public static final ResourceLocation UMOONASAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/umoonasaurus_young"));
+    static final int ENTITY_CAEUS = 1623;
+    static final int ENTITY_GREGORIOPYCNODUS = 1624;
+    static final int ENTITY_THARRHIAS = 1625;
+    static final int ENTITY_WALDMANICHTHYS = 1626;
+    static final int ENTITY_RETODUS = 1627;
+    static final int ENTITY_ELLIMMICHTHYS = 1628;
+    static final int ENTITY_SIYUICHTHYS = 1629;
+    static final int ENTITY_BARBALEPIS = 1630;
+    static final int ENTITY_EPAELOPS = 1631;
+    static final int ENTITY_PACHYRHIZODUS_MARATHONENSIS = 1632;
+    static final int ENTITY_BEISHANLONG = 1633;
+    static final int ENTITY_LURDUSAURUS = 1634;
+    static final int ENTITY_RAPAXAVIS = 1635;
+    static final int ENTITY_SHENZHOUSAURUS = 1636;
+    static final int ENTITY_RUBRICACAECILLIA = 1637;
+    static final int ENTITY_DAURLONG = 1638;
+    static final int ENTITY_HAMADASUCHUS = 1639;
+    static final int ENTITY_KOSTENOSUCHUS = 1640;
+    static final int ENTITY_EPOIDESUCHUS = 1641;
+    static final int ENTITY_ANTARCTOPELTA = 1642;
+    static final int ENTITY_PSEUDOPETALICHTHYS = 1643;
+    static final int ENTITY_PALAEACANTHASPIS = 1644;
+    static final int ENTITY_KOSORASPIS = 1645;
+    static final int ENTITY_MURRINDALASPIS = 1646;
+    static final int ENTITY_WEEJASPERASPIS = 1647;
+    static final int ENTITY_ROMUNDINA = 1648;
+    static final int ENTITY_CONNEMARRASPIS = 1649;
+    static final int ENTITY_SHERBONASPIS = 1650;
+    static final int ENTITY_STEGOLEPIS = 1651;
+    static final int ENTITY_BYSSACANTHUS = 1652;
+    static final int ENTITY_KIRGISOLEPIS = 1653;
+    static final int ENTITY_SINOLEPIS = 1654;
+    static final int ENTITY_PAMPETALICHTHYS = 1655;
+    static final int ENTITY_MACROPETALICHTHYS = 1656;
+    static final int ENTITY_EPIPETAICHTHYS = 1657;
+    static final int ENTITY_YIMINASPIS = 1658;
+    static final int ENTITY_ALEOSTEUS = 1659;
+    static final int ENTITY_ERIKASPIS = 1660;
+    static final int ENTITY_BRYANTOLEPIS = 1661;
+    static final int ENTITY_DICKSONOSTEUS = 1662;
+    static final int ENTITY_WILLIAMSASPIS = 1663;
+    static final int ENTITY_GEMUENDENASPIS = 1664;
+    static final int ENTITY_TAEMASOSTEUS = 1665;
+    static final int ENTITY_BURRINJUCOSTEUS = 1666;
+    static final int ENTITY_BUCHANOSTEUS = 1667;
+    static final int ENTITY_NARROMINASPIS = 1668;
+    static final int ENTITY_URVASPIS = 1669;
+    static final int ENTITY_INCISOSCUTUM = 1670;
+    static final int ENTITY_HADROSTEUS = 1671;
+    static final int ENTITY_GORGONICHTHYS = 1672;
+    static final int ENTITY_HEINTZICHTHYS = 1673;
+    static final int ENTITY_PARAMYLOSTOMA = 1674;
+    static final int ENTITY_ENSEOSTEUS = 1675;
+    static final int ENTITY_AMAZICHTHYS = 1676;
+    static final int ENTITY_BULONGOSTEUS = 1677;
+    static final int ENTITY_ALIENACANTHUS = 1678;
+    static final int ENTITY_DIPLOGNATHUS = 1679;
+    static final int ENTITY_MULGASPIS = 1680;
+    static final int ENTITY_ARCTOLEPIS = 1681;
+    static final int ENTITY_EUKAIA = 1682;
+    static final int ENTITY_SZELEPIS = 1683;
+    static final int ENTITY_ANTARCTASPIS = 1684;
+    static final int ENTITY_JAGORINA = 1685;
+    static final int ENTITY_DOLGANOSTEUS = 1686;
+    static final int ENTITY_WALTEROSTEUS = 1687;
+    static final int ENTITY_DHANGUURA = 1688;
+    static final int ENTITY_AFRICANASPIS = 1689;
+    static final int ENTITY_BARWICKOSTEUS = 1690;
+    static final int ENTITY_GRIFFTAYLOR = 1691;
+    static final int ENTITY_MILLEROSTEUS = 1692;
+    static final int ENTITY_DICKOSTEUS = 1693;
+    static final int ENTITY_ARENIPISCIS = 1694;
+    static final int ENTITY_ARABOSTEUS = 1695;
+    static final int ENTITY_PLACOLEPIS = 1696;
+    static final int ENTITY_AUSTROPHYLLOLEPIS = 1697;
+    static final int ENTITY_RHACHIOSTEUS = 1698;
+    static final int ENTITY_ERROMENOSTEUS = 1699;
+    static final int ENTITY_PHOLIDOSTEUS = 1700;
+    static final int ENTITY_BRUNTONICHTHYS = 1701;
+    static final int ENTITY_GOLSHANICHTHYS = 1702;
+    static final int ENTITY_MINICRANIA = 1703;
+    static final int ENTITY_STRUTHIOCEPHALUS = 1704;
 
 
 
-
-
-
-
-
-
-
-
-
-
-	public static final int ENTITY_MYRIAPOD = 1015;
+    public static final int ENTITY_MYRIAPOD = 1015;
 	public static final int GUI_ARCHIVE_SORTER_TOP_ID = 1016;
 	public static final int GUI_ARCHIVE_SORTER_BOTTOM_ID = 1017;
 	public static final int GUI_LAB_CABINET_ID = 1018;

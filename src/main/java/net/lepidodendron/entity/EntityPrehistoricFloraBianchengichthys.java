@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraBianchengichthys extends EntityPrehistoricFlo
 
 	public EntityPrehistoricFloraBianchengichthys(World world) {
 		super(world);
-		setSize(0.3F, 0.3F);
+		setSize(0.2F, 0.2F);
 	}
 
 	@Override
