@@ -51,9 +51,9 @@ public class EntityPrehistoricFloraColossosuchus extends EntityPrehistoricFloraS
 		minWidth = 0.15F;
 		maxWidth = 1.65F;
 		maxHeight = 0.785F;
-		maxHeightLand = 1.66F;
-		maxHealthAgeable = 76.0D;
-		STAND_ANIMATION = Animation.create(60);
+		maxHeightLand = 1.3F;
+		maxHealthAgeable = 63.0D;
+		STAND_ANIMATION = Animation.create(560);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -65,6 +65,17 @@ public class EntityPrehistoricFloraColossosuchus extends EntityPrehistoricFloraS
 		if (world.isRemote && !this.isAIDisabled()) {
 			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
 		}
+	}
+
+
+	@Override
+	public int getRoarLength() {
+		return 40;
+	}
+
+	@Override
+	public int getAttackLength() {
+		return 12;
 	}
 
 	@Override
@@ -128,9 +139,9 @@ public class EntityPrehistoricFloraColossosuchus extends EntityPrehistoricFloraS
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.135F;
-		if (this.isInWater()) {
-			calcSpeed = 0.247f;
+		float calcSpeed = 0.2F;
+		if (this.isReallyInWater()) {
+			calcSpeed = 0.4f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -147,7 +158,13 @@ public class EntityPrehistoricFloraColossosuchus extends EntityPrehistoricFloraS
 			}
 		}
 		//System.err.println("Speed " + (Math.min(2F, (this.getAgeScale() * 2F)) * calcSpeed));
-		return Math.min(2F, (this.getAgeScale() * 2F)) * calcSpeed;
+		return calcSpeed;
+	}
+
+	@Override
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return animation == STAND_ANIMATION
+				|| super.isAnimationDirectionLocked(animation);
 	}
 
 	@Override
@@ -181,7 +198,7 @@ public class EntityPrehistoricFloraColossosuchus extends EntityPrehistoricFloraS
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AmphibianWanderNestInBlockAI(this));
-		tasks.addTask(4, new AmphibianWanderNotBound(this, NO_ANIMATION, 0.25, 90));
+		tasks.addTask(4, new AmphibianWanderNotBound(this, NO_ANIMATION, 0.7, 90));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
@@ -334,7 +351,7 @@ public class EntityPrehistoricFloraColossosuchus extends EntityPrehistoricFloraS
 
 		//Sometimes stand up and look around:
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0 && !this.isInWater()) {
 			this.setAnimation(STAND_ANIMATION);
 			this.standCooldown = 2000;
 		}

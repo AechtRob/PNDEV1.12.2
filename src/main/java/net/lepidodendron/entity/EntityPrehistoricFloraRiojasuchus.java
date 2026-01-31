@@ -45,11 +45,11 @@ public class EntityPrehistoricFloraRiojasuchus extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraRiojasuchus(World world) {
 		super(world);
-		setSize(0.85F, 0.9F);
+		setSize(0.85F, 0.5F);
 		minWidth = 0.15F;
 		maxWidth = 0.85F;
-		maxHeight = 0.9F;
-		maxHealthAgeable = 12.0D;
+		maxHeight = 0.5F;
+		maxHealthAgeable = 23.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -113,7 +113,7 @@ public class EntityPrehistoricFloraRiojasuchus extends EntityPrehistoricFloraLan
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.38F;
+		float speedBase = 0.3F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

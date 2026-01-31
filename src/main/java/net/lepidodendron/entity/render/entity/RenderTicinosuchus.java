@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderTicinosuchus extends RenderLivingBaseWithBook<EntityPrehistoricFloraTicinosuchus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ticinosuchus.png");
 
-    public static float getScaler() {return 0.82f;}
+    public static float getScaler() {return 0.606f;}
     public RenderTicinosuchus(RenderManager mgr) {
         super(mgr, new ModelTicinosuchus(), 0.3f);
     }

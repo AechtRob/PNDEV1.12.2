@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraNundasuchus extends EntityPrehistoricFloraLan
 		minWidth = 0.15F;
 		maxWidth = 0.6F;
 		maxHeight = 0.65F;
-		maxHealthAgeable = 23.0D;
+		maxHealthAgeable = 28.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -66,6 +66,12 @@ public class EntityPrehistoricFloraNundasuchus extends EntityPrehistoricFloraLan
 			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
 		}
 	}
+
+//	@Override
+//	public boolean isAnimationDirectionLocked(Animation animation) {
+//		return animation == STAND_ANIMATION
+//				|| super.isAnimationDirectionLocked(animation);
+//	}
 
 	@Override
 	public int getDrinkLength() {
@@ -117,7 +123,7 @@ public class EntityPrehistoricFloraNundasuchus extends EntityPrehistoricFloraLan
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.38F;
+		float speedBase = 0.3F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

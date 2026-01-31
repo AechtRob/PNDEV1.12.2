@@ -52,13 +52,13 @@ public class EntityPrehistoricFloraDiandongosuchus extends EntityPrehistoricFlor
 
 	public EntityPrehistoricFloraDiandongosuchus(World world) {
 		super(world);
-		setSize(0.8F, 0.85F);
+		setSize(0.6F, 0.4F);
 		minWidth = 0.1F;
-		maxWidth = 0.8F;
-		maxHeight = 0.85F;
-		maxHealthAgeable = 12.0D;
+		maxWidth = 0.6F;
+		maxHeight = 0.4F;
+		maxHealthAgeable = 23.0D;
 		EAT_ANIMATION = Animation.create(20);
-		STAND_ANIMATION = Animation.create(60);
+		STAND_ANIMATION = Animation.create(400);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -74,7 +74,12 @@ public class EntityPrehistoricFloraDiandongosuchus extends EntityPrehistoricFlor
 
 	@Override
 	public int getRoarLength() {
-		return 20;
+		return 30;
+	}
+
+	@Override
+	public int getAttackLength() {
+		return 15;
 	}
 
 	@Override
@@ -127,7 +132,7 @@ public class EntityPrehistoricFloraDiandongosuchus extends EntityPrehistoricFlor
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.205F;
+		float calcSpeed = 0.16F;
 		if (this.isReallyInWater()) {
 			calcSpeed = 0.275f;
 		}
@@ -142,7 +147,7 @@ public class EntityPrehistoricFloraDiandongosuchus extends EntityPrehistoricFlor
 			return 0.0F;
 		}
 		//System.err.println("Speed " + (Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed));
-		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed;
+		return calcSpeed;
 	}
 
 	@Override

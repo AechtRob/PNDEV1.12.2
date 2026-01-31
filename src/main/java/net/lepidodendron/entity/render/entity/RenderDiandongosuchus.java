@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderDiandongosuchus extends RenderLivingBaseWithBook<EntityPrehistoricFloraDiandongosuchus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diandongosuchus.png");
 
-    public static float getScaler() {return 0.82f;}
+    public static float getScaler() {return 0.5511f;}
     public RenderDiandongosuchus(RenderManager mgr) {
         super(mgr, new ModelDiandongosuchus(), 0.3f);
     }

@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderColossosuchus extends RenderLivingBaseWithBook<EntityPrehistoricFloraColossosuchus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/colossosuchus.png");
 
-    public static float getScaler() {return 0.82f;}
+    public static float getScaler() {return 1f;}
     public RenderColossosuchus(RenderManager mgr) {
         super(mgr, new ModelColossosuchus(), 0.3f);
     }

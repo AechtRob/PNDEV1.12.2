@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraTicinosuchus extends EntityPrehistoricFloraLa
 		minWidth = 0.15F;
 		maxWidth = 0.6F;
 		maxHeight = 0.65F;
-		maxHealthAgeable = 20.0D;
+		maxHealthAgeable = 28.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -65,6 +65,12 @@ public class EntityPrehistoricFloraTicinosuchus extends EntityPrehistoricFloraLa
 		if (world.isRemote && !this.isAIDisabled()) {
 			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
 		}
+	}
+
+	@Override
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return animation == STAND_ANIMATION
+				|| super.isAnimationDirectionLocked(animation);
 	}
 
 	@Override
@@ -117,7 +123,7 @@ public class EntityPrehistoricFloraTicinosuchus extends EntityPrehistoricFloraLa
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.38F;
+		float speedBase = 0.28F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
