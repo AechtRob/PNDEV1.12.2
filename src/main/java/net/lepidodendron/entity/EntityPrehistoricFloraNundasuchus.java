@@ -67,11 +67,11 @@ public class EntityPrehistoricFloraNundasuchus extends EntityPrehistoricFloraLan
 		}
 	}
 
-//	@Override
-//	public boolean isAnimationDirectionLocked(Animation animation) {
-//		return animation == STAND_ANIMATION
-//				|| super.isAnimationDirectionLocked(animation);
-//	}
+	@Override
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return animation == STAND_ANIMATION
+				|| super.isAnimationDirectionLocked(animation);
+	}
 
 	@Override
 	public int getDrinkLength() {
