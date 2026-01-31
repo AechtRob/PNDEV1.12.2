@@ -16,11 +16,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemEggsDiandongosuchus extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:eggs_diandongosuchus")
+public class ItemEggsRiojasuchus extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:eggs_riojasuchus")
 	public static final Item block = null;
-	public ItemEggsDiandongosuchus(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.eggs_diandongosuchus);
+	public ItemEggsRiojasuchus(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.eggs_riojasuchus);
 	}
 
 	@Override
@@ -31,32 +31,32 @@ public class ItemEggsDiandongosuchus extends ElementsLepidodendronMod.ModElement
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/eggs_diandongosuchus", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/eggs_riojasuchus", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("bakingEgg", ItemEggsDiandongosuchus.block);
-		OreDictionary.registerOre("egg", ItemEggsDiandongosuchus.block);
-		OreDictionary.registerOre("eggCookable", ItemEggsDiandongosuchus.block);
-		OreDictionary.registerOre("foodSimpleEgg", ItemEggsDiandongosuchus.block);
-		OreDictionary.registerOre("ingredientEgg", ItemEggsDiandongosuchus.block);
-		OreDictionary.registerOre("listAllegg", ItemEggsDiandongosuchus.block);
-		OreDictionary.registerOre("objectEgg", ItemEggsDiandongosuchus.block);
+		OreDictionary.registerOre("bakingEgg", ItemEggsRiojasuchus.block);
+		OreDictionary.registerOre("egg", ItemEggsRiojasuchus.block);
+		OreDictionary.registerOre("eggCookable", ItemEggsRiojasuchus.block);
+		OreDictionary.registerOre("foodSimpleEgg", ItemEggsRiojasuchus.block);
+		OreDictionary.registerOre("ingredientEgg", ItemEggsRiojasuchus.block);
+		OreDictionary.registerOre("listAllegg", ItemEggsRiojasuchus.block);
+		OreDictionary.registerOre("objectEgg", ItemEggsRiojasuchus.block);
 	}
 
 	public static class ItemCustom extends ItemEggsPF {
 		public ItemCustom() {
 			super();
-			setTranslationKey("pf_eggs_diandongosuchus");
-			setRegistryName("eggs_diandongosuchus");
+			setTranslationKey("pf_eggs_riojasuchus");
+			setRegistryName("eggs_riojasuchus");
 			setCreativeTab(TabLepidodendronMobile.tab);
 		}
 
 		@Override
 		public String getMobString() {
-			return LepidodendronMod.MODID + ":prehistoric_flora_diandongosuchus";
+			return LepidodendronMod.MODID + ":prehistoric_flora_riojasuchus";
 		}
 	}
 

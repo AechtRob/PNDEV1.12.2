@@ -1,6 +1,6 @@
 {
     "parent": "lepidodendron:block/eggs_small",
     "textures": {
-        "texture": "lepidodendron:entities/eggs_diandongosuchus"
+        "texture": "lepidodendron:entities/eggs_nundasuchus"
     }
 }

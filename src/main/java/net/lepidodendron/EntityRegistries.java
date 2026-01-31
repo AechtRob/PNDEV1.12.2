@@ -1454,11 +1454,11 @@ public class EntityRegistries {
 //        registerEntity("prehistoric_flora_gracilisuchus", EntityPrehistoricFloraGracilisuchus.class, LepidodendronMod.ENTITY_GRACILISUCHUS, 48,-11354642,-15131876);
 //        registerEntity("prehistoric_flora_turfanosuchus", EntityPrehistoricFloraTurfanosuchus.class, LepidodendronMod.ENTITY_TURFANOSUCHUS, 48,-11354642,-15131876);
 //        registerEntity("prehistoric_flora_protosuchus", EntityPrehistoricFloraProtosuchus.class, LepidodendronMod.ENTITY_PROTOSUCHUS, 48,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_ticinosuchus", EntityPrehistoricFloraTicinosuchus.class, LepidodendronMod.ENTITY_TICINOSUCHUS, 64,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_colossosuchus", EntityPrehistoricFloraColossosuchus.class, LepidodendronMod.ENTITY_COLOSSOSUCHUS, 84,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_riojasuchus", EntityPrehistoricFloraRiojasuchus.class, LepidodendronMod.ENTITY_RIOJASUCHUS, 48,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_nundasuchus", EntityPrehistoricFloraNundasuchus.class, LepidodendronMod.ENTITY_NUNDASUCHUS, 64,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_diandongosuchus", EntityPrehistoricFloraDiandongosuchus.class, LepidodendronMod.ENTITY_DIANDONGOSUCHUS, 48,-11354642,-15131876);
+        registerEntity("prehistoric_flora_ticinosuchus", EntityPrehistoricFloraTicinosuchus.class, LepidodendronMod.ENTITY_TICINOSUCHUS, 64,-11320016,-15462389);
+        registerEntity("prehistoric_flora_colossosuchus", EntityPrehistoricFloraColossosuchus.class, LepidodendronMod.ENTITY_COLOSSOSUCHUS, 84,-8033959,-4149106);
+        registerEntity("prehistoric_flora_riojasuchus", EntityPrehistoricFloraRiojasuchus.class, LepidodendronMod.ENTITY_RIOJASUCHUS, 48,-395279,-10270676);
+        registerEntity("prehistoric_flora_nundasuchus", EntityPrehistoricFloraNundasuchus.class, LepidodendronMod.ENTITY_NUNDASUCHUS, 64,-5541295,-1250350);
+        registerEntity("prehistoric_flora_diandongosuchus", EntityPrehistoricFloraDiandongosuchus.class, LepidodendronMod.ENTITY_DIANDONGOSUCHUS, 64,-1382183,-5199475);
         registerEntity("prehistoric_flora_barrydalaspis", EntityPrehistoricFloraBarrydalaspis.class, LepidodendronMod.ENTITY_BARRYDALASPIS, 48,-11251881,-658186);
         registerEntity("prehistoric_flora_pucapampella", EntityPrehistoricFloraPucapampella.class, LepidodendronMod.ENTITY_PUCAPAMPELLA, 48,-13089185,-2038807);
         registerEntity("prehistoric_flora_ramirosuarezia", EntityPrehistoricFloraRamirosuarezia.class, LepidodendronMod.ENTITY_RAMIROSUAREZIA, 48,-11114384,-7299678);

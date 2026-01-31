@@ -15,11 +15,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemDiandongosuchusRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:diandongosuchus_raw")
+public class ItemRiojasuchusRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:riojasuchus_raw")
 	public static final Item block = null;
-	public ItemDiandongosuchusRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.diandongosuchus_raw);
+	public ItemRiojasuchusRaw(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.riojasuchus_raw);
 	}
 
 	@Override
@@ -30,23 +30,23 @@ public class ItemDiandongosuchusRaw extends ElementsLepidodendronMod.ModElement 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/diandongosuchus_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/riojasuchus_raw", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_diandongosuchus", ItemDiandongosuchusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemDiandongosuchusRaw.block);
-		OreDictionary.registerOre("pnfurnaceMeat", ItemDiandongosuchusRaw.block);
-		OreDictionary.registerOre("pndietMeat", ItemDiandongosuchusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_riojasuchus", ItemRiojasuchusRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemRiojasuchusRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemRiojasuchusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemRiojasuchusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(3, 0.3f, false);
-			setTranslationKey("pf_diandongosuchus_raw");
-			setRegistryName("diandongosuchus_raw");
+			setTranslationKey("pf_riojasuchus_raw");
+			setRegistryName("riojasuchus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
