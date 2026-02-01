@@ -9101,6 +9101,36 @@ public class RenderHandler {
                 return new RenderColossosuchus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraProtosuchus.class, new IRenderFactory<EntityPrehistoricFloraProtosuchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraProtosuchus> createRenderFor(RenderManager manager) {
+                return new RenderProtosuchus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraErpetosuchus.class, new IRenderFactory<EntityPrehistoricFloraErpetosuchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraErpetosuchus> createRenderFor(RenderManager manager) {
+                return new RenderErpetosuchus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDyoplax.class, new IRenderFactory<EntityPrehistoricFloraDyoplax>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDyoplax> createRenderFor(RenderManager manager) {
+                return new RenderDyoplax(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTarjadia.class, new IRenderFactory<EntityPrehistoricFloraTarjadia>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTarjadia> createRenderFor(RenderManager manager) {
+                return new RenderTarjadia(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraParringtonia.class, new IRenderFactory<EntityPrehistoricFloraParringtonia>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraParringtonia> createRenderFor(RenderManager manager) {
+                return new RenderParringtonia(manager);
+            }
+        });
         
 
 
