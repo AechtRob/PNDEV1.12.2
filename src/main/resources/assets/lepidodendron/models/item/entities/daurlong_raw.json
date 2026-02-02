@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/daurlong_icon"
+        "layer0": "lepidodendron:items/entities/daurlong_raw.png"
     }
 }
