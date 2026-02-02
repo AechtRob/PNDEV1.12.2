@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/tupandactylus_imperator_icon"
+        "layer0": "lepidodendron:items/entities/tupandactylus_imperator_raw.png"
     }
 }

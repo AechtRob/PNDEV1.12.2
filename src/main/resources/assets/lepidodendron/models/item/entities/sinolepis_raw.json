@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/sinolepis_icon"
+        "layer0": "lepidodendron:items/entities/sinolepis_raw.png"
     }
 }

@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/weejasperaspis_icon"
+        "layer0": "lepidodendron:items/entities/weejasperaspis_raw.png"
     }
 }

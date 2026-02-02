@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/aragosaurus_icon"
+        "layer0": "lepidodendron:items/entities/aragosaurus_raw.png"
     }
 }

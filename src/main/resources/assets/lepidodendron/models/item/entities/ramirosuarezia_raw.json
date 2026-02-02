@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/ramirosuarezia_icon"
+        "layer0": "lepidodendron:items/entities/ramirosuarezia_raw.png"
     }
 }
