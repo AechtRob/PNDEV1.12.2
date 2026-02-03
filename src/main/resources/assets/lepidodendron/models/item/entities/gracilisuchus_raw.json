@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/gracilisuchus_icon"
+        "layer0": "lepidodendron:items/entities/gracilisuchus_raw.png"
     }
 }

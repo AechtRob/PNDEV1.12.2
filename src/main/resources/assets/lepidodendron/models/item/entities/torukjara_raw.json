@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/torukjara_icon"
+        "layer0": "lepidodendron:items/entities/torukjara_raw.png"
     }
 }

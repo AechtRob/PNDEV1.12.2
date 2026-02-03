@@ -1,0 +1,52 @@
+{
+	"name": "Vallibonavenatrix",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/vallibonavenatrix_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_vallibonavenatrix",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_vallibonavenatrix",
+			"title": "Vallibonavenatrix",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Spinosauridae$(br)>Spinosaurinae"
+		},
+        	{
+            "type": "entity",
+            "name": "V. cani",
+            "entity": "lepidodendron:prehistoric_flora_vallibonavenatrix",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vallibonavenatrix",
+			"type": "text",
+			"text": "Vallibonavenatrix is a Spinosaur from the Early Cretaceous Arcillas de Morella Formation of Spain. Our first of two Iberian Spinosaurs that will be coming to the mod, it measures in at just over 6m, being on the smaller side for spinosaurs known, but by no means a small animal. This genus is unique for being thought to a more basal Spinosaur, with features similar to the spinosaurine group containing Irritator and Spinosaurus itself."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vallibonavenatrix",
+			"type": "text",
+			"text": "This animal, like several other Iberian Spinosaurs is also a relatively new genus, being named in 2019, with its name meaning Vallibona huntress. This animal is also the most complete Spinosaur specimen currently known from the Iberian Peninsula, being known from a partial skeleton."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_vallibonavenatrix"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_vallibonavenatrix"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_vallibonavenatrix"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_vallibonavenatrix"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_vallibonavenatrix"
+		}
+	]
+}

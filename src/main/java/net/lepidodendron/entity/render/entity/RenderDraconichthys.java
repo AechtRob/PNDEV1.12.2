@@ -12,7 +12,7 @@ public class RenderDraconichthys extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/draconichthys.png");
 
     public static float getScaler() {
-        return 0.7F * 0.6F;
+        return 0.5F;
     }
     public RenderDraconichthys(RenderManager mgr) {
         super(mgr, new ModelDraconichthys(), 0.0f);

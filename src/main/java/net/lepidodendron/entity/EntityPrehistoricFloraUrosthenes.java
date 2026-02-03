@@ -33,7 +33,7 @@ public class EntityPrehistoricFloraUrosthenes extends EntityPrehistoricFloraFish
 
 	public EntityPrehistoricFloraUrosthenes(World world) {
 		super(world);
-		setSize(0.5F, 0.3F);
+		setSize(0.2F, 0.2F);
 	}
 
 	@Override

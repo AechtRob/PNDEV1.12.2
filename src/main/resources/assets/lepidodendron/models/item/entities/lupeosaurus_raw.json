@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/lupeosaurus_icon"
+        "layer0": "lepidodendron:items/entities/lupeosaurus_raw.png"
     }
 }

@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/erfoudichthys_icon"
+        "layer0": "lepidodendron:items/entities/erfoudichthys_raw.png"
     }
 }

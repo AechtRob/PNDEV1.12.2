@@ -2,16 +2,18 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
+import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.AgeableFishWander;
-import net.lepidodendron.entity.ai.DietString;
-import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
-import net.lepidodendron.entity.ai.EntityMateAI;
+import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderKujdanowiaspis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -19,8 +21,6 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -28,34 +28,36 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraKujdanowiaspis extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater {
+public class EntityPrehistoricFloraKujdanowiaspis extends EntityPrehistoricFloraAgeableFishBase implements IAdvancementGranter, ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
+	private int animationTick;
+	private Animation animation = NO_ANIMATION;
 
 	public EntityPrehistoricFloraKujdanowiaspis(World world) {
 		super(world);
-		setSize(0.35F, 0.22F);
-		minWidth = 0.1F;
-		maxWidth = 0.35F;
-		maxHeight = 0.22F;
+		setSize(0.55F, 0.40F);
+		minWidth = 0.2F;
+		maxWidth = 0.55F;
+		maxHeight = 0.40F;
 		maxHealthAgeable = 8.0D;
 	}
 
 	@Override
-	public boolean isSmall() {
-		return this.getAgeScale() < 0.6;
+	public boolean canShoal() {
+		return (!(this.getAlarmCooldown() > 0));
 	}
 
-	
-
-	public static String getPeriod() {return "Devonian";}
-
-	//public static String getHabitat() {return "Aquatic Lobe-Finned Fish (Coelacanth)";}
+	@Override
+	public int getShoalSize() {
+		return 5;
+	}
 
 	@Override
-	public void playLivingSound() {
+	public int getShoalDist() {
+		return 3;
 	}
 
 	@Override
@@ -64,48 +66,74 @@ public class EntityPrehistoricFloraKujdanowiaspis extends EntityPrehistoricFlora
 	}
 
 	@Override
+	public int getAdultAge() {
+		return 32000;
+	}
+
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
+	public static String getPeriod() {return "Devonian";}
+
+	//public static String getHabitat() {return "Aquatic";}
+
+	@Override
 	public boolean dropsEggs() {
 		return false;
 	}
-	
+
 	@Override
 	public boolean laysEggs() {
 		return false;
 	}
 
 	@Override
-	public boolean divesToLay() {
-		return false;
-	}
-
-	@Override
-	public int getAdultAge() {
-		return 36000;
-	}
-
-	@Override
 	protected float getAISpeedFish() {
-		float AIspeed = 0.211f;
-		if (this.getIsFast()) {
-			AIspeed = AIspeed * 2.2F;
-		}
-		return AIspeed;
+		return 0.49f;
 	}
 
 	@Override
 	protected boolean isSlowAtBottom() {
-		return false;
+		return true;
+	}
+
+	@Override
+	public int getAnimationTick() {
+		return getAnimationTick();
+	}
+
+	@Override
+	public void setAnimationTick(int tick) {
+		animationTick = tick;
+	}
+
+	@Override
+	public Animation getAnimation() {
+		return null;
+	}
+
+	@Override
+	public void setAnimation(Animation animation) {
+		this.animation = animation;
+	}
+
+	@Override
+	public Animation[] getAnimations() {
+		return null;
 	}
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAI(this, 1));
-		tasks.addTask(1, new AgeableFishWander(this, NO_ANIMATION, 1D, -10));
+		tasks.addTask(1, new ShoalFishAgeableAI(this, 1, true));
+		tasks.addTask(2, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISHFOOD);
+		return ArrayUtils.addAll(DietString.FISHFOOD, DietString.ALGAE);
 	}
 
 	@Override
@@ -131,8 +159,7 @@ public class EntityPrehistoricFloraKujdanowiaspis extends EntityPrehistoricFlora
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(1D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(8.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -156,9 +183,25 @@ public class EntityPrehistoricFloraKujdanowiaspis extends EntityPrehistoricFlora
 		return 1.0F;
 	}
 
-	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
-		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
-		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
+	@Override
+	public void onLivingUpdate() {
+		super.onLivingUpdate();
+		//this.renderYawOffset = this.rotationYaw;
+		AnimationHandler.INSTANCE.updateAnimations(this);
+	}
+
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+
+		if (source != DamageSource.DROWN) {
+			return super.attackEntityFrom(source, (amount * 0.5F));
+		}
+		return super.attackEntityFrom(source, amount);
+
 	}
 
 	@Nullable
@@ -172,40 +215,40 @@ public class EntityPrehistoricFloraKujdanowiaspis extends EntityPrehistoricFlora
 		return -0.02;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.0;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return 0.0;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.15;
+		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0;
+		return 0.3;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return 0.0;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0;
+		return 0.02;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return 0.0;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
@@ -215,6 +258,16 @@ public class EntityPrehistoricFloraKujdanowiaspis extends EntityPrehistoricFlora
 	public static ModelBase modelDisplay(@Nullable String variant) {
 		return RenderDisplays.modelKujdanowiaspis;
 	}
-	public static float getScaler(@Nullable String variant) {return RenderKujdanowiaspis.getScaler();}
+	public static float getScaler(@Nullable String variant) {
+		return RenderKujdanowiaspis.getScaler();
+	}
+	public static float widthSupport(@Nullable String variant) {return 0.04F;}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_KUJDANOWIASPIS;
+	}
+
 
 }

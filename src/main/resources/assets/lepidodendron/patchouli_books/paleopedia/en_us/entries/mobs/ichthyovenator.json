@@ -1,0 +1,52 @@
+{
+	"name": "Ichthyovenator",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ichthyovenator_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ichthyovenator",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ichthyovenator",
+			"title": "Ichthyovenator",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Spinosauridae$(br)>Spinosaurinae"
+		},
+        	{
+            "type": "entity",
+            "name": "I. laosensis",
+            "entity": "lepidodendron:prehistoric_flora_ichthyovenator",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ichthyovenator",
+			"type": "text",
+			"text": "Ichthyovenator laosensis is a 9-meter-long spinosaurine spinosaurid from the Early Cretaceous Grès supérieurs Formation of Laos. Like the better known Spinosaurus, this dinosaur possessed raised vertebrae. However, rather than forming a continuous sail, the spine was deeply notched above the hip. This doesn't appear to have been the result of broken bones and is instead most likely how the animal would have looked in life."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ichthyovenator",
+			"type": "text",
+			"text": "The raised vertebrae continue into the tail, similar to what is now known in Spinosaurus. Ichthyovenator, like other spinosaurids, is presumed to have had a piscivorous diet, perhaps feeding at river edges similar to a modern heron."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ichthyovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ichthyovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ichthyovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ichthyovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ichthyovenator"
+		}
+	]
+}

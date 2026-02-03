@@ -6250,6 +6250,10 @@ public class LepidodendronSorter {
     public static final int stichopterus_raw= 5681;
     public static final int motlayoichthys_raw= 5682;
     public static final int muhichthys_raw= 5683;
+    public static final int hauffiosaurus_raw= 5683;
+    public static final int callawayasaurus_raw= 5683;
+    public static final int myobradypterygius_raw= 5683;
+    public static final int umoonasaurus_raw= 5683;
 
     public static final int irritator_raw = 5800;
     public static final int spinosaurus_raw = 5801;
