@@ -9131,11 +9131,30 @@ public class RenderHandler {
                 return new RenderParringtonia(manager);
             }
         });
-        
-
-
-
-
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHauffiosaurus.class, new IRenderFactory<EntityPrehistoricFloraHauffiosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraHauffiosaurus> createRenderFor(RenderManager manager) {
+                return new RenderHauffiosaurus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCallawayasaurus.class, new IRenderFactory<EntityPrehistoricFloraCallawayasaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCallawayasaurus> createRenderFor(RenderManager manager) {
+                return new RenderCallawayasaurus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMyobradypterygius.class, new IRenderFactory<EntityPrehistoricFloraMyobradypterygius>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMyobradypterygius> createRenderFor(RenderManager manager) {
+                return new RenderMyobradypterygius(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraUmoonasaurus.class, new IRenderFactory<EntityPrehistoricFloraUmoonasaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraUmoonasaurus> createRenderFor(RenderManager manager) {
+                return new RenderUmoonasaurus(manager);
+            }
+        });
 
 
 

@@ -15,7 +15,7 @@ public class RenderHyneria extends RenderLivingBaseWithBook<EntityPrehistoricFlo
         super(mgr, new ModelHyneria(), 1.0f);
     }
 
-    public static float getScaler() {return 0.342F * 0.680F * 1.9F; }
+    public static float getScaler() {return 0.85F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraHyneria entity) {

@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderEastmanosteus extends RenderLivingBaseWithBook<EntityPrehistoricFloraEastmanosteus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eastmanosteus.png");
 
-    public static float getScaler() {return 0.6F;}
+    public static float getScaler() {return 0.82F;}
     public RenderEastmanosteus(RenderManager mgr) {
         super(mgr, new ModelEastmanosteus(), 1.0f);
     }

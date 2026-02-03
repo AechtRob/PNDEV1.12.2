@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/changxingaspis_icon"
+        "layer0": "lepidodendron:items/entities/changxingaspis_raw.png"
     }
 }

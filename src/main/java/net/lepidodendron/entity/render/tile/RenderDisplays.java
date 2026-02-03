@@ -1090,6 +1090,11 @@ public class RenderDisplays {
     public static final ModelMotlayoichthys modelMotlayoichthys = new ModelMotlayoichthys();
     public static final ModelMuhichthys modelMuhichthys = new ModelMuhichthys();
     public static final ModelDemandasaurus modelDemandasaurus = new ModelDemandasaurus();
+    public static final ModelCallawayasaurus modelCallawayasaurus = new ModelCallawayasaurus();
+    public static final ModelHauffiosaurus modelHauffiosaurus = new ModelHauffiosaurus();
+    public static final ModelMyobradypterygius modelMyobradypterygius = new ModelMyobradypterygius();
+    public static final ModelUmoonasaurus modelUmoonasaurus = new ModelUmoonasaurus();
+
 
 
 }

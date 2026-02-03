@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/secodontosaurus_icon"
+        "layer0": "lepidodendron:items/entities/secodontosaurus_raw.png"
     }
 }

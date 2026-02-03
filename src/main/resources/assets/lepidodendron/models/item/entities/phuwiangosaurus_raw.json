@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/phuwiangosaurus_icon"
+        "layer0": "lepidodendron:items/entities/phuwiangosaurus_raw.png"
     }
 }
