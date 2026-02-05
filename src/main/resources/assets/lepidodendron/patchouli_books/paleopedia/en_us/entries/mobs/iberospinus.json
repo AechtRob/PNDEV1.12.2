@@ -1,0 +1,52 @@
+{
+	"name": "Iberospinus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/iberospinus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_iberospinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_iberospinus",
+			"title": "Iberospinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Spinosauridae$(br)>Baryonychinae"
+		},
+        	{
+            "type": "entity",
+            "name": "I. natarioi",
+            "entity": "lepidodendron:prehistoric_flora_iberospinus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_iberospinus",
+			"type": "text",
+			"text": "Iberospinus is another Spinosaur known from the Iberian Peninsula of the Early Cretaceous, this time hailing from the Papo Seco Formation of Portugal. Originally described as a Specimen of Baryonyx, and later moved into its own species of Baryonyx. This changed when a expedition in 2020 resulted in more material for the animal, allowing it to be described as its own genus in 2022."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_iberospinus",
+			"type": "text",
+			"text": "The animal is known from various material throughout its body, including a snout tip. This animal’s classification most recently has put it as the sister taxon to Baryonyx itself, and it is this is genus that most of the missing material is reconstructed from, however we know that it would have been slightly shorter, and had differening dentition."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_iberospinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_iberospinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_iberospinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_iberospinus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_iberospinus"
+		}
+	]
+}

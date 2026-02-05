@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:siyuichthys_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_siyuichthys.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_siyuichthys.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_siyuichthys"
+        }
+    }
+}

@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/palaeocampa_icon"
+        "layer0": "lepidodendron:items/entities/palaeocampa_raw.png"
     }
 }

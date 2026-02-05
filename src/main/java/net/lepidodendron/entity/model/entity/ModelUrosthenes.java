@@ -8,334 +8,288 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
 public class ModelUrosthenes extends ModelBasePalaeopedia {
-    private final AdvancedModelRenderer Urosthenes;
-    private final AdvancedModelRenderer Body1;
+    private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
-    private final AdvancedModelRenderer PectoralR;
     private final AdvancedModelRenderer cube_r3;
-    private final AdvancedModelRenderer PectoralL;
+    private final AdvancedModelRenderer tail;
     private final AdvancedModelRenderer cube_r4;
-    private final AdvancedModelRenderer PelvicR;
     private final AdvancedModelRenderer cube_r5;
-    private final AdvancedModelRenderer PelvicL;
     private final AdvancedModelRenderer cube_r6;
-    private final AdvancedModelRenderer Body2;
     private final AdvancedModelRenderer cube_r7;
+    private final AdvancedModelRenderer tail2;
     private final AdvancedModelRenderer cube_r8;
-    private final AdvancedModelRenderer Body3;
     private final AdvancedModelRenderer cube_r9;
     private final AdvancedModelRenderer cube_r10;
-    private final AdvancedModelRenderer Body4;
     private final AdvancedModelRenderer cube_r11;
     private final AdvancedModelRenderer cube_r12;
-    private final AdvancedModelRenderer Body5;
+    private final AdvancedModelRenderer tail3;
     private final AdvancedModelRenderer cube_r13;
     private final AdvancedModelRenderer cube_r14;
+    private final AdvancedModelRenderer frontRightFin;
+    private final AdvancedModelRenderer backRightFin;
+    private final AdvancedModelRenderer frontLeftFin;
+    private final AdvancedModelRenderer backLeftFin;
+    private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer cube_r15;
-    private final AdvancedModelRenderer Cephalon;
     private final AdvancedModelRenderer cube_r16;
     private final AdvancedModelRenderer cube_r17;
     private final AdvancedModelRenderer cube_r18;
     private final AdvancedModelRenderer cube_r19;
-    private final AdvancedModelRenderer Jaw;
     private final AdvancedModelRenderer cube_r20;
+    private final AdvancedModelRenderer jaw;
+    private final AdvancedModelRenderer cube_r21;
+    private final AdvancedModelRenderer cube_r22;
+    private final AdvancedModelRenderer leftEye;
+    private final AdvancedModelRenderer cube_r23;
 
     public ModelUrosthenes() {
-        this.textureWidth = 128;
-        this.textureHeight = 128;
+        this.textureWidth = 58;
+        this.textureHeight = 56;
 
-        this.Urosthenes = new AdvancedModelRenderer(this);
-        this.Urosthenes.setRotationPoint(0.0F, 13.0F, 0.0F);
-
-
-        this.Body1 = new AdvancedModelRenderer(this);
-        this.Body1.setRotationPoint(0.0F, 0.0F, -1.4F);
-        this.Urosthenes.addChild(Body1);
-        this.Body1.cubeList.add(new ModelBox(Body1, 20, 25, -2.0F, -6.0F, -1.0F, 3, 13, 7, 0.0F, false));
+        this.main = new AdvancedModelRenderer(this);
+        this.main.setRotationPoint(0.0F, 16.2F, 1.225F);
+        this.main.cubeList.add(new ModelBox(main, 0, 13, -1.5F, -3.449F, -4.9076F, 3, 6, 7, 0.0F, false));
+        this.main.cubeList.add(new ModelBox(main, 0, 37, -1.5F, -2.449F, -7.9076F, 3, 5, 3, 0.0F, false));
 
         this.cube_r1 = new AdvancedModelRenderer(this);
-        this.cube_r1.setRotationPoint(0.0F, 9.3F, 1.0F);
-        this.Body1.addChild(cube_r1);
-        this.setRotateAngle(cube_r1, -0.0349F, 0.0F, 0.0F);
-        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 55, 42, -1.5F, -4.1F, -1.3F, 2, 3, 6, 0.01F, false));
+        this.cube_r1.setRotationPoint(0.0F, 3.3801F, 2.2391F);
+        this.main.addChild(cube_r1);
+        this.setRotateAngle(cube_r1, 0.0131F, 0.0F, 0.0F);
+        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 25, 0, -1.0F, -1.875F, -6.2F, 2, 2, 6, -0.001F, false));
 
         this.cube_r2 = new AdvancedModelRenderer(this);
-        this.cube_r2.setRotationPoint(0.0F, -8.9F, 0.0F);
-        this.Body1.addChild(cube_r2);
-        this.setRotateAngle(cube_r2, 0.1396F, 0.0F, 0.0F);
-        this.cube_r2.cubeList.add(new ModelBox(cube_r2, 47, 10, -1.5F, 1.2F, -1.2F, 2, 4, 6, 0.0F, false));
-
-        this.PectoralR = new AdvancedModelRenderer(this);
-        this.PectoralR.setRotationPoint(-2.0F, 3.0F, 1.0F);
-        this.Body1.addChild(PectoralR);
-
+        this.cube_r2.setRotationPoint(0.0F, 2.2104F, -5.9164F);
+        this.main.addChild(cube_r2);
+        this.setRotateAngle(cube_r2, -0.0873F, 0.0F, 0.0F);
+        this.cube_r2.cubeList.add(new ModelBox(cube_r2, 37, 36, -1.0F, -0.925F, -1.95F, 2, 2, 4, 0.01F, false));
 
         this.cube_r3 = new AdvancedModelRenderer(this);
-        this.cube_r3.setRotationPoint(0.0F, -1.2F, -0.4F);
-        this.PectoralR.addChild(cube_r3);
-        this.setRotateAngle(cube_r3, 0.0F, -0.6981F, 0.0F);
-        this.cube_r3.cubeList.add(new ModelBox(cube_r3, 0, 0, 0.0F, -0.8F, -0.1F, 0, 5, 6, 0.0F, false));
+        this.cube_r3.setRotationPoint(0.0F, -5.1389F, 1.4826F);
+        this.main.addChild(cube_r3);
+        this.setRotateAngle(cube_r3, 0.2356F, 0.0F, 0.0F);
+        this.cube_r3.cubeList.add(new ModelBox(cube_r3, 0, 0, -1.0F, 0.0F, -9.9F, 2, 2, 10, -0.001F, false));
 
-        this.PectoralL = new AdvancedModelRenderer(this);
-        this.PectoralL.setRotationPoint(1.0F, 3.0F, 1.0F);
-        this.Body1.addChild(PectoralL);
-
+        this.tail = new AdvancedModelRenderer(this);
+        this.tail.setRotationPoint(0.0F, -1.5142F, 1.902F);
+        this.main.addChild(tail);
+        this.tail.cubeList.add(new ModelBox(tail, 0, 27, -1.0F, -1.2858F, -0.802F, 2, 4, 5, 0.01F, false));
 
         this.cube_r4 = new AdvancedModelRenderer(this);
-        this.cube_r4.setRotationPoint(0.0F, -1.2F, -0.4F);
-        this.PectoralL.addChild(cube_r4);
-        this.setRotateAngle(cube_r4, 0.0F, 0.6981F, 0.0F);
-        this.cube_r4.cubeList.add(new ModelBox(cube_r4, 0, 0, 0.0F, -0.8F, -0.1F, 0, 5, 6, 0.0F, true));
-
-        this.PelvicR = new AdvancedModelRenderer(this);
-        this.PelvicR.setRotationPoint(-2.0F, 7.3F, 4.0F);
-        this.Body1.addChild(PelvicR);
-
+        this.cube_r4.setRotationPoint(0.0F, 4.2747F, 4.3102F);
+        this.tail.addChild(cube_r4);
+        this.setRotateAngle(cube_r4, 0.5803F, 0.0F, 0.0F);
+        this.cube_r4.cubeList.add(new ModelBox(cube_r4, 15, 28, 0.0F, -2.2F, -3.9F, 0, 7, 5, 0.0F, false));
 
         this.cube_r5 = new AdvancedModelRenderer(this);
-        this.cube_r5.setRotationPoint(0.0F, -1.0F, -0.3F);
-        this.PelvicR.addChild(cube_r5);
-        this.setRotateAngle(cube_r5, 0.0F, 0.0F, 0.48F);
-        this.cube_r5.cubeList.add(new ModelBox(cube_r5, 42, 63, 0.0F, 0.0F, -1.7F, 0, 6, 5, 0.0F, false));
-
-        this.PelvicL = new AdvancedModelRenderer(this);
-        this.PelvicL.setRotationPoint(1.0F, 7.3F, 4.0F);
-        this.Body1.addChild(PelvicL);
-
+        this.cube_r5.setRotationPoint(0.0F, -3.3281F, 0.2495F);
+        this.tail.addChild(cube_r5);
+        this.setRotateAngle(cube_r5, -0.4232F, 0.0F, 0.0F);
+        this.cube_r5.cubeList.add(new ModelBox(cube_r5, 37, 28, -0.5F, 0.0F, -0.575F, 1, 2, 5, 0.0F, false));
 
         this.cube_r6 = new AdvancedModelRenderer(this);
-        this.cube_r6.setRotationPoint(0.0F, -1.0F, -0.3F);
-        this.PelvicL.addChild(cube_r6);
-        this.setRotateAngle(cube_r6, 0.0F, 0.0F, -0.48F);
-        this.cube_r6.cubeList.add(new ModelBox(cube_r6, 42, 63, 0.0F, 0.0F, -1.7F, 0, 6, 5, 0.0F, true));
-
-        this.Body2 = new AdvancedModelRenderer(this);
-        this.Body2.setRotationPoint(0.0F, 1.0F, 4.9F);
-        this.Body1.addChild(Body2);
-        this.Body2.cubeList.add(new ModelBox(Body2, 46, 48, -1.5F, -6.0F, 1.1F, 2, 10, 4, 0.0F, false));
-        this.Body2.cubeList.add(new ModelBox(Body2, 27, 0, -0.5F, 3.0F, 0.1F, 0, 17, 5, 0.0F, false));
-        this.Body2.cubeList.add(new ModelBox(Body2, 0, 32, -0.5F, -23.0F, 0.1F, 0, 17, 5, 0.0F, false));
+        this.cube_r6.setRotationPoint(0.0F, 2.8969F, 1.382F);
+        this.tail.addChild(cube_r6);
+        this.setRotateAngle(cube_r6, 0.3272F, 0.0F, 0.0F);
+        this.cube_r6.cubeList.add(new ModelBox(cube_r6, 36, 9, -1.0F, -1.5F, -2.15F, 2, 3, 5, -0.01F, false));
 
         this.cube_r7 = new AdvancedModelRenderer(this);
-        this.cube_r7.setRotationPoint(0.0F, 8.8F, 1.5F);
-        this.Body2.addChild(cube_r7);
-        this.setRotateAngle(cube_r7, 0.3665F, 0.0F, 0.0F);
-        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 10, 62, -1.0F, -6.6F, 0.0F, 1, 5, 5, -0.01F, false));
+        this.cube_r7.setRotationPoint(-2.0F, -1.2065F, -2.2518F);
+        this.tail.addChild(cube_r7);
+        this.setRotateAngle(cube_r7, -0.8988F, 0.0F, 0.0F);
+        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 26, 28, 2.0F, -8.6F, -0.95F, 0, 7, 5, 0.0F, false));
+
+        this.tail2 = new AdvancedModelRenderer(this);
+        this.tail2.setRotationPoint(0.0F, 0.6678F, 4.1713F);
+        this.tail.addChild(tail2);
+
 
         this.cube_r8 = new AdvancedModelRenderer(this);
-        this.cube_r8.setRotationPoint(0.0F, -10.1F, 1.1F);
-        this.Body2.addChild(cube_r8);
-        this.setRotateAngle(cube_r8, -0.2967F, 0.0F, 0.0F);
-        this.cube_r8.cubeList.add(new ModelBox(cube_r8, 22, 62, -1.0F, 0.95F, -1.0F, 1, 5, 6, -0.01F, false));
-
-        this.Body3 = new AdvancedModelRenderer(this);
-        this.Body3.setRotationPoint(0.0F, 0.0F, 4.7F);
-        this.Body2.addChild(Body3);
-        this.Body3.cubeList.add(new ModelBox(Body3, 14, 0, -1.5F, -5.0F, 0.4F, 2, 7, 4, 0.0F, false));
-        this.Body3.cubeList.add(new ModelBox(Body3, 41, 28, -0.5F, -23.0F, 0.4F, 0, 19, 4, 0.0F, false));
-        this.Body3.cubeList.add(new ModelBox(Body3, 11, 32, -0.5F, 1.0F, 0.4F, 0, 19, 4, 0.0F, false));
+        this.cube_r8.setRotationPoint(0.0F, -2.2379F, 0.0711F);
+        this.tail2.addChild(cube_r8);
+        this.setRotateAngle(cube_r8, -0.4538F, 0.0F, 0.0F);
+        this.cube_r8.cubeList.add(new ModelBox(cube_r8, 44, 49, -0.5F, 0.075F, -0.2F, 1, 1, 3, -0.01F, false));
 
         this.cube_r9 = new AdvancedModelRenderer(this);
-        this.cube_r9.setRotationPoint(0.0F, 5.1F, 0.6F);
-        this.Body3.addChild(cube_r9);
-        this.setRotateAngle(cube_r9, 0.6545F, 0.0F, 0.0F);
-        this.cube_r9.cubeList.add(new ModelBox(cube_r9, 54, 58, -1.0F, -4.5193F, -0.0231F, 1, 5, 5, 0.0F, false));
+        this.cube_r9.setRotationPoint(0.0F, 1.4249F, 1.0528F);
+        this.tail2.addChild(cube_r9);
+        this.setRotateAngle(cube_r9, 0.4145F, 0.0F, 0.0F);
+        this.cube_r9.cubeList.add(new ModelBox(cube_r9, 26, 41, -0.5F, -1.1F, -1.5F, 1, 2, 4, -0.01F, false));
 
         this.cube_r10 = new AdvancedModelRenderer(this);
-        this.cube_r10.setRotationPoint(0.0F, -8.4F, 2.4F);
-        this.Body3.addChild(cube_r10);
-        this.setRotateAngle(cube_r10, -0.5149F, 0.0F, 0.0F);
-        this.cube_r10.cubeList.add(new ModelBox(cube_r10, 1, 56, -1.0F, 1.4F, -1.1F, 1, 5, 5, 0.0F, false));
-
-        this.Body4 = new AdvancedModelRenderer(this);
-        this.Body4.setRotationPoint(0.0F, -2.0F, 4.4F);
-        this.Body3.addChild(Body4);
-        this.Body4.cubeList.add(new ModelBox(Body4, 64, 12, -1.5F, -2.0F, 0.0F, 2, 4, 3, 0.0F, false));
-        this.Body4.cubeList.add(new ModelBox(Body4, 37, 50, -0.5F, 3.0F, 0.0F, 0, 19, 2, 0.0F, false));
-        this.Body4.cubeList.add(new ModelBox(Body4, 53, 26, -0.5F, -21.0F, 0.0F, 0, 19, 2, 0.0F, false));
+        this.cube_r10.setRotationPoint(0.0F, 3.6069F, 0.1388F);
+        this.tail2.addChild(cube_r10);
+        this.setRotateAngle(cube_r10, 0.5803F, 0.0F, 0.0F);
+        this.cube_r10.cubeList.add(new ModelBox(cube_r10, 37, 43, -0.025F, -2.2F, 0.8F, 0, 7, 3, 0.0F, false));
 
         this.cube_r11 = new AdvancedModelRenderer(this);
-        this.cube_r11.setRotationPoint(0.0F, 4.3F, 0.0F);
-        this.Body4.addChild(cube_r11);
-        this.setRotateAngle(cube_r11, 0.7767F, 0.0F, 0.0F);
-        this.cube_r11.cubeList.add(new ModelBox(cube_r11, 58, 33, -1.0F, -2.6F, -0.1F, 1, 3, 4, -0.01F, false));
+        this.cube_r11.setRotationPoint(-2.0F, -1.8742F, -6.4231F);
+        this.tail2.addChild(cube_r11);
+        this.setRotateAngle(cube_r11, -0.8988F, 0.0F, 0.0F);
+        this.cube_r11.cubeList.add(new ModelBox(cube_r11, 29, 48, 1.975F, -8.6F, 3.475F, 0, 4, 3, 0.0F, false));
 
         this.cube_r12 = new AdvancedModelRenderer(this);
-        this.cube_r12.setRotationPoint(0.0F, -4.0F, 0.0F);
-        this.Body4.addChild(cube_r12);
-        this.setRotateAngle(cube_r12, -0.5061F, 0.0F, 0.0F);
-        this.cube_r12.cubeList.add(new ModelBox(cube_r12, 49, 0, -1.0F, 0.3F, 0.5F, 1, 3, 3, -0.01F, false));
+        this.cube_r12.setRotationPoint(0.0F, -0.1536F, 1.9267F);
+        this.tail2.addChild(cube_r12);
+        this.setRotateAngle(cube_r12, -0.1309F, 0.0F, 0.0F);
+        this.cube_r12.cubeList.add(new ModelBox(cube_r12, 50, 32, -0.5F, -0.85F, -2.525F, 1, 3, 1, 0.0F, false));
+        this.cube_r12.cubeList.add(new ModelBox(cube_r12, 20, 48, -0.5F, -0.85F, -2.025F, 1, 2, 3, 0.01F, false));
 
-        this.Body5 = new AdvancedModelRenderer(this);
-        this.Body5.setRotationPoint(0.0F, 0.0F, 3.0F);
-        this.Body4.addChild(Body5);
-        this.setRotateAngle(Body5, 0.0873F, 0.0F, 0.0F);
-
+        this.tail3 = new AdvancedModelRenderer(this);
+        this.tail3.setRotationPoint(0.0F, 0.5464F, 2.5267F);
+        this.tail2.addChild(tail3);
+        this.tail3.cubeList.add(new ModelBox(tail3, 21, 13, 0.0F, -2.975F, -0.45F, 0, 7, 7, 0.0F, false));
 
         this.cube_r13 = new AdvancedModelRenderer(this);
-        this.cube_r13.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.Body5.addChild(cube_r13);
-        this.setRotateAngle(cube_r13, 0.0436F, 0.0F, 0.0F);
-        this.cube_r13.cubeList.add(new ModelBox(cube_r13, 0, 0, -0.5F, -7.0F, 0.0F, 0, 18, 13, 0.0F, false));
+        this.cube_r13.setRotationPoint(0.0F, -1.2F, 1.1F);
+        this.tail3.addChild(cube_r13);
+        this.setRotateAngle(cube_r13, 0.2618F, 0.0F, 0.0F);
+        this.cube_r13.cubeList.add(new ModelBox(cube_r13, 13, 41, -0.5F, -0.675F, -1.15F, 1, 1, 5, 0.0F, false));
 
         this.cube_r14 = new AdvancedModelRenderer(this);
-        this.cube_r14.setRotationPoint(0.0F, -2.2F, 2.5F);
-        this.Body5.addChild(cube_r14);
-        this.setRotateAngle(cube_r14, 0.3665F, 0.0F, 0.0F);
-        this.cube_r14.cubeList.add(new ModelBox(cube_r14, 38, 0, -1.0F, -0.1F, -0.2F, 1, 1, 8, -0.01F, false));
+        this.cube_r14.setRotationPoint(0.0F, -0.7F, -0.6F);
+        this.tail3.addChild(cube_r14);
+        this.setRotateAngle(cube_r14, -0.1309F, 0.0F, 0.0F);
+        this.cube_r14.cubeList.add(new ModelBox(cube_r14, 50, 37, -0.5F, -0.85F, 0.975F, 1, 2, 1, 0.01F, false));
+
+        this.frontRightFin = new AdvancedModelRenderer(this);
+        this.frontRightFin.setRotationPoint(-0.975F, 1.825F, -6.925F);
+        this.main.addChild(frontRightFin);
+        this.setRotateAngle(frontRightFin, -0.6256F, -0.5293F, 0.2145F);
+        this.frontRightFin.cubeList.add(new ModelBox(frontRightFin, 0, 46, 0.0F, -1.5F, 0.0F, 0, 3, 4, 0.0F, true));
+
+        this.backRightFin = new AdvancedModelRenderer(this);
+        this.backRightFin.setRotationPoint(-0.8525F, 2.8015F, -3.385F);
+        this.main.addChild(backRightFin);
+        this.setRotateAngle(backRightFin, -0.6412F, -0.0818F, 0.1076F);
+        this.backRightFin.cubeList.add(new ModelBox(backRightFin, 36, 18, 0.0F, -2.5F, 0.0F, 0, 3, 6, 0.0F, true));
+
+        this.frontLeftFin = new AdvancedModelRenderer(this);
+        this.frontLeftFin.setRotationPoint(0.975F, 1.825F, -6.925F);
+        this.main.addChild(frontLeftFin);
+        this.setRotateAngle(frontLeftFin, -0.6256F, 0.5293F, -0.2145F);
+        this.frontLeftFin.cubeList.add(new ModelBox(frontLeftFin, 0, 46, 0.0F, -1.5F, 0.0F, 0, 3, 4, 0.0F, false));
+
+        this.backLeftFin = new AdvancedModelRenderer(this);
+        this.backLeftFin.setRotationPoint(0.8525F, 2.8015F, -3.385F);
+        this.main.addChild(backLeftFin);
+        this.setRotateAngle(backLeftFin, -0.6412F, 0.0818F, -0.1076F);
+        this.backLeftFin.cubeList.add(new ModelBox(backLeftFin, 36, 18, 0.0F, -2.5F, 0.0F, 0, 3, 6, 0.0F, false));
+
+        this.head = new AdvancedModelRenderer(this);
+        this.head.setRotationPoint(0.0F, 0.4524F, -7.8432F);
+        this.main.addChild(head);
+        this.head.cubeList.add(new ModelBox(head, 44, 43, -1.5F, -1.2994F, -1.2664F, 3, 3, 2, 0.01F, false));
 
         this.cube_r15 = new AdvancedModelRenderer(this);
-        this.cube_r15.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.Body5.addChild(cube_r15);
-        this.setRotateAngle(cube_r15, 0.1745F, 0.0F, 0.0F);
-        this.cube_r15.cubeList.add(new ModelBox(cube_r15, 64, 66, -1.0F, -1.8F, 0.0F, 1, 2, 3, 0.0F, false));
-
-        this.Cephalon = new AdvancedModelRenderer(this);
-        this.Cephalon.setRotationPoint(0.0F, 0.0F, -1.2F);
-        this.Urosthenes.addChild(Cephalon);
-        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 58, 0, -2.0F, -3.0F, -6.8F, 3, 7, 4, 0.0F, false));
-        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 20, 46, -2.5F, -5.8F, -3.8F, 4, 11, 4, 0.0F, false));
+        this.cube_r15.setRotationPoint(0.0F, 2.0767F, -1.9977F);
+        this.head.addChild(cube_r15);
+        this.setRotateAngle(cube_r15, -0.2967F, 0.0F, 0.0F);
+        this.cube_r15.cubeList.add(new ModelBox(cube_r15, 49, 23, -1.0F, -2.0F, 0.0F, 2, 2, 2, 0.0F, false));
 
         this.cube_r16 = new AdvancedModelRenderer(this);
-        this.cube_r16.setRotationPoint(0.0F, -1.0F, -2.8F);
-        this.Cephalon.addChild(cube_r16);
-        this.setRotateAngle(cube_r16, -0.3054F, 0.0F, 0.0F);
-        this.cube_r16.cubeList.add(new ModelBox(cube_r16, 33, 0, -2.0F, 0.35F, -3.35F, 3, 2, 2, 0.03F, false));
-        this.cube_r16.cubeList.add(new ModelBox(cube_r16, 23, 0, -2.0F, 0.85F, -2.85F, 3, 1, 1, 0.04F, false));
+        this.cube_r16.setRotationPoint(-1.0F, 0.5131F, -3.1493F);
+        this.head.addChild(cube_r16);
+        this.setRotateAngle(cube_r16, 1.2985F, -0.2104F, 0.0582F);
+        this.cube_r16.cubeList.add(new ModelBox(cube_r16, 51, 7, 0.0F, 0.0F, 0.0F, 1, 2, 1, 0.0F, true));
 
         this.cube_r17 = new AdvancedModelRenderer(this);
-        this.cube_r17.setRotationPoint(0.0F, 2.0F, -5.9F);
-        this.Cephalon.addChild(cube_r17);
-        this.setRotateAngle(cube_r17, -0.5236F, 0.0F, 0.0F);
-        this.cube_r17.cubeList.add(new ModelBox(cube_r17, 34, 15, -1.5F, -1.3572F, -0.266F, 2, 4, 8, 0.0F, false));
+        this.cube_r17.setRotationPoint(1.0F, 0.5131F, -3.1493F);
+        this.head.addChild(cube_r17);
+        this.setRotateAngle(cube_r17, 1.2985F, 0.2104F, -0.0582F);
+        this.cube_r17.cubeList.add(new ModelBox(cube_r17, 51, 7, -1.0F, 0.0F, 0.0F, 1, 2, 1, 0.0F, false));
 
         this.cube_r18 = new AdvancedModelRenderer(this);
-        this.cube_r18.setRotationPoint(0.0F, -3.9F, -6.8F);
-        this.Cephalon.addChild(cube_r18);
-        this.setRotateAngle(cube_r18, -1.1432F, 0.0F, 0.0F);
-        this.cube_r18.cubeList.add(new ModelBox(cube_r18, 62, 52, -1.5F, -7.0F, -0.9F, 2, 6, 4, -0.01F, false));
+        this.cube_r18.setRotationPoint(0.0F, 0.5131F, -3.1493F);
+        this.head.addChild(cube_r18);
+        this.setRotateAngle(cube_r18, 1.3046F, 0.0F, 0.0F);
+        this.cube_r18.cubeList.add(new ModelBox(cube_r18, 49, 18, -1.0F, 0.0F, 0.0F, 2, 2, 2, -0.01F, false));
 
         this.cube_r19 = new AdvancedModelRenderer(this);
-        this.cube_r19.setRotationPoint(0.0F, -3.9F, -6.8F);
-        this.Cephalon.addChild(cube_r19);
-        this.setRotateAngle(cube_r19, -0.48F, 0.0F, 0.0F);
-        this.cube_r19.cubeList.add(new ModelBox(cube_r19, 58, 21, -1.5F, -1.4F, -0.1F, 2, 7, 4, 0.0F, false));
-
-        this.Jaw = new AdvancedModelRenderer(this);
-        this.Jaw.setRotationPoint(0.0F, 1.3F, -5.3F);
-        this.Cephalon.addChild(Jaw);
-        this.setRotateAngle(Jaw, 0.0873F, 0.0F, 0.0F);
-
+        this.cube_r19.setRotationPoint(0.0F, -1.6973F, -2.8116F);
+        this.head.addChild(cube_r19);
+        this.setRotateAngle(cube_r19, 0.9556F, 0.0F, 0.0F);
+        this.cube_r19.cubeList.add(new ModelBox(cube_r19, 50, 28, -1.0F, 0.0F, -2.0F, 2, 1, 2, 0.0F, false));
 
         this.cube_r20 = new AdvancedModelRenderer(this);
-        this.cube_r20.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.Jaw.addChild(cube_r20);
-        this.setRotateAngle(cube_r20, -0.9425F, 0.0F, 0.0F);
-        this.cube_r20.cubeList.add(new ModelBox(cube_r20, 66, 38, -1.5F, 0.4428F, -2.166F, 2, 3, 3, -0.01F, false));
+        this.cube_r20.setRotationPoint(0.0F, -3.2982F, -0.2744F);
+        this.head.addChild(cube_r20);
+        this.setRotateAngle(cube_r20, 0.5629F, 0.0F, 0.0F);
+        this.cube_r20.cubeList.add(new ModelBox(cube_r20, 42, 0, -1.0F, 0.0F, -3.0F, 2, 3, 3, 0.01F, false));
+
+        this.jaw = new AdvancedModelRenderer(this);
+        this.jaw.setRotationPoint(0.0F, 1.2303F, -2.0384F);
+        this.head.addChild(jaw);
+        this.setRotateAngle(jaw, 0.7854F, 0.0F, 0.0F);
+
+
+        this.cube_r21 = new AdvancedModelRenderer(this);
+        this.cube_r21.setRotationPoint(-0.5F, 0.8722F, -0.1317F);
+        this.jaw.addChild(cube_r21);
+        this.setRotateAngle(cube_r21, -1.0908F, 0.0F, 0.0F);
+        this.cube_r21.cubeList.add(new ModelBox(cube_r21, 25, 9, -0.5F, -0.725F, -2.4F, 2, 1, 2, -0.01F, false));
+
+        this.cube_r22 = new AdvancedModelRenderer(this);
+        this.cube_r22.setRotationPoint(-0.5F, 0.8722F, -0.1317F);
+        this.jaw.addChild(cube_r22);
+        this.setRotateAngle(cube_r22, -0.8727F, 0.0F, 0.0F);
+        this.cube_r22.cubeList.add(new ModelBox(cube_r22, 9, 48, -0.5F, -1.275F, -2.4F, 2, 1, 3, -0.02F, false));
+
+        this.leftEye = new AdvancedModelRenderer(this);
+        this.leftEye.setRotationPoint(0.275F, -0.9994F, -2.7914F);
+        this.head.addChild(leftEye);
+        this.setRotateAngle(leftEye, 0.2618F, 0.0F, 0.0F);
+
+
+        this.cube_r23 = new AdvancedModelRenderer(this);
+        this.cube_r23.setRotationPoint(-1.175F, -0.1F, -0.2F);
+        this.leftEye.addChild(cube_r23);
+        this.setRotateAngle(cube_r23, -0.2182F, 0.0F, 0.0F);
+        this.cube_r23.cubeList.add(new ModelBox(cube_r23, 51, 11, -0.35F, 0.2F, 0.125F, 1, 1, 1, 0.0F, true));
+        this.cube_r23.cubeList.add(new ModelBox(cube_r23, 51, 11, 1.15F, 0.2F, 0.125F, 1, 1, 1, 0.0F, false));
 
         updateDefaultPose();
     }
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Urosthenes.render(f5);
+        this.main.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.Urosthenes.rotateAngleY = (float) Math.toRadians(90);
-        this.Urosthenes.offsetX = -0.09F;
-        this.Urosthenes.offsetY = -0.16F;
-        this.Urosthenes.offsetZ = 0.07F;
-        this.Urosthenes.render(0.01F);
+        this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.main.offsetX = -0.09F;
+        this.main.offsetY = -0.16F;
+        this.main.offsetZ = 0.07F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(cube_r1, -0.0349F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r2, 0.1396F, 0.0F, 0.0F);
-        this.setRotateAngle(PectoralR, 0.0F, 0.3491F, 0.0F);
-        this.setRotateAngle(cube_r3, 0.0F, -0.6981F, 0.0F);
-        this.setRotateAngle(PectoralL, 0.0F, 0.4363F, 0.0F);
-        this.setRotateAngle(cube_r4, 0.0F, 0.6981F, 0.0F);
-        this.setRotateAngle(PelvicR, 0.0F, 0.0F, 0.3491F);
-        this.setRotateAngle(cube_r5, 0.0F, 0.0F, 0.48F);
-        this.setRotateAngle(PelvicL, 0.0F, 0.0F, -0.48F);
-        this.setRotateAngle(cube_r6, 0.0F, 0.0F, -0.48F);
-        this.setRotateAngle(Body2, 0.0F, -0.3491F, 0.0F);
-        this.setRotateAngle(cube_r7, 0.3665F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r8, -0.2967F, 0.0F, 0.0F);
-        this.setRotateAngle(Body3, 0.0F, -0.3054F, 0.0F);
-        this.setRotateAngle(cube_r9, 0.6545F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r10, -0.5149F, 0.0F, 0.0F);
-        this.setRotateAngle(Body4, 0.0F, -0.3491F, 0.0F);
-        this.setRotateAngle(cube_r11, 0.7767F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r12, -0.5061F, 0.0F, 0.0F);
-        this.setRotateAngle(Body5, 0.0944F, -0.3911F, -0.0361F);
-        this.setRotateAngle(cube_r13, 0.0436F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r14, 0.3665F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r15, 0.1745F, 0.0F, 0.0F);
-        this.setRotateAngle(Cephalon, 0.0F, 0.2618F, 0.0F);
-        this.setRotateAngle(cube_r16, -0.3054F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r17, -0.5236F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r18, -1.1432F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r19, -0.48F, 0.0F, 0.0F);
-        this.setRotateAngle(Jaw, 0.0873F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r20, -0.9425F, 0.0F, 0.0F);
-        this.Urosthenes.rotateAngleY = (float) Math.toRadians(90);
-        this.Urosthenes.offsetX = -0.0F;
-        this.Urosthenes.offsetY = -0.3F;
-        this.Urosthenes.offsetZ = -0.002F;
-        this.Urosthenes.render(0.01F);
+        this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.main.offsetX = -0.0F;
+        this.main.offsetY = -0.3F;
+        this.main.offsetZ = -0.002F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Urosthenes.offsetY = -1.2F;
-        this.Urosthenes.offsetX = 0.0F;
-        this.Urosthenes.offsetZ = 2.0F;
-        this.Urosthenes.rotateAngleY = (float)Math.toRadians(120);
-        this.Urosthenes.rotateAngleX = (float)Math.toRadians(0);
-        this.Urosthenes.rotateAngleZ = (float)Math.toRadians(0);
-        this.Urosthenes.scaleChildren = true;
+        this.main.offsetY = -1.2F;
+        this.main.offsetX = 0.0F;
+        this.main.offsetZ = 2.0F;
+        this.main.rotateAngleY = (float)Math.toRadians(120);
+        this.main.rotateAngleX = (float)Math.toRadians(0);
+        this.main.rotateAngleZ = (float)Math.toRadians(0);
+        this.main.scaleChildren = true;
         float scaler = 2.0F;
-        this.Urosthenes.setScale(scaler, scaler, scaler);
+        this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(Urosthenes, 0.6F, 3.8F, -0.2F);
-        this.setRotateAngle(cube_r1, -0.0349F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r2, 0.1396F, 0.0F, 0.0F);
-        this.setRotateAngle(PectoralR, 0.0F, 0.3491F, 0.0F);
-        this.setRotateAngle(cube_r3, 0.0F, -0.6981F, 0.0F);
-        this.setRotateAngle(PectoralL, 0.0F, 0.4363F, 0.0F);
-        this.setRotateAngle(cube_r4, 0.0F, 0.6981F, 0.0F);
-        this.setRotateAngle(PelvicR, 0.0F, 0.0F, 0.3491F);
-        this.setRotateAngle(cube_r5, 0.0F, 0.0F, 0.48F);
-        this.setRotateAngle(PelvicL, 0.0F, 0.0F, -0.48F);
-        this.setRotateAngle(cube_r6, 0.0F, 0.0F, -0.48F);
-        this.setRotateAngle(Body2, 0.0F, -0.3491F, 0.0F);
-        this.setRotateAngle(cube_r7, 0.3665F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r8, -0.2967F, 0.0F, 0.0F);
-        this.setRotateAngle(Body3, 0.0F, -0.3054F, 0.0F);
-        this.setRotateAngle(cube_r9, 0.6545F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r10, -0.5149F, 0.0F, 0.0F);
-        this.setRotateAngle(Body4, 0.0F, -0.3491F, 0.0F);
-        this.setRotateAngle(cube_r11, 0.7767F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r12, -0.5061F, 0.0F, 0.0F);
-        this.setRotateAngle(Body5, 0.0944F, -0.3911F, -0.0361F);
-        this.setRotateAngle(cube_r13, 0.0436F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r14, 0.3665F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r15, 0.1745F, 0.0F, 0.0F);
-        this.setRotateAngle(Cephalon, 0.0F, 0.2618F, 0.0F);
-        this.setRotateAngle(cube_r16, -0.3054F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r17, -0.5236F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r18, -1.1432F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r19, -0.48F, 0.0F, 0.0F);
-        this.setRotateAngle(Jaw, 0.0873F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r20, -0.9425F, 0.0F, 0.0F);
+
         //End of pose, now render the model:
-        this.Urosthenes.render(f);
+        this.main.render(f);
         //Reset rotations, positions and sizing:
-        this.Urosthenes.setScale(1.0F, 1.0F, 1.0F);
-        this.Urosthenes.scaleChildren = false;
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
         resetToDefaultPose();
 
     }
@@ -350,9 +304,9 @@ public class ModelUrosthenes extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Urosthenes.offsetY = -0.6F;
+        this.main.offsetY = -0.6F;
 
-        AdvancedModelRenderer[] fishTail = {this.Body4, this.Body5};
+        AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3};
         float speed = 0.28F;
         if (!e.isInWater()) {
             speed = 0.68F;
@@ -360,20 +314,20 @@ public class ModelUrosthenes extends ModelBasePalaeopedia {
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
             this.chainSwing(fishTail, speed, 0.85F, -3, f2, 1);
-            this.swing(Urosthenes, speed, 0.4F, true, 0, 0, f2, 1);
-            this.walk(Jaw, (float) (speed * 0.75), -0.3F, true, 0, -0.3F, f2, 1);
-            this.walk(PectoralL, (float) (speed * 0.75), 0.4F, true, 0, 0, f2, 1);
-            this.swing(PectoralL, (float) (speed * 0.75), 0.4F, true, 0, 0, f2, 1);
-            this.walk(PectoralR, (float) (speed * 0.75), 0.4F, true, 0, 0, f2, 1);
-            this.swing(PectoralR, (float) (speed * 0.75), 0.4F, true, 0, 0, f2, 1);
-            this.walk(PelvicL, (float) (speed * 0.75), 0.4F, true, 2, 0, f2, 1);
-            this.swing(PelvicL, (float) (speed * 0.75), 0.4F, true, 2, 0, f2, 1);
-            this.walk(PelvicR, (float) (speed * 0.75), 0.4F, true, 2, 0, f2, 1);
-            this.swing(PelvicR, (float) (speed * 0.75), 0.4F, true, 2, 0, f2, 1);
+            this.swing(main, speed, 0.4F, true, 0, 0, f2, 1);
+            this.walk(jaw, (float) (speed * 0.75), -0.3F, true, 0, -0.3F, f2, 1);
+            this.walk(frontLeftFin, (float) (speed * 0.75), 0.4F, true, 0, 0, f2, 1);
+            this.swing(frontLeftFin, (float) (speed * 0.75), 0.4F, true, 0, 0, f2, 1);
+            this.walk(frontRightFin, (float) (speed * 0.75), 0.4F, true, 0, 0, f2, 1);
+            this.swing(frontRightFin, (float) (speed * 0.75), 0.4F, true, 0, 0, f2, 1);
+            this.walk(backLeftFin, (float) (speed * 0.75), 0.4F, true, 2, 0, f2, 1);
+            this.swing(backLeftFin, (float) (speed * 0.75), 0.4F, true, 2, 0, f2, 1);
+            this.walk(backRightFin, (float) (speed * 0.75), 0.4F, true, 2, 0, f2, 1);
+            this.swing(backRightFin, (float) (speed * 0.75), 0.4F, true, 2, 0, f2, 1);
             if (!e.isInWater()) {
-                this.Urosthenes.rotateAngleZ = (float) Math.toRadians(90);
-                this.Urosthenes.offsetY = 0.3F;
-                this.bob(Urosthenes, -speed, 5F, false, f2, 1);
+                this.main.rotateAngleZ = (float) Math.toRadians(90);
+                this.main.offsetY = 0.3F;
+                this.bob(main, -speed, 5F, false, f2, 1);
             }
         }
     }

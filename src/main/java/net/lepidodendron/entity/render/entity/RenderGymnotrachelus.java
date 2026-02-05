@@ -12,7 +12,7 @@ public class RenderGymnotrachelus extends RenderLivingBaseWithBook<EntityPrehist
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gymnotrachelus.png");
 
     public static float getScaler() {
-        return 0.7F * 0.53F;
+        return 0.35F;
     }
     public RenderGymnotrachelus(RenderManager mgr) {
         super(mgr, new ModelGymnotrachelus(), 0.0f);

@@ -194,7 +194,7 @@ public class EntityPrehistoricFloraHolonema extends EntityPrehistoricFloraSwimmi
     }
 	@Override
 	public boolean dropsEggs() {
-		return true;
+		return false;
 	}
 	
 	@Override

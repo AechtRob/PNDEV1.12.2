@@ -1,0 +1,52 @@
+{
+	"name": "Baryonyx",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/baryonyx_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_baryonyx",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_baryonyx",
+			"title": "Baryonyx",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Spinosauridae$(br)>Baryonychinae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. walkeri",
+            "entity": "lepidodendron:prehistoric_flora_baryonyx",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_baryonyx",
+			"type": "text",
+			"text": "Baryonyx walkeri is a 9-meter-long baryonychine spinosaurid from the Weald Clay Formation of England. Discovered in the 1980s, Baryonyx was the first spinosaurid to be described after Spinosaurus itself, and is the eponymous member of its own subfamily! In contrast to the fragmentary and destroyed Spinosaurus holotype, Baryonyx was described from more complete material that gave paleontologists their first clear look at spinosaurid anatomy."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_baryonyx",
+			"type": "text",
+			"text": "The large claws, which are referenced in the genus name, along with the long snout and conical teeth suggest a diet of slippery aquatic animals such as fish. Today, these features are well-established as characteristic of the family as a whole. Though fragmentary fossils limit generalization, the baryonychines seem to have had a less raised spine and longer legs than their spinosaurine cousins."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_baryonyx"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_baryonyx"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_baryonyx"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_baryonyx"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_baryonyx"
+		}
+	]
+}
