@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:tsuga_fruit_1"},
+      {"model": "lepidodendron:tsuga_fruit_2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:tsuga_fruit_block_inventory"
+    }
+  }
+}

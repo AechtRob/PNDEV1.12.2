@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/saurauia_log_end",
+    "up": "lepidodendron:blocks/saurauia_log_end",
+    "north": "lepidodendron:blocks/saurauia_log",
+    "east": "lepidodendron:blocks/saurauia_log",
+    "south": "lepidodendron:blocks/saurauia_log",
+    "west": "lepidodendron:blocks/saurauia_log",
+    "particle": "lepidodendron:blocks/saurauia_log_end"
+  }
+}

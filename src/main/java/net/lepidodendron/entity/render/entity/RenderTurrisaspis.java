@@ -10,15 +10,16 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderTurrisaspis extends RenderLivingBaseWithBook<EntityPrehistoricFloraTurrisaspis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/turrisaspis.png");
-    public static float getScaler() {
-        return 0.5F * 0.275F;
-    }
+
+    public static float getScaler() {return 1.3F;}
     public RenderTurrisaspis(RenderManager mgr) {
-        super(mgr, new ModelTurrisaspis(), 0.0f);
+        super(mgr, new ModelTurrisaspis(), 1.0f);
     }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraTurrisaspis entity) {
+        float scale = entity.getAgeScale();
+        //System.err.println("AgeScale: " + scale);
         return RenderTurrisaspis.TEXTURE;
     }
 
@@ -29,10 +30,10 @@ public class RenderTurrisaspis extends RenderLivingBaseWithBook<EntityPrehistori
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraTurrisaspis entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
-        //this.shadowSize = entity.width * scale * 0.3f;
+        this.shadowSize = entity.width * scale * 0.15F;
     }
 
 }

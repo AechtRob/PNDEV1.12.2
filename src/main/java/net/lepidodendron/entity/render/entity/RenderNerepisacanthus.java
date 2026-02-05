@@ -12,7 +12,7 @@ public class RenderNerepisacanthus extends RenderLivingBaseWithBook<EntityPrehis
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/nerepisacanthus.png");
 
     public static float getScaler() {
-        return 0.7F * 0.395F;
+        return 0.18F;
     }
     public RenderNerepisacanthus(RenderManager mgr) {
         super(mgr, new ModelNerepisacanthus(), 0.0f);

@@ -1,0 +1,18 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:abies_sapling",
+      "data": 0
+    },
+    {
+      "item": "minecraft:dye",
+      "data": 15
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:abies_sapling_mighty",
+    "count": 1
+  }
+}

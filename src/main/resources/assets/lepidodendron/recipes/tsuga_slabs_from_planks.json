@@ -1,0 +1,23 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ "012"
+ ],
+ "key": {
+ "0": {
+ "item": "lepidodendron:tsuga_planks"
+ },
+ "1": {
+ "item": "lepidodendron:tsuga_planks"
+ },
+ "2": {
+ "item": "lepidodendron:tsuga_planks"
+ }
+ },
+ "result": {
+ "item": "lepidodendron:tsuga_slab",
+ "data": 0,
+ "count": 6
+ }
+}

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "normal": [
+      {
+        "model": "lepidodendron:azolla"
+      },
+      {
+        "model": "lepidodendron:azolla",
+        "y": 90
+      },
+      {
+        "model": "lepidodendron:azolla",
+        "y": 180
+      },
+      {
+        "model": "lepidodendron:azolla",
+        "y": 270
+      }
+    ]
+  }
+}

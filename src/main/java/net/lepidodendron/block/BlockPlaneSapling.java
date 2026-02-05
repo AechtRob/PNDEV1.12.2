@@ -150,12 +150,9 @@ public class BlockPlaneSapling extends ElementsLepidodendronMod.ModElement {
 	        }
 	        else
 	        {
-	           	int TreeHeight = 20 + rand.nextInt(18);
-				if (TreeHeight > 30 && Math.random() > 0.5) {
-					TreeHeight = 10 + rand.nextInt(18);
-				}
+				int TreeHeight = 16 + rand.nextInt(18);
 				ProcedureWorldGenPlane.executeProcedure(world, pos, TreeHeight);
-				//}
+
 	        }
 	    }
 	    
@@ -207,7 +204,7 @@ public class BlockPlaneSapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering tree");
-				tooltip.add("Periods: Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]");
+				tooltip.add("Periods: Paleogene - Neogene - Pleistocene [ - present]");
 				tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

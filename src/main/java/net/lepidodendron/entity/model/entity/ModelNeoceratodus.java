@@ -58,7 +58,7 @@ public class ModelNeoceratodus extends ModelBasePalaeopedia {
         this.textureHeight = 72;
 
         this.root = new AdvancedModelRenderer(this);
-        this.root.setRotationPoint(0.0F, 17.0F, 0.0F);
+        this.root.setRotationPoint(0.0F, 15.0F, 0.0F);
 
 
         this.Bodymiddlefront = new AdvancedModelRenderer(this);
@@ -70,7 +70,7 @@ public class ModelNeoceratodus extends ModelBasePalaeopedia {
         this.Bodymiddlefront_r1.setRotationPoint(-1.0F, 16.325F, 6.875F);
         this.Bodymiddlefront.addChild(Bodymiddlefront_r1);
         this.setRotateAngle(Bodymiddlefront_r1, 0.1745F, 0.0F, 0.0F);
-        this.Bodymiddlefront_r1.cubeList.add(new ModelBox(Bodymiddlefront_r1, 58, 18, -1.0F, -18.5F, -8.0F, 4, 1, 3, 0.0F, false));
+        this.Bodymiddlefront_r1.cubeList.add(new ModelBox(Bodymiddlefront_r1, 58, 18, -1.0F, -18.5F, -8.0F, 4, 1, 3, -0.01F, false));
 
         this.Bodymiddleback = new AdvancedModelRenderer(this);
         this.Bodymiddleback.setRotationPoint(-0.01F, 0.51F, -1.05F);
@@ -81,7 +81,7 @@ public class ModelNeoceratodus extends ModelBasePalaeopedia {
         this.Bodymiddleback_r1.setRotationPoint(-1.49F, 16.865F, 1.65F);
         this.Bodymiddleback.addChild(Bodymiddleback_r1);
         this.setRotateAngle(Bodymiddleback_r1, 0.0436F, 0.0F, 0.0F);
-        this.Bodymiddleback_r1.cubeList.add(new ModelBox(Bodymiddleback_r1, 40, 19, 0.0F, -18.49F, -1.3F, 3, 1, 6, 0.0F, false));
+        this.Bodymiddleback_r1.cubeList.add(new ModelBox(Bodymiddleback_r1, 40, 19, 0.0F, -18.49F, -1.3F, 3, 1, 6, -0.01F, false));
 
         this.Dorsalfinmiddle_r1 = new AdvancedModelRenderer(this);
         this.Dorsalfinmiddle_r1.setRotationPoint(0.01F, 23.665F, -1.6F);
@@ -205,16 +205,16 @@ public class ModelNeoceratodus extends ModelBasePalaeopedia {
         this.Bodyfront.setRotationPoint(0.01F, -0.01F, -7.7F);
         this.Bodymiddlefront.addChild(Bodyfront);
         this.setRotateAngle(Bodyfront, -0.0213F, 0.0F, 0.0F);
-        this.Bodyfront.cubeList.add(new ModelBox(Bodyfront, 24, 0, -2.51F, -0.4926F, -5.0005F, 5, 6, 5, 0.02F, false));
+        this.Bodyfront.cubeList.add(new ModelBox(Bodyfront, 24, 0, -2.51F, -0.4926F, -5.0004F, 5, 6, 5, 0.02F, false));
 
         this.Bodyfront_r1 = new AdvancedModelRenderer(this);
-        this.Bodyfront_r1.setRotationPoint(-0.51F, 24.4674F, 7.1995F);
+        this.Bodyfront_r1.setRotationPoint(-0.51F, 24.4674F, 7.1996F);
         this.Bodyfront.addChild(Bodyfront_r1);
         this.setRotateAngle(Bodyfront_r1, -0.0873F, 0.0F, 0.0F);
         this.Bodyfront_r1.cubeList.add(new ModelBox(Bodyfront_r1, 34, 35, -2.0F, -18.46F, -13.7F, 5, 1, 5, 0.01F, false));
 
         this.Headbase = new AdvancedModelRenderer(this);
-        this.Headbase.setRotationPoint(0.0F, 3.0574F, -3.7005F);
+        this.Headbase.setRotationPoint(0.0F, 3.0574F, -3.7004F);
         this.Bodyfront.addChild(Headbase);
         this.setRotateAngle(Headbase, -0.2806F, 0.0F, 0.0F);
         this.Headbase.cubeList.add(new ModelBox(Headbase, 34, 27, -3.51F, -2.15F, -2.5F, 7, 5, 3, 0.0F, false));
@@ -282,13 +282,13 @@ public class ModelNeoceratodus extends ModelBasePalaeopedia {
         this.Mouth.cubeList.add(new ModelBox(Mouth, 18, 41, -2.99F, -2.49F, -0.5F, 6, 2, 3, -0.01F, false));
 
         this.Rightpectoralfinbase2 = new AdvancedModelRenderer(this);
-        this.Rightpectoralfinbase2.setRotationPoint(-2.17F, 4.6574F, -3.5005F);
+        this.Rightpectoralfinbase2.setRotationPoint(-2.17F, 4.6574F, -3.5004F);
         this.Bodyfront.addChild(Rightpectoralfinbase2);
         this.setRotateAngle(Rightpectoralfinbase2, -0.5601F, 1.1463F, -0.2972F);
         this.Rightpectoralfinbase2.cubeList.add(new ModelBox(Rightpectoralfinbase2, 24, 11, -8.0F, -1.0F, -0.5F, 8, 3, 0, 0.0F, false));
 
         this.Leftpectoralfinbase2 = new AdvancedModelRenderer(this);
-        this.Leftpectoralfinbase2.setRotationPoint(2.15F, 4.6574F, -3.5005F);
+        this.Leftpectoralfinbase2.setRotationPoint(2.15F, 4.6574F, -3.5004F);
         this.Bodyfront.addChild(Leftpectoralfinbase2);
         this.setRotateAngle(Leftpectoralfinbase2, -0.5601F, -1.1463F, 0.2972F);
         this.Leftpectoralfinbase2.cubeList.add(new ModelBox(Leftpectoralfinbase2, 24, 11, 0.0F, -1.0F, -0.5F, 8, 3, 0, 0.0F, true));

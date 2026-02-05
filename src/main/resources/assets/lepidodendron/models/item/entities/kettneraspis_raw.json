@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/kettneraspis_icon"
+        "layer0": "lepidodendron:items/entities/kettneraspis_raw.png"
     }
 }

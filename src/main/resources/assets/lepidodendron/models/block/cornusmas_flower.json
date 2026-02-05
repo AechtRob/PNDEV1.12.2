@@ -1,0 +1,71 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "lepidodendron:blocks/cornusmas_1_c_flower",
+		"w": "lepidodendron:blocks/cornusmas_1_c_flower",
+		"ee": "lepidodendron:blocks/cornusmas_1_e_flower",
+		"ww": "lepidodendron:blocks/cornusmas_1_w_flower"
+	},
+	"elements": [
+		{
+			"name": "n",
+			"from": [8, 0, 0],
+			"to": [8, 16, 16],
+			"shade": false,
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#w"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#w"}
+			}
+		},
+		{
+			"name": "e",
+			"from": [0, 0, 8],
+			"to": [16, 16, 8],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#w"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#w"}
+			}
+		},
+		{
+			"name": "nn",
+			"from": [8, 0, -16],
+			"to": [8, 16, 0],
+			"shade": false,
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#ee"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#ww"}
+			}
+		},
+		{
+			"name": "ee",
+			"from": [16, 0, 8],
+			"to": [32, 16, 8],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#ww"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#ee"}
+			}
+		},
+		{
+			"name": "ss",
+			"from": [8, 0, 16],
+			"to": [8, 16, 32],
+			"shade": false,
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#ww"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#ee"}
+			}
+		},
+		{
+			"name": "ww",
+			"from": [-16, 0, 8],
+			"to": [0, 16, 8],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#ee"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#ww"}
+			}
+		}
+	]
+}

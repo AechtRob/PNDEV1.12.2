@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:drosera_small", "weight": 2 },
+      {"model": "lepidodendron:drosera_small_flower"}
+    ]
+  }
+}

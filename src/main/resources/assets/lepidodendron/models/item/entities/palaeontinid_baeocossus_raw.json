@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/palaeontinid_baeocossus_icon"
+        "layer0": "lepidodendron:items/entities/palaeontinid_baeocossus_raw.png"
     }
 }

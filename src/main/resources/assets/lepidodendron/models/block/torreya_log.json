@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/torreya_log_end",
+    "up": "lepidodendron:blocks/torreya_log_end",
+    "north": "lepidodendron:blocks/torreya_log",
+    "east": "lepidodendron:blocks/torreya_log",
+    "south": "lepidodendron:blocks/torreya_log",
+    "west": "lepidodendron:blocks/torreya_log",
+    "particle": "lepidodendron:blocks/torreya_log_end"
+  }
+}

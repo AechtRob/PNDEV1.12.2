@@ -472,11 +472,11 @@ public class BlockWaterClover extends ElementsLepidodendronMod.ModElement {
 	        return state.getBlock() == Blocks.WATER || state.getMaterial() == Material.ICE;
 	    }
 
-		@Override
-	    public EnumOffsetType getOffsetType()
-	    {
-	        return EnumOffsetType.XZ;
-	    }
+//		@Override
+//	    public EnumOffsetType getOffsetType()
+//	    {
+//	        return EnumOffsetType.XZ;
+//	    }
 
 		@Override
 		public Block planted() {

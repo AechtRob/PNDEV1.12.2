@@ -1,0 +1,14 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:saurauia_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:saurauia_seeds",
+    "count": 1
+  }
+}
+

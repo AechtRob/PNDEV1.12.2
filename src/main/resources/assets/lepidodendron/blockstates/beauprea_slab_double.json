@@ -1,0 +1,7 @@
+{
+ "variants": {
+ "variant=default": {
+ "model": "lepidodendron:beauprea_slab_double"
+ }
+ }
+}

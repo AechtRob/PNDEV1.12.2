@@ -1,0 +1,24 @@
+{
+  "multipart": [
+    {
+      "apply": [
+        {"model": "lepidodendron:water_poppy" },
+        {"model": "lepidodendron:water_poppy_var" },
+        {"model": "lepidodendron:water_poppy", "y": 90 },
+        {"model": "lepidodendron:water_poppy_var", "y": 90 },
+        {"model": "lepidodendron:water_poppy", "y": 180 },
+        {"model": "lepidodendron:water_poppy_var", "y": 180 },
+        {"model": "lepidodendron:water_poppy", "y": 270 },
+        {"model": "lepidodendron:water_poppy_var", "y": 270 }
+      ]
+    },
+    {
+      "apply": [
+        {"model": "lepidodendron:water_poppy_stem_1" },
+        {"model": "lepidodendron:water_poppy_stem_2" },
+        {"model": "lepidodendron:water_poppy_stem_3" },
+        {"model": "lepidodendron:water_poppy_stem_4" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:abies_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:abies_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:abies_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:abies_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:abies_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:abies_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:abies_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

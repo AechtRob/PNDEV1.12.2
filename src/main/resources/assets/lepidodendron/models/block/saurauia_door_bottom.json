@@ -1,0 +1,7 @@
+{
+ "parent": "block/door_bottom",
+ "textures": {
+ "bottom": "lepidodendron:blocks/saurauia_door_bottom",
+ "top": "lepidodendron:blocks/saurauia_door_top"
+ }
+}

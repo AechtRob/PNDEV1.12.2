@@ -15,7 +15,7 @@ public class RenderBrembodus extends RenderLivingBaseWithBook<EntityPrehistoricF
         super(mgr, new ModelBrembodus(), 0.0f);
     }
 
-    public static float getScaler() {return 0.13F; }
+    public static float getScaler() {return 0.27F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraBrembodus entity) {

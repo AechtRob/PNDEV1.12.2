@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:glyptostrobus_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:glyptostrobus_seed",
+    "count": 1
+  }
+}

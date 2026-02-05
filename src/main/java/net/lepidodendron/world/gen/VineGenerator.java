@@ -95,6 +95,12 @@ public class VineGenerator extends WorldGenerator
 								if (this.Vine == BlockKajanthus.block && rand.nextInt(6) == 0) {
 									this.state = BlockKajanthusFlower.block.getDefaultState();
 								}
+								if (this.state == BlockSchisandraFruit.block.getDefaultState()) {
+									this.state = BlockSchisandra.block.getDefaultState();
+								}
+								if (this.Vine == BlockSchisandra.block && rand.nextInt(6) == 0) {
+									this.state = BlockSchisandraFruit.block.getDefaultState();
+								}
 								if (enumfacing == EnumFacing.NORTH) {
 									Functions.setBlockStateAndCheckForDoublePlant(worldIn, new BlockPos(j, k - vinecounter, l), this.state.withProperty(BlockVine.SOUTH, true), 2);
 								}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/half_slab",
+  "textures": {
+    "bottom": "lepidodendron:blocks/populus_planks",
+    "top": "lepidodendron:blocks/populus_planks",
+    "side": "lepidodendron:blocks/populus_planks"
+  }
+}

@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/protophasma_icon"
+        "layer0": "lepidodendron:items/entities/protophasma_raw.png"
     }
 }

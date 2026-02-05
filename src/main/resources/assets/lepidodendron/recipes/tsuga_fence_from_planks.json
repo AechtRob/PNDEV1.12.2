@@ -1,0 +1,34 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ "345",
+ "678"
+ ],
+ "key": {
+ "3": {
+ "item": "lepidodendron:tsuga_planks"
+ },
+ "4": {
+ "type": "forge:ore_dict",
+ "ore": "stickWood"
+ },
+ "5": {
+ "item": "lepidodendron:tsuga_planks"
+ },
+ "6": {
+ "item": "lepidodendron:tsuga_planks"
+ },
+ "7": {
+ "type": "forge:ore_dict",
+ "ore": "stickWood"
+ },
+ "8": {
+ "item": "lepidodendron:tsuga_planks"
+ }
+ },
+ "result": {
+ "item": "lepidodendron:tsuga_fence",
+ "count": 3
+ }
+}

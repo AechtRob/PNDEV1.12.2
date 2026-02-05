@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:glyptostrobus_slab_double"
+    }
+  }
+}

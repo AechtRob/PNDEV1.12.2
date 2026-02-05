@@ -1,0 +1,52 @@
+{
+	"name": "Suchomimus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/suchomimus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_suchomimus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_suchomimus",
+			"title": "Suchomimus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Spinosauridae$(br)>Baryonychinae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. tenerensis",
+            "entity": "lepidodendron:prehistoric_flora_suchomimus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_suchomimus",
+			"type": "text",
+			"text": "Suchomimus tenerensis is a giant, 11-meter-long baryonychine spinosaurid from the Elrhaz Formation of Nigeria, and the largest described spinosaurid from the Early Cretaceous. It is a very well-studied and popular spinosaurid known from relatively complete remains. Suchomimus, like other baryonychine spinosaurids, had long legs relative to its body length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_suchomimus",
+			"type": "text",
+			"text": "However, in contrast to other baryonychine spinosaurids, Suchomimus possessed a raised spine, which peaked above the hip and tapered down towards the torso and tail as well as a characteristically long and straight snout."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_suchomimus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_suchomimus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_suchomimus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_suchomimus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_suchomimus"
+		}
+	]
+}

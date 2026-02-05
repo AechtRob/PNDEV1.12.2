@@ -15,7 +15,7 @@ public class RenderGemuendina extends RenderLivingBaseWithBook<EntityPrehistoric
         super(mgr, new ModelGemuendina(), 0.0f);
     }
     public static float getScaler() {
-        return 0.29F;
+        return 0.47F;
     }
 
     @Override

@@ -96,7 +96,7 @@ public class EntityPrehistoricFloraTurrisaspis extends EntityPrehistoricFloraAge
 
 	@Override
 	protected boolean isSlowAtBottom() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -127,7 +127,7 @@ public class EntityPrehistoricFloraTurrisaspis extends EntityPrehistoricFloraAge
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAI(this, 1));
 		tasks.addTask(1, new ShoalFishAgeableAI(this, 1, true));
-		tasks.addTask(2, new AgeableFishWander(this, NO_ANIMATION, 1, 0));
+        tasks.addTask(2, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 

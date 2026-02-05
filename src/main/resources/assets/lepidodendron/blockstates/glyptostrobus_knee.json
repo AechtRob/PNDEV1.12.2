@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:glyptostrobus_knee_small"
+    },
+    "top=true": {
+      "model": "lepidodendron:glyptostrobus_knee_small"
+    },
+    "top=false": {
+      "model": "lepidodendron:glyptostrobus_knee_big"
+    }
+  }
+}

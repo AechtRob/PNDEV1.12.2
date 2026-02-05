@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:palaeoclusia"}
+    ],
+    "flowers=false": {
+      "model": "lepidodendron:palaeoclusia"
+    },
+    "flowers=true": {
+      "model": "lepidodendron:palaeoclusia_flower"
+    }
+  }
+}

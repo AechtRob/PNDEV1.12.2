@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/tsuga_log_end",
+    "up": "lepidodendron:blocks/tsuga_log_end",
+    "north": "lepidodendron:blocks/tsuga_log",
+    "east": "lepidodendron:blocks/tsuga_log",
+    "south": "lepidodendron:blocks/tsuga_log",
+    "west": "lepidodendron:blocks/tsuga_log",
+    "particle": "lepidodendron:blocks/tsuga_log_end"
+  }
+}

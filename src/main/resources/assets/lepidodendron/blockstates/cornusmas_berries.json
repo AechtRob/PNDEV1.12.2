@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:cornusmas_berries"},
+      {"model": "lepidodendron:cornusmas_var_berries"}
+    ]
+  }
+}

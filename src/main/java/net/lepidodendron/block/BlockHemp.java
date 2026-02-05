@@ -118,19 +118,13 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomeCretaceousEarly)
 		{
-//			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
-//			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Estuary) {
-//				heightCheck = true;
-//			}
-//			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp
-//					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Estuary
-//					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Marsh
-//					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Hills) {
-//				biomeCriteria = true;
-//			}
-//			else {
+			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
+			if (biomeCretaceousEarly.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia_yixian_foothills")) {
+				heightCheck = true;
+			}
+			else {
 				biomeCriteria = false;
-//			}
+			}
 		}
 
 		if (!biomeCriteria)
@@ -147,7 +141,7 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 		}
 
 		if (LepidodendronConfig.dimCretaceousEarly == dimID) {
-			GenChance = 25;
+			GenChance = 4;
 		}
 
 		int maxheight = LepidodendronConfigPlants.maxheightHemp;

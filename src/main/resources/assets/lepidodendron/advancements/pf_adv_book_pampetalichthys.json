@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:pampetalichthys_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_pampetalichthys.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_pampetalichthys.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_pampetalichthys"
+        }
+    }
+}

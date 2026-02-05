@@ -182,19 +182,19 @@ public class EntityPrehistoricFloraIanthasaurus extends EntityPrehistoricFloraLa
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:edaphosaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:remigiomontanus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:edaphosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:remigiomontanus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:edaphosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:remigiomontanus_death"));
 	}
 
 	@Override

@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:beauprea_sapling"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_beauprea.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_beauprea.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_beauprea"
+		}
+	}
+}

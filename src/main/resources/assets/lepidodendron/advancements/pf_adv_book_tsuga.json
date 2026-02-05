@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:tsuga_sapling"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_tsuga.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_tsuga.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_tsuga"
+		}
+	}
+}

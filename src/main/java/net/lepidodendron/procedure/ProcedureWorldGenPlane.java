@@ -33,17 +33,17 @@ public class ProcedureWorldGenPlane extends ElementsLepidodendronMod.ModElement 
     private static BlockPos basePos = BlockPos.ORIGIN;
     private static int height;
     private static int heightLimit;
-   	private static int heightLimitLimit = 18;
+   	private static int heightLimitLimit = 14;
     //private static double heightAttenuation = 0.618D;
     private static double heightAttenuation = 0.818D;
     //private static double leafDensity = 1.0D;
-    private static double leafDensity = 0.40D;
+    private static double leafDensity = 0.480D;
     private static int leafDistanceLimit = 4;
     private static List<ProcedureWorldGenPlane.FoliageCoordinates> foliageCoords;
     //private static double branchSlope = 0.381D;
-    private static double branchSlope = 0.781D;
+    private static double branchSlope = 0.581D;
     //private static double scaleWidth = 1.0D;
-    private static double scaleWidth = 0.275D;
+    private static double scaleWidth = 0.775D;
     private static int trunkSize = 1;
 
 	public static void executeProcedure(World WorldIn, BlockPos position, int TreeHeight) {

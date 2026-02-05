@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:byssacanthus_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_byssacanthus.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_byssacanthus.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_byssacanthus"
+        }
+    }
+}

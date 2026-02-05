@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/archaeognatha_icon"
+        "layer0": "lepidodendron:items/entities/archaeognatha_raw.png"
     }
 }

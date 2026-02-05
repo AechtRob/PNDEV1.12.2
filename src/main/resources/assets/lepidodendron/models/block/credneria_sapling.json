@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/credneria_sapling",
+    "particle": "lepidodendron:blocks/credneria_sapling"
+  }
+}

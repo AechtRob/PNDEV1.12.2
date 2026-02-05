@@ -1,0 +1,57 @@
+{
+  	"multipart": [
+			{"when": { "facing": "north" },
+				"apply": [
+				      	{"model": "lepidodendron:dipteris_1", "y": 270 },
+				      	{"model": "lepidodendron:dipteris_2", "y": 270 },
+						{"model": "lepidodendron:dipteris_3", "y": 270 },
+						{"model": "lepidodendron:dipteris_4", "y": 270 }
+			     ]
+			},
+	
+			{"when": { "facing": "south" },
+				"apply": [
+					{"model": "lepidodendron:dipteris_1", "y": 90 },
+					{"model": "lepidodendron:dipteris_2", "y": 90 },
+					{"model": "lepidodendron:dipteris_3", "y": 90 },
+					{"model": "lepidodendron:dipteris_4", "y": 90 }
+			     ]
+			},
+	
+			{"when": { "facing": "east" },
+				"apply": [
+					{"model": "lepidodendron:dipteris_1" },
+					{"model": "lepidodendron:dipteris_2" },
+					{"model": "lepidodendron:dipteris_3" },
+					{"model": "lepidodendron:dipteris_4" }
+			     ]
+			},
+	
+			{"when": { "facing": "west" },
+				"apply": [
+					{"model": "lepidodendron:dipteris_1", "y": 180 },
+					{"model": "lepidodendron:dipteris_2", "y": 180 },
+					{"model": "lepidodendron:dipteris_3", "y": 180 },
+					{"model": "lepidodendron:dipteris_4", "y": 180 }
+			     ]
+			},
+	
+			{"when": { "facing": "up" },
+				"apply": [
+					{"model": "lepidodendron:dipteris_1","y": 90  },
+					{"model": "lepidodendron:dipteris_2","y": 90  },
+					{"model": "lepidodendron:dipteris_3","y": 90  },
+					{"model": "lepidodendron:dipteris_4","y": 90  }
+			     ]
+			},
+	
+			{"when": { "facing": "down" },
+				"apply": [
+					{"model": "lepidodendron:dipteris_1","y": 90  },
+					{"model": "lepidodendron:dipteris_2","y": 90  },
+					{"model": "lepidodendron:dipteris_3","y": 90  },
+					{"model": "lepidodendron:dipteris_4","y": 90  }
+			     ]
+			}
+		]
+}

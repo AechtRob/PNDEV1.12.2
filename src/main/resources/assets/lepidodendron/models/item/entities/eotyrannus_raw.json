@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/eotyrannus_icon"
+        "layer0": "lepidodendron:items/entities/eotyrannus_raw.png"
     }
 }

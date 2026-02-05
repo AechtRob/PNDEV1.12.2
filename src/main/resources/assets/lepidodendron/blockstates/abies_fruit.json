@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:abies_fruit_1"},
+      {"model": "lepidodendron:abies_fruit_2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:abies_fruit_block_inventory"
+    }
+  }
+}

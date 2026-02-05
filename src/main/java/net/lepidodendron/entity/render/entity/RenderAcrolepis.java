@@ -15,7 +15,7 @@ public class RenderAcrolepis extends RenderLivingBaseWithBook<EntityPrehistoricF
         super(mgr, new ModelAcrolepis(), 0.0f);
     }
 
-    public static float getScaler() {return 0.342F; }
+    public static float getScaler() {return 0.5F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAcrolepis entity) {

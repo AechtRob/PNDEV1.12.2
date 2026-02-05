@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/juramantophasma_icon"
+        "layer0": "lepidodendron:items/entities/juramantophasma_raw.png"
     }
 }

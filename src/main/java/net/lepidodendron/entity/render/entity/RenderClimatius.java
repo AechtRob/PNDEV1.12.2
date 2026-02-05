@@ -12,7 +12,7 @@ public class RenderClimatius extends RenderLivingBaseWithBook<EntityPrehistoricF
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/climatius.png");
 
     public static float getScaler() {
-        return 0.7F * 0.35F;
+        return 0.23F;
     }
     public RenderClimatius(RenderManager mgr) {
         super(mgr, new ModelClimatius(), 0.0f);

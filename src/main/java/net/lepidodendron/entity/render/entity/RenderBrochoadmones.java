@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderBrochoadmones extends RenderLivingBaseWithBook<EntityPrehistoricFloraBrochoadmones> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/brochoadmones.png");
     public static float getScaler() {
-        return 0.108F;
+        return 0.26F;
     }
 
     public RenderBrochoadmones(RenderManager mgr) {

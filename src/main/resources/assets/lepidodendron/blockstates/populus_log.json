@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:populus_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:populus_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:populus_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:populus_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:populus_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:populus_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:populus_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

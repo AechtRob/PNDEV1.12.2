@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:seedy_grass_land"},
+      {"model": "lepidodendron:seedy_grass_land_var"}
+    ]
+  }
+}

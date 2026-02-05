@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:palaeoaster01" },
+      {"model": "lepidodendron:palaeoaster01_var" },
+      {"model": "lepidodendron:palaeoaster02" },
+      {"model": "lepidodendron:palaeoaster02_var" }
+    ]
+  }
+}

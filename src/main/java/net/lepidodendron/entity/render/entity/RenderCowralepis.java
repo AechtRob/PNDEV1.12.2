@@ -12,8 +12,7 @@ public class RenderCowralepis extends RenderLivingBaseWithBook<EntityPrehistoric
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cowralepis.png");
 
     public static float getScaler() {
-        return 0.7F * 0.3F;
-    }
+        return 0.3F;}
     public RenderCowralepis(RenderManager mgr) {
         super(mgr, new ModelCowralepis(), 0.0f);
     }

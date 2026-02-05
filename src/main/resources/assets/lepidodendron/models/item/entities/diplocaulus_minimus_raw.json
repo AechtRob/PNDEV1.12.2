@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/diplocaulus_minimus_icon"
+        "layer0": "lepidodendron:items/entities/diplocaulus_minimus_raw.png"
     }
 }

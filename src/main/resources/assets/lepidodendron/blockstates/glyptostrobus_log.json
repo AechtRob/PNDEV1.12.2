@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:glyptostrobus_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:glyptostrobus_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:glyptostrobus_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:glyptostrobus_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:glyptostrobus_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:glyptostrobus_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:glyptostrobus_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

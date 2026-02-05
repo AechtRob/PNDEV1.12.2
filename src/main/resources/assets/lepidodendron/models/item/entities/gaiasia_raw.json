@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/gaiasia_icon"
+        "layer0": "lepidodendron:items/entities/gaiasia_raw.png"
     }
 }

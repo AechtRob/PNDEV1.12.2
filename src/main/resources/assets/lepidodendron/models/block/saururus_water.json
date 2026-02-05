@@ -1,0 +1,45 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "lepidodendron:items/saururus_inventory",
+        "top": "lepidodendron:blocks/saururus_t",
+        "bottom": "lepidodendron:blocks/saururus_b"
+    },
+    "elements": [
+        {   "from": [ 0.8, 0, 8 ],
+            "to": [ 15.2, 16, 8 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#top" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#top" }
+            }
+        },
+        {   "from": [ 8, 0, 0.8 ],
+            "to": [ 8, 16, 15.2 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#top" },
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#top" }
+            }
+        },        {   "from": [ 0.8, -16, 8 ],
+            "to": [ 15.2, 0, 8 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom" }
+            }
+        },
+        {   "from": [ 8, -16, 0.8 ],
+            "to": [ 8, 0, 15.2 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom" },
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom" }
+            }
+        }
+    ]
+}

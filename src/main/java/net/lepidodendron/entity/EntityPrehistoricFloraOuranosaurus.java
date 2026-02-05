@@ -11,7 +11,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraBiQuadLandBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
 import net.lepidodendron.entity.util.IBluffer;
 import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.entity.util.ITrappableLand;

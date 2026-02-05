@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/tarjadia_icon"
+        "layer0": "lepidodendron:items/entities/tarjadia_raw.png"
     }
 }

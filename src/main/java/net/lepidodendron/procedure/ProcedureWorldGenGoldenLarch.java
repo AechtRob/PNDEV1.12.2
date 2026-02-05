@@ -3,7 +3,9 @@ package net.lepidodendron.procedure;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockGoldenLarchLeaves;
+import net.lepidodendron.block.BlockGoldenLarchLeavesAutumn;
 import net.lepidodendron.block.BlockGoldenLarchLog;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -17,7 +19,7 @@ public class ProcedureWorldGenGoldenLarch extends ElementsLepidodendronMod.ModEl
 		super(instance, 42);
 	}
 
-	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies, boolean isAutumn) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenGoldenLarch!");
 			return;
@@ -74,9 +76,9 @@ public class ProcedureWorldGenGoldenLarch extends ElementsLepidodendronMod.ModEl
 				ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) z, world, BlockGoldenLarchLog.block, EnumFacing.NORTH);
 				counter = counter + 1;
 				}
-			ProcedureTreeLeaf.executeProcedure(x, (y + (int) counter), z, world, BlockGoldenLarchLeaves.block);
-			ProcedureTreeLeaf.executeProcedure(x, (y + (int) counter + 1), z, world, BlockGoldenLarchLeaves.block);
-			ProcedureTreeLeaf.executeProcedure(x, (y + (int) counter + 2), z, world, BlockGoldenLarchLeaves.block);
+			ProcedureTreeLeaf.executeProcedure(x, (y + (int) counter), z, world, getLeaves(isAutumn));
+			ProcedureTreeLeaf.executeProcedure(x, (y + (int) counter + 1), z, world, getLeaves(isAutumn));
+			ProcedureTreeLeaf.executeProcedure(x, (y + (int) counter + 2), z, world, getLeaves(isAutumn));
 			
 			counterbase = (int)Math.round((float)TrunkHeight * 0.25F);
 			//if (Math.random() > 0.3) counterbase = 1;
@@ -173,7 +175,7 @@ public class ProcedureWorldGenGoldenLarch extends ElementsLepidodendronMod.ModEl
 					while (zct <=2) {
 						if ((Math.abs(xct) + Math.abs(zct)) <= 4 && yy + 1 >= counterbase + y
 								&& world.getBlockState(new BlockPos(x + xct, yy + 1, z + zct)).getBlock() == BlockGoldenLarchLog.block) {
-							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, BlockGoldenLarchLeaves.block, 2, 0.2);
+							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, getLeaves(isAutumn), 2, 0.2);
 						}
 						zct = zct + 1;
 					}
@@ -189,7 +191,7 @@ public class ProcedureWorldGenGoldenLarch extends ElementsLepidodendronMod.ModEl
 					while (zct <=3) {
 						if ((Math.abs(xct) + Math.abs(zct)) <= 3 && yy + 1 >= counterbase + y
 								&& world.getBlockState(new BlockPos(x + xct, yy + 1, z + zct)).getBlock() == BlockGoldenLarchLog.block) {
-							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, BlockGoldenLarchLeaves.block, 2, 0.2);
+							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, getLeaves(isAutumn), 2, 0.2);
 						}
 						zct = zct + 1;
 					}
@@ -205,7 +207,7 @@ public class ProcedureWorldGenGoldenLarch extends ElementsLepidodendronMod.ModEl
 					while (zct <=3) {
 						if ((Math.abs(xct) + Math.abs(zct)) <= 2 && yy + 1 >= counterbase + y
 								&& world.getBlockState(new BlockPos(x + xct, yy + 1, z + zct)).getBlock() == BlockGoldenLarchLog.block) {
-							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, BlockGoldenLarchLeaves.block, 2, 0.2);
+							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, getLeaves(isAutumn), 2, 0.2);
 						}
 						zct = zct + 1;
 					}
@@ -221,7 +223,7 @@ public class ProcedureWorldGenGoldenLarch extends ElementsLepidodendronMod.ModEl
 					while (zct <=3) {
 						if ((Math.abs(xct) + Math.abs(zct)) <= 1 && yy + 1 >= counterbase + y
 								&& world.getBlockState(new BlockPos(x + xct, yy + 1, z + zct)).getBlock() == BlockGoldenLarchLog.block) {
-							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, BlockGoldenLarchLeaves.block, 2, 0.2);
+							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, getLeaves(isAutumn), 2, 0.2);
 						}
 						zct = zct + 1;
 					}
@@ -237,7 +239,7 @@ public class ProcedureWorldGenGoldenLarch extends ElementsLepidodendronMod.ModEl
 					while (zct <=3) {
 						if ((Math.abs(xct) + Math.abs(zct)) <= 1 && yy + 1 >= counterbase + y
 							&& world.getBlockState(new BlockPos(x + xct, yy + 1, z + zct)).getBlock() == BlockGoldenLarchLog.block) {
-							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, BlockGoldenLarchLeaves.block, 2, 0.2);
+							ProcedureLeavesAroundLog.executeProcedure(x + xct, yy + 1, z + zct, world, getLeaves(isAutumn), 2, 0.2);
 						}
 						zct = zct + 1;
 					}
@@ -248,5 +250,12 @@ public class ProcedureWorldGenGoldenLarch extends ElementsLepidodendronMod.ModEl
 
 		}
 			
+	}
+
+	static Block getLeaves(boolean isAutumn) {
+		if (isAutumn) {
+			return BlockGoldenLarchLeavesAutumn.block;
+		}
+		return BlockGoldenLarchLeaves.block;
 	}
 }

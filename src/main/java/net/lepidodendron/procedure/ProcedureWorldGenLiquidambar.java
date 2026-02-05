@@ -3,6 +3,7 @@ package net.lepidodendron.procedure;
 import com.google.common.collect.Lists;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockLiquidambarLeaves;
+import net.lepidodendron.block.BlockLiquidambarLeavesAutumn;
 import net.lepidodendron.block.BlockLiquidambarLog;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
@@ -46,7 +47,7 @@ public class ProcedureWorldGenLiquidambar extends ElementsLepidodendronMod.ModEl
     private static double scaleWidth = 0.475D;
     private static int trunkSize = 1;
 
-	public static void executeProcedure(World WorldIn, BlockPos position, int TreeHeight) {
+	public static void executeProcedure(World WorldIn, BlockPos position, int TreeHeight, boolean isAutumn) {
 		
 		//This is now a redevelopment of vanilla giant oak code (WorldGenBigTree):
 		
@@ -67,7 +68,7 @@ public class ProcedureWorldGenLiquidambar extends ElementsLepidodendronMod.ModEl
 
         {
             generateLeafNodeList();
-            generateLeaves();
+            generateLeaves(isAutumn);
             generateTrunk();
             generateLeafNodeBases();
             //world = null; //Fix vanilla Mem leak, holds latest world
@@ -231,23 +232,23 @@ public class ProcedureWorldGenLiquidambar extends ElementsLepidodendronMod.ModEl
     /**
      * Generates the leaf portion of the tree as specified by the leafNodes list.
      */
-    static void generateLeaves()
+    static void generateLeaves(boolean isAutumn)
     {
         for (ProcedureWorldGenLiquidambar.FoliageCoordinates procedureworldgenplane$foliagecoordinates : foliageCoords)
         {
-            generateLeafNode(procedureworldgenplane$foliagecoordinates);
+            generateLeafNode(procedureworldgenplane$foliagecoordinates, isAutumn);
         }
     }
     
     /**
      * Generates the leaves surrounding an individual entry in the leafNodes list.
      */
-    static void generateLeafNode(BlockPos pos)
+    static void generateLeafNode(BlockPos pos, boolean isAutumn)
     {
         for (int i = 0; i < leafDistanceLimit; ++i)
         {
-            //crosSection(pos.up(i), leafSize(i), BlockLiquidambarLeaves.block.getDefaultState().withProperty(CHECK_DECAY, Boolean.valueOf(false)));
-            crosSection(pos.up(i), leafSize(i), BlockLiquidambarLeaves.block.getDefaultState().withProperty(CHECK_DECAY, Boolean.valueOf(false)));
+            //crosSection(pos.up(i), leafSize(i), getLeaves(isAutumn).getDefaultState().withProperty(CHECK_DECAY, Boolean.valueOf(false)));
+            crosSection(pos.up(i), leafSize(i), getLeaves(isAutumn).getDefaultState().withProperty(CHECK_DECAY, Boolean.valueOf(false)));
         }
     }
 
@@ -389,6 +390,13 @@ public class ProcedureWorldGenLiquidambar extends ElementsLepidodendronMod.ModEl
     {
         Material material = blockType.getDefaultState().getMaterial();
         return material == Material.AIR || material == Material.LEAVES || blockType == Blocks.GRASS || blockType == Blocks.DIRT || blockType == Blocks.LOG || blockType == Blocks.LOG2 || blockType == Blocks.SAPLING || blockType == Blocks.VINE;
+    }
+
+    static Block getLeaves(boolean isAutumn) {
+        if (isAutumn) {
+            return BlockLiquidambarLeavesAutumn.block;
+        }
+        return BlockLiquidambarLeaves.block;
     }
 
 	

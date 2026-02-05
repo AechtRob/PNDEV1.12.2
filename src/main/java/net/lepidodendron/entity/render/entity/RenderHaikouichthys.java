@@ -13,7 +13,7 @@ import org.lwjgl.opengl.GL11;
 public class RenderHaikouichthys extends RenderLivingBaseWithBook<EntityPrehistoricFloraHaikouichthys> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/haikouichthys.png");
 
-    public static float getScaler() {return 0.055F;}
+    public static float getScaler() {return 0.15F;}
 
     public RenderHaikouichthys(RenderManager mgr) {
         super(mgr, new ModelHaikouichthys(), 0.0f);

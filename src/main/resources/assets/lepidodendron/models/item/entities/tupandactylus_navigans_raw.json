@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "paleopedia:items/tupandactylus_navigans_icon"
+        "layer0": "lepidodendron:items/entities/tupandactylus_navigans_raw.png"
     }
 }

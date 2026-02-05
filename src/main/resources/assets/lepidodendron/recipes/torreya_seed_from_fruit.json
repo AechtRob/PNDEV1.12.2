@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:torreya_berries"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:torreya_seed",
+    "count": 1
+  }
+}

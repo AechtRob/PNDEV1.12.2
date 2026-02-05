@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/golden_larch_leaves_autumn",
+    "particle": "lepidodendron:blocks/golden_larch_leaves_autumn"
+  }
+}

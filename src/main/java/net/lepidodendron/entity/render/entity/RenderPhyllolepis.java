@@ -12,7 +12,7 @@ public class RenderPhyllolepis extends RenderLivingBaseWithBook<EntityPrehistori
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/phyllolepis.png");
 
     public static float getScaler() {
-        return 0.7F * 0.63F;
+        return 0.47F;
     }
     public RenderPhyllolepis(RenderManager mgr) {
         super(mgr, new ModelPhyllolepis(), 0.0f);

@@ -10,11 +10,9 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
-import net.lepidodendron.entity.render.entity.RenderAegirosaurus;
 import net.lepidodendron.entity.render.entity.RenderSpinosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
@@ -53,7 +51,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
-import java.util.List;
 
 public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLandWadingBase implements IAdvancementGranter, ITrappableLand {
 

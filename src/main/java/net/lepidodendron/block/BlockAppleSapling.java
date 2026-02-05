@@ -215,6 +215,7 @@ public class BlockAppleSapling extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering tree");
 				tooltip.add("Periods: Neogene - Pleistocene [ - present]");
+				tooltip.add("Propagation: Fruit/Cone");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

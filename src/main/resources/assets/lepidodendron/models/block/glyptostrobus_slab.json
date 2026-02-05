@@ -1,0 +1,8 @@
+{
+  "parent": "block/half_slab",
+  "textures": {
+    "bottom": "lepidodendron:blocks/glyptostrobus_planks",
+    "top": "lepidodendron:blocks/glyptostrobus_planks",
+    "side": "lepidodendron:blocks/glyptostrobus_planks"
+  }
+}

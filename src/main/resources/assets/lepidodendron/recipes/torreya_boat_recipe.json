@@ -1,0 +1,30 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ " ",
+ "3 5",
+ "678"
+ ],
+ "key": {
+ "3": {
+ "item": "lepidodendron:torreya_planks"
+ },
+ "5": {
+ "item": "lepidodendron:torreya_planks"
+ },
+ "6": {
+ "item": "lepidodendron:torreya_planks"
+ },
+ "7": {
+ "item": "lepidodendron:torreya_planks"
+ },
+ "8": {
+ "item": "lepidodendron:torreya_planks"
+ }
+ },
+ "result": {
+ "item": "lepidodendron:torreya_boat_item",
+ "count": 1
+ }
+}

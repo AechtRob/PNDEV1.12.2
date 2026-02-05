@@ -1,0 +1,7 @@
+{
+ "parent": "block/wall_gate_open",
+ "textures": {
+ "texture": "lepidodendron:blocks/saurauia_planks",
+ "particle": "lepidodendron:blocks/saurauia_planks"
+ }
+}

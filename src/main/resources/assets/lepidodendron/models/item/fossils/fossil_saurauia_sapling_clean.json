@@ -1,0 +1,9 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "lepidodendron:items/fossil_clean_background",
+    "layer1": "lepidodendron:items/petrified_saurauia_sapling"
+  }
+}
+
+
