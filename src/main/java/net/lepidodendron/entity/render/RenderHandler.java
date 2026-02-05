@@ -9155,11 +9155,6 @@ public class RenderHandler {
                 return new RenderParvosuchus(manager);
             }
         });
-
-
-
-
-
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHauffiosaurus.class, new IRenderFactory<EntityPrehistoricFloraHauffiosaurus>() {
             @Override
             public Render<? super EntityPrehistoricFloraHauffiosaurus> createRenderFor(RenderManager manager) {
@@ -9184,6 +9179,11 @@ public class RenderHandler {
                 return new RenderUmoonasaurus(manager);
             }
         });
+
+
+
+
+
 
 
 
