@@ -2238,6 +2238,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ILERDOCOSSUS = new CustomTrigger("pf_book_palaeontinid_ilerdocossus");
     public static final CustomTrigger CLICK_BAEOCOSSUS = new CustomTrigger("pf_book_palaeontinid_baeocossus");
     public static final CustomTrigger CLICK_COLOSSOCOSSUS = new CustomTrigger("pf_book_palaeontinid_colossocossus");
+    public static final CustomTrigger CLICK_PACHYPSYCHE = new CustomTrigger("pf_book_palaeontinid_pachypsyche");
     public static final CustomTrigger CLICK_EOPROSCOPIA = new CustomTrigger("pf_book_eoproscopia");
     public static final CustomTrigger CLICK_PROTOPHASMA = new CustomTrigger("pf_book_protophasma");
     public static final CustomTrigger CLICK_JURAMANTOPHASMA = new CustomTrigger("pf_book_juramantophasma");
@@ -4842,6 +4843,7 @@ public class ModTriggers
             CLICK_MINICRANIA,
             CLICK_STRUTHIOCEPHALUS,
             CLICK_BOLIVOSTEUS,
+            CLICK_PACHYPSYCHE,
     };
 
     /**
