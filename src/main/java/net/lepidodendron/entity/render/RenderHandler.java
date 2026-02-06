@@ -9131,6 +9131,30 @@ public class RenderHandler {
                 return new RenderParringtonia(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTurfanosuchus.class, new IRenderFactory<EntityPrehistoricFloraTurfanosuchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTurfanosuchus> createRenderFor(RenderManager manager) {
+                return new RenderTurfanosuchus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraYonghesuchus.class, new IRenderFactory<EntityPrehistoricFloraYonghesuchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraYonghesuchus> createRenderFor(RenderManager manager) {
+                return new RenderYonghesuchus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGracilisuchus.class, new IRenderFactory<EntityPrehistoricFloraGracilisuchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraGracilisuchus> createRenderFor(RenderManager manager) {
+                return new RenderGracilisuchus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraParvosuchus.class, new IRenderFactory<EntityPrehistoricFloraParvosuchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraParvosuchus> createRenderFor(RenderManager manager) {
+                return new RenderParvosuchus(manager);
+            }
+        });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHauffiosaurus.class, new IRenderFactory<EntityPrehistoricFloraHauffiosaurus>() {
             @Override
             public Render<? super EntityPrehistoricFloraHauffiosaurus> createRenderFor(RenderManager manager) {
@@ -9155,6 +9179,11 @@ public class RenderHandler {
                 return new RenderUmoonasaurus(manager);
             }
         });
+
+
+
+
+
 
 
 

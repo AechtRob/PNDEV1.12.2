@@ -3,13 +3,13 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraTurfanosuchus;
+import net.lepidodendron.entity.EntityPrehistoricFloraParvosuchus;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelTurfanosuchus extends ModelBasePalaeopedia {
+public class ModelParvosuchus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -41,335 +41,326 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer rightArm3;
     private final AdvancedModelRenderer neck;
     private final AdvancedModelRenderer cube_r10;
-    private final AdvancedModelRenderer head;
+    private final AdvancedModelRenderer neck2;
     private final AdvancedModelRenderer cube_r11;
+    private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer cube_r12;
     private final AdvancedModelRenderer cube_r13;
     private final AdvancedModelRenderer cube_r14;
     private final AdvancedModelRenderer cube_r15;
     private final AdvancedModelRenderer cube_r16;
     private final AdvancedModelRenderer cube_r17;
+    private final AdvancedModelRenderer jaw;
     private final AdvancedModelRenderer cube_r18;
     private final AdvancedModelRenderer cube_r19;
     private final AdvancedModelRenderer cube_r20;
+    private final AdvancedModelRenderer eye;
     private final AdvancedModelRenderer cube_r21;
-    private final AdvancedModelRenderer jaw;
     private final AdvancedModelRenderer cube_r22;
-    private final AdvancedModelRenderer cube_r23;
-    private final AdvancedModelRenderer cube_r24;
-    private final AdvancedModelRenderer cube_r25;
-    private final AdvancedModelRenderer cube_r26;
 
     private ModelAnimator animator;
 
-    public ModelTurfanosuchus() {
+    public ModelParvosuchus() {
         this.textureWidth = 64;
         this.textureHeight = 64;
 
         this.main = new AdvancedModelRenderer(this);
-        this.main.setRotationPoint(0.0F, 16.25F, 5.1F);
+        this.main.setRotationPoint(0.0F, 15.75F, 4.25F);
 
 
         this.cube_r1 = new AdvancedModelRenderer(this);
         this.cube_r1.setRotationPoint(-0.5F, 2.8268F, -0.0649F);
         this.main.addChild(cube_r1);
         this.setRotateAngle(cube_r1, 0.3447F, 0.0F, 0.0F);
-        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 37, 43, -0.5F, -0.65F, -1.55F, 2, 1, 3, 0.0F, false));
+        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 39, 39, -0.5F, -0.65F, -1.55F, 2, 1, 3, 0.0F, false));
 
         this.cube_r2 = new AdvancedModelRenderer(this);
-        this.cube_r2.setRotationPoint(-0.5F, 0.45F, 0.525F);
+        this.cube_r2.setRotationPoint(-0.5F, 0.45F, 0.475F);
         this.main.addChild(cube_r2);
         this.setRotateAngle(cube_r2, -0.0436F, 0.0F, 0.0F);
-        this.cube_r2.cubeList.add(new ModelBox(cube_r2, 45, 28, 0.0F, -1.0F, -2.0F, 1, 1, 3, 0.0F, false));
+        this.cube_r2.cubeList.add(new ModelBox(cube_r2, 0, 44, 0.0F, -1.0F, -2.0F, 1, 1, 3, 0.0F, false));
 
         this.cube_r3 = new AdvancedModelRenderer(this);
         this.cube_r3.setRotationPoint(-0.5F, 0.65F, 0.5F);
         this.main.addChild(cube_r3);
         this.setRotateAngle(cube_r3, -0.0436F, 0.0F, 0.0F);
-        this.cube_r3.cubeList.add(new ModelBox(cube_r3, 32, 13, -1.0F, -1.0F, -2.0F, 3, 3, 3, 0.0F, false));
+        this.cube_r3.cubeList.add(new ModelBox(cube_r3, 13, 23, -1.0F, -1.0F, -2.0F, 3, 3, 3, 0.0F, false));
 
         this.leftLeg = new AdvancedModelRenderer(this);
-        this.leftLeg.setRotationPoint(1.5F, 0.7244F, 0.1196F);
+        this.leftLeg.setRotationPoint(1.5F, 0.6055F, 0.0037F);
         this.main.addChild(leftLeg);
-        this.setRotateAngle(leftLeg, -0.2182F, 0.0F, 0.0F);
-        this.leftLeg.cubeList.add(new ModelBox(leftLeg, 45, 6, -1.0F, -0.25F, -1.0F, 2, 4, 2, 0.0F, false));
+        this.setRotateAngle(leftLeg, -0.3054F, 0.0F, 0.0F);
+        this.leftLeg.cubeList.add(new ModelBox(leftLeg, 41, 14, -1.0F, -0.25F, -1.0F, 2, 4, 2, 0.0F, false));
 
         this.leftLeg2 = new AdvancedModelRenderer(this);
         this.leftLeg2.setRotationPoint(0.5F, 3.75F, -1.0F);
         this.leftLeg.addChild(leftLeg2);
-        this.setRotateAngle(leftLeg2, 0.7854F, 0.0F, 0.0F);
-        this.leftLeg2.cubeList.add(new ModelBox(leftLeg2, 46, 48, -1.0F, 0.0F, 0.0F, 1, 4, 1, 0.0F, false));
-        this.leftLeg2.cubeList.add(new ModelBox(leftLeg2, 24, 49, -1.0F, 0.0F, 0.4F, 1, 4, 1, -0.003F, false));
+        this.setRotateAngle(leftLeg2, 0.8378F, 0.0F, 0.0F);
+        this.leftLeg2.cubeList.add(new ModelBox(leftLeg2, 50, 14, -1.0F, 0.0F, 0.0F, 1, 5, 1, 0.0F, false));
+        this.leftLeg2.cubeList.add(new ModelBox(leftLeg2, 50, 21, -1.0F, 0.0F, 0.3F, 1, 5, 1, -0.003F, false));
 
         this.leftLeg3 = new AdvancedModelRenderer(this);
-        this.leftLeg3.setRotationPoint(-0.5F, 3.8361F, 0.985F);
+        this.leftLeg3.setRotationPoint(-0.5F, 4.6361F, 0.985F);
         this.leftLeg2.addChild(leftLeg3);
-        this.setRotateAngle(leftLeg3, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg3, 0.2487F, 0.0F, 0.0F);
 
 
         this.cube_r4 = new AdvancedModelRenderer(this);
         this.cube_r4.setRotationPoint(0.5F, -0.1697F, -0.3661F);
         this.leftLeg3.addChild(cube_r4);
         this.setRotateAngle(cube_r4, -0.7854F, 0.0F, 0.0F);
-        this.cube_r4.cubeList.add(new ModelBox(cube_r4, 13, 45, -1.5F, -0.25F, -2.5F, 2, 1, 3, 0.0F, false));
+        this.cube_r4.cubeList.add(new ModelBox(cube_r4, 24, 41, -1.5F, -0.25F, -2.5F, 2, 1, 3, 0.0F, false));
 
         this.rightLeg = new AdvancedModelRenderer(this);
-        this.rightLeg.setRotationPoint(-1.5F, 0.7244F, 0.1196F);
+        this.rightLeg.setRotationPoint(-1.5F, 0.6055F, 0.0037F);
         this.main.addChild(rightLeg);
-        this.setRotateAngle(rightLeg, -0.2182F, 0.0F, 0.0F);
-        this.rightLeg.cubeList.add(new ModelBox(rightLeg, 45, 6, -1.0F, -0.25F, -1.0F, 2, 4, 2, 0.0F, true));
+        this.setRotateAngle(rightLeg, -0.3054F, 0.0F, 0.0F);
+        this.rightLeg.cubeList.add(new ModelBox(rightLeg, 41, 14, -1.0F, -0.25F, -1.0F, 2, 4, 2, 0.0F, true));
 
         this.rightLeg2 = new AdvancedModelRenderer(this);
         this.rightLeg2.setRotationPoint(-0.5F, 3.75F, -1.0F);
         this.rightLeg.addChild(rightLeg2);
-        this.setRotateAngle(rightLeg2, 0.7854F, 0.0F, 0.0F);
-        this.rightLeg2.cubeList.add(new ModelBox(rightLeg2, 46, 48, 0.0F, 0.0F, 0.0F, 1, 4, 1, 0.0F, true));
-        this.rightLeg2.cubeList.add(new ModelBox(rightLeg2, 24, 49, 0.0F, 0.0F, 0.4F, 1, 4, 1, -0.003F, true));
+        this.setRotateAngle(rightLeg2, 0.8378F, 0.0F, 0.0F);
+        this.rightLeg2.cubeList.add(new ModelBox(rightLeg2, 50, 14, 0.0F, 0.0F, 0.0F, 1, 5, 1, 0.0F, true));
+        this.rightLeg2.cubeList.add(new ModelBox(rightLeg2, 50, 21, 0.0F, 0.0F, 0.3F, 1, 5, 1, -0.003F, true));
 
         this.rightLeg3 = new AdvancedModelRenderer(this);
-        this.rightLeg3.setRotationPoint(0.5F, 3.8361F, 0.985F);
+        this.rightLeg3.setRotationPoint(0.5F, 4.6361F, 0.985F);
         this.rightLeg2.addChild(rightLeg3);
-        this.setRotateAngle(rightLeg3, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg3, 0.2487F, 0.0F, 0.0F);
 
 
         this.cube_r5 = new AdvancedModelRenderer(this);
         this.cube_r5.setRotationPoint(-0.5F, -0.1697F, -0.3661F);
         this.rightLeg3.addChild(cube_r5);
         this.setRotateAngle(cube_r5, -0.7854F, 0.0F, 0.0F);
-        this.cube_r5.cubeList.add(new ModelBox(cube_r5, 13, 45, -0.5F, -0.25F, -2.5F, 2, 1, 3, 0.0F, true));
+        this.cube_r5.cubeList.add(new ModelBox(cube_r5, 24, 41, -0.5F, -0.25F, -2.5F, 2, 1, 3, 0.0F, true));
 
         this.tail = new AdvancedModelRenderer(this);
         this.tail.setRotationPoint(0.0F, 0.55F, 0.95F);
         this.main.addChild(tail);
-        this.setRotateAngle(tail, -0.1745F, 0.0F, 0.0F);
-        this.tail.cubeList.add(new ModelBox(tail, 32, 6, -1.0F, -0.8F, 0.0F, 2, 2, 4, 0.0F, false));
+        this.setRotateAngle(tail, -0.0873F, 0.0F, 0.0F);
+        this.tail.cubeList.add(new ModelBox(tail, 13, 30, -1.0F, -0.8F, 0.0F, 2, 2, 4, 0.0F, false));
+        this.tail.cubeList.add(new ModelBox(tail, 0, 32, -1.0F, 0.8F, 0.0F, 2, 1, 4, -0.003F, false));
 
         this.cube_r6 = new AdvancedModelRenderer(this);
-        this.cube_r6.setRotationPoint(-0.5F, -0.1F, -0.025F);
+        this.cube_r6.setRotationPoint(-0.5F, -0.075F, 0.0F);
         this.tail.addChild(cube_r6);
         this.setRotateAngle(cube_r6, -0.0349F, 0.0F, 0.0F);
-        this.cube_r6.cubeList.add(new ModelBox(cube_r6, 26, 43, 0.0F, -1.0F, 0.0F, 1, 1, 4, -0.01F, false));
+        this.cube_r6.cubeList.add(new ModelBox(cube_r6, 39, 23, 0.0F, -1.0F, 0.0F, 1, 1, 4, -0.01F, false));
 
         this.tail2 = new AdvancedModelRenderer(this);
         this.tail2.setRotationPoint(0.0F, 0.0496F, 3.5935F);
         this.tail.addChild(tail2);
         this.setRotateAngle(tail2, -0.1745F, 0.0F, 0.0F);
-        this.tail2.cubeList.add(new ModelBox(tail2, 17, 8, -0.25F, -0.75F, 0.0F, 1, 1, 6, 0.0F, false));
-        this.tail2.cubeList.add(new ModelBox(tail2, 17, 16, -0.75F, -0.75F, 0.0F, 1, 1, 6, 0.003F, false));
-        this.tail2.cubeList.add(new ModelBox(tail2, 0, 18, -0.25F, -0.25F, 0.0F, 1, 1, 6, -0.003F, false));
-        this.tail2.cubeList.add(new ModelBox(tail2, 15, 24, -0.75F, -0.25F, 0.0F, 1, 1, 6, -0.006F, false));
+        this.tail2.cubeList.add(new ModelBox(tail2, 0, 17, -0.25F, -0.75F, 0.0F, 1, 2, 5, 0.0F, false));
+        this.tail2.cubeList.add(new ModelBox(tail2, 17, 0, -0.75F, -0.75F, 0.0F, 1, 2, 5, 0.003F, false));
 
         this.cube_r7 = new AdvancedModelRenderer(this);
-        this.cube_r7.setRotationPoint(0.0F, -1.025F, 0.025F);
+        this.cube_r7.setRotationPoint(0.0F, -1.0F, 0.0F);
         this.tail2.addChild(cube_r7);
         this.setRotateAngle(cube_r7, -0.0262F, 0.0F, 0.0F);
-        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 0, 26, -0.5F, 0.0F, 0.0F, 1, 1, 6, -0.006F, false));
+        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 0, 25, -0.5F, 0.0F, 0.0F, 1, 1, 5, -0.006F, false));
 
         this.tail3 = new AdvancedModelRenderer(this);
-        this.tail3.setRotationPoint(0.0F, -0.25F, 5.5F);
+        this.tail3.setRotationPoint(0.0F, -0.225F, 4.5F);
         this.tail2.addChild(tail3);
-        this.setRotateAngle(tail3, -0.0873F, 0.0F, 0.0F);
-        this.tail3.cubeList.add(new ModelBox(tail3, 15, 32, -0.5F, -0.5F, 0.0F, 1, 1, 5, 0.0F, false));
+        this.setRotateAngle(tail3, 0.0873F, 0.0F, 0.0F);
+        this.tail3.cubeList.add(new ModelBox(tail3, 26, 23, -0.5F, -0.5F, 0.0F, 1, 1, 5, 0.0F, false));
+        this.tail3.cubeList.add(new ModelBox(tail3, 30, 0, -0.5F, 0.05F, 0.0F, 1, 1, 5, -0.006F, false));
 
         this.tail4 = new AdvancedModelRenderer(this);
         this.tail4.setRotationPoint(0.0F, 0.0F, 4.5F);
         this.tail3.addChild(tail4);
-        this.setRotateAngle(tail4, 0.2618F, 0.0F, 0.0F);
-        this.tail4.cubeList.add(new ModelBox(tail4, 0, 34, -0.5F, -0.5F, 0.0F, 1, 1, 5, -0.003F, false));
+        this.setRotateAngle(tail4, 0.1309F, 0.0F, 0.0F);
+        this.tail4.cubeList.add(new ModelBox(tail4, 0, 9, -0.5F, -0.4F, 0.0F, 1, 1, 6, -0.003F, false));
 
         this.body = new AdvancedModelRenderer(this);
         this.body.setRotationPoint(0.0F, -0.4913F, -1.0904F);
         this.main.addChild(body);
-        this.setRotateAngle(body, 0.048F, 0.0F, 0.0F);
-        this.body.cubeList.add(new ModelBox(body, 0, 0, -2.0F, 0.0F, -4.0F, 4, 4, 4, 0.0F, false));
-        this.body.cubeList.add(new ModelBox(body, 0, 41, -1.0F, -0.2F, -4.0F, 2, 1, 4, -0.003F, false));
-        this.body.cubeList.add(new ModelBox(body, 30, 31, -1.5F, 3.4F, -4.0F, 3, 1, 4, -0.003F, false));
+        this.setRotateAngle(body, 0.0916F, 0.0F, 0.0F);
+        this.body.cubeList.add(new ModelBox(body, 15, 9, -2.0F, 0.0F, -3.0F, 4, 4, 3, 0.0F, false));
+        this.body.cubeList.add(new ModelBox(body, 43, 0, -1.0F, -0.2F, -3.0F, 2, 1, 3, -0.003F, false));
+        this.body.cubeList.add(new ModelBox(body, 26, 36, -1.5F, 3.5F, -3.0F, 3, 1, 3, -0.003F, false));
 
         this.body2 = new AdvancedModelRenderer(this);
-        this.body2.setRotationPoint(0.0F, 1.0F, -2.925F);
+        this.body2.setRotationPoint(0.0F, 1.0F, -2.425F);
         this.body.addChild(body2);
-        this.setRotateAngle(body2, 0.0916F, 0.0F, 0.0F);
-        this.body2.cubeList.add(new ModelBox(body2, 0, 9, -2.0F, -1.0F, -4.0F, 4, 4, 4, -0.003F, false));
-        this.body2.cubeList.add(new ModelBox(body2, 45, 13, -1.0F, -1.275F, -3.95F, 2, 1, 3, -0.003F, false));
-        this.body2.cubeList.add(new ModelBox(body2, 32, 0, -1.5F, 2.4F, -4.0F, 3, 1, 4, -0.006F, false));
+        this.setRotateAngle(body2, 0.0044F, 0.0F, 0.0F);
+        this.body2.cubeList.add(new ModelBox(body2, 0, 0, -2.0F, -1.0F, -4.0F, 4, 4, 4, -0.003F, false));
+        this.body2.cubeList.add(new ModelBox(body2, 28, 17, -1.0F, -1.2F, -4.0F, 2, 1, 4, -0.006F, false));
+        this.body2.cubeList.add(new ModelBox(body2, 13, 17, -1.5F, 2.5F, -4.0F, 3, 1, 4, -0.006F, false));
 
         this.body3 = new AdvancedModelRenderer(this);
         this.body3.setRotationPoint(0.0F, 0.075F, -3.45F);
         this.body2.addChild(body3);
-        this.setRotateAngle(body3, 0.0436F, 0.0F, 0.0F);
-        this.body3.cubeList.add(new ModelBox(body3, 28, 37, -1.5F, -1.0F, -3.0F, 3, 2, 3, 0.0F, false));
+        this.setRotateAngle(body3, 0.2618F, 0.0F, 0.0F);
+        this.body3.cubeList.add(new ModelBox(body3, 30, 7, -1.5F, -1.0F, -3.0F, 3, 3, 3, 0.0F, false));
 
         this.cube_r8 = new AdvancedModelRenderer(this);
         this.cube_r8.setRotationPoint(-1.0F, 3.0263F, -0.6111F);
         this.body3.addChild(cube_r8);
-        this.setRotateAngle(cube_r8, -0.4974F, 0.0F, 0.0F);
-        this.cube_r8.cubeList.add(new ModelBox(cube_r8, 13, 39, -0.5F, -2.0F, -3.075F, 3, 2, 3, -0.003F, false));
+        this.setRotateAngle(cube_r8, -0.5541F, 0.0F, 0.0F);
+        this.cube_r8.cubeList.add(new ModelBox(cube_r8, 26, 30, -0.5F, -1.525F, -3.45F, 3, 2, 3, -0.003F, false));
 
         this.cube_r9 = new AdvancedModelRenderer(this);
-        this.cube_r9.setRotationPoint(0.0F, -0.7F, -3.05F);
+        this.cube_r9.setRotationPoint(0.0F, -0.6F, -3.0F);
         this.body3.addChild(cube_r9);
-        this.setRotateAngle(cube_r9, 0.0436F, 0.0F, 0.0F);
-        this.cube_r9.cubeList.add(new ModelBox(cube_r9, 0, 47, -0.5F, -0.5F, 0.0F, 1, 1, 3, 0.0F, false));
+        this.setRotateAngle(cube_r9, 0.0654F, 0.0F, 0.0F);
+        this.cube_r9.cubeList.add(new ModelBox(cube_r9, 35, 44, -0.5F, -0.5F, 0.0F, 1, 1, 3, -0.003F, false));
 
         this.leftArm = new AdvancedModelRenderer(this);
-        this.leftArm.setRotationPoint(1.6F, 1.85F, -1.6F);
+        this.leftArm.setRotationPoint(1.525F, 1.85F, -1.6F);
         this.body3.addChild(leftArm);
-        this.setRotateAngle(leftArm, 0.3883F, 0.0F, 0.0F);
-        this.leftArm.cubeList.add(new ModelBox(leftArm, 51, 47, -0.5F, -0.5F, -0.5F, 1, 3, 1, 0.003F, false));
+        this.setRotateAngle(leftArm, 0.1309F, 0.0F, 0.0F);
+        this.leftArm.cubeList.add(new ModelBox(leftArm, 50, 38, -0.5F, -0.5F, -0.5F, 1, 3, 1, 0.003F, false));
+        this.leftArm.cubeList.add(new ModelBox(leftArm, 23, 51, -0.5F, -0.5F, -1.1F, 1, 3, 1, 0.0F, false));
 
         this.leftArm2 = new AdvancedModelRenderer(this);
         this.leftArm2.setRotationPoint(0.0F, 2.3967F, 0.5044F);
         this.leftArm.addChild(leftArm2);
         this.setRotateAngle(leftArm2, -0.7854F, 0.0F, 0.0F);
-        this.leftArm2.cubeList.add(new ModelBox(leftArm2, 0, 52, -0.5F, 0.0F, -1.0F, 1, 2, 1, 0.0F, false));
+        this.leftArm2.cubeList.add(new ModelBox(leftArm2, 18, 51, -0.5F, 0.0F, -1.0F, 1, 3, 1, -0.003F, false));
 
         this.leftArm3 = new AdvancedModelRenderer(this);
-        this.leftArm3.setRotationPoint(0.0F, 1.7139F, -0.0902F);
+        this.leftArm3.setRotationPoint(0.0F, 2.0639F, -0.0902F);
         this.leftArm2.addChild(leftArm3);
-        this.setRotateAngle(leftArm3, 0.2138F, 0.0F, 0.0F);
-        this.leftArm3.cubeList.add(new ModelBox(leftArm3, 32, 20, -1.0F, 0.0F, -2.0F, 2, 1, 2, 0.0F, false));
+        this.setRotateAngle(leftArm3, 0.288F, 0.0F, 0.0F);
+        this.leftArm3.cubeList.add(new ModelBox(leftArm3, 47, 49, -1.0F, 0.0F, -2.0F, 2, 1, 2, 0.0F, false));
 
         this.rightArm = new AdvancedModelRenderer(this);
-        this.rightArm.setRotationPoint(-1.6F, 1.85F, -1.6F);
+        this.rightArm.setRotationPoint(-1.525F, 1.85F, -1.6F);
         this.body3.addChild(rightArm);
-        this.setRotateAngle(rightArm, 0.3883F, 0.0F, 0.0F);
-        this.rightArm.cubeList.add(new ModelBox(rightArm, 51, 47, -0.5F, -0.5F, -0.5F, 1, 3, 1, 0.003F, true));
+        this.setRotateAngle(rightArm, 0.1309F, 0.0F, 0.0F);
+        this.rightArm.cubeList.add(new ModelBox(rightArm, 50, 38, -0.5F, -0.5F, -0.5F, 1, 3, 1, 0.003F, true));
+        this.rightArm.cubeList.add(new ModelBox(rightArm, 23, 51, -0.5F, -0.5F, -1.1F, 1, 3, 1, 0.0F, true));
 
         this.rightArm2 = new AdvancedModelRenderer(this);
         this.rightArm2.setRotationPoint(0.0F, 2.3967F, 0.5044F);
         this.rightArm.addChild(rightArm2);
         this.setRotateAngle(rightArm2, -0.7854F, 0.0F, 0.0F);
-        this.rightArm2.cubeList.add(new ModelBox(rightArm2, 0, 52, -0.5F, 0.0F, -1.0F, 1, 2, 1, 0.0F, true));
+        this.rightArm2.cubeList.add(new ModelBox(rightArm2, 18, 51, -0.5F, 0.0F, -1.0F, 1, 3, 1, -0.003F, true));
 
         this.rightArm3 = new AdvancedModelRenderer(this);
-        this.rightArm3.setRotationPoint(0.0F, 1.7139F, -0.0902F);
+        this.rightArm3.setRotationPoint(0.0F, 2.0639F, -0.0902F);
         this.rightArm2.addChild(rightArm3);
-        this.setRotateAngle(rightArm3, 0.2138F, 0.0F, 0.0F);
-        this.rightArm3.cubeList.add(new ModelBox(rightArm3, 32, 20, -1.0F, 0.0F, -2.0F, 2, 1, 2, 0.0F, true));
+        this.setRotateAngle(rightArm3, 0.288F, 0.0F, 0.0F);
+        this.rightArm3.cubeList.add(new ModelBox(rightArm3, 47, 49, -1.0F, 0.0F, -2.0F, 2, 1, 2, 0.0F, true));
 
         this.neck = new AdvancedModelRenderer(this);
-        this.neck.setRotationPoint(0.0F, -0.2669F, -2.4581F);
+        this.neck.setRotationPoint(0.0F, -0.1135F, -2.5417F);
         this.body3.addChild(neck);
-        this.setRotateAngle(neck, -0.2967F, 0.0F, 0.0F);
-        this.neck.cubeList.add(new ModelBox(neck, 17, 0, -1.0F, -0.5F, -4.25F, 2, 2, 5, -0.003F, false));
-        this.neck.cubeList.add(new ModelBox(neck, 30, 24, -1.0F, 0.9F, -4.25F, 2, 1, 5, -0.006F, false));
+        this.setRotateAngle(neck, -0.4887F, 0.0F, 0.0F);
+        this.neck.cubeList.add(new ModelBox(neck, 13, 37, -1.0F, -0.5F, -2.25F, 2, 2, 3, 0.0F, false));
+        this.neck.cubeList.add(new ModelBox(neck, 43, 5, -0.5F, -0.65F, -2.75F, 1, 1, 3, -0.006F, false));
 
         this.cube_r10 = new AdvancedModelRenderer(this);
-        this.cube_r10.setRotationPoint(-1.5F, 0.3F, -1.2F);
+        this.cube_r10.setRotationPoint(0.0F, 1.5F, -3.75F);
         this.neck.addChild(cube_r10);
-        this.setRotateAngle(cube_r10, 0.0436F, 0.0F, 0.0F);
-        this.cube_r10.cubeList.add(new ModelBox(cube_r10, 41, 37, 1.0F, -1.0F, -3.0F, 1, 1, 4, -0.003F, false));
+        this.setRotateAngle(cube_r10, -0.1396F, 0.0F, 0.0F);
+        this.cube_r10.cubeList.add(new ModelBox(cube_r10, 39, 29, -1.0F, -1.0F, 1.0F, 2, 1, 3, -0.009F, false));
 
-        this.head = new AdvancedModelRenderer(this);
-        this.head.setRotationPoint(0.0F, -0.5F, -4.2F);
-        this.neck.addChild(head);
-        this.setRotateAngle(head, 0.1745F, 0.0F, 0.0F);
-        this.head.cubeList.add(new ModelBox(head, 47, 0, -1.0F, 0.6F, -1.95F, 2, 1, 2, 0.006F, false));
+        this.neck2 = new AdvancedModelRenderer(this);
+        this.neck2.setRotationPoint(0.0F, 0.0F, -2.05F);
+        this.neck.addChild(neck2);
+        this.neck2.cubeList.add(new ModelBox(neck2, 11, 43, -0.5F, -0.65F, -2.95F, 1, 1, 3, -0.01F, false));
+        this.neck2.cubeList.add(new ModelBox(neck2, 0, 38, -1.0F, -0.5F, -2.95F, 2, 2, 3, -0.006F, false));
 
         this.cube_r11 = new AdvancedModelRenderer(this);
-        this.cube_r11.setRotationPoint(-0.45F, 0.6436F, -3.7995F);
-        this.head.addChild(cube_r11);
-        this.setRotateAngle(cube_r11, -0.3272F, 0.0F, 0.0F);
-        this.cube_r11.cubeList.add(new ModelBox(cube_r11, 52, 40, 0.0F, 0.0F, 0.0F, 0, 1, 1, 0.0F, true));
-        this.cube_r11.cubeList.add(new ModelBox(cube_r11, 52, 40, 0.9F, 0.0F, 0.0F, 0, 1, 1, 0.0F, false));
+        this.cube_r11.setRotationPoint(0.0F, 1.6496F, -0.3855F);
+        this.neck2.addChild(cube_r11);
+        this.setRotateAngle(cube_r11, -0.0524F, 0.0F, 0.0F);
+        this.cube_r11.cubeList.add(new ModelBox(cube_r11, 39, 34, -1.0F, -1.0F, -2.55F, 2, 1, 3, -0.01F, false));
+
+        this.head = new AdvancedModelRenderer(this);
+        this.head.setRotationPoint(0.0F, -0.5F, -2.7F);
+        this.neck2.addChild(head);
+        this.setRotateAngle(head, 0.2793F, 0.0F, 0.0F);
+        this.head.cubeList.add(new ModelBox(head, 43, 10, -1.0F, 0.55F, -1.8F, 2, 1, 2, 0.006F, false));
+        this.head.cubeList.add(new ModelBox(head, 44, 44, -0.5F, 0.55F, -4.425F, 1, 1, 3, 0.003F, false));
+        this.head.cubeList.add(new ModelBox(head, 52, 5, -1.0F, -0.2F, -1.175F, 2, 1, 1, -0.003F, false));
+        this.head.cubeList.add(new ModelBox(head, 52, 8, -1.0F, -0.2F, -1.475F, 2, 1, 1, 0.0F, false));
 
         this.cube_r12 = new AdvancedModelRenderer(this);
-        this.cube_r12.setRotationPoint(-0.3908F, 1.1065F, -2.2749F);
+        this.cube_r12.setRotationPoint(0.0F, 1.1289F, -1.9587F);
         this.head.addChild(cube_r12);
-        this.setRotateAngle(cube_r12, 1.215F, -0.2035F, 0.0295F);
-        this.cube_r12.cubeList.add(new ModelBox(cube_r12, 5, 52, -0.4F, -0.275F, -0.575F, 0, 1, 1, 0.0F, true));
+        this.setRotateAngle(cube_r12, 0.1702F, 0.0F, 0.0F);
+        this.cube_r12.cubeList.add(new ModelBox(cube_r12, 20, 46, -0.5F, -1.0F, -3.0F, 1, 1, 3, 0.006F, false));
 
         this.cube_r13 = new AdvancedModelRenderer(this);
-        this.cube_r13.setRotationPoint(0.0F, 0.6F, -2.3F);
+        this.cube_r13.setRotationPoint(0.0F, -0.2F, -1.475F);
         this.head.addChild(cube_r13);
-        this.setRotateAngle(cube_r13, 0.0218F, 0.0F, 0.0F);
-        this.cube_r13.cubeList.add(new ModelBox(cube_r13, 45, 18, -0.5F, 0.0F, -2.0F, 1, 1, 3, 0.003F, false));
+        this.setRotateAngle(cube_r13, 0.4363F, 0.0F, 0.0F);
+        this.cube_r13.cubeList.add(new ModelBox(cube_r13, 52, 11, -0.5F, 0.0F, -1.0F, 1, 1, 1, 0.0F, false));
 
         this.cube_r14 = new AdvancedModelRenderer(this);
-        this.cube_r14.setRotationPoint(-1.0F, 0.6F, -1.95F);
+        this.cube_r14.setRotationPoint(-1.0029F, 1.5498F, -1.7828F);
         this.head.addChild(cube_r14);
-        this.setRotateAngle(cube_r14, 0.0131F, -0.2574F, 0.0F);
-        this.cube_r14.cubeList.add(new ModelBox(cube_r14, 9, 50, 0.0F, 0.0F, -2.0F, 1, 1, 2, 0.006F, true));
+        this.setRotateAngle(cube_r14, 0.0233F, -0.1651F, -0.0354F);
+        this.cube_r14.cubeList.add(new ModelBox(cube_r14, 50, 33, 0.1F, -0.9F, -3.0F, 0, 1, 3, 0.0F, true));
+        this.cube_r14.cubeList.add(new ModelBox(cube_r14, 0, 49, 0.0F, -1.0F, -3.0F, 1, 1, 3, 0.003F, true));
 
         this.cube_r15 = new AdvancedModelRenderer(this);
-        this.cube_r15.setRotationPoint(-0.6908F, 0.6065F, -1.4999F);
+        this.cube_r15.setRotationPoint(-0.5837F, 1.2815F, -3.7455F);
         this.head.addChild(cube_r15);
-        this.setRotateAngle(cube_r15, 0.0131F, -0.2574F, 0.0F);
-        this.cube_r15.cubeList.add(new ModelBox(cube_r15, 52, 37, -0.5F, -0.5F, -0.5F, 1, 1, 1, 0.0F, true));
+        this.setRotateAngle(cube_r15, -0.4374F, -0.2008F, 0.0505F);
+        this.cube_r15.cubeList.add(new ModelBox(cube_r15, 37, 14, 0.0F, -0.575F, -0.2F, 0, 1, 1, 0.0F, true));
 
         this.cube_r16 = new AdvancedModelRenderer(this);
-        this.cube_r16.setRotationPoint(0.6908F, 0.6065F, -1.4999F);
+        this.cube_r16.setRotationPoint(0.5837F, 1.2815F, -3.7455F);
         this.head.addChild(cube_r16);
-        this.setRotateAngle(cube_r16, 0.0131F, 0.2574F, 0.0F);
-        this.cube_r16.cubeList.add(new ModelBox(cube_r16, 52, 37, -0.5F, -0.5F, -0.5F, 1, 1, 1, 0.0F, false));
+        this.setRotateAngle(cube_r16, -0.4374F, 0.2008F, -0.0505F);
+        this.cube_r16.cubeList.add(new ModelBox(cube_r16, 37, 14, 0.0F, -0.575F, -0.2F, 0, 1, 1, 0.0F, false));
 
         this.cube_r17 = new AdvancedModelRenderer(this);
-        this.cube_r17.setRotationPoint(0.3908F, 1.1065F, -2.2749F);
+        this.cube_r17.setRotationPoint(1.0029F, 1.5498F, -1.7828F);
         this.head.addChild(cube_r17);
-        this.setRotateAngle(cube_r17, 1.215F, 0.2035F, -0.0295F);
-        this.cube_r17.cubeList.add(new ModelBox(cube_r17, 5, 52, 0.4F, -0.275F, -0.575F, 0, 1, 1, 0.0F, false));
-
-        this.cube_r18 = new AdvancedModelRenderer(this);
-        this.cube_r18.setRotationPoint(1.0F, 0.6F, -1.95F);
-        this.head.addChild(cube_r18);
-        this.setRotateAngle(cube_r18, 0.0131F, 0.2574F, 0.0F);
-        this.cube_r18.cubeList.add(new ModelBox(cube_r18, 9, 50, -1.0F, 0.0F, -2.0F, 1, 1, 2, 0.006F, false));
-
-        this.cube_r19 = new AdvancedModelRenderer(this);
-        this.cube_r19.setRotationPoint(0.0F, 1.3878F, -2.4719F);
-        this.head.addChild(cube_r19);
-        this.setRotateAngle(cube_r19, 0.1396F, 0.0F, 0.0F);
-        this.cube_r19.cubeList.add(new ModelBox(cube_r19, 29, 49, -0.5F, -1.0F, -2.0F, 1, 1, 2, 0.0F, false));
-
-        this.cube_r20 = new AdvancedModelRenderer(this);
-        this.cube_r20.setRotationPoint(0.0F, 0.0547F, -1.9999F);
-        this.head.addChild(cube_r20);
-        this.setRotateAngle(cube_r20, 0.4451F, 0.0F, 0.0F);
-        this.cube_r20.cubeList.add(new ModelBox(cube_r20, 36, 52, -0.5F, 0.0F, -1.0F, 1, 1, 1, -0.003F, false));
-
-        this.cube_r21 = new AdvancedModelRenderer(this);
-        this.cube_r21.setRotationPoint(-0.5F, 0.0F, 0.0F);
-        this.head.addChild(cube_r21);
-        this.setRotateAngle(cube_r21, 0.0524F, 0.0F, 0.0F);
-        this.cube_r21.cubeList.add(new ModelBox(cube_r21, 45, 33, -0.5F, -0.05F, -2.0F, 2, 1, 2, 0.0F, false));
+        this.setRotateAngle(cube_r17, 0.0233F, 0.1651F, 0.0354F);
+        this.cube_r17.cubeList.add(new ModelBox(cube_r17, 50, 33, -0.1F, -0.9F, -3.0F, 0, 1, 3, 0.0F, false));
+        this.cube_r17.cubeList.add(new ModelBox(cube_r17, 0, 49, -1.0F, -1.0F, -3.0F, 1, 1, 3, 0.003F, false));
 
         this.jaw = new AdvancedModelRenderer(this);
-        this.jaw.setRotationPoint(0.0F, 1.5F, 0.0F);
+        this.jaw.setRotationPoint(0.0F, 1.1F, 0.0F);
         this.head.addChild(jaw);
-        this.jaw.cubeList.add(new ModelBox(jaw, 48, 43, -1.0F, -0.95F, -1.4F, 2, 1, 2, -0.01F, false));
+        this.jaw.cubeList.add(new ModelBox(jaw, 38, 49, -1.0F, -0.05F, -1.8F, 2, 1, 2, 0.0F, false));
+        this.jaw.cubeList.add(new ModelBox(jaw, 30, 14, -1.0F, -0.7F, -1.7F, 2, 1, 1, -0.01F, false));
+
+        this.cube_r18 = new AdvancedModelRenderer(this);
+        this.cube_r18.setRotationPoint(-1.0F, 0.95F, -1.8F);
+        this.jaw.addChild(cube_r18);
+        this.setRotateAngle(cube_r18, -0.0305F, -0.1658F, 0.0F);
+        this.cube_r18.cubeList.add(new ModelBox(cube_r18, 50, 28, 0.2F, -1.1F, -3.0F, 0, 1, 3, 0.0F, true));
+        this.cube_r18.cubeList.add(new ModelBox(cube_r18, 29, 49, 0.0F, -1.0F, -3.0F, 1, 1, 3, -0.006F, true));
+
+        this.cube_r19 = new AdvancedModelRenderer(this);
+        this.cube_r19.setRotationPoint(1.0F, 0.95F, -1.8F);
+        this.jaw.addChild(cube_r19);
+        this.setRotateAngle(cube_r19, -0.0305F, 0.1658F, 0.0F);
+        this.cube_r19.cubeList.add(new ModelBox(cube_r19, 50, 28, -0.2F, -1.1F, -3.0F, 0, 1, 3, 0.0F, false));
+        this.cube_r19.cubeList.add(new ModelBox(cube_r19, 29, 49, -1.0F, -1.0F, -3.0F, 1, 1, 3, -0.006F, false));
+
+        this.cube_r20 = new AdvancedModelRenderer(this);
+        this.cube_r20.setRotationPoint(0.0F, 0.95F, -1.8F);
+        this.jaw.addChild(cube_r20);
+        this.setRotateAngle(cube_r20, -0.0305F, 0.0F, 0.0F);
+        this.cube_r20.cubeList.add(new ModelBox(cube_r20, 9, 48, -0.5F, -1.0F, -3.0F, 1, 1, 3, 0.0F, false));
+
+        this.eye = new AdvancedModelRenderer(this);
+        this.eye.setRotationPoint(0.0F, 0.6064F, -1.8452F);
+        this.head.addChild(eye);
+
+
+        this.cube_r21 = new AdvancedModelRenderer(this);
+        this.cube_r21.setRotationPoint(-0.5F, 0.0704F, 0.029F);
+        this.eye.addChild(cube_r21);
+        this.setRotateAngle(cube_r21, 0.2214F, -0.1704F, -0.0381F);
+        this.cube_r21.cubeList.add(new ModelBox(cube_r21, 29, 46, -0.575F, -0.575F, -0.5F, 1, 1, 1, 0.0F, true));
 
         this.cube_r22 = new AdvancedModelRenderer(this);
-        this.cube_r22.setRotationPoint(-1.0F, 0.1607F, -2.1452F);
-        this.jaw.addChild(cube_r22);
-        this.setRotateAngle(cube_r22, -0.0542F, -0.2614F, 0.014F);
-        this.cube_r22.cubeList.add(new ModelBox(cube_r22, 41, 20, 0.15F, -0.8F, -2.3F, 0, 1, 1, 0.0F, true));
-        this.cube_r22.cubeList.add(new ModelBox(cube_r22, 16, 50, 0.05F, -0.5F, -1.8F, 1, 1, 2, -0.01F, true));
-
-        this.cube_r23 = new AdvancedModelRenderer(this);
-        this.cube_r23.setRotationPoint(-0.7973F, -0.0282F, -2.4306F);
-        this.jaw.addChild(cube_r23);
-        this.setRotateAngle(cube_r23, -0.0542F, -0.2614F, 0.014F);
-        this.cube_r23.cubeList.add(new ModelBox(cube_r23, 9, 47, 0.1F, -0.5F, -0.75F, 0, 1, 1, 0.0F, true));
-
-        this.cube_r24 = new AdvancedModelRenderer(this);
-        this.cube_r24.setRotationPoint(0.7973F, -0.0282F, -2.4306F);
-        this.jaw.addChild(cube_r24);
-        this.setRotateAngle(cube_r24, -0.0542F, 0.2614F, -0.014F);
-        this.cube_r24.cubeList.add(new ModelBox(cube_r24, 9, 47, -0.1F, -0.5F, -0.75F, 0, 1, 1, 0.0F, false));
-
-        this.cube_r25 = new AdvancedModelRenderer(this);
-        this.cube_r25.setRotationPoint(1.0F, 0.1607F, -2.1452F);
-        this.jaw.addChild(cube_r25);
-        this.setRotateAngle(cube_r25, -0.0542F, 0.2614F, -0.014F);
-        this.cube_r25.cubeList.add(new ModelBox(cube_r25, 41, 20, -0.15F, -0.8F, -2.3F, 0, 1, 1, 0.0F, false));
-        this.cube_r25.cubeList.add(new ModelBox(cube_r25, 16, 50, -1.05F, -0.5F, -1.8F, 1, 1, 2, -0.01F, false));
-
-        this.cube_r26 = new AdvancedModelRenderer(this);
-        this.cube_r26.setRotationPoint(0.0F, 0.8F, 0.5F);
-        this.jaw.addChild(cube_r26);
-        this.setRotateAngle(cube_r26, -0.0524F, 0.0F, 0.0F);
-        this.cube_r26.cubeList.add(new ModelBox(cube_r26, 45, 23, -0.5F, -1.0F, -4.925F, 1, 1, 3, -0.003F, false));
-        this.cube_r26.cubeList.add(new ModelBox(cube_r26, 37, 48, -1.0F, -1.0F, -2.475F, 2, 1, 2, 0.0F, false));
+        this.cube_r22.setRotationPoint(0.5F, 0.0704F, 0.029F);
+        this.eye.addChild(cube_r22);
+        this.setRotateAngle(cube_r22, 0.2214F, 0.1704F, 0.0381F);
+        this.cube_r22.cubeList.add(new ModelBox(cube_r22, 29, 46, -0.425F, -0.575F, -0.5F, 1, 1, 1, 0.0F, false));
 
         updateDefaultPose();
         animator = ModelAnimator.create();
@@ -425,7 +416,7 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
 
-        EntityPrehistoricFloraTurfanosuchus EntityMegalosaurus = (EntityPrehistoricFloraTurfanosuchus) e;
+        EntityPrehistoricFloraParvosuchus EntityMegalosaurus = (EntityPrehistoricFloraParvosuchus) e;
 
         this.faceTarget(f3, f4, 8, body3);
         this.faceTarget(f3, f4, 8, head);
@@ -469,7 +460,7 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
     }
 
     public void animAttack(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraTurfanosuchus entity = (EntityPrehistoricFloraTurfanosuchus) entitylivingbaseIn;
+        EntityPrehistoricFloraParvosuchus entity = (EntityPrehistoricFloraParvosuchus) entitylivingbaseIn;
         int animCycle = 10;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
@@ -574,7 +565,7 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
     }
     public void animEat(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraTurfanosuchus entity = (EntityPrehistoricFloraTurfanosuchus) entitylivingbaseIn;
+        EntityPrehistoricFloraParvosuchus entity = (EntityPrehistoricFloraParvosuchus) entitylivingbaseIn;
         int animCycle = 20;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
@@ -734,7 +725,7 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
     }
     public void animRoar(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraTurfanosuchus entity = (EntityPrehistoricFloraTurfanosuchus) entitylivingbaseIn;
+        EntityPrehistoricFloraParvosuchus entity = (EntityPrehistoricFloraParvosuchus) entitylivingbaseIn;
         int animCycle = 30;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
@@ -804,7 +795,7 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
     }
     public void animNest(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraTurfanosuchus entity = (EntityPrehistoricFloraTurfanosuchus) entitylivingbaseIn;
+        EntityPrehistoricFloraParvosuchus entity = (EntityPrehistoricFloraParvosuchus) entitylivingbaseIn;
         int animCycle = 50;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
@@ -969,7 +960,7 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
     }
     public void animLay(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraTurfanosuchus entity = (EntityPrehistoricFloraTurfanosuchus) entitylivingbaseIn;
+        EntityPrehistoricFloraParvosuchus entity = (EntityPrehistoricFloraParvosuchus) entitylivingbaseIn;
         int animCycle = 50;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
@@ -1279,26 +1270,36 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
     }
     public void animIdle(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraTurfanosuchus entity = (EntityPrehistoricFloraTurfanosuchus) entitylivingbaseIn;
-        int animCycle = 57;
+        EntityPrehistoricFloraParvosuchus entity = (EntityPrehistoricFloraParvosuchus) entitylivingbaseIn;
+        int animCycle = 400;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
         double yy = 0;
         double zz = 0;
-         if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (-2.75-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+         if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (-18.25-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 45) {
-            xx = -2.75 + (((tickAnim - 20) / 25) * (-2.75-(-2.75)));
-            yy = 0 + (((tickAnim - 20) / 25) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 25) * (0-(0)));
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = -18.25 + (((tickAnim - 30) / 25) * (-5-(-18.25)));
+            yy = 0 + (((tickAnim - 30) / 25) * (0-(0)));
+            zz = 0 + (((tickAnim - 30) / 25) * (0-(0)));
         }
-        else if (tickAnim >= 45 && tickAnim < 58) {
-            xx = -2.75 + (((tickAnim - 45) / 13) * (0-(-2.75)));
-            yy = 0 + (((tickAnim - 45) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 45) / 13) * (0-(0)));
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = -5 + (((tickAnim - 55) / 305) * (-5-(-5)));
+            yy = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+            zz = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = -5 + (((tickAnim - 360) / 20) * (-18.25-(-5)));
+            yy = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = -18.25 + (((tickAnim - 380) / 20) * (0-(-18.25)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1308,22 +1309,67 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
         this.setRotateAngle(main, main.rotateAngleX + (float) Math.toRadians(xx), main.rotateAngleY + (float) Math.toRadians(yy), main.rotateAngleZ + (float) Math.toRadians(zz));
 
 
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (-2.575-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (1.55-(0)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = 0 + (((tickAnim - 30) / 25) * (0-(0)));
+            yy = -2.575 + (((tickAnim - 30) / 25) * (-4.42-(-2.575)));
+            zz = 1.55 + (((tickAnim - 30) / 25) * (1.55-(1.55)));
+        }
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+            yy = -4.42 + (((tickAnim - 55) / 305) * (-4.42-(-4.42)));
+            zz = 1.55 + (((tickAnim - 55) / 305) * (1.55-(1.55)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+            yy = -4.42 + (((tickAnim - 360) / 20) * (-2.575-(-4.42)));
+            zz = 1.55 + (((tickAnim - 360) / 20) * (1.55-(1.55)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            yy = -2.575 + (((tickAnim - 380) / 20) * (0-(-2.575)));
+            zz = 1.55 + (((tickAnim - 380) / 20) * (0-(1.55)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.main.rotationPointX = this.main.rotationPointX + (float)(xx);
+        this.main.rotationPointY = this.main.rotationPointY - (float)(yy);
+        this.main.rotationPointZ = this.main.rotationPointZ + (float)(zz);
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (3-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (3.25-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 45) {
-            xx = 3 + (((tickAnim - 20) / 25) * (3-(3)));
-            yy = 0 + (((tickAnim - 20) / 25) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 25) * (0-(0)));
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = 3.25 + (((tickAnim - 30) / 25) * (28.44152-(3.25)));
+            yy = 0 + (((tickAnim - 30) / 25) * (-6.40678-(0)));
+            zz = 0 + (((tickAnim - 30) / 25) * (-43.58424-(0)));
         }
-        else if (tickAnim >= 45 && tickAnim < 58) {
-            xx = 3 + (((tickAnim - 45) / 13) * (0-(3)));
-            yy = 0 + (((tickAnim - 45) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 45) / 13) * (0-(0)));
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = 28.44152 + (((tickAnim - 55) / 305) * (28.44152-(28.44152)));
+            yy = -6.40678 + (((tickAnim - 55) / 305) * (-6.40678-(-6.40678)));
+            zz = -43.58424 + (((tickAnim - 55) / 305) * (-43.58424-(-43.58424)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = 28.44152 + (((tickAnim - 360) / 20) * (3.25-(28.44152)));
+            yy = -6.40678 + (((tickAnim - 360) / 20) * (0-(-6.40678)));
+            zz = -43.58424 + (((tickAnim - 360) / 20) * (0-(-43.58424)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 3.25 + (((tickAnim - 380) / 20) * (0-(3.25)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1335,20 +1381,145 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (3-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (36.5-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 45) {
-            xx = 3 + (((tickAnim - 20) / 25) * (3-(3)));
-            yy = 0 + (((tickAnim - 20) / 25) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 25) * (0-(0)));
+        else if (tickAnim >= 30 && tickAnim < 360) {
+            xx = 36.5 + (((tickAnim - 30) / 330) * (36.5-(36.5)));
+            yy = 0 + (((tickAnim - 30) / 330) * (0-(0)));
+            zz = 0 + (((tickAnim - 30) / 330) * (0-(0)));
         }
-        else if (tickAnim >= 45 && tickAnim < 58) {
-            xx = 3 + (((tickAnim - 45) / 13) * (0-(3)));
-            yy = 0 + (((tickAnim - 45) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 45) / 13) * (0-(0)));
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = 36.5 + (((tickAnim - 360) / 20) * (36.5-(36.5)));
+            yy = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 36.5 + (((tickAnim - 380) / 20) * (0-(36.5)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(leftLeg2, leftLeg2.rotateAngleX + (float) Math.toRadians(xx), leftLeg2.rotateAngleY + (float) Math.toRadians(yy), leftLeg2.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+        if (tickAnim >= 0 && tickAnim < 400) {
+            xx = 0 + (((tickAnim - 0) / 400) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 400) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 400) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.leftLeg2.rotationPointX = this.leftLeg2.rotationPointX + (float)(xx);
+        this.leftLeg2.rotationPointY = this.leftLeg2.rotationPointY - (float)(yy);
+        this.leftLeg2.rotationPointZ = this.leftLeg2.rotationPointZ + (float)(zz);
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (-21-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = -21 + (((tickAnim - 30) / 25) * (-18.42467-(-21)));
+            yy = 0 + (((tickAnim - 30) / 25) * (20.78582-(0)));
+            zz = 0 + (((tickAnim - 30) / 25) * (58.56001-(0)));
+        }
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = -18.42467 + (((tickAnim - 55) / 305) * (-18.42467-(-18.42467)));
+            yy = 20.78582 + (((tickAnim - 55) / 305) * (20.78582-(20.78582)));
+            zz = 58.56001 + (((tickAnim - 55) / 305) * (58.56001-(58.56001)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = -18.42467 + (((tickAnim - 360) / 20) * (-21-(-18.42467)));
+            yy = 20.78582 + (((tickAnim - 360) / 20) * (0-(20.78582)));
+            zz = 58.56001 + (((tickAnim - 360) / 20) * (0-(58.56001)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = -21 + (((tickAnim - 380) / 20) * (0-(-21)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(leftLeg3, leftLeg3.rotateAngleX + (float) Math.toRadians(xx), leftLeg3.rotateAngleY + (float) Math.toRadians(yy), leftLeg3.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0.1-(0)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = 0 + (((tickAnim - 30) / 25) * (0-(0)));
+            yy = 0 + (((tickAnim - 30) / 25) * (0-(0)));
+            zz = 0.1 + (((tickAnim - 30) / 25) * (0.1-(0.1)));
+        }
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+            yy = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+            zz = 0.1 + (((tickAnim - 55) / 305) * (0.1-(0.1)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+            yy = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+            zz = 0.1 + (((tickAnim - 360) / 20) * (0.1-(0.1)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0.1 + (((tickAnim - 380) / 20) * (0-(0.1)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.leftLeg3.rotationPointX = this.leftLeg3.rotationPointX + (float)(xx);
+        this.leftLeg3.rotationPointY = this.leftLeg3.rotationPointY - (float)(yy);
+        this.leftLeg3.rotationPointZ = this.leftLeg3.rotationPointZ + (float)(zz);
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (3.25-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = 3.25 + (((tickAnim - 30) / 25) * (28.44152-(3.25)));
+            yy = 0 + (((tickAnim - 30) / 25) * (6.40678-(0)));
+            zz = 0 + (((tickAnim - 30) / 25) * (43.58424-(0)));
+        }
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = 28.44152 + (((tickAnim - 55) / 305) * (28.44152-(28.44152)));
+            yy = 6.40678 + (((tickAnim - 55) / 305) * (6.40678-(6.40678)));
+            zz = 43.58424 + (((tickAnim - 55) / 305) * (43.58424-(43.58424)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = 28.44152 + (((tickAnim - 360) / 20) * (3.25-(28.44152)));
+            yy = 6.40678 + (((tickAnim - 360) / 20) * (0-(6.40678)));
+            zz = 43.58424 + (((tickAnim - 360) / 20) * (0-(43.58424)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 3.25 + (((tickAnim - 380) / 20) * (0-(3.25)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1360,45 +1531,150 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (-0.5-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (36.5-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 35) {
-            xx = -0.5 + (((tickAnim - 20) / 15) * (-0.5-(-0.5)));
-            yy = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 15) * (0-(0)));
+        else if (tickAnim >= 30 && tickAnim < 360) {
+            xx = 36.5 + (((tickAnim - 30) / 330) * (36.5-(36.5)));
+            yy = 0 + (((tickAnim - 30) / 330) * (0-(0)));
+            zz = 0 + (((tickAnim - 30) / 330) * (0-(0)));
         }
-        else if (tickAnim >= 35 && tickAnim < 45) {
-            xx = -0.5 + (((tickAnim - 35) / 10) * (0-(-0.5)));
-            yy = 0 + (((tickAnim - 35) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 35) / 10) * (0-(0)));
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = 36.5 + (((tickAnim - 360) / 20) * (36.5-(36.5)));
+            yy = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 36.5 + (((tickAnim - 380) / 20) * (0-(36.5)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
         }
         else {
             xx = 0;
             yy = 0;
             zz = 0;
         }
-        this.setRotateAngle(tail, tail.rotateAngleX + (float) Math.toRadians(xx), tail.rotateAngleY + (float) Math.toRadians(yy), tail.rotateAngleZ + (float) Math.toRadians(zz));
+        this.setRotateAngle(rightLeg2, rightLeg2.rotateAngleX + (float) Math.toRadians(xx), rightLeg2.rotateAngleY + (float) Math.toRadians(yy), rightLeg2.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-
-
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (2.25-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 400) {
+            xx = 0 + (((tickAnim - 0) / 400) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 400) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 400) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 35) {
-            xx = 2.25 + (((tickAnim - 20) / 15) * (2.25-(2.25)));
-            yy = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 15) * (0-(0)));
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
         }
-        else if (tickAnim >= 35 && tickAnim < 45) {
-            xx = 2.25 + (((tickAnim - 35) / 10) * (0-(2.25)));
-            yy = 0 + (((tickAnim - 35) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 35) / 10) * (0-(0)));
+        this.rightLeg2.rotationPointX = this.rightLeg2.rotationPointX + (float)(xx);
+        this.rightLeg2.rotationPointY = this.rightLeg2.rotationPointY - (float)(yy);
+        this.rightLeg2.rotationPointZ = this.rightLeg2.rotationPointZ + (float)(zz);
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (-21-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = -21 + (((tickAnim - 30) / 25) * (-18.42467-(-21)));
+            yy = 0 + (((tickAnim - 30) / 25) * (-20.78582-(0)));
+            zz = 0 + (((tickAnim - 30) / 25) * (-58.56001-(0)));
+        }
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = -18.42467 + (((tickAnim - 55) / 305) * (-18.42467-(-18.42467)));
+            yy = -20.78582 + (((tickAnim - 55) / 305) * (-20.78582-(-20.78582)));
+            zz = -58.56001 + (((tickAnim - 55) / 305) * (-58.56001-(-58.56001)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = -18.42467 + (((tickAnim - 360) / 20) * (-21-(-18.42467)));
+            yy = -20.78582 + (((tickAnim - 360) / 20) * (0-(-20.78582)));
+            zz = -58.56001 + (((tickAnim - 360) / 20) * (0-(-58.56001)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = -21 + (((tickAnim - 380) / 20) * (0-(-21)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(rightLeg3, rightLeg3.rotateAngleX + (float) Math.toRadians(xx), rightLeg3.rotateAngleY + (float) Math.toRadians(yy), rightLeg3.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0.1-(0)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = 0 + (((tickAnim - 30) / 25) * (0-(0)));
+            yy = 0 + (((tickAnim - 30) / 25) * (0-(0)));
+            zz = 0.1 + (((tickAnim - 30) / 25) * (0.1-(0.1)));
+        }
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+            yy = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+            zz = 0.1 + (((tickAnim - 55) / 305) * (0.1-(0.1)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+            yy = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+            zz = 0.1 + (((tickAnim - 360) / 20) * (0.1-(0.1)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0.1 + (((tickAnim - 380) / 20) * (0-(0.1)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.rightLeg3.rotationPointX = this.rightLeg3.rotationPointX + (float)(xx);
+        this.rightLeg3.rotationPointY = this.rightLeg3.rotationPointY - (float)(yy);
+        this.rightLeg3.rotationPointZ = this.rightLeg3.rotationPointZ + (float)(zz);
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 18) {
+            xx = 0 + (((tickAnim - 0) / 18) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 18) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 18) * (0-(0)));
+        }
+        else if (tickAnim >= 18 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 18) / 12) * (4-(0)));
+            yy = 0 + (((tickAnim - 18) / 12) * (0-(0)));
+            zz = 0 + (((tickAnim - 18) / 12) * (0-(0)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = 4 + (((tickAnim - 30) / 25) * (3.98887-(4)));
+            yy = 0 + (((tickAnim - 30) / 25) * (-3.4808-(0)));
+            zz = 0 + (((tickAnim - 30) / 25) * (0.3663-(0)));
+        }
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = 3.98887 + (((tickAnim - 55) / 305) * (3.98887-(3.98887)));
+            yy = -3.4808 + (((tickAnim - 55) / 305) * (-3.4808-(-3.4808)));
+            zz = 0.3663 + (((tickAnim - 55) / 305) * (0.3663-(0.3663)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = 3.98887 + (((tickAnim - 360) / 20) * (4-(3.98887)));
+            yy = -3.4808 + (((tickAnim - 360) / 20) * (0-(-3.4808)));
+            zz = 0.3663 + (((tickAnim - 360) / 20) * (0-(0.3663)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 4 + (((tickAnim - 380) / 20) * (0-(4)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1410,20 +1686,35 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (4.75-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 18) {
+            xx = 0 + (((tickAnim - 0) / 18) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 18) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 18) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 35) {
-            xx = 4.75 + (((tickAnim - 20) / 15) * (4.75-(4.75)));
-            yy = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 15) * (0-(0)));
+        else if (tickAnim >= 18 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 18) / 12) * (12.25-(0)));
+            yy = 0 + (((tickAnim - 18) / 12) * (0-(0)));
+            zz = 0 + (((tickAnim - 18) / 12) * (0-(0)));
         }
-        else if (tickAnim >= 35 && tickAnim < 45) {
-            xx = 4.75 + (((tickAnim - 35) / 10) * (0-(4.75)));
-            yy = 0 + (((tickAnim - 35) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 35) / 10) * (0-(0)));
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = 12.25 + (((tickAnim - 30) / 25) * (0-(12.25)));
+            yy = 0 + (((tickAnim - 30) / 25) * (5.75-(0)));
+            zz = 0 + (((tickAnim - 30) / 25) * (0-(0)));
+        }
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+            yy = 5.75 + (((tickAnim - 55) / 305) * (5.75-(5.75)));
+            zz = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = 0 + (((tickAnim - 360) / 20) * (12.25-(0)));
+            yy = 5.75 + (((tickAnim - 360) / 20) * (0-(5.75)));
+            zz = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 12.25 + (((tickAnim - 380) / 20) * (0-(12.25)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1435,20 +1726,35 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (-5.25-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 18) {
+            xx = 0 + (((tickAnim - 0) / 18) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 18) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 18) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 35) {
-            xx = -5.25 + (((tickAnim - 20) / 15) * (-5.25-(-5.25)));
-            yy = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 15) * (0-(0)));
+        else if (tickAnim >= 18 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 18) / 12) * (3-(0)));
+            yy = 0 + (((tickAnim - 18) / 12) * (0-(0)));
+            zz = 0 + (((tickAnim - 18) / 12) * (0-(0)));
         }
-        else if (tickAnim >= 35 && tickAnim < 45) {
-            xx = -5.25 + (((tickAnim - 35) / 10) * (0-(-5.25)));
-            yy = 0 + (((tickAnim - 35) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 35) / 10) * (0-(0)));
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = 3 + (((tickAnim - 30) / 25) * (0-(3)));
+            yy = 0 + (((tickAnim - 30) / 25) * (17.25-(0)));
+            zz = 0 + (((tickAnim - 30) / 25) * (0-(0)));
+        }
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+            yy = 17.25 + (((tickAnim - 55) / 305) * (17.25-(17.25)));
+            zz = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = 0 + (((tickAnim - 360) / 20) * (3-(0)));
+            yy = 17.25 + (((tickAnim - 360) / 20) * (0-(17.25)));
+            zz = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 3 + (((tickAnim - 380) / 20) * (0-(3)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1460,25 +1766,30 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (-1.25-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (1.5-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 36) {
-            xx = -1.25 + (((tickAnim - 20) / 16) * (-1.25-(-1.25)));
-            yy = 0 + (((tickAnim - 20) / 16) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 16) * (0-(0)));
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = 1.5 + (((tickAnim - 30) / 25) * (0-(1.5)));
+            yy = 0 + (((tickAnim - 30) / 25) * (0-(0)));
+            zz = 0 + (((tickAnim - 30) / 25) * (0-(0)));
         }
-        else if (tickAnim >= 36 && tickAnim < 45) {
-            xx = -1.25 + (((tickAnim - 36) / 9) * (0.5-(-1.25)));
-            yy = 0 + (((tickAnim - 36) / 9) * (0-(0)));
-            zz = 0 + (((tickAnim - 36) / 9) * (0-(0)));
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+            yy = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+            zz = 0 + (((tickAnim - 55) / 305) * (0-(0)));
         }
-        else if (tickAnim >= 45 && tickAnim < 58) {
-            xx = 0.5 + (((tickAnim - 45) / 13) * (0-(0.5)));
-            yy = 0 + (((tickAnim - 45) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 45) / 13) * (0-(0)));
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = 0 + (((tickAnim - 360) / 20) * (1.5-(0)));
+            yy = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 1.5 + (((tickAnim - 380) / 20) * (0-(1.5)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1490,25 +1801,30 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (-2.25-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (6.75-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 36) {
-            xx = -2.25 + (((tickAnim - 20) / 16) * (-2.25-(-2.25)));
-            yy = 0 + (((tickAnim - 20) / 16) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 16) * (0-(0)));
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = 6.75 + (((tickAnim - 30) / 25) * (0-(6.75)));
+            yy = 0 + (((tickAnim - 30) / 25) * (0-(0)));
+            zz = 0 + (((tickAnim - 30) / 25) * (0-(0)));
         }
-        else if (tickAnim >= 36 && tickAnim < 45) {
-            xx = -2.25 + (((tickAnim - 36) / 9) * (-1-(-2.25)));
-            yy = 0 + (((tickAnim - 36) / 9) * (0-(0)));
-            zz = 0 + (((tickAnim - 36) / 9) * (0-(0)));
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+            yy = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+            zz = 0 + (((tickAnim - 55) / 305) * (0-(0)));
         }
-        else if (tickAnim >= 45 && tickAnim < 58) {
-            xx = -1 + (((tickAnim - 45) / 13) * (0-(-1)));
-            yy = 0 + (((tickAnim - 45) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 45) / 13) * (0-(0)));
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = 0 + (((tickAnim - 360) / 20) * (6.75-(0)));
+            yy = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 6.75 + (((tickAnim - 380) / 20) * (0-(6.75)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1520,20 +1836,20 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (3.5-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 55) {
+            xx = 0 + (((tickAnim - 0) / 55) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 55) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 55) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 36) {
-            xx = 3.5 + (((tickAnim - 20) / 16) * (3.5-(3.5)));
-            yy = 0 + (((tickAnim - 20) / 16) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 16) * (0-(0)));
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+            yy = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+            zz = 0 + (((tickAnim - 55) / 305) * (0-(0)));
         }
-        else if (tickAnim >= 36 && tickAnim < 58) {
-            xx = 3.5 + (((tickAnim - 36) / 22) * (0-(3.5)));
-            yy = 0 + (((tickAnim - 36) / 22) * (0-(0)));
-            zz = 0 + (((tickAnim - 36) / 22) * (0-(0)));
+        else if (tickAnim >= 360 && tickAnim < 400) {
+            xx = 0 + (((tickAnim - 360) / 40) * (0-(0)));
+            yy = 0 + (((tickAnim - 360) / 40) * (0-(0)));
+            zz = 0 + (((tickAnim - 360) / 40) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1545,20 +1861,30 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (-5.75-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 45) {
-            xx = -5.75 + (((tickAnim - 20) / 25) * (-5.75-(-5.75)));
-            yy = 0 + (((tickAnim - 20) / 25) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 25) * (0-(0)));
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = 0 + (((tickAnim - 30) / 25) * (-5.2476-(0)));
+            yy = 0 + (((tickAnim - 30) / 25) * (-11.43654-(0)));
+            zz = 0 + (((tickAnim - 30) / 25) * (-75.74727-(0)));
         }
-        else if (tickAnim >= 45 && tickAnim < 58) {
-            xx = -5.75 + (((tickAnim - 45) / 13) * (0-(-5.75)));
-            yy = 0 + (((tickAnim - 45) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 45) / 13) * (0-(0)));
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = -5.2476 + (((tickAnim - 55) / 305) * (-5.2476-(-5.2476)));
+            yy = -11.43654 + (((tickAnim - 55) / 305) * (-11.43654-(-11.43654)));
+            zz = -75.74727 + (((tickAnim - 55) / 305) * (-75.74727-(-75.74727)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = -5.2476 + (((tickAnim - 360) / 20) * (0-(-5.2476)));
+            yy = -11.43654 + (((tickAnim - 360) / 20) * (0-(-11.43654)));
+            zz = -75.74727 + (((tickAnim - 360) / 20) * (0-(-75.74727)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1570,25 +1896,25 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (27-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (-21.25-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 36) {
-            xx = 27 + (((tickAnim - 20) / 16) * (27-(27)));
-            yy = 0 + (((tickAnim - 20) / 16) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 16) * (0-(0)));
+        else if (tickAnim >= 30 && tickAnim < 360) {
+            xx = -21.25 + (((tickAnim - 30) / 330) * (-21.25-(-21.25)));
+            yy = 0 + (((tickAnim - 30) / 330) * (0-(0)));
+            zz = 0 + (((tickAnim - 30) / 330) * (0-(0)));
         }
-        else if (tickAnim >= 36 && tickAnim < 45) {
-            xx = 27 + (((tickAnim - 36) / 9) * (22-(27)));
-            yy = 0 + (((tickAnim - 36) / 9) * (0-(0)));
-            zz = 0 + (((tickAnim - 36) / 9) * (0-(0)));
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = -21.25 + (((tickAnim - 360) / 20) * (-21.25-(-21.25)));
+            yy = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 360) / 20) * (0-(0)));
         }
-        else if (tickAnim >= 45 && tickAnim < 58) {
-            xx = 22 + (((tickAnim - 45) / 13) * (0-(22)));
-            yy = 0 + (((tickAnim - 45) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 45) / 13) * (0-(0)));
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = -21.25 + (((tickAnim - 380) / 20) * (0-(-21.25)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1598,25 +1924,10 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
         this.setRotateAngle(leftArm2, leftArm2.rotateAngleX + (float) Math.toRadians(xx), leftArm2.rotateAngleY + (float) Math.toRadians(yy), leftArm2.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (-0.25-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-        }
-        else if (tickAnim >= 20 && tickAnim < 36) {
-            xx = 0 + (((tickAnim - 20) / 16) * (0-(0)));
-            yy = -0.25 + (((tickAnim - 20) / 16) * (-0.25-(-0.25)));
-            zz = 0 + (((tickAnim - 20) / 16) * (0-(0)));
-        }
-        else if (tickAnim >= 36 && tickAnim < 45) {
-            xx = 0 + (((tickAnim - 36) / 9) * (0-(0)));
-            yy = -0.25 + (((tickAnim - 36) / 9) * (0-(-0.25)));
-            zz = 0 + (((tickAnim - 36) / 9) * (0-(0)));
-        }
-        else if (tickAnim >= 45 && tickAnim < 58) {
-            xx = 0 + (((tickAnim - 45) / 13) * (0-(0)));
-            yy = 0 + (((tickAnim - 45) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 45) / 13) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 400) {
+            xx = 0 + (((tickAnim - 0) / 400) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 400) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 400) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1630,20 +1941,30 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (-17.25-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (32.25-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 45) {
-            xx = -17.25 + (((tickAnim - 20) / 25) * (-17.25-(-17.25)));
-            yy = 0 + (((tickAnim - 20) / 25) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 25) * (0-(0)));
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = 32.25 + (((tickAnim - 30) / 25) * (30.91158-(32.25)));
+            yy = 0 + (((tickAnim - 30) / 25) * (-73.47309-(0)));
+            zz = 0 + (((tickAnim - 30) / 25) * (32.47191-(0)));
         }
-        else if (tickAnim >= 45 && tickAnim < 58) {
-            xx = -17.25 + (((tickAnim - 45) / 13) * (0-(-17.25)));
-            yy = 0 + (((tickAnim - 45) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 45) / 13) * (0-(0)));
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = 30.91158 + (((tickAnim - 55) / 305) * (30.91158-(30.91158)));
+            yy = -73.47309 + (((tickAnim - 55) / 305) * (-73.47309-(-73.47309)));
+            zz = 32.47191 + (((tickAnim - 55) / 305) * (32.47191-(32.47191)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = 30.91158 + (((tickAnim - 360) / 20) * (32.25-(30.91158)));
+            yy = -73.47309 + (((tickAnim - 360) / 20) * (0-(-73.47309)));
+            zz = 32.47191 + (((tickAnim - 360) / 20) * (0-(32.47191)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 32.25 + (((tickAnim - 380) / 20) * (0-(32.25)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1653,20 +1974,30 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
         this.setRotateAngle(leftArm3, leftArm3.rotateAngleX + (float) Math.toRadians(xx), leftArm3.rotateAngleY + (float) Math.toRadians(yy), leftArm3.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (-0.25-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0.075-(0)));
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (-0.3-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 45) {
-            xx = 0 + (((tickAnim - 20) / 25) * (0-(0)));
-            yy = -0.25 + (((tickAnim - 20) / 25) * (-0.25-(-0.25)));
-            zz = 0.075 + (((tickAnim - 20) / 25) * (0.075-(0.075)));
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = 0 + (((tickAnim - 30) / 25) * (0.375-(0)));
+            yy = 0 + (((tickAnim - 30) / 25) * (0-(0)));
+            zz = -0.3 + (((tickAnim - 30) / 25) * (-0.3-(-0.3)));
         }
-        else if (tickAnim >= 45 && tickAnim < 58) {
-            xx = 0 + (((tickAnim - 45) / 13) * (0-(0)));
-            yy = -0.25 + (((tickAnim - 45) / 13) * (0-(-0.25)));
-            zz = 0.075 + (((tickAnim - 45) / 13) * (0-(0.075)));
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = 0.375 + (((tickAnim - 55) / 305) * (0.375-(0.375)));
+            yy = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+            zz = -0.3 + (((tickAnim - 55) / 305) * (-0.3-(-0.3)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = 0.375 + (((tickAnim - 360) / 20) * (0-(0.375)));
+            yy = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+            zz = -0.3 + (((tickAnim - 360) / 20) * (-0.3-(-0.3)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = -0.3 + (((tickAnim - 380) / 20) * (0-(-0.3)));
         }
         else {
             xx = 0;
@@ -1680,25 +2011,30 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (19.5-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 35) {
-            xx = 19.5 + (((tickAnim - 20) / 15) * (19.5-(19.5)));
-            yy = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 15) * (0-(0)));
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = 0 + (((tickAnim - 30) / 25) * (-5.2476-(0)));
+            yy = 0 + (((tickAnim - 30) / 25) * (11.43654-(0)));
+            zz = 0 + (((tickAnim - 30) / 25) * (75.74727-(0)));
         }
-        else if (tickAnim >= 35 && tickAnim < 45) {
-            xx = 19.5 + (((tickAnim - 35) / 10) * (-12-(19.5)));
-            yy = 0 + (((tickAnim - 35) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 35) / 10) * (0-(0)));
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = -5.2476 + (((tickAnim - 55) / 305) * (-5.2476-(-5.2476)));
+            yy = 11.43654 + (((tickAnim - 55) / 305) * (11.43654-(11.43654)));
+            zz = 75.74727 + (((tickAnim - 55) / 305) * (75.74727-(75.74727)));
         }
-        else if (tickAnim >= 45 && tickAnim < 58) {
-            xx = -12 + (((tickAnim - 45) / 13) * (0-(-12)));
-            yy = 0 + (((tickAnim - 45) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 45) / 13) * (0-(0)));
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = -5.2476 + (((tickAnim - 360) / 20) * (0-(-5.2476)));
+            yy = 11.43654 + (((tickAnim - 360) / 20) * (0-(11.43654)));
+            zz = 75.74727 + (((tickAnim - 360) / 20) * (0-(75.74727)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1710,25 +2046,25 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (-21.25-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (-21.25-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 35) {
-            xx = -21.25 + (((tickAnim - 20) / 15) * (-21.25-(-21.25)));
-            yy = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 15) * (0-(0)));
+        else if (tickAnim >= 30 && tickAnim < 360) {
+            xx = -21.25 + (((tickAnim - 30) / 330) * (-21.25-(-21.25)));
+            yy = 0 + (((tickAnim - 30) / 330) * (0-(0)));
+            zz = 0 + (((tickAnim - 30) / 330) * (0-(0)));
         }
-        else if (tickAnim >= 35 && tickAnim < 45) {
-            xx = -21.25 + (((tickAnim - 35) / 10) * (10.75-(-21.25)));
-            yy = 0 + (((tickAnim - 35) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 35) / 10) * (0-(0)));
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = -21.25 + (((tickAnim - 360) / 20) * (-21.25-(-21.25)));
+            yy = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 360) / 20) * (0-(0)));
         }
-        else if (tickAnim >= 45 && tickAnim < 58) {
-            xx = 10.75 + (((tickAnim - 45) / 13) * (0-(10.75)));
-            yy = 0 + (((tickAnim - 45) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 45) / 13) * (0-(0)));
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = -21.25 + (((tickAnim - 380) / 20) * (0-(-21.25)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1738,27 +2074,47 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
         this.setRotateAngle(rightArm2, rightArm2.rotateAngleX + (float) Math.toRadians(xx), rightArm2.rotateAngleY + (float) Math.toRadians(yy), rightArm2.rotateAngleZ + (float) Math.toRadians(zz));
 
 
+        if (tickAnim >= 0 && tickAnim < 400) {
+            xx = 0 + (((tickAnim - 0) / 400) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 400) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 400) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.rightArm2.rotationPointX = this.rightArm2.rotationPointX + (float)(xx);
+        this.rightArm2.rotationPointY = this.rightArm2.rotationPointY - (float)(yy);
+        this.rightArm2.rotationPointZ = this.rightArm2.rotationPointZ + (float)(zz);
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (71.5-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (32.25-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 35) {
-            xx = 71.5 + (((tickAnim - 20) / 15) * (71.5-(71.5)));
-            yy = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 15) * (0-(0)));
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = 32.25 + (((tickAnim - 30) / 25) * (30.91158-(32.25)));
+            yy = 0 + (((tickAnim - 30) / 25) * (73.47309-(0)));
+            zz = 0 + (((tickAnim - 30) / 25) * (-32.47191-(0)));
         }
-        else if (tickAnim >= 35 && tickAnim < 45) {
-            xx = 71.5 + (((tickAnim - 35) / 10) * (0-(71.5)));
-            yy = 0 + (((tickAnim - 35) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 35) / 10) * (0-(0)));
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = 30.91158 + (((tickAnim - 55) / 305) * (30.91158-(30.91158)));
+            yy = 73.47309 + (((tickAnim - 55) / 305) * (73.47309-(73.47309)));
+            zz = -32.47191 + (((tickAnim - 55) / 305) * (-32.47191-(-32.47191)));
         }
-        else if (tickAnim >= 45 && tickAnim < 58) {
-            xx = 0 + (((tickAnim - 45) / 13) * (0-(0)));
-            yy = 0 + (((tickAnim - 45) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 45) / 13) * (0-(0)));
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = 30.91158 + (((tickAnim - 360) / 20) * (32.25-(30.91158)));
+            yy = 73.47309 + (((tickAnim - 360) / 20) * (0-(73.47309)));
+            zz = -32.47191 + (((tickAnim - 360) / 20) * (0-(-32.47191)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 32.25 + (((tickAnim - 380) / 20) * (0-(32.25)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1768,25 +2124,30 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
         this.setRotateAngle(rightArm3, rightArm3.rotateAngleX + (float) Math.toRadians(xx), rightArm3.rotateAngleY + (float) Math.toRadians(yy), rightArm3.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0.525-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (-0.475-(0)));
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (-0.3-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 35) {
-            xx = 0 + (((tickAnim - 20) / 15) * (0-(0)));
-            yy = 0.525 + (((tickAnim - 20) / 15) * (0.525-(0.525)));
-            zz = -0.475 + (((tickAnim - 20) / 15) * (-0.475-(-0.475)));
+        else if (tickAnim >= 30 && tickAnim < 55) {
+            xx = 0 + (((tickAnim - 30) / 25) * (-0.375-(0)));
+            yy = 0 + (((tickAnim - 30) / 25) * (0-(0)));
+            zz = -0.3 + (((tickAnim - 30) / 25) * (-0.3-(-0.3)));
         }
-        else if (tickAnim >= 35 && tickAnim < 45) {
-            xx = 0 + (((tickAnim - 35) / 10) * (0-(0)));
-            yy = 0.525 + (((tickAnim - 35) / 10) * (-0.175-(0.525)));
-            zz = -0.475 + (((tickAnim - 35) / 10) * (0-(-0.475)));
+        else if (tickAnim >= 55 && tickAnim < 360) {
+            xx = -0.375 + (((tickAnim - 55) / 305) * (-0.375-(-0.375)));
+            yy = 0 + (((tickAnim - 55) / 305) * (0-(0)));
+            zz = -0.3 + (((tickAnim - 55) / 305) * (-0.3-(-0.3)));
         }
-        else if (tickAnim >= 45 && tickAnim < 58) {
-            xx = 0 + (((tickAnim - 45) / 13) * (0-(0)));
-            yy = -0.175 + (((tickAnim - 45) / 13) * (0-(-0.175)));
-            zz = 0 + (((tickAnim - 45) / 13) * (0-(0)));
+        else if (tickAnim >= 360 && tickAnim < 380) {
+            xx = -0.375 + (((tickAnim - 360) / 20) * (0-(-0.375)));
+            yy = 0 + (((tickAnim - 360) / 20) * (0-(0)));
+            zz = -0.3 + (((tickAnim - 360) / 20) * (-0.3-(-0.3)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = -0.3 + (((tickAnim - 380) / 20) * (0-(-0.3)));
         }
         else {
             xx = 0;
@@ -1800,45 +2161,55 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50))*-30 + (((tickAnim - 0) / 20) * (-10.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50))*-30)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (7.25-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 23) {
-            xx = -10.5 + (((tickAnim - 20) / 3) * (-14-(-10.5)));
-            yy = 0 + (((tickAnim - 20) / 3) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 3) * (0-(0)));
+        else if (tickAnim >= 30 && tickAnim < 75) {
+            xx = 7.25 + (((tickAnim - 30) / 45) * (28.75323-(7.25)));
+            yy = 0 + (((tickAnim - 30) / 45) * (-6.49975-(0)));
+            zz = 0 + (((tickAnim - 30) / 45) * (-0.05697-(0)));
         }
-        else if (tickAnim >= 23 && tickAnim < 27) {
-            xx = -14 + (((tickAnim - 23) / 4) * (-10.5-(-14)));
-            yy = 0 + (((tickAnim - 23) / 4) * (0-(0)));
-            zz = 0 + (((tickAnim - 23) / 4) * (0-(0)));
+        else if (tickAnim >= 75 && tickAnim < 230) {
+            xx = 28.75323 + (((tickAnim - 75) / 155) * (28.75323-(28.75323)));
+            yy = -6.49975 + (((tickAnim - 75) / 155) * (-6.49975-(-6.49975)));
+            zz = -0.05697 + (((tickAnim - 75) / 155) * (-0.05697-(-0.05697)));
         }
-        else if (tickAnim >= 27 && tickAnim < 30) {
-            xx = -10.5 + (((tickAnim - 27) / 3) * (-14-(-10.5)));
-            yy = 0 + (((tickAnim - 27) / 3) * (0-(0)));
-            zz = 0 + (((tickAnim - 27) / 3) * (0-(0)));
+        else if (tickAnim >= 230 && tickAnim < 243) {
+            xx = 28.75323 + (((tickAnim - 230) / 13) * (28-(28.75323)));
+            yy = -6.49975 + (((tickAnim - 230) / 13) * (0-(-6.49975)));
+            zz = -0.05697 + (((tickAnim - 230) / 13) * (0-(-0.05697)));
         }
-        else if (tickAnim >= 30 && tickAnim < 33) {
-            xx = -14 + (((tickAnim - 30) / 3) * (-10.5-(-14)));
-            yy = 0 + (((tickAnim - 30) / 3) * (0-(0)));
-            zz = 0 + (((tickAnim - 30) / 3) * (0-(0)));
+        else if (tickAnim >= 243 && tickAnim < 260) {
+            xx = 28 + (((tickAnim - 243) / 17) * (26.75-(28)));
+            yy = 0 + (((tickAnim - 243) / 17) * (0-(0)));
+            zz = 0 + (((tickAnim - 243) / 17) * (0-(0)));
         }
-        else if (tickAnim >= 33 && tickAnim < 36) {
-            xx = -10.5 + (((tickAnim - 33) / 3) * (-10.5-(-10.5)));
-            yy = 0 + (((tickAnim - 33) / 3) * (0-(0)));
-            zz = 0 + (((tickAnim - 33) / 3) * (0-(0)));
+        else if (tickAnim >= 260 && tickAnim < 281) {
+            xx = 26.75 + (((tickAnim - 260) / 21) * (28.75323-(26.75)));
+            yy = 0 + (((tickAnim - 260) / 21) * (-6.49975-(0)));
+            zz = 0 + (((tickAnim - 260) / 21) * (-0.05697-(0)));
         }
-        else if (tickAnim >= 36 && tickAnim < 45) {
-            xx = -10.5 + (((tickAnim - 36) / 9) * (28.3+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50))*-50-(-10.5)));
-            yy = 0 + (((tickAnim - 36) / 9) * (0-(0)));
-            zz = 0 + (((tickAnim - 36) / 9) * (0-(0)));
+        else if (tickAnim >= 281 && tickAnim < 360) {
+            xx = 28.75323 + (((tickAnim - 281) / 79) * (28.75323-(28.75323)));
+            yy = -6.49975 + (((tickAnim - 281) / 79) * (-6.49975-(-6.49975)));
+            zz = -0.05697 + (((tickAnim - 281) / 79) * (-0.05697-(-0.05697)));
         }
-        else if (tickAnim >= 45 && tickAnim < 58) {
-            xx = 28.3+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50))*-50 + (((tickAnim - 45) / 13) * (0-(28.3+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50))*-50)));
-            yy = 0 + (((tickAnim - 45) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 45) / 13) * (0-(0)));
+        else if (tickAnim >= 360 && tickAnim < 370) {
+            xx = 28.75323 + (((tickAnim - 360) / 10) * (0-(28.75323)));
+            yy = -6.49975 + (((tickAnim - 360) / 10) * (0-(-6.49975)));
+            zz = -0.05697 + (((tickAnim - 360) / 10) * (0-(-0.05697)));
+        }
+        else if (tickAnim >= 370 && tickAnim < 380) {
+            xx = 0 + (((tickAnim - 370) / 10) * (7.25-(0)));
+            yy = 0 + (((tickAnim - 370) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 370) / 10) * (0-(0)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 7.25 + (((tickAnim - 380) / 20) * (0-(7.25)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1850,40 +2221,120 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 52) {
+            xx = 0 + (((tickAnim - 0) / 52) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 52) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 52) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 23) {
-            xx = 0 + (((tickAnim - 20) / 3) * (4.5-(0)));
-            yy = 0 + (((tickAnim - 20) / 3) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 3) * (0-(0)));
+        else if (tickAnim >= 52 && tickAnim < 75) {
+            xx = 0 + (((tickAnim - 52) / 23) * (-6-(0)));
+            yy = 0 + (((tickAnim - 52) / 23) * (14-(0)));
+            zz = 0 + (((tickAnim - 52) / 23) * (0-(0)));
         }
-        else if (tickAnim >= 23 && tickAnim < 27) {
-            xx = 4.5 + (((tickAnim - 23) / 4) * (0-(4.5)));
-            yy = 0 + (((tickAnim - 23) / 4) * (0-(0)));
-            zz = 0 + (((tickAnim - 23) / 4) * (0-(0)));
+        else if (tickAnim >= 75 && tickAnim < 230) {
+            xx = -6 + (((tickAnim - 75) / 155) * (-6-(-6)));
+            yy = 14 + (((tickAnim - 75) / 155) * (14-(14)));
+            zz = 0 + (((tickAnim - 75) / 155) * (0-(0)));
         }
-        else if (tickAnim >= 27 && tickAnim < 30) {
-            xx = 0 + (((tickAnim - 27) / 3) * (4.5-(0)));
-            yy = 0 + (((tickAnim - 27) / 3) * (0-(0)));
-            zz = 0 + (((tickAnim - 27) / 3) * (0-(0)));
+        else if (tickAnim >= 230 && tickAnim < 243) {
+            xx = -6 + (((tickAnim - 230) / 13) * (-12.75-(-6)));
+            yy = 14 + (((tickAnim - 230) / 13) * (0-(14)));
+            zz = 0 + (((tickAnim - 230) / 13) * (0-(0)));
         }
-        else if (tickAnim >= 30 && tickAnim < 33) {
-            xx = 4.5 + (((tickAnim - 30) / 3) * (0-(4.5)));
-            yy = 0 + (((tickAnim - 30) / 3) * (0-(0)));
-            zz = 0 + (((tickAnim - 30) / 3) * (0-(0)));
+        else if (tickAnim >= 243 && tickAnim < 260) {
+            xx = -12.75 + (((tickAnim - 243) / 17) * (-11.5-(-12.75)));
+            yy = 0 + (((tickAnim - 243) / 17) * (0-(0)));
+            zz = 0 + (((tickAnim - 243) / 17) * (0-(0)));
         }
-        else if (tickAnim >= 33 && tickAnim < 36) {
-            xx = 0 + (((tickAnim - 33) / 3) * (0-(0)));
-            yy = 0 + (((tickAnim - 33) / 3) * (0-(0)));
-            zz = 0 + (((tickAnim - 33) / 3) * (0-(0)));
+        else if (tickAnim >= 260 && tickAnim < 281) {
+            xx = -11.5 + (((tickAnim - 260) / 21) * (-6-(-11.5)));
+            yy = 0 + (((tickAnim - 260) / 21) * (14-(0)));
+            zz = 0 + (((tickAnim - 260) / 21) * (0-(0)));
         }
-        else if (tickAnim >= 36 && tickAnim < 58) {
-            xx = 0 + (((tickAnim - 36) / 22) * (0-(0)));
-            yy = 0 + (((tickAnim - 36) / 22) * (0-(0)));
-            zz = 0 + (((tickAnim - 36) / 22) * (0-(0)));
+        else if (tickAnim >= 281 && tickAnim < 360) {
+            xx = -6 + (((tickAnim - 281) / 79) * (-6-(-6)));
+            yy = 14 + (((tickAnim - 281) / 79) * (14-(14)));
+            zz = 0 + (((tickAnim - 281) / 79) * (0-(0)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 370) {
+            xx = -6 + (((tickAnim - 360) / 10) * (0-(-6)));
+            yy = 14 + (((tickAnim - 360) / 10) * (0-(14)));
+            zz = 0 + (((tickAnim - 360) / 10) * (0-(0)));
+        }
+        else if (tickAnim >= 370 && tickAnim < 400) {
+            xx = 0 + (((tickAnim - 370) / 30) * (0-(0)));
+            yy = 0 + (((tickAnim - 370) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 370) / 30) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(xx), neck2.rotateAngleY + (float) Math.toRadians(yy), neck2.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 75) {
+            xx = 0 + (((tickAnim - 30) / 45) * (-46-(0)));
+            yy = 0 + (((tickAnim - 30) / 45) * (0-(0)));
+            zz = 0 + (((tickAnim - 30) / 45) * (0-(0)));
+        }
+        else if (tickAnim >= 75 && tickAnim < 105) {
+            xx = -46 + (((tickAnim - 75) / 30) * (-46-(-46)));
+            yy = 0 + (((tickAnim - 75) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 75) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 105 && tickAnim < 130) {
+            xx = -46 + (((tickAnim - 105) / 25) * (-51.06836-(-46)));
+            yy = 0 + (((tickAnim - 105) / 25) * (3.67976-(0)));
+            zz = 0 + (((tickAnim - 105) / 25) * (-2.12793-(0)));
+        }
+        else if (tickAnim >= 130 && tickAnim < 230) {
+            xx = -51.06836 + (((tickAnim - 130) / 100) * (-51.06836-(-51.06836)));
+            yy = 3.67976 + (((tickAnim - 130) / 100) * (3.67976-(3.67976)));
+            zz = -2.12793 + (((tickAnim - 130) / 100) * (-2.12793-(-2.12793)));
+        }
+        else if (tickAnim >= 230 && tickAnim < 243) {
+            xx = -51.06836 + (((tickAnim - 230) / 13) * (-12.5-(-51.06836)));
+            yy = 3.67976 + (((tickAnim - 230) / 13) * (0-(3.67976)));
+            zz = -2.12793 + (((tickAnim - 230) / 13) * (0-(-2.12793)));
+        }
+        else if (tickAnim >= 243 && tickAnim < 260) {
+            xx = -12.5 + (((tickAnim - 243) / 17) * (-12.5-(-12.5)));
+            yy = 0 + (((tickAnim - 243) / 17) * (0-(0)));
+            zz = 0 + (((tickAnim - 243) / 17) * (0-(0)));
+        }
+        else if (tickAnim >= 260 && tickAnim < 281) {
+            xx = -12.5 + (((tickAnim - 260) / 21) * (-51.06836-(-12.5)));
+            yy = 0 + (((tickAnim - 260) / 21) * (3.67976-(0)));
+            zz = 0 + (((tickAnim - 260) / 21) * (-2.12793-(0)));
+        }
+        else if (tickAnim >= 281 && tickAnim < 360) {
+            xx = -51.06836 + (((tickAnim - 281) / 79) * (-51.06836-(-51.06836)));
+            yy = 3.67976 + (((tickAnim - 281) / 79) * (3.67976-(3.67976)));
+            zz = -2.12793 + (((tickAnim - 281) / 79) * (-2.12793-(-2.12793)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 370) {
+            xx = -51.06836 + (((tickAnim - 360) / 10) * (0-(-51.06836)));
+            yy = 3.67976 + (((tickAnim - 360) / 10) * (0-(3.67976)));
+            zz = -2.12793 + (((tickAnim - 360) / 10) * (0-(-2.12793)));
+        }
+        else if (tickAnim >= 370 && tickAnim < 380) {
+            xx = 0 + (((tickAnim - 370) / 10) * (0-(0)));
+            yy = 0 + (((tickAnim - 370) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 370) / 10) * (0-(0)));
+        }
+        else if (tickAnim >= 380 && tickAnim < 400) {
+            xx = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            yy = 0 + (((tickAnim - 380) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 380) / 20) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1893,17 +2344,92 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
         this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(xx), head.rotateAngleY + (float) Math.toRadians(yy), head.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-
-
-        if (tickAnim >= 35 && tickAnim < 40) {
-            xx = 0 + (((tickAnim - 35) / 5) * (9.75-(0)));
-            yy = 0 + (((tickAnim - 35) / 5) * (0-(0)));
-            zz = 0 + (((tickAnim - 35) / 5) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 75) {
+            xx = 0 + (((tickAnim - 0) / 75) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 75) * (-0.2-(0)));
+            zz = 0 + (((tickAnim - 0) / 75) * (0.6-(0)));
         }
-        else if (tickAnim >= 40 && tickAnim < 45) {
-            xx = 9.75 + (((tickAnim - 40) / 5) * (0-(9.75)));
-            yy = 0 + (((tickAnim - 40) / 5) * (0-(0)));
-            zz = 0 + (((tickAnim - 40) / 5) * (0-(0)));
+        else if (tickAnim >= 75 && tickAnim < 105) {
+            xx = 0 + (((tickAnim - 75) / 30) * (0-(0)));
+            yy = -0.2 + (((tickAnim - 75) / 30) * (-0.2-(-0.2)));
+            zz = 0.6 + (((tickAnim - 75) / 30) * (0.6-(0.6)));
+        }
+        else if (tickAnim >= 105 && tickAnim < 360) {
+            xx = 0 + (((tickAnim - 105) / 255) * (0-(0)));
+            yy = -0.2 + (((tickAnim - 105) / 255) * (-0.2-(-0.2)));
+            zz = 0.6 + (((tickAnim - 105) / 255) * (0.6-(0.6)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 400) {
+            xx = 0 + (((tickAnim - 360) / 40) * (0-(0)));
+            yy = -0.2 + (((tickAnim - 360) / 40) * (0-(-0.2)));
+            zz = 0.6 + (((tickAnim - 360) / 40) * (0-(0.6)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.head.rotationPointX = this.head.rotationPointX + (float)(xx);
+        this.head.rotationPointY = this.head.rotationPointY - (float)(yy);
+        this.head.rotationPointZ = this.head.rotationPointZ + (float)(zz);
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 52) {
+            xx = 0 + (((tickAnim - 0) / 52) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 52) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 52) * (0-(0)));
+        }
+        else if (tickAnim >= 52 && tickAnim < 75) {
+            xx = 0 + (((tickAnim - 52) / 23) * (25-(0)));
+            yy = 0 + (((tickAnim - 52) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 52) / 23) * (0-(0)));
+        }
+        else if (tickAnim >= 75 && tickAnim < 105) {
+            xx = 25 + (((tickAnim - 75) / 30) * (25-(25)));
+            yy = 0 + (((tickAnim - 75) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 75) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 105 && tickAnim < 130) {
+            xx = 25 + (((tickAnim - 105) / 25) * (33.25-(25)));
+            yy = 0 + (((tickAnim - 105) / 25) * (0-(0)));
+            zz = 0 + (((tickAnim - 105) / 25) * (0-(0)));
+        }
+        else if (tickAnim >= 130 && tickAnim < 230) {
+            xx = 33.25 + (((tickAnim - 130) / 100) * (33.25-(33.25)));
+            yy = 0 + (((tickAnim - 130) / 100) * (0-(0)));
+            zz = 0 + (((tickAnim - 130) / 100) * (0-(0)));
+        }
+        else if (tickAnim >= 230 && tickAnim < 243) {
+            xx = 33.25 + (((tickAnim - 230) / 13) * (0-(33.25)));
+            yy = 0 + (((tickAnim - 230) / 13) * (0-(0)));
+            zz = 0 + (((tickAnim - 230) / 13) * (0-(0)));
+        }
+        else if (tickAnim >= 243 && tickAnim < 260) {
+            xx = 0 + (((tickAnim - 243) / 17) * (0-(0)));
+            yy = 0 + (((tickAnim - 243) / 17) * (0-(0)));
+            zz = 0 + (((tickAnim - 243) / 17) * (0-(0)));
+        }
+        else if (tickAnim >= 260 && tickAnim < 281) {
+            xx = 0 + (((tickAnim - 260) / 21) * (33.25-(0)));
+            yy = 0 + (((tickAnim - 260) / 21) * (0-(0)));
+            zz = 0 + (((tickAnim - 260) / 21) * (0-(0)));
+        }
+        else if (tickAnim >= 281 && tickAnim < 360) {
+            xx = 33.25 + (((tickAnim - 281) / 79) * (33.25-(33.25)));
+            yy = 0 + (((tickAnim - 281) / 79) * (0-(0)));
+            zz = 0 + (((tickAnim - 281) / 79) * (0-(0)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 370) {
+            xx = 33.25 + (((tickAnim - 360) / 10) * (0-(33.25)));
+            yy = 0 + (((tickAnim - 360) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 360) / 10) * (0-(0)));
+        }
+        else if (tickAnim >= 370 && tickAnim < 400) {
+            xx = 0 + (((tickAnim - 370) / 30) * (0-(0)));
+            yy = 0 + (((tickAnim - 370) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 370) / 30) * (0-(0)));
         }
         else {
             xx = 0;
@@ -1912,9 +2438,74 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
         }
         this.setRotateAngle(jaw, jaw.rotateAngleX + (float) Math.toRadians(xx), jaw.rotateAngleY + (float) Math.toRadians(yy), jaw.rotateAngleZ + (float) Math.toRadians(zz));
 
+
+
+
+        if (tickAnim >= 0 && tickAnim < 52) {
+            xx = 1 + (((tickAnim - 0) / 52) * (1-(1)));
+            yy = 1 + (((tickAnim - 0) / 52) * (1-(1)));
+            zz = 1 + (((tickAnim - 0) / 52) * (1-(1)));
+        }
+        else if (tickAnim >= 52 && tickAnim < 75) {
+            xx = 1 + (((tickAnim - 52) / 23) * (1-(1)));
+            yy = 1 + (((tickAnim - 52) / 23) * (0.165-(1)));
+            zz = 1 + (((tickAnim - 52) / 23) * (1-(1)));
+        }
+        else if (tickAnim >= 75 && tickAnim < 105) {
+            xx = 1 + (((tickAnim - 75) / 30) * (1-(1)));
+            yy = 0.165 + (((tickAnim - 75) / 30) * (0.165-(0.165)));
+            zz = 1 + (((tickAnim - 75) / 30) * (1-(1)));
+        }
+        else if (tickAnim >= 105 && tickAnim < 130) {
+            xx = 1 + (((tickAnim - 105) / 25) * (1-(1)));
+            yy = 0.165 + (((tickAnim - 105) / 25) * (0-(0.165)));
+            zz = 1 + (((tickAnim - 105) / 25) * (1-(1)));
+        }
+        else if (tickAnim >= 130 && tickAnim < 230) {
+            xx = 1 + (((tickAnim - 130) / 100) * (1-(1)));
+            yy = 0 + (((tickAnim - 130) / 100) * (0-(0)));
+            zz = 1 + (((tickAnim - 130) / 100) * (1-(1)));
+        }
+        else if (tickAnim >= 230 && tickAnim < 243) {
+            xx = 1 + (((tickAnim - 230) / 13) * (1-(1)));
+            yy = 0 + (((tickAnim - 230) / 13) * (1-(0)));
+            zz = 1 + (((tickAnim - 230) / 13) * (1-(1)));
+        }
+        else if (tickAnim >= 243 && tickAnim < 260) {
+            xx = 1 + (((tickAnim - 243) / 17) * (1-(1)));
+            yy = 1 + (((tickAnim - 243) / 17) * (1-(1)));
+            zz = 1 + (((tickAnim - 243) / 17) * (1-(1)));
+        }
+        else if (tickAnim >= 260 && tickAnim < 281) {
+            xx = 1 + (((tickAnim - 260) / 21) * (1-(1)));
+            yy = 1 + (((tickAnim - 260) / 21) * (0-(1)));
+            zz = 1 + (((tickAnim - 260) / 21) * (1-(1)));
+        }
+        else if (tickAnim >= 281 && tickAnim < 360) {
+            xx = 1 + (((tickAnim - 281) / 79) * (1-(1)));
+            yy = 0 + (((tickAnim - 281) / 79) * (0-(0)));
+            zz = 1 + (((tickAnim - 281) / 79) * (1-(1)));
+        }
+        else if (tickAnim >= 360 && tickAnim < 370) {
+            xx = 1 + (((tickAnim - 360) / 10) * (1-(1)));
+            yy = 0 + (((tickAnim - 360) / 10) * (1-(0)));
+            zz = 1 + (((tickAnim - 360) / 10) * (1-(1)));
+        }
+        else if (tickAnim >= 370 && tickAnim < 400) {
+            xx = 1 + (((tickAnim - 370) / 30) * (1-(1)));
+            yy = 1 + (((tickAnim - 370) / 30) * (1-(1)));
+            zz = 1 + (((tickAnim - 370) / 30) * (1-(1)));
+        }
+        else {
+            xx = 1;
+            yy = 1;
+            zz = 1;
+        }
+        this.eye.setScale((float)xx, (float)yy, (float)zz);
+
     }
     public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
-        EntityPrehistoricFloraTurfanosuchus entity = (EntityPrehistoricFloraTurfanosuchus) entitylivingbaseIn;
+        EntityPrehistoricFloraParvosuchus entity = (EntityPrehistoricFloraParvosuchus) entitylivingbaseIn;
         int animCycle = 25;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;
@@ -2354,9 +2945,9 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 7) {
-            xx = 39.99975 + (((tickAnim - 0) / 7) * (-8.87225-(39.99975)));
-            yy = -0.21085 + (((tickAnim - 0) / 7) * (-11.87904-(-0.21085)));
-            zz = 0.13433 + (((tickAnim - 0) / 7) * (50.57706-(0.13433)));
+            xx = 39.96002 + (((tickAnim - 0) / 7) * (-8.87225-(39.96002)));
+            yy = -2.23789 + (((tickAnim - 0) / 7) * (-11.87904-(-2.23789)));
+            zz = 1.99324 + (((tickAnim - 0) / 7) * (50.57706-(1.99324)));
         }
         else if (tickAnim >= 7 && tickAnim < 13) {
             xx = -8.87225 + (((tickAnim - 7) / 6) * (-45.75-(-8.87225)));
@@ -2497,14 +3088,17 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
 
 
 
-        this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*288/0.5-200))*3), neck.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*288-30))*-1), neck.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*288-200))*-2));
+        this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*288/0.5-200))*5), neck.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*288-30))*-1), neck.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*288-200))*-2));
 
 
-        this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*288/0.5-280))*-3), head.rotateAngleY + (float) Math.toRadians(0), head.rotateAngleZ + (float) Math.toRadians(0));
+        this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*288/0.5-300))*5), neck2.rotateAngleY + (float) Math.toRadians(0), neck2.rotateAngleZ + (float) Math.toRadians(0));
+
+
+        this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*288/0.5-250))*-7), head.rotateAngleY + (float) Math.toRadians(0), head.rotateAngleZ + (float) Math.toRadians(0));
 
     }
     public void animRunning(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
-        EntityPrehistoricFloraTurfanosuchus entity = (EntityPrehistoricFloraTurfanosuchus) entitylivingbaseIn;
+        EntityPrehistoricFloraParvosuchus entity = (EntityPrehistoricFloraParvosuchus) entitylivingbaseIn;
         int animCycle = 12;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;
@@ -2610,15 +3204,20 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
         this.setRotateAngle(leftLeg3, leftLeg3.rotateAngleX + (float) Math.toRadians(xx), leftLeg3.rotateAngleY + (float) Math.toRadians(yy), leftLeg3.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 6) {
-            xx = 0 + (((tickAnim - 0) / 6) * (0-(0)));
-            yy = -0.2 + (((tickAnim - 0) / 6) * (0.5-(-0.2)));
-            zz = 0 + (((tickAnim - 0) / 6) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 4) {
+            xx = 0 + (((tickAnim - 0) / 4) * (0-(0)));
+            yy = -0.2 + (((tickAnim - 0) / 4) * (0.29-(-0.2)));
+            zz = 0 + (((tickAnim - 0) / 4) * (0.89-(0)));
+        }
+        else if (tickAnim >= 4 && tickAnim < 6) {
+            xx = 0 + (((tickAnim - 4) / 2) * (0-(0)));
+            yy = 0.29 + (((tickAnim - 4) / 2) * (0.5-(0.29)));
+            zz = 0.89 + (((tickAnim - 4) / 2) * (0.275-(0.89)));
         }
         else if (tickAnim >= 6 && tickAnim < 9) {
             xx = 0 + (((tickAnim - 6) / 3) * (0-(0)));
             yy = 0.5 + (((tickAnim - 6) / 3) * (1.1-(0.5)));
-            zz = 0 + (((tickAnim - 6) / 3) * (0-(0)));
+            zz = 0.275 + (((tickAnim - 6) / 3) * (0-(0.275)));
         }
         else if (tickAnim >= 9 && tickAnim < 13) {
             xx = 0 + (((tickAnim - 9) / 4) * (0-(0)));
@@ -2730,15 +3329,20 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
         this.setRotateAngle(rightLeg3, rightLeg3.rotateAngleX + (float) Math.toRadians(xx), rightLeg3.rotateAngleY + (float) Math.toRadians(yy), rightLeg3.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 6) {
-            xx = 0 + (((tickAnim - 0) / 6) * (0-(0)));
-            yy = -0.2 + (((tickAnim - 0) / 6) * (0.5-(-0.2)));
-            zz = 0 + (((tickAnim - 0) / 6) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 4) {
+            xx = 0 + (((tickAnim - 0) / 4) * (0-(0)));
+            yy = -0.2 + (((tickAnim - 0) / 4) * (0.29-(-0.2)));
+            zz = 0 + (((tickAnim - 0) / 4) * (0.89-(0)));
+        }
+        else if (tickAnim >= 4 && tickAnim < 6) {
+            xx = 0 + (((tickAnim - 4) / 2) * (0-(0)));
+            yy = 0.29 + (((tickAnim - 4) / 2) * (0.5-(0.29)));
+            zz = 0.89 + (((tickAnim - 4) / 2) * (0.275-(0.89)));
         }
         else if (tickAnim >= 6 && tickAnim < 9) {
             xx = 0 + (((tickAnim - 6) / 3) * (0-(0)));
             yy = 0.5 + (((tickAnim - 6) / 3) * (1.1-(0.5)));
-            zz = 0 + (((tickAnim - 6) / 3) * (0-(0)));
+            zz = 0.275 + (((tickAnim - 6) / 3) * (0-(0.275)));
         }
         else if (tickAnim >= 9 && tickAnim < 13) {
             xx = 0 + (((tickAnim - 9) / 4) * (0-(0)));
@@ -3080,7 +3684,10 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
         this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*577-350))*-5), neck.rotateAngleY + (float) Math.toRadians(0), neck.rotateAngleZ + (float) Math.toRadians(0));
 
 
-        this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*577-400))*5), head.rotateAngleY + (float) Math.toRadians(0), head.rotateAngleZ + (float) Math.toRadians(0));
+        this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*577-400))*5), neck2.rotateAngleY + (float) Math.toRadians(0), neck2.rotateAngleZ + (float) Math.toRadians(0));
+
+
+        this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*577-450))*-5), head.rotateAngleY + (float) Math.toRadians(0), head.rotateAngleZ + (float) Math.toRadians(0));
 
     }
 
@@ -3088,7 +3695,7 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
-        EntityPrehistoricFloraTurfanosuchus ee = (EntityPrehistoricFloraTurfanosuchus) entitylivingbaseIn;
+        EntityPrehistoricFloraParvosuchus ee = (EntityPrehistoricFloraParvosuchus) entitylivingbaseIn;
 
         if (!ee.isReallyInWater()) {
             if (ee.getIsMoving()) {
@@ -3130,7 +3737,7 @@ public class ModelTurfanosuchus extends ModelBasePalaeopedia {
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        EntityPrehistoricFloraTurfanosuchus e = (EntityPrehistoricFloraTurfanosuchus) entity;
+        EntityPrehistoricFloraParvosuchus e = (EntityPrehistoricFloraParvosuchus) entity;
 
     }
 }
