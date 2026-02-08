@@ -6416,6 +6416,16 @@ public class LepidodendronSorter {
     public static final int kostensuchus_raw = 5958;
     public static final int epoidesuchus_raw = 5959;
     public static final int eggs_epoidesuchus = 5960;
+    public static final int austroprosboloides_raw = 5961;
+    public static final int fletcheriana_raw = 5962;
+    public static final int talbragarocossus_raw = 5963;
+    public static final int eocicada_raw = 5964;
+    public static final int papiliontina_raw = 5965;
+    public static final int ilerdocossus_raw = 5966;
+    public static final int miracossus_raw = 5967;
+    public static final int baeocossus_raw = 5968;
+    public static final int colossocossus_raw = 5969;
+    public static final int pachypsyche_raw = 5970;
 
     public static final int bivalve_toucasia = 6000;
     public static final int coeloptychium = 6001;

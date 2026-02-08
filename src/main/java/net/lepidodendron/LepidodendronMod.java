@@ -918,6 +918,16 @@ public class LepidodendronMod {
 	public static final ResourceLocation PROTOZYGOPTERA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/protozygoptera"));
 	public static final int ENTITY_PALAEONTINID = 349;
 	public static final ResourceLocation PALAEONTINID_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeontinid"));
+	public static final ResourceLocation PALAEONTINID_AUSTROPROSBOLOIDES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeontinid_austroprosboloides"));
+	public static final ResourceLocation PALAEONTINID_FLETCHERIANA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeontinid_fletcheriana"));
+	public static final ResourceLocation PALAEONTINID_PAPILIONTINA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeontinid_papiliontina"));
+	public static final ResourceLocation PALAEONTINID_EOCICADA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeontinid_eocicada"));
+	public static final ResourceLocation PALAEONTINID_TALBRAGAROCOSSUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeontinid_talbragarocossus"));
+	public static final ResourceLocation PALAEONTINID_MIRACOSSUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeontinid_miracossus"));
+	public static final ResourceLocation PALAEONTINID_ILERDOCOSSUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeontinid_ilerdocossus"));
+	public static final ResourceLocation PALAEONTINID_BAEOCOSSUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeontinid_baeocossus"));
+	public static final ResourceLocation PALAEONTINID_COLOSSOCOSSUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeontinid_colossocossus"));
+	public static final ResourceLocation PALAEONTINID_PACHYPSYCHE_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeontinid_pachypsyche"));
 	public static final int ENTITY_CASINERIA = 350;
 	public static final ResourceLocation CASINERIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/casineria"));
 	public static final ResourceLocation CASINERIA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/casineria_young"));
