@@ -79,6 +79,8 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
         return 1.0F;
     }
 
+    public boolean canClimb() {return true;}
+
     public boolean isBlockClimbable(World world, BlockPos pos, EnumFacing facing) {
         if (this.world.getBlockState(this.getPosition()).getBlock() == BlockGlassJar.block
             ||  this.world.getBlockState(this.getPosition()).getBlock() == BlockCageSmall.block) {
@@ -144,7 +146,11 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
 
     public void setIsClimbing(boolean climbing)
     {
-        this.dataManager.set(CLIMBING, climbing);
+        if(!canClimb()) {
+            this.dataManager.set(CLIMBING, false);
+        } else {
+            this.dataManager.set(CLIMBING, climbing);
+        }
     }
 
     public boolean getStartingToClimb()
@@ -174,7 +180,11 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
 
     public void setClimbingCooldown(int cooldown)
     {
-        this.dataManager.set(CLIMBINGCOOLDOWN, cooldown);
+        if (this.canClimb()) {
+            this.dataManager.set(CLIMBINGCOOLDOWN, cooldown);
+        } else {
+            this.dataManager.set(CLIMBINGCOOLDOWN, 1);
+        }
     }
 
     public int getHeadBlockCooldown()

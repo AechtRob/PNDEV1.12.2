@@ -773,7 +773,7 @@ public class EntityPrehistoricFloraPalaeontinid extends EntityPrehistoricFloraIn
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.BUG);
+		return ArrayUtils.addAll(DietString.PLANTS);
 	}
 
 }

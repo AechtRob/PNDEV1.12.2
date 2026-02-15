@@ -9173,6 +9173,42 @@ public class RenderHandler {
                 return new RenderPalaeontinid(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSchizodactylus.class, new IRenderFactory<EntityPrehistoricFloraSchizodactylus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSchizodactylus> createRenderFor(RenderManager manager) {
+                return new RenderSchizodactylus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLocustopsis.class, new IRenderFactory<EntityPrehistoricFloraLocustopsis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLocustopsis> createRenderFor(RenderManager manager) {
+                return new RenderLocustopsis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraEoproscopia.class, new IRenderFactory<EntityPrehistoricFloraEoproscopia>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraEoproscopia> createRenderFor(RenderManager manager) {
+                return new RenderEoproscopia(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraProtophasma.class, new IRenderFactory<EntityPrehistoricFloraProtophasma>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraProtophasma> createRenderFor(RenderManager manager) {
+                return new RenderProtophasma(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraJuramantophasma.class, new IRenderFactory<EntityPrehistoricFloraJuramantophasma>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraJuramantophasma> createRenderFor(RenderManager manager) {
+                return new RenderJuramantophasma(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTremataspis.class, new IRenderFactory<EntityPrehistoricFloraTremataspis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTremataspis> createRenderFor(RenderManager manager) {
+                return new RenderTremataspis(manager);
+            }
+        });
 
 
 
