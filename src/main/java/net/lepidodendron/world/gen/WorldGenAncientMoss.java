@@ -161,7 +161,6 @@ public class WorldGenAncientMoss extends WorldGenerator
 					"lepidodendron:prehistoric_flora_arthropleura",
 					"lepidodendron:prehistoric_flora_attercopus",
 					"lepidodendron:prehistoric_flora_permarachne",
-					"lepidodendron:prehistoric_flora_daohugoucossus",
 					"lepidodendron:prehistoric_flora_gerarus",
 					"lepidodendron:prehistoric_flora_harvestman",
 					"lepidodendron:prehistoric_flora_myriacantherpestes",
@@ -193,7 +192,10 @@ public class WorldGenAncientMoss extends WorldGenerator
 					"lepidodendron:prehistoric_flora_fortiholcorpa",
 					"lepidodendron:prehistoric_flora_juracimbrophlebia",
 					"lepidodendron:prehistoric_flora_cretosaja",
-					"lepidodendron:prehistoric_flora_plesioblattogryllus"
+					"lepidodendron:prehistoric_flora_plesioblattogryllus",
+					"lepidodendron:prehistoric_flora_locustopsis",
+					"lepidodendron:prehistoric_flora_juramantophasma",
+					"lepidodendron:prehistoric_flora_eoproscopia"
 			};
 
 			ArrayList<String> mobStringValid = new ArrayList<String>();

@@ -6,8 +6,12 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.util.PathNavigateGliding;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
+import net.lepidodendron.item.entities.ItemUnknownEggLand;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.IEntityLivingData;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -53,6 +57,10 @@ public abstract class EntityPrehistoricFloraLeapingInsectBase extends EntityPreh
 			this.jump();
 		}
 		return super.attackEntityFrom(ds, i);
+	}
+
+	public ItemStack getDroppedEggItemStack() {
+		return new ItemStack(ItemUnknownEggLand.block, (int) (1));
 	}
 
 	public boolean getIsJumping() {
@@ -131,6 +139,28 @@ public abstract class EntityPrehistoricFloraLeapingInsectBase extends EntityPreh
 
 	public void setJumpCooldown(int jumpcooldown) {
 		this.dataManager.set(JUMPCOOLDOWN, jumpcooldown);
+	}
+
+	@Override
+	public void onEntityUpdate()
+	{
+		super.onEntityUpdate();
+		//Drop an egg perhaps:
+		if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && this.getLaying()) {
+			if (Math.random() > 0.5) {
+				ItemStack itemstack = getDroppedEggItemStack();
+				if (!itemstack.hasTagCompound()) {
+					itemstack.setTagCompound(new NBTTagCompound());
+				}
+				itemstack.getTagCompound().setString("creature", getEntityId(this));
+				EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
+				entityToSpawn.setPickupDelay(10);
+				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+				world.spawnEntity(entityToSpawn);
+				this.setLaying(false);
+			}
+			this.setTicks(0);
+		}
 	}
 
 	protected void entityInit()

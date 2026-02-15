@@ -235,8 +235,12 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 			}
 		}
 
-		this.setIsFlying((!this.collidedHorizontally) && (this.getIsLaunching() || ((!this.getIsClimbing()) && (!this.getHeadCollided()) && (!this.isReallyInWater()) && (!this.isOnGround()) && (!this.isJumping))));
+		this.setIsFlying(canFly() && (!this.collidedHorizontally) && (this.getIsLaunching() || ((!this.getIsClimbing()) && (!this.getHeadCollided()) && (!this.isReallyInWater()) && (!this.isOnGround()) && (!this.isJumping))));
 
+	}
+
+	public boolean canFly() {
+		return true;
 	}
 
 	@Override
@@ -252,6 +256,9 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 			state.getBlockFaceShape(this.world, this.getPosition().down(), EnumFacing.UP) == BlockFaceShape.SOLID;
 	}
 
+	/*
+		Closer to Zero (0) means slower descent
+	 */
 	public double descentSpeed() {
 		return -0.035D;
 	}
