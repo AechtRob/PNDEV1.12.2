@@ -6432,6 +6432,11 @@ public class LepidodendronSorter {
     public static final int schizodactylus_raw = 5974;
     public static final int eoproscopia_raw = 5975;
     public static final int tremataspis_raw = 5976;
+    public static final int umenopterix_raw = 5977;
+    public static final int petropterix_raw = 5978;
+    public static final int gigamachilis_raw = 5979;
+    public static final int archaeognatha_rocky_raw = 5980;
+    public static final int archaeognatha_jungle_raw = 5981;
 
     public static final int bivalve_toucasia = 6000;
     public static final int coeloptychium = 6001;

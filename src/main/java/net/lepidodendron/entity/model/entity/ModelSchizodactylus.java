@@ -533,7 +533,7 @@ public class ModelSchizodactylus extends ModelBasePalaeopedia {
 
 
 
-        if (ee.getIsJumping() && ee.getAnimation() == ee.JUMP_ANIMATION) {
+        if (ee.getAnimation() == ee.JUMP_ANIMATION) {
             animJump(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
 

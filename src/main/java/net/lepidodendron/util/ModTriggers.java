@@ -2228,7 +2228,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_RAPTOBLATTA = new CustomTrigger("pf_book_raptoblatta");
     public static final CustomTrigger CLICK_UMENOPTERIX = new CustomTrigger("pf_book_umenopterix");
     public static final CustomTrigger CLICK_GIGAMACHILIS = new CustomTrigger("pf_book_gigamachilis");
-    public static final CustomTrigger CLICK_ARCHAEOGNATHA = new CustomTrigger("pf_book_archaeognatha");
+    public static final CustomTrigger CLICK_ARCHAEOGNATHA_ROCKY = new CustomTrigger("pf_book_archaeognatha_rocky");
+    public static final CustomTrigger CLICK_ARCHAEOGNATHA_JUNGLE = new CustomTrigger("pf_book_archaeognatha_jungle");
     public static final CustomTrigger CLICK_AUSTROPROSBOLOIDES = new CustomTrigger("pf_book_palaeontinid_austroprosboloides");
     public static final CustomTrigger CLICK_FLETCHERIANA  = new CustomTrigger("pf_book_palaeontinid_fletcheriana ");
     public static final CustomTrigger CLICK_PAPILIONTINA = new CustomTrigger("pf_book_palaeontinid_papiliontina");
@@ -4644,7 +4645,8 @@ public class ModTriggers
             CLICK_RAPTOBLATTA,
             CLICK_UMENOPTERIX,
             CLICK_GIGAMACHILIS,
-            CLICK_ARCHAEOGNATHA,
+            CLICK_ARCHAEOGNATHA_ROCKY,
+            CLICK_ARCHAEOGNATHA_JUNGLE,
             CLICK_AUSTROPROSBOLOIDES,
             CLICK_FLETCHERIANA ,
             CLICK_PAPILIONTINA,

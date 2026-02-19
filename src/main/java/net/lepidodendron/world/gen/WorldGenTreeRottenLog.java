@@ -175,7 +175,12 @@ public class WorldGenTreeRottenLog extends WorldGenerator
 					"lepidodendron:prehistoric_flora_plesioblattogryllus",
 					"lepidodendron:prehistoric_flora_locustopsis",
 					"lepidodendron:prehistoric_flora_juramantophasma",
-					"lepidodendron:prehistoric_flora_eoproscopia"
+					"lepidodendron:prehistoric_flora_eoproscopia",
+					"lepidodendron:prehistoric_flora_gigamachilis",
+					"lepidodendron:prehistoric_flora_archaeognatha_rocky",
+					"lepidodendron:prehistoric_flora_archaeognatha_jungle",
+					"lepidodendron:prehistoric_flora_umenopterix",
+					"lepidodendron:prehistoric_flora_petropterix"
 			};
 
 			ArrayList<String> mobStringValid = new ArrayList<String>();

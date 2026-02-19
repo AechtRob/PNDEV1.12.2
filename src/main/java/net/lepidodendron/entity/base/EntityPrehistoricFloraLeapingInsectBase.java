@@ -194,7 +194,7 @@ public abstract class EntityPrehistoricFloraLeapingInsectBase extends EntityPreh
 				this.setJumpCooldown(this.getJumpCooldown() - 1);
 			}
 
-			if(this.getJumpCooldown() <= 0 && !this.getIsFlying() && this.isOnGround() && this.getIsMoving() && !this.isReallyInWater() && !this.getIsLaunching()){
+			if(this.getJumpCooldown() <= 0 && !this.getIsFlying() && this.isOnGround() && this.getIsMoving() && !this.isReallyInWater() && !this.getIsLaunching() && !this.getIsClimbing()){
 				this.jump();
 				this.setJumpCooldown(rand.nextInt(jumpCooldown()));
 			}

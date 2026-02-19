@@ -9209,6 +9209,36 @@ public class RenderHandler {
                 return new RenderTremataspis(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPetropterix.class, new IRenderFactory<EntityPrehistoricFloraPetropterix>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPetropterix> createRenderFor(RenderManager manager) {
+                return new RenderPetropterix(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraUmenopterix.class, new IRenderFactory<EntityPrehistoricFloraUmenopterix>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraUmenopterix> createRenderFor(RenderManager manager) {
+                return new RenderUmenopterix(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGigamachilis.class, new IRenderFactory<EntityPrehistoricFloraGigamachilis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraGigamachilis> createRenderFor(RenderManager manager) {
+                return new RenderGigamachilis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraArchaeognatha_jungle.class, new IRenderFactory<EntityPrehistoricFloraArchaeognatha_jungle>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraArchaeognatha_jungle> createRenderFor(RenderManager manager) {
+                return new RenderArchaeognatha_jungle(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraArchaeognatha_rocky.class, new IRenderFactory<EntityPrehistoricFloraArchaeognatha_rocky>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraArchaeognatha_rocky> createRenderFor(RenderManager manager) {
+                return new RenderArchaeognatha_rocky(manager);
+            }
+        });
 
 
 

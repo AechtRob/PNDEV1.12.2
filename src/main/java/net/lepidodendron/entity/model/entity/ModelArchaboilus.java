@@ -396,9 +396,9 @@ public class ModelArchaboilus extends ModelBasePalaeopedia {
             }
         }
 
-        if (ee.getIsJumping() && ee.getAnimation() == ee.JUMP_ANIMATION) {
+        if (ee.getAnimation() == ee.JUMP_ANIMATION) {
             animJump(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
-        } else if (ee.getIsJumping() && ee.getAnimation() == ee.ROAR_ANIMATION) {
+        } else if (ee.getAnimation() == ee.ROAR_ANIMATION) {
             animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
 
