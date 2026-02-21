@@ -5553,6 +5553,9 @@ public class LepidodendronSorter {
     public static final int reeds_seeds = 8416;
     public static final int seedy_grass = 8417;
     public static final int seedy_grass_seeds = 8418;
+
+    public static final int notocyamus = 8419;
+    public static final int notocyamus_flower = 8420;
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;

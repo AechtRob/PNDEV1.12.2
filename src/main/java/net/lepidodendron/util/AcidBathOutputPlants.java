@@ -275,7 +275,6 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockLiverwort.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBacterialCrust.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemArchaeocalamitesItem.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockLepidophloiosSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSphenopteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockXinhangia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCosmosperma.block).toString(),
@@ -955,6 +954,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.ITEMS.getKey(ItemMarginalHorsetailItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockDasypogonSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockDipteris.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemNotocyamusItem.block).toString(),
                 "minecraft:spruce_sapling",
                 "minecraft:small_fern",
                 "minecraft:large_fern"

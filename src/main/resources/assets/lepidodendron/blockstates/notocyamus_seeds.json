@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:notocyamus_seeds"},
+      {"model": "lepidodendron:notocyamus_seeds_var"}
+    ]
+  }
+}

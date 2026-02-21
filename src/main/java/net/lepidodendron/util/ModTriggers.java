@@ -414,6 +414,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_INARIA = new CustomTrigger("pf_book_inaria");
     public static final CustomTrigger CLICK_ISCHNOPHYTON = new CustomTrigger("pf_book_ischnophyton");
     public static final CustomTrigger CLICK_ISOETES = new CustomTrigger("pf_book_isoetes");
+    public static final CustomTrigger CLICK_NOTOCYAMUS = new CustomTrigger("pf_book_notocyamus");
     public static final CustomTrigger CLICK_POTAMOGETON = new CustomTrigger("pf_book_potamogeton");
     public static final CustomTrigger CLICK_IRANIA = new CustomTrigger("pf_book_irania");
     public static final CustomTrigger CLICK_PAGIOPHYLLUM = new CustomTrigger("pf_book_pagiophyllum");
@@ -2840,6 +2841,7 @@ public class ModTriggers
             CLICK_INARIA,
             CLICK_ISCHNOPHYTON,
             CLICK_ISOETES,
+            CLICK_NOTOCYAMUS,
             CLICK_POTAMOGETON,
             CLICK_IRANIA,
             CLICK_JUNGLE,

@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "flowers=false": [
+      {"model": "lepidodendron:notocyamus"},
+      {"model": "lepidodendron:notocyamus_var"}
+    ],
+    "flowers=true": [
+      {"model": "lepidodendron:notocyamus_flower"},
+      {"model": "lepidodendron:notocyamus_flower_var"}
+    ]
+  }
+}
