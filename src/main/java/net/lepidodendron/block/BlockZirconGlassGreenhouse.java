@@ -2,6 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.minecraft.block.Block;
@@ -89,7 +90,7 @@ public class BlockZirconGlassGreenhouse extends ElementsLepidodendronMod.ModElem
 			boolean waterwest = (worldIn.getBlockState(pos.west()).getMaterial() == Material.WATER && !(block5 instanceof BlockLiquid) && !(block5 instanceof BlockFluidBase));
 
 			return state.withProperty(DOWN, Boolean.valueOf(block == this)).withProperty(UP, Boolean.valueOf(block1 == this)).withProperty(NORTH, Boolean.valueOf(block2 == this)).withProperty(EAST, Boolean.valueOf(block3 == this)).withProperty(SOUTH, Boolean.valueOf(block4 == this)).withProperty(WEST, Boolean.valueOf(block5 == this))
-				.withProperty(WATERDOWN, waterdown).withProperty(WATERUP, waterup).withProperty(WATERNORTH, waternorth).withProperty(WATEREAST, watereast).withProperty(WATERSOUTH, watersouth).withProperty(WATERWEST, waterwest);
+				.withProperty(WATERDOWN, waterdown && LepidodendronConfig.fixZirconGlass).withProperty(WATERUP, waterup && LepidodendronConfig.fixZirconGlass).withProperty(WATERNORTH, waternorth && LepidodendronConfig.fixZirconGlass).withProperty(WATEREAST, watereast && LepidodendronConfig.fixZirconGlass).withProperty(WATERSOUTH, watersouth && LepidodendronConfig.fixZirconGlass).withProperty(WATERWEST, waterwest && LepidodendronConfig.fixZirconGlass);
 		}
 
 		@Override

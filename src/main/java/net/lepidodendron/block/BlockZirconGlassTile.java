@@ -2,6 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.BlockTilePF;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
@@ -94,7 +95,7 @@ public class BlockZirconGlassTile extends ElementsLepidodendronMod.ModElement {
 			Block block1 = worldIn.getBlockState(pos.offset(state.getValue(FACING).getOpposite())).getBlock();
 			boolean water = (worldIn.getBlockState(pos.offset(state.getValue(FACING).getOpposite())).getMaterial() == Material.WATER && !(block1 instanceof BlockLiquid) && !(block1 instanceof BlockFluidBase));
 
-			return state.withProperty(WATER, water);
+			return state.withProperty(WATER, water && LepidodendronConfig.fixZirconGlass);
 		}
 
 		@Override
