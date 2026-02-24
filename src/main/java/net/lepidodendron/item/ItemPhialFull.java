@@ -72,7 +72,6 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_cotylorhynchus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_cobelodus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_crassigyrinus", "inventory"),
-			new ModelResourceLocation("lepidodendron:entities/phial_eggs_daohugoucossus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_dasyceps", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_diadectes", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_diplocaulus", "inventory"),
@@ -144,7 +143,6 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera_nymph_psychroptilus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera_nymph_sinodunbaria", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera_nymph_stenodictya", "inventory"),
-			new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeontinid", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_pantylus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_parhybodus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_parmastega", "inventory"),
@@ -240,7 +238,15 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_juracimbrophlebia", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_aquaticnymph_argentinala", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_aquaticnymph_velisoptera", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/phial_eggs_ptyktoptychion", "inventory")
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_ptyktoptychion", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_eoproscopia", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_locustopsis", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_juramantophasma", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_gigamachilis", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_archaeognatha_rocky", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_archaeognatha_jungle", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_petropterix", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_umenopterix", "inventory")
 
 
 
