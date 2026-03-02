@@ -14,10 +14,11 @@ public class RenderPycnophlebia extends RenderLivingBaseWithBook<EntityPrehistor
 
 
     public static float getScaler() {
-        return 0.7F * 0.28F;
+        return 0.7F * 0.14F;
     }
     public RenderPycnophlebia(RenderManager mgr) {
         super(mgr, new ModelPycnophlebia(), 0.0f);
+        this.addLayer(new LayerPycnophlebiaWing(this));
     }
 
     @Override

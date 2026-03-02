@@ -109,8 +109,9 @@ public class BlockWaterClover extends ElementsLepidodendronMod.ModElement {
 			if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Euro_America) {
 				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_europe")
 						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_europe")
-						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")
-						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe_maquis")) {
+						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_lagoons")
+						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe_maquis")
+						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")) {
 					biomeCriteria = false;
 				}
 				else {
