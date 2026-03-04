@@ -149,6 +149,9 @@ public class BlockFirePF extends BlockFire {
 		if (blockIn == FluidRegistry.getFluid("pn_resin").getBlock()) {
 			return 60;
 		}
+		if (blockIn == FluidRegistry.getFluid("pn_tar").getBlock()) {
+			return 60;
+		}
 		return 0;
 	}
 
