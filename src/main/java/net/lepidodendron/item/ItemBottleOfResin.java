@@ -76,7 +76,7 @@ public class ItemBottleOfResin extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Can be used to hold falling blocks in place");
+				tooltip.add("Is sticky. Can be used to hold falling blocks in place");
 			}
 			super.addInformation(stack, player, tooltip, advanced);
 		}

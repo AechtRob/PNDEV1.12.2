@@ -116,6 +116,13 @@ public class BiomeSpawns {
             spawnListJoiner.add("lepidodendron:prehistoric_flora_websteroprion");
             mobList = spawnListJoiner.toArray(mobList);
         }
+        if (biomeID.equalsIgnoreCase("lepidodendron:jurassic_ocean_coral")
+            || biomeID.equalsIgnoreCase("lepidodendron:jurassic_ocean_rafts"))
+        {
+            ObjectArrayList<String> spawnListJoiner = new ObjectArrayList<String>(Arrays.asList(mobList));
+            spawnListJoiner.add("lepidodendron:prehistoric_flora_dorygnathus");
+            mobList = spawnListJoiner.toArray(mobList);
+        }
 
         ObjectArrayList<DimensionSpawns.PPEntry> spawnListInterim = new ObjectArrayList<DimensionSpawns.PPEntry>();
         if (mobList.length >= 1) {

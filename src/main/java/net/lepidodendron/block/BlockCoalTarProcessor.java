@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUICoalTarProcessor;
 import net.lepidodendron.item.ItemBottleOfDNASolvent;
+import net.lepidodendron.item.ItemBottleOfTar;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -22,6 +23,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
@@ -45,6 +47,10 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
+import net.minecraftforge.fluids.*;
+import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
+import net.minecraftforge.fluids.capability.IFluidHandler;
+import net.minecraftforge.fluids.capability.IFluidTankProperties;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -145,6 +151,10 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 			if (tileentity != null) {
 				if (tileentity instanceof BlockCoalTarProcessor.TileEntityCoalTarProcessor) {
 					InventoryHelper.dropInventoryItems(world, pos, (BlockCoalTarProcessor.TileEntityCoalTarProcessor) tileentity);
+					BlockCoalTarProcessor.TileEntityCoalTarProcessor tile = (BlockCoalTarProcessor.TileEntityCoalTarProcessor)tileentity;
+					if (tile.getFluidAmount() >= 1000) {
+						world.setBlockState(pos, FluidRegistry.getFluid("pn_tar").getBlock().getDefaultState());
+					}
 				}
 				world.removeTileEntity(pos);
 			}
@@ -154,7 +164,42 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entity, EnumHand hand, EnumFacing direction, float hitX, float hitY, float hitZ) {
 			super.onBlockActivated(world, pos, state, entity, hand, direction, hitX, hitY, hitZ);
+
 			if (entity instanceof EntityPlayer) {
+				ItemStack stack = entity.getHeldItem(hand);
+				Item item = stack.getItem();
+
+				TileEntity te = world.getTileEntity(pos);
+				BlockCoalTarProcessor.TileEntityCoalTarProcessor tile = (BlockCoalTarProcessor.TileEntityCoalTarProcessor)te;
+
+				if (item == Items.GLASS_BOTTLE && tile.getFluidAmount() >= 333) {
+					if (!world.isRemote) {
+						stack.shrink(1);
+						ItemStack _setstack = new ItemStack(ItemBottleOfTar.block, 1);
+						if (stack.isEmpty()) {
+							entity.setHeldItem(hand, _setstack);
+						} else if (!entity.inventory.addItemStackToInventory(_setstack)) {
+							entity.dropItem(_setstack, false);
+						}
+						tile.fluid = new FluidStack(FluidRegistry.getFluid("pn_tar"), tile.getFluidAmount() - 333);
+						world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+					}
+					return true;
+				}
+				if (item == Items.BUCKET && tile.getFluidAmount() >= 1000) {
+					if (!world.isRemote) {
+						stack.shrink(1);
+						ItemStack _setstack = FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.getFluid("pn_tar"), 1000));
+						if (stack.isEmpty()) {
+							entity.setHeldItem(hand, _setstack);
+						} else if (!entity.inventory.addItemStackToInventory(_setstack)) {
+							entity.dropItem(_setstack, false);
+						}
+						tile.fluid = new FluidStack(FluidRegistry.getFluid("pn_tar"), tile.getFluidAmount() - 1000);
+						world.playSound((EntityPlayer)null, pos, SoundEvents.ITEM_BUCKET_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+					}
+					return true;
+				}
 				((EntityPlayer) entity).openGui(LepidodendronMod.instance, GUICoalTarProcessor.GUIID, world, pos.getX(), pos.getY(), pos.getZ());
 			}
 			return true;
@@ -221,7 +266,18 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face) {
-			if (face == EnumFacing.DOWN) {
+			boolean pipe = false;
+			TileEntity tileEntity = worldIn.getTileEntity(pos);
+			if (tileEntity != null) {
+				if (tileEntity.getCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, state.getValue(FACING)) != null) {
+					pipe = true;
+				}
+			}
+			if (state.getValue(FACING) == EnumFacing.NORTH && ((face == EnumFacing.SOUTH && pipe) || face == EnumFacing.EAST || face == EnumFacing.WEST)
+					|| state.getValue(FACING) == EnumFacing.SOUTH && ((face == EnumFacing.NORTH && pipe) || face == EnumFacing.EAST || face == EnumFacing.WEST)
+					|| state.getValue(FACING) == EnumFacing.EAST && ((face == EnumFacing.WEST && pipe) || face == EnumFacing.NORTH || face == EnumFacing.SOUTH)
+					|| state.getValue(FACING) == EnumFacing.WEST && ((face == EnumFacing.EAST && pipe) || face == EnumFacing.NORTH || face == EnumFacing.SOUTH)
+					|| face == EnumFacing.DOWN) {
 				return BlockFaceShape.SOLID;
 			}
 			return BlockFaceShape.UNDEFINED;
@@ -265,15 +321,307 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 		}
 	}
 
-	public static class TileEntityCoalTarProcessor extends TileEntityLockableLoot implements ITickable, ISidedInventory, IEnergyStorage {
+	public static class CoalTarProcessorPropertiesWrapper implements IFluidTankProperties
+	{
+		protected final TileEntityCoalTarProcessor tank;
+
+		public CoalTarProcessorPropertiesWrapper(BlockCoalTarProcessor.TileEntityCoalTarProcessor tank)
+		{
+			this.tank = tank;
+		}
+
+		@Nullable
+		@Override
+		public FluidStack getContents()
+		{
+			FluidStack contents = tank.getFluid();
+			return contents == null ? null : contents.copy();
+		}
+
+		@Override
+		public int getCapacity()
+		{
+			return tank.getCapacity();
+		}
+
+		@Override
+		public boolean canFill()
+		{
+			return tank.canFill();
+		}
+
+		@Override
+		public boolean canDrain()
+		{
+			return tank.canDrain();
+		}
+
+		@Override
+		public boolean canFillFluidType(FluidStack fluidStack)
+		{
+			return tank.canFillFluidType(fluidStack);
+		}
+
+		@Override
+		public boolean canDrainFluidType(FluidStack fluidStack)
+		{
+			return tank.canDrainFluidType(fluidStack);
+		}
+	}
+
+	public static class TileEntityCoalTarProcessor extends TileEntityLockableLoot implements IFluidTank, IFluidHandler, ITickable, ISidedInventory, IEnergyStorage {
 
 		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
 
+		protected FluidStack fluid;
+		protected int capacityFluid = Fluid.BUCKET_VOLUME * LepidodendronConfig.tarLimitInProcessor;
+		protected TileEntity tile;
+		protected boolean canFill = false;
+		protected boolean canDrain = true;
+		protected IFluidTankProperties[] tankProperties;
 		protected boolean isProcessing;
 		public int processTick;
 		private int processTickTime; //Depends on what we are doing it to
 		public int GUIFlameHeight;
 		private int minEnergyNeeded = 200;
+
+		public FluidStack getFluid()
+		{
+			return fluid;
+		}
+
+		public void setFluid(@Nullable FluidStack fluid)
+		{
+			this.fluid = fluid;
+		}
+
+		public int getFluidAmount()
+		{
+			if (fluid == null)
+			{
+				return 0;
+			}
+			return fluid.amount;
+		}
+
+		public int getCapacity()
+		{
+			return capacityFluid;
+		}
+
+		public void setCapacity(int capacity)
+		{
+			this.capacityFluid = capacity;
+		}
+
+		public void setTileEntity(TileEntity tile)
+		{
+			this.tile = tile;
+		}
+
+		public FluidTankInfo getInfo()
+		{
+			return new FluidTankInfo(this);
+		}
+
+		public IFluidTankProperties[] getTankProperties()
+		{
+			if (this.tankProperties == null)
+			{
+				this.tankProperties = new IFluidTankProperties[] { new CoalTarProcessorPropertiesWrapper(this) };
+			}
+			return this.tankProperties;
+		}
+
+
+
+		@Override
+		public int fill(FluidStack resource, boolean doFill)
+		{
+				return 0;
+		}
+
+		/**
+		 * Use this method to bypass the restrictions from {@link #canFillFluidType(FluidStack)}
+		 * Meant for use by the owner of the tank when they have {@link #canFill() set to false}.
+		 */
+		public int fillInternal(FluidStack resource, boolean doFill)
+		{
+			return 0;
+		}
+
+		@Override
+		public FluidStack drain(FluidStack resource, boolean doDrain)
+		{
+
+			if (!canDrainFluidType(getFluid()))
+			{
+				return null;
+			}
+			return drainInternal(resource, doDrain);
+		}
+
+		@Override
+		public FluidStack drain(int maxDrain, boolean doDrain)
+		{
+
+			if (!canDrainFluidType(fluid))
+			{
+				return null;
+			}
+			return drainInternal(maxDrain, doDrain);
+		}
+
+		/**
+		 * Use this method to bypass the restrictions from {@link #canDrainFluidType(FluidStack)}
+		 * Meant for use by the owner of the tank when they have {@link #canDrain()} set to false}.
+		 */
+		@Nullable
+		public FluidStack drainInternal(FluidStack resource, boolean doDrain)
+		{
+
+			if (resource == null || !resource.isFluidEqual(getFluid()))
+			{
+				return null;
+			}
+			return drainInternal(resource.amount, doDrain);
+		}
+
+		/**
+		 * Use this method to bypass the restrictions from {@link #canDrainFluidType(FluidStack)}
+		 * Meant for use by the owner of the tank when they have {@link #canDrain()} set to false}.
+		 */
+		@Nullable
+		public FluidStack drainInternal(int maxDrain, boolean doDrain)
+		{
+
+			if (fluid == null || maxDrain <= 0)
+			{
+				return null;
+			}
+
+			int drained = maxDrain;
+			if (fluid.amount < drained)
+			{
+				drained = fluid.amount;
+			}
+
+			FluidStack stack = new FluidStack(fluid, drained);
+			if (doDrain)
+			{
+				fluid.amount -= drained;
+				if (fluid.amount <= 0)
+				{
+					fluid = null;
+				}
+
+				if (tile != null)
+				{
+					FluidEvent.fireEvent(new FluidEvent.FluidDrainingEvent(fluid, tile.getWorld(), tile.getPos(), this, drained));
+				}
+
+				onContentsChanged();
+			}
+			return stack;
+		}
+
+		/**
+		 * Whether this tank can be filled with {@link IFluidHandler}
+		 *
+		 * @see IFluidTankProperties#canFill()
+		 */
+		public boolean canFill()
+		{
+			return canFill;
+		}
+
+		/**
+		 * Whether this tank can be drained with {@link IFluidHandler}
+		 *
+		 * @see IFluidTankProperties#canDrain()
+		 */
+		public boolean canDrain()
+		{
+			return canDrain;
+		}
+
+		/**
+		 * Set whether this tank can be filled with {@link IFluidHandler}
+		 *
+		 * @see IFluidTankProperties#canFill()
+		 */
+		public void setCanFill(boolean canFill)
+		{
+			this.canFill = canFill;
+		}
+
+		/**
+		 * Set whether this tank can be drained with {@link IFluidHandler}
+		 *
+		 * @see IFluidTankProperties#canDrain()
+		 */
+		public void setCanDrain(boolean canDrain)
+		{
+			this.canDrain = canDrain;
+		}
+
+		/**
+		 * Returns true if the tank can be filled with this type of fluid.
+		 * Used as a filter for fluid types.
+		 * Does not consider the current contents or capacity of the tank,
+		 * only whether it could ever fill with this type of fluid.
+		 *
+		 * @see IFluidTankProperties#canFillFluidType(FluidStack)
+		 */
+		public boolean canFillFluidType(FluidStack fluid)
+		{
+
+			return false;
+		}
+
+		/**
+		 * Returns true if the tank can drain out this type of fluid.
+		 * Used as a filter for fluid types.
+		 * Does not consider the current contents or capacity of the tank,
+		 * only whether it could ever drain out this type of fluid.
+		 *
+		 * @see IFluidTankProperties#canDrainFluidType(FluidStack)
+		 */
+		public boolean canDrainFluidType(@Nullable FluidStack fluid)
+		{
+			return fluid != null && canDrain();
+		}
+
+		protected void onContentsChanged()
+		{
+			this.markDirty();
+		}
+
+
+		public int getFill() {
+			if (this.getFluidAmount() > 0) {
+				double fillPercent = ((double) this.getFluidAmount()) / (Fluid.BUCKET_VOLUME * LepidodendronConfig.tarLimitInProcessor);
+				return (int) Math.ceil(fillPercent * 15D);
+			}
+			return 0;
+		}
+
+		public double progressFraction() {
+			return this.isProcessing ? (double)this.processTick / (double)this.processTickTime : (double)0.0F;
+		}
+
+		public double tarFraction() {
+			//return 1;
+			if (this.getFluidAmount() > 0) {
+				return ((double) this.getFluidAmount()) / (Fluid.BUCKET_VOLUME * LepidodendronConfig.tarLimitInProcessor);
+			}
+			return 0;
+		}
+
+		public int getFillFloor() {
+			double fillPercent = ((double) this.getFluidAmount()) / (Fluid.BUCKET_VOLUME * LepidodendronConfig.tarLimitInProcessor);
+			return (int) Math.floor(fillPercent * 15D);
+		}
 
 		public boolean canStartProcess() {
 
@@ -281,6 +629,10 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 				if (!this.hasEnergy(minEnergyNeeded)) {
 					return false;
 				}
+			}
+
+			if (this.getFluidAmount() >= capacityFluid) {
+				return false;
 			}
 
 			if (this.isProcessing) {
@@ -302,7 +654,7 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 			return -1;
 		}
 
-		public double progressFraction() {
+		public double progTarFraction() {
 			if (this.isProcessing) {
 				return (double)this.processTick / (double)this.processTickTime;
 			}
@@ -404,6 +756,8 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 					ItemStack stackProcessing = this.getStackInSlot(0);
 					stackProcessing.shrink(1);
 					this.setInventorySlotContents(1, new ItemStack(ItemBottleOfDNASolvent.block, resultSize + this.getStackInSlot(1).getCount()));
+					this.fluid = new FluidStack(FluidRegistry.getFluid("pn_tar"), Math.min(this.getFluidAmount() + (resultSize * 50), this.capacityFluid));
+
 				}
 				updated = true;
 			}
@@ -490,11 +844,28 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 			if (!this.checkLootAndRead(compound)) {
 				ItemStackHelper.loadAllItems(compound, this.forgeContents);
 			}
+			if (!compound.hasKey("Empty"))
+			{
+				FluidStack fluid = FluidStack.loadFluidStackFromNBT(compound);
+				setFluid(fluid);
+			}
+			else
+			{
+				setFluid(null);
+			}
 		}
 
 		@Override
 		public NBTTagCompound writeToNBT(NBTTagCompound compound) {
 			super.writeToNBT(compound);
+			if (fluid != null)
+			{
+				fluid.writeToNBT(compound);
+			}
+			else
+			{
+				compound.setString("Empty", "");
+			}
 			compound.setInteger("energystored", this.energy);
 			compound.setBoolean("isProcessing", this.isProcessing);
 			compound.setInteger("processTick", this.processTick);
@@ -630,11 +1001,38 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 				if (facing == EnumFacing.WEST) {
 					return (T) handlerWest;
 				}
-
 			}
-			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockCoalTarProcessor.BlockCustom.FACING).getOpposite();
+
+			EnumFacing blockFacing = this.world.getBlockState(this.getPos()).getValue(BlockAcidBath.BlockCustom.FACING);
+			if (facing != null && capability == CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY ) {
+				boolean faceCheck = false;
+				if (facing == EnumFacing.DOWN) {
+					faceCheck = true;
+				} else if (blockFacing == EnumFacing.NORTH) {
+					faceCheck = (facing == EnumFacing.WEST || facing == EnumFacing.EAST || facing == EnumFacing.SOUTH);
+				} else if (blockFacing == EnumFacing.SOUTH) {
+					faceCheck = (facing == EnumFacing.WEST || facing == EnumFacing.EAST || facing == EnumFacing.NORTH);
+				} else if (blockFacing == EnumFacing.EAST) {
+					faceCheck = (facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH || facing == EnumFacing.WEST);
+				} else if (blockFacing == EnumFacing.WEST) {
+					faceCheck = (facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH || facing == EnumFacing.EAST);
+				}
+				if (faceCheck) {
+					return (T) this;
+				}
+			}
+
+			blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockCoalTarProcessor.BlockCustom.FACING).getOpposite();
 			return (capability == CapabilityEnergy.ENERGY && facing == blockFacing) ? (T) this : null;
 
+		}
+
+		@Nullable
+		public <T> T getCapabilityBucket(Capability<T> capability, @Nullable EnumFacing facing) {
+			if (capability == CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY) {
+				return (T) this;
+			}
+			return super.getCapability(capability, facing);
 		}
 
 		public void drainEnergy(int energy) {
@@ -675,6 +1073,27 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 				if (blockstate.getBlock() == BlockCoalTarProcessor.block) {
 					EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockCoalTarProcessor.BlockCustom.FACING).getOpposite();
 					if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
+						return true;
+					}
+				}
+			}
+			if (blockstate != null) {
+				if (blockstate.getBlock() == BlockCoalTarProcessor.block) {
+					EnumFacing blockFacing = this.world.getBlockState(this.getPos()).getValue(BlockCoalTarProcessor.BlockCustom.FACING);
+
+					boolean faceCheck = false;
+					if (facing == EnumFacing.DOWN) {
+						faceCheck = true;
+					} else if (blockFacing == EnumFacing.NORTH) {
+						faceCheck = (facing == EnumFacing.WEST || facing == EnumFacing.EAST || facing == EnumFacing.SOUTH);
+					} else if (blockFacing == EnumFacing.SOUTH) {
+						faceCheck = (facing == EnumFacing.WEST || facing == EnumFacing.EAST || facing == EnumFacing.NORTH);
+					} else if (blockFacing == EnumFacing.EAST) {
+						faceCheck = (facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH || facing == EnumFacing.WEST);
+					} else if (blockFacing == EnumFacing.WEST) {
+						faceCheck = (facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH || facing == EnumFacing.EAST);
+					}
+					if (capability == CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY && faceCheck) {
 						return true;
 					}
 				}

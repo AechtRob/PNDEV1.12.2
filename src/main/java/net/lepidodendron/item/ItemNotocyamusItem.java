@@ -4,10 +4,7 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockSwampHorsetailLand;
-import net.lepidodendron.block.BlockSwampHorsetailLandNoSpore;
-import net.lepidodendron.block.BlockSwampHorsetailWaterNoSpore;
-import net.lepidodendron.block.base.IPottable;
+import net.lepidodendron.block.BlockNotocyamus;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockLiquid;
@@ -39,11 +36,11 @@ import net.minecraftforge.oredict.OreDictionary;
 import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemSwampHorsetailItem extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:swamp_horsetail_item")
+public class ItemNotocyamusItem extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:notocyamus_item")
 	public static final Item block = null;
-	public ItemSwampHorsetailItem(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.swamp_horsetail_item);
+	public ItemNotocyamusItem(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.notocyamus);
 	}
 
 	@Override
@@ -54,23 +51,21 @@ public class ItemSwampHorsetailItem extends ElementsLepidodendronMod.ModElement 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:swamp_horsetail_item", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:notocyamus_item", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:swamp_horsetail_item", ItemSwampHorsetailItem.block);
-		OreDictionary.registerOre("plantPrehistoric", ItemSwampHorsetailItem.block);
-		OreDictionary.registerOre("plant", ItemSwampHorsetailItem.block);
-		OreDictionary.registerOre("leavesHorsetail", ItemSwampHorsetailItem.block);
-		OreDictionary.registerOre("stemHorsetail", ItemSwampHorsetailItem.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:notocyamus_item", ItemNotocyamusItem.block);
+		OreDictionary.registerOre("plantPrehistoric", ItemNotocyamusItem.block);
+		OreDictionary.registerOre("plant", ItemNotocyamusItem.block);
 	}
 
-	public static class ItemCustom extends Item implements IPottable {
+	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			setTranslationKey("pf_swamp_horsetail_item");
-			setRegistryName("swamp_horsetail_item");
+			setTranslationKey("pf_notocyamus_item");
+			setRegistryName("notocyamus_item");
 			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 
@@ -96,47 +91,35 @@ public class ItemSwampHorsetailItem extends ElementsLepidodendronMod.ModElement 
 	
 	                BlockPos blockpos1 = blockpos.up();
 	                IBlockState iblockstate = worldIn.getBlockState(blockpos);
-	                IBlockState iblockstate1 = worldIn.getBlockState(blockpos1);
-					if (BlockSwampHorsetailLandNoSpore.BlockCustom.canSurviveAt(worldIn, blockpos1) && (iblockstate1.getMaterial().isReplaceable())) {
-						worldIn.setBlockState(blockpos1, BlockSwampHorsetailLandNoSpore.block.getDefaultState(), 3);
-						if (!playerIn.capabilities.isCreativeMode)
-		                    {
-		                        itemstack.shrink(1);
-		                    }
+	
+	                if (canSurviveAt(worldIn, blockpos1) && (iblockstate.getMaterial() == Material.WATER && ((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0 && worldIn.isAirBlock(blockpos1)))
+	                {
+	                    // special case for handling block placement with water lilies
+	                    net.minecraftforge.common.util.BlockSnapshot blocksnapshot = net.minecraftforge.common.util.BlockSnapshot.getBlockSnapshot(worldIn, blockpos1);
+	                    worldIn.setBlockState(blockpos1, BlockNotocyamus.block.getDefaultState());
+	                    if (net.minecraftforge.event.ForgeEventFactory.onPlayerBlockPlace(playerIn, blocksnapshot, net.minecraft.util.EnumFacing.UP, handIn).isCanceled())
+	                    {
+	                        blocksnapshot.restore(true, false);
+	                        return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
+	                    }
+	
+	                    worldIn.setBlockState(blockpos1, BlockNotocyamus.block.getDefaultState(), 11);
+	
+	                    if (playerIn instanceof EntityPlayerMP)
+	                    {
+	                        CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)playerIn, blockpos1, itemstack);
+	                    }
+	
+	                    if (!playerIn.capabilities.isCreativeMode && itemstack.getItem() == this)
+	                    {
+	                        itemstack.shrink(1);
+	                    }
+	
 	                    playerIn.addStat(StatList.getObjectUseStats(this));
 	                    worldIn.playSound(playerIn, blockpos, SoundEvents.BLOCK_WATERLILY_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
 	                    return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
-					}
-					else {
-		                if (canSurviveAt(worldIn, blockpos1) && (iblockstate.getMaterial() == Material.WATER && ((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0 && worldIn.isAirBlock(blockpos1)))
-		                {
-		                    // special case for handling block placement with water lilies
-		                    net.minecraftforge.common.util.BlockSnapshot blocksnapshot = net.minecraftforge.common.util.BlockSnapshot.getBlockSnapshot(worldIn, blockpos1);
-		                    worldIn.setBlockState(blockpos1, BlockSwampHorsetailWaterNoSpore.block.getDefaultState());
-		                    if (net.minecraftforge.event.ForgeEventFactory.onPlayerBlockPlace(playerIn, blocksnapshot, net.minecraft.util.EnumFacing.UP, handIn).isCanceled())
-		                    {
-		                        blocksnapshot.restore(true, false);
-		                        return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
-		                    }
-		
-		                    worldIn.setBlockState(blockpos1, BlockSwampHorsetailWaterNoSpore.block.getDefaultState(), 11);
-		
-		                    if (playerIn instanceof EntityPlayerMP)
-		                    {
-		                        CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)playerIn, blockpos1, itemstack);
-		                    }
-		
-		                    if (!playerIn.capabilities.isCreativeMode)
-		                    {
-		                        itemstack.shrink(1);
-		                    }
-		
-		                    playerIn.addStat(StatList.getObjectUseStats(this));
-		                    worldIn.playSound(playerIn, blockpos, SoundEvents.BLOCK_WATERLILY_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
-		                    return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
-		                }
-		            }
-	        	}
+	                }
+	            }
 	
 	            return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
 	        }
@@ -146,17 +129,12 @@ public class ItemSwampHorsetailItem extends ElementsLepidodendronMod.ModElement 
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Horsetail plant");
-				tooltip.add("Periods: [Carboniferous - ] Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]");
-				tooltip.add("Note: Placed either next to water or at water surface of one-block deep water, over grass, dirt, clay or sand; spreads if there is light.");
-				tooltip.add("Propagation: Spores");}
+				tooltip.add("Type: Flowering water plant");
+				tooltip.add("Periods: Early Cretaceous");
+				tooltip.add("Note: Placed at water surface of one-block deep water, over dirt, clay or sand; spreads if there is light.");
+				tooltip.add("Propagation: Flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
-
-		@Override
-		public IBlockState getPotState() {
-			return BlockSwampHorsetailLand.block.getDefaultState();
-		}
 	}
 
 	public static boolean canSurviveAt(World worldIn, BlockPos pos) {
@@ -166,7 +144,6 @@ public class ItemSwampHorsetailItem extends ElementsLepidodendronMod.ModElement 
     	}
     	if ((worldIn.getBlockState(pos.down(2)).getMaterial() != Material.GROUND) 
     		&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.CLAY)
-    		&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.GRASS)
     		&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.SAND))
     	{
     		return false;

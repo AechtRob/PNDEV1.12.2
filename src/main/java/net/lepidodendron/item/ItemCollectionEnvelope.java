@@ -470,9 +470,13 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 					}
 					spores.getTagCompound().setString("plant", nbtBlock);
 					spores.getTagCompound().setInteger("offsetY", nbtOffsetY);
-					//if (!player.isCreative()) {
-						ItemHandlerHelper.giveItemToPlayer(player, spores);
-					//}
+					ItemHandlerHelper.giveItemToPlayer(player, spores);
+					if (blockTarget instanceof SeedSporeLilyPadBase) {
+						if (((SeedSporeLilyPadBase)blockTarget).decaysToState() != null)
+						{
+							worldIn.setBlockState(target, ((SeedSporeLilyPadBase)blockTarget).decaysToState(), 3);
+						}
+					}
 
 					return true;
 				}
