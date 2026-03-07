@@ -4,7 +4,6 @@ package net.lepidodendron.entity;
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
@@ -60,7 +59,7 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{LOOK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION};
+		return new Animation[]{LOOK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION};
 	}
 
 	@Override
@@ -284,7 +283,7 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 			this.faceEntity(this.getGrappleTarget(), 10, 10);
 		}
 
-		AnimationHandler.INSTANCE.updateAnimations(this);
+		//AnimationHandler.INSTANCE.updateAnimations(this); ALREADY EXISTS IN PARENT
 
 	}
 
