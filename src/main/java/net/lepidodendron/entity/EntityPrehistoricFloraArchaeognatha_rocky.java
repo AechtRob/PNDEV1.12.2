@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraArchaeognatha_rocky extends EntityPrehistoric
 
 	@Override
 	public int jumpCooldown() {
-		return 5000;
+		return 2000;
 	}
 
 	@Override
