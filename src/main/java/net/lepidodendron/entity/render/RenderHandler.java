@@ -9239,6 +9239,30 @@ public class RenderHandler {
                 return new RenderArchaeognatha_rocky(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRafaeliana.class, new IRenderFactory<EntityPrehistoricFloraRafaeliana>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraRafaeliana> createRenderFor(RenderManager manager) {
+                return new RenderRafaeliana(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRaptoblatta.class, new IRenderFactory<EntityPrehistoricFloraRaptoblatta>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraRaptoblatta> createRenderFor(RenderManager manager) {
+                return new RenderRaptoblatta(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCratosirex.class, new IRenderFactory<EntityPrehistoricFloraCratosirex>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCratosirex> createRenderFor(RenderManager manager) {
+                return new RenderCratosirex(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMegalithomerus.class, new IRenderFactory<EntityPrehistoricFloraMegalithomerus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMegalithomerus> createRenderFor(RenderManager manager) {
+                return new RenderMegalithomerus(manager);
+            }
+        });
 
 
 

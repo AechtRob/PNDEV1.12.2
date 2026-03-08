@@ -200,7 +200,10 @@ public class WorldGenAncientMoss extends WorldGenerator
 					"lepidodendron:prehistoric_flora_archaeognatha_rocky",
 					"lepidodendron:prehistoric_flora_archaeognatha_jungle",
 					"lepidodendron:prehistoric_flora_umenopterix",
-					"lepidodendron:prehistoric_flora_petropterix"
+					"lepidodendron:prehistoric_flora_petropterix",
+					"lepidodendron:prehistoric_flora_raptoblatta",
+					"lepidodendron:prehistoric_flora_rafaeliana",
+					"lepidodendron:prehistoric_flora_megalithomerus"
 			};
 
 			ArrayList<String> mobStringValid = new ArrayList<String>();
