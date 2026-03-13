@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:archaeognatha_jungle_raw"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_archaeognatha_jungle.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_archaeognatha_jungle.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_archaeognatha_jungle"
+        }
+    }
+}

@@ -14,10 +14,11 @@ public class RenderArchaboilus extends RenderLivingBaseWithBook<EntityPrehistori
 
 
     public static float getScaler() {
-        return 0.7F * 0.28F;
+        return 0.7F * 0.14F;
     }
     public RenderArchaboilus(RenderManager mgr) {
         super(mgr, new ModelArchaboilus(), 0.0f);
+        this.addLayer(new LayerArchaboilusWing(this));
     }
 
     @Override
