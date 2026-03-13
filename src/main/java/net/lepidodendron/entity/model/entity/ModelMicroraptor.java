@@ -735,7 +735,7 @@ public class ModelMicroraptor extends ModelBasePalaeopedia {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
         EntityPrehistoricFloraMicroraptor ee = (EntityPrehistoricFloraMicroraptor) entitylivingbaseIn;
-        if (ee.getIsFlying() || ee.getIsClimbing()) {
+        if (ee.getIsFlying() || ee.getIsClimbing() || ee.getIsLaunching()) {
 
             this.leftTertials.setScale((float)1,(float)1,(float)1);
             this.rightTertials.setScale((float)1,(float)1,(float)1);
@@ -886,16 +886,7 @@ public class ModelMicroraptor extends ModelBasePalaeopedia {
         this.setRotateAngle(neck4, neck4.rotateAngleX + (float) Math.toRadians(-18.25-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180/0.3-400))*9), neck4.rotateAngleY + (float) Math.toRadians(0), neck4.rotateAngleZ + (float) Math.toRadians(0));
 
 
-
-
-
-        {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(leftarm, leftarm.rotateAngleX + (float) Math.toRadians(xx), leftarm.rotateAngleY + (float) Math.toRadians(yy), leftarm.rotateAngleZ + (float) Math.toRadians(zz));
-
+        this.setRotateAngle(leftarm, leftarm.rotateAngleX + (float) Math.toRadians(-78.5394-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180/0.3))*-30), leftarm.rotateAngleY + (float) Math.toRadians(-1.0776-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180/0.3))*-30), leftarm.rotateAngleZ + (float) Math.toRadians(-60.7381+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180/0.3))*-30));
 
 
         this.setRotateAngle(leftTertials, leftTertials.rotateAngleX + (float) Math.toRadians(0), leftTertials.rotateAngleY + (float) Math.toRadians(0), leftTertials.rotateAngleZ + (float) Math.toRadians(-11));
@@ -919,16 +910,7 @@ public class ModelMicroraptor extends ModelBasePalaeopedia {
         this.setRotateAngle(leftPrimaries3, leftPrimaries3.rotateAngleX + (float) Math.toRadians(48.2308561937-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180/0.3))*-25), leftPrimaries3.rotateAngleY + (float) Math.toRadians(3.1521460885+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-160))), leftPrimaries3.rotateAngleZ + (float) Math.toRadians(-9.75821));
 
 
-
-
-
-     {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(rightarm, rightarm.rotateAngleX + (float) Math.toRadians(xx), rightarm.rotateAngleY + (float) Math.toRadians(yy), rightarm.rotateAngleZ + (float) Math.toRadians(zz));
-
+        this.setRotateAngle(rightarm, rightarm.rotateAngleX + (float) Math.toRadians(-78.5394-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180/0.3))*-30), rightarm.rotateAngleY + (float) Math.toRadians(-1.0776-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180/0.3))*30), rightarm.rotateAngleZ + (float) Math.toRadians(60.7381+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180/0.3))*30));
 
 
         this.setRotateAngle(rightTertials, rightTertials.rotateAngleX + (float) Math.toRadians(0), rightTertials.rotateAngleY + (float) Math.toRadians(0), rightTertials.rotateAngleZ + (float) Math.toRadians(11));
@@ -4924,21 +4906,21 @@ public class ModelMicroraptor extends ModelBasePalaeopedia {
 
 
 
-
-
-
-
-
-        if (tickAnim >= 75 && tickAnim < 90) {
+        if (tickAnim >= 0 && tickAnim < 75) {
+            xx = -78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*-25 + (((tickAnim - 0) / 75) * (-78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2-(-78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*-25)));
+            yy = -1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*-25 + (((tickAnim - 0) / 75) * (-1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5-(-1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*-25)));
+            zz = -60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*-25 + (((tickAnim - 0) / 75) * (-60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5-(-60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*-25)));
+        }
+        else if (tickAnim >= 75 && tickAnim < 90) {
             xx = -78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2 + (((tickAnim - 75) / 15) * (-78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2-(-78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2)));
             yy = -1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5 + (((tickAnim - 75) / 15) * (-1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5-(-1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5)));
             zz = -60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5 + (((tickAnim - 75) / 15) * (-60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5-(-60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5)));
         }
-
-
-
-
-
+        else if (tickAnim >= 90 && tickAnim < 120) {
+            xx = -78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2 + (((tickAnim - 90) / 30) * (-78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*-25-(-78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2)));
+            yy = -1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5 + (((tickAnim - 90) / 30) * (-1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*-25-(-1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5)));
+            zz = -60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5 + (((tickAnim - 90) / 30) * (-60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*-25-(-60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5)));
+        }
         else {
             xx = 0;
             yy = 0;
@@ -5124,21 +5106,21 @@ public class ModelMicroraptor extends ModelBasePalaeopedia {
 
 
 
-
-
-
-
-
-        if (tickAnim >= 75 && tickAnim < 90) {
+        if (tickAnim >= 0 && tickAnim < 75) {
+            xx = -78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*-25 + (((tickAnim - 0) / 75) * (-78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2-(-78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*-25)));
+            yy = -1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*25 + (((tickAnim - 0) / 75) * (-1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5-(-1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*25)));
+            zz = 60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*25 + (((tickAnim - 0) / 75) * (60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5-(60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*25)));
+        }
+        else if (tickAnim >= 75 && tickAnim < 90) {
             xx = -78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2 + (((tickAnim - 75) / 15) * (-78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2-(-78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2)));
             yy = -1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5 + (((tickAnim - 75) / 15) * (-1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5-(-1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5)));
             zz = 60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5 + (((tickAnim - 75) / 15) * (60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5-(60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5)));
         }
-
-
-
-
-
+        else if (tickAnim >= 90 && tickAnim < 120) {
+            xx = -78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2 + (((tickAnim - 90) / 30) * (-78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*-25-(-78.5394-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2)));
+            yy = -1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5 + (((tickAnim - 90) / 30) * (-1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*25-(-1.0776-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5)));
+            zz = 60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5 + (((tickAnim - 90) / 30) * (60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180/0.3))*25-(60.7381+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5)));
+        }
         else {
             xx = 0;
             yy = 0;

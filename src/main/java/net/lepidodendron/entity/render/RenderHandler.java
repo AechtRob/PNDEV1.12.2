@@ -9239,28 +9239,22 @@ public class RenderHandler {
                 return new RenderArchaeognatha_rocky(manager);
             }
         });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRafaeliana.class, new IRenderFactory<EntityPrehistoricFloraRafaeliana>() {
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTarbosaurus.class, new IRenderFactory<EntityPrehistoricFloraTarbosaurus>() {
             @Override
-            public Render<? super EntityPrehistoricFloraRafaeliana> createRenderFor(RenderManager manager) {
-                return new RenderRafaeliana(manager);
+            public Render<? super EntityPrehistoricFloraTarbosaurus> createRenderFor(RenderManager manager) {
+                return new RenderTarbosaurus(manager);
             }
         });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRaptoblatta.class, new IRenderFactory<EntityPrehistoricFloraRaptoblatta>() {
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraStruthiomimus.class, new IRenderFactory<EntityPrehistoricFloraStruthiomimus>() {
             @Override
-            public Render<? super EntityPrehistoricFloraRaptoblatta> createRenderFor(RenderManager manager) {
-                return new RenderRaptoblatta(manager);
+            public Render<? super EntityPrehistoricFloraStruthiomimus> createRenderFor(RenderManager manager) {
+                return new RenderStruthiomimus(manager);
             }
         });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCratosirex.class, new IRenderFactory<EntityPrehistoricFloraCratosirex>() {
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraProtoceratops.class, new IRenderFactory<EntityPrehistoricFloraProtoceratops>() {
             @Override
-            public Render<? super EntityPrehistoricFloraCratosirex> createRenderFor(RenderManager manager) {
-                return new RenderCratosirex(manager);
-            }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMegalithomerus.class, new IRenderFactory<EntityPrehistoricFloraMegalithomerus>() {
-            @Override
-            public Render<? super EntityPrehistoricFloraMegalithomerus> createRenderFor(RenderManager manager) {
-                return new RenderMegalithomerus(manager);
+            public Render<? super EntityPrehistoricFloraProtoceratops> createRenderFor(RenderManager manager) {
+                return new RenderProtoceratops(manager);
             }
         });
 

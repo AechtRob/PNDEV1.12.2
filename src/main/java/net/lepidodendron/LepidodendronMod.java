@@ -3821,8 +3821,14 @@ public class LepidodendronMod {
 	static final int ENTITY_LAGANOSUCHUS = 1607;
 	static final int ENTITY_ADALATHERIUM = 1608;
 	static final int ENTITY_TARBOSAURUS = 1609;
+	public static final ResourceLocation TARBOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tarbosaurus"));
+	public static final ResourceLocation TARBOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tarbosaurus_young"));
 	static final int ENTITY_STRUTHIOMIMUS = 1610;
+	public static final ResourceLocation STRUTHIOMIMUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/struthiomimus"));
+	public static final ResourceLocation STRUTHIOMIMUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/struthiomimus_young"));
 	static final int ENTITY_PROTOCERATOPS = 1611;
+	public static final ResourceLocation PROTOCERATOPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/protoceratops"));
+	public static final ResourceLocation PROTOCERATOPS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/protoceratops_young"));
 	static final int ENTITY_VELOCIRAPTOR = 1612;
 	static final int ENTITY_CONCAVOTECTUM = 1613;
 	public static final ResourceLocation CONCAVOTECTUM_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/concavotectum"));
