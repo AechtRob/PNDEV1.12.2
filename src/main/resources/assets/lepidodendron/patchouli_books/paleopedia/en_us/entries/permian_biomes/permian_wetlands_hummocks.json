@@ -1,12 +1,12 @@
 {
-	"name": "Wooded Wetland Hummocks",
+	"name": "Hummocks",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_permian.png",
 	"category": "lepidodendron:permian/permian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Permian Wooded Wetland Hummocks$(br2)$()All mobile creatures that can be found here in the mod, in alphabetical order."
+			"text": "$(l)Permian Hummocks$(br2)$()All mobile creatures that can be found here in the mod, in alphabetical order."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

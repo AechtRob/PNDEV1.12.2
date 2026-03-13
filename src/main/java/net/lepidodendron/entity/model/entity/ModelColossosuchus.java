@@ -460,7 +460,7 @@ public class ModelColossosuchus extends ModelBasePalaeopedia {
         else {
             if (!proteros.isReallyInWater()) {
 
-                if (f3 == 0.0F || !proteros.getIsMoving()) {
+                if (f3 == 0.0F || !proteros.getIsMoving() && !(proteros.getAnimation() == proteros.STAND_ANIMATION)) {
                     this.chainSwing(Neck, 0.05F, 0.10F, 0.5, f2, 0.8F);
                     this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
                     this.chainWave(Tail, (0.15F * 0.35F), 0.125F * 0.15F, 0.2F, f2, 1F);

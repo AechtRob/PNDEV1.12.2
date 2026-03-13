@@ -77,6 +77,8 @@ public class BlockFieldHorsetail extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plantPrehistoric", BlockFieldHorsetail.block);
 		OreDictionary.registerOre("plant", BlockFieldHorsetail.block);
 		OreDictionary.registerOre("leavesHorsetail", BlockFieldHorsetail.block);
+		OreDictionary.registerOre("stemHorsetail", BlockFieldHorsetail.block);
+
 	}
 
 	public static class BlockCustom extends SeedSporeBushBase implements IGrowable, IAdvancementGranter, IPottable {

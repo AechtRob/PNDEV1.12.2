@@ -62,6 +62,7 @@ public class ItemMarginalHorsetailItem extends ElementsLepidodendronMod.ModEleme
 		OreDictionary.registerOre("plantPrehistoric", ItemMarginalHorsetailItem.block);
 		OreDictionary.registerOre("plant", ItemMarginalHorsetailItem.block);
 		OreDictionary.registerOre("leavesHorsetail", ItemMarginalHorsetailItem.block);
+		OreDictionary.registerOre("stemHorsetail", ItemMarginalHorsetailItem.block);
 	}
 
 	public static class ItemCustom extends Item implements IPottable {

@@ -2,10 +2,12 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.boats.EntityPNBoat;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderBoat;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 
 public class RenderPNBoat extends RenderBoat {
 
@@ -107,6 +109,22 @@ public class RenderPNBoat extends RenderBoat {
 
     public RenderPNBoat(RenderManager renderManagerIn) {
         super(renderManagerIn);
+    }
+
+    @Override
+    public void setupRotation(EntityBoat entityBoat, float p_188311_2_, float p_188311_3_) {
+        GlStateManager.rotate(180.0F - p_188311_2_, 0.0F, 1.0F, 0.0F);
+        float lvt_4_1_ = (float)entityBoat.getTimeSinceHit() - p_188311_3_;
+        float lvt_5_1_ = ((EntityPNBoat)entityBoat).getDamageTaken() - p_188311_3_;
+        if (lvt_5_1_ < 0.0F) {
+            lvt_5_1_ = 0.0F;
+        }
+
+        if (lvt_4_1_ > 0.0F) {
+            GlStateManager.rotate(MathHelper.sin(lvt_4_1_) * lvt_4_1_ * lvt_5_1_ / 10.0F * (float)entityBoat.getForwardDirection(), 1.0F, 0.0F, 0.0F);
+        }
+
+        GlStateManager.scale(-1.0F, -1.0F, 1.0F);
     }
 
     @Override

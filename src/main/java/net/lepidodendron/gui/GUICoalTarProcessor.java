@@ -272,6 +272,7 @@ public class GUICoalTarProcessor extends ElementsLepidodendronMod.ModElement {
             if (LepidodendronConfig.machinesRF) {
                 this.renderRF(mouseX, mouseY);
             }
+            this.renderTar(mouseX, mouseY);
         }
 
         protected void renderRF(int mouseX, int mouseY)
@@ -284,6 +285,19 @@ public class GUICoalTarProcessor extends ElementsLepidodendronMod.ModElement {
             {
                 DecimalFormat df = new DecimalFormat("###,###,###");
                 this.drawHoveringText(df.format(this.getCurrentRF()) + " / " + df.format(this.getMaxRF()) + " RF", mouseX, mouseY);
+            }
+        }
+
+        protected void renderTar(int mouseX, int mouseY)
+        {
+            int k = (this.width - this.xSize) / 2;
+            int l = (this.height - this.ySize) / 2;
+
+            if (mouseX >= k + 150 && mouseX <= k + 150 + 16
+                    && mouseY >= l + 41 - 16 && mouseY <= l + 51 - 16 + 34)
+            {
+                DecimalFormat df = new DecimalFormat("###,###,###");
+                this.drawHoveringText(df.format(this.getCurrentTar()) + " mb of Tar", mouseX, mouseY);
             }
         }
 
@@ -304,8 +318,18 @@ public class GUICoalTarProcessor extends ElementsLepidodendronMod.ModElement {
             if (tileEntity != null) {
                 if (tileEntity instanceof BlockCoalTarProcessor.TileEntityCoalTarProcessor) {
                     BlockCoalTarProcessor.TileEntityCoalTarProcessor te = (BlockCoalTarProcessor.TileEntityCoalTarProcessor) tileEntity;
-                    //return (int)Math.round(te.progressFraction() * 70D);
                     return te.getMaxEnergyStored();
+                }
+            }
+            return 0;
+        }
+
+        private int getCurrentTar() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockCoalTarProcessor.TileEntityCoalTarProcessor) {
+                    BlockCoalTarProcessor.TileEntityCoalTarProcessor te = (BlockCoalTarProcessor.TileEntityCoalTarProcessor) tileEntity;
+                    return te.getFluidAmount();
                 }
             }
             return 0;
@@ -327,7 +351,10 @@ public class GUICoalTarProcessor extends ElementsLepidodendronMod.ModElement {
             this.drawTexturedModalRect(k + 79, l + 39, 176, 14, getProgressBarLength(), 16);
             //Flames:
             this.drawTexturedModalRect(k + 58, l + 23 + (14 - getFlameHeight()), 176, 0 + (14 - getFlameHeight()), 14, getFlameHeight());
+            //Tar:
+            this.drawTexturedModalRect(k + 150, l + 47 + (30 - this.getTarDepth()) - 8, 26,169, 16, this.getTarDepth());
         }
+
 
         private int getFlameHeight() {
             TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
@@ -359,6 +386,17 @@ public class GUICoalTarProcessor extends ElementsLepidodendronMod.ModElement {
                 if (tileEntity instanceof BlockCoalTarProcessor.TileEntityCoalTarProcessor) {
                     BlockCoalTarProcessor.TileEntityCoalTarProcessor te = (BlockCoalTarProcessor.TileEntityCoalTarProcessor) tileEntity;
                     return (int)Math.round(te.progressFraction() * 22D);
+                }
+            }
+            return 0;
+        }
+
+        private int getTarDepth() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockCoalTarProcessor.TileEntityCoalTarProcessor) {
+                    BlockCoalTarProcessor.TileEntityCoalTarProcessor te = (BlockCoalTarProcessor.TileEntityCoalTarProcessor) tileEntity;
+                    return (int)Math.round(te.tarFraction() * 43D);
                 }
             }
             return 0;

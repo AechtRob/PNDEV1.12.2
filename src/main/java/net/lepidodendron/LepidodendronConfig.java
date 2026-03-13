@@ -46,6 +46,7 @@ public class LepidodendronConfig {
     public static boolean sulphuricAcidGrief = true;
     public static boolean sulphuricAcidInfinite = false;
     public static boolean giveBook = true;
+    public static int tarLimitInProcessor = 10;
     public static boolean submarineNightvision = true;
     public static boolean doGrazeGrief = true;
     public static int[] dimFireSpreadBlacklist = new int[0];
@@ -796,6 +797,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "giveBook", giveBook);
         prop.setComment("Give new players a copy of the Palaeopedia when they join. [default: true]");
         giveBook = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "tarLimitInProcessor", tarLimitInProcessor);
+        prop.setComment("Number of buckets of tar the Tar Processor can hold before it stops. [default: 10]");
+        tarLimitInProcessor = prop.getInt();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "submarineNightvision", submarineNightvision);

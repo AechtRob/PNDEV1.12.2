@@ -223,7 +223,7 @@ public class EntityPrehistoricFloraSpicomellus extends EntityPrehistoricFloraLan
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.25F;
+		float speedBase = 0.27F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

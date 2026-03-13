@@ -64,6 +64,7 @@ public class ItemSwampHorsetailItem extends ElementsLepidodendronMod.ModElement 
 		OreDictionary.registerOre("plantPrehistoric", ItemSwampHorsetailItem.block);
 		OreDictionary.registerOre("plant", ItemSwampHorsetailItem.block);
 		OreDictionary.registerOre("leavesHorsetail", ItemSwampHorsetailItem.block);
+		OreDictionary.registerOre("stemHorsetail", ItemSwampHorsetailItem.block);
 	}
 
 	public static class ItemCustom extends Item implements IPottable {

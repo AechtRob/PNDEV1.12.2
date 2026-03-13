@@ -1283,8 +1283,11 @@ public class EntityPNBoat extends EntityBoat
     @Override
     public float getDamageTaken()
     {
-        return ((Float)this.dataManager.get(DAMAGE_TAKEN)).floatValue();
+
+        return this.dataManager.get(DAMAGE_TAKEN);
+        //return ((Float)this.dataManager.get(DAMAGE_TAKEN)).floatValue();
     }
+
 
     @Override
     public void setTimeSinceHit(int timeSinceHit)

@@ -64,7 +64,7 @@ public class EntityPrehistoricFloraBeipiaosaurus extends EntityPrehistoricFloraL
 		maxHeight = 1.1F;
 		maxHealthAgeable = 55.0D;
 		STAND_ANIMATION = Animation.create(60);
-        ALERT_ANIMATION = Animation.create(60);
+        ALERT_ANIMATION = Animation.create(200);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

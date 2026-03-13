@@ -5553,6 +5553,9 @@ public class LepidodendronSorter {
     public static final int reeds_seeds = 8416;
     public static final int seedy_grass = 8417;
     public static final int seedy_grass_seeds = 8418;
+
+    public static final int notocyamus = 8419;
+    public static final int notocyamus_flower = 8420;
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;
@@ -6443,6 +6446,10 @@ public class LepidodendronSorter {
     public static final int gigamachilis_raw = 5979;
     public static final int archaeognatha_rocky_raw = 5980;
     public static final int archaeognatha_jungle_raw = 5981;
+    public static final int megalithomerus_raw = 5982;
+    public static final int cratosirex_raw = 5983;
+    public static final int raptoblatta_raw = 5984;
+    public static final int rafaeliana_raw = 5985;
 
     public static final int bivalve_toucasia = 6000;
     public static final int coeloptychium = 6001;
