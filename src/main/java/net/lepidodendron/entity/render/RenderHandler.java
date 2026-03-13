@@ -9239,6 +9239,24 @@ public class RenderHandler {
                 return new RenderArchaeognatha_rocky(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTarbosaurus.class, new IRenderFactory<EntityPrehistoricFloraTarbosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTarbosaurus> createRenderFor(RenderManager manager) {
+                return new RenderTarbosaurus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraStruthiomimus.class, new IRenderFactory<EntityPrehistoricFloraStruthiomimus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraStruthiomimus> createRenderFor(RenderManager manager) {
+                return new RenderStruthiomimus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraProtoceratops.class, new IRenderFactory<EntityPrehistoricFloraProtoceratops>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraProtoceratops> createRenderFor(RenderManager manager) {
+                return new RenderProtoceratops(manager);
+            }
+        });
 
 
 
