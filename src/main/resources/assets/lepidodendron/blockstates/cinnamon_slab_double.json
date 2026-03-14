@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:cinnamon_slab_double"
+    }
+  }
+}

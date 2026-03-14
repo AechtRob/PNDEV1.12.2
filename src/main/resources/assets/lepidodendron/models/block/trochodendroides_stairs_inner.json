@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/trochodendroides_planks",
+    "top": "lepidodendron:blocks/trochodendroides_planks",
+    "side": "lepidodendron:blocks/trochodendroides_planks"
+  }
+}

@@ -134,6 +134,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_HORODYSKIA = new CustomTrigger("pf_book_horodyskia");
     public static final CustomTrigger CLICK_ARTHROPITYS = new CustomTrigger("pf_book_arthropitys");
     public static final CustomTrigger CLICK_ARTOCARPUS = new CustomTrigger("pf_book_artocarpus");
+    public static final CustomTrigger CLICK_MAHOGANY = new CustomTrigger("pf_book_mahogany");
+    public static final CustomTrigger CLICK_CINNAMON = new CustomTrigger("pf_book_cinnamon");
     public static final CustomTrigger CLICK_ASTEROXYLON = new CustomTrigger("pf_book_asteroxylon");
     public static final CustomTrigger CLICK_AULACERA = new CustomTrigger("pf_book_aulacera");
     public static final CustomTrigger CLICK_AUSIA = new CustomTrigger("pf_book_ausia");
@@ -439,6 +441,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MACROTAENIOPTERIS = new CustomTrigger("pf_book_macrotaeniopteris");
     public static final CustomTrigger CLICK_MAGNOLIA = new CustomTrigger("pf_book_magnolia");
     public static final CustomTrigger CLICK_MAPLE = new CustomTrigger("pf_book_maple");
+    public static final CustomTrigger CLICK_TROCHODENDROIDES = new CustomTrigger("pf_book_trochodendroides");
+    public static final CustomTrigger CLICK_CERCIDIPHYLLUM = new CustomTrigger("pf_book_cercidiphyllum");
     public static final CustomTrigger CLICK_DINOPHYTON = new CustomTrigger("pf_book_dinophyton");
     public static final CustomTrigger CLICK_GUNNERA = new CustomTrigger("pf_book_gunnera");
     public static final CustomTrigger CLICK_MARATTIA = new CustomTrigger("pf_book_marattia");
@@ -2565,6 +2569,8 @@ public class ModTriggers
             CLICK_HORODYSKIA,
             CLICK_ARTHROPITYS,
             CLICK_ARTOCARPUS,
+            CLICK_MAHOGANY,
+            CLICK_CINNAMON,
             CLICK_ASTEROXYLON,
             CLICK_AULACERA,
             CLICK_AUSIA,
@@ -2866,6 +2872,8 @@ public class ModTriggers
             CLICK_MACROTAENIOPTERIS,
             CLICK_MAGNOLIA,
             CLICK_MAPLE,
+            CLICK_TROCHODENDROIDES,
+            CLICK_CERCIDIPHYLLUM,
             CLICK_DINOPHYTON,
             CLICK_GUNNERA,
             CLICK_MARATTIA,

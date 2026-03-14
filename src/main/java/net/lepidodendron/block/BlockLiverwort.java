@@ -274,7 +274,10 @@ public class BlockLiverwort extends ElementsLepidodendronMod.ModElement {
 			if ((worldIn.getBlockState(pos).getBlock() == BlockLiverwort.block && Math.random() > 0.8 || forced)) {
 				if ((Boolean) state.getValue(SPREADABLE)) {
 					//System.err.println("Ticked a spreadable block");
-					int spreadradius = (int) LepidodendronConfigPlants.radiusNematophyta;
+					int spreadradius = (int) LepidodendronConfigPlants.radiusLiverwort;
+					if (forced) {
+						spreadradius = 2;
+					}
 					if (spreadradius < 0) {spreadradius = 0;}
 					if (spreadradius > 8) {spreadradius = 8;}
 

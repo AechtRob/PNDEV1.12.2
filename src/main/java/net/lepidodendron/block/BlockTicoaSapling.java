@@ -100,7 +100,7 @@ public class BlockTicoaSapling extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_SAHNIOXYLON;
+			return ModTriggers.CLICK_TICOA;
 		}
 
 		@Override

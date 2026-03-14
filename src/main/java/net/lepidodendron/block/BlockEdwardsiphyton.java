@@ -860,6 +860,9 @@ public class BlockEdwardsiphyton extends ElementsLepidodendronMod.ModElement {
 				if ((Boolean) state.getValue(SPREADABLE)) {
 					//System.err.println("Ticked a spreadable block");
 					int spreadradius = (int) LepidodendronConfigPlants.radiusEdwardsiphyton;
+					if (forced) {
+						spreadradius = 3;
+					}
 					if (spreadradius < 0) {spreadradius = 0;}
 					if (spreadradius > 8) {spreadradius = 8;}
 

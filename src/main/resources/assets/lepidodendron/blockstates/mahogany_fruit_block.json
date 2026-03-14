@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:mahogany_fruit_1"},
+      {"model": "lepidodendron:mahogany_fruit_2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:mahogany_fruit_block_inventory"
+    }
+  }
+}

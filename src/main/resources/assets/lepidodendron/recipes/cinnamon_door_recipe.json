@@ -1,0 +1,33 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ "01",
+ "23",
+ "45"
+ ],
+ "key": {
+ "0": {
+ "item": "lepidodendron:cinnamon_planks"
+ },
+ "1": {
+ "item": "lepidodendron:cinnamon_planks"
+ },
+ "2": {
+ "item": "lepidodendron:cinnamon_planks"
+ },
+ "3": {
+ "item": "lepidodendron:cinnamon_planks"
+ },
+ "4": {
+ "item": "lepidodendron:cinnamon_planks"
+ },
+ "5": {
+ "item": "lepidodendron:cinnamon_planks"
+ }
+ },
+ "result": {
+ "item": "lepidodendron:cinnamon_door_item",
+ "count": 3
+ }
+}

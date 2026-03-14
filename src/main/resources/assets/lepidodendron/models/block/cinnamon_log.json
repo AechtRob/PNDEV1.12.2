@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/cinnamon_log_end",
+    "up": "lepidodendron:blocks/cinnamon_log_end",
+    "north": "lepidodendron:blocks/cinnamon_log",
+    "east": "lepidodendron:blocks/cinnamon_log",
+    "south": "lepidodendron:blocks/cinnamon_log",
+    "west": "lepidodendron:blocks/cinnamon_log",
+    "particle": "lepidodendron:blocks/cinnamon_log_end"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:trochodendroides_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:trochodendroides_slab_top"
+    }
+  }
+}

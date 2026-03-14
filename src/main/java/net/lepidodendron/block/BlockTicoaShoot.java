@@ -75,7 +75,7 @@ public class BlockTicoaShoot extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_CYCAS;
+			return ModTriggers.CLICK_TICOA;
 		}
 
 		@Override

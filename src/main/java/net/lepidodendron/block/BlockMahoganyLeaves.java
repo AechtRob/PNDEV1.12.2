@@ -1,0 +1,121 @@
+
+package net.lepidodendron.block;
+
+import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.BlockLeavesPF;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockLeaves;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMap;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nullable;
+import java.util.Random;
+
+@ElementsLepidodendronMod.ModElement.Tag
+public class BlockMahoganyLeaves extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:mahogany_leaves")
+	public static final Block block = null;
+	public BlockMahoganyLeaves(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.mahogany_leaves);
+	}
+
+	@Override
+	public void initElements() {
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("mahogany_leaves"));
+		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
+	}
+
+	@SideOnly(Side.CLIENT)
+	@Override
+	public void registerModels(ModelRegistryEvent event) {
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
+				new ModelResourceLocation("lepidodendron:mahogany_leaves", "inventory"));
+		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:mahogany_sapling", BlockMahoganyLeaves.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockMahoganyLeaves.block);
+		OreDictionary.registerOre("plant", BlockMahoganyLeaves.block);
+		OreDictionary.registerOre("treeLeaves", BlockMahoganyLeaves.block);
+	}
+
+	public static class BlockCustom extends BlockLeavesPF {
+		public BlockCustom() {
+			setTranslationKey("pf_mahogany_leaves");
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_MAHOGANY;
+		}
+
+		@Override
+		protected int getSaplingDropChance(IBlockState state) {
+			return 20;
+		}
+
+		@Override
+		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+			if (LepidodendronConfig.doPropagation) {
+				// Drop air and use the seeds method instead:
+				return new ItemStack(Blocks.AIR, (int) (1)).getItem();
+			}
+			else {
+				return Item.getItemFromBlock(BlockMahoganySapling.block);
+			}
+		}
+
+		@Override
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+			super.updateTick(worldIn, pos, state, rand);
+
+			//Generate a fruit perhaps:
+			if (rand.nextInt(10) == 0 && worldIn.isAirBlock(pos.up())) { //The leaves are natural, not player-placed
+				//Make sure that there isn't already fruit nearby:
+				boolean fruit = false;
+				int x = -3;
+				while (x <= 3 && !fruit) {
+					int y = -3;
+					while (y <= 3 && !fruit) {
+						int z = -3;
+						while (z <= 3 && !fruit) {
+							if (worldIn.getBlockState(pos.add(x, y, z)).getBlock() == BlockMahoganyFruitBlock.block) {
+								fruit = true;
+							}
+							z ++;
+						}
+						y ++;
+					}
+					x ++;
+				}
+				if (!fruit) {
+					worldIn.setBlockState(pos.up(), BlockMahoganyFruitBlock.block.getDefaultState());
+				}
+			}
+		}
+
+
+	}
+}

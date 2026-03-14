@@ -371,6 +371,12 @@ public class EntityPNBoat extends EntityBoat
                 return ItemTsugaBoatItem.block;
             case TORREYA:
                 return ItemTorreyaBoatItem.block;
+            case TROCHODENDROIDES:
+                return ItemTrochodendroidesBoatItem.block;
+            case MAHOGANY:
+                return ItemMahoganyBoatItem.block;
+            case CINNAMON:
+                return ItemCinnamonBoatItem.block;
 
         }
     }
@@ -561,6 +567,12 @@ public class EntityPNBoat extends EntityBoat
                 return BlockTsugaPlanks.block;
             case TORREYA:
                 return BlockTorreyaPlanks.block;
+            case TROCHODENDROIDES:
+                return BlockTrochodendroidesPlanks.block;
+            case MAHOGANY:
+                return BlockMahoganyPlanks.block;
+            case CINNAMON:
+                return BlockCinnamonPlanks.block;
 
         }
     }
@@ -1453,7 +1465,10 @@ public class EntityPNBoat extends EntityBoat
         ABIES(87, "saurauia"),
         GLYPTOSTROBUS(88, "glyptostrobus"),
         TSUGA(89, "tsuga"),
-        TORREYA(90, "torreya")
+        TORREYA(90, "torreya"),
+        TROCHODENDROIDES(91, "trochodendroides"),
+        MAHOGANY(92, "mahogany"),
+        CINNAMON(93, "cinnamon")
         ;
 
         private final String name;

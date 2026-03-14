@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:cinnamon_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:cinnamon_slab_top"
+    }
+  }
+}

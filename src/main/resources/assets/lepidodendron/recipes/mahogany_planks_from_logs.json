@@ -1,0 +1,16 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ "0"
+ ],
+ "key": {
+ "0": {
+ "item": "lepidodendron:mahogany_log"
+ }
+ },
+ "result": {
+ "item": "lepidodendron:mahogany_planks",
+ "count": 4
+ }
+}

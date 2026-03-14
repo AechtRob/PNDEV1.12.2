@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:mahogany_slab_double"
+    }
+  }
+}

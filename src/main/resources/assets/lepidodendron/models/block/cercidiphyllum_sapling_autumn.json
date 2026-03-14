@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/cercidiphyllum_sapling_autumn",
+    "particle": "lepidodendron:blocks/cercidiphyllum_sapling_autumn"
+  }
+}
