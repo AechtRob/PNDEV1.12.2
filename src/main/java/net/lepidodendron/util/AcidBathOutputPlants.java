@@ -147,13 +147,15 @@ public class AcidBathOutputPlants {
 
     public static String[] getCambrianCleanedFossilsPlants() {
         String[] resLoc = {
+                ForgeRegistries.BLOCKS.getKey(BlockTawuia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGreenAlgaeMat.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockRedAlgaeMat.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockStromatolite.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockThrombolite.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGirvanella.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGreenSproutingAlgae.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBacterialCrust.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBacterialCrust.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockEukaryoticMat.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsCambrian);
         return resLoc;

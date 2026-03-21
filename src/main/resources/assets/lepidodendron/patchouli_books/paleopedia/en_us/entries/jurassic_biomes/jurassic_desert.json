@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
-			"text": "$(l)Jurassic Desert$(br2)$()All mobile creatures that can be found here in the mod, in alphabetical order."
+			"text": "$(l)Jurassic Desert$(br2)$()All mobile creatures that can be found here in the mod, in alphabetical order. Many spawn only within the gulleys found in the desert."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
