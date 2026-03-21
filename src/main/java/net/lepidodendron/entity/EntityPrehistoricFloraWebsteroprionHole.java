@@ -100,6 +100,10 @@ public class EntityPrehistoricFloraWebsteroprionHole extends EntityAnimal implem
 		return null;
 	}
 
+	@Override
+	public String[] getFoodOreDictsForVariantInPalaeopedia(@Nullable String variantIn) {
+		return getFoodOreDicts();
+	}
 
 	//@Override
 	public int getAttackLength() {

@@ -59,6 +59,11 @@ public class EntityPrehistoricFloraMurex extends EntityPrehistoricFloraSlitherin
 	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
+	public String[] getFoodOreDictsForVariantInPalaeopedia(@Nullable String variantIn) {
+		return getFoodOreDicts();
+	}
+
+	@Override
 	public boolean dropsEggs() {
 		return true;
 	}

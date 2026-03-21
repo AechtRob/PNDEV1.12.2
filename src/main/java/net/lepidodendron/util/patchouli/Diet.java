@@ -25,14 +25,15 @@ public class Diet implements IComponentProcessor {
     @Override
     public String process(String s) {
         String mobString = this.mob;
+        String pnVariant = null;
         int i = mobString.indexOf("@");
         if (i > 0) {
-            //pnVariant = mobString.substring(i + 1);
+            pnVariant = mobString.substring(i + 1);
             mobString = mobString.substring(0, i);
         }
         EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobString));
         Class clazz = ee.getEntityClass();
-        Method method = Functions.testAndGetMethod(clazz, "getFoodOreDicts", null);
+        Method method = Functions.testAndGetMethod(clazz, "getFoodOreDictsForVariantInPalaeopedia", new Class[]{String.class});
         String[] string = new String[]{};
         String result = "";
         String nestString = "N/A";
@@ -40,7 +41,7 @@ public class Diet implements IComponentProcessor {
         String homingString = LepidodendronBookSubscribers.getHomingString(entity, false);
         if (method != null) {
             try {
-                string = (String[]) method.invoke(entity, (Object[]) null);
+                string = (String[]) method.invoke(entity, pnVariant);
                 nestString = LepidodendronBookSubscribers.getNestString(entity, false);
             }
             catch (Exception e) {

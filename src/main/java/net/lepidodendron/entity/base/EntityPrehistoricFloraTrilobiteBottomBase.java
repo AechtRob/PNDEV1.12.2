@@ -72,6 +72,11 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
         }
     }
 
+    @Override
+    public String[] getFoodOreDictsForVariantInPalaeopedia(@Nullable String variantIn) {
+        return getFoodOreDicts();
+    }
+
     public boolean hasPNVariants() {
         return false;
     }

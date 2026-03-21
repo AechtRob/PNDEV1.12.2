@@ -69,6 +69,11 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 		return EnumCreatureAttributePN.VERTEBRATE;
 	}
 
+	@Override
+	public String[] getFoodOreDictsForVariantInPalaeopedia(@Nullable String variantIn) {
+		return getFoodOreDicts();
+	}
+
 	public boolean hasPNVariants() {
 		return false;
 	}

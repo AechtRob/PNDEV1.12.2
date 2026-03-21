@@ -2357,4 +2357,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return this.laying;
     }
 
+    @Override
+    public String[] getFoodOreDictsForVariantInPalaeopedia(@Nullable String variantIn) {
+        return getFoodOreDicts();
+    }
+
 }

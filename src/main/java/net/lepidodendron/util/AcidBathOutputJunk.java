@@ -20,7 +20,7 @@ public class AcidBathOutputJunk {
                     return getPrecambrianJunkBonus()[ii];
                 }
                 int ii = (new Random()).nextInt(getJunkPalaeozoic().length);
-                ItemStack stackOut = getJunk()[ii];
+                ItemStack stackOut = getJunkPalaeozoic()[ii];
                 if (stackOut.getMaxStackSize() <= 16) {
                     stackOut.setCount((new Random()).nextInt(16) + 1);
                 }
@@ -31,7 +31,7 @@ public class AcidBathOutputJunk {
                     ii = (new Random()).nextInt(getCambrianJunkBonus().length);
                     return getCambrianJunkBonus()[ii];
                 }
-                ii = (new Random()).nextInt(getJunk().length);
+                ii = (new Random()).nextInt(getJunkPalaeozoic().length);
                 stackOut = getJunkPalaeozoic()[ii];
                 if (stackOut.getMaxStackSize() <= 16) {
                     stackOut.setCount((new Random()).nextInt(16) + 1);
@@ -43,7 +43,7 @@ public class AcidBathOutputJunk {
                     ii = (new Random()).nextInt(getOrdovicianJunkBonus().length);
                     return getOrdovicianJunkBonus()[ii];
                 }
-                ii = (new Random()).nextInt(getJunk().length);
+                ii = (new Random()).nextInt(getJunkPalaeozoic().length);
                 stackOut = getJunkPalaeozoic()[ii];
                 if (stackOut.getMaxStackSize() <= 16) {
                     stackOut.setCount((new Random()).nextInt(16) + 1);
@@ -55,7 +55,7 @@ public class AcidBathOutputJunk {
                     ii = (new Random()).nextInt(getSilurianJunkBonus().length);
                     return getSilurianJunkBonus()[ii];
                 }
-                ii = (new Random()).nextInt(getJunk().length);
+                ii = (new Random()).nextInt(getJunkPalaeozoic().length);
                 stackOut = getJunkPalaeozoic()[ii];
                 if (stackOut.getMaxStackSize() <= 16) {
                     stackOut.setCount((new Random()).nextInt(16) + 1);
@@ -67,7 +67,7 @@ public class AcidBathOutputJunk {
                     ii = (new Random()).nextInt(getDevonianJunkBonus().length);
                     return getDevonianJunkBonus()[ii];
                 }
-                ii = (new Random()).nextInt(getJunk().length);
+                ii = (new Random()).nextInt(getJunkPalaeozoic().length);
                 stackOut = getJunkPalaeozoic()[ii];
                 if (stackOut.getMaxStackSize() <= 16) {
                     stackOut.setCount((new Random()).nextInt(16) + 1);

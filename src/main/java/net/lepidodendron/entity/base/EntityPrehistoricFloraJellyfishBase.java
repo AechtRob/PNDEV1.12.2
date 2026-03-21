@@ -62,6 +62,11 @@ public abstract class EntityPrehistoricFloraJellyfishBase extends EntityTameable
         }
     }
 
+    @Override
+    public String[] getFoodOreDictsForVariantInPalaeopedia(@Nullable String variantIn) {
+        return getFoodOreDicts();
+    }
+
     public boolean hasPNVariants() {
         return false;
     }

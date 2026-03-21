@@ -86,6 +86,11 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         LAY_ANIMATION = Animation.create(this.getLayLength());
     }
 
+    @Override
+    public String[] getFoodOreDictsForVariantInPalaeopedia(@Nullable String variantIn) {
+        return getFoodOreDicts();
+    }
+
     public boolean noMossEggs() {
         return false;
     }

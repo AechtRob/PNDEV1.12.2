@@ -77,6 +77,11 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         LAY_ANIMATION = Animation.create(this.getLayLength());
     }
 
+    @Override
+    public String[] getFoodOreDictsForVariantInPalaeopedia(@Nullable String variantIn) {
+        return getFoodOreDicts();
+    }
+
     public ItemStack getDroppedEggItemStack() {
         return new ItemStack(ItemUnknownEggLand.block, (int) (1));
     }

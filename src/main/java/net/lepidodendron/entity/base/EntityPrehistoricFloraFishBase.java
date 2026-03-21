@@ -68,6 +68,11 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     }
 
     @Override
+    public String[] getFoodOreDictsForVariantInPalaeopedia(@Nullable String variantIn) {
+        return getFoodOreDicts();
+    }
+
+    @Override
     public boolean isChild()
     {
         return false;

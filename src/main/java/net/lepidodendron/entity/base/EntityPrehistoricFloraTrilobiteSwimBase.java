@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockGreenAlgaeMat;
 import net.lepidodendron.block.BlockRedAlgaeMat;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -41,7 +42,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
-public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTameable implements IAnimatedEntity {
+public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTameable implements IAnimatedEntity, IPrehistoricDiet {
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
     public ChainBuffer chainBuffer;
@@ -60,6 +61,11 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
+    }
+
+    @Override
+    public String[] getFoodOreDictsForVariantInPalaeopedia(@Nullable String variantIn) {
+        return getFoodOreDicts();
     }
 
     public boolean hasPNVariants() {

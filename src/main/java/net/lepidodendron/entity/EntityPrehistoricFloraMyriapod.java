@@ -191,8 +191,19 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 				|| this.getPNType() == Type.LATZELIA) {
 			return ArrayUtils.addAll(DietString.BUG);
 		}
-
 		return ArrayUtils.addAll(DietString.MOSS);
+	}
+
+	@Override
+	public String[] getFoodOreDictsForVariantInPalaeopedia(@Nullable String variantIn) {
+		if (variantIn.equalsIgnoreCase(Type.DEVONOBIUS.name)
+				|| variantIn.equalsIgnoreCase(Type.CRUSSOLUM.name)
+				|| variantIn.equalsIgnoreCase(Type.FULMENOCURSOR.name)
+				|| variantIn.equalsIgnoreCase(Type.VELOCIPEDE.name)
+				|| variantIn.equalsIgnoreCase(Type.LATZELIA.name)) {
+			return ArrayUtils.addAll(DietString.BUG);
+		}
+		return getFoodOreDicts();
 	}
 
 	@Override
