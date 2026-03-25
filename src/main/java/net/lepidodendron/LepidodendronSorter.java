@@ -5633,6 +5633,10 @@ public class LepidodendronSorter {
     public static final int cinnamon_trapdoor = 8467;
     public static final int cinnamon_fruit_block = 8468;
     public static final int cinnamon_berries = 8464;
+
+    public static final int soepadmoa_sapling = 8465;
+    public static final int soepadmoa_leaves = 8466;
+    public static final int soepadmoa_seeds = 8467;
     
     //Rob list ends-----
 

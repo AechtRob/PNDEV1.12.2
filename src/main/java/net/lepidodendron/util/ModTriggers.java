@@ -441,6 +441,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MACROTAENIOPTERIS = new CustomTrigger("pf_book_macrotaeniopteris");
     public static final CustomTrigger CLICK_MAGNOLIA = new CustomTrigger("pf_book_magnolia");
     public static final CustomTrigger CLICK_MAPLE = new CustomTrigger("pf_book_maple");
+    public static final CustomTrigger CLICK_SOEPADMOA = new CustomTrigger("pf_book_soepadmoa");
     public static final CustomTrigger CLICK_TROCHODENDROIDES = new CustomTrigger("pf_book_trochodendroides");
     public static final CustomTrigger CLICK_CERCIDIPHYLLUM = new CustomTrigger("pf_book_cercidiphyllum");
     public static final CustomTrigger CLICK_DINOPHYTON = new CustomTrigger("pf_book_dinophyton");
@@ -2872,6 +2873,7 @@ public class ModTriggers
             CLICK_MACROTAENIOPTERIS,
             CLICK_MAGNOLIA,
             CLICK_MAPLE,
+            CLICK_SOEPADMOA,
             CLICK_TROCHODENDROIDES,
             CLICK_CERCIDIPHYLLUM,
             CLICK_DINOPHYTON,
