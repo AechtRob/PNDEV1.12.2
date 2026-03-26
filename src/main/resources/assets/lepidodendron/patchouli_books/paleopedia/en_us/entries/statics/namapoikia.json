@@ -29,7 +29,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_namapoikia",
 			"type": "text",
-			"text": "Namapoikia is an Ediacaran animal which had a calcareous skeleton. It looked like a sponge and grew among reefs. It grew in spurts, up to a meter in diameter."
+			"text": "Namapoikia rietoogensis comes from the upper Ediacaran, with fossils found from the Zaris Formation, Namibia. It is a large organism, getting up to 1 m at its widest. It is unique in possibly being the earliest calcareous organism, growing in spurts inside fissures of thrombolites. Alongside this, is general morphology has seen it tentatively assigned to the sponges in multiple studies, but other have noted a possible affinity with coralomorphs, a simple microbial"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_namapoikia",
+			"type": "text",
+			"text": "colony, akin to that of a thrombolite. Despite these multiple other interpretations, the sponge affinity still prevails"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_namapoikia",

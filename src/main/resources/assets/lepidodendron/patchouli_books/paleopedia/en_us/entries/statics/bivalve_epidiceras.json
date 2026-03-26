@@ -1,0 +1,40 @@
+{
+	"name": "Epidiceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bivalve_epidiceras_icon.png",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_bivalve_epidiceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bivalve_epidiceras",
+			"title": "Epidiceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Hippuritida$(br)>Hippuritidina$(br)>Radiolitoidea$(br)>Epidiceratidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "Epidiceras sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_epidiceras",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_epidiceras",
+			"type": "text",
+			"text": "Epidiceras is a genus of mollusk that hails from the Upper Jurassic into the Early Cretaceous, with fossils being found across Europe. Epidiceras is apart of an informal group known as 'clingers', which as the name suggests, cling onto the sides of other sessile creatures, and so forth."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_epidiceras",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

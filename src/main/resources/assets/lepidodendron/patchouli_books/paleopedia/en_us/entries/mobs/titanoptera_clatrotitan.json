@@ -1,5 +1,5 @@
 {
-	"name": "Clatrotitan",
+	"name": "Clathrotitan",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/titanoptera_clatrotitan_icon.png",
 	"category": "lepidodendron:mobs",
@@ -7,7 +7,7 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_titanoptera_clatrotitan",
-			"title": "Clatrotitan",
+			"title": "Clathrotitan",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Arthropoda$(br)>Insecta$(br)>Titanoptera$(br)>Mesotitanidae"
 		},
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_titanoptera_clatrotitan",
 			"type": "text",
-			"text": "Clatrotitan was a genus of titanopteran insect that lived during the Middle Triassic in what is now Australia. The type species, C. andersoni, is known from an exquisitely preserved forewing that measured 13.8 cm (5.4 inches) long. The wing is so well preserved that its striped patterns are clearly visible."
+			"text": "Clathrotitan was a genus of titanopteran insect that lived during the Middle Triassic in what is now Australia. The type species, C. andersoni, is known from an exquisitely preserved forewing that measured 13.8 cm (5.4 inches) long. The wing is so well preserved that its striped patterns are clearly visible."
 		},
 		{
 			"type": "lepidodendron:diet",

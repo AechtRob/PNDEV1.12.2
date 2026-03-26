@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:bivalve_pinna"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:bivalve_pinna", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:bivalve_pinna", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:bivalve_pinna", "x": 90, "y": 180}
+    ],
+    "facing=west": [
+      {"model": "lepidodendron:bivalve_pinna", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:bivalve_pinna"},
+      {"model": "lepidodendron:bivalve_pinna", "y": 90},
+      {"model": "lepidodendron:bivalve_pinna", "y": 180},
+      {"model": "lepidodendron:bivalve_pinna", "y": 270}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:bivalve_pinna", "x": 180},
+      {"model": "lepidodendron:bivalve_pinna", "x": 180, "y": 90},
+      {"model": "lepidodendron:bivalve_pinna", "x": 180, "y": 180},
+      {"model": "lepidodendron:bivalve_pinna", "x": 180, "y": 270}
+    ]
+  }
+}

@@ -29,7 +29,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_herpetogaster",
 			"type": "text",
-			"text": "Herpetogaster is a strange and poorly-understood small creature. It appears to have attached itself to the sea-floor or to certain sponges using a stalk-like appendage, and was formed as a bag-like body with tentacles at the mouth end."
+			"text": "Herpetogaster comes from the early Cambrian, with fossils found in the Maotianshan Shales and Balang Formation, China; the Pioche Formation, Nevada (USA) and the Burgess Shale, Canada. It is a small worm-like organism, growing up to 4 cm in length. It is probably most notable for is strange appearance, which long eluded researchers as to their phylogenetic placement, being composed of a short wormy body placed atop a small stolon, whilst the head of the organism"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_herpetogaster",
+			"type": "text",
+			"text": "features number of branching tentacles. Herpetogaster is apart of a larger, equally strange clade of animals known as the cambroernids, which contains the likes of Eldonia and Phlogites, and have commonly been compared to the Lophotrochozoa, although recent evidence favours a deuterostome interpretation, and is currently apart of the deuterostome clade Ambulacraria as a stem-group."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_herpetogaster",
+			"type": "text",
+			"text": "The generic name derives from the Greek word 'herpeto', to mean 'creeping', in reference to its nick-name of 'creeposaurus'; and 'gaster', to mean 'stomach'."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_herpetogaster",

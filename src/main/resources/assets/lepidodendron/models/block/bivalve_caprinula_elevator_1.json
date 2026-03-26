@@ -1,0 +1,92 @@
+{
+	"ambientocclusion": false,
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "lepidodendron:blocks/bivalve_caprinula_elevator",
+		"particle": "lepidodendron:blocks/bivalve_caprinula_elevator"
+	},
+	"elements": [
+		{
+			"from": [10, 0, 3],
+			"to": [12, 4, 7],
+			"rotation": {"angle": 0, "axis": "y", "origin": [11, 0, 3]},
+			"faces": {
+				"north": {"uv": [10, 5.5, 11, 7.5], "texture": "#1"},
+				"east": {"uv": [8, 5.5, 10, 7.5], "texture": "#1"},
+				"south": {"uv": [7, 5.5, 8, 7.5], "texture": "#1"},
+				"west": {"uv": [5, 5.5, 7, 7.5], "texture": "#1"},
+				"up": {"uv": [8, 5.5, 7, 3.5], "rotation": 180, "texture": "#1"},
+				"down": {"uv": [9, 3.5, 8, 5.5], "rotation": 180, "texture": "#1", "cullface": "down"}
+			}
+		},
+		{
+			"from": [9.5, 4, 3],
+			"to": [12.5, 8, 9],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [11, 4, 3]},
+			"faces": {
+				"north": {"uv": [5, 13.5, 6.5, 15.5], "texture": "#1"},
+				"east": {"uv": [2, 13.5, 5, 15.5], "texture": "#1"},
+				"south": {"uv": [9.5, 13.5, 11, 15.5], "texture": "#1"},
+				"west": {"uv": [6.5, 13.5, 9.5, 15.5], "texture": "#1"},
+				"up": {"uv": [6.5, 13.5, 5, 10.5], "texture": "#1"},
+				"down": {"uv": [8, 10.5, 6.5, 13.5], "texture": "#1"}
+			}
+		},
+		{
+			"from": [6.5, 5, 3],
+			"to": [15.5, 5, 10],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [11, 4, 3]},
+			"faces": {
+				"up": {"uv": [4.5, 11.5, 0, 8], "rotation": 180, "texture": "#1"},
+				"down": {"uv": [4.5, 8, 0, 11.5], "rotation": 180, "texture": "#1"}
+			}
+		},
+		{
+			"from": [2.5, 2, 10],
+			"to": [4.5, 5, 14],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [3.5, 2, 14]},
+			"faces": {
+				"north": {"uv": [13, 0, 14, 1.5], "texture": "#1"},
+				"east": {"uv": [14, 5.5, 16, 7], "texture": "#1"},
+				"south": {"uv": [13, 5.5, 14, 7], "texture": "#1"},
+				"west": {"uv": [11, 5.5, 13, 7], "texture": "#1"},
+				"up": {"uv": [14, 5.5, 13, 3.5], "rotation": 180, "texture": "#1"},
+				"down": {"uv": [15, 3.5, 14, 5.5], "rotation": 180, "texture": "#1"}
+			}
+		},
+		{
+			"from": [3, 0, 11],
+			"to": [4, 2, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3.5, 0, 14]},
+			"faces": {
+				"north": {"uv": [8.5, 9.5, 9, 10.5], "texture": "#1"},
+				"east": {"uv": [7, 9.5, 8.5, 10.5], "texture": "#1"},
+				"south": {"uv": [6.5, 9.5, 7, 10.5], "texture": "#1"},
+				"west": {"uv": [5, 9.5, 6.5, 10.5], "texture": "#1"},
+				"up": {"uv": [7, 9.5, 6.5, 8], "rotation": 180, "texture": "#1"},
+				"down": {"uv": [7.5, 8, 7, 9.5], "rotation": 180, "texture": "#1", "cullface": "down"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "Caprinula",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [
+				{
+					"name": "Caprinula1",
+					"origin": [4, 4, 1.5],
+					"color": 0,
+					"children": [0, 1, 2]
+				},
+				{
+					"name": "Caprinula2",
+					"origin": [0.5, 2, 0],
+					"color": 0,
+					"children": [3, 4]
+				}
+			]
+		}
+	]
+}

@@ -57,19 +57,19 @@ public class RenderHerpetogaster extends TileEntitySpecialRenderer<BlockHerpetog
             GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
         }
         if (facing == EnumFacing.EAST) {
-            GlStateManager.translate(x + 0.0, y + 0.7 + (rotation * 0.1), z + 0.5);
+            GlStateManager.translate(x + 0.5, y + 0.0 + (rotation * 0.1), z + 0.5);
         }
         if (facing == EnumFacing.WEST) {
-            GlStateManager.translate(x + 1.0, y + 0.7 + (rotation * 0.1), z + 0.5);
+            GlStateManager.translate(x + 0.5, y + 0.0 + (rotation * 0.1), z + 0.5);
         }
         if (facing == EnumFacing.NORTH) {
-            GlStateManager.translate(x + 0.5, y + 0.7 + (rotation * 0.1), z + 1.0);
+            GlStateManager.translate(x + 0.5, y + 0.0 + (rotation * 0.1), z + 1.0);
         }
         if (facing == EnumFacing.SOUTH) {
-            GlStateManager.translate(x + 0.5, y + 0.7 + (rotation * 0.1), z + 0.0);
+            GlStateManager.translate(x + 0.5, y + 0.0 + (rotation * 0.1), z + 0.0);
         }
         if (facing == EnumFacing.UP) {
-            GlStateManager.translate(x + 0.5, y + 0.4, z + 0.5);
+            GlStateManager.translate(x + 0.5, y + 0.0, z + 0.5);
         }
 
         GlStateManager.rotate(180, 0F, 0F, 1F);

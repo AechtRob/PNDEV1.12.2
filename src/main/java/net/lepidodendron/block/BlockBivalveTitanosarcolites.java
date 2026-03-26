@@ -262,7 +262,7 @@ public class BlockBivalveTitanosarcolites extends ElementsLepidodendronMod.ModEl
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Marine bivalve");
+				tooltip.add("Type: Recumbent Rudist Bivalve");
 				tooltip.add("Periods: Late Cretaceous");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}

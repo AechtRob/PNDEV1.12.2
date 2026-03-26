@@ -259,7 +259,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_endothiodon", EntityPrehistoricFloraEndothiodon.class, LepidodendronMod.ENTITY_ENDOTHIODON, 64,-8490137,-7771574);
         registerEntity("prehistoric_flora_enoploura", EntityPrehistoricFloraEnoploura.class, LepidodendronMod.ENTITY_ENOPLOURA, 48,-2238527,-3490413);
         registerEntity("prehistoric_flora_entelognathus", EntityPrehistoricFloraEntelognathus.class, LepidodendronMod.ENTITY_ENTELOGNATHUS, 48,-4546692,-10729427);
-        registerEntity("prehistoric_flora_eoandromeda", EntityPrehistoricFloraEoandromeda.class, LepidodendronMod.ENTITY_EOANDROMEDA, 48,-5193816,-7282843);
+        registerEntity("prehistoric_flora_eoandromeda", EntityPrehistoricFloraEoandromeda.class, LepidodendronMod.ENTITY_EOANDROMEDA, 48,-10538446,-8502204);
         registerEntity("prehistoric_flora_eocarcinus", EntityPrehistoricFloraEocarcinus.class, LepidodendronMod.ENTITY_EOCARCINUS, 48,-11716043,-7569586);
         registerEntity("prehistoric_flora_eoraptor", EntityPrehistoricFloraEoraptor.class, LepidodendronMod.ENTITY_EORAPTOR, 64,-4483491,-5979943);
         registerEntity("prehistoric_flora_eoredlichia", EntityPrehistoricFloraEoredlichia.class, LepidodendronMod.ENTITY_EOREDLICHIA, 48,-7610521,-3346755);

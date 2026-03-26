@@ -11,12 +11,11 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 public class RenderEoandromeda extends RenderLivingBaseWithBook<EntityPrehistoricFloraEoandromeda> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eoandromeda_arms.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cycliomedusa.png");
 
     public RenderEoandromeda(RenderManager mgr) {
 
         super(mgr, new ModelEoandromeda(), 0.0f);
-        this.addLayer(new LayerEoandromedaBody(this));
     }
 
     public static float getScaler() {
@@ -59,17 +58,6 @@ public class RenderEoandromeda extends RenderLivingBaseWithBook<EntityPrehistori
                 GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
                 this.bookModel.renderStaticBook(scale);
                 GlStateManager.disableBlend();
-                //Layer1:
-                this.bindTexture(LayerEoandromedaBody.TEXTURE);
-                GlStateManager.pushMatrix();
-                GlStateManager.color(1.0F, 1.0F, 1.0F, 0.5F);
-                GlStateManager.enableNormalize();
-                GlStateManager.enableBlend();
-                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-                this.bookModel.renderStaticBook(scale);
-                GlStateManager.disableBlend();
-                GlStateManager.disableNormalize();
-                GlStateManager.popMatrix();
                 //End of renders
                 if (flag)
                 {

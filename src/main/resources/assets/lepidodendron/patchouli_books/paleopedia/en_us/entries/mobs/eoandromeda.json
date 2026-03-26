@@ -1,5 +1,5 @@
 {
-	"name": "Eoandromeda",
+	"name": "Cycliomedusa",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/eoandromeda_icon.png",
 	"category": "lepidodendron:mobs",
@@ -7,13 +7,13 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_eoandromeda",
-			"title": "Eoandromeda",
+			"title": "Cycliomedusa",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>$(o)incertae sedis"
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Eumetazoa"
 		},
 		{
 			"type": "entity",
-			"name": "E. octobranchiata",
+			"name": "C. jiangchuanensis",
 			"entity": "lepidodendron:prehistoric_flora_eoandromeda",
 			"rotate": false,
 			"default_rotation": 0
@@ -21,7 +21,22 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_eoandromeda",
 			"type": "text",
-			"text": "Eoandromeda is an Ediacaran organism consisting of 8 radial spiral arms curved in a circular shape. It bears resemblance to ctenophores and echinoderms but there is insufficient evidence to classify the animal."
+			"text": "Cycliomedusa jiangchuanensis comes from the upper Ediacaran, with fossils found in the Dengying Formation, China. It is a small discoidal eumetazoan, growing up to 3.5 cm in diameter. Unlike other discoidal forms found within the Ediacaran, Cycliomedusa is surprisingly unique. It has a much more uniform morphology across all specimens than other forms like Ediacaria or Cyclomedusa, consisting of three distinct regions, a central, middle and outer region."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eoandromeda",
+			"type": "text",
+			"text": "The central area in all specimens is slightly domed, with a cavity in the direct centre, postured to be an oral ring. This is then surrounded by the middle area, which is known to feature 'cracks', which may be due to dehydration and tearing of tissue after death. Then there's the outer tubular ring, most likely for rigidity.This general morphology, alongside its preservation, oral ring facing upwards, infilled central cavity and dehydration cracks,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eoandromeda",
+			"type": "text",
+			"text": "point towards a possible cnidarian affinity, although it is currently only been placed at Eumetazoa and no further. It has also been noted that the preservation of all the fossil specimens is similar to than seen of the Chengjiang biota within the Maotianshan Shales, even down to the red colouration of the specimens."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eoandromeda",
+			"type": "text",
+			"text": "The generic name derives from the Greek word 'kuklios', to mean 'circular'; and the Latin word 'medusa', to mean jellyfish'. The specific name derives from the place name 'Jiangchuan', the county in which the fossil material was found in."
 		},
 		{
 			"type": "lepidodendron:diet",

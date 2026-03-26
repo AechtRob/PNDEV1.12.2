@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eubiodectes",
 			"title": "Eubiodectes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei(br)>Ichthyodectiformes$(br)>Cladocyclidae"
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>Ichthyodectiformes$(br)>Cladocyclidae"
 		},
         	{
             "type": "entity",

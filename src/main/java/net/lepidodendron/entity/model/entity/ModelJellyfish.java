@@ -1,6 +1,8 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraDickinsonia;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -251,14 +253,14 @@ public class ModelJellyfish extends ModelBasePalaeopedia {
         AdvancedModelRenderer[] arm2 = {this.Oralarm2a, this.Oralarm2b, this.Oralarm2c};
         AdvancedModelRenderer[] arm3 = {this.Oralarm3a, this.Oralarm3b, this.Oralarm3c};
         AdvancedModelRenderer[] arm4 = {this.Oralarm4a, this.Oralarm4b, this.Oralarm4c};
-        float speed = 0.2F;
+        float speed = 0.05F;
         if (!e.isInWater()) {
             speed = 0.0F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
-            this.swing(Mainbody, speed * 0.4F, 0.5F, true, 0, 0, f2, 1);
-            this.walk(Mainbody, speed * 0.3F, 0.8F, true, 0, 0, f2, 1);
-            this.flap(Mainbody, speed * 0.2F, 0.8F, true, 0, 0, f2, 1);
+            this.swing(Mainbody, speed * 0.4F, 0.25F, true, 0, 0, f2, 0.6F);
+            this.walk(Mainbody, speed * 0.3F, 0.4F, true, 0, 0, f2, 0.6F);
+            this.flap(Mainbody, speed * 0.2F, 0.4F, true, 0, 0, f2, 0.6F);
             this.chainWave(tentacle1, speed, 0.4F, -3, f2, 1);
             this.chainWave(tentacle2, speed, -0.4F, -3, f2, 1);
             this.chainFlap(tentacle3, speed, 0.4F, -3, f2, 1);
@@ -267,7 +269,7 @@ public class ModelJellyfish extends ModelBasePalaeopedia {
             this.chainWave(arm2, speed, -0.1F, -3, f2, 1);
             this.chainWave(arm3, speed, 0.1F, -3, f2, 1);
             this.chainWave(arm4, speed, -0.1F, -3, f2, 1);
-            this.bob(Mainbody, -speed * 0.5F, 1F, false, f2, 1);
+            this.bob(Mainbody, -speed * 0.8F, 3.2F, false, f2, 1);
 
             if (!e.isInWater()) {
                 this.resetToDefaultPose();

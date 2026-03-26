@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "multiblock",
-			"name": "Tawuia sp.",
+			"name": "T. dalensis",
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [
@@ -29,7 +29,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_tawuia",
 			"type": "text",
-			"text": "Tawuia is a disk shaped compression fossil found the late Paleoproterozoic or early Neoproterozoic until the end of the Ediacaran period, with possible uncertain forms mooted from the lowermost Cambrian. The organisms were multicellular and consisted of vaguely oval-shaped bodies. They may perhaps be something like slime moulds, or be microbial colonies or trace fossils of some other kind. The model in this mod is hugely oversized, whereas the fossils are only around 1mm diameter!"
+			"text": "Tawuia hails from the late Paleoproterozoic right into the lowermost Cambrian, with fossils being found in formations across the globe. They are small, sausage-shaped forms, growing up to 2.5 cm in height. They are most commonly found as organic compressions on a rock surface, and its true affinity has been difficult to place since its discovery. Some researchers suggest it to be simple microbial structures, like Stromatolites, whilst others suggest them to be"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tawuia",
+			"type": "text",
+			"text": "similar to modern slime molds. These two ideas were upheld for many decades by their respective parties, but recent evidence shows that Tawuia may instead be a macroalgae, and one that may also be coenocytic, which is where a single celled organism contains multiple nuclei, and multiple nuclei within in a single cell of a multicellular organism."
 		}
 	]
 }

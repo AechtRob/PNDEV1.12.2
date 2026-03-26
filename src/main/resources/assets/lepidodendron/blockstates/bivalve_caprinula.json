@@ -1,0 +1,58 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:bivalve_caprinula_recumbent"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_1"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_1_var"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_2"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_2_var"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_3"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_3_var"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:bivalve_caprinula_recumbent"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_1"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_1_var"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_2"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_2_var"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_3"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_3_var"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:bivalve_caprinula_recumbent", "y": 90},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_1", "y": 90},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_1_var", "y": 90},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_2", "y": 90},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_2_var", "y": 90},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_3", "y": 90},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_3_var", "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:bivalve_caprinula_recumbent", "y": 180},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_1", "y": 180},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_1_var", "y": 180},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_2", "y": 180},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_2_var", "y": 180},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_3", "y": 180},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_3_var", "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:bivalve_caprinula_recumbent", "y": 270},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_1", "y": 270},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_1_var", "y": 270},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_2", "y": 270},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_2_var", "y": 270},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_3", "y": 270},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_3_var", "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:bivalve_caprinula_recumbent"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_1"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_1_var"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_2"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_2_var"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_3"},
+      {"model": "lepidodendron:bivalve_caprinula_elevator_3_var"}
+    ]
+  }
+}

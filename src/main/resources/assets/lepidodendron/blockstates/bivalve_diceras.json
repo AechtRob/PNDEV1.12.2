@@ -1,0 +1,44 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:bivalve_diceras"},
+      {"model": "lepidodendron:bivalve_diceras_var"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:bivalve_diceras", "x": 90},
+      {"model": "lepidodendron:bivalve_diceras_var", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:bivalve_diceras", "x": 90, "y": 90},
+      {"model": "lepidodendron:bivalve_diceras_var", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:bivalve_diceras", "x": 90, "y": 180},
+      {"model": "lepidodendron:bivalve_diceras_var", "x": 90, "y": 180}
+    ],
+    "facing=west": [
+      {"model": "lepidodendron:bivalve_diceras", "x": 90, "y": 270},
+      {"model": "lepidodendron:bivalve_diceras_var", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:bivalve_diceras"},
+      {"model": "lepidodendron:bivalve_diceras_var"},
+      {"model": "lepidodendron:bivalve_diceras", "y": 90},
+      {"model": "lepidodendron:bivalve_diceras_var", "y": 90},
+      {"model": "lepidodendron:bivalve_diceras", "y": 180},
+      {"model": "lepidodendron:bivalve_diceras_var", "y": 180},
+      {"model": "lepidodendron:bivalve_diceras", "y": 270},
+      {"model": "lepidodendron:bivalve_diceras_var", "y": 270}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:bivalve_diceras", "x": 180},
+      {"model": "lepidodendron:bivalve_diceras_var", "x": 180},
+      {"model": "lepidodendron:bivalve_diceras", "x": 180, "y": 90},
+      {"model": "lepidodendron:bivalve_diceras_var", "x": 180, "y": 90},
+      {"model": "lepidodendron:bivalve_diceras", "x": 180, "y": 180},
+      {"model": "lepidodendron:bivalve_diceras_var", "x": 180, "y": 180},
+      {"model": "lepidodendron:bivalve_diceras", "x": 180, "y": 270},
+      {"model": "lepidodendron:bivalve_diceras_var", "x": 180, "y": 270}
+    ]
+  }
+}

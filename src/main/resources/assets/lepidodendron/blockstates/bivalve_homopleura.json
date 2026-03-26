@@ -1,0 +1,32 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:bivalve_homopleura"},
+      {"model": "lepidodendron:bivalve_homopleura_var"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:bivalve_homopleura"},
+      {"model": "lepidodendron:bivalve_homopleura_var"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:bivalve_homopleura", "y": 90},
+      {"model": "lepidodendron:bivalve_homopleura_var", "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:bivalve_homopleura", "y": 180},
+      {"model": "lepidodendron:bivalve_homopleura_var", "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:bivalve_homopleura", "y": 270},
+      {"model": "lepidodendron:bivalve_homopleura_var", "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:bivalve_homopleura"},
+      {"model": "lepidodendron:bivalve_homopleura_var"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:bivalve_homopleura"},
+      {"model": "lepidodendron:bivalve_homopleura_var"}
+    ]
+  }
+}

@@ -11,92 +11,39 @@ import net.minecraft.entity.EntityLiving;
 import org.lwjgl.opengl.GL11;
 
 public class ModelEoandromeda extends ModelBasePalaeopedia {
-    private final AdvancedModelRenderer disk;
-    private final AdvancedModelRenderer cube_r1;
-    private final AdvancedModelRenderer cube_r2;
-    private final AdvancedModelRenderer cube_r3;
-    private final AdvancedModelRenderer arm;
-    private final AdvancedModelRenderer arm2;
-    private final AdvancedModelRenderer arm3;
-    private final AdvancedModelRenderer arm4;
-    private final AdvancedModelRenderer arm5;
-    private final AdvancedModelRenderer arm6;
-    private final AdvancedModelRenderer arm7;
-    private final AdvancedModelRenderer arm8;
+    private final AdvancedModelRenderer main;
+    private final AdvancedModelRenderer bone;
+    private final AdvancedModelRenderer bone2;
+    private final AdvancedModelRenderer bone3;
+    private final AdvancedModelRenderer bone4;
 
     public ModelEoandromeda() {
-        this.textureWidth = 64;
-        this.textureHeight = 64;
+        this.textureWidth = 16;
+        this.textureHeight = 16;
 
-        this.disk = new AdvancedModelRenderer(this);
-        this.disk.setRotationPoint(0.0F, 22.0F, 0.0F);
-        this.disk.cubeList.add(new ModelBox(disk, 0, 21, -4.0F, -0.5F, -4.0F, 8, 2, 8, 0.0F, false));
-        this.disk.cubeList.add(new ModelBox(disk, 0, 31, -5.0F, -0.5F, -3.0F, 1, 2, 6, 0.0F, false));
+        this.main = new AdvancedModelRenderer(this);
+        this.main.setRotationPoint(0.0F, 15.0F, 0.0F);
+        this.main.cubeList.add(new ModelBox(main, 0, 0, -1.5F, -0.5F, -1.5F, 3, 1, 3, 0.0F, false));
 
-        this.cube_r1 = new AdvancedModelRenderer(this);
-        this.cube_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.disk.addChild(cube_r1);
-        this.setRotateAngle(cube_r1, 0.0F, 1.5708F, 0.0F);
-        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 0, 31, -5.0F, -0.5F, -3.0F, 1, 2, 6, 0.0F, false));
+        this.bone = new AdvancedModelRenderer(this);
+        this.bone.setRotationPoint(0.0F, 0.0F, -1.5F);
+        this.main.addChild(bone);
+        this.bone.cubeList.add(new ModelBox(bone, 2, 5, -1.5F, 0.0F, -1.0F, 3, 0, 1, 0.0F, false));
 
-        this.cube_r2 = new AdvancedModelRenderer(this);
-        this.cube_r2.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.disk.addChild(cube_r2);
-        this.setRotateAngle(cube_r2, 0.0F, 3.1416F, 0.0F);
-        this.cube_r2.cubeList.add(new ModelBox(cube_r2, 0, 31, -5.0F, -0.5F, -3.0F, 1, 2, 6, 0.0F, false));
+        this.bone2 = new AdvancedModelRenderer(this);
+        this.bone2.setRotationPoint(-1.5F, 0.0F, 0.0F);
+        this.main.addChild(bone2);
+        this.bone2.cubeList.add(new ModelBox(bone2, -3, 5, -1.0F, 0.0F, -1.5F, 1, 0, 3, 0.0F, false));
 
-        this.cube_r3 = new AdvancedModelRenderer(this);
-        this.cube_r3.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.disk.addChild(cube_r3);
-        this.setRotateAngle(cube_r3, 0.0F, -1.5708F, 0.0F);
-        this.cube_r3.cubeList.add(new ModelBox(cube_r3, 0, 31, -5.0F, -0.5F, -3.0F, 1, 2, 6, 0.0F, false));
+        this.bone3 = new AdvancedModelRenderer(this);
+        this.bone3.setRotationPoint(0.0F, 0.0F, 1.5F);
+        this.main.addChild(bone3);
+        this.bone3.cubeList.add(new ModelBox(bone3, 2, 5, -1.5F, 0.0F, 0.0F, 3, 0, 1, 0.0F, false));
 
-        this.arm = new AdvancedModelRenderer(this);
-        this.arm.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.disk.addChild(arm);
-        this.arm.cubeList.add(new ModelBox(arm, 8, 18, -4.0F, 0.0F, 0.0F, 4, 0, 3, 0.0F, false));
-
-        this.arm2 = new AdvancedModelRenderer(this);
-        this.arm2.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.disk.addChild(arm2);
-        this.setRotateAngle(arm2, 0.0F, 0.7854F, 0.0F);
-        this.arm2.cubeList.add(new ModelBox(arm2, 0, 18, -4.0F, 0.01F, 0.0F, 4, 0, 3, 0.0F, false));
-
-        this.arm3 = new AdvancedModelRenderer(this);
-        this.arm3.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.disk.addChild(arm3);
-        this.setRotateAngle(arm3, 0.0F, 1.5708F, 0.0F);
-        this.arm3.cubeList.add(new ModelBox(arm3, 16, 15, -4.0F, 0.0F, 0.0F, 4, 0, 3, 0.0F, false));
-
-        this.arm4 = new AdvancedModelRenderer(this);
-        this.arm4.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.disk.addChild(arm4);
-        this.setRotateAngle(arm4, 0.0F, 2.3562F, 0.0F);
-        this.arm4.cubeList.add(new ModelBox(arm4, 16, 12, -4.0F, 0.01F, 0.0F, 4, 0, 3, 0.0F, false));
-
-        this.arm5 = new AdvancedModelRenderer(this);
-        this.arm5.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.disk.addChild(arm5);
-        this.setRotateAngle(arm5, 0.0F, 3.1416F, 0.0F);
-        this.arm5.cubeList.add(new ModelBox(arm5, 8, 15, -4.0F, 0.0F, 0.0F, 4, 0, 3, 0.0F, false));
-
-        this.arm6 = new AdvancedModelRenderer(this);
-        this.arm6.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.disk.addChild(arm6);
-        this.setRotateAngle(arm6, 0.0F, -2.3562F, 0.0F);
-        this.arm6.cubeList.add(new ModelBox(arm6, 0, 15, -4.0F, 0.01F, 0.0F, 4, 0, 3, 0.0F, false));
-
-        this.arm7 = new AdvancedModelRenderer(this);
-        this.arm7.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.disk.addChild(arm7);
-        this.setRotateAngle(arm7, 0.0F, -1.5708F, 0.0F);
-        this.arm7.cubeList.add(new ModelBox(arm7, 8, 12, -4.0F, 0.0F, 0.0F, 4, 0, 3, 0.0F, false));
-
-        this.arm8 = new AdvancedModelRenderer(this);
-        this.arm8.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.disk.addChild(arm8);
-        this.setRotateAngle(arm8, 0.0F, -0.7854F, 0.0F);
-        this.arm8.cubeList.add(new ModelBox(arm8, 0, 12, -4.0F, 0.01F, 0.0F, 4, 0, 3, 0.0F, false));
+        this.bone4 = new AdvancedModelRenderer(this);
+        this.bone4.setRotationPoint(1.5F, 0.0F, 0.0F);
+        this.main.addChild(bone4);
+        this.bone4.cubeList.add(new ModelBox(bone4, -3, 5, 0.0F, 0.0F, -1.5F, 1, 0, 3, 0.0F, false));
 
         updateDefaultPose();
     }
@@ -107,7 +54,7 @@ public class ModelEoandromeda extends ModelBasePalaeopedia {
         GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
         GlStateManager.color(1.0F, 1.0F, 1.0F, 0.96F);
 
-        this.disk.render(f5);
+        this.main.render(f5);
         GlStateManager.disableBlend();
 
     }
@@ -115,21 +62,21 @@ public class ModelEoandromeda extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.disk.offsetY = -1.4F;
-        this.disk.offsetX = -0.138F;
-        this.disk.rotateAngleY = (float)Math.toRadians(200);
-        this.disk.rotateAngleX = (float)Math.toRadians(25);
-        this.disk.rotateAngleZ = (float)Math.toRadians(-8);
-        this.disk.scaleChildren = true;
+        this.main.offsetY = -1.4F;
+        this.main.offsetX = -0.138F;
+        this.main.rotateAngleY = (float)Math.toRadians(200);
+        this.main.rotateAngleX = (float)Math.toRadians(25);
+        this.main.rotateAngleZ = (float)Math.toRadians(-8);
+        this.main.scaleChildren = true;
         float scaler = 4.33F;
-        this.disk.setScale(scaler, scaler, scaler);
+        this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 
         //End of pose, now render the model:
-        this.disk.render(f);
+        this.main.render(f);
         //Reset rotations, positions and sizing:
-        this.disk.setScale(1.0F, 1.0F, 1.0F);
-        this.disk.scaleChildren = false;
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
         resetToDefaultPose();
     }
 
@@ -144,23 +91,33 @@ public class ModelEoandromeda extends ModelBasePalaeopedia {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        //this.disk.offsetY = 1.2F;
+        main.offsetY = 0.2F;
 
         float speed = 0.1F;
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled() && e.isInWater()) {
-            this.disk.scaleChildren = true;
-            this.disk.setScale(1.0F, 1.0F, 1.0F);
-            this.swing(disk, speed * 0.4F, 0.25F, true, 0, 0, f2, 0.6F);
-            this.walk(disk, speed * 0.3F, 0.4F, true, 0, 0, f2, 0.6F);
-            this.flap(disk, speed * 0.2F, 0.4F, true, 0, 0, f2, 0.6F);
-            this.bob(disk, -speed * 0.5F, 0.5F, false, f2, 0.6F);
-            EntityPrehistoricFloraEoandromeda ee = (EntityPrehistoricFloraEoandromeda) e;
-            this.disk.rotateAngleY = (float) Math.toRadians(ee.getRotationDegree());
+            this.main.scaleChildren = true;
+            this.main.setScale(1.0F, 1.0F, 1.0F);
+            this.swing(main, speed * 0.4F, 0.25F, true, 0, 0, f2, 0.6F);
+            this.walk(main, speed * 0.3F, 0.4F, true, 0, 0, f2, 0.6F);
+            this.flap(main, speed * 0.2F, 0.4F, true, 0, 0, f2, 0.6F);
+            this.bob(main, speed * 0.8F, 3.2F, false, f2, 0.6F);
+
+
+            this.swing(bone, speed * 0.8F, 0.25F, true, 3.0F, 0, f2, 0.6F);
+            AdvancedModelRenderer[] tentacleE1 = {this.bone};
+            AdvancedModelRenderer[] tentacleE2 = {this.bone2};
+            AdvancedModelRenderer[] tentacleE3 = {this.bone3};
+            AdvancedModelRenderer[] tentacleE4 = {this.bone4};
+            this.chainWave(tentacleE1, speed * 1.0F, 0.8F, -3, f2, 0.5F);
+            this.chainFlap(tentacleE2, speed * 1.0F, -0.8F, -3, f2, 0.5F);
+            this.chainWave(tentacleE3, speed * 1.0F, -0.8F, -3, f2, 0.5F);
+            this.chainFlap(tentacleE4, speed * 1.0F, 0.8F, -3, f2, 0.5F);
+
         }
         else {
-            this.disk.scaleChildren = true;
-            this.disk.setScale(1.25F, 0.1F, 1.25F);
-            this.disk.offsetY = 0.115F;
+            this.main.scaleChildren = true;
+            this.main.setScale(1.25F, 0.1F, 1.25F);
+            this.main.offsetY = 0.0F;
         }
     }
 }
