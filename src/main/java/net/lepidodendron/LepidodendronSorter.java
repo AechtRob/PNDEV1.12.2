@@ -6345,7 +6345,17 @@ public class LepidodendronSorter {
     public static final int callawayasaurus_raw= 5683;
     public static final int myobradypterygius_raw= 5683;
     public static final int umoonasaurus_raw= 5683;
-
+    public static final int bivalve_pinna= 5701;
+    public static final int bivalve_diceras= 5702;
+    public static final int bivalve_epidiceras= 5703;
+    public static final int bivalve_homopleura= 5704;
+    public static final int bivalve_texicaprina= 5705;
+    public static final int bivalve_caprina= 5706;
+    public static final int bivalve_agriopleura= 5706;
+    public static final int bivalve_caprinula= 5707;
+    public static final int bivalve_monopleura= 5708;
+    public static final int bivalve_polyconites= 5709;
+    public static final int eoandromedastatic= 5710;
     public static final int irritator_raw = 5800;
     public static final int spinosaurus_raw = 5801;
     public static final int eggs_irritator = 5802;

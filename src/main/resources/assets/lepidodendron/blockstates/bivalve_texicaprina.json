@@ -1,0 +1,40 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:bivalve_texicaprina_1"},
+      {"model": "lepidodendron:bivalve_texicaprina_1_var"},
+      {"model": "lepidodendron:bivalve_texicaprina_2"},
+      {"model": "lepidodendron:bivalve_texicaprina_2_var"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:bivalve_texicaprina_1"},
+      {"model": "lepidodendron:bivalve_texicaprina_1_var"},
+      {"model": "lepidodendron:bivalve_texicaprina_2"},
+      {"model": "lepidodendron:bivalve_texicaprina_2_var"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:bivalve_texicaprina_1", "y": 90},
+      {"model": "lepidodendron:bivalve_texicaprina_1_var", "y": 90},
+      {"model": "lepidodendron:bivalve_texicaprina_2", "y": 90},
+      {"model": "lepidodendron:bivalve_texicaprina_2_var", "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:bivalve_texicaprina_1", "y": 180},
+      {"model": "lepidodendron:bivalve_texicaprina_1_var", "y": 180},
+      {"model": "lepidodendron:bivalve_texicaprina_2", "y": 180},
+      {"model": "lepidodendron:bivalve_texicaprina_2_var", "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:bivalve_texicaprina_1", "y": 270},
+      {"model": "lepidodendron:bivalve_texicaprina_1_var", "y": 270},
+      {"model": "lepidodendron:bivalve_texicaprina_2", "y": 270},
+      {"model": "lepidodendron:bivalve_texicaprina_2_var", "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:bivalve_texicaprina_1"},
+      {"model": "lepidodendron:bivalve_texicaprina_1_var"},
+      {"model": "lepidodendron:bivalve_texicaprina_2"},
+      {"model": "lepidodendron:bivalve_texicaprina_2_var"}
+    ]
+  }
+}

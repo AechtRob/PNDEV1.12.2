@@ -1,0 +1,40 @@
+{
+	"name": "Agriopleura",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bivalve_agriopleura_icon.png",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_bivalve_agriopleura",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bivalve_agriopleura",
+			"title": "Agriopleura",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Hippuritida$(br)>Hippuritidina$(br)>Radiolitoidea$(br)>Radiolitidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "Agriopleura sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_agriopleura",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_agriopleura",
+			"type": "text",
+			"text": "Agriopleura is a genus of mollusk that comes from the Cretaceous, with fossils being found across the globe. Agriopleura is apart of an informal group known as 'elevators', meaning that they grow up from the substrate."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_agriopleura",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

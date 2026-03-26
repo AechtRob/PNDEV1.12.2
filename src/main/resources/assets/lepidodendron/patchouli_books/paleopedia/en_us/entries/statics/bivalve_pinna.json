@@ -1,0 +1,45 @@
+{
+	"name": "Pinna",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bivalve_pinna_icon.png",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_bivalve_pinna",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bivalve_pinna",
+			"title": "Pinna",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous - Present$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Pteriida$(br)>Pinnoidea$(br)>Pinnidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "Pinna sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_pinna",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_pinna",
+			"type": "text",
+			"text": "Pinna is a genus of mollusk that hails all the way from the Carboniferous into the present day, with extant and extinct forms being found across the globe. Pinna is a large bivalve, getting up to 80 cm in length. Whilst being found as far back as the Carboniferous, it takes until the Jurassic and Cretaceous for Pinna to gain a proper footing. Outside of its long temporal range, Pinna is also well known for its sea silk, most commonly harvested to make gloves,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_pinna",
+			"type": "text",
+			"text": "the palliums of early Christians and Roman cloaks, robes, and other articles of clothing, due to its lightness and warmth."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_pinna",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

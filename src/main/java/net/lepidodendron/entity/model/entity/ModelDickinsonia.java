@@ -16,19 +16,18 @@ public class ModelDickinsonia extends ModelBasePalaeopedia {
 
         this.Body = new AdvancedModelRenderer(this);
         this.Body.setRotationPoint(0.0F, 24.0F, 0.0F);
-        this.Body.cubeList.add(new ModelBox(Body, 21, 28, -4.0F, -1.0F, -8.0F, 8, 1, 1, 0.0F, false));
-        this.Body.cubeList.add(new ModelBox(Body, 23, 25, -5.0F, -1.0F, -7.0F, 10, 1, 1, 0.0F, false));
-        this.Body.cubeList.add(new ModelBox(Body, 0, 16, -6.0F, -1.0F, -6.0F, 12, 1, 3, 0.0F, false));
-        this.Body.cubeList.add(new ModelBox(Body, 0, 0, -7.0F, -1.0F, -3.0F, 14, 1, 6, 0.0F, false));
+        this.Body.cubeList.add(new ModelBox(Body, 29, 9, -3.0F, -1.0F, -8.0F, 6, 1, 1, 0.0F, false));
+        this.Body.cubeList.add(new ModelBox(Body, 0, 25, -5.0F, -1.0F, -7.0F, 10, 1, 1, 0.0F, false));
+        this.Body.cubeList.add(new ModelBox(Body, 0, 17, -6.0F, -1.0F, -6.0F, 12, 1, 2, 0.0F, false));
+        this.Body.cubeList.add(new ModelBox(Body, 0, 0, -7.0F, -1.0F, -4.0F, 14, 1, 7, 0.0F, false));
+        this.Body.cubeList.add(new ModelBox(Body, 0, 9, -4.0F, -1.5F, -4.0F, 8, 1, 6, 0.0F, false));
+        this.Body.cubeList.add(new ModelBox(Body, 29, 12, -3.0F, -1.5F, -5.0F, 6, 1, 1, 0.0F, false));
+        this.Body.cubeList.add(new ModelBox(Body, 19, 28, -3.0F, -1.5F, 2.0F, 6, 1, 2, 0.0F, false));
+        this.Body.cubeList.add(new ModelBox(Body, 29, 18, -2.0F, -1.5F, 4.0F, 4, 1, 1, 0.0F, false));
         this.Body.cubeList.add(new ModelBox(Body, 0, 21, -6.0F, -1.0F, 3.0F, 12, 1, 2, 0.0F, false));
-        this.Body.cubeList.add(new ModelBox(Body, 0, 25, -5.0F, -1.0F, 5.0F, 10, 1, 1, 0.0F, false));
-        this.Body.cubeList.add(new ModelBox(Body, 28, 16, -4.0F, -1.0F, 6.0F, 8, 1, 1, 0.0F, false));
-        this.Body.cubeList.add(new ModelBox(Body, 29, 21, -3.0F, -1.0F, 7.0F, 6, 1, 1, 0.0F, false));
-        this.Body.cubeList.add(new ModelBox(Body, 0, 32, -3.0F, -2.0F, -6.0F, 6, 1, 1, 0.0F, false));
-        this.Body.cubeList.add(new ModelBox(Body, 0, 28, -4.0F, -2.0F, -5.0F, 8, 1, 2, 0.0F, false));
-        this.Body.cubeList.add(new ModelBox(Body, 0, 8, -5.0F, -2.0F, -3.0F, 10, 1, 6, 0.0F, false));
-        this.Body.cubeList.add(new ModelBox(Body, 27, 8, -4.0F, -2.0F, 3.0F, 8, 1, 2, 0.0F, false));
-        this.Body.cubeList.add(new ModelBox(Body, 20, 31, -3.0F, -2.0F, 5.0F, 6, 1, 1, 0.0F, false));
+        this.Body.cubeList.add(new ModelBox(Body, 23, 25, -5.0F, -1.0F, 5.0F, 10, 1, 1, 0.0F, false));
+        this.Body.cubeList.add(new ModelBox(Body, 0, 28, -4.0F, -1.0F, 6.0F, 8, 1, 1, 0.0F, false));
+        this.Body.cubeList.add(new ModelBox(Body, 29, 15, -2.0F, -1.0F, 7.0F, 4, 1, 1, 0.0F, false));
 
         updateDefaultPose();
     }

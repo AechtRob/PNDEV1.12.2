@@ -7,9 +7,12 @@ import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TextFormatting;
 
 public class RenderDickinsonia extends RenderLivingBaseWithBook<EntityPrehistoricFloraDickinsonia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dickinsonia.png");
+    private static final ResourceLocation TEXTURE_PANCAKE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dickinsonia_pancake.png");
+    private static final ResourceLocation TEXTURE_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dickinsonia_egg.png");
     public static float getScaler() {
         return 0.785F;
     }
@@ -20,6 +23,17 @@ public class RenderDickinsonia extends RenderLivingBaseWithBook<EntityPrehistori
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraDickinsonia entity) {
+        String s = TextFormatting.getTextWithoutFormattingCodes(entity.getName());
+        if (s != null &&
+                ("Pancake".equalsIgnoreCase(s)))
+        {
+            return RenderDickinsonia.TEXTURE_PANCAKE;
+        }
+        else if (s != null &&
+                ("Egg".equalsIgnoreCase(s)))
+        {
+            return RenderDickinsonia.TEXTURE_EGG;
+        }
         return RenderDickinsonia.TEXTURE;
     }
 

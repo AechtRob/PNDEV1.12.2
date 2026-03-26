@@ -17,6 +17,8 @@ import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
@@ -25,10 +27,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.NodeProcessor;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNodeType;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
@@ -135,6 +134,21 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 
 	public String getBucketMessage() {
 		return "is too grown up to fit into a bucket";
+	}
+
+	public void eatItem(ItemStack stack) {
+		if (stack != null && stack.getItem() != null) {
+			float itemHealth = 0.2F; //Default minimal nutrition
+			if (stack.getItem() instanceof ItemFood) {
+				itemHealth = ((ItemFood) stack.getItem()).getHealAmount(stack);
+			}
+			this.setHealth(Math.min(this.getHealth() + itemHealth, (float) this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getBaseValue()));
+			stack.shrink(1);
+			if (!world.isRemote) {
+				SoundEvent soundevent = SoundEvents.ENTITY_GENERIC_EAT;
+				this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			}
+		}
 	}
 
 	@Override

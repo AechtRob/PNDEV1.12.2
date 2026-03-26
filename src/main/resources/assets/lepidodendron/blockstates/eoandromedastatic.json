@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:eoandromedastatic_1"},
+      {"model": "lepidodendron:eoandromedastatic_2"},
+      {"model": "lepidodendron:eoandromedastatic_3"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:eoandromedastatic_1"},
+      {"model": "lepidodendron:eoandromedastatic_2"},
+      {"model": "lepidodendron:eoandromedastatic_3"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:eoandromedastatic_1", "y": 90},
+      {"model": "lepidodendron:eoandromedastatic_2", "y": 90},
+      {"model": "lepidodendron:eoandromedastatic_3", "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:eoandromedastatic_1", "y": 180},
+      {"model": "lepidodendron:eoandromedastatic_2", "y": 180},
+      {"model": "lepidodendron:eoandromedastatic_3", "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:eoandromedastatic_1", "y": 270},
+      {"model": "lepidodendron:eoandromedastatic_2", "y": 270},
+      {"model": "lepidodendron:eoandromedastatic_3", "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:eoandromedastatic_1"},
+      {"model": "lepidodendron:eoandromedastatic_2"},
+      {"model": "lepidodendron:eoandromedastatic_3"}
+    ]
+  }
+}

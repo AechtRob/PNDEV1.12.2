@@ -94,7 +94,7 @@ public class ModelPrecambrianJelly extends ModelBasePalaeopedia {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        float speed = 0.1F;
+        float speed = 0.05F;
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled() && e.isInWater()) {
             this.main.scaleChildren = true;
             this.main.setScale(1.0F, 1.0F, 1.0F);
@@ -110,7 +110,7 @@ public class ModelPrecambrianJelly extends ModelBasePalaeopedia {
                 this.swing(main, speed * 0.4F, 0.25F, true, 0, 0, f2, 0.6F);
                 this.walk(main, speed * 0.3F, 0.4F, true, 0, 0, f2, 0.6F);
                 this.flap(main, speed * 0.2F, 0.4F, true, 0, 0, f2, 0.6F);
-                this.bob(main, -speed * 0.5F, 0.5F, false, f2, 0.6F);
+                this.bob(main, -speed * 0.8F, 3.2F, false, f2, 0.6F);
                 if (e instanceof EntityPrehistoricFloraEoandromeda) {
                     EntityPrehistoricFloraEoandromeda ee = (EntityPrehistoricFloraEoandromeda) e;
                     this.main.rotateAngleY = (float) Math.toRadians(ee.getRotationDegree());

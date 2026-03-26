@@ -21,7 +21,22 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_dickinsonia",
 			"type": "text",
-			"text": "Dickinsonia is a basal animal of the Ediacaran period. It resembles a bilaterally symmetric ribbed oval. It is known only from imprint fossils and perhaps some trace fossils."
+			"text": "Dickinsonia comes from the upper Ediacaran, with fossils found across Asia and Australia. It is a large quilted organism, getting up to 1 m in length. Being amongst the most well known Ediacarans, Dickinsonia has had much research done on it, and as such a varied history. It features the classic glided reflection seen in other Ediacaran forms, which is made placement within any known kingdom difficult. Despite this, many interpretations have still arisen from decades"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dickinsonia",
+			"type": "text",
+			"text": "of research, with it being first regarded as a jellyfish from the lower Cambrian in 1947, with the isomers being interpreted as a canal system. This was continually supported for some years, although in 1958 the age would be rectified after the discovery of Charnia, and its interpretation would completely change from that of a jellyfish to an annelid after the discovery of Spriggina in the same year. This idea would hold up for many decades afterwards with occasional"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dickinsonia",
+			"type": "text",
+			"text": "suggestions for differing interpretations. This would all to to ahead in 1985 after many noted the glided symmetry of Dickinsonia and others, which saw it no longer regarded as an annelid worm and instead as something unknown. Since then, a number of other ideas have been put forward, like it being a large protist, a placozoan, a return to the cnidarian affinity, or even a lichen, although non have been accepted. Outside of this history, Dickinsonia is known to have"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dickinsonia",
+			"type": "text",
+			"text": "been a motile organism, slowly moving around and consuming areas of matground beneath it, inferred from faint, chained feeding traces, known as 'Epibaion'."
 		},
 		{
 			"type": "lepidodendron:diet",

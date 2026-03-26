@@ -1,0 +1,53 @@
+{
+	"ambientocclusion": false,
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "lepidodendron:blocks/bivalve_texicaprina",
+		"particle": "lepidodendron:blocks/bivalve_texicaprina"
+	},
+	"elements": [
+		{
+			"from": [6, 0, 6],
+			"to": [10, 3, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6, 1, 6]},
+			"faces": {
+				"north": {"uv": [2, 7, 4, 8.5], "texture": "#0"},
+				"east": {"uv": [8, 7.5, 9.5, 9], "texture": "#0"},
+				"south": {"uv": [4, 7, 6, 8.5], "texture": "#0"},
+				"west": {"uv": [0, 8.5, 1.5, 10], "texture": "#0"},
+				"up": {"uv": [8, 9, 6, 7.5], "texture": "#0"},
+				"down": {"uv": [10, 0, 8, 1.5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [5, 3, 6],
+			"to": [9, 5, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [5, 3, 6]},
+			"faces": {
+				"north": {"uv": [5.5, 9, 7.5, 10], "texture": "#0"},
+				"east": {"uv": [9.5, 4.5, 11, 5.5], "texture": "#0"},
+				"south": {"uv": [7.5, 9, 9.5, 10], "texture": "#0"},
+				"west": {"uv": [9.5, 5.5, 11, 6.5], "texture": "#0"},
+				"up": {"uv": [10, 3, 8, 1.5], "texture": "#0"},
+				"down": {"uv": [10, 3, 8, 4.5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [5, 3.025, 4],
+			"to": [11, 3.025, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [5, 3.025, 6]},
+			"faces": {
+				"up": {"uv": [3, 7, 0, 3.5], "texture": "#0"},
+				"down": {"uv": [6, 3.5, 3, 7], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "1",
+			"origin": [2, 1, 2],
+			"color": 0,
+			"children": [0, 1, 2]
+		}
+	]
+}

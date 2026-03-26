@@ -13,7 +13,7 @@
 		},
         	{
             "type": "entity",
-            "name": "D. longus",
+            "name": "D. carnegii",
             "entity": "lepidodendron:prehistoric_flora_diplodocus",
             "rotate": false,
             "default_rotation": 0

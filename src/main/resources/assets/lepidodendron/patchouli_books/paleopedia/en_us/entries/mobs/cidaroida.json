@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cidaroida",
 			"title": "Cidaroida",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Echinodermata$(br)>Cidaroida"
+			"text": "$(l)Temporal Range:$() Triassic - Present$(br2)>Echinodermata$(br)>Cidaroida"
 		},
 		{
 			"type": "entity",

@@ -1,0 +1,40 @@
+{
+	"name": "Texicaprina",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bivalve_texicaprina_icon.png",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_bivalve_texicaprina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bivalve_texicaprina",
+			"title": "Texicaprina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Hippuritida$(br)>Hippuritidina$(br)>Radiolitoidea$(br)>Caprinoidea$(br)>Caprinuloideidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "Texicaprina sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_texicaprina",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_texicaprina",
+			"type": "text",
+			"text": "Texicaprina is a genus of mollusk that comes from the Early Cretaceous, with fossils being found across North America. Texicaprina is apart of an informal group known as 'elevators', meaning that they grow up from the substrate."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_texicaprina",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

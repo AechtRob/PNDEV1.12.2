@@ -9,11 +9,11 @@
 			"trigger": "lepidodendron:pf_adv_book_limulid",
 			"title": "Limulid",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic - Present$(br2)>Arthropoda$(br)>Chelicerata$(br)>Xiphosura$(br)>Limulidae"
+			"text": "$(l)Temporal Range:$() Triassic - Present$(br2)>Arthropoda$(br)>Chelicerata$(br)>Xiphosura$(br)>$(o)Limulidae"
 		},
 		{
 			"type": "entity",
-			"name": "Limulus",
+			"name": "Limulid",
 			"entity": "lepidodendron:prehistoric_flora_limulid",
 			"rotate": false,
 			"default_rotation": 0

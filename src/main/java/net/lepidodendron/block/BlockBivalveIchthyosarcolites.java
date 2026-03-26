@@ -258,15 +258,6 @@ public class BlockBivalveIchthyosarcolites extends ElementsLepidodendronMod.ModE
 			return new AxisAlignedBB(0.0D, 0D, 0D, 1.0D, 1.0D, 1.0D);
 		}
 
-		@SideOnly(Side.CLIENT)
-		@Override
-		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Marine bivalve");
-				tooltip.add("Periods: Late Cretaceous");}
-			super.addInformation(stack, player, tooltip, advanced);
-		}
-
 		@Override
 		public void neighborChanged(IBlockState state, World world, BlockPos pos, Block neighborBlock, BlockPos fromPos) {
 			super.neighborChanged(state, world, pos, neighborBlock, fromPos);
@@ -293,6 +284,15 @@ public class BlockBivalveIchthyosarcolites extends ElementsLepidodendronMod.ModE
 		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta,
 												EntityLivingBase placer) {
 			return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+			if (LepidodendronConfig.showTooltips) {
+				tooltip.add("Type: Recumbent Rudist Bivalve");
+				tooltip.add("Periods: Late Cretaceous");}
+			super.addInformation(stack, player, tooltip, advanced);
 		}
 
 	}

@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:bivalve_agriopleura_1"},
+      {"model": "lepidodendron:bivalve_agriopleura_1_var"},
+      {"model": "lepidodendron:bivalve_agriopleura_2"},
+      {"model": "lepidodendron:bivalve_agriopleura_2_var"},
+      {"model": "lepidodendron:bivalve_agriopleura_3"},
+      {"model": "lepidodendron:bivalve_agriopleura_3_var"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:bivalve_agriopleura_1"},
+      {"model": "lepidodendron:bivalve_agriopleura_1_var"},
+      {"model": "lepidodendron:bivalve_agriopleura_2"},
+      {"model": "lepidodendron:bivalve_agriopleura_2_var"},
+      {"model": "lepidodendron:bivalve_agriopleura_3"},
+      {"model": "lepidodendron:bivalve_agriopleura_3_var"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:bivalve_agriopleura_1", "y": 90},
+      {"model": "lepidodendron:bivalve_agriopleura_1_var", "y": 90},
+      {"model": "lepidodendron:bivalve_agriopleura_2", "y": 90},
+      {"model": "lepidodendron:bivalve_agriopleura_2_var", "y": 90},
+      {"model": "lepidodendron:bivalve_agriopleura_3", "y": 90},
+      {"model": "lepidodendron:bivalve_agriopleura_3_var", "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:bivalve_agriopleura_1", "y": 180},
+      {"model": "lepidodendron:bivalve_agriopleura_1_var", "y": 180},
+      {"model": "lepidodendron:bivalve_agriopleura_2", "y": 180},
+      {"model": "lepidodendron:bivalve_agriopleura_2_var", "y": 180},
+      {"model": "lepidodendron:bivalve_agriopleura_3", "y": 180},
+      {"model": "lepidodendron:bivalve_agriopleura_3_var", "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:bivalve_agriopleura_1", "y": 270},
+      {"model": "lepidodendron:bivalve_agriopleura_1_var", "y": 270},
+      {"model": "lepidodendron:bivalve_agriopleura_2", "y": 270},
+      {"model": "lepidodendron:bivalve_agriopleura_2_var", "y": 270},
+      {"model": "lepidodendron:bivalve_agriopleura_3", "y": 270},
+      {"model": "lepidodendron:bivalve_agriopleura_3_var", "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:bivalve_agriopleura_1"},
+      {"model": "lepidodendron:bivalve_agriopleura_1_var"},
+      {"model": "lepidodendron:bivalve_agriopleura_2"},
+      {"model": "lepidodendron:bivalve_agriopleura_2_var"},
+      {"model": "lepidodendron:bivalve_agriopleura_3"},
+      {"model": "lepidodendron:bivalve_agriopleura_3_var"}
+    ]
+  }
+}

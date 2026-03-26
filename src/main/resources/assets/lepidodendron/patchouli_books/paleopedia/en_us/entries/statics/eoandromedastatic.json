@@ -1,0 +1,55 @@
+{
+	"name": "Eoandromeda",
+	"read_by_default": true,
+	"icon": "lepidodendron:eoandromedastatic",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_eoandromedastatic",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eoandromedastatic",
+			"title": "Eoandromeda",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>$(o)incertae sedis"
+		},
+		{
+			"type": "multiblock",
+			"name": "E. octobranchiata",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:eoandromedastatic",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eoandromedastatic",
+			"type": "text",
+			"text": "Eoandromeda octobranchiata comes from the late Ediacaran, with fossils found in the Doushantuo and Dengying Formations, South China and the Rawnsley Quartzite, South Australia. It is a small, cone-like organism, growing up to 4 cm in diameter. Eoandromeda is most notable for its eight radial arms, and its ever changing affinities and morphology. It was first considered to be a trace fossil or a foraminiferan, but with the discovery of the Chinese fossils in 2008,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eoandromedastatic",
+			"type": "text",
+			"text": "these interpretations where ruled out in favour of a body fossil. Since then, Eoandromeda has been considered to be akin to fossil embryos, similar to what is found in the Doushantuo Formation due to its radial arms, although this has gone no further until more specimens are found. As for further interpretations of its affinities, it has been considered to be similar to an echinoderm or a ctenophore, although the former was quickly abandoned, whilst the latter"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eoandromedastatic",
+			"type": "text",
+			"text": "interpretation remained, although it wouldn't last. Further research has since continously discounted the ctenophore interpretation, firstly due to how common it is, its widespread range, and large distances between each specimen, something not seen in fossil ctenophores, which are exceedingly rare, and only found in large groups in one area. Alongside this, it has been found that Eoandromeda was more likely to be a sessile, cone-like organism, due to the"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eoandromedastatic",
+			"type": "text",
+			"text": "blurred appearance of the margins in fossil specimens from the Rawnsley Quartzite, a key indicator of microbial mat-ground working its way up the organism, specially if its sessile. The generic name derives from the Greek word 'eo-', to mean 'ancient'; and the name Andromeda, in reference to its likeness to the M31 Andromeda Galaxy. The specific name derives from the Latin words 'octo', to mean 'eight'; and 'brachiarus', to mean 'provided with arms'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eoandromedastatic",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

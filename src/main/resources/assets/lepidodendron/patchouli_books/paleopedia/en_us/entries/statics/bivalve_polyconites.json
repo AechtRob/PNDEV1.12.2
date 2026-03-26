@@ -1,0 +1,40 @@
+{
+	"name": "Polyconites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bivalve_polyconites_icon.png",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_bivalve_polyconites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bivalve_polyconites",
+			"title": "Polyconites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Hippuritida$(br)>Hippuritidina$(br)>Radiolitoidea$(br)>Polyconitidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "Polyconites sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_polyconites",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_polyconites",
+			"type": "text",
+			"text": "Polyconites is a genus of mollusk that comes from the Cretaceous, with fossils being found primarily in Europe, as well as the Pandan Formation, Philippines. Polyconites is apart of an informal group known as 'elevators', meaning that they grow up from the substrate."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_polyconites",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

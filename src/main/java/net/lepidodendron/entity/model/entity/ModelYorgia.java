@@ -16,12 +16,13 @@ public class ModelYorgia extends ModelBasePalaeopedia {
 
         this.bone = new AdvancedModelRenderer(this);
         this.bone.setRotationPoint(0.0F, 24.0F, 0.0F);
-        this.bone.cubeList.add(new ModelBox(bone, 0, 0, -6.5F, -1.0F, -6.0F, 13, 1, 13, 0.0F, false));
-        this.bone.cubeList.add(new ModelBox(bone, 1, 15, -5.5F, -1.0F, 7.0F, 11, 1, 1, 0.0F, false));
-        this.bone.cubeList.add(new ModelBox(bone, 0, 31, -4.5F, -1.0F, 8.0F, 9, 1, 1, 0.0F, false));
-        this.bone.cubeList.add(new ModelBox(bone, 0, 17, -5.0F, -1.0F, -7.0F, 10, 1, 1, 0.0F, false));
-        this.bone.cubeList.add(new ModelBox(bone, 1, 20, -7.5F, -1.0F, -5.0F, 1, 1, 10, 0.0F, false));
-        this.bone.cubeList.add(new ModelBox(bone, 41, 21, 6.5F, -1.0F, -5.0F, 1, 1, 10, 0.0F, false));
+        this.bone.cubeList.add(new ModelBox(bone, 0, 14, -4.0F, -1.0F, -5.0F, 8, 1, 1, 0.0F, false));
+        this.bone.cubeList.add(new ModelBox(bone, 0, 11, -5.0F, -1.0F, -4.0F, 10, 1, 1, 0.0F, false));
+        this.bone.cubeList.add(new ModelBox(bone, 0, 0, -6.0F, -1.0F, -3.0F, 12, 1, 5, 0.0F, false));
+        this.bone.cubeList.add(new ModelBox(bone, 0, 7, -5.0F, -1.0F, 2.0F, 10, 1, 2, 0.0F, false));
+        this.bone.cubeList.add(new ModelBox(bone, 0, 17, -4.0F, -1.0F, 4.0F, 8, 1, 1, 0.0F, false));
+        this.bone.cubeList.add(new ModelBox(bone, 19, 17, -3.0F, -1.0F, 5.0F, 6, 1, 1, 0.0F, false));
+        this.bone.cubeList.add(new ModelBox(bone, 19, 14, -3.0F, -1.0F, -6.0F, 6, 1, 1, 0.0F, false));
 
         updateDefaultPose();
     }

@@ -13,7 +13,7 @@
 		},
         	{
             "type": "entity",
-            "name": "R. longicaudus",
+            "name": "R. muensteri",
             "entity": "lepidodendron:prehistoric_flora_rhamphorhynchus",
             "rotate": false,
             "default_rotation": 0
