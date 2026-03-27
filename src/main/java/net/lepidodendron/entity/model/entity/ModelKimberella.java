@@ -23,13 +23,13 @@ public class ModelKimberella extends ModelBasePalaeopedia {
 
         this.main = new AdvancedModelRenderer(this);
         this.main.setRotationPoint(0.0F, 24.0F, 0.0F);
-        this.main.cubeList.add(new ModelBox(main, 19, 17, -2.0F, -1.0F, -2.0F, 4, 1, 2, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 19, 21, -2.0F, -1.0F, 5.0F, 4, 1, 1, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 0, 7, -2.5F, -1.0F, 0.0F, 5, 1, 5, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 0, 14, -1.5F, -1.5F, -1.0F, 3, 1, 6, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 19, 14, -2.5F, -0.5F, -2.5F, 5, 0, 2, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 21, 11, -2.5F, -0.5F, 5.5F, 5, 0, 1, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 0, 0, -3.0F, -0.5F, -0.5F, 6, 0, 6, 0.0F, false));
+        this.main.cubeList.add(new ModelBox(main, 19, 17, -2.0F, -1.0F, -4.0F, 4, 1, 2, 0.0F, false));
+        this.main.cubeList.add(new ModelBox(main, 19, 21, -2.0F, -1.0F, 3.0F, 4, 1, 1, 0.0F, false));
+        this.main.cubeList.add(new ModelBox(main, 0, 7, -2.5F, -1.0F, -2.0F, 5, 1, 5, 0.0F, false));
+        this.main.cubeList.add(new ModelBox(main, 0, 14, -1.5F, -1.5F, -3.0F, 3, 1, 6, 0.0F, false));
+        this.main.cubeList.add(new ModelBox(main, 19, 14, -2.5F, -0.5F, -4.5F, 5, 0, 2, 0.0F, false));
+        this.main.cubeList.add(new ModelBox(main, 21, 11, -2.5F, -0.5F, 3.5F, 5, 0, 1, 0.0F, false));
+        this.main.cubeList.add(new ModelBox(main, 0, 0, -3.0F, -0.5F, -2.5F, 6, 0, 6, 0.0F, false));
 
         this.proboscis = new AdvancedModelRenderer(this);
         this.proboscis.setRotationPoint(0.0F, -0.5F, -1.0F);
