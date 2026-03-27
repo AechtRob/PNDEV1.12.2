@@ -29,7 +29,7 @@ public class ModelHerpetogaster extends AdvancedModelBase {
         this.stem = new AdvancedModelRenderer(this);
         this.stem.setRotationPoint(0.0F, 0.0F, 0.0F);
         this.herpetogaster.addChild(stem);
-        this.stem.cubeList.add(new ModelBox(stem, 2, 11, 0.0F, -2.5F, -1.5F, 0, 3, 2, 0.0F, false));
+        this.stem.cubeList.add(new ModelBox(stem, 2, 10, 0.0F, -3.5F, -1.5F, 0, 4, 2, 0.0F, false));
 
         this.body = new AdvancedModelRenderer(this);
         this.body.setRotationPoint(0.0F, -3.5F, 0.5F);
