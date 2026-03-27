@@ -3,18 +3,20 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.entity.ai.*;
+import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.block.BlockBacterialLayer;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EntityLookIdleAI;
+import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
+import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.init.SoundEvents;
-import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -31,12 +33,13 @@ public class EntityPrehistoricFloraKimberella extends EntityPrehistoricFloraSlit
 	public ChainBuffer chainBuffer;
 	private int animationTick;
 	private Animation currentAnimation;
-	public Animation EAT_ANIMATION;
+	public Animation STAND_ANIMATION;
+	private int standCooldown;
 
 	public EntityPrehistoricFloraKimberella(World world) {
 		super(world, 40);
 		setSize(0.285F, 0.105F);
-		EAT_ANIMATION = Animation.create(111);
+		STAND_ANIMATION = Animation.create(111);
 	}
 
 	@Override
@@ -92,14 +95,13 @@ public class EntityPrehistoricFloraKimberella extends EntityPrehistoricFloraSlit
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{EAT_ANIMATION};
+		return new Animation[]{STAND_ANIMATION};
 	}
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAISlitheringWaterBase(this, 1));
 		tasks.addTask(1, new SlitheringWanderBottom(this, NO_ANIMATION));
 		tasks.addTask(2, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraSlitheringWaterBaseAI(this));
 	}
 
 	@Override
@@ -112,23 +114,6 @@ public class EntityPrehistoricFloraKimberella extends EntityPrehistoricFloraSlit
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
-	}
-
-	@Override
-	public void eatItem(ItemStack stack) {
-		if (stack != null && stack.getItem() != null) {
-			float itemHealth = 0.5F; //Default minimal nutrition
-			if (stack.getItem() instanceof ItemFood) {
-				itemHealth = ((ItemFood) stack.getItem()).getHealAmount(stack);
-			}
-			this.setHealth(Math.min(this.getHealth() + itemHealth, (float) this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getBaseValue()));
-			stack.shrink(1);
-			if (this.getAnimation() == NO_ANIMATION && !world.isRemote) {
-				this.setAnimation(EAT_ANIMATION);
-				SoundEvent soundevent = SoundEvents.ENTITY_GENERIC_EAT;
-				this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-			}
-		}
 	}
 
 	@Override
@@ -149,11 +134,37 @@ public class EntityPrehistoricFloraKimberella extends EntityPrehistoricFloraSlit
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
+		//Alert animation
+		if ((!this.world.isRemote) && this.getAnimation() == NO_ANIMATION && standCooldown == 0 && world.getBlockState(this.getPosition().down()).getBlock() == BlockBacterialLayer.block) {
+			this.setAnimation(STAND_ANIMATION);
+			this.standCooldown = 300;
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION
+				&& (this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1)) {
+			this.standCooldown = 400;
+			this.setAnimation(NO_ANIMATION);
+		}
+
 	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return null;
+	}
+
+	@Override
+	public void onLivingUpdate() {
+		super.onLivingUpdate();
+
+		if (this.standCooldown > 0) {
+			this.standCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.standCooldown < 0) {
+			this.standCooldown = 0;
+		}
+
+		AnimationHandler.INSTANCE.updateAnimations(this);
 	}
 
 }

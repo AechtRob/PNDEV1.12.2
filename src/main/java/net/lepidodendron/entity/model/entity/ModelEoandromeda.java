@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraEoandromeda;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -73,7 +72,12 @@ public class ModelEoandromeda extends ModelBasePalaeopedia {
         //Start of pose:
 
         //End of pose, now render the model:
+
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.96F);
         this.main.render(f);
+        GlStateManager.disableBlend();
         //Reset rotations, positions and sizing:
         this.main.setScale(1.0F, 1.0F, 1.0F);
         this.main.scaleChildren = false;

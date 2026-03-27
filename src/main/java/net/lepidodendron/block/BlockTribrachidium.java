@@ -83,7 +83,7 @@ public class BlockTribrachidium extends ElementsLepidodendronMod.ModElement {
 		public BlockCustom() {
 			super(Material.WATER);
 			setTranslationKey("pf_tribrachidium");
-			setSoundType(SoundType.PLANT);
+			setSoundType(SoundType.SLIME);
 			setHardness(0.0F);
 			setResistance(0.0F);
 			setLightLevel(0F);

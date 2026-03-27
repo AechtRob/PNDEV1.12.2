@@ -1,8 +1,6 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraDickinsonia;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -222,7 +220,11 @@ public class ModelJellyfish extends ModelBasePalaeopedia {
         //Start of pose:
 
         //End of pose, now render the model:
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.96F);
         this.Mainbody.render(f);
+        GlStateManager.disableBlend();
         //Reset rotations, positions and sizing:
         this.Mainbody.setScale(1.0F, 1.0F, 1.0F);
         this.Mainbody.scaleChildren = false;

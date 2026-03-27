@@ -977,7 +977,12 @@ public class ModelAnthracomedusa extends ModelBasePalaeopedia {
         this.setRotateAngle(tentacleC32, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(tentacleD32, -0.1F, 0.0F, 0.0F);
         //End of pose, now render the model:
+
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.9F);
         this.body.render(f);
+        GlStateManager.disableBlend();
         //Reset rotations, positions and sizing:
         this.body.setScale(1.0F, 1.0F, 1.0F);
         this.body.scaleChildren = false;

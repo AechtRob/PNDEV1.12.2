@@ -118,7 +118,7 @@ public class ModelKimberella extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
         EntityPrehistoricFloraKimberella ee = (EntityPrehistoricFloraKimberella) entitylivingbaseIn;
 
-        if (ee.getAnimation() == ee.EAT_ANIMATION) {
+        if (ee.getAnimation() == ee.STAND_ANIMATION) {
             animEat(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
 

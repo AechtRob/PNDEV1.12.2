@@ -89,7 +89,7 @@ public class BlockEukaryoticMat extends ElementsLepidodendronMod.ModElement {
 		public BlockCustom() {
 			super(Material.WATER);
 			setTranslationKey("pf_eukaryotic_mat");
-			setSoundType(SoundType.PLANT);
+			setSoundType(SoundType.SLIME);
 			setHardness(0.0F);
 			setResistance(0.0F);
 			setLightLevel(0F);

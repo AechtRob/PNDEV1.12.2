@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronFogSubscribers;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
@@ -80,7 +81,7 @@ public class BlockEoandromeda extends ElementsLepidodendronMod.ModElement {
 		public BlockCustom() {
 			super(Material.WATER);
 			setTranslationKey("pf_eoandromedastatic");
-			setSoundType(SoundType.PLANT);
+			setSoundType(SoundType.SLIME);
 			setHardness(0.0F);
 			setResistance(0.0F);
 			setLightLevel(0F);
@@ -88,6 +89,11 @@ public class BlockEoandromeda extends ElementsLepidodendronMod.ModElement {
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronStatic.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(FACING, EnumFacing.UP));
+		}
+
+		@Override
+		public SoundType getSoundType() {
+			return SoundType.SLIME;
 		}
 
 		@Nullable
@@ -114,12 +120,18 @@ public class BlockEoandromeda extends ElementsLepidodendronMod.ModElement {
 		@SideOnly(Side.CLIENT)
 		@Override
 		public BlockRenderLayer getRenderLayer() {
-			return BlockRenderLayer.CUTOUT;
+			if (LepidodendronFogSubscribers.hasShaders()) {
+				return BlockRenderLayer.CUTOUT;
+			}
+			return BlockRenderLayer.TRANSLUCENT;
 		}
 
 		@Override
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
-			return layer == BlockRenderLayer.CUTOUT_MIPPED;
+			if (LepidodendronFogSubscribers.hasShaders()) {
+				return layer == BlockRenderLayer.CUTOUT_MIPPED;
+			}
+			return layer == BlockRenderLayer.TRANSLUCENT;
 		}
 
 		@Override
@@ -308,19 +320,19 @@ public class BlockEoandromeda extends ElementsLepidodendronMod.ModElement {
 		public boolean canPlaceBlockOnSide(World worldIn, BlockPos pos, EnumFacing side) {
 			boolean blockface = true;
 			if (side == EnumFacing.NORTH) {
-				if (worldIn.getBlockState(pos.south()).getBlockFaceShape(worldIn, pos.south(), side) != BlockFaceShape.SOLID)
+
 					blockface = false;
 			}
 			if (side == EnumFacing.SOUTH) {
-				if (worldIn.getBlockState(pos.north()).getBlockFaceShape(worldIn, pos.north(), side) != BlockFaceShape.SOLID)
+
 					blockface = false;
 			}
 			if (side == EnumFacing.EAST) {
-				if (worldIn.getBlockState(pos.west()).getBlockFaceShape(worldIn, pos.west(), side) != BlockFaceShape.SOLID)
+
 					blockface = false;
 			}
 			if (side == EnumFacing.WEST) {
-				if (worldIn.getBlockState(pos.east()).getBlockFaceShape(worldIn, pos.east(), side) != BlockFaceShape.SOLID)
+
 					blockface = false;
 			}
 			if (side == EnumFacing.UP) {
@@ -328,7 +340,6 @@ public class BlockEoandromeda extends ElementsLepidodendronMod.ModElement {
 					blockface = false;
 			}
 			if (side == EnumFacing.DOWN) {
-				if (worldIn.getBlockState(pos.up()).getBlockFaceShape(worldIn, pos.up(), side) != BlockFaceShape.SOLID)
 					blockface = false;
 			}
 

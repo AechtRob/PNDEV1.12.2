@@ -54,22 +54,22 @@ public class RenderHerpetogaster extends TileEntitySpecialRenderer<BlockHerpetog
         GlStateManager.pushMatrix();
         if (facing == EnumFacing.DOWN) {
             //Impossible to place like this but anyway.....
-            GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
+            GlStateManager.translate(x + 0.5, y + 0.015, z + 0.5);
         }
         if (facing == EnumFacing.EAST) {
-            GlStateManager.translate(x + 0.5, y + 0.0 + (rotation * 0.1), z + 0.5);
+            GlStateManager.translate(x + 0.01, y + 0.2 + (rotation * 0.2), z + 0.5);
         }
         if (facing == EnumFacing.WEST) {
-            GlStateManager.translate(x + 0.5, y + 0.0 + (rotation * 0.1), z + 0.5);
+            GlStateManager.translate(x + 0.99, y + 0.2 + (rotation * 0.2), z + 0.5);
         }
         if (facing == EnumFacing.NORTH) {
-            GlStateManager.translate(x + 0.5, y + 0.0 + (rotation * 0.1), z + 1.0);
+            GlStateManager.translate(x + 0.5, y + 0.2 + (rotation * 0.2), z + 0.99);
         }
         if (facing == EnumFacing.SOUTH) {
-            GlStateManager.translate(x + 0.5, y + 0.0 + (rotation * 0.1), z + 0.0);
+            GlStateManager.translate(x + 0.5, y + 0.2 + (rotation * 0.2), z + 0.01);
         }
         if (facing == EnumFacing.UP) {
-            GlStateManager.translate(x + 0.5, y + 0.0, z + 0.5);
+            GlStateManager.translate(x + 0.5, y + 0.015, z + 0.5);
         }
 
         GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -85,16 +85,19 @@ public class RenderHerpetogaster extends TileEntitySpecialRenderer<BlockHerpetog
             }
         }
         if (facing == EnumFacing.EAST) {
-            GlStateManager.rotate(90, 0F, 1F, 0F);
+            GlStateManager.rotate(90, 1F, 0F, 0F);
+            GlStateManager.rotate(270, 0F, 0F, 1F);
         }
         if (facing == EnumFacing.WEST) {
-            GlStateManager.rotate(270, 0F, 1F, 0F);
+            GlStateManager.rotate(90, 1F, 0F, 0F);
+            GlStateManager.rotate(90, 0F, 0F, 1F);
         }
         if (facing == EnumFacing.NORTH) {
-            //GlStateManager.rotate(270, 0F, 1F, 0F);
+            GlStateManager.rotate(90, 1F, 0F, 0F);
         }
         if (facing == EnumFacing.SOUTH) {
-            GlStateManager.rotate(180, 0F, 1F, 0F);
+            GlStateManager.rotate(90, 1F, 0F, 0F);
+            GlStateManager.rotate(180, 0F, 0F, 1F);
         }
         if (facing == EnumFacing.UP) {
             if (rotation == 1) {
@@ -107,7 +110,7 @@ public class RenderHerpetogaster extends TileEntitySpecialRenderer<BlockHerpetog
                 GlStateManager.rotate(270, 0F, 1F, 0F);
             }
         }
-        GlStateManager.scale(0.175F, 0.175F, 0.175F);
+        GlStateManager.scale(0.275F, 0.275F, 0.275F);
         //----Start PP Page adjustment
         StackTraceElement[] elements = new Throwable().getStackTrace();
         String callerClass = elements[5].getClassName();
@@ -125,6 +128,7 @@ public class RenderHerpetogaster extends TileEntitySpecialRenderer<BlockHerpetog
         else {
             this.herpetogaster.renderAll(Minecraft.getMinecraft().player.ticksExisted);
         }
+
         GlStateManager.popMatrix();
         GlStateManager.disableRescaleNormal();
         GlStateManager.disableBlend();

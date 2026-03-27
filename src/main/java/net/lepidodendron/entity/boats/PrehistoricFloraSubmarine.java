@@ -1780,8 +1780,15 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         if (riding) {
             //What am I clicking on?
             //Central panel (inventory contents)
-            if (player.rotationYaw - this.rotationYaw > -22 && player.rotationYaw - this.rotationYaw < 22 && player.rotationPitch - this.rotationPitch > -60 && player.rotationPitch - this.rotationPitch < -30 && this.getShulker()) {
-                player.openGui(LepidodendronMod.instance, GUISubmarine.GUIID, world, this.getEntityId(), 0, 0);
+            if (player.rotationYaw - this.rotationYaw > -22 && player.rotationYaw - this.rotationYaw < 22 && player.rotationPitch - this.rotationPitch > -60 && player.rotationPitch - this.rotationPitch < -30) {
+                if (this.getShulker()) {
+                    player.openGui(LepidodendronMod.instance, GUISubmarine.GUIID, world, this.getEntityId(), 0, 0);
+                }
+                else {
+                    if (!(player.world.isRemote)) {
+                        player.sendMessage(new TextComponentString("Submarine inventory has not been provided yet (use a shulker box or similar)"));
+                    }
+                }
             }
             //Left panel (read battery)
             if (player.rotationYaw - this.rotationYaw > -65 && player.rotationYaw - this.rotationYaw < -38 && player.rotationPitch - this.rotationPitch > -55 && player.rotationPitch - this.rotationPitch < -30) {
