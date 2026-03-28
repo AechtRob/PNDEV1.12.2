@@ -3583,9 +3583,11 @@ public class LepidodendronMod {
 	static final int ENTITY_ECTENASPIS = 1468;
 	public static final ResourceLocation ECTENASPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ectenaspis"));
 	static final int ENTITY_PALAEOPALAEMON = 1469;
+	public static final ResourceLocation PALAEOPALAEMON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeopalaemon"));
 	static final int ENTITY_PRIAPULITES = 1470;
 	static final int ENTITY_PALAEOCAMPA = 1471;
 	static final int ENTITY_MACROMYZON = 1472;
+	public static final ResourceLocation MACROMYZON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/macromyzon"));
 	static final int ENTITY_PETROLACOSAURUS = 1473;
     public static final ResourceLocation PETROLACOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/petrolacosaurus"));
 	static final int ENTITY_TUDITANUS = 1474;

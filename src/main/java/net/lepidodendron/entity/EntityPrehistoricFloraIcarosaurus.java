@@ -27,19 +27,19 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraKuehneosuchus extends EntityPrehistoricFloraLandClimbingGlidingBase implements IAdvancementGranter, ITrappableLand {
+public class EntityPrehistoricFloraIcarosaurus extends EntityPrehistoricFloraLandClimbingGlidingBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	public EntityPrehistoricFloraKuehneosuchus(World world) {
+	public EntityPrehistoricFloraIcarosaurus(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);
 		minWidth = 0.3F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 4.0D;
+		maxHealthAgeable = 3.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -148,7 +148,7 @@ public class EntityPrehistoricFloraKuehneosuchus extends EntityPrehistoricFloraL
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.KUEHNEOSUCHUS_LOOT;
+		return LepidodendronMod.ICAROSAURUS_LOOT;
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
@@ -165,6 +165,6 @@ public class EntityPrehistoricFloraKuehneosuchus extends EntityPrehistoricFloraL
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_KUEHNEOSUCHUS;
+		return ModTriggers.CLICK_ICAROSAURUS;
 	}
 }

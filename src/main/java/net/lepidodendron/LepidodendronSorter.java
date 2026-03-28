@@ -6542,6 +6542,15 @@ public class LepidodendronSorter {
     public static final int cratosirex_raw = 5983;
     public static final int raptoblatta_raw = 5984;
     public static final int rafaeliana_raw = 5985;
+    public static final int macromyzon_raw = 5986;
+    public static final int icarosaurus_raw = 5987;
+    public static final int eggs_icarosaurus = 5988;
+    public static final int palaeopalaemon_raw = 5989;
+    public static final int peltobatrachus_raw = 5990;
+    public static final int abyssosaurus_raw = 5991;
+    public static final int iberobatrachus_raw = 5992;
+    public static final int liaobatrachus_raw = 5993;
+
 
     public static final int bivalve_toucasia = 6000;
     public static final int coeloptychium = 6001;
