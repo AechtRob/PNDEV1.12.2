@@ -3592,6 +3592,7 @@ public class LepidodendronMod {
     public static final ResourceLocation PETROLACOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/petrolacosaurus"));
 	static final int ENTITY_TUDITANUS = 1474;
 	static final int ENTITY_PELTOBATRACHUS = 1475;
+	public static final ResourceLocation PELTOBATRACHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/peltobatrachus"));
 	static final int ENTITY_GAIASIA = 1476;
     public static final ResourceLocation GAIASIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gaiasia"));
 	static final int ENTITY_XINJIANGTITAN = 1477;

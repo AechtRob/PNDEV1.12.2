@@ -9308,6 +9308,36 @@ public class RenderHandler {
                 return new RenderMegalithomerus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLiaobatrachus.class, new IRenderFactory<EntityPrehistoricFloraLiaobatrachus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLiaobatrachus> createRenderFor(RenderManager manager) {
+                return new RenderLiaobatrachus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraIberobatrachus.class, new IRenderFactory<EntityPrehistoricFloraIberobatrachus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraIberobatrachus> createRenderFor(RenderManager manager) {
+                return new RenderIberobatrachus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLitorosuchus.class, new IRenderFactory<EntityPrehistoricFloraLitorosuchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLitorosuchus> createRenderFor(RenderManager manager) {
+                return new RenderLitorosuchus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLangobardisaurus.class, new IRenderFactory<EntityPrehistoricFloraLangobardisaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLangobardisaurus> createRenderFor(RenderManager manager) {
+                return new RenderLangobardisaurus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPeltobatrachus.class, new IRenderFactory<EntityPrehistoricFloraPeltobatrachus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPeltobatrachus> createRenderFor(RenderManager manager) {
+                return new RenderPeltobatrachus(manager);
+            }
+        });
 
 
 
