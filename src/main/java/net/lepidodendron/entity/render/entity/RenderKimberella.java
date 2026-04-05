@@ -9,10 +9,10 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderKimberella extends RenderLivingBaseWithBook<EntityPrehistoricFloraKimberella> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Kimberella.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kimberella.png");
 
     public static float getScaler() {
-        return 0.31F;
+        return 0.371F;
     }
 
     public RenderKimberella(RenderManager mgr) {

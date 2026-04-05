@@ -2,6 +2,7 @@ package net.lepidodendron.entity.render;
 
 import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.entity.RenderLivingBase;
@@ -15,6 +16,7 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EnumPlayerModelParts;
+import net.minecraft.scoreboard.Team;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.fml.relauncher.Side;
@@ -572,28 +574,28 @@ public abstract class RenderLivingBaseVariantModels<T extends EntityLivingBase> 
     {
     }
 
-//    public void renderName(T entity, double x, double y, double z)
-//    {
-//        if (net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(new net.minecraftforge.client.event.RenderLivingEvent.Specials.Pre<T>(entity, this, x, y, z))) return;
-//        if (this.canRenderName(entity))
-//        {
-//            double d0 = entity.getDistanceSq(this.renderManager.renderViewEntity);
-//            float f = entity.isSneaking() ? NAME_TAG_RANGE_SNEAK : NAME_TAG_RANGE;
-//
-//            if (d0 < (double)(f * f))
-//            {
-//                String s = entity.getDisplayName().getFormattedText();
-//                GlStateManager.alphaFunc(516, 0.1F);
-//                this.renderEntityName(entity, x, y, z, s, d0);
-//            }
-//        }
-//        net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(new net.minecraftforge.client.event.RenderLivingEvent.Specials.Post<T>(entity, this, x, y, z));
-//    }
-//
-//    protected boolean canRenderName(T entity)
-//    {
-//        return canRenderNameLivingBase(entity) && (entity.getAlwaysRenderNameTagForRender() || entity.hasCustomName() && entity == this.renderManager.pointedEntity);
-//    }
+    public void renderName(T entity, double x, double y, double z)
+    {
+        if (net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(new net.minecraftforge.client.event.RenderLivingEvent.Specials.Pre<T>(entity, this, x, y, z))) return;
+        if (this.canRenderName(entity))
+        {
+            double d0 = entity.getDistanceSq(this.renderManager.renderViewEntity);
+            float f = entity.isSneaking() ? NAME_TAG_RANGE_SNEAK : NAME_TAG_RANGE;
+
+            if (d0 < (double)(f * f))
+            {
+                String s = entity.getDisplayName().getFormattedText();
+                GlStateManager.alphaFunc(516, 0.1F);
+                this.renderEntityName(entity, x, y, z, s, d0);
+            }
+        }
+        net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(new net.minecraftforge.client.event.RenderLivingEvent.Specials.Post<T>(entity, this, x, y, z));
+    }
+
+    protected boolean canRenderName(T entity)
+    {
+        return canRenderNameLivingBase(entity) && (entity.getAlwaysRenderNameTagForRender() || entity.hasCustomName() && entity == this.renderManager.pointedEntity);
+    }
 
     public void setLightmap(T entityLivingIn)
     {
@@ -603,49 +605,49 @@ public abstract class RenderLivingBaseVariantModels<T extends EntityLivingBase> 
         OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
     }
 
-//    protected boolean canRenderNameLivingBase(T entity)
-//    {
-//        EntityPlayerSP entityplayersp = Minecraft.getMinecraft().player;
-//        boolean flag = !entity.isInvisibleToPlayer(entityplayersp);
-//
-//        if (entity != entityplayersp)
-//        {
-//            Team team = entity.getTeam();
-//            Team team1 = entityplayersp.getTeam();
-//
-//            if (team != null)
-//            {
-//                Team.EnumVisible team$enumvisible = team.getNameTagVisibility();
-//
-//                switch (team$enumvisible)
-//                {
-//                    case ALWAYS:
-//                        return flag;
-//                    case NEVER:
-//                        return false;
-//                    case HIDE_FOR_OTHER_TEAMS:
-//                        return team1 == null ? flag : team.isSameTeam(team1) && (team.getSeeFriendlyInvisiblesEnabled() || flag);
-//                    case HIDE_FOR_OWN_TEAM:
-//                        return team1 == null ? flag : !team.isSameTeam(team1) && flag;
-//                    default:
-//                        return true;
-//                }
-//            }
-//        }
-//
-//        return Minecraft.isGuiEnabled() && entity != this.renderManager.renderViewEntity && flag && !entity.isBeingRidden();
-//    }
-//
-//    static
-//    {
-//        int[] aint = TEXTURE_BRIGHTNESS.getTextureData();
-//
-//        for (int i = 0; i < 256; ++i)
-//        {
-//            aint[i] = -1;
-//        }
-//
-//        TEXTURE_BRIGHTNESS.updateDynamicTexture();
-//    }
+    protected boolean canRenderNameLivingBase(T entity)
+    {
+        EntityPlayerSP entityplayersp = Minecraft.getMinecraft().player;
+        boolean flag = !entity.isInvisibleToPlayer(entityplayersp);
+
+        if (entity != entityplayersp)
+        {
+            Team team = entity.getTeam();
+            Team team1 = entityplayersp.getTeam();
+
+            if (team != null)
+            {
+                Team.EnumVisible team$enumvisible = team.getNameTagVisibility();
+
+                switch (team$enumvisible)
+                {
+                    case ALWAYS:
+                        return flag;
+                    case NEVER:
+                        return false;
+                    case HIDE_FOR_OTHER_TEAMS:
+                        return team1 == null ? flag : team.isSameTeam(team1) && (team.getSeeFriendlyInvisiblesEnabled() || flag);
+                    case HIDE_FOR_OWN_TEAM:
+                        return team1 == null ? flag : !team.isSameTeam(team1) && flag;
+                    default:
+                        return true;
+                }
+            }
+        }
+
+        return Minecraft.isGuiEnabled() && entity != this.renderManager.renderViewEntity && flag && !entity.isBeingRidden();
+    }
+
+    static
+    {
+        int[] aint = TEXTURE_BRIGHTNESS.getTextureData();
+
+        for (int i = 0; i < 256; ++i)
+        {
+            aint[i] = -1;
+        }
+
+        TEXTURE_BRIGHTNESS.updateDynamicTexture();
+    }
 }
 
