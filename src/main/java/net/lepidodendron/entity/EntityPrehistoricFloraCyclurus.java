@@ -81,7 +81,7 @@ public class EntityPrehistoricFloraCyclurus extends EntityPrehistoricFloraAgeabl
 		return 10;
 	}
 
-	public static String getPeriod() {return "Late Cretaceous";}
+	public static String getPeriod() {return "Late Cretaceous - Paleogene";}
 
 	//public static String getHabitat() {return "Aquatic";}
 	//public static String getSize() {return "L";}

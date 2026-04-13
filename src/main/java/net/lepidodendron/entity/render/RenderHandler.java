@@ -9338,6 +9338,18 @@ public class RenderHandler {
                 return new RenderPeltobatrachus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAbyssosaurus.class, new IRenderFactory<EntityPrehistoricFloraAbyssosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAbyssosaurus> createRenderFor(RenderManager manager) {
+                return new RenderAbyssosaurus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGordodon.class, new IRenderFactory<EntityPrehistoricFloraGordodon>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraGordodon> createRenderFor(RenderManager manager) {
+                return new RenderGordodon(manager);
+            }
+        });
 
 
 
