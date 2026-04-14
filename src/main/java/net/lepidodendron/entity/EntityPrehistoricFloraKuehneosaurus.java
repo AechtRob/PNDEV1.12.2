@@ -153,7 +153,7 @@ public class EntityPrehistoricFloraKuehneosaurus extends EntityPrehistoricFloraL
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.XIANGLONG_LOOT;
+		return LepidodendronMod.KUEHNEOSAURUS_LOOT;
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
@@ -170,6 +170,6 @@ public class EntityPrehistoricFloraKuehneosaurus extends EntityPrehistoricFloraL
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_XIANGLONG;
+		return ModTriggers.CLICK_KUEHNEOSAURUS;
 	}
 }

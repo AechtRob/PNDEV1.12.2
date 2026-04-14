@@ -33,6 +33,8 @@ public class EntityPrehistoricFloraTadpole extends EntityPrehistoricFloraAgeable
 	private static final float[] HYOGOBATRACHUS_SIZE = new float[]{0.2F, 0.2F};
   	private static final float[] KURURUBATRACHUS_SIZE = new float[]{0.2F, 0.2F};
 	private static final float[] GENIBATRACHUS_SIZE = new float[]{0.2F, 0.2F};
+	private static final float[] IBEROBATRACHUS_SIZE = new float[]{0.2F, 0.2F};
+	private static final float[] LIAOBATRACHUS_SIZE = new float[]{0.2F, 0.2F};
 
 	private static final DataParameter<Integer> TADPOLE_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraTadpole.class, DataSerializers.VARINT);
 
@@ -71,7 +73,9 @@ public class EntityPrehistoricFloraTadpole extends EntityPrehistoricFloraAgeable
 		RHADINOSTEUS(4, "rhadinosteus"),
 		HYOGOBATRACHUS(5, "hyogobatrachus"),
 		GENIBATRACHUS(6, "genibatrachus"),
-    KURURUBATRACHUS(7, "kururubatrachus")
+    	KURURUBATRACHUS(7, "kururubatrachus"),
+		IBEROBATRACHUS(8, "iberobatrachus"),
+		LIAOBATRACHUS(9, "liaobatrachus"),
 		;
 	
 		private final String name;
@@ -135,10 +139,14 @@ public class EntityPrehistoricFloraTadpole extends EntityPrehistoricFloraAgeable
 				return RHADINOSTEUS_SIZE;
 			case HYOGOBATRACHUS:
 				return HYOGOBATRACHUS_SIZE;
-      case KURURUBATRACHUS:
-          return KURURUBATRACHUS_SIZE;
+      		case KURURUBATRACHUS:
+          		return KURURUBATRACHUS_SIZE;
 			case GENIBATRACHUS:
 				return GENIBATRACHUS_SIZE;
+			case LIAOBATRACHUS:
+				return LIAOBATRACHUS_SIZE;
+			case IBEROBATRACHUS:
+				return IBEROBATRACHUS_SIZE;
 		}
 	}
 
@@ -325,10 +333,14 @@ public class EntityPrehistoricFloraTadpole extends EntityPrehistoricFloraAgeable
 				return EntityPrehistoricFloraRhadinosteus.class;
 			case HYOGOBATRACHUS:
 				return EntityPrehistoricFloraHyogobatrachus.class;
-      case KURURUBATRACHUS:
-          return EntityPrehistoricFloraKururubatrachus.class;
+      		case KURURUBATRACHUS:
+          		return EntityPrehistoricFloraKururubatrachus.class;
 			case GENIBATRACHUS:
 				return EntityPrehistoricFloraGenibatrachus.class;
+			case IBEROBATRACHUS:
+				return EntityPrehistoricFloraIberobatrachus.class;
+			case LIAOBATRACHUS:
+				return EntityPrehistoricFloraLiaobatrachus.class;
 		}
 
 	}

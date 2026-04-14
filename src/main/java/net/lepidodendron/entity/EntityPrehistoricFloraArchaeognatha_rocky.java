@@ -48,10 +48,10 @@ public class EntityPrehistoricFloraArchaeognatha_rocky extends EntityPrehistoric
 
 	public EntityPrehistoricFloraArchaeognatha_rocky(World world) {
 		super(world);
-		setSize(0.2F, 0.2F);
+		setSize(0.12F, 0.12F);
 		minWidth = 0.1F;
-		maxWidth = 0.2F;
-		maxHeight = 0.2F;
+		maxWidth = 0.12F;
+		maxHeight = 0.12F;
 		maxHealthAgeable = 2.0D;
 		JUMP_ANIMATION = Animation.create(this.getJumpLength());
 	}

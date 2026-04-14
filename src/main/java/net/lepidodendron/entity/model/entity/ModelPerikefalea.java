@@ -220,12 +220,12 @@ public class ModelPerikefalea extends ModelBasePalaeopedia {
         if (tickAnim >= 0 && tickAnim < 5) {
             xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
             yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
+            zz = 0.6 + (((tickAnim - 0) / 5) * (0.9-(0.6)));
         }
         else if (tickAnim >= 5 && tickAnim < 20) {
             xx = 0 + (((tickAnim - 5) / 15) * (-0.1-(0)));
             yy = 0 + (((tickAnim - 5) / 15) * (0.77-(0)));
-            zz = 0 + (((tickAnim - 5) / 15) * (0-(0)));
+            zz = 0.9 + (((tickAnim - 5) / 15) * (0-(0.9)));
         }
         else if (tickAnim >= 20 && tickAnim < 25) {
             xx = -0.1 + (((tickAnim - 20) / 5) * (0-(-0.1)));
@@ -235,12 +235,12 @@ public class ModelPerikefalea extends ModelBasePalaeopedia {
         else if (tickAnim >= 25 && tickAnim < 34) {
             xx = 0 + (((tickAnim - 25) / 9) * (0-(0)));
             yy = 0 + (((tickAnim - 25) / 9) * (0.4-(0)));
-            zz = 0 + (((tickAnim - 25) / 9) * (0-(0)));
+            zz = 0 + (((tickAnim - 25) / 9) * (0.3-(0)));
         }
         else if (tickAnim >= 34 && tickAnim < 40) {
             xx = 0 + (((tickAnim - 34) / 6) * (0-(0)));
             yy = 0.4 + (((tickAnim - 34) / 6) * (0-(0.4)));
-            zz = 0 + (((tickAnim - 34) / 6) * (0-(0)));
+            zz = 0.3 + (((tickAnim - 34) / 6) * (0.6-(0.3)));
         }
         else {
             xx = 0;
@@ -415,7 +415,6 @@ public class ModelPerikefalea extends ModelBasePalaeopedia {
             zz = 0;
         }
         this.setRotateAngle(arm5, arm5.rotateAngleX + (float) Math.toRadians(xx), arm5.rotateAngleY + (float) Math.toRadians(yy), arm5.rotateAngleZ + (float) Math.toRadians(zz));
-        
     }
 
 }

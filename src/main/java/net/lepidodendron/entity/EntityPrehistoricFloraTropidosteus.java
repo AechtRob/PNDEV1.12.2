@@ -45,10 +45,10 @@ public class EntityPrehistoricFloraTropidosteus extends EntityPrehistoricFloraAg
 			this.moveHelper = new EntityPrehistoricFloraTropidosteus.SwimmingMoveHelperBase();
 			this.navigator = new PathNavigateSwimmer(this, world);
 		}
-		setSize(0.5F, 0.3F);
+		setSize(0.7F, 0.7F);
 		minWidth = 0.2F;
-		maxWidth = 0.5F;
-		maxHeight = 0.3F;
+		maxWidth = 0.7F;
+		maxHeight = 0.7F;
 		maxHealthAgeable = 20.0D;
 	}
 

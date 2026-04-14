@@ -36,7 +36,7 @@ public class RenderArchaeognatha_jungle extends RenderLivingBaseWithBook<EntityP
             case WEST:
             case NORTH:
             case SOUTH:
-                GlStateManager.translate(0.0F, 0.1F, -0.08F);
+                GlStateManager.translate(0.0F, 0.1F, -0.05F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 break;
             case UP:

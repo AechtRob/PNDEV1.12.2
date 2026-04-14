@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraTethybatis extends EntityPrehistoricFloraAgea
 		return this.getAgeScale() < 0.7;
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Late Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
