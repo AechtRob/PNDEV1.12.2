@@ -30,7 +30,8 @@ public class StructureBoneWormUnderwater extends ElementsLepidodendronMod.ModEle
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if (!(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean")))
+		if ((!(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean")))
+			&& (!(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_atlantic_deep"))))
 			return;
 
 		if (random.nextInt(10) <= 1) {
