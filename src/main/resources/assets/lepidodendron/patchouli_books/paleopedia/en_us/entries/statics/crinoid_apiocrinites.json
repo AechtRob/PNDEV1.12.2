@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_crinoid_apiocrinites",
 			"title": "Apiocrinites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Estuarine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Millericrinida$(br)>Apiocrinitidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)$(l)Habitat:$() Estuarine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Millericrinida$(br)>Apiocrinitidae"
 		},
 		{
 			"type": "multiblock",
@@ -31,7 +31,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_apiocrinites",
 			"type": "text",
-			"text": "Apiocrinites is a genus of crinoid from the Jurassic period of Asia and Europe. Its name comes from the Greek 'apion' meaning 'pear.' Its bulb was rather small, with a length of around 20 cm or less in many specimens."
+			"text": "Apiocrinites is a genus of crinoid from the Jurassic period of Asia and Europe. There are also records from the Early Cretaceous. Its name comes from the Greek 'apion' meaning 'pear.' Its bulb was rather small, with a length of around 20 cm or less in many specimens."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_apiocrinites",
