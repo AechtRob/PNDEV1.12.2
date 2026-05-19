@@ -818,7 +818,9 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveCaprinula.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveMonopleura.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalvePolyconites.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockSpongeReef.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockSpongeReef.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidBalanocrinus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidApiocrinites.block).toString()
         };
         return resLoc;
     }

@@ -11,6 +11,7 @@ import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
@@ -105,6 +106,7 @@ public class BlockCrinoidBalanocrinus extends ElementsLepidodendronMod.ModElemen
 			dimensionCriteria = true;
 		}
 		if (dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
 		) {
 			dimensionCriteria = true;
 		}
@@ -137,6 +139,17 @@ public class BlockCrinoidBalanocrinus extends ElementsLepidodendronMod.ModElemen
 				biomeCriteria = false;
 			}
 		}
+
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_rudist")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (!biomeCriteria)
 			return;
 
@@ -147,6 +160,10 @@ public class BlockCrinoidBalanocrinus extends ElementsLepidodendronMod.ModElemen
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_rafts")) {
 			multiplier = 10;
+		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_rudist")) {
+			multiplier = 4;
 		}
 
 		for (int i = 0; i < (12 * multiplier); i++) {
@@ -400,7 +417,7 @@ public class BlockCrinoidBalanocrinus extends ElementsLepidodendronMod.ModElemen
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Crinoid");
-				tooltip.add("Periods: Jurassic");
+				tooltip.add("Periods: Jurassic - Early Cretaceous");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
