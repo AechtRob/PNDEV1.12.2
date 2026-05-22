@@ -6550,6 +6550,9 @@ public class LepidodendronSorter {
     public static final int abyssosaurus_raw = 5991;
     public static final int iberobatrachus_raw = 5992;
     public static final int liaobatrachus_raw = 5993;
+    public static final int velociraptor_raw = 5994;
+    public static final int eggs_velociraptor = 5995;
+    public static final int homarus_raw = 5996;
 
 
     public static final int bivalve_toucasia = 6000;
@@ -6644,6 +6647,70 @@ public class LepidodendronSorter {
     public static final int woodworthia_planter2 = 6087;
     public static final int woodworthia_planter2_peat = 6088;
     public static final int woodworthia_planter2_sand = 6089;
+
+    public static final int struthiocephalus_raw = 6200;
+    public static final int eggs_struthiocephalus = 6201;
+    public static final int pseudopetalichthys_raw = 6202;
+    public static final int palaeacanthaspis_raw = 6203;
+    public static final int kosoraspis_raw = 6204;
+    public static final int murrindalaspis_raw = 6205;
+    public static final int weejasperaspis_raw = 6206;
+    public static final int romundina_raw = 6207;
+    public static final int connemarraspis_raw = 6208;
+    public static final int sherbonaspis_raw = 6209;
+    public static final int stegolepis_raw = 6210;
+    public static final int byssacanthus_raw = 6211;
+    public static final int kirgisolepis_raw = 6212;
+    public static final int sinolepis_raw = 6213;
+    public static final int pampetalichthys_raw = 6214;
+    public static final int macropetalichthys_raw = 6215;
+    public static final int epipetalichthys_raw = 6216;
+    public static final int yiminaspis_raw = 6217;
+    public static final int aleosteus_raw = 6218;
+    public static final int erikaspis_raw = 6219;
+    public static final int bryantolepis_raw = 6220;
+    public static final int dicksonosteus_raw = 6221;
+    public static final int williamsaspis_raw = 6222;
+    public static final int gemuendenaspis_raw = 6223;
+    public static final int taemasosteus_raw = 6224;
+    public static final int burrinjucosteus_raw = 6225;
+    public static final int buchanosteus_raw = 6226;
+    public static final int narrominaspis_raw = 6227;
+    public static final int urvaspis_raw = 6228;
+    public static final int incisoscutum_raw = 6229;
+    public static final int hadrosteus_raw = 6230;
+    public static final int gorgonichthys_raw = 6231;
+    public static final int heintzichthys_raw = 6232;
+    public static final int paramylostoma_raw = 6233;
+    public static final int enseosteus_raw = 6234;
+    public static final int amazichthys_raw = 6235;
+    public static final int bulongosteus_raw = 6236;
+    public static final int alienacanthus_raw = 6237;
+    public static final int diplognathus_raw = 6238;
+    public static final int mulgaspis_raw = 6239;
+    public static final int arctolepis_raw = 6240;
+    public static final int eukaia_raw = 6241;
+    public static final int szelepis_raw = 6242;
+    public static final int antarctaspis_raw = 6243;
+    public static final int jagorina_raw = 6244;
+    public static final int dolganosteus_raw = 6245;
+    public static final int walterosteus_raw = 6246;
+    public static final int dhanguura_raw = 6247;
+    public static final int africanaspis_raw = 6248;
+    public static final int barwickosteus_raw = 6249;
+    public static final int grifftaylor_raw = 6250;
+    public static final int millerosteus_raw = 6251;
+    public static final int dickosteus_raw = 6252;
+    public static final int arenipiscis_raw = 6253;
+    public static final int arabosteus_raw = 6254;
+    public static final int placolepis_raw = 6255;
+    public static final int austrophyllolepis_raw = 6256;
+    public static final int rhachiosteus_raw = 6257;
+    public static final int erromenosteus_raw = 6258;
+    public static final int pholidosteus_raw = 6259;
+    public static final int bruntonichthys_raw = 6260;
+    public static final int golshanichthys_raw = 6261;
+    public static final int minicrania_raw = 6262;
 
 
 
