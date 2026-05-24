@@ -2,6 +2,7 @@ package net.lepidodendron.entity.ai;
 
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.EntityPrehistoricFloraEustreptospondylus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
@@ -20,12 +21,16 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
+import static net.ilexiconn.llibrary.server.animation.IAnimatedEntity.NO_ANIMATION;
+
 public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
 {
     private final Predicate<Entity> canBeSeenSelector;
     protected EntityCreature entity;
     protected Random rand = new Random();
     protected T closestLivingEntity;
+    protected Animation endAnimation;
+    protected boolean playEndAnimation; // This is true if endAnimation is not null
     private final float warnDistance;
     private final Class<T> classToWarn;
     private final Predicate <? super T > warnTargetSelector;
@@ -49,6 +54,20 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
         this.warnTargetSelector = warnTargetSelectorIn;
         this.warnDistance = warnDistanceIn;
         this.setMutexBits(1);
+    }
+
+    public AgeableWarnEntity(EntityCreature entityIn, Class<T> classToWarnIn, float warnDistanceIn, Animation endAnimation)
+    {
+        this(entityIn, classToWarnIn, Predicates.alwaysTrue(), warnDistanceIn);
+        this.endAnimation = endAnimation;
+        this.playEndAnimation = endAnimation != null;
+    }
+
+    public AgeableWarnEntity(EntityCreature entityIn, Class<T> classToWarnIn, Predicate<? super T> warnTargetSelectorIn, float warnDistanceIn, Animation endAnimation)
+    {
+        this(entityIn, classToWarnIn, warnTargetSelectorIn, warnDistanceIn);
+        this.endAnimation = endAnimation;
+        this.playEndAnimation = endAnimation != null;
     }
 
     public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
@@ -80,8 +99,12 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
 
             if (list.isEmpty())
             {
+                boolean hadTarget = ageableBase.getWarnTarget() != null;
                 ageableBase.setWarnTarget(null);
                 ageableBase.setWarnCooldown(0);
+                if (hadTarget && playEndAnimation && ageableBase.getAnimation() == NO_ANIMATION) {
+                    ageableBase.setAnimation(endAnimation);
+                }
                 return false;
             }
             else
