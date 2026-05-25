@@ -12,7 +12,7 @@ public class RenderGoodradigbeeon extends RenderLivingBaseWithBook<EntityPrehist
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/goodradigbeeon.png");
 
     public static float getScaler() {
-        return 0.95F * 0.52F;
+        return 0.95F * 0.75F;
     }
     public RenderGoodradigbeeon(RenderManager mgr) {
         super(mgr, new ModelGoodradigbeeon(), 0.0f);

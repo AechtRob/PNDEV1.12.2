@@ -177,7 +177,7 @@ public class EntityPrehistoricFloraKostensuchus extends EntityPrehistoricFloraLa
 			speedBase = speedBase * 0.5F;
 		}
 		else if (this.getIsFast()) {
-			speedBase = speedBase * 4.5F;
+			speedBase = speedBase * 3F;
 		}
 		return speedBase;
 	}
