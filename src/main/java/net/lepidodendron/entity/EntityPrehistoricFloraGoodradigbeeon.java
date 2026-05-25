@@ -1,24 +1,22 @@
 
 package net.lepidodendron.entity;
 
+import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
-import net.lepidodendron.entity.ai.DietString;
-import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
-import net.lepidodendron.entity.ai.EntityMateAI;
+import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.render.entity.RenderGoodradigbeeon;
+import net.lepidodendron.entity.render.entity.RenderHeterosteus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.MoverType;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.util.DamageSource;
@@ -35,11 +33,12 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater {
+public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
+	int roarCooldown;
 	int bottomCooldown;
 	boolean bottomFlag;
 
@@ -49,21 +48,16 @@ public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFlora
 			this.moveHelper = new EntityPrehistoricFloraGoodradigbeeon.SwimmingMoveHelperBase();
 			this.navigator = new PathNavigateSwimmer(this, world);
 		}
-		setSize(0.6F, 0.35F);
+		setSize(0.85F, 0.3F);
 		minWidth = 0.2F;
-		maxWidth = 0.6F;
-		maxHeight = 0.35F;
+		maxWidth = 0.85F;
+		maxHeight = 0.3F;
 		maxHealthAgeable = 14.0D;
 	}
 
 	@Override
-	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraGoodradigbeeon(this.world);
-	}
-
-	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.75;
 	}
 
 	public static String getPeriod() {return "Devonian";}
@@ -80,6 +74,16 @@ public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFlora
 	}
 
 	@Override
+	public int getRoarLength() {
+		return 50;
+	}
+
+	@Override
+	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
+		return new EntityPrehistoricFloraGoodradigbeeon(this.world);
+	}
+
+	@Override
 	public boolean dropsEggs() {
 		return false;
 	}
@@ -90,21 +94,26 @@ public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFlora
 	}
 
 	@Override
+	public boolean divesToLay() {
+		return false;
+	}
+
+	@Override
 	public int getAdultAge() {
-		return 48000;
+		return 128000;
 	}
 
 	@Override
 	protected float getAISpeedFish() {
 		if (this.isAtBottom() && this.bottomCooldown > 0 && (!this.getIsFast()) && (!this.isInLove())) {
-			return 0.2F;
+			return 0;
 		}
-		return 0.3f;
+		return 0.232f;
 	}
 
 	@Override
 	protected boolean isSlowAtBottom() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -117,13 +126,19 @@ public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFlora
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAI(this, 1));
+		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
+		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraTrilobiteBottomBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraTrilobiteSwimBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISHFOOD);
+		return ArrayUtils.addAll(DietString.FISH);
 	}
 
 	@Override
@@ -153,6 +168,7 @@ public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFlora
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2D);
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(44.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.2D);
 	}
 
 	@Override
@@ -184,9 +200,15 @@ public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFlora
 			launchAttack();
 		}
 
+		if (this.getAnimation() == NO_ANIMATION && this.roarCooldown == 0 && this.isAtBottom()) {
+			this.setAnimation(ROAR_ANIMATION);
+			this.roarCooldown = 1200;
+		}
+		if (this.roarCooldown > 0) {this.roarCooldown -= 1;}
+
 		if (this.isAtBottom() && (!this.bottomFlag) && !this.getIsFast()) {
 			this.bottomFlag = true;
-			this.bottomCooldown = 600;
+			this.bottomCooldown = 2400;
 		}
 		if (!this.isAtBottom()) {
 			this.bottomFlag = false;
@@ -202,7 +224,7 @@ public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFlora
 	public boolean attackEntityAsMob(Entity entity) {
 		if (this.getAnimation() == NO_ANIMATION) {
 			this.setAnimation(ATTACK_ANIMATION);
-			//System.err.println("set attack");
+			System.err.println("set attack");
 		}
 		return false;
 	}
@@ -267,6 +289,12 @@ public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFlora
 		this.limbSwing += this.limbSwingAmount;
 	}
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_GOODRADIGBEEON;
+	}
+
 	class SwimmingMoveHelperBase extends EntityMoveHelper {
 		private final EntityPrehistoricFloraGoodradigbeeon EntityBase = EntityPrehistoricFloraGoodradigbeeon.this;
 
@@ -289,9 +317,9 @@ public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFlora
 				float speed = getAISpeedFish();
 				this.EntityBase.setAIMoveSpeed(speed);
 
-				if (this.EntityBase.isAtBottom()) {
-					this.EntityBase.setAIMoveSpeed(speed * 0.25F);
-				}
+				//if (this.EntityBase.isAtBottom()) {
+				//	this.EntityBase.setAIMoveSpeed(speed * 0.25F);
+				//}
 
 				this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
 			} else {
@@ -299,53 +327,47 @@ public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFlora
 			}
 		}
 	}
-
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {
-		return 0.03;
+		return 0.01;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 1.4;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 0.8;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.4;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return -0F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.4;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return -0.15F;
 	}
-	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0.04;}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.6;
+	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0;
+		return 0.4;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return -0.8F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0;
+		return -0.23;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0F;
+		return -3F;
 	}
-	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderGoodradigbeeon.TEXTURE;
-	}
-	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelGoodradigbeeon;}
-	public static float getScaler(@Nullable String variant) {
-		return RenderGoodradigbeeon.getScaler();
-	}
+
+
 }
