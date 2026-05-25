@@ -12,7 +12,7 @@ public class RenderWuttagoonaspis extends RenderLivingBaseWithBook<EntityPrehist
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/wuttagoonaspis.png");
 
     public static float getScaler() {
-        return 0.95F * 0.4F;
+        return 0.95F * 0.53F;
     }
     public RenderWuttagoonaspis(RenderManager mgr) {
         super(mgr, new ModelWuttagoonaspis(), 0.0f);
