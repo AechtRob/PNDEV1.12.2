@@ -3937,7 +3937,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation HADROSTEUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hadrosteus"));
     static final int ENTITY_GORGONICHTHYS = 1672;
 	public static final ResourceLocation GORGONICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gorgonichthys"));
-    static final int ENTITY_HEINTZICHTHYS = 1673;
+	public static final ResourceLocation GORGONICHTHYS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gorgonichthys_young"));
+	static final int ENTITY_HEINTZICHTHYS = 1673;
 	public static final ResourceLocation HEINTZICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/heintzichthys"));
     static final int ENTITY_PARAMYLOSTOMA = 1674;
 	public static final ResourceLocation PARAMYLOSTOMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/paramylostoma"));

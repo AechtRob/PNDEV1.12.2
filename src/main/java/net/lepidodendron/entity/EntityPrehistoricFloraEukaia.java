@@ -123,7 +123,7 @@ public class EntityPrehistoricFloraEukaia extends EntityPrehistoricFloraAgeableF
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH);
+		return ArrayUtils.addAll(DietString.SHELLFISH);
 	}
 
 	@Override

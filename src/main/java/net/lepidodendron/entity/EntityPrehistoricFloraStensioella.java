@@ -249,7 +249,7 @@ public class EntityPrehistoricFloraStensioella extends EntityPrehistoricFloraSwi
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return DietString.FISH;
+		return DietString.FISHFOOD;
 	}
 
 	@Override

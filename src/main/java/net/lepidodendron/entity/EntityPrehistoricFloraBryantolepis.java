@@ -123,7 +123,7 @@ public class EntityPrehistoricFloraBryantolepis extends EntityPrehistoricFloraAg
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH);
+		return ArrayUtils.addAll(DietString.CORAL);
 	}
 
 	@Override

@@ -1,6 +1,9 @@
 package net.lepidodendron.entity.model.entity;
 
+import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
@@ -29,8 +32,11 @@ public class ModelRhamphodopsis extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer RPectoral2;
     private final AdvancedModelRenderer RPelvic;
     private final AdvancedModelRenderer RPelvic2;
+    private ModelAnimator animator;
 
     public ModelRhamphodopsis() {
+        animator = ModelAnimator.create();
+
         this.textureWidth = 34;
         this.textureHeight = 31;
 
@@ -277,5 +283,26 @@ public class ModelRhamphodopsis extends ModelBasePalaeopedia {
                 this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
             }
         }
+    }
+    public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+        EntityPrehistoricFloraAgeableBase e = (EntityPrehistoricFloraAgeableBase) entity;
+        animator.update(entity);
+        this.resetToDefaultPose();
+        setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);
+
+        animator.setAnimation(e.ATTACK_ANIMATION);
+        animator.startKeyframe(8);
+        animator.rotate(this.Jaw, (float) Math.toRadians(40), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(5);
+        animator.resetKeyframe(2);
+
+        animator.setAnimation(e.ROAR_ANIMATION);
+        animator.startKeyframe(8);
+        animator.rotate(this.Jaw, (float) Math.toRadians(37.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(5);
+        animator.resetKeyframe(2);
+
     }
 }
