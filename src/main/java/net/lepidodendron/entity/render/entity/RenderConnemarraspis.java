@@ -12,7 +12,7 @@ public class RenderConnemarraspis extends RenderLivingBaseWithBook<EntityPrehist
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/connemarraspis.png");
 
     public static float getScaler() {
-        return 0.15F;
+        return 0.26F;
     }
     public RenderConnemarraspis(RenderManager mgr) {
         super(mgr, new ModelConnemarraspis(), 0.0f);

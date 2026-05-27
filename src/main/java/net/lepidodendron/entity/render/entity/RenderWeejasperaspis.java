@@ -12,7 +12,7 @@ public class RenderWeejasperaspis extends RenderLivingBaseWithBook<EntityPrehist
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/weejasperaspis.png");
 
     public static float getScaler() {
-        return 0.15F;
+        return 0.43F;
     }
     public RenderWeejasperaspis(RenderManager mgr) {
         super(mgr, new ModelWeejasperaspis(), 0.0f);

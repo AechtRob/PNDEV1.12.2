@@ -12,7 +12,7 @@ public class RenderMurrindalaspis extends RenderLivingBaseWithBook<EntityPrehist
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/murrindalaspis.png");
 
     public static float getScaler() {
-        return 0.15F;
+        return 0.356F;
     }
     public RenderMurrindalaspis(RenderManager mgr) {
         super(mgr, new ModelMurrindalaspis(), 0.0f);

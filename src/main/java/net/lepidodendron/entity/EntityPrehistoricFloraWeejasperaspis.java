@@ -45,9 +45,9 @@ public class EntityPrehistoricFloraWeejasperaspis extends EntityPrehistoricFlora
 			this.moveHelper = new EntityPrehistoricFloraWeejasperaspis.SwimmingMoveHelperBase();
 			this.navigator = new PathNavigateSwimmer(this, world);
 		}
-		setSize(0.3F, 0.1F);
+		setSize(0.4F, 0.3F);
 		minWidth = 0.2F;
-		maxWidth = 0.3F;
+		maxWidth = 0.4F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 6.0D;
 	}
@@ -89,9 +89,9 @@ public class EntityPrehistoricFloraWeejasperaspis extends EntityPrehistoricFlora
 	@Override
 	protected float getAISpeedFish() {
 		if (this.isAtBottom() && this.bottomCooldown > 0 && (!this.getIsFast()) && (!this.isInLove())) {
-			return 0.23F;
+			return 0.18F;
 		}
-		return 0.3f;
+		return 0.25f;
 	}
 
 	@Override

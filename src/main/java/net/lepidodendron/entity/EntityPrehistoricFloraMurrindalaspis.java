@@ -45,9 +45,9 @@ public class EntityPrehistoricFloraMurrindalaspis extends EntityPrehistoricFlora
 			this.moveHelper = new EntityPrehistoricFloraMurrindalaspis.SwimmingMoveHelperBase();
 			this.navigator = new PathNavigateSwimmer(this, world);
 		}
-		setSize(0.3F, 0.1F);
+		setSize(0.4F, 0.3F);
 		minWidth = 0.2F;
-		maxWidth = 0.3F;
+		maxWidth = 0.4F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 6.0D;
 	}

@@ -12,7 +12,7 @@ public class RenderRomundina extends RenderLivingBaseWithBook<EntityPrehistoricF
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/romundina.png");
 
     public static float getScaler() {
-        return 0.15F;
+        return 0.3F;
     }
     public RenderRomundina(RenderManager mgr) {
         super(mgr, new ModelRomundina(), 0.0f);

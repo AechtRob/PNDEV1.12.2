@@ -313,7 +313,7 @@ public class ModelPseudopetalichthys extends ModelBasePalaeopedia {
             speed = 0.15F;
             taildegree = 0.15F;
         }
-
+        this.main.offsetY = -0.05F;
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
             this.chainSwing(fishTail, speed, taildegree, -3, f2, 1);
@@ -331,7 +331,7 @@ public class ModelPseudopetalichthys extends ModelBasePalaeopedia {
 
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.main.offsetY = 0.05F;
+                this.main.offsetY = -0.05F;
                 this.bob(main, -speed, 2F, false, f2, 1);
                 this.chainWave(fishTail, speed, 0.2F, -3, f2, 1);
             }

@@ -12,7 +12,7 @@ public class RenderPseudopetalichthys extends RenderLivingBaseWithBook<EntityPre
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pseudopetalichthys.png");
 
     public static float getScaler() {
-        return 0.15F;
+        return 0.28F;
     }
     public RenderPseudopetalichthys(RenderManager mgr) {
         super(mgr, new ModelPseudopetalichthys(), 0.0f);

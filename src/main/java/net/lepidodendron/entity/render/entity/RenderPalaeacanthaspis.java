@@ -12,7 +12,7 @@ public class RenderPalaeacanthaspis extends RenderLivingBaseWithBook<EntityPrehi
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeacanthaspis.png");
 
     public static float getScaler() {
-        return 0.15F;
+        return 0.19F;
     }
     public RenderPalaeacanthaspis(RenderManager mgr) {
         super(mgr, new ModelPalaeacanthaspis(), 0.0f);

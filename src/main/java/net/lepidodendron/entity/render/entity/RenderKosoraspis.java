@@ -12,7 +12,7 @@ public class RenderKosoraspis extends RenderLivingBaseWithBook<EntityPrehistoric
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kosoraspis.png");
 
     public static float getScaler() {
-        return 0.15F;
+        return 0.3F;
     }
     public RenderKosoraspis(RenderManager mgr) {
         super(mgr, new ModelKosoraspis(), 0.0f);

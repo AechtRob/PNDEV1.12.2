@@ -327,7 +327,7 @@ public class ModelRomundina extends ModelBasePalaeopedia {
         if (!e.isInWater()) {
             speed = 0.26F;
         }
-        this.main.offsetZ = -0.5F;
+//        this.main.offsetZ = -0.5F;
 
         //this.head.rotateAngleY += f3 / (180F / (float) Math.PI);
         //this.head.rotateAngleX += f4 / (180F / (float) Math.PI);
