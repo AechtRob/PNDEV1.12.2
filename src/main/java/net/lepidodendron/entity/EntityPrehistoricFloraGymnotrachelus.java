@@ -48,7 +48,7 @@ public class EntityPrehistoricFloraGymnotrachelus extends EntityPrehistoricFlora
 		minWidth = 0.2F;
 		maxWidth = 0.5F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 19.0D;
+		maxHealthAgeable = 12.0D;
 	}
 
 	@Override
