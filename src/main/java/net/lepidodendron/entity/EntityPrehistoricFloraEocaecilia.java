@@ -124,7 +124,7 @@ public class EntityPrehistoricFloraEocaecilia extends EntityPrehistoricFloraLand
 	}
 
 	public float getAISpeedLand() {
-		float calcSpeed = 0.225F;
+		float calcSpeed = 0.125F;
 		if (this.isReallyInWater()) {
 			calcSpeed= 0.39f;
 		}

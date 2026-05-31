@@ -5556,7 +5556,7 @@ public class LepidodendronSorter {
 
     public static final int notocyamus = 8419;
     public static final int notocyamus_flower = 8420;
-    
+
     public static final int trochodendroides_bench = 8421;
     public static final int trochodendroides_boat_item = 8422;
     public static final int trochodendroides_bridge = 8423;
@@ -5637,7 +5637,7 @@ public class LepidodendronSorter {
     public static final int soepadmoa_sapling = 8465;
     public static final int soepadmoa_leaves = 8466;
     public static final int soepadmoa_seeds = 8467;
-    
+
     //Rob list ends-----
 
     public static final int priscomyzon_raw = 4974;
@@ -6356,6 +6356,40 @@ public class LepidodendronSorter {
     public static final int bivalve_monopleura= 5708;
     public static final int bivalve_polyconites= 5709;
     public static final int eoandromedastatic= 5710;
+    public static final int erfoudichthys_raw= 5684;
+    public static final int afrocascudo_raw= 5685;
+    public static final int retodus_raw= 5686;
+    public static final int ellimmichthys_raw= 5687;
+    public static final int kradimus_raw= 5688;
+    public static final int rubricacaecilia_raw= 5689;
+    public static final int eggs_rubricacaecilia = 5690;
+    public static final int peipiaosteus_raw= 5691;
+    public static final int caeus_raw= 5692;
+    public static final int barbalepis_raw= 5693;
+    public static final int siyuichthys_raw= 5694;
+    public static final int epaelops_raw= 5695;
+    public static final int gregoriopycnodus_raw= 5696;
+    public static final int waldmanichthys_raw= 5696;
+    public static final int tharrhias_raw= 5697;
+    public static final int pachyrhizodus_marathonensis_raw= 5698;
+    public static final int ferussina_item = 5699;
+    public static final int turritella_item = 5700;
+    public static final int slavoia_raw= 5721;
+    public static final int eggs_slavoia = 5722;
+    public static final int shachemys_raw= 5723;
+    public static final int eggs_shachemys = 5724;
+    public static final int otwayemys_raw= 5725;
+    public static final int eggs_otwayemys = 5726;
+    public static final int aragochersis_raw= 5727;
+    public static final int eggs_aragochersis = 5728;
+    public static final int manidens_raw= 5729;
+    public static final int eggs_manidens = 5730;
+    public static final int tuditanus_raw= 5731;
+    public static final int eggs_tuditanus = 5732;
+    public static final int axelrodichthys_raw= 5733;
+    public static final int squatina_raw= 5734;
+
+
     public static final int irritator_raw = 5800;
     public static final int spinosaurus_raw = 5801;
     public static final int eggs_irritator = 5802;

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_stonefly",
 			"title": "Stonefly",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian - Present$(br2)>Arthropoda$(br)>Insecta$(br)>Pterygota$(br)>Plethodidae"
+			"text": "$(l)Temporal Range:$() Permian - Present$(br2)>Arthropoda$(br)>Insecta$(br)>Pterygota$(br)>Plecoptera"
 		},
         	{
             "type": "entity",
