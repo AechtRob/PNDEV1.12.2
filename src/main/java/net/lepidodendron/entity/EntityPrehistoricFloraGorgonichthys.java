@@ -232,6 +232,9 @@ public class EntityPrehistoricFloraGorgonichthys extends EntityPrehistoricFloraA
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			return LepidodendronMod.GORGONICHTHYS_LOOT_YOUNG;
+		}
 		return LepidodendronMod.GORGONICHTHYS_LOOT;
 	}
 

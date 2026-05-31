@@ -1,6 +1,8 @@
 package net.lepidodendron.entity.model.entity;
 
+import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
@@ -50,9 +52,11 @@ public class ModelBryantolepis extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer tail4;
     private final AdvancedModelRenderer cube_r29;
     private final AdvancedModelRenderer cube_r30;
+    private ModelAnimator animator;
 
 
     public ModelBryantolepis() {
+        animator = ModelAnimator.create();
         this.textureWidth = 64;
         this.textureHeight = 64;
 
@@ -409,4 +413,26 @@ public class ModelBryantolepis extends ModelBasePalaeopedia {
 
         }
 
-    }}
+    }
+    public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+        EntityPrehistoricFloraAgeableBase e = (EntityPrehistoricFloraAgeableBase) entity;
+        animator.update(entity);
+        this.resetToDefaultPose();
+        setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);
+
+        animator.setAnimation(e.ATTACK_ANIMATION);
+        animator.startKeyframe(8);
+        animator.rotate(this.jaw, (float) Math.toRadians(40), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(5);
+        animator.resetKeyframe(2);
+
+        animator.setAnimation(e.ROAR_ANIMATION);
+        animator.startKeyframe(8);
+        animator.rotate(this.jaw, (float) Math.toRadians(37.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(5);
+        animator.resetKeyframe(2);
+
+    }
+}

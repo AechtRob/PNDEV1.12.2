@@ -249,7 +249,7 @@ public class EntityPrehistoricFloraEpipetalichthys extends EntityPrehistoricFlor
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return DietString.FISH;
+		return DietString.ALGAE;
 	}
 
 	@Override
