@@ -9770,6 +9770,30 @@ public class RenderHandler {
                 return new RenderPseudopetalichthys(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraChronocancer.class, new IRenderFactory<EntityPrehistoricFloraChronocancer>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraChronocancer> createRenderFor(RenderManager manager) {
+                return new RenderChronocancer(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBeurlenia.class, new IRenderFactory<EntityPrehistoricFloraBeurlenia>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraBeurlenia> createRenderFor(RenderManager manager) {
+                return new RenderBeurlenia(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraEpoidesuchus.class, new IRenderFactory<EntityPrehistoricFloraEpoidesuchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraEpoidesuchus> createRenderFor(RenderManager manager) {
+                return new RenderEpoidesuchus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHamadasuchus.class, new IRenderFactory<EntityPrehistoricFloraHamadasuchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraHamadasuchus> createRenderFor(RenderManager manager) {
+                return new RenderHamadasuchus(manager);
+            }
+        });
 
 
 
