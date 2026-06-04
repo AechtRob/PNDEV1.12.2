@@ -1579,9 +1579,9 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_epoidesuchus", EntityPrehistoricFloraEpoidesuchus.class, LepidodendronMod.ENTITY_EPOIDESUCHUS, 64,-8753331,-11650270);
         registerEntity("prehistoric_flora_beurlenia", EntityPrehistoricFloraBeurlenia.class, LepidodendronMod.ENTITY_BEURLENIA, 48,-11114135,-12829642);
         registerEntity("prehistoric_flora_chronocancer", EntityPrehistoricFloraChronocancer.class, LepidodendronMod.ENTITY_CHRONOCANCER, 48,-9940649,-5594198);
-//        registerEntity("prehistoric_flora_asilisaurus", EntityPrehistoricFloraAsilisaurus.class, LepidodendronMod.ENTITY_ASILISAURUS, 48,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_typothorax", EntityPrehistoricFloraTypothorax.class, LepidodendronMod.ENTITY_TYPOTHORAX, 48,-11354642,-15131876);
-//        registerEntity("prehistoric_flora_titanophoneus", EntityPrehistoricFloraTitanophoneus.class, LepidodendronMod.ENTITY_TITANOPHONEUS, 48,-11354642,-15131876);
+        registerEntity("prehistoric_flora_asilisaurus", EntityPrehistoricFloraAsilisaurus.class, LepidodendronMod.ENTITY_ASILISAURUS, 64,-11654894,-6129062);
+        registerEntity("prehistoric_flora_typothorax", EntityPrehistoricFloraTypothorax.class, LepidodendronMod.ENTITY_TYPOTHORAX, 64,-6531531,-12961222);
+        registerEntity("prehistoric_flora_titanophoneus", EntityPrehistoricFloraTitanophoneus.class, LepidodendronMod.ENTITY_TITANOPHONEUS, 64,-10797005,-5405591);
 //        registerEntity("prehistoric_flora_palaeocampa", EntityPrehistoricFloraPalaeocampa.class, LepidodendronMod.ENTITY_PALAEOCAMPA, 48,-11354642,-15131876);
 //        registerEntity("prehistoric_flora_papiliomaris", EntityPrehistoricFloraPapiliomaris.class, LepidodendronMod.ENTITY_PAPILIOMARIS, 48,-11354642,-15131876);
 

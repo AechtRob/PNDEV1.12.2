@@ -4008,9 +4008,15 @@ public class LepidodendronMod {
 	public static final ResourceLocation STRUTHIOCEPHALUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/struthiocephalus_young"));
 	public static final ResourceLocation STRUTHIOCEPHALUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/struthiocephalus"));
 	static final int ENTITY_TYPOTHORAX = 1705;
+	public static final ResourceLocation TYPOTHORAX_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/typothorax_young"));
+	public static final ResourceLocation TYPOTHORAX_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/typothorax"));
 	static final int ENTITY_ASILISAURUS = 1706;
+	public static final ResourceLocation ASILISAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/asilisaurus"));
 	static final int ENTITY_VENETORAPTOR = 1707;
+	public static final ResourceLocation VENETORAPTOR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/venetoraptor"));
 	static final int ENTITY_TITANOPHONEUS = 1708;
+	public static final ResourceLocation TITANOPHONEUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/titanophoneus_young"));
+	public static final ResourceLocation TITANOPHONEUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/titanophoneus"));
 
 
     public static final int ENTITY_MYRIAPOD = 1015;

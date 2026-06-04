@@ -9794,6 +9794,24 @@ public class RenderHandler {
                 return new RenderHamadasuchus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTitanophoneus.class, new IRenderFactory<EntityPrehistoricFloraTitanophoneus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTitanophoneus> createRenderFor(RenderManager manager) {
+                return new RenderTitanophoneus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTypothorax.class, new IRenderFactory<EntityPrehistoricFloraTypothorax>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTypothorax> createRenderFor(RenderManager manager) {
+                return new RenderTypothorax(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAsilisaurus.class, new IRenderFactory<EntityPrehistoricFloraAsilisaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAsilisaurus> createRenderFor(RenderManager manager) {
+                return new RenderAsilisaurus(manager);
+            }
+        });
 
 
 

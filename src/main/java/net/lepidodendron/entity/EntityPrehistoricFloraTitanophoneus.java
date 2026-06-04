@@ -9,19 +9,13 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.block.BlockDirectional;
-import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -29,36 +23,38 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraHamadasuchus extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
+public class EntityPrehistoricFloraTitanophoneus extends EntityPrehistoricFloraLandCarnivoreBase implements ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	public int ambientSoundTime;
 	public Animation NOISE_ANIMATION;
-	public Animation STAND_ANIMATION;
 	public Animation YAWN_ANIMATION;
+	public Animation ALERT_ANIMATION;
 	private int standCooldown;
 
-	public EntityPrehistoricFloraHamadasuchus(World world) {
+	public EntityPrehistoricFloraTitanophoneus(World world) {
 		super(world);
-		setSize(0.8F, 0.8F);
-		minWidth = 0.15F;
-		maxWidth = 0.8F;
+		setSize(0.95F, 0.8F);
+		minWidth = 0.12F;
+		maxWidth = 0.95F;
 		maxHeight = 0.8F;
-		maxHealthAgeable = 22.0D;
+		maxHealthAgeable = 28.0D;
+		NOISE_ANIMATION = Animation.create(40);
+		YAWN_ANIMATION = Animation.create(50);
+		ALERT_ANIMATION = Animation.create(210);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
-		STAND_ANIMATION = Animation.create(154);
-		YAWN_ANIMATION = Animation.create(78);
 	}
 
 	@Override
@@ -70,10 +66,53 @@ public class EntityPrehistoricFloraHamadasuchus extends EntityPrehistoricFloraLa
 	}
 
 	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 2; //large
+	}
+
+	@Override
+	public boolean placesNest() {
+		return true;
+	}
+
+	@Override
+	public boolean isNestMound() {
+		return true;
+	}
+
+	public boolean testLay(World world, BlockPos pos) {
+		return (
+				nestBlockMatch(world, pos)
+		);
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.standCooldown = rand.nextInt(2000);
+		return livingdata;
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound)
+	{
+		super.writeEntityToNBT(compound);
+		compound.setInteger("standCooldown", this.standCooldown);
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.standCooldown = compound.getInteger("standCooldown");
+	}
+
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, YAWN_ANIMATION, ALERT_ANIMATION};
+	}
+
+	@Override
 	public boolean isAnimationDirectionLocked(Animation animation) {
-		return animation == STAND_ANIMATION
-				|| animation == YAWN_ANIMATION
-				|| super.isAnimationDirectionLocked(animation);
+		return animation == ROAR_ANIMATION //warning a player
+				|| animation == ALERT_ANIMATION;
 	}
 
 	@Override
@@ -88,17 +127,12 @@ public class EntityPrehistoricFloraHamadasuchus extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getRoarLength() {
-		return 53;
+		return 50;
 	}
 
-	public static String getPeriod() {return "Late Cretaceous";}
+	public static String getPeriod() {return "Permian";}
 
-	//public static String getHabitat() {return "Terrestrial Archosaur";}
-
-	@Override
-	public int getEggType(@Nullable String variantIn) {
-		return 1; //medium
-	}
+	//public static String getHabitat() {return "Terrestrial Saurischian";}
 
 	@Override
 	public boolean hasNest() {
@@ -126,60 +160,33 @@ public class EntityPrehistoricFloraHamadasuchus extends EntityPrehistoricFloraLa
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.28F;
+		float speedBase = 0.32F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == STAND_ANIMATION) {
-			return 0.0F;
+		if (this.getAnimation() == DRINK_ANIMATION) {
+			return 0.0F; //Is drinking
 		}
-		if (this.getIsFast()) {
-			speedBase = speedBase * 1.55F;
+
+		else if (this.getIsFast()) {
+			speedBase = speedBase * 3F;
 		}
 		return speedBase;
 	}
 
 	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-		//random idle animations
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			if (this.getAnimation() == NO_ANIMATION) {
-				this.setAnimation(STAND_ANIMATION);
-			}
-			this.standCooldown = 2000;
-		}
-		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 2000;
-			this.setAnimation(NO_ANIMATION);
-		}
-	}
-
-	@Override
-	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, STAND_ANIMATION};
-	}
-
-	public void writeEntityToNBT(NBTTagCompound compound)
-	{
-		super.writeEntityToNBT(compound);
-		compound.setInteger("standCooldown", this.standCooldown);
-	}
-
-	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
-		this.standCooldown = compound.getInteger("standCooldown");
+	public float getSneakRange() {
+		return 8;
 	}
 
 	@Override
 	public int getTalkInterval() {
-		return 220;
+		return 500;
 	}
 
 	@Override
 	public int getAdultAge() {
-		return 64000;
+		return 56000;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
@@ -197,15 +204,14 @@ public class EntityPrehistoricFloraHamadasuchus extends EntityPrehistoricFloraLa
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
-		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		//tasks.addTask(4, new PanicAI(this, 1.6D));
-		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this,1));
+		tasks.addTask(3, new AgeableWarnEntity(this, EntityPlayer.class, 4));
+		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(5, new LandWanderNestInBlockAI(this));
+		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(9, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
@@ -215,7 +221,7 @@ public class EntityPrehistoricFloraHamadasuchus extends EntityPrehistoricFloraLa
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return DietString.MEAT;
+		return ArrayUtils.addAll(DietString.MEAT);
 	}
 
 	@Override
@@ -232,26 +238,32 @@ public class EntityPrehistoricFloraHamadasuchus extends EntityPrehistoricFloraLa
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.4D);
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:largecroc_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:anteosaurus_idle"));
+	}
+
+	public SoundEvent getRoarSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:anteosaurus_roar"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:largecroc_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:anteosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:largecroc_death"));
+	            .getObject(new ResourceLocation("lepidodendron:anteosaurus_death"));
 	}
 
 	@Override
@@ -263,11 +275,14 @@ public class EntityPrehistoricFloraHamadasuchus extends EntityPrehistoricFloraLa
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
-	
 
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
+
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
+			launchAttack();
+		}
 
 		if (this.standCooldown > 0) {
 			this.standCooldown -= rand.nextInt(3) + 1;
@@ -276,37 +291,35 @@ public class EntityPrehistoricFloraHamadasuchus extends EntityPrehistoricFloraLa
 			this.standCooldown = 0;
 		}
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
-			launchAttack();
-		}
-
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
 
-
-	public static final PropertyDirection FACING = BlockDirectional.FACING;
-
-	public boolean testLay(World world, BlockPos pos) {
-		//System.err.println("Testing laying conditions");
-		BlockPos posNest = pos;
-		if (isLayableNest(world, posNest)) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos posNest, String tag) {
-					TileEntity tileEntity = world.getTileEntity(posNest);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(new BlockPos(posNest), "egg");
-
-			//System.err.println("eggRenderType " + eggRenderType);
-
-			if (eggRenderType.equals("")) {
-				return true;
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+		//Sometimes stand up and look around:
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+			int animRand = this.rand.nextInt(20);
+			 if(animRand > 10){
+				this.setAnimation(YAWN_ANIMATION);
+			} else {
+				this.setAnimation(ALERT_ANIMATION);
 			}
+			this.standCooldown = 2000;
 		}
-		return false;
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if ((!this.world.isRemote) && this.getAnimation() == YAWN_ANIMATION
+				&& (this.getAnimationTick() == YAWN_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
+			this.standCooldown = 2000;
+			this.setAnimation(NO_ANIMATION);
+		}
+		if ((!this.world.isRemote) && this.getAnimation() == ALERT_ANIMATION
+				&& (this.getAnimationTick() == ALERT_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
+			this.standCooldown = 2000;
+			this.setAnimation(NO_ANIMATION);
+		}
 	}
 
 	@Override
@@ -325,18 +338,16 @@ public class EntityPrehistoricFloraHamadasuchus extends EntityPrehistoricFloraLa
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.HAMADASUCHUS_LOOT;
+		if (!this.isPFAdult()) {
+			return LepidodendronMod.TITANOPHONEUS_LOOT_YOUNG;
+		}
+		return LepidodendronMod.TITANOPHONEUS_LOOT;
 	}
 
-	@Nullable
-	@Override
-	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_HAMADASUCHUS;
-	}
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {
-		return 0.01;
+		return -0.23;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 1.4;
@@ -357,22 +368,27 @@ public class EntityPrehistoricFloraHamadasuchus extends EntityPrehistoricFloraLa
 		return -0.15F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0;
+		return 1.2;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.5;
+		return 1.4;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.8;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.04;
+		return 0.8;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.15F;
+		return -0F;
 	}
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_TITANOPHONEUS;
+	}
 }

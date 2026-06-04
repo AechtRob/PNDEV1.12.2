@@ -408,36 +408,36 @@ public class ModelBeurlenia extends ModelBasePalaeopedia {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.bone.render(f5);
+        this.body.render(f5);
     }
     public void renderStaticFloor(float f) {
-        this.bone.render(0.01F);
+        this.body.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticDisplayCase(float f) {
-        this.bone.offsetZ = 0.030F;
-        this.bone.render(0.01f);
+        this.body.offsetZ = 0.030F;
+        this.body.render(0.01f);
         resetToDefaultPose();
     }
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.bone.offsetY = -1.6F;
-        this.bone.offsetX = -1.0F;
-        this.bone.offsetZ = 2.0F;
-        this.bone.rotateAngleY = (float)Math.toRadians(200);
-        this.bone.rotateAngleX = (float)Math.toRadians(8);
-        this.bone.rotateAngleZ = (float)Math.toRadians(-8);
-        this.bone.scaleChildren = true;
+        this.body.offsetY = -1.6F;
+        this.body.offsetX = -1.0F;
+        this.body.offsetZ = 2.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(200);
+        this.body.rotateAngleX = (float)Math.toRadians(8);
+        this.body.rotateAngleZ = (float)Math.toRadians(-8);
+        this.body.scaleChildren = true;
         float scaler = 4.0F;
-        this.bone.setScale(scaler, scaler, scaler);
+        this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
         
         //End of pose, now render the model:
-        this.bone.render(f);
+        this.body.render(f);
         //Reset rotations, positions and sizing:
-        this.bone.setScale(1.0F, 1.0F, 1.0F);
-        this.bone.scaleChildren = false;
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
         resetToDefaultPose();
     }
 
@@ -473,7 +473,7 @@ public class ModelBeurlenia extends ModelBasePalaeopedia {
 
         EntityPrehistoricFloraBeurlenia slimon = (EntityPrehistoricFloraBeurlenia) e;
 
-        this.bone.offsetZ = 0.1F;
+        this.body.offsetZ = 0.1F;
 
 
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {//on land

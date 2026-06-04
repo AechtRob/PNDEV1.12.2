@@ -12,7 +12,7 @@ public class RenderHamadasuchus extends RenderLivingBaseWithBook<EntityPrehistor
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hamadasuchus.png");
 
     public static float getScaler() {
-        return 1F;
+        return 0.8F;
     }
     public RenderHamadasuchus(RenderManager mgr) {
         super(mgr, new ModelHamadasuchus(), 0.0f);

@@ -36,7 +36,7 @@ public class EntityPrehistoricFloraChronocancer extends EntityPrehistoricFloraTr
 
 	public EntityPrehistoricFloraChronocancer(World world) {
 		super(world);
-		setSize(0.25F, 0.15F);
+		setSize(0.15F, 0.1F);
 	}
 
 	@Override

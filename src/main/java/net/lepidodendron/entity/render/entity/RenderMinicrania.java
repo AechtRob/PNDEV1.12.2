@@ -15,7 +15,7 @@ public class RenderMinicrania extends RenderLivingBaseWithBook<EntityPrehistoric
         super(mgr, new ModelMinicrania(), 0.0f);
     }
 
-    public static float getScaler() {return 0.3F; }
+    public static float getScaler() {return 0.2F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMinicrania entity) {

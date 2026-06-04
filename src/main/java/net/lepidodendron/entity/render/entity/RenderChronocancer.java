@@ -15,7 +15,7 @@ public class RenderChronocancer extends RenderLivingBaseWithBook<EntityPrehistor
         super(mgr, new ModelChronocancer(), 0.0f);
     }
 
-    public static float getScaler() {return 0.26F; }
+    public static float getScaler() {return 0.16F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraChronocancer entity) {

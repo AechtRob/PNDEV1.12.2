@@ -52,10 +52,10 @@ public class EntityPrehistoricFloraEpoidesuchus extends EntityPrehistoricFloraSw
 
 	public EntityPrehistoricFloraEpoidesuchus(World world) {
 		super(world);
-		setSize(0.8F, 0.85F);
+		setSize(0.99F, 1.2F);
 		minWidth = 0.1F;
-		maxWidth = 0.8F;
-		maxHeight = 0.85F;
+		maxWidth = 0.99F;
+		maxHeight = 1.2F;
 		maxHealthAgeable = 30.0D;
 		EAT_ANIMATION = Animation.create(30);
 		STAND_ANIMATION = Animation.create(78);
