@@ -11,10 +11,13 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.render.entity.RenderQianosuchus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -38,26 +41,24 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraBernissartia extends EntityPrehistoricFloraSwimmingAmphibianBase implements IAdvancementGranter, ITrappableWater, ITrappableLand {
+public class EntityPrehistoricFloraEpoidesuchus extends EntityPrehistoricFloraSwimmingAmphibianBase implements IAdvancementGranter, ITrappableWater, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	public Animation EAT_ANIMATION;
-	public Animation BASK_ANIMATION;
-	public Animation YAWN_ANIMATION;
+	public Animation STAND_ANIMATION;
 	private int standCooldown;
 
-	public EntityPrehistoricFloraBernissartia(World world) {
+	public EntityPrehistoricFloraEpoidesuchus(World world) {
 		super(world);
-		setSize(0.3F, 0.3F);
+		setSize(0.99F, 1.2F);
 		minWidth = 0.1F;
-		maxWidth = 0.3F;
-		maxHeight = 0.3F;
-		maxHealthAgeable = 8.0D;
+		maxWidth = 0.99F;
+		maxHeight = 1.2F;
+		maxHealthAgeable = 30.0D;
 		EAT_ANIMATION = Animation.create(30);
-		BASK_ANIMATION = Animation.create(600);
-		YAWN_ANIMATION = Animation.create(80);
+		STAND_ANIMATION = Animation.create(78);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -73,22 +74,22 @@ public class EntityPrehistoricFloraBernissartia extends EntityPrehistoricFloraSw
 
 	@Override
 	public int getRoarLength() {
-		return 51;
+		return 70;
 	}
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, BASK_ANIMATION, YAWN_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, STAND_ANIMATION};
 	}
 
 	@Override
 	public boolean isSmall() {
-		return getAgeScale() < 0.80;
+		return getAgeScale() < 0.50;
 	}
 
 
 	public static String getPeriod() {
-		return "Early Cretaceous";
+		return "Triassic";
 	}
 
 	//public static String getHabitat() {
@@ -97,7 +98,7 @@ public class EntityPrehistoricFloraBernissartia extends EntityPrehistoricFloraSw
 
 	@Override
 	public boolean hasNest() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -112,33 +113,37 @@ public class EntityPrehistoricFloraBernissartia extends EntityPrehistoricFloraSw
 
 	@Override
 	public boolean laysEggs() {
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean placesNest() {
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isNestMound() {
-		return false;
+		return true;
 	}
 
 	@Override
-	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraBernissartia(this.world);
+	public int getAttackLength() {
+		return 15;
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.13F;
+		float calcSpeed = 0.205F;
 		if (this.isReallyInWater()) {
-			calcSpeed = 0.25f;
+			calcSpeed = 0.275f;
+		}
+		//Lemon - here is the fast stuff, if we get animations:
+		if (this.getIsFast()) {
+			calcSpeed = calcSpeed * 1.7F;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == BASK_ANIMATION) {
+		if (this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == STAND_ANIMATION) {
 			return 0.0F;
 		}
 		//System.err.println("Speed " + (Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed));
@@ -182,24 +187,16 @@ public class EntityPrehistoricFloraBernissartia extends EntityPrehistoricFloraSw
 		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
 	}
 
-	@Override
-	public int getAttackLength() {
-		return 15;
-	}
-
-
-
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 1F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-        tasks.addTask(3, new AvoidEntityPN<>(this, EntityLivingBase.class, 6.0F, true));
-		tasks.addTask(4, new AmphibianWanderNestInBlockAI(this));
-		tasks.addTask(5, new AmphibianWanderNotBound(this, NO_ANIMATION, 0.3, 90));
-		tasks.addTask(6, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityLookIdleAI(this));
+		tasks.addTask(3, new AmphibianWanderNestInBlockAI(this));
+		tasks.addTask(4, new AmphibianWanderNotBound(this, NO_ANIMATION, 0.7, 90));
+		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
+		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(6, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 //		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
@@ -211,7 +208,7 @@ public class EntityPrehistoricFloraBernissartia extends EntityPrehistoricFloraSw
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH);
+		return ArrayUtils.addAll(DietString.MEAT, DietString.FISH);
 	}
 
 	@Override
@@ -233,7 +230,7 @@ public class EntityPrehistoricFloraBernissartia extends EntityPrehistoricFloraSw
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -245,25 +242,20 @@ public class EntityPrehistoricFloraBernissartia extends EntityPrehistoricFloraSw
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:tinycroc_idle"));
+				.getObject(new ResourceLocation("lepidodendron:normalcroc_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:tinycroc_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:normalcroc_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:tinycroc_death"));
+				.getObject(new ResourceLocation("lepidodendron:normalcroc_death"));
 	}
-
-	//@Override
-	//public SoundEvent getDeathSound() {
-	//	return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
-	//}
 
 	@Override
 	protected float getSoundVolume() {
@@ -317,29 +309,20 @@ public class EntityPrehistoricFloraBernissartia extends EntityPrehistoricFloraSw
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
+
 		//Sometimes stand up and look around:
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			int animRand = this.rand.nextInt(10);
-			if(animRand < 5){
-				this.setAnimation(BASK_ANIMATION);
-			} else {
-				this.setAnimation(YAWN_ANIMATION);
-			}
+			this.setAnimation(STAND_ANIMATION);
 			this.standCooldown = 2000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == BASK_ANIMATION
-				&& (this.getAnimationTick() == BASK_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
+		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION
+				&& (this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
 			this.standCooldown = 2000;
 			this.setAnimation(NO_ANIMATION);
 		}
 
-		if ((!this.world.isRemote) && this.getAnimation() == YAWN_ANIMATION
-				&& (this.getAnimationTick() == YAWN_ANIMATION.getDuration() - 1) || this.isReallyInWater()) {
-			this.standCooldown = 2000;
-			this.setAnimation(NO_ANIMATION);
-		}
 	}
 
 	@Override
@@ -351,11 +334,6 @@ public class EntityPrehistoricFloraBernissartia extends EntityPrehistoricFloraSw
 		return this.world.checkNoEntityCollision(this.getEntityBoundingBox(), this);
 	}
 
-	@Override
-	public boolean isAnimationDirectionLocked(Animation animation) {
-		return animation == BASK_ANIMATION
-				|| super.isAnimationDirectionLocked(animation);
-	}
 
 	@Override
 	public boolean isOnLadder() {
@@ -385,13 +363,27 @@ public class EntityPrehistoricFloraBernissartia extends EntityPrehistoricFloraSw
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_PIETRAROIASUCHUS;
+		return ModTriggers.CLICK_EPOIDESUCHUS;
 	}
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.PIETRAROIASUCHUS_LOOT;
+		return LepidodendronMod.EPOIDESUCHUS_LOOT;
 	}
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetWall(@Nullable String variant) {return -0.45;}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.7;}
+	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.5;}
+	public static double upperfrontlineoffset(@Nullable String variant) {return 0.17;}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {return -0.5;}
+	public static double upperbacklineoffset(@Nullable String variant) {return 0.0;}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {return 0.5;}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0.5;}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.5;}
+	public static double lowerfrontlineoffset(@Nullable String variant) {return 0.0;}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return 0.5;}
+	public static double lowerbacklineoffset(@Nullable String variant) {return -0.04;}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return -0.3;}
+
 
 }

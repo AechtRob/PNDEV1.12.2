@@ -6711,6 +6711,10 @@ public class LepidodendronSorter {
     public static final int bruntonichthys_raw = 6260;
     public static final int golshanichthys_raw = 6261;
     public static final int minicrania_raw = 6262;
+    public static final int beurlenia_raw = 6263;
+    public static final int chronocancer_raw = 6264;
+    public static final int titanophoneus_raw = 6265;
+    public static final int eggs_titanophoneus = 6266;
 
 
 
