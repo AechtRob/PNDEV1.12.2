@@ -24,7 +24,7 @@ public class ParticleTarBubble extends Particle {
     @Override
     public void onUpdate() {
         super.onUpdate();
-        if (this.particleAge == 10) {
+        if (this.particleAge == 12) {
             this.world.playSound(this.posX, this.posY, this.posZ, BlockSounds.TAR_BUBBLE, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
         }
     }
