@@ -78,8 +78,7 @@ public class EntityPrehistoricFloraLimulid extends EntityPrehistoricFloraWalking
 	protected float getAISpeedWalkingAmphibian() {
 		//System.err.println("Speed Hibbert: " + (float) Math.min(1F, (this.getAgeScale() * 2F)) * 0.15F);
 
-
-		return (float) Math.min(1F, (this.getAgeScale())) * 0.1F;
+		return (float) Math.min(1F, (this.getAgeScale())) * 0.15F;
 	}
 
 	@Override
