@@ -16,8 +16,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -55,6 +57,21 @@ public class BlockTar extends ElementsLepidodendronMod.ModElement {
 				}
 			}
 
+			@Override
+			public boolean isFlammable(IBlockAccess world, BlockPos pos, EnumFacing face) {
+				return true;
+			}
+
+			@Override
+			public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+				return 300; // higher = burns more easily
+			}
+
+			@Override
+			public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+				return 100; // higher = fire spreads faster
+			}
+
 			@SideOnly(Side.CLIENT)
 			@Override
 			public void randomDisplayTick(
@@ -79,6 +96,7 @@ public class BlockTar extends ElementsLepidodendronMod.ModElement {
 			}
 		}.setTranslationKey("pf_tar").setRegistryName("tar"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName("tar"));
+
 	}
 
 	@Override
