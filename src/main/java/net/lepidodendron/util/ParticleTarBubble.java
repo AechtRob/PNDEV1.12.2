@@ -3,7 +3,6 @@ package net.lepidodendron.util;
 import net.lepidodendron.LepidodendronEventSubscribersClient;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.util.SoundCategory;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -26,7 +25,7 @@ public class ParticleTarBubble extends Particle {
     public void onUpdate() {
         super.onUpdate();
         if (this.particleAge == 10) {
-            this.world.playSound(null, new BlockPos(this.posX, this.posY, this.posZ), BlockSounds.TAR_BUBBLE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            this.world.playSound(this.posX, this.posY, this.posZ, BlockSounds.TAR_BUBBLE, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
         }
     }
 
