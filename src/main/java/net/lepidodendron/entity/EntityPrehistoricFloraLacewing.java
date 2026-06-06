@@ -348,7 +348,39 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetCaseMagnified(@Nullable String variant) { return -0.21; }
+	public static double offsetCaseMagnified(@Nullable String variant) {
+		switch (EntityPrehistoricFloraLacewing.Type.getTypeFromString(variant)) {
+			case AETHEOGRAMMA:
+			default:
+				return -0.21;
+
+			case CRETAPSYCHOPS:
+				return -0.21;
+
+			case LACCOSMYLUS:
+				return -0.21;
+
+			case LICHENIPOLYSTOECHOTES:
+				return -0.21;
+
+			case BELLINYMPHA:
+				return -0.21;
+
+			case GRAMMOLINGIA:
+				return -0.21;
+
+			case KRIKA:
+				return 0.725;
+
+			case NUDDSIA:
+				return 0.725;
+
+			case KARENINA:
+				return 0.725;
+		}
+	}
+
+
 	public static double offsetCase(@Nullable String variant) {
 		switch (EntityPrehistoricFloraLacewing.Type.getTypeFromString(variant)) {
 			case AETHEOGRAMMA: default:
@@ -518,7 +550,7 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 	}
 
 	public static float getScalerMagnified(@Nullable String variant) {
-		return RenderLacewing.getScaler(EntityPrehistoricFloraLacewing.Type.getTypeFromString(variant)) * 3.0F;
+		return RenderLacewing.getScaler(EntityPrehistoricFloraLacewing.Type.getTypeFromString(variant)) * 2.5F;
 	}
 
 	
