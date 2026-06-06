@@ -4,8 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.util.MaterialTar;
+import net.lepidodendron.util.ParticleTarBubble;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -26,6 +28,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockTar extends ElementsLepidodendronMod.ModElement {
@@ -49,6 +53,29 @@ public class BlockTar extends ElementsLepidodendronMod.ModElement {
 				if ((double) entity.posY < ((double) pos.getY() + 0.59)) {
 					entity.setInWeb();
 				}
+			}
+
+			@SideOnly(Side.CLIENT)
+			@Override
+			public void randomDisplayTick(
+					IBlockState state,
+					World world,
+					BlockPos pos,
+					Random rand) {
+
+				super.randomDisplayTick(state, world, pos, rand);
+
+				if (!this.isSourceBlock(world, pos)) return;
+
+				if (rand.nextInt(14) != 0) return;
+
+				double x = pos.getX() + rand.nextDouble();
+				double y = pos.getY() + 0.90;
+				double z = pos.getZ() + rand.nextDouble();
+
+				Minecraft.getMinecraft().effectRenderer.addEffect(
+						new ParticleTarBubble(world, x, y, z)
+				);
 			}
 		}.setTranslationKey("pf_tar").setRegistryName("tar"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName("tar"));

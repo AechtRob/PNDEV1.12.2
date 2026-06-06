@@ -68,7 +68,7 @@ public class EntityPrehistoricFloraLimulid extends EntityPrehistoricFloraWalking
 
 	@Override
 	public int WaterDist() {
-		int i = (int) LepidodendronConfig.waterHibbertopterus;
+		int i = (int) LepidodendronConfig.waterPederpes;
 		if (i > 16) {i = 16;}
 		if (i < 1) {i = 1;}
 		return i;
