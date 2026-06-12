@@ -5634,9 +5634,33 @@ public class LepidodendronSorter {
     public static final int cinnamon_fruit_block = 8468;
     public static final int cinnamon_berries = 8464;
 
-    public static final int soepadmoa_sapling = 8465;
-    public static final int soepadmoa_leaves = 8466;
-    public static final int soepadmoa_seeds = 8467;
+    public static final int aphananthe_bench = 8465;
+    public static final int aphananthe_boat_item = 8466;
+    public static final int aphananthe_bridge = 8467;
+    public static final int aphananthe_door = 8468;
+    public static final int aphananthe_door_item = 84690;
+    public static final int aphananthe_fence = 8470;
+    public static final int aphananthe_fence_gate = 8471;
+    public static final int aphananthe_leaves = 8472;
+    public static final int aphananthe_litterbin = 8473;
+    public static final int aphananthe_log = 8474;
+    public static final int aphananthe_planks = 8475;
+    public static final int aphananthe_planter1 = 8476;
+    public static final int aphananthe_planter1_peat = 8477;
+    public static final int aphananthe_planter1_sand = 8478;
+    public static final int aphananthe_planter2 = 8479;
+    public static final int aphananthe_planter2_peat = 8481;
+    public static final int aphananthe_planter2_sand = 8481;
+    public static final int aphananthe_sapling = 8482;
+    public static final int aphananthe_seeds = 8483;
+    public static final int aphananthe_slab = 8484;
+    public static final int aphananthe_stairs = 8485;
+    public static final int aphananthe_trapdoor = 8486;
+    public static final int aphananthe_fruit = 8487;
+
+    public static final int soepadmoa_sapling = 8489;
+    public static final int soepadmoa_leaves = 8490;
+    public static final int soepadmoa_seeds = 8488;
     
     //Rob list ends-----
 

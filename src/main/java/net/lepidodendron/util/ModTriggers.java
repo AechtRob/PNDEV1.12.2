@@ -79,6 +79,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_BEAUPREA = new CustomTrigger("pf_book_beauprea");
     public static final CustomTrigger CLICK_SAURAUIA = new CustomTrigger("pf_book_saurauia");
     public static final CustomTrigger CLICK_BISONIA = new CustomTrigger("pf_book_bisonia");
+    public static final CustomTrigger CLICK_APHANANTHE = new CustomTrigger("pf_book_aphananthe");
     public static final CustomTrigger CLICK_BELTANELLIFORMIS = new CustomTrigger("pf_book_beltanelliformis");
     public static final CustomTrigger CLICK_ARAUCARIOXYLON = new CustomTrigger("pf_book_araucarioxylon");
     public static final CustomTrigger CLICK_ANEMONE = new CustomTrigger("pf_book_anemone");
@@ -2532,6 +2533,7 @@ public class ModTriggers
             CLICK_BEAUPREA,
             CLICK_SAURAUIA,
             CLICK_BISONIA,
+            CLICK_APHANANTHE,
             CLICK_BELTANELLIFORMIS,
             CLICK_ARAUCARIOXYLON,
             CLICK_ANEMONE,
