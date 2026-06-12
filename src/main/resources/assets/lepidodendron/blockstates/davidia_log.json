@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:davidia_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:davidia_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:davidia_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:davidia_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:davidia_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:davidia_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:davidia_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

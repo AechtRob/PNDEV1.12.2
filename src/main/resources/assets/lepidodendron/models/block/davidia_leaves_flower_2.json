@@ -1,0 +1,13 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "up": "lepidodendron:blocks/davidia_leaves",
+        "down": "lepidodendron:blocks/davidia_leaves",
+        "north": "lepidodendron:blocks/davidia_leaves_2",
+        "south": "lepidodendron:blocks/davidia_leaves_2",
+        "east": "lepidodendron:blocks/davidia_leaves_2",
+        "west": "lepidodendron:blocks/davidia_leaves_2",
+        "particle": "lepidodendron:blocks/davidia_leaves"
+    }
+}
+

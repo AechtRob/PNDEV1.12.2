@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/davidia_log_end",
+    "up": "lepidodendron:blocks/davidia_log_end",
+    "north": "lepidodendron:blocks/davidia_log",
+    "east": "lepidodendron:blocks/davidia_log",
+    "south": "lepidodendron:blocks/davidia_log",
+    "west": "lepidodendron:blocks/davidia_log",
+    "particle": "lepidodendron:blocks/davidia_log_end"
+  }
+}

@@ -379,6 +379,8 @@ public class EntityPNBoat extends EntityBoat
                 return ItemCinnamonBoatItem.block;
             case APHANANTHE:
                 return ItemAphanantheBoatItem.block;
+            case DAVIDIA:
+                return ItemDavidiaBoatItem.block;
 
         }
     }
@@ -577,6 +579,8 @@ public class EntityPNBoat extends EntityBoat
                 return BlockCinnamonPlanks.block;
             case APHANANTHE:
                 return BlockAphananthePlanks.block;
+            case DAVIDIA:
+                return BlockDavidiaPlanks.block;
 
         }
     }
@@ -1473,7 +1477,8 @@ public class EntityPNBoat extends EntityBoat
         TROCHODENDROIDES(91, "trochodendroides"),
         MAHOGANY(92, "mahogany"),
         CINNAMON(93, "cinnamon"),
-        APHANANTHE(93, "aphananthe")
+        APHANANTHE(94, "aphananthe"),
+        DAVIDIA(95, "Davidia")
         ;
 
         private final String name;

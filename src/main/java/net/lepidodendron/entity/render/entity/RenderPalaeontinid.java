@@ -2,7 +2,9 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPalaeontinid;
-import net.lepidodendron.entity.model.entity.*;
+import net.lepidodendron.entity.model.entity.ModelPalaeontinid;
+import net.lepidodendron.entity.model.entity.ModelPalaeontinidLong;
+import net.lepidodendron.entity.model.entity.ModelPalaeontinidShort;
 import net.lepidodendron.entity.render.RenderLivingBaseVariantModels;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;

@@ -110,6 +110,7 @@ public class RenderPNBoat extends RenderBoat {
     private static final ResourceLocation TEXTURE_MAHOGANY = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_mahogany.png");
     private static final ResourceLocation TEXTURE_CINNAMON = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_cinnamon.png");
     private static final ResourceLocation TEXTURE_APHANANTHE = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_aphananthe.png");
+    private static final ResourceLocation TEXTURE_DAVIDIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_davidia.png");
 
     public RenderPNBoat(RenderManager renderManagerIn) {
         super(renderManagerIn);
@@ -326,6 +327,8 @@ public class RenderPNBoat extends RenderBoat {
                 return TEXTURE_CINNAMON;
             case APHANANTHE:
                 return TEXTURE_APHANANTHE;
+            case DAVIDIA:
+                return TEXTURE_DAVIDIA;
         }
     }
 }
