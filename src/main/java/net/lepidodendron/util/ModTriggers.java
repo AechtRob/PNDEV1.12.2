@@ -34,6 +34,7 @@ public class ModTriggers
     public static final CustomTrigger COMPLETE_JURASSIC = new CustomTrigger("complete_pf_jurassic");
     public static final CustomTrigger ENTER_CRETACEOUS_EARLY = new CustomTrigger("enter_pf_cretaceous_early");
     public static final CustomTrigger COMPLETE_CRETACEOUS_EARLY = new CustomTrigger("complete_pf_cretaceous_early");
+    public static final CustomTrigger ENTER_CRETACEOUS_LATE = new CustomTrigger("enter_pf_cretaceous_late");
     public static final CustomTrigger COMPLETE_CRETACEOUS_LATE = new CustomTrigger("complete_pf_cretaceous_late");
     public static final CustomTrigger COMPLETE_PALEOGENE = new CustomTrigger("complete_pf_paleogene");
     public static final CustomTrigger COMPLETE_NEOGENE = new CustomTrigger("complete_pf_neogene");
@@ -2478,6 +2479,7 @@ public class ModTriggers
             ENTER_TRIASSIC,
             ENTER_JURASSIC,
             ENTER_CRETACEOUS_EARLY,
+            ENTER_CRETACEOUS_LATE,
             COMPLETE_PRECAMBRIAN,
             COMPLETE_CAMBRIAN,
             COMPLETE_ORDOVICIAN,
