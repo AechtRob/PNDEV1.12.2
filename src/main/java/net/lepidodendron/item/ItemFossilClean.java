@@ -2557,6 +2557,12 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_tarbosaurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_struthiomimus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_protoceratops_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_rapaxavis_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_yanornis_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_cratoavis_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_santanachelys_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_desmatochelys_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_cratochelone_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossil_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossil_clean_missing_texture", "inventory")
 

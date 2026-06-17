@@ -89,7 +89,7 @@ public class EntityPrehistoricFloraEotyrannus extends EntityPrehistoricFloraLand
 	@Override
 	public AxisAlignedBB getGrappleBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.5F;
-		return this.getEntityBoundingBox().grow(3.0F + size, 3.0F + size, 3.0F + size);
+		return this.getEntityBoundingBox().grow(2.7F + size, 2.7F + size, 2.7F + size);
 	}
 
 	public boolean findGrappleTarget() {

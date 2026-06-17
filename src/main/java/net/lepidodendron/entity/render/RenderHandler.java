@@ -9812,6 +9812,42 @@ public class RenderHandler {
                 return new RenderAsilisaurus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRapaxavis.class, new IRenderFactory<EntityPrehistoricFloraRapaxavis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraRapaxavis> createRenderFor(RenderManager manager) {
+                return new RenderRapaxavis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraYanornis.class, new IRenderFactory<EntityPrehistoricFloraYanornis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraYanornis> createRenderFor(RenderManager manager) {
+                return new RenderYanornis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCratoavis.class, new IRenderFactory<EntityPrehistoricFloraCratoavis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCratoavis> createRenderFor(RenderManager manager) {
+                return new RenderCratoavis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSantanachelys.class, new IRenderFactory<EntityPrehistoricFloraSantanachelys>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSantanachelys> createRenderFor(RenderManager manager) {
+                return new RenderSantanachelys(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDesmatochelys.class, new IRenderFactory<EntityPrehistoricFloraDesmatochelys>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDesmatochelys> createRenderFor(RenderManager manager) {
+                return new RenderDesmatochelys(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCratochelone.class, new IRenderFactory<EntityPrehistoricFloraCratochelone>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCratochelone> createRenderFor(RenderManager manager) {
+                return new RenderCratochelone(manager);
+            }
+        });
 
 
 

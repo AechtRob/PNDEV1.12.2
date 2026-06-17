@@ -1622,7 +1622,12 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_callawayasaurus", EntityPrehistoricFloraCallawayasaurus.class, LepidodendronMod.ENTITY_CALLAWAYASAURUS, 48,-6649002,-11458533);
         registerEntity("prehistoric_flora_myobradypterygius", EntityPrehistoricFloraMyobradypterygius.class, LepidodendronMod.ENTITY_MYOBRADYPTERYGIUS, 48,-11379085,-5326648);
         registerEntity("prehistoric_flora_umoonasaurus", EntityPrehistoricFloraUmoonasaurus.class, LepidodendronMod.ENTITY_UMOONASAURUS, 48,-12570834,-6210547);
-
+        registerEntity("prehistoric_flora_rapaxavis", EntityPrehistoricFloraRapaxavis.class, LepidodendronMod.ENTITY_RAPAXAVIS, 64,-2432281,-2573745);
+        registerEntity("prehistoric_flora_yanornis", EntityPrehistoricFloraYanornis.class, LepidodendronMod.ENTITY_YANORNIS, 64,-16104610,-7133676);
+        registerEntity("prehistoric_flora_cratoavis", EntityPrehistoricFloraCratoavis.class, LepidodendronMod.ENTITY_CRATOAVIS, 64,-8407739,-14692915);
+        registerEntity("prehistoric_flora_santanachelys", EntityPrehistoricFloraSantanachelys.class, LepidodendronMod.ENTITY_SANTANACHELYS, 64,-4540282,-8302541);
+        registerEntity("prehistoric_flora_desmatochelys", EntityPrehistoricFloraDesmatochelys.class, LepidodendronMod.ENTITY_DESMATOCHELYS, 84,-11775926,-11646912);
+        registerEntity("prehistoric_flora_cratochelone", EntityPrehistoricFloraCratochelone.class, LepidodendronMod.ENTITY_CRATOCHELONE, 84,-12379116,-8433102);
 
 
         // aquatic nymphs for Stonefly, Mayfly, Argentinala, Velisoptera, Damselfly

@@ -1066,6 +1066,12 @@ public class RenderDisplays {
     public static final ModelTarbosaurus modelTarbosaurus = new ModelTarbosaurus();
     public static final ModelStruthiomimus modelStruthiomimus = new ModelStruthiomimus();
     public static final ModelProtoceratops modelProtoceratops = new ModelProtoceratops();
+    public static final ModelRapaxavis modelRapaxavis = new ModelRapaxavis();
+    public static final ModelYanornis modelYanornis = new ModelYanornis();
+    public static final ModelCratoavis modelCratoavis = new ModelCratoavis();
+    public static final ModelSantanachelys modelSantanachelys = new ModelSantanachelys();
+    public static final ModelDesmatochelys modelDesmatochelys = new ModelDesmatochelys();
+    public static final ModelCratochelone modelCratochelone = new ModelCratochelone();
     public static final ModelAegirosaurus modelAegirosaurus = new ModelAegirosaurus();
     public static final ModelPetrolacosaurus modelPetrolacosaurus = new ModelPetrolacosaurus();
     public static final ModelNorellius modelNorellius = new ModelNorellius();
@@ -1097,6 +1103,7 @@ public class RenderDisplays {
     public static final ModelHauffiosaurus modelHauffiosaurus = new ModelHauffiosaurus();
     public static final ModelMyobradypterygius modelMyobradypterygius = new ModelMyobradypterygius();
     public static final ModelUmoonasaurus modelUmoonasaurus = new ModelUmoonasaurus();
+
 
 
 
