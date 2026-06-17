@@ -1,14 +1,12 @@
 
 package net.lepidodendron.world.structure;
 
-import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockMahoganyLog;
 import net.lepidodendron.procedure.ProcedureWorldGenMahogany;
-import net.lepidodendron.procedure.ProcedureWorldGenMaple;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;

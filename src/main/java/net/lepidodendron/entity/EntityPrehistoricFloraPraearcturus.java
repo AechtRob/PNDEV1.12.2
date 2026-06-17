@@ -199,7 +199,7 @@ public class EntityPrehistoricFloraPraearcturus extends EntityPrehistoricFloraWa
 	public static double offsetCase(@Nullable String variant) {
 		return 0.56;
 	}
-	public static double offsetCaseMagnified(@Nullable String variant) { return 1.152; }
+	public static double offsetCaseMagnified(@Nullable String variant) { return 0.88; }
 	public static double offsetWall(@Nullable String variant) {
 		return -1.36;
 	}

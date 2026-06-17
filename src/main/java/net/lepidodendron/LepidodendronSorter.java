@@ -5634,9 +5634,57 @@ public class LepidodendronSorter {
     public static final int cinnamon_fruit_block = 8468;
     public static final int cinnamon_berries = 8464;
 
-    public static final int soepadmoa_sapling = 8465;
-    public static final int soepadmoa_leaves = 8466;
-    public static final int soepadmoa_seeds = 8467;
+    public static final int aphananthe_bench = 8465;
+    public static final int aphananthe_boat_item = 8466;
+    public static final int aphananthe_bridge = 8467;
+    public static final int aphananthe_door = 8468;
+    public static final int aphananthe_door_item = 8469;
+    public static final int aphananthe_fence = 8470;
+    public static final int aphananthe_fence_gate = 8471;
+    public static final int aphananthe_leaves = 8472;
+    public static final int aphananthe_litterbin = 8473;
+    public static final int aphananthe_log = 8474;
+    public static final int aphananthe_planks = 8475;
+    public static final int aphananthe_planter1 = 8476;
+    public static final int aphananthe_planter1_peat = 8477;
+    public static final int aphananthe_planter1_sand = 8478;
+    public static final int aphananthe_planter2 = 8479;
+    public static final int aphananthe_planter2_peat = 8481;
+    public static final int aphananthe_planter2_sand = 8481;
+    public static final int aphananthe_sapling = 8482;
+    public static final int aphananthe_seeds = 8483;
+    public static final int aphananthe_slab = 8484;
+    public static final int aphananthe_stairs = 8485;
+    public static final int aphananthe_trapdoor = 8486;
+    public static final int aphananthe_fruit = 8487;
+
+    public static final int soepadmoa_sapling = 8489;
+    public static final int soepadmoa_leaves = 8490;
+    public static final int soepadmoa_seeds = 8488;
+
+    public static final int davidia_bench = 8489;
+    public static final int davidia_boat_item = 8490;
+    public static final int davidia_bridge = 8491;
+    public static final int davidia_door = 8492;
+    public static final int davidia_door_item = 8493;
+    public static final int davidia_fence = 8494;
+    public static final int davidia_fence_gate = 8495;
+    public static final int davidia_leaves = 8496;
+    public static final int davidia_litterbin = 8497;
+    public static final int davidia_log = 8498;
+    public static final int davidia_planks = 8499;
+    public static final int davidia_planter1 = 8500;
+    public static final int davidia_planter1_peat = 8501;
+    public static final int davidia_planter1_sand = 8502;
+    public static final int davidia_planter2 = 8503;
+    public static final int davidia_planter2_peat = 8504;
+    public static final int davidia_planter2_sand = 8505;
+    public static final int davidia_sapling = 8506;
+    public static final int davidia_seeds = 8507;
+    public static final int davidia_slab = 8508;
+    public static final int davidia_stairs = 8509;
+    public static final int davidia_trapdoor = 8510;
+    public static final int davidia_flower = 8511;
     
     //Rob list ends-----
 
@@ -6711,6 +6759,10 @@ public class LepidodendronSorter {
     public static final int bruntonichthys_raw = 6260;
     public static final int golshanichthys_raw = 6261;
     public static final int minicrania_raw = 6262;
+    public static final int beurlenia_raw = 6263;
+    public static final int chronocancer_raw = 6264;
+    public static final int titanophoneus_raw = 6265;
+    public static final int eggs_titanophoneus = 6266;
 
 
 

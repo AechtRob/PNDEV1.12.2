@@ -14,8 +14,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -43,6 +45,22 @@ public class BlockResin extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new BlockFluidClassic(fluid, MaterialResin.RESIN) {
+
+			@Override
+			public boolean isFlammable(IBlockAccess world, BlockPos pos, EnumFacing face) {
+				return true;
+			}
+
+			@Override
+			public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+				return 300; // higher = burns more easily
+			}
+
+			@Override
+			public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+				return 100; // higher = fire spreads faster
+			}
+
 			@Override
 			public void onEntityCollision(World world, BlockPos pos, IBlockState state, Entity entity) {
 				super.onEntityCollision(world, pos, state, entity);

@@ -85,6 +85,9 @@ public final class BlockSounds {
     @GameRegistry.ObjectHolder("music_disc_brontosaurus")
     public static final SoundEvent MUSIC_DISC_BRONTOSAURUS = createSoundEvent("music_disc_brontosaurus");
 
+    @GameRegistry.ObjectHolder("tar_bubble")
+    public static final SoundEvent TAR_BUBBLE = createSoundEvent("tar_bubble");
+
     private static SoundEvent createSoundEvent(final String soundName) {
         final ResourceLocation soundID = new ResourceLocation(LepidodendronMod.MODID, soundName);
         return new SoundEvent(soundID).setRegistryName(soundID);

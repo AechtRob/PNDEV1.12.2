@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.*;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.util.*;
@@ -202,7 +203,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 		return false;
 	}
 
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter, ILayableMoss {
+	public static class BlockCustom extends SeedSporeFacingBlockBase implements net.minecraftforge.common.IShearable, IAdvancementGranter, ILayableMoss {
 		
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public static final PropertyBool NORTH = PropertyBool.create("north");
@@ -907,11 +908,20 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Moss");
 				tooltip.add("Periods: Silurian (?) - Devonian (?) - Carboniferous - Permian - Triassic - Jurassic - Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]");
-				tooltip.add("Note: Spreads to surrounding blocks.");
+				//tooltip.add("Note: Spreads to surrounding blocks.");
 				tooltip.add("Propagation: Spores");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 
+		@Override
+		public Block planted() {
+			return BlockAncientMoss.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 
 	public static class TileEntityCustom extends TileEntity {

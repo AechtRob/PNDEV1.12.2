@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "normal": [
+        {"model": "lepidodendron:davidia_leaves"},
+        {"model": "lepidodendron:davidia_leaves_flower_1"},
+        {"model": "lepidodendron:davidia_leaves_flower_2"},
+        {"model": "lepidodendron:davidia_leaves_flower_3"},
+        {"model": "lepidodendron:davidia_leaves_flower_4"}
+    ]
+  }
+}
+
+

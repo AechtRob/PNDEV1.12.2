@@ -313,7 +313,7 @@ public class EntityPrehistoricFloraSantanmantis extends EntityPrehistoricFloraLe
 	public static double offsetCase(@Nullable String variant) {
 		return 0.32F;
 	}
-	public static double offsetCaseMagnified(@Nullable String variant) { return 1.152; }
+	public static double offsetCaseMagnified(@Nullable String variant) { return 1.12; }
 	public static double offsetWall(@Nullable String variant) {
 		return 0.0;
 	}
@@ -362,6 +362,6 @@ public class EntityPrehistoricFloraSantanmantis extends EntityPrehistoricFloraLe
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.012F;}
 	public static float getScalerMagnified(@Nullable String variant) {
-		return RenderSantanmantis.getScaler() * 2.5F;
+		return RenderSantanmantis.getScaler() * 4.5F;
 	}
 }

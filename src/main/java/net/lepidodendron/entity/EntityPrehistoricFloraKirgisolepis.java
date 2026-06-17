@@ -242,7 +242,7 @@ public class EntityPrehistoricFloraKirgisolepis extends EntityPrehistoricFloraSw
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return DietString.FISH;
+		return DietString.FISHFOOD;
 	}
 
 	@Override
