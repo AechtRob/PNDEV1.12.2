@@ -13594,4 +13594,8 @@ entity.prehistoric_flora_titanophoneus.name=Titanophoneus
 item.pf_eggs_asilisaurus.name=Asilisaurus Eggs
 item.pf_eggs_typothorax.name=Typothorax Eggs
 item.pf_eggs_titanophoneus.name=Titanophoneus Eggs
-
+advancements.pf_adv_book_venetoraptor.description=Unlock the entry for Venetoraptor in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_venetoraptor.title=Venetoraptor
+item.pf_venetoraptor_raw.name=Raw Venetoraptor
+entity.prehistoric_flora_venetoraptor.name=Venetoraptor
+item.pf_eggs_venetoraptor.name=Venetoraptor Eggs

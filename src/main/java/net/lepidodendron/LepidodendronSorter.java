@@ -6763,6 +6763,8 @@ public class LepidodendronSorter {
     public static final int chronocancer_raw = 6264;
     public static final int titanophoneus_raw = 6265;
     public static final int eggs_titanophoneus = 6266;
+    public static final int eggs_venetoraptor = 6267;
+    public static final int venetoraptor_raw = 6268;
 
 
 
