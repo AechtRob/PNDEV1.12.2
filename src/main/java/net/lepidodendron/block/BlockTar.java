@@ -43,7 +43,7 @@ public class BlockTar extends ElementsLepidodendronMod.ModElement {
 	public BlockTar(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.resin);
 		fluid = new Fluid("pn_tar", new ResourceLocation("lepidodendron:blocks/tarstill"), new ResourceLocation("lepidodendron:blocks/tarflow"))
-				.setLuminosity(0).setDensity(1000).setViscosity(10000).setGaseous(false);
+				.setLuminosity(0).setDensity(1000).setViscosity(20000).setGaseous(false);
 	}
 
 	@Override
