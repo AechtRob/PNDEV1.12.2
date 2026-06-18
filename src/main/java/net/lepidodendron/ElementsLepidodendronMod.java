@@ -47,6 +47,8 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 	public final List<Supplier<Potion>> potions = new ObjectArrayList <>();
 	public static Object2ObjectOpenHashMap<ResourceLocation, net.minecraft.util.SoundEvent> sounds = new Object2ObjectOpenHashMap<>();
 	public ElementsLepidodendronMod() {
+		sounds.put(new ResourceLocation("lepidodendron", "tar_bubble"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "tar_bubble")));
 		sounds.put(new ResourceLocation("lepidodendron", "music_disc_brontosaurus"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "music_disc_brontosaurus")));
 		sounds.put(new ResourceLocation("lepidodendron", "wet_crunch_plants"),

@@ -377,6 +377,10 @@ public class EntityPNBoat extends EntityBoat
                 return ItemMahoganyBoatItem.block;
             case CINNAMON:
                 return ItemCinnamonBoatItem.block;
+            case APHANANTHE:
+                return ItemAphanantheBoatItem.block;
+            case DAVIDIA:
+                return ItemDavidiaBoatItem.block;
 
         }
     }
@@ -573,6 +577,10 @@ public class EntityPNBoat extends EntityBoat
                 return BlockMahoganyPlanks.block;
             case CINNAMON:
                 return BlockCinnamonPlanks.block;
+            case APHANANTHE:
+                return BlockAphananthePlanks.block;
+            case DAVIDIA:
+                return BlockDavidiaPlanks.block;
 
         }
     }
@@ -1468,7 +1476,9 @@ public class EntityPNBoat extends EntityBoat
         TORREYA(90, "torreya"),
         TROCHODENDROIDES(91, "trochodendroides"),
         MAHOGANY(92, "mahogany"),
-        CINNAMON(93, "cinnamon")
+        CINNAMON(93, "cinnamon"),
+        APHANANTHE(94, "aphananthe"),
+        DAVIDIA(95, "Davidia")
         ;
 
         private final String name;

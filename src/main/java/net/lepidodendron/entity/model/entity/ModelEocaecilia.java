@@ -282,6 +282,7 @@ public class ModelEocaecilia extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5);
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
 

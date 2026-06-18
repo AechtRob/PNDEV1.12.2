@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/aphananthe_log_end",
+    "up": "lepidodendron:blocks/aphananthe_log_end",
+    "north": "lepidodendron:blocks/aphananthe_log",
+    "east": "lepidodendron:blocks/aphananthe_log",
+    "south": "lepidodendron:blocks/aphananthe_log",
+    "west": "lepidodendron:blocks/aphananthe_log",
+    "particle": "lepidodendron:blocks/aphananthe_log_end"
+  }
+}

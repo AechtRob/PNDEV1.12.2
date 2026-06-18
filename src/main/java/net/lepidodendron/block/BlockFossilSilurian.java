@@ -56,6 +56,7 @@ public class BlockFossilSilurian extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimNeogene
 				|| dimID == LepidodendronConfig.dimPaleogene
 				|| dimID == LepidodendronConfig.dimCretaceousEarly
+				|| dimID == LepidodendronConfig.dimCretaceousLate
 				|| dimID == LepidodendronConfig.dimJurassic
 				|| dimID == LepidodendronConfig.dimTriassic
 				|| dimID == LepidodendronConfig.dimPermian
@@ -89,7 +90,7 @@ public class BlockFossilSilurian extends ElementsLepidodendronMod.ModElement {
 			dimDepth = dimDepth - 20;
 			blockCount = 6;
 		}
-		if (dimID == LepidodendronConfig.dimCretaceousEarly) {
+		if (dimID == LepidodendronConfig.dimCretaceousEarly || dimID == LepidodendronConfig.dimCretaceousLate) {
 			dimDepth = dimDepth - 16;
 			blockCount = 7;
 		}
