@@ -705,6 +705,10 @@ public class EntityLists {
                         "lepidodendron:prehistoric_flora_spinosaurus:0:0:0",
                         "lepidodendron:prehistoric_flora_olorotitan:0:0:0",
                         "lepidodendron:prehistoric_flora_protosphyraena:0:0:0",
+                        "lepidodendron:prehistoric_flora_antarctopelta:0:0:0",
+                        "lepidodendron:prehistoric_flora_adalatherium:0:0:0",
+                        "lepidodendron:prehistoric_flora_tarbosaurus:0:0:0",
+                        "lepidodendron:prehistoric_flora_protoceratops:0:0:0",
 
                 };
 

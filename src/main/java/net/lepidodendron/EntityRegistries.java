@@ -1628,6 +1628,20 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_santanachelys", EntityPrehistoricFloraSantanachelys.class, LepidodendronMod.ENTITY_SANTANACHELYS, 64,-4540282,-8302541);
         registerEntity("prehistoric_flora_desmatochelys", EntityPrehistoricFloraDesmatochelys.class, LepidodendronMod.ENTITY_DESMATOCHELYS, 84,-11775926,-11646912);
         registerEntity("prehistoric_flora_cratochelone", EntityPrehistoricFloraCratochelone.class, LepidodendronMod.ENTITY_CRATOCHELONE, 84,-12379116,-8433102);
+        registerEntity("prehistoric_flora_beishanlong", EntityPrehistoricFloraBeishanlong.class, LepidodendronMod.ENTITY_BEISHANLONG, 84,-1052947,-13356238);
+        registerEntity("prehistoric_flora_antarctopelta", EntityPrehistoricFloraAntarctopelta.class, LepidodendronMod.ENTITY_ANTARCTOPELTA, 64,-5147365,-12633040);
+        registerEntity("prehistoric_flora_adalatherium", EntityPrehistoricFloraAdalatherium.class, LepidodendronMod.ENTITY_ADALATHERIUM, 64,-6070474,-4939643);
+        registerEntity("prehistoric_flora_scaphognathus", EntityPrehistoricFloraScaphognathus.class, LepidodendronMod.ENTITY_SCAPHOGNATHUS, 64,-3885409,-4359635);
+        registerEntity("prehistoric_flora_jinzhousaurus", EntityPrehistoricFloraJinzhousaurus.class, LepidodendronMod.ENTITY_JINZHOUSAURUS, 84,-9023421,-3754074);
+        registerEntity("prehistoric_flora_sinosauropteryx", EntityPrehistoricFloraSinosauropteryx.class, LepidodendronMod.ENTITY_SINOSAUROPTERYX, 48,-5477088,-527636);
+        registerEntity("prehistoric_flora_nqwebsaurus", EntityPrehistoricFloraNqwebsaurus.class, LepidodendronMod.ENTITY_NQWEBSAURUS, 48,-10206428,-11001595);
+        registerEntity("prehistoric_flora_daurlong", EntityPrehistoricFloraDaurlong.class, LepidodendronMod.ENTITY_DAURLONG, 48,-7707849,-15453635);
+        registerEntity("prehistoric_flora_lurdusaurus", EntityPrehistoricFloraLurdusaurus.class, LepidodendronMod.ENTITY_LURDUSAURUS, 84,-10533575,-5529484);
+        registerEntity("prehistoric_flora_elrhazosaurus", EntityPrehistoricFloraElrhazosaurus.class, LepidodendronMod.ENTITY_ELRHAZOSAURUS, 64,-11573709,-2696842);
+        registerEntity("prehistoric_flora_sinotyrannus", EntityPrehistoricFloraSinotyrannus.class, LepidodendronMod.ENTITY_SINOTYRANNUS, 84,-11253697,-3117274);
+        registerEntity("prehistoric_flora_sauropelta", EntityPrehistoricFloraSauropelta.class, LepidodendronMod.ENTITY_SAUROPELTA, 84,-5989275,-12115683);
+        registerEntity("prehistoric_flora_sinocalliopteryx", EntityPrehistoricFloraSinocalliopteryx.class, LepidodendronMod.ENTITY_SINOCALLIOPTERYX, 64,-9146272,-14869479);
+
 
 
         // aquatic nymphs for Stonefly, Mayfly, Argentinala, Velisoptera, Damselfly

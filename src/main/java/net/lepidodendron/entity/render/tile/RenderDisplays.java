@@ -1103,6 +1103,19 @@ public class RenderDisplays {
     public static final ModelHauffiosaurus modelHauffiosaurus = new ModelHauffiosaurus();
     public static final ModelMyobradypterygius modelMyobradypterygius = new ModelMyobradypterygius();
     public static final ModelUmoonasaurus modelUmoonasaurus = new ModelUmoonasaurus();
+    public static final ModelBeishanlong modelBeishanlong = new ModelBeishanlong();
+    public static final ModelAntarctopelta modelAntarctopelta = new ModelAntarctopelta();
+    public static final ModelAdalatherium modelAdalatherium = new ModelAdalatherium();
+    public static final ModelJinzhousaurus modelJinzhousaurus = new ModelJinzhousaurus();
+    public static final ModelDaurlong modelDaurlong = new ModelDaurlong();
+    public static final ModelSinosauropteryx modelSinosauropteryx = new ModelSinosauropteryx();
+    public static final ModelNqwebsaurus modelNqwebsaurus = new ModelNqwebsaurus();
+    public static final ModelScaphognathus modelScaphognathus = new ModelScaphognathus();
+    public static final ModelElrhazosaurus modelElrhazosaurus = new ModelElrhazosaurus();
+    public static final ModelLurdusaurus modelLurdusaurus = new ModelLurdusaurus();
+    public static final ModelSinocalliopteryx modelSinocalliopteryx = new ModelSinocalliopteryx();
+    public static final ModelSinotyrannus modelSinotyrannus = new ModelSinotyrannus();
+    public static final ModelSauropelta modelSauropelta = new ModelSauropelta();
 
 
 
