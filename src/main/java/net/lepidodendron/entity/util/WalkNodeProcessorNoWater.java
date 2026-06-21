@@ -3,6 +3,9 @@ package net.lepidodendron.entity.util;
 import com.google.common.collect.Sets;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
+import net.lepidodendron.util.MaterialLatex;
+import net.lepidodendron.util.MaterialResin;
+import net.lepidodendron.util.MaterialTar;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -394,14 +397,38 @@ public class WalkNodeProcessorNoWater extends NodeProcessor
                     if (currentEntity.world.getBlockState(new BlockPos(x, y - 1, z)).getMaterial() == Material.WATER) {
                         if (currentEntity.width > 1) {
                             if (
-                                    blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z - 1)).getMaterial() == Material.WATER
-                                            && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z)).getMaterial() == Material.WATER
-                                            && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z + 1)).getMaterial() == Material.WATER
-                                            && blockaccessIn.getBlockState(new BlockPos(x, y - 1, z - 1)).getMaterial() == Material.WATER
-                                            && blockaccessIn.getBlockState(new BlockPos(x, y - 1, z + 1)).getMaterial() == Material.WATER
-                                            && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z - 1)).getMaterial() == Material.WATER
-                                            && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z)).getMaterial() == Material.WATER
-                                            && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z + 1)).getMaterial() == Material.WATER
+                                    (blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z - 1)).getMaterial() == Material.WATER
+                                        || blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z - 1)).getMaterial() == MaterialResin.RESIN
+                                            || blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z - 1)).getMaterial() == MaterialTar.TAR
+                                            || blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z - 1)).getMaterial() == MaterialLatex.LATEX)
+                                            && (blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z)).getMaterial() == Material.WATER
+                                                || blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z)).getMaterial() == MaterialResin.RESIN
+                                                || blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z)).getMaterial() == MaterialTar.TAR
+                                                || blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z)).getMaterial() == MaterialLatex.LATEX)
+                                            && (blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z + 1)).getMaterial() == Material.WATER
+                                                || blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z + 1)).getMaterial() == MaterialResin.RESIN
+                                                || blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z + 1)).getMaterial() == MaterialTar.TAR
+                                                || blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z + 1)).getMaterial() == MaterialLatex.LATEX)
+                                            && (blockaccessIn.getBlockState(new BlockPos(x, y - 1, z - 1)).getMaterial() == Material.WATER
+                                                || blockaccessIn.getBlockState(new BlockPos(x, y - 1, z - 1)).getMaterial() == MaterialResin.RESIN
+                                                || blockaccessIn.getBlockState(new BlockPos(x, y - 1, z - 1)).getMaterial() == MaterialTar.TAR
+                                                || blockaccessIn.getBlockState(new BlockPos(x, y - 1, z - 1)).getMaterial() == MaterialLatex.LATEX)
+                                            && (blockaccessIn.getBlockState(new BlockPos(x, y - 1, z + 1)).getMaterial() == Material.WATER
+                                                || blockaccessIn.getBlockState(new BlockPos(x, y - 1, z + 1)).getMaterial() == MaterialResin.RESIN
+                                                || blockaccessIn.getBlockState(new BlockPos(x, y - 1, z + 1)).getMaterial() == MaterialTar.TAR
+                                                || blockaccessIn.getBlockState(new BlockPos(x, y - 1, z + 1)).getMaterial() == MaterialLatex.LATEX)
+                                            && (blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z - 1)).getMaterial() == Material.WATER
+                                                || blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z - 1)).getMaterial() == MaterialResin.RESIN
+                                                || blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z - 1)).getMaterial() == MaterialTar.TAR
+                                                || blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z - 1)).getMaterial() == MaterialLatex.LATEX)
+                                            && (blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z)).getMaterial() == Material.WATER
+                                                || blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z)).getMaterial() == MaterialResin.RESIN
+                                                || blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z)).getMaterial() == MaterialTar.TAR
+                                                || blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z)).getMaterial() == MaterialLatex.LATEX)
+                                            && (blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z + 1)).getMaterial() == Material.WATER
+                                                || blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z + 1)).getMaterial() == MaterialResin.RESIN
+                                                || blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z + 1)).getMaterial() == MaterialTar.TAR
+                                                || blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z + 1)).getMaterial() == MaterialLatex.LATEX)
                             ) {
                                 pathnodetype = PathNodeType.BLOCKED;
                             }

@@ -545,7 +545,6 @@ public class EntityPrehistoricFloraOlorotitan extends EntityPrehistoricFloraLand
 		return ModTriggers.CLICK_OLOROTITAN;
 	}
 
-
 	//Rendering taxidermy:
 	//--------------------
     public static double offsetWall(@Nullable String variant) {

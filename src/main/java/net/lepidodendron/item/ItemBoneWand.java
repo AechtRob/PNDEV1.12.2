@@ -5,11 +5,19 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.enchantments.Enchantments;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.monster.EntityZombie;
+import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -74,7 +82,48 @@ public class ItemBoneWand extends ElementsLepidodendronMod.ModElement {
 			return 1F;
 		}
 
-//		@Override
+		@Override
+		public boolean itemInteractionForEntity(ItemStack stack, EntityPlayer player, EntityLivingBase entity, EnumHand hand) {
+			ItemStack itemstack = player.getHeldItem(hand);
+			if (functioningWand(itemstack) && LepidodendronConfig.babifyMobs) {
+				int levelEnchantment = net.minecraft.enchantment.EnchantmentHelper.getEnchantmentLevel(Enchantments.TIME_REVERSAL, itemstack);
+				if (levelEnchantment > 0) {
+					if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+						((EntityPrehistoricFloraAgeableBase)entity).setAgeTicks(0);
+						((EntityPrehistoricFloraAgeableBase)entity).setScaleForAge(false);
+						if (!player.capabilities.isCreativeMode && itemstack.getItemDamage() < (itemstack.getItem().getMaxDamage() - 1)) {
+							itemstack.damageItem(10, entity);
+						}
+						return true;
+					}
+					if (entity instanceof EntityZombie) {
+						((EntityZombie)entity).setChild(true);
+						if (!player.capabilities.isCreativeMode && itemstack.getItemDamage() < (itemstack.getItem().getMaxDamage() - 1)) {
+							itemstack.damageItem(10, entity);
+						}
+						return true;
+					}
+					if (entity instanceof EntityAgeable) {
+						((EntityAgeable)entity).setGrowingAge(-24000);
+						if (!player.capabilities.isCreativeMode && itemstack.getItemDamage() < (itemstack.getItem().getMaxDamage() - 1)) {
+							itemstack.damageItem(10, entity);
+						}
+						return true;
+					}
+					if (entity instanceof EntityVillager) {
+						((EntityVillager)entity).setGrowingAge(-24000);
+						if (!player.capabilities.isCreativeMode && itemstack.getItemDamage() < (itemstack.getItem().getMaxDamage() - 1)) {
+							itemstack.damageItem(10, entity);
+						}
+						return true;
+					}
+				}
+			}
+			return super.itemInteractionForEntity(stack, player, entity, hand);
+		}
+
+
+		//		@Override
 //		public EnumActionResult onItemUse(EntityPlayer entity, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY,
 //				float hitZ) {
 //			BlockPos pos1 = pos.offset(facing);

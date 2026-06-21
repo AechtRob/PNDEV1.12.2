@@ -24,10 +24,6 @@ public class LepidodendronWandHandler {
         EnumHand hand = event.getHand();
         EnumFacing facing = event.getFace();
 
-//        if (world.isRemote) {
-//            return;
-//        }
-
         BlockPos pos1 = pos.offset(facing);
         ItemStack itemstack = entity.getHeldItem(hand);
 
@@ -83,6 +79,5 @@ public class LepidodendronWandHandler {
             }
         }
     }
-
 
 }

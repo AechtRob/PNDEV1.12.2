@@ -3832,6 +3832,7 @@ public class LepidodendronMod {
 	static final int ENTITY_MONTSECOSUCHUS = 1599;
 	static final int ENTITY_ISISFORDIA = 1600;
 	static final int ENTITY_SPINOLESTES = 1601;
+	public static final ResourceLocation SPINOLESTES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/spinolestes"));
 	static final int ENTITY_KRADIMUS = 1602;
     public static final ResourceLocation KRADIMUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kradimyus"));
 	static final int ENTITY_ERFOUDICHTHYS = 1603;
@@ -3862,7 +3863,9 @@ public class LepidodendronMod {
 	static final int ENTITY_BOLIVOSTEUS = 1615;
 	public static final ResourceLocation BOLIVOSTEUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bolivosteus"));
     static final int ENTITY_PHOLIDOSAURUS = 1616;
-    static final int ENTITY_NQWEBSAURUS = 1617;
+	public static final ResourceLocation PHOLIDOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pholidosaurus_young"));
+	public static final ResourceLocation PHOLIDOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pholidosaurus"));
+	static final int ENTITY_NQWEBSAURUS = 1617;
     static final int ENTITY_ELRHAZOSAURUS = 1618;
     static final int ENTITY_TEINOLOPHOS = 1619;
     static final int ENTITY_SANTANACHELYS = 1620;
