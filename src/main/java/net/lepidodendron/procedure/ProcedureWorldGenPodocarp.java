@@ -36,10 +36,15 @@ public class ProcedureWorldGenPodocarp extends ElementsLepidodendronMod.ModEleme
 			System.err.println("Failed to load dependency world for procedure WorldGenPodocarp!");
 			return;
 		}
+		if (dependencies.get("SaplingSpawn") == null) {
+			System.err.println("Failed to load dependency SaplingSpawn for procedure WorldGenPodocarp!");
+			return;
+		}
 		int x = (int) dependencies.get("x");
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
 		World world = (World) dependencies.get("world");
+		boolean SaplingSpawn = (boolean) dependencies.get("SaplingSpawn");
 		int TrunkHeight = 15 + (int) (Math.round(Math.random() * 20D));
 		int counter = 0;
 		int yy = y;
@@ -176,6 +181,7 @@ public class ProcedureWorldGenPodocarp extends ElementsLepidodendronMod.ModEleme
 				}
 
 			}
+			ProcedureSpawnAtli.executeProcedure(x, y, z, world, true, SaplingSpawn);
 
 		}
 	}

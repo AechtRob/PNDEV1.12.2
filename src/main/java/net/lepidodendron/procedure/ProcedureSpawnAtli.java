@@ -3,8 +3,8 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
-import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
-import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.util.EnumBiomeTypeCretaceousLate;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousLate;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -29,7 +29,7 @@ public class ProcedureSpawnAtli extends ElementsLepidodendronMod.ModElement {
 				dimensionCriteria = true;
 			if (!TreeChosen && !LepidodendronConfig.genAllPlants)
 				dimensionCriteria = false;
-			if (dimID == LepidodendronConfig.dimCretaceousEarly) {
+			if (dimID == LepidodendronConfig.dimCretaceousLate) {
 				dimensionCriteria = true;
 			}
 			Biome biome = world.getBiome(new BlockPos(x, y, z));
@@ -49,10 +49,10 @@ public class ProcedureSpawnAtli extends ElementsLepidodendronMod.ModElement {
 				if (matchBiome(biome, LepidodendronConfigPlants.genAtliOverrideBiomes))
 					biomeCriteria = true;
 				}
-				if (dimID == LepidodendronConfig.dimCretaceousEarly) {
-					if (biome instanceof BiomeCretaceousEarly) {
-						BiomeCretaceousEarly biomeC = (BiomeCretaceousEarly) biome;
-						if (biomeC.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Euro_America) {
+				if (dimID == LepidodendronConfig.dimCretaceousLate) {
+					if (biome instanceof BiomeCretaceousLate) {
+						BiomeCretaceousLate biomeC = (BiomeCretaceousLate) biome;
+						if (biomeC.getBiomeType() == EnumBiomeTypeCretaceousLate.Late_Cretaceous_North_America_Arctic) {
 							if (!SaplingSpawn) {
 								biomeCriteria = true;
 							}
