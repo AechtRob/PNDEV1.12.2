@@ -37,9 +37,14 @@ public class ProcedureWorldGenTaxodium extends ElementsLepidodendronMod.ModEleme
 			System.err.println("Failed to load dependency world for procedure WorldGenTaxodium!");
 			return;
 		}
+		if (dependencies.get("SaplingSpawn") == null) {
+			System.err.println("Failed to load dependency SaplingSpawn for procedure WorldGenTaxodium!");
+			return;
+		}
 		int x = (int) dependencies.get("x");
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
+		boolean SaplingSpawn = (boolean) dependencies.get("SaplingSpawn");
 		int xx = (int) dependencies.get("x");
 		int yy = (int) dependencies.get("y");
 		int zz = (int) dependencies.get("z");
