@@ -1,0 +1,52 @@
+{
+	"name": "Bolivosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bolivosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_bolivosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bolivosteus",
+			"title": "Bolivosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Rhenanida"
+		},
+        	{
+            "type": "entity",
+            "name": "B. chacomensis",
+            "entity": "lepidodendron:prehistoric_flora_bolivosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bolivosteus",
+			"type": "text",
+			"text": "Bolivosteus chacomensis is a species of rhenanid placoderm from the Middle Devonian, being closely related to the earlier Gemuendina. It was found in the Belén Formation in Bolivia, near the town of Charco referenced in its name. It is the only determinate placoderm known from all of Bolivia, owing to the comparative rarity of placoderms throughout the Malvinokaffric Realm. It was also the first Devonian South American vertebrate to be described."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bolivosteus",
+			"type": "text",
+			"text": "The animal occurs in large numbers within its locality, possibly being caused by mass mortality."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bolivosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bolivosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bolivosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bolivosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bolivosteus"
+		}
+	]
+}

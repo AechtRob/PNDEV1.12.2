@@ -1,0 +1,47 @@
+{
+	"name": "Chronocancer",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/chronocancer_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_chronocancer",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_chronocancer",
+			"title": "Chronocancer",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Orithopsidae"
+		},
+		{
+			"type": "entity",
+			"name": "C. camilosantanai",
+			"entity": "lepidodendron:prehistoric_flora_chronocancer",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_chronocancer",
+			"type": "text",
+			"text": "Chronocancer camilosantanai is a species of true crab found in the Aptian to the Albian of the Romualdo Formation in the Araripe Basin in Brazil. Its generic name comes from the Greek God of Time, Kronos, and 'cancer' meaning crab. The specific name honors Brazilian politician Camilo Santana, who has worked on sustainability surrounding the Araripe Basin. It is known from a single fossil preserving the carapace, right claw, an eye stalk, and possibly a leg."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_chronocancer"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_chronocancer"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_chronocancer"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_chronocancer"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_chronocancer"
+		}
+	]
+}

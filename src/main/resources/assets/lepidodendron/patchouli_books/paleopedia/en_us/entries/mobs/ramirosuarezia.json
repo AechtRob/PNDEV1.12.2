@@ -1,0 +1,57 @@
+{
+	"name": "Ramirosuarezia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ramirosuarezia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ramirosuarezia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ramirosuarezia",
+			"title": "Ramirosuarezia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Vertebrata$(br)>Gnathostomata$(br)>$(o)incertae sedis"
+		},
+        	{
+            "type": "entity",
+            "name": "R. boliviana",
+            "entity": "lepidodendron:prehistoric_flora_ramirosuarezia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ramirosuarezia",
+			"type": "text",
+			"text": "Ramirosuarezia boliviana is a species of enigmatic gnathostome known from a single partial skull in the Middle Devonian Icla Formation in Bolivia. The generic name honors Dr. Ramiro Suárez-Soruco. Ramirosuarezia is very important to the notoriously complex study of fish phylogeny. Ramirosuarezia is likely a 'Maxilate Placoderm' a colloquial name for a group of animals including Qilinyu, Entelognathus, and most importantly for Ramirosuarezia, Janusiscus."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ramirosuarezia",
+			"type": "text",
+			"text": "Despite the name, many studies exclude 'Maxilate Placoderms' from Placodermi, with most phylogenies including Ramirosuarezia place the group as sister between placoderms and all other gnathostomes. However, some studies find different phylogenetic positions for Ramirosuarezia, with the most popular one being as a stem-chondrichthyian. Indeed, one paper shows that one can easily find seven different phylogenetic hypotheses involving relations between"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ramirosuarezia",
+			"type": "text",
+			"text": "Modern groups of fish and enigmatic fish like Ramirosuarezia. We have decided to go with the 'Maxilate Placoderm' interpretation, and this gives us a size of 7-8 centimeters. If 'Maxilate Placoderms' are placed outside of Placodermi, then a feature of Ramirosuarezia becomes far more interesting: its teeth. These teeth imply that teeth are an ancestral feature of all modern groups of jawed fish."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ramirosuarezia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ramirosuarezia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ramirosuarezia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ramirosuarezia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ramirosuarezia"
+		}
+	]
+}

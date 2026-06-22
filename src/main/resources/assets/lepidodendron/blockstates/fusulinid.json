@@ -1,0 +1,44 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:fusulinid_1"},
+      {"model": "lepidodendron:fusulinid_2"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:fusulinid_1", "x": 90},
+      {"model": "lepidodendron:fusulinid_2", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:fusulinid_1", "x": 90, "y": 90},
+      {"model": "lepidodendron:fusulinid_2", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:fusulinid_1", "x": 90, "y": 180},
+      {"model": "lepidodendron:fusulinid_2", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:fusulinid_1", "x": 90, "y": 270},
+      {"model": "lepidodendron:fusulinid_2", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:fusulinid_1"},
+      {"model": "lepidodendron:fusulinid_2"},
+      {"model": "lepidodendron:fusulinid_1", "y": 90},
+      {"model": "lepidodendron:fusulinid_2", "y": 90},
+      {"model": "lepidodendron:fusulinid_1", "y": 180},
+      {"model": "lepidodendron:fusulinid_2", "y": 180},
+      {"model": "lepidodendron:fusulinid_1", "y": 270},
+      {"model": "lepidodendron:fusulinid_2", "y": 270}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:fusulinid_1", "x": 180},
+      {"model": "lepidodendron:fusulinid_2", "x": 180},
+      {"model": "lepidodendron:fusulinid_1", "x": 180, "y": 90},
+      {"model": "lepidodendron:fusulinid_2", "x": 180, "y": 90},
+      {"model": "lepidodendron:fusulinid_1", "x": 180, "y": 180},
+      {"model": "lepidodendron:fusulinid_2", "x": 180, "y": 180},
+      {"model": "lepidodendron:fusulinid_1", "x": 180, "y": 270},
+      {"model": "lepidodendron:fusulinid_2", "x": 180, "y": 270}
+    ]
+  }
+}

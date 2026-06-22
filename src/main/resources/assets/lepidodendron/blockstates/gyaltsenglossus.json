@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:gyaltsenglossus"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:gyaltsenglossus", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:gyaltsenglossus", "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:gyaltsenglossus", "y": 180}
+    ],
+    "facing=west": [
+      {"model": "lepidodendron:gyaltsenglossus", "y": 270}
+    ],
+    "facing=up": [
+      {"model": "lepidodendron:gyaltsenglossus"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:gyaltsenglossus", "x": 180}
+    ]
+  }
+}

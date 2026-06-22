@@ -1103,6 +1103,9 @@ public class RenderDisplays {
     public static final ModelHauffiosaurus modelHauffiosaurus = new ModelHauffiosaurus();
     public static final ModelMyobradypterygius modelMyobradypterygius = new ModelMyobradypterygius();
     public static final ModelUmoonasaurus modelUmoonasaurus = new ModelUmoonasaurus();
+    public static final ModelVolchovia modelVolchovia = new ModelVolchovia();
+    public static final ModelDicynodon modelDicynodon = new ModelDicynodon();
+    public static final ModelAncyloceras modelAncyloceras = new ModelAncyloceras();
     public static final ModelBeishanlong modelBeishanlong = new ModelBeishanlong();
     public static final ModelAntarctopelta modelAntarctopelta = new ModelAntarctopelta();
     public static final ModelAdalatherium modelAdalatherium = new ModelAdalatherium();

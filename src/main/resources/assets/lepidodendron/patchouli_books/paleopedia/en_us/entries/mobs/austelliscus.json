@@ -1,0 +1,52 @@
+{
+	"name": "Austelliscus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/austelliscus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_austelliscus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_austelliscus",
+			"title": "Austelliscus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Osteichthyes$(br)>Actinopterygii"
+		},
+        	{
+            "type": "entity",
+            "name": "A. ferox",
+            "entity": "lepidodendron:prehistoric_flora_austelliscus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_austelliscus",
+			"type": "text",
+			"text": "Austelliscus ferox is a species of actinopterygian fish found in Brazil, likely in the Middle Devonian dating Ponta Grossa Formation. It is known from a partial lower jaw, and is estimated to have grown from 50 to 70 centimeters in size. It is easily the southernmost Devonian actinopterygian we know of, living very close to the South Pole in its time while most other Devonian actinopterygians lived near the equator or at neither extreme."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_austelliscus",
+			"type": "text",
+			"text": "This is referenced in its name, meaning 'ferocious southern fish.' Austelliscus is also interestingly derived for its time, being the most closely related to Late Devonian fish, such as Tegeolepis. Its Middle Devonian age may imply greater diversity in actinopterygians much earlier than thought."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_austelliscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_austelliscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_austelliscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_austelliscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_austelliscus"
+		}
+	]
+}

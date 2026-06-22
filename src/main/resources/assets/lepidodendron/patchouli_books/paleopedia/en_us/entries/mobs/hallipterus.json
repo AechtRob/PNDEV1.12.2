@@ -1,0 +1,47 @@
+{
+	"name": "Hallipterus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hallipterus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hallipterus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hallipterus",
+			"title": "Hallipterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Pterygotidae"
+		},
+		{
+			"type": "entity",
+			"name": "H. excelsior",
+			"entity": "lepidodendron:prehistoric_flora_hallipterus",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hallipterus",
+			"type": "text",
+			"text": "Hallipterus excelsior comes from the Middle Devonian, with fossils found from around New York and Pennsylvania (USA). It is a large hardieopterid eurypterid, growing up to 1.5 m in length. The carapace is notably tri-angular in shape, with it being much longer than it is wide, adorned with two small eyes separated by a prominent marginal rim, as well as both being partially surrounded by a smaller circular rim."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hallipterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hallipterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hallipterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hallipterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hallipterus"
+		}
+	]
+}

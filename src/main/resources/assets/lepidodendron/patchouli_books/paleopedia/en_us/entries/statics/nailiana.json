@@ -1,0 +1,45 @@
+{
+	"name": "Nailiana",
+	"read_by_default": true,
+	"icon": "lepidodendron:nailiana_icon",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_nailiana",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_nailiana",
+			"title": "Nailiana",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$()$(br)>Anthozoa"
+		},
+		{
+			"type": "multiblock",
+			"name": "N. elegans",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:nailiana",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nailiana",
+			"type": "text",
+			"text": "Nailiana elegans comes from the middle Cambrian, with fossils found in the Maotianshan Shales, South China. that had 8 tentacles surrounding a mouth and oral disc, and grew up to 6 cm in height. Nailiana represents not only an early stem-cnidarian from the Cambrian, but also represents the earliest known macrophagous predator in the fossil record (meaning it went after large prey)."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nailiana",
+			"type": "text",
+			"text": "The generic name derives from the forename of Nailian Fu, who was one of the researchers grandmother, as well as also meaning 'lotus-like' in Chinese. The specific name derives from the Latin word 'elegans', to mean 'elegant'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nailiana",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

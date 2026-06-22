@@ -1,0 +1,52 @@
+{
+	"name": "Bumastus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bumastus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_bumastus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bumastus",
+			"title": "Bumastus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Arthropoda$(br)>Trilobita$(br)>Corynexochida$(br)>Styginidae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. barriensis",
+            "entity": "lepidodendron:prehistoric_flora_bumastus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bumastus",
+			"type": "text",
+			"text": "Bumastus hails from the Lower Ordovician into the Silurian, with fossils found across the world. It is a highly rounded and smooth styginid, with large well-developed compound eyes, and grew up to 15 cm in length. It may have possibly buried itself beneath the sand in order to hide, with their eyes poking above the surface"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bumastus",
+			"type": "text",
+			"text": "The generic name derives from the Latin word 'būmastus', which is the name of a large grape."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bumastus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bumastus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bumastus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bumastus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bumastus"
+		}
+	]
+}

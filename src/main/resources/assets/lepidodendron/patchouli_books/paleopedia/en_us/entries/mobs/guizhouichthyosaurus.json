@@ -1,0 +1,52 @@
+{
+	"name": "Guizhouichthyosaurus",
+	"read_by_default": true,
+	"icon": "lepidodendron:guizhouichthyosaurus_raw",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_guizhouichthyosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_guizhouichthyosaurus",
+			"title": "Guizhouichthyosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Ichthyosauria"
+		},
+		{
+			"type": "entity",
+			"name": "G. tangae",
+			"entity": "lepidodendron:prehistoric_flora_guizhouichthyosaurus",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_guizhouichthyosaurus",
+			"type": "text",
+			"text": "Guizhouichthyosaurus tangae comes from the Triassic, with fossils found in the Xiaowa and Zhuganpo Formations, South China. It is a large ichthyosaur, growing up to a 7 m in length, with an potential undescribed specimen attaining a staggering length of 25 m. Its snout is notably long and powerful, being able to consume large marine reptiles, with one fossil specimen containing the remains of a thalattosaur in the stomach region, solidifying it as an apex predator."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_guizhouichthyosaurus",
+			"type": "text",
+			"text": "Guizhouicthyosaurus is also notable in that it shows that icthyosaurs not only managed to attain large sizes early on, but where also incredibly efficient swimmers, even in the early stages of their evolution, although Guizhouicthyosaurus would have used a still less-efficient eel-like motion, whilst its later kin would have further refined how they moved, using more cod-like and tuna-like swimming styles."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_guizhouichthyosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_guizhouichthyosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_guizhouichthyosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_guizhouichthyosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_guizhouichthyosaurus"
+		}
+	]
+}

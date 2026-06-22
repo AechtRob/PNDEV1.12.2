@@ -1,0 +1,52 @@
+{
+	"name": "Selkirkia",
+	"read_by_default": true,
+	"icon": "lepidodendron:selkirkia",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_selkirkia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_selkirkia",
+			"title": "Selkirkia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian - Ordovician$(br2)>$(o)Priapulida (?)$(br)>Archaeopriapulida$(br)>Selkirkiidae"
+		},
+		{
+			"type": "entity",
+			"name": "S. columbia",
+			"entity": "lepidodendron:prehistoric_flora_selkirkia",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_selkirkia",
+			"type": "text",
+			"text": "Selkirkia hails from the middle Cambrian into the Lower Ordovician, with fossils found in the Burgess Shale, Canada, Puncoviscana Formation, Argentina, and the Fezouata Formation, Morocco. It is a tubed archaeopriapulidan, usually found buried in the sand, with its proboscis coming out of the opening of the tube in order to feed, and grew up to 6 cm in length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_selkirkia",
+			"type": "text",
+			"text": "The generic name derives from the place name 'Selkirk Mountains', near to where the fossils were found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_selkirkia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_selkirkia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_selkirkia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_selkirkia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_selkirkia"
+		}
+	]
+}

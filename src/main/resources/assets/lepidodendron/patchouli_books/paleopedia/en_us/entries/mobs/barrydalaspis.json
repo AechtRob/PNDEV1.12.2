@@ -1,0 +1,47 @@
+{
+	"name": "Barrydalaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/barrydalaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_barrydalaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_barrydalaspis",
+			"title": "Barrydalaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Arthrodira$(br)>Phlyctaenioidei$(br)>Phlyctaeniidae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. theroni",
+            "entity": "lepidodendron:prehistoric_flora_barrydalaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_barrydalaspis",
+			"type": "text",
+			"text": "Barrydalaspis theroni is a species of phlyctaeniid placoderm known from the Devonian Bokkeveld Group in South Africa. Its generic name comes from the town of Barrydale, where it was found, and its specific name honors Dr J. N. Theron, who gave the fossil attention to be described. The animal is known from its thoracic body armour, and possessed large spines jutting out of its sides."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_barrydalaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_barrydalaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_barrydalaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_barrydalaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_barrydalaspis"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Digonus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/digonus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_digonus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_digonus",
+			"title": "Digonus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Trilobita$(br)>Phacopida$(br)>Homalonotidae$(br)>Homalonotinae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. sp.",
+            "entity": "lepidodendron:prehistoric_flora_digonus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_digonus",
+			"type": "text",
+			"text": "Digonus is a very widespread genus of homalonotid trilobite, found in the Devonian worldwide. It grew up to 25 centimeters in length and had large eyes. It is thought that this genus diverged from the similar Trimerus. Digonus first appears directly above the Silurian-Devonian boundary, so despite only having fossils of this animal from the Devonian, some think that the genus originated in the Silurian."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_digonus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_digonus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_digonus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_digonus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_digonus"
+		}
+	]
+}
