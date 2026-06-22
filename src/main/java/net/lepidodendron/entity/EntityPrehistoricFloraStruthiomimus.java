@@ -53,8 +53,8 @@ public class EntityPrehistoricFloraStruthiomimus extends EntityPrehistoricFloraL
 		super(world);
 		setSize(0.49F, 0.52F);
 		minWidth = 0.05F;
-		maxWidth = 0.49F;
-		maxHeight = 0.52F;
+		maxWidth = 1.0F;
+		maxHeight = 1.52F;
 		maxHealthAgeable = 10.0D;
 		STAND_ANIMATION = Animation.create(125);
 		GRAPPLE_ANIMATION = Animation.create(this.getGrappleLength());
@@ -305,7 +305,7 @@ public class EntityPrehistoricFloraStruthiomimus extends EntityPrehistoricFloraL
 	
 	public AxisAlignedBB getGrappleBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(2.0F + size, 2.0F + size, 2.0F + size);
+		return this.getEntityBoundingBox().grow(4.0F + size, 4.0F + size, 4.0F + size);
 	}
 
 	@Override

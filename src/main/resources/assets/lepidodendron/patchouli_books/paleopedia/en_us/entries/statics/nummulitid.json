@@ -1,0 +1,45 @@
+{
+	"name": "Nummulitid",
+	"read_by_default": true,
+	"icon": "lepidodendron:nummulitid",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_nummulitid",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_nummulitid",
+			"title": "Nummulitid",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous - Present$(br2)$(l)Habitat:$() Marine$(br2)>Eukaryota$(br)>Sar$(br)>Rhizaria$(br)>Retaria$(br)>Foraminifera$(br)>Globothalamea$(br)>Rotaliida$(br)>Nummulitacea$(br)>$(o)Nummulitidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "Nummulitid",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:nummulitid",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nummulitid",
+			"type": "text",
+			"text": "Nummulitids hail from the Late Cretaceous into the present day, with fossils and extant forms found across the globe. They are circular foraminiferans, growing up to 15 cm in diameter, with modern forms still growing up to 5 cm in diameter. As with most foraminiferans, they are valuable as index fossils due to their great numbers in the fossil record, for example a genus within Nummulitidae was used to date the now oldest known fossil remains of a Sirenio (Sea Cow)"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nummulitid",
+			"type": "text",
+			"text": "in Europe, dating the remains to the middle Eocene. As for the Nummulitids themselves, there are some reports of possible Early Cretaceous and even upper Jurassic records, although again as with the Fusulinids, these are a bit up in the air, with most agreeing on the current range of this family. The family name derives from the Latin word 'nummulus', to mean 'little coin'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nummulitid",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

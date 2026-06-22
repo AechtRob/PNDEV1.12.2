@@ -17,7 +17,7 @@ public class RenderStruthiomimus extends RenderLivingBaseWithBook<EntityPrehisto
     }
 
     public static float getScaler() {
-        return 1F;
+        return 0.9F;
     }
 
     @Override

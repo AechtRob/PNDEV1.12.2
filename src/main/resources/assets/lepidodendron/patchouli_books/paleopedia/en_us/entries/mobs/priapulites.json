@@ -1,0 +1,47 @@
+{
+	"name": "Priapulites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/priapulites_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_priapulites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_priapulites",
+			"title": "Priapulites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Priapulida$(br)>Priapulimorpha$(br)>Priapulimorphida"
+		},
+        	{
+            "type": "entity",
+            "name": "P. konecniorum",
+            "entity": "lepidodendron:prehistoric_flora_priapulites",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_priapulites",
+			"type": "text",
+			"text": "Priapulites konecniorum comes from the upper Carboniferous, with fossils found in the Francis Creek Shale, USA. It is a elongated priapulid, and grew up to 6 cm in length. It is currently accepted to be the oldest known crown-group Priapulid worm. The specific name derives from the surname of Mr. and Mrs. James Konecny, who donated the first fossil material."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_priapulites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_priapulites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_priapulites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_priapulites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_priapulites"
+		}
+	]
+}

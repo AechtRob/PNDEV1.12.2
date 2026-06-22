@@ -71,8 +71,6 @@ public class BlockHerpetogaster extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("pndietEncruster", BlockHerpetogaster.block);
 	}
 
-
-
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 
 	@SideOnly(Side.CLIENT)

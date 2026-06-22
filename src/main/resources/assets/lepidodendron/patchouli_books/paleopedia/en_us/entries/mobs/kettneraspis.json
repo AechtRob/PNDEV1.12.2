@@ -1,0 +1,47 @@
+{
+	"name": "Kettneraspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kettneraspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_kettneraspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kettneraspis",
+			"title": "Kettneraspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician - Devonian$(br2)>Arthropoda$(br)>Trilobita$(br)>Odontopleurida$(br)>Odontopleuridae$(br)>Odontopleurinae"
+		},
+        	{
+            "type": "entity",
+            "name": "K. sp",
+            "entity": "lepidodendron:prehistoric_flora_kettneraspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kettneraspis",
+			"type": "text",
+			"text": "Kettneraspis is a genus of spiny trilobite found worldwide, ranging from the Ordovician to the Devonian. It was a rather small trilobite, growing to three centimeters in length. Like other odontopleurids it would've likely either used its spines for protection or to attract a mate. It has been proposed that this animal was sexually dimorphic, however it is likely this is merely just individual variation."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kettneraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kettneraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kettneraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kettneraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kettneraspis"
+		}
+	]
+}

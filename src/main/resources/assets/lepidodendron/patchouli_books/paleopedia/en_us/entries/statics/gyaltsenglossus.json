@@ -1,0 +1,45 @@
+{
+	"name": "Gyaltsenglossus",
+	"read_by_default": true,
+	"icon": "lepidodendron:gyaltsenglossus_icon",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_gyaltsenglossus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gyaltsenglossus",
+			"title": "Gyaltsenglossus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Hemichordata"
+		},
+		{
+			"type": "multiblock",
+			"name": "g. senis",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:gyaltsenglossus",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gyaltsenglossus",
+			"type": "text",
+			"text": "Gyaltsenglossus senis comes from the middle Cambrian, with fossils found in the Burgess Shale, Canada. It is a small hemichordate, growing up to 2 cm. Despite its small size, Gyaltsenglossus has been notable in figuring out the early evolutionary history of the hemichordates, featuring a mixture of pterobranch-like feeding tentacles on the top, and a large enteropneust-like proboscis tipped body. This would not only help to bring the two major hemichordate classes"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gyaltsenglossus",
+			"type": "text",
+			"text": "together, but would also see Gyaltsenglossus phylogentically placed as the first stem-group hemichordate currently known to science. The generic name derives from the forename of Gyaltsen, the name of the discoverer's father; and the Greek word 'glossa', to mean 'tongue'. The specific name derives from the Latin word 'senex', to mean 'old'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gyaltsenglossus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

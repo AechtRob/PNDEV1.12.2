@@ -1,0 +1,47 @@
+{
+	"name": "Ancyloceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ancyloceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ancyloceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ancyloceras",
+			"title": "Ancyloceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonoidea$(br)>Ammonitida$(br)>Ancyloceratina>$(br)>Ancyloceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. matheronianum",
+            "entity": "lepidodendron:prehistoric_flora_ancyloceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ancyloceras",
+			"type": "text",
+			"text": "Ancyloceras comes from the Cretaceous, with fossils found across Europe, Colombia and Morocco. It is a small ancyloceratid ammonite, growing up to 10 cm in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ancyloceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ancyloceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ancyloceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ancyloceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ancyloceras"
+		}
+	]
+}

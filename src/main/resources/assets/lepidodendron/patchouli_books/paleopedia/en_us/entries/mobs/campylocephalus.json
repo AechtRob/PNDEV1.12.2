@@ -1,0 +1,52 @@
+{
+	"name": "Campylocephalus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/campylocephalus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_campylocephalus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_campylocephalus",
+			"title": "Campylocephalus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Stylonurina$(br)>Hibbertopteridae"
+		},
+		{
+			"type": "entity",
+			"name": "C. oculatus",
+			"entity": "lepidodendron:prehistoric_flora_campylocephalus",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_campylocephalus",
+			"type": "text",
+			"text": "Campylocephalus hails from the upper Carboniferous into the middle Permian, with fossils found in the Ostrava Formation, Czech Republic, and somewhere in Russia. It was a large hibbertopterid, growing up to 40 cm in length. Sporting the classic large, domal carapace that hibbertopterids are known for, Campylocephalus was also amongst the last known surviving eurypterids, lasting until just before the Permian–Triassic extinction event."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_campylocephalus",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'kampýlos', to mean 'curved'; and 'kephalē', to mean 'head'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_campylocephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_campylocephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_campylocephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_campylocephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_campylocephalus"
+		}
+	]
+}

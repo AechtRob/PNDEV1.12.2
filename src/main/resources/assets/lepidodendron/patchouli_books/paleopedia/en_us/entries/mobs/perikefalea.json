@@ -1,0 +1,52 @@
+{
+	"name": "Perikefalea",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/perikefalea_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_perikefalea",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_perikefalea",
+			"title": "Perikefalea",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() [$(o)Silurian (?)$()] - Devonian$(br2)>Echinodermata$(br)>Stylophora$(br)>Mitrata$(br)>Anomalocystitidae$(br)>Allanicytidiinae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. racheboeufi",
+            "entity": "lepidodendron:prehistoric_flora_perikefalea",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_perikefalea",
+			"type": "text",
+			"text": "Perikefalea is a genus of stylophoran from the Lochkovian Santa Rosa Formation in Bolivia. The genus name comes from the Greek work for helmet, due to the theca (the non-arm part of the animal) resembling a hoplite helmet, particularly with its spikes."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_perikefalea",
+			"type": "text",
+			"text": "A Canadian specimen from the Llandovery Jupiter Formation has been tentatively assigned as a separate species of Perikefalea, Perikefalea? cybeleae, which is the first known stylophoran known from the Silurian of North America."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_perikefalea"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_perikefalea"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_perikefalea"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_perikefalea"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_perikefalea"
+		}
+	]
+}

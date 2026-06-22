@@ -1,0 +1,136 @@
+package net.lepidodendron.entity.render.tile;
+
+import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockGyaltsenglossus;
+import net.lepidodendron.entity.model.tile.ModelGyaltsenglossus;
+import net.minecraft.block.BlockDirectional;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.RenderHelper;
+import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
+
+public class RenderGyaltsenglossus extends TileEntitySpecialRenderer<BlockGyaltsenglossus.TileEntityCustom> {
+
+    private final ModelGyaltsenglossus gyaltsenglossus;
+    private static final ResourceLocation TEXTURE_GYALTSENGLOSSUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gyaltsenglossus.png");
+    public static final PropertyDirection FACING = BlockDirectional.FACING;
+
+    public RenderGyaltsenglossus() {
+        this.gyaltsenglossus = new ModelGyaltsenglossus();
+    }
+
+    @Override
+    public void render(BlockGyaltsenglossus.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
+        EnumFacing facing = EnumFacing.UP;
+        int rotation = 0;
+
+        try { //to support book rendering:
+            if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockGyaltsenglossus.block) {
+                facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
+            }
+            TileEntity tileEntity = entity.getWorld().getTileEntity(entity.getPos());
+            if (tileEntity != null) {
+                if (tileEntity.getTileData().hasKey("rotation")) {
+                    rotation = tileEntity.getTileData().getInteger("rotation");
+                }
+            }
+        }
+        catch (Exception e){
+            facing = EnumFacing.UP;
+            rotation = 0;
+        }
+        Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_GYALTSENGLOSSUS);
+
+        GlStateManager.enableRescaleNormal();
+        GlStateManager.alphaFunc(516, 0.1f);
+        GlStateManager.enableBlend();
+        RenderHelper.enableStandardItemLighting();
+        GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+        GlStateManager.pushMatrix();
+        if (facing == EnumFacing.DOWN) {
+            //Impossible to place like this but anyway.....
+            GlStateManager.translate(x + 0.5, y + 0.015, z + 0.5);
+        }
+        if (facing == EnumFacing.EAST) {
+            GlStateManager.translate(x + 0.01, y + 0.2 + (rotation * 0.2), z + 0.5);
+        }
+        if (facing == EnumFacing.WEST) {
+            GlStateManager.translate(x + 0.99, y + 0.2 + (rotation * 0.2), z + 0.5);
+        }
+        if (facing == EnumFacing.NORTH) {
+            GlStateManager.translate(x + 0.5, y + 0.2 + (rotation * 0.2), z + 0.99);
+        }
+        if (facing == EnumFacing.SOUTH) {
+            GlStateManager.translate(x + 0.5, y + 0.2 + (rotation * 0.2), z + 0.01);
+        }
+        if (facing == EnumFacing.UP) {
+            GlStateManager.translate(x + 0.5, y + 0.015, z + 0.5);
+        }
+
+        GlStateManager.rotate(180, 0F, 0F, 1F);
+        if (facing == EnumFacing.DOWN) {
+            if (rotation == 1) {
+                GlStateManager.rotate(90, 0F, 1F, 0F);
+            }
+            if (rotation == 2) {
+                GlStateManager.rotate(180, 0F, 1F, 0F);
+            }
+            if (rotation == 3) {
+                GlStateManager.rotate(270, 0F, 1F, 0F);
+            }
+        }
+        if (facing == EnumFacing.EAST) {
+            GlStateManager.rotate(90, 1F, 0F, 0F);
+            GlStateManager.rotate(270, 0F, 0F, 1F);
+        }
+        if (facing == EnumFacing.WEST) {
+            GlStateManager.rotate(90, 1F, 0F, 0F);
+            GlStateManager.rotate(90, 0F, 0F, 1F);
+        }
+        if (facing == EnumFacing.NORTH) {
+            GlStateManager.rotate(90, 1F, 0F, 0F);
+        }
+        if (facing == EnumFacing.SOUTH) {
+            GlStateManager.rotate(90, 1F, 0F, 0F);
+            GlStateManager.rotate(180, 0F, 0F, 1F);
+        }
+        if (facing == EnumFacing.UP) {
+            if (rotation == 1) {
+                GlStateManager.rotate(90, 0F, 1F, 0F);
+            }
+            if (rotation == 2) {
+                GlStateManager.rotate(180, 0F, 1F, 0F);
+            }
+            if (rotation == 3) {
+                GlStateManager.rotate(270, 0F, 1F, 0F);
+            }
+        }
+        GlStateManager.scale(0.275F, 0.275F, 0.275F);
+        //----Start PP Page adjustment
+        StackTraceElement[] elements = new Throwable().getStackTrace();
+        String callerClass = elements[5].getClassName();
+        if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
+            GlStateManager.enableBlend();
+            GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+            GlStateManager.scale(4.5, 4.5, 4.5);
+            GlStateManager.translate(0,-1.2,0);
+        }
+        //----End PP Page adjustment
+
+        if (facing == EnumFacing.EAST || facing == EnumFacing.WEST || facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH) {
+            this.gyaltsenglossus.renderAllSide(Minecraft.getMinecraft().player.ticksExisted);
+        }
+        else {
+            this.gyaltsenglossus.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        }
+
+        GlStateManager.popMatrix();
+        GlStateManager.disableRescaleNormal();
+        GlStateManager.disableBlend();
+    }
+}

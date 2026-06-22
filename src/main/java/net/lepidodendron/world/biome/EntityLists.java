@@ -713,6 +713,11 @@ public class EntityLists {
                         "lepidodendron:prehistoric_flora_axelrodichthys:0:0:0",
                         "lepidodendron:prehistoric_flora_ferussina:0:0:0",
                         "lepidodendron:prehistoric_flora_turritella:0:0:0",
+                        "lepidodendron:prehistoric_flora_antarctopelta:0:0:0",
+                        "lepidodendron:prehistoric_flora_adalatherium:0:0:0",
+                        "lepidodendron:prehistoric_flora_tarbosaurus:0:0:0",
+                        "lepidodendron:prehistoric_flora_protoceratops:0:0:0",
+
                 };
 
 
