@@ -93,7 +93,7 @@ public class EntityPrehistoricFloraProtoceratops extends EntityPrehistoricFloraL
 		return 20;
 	}
 
-	public static String getPeriod() {return "Early Cretaceous";}
+	public static String getPeriod() {return "Late Cretaceous";}
 
 	public static String getHabitat() {return "Terrestrial";}
 
