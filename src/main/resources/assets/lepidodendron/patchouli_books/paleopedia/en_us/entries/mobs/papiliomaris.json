@@ -1,0 +1,62 @@
+{
+	"name": "Papiliomaris",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/papiliomaris_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_papiliomaris",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_papiliomaris",
+			"title": "Papiliomaris",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Ecdysozoa$(br)>Euarthropoda"
+		},
+        	{
+            "type": "entity",
+            "name": "P. kluessendorfae",
+            "entity": "lepidodendron:prehistoric_flora_papiliomaris",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_papiliomaris",
+			"type": "text",
+			"text": "Papiliomaris kluessendorfae comes from the early Silurian, with fossils found in the Waukesha Lagerstätte, Wisconsin (USA). It is a small euarthropod, growing up to 2 cm in length. Papiliomaris can be easily distinguished from other early euarthropods by the wing-like, bivalved carapace that covers the front portion of its body, alongside its large trunk, which gave it its informal nickname of 'butterfly animal'. Of note is also its long, but quiet history,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_papiliomaris",
+			"type": "text",
+			"text": "with the first specimen being discovered as far back as 1985, with its rather strange appearance most likely hindering any proper study, with the original material, and new material, only being fully described in 2025. As for its taxonomic position, it is very much agreed to be some form of euarthropod, although after that difficulties immediately arise."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_papiliomaris",
+			"type": "text",
+			"text": "In 1985, it was at first considered to be related to crustaceans, primarily the phyllocarida, although the strange appearance of Papiliomaris set it too far from any known member of that group. Later in 2015, it would then be suggested to be that of a marrellomorpha, although again its unique appearance differed to much from known marrellomorphs. Come 2025, the description paper would favour a bivalved arthropod of some description, and although it did not"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_papiliomaris",
+			"type": "text",
+			"text": "delve into a refined placement for Papiliomaris, phylogenetic analyses found that it most likely sits between Parioscorpio and Acheronauta, making it a part of the stem-group to the clade Mandibulata. The generic name derives from the Latin words 'pāpiliō', to mean 'butterfly/moth'; and 'maris', to mean 'sea'. The specific name derives from the surname of Joanne Kluessendorf, who greatly improved the understanding of the whole Waukesha Lagerstätte."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_papiliomaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_papiliomaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_papiliomaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_papiliomaris"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_papiliomaris"
+		}
+	]
+}

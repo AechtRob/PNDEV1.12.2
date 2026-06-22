@@ -1,0 +1,52 @@
+{
+	"name": "Peltobatrachus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/peltobatrachus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_peltobatrachus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_peltobatrachus",
+			"title": "Peltobatrachus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Amphibia$(br)>Temnospondyli$(br)>Peltobatrachidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. pustulatus",
+            "entity": "lepidodendron:prehistoric_flora_peltobatrachus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_peltobatrachus",
+			"type": "text",
+			"text": "Peltobatrachus is a temnospondyl from the Usili Formation of Tanzania, dating back to upper Permian. Sizing up to a good 70 centimeters in length, it was quite big for the time. Its name comes from the Greek words 'pelte' and 'batrakhos' meaning 'shield' and 'frog' respectively. As one can infer from the name, peltobatrachus had broad plates above its body covering the body and tail. The researchers who studied the animal have come to the conclusion that it was"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_peltobatrachus",
+			"type": "text",
+			"text": "a heavy terrestrial animal."
+			},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_peltobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_peltobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_peltobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_peltobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_peltobatrachus"
+		}
+	]
+}

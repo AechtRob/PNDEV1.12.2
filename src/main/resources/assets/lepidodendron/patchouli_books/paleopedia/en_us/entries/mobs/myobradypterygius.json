@@ -1,0 +1,57 @@
+{
+	"name": "Myobradypterygius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/myobradypterygius_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_myobradypterygius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_myobradypterygius",
+			"title": "Myobradypterygius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Ichthyosauria$(br)>Ophthalmosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. hauthali",
+            "entity": "lepidodendron:prehistoric_flora_myobradypterygius",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myobradypterygius",
+			"type": "text",
+			"text": "Myobradypterygius hauthali comes from the Early Cretaceous, with fossils found at Nevado de Famatina and the Los Molles Formation, Argentina, and the Zapata Formation, Chile. It is a large ophthalmosaurid, growing up to 3.5 m in length. Myobradypterygius has had an interesting history, with material found in as far back as 1900, then being named in 1927. After this it was relatively smooth sailing, with a new species being assigned to it in 1938, M. mollensis,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myobradypterygius",
+			"type": "text",
+			"text": "which was then synonymised with Platypterygius at a later date. But, in 1972, M. hauthali itself was also synonymised with Platypterygius, becoming P. hauthali. This added further fuel to the fire that was the fact that Platypterygius was slowly becoming a wastebasket for Cretaceous ichthyosaurs, leading to many back and forths, leaving Myobradypteryguis, amongst a many others, in limbo. It wasn't until 2025 that Myobradypterygius would finally be made a valid genus,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_myobradypterygius",
+			"type": "text",
+			"text": "with the discovery of more material helping to show differences between it and Platypterygius, alongside a new re-description of its holotype material a year prior."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_myobradypterygius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_myobradypterygius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_myobradypterygius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_myobradypterygius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_myobradypterygius"
+		}
+	]
+}

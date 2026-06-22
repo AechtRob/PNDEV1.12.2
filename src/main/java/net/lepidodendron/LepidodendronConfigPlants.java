@@ -2501,6 +2501,11 @@ public class LepidodendronConfigPlants {
     public static String[] genWebsteroprionOverrideBiomes = new String[0];
     public static int weightWebsteroprion = 100;
 
+    public static int[] dimSelkirkia = new int[0];
+    public static String[] genSelkirkiaBlacklistBiomes = new String[0];
+    public static String[] genSelkirkiaOverrideBiomes = new String[0];
+    public static int weightSelkirkia = 100;
+
     public static int[] dimModernSeaBlockLife = new int[]{0};
     public static String[] genMacrocystisBlacklistBiomes = new String[0];
     public static String[] genMacrocystisOverrideBiomes = new String[0];

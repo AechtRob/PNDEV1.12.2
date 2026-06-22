@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.render;
 
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
+import net.lepidodendron.tileentity.TileEntitySelkirkia;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;

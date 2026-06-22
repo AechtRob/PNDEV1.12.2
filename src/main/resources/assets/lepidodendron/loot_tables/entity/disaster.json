@@ -1,0 +1,25 @@
+{
+  "pools": [
+    {
+      "name": "disaster",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "lepidodendron:disaster_item",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

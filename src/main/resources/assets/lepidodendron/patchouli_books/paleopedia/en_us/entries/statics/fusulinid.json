@@ -1,0 +1,45 @@
+{
+	"name": "Fusulinid",
+	"read_by_default": true,
+	"icon": "lepidodendron:fusulinid",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_fusulinid",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_fusulinid",
+			"title": "Fusulinid",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)$(l)Habitat:$() Marine$(br2)>Eukaryota$(br)>Sar$(br)>Rhizaria$(br)>Retaria$(br)>Foraminifera$(br)>$(o)Globothalamea (?)$(br)>$(o)Fusulinida"
+		},
+		{
+			"type": "multiblock",
+			"name": "Fusulinid",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:fusulinid",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fusulinid",
+			"type": "text",
+			"text": "Fusulinids hail from the upper Carboniferous into the middle Permian, with fossils found across the globe. They are rice-shaped foraminiferans, growing up to 14 cm in length, possibly larger. They are amongst the earliest known forams with calcareous walls, as well as possibly the earliest forams to form a symbiosis with photosynthetic organisms. There are also proposed Silurian records, but these have not been properly supported, and if true, the larger forms would"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fusulinid",
+			"type": "text",
+			"text": "only start appearing during the Carboniferous at the height of their abundance and diversity anyways, before slowly declining and going extinct during the Permian period.Due to their increasing numbers during the Carboniferous, they are commonly used as index fossils, and even got so abundant to the point of being a significant component of limestone within some formations. The family name derives from the Latin word 'fusus', to mean 'spindle'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fusulinid",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Dicynodon",
+	"read_by_default": true,
+	"icon": "lepidodendron:dicynodon_raw",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_dicynodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dicynodon",
+			"title": "Dicynodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Bidentalia$(br)>Dicynodontidae"
+		},
+		{
+			"type": "entity",
+			"name": "D. lacerticeps",
+			"entity": "lepidodendron:prehistoric_flora_dicynodon",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dicynodon",
+			"type": "text",
+			"text": "Dicynodon comes from the upper Permian, with fossils found across southern and eastern Africa. It is a medium-sized dicynodontid, growing up to 1.2 m in length. Ever since Dicynodon was described back in 1845, it was long used as a wastebasket taxon, attaining over 100 named species. This would finally change come 2011, when a study was published revising every species, and leaving the type species D. lacerticeps and D. huenei being the only valid ones. The rest"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dicynodon",
+			"type": "text",
+			"text": "would be re-assigned to other genera, or as their own genera entirely. In 2019, D. huenei would see itself re-assigned to Daptocephalus, whilst a new species, D. angielczyki, would be described, leaving the once over 100 strong wastebasket taxon with only two species. The generic name derives from the Greek words 'Dic', to mean 'two'; and 'kŭnódōn', to mean 'canine teeth', in reference to its large tusks."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dicynodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dicynodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dicynodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dicynodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dicynodon"
+		}
+	]
+}

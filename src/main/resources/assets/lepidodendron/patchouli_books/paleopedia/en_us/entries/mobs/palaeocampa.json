@@ -1,0 +1,67 @@
+{
+	"name": "Palaeocampa",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/palaeocampa_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_palaeocampa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeocampa",
+			"title": "Palaeocampa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Panarthropoda$(br)>Lobopodia$(br)>Xenusia$(br)>Protonychophora$(br)>Aysheaiidae"
+		},
+		{
+			"type": "entity",
+			"name": "P. anthrax",
+			"entity": "lepidodendron:prehistoric_flora_palaeocampa",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeocampa",
+			"type": "text",
+			"text": "Palaeocampa anthrax comes from the upper Carboniferous, with fossils found in the Mazon Creek fossil beds, Illinois (USA), and Montceau-les-Mines lagerstätte, France. It is a small aysheaiid lobopod, growing up to 4 cm in length. Described in 1865, it was originally classified as a form of caterpillar, due to the incomplete nature of the then singular known fossil. Despite there being some agreement that it appeared similar to caterpillars, it was not enough,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeocampa",
+			"type": "text",
+			"text": "and was thus classified to 'the class of worms'. The original fossil would be lost in a fire not long after its description. Luckily, in 1882, more material was discovered, with some now preserving leg material, fully discounting the caterpillar interpretation, being suggested that it was instead related to the myriapods."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeocampa",
+			"type": "text",
+			"text": "Almost a full century would pass, when more material would be found in France in 1981, with some suggestions it was synonymous with another worm-like animal, Rhaphidiophorus. In 2004, Palaeocampa would be subjected to another redescription, this time considering it to be that of a fireworm polychaete, furthering the probable synonymy with Rhaphidiophorus. This would finally come to a head in 2025, when even more material was found from both the USA and France,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeocampa",
+			"type": "text",
+			"text": "which saw it be properly classified as a lobopodian, making it the oldest known lobopod, beating Carbotubulus. This would also help to solidify the environments of the Mazon Greek, and moreso the Montceau-les-Mines which had been the subject of much date, as freshwater. It was also found that Palaeocampa's spines where actually venomous in nature, making it the only fully venomous lobopod, although how toxic this venom would have been remains unknown."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeocampa",
+			"type": "text",
+			"text": "The generic name derives from the Greek words 'Palaeo', to mean 'ancient'; and 'kámpia', to mean 'caterpillar'. The specific name derives directly from the Greek word 'anthrax', to mean 'coal'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeocampa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeocampa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeocampa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeocampa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeocampa"
+		}
+	]
+}

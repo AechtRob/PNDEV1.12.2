@@ -1,0 +1,52 @@
+{
+	"name": "Volchovia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/volchovia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_volchovia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_volchovia",
+			"title": "Volchovia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Echinodermata$(br)>Echinozoa$(br)>Ophiocistioidea$(br)>Volchoviidae"
+		},
+		{
+			"type": "entity",
+			"name": "V. mobilis",
+			"entity": "lepidodendron:prehistoric_flora_volchovia",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_volchovia",
+			"type": "text",
+			"text": "Volchovia comes from the middle Ordovician, with fossils from the Leningrad province, Russia and Gjeitungholmen, Norway. It is a dome-shaped ophiocistioid, and grew up to 7 cm in diameter. It was previously interpreted to be apart of the family Rhipidocystidae before proper description in 1913, which sits within the class Eocrinoidea, which would have allied it with organisms such as Gogia."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_volchovia",
+			"type": "text",
+			"text": "This would last until 1933, when it was properly described, and placed as a ophiocistioid, a group of strange, sea urchin like organisms with five short ambulacra radiating outwards, usually from the underside."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_volchovia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_volchovia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_volchovia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_volchovia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_volchovia"
+		}
+	]
+}

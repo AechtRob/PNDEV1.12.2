@@ -1,0 +1,20 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:gyaltsenglossus"
+        },
+        "title": {
+            "translate": "advancements.pf_adv_book_gyaltsenglossus.title"
+        },
+        "description": {
+            "translate": "advancements.pf_adv_book_gyaltsenglossus.description"
+        }
+    },
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+    "hidden": true,
+    "criteria": {
+        "pf_trigger": {
+            "trigger": "pf_book_gyaltsenglossus"
+        }
+    }
+}

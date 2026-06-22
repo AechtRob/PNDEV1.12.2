@@ -1,0 +1,47 @@
+{
+	"name": "Arganaceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/arganaceras_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_arganaceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_arganaceras",
+			"title": "Arganaceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauria$(br)>Elginiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. vacanti",
+            "entity": "lepidodendron:prehistoric_flora_arganaceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arganaceras",
+			"type": "text",
+			"text": "Arganaceras vacanti is a genus of pareiasaur from the upper Permian Ikakern Formation, within the Aragna Basin in Morocco. It had many bony bosses on its skull, some of which were blade shaped. The most prominent of these bosses is a large nasal spike. Due to the similarly derived cranial ornamentation in both Arganaceras and Elginia, both would have likely been closely related to each other."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_arganaceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_arganaceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_arganaceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_arganaceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_arganaceras"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Riojasuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mobname_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_riojasuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_riojasuchus",
+			"title": "Riojasuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Ornithosuchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "R. tenuisceps",
+            "entity": "lepidodendron:prehistoric_flora_riojasuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_riojasuchus",
+			"type": "text",
+			"text": "Riojasuchus is a pseudosuchian from Late Triassic Argentina, the holotype itself was found in Los Colorados Formation of the Ischigualasto-Villa Union Basin. The reptile was about 1.5 meters long, bipedal and had a curved snout. Its name comes from the province where it was discovered 'La Rioja' and 'suchus' meaning 'crocodile'. The holotype of the animal was found alongside three others, though they were less complete. Thanks to fossil dating we know that it was"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_riojasuchus",
+			"type": "text",
+			"text": "one of the earliest ornithosuchids ever known. It is also speculated that Riojasuchus would've been wading in water, using its snout to capture fish, amphibians and other aquatic prey."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_riojasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_riojasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_riojasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_riojasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_riojasuchus"
+		}
+	]
+}

@@ -6441,6 +6441,16 @@ public class LepidodendronSorter {
     public static final int bivalve_monopleura= 5708;
     public static final int bivalve_polyconites= 5709;
     public static final int eoandromedastatic= 5710;
+    public static final int volchovia_item = 5711;
+    public static final int dicynodon_raw = 5712;
+    public static final int eggs_dicynodon = 5713;
+    public static final int guizhouichthyosaurus_raw = 5714;
+    public static final int bumastus_raw = 5715;
+    public static final int priapulites_raw = 5716;
+    public static final int selkirkia = 5717;
+    public static final int selkirkia_raw = 5718;
+    public static final int fusulinid = 5719;
+    public static final int nummulitid = 5720;
     public static final int irritator_raw = 5800;
     public static final int spinosaurus_raw = 5801;
     public static final int eggs_irritator = 5802;
@@ -6802,6 +6812,27 @@ public class LepidodendronSorter {
     public static final int eggs_titanophoneus = 6266;
     public static final int eggs_venetoraptor = 6267;
     public static final int venetoraptor_raw = 6268;
+    public static final int papiliomaris_raw = 6269;
+    public static final int palaeocampa_raw = 6270;
+    public static final int nailiana = 6271;
+    public static final int gyaltsenglossus = 6272;
+    public static final int disaster_item = 6273;
+    public static final int ancyloceras_raw = 6274;
+    public static final int shell_ancyloceras = 6275;
+    public static final int eurypterid_eggs_hallipterus = 6276;
+    public static final int eurypterid_eggs_hallipterus_worldgen = 6277;
+    public static final int hallipterus_raw = 6278;
+    public static final int eurypterid_eggs_eusarcana = 6279;
+    public static final int eurypterid_eggs_eusarcana_worldgen = 6280;
+    public static final int eusarcana_raw = 6281;
+    public static final int eurypterid_eggs_rhinocarcinosoma = 6279;
+    public static final int eurypterid_eggs_rhinocarcinosoma_worldgen = 6280;
+    public static final int rhinocarcinosoma_raw = 6281;
+    public static final int eggs_waeringoscorpio = 6282;
+    public static final int scorpion_waeringoscorpio_raw = 6283;
+    public static final int eurypterid_eggs_campylocephalus = 6276;
+    public static final int eurypterid_eggs_campylocephalus_worldgen = 6277;
+    public static final int campylocephalus_raw = 6278;
 
 
 

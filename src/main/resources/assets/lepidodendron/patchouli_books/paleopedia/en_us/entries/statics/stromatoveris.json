@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_stromatoveris",
 			"title": "Stromatoveris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>$(o)Petalonamae (?)/ Cnidaria (?)"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Shallow Marine$(br2)>$(o)Petalonamae (?)/ Ctenophora (?)"
 		},
 		{
 			"type": "multiblock",
