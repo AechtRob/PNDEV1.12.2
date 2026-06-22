@@ -9,6 +9,7 @@ import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousLate;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -120,6 +121,17 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 		{
 			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
 			if (biomeCretaceousEarly.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia_yixian_foothills")) {
+				heightCheck = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeCretaceousLate)
+		{
+			BiomeCretaceousLate biomeCretaceousLate = (BiomeCretaceousLate) biome;
+			if (biomeCretaceousLate.getRegistryName().toString().equalsIgnoreCase("lepidodendron:")) {
 				heightCheck = true;
 			}
 			else {

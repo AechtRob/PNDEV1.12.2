@@ -13,9 +13,12 @@ import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -43,7 +46,7 @@ public class BlockTar extends ElementsLepidodendronMod.ModElement {
 	public BlockTar(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.resin);
 		fluid = new Fluid("pn_tar", new ResourceLocation("lepidodendron:blocks/tarstill"), new ResourceLocation("lepidodendron:blocks/tarflow"))
-				.setLuminosity(0).setDensity(1000).setViscosity(10000).setGaseous(false);
+				.setLuminosity(0).setDensity(1000).setViscosity(20000).setGaseous(false);
 	}
 
 	@Override
@@ -54,6 +57,28 @@ public class BlockTar extends ElementsLepidodendronMod.ModElement {
 				super.onEntityCollision(world, pos, state, entity);
 				if ((double) entity.posY < ((double) pos.getY() + 0.59)) {
 					entity.setInWeb();
+				}
+				if (world.isRemote) return;
+				if (!(entity instanceof EntityLivingBase)) return;
+
+				EntityLivingBase living = (EntityLivingBase) entity;
+
+				BlockPos eyePos = new BlockPos(
+						living.posX,
+						living.posY + living.getEyeHeight(),
+						living.posZ
+				);
+
+				if (world.getBlockState(eyePos).getBlock() != this) {
+					return; // head is not submerged
+				}
+
+				if (living.isPotionActive(MobEffects.WATER_BREATHING)) return;
+				living.setAir(living.getAir() - 500);
+
+				if (living.getAir() <= -20) {
+					living.setAir(0);
+					living.attackEntityFrom(DamageSource.DROWN, 2.0F);
 				}
 			}
 

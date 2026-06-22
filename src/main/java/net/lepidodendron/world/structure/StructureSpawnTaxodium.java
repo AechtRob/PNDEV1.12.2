@@ -188,6 +188,7 @@ public class StructureSpawnTaxodium extends ElementsLepidodendronMod.ModElement 
 					$_dependencies.put("y", j + 1);
 					$_dependencies.put("z", k);
 					$_dependencies.put("world", world);
+					$_dependencies.put("SaplingSpawn", false);
 					if ((world.canSeeSky(spawnTo)) ||
 						(((world.getBlockState(spawnTo)).getMaterial() == Material.SNOW)
 						&& world.canSeeSky(spawnTo.up()))) {

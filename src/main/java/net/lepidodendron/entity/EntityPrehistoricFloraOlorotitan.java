@@ -541,7 +541,6 @@ public class EntityPrehistoricFloraOlorotitan extends EntityPrehistoricFloraLand
 		return ModTriggers.CLICK_OLOROTITAN;
 	}
 
-
 	//Rendering taxidermy:
 	//--------------------
 

@@ -8,8 +8,10 @@ public enum EnumBiomeTypeCretaceousLate implements IStringSerializable {
     Late_Cretaceous_Africa("late_cretaceous_africa"),
     Late_Cretaceous_Asia("late_cretaceous_asia"),
     Late_Cretaceous_Europe("late_cretaceous_europe"),
-    Late_Cretaceous_North_America_Laramidia("late_cretaceous_north_america_laramidia"),
+    Late_Cretaceous_North_America_Laramidia_North("late_cretaceous_north_america_laramidia_north"),
+    Late_Cretaceous_North_America_Laramidia_South("late_cretaceous_north_america_laramidia_south"),
     Late_Cretaceous_North_America_Appalachia("late_cretaceous_north_america_appalachia"),
+    Late_Cretaceous_North_America_Arctic("late_cretaceous_north_america_arctic"),
     Late_Cretaceous_South_America("late_cretaceous_south_america"),
     Late_Cretaceous_Austro_Antarctica("late_cretaceous_austro_antarctica"),
 

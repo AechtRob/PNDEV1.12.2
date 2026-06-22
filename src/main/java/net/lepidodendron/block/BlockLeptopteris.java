@@ -6,11 +6,9 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
-import net.lepidodendron.util.EnumBiomeTypeJurassic;
-import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousLate;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.gen.FernEpiphyteGenerator;
 import net.minecraft.block.Block;
@@ -157,10 +155,24 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
+		if (biome instanceof BiomeCretaceousLate) {
+			BiomeCretaceousLate biomeCretaceousLate = (BiomeCretaceousLate) biome;
+			if (biomeCretaceousLate.getBiomeType() == EnumBiomeTypeCretaceousLate.Late_Cretaceous_Austro_Antarctica) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (!biomeCriteria)
 			return;
 
 		int GenChance = 28;
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica")) {
+			GenChance = 64;
+		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica")) {
 			GenChance = 64;

@@ -160,6 +160,7 @@ public class BlockSabalSapling extends ElementsLepidodendronMod.ModElement {
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
+					$_dependencies.put("SaplingSpawn", true);
 					ProcedureWorldGenSabal.executeProcedure($_dependencies);
 				}
 	        }

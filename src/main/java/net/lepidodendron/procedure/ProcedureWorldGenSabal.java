@@ -38,9 +38,14 @@ public class ProcedureWorldGenSabal extends ElementsLepidodendronMod.ModElement 
 			System.err.println("Failed to load dependency world for procedure WorldGenSabal!");
 			return;
 		}
+		if (dependencies.get("SaplingSpawn") == null) {
+			System.err.println("Failed to load dependency SaplingSpawn for procedure WorldGenSabal!");
+			return;
+		}
 		int x = (int) dependencies.get("x");
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
+		boolean SaplingSpawn = (boolean) dependencies.get("SaplingSpawn");
 		int xx = x;
 		int yy = y;
 		int zz = z;
@@ -62,6 +67,13 @@ public class ProcedureWorldGenSabal extends ElementsLepidodendronMod.ModElement 
 
 			//Trunk:
 			TrunkHeight = (int) (Math.round(Math.random() * 9D) + Math.round(Math.random() * 9D) + 2D);
+
+			if ((!SaplingSpawn) && world.rand.nextInt(4) == 0) { //For worldgen make them smaller sometimes to get a clumpier, more natural feel
+				TrunkHeight = (int) Math.ceil((double) TrunkHeight / 3D);
+			}
+			else if ((!SaplingSpawn) && world.rand.nextInt(4) == 0) {
+				TrunkHeight = (int) Math.ceil((double) TrunkHeight / 2D);
+			}
 
 			//Check there is space:
 			counter = -3;

@@ -2456,6 +2456,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ASILISAURUS = new CustomTrigger("pf_book_asilisaurus");
     public static final CustomTrigger CLICK_TYPOTHORAX = new CustomTrigger("pf_book_typothorax");
     public static final CustomTrigger CLICK_TITANOPHONEUS = new CustomTrigger("pf_book_titanophoneus");
+    public static final CustomTrigger CLICK_VENETORAPTOR = new CustomTrigger("pf_book_venetoraptor");
 
 
 
@@ -4899,6 +4900,7 @@ public class ModTriggers
             CLICK_ASILISAURUS,
             CLICK_TYPOTHORAX,
             CLICK_TITANOPHONEUS,
+            CLICK_VENETORAPTOR
     };
 
     /**
