@@ -86,6 +86,11 @@ public class WorldGenSabalTree extends WorldGenAbstractTree
                 IBlockState state = worldIn.getBlockState(down);
                 boolean isSoil = (state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING)
                         || state.getMaterial() == Material.SAND);
+
+                if (position.getY() < 66 && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp_floodplain")) {
+                    return false;
+                }
+
                 if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
                     Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
@@ -126,6 +131,12 @@ public class WorldGenSabalTree extends WorldGenAbstractTree
                         }
                         isSoil = (state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING)
                                 || state.getMaterial() == Material.SAND);
+
+                        if (position.getY() < 66 && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp_floodplain")) {
+                            return false;
+                        }
+
+
                         if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && isClear && isSoil && blockpos.getY() < (worldIn.getHeight()-30)) {
                             $_dependencies.put("x", blockpos.getX());
                             $_dependencies.put("y", blockpos.getY());
