@@ -215,10 +215,10 @@ public class StructureSpawnNathorstiana extends ElementsLepidodendronMod.ModElem
     		return false;
     	}
 
-    	if (!worldIn.canSeeSky(pos) && (worldIn.getBlockState(pos).getLightValue() < 7))
-    	{
-    		return false;
-    	}
+//    	if (!worldIn.canSeeSky(pos) && (worldIn.getBlockState(pos).getLightValue() < 7))
+//    	{
+//    		return false;
+//    	}
 
     	return true;
     	 

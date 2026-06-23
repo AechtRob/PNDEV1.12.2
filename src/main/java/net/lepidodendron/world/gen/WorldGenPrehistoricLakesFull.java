@@ -1,9 +1,6 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.block.BlockBrownstone;
-import net.lepidodendron.block.BlockDriedMud;
-import net.lepidodendron.block.BlockPrehistoricGroundSand;
-import net.lepidodendron.block.BlockPrehistoricGroundSandBlack;
+import net.lepidodendron.block.*;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
@@ -147,6 +144,9 @@ public class WorldGenPrehistoricLakesFull extends WorldGenerator
                                     || worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_hills")
                                     || worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_basalt")) {
                                     Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrehistoricGroundSandBlack.block.getDefaultState(), 2);
+                                }
+                                if (worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_northern_coasts")) {
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrehistoricGroundSandRed.block.getDefaultState(), 2);
                                 }
                             }
                             if (worldIn.getBlockState(blockpos).getBlock() == BlockBrownstone.block && worldIn.getLightFor(EnumSkyBlock.SKY, position.add(i2, j4, j3)) > 0)

@@ -265,7 +265,7 @@ public class BlockNuphar extends ElementsLepidodendronMod.ModElement {
 	    	 
 	    }
 
-	    public boolean canFlowerPlaceAt(World worldIn, BlockPos pos) {
+	    public static boolean canFlowerPlaceAt(World worldIn, BlockPos pos) {
 	    	IBlockState iblockstate1 = worldIn.getBlockState(pos.down());
 			if (!isWaterBlock(worldIn, pos.down()))
 	    	{
@@ -288,11 +288,11 @@ public class BlockNuphar extends ElementsLepidodendronMod.ModElement {
 	    	 
 	    }
 
-	    public boolean isWaterBlock(World world, BlockPos pos) {
+	    public static boolean isWaterBlock(World world, BlockPos pos) {
 			IBlockState state  = world.getBlockState(pos);
 			if (state.getMaterial() == Material.WATER
 					&& (state.getBlock() instanceof BlockLiquid || state.getBlock() instanceof BlockFluidBase
-					|| state.getBlock() == this)) {
+					|| state.getBlock() == BlockNuphar.block)) {
 				return true;
 			}
 			return false;
@@ -411,7 +411,7 @@ public class BlockNuphar extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering water plant");
-	        tooltip.add("Periods: [Early Cretaceous (?) - Late Cretaceous (?) - ] Paleogene - Neogene - Pleistocene [ - present]");
+	        tooltip.add("Periods: [Early Cretaceous (?) - ] Late Cretaceous (?) - Paleogene - Neogene - Pleistocene [ - present]");
 	        tooltip.add("Note: Planted under water");
 	        tooltip.add("Propagation: Flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);

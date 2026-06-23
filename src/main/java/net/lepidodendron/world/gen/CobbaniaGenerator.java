@@ -12,30 +12,30 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 import java.util.Random;
 
-public class WaterPoppyGenerator extends WorldGenerator
+public class CobbaniaGenerator extends WorldGenerator
 {
-	private Block WaterPoppy;
+	private Block Cobbania;
     private IBlockState state;
 
-    public WaterPoppyGenerator(Block WaterPoppyIn)
+    public CobbaniaGenerator(Block CobbaniaIn)
     {
-        this.setGeneratedBlock(WaterPoppyIn);
+        this.setGeneratedBlock(CobbaniaIn);
     }
 
-    public void setGeneratedBlock(Block WaterPoppyIn)
+    public void setGeneratedBlock(Block CobbaniaIn)
     {
-        this.WaterPoppy = WaterPoppyIn;
-        this.state = WaterPoppyIn.getDefaultState();
+        this.Cobbania = CobbaniaIn;
+        this.state = CobbaniaIn.getDefaultState();
     }
 
     public boolean generate(World worldIn, Random rand, BlockPos position)
     {
 		int dimID = worldIn.provider.getDimension();
     	boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimWaterPoppy))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCobbania))
 			dimensionCriteria = true;
-		if (dimID == LepidodendronConfig.dimCretaceousLate
-			|| dimID == LepidodendronConfig.dimCretaceousLate
+		if ((dimID == LepidodendronConfig.dimCretaceousLate)
+			|| (dimID == LepidodendronConfig.dimCretaceousLate)
 			)
 			{
 				dimensionCriteria = true;
@@ -46,7 +46,7 @@ public class WaterPoppyGenerator extends WorldGenerator
 
 		int multiplier = 1;
 		if (dimID == LepidodendronConfig.dimCretaceousLate
-			|| dimID == LepidodendronConfig.dimCretaceousLate
+				|| dimID == LepidodendronConfig.dimCretaceousLate
 		) {multiplier = 4;}
 
         for (int i = 0; i < (32 * multiplier); ++i)

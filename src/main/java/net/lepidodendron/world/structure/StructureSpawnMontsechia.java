@@ -205,10 +205,10 @@ public class StructureSpawnMontsechia extends ElementsLepidodendronMod.ModElemen
     		return false;
     	}
 
-    	if (!worldIn.canSeeSky(pos) && (worldIn.getBlockState(pos).getLightValue() < 7))
-    	{
-    		return false;
-    	}
+//    	if (!worldIn.canSeeSky(pos) && (worldIn.getBlockState(pos).getLightValue() < 7))
+//    	{
+//    		return false;
+//    	}
 
     	return true;
     	 
