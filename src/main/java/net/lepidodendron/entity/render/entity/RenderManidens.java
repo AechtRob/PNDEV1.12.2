@@ -16,7 +16,7 @@ public class RenderManidens extends RenderLivingBaseWithBook<EntityPrehistoricFl
     }
 
     public static float getScaler() {
-        return 0.19F;
+        return 0.16F;
     }
 
     @Override

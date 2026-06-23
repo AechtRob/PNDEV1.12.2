@@ -56,7 +56,6 @@ public class BlockFossilPermian extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimNeogene
 				|| dimID == LepidodendronConfig.dimPaleogene
 				|| dimID == LepidodendronConfig.dimCretaceousEarly
-				|| dimID == LepidodendronConfig.dimCretaceousLate
 				|| dimID == LepidodendronConfig.dimJurassic
 				|| dimID == LepidodendronConfig.dimTriassic
 		) && LepidodendronConfig.genFossil)
@@ -75,7 +74,7 @@ public class BlockFossilPermian extends ElementsLepidodendronMod.ModElement {
 			dimDepth = dimDepth - 20;
 			blockCount = 6;
 		}
-		if (dimID == LepidodendronConfig.dimCretaceousEarly || dimID == LepidodendronConfig.dimCretaceousLate) {
+		if (dimID == LepidodendronConfig.dimCretaceousEarly) {
 			dimDepth = dimDepth - 16;
 			blockCount = 7;
 		}

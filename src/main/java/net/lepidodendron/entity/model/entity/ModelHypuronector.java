@@ -577,9 +577,6 @@ public class ModelHypuronector extends ModelBasePalaeopedia {
                 }
             }
         }
-        else if (ee.getIsClimbing()) { //Is climbing but is static
-            animClimb(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, true);
-        }
 
         if (ee.getAnimation() == ee.EAT_ANIMATION) {
             animEat(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());

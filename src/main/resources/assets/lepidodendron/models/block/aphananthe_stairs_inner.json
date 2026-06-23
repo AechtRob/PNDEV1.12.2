@@ -1,8 +1,0 @@
-{
- "parent": "block/inner_stairs",
- "textures": {
- "bottom": "lepidodendron:blocks/aphananthe_planks",
- "top": "lepidodendron:blocks/aphananthe_planks",
- "side": "lepidodendron:blocks/aphananthe_planks"
- }
-}

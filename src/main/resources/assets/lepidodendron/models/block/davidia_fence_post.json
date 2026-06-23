@@ -1,7 +1,0 @@
-{
- "parent": "block/fence_post",
- "textures": {
- "texture": "lepidodendron:blocks/davidia_planks",
- "particle": "lepidodendron:blocks/davidia_planks"
- }
-}

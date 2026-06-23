@@ -67,8 +67,7 @@ public class BlockAnthraciteOre extends ElementsLepidodendronMod.ModElement {
 			|| dimID == LepidodendronConfig.dimPermian
 			|| dimID == LepidodendronConfig.dimTriassic
 			|| dimID == LepidodendronConfig.dimJurassic
-			|| dimID == LepidodendronConfig.dimCretaceousEarly
-			|| dimID == LepidodendronConfig.dimCretaceousLate)
+			|| dimID == LepidodendronConfig.dimCretaceousEarly)
 			dimensionCriteria = true;
 		if (!dimensionCriteria)
 			return;

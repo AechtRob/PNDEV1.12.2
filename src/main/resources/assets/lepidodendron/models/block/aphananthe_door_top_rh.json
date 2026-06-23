@@ -1,7 +1,0 @@
-{
- "parent": "block/door_top_rh",
- "textures": {
- "bottom": "lepidodendron:blocks/aphananthe_door_bottom",
- "top": "lepidodendron:blocks/aphananthe_door_top"
- }
-}

@@ -245,20 +245,30 @@ public class EntityPrehistoricFloraLaganosuchus extends EntityPrehistoricFloraSw
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:normalcroc_idle"));
+				.getObject(new ResourceLocation("lepidodendron:hyphalosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:normalcroc_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:hyphalosaurus_hurt"));
 	}
+
+	//@Override
+	//public SoundEvent getHurtSound(DamageSource ds) {
+	//	return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
+	//}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:normalcroc_death"));
+				.getObject(new ResourceLocation("lepidodendron:hyphalosaurus_death"));
 	}
+
+	//@Override
+	//public SoundEvent getDeathSound() {
+	//	return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
+	//}
 
 	@Override
 	protected float getSoundVolume() {

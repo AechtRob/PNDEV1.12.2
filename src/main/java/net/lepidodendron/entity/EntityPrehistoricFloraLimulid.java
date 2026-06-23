@@ -68,7 +68,7 @@ public class EntityPrehistoricFloraLimulid extends EntityPrehistoricFloraWalking
 
 	@Override
 	public int WaterDist() {
-		int i = (int) LepidodendronConfig.waterPederpes;
+		int i = (int) LepidodendronConfig.waterHibbertopterus;
 		if (i > 16) {i = 16;}
 		if (i < 1) {i = 1;}
 		return i;
@@ -78,7 +78,8 @@ public class EntityPrehistoricFloraLimulid extends EntityPrehistoricFloraWalking
 	protected float getAISpeedWalkingAmphibian() {
 		//System.err.println("Speed Hibbert: " + (float) Math.min(1F, (this.getAgeScale() * 2F)) * 0.15F);
 
-		return (float) Math.min(1F, (this.getAgeScale())) * 0.15F;
+
+		return (float) Math.min(1F, (this.getAgeScale())) * 0.1F;
 	}
 
 	@Override

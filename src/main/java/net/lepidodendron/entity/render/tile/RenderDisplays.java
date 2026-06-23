@@ -1144,7 +1144,7 @@ public class RenderDisplays {
     public static final ModelBajadasaurus modelBajadasaurus = new ModelBajadasaurus();
     public static final ModelMirasaura  modelMirasaura  = new ModelMirasaura ();
     public static final ModelOzimek modelOzimek = new ModelOzimek();
-    public static final ModelOlorotitan  modelOlorotitan  = new ModelOlorotitan ();
+    public static final ModelOlorotitan modelOlorotitan = new ModelOlorotitan();
     public static final ModelMelanedaphodon modelMelanedaphodon = new ModelMelanedaphodon();
     public static final ModelIanthasaurus modelIanthasaurus = new ModelIanthasaurus();
     public static final ModelLupeosaurus modelLupeosaurus = new ModelLupeosaurus();
@@ -1162,4 +1162,20 @@ public class RenderDisplays {
     public static final ModelNeovenator modelNeovenator = new ModelNeovenator();
     public static final ModelVaranosuchus modelVaranosuchus = new ModelVaranosuchus();
     public static final ModelManidens modelManidens = new ModelManidens();
+    public static final ModelScutellosaurus modelScutellosaurus = new ModelScutellosaurus();
+    public static final ModelMontsecosuchus modelMontsecosuchus = new ModelMontsecosuchus();
+    public static final ModelAustrosaurus modelAustrosaurus = new ModelAustrosaurus();
+    public static final ModelLajasvenator modelLajasvenator = new ModelLajasvenator();
+    public static final ModelXinjiangtitan modelXinjiangtitan = new ModelXinjiangtitan();
+    public static final ModelAfrovenator modelAfrovenator = new ModelAfrovenator();
+    public static final ModelEosinopteryx modelEosinopteryx = new ModelEosinopteryx();
+    public static final ModelShachemys modelShachemys = new ModelShachemys();
+    public static final ModelAustralovenator modelAustralovenator = new ModelAustralovenator();
+    public static final ModelNedcolbertia modelNedcolbertia = new ModelNedcolbertia();
+    public static final ModelLiaoningotitan modelLiaoningotitan = new ModelLiaoningotitan();
+    public static final ModelAragosaurus modelAragosaurus = new ModelAragosaurus();
+    public static final ModelPhuwiangosaurus modelPhuwiangosaurus = new ModelPhuwiangosaurus();
+    public static final ModelShenzhousaurus modelShenzhousaurus = new ModelShenzhousaurus();
+    public static final ModelEromangateuthis modelEromangateuthis = new ModelEromangateuthis();
+    public static final ModelTeinolophos modelTeinolophos = new ModelTeinolophos();
 }

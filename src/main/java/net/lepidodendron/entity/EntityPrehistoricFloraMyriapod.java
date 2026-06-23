@@ -648,7 +648,7 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 			return 1.05;
 
 		case EOARTHROPLEURA:
-			return 1.15;
+			return 1.55;
 
 		case LATZELIA:
 			return 0.58;

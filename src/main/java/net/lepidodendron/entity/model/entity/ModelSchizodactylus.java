@@ -10,6 +10,7 @@ import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.util.EnumFacing;
 
 public class ModelSchizodactylus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;

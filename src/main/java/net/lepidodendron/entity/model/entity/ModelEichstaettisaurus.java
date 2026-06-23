@@ -333,7 +333,6 @@ public class ModelEichstaettisaurus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
-
     public void renderStaticWall(float f) {
         this.root.rotateAngleX = (float) Math.toRadians(90);
         this.setRotateAngle(tail5, 0.0F, -0.1614F, 0.0F);
@@ -382,7 +381,6 @@ public class ModelEichstaettisaurus extends ModelBasePalaeopedia {
         this.root.render(0.01F);
         resetToDefaultPose();
     }
-
     public void renderStaticFloor(float f) {
         this.setRotateAngle(tail5, 0.0F, -0.1614F, 0.0F);
         this.setRotateAngle(tail4, 0.0F, -0.048F, 0.0F);
@@ -428,7 +426,6 @@ public class ModelEichstaettisaurus extends ModelBasePalaeopedia {
         this.root.render(0.01F);
         resetToDefaultPose();
     }
-
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
@@ -553,9 +550,6 @@ public class ModelEichstaettisaurus extends ModelBasePalaeopedia {
                     animWalk(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
             }
-        }
-        else if (ee.getIsClimbing()) { //Is climbing but is static
-            animClimb(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, true);
         }
 
         if (ee.getAnimation() == ee.EAT_ANIMATION) {

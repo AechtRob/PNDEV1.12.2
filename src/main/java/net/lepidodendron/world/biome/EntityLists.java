@@ -713,6 +713,8 @@ public class EntityLists {
                         "lepidodendron:prehistoric_flora_axelrodichthys:0:0:0",
                         "lepidodendron:prehistoric_flora_ferussina:0:0:0",
                         "lepidodendron:prehistoric_flora_turritella:0:0:0",
+                        "lepidodendron:prehistoric_flora_slavoia:0:0:0",
+                        "lepidodendron:prehistoric_flora_shachemys:0:0:0",
                         "lepidodendron:prehistoric_flora_antarctopelta:0:0:0",
                         "lepidodendron:prehistoric_flora_adalatherium:0:0:0",
                         "lepidodendron:prehistoric_flora_tarbosaurus:0:0:0",
@@ -2869,9 +2871,7 @@ public class EntityLists {
         else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_creek")
             || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica")
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_lakes")
-                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_lakes_edge")
-                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_crater")
-                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_crater_rim")) {
+                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_lakes_edge")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyEGondwanaPodocarpPF);
             }

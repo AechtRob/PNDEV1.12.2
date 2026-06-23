@@ -1,8 +1,0 @@
-{
- "parent": "block/stairs",
- "textures": {
- "bottom": "lepidodendron:blocks/davidia_planks",
- "top": "lepidodendron:blocks/davidia_planks",
- "side": "lepidodendron:blocks/davidia_planks"
- }
-}
