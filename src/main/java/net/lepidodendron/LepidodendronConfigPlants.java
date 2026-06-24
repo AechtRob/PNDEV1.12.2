@@ -1421,14 +1421,6 @@ public class LepidodendronConfigPlants {
     public static int maxheightPlane = 90;
     public static double multiplierPlane = 1;
 
-    public static boolean genSycamore = false;
-    public static String[] genSycamoreBlacklistBiomes = new String[0];
-    public static String[] genSycamoreOverrideBiomes = new String[0];
-    public static int[] dimSycamore = new int[]{0};
-    public static int minheightSycamore = 1;
-    public static int maxheightSycamore = 90;
-    public static double multiplierSycamore = 1;
-
     public static boolean genFurcula = false;
     public static String[] genFurculaBlacklistBiomes = new String[0];
     public static String[] genFurculaOverrideBiomes = new String[0];
@@ -8115,34 +8107,6 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Plane", "multiplierPlane", multiplierPlane);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierPlane = prop.getDouble();
-        propOrder.add(prop.getName());
-
-        prop = cfg.get("WorldGen Sycamore", "genSycamore", genSycamore);
-        prop.setComment("Set to true to generate Sycamore trees naturally [default: false]");
-        genSycamore = prop.getBoolean();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Sycamore", "genSycamoreBlacklistBiomes", genSycamoreBlacklistBiomes);
-        prop.setComment("List of biomes Sycamore trees are blacklisted from, in the format: modid:biomeid [default: empty]");
-        genSycamoreBlacklistBiomes = prop.getStringList();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Sycamore", "genSycamoreOverrideBiomes", genSycamoreOverrideBiomes);
-        prop.setComment("List of biomes Sycamore trees are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
-        genSycamoreOverrideBiomes = prop.getStringList();
-        prop = cfg.get("WorldGen Sycamore", "dimSycamore", dimSycamore);
-        prop.setComment("List of dimension IDs Sycamore trees can generate in [default: 0]");
-        dimSycamore = prop.getIntList();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Sycamore", "minheightSycamore", minheightSycamore);
-        prop.setComment("Minimum height that Sycamore trees can generate (1 to 250) [default: 1]");
-        minheightSycamore = prop.getInt();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Sycamore", "maxheightSycamore", maxheightSycamore);
-        prop.setComment("Maximum height that Sycamore trees can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
-        maxheightSycamore = prop.getInt();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Sycamore", "multiplierSycamore", multiplierSycamore);
-        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
-        multiplierSycamore = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Furcula", "genFurcula", genFurcula);
