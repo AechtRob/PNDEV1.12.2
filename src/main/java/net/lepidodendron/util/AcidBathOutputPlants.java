@@ -1636,7 +1636,6 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockSpinyCycadSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockStiffCycadSapling.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemSwampHorsetailItem.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockSycamoreSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTaxodiumSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTmesipteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTreefernBlackSapling.block).toString(),
