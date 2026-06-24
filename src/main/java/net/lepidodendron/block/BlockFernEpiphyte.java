@@ -190,7 +190,7 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 		{
 			BiomeCretaceousLate biomeCretaceousLate = (BiomeCretaceousLate) biome;
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_creek_north_america_laramidia_swamp")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")
@@ -220,7 +220,7 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_creek_north_america_laramidia_swamp")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")

@@ -180,7 +180,7 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeCretaceousLate)
 		{
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_arctic_base")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_arctic_base")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_creek_north_america_arctic_base")
 			) {
 				biomeCriteria = true;
 			}
