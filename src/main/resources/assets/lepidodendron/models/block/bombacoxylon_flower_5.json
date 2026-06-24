@@ -1,0 +1,13 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "up": "lepidodendron:blocks/bombacoxylon_flower_5",
+        "down": "lepidodendron:blocks/sycamore_leaves",
+        "north": "lepidodendron:blocks/bombacoxylon_flower_5",
+        "south": "lepidodendron:blocks/bombacoxylon_flower_5",
+        "east": "lepidodendron:blocks/bombacoxylon_flower_5",
+        "west": "lepidodendron:blocks/bombacoxylon_flower_5",
+        "particle": "lepidodendron:blocks/bombacoxylon_flower_5"
+    }
+}
+

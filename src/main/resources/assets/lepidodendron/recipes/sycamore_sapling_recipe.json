@@ -3,7 +3,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "lepidodendron:sycamore_seeds"
+      "item": "lepidodendron:bombacoxylon_seeds"
     },
     {
       "type": "forge:ore_dict",

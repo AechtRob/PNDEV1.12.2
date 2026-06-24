@@ -37,7 +37,7 @@ public class ProcedureWorldGenCredneria extends ElementsLepidodendronMod.ModElem
     //private static double heightAttenuation = 0.618D;
     private static double heightAttenuation = 0.818D;
     //private static double leafDensity = 1.0D;
-    private static double leafDensity = 0.480D;
+    private static double leafDensity = 0.585D;
     private static int leafDistanceLimit = 4;
     private static List<ProcedureWorldGenCredneria.FoliageCoordinates> foliageCoords;
     //private static double branchSlope = 0.381D;
