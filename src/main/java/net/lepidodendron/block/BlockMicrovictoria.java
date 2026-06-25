@@ -265,7 +265,7 @@ public class BlockMicrovictoria extends ElementsLepidodendronMod.ModElement {
 	    	 
 	    }
 
-	    public boolean canFlowerPlaceAt(World worldIn, BlockPos pos) {
+	    public static boolean canFlowerPlaceAt(World worldIn, BlockPos pos) {
 	    	IBlockState iblockstate1 = worldIn.getBlockState(pos.down());
 			if (!isWaterBlock(worldIn, pos.down()))
 	    	{
@@ -288,11 +288,11 @@ public class BlockMicrovictoria extends ElementsLepidodendronMod.ModElement {
 	    	 
 	    }
 
-	    public boolean isWaterBlock(World world, BlockPos pos) {
+	    public static boolean isWaterBlock(World world, BlockPos pos) {
 			IBlockState state  = world.getBlockState(pos);
 			if (state.getMaterial() == Material.WATER
 					&& (state.getBlock() instanceof BlockLiquid || state.getBlock() instanceof BlockFluidBase
-					|| state.getBlock() == this)) {
+					|| state.getBlock() == BlockMicrovictoria.block)) {
 				return true;
 			}
 			return false;

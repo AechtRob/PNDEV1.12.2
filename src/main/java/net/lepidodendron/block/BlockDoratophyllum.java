@@ -290,7 +290,7 @@ public class BlockDoratophyllum extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Cycad");
-	        	tooltip.add("Periods: [Permian - ] Triassic - Jurassic - Early Cretaceous - Late Cretaceous");
+	        	tooltip.add("Periods: [Permian - ] Triassic - Jurassic - Early Cretaceous");
 	        	tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
