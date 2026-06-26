@@ -38,6 +38,13 @@ public class WorldGenSabalUnderstorey extends WorldGenerator
                 && (worldIn.getBlockState(blockpos.south().up(2)).getBlock() != BlockSabalLog.block)
             	)
             {
+
+                if ((worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_appalachia_delta")
+                        || worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_creek_north_america_appalachia_delta"))
+                        && blockpos.getY() < 64
+                        ) {
+                    return false;
+                }
                 Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
 					$_dependencies.put("x", blockpos.getX());
 					$_dependencies.put("y", blockpos.getY());

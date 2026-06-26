@@ -1,7 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
-import net.lepidodendron.procedure.ProcedureWorldGenMagnolia;
+import net.lepidodendron.procedure.ProcedureWorldGenArtocarpus;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -11,10 +11,10 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import java.util.Random;
 
-public class WorldGenMagnoliaTree extends WorldGenAbstractTree
+public class WorldGenArtocarpusTree extends WorldGenAbstractTree
 {
 
-    public WorldGenMagnoliaTree(boolean notify)
+    public WorldGenArtocarpusTree(boolean notify)
     {
         super(notify);
     }
@@ -77,21 +77,14 @@ public class WorldGenMagnoliaTree extends WorldGenAbstractTree
                 IBlockState state = worldIn.getBlockState(down);
                 boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
 
-                if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_appalachia_mountains")
-                        || worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_creek_north_america_appalachia_mountains"))
-                        && position.getY() > 110
-                ) {
-                    return false;
-                }
-
                 if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
-                    Object2ObjectOpenHashMap <String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
+                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
 					$_dependencies.put("x", position.getX());
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
-					ProcedureWorldGenMagnolia.executeProcedure($_dependencies);
+					ProcedureWorldGenArtocarpus.executeProcedure($_dependencies);
                     return true;
                 }
                 else

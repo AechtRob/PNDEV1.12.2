@@ -376,6 +376,10 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_dead")) {
 			maxheight = 160;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_appalachia_delta")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_creek_north_america_appalachia_delta")) {
+			minheight = 64;
+		}
 		final int maxH = maxheight;
 		final int minH = minheight;
 	

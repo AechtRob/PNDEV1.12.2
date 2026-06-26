@@ -7,6 +7,7 @@ import net.lepidodendron.block.BlockDeadLog;
 import net.lepidodendron.procedure.ProcedureTreeLog;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousLate;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -31,7 +32,8 @@ public class StructureFallenDeadTree extends ElementsLepidodendronMod.ModElement
 			return;
 
 		if (dimID != LepidodendronConfig.dimTriassic
-			&& dimID != LepidodendronConfig.dimCretaceousEarly)
+				&& dimID != LepidodendronConfig.dimCretaceousEarly
+				&& dimID != LepidodendronConfig.dimCretaceousLate)
 			return;
 
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
@@ -52,6 +54,14 @@ public class StructureFallenDeadTree extends ElementsLepidodendronMod.ModElement
 				return;
 			}
 		}
+		else if (biome instanceof BiomeCretaceousLate) {
+			BiomeCretaceousLate biomeCretaceousLate = (BiomeCretaceousLate) biome;
+			if ((!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_appalachia_delta"))
+					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_creek_north_america_appalachia_delta"))
+			) {
+				return;
+			}
+		}
 		else {
 			return;
 		}
@@ -63,6 +73,8 @@ public class StructureFallenDeadTree extends ElementsLepidodendronMod.ModElement
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_samerica_flats_stream")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_estuary")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_estuary")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_appalachia_delta")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_creek_north_america_appalachia_delta")
 		) {
 			GenChance = 120000;
 			genTries = random.nextInt(3) + 1;
