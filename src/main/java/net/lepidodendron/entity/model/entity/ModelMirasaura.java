@@ -407,64 +407,11 @@ public class ModelMirasaura extends ModelBasePalaeopedia {
         this.root.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.neck.offsetZ = -0.24F;
-        this.neck.render(0.01F);
+
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
 
-        this.setRotateAngle(tail4, 0.2686F, -0.2232F, -0.0609F);
-        this.setRotateAngle(tail3, 0.1211F, -0.2597F, -0.0589F);
-        this.setRotateAngle(tail2, 0.0199F, -0.1775F, 0.022F);
-        this.setRotateAngle(tail1, -0.1751F, -0.0816F, 0.0144F);
-        this.setRotateAngle(scale1, 0.1745F, -0.0053F, 0.0301F);
-        this.setRotateAngle(root, 0.0F, 0.2487F, 0.0F);
-        this.setRotateAngle(rightLeg2, 0.7025F, 0.0076F, 0.542F);
-        this.setRotateAngle(rightLeg1, -0.2024F, 0.3668F, -0.1604F);
-        this.setRotateAngle(rightArm3, 0.2508F, -0.8406F, 0.338F);
-        this.setRotateAngle(rightArm2, 0.4347F, 0.1597F, -0.3256F);
-        this.setRotateAngle(rightArm1, -0.0804F, 0.393F, 0.279F);
-        this.setRotateAngle(neck, -0.2749F, 0.0F, 0.0F);
-        this.setRotateAngle(leftLeg2, 0.3491F, -0.0076F, -0.542F);
-        this.setRotateAngle(leftLeg1, -0.7915F, -0.089F, 0.4511F);
-        this.setRotateAngle(leftArm3, 1.4371F, 0.2617F, 0.6082F);
-        this.setRotateAngle(leftArm2, -0.6753F, -0.658F, 0.1662F);
-        this.setRotateAngle(leftArm1, -0.096F, 0.7354F, -0.2552F);
-        this.setRotateAngle(jaw, -0.0262F, 0.0F, 0.0F);
-        this.setRotateAngle(head, 0.3534F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r9, -0.5585F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r8, 0.0393F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r7, 0.0654F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r6, 0.8945F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r5, 0.0087F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r4, -0.1527F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r3, -0.0262F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r29, -1.2249F, 0.3442F, 0.0972F);
-        this.setRotateAngle(cube_r28, -1.2347F, -0.2082F, -0.1967F);
-        this.setRotateAngle(cube_r27, -1.6166F, -0.1669F, -0.7799F);
-        this.setRotateAngle(cube_r26, -1.2249F, -0.3442F, -0.0972F);
-        this.setRotateAngle(cube_r25, -1.2347F, 0.2082F, 0.1967F);
-        this.setRotateAngle(cube_r24, -1.6166F, 0.1669F, 0.7799F);
-        this.setRotateAngle(cube_r23, -0.535F, -0.1629F, 0.0089F);
-        this.setRotateAngle(cube_r22, -0.535F, -0.1629F, 0.0089F);
-        this.setRotateAngle(cube_r21, -0.6981F, 1.2149F, -0.0188F);
-        this.setRotateAngle(cube_r20, -0.535F, 0.1629F, -0.0089F);
-        this.setRotateAngle(cube_r2, -0.0873F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r19, -0.535F, 0.1629F, -0.0089F);
-        this.setRotateAngle(cube_r18, -0.6981F, -1.2149F, 0.0188F);
-        this.setRotateAngle(cube_r17, 0.0F, 0.192F, 0.0F);
-        this.setRotateAngle(cube_r16, 0.0F, -0.192F, 0.0F);
-        this.setRotateAngle(cube_r15, 0.0873F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r14, 0.3316F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r13, 0.0F, 0.2182F, 0.0F);
-        this.setRotateAngle(cube_r12, 0.0F, -0.2182F, 0.0F);
-        this.setRotateAngle(cube_r11, -0.4887F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r10, -0.6632F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r1, -0.1745F, 0.0F, 0.0F);
-        this.setRotateAngle(chest, 0.0068F, -0.0914F, -0.0745F);
-        this.setRotateAngle(body, 0.0F, -0.2443F, 0.0F);
-        this.root.offsetY = 0.31F;
-        this.root.render(0.01F);
         resetToDefaultPose();
     }
     @Override
@@ -551,6 +498,9 @@ public class ModelMirasaura extends ModelBasePalaeopedia {
                     animWalk(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
             }
+        }
+        else if (ee.getIsClimbing()) { //Is climbing but is static
+            animClimb(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, true);
         }
 
         if (ee.getAnimation() == ee.EAT_ANIMATION || ee.getAnimation() == ee.ATTACK_ANIMATION) {

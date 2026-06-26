@@ -605,6 +605,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.dataManager.register(BABIES, false);
         this.dataManager.register(ISBABY, false);
         this.dataManager.register(AIR_SPECIAL, Integer.valueOf(300));
+        this.setScaleForAge(false);
     }
 
     @Override

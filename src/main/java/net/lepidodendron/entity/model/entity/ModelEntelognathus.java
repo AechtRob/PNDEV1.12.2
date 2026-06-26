@@ -342,7 +342,7 @@ public class ModelEntelognathus extends ModelBasePalaeopedia {
         AdvancedModelRenderer[] fishTail = {this.Tail, this.Tail2};
         EntityPrehistoricFloraEntelognathus entelo = (EntityPrehistoricFloraEntelognathus) e;
         float speed = 0.2F;
-        float taildegree = 0.4F;
+        float taildegree = 0.25F;
         float inwater = 1F;
 
         if (!e.isInWater()) {
@@ -363,7 +363,7 @@ public class ModelEntelognathus extends ModelBasePalaeopedia {
         float finDegreeY = (float)Math.toRadians(7.5);
         if (isAtBottom && !entelo.getIsFast()) {
             //System.err.println("Animation at bottom");
-            speed = 0.4F;
+            speed = 0.15F;
             taildegree = 0.27F;
             bottomModifier = 0.8F;
             swingModifier = 0.5F;

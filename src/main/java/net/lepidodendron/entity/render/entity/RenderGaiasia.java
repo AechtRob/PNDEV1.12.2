@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderGaiasia extends RenderLivingBaseWithBook<EntityPrehistoricFloraGaiasia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gaiasia.png");
 
-    public static float getScaler() {return 0.85f;}
+    public static float getScaler() {return 0.93f;}
 
     public RenderGaiasia(RenderManager mgr) {
         super(mgr, new ModelGaiasia(), 0.5f);

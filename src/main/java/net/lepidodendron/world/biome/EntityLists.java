@@ -705,16 +705,6 @@ public class EntityLists {
                         "lepidodendron:prehistoric_flora_spinosaurus:0:0:0",
                         "lepidodendron:prehistoric_flora_olorotitan:0:0:0",
                         "lepidodendron:prehistoric_flora_protosphyraena:0:0:0",
-                        "lepidodendron:prehistoric_flora_retodus:0:0:0",
-                        "lepidodendron:prehistoric_flora_afrocascudo:0:0:0",
-                        "lepidodendron:prehistoric_flora_erfoudichthys:0:0:0",
-                        "lepidodendron:prehistoric_flora_kradimus:0:0:0",
-                        "lepidodendron:prehistoric_flora_squatina:0:0:0",
-                        "lepidodendron:prehistoric_flora_axelrodichthys:0:0:0",
-                        "lepidodendron:prehistoric_flora_ferussina:0:0:0",
-                        "lepidodendron:prehistoric_flora_turritella:0:0:0",
-                        "lepidodendron:prehistoric_flora_slavoia:0:0:0",
-                        "lepidodendron:prehistoric_flora_shachemys:0:0:0",
                         "lepidodendron:prehistoric_flora_antarctopelta:0:0:0",
                         "lepidodendron:prehistoric_flora_adalatherium:0:0:0",
                         "lepidodendron:prehistoric_flora_tarbosaurus:0:0:0",
@@ -755,9 +745,6 @@ public class EntityLists {
                         "lepidodendron:prehistoric_flora_adocus:0:0:0",
                         "lepidodendron:prehistoric_flora_scorpionfly{PNType:\"gendered\"}:0:0:0",
                         "lepidodendron:prehistoric_flora_hexanchus:0:0:0",
-                        "lepidodendron:prehistoric_flora_squatina:0:0:0",
-                        "lepidodendron:prehistoric_flora_ferussina:0:0:0",
-                        "lepidodendron:prehistoric_flora_turritella:0:0:0",
                         "lepidodendron:prehistoric_flora_dragonfly:0:0:0"
                 };
 
@@ -789,8 +776,6 @@ public class EntityLists {
                         "lepidodendron:prehistoric_flora_rhinobatos:0:0:0",
                         "lepidodendron:prehistoric_flora_scorpionfly{PNType:\"gendered\"}:0:0:0",
                         "lepidodendron:prehistoric_flora_hexanchus:0:0:0",
-                        "lepidodendron:prehistoric_flora_squatina:0:0:0",
-                        "lepidodendron:prehistoric_flora_turritella:0:0:0",
                         "lepidodendron:prehistoric_flora_ischyodus:0:0:0"
                 };
 
@@ -821,8 +806,6 @@ public class EntityLists {
                         "lepidodendron:prehistoric_flora_rhinobatos:0:0:0",
                         "lepidodendron:prehistoric_flora_scorpionfly{PNType:\"gendered\"}:0:0:0",
                         "lepidodendron:prehistoric_flora_hexanchus:0:0:0",
-                        "lepidodendron:prehistoric_flora_squatina:0:0:0",
-                        "lepidodendron:prehistoric_flora_turritella:0:0:0",
                         "lepidodendron:prehistoric_flora_neoceratodus:0:0:0"
                 };
 
@@ -2871,7 +2854,9 @@ public class EntityLists {
         else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_creek")
             || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica")
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_lakes")
-                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_lakes_edge")) {
+                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_lakes_edge")
+                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_crater")
+                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_crater_rim")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyEGondwanaPodocarpPF);
             }

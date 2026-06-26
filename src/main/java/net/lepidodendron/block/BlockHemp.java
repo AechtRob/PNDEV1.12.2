@@ -9,6 +9,7 @@ import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousLate;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -86,7 +87,7 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = true;
 		if (!LepidodendronConfigPlants.genHemp && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
-		if (LepidodendronConfig.dimCretaceousEarly == dimID)
+		if (LepidodendronConfig.dimCretaceousEarly == dimID || LepidodendronConfig.dimCretaceousLate == dimID)
 			dimensionCriteria = true;
 		if (!dimensionCriteria)
 			return;
@@ -111,7 +112,7 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genHempOverrideBiomes))
 			biomeCriteria = true;
-		if (LepidodendronConfig.dimCretaceousEarly == dimID)
+		if (LepidodendronConfig.dimCretaceousEarly == dimID || LepidodendronConfig.dimCretaceousLate == dimID)
 			biomeCriteria = true;
 
 		boolean heightCheck = false;
@@ -120,6 +121,17 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 		{
 			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
 			if (biomeCretaceousEarly.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia_yixian_foothills")) {
+				heightCheck = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeCretaceousLate)
+		{
+			BiomeCretaceousLate biomeCretaceousLate = (BiomeCretaceousLate) biome;
+			if (biomeCretaceousLate.getRegistryName().toString().equalsIgnoreCase("lepidodendron:")) {
 				heightCheck = true;
 			}
 			else {
@@ -140,7 +152,7 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 				GenChance = 15;
 		}
 
-		if (LepidodendronConfig.dimCretaceousEarly == dimID) {
+		if (LepidodendronConfig.dimCretaceousEarly == dimID || LepidodendronConfig.dimCretaceousLate == dimID) {
 			GenChance = 4;
 		}
 

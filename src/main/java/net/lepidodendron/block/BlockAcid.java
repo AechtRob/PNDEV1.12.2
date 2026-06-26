@@ -15,6 +15,7 @@ import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -60,6 +61,28 @@ public class BlockAcid extends ElementsLepidodendronMod.ModElement {
 				if (entity instanceof EntityLivingBase) {
 					EntityLivingBase e = (EntityLivingBase) entity;
 					e.attackEntityFrom(ACID, 2F);
+				}
+				if (world.isRemote) return;
+				if (!(entity instanceof EntityLivingBase)) return;
+
+				EntityLivingBase living = (EntityLivingBase) entity;
+
+				BlockPos eyePos = new BlockPos(
+						living.posX,
+						living.posY + living.getEyeHeight(),
+						living.posZ
+				);
+
+				if (world.getBlockState(eyePos).getBlock() != this) {
+					return; // head is not submerged
+				}
+
+				if (living.isPotionActive(MobEffects.WATER_BREATHING)) return;
+				living.setAir(living.getAir() - 1);
+
+				if (living.getAir() <= -20) {
+					living.setAir(0);
+					living.attackEntityFrom(DamageSource.DROWN, 2.0F);
 				}
 			}
 

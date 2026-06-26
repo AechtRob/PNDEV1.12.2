@@ -11,6 +11,8 @@ import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -18,6 +20,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -45,11 +48,49 @@ public class BlockResin extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new BlockFluidClassic(fluid, MaterialResin.RESIN) {
+
+			@Override
+			public boolean isFlammable(IBlockAccess world, BlockPos pos, EnumFacing face) {
+				return true;
+			}
+
+			@Override
+			public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+				return 300; // higher = burns more easily
+			}
+
+			@Override
+			public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+				return 100; // higher = fire spreads faster
+			}
+
 			@Override
 			public void onEntityCollision(World world, BlockPos pos, IBlockState state, Entity entity) {
 				super.onEntityCollision(world, pos, state, entity);
 				if ((double) entity.posY < ((double) pos.getY() + 0.59)) {
 					entity.setInWeb();
+				}
+				if (world.isRemote) return;
+				if (!(entity instanceof EntityLivingBase)) return;
+
+				EntityLivingBase living = (EntityLivingBase) entity;
+
+				BlockPos eyePos = new BlockPos(
+						living.posX,
+						living.posY + living.getEyeHeight(),
+						living.posZ
+				);
+
+				if (world.getBlockState(eyePos).getBlock() != this) {
+					return; // head is not submerged
+				}
+
+				if (living.isPotionActive(MobEffects.WATER_BREATHING)) return;
+				living.setAir(living.getAir() - 500);
+
+				if (living.getAir() <= -20) {
+					living.setAir(0);
+					living.attackEntityFrom(DamageSource.DROWN, 2.0F);
 				}
 			}
 		}.setTranslationKey("pf_resin").setRegistryName("resin"));
