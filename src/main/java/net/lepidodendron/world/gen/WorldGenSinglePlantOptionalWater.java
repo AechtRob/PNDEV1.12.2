@@ -16,25 +16,29 @@ public class WorldGenSinglePlantOptionalWater extends WorldGenerator
 {
     public boolean generate(World worldIn, Random rand, BlockPos position)
     {
-        return generate(null, worldIn, rand, position, 0, 255, false, false, false);
+        return generate(null, worldIn, rand, position, 0, 255, false, false, false, false);
     }
 
     public boolean generate(IBlockState plantBlock, World worldIn, Random rand, BlockPos position)
     {
-        return generate(plantBlock, worldIn, rand, position, 0, 255, false, false, false);
+        return generate(plantBlock, worldIn, rand, position, 0, 255, false, false, false, false);
     }
 
     public boolean generate(IBlockState plantBlock, World worldIn, Random rand, BlockPos position, int minHeight, int maxHeight)
     {
-        return generate(plantBlock, worldIn, rand, position, minHeight, maxHeight, false, false, false);
+        return generate(plantBlock, worldIn, rand, position, minHeight, maxHeight, false, false, false, false);
     }
 
     public boolean generate(IBlockState plantBlock, World worldIn, Random rand, BlockPos position, int minHeight, int maxHeight, boolean needsWater)
     {
-        return generate(plantBlock, worldIn, rand, position, minHeight, maxHeight, needsWater, false, false);
+        return generate(plantBlock, worldIn, rand, position, minHeight, maxHeight, needsWater, false, false, false);
     }
 
-    public boolean generate(@Nullable IBlockState plantBlock, World worldIn, Random rand, BlockPos position, int minHeight, int maxHeight, boolean needsWater, boolean spawnOnWood, boolean spawnOnRock)
+    public boolean generate(@Nullable IBlockState plantBlock, World worldIn, Random rand, BlockPos position, int minHeight, int maxHeight, boolean needsWater, boolean spawnOnWood, boolean spawnOnRock) {
+        return generate(plantBlock, worldIn, rand, position, minHeight, maxHeight, needsWater, spawnOnWood, spawnOnRock, false);
+    }
+
+    public boolean generate(@Nullable IBlockState plantBlock, World worldIn, Random rand, BlockPos position, int minHeight, int maxHeight, boolean needsWater, boolean spawnOnWood, boolean spawnOnRock, boolean hardYLimit)
     {
 
         if (plantBlock == null) {
@@ -70,14 +74,25 @@ public class WorldGenSinglePlantOptionalWater extends WorldGenerator
                 continue;
             }
             if (!needsWater) {
-
-                if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && plantBlock.getBlock().canPlaceBlockAt(worldIn, blockpos)
-                        && (blockpos.getY() > minHeight + (rand.nextInt(5) - 2))
-                        && (blockpos.getY() < maxHeight + (rand.nextInt(5) - 2))
-                        && plantBlock.getBlock().canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.UP)) {
-                    Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, plantBlock, 2);
-                    plantBlock.getBlock().onBlockAdded(worldIn, blockpos, plantBlock);
-                    flag = true;
+                if (hardYLimit) {
+                    if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && plantBlock.getBlock().canPlaceBlockAt(worldIn, blockpos)
+                            && (blockpos.getY() >= minHeight)
+                            && (blockpos.getY() <= maxHeight)
+                            && plantBlock.getBlock().canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.UP)) {
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, plantBlock, 2);
+                        plantBlock.getBlock().onBlockAdded(worldIn, blockpos, plantBlock);
+                        flag = true;
+                    }
+                }
+                else {
+                    if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && plantBlock.getBlock().canPlaceBlockAt(worldIn, blockpos)
+                            && (blockpos.getY() > minHeight + (rand.nextInt(5) - 2))
+                            && (blockpos.getY() < maxHeight + (rand.nextInt(5) - 2))
+                            && plantBlock.getBlock().canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.UP)) {
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, plantBlock, 2);
+                        plantBlock.getBlock().onBlockAdded(worldIn, blockpos, plantBlock);
+                        flag = true;
+                    }
                 }
             }
             else {
@@ -101,13 +116,25 @@ public class WorldGenSinglePlantOptionalWater extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && plantBlock.getBlock().canPlaceBlockAt(worldIn, blockpos)
-                            && (blockpos.getY() > minHeight + (rand.nextInt(5) - 2))
-                            && (blockpos.getY() < maxHeight + (rand.nextInt(5) - 2))
-                            && plantBlock.getBlock().canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.UP)) {
-                        Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, plantBlock, 2);
-                        plantBlock.getBlock().onBlockAdded(worldIn, blockpos, plantBlock);
-                        flag = true;
+                    if (hardYLimit) {
+                        if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && plantBlock.getBlock().canPlaceBlockAt(worldIn, blockpos)
+                                && (blockpos.getY() >= minHeight)
+                                && (blockpos.getY() <= maxHeight)
+                                && plantBlock.getBlock().canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.UP)) {
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, plantBlock, 2);
+                            plantBlock.getBlock().onBlockAdded(worldIn, blockpos, plantBlock);
+                            flag = true;
+                        }
+                    }
+                    else {
+                        if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && plantBlock.getBlock().canPlaceBlockAt(worldIn, blockpos)
+                                && (blockpos.getY() > minHeight + (rand.nextInt(5) - 2))
+                                && (blockpos.getY() < maxHeight + (rand.nextInt(5) - 2))
+                                && plantBlock.getBlock().canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.UP)) {
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, plantBlock, 2);
+                            plantBlock.getBlock().onBlockAdded(worldIn, blockpos, plantBlock);
+                            flag = true;
+                        }
                     }
                 }
             }

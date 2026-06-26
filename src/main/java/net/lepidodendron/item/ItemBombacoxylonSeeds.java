@@ -16,10 +16,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemSycamoreSeeds extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:sycamore_seeds")
+public class ItemBombacoxylonSeeds extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:bombacoxylon_seeds")
 	public static final Item block = null;
-	public ItemSycamoreSeeds(ElementsLepidodendronMod instance) {
+	public ItemBombacoxylonSeeds(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.sycamore_seeds);
 	}
 
@@ -31,19 +31,19 @@ public class ItemSycamoreSeeds extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("pndietSeed", ItemSycamoreSeeds.block);
+		OreDictionary.registerOre("pndietSeed", ItemBombacoxylonSeeds.block);
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:sycamore_seeds", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:bombacoxylon_seeds", "inventory"));
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
 			super(BlockSycamoreSapling.block.getDefaultState(),1);
-			setTranslationKey("pf_sycamore_seeds");
-			setRegistryName("sycamore_seeds");
+			setTranslationKey("pf_bombacoxylon_seeds");
+			setRegistryName("bombacoxylon_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}

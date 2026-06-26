@@ -1,25 +1,49 @@
 {
   "variants": {
     "normal": [
-      {"model": "lepidodendron:liriodendron_flower"}
+      {"model": "lepidodendron:liriodendron_1"}
     ],
     "facing=north": [
-      {"model": "lepidodendron:liriodendron_flower"}
+      {"model": "lepidodendron:liriodendron_1", "x":  90},
+      {"model": "lepidodendron:liriodendron_2", "x":  90},
+      {"model": "lepidodendron:liriodendron_3", "x":  90},
+      {"model": "lepidodendron:liriodendron_4", "x":  90},
+      {"model": "lepidodendron:liriodendron_5", "x":  90}
     ],
     "facing=east": [
-      {"model": "lepidodendron:liriodendron_flower"}
+      {"model": "lepidodendron:liriodendron_1", "x":  90, "y":  90},
+      {"model": "lepidodendron:liriodendron_2", "x":  90, "y":  90},
+      {"model": "lepidodendron:liriodendron_3", "x":  90, "y":  90},
+      {"model": "lepidodendron:liriodendron_4", "x":  90, "y":  90},
+      {"model": "lepidodendron:liriodendron_5", "x":  90, "y":  90}
     ],
     "facing=south": [
-      {"model": "lepidodendron:liriodendron_flower"}
+      {"model": "lepidodendron:liriodendron_1", "x":  90, "y":  180},
+      {"model": "lepidodendron:liriodendron_2", "x":  90, "y":  180},
+      {"model": "lepidodendron:liriodendron_3", "x":  90, "y":  180},
+      {"model": "lepidodendron:liriodendron_4", "x":  90, "y":  180},
+      {"model": "lepidodendron:liriodendron_5", "x":  90, "y":  180}
     ],
     "facing=west": [
-      {"model": "lepidodendron:liriodendron_flower"}
+      {"model": "lepidodendron:liriodendron_1", "x":  90, "y":  270},
+      {"model": "lepidodendron:liriodendron_2", "x":  90, "y":  270},
+      {"model": "lepidodendron:liriodendron_3", "x":  90, "y":  270},
+      {"model": "lepidodendron:liriodendron_4", "x":  90, "y":  270},
+      {"model": "lepidodendron:liriodendron_5", "x":  90, "y":  270}
     ],
     "facing=up": [
-      {"model": "lepidodendron:liriodendron_flower"}
+      {"model": "lepidodendron:liriodendron_1"},
+      {"model": "lepidodendron:liriodendron_2"},
+      {"model": "lepidodendron:liriodendron_3"},
+      {"model": "lepidodendron:liriodendron_4"},
+      {"model": "lepidodendron:liriodendron_5"}
     ],
     "facing=down": [
-      {"model": "lepidodendron:liriodendron_flower"}
+      {"model": "lepidodendron:liriodendron_1", "x":  180},
+      {"model": "lepidodendron:liriodendron_2", "x":  180},
+      {"model": "lepidodendron:liriodendron_3", "x":  180},
+      {"model": "lepidodendron:liriodendron_4", "x":  180},
+      {"model": "lepidodendron:liriodendron_5", "x":  180}
     ]
   }
 }

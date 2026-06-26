@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
@@ -33,20 +34,20 @@ public class WaterPoppyGenerator extends WorldGenerator
     	boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimWaterPoppy))
 			dimensionCriteria = true;
-//		if ((dimID == LepidodendronConfig.dimJurassic)
-//			|| (dimID == LepidodendronConfig.dimCretaceousEarly)
-//			)
-//			{
-//				dimensionCriteria = true;
-//			}
+		if (dimID == LepidodendronConfig.dimCretaceousLate
+			|| dimID == LepidodendronConfig.dimCretaceousLate
+			)
+			{
+				dimensionCriteria = true;
+			}
 
 		if (!dimensionCriteria)
 			return true;
 
 		int multiplier = 1;
-//		if (dimID == LepidodendronConfig.dimJurassic
-//				|| dimID == LepidodendronConfig.dimCretaceousEarly
-//		) {multiplier = 4;}
+		if (dimID == LepidodendronConfig.dimCretaceousLate
+			|| dimID == LepidodendronConfig.dimCretaceousLate
+		) {multiplier = 4;}
 
         for (int i = 0; i < (32 * multiplier); ++i)
         {

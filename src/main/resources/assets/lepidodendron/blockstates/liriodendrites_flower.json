@@ -1,0 +1,49 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:liriodendrites_1"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:liriodendrites_1", "x":  90},
+      {"model": "lepidodendron:liriodendrites_2", "x":  90},
+      {"model": "lepidodendron:liriodendrites_3", "x":  90},
+      {"model": "lepidodendron:liriodendrites_4", "x":  90},
+      {"model": "lepidodendron:liriodendrites_5", "x":  90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:liriodendrites_1", "x":  90, "y":  90},
+      {"model": "lepidodendron:liriodendrites_2", "x":  90, "y":  90},
+      {"model": "lepidodendron:liriodendrites_3", "x":  90, "y":  90},
+      {"model": "lepidodendron:liriodendrites_4", "x":  90, "y":  90},
+      {"model": "lepidodendron:liriodendrites_5", "x":  90, "y":  90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:liriodendrites_1", "x":  90, "y":  180},
+      {"model": "lepidodendron:liriodendrites_2", "x":  90, "y":  180},
+      {"model": "lepidodendron:liriodendrites_3", "x":  90, "y":  180},
+      {"model": "lepidodendron:liriodendrites_4", "x":  90, "y":  180},
+      {"model": "lepidodendron:liriodendrites_5", "x":  90, "y":  180}
+    ],
+    "facing=west": [
+      {"model": "lepidodendron:liriodendrites_1", "x":  90, "y":  270},
+      {"model": "lepidodendron:liriodendrites_2", "x":  90, "y":  270},
+      {"model": "lepidodendron:liriodendrites_3", "x":  90, "y":  270},
+      {"model": "lepidodendron:liriodendrites_4", "x":  90, "y":  270},
+      {"model": "lepidodendron:liriodendrites_5", "x":  90, "y":  270}
+    ],
+    "facing=up": [
+      {"model": "lepidodendron:liriodendrites_1"},
+      {"model": "lepidodendron:liriodendrites_2"},
+      {"model": "lepidodendron:liriodendrites_3"},
+      {"model": "lepidodendron:liriodendrites_4"},
+      {"model": "lepidodendron:liriodendrites_5"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:liriodendrites_1", "x":  180},
+      {"model": "lepidodendron:liriodendrites_2", "x":  180},
+      {"model": "lepidodendron:liriodendrites_3", "x":  180},
+      {"model": "lepidodendron:liriodendrites_4", "x":  180},
+      {"model": "lepidodendron:liriodendrites_5", "x":  180}
+    ]
+  }
+}

@@ -104,11 +104,6 @@ public class BlockLiriodendronFlower extends ElementsLepidodendronMod.ModElement
     }
 
 		@Override
-		public EnumBlockRenderType getRenderType(IBlockState state) {
-			return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
-		}
-
-		@Override
 		public boolean isFullCube(IBlockState state) {
 			return false;
 		}

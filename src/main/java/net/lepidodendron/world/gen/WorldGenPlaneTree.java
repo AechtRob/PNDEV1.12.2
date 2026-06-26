@@ -80,6 +80,13 @@ public class WorldGenPlaneTree extends WorldGenAbstractTree
                     return false;
                 }
 
+                if (position.getY() < 66 &&
+                        (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_southern_estuaries")
+                                || worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_creek_north_america_laramidia_southern_estuaries")
+                        )) {
+                    return false;
+                }
+
                 if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
                     int TreeHeight = 16 + rand.nextInt(18);

@@ -7,6 +7,7 @@ import net.lepidodendron.block.base.SeedSporeLilyPadBase;
 import net.lepidodendron.item.ItemWaterCloverItem;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousLate;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.gen.WaterCloverGenerator;
 import net.minecraft.block.Block;
@@ -133,6 +134,21 @@ public class BlockWaterClover extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
+		if (biome instanceof BiomeCretaceousLate)
+		{
+			BiomeCretaceousLate biomeCretaceousLate = (BiomeCretaceousLate)biome;
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp_floodplain")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (!biomeCriteria)
 			return;
 
@@ -146,7 +162,8 @@ public class BlockWaterClover extends ElementsLepidodendronMod.ModElement {
 			GenChance = Math.min(GenChance * 10, 100);
 		}
 		if (biome instanceof BiomeJurassic
-				|| biome instanceof BiomeCretaceousEarly) {
+				|| biome instanceof BiomeCretaceousEarly
+				|| biome instanceof BiomeCretaceousLate) {
 			GenChance = 192;
 		}
 

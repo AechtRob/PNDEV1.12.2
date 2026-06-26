@@ -1,7 +1,12 @@
 {
   "variants": {
     "normal": [
-      {"model": "lepidodendron:sycamore_leaves"}
+      {"model": "lepidodendron:sycamore_leaves"},
+      {"model": "lepidodendron:bombacoxylon_flower_1"},
+      {"model": "lepidodendron:bombacoxylon_flower_2"},
+      {"model": "lepidodendron:bombacoxylon_flower_3"},
+      {"model": "lepidodendron:bombacoxylon_flower_4"},
+      {"model": "lepidodendron:bombacoxylon_flower_5"}
     ]
   }
 }

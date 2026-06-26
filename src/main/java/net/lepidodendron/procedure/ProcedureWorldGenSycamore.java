@@ -42,7 +42,7 @@ public class ProcedureWorldGenSycamore extends ElementsLepidodendronMod.ModEleme
     private static List<ProcedureWorldGenSycamore.FoliageCoordinates> foliageCoords;
     private static double branchSlope = 0.381D;
     //private static double scaleWidth = 1.0D;
-    private static double scaleWidth = 1.20D;
+    private static double scaleWidth = 1.05D;
     private static int trunkSize;
 
 	public static void executeProcedure(World WorldIn, BlockPos position, int TreeHeight, int TrunkSize) {

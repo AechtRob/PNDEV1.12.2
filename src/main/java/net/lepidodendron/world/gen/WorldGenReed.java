@@ -25,15 +25,18 @@ public class WorldGenReed extends WorldGenerator
             BlockPos blockpos = position.add(rand.nextInt(4) - rand.nextInt(4), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(4) - rand.nextInt(4));
             IBlockState iblockstate = worldIn.getBlockState(blockpos.down());
 
-            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockReedsLand.block.canPlaceBlockAt(worldIn, blockpos))
-            {
-               	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockReedsLand.block.getDefaultState(), 2);
-                flag = true;
-            }
-            else if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && ItemReedsItem.canSurviveAt(worldIn, blockpos)  && (iblockstate.getMaterial() == Material.WATER && ((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0))
-            {
-                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockReedsWater.block.getDefaultState(), 2);
-                flag = true;
+            if (!((worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_appalachia_mountains")
+                    || worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_creek_north_america_appalachia_mountains"))
+                    && position.getY() < 75)
+            ) {
+
+                if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockReedsLand.block.canPlaceBlockAt(worldIn, blockpos)) {
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockReedsLand.block.getDefaultState(), 2);
+                    flag = true;
+                } else if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && ItemReedsItem.canSurviveAt(worldIn, blockpos) && (iblockstate.getMaterial() == Material.WATER && ((Integer) iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0)) {
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockReedsWater.block.getDefaultState(), 2);
+                    flag = true;
+                }
             }
         }
 

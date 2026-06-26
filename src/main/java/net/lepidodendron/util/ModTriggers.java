@@ -444,6 +444,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_LEPTOPTERIS = new CustomTrigger("pf_book_leptopteris");
     public static final CustomTrigger CLICK_LESLEYA = new CustomTrigger("pf_book_lesleya");
     public static final CustomTrigger CLICK_LIRIODENDRON = new CustomTrigger("pf_book_liriodendron");
+    public static final CustomTrigger CLICK_LIRIODENDRITES = new CustomTrigger("pf_book_liriodendrites");
     public static final CustomTrigger CLICK_LYCOPIA = new CustomTrigger("pf_book_lycopia");
     public static final CustomTrigger CLICK_LYGINOPTERIS = new CustomTrigger("pf_book_lyginopteris");
     public static final CustomTrigger CLICK_LYGODIUM = new CustomTrigger("pf_book_lygodium");
@@ -2894,6 +2895,7 @@ public class ModTriggers
             CLICK_LEPTOPTERIS,
             CLICK_LESLEYA,
             CLICK_LIRIODENDRON,
+            CLICK_LIRIODENDRITES,
             CLICK_LYCOPIA,
             CLICK_LYGINOPTERIS,
             CLICK_LYGODIUM,

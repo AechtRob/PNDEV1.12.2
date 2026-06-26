@@ -1,5 +1,5 @@
 {
-  "parent": "lepidodendron:block/liriodendron_flower",
+  "parent": "lepidodendron:block/liriodendron_5",
   "display": {
     "thirdperson": {
       "rotation": [

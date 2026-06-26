@@ -8,6 +8,7 @@ import net.lepidodendron.item.ItemWaterPoppyItem;
 import net.lepidodendron.util.BlockSounds;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousLate;
 import net.lepidodendron.world.gen.WaterPoppyGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
@@ -88,49 +89,20 @@ public class BlockWaterPoppy extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genWaterPoppyOverrideBiomes))
 			biomeCriteria = true;
 
-//		if (biome instanceof BiomeJurassic)
-//		{
-//			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-//			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Lake
-//				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.River
-//				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Mire
-//				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ginkgo
-//				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain) {
-//				biomeCriteria = true;
-//			}
-//			else {
-//				biomeCriteria = false;
-//			}
-//		}
-//
-//		if (biome instanceof BiomeCretaceousEarly)
-//		{
-//			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly)biome;
-//			if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Euro_America) {
-//				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_europe")
-//						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_europe")
-//						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")
-//						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe_maquis")) {
-//					biomeCriteria = false;
-//				}
-//				else {
-//					biomeCriteria = true;
-//				}
-//			}
-//			else if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Asia) {
-//				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia")
-//				 		|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_banded_desert")
-//						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_banded_desert")) {
-//					biomeCriteria = true;
-//				}
-//				else {
-//					biomeCriteria = false;
-//				}
-//			}
-//			else {
-//				biomeCriteria = false;
-//			}
-//		}
+		if (biome instanceof BiomeCretaceousLate)
+		{
+			BiomeCretaceousLate biomeCretaceousLate = (BiomeCretaceousLate)biome;
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:XXXcretaceous_late_north_america_laramidia_swamp_floodplain")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:XXXcretaceous_late_north_america_laramidia_swamp_floodplain")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:XXXcretaceous_late_north_america_laramidia_swamp_floodplain")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:XXXcretaceous_late_north_america_laramidia_swamp_floodplain")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:XXXcretaceous_late_north_america_laramidia_swamp_floodplain")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
 
 		if (!biomeCriteria)
 			return;
@@ -144,10 +116,9 @@ public class BlockWaterPoppy extends ElementsLepidodendronMod.ModElement {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 			GenChance = Math.min(GenChance * 10, 100);
 		}
-//		if (biome instanceof BiomeJurassic
-//				|| biome instanceof BiomeCretaceousEarly) {
-//			GenChance = 192;
-//		}
+		if (biome instanceof BiomeCretaceousLate) {
+			GenChance = 192;
+		}
 
 		for (int i = 0; i < (int) GenChance; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;

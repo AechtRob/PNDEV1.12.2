@@ -216,10 +216,10 @@ public class StructureSpawnPotamogeton extends ElementsLepidodendronMod.ModEleme
     		return false;
     	}
 
-    	if (!worldIn.canSeeSky(pos) && (worldIn.getBlockState(pos).getLightValue() < 7))
-    	{
-    		return false;
-    	}
+//    	if (!worldIn.canSeeSky(pos) && (worldIn.getBlockState(pos).getLightValue() < 7))
+//    	{
+//    		return false;
+//    	}
 
     	return true;
     	 
