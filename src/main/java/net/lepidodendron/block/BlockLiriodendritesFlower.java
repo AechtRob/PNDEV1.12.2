@@ -6,8 +6,8 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.ItemLiriodendronSeeds;
-import net.lepidodendron.procedure.ProcedureLiriodendronFlowerNeighbourBlockChanges;
+import net.lepidodendron.item.ItemLiriodendritesSeeds;
+import net.lepidodendron.procedure.ProcedureLiriodendritesFlowerNeighbourBlockChanges;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.ITileEntityProvider;
@@ -45,36 +45,36 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockLiriodendronFlower extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:liriodendron_flower")
+public class BlockLiriodendritesFlower extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:liriodendrites_flower")
 	public static final Block block = null;
-	public BlockLiriodendronFlower(ElementsLepidodendronMod instance) {
+	public BlockLiriodendritesFlower(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.liriodendron_flower);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("liriodendron_flower"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("liriodendrites_flower"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		GameRegistry.registerTileEntity(TileEntityCustom.class, "lepidodendron:tileentityliriodendron_flower");
+		GameRegistry.registerTileEntity(TileEntityCustom.class, "lepidodendron:tileentityliriodendrites_flower");
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:liriodendron_flower", "inventory"));
+				new ModelResourceLocation("lepidodendron:liriodendrites_flower", "inventory"));
 	}
 	public static class BlockCustom extends Block implements ITileEntityProvider, net.minecraftforge.common.IShearable {
 
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public BlockCustom() {
 			super(Material.PLANTS);
-			setTranslationKey("pf_liriodendron_flower");
+			setTranslationKey("pf_liriodendrites_flower");
 			setSoundType(SoundType.PLANT);
 			setHardness(0F);
 			setResistance(0F);
@@ -99,9 +99,9 @@ public class BlockLiriodendronFlower extends ElementsLepidodendronMod.ModElement
 		@SideOnly(Side.CLIENT)
 		@Override
   	  	public BlockRenderLayer getRenderLayer()
-    {
-        return BlockRenderLayer.CUTOUT;
-    }
+		{
+			return BlockRenderLayer.CUTOUT;
+		}
 
 		@Override
 		public boolean isFullCube(IBlockState state) {
@@ -111,7 +111,7 @@ public class BlockLiriodendronFlower extends ElementsLepidodendronMod.ModElement
 		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
 		
 		@Override
-		public NonNullList<ItemStack> onSheared(ItemStack item, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune) {
+		public NonNullList<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
 			return NonNullList.withSize(1, new ItemStack(this, (int) (1)));
 		}
 
@@ -220,7 +220,7 @@ public class BlockLiriodendronFlower extends ElementsLepidodendronMod.ModElement
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				ProcedureLiriodendronFlowerNeighbourBlockChanges.executeProcedure($_dependencies);
+				ProcedureLiriodendritesFlowerNeighbourBlockChanges.executeProcedure($_dependencies);
 			}
 		}
 
@@ -242,7 +242,7 @@ public class BlockLiriodendronFlower extends ElementsLepidodendronMod.ModElement
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", worldIn);
-					ProcedureLiriodendronFlowerNeighbourBlockChanges.executeProcedure($_dependencies);
+					ProcedureLiriodendritesFlowerNeighbourBlockChanges.executeProcedure($_dependencies);
 				}
 		    }
 	    }
@@ -266,7 +266,7 @@ public class BlockLiriodendronFlower extends ElementsLepidodendronMod.ModElement
 				}.getValue(pos, "decayable")) == (true)) {
 		        	if (!((hand != player.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
 						if (Math.random() > 0.5) {
-							ItemStack stackSeed = new ItemStack(ItemLiriodendronSeeds.block, (int) (1));
+							ItemStack stackSeed = new ItemStack(ItemLiriodendritesSeeds.block, (int) (1));
 							stackSeed.setCount(1);
 							ItemHandlerHelper.giveItemToPlayer(player, stackSeed);
 							if (Math.random() > 0.75) {

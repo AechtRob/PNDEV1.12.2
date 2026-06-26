@@ -8,7 +8,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.procedure.ProcedureWorldGenLiriodendron;
+import net.lepidodendron.procedure.ProcedureWorldGenLiriodendrites;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
@@ -49,32 +49,32 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockLiriodendronSapling extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:liriodendron_sapling")
+public class BlockLiriodendritesSapling extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:liriodendrites_sapling")
 	public static final Block block = null;
-	public BlockLiriodendronSapling(ElementsLepidodendronMod instance) {
+	public BlockLiriodendritesSapling(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.liriodendron_sapling);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("liriodendron_sapling"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("liriodendrites_sapling"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:liriodendron_sapling", "inventory"));
+				new ModelResourceLocation("lepidodendron:liriodendrites_sapling", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:liriodendron_sapling", BlockLiriodendronSapling.block);
-		OreDictionary.registerOre("treeSapling", BlockLiriodendronSapling.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockLiriodendronSapling.block);
-		OreDictionary.registerOre("plant", BlockLiriodendronSapling.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:liriodendrites_sapling", BlockLiriodendritesSapling.block);
+		OreDictionary.registerOre("treeSapling", BlockLiriodendritesSapling.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockLiriodendritesSapling.block);
+		OreDictionary.registerOre("plant", BlockLiriodendritesSapling.block);
 	}
 
 
@@ -88,7 +88,7 @@ public class BlockLiriodendronSapling extends ElementsLepidodendronMod.ModElemen
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0.2F);
         	setResistance(1F);
-			setTranslationKey("pf_liriodendron_sapling");
+			setTranslationKey("pf_liriodendrites_sapling");
 			setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
 		}
 
@@ -100,7 +100,7 @@ public class BlockLiriodendronSapling extends ElementsLepidodendronMod.ModElemen
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_LIRIODENDRON;
+			return ModTriggers.CLICK_LIRIODENDRITES;
 		}
 
 		@Override
@@ -160,7 +160,7 @@ public class BlockLiriodendronSapling extends ElementsLepidodendronMod.ModElemen
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
-					ProcedureWorldGenLiriodendron.executeProcedure($_dependencies);
+					ProcedureWorldGenLiriodendrites.executeProcedure($_dependencies);
 				}
 	        }
 	    }
@@ -213,7 +213,7 @@ public class BlockLiriodendronSapling extends ElementsLepidodendronMod.ModElemen
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering tree");
-				tooltip.add("Periods: Late Cretaceous - Paleogene - Neogene - Pleistocene [ - present]");
+				tooltip.add("Periods: Late Cretaceous");
 				tooltip.add("Propagation: Flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
