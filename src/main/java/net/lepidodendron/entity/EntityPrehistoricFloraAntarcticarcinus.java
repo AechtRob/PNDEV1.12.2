@@ -45,6 +45,11 @@ public class EntityPrehistoricFloraAntarcticarcinus extends EntityPrehistoricFlo
 	}
 
 	@Override
+	public float getEyeHeight() {
+		return this.height * 0.85F;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}

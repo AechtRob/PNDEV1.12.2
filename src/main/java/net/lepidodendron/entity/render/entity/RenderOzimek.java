@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderOzimek extends RenderLivingBaseWithBook<EntityPrehistoricFloraOzimek> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ozimek.png");
 
-    public static float getScaler() {return 0.255f; }
+    public static float getScaler() {return 0.15f; }
 
     public RenderOzimek(RenderManager mgr) {
         super(mgr, new ModelOzimek(), 0.0f);

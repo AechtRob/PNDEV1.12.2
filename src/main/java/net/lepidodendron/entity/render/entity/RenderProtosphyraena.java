@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderProtosphyraena extends RenderLivingBaseWithBook<EntityPrehistoricFloraProtosphyraena> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/protosphyraena.png");
 
-    public static float getScaler() {return 0.79F;}
+    public static float getScaler() {return 0.84F;}
     public RenderProtosphyraena(RenderManager mgr) {
         super(mgr, new ModelProtosphyraena(), 0.0f);
     }

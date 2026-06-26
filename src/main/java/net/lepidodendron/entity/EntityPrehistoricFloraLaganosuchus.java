@@ -136,11 +136,9 @@ public class EntityPrehistoricFloraLaganosuchus extends EntityPrehistoricFloraSw
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == MAKE_NEST_ANIMATION
-        || this.getAnimation() == BASK_ANIMATION) {
+		if (this.getAnimation() == MAKE_NEST_ANIMATION) {
 			return 0.0F;
 		}
-
 		//System.err.println("Speed " + (Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed));
 		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed;
 	}
@@ -245,30 +243,20 @@ public class EntityPrehistoricFloraLaganosuchus extends EntityPrehistoricFloraSw
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:hyphalosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:normalcroc_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:hyphalosaurus_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:normalcroc_hurt"));
 	}
-
-	//@Override
-	//public SoundEvent getHurtSound(DamageSource ds) {
-	//	return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
-	//}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:hyphalosaurus_death"));
+				.getObject(new ResourceLocation("lepidodendron:normalcroc_death"));
 	}
-
-	//@Override
-	//public SoundEvent getDeathSound() {
-	//	return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
-	//}
 
 	@Override
 	protected float getSoundVolume() {
@@ -366,11 +354,7 @@ public class EntityPrehistoricFloraLaganosuchus extends EntityPrehistoricFloraSw
 				nestBlockMatch(world, pos)
 		);
 	}
-    @Override
-    public boolean isAnimationDirectionLocked(Animation animation) {
-        return super.isAnimationDirectionLocked(animation)
-                || animation == this.BASK_ANIMATION;
-    }
+
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;

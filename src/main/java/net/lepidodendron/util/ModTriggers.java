@@ -34,6 +34,7 @@ public class ModTriggers
     public static final CustomTrigger COMPLETE_JURASSIC = new CustomTrigger("complete_pf_jurassic");
     public static final CustomTrigger ENTER_CRETACEOUS_EARLY = new CustomTrigger("enter_pf_cretaceous_early");
     public static final CustomTrigger COMPLETE_CRETACEOUS_EARLY = new CustomTrigger("complete_pf_cretaceous_early");
+    public static final CustomTrigger ENTER_CRETACEOUS_LATE = new CustomTrigger("enter_pf_cretaceous_late");
     public static final CustomTrigger COMPLETE_CRETACEOUS_LATE = new CustomTrigger("complete_pf_cretaceous_late");
     public static final CustomTrigger COMPLETE_PALEOGENE = new CustomTrigger("complete_pf_paleogene");
     public static final CustomTrigger COMPLETE_NEOGENE = new CustomTrigger("complete_pf_neogene");
@@ -79,6 +80,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_BEAUPREA = new CustomTrigger("pf_book_beauprea");
     public static final CustomTrigger CLICK_SAURAUIA = new CustomTrigger("pf_book_saurauia");
     public static final CustomTrigger CLICK_BISONIA = new CustomTrigger("pf_book_bisonia");
+    public static final CustomTrigger CLICK_DAVIDIA = new CustomTrigger("pf_book_davidia");
+    public static final CustomTrigger CLICK_APHANANTHE = new CustomTrigger("pf_book_aphananthe");
     public static final CustomTrigger CLICK_BELTANELLIFORMIS = new CustomTrigger("pf_book_beltanelliformis");
     public static final CustomTrigger CLICK_ARAUCARIOXYLON = new CustomTrigger("pf_book_araucarioxylon");
     public static final CustomTrigger CLICK_ANEMONE = new CustomTrigger("pf_book_anemone");
@@ -680,8 +683,6 @@ public class ModTriggers
     public static final CustomTrigger CLICK_THUJA = new CustomTrigger("pf_book_thuja");
     public static final CustomTrigger CLICK_LIQUIDAMBAR = new CustomTrigger("pf_book_liquidambar");
     public static final CustomTrigger CLICK_ROGERSIA = new CustomTrigger("pf_book_rogersia");
-    public static final CustomTrigger CLICK_DAVIDIA = new CustomTrigger("pf_book_davidia");
-    public static final CustomTrigger CLICK_APHANANTHE = new CustomTrigger("pf_book_aphanathe");
 
     public static final CustomTrigger CLICK_KERAPHYTON = new CustomTrigger("pf_book_keraphyton");
     public static final CustomTrigger CLICK_PIETZSCHIA = new CustomTrigger("pf_book_pietzschia");
@@ -2194,7 +2195,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_TROPIDOSTEUS = new CustomTrigger("pf_book_tropidosteus");
     public static final CustomTrigger CLICK_GROSSASPIS = new CustomTrigger("pf_book_grossaspis");
     public static final CustomTrigger CLICK_SCANILEPIS = new CustomTrigger("pf_book_scanilepis");
-    public static final CustomTrigger CLICK_OLOROTITAN  = new CustomTrigger("pf_book_olortitan");
+    public static final CustomTrigger CLICK_OLOROTITAN  = new CustomTrigger("pf_book_olorotitan ");
     public static final CustomTrigger CLICK_CYCLURUS = new CustomTrigger("pf_book_cyclurus");
     public static final CustomTrigger CLICK_TETHYBATIS = new CustomTrigger("pf_book_tethybatis");
     public static final CustomTrigger CLICK_PENTANOGMIUS = new CustomTrigger("pf_book_pentanogmius");
@@ -2458,8 +2459,6 @@ public class ModTriggers
     public static final CustomTrigger CLICK_HAMADASUCHUS = new CustomTrigger("pf_book_hamadasuchus");
     public static final CustomTrigger CLICK_EPOIDESUCHUS = new CustomTrigger("pf_book_epoidesuchus");
     public static final CustomTrigger CLICK_ANTARCTOPELTA = new CustomTrigger("pf_book_antarctopelta");
-    public static final CustomTrigger CLICK_AUSTROSAURUS = new CustomTrigger("pf_book_austrosaurus");
-    public static final CustomTrigger CLICK_LAJASVENATOR = new CustomTrigger("pf_book_lajasvenator");
     public static final CustomTrigger CLICK_ASILISAURUS = new CustomTrigger("pf_book_asilisaurus");
     public static final CustomTrigger CLICK_TYPOTHORAX = new CustomTrigger("pf_book_typothorax");
     public static final CustomTrigger CLICK_TITANOPHONEUS = new CustomTrigger("pf_book_titanophoneus");
@@ -2487,6 +2486,7 @@ public class ModTriggers
             ENTER_TRIASSIC,
             ENTER_JURASSIC,
             ENTER_CRETACEOUS_EARLY,
+            ENTER_CRETACEOUS_LATE,
             COMPLETE_PRECAMBRIAN,
             COMPLETE_CAMBRIAN,
             COMPLETE_ORDOVICIAN,
@@ -4905,8 +4905,6 @@ public class ModTriggers
             CLICK_HAMADASUCHUS,
             CLICK_EPOIDESUCHUS,
             CLICK_ANTARCTOPELTA,
-            CLICK_LAJASVENATOR,
-            CLICK_AUSTROSAURUS,
             CLICK_ASILISAURUS,
             CLICK_TYPOTHORAX,
             CLICK_TITANOPHONEUS,

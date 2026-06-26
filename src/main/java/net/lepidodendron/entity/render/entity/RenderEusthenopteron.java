@@ -16,7 +16,7 @@ public class RenderEusthenopteron extends RenderLivingBaseWithBook<EntityPrehist
     }
 
     public static float getScaler() {
-        return 0.57F;
+        return 0.290F;
     }
 
     @Override

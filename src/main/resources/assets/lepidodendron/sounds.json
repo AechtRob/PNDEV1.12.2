@@ -34,6 +34,15 @@
       }
     ]
   },
+
+  "tar_bubble": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tar_bubble",
+        "stream": false
+      }
+    ]
+  },
   
   "wet_crunch_plants": {
     "sounds": [

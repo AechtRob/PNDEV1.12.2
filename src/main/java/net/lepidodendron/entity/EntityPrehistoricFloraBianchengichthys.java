@@ -99,7 +99,7 @@ public class EntityPrehistoricFloraBianchengichthys extends EntityPrehistoricFlo
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISHFOOD);
+		return ArrayUtils.addAll(DietString.FISHFOOD, DietString.ALGAE);
 	}
 
 	@Override

@@ -553,7 +553,7 @@ public class ModelDraconichthys extends ModelBasePalaeopedia {
 
         animator.setAnimation(e.ROAR_ANIMATION);
         animator.startKeyframe(8);
-        animator.rotate(this.jaw, -(float) Math.toRadians(27.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.jaw, -(float) Math.toRadians(37.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(5);
         animator.resetKeyframe(2);

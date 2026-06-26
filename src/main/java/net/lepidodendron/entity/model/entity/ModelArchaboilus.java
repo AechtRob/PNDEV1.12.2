@@ -331,7 +331,7 @@ public class ModelArchaboilus extends ModelBasePalaeopedia {
     }
 
     public void renderStaticDisplayCase(float f) {
-        this.main.offsetY = 0.30F;
+        //this.body.offsetZ = -0.080F;
         this.main.render(0.01f);
         resetToDefaultPose();
     }

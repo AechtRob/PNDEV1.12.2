@@ -96,7 +96,7 @@ public class EntityPrehistoricFloraChangxingaspis extends EntityPrehistoricFlora
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISHFOOD);
+		return ArrayUtils.addAll(DietString.FISHFOOD, DietString.ALGAE);
 	}
 
 	@Override
