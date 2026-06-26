@@ -62,10 +62,6 @@ public class Functions {
                     || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_dead")) {
                 return 140;
             }
-            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_crater")
-                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_crater_rim")) {
-                return 31;
-            }
         }
         if (world.provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
             return 110;

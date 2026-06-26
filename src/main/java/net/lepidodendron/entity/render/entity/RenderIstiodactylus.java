@@ -12,7 +12,7 @@ public class RenderIstiodactylus extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/istiodactylus.png");
 
     public static float getScaler() {
-        return 0.4F;
+        return 0.6F;
     }
 
     public RenderIstiodactylus(RenderManager mgr) {

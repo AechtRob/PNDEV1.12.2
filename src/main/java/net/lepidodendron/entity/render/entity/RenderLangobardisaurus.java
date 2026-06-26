@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderLangobardisaurus extends RenderLivingBaseWithBook<EntityPrehistoricFloraLangobardisaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/langobardisaurus.png");
 
-    public static float getScaler() {return 0.18f;}
+    public static float getScaler() {return 0.3f;}
     public RenderLangobardisaurus(RenderManager mgr) {
         super(mgr, new ModelLangobardisaurus(), 0.3f);
     }

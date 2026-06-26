@@ -11,7 +11,6 @@ import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
-import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousLate;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
@@ -79,8 +78,7 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = false;
 		if (dimID == LepidodendronConfig.dimTriassic
 		 		|| dimID == LepidodendronConfig.dimJurassic
-				|| dimID == LepidodendronConfig.dimCretaceousEarly
-				|| dimID == LepidodendronConfig.dimCretaceousLate)
+				|| dimID == LepidodendronConfig.dimCretaceousEarly)
 			dimensionCriteria = true;
 
 		if (!dimensionCriteria)
@@ -203,8 +201,7 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 		}
 		if (dimID == LepidodendronConfig.dimTriassic
 			|| dimID == LepidodendronConfig.dimJurassic
-			|| dimID == LepidodendronConfig.dimCretaceousEarly
-			|| dimID == LepidodendronConfig.dimCretaceousLate)
+			|| dimID == LepidodendronConfig.dimCretaceousEarly)
 		{
 			GenChance = 35;
 		}

@@ -272,17 +272,6 @@ public class LepidodendronFogSubscribers {
 			//System.out.println("Fog: "+fog.x);
 			return fog;
 		}
-		else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_crater")) {
-			r = 212D/255D;
-			g = 190D/255D;
-			b = 167D/255D;
-			r *= f2 * 0.94F + 0.06F;
-			g *= f2 * 0.94F + 0.06F;
-			b *= f2 * 0.91F + 0.09F;
-			Vec3d fog = new Vec3d(r, g, b);
-			//System.out.println("Fog: "+fog.x);
-			return fog;
-		}
 
 		else if (biome instanceof BiomeCambrian) {
 			if (((BiomeCambrian)biome).getBiomeType() == EnumBiomeTypeCambrian.Dusty) {
@@ -450,10 +439,6 @@ public class LepidodendronFogSubscribers {
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains")) {
 				return 150;
 			}
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_crater")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_crater_rim")) {
-				return 120;
-			}
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression_rim")) {
 				return 120;
@@ -602,26 +587,6 @@ public class LepidodendronFogSubscribers {
 							}
 
 							else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
-									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_crater") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_crater_rim")) && playerEyes <= (double) player.world.getSeaLevel() - 1) {
-								int tt = world.getSeaLevel();
-								int mm = 31;
-								int bb = 25;
-								float foggy = 0;
-								if (playerEyes >= mm) {
-									foggy = (float)((mm - playerEyes) + (tt - mm))/(tt - mm);
-									foggy = 1 - (float)Math.cos(foggy * ((float)Math.PI/2F));
-									//System.err.println("foggy: " + foggy);
-								}
-								else if (playerEyes < mm && playerEyes >= bb) {
-									foggy = (float)(1 - ((mm - playerEyes) / (mm - bb)));
-								}
-								//System.err.println("backgroundFog: " + backgroundFog);
-								//System.err.println("sea: " + world.getSeaLevel());
-								fog = backgroundFog + (fullFogAddition * foggy * 0.93F);
-								//System.err.println("fog: " + fog);
-							}
-
-							else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
 									&& biome instanceof BiomePermian && playerEyes >= (double) player.world.getSeaLevel() - 4) {
 								BiomePermian biomePermian = (BiomePermian) biome;
 								if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
@@ -701,20 +666,6 @@ public class LepidodendronFogSubscribers {
 								}
 							} else if (playerEyes < player.world.getSeaLevel() - 4
 								&& !(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression_rim"))) {
-								fog1 = backgroundFog2 * 2F; //needs gradient with height
-								fog = backgroundFog2 * 2F; //needs gradient with height
-							} else {
-								fog1 = backgroundFog;
-							}
-
-							if (player.world.provider.doesXZShowFog((int) player.posX, (int) player.posZ) && playerEyes >= (double) player.world.getSeaLevel()) {
-								fog1 = backgroundFog + fullFogAddition;
-								if (player.world.isRainingAt(new BlockPos(vec3d))) {
-									float d = player.world.rainingStrength;
-									fog1 = fog1 * d;
-								}
-							} else if (playerEyes < player.world.getSeaLevel() - 4
-									&& !(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_crater") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica_crater_rim"))) {
 								fog1 = backgroundFog2 * 2F; //needs gradient with height
 								fog = backgroundFog2 * 2F; //needs gradient with height
 							} else {

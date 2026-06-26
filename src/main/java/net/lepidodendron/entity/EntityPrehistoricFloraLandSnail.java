@@ -10,7 +10,6 @@ import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.ItemLandSnail;
-import net.lepidodendron.item.entities.ItemUnknownEggLand;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -47,11 +46,6 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 0.8D;
-	}
-
-	@Override
-	public ItemStack getPropagule() {
-		return new ItemStack(ItemUnknownEggLand.block, (int) (1));
 	}
 
 	@Override

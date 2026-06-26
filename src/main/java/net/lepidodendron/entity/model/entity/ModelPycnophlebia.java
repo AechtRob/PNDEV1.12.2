@@ -4,6 +4,7 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraPycnophlebia;
+import net.lepidodendron.entity.EntityPrehistoricFloraPsittacosaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
@@ -327,7 +328,7 @@ public class ModelPycnophlebia extends ModelBasePalaeopedia {
     }
 
     public void renderStaticDisplayCase(float f) {
-        //this.body.offsetZ = -0.080F;
+        this.main.offsetY = 0.54F;
         this.main.render(0.01f);
         resetToDefaultPose();
     }

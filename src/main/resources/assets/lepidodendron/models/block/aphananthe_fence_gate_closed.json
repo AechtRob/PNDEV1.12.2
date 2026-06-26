@@ -1,7 +1,0 @@
-{
- "parent": "block/fence_gate_closed",
- "textures": {
- "texture": "lepidodendron:blocks/aphananthe_planks",
- "particle": "lepidodendron:blocks/aphananthe_planks"
- }
-}

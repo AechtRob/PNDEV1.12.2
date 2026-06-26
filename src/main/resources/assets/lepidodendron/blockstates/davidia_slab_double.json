@@ -1,7 +1,0 @@
-{
- "variants": {
- "variant=default": {
- "model": "lepidodendron:davidia_slab_double"
- }
- }
-}
