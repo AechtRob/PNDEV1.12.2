@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.procedure.ProcedureSpawnNilssoniocladus;
 import net.lepidodendron.procedure.ProcedureWorldGenSycamore;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.state.IBlockState;
@@ -84,9 +85,13 @@ public class WorldGenSycamoreTree extends WorldGenAbstractTree
                     }
                     if (TreeHeight > 25) {
                         ProcedureWorldGenSycamore.executeProcedure(worldIn, position, TreeHeight,2);
+                        ProcedureSpawnNilssoniocladus.executeProcedure(position.getX(), position.getY(), position.getZ(), worldIn, true, false);
+
                     }
                     else {
                         ProcedureWorldGenSycamore.executeProcedure(worldIn, position, TreeHeight,1);
+                        ProcedureSpawnNilssoniocladus.executeProcedure(position.getX(), position.getY(), position.getZ(), worldIn, true, false);
+
                     }
                     return true;
                 }

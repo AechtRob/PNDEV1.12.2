@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockBisoniaSapling;
+import net.lepidodendron.procedure.ProcedureSpawnNilssoniocladus;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -79,6 +80,9 @@ public class WorldGenBisoniaTree extends WorldGenAbstractTree
                 if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
                     BlockBisoniaSapling.BlockCustom.growBisonia(worldIn, position, rand);
+
+                    ProcedureSpawnNilssoniocladus.executeProcedure(position.getX(), position.getY(), position.getZ(), worldIn, true, false);
+
                     return true;
                 }
                 else

@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockTrochodendroidesLog;
+import net.lepidodendron.procedure.ProcedureSpawnNilssoniocladus;
 import net.lepidodendron.procedure.ProcedureWorldGenTrochodendroides;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.state.IBlockState;
@@ -91,6 +92,7 @@ public class WorldGenTrochodendroidesTree extends WorldGenAbstractTree
                         TreeHeight = 8 + rand.nextInt(9);
                     }
                     ProcedureWorldGenTrochodendroides.executeProcedure(worldIn, position.up(BareTrunk), TreeHeight);
+                    ProcedureSpawnNilssoniocladus.executeProcedure(position.getX(), position.getY(), position.getZ(), worldIn, true, false);
 
                     //Surrounding stems:
                     for (int d = 0; d <= 3; d++) {
@@ -113,6 +115,7 @@ public class WorldGenTrochodendroidesTree extends WorldGenAbstractTree
                             TreeHeight = 4 + rand.nextInt(9);
                         }
                         ProcedureWorldGenTrochodendroides.executeProcedure(worldIn, newPos.up(BareTrunkSide), TreeHeight - BareTrunkSide);
+                        ProcedureSpawnNilssoniocladus.executeProcedure(newPos.getX(), newPos.getY(), newPos.getZ(), worldIn, true, false);
                     }
                     return true;
                 }

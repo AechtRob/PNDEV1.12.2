@@ -131,7 +131,7 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeCretaceousLate)
 		{
 			BiomeCretaceousLate biomeCretaceousLate = (BiomeCretaceousLate) biome;
-			if (biomeCretaceousLate.getRegistryName().toString().equalsIgnoreCase("lepidodendron:")) {
+			if (biomeCretaceousLate.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_subtropical_forest_clearing")) {
 				heightCheck = true;
 			}
 			else {
@@ -154,6 +154,9 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 
 		if (LepidodendronConfig.dimCretaceousEarly == dimID || LepidodendronConfig.dimCretaceousLate == dimID) {
 			GenChance = 4;
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_subtropical_forest_clearing")) {
+				GenChance = 126;
+			}
 		}
 
 		int maxheight = LepidodendronConfigPlants.maxheightHemp;

@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
+import net.lepidodendron.procedure.ProcedureSpawnNilssoniocladus;
 import net.lepidodendron.procedure.ProcedureWorldGenMagnolia;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.state.IBlockState;
@@ -92,6 +93,8 @@ public class WorldGenMagnoliaTree extends WorldGenAbstractTree
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
 					ProcedureWorldGenMagnolia.executeProcedure($_dependencies);
+                    ProcedureSpawnNilssoniocladus.executeProcedure(position.getX(), position.getY(), position.getZ(), worldIn, true, false);
+
                     return true;
                 }
                 else

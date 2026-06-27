@@ -1,22 +1,21 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.block.BlockDryophyllumLog;
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.procedure.ProcedureSpawnNilssoniocladus;
-import net.lepidodendron.procedure.ProcedureWorldGenDryophyllum;
+import net.lepidodendron.procedure.ProcedureWorldGenGlyptostrobus;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import java.util.Random;
 
-public class WorldGenDryophyllumTree extends WorldGenAbstractTree
+public class WorldGenGlyptostrobusTree extends WorldGenAbstractTree
 {
 
-    public WorldGenDryophyllumTree(boolean notify)
+    public WorldGenGlyptostrobusTree(boolean notify)
     {
         super(notify);
     }
@@ -81,14 +80,14 @@ public class WorldGenDryophyllumTree extends WorldGenAbstractTree
 
                 if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
-                    int BareTrunk = 2 + rand.nextInt(4);
-                    for (int log = 0; log<BareTrunk; log++) {
-                        worldIn.setBlockState(position.up(log), BlockDryophyllumLog.block.getDefaultState().withProperty(BlockDryophyllumLog.BlockCustom.FACING, EnumFacing.NORTH), 3);
-                    }
-
-                    int TreeHeight = 6 + rand.nextInt(6);
-                    ProcedureWorldGenDryophyllum.executeProcedure(worldIn, position.up(BareTrunk), TreeHeight + BareTrunk,1, BareTrunk);
+                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
+					$_dependencies.put("x", position.getX());
+					$_dependencies.put("y", position.getY());
+					$_dependencies.put("z", position.getZ());
+					$_dependencies.put("world", worldIn);
+                    ProcedureWorldGenGlyptostrobus.executeProcedure($_dependencies);
                     ProcedureSpawnNilssoniocladus.executeProcedure(position.getX(), position.getY(), position.getZ(), worldIn, true, false);
+
                     return true;
                 }
                 else

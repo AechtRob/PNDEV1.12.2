@@ -5,11 +5,9 @@ import net.lepidodendron.*;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeLilyPadBase;
 import net.lepidodendron.item.ItemSalviniaItem;
-import net.lepidodendron.util.BlockSounds;
-import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
-import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousLate;
 import net.lepidodendron.world.gen.SalviniaGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
@@ -135,6 +133,20 @@ public class BlockSalvinia extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 		}
+		
+		if (biome instanceof BiomeCretaceousLate)
+		{
+			BiomeCretaceousLate biomeCretaceousLate = (BiomeCretaceousLate)biome;
+			if (biomeCretaceousLate.getBiomeType() == EnumBiomeTypeCretaceousLate.Late_Cretaceous_North_America_Laramidia_North
+				|| biomeCretaceousLate.getBiomeType() == EnumBiomeTypeCretaceousLate.Late_Cretaceous_North_America_Laramidia_South) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+		
+		
 		if (!biomeCriteria)
 			return;
 
@@ -157,7 +169,9 @@ public class BlockSalvinia extends ElementsLepidodendronMod.ModElement {
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia_drooping_swamp")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_asia_drooping_swamp")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_asia_drooping_swamp")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_subtropical_forest_clearing")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_creek_north_america_laramidia_subtropical_forest_clearing")) {
 			GenChance = 192;
 		}
 

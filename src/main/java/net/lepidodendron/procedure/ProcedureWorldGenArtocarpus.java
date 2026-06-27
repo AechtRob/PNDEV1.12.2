@@ -379,6 +379,9 @@ public class ProcedureWorldGenArtocarpus extends ElementsLepidodendronMod.ModEle
 				
 			}
 
+			ProcedureSpawnNilssoniocladus.executeProcedure(x, y, z, world, true, false);
+
+
 		}
 	}
 }
