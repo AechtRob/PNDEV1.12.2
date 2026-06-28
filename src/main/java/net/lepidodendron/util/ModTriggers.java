@@ -2463,7 +2463,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_TYPOTHORAX = new CustomTrigger("pf_book_typothorax");
     public static final CustomTrigger CLICK_TITANOPHONEUS = new CustomTrigger("pf_book_titanophoneus");
     public static final CustomTrigger CLICK_VENETORAPTOR = new CustomTrigger("pf_book_venetoraptor");
-
+    public static final CustomTrigger CLICK_AUSTROSAURUS = new CustomTrigger("pf_book_austrosaurus");
+    public static final CustomTrigger CLICK_LAJASVENATOR = new CustomTrigger("pf_book_lajasvenator");
 
 
     // public static final CustomTrigger CLICK_ = new CustomTrigger("pf_book_"); TEMPLATE
@@ -4911,7 +4912,9 @@ public class ModTriggers
             CLICK_VENETORAPTOR,
             CLICK_SELKIRKIA,
             CLICK_NAILIANA,
-            CLICK_GYALTSENGLOSSUS
+            CLICK_GYALTSENGLOSSUS,
+            CLICK_LAJASVENATOR,
+            CLICK_AUSTROSAURUS
     };
 
     /**
