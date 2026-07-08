@@ -4632,7 +4632,6 @@ public class ModTriggers
             CLICK_KUEHNEOSUCHUS,
             CLICK_KUEHNEOSAURUS,
             CLICK_OZIMEK,
-            CLICK_SHAROVIPTERYX,
             CLICK_XIANGLONG,
             CLICK_RHENONEMA,
             CLICK_TROPIDOSTEUS,
