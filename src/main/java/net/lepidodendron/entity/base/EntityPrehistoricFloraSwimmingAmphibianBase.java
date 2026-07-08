@@ -154,6 +154,9 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
 
     @Override
     public boolean isInWater() {
+        if (this.world == null) {
+            return false;
+        }
         if (!this.world.isBlockLoaded(this.getPosition())) {
             return false;
         }

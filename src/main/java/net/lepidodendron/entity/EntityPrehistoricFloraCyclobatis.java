@@ -38,7 +38,7 @@ public class EntityPrehistoricFloraCyclobatis extends EntityPrehistoricFloraSwim
 	public ChainBuffer chainBuffer;
 	public ChainBuffer tailBuffer;
 
-	private static final DataParameter<Boolean> SWIMMINGPN = EntityDataManager.createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.BOOLEAN);
+	private static final DataParameter<Boolean> SWIMMINGPN = EntityDataManager.createKey(EntityPrehistoricFloraCyclobatis.class, DataSerializers.BOOLEAN);
 	//Needs to be here because it is not loaded in time to be accessed by the client if it's on the parent class!
 
 	public EntityPrehistoricFloraCyclobatis(World world) {
