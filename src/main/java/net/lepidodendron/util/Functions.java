@@ -229,6 +229,10 @@ public class Functions {
     }
 
     public static void setBlockStateAndCheckForDoublePlant(World worldIn, BlockPos pos, IBlockState state, int flags) {
+        if (worldIn.isOutsideBuildHeight(pos)) {
+            return;
+        }
+
         IBlockState currentState = worldIn.getBlockState(pos);
         Block currentBlock = currentState.getBlock();
 

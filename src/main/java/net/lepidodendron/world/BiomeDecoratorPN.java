@@ -86,7 +86,9 @@ public class BiomeDecoratorPN extends BiomeDecorator {
                         || worldgenabstracttree instanceof WorldGenGinkgoTree
                         || worldgenabstracttree instanceof WorldGenGinkgoitesTree
                         || worldgenabstracttree instanceof WorldGenTallAraucariaTree
-                        || worldgenabstracttree instanceof WorldGenYewTree) {
+                        || worldgenabstracttree instanceof WorldGenYewTree
+                        || worldgenabstracttree instanceof WorldGenLiriodendronTree
+                        || worldgenabstracttree instanceof WorldGenLiriodendritesTree) {
                     k6 = random.nextInt(8) + 12;
                     l = random.nextInt(8) + 12;
                 }

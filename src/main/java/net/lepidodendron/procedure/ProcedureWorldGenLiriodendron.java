@@ -67,7 +67,7 @@ public class ProcedureWorldGenLiriodendron extends ElementsLepidodendronMod.ModE
 				Block block = world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z)), world,
 					new BlockPos((int) x, (int) (y + counter), (int) z))) {
-					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockLiriodendronLog.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockLiriodendronLog.block.getDefaultState(), 2);
 					counter = (double) (counter + 1);
 					}
 				}
