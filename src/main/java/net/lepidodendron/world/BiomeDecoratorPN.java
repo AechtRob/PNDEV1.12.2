@@ -4,6 +4,7 @@ import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousLate;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
@@ -389,6 +390,13 @@ public class BiomeDecoratorPN extends BiomeDecorator {
                     || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_mountains")
                     || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia_yixian_foothills")
                     || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_mountains");
+            if (hillsBiome) {
+                hillsBiomeSilkverfish = true;
+            }
+        }
+        if (biomeIn instanceof BiomeCretaceousLate) {
+            hillsBiome = biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_appalachia_mountains")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_mountains");
             if (hillsBiome) {
                 hillsBiomeSilkverfish = true;
             }
