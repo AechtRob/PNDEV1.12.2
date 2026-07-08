@@ -193,19 +193,19 @@ public class EntityPrehistoricFloraCtenosauriscus extends EntityPrehistoricFlora
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:ctenosauriscus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:arizonasaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:ctenosauriscus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:arizonasaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:ctenosauriscus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:arizonasaurus_death"));
 	}
 
 	@Override

@@ -168,20 +168,20 @@ public class EntityPrehistoricFloraSaharastega extends EntityPrehistoricFloraSwi
 
 	@Override
 	public net.minecraft.util.SoundEvent getAmbientSound() {
-	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:sclerocephalus_idle"));
+		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:megalocephalus_idle"));
 	}
 
 	@Override
 	public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
-	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:sclerocephalus_hurt"));
+		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:megalocephalus_hurt"));
 	}
 
 	@Override
 	public net.minecraft.util.SoundEvent getDeathSound() {
-	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:sclerocephalus_death"));
+		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:megalocephalus_death"));
 	}
 
 	@Override

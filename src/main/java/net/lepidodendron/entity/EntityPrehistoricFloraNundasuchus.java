@@ -236,19 +236,19 @@ public class EntityPrehistoricFloraNundasuchus extends EntityPrehistoricFloraLan
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:largecroc_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:normalcroc_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:largecroc_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:normalcroc_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:largecroc_death"));
+	            .getObject(new ResourceLocation("lepidodendron:normalcroc_death"));
 	}
 
 	@Override

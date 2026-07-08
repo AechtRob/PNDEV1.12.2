@@ -245,13 +245,13 @@ public class EntityPrehistoricFloraMontsecosuchus extends EntityPrehistoricFlora
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:hyphalosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:tinycroc_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:hyphalosaurus_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:tinycroc_hurt"));
 	}
 
 	//@Override
@@ -262,7 +262,7 @@ public class EntityPrehistoricFloraMontsecosuchus extends EntityPrehistoricFlora
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:hyphalosaurus_death"));
+				.getObject(new ResourceLocation("lepidodendron:tinycroc_death"));
 	}
 
 	//@Override

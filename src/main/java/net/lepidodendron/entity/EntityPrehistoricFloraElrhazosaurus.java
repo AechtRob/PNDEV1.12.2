@@ -361,29 +361,29 @@ public class EntityPrehistoricFloraElrhazosaurus extends EntityPrehistoricFloraL
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:leaellynasaura_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:dryosaurid_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:leaellynasaura_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:dryosaurid_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:leaellynasaura_death"));
+	            .getObject(new ResourceLocation("lepidodendron:dryosaurid_death"));
 	}
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:leaellynasaura_idle"));
+				.getObject(new ResourceLocation("lepidodendron:dryosaurid_alarm"));
 	}
 
 	public SoundEvent getChatterSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:leaellynasaura_display"));
+				.getObject(new ResourceLocation("lepidodendron:dryosaurid_chatter"));
 	}
 
 	public void playAlarmSound()

@@ -227,13 +227,13 @@ public class EntityPrehistoricFloraPetrolacosaurus extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:petrolacosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:hylonomus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:petrolacosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:hylonomus_death"));
 	}
 
 	@Override

@@ -176,19 +176,19 @@ public class EntityPrehistoricFloraArganaceras extends EntityPrehistoricFloraLan
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:arganaceras_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:bunostegos_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:arganaceras_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:bunostegos_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:arganaceras_death"));
+	            .getObject(new ResourceLocation("lepidodendron:bunostegos_death"));
 	}
 
 	@Override

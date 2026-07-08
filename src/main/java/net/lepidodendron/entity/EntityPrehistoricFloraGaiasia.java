@@ -265,19 +265,19 @@ public class EntityPrehistoricFloraGaiasia extends EntityPrehistoricFloraSwimmin
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:pholidogaster_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:pholiderpeton_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:pholidogaster_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:pholiderpeton_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:pholidogaster_death"));
+	            .getObject(new ResourceLocation("lepidodendron:pholiderpeton_death"));
 	}
 
 	@Override
