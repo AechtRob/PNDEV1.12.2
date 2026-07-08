@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderEocaecilia extends RenderLivingBaseWithBook<EntityPrehistoricFloraEocaecilia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eocaecilia.png");
 
-    public static float getScaler() {return 0.1f;}
+    public static float getScaler() {return 0.15f;}
 
     public RenderEocaecilia(RenderManager mgr) {
         super(mgr, new ModelEocaecilia(), 0.5f);

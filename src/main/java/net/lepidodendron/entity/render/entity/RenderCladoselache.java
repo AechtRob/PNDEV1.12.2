@@ -16,7 +16,7 @@ public class RenderCladoselache extends RenderLivingBaseWithBook<EntityPrehistor
     }
 
     public static float getScaler() {
-        return 0.52F;
+        return 0.69F;
     }
 
     @Override
