@@ -77,12 +77,7 @@ public class WorldGenLiriodendronTree extends WorldGenAbstractTree
                 BlockPos down = position.down();
                 IBlockState state = worldIn.getBlockState(down);
                 boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
-                if (position.getY() >= 200) {
-                    return false;
-                }
-                if (!worldIn.isBlockLoaded(position)) {
-                    return false;
-                }
+
                 if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
                     Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();

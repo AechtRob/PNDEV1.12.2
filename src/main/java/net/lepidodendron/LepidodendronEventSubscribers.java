@@ -1101,7 +1101,7 @@ public class LepidodendronEventSubscribers {
 		while (i + 1 <= event.getDrops().size()) {
 			ItemStack itemStack = event.getDrops().get(i);
 			int stackSize = itemStack.getCount();
-			itemStack.setCount(1);
+			//itemStack.setCount(1);
 			if (event.getState().getBlock() instanceof BlockDoublePlant && LepidodendronConfig.doPropagationVanilla) {
 				dropSelf = true; //a drop already exists so no need to add a new one
 			}
@@ -1109,7 +1109,7 @@ public class LepidodendronEventSubscribers {
 			if (event.getState().getBlock() instanceof BlockTallGrass && LepidodendronConfig.doPropagationVanilla) {
 				BlockTallGrass.EnumType blocktallgrass$enumtype = (BlockTallGrass.EnumType) event.getState().getValue(BlockTallGrass.TYPE);
 				if (blocktallgrass$enumtype == BlockTallGrass.EnumType.GRASS
-						&& ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.TALLGRASS, 1, 1))) {
+						&& ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.TALLGRASS, stackSize, 1))) {
 					dropSelf = true; //a drop already exists so no need to add a new one
 				}
 			}
@@ -1117,7 +1117,7 @@ public class LepidodendronEventSubscribers {
 			if (event.getState().getBlock() instanceof BlockTallGrass && LepidodendronConfig.doPropagationVanilla) {
 				BlockTallGrass.EnumType blocktallgrass$enumtype = (BlockTallGrass.EnumType) event.getState().getValue(BlockTallGrass.TYPE);
 				if (blocktallgrass$enumtype == BlockTallGrass.EnumType.FERN
-						&& ItemStack.areItemStacksEqual(itemStack, new ItemStack(Items.WHEAT_SEEDS, 1))) {
+						&& ItemStack.areItemStacksEqual(itemStack, new ItemStack(Items.WHEAT_SEEDS, stackSize))) {
 					event.getDrops().remove(i); //wheat seeds from ferns dont make sense
 				}
 			}
@@ -1125,7 +1125,7 @@ public class LepidodendronEventSubscribers {
 			if (event.getState().getBlock() instanceof BlockDoublePlant && LepidodendronConfig.doPropagationVanilla) {
 				BlockDoublePlant.EnumPlantType blockdoubleplant$enumtype = (BlockDoublePlant.EnumPlantType) event.getState().getValue(BlockDoublePlant.VARIANT);
 				if (blockdoubleplant$enumtype == BlockDoublePlant.EnumPlantType.FERN
-						&& ItemStack.areItemStacksEqual(itemStack, new ItemStack(Items.WHEAT_SEEDS, 1))) {
+						&& ItemStack.areItemStacksEqual(itemStack, new ItemStack(Items.WHEAT_SEEDS, stackSize))) {
 					event.getDrops().remove(i); //wheat seeds from ferns dont make sense
 				}
 			}
@@ -1140,27 +1140,27 @@ public class LepidodendronEventSubscribers {
 			if (block instanceof BlockSapling && LepidodendronConfig.doPropagationVanilla &&
 					(event.getState().getBlock() == Blocks.LEAVES
 							|| event.getState().getBlock() == Blocks.LEAVES2)) {
-				if (ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.SAPLING, 1, 0))) { //Oak
+				if (ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.SAPLING, stackSize, 0))) { //Oak
 					event.getDrops().remove(i);
 					event.getDrops().add(i, new ItemStack(ItemOakAcorn.block, stackSize));
 				}
-				if (ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.SAPLING, 1, 1))) { //Spruce
+				if (ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.SAPLING, stackSize, 1))) { //Spruce
 					event.getDrops().remove(i);
 					event.getDrops().add(i, new ItemStack(ItemSpruceFruit.block, stackSize));
 				}
-				if (ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.SAPLING, 1, 2))) { //Birch
+				if (ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.SAPLING, stackSize, 2))) { //Birch
 					event.getDrops().remove(i);
 					event.getDrops().add(i, new ItemStack(ItemBirchFruit.block, stackSize));
 				}
-				if (ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.SAPLING, 1, 3))) { //Jungle
+				if (ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.SAPLING, stackSize, 3))) { //Jungle
 					event.getDrops().remove(i);
 					event.getDrops().add(i, new ItemStack(ItemJungleFruit.block, stackSize));
 				}
-				if (ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.SAPLING, 1, 4))) { //Acacia
+				if (ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.SAPLING, stackSize, 4))) { //Acacia
 					event.getDrops().remove(i);
 					event.getDrops().add(i, new ItemStack(ItemAcaciaFruit.block, stackSize));
 				}
-				if (ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.SAPLING, 1, 5))) { //Dark Oak
+				if (ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.SAPLING, stackSize, 5))) { //Dark Oak
 					event.getDrops().remove(i);
 					event.getDrops().add(i, new ItemStack(ItemOakDarkAcorn.block, stackSize));
 				}
@@ -1168,13 +1168,13 @@ public class LepidodendronEventSubscribers {
 			if (event.getState().getBlock() instanceof BlockDoublePlant && LepidodendronConfig.doPropagationVanilla) {
 				BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType) event.getState().getValue(BlockDoublePlant.VARIANT);
 				if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.GRASS
-						&& ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.TALLGRASS, 1, 1))) {
-					event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, 1, 2));
+						&& ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.TALLGRASS, stackSize, 1))) {
+					event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, stackSize, 2));
 					dropSelf = true; //This now drops itself
 				}
 				if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.FERN
-						&& ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.TALLGRASS, 1, 2)) && LepidodendronConfig.doPropagationVanilla) {
-					event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, 1, 3));
+						&& ItemStack.areItemStacksEqual(itemStack, new ItemStack(Blocks.TALLGRASS, stackSize, 2)) && LepidodendronConfig.doPropagationVanilla) {
+					event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, stackSize, 3));
 					dropSelf = true; //This now drops itself
 				}
 			}

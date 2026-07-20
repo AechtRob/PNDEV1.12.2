@@ -68,9 +68,9 @@ public class ProcedureWorldGenLiriodendron extends ElementsLepidodendronMod.ModE
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z)), world,
 					new BlockPos((int) x, (int) (y + counter), (int) z))) {
 					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockLiriodendronLog.block.getDefaultState(), 2);
-					counter = (double) (counter + 1);
-					}
 				}
+				counter = (double) (counter + 1);
+			}
 			
 			MainTrunkHeight = (double) (15) + Math.round((Math.random() * 100) / 4);
 			if (Math.random() > 0.6) {
@@ -82,9 +82,9 @@ public class ProcedureWorldGenLiriodendron extends ElementsLepidodendronMod.ModE
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + BareTrunkHeight +  counter), (int) z)), world,
 					new BlockPos((int) x, (int) (y + BareTrunkHeight +  counter), (int) z))) {
 					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + BareTrunkHeight +  counter), (int) z), BlockLiriodendronLog.block.getDefaultState(), 3);
-					counter = (double) (counter + 1);
-					}
 				}
+				counter = (double) (counter + 1);
+			}
 
 			//Leaves:
 			Block block = world.getBlockState(new BlockPos((int) x, (int) (y + BareTrunkHeight + counter), (int) z)).getBlock();

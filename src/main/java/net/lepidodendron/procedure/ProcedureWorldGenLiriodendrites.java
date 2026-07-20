@@ -51,6 +51,7 @@ public class ProcedureWorldGenLiriodendrites extends ElementsLepidodendronMod.Mo
 		double Layer4Number = 0;
 		double LayerCounter = 0;
 		double TopCount = 0;
+
 		world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
 		Material material = world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getMaterial();
 		if ((world.canSeeSky(new BlockPos((int) x, (int) y, (int) z)))
@@ -61,30 +62,28 @@ public class ProcedureWorldGenLiriodendrites extends ElementsLepidodendronMod.Mo
 			&& material != Material.ROCK
 			&& material != Material.SAND
 			&& material != Material.WOOD) {
-			BareTrunkHeight = (double) (2) + Math.round((Math.random() * 100) / 35);
+			BareTrunkHeight = (double) (2D) + Math.round((Math.random() * 100) / 35);
 			counter = (double) 0;
-			while (counter <= BareTrunkHeight) {
+			while ((int) counter <= (int) BareTrunkHeight) {
 				Block block = world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z)), world,
 					new BlockPos((int) x, (int) (y + counter), (int) z))) {
 					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockLiriodendronLog.block.getDefaultState(), 3);
-					counter = (double) (counter + 1);
-					}
 				}
-			
-			MainTrunkHeight = (double) (10) + Math.round((Math.random() * 100) / 5);
-			if (Math.random() > 0.6) {
-				MainTrunkHeight = MainTrunkHeight + Math.round((Math.random() * 100) / 25);
+				counter = (double) (counter + 1);
 			}
+			
+			MainTrunkHeight = (double) (10) + world.rand.nextInt(20);
+
 			counter = 1;
-			while (counter <= MainTrunkHeight) {
+			while ((int) counter <= (int) MainTrunkHeight) {
 				Block block = world.getBlockState(new BlockPos((int) x, (int) (y + BareTrunkHeight + counter), (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + BareTrunkHeight +  counter), (int) z)), world,
 					new BlockPos((int) x, (int) (y + BareTrunkHeight +  counter), (int) z))) {
 					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + BareTrunkHeight +  counter), (int) z), BlockLiriodendronLog.block.getDefaultState(), 3);
-					counter = (double) (counter + 1);
-					}
 				}
+				counter = (double) (counter + 1);
+			}
 
 			//Leaves:
 			Block block = world.getBlockState(new BlockPos((int) x, (int) (y + BareTrunkHeight + counter), (int) z)).getBlock();
