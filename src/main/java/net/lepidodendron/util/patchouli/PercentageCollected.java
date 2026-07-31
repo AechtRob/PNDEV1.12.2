@@ -262,6 +262,12 @@ public class PercentageCollected {
             spawnListJoiner.add("lepidodendron:prehistoric_flora_websteroprion");
             mobList = spawnListJoiner.toArray(mobList);
         }
+        if (dimension == 1 || dimension == 2 || dimension == 3 || dimension == 4)
+        {
+            ObjectArrayList<String> spawnListJoiner = new ObjectArrayList<String>(Arrays.asList(mobList));
+            spawnListJoiner.add("lepidodendron:prehistoric_flora_selkirkia");
+            mobList = spawnListJoiner.toArray(mobList);
+        }
 
         ObjectArrayList<DimensionSpawns.PPEntry> spawnListInterim = new ObjectArrayList<DimensionSpawns.PPEntry>();
         if (mobList.length >= 1) {
@@ -575,6 +581,13 @@ public class PercentageCollected {
             mobList = spawnListJoiner.toArray(mobList);
         }
 
+        if (dimension == 1 || dimension == 2 || dimension == 3 || dimension == 4)
+        {
+            ObjectArrayList<String> spawnListJoiner = new ObjectArrayList<String>(Arrays.asList(mobList));
+            spawnListJoiner.add("lepidodendron:prehistoric_flora_selkirkia");
+            mobList = spawnListJoiner.toArray(mobList);
+        }
+
         ObjectArrayList<DimensionSpawns.PPEntry> spawnListInterim = new ObjectArrayList<DimensionSpawns.PPEntry>();
         if (mobList.length >= 1) {
             for (String entry : mobList) {
@@ -821,6 +834,13 @@ public class PercentageCollected {
         {
             ObjectArrayList<String> spawnListJoiner = new ObjectArrayList<String>(Arrays.asList(mobList));
             spawnListJoiner.add("lepidodendron:prehistoric_flora_websteroprion");
+            mobList = spawnListJoiner.toArray(mobList);
+        }
+
+        if (dimension == 1 || dimension == 2 || dimension == 3 || dimension == 4)
+        {
+            ObjectArrayList<String> spawnListJoiner = new ObjectArrayList<String>(Arrays.asList(mobList));
+            spawnListJoiner.add("lepidodendron:prehistoric_flora_selkirkia");
             mobList = spawnListJoiner.toArray(mobList);
         }
 

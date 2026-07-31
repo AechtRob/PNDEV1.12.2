@@ -1,7 +1,9 @@
 package net.lepidodendron.util.patchouli;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.lepidodendron.util.EnumBiomeTypeCambrian;
 import net.lepidodendron.world.biome.EntityLists;
+import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
@@ -118,6 +120,7 @@ public class BiomeSpawns {
             spawnListJoiner.addAll(spawnListJoiner1);
             mobList = spawnListJoiner.toArray(mobList);
         }
+
         //Websteroprioin spawns as a block, so this needs an overrride here:
         if (biomeID.equalsIgnoreCase("lepidodendron:devonian_ocean"))
         {
@@ -125,6 +128,35 @@ public class BiomeSpawns {
             spawnListJoiner.add("lepidodendron:prehistoric_flora_websteroprion");
             mobList = spawnListJoiner.toArray(mobList);
         }
+
+        //Selkirkia spawns as a block, so this needs an overrride here:
+        if (biomeID.equalsIgnoreCase("lepidodendron:ordovician_algal_reef"))
+        {
+            ObjectArrayList<String> spawnListJoiner = new ObjectArrayList<String>(Arrays.asList(mobList));
+            spawnListJoiner.add("lepidodendron:prehistoric_flora_selkirkia");
+            mobList = spawnListJoiner.toArray(mobList);
+        }
+        if (biomeID.equalsIgnoreCase("lepidodendron:silurian_sea"))
+        {
+            ObjectArrayList<String> spawnListJoiner = new ObjectArrayList<String>(Arrays.asList(mobList));
+            spawnListJoiner.add("lepidodendron:prehistoric_flora_selkirkia");
+            mobList = spawnListJoiner.toArray(mobList);
+        }
+        if (biomeID.equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky"))
+        {
+            ObjectArrayList<String> spawnListJoiner = new ObjectArrayList<String>(Arrays.asList(mobList));
+            spawnListJoiner.add("lepidodendron:prehistoric_flora_selkirkia");
+            mobList = spawnListJoiner.toArray(mobList);
+        }
+        if (biome instanceof BiomeCambrian) {
+            BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
+            if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Ocean) {
+                ObjectArrayList<String> spawnListJoiner = new ObjectArrayList<String>(Arrays.asList(mobList));
+                spawnListJoiner.add("lepidodendron:prehistoric_flora_selkirkia");
+                mobList = spawnListJoiner.toArray(mobList);
+            }
+        }
+
         if (biomeID.equalsIgnoreCase("lepidodendron:jurassic_ocean_coral")
             || biomeID.equalsIgnoreCase("lepidodendron:jurassic_ocean_rafts"))
         {

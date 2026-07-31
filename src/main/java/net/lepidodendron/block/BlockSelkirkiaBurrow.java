@@ -7,14 +7,15 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.EntityPrehistoricFloraSelkirkia;
-import net.lepidodendron.entity.EntityPrehistoricFloraSelkirkiaHole;
-import net.lepidodendron.tileentity.TileEntityFacivermis;
 import net.lepidodendron.tileentity.TileEntitySelkirkia;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.EnumBiomeTypeCambrian;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
+import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -28,8 +29,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
-import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -40,8 +39,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -55,7 +52,6 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -94,19 +90,20 @@ public class BlockSelkirkiaBurrow extends ElementsLepidodendronMod.ModElement {
 		boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimSelkirkia))
 			dimensionCriteria = true;
-		if ((dimID == LepidodendronConfig.dimCambrian)
-				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
-				|| (dimID == LepidodendronConfig.dimCarboniferous)
+		if ((dimID == LepidodendronConfig.dimCarboniferous)
 				|| (dimID == LepidodendronConfig.dimPrecambrian)
 				|| (dimID == LepidodendronConfig.dimPermian)
 				|| (dimID == LepidodendronConfig.dimTriassic)
 				|| (dimID == LepidodendronConfig.dimJurassic)
 				|| (dimID == LepidodendronConfig.dimCretaceousEarly)
+				|| (dimID == LepidodendronConfig.dimCretaceousLate)
 		) {
 			dimensionCriteria = false;
 		}
 		if ((dimID == LepidodendronConfig.dimCambrian)
 				|| (dimID == LepidodendronConfig.dimOrdovician)
+				|| (dimID == LepidodendronConfig.dimSilurian)
+				|| (dimID == LepidodendronConfig.dimDevonian)
 		) {
 			dimensionCriteria = true;
 		}
@@ -116,8 +113,6 @@ public class BlockSelkirkiaBurrow extends ElementsLepidodendronMod.ModElement {
 		int weight = LepidodendronConfigPlants.weightSelkirkia;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
-		if (dimID == LepidodendronConfig.dimCambrian)
-			weight = 100; //Full scale populations in these dims
 
 		if (Math.random() < ((double) (100 - (double) weight)/100)) {
 			return;
@@ -140,14 +135,40 @@ public class BlockSelkirkiaBurrow extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomeCambrian)
 		{
-//			BiomeDevonian biomeDev = (BiomeDevonian) biome;
-//			if (biomeDev.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
-//				biomeCriteria = true;
-//			}
-//			else {
-//				biomeCriteria = false;
-//			}
-			biomeCriteria = biome.getRegistryName().toString().equals("lepidodendron:devonian_ocean");
+			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
+			if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Ocean) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+		if (biome instanceof BiomeOrdovician)
+		{
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_algal_reef")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+		if (biome instanceof BiomeSilurian)
+		{
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+		if (biome instanceof BiomeDevonian)
+		{
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
 		}
 		if (!biomeCriteria)
 			return;
@@ -155,12 +176,16 @@ public class BlockSelkirkiaBurrow extends ElementsLepidodendronMod.ModElement {
 		int multiplier = 1;
 		if ((dimID == LepidodendronConfig.dimCambrian)
 				|| (dimID == LepidodendronConfig.dimOrdovician)
+				|| (dimID == LepidodendronConfig.dimSilurian)
+				|| (dimID == LepidodendronConfig.dimDevonian)
 		) {
 			multiplier = 2;
 		}
 		int dimWeight = 1;
 		if ((dimID != LepidodendronConfig.dimCambrian)
-				|| (dimID == LepidodendronConfig.dimOrdovician)) {
+				|| (dimID == LepidodendronConfig.dimOrdovician)
+				|| (dimID == LepidodendronConfig.dimSilurian)
+				|| (dimID == LepidodendronConfig.dimDevonian)) {
 			dimWeight = 2;
 		}
 		int minWaterDepth = 2 * dimWeight;

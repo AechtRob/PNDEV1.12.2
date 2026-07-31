@@ -71,7 +71,7 @@ public class EntityPrehistoricFloraSelkirkia extends EntityPrehistoricFloraTrilo
 		return false;
 	}
 
-	public static String getPeriod() {return "Cambrian - Ordovician";}
+	public static String getPeriod() {return "Cambrian - Ordovician - Silurian - Devonian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

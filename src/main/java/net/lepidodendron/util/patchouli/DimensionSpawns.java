@@ -55,6 +55,13 @@ public class DimensionSpawns {
             spawnListJoiner.add("lepidodendron:prehistoric_flora_websteroprion");
             mobList = spawnListJoiner.toArray(mobList);
         }
+        //Selkirkia spawns as a block, so this needs an overrride here:
+        if (dimid.equalsIgnoreCase("1") || dimid.equalsIgnoreCase("2") || dimid.equalsIgnoreCase("3") || dimid.equalsIgnoreCase("4"))
+        {
+            ObjectArrayList<String> spawnListJoiner = new ObjectArrayList<String>(Arrays.asList(mobList));
+            spawnListJoiner.add("lepidodendron:prehistoric_flora_selkirkia");
+            mobList = spawnListJoiner.toArray(mobList);
+        }
 
         ObjectArrayList<DimensionSpawns.PPEntry> spawnListInterim = new ObjectArrayList<PPEntry>();
         if (mobList.length >= 1) {

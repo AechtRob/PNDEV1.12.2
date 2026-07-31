@@ -1,6 +1,8 @@
 package net.lepidodendron.util.patchouli;
 
+import net.lepidodendron.util.EnumBiomeTypeCambrian;
 import net.lepidodendron.world.biome.EntityLists;
+import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
@@ -53,6 +55,35 @@ public class SpawnLocations {
                 spawns = true;
             }
         }
+
+        if (mobID.equalsIgnoreCase("lepidodendron:prehistoric_flora_selkirkia")) {
+            if (biome instanceof BiomeCambrian)
+            {
+                BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
+                if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Ocean) {
+                    spawns = true;
+                }
+            }
+        }
+        if (mobID.equalsIgnoreCase("lepidodendron:prehistoric_flora_selkirkia")) {
+            if (biomeID.equalsIgnoreCase("lepidodendron:ordovician_algal_reef"))
+            {
+                spawns = true;
+            }
+        }
+        if (mobID.equalsIgnoreCase("lepidodendron:prehistoric_flora_selkirkia")) {
+            if (biomeID.equalsIgnoreCase("lepidodendron:silurian_sea"))
+            {
+                spawns = true;
+            }
+        }
+        if (mobID.equalsIgnoreCase("lepidodendron:prehistoric_flora_selkirkia")) {
+            if (biomeID.equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky"))
+            {
+                spawns = true;
+            }
+        }
+
         if (mobID.equalsIgnoreCase("lepidodendron:prehistoric_flora_dorygnathus")) {
             if (biomeID.equalsIgnoreCase("lepidodendron:jurassic_ocean_rafts")
                     || biomeID.equalsIgnoreCase("lepidodendron:jurassic_ocean_coral"))
