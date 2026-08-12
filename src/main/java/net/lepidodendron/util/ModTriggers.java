@@ -2295,7 +2295,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ANCYLOCERAS = new CustomTrigger("pf_book_ancyloceras");
     public static final CustomTrigger CLICK_EROMANGATEUTHIS = new CustomTrigger("pf_book_eromangateuthis");
     public static final CustomTrigger CLICK_CHRONOCANCER = new CustomTrigger("pf_book_chronocancer");
-    public static final CustomTrigger CLICK_ASTROPECTEN = new CustomTrigger("pf_book_astropecten");
+    //public static final CustomTrigger CLICK_ASTROPECTEN = new CustomTrigger("pf_book_astropecten");
     public static final CustomTrigger CLICK_HOMARUS = new CustomTrigger("pf_book_homarus");
     public static final CustomTrigger CLICK_DISASTER = new CustomTrigger("pf_book_disaster");
     public static final CustomTrigger CLICK_BEURLENIA = new CustomTrigger("pf_book_beurlenia");
@@ -4741,7 +4741,7 @@ public class ModTriggers
             CLICK_ANCYLOCERAS,
             CLICK_EROMANGATEUTHIS,
             CLICK_CHRONOCANCER,
-            CLICK_ASTROPECTEN,
+            //CLICK_ASTROPECTEN,
             CLICK_HOMARUS,
             CLICK_DISASTER,
             CLICK_BEURLENIA,

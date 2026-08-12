@@ -30,6 +30,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import org.apache.commons.lang3.ArrayUtils;
@@ -467,6 +468,18 @@ public class EntityPrehistoricFloraGermanodactylus extends EntityPrehistoricFlor
 	public String getPNTypeName()
 	{
 		return this.getPNType().getName();
+	}
+
+	@Override
+	public String getName() {
+		if (this.hasCustomName())
+		{
+			return this.getCustomNameTag();
+		}
+		else
+		{
+			return I18n.translateToLocal("entity.prehistoric_flora_germanodactylus_" + this.getPNType().getName() + ".name");
+		}
 	}
 
 	public enum Type

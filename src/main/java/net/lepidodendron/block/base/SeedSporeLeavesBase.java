@@ -1,10 +1,9 @@
 package net.lepidodendron.block.base;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockLeaves;
 import net.minecraft.item.Item;
 
-public abstract class SeedSporeLeavesBase extends BlockLeaves {
+public abstract class SeedSporeLeavesBase extends BlockLeavesPF {
 
     public abstract Block planted();
 

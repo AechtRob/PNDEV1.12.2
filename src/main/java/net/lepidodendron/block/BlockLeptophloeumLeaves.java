@@ -4,11 +4,12 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.base.BlockLeavesPF;
+import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
+import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
@@ -58,7 +59,7 @@ public class BlockLeptophloeumLeaves extends ElementsLepidodendronMod.ModElement
 		OreDictionary.registerOre("treeLeaves", BlockLeptophloeumLeaves.block);
 	}
 
-	public static class BlockCustom extends BlockLeavesPF {
+	public static class BlockCustom extends SeedSporeLeavesBase {
 		public BlockCustom() {
 			setTranslationKey("pf_leptophloeum_leaves");
 		}
@@ -74,6 +75,11 @@ public class BlockLeptophloeumLeaves extends ElementsLepidodendronMod.ModElement
 			return 20;
 		}
 
+		@Override
+		public BlockPlanks.EnumType getWoodType(int i) {
+			return null;
+		}
+
 
 		@Override
 		public Item getItemDropped(IBlockState state, java.util.Random rand, int fortune) {
@@ -84,6 +90,16 @@ public class BlockLeptophloeumLeaves extends ElementsLepidodendronMod.ModElement
 			else {
 				return Item.getItemFromBlock(BlockLeptophloeumSapling.block);
 			}
+		}
+
+		@Override
+		public Block planted() {
+			return BlockLeptophloeumSapling.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
 		}
 
 	}

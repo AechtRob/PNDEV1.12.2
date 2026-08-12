@@ -29,6 +29,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -130,6 +131,18 @@ public class EntityPrehistoricFloraFortiholcorpa extends EntityPrehistoricFloraI
 	public String getPNTypeName()
 	{
 		return this.getPNType().getName();
+	}
+
+	@Override
+	public String getName() {
+		if (this.hasCustomName())
+		{
+			return this.getCustomNameTag();
+		}
+		else
+		{
+			return I18n.translateToLocal("entity.prehistoric_flora_fortiholcorpa_" + this.getPNType().getName() + ".name");
+		}
 	}
 
 	@Nullable

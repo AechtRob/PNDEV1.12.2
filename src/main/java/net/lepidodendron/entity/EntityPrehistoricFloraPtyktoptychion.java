@@ -31,6 +31,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -138,6 +139,18 @@ public class EntityPrehistoricFloraPtyktoptychion extends EntityPrehistoricFlora
 	@Override
 	public CustomTrigger getModTrigger() {
 		return ModTriggers.CLICK_PTYKTOPTYCHION;
+	}
+
+	@Override
+	public String getName() {
+		if (this.hasCustomName())
+		{
+			return this.getCustomNameTag();
+		}
+		else
+		{
+			return I18n.translateToLocal("entity.prehistoric_flora_ptyktoptychion_" + this.getPNType().getName() + ".name");
+		}
 	}
 
 	public enum Type

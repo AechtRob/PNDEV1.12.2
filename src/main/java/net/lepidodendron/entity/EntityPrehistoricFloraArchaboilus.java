@@ -33,6 +33,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -267,6 +268,18 @@ public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraLea
 		}
 
 		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	@Override
+	public String getName() {
+		if (this.hasCustomName())
+		{
+			return this.getCustomNameTag();
+		}
+		else
+		{
+			return I18n.translateToLocal("entity.prehistoric_flora_archaboilus_" + this.getPNType().getName() + ".name");
+		}
 	}
 
 	@Override

@@ -7,6 +7,8 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IBennettites;
 import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.IProperty;
@@ -204,6 +206,12 @@ public class BlockSahnioxylonFlowerPlaceable extends ElementsLepidodendronMod.Mo
 		@Override
 		public int offsetY() {
 			return 1;
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_SAHNIOXYLON;
 		}
 	}
 }
