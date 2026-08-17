@@ -7,9 +7,15 @@ import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TextFormatting;
 
 public class RenderVelociraptor extends RenderLivingBaseWithBook<EntityPrehistoricFloraVelociraptor> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/velociraptor.png");
+    public static final ResourceLocation TEXTURE_BLUE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/velociraptor_blue.png");
+    public static final ResourceLocation TEXTURE_JP = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/velociraptor_jp.png");
+    public static final ResourceLocation TEXTURE_TLW = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/velociraptor_tlw.png");
+    public static final ResourceLocation TEXTURE_QUILLIAM = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/velociraptor_quilliam.png");
+    public static final ResourceLocation TEXTURE_OMEGA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/velociraptor_omega.png");
 
     public static float getScaler() {
         return 0.495F;
@@ -20,6 +26,37 @@ public class RenderVelociraptor extends RenderLivingBaseWithBook<EntityPrehistor
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraVelociraptor entity) {
+        String s = TextFormatting.getTextWithoutFormattingCodes(entity.getName());
+        if (s != null &&
+                (s.toLowerCase().contains("blue") || s.toLowerCase().contains("2015"))
+        )
+        {
+            return RenderVelociraptor.TEXTURE_BLUE;
+        }
+        else if (s != null &&
+                (s.toLowerCase().contains("the big one") || s.toLowerCase().contains("1993"))
+        )
+        {
+            return RenderVelociraptor.TEXTURE_JP;
+        }
+        else if (s != null &&
+                (s.toLowerCase().contains("tiger") || s.toLowerCase().contains("1997"))
+        )
+        {
+            return RenderVelociraptor.TEXTURE_TLW;
+        }
+        else if (s != null &&
+                (s.toLowerCase().contains("quilliam") || (s.toLowerCase().contains("2001m") || s.toLowerCase().contains("2001 m"))
+        ))
+        {
+            return RenderVelociraptor.TEXTURE_QUILLIAM;
+        }
+        else if (s != null &&
+                (s.toLowerCase().contains("omega") || (s.toLowerCase().contains("2001f") || s.toLowerCase().contains("2001 f"))
+        ))
+        {
+            return RenderVelociraptor.TEXTURE_OMEGA;
+        }
         return RenderVelociraptor.TEXTURE;
     }
 
