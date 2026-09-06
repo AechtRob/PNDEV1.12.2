@@ -19,7 +19,7 @@ public class RenderYilingia extends RenderLivingBaseWithBook<EntityPrehistoricFl
     }
 
     public static float getScaler() {
-        return 0.250F;
+        return 0.5F;
     }
 
     @Override

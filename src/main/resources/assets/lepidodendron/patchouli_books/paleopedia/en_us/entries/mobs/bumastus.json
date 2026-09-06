@@ -21,12 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_bumastus",
 			"type": "text",
-			"text": "Bumastus hails from the Lower Ordovician into the Silurian, with fossils found across the world. It is a highly rounded and smooth styginid, with large well-developed compound eyes, and grew up to 15 cm in length. It may have possibly buried itself beneath the sand in order to hide, with their eyes poking above the surface"
+			"text": "Bumastus hails from the Lower Ordovician into the Silurian, with fossils found from across the world. It is a small styginid, growing up to 15 cm in length. It is notably rounded and smooth, and bears large compound eyes. The smoothness of the cephalon suggests that Bumastus was a burrowing trilobite, with the large eyes being used to look out and above the substrate they would be buried in. Bumastus has also been found curled up,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bumastus",
 			"type": "text",
-			"text": "The generic name derives from the Latin word 'būmastus', which is the name of a large grape."
+			"text": " indicating that they may have lived in shallow waters, rolling up when carried out of the substrate to protect their softer parts. The generic name derives directly from the Latin word 'būmastus', which is name commonly used for large, rounded grapes."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -1,0 +1,52 @@
+{
+	"name": "Aragochersis",
+	"read_by_default": true,
+	"icon": "lepidodendron:aragochersis_raw",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_aragochersis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_aragochersis",
+			"title": "Aragochersis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pantstudines$(br)>Testudinata$(br)>Perchelydia$(br)>Helochelydridae"
+		},
+		{
+			"type": "entity",
+			"name": "A. lignitesta",
+			"entity": "lepidodendron:prehistoric_flora_aragochersis",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aragochersis",
+			"type": "text",
+			"text": "Aragochersis lignitesta comes from the Early Cretaceous, with fossils found in the Escucha Formation, Spain. It is a small helochelydrid turtle, with a shell length of 45 cm overall. Aragochersis represents the most complete helochelydrid turtle from Europe, providing new anatomical information previously unknown in the family, which was only known from shell material with only two records of sparse cranial material."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aragochersis",
+			"type": "text",
+			"text": "The generic name derives partly from the Spanish autonomous community of Aragón; and the Greek word 'chersis', to mean 'land/dry land'. The specific name derives from the name Lignite, a type of coal commonly found near to where the fossils were found; and the Latin word 'testa', to mean 'shell'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_aragochersis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_aragochersis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_aragochersis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_aragochersis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_aragochersis"
+		}
+	]
+}

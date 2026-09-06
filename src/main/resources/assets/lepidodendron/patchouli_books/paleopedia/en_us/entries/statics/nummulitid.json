@@ -1,5 +1,5 @@
 {
-	"name": "Nummulitid",
+	"name": "Nummulitid Foraminifera",
 	"read_by_default": true,
 	"icon": "lepidodendron:nummulitid",
 	"category": "lepidodendron:statics",
@@ -7,13 +7,13 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_nummulitid",
-			"title": "Nummulitid",
+			"title": "Nummulitid Foraminifera",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Late Cretaceous - Present$(br2)$(l)Habitat:$() Marine$(br2)>Eukaryota$(br)>Sar$(br)>Rhizaria$(br)>Retaria$(br)>Foraminifera$(br)>Globothalamea$(br)>Rotaliida$(br)>Nummulitacea$(br)>$(o)Nummulitidae"
+			"text": "$(l)Temporal Range:$() Late Cretaceous - Present$(br2)$(l)Habitat:$() Marine$(br2)>Eukaryota$(br)>Sar$(br)>Rhizaria$(br)>Retaria$(br)>Foraminifera$(br)>Globothalamea$(br)>$(o)Nummulitidae"
 		},
 		{
 			"type": "multiblock",
-			"name": "Nummulitid",
+			"name": "Nummulitid Foraminifera",
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [
@@ -29,7 +29,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_nummulitid",
 			"type": "text",
-			"text": "Nummulitids hail from the Late Cretaceous into the present day, with fossils and extant forms found across the globe. They are circular foraminiferans, growing up to 15 cm in diameter, with modern forms still growing up to 5 cm in diameter. As with most foraminiferans, they are valuable as index fossils due to their great numbers in the fossil record, for example a genus within Nummulitidae was used to date the now oldest known fossil remains of a Sirenio (Sea Cow)"
+			"text": "Nummulitid foraminiferans hail from the Late Cretaceous into the present day, with fossils and extant forms found across the globe. They are circular foraminiferans, growing up to 15 cm in diameter, with modern forms still growing up to 5 cm in diameter. As with most foraminiferans, they are valuable as index fossils due to their great numbers in the fossil record, for example a genus within Nummulitidae was used to date the now oldest known fossil remains of a Sirenio (Sea Cow)"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_nummulitid",

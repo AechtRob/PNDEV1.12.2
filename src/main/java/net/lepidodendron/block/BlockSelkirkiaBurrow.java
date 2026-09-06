@@ -354,24 +354,6 @@ public class BlockSelkirkiaBurrow extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
-			super.breakBlock(worldIn, pos, state);
-			if (!worldIn.isRemote) {
-				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ());
-				entityToSpawn.setPickupDelay(10);
-				if (Math.random() > 0.25) {
-					worldIn.spawnEntity(entityToSpawn);
-				}
-				if (Math.random() > 0.25) {
-					worldIn.spawnEntity(entityToSpawn);
-				}
-				if (Math.random() > 0.25) {
-					worldIn.spawnEntity(entityToSpawn);
-				}
-			}
-		}
-
-		@Override
 		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
 			if (state.getValue(OCCUPIED) && !worldIn.isRemote) {
 				Entity MobSpawn = ItemMonsterPlacer.spawnCreature(worldIn, EntityList.getKey(EntityPrehistoricFloraSelkirkia.class), (double) pos.getX() + 0.5D, (double) pos.getY(), (double) pos.getZ() + 0.5D);
@@ -382,52 +364,6 @@ public class BlockSelkirkiaBurrow extends ElementsLepidodendronMod.ModElement {
 			}
 
 			super.harvestBlock(worldIn, player, pos, state, te, stack);
-		}
-
-		@Override
-		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
-		{
-			IBlockState stateDown = worldIn.getBlockState(pos.down());
-			int type = 0; //generic
-			if (stateDown.getMaterial() == Material.GROUND) {type = 1;} //dirt
-			if (stateDown.getMaterial() == Material.SAND) {type = 2;} //gravel
-			if (
-				stateDown == Blocks.SAND.getStateFromMeta(0)
-				|| stateDown.getBlock() == BlockSandSticky.block
-				|| stateDown.getBlock() == BlockSandWavy.block
-				|| stateDown.getBlock() == BlockSandWavySticky.block
-
-			) {type = 3;} //white sand
-			if (
-				stateDown == Blocks.SAND.getStateFromMeta(1)
-				|| stateDown.getBlock() == BlockSandRedSticky.block
-				|| stateDown.getBlock() == BlockSandRedWavy.block
-				|| stateDown.getBlock() == BlockSandRedWavySticky.block
-			) {type = 4;} //red sand
-			if (stateDown.getBlock() == BlockSandPangaean.block
-					|| stateDown.getBlock() == BlockSandPangaeanSticky.block
-					|| stateDown.getBlock() == BlockSandPangaeanWavy.block
-					|| stateDown.getBlock() == BlockSandPangaeanWavySticky.block
-			) {type = 5;} //pangaean sand
-			if (stateDown.getMaterial() == Material.CLAY) {type = 6;} //clay
-			if (stateDown.getBlock() == BlockClayRed.block) {type = 7;} //red clay
-			if (stateDown.getBlock() == BlockSiltyDirt.block
-				|| stateDown.getBlock() == BlockCoarseSiltyDirt.block
-			) {type = 8;} //silty dirt
-			if (stateDown.getBlock() == BlockSandBlack.block
-					|| stateDown.getBlock() == BlockSandBlackSticky.block
-					|| stateDown.getBlock() == BlockSandBlackWavy.block
-					|| stateDown.getBlock() == BlockSandBlackWavySticky.block
-			) {type = 9;} //black sand
-			if (stateDown.getBlock() == BlockSandGrey.block
-					|| stateDown.getBlock() == BlockSandGreySticky.block
-					|| stateDown.getBlock() == BlockSandGreyWavy.block
-					|| stateDown.getBlock() == BlockSandGreyWavySticky.block
-			) {type = 11;} //grey sand
-			if (stateDown.getBlock() == BlockSandyDirt.block
-					|| stateDown.getBlock() == BlockCoarseSandyDirt.block
-			) {type = 10;} //sandy dirt
-			return state.withProperty(LEVEL, 0).withProperty(TYPE, type);
 		}
 
 		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)

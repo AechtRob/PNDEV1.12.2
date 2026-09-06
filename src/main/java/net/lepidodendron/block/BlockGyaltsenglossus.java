@@ -101,11 +101,6 @@ public class BlockGyaltsenglossus extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public CustomTrigger getModTrigger() {return ModTriggers.CLICK_GYALTSENGLOSSUS;}
 
-		@Override
-		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
-			return true;
-		}
-
 		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
 
 		@Override
@@ -243,6 +238,82 @@ public class BlockGyaltsenglossus extends ElementsLepidodendronMod.ModElement {
 		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 			if (!canPlaceBlockAt(worldIn, pos)) {
 				worldIn.setBlockToAir(pos);
+			} else {
+				if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+
+				//Test the orientation of this block and then check if it is still connected:
+				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
+					IBlockState iblockstate = worldIn.getBlockState(pos.south());
+					if (worldIn.isAirBlock(pos.south()) ||
+							(
+									(iblockstate.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) != BlockFaceShape.SOLID)
+											&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.south()))
+							)
+					) {
+						worldIn.setBlockToAir(pos);
+
+					}
+				}
+				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.SOUTH) {
+					IBlockState iblockstate = worldIn.getBlockState(pos.north());
+					if (worldIn.isAirBlock(pos.north()) ||
+							(
+									(iblockstate.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) != BlockFaceShape.SOLID)
+											&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.north()))
+							)
+					) {
+						worldIn.setBlockToAir(pos);
+
+					}
+				}
+				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.EAST) {
+					IBlockState iblockstate = worldIn.getBlockState(pos.west());
+					if (worldIn.isAirBlock(pos.west()) ||
+							(
+									(iblockstate.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) != BlockFaceShape.SOLID)
+											&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.west()))
+							)
+					) {
+						worldIn.setBlockToAir(pos);
+
+					}
+				}
+				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.WEST) {
+					IBlockState iblockstate = worldIn.getBlockState(pos.east());
+					if (worldIn.isAirBlock(pos.east()) ||
+							(
+									(iblockstate.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) != BlockFaceShape.SOLID)
+											&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.east()))
+							)
+					) {
+						worldIn.setBlockToAir(pos);
+
+					}
+				}
+				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.UP) {
+					IBlockState iblockstate = worldIn.getBlockState(pos.down());
+					if (worldIn.isAirBlock(pos.down()) ||
+							(
+									(iblockstate.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) != BlockFaceShape.SOLID)
+											&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.down()))
+							)
+					) {
+						worldIn.setBlockToAir(pos);
+
+					}
+				}
+				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.DOWN) {
+					IBlockState iblockstate = worldIn.getBlockState(pos.up());
+					if (worldIn.isAirBlock(pos.up()) ||
+							(
+									(iblockstate.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) != BlockFaceShape.SOLID)
+											&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.up()))
+							)
+					) {
+						worldIn.setBlockToAir(pos);
+
+					}
+				}
 			}
 		}
 
@@ -253,17 +324,64 @@ public class BlockGyaltsenglossus extends ElementsLepidodendronMod.ModElement {
 	    }
 
 		@Override
-		public boolean canBeReplacedByLeaves(IBlockState state, IBlockAccess world, BlockPos pos)
-		{
-			return true;
-		}
 		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
-			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))
-					&& (worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)) {
+
+			//System.err.println("Can place");
+
+			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))) {
 				return super.canPlaceBlockAt(worldIn, pos);
 			}
-
+			//if (((world.getBlockState(pos.down()).getMaterial() != Material.SAND)
+			//	&& (world.getBlockState(pos.down()).getMaterial() != Material.ROCK)
+			//	&& (world.getBlockState(pos.down()).getMaterial() != Material.GROUND)
+			//	&& (world.getBlockState(pos.down()).getMaterial() != Material.CLAY))) {
+			//	return false;
+			//}
 			return false;
+		}
+
+		@Override
+		public boolean canPlaceBlockOnSide(World worldIn, BlockPos pos, EnumFacing side) {
+			boolean blockface = true;
+			if (side == EnumFacing.NORTH) {
+
+				blockface = false;
+			}
+			if (side == EnumFacing.SOUTH) {
+
+				blockface = false;
+			}
+			if (side == EnumFacing.EAST) {
+
+				blockface = false;
+			}
+			if (side == EnumFacing.WEST) {
+
+				blockface = false;
+			}
+			if (side == EnumFacing.UP) {
+				if (worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), side) != BlockFaceShape.SOLID)
+					blockface = false;
+			}
+			if (side == EnumFacing.DOWN) {
+				blockface = false;
+			}
+
+
+			return (blockface && canPlaceBlockAt(worldIn, pos));
+
+		}
+
+		@Override
+		public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
+			super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
+			//Assign a rotation at random
+			Random rand = new Random();
+			TileEntity te = worldIn.getTileEntity(pos);
+			if (te != null) {
+				te.getTileData().setInteger("rotation", rand.nextInt(4));
+			}
+			worldIn.notifyBlockUpdate(pos, state, state, 3);
 		}
 
 		@Override

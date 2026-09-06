@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeocampa",
 			"title": "Palaeocampa",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Panarthropoda$(br)>Lobopodia$(br)>Xenusia$(br)>Protonychophora$(br)>Aysheaiidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Panarthropoda$(br)>Lobopodia$(br)>Aysheaiidae"
 		},
 		{
 			"type": "entity",

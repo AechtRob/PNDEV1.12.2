@@ -345,9 +345,9 @@ public class BlockHerpetogaster extends ElementsLepidodendronMod.ModElement {
 		{
 
 			//System.err.println("Can place");
-			
+
 			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))) {
-				return super.canPlaceBlockAt(worldIn, pos); 
+				return super.canPlaceBlockAt(worldIn, pos);
 			}
 			//if (((world.getBlockState(pos.down()).getMaterial() != Material.SAND)
 			//	&& (world.getBlockState(pos.down()).getMaterial() != Material.ROCK)
@@ -355,7 +355,7 @@ public class BlockHerpetogaster extends ElementsLepidodendronMod.ModElement {
 			//	&& (world.getBlockState(pos.down()).getMaterial() != Material.CLAY))) {
 			//	return false;
 			//}
-			return false; 
+			return false;
 		}
 
 		@Override

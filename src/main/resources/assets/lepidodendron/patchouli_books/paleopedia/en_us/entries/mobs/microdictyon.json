@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_microdictyon",
 			"title": "Microdictyon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ecdysozoa$(br)>Panarthropoda$(br)>Lobopodia$(br)>Xenusia$(br)>Archonychophora$(br)>Eoconchariidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Ecdysozoa$(br)>Panarthropoda$(br)>Lobopodia$(br)>Eoconchariidae"
 		},
 		{
 			"type": "entity",

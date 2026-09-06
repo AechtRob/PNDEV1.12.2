@@ -64,7 +64,7 @@ public class BlockEoandromeda extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:eoandromedastatic", "inventory"));
+				new ModelResourceLocation("lepidodendron:items/eoandromedastatic", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockEoandromeda.LEVEL).build());
 	}
 

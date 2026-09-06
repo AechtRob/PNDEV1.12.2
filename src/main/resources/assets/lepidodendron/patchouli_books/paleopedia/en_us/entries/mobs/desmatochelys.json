@@ -1,0 +1,52 @@
+{
+	"name": "Desmatochelys",
+	"read_by_default": true,
+	"icon": "lepidodendron:desmatochelys_raw",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_desmatochelys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_desmatochelys",
+			"title": "Desmatochelys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Testudines$(br)>Cryptodira$(br)>Protostegidae"
+		},
+		{
+			"type": "entity",
+			"name": "D. lowi",
+			"entity": "lepidodendron:prehistoric_flora_desmatochelys",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_desmatochelys",
+			"type": "text",
+			"text": "Desmatochelys comes from the Cretaceous, with fossils found across the Northern hemisphere. It is a large protostegid sea turtle, growing up to 2 m in length. Desmatochelys is currently the oldest known sea turtle, with the oldest specimens coming in at 120 million years old. Although unlike modern sea turtles, Desmatochelys may have laid rigid, hard-shelled eggs instead of the standard soft-shelled eggs."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_desmatochelys",
+			"type": "text",
+			"text": "It is also known from multiple complete to near-complete specimens, alongside some partial shell material, which is also distinct from other marine sea turtles. The generic name derives from the Greek words 'desmos', to mean 'link'; and 'khelus', to mean 'tortoise'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_desmatochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_desmatochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_desmatochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_desmatochelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_desmatochelys"
+		}
+	]
+}

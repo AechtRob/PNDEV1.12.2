@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "lepidodendron:fusulinid_raw"
+            "item": "lepidodendron:fusulinid"
         },
         "title": {
             "translate": "advancements.pf_adv_book_fusulinid.title"

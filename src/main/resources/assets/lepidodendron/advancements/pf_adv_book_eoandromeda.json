@@ -1,13 +1,13 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:cycliomedusa"
+			"item": "lepidodendron:eoandromeda"
 		  },
 		"title": {
-			"translate": "advancements.pf_adv_book_cycliomedusa.title"
+			"translate": "advancements.pf_adv_book_eoandromeda.title"
 		},
 		"description": {
-			"translate": "advancements.pf_adv_book_cycliomedusa.description"
+			"translate": "advancements.pf_adv_book_eoandromeda.description"
 		}
 	},
     "parent": "lepidodendron:pf_base_adv_knowledge",
