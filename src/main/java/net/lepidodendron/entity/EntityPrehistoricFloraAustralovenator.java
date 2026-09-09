@@ -253,30 +253,30 @@ public class EntityPrehistoricFloraAustralovenator extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:tarbosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:australovenator_idle"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:tarbosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:australovenator_idle"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:tarbosaurus_idle2"));
+				.getObject(new ResourceLocation("lepidodendron:australovenator_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:tarbosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:australovenator_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:tarbosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:australovenator_death"));
 	}
 
 	@Override

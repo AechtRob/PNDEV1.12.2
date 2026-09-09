@@ -389,24 +389,24 @@ public class EntityPrehistoricFloraPhuwiangosaurus extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:patagotitan_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:phuwiangosaurus_idle"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:patagotitan_idle"));
+				.getObject(new ResourceLocation("lepidodendron:phuwiangosaurus_yawn"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:patagotitan_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:phuwiangosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:patagotitan_death"));
+	            .getObject(new ResourceLocation("lepidodendron:phuwiangosaurus_death"));
 	}
 
 	@Override

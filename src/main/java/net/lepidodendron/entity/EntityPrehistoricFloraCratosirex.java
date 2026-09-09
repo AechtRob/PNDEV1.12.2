@@ -74,7 +74,7 @@ public class EntityPrehistoricFloraCratosirex extends EntityPrehistoricFloraInse
 
 	@Override
 	public ResourceLocation FlightSound() {
-		return new ResourceLocation("lepidodendron:bug_flight");
+		return new ResourceLocation("lepidodendron:hymenoptera_flight");
 	}
 
 	public static String getPeriod() {return "Early Cretaceous";}

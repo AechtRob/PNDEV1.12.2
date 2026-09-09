@@ -291,7 +291,7 @@ public class EntityPrehistoricFloraPhuwiangvenator extends EntityPrehistoricFlor
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:phuwiangvenator_idle"));
+				.getObject(new ResourceLocation("lepidodendron:phuwiangvenator_display"));
 	}
 
 	@Override
