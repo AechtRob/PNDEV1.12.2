@@ -1256,7 +1256,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             spawnPos = pos1; //Spawn sometimes at the nest burrow and sometime inside
                                                                         }
                                                                         offsetter = 0;
-                                                                        world.setBlockState(pos1, BlockNest.block.getDefaultState(), 16);
+                                                                        Functions.setBlockStateAndCheckForDoublePlant(world, pos1, BlockNest.block.getDefaultState(), 16);
+                                                                        //world.setBlockState(pos1, BlockNest.block.getDefaultState(), 16);
                                                                         TileEntity te = world.getTileEntity(pos1);
                                                                         if (te != null) {
 
@@ -1320,7 +1321,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             spawnPos = pos1; //Spawn sometimes at the nest burrow and sometime inside
                                                                         }
                                                                         offsetter = 0;
-                                                                        world.setBlockState(pos1, BlockNest.block.getDefaultState(), 16);
+                                                                        Functions.setBlockStateAndCheckForDoublePlant(world, pos1, BlockNest.block.getDefaultState(), 16);
+                                                                        //world.setBlockState(pos1, BlockNest.block.getDefaultState(), 16);
                                                                         TileEntity te = world.getTileEntity(pos1);
                                                                         if (te != null) {
                                                                             if (te instanceof BlockNest.TileEntityNest) {
@@ -1376,7 +1378,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             }
                                                                             if (leafCheck) {
                                                                                 //Spawn a nest under the mob:
-                                                                                world.setBlockState(spawnPos, BlockNest.block.getDefaultState(), 16);
+                                                                                Functions.setBlockStateAndCheckForDoublePlant(world, spawnPos, BlockNest.block.getDefaultState(), 16);
+                                                                                //world.setBlockState(spawnPos, BlockNest.block.getDefaultState(), 16);
                                                                                 TileEntity te = world.getTileEntity(spawnPos);
                                                                                 if (te != null) {
                                                                                     if (te instanceof BlockNest.TileEntityNest) {
@@ -1416,7 +1419,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             }
                                                                         } else { //Mound nests:
                                                                             if (EntityLandBase.nestBlockMatch(world, spawnPos)) {
-                                                                                world.setBlockState(spawnPos, BlockNest.block.getDefaultState(), 16);
+                                                                                Functions.setBlockStateAndCheckForDoublePlant(world, spawnPos, BlockNest.block.getDefaultState(), 16);
+                                                                                //world.setBlockState(spawnPos, BlockNest.block.getDefaultState(), 16);
                                                                                 TileEntity te = world.getTileEntity(spawnPos);
                                                                                 if (te != null) {
                                                                                     if (te instanceof BlockNest.TileEntityNest) {
