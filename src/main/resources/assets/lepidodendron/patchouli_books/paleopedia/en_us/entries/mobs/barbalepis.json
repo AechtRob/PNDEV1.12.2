@@ -1,0 +1,47 @@
+{
+	"name": "Barbalepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/barbalepis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_barbalepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_barbalepis",
+			"title": "Barbalepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>$(o)incertae sedis$(br)>Coccolepididae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. macroptera",
+            "entity": "lepidodendron:prehistoric_flora_barbalepis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_barbalepis",
+			"type": "text",
+			"text": "Barbalepis is a rayfinned fish from early Cretaceous; discovered in Bernisant, Belgium. From the tip of the head to end of the tail, its length ranged from 9.5 centimeters to 21 centimeters. Originally this fish was within the genus Cocolepis, after consideration being assigned to its own genus in 2018. Just like itself, many other fish in this locality assigned to Cocolepis have since been assigned to their own genuses."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_barbalepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_barbalepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_barbalepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_barbalepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_barbalepis"
+		}
+	]
+}

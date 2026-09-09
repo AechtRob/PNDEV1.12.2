@@ -1,0 +1,47 @@
+{
+	"name": "Afrovenator",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/afrovenator_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_afrovenator",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_afrovenator",
+			"title": "Afrovenator",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Megalosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. abakensis",
+            "entity": "lepidodendron:prehistoric_flora_afrovenator",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_afrovenator",
+			"type": "text",
+			"text": "Afrovenator is a genus of megalosaurid dinosaur known from the Middle/Late Jurassic Tiourarén Formation of Niger. It was discovered in 1993 and described in 1994 by Paul Sereno and given a name meaning African hunter. Afrovenator is known from a single skeleton of an individual measuring around 8 meters in length with none of the actual elements being showed in the description paper."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_afrovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_afrovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_afrovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_afrovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_afrovenator"
+		}
+	]
+}

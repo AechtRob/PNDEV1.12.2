@@ -1,0 +1,52 @@
+{
+	"name": "Eotyrannus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eotyrannus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_eotyrannus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eotyrannus",
+			"title": "Eotyrannus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Theropoda$(br)>Pantyrannosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "E. lengi",
+            "entity": "lepidodendron:prehistoric_flora_eotyrannus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eotyrannus",
+			"type": "text",
+			"text": "Eotyrannus was a theropod discovered in the Wessex Formation dated back to Early Cretaceous. Its name 'eotyrannus' means 'dawn tyrant' as a reference to the clade it is within. The length of the holotype is measured at 4.5 meters, though it is speculated to have been longer as the specimen is thought to be a sub-adult. Eotyrannus' discovery supported the idea that early tyrannosauroids were nimble animals with long forelimbs bearing three fingers for grasping."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eotyrannus",
+			"type": "text",
+			"text": "Eotyrannus being native to Europe also made the theory of tyrannosauroids originating in Asia back into discussion. Making the question more complex than it was before."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eotyrannus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eotyrannus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eotyrannus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eotyrannus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eotyrannus"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Diandongosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/diandongosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_diandongosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_diandongosuchus",
+			"title": "Diandongosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Phytosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "D. fuyuanensis",
+            "entity": "lepidodendron:prehistoric_flora_diandongosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diandongosuchus",
+			"type": "text",
+			"text": "Diandongosuchus is an extinct genus of Phytosaurian Phytosaur . Found in the Zhuganpo Formation of the Yunnan Province. It is a marine species that shows similarities with another Chinese Triassic species called Qianosuchus mixtus, although it has fewer adaptations toward marine life. It was originally classified as the basal-most member of the pseudosuchian clade Poposauroidea."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_diandongosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_diandongosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_diandongosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_diandongosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_diandongosuchus"
+		}
+	]
+}

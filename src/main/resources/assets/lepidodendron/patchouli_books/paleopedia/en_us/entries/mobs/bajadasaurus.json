@@ -1,0 +1,47 @@
+{
+	"name": "Bajadasaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bajadasaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_bajadasaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bajadasaurus",
+			"title": "Bajadasaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Saurischia$(br)>Sauropoda$(br)>Dicraeosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. pronuspinax",
+            "entity": "lepidodendron:prehistoric_flora_bajadasaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bajadasaurus",
+			"type": "text",
+			"text": "Bajadasaurus is a sauropod from Early Cretaceous Patagonia. The genus name consists of 'bajada' the locality it was found in -alongside meaning downhill- and 'saurus' meaning lizard. It was about 10 meters long and around 4 tonnes with forward facing neural spines on its neck. The latest research suggests that these spines were covered with ligaments and were probably used for sexual displays."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bajadasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bajadasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bajadasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bajadasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bajadasaurus"
+		}
+	]
+}

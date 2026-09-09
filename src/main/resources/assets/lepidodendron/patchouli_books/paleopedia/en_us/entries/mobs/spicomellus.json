@@ -1,0 +1,52 @@
+{
+	"name": "Spicomellus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/spicomellus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_spicomellus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_spicomellus",
+			"title": "Spicomellus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Thyreophora$(br)>Ankylosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "S. afer",
+            "entity": "lepidodendron:prehistoric_flora_spicomellus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spicomellus",
+			"type": "text",
+			"text": "Spicomellus was an early ankylosaurian dinosaur which lived in the Middle Jurassic of Africa, discovered in the El Mers II Formation of Morocco. Its generic name means “spiked collar” referring to its initial specimens, consisting of a bizarre rib fragment fused with a spiky osteoderm uf unknown affinities. It was only in 2025 with better material being found that it was discovered to be an ankylosaurian covered in large and small spikes across its body, likely"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spicomellus",
+			"type": "text",
+			"text": "for defense. It would have had smaller spikes attached to its ribs, as well as larger spikes around its neck, hip, and tail. While little else is known about this dinosaur, it may have reached lengths of about 5.5 meters and lived alongside other thyreophorans like the stegosaurs Adratiklit and Thyreosaurus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_spicomellus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_spicomellus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_spicomellus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_spicomellus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_spicomellus"
+		}
+	]
+}

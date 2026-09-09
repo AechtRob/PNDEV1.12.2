@@ -1,0 +1,62 @@
+{
+    "name": "Gaiasia",
+    "read_by_default": true,
+    "icon": "paleopedia:textures/items/gaiasia_icon.png",
+    "category": "lepidodendron:mobs",
+    "turnin": "lepidodendron:pf_adv_book_gaiasia",
+    "pages": [
+        {
+            "trigger": "lepidodendron:pf_adv_book_gaiasia",
+            "title": "Gaiasia",
+            "type": "quest",
+            "text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Tetrapodomorpha$(br)>Tetrapoda"
+        },
+            {
+            "type": "entity",
+            "name": "G. jennyae",
+            "entity": "lepidodendron:prehistoric_flora_gaiasia",
+            "rotate": false,
+            "default_rotation": 0
+           },
+        {
+            "advancement": "lepidodendron:pf_adv_book_gaiasia",
+            "type": "text",
+            "text": "Gaiasia jennyae is a species of stem-tetrapod known from the Early Permian Gai-As Formation in Namibia, for which it is named. It is one of the chronologically latest stem-tetrapods known, making it vitally important to understanding the evolution of early tetrapods. Gaiasia is known from multiple specimens comprising the skull, the jaw, and the front third of the vertebrae and ribcage. Due to the lack of shoulder or girdle bones, it is unknown if Gaiasia had limbs."
+        },
+        {
+            "advancement": "lepidodendron:pf_adv_book_gaiasia",
+            "type": "text",
+            "text": "Gaiasia is in a unique temporal and geographical position compared to most other stem tetrapods. Its Permian position separates it from other basal tetrapods from the Carboniferous and earlier, and its high latitude position in Namibia is different from the mostly European and North American record of other similar tetrapods. However, these traits may be a result of undersampling rather than features unique to Gaiasia."
+        },
+        {
+            "advancement": "lepidodendron:pf_adv_book_gaiasia",
+            "type": "text",
+            "text": "Southern continents have been understudied in the early evolution of early tetrapods due to the assumption that they would not be able to survive large glaciations there. However Gaiasia, along with some newer climate data, pushes back on this hypothesis, implying that there may be more animals like Gaiasia in these understudied Southern areas. Gaiasia’s unique Southern environment may have also affected its ecology."
+        },
+        {
+            "advancement": "lepidodendron:pf_adv_book_gaiasia",
+            "type": "text",
+            "text": "Gaiasia’s wide, flattened skull indicates suction feeding, whilst its interlocking teeth imply a powerful bite. With length estimates ranging from 2.5 to 4 meters, Gaiasia is the largest stem-tetrapod known, and the largest suction feeder from the Paleozoic, and the apex predator in its environment. It is thought that it was able to become this large either as an adaptation to this cold environment, or due to a lack of competition from other groups of animals."
+        },
+        {
+            "type": "lepidodendron:diet",
+            "mob": "lepidodendron:prehistoric_flora_gaiasia"
+        },
+        {
+            "type": "lepidodendron:biomelocations1",
+            "mob": "lepidodendron:prehistoric_flora_gaiasia"
+        },
+        {
+            "type": "lepidodendron:biomelocations2",
+            "mob": "lepidodendron:prehistoric_flora_gaiasia"
+        },
+        {
+            "type": "lepidodendron:biomelocations3",
+            "mob": "lepidodendron:prehistoric_flora_gaiasia"
+        },
+        {
+            "type": "lepidodendron:biomelocations4",
+            "mob": "lepidodendron:prehistoric_flora_gaiasia"
+        }
+    ]
+}

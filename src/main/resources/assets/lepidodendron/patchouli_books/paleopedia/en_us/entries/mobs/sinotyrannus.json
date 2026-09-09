@@ -1,0 +1,52 @@
+{
+	"name": "Sinotyrannus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sinotyrannus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sinotyrannus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sinotyrannus",
+			"title": "Sinotyrannus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Theropoda$(br)>Proceratosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. kazuoensis",
+            "entity": "lepidodendron:prehistoric_flora_sinotyrannus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sinotyrannus",
+			"type": "text",
+			"text": "Sinotyrannus was a theropod discovered in the Jiufotang Formation of People's Republic of China, dating back to the Early Cretaceous. Its name means 'Chinese Tyrant' as a reference to 'tyrannosaurus'. Sinotyrannus was about 9 to 10 meters long and weighed 2.5 metric tons. It is speculated that the compsognathid Huaxiagnathus might be a juvenile specimen of Sinotyrannus if this is the case, that makes Sinotyrannus a junior synonym of Huaxiagnathus."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sinotyrannus",
+			"type": "text",
+			"text": "Opposed to its relatives at the time, Sinotyrannus was rather large. Being the largest predator of its region."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sinotyrannus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sinotyrannus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sinotyrannus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sinotyrannus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sinotyrannus"
+		}
+	]
+}

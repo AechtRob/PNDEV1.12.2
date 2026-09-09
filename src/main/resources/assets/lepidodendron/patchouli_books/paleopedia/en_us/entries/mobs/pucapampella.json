@@ -1,0 +1,62 @@
+{
+	"name": "Pucapampella",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pucapampella_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_pucapampella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pucapampella",
+			"title": "Pucapampella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Chondrichthyes$(br)>Pucapampellidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. rodrigae",
+            "entity": "lepidodendron:prehistoric_flora_pucapampella",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pucapampella",
+			"type": "text",
+			"text": "Pucapampella rodrigae is a species of cartilaginous fish known from the Early Devonian of Bolivia and Peru. Pucapampella is an early example of the cartilaginous fish, phylogenetically placing just outside crown group Chondrichthyes, as one of two members of the family Pucapampellidae. As such, its anatomy is of great importance to understanding the origins of these fish."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pucapampella",
+			"type": "text",
+			"text": "An example of how this animal was so different from its modern counterparts lies with its teeth. The teeth of Pucapampella are arranged in a single row per jaw and connect directly to the bone, with little to no presence of sockets to contain them. This is opposed to modern sharks, with many rows of deeply socketed teeth."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pucapampella",
+			"type": "text",
+			"text": "Pucapampella's braincase is also interesting in the context of cartilaginous fish evolution. Its braincase has been used to determine the musculature of the animal's skull, and comparisons to modern species' muscles have allowed its feeding habit to be determined. Pucapampella would thrust itself backwards with its tail while biting onto prey, ripping chunks out of its target. This method is known as 'Backwards-Ripping', and is seen in very few modern sharks."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pucapampella",
+			"type": "text",
+			"text": "However, Pucapampella also had a stair shaped wedge in the middle of its braincase separating it into two halves, something modern sharks don't have. This feature would have applied unnecessary stress onto its feeding method. It is thought that the fusing of the braincase in later animals was an adaptation to get rid of this stress, while simultaneously allowing for the evolution of more feeding methods."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pucapampella"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pucapampella"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pucapampella"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pucapampella"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pucapampella"
+		}
+	]
+}

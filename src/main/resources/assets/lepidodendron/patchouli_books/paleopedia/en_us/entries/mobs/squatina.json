@@ -1,0 +1,52 @@
+{
+	"name": "Squatina",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/squatina_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_squatina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_squatina",
+			"title": "Squatina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous - Present$(br2)>Chordata$(br)>Chondrichthyes$(br)>Squatiniformes$(br)>Squatinidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. squantina",
+            "entity": "lepidodendron:prehistoric_flora_squatina",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_squatina",
+			"type": "text",
+			"text": "Squantina, more commonly known as Angel sharks, are cartilagineous fish that can commonly be found in temperate and tropical sandy seabeds around the world; though some are known to live as deep as 1.3 kilometers deep. They've been seen to grow as long as 2.1 meters and 35 kilograms. These fishes have evolved into an ambush predator lifestyle, becoming mostly flat to hide in the sediment. There are 26 extant and 17 extinct known Squatina species."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_squatina",
+			"type": "text",
+			"text": "As amazing as these animals are, most of them are critically endangered due to bottom trawling and in need of protection."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_squatina"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_squatina"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_squantina"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_squatina"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_squatina"
+		}
+	]
+}

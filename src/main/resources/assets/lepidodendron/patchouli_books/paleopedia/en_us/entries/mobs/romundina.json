@@ -1,0 +1,47 @@
+{
+	"name": "Romundina",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/romundina_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_romundina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_romundina",
+			"title": "Romundina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Placodermi$(br)>Palaeacanthaspidae"
+		},
+        	{
+            "type": "entity",
+            "name": "R. stellina",
+            "entity": "lepidodendron:prehistoric_flora_romundina",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_romundina",
+			"type": "text",
+			"text": "Romundina is a small basal placoderm from the Devonian of Canada. It is known from shallow and open ocean deposits and pieces have been found at the MOTH locality of the Road River Formation. The fish represents an extremely basal lineage of placoderms, posessing a dorsal trunk spine that supported its dorsal fin and primitive teeth."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_romundina"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_romundina"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_romundina"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_romundina"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_romundina"
+		}
+	]
+}

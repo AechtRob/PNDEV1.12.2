@@ -1,0 +1,47 @@
+{
+	"name": "Jinzhousaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/jinzhousaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_jinzhousaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_jinzhousaurus",
+			"title": "Jinzhousaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Ornithopoda$(br)>Hadrosauroidea"
+		},
+        	{
+            "type": "entity",
+            "name": "J. yangi",
+            "entity": "lepidodendron:prehistoric_flora_jinzhousaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jinzhousaurus",
+			"type": "text",
+			"text": "Jinzhousaurus was a hadrosauroid dinosaur which lived in the Early Cretaceous of China, discovered in the Yixian Formation of China in 2001. Its name means “Jinzhou lizard” in reference to the nearby city of Jinzhou, Liaoning Province, and is known from a nearly complete flattened specimen. Jinzhousaurus was about 7 meters long and demonstrated features found in both more basal iguanodontians and more derived hadrosaurids, such as lacking antorbital fenestrae."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_jinzhousaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_jinzhousaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_jinzhousaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_jinzhousaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_jinzhousaurus"
+		}
+	]
+}

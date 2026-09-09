@@ -1,0 +1,47 @@
+{
+	"name": "Protosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/protosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_protosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_protosuchus",
+			"title": "Protosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Protosuchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. richardsoni",
+            "entity": "lepidodendron:prehistoric_flora_protosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_protosuchus",
+			"type": "text",
+			"text": "Protosuchus is a pseudosuchian found from North America and South Africa, dating back to the Jurassic. Its name is made up of 'protos' and 'suchus' meaning 'first crocodile' when put together. It was about 80 centimeters long, being slightly smaller than a modern day cat."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_protosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_protosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_protosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_protosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_protosuchus"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Epaelops",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/epaelops_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_epaelops",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_epaelops",
+			"title": "Epaelops",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>Elopomorpha$(br)>Elopiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "E. martinezi",
+            "entity": "lepidodendron:prehistoric_flora_epaelops",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_epaelops",
+			"type": "text",
+			"text": "Epaelops was an elopiform fish which lived in the Early Cretaceous of North America, discovered in the Tlayúa Formation of Mexico. Its name means “serpent fish from the darkness”, with “epa-” (shadow/darkness) coming from the indigenous Popoloca languages. Epaelops was a relative of extant tarpons and ladyfish, though Elopomorpha itself is a teleost superorder with origins in the Jurassic and includes eels and bonefish."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_epaelops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_epaelops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_epaelops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_epaelops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_epaelops"
+		}
+	]
+}

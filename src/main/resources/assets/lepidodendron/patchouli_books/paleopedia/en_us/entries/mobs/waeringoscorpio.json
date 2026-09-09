@@ -1,0 +1,47 @@
+{
+	"name": "Waeringoscorpio",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/waeringoscorpio_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_waeringoscorpio",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_waeringoscorpio",
+			"title": "Waeringoscorpio",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Arachnida$(br)>Scorpiones$(br)>Proscorpiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "W. hefteri",
+            "entity": "lepidodendron:prehistoric_flora_waeringoscorpio",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_waeringoscorpio",
+			"type": "text",
+			"text": "Waeringoscorpio is a small-sizedscorpion known from Early Devonian Germany. The strange thing about this scorpion is that it has strange feather-like structures on its abdomen. These are thought to be external gills, and no other scorpions are known to have such structures. Early scorpions like Eramoscorpius already had book lungs, making Waeringoscorpio the only known scorpion with secondary aquatic adaptations!"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_waeringoscorpio"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_waeringoscorpio"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_waeringoscorpio"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_waeringoscorpio"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_waeringoscorpio"
+		}
+	]
+}

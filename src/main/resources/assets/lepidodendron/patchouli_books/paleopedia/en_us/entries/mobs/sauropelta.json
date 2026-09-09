@@ -1,0 +1,52 @@
+{
+	"name": "Sauropelta",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sauropelta_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sauropelta",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sauropelta",
+			"title": "Sauropelta",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Ornitischia$(br)>Thyreophera$(br)>Nodosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. edwardsorum",
+            "entity": "lepidodendron:prehistoric_flora_sauropelta",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sauropelta",
+			"type": "text",
+			"text": "Sauropelta is a thyreopheran discovered in the Cloverly Formation of the United States of America, dating back to the Early Cretaceous. Its name means 'lizard shield' referring to its armored body. It was about 5.2 to 6 meters long and weighed about 1.5 to 2 metric tons. Sauropelta is the earliest known nodosaurid in the fossil record. It is also one of the most well understood nodosaur as we have quite a lot of material from them. Sauropelta's head was quite triangular,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sauropelta",
+			"type": "text",
+			"text": "making it a bit odd to look at. It also had a quite long tail, making up about half its length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sauropelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sauropelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sauropelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sauropelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sauropelta"
+		}
+	]
+}

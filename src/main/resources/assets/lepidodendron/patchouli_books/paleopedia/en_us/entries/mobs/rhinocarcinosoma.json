@@ -1,0 +1,47 @@
+{
+	"name": "Rhinocarcinosoma",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rhinocarcinosoma_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_rhinocarcinosoma",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rhinocarcinosoma",
+			"title": "Rhinocarcinosoma",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Carcinosomatoidea$(br)>Carcinosomatidae"
+		},
+        	{
+            "type": "entity",
+            "name": "R. dosonensis",
+            "entity": "lepidodendron:prehistoric_flora_rhinocarcinosoma",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhinocarcinosoma",
+			"type": "text",
+			"text": "Rhinocarcinosoma dosonensis is a small 22 cm long carcinosomatid with a quite interesting carapace and head. The head of Rhinocarcinosoma is tipped with a shovel-like protrusion that may have helped it dig and stage ambushes. The body's tergites are also interesting, extending beyond the base of the tail, creating this unique lily pad-like body shape."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rhinocarcinosoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rhinocarcinosoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rhinocarcinosoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rhinocarcinosoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rhinocarcinosoma"
+		}
+	]
+}

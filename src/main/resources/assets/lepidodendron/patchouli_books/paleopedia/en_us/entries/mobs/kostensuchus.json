@@ -1,0 +1,52 @@
+{
+	"name": "Kostensuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kostensuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_kostensuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kostensuchus",
+			"title": "Kostensuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Crocodylomorpha$(br)>Notosuchia$(br)>Peirosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "K. atrox",
+            "entity": "lepidodendron:prehistoric_flora_kostensuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kostensuchus",
+			"type": "text",
+			"text": "Kostensuchus is a large, hypercarnivorous notosuchian from the Late Cretaceous Chorillo Formation of Argentina. Its name comes from the Aonikenk word kosten for the Patagonian wind as well as suchus from the Egyptian deity Sobek. It is estimated to have reached a length of just over 3.5m and is currently the best known and most complete robust-build peirosaurid. It had a broad snout and incredibly powerful neck and jaw muscles,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kostensuchus",
+			"type": "text",
+			"text": "convergent with the distantly related baurusuchids living further north in Brazil. Both likely had similar ecology, though with drastically different head shapes; the baurusuchids possessing narrow and deep skulls with reduced dentition and the peirosaurids having broad and shallow skulls lined with serrated teeth. Like most notosuchians, Kostensuchus would have lived in a warm, arid, and seasonally wet floodplain environment."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kostensuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kostensuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kostensuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kostensuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kostensuchus"
+		}
+	]
+}

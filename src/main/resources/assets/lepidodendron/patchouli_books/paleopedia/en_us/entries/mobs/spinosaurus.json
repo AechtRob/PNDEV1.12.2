@@ -1,0 +1,62 @@
+{
+	"name": "Spinosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/spinosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_spinosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_spinosaurus",
+			"title": "Spinosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Spinosauridae$(br)>Spinosaurinae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. aegyptiacus",
+            "entity": "lepidodendron:prehistoric_flora_spinosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spinosaurus",
+			"type": "text",
+			"text": "It is impossible to overstate the popularity and importance of Spinosaurus aegyptiacus, a foremost example of not only theropod magnitude but dinosaurian diversity as a whole. Bearing strange features such as an elongated snout, gargantuan sail, and flattened, paddle-like tail, it has long fascinated palaeontologists and public alike. Described by Ernst Stromer in 1915, it was, aside from teeth described as Suchosaurus, the first spinosaurid to be discovered."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spinosaurus",
+			"type": "text",
+			"text": "These fossils, elongated vertebrae and a partial jaw, were intriguing, but hardly enough to picture the animal in full. As is now well known, these remains were subsequently destroyed during the second world war, and Spinosaurus soon fell into obscurity, at most occasionally represented in children's encyclopedias as a generic sailed carnosaur."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spinosaurus",
+			"type": "text",
+			"text": "The discovery of Baryonyx in 1986 and Suchomimus in 1998 reignited interest in this forgotten beast, known only from Stromer's surviving illustrations and photographs. A new family of strange, crocodile snouted-theropods was erected to include them, and it seemed clear that Spinosaurus was likely built similarly to its better known relatives. It made an important and influential appearance in this form in Jurassic Park 3, which brought it to the forefront of pop culture."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spinosaurus",
+			"type": "text",
+			"text": "This is the Spinosaurus that many of us grew up with, and one that still lingers today. But of course science marches ever onward. Though some new material was discovered throughout the intervening years, it was not until 2014 that the description of the neotype specimen showed that the animal was far weirder than anyone could have imagined, with proportions unlike any other known theropod. A 2020 follow-up paper established that the tail, too, was unlike anything else."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_spinosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_spinosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_spinosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_spinosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_spinosaurus"
+		}
+	]
+}

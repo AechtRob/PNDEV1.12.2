@@ -1,0 +1,47 @@
+{
+	"name": "Demandasaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/demandasaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_demandasaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_demandasaurus",
+			"title": "Demandasaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Saurischia$(br)>Sauropoda$(br)>Rebbachisauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. darwini",
+            "entity": "lepidodendron:prehistoric_flora_demandasaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_demandasaurus",
+			"type": "text",
+			"text": "Demandasaurus is a sauropod from Castrillo de la Reina Formation, dating back to Early Cretaceous. Its name means 'Demanda lizard' with the Demanda being the mountain range it was found on. It was small for sauropod standards being about 10 meters long. It is the only rebbachisaurid known from spain and one of the few from europe over all."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_demandasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_demandasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_demandasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_demandasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_demandasaurus"
+		}
+	]
+}

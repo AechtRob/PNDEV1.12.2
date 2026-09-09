@@ -1,0 +1,52 @@
+{
+	"name": "Xilousuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/xilousuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_xilousuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_xilousuchus",
+			"title": "Xilousuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Ctenosauriscidae"
+		},
+        	{
+            "type": "entity",
+            "name": "X. sapingensis",
+            "entity": "lepidodendron:prehistoric_flora_xilousuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xilousuchus",
+			"type": "text",
+			"text": "Xilousuchus was a pseudosuchian that was found in Heshanggou Formation of People's Republic of China, dating back to the Triassic. Its name means 'Xilou crocodile', Xilou being a town nearby where it was found. Xilousuchus was three to four meters long and had a sail on its back similar to its closest relative, Arizonasaurus. This animal was found with a partial skeleton including a skull. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xilousuchus",
+			"type": "text",
+			"text": "It is one of the oldest Archosaurs known."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_xilousuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_xilousuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_xilousuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_xilousuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_xilousuchus"
+		}
+	]
+}

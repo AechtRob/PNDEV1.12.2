@@ -1,0 +1,47 @@
+{
+	"name": "Austrosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/austrosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_austrosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_austrosaurus",
+			"title": "Austrosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Saurischia$(br)>Sauropoda$(br)>Somphospondyli"
+		},
+        	{
+            "type": "entity",
+            "name": "A. mckillopi",
+            "entity": "lepidodendron:prehistoric_flora_austrosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_austrosaurus",
+			"type": "text",
+			"text": "Austrosaurus is a sauropod discovered in Allaru Formation of Australlia, dating back to Early Cretaceous. Its name means 'Southern Lizard'. It was estimated to be 20 meters long and 4.1 meters tall at the shoulder alongside weighing about an estimated 16 metric tons. The holotype's bone's were found to be extremely weathered, this condition is suggested to be due to them being transported by a pliosaur, likely Kronosaurus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_austrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_austrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_austrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_austrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_austrosaurus"
+		}
+	]
+}

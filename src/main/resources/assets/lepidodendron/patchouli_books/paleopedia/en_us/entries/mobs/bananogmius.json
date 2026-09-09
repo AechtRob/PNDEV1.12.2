@@ -1,0 +1,47 @@
+{
+	"name": "Bananogmius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bananogmius_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_bananogmius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bananogmius",
+			"title": "Bananogmius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Tselfatiiformes$(br)>Plethodidae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. aratus",
+            "entity": "lepidodendron:prehistoric_flora_bananogmius",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bananogmius",
+			"type": "text",
+			"text": "Bananogmius is a genus of plethodid tselfatiiform fish known from the Late Cretaceous period of North America and Europe. It has always been reconstructed with a tall dorsal fin, however it seems it is actually not as tall as always depicted. Its best known species, B. evolutus was later reclassified to genus Pentanogmius, but still there are 4 species in the genus, and its most well-preserved, B. aratus had length of about 1.1 m."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bananogmius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bananogmius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bananogmius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bananogmius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bananogmius"
+		}
+	]
+}

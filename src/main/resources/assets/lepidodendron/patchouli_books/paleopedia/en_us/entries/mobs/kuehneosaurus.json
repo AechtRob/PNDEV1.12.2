@@ -1,0 +1,47 @@
+{
+	"name": "Kuehneosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kuehneosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_kuehneosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kuehneosaurus",
+			"title": "Kuehneosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Lepidosauromorpha$(br)>Kuehneosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "K. latus",
+            "entity": "lepidodendron:prehistoric_flora_kuehneosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kuehneosaurus",
+			"type": "text",
+			"text": "Kuehneosaurus is a reptilian from Triassic England and Luxemburg. Named after 'Walter Georg Kühne' and with 'osaurus' meaning lizard added to the end. It was about 72 centimeters long with 'wings' that spread from its body as much as 14.3 centimeters. Although considered a seperate genus, Kuehneosuchus -a close relative- is suggested to share its genus or even be a sexual morph of this animal. It is also speculated to be be unable to glide, parachuting instead."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kuehneosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kuehneosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kuehneosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kuehneosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kuehneosaurus"
+		}
+	]
+}

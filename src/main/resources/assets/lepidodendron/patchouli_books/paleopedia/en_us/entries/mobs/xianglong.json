@@ -1,0 +1,52 @@
+{
+	"name": "Xianglong",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/xianglong_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_xianglong",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_xianglong",
+			"title": "Xianglong",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Lepidosauria$(br)>Squamata"
+		},
+        	{
+            "type": "entity",
+            "name": "X. zhaoi",
+            "entity": "lepidodendron:prehistoric_flora_xianglong",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xianglong",
+			"type": "text",
+			"text": "Xianglong is a lizard from Yixian Formation, China dating back to the Early Cretaceous. Its name comes from the chinese words 'Xiang' and 'long' meaning 'flying' and 'dragon' respectively. It was 15.5 centimeters long with most of it being its tail. It had adaptations similar to that of modern day Draco genus with webbed ribs allowing it to glide.Xianglong is a lizard from Yixian Formation, China dating back to the Early Cretaceous. Its name comes from the Chinese words 'Xiang' and 'long' meaning 'flying' and 'dragon' respectively. It was 15.5 centimeters long with most of it being its tail. It had adaptations similar to that of modern day Draco genus with webbed ribs allowing it to glide."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xianglong",
+			"type": "text",
+			"text": "While this genus was originally thought to be an acrodontan lizard, as it stands now we do not know its relation to modern lizards."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_xianglong"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_xianglong"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_xianglong"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_xianglong"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_xianglong"
+		}
+	]
+}

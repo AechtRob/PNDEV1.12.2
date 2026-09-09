@@ -1,0 +1,47 @@
+{
+	"name": "Phuwiangvenator",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/phuwiangvenator_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_phuwiangvenator",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_phuwiangvenator",
+			"title": "Phuwiangvenator",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Saurischia(br)>Theropoda$(br)>Megaraptora"
+		},
+        	{
+            "type": "entity",
+            "name": "P. yaemniyomi",
+            "entity": "lepidodendron:prehistoric_flora_phuwiangvenator",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phuwiangvenator",
+			"type": "text",
+			"text": "Phuwiangvenator is a megaraptoran from Phu Wiang locality of Thailand dating back to Early Cretaceous. Its named after the locality it was found in 'Phu Wiang' and the latin word 'venator' meaning hunter. It was about 6 meters long being about the same size as Austrolovenator. The discovery of Phuwiangvenator, alongside Vayuraptor and Fukuiraptor made researchers suggest them having an asian origin."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_phuwiangvenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_phuwiangvenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_phuwiangvenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_phuwiangvenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_phuwiangvenator"
+		}
+	]
+}

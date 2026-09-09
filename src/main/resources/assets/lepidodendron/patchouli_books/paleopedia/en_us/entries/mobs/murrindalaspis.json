@@ -1,0 +1,47 @@
+{
+	"name": "Murrindalaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/murrindalaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_murrindalaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_murrindalaspis",
+			"title": "Murrindalaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Acanthothoraci$(br)>Weejasperaspididae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. wallacei",
+            "entity": "lepidodendron:prehistoric_flora_murrindalaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_murrindalaspis",
+			"type": "text",
+			"text": "Murrindalaspis is a small basal placoderm from the Devonian Taemas Wee-Jasper of Australia. Though only known from trunk plates and a single ossified eyeball, it was unique for the elongated dorsal trunk spine that would have supported its dorsal fins. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_murrindalaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_murrindalaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_murrindalaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_murrindalaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_murrindalaspis"
+		}
+	]
+}

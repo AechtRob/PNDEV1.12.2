@@ -1,0 +1,47 @@
+{
+	"name": "Shenzhousaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/shenzhousaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_shenzhousaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_shenzhousaurus",
+			"title": "Shenzhousaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Ornithomimosauria$(br)>Macricheiriformes"
+		},
+        	{
+            "type": "entity",
+            "name": "S. orientalis",
+            "entity": "lepidodendron:prehistoric_flora_shenzhousaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_shenzhousaurus",
+			"type": "text",
+			"text": "Shenzhousaurus orientalis is a small ornithomimid from the Yixian Formation of China. Though known from an incomplete slab, it is preserved in a curled death pose that includes a complete torso, skull, and most of the tail. The torso holds many small pebbles which are interpreted as gastroliths held in the stomach when it died. Like Pelecanimus and Harpymimus, Shenzhousaurus bears teeth, and it is interpreted as intermediate between these two dinosaurs."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_shenzhousaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_shenzhousaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_shenzhousaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_shenzhousaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_shenzhousaurus"
+		}
+	]
+}

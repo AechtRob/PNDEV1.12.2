@@ -1,0 +1,52 @@
+{
+	"name": "Dyoplax",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dyoplax_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_dyoplax",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dyoplax",
+			"title": "Dyoplax",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>$(o)Erpetosuchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. arenaceus",
+            "entity": "lepidodendron:prehistoric_flora_dyoplax",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dyoplax",
+			"type": "text",
+			"text": "Dyoplax was a pseudosuchian that lived in Triassic from Schilfsandstein Formation, Germany. Its name comes from the words 'dy' and 'oplax' meaning 'two plates'. It grew to an estimated 65 centimeters long. The holotype was a natural cast, only missing its limbs and some parts of its tail. It was one of the first few taxa that was put in Pseudosuchia when it was created and has jumped from clade to clade since."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dyoplax",
+			"type": "text",
+			"text": "Originally put in Aetosauridae then switched to Notochampsidae, today known as Protosuchidae, then suggested to be a possible member of Erpetosuchidae. It was then put in Sphenosuchia as a basal crocodylomorph but in 2013 it got reassigned back to Erpetosuchidae where it stands today."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dyoplax"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dyoplax"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dyoplax"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dyoplax"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dyoplax"
+		}
+	]
+}

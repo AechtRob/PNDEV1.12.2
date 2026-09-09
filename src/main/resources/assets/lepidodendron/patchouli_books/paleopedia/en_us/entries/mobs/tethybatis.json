@@ -1,0 +1,47 @@
+{
+	"name": "Tethybatis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tethybatis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tethybatis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tethybatis",
+			"title": "Tethybatis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Batomorphi$(br)>Torpediniformes$(br)>Platyrhinidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. selachoides",
+            "entity": "lepidodendron:prehistoric_flora_tethybatis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tethybatis",
+			"type": "text",
+			"text": "Tethybatis selachoides is a species of thornback ray known discovered near Nardò in Italy. Its name means 'Tethyan ray having the form of a shark', referring to its location within the Tethys Sea and its resemblance of its tail, dorsal, and caudal fins to those of a shark. The animal was preserved with skin, showing it didn't have the spines typical of modern thornback rays."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tethybatis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tethybatis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tethybatis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tethybatis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tethybatis"
+		}
+	]
+}

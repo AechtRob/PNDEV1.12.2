@@ -1,0 +1,47 @@
+{
+	"name": "Cratosirex",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cratosirex_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_cratosirex",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cratosirex",
+			"title": "Cratosirex",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Hymenoptera$(br)>Siricidae$(br)>Cratosiricinae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. sennlaubi",
+            "entity": "lepidodendron:prehistoric_flora_cratosirex",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cratosirex",
+			"type": "text",
+			"text": "Cratosirex sennlaubi is a species of horntail wasp from the Aptian Crato Formation. It had a 3.5 centimeter wingspan and was 2.5 centimeters in length. Its specific name honors Markus Sennlaub, who allowed researchers access to his private collection in France to study the Brazilian originating specimen. Cratosirex was one of the earliest horntail wasps, and had the large sex organs used by modern members to drill into wood to lay their eggs."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cratosirex"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cratosirex"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cratosirex"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cratosirex"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cratosirex"
+		}
+	]
+}

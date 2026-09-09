@@ -1,0 +1,52 @@
+{
+	"name": "Dimetrodon_teutonis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dimetrodon_teutonis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_dimetrodon_teutonis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dimetrodon_teutonis",
+			"title": "dimetrodon_teutonis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Sphenacodontidae$(br)>Dimetrodon"
+		},
+        	{
+            "type": "entity",
+            "name": "Dimetrodon teutonis",
+            "entity": "lepidodendron:prehistoric_flora_dimetrodon_teutonis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dimetrodon_teutonis",
+			"type": "text",
+			"text": "D. teutonis was discovered in Bromacker locality at the Thuringian Forest of Germany dating back to Lower Permian. The genus name 'Dimetrodon' means 'two measures of teeth' and the species name 'teutonis' refers to the area it was found in. It is the smallest species of dimetrodon known, being 60 centimeters long and weighing 14 kgs. It was also the only species known from outside of North America, being found in Europe."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dimetrodon_teutonis",
+			"type": "text",
+			"text": "While speculation of this species' validity has come into speculation about it being an age stage, individuals of this species at many life stages have been found. Proving once for all that it is a unique species rather than being a juvenile. We also have scale impressions of this species, proving that dimetrodons were scaly."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dimetrodon_teutonis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dimetrodon_teutonis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dimetrodon_teutonis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dimetrodon_teutonis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dimetrodon_teutonis"
+		}
+	]
+}

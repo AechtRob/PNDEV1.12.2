@@ -1,0 +1,47 @@
+{
+	"name": "Attenborosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/attenborosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_attenborosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_attenborosaurus",
+			"title": "Attenborosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Plesiosauria$(br)>Pliosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. conybeari",
+            "entity": "lepidodendron:prehistoric_flora_attenborosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_attenborosaurus",
+			"type": "text",
+			"text": "Attenborosaurus was an aquatic reptile from Early Cretaceous; discovered in Dorset, England. The genus is named in honour of Sir David Attenborough. The animal was about 4.3 metres long with a long neck and membranous skin. The original holotype of the animal was lost in WWII due to bombings but fortunately a cast of it has been sent off to a secure location where it still is today."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_attenborosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_attenborosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_attenborosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_attenborosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_attenborosaurus"
+		}
+	]
+}

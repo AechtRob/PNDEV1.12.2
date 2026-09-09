@@ -1,0 +1,52 @@
+{
+	"name": "Thalassodromeus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/thalassodromeus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_thalassodromeus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_thalassodromeus",
+			"title": "Thalassodromeus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pterosauria$(br)>Azhdarchoidea$(br)>Thalassodromidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. sethi",
+            "entity": "lepidodendron:prehistoric_flora_thalassodromeus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thalassodromeus",
+			"type": "text",
+			"text": "Thalassodromeus was a pterosaur discovered in Araripe Basin of northeastern Brazil dating back to Early Cretaceous. Its name means 'Sea runner' due to its supposed way of feeding. It had one of the biggest skulls proportionally to its skull in pterosauria, with its skull being around 1.43m long. While the body isn't known, the wingspan is estimated to be around 4.2 to 4.5 meters. Thalassodromeus was originally thought to be a skim feeder, gliding over water."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thalassodromeus",
+			"type": "text",
+			"text": "Though this has since been proven false. The idea that it was a terrestrial hunter with strong jaws is the current consensus. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_thalassodromeus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_thalassodromeus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_thalassodromeus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_thalassodromeus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_thalassodromeus"
+		}
+	]
+}

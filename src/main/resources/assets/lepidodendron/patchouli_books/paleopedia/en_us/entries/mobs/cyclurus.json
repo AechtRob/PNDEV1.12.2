@@ -1,0 +1,72 @@
+{
+	"name": "Cyclurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cyclurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_cyclurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cyclurus",
+			"title": "Cyclurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous - Paleogene$(br2)>Chordata$(br)>Actinopterygii$(br)>Amiiformes$(br)>Amiidae$(br)>Amiinae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. valenciennesi",
+            "entity": "lepidodendron:prehistoric_flora_cyclurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cyclurus",
+			"type": "text",
+			"text": "Cyclurus is a genus of bowfin widespread throughout the Northern Hemisphere. Its 9 species are found across North America, Europe, and Asia. WIth thousands of specimens known, it is the most widespread fossil bowfin. Its temporal range is also widespread, with the earliest known being C. fragosus from the famous Maastrichtian Hell Creek Formation, and the lastest known being C. oligocenicus from the Oligocene Sieblos beds in Germany."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cyclurus",
+			"type": "text",
+			"text": "Sizes also vary among different species, with the smallest, C. oligocenicus growing to 16 centimeters in length, whilst the largest, C. gurrleyi, grew to 65 centimeters in length. Cyclurus means 'rounded tail'. In spite of this, other bowfins have rounder tails than Cyclurus. One particularly noteworthy species of Cyclurus is C. kehreri, from the Eocene Messel Pit, composing 90% of the Messel Vertebrate Fauna."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cyclurus",
+			"type": "text",
+			"text": "In spite of this abundance of fossils, the paleobiology of Cyclurus is still relatively unknown. Phylogenetic relationships between species and other members of Amiinae are unclear, which limits our understanding on the distribution of the group throughout time. Cyclurus' diet is also unclear. Cyclurus does not possess the conical teeth other bowfins have, and even with the thousands of specimens, very few have stomach contents."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cyclurus",
+			"type": "text",
+			"text": "Some morphology based research suggested a diet of molluscs and arthropods. Research looking at correlations between fish in the Messel Pit found that an increase in Cyclurus correlated to a decrease in the fish Thaumaturus and Palaeoperca, predation being a possible explaination. Cannibalism has also been suggested. Of the few fossils preserving stomach remains, there have been a few dubious reports of other fish scales and an unidentified part of an insect."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cyclurus",
+			"type": "text",
+			"text": "Fascinatingly two specimens have been found consuming the bat Palaeochiropteryx. One specimen is shown with the bat's forelimbs in unnatural positions, indicating it was shaken. This is the first evidence in any bowfin, extinct or extant, for consumption of bats. What likely happened was that Cyclurus scavenged a dead bat off the water's surface, and entanglement with the wing membrane caused the fish to either sink towards the anoxic bottom of the Messel Pit"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cyclurus",
+			"type": "text",
+			"text": "Or caused the fish to be unable to forage and feed correctly, before dying of starvation. This  unique scavenging implies that Cyclurus was a generalist predator. These fossils mirror those seen in the Jurassic Solnhofen Formation and its famous entangled Rhamphorynchus and Aspidorhynchus fossils. Still, even with some biological confusion, Cyclurus' sheer abundance still makes it vital in determining many factors of an ecosystem, such as stratigraphy."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cyclurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cyclurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cyclurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cyclurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cyclurus"
+		}
+	]
+}

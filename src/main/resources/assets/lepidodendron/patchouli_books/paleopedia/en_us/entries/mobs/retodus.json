@@ -1,0 +1,47 @@
+{
+	"name": "Retodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/retodus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_retodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_retodus",
+			"title": "Retodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Dipnoi$(br)>Ceratodontiformes$(br)>Ceratodontidae$(br)>Pleaaewaw"
+		},
+        	{
+            "type": "entity",
+            "name": "R. tuberculatus",
+            "entity": "lepidodendron:prehistoric_flora_retodus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_retodus",
+			"type": "text",
+			"text": "Retodus tuberculatus is a lungfish known from enormous tooth plates that project a total size of approximately 3 meters. Historically placed in the genus Ceratodus or Neoceratodus, this fragmentary giant is a close relative of modern lungfish. Described from the Early Cretaceous of Algeria, referred material is known from the Late Cretaceous of Niger and of course Egypt, where it is one among many in an iconic assemblage of giant fishes."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_retodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_retodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_retodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_retodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_retodus"
+		}
+	]
+}

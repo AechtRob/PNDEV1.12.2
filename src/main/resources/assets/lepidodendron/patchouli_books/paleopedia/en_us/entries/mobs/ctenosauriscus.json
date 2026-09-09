@@ -1,0 +1,52 @@
+{
+	"name": "Ctenosauriscus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ctenosauriscus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ctenosauriscus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ctenosauriscus",
+			"title": "Ctenosauriscus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic(br2)>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Poposauroidea$(br)>Ctenosauriscidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. koeneni",
+            "entity": "lepidodendron:prehistoric_flora_ctenosauriscus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ctenosauriscus",
+			"type": "text",
+			"text": "Ctenosauriscus was a pseudosuchian from early triassic Germany. Its name was originally 'ctenosaurus' but that name was taken by an extant genus of iguanas, so it had to be changed to 'ctenosauriscus' meaning 'ctenosaurus like'. The animal could grow to around 3.5 meters long, bearing a sail on its back. It was originally described as a synapsid, later being changed to a temnospondyl similar to platyhystrix but as it stands, today it is considered a"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ctenosauriscus",
+			"type": "text",
+			"text": "poposaurid similar to arizonasaurus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ctenosauriscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ctenosauriscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ctenosauriscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ctenosauriscus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ctenosauriscus"
+		}
+	]
+}
