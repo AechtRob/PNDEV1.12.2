@@ -325,7 +325,7 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox() {
 		if (LepidodendronConfig.renderBigMobsProperly) {
-			return this.getEntityBoundingBox().grow(10.0, 6.00, 10.0);
+			return this.getEntityBoundingBox().grow(12.0, 10.00, 12.0);
 		}
 		return this.getEntityBoundingBox();
 	}
