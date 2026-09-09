@@ -20,7 +20,7 @@ public class RenderOttoia extends RenderLivingBaseWithBook<EntityPrehistoricFlor
         return RenderOttoia.TEXTURE;
     }
 
-    public static float getScaler() {return 0.185F;}
+    public static float getScaler() {return 0.25F;}
 
     @Override
     protected void applyRotations(EntityPrehistoricFloraOttoia entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
@@ -34,7 +34,7 @@ public class RenderOttoia extends RenderLivingBaseWithBook<EntityPrehistoricFlor
             if (entityLiving.getBuried() && (entityLiving.getBuriedTick() <= 0)) {
                 float bobCycle = 100F; //ticks to perfom one bob
                 float ticksBobFactor = (float) (getTick - ((Math.floor((double) (getTick / bobCycle))) * bobCycle)) / bobCycle;
-                float bob = 0.6f * (float) Math.pow((Math.sin(ticksBobFactor * Math.toRadians(180))),2);
+                float bob = 0.65f * (float) Math.pow((Math.sin(ticksBobFactor * Math.toRadians(180))),2);
                 GlStateManager.translate(0.0F, bob, 0.0F);
             }
         }

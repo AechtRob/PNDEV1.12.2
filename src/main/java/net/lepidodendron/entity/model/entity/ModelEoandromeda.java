@@ -62,15 +62,19 @@ public class ModelEoandromeda extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -1.4F;
-        this.main.offsetX = -0.138F;
+        this.main.offsetX = -0.0F;
         this.main.rotateAngleY = (float)Math.toRadians(200);
         this.main.rotateAngleX = (float)Math.toRadians(25);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 4.33F;
+        float scaler = 8.33F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(main, -0.5F, 0.5F, 0.0F);
+        this.setRotateAngle(bone, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(bone2, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(bone3, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(bone4, 0.0F, 0.0F, 0.5F);
         //End of pose, now render the model:
 
         GlStateManager.enableBlend();

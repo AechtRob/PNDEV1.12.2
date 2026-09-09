@@ -14,7 +14,7 @@ public class RenderDickinsonia extends RenderLivingBaseWithBook<EntityPrehistori
     private static final ResourceLocation TEXTURE_PANCAKE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dickinsonia_pancake.png");
     private static final ResourceLocation TEXTURE_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dickinsonia_egg.png");
     public static float getScaler() {
-        return 0.785F;
+        return 1.0F;
     }
 
     public RenderDickinsonia(RenderManager mgr) {

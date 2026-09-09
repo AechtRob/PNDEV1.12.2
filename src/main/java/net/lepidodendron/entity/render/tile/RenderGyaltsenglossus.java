@@ -69,7 +69,7 @@ public class RenderGyaltsenglossus extends TileEntitySpecialRenderer<BlockGyalts
             GlStateManager.translate(x + 0.5, y + 0.2 + (rotation * 0.2), z + 0.01);
         }
         if (facing == EnumFacing.UP) {
-            GlStateManager.translate(x + 0.5, y + 0.015, z + 0.5);
+            GlStateManager.translate(x + 0.5, y + 0.67, z + 0.5);
         }
 
         GlStateManager.rotate(180, 0F, 0F, 1F);

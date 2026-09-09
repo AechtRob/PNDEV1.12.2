@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraOttoia;
 import net.lepidodendron.entity.EntityPrehistoricFloraPriapulites;
 import net.lepidodendron.entity.model.entity.ModelPriapulites;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
@@ -11,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPriapulites extends RenderLivingBaseWithBook<EntityPrehistoricFloraPriapulites> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/priapulites.png");
-    public static float getScaler() {return 0.15F;}
+    public static float getScaler() {return 0.25F;}
 
     public RenderPriapulites(RenderManager mgr) {
         super(mgr, new ModelPriapulites(), 0.0f);
@@ -33,7 +32,7 @@ public class RenderPriapulites extends RenderLivingBaseWithBook<EntityPrehistori
             if (entityLiving.getBuried() && (entityLiving.getBuriedTick() <= 0)) {
                 float bobCycle = 100F; //ticks to perfom one bob
                 float ticksBobFactor = (float) (getTick - ((Math.floor((double) (getTick / bobCycle))) * bobCycle)) / bobCycle;
-                float bob = 0.6f * (float) Math.pow((Math.sin(ticksBobFactor * Math.toRadians(180))),2);
+                float bob = 0.88f * (float) Math.pow((Math.sin(ticksBobFactor * Math.toRadians(180))),2);
                 GlStateManager.translate(0.0F, bob, 0.0F);
             }
         }

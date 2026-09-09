@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "lepidodendron:nummulitid_raw"
+            "item": "lepidodendron:nummulitid"
         },
         "title": {
             "translate": "advancements.pf_adv_book_nummulitid.title"
