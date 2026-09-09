@@ -1,0 +1,47 @@
+{
+	"name": "Ticinosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ticinosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ticinosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ticinosuchus",
+			"title": "Ticinosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Suchia"
+		},
+        	{
+            "type": "entity",
+            "name": "T. ferox",
+            "entity": "lepidodendron:prehistoric_flora_ticinosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ticinosuchus",
+			"type": "text",
+			"text": "Ticinosuchus is a pseudosuchian from Besano Formation that's shared between Switzerland and Italy, dating back to the Triassic. Its name means 'Ticino crocodile', 'Ticino' being the canton of Switzerland it was discovered in. It was about 2.5 meters long and one of the few terrestrial fauna from the formation. It is also thought that the trace fossils assigned to Cheirotherium are actually the footsteps of this species."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ticinosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ticinosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ticinosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ticinosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ticinosuchus"
+		}
+	]
+}

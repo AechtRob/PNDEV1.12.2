@@ -1,0 +1,47 @@
+{
+	"name": "Spinolestes",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/spinolestes_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_spinolestes",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_spinolestes",
+			"title": "Spinolestes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Mammalia$(br)>Eutriconodonta$(br)>Gobiconodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. xenarthrosus",
+            "entity": "lepidodendron:prehistoric_flora_spinolestes",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spinolestes",
+			"type": "text",
+			"text": "Spinolestes xenarthrosus is a gobiconodont mammal known from Las Hoyas Lagerstätte, Spain. It is one of the best-preserved Mesozoic mammals, with not only its fur and skin, but even its internal organs preserved! The hairs on the animal's back are spiny and are thought to have served as a defense. The ear structure was also preserved, indicating that mammals at that time already had well-developed external ears."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_spinolestes"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_spinolestes"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_spinolestes"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_spinolestes"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_spinolestes"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Kuehneosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kuehneosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_kuehneosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kuehneosuchus",
+			"title": "Kuehneosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Lepidosauromorpha$(br)>Kuehneosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "K. latissimus",
+            "entity": "lepidodendron:prehistoric_flora_kuehneosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kuehneosuchus",
+			"type": "text",
+			"text": "Kuehneosaurus is a reptilian from Triassic England. Named after 'Walter Georg Kühne' and with 'osuchus' meaning crocodile added to the end.Though it should be noted that it was not a pseudosuchian or even an archosaur. It was about 72 centimeters long with 'wings' that spread from its body as much as 40 centimeters. Although considered a seperate genus, Kuehneosaurus -a close relative- is suggested to share its genus or even be a sexual morph of this animal."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kuehneosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kuehneosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kuehneosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kuehneosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kuehneosuchus"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Colossosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/colossosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_colossosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_colossosuchus",
+			"title": "Colossosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Phytosauria$(br)>Parasuchidae$(br)>Mystriosuchinae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. techniensis",
+            "entity": "lepidodendron:prehistoric_flora_colossosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_colossosuchus",
+			"type": "text",
+			"text": "Colossosuchus was a phytosaur from the Upper Triassic Tiki Formation of India. Its name comes from 'Collosus' a Greek word used for giants and 'suchus' meaning crocodile. The animal was the biggest of its relatives at 8 meters long. It had a dome like skull and down curved tip at the end of its upper jaw. The remains of the animal were found alongside many others of its species, amounting to -at minimum- 21 individuals, mostly juveniles and sub-adults."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_colossosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_colossosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_colossosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_colossosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_colossosuchus"
+		}
+	]
+}

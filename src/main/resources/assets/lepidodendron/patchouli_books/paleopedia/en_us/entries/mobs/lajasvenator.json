@@ -1,0 +1,52 @@
+{
+	"name": "Lajasvenator",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lajasvenator_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_lajasvenator",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lajasvenator",
+			"title": "Lajasvenator",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Carcharodontosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. ascheriae",
+            "entity": "lepidodendron:prehistoric_flora_lajasvenator",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lajasvenator",
+			"type": "text",
+			"text": "Lajasvenator ascheriae is a species of carcharodontosaurid, known from the Valanginian aged Mulichinco Formation in Argentina. Its name comes from the close-by city of Las Lajas, and the species name honors the owner of the land where Lajasvenator was found. Lajasvenator is the smallest known carcharodontosaurid, at only 3.5 meters in length. Along with this, Lajasvenator is one of the oldest carcharodontosaurids known, and oldest from South America."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lajasvenator",
+			"type": "text",
+			"text": "Uniquely, the Mulichinco Formation also carries over a dinosaur fauna resembling that of the Jurassic than other Early Cretaceous Formations, having dicraeosaurids, diplodocids, and small ornithopods such as Emiliasaura. These combined indicate a Jurassic origin for South American carcharodontosaurids. Lajasvenator also is an example of the early diversity of the group, with diverse small-medium sized predators predating the relatively similar megatheropods."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lajasvenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lajasvenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lajasvenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lajasvenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lajasvenator"
+		}
+	]
+}

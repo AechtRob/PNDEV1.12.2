@@ -1,0 +1,47 @@
+{
+	"name": "Disaster",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/disaster_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_disaster",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_disaster",
+			"title": "Disaster",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Echinodermata$(br)>Echinoidea$(br)>Irregularia$(br)>Disasteridae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. granulosus",
+            "entity": "lepidodendron:prehistoric_flora_disaster",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_disaster",
+			"type": "text",
+			"text": "Disaster is a genus of urchin from the family Disasteridae, related to heart urchins, from the Jurassic to Early Cretaceous of Europe. Despite being quite a commonly found urchin with multiple species and even having been sold online occasionally, Disaster has little to no online presence."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_disaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_disaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_disaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_disaster"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_disaster"
+		}
+	]
+}

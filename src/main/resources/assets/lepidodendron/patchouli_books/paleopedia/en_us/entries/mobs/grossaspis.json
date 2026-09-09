@@ -1,0 +1,47 @@
+{
+	"name": "Grossaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/grossaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_grossaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_grossaspis",
+			"title": "Grossaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Antiarchi$(br)>Asterolepidoidei$(br)>Pterichthyodidae"
+		},
+        	{
+            "type": "entity",
+            "name": "G. carinata",
+            "entity": "lepidodendron:prehistoric_flora_grossaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_grossaspis",
+			"type": "text",
+			"text": "Grossaspis carinata is a species of antiarch placoderm known from Givetian aged strata in the German municipality Gerolstein. It is a bizarre looking animal, with a tall dorsal crest, and the mouth and eyes on the very front of its body. Grossaspis was named after acclaimed placoderm researcher Walter Gross, and the known armour is 9 centimeters in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_grossaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_grossaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_grossaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_grossaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_grossaspis"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Torukjara",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/torukjara_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_torukjara",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_torukjara",
+			"title": "Torukjara",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pterosauria$(br)>Tapejaridae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. bandeirae",
+            "entity": "lepidodendron:prehistoric_flora_torukjara",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_torukjara",
+			"type": "text",
+			"text": "Torukjara was a tapejarid from Rio Parana Formation of Brazil, dating back to Early Cretaceous. Its name comes from 'Toruk' a fictional alien from Avatar(2009) and 'jara' meaning 'lord' in Tupi. It had a wing span about two meters, similar to its close relative Caiuajara alongside the crest that's indicative of tapejarids. Originally Torukjara was thought to be Caiuajara but with a research paper published in 2024 the two got split."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_torukjara"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_torukjara"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_torukjara"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_torukjara"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_torukjara"
+		}
+	]
+}

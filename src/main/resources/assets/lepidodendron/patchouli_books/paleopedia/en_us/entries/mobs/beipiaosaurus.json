@@ -1,0 +1,52 @@
+{
+	"name": "Beipiaosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/beipiaosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_beipiaosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_beipiaosaurus",
+			"title": "Beipiaosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>reptilia$(br)>Theropoda$(br)>Therizinosauroidea" 
+		},
+        	{
+            "type": "entity",
+            "name": "B. inexpectus",
+            "entity": "lepidodendron:prehistoric_flora_beipiaosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_beipiaosaurus",
+			"type": "text",
+			"text": "Beipiaosaurus was a theropod from the Yixian formation of People's Republic of China, dated back to Early Cretaceous. Its name means 'Beipiao lizard', 'Beipio' being a city near where it was found. Beipiaosaurus was 2.2 meters long and weighed 27 kilograms. Before the discovery of Yutyrannus, it was one of the biggest theropods known to have feathers. With many impressions of the feathers researchers have determined that they were probably brown."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_beipiaosaurus",
+			"type": "text",
+			"text": "Before the discovery of Beipiaosaurus, what clade therizinosaurs were in was a very hot topic. Thanks to Beipiaoasurus being considered a primitive therizinosaur, its features pointing to being a theropod helped the debate end. Placing therizinosaurs solidly in Theropoda."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_beipiaosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_beipiaosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_beipiaosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_beipiaosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_beipiaosaurus"
+		}
+	]
+}

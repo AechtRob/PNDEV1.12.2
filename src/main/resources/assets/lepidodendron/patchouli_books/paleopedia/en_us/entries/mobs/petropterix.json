@@ -1,0 +1,47 @@
+{
+	"name": "Petropterix",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/petropterix_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_petropterix",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_petropterix",
+			"title": "Petropterix",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Blattaria$(br)>$(o)Umenocoleidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. fukuiensis",
+            "entity": "lepidodendron:prehistoric_flora_petropterix",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_petropterix",
+			"type": "text",
+			"text": "Petropterix is a relative of cockroaches from the Early Cretaceous, having been found all over the Asian continent. Its name is derived from 'petron' and 'pteron' meaning 'rock wing'. It was about a centimeter long. It was originally thought to be a beetle due to its similarities."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_petropterix"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_petropterix"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_petropterix"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_petropterix"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_petropterix"
+		}
+	]
+}

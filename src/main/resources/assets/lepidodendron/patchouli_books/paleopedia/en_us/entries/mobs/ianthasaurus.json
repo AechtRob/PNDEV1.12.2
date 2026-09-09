@@ -1,0 +1,47 @@
+{
+	"name": "Ianthasaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ianthasaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ianthasaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ianthasaurus",
+			"title": "Ianthasaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Synapsida$(br)>Edaphosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "I. hardestii",
+            "entity": "lepidodendron:prehistoric_flora_ianthasaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ianthasaurus",
+			"type": "text",
+			"text": "Ianthasaurus is a synapsid that lived during Late Carboniferous, discovered at Upper Pennsylvanian Rock Lake Shale near Garnett, Kansas. Its name means 'violet lizard'. It was one of the smallest of the edaphosaurs, growing up to 75 centimeters long. It was one of the more basal members of its clade, its dentition not having specialized for herbivory yet. Its teeth are more similar to carnivorous animals of the time."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ianthasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ianthasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ianthasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ianthasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ianthasaurus"
+		}
+	]
+}

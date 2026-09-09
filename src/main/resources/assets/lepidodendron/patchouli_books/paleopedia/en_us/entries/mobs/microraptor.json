@@ -1,0 +1,52 @@
+{
+	"name": "Microraptor",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/microraptor_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_microraptor",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_microraptor",
+			"title": "Microraptor",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Theropoda$(br)>Dromaeosauridae$(br)>Microraptoria"
+		},
+        	{
+            "type": "entity",
+            "name": "M. zhaoianus",
+            "entity": "lepidodendron:prehistoric_flora_microraptor",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_microraptor",
+			"type": "text",
+			"text": "Microraptor is a theropod dinosaur from Jiufotang Formation of People's republic of China, dating back to Early Cretaceous. The animal's name comes from the words 'micro' and 'raptor' coming together to mean 'small thief'. The animal was around 80 centimeters long, had a wing span more than a meter and weighed almost two kilos. Originally there were three species within the genus, but nowadays they are all considered the same species with variation. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_microraptor",
+			"type": "text",
+			"text": "These theropods had four wings, two on arms and two on legs. It is suggested that these animals could've glided using said wings, though further studies suggested that they were capable of powered flight."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_microraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_microraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_microraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_microraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_microraptor"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Lurdusaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lurdusaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_lurdusaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lurdusaurus",
+			"title": "Lurdusaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Ornithischia$(br)>Ornithopoda$(br)>Styracosterna"
+		},
+        	{
+            "type": "entity",
+            "name": "L. arenatus",
+            "entity": "lepidodendron:prehistoric_flora_lurdusaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lurdusaurus",
+			"type": "text",
+			"text": "Lurdusaurus was a ornithopod discovered in Elrhaz Formation of Niger, dating back to the Early Cretaceous. Its name means 'heavy lizard'. Lurdusaurus is estimated to have been 7 to 9 meters long and 2 meters tall while weighing a suspicious 2.5 to 5.5 metric tons. This was quite a lot for its size, making researchers speculate that it might've been graviportal. That would make it the first ornithischian to be identified as such."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lurdusaurus",
+			"type": "text",
+			"text": "Lurdusaurus was first described in Paleontologist Souad Chabli's PHD thesis as 'Gravisaurus tenerensis' but it was never published. It was later described by American paleontologist Dale Russell in 1999, giving it its current name. Due to its heavy and stocky build, it was speculated that it might have lived a lifestyle similar to hippopotamuses. That being semi aquatic."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lurdusaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lurdusaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lurdusaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lurdusaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lurdusaurus"
+		}
+	]
+}

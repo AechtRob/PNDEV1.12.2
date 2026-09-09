@@ -1,0 +1,47 @@
+{
+	"name": "Iansan",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/iansan_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_iansan",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_iansan",
+			"title": "Iansan",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Chondrichthyes$(br)>Batomorphi$(br)>Rhinopristiformes$(br)>Rhinobatidae"
+		},
+        	{
+            "type": "entity",
+            "name": "I. beurleni",
+            "entity": "lepidodendron:prehistoric_flora_iansan",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_iansan",
+			"type": "text",
+			"text": "Iansan beurleni is a species of guitarfish known from multiple well preserved specimens found in the Albian aged Romualdo Formation of Brazil. It would have grown to about 50 centimeters in length. The species, beurleni, was originally assigned to the genus Rhinobatos, however it was then moved to its own unique genus Iansan. This name comes from the Yoruba and Candomblé deity of wind, named Iansã."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_iansan"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_iansan"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_iansan"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_iansan"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_iansan"
+		}
+	]
+}

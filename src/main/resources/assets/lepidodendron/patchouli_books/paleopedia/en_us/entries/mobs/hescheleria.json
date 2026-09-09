@@ -1,0 +1,52 @@
+{
+	"name": "Hescheleria",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hescheleria_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hescheleria",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hescheleria",
+			"title": "Hescheleria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Thalattosauria$(br)>Thalattosauroidea$(br)>Claraziidae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. ruebeli",
+            "entity": "lepidodendron:prehistoric_flora_hescheleria",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hescheleria",
+			"type": "text",
+			"text": "Hescheleria ruebeli is a species of thalattosaur known from the Anisian aged Besano Formation. This formation spans across Switzerland and Italy, with Hescheleria being found in Switzerland. This thalattosaur is known from both cranial and postcranial bones, and would have grown to around 1 meter in length. Hescheleria's upper jaw is curved in a bizarre manner, turning down vertically directly in front of the lower jaw. This lower jaw also ends in a raised"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hescheleria",
+			"type": "text",
+			"text": "Portion, though not nearly as extreme as seen in the upper jaw. This strange head morphology has been suggested to be an adaptation for crushing the hard shells of molluscs. Other unnamed thalattosaurs also have a very similar curving upper jaw, however Hescheleria is the only named thalattosaur with this trait."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hescheleria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hescheleria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hescheleria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hescheleria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hescheleria"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Neovenator",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/neovenator_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_neovenator",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_neovenator",
+			"title": "Neovenator",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Theropoda$(br)>Allosauria$(br)>Carcharodontosauria$(br)>Neovenatoridae"
+		},
+        	{
+            "type": "entity",
+            "name": "N. salerii",
+            "entity": "lepidodendron:prehistoric_flora_neovenator",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_neovenator",
+			"type": "text",
+			"text": "Neovenator was a theropod from the Wessex Formation of England, dating back to Early Cretaceous. Its name means 'early hunter'. The animal was 7 meters long and weighed one metric ton, though a specimen that could be assigned to this genus has been measured to be about 10 meters long. Originally Neovenator was referred to Megalosaurus but with more research it gotten its own family rather than sharing it with other relatives."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_neovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_neovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_neovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_neovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_neovenator"
+		}
+	]
+}

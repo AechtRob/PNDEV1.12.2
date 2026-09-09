@@ -1,0 +1,47 @@
+{
+	"name": "Eusarcana",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eusarcana_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_eusarcana",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eusarcana",
+			"title": "Eusarcana",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Eurypterida$(br)>Carcinosomatoidea$(br)>Carcinosomatidae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. scorpionis",
+            "entity": "lepidodendron:prehistoric_flora_eusarcana",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eusarcana",
+			"type": "text",
+			"text": "Eusarcana scorpionis is a decently sized carcinosomatid known from a variety of sizes between 5 cm to 80 cm. What makes this species unique is the asymmetrical telson on the end of the tail, pointing to the left of the eurypterid instead of downwards like other carcinosomatids."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eusarcana"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eusarcana"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eusarcana"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eusarcana"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eusarcana"
+		}
+	]
+}

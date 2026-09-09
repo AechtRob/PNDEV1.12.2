@@ -1,0 +1,47 @@
+{
+	"name": "Erikaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/erikaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_erikaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_erikaspis",
+			"title": "Erikaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira"
+		},
+        	{
+            "type": "entity",
+            "name": "E.zychi",
+            "entity": "lepidodendron:prehistoric_flora_erikaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_erikaspis",
+			"type": "text",
+			"text": "Erikaspis is a Devonian placoderm known from deposits in Podolia, Ukraine. It is named after Erik Stensio and is based on a partial skull roof and trunk. The animal is small and dorsoventrally flattened, reflecting its bottom dwelling lifestyle. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_erikaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_erikaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_erikaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_erikaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_erikaspis"
+		}
+	]
+}

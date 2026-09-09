@@ -1,0 +1,47 @@
+{
+	"name": "Aellopobatis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/aellopobatis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_aellopobatis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_aellopobatis",
+			"title": "Aellopobatis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Batomorphi$(br)>Apolithabatiformes$(br)>Asterodermidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. bavarica",
+            "entity": "lepidodendron:prehistoric_flora_aellopobatis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aellopobatis",
+			"type": "text",
+			"text": "Aellopobatis is a ray from Solnhofen Limestone of Germany dating back to the Jurassic. Its name consists of 'aello' and 'pobatis' which respectively mean 'storm wind' and 'ray'. It is big for modern ray standards, being 1.7 meters long. This animal is known from many slabs of good condition, even down to the sex of the individual."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_aellopobatis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_aellopobatis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_aellopobatis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_aellopobatis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_aellopobatis"
+		}
+	]
+}

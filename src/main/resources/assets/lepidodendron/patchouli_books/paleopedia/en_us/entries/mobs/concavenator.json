@@ -1,0 +1,47 @@
+{
+	"name": "Concavenator",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/concavenator.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_concavenator",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_concavenator",
+			"title": "Concavenator",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Theropoda$(br)>Carcharodontosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. corcovatus",
+            "entity": "lepidodendron:prehistoric_flora_concavenator",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_concavenator",
+			"type": "text",
+			"text": "Concavenator was a theropod dinosaur discovered in La Huérguina formation of Spain. Its name means 'Cuenca hunter', Cuenca being the province it was discovered in. It was a rather unique dinosaur about 5 to 6 meter long and weighing 320 to 400 Kilograms, unlike its bigger cousins, this dinosaur’s neural spines grew tall towards the end forming a sail of sorts. The holotype of this animal was also rather complete, giving us a good idea of its looks."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_concavenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_concavenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_concavenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_concavenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_concavenator"
+		}
+	]
+}

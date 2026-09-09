@@ -1,0 +1,47 @@
+{
+	"name": "Weejasperaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/weejasperaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_weejasperaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_weejasperaspis",
+			"title": "Weejasperaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Acanthothoraci$(br)>Weejasperaspididae"
+		},
+        	{
+            "type": "entity",
+            "name": "W. gavini",
+            "entity": "lepidodendron:prehistoric_flora_weejasperaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_weejasperaspis",
+			"type": "text",
+			"text": "Weejasperaspis is a small basal placoderm from the Devonian Taemas Wee-Jasper of Australia. Only known from trunk plates and pelvic girdles, it was unique for the elongated dorsal trunk spine that would have supported its dorsal fins. Though its dorsal spine was notably much shorter than that of Murrindalaspis."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_weejasperaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_weejasperaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_weejasperaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_weejasperaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_weejasperaspis"
+		}
+	]
+}

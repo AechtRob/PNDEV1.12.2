@@ -1,0 +1,52 @@
+{
+	"name": "Gordodon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gordodon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_gordodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gordodon",
+			"title": "Gordodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Sphenacomorpha$(br)>Edaphosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "G. kraineri",
+            "entity": "lepidodendron:prehistoric_flora_gordodon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gordodon",
+			"type": "text",
+			"text": "Gordodon is a synapsid that was found in the Bursum Formation of New Mexico, dating back to the Permian. Its name meant 'fat tooth' referring to its 'large incisor-like teeth'. It was a meter long 'excluding the tail' and weighed about 34 kilograms. While it appeared early on in the Permian, it had teeth similar to mammals. Having incisor like teeth on the front and 'peg like teeth' on the back with a gap between."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gordodon",
+			"type": "text",
+			"text": "Gordodon also had a rather long neck for an early synapsid. The holotype of Gordodon was missing the hind half of the animal but otherwise rather complete."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gordodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gordodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gordodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gordodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gordodon"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Melanedaphodon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/melanedaphodon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_melanedaphodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_melanedaphodon",
+			"title": "Melanedaphodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Synapsida$(br)>Sphenacomorpha$(br)>Edaphosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. hovaneci",
+            "entity": "lepidodendron:prehistoric_flora_melanedaphodon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_melanedaphodon",
+			"type": "text",
+			"text": "Melanedaphodon was a synapsid that lived in Carboniferous North America, discovered in the Allegheny formation of Pennsylvania. Its name means 'Black Pavement Tooth'. It was a small edaphosaur, having the common sail of its relatives. Thanks to its teeth, it's been thought that this animal was an omnivore. Feeding on both animal matter and low-fibre plants."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_melanedaphodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_melanedaphodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_melanedaphodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_melanedaphodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_melanedaphodon"
+		}
+	]
+}

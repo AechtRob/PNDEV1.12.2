@@ -1,0 +1,47 @@
+{
+	"name": "Pholidosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pholidosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_pholidosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pholidosaurus",
+			"title": "Pholidosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Tethysuchia$(br)>Pholidosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. schaumburgensis",
+            "entity": "lepidodendron:prehistoric_flora_pholidosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pholidosaurus",
+			"type": "text",
+			"text": "Pholidosaurus was a pholidosaurid crocodylomorph which lived in the Early Cretaceous of Europe, discovered in the Obernkirchen Sandstone of Germany in 1830. Its name means “horny-scaled lizard” in reference to osteoderms and grew to about the same size as the extant gharial. Pholidosaurus was a member of Pholidosauridae, a crocodylomorph family distantly related to true crocodylians, characterized by typically longirostrine snouts."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pholidosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pholidosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pholidosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pholidosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pholidosaurus"
+		}
+	]
+}

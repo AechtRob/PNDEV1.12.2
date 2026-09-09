@@ -1,0 +1,47 @@
+{
+	"name": "Tuditanus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tuditanus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tuditanus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tuditanus",
+			"title": "Tuditanus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Microsauria$(br)>Tuditanidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. punctulatus",
+            "entity": "lepidodendron:prehistoric_flora_tuditanus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tuditanus",
+			"type": "text",
+			"text": "Tuditanus punctulatus is a small microsaurian lepospondyl from the Carboniferous of Linton, Ohio. First described in 1874, its classification has jumped around a few times. In 1956, it was moved to Reptilia Incertae sedis, with tentative affinity to the Seymouriamorpha. However, not long after, it finally settled in Microsauria where it still is today."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tuditanus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tuditanus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tuditanus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tuditanus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tuditanus"
+		}
+	]
+}

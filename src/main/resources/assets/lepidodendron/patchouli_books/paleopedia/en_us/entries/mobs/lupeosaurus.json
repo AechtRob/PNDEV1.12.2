@@ -1,0 +1,62 @@
+{
+	"name": "Lupeosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lupeosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_lupeosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lupeosaurus",
+			"title": "Lupeosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Sphenacomorpha$(br)>Edaphosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. kayi",
+            "entity": "lepidodendron:prehistoric_flora_lupeosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lupeosaurus",
+			"type": "text",
+			"text": "Lupeosaurus kayi is a species of edaphosaurid known from the Wichita group of the Permian aged Texas Red Beds. Lupeosaurus kayi was originally named 'Luperosaurus gigas' as a new genus name for 'Dimetrodon gigas'. However, this was based off of synapsid material mistakenly thought to be the type specimen of Dimetrodon gigas, when it was only assigned material. Not only that, but the actual type of Dimetrodon gigas was actually a pelvis from the amphibian Eryops,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lupeosaurus",
+			"type": "text",
+			"text": "Not even a synapsid in the first place. Because it moved the entire species over to a new genus, this meant that Luperosaurus was actually a synonym of Eryops. Due to this mistake, the specimen actually belonging to a synapsid was renamed to Lupeosaurus kayi a year later. Ironically, Luperosaurus already was, and still is, the name of a modern gecko, meaning the name Luperosaurus couldn't stay with the synapsid even if this mess was circumvented."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lupeosaurus",
+			"type": "text",
+			"text": "Lupeosaurus is the largest known edaphosaurid, growing over 3 meters in length. Some older literature debates Lupeosaurus' inclusion in Edaphosauridae due to its combination of primitive and derived traits, such as the unique lack of knobs on its sail, however recent studies point to it being within Edaphosauridae. Despite its larger size, Lupeosaurus and other edaphosaurids would have grown slower than Permian carnivorous synapsids like Dimetrodon."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lupeosaurus",
+			"type": "text",
+			"text": "By analysing bone structure, researchers have found that the bones of edaphosaurids, including Lupeosaurus, are less vascularized than those in related Permian carnivores, meaning edaphosaurids grew at a much slower rate. It is hypothesised this is because of the lower required metabolic rate for herbivory than carnivory, meaning the edaphosaurids could afford to grow slower."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lupeosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lupeosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lupeosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lupeosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lupeosaurus"
+		}
+	]
+}

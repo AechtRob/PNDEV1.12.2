@@ -1,0 +1,47 @@
+{
+	"name": "Ozimek",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ozimek_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ozimek",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ozimek",
+			"title": "Ozimek",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauromorpha$(br)>Tanystropheidae$(br)>Sharovipterygidae"
+		},
+        	{
+            "type": "entity",
+            "name": "O. volans",
+            "entity": "lepidodendron:prehistoric_flora_ozimek",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ozimek",
+			"type": "text",
+			"text": "Ozimek was a reptile from Triassic Poland, discovered in Krasiejów clay pit. The animal is named after a town by the same name close to the Krasiejów clay pit. It was about 90 centimeters long and had patagium between its limbs. Fortunately quite a lot of this animal has been found, giving us a good idea of what it looked like."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ozimek"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ozimek"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ozimek"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ozimek"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ozimek"
+		}
+	]
+}

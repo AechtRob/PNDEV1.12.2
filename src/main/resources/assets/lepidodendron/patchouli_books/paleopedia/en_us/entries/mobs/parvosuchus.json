@@ -1,0 +1,47 @@
+{
+	"name": "Parvosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/parvosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_parvosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_parvosuchus",
+			"title": "Parvosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2))>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Gracilisuchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. aurelioi",
+            "entity": "lepidodendron:prehistoric_flora_parvosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_parvosuchus",
+			"type": "text",
+			"text": "Parvosaurus was a pseudosuchian from triassic that was discovered in the Santa Maria Formation of Brazil. Its name is a combination of the words 'Parvo' and 'suchus' meaning 'small crocodile'. As its name suggests it was a small animal, estimated to be about a meter long. The holotype of Parvosuchus is known from a cranium and a partial skeleton."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_parvosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_parvosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_parvosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_parvosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_parvosuchus"
+		}
+	]
+}

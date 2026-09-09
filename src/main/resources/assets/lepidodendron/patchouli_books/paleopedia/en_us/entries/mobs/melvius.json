@@ -1,0 +1,52 @@
+{
+	"name": "Melvius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/melvius_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_melvius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_melvius",
+			"title": "Melvius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Amiidae$(br)>Vidalamiinae$(br)>Vidalamiini"
+		},
+        	{
+            "type": "entity",
+            "name": "M. thomasi",
+            "entity": "lepidodendron:prehistoric_flora_melvius",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_melvius",
+			"type": "text",
+			"text": "Melvius is a genus of bowfin known from the Campanian to Maastrichtian of the Western United States. Two species are known: M. thomasi, known from the Hell Creek Formation, is the smaller species, growing to 1.6 meters in length. M. chauliodous, known from the Kirtland Formation, is the larger of the two, growing over 2 meters in length, making it one of the largest bowfins. Other isolated elements have been found in localities close to the Western Interior Seaway."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_melvius",
+			"type": "text",
+			"text": "Melvius would have likely inhabited drainage basins leading to the Western Interior Seaway, with Melvius dwelling in the Sea occasionally. This is in line with the typically marine nature of Vidalamiinae."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_melvius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_melvius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_melvius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_melvius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_melvius"
+		}
+	]
+}
