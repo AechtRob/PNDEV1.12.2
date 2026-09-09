@@ -1112,7 +1112,7 @@ public class RenderDisplays {
     public static final ModelJinzhousaurus modelJinzhousaurus = new ModelJinzhousaurus();
     public static final ModelDaurlong modelDaurlong = new ModelDaurlong();
     public static final ModelSinosauropteryx modelSinosauropteryx = new ModelSinosauropteryx();
-    public static final ModelNqwebsaurus modelNqwebsaurus = new ModelNqwebsaurus();
+    public static final ModelNqwebasaurus modelNqwebasaurus = new ModelNqwebasaurus();
     public static final ModelScaphognathus modelScaphognathus = new ModelScaphognathus();
     public static final ModelElrhazosaurus modelElrhazosaurus = new ModelElrhazosaurus();
     public static final ModelLurdusaurus modelLurdusaurus = new ModelLurdusaurus();

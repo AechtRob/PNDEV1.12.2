@@ -2195,7 +2195,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_TROPIDOSTEUS = new CustomTrigger("pf_book_tropidosteus");
     public static final CustomTrigger CLICK_GROSSASPIS = new CustomTrigger("pf_book_grossaspis");
     public static final CustomTrigger CLICK_SCANILEPIS = new CustomTrigger("pf_book_scanilepis");
-    public static final CustomTrigger CLICK_OLOROTITAN  = new CustomTrigger("pf_book_olorotitan ");
+    public static final CustomTrigger CLICK_OLOROTITAN  = new CustomTrigger("pf_book_olorotitan");
     public static final CustomTrigger CLICK_CYCLURUS = new CustomTrigger("pf_book_cyclurus");
     public static final CustomTrigger CLICK_TETHYBATIS = new CustomTrigger("pf_book_tethybatis");
     public static final CustomTrigger CLICK_PENTANOGMIUS = new CustomTrigger("pf_book_pentanogmius");
@@ -2254,7 +2254,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ARCHAEOGNATHA_ROCKY = new CustomTrigger("pf_book_archaeognatha_rocky");
     public static final CustomTrigger CLICK_ARCHAEOGNATHA_JUNGLE = new CustomTrigger("pf_book_archaeognatha_jungle");
     public static final CustomTrigger CLICK_AUSTROPROSBOLOIDES = new CustomTrigger("pf_book_palaeontinid_austroprosboloides");
-    public static final CustomTrigger CLICK_FLETCHERIANA  = new CustomTrigger("pf_book_palaeontinid_fletcheriana ");
+    public static final CustomTrigger CLICK_FLETCHERIANA  = new CustomTrigger("pf_book_palaeontinid_fletcheriana");
     public static final CustomTrigger CLICK_PAPILIONTINA = new CustomTrigger("pf_book_palaeontinid_papiliontina");
     public static final CustomTrigger CLICK_EOCICADA = new CustomTrigger("pf_book_palaeontinid_eocicada");
     public static final CustomTrigger CLICK_TALBRAGAROCOSSUS = new CustomTrigger("pf_book_palaeontinid_talbragarocossus");
@@ -2287,7 +2287,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SPICOMELLUS = new CustomTrigger("pf_book_spicomellus");
     public static final CustomTrigger CLICK_ATTENBOROSAURUS = new CustomTrigger("pf_book_attenborosaurus");
     public static final CustomTrigger CLICK_DICYNODON = new CustomTrigger("pf_book_dicynodon");
-    public static final CustomTrigger CLICK_SCAPHOGNATHUS  = new CustomTrigger("pf_book_scaphognathus ");
+    public static final CustomTrigger CLICK_SCAPHOGNATHUS  = new CustomTrigger("pf_book_scaphognathus");
     public static final CustomTrigger CLICK_HESCHELERIA = new CustomTrigger("pf_book_hescheleria");
     public static final CustomTrigger CLICK_MARSHOSAURUS = new CustomTrigger("pf_book_marshosaurus");
     public static final CustomTrigger CLICK_HAUFFIOSAURUS = new CustomTrigger("pf_book_hauffiosaurus");
@@ -2334,7 +2334,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_AUSTRALOVENATOR = new CustomTrigger("pf_book_australovenator");
     public static final CustomTrigger CLICK_PHUWIANGVENATOR = new CustomTrigger("pf_book_phuwiangvenator");
     public static final CustomTrigger CLICK_NEOVENATOR = new CustomTrigger("pf_book_neovenator");
-    public static final CustomTrigger CLICK_SINOTYRANNUS  = new CustomTrigger("pf_book_sinotyrannus ");
+    public static final CustomTrigger CLICK_SINOTYRANNUS  = new CustomTrigger("pf_book_sinotyrannus");
     public static final CustomTrigger CLICK_SHAOCHILONG = new CustomTrigger("pf_book_shaochilong");
     public static final CustomTrigger CLICK_EOTYRANNUS = new CustomTrigger("pf_book_eotyrannus");
     public static final CustomTrigger CLICK_BEIPIAOSAURUS = new CustomTrigger("pf_book_beipiaosaurus");
@@ -4927,7 +4927,7 @@ public class ModTriggers
 
         Method method;
 
-        method = ReflectionHelper.findMethod(CriteriaTriggers.class, "register", "func_192118_a", ICriterionTrigger.class);
+        method = ReflectionHelper.findMethod(CriteriaTriggers.class,"register","func_192118_a", ICriterionTrigger.class);
 
         method.setAccessible(true);
 

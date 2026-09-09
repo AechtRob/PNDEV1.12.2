@@ -2613,7 +2613,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_scaphognathus _clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_jinzhousaurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_sinosauropteryx_clean", "inventory"),
-				new ModelResourceLocation("lepidodendron:fossils/fossil_nqwebsaurus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_nqwebasaurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_daurlong_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_elrhazosaurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_lurdusaurus_clean", "inventory"),

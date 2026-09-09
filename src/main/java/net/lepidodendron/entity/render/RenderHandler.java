@@ -9923,10 +9923,10 @@ public class RenderHandler {
             public Render<? super EntityPrehistoricFloraSinosauropteryx> createRenderFor(RenderManager manager) {
                 return new RenderSinosauropteryx(manager);
             }
-        }); RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraNqwebsaurus.class, new IRenderFactory<EntityPrehistoricFloraNqwebsaurus>() {
+        }); RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraNqwebasaurus.class, new IRenderFactory<EntityPrehistoricFloraNqwebasaurus>() {
             @Override
-            public Render<? super EntityPrehistoricFloraNqwebsaurus> createRenderFor(RenderManager manager) {
-                return new RenderNqwebsaurus(manager);
+            public Render<? super EntityPrehistoricFloraNqwebasaurus> createRenderFor(RenderManager manager) {
+                return new RenderNqwebasaurus(manager);
             }
         }); RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDaurlong.class, new IRenderFactory<EntityPrehistoricFloraDaurlong>() {
             @Override

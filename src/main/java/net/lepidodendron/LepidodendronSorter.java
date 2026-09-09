@@ -6381,8 +6381,8 @@ public class LepidodendronSorter {
     public static final int jinzhousaurus_raw = 5757;
     public static final int eggs_sinosauropteryx = 5758;
     public static final int sinosauropteryx_raw = 5759;
-    public static final int eggs_nqwebsaurus = 5760;
-    public static final int nqwebsaurus_raw = 5761;
+    public static final int eggs_nqwebasaurus = 5760;
+    public static final int nqwebasaurus_raw = 5761;
     public static final int eggs_daurlong = 5762;
     public static final int daurlong_raw = 5763;
     public static final int eggs_lurdusaurus = 5764;

@@ -1,19 +1,19 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraNqwebsaurus;
-import net.lepidodendron.entity.model.entity.ModelNqwebsaurus;
+import net.lepidodendron.entity.EntityPrehistoricFloraNqwebasaurus;
+import net.lepidodendron.entity.model.entity.ModelNqwebasaurus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderNqwebsaurus extends RenderLivingBaseWithBook<EntityPrehistoricFloraNqwebsaurus> {
+public class RenderNqwebasaurus extends RenderLivingBaseWithBook<EntityPrehistoricFloraNqwebasaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/nqwebasaurus.png");
 
 
-    public RenderNqwebsaurus(RenderManager mgr) {
-        super(mgr, new ModelNqwebsaurus(), 0.3f);
+    public RenderNqwebasaurus(RenderManager mgr) {
+        super(mgr, new ModelNqwebasaurus(), 0.3f);
     }
 
     public static float getScaler() {
@@ -21,17 +21,17 @@ public class RenderNqwebsaurus extends RenderLivingBaseWithBook<EntityPrehistori
     }
 
     @Override
-    public ResourceLocation getEntityTexture(EntityPrehistoricFloraNqwebsaurus entity) {
-        return RenderNqwebsaurus.TEXTURE;
+    public ResourceLocation getEntityTexture(EntityPrehistoricFloraNqwebasaurus entity) {
+        return RenderNqwebasaurus.TEXTURE;
     }
 
     @Override
-    protected void applyRotations(EntityPrehistoricFloraNqwebsaurus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
+    protected void applyRotations(EntityPrehistoricFloraNqwebasaurus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 
     @Override
-    protected void preRenderCallback(EntityPrehistoricFloraNqwebsaurus entity, float f) {
+    protected void preRenderCallback(EntityPrehistoricFloraNqwebasaurus entity, float f) {
         float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);

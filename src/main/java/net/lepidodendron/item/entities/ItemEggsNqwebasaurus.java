@@ -17,11 +17,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemEggsNqwebsaurus extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:eggs_nqwebsaurus")
+public class ItemEggsNqwebasaurus extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:eggs_nqwebasaurus")
 	public static final Item block = null;
-	public ItemEggsNqwebsaurus(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.eggs_nqwebsaurus);
+	public ItemEggsNqwebasaurus(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.eggs_nqwebasaurus);
 	}
 
 	@Override
@@ -32,32 +32,32 @@ public class ItemEggsNqwebsaurus extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/eggs_nqwebsaurus", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/eggs_nqwebasaurus", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("bakingEgg", ItemEggsNqwebsaurus.block);
-		OreDictionary.registerOre("egg", ItemEggsNqwebsaurus.block);
-		OreDictionary.registerOre("eggCookable", ItemEggsNqwebsaurus.block);
-		OreDictionary.registerOre("foodSimpleEgg", ItemEggsNqwebsaurus.block);
-		OreDictionary.registerOre("ingredientEgg", ItemEggsNqwebsaurus.block);
-		OreDictionary.registerOre("listAllegg", ItemEggsNqwebsaurus.block);
-		OreDictionary.registerOre("objectEgg", ItemEggsNqwebsaurus.block);
+		OreDictionary.registerOre("bakingEgg", ItemEggsNqwebasaurus.block);
+		OreDictionary.registerOre("egg", ItemEggsNqwebasaurus.block);
+		OreDictionary.registerOre("eggCookable", ItemEggsNqwebasaurus.block);
+		OreDictionary.registerOre("foodSimpleEgg", ItemEggsNqwebasaurus.block);
+		OreDictionary.registerOre("ingredientEgg", ItemEggsNqwebasaurus.block);
+		OreDictionary.registerOre("listAllegg", ItemEggsNqwebasaurus.block);
+		OreDictionary.registerOre("objectEgg", ItemEggsNqwebasaurus.block);
 	}
 
 	public static class ItemCustom extends ItemEggsPF {
 		public ItemCustom() {
 			super();
-			setTranslationKey("pf_eggs_nqwebsaurus");
-			setRegistryName("eggs_nqwebsaurus");
+			setTranslationKey("pf_eggs_nqwebasaurus");
+			setRegistryName("eggs_nqwebasaurus");
 			setCreativeTab(TabLepidodendronMobile.tab);
 		}
 
 		@Override
 		public String getMobString() {
-			return LepidodendronMod.MODID + ":prehistoric_flora_nqwebsaurus";
+			return LepidodendronMod.MODID + ":prehistoric_flora_nqwebasaurus";
 		}
 	}
 

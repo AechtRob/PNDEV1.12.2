@@ -3,13 +3,13 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraNqwebsaurus;
+import net.lepidodendron.entity.EntityPrehistoricFloraNqwebasaurus;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelNqwebsaurus extends ModelBasePalaeopedia {
+public class ModelNqwebasaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer hips;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -93,7 +93,7 @@ public class ModelNqwebsaurus extends ModelBasePalaeopedia {
 
     private ModelAnimator animator;
 
-    public ModelNqwebsaurus() {
+    public ModelNqwebasaurus() {
         this.textureWidth = 99;
         this.textureHeight = 98;
 
@@ -649,7 +649,7 @@ public class ModelNqwebsaurus extends ModelBasePalaeopedia {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
 
-        EntityPrehistoricFloraNqwebsaurus entityNqwebsaurus = (EntityPrehistoricFloraNqwebsaurus) e;
+        EntityPrehistoricFloraNqwebasaurus entityNqwebasaurus = (EntityPrehistoricFloraNqwebasaurus) e;
 
         this.faceTarget(f3, f4, 12, neck1);
         this.faceTarget(f3, f4, 12, neck2);
@@ -661,17 +661,17 @@ public class ModelNqwebsaurus extends ModelBasePalaeopedia {
         //AdvancedModelRenderer[] ArmL = {this.leftarm, this.leftarm2, this.leftarm3};
         //AdvancedModelRenderer[] ArmR = {this.rightarm, this.rightarm2, this.rightarm3};
 
-        entityNqwebsaurus.tailBuffer.applyChainSwingBuffer(Tail);
+        entityNqwebasaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
-        if (entityNqwebsaurus.getAnimation() == entityNqwebsaurus.LAY_ANIMATION) {
+        if (entityNqwebasaurus.getAnimation() == entityNqwebasaurus.LAY_ANIMATION) {
             this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);
             this.chainWave(Neck, 0.5F * 2, -0.02F, 0.5F, f2, 0.8F);
         } else {
-            if (!entityNqwebsaurus.isReallyInWater()) {
+            if (!entityNqwebasaurus.isReallyInWater()) {
 
-                if (f3 == 0.0F || !entityNqwebsaurus.getIsMoving()) {
-                    if (entityNqwebsaurus.getAnimation() != entityNqwebsaurus.EAT_ANIMATION
-                            && entityNqwebsaurus.getAnimation() != entityNqwebsaurus.DRINK_ANIMATION) {
+                if (f3 == 0.0F || !entityNqwebasaurus.getIsMoving()) {
+                    if (entityNqwebasaurus.getAnimation() != entityNqwebasaurus.EAT_ANIMATION
+                            && entityNqwebasaurus.getAnimation() != entityNqwebasaurus.DRINK_ANIMATION) {
                         this.chainSwing(Neck, 0.05F, 0.10F, 0.5, f2, 0.8F);
                         this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
                     }
@@ -683,7 +683,7 @@ public class ModelNqwebsaurus extends ModelBasePalaeopedia {
                     return;
                 }
 
-                if (entityNqwebsaurus.getIsFast()) { //Running
+                if (entityNqwebasaurus.getIsFast()) { //Running
 
 
                 } else { //Walking
@@ -705,7 +705,7 @@ public class ModelNqwebsaurus extends ModelBasePalaeopedia {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
-        EntityPrehistoricFloraNqwebsaurus ee = (EntityPrehistoricFloraNqwebsaurus) entitylivingbaseIn;
+        EntityPrehistoricFloraNqwebasaurus ee = (EntityPrehistoricFloraNqwebasaurus) entitylivingbaseIn;
 
         if (!ee.isReallyInWater()) {
             if (ee.getIsMoving()) {
@@ -747,7 +747,7 @@ public class ModelNqwebsaurus extends ModelBasePalaeopedia {
 
     }
     public void animAttack(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraNqwebsaurus entity = (EntityPrehistoricFloraNqwebsaurus) entitylivingbaseIn;
+        EntityPrehistoricFloraNqwebasaurus entity = (EntityPrehistoricFloraNqwebasaurus) entitylivingbaseIn;
         int animCycle = 10;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
@@ -1007,7 +1007,7 @@ public class ModelNqwebsaurus extends ModelBasePalaeopedia {
 
     }
     public void animIdle(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraNqwebsaurus entity = (EntityPrehistoricFloraNqwebsaurus) entitylivingbaseIn;
+        EntityPrehistoricFloraNqwebasaurus entity = (EntityPrehistoricFloraNqwebasaurus) entitylivingbaseIn;
         int animCycle = 115;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
@@ -2101,7 +2101,7 @@ public class ModelNqwebsaurus extends ModelBasePalaeopedia {
         this.tail3.rotationPointZ = this.tail3.rotationPointZ + (float)(zz);
     }
     public void animNest(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraNqwebsaurus entity = (EntityPrehistoricFloraNqwebsaurus) entitylivingbaseIn;
+        EntityPrehistoricFloraNqwebasaurus entity = (EntityPrehistoricFloraNqwebasaurus) entitylivingbaseIn;
         int animCycle = 40;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
@@ -2351,7 +2351,7 @@ public class ModelNqwebsaurus extends ModelBasePalaeopedia {
 
     }
     public void animLay(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraNqwebsaurus entity = (EntityPrehistoricFloraNqwebsaurus) entitylivingbaseIn;
+        EntityPrehistoricFloraNqwebasaurus entity = (EntityPrehistoricFloraNqwebasaurus) entitylivingbaseIn;
         int animCycle = 40;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
@@ -2945,7 +2945,7 @@ public class ModelNqwebsaurus extends ModelBasePalaeopedia {
         this.setRotateAngle(tail4, tail4.rotateAngleX + (float) Math.toRadians(xx), tail4.rotateAngleY + (float) Math.toRadians(yy), tail4.rotateAngleZ + (float) Math.toRadians(zz));
     }
     public void animNoise(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraNqwebsaurus entity = (EntityPrehistoricFloraNqwebsaurus) entitylivingbaseIn;
+        EntityPrehistoricFloraNqwebasaurus entity = (EntityPrehistoricFloraNqwebasaurus) entitylivingbaseIn;
         int animCycle = 40;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
@@ -3330,7 +3330,7 @@ public class ModelNqwebsaurus extends ModelBasePalaeopedia {
 
     }
     public void animEat(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraNqwebsaurus entity = (EntityPrehistoricFloraNqwebsaurus) entitylivingbaseIn;
+        EntityPrehistoricFloraNqwebasaurus entity = (EntityPrehistoricFloraNqwebasaurus) entitylivingbaseIn;
         int animCycle = 20;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
@@ -3515,7 +3515,7 @@ public class ModelNqwebsaurus extends ModelBasePalaeopedia {
 
     }
     public void animRunning(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
-        EntityPrehistoricFloraNqwebsaurus entity = (EntityPrehistoricFloraNqwebsaurus) entitylivingbaseIn;
+        EntityPrehistoricFloraNqwebasaurus entity = (EntityPrehistoricFloraNqwebasaurus) entitylivingbaseIn;
         int animCycle = 10;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;
@@ -4090,7 +4090,7 @@ public class ModelNqwebsaurus extends ModelBasePalaeopedia {
     }
 
     public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
-        EntityPrehistoricFloraNqwebsaurus entity = (EntityPrehistoricFloraNqwebsaurus) entitylivingbaseIn;
+        EntityPrehistoricFloraNqwebasaurus entity = (EntityPrehistoricFloraNqwebasaurus) entitylivingbaseIn;
         int animCycle = 20;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;
@@ -4674,7 +4674,7 @@ public class ModelNqwebsaurus extends ModelBasePalaeopedia {
 
     }
     public void animDisp(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraNqwebsaurus entity = (EntityPrehistoricFloraNqwebsaurus) entitylivingbaseIn;
+        EntityPrehistoricFloraNqwebasaurus entity = (EntityPrehistoricFloraNqwebasaurus) entitylivingbaseIn;
         int animCycle = 80;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
@@ -5960,7 +5960,7 @@ public class ModelNqwebsaurus extends ModelBasePalaeopedia {
     }
 
     public void animGraze(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraNqwebsaurus entity = (EntityPrehistoricFloraNqwebsaurus) entitylivingbaseIn;
+        EntityPrehistoricFloraNqwebasaurus entity = (EntityPrehistoricFloraNqwebasaurus) entitylivingbaseIn;
         int animCycle = 222;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
@@ -7490,7 +7490,7 @@ public class ModelNqwebsaurus extends ModelBasePalaeopedia {
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        EntityPrehistoricFloraNqwebsaurus e = (EntityPrehistoricFloraNqwebsaurus) entity;
+        EntityPrehistoricFloraNqwebasaurus e = (EntityPrehistoricFloraNqwebasaurus) entity;
         animator.update(entity);
 
 //        animator.setAnimation(e.EAT_ANIMATION); //10 ticks

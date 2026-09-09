@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:drosera"
+			"item": "lepidodendron:drosera_small"
 		 },
 		"title": {
 			"translate": "advancements.pf_adv_book_drosera.title"

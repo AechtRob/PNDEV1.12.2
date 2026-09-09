@@ -9,7 +9,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderNqwebsaurus;
+import net.lepidodendron.entity.render.entity.RenderNqwebasaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
@@ -38,7 +38,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraNqwebsaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, ITrappableLand {
+public class EntityPrehistoricFloraNqwebasaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraNqwebsaurus extends EntityPrehistoricFloraLan
 	private int standCooldown;
 
 
-	public EntityPrehistoricFloraNqwebsaurus(World world) {
+	public EntityPrehistoricFloraNqwebasaurus(World world) {
 		super(world);
 		setSize(0.49F, 0.52F);
 		minWidth = 0.05F;
@@ -314,13 +314,13 @@ public class EntityPrehistoricFloraNqwebsaurus extends EntityPrehistoricFloraLan
 		if (this.willGrapple) {
 			return false;
 		}
-		List<EntityPrehistoricFloraNqwebsaurus> Nqwebsaurus = Functions.getEntitiesWithinAABBPN(world, EntityPrehistoricFloraNqwebsaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)), EntitySelectors.NOT_SPECTATING);
-		for (EntityPrehistoricFloraNqwebsaurus currentNqwebsaurus : Nqwebsaurus) {
-			if (currentNqwebsaurus.isPFAdult() && this.isPFAdult() && currentNqwebsaurus != this && (!currentNqwebsaurus.willGrapple) && this.canEntityBeSeen(currentNqwebsaurus)) {
-				this.setGrappleTarget(currentNqwebsaurus);
-				currentNqwebsaurus.willGrapple = true;
+		List<EntityPrehistoricFloraNqwebasaurus> Nqwebasaurus = Functions.getEntitiesWithinAABBPN(world, EntityPrehistoricFloraNqwebasaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)), EntitySelectors.NOT_SPECTATING);
+		for (EntityPrehistoricFloraNqwebasaurus currentNqwebasaurus : Nqwebasaurus) {
+			if (currentNqwebasaurus.isPFAdult() && this.isPFAdult() && currentNqwebasaurus != this && (!currentNqwebasaurus.willGrapple) && this.canEntityBeSeen(currentNqwebasaurus)) {
+				this.setGrappleTarget(currentNqwebasaurus);
+				currentNqwebasaurus.willGrapple = true;
 				this.willGrapple = true;
-				currentNqwebsaurus.setGrappleTarget(this);
+				currentNqwebasaurus.setGrappleTarget(this);
 				return true;
 			}
 		}
@@ -511,14 +511,14 @@ public class EntityPrehistoricFloraNqwebsaurus extends EntityPrehistoricFloraLan
         return 0;
     }
     @SideOnly(Side.CLIENT)
-    public static ResourceLocation textureDisplay(@Nullable String variant) { return RenderNqwebsaurus.TEXTURE;
+    public static ResourceLocation textureDisplay(@Nullable String variant) { return RenderNqwebasaurus.TEXTURE;
     }
     @SideOnly(Side.CLIENT)
     public static ModelBase modelDisplay(@Nullable String variant) {
-        return RenderDisplays.modelNqwebsaurus;
+        return RenderDisplays.modelNqwebasaurus;
     }
     public static float getScaler(@Nullable String variant) {
-        return RenderNqwebsaurus.getScaler();
+        return RenderNqwebasaurus.getScaler();
     }
 
 }
