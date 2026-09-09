@@ -15,6 +15,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
@@ -126,7 +127,7 @@ public class BlockToxicMud extends ElementsLepidodendronMod.ModElement {
 				}
 
 			}
-			else if (entityIn instanceof EntityLivingBase)
+			else if (entityIn instanceof EntityVillager)
 			{
 				if (((EntityLivingBase) entityIn).getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == Items.AIR) {
 					entityIn.attackEntityFrom(CAUSTIC, (float) 0.5F);

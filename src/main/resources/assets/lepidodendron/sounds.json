@@ -17621,11 +17621,11 @@
       {
         "name": "lepidodendron:moradisaurus_living03",
         "stream": false
-      }
+      },
       {
         "name": "lepidodendron:moradisaurus_living04",
         "stream": false
-      }
+      },
       {
         "name": "lepidodendron:moradisaurus_living05",
         "stream": false
@@ -17641,7 +17641,7 @@
       {
         "name": "lepidodendron:moradisaurus_hurt02",
         "stream": false
-      }
+      },
       {
         "name": "lepidodendron:moradisaurus_hurt03",
         "stream": false
@@ -17866,7 +17866,7 @@
       {
         "name": "lepidodendron:phuwiangvenator_hurt02",
         "stream": false
-      }
+      },
       {
         "name": "lepidodendron:phuwiangvenator_hurt03",
         "stream": false
@@ -17952,7 +17952,7 @@
       {
         "name": "lepidodendron:phuwiangosaurus_hurt02",
         "stream": false
-      }
+      },
       {
         "name": "lepidodendron:phuwiangosaurus_hurt03",
         "stream": false
