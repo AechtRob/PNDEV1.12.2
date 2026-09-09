@@ -2,11 +2,8 @@ package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDisaster;
-import net.lepidodendron.block.BlockHemiaster;
 import net.lepidodendron.entity.model.tile.ModelDisasterItem;
-import net.lepidodendron.entity.model.tile.ModelHemiasterItem;
 import net.lepidodendron.entity.render.entity.RenderDisaster;
-import net.lepidodendron.entity.render.entity.RenderHemiaster;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;

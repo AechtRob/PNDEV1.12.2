@@ -4,7 +4,6 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
-import net.lepidodendron.entity.EntityPrehistoricFloraScorpion_Gondwanascorpio;
 import net.lepidodendron.entity.EntityPrehistoricFloraScorpion_Waeringoscorpio;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.block.state.IBlockState;

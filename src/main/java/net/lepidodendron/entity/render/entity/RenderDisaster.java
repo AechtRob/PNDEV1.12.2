@@ -2,9 +2,7 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDisaster;
-import net.lepidodendron.entity.EntityPrehistoricFloraHemiaster;
 import net.lepidodendron.entity.model.entity.ModelDisaster;
-import net.lepidodendron.entity.model.entity.ModelHemiaster;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;

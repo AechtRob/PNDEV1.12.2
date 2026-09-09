@@ -1,8 +1,6 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraEramoscorpius;
-import net.lepidodendron.entity.EntityPrehistoricFloraPraearcturus;
 import net.lepidodendron.entity.EntityPrehistoricFloraScorpion_Waeringoscorpio;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;

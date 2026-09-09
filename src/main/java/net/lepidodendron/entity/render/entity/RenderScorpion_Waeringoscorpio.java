@@ -1,9 +1,7 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraScorpion_Gondwanascorpio;
 import net.lepidodendron.entity.EntityPrehistoricFloraScorpion_Waeringoscorpio;
-import net.lepidodendron.entity.model.entity.ModelScorpion;
 import net.lepidodendron.entity.model.entity.ModelWaeringoscorpio;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;

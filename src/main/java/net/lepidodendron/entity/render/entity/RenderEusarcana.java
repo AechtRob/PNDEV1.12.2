@@ -1,9 +1,7 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraErettopterus;
 import net.lepidodendron.entity.EntityPrehistoricFloraEusarcana;
-import net.lepidodendron.entity.model.entity.ModelErettopterus;
 import net.lepidodendron.entity.model.entity.ModelEusarcana;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;

@@ -2,9 +2,7 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCampylocephalus;
-import net.lepidodendron.entity.EntityPrehistoricFloraHibbertopterus;
 import net.lepidodendron.entity.model.entity.ModelCampylocephalus;
-import net.lepidodendron.entity.model.entity.ModelHibbertopterus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
