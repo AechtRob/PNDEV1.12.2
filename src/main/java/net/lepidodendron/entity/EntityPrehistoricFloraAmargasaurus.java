@@ -347,7 +347,7 @@ public class EntityPrehistoricFloraAmargasaurus extends EntityPrehistoricFloraLa
 
     public SoundEvent getAmbientAmbientSound() {
         return (SoundEvent) SoundEvent.REGISTRY
-                .getObject(new ResourceLocation("lepidodendron:amargasaurus_idle"));
+                .getObject(new ResourceLocation("lepidodendron:amargasaurus_death"));
     }
 
     @Override
