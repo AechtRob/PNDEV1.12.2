@@ -87,7 +87,8 @@ public class WorldGenBristleconeTree extends WorldGenAbstractTree
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
                     if (position.getY() > 145
-                        || (position.getY() > 85 && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_barren_hills"))) {
+                            || (position.getY() > 85 && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_barren_hills"))
+                            || (position.getY() > 125 && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_mountains"))) {
                         ProcedureWorldGenBristlecone.executeProcedure($_dependencies);
                         return true;
                     }
