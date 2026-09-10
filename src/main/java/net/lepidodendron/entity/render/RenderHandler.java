@@ -10361,44 +10361,37 @@ public class RenderHandler {
 
         //Tile Entities:
         //-------------
-        if (LepidodendronConfig.renderAnimations) {
-            //Neoproterozoic (Ediacaran):
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockCharnia.TileEntityCustom.class, new RenderCharnia());
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockCharniodiscus.TileEntityCustom.class, new RenderCharniodiscus());
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockArborea.TileEntityCustom.class, new RenderArborea());
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockBomakellia.TileEntityCustom.class, new RenderBomakellia());
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockPambikalbae.TileEntityCustom.class, new RenderPambikalbae());
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockPrimocandelabrum1.TileEntityCustom.class, new RenderPrimocandelabrum1());
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockPrimocandelabrum2.TileEntityCustom.class, new RenderPrimocandelabrum2());
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockParviscopa.TileEntityCustom.class, new RenderParviscopa());
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockFunisia.TileEntityCustom.class, new RenderFunisia());
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockHapsidophyllas.TileEntityCustom.class, new RenderHapsidophyllas());
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockFrondophyllas.TileEntityCustom.class, new RenderFrondophyllas());
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockGigarimaneta.TileEntityCustom.class, new RenderGigarimaneta());
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockHylaecullulus.TileEntityCustom.class, new RenderHylaecullulus());
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockParacharnia.TileEntityCustom.class, new RenderParacharnia());
-            //Cambrian:
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockStromatoveris.TileEntityCustom.class, new RenderStromatoveris());
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockThaumaptilon.TileEntityCustom.class, new RenderThaumaptilon());
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockShankouclava.TileEntityCustom.class, new RenderShankouclava());
-            ClientRegistry.bindTileEntitySpecialRenderer(BlockMegasiphon.TileEntityCustom.class, new RenderMegasiphon());
-        }
 
-        //These do not have block models available:
         //Neoproterozoic (Ediacaran):
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockCharnia.TileEntityCustom.class, new RenderCharnia());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockCharniodiscus.TileEntityCustom.class, new RenderCharniodiscus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockArborea.TileEntityCustom.class, new RenderArborea());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockBomakellia.TileEntityCustom.class, new RenderBomakellia());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockPambikalbae.TileEntityCustom.class, new RenderPambikalbae());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockPrimocandelabrum1.TileEntityCustom.class, new RenderPrimocandelabrum1());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockPrimocandelabrum2.TileEntityCustom.class, new RenderPrimocandelabrum2());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockParviscopa.TileEntityCustom.class, new RenderParviscopa());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockFunisia.TileEntityCustom.class, new RenderFunisia());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockHapsidophyllas.TileEntityCustom.class, new RenderHapsidophyllas());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockFrondophyllas.TileEntityCustom.class, new RenderFrondophyllas());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockGigarimaneta.TileEntityCustom.class, new RenderGigarimaneta());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockHylaecullulus.TileEntityCustom.class, new RenderHylaecullulus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockParacharnia.TileEntityCustom.class, new RenderParacharnia());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockPteridinium.TileEntityCustom.class, new RenderPteridinium());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockCoronacollina.TileEntityCustom.class, new RenderCoronacollina());
         //Cambrian:
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockStromatoveris.TileEntityCustom.class, new RenderStromatoveris());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockThaumaptilon.TileEntityCustom.class, new RenderThaumaptilon());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockShankouclava.TileEntityCustom.class, new RenderShankouclava());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockMegasiphon.TileEntityCustom.class, new RenderMegasiphon());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockHerpetogaster.TileEntityCustom.class, new RenderHerpetogaster());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockGyaltsenglossus.TileEntityCustom.class, new RenderGyaltsenglossus());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityFacivermis.class, new RenderFacivermis());
-        //ClientRegistry.bindTileEntitySpecialRenderer(BlockOesia.TileEntityCustom.class, new RenderOesia());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGangtoucunia.class, new RenderGangtoucunia());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockBrachiospongia.TileEntityCustom.class, new RenderBrachiospongia());
         //General:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSeaPenPink.TileEntityCustom.class, new RenderSeaPenPink());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSeaPenYellow.TileEntityCustom.class, new RenderSeaPenYellow());
-
 
         //Tile Entities Nautiloid shells etc:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockFurcaster.TileEntityCustom.class, new RenderFurcasterItem());
