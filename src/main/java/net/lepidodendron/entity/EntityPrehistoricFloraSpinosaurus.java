@@ -300,7 +300,7 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.32F;
+			speedBase = speedBase * 1.45F;
 
 		}
 		return speedBase;
@@ -339,7 +339,7 @@ public class EntityPrehistoricFloraSpinosaurus extends EntityPrehistoricFloraLan
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
-		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
+		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(3, new AgeableWarnEntity(this, EntityPlayer.class, 4));
 		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(5, new LandWanderNestAI(this));
