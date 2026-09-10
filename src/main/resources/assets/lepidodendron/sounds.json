@@ -17978,5 +17978,38 @@
         "stream": false
       }
     ]
+  },
+
+  "amargasaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:amargasaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:amargasaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:amargasaurus_living03",
+        "stream": false
+      }
+    ]
+  },
+  "amargasaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:amargasaurus_hurt01",
+        "stream": false
+      }
+    ]
+  },
+  "amargasaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:amargasaurus_death",
+        "stream": false
+      }
+    ]
   }
 }
