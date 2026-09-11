@@ -208,7 +208,7 @@ public class DimensionSpawns {
                             }
                             String entityname = entity.getName();
                             if (entityname.contains("(")) {
-                                entityname = entityname.substring(entityname.indexOf("(")).trim();
+                                entityname = entityname.substring(0, entityname.indexOf("(")).trim();
                             }
                             int truncate = LepidodendronConfig.palaeopediaTruncation;
                             if (truncate < 1) {
@@ -239,7 +239,7 @@ public class DimensionSpawns {
                     else {
                         String entityname = entity.getName();
                         if (entityname.contains("(")) {
-                            entityname = entityname.substring(entityname.indexOf("(")).trim();
+                            entityname = entityname.substring(0, entityname.indexOf("(")).trim();
                         }
                         int truncate = LepidodendronConfig.palaeopediaTruncation;
                         if (truncate < 1) {
@@ -257,7 +257,7 @@ public class DimensionSpawns {
                 else {
                     String entityname = entity.getName();
                     if (entityname.contains("(")) {
-                        entityname = entityname.substring(entityname.indexOf("(")).trim();
+                        entityname = entityname.substring(0, entityname.indexOf("(")).trim();
                     }
                     int truncate = LepidodendronConfig.palaeopediaTruncation;
                     if (truncate < 1) {
