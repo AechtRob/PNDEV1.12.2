@@ -127,7 +127,7 @@ public class EntityPrehistoricFloraEoconfuciusornis extends EntityPrehistoricFlo
 		}
 		else
 		{
-			return I18n.translateToLocal("entity.prehistoric_flora_eoconfusiusornis_" + this.getPNType().getName() + ".name");
+			return I18n.translateToLocal("entity.prehistoric_flora_eoconfuciusornis_" + this.getPNType().getName() + ".name");
 		}
 	}
 

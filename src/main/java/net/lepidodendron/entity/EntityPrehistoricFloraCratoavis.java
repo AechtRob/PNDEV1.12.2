@@ -16,11 +16,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -28,7 +23,6 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import org.apache.commons.lang3.ArrayUtils;
@@ -39,8 +33,6 @@ public class EntityPrehistoricFloraCratoavis extends EntityPrehistoricFloraLandC
 
 	public BlockPos currentTarget;
 	private int standCooldown;
-
-	private static final DataParameter<Integer> GENDER = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraCratoavis.class, DataSerializers.VARINT);
 
 	public EntityPrehistoricFloraCratoavis(World world) {
 		super(world);
@@ -60,163 +52,12 @@ public class EntityPrehistoricFloraCratoavis extends EntityPrehistoricFloraLandC
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
 		this.standCooldown = rand.nextInt(2000);
-		this.setPNType(EntityPrehistoricFloraCratoavis.Type.byId(rand.nextInt(EntityPrehistoricFloraCratoavis.Type.values().length) + 1));
 		return livingdata;
 	}
 
 	@Override
 	public boolean canRelaunch() {
 		return true;
-	}
-
-	@Override
-	protected void entityInit() {
-		super.entityInit();
-		this.dataManager.register(GENDER, 0);
-	}
-
-	@Override
-	public byte breedPNVariantsMatch() {
-		return -1;
-	}
-
-	@Override
-	public boolean canMateWith(EntityAnimal otherAnimal)
-	{
-		if (otherAnimal == this)
-		{
-			return false;
-		}
-		else if (otherAnimal.getClass() != this.getClass())
-		{
-			return false;
-		}
-		else {
-			switch (this.breedPNVariantsMatch()) {
-				case 0: default:
-					break;
-
-				case -1:
-					if (((EntityPrehistoricFloraCratoavis)otherAnimal).getPNType() == this.getPNType()) {
-						return false;
-					}
-					break;
-
-				case 1:
-					if (((EntityPrehistoricFloraCratoavis)otherAnimal).getPNType() != this.getPNType()) {
-						return false;
-					}
-					break;
-
-			}
-		}
-
-		return this.isInLove() && otherAnimal.isInLove();
-	}
-
-	@Override
-	public String getName() {
-		if (this.hasCustomName())
-		{
-			return this.getCustomNameTag();
-		}
-		else
-		{
-			return I18n.translateToLocal("entity.prehistoric_flora_cratoavis_" + this.getPNType().getName() + ".name");
-		}
-	}
-
-
-
-	@Override
-	public boolean hasPNVariants() {
-		return true;
-	}
-
-	@Override
-	public String getPNTypeName()
-	{
-		return this.getPNType().getName();
-	}
-
-	public enum Type
-	{
-		MALE(1, "male"),
-		FEMALE(2, "female")
-		;
-
-		private final String name;
-		private final int metadata;
-
-		Type(int metadataIn, String nameIn)
-		{
-			this.name = nameIn;
-			this.metadata = metadataIn;
-		}
-
-		public String getName()
-		{
-			return this.name;
-		}
-
-		public int getMetadata()
-		{
-			return this.metadata;
-		}
-
-		public String toString()
-		{
-			return this.name;
-		}
-
-		public static EntityPrehistoricFloraCratoavis.Type byId(int id)
-		{
-			if (id < 0 || id >= values().length)
-			{
-				id = 0;
-			}
-
-			return values()[id];
-		}
-
-		public static EntityPrehistoricFloraCratoavis.Type getTypeFromString(String nameIn)
-		{
-			for (int i = 0; i < values().length; ++i)
-			{
-				if (values()[i].getName().equals(nameIn))
-				{
-					return values()[i];
-				}
-			}
-
-			return values()[0];
-		}
-
-	}
-
-	public void setPNType(EntityPrehistoricFloraCratoavis.Type type)
-	{
-		this.dataManager.set(GENDER, Integer.valueOf(type.ordinal()));
-	}
-
-	public EntityPrehistoricFloraCratoavis.Type getPNType()
-	{
-		return EntityPrehistoricFloraCratoavis.Type.byId(((Integer)this.dataManager.get(GENDER)).intValue());
-	}
-
-	public void writeEntityToNBT(NBTTagCompound compound) {
-		super.writeEntityToNBT(compound);
-		compound.setString("PNType", this.getPNType().getName());
-	}
-
-	public void readEntityFromNBT(NBTTagCompound compound) {
-		if (this.world != null) {
-			super.readEntityFromNBT(compound);
-		}
-		if (compound.hasKey("PNType", 8))
-		{
-			this.setPNType(EntityPrehistoricFloraCratoavis.Type.getTypeFromString(compound.getString("PNType")));
-		}
 	}
 
 	@Override
@@ -294,15 +135,6 @@ public class EntityPrehistoricFloraCratoavis extends EntityPrehistoricFloraLandC
 		this.setIsClimbing(false);
 		return false;
 	}
-
-
-
-
-
-
-
-
-
 
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;

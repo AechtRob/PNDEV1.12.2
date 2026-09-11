@@ -207,6 +207,9 @@ public class DimensionSpawns {
                                 type = nbttagcompound.getString("PNType");
                             }
                             String entityname = entity.getName();
+                            if (entityname.contains("(")) {
+                                entityname = entityname.substring(entityname.indexOf("(")).trim();
+                            }
                             int truncate = LepidodendronConfig.palaeopediaTruncation;
                             if (truncate < 1) {
                                 truncate = 1;
@@ -235,6 +238,9 @@ public class DimensionSpawns {
                     }
                     else {
                         String entityname = entity.getName();
+                        if (entityname.contains("(")) {
+                            entityname = entityname.substring(entityname.indexOf("(")).trim();
+                        }
                         int truncate = LepidodendronConfig.palaeopediaTruncation;
                         if (truncate < 1) {
                             truncate = 1;
@@ -250,6 +256,9 @@ public class DimensionSpawns {
                 }
                 else {
                     String entityname = entity.getName();
+                    if (entityname.contains("(")) {
+                        entityname = entityname.substring(entityname.indexOf("(")).trim();
+                    }
                     int truncate = LepidodendronConfig.palaeopediaTruncation;
                     if (truncate < 1) {
                         truncate = 1;
