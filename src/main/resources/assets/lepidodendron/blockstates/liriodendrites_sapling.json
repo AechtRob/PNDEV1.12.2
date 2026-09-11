@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "stage=0": { "model": "lepidodendron:liriodendrites_sapling" },
+        "stage=1": { "model": "lepidodendron:liriodendrites_sapling" }
+    }
+}
