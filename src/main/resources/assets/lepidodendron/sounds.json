@@ -13037,7 +13037,7 @@
   "aquilops_display": {
     "sounds": [
       {
-        "name": "lepidodendron:aquilops_display01",
+        "name": "lepidodendron:aquilops_display",
         "stream": false
       }
     ]
@@ -15411,14 +15411,6 @@
       {
         "name": "lepidodendron:tawa_hurt03",
         "stream": false
-      },
-      {
-        "name": "lepidodendron:tawa_hurt04",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:tawa_hurt05",
-        "stream": false
       }
     ]
   },
@@ -16042,10 +16034,6 @@
       {
         "name": "lepidodendron:spectrovenator_hurt03",
         "stream": false
-      },
-      {
-        "name": "lepidodendron:spectrovenator_hurt04",
-        "stream": false
       }
     ]
   },
@@ -16526,10 +16514,6 @@
       {
         "name": "lepidodendron:barosaurus_living05",
         "stream": false
-      },
-      {
-        "name": "lepidodendron:barosaurus_living06",
-        "stream": false
       }
     ]
   },
@@ -16806,14 +16790,6 @@
       },
       {
         "name": "lepidodendron:europejara_alarm03",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:europejara_alarm04",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:europejara_alarm05",
         "stream": false
       }
     ]
