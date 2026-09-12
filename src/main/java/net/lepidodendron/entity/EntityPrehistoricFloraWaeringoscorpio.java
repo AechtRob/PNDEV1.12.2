@@ -40,15 +40,15 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraScorpion_Waeringoscorpio extends EntityPrehistoricFloraWalkingAmphibianBase implements ITrappableWater, IBrood {
+public class EntityPrehistoricFloraWaeringoscorpio extends EntityPrehistoricFloraWalkingAmphibianBase implements ITrappableWater, IBrood {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
-	private static final DataParameter<Boolean> BABIES = EntityDataManager.createKey(EntityPrehistoricFloraScorpion_Waeringoscorpio.class, DataSerializers.BOOLEAN);
-	private static final DataParameter<Boolean> ISBABY = EntityDataManager.createKey(EntityPrehistoricFloraScorpion_Waeringoscorpio.class, DataSerializers.BOOLEAN);
+	private static final DataParameter<Boolean> BABIES = EntityDataManager.createKey(EntityPrehistoricFloraWaeringoscorpio.class, DataSerializers.BOOLEAN);
+	private static final DataParameter<Boolean> ISBABY = EntityDataManager.createKey(EntityPrehistoricFloraWaeringoscorpio.class, DataSerializers.BOOLEAN);
 
-	public EntityPrehistoricFloraScorpion_Waeringoscorpio(World world) {
+	public EntityPrehistoricFloraWaeringoscorpio(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);
 		minWidth = 0.10F;
@@ -265,8 +265,8 @@ public class EntityPrehistoricFloraScorpion_Waeringoscorpio extends EntityPrehis
 			for (int i = 0; i <= ii; i++) {
 				//Spawn babies:
 				Entity entity = null;
-				entity = ItemMonsterPlacer.spawnCreature(this.world, EntityList.getKey(EntityPrehistoricFloraScorpion_Waeringoscorpio.class), (double)this.getPosition().getX() + 0.5D, (double)this.getPosition().getY() + 0.5D, (double)this.getPosition().getZ() + 0.5D);
-				EntityPrehistoricFloraScorpion_Waeringoscorpio baby = (EntityPrehistoricFloraScorpion_Waeringoscorpio) entity;
+				entity = ItemMonsterPlacer.spawnCreature(this.world, EntityList.getKey(EntityPrehistoricFloraWaeringoscorpio.class), (double)this.getPosition().getX() + 0.5D, (double)this.getPosition().getY() + 0.5D, (double)this.getPosition().getZ() + 0.5D);
+				EntityPrehistoricFloraWaeringoscorpio baby = (EntityPrehistoricFloraWaeringoscorpio) entity;
 				baby.setAgeTicks(1);
 				baby.setIsBaby(true);
 				if (Math.random() >= 0.8) {

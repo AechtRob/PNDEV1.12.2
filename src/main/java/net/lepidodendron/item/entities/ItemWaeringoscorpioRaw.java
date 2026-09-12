@@ -18,10 +18,10 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemScorpionWaeringoscorpioRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:scorpion_waeringoscorpio_raw")
+public class ItemWaeringoscorpioRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:waeringoscorpio_raw")
 	public static final Item block = null;
-	public ItemScorpionWaeringoscorpioRaw(ElementsLepidodendronMod instance) {
+	public ItemWaeringoscorpioRaw(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.scorpion_waeringoscorpio_raw);
 	}
 
@@ -32,21 +32,21 @@ public class ItemScorpionWaeringoscorpioRaw extends ElementsLepidodendronMod.Mod
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_scorpion_waeringoscorpio", ItemScorpionWaeringoscorpioRaw.block);
-		OreDictionary.registerOre("pnfurnaceBug", ItemScorpionWaeringoscorpioRaw.block);
-		OreDictionary.registerOre("pndietBug", ItemScorpionWaeringoscorpioRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_waeringoscorpio", ItemWaeringoscorpioRaw.block);
+		OreDictionary.registerOre("pnfurnaceBug", ItemWaeringoscorpioRaw.block);
+		OreDictionary.registerOre("pndietBug", ItemWaeringoscorpioRaw.block);
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/scorpion_waeringoscorpio_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/waeringoscorpio_raw", "inventory"));
 	}
 	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
 			super(1, 0.05f, false);
-			setTranslationKey("pf_scorpion_waeringoscorpio_raw");
-			setRegistryName("scorpion_waeringoscorpio_raw");
+			setTranslationKey("pf_waeringoscorpio_raw");
+			setRegistryName("waeringoscorpio_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
@@ -54,7 +54,7 @@ public class ItemScorpionWaeringoscorpioRaw extends ElementsLepidodendronMod.Mod
 		@Nullable
 		@Override
 		public String getMobStr() {
-			return "lepidodendron:prehistoric_flora_scorpion_waeringoscorpio";
+			return "lepidodendron:prehistoric_flora_waeringoscorpio";
 		}
 
 		@Nullable

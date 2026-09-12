@@ -1,12 +1,12 @@
 {
   "pools": [
     {
-      "name": "scorpion_waeringoscorpio",
+      "name": "waeringoscorpio",
       "rolls": 1,
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:scorpion_waeringoscorpio_raw",
+          "name": "lepidodendron:waeringoscorpio_raw",
           "weight": 1,
           "functions": [
             {

@@ -1,7 +1,7 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraScorpion_Waeringoscorpio;
+import net.lepidodendron.entity.EntityPrehistoricFloraWaeringoscorpio;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
@@ -387,7 +387,7 @@ public class ModelWaeringoscorpio extends ModelBasePalaeopedia {
 
         if (ee.isReallyInWater() ) {//swimming
                 if (ee.getIsMoving()) {
-                    if(ee instanceof EntityPrehistoricFloraScorpion_Waeringoscorpio) {
+                    if(ee instanceof EntityPrehistoricFloraWaeringoscorpio) {
                         animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, false);
                     } else {
                         if(ee.getIsFast()) {//fast
@@ -404,27 +404,27 @@ public class ModelWaeringoscorpio extends ModelBasePalaeopedia {
         else {
             //land pose:
             if (!ee.getIsMoving()) { //static on land
-                if(ee instanceof EntityPrehistoricFloraScorpion_Waeringoscorpio) {
+                if(ee instanceof EntityPrehistoricFloraWaeringoscorpio) {
                     animWalkingLand(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, true);
                 }
             }
             else {
                 //moving on land
-                if(ee instanceof EntityPrehistoricFloraScorpion_Waeringoscorpio) {
+                if(ee instanceof EntityPrehistoricFloraWaeringoscorpio) {
                     animWalkingLand(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, false);
                 }
             }
         }
         
         if (ee.getAnimation() == ee.ATTACK_ANIMATION) {
-            if(ee instanceof EntityPrehistoricFloraScorpion_Waeringoscorpio) {
+            if(ee instanceof EntityPrehistoricFloraWaeringoscorpio) {
                 animAttack(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
             }
         }
 
     }
     public void animAttack(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraScorpion_Waeringoscorpio entity = (EntityPrehistoricFloraScorpion_Waeringoscorpio) entitylivingbaseIn;
+        EntityPrehistoricFloraWaeringoscorpio entity = (EntityPrehistoricFloraWaeringoscorpio) entitylivingbaseIn;
         int animCycle = 20;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;
@@ -1227,7 +1227,7 @@ public class ModelWaeringoscorpio extends ModelBasePalaeopedia {
     }
 
     public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isStatic) {
-        EntityPrehistoricFloraScorpion_Waeringoscorpio entity = (EntityPrehistoricFloraScorpion_Waeringoscorpio) entitylivingbaseIn;
+        EntityPrehistoricFloraWaeringoscorpio entity = (EntityPrehistoricFloraWaeringoscorpio) entitylivingbaseIn;
         int animCycle = 30;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;
@@ -1616,7 +1616,7 @@ public class ModelWaeringoscorpio extends ModelBasePalaeopedia {
     }
 
     public void animWalkingLand(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isStatic) {
-        EntityPrehistoricFloraScorpion_Waeringoscorpio entity = (EntityPrehistoricFloraScorpion_Waeringoscorpio) entitylivingbaseIn;
+        EntityPrehistoricFloraWaeringoscorpio entity = (EntityPrehistoricFloraWaeringoscorpio) entitylivingbaseIn;
         int animCycle = 30;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;

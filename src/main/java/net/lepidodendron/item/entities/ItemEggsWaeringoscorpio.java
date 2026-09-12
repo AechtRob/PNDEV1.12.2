@@ -4,7 +4,7 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
-import net.lepidodendron.entity.EntityPrehistoricFloraScorpion_Waeringoscorpio;
+import net.lepidodendron.entity.EntityPrehistoricFloraWaeringoscorpio;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -77,7 +77,7 @@ public class ItemEggsWaeringoscorpio extends ElementsLepidodendronMod.ModElement
 							nbtStr = "{AgeTicks:0,IsBaby:true,Babies:true}";
 						}
 						if (!worldIn.isRemote) {
-							EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraScorpion_Waeringoscorpio.class).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
+							EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraWaeringoscorpio.class).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
 						}
 
 						if (!playerIn.capabilities.isCreativeMode) {

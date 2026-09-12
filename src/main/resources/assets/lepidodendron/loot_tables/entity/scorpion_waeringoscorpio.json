@@ -21,12 +21,12 @@
       ]
     },
     {
-      "name": "gondwanascorpio",
+      "name": "waeringoscorpio",
       "rolls": 1,
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:eggs_gondwanascorpio",
+          "name": "lepidodendron:eggs_waeringoscorpio",
           "weight": 1,
           "functions": [
             {

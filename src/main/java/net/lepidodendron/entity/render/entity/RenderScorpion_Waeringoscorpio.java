@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraScorpion_Waeringoscorpio;
+import net.lepidodendron.entity.EntityPrehistoricFloraWaeringoscorpio;
 import net.lepidodendron.entity.model.entity.ModelWaeringoscorpio;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderScorpion_Waeringoscorpio extends RenderLivingBaseWithBook<EntityPrehistoricFloraScorpion_Waeringoscorpio> {
+public class RenderScorpion_Waeringoscorpio extends RenderLivingBaseWithBook<EntityPrehistoricFloraWaeringoscorpio> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_waeringoscorpio.png");
     private static final ResourceLocation TEXTURE_WITH_BABIES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_waeringoscorpio_withbaby.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_baby.png");
@@ -22,7 +22,7 @@ public class RenderScorpion_Waeringoscorpio extends RenderLivingBaseWithBook<Ent
     }
 
     @Override
-    public ResourceLocation getEntityTexture(EntityPrehistoricFloraScorpion_Waeringoscorpio entity) {
+    public ResourceLocation getEntityTexture(EntityPrehistoricFloraWaeringoscorpio entity) {
         if (entity.getIsBaby()) {
             return RenderScorpion_Waeringoscorpio.TEXTURE_BABY;
         }
@@ -33,7 +33,7 @@ public class RenderScorpion_Waeringoscorpio extends RenderLivingBaseWithBook<Ent
     }
 
     @Override
-    protected void preRenderCallback(EntityPrehistoricFloraScorpion_Waeringoscorpio entity, float f) {
+    protected void preRenderCallback(EntityPrehistoricFloraWaeringoscorpio entity, float f) {
         if (entity.getIsBaby()) {
             GlStateManager.scale(0.5625 * this.getScaler(), 0.5625 * this.getScaler(), 0.5625 * this.getScaler());
         }

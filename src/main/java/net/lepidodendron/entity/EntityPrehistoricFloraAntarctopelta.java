@@ -177,7 +177,7 @@ public class EntityPrehistoricFloraAntarctopelta extends EntityPrehistoricFloraL
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 1; //small
+		return 1; //medium
 	}
 
 	public static String getPeriod() {return "Late Cretaceous";}

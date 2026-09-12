@@ -10032,9 +10032,9 @@ public class RenderHandler {
                 return new RenderCampylocephalus(manager);
             }
         });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraScorpion_Waeringoscorpio .class, new IRenderFactory<EntityPrehistoricFloraScorpion_Waeringoscorpio>() {
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraWaeringoscorpio.class, new IRenderFactory<EntityPrehistoricFloraWaeringoscorpio>() {
             @Override
-            public Render<? super EntityPrehistoricFloraScorpion_Waeringoscorpio> createRenderFor(RenderManager manager) {
+            public Render<? super EntityPrehistoricFloraWaeringoscorpio> createRenderFor(RenderManager manager) {
                 return new RenderScorpion_Waeringoscorpio(manager);
             }
         });

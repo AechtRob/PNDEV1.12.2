@@ -177,7 +177,7 @@ public class EntityPrehistoricFloraSauropelta extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 1; //small
+		return 1; //medium
 	}
 
 	public static String getPeriod() {return "Early Cretaceous";}
