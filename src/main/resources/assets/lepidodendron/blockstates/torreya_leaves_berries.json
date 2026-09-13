@@ -1,5 +1,8 @@
 {
   "variants": {
+    "inventory": [
+{"model": "lepidodendron:torreya_leaves_berries"}
+  ],
     "fruits=true":  [
       { "model": "lepidodendron:torreya_leaves_berries" },
       { "model": "lepidodendron:torreya_leaves_berries_var" }

@@ -53,6 +53,15 @@
       {"model": "lepidodendron:bivalve_caprinula_elevator_2_var"},
       {"model": "lepidodendron:bivalve_caprinula_elevator_3"},
       {"model": "lepidodendron:bivalve_caprinula_elevator_3_var"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:bivalve_caprinula_recumbent", "x": 180 },
+      {"model": "lepidodendron:bivalve_caprinula_elevator_1", "x": 180 },
+      {"model": "lepidodendron:bivalve_caprinula_elevator_1_var", "x": 180 },
+      {"model": "lepidodendron:bivalve_caprinula_elevator_2", "x": 180 },
+      {"model": "lepidodendron:bivalve_caprinula_elevator_2_var", "x": 180 },
+      {"model": "lepidodendron:bivalve_caprinula_elevator_3", "x": 180 },
+      {"model": "lepidodendron:bivalve_caprinula_elevator_3_var", "x": 180 }
     ]
   }
 }

@@ -70,7 +70,6 @@ public class BlockSelkirkiaBurrow extends ElementsLepidodendronMod.ModElement {
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
-	public static final PropertyInteger TYPE = PropertyInteger.create("type", 0, 11);
 	public static final PropertyBool OCCUPIED = PropertyBool.create("occupied");
 
 	@SideOnly(Side.CLIENT)
@@ -392,7 +391,7 @@ public class BlockSelkirkiaBurrow extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		protected BlockStateContainer createBlockState() {
-			return new BlockStateContainer(this, new IProperty[]{LEVEL, OCCUPIED, TYPE});
+			return new BlockStateContainer(this, new IProperty[]{LEVEL, OCCUPIED});
 		}
 
 		@SideOnly(Side.CLIENT)
