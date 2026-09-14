@@ -1,0 +1,52 @@
+{
+	"name": "Aegirosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/aegirosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_aegirosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_aegirosaurus",
+			"title": "Aegirosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Ichthyosauria$(br)>Ophthalmosauridae$(br)>Platypterygiinae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. leptospondylus",
+            "entity": "lepidodendron:prehistoric_flora_aegirosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aegirosaurus",
+			"type": "text",
+			"text": "Aegirosaurus leptospondylus is a genus of medium-sized European ichthyosaur. Originally described from the world-famous Jurassic Solnhofen Limestone, it was recently established that the genus survived well into the Cretaceous, into the Valanginian of Southern France, during a notable 13 million years gap in the ichthyosaur fossil record, and therefore surviving largely unscathed the extinction event between the two periods."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aegirosaurus",
+			"type": "text",
+			"text": "Analysis of the teeth and slender snout of French specimens of Aegirosaurus seems to indicate that it was well-adapted to predate on small soft-bodied prey, such as small fish and coleoid cephalopods, like modern bottlenose dolphins."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_aegirosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_aegirosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_aegirosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_aegirosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_aegirosaurus"
+		}
+	]
+}

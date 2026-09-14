@@ -1,0 +1,52 @@
+{
+	"name": "Antarctaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/antarctaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_antarctaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_antarctaspis",
+			"title": "Antarctaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>$(o)Antarctaspidae (?)"
+		},
+        	{
+            "type": "entity",
+            "name": "A. mcmurdoensis",
+            "entity": "lepidodendron:prehistoric_flora_antarctaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_antarctaspis",
+			"type": "text",
+			"text": "Antarctaspis mcmurdoensis is a species of basal arthrodire from the Middle-Late Devonian aged Aztec Siltstone Formation in Victoria Land, Antarctica. It is known from an incomplete skull measuring 7 centimeters in length. Antarctaspis is one of the most basal arthrodires known. It is the namesake of the controversial Antarctaspidae, a family comprising of some of the most basal arthrodires."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_antarctaspis",
+			"type": "text",
+			"text": "However, this group is debated, with some seeing it as a group of basal arthrodires with no connection beyond that."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_antarctaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_antarctaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_antarctaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_antarctaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_antarctaspis"
+		}
+	]
+}

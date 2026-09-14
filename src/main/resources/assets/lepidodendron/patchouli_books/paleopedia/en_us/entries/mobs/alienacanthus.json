@@ -1,0 +1,52 @@
+{
+	"name": "Alienacanthus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/alienacanthus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_alienacanthus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_alienacanthus",
+			"title": "Alienacanthus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Selenosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. malkowskii",
+            "entity": "lepidodendron:prehistoric_flora_alienacanthus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_alienacanthus",
+			"type": "text",
+			"text": "Alienacanthus malkowskii is a species of bizarre arthrodire found in the Late Devonain of the Holy Cross Mountains in Poland, as well as in the Anti-Atlas mountain range in Morocco. The Polish specimens were discovered first, with fragments of the massive lower jaw being interpreted as massive bony spines. This was corrected when the Moroccan specimens were discovered, revealing their true nature as titanic jaws. Alienacanthus would have reached 2.8 meters in length"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_alienacanthus",
+			"type": "text",
+			"text": "With just the jaw getting up to 80 centimeters long. The lower jaw to skull proportion was 2:1, the largest known for any animal. This jaw also held external recurved teeth, used in feeding. The animal would have most likely knocked prey around with its jaw to confused them, and then used the teeth to move it closer to the mouth or damage soft bodied prey. Alienacanthus' strange morphology clearly highlights Devonian placoderm diversity."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_alienacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_alienacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_alienacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_alienacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_alienacanthus"
+		}
+	]
+}

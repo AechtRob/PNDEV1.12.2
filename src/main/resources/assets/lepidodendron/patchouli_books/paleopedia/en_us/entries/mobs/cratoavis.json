@@ -3,17 +3,17 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/cratoavis_icon.png",
 	"category": "lepidodendron:mobs",
-	"turnin": "lepidodendron:pf_adv_book_cratoavis ",
+	"turnin": "lepidodendron:pf_adv_book_cratoavis",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_cratoavis",
 			"title": "Cratoavis",
 			"type": "quest",
-			"text": ""
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Theropoda$(br)>Avialae$(br)(br)>Enantiornithes"
 		},
         	{
             "type": "entity",
-            "name": "Cratoavis sp.",
+            "name": "C. cearensis",
             "entity": "lepidodendron:prehistoric_flora_cratoavis",
             "rotate": false,
             "default_rotation": 0
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_cratoavis",
 			"type": "text",
-			"text": ""
+			"text": "Cratoavis is a bird from Crato Formation of Brazil, dating back to Early Cretaceous. It is named after the formation it was found in, alongside 'avis' meaning bird. It was a small bird with the holotype having fish remains in its body. Suggesting that it was a piscivore."
 		},
 		{
 			"type": "lepidodendron:diet",

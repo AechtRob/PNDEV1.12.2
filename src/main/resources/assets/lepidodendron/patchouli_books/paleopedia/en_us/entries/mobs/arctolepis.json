@@ -1,0 +1,47 @@
+{
+	"name": "Arctolepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/arctolepis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_arctolepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_arctolepis",
+			"title": "Arctolepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Arctolepididae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. decipiens",
+            "entity": "lepidodendron:prehistoric_flora_arctolepis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arctolepis",
+			"type": "text",
+			"text": "Arctolepis is a genus of arthrodire known from the Pragian to Emisian aged Wood Bay Formation in Svalbard. It is known for its large pointed fins, called spinals."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_arctolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_arctolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_arctolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_arctolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_arctolepis"
+		}
+	]
+}

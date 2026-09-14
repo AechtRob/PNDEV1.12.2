@@ -1,0 +1,47 @@
+{
+	"name": "Phuwiangosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/phuwiangosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_phuwiangosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_phuwiangosaurus",
+			"title": "Phuwiangosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Saurischia$(br)>Sauropoda$(br)>Macronaria$(br)>Euhelopodidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. sirindhornae",
+            "entity": "lepidodendron:prehistoric_flora_Phuwiangosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phuwiangosaurus",
+			"type": "text",
+			"text": "Phuwiangosaurus is a sauropod discovered in Phu wiang formation of Thailand, dating back to Early Cretaceous. It is named after the formation it was found in alongside the word 'saur' meaning lizard. It was a mid-sized sauropod growing to an estimated 15 to 20 meters. While originally thought to be a titanosaur, it is now speculated that they were a more basal member."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_phuwiangosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_phuwiangosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_phuwiangosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_phuwiangosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_phuwiangosaurus"
+		}
+	]
+}

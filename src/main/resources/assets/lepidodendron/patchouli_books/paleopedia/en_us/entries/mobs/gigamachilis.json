@@ -1,0 +1,47 @@
+{
+	"name": "Gigamachilis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gigamachilis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_gigamachilis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gigamachilis",
+			"title": "Gigamachilis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Arthropoda$(br)>Insecta$(br)>Archaeognatha$(br)>Machilidae$"
+		},
+        	{
+            "type": "entity",
+            "name": "G. triassicus",
+            "entity": "lepidodendron:prehistoric_flora_gigamachilis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gigamachilis",
+			"type": "text",
+			"text": "Gigamachilis was a jumping bristletail discovered in Meride Limestone of Italy dating back to the Triassic. Its name is a mix of the words 'Giga' and 'machilis' being the words for 'giant' and the family name for jumping springtails. It was the biggest bristletail ever discovered, growing to approximately 8 centimeters. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gigamachilis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gigamachilis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gigamachilis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gigamachilis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gigamachilis"
+		}
+	]
+}

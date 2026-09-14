@@ -1,0 +1,52 @@
+{
+	"name": "Changchunsaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/changchunsaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_changchunsaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_changchunsaurus",
+			"title": "Changchunsaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Dinosauria$(br)>Ornitischia$(br)>Thescelosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. parvus",
+            "entity": "lepidodendron:prehistoric_flora_changchunsaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_changchunsaurus",
+			"type": "text",
+			"text": "Changchunsaurus parvus was a species of small herbivorous ornitischian dinosaur from the 'middle' Cretaceous of Northeast China. Its fossilized remains come from the Quantou Formation, a very recently identified dinosaur-bearing formation, deposited along the banks of a meandering river in a hot and dry environment."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_changchunsaurus",
+			"type": "text",
+			"text": "Changchunsaurus and the probably closely related Jeholosaurus seem to have belonged to a distinct group of small basal ornithopods endemic to China. Changchunsaurus had a distinctly slow growth rate for an ornitischian of its size, only reaching sexual maturity around 8 years of age, possibly due to the considerable aridity and the rarity of plants in its native environment, compared to the nearby and much richer Jehol Biota."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_changchunsaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_changchunsaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_changchunsaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_changchunsaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_changchunsaurus"
+		}
+	]
+}

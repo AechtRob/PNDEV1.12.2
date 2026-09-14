@@ -1,0 +1,47 @@
+{
+	"name": "Proterochampsa",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/proterochampsa_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_proterochampsa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_proterochampsa",
+			"title": "Proterochampsa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauriformes$(br)>Proterochampsia$(br)>Proterochampsidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. barrionuevoi",
+            "entity": "lepidodendron:prehistoric_flora_proterochampsa",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_proterochampsa",
+			"type": "text",
+			"text": "Proterochampsa is an archosauriform from Argentina, dating back to the Triassic. Its name is a combination of the words 'proteros' and 'champsa' meaning 'before crocodile'. It was a little longer than 2 meters, being a small animal. This animal, while looking like a crocodile it was not a pseudosuchian. Being an early branch that split off from the rest of archosaurs."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_proterochampsa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_proterochampsa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_proterochampsa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_proterochampsa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_proterochampsa"
+		}
+	]
+}

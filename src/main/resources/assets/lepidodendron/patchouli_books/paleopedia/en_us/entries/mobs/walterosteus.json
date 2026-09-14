@@ -1,0 +1,52 @@
+{
+	"name": "Walterosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/walterosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_walterosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_walterosteus",
+			"title": "Walterosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Selenosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "W. lelievrei",
+            "entity": "lepidodendron:prehistoric_flora_walterosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_walterosteus",
+			"type": "text",
+			"text": "Walterosteus is a genus of selenosteid known from Frasnian aged rock in the town of Bad Wildungen in Germany and the Kellwasser Facies of the Anti-Atlas Mountains in Morocco. 3 species are known, those being W. pachyosteides, W. lelievrei, and W. grossi. The first two are known from skulls around 5-6 centimeters in length, while the more fragmentary W. grossi is thought to have grown larger."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_walterosteus",
+			"type": "text",
+			"text": "Walterosteus was once considered synonymous with Enseosteus, however this view is now considered inaccurate."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_walterosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_walterosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_walterosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_walterosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_walterosteus"
+		}
+	]
+}

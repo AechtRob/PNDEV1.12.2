@@ -1,0 +1,47 @@
+{
+	"name": "Gemuendenaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gemuendenaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_gemuendenaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gemuendenaspis",
+			"title": "Gemuendenaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>$(o)Gemuendenaspidae (?)"
+		},
+        	{
+            "type": "entity",
+            "name": "G. angusta",
+            "entity": "lepidodendron:prehistoric_flora_gemuendenaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gemuendenaspis",
+			"type": "text",
+			"text": "Gemuendenaspis angusta is a species of arthrodire known from a single specimen found in the Emsian Hunsrück Slate. It is uniquely long and flat, with a head shield length estimated to be 4.5 centimeters. It is the only brachythoracid with a median crest on its median plate. It was often considered a taxon transitional to the Cocoostidae, however this has not been supported recently."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gemuendenaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gemuendenaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gemuendenaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gemuendenaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gemuendenaspis"
+		}
+	]
+}
