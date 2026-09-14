@@ -1,0 +1,47 @@
+{
+	"name": "Rubricacaecilia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rubricacaecilia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_rubricacaecilia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rubricacaecilia",
+			"title": "Rubricacaecilia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Amphibia$(br)>Gymnophiona"
+		},
+        	{
+            "type": "entity",
+            "name": "R. monbaroni",
+            "entity": "lepidodendron:prehistoric_flora_rubricacaecilia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rubricacaecilia",
+			"type": "text",
+			"text": "Rubricacaecilia is a caecilian discovered in Ksar Metlili Formation of Morocco, dating back to the Early Cretaceous. Its name means 'red earth caecilian'. Its morphology appeared to be that of a transitional animal, being something between modern and older caecilians. It is estimated to be about 20 centimeters long."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rubricacaecilia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rubricacaecilia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rubricacaecilia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rubricacaecilia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rubricacaecilia"
+		}
+	]
+}

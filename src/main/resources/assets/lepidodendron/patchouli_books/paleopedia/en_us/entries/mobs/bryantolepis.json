@@ -1,0 +1,47 @@
+{
+	"name": "Bryantolepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bryantolepis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_bryantolepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bryantolepis",
+			"title": "Bryantolepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira"
+		},
+        	{
+            "type": "entity",
+            "name": "B. brachycephala",
+            "entity": "lepidodendron:prehistoric_flora_bryantolepis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bryantolepis",
+			"type": "text",
+			"text": "Bryantolepis is a genus of Arthrodire known from the Early Devonian Beartooth Butte and Water Canyon Formations in the Northwestern United States. It is known for its high trunk shield. Two species are known: B. brachycephala is from the Beartooth Butte Formation, and is one of the most common fish found there. It grew to 3 centimeters in length. B. williamsi is rarely known from only the Water Canyon Formation, although was larger."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bryantolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bryantolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bryantolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bryantolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bryantolepis"
+		}
+	]
+}

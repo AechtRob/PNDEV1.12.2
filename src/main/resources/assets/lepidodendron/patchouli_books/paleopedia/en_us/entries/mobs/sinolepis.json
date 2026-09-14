@@ -1,0 +1,52 @@
+{
+	"name": "Sinolepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sinolepis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sinolepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sinolepis",
+			"title": "Sinolepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Antiarchi$(br)>Sinolepidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. macrocephala",
+            "entity": "lepidodendron:prehistoric_flora_sinolepis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sinolepis",
+			"type": "text",
+			"text": "Sinolepis is a genus of antiarch placoderm known from the Famennian aged Wutung Group and the potentially Frasnian dated Zhongning Formation. It is a wide antiarch, with a 13 centimeter long shield, and the head being nearly as wide. 3 species are known: S. macrocephala is the most common and the most well known, while S. wutungensis and S. szei are known from fragmentary remains, with the latter thought to be a larger species."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sinolepis",
+			"type": "text",
+			"text": "Sinolepidae, which Sinolepis is the namesake of, is a group currently only known from China and Australia. With this nique stratigraphic and geographical position Sinolepis becomes useful in the biostratigraphy of Devonian fish fauna. For example, it characterizes the Late Devonian Sinolepis-Remigolepis Realm in China."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sinolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sinolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sinolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sinolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sinolepis"
+		}
+	]
+}

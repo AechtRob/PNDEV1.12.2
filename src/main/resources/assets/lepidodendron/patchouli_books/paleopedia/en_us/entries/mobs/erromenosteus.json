@@ -1,0 +1,52 @@
+{
+	"name": "Erromenosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/erromenosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_erromenosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_erromenosteus",
+			"title": "Erromenosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Aspinothoracidi"
+		},
+        	{
+            "type": "entity",
+            "name": "E. lucifer",
+            "entity": "lepidodendron:prehistoric_flora_erromenosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_erromenosteus",
+			"type": "text",
+			"text": "Erromenosteus is a genus of arthrodire known from Frasnian aged rock in the town of Bad Wildungen in Germany. Many species are known, however Erromenosteus needs taxonomic revision to determine how many assigned species actually belong to this genus. The animal would have had a broad head, which narrowed to a pointed snout where the nasal openings were, with jaws made to crush prey. Skull sizes range from 6-14 centimeters, depending on species."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_erromenosteus",
+			"type": "text",
+			"text": "Some species, namely E. concavus and E. diensti, have some vertebrae preserved, a rarity in placoderms, allowing for some insight into the development of the vertebral column. Analysis revealed ossified neural and haemal arches, ossified spines, and arcocentra to be present in the animal."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_erromenosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_erromenosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_erromenosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_erromenosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_erromenosteus"
+		}
+	]
+}

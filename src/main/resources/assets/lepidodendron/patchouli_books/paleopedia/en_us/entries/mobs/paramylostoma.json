@@ -1,0 +1,47 @@
+{
+	"name": "Paramylostoma",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/paramylostoma_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_paramylostoma",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_paramylostoma",
+			"title": "Paramylostoma",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Selenosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. arcualis",
+            "entity": "lepidodendron:prehistoric_flora_paramylostoma",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_paramylostoma",
+			"type": "text",
+			"text": "Paramylostoma arcualis is a species of selenosteid placoderm from the Famennian aged Cleveland Shale. Based on the 13 centimeter long skull, Paramylostoma would have been roughly 90 centimeters long, a medium sized selenosteid. The fish was durophagous, with toothless jaws used for crushing hard shelled prey."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_paramylostoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_paramylostoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_paramylostoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_paramylostoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_paramylostoma"
+		}
+	]
+}

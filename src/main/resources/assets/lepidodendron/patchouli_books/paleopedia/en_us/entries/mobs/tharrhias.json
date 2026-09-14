@@ -1,0 +1,52 @@
+{
+	"name": "Tharrhias",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tharrhias_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tharrhias",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tharrhias",
+			"title": "Tharrhias",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>Gonorynchiformes$(br)>Chanidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. araripis",
+            "entity": "lepidodendron:prehistoric_flora_tharrhias",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tharrhias",
+			"type": "text",
+			"text": "Tharrhias araripis is a species of Early Cretaceous milkfish native from the Araripe Basin, in what is today north-eastern Brazil. Originally described from the Romualdo Formation, in which it is particularly common, it has also been reported from the Crato and Açu Formations. The species seems to have thrived in the rivers and estuaries that covered the Cretaceous basin, and to have well supported brackish water."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tharrhias",
+			"type": "text",
+			"text": "The small mouth of Tharrhias was distinctly devoid of teeth, and fossilized gut content of a specimen from Romualdo indicates that it fed on the microscopic planktonic larvae of crabs."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tharrhias"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tharrhias"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tharrhias"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tharrhias"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tharrhias"
+		}
+	]
+}

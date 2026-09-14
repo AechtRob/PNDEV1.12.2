@@ -1,0 +1,52 @@
+{
+	"name": "Eromangateuthis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eromangateuthis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_eromangateuthis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eromangateuthis",
+			"title": "Eromangateuthis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Mollusca$(br)>Cephalopoda$(br)>Coleoidea$(br)>Plesioteuthididae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. soniae",
+            "entity": "lepidodendron:prehistoric_flora_eromangateuthis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eromangateuthis",
+			"type": "text",
+			"text": "Eromangateuthis soniae is a species of very large basal coleoid cephalopod, likely distantly related to octopuses and vampire squids. It is known only after remains of its gladius, which could reach over a meter in length, twice the size of that of the modern giant Pacific octopus, and dwarfing all other members of its family."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eromangateuthis",
+			"type": "text",
+			"text": "The first remains of Eromangateuthis comes from the Allaru Mudstone of Queensland, Australia, an Early Cretaceous deep-water formation deposited in what was at the time the Eromanga Sea, after which the genus is named. More recently, it has also been reported from the Northumberland Formation of British Columbia, Canada, on the other side of the Pacific Ocean."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eromangateuthis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eromangateuthis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eromangateuthis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eromangateuthis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eromangateuthis"
+		}
+	]
+}

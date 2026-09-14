@@ -1,0 +1,52 @@
+{
+	"name": "Kosoraspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kosoraspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_kosoraspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kosoraspis",
+			"title": "Kosoraspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Acanthothoraci$(br)>Palaeacanthaspidae"
+		},
+        	{
+            "type": "entity",
+            "name": "K. peckai",
+            "entity": "lepidodendron:prehistoric_flora_kosoraspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kosoraspis",
+			"type": "text",
+			"text": "Kosoraspis peckai is a species of acanthothoracid placoderm known from the Lochkovian aged Radotín Limestone, in the Prague Basin of Czechia. Its skull would have grown to 10 centimeters in length. The dentition of Kosoraspis is particularly exciting. It had a combination of conical shaped true teeth and smaller, knobbier, toothlike odontodes. These teeth and non-teeth were on distinct dental bones, making Kosoraspis one of the first animals known with them."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kosoraspis",
+			"type": "text",
+			"text": "The true teeth were on the externally facing part of the jaw, while the toothlike odontodes sat behind them towards the inside of the mouth, the whole structure appearing whorl-like in shape. These features combined with Kosoraspis' early age provide evidence for distinct jawbones to be the ancestral dentition of all gnathostomes. Kosoraspis would have likely used its teeth for grasping and piercing."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kosoraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kosoraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kosoraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kosoraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kosoraspis"
+		}
+	]
+}

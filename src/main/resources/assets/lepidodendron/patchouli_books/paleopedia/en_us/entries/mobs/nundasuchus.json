@@ -1,0 +1,47 @@
+{
+	"name": "Nundasuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/nundasuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_nundasuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_nundasuchus",
+			"title": "Nundasuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>$(o)Incertae sedis"
+		},
+        	{
+            "type": "entity",
+            "name": "N. songeaensis",
+            "entity": "lepidodendron:prehistoric_flora_nundasuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nundasuchus",
+			"type": "text",
+			"text": "Nundasuchus was a pseudosuchian discovered in Ruhuhu Basin of southwestern Tanzania dating back to Triassic. Its name means 'Predator crocodile' with the 'nunda' part of the name being borrowed from Swahili. It was about 2.5 meters long with staggered osteoderms on its back, giving it quite the unique look compared to its relatives at the time."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_nundasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_nundasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_nundasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mobname"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_nundasuchus"
+		}
+	]
+}

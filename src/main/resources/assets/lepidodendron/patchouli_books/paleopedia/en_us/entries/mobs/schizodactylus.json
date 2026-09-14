@@ -1,0 +1,47 @@
+{
+	"name": "Schizodactylus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/schizodactylus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_schizodactylus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_schizodactylus",
+			"title": "Schizodactylus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous - Present$(br2)>Arthropoda$(br)>Insecta$(br)>Orthoptera$(br)>Ensifera$(br)>Schizodactyloidea"
+		},
+        	{
+            "type": "entity",
+            "name": "S. groeningae",
+            "entity": "lepidodendron:prehistoric_flora_schizodactylus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_schizodactylus",
+			"type": "text",
+			"text": "Schizodactylus is a genus of bug also called dune crickets. Their name means 'split finger'. These bugs have been around since early cretaceous and have been found in Asia with modern representatives being found in South Africa and many parts of Asia. The type species S. monstrosus can grow upto 4 centimeters long and are quite robust for crickets."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_schizodactylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_schizodactylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_schizodactylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_schizodactylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_schizodactylus"
+		}
+	]
+}

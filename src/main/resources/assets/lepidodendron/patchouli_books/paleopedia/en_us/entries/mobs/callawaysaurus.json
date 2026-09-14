@@ -1,0 +1,47 @@
+{
+	"name": "Callawayasaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/callawayasaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_callawayasaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_callawayasaurus",
+			"title": "Callawayasaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Sauropterygia$(br)>Plesiosauria$(br)>Elasmosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. colombiensis",
+            "entity": "lepidodendron:prehistoric_flora_callawayasaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_callawayasaurus",
+			"type": "text",
+			"text": "Callawayasaurus was an elasmosaur Paja Formation of Colombia, dating back to the Early Cretaceous. It was named in honour of 'Jack M. Callaway', the editor of Ancient Marine Reptiles. It was a pretty long animal, being able to grow up to 8 meters long. While originally thought to be a part of the Alzadasaurus genus, it got redescribed with the Alzadasaurus now being obsolete."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_callawayasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_callawayasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_callawayasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_callawayasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_callawayasaurus"
+		}
+	]
+}

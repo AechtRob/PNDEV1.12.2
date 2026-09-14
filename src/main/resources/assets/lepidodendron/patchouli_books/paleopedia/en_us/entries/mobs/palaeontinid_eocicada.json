@@ -1,0 +1,46 @@
+{
+	"name": "Eocicada",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/palaeontinid_eocicada_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_palaeontinid_eocicada",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeontinid_eocicada",
+			"title": "Eocicada",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Insecta$(br)>Hemiptera$(br)>Cicadomorpha$(br)>Palaeontinoidea$(br)>Palaeontinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/juliform.png"],
+			"title": "E. microcephala",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid_eocicada",
+			"type": "text",
+			"text": "Eocicada microcephala is a species of palaeontinid 'giant cicada' known from the famous Solnhofen Limestone in Germany. It was one of the larger palaeontinids, with a body length around 3 centimers, and a wingspan ranging from 6.5-7.5 centimeters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@eocicada"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@eocicada"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@eocicada"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@eocicada"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@eocicada"
+		}
+	]
+}
