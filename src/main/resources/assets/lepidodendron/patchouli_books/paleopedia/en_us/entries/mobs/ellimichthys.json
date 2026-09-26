@@ -1,0 +1,47 @@
+{
+	"name": "Ellimmichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ellimmichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ellimmichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ellimmichthys",
+			"title": "Ellimmichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>Ellimmichthyiformes$(br)>Paraclupeidae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. longicostatus",
+            "entity": "lepidodendron:prehistoric_flora_ellimmichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ellimmichthys",
+			"type": "text",
+			"text": "Ellimichthys is a ray finned fish discovered in Candeias Formation of Brazil and Cocobeach Formation of Equatorial Guinea, dating back to the Early Cretaceous. Its name is a reference to another fish genus 'Ellima' and the word 'ichthys' meaning fish. They were small fishes, most growing to 9 centimeters but some individuals growing to 11 centimeters. They were a distant relative of Herrings and Anchovies."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ellimmichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ellimmichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ellimmichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ellimmichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ellimmichthys"
+		}
+	]
+}

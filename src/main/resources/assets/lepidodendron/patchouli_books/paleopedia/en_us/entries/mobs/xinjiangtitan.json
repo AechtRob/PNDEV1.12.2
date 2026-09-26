@@ -1,0 +1,52 @@
+{
+	"name": "Xinjiangtitan",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/xinjiangtitan_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_xinjiangtitan",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_xinjiangtitan",
+			"title": "Xinjiangtitan",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Sauropodomorpha$(br)>Sauropoda$(br)>Mamenchisauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "X. shanshanesis",
+            "entity": "lepidodendron:prehistoric_flora_xinjiangtitan",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xinjiangtitan",
+			"type": "text",
+			"text": "Xinjiangtitan shanshanesis is a very large mamenchisaurid sauropod unearthed from Xinjiang, China. This titanic sauropod may be one of the absolute largest sauropods that we know of from Asia with its towering 17.2 meter height, rivaling that of even some trees today! Just like its relatives, Xinjiangtitan could've had some sort of tail club at the end of the tail."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xinjiangtitan",
+			"type": "text",
+			"text": "Whether or not it used this tail club for defense or not is currently unknown due to the general small size of the club. It's neck is interesting as while it may not be the longest neck, it is quite complete! This makes Xinjiangtitan's neck the longest most complete neck of a sauropod discovered yet."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_xinjiangtitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_xinjiangtitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_xinjiangtitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_xinjiangtitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_xinjiangtitan"
+		}
+	]
+}

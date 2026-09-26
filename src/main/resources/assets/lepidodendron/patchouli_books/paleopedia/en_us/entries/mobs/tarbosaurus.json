@@ -1,0 +1,52 @@
+{
+	"name": "Tarbosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tarbosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tarbosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tarbosaurus",
+			"title": "Tarbosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Tyrannosauridae$(br)>Tyrannosaurinae$(br)>Tyrannosaurini"
+		},
+        	{
+            "type": "entity",
+            "name": "T. bataar",
+            "entity": "lepidodendron:prehistoric_flora_tarbosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tarbosaurus",
+			"type": "text",
+			"text": "Tarbosaurus bataar is a late-surviving tyrannosaurine known from the Nemegt Formation of Mongolia. Aside from taxa known from fragmentary remains, Tarbosaurus comfortably sits as the second largest tyrannosaurid under the King itself! Though it's smaller, that doesn't mean it's any less interesting. Not unlike Tyrannosaurus, Tarbosaurus had to deal with some of the absolute toughest creatures we know of including"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tarbosaurus",
+			"type": "text",
+			"text": "Saurolophus, Tarchia, and even the terrible hands themselves: Deinocheirus and Therizinosaurus! It has been suggested that Tarbosaurus could've temporarily grouped up in order to hunt sauropods or giant ornithischians, not unlike behavior suggested for allosauroids. However, there is little evidence on which to make this conclusion, and much of the actual behavior of this theropod is unknown."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tarbosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tarbosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tarbosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tarbosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tarbosaurus"
+		}
+	]
+}

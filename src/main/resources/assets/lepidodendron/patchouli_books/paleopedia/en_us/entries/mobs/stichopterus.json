@@ -1,0 +1,47 @@
+{
+	"name": "Stichopterus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/stichopterus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_stichopterus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_stichopterus",
+			"title": "Stichopterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Acipenseriformes$(br)>Peipiaosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Early Cretaceous",
+            "entity": "lepidodendron:prehistoric_flora_stichopterus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stichopterus",
+			"type": "text",
+			"text": "Stichopterus is another peipiaosteid chondrostean which looks quite similar to Peipiaosteus, known from Russia and Mongolia! It is generally larger than Peipiaosteus, exceeding 50 cm long. Although some suggest that Stichopterus and Peipiaosteus may represent ontogenic stages of the same genus, it is uncertain as it is poorly studied. At the very least it still has some differences, like fin shape for example."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_stichopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_stichopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_stichopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_stichopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_stichopterus"
+		}
+	]
+}

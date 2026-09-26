@@ -1,0 +1,47 @@
+{
+	"name": "Gracilisuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gracilisuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_gracilisuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gracilisuchus",
+			"title": "Gracilisuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2))>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Gracilisuchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "G. stipanicicorum",
+            "entity": "lepidodendron:prehistoric_flora_gracilisuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gracilisuchus",
+			"type": "text",
+			"text": "Gracilisuchus was a pseudosuchian discovered in Ischigualasto-Villa Unión Basin of Argentina, dating back to the Triassic. Its name is a mix of 'gracilis' and 'suchus' coming together to mean 'slender crocodile'. While it was originally thought to be 21 centimeters back in 1972, thanks to research from Agustinia Lecuona and Julia Desoje in 2014 we learned that its body alone would be 28 centimeters with a total body length around 70 centimeters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gracilisuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gracilisuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gracilisuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gracilisuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gracilisuchus"
+		}
+	]
+}

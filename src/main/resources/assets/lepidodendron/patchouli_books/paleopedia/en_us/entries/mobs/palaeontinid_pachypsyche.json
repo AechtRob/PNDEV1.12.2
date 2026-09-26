@@ -1,0 +1,51 @@
+{
+	"name": "Pachypsyche",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/palaeontinid_pachypsyche_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_palaeontinid_pachypsyche",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeontinid_pachypsyche",
+			"title": "Pachypsyche",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Hemiptera$(br)>Cicadomorpha$(br)>Palaeontinoidea$(br)>Palaeontinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/juliform.png"],
+			"title": "P. vidali",
+			"text": ""
+		},
+	{
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid_pachypsyche",
+			"type": "text",
+			"text": "Pachypsyche vidali was a small member of the palaeontinid family, a group of large cicadas whose long and developed forewings had great similarities with modern moths. Its fossilized remains, beautifully preserved, are only found in La Pedrera de RÃºbies, in Spanish Catalonia, in rocks dated from the Barremian Stage of the Early Cretaceous."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid_pachypsyche",
+			"type": "text",
+			"text": "Although a great diversity of palaeontinids are now well-known, from the Triassic to the Early Cretaceous, their exact alimentation is still subject to intense debate, as it could be related to their extinction in the Aptian. Some researchers have proposed that they were ginkgophyte specialists, while others have theorized a closer association with cycads. Regardless, the rise in diversity of angiosperms in the Cretaceous might have been deadly for them."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@pachypsyche"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@pachypsyche"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@pachypsyche"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@pachypsyche"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@pachypsyche"
+		}
+	]
+}

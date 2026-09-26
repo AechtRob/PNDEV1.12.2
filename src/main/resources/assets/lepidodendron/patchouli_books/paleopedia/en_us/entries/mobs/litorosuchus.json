@@ -1,0 +1,47 @@
+{
+	"name": "Litorosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/litorosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_litorosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_litorosuchus",
+			"title": "Litorosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Diapsida$(br)>Archosauriformes"
+		},
+        	{
+            "type": "entity",
+            "name": "L. somnii",
+            "entity": "lepidodendron:prehistoric_flora_litorosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_litorosuchus",
+			"type": "text",
+			"text": "Litorosuchus was an archosauriform from Falang Formation of People's Republic of China, dating back to the Early Cretaceous. Its name is a combination of 'litoral' as in the part of the sea shore close to the land and 'suchus' meaning crocodile. It was a medium sized animal being about 2 meters long with a tail taking up more than half of its length. There is one nearly complete specimen laying on its side known, helping us with what we know about it."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_litorosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_litorosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_litorosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_litorosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_litorosuchus"
+		}
+	]
+}

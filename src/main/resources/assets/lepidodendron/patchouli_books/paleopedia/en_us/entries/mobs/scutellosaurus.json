@@ -1,0 +1,47 @@
+{
+	"name": "Scutellosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/scutellosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_scutellosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_scutellosaurus",
+			"title": "Scutellosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Reptilia$(br)>Dinosauria$(br)>Ornithischia$(br)>Thyreophora"
+		},
+        	{
+            "type": "entity",
+            "name": "S. lawleri",
+            "entity": "lepidodendron:prehistoric_flora_scutellosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_scutellosaurus",
+			"type": "text",
+			"text": "Scutellosaurus measured around 1.2-1.5 m long, and is a herbivorous basal thyreophoran dinosaur, known from Early Jurassic Kayenta Formation in Arizona. It is one of the earliest and most basal thyreophorans, and is already covered with small osteoderms. It has lightweight and slender body plan with longer hindlimbs, suggesting a bipedal locomotion, although it is sometimes suggested that it used a quadrupedal posture during specific activities such as foraging."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_scutellosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_scutellosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_scutellosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_scutellosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_scutellosaurus"
+		}
+	]
+}

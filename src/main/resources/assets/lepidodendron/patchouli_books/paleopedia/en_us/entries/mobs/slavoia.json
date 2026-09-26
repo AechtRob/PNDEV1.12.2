@@ -1,0 +1,47 @@
+{
+	"name": "Slavoia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/slavoia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_slavoia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_slavoia",
+			"title": "Slavoia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Diapsida$(br)>Squamata$(br)>Slavoiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. darevskii",
+            "entity": "lepidodendron:prehistoric_flora_slavoia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_slavoia",
+			"type": "text",
+			"text": "Slavoia was a lizard known from Dzunbain Formation of Mongolia, dating back to Early Cretaceous and Bostobe Formation of Kazakhstan alongside Barun Goyot Formation and Djadochta Formation of Mongolia dating back to the Late Cretaceous. It was named in honour of Andrzej Sulimski's late brother. It was a small animal, growing up to 12 centimeters. It is thought that Slavoia was the ancestor to modern legless lizards."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_slavoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_slavoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_slavoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_slavoia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_slavoia"
+		}
+	]
+}

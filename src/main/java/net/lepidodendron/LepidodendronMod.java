@@ -3883,6 +3883,7 @@ public class LepidodendronMod {
 	static final int ENTITY_MONTSECOSUCHUS = 1599;
     public static final ResourceLocation MONTSECOSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/montsecosuchus"));
 	static final int ENTITY_ISISFORDIA = 1600;
+    public static final ResourceLocation ISISFORDIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/isisfordia"));
 	static final int ENTITY_SPINOLESTES = 1601;
 	public static final ResourceLocation SPINOLESTES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/spinolestes"));
 	static final int ENTITY_KRADIMUS = 1602;

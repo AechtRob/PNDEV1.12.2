@@ -1,0 +1,47 @@
+{
+	"name": "Petrolacosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/petrolacosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_petrolacosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_petrolacosaurus",
+			"title": "Petrolacosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chordata$(br)>Sauropsida$(br)>Diapsida$(br)>Araeoscelidia$(br)>Petrolacosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. kansensis",
+            "entity": "lepidodendron:prehistoric_flora_petrolacosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_petrolacosaurus",
+			"type": "text",
+			"text": "Petrolacosaurus was a sauropsid discovered near Garnett, Kansas dating back to the Carboniferous. Its name is a combination of Greek words meaning 'rock pond lizard'. It was about 40 centimeters long superfacially resembling that of lizards while not being one it self. Petrolacosaurus and its family was a branch of the sauropsid tree that appeared and went extinct around Middle Permian. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_petrolacosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_petrolacosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_petrolacosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_petrolacosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_petrolacosaurus"
+		}
+	]
+}

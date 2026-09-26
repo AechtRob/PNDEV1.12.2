@@ -1,0 +1,52 @@
+{
+	"name": "Raptoblatta",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/raptoblatta_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_raptoblatta",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_raptoblatta",
+			"title": "Raptoblatta",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Dictyoptera"
+		},
+        	{
+            "type": "entity",
+            "name": "R. waddingtonae",
+            "entity": "lepidodendron:prehistoric_flora_raptoblatta",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_raptoblatta",
+			"type": "text",
+			"text": "Raptoblatta waddingtonae was a primitive species of primitive predatory roach-like insect, that appears to have been closely related to the ancestors of modern mantises. It is only known from a single, very well-preserved specimen from the Early Cretaceous of the Crato Formation in modern-day Brazil."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_raptoblatta",
+			"type": "text",
+			"text": "Raptoblatta was a widely-built and large insect, whose most striking feature was a well-developed and specialized raptorial foreleg, equipped with a row of strong spines, that was probably used to capture and kill eventual prey. These limbs are more similar to those of early mantises like Santanmantis than to the various predatory roaches of the Mesozoic. Despite this adaptation, Raptoblatta was deceptively still very roach-like in appearance."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_raptoblatta"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_raptoblatta"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_raptoblatta"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_raptoblatta"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_raptoblatta"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Rafaeliana",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rafaeliana_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_rafaeliana",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rafaeliana",
+			"title": "Rafaeliana",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Neuropterida$(br)>Rafaelianidae"
+		},
+        	{
+            "type": "entity",
+            "name": "R. maxima",
+            "entity": "lepidodendron:prehistoric_flora_rafaeliana",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rafaeliana",
+			"type": "text",
+			"text": "Rafaeliana was a genus of very large lacewing, endemic from the Early Cretaceous of Brazil. The two known species of Rafaeliana, R. maxima and R. minima, are endemic to the late Early Cretaceous Crato Formation in the Araripe Basin. R. maxima was particularly large for a neuropterid, reaching more than fifteen centimeters in wingspan, while R. minima was half its size."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rafaeliana",
+			"type": "text",
+			"text": "Rafaeliana is the only member of its family, the Rafaelianidae, an abherrant group of neuropterid of uncertain placement. They had long and slender legs, short mandibles and antennae, and holoptic eyes similar to those of modern flies. The group could be highly derived lacewings or snakeflies emerging during a time of diversification for insects in the Cretaceous, or primitive stem-neuropterans having survived cryptically since the Permian."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rafaeliana"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rafaeliana"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rafaeliana"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rafaeliana"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rafaeliana"
+		}
+	]
+}

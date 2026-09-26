@@ -1,0 +1,52 @@
+{
+	"name": "Changxingaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/changxingaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_changxingaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_changxingaspis",
+			"title": "Changxingaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Agnatha$(br)>Galeaspida$(br)>Xiushuiaspidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. nianzhongi",
+            "entity": "lepidodendron:prehistoric_flora_changxingaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_changxingaspis",
+			"type": "text",
+			"text": "Changxingaspis was a genus of small, basal galeaspid jawless fish from the Lower Red Beds of Silurian China. During the Silurian, China was an archipelago composed of three main landmasses, known as blocks or cratons. Along the coast of the South China Block thrived the type species of the genus, C. gui, while the seas near the Tarim Block were home to C. nianzhongi."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_changxingaspis",
+			"type": "text",
+			"text": "Changxingaspis nianzhongi is a member of the Tataertag Assemblage, a rich fish fauna, coexisting with stem-chondrichthyans and several genera of distantly related galeaspids, such as Platylomaspis and Microphymaspis. They lived along a shallow and warm littoral colonized by bivalves and brachiopods, which is today thousands of miles away from the sea on the outskirts of the arid Tien Shan mountains."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_changxingaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_changxingaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_changxingaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_changxingaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_changxingaspis"
+		}
+	]
+}

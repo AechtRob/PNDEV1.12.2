@@ -1,0 +1,52 @@
+{
+	"name": "Caeus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/caeus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_caeus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_caeus",
+			"title": "Caeus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>Gonorynchiformes$(br)>Chanidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. leopoldi",
+            "entity": "lepidodendron:prehistoric_flora_caeus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caeus",
+			"type": "text",
+			"text": "Caeus is a rayfinned fish that was discovered in Pietraroja Plattenkalk of Italy, dating back to the Early Cretaceous. Its name originates from greek meaning 'from the sea'. It was a medium sized fish, being the biggest known teleost in the formation at a length of 86 centimeters. This genus is known from a single individual with a nearly complete skeleton, missing part of the skull."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caeus",
+			"type": "text",
+			"text": "While it was originally thought to be a milkfish, it is now considered a close relative instead."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_caeus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_caeus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_caeus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_caeus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_caeus"
+		}
+	]
+}

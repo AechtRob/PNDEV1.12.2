@@ -1,0 +1,47 @@
+{
+	"name": "Epoidesuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/epoidesuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_epoidesuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_epoidesuchus",
+			"title": "Epoidesuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Notosuchia$(br)>Itasuchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. tavaresae",
+            "entity": "lepidodendron:prehistoric_flora_epoidesuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_epoidesuchus",
+			"type": "text",
+			"text": "Epoidesuchus is a crocodilian that was discovered in the Adamantina Formation of Brazil, dating back to the Late Cretaceous. The first part of its name 'epoide' is a reference to the nearby city 'Catanduva' also known as 'the Magic Spell City' and 'suchus' meaning crocodile. It was a medium sized animal, growing up to an estimated 4 meters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_epoidesuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_epoidesuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_epoidesuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_epoidesuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_epoidesuchus"
+		}
+	]
+}

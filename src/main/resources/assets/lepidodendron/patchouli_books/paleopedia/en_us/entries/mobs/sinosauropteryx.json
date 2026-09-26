@@ -1,0 +1,52 @@
+{
+	"name": "Sinosauropteryx",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sinosauropteryx_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sinosauropteryx",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sinosauropteryx",
+			"title": "Sinosauropteryx",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Compsognathidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. prima",
+            "entity": "lepidodendron:prehistoric_flora_sinosauropteryx",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sinosauropteryx",
+			"type": "text",
+			"text": "Sinosauropteryx prima is a tiny, 1-meter-long compsognathid from the Early Cretaceous of Asia, specifically the Yixian Formation. Two features preserved in the fossils of this dinosaur make it very important to paleontology! For one, several specimens of Sinosauropteryx have preserved feathers. This helped to establish the presence of extensive feathering in non-avian theropods. Secondly, these fossils are so well preserved"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sinosauropteryx",
+			"type": "text",
+			"text": "that they have allowed paleontologists to determine the color and pattern of the animal. This makes Sinosauropteryx one of a select few dinosaurs with known coloration! In recent years, many compsognathid genera have become controversial, possibly representing juveniles of larger theropods. However, Sinosauropteryx is exempt from this discussion, as the adult condition is confirmed by a specimen preserving unlaid eggs in her abdomen!"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sinosauropteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sinosauropteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sinosauropteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sinosauropteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sinosauropteryx"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Hauffiosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hauffiosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hauffiosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hauffiosaurus",
+			"title": "Hauffiosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Sauropterygia$(br)>Plesiosauria$(br)>Pliosauroidea$(br)>Pliosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. zanoni",
+            "entity": "lepidodendron:prehistoric_flora_hauffiosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hauffiosaurus",
+			"type": "text",
+			"text": "Hauffiosaurus is a genus of pliosaurid plesiosaur known from the Posidonia Shale of Germany and the Whitby Mudstone of the UK. The holotype is a nearly complete and articulated skeleton reaching 2.4 meters in length. Hauffiosaurus’s skull is particularly thin and elongated for an Early Jurassic plesiosaur, which helps it stand out amongst its peers."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hauffiosaurus",
+			"type": "text",
+			"text": "The text line above is at the maximum length that a page in minecraft can hold, but if you reach that limit, then you can simply just 'create a new page' by copying everything from the { symbol to the }, symbols. If you have any questions or queries about how certain things should be done, then do not be afraid to ask, this is a learning excersize afterall!"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hauffiosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hauffiosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hauffiosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hauffiosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hauffiosaurus"
+		}
+	]
+}

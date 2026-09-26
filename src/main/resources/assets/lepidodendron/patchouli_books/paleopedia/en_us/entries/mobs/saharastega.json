@@ -1,0 +1,52 @@
+{
+	"name": "Saharastega",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/saharastega_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_saharastega",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_saharastega",
+			"title": "Saharastega",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Stegocephali$(br)>Tetrapoda$(br)>Temnospondyli"
+		},
+        	{
+            "type": "entity",
+            "name": "S. moradiensis",
+            "entity": "lepidodendron:prehistoric_flora_saharastega",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_saharastega",
+			"type": "text",
+			"text": "Saharastega is a temnospondyl from the Late Permian Moradi Formation of Niger. Known from only a skull, it has been a taxonomically controversial animal, generally understood as a basal member of temnospondyli, though sometimes recovered in a more derived position, or occasionally outside the group entirely. The probable primitive nature of Saharastega is notable given that it existed in the Late Permian, long after most of these basal forms disappeared."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_saharastega",
+			"type": "text",
+			"text": "It has been tentatively allied to another Moradi temnospondyl, Nigerpeton, with both potentially representing late-surviving cochleosaurids, a group otherwise known from the Carboniferous and Early Permian. The skull of Saharastega lacks a lateral line, suggesting possible terrestriality, though without post-crania, it is difficult to make conclusions about the life history of this animal. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_saharastega"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_saharastega"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_saharastega"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_saharastega"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_saharastega"
+		}
+	]
+}

@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "lepidodendron:turritella_raw"
+            "item": "lepidodendron:turritella_item"
         },
         "title": {
             "translate": "advancements.pf_adv_book_turritella.title"

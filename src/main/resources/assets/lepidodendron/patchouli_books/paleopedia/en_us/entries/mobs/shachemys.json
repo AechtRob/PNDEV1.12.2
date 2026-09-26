@@ -1,0 +1,47 @@
+{
+	"name": "Shachemys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/shachemys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_shachemys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_shachemys",
+			"title": "Shachemys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Creataceous$(br2)>Chordata$(br)>Reptilia$(br)>Testudines$(br)>Cryptodira$(br)>Adocidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. laosiana",
+            "entity": "lepidodendron:prehistoric_flora_shachemys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_shachemys",
+			"type": "text",
+			"text": "Shachemys is a freshwater turtle discovered in Laos, Thailand and in Central Asia; dating back to the Cretaceous. Its name is a mix of 'Shach-Shash' the locality the type species was found in and 'chemys' meaning turtle. It had a shell length of 18 centimeters, though a new thai specimen has been estimated to reach the length of 40 centimeters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_shachemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_shachemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_shachemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_shachemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_shachemys"
+		}
+	]
+}

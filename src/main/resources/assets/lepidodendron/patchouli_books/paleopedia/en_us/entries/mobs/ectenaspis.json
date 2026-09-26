@@ -1,0 +1,52 @@
+{
+	"name": "Ectenaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ectenaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ectenaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ectenaspis",
+			"title": "Ectenaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda$(br)>Trilobita$(br)>Asaphida$(br)>Asaphidae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. beckeri",
+            "entity": "lepidodendron:prehistoric_flora_ectenaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ectenaspis",
+			"type": "text",
+			"text": "Ectenaspis is an asaphid trilobite from the Ordovician of the United States. Like most other trilobites, it would have been a seafloor dwelling animal, where it would have likely scavenged for food. Similar to its more famous relative Asaphus, Ectenaspis is known to have possessed eyestalks, giving this animal a great field of view. In contrast, however, Ectenaspis sports mirrored"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ectenaspis",
+			"type": "text",
+			"text": "spines protruding backwards from either side of its head segment. In addition to the spikes, it also possessed a horn-like projection at its front, perhaps aiding in shoveling the seafloor or in intraspecific competition."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ectenaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ectenaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ectenaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ectenaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ectenaspis"
+		}
+	]
+}

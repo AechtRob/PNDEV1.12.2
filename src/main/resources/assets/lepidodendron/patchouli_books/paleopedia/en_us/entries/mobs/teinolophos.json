@@ -1,0 +1,52 @@
+{
+	"name": "Teinolophos",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/teinolophos_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_teinolophos",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_teinolophos",
+			"title": "Teinolophos",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Mammalia$(br)>Monotremata$(br)>Teinolophidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. trusleri",
+            "entity": "lepidodendron:prehistoric_flora_teinolophos",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_teinolophos",
+			"type": "text",
+			"text": "Teinolophos is a small monotreme from the Early Cretaceous of Australia, with an estimated length of only ~15-20 cm. It was discovered in my home state of Victoria, alongside Koolasuchus, Galleonosaurus, and other small monotreme-like mammals such as Ausktribosphenos. This animal is one of our earliest definitive monotremes and an important representative in the diversification of this group."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_teinolophos",
+			"type": "text",
+			"text": "It would have likely looked reminiscent of modern monotremes, but also quite distinct. Though it lacked a beak, it may have already adapted to a semiaquatic lifestyle, as is presumed to be the ancestral condition for living platypuses and echidnas."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_teinolophos"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_teinolophos"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_teinolophos"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_teinolophos"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_teinolophos"
+		}
+	]
+}

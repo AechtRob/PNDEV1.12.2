@@ -1,0 +1,57 @@
+{
+	"name": "Velociraptor",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/velociraptor_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_velociraptor",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_velociraptor",
+			"title": "Velociraptor",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Dromaeosauridae$(br)>Velociraptorinae"
+		},
+        	{
+            "type": "entity",
+            "name": "V. mongoliensis",
+            "entity": "lepidodendron:prehistoric_flora_velociraptor",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_velociraptor",
+			"type": "text",
+			"text": "Velociraptor was a genus of velociraptorine dromaeosaurid theropod dinosaur that lived during the Late Cretaceous. Its fossils have been found at the Djadochta Formation in Mongolia, and the Bayan Mandahu Formation in China. Discovered in 1923 by Peter Kaisen and named and described in 1924 by Henry Fairfield Osborn, Velociraptor's name translates to swift thief, and two species within this genus are known: The type species V. mongoliensis from Mongolia,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_velociraptor",
+			"type": "text",
+			"text": "and as of 2008 also V. osmolskae from China. Velociraptor measured around 1.5 - 2.07 metres long, 0.5 m tall at the hips, and about 14.1 - 19.7 kg in weight. Prominent quill knobs on its ulna suggest that its arms likely sported feathers. Velociraptor was carnivorous, and one very famous fossil even preserves a specimen locked in combat with a Protoceratops. Studies of the endocranium suggest that Velociraptor was able to hear a wide range of sound frequencies,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_velociraptor",
+			"type": "text",
+			"text": "and would therefore likely have been good at tracking prey. It seems to have been something of an opportunist, as there is also evidence for it scavenging. Much like in other dromaeosaurs, the purpose of Velociraptor's famous sickle-shaped toe claw has been debated. Originally considered a disemboweling tool, the claw is now thought to have been used for grappling or restraining prey. Its habitat at Djadochta consisted of arid sand dunes with only sparse, intermittent streams."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_velociraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_velociraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_velociraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_velociraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_velociraptor"
+		}
+	]
+}

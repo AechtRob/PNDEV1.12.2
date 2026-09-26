@@ -1,0 +1,47 @@
+{
+	"name": "Shuleichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/shuleichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_shuleichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_shuleichthys",
+			"title": "Shuleichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>Osteoglossomorpha"
+		},
+        	{
+            "type": "entity",
+            "name": "S. brachypteryx",
+            "entity": "lepidodendron:prehistoric_flora_shuleichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_shuleichthys",
+			"type": "text",
+			"text": "Shuleichthys is a ray-finned fish discovered in Gansu Province of China, dating back to the Early Cretaceous. Its name is a mix of 'Shule' the name of a river going through the Changma Basin and 'Ichthys' meaning fish. Their size ranged from 6 centimeters to 18 centimeters in size, with a relatively small anal fin compared to other stem osteoglossomorphs."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_shuleichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_shuleichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_shuleichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_shuleichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_shuleichthys"
+		}
+	]
+}

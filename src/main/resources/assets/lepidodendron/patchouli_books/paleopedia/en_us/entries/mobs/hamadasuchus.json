@@ -1,0 +1,47 @@
+{
+	"name": "Hamadasuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hamadasuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hamadasuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hamadasuchus",
+			"title": "Hamadasuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Notosuchia$(br)>Peirosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. rebouli",
+            "entity": "lepidodendron:prehistoric_flora_hamadasuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hamadasuchus",
+			"type": "text",
+			"text": "Hamadasuchus is a crocodylomorph that was discovered in the Kemkem Formation of Morocco, dating back to the Late Cretaceous. Its name consists of 'Hamada' the arabic word for rocky desert plateau and 'suchus' meaning crocodile. It had a skull around 32.5 centimeters making the body to be estimated at 2 meters. This crocodylomorph had heterodont dentition, having three distinct tooth morphologies."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hamadasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hamadasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hamadasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hamadasuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hamadasuchus"
+		}
+	]
+}

@@ -1,0 +1,51 @@
+{
+	"name": "Austroprosboloides",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/palaeontinid_austroprosboloides_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_palaeontinid_austroprosboloides",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeontinid_austroprosboloides",
+			"title": "Austroprosboloides",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Arthropoda$(br)>Insecta$(br)>Hemiptera$(br)>Cicadomorpha$(br)>Palaeontinoidea$(br)>Dunstaniidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/juliform.png"],
+			"title": "A. vandijki",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid_austroprosboloides",
+			"type": "text",
+			"text": "Coming from the Late Permian of South Africa, Austroprosboloides vandijki was a rather large and primitive species of cicada, closely related to the larger and more well-known palaeontinids of the Mesozoic period. It was discovered in deposits of the Estcourt Formation, corresponding to the Daptocephalus Assemblage Zone."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid_austroprosboloides",
+			"type": "text",
+			"text": "Contrarily to the more derived Late Mesozoic palaeontinids, Austroprosboloides and its relatives had more limited flight capabilities, with smaller forewings and larger hindwings."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@austroprosboloides"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@austroprosboloides"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@austroprosboloides"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@austroprosboloides"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@austroprosboloides"
+		}
+	]
+}

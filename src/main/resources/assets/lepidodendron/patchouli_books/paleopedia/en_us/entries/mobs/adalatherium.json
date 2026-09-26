@@ -1,0 +1,57 @@
+{
+	"name": "Adalatherium",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/adalatherium_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_adalatherium",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_adalatherium",
+			"title": "Adalatherium",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Mammalia$(br)>Theriiformes$(br)>Gondwanatheria$(br)>Adalatheriidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. hui",
+            "entity": "lepidodendron:prehistoric_flora_adalatherium",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_adalatherium",
+			"type": "text",
+			"text": "Adalatherium hui was a species of gondwanatherian mammal that lived during the Maastrichtian stage of the Late Cretaceous, in what is now Madagascar. It is known from a nearly complete sub-adult skeleton that was discovered at the famous Maevarano Formation, and announced in 2020. Its name is a combination of Malagasy and Greek, and means crazy beast. Despite not having been quite fully grown at the time of death,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_adalatherium",
+			"type": "text",
+			"text": "the skeleton represents one of the very largest known Mesozoic mammals, with a skull length of 8.4 cm, a body length of 52 cm, and an estimated body mass of 1.7 - 5.2 kg. The only Mesozoic mammals known to outsize it are Vintana, Repenomamus, and Patagomaia. Adalatherium seems to have had quite a stocky build, almost comparable to a badger. Despite superficial similarities, however, it seems to have been herbivorous."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_adalatherium",
+			"type": "text",
+			"text": "The front of its skull also contained more foramina than any known mammal aside from Vincelestes. Adalatherium and similar mammal lineages also had enlarged incisors at the front of the mouth, followed by a toothless gap before the start of large molars. This dentition is reminiscent of that of rodents."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_adalatherium"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_adalatherium"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_adalatherium"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_adalatherium"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_adalatherium"
+		}
+	]
+}

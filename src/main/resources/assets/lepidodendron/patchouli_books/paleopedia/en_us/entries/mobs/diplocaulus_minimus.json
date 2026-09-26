@@ -1,0 +1,57 @@
+{
+	"name": "Diplocaulus_minimus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/diplocaulus_minimus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_diplocaulus_minimus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_diplocaulus_minimus",
+			"title": "Diplocaulus_minimus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Stegocephali$(br)>Nectridea$(br)>Diplocaulidae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. minimus",
+            "entity": "lepidodendron:prehistoric_flora_diplocaulus_minimus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diplocaulus_minimus",
+			"type": "text",
+			"text": "Diplocaulus minimus is an unusual member of a well-known genus of boomerang-headed lepospondyls! Described in 1988 from the Ikakern Formation of Morocco, D. minimus was quickly recognized for its abnormal nature among this clade. Most noticeably, it is conspicuously asymmetrical, with one end of the head significantly longer than the other. This is not the result of individual variation or post-mortem distortion as far as palaeontologists"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diplocaulus_minimus",
+			"type": "text",
+			"text": "can tell, it is a consistent feature across several skulls discovered. The cause or purpose is unknown. Germain, 2010, speculates that it is a developmental abnormality caused by environmental stress, while others point towards the ever-present hypothesis of display features. Even beyond this characteristic, Diplocaulus minimus is odd. While other lepospondyls disappear after the Early Permian, this weirdo appears only a few million years before the end of the Permian."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diplocaulus_minimus",
+			"type": "text",
+			"text": "It is also the only lepospondyl known from Gondwana, with others found only in Europe and North America. It was truly the last and loneliest of this clade. Also, it’s probably not actually Diplocaulus, instead being more closely related to Diploceraspis than any other species in the former genus. Despite this, nobody has officially moved it yet."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_diplocaulus_minimus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_diplocaulus_minimus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_diplocaulus_minimus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_diplocaulus_minimus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_diplocaulus_minimus"
+		}
+	]
+}

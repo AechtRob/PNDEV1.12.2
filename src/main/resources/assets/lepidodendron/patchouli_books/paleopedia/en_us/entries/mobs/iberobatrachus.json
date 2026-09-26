@@ -1,0 +1,47 @@
+{
+	"name": "Iberobatrachus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/iberobatrachus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_iberobatrachus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_iberobatrachus",
+			"title": "Iberobatrachus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Amphibia$(br)>Salientia$(br)>Anura"
+		},
+        	{
+            "type": "entity",
+            "name": "I. angelae",
+            "entity": "lepidodendron:prehistoric_flora_iberobatrachus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_iberobatrachus",
+			"type": "text",
+			"text": "Iberobatrachus is a frog discovered in Spain dating back to the Early Cretaceous. Its name is a mix of 'Ibero' a reference to the iberian peninsula, the peninsula that spain and portugal is in, and 'batrachus' meaning frog. It was a rather small animal, being around 4 centimeters. We have two nearly complete fossils of these animals, giving us a good idea of what they looked like."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_iberobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_iberobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_iberobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_iberobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_iberobatrachus"
+		}
+	]
+}

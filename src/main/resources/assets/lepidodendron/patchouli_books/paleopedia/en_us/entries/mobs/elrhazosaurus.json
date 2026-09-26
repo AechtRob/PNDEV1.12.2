@@ -1,0 +1,47 @@
+{
+	"name": "Elrhazosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/elrhazosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_elrhazosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_elrhazosaurus",
+			"title": "Elrhazosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous.$(br2)>Chordata$(br)>Reptilia$(br)>Ornithischia$(br)>Ornithopoda$(br)>Dryosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. nigeriensis",
+            "entity": "lepidodendron:prehistoric_flora_elrhazosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_elrhazosaurus",
+			"type": "text",
+			"text": "Elrhazosaurus was an Ornithopod from the Elrhaz formation of Niger. It is named after the formation it was found in, that being the Elrhaz formation, and the 'saurus' meaning lizard. It is estimated to be 3 meters long, being medium sized for its clade. Originally its fossils were thought to belong to another dryosaur, that being the Valdosaurus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_elrhazosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_elrhazosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_elrhazosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_elrhazosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_elrhazosaurus"
+		}
+	]
+}

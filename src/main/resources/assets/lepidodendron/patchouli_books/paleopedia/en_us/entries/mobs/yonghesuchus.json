@@ -1,0 +1,47 @@
+{
+	"name": "Yonghesuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/yonghesuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_yonghesuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_yonghesuchus",
+			"title": "Yonghesuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2))>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Gracilisuchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Y. sangbiensis",
+            "entity": "lepidodendron:prehistoric_flora_yonghesuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yonghesuchus",
+			"type": "text",
+			"text": "Yonghesuchus is a pseudosuchian discovered in Tongchuan Formation in Shanxi, China dating back to the Triassic. Its name means 'Yonghe crocodile' with the Yonghe being the county it was discovered in. It had a 15 centimeter long skull, making it a rather small animal."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_yonghesuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_yonghesuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_yonghesuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_yonghesuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_yonghesuchus"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Bianchengichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bianchengichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_bianchengichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bianchengichthys",
+			"title": "Bianchengichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Placodermi"
+		},
+        	{
+            "type": "entity",
+            "name": "B. micros",
+            "entity": "lepidodendron:prehistoric_flora_bianchengichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bianchengichthys",
+			"type": "text",
+			"text": "Bianchengichtys micros was a species of particularly small Silurian placoderms, figuring among the earliest articulated placoderms ever found. It lived along the coast of a large isolated landmass that is now Southern China, which was in the Silurian a notable hotspot for early placoderm diversification. It lived in shallow and calm nearshore waters that constitute the modern Xiaoxi Formation."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bianchengichthys",
+			"type": "text",
+			"text": "Bianchengichthys, despite its small stature, seems to have been closely related with larger early placoderms of the Kuanti Lagerstätte, such as Qilinyu. It is however the only known Silurian placoderm to present teeth-like denticles on its mandible. Like its relatives, Bianchengichthys had a relatively flattened head shield, with eyes located at the tip of the facial rostrum, close to the mouth."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bianchengichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bianchengichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bianchengichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bianchengichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bianchengichthys"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Waldmanichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/waldmanichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_waldmanichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_waldmanichthys",
+			"title": "Waldmanichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>Luisiellidae"
+		},
+        	{
+            "type": "entity",
+            "name": "W. koonwarrii",
+            "entity": "lepidodendron:prehistoric_flora_waldmanichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_waldmanichthys",
+			"type": "text",
+			"text": "Waldmanichthys koonwarrii was a species of ray-finned bony fish that lived during the Albian stage of the Early Cretaceous in what is now the southernmost part of Victoria, Australia. Specifically, its remains have been found in the Koonwarra Fossil Bed, which is part of the Strzelecki Group. Multiple specimens have been found, most measuring around the 10 cm mark, but with a maximum known length of 17.4 cm. At least one specimen preserves"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_waldmanichthys",
+			"type": "text",
+			"text": "the patterning this fish would've had in life. Tightly packed horizontal rows of dark spots extending from the base of the tail fin to just behind the gills. Waldmanichthys belonged to the family Orthogonikleithridae, making it and its relatives Cavenderichthys and Luisiella stem taxa to the Osteoglossocephala."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_waldmanichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_waldmanichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_waldmanichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_waldmanichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_waldmanichthys"
+		}
+	]
+}

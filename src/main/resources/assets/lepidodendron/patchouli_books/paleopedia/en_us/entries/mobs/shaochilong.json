@@ -1,0 +1,47 @@
+{
+	"name": "Shaochilong",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/shaochilong_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_shaochilong",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_shaochilong",
+			"title": "Shaochilong",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Carcharodontosauria$(br)>Carcharodontosauridae(?)"
+		},
+        	{
+            "type": "entity",
+            "name": "S. maortuensis",
+            "entity": "lepidodendron:prehistoric_flora_shaochilong",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_shaochilong",
+			"type": "text",
+			"text": "Shaochilong is a mid-sized theropod known from Inner Mongolia, China. It was originally described as a species of genus Chilantaisaurus, but redescribed as new genus in 2009. Its classification is controversial: originally considered as a carcharodontosaurid, but some recent analysis consider it as tyrannosauroid instead. However, here it is reconstructed as carcharodontosaurid-like theropod."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_shaochilong"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_shaochilong"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_shaochilong"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_shaochilong"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_shaochilong"
+		}
+	]
+}

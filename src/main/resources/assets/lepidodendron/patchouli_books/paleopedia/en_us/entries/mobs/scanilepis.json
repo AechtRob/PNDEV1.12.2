@@ -1,0 +1,52 @@
+{
+	"name": "Scanilepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/scanilepis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_scanilepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_scanilepis",
+			"title": "Scanilepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Actinopterygii$(br)>Scanilepiformes$(br)>Scanilepididae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. dubius",
+            "entity": "lepidodendron:prehistoric_flora_scanilepis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_scanilepis",
+			"type": "text",
+			"text": "Scanilepis is a ray finned fresh water fish that was discovered in Höganäs Formation of Sweden, dating back to the Triassic. The name is a mix of 'Scani' and 'lepis' meaning 'Scani fish', with Scania being the historic name of the region it was discovered in. It was a pretty big fish, estimated to be about 110 centimeters on average but an individual of a size estimated to be 2 meters has also been found. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_scanilepis",
+			"type": "text",
+			"text": "While the state of its relations to other fishes were complicated, as it stands, this genus' closest relatives are bichir and kin."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_scanilepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_scanilepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_scanilepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_scanilepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_scanilepis"
+		}
+	]
+}

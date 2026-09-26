@@ -1,0 +1,51 @@
+{
+	"name": "Fletcheriana",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/palaeontinid_fletcheriana_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_palaeontinid_fletcheriana",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeontinid_fletcheriana",
+			"title": "Fletcheriana",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Arthropoda$(br)>Insecta$(br)>Hemiptera$(br)>Cicadomorpha$(br)>Palaeontinoidea$(br)>Dunstaniidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/juliform.png"],
+			"title": "F. triassica",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid_fletcheriana",
+			"type": "text",
+			"text": "Fletcheriana triassica was an early species of fairly large cicada, discovered in Middle Triassic deposits belonging to the Hawkesbury Sandstone, a geologic formation exposed in the suburbs of Sydney, Australia."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid_fletcheriana",
+			"type": "text",
+			"text": "Initially thought to have been a rather conservative early cicada, noted for its similarities with modern members of this group, Fletcheriana is now understood as the closest relative to the more famous palaeontinids, a group of Jurassic and Cretaceous cicadas known for their large size and their elongated moth-like forewings."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@fletcheriana"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@fletcheriana"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@fletcheriana"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@fletcheriana"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@fletcheriana"
+		}
+	]
+}

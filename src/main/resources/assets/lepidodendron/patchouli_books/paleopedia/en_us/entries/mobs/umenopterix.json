@@ -1,0 +1,52 @@
+{
+	"name": "Umenopterix",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/umenopterix_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_umenopterix",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_umenopterix",
+			"title": "Umenopterix",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Dictyoptera$(br)>Umenocoleoidea$(br)>Umenocoleidae"
+		},
+        	{
+            "type": "entity",
+            "name": "U. burkhardi",
+            "entity": "lepidodendron:prehistoric_flora_umenopterix",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_umenopterix",
+			"type": "text",
+			"text": "Umenopterix burkhardi was a relatively large member of the Umenocoleidae, a family of aberrant Cretaceous roach-like insects whose sclerotized forewings are easily mistaken for the elytras of unrelated beetles. Umenopterix itself is only known from the Crato Formation, a rich lagerstätte dated from the end of the Early Cretaceous and located in Northeastern Brazil."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_umenopterix",
+			"type": "text",
+			"text": "Umenopterix, like its relatives, had likely very little sexual dimorphism between the sexes, with the ovipositor of the female being largely reduced. The surface of the elytra-like forewings seems to indicate the presence of cryptic patterning used to break the shape of the insect on a tree trunk, and it is quite likely that Umenopterix lived mostly under the bark of the plants upon which it fed."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_umenopterix"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_umenopterix"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_umenopterix"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_umenopterix"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_umenopterix"
+		}
+	]
+}

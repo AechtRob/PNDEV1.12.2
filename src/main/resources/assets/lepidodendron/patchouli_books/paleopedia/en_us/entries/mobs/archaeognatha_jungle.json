@@ -1,0 +1,52 @@
+{
+	"name": "Archaeognatha",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/archaeognatha_jungle_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_archaeognatha_jungle",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_archaeognatha_jungle",
+			"title": "Archaeognatha",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian -  Present$(br2)>Arthropoda$(br)>Insecta$(br)>Monocondylia"
+		},
+        	{
+            "type": "entity",
+            "name": "Archaeognatha",
+            "entity": "lepidodendron:prehistoric_flora_archaeognatha_jungle",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archaeognatha_jungle",
+			"type": "text",
+			"text": "Among the oldest groups of insects known in natural history, bristletails have survived and endured through dozens of major extinctions with few visible changes of anatomy. The earliest bristletail, Dasyleptus, appears in the fossil record among the world-renowned insect fossils of the Commentry Shale, in France, and the Mazon Creek lagerstätte, in Illinois. Today, more than 600 extant species are known throughout the planet."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archaeognatha_jungle",
+			"type": "text",
+			"text": "Bristletails are superficially similar to silverfish, to which they are only distantly related. Contrarily to them, they have a body compressed laterally, with a distinctively small head and primitive mouthparts. Most remarkably, they are able to jump several times their own size high in the air when disturbed, to confuse and avoid potential predators."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_archaeognatha_jungle"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_archaeognatha_jungle"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_archaeognatha_jungle"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_archaeognatha_jungle"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_archaeognatha_jungle"
+		}
+	]
+}

@@ -1,0 +1,57 @@
+{
+	"name": "Abyssosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/abyssosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_abyssosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_abyssosaurus",
+			"title": "Abyssosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Sauropterygia$(br)>Plesiosauria$(br)>Plesiosauridea$(br)>Cryptoclididae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. nataliae",
+            "entity": "lepidodendron:prehistoric_flora_abyssosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_abyssosaurus",
+			"type": "text",
+			"text": "Abyssosaurus nataliae was a species of cryptoclidid plesiosaur that lived during the late Hauterivian stage of the Early Cretaceous. Its fossils were found in the Porentskii District of the Chuvash Republic in western Russia, and they were scientifically described by Alexander Yu Berezin in 2011. Abyssosaurus measured around 7 metres long, about half the length of which was composed of the neck. The skull on the other hand was quite small, a mere 30 cm long."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_abyssosaurus",
+			"type": "text",
+			"text": "The skull is quite unusual, and shows rather juvenile-looking traits despite the bones belonging to an adult. The gastralia and flipper bones of the animal were also unusually dense, which would've reduced buoyancy and increased stability in the water, adaptations that would've been ideal for diving. The reason for these many unusual traits is thought to be adaptation to a deep sea environment, perhaps as deep as the bathypelagic zone."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_abyssosaurus",
+			"type": "text",
+			"text": "Adaptation to cold, harsh deep water conditions is also often accompanied by paedomorphic features. Such adaptations are also often accompanied by slow, sedentary lifestyles, a slow growth rate, and a long life expectancy. Like other cryptoclidids, Abyssosaurus likely fed mostly on cephalopods and crustaceans, which were seemingly plentiful in its environment."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_abyssosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_abyssosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_abyssosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_abyssosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_abyssosaurus"
+		}
+	]
+}

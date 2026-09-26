@@ -1,0 +1,47 @@
+{
+	"name": "Minicrania",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/minicrania_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_minicrania",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_minicrania",
+			"title": "Minicrania",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Antiarchi"
+		},
+        	{
+            "type": "entity",
+            "name": "M. lirouyii",
+            "entity": "lepidodendron:prehistoric_flora_minicrania",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_minicrania",
+			"type": "text",
+			"text": "Minicrania is a tiny 2 cm long antiarch known from the Early Devonian of China and Vietnam. There are two recognized species of Minicrania, M. lirouyii and M. lissa with the main if not only apparent difference being the tubercles covering the dermal surface of the armor. With M. lissa having much smaller and ill-defined tubercles hence it's name lissa, which means smooth."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_minicrania"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_minicrania"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_minicrania"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_minicrania"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_minicrania"
+		}
+	]
+}

@@ -1,0 +1,51 @@
+{
+	"name": "Miracossus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/palaeontinid_miracossus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_palaeontinid_miracossus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeontinid_miracossus",
+			"title": "Miracossus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Hemiptera$(br)>Cicadomorpha$(br)>Palaeontinoidea$(br)>Palaeontinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/juliform.png"],
+			"title": "M. ingentius",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid_miracossus",
+			"type": "text",
+			"text": "Miracossus was a genus of large cicadas from the Early Cretaceous of China. It is known from two species, both only found in the Yixian Formation, in China : M. ingentius and M. gongi. The forest that then covered the Liaoning region in Northeastern China were dominated by conifers, and the climate was very seasonal : the summer was more arid, and the winter was particularly cold and humid."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid_miracossus",
+			"type": "text",
+			"text": "Miracossus ingentius was a particularly large palaeontinid, a family of giant cicadas known for their similarities with butterflies and lacewings. It had much longer forewings than its close relative M. gongi, which also had an obscure body and cryptically-painted wings."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@miracossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@miracossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@miracossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@miracossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@miracossus"
+		}
+	]
+}

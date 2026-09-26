@@ -1,0 +1,52 @@
+{
+	"name": "Eoproscopia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eoproscopia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_eoproscopia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eoproscopia",
+			"title": "Eoproscopia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Orthoptera$(br)>Caelifera$(br)>Acridomorpha$(br)>Proscopiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. martilli",
+            "entity": "lepidodendron:prehistoric_flora_eoproscopia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eoproscopia",
+			"type": "text",
+			"text": "Eoproscopia martilli is the only known fossil species of stick grasshoppers. Its remains are exclusively found in the Crato Formation, a late Early Cretaceous lagerstätte located in the state of Ceará, in Northeastern Brazil. It proves the persistence in the region of its family, the Proscopiidae, for more than an hundred million years."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eoproscopia",
+			"type": "text",
+			"text": "Contrarily to all modern genera of stick grasshoppers, Eoproscopia was fully able to fly, thanks to its well-developed wings. It shows however also early traits of the typical specialization of its family towards camouflage, as its long and narrow body served certainly to hide it as a dead stick among other in the presence of a predator. It was likely, like its modern relatives, a leaf eater specialized in tropical angiosperms."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eoproscopia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eoproscopia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eoproscopia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eoproscopia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eoproscopia"
+		}
+	]
+}

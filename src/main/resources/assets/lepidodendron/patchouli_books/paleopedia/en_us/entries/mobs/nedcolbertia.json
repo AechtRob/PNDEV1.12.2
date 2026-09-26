@@ -1,0 +1,52 @@
+{
+	"name": "Nedcolbertia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/nedcolbertia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_nedcolbertia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_nedcolbertia",
+			"title": "Nedcolbertia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Ornithomimosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "Mob_name",
+            "entity": "lepidodendron:prehistoric_flora_nedcolbertia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nedcolbertia",
+			"type": "text",
+			"text": "Nedcolbertia justinhofmanni is a small dinosaur from the Cedar Mountain Formation. It most likely represents a basal ornithomimosaur, though it has seen placement among groups as disparate as allosauroids and megalosauroids. This uncertainty comes down to the scant remains from which it is known, a single foot. As such most of the animal must be interpreted from its relatives, whichever dinosaurs those may be."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nedcolbertia",
+			"type": "text",
+			"text": "Nedcolbertia also has the strange distinction of being named for two different people and including both of their full names. The genus name honors paleontologist Edwin Ned Colbert, while the species is named for Justin Hofmann, a child who won a contest to have a dinosaur named after him."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_nedcolbertia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_nedcolbertia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_nedcolbertia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_nedcolbertia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_nedcolbertia"
+		}
+	]
+}

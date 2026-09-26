@@ -1,0 +1,51 @@
+{
+	"name": "Papiliontina",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/palaeontinid_papiliontina_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_palaeontinid_papiliontina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeontinid_papiliontina",
+			"title": "Papiliontina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Arthropoda$(br)>Insecta$(br)>Hemiptera$(br)>Cicadomorpha$(br)>Palaeontinoidea$(br)>Palaeontinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/juliform.png"],
+			"title": "P. draconima",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid_papiliontina",
+			"type": "text",
+			"text": "Papiliontina was a genus of very large cicadas from the Middle Triassic of MaÃ©dygen, Kyrgizstan. It is probably the best-preserved and therefore best-known triassic member of the Palaeontinidae, a now-extinct diverse family of giant moth-like cicadas quite widespread and abundant during the Mesozoic period."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid_papiliontina",
+			"type": "text",
+			"text": "Papiliontina is particularly notable for the presence of large intimidating eyespots, mimicking the eyes of a large predator, on each of its forewings, a trait unique in palaeontinids. Papiliontina, like other palaeontinids, probably held its wings opened when resting, revealing a wide grinning face made to terrify its many potential predators, in the same manner than many modern owlet-moths and flower mantis."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@papiliontina"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@papiliontina"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@papiliontina"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@papiliontina"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@papiliontina"
+		}
+	]
+}

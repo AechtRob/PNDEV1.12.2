@@ -1,0 +1,51 @@
+{
+	"name": "Baeocossus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/palaeontinid_baeocossus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_palaeontinid_baeocossus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeontinid_baeocossus",
+			"title": "Baeocossus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Hemiptera$(br)>Cicadomorpha$(br)>Palaeontinoidea$(br)>Palaeontinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/juliform.png"],
+			"title": "B. muratai",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid_baeocossus",
+			"type": "text",
+			"text": "Baeocossus is a genus of palaeontinid, a very diverse group of large cicadas that thrived in the middle of the Mesozoic period, before abruptly coming to an end in the end of the Early Cretaceous. It was one of the last members of its family, being found in Aptian deposits from the Crato Formation in Brazil, at a time when palaeontinids had mostly disappeared from the rest of the world. It coexisted with its larger relative Colossocossus."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid_baeocossus",
+			"type": "text",
+			"text": "Baeocossus, despite belonging to a group renowned for the large size of its members, was relatively small, with a wingspan reaching roughly five centimeters. The beautifully preserved fossils of Baeocossus muratai preserves a beautifully banded cryptic pattern, helping probably in camouflage."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@baeocossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@baeocossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@baeocossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@baeocossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@baeocossus"
+		}
+	]
+}

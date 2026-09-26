@@ -1,0 +1,47 @@
+{
+	"name": "Rhenonema",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rhenonema_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_rhenonema",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rhenonema",
+			"title": "Rhenonema",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Holonematidae"
+		},
+        	{
+            "type": "entity",
+            "name": "R. eifeliense",
+            "entity": "lepidodendron:prehistoric_flora_rhenonema",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhenonema",
+			"type": "text",
+			"text": "Rhenonema eifeliense is a species of holonematid placoderm known from the town of Gerolstein in the Rhineland of Germany. Originally named as a species of Dinichthys, then a species of Holonema, it is only known from a few isolated dorsal plates. However, from these plates we can tell that the animal would have had a massive dorsal crest at least 24 centimeters in length. The animal is estimated to grow to around 2 meters in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rhenonema"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rhenonema"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rhenonema"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rhenonema"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rhenonema"
+		}
+	]
+}

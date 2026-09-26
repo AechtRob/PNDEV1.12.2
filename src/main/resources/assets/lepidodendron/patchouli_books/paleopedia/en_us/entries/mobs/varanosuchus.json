@@ -1,0 +1,52 @@
+{
+	"name": "Varanosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/varanosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_varanosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_varanosuchus",
+			"title": "Varanosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Reptilia$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Atoposauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "V. sakonnakhonensis",
+            "entity": "lepidodendron:prehistoric_flora_varanosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_varanosuchus",
+			"type": "text",
+			"text": "Varanosuchus was a pseudosuchian from Sao Khua Formation of Thailand, dating back to the Early Cretaceous. Its name consists of 'Varano' a reference to the genus monitor lizards reside in due to its resemblance to them, and 'suchus' meaning crocodile. It was a medium sized animal about 115 centimeters long. Unlike modern species, its jaws weren't flattened and rather deep which also helps it be distinguished from other pseudosuchians of its locality."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_varanosuchus",
+			"type": "text",
+			"text": "While not much is known about the family it resides in, from its skeleton it can be guessed that it lived a terrestrial life with some adaptations for water."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_varanosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_varanosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_varanosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_varanosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_varanosuchus"
+		}
+	]
+}

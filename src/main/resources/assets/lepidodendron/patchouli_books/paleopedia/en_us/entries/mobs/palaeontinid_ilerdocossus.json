@@ -1,0 +1,51 @@
+{
+	"name": "Ilerdocossus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/palaeontinid_ilerdocossus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_palaeontinid_ilerdocossus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeontinid_ilerdocossus",
+			"title": "Ilerdocossus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Hemiptera$(br)>Cicadomorpha$(br)>Palaeontinoidea$(br)>Palaeontinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/juliform.png"],
+			"title": "I. ningchengensis",
+			"text": ""
+		},
+	{
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid_ilerdocossus",
+			"type": "text",
+			"text": "Ilerdocossus is a very widespread genus of very large cicadas found throughout Eurasia in Early Cretaceous deposits. Initially described after wing fragments found in the Caliza con Caraceas Formation of Spain, it is known today after twelve species, predominantly originating from the Yixian Formation of China, with some coming from the slightly younger Jiufotang Formation and from the Weald Clay, in England."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid_ilerdocossus",
+			"type": "text",
+			"text": "While it is possible that the genus Ilerdocossus itself is paraphyletic, all species composing it appear to have had great similarities between each others, and are only differentiable based on minute details of the wing venations. Ilerdocossus was one of the latest surviving palaeontinids, surviving into the Early Albian of China. Causes of the extinction of the group are still badly understood, with changes in flora and predation being proposed factors."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@ilerdocossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@ilerdocossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@ilerdocossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@ilerdocossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@ilerdocossus"
+		}
+	]
+}
