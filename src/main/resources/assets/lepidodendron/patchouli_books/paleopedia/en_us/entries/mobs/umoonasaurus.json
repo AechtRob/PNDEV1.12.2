@@ -1,0 +1,47 @@
+{
+	"name": "Umoonasaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/umoonasaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_umoonasaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_umoonasaurus",
+			"title": "Mob_name",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Sauropterygia$(br)>Plesiosauria$(br)>Plesiosauroidea$(br)>Leptocleididae"
+		},
+        	{
+            "type": "entity",
+            "name": "U. demoscyllus",
+            "entity": "lepidodendron:prehistoric_flora_umoonasaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_umoonasaurus",
+			"type": "text",
+			"text": "Umoonasaurus was a leptocleidid plesiosaur which lived in the early Cretaceous of Australia, discovered in the Bulldog Shale of southern Australia. Its name means “Coober Pedy lizard”, with “umoona” being the Antakirinya name for the town. Umoonasaurus was small, with its holotype “Eric” measuring 2-2.5 meters long (notably this and another specimen were opalized!). Umoonasaurus would have lived in the now extinct Eromanga Sea among other plesiosaurs."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_umoonasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_umoonasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_umoonasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_umoonasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_umoonasaurus"
+		}
+	]
+}

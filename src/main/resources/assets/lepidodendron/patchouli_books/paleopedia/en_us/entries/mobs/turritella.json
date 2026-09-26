@@ -1,0 +1,47 @@
+{
+	"name": "Turritella",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/turritella_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_turritella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_turritella",
+			"title": "Turritella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Present$(br2)>Mollusca$(br)>Gastropoda$(br)>Cerithioidea$(br)>Turritellidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. sp",
+            "entity": "lepidodendron:prehistoric_flora_turritella",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_turritella",
+			"type": "text",
+			"text": "Turritella is a turritellid sea snail which lived from the late Jurassic to the present day, with fossil and extant specied having been discovered across the world. Its name means “little-towered” in reference to its conical spiral shape, and in fact its family of Turritellidae is often known by the common name of “tower snails”. A prominent outcrop of this genus’s fossils is found at the Neogene Turritellenplatte in southwestern Germany."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_turritella"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_turritella"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_turritella"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_turritella"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_turritella"
+		}
+	]
+}

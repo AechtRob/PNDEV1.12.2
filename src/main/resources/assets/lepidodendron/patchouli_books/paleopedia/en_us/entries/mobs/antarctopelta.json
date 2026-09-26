@@ -1,0 +1,47 @@
+{
+	"name": "Antarctopelta",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/antarctopelta_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_antarctopelta",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_antarctopelta",
+			"title": "Antarctopelta",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Ankylosauria$(br)>Parankylosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "A. oliveroi",
+            "entity": "lepidodendron:prehistoric_flora_antarctopelta",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_antarctopelta",
+			"type": "text",
+			"text": "Antarctopelta was a parankylosaurian dinosaur which lived in the Late Cretaceous of Antarctica, discovered in the Snow Hill Formation on the Antarctic Peninsula in 1986 as the first known dinosaur on the continent. It would have reached about 4 meters long, and based on close relatives such as the Argentinian Stegouros, may have likely had flat spiked osteoderms on its tail for defense, comparable to the macuahuitl of Mesoamerica."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_antarctopelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_antarctopelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_antarctopelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_antarctopelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_antarctopelta"
+		}
+	]
+}
