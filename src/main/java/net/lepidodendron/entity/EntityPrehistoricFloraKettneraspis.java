@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraKettneraspis extends EntityPrehistoricFloraTr
 		return true;
 	}
 
-	public static String getPeriod() {return "Ordivician - Silurian - Devonian";}
+	public static String getPeriod() {return "Silurian - Devonian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
