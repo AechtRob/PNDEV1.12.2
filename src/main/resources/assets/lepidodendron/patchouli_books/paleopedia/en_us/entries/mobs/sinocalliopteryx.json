@@ -1,0 +1,47 @@
+{
+	"name": "Sinocalliopteryx",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sinocalliopteryx_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sinocalliopteryx",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sinocalliopteryx",
+			"title": "Sinocalliopteryx",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Compsognathidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. gigas",
+            "entity": "lepidodendron:prehistoric_flora_sinocalliopteryx",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sinocalliopteryx",
+			"type": "text",
+			"text": "Sinocalliopteryx was a compsognathid dinosaur which lived in the early Cretaceous of Asia, discovered in the Yixian Formation of northern Chjna. Its name means “beautiful Chinese feather”, as both of its known specimens preserve simple protofeathers. It was large for a compsognathid, with the biggest specimen measuring about 2.6 meters long, and gut contents indicate if predated upon smaller dinosaurs such as dromaeosaurids, birds, and ornithischians."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sinocalliopteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sinocalliopteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sinocalliopteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sinocalliopteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sinocalliopteryx"
+		}
+	]
+}

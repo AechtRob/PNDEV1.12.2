@@ -1,0 +1,52 @@
+{
+	"name": "Secodontosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/secodontosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_secodontosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_secodontosaurus",
+			"title": "Secodontosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Sphenacodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. obtusidens",
+            "entity": "lepidodendron:prehistoric_flora_secodontosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_secodontosaurus",
+			"type": "text",
+			"text": "Secodontosaurus is a genus of sphenacodontid synapsid from Early Permian Texas. This genus is mainly known from skull material, which would reach up to over 35 cm, which estimates whole animal length around 2 m. Compared to other sphenacodontids, it had extremely long and slender snout! With slightly tilted teeth on its jaw, it probably able to catch fish, although it is not known if it could swim well or not."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_secodontosaurus",
+			"type": "text",
+			"text": "Not many of postcranial materials are known, but vertebrae shows it had tall sail although not as tall as Dimetrodon. According to phylogeny its body would be close to that of Sphenacodon but with sail. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_secodontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_secodontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_secodontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_secodontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_secodontosaurus"
+		}
+	]
+}

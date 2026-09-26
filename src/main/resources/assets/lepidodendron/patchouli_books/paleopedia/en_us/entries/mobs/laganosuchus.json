@@ -1,0 +1,52 @@
+{
+	"name": "Laganosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/laganosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_laganosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_laganosuchus",
+			"title": "Laganosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Stomatosuchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. thaumastos",
+            "entity": "lepidodendron:prehistoric_flora_laganosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_laganosuchus",
+			"type": "text",
+			"text": "Laganosuchus is a strange crocodylomoph from the Late Cretaceous Echkar Formation of Niger and the Kem Kem Beds of Morrocco, where it lived alongside dinosaurs such as Spinosaurus and Carcharodontosaurus. Though it is only known from jaw bones, what we have is enough to show a clear relationship with the giant Stomatosuchus. The jaw in both taxa is essentially a flat, elongated hoop, which may have supported a pouch similar to that of a pelican."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_laganosuchus",
+			"type": "text",
+			"text": "As in these modern birds, this would have aided Laganosuchus in capturing and consuming prey. The flat snout of Laganosuchus earned it a rather cute genus name, literally meaning pancake crocodile. Though smaller than its better known relative, Laganosuchus was still a large animal, likely reaching upwards of 4 meters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_laganosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_laganosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_laganosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_laganosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_laganosuchus"
+		}
+	]
+}

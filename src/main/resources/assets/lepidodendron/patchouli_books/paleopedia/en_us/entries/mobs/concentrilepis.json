@@ -1,0 +1,47 @@
+{
+	"name": "Concentrilepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/concentrilepis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_concentrilepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_concentrilepis",
+			"title": "Concentrilepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Actinopterygii$(br)>Palaeonisciformes"
+		},
+        	{
+            "type": "entity",
+            "name": "C. minnekahtaensis",
+            "entity": "lepidodendron:prehistoric_flora_concentrilepis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_concentrilepis",
+			"type": "text",
+			"text": "Concentrilepis minnekahtaensis is a species of ray finned fish known from the Leonardian dated Minnekahta Limestone, USA. Concentrilepis' name means 'concentric scale,' after the concentric ridges seen on its scales. The fish would have grown to 12.5 centimeters in length, and is known from a well preserved partially 3-dimensional fossil. It is one of the most complete monospecific Palaeonisciforms known."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_concentrilepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_concentrilepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_concentrilepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_concentrilepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_concentrilepis"
+		}
+	]
+}

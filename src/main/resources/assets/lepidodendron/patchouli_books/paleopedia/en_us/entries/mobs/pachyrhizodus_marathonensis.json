@@ -1,0 +1,47 @@
+{
+	"name": "Pachyrhizodus_marathonensis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pachyrhizodus_marathonensis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_pachyrhizodus_marathonensise",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pachyrhizodus_marathonensis",
+			"title": "Pachyrhizodus_marathonensis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>Crossognathiformes$(br)>Pachyrhizodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. marathonensis",
+            "entity": "lepidodendron:prehistoric_flora_pachyrhizodus_marathonensis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pachyrhizodus_marathonensis",
+			"type": "text",
+			"text": "Pachyrhizodus marathonensis was a ray finned fish that was discovered in Toolebuc Formation of Australia, dating back to the Early Cretaceous. Its genus name means 'thick root tooth' while its species name means 'From Marathonas' a region of Greece which it did not live in. It was a medium sized fish at a length of 80 centimeters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pachyrhizodus_marathonensis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pachyrhizodus_marathonensis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pachyrhizodus_marathonensis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pachyrhizodus_marathonensis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pachyrhizodus_marathonensis"
+		}
+	]
+}

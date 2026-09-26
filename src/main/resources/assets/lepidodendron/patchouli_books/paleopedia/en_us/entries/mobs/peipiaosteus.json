@@ -1,0 +1,52 @@
+{
+	"name": "Peipiaosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/peipiaosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_peipiaosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_peipiaosteus",
+			"title": "Peipiaosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Acipenseriformes$(br)>Peipiaosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. pani",
+            "entity": "lepidodendron:prehistoric_flora_peipiaosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_peipiaosteus",
+			"type": "text",
+			"text": "Peipiaosteus was a genus of chondrostean ray-finned bony fish that lived during the Aptian stage of the Early Cretaceous. Its fossils have been found in China (most notably at the famous Jiufotang and Yixian Formations in Liaoning province). Peipiaosteus could reach 30 cm long, and several exceptionally well preserved specimens even preserve soft tissue such as skin and muscles. Its name translates to Beipiao bone, referring to the city of Beipiao, also spelled Peipiao,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_peipiaosteus",
+			"type": "text",
+			"text": "near where the holotype specimen was found. The fish's family, Peipiaosteidae, also includes such members as Liaosteus, Spherosteus, Stichopterus and Yanosteus, and is thought to be closely related to the family Chondrosteidae from Jurassic Europe, and to the sub-order Acipenseroidei that includes modern sturgeon and paddlefish. The family Peipiaosteidae is entirely known from freshwater deposits, and at least some members like Yanosteus seem to have been piscivorous."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_peipiaosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_peipiaosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_peipiaosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_peipiaosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_peipiaosteus"
+		}
+	]
+}

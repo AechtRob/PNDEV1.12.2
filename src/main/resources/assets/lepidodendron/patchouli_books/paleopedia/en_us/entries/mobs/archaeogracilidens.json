@@ -1,0 +1,52 @@
+{
+	"name": "Archaeogracilidens",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/archaeogracilidens_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_archaeogracilidens",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_archaeogracilidens",
+			"title": "Archaeogracilidens",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Chondrichthyes$(br)>Elasmobranchii$(br)>Hexanchiformes$(br)>Orthacodidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. macer",
+            "entity": "lepidodendron:prehistoric_flora_archaeogracilidens",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archaeogracilidens",
+			"type": "text",
+			"text": "Archaeogracilidens macer is a moderately sized Orthacodontid Elasmobranch from the Solnhofen limestone of the Late Jurassic in Germany. Unlike many of the more well known sharks of the Mesozoic, it has a relatively blunt and rounded head filled with long and narrow teeth specially designed for eating slippery prey like fish and squid, large broad pectoral fins, and a dorsal fin an the base of the tail."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archaeogracilidens",
+			"type": "text",
+			"text": "Reaching about 2.5 meters, this shark was formerly assigned to Sphenodus before a study earlier this year questioned the validity of the genus and assigned the extremely well preserved specimens of S. macer and S. nitidus into Archaeogracilidens. As an Orthacodontid, its placement within Elasmobranchii is unknown, but likely within Synechodontiformes or Hexanchiformes."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_archaeogracilidens"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_archaeogracilidens"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_archaeogracilidens"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_archaeogracilidens"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_archaeogracilidens"
+		}
+	]
+}

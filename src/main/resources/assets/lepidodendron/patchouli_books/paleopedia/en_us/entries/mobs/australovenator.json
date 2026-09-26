@@ -1,0 +1,47 @@
+{
+	"name": "Australovenator",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/australovenator_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_australovenator",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_australovenator",
+			"title": "Australovenator",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Megaraptora$(br)>Megaraptoridae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. wintonensis",
+            "entity": "lepidodendron:prehistoric_flora_australovenator",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_australovenator",
+			"type": "text",
+			"text": "Australovenator is a megaraptorid from the Late and tentatively Early Cretaceous of Australia. It is known from sparse remains including a jaw bone, its large claws, and other post cranial elements. Despite this, it is one of Australia's best preserved predators from the Mesozoic. Australovenator is currently known to be Australia's Apex land predator for the Cretaceous, and measured up to 6 meters in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_australovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_australovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_australovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_australovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_australovenator"
+		}
+	]
+}

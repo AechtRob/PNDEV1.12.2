@@ -1,0 +1,47 @@
+{
+	"name": "Homarus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/homarus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_homarus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_homarus",
+			"title": "Homarus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous - Present$(br2)>Arthropoda$(br)>Pancrustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Nephropidae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. sp.",
+            "entity": "lepidodendron:prehistoric_flora_homarus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_homarus",
+			"type": "text",
+			"text": "Homarus, more commonly known as lobsters, are crustaceans found in the North Atlantic and the Mediterranean. While the average individual is as long as 20 centimeters and weighs 6 kilograms, some individuals are known to grow much longer while also being heavier up to 60 centimeters and 20 kilos. Making them the heaviest crustaceans still alive. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_homarus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_homarus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_homarus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_homarus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_homarus"
+		}
+	]
+}

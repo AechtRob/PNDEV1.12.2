@@ -1,0 +1,52 @@
+{
+	"name": "Macromyzon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/macromyzon_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_macromyzon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_macromyzon",
+			"title": "Macromyzon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Annelida$(br)>Clitellata$(br)>Hirudinea"
+		},
+        	{
+            "type": "entity",
+            "name": "M. siluricus",
+            "entity": "lepidodendron:prehistoric_flora_macromyzon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_macromyzon",
+			"type": "text",
+			"text": "Macromyzon siluricus was a species of very large early leech, recently discovered in Early Silurian deposits of the Brandon Bridge Formation belonging to the world-renowned Waukesha Lagerstätte. During the Silurian, those sediments were a shallow, near-shore carbonate platform in a tropical setting, teeming with invertebrate life exquisitely preserved in the fossils of the lagerstätte."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_macromyzon",
+			"type": "text",
+			"text": "Contrarily to most modern leeches, which are generally blood-sucking parasites of vertebrates, Macromyzon was likely an invertebrate specialist using as host the various artiopods of its biota."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_macromyzon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_macromyzon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_macromyzon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_macromyzon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_macromyzon"
+		}
+	]
+}

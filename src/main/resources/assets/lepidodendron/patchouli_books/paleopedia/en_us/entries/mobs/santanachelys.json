@@ -1,0 +1,52 @@
+{
+	"name": "Santanachelys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/santanachelys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_santanachelys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_santanachelys",
+			"title": "Santanachelys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Testudines$(br)>Cryptodira$(br)>Protostegidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. graffneyi",
+            "entity": "lepidodendron:prehistoric_flora_santanachelys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_santanachelys",
+			"type": "text",
+			"text": "Santanachelys is a bizarrely proportioned Sea Turtle from the Early Cretaceous of Brazil, being from the Santana formation of which it shares its name. This animal is very unique for the size of its limbs and skull in comparison to the body. Possessing a very large skull with small limbs, especially its rear flippers. The proportions give it an almost baby like appearance, though there is no evidence of it being a baby."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_santanachelys",
+			"type": "text",
+			"text": "The animal itself is very small, measing only approximately 20cm, making it a very small Sea turtle. This animal is also one of the Oldest known sea turtles having lived 112 million years ago. Only beaten in age by Desmatochelys."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_santanachelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_santanachelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_santanachelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_santanachelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_santanachelys"
+		}
+	]
+}

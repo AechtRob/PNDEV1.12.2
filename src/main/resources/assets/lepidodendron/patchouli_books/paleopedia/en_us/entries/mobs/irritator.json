@@ -1,0 +1,62 @@
+{
+	"name": "Irritator",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/irritator_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_irritator",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_irritator",
+			"title": "Irritator",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Spinosauridae$(br)>Spinosaurinae"
+		},
+        	{
+            "type": "entity",
+            "name": "I. challengeri",
+            "entity": "lepidodendron:prehistoric_flora_irritator",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_irritator",
+			"type": "text",
+			"text": "Irritator challengeri has has an incredibly messy and convoluted history of research. Frustrating and enlightening, this small Spinosaurid has informed us much about the family overall. Around 1996, the holotype of Irritator was uncovered by fossil collectors from the Chapada do Araripe region of northeastern Brazil. In attempt to make the skull look more complete and valuable,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_irritator",
+			"type": "text",
+			"text": "the fossil collectors tried to obscure most of the skull in plaster as well as attempting to manually reconstruct the skull. Along with other fossil fractures and damage from mishandling from excavation, this caused the paleontologists of the State Museum of Natural History Stuttgart, Germany, to have a difficult time determining what exactly they were looking at."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_irritator",
+			"type": "text",
+			"text": "This would soon be uncovered when the specimen was sent for CT scanning in the UK. With a common frustration, the authors of the paper mutually agreed to name the species Irritator challengeri. Also in 1996, Alexander W. A. Kellner and Diogenes de Almeida Campos described Angaturama limai from an isolated snout tip from the Romualdo Formation."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_irritator",
+			"type": "text",
+			"text": "Due to similar characteristics, Angaturama limai is often considered to be a junior synonym of Irritator. However, there have been papers in the 21st century that have challenged this. Most recently, a digital reconstruction has suggested that the lower jaws of Spinosaurids could split similarly to pelicans to consume large prey items."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_irritator"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_irritator"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_irritator"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_irritator"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_irritator"
+		}
+	]
+}

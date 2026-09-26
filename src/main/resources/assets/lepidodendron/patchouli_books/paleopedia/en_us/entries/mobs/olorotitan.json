@@ -1,0 +1,62 @@
+{
+	"name": "Olorotitan",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/olorotitan_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_olorotitan",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_olorotitan",
+			"title": "Olorotitan",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Hadrosauridae$(br)>Lambeosaurinae$(br)>Lambeosaurini"
+		},
+        	{
+            "type": "entity",
+            "name": "O. arharensis",
+            "entity": "lepidodendron:prehistoric_flora_olorotitan",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+	{
+			"advancement": "lepidodendron:pf_adv_book_olorotitan",
+			"type": "text",
+			"text": "Olorotitan arharensis was a species of lambeosaurine hadrosaurid ornithopod dinosaur that lived during the Maastrichtian stage of the Late Cretaceous in what is now the Amur Oblast of eastern Russia. First unearthed between 1999 and 2001, and officially scientifically described in 2003, its remains come from the Udurchukan Formation. The holotype specimen is the most complete known lambeosaurine skeleton outside of North America."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_olorotitan",
+			"type": "text",
+			"text": "The genus name Olorotitan means titanic swan because its neck is proportionately longer than in other hadrosaurids, and the species name arharensis refers to Arhara County in the Amur Oblast. At 8 metres long and 2.6 - 3.4 tons in weight, this animal would've been similar in size to many other lambeosaurines, such as Parasaurolophus. It is easily distinguishable by the hollow, hatchet-shaped bony crest on top of its skull, likely used for species recognition and"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_olorotitan",
+			"type": "text",
+			"text": "sound production, just like in Parasaurolophus, the hollow tubes inside the crest connected to the nasal passages. Like other hadrosaurids, Olorotitan was a herbivore that could alternate between moving around bipedally or on all fours, and its mouth had hundreds of self-replacing teeth for grinding vegetation in a manner analogous to chewing. Its habitat in the Udurchukan Formation consisted of humid river-fed plains with rich vegetation including"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_olorotitan",
+			"type": "text",
+			"text": "horsetails, ferns, ginkgophytes, and cypresses, which was inhabited by a range of animals including turtles, crocodilians, theropods, sauropods, nodosaurids, and multiple hadrosaurids in addition to Olorotitan. Curiously, the presence of lambeosaurines at Udurchukan and other Maastrichtian formations in East Asia, compared to their absence in North America from the same stage, suggests the two continents may have been quite distinct from each other ecologically."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_olorotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_olorotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_olorotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_olorotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_olorotitan"
+		}
+	]
+}

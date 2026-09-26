@@ -1,0 +1,52 @@
+{
+	"name": "Manidens",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/manidens_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_manidens",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_manidens",
+			"title": "Manidens",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Heterodontosauridae$(br)>Heterodontosaurinae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. condorensis",
+            "entity": "lepidodendron:prehistoric_flora_manidens",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+	{
+			"advancement": "lepidodendron:pf_adv_book_manidens",
+			"type": "text",
+			"text": "Manidens condorensis is a species of Heterodontosaurid dinosaur from the Early Jurassic of South America. This animal, barely 60 cm across, is known from one partial skeleton and a few other referred specimens from the Cañadón Asfalto Formation in Patagonia. The generic name, translating roughly to Hand tooth derives from the shape of this animal's lower teeth, which in conjunction with the high crowned morphology of the rest of its dentition,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_manidens",
+			"type": "text",
+			"text": "suggest a further specialization of this genus towards herbivory. Manidens was the first Heterodontosaurid with evidence of caniniform tooth replacement, feature since then not observed in other members of the group. Tooth replacement in Manidens followed an anterior-to-posterior pattern, meaning it would replace the teeth towards the front of the snout before the ones towards the cheek."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_manidens"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_manidens"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_manidens"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_manidens"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_manidens"
+		}
+	]
+}

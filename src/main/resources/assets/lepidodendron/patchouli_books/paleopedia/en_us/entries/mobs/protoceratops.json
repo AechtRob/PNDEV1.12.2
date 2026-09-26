@@ -1,0 +1,57 @@
+{
+	"name": "Protoceratops",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/protoceratops_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_protoceratops",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_protoceratops",
+			"title": "Protoceratops",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ceratopsia$(br)>Coronosauria$(br)>Protoceratopsidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. andrewsi",
+            "entity": "lepidodendron:prehistoric_flora_protoceratops",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_protoceratops",
+			"type": "text",
+			"text": "Protoceratops is a ceratopsian from the Late Cretaceous of Mongolia. It was rather small, only measuring around 2-2.5 meters. This animal is incredibly well-known and popular, and is particularly famous for a specific fossil which preserves a conflict with the similarly-sized Velociraptor. This evenly-matched battle has led to these dinosaurs being commonly depicted as rivals in pop-culture. Protoceratops is known from the Djadochta Formation,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_protoceratops",
+			"type": "text",
+			"text": "which preserves a desert environment consisting of hot, semi-arid dunes and short-lived bodies of water. This is coincidentally similar to the modern Gobi desert, where its fossils now lie. In addition to Velociraptor, the Djadochta Formation houses many other well known genera, including Halzkaraptor, Oviraptor, and Pinacosaurus, as well as other ceratopsians such as Bagaceratops and Udanoceratops. Multiple death assemblages suggest "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_protoceratops",
+			"type": "text",
+			"text": "that Protoceratops may have herded, forming groups throughout their lives, with the largest assemblage known consisting of 12 animals. These assemblages vary in age composition, with young individuals likely joining adults for protection against predators. In spite of direct evidence of social behavior, it has been stated that the possibility that some individuals of Protoceratops were solitary cannot be ruled out. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_protoceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_protoceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_protoceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_protoceratops"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_protoceratops"
+		}
+	]
+}

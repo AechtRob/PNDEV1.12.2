@@ -1,0 +1,57 @@
+{
+	"name": "Beishanlong",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/beishanlong_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_beishanlong",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_beishanlong",
+			"title": "Beishanlong",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Ornithomimosauria$(br)>Deinocheiridae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. grandis",
+            "entity": "lepidodendron:prehistoric_flora_beishanlong",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_beishanlong",
+			"type": "text",
+			"text": "Beishanlong grandis was a species of deinocheirid ornithomimosaurian theropod dinosaur that lived during the Early Cretaceous. Discovered in 2006 and scientifically described in 2009, its fossils were found in northwestern China's Gansu province, specifically at a locale in the Xiagou Formation called the White Ghost Castle site. Its full scientific name translates to the large dragon from the North Mountains. And large is an apt description indeed,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_beishanlong",
+			"type": "text",
+			"text": "as the fossil holotype has been estimated at roughly 5.9 - 7 metres long. This makes it one of the largest known ornithomimosaurs, with only the 6 - 8 meter long Gallimimus and the 11 metre long Deinocheirus surpassing the Beishanlong holotype specimen in body length and overall size. The holotype consists of a partial skeleton lacking the skull, and further findings assigned to the genus have also added remains of the hindlimbs,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_beishanlong",
+			"type": "text",
+			"text": "pubis and potential foot bones to the collection of known material. Its overall build was fairly robust for an ornithomimosaur, and while the legs and arms were long, they lacked the extremely elongated hands, feet and claws seen in later ornithomimosaurs. Beishanlong was originally described as a basal ornithomimosaur, but a later 2014 study by Yuong-Nam Lee et al. would re-classify it as a member of the family Deinocheiridae."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_beishanlong"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_beishanlong"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_beishanlong"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_beishanlong"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_beishanlong"
+		}
+	]
+}

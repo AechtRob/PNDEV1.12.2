@@ -1,0 +1,67 @@
+{
+	"name": "Enseosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/enseosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_enseosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_enseosteus",
+			"title": "Enseosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Selenosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. marocanensis",
+            "entity": "lepidodendron:prehistoric_flora_enseosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_enseosteus",
+			"type": "text",
+			"text": "Enseosteus is a genus of selenosteid placoderm known from the Frasnian aged Kellwasserkalk in the town of Bad Wildungen, Germany, and the Kellwasser facies in the Anti-Atlas Mountains of Morocco. The animal has a high skull and jaws used for crushing. The animal is known from three different species, mostly known from 4-6 centimeter long skulls, and E. marocanensis also has trunk armor known. Total size estimates range from 35-70 centimeters in length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_enseosteus",
+			"type": "text",
+			"text": "Enseosteus, along with other selenosteids like Walterosteus and Rhinosteus, are known from sites in both Germany and Morocco. The presence of these fish across both Europe and Africa implies that these areas were geographically close together at this time, and without a biological barrier between them. However, more can be revealed by analyzing the geological composition of both areas."
+        },
+        {
+			"advancement": "lepidodendron:pf_adv_book_enseosteus",
+			"type": "text",
+			"text": "Bad Wildungen and the Kellwasser facies are comprised of 'Kellwasser-Limestone,' a term used to describe black bituminous limestone deposited in during the Frasnian in anoxic conditions. These rocks are associated with the Late Devonian Mass Extinction, one of the most devastating mass extinctions ever. The impact of this event on placoderms is debated, with sites like the Australian Gogo Formation seeming to show a loss in placoderm diversity after the event."
+        },
+		{
+			"advancement": "lepidodendron:pf_adv_book_enseosteus",
+			"type": "text",
+			"text": "However, the rocks in the Kellwasser facies extend further in time than other similar facies, and show little to no drop in diversity. It is thought that the abundance of placoderms at Bad Wildungen and the Kellwasser facies many have not been caused by the extinction event, but rather a result of anoxic waters allowing for better preservation after placoderms died of causes unrelated to the extinction."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_enseosteus",
+			"type": "text",
+			"text": "Enseosteus and other contemporary selenosteids are a great example of combining biological knowledge with geological knowledge in order to better understand planet wide trends."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_enseosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_enseosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_enseosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_enseosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_enseosteus"
+		}
+	]
+}

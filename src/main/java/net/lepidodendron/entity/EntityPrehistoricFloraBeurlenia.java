@@ -233,7 +233,7 @@ public static String getHabitat() {
 	}
 
 	public static String getPeriod() {
-		return "Early Cretaceous - Late Cretaceous - Paleogene - Neogene - Pleistocene - present";
+		return "Early Cretaceous";
 	}
 
 	//public static String getHabitat() {return "Aquatic";}

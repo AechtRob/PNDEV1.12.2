@@ -1,0 +1,57 @@
+{
+	"name": "Amargasaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/amargasaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_amargasaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_amargasaurus",
+			"title": "Amargasaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Sauropoda$(br)>Diplodocoidea$(br)>Dicraeosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. cazaui",
+            "entity": "lepidodendron:prehistoric_flora_amargasaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_amargasaurus",
+			"type": "text",
+			"text": "Found in the La Amarga Formation, Amargasaurus cazaui is a striking dicraeosaurid sauropod that is very interesting because of it's quite peculiar bifid neural spines that go down the length of it's neck and point backwards. These spines got quite long, up to 60 centimeters in length! At first, these spines were said to be a part of strange sails that went down the length of the neck down to the base of the tail, similar to that of dimetrodon."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_amargasaurus",
+			"type": "text",
+			"text": "The presence of these unique neural spines was found in earlier dicraeosaurids, but not as extreme in the case of Amargasaurus. These backwards facing spines were thought of being bases for keratinized sheaths for the purpose of self defense, though that's been contested as there are no signs for the spines to have ever had keratinized sheath,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_amargasaurus",
+			"type": "text",
+			"text": "nor were they strong enough to be used as defense. The first theory was somewhat on the right path but not exactly. Amargasaurus's sail is now imagined to be covered in more flesh than originally thought and likely served as intimidation or courtship."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_amargasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_amargasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_amargasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_amargasaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_amargasaurus"
+		}
+	]
+}

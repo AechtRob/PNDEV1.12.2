@@ -300,7 +300,7 @@ public class EntityPrehistoricFloraGigamachilis extends EntityPrehistoricFloraLe
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_SCHIZODACTYLUS;
+		return ModTriggers.CLICK_GIGAMACHILIS;
 	}
 
 	//Rendering taxidermy:

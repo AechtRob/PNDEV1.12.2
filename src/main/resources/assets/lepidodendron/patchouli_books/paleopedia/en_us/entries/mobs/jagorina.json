@@ -1,0 +1,52 @@
+{
+	"name": "Jagorina",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/jagorina_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_jagorina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_jagorina",
+			"title": "Jagorina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Rhenanida"
+		},
+        	{
+            "type": "entity",
+            "name": "J. pandora",
+            "entity": "lepidodendron:prehistoric_flora_jagorina",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jagorina",
+			"type": "text",
+			"text": "Jagorina pandora is a species of placoderm known from the Frasnian aged Kellwasserkalk in the town of Bad Wildungen, Germany. Jagorina is named after the German naturalist Fedor Jagor. It is estimated to have grown to 38 centimeters in length. It is the 2nd most complete rhenanid known, with a completely known 7 centimeter long skull and some vertebrae known."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jagorina",
+			"type": "text",
+			"text": "As vertebrae are rarely known in placoderms, more knowledge about them is always useful in understanding the early evolution of the spine. Interestingly, Jagorina's vertebrae share some similarities with those of rays and skates."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_jagorina"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_jagorina"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_jagorina"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_jagorina"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_jagorina"
+		}
+	]
+}

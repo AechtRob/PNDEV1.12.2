@@ -1,0 +1,52 @@
+{
+	"name": "Cratochelone",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cratochelone_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_cratochelone",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cratochelone",
+			"title": "Cratochelone",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Testudines$(br)>Cryptodira$(br)>Protostegidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. berneyi",
+            "entity": "lepidodendron:prehistoric_flora_cratochelone",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cratochelone",
+			"type": "text",
+			"text": "Cratochelone berneyi is a protostegid sea turtle known from Toolebuc Formation in Australia. It is only known from partial remains, some part of arm bones, plastron, and shoulder girdle. However, according to those materials, this turtle could reach size rivals giant Archelon, probably around 4 m."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cratochelone",
+			"type": "text",
+			"text": "Because only partial remains have been found, it is thought that this animal was not a common animal in the Eromanga Sea where the fossils were discovered. It may have originally lived in a different sea area and accidentally wandered in, but it is not clear. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cratochelone"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cratochelone"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cratochelone"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cratochelone"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cratochelone"
+		}
+	]
+}

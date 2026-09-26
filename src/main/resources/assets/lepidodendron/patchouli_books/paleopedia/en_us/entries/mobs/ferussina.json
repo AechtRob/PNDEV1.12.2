@@ -1,0 +1,47 @@
+{
+	"name": "Ferussina",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ferussina_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ferussina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ferussina",
+			"title": "Ferussina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Mollusca$(br)>Gastropoda$(br)>Caenogastropoda$(br)>Architaenioglossa$(br)>Cyclophoroidea$(br)>Ferussinidae"
+		},
+        	{
+            "type": "entity",
+            "name": "F. petofiana",
+            "entity": "lepidodendron:prehistoric_flora_ferussina",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ferussina",
+			"type": "text",
+			"text": "Ferussina is a snail discovered in the Hațeg Basin of Romania, dating back to the Late Cretaceous. Ferussina was named in honour of 'Baron André Étienne Justin Pascal Joseph François d'Audebert de Férussac'. They are pretty average for snails, being slightly bigger than 2 centimeters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ferussina"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ferussina"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ferussina"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ferussina"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ferussina"
+		}
+	]
+}

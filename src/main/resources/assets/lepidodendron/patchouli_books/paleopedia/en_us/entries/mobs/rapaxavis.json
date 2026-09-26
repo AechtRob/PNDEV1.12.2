@@ -1,0 +1,47 @@
+{
+	"name": "Rapaxavis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rapaxavis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_rapaxavis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rapaxavis",
+			"title": "Rapaxavis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Theropoda$(br)>Avialae$(br)>Enantionithes$(br)>Longipterygidae"
+		},
+        	{
+            "type": "entity",
+            "name": "R. pani",
+            "entity": "lepidodendron:prehistoric_flora_rapaxavis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rapaxavis",
+			"type": "text",
+			"text": "Rapaxavis is a small Longipterygid bird from the Early Cretaceous of the Jiufotang environment. Measuring in with a typical wingspan of 25cm. This small bird is thought to be frugivorous similar to its close relative Longipteryx, likely eating a diet consisting of Gymnosperm seeds and other plant fruiting bodies. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rapaxavis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rapaxavis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rapaxavis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rapaxavis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rapaxavis"
+		}
+	]
+}

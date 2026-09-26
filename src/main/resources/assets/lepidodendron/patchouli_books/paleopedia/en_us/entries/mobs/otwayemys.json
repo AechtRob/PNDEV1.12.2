@@ -1,0 +1,47 @@
+{
+	"name": "Otwayemys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/otwayemys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_otwayemys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mobname",
+			"title": "Otwayemys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Testudines$(br)>Cryptodira$(br)>Eucryptodira"
+		},
+        	{
+            "type": "entity",
+            "name": "O. cunicularius",
+            "entity": "lepidodendron:prehistoric_flora_otwayemys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_otwayemys",
+			"type": "text",
+			"text": "Otwayemys is a turtle discovered in Dinosaur cove of Australia, dating back to the Early Cretaceous. Its name is a reference to Cape Otway alongside the word for turtle 'chemys'. It was a small turtle with a carapace of about 25 centimeters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_otwayemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_otwayemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_otwayemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_otwayemys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_otwayemys"
+		}
+	]
+}

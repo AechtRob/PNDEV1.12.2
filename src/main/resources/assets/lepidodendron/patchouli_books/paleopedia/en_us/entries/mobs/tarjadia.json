@@ -1,0 +1,47 @@
+{
+	"name": "Tarjadia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tarjadia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tarjadia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tarjadia",
+			"title": "Tarjadia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Erpetosuchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. ruthae",
+            "entity": "lepidodendron:prehistoric_flora_tarjadia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tarjadia",
+			"type": "text",
+			"text": "Tarjadia was a pseudosuchian Chañares Formation of Argentina, dating back to the Triassic. It is named after the nearby ' Sierra de los Tarjados' mountain range. It was around 3 meters long, being the average size for its clade. It also predates Aetosaurs and Phytosaurs, making them one of the more heavily armored predators around. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tarjadia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tarjadia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tarjadia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tarjadia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tarjadia"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Archipelepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/archipelepis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_archipelepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_archipelepis",
+			"title": "Archipelepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Agnatha$(br)>Thelodonti$(br)>Archipelepidiformes$(br)>Archipelepididae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. turbinata",
+            "entity": "lepidodendron:prehistoric_flora_archipelepis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archipelepis",
+			"type": "text",
+			"text": "Archipelepis is a genus of early diverging thelodont jawless fish, whose two known species, A. turbinata and A. bifurcata, are both native from the Silurian of the Canadian Arctic Archipelago. The area was at the time a hotspot of jawless fish diversity, with remains of Loganellia, Athenaegis and furcacaudiforms found in the same deposits than the type species."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archipelepis",
+			"type": "text",
+			"text": "Archipelepis had a quite primitive bauplan compared to its contemporary relatives, with a blunt head and a body narrowing towards the tail. It was devoid of any lateral appendages, and was relatively small, reaching around 6 cm in length. The shape of its scales indicates that it was probably a demersal inhabitant of rocky sea floors and reefs."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_archipelepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_archipelepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_archipelepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_archipelepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_archipelepis"
+		}
+	]
+}

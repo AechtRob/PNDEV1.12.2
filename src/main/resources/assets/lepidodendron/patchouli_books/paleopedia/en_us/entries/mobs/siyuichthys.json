@@ -1,0 +1,47 @@
+{
+	"name": "Siyuichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/siyuichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_siyuichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_siyuichthys",
+			"title": "Siyuichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>Siyuichthyidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. ornatus",
+            "entity": "lepidodendron:prehistoric_flora_siyuichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_siyuichthys",
+			"type": "text",
+			"text": "Siyuichtys was a ray finned fish discovered in Shengjinkou Formation of China, dating back to the Early Cretaceous. Its name is an alternative spelling of 'Xiyu' meaning 'western region' in China and the Greek word for 'fish'. It was a stem Teleost, being one of the earliest members of the clade."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_siyuichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_siyuichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_siyuichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_siyuichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_siyuichthys"
+		}
+	]
+}

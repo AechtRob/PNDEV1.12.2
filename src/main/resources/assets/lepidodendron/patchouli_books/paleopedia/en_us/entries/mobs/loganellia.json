@@ -1,0 +1,52 @@
+{
+	"name": "Loganellia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/loganellia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_loganellia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_loganellia",
+			"title": "Loganellia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Chordata$(br)>Agnatha$(br)>Thelodonti$(br)>Thelodontiformes$(br)>Loganelliidae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. scotica",
+            "entity": "lepidodendron:prehistoric_flora_loganellia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_loganellia",
+			"type": "text",
+			"text": "Loganellia is a genus of medium to large-sized thelodont jawless fish, widespread throughout Silurian and Early Devonian fossil deposits of the Northern hemisphere. Its best known species, Loganellia scotica, is known from several well-preserved and articulated specimens from the Jamoytius horizon of the Lesmahagow lagerstätte in Scotland. Like other thelodonts, the most common fossil traces of Loganellia in other deposits consist of isolated scales."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_loganellia",
+			"type": "text",
+			"text": "Study on the scales of Loganellia scotica indicate that it was likely a slow-moving swimmer in open waters, using its head covered with abrasion-resistant scales to shovel through the mud in search of its food. Other, less well-known species of Loganellia seems to have had more demersal habits, living directly on the sandy and muddy substrates in which they fed."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_loganellia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_loganellia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_loganellia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_loganellia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_loganellia"
+		}
+	]
+}

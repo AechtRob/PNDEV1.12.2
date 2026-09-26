@@ -381,11 +381,11 @@ public class EntityPrehistoricFloraIsisfordia extends EntityPrehistoricFloraSwim
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_PIETRAROIASUCHUS;
+		return ModTriggers.CLICK_ISISFORDIA;
 	}
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.PIETRAROIASUCHUS_LOOT;
+		return LepidodendronMod.ISISFORDIA_LOOT;
 	}
 	//Rendering taxidermy:
 	//--------------------

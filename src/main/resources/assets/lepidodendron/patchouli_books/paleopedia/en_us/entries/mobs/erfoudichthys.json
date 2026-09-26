@@ -1,0 +1,47 @@
+{
+	"name": "Erfoudichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/erfoudichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_erfoudichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_erfoudichthys",
+			"title": "Erfoudichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei"
+		},
+        	{
+            "type": "entity",
+            "name": "GE. rosae",
+            "entity": "lepidodendron:prehistoric_flora_erfoudichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_erfoudichthys",
+			"type": "text",
+			"text": "Erfoudichthys was a ray finned fish discovered in the Kemkem Formation of Morocco, dating back to the Late Cretaceous. Its name is a reference to a nearby city 'Erfoud' and 'ichthys' meaning fish. It was a small fish, being slightly bigger than 12 centimeters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_erfoudichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_erfoudichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_erfoudichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_erfoudichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_erfoudichthys"
+		}
+	]
+}

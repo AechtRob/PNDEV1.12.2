@@ -1,0 +1,47 @@
+{
+	"name": "Montsecosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/montsecosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_montsecosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_montsecosuchus",
+			"title": "Montsecosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Pseudosuchia$(br)>Crocodylomorpha$(br)>Atoposauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. depereti",
+            "entity": "lepidodendron:prehistoric_flora_montsecosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_montsecosuchus",
+			"type": "text",
+			"text": "Montsecosuchus was a crocodylomorph discovered in the Montsec Lithographic Limestone quarry of Spain dating back to the Early Cretaceous. Its name is a combination of 'Montsec' the name of the area it was found in and 'suchus' meaning crocodile. It was about 50 centimeters long, being average sized. The holotype originally was given to the genus Alligatorium until in 1915 where it can redescribed."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_montsecosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_montsecosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_montsecosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_montsecosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_montsecosuchus"
+		}
+	]
+}

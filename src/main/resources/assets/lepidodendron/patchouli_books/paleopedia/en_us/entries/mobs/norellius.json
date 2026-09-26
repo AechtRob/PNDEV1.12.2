@@ -1,0 +1,47 @@
+{
+	"name": "Norellius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/norellius_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_mobname",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_norellius",
+			"title": "Norellius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Reptilia$(br)>Diapsida$(br)>Squamata$(br)>Gekkonomorpha"
+		},
+        	{
+            "type": "entity",
+            "name": "N. nyctisaurops",
+            "entity": "lepidodendron:prehistoric_flora_norellius",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_norellius",
+			"type": "text",
+			"text": "Norellius was a lizard discovered in the Öösh formation of Mongolia, dating back to the Early Cretaceous. It was named in honour of palaeontologist 'Mark Norell'. With a skull length of 1.5 centimeters it was a pretty small animal. While Norellius itself was not a gecko, it is speculated to be a close relative."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_norellius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_norellius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_norellius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_norellius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_norellius"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Protosphyraena",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/protosphyraena_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_protosphyraena",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_protosphyraena",
+			"title": "Protosphyraena",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pachycormiformes$(br)>Protosphyraenidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. ferox",
+            "entity": "lepidodendron:prehistoric_flora_protosphyraena",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_protosphyraena",
+			"type": "text",
+			"text": "Protosphyraena is a ray finned fish discovered in England dating back to most of the Creataceous. Its name is a mix of 'proto' and 'sphreana' which is the genus name for barracudas. This naming is due to the fact that it was thought to be a barracuda ancestor at first. Though with time and more research this is no longer the case. It was a relatively large animal, growing around 2 to 3 meters long."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_protosphyraena",
+			"type": "text",
+			"text": "The genus was first discovered by Gideon Mantell in 1822, the man who discovered Iguanodon. Though it would not be named until 35 years later in 1857 by Joseph Leidy."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_protosphyraena"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_protosphyraena"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_protosphyraena"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_protosphyraena"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_protosphyraena"
+		}
+	]
+}

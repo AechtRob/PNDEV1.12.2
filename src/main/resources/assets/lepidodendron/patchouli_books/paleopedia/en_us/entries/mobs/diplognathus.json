@@ -1,0 +1,47 @@
+{
+	"name": "Diplognathus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/diplognathus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_diplognathus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_diplognathus",
+			"title": "Diplognathus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Hadrosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. mirabilis",
+            "entity": "lepidodendron:prehistoric_flora_diplognathus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diplognathus",
+			"type": "text",
+			"text": "Diplognathus was a placoderm discovered in Cleveland Shale of Ohio, dating back to the Devonian. Its name means 'Double jaw'. It was a fairly large fish with its jaws reaching 45 centimeters in length. From known material, we know that they had fairly large eyes with a weak but wide bite."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_diplognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_diplognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_diplognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_diplognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_diplognathus"
+		}
+	]
+}

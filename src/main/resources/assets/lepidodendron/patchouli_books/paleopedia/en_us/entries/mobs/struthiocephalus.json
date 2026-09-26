@@ -1,0 +1,47 @@
+{
+	"name": "Struthiocephalus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/struthiocephalus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_struthiocephalus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_struthiocephalus",
+			"title": "Struthiocephalus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Synapsida$(br)>Therapsida$(br)>Dinocephalia$(br)>Tapinocephalidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. Waits",
+            "entity": "lepidodendron:prehistoric_flora_struthiocephalus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_struthiocephalus",
+			"type": "text",
+			"text": "Struthiocephalus was a dinocephalian therapsid which lived in the middle Permian of Africa, first discovered in the Tapinocephalus Assemblage Zone of the Karoo Supergroup in South Africa. Its name means “ostrich head” in reference to its large long-snouted head, unique among its relatives in the family Tapinocephalidae. Its skull also had a large boss above its eyes, which may have been used for display or intraspecific combat. It likely fed on aquatic plants."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_struthiocephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_struthiocephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_struthiocephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_struthiocephalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_struthiocephalus"
+		}
+	]
+}

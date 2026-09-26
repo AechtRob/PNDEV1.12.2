@@ -1,0 +1,47 @@
+{
+	"name": "Gorgonichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gorgonichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_gorgonichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gorgonichthys",
+			"title": "Gorgonichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Aspinothoracidi"
+		},
+        	{
+            "type": "entity",
+            "name": "G. Clarki",
+            "entity": "lepidodendron:prehistoric_flora_gorgonichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gorgonichthys",
+			"type": "text",
+			"text": "LGorgonichthys was an arthrodiran placoderm which lived in the Late Devonian of North America, discovered in the Cleveland Shale of the United States. Its name means “gorgon fish”, in reference to the monsters of Greek myth. Like its contemporary Dunkleosteus, Gorgonichthys was a large pelagic predator, with a headshield reaching about 70 centimeters long, though it also bore additional serrations on its tooth plates."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gorgonichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gorgonichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gorgonichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gorgonichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gorgonichthys"
+		}
+	]
+}

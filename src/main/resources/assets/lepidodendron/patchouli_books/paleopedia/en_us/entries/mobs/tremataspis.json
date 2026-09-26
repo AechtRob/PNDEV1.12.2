@@ -1,0 +1,52 @@
+{
+	"name": "Tremataspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tremataspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tremataspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tremataspis",
+			"title": "Tremataspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Chordata$(br)>Agnatha$(br)>Osteostraci$(br)>Thyestiida(br)>Tremataspidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. mammillata",
+            "entity": "lepidodendron:prehistoric_flora_tremataspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tremataspis",
+			"type": "text",
+			"text": "Tremataspis is a genus of common osteostracan jawless fish native to the Late Silurian of the Baltic region. Its best-known remains were found in the diversity-rich Estonian fossil beds of the Rootsiküla and Paadla regional stages, but it can also be found in similarly aged deposits in Gotland, the Urals, and as far north than Severnaya Zemlya."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tremataspis",
+			"type": "text",
+			"text": "Tremataspis is a particularly derived osteostracan, having lost all pectoral appendages and presenting a scale structure quite different from the ancestral condition of its lineage. It inhabited the calm waters of coastal lagoons protected from the open sea by reef belts, and is sometimes found in association with the thelodont Phlebolepis."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tremataspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tremataspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tremataspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tremataspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tremataspis"
+		}
+	]
+}

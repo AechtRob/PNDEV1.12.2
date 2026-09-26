@@ -1,0 +1,52 @@
+{
+	"name": "Liaobatrachus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/liaobatrachus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_liaobatrachus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_liaobatrachus",
+			"title": "Liaobatrachus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Amphibia$(br)>Anura$(br)>Pelobatidae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. grabaui",
+            "entity": "lepidodendron:prehistoric_flora_liaobatrachus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_liaobatrachus",
+			"type": "text",
+			"text": "Liaobatrachus is a frog from the Early Cretaceous of China. This small frog measured around 10cm or so and would have been found in the lakes and waterways of the montane Yixian Formation, Liaobatrachus is known from many specimens found in this area, including some incredibly complete slabs. This frog is related to the extant European Spadefoot Toads, being found in the same family of them,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_liaobatrachus",
+			"type": "text",
+			"text": "This group is mainly restricted to Europe making this animal quite unique being from Asia. Some studies however have also claimed this frog is a basal member of Alytidae (also known as Discoglossidae), a group of frogs found in Europe and Africa. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_liaobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_liaobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_liaobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_liaobatrachus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_liaobatrachus"
+		}
+	]
+}

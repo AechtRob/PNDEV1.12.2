@@ -1,0 +1,52 @@
+{
+	"name": "Struthiomimus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/struthiomimus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_struthiomimus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_struthiomimus",
+			"title": "Struthiomimus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Ornithomimosauria$(br)>Ornthinomimidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. altus",
+            "entity": "lepidodendron:prehistoric_flora_struthiomimus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_struthiomimus",
+			"type": "text",
+			"text": "Struthiomimus altus is a species of ornithomimid theropod which lived to the end of the Late Cretaceous. It is best known from the Horseshoe Canyon and Lance formations and may have also been present in Hell Creek. Struthiomimus, alongside all other non-deinocheirid ornithomimids, had a lean and lightweight build with long, chicken-like legs which likely allowed it to reach high speeds in order to evade its tyrannosaurid predators."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_struthiomimus",
+			"type": "text",
+			"text": "It was originally discovered by Lawrence Lambe and named as a species of Ornithomimus in 1901. The name Struthiomimus was introduced for a subgenus within Ornithomimus following the discovery of a more complete specimen in 1914 by Barnum Brown. In 1972, Struthiomimus was finally elevated as a unique genus, which it remains today."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_struthiomimus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_struthiomimus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_struthiomimus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_struthiomimus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_struthiomimus"
+		}
+	]
+}

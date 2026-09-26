@@ -1,0 +1,47 @@
+{
+	"name": "Gregoriopycnodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gregoriopycnodus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_gregoriopycnodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gregoriopycnodus",
+			"title": "Gregoriopycnodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Pycnodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "G. bassanii",
+            "entity": "lepidodendron:prehistoric_flora_gregoriopycnodus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gregoriopycnodus",
+			"type": "text",
+			"text": "Gregoriopycnodus bassanii was a species of pycnodont ray-finned bony fish that lived during the Albian stage of the Early Cretaceous in what is now southern Italy. Fossils of this 38 cm long fish were found in marine deposits near the village of Pietraroja in the Campania region. Identified as its own specific genus by the precise anatomy of some of its skull bones, phylogenetically Gregoriopycnodus sits between Tepexichthys, and Proscinetes."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gregoriopycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gregoriopycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gregoriopycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gregoriopycnodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gregoriopycnodus"
+		}
+	]
+}

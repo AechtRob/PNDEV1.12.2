@@ -1,0 +1,47 @@
+{
+	"name": "Moradisaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/moradisaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_moradisaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_moradisaurus",
+			"title": "Moradisaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chordata$(br)>Reptiliomorpha$(br)>Captorhinidae$(br)>Moradisaurinae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. grandis",
+            "entity": "lepidodendron:prehistoric_flora_moradisaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_moradisaurus",
+			"type": "text",
+			"text": "Moradisaurus is a captorhinid from the Late Permian Moradi Formation of Niger. At 2 meters in length, it is the largest member of its family. It inhabited an equatorial locality home to a unique fauna consisting mostly of pareiasaurs and temnospondyls, with considerably fewer therapsids than other contemporary formations. Like other captorhinids, Moradisaurus had multiple rows of grinding teeth, suggesting a herbivorous lifestyle."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_moradisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_moradisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_moradisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_moradisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_moradisaurus"
+		}
+	]
+}

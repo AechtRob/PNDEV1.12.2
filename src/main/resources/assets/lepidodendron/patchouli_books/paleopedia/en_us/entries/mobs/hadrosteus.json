@@ -1,0 +1,47 @@
+{
+	"name": "Hadrosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hadrosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_hadrosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hadrosteus",
+			"title": "Hadrosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Brachythoraci$(br)>Aspinothoracidi"
+		},
+        	{
+            "type": "entity",
+            "name": "H. rapax",
+            "entity": "lepidodendron:prehistoric_flora_hadrosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hadrosteus",
+			"type": "text",
+			"text": "Hadrosteus was an arthrodire placoderm which lived in the Late Devonian of Europe, discovered in the Kellwasserkalk facies of western Germany. Its name means “strong bone”, and it was small, with a head length of 16 centimeters. Its serrated mandibles and pronged inferognathals indicate it was predatory."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hadrosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hadrosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hadrosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hadrosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hadrosteus"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Thryptodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/thryptodus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_thryptodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_thryptodus",
+			"title": "Thryptodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Gnathostomata$(br)>Osteichthyes$(br)>Actinopterygii"
+		},
+        	{
+            "type": "entity",
+            "name": "T. zitteli",
+            "entity": "lepidodendron:prehistoric_flora_thryptodus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thryptodus",
+			"type": "text",
+			"text": "Thryptodus is a ray finned fish discovered in Smoky Hill Chalk and Pierre Shale of Kansas, USA; dating back to the Late Cretaceous. Its name means 'Crushing Tooth'. It was a big fish, being around an estimated two meters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_thryptodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_thryptodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_thryptodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_thryptodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_thryptodus"
+		}
+	]
+}

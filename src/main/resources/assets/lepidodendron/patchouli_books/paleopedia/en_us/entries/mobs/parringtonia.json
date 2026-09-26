@@ -1,0 +1,47 @@
+{
+	"name": "Parringtonia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/parringtonia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_parringtonia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_parringtonia",
+			"title": "Parringtonia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Erpetosuchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. gracilis",
+            "entity": "lepidodendron:prehistoric_flora_parringtonia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_parringtonia",
+			"type": "text",
+			"text": "Parringtonia was a pseudosuchian discovered in the Manda Formation of Tanzania, dating back to the Triassic. It was named in honor of Francis Rex Parrington, a South African palaeontologist. It was around 1.6 meters, being a small animal. While currently Parringtonia and its close relatives sit within suchia it wasn't always at that spot, being all over Archosauria."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_parringtonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_parringtonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_parringtonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_parringtonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_parringtonia"
+		}
+	]
+}

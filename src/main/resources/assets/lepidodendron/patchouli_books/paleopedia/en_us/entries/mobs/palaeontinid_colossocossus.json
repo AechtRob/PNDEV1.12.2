@@ -1,0 +1,51 @@
+{
+	"name": "Colossocossus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/palaeontinid_colossocossus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_palaeontinid_colossocossus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeontinid_colossocossus",
+			"title": "Colossocossus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Hemiptera$(br)>Cicadomorpha$(br)>Palaeontinoidea$(br)>Palaeontinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/juliform.png"],
+			"title": "C. loveridgei",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid_colossocossus",
+			"type": "text",
+			"text": "Colossocossus is a genus of gigantic cicadas from the Early Cretaceous of Brazil. The four species attributed to this genus all come from the Crato Formation, which deposited in what was in the Aptian a tropical brackish lagoon surrounded by a semi-arid but rich landscape, providing enough food for multiple different types of cicadas."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid_colossocossus",
+			"type": "text",
+			"text": "Colossocossus is so-named for its very large size : it could reach fifteen centimeters in wingspan, and towered over its smaller contemporary relative, Baeocossus. It is an excellent example of the gradual evolution of palaeontiniids towards longer forewings, probably evolved progressively to grant higher maneuverability in flight to avoid predation by early birds, such as Cratoavis."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@colossocossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@colossocossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@colossocossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@colossocossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeontinid@colossocossus"
+		}
+	]
+}

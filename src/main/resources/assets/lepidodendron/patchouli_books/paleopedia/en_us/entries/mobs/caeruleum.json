@@ -1,0 +1,47 @@
+{
+	"name": "Caeruleum",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/caeruleum_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_caeruleume",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_caeruleum",
+			"title": "Caeruleum",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Agnatha$(br)>Petromyzontida$(br)>Petromyzontiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "C. miraculum",
+            "entity": "lepidodendron:prehistoric_flora_caeruleum",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caeruleum",
+			"type": "text",
+			"text": "Caeruleum was a jawless fish discovered in Jiufotang Formation of China, dating back to the Early Cretaceous. Caeruleum, not to be confused with Caeruleum (paint) and Caeruleum (lichen), is a Lamprey named after Caeuleum (paint) which was a blue paint used in Ancient Egypt. The type species, C. miraculum, was comparable to extant species of lamprey, growing to around 24 to 42 centimeters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_caeruleum"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_caeruleum"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_caeruleum"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_caeruleum"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_caeruleum"
+		}
+	]
+}

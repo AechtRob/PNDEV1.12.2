@@ -1,0 +1,52 @@
+{
+	"name": "Erpetosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/erpetosuchus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_erpetosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_erpetosuchus",
+			"title": "Erpetosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauria$(br)>Pseudosuchia$(br)>Erpetosuchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. granti",
+            "entity": "lepidodendron:prehistoric_flora_erpetosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_erpetosuchus",
+			"type": "text",
+			"text": "Erpetosuchus is a pseudosuchian discovered in Lossiemouth Sandstone Formation of Scotland dating back to the Triassic. Its name is a mix of the words 'erpeto' an alternate Greek spelling for reptile and 'suchus' meaning crocodile. It was about 50 to 60 centimeters long, being one of the smaller members of its clade. While it was originally found in Europe, fossils of this genus have also been found in New Haven Formation of Connecticut."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_erpetosuchus",
+			"type": "text",
+			"text": "Erpetosuchus and its kin were originally a part of the now invalid clade 'Thecodontia'. Due to the clade they were in being invalid, they were put in a new clade with the Erpetosuchus being the name sake."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_erpetosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_erpetosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_erpetosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_erpetosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_erpetosuchus"
+		}
+	]
+}
