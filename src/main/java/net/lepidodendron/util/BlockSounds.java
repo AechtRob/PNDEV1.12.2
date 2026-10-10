@@ -85,6 +85,9 @@ public final class BlockSounds {
     @GameRegistry.ObjectHolder("music_disc_brontosaurus")
     public static final SoundEvent MUSIC_DISC_BRONTOSAURUS = createSoundEvent("music_disc_brontosaurus");
 
+    @GameRegistry.ObjectHolder("music_disc_epic")
+    public static final SoundEvent MUSIC_DISC_EPIC = createSoundEvent("music_disc_epic");
+
     @GameRegistry.ObjectHolder("tar_bubble")
     public static final SoundEvent TAR_BUBBLE = createSoundEvent("tar_bubble");
 

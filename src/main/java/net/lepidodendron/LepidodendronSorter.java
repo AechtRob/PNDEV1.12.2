@@ -5152,6 +5152,7 @@ public class LepidodendronSorter {
     public static final int sawdonia_stem = 8136;
 
     public static final int music_disc_brontosaurus = 8137;
+    public static final int music_disc_epic = 8138;
 
     public static final int mirovia_boat_item = 8102;
     public static final int mirovia_planks = 8103;

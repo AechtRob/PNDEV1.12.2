@@ -35,6 +35,15 @@
     ]
   },
 
+  "music_disc_epic": {
+    "sounds": [
+      {
+        "name": "lepidodendron:music_disc_epic",
+        "stream": false
+      }
+    ]
+  },
+
   "tar_bubble": {
     "sounds": [
       {

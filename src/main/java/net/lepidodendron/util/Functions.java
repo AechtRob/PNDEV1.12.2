@@ -44,6 +44,12 @@ import java.util.List;
 
 public class Functions {
 
+    public static double AABBvolume(AxisAlignedBB AABB) {
+        return (AABB.maxX - AABB.minX)
+                * (AABB.maxY - AABB.minY)
+                * (AABB.maxZ - AABB.minZ);
+    }
+
     public static int getAdjustedSeaLevel(World world, BlockPos pos) {
         Biome biome = world.getBiome(pos);
         if (biome instanceof BiomeJurassic) {

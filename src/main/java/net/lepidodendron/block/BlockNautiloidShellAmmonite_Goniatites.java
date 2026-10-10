@@ -17,6 +17,7 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -44,6 +45,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -143,9 +145,21 @@ public class BlockNautiloidShellAmmonite_Goniatites extends ElementsLepidodendro
 			return currentRotation;
 		}
 
+		public AxisAlignedBB getActualAABB() {
+			return new AxisAlignedBB(0.475D, 0.0D, 0.475D, 0.525D, 0.1D, 0.525D);
+		}
+
+		@Override
+		public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState) {
+			addCollisionBoxToList(pos, entityBox, collidingBoxes, this.getActualAABB());
+		}
+
 		@Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-			return new AxisAlignedBB(0.475D, 0.0D, 0.475D, 0.525D, 0.1D, 0.525D);
+			if (Functions.AABBvolume(getActualAABB()) > Functions.AABBvolume(new AxisAlignedBB(0.25D, 0.0D, 0.25D, 0.75D, 0.5D, 0.75D))) {
+				new AxisAlignedBB(0.25D, 0.0D, 0.25D, 0.75D, 0.5D, 0.75D);
+			}
+			return getActualAABB();
 		}
 
 		@Override
