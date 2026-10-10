@@ -146,7 +146,7 @@ public class BlockNautiloidShellAmmonite_Goniatites extends ElementsLepidodendro
 		}
 
 		public AxisAlignedBB getActualAABB() {
-			return new AxisAlignedBB(0.475D, 0.0D, 0.475D, 0.525D, 0.1D, 0.525D);
+			return new AxisAlignedBB(0.475D, 0.0D, 0.475D, 0.525D, 0.25D, 0.525D);
 		}
 
 		@Override
