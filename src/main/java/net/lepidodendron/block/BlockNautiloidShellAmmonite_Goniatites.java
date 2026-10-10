@@ -156,8 +156,8 @@ public class BlockNautiloidShellAmmonite_Goniatites extends ElementsLepidodendro
 
 		@Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-			if (Functions.AABBvolume(getActualAABB()) > Functions.AABBvolume(new AxisAlignedBB(0.25D, 0.0D, 0.25D, 0.75D, 0.5D, 0.75D))) {
-				new AxisAlignedBB(0.25D, 0.0D, 0.25D, 0.75D, 0.5D, 0.75D);
+			if (Functions.AABBvolume(getActualAABB()) < Functions.AABBvolume(new AxisAlignedBB(0.25D, 0.0D, 0.25D, 0.75D, 0.5D, 0.75D))) {
+				return new AxisAlignedBB(0.25D, 0.0D, 0.25D, 0.75D, 0.5D, 0.75D);
 			}
 			return getActualAABB();
 		}
