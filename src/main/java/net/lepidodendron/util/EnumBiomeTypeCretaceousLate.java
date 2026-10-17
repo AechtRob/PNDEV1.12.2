@@ -6,6 +6,7 @@ public enum EnumBiomeTypeCretaceousLate implements IStringSerializable {
 
     //Continents:
     Late_Cretaceous_Africa("late_cretaceous_africa"),
+    Late_Cretaceous_Africa_Island("late_cretaceous_africa_island"),
     Late_Cretaceous_Asia("late_cretaceous_asia"),
     Late_Cretaceous_Asia_Central_Asia("late_cretaceous_asia_central_asia"),
     Late_Cretaceous_Europe("late_cretaceous_europe"),
@@ -28,7 +29,8 @@ public enum EnumBiomeTypeCretaceousLate implements IStringSerializable {
     Late_Cretaceous_Ocean_Shore_Pacific("late_cretaceous_ocean_pacific"),
     Late_Cretaceous_Ocean_Shore_Atlantic("late_cretaceous_ocean_atlantic"),
     Late_Cretaceous_Ocean_Shore_Southern("late_cretaceous_ocean_southern"),
-    Late_Cretaceous_Ocean_WIS("late_cretaceous_ocean_wis");
+    Late_Cretaceous_Ocean_WIS("late_cretaceous_ocean_wis"),
+    Late_Cretaceous_Ocean_Africa("late_cretaceous_ocean_africa");
 
     private final String name;
 
