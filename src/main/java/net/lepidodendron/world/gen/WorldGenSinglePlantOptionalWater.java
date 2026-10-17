@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.block.BlockToxicMud;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.material.Material;
@@ -60,6 +61,10 @@ public class WorldGenSinglePlantOptionalWater extends WorldGenerator
                         && worldIn.getBlockState(blockpos.down()).getMaterial() != Material.SAND
                         && worldIn.getBlockState(blockpos.down()).getMaterial() != Material.CLAY
                         && worldIn.getBlockState(blockpos.down()).getMaterial() != Material.GRASS
+                ) {
+                    isSuitable = false;
+                }
+                if (worldIn.getBlockState(blockpos.down()) == BlockToxicMud.block.getDefaultState()
                 ) {
                     isSuitable = false;
                 }

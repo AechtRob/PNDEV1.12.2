@@ -37,6 +37,7 @@ public class WorldGenLeafblock extends WorldGenerator
                 if (worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && placechecker.canBlockStay(worldIn, blockpos, placechecker.getDefaultState())
                         && (blockpos.getY() > minHeight + (rand.nextInt(5) - 2))
                         && (blockpos.getY() < maxHeight + (rand.nextInt(5) - 2))
+                        && (worldIn.getBlockState(blockpos.down()) != BlockToxicMud.block.getDefaultState())
                 ) {
                     if (rand.nextInt(4) == 0) {
 

@@ -222,6 +222,24 @@ public class WorldGenPrehistoricLakes extends WorldGenerator
                 }
             }
 
+            if (this.block.getDefaultState().getMaterial() == Material.WATER)
+            {
+                for (int k2 = 0; k2 < 16; ++k2)
+                {
+                    for (int l3 = 0; l3 < 16; ++l3)
+                    {
+                        for (int y3 = -2; y3 < 6; ++y3) {
+                            if (worldIn.getBlockState(position.add(k2, y3, l3)).getMaterial() == Material.WATER
+                                    || worldIn.getBlockState(position.add(k2, y3, l3)).getMaterial() == Material.AIR
+                                    && position.getY() + y3 >= Functions.getAdjustedSeaLevel(worldIn, position) - 3
+                            ) {
+                                Functions.restoreLogs(worldIn, position.add(k2, 2, l3));
+                            }
+                        }
+                    }
+                }
+            }
+
             ChunkGenSpawner.executeProcedure(worldIn, spawnPos, rand, null, true, true);
             return true;
         }

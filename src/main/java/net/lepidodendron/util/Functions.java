@@ -358,6 +358,9 @@ public class Functions {
         if (worldIn.getBlockState(position.up()).getBlock() == BlockCycadeoideaLog.block) {
             state = BlockCycadeoideaLog.block.getDefaultState();
         }
+        if (worldIn.getBlockState(position.up()).getBlock() == BlockNypaLog.block) {
+            state = BlockNypaLog.block.getDefaultState();
+        }
         if (state != null && state.getBlock() instanceof BlockLogPF) {
             worldIn.setBlockState(position, state, 16);
             if (!worldIn.getBlockState(position.down()).getMaterial().blocksMovement()) {

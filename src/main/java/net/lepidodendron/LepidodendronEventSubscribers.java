@@ -1256,6 +1256,37 @@ public class LepidodendronEventSubscribers {
 			}
 		}
 
+		if (event.phase == TickEvent.Phase.END &&
+				(event.player.world.provider.getDimension() == LepidodendronConfig.dimCretaceousLate
+			)
+		) {
+			Entity entity = event.player;
+			World world = entity.world;
+			BlockPos pos = entity.getPosition();
+			int x = (int) entity.posX - 16;
+			while (x <= entity.posX + 16) {
+				int y = (int) entity.posY - 16;
+				while (y <= entity.posY + 16) {
+					int z = (int) entity.posZ - 16;
+					while (z <= entity.posZ + 16) {
+						pos = new BlockPos(x, y, z);
+						if ((world.getBlockState(pos) == BlockLavaRock.block.getDefaultState() || world.getBlockState(pos) == BlockLavaCobble.block.getDefaultState() || world.getBlockState(pos) == BlockLavaCobbleMolten.block.getDefaultState() || world.getBlockState(pos) == Blocks.MAGMA.getDefaultState())
+								&& world.isAirBlock(pos.up())) {
+							if ((world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_india_base")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_india_traps_bowls"))
+									&& rand.nextInt(150) == 0) {
+								world.spawnParticle(EnumParticleTypes.CLOUD, (double) pos.getX() + Math.random(), (double) pos.getY() + 0.95, (double) pos.getZ() + Math.random(), 0.0D, 0.03D, 0.0D);
+								//System.err.println("smokin' at " + pos.getX() + " " + pos.getY() + " " + pos.getZ());
+							}
+						}
+						z += 1;
+					}
+					y += 1;
+				}
+				x += 1;
+			}
+		}
+
 	}
 
 	public static boolean hasTaxidermy(ItemStack itemstack) {

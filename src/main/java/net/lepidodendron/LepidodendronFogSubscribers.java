@@ -261,6 +261,18 @@ public class LepidodendronFogSubscribers {
 			//System.out.println("Fog: "+fog.x);
 			return fog;
 		}
+		else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_india_base")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_india_traps_bowls")) {
+			r = 192D/255D;
+			g = 192D/255D;
+			b = 192D/255D;
+			r *= f2 * 0.94F + 0.06F;
+			g *= f2 * 0.94F + 0.06F;
+			b *= f2 * 0.91F + 0.09F;
+			Vec3d fog = new Vec3d(r, g, b);
+			//System.out.println("Fog: "+fog.x);
+			return fog;
+		}
 		else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_depression")) {
 			r = 212D/255D;
 			g = 190D/255D;
