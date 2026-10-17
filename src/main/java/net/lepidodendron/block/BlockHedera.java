@@ -88,10 +88,7 @@ public class BlockHedera extends ElementsLepidodendronMod.ModElement {
 		boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimHedera))
 			dimensionCriteria = true;
-//		if (dimID == LepidodendronConfig.dimCarboniferous
-//				|| dimID == LepidodendronConfig.dimPermian
-//				|| dimID == LepidodendronConfig.dimTriassic
-//				|| dimID == LepidodendronConfig.dimJurassic)
+//		if (dimID == LepidodendronConfig.dimCretaceousLate)
 //		{
 //			dimensionCriteria = true;
 //		}
@@ -116,23 +113,12 @@ public class BlockHedera extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = false;
 
 
-//		if (biome instanceof BiomeJurassic)
-//		{
-//			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-//			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandRock) {
-//				biomeCriteria = true;
-//			}
-//			else {
-//				biomeCriteria = false;
-//			}
-//		}
+		int GenChance = 30;
+
 
 		if (!biomeCriteria)
 			return;
 
-		int GenChance = 30;
 		double GenMultiplier = LepidodendronConfigPlants.multiplierHedera;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(100, (int) Math.round((double) GenChance * GenMultiplier));

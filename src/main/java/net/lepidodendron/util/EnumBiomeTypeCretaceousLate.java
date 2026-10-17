@@ -24,6 +24,7 @@ public enum EnumBiomeTypeCretaceousLate implements IStringSerializable {
     Late_Cretaceous_Ocean("late_cretaceous_ocean"),
     Late_Cretaceous_Ocean_Shore_Tethys_North("late_cretaceous_ocean_tethys_north"),
     Late_Cretaceous_Ocean_Shore_Tethys_South("late_cretaceous_ocean_tethys_south"),
+    Late_Cretaceous_Ocean_Shore_Tethys_Turgai("late_cretaceous_ocean_tethys_turgai"),
     Late_Cretaceous_Ocean_Shore_Pacific("late_cretaceous_ocean_pacific"),
     Late_Cretaceous_Ocean_Shore_Atlantic("late_cretaceous_ocean_atlantic"),
     Late_Cretaceous_Ocean_Shore_Southern("late_cretaceous_ocean_southern"),

@@ -86,10 +86,14 @@ public class BlockLygodium extends ElementsLepidodendronMod.ModElement {
 		boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimLygodium))
 			dimensionCriteria = true;
-		if (dimID == LepidodendronConfig.dimCretaceousEarly)
-		{
-			dimensionCriteria = true;
-		}
+//		if (dimID == LepidodendronConfig.dimCretaceousEarly)
+//		{
+//			dimensionCriteria = true;
+//		}
+//		if (dimID == LepidodendronConfig.dimCretaceousLate)
+//		{
+//			dimensionCriteria = true;
+//		}
 		if (!dimensionCriteria)
 			return;
 
@@ -123,6 +127,20 @@ public class BlockLygodium extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 		}
+
+//		if (biome instanceof BiomeCretaceousLate)
+//		{
+//			BiomeCretaceousLate BiomeCretaceousLate = (BiomeCretaceousLate) biome;
+//			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_asia_central_asia_base")
+//					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_appalachia_delta")
+//					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_creek_north_america_appalachia_delta")) {
+//				GenChance = 156;
+//				biomeCriteria = true;
+//			}
+//			else {
+//				biomeCriteria = false;
+//			}
+//		}
 
 		if (!biomeCriteria)
 			return;
