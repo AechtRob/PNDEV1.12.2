@@ -141,7 +141,9 @@ public class BlockWaterClover extends ElementsLepidodendronMod.ModElement {
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")) {
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_swamp")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_africa_brushlands_wet")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_africa_brushlands_wet_centre")) {
 				biomeCriteria = true;
 			}
 			else {

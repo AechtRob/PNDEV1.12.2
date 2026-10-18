@@ -254,7 +254,9 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_laramidia_mid_cret_flats")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_creek_north_america_laramidia_mid_cret_flats")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_appalachia_delta")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_creek_north_america_appalachia_delta")) {
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_creek_north_america_appalachia_delta")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_africa_brushlands_wet")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_africa_brushlands_wet_centre")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -365,6 +367,10 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_north_america_appalachia_delta")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_creek_north_america_appalachia_delta")) {
 			GenChance = 256;
+		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_africa_brushlands_wet")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_africa_brushlands_wet_centre")) {
+			GenChance = 92;
 		}
 
 		int maxheight = LepidodendronConfigPlants.maxheightHorsetail;

@@ -167,7 +167,9 @@ public class WorldGenPrehistoricLakes extends WorldGenerator
                                     || worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_basalt")) {
                                     Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrehistoricGroundSandBlack.block.getDefaultState(), 2);
                                 }
-                                if (worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_valley")) {
+                                if (worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_valley")
+                                    || worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_africa_jungle_hills")
+                                    || worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_late_africa_jungle_hills_outcrop")) {
                                     Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrehistoricGroundSandRed.block.getDefaultState(), 2);
                                 }
                                 if (worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_creek_wide")) {
