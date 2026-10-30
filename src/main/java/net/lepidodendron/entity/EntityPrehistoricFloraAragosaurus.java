@@ -578,15 +578,15 @@ public class EntityPrehistoricFloraAragosaurus extends EntityPrehistoricFloraLan
     public static double lowerbackverticallinedepth(@Nullable String variant) {
         return 0;
     }
-    public static double lowerfrontlineoffset(@Nullable String variant) {return 0.2;}
+    public static double lowerfrontlineoffset(@Nullable String variant) {return 0;}
     public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-        return -0.2;
+        return 0.;
     }
     public static double lowerbacklineoffset(@Nullable String variant) {
-        return 0.045;
+        return 0.0;
     }
     public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-        return 0.7;
+        return 0;
     }
     @SideOnly(Side.CLIENT)
     public static ResourceLocation textureDisplay(@Nullable String variant) { return RenderAragosaurus.TEXTURE;

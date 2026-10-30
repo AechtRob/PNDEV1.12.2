@@ -399,7 +399,7 @@ public class EntityPrehistoricFloraTarbosaurus extends EntityPrehistoricFloraLan
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {
-		return -0.225;
+		return 0.0;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
 		return 0.0;

@@ -283,9 +283,43 @@ public class ModelEocaecilia extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
-
-        this.body.offsetY = 0.59F;
+        this.setRotateAngle(armleft, 0.305F, 0.2264F, 0.6144F);
+        this.setRotateAngle(armleft2, -0.1745F, 0.3927F, -0.6109F);
+        this.setRotateAngle(armright, 0.2519F, -0.1218F, -0.6099F);
+        this.setRotateAngle(armright2, -0.1816F, -0.3896F, 0.6294F);
+        this.setRotateAngle(body2, 0.0F, 0.5585F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2967F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.576F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.4014F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, 0.8029F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.0611F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.0F, -0.384F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.0873F, 0.0436F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.0F, 0.3229F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.0873F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r16, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r17, 0.0F, -0.3229F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, 0.2923F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0F, 0.384F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.0F, -0.2923F, 0.0F);
+        this.setRotateAngle(eyeleft, 0.0F, 0.288F, -0.3054F);
+        this.setRotateAngle(eyeright, 0.0F, -0.288F, 0.3054F);
+        this.setRotateAngle(head, 0.1386F, -0.017F, 0.121F);
+        this.setRotateAngle(jaw, -0.0262F, 0.0F, 0.0F);
+        this.setRotateAngle(legleft, 0.1062F, 0.5312F, 0.505F);
+        this.setRotateAngle(legleft2, 0.0873F, 0.2618F, -0.3927F);
+        this.setRotateAngle(legright, -0.097F, 0.2177F, -0.4576F);
+        this.setRotateAngle(legright2, 0.0873F, -0.2618F, 0.3927F);
+        this.setRotateAngle(neck, -0.1042F, 0.0109F, 0.1042F);
+        this.setRotateAngle(tail, -0.1309F, 0.0F, 0.0F);
+        this.body.offsetY = 0.29F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }

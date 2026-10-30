@@ -1178,7 +1178,29 @@ public class RenderDisplays {
     public static final ModelShenzhousaurus modelShenzhousaurus = new ModelShenzhousaurus();
     public static final ModelEromangateuthis modelEromangateuthis = new ModelEromangateuthis();
     public static final ModelTeinolophos modelTeinolophos = new ModelTeinolophos();
-
-
-
+    public static final ModelTupandactylus_imperator modelTupandactylus_imperator = new ModelTupandactylus_imperator();
+    public static final ModelTupandactylus_navigans modelTupandactylus_navigans = new ModelTupandactylus_navigans();
+    public static final ModelMarshosaurus modelMarshosaurus = new ModelMarshosaurus();
+    public static final ModelVelociraptor modelVelociraptor = new ModelVelociraptor();
+    public static final ModelEpoidesuchus modelEpoidesuchus = new ModelEpoidesuchus();
+    public static final ModelHamadasuchus modelHamadasuchus = new ModelHamadasuchus();
+    public static final ModelKostensuchus modelKostensuchus = new ModelKostensuchus();
+    public static final ModelDimetrodon_teutonis modelDimetrodon_teutonis = new ModelDimetrodon_teutonis();
+    public static final ModelTitanophoneus modelTitanophoneus = new ModelTitanophoneus();
+    public static final ModelVenetoraptor modelVenetoraptor = new ModelVenetoraptor();
+    public static final ModelStruthiocephalus modelStruthiocephalus = new ModelStruthiocephalus();
+    public static final ModelArganaceras modelArganaceras = new ModelArganaceras();
+    public static final ModelTypothorax modelTypothorax = new ModelTypothorax();
+    public static final ModelSpicomellus modelSpicomellus = new ModelSpicomellus();
+    public static final ModelAsilisaurus modelAsilisaurus = new ModelAsilisaurus();
+    public static final ModelMoradisaurus modelMoradisaurus = new ModelMoradisaurus();
+    public static final ModelSaharastega modelSaharastega = new ModelSaharastega();
+    public static final ModelSlavoia modelSlavoia = new ModelSlavoia();
+    public static final ModelTuditanus modelTuditanus = new ModelTuditanus();
+    public static final ModelProtosuchus modelProtosuchus = new ModelProtosuchus();
+    public static final ModelHomarus modelHomarus = new ModelHomarus();
+    public static final ModelChronocancer modelChronocancer = new ModelChronocancer();
+    public static final ModelBeurlenia modelBeurlenia = new ModelBeurlenia();
+    public static final ModelPeltobatrachus modelPeltobatrachus = new ModelPeltobatrachus();
+    public static final ModelSpinolestes modelSpinolestes = new ModelSpinolestes();
 }

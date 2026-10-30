@@ -204,7 +204,32 @@ public class ModelChronocancer extends ModelBasePalaeopedia {
     }
     
     public void renderStaticFloor(float f) {
-        this.body.offsetY = 0.12F;
+        this.setRotateAngle(armleft, -0.5526F, 0.5129F, -0.161F);
+        this.setRotateAngle(armleft2, 1.707F, 1.1455F, 0.8205F);
+        this.setRotateAngle(armright, -0.131F, -0.1967F, -0.0163F);
+        this.setRotateAngle(armright2, 2.2285F, -1.479F, -1.3519F);
+        this.setRotateAngle(body, -0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0F, -0.4363F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, -0.6894F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, 0.4363F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0F, 0.3927F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0F, 0.6894F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(legleft, -1.197F, 0.6422F, -0.1336F);
+        this.setRotateAngle(legleft2, -0.9054F, 0.4151F, -0.2185F);
+        this.setRotateAngle(legleft3, -0.6307F, 0.0753F, 0.1854F);
+        this.setRotateAngle(legleft4, -0.3573F, -0.159F, 0.1286F);
+        this.setRotateAngle(legright, -1.197F, -0.6422F, 0.1336F);
+        this.setRotateAngle(legright2, -0.9054F, -0.4151F, 0.2185F);
+        this.setRotateAngle(legright3, -0.6294F, -0.0471F, -0.206F);
+        this.setRotateAngle(legright4, -0.3595F, 0.1917F, -0.1411F);
+        this.body.offsetY = 0.25F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }
