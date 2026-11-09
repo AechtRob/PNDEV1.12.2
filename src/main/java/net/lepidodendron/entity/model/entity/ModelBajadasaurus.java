@@ -586,12 +586,13 @@ public class ModelBajadasaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = 0.6F;
+        this.hips.offsetZ = 0.6F;
         this.hips.offsetX = 0.F;
-        this.hips.rotateAngleY = (float)Math.toRadians(225);
-        this.hips.rotateAngleX = (float)Math.toRadians(0);
+        this.hips.rotateAngleY = (float)Math.toRadians(214);
+        this.hips.rotateAngleX = (float)Math.toRadians(-10);
         this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;
-        float scaler = 0.48F;
+        float scaler = 0.44F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
 

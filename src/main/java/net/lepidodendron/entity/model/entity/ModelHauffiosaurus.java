@@ -342,7 +342,7 @@ public class ModelHauffiosaurus extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.2F;
         this.main.offsetX = -0.2F;
-        this.main.rotateAngleY = (float)Math.toRadians(220);
+        this.main.rotateAngleY = (float)Math.toRadians(210);
         this.main.rotateAngleX = (float)Math.toRadians(18);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;

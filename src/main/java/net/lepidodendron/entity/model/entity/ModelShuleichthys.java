@@ -215,7 +215,8 @@ public class ModelShuleichthys extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -1.2F;
-        this.body.offsetX = -0.2F;
+        this.body.offsetX = 0.6F;
+        this.body.offsetZ = 6F;
         this.body.rotateAngleY = (float)Math.toRadians(230);
         this.body.rotateAngleX = (float)Math.toRadians(20);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);

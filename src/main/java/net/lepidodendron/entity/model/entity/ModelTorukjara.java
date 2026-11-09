@@ -494,14 +494,14 @@ public class ModelTorukjara extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -1.2F;
+        this.main.offsetY = -1.F;
         this.main.offsetX = -0.2F;
         this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(125);
         this.main.rotateAngleX = (float)Math.toRadians(0);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 2.5F;
+        float scaler = 1.F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(main, -0.4F, 3.8F, -0.0F);

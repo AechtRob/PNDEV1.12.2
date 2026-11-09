@@ -1,0 +1,47 @@
+{
+	"name": "Dicksonosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dicksonosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_dicksonosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dicksonosteus",
+			"title": "Dicksonosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>$(o)Phlyctaeniidae (?)"
+		},
+        	{
+            "type": "entity",
+            "name": "D. arcticus",
+            "entity": "lepidodendron:prehistoric_flora_dicksonosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dicksonosteus",
+			"type": "text",
+			"text": "Dicksonosteus arcticus is a species of arthrodire known from the Pragian aged Wood Bay Formation in Svalbard, Norway. Its name means 'Arctic Dickson Land bone', with Dickson Land being an area in Svalbard where the Wood Bay Formation is. It is known from both cranial and thoracic armor preserved fairly well. Its bumpy yet toothless jaws have been important in reconstructing placoderm jaw structure."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dicksonosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dicksonosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dicksonosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dicksonosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dicksonosteus"
+		}
+	]
+}

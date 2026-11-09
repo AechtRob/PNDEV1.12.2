@@ -577,16 +577,16 @@ public class ModelPhuwiangosaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = 1.8F;
+        this.main.offsetY = 1.3F;
         this.main.offsetX = 0.2F;
-        this.main.rotateAngleY = (float)Math.toRadians(-68);
-        this.main.rotateAngleX = (float)Math.toRadians(15);
-        this.main.rotateAngleZ = (float)Math.toRadians(-10);
+        this.main.rotateAngleY = (float)Math.toRadians(220);
+        this.main.rotateAngleX = (float)Math.toRadians(0);
+        this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 0.35F;
+        float scaler = 0.55F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(main, 0.4F, 3.8F, -0.2F);
+
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

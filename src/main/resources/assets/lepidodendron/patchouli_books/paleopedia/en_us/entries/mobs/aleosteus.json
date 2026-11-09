@@ -1,0 +1,47 @@
+{
+	"name": "Aleosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/aleosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_aleosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_aleosteus",
+			"title": "Aleosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira"
+		},
+        	{
+            "type": "entity",
+            "name": "A. eganensis",
+            "entity": "lepidodendron:prehistoric_flora_aleosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aleosteus",
+			"type": "text",
+			"text": "Aleosteus was a placoderm discovered in the Sevy Dolomite Formation of Nevada, dating back to the Devonian. Its name is a reference to 'Alea' a Greco-Roman dice game and the Greek word for 'bone'. It was a small fish with its head armor being around 7.5 centimeters long."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_aleosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_aleosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_aleosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_aleosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_aleosteus"
+		}
+	]
+}

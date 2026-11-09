@@ -1,0 +1,47 @@
+{
+	"name": "Dolganosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dolganosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_dolganosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dolganosteus",
+			"title": "Dolganosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Rhenanida"
+		},
+        	{
+            "type": "entity",
+            "name": "D. remotus",
+            "entity": "lepidodendron:prehistoric_flora_dolganosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dolganosteus",
+			"type": "text",
+			"text": "Dolganosteus was a placoderm discovered in the Azvedochnyj formation of Russia, dating back to the Devonian. Its named after the Dolgan people who live in the region and the Greek word for bone."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dolganosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dolganosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dolganosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dolganosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dolganosteus"
+		}
+	]
+}

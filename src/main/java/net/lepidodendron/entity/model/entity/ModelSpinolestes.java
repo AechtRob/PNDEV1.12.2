@@ -405,10 +405,10 @@ public class ModelSpinolestes extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = -5.6F;
+        this.hips.offsetY = -2.6F;
         this.hips.offsetX = 0.4F;
         this.hips.offsetZ = 3.0F;
-        this.hips.rotateAngleY = (float)Math.toRadians(130);
+        this.hips.rotateAngleY = (float)Math.toRadians(220);
         this.hips.rotateAngleX = (float)Math.toRadians(1);
         this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;

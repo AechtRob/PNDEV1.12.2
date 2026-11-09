@@ -266,13 +266,13 @@ public class ModelRiojasuchus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = 0.2F;
-        this.main.offsetX = 0.35F;
+        this.main.offsetX = -0.F;
         this.main.offsetZ = 2.0F;
-        this.main.rotateAngleY = (float)Math.toRadians(120);
+        this.main.rotateAngleY = (float)Math.toRadians(240);
         this.main.rotateAngleX = (float)Math.toRadians(1);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.8F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

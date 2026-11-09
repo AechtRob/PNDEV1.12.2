@@ -1,0 +1,47 @@
+{
+	"name": "Bruntonichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bruntonichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_bruntonichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bruntonichthys",
+			"title": "Bruntonichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Brachythoraci$(br)>Aspinothoracidi"
+		},
+        	{
+            "type": "entity",
+            "name": "B. multidens",
+            "entity": "lepidodendron:prehistoric_flora_bruntonichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bruntonichthys",
+			"type": "text",
+			"text": "Bruntonichthys was an arthrodire placoderm which lived in the Late Devonian of Australia, first discovered in the Gogo Formation of Western Australia. Its name means “Brunton Fish” after Dr. H.W.C. Brunton who was part of a 1967 expedition to the formation, and it would have had a skull length of 13.9 millimeters. It also possessed large eyes and had mouth parts suitable for crushing small mollusks."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bruntonichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bruntonichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bruntonichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bruntonichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bruntonichthys"
+		}
+	]
+}

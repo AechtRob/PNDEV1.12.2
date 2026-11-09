@@ -830,10 +830,10 @@ public class ModelConcavenator extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.hips.offsetY = 0.6F;
         this.hips.offsetX = 0.1F;
-        this.hips.offsetZ = 2.0F;
-        this.hips.rotateAngleY = (float)Math.toRadians(240);
+        this.hips.offsetZ = .0F;
+        this.hips.rotateAngleY = (float)Math.toRadians(230);
         this.hips.rotateAngleX = (float)Math.toRadians(-0);
-        this.hips.rotateAngleZ = (float)Math.toRadians(3);
+        this.hips.rotateAngleZ = (float)Math.toRadians(-3);
         this.hips.scaleChildren = true;
         float scaler = 0.45F;
         this.hips.setScale(scaler, scaler, scaler);

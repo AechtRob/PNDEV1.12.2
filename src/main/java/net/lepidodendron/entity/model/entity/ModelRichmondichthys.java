@@ -247,7 +247,7 @@ public class ModelRichmondichthys extends ModelBasePalaeopedia {
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 1.4F;
+        float scaler = .8F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);

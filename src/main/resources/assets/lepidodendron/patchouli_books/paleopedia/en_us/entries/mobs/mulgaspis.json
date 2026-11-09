@@ -1,0 +1,47 @@
+{
+	"name": "Mulgaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mulgaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_mulgaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mulgaspis",
+			"title": "Mulgaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Phlyctaenioidei$(br)>Groenlandaspididae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. evansorum",
+            "entity": "lepidodendron:prehistoric_flora_mulgaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mulgaspis",
+			"type": "text",
+			"text": "Mulgaspis is a placoderm discovered in Mulga Downs Group of western New South Wales, Australia; dating back to the Devonian. Its name is a reference to where it was found and the greek word for shield."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mulgaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mulgaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mulgaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mulgaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mulgaspis"
+		}
+	]
+}

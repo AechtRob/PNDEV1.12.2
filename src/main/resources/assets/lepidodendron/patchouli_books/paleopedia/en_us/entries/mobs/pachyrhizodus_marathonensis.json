@@ -3,7 +3,7 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/pachyrhizodus_marathonensis_icon.png",
 	"category": "lepidodendron:mobs",
-	"turnin": "lepidodendron:pf_adv_book_pachyrhizodus_marathonensise",
+	"turnin": "lepidodendron:pf_adv_book_pachyrhizodus_marathonensis",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_pachyrhizodus_marathonensis",

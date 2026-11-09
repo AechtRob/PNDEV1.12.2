@@ -1,0 +1,47 @@
+{
+	"name": "Placolepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/placolepis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_placolepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_placolepis",
+			"title": "Placolepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Phyllolepida$(br)>Phyllolepididae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. budawangensis",
+            "entity": "lepidodendron:prehistoric_flora_placolepis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_placolepis",
+			"type": "text",
+			"text": "Placolepis was an arthrodire placoderm which lived in the Late Devonian, first discovered in Australia but having subsequently been discovered all over the world. Its name means “flat scale” and it belonged to the family Phyllolepidae along with the freshwater Phyllolepis."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_placolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_placolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_placolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_placolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_placolepis"
+		}
+	]
+}

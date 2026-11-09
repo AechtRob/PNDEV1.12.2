@@ -586,12 +586,12 @@ public class ModelKettneraspis extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.8F;
-        this.main.offsetX = -0.2F;
+        this.main.offsetX = -0.1F;
         this.main.rotateAngleX = (float)Math.toRadians(45);
         this.main.rotateAngleY = (float)Math.toRadians(220);
         this.main.rotateAngleZ = (float)Math.toRadians(-20);
         this.main.scaleChildren = true;
-        float scaler = 2.0F;
+        float scaler = 1.5F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

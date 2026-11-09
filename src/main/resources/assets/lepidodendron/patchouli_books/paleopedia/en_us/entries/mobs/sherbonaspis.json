@@ -1,0 +1,47 @@
+{
+	"name": "Sherbonaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sherbonaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sherbonaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sherbonaspis",
+			"title": "Sherbonaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Antiarchi$(br)>Asterolepidoidei$(br)>Pterichthyodidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. hillsi",
+            "entity": "lepidodendron:prehistoric_flora_sherbonaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sherbonaspis",
+			"type": "text",
+			"text": "Sherbonaspis was a placoderm discovered in Goodradigbee valley, Australia and Lepel Beds of Belarus, dating back to the Devonian. It was named in honour of the paleontologist 'Edwin Sherbon Hills' alongside the Greek word for shield. Its head armor was an estimated 75 millimeters long, making it a small fish."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sherbonaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sherbonaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sherbonaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sherbonaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sherbonaspis"
+		}
+	]
+}

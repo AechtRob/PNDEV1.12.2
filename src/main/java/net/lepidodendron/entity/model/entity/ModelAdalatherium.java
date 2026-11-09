@@ -281,13 +281,13 @@ public class ModelAdalatherium extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hip.offsetY = -1.80F;
+        this.hip.offsetY = -0.80F;
         this.hip.offsetX = .0F;
-        this.hip.rotateAngleY = (float)Math.toRadians(250);
-        this.hip.rotateAngleX = (float)Math.toRadians(0);
+        this.hip.rotateAngleY = (float)Math.toRadians(220);
+        this.hip.rotateAngleX = (float)Math.toRadians(-30);
         this.hip.rotateAngleZ = (float)Math.toRadians(0);
         this.hip.scaleChildren = true;
-        float scaler = 3.F;
+        float scaler = 1.F;
         this.hip.setScale(scaler, scaler, scaler);
         //Start of pose:
 

@@ -591,14 +591,14 @@ public class ModelHomarus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Body.offsetY = -1.6F;
-        this.Body.offsetX = -1.0F;
+        this.Body.offsetY = -1F;
+        this.Body.offsetX = -.1F;
         this.Body.offsetZ = 2.0F;
         this.Body.rotateAngleY = (float)Math.toRadians(200);
         this.Body.rotateAngleX = (float)Math.toRadians(8);
         this.Body.rotateAngleZ = (float)Math.toRadians(-8);
         this.Body.scaleChildren = true;
-        float scaler = 4.0F;
+        float scaler = 1F;
         this.Body.setScale(scaler, scaler, scaler);
         //Start of pose:
         

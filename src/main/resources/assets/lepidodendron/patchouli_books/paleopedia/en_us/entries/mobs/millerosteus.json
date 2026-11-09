@@ -1,0 +1,62 @@
+{
+	"name": "Millerosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/millerosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_millerosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_millerosteus",
+			"title": "Millerosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Coccosteomorphi$(br)>Coccosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. minor",
+            "entity": "lepidodendron:prehistoric_flora_millerosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_millerosteus",
+			"type": "text",
+			"text": "Millerosteus minor is a species of Coccosteid Arthrodire known from the Middle Devonian aged Rousay Flagstone Formation in Scotland and the Orcadian Basin in Estonia. Millerosteus is known from dozens of specimens in the Rousay Flagstone Formation, so much so that it is used as a biostratigraphic marker there. Because of this abundance, Millerosteus' vertebrae are some of the best known throughout the placoderms, with its neural arches,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_millerosteus",
+			"type": "text",
+			"text": "haemal arches, neural spines, haemal spines, and even the shape of its dorsal fin known. These vertebrae were hyperossified, with its neural arches appearing bulbous and swollen, and not from an injury, deformity, or taphonomic process. Some have suggested this dense bone would have required Millerosteus to swim slowly, and stick to shallow waters. Others have suggested that it would make Millerosteus a strong, muscular swimmer."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_millerosteus",
+			"type": "text",
+			"text": "It may have not had to do with the swimming style of the animal as much as its environment. The Rousay Flagstone was in an inland basin, with a very turbulent environment, with as periods of intense rain shifting to a dryer season, periods of varying salinity, and large scale deoxygenation events. As modern fish are known to develop high levels of ossification in response to an extreme environment, Millerosteus may have done the same."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_millerosteus",
+			"type": "text",
+			"text": "The occurrence of Millerosteus is Estonia is interesting, as it adds to a growing biotic connection between the inland Rousay Flagstone Formation (and surrounding Scottish areas) and marine deposits off the coast of the former continent Baltica. It is thought that the fish of these inland formations migrated there across a stretch of the Rheic Ocean, swimming into the Basin when heavy rains caused outward heading rivers to overflow."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_millerosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_millerosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_millerosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_millerosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_millerosteus"
+		}
+	]
+}

@@ -254,7 +254,7 @@ public class ModelRafaeliana extends ModelBasePalaeopedia {
         this.thorax.offsetY = -2.30F;
         this.thorax.offsetX = -0.05F;
         this.thorax.rotateAngleY = (float)Math.toRadians(210);
-        this.thorax.rotateAngleX = (float)Math.toRadians(8);
+        this.thorax.rotateAngleX = (float)Math.toRadians(20);
         this.thorax.rotateAngleZ = (float)Math.toRadians(-8);
         this.thorax.scaleChildren = true;
         float scaler = 2.9F;

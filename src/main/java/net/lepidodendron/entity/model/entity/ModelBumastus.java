@@ -351,7 +351,7 @@ public class ModelBumastus extends ModelBasePalaeopedia {
         this.main.rotateAngleX = (float)Math.toRadians(1);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 1.2F;
+        float scaler = 1.F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);

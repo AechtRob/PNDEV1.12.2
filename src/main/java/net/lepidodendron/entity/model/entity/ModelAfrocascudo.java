@@ -244,14 +244,14 @@ public class ModelAfrocascudo extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -4.4F;
-        this.main.offsetX = 2.8F;
+        this.main.offsetY = -1.8F;
+        this.main.offsetX = 0.3F;
         this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(310);
         this.main.rotateAngleX = (float)Math.toRadians(-80);
         this.main.rotateAngleZ = (float)Math.toRadians(28);
         this.main.scaleChildren = true;
-        float scaler = 6.4F;
+        float scaler = 3.4F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

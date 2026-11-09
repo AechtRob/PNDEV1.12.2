@@ -223,13 +223,14 @@ public class ModelErfoudichthys extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.5F;
-        this.main.offsetX = 0.258F;
-        this.main.rotateAngleY = (float)Math.toRadians(235);
-        this.main.rotateAngleX = (float)Math.toRadians(8);
-        this.main.rotateAngleZ = (float)Math.toRadians(-8);
+        this.main.offsetY = -1.6F;
+        this.main.offsetX = 0.3F;
+        this.main.offsetZ = 2.0F;
+        this.main.rotateAngleY = (float)Math.toRadians(230);
+        this.main.rotateAngleX = (float)Math.toRadians(30);
+        this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 0.95F;
+        float scaler = 3.0F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

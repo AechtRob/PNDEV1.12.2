@@ -1,0 +1,47 @@
+{
+	"name": "Pampetalichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pampetalichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_pampetalichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pampetalichthys",
+			"title": "Pampetalichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Acanthothoraci"
+		},
+        	{
+            "type": "entity",
+            "name": "P. longhuaensis",
+            "entity": "lepidodendron:prehistoric_flora_pampetalichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pampetalichthys",
+			"type": "text",
+			"text": "Pampetalichthys was a placoderm discovered in Prague Basin of Czech Republic, dating back to the Devonian. It was a tiny fish, with what's known of its head armor being slightly longer than three centimeters. It was formerly known as Holopetalichthys before getting reassaigned."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pampetalichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pampetalichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pampetalichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pampetalichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pampetalichthys"
+		}
+	]
+}

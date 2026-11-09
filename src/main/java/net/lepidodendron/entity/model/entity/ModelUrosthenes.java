@@ -277,7 +277,7 @@ public class ModelUrosthenes extends ModelBasePalaeopedia {
         this.main.offsetY = -1.2F;
         this.main.offsetX = 0.0F;
         this.main.offsetZ = 2.0F;
-        this.main.rotateAngleY = (float)Math.toRadians(120);
+        this.main.rotateAngleY = (float)Math.toRadians(240);
         this.main.rotateAngleX = (float)Math.toRadians(0);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;

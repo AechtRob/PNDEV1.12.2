@@ -468,11 +468,11 @@ public class ModelEastmanosteus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.3F;
-        this.main.offsetX = 0.4F;
+        this.main.offsetY = 0.1F;
+        this.main.offsetX = 0.3F;
         this.main.offsetZ = 2.0F;
-        this.main.rotateAngleY = (float)Math.toRadians(120);
-        this.main.rotateAngleX = (float)Math.toRadians(1);
+        this.main.rotateAngleY = (float)Math.toRadians(230);
+        this.main.rotateAngleX = (float)Math.toRadians(30);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
         float scaler = 0.8F;

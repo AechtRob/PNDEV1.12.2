@@ -394,8 +394,8 @@ public class ModelPholidosaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = 0.2F;
-        this.hips.offsetX = 0.36F;
+        this.hips.offsetY = -0.4F;
+        this.hips.offsetX = -0.1F;
         this.hips.offsetZ = 2.0F;
         this.hips.rotateAngleY = (float)Math.toRadians(120);
         this.hips.rotateAngleX = (float)Math.toRadians(0);

@@ -1,0 +1,47 @@
+{
+	"name": "Dickosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dickosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_dickosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dickosteus",
+			"title": "Dickosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Coccosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. threiplandi",
+            "entity": "lepidodendron:prehistoric_flora_dickosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dickosteus",
+			"type": "text",
+			"text": "Dickosteus was a placoderm discovered in Orkney and Caithness counties of Scotland, dating back to the Devonian. Its name is a reference to Robert Dick, a naturalist and amateur geologist and the Greek word for Bone. It was about 43.7 centimeters long. Dickosteus is important to science as its one of the few placoderms known from a full skeleton, giving us an idea about their body plan."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dickosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dickosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dickosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dickosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dickosteus"
+		}
+	]
+}

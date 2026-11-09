@@ -1,0 +1,47 @@
+{
+	"name": "Motlayoichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/motlayoichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_motlayoichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_motlayoichthys",
+			"title": "Motlayoichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>Crossognathiformes$(br)>Pachyrhizodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. sergioi",
+            "entity": "lepidodendron:prehistoric_flora_motlayoichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_motlayoichthys",
+			"type": "text",
+			"text": "Motlayoichthys is a ray-finned fish discovered in Muhi Quarry of Mexico, dating back to Early and maybe Late Cretaceous. Its name is a combination of 'Montlayolo' meaning decorated/ornamented in the Náhuatl language and 'ichthys' meaning fish. Its skull was around 15 centimeters long, making the full animal a rather medium sized fish."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_motlayoichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_motlayoichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_motlayoichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_motlayoichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_motlayoichthys"
+		}
+	]
+}

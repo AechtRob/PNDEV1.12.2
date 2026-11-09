@@ -1,0 +1,47 @@
+{
+	"name": "Arabosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/arabosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_arabosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_arabosteus",
+			"title": "Arabosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Acanthothoraci"
+		},
+        	{
+            "type": "entity",
+            "name": "A. variabilis",
+            "entity": "lepidodendron:prehistoric_flora_arabosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arabosteus",
+			"type": "text",
+			"text": "Arabosteus was an acanthothoracid placoderm which lived in the Early Devonian of the Arabian Peninsula, discovered in the Jauf Formation of Saudi Arabia. Its name means “Arab bone” and it had a skull length of only about 4 centimeters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_arabosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_arabosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_arabosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_arabosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_arabosteus"
+		}
+	]
+}

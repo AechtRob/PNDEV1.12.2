@@ -1,0 +1,47 @@
+{
+	"name": "Plesioblattogryllus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/plesioblattogryllus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_plesioblattogryllus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_plesioblattogryllus",
+			"title": "Plesioblattogryllus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Hexapoda$(br)>Insecta$(br)>Grylloblattodea$(br)>Plesioblattogryllidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. magnificus",
+            "entity": "lepidodendron:prehistoric_flora_plesioblattogryllus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_plesioblattogryllus",
+			"type": "text",
+			"text": "Plesioblattogryllus was a grylloblattodean insect which lived in the Middle Jurassic of East Asia, first discovered in the Jiulongshan Formation of northern China. Its name means “ancient Blattogryllus” in reference to one of its relatives. Its closest living relatives are the extremophile icebugs of the family Gryllobattidae which have adapted to cold regions such as mountains and glaciers."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_plesioblattogryllus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_plesioblattogryllus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_plesioblattogryllus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_plesioblattogryllus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_plesioblattogryllus"
+		}
+	]
+}

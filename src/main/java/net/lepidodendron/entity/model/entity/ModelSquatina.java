@@ -390,7 +390,7 @@ public class ModelSquatina extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.4F;
-        this.main.offsetX = 0.3F;
+        this.main.offsetX = .1F;
         this.main.rotateAngleY = (float)Math.toRadians(220);
         this.main.rotateAngleX = (float)Math.toRadians(40);
         this.main.rotateAngleZ = (float)Math.toRadians(-10);

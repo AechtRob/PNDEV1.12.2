@@ -651,11 +651,11 @@ public class ModelAmargasaurus extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.root.offsetY = 0.6F;
         this.root.offsetX = 0.F;
-        this.root.rotateAngleY = (float)Math.toRadians(225);
+        this.root.rotateAngleY = (float)Math.toRadians(215);
         this.root.rotateAngleX = (float)Math.toRadians(0);
         this.root.rotateAngleZ = (float)Math.toRadians(0);
         this.root.scaleChildren = true;
-        float scaler = 0.48F;
+        float scaler = 0.37F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
 

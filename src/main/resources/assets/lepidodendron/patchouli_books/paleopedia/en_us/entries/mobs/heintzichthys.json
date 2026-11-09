@@ -1,0 +1,47 @@
+{
+	"name": "Heintzichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/heintzichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_heintzichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_heintzichthys",
+			"title": "Heintzichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Selenosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. gouldii",
+            "entity": "lepidodendron:prehistoric_flora_heintzichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_heintzichthys",
+			"type": "text",
+			"text": "Heintzichthys was a placoderm discovered in Cleveland Shale of Ohio, dating back to the Devonian. Its name is a reference to the palaeontologist 'Anatol Heintz' who is famous for his work with placoderms and the Greek word for fish. It was a medium sized fish and lived alongside the famous Dunkleosteus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_heintzichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_heintzichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_heintzichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_heintzichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_heintzichthys"
+		}
+	]
+}

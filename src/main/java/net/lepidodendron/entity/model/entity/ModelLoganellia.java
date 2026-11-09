@@ -163,7 +163,7 @@ public class ModelLoganellia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -3.2F;
+        this.main.offsetY = -1.2F;
         this.main.offsetX = 1.2F;
         this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(120);

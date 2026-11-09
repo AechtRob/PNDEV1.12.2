@@ -1,0 +1,47 @@
+{
+	"name": "Barwickosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/barwickosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_barwickosteuse",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_barwickosteus",
+			"title": "Barwickosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira"
+		},
+        	{
+            "type": "entity",
+            "name": "Genus_species",
+            "entity": "lepidodendron:prehistoric_flora_barwickosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_barwickosteus",
+			"type": "text",
+			"text": "Barwickosteus was a placoderm discovered in the Aztec Siltstone of Antarctica, dating back to the Devonian. Its name is a reference to 'Richard Essex Barwic' a member of the original Victoria University Antarctic Expeditions and the Greek word for Bone. Its head armor is estimated to have been 4 centimeters long, though a few specimens that are about 6 centimeters could also be attributed to this species."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_barwickosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_barwickosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_barwickosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_barwickosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_barwickosteus"
+		}
+	]
+}

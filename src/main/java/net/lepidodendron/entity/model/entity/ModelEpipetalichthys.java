@@ -346,14 +346,14 @@ public class ModelEpipetalichthys extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.3F;
+        this.main.offsetY = -0F;
         this.main.offsetX = 0.2F;
         this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(120);
         this.main.rotateAngleX = (float)Math.toRadians(1);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 2.2F;
+        float scaler = 3F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

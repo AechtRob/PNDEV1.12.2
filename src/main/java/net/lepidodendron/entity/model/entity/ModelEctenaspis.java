@@ -446,13 +446,13 @@ public class ModelEctenaspis extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = 0.4F;
+        this.main.offsetY = -1.5F;
         this.main.offsetX = 0.1F;
         this.main.rotateAngleX = (float)Math.toRadians(45);
         this.main.rotateAngleY = (float)Math.toRadians(220);
         this.main.rotateAngleZ = (float)Math.toRadians(-20);
         this.main.scaleChildren = true;
-        float scaler = 1.23F;
+        float scaler = 5F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

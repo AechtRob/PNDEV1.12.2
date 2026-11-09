@@ -590,14 +590,14 @@ public class ModelChangchunsaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Root.offsetY = 0.5F;
-        this.Root.offsetX = 0.75F;
+        this.Root.offsetY = -0.5F;
+        this.Root.offsetX = 0.5F;
         this.Root.offsetZ = 0.7F;
-        this.Root.rotateAngleY = (float)Math.toRadians(225);
+        this.Root.rotateAngleY = (float)Math.toRadians(215);
         this.Root.rotateAngleX = (float)Math.toRadians(14);
         this.Root.rotateAngleZ = (float)Math.toRadians(-8);
         this.Root.scaleChildren = true;
-        float scaler = 0.55F;
+        float scaler = 1.55F;
         this.Root.setScale(scaler, scaler, scaler);
         //Start of pose:
 

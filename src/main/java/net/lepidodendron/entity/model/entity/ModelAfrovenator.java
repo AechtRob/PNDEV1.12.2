@@ -431,13 +431,14 @@ public class ModelAfrovenator extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hip.offsetY = 0.60F;
-        this.hip.offsetX = 0.0F;
+        this.hip.offsetY = 0.30F;
+        this.hip.offsetZ = 0.7F;
+        this.hip.offsetX = 0.1F;
         this.hip.rotateAngleY = (float)Math.toRadians(220);
         this.hip.rotateAngleX = (float)Math.toRadians(12);
         this.hip.rotateAngleZ = (float)Math.toRadians(-2);
         this.hip.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.8F;
         this.hip.setScale(scaler, scaler, scaler);
         //Start of pose:
        

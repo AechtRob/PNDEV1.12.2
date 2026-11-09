@@ -398,10 +398,10 @@ public class ModelProterochampsa extends ModelBasePalaeopedia {
         this.Base.offsetX = 0.075F;
         this.Base.offsetZ = 2.0F;
         this.Base.rotateAngleY = (float)Math.toRadians(212);
-        this.Base.rotateAngleX = (float)Math.toRadians(22);
-        this.Base.rotateAngleZ = (float)Math.toRadians(-12);
+        this.Base.rotateAngleX = (float)Math.toRadians(7);
+        this.Base.rotateAngleZ = (float)Math.toRadians(0);
         this.Base.scaleChildren = true;
-        float scaler = 0.4F;
+        float scaler = 1.1F;
         this.Base.setScale(scaler, scaler, scaler);
         //Start of pose:
 

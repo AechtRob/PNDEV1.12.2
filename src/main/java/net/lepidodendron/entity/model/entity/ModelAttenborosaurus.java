@@ -338,12 +338,12 @@ public class ModelAttenborosaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.4F;
-        this.main.offsetX = -0.23F;
-        this.main.rotateAngleY = (float)Math.toRadians(-210);
+        this.main.offsetX = -0.1F;
+        this.main.rotateAngleY = (float)Math.toRadians(210);
         this.main.rotateAngleX = (float)Math.toRadians(20);
         this.main.rotateAngleZ = (float)Math.toRadians(5);
         this.main.scaleChildren = true;
-        float scaler = 0.46F;
+        float scaler = 0.4F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
        

@@ -1,0 +1,47 @@
+{
+	"name": "Burrinjucosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/burrinjucosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_burrinjucosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_burrinjucosteus",
+			"title": "Burrinjucosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Buchanosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. asymmetricus",
+            "entity": "lepidodendron:prehistoric_flora_burrinjucosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_burrinjucosteus",
+			"type": "text",
+			"text": "Burrinjucosteus was a placoderm discovered in Wee Jasper reef in New South Wales, Australia; dating back to the Devonian. Its name is a reference to the village community of Burrinjuck, which is derived from the Aboriginal word meaning 'mountain with a rugged top' added with the Greek word for bone. It is known from parts of its skull and armor, suggesting it was a large but flat fish. It was big for its clade, growing around a meter long"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_burrinjucosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_burrinjucosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_burrinjucosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_burrinjucosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_burrinjucosteus"
+		}
+	]
+}

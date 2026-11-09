@@ -1,0 +1,47 @@
+{
+	"name": "Handuichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/handuichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_handuichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_handuichthys",
+			"title": "Handuichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>Acanthomorphata$(br)>Beryciformes$(br)>Pseudomonocentrididae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. interopercularis",
+            "entity": "lepidodendron:prehistoric_flora_handuichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_handuichthys",
+			"type": "text",
+			"text": "Handuichthys was a ray-finned fish that was discovered in Muhi quarry of Mexico, dating back to the Cretaceous. Its name is a combination of the Otomí word for 'fossil' and the Greek word for 'fish'. It was a relatively small fish with the holotype, which is only a head and anterior of the body, being 2.5 centimeters long."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_handuichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_handuichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_handuichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_handuichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_handuichthys"
+		}
+	]
+}

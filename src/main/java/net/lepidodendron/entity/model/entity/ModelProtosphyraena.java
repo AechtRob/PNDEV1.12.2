@@ -365,14 +365,14 @@ public class ModelProtosphyraena extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -0.6F;
-        this.body.offsetX = 0.1F;
+        this.body.offsetY = -0.2F;
+        this.body.offsetX = 0.6F;
         this.body.offsetZ = 2.0F;
-        this.body.rotateAngleY = (float)Math.toRadians(202);
-        this.body.rotateAngleX = (float)Math.toRadians(32);
-        this.body.rotateAngleZ = (float)Math.toRadians(-12);
+        this.body.rotateAngleY = (float)Math.toRadians(230);
+        this.body.rotateAngleX = (float)Math.toRadians(0);
+        this.body.rotateAngleZ = (float)Math.toRadians(-0);
         this.body.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.4F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
 

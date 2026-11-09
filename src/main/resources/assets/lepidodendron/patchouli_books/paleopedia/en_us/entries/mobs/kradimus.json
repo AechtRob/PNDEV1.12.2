@@ -1,0 +1,47 @@
+{
+	"name": "Kradimus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kradimus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_kradimus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kradimus",
+			"title": "Kradimus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretacous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>Crossognathiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "K. asflaensis",
+            "entity": "lepidodendron:prehistoric_flora_kradimus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kradimus",
+			"type": "text",
+			"text": "Kradimus was a ray finned fish discovered in Akrabou Formation of Morocco dating back to the Late Cretaceous. Its name means 'three knife', named after its three blade-like fins. It was a small fish about 29 centimeters long. It is known from a perfectly preserved slab."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kradimus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kradimus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kradimus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kradimus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kradimus"
+		}
+	]
+}

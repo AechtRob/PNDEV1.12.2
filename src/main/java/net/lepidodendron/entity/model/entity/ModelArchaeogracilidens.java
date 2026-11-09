@@ -389,11 +389,11 @@ public class ModelArchaeogracilidens extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.5F;
         this.main.offsetX = 0.35F;
-        this.main.rotateAngleY = (float)Math.toRadians(200);
+        this.main.rotateAngleY = (float)Math.toRadians(220);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.7F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

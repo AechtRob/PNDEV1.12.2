@@ -1,0 +1,52 @@
+{
+	"name": "Sharovipteryx",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sharovipteryx_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_sharovipteryx",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sharovipteryx",
+			"title": "Sharovipteryx",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauromorpha$(br)>Sharovipterygidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. mirabilis",
+            "entity": "lepidodendron:prehistoric_flora_sharovipteryx",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sharovipteryx",
+			"type": "text",
+			"text": "Sharovipteryx was a sharovipterygid archosauromorph which lived in the Late Triassic of Central Asia, first discovered in the Madygen Formation of modern-day Kyrgyzstan in 1971. Its name means “Aleksandr Sharov’s wing” after its initial describer, and only one fossil is known of this creature. This fossil preserves most of its body, including its abnormally long and muscular hindlegs and membranes likely used for gliding between them. Though it was likely related"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sharovipteryx",
+			"type": "text",
+			"text": "to the similarly proportioned reptile Ozimek, its relations within Archosauromorpha are still debated."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sharovipteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sharovipteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sharovipteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sharovipteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sharovipteryx"
+		}
+	]
+}

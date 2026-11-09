@@ -1,0 +1,47 @@
+{
+	"name": "Arenipiscis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/arenipiscis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_arenipiscis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_arenipiscis",
+			"title": "Arenipiscis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Buchanosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. westolli",
+            "entity": "lepidodendron:prehistoric_flora_arenipiscis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arenipiscis",
+			"type": "text",
+			"text": "Arenipiscis was an arthrodire placoderm which lived in the Early Devonian of Australia, first discovered in the Taemas Limestone of New South Wales in 1981. Its name means “sand fish”, referring to the granular textures of fossils of its dermal armor. It would have lived in what is now known as the Wee Jasper Reef."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_arenipiscis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_arenipiscis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_arenipiscis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_arenipiscis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_arenipiscis"
+		}
+	]
+}

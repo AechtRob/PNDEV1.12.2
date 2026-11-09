@@ -350,7 +350,7 @@ public class ModelGymnotrachelus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.8F;
-        this.main.offsetX = 0.5F;
+        this.main.offsetX = 0.2F;
         this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(120);
         this.main.rotateAngleX = (float)Math.toRadians(1);
@@ -360,15 +360,7 @@ public class ModelGymnotrachelus extends ModelBasePalaeopedia {
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);
-        this.setRotateAngle(frontLeftFin, 0.0F, 0.0F, -0.9599F);
-        this.setRotateAngle(frontRightFin, 0.0F, 0.0F, 1.0036F);
-        this.setRotateAngle(jaw, 0.4363F, 0.0F, 0.0F);
-        this.setRotateAngle(body, 0.0F, -0.1745F, 0.0F);
-        this.setRotateAngle(backLeftFin, 0.0F, 0.0F, 0.1309F);
-        this.setRotateAngle(backRightFin, 0.0F, 0.2618F, -0.1309F);
-        this.setRotateAngle(tail, 0.0F, 0.2618F, 0.0F);
-        this.setRotateAngle(tail2, 0.0F, 0.48F, 0.0F);
-        this.setRotateAngle(tail3, 0.0F, -0.3054F, 0.0F);
+
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

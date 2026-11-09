@@ -653,17 +653,18 @@ public class ModelYanornis extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -2.30F;
-        this.base.offsetX = 1.55F;
+        this.base.offsetY = -0.30F;
+        this.base.offsetX = 0.25F;
         this.base.offsetZ = 2.05F;
         this.base.rotateAngleY = (float)Math.toRadians(230);
         this.base.rotateAngleX = (float)Math.toRadians(9);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
         this.base.scaleChildren = true;
-        float scaler = 2.2F;
+        float scaler = 1.5F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.tertialsleft.setScale((float)1,(float)0,(float)0);
+        this.tertialsright.setScale((float)1,(float)0,(float)0);
         //End of pose, now render the model:
         this.base.render(f);
         //Reset rotations, positions and sizing:

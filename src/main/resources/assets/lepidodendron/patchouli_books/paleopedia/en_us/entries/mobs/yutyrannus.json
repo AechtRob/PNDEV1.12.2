@@ -1,0 +1,52 @@
+{
+	"name": "Yutyrannus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/yutyrannus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_yutyrannus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_yutyrannus",
+			"title": "Yutyrannus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Theropoda$(br)>Tyrannosauroidea$(br)>Proceratosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "Y. huali",
+            "entity": "lepidodendron:prehistoric_flora_yutyrannus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yutyrannus",
+			"type": "text",
+			"text": "Yutyrannus was a tyrannosauroid theropod which lived in the Early Cretaceous of East Asia, first discovered in the Yixian Formation of northern China in 2012. Its name means “feathered tyrant” partially taken from Mandarin, and 3 well-preserved individuals of varying ages have been discovered. Notably these specimens indicate that Yutyrannus was covered almost head to toe in filamentous feathers, making it currently the largest-known dinosaur preserved with"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yutyrannus",
+			"type": "text",
+			"text": "feathers with the largest specimen being up to 10 meters long. Despite its size it was more basal than the later large tyrannosaurids, belonging to the early diverging proceratosaurids."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_yutyrannus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_yutyrannus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_yutyrannus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_yutyrannus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_yutyrannus"
+		}
+	]
+}

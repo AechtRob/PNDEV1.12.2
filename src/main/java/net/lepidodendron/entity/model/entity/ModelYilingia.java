@@ -206,10 +206,10 @@ public class ModelYilingia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body14.offsetY = -3.2F;
-        this.body14.offsetX = -1.6F;
+        this.body14.offsetY = -0.2F;
+        this.body14.offsetX = 0.6F;
         this.body14.rotateAngleY = (float)Math.toRadians(210);
-        this.body14.rotateAngleX = (float)Math.toRadians(29);
+        this.body14.rotateAngleX = (float)Math.toRadians(-40);
         this.body14.rotateAngleZ = (float)Math.toRadians(-8);
         this.body14.scaleChildren = true;
         float scaler = 3.93F;

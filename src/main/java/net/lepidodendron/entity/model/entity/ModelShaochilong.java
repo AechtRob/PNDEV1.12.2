@@ -499,7 +499,7 @@ public class ModelShaochilong extends ModelBasePalaeopedia {
         this.hips.offsetY = 0.5F;
         this.hips.offsetX = 0.0F;
         this.hips.offsetZ = 2.0F;
-        this.hips.rotateAngleY = (float)Math.toRadians(150);
+        this.hips.rotateAngleY = (float)Math.toRadians(210);
         this.hips.rotateAngleX = (float)Math.toRadians(5);
         this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;

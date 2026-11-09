@@ -1,0 +1,47 @@
+{
+	"name": "Africanaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/africanaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_africanaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_africanaspis",
+			"title": "Africanaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Groenlandaspididae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. doryssa",
+            "entity": "lepidodendron:prehistoric_flora_africanaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_africanaspis",
+			"type": "text",
+			"text": "Africanaspis was a placoderm discovered in Witpoort Formation of South Africa, dating back to the Devonian. Its name means 'Africa shield'. The type species grew to an estimated 23 centimeters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_africanaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_africanaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_africanaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_africanaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_africanaspis"
+		}
+	]
+}

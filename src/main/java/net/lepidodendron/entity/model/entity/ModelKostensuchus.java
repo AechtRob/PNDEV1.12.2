@@ -695,14 +695,14 @@ public class ModelKostensuchus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = 0.6F;
-        this.main.offsetX = 0.1F;
+        this.main.offsetY = 0.3F;
+        this.main.offsetX = 0.01F;
         this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(240);
         this.main.rotateAngleX = (float)Math.toRadians(-0);
         this.main.rotateAngleZ = (float)Math.toRadians(3);
         this.main.scaleChildren = true;
-        float scaler = 0.45F;
+        float scaler = 0.43F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
         

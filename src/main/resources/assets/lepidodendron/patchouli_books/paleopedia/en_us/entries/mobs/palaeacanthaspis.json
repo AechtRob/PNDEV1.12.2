@@ -1,0 +1,47 @@
+{
+	"name": "Palaeacanthaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/palaeacanthaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_palaeacanthaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeacanthaspis",
+			"title": "Palaeacanthaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Acanthothoraci$(br)>Palaeacanthaspididae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. vasta",
+            "entity": "lepidodendron:prehistoric_flora_palaeacanthaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeacanthaspis",
+			"type": "text",
+			"text": "Palaeacanthaspis is a placoderm that was discovered in Chortkiv Formation of Ukraine, dating back to the Devonian. Its name means 'ancient hollow scale'. It was a small placoderm with its incomplete skull being around 1.5 centimeters long."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeacanthaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeacanthaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeacanthaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeacanthaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeacanthaspis"
+		}
+	]
+}

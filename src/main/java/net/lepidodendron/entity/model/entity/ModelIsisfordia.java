@@ -521,13 +521,13 @@ public class ModelIsisfordia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -1.0F;
+        this.main.offsetY = -.4F;
         this.main.offsetX = -0.038F;
         this.main.rotateAngleY = (float)Math.toRadians(220);
         this.main.rotateAngleX = (float)Math.toRadians(18);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 2.33F;
+        float scaler = 0.83F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

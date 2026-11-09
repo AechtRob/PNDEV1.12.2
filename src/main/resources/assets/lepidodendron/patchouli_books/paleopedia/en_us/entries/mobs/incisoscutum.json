@@ -1,0 +1,47 @@
+{
+	"name": "Incisoscutum",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/incisoscutum_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_incisoscutum",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_incisoscutum",
+			"title": "Incisoscutum",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Incisoscutoidea$(br)>Incisoscutidae"
+		},
+        	{
+            "type": "entity",
+            "name": "I. ritchiei",
+            "entity": "lepidodendron:prehistoric_flora_incisoscutum",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_incisoscutum",
+			"type": "text",
+			"text": "Incisoscutum was a placoderm discovered in Gogo Reef of Australia, dating back to the Devonian. Its name is a mix of the two latin words for notch and shield. They had an estimated body length of 30 centimeters. These animals were important in research as some of the fossils of them were found with embryos in them alongside males having claspers, helping researchers learn more about evolution of reproduction."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_incisoscutum"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_incisoscutum"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_incisoscutum"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_incisoscutum"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_incisoscutum"
+		}
+	]
+}

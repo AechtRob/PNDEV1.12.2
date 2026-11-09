@@ -684,12 +684,13 @@ public class ModelMicroraptor extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = -1.5F;
-        this.hips.offsetX = -0.0F;
-        this.hips.rotateAngleY = (float)Math.toRadians(220);
-        this.hips.rotateAngleX = (float)Math.toRadians(3);
+        this.hips.offsetZ = 5.0F;
+        this.hips.offsetX = .4F;
+        this.hips.rotateAngleY = (float)Math.toRadians(210);
+        this.hips.rotateAngleX = (float)Math.toRadians(0);
         this.hips.rotateAngleZ = (float)Math.toRadians(-2);
         this.hips.scaleChildren = true;
-        float scaler = 3.5F;
+        float scaler = 2F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
 

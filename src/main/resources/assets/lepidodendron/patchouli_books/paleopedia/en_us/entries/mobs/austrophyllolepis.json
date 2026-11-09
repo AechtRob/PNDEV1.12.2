@@ -1,0 +1,47 @@
+{
+	"name": "Austrophyllolepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/austrophyllolepis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_austrophyllolepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_austrophyllolepis",
+			"title": "Austrophyllolepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Athrodira$(br)>Phyllolepida$(br)>Phyllolepididae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. ritchei",
+            "entity": "lepidodendron:prehistoric_flora_austrophyllolepis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_austrophyllolepis",
+			"type": "text",
+			"text": "Austrophyllolepis was an arthrodire placoderm which lived in the Middle to Late Devonian of Australia, first discovered near Mount Howitt in Victoria. Its name means “southern leaf-scale” in reference to its inclusion in the family Phyllolepidae."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_austrophyllolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_austrophyllolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_austrophyllolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_austrophyllolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_austrophyllolepis"
+		}
+	]
+}

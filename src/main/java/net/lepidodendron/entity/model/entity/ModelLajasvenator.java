@@ -415,14 +415,14 @@ public class ModelLajasvenator extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = 0.6F;
+        this.hips.offsetY = 0.3F;
         this.hips.offsetX = 0.1F;
         this.hips.offsetZ = 2.0F;
-        this.hips.rotateAngleY = (float)Math.toRadians(240);
-        this.hips.rotateAngleX = (float)Math.toRadians(-0);
-        this.hips.rotateAngleZ = (float)Math.toRadians(3);
+        this.hips.rotateAngleY = (float)Math.toRadians(230);
+        this.hips.rotateAngleX = (float)Math.toRadians(-3);
+        this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;
-        float scaler = 0.45F;
+        float scaler = 0.6F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
        

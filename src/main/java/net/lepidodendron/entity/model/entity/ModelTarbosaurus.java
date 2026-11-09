@@ -756,9 +756,10 @@ public class ModelTarbosaurus extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.hips.offsetY = 0.60F;
         this.hips.offsetX = 0.0F;
-        this.hips.rotateAngleY = (float)Math.toRadians(220);
-        this.hips.rotateAngleX = (float)Math.toRadians(12);
-        this.hips.rotateAngleZ = (float)Math.toRadians(-2);
+        this.hips.offsetZ = 5.0F;
+        this.hips.rotateAngleY = (float)Math.toRadians(210);
+        this.hips.rotateAngleX = (float)Math.toRadians(0);
+        this.hips.rotateAngleZ = (float)Math.toRadians(-0);
         this.hips.scaleChildren = true;
         float scaler = 0.6F;
         this.hips.setScale(scaler, scaler, scaler);

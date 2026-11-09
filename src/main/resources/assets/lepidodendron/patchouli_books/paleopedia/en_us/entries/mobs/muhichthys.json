@@ -1,0 +1,47 @@
+{
+	"name": "Muhichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/muhichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_bookmuhichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_muhichthys",
+			"title": "Muhichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Teleostei$(br)>Ctenosquamata$(br)>Acanthomorpha"
+		},
+        	{
+            "type": "entity",
+            "name": "M. cordobai",
+            "entity": "lepidodendron:prehistoric_flora_muhichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_muhichthys",
+			"type": "text",
+			"text": "Muhichthys was a ray finned fish discovered in the Muhi Quarry of Mexico, dating back to the Late Cretaceous. It is named after the quarry it was found in alongside the Greek word for 'fish'. The holotype was about 8 centimeters long, making them rather small. The holotype of the species is a complete specimen giving us a good look at its skeleton."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_muhichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_muhichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_muhichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_muhichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_muhichthys"
+		}
+	]
+}

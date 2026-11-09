@@ -293,11 +293,12 @@ public class ModelRubricacaecilia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -5.0F;
+        this.body.offsetY = -2.0F;
         this.body.offsetX = 1.0F;
-        this.body.rotateAngleY = (float)Math.toRadians(210);
-        this.body.rotateAngleX = (float)Math.toRadians(28);
-        this.body.rotateAngleZ = (float)Math.toRadians(-8);
+        this.body.offsetZ = 6.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(230);
+        this.body.rotateAngleX = (float)Math.toRadians(10);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
         this.body.scaleChildren = true;
         float scaler = 3.5F;
         this.body.setScale(scaler, scaler, scaler);

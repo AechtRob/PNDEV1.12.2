@@ -446,13 +446,13 @@ public class ModelAustralovenator extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Australovenator.offsetY = 0.60F;
-        this.Australovenator.offsetX = 0.0F;
-        this.Australovenator.rotateAngleY = (float)Math.toRadians(220);
-        this.Australovenator.rotateAngleX = (float)Math.toRadians(12);
-        this.Australovenator.rotateAngleZ = (float)Math.toRadians(-2);
+        this.Australovenator.offsetY = 0.00F;
+        this.Australovenator.offsetX = 0.2F;
+        this.Australovenator.rotateAngleY = (float)Math.toRadians(230);
+        this.Australovenator.rotateAngleX = (float)Math.toRadians(0);
+        this.Australovenator.rotateAngleZ = (float)Math.toRadians(-0);
         this.Australovenator.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.9F;
         this.Australovenator.setScale(scaler, scaler, scaler);
         //Start of pose:
        

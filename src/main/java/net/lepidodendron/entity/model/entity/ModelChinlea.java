@@ -338,11 +338,11 @@ public class ModelChinlea extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -1.8F;
-        this.body.offsetX = -0.2F;
+        this.body.offsetY = -1.2F;
+        this.body.offsetX = 0.5F;
         this.body.offsetZ = 2.0F;
-        this.body.rotateAngleY = (float)Math.toRadians(120);
-        this.body.rotateAngleX = (float)Math.toRadians(1);
+        this.body.rotateAngleY = (float)Math.toRadians(230);
+        this.body.rotateAngleX = (float)Math.toRadians(10);
         this.body.rotateAngleZ = (float)Math.toRadians(0);
         this.body.scaleChildren = true;
         float scaler = 1.4F;

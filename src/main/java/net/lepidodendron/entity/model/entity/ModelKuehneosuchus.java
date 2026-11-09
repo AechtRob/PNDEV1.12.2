@@ -454,12 +454,12 @@ public class ModelKuehneosuchus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -2.30F;
-        this.root.offsetX = -0.05F;
-        this.root.rotateAngleY = (float)Math.toRadians(210);
+        this.root.offsetX = 0.2F;
+        this.root.rotateAngleY = (float)Math.toRadians(230);
         this.root.rotateAngleX = (float)Math.toRadians(8);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 2.9F;
+        float scaler = 2.8F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
 

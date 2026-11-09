@@ -305,7 +305,7 @@ public class ModelCyclurus extends ModelBasePalaeopedia {
         this.body.rotateAngleX = (float)Math.toRadians(8);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);
         this.body.scaleChildren = true;
-        float scaler = 3.2F;
+        float scaler = 2F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
 

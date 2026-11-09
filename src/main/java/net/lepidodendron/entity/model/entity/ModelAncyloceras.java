@@ -347,8 +347,8 @@ public class ModelAncyloceras extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.8F;
-        this.root.offsetX = -0.4F;
+        this.root.offsetY = -1.4F;
+        this.root.offsetX = 1.2F;
         this.root.rotateAngleY = (float)Math.toRadians(310);
         this.root.rotateAngleX = (float)Math.toRadians(-18);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);

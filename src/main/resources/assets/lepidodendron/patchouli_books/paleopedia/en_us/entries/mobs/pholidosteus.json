@@ -1,0 +1,47 @@
+{
+	"name": "Pholidosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pholidosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_pholidosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pholidosteus",
+			"title": "Pholidosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci"
+		},
+        	{
+            "type": "entity",
+            "name": "P. friedeli",
+            "entity": "lepidodendron:prehistoric_flora_pholidosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pholidosteus",
+			"type": "text",
+			"text": "Pholidosteus is a genus of arthrodire known from Frasnian aged rock near the town of Bad Wildungen, Germany. it is known from head and thoracic armor that have a combined length of 14 centimeters. It had large eyes, and its blade-like jaw could deliver a powerful bite. It is the namesake for the historically relevant, however now unaccepted, Pholidosteidae."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pholidosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pholidosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pholidosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pholidosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pholidosteus"
+		}
+	]
+}

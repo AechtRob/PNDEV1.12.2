@@ -1,0 +1,47 @@
+{
+	"name": "Szelepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/szelepis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_szelepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_szelepis",
+			"title": "Szelepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira"
+		},
+        	{
+            "type": "entity",
+            "name": "S. yunnanensis",
+            "entity": "lepidodendron:prehistoric_flora_szelepis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_szelepis",
+			"type": "text",
+			"text": "Szelepis is a placoderm that was discovered in Xujiachong Formation of People's Republic of China, dating back to the Devonian. Its name is a misspelling of 'Szuaspis' made by Liu in 1982. Its only known from some of the skull alongside its head armor."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_szelepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_szelepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_szelepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_szelepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_szelepis"
+		}
+	]
+}

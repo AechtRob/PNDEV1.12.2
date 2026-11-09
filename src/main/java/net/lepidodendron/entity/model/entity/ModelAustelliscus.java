@@ -389,11 +389,11 @@ public class ModelAustelliscus extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.5F;
         this.main.offsetX = 0.1F;
-        this.main.rotateAngleY = (float)Math.toRadians(235);
+        this.main.rotateAngleY = (float)Math.toRadians(250);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 0.65F;
+        float scaler = 1.F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(main, 0.6F, 3.8F, -0.2F);
