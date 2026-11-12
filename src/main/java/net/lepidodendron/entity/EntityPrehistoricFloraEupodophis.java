@@ -134,7 +134,7 @@ public class EntityPrehistoricFloraEupodophis extends EntityPrehistoricFloraSwim
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAI(this, 1.0D));
+		tasks.addTask(0, new EntityMateAILiveBirth(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 1F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AmphibianWanderNotBound(this, NO_ANIMATION, 1, 20));

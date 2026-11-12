@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import java.util.List;
 import java.util.Random;
 
-public class EntityMateAI extends EntityAIBase
+public class EntityMateAILiveBirth extends EntityAIBase
 {
     private final EntityPrehistoricFloraAgeableBase animal;
     private final Class <? extends EntityPrehistoricFloraAgeableBase > mateClass;
@@ -18,12 +18,12 @@ public class EntityMateAI extends EntityAIBase
     int spawnBabyDelay;
     double moveSpeed;
 
-    public EntityMateAI(EntityPrehistoricFloraAgeableBase animal, double speedIn)
+    public EntityMateAILiveBirth(EntityPrehistoricFloraAgeableBase animal, double speedIn)
     {
         this(animal, speedIn, animal.getClass());
     }
 
-    public EntityMateAI(EntityPrehistoricFloraAgeableBase animal, double p_i47306_2_, Class <? extends EntityPrehistoricFloraAgeableBase > p_i47306_4_)
+    public EntityMateAILiveBirth(EntityPrehistoricFloraAgeableBase animal, double p_i47306_2_, Class <? extends EntityPrehistoricFloraAgeableBase > p_i47306_4_)
     {
         this.animal = animal;
         this.world = animal.world;

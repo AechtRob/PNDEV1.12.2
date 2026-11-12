@@ -234,7 +234,7 @@ public class EntityPrehistoricFloraPseudopetalichthys extends EntityPrehistoricF
 
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAI(this, 1.0D));
+		tasks.addTask(0, new EntityMateAILiveBirth(this, 1.0D));
 		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(2, new SwimmingBottomWalkingSwimBottomDweller(this, NO_ANIMATION));
 		tasks.addTask(3, new SwimmingBottomWalkingWalk(this, NO_ANIMATION));
