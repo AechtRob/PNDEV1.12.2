@@ -321,6 +321,7 @@ public class ModelWaeringoscorpio extends ModelBasePalaeopedia {
         this.setRotateAngle(tail6, 0.5672F, 0.0F, 0.0F);
         this.tail6.cubeList.add(new ModelBox(tail6, 18, 15, -0.5F, -0.5F, -0.4F, 1, 1, 1, -0.01F, false));
         this.tail6.cubeList.add(new ModelBox(tail6, 6, 13, 0.0F, -0.25F, 0.1F, 0, 1, 1, 0.0F, false));
+        updateDefaultPose();
     }
 
     @Override
