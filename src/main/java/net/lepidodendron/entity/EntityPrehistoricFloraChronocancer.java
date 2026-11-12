@@ -7,9 +7,13 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
+import net.lepidodendron.entity.render.entity.RenderAragochersis;
+import net.lepidodendron.entity.render.entity.RenderChronocancer;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
@@ -181,7 +185,7 @@ public class EntityPrehistoricFloraChronocancer extends EntityPrehistoricFloraTr
 		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.06;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
@@ -196,6 +200,15 @@ public class EntityPrehistoricFloraChronocancer extends EntityPrehistoricFloraTr
 		return -0F;
 	}
 
+	public static ResourceLocation textureDisplay(@Nullable String variant) { return RenderChronocancer.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelChronocancer;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderChronocancer.getScaler();
+	}
 
 	@Nullable
 	@Override

@@ -7,10 +7,13 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
 import net.lepidodendron.entity.util.IBrood;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityAILeapAtTarget;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
@@ -40,7 +43,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraWaeringoscorpio extends EntityPrehistoricFloraWalkingAmphibianBase implements ITrappableWater, IBrood {
+public class EntityPrehistoricFloraWaeringoscorpio extends EntityPrehistoricFloraWalkingAmphibianBase implements ITrappableWater, IBrood, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -313,4 +316,9 @@ public class EntityPrehistoricFloraWaeringoscorpio extends EntityPrehistoricFlor
 
 	}
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_WAERINGOSCORPIO;
+	}
 }

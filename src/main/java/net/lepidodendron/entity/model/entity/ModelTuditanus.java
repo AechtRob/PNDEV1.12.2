@@ -252,6 +252,38 @@ public class ModelTuditanus extends ModelBasePalaeopedia {
     }
 
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(backleftleg, 0.3234F, 0.3714F, 0.2898F);
+        this.setRotateAngle(backleftleg2, 0.376F, -0.1915F, -0.7308F);
+        this.setRotateAngle(backleftleg3, -0.3694F, 0.0291F, 0.5695F);
+        this.setRotateAngle(backrightleg, 0.2201F, -0.1665F, -0.2798F);
+        this.setRotateAngle(backrightleg2, 0.4069F, 0.223F, 0.708F);
+        this.setRotateAngle(backrightleg3, -0.3355F, 0.0088F, -0.4718F);
+        this.setRotateAngle(body, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, -0.0349F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.3927F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.3578F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.0F, 0.3927F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(frontleftleg, 0.2587F, -0.0405F, 0.37F);
+        this.setRotateAngle(frontleftleg2, -0.1062F, -0.2046F, -0.7182F);
+        this.setRotateAngle(frontleftleg3, 0.0572F, 0.0853F, 0.3909F);
+        this.setRotateAngle(frontrightleg, -0.0237F, 0.1905F, -0.4473F);
+        this.setRotateAngle(frontrightleg2, -0.0546F, 0.2504F, 0.9464F);
+        this.setRotateAngle(frontrightleg3, 0.2276F, -0.1745F, -0.5492F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.1571F);
+        this.setRotateAngle(jaw, 0.3316F, 0.0F, 0.0F);
+        this.setRotateAngle(main, -0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.0698F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.4451F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.4102F, 0.0F, 0.0F);
+        this.main.offsetY = 0.23F;
+        this.main.render (0.01F);
         this.resetToDefaultPose();
     }
 

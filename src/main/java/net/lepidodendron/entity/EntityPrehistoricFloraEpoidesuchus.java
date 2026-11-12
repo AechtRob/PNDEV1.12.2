@@ -11,10 +11,14 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.render.entity.RenderAntarctopelta;
+import net.lepidodendron.entity.render.entity.RenderEpoidesuchus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -375,12 +379,21 @@ public class EntityPrehistoricFloraEpoidesuchus extends EntityPrehistoricFloraSw
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {return -0.5;}
 	public static double upperbacklineoffset(@Nullable String variant) {return 0.0;}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {return 0.5;}
-	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0.5;}
-	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.5;}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0.0F;}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.0F;}
 	public static double lowerfrontlineoffset(@Nullable String variant) {return 0.0;}
-	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return 0.5;}
-	public static double lowerbacklineoffset(@Nullable String variant) {return -0.04;}
-	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return -0.3;}
-
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return 0.0F;}
+	public static double lowerbacklineoffset(@Nullable String variant) {return -0.00F;}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return -0.0F;}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) { return RenderEpoidesuchus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelEpoidesuchus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderEpoidesuchus.getScaler();
+	}
 
 }

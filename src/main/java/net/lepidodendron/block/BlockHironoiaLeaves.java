@@ -4,7 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.base.BlockLeavesPF;
+import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
@@ -57,7 +57,7 @@ public class BlockHironoiaLeaves extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("treeLeaves", BlockHironoiaLeaves.block);
 	}
 
-	public static class BlockCustom extends BlockLeavesPF {
+	public static class BlockCustom extends SeedSporeLeavesBase {
 		public BlockCustom() {
 			setTranslationKey("pf_hironoia_leaves");
 		}
@@ -82,6 +82,16 @@ public class BlockHironoiaLeaves extends ElementsLepidodendronMod.ModElement {
 			else {
 				return Item.getItemFromBlock(BlockHironoiaSapling.block);
 			}
+		}
+
+		@Override
+		public Block planted() {
+			return BlockHironoiaSapling.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
 		}
 
 	}

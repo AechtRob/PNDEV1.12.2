@@ -9,12 +9,16 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderArganaceras;
+import net.lepidodendron.entity.render.entity.RenderAsilisaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
@@ -431,16 +435,16 @@ public class EntityPrehistoricFloraAsilisaurus extends EntityPrehistoricFloraLan
 		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.5;
+		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.5;
+		return 0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.1;
+		return 0;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0.225;
@@ -453,5 +457,15 @@ public class EntityPrehistoricFloraAsilisaurus extends EntityPrehistoricFloraLan
 	@Override
 	public CustomTrigger getModTrigger() {
 		return ModTriggers.CLICK_ASILISAURUS;
+	}
+
+	public static ResourceLocation textureDisplay(@Nullable String variant) { return RenderAsilisaurus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelAsilisaurus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderAsilisaurus.getScaler();
 	}
 }

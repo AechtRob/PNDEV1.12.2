@@ -10,11 +10,15 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderAntarctopelta;
+import net.lepidodendron.entity.render.entity.RenderLajasvenator;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -388,6 +392,15 @@ public class EntityPrehistoricFloraLajasvenator extends EntityPrehistoricFloraLa
     public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
         return 0.7;
     }
-
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) { return RenderLajasvenator.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelLajasvenator;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderLajasvenator.getScaler();
+	}
 
 }

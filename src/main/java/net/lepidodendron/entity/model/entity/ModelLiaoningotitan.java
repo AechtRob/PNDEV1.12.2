@@ -431,16 +431,70 @@ public class ModelLiaoningotitan extends ModelBasePalaeopedia {
         this.hips.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.neck1.rotateAngleX = (float) Math.toRadians(90);
+        this.neck1.rotateAngleX = (float) Math.toRadians(315);
 
         this.neck1.offsetY = -0F;
         this.neck1.offsetX = -0F;
-        this.neck1.offsetZ = 0.04F;
+        this.neck1.offsetZ = 0.08F;
         this.neck1.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(body, -0.0698F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, -0.1833F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.0F, -0.3491F, 0.3491F);
+        this.setRotateAngle(cube_r11, -1.7104F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -1.3614F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.2705F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, -0.7941F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -1.1432F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, -0.5934F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r17, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r18, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r19, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(cube_r20, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r21, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r22, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r23, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r24, 1.1868F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r25, 0.7069F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, 0.3927F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 1.1345F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.0F, 0.3491F, -0.3491F);
+        this.setRotateAngle(head, 0.4243F, -0.1359F, -0.079F);
+        this.setRotateAngle(hips, -0.2443F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, -0.0524F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm1, 0.0561F, 0.0657F, -0.2166F);
+        this.setRotateAngle(leftArm2, -0.5093F, -0.1068F, 0.0595F);
+        this.setRotateAngle(leftFoot, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(leftHand, 0.7592F, 0.0F, -0.0873F);
+        this.setRotateAngle(leftLeg1, 0.0785F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg2, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(neck1, -0.9189F, -0.1049F, -0.1172F);
+        this.setRotateAngle(neck2, -0.0087F, -0.0009F, -0.1047F);
+        this.setRotateAngle(neck3, -0.017F, -0.0091F, -0.1043F);
+        this.setRotateAngle(neck4, 0.1478F, 0.0085F, -0.1394F);
+        this.setRotateAngle(neck5, 0.1656F, 0.0086F, -0.0516F);
+        this.setRotateAngle(neck6, 0.5677F, -0.0803F, -0.1339F);
+        this.setRotateAngle(rightArm1, 0.5087F, -0.1168F, 0.167F);
+        this.setRotateAngle(rightArm2, -0.6372F, 0.155F, -0.1138F);
+        this.setRotateAngle(rightFoot, -0.1658F, 0.0F, 0.0F);
+        this.setRotateAngle(rightHand, 0.6196F, 0.0F, 0.0873F);
+        this.setRotateAngle(rightLeg1, 0.1658F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg2, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.5078F, 0.0763F, -0.0424F);
+        this.setRotateAngle(tail2, -0.2198F, -0.1193F, 0.0266F);
+        this.setRotateAngle(tail3, 0.0705F, -0.1393F, -0.0098F);
+        this.setRotateAngle(tail4, 0.4743F, -0.1088F, -0.0557F);
+        this.setRotateAngle(tail5, 0.4951F, -0.1539F, -0.0826F);
+        this.setRotateAngle(tail6, 0.062F, -0.1742F, -0.0108F);
+        this.setRotateAngle(throat, -0.0873F, 0.0F, 0.0F);
         this.hips.offsetY = -0.155F;
         this.hips.render(0.01F);
         resetToDefaultPose();
