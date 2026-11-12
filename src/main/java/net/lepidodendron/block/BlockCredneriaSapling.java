@@ -205,7 +205,7 @@ public class BlockCredneriaSapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering tree");
-				tooltip.add("Periods: Late Creatceous");
+				tooltip.add("Periods: Late Cretaceous");
 				tooltip.add("Propagation: Fruit/Cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

@@ -1,5 +1,5 @@
 {
-  "parent": "lepidodendron:block/hironoia_leaves",
+  "parent": "lepidodendron:block/hironoia_leaves_flowers",
   "display": {
     "thirdperson": {
       "rotation": [

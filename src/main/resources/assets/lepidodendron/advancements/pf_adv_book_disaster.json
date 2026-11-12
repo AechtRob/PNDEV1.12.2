@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "lepidodendron:disaster_raw"
+            "item": "lepidodendron:disaster_item"
         },
         "title": {
             "translate": "advancements.pf_adv_book_disaster.title"

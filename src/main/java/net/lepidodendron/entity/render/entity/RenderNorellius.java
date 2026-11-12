@@ -16,7 +16,7 @@ public class RenderNorellius extends RenderLivingBaseWithBook<EntityPrehistoricF
     }
 
     public RenderNorellius(RenderManager mgr) {
-        super(mgr, new ModelNorellius(), 0.5f);
+        super(mgr, new ModelNorellius(), 0.0f);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class RenderNorellius extends RenderLivingBaseWithBook<EntityPrehistoricF
     protected void preRenderCallback(EntityPrehistoricFloraNorellius entity, float f) {
         float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.15F;
+        this.shadowSize = 0.0F;
     }
 
 }
