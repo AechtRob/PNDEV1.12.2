@@ -8,11 +8,15 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderAntarctopelta;
+import net.lepidodendron.entity.render.entity.RenderArganaceras;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -281,27 +285,36 @@ public class EntityPrehistoricFloraArganaceras extends EntityPrehistoricFloraLan
 		return -0.15F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.9;
+		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.9;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.45F;
+		return 0.0F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.49F;
+		return -0.0F;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
 		return ModTriggers.CLICK_ARGANACERAS;
+	}
+	public static ResourceLocation textureDisplay(@Nullable String variant) { return RenderArganaceras.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelArganaceras;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderArganaceras.getScaler();
 	}
 }
