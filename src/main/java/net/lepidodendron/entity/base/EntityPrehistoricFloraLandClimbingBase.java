@@ -62,6 +62,11 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
     }
 
     private boolean moveOutOfWallIfClear(EnumFacing direction) {
+
+        if (this.isJumping) {
+            return false;
+        }
+
         AxisAlignedBB currentBox = this.getEntityBoundingBox();
         java.util.List<AxisAlignedBB> collisions = this.world.getCollisionBoxes(this, currentBox);
         if (collisions.isEmpty()) {
