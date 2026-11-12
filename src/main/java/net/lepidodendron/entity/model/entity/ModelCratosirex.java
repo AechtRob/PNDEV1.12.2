@@ -295,11 +295,11 @@ public class ModelCratosirex extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.main.offsetY = -2.30F;
         this.main.offsetX = -0.05F;
-        this.main.rotateAngleY = (float)Math.toRadians(210);
-        this.main.rotateAngleX = (float)Math.toRadians(8);
+        this.main.rotateAngleY = (float)Math.toRadians(220);
+        this.main.rotateAngleX = (float)Math.toRadians(17);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 2.9F;
+        float scaler = 3.9F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

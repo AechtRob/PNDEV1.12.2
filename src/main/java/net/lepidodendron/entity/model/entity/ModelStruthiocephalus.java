@@ -487,8 +487,8 @@ public class ModelStruthiocephalus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = 0.3F;
-        this.main.offsetX = -0.3F;
-        this.main.rotateAngleY = (float)Math.toRadians(130);
+        this.main.offsetX = -0.1F;
+        this.main.rotateAngleY = (float)Math.toRadians(230);
         this.main.rotateAngleX = (float)Math.toRadians(2);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;

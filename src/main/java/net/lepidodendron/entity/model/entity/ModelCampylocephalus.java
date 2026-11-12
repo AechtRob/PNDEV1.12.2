@@ -183,7 +183,7 @@ public class ModelCampylocephalus extends ModelBasePalaeopedia {
         this.carapace.rotateAngleX = (float)Math.toRadians(1);
         this.carapace.rotateAngleZ = (float)Math.toRadians(0);
         this.carapace.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 1.F;
         this.carapace.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(carapace, 0.6F, 3.8F, -0.2F);

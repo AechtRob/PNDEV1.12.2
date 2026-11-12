@@ -1,0 +1,52 @@
+{
+	"name": "Daurlong",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/daurlong_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_daurlong",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_daurlong",
+			"title": "Daurlong",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Saurischia$(br)>Theropoda$(br)>Dromaeosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. wangi",
+            "entity": "lepidodendron:prehistoric_flora_daurlong",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_daurlong",
+			"type": "text",
+			"text": "Daurlong was a dromaeosaurid theropod which lived in the Early Cretaceous of East Asia, first discovered in the Longjiang Formation of northern China. Its name means “Daur dragon” in reference to the Daur people of Inner Mongolia, and it is known from a nearly complete compressed specimen preserved alongside a frog. While it doesn’t preserve long wing or tail feathers, only shorter body feathers, the skeleton itself is well articulated and even parts of the"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_daurlong",
+			"type": "text",
+			"text": "intestines may have been preserved."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_daurlong"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_daurlong"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_daurlong"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_daurlong"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_daurlong"
+		}
+	]
+}

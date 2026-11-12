@@ -1,0 +1,52 @@
+{
+	"name": "Megalithomerus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/megalithomerus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_megalithomerus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_megalithomerus",
+			"title": "Megalithomerus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Arthropoda$(br)>Insecta$(br)>Coleoptera$(br)>Elateroidea$(br)>Elateridae$(br)>Protagrypninae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. magohalmii",
+            "entity": "lepidodendron:prehistoric_flora_megalithomerus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megalithomerus",
+			"type": "text",
+			"text": "Megalithomerus magohalmii was a species of giant click beetles from the Early Cretaceous of Korea. It is only found in deposits belonging to the Jinju Formation, one of the best Mesozoic fossil deposits in the peninsula. In the Cretaceous, the region had a warm and arid climate despite its relatively high latitude. Large lakes provided the local fauna in water, and formed the depositional basis of the fossil beds."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megalithomerus",
+			"type": "text",
+			"text": "Megalithomerus belonged to an extinct subfamily of click beetles, the Protagrypninae. It is by far the largest click beetle known in Mesozoic fossil archives, reaching almost five centimeters in length. Due to its large size, its discoverers named it after Mago Halmi, the giant creator goddess of Korean shamanism, still present in modern folklore in rural parts of South Korea where outcrops of the Jinju Formation can be found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_megalithomerus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_megalithomerus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_megalithomerus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_megalithomerus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_megalithomerus"
+		}
+	]
+}

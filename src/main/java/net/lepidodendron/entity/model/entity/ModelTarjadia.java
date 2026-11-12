@@ -388,9 +388,9 @@ public class ModelTarjadia extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = 0.2F;
-        this.main.offsetX = 0.35F;
+        this.main.offsetX = -0.F;
         this.main.offsetZ = 2.0F;
-        this.main.rotateAngleY = (float)Math.toRadians(120);
+        this.main.rotateAngleY = (float)Math.toRadians(220);
         this.main.rotateAngleX = (float)Math.toRadians(1);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
@@ -408,11 +408,61 @@ public class ModelTarjadia extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
+        this.neck.offsetY = -0.03F;
+        this.neck.offsetZ = -0.03F;
+        this.neck.render(0.01F);
         resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
-        this.main.offsetY = -0.105F;
+        this.setRotateAngle(backLeftLeg, 0.2269F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg2, 0.9687F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg3, 0.0087F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg, -0.3403F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg2, 0.7156F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg3, -0.3752F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0236F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0218F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.0297F, -0.3651F, 0.2441F);
+        this.setRotateAngle(cube_r13, 0.0297F, 0.3651F, -0.2441F);
+        this.setRotateAngle(cube_r14, 0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -0.1571F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, 0.1484F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r17, 0.1914F, -0.2181F, 0.0058F);
+        this.setRotateAngle(cube_r18, 0.3392F, -0.1774F, -0.2128F);
+        this.setRotateAngle(cube_r19, 0.1914F, 0.2181F, -0.0058F);
+        this.setRotateAngle(cube_r2, 0.0131F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r20, 0.3392F, 0.1774F, 0.2128F);
+        this.setRotateAngle(cube_r21, -0.1134F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r22, -0.1114F, -0.1731F, 0.0132F);
+        this.setRotateAngle(cube_r23, -0.0775F, -0.3608F, 0.0688F);
+        this.setRotateAngle(cube_r24, -0.1114F, 0.1731F, -0.0132F);
+        this.setRotateAngle(cube_r25, -0.0775F, 0.3608F, -0.0688F);
+        this.setRotateAngle(cube_r3, 0.0524F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(frontLeftLeg, 0.1928F, -0.1541F, -0.0402F);
+        this.setRotateAngle(frontLeftLeg2, -0.9076F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg3, 0.6492F, -0.037F, 0.0486F);
+        this.setRotateAngle(frontRightLeg, 0.7022F, -0.1004F, 0.1791F);
+        this.setRotateAngle(frontRightLeg2, -1.3483F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg3, 0.6904F, 0.0385F, -0.1747F);
+        this.setRotateAngle(head, 0.1755F, -0.1031F, -0.0182F);
+        this.setRotateAngle(jaw, 0.0916F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.1241F, -0.3374F, -0.0327F);
+        this.setRotateAngle(tail, -0.158F, 0.1077F, -0.0171F);
+        this.setRotateAngle(tail2, -0.2633F, 0.1054F, -0.0283F);
+        this.setRotateAngle(tail3, 0.0F, 0.1789F, 0.0F);
+        this.setRotateAngle(tail4, 0.0439F, -0.109F, -0.0048F);
+        this.setRotateAngle(tail5, 0.1163F, -0.152F, 0.0911F);
+        this.main.offsetY = -0.14F;
         this.main.render(0.01F);
         resetToDefaultPose();
     }

@@ -1,0 +1,47 @@
+{
+	"name": "Rhachiosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rhachiosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_rhachiosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rhachiosteus",
+			"title": "Rhachiosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Pachyosteomorphi$(br)>$(o)Rhachiosteidae (?)"
+		},
+        	{
+            "type": "entity",
+            "name": "R. pterygiatus",
+            "entity": "lepidodendron:prehistoric_flora_rhachiosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhachiosteus",
+			"type": "text",
+			"text": "Rhachiosteus pterygiatus is a species of arthrodire known from the Frasnian aged Oberer Plattenkalk Formation in Germany. It is known from a single remarkably complete specimen, with vertebrae preserved. Rhachiosteus possesses a combination of unique features that has led to the description of the monogeneric family Rhachiosteidae, however this has not been used in decades."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rhachiosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rhachiosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rhachiosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rhachiosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rhachiosteus"
+		}
+	]
+}

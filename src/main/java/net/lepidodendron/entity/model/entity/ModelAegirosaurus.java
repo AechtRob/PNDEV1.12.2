@@ -288,7 +288,7 @@ public class ModelAegirosaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.25F;
-        this.main.offsetX = 0.1F;
+        this.main.offsetX = 0.2F;
         this.main.offsetZ = 2.0F;
         this.main.scaleChildren = true;
         this.main.rotateAngleY = (float)Math.toRadians(268);

@@ -333,7 +333,7 @@ public class ModelHolonema extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.8F;
+        this.main.offsetY = -0.3F;
         this.main.offsetX = 0.258F;
         this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(235);

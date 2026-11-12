@@ -175,11 +175,11 @@ public class ModelTethybatis extends ModelBasePalaeopedia {
         this.body.offsetY = -0.35F;
         this.body.offsetX = 0.5F;
         this.body.offsetZ = 2.0F;
-        this.body.rotateAngleY = (float)Math.toRadians(120);
-        this.body.rotateAngleX = (float)Math.toRadians(0);
+        this.body.rotateAngleY = (float)Math.toRadians(220);
+        this.body.rotateAngleX = (float)Math.toRadians(20);
         this.body.rotateAngleZ = (float)Math.toRadians(0);
         this.body.scaleChildren = true;
-        float scaler = 1.0F;
+        float scaler = 1.3F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
 

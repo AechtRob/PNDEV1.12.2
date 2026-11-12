@@ -1151,7 +1151,7 @@ public class RenderDisplays {
     public static final ModelSecodontosaurus modelSecodontosaurus = new ModelSecodontosaurus();
     public static final ModelKuehneosuchus modelKuehneosuchus = new ModelKuehneosuchus();
     public static final ModelKuehneosaurus modelKuehneosaurus = new ModelKuehneosaurus();
-    public static final ModelSharovipteryx Sharovipteryx = new ModelSharovipteryx();
+    public static final ModelSharovipteryx modelSharovipteryx = new ModelSharovipteryx();
     public static final ModelXianglong modelXianglong = new ModelXianglong();
     public static final ModelSquatina modelSquatina = new ModelSquatina();
     public static final ModelAxelrodichthys modelAxelrodichthys = new ModelAxelrodichthys();
@@ -1178,6 +1178,8 @@ public class RenderDisplays {
     public static final ModelShenzhousaurus modelShenzhousaurus = new ModelShenzhousaurus();
     public static final ModelEromangateuthis modelEromangateuthis = new ModelEromangateuthis();
     public static final ModelTeinolophos modelTeinolophos = new ModelTeinolophos();
+    public static final ModelTarjadia modelTarjadia = new ModelTarjadia();
+    public static final ModelParringtonia modelParringtonia = new ModelParringtonia();
     public static final ModelTupandactylus_imperator modelTupandactylus_imperator = new ModelTupandactylus_imperator();
     public static final ModelTupandactylus_navigans modelTupandactylus_navigans = new ModelTupandactylus_navigans();
     public static final ModelMarshosaurus modelMarshosaurus = new ModelMarshosaurus();

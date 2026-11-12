@@ -660,13 +660,13 @@ public class ModelGaiasia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = -1.2F;
+        this.hips.offsetY = -0.3F;
         this.hips.offsetX = -0.1F;
         this.hips.rotateAngleY = (float)Math.toRadians(200);
         this.hips.rotateAngleX = (float)Math.toRadians(8);
         this.hips.rotateAngleZ = (float)Math.toRadians(-8);
         this.hips.scaleChildren = true;
-        float scaler = 1.4F;
+        float scaler = 0.6F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
 

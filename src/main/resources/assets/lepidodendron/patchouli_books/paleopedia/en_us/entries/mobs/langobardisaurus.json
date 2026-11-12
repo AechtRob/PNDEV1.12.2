@@ -1,0 +1,52 @@
+{
+	"name": "Langobardisaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/langobardisaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_langobardisaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_langobardisaurus",
+			"title": "Langobardisaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chordata$(br)>Reptilia$(br)>Archosauromorpha$(br)>Tanystropheidae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. pandolfii",
+            "entity": "lepidodendron:prehistoric_flora_langobardisaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_langobardisaurus",
+			"type": "text",
+			"text": "Langobardisaurus pandolfii was a small archosauriform closely related to the famous and much larger Tanystropheus. It is found only in a few geologic formations in the Italian and Austrian Alps, most notably in the Zorzino Limestone and the Forni Dolostone. Contrarily to its marine relative, it was mostly terrestrial, living on forested shorelines, alongside the strange drepanosaurs Drepanosaurus and Megalancosaurus, and the earliest pterosaur, Eudimorphodon."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_langobardisaurus",
+			"type": "text",
+			"text": "Langobardisaurus was a small reptile, superficially similar to a tiny Tanystropheus with a much shorter neck. Unlike more specialized marine tanysaurs, the anatomy of Langobardisaurus indicates that it was very terrestrial, using its long neck to probe the burrows of shoreline invertebrates in tidal flats. Moreover, it also seems it was specialized to run bipedally in short bursts of speed on its hindlimbs, not unlike modern frilled lizards."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_langobardisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_langobardisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_langobardisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_langobardisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_langobardisaurus"
+		}
+	]
+}

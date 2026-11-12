@@ -300,7 +300,7 @@ public class ModelGigamachilis extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -2.30F;
+        this.root.offsetY = -2.20F;
         this.root.offsetX = -0.05F;
         this.root.rotateAngleY = (float)Math.toRadians(210);
         this.root.rotateAngleX = (float)Math.toRadians(40);

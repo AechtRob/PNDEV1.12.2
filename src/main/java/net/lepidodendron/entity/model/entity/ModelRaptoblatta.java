@@ -347,14 +347,14 @@ public class ModelRaptoblatta extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.thorax.offsetY = 0.0F;
+        this.thorax.offsetY = -1.4F;
         this.thorax.offsetX = 0.0F;
         this.thorax.offsetZ = 2.0F;
         this.thorax.rotateAngleY = (float)Math.toRadians(120);
         this.thorax.rotateAngleX = (float)Math.toRadians(0);
         this.thorax.rotateAngleZ = (float)Math.toRadians(0);
         this.thorax.scaleChildren = true;
-        float scaler = 3.0F;
+        float scaler = 5.0F;
         this.thorax.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(thorax, 0.6F, 3.8F, -0.2F);

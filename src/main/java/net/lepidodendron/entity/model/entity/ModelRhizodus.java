@@ -619,10 +619,10 @@ public class ModelRhizodus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -0.05F;
-        this.body.offsetX = 0.2F;
+        this.body.offsetX = 0.4F;
         this.body.offsetZ = 3.0F;
-        this.body.rotateAngleY = (float)Math.toRadians(120);
-        this.body.rotateAngleX = (float)Math.toRadians(0);
+        this.body.rotateAngleY = (float)Math.toRadians(210);
+        this.body.rotateAngleX = (float)Math.toRadians(20);
         this.body.rotateAngleZ = (float)Math.toRadians(0);
         this.body.scaleChildren = true;
         float scaler = 0.4F;

@@ -87,11 +87,11 @@ public class ModelMacromyzon extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.sucker.offsetY = -1.6F;
-        this.sucker.offsetX = 0.2F;
+        this.sucker.offsetY = -0.9F;
+        this.sucker.offsetX = -0.6F;
         this.sucker.offsetZ = 2.0F;
-        this.sucker.rotateAngleY = (float)Math.toRadians(120);
-        this.sucker.rotateAngleX = (float)Math.toRadians(0);
+        this.sucker.rotateAngleY = (float)Math.toRadians(230);
+        this.sucker.rotateAngleX = (float)Math.toRadians(20);
         this.sucker.rotateAngleZ = (float)Math.toRadians(0);
         this.sucker.scaleChildren = true;
         float scaler = 4.0F;

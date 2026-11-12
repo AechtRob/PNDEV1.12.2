@@ -181,11 +181,11 @@ public class ModelIansan extends ModelBasePalaeopedia {
         this.main.offsetY = -0.35F;
         this.main.offsetX = 0.5F;
         this.main.offsetZ = 2.0F;
-        this.main.rotateAngleY = (float)Math.toRadians(120);
-        this.main.rotateAngleX = (float)Math.toRadians(0);
+        this.main.rotateAngleY = (float)Math.toRadians(220);
+        this.main.rotateAngleX = (float)Math.toRadians(20);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 1.0F;
+        float scaler = 2.0F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

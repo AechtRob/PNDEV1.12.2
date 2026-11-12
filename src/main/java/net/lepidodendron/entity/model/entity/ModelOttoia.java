@@ -147,8 +147,8 @@ public class ModelOttoia extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.tail.offsetY = -6.2F;
-        this.tail.offsetX = -2.4F;
+        this.tail.offsetY = -2.2F;
+        this.tail.offsetX = -1.4F;
         this.tail.offsetZ = 2.0F;
         this.tail.rotateAngleY = (float)Math.toRadians(120);
         this.tail.rotateAngleX = (float)Math.toRadians(1);
@@ -157,7 +157,7 @@ public class ModelOttoia extends ModelBasePalaeopedia {
         float scaler = 4.2F;
         this.tail.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(tail, 3.2F, 3.8F, -0.2F);
+        this.setRotateAngle(tail, 3.2F, 6.8F, -0.2F);
         this.setRotateAngle(body1, -0.1F, 0.0F, 0.0F);
         this.setRotateAngle(body2, -0.1F, 0.0F, 0.0F);
         this.setRotateAngle(body3, -0.1F, 0.0F, 0.0F);

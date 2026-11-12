@@ -395,7 +395,7 @@ public class ModelLocustopsis extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.main.offsetY = -2.30F;
         this.main.offsetX = -0.05F;
-        this.main.rotateAngleY = (float)Math.toRadians(210);
+        this.main.rotateAngleY = (float)Math.toRadians(240);
         this.main.rotateAngleX = (float)Math.toRadians(40);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;

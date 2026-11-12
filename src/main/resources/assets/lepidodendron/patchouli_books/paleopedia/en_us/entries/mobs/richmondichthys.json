@@ -1,0 +1,47 @@
+{
+	"name": "Richmondichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/richmondichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_richmondichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_richmondichthys",
+			"title": "Richmondichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Aspidorhynchiformes$(br)>Aspidorhynchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "R. sweeti",
+            "entity": "lepidodendron:prehistoric_flora_richmondichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_richmondichthys",
+			"type": "text",
+			"text": "Richmondichthys is a ray-finned fish discovered in Allaru and Toolebuc Formations of Australia, dating back to the Early Cretaceous. It is named after the city of Richmond and the Greek word for fish. It is the largest known member of its family, growing over two meters long. A complete specimen named 'Jeppy' is currently located at Kronosaurus Korner museum located in Richmond."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_richmondichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_richmondichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_richmondichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_richmondichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_richmondichthys"
+		}
+	]
+}

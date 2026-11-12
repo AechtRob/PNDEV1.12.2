@@ -373,11 +373,11 @@ public class ModelAxelrodichthys extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.base.offsetY = -0.40F;
         this.base.offsetX = 0.175F;
-        this.base.rotateAngleY = (float)Math.toRadians(220);
-        this.base.rotateAngleX = (float)Math.toRadians(8);
+        this.base.rotateAngleY = (float)Math.toRadians(230);
+        this.base.rotateAngleX = (float)Math.toRadians(20);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
         this.base.scaleChildren = true;
-        float scaler = 0.51F;
+        float scaler = 0.8F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
 

@@ -1713,7 +1713,7 @@ public class ModelSpicomellus extends ModelBasePalaeopedia {
         this.main.rotateAngleX = (float)Math.toRadians(0);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 0.45F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

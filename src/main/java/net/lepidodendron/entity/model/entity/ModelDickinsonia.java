@@ -46,7 +46,7 @@ public class ModelDickinsonia extends ModelBasePalaeopedia {
         this.Body.rotateAngleX = (float)Math.toRadians(25);
         this.Body.rotateAngleZ = (float)Math.toRadians(-8);
         this.Body.scaleChildren = true;
-        float scaler = 1.33F;
+        float scaler = 1.2F;
         this.Body.setScale(scaler, scaler, scaler);
         //Start of pose:
 

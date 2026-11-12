@@ -453,10 +453,10 @@ public class ModelMoradisaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = 0.2F;
-        this.hips.offsetX = 0.35F;
-        this.hips.offsetZ = 2.0F;
-        this.hips.rotateAngleY = (float)Math.toRadians(120);
+        this.hips.offsetY = 0.F;
+        this.hips.offsetX = -0.15F;
+        this.hips.offsetZ = 7.0F;
+        this.hips.rotateAngleY = (float)Math.toRadians(230);
         this.hips.rotateAngleX = (float)Math.toRadians(1);
         this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;

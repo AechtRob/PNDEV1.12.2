@@ -285,13 +285,14 @@ public class ModelDiplocaulus_minimus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.8F;
+        this.main.offsetY = -1.7F;
         this.main.offsetX = -0.2F;
-        this.main.rotateAngleY = (float)Math.toRadians(140);
+        this.main.offsetZ = 6.2F;
+        this.main.rotateAngleY = (float)Math.toRadians(200);
         this.main.rotateAngleX = (float)Math.toRadians(24);
         this.main.rotateAngleZ = (float)Math.toRadians(5);
         this.main.scaleChildren = true;
-        float scaler = 0.98F;
+        float scaler = 3.98F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

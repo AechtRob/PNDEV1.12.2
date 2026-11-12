@@ -1,0 +1,47 @@
+{
+	"name": "Taemasosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/taemasosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_taemasosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_taemasosteus",
+			"title": "Taemasosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Buchanosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. novaustrocambricus",
+            "entity": "lepidodendron:prehistoric_flora_taemasosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_taemasosteus",
+			"type": "text",
+			"text": "Taemasosteus is a genus of buchanosteid placoderm known from the Emsian aged Taemas-Weejasper Reef and Buchan Group in Australia. Taemasosteus is known from large isolated plates, revealing a large animal, about a meter in length. It shares some similarities to members of the closely related Homostiidae, and is therefore thought to be a basal member of Buchanosteidae."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_taemasosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_taemasosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_taemasosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_taemasosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_taemasosteus"
+		}
+	]
+}

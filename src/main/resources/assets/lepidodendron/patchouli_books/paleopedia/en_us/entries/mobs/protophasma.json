@@ -1,0 +1,52 @@
+{
+	"name": "Protophasma",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/protophasma_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_protophasma",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_protophasma",
+			"title": "Protophasma",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda$(br)>Insecta$(br)>Orthopterida$(br)>Protophasmatidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. dumasii",
+            "entity": "lepidodendron:prehistoric_flora_protophasma",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_protophasma",
+			"type": "text",
+			"text": "Protophasma was a genus of large flying insect from the Late Carboniferous of Europe and North America. Known from the Commentry Shale in France and the Mazon Creek Lagerstätte in Illinois, it coexisted with some of the largest insects of all times, such as Meganeura and Mazothairos, that dwarfed it despite its size."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_protophasma",
+			"type": "text",
+			"text": "The exact relationships of Protophasma with modern insects are poorly understood. Originally proposed to have been an ancestor of modern stickbugs, due to its elongated shape, it is today generally understood as a primitive relative of modern grasshoppers and katydids ; similarities in wing venations seems to suggest it was also related to the ancestors of roaches and termites."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_protophasma"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_protophasma"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_protophasma"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_protophasma"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_protophasma"
+		}
+	]
+}

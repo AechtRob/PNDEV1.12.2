@@ -296,7 +296,7 @@ public class ModelDiandongosuchus extends ModelBasePalaeopedia {
         this.root.rotateAngleX = (float)Math.toRadians(22);
         this.root.rotateAngleZ = (float)Math.toRadians(-12);
         this.root.scaleChildren = true;
-        float scaler = 0.4F;
+        float scaler = 0.8F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
 

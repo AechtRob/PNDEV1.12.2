@@ -1,0 +1,47 @@
+{
+	"name": "Stemmatodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/stemmatodus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_stemmatodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_stemmatodus",
+			"title": "Stemmatodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Actinopterygii$(br)>Pycnodontiformes$(br)>Pycnodontidae"
+		},
+        {
+            "type": "entity",
+            "name": "S. rhombus",
+            "entity": "lepidodendron:prehistoric_flora_stemmatodus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stemmatodus",
+			"type": "text",
+			"text": "Stemmatodus is a ray-finned fish discovered in Castellammare outcrops of Italy, dating back to the Early Cretaceous. Its name is a combination of 'stemma' meaning crown and 'todus' meaning teeth. It was a small fish being about 5 centimeters long."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_stemmatodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_stemmatodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_stemmatodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_stemmatodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_stemmatodus"
+		}
+	]
+}

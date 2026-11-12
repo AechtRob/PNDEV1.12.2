@@ -1,0 +1,47 @@
+{
+	"name": "Stegolepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/stegolepis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_stegolepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_stegolepis",
+			"title": "Stegolepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Acanthothoraci$(br)>Euantiarcha$(br)>Bothriolepididae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. jugata",
+            "entity": "lepidodendron:prehistoric_flora_stegolepis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stegolepis",
+			"type": "text",
+			"text": "Stegolepis is a placoderm from the Taldysay series of Kazakhstan, dating back to the Devonian. Stegolepis' , not to be confused with the plant genus it shares its name with, name means 'roof scale'. It had an head armor of about 10 centimeters long."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_stegolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_stegolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_stegolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_stegolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_stegolepis"
+		}
+	]
+}

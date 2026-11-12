@@ -1,0 +1,47 @@
+{
+	"name": "Grifftaylor",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/grifftaylor_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_grifftaylor",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_grifftaylor",
+			"title": "Mob_name",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira"
+		},
+        	{
+            "type": "entity",
+            "name": "G. antarcticus",
+            "entity": "lepidodendron:prehistoric_flora_grifftaylor",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_grifftaylor",
+			"type": "text",
+			"text": "Grifftaylor was a placoderm discovered in Aztec Siltstone of Antarctica, dating back to the Devonian. Its name is a reference to the T. Griffith Taylor, leader of the Western Geological Party of the British Antarctic Terra Nova Expedition."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_grifftaylor"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_grifftaylor"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_grifftaylor"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_grifftaylor"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_grifftaylor"
+		}
+	]
+}

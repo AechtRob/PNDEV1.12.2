@@ -1,0 +1,47 @@
+{
+	"name": "Dhanguura",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dhanguura_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_dhanguura",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dhanguura",
+			"title": "Dhanguura",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci"
+		},
+        	{
+            "type": "entity",
+            "name": "Genus_species",
+            "entity": "lepidodendron:prehistoric_flora_dhanguura",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dhanguura",
+			"type": "text",
+			"text": "Dhanguura is a placoderm from Wee Jasper reef in New South Wales, Australia; dating back to the Devonian. Its name is derived from the Aboriginal word for 'Fish'. Dhanguura had a total head armor length of 40 centimeters, making the fish itself rather large."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dhanguura"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dhanguura"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dhanguura"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dhanguura"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dhanguura"
+		}
+	]
+}

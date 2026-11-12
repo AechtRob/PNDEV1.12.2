@@ -1,0 +1,52 @@
+{
+	"name": "Juramantophasma",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/juramantophasma_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_juramantophasma",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_juramantophasma",
+			"title": "Protophasma",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Insecta$(br)>Notoptera$(br)>Mantophasmatodea$(br)>Mantophasmatidae$(br)>Raptophasmatinae"
+		},
+        	{
+            "type": "entity",
+            "name": "J. sinica",
+            "entity": "lepidodendron:prehistoric_flora_juramantophasma",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_juramantophasma",
+			"type": "text",
+			"text": "Juramantophasma sinica is the earliest known member of the Mantophasmatidae, a family of wingless predatory insects occuring today only in southern Africa, and colloquially known as gladiators. It appears the family was much more widespread in the Mesozoic, as Juramantophasma is only found in Late Jurassic deposits of the Haifanggou Formation, mondially known for bearing the Daohugou insect beds."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_juramantophasma",
+			"type": "text",
+			"text": "Juramantophasma was overall a primitive member of its family. Closely related to Eocene Baltic amber species such as Raptophasma, it had large hind legs typical of its family, primitive mandibles well-adapted for predation but less specialized than those of modern taxa, and was devoid of wings. The only known specimen was a large female, whose abdomen was filled with twenty-eight well-preserved eggs."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_juramantophasma"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_juramantophasma"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_juramantophasma"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_juramantophasma"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_juramantophasma"
+		}
+	]
+}

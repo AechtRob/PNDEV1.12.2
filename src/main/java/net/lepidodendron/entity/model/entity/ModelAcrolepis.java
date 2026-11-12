@@ -376,15 +376,15 @@ public class ModelAcrolepis extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -0.7F;
-        this.body.offsetX = 0.725F;
-        this.body.rotateAngleY = (float) Math.toRadians(210);
+        this.body.offsetX = 0.25F;
+        this.body.rotateAngleY = (float) Math.toRadians(230);
         this.body.rotateAngleX = (float) Math.toRadians(8);
         this.body.rotateAngleZ = (float) Math.toRadians(-4);
         this.body.scaleChildren = true;
         float scaler = 0.88F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(body, 0.0F, -2F, 0.1F);
+
         //End of pose, now render the model:
         this.body.render(f);
         //Reset rotations, positions and sizing:

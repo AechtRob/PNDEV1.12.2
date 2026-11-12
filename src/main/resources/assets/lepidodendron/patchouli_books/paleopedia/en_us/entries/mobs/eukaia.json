@@ -1,0 +1,47 @@
+{
+	"name": "Eukaia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eukaia_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_eukaia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eukaia",
+			"title": "Eukaia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Phyllolepidae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. elongata",
+            "entity": "lepidodendron:prehistoric_flora_eukaia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eukaia",
+			"type": "text",
+			"text": "Eukaia was a placoderm discovered nearby Turukhansk settlement of Russia, who lived in the Devonian. Its name is a mix of the first syllables of the name and surname of Eugenia P. Kasperkevich (the person who discovered this species), alongside the Latin suffix '-ia' meaning it pertains to it. Its head armor was about 8 centimeters, making it a rather small fish."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eukaia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eukaia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eukaia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eukaia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eukaia"
+		}
+	]
+}

@@ -479,7 +479,7 @@ public class ModelLitorosuchus extends ModelBasePalaeopedia {
         this.main.rotateAngleX = (float)Math.toRadians(22);
         this.main.rotateAngleZ = (float)Math.toRadians(-12);
         this.main.scaleChildren = true;
-        float scaler = 0.4F;
+        float scaler = 0.8F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

@@ -811,12 +811,12 @@ public class ModelOlorotitan extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = 0.9F;
-        this.hips.offsetX = -0.2F;
-        this.hips.rotateAngleY = (float)Math.toRadians(125);
+        this.hips.offsetX = -0.F;
+        this.hips.rotateAngleY = (float)Math.toRadians(235);
         this.hips.rotateAngleX = (float)Math.toRadians(0);
         this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;
-        float scaler = 0.37F;
+        float scaler = 0.45F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
        

@@ -146,7 +146,7 @@ public class EntityPrehistoricFloraEotyrannus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getRoarLength() {
-		return 29;
+		return 25;
 	}
 
 	public static String getPeriod() {return "Early Cretaceous";}

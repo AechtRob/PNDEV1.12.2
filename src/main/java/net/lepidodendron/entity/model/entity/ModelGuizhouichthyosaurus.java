@@ -321,12 +321,12 @@ public class ModelGuizhouichthyosaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.5F;
-        this.main.offsetX = -0.45F;
+        this.main.offsetX = 0.45F;
         this.main.rotateAngleY = (float)Math.toRadians(230);
         this.main.rotateAngleX = (float)Math.toRadians(20);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 0.425F;
+        float scaler = 0.6F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
       

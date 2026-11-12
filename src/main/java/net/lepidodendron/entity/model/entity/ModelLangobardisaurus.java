@@ -268,14 +268,14 @@ public class ModelLangobardisaurus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = 0.2F;
-        this.root.offsetX = 0.35F;
+        this.root.offsetY = -0.5F;
+        this.root.offsetX = 0.F;
         this.root.offsetZ = 2.0F;
-        this.root.rotateAngleY = (float)Math.toRadians(120);
-        this.root.rotateAngleX = (float)Math.toRadians(1);
+        this.root.rotateAngleY = (float)Math.toRadians(230);
+        this.root.rotateAngleX = (float)Math.toRadians(5);
         this.root.rotateAngleZ = (float)Math.toRadians(0);
         this.root.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 2.6F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
 

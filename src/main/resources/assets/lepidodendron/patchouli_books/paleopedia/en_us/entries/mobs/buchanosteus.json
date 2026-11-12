@@ -1,0 +1,47 @@
+{
+	"name": "Buchanosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/buchanosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_buchanosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_buchanosteus",
+			"title": "Buchanosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Buchanosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. confertituberculatus",
+            "entity": "lepidodendron:prehistoric_flora_buchanosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_buchanosteus",
+			"type": "text",
+			"text": "Buchanosteus was a placoderm that was found in Taemas-Weejasper Reef of Australia, Guangxi province of People's Republic of China and Qaranghandy Region of Kazakhstan; all dating back to the Devonian. It is named after the Buchan river and the Greek word for bone. it had a rather flat body plan, growing to around 40 centimeters long."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_buchanosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_buchanosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_buchanosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_buchanosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_buchanosteus"
+		}
+	]
+}

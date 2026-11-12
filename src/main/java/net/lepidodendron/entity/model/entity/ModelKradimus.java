@@ -245,13 +245,13 @@ public class ModelKradimus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.5F;
+        this.main.offsetY = -0.6F;
         this.main.offsetX = 0.258F;
         this.main.rotateAngleY = (float)Math.toRadians(235);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 0.95F;
+        float scaler = 2.95F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

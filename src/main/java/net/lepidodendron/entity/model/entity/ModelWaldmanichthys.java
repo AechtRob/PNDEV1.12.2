@@ -220,13 +220,13 @@ public class ModelWaldmanichthys extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.5F;
+        this.root.offsetY = -2.2F;
         this.root.offsetX = 0.258F;
         this.root.rotateAngleY = (float)Math.toRadians(235);
         this.root.rotateAngleX = (float)Math.toRadians(8);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 0.95F;
+        float scaler = 1.95F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
 

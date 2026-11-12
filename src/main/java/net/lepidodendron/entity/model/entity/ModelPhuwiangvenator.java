@@ -491,7 +491,7 @@ public class ModelPhuwiangvenator extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = 0.6F;
-        this.hips.offsetX = 0.1F;
+        this.hips.offsetX = 0.2F;
         this.hips.offsetZ = 2.0F;
         this.hips.rotateAngleY = (float)Math.toRadians(240);
         this.hips.rotateAngleX = (float)Math.toRadians(-0);

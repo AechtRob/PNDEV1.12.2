@@ -731,9 +731,9 @@ public class ModelOuranosaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = 0.7F;
-        this.hips.offsetX = -0.2F;
+        this.hips.offsetX = -0.1F;
         this.hips.offsetZ = 1.2F;
-        this.hips.rotateAngleY = (float)Math.toRadians(125);
+        this.hips.rotateAngleY = (float)Math.toRadians(222);
         this.hips.rotateAngleX = (float)Math.toRadians(0);
         this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;

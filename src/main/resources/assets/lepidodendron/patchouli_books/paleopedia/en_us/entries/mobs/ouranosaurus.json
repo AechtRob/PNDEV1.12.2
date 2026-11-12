@@ -1,0 +1,52 @@
+{
+	"name": "Ouranosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ouranosaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ouranosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ouranosaurus",
+			"title": "Ouranosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithichia$(br)>Ornithopoda$(br)>Hadrosauriformes"
+		},
+        	{
+            "type": "entity",
+            "name": "O. nigeriensis",
+            "entity": "lepidodendron:prehistoric_flora_ouranosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ouranosaurus",
+			"type": "text",
+			"text": "Ouranosaurus was a hadrosauriform ornithopod which lived in the Early Cretaceous of West Africa, discovered in the Elrhaz Formation of Niger and the Koum Formation of Cameroon. Its name roughly means “brave lizard” as taken partially from Arabic. It was notable for having a tall sail running down its back and tail, whose purpose is still debated, as well as its long low skull more similar to later hadrosaurids than other hadrosauriforms. It had relatively"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ouranosaurus",
+			"type": "text",
+			"text": " long hind limbs which would have allowed it to switch from a bipedal to quadrupedal pose. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ouranosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ouranosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ouranosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ouranosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ouranosaurus"
+		}
+	]
+}

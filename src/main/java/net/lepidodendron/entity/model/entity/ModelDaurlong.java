@@ -886,11 +886,11 @@ public class ModelDaurlong extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.Hips.offsetY = -0.650F;
         this.Hips.offsetX = 0.1F;
-        this.Hips.rotateAngleY = (float)Math.toRadians(225);
-        this.Hips.rotateAngleX = (float)Math.toRadians(-10);
-        this.Hips.rotateAngleZ = (float)Math.toRadians(3);
+        this.Hips.rotateAngleY = (float)Math.toRadians(220);
+        this.Hips.rotateAngleX = (float)Math.toRadians(-0);
+        this.Hips.rotateAngleZ = (float)Math.toRadians(0);
         this.Hips.scaleChildren = true;
-        float scaler = 1.15F;
+        float scaler = 1.0F;
         this.Hips.setScale(scaler, scaler, scaler);
         //Start of pose:
 

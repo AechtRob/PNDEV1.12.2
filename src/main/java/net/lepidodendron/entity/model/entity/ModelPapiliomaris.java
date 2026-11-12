@@ -155,7 +155,7 @@ public class ModelPapiliomaris extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -0.05F;
+        this.body.offsetY = -0.3F;
         this.body.offsetX = 0.15F;
         this.body.offsetZ = 2.0F;
         this.body.rotateAngleY = (float)Math.toRadians(120);

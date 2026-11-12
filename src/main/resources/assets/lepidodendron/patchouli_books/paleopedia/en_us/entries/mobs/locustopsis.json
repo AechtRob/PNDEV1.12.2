@@ -1,0 +1,52 @@
+{
+	"name": "Locustopsis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/locustopsis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_locustopsis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_locustopsis",
+			"title": "Locustopsis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Arthropoda$(br)>Insecta$(br)>Orthoptera$(br)>Caelifera$(br)>Locustopsidae$(br)>Locustopsinae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. rhytofemoralis",
+            "entity": "lepidodendron:prehistoric_flora_locustopsis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_locustopsis",
+			"type": "text",
+			"text": "Locustopsis is a widespread genus of Jurassic grasshoppers, belonging to a once common Mesozoic family, the Locustopsidae. It is by far one of the best known Jurassic orthopterans, with well-preserved fossils coming from various famous deposits throughout Eurasia, such as the Daohugou Beds, the Karabastau Formation, the Posidonia Shale, the Solnhofen Lithographic Limestone and the Blue Lias."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_locustopsis",
+			"type": "text",
+			"text": "Locustopsis tends to be a wastebasket taxon, to which many Mesozoic related orthopteran species have been added. It was of average size for an early grasshoper, with Chinese specimens reaching two centimeters in body length. Locustopsids had short antennae and relatively primitive bauplans. Despite being quite abundant and diverse throughout the Mesozoic, locustopsids took a quick and sharp decline in the Late Cretaceous, and did not survive the mass extinction."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_locustopsis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_locustopsis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_locustopsis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_locustopsis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_locustopsis"
+		}
+	]
+}

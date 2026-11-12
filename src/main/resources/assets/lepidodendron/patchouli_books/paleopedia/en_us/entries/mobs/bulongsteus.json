@@ -1,0 +1,47 @@
+{
+	"name": "Bulongosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bulongosteus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_bulongosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bulongosteus",
+			"title": "Bulongosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Selenosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. liui",
+            "entity": "lepidodendron:prehistoric_flora_bulongosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bulongosteus",
+			"type": "text",
+			"text": "Bulongosteus was a placoderm discovered in Junggar Basin of Xinjiang, a province in People's Republic of China, dating back to the Devonian. Its name is a reference to Bulonggor formation where it was found and the Greek word for bone. It had a head armor of about 18 centimeters, making it a small fish. This genus is important to science as its proof that placoderms could also survive in freshwater environments."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bulongosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bulongosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bulongosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bulongosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bulongosteus"
+		}
+	]
+}

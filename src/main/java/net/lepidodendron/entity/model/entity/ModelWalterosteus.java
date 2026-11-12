@@ -528,7 +528,7 @@ public class ModelWalterosteus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.6F;
-        this.main.offsetX = 0.8F;
+        this.main.offsetX = 0.2F;
         this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(120);
         this.main.rotateAngleX = (float)Math.toRadians(1);
@@ -537,7 +537,7 @@ public class ModelWalterosteus extends ModelBasePalaeopedia {
         float scaler = 1.0F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(main, 0.6F, 3.6F, -0.2F);
+        this.setRotateAngle(main, 0.6F, 4.2F, -0.2F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

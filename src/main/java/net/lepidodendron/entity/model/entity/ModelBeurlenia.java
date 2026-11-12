@@ -472,7 +472,7 @@ public class ModelBeurlenia extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -1.6F;
-        this.body.offsetX = -1.0F;
+        this.body.offsetX = -0.0F;
         this.body.offsetZ = 2.0F;
         this.body.rotateAngleY = (float)Math.toRadians(200);
         this.body.rotateAngleX = (float)Math.toRadians(8);

@@ -1,0 +1,47 @@
+{
+	"name": "Axelrodichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/axelrodichthys_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_axelrodichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_axelrodichthys",
+			"title": "Axelrodichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)>Chordata$(br)>Actinistia$(br)>Coelacanthiformes$(br)>Latimerioidei$(br)>Mawsoniidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. araripensis",
+            "entity": "lepidodendron:prehistoric_flora_axelrodichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_axelrodichthys",
+			"type": "text",
+			"text": "Axelrodichthys was a lobe-finned fish discovered in Africa, Europe, South America and Possibly North America; dating back to Cretaceous. It was named in honour of the American ichthyologist 'Herbert R. Axelrod' with the combination of the Greek word 'fish'. It was a big fish, growing to 1-2 meters long. The species that lived during the Early Cretaceous inhabited brackish waters while the Late Cretaceous species were fresh water exclusive."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_axelrodichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_axelrodichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_axelrodichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_axelrodichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_axelrodichthys"
+		}
+	]
+}

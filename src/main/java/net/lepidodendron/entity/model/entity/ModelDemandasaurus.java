@@ -542,9 +542,9 @@ public class ModelDemandasaurus extends ModelBasePalaeopedia {
         //Rotations, positions and sizing:
         this.Demandasaurus.offsetY = 0.8F;
         this.Demandasaurus.offsetX = 0.35F;
-        this.Demandasaurus.rotateAngleY = (float)Math.toRadians(240);
+        this.Demandasaurus.rotateAngleY = (float)Math.toRadians(220);
         this.Demandasaurus.rotateAngleX = (float)Math.toRadians(0);
-        this.Demandasaurus.rotateAngleZ = (float)Math.toRadians(00);
+        this.Demandasaurus.rotateAngleZ = (float)Math.toRadians(0);
         this.Demandasaurus.scaleChildren = true;
         float scaler = 0.31F;
         this.Demandasaurus.setScale(scaler, scaler, scaler);

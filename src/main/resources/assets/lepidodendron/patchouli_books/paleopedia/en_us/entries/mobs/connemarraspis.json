@@ -1,0 +1,47 @@
+{
+	"name": "Connemarraspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/connemarraspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_connemarraspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_connemarraspis",
+			"title": "Connemarraspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Buchanosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. youngi",
+            "entity": "lepidodendron:prehistoric_flora_connemarraspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_connemarraspis",
+			"type": "text",
+			"text": "Connemarraspis was a placoderm discovered in Connemarra formation of Ireland, dating back to the Devonian. Its named after the formation it was found in and the greek word for scale."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_connemarraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_connemarraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_connemarraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_connemarraspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_connemarraspis"
+		}
+	]
+}

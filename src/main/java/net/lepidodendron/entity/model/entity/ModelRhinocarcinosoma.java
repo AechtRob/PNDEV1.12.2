@@ -294,13 +294,13 @@ public class ModelRhinocarcinosoma extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Rhinocarcinosoma.offsetY = -1.0F;
-        this.Rhinocarcinosoma.offsetX = 0.0F;
+        this.Rhinocarcinosoma.offsetX = 0.4F;
         this.Rhinocarcinosoma.offsetZ = 2.0F;
         this.Rhinocarcinosoma.rotateAngleY = (float)Math.toRadians(120);
         this.Rhinocarcinosoma.rotateAngleX = (float)Math.toRadians(1);
         this.Rhinocarcinosoma.rotateAngleZ = (float)Math.toRadians(0);
         this.Rhinocarcinosoma.scaleChildren = true;
-        float scaler = 1.F;
+        float scaler = 3.F;
         this.Rhinocarcinosoma.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(Rhinocarcinosoma, 0.6F, 3.8F, -0.2F);

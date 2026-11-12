@@ -1,0 +1,47 @@
+{
+	"name": "Narrominaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/narrominaspis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_narrominaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_narrominaspis",
+			"title": "Narrominaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Buchanosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "N. longi",
+            "entity": "lepidodendron:prehistoric_flora_narrominaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_narrominaspis",
+			"type": "text",
+			"text": "Narrominaspis is a placoderm from Connemarra Formation of Australia, dating back to the Devonian. Its name is a reference to the Narromine town, and the Greek word for scale. It is roughly 10 cm in length, and has large eyes. It also has more pronounced pectoral spines than derived Buchanosteids"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_narrominaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_narrominaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_narrominaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_narrominaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_narrominaspis"
+		}
+	]
+}

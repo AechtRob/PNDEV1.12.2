@@ -268,21 +268,21 @@ public class ModelStichopterus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -0.5F;
-        this.body.offsetX = 0.258F;
-        this.body.rotateAngleY = (float)Math.toRadians(235);
-        this.body.rotateAngleX = (float)Math.toRadians(8);
-        this.body.rotateAngleZ = (float)Math.toRadians(-8);
-        this.body.scaleChildren = true;
-        float scaler = 0.95F;
-        this.body.setScale(scaler, scaler, scaler);
+        this.base.offsetY = -0.5F;
+        this.base.offsetX = 0.258F;
+        this.base.rotateAngleY = (float)Math.toRadians(235);
+        this.base.rotateAngleX = (float)Math.toRadians(8);
+        this.base.rotateAngleZ = (float)Math.toRadians(-8);
+        this.base.scaleChildren = true;
+        float scaler = 1.95F;
+        this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
 
         //End of pose, now render the model:
-        this.body.render(f);
+        this.base.render(f);
         //Reset rotations, positions and sizing:
-        this.body.setScale(1.0F, 1.0F, 1.0F);
-        this.body.scaleChildren = false;
+        this.base.setScale(1.0F, 1.0F, 1.0F);
+        this.base.scaleChildren = false;
         resetToDefaultPose();
 
     }

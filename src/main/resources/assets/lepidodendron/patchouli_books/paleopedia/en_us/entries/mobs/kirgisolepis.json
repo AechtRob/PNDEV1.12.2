@@ -1,0 +1,47 @@
+{
+	"name": "Kirgisolepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kirgisolepis_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_kirgisolepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kirgisolepis",
+			"title": "Kirgisolepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>AntiarchClass$(br)>Bothriolepiformes$(br)>Dianolepididae"
+		},
+        	{
+            "type": "entity",
+            "name": "K. karabaltaensis",
+            "entity": "lepidodendron:prehistoric_flora_kirgisolepis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kirgisolepis",
+			"type": "text",
+			"text": "Kirgisolepis is a placoderm from Taldybulak Formation of Kyrgyzstan. Its name means 'Kyrgz Scale'. Its head armor was about 5 centimeters long, making the whole animal rather small."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kirgisolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kirgisolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kirgisolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kirgisolepis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kirgisolepis"
+		}
+	]
+}

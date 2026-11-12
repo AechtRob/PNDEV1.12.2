@@ -279,13 +279,14 @@ public class ModelRetodus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.75F;
-        this.main.offsetX = 0.19F;
+        this.main.offsetY = -0.3F;
+        this.main.offsetX = 0.3F;
+        this.main.offsetZ = 10.19F;
         this.main.rotateAngleY = (float)Math.toRadians(240);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 0.89F;
+        float scaler = 0.4F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

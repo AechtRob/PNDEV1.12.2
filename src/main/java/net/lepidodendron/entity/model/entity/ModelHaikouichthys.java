@@ -143,8 +143,8 @@ public class ModelHaikouichthys extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -6.4F;
-        this.main.offsetX = 2.8F;
+        this.main.offsetY = -1.4F;
+        this.main.offsetX = 0.2F;
         this.main.offsetZ = 2.0F;
         this.main.rotateAngleY = (float)Math.toRadians(120);
         this.main.rotateAngleX = (float)Math.toRadians(1);

@@ -564,14 +564,14 @@ public class ModelXinjiangtitan extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Xinjiangtitan.offsetY = -0.2F;
+        this.Xinjiangtitan.offsetY = 2.2F;
         this.Xinjiangtitan.offsetX = 0.2F;
         this.Xinjiangtitan.offsetZ = 2.0F;
         this.Xinjiangtitan.rotateAngleY = (float)Math.toRadians(225);
         this.Xinjiangtitan.rotateAngleX = (float)Math.toRadians(8);
         this.Xinjiangtitan.rotateAngleZ = (float)Math.toRadians(-8);
         this.Xinjiangtitan.scaleChildren = true;
-        float scaler = 0.3F;
+        float scaler = 0.16F;
         this.Xinjiangtitan.setScale(scaler, scaler, scaler);
         //Start of pose:
 

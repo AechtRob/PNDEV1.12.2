@@ -368,13 +368,13 @@ public class ModelPetrolacosaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = -1.3F;
-        this.hips.offsetX = 1.2F;
-        this.hips.offsetZ = 2.0F;
-        this.hips.rotateAngleY = (float)Math.toRadians(200);
-        this.hips.rotateAngleX = (float)Math.toRadians(8);
-        this.hips.rotateAngleZ = (float)Math.toRadians(-8);
+        this.hips.offsetX = 0.2F;
+        this.hips.offsetZ = 10.0F;
+        this.hips.rotateAngleY = (float)Math.toRadians(210);
+        this.hips.rotateAngleX = (float)Math.toRadians(10);
+        this.hips.rotateAngleZ = (float)Math.toRadians(-0);
         this.hips.scaleChildren = true;
-        float scaler = 4.0F;
+        float scaler = 3.0F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
 

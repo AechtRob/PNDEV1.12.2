@@ -634,13 +634,14 @@ public class ModelNeovenator extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = 0.60F;
-        this.hips.offsetX = 0.0F;
+        this.hips.offsetY = -0.5F;
+        this.hips.offsetX = 0.2F;
+        this.hips.offsetZ = 1.2F;
         this.hips.rotateAngleY = (float)Math.toRadians(220);
         this.hips.rotateAngleX = (float)Math.toRadians(12);
         this.hips.rotateAngleZ = (float)Math.toRadians(-2);
         this.hips.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.8F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
        

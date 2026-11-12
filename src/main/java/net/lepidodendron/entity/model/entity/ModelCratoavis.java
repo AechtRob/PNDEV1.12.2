@@ -573,10 +573,13 @@ public class ModelCratoavis extends ModelBasePalaeopedia {
         this.base.rotateAngleX = (float)Math.toRadians(9);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
         this.base.scaleChildren = true;
-        float scaler = 2.2F;
+        float scaler = 3.2F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.tertialsLeftToHide.setScale((float)1,(float)0,(float)0);
+        this.tertialsRightToHide.setScale((float)1,(float)0,(float)0);
+        this.secondariesLeftToHide.setScale((float)1,(float)0,(float)0);
+        this.secondariesRightToHide.setScale((float)1,(float)0,(float)0);
         //End of pose, now render the model:
         this.base.render(f);
         //Reset rotations, positions and sizing:

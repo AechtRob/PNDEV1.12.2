@@ -1,0 +1,47 @@
+{
+	"name": "Byssacanthus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/byssacanthus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_byssacanthus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_byssacanthus",
+			"title": "Byssacanthus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Chordata$(br)>Placodermi$(br)>Antiarchi$(br)>Asterolepidoidei$(br)>Pterichthyodidae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. dilatatus",
+            "entity": "lepidodendron:prehistoric_flora_byssacanthus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_byssacanthus",
+			"type": "text",
+			"text": "Byssacanthus is a genus of antiarch placoderms known from the Eifelian to Givetian of the Baltic States and Belarus. it would have grown to 60 centimeters in length, and is notable for its high dorsal spine. It was first discovered only from said spines, and was originally thought to have been an elasmobranch."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_byssacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_byssacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_byssacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_byssacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_byssacanthus"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Mantellisaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mantellisaurus_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_mantellisaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mantellisaurus",
+			"title": "Mantellisaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Dinosauria$(br)>Ornithischia$(br)>Ornithopoda$(br)>Hadrosauriformes"
+		},
+        	{
+            "type": "entity",
+            "name": "M. atherfieldensis",
+            "entity": "lepidodendron:prehistoric_flora_mantellisaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mantellisaurus",
+			"type": "text",
+			"text": "Mantellisaurus was a hadrosauriform ornithopod which lived in the Early Cretaceous of Europe, first discovered in the Vectis Formation of England and having been found in Belgium, Spain, and Germany. Its name means “Gideon Mantell lizard” in reference to the original describer of the genus Iguanodon and its convoluted role in that genus’s taxonomy. While this species was initially described as an Iguanodon species in 1925, it was later realized that the"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mantellisaurus",
+			"type": "text",
+			"text": "Maidstone specimen, which was used to make some of the first reconstructions of Iguanodon such as the infamous nose-horn, actually belonged to this species as well. In comparison to Iguanodon, Mantellisaurus was more slender and may have even been more bipedal due to bearing more slender forearms.  "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mantellisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mantellisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mantellisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mantellisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mantellisaurus"
+		}
+	]
+}

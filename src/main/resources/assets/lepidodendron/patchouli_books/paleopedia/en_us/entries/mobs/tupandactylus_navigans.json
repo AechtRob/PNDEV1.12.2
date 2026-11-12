@@ -1,0 +1,52 @@
+{
+	"name": "Tupandactylus_navigans",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tupandactylus_navigans_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_tupandactylus_navigans",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tupandactylus_navigans",
+			"title": "tupandactylus_navigans",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Chordata$(br)>Pterosauria$(br)>Pterodactyloidea$(br)>Azhdarchoidea$(br)>Tapejaridae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. navigans",
+            "entity": "lepidodendron:prehistoric_flora_tupandactylus_navigans",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tupandactylus_navigans",
+			"type": "text",
+			"text": "Tupandactylus navigans was a tapejarid pterosaur which lived in the Early Cretaceous of South America, first discovered in the Crato Formation of Brazil. Its binomial name means “sailing Tupâ wing” in reference to the lightning manifestation of the supreme Tupí deity, though it was initially thought to be a species of the related Tapejara. Like other tapejarids T. navigans had an almost sail-like head crest, though in this species it was more vertical and"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tupandactylus_navigans",
+			"type": "text",
+			"text": "forward-pointing. Like other tapejarids, T. navigans’s skull seems to be more adapted for eating plant material, indicating a more terrestrial inland lifestyle. One specimen of this species preserves almost the entire postcranial skeleton, providing valuable insight into the life appearance of these pterosaurs."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tupandactylus_navigans"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tupandactylus_navigans"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tupandactylus_navigans"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tupandactylus_navigans"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tupandactylus_navigans"
+		}
+	]
+}

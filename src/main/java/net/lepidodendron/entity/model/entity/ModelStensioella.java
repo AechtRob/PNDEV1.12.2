@@ -1,11 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraStensioella;
+import net.lepidodendron.entity.EntityPrehistoricFloraStensioella;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 
 public class ModelStensioella extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
@@ -296,14 +299,14 @@ public class ModelStensioella extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = 1.2F;
+        this.main.offsetY = -0.2F;
         this.main.offsetX = 0.1F;
         this.main.offsetZ = 2.0F;
-        this.main.rotateAngleY = (float)Math.toRadians(120);
-        this.main.rotateAngleX = (float)Math.toRadians(0);
+        this.main.rotateAngleY = (float)Math.toRadians(210);
+        this.main.rotateAngleX = (float)Math.toRadians(20);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.8F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 
@@ -321,7 +324,84 @@ public class ModelStensioella extends ModelBasePalaeopedia {
         modelRenderer.rotateAngleY = y;
         modelRenderer.rotateAngleZ = z;
     }
+    @Override
+    public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+        super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+        this.resetToDefaultPose();
+        EntityPrehistoricFloraStensioella ee = (EntityPrehistoricFloraStensioella) entitylivingbaseIn;
 
+        if (ee.getIsFast()) { //Running
+            animRunning(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+        } else {
+            animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+        }
+
+
+
+
+
+    }
+    public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+        EntityPrehistoricFloraStensioella entity = (EntityPrehistoricFloraStensioella) entitylivingbaseIn;
+        int animCycle = 10;
+        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        double xx = 0;
+        double yy = 0;
+        double zz = 0;
+        this.setRotateAngle(main, main.rotateAngleX + (float) Math.toRadians(0), main.rotateAngleY + (float) Math.toRadians(-0-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720))*8), main.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-150))*-4));
+        this.main.rotationPointX = this.main.rotationPointX + (float)(-0-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-50))*-0.5);
+        this.main.rotationPointY = this.main.rotationPointY - (float)(0);
+        this.main.rotationPointZ = this.main.rotationPointZ + (float)(0);
+
+
+        this.setRotateAngle(tail, tail.rotateAngleX + (float) Math.toRadians(0), tail.rotateAngleY + (float) Math.toRadians(-0-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-50))*12), tail.rotateAngleZ + (float) Math.toRadians(0));
+
+
+        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(0), tail2.rotateAngleY + (float) Math.toRadians(-0-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-150))*20), tail2.rotateAngleZ + (float) Math.toRadians(0));
+
+
+        this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(0), tail3.rotateAngleY + (float) Math.toRadians(-0-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-200))*25), tail3.rotateAngleZ + (float) Math.toRadians(0));
+
+
+        this.setRotateAngle(tail4, tail4.rotateAngleX + (float) Math.toRadians(0), tail4.rotateAngleY + (float) Math.toRadians(-0-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-200))*30), tail4.rotateAngleZ + (float) Math.toRadians(0));
+
+
+        this.setRotateAngle(frontLeftFin, frontLeftFin.rotateAngleX + (float) Math.toRadians(-6.73675), frontLeftFin.rotateAngleY + (float) Math.toRadians(9.5393-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-50))*-12), frontLeftFin.rotateAngleZ + (float) Math.toRadians(9.1903+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-150))*-4));
+
+
+        this.setRotateAngle(frontRightFin, frontRightFin.rotateAngleX + (float) Math.toRadians(-8.16361), frontRightFin.rotateAngleY + (float) Math.toRadians(-10.1746-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-50))*-12), frontRightFin.rotateAngleZ + (float) Math.toRadians(-9.4828+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-150))*-4));
+
+    }
+    public void animRunning(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+        EntityPrehistoricFloraStensioella entity = (EntityPrehistoricFloraStensioella) entitylivingbaseIn;
+        int animCycle = 10;
+        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        double xx = 0;
+        double yy = 0;
+        double zz = 0;
+        this.setRotateAngle(main, main.rotateAngleX + (float) Math.toRadians(0), main.rotateAngleY + (float) Math.toRadians(-0-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720))*8), main.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-150))*-4));
+        this.main.rotationPointX = this.main.rotationPointX + (float)(-0-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-50))*-0.5);
+        this.main.rotationPointY = this.main.rotationPointY - (float)(0);
+        this.main.rotationPointZ = this.main.rotationPointZ + (float)(0);
+
+
+        this.setRotateAngle(tail, tail.rotateAngleX + (float) Math.toRadians(0), tail.rotateAngleY + (float) Math.toRadians(-0-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-50))*12), tail.rotateAngleZ + (float) Math.toRadians(0));
+
+
+        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(0), tail2.rotateAngleY + (float) Math.toRadians(-0-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-150))*20), tail2.rotateAngleZ + (float) Math.toRadians(0));
+
+
+        this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(0), tail3.rotateAngleY + (float) Math.toRadians(-0-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-200))*25), tail3.rotateAngleZ + (float) Math.toRadians(0));
+
+
+        this.setRotateAngle(tail4, tail4.rotateAngleX + (float) Math.toRadians(0), tail4.rotateAngleY + (float) Math.toRadians(-0-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-200))*30), tail4.rotateAngleZ + (float) Math.toRadians(0));
+
+
+        this.setRotateAngle(frontLeftFin, frontLeftFin.rotateAngleX + (float) Math.toRadians(-6.73675), frontLeftFin.rotateAngleY + (float) Math.toRadians(9.5393-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-50))*-12), frontLeftFin.rotateAngleZ + (float) Math.toRadians(9.1903+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-150))*-4));
+
+
+        this.setRotateAngle(frontRightFin, frontRightFin.rotateAngleX + (float) Math.toRadians(-8.16361), frontRightFin.rotateAngleY + (float) Math.toRadians(-10.1746-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-50))*-12), frontRightFin.rotateAngleZ + (float) Math.toRadians(-9.4828+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-150))*-4));
+    }
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
@@ -337,13 +417,9 @@ public class ModelStensioella extends ModelBasePalaeopedia {
 
 
 
-            this.walk(backLeftFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-            this.swing(backLeftFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
+
             if(f3>0 || !e.isInWater()) { //if moving, slap fins
-                this.flap(frontLeftFin, speed, 0.3F, true, -3, 0, f2, 1);
-                this.flap(frontRightFin, speed, -0.3F, true, -3, 0, f2, 1);
-                this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
-                this.chainSwing(fishTail, speed, 0.25F, -3, f2, 1);
+
             } else { //if not accelerating swing fins instead
                 this.swing(frontLeftFin, (float)(speed*0.15), (float)Math.toRadians(5), false, 0, -0.3F, f2, 1);
                 this.swing(frontRightFin, (float)(speed*0.15), (float)Math.toRadians(5), false, 0, 0.3F, f2, 1);
@@ -351,11 +427,14 @@ public class ModelStensioella extends ModelBasePalaeopedia {
                 this.flap(frontRightFin, (float)(speed*0.15), -0.25F, true, -3, 0, f2, 1);
                 this.chainWave(fishTail, speed*0.15F, 0.05F, -3, f2, 1);
                 this.chainSwing(fishTail, speed*0.15F, 0.3F, -3, f2, 1);
+                this.walk(backRightFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
+                this.swing(backRightFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
+                this.walk(backLeftFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
+                this.swing(backLeftFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             }
 
 
-            this.walk(backRightFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-            this.swing(backRightFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
+
 
 
             if (!e.isInWater()) {

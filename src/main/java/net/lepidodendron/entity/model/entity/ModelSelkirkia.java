@@ -128,7 +128,7 @@ public class ModelSelkirkia extends ModelBasePalaeopedia {
         this.tail.rotateAngleX = (float)Math.toRadians(0);
         this.tail.rotateAngleZ = (float)Math.toRadians(0);
         this.tail.scaleChildren = true;
-        float scaler = 0.4F;
+        float scaler = 3.4F;
         this.tail.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(tail, 0.6F, 3.8F, -0.2F);
