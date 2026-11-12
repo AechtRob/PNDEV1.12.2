@@ -141,6 +141,9 @@ public class EntityPrehistoricFloraIsisfordia extends EntityPrehistoricFloraSwim
 		if (this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == BASK_ANIMATION) {
 			return 0.0F;
 		}
+		if (this.getIsFast()) {
+			calcSpeed= calcSpeed * 2;
+		}
 		//System.err.println("Speed " + (Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed));
 		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed;
 	}

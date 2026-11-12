@@ -16,7 +16,7 @@ public class RenderVenetoraptor extends RenderLivingBaseWithBook<EntityPrehistor
     }
 
     public RenderVenetoraptor(RenderManager mgr) {
-        super(mgr, new ModelVenetoraptor(), 0.5f);
+        super(mgr, new ModelVenetoraptor(), 0.0f);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class RenderVenetoraptor extends RenderLivingBaseWithBook<EntityPrehistor
     protected void preRenderCallback(EntityPrehistoricFloraVenetoraptor entity, float f) {
         float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.15F;
+        this.shadowSize = 0.0f;
     }
 
 }

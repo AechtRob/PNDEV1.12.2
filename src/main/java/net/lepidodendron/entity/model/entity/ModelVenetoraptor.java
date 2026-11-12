@@ -582,6 +582,7 @@ public class ModelVenetoraptor extends ModelBasePalaeopedia {
             animStand(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
 
+        hips.offsetZ =- 0.4F; //It was not centred properly
 
     }
 

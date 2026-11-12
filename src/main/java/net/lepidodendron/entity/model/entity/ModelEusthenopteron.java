@@ -606,7 +606,7 @@ public class ModelEusthenopteron extends ModelBasePalaeopedia {
 
         if (!e.isInWater()) {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
-            this.body.offsetY = -0.3F;
+            this.body.offsetY = 0.1F;
             this.bob(body, -speed * 1.8F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);
