@@ -1014,6 +1014,69 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return "undefined";
     }
 
+    private void resolveGrowthCollision() {
+        if (this.noClip) {
+            return;
+        }
+
+        AxisAlignedBB currentBox = this.getEntityBoundingBox();
+        List<AxisAlignedBB> collisions = this.world.getCollisionBoxes(this, currentBox);
+        if (collisions.isEmpty()) {
+            return;
+        }
+
+        EnumFacing[] directions = new EnumFacing[]{
+                EnumFacing.DOWN, EnumFacing.UP,
+                EnumFacing.NORTH, EnumFacing.SOUTH,
+                EnumFacing.WEST, EnumFacing.EAST
+        };
+        double bestDistance = Double.MAX_VALUE;
+        double bestX = 0.0D;
+        double bestY = 0.0D;
+        double bestZ = 0.0D;
+
+        for (EnumFacing direction : directions) {
+            double distance = 0.0D;
+            for (AxisAlignedBB collisionBox : collisions) {
+                double needed;
+                if (direction == EnumFacing.EAST) {
+                    needed = collisionBox.maxX - currentBox.minX;
+                } else if (direction == EnumFacing.WEST) {
+                    needed = currentBox.maxX - collisionBox.minX;
+                } else if (direction == EnumFacing.UP) {
+                    needed = collisionBox.maxY - currentBox.minY;
+                } else if (direction == EnumFacing.DOWN) {
+                    needed = currentBox.maxY - collisionBox.minY;
+                } else if (direction == EnumFacing.SOUTH) {
+                    needed = collisionBox.maxZ - currentBox.minZ;
+                } else {
+                    needed = currentBox.maxZ - collisionBox.minZ;
+                }
+                distance = Math.max(distance, needed);
+            }
+
+            distance += 0.001D;
+            double offsetX = direction.getXOffset() * distance;
+            double offsetY = direction.getYOffset() * distance;
+            double offsetZ = direction.getZOffset() * distance;
+            AxisAlignedBB targetBox = currentBox.offset(offsetX, offsetY, offsetZ);
+
+            if (distance < bestDistance
+                    && this.world.getCollisionBoxes(this, targetBox).isEmpty()) {
+                bestDistance = distance;
+                bestX = offsetX;
+                bestY = offsetY;
+                bestZ = offsetZ;
+            }
+        }
+
+        if (bestDistance < Double.MAX_VALUE) {
+            this.setLocationAndAngles(
+                    this.posX + bestX, this.posY + bestY, this.posZ + bestZ,
+                    this.rotationYaw, this.rotationPitch);
+        }
+    }
+
     @Override
     public void setScaleForAge(boolean child) {
         //System.err.println("AgeScale: " + this.getAgeScale());
@@ -1737,124 +1800,8 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         if (didAge && !wasAlreadyAdult) {
             //Age the mob:
             this.setScaleForAge(false);
-            //Check for collisions:
-            BlockPos n = new BlockPos(this.posX, this.posY, this.posZ - (this.width/2));
-            BlockPos e = new BlockPos(this.posX + (this.width/2), this.posY, this.posZ);
-            BlockPos s = new BlockPos(this.posX, this.posY, this.posZ + (this.width/2));
-            BlockPos w = new BlockPos(this.posX - (this.width/2), this.posY, this.posZ);
-            BlockPos ne = new BlockPos(this.posX + (this.width/2), this.posY, this.posZ - (this.width/2));
-            BlockPos nw = new BlockPos(this.posX - (this.width/2), this.posY, this.posZ - (this.width/2));
-            BlockPos se = new BlockPos(this.posX + (this.width/2), this.posY, this.posZ + (this.width/2));
-            BlockPos sw = new BlockPos(this.posX - (this.width/2), this.posY, this.posZ + (this.width/2));
-            if (this.isEntityInsideOpaqueBlock()
-                    || world.getBlockState(n).causesSuffocation()
-                    || world.getBlockState(e).causesSuffocation()
-                    || world.getBlockState(s).causesSuffocation()
-                    || world.getBlockState(w).causesSuffocation()
-                    || world.getBlockState(ne).causesSuffocation()
-                    || world.getBlockState(nw).causesSuffocation()
-                    || world.getBlockState(se).causesSuffocation()
-                    || world.getBlockState(sw).causesSuffocation()
-            ) {
-                //Move the mob out from its collision if possible:
-                //Check each vertex:
-                boolean nClear = false;
-                boolean eClear = false;
-                boolean sClear = false;
-                boolean wClear = false;
-                boolean neClear = false;
-                boolean nwClear = false;
-                boolean seClear = false;
-                boolean swClear = false;
-                if (!world.getBlockState(n).causesSuffocation()) {
-                    nClear = true;
-                }
-                if (!world.getBlockState(e).causesSuffocation()) {
-                    eClear = true;
-                }
-                if (!world.getBlockState(s).causesSuffocation()) {
-                    sClear = true;
-                }
-                if (!world.getBlockState(w).causesSuffocation()) {
-                    wClear = true;
-                }
-                if (!world.getBlockState(ne).causesSuffocation()) {
-                    neClear = true;
-                }
-                if (!world.getBlockState(nw).causesSuffocation()) {
-                    nwClear = true;
-                }
-                if (!world.getBlockState(se).causesSuffocation()) {
-                    seClear = true;
-                }
-                if (!world.getBlockState(sw).causesSuffocation()) {
-                    swClear = true;
-                }
-                if (neClear || nwClear || seClear || swClear || nClear|| eClear|| sClear|| wClear) {
-                    boolean moved = false;
-                    while (!moved) {
-                        int m = getRNG().nextInt(8);
-                        switch (m) {
-                            case 0: default:
-                                if (neClear) {
-                                    this.setLocationAndAngles(this.posX + (rand.nextFloat()/10.0F), ne.getY(), this.posZ - (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
-                                    moved = true;
-                                }
-                                break;
-
-                            case 1:
-                                if (nwClear) {
-                                    this.setLocationAndAngles(this.posX - (rand.nextFloat()/10.0F), nw.getY(), this.posZ - (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
-                                    moved = true;
-                                }
-                                break;
-
-                            case 2:
-                                if (seClear) {
-                                    this.setLocationAndAngles(this.posX + (rand.nextFloat()/10.0F), se.getY(), this.posZ + (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
-                                    moved = true;
-                                }
-                                break;
-
-                            case 3:
-                                if (swClear) {
-                                    this.setLocationAndAngles(this.posX - (rand.nextFloat()/10.0F), sw.getY(), this.posZ + (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
-                                    moved = true;
-                                }
-                                break;
-
-                            case 4:
-                                if (nClear) {
-                                    this.setLocationAndAngles(this.posX, n.getY(), this.posZ - (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
-                                    moved = true;
-                                }
-                                break;
-
-                            case 5:
-                                if (eClear) {
-                                    this.setLocationAndAngles(this.posX + (rand.nextFloat()/10.0F), e.getY(), this.posZ, this.rotationYaw, this.rotationPitch);
-                                    moved = true;
-                                }
-                                break;
-
-                            case 6:
-                                if (sClear) {
-                                    this.setLocationAndAngles(this.posX, s.getY(), this.posZ + (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
-                                    moved = true;
-                                }
-                                break;
-
-                            case 7:
-                                if (wClear) {
-                                    this.setLocationAndAngles(this.posX - (rand.nextFloat()/10.0F), w.getY(), this.posZ, this.rotationYaw, this.rotationPitch);
-                                    moved = true;
-                                }
-                                break;
-
-                        }
-                    }
-                }
-            }
+            // Resolve any block-shape overlap caused by the larger growth hitbox.
+            this.resolveGrowthCollision();
         }
 
         double oldHealthMax = this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getBaseValue();

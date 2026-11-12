@@ -1,7 +1,8 @@
 {
   "variants": {
-    "normal": {
-      "model": "lepidodendron:hironoia_leaves"
-    }
+    "normal": [
+      {"model": "lepidodendron:hironoia_leaves_flowers", "weight": 2},
+      {"model": "lepidodendron:laurus_leaves"}
+    ]
   }
 }

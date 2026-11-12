@@ -72,7 +72,7 @@ public class BlockFractofusus extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:fractofusus", BlockFractofusus.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:fractofusus", BlockFractofusus.block);
 	}
 
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {

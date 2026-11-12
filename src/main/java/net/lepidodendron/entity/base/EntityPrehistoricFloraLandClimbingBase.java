@@ -54,6 +54,55 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
     }
 
     @Override
+    public boolean isEntityInsideOpaqueBlock() {
+        // Treat any intersecting block collision shape as an obstruction.
+        // Glass panes and similar partial blocks collide even though they do
+        // not cause suffocation.
+        return !this.world.getCollisionBoxes(this, this.getEntityBoundingBox()).isEmpty();
+    }
+
+    private boolean moveOutOfWallIfClear(EnumFacing direction) {
+        AxisAlignedBB currentBox = this.getEntityBoundingBox();
+        java.util.List<AxisAlignedBB> collisions = this.world.getCollisionBoxes(this, currentBox);
+        if (collisions.isEmpty()) {
+            return false;
+        }
+
+        double displacement = 0.0D;
+        for (AxisAlignedBB collisionBox : collisions) {
+            double needed;
+            if (direction.getXOffset() > 0) {
+                needed = collisionBox.maxX - currentBox.minX;
+            } else if (direction.getXOffset() < 0) {
+                needed = currentBox.maxX - collisionBox.minX;
+            } else if (direction.getZOffset() > 0) {
+                needed = collisionBox.maxZ - currentBox.minZ;
+            } else if (direction.getZOffset() < 0) {
+                needed = currentBox.maxZ - collisionBox.minZ;
+            } else {
+                return false;
+            }
+            displacement = Math.max(displacement, needed);
+        }
+
+        // Move only far enough for the bounding box to clear every shape it
+        // currently intersects, plus a tiny separation epsilon.
+        displacement += 0.001D;
+        double targetX = this.posX + direction.getXOffset() * displacement;
+        double targetY = this.posY;
+        double targetZ = this.posZ + direction.getZOffset() * displacement;
+        AxisAlignedBB targetBox = currentBox.offset(
+                targetX - this.posX, 0.0D, targetZ - this.posZ);
+
+        if (!this.world.getCollisionBoxes(this, targetBox).isEmpty()) {
+            return false;
+        }
+
+        this.setLocationAndAngles(targetX, targetY, targetZ, this.rotationYaw, this.rotationPitch);
+        return true;
+    }
+
+    @Override
     public void knockBack(Entity entityIn, float strength, double xRatio, double zRatio)
     {
         if (this.getIsClimbing()) {
@@ -261,69 +310,30 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
     public boolean attackEntityFrom(DamageSource ds, float i) {
         //Dont understand why these sometimes get inside blocks, but this just fixes it anyway....
         if (ds == DamageSource.IN_WALL) {
-            if (this.getIsClimbing()) { //It thinks its climbing so push back in teh direction is climbing more realistically
-                if (!this.world.getBlockState(this.getPosition().offset(this.getClimbFacing())).causesSuffocation()) {
-                    int xOffset = 0;
-                    int zOffset = 0;
-                    if (this.getClimbFacing() == EnumFacing.NORTH) {
-                        zOffset = -1;
-                    }
-                    if (this.getClimbFacing() == EnumFacing.SOUTH) {
-                        zOffset = 1;
-                    }
-                    if (this.getClimbFacing() == EnumFacing.EAST) {
-                        xOffset = 1;
-                    }
-                    if (this.getClimbFacing() == EnumFacing.WEST) {
-                        xOffset = -1;
-                    }
-                    this.setLocationAndAngles(this.posX + xOffset, this.posY, this.posZ + zOffset, this.rotationYaw, this.rotationPitch);
-                    return false;
-                }
-            } else if (!this.world.getBlockState(this.getPosition().offset(this.getAdjustedHorizontalFacing().getOpposite())).causesSuffocation()) {
-                //PUsh it back the direction it came from (so it doesnt phase through walls unintentionally)
-                int xOffset = 0;
-                int zOffset = 0;
-                if (this.getAdjustedHorizontalFacing().getOpposite() == EnumFacing.NORTH) {
-                    zOffset = -1;
-                }
-                if (this.getAdjustedHorizontalFacing().getOpposite() == EnumFacing.SOUTH) {
-                    zOffset = 1;
-                }
-                if (this.getAdjustedHorizontalFacing().getOpposite() == EnumFacing.EAST) {
-                    xOffset = 1;
-                }
-                if (this.getAdjustedHorizontalFacing().getOpposite() == EnumFacing.WEST) {
-                    xOffset = -1;
-                }
-                this.setLocationAndAngles(this.posX + xOffset, this.posY, this.posZ + zOffset, this.rotationYaw, this.rotationPitch);
+            // Prefer moving back from the surface it was facing. Test the
+            // creature's actual collision box, not causesSuffocation(): panes
+            // and other partial blocks collide without suffocating entities.
+            EnumFacing preferredDirection = this.getIsClimbing()
+                    ? this.getClimbFacing()
+                    : this.getAdjustedHorizontalFacing().getOpposite();
+
+            if (this.moveOutOfWallIfClear(preferredDirection)) {
                 return false;
-            } else { //Test horizontals as a last resort:
-                for (int ii = 0; ii <= 3; ii++) {
-                    if (!this.world.getBlockState(this.getPosition().offset(EnumFacing.byHorizontalIndex(ii))).causesSuffocation()) {
-                        int xOffset = 0;
-                        int zOffset = 0;
-                        if (EnumFacing.byHorizontalIndex(ii) == EnumFacing.NORTH) {
-                            zOffset = -1;
-                        }
-                        if (EnumFacing.byHorizontalIndex(ii) == EnumFacing.SOUTH) {
-                            zOffset = 1;
-                        }
-                        if (EnumFacing.byHorizontalIndex(ii) == EnumFacing.EAST) {
-                            xOffset = 1;
-                        }
-                        if (EnumFacing.byHorizontalIndex(ii) == EnumFacing.WEST) {
-                            xOffset = -1;
-                        }
-                        this.setLocationAndAngles(this.posX + xOffset, this.posY, this.posZ + zOffset, this.rotationYaw, this.rotationPitch);
-                        return false;
-                    }
+            }
+
+            // If that side is blocked, try the other horizontal exits.
+            for (int index = 0; index < 4; index++) {
+                EnumFacing direction = EnumFacing.byHorizontalIndex(index);
+                if (direction != preferredDirection && this.moveOutOfWallIfClear(direction)) {
+                    return false;
                 }
             }
         }
+
         if (ds == DamageSource.FALL) { //Immune to fall damage
             return false;
         }
+
         this.setIsClimbing(false);
         this.setStartingToClimb(false);
         this.setClimbFacing(EnumFacing.DOWN);
@@ -333,6 +343,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
         //System.err.println("DamageSource: " + ds.getDamageType());
         return super.attackEntityFrom(ds, i);
     }
+
 
     public abstract float getAISpeedLand();
 

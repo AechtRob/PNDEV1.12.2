@@ -14,6 +14,10 @@
 		},
 		{
 			"type": "text",
+			"text": "Right-clicking on the mob with a Palaeopedia will tell you if it has a nest, and right-clicking ona  nest will tell you if it has an owner. It will seek that its own known nest in preference to a new one, if it's empty, and they don't like to use belonging to other mobs. You can prompt a mob to build itself a nest by clicking nesting material onto it: provided it does not already have a nest it will then build one if the ground can support it."
+		},
+		{
+			"type": "text",
 			"text": "Some animals like crocodilians won't need a nest to lay eggs and will instead create a nest mound, breakable by hand to obtain the eggs inside. A small number of smaller animals and insects lay their eggs directly into mosses and/or rotten wood logs."
 		},
  		{

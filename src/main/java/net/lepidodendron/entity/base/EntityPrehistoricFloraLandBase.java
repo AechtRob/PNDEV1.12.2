@@ -91,6 +91,17 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     }
 
     @Override
+    public boolean isEntityInsideOpaqueBlock() {
+        if (this.noClip) {
+            return false;
+        }
+
+        // Detect overlap with the entity's full block-collision volume, not
+        // only blocks whose material causes suffocation (for example panes).
+        return !this.world.getCollisionBoxes(this, this.getEntityBoundingBox()).isEmpty();
+    }
+
+    @Override
     public boolean isAnimationDirectionLocked(Animation animation) {
          /**
          * If it must not pathfind, rotate or change its look angle while it is happening
