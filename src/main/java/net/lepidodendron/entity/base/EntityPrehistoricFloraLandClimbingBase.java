@@ -36,6 +36,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
     public ChainBuffer chainBuffer;
+    private int wallRecoveryGraceTicks;
     private static final DataParameter<Boolean> CLIMBING = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> HEADCOLLIDED = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> STARTINGTOCLIMB = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingBase.class, DataSerializers.BOOLEAN);
@@ -61,49 +62,77 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
         return !this.world.getCollisionBoxes(this, this.getEntityBoundingBox()).isEmpty();
     }
 
-    private boolean moveOutOfWallIfClear(EnumFacing direction) {
-
-        if (this.isJumping) {
-            return false;
-        }
-
+    private boolean moveOutOfWallIfClear(EnumFacing preferredDirection) {
         AxisAlignedBB currentBox = this.getEntityBoundingBox();
-        java.util.List<AxisAlignedBB> collisions = this.world.getCollisionBoxes(this, currentBox);
+        java.util.List<AxisAlignedBB> collisions =
+                this.world.getCollisionBoxes(this, currentBox);
         if (collisions.isEmpty()) {
             return false;
         }
 
-        double displacement = 0.0D;
-        for (AxisAlignedBB collisionBox : collisions) {
-            double needed;
-            if (direction.getXOffset() > 0) {
-                needed = collisionBox.maxX - currentBox.minX;
-            } else if (direction.getXOffset() < 0) {
-                needed = currentBox.maxX - collisionBox.minX;
-            } else if (direction.getZOffset() > 0) {
-                needed = collisionBox.maxZ - currentBox.minZ;
-            } else if (direction.getZOffset() < 0) {
-                needed = currentBox.maxZ - collisionBox.minZ;
-            } else {
-                return false;
+        EnumFacing[] directions = new EnumFacing[]{
+                preferredDirection, EnumFacing.UP, EnumFacing.DOWN,
+                EnumFacing.NORTH, EnumFacing.SOUTH, EnumFacing.WEST, EnumFacing.EAST
+        };
+        double bestDistance = Double.MAX_VALUE;
+        double bestX = 0.0D;
+        double bestY = 0.0D;
+        double bestZ = 0.0D;
+
+        for (int index = 0; index < directions.length; index++) {
+            EnumFacing direction = directions[index];
+            boolean alreadyChecked = false;
+            for (int previous = 0; previous < index; previous++) {
+                if (directions[previous] == direction) {
+                    alreadyChecked = true;
+                    break;
+                }
             }
-            displacement = Math.max(displacement, needed);
+            if (alreadyChecked) {
+                continue;
+            }
+
+            double distance = 0.0D;
+            for (AxisAlignedBB collisionBox : collisions) {
+                double needed;
+                if (direction == EnumFacing.EAST) {
+                    needed = collisionBox.maxX - currentBox.minX;
+                } else if (direction == EnumFacing.WEST) {
+                    needed = currentBox.maxX - collisionBox.minX;
+                } else if (direction == EnumFacing.UP) {
+                    needed = collisionBox.maxY - currentBox.minY;
+                } else if (direction == EnumFacing.DOWN) {
+                    needed = currentBox.maxY - collisionBox.minY;
+                } else if (direction == EnumFacing.SOUTH) {
+                    needed = collisionBox.maxZ - currentBox.minZ;
+                } else {
+                    needed = currentBox.maxZ - collisionBox.minZ;
+                }
+                distance = Math.max(distance, needed);
+            }
+
+            distance += 0.001D;
+            double offsetX = direction.getXOffset() * distance;
+            double offsetY = direction.getYOffset() * distance;
+            double offsetZ = direction.getZOffset() * distance;
+            AxisAlignedBB targetBox = currentBox.offset(offsetX, offsetY, offsetZ);
+
+            if (distance < bestDistance
+                    && this.world.getCollisionBoxes(this, targetBox).isEmpty()) {
+                bestDistance = distance;
+                bestX = offsetX;
+                bestY = offsetY;
+                bestZ = offsetZ;
+            }
         }
 
-        // Move only far enough for the bounding box to clear every shape it
-        // currently intersects, plus a tiny separation epsilon.
-        displacement += 0.001D;
-        double targetX = this.posX + direction.getXOffset() * displacement;
-        double targetY = this.posY;
-        double targetZ = this.posZ + direction.getZOffset() * displacement;
-        AxisAlignedBB targetBox = currentBox.offset(
-                targetX - this.posX, 0.0D, targetZ - this.posZ);
-
-        if (!this.world.getCollisionBoxes(this, targetBox).isEmpty()) {
+        if (bestDistance == Double.MAX_VALUE) {
             return false;
         }
 
-        this.setLocationAndAngles(targetX, targetY, targetZ, this.rotationYaw, this.rotationPitch);
+        this.setLocationAndAngles(
+                this.posX + bestX, this.posY + bestY, this.posZ + bestZ,
+                this.rotationYaw, this.rotationPitch);
         return true;
     }
 
@@ -315,23 +344,29 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
     public boolean attackEntityFrom(DamageSource ds, float i) {
         //Dont understand why these sometimes get inside blocks, but this just fixes it anyway....
         if (ds == DamageSource.IN_WALL) {
-            // Prefer moving back from the surface it was facing. Test the
-            // creature's actual collision box, not causesSuffocation(): panes
-            // and other partial blocks collide without suffocating entities.
+            // Position correction is authoritative on the server. Running it
+            // on both sides makes the mob appear to shake before syncing.
+            if (this.world.isRemote) {
+                return false;
+            }
+
+            // During a non-climbing jump, let normal movement collision
+            // resolve the overlap through landing. Climbing entities still
+            // need the wall-overlap recovery while climbing.
+            if (!this.getIsClimbing()
+                    && (this.isJumping || !this.onGround || this.wallRecoveryGraceTicks > 0)) {
+                return false;
+            }
+
+            // Clear any actual overlap by the smallest valid displacement.
+            // This preserves normal contact for climbing and avoids a large
+            // horizontal shove when the overlap is at a block's top edge.
             EnumFacing preferredDirection = this.getIsClimbing()
                     ? this.getClimbFacing()
                     : this.getAdjustedHorizontalFacing().getOpposite();
 
             if (this.moveOutOfWallIfClear(preferredDirection)) {
                 return false;
-            }
-
-            // If that side is blocked, try the other horizontal exits.
-            for (int index = 0; index < 4; index++) {
-                EnumFacing direction = EnumFacing.byHorizontalIndex(index);
-                if (direction != preferredDirection && this.moveOutOfWallIfClear(direction)) {
-                    return false;
-                }
             }
         }
 
@@ -348,7 +383,6 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
         //System.err.println("DamageSource: " + ds.getDamageType());
         return super.attackEntityFrom(ds, i);
     }
-
 
     public abstract float getAISpeedLand();
 
@@ -368,6 +402,12 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
     
     @Override
     public void onLivingUpdate() {
+
+        if (!this.onGround) {
+            this.wallRecoveryGraceTicks = 3;
+        } else if (this.wallRecoveryGraceTicks > 0) {
+            --this.wallRecoveryGraceTicks;
+        }
 
         if (!world.isRemote) {
 
