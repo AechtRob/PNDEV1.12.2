@@ -5,7 +5,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EntityLookIdleAI;
-import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
+import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBaseLiveBirth;
 import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraViviparus extends EntityPrehistoricFloraSlith
 
 	@Override
 	public boolean dropsEggs() {
-		return true;
+		return false;
 	}
 
 	protected float getAISpeedSlithering() {
@@ -68,9 +68,14 @@ public class EntityPrehistoricFloraViviparus extends EntityPrehistoricFloraSlith
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAISlitheringWaterBase(this, 1));
+		tasks.addTask(0, new EntityMateAISlitheringWaterBaseLiveBirth(this, 1.0D));
 		tasks.addTask(1, new SlitheringWanderBottom(this, NO_ANIMATION));
 		tasks.addTask(2, new EntityLookIdleAI(this));
+	}
+
+	@Override
+	public EntityPrehistoricFloraSlitheringWaterBase createPFChild(EntityPrehistoricFloraSlitheringWaterBase entity) {
+		return new EntityPrehistoricFloraViviparus(this.world);
 	}
 
 	@Override

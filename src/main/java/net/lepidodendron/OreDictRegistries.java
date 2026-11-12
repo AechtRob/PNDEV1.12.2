@@ -349,6 +349,10 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("blockSulfur", BlockSulphur.block);
 		OreDictionary.registerOre("oreSulphur", BlockSulphurOre.block);
 		OreDictionary.registerOre("oreSulfur", BlockSulphurOre.block);
+		OreDictionary.registerOre("oreSulphur", BlockObsidianSulphurOre.block);
+		OreDictionary.registerOre("oreSulfur", BlockObsidianSulphurOre.block);
+		OreDictionary.registerOre("oreSulphur", BlockSulphurOreLavaRock.block);
+		OreDictionary.registerOre("oreSulfur", BlockSulphurOreLavaRock.block);
 		OreDictionary.registerOre("oreSulphur", BlockSulphurOreNetherrack.block);
 		OreDictionary.registerOre("oreSulfur", BlockSulphurOreNetherrack.block);
 		OreDictionary.registerOre("itemSulphur", ItemSulphur.block);
@@ -359,6 +363,12 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("blockSodium", BlockSodium.block);
 		OreDictionary.registerOre("ingotSodium", ItemSodiumIngot.block);
 		OreDictionary.registerOre("nuggetSodium", ItemSodiumNugget.block);
+
+		OreDictionary.registerOre("oreDiamond", BlockLavaRockDiamondOre.block);
+
+		OreDictionary.registerOre("oreZircon", BlockZirconOre.block);
+		OreDictionary.registerOre("oreZircon", BlockObsidianZirconOre.block);
+		OreDictionary.registerOre("oreZircon", BlockLavaRockZirconOre.block);
 
 		OreDictionary.registerOre("stone", BlockFossilPrecambrian.block);
 		OreDictionary.registerOre("stone", BlockFossilCambrian.block);

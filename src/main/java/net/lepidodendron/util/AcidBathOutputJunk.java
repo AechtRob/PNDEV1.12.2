@@ -229,7 +229,7 @@ public class AcidBathOutputJunk {
                 new ItemStack(BlockSandyDirtGrey.block, 1),
                 new ItemStack(BlockLavaRock.block, 1),
                 new ItemStack(Blocks.DIRT, 1, 1),
-                new ItemStack(Blocks.DIRT, 1, 2),
+                new ItemStack(Blocks.DIRT, 1, 3),
                 new ItemStack(Blocks.GRAVEL, 1),
                 new ItemStack(Blocks.OBSIDIAN, 1),
                 new ItemStack(Blocks.SAND, 1, 0),

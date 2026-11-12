@@ -3,13 +3,13 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
 import net.lepidodendron.entity.render.entity.RenderSharovipteryx;
-import net.lepidodendron.entity.render.entity.RenderYuanyanglong;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
@@ -157,6 +157,9 @@ public class EntityPrehistoricFloraSharovipteryx extends EntityPrehistoricFloraL
 
 	@Override
 	public Animation getGrappleAnimation() {
+		if (this.GRAPPLE_ANIMATION == null) {
+			this.GRAPPLE_ANIMATION = Animation.create(this.getGrappleLength());
+		}
 		return this.GRAPPLE_ANIMATION;
 	}
 
@@ -261,6 +264,8 @@ public class EntityPrehistoricFloraSharovipteryx extends EntityPrehistoricFloraL
 				this.faceEntity(this.getGrappleTarget(), 10, 10);
 			}
 		}
+
+		AnimationHandler.INSTANCE.updateAnimations(this);
 	}
 
 	@Override

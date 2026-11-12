@@ -68,6 +68,10 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 		return EnumCreatureAttributePN.VERTEBRATE;
 	}
 
+	public EntityPrehistoricFloraSlitheringWaterBase createPFChild(EntityPrehistoricFloraSlitheringWaterBase entity) {
+		return null;
+	}
+
 	@Override
 	public String[] getFoodOreDictsForVariantInPalaeopedia(@Nullable String variantIn) {
 		return getFoodOreDicts();

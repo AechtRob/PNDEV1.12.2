@@ -22,6 +22,14 @@ public class RecipeOresAndBlocks  {
 			GameRegistry.addSmelting(stack, new ItemStack(Blocks.GLASS, (int) (1)), 0.1F);
 		}
 
+		for (ItemStack stack : OreDictionary.getOres("oreSulphur")) {
+			GameRegistry.addSmelting(stack, new ItemStack(ItemSulphur.block, (int) (1)), 0.1F);
+		}
+
+		for (ItemStack stack : OreDictionary.getOres("oreZircon")) {
+			GameRegistry.addSmelting(stack, new ItemStack(ItemZircon.block, (int) (1)), 0.75F);
+		}
+
 		GameRegistry.addSmelting(new ItemStack(BlockMeteorite.block, (int) (1)), new ItemStack(Items.IRON_INGOT, (int) (1)), 1F);
 
 		GameRegistry.addSmelting(new ItemStack(BlockLavaCobble.block, (int) (1)), new ItemStack(BlockLavaRock.block, (int) (1)), 0.1F);
@@ -46,10 +54,6 @@ public class RecipeOresAndBlocks  {
 
 		GameRegistry.addSmelting(new ItemStack(ItemClayBallRed.block, (int) (1)), new ItemStack(Items.BRICK, (int) (1)), 0.3F);
 		GameRegistry.addSmelting(new ItemStack(ItemClayBallBrown.block, (int) (1)), new ItemStack(ItemBrickBrown.block, (int) (1)), 0.3F);
-
-		GameRegistry.addSmelting(new ItemStack(BlockLavaRockZirconOre.block, (int) (1)), new ItemStack(ItemZircon.block, (int) (1)), 0.75F);
-		GameRegistry.addSmelting(new ItemStack(BlockZirconOre.block, (int) (1)), new ItemStack(ItemZircon.block, (int) (1)), 0.75F);
-		GameRegistry.addSmelting(new ItemStack(BlockObsidianZirconOre.block, (int) (1)), new ItemStack(ItemZircon.block, (int) (1)), 0.75F);
 
 		GameRegistry.addSmelting(new ItemStack(BlockClayRed.block, (int) (1)), new ItemStack(Blocks.HARDENED_CLAY, (int) (1)), 0.35F);
 

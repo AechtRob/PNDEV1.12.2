@@ -743,7 +743,10 @@ public class LepidodendronBookSubscribers {
 				}
 			}
 			else if (entity instanceof EntityPrehistoricFloraSlitheringWaterBase) {
-				if (((EntityPrehistoricFloraSlitheringWaterBase) entity).dropsEggs()) {
+				if (((EntityPrehistoricFloraSlitheringWaterBase) entity).createPFChild(((EntityPrehistoricFloraSlitheringWaterBase) entity)) != null) {
+					nestString = " gives birth to live young";
+				}
+				else if (((EntityPrehistoricFloraSlitheringWaterBase) entity).dropsEggs()) {
 					nestString = " drops egg items";
 				}
 				else {

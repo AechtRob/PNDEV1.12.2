@@ -207,6 +207,9 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 
 	@Override
 	public Animation getGrappleAnimation() {
+		if (this.CHATTER_ANIMATION == null) {
+			this.CHATTER_ANIMATION = Animation.create(this.getChatterLength());
+		}
 		return this.CHATTER_ANIMATION;
 	}
 
