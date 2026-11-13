@@ -106,7 +106,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 }
 
                 if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_coastal_cliffs")) {
-                    yMin = 105;
+                    yMin = 102;
                 }
 
                 if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_crags")) {

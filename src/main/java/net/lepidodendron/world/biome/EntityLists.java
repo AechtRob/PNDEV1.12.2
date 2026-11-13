@@ -2657,10 +2657,21 @@ public class EntityLists {
 //                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.dimJurassicMobsOceanDeepReborn);
 //            }
         }
-        else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes")
-                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_rim_inner")) {
+        else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyEGondwanaAlpineLakePF);
+            }
+//            if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.dimJurassicMobsOceanDeepFA);
+//            }
+//            if ((LepidodendronConfig.doSpawnsReborn && Loader.isModLoaded("rebornmod"))) {
+//                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.dimJurassicMobsOceanDeepReborn);
+//            }
+        }
+        else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_rim_outer")
+            || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_rim_inner")) {
+            if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyEGondwanaAlpineLakeRimPF);
             }
 //            if (LepidodendronConfig.doSpawnsFossilsArcheology && Loader.isModLoaded("fossil")) {
 //                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.dimJurassicMobsOceanDeepFA);
@@ -2775,7 +2786,8 @@ public class EntityLists {
 //            }
         }
         else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_creek_wide_centre")
-                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_creek_wide_rift")) {
+                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_creek_wide_rift")
+                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_afroamerica_rocky")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyWGondwanaRiftPF);
             }
@@ -2881,7 +2893,8 @@ public class EntityLists {
 //                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.dimJurassicMobsOceanDeepReborn);
 //            }
         }
-        else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_africa")) {
+        else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_africa")
+            || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_beach_africa")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyWGondwanaAmericaBeachPF);
             }
@@ -2984,7 +2997,8 @@ public class EntityLists {
 //                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.dimJurassicMobsOceanDeepReborn);
 //            }
         }
-        else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_namerica_cove")) {
+        else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_namerica_cove")
+            || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_beach_namerica_cove")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyNAmericaCovePF);
             }
@@ -3288,7 +3302,8 @@ public class EntityLists {
 //                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.dimJurassicMobsOceanDeepReborn);
 //            }
         }
-        else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_asia")) {
+        else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_asia")
+            || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_beach_asia")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCretaceousEarly.CretaceousEarlyAsiaYixianBeachPF);
             }
