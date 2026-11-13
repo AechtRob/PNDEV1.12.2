@@ -6490,6 +6490,7 @@ public class LepidodendronSorter {
     public static final int teinolophos_raw= 5790;
     public static final int eggs_teinolophos = 5791;
     public static final int eromangateuthis_raw= 5792;
+    public static final int eggs_eromangateuthis  = 5792;
     public static final int bivalve_pinna= 5701;
     public static final int bivalve_diceras= 5702;
     public static final int bivalve_epidiceras= 5703;

@@ -137,6 +137,7 @@ public class EntityPrehistoricFloraClarkeiteuthis extends EntityPrehistoricFlora
 	public ItemStack getPropagule() {
 		return new ItemStack(ItemNautiloidEggsClarkeiteuthis.block, (int) (1));
 	}
+
 	@Override
 	public void onUpdate() {
 		super.onUpdate();

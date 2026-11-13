@@ -12,6 +12,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.item.entities.ItemNautiloidEggsMegateuthis;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.entity.Entity;
@@ -55,6 +56,10 @@ public class EntityPrehistoricFloraMegateuthis extends EntityPrehistoricFloraAge
 		maxHealthAgeable = 24.0D;
 	}
 
+	@Override
+	public ItemStack getPropagule() {
+		return new ItemStack(ItemNautiloidEggsMegateuthis.block, (int) (1));
+	}
 
 	@Override
 	public boolean isSmall() {
