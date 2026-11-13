@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_ramirosuarezia"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:ramirosuarezia_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_ramirosuarezia.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_ramirosuarezia.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

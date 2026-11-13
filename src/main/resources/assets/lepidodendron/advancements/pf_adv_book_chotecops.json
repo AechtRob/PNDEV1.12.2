@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_chotecops"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:chotecops_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_chotecops.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_chotecops.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

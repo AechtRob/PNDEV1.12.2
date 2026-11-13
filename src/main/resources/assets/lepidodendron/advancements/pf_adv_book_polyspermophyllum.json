@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_polyspermophyllum"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:polyspermophyllum"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_polyspermophyllum.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_polyspermophyllum.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

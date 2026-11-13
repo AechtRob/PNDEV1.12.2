@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_palaeontinid"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:palaeontinid_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_palaeontinid.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_palaeontinid.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

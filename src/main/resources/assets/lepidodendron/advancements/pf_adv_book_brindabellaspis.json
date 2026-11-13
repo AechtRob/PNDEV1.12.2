@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_brindabellaspis"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:brindabellaspis_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_brindabellaspis.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_brindabellaspis.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

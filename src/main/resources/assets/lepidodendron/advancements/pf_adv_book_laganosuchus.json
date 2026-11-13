@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_laganosuchus"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:laganosuchus_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_laganosuchus.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_laganosuchus.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

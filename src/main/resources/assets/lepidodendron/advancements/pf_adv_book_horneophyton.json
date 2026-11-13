@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_horneophyton"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:horneophyton"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_horneophyton.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_horneophyton.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

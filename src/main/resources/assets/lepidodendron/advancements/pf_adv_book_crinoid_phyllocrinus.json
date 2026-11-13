@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_crinoid_phyllocrinus"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:crinoid_phyllocrinus"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_crinoid_phyllocrinus.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_crinoid_phyllocrinus.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

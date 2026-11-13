@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_caviramus"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:caviramus_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_caviramus.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_caviramus.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

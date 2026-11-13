@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_acanthodes"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:acanthodes_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_acanthodes.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_acanthodes.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

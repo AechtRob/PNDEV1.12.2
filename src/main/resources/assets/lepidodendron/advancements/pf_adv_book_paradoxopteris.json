@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_paradoxopteris"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:paradoxopteris_sapling"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_paradoxopteris.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_paradoxopteris.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

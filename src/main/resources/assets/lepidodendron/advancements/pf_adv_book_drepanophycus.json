@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_drepanophycus"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:drepanophycus_item"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_drepanophycus.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_drepanophycus.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

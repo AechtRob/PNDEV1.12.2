@@ -4,5 +4,19 @@
     "pf_trigger": {
       "trigger": "pf_book_sphooceras"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:sphooceras_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_sphooceras.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_sphooceras.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

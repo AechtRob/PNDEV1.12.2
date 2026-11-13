@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_kalligrammatid_huiyingogramma"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:kalligrammatid_huiyingogramma_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_kalligrammatid_huiyingogramma.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_kalligrammatid_huiyingogramma.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

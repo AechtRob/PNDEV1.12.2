@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_iowagnathus"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:iowagnathus_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_iowagnathus.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_iowagnathus.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

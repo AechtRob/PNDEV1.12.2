@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_yawunik"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:yawunik_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_yawunik.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_yawunik.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

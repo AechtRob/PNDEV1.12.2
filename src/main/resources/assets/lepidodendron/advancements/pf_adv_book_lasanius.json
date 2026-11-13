@@ -4,5 +4,19 @@
     "pf_trigger": {
       "trigger": "pf_book_lasanius"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:lasanius_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_lasanius.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_lasanius.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

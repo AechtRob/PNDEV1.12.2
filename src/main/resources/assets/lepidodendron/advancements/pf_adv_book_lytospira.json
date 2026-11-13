@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_lytospira"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:lytospira_item"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_lytospira.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_lytospira.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_crinoid_caryocrinites"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:crinoid_caryocrinites"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_crinoid_caryocrinites.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_crinoid_caryocrinites.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

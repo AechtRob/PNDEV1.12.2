@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_vojnovskyales"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:vojnovskyales"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_vojnovskyales.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_vojnovskyales.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

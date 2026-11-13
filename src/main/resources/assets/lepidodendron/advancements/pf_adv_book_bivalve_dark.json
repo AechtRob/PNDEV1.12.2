@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_bivalve_dark"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:bivalve_dark"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_bivalve_dark.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_bivalve_dark.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

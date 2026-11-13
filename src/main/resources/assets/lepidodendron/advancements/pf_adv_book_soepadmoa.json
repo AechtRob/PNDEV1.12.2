@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_soepadmoa"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:soepadmoa_sapling"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_soepadmoa.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_soepadmoa.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

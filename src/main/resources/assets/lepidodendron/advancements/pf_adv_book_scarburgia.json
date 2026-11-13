@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_scarburgia"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:scarburgia_sapling"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_scarburgia.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_scarburgia.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

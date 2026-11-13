@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_ilicium"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:ilicium_sapling"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_ilicium.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_ilicium.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

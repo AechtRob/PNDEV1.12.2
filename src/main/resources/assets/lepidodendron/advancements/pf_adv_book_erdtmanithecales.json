@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_erdtmanithecales"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:erdtmanithecales"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_erdtmanithecales.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_erdtmanithecales.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

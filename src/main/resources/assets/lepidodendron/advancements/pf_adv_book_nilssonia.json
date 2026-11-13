@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_nilssonia"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:nilssonia_sapling"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_nilssonia.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_nilssonia.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

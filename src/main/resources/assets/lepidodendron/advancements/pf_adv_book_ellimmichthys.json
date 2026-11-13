@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_ellimmichthys"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:ellimmichthys_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_ellimmichthys.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_ellimmichthys.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

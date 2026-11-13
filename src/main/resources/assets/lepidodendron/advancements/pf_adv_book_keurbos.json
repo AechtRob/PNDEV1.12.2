@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_keurbos"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:keurbos_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_keurbos.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_keurbos.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

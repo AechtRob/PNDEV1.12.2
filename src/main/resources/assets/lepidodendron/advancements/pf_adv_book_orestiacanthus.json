@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_orestiacanthus"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:orestiacanthus_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_orestiacanthus.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_orestiacanthus.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

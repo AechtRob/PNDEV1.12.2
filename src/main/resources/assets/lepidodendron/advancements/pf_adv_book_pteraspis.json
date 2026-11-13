@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_pteraspis"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:pteraspis_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_pteraspis.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_pteraspis.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

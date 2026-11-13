@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_xiushanosteus"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:xiushanosteus_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_xiushanosteus.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_xiushanosteus.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

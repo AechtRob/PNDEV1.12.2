@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_bivalve_polyconites"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:bivalve_polyconites"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_bivalve_polyconites.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_bivalve_polyconites.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

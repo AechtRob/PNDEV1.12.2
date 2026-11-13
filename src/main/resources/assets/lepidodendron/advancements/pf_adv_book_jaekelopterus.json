@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_jaekelopterus"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:jaekelopterus_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_jaekelopterus.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_jaekelopterus.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

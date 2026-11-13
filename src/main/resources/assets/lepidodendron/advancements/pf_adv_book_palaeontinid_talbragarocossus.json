@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_palaeontinid_talbragarocossus"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:palaeontinid_talbragarocossus_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_palaeontinid_talbragarocossus.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_palaeontinid_talbragarocossus.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

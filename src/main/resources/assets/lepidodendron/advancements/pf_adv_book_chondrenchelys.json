@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_chondrenchelys"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:chondrenchelys_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_chondrenchelys.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_chondrenchelys.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

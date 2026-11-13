@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_dicroidium_o"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:dicroidium_o_sapling"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_dicroidium_o.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_dicroidium_o.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

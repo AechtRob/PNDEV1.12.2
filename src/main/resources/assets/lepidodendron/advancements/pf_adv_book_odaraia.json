@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_odaraia"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:odaraia_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_odaraia.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_odaraia.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

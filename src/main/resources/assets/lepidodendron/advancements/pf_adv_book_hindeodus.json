@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_hindeodus"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:hindeodus_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_hindeodus.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_hindeodus.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_nothofagus"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:nothofagus_sapling"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_nothofagus.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_nothofagus.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

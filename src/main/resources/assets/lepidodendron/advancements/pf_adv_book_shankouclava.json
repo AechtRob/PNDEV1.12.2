@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_shankouclava"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:shankouclava"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_shankouclava.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_shankouclava.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

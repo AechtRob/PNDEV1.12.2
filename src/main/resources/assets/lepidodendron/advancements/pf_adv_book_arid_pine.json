@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_arid_pine"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:arid_pine_sapling"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_arid_pine.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_arid_pine.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

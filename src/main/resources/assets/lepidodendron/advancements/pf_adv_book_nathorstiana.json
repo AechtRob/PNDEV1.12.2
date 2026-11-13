@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_nathorstiana"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:nathorstiana_item"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_nathorstiana.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_nathorstiana.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

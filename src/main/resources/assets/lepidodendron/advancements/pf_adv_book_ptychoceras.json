@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_ptychoceras"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:ptychoceras_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_ptychoceras.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_ptychoceras.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

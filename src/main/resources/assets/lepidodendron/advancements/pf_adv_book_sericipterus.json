@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_sericipterus"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:sericipterus_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_sericipterus.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_sericipterus.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

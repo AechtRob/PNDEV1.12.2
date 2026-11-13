@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_fukuivenator"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:fukuivenator_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_fukuivenator.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_fukuivenator.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

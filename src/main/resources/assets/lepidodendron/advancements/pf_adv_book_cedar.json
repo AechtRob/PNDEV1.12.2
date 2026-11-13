@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_cedar"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:cedar_sapling"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_cedar.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_cedar.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

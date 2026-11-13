@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_kaganaias"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:kaganaias_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_kaganaias.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_kaganaias.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

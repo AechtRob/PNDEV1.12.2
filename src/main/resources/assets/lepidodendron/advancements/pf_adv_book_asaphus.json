@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_asaphus"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:asaphus_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_asaphus.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_asaphus.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

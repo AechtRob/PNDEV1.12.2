@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_myriapod_devonobius"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:myriapod_devonobius_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_myriapod_devonobius.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_myriapod_devonobius.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_drimys"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:drimys"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_drimys.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_drimys.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

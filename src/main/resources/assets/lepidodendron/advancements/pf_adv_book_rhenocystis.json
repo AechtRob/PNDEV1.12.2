@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_rhenocystis"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:rhenocystis_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_rhenocystis.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_rhenocystis.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_inversoceras"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:inversoceras_raw"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_inversoceras.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_inversoceras.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

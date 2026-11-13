@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_swartpuntia"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:swartpuntia"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_swartpuntia.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_swartpuntia.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }

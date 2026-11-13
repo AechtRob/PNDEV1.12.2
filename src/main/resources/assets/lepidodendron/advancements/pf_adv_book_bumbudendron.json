@@ -1,9 +1,22 @@
 {
   "parent": "lepidodendron:pf_base_adv_knowledge",
-  "hidden": true,
   "criteria": {
     "pf_trigger": {
       "trigger": "pf_book_bumbudendron"
     }
+  },
+  "display": {
+    "icon": {
+      "item": "lepidodendron:bumbudendron_item"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_book_bumbudendron.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_book_bumbudendron.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   }
 }
