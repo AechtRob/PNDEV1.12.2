@@ -1,24 +1,25 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:bone_wand"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_complete_permian.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_complete_permian.description"
-        }
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_permian:1b}"
     },
-    "parent": "lepidodendron:pf_base_adv",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "complete_pf_permian"
-        }
+    "title": {
+      "translate": "advancements.pf_adv_complete_permian.title"
     },
-    "rewards": {
-        "experience": 50000
+    "description": {
+      "translate": "advancements.pf_adv_complete_permian.description"
     }
+  },
+  "parent": "lepidodendron:pf_adv_palaeopedia_tab",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "complete_pf_permian"
+    }
+  },
+  "rewards": {
+    "experience": 50000
+  }
 }

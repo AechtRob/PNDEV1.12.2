@@ -1,20 +1,9 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:pholidosteus_raw"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_book_pholidosteus.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_book_pholidosteus.description"
-        }
-    },
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-    "hidden": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "pf_book_pholidosteus"
-        }
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_pholidosteus"
     }
+  }
 }

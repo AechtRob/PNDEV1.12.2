@@ -1,23 +1,24 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:bone_wand"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_complete_precambrian.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_complete_precambrian.description"
-        }
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_precambrian:1b}"
     },
-    "parent": "lepidodendron:pf_base_adv",
-    "announce_to_chat": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "complete_pf_precambrian"
-        }
+    "title": {
+      "translate": "advancements.pf_adv_complete_precambrian.title"
     },
-    "rewards": {
-        "experience": 50000
+    "description": {
+      "translate": "advancements.pf_adv_complete_precambrian.description"
     }
+  },
+  "parent": "lepidodendron:pf_adv_palaeopedia_tab",
+  "announce_to_chat": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "complete_pf_precambrian"
+    }
+  },
+  "rewards": {
+    "experience": 50000
+  }
 }

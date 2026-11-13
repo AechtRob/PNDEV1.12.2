@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_precambrian:1b}"
+    },
+    "title": {
+      "text": "Ediacaran Stromatolite Pavement"
+    },
+    "description": {
+      "text": "Visit the Ediacaran Stromatolite Pavement biome."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_precambrian_checklist",
+  "criteria": {
+    "visited": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:ediacaran_stromatolite_pavement"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "visited"
+    ]
+  ]
+}

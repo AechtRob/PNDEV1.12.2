@@ -1,21 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:horodyskia"
-		  },
-		"title": {
-			"translate": "advancements.pf_adv_book_horodyskia.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_horodyskia.description"
-		}
-	},
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_horodyskia"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_horodyskia"
+    }
+  }
 }
-

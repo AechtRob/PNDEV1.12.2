@@ -766,7 +766,6 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/microbrachius_male_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/microcleidus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/microdictyon_bucket", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/microraptor_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/mieridduryn_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/miguashaia_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/millerosteus_bucket", "inventory"),
@@ -1258,12 +1257,59 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				//new ModelResourceLocation("lepidodendron:entities/_bucket", "inventory"), (Keep here as template)
 
 				new ModelResourceLocation("lepidodendron:mob_bucket_empty", "inventory"),
-				new ModelResourceLocation("lepidodendron:mob_bucket_missing_texture", "inventory")
+				new ModelResourceLocation("lepidodendron:mob_bucket_missing_texture", "inventory"),
+
+				new ModelResourceLocation("lepidodendron:dimension_symbol_precambrian", "inventory"),
+				new ModelResourceLocation("lepidodendron:dimension_symbol_cambrian", "inventory"),
+				new ModelResourceLocation("lepidodendron:dimension_symbol_ordovician", "inventory"),
+				new ModelResourceLocation("lepidodendron:dimension_symbol_silurian", "inventory"),
+				new ModelResourceLocation("lepidodendron:dimension_symbol_devonian", "inventory"),
+				new ModelResourceLocation("lepidodendron:dimension_symbol_carboniferous", "inventory"),
+				new ModelResourceLocation("lepidodendron:dimension_symbol_permian", "inventory"),
+				new ModelResourceLocation("lepidodendron:dimension_symbol_triassic", "inventory"),
+				new ModelResourceLocation("lepidodendron:dimension_symbol_jurassic", "inventory"),
+				new ModelResourceLocation("lepidodendron:dimension_symbol_cretaceous_early", "inventory"),
+				new ModelResourceLocation("lepidodendron:dimension_symbol_cretaceous_late", "inventory")
 
 		);
 
 		ModelLoader.setCustomMeshDefinition(block, stack -> {
 			if (stack.hasTagCompound()) {
+				//Special textures:
+				if (stack.getTagCompound().hasKey("logo_precambrian")) {
+					return new ModelResourceLocation("lepidodendron:dimension_symbol_precambrian", "inventory");
+				}
+				if (stack.getTagCompound().hasKey("logo_cambrian")) {
+					return new ModelResourceLocation("lepidodendron:dimension_symbol_cambrian", "inventory");
+				}
+				if (stack.getTagCompound().hasKey("logo_ordovician")) {
+					return new ModelResourceLocation("lepidodendron:dimension_symbol_ordovician", "inventory");
+				}
+				if (stack.getTagCompound().hasKey("logo_silurian")) {
+					return new ModelResourceLocation("lepidodendron:dimension_symbol_silurian", "inventory");
+				}
+				if (stack.getTagCompound().hasKey("logo_devonian")) {
+					return new ModelResourceLocation("lepidodendron:dimension_symbol_devonian", "inventory");
+				}
+				if (stack.getTagCompound().hasKey("logo_carboniferous")) {
+					return new ModelResourceLocation("lepidodendron:dimension_symbol_carboniferous", "inventory");
+				}
+				if (stack.getTagCompound().hasKey("logo_permian")) {
+					return new ModelResourceLocation("lepidodendron:dimension_symbol_permian", "inventory");
+				}
+				if (stack.getTagCompound().hasKey("logo_triassic")) {
+					return new ModelResourceLocation("lepidodendron:dimension_symbol_triassic", "inventory");
+				}
+				if (stack.getTagCompound().hasKey("logo_jurassic")) {
+					return new ModelResourceLocation("lepidodendron:dimension_symbol_jurassic", "inventory");
+				}
+				if (stack.getTagCompound().hasKey("logo_cretaceous_early")) {
+					return new ModelResourceLocation("lepidodendron:dimension_symbol_cretaceous_early", "inventory");
+				}
+				if (stack.getTagCompound().hasKey("logo_cretaceous_late")) {
+					return new ModelResourceLocation("lepidodendron:dimension_symbol_cretaceous_late", "inventory");
+				}
+
 				if (!ItemBucketOfMob.ItemCustom.isEntityFromItemStack(stack)) {
 					return new ModelResourceLocation(stack.getItem().getRegistryName() + "_empty", "inventory");
 				} else {

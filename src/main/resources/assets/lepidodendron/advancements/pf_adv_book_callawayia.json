@@ -1,20 +1,9 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:callawayia_raw"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_book_callawayia.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_book_callawayia.description"
-        }
-    },
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-    "hidden": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "pf_book_callawayia"
-        }
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_callawayia"
     }
+  }
 }

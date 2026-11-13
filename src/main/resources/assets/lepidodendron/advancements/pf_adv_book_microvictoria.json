@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:microvictoria"
-		 },
-		"title": {
-			"translate": "advancements.pf_adv_book_microvictoria.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_microvictoria.description"
-		}
-	},
- "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_microvictoria"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_microvictoria"
+    }
+  }
 }

@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:enchodus_raw"
-		},
-		"title": {
-			"translate": "advancements.pf_adv_book_enchodus.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_enchodus.description"
-		}
-	},
-	"parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_enchodus"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_enchodus"
+    }
+  }
 }

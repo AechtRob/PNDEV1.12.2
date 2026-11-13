@@ -1,20 +1,9 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:paulchoffatia_raw"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_book_paulchoffatia.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_book_paulchoffatia.description"
-        }
-    },
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-    "hidden": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "pf_book_paulchoffatia"
-        }
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_paulchoffatia"
     }
+  }
 }

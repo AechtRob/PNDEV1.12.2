@@ -1,22 +1,22 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:fossil_clean"
-		  },
-		"title": {
-			"translate": "advancements.pf_adv_acid_clean.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_acid_clean.description"
-		}
-	},
-	"parent": "lepidodendron:pf_base_adv_knowledge",
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_acid_clean"
-		}
-	},
+  "display": {
+    "icon": {
+      "item": "lepidodendron:fossil_clean"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_acid_clean.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_acid_clean.description"
+    }
+  },
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_acid_clean"
+    }
+  },
   "rewards": {
-	  "experience": 20
+    "experience": 20
   }
 }

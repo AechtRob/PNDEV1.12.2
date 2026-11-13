@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:calycanthus_sapling"
-		 },
-		"title": {
-			"translate": "advancements.pf_adv_book_calycanthus.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_calycanthus.description"
-		}
-	},
- "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_calycanthus"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_calycanthus"
+    }
+  }
 }

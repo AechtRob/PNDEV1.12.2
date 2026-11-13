@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_jurassic:1b}"
+    },
+    "title": {
+      "text": "Forested Island"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_jurassic_checklist",
+  "criteria": {
+    "jurassic_island_forested": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:jurassic_island_forested"
+      }
+    },
+    "jurassic_beach_forested_island": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:jurassic_beach_forested_island"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "jurassic_island_forested",
+      "jurassic_beach_forested_island"
+    ]
+  ]
+}

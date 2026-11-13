@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:surangephyllum"
-		 },
-		"title": {
-			"translate": "advancements.pf_adv_book_surangephyllum.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_surangephyllum.description"
-		}
-	},
- "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_surangephyllum"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_surangephyllum"
+    }
+  }
 }

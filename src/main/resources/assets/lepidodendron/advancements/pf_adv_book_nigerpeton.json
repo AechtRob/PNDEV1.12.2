@@ -1,22 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:nigerpeton_raw"
-		  },
-		"title": {
-			"translate": "advancements.pf_adv_book_nigerpeton.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_nigerpeton.description"
-		}
-	},
-	"parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_nigerpeton"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_nigerpeton"
+    }
+  }
 }
-
-

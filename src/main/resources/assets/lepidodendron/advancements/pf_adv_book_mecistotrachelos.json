@@ -1,20 +1,9 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:mecistotrachelos_raw"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_book_mecistotrachelos.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_book_mecistotrachelos.description"
-        }
-    },
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-    "hidden": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "pf_book_mecistotrachelos"
-        }
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_mecistotrachelos"
     }
+  }
 }

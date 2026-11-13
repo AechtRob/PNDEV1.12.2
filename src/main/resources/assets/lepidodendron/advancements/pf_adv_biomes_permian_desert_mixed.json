@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_permian:1b}"
+    },
+    "title": {
+      "text": "Desert"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_permian_checklist",
+  "criteria": {
+    "permian_desert": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:permian_desert"
+      }
+    },
+    "permian_creek_desert": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:permian_creek_desert"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "permian_desert",
+      "permian_creek_desert"
+    ]
+  ]
+}

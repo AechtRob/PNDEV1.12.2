@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_cambrian:1b}"
+    },
+    "title": {
+      "text": "Lagoonal Pools"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_cambrian_checklist",
+  "criteria": {
+    "cambrian_estuary": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cambrian_estuary"
+      }
+    },
+    "cambrian_estuary_helper": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cambrian_estuary_helper"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "cambrian_estuary",
+      "cambrian_estuary_helper"
+    ]
+  ]
+}

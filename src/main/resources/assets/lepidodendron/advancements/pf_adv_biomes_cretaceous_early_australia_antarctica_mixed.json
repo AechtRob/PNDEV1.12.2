@@ -1,0 +1,53 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_cretaceous_early:1b}"
+    },
+    "title": {
+      "text": "East Gondwana Podocarp Forest"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_cretaceous_early_checklist",
+  "criteria": {
+    "cretaceous_early_australia_antarctica": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_australia_antarctica"
+      }
+    },
+    "cretaceous_early_australia_antarctica_creek": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_australia_antarctica_creek"
+      }
+    },
+    "cretaceous_early_australia_antarctica_lakes": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_australia_antarctica_lakes"
+      }
+    },
+    "cretaceous_early_australia_antarctica_lakes_edge": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_australia_antarctica_lakes_edge"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "cretaceous_early_australia_antarctica",
+      "cretaceous_early_australia_antarctica_creek",
+      "cretaceous_early_australia_antarctica_lakes",
+      "cretaceous_early_australia_antarctica_lakes_edge"
+    ]
+  ]
+}

@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:adamanteryon_raw"
-		  },
-		"title": {
-			"translate": "advancements.pf_adv_book_adamanteryon.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_adamanteryon.description"
-		}
-	},
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_adamanteryon"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_adamanteryon"
+    }
+  }
 }

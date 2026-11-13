@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:palaeodictyoptera_stenodictya_raw"
-		  },
-		"title": {
-			"translate": "advancements.pf_adv_book_palaeodictyoptera_stenodictya.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_palaeodictyoptera_stenodictya.description"
-		}
-	},
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_palaeodictyoptera_stenodictya"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_palaeodictyoptera_stenodictya"
+    }
+  }
 }

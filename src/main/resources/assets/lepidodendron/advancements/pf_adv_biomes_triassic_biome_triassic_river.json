@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_triassic:1b}"
+    },
+    "title": {
+      "text": "River"
+    },
+    "description": {
+      "text": "Visit the River biome."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_triassic_checklist",
+  "criteria": {
+    "visited": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_river"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "visited"
+    ]
+  ]
+}

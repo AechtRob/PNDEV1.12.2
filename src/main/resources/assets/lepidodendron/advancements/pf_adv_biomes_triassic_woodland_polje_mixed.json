@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_triassic:1b}"
+    },
+    "title": {
+      "text": "Polje"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_triassic_checklist",
+  "criteria": {
+    "triassic_woodland_polje_edge": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_woodland_polje_edge"
+      }
+    },
+    "triassic_woodland_polje": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_woodland_polje"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "triassic_woodland_polje_edge",
+      "triassic_woodland_polje"
+    ]
+  ]
+}

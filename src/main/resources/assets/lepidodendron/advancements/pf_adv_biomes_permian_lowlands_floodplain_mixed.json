@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_permian:1b}"
+    },
+    "title": {
+      "text": "Lowland Floodplain"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_permian_checklist",
+  "criteria": {
+    "permian_lowlands_floodplain_lake": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:permian_lowlands_floodplain_lake"
+      }
+    },
+    "permian_lowlands_floodplain": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:permian_lowlands_floodplain"
+      }
+    },
+    "permian_creek_lowlands_floodplain": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:permian_creek_lowlands_floodplain"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "permian_lowlands_floodplain_lake",
+      "permian_lowlands_floodplain",
+      "permian_creek_lowlands_floodplain"
+    ]
+  ]
+}

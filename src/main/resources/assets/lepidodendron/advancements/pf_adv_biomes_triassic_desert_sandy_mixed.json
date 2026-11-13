@@ -1,0 +1,67 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_triassic:1b}"
+    },
+    "title": {
+      "text": "Desert Dunes"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_triassic_checklist",
+  "criteria": {
+    "triassic_creek_desert": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_creek_desert"
+      }
+    },
+    "triassic_desert_sandy": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_desert_sandy"
+      }
+    },
+    "triassic_desert_plateau_canyons": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_desert_plateau_canyons"
+      }
+    },
+    "triassic_desert_plateau_broken": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_desert_plateau_broken"
+      }
+    },
+    "triassic_desert_plateau": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_desert_plateau"
+      }
+    },
+    "triassic_desert_rocky": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_desert_rocky"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "triassic_creek_desert",
+      "triassic_desert_sandy",
+      "triassic_desert_plateau_canyons",
+      "triassic_desert_plateau_broken",
+      "triassic_desert_plateau",
+      "triassic_desert_rocky"
+    ]
+  ]
+}

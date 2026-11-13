@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_devonian:1b}"
+    },
+    "title": {
+      "text": "Cold Glades"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_devonian_checklist",
+  "criteria": {
+    "devonian_lycopsid_spinney": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:devonian_lycopsid_spinney"
+      }
+    },
+    "devonian_creek_lycopsid_spinney": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:devonian_creek_lycopsid_spinney"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "devonian_lycopsid_spinney",
+      "devonian_creek_lycopsid_spinney"
+    ]
+  ]
+}

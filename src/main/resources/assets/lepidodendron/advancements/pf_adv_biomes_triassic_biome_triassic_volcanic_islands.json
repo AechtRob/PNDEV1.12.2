@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_triassic:1b}"
+    },
+    "title": {
+      "text": "Shattered Islands"
+    },
+    "description": {
+      "text": "Visit the Shattered Islands biome."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_triassic_checklist",
+  "criteria": {
+    "visited": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_volcanic_islands"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "visited"
+    ]
+  ]
+}

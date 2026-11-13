@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_jurassic:1b}"
+    },
+    "title": {
+      "text": "Cycad Thickets"
+    },
+    "description": {
+      "text": "Visit the Cycad Thickets biome."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_jurassic_checklist",
+  "criteria": {
+    "visited": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:jurassic_cycad_thickets"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "visited"
+    ]
+  ]
+}

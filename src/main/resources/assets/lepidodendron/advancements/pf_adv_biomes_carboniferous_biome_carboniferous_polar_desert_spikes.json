@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_carboniferous:1b}"
+    },
+    "title": {
+      "text": "Polar Desert Ice Spikes"
+    },
+    "description": {
+      "text": "Visit the Polar Desert Ice Spikes biome."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_carboniferous_checklist",
+  "criteria": {
+    "visited": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:carboniferous_polar_desert_spikes"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "visited"
+    ]
+  ]
+}

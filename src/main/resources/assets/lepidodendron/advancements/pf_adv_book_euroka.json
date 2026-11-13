@@ -1,20 +1,9 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:euroka_raw"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_book_euroka.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_book_euroka.description"
-        }
-    },
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-    "hidden": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "pf_book_euroka"
-        }
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_euroka"
     }
+  }
 }

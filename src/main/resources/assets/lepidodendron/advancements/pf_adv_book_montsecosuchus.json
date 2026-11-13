@@ -1,20 +1,9 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:montsecosuchus_raw"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_book_montsecosuchus.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_book_montsecosuchus.description"
-        }
-    },
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-    "hidden": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "pf_book_montsecosuchus"
-        }
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_montsecosuchus"
     }
+  }
 }

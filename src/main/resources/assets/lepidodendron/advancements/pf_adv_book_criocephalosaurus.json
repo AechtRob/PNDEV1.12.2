@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:criocephalosaurus_raw"
-		  },
-		"title": {
-			"translate": "advancements.pf_adv_book_criocephalosaurus.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_criocephalosaurus.description"
-		}
-	},
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_criocephalosaurus"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_criocephalosaurus"
+    }
+  }
 }

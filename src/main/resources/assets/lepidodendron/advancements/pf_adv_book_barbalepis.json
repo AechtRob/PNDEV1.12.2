@@ -1,20 +1,9 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:barbalepis_raw"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_book_barbalepis.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_book_barbalepis.description"
-        }
-    },
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-    "hidden": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "pf_book_barbalepis"
-        }
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_barbalepis"
     }
+  }
 }

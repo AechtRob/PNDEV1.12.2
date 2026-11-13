@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:ophthalmosaurus_raw"
-		  },
-		"title": {
-			"translate": "advancements.pf_adv_book_ophthalmosaurus.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_ophthalmosaurus.description"
-		}
-	},
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_ophthalmosaurus"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_ophthalmosaurus"
+    }
+  }
 }

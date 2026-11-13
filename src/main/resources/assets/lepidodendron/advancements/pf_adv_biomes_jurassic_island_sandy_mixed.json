@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_jurassic:1b}"
+    },
+    "title": {
+      "text": "Sandy Atolls"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_jurassic_checklist",
+  "criteria": {
+    "jurassic_island_sandy": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:jurassic_island_sandy"
+      }
+    },
+    "jurassic_island_sandy_forest": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:jurassic_island_sandy_forest"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "jurassic_island_sandy",
+      "jurassic_island_sandy_forest"
+    ]
+  ]
+}

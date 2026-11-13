@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_jurassic:1b}"
+    },
+    "title": {
+      "text": "Jurassic Island Large Wet"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_jurassic_checklist",
+  "criteria": {
+    "jurassic_island_large_field": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:jurassic_island_large_field"
+      }
+    },
+    "jurassic_island_large_scrub": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:jurassic_island_large_scrub"
+      }
+    },
+    "jurassic_island_large_wet": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:jurassic_island_large_wet"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "jurassic_island_large_field",
+      "jurassic_island_large_scrub",
+      "jurassic_island_large_wet"
+    ]
+  ]
+}

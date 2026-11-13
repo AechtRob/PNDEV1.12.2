@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_cretaceous_early:1b}"
+    },
+    "title": {
+      "text": "Asia Drooping Marsh Knolls"
+    },
+    "description": {
+      "text": "Visit the Asia Drooping Marsh Knolls biome."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_cretaceous_early_checklist",
+  "criteria": {
+    "visited": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_asia_drooping_swamp_mound"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "visited"
+    ]
+  ]
+}

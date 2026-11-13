@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:ventogyrus"
-		  },
-		"title": {
-			"translate": "advancements.pf_adv_book_ventogyrus.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_ventogyrus.description"
-		}
-	},
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_ventogyrus"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_ventogyrus"
+    }
+  }
 }

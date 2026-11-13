@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_silurian:1b}"
+    },
+    "title": {
+      "text": "Shallow Ocean"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_silurian_checklist",
+  "criteria": {
+    "silurian_sea_shore": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:silurian_sea_shore"
+      }
+    },
+    "silurian_sea_shore_helper": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:silurian_sea_shore_helper"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "silurian_sea_shore",
+      "silurian_sea_shore_helper"
+    ]
+  ]
+}

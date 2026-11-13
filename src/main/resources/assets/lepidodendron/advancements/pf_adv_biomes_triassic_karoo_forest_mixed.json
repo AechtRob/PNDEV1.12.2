@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_triassic:1b}"
+    },
+    "title": {
+      "text": "Southern Sphenobaiera Forest"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_triassic_checklist",
+  "criteria": {
+    "triassic_karoo_forest": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_karoo_forest"
+      }
+    },
+    "triassic_creek_karoo_forest": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_creek_karoo_forest"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "triassic_karoo_forest",
+      "triassic_creek_karoo_forest"
+    ]
+  ]
+}

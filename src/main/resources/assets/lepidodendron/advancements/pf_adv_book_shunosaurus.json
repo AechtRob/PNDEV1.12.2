@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:shunosaurus_raw"
-		  },
-		"title": {
-			"translate": "advancements.pf_adv_book_shunosaurus.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_shunosaurus.description"
-		}
-	},
-	"parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_shunosaurus"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_shunosaurus"
+    }
+  }
 }

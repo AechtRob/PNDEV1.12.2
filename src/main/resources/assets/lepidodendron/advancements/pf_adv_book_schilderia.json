@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:schilderia_sapling"
-		 },
-		"title": {
-			"translate": "advancements.pf_adv_book_schilderia.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_schilderia.description"
-		}
-	},
- "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_schilderia"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_schilderia"
+    }
+  }
 }

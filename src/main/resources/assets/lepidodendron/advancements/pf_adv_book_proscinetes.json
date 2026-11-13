@@ -1,20 +1,9 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:proscinetes_raw"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_book_proscinetes.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_book_proscinetes.description"
-        }
-    },
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-    "hidden": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "pf_book_proscinetes"
-        }
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_proscinetes"
     }
+  }
 }

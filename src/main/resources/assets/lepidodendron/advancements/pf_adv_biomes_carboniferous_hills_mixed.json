@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_carboniferous:1b}"
+    },
+    "title": {
+      "text": "Hills"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_carboniferous_checklist",
+  "criteria": {
+    "carboniferous_hills": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:carboniferous_hills"
+      }
+    },
+    "carboniferous_hills_edge": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:carboniferous_hills_edge"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "carboniferous_hills",
+      "carboniferous_hills_edge"
+    ]
+  ]
+}

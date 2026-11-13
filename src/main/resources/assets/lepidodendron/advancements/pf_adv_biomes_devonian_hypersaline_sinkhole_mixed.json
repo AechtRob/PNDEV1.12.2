@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_devonian:1b}"
+    },
+    "title": {
+      "text": "Hypersaline Sinkholes"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_devonian_checklist",
+  "criteria": {
+    "devonian_hypersaline_sinkhole": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:devonian_hypersaline_sinkhole"
+      }
+    },
+    "devonian_hypersaline_sinkhole_transition": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:devonian_hypersaline_sinkhole_transition"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "devonian_hypersaline_sinkhole",
+      "devonian_hypersaline_sinkhole_transition"
+    ]
+  ]
+}

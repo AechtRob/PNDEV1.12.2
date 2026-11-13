@@ -1,0 +1,53 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_triassic:1b}"
+    },
+    "title": {
+      "text": "Southern Xeric Scrubby Forest"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_triassic_checklist",
+  "criteria": {
+    "triassic_xeric_scrubland": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_xeric_scrubland"
+      }
+    },
+    "triassic_xeric_forest": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_xeric_forest"
+      }
+    },
+    "triassic_xeric_scrubland_lakes": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_xeric_scrubland_lakes"
+      }
+    },
+    "triassic_creek_xeric": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_creek_xeric"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "triassic_xeric_scrubland",
+      "triassic_xeric_forest",
+      "triassic_xeric_scrubland_lakes",
+      "triassic_creek_xeric"
+    ]
+  ]
+}

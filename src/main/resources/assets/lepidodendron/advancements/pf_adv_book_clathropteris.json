@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:clathropteris"
-		 },
-		"title": {
-			"translate": "advancements.pf_adv_book_clathropteris.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_clathropteris.description"
-		}
-	},
- "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_clathropteris"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_clathropteris"
+    }
+  }
 }

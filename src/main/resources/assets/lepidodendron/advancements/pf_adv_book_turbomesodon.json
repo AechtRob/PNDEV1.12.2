@@ -1,20 +1,9 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:turbomesodon_raw"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_book_turbomesodon.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_book_turbomesodon.description"
-        }
-    },
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-    "hidden": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "pf_book_turbomesodon"
-        }
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_turbomesodon"
     }
+  }
 }

@@ -1,24 +1,25 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:bone_wand"
-		  },
-		"title": {
-			"translate": "advancements.pf_adv_ordovician.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_ordovician.description"
-		}
-	},
-	"parent": "lepidodendron:pf_base_adv",
-	"show_toast": true,
-	"announce_to_chat": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "enter_pf_ordovician"
-		}
-	},
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_ordovician:1b}"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_ordovician.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_ordovician.description"
+    }
+  },
+  "parent": "lepidodendron:pf_base_adv",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "enter_pf_ordovician"
+    }
+  },
   "rewards": {
-	  "experience": 20
+    "experience": 20
   }
 }

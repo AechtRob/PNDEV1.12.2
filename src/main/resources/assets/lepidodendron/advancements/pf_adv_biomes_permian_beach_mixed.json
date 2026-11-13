@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_permian:1b}"
+    },
+    "title": {
+      "text": "Beach"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_permian_checklist",
+  "criteria": {
+    "permian_beach": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:permian_beach"
+      }
+    },
+    "permian_creek_coastal": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:permian_creek_coastal"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "permian_beach",
+      "permian_creek_coastal"
+    ]
+  ]
+}

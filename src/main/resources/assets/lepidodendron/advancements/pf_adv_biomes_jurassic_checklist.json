@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_jurassic:1b}"
+    },
+    "title": {
+      "text": "Jurassic Biomes"
+    },
+    "description": {
+      "text": "Visit each listed biome. For alternatives, visiting any one option completes that group."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "background": "lepidodendron:textures/blocks/calamites_fibre.png",
+    "hidden": false
+  },
+  "criteria": {
+    "started": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "requirements": [
+    [
+      "started"
+    ]
+  ]
+}

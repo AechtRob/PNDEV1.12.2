@@ -1,0 +1,53 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_triassic:1b}"
+    },
+    "title": {
+      "text": "Southern Swampy Woods"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_triassic_checklist",
+  "criteria": {
+    "triassic_karoo_swamp_open": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_karoo_swamp_open"
+      }
+    },
+    "triassic_karoo_swamp_copse": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_karoo_swamp_copse"
+      }
+    },
+    "triassic_creek_karoo_swamp": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_creek_karoo_swamp"
+      }
+    },
+    "triassic_karoo_swamp": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_karoo_swamp"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "triassic_karoo_swamp_open",
+      "triassic_karoo_swamp_copse",
+      "triassic_creek_karoo_swamp",
+      "triassic_karoo_swamp"
+    ]
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_precambrian:1b}"
+    },
+    "title": {
+      "text": "Paleoproterozoic Beach"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_precambrian_checklist",
+  "criteria": {
+    "paleoproterozoic_shallows": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:paleoproterozoic_shallows"
+      }
+    },
+    "paleoproterozoic_beach": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:paleoproterozoic_beach"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "paleoproterozoic_shallows",
+      "paleoproterozoic_beach"
+    ]
+  ]
+}

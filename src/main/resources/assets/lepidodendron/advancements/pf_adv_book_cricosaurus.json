@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:cricosaurus_raw"
-		},
-		"title": {
-			"translate": "advancements.pf_adv_book_cricosaurus.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_cricosaurus.description"
-		}
-	},
-	"parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_cricosaurus"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_cricosaurus"
+    }
+  }
 }

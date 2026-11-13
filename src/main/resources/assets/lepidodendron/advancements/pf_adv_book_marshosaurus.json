@@ -1,20 +1,9 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:marshosaurus_raw"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_book_marshosaurus.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_book_marshosaurus.description"
-        }
-    },
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-    "hidden": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "pf_book_marshosaurus"
-        }
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_marshosaurus"
     }
+  }
 }

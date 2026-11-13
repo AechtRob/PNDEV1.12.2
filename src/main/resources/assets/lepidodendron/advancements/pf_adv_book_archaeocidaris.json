@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:archaeocidaris_item"
-		  },
-		"title": {
-			"translate": "advancements.pf_adv_book_archaeocidaris.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_archaeocidaris.description"
-		}
-	},
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_archaeocidaris"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_archaeocidaris"
+    }
+  }
 }

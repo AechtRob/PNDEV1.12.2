@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_permian:1b}"
+    },
+    "title": {
+      "text": "Temperate Glossopteris Forest"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_permian_checklist",
+  "criteria": {
+    "permian_cold_glossopteris_forest_light": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:permian_cold_glossopteris_forest_light"
+      }
+    },
+    "permian_cold_glossopteris_forest_craggy": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:permian_cold_glossopteris_forest_craggy"
+      }
+    },
+    "permian_creek_cold_glossopteris": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:permian_creek_cold_glossopteris"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "permian_cold_glossopteris_forest_light",
+      "permian_cold_glossopteris_forest_craggy",
+      "permian_creek_cold_glossopteris"
+    ]
+  ]
+}

@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:palaeoaster"
-		 },
-		"title": {
-			"translate": "advancements.pf_adv_book_palaeoaster.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_palaeoaster.description"
-		}
-	},
- "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_palaeoaster"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_palaeoaster"
+    }
+  }
 }

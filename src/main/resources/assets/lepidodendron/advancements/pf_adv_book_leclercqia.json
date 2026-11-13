@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:leclercqia"
-		 },
-		"title": {
-			"translate": "advancements.pf_adv_book_leclercqia.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_leclercqia.description"
-		}
-	},
- "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_leclercqia"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_leclercqia"
+    }
+  }
 }

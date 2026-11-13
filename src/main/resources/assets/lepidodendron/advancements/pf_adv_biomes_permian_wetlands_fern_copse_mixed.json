@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_permian:1b}"
+    },
+    "title": {
+      "text": "Highland Cirque"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_permian_checklist",
+  "criteria": {
+    "permian_wetlands_fern_copse_lakes": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:permian_wetlands_fern_copse_lakes"
+      }
+    },
+    "permian_wetlands_fern_copse": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:permian_wetlands_fern_copse"
+      }
+    },
+    "permian_creek_wetlands_fern_copse": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:permian_creek_wetlands_fern_copse"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "permian_wetlands_fern_copse_lakes",
+      "permian_wetlands_fern_copse",
+      "permian_creek_wetlands_fern_copse"
+    ]
+  ]
+}

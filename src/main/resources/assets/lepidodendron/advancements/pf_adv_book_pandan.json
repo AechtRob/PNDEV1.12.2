@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:pandan_sapling"
-		 },
-		"title": {
-			"translate": "advancements.pf_adv_book_pandan.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_pandan.description"
-		}
-	},
- "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_pandan"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_pandan"
+    }
+  }
 }

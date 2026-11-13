@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:opolanka_raw"
-		  },
-		"title": {
-			"translate": "advancements.pf_adv_book_opolanka.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_opolanka.description"
-		}
-	},
-	"parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_opolanka"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_opolanka"
+    }
+  }
 }

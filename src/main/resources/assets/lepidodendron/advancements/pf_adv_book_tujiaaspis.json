@@ -1,20 +1,9 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:tujiaaspis_raw"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_book_tujiaaspis.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_book_tujiaaspis.description"
-        }
-    },
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-    "hidden": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "pf_book_tujiaaspis"
-        }
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_tujiaaspis"
     }
+  }
 }

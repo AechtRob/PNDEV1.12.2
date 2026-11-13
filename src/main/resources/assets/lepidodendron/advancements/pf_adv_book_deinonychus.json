@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:deinonychus_raw"
-		},
-		"title": {
-			"translate": "advancements.pf_adv_book_deinonychus.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_deinonychus.description"
-		}
-	},
-	"parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_deinonychus"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_deinonychus"
+    }
+  }
 }

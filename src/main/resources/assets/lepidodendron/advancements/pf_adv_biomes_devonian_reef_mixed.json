@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_devonian:1b}"
+    },
+    "title": {
+      "text": "Barrier Reef"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_devonian_checklist",
+  "criteria": {
+    "devonian_reef": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:devonian_reef"
+      }
+    },
+    "devonian_reef_transition": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:devonian_reef_transition"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "devonian_reef",
+      "devonian_reef_transition"
+    ]
+  ]
+}

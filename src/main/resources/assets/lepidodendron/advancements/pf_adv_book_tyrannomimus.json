@@ -1,20 +1,9 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:tyrannomimus_raw"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_book_tyrannomimus.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_book_tyrannomimus.description"
-        }
-    },
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-    "hidden": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "pf_book_tyrannomimus"
-        }
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_tyrannomimus"
     }
+  }
 }

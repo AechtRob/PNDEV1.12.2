@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:cidaroida_item"
-		  },
-		"title": {
-			"translate": "advancements.pf_adv_book_cidaroida.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_cidaroida.description"
-		}
-	},
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_cidaroida"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_cidaroida"
+    }
+  }
 }

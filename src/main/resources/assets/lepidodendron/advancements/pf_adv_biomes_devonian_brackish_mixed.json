@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_devonian:1b}"
+    },
+    "title": {
+      "text": "Brackish Waters"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_devonian_checklist",
+  "criteria": {
+    "devonian_brackish": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:devonian_brackish"
+      }
+    },
+    "devonian_creek_brackish": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:devonian_creek_brackish"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "devonian_brackish",
+      "devonian_creek_brackish"
+    ]
+  ]
+}

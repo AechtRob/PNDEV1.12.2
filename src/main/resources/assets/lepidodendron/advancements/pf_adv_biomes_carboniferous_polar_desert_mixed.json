@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_carboniferous:1b}"
+    },
+    "title": {
+      "text": "Polar Desert"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_carboniferous_checklist",
+  "criteria": {
+    "carboniferous_polar_desert": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:carboniferous_polar_desert"
+      }
+    },
+    "carboniferous_polar_desert_edge": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:carboniferous_polar_desert_edge"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "carboniferous_polar_desert",
+      "carboniferous_polar_desert_edge"
+    ]
+  ]
+}

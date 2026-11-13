@@ -1,24 +1,24 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:bone_wand"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_complete_neogene.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_complete_neogene.description"
-        }
+  "display": {
+    "icon": {
+      "item": "lepidodendron:bone_wand"
     },
-    "parent": "lepidodendron:pf_base_adv",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "complete_pf_neogene"
-        }
+    "title": {
+      "translate": "advancements.pf_adv_complete_neogene.title"
     },
-    "rewards": {
-        "experience": 50000
+    "description": {
+      "translate": "advancements.pf_adv_complete_neogene.description"
     }
+  },
+  "parent": "lepidodendron:pf_adv_palaeopedia_tab",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "complete_pf_neogene"
+    }
+  },
+  "rewards": {
+    "experience": 50000
+  }
 }

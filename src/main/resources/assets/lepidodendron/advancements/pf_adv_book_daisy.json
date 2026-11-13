@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:daisy"
-		 },
-		"title": {
-			"translate": "advancements.pf_adv_book_daisy.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_daisy.description"
-		}
-	},
- "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_daisy"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_daisy"
+    }
+  }
 }

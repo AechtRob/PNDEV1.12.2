@@ -1,1108 +1,1110 @@
 {
-	"display": {
-		"icon": {
-			"item": "minecraft:diamond_boots"
-		},
-		"title": {
-			"translate": "advancements.pf_adv_biomes_cretaceous_early.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_biomes_cretaceous_early.description"
-		},
-		"frame": "challenge"
-	},
-	"parent": "lepidodendron:pf_base_adv",
-	"rewards": {
-		"experience": 10000
-	},
-	"criteria": {
-		"cretaceous_early_africa": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_africa"
-			}
-		},
-		"cretaceous_early_africa_peaks": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_africa_peaks"
-			}
-		},
-		"cretaceous_early_africa_pinnacles": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_africa_pinnacles"
-			}
-		},
-		"cretaceous_early_africa_savanna": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_africa_savanna"
-			}
-		},
-		"cretaceous_early_africa_savanna_hole": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_africa_savanna_hole"
-			}
-		},
-		"cretaceous_early_africa_savanna_hole_centre": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_africa_savanna_hole_centre"
-			}
-		},
-		"cretaceous_early_africa_swamp": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_africa_swamp"
-			}
-		},
-		"cretaceous_early_africa_swamp_open": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_africa_swamp_open"
-			}
-		},
-		"cretaceous_early_africa_valley": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_africa_valley"
-			}
-		},
-		"cretaceous_early_asia": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_asia"
-			}
-		},
-		"cretaceous_early_asia_drooping_swamp": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_asia_drooping_swamp"
-			}
-		},
-		"cretaceous_early_asia_drooping_swamp_mound": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_asia_drooping_swamp_mound"
-			}
-		},
-		"cretaceous_early_asia_phyrgana": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_asia_phyrgana"
-			}
-		},
-		"cretaceous_early_asia_phyrgana_lake": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_asia_phyrgana_lake"
-			}
-		},
-		"cretaceous_early_asia_yixian_foothills": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_asia_yixian_foothills"
-			}
-		},
-		"cretaceous_early_australia_antarctica": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_australia_antarctica"
-			}
-		},
-		"cretaceous_early_australia_antarctica_crater": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_australia_antarctica_crater"
-			}
-		},
-		"cretaceous_early_australia_antarctica_crater_rim": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_australia_antarctica_crater_rim"
-			}
-		},
-		"cretaceous_early_australia_antarctica_creek": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_australia_antarctica_creek"
-			}
-		},
-		"cretaceous_early_australia_antarctica_divider": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_australia_antarctica_divider"
-			}
-		},
-		"cretaceous_early_australia_antarctica_lakes": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_australia_antarctica_lakes"
-			}
-		},
-		"cretaceous_early_australia_antarctica_lakes_edge": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_australia_antarctica_lakes_edge"
-			}
-		},
-		"cretaceous_early_australia_antarctica_paddock": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_australia_antarctica_paddock"
-			}
-		},
-		"cretaceous_early_australia_antarctica_paddock_winter": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_australia_antarctica_paddock_winter"
-			}
-		},
-		"cretaceous_early_australia_antarctica_winter": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_australia_antarctica_winter"
-			}
-		},
-		"cretaceous_early_austro_antarctic_coastal": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_austro_antarctic_coastal"
-			}
-		},
-		"cretaceous_early_austro_antarctic_coastal_cliffs": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_austro_antarctic_coastal_cliffs"
-			}
-		},
-		"cretaceous_early_austro_antarctic_coastal_cliffs_noroost": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_austro_antarctic_coastal_cliffs_noroost"
-			}
-		},
-		"cretaceous_early_austro_antarctic_coastal_dunes": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_austro_antarctic_coastal_dunes"
-			}
-		},
-		"cretaceous_early_austro_antarctic_rainforest": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_austro_antarctic_rainforest"
-			}
-		},
-		"cretaceous_early_austro_antarctic_subalpine_lakes": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes"
-			}
-		},
-		"cretaceous_early_austro_antarctic_subalpine_lakes_peaks": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_peaks"
-			}
-		},
-		"cretaceous_early_austro_antarctic_subalpine_lakes_rim_inner": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_rim_inner"
-			}
-		},
-		"cretaceous_early_austro_antarctic_subalpine_lakes_rim_outer": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_rim_outer"
-			}
-		},
-		"cretaceous_early_banded_desert": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_banded_desert"
-			}
-		},
-		"cretaceous_early_barren_hills": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_barren_hills"
-			}
-		},
-		"cretaceous_early_beach_africa": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_beach_africa"
-			}
-		},
-		"cretaceous_early_beach_afroamerica_red": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_beach_afroamerica_red"
-			}
-		},
-		"cretaceous_early_beach_afroamerica_rocky": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_beach_afroamerica_rocky"
-			}
-		},
-		"cretaceous_early_beach_asia": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_beach_asia"
-			}
-		},
-		"cretaceous_early_beach_asia_craggy": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_beach_asia_craggy"
-			}
-		},
-		"cretaceous_early_beach_asia_marsh": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_beach_asia_marsh"
-			}
-		},
-		"cretaceous_early_beach_australia_antarctica": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_beach_australia_antarctica"
-			}
-		},
-		"cretaceous_early_beach_australia_antarctica_inland_sea": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_beach_australia_antarctica_inland_sea"
-			}
-		},
-		"cretaceous_early_beach_australia_antarctica_muddy": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_beach_australia_antarctica_muddy"
-			}
-		},
-		"cretaceous_early_beach_europe_dry": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_beach_europe_dry"
-			}
-		},
-		"cretaceous_early_beach_europe_ferny": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_beach_europe_ferny"
-			}
-		},
-		"cretaceous_early_beach_europe_swamp": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_beach_europe_swamp"
-			}
-		},
-		"cretaceous_early_beach_namerica_cove": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_beach_namerica_cove"
-			}
-		},
-		"cretaceous_early_creek_africa_savanna": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_africa_savanna"
-			}
-		},
-		"cretaceous_early_creek_africa_swamp": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_africa_swamp"
-			}
-		},
-		"cretaceous_early_creek_asia_drooping_swamp": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_asia_drooping_swamp"
-			}
-		},
-		"cretaceous_early_creek_asia_phyrgana": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_asia_phyrgana"
-			}
-		},
-		"cretaceous_early_creek_australia_antarctica_paddock": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_australia_antarctica_paddock"
-			}
-		},
-		"cretaceous_early_creek_austro_antarctic_coastal": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_austro_antarctic_coastal"
-			}
-		},
-		"cretaceous_early_creek_austro_antarctic_coastal_cliffs": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_austro_antarctic_coastal_cliffs"
-			}
-		},
-		"cretaceous_early_creek_austro_antarctic_rainforest": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_austro_antarctic_rainforest"
-			}
-		},
-		"cretaceous_early_creek_banded_desert": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_banded_desert"
-			}
-		},
-		"cretaceous_early_creek_beach_africa": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_beach_africa"
-			}
-		},
-		"cretaceous_early_creek_beach_afroamerica_red": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_beach_afroamerica_red"
-			}
-		},
-		"cretaceous_early_creek_beach_asia": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_beach_asia"
-			}
-		},
-		"cretaceous_early_creek_beach_asia_craggy": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_beach_asia_craggy"
-			}
-		},
-		"cretaceous_early_creek_beach_asia_marsh": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_beach_asia_marsh"
-			}
-		},
-		"cretaceous_early_creek_beach_australia_antarctica": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_beach_australia_antarctica"
-			}
-		},
-		"cretaceous_early_creek_beach_australia_antarctica_inland_sea": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_beach_australia_antarctica_inland_sea"
-			}
-		},
-		"cretaceous_early_creek_beach_australia_antarctica_muddy": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_beach_australia_antarctica_muddy"
-			}
-		},
-		"cretaceous_early_creek_beach_europe_dry": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_beach_europe_dry"
-			}
-		},
-		"cretaceous_early_creek_beach_europe_ferny": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_beach_europe_ferny"
-			}
-		},
-		"cretaceous_early_creek_beach_europe_swamp": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_beach_europe_swamp"
-			}
-		},
-		"cretaceous_early_creek_beach_namerica_cove": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_beach_namerica_cove"
-			}
-		},
-		"cretaceous_early_creek_boggy_glades": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_boggy_glades"
-			}
-		},
-		"cretaceous_early_creek_europe_field": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_europe_field"
-			}
-		},
-		"cretaceous_early_creek_europe_field_copse": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_europe_field_copse"
-			}
-		},
-		"cretaceous_early_creek_europe_maquis": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_europe_maquis"
-			}
-		},
-		"cretaceous_early_creek_namerica_shrubland": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_namerica_shrubland"
-			}
-		},
-		"cretaceous_early_creek_namerica_shrubland_copse": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_namerica_shrubland_copse"
-			}
-		},
-		"cretaceous_early_creek_north_america_braided": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_north_america_braided"
-			}
-		},
-		"cretaceous_early_creek_refugium": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_refugium"
-			}
-		},
-		"cretaceous_early_creek_samerica_arid": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_samerica_arid"
-			}
-		},
-		"cretaceous_early_creek_samerica_flats": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_samerica_flats"
-			}
-		},
-		"cretaceous_early_creek_samerica_flats_stream": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_samerica_flats_stream"
-			}
-		},
-		"cretaceous_early_creek_samerica_sandy_desert": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_samerica_sandy_desert"
-			}
-		},
-		"cretaceous_early_creek_shrubland": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_shrubland"
-			}
-		},
-		"cretaceous_early_creek_south_america_desert": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_south_america_desert"
-			}
-		},
-		"cretaceous_early_creek_south_america_patagonia": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_creek_south_america_patagonia"
-			}
-		},
-		"cretaceous_early_europe": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_europe"
-			}
-		},
-		"cretaceous_early_europe_field": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_europe_field"
-			}
-		},
-		"cretaceous_early_europe_field_copse": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_europe_field_copse"
-			}
-		},
-		"cretaceous_early_europe_maquis": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_europe_maquis"
-			}
-		},
-		"cretaceous_early_europe_swamp_lakes": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_europe_swamp_lakes"
-			}
-		},
-		"cretaceous_early_europe_swamp_lakes_edge": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_europe_swamp_lakes_edge"
-			}
-		},
-		"cretaceous_early_inland_sea_australia": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_inland_sea_australia"
-			}
-		},
-		"cretaceous_early_namerica": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_namerica"
-			}
-		},
-		"cretaceous_early_namerica_foothills": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_namerica_foothills"
-			}
-		},
-		"cretaceous_early_namerica_forest": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_namerica_forest"
-			}
-		},
-		"cretaceous_early_namerica_lagoons": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_namerica_lagoons"
-			}
-		},
-		"cretaceous_early_namerica_mountains": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_namerica_mountains"
-			}
-		},
-		"cretaceous_early_namerica_shrubland": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_namerica_shrubland"
-			}
-		},
-		"cretaceous_early_namerica_shrubland_copse": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_namerica_shrubland_copse"
-			}
-		},
-		"cretaceous_early_namerica_transition": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_namerica_transition"
-			}
-		},
-		"cretaceous_early_ocean": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_ocean"
-			}
-		},
-		"cretaceous_early_ocean_crags": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_ocean_crags"
-			}
-		},
-		"cretaceous_early_ocean_crags_noroost": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_ocean_crags_noroost"
-			}
-		},
-		"cretaceous_early_ocean_shore_atlantic": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_ocean_shore_atlantic"
-			}
-		},
-		"cretaceous_early_ocean_shore_atlantic_deep": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_ocean_shore_atlantic_deep"
-			}
-		},
-		"cretaceous_early_ocean_shore_pacific": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_ocean_shore_pacific"
-			}
-		},
-		"cretaceous_early_ocean_shore_southern": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_ocean_shore_southern"
-			}
-		},
-		"cretaceous_early_ocean_shore_tethys": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_ocean_shore_tethys"
-			}
-		},
-		"cretaceous_early_ocean_shore_tethys_coral": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_ocean_shore_tethys_coral"
-			}
-		},
-		"cretaceous_early_ocean_shore_tethys_europe": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_ocean_shore_tethys_europe"
-			}
-		},
-		"cretaceous_early_ocean_shore_tethys_rudist": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_ocean_shore_tethys_rudist"
-			}
-		},
-		"cretaceous_early_ocean_transition": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_ocean_transition"
-			}
-		},
-		"cretaceous_early_refugium": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_refugium"
-			}
-		},
-		"cretaceous_early_samerica": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_samerica"
-			}
-		},
-		"cretaceous_early_samerica_arid": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_samerica_arid"
-			}
-		},
-		"cretaceous_early_samerica_arid_spikes": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_samerica_arid_spikes"
-			}
-		},
-		"cretaceous_early_samerica_desert_low": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_samerica_desert_low"
-			}
-		},
-		"cretaceous_early_samerica_desert_spikes": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_samerica_desert_spikes"
-			}
-		},
-		"cretaceous_early_samerica_flats": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_samerica_flats"
-			}
-		},
-		"cretaceous_early_samerica_sandy_desert": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_samerica_sandy_desert"
-			}
-		},
-		"cretaceous_early_samerica_sandy_desert_spikes": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_samerica_sandy_desert_spikes"
-			}
-		},
-		"cretaceous_early_shrubland": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_shrubland"
-			}
-		},
-		"cretaceous_early_shrubland_dunes": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_shrubland_dunes"
-			}
-		},
-		"cretaceous_early_shrubland_oasis": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_shrubland_oasis"
-			}
-		},
-		"cretaceous_early_shrubland_springs": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_shrubland_springs"
-			}
-		},
-		"cretaceous_early_south_america_creek_wide": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_south_america_creek_wide"
-			}
-		},
-		"cretaceous_early_south_america_creek_wide_centre": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_south_america_creek_wide_centre"
-			}
-		},
-		"cretaceous_early_south_america_creek_wide_rift": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_south_america_creek_wide_rift"
-			}
-		},
-		"cretaceous_early_south_america_patagonia": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_south_america_patagonia"
-			}
-		},
-		"cretaceous_early_yixian_highland": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_yixian_highland"
-			}
-		},
-		"cretaceous_early_yixian_lakes_a": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_yixian_lakes_a"
-			}
-		},
-		"cretaceous_early_yixian_lakes_b": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_yixian_lakes_b"
-			}
-		},
-		"cretaceous_early_yixian_lakes_dead": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_yixian_lakes_dead"
-			}
-		},
-		"cretaceous_early_yixian_mountains": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:cretaceous_early_yixian_mountains"
-			}
-		}
-	},
-	"requirements": [
-		[
-			"cretaceous_early_africa",
-			"cretaceous_early_africa_peaks",
-			"cretaceous_early_africa_pinnacles"
-		],
-		[
-			"cretaceous_early_africa_savanna",
-			"cretaceous_early_creek_africa_savanna"
-		],
-		[
-			"cretaceous_early_africa_savanna_hole",
-			"cretaceous_early_africa_savanna_hole_centre"
-		],
-		[
-			"cretaceous_early_africa_swamp"
-		],
-		[
-			"cretaceous_early_africa_swamp_open",
-			"cretaceous_early_creek_africa_swamp"
-		],
-		[
-			"cretaceous_early_africa_valley"
-		],
-		[
-			"cretaceous_early_asia",
-			"cretaceous_early_creek_boggy_glades"
-		],
-		[
-			"cretaceous_early_asia_drooping_swamp",
-			"cretaceous_early_creek_asia_drooping_swamp"
-		],
-		[
-			"cretaceous_early_asia_drooping_swamp_mound"
-		],
-		[
-			"cretaceous_early_asia_phyrgana",
-			"cretaceous_early_asia_phyrgana_lake",
-			"cretaceous_early_creek_asia_phyrgana"
-		],
-		[
-			"cretaceous_early_asia_yixian_foothills"
-		],
-		[
-			"cretaceous_early_australia_antarctica",
-			"cretaceous_early_australia_antarctica_creek",
-			"cretaceous_early_australia_antarctica_lakes",
-			"cretaceous_early_australia_antarctica_lakes_edge"
-		],
-		[
-			"cretaceous_early_australia_antarctica_crater",
-			"cretaceous_early_australia_antarctica_crater_rim"
-		],
-		[
-			"cretaceous_early_australia_antarctica_paddock",
-			"cretaceous_early_creek_australia_antarctica_paddock"
-		],
-		[
-			"cretaceous_early_australia_antarctica_paddock_winter"
-		],
-		[
-			"cretaceous_early_australia_antarctica_winter"
-		],
-		[
-			"cretaceous_early_austro_antarctic_coastal",
-			"cretaceous_early_austro_antarctic_coastal_dunes",
-			"cretaceous_early_creek_austro_antarctic_coastal",
-			"cretaceous_early_creek_austro_antarctic_coastal_cliffs"
-		],
-		[
-			"cretaceous_early_austro_antarctic_coastal_cliffs",
-			"cretaceous_early_austro_antarctic_coastal_cliffs_noroost"
-		],
-		[
-			"cretaceous_early_austro_antarctic_rainforest",
-			"cretaceous_early_creek_austro_antarctic_rainforest"
-		],
-		[
-			"cretaceous_early_austro_antarctic_subalpine_lakes"
-		],
-		[
-			"cretaceous_early_austro_antarctic_subalpine_lakes_rim_inner",
-			"cretaceous_early_austro_antarctic_subalpine_lakes_rim_outer"
-		],
-		[
-			"cretaceous_early_banded_desert",
-			"cretaceous_early_creek_banded_desert"
-		],
-		[
-			"cretaceous_early_barren_hills"
-		],
-		[
-			"cretaceous_early_beach_africa",
-			"cretaceous_early_creek_beach_africa"
-		],
-		[
-			"cretaceous_early_beach_afroamerica_red",
-			"cretaceous_early_creek_beach_afroamerica_red"
-		],
-		[
-			"cretaceous_early_beach_afroamerica_rocky"
-		],
-		[
-			"cretaceous_early_beach_asia",
-			"cretaceous_early_creek_beach_asia"
-		],
-		[
-			"cretaceous_early_beach_asia_craggy",
-			"cretaceous_early_creek_beach_asia_craggy"
-		],
-		[
-			"cretaceous_early_beach_asia_marsh",
-			"cretaceous_early_creek_beach_asia_marsh"
-		],
-		[
-			"cretaceous_early_beach_australia_antarctica",
-			"cretaceous_early_creek_beach_australia_antarctica"
-		],
-		[
-			"cretaceous_early_beach_australia_antarctica_inland_sea",
-			"cretaceous_early_creek_beach_australia_antarctica_inland_sea"
-		],
-		[
-			"cretaceous_early_beach_australia_antarctica_muddy",
-			"cretaceous_early_creek_beach_australia_antarctica_muddy"
-		],
-		[
-			"cretaceous_early_beach_europe_dry",
-			"cretaceous_early_creek_beach_europe_dry"
-		],
-		[
-			"cretaceous_early_beach_europe_ferny",
-			"cretaceous_early_creek_beach_europe_ferny"
-		],
-		[
-			"cretaceous_early_beach_europe_swamp",
-			"cretaceous_early_creek_beach_europe_swamp"
-		],
-		[
-			"cretaceous_early_beach_namerica_cove",
-			"cretaceous_early_creek_beach_namerica_cove"
-		],
-		[
-			"cretaceous_early_creek_europe_field",
-			"cretaceous_early_europe_field"
-		],
-		[
-			"cretaceous_early_creek_europe_field_copse",
-			"cretaceous_early_europe_field_copse"
-		],
-		[
-			"cretaceous_early_creek_europe_maquis",
-			"cretaceous_early_europe_maquis"
-		],
-		[
-			"cretaceous_early_creek_namerica_shrubland",
-			"cretaceous_early_namerica_shrubland"
-		],
-		[
-			"cretaceous_early_creek_namerica_shrubland_copse",
-			"cretaceous_early_namerica_shrubland_copse"
-		],
-		[
-			"cretaceous_early_namerica_forest"
-		],
-		[
-			"cretaceous_early_creek_north_america_braided",
-			"cretaceous_early_namerica"
-		],
-		[
-			"cretaceous_early_creek_refugium",
-			"cretaceous_early_refugium"
-		],
-		[
-			"cretaceous_early_creek_samerica_arid",
-			"cretaceous_early_samerica_arid",
-			"cretaceous_early_samerica_arid_spikes"
-		],
-		[
-			"cretaceous_early_creek_samerica_flats",
-			"cretaceous_early_creek_samerica_flats_stream",
-			"cretaceous_early_samerica_flats"
-		],
-		[
-			"cretaceous_early_creek_samerica_sandy_desert",
-			"cretaceous_early_samerica_sandy_desert",
-			"cretaceous_early_samerica_sandy_desert_spikes"
-		],
-		[
-			"cretaceous_early_creek_shrubland",
-			"cretaceous_early_shrubland",
-			"cretaceous_early_shrubland_dunes"
-		],
-		[
-			"cretaceous_early_creek_south_america_desert",
-			"cretaceous_early_samerica",
-			"cretaceous_early_samerica_desert_low",
-			"cretaceous_early_samerica_desert_spikes"
-		],
-		[
-			"cretaceous_early_creek_south_america_patagonia",
-			"cretaceous_early_south_america_patagonia"
-		],
-		[
-			"cretaceous_early_europe",
-			"cretaceous_early_ocean_shore_tethys_europe"
-		],
-		[
-			"cretaceous_early_europe_swamp_lakes",
-			"cretaceous_early_europe_swamp_lakes_edge"
-		],
-		[
-			"cretaceous_early_inland_sea_australia"
-		],
-		[
-			"cretaceous_early_namerica_foothills"
-		],
-		[
-			"cretaceous_early_namerica_lagoons"
-		],
-		[
-			"cretaceous_early_namerica_mountains"
-		],
-		[
-			"cretaceous_early_namerica_transition"
-		],
-		[
-			"cretaceous_early_ocean",
-			"cretaceous_early_ocean_transition"
-		],
-		[
-			"cretaceous_early_ocean_crags",
-			"cretaceous_early_ocean_crags_noroost"
-		],
-		[
-			"cretaceous_early_ocean_shore_atlantic"
-		],
-		[
-			"cretaceous_early_ocean_shore_atlantic_deep"
-		],
-		[
-			"cretaceous_early_ocean_shore_pacific"
-		],
-		[
-			"cretaceous_early_ocean_shore_southern"
-		],
-		[
-			"cretaceous_early_ocean_shore_tethys"
-		],
-		[
-			"cretaceous_early_ocean_shore_tethys_coral"
-		],
-		[
-			"cretaceous_early_ocean_shore_tethys_rudist"
-		],
-		[
-			"cretaceous_early_shrubland_oasis"
-		],
-		[
-			"cretaceous_early_shrubland_springs"
-		],
-		[
-			"cretaceous_early_south_america_creek_wide"
-		],
-		[
-			"cretaceous_early_south_america_creek_wide_centre",
-			"cretaceous_early_south_america_creek_wide_rift"
-		],
-		[
-			"cretaceous_early_yixian_highland"
-		],
-		[
-			"cretaceous_early_yixian_lakes_a"
-		],
-		[
-			"cretaceous_early_yixian_lakes_b"
-		],
-		[
-			"cretaceous_early_yixian_lakes_dead"
-		],
-		[
-			"cretaceous_early_yixian_mountains"
-		]
-	]
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_cretaceous_early:1b}"
+    },
+    "title": {
+      "translate": "advancements.pf_adv_biomes_cretaceous_early.title"
+    },
+    "description": {
+      "translate": "advancements.pf_adv_biomes_cretaceous_early.description"
+    },
+    "frame": "task",
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_cretaceous_early_checklist",
+  "rewards": {
+    "experience": 10000
+  },
+  "criteria": {
+    "cretaceous_early_africa": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_africa"
+      }
+    },
+    "cretaceous_early_africa_peaks": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_africa_peaks"
+      }
+    },
+    "cretaceous_early_africa_pinnacles": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_africa_pinnacles"
+      }
+    },
+    "cretaceous_early_africa_savanna": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_africa_savanna"
+      }
+    },
+    "cretaceous_early_africa_savanna_hole": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_africa_savanna_hole"
+      }
+    },
+    "cretaceous_early_africa_savanna_hole_centre": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_africa_savanna_hole_centre"
+      }
+    },
+    "cretaceous_early_africa_swamp": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_africa_swamp"
+      }
+    },
+    "cretaceous_early_africa_swamp_open": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_africa_swamp_open"
+      }
+    },
+    "cretaceous_early_africa_valley": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_africa_valley"
+      }
+    },
+    "cretaceous_early_asia": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_asia"
+      }
+    },
+    "cretaceous_early_asia_drooping_swamp": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_asia_drooping_swamp"
+      }
+    },
+    "cretaceous_early_asia_drooping_swamp_mound": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_asia_drooping_swamp_mound"
+      }
+    },
+    "cretaceous_early_asia_phyrgana": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_asia_phyrgana"
+      }
+    },
+    "cretaceous_early_asia_phyrgana_lake": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_asia_phyrgana_lake"
+      }
+    },
+    "cretaceous_early_asia_yixian_foothills": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_asia_yixian_foothills"
+      }
+    },
+    "cretaceous_early_australia_antarctica": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_australia_antarctica"
+      }
+    },
+    "cretaceous_early_australia_antarctica_crater": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_australia_antarctica_crater"
+      }
+    },
+    "cretaceous_early_australia_antarctica_crater_rim": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_australia_antarctica_crater_rim"
+      }
+    },
+    "cretaceous_early_australia_antarctica_creek": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_australia_antarctica_creek"
+      }
+    },
+    "cretaceous_early_australia_antarctica_divider": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_australia_antarctica_divider"
+      }
+    },
+    "cretaceous_early_australia_antarctica_lakes": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_australia_antarctica_lakes"
+      }
+    },
+    "cretaceous_early_australia_antarctica_lakes_edge": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_australia_antarctica_lakes_edge"
+      }
+    },
+    "cretaceous_early_australia_antarctica_paddock": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_australia_antarctica_paddock"
+      }
+    },
+    "cretaceous_early_australia_antarctica_paddock_winter": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_australia_antarctica_paddock_winter"
+      }
+    },
+    "cretaceous_early_australia_antarctica_winter": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_australia_antarctica_winter"
+      }
+    },
+    "cretaceous_early_austro_antarctic_coastal": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_austro_antarctic_coastal"
+      }
+    },
+    "cretaceous_early_austro_antarctic_coastal_cliffs": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_austro_antarctic_coastal_cliffs"
+      }
+    },
+    "cretaceous_early_austro_antarctic_coastal_cliffs_noroost": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_austro_antarctic_coastal_cliffs_noroost"
+      }
+    },
+    "cretaceous_early_austro_antarctic_coastal_dunes": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_austro_antarctic_coastal_dunes"
+      }
+    },
+    "cretaceous_early_austro_antarctic_rainforest": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_austro_antarctic_rainforest"
+      }
+    },
+    "cretaceous_early_austro_antarctic_subalpine_lakes": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes"
+      }
+    },
+    "cretaceous_early_austro_antarctic_subalpine_lakes_peaks": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_peaks"
+      }
+    },
+    "cretaceous_early_austro_antarctic_subalpine_lakes_rim_inner": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_rim_inner"
+      }
+    },
+    "cretaceous_early_austro_antarctic_subalpine_lakes_rim_outer": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_rim_outer"
+      }
+    },
+    "cretaceous_early_banded_desert": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_banded_desert"
+      }
+    },
+    "cretaceous_early_barren_hills": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_barren_hills"
+      }
+    },
+    "cretaceous_early_beach_africa": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_beach_africa"
+      }
+    },
+    "cretaceous_early_beach_afroamerica_red": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_beach_afroamerica_red"
+      }
+    },
+    "cretaceous_early_beach_afroamerica_rocky": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_beach_afroamerica_rocky"
+      }
+    },
+    "cretaceous_early_beach_asia": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_beach_asia"
+      }
+    },
+    "cretaceous_early_beach_asia_craggy": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_beach_asia_craggy"
+      }
+    },
+    "cretaceous_early_beach_asia_marsh": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_beach_asia_marsh"
+      }
+    },
+    "cretaceous_early_beach_australia_antarctica": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_beach_australia_antarctica"
+      }
+    },
+    "cretaceous_early_beach_australia_antarctica_inland_sea": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_beach_australia_antarctica_inland_sea"
+      }
+    },
+    "cretaceous_early_beach_australia_antarctica_muddy": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_beach_australia_antarctica_muddy"
+      }
+    },
+    "cretaceous_early_beach_europe_dry": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_beach_europe_dry"
+      }
+    },
+    "cretaceous_early_beach_europe_ferny": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_beach_europe_ferny"
+      }
+    },
+    "cretaceous_early_beach_europe_swamp": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_beach_europe_swamp"
+      }
+    },
+    "cretaceous_early_beach_namerica_cove": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_beach_namerica_cove"
+      }
+    },
+    "cretaceous_early_creek_africa_savanna": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_africa_savanna"
+      }
+    },
+    "cretaceous_early_creek_africa_swamp": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_africa_swamp"
+      }
+    },
+    "cretaceous_early_creek_asia_drooping_swamp": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_asia_drooping_swamp"
+      }
+    },
+    "cretaceous_early_creek_asia_phyrgana": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_asia_phyrgana"
+      }
+    },
+    "cretaceous_early_creek_australia_antarctica_paddock": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_australia_antarctica_paddock"
+      }
+    },
+    "cretaceous_early_creek_austro_antarctic_coastal": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_austro_antarctic_coastal"
+      }
+    },
+    "cretaceous_early_creek_austro_antarctic_coastal_cliffs": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_austro_antarctic_coastal_cliffs"
+      }
+    },
+    "cretaceous_early_creek_austro_antarctic_rainforest": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_austro_antarctic_rainforest"
+      }
+    },
+    "cretaceous_early_creek_banded_desert": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_banded_desert"
+      }
+    },
+    "cretaceous_early_creek_beach_africa": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_beach_africa"
+      }
+    },
+    "cretaceous_early_creek_beach_afroamerica_red": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_beach_afroamerica_red"
+      }
+    },
+    "cretaceous_early_creek_beach_asia": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_beach_asia"
+      }
+    },
+    "cretaceous_early_creek_beach_asia_craggy": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_beach_asia_craggy"
+      }
+    },
+    "cretaceous_early_creek_beach_asia_marsh": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_beach_asia_marsh"
+      }
+    },
+    "cretaceous_early_creek_beach_australia_antarctica": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_beach_australia_antarctica"
+      }
+    },
+    "cretaceous_early_creek_beach_australia_antarctica_inland_sea": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_beach_australia_antarctica_inland_sea"
+      }
+    },
+    "cretaceous_early_creek_beach_australia_antarctica_muddy": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_beach_australia_antarctica_muddy"
+      }
+    },
+    "cretaceous_early_creek_beach_europe_dry": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_beach_europe_dry"
+      }
+    },
+    "cretaceous_early_creek_beach_europe_ferny": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_beach_europe_ferny"
+      }
+    },
+    "cretaceous_early_creek_beach_europe_swamp": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_beach_europe_swamp"
+      }
+    },
+    "cretaceous_early_creek_beach_namerica_cove": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_beach_namerica_cove"
+      }
+    },
+    "cretaceous_early_creek_boggy_glades": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_boggy_glades"
+      }
+    },
+    "cretaceous_early_creek_europe_field": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_europe_field"
+      }
+    },
+    "cretaceous_early_creek_europe_field_copse": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_europe_field_copse"
+      }
+    },
+    "cretaceous_early_creek_europe_maquis": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_europe_maquis"
+      }
+    },
+    "cretaceous_early_creek_namerica_shrubland": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_namerica_shrubland"
+      }
+    },
+    "cretaceous_early_creek_namerica_shrubland_copse": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_namerica_shrubland_copse"
+      }
+    },
+    "cretaceous_early_creek_north_america_braided": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_north_america_braided"
+      }
+    },
+    "cretaceous_early_creek_refugium": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_refugium"
+      }
+    },
+    "cretaceous_early_creek_samerica_arid": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_samerica_arid"
+      }
+    },
+    "cretaceous_early_creek_samerica_flats": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_samerica_flats"
+      }
+    },
+    "cretaceous_early_creek_samerica_flats_stream": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_samerica_flats_stream"
+      }
+    },
+    "cretaceous_early_creek_samerica_sandy_desert": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_samerica_sandy_desert"
+      }
+    },
+    "cretaceous_early_creek_shrubland": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_shrubland"
+      }
+    },
+    "cretaceous_early_creek_south_america_desert": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_south_america_desert"
+      }
+    },
+    "cretaceous_early_creek_south_america_patagonia": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_south_america_patagonia"
+      }
+    },
+    "cretaceous_early_europe": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_europe"
+      }
+    },
+    "cretaceous_early_europe_field": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_europe_field"
+      }
+    },
+    "cretaceous_early_europe_field_copse": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_europe_field_copse"
+      }
+    },
+    "cretaceous_early_europe_maquis": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_europe_maquis"
+      }
+    },
+    "cretaceous_early_europe_swamp_lakes": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_europe_swamp_lakes"
+      }
+    },
+    "cretaceous_early_europe_swamp_lakes_edge": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_europe_swamp_lakes_edge"
+      }
+    },
+    "cretaceous_early_inland_sea_australia": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_inland_sea_australia"
+      }
+    },
+    "cretaceous_early_namerica": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_namerica"
+      }
+    },
+    "cretaceous_early_namerica_foothills": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_namerica_foothills"
+      }
+    },
+    "cretaceous_early_namerica_forest": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_namerica_forest"
+      }
+    },
+    "cretaceous_early_namerica_lagoons": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_namerica_lagoons"
+      }
+    },
+    "cretaceous_early_namerica_mountains": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_namerica_mountains"
+      }
+    },
+    "cretaceous_early_namerica_shrubland": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_namerica_shrubland"
+      }
+    },
+    "cretaceous_early_namerica_shrubland_copse": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_namerica_shrubland_copse"
+      }
+    },
+    "cretaceous_early_namerica_transition": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_namerica_transition"
+      }
+    },
+    "cretaceous_early_ocean": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_ocean"
+      }
+    },
+    "cretaceous_early_ocean_crags": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_ocean_crags"
+      }
+    },
+    "cretaceous_early_ocean_crags_noroost": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_ocean_crags_noroost"
+      }
+    },
+    "cretaceous_early_ocean_shore_atlantic": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_ocean_shore_atlantic"
+      }
+    },
+    "cretaceous_early_ocean_shore_atlantic_deep": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_ocean_shore_atlantic_deep"
+      }
+    },
+    "cretaceous_early_ocean_shore_pacific": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_ocean_shore_pacific"
+      }
+    },
+    "cretaceous_early_ocean_shore_southern": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_ocean_shore_southern"
+      }
+    },
+    "cretaceous_early_ocean_shore_tethys": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_ocean_shore_tethys"
+      }
+    },
+    "cretaceous_early_ocean_shore_tethys_coral": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_ocean_shore_tethys_coral"
+      }
+    },
+    "cretaceous_early_ocean_shore_tethys_europe": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_ocean_shore_tethys_europe"
+      }
+    },
+    "cretaceous_early_ocean_shore_tethys_rudist": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_ocean_shore_tethys_rudist"
+      }
+    },
+    "cretaceous_early_ocean_transition": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_ocean_transition"
+      }
+    },
+    "cretaceous_early_refugium": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_refugium"
+      }
+    },
+    "cretaceous_early_samerica": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_samerica"
+      }
+    },
+    "cretaceous_early_samerica_arid": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_samerica_arid"
+      }
+    },
+    "cretaceous_early_samerica_arid_spikes": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_samerica_arid_spikes"
+      }
+    },
+    "cretaceous_early_samerica_desert_low": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_samerica_desert_low"
+      }
+    },
+    "cretaceous_early_samerica_desert_spikes": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_samerica_desert_spikes"
+      }
+    },
+    "cretaceous_early_samerica_flats": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_samerica_flats"
+      }
+    },
+    "cretaceous_early_samerica_sandy_desert": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_samerica_sandy_desert"
+      }
+    },
+    "cretaceous_early_samerica_sandy_desert_spikes": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_samerica_sandy_desert_spikes"
+      }
+    },
+    "cretaceous_early_shrubland": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_shrubland"
+      }
+    },
+    "cretaceous_early_shrubland_dunes": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_shrubland_dunes"
+      }
+    },
+    "cretaceous_early_shrubland_oasis": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_shrubland_oasis"
+      }
+    },
+    "cretaceous_early_shrubland_springs": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_shrubland_springs"
+      }
+    },
+    "cretaceous_early_south_america_creek_wide": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_south_america_creek_wide"
+      }
+    },
+    "cretaceous_early_south_america_creek_wide_centre": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_south_america_creek_wide_centre"
+      }
+    },
+    "cretaceous_early_south_america_creek_wide_rift": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_south_america_creek_wide_rift"
+      }
+    },
+    "cretaceous_early_south_america_patagonia": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_south_america_patagonia"
+      }
+    },
+    "cretaceous_early_yixian_highland": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_yixian_highland"
+      }
+    },
+    "cretaceous_early_yixian_lakes_a": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_yixian_lakes_a"
+      }
+    },
+    "cretaceous_early_yixian_lakes_b": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_yixian_lakes_b"
+      }
+    },
+    "cretaceous_early_yixian_lakes_dead": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_yixian_lakes_dead"
+      }
+    },
+    "cretaceous_early_yixian_mountains": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_yixian_mountains"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "cretaceous_early_africa",
+      "cretaceous_early_africa_peaks",
+      "cretaceous_early_africa_pinnacles"
+    ],
+    [
+      "cretaceous_early_africa_savanna",
+      "cretaceous_early_creek_africa_savanna"
+    ],
+    [
+      "cretaceous_early_africa_savanna_hole",
+      "cretaceous_early_africa_savanna_hole_centre"
+    ],
+    [
+      "cretaceous_early_africa_swamp"
+    ],
+    [
+      "cretaceous_early_africa_swamp_open",
+      "cretaceous_early_creek_africa_swamp"
+    ],
+    [
+      "cretaceous_early_africa_valley"
+    ],
+    [
+      "cretaceous_early_asia",
+      "cretaceous_early_creek_boggy_glades"
+    ],
+    [
+      "cretaceous_early_asia_drooping_swamp",
+      "cretaceous_early_creek_asia_drooping_swamp"
+    ],
+    [
+      "cretaceous_early_asia_drooping_swamp_mound"
+    ],
+    [
+      "cretaceous_early_asia_phyrgana",
+      "cretaceous_early_asia_phyrgana_lake",
+      "cretaceous_early_creek_asia_phyrgana"
+    ],
+    [
+      "cretaceous_early_asia_yixian_foothills"
+    ],
+    [
+      "cretaceous_early_australia_antarctica",
+      "cretaceous_early_australia_antarctica_creek",
+      "cretaceous_early_australia_antarctica_lakes",
+      "cretaceous_early_australia_antarctica_lakes_edge"
+    ],
+    [
+      "cretaceous_early_australia_antarctica_crater",
+      "cretaceous_early_australia_antarctica_crater_rim"
+    ],
+    [
+      "cretaceous_early_australia_antarctica_paddock",
+      "cretaceous_early_creek_australia_antarctica_paddock"
+    ],
+    [
+      "cretaceous_early_australia_antarctica_paddock_winter"
+    ],
+    [
+      "cretaceous_early_australia_antarctica_winter"
+    ],
+    [
+      "cretaceous_early_austro_antarctic_coastal",
+      "cretaceous_early_austro_antarctic_coastal_dunes",
+      "cretaceous_early_creek_austro_antarctic_coastal",
+      "cretaceous_early_creek_austro_antarctic_coastal_cliffs"
+    ],
+    [
+      "cretaceous_early_austro_antarctic_coastal_cliffs",
+      "cretaceous_early_austro_antarctic_coastal_cliffs_noroost"
+    ],
+    [
+      "cretaceous_early_austro_antarctic_rainforest",
+      "cretaceous_early_creek_austro_antarctic_rainforest"
+    ],
+    [
+      "cretaceous_early_austro_antarctic_subalpine_lakes"
+    ],
+    [
+      "cretaceous_early_austro_antarctic_subalpine_lakes_rim_inner",
+      "cretaceous_early_austro_antarctic_subalpine_lakes_rim_outer"
+    ],
+    [
+      "cretaceous_early_banded_desert",
+      "cretaceous_early_creek_banded_desert"
+    ],
+    [
+      "cretaceous_early_barren_hills"
+    ],
+    [
+      "cretaceous_early_beach_africa",
+      "cretaceous_early_creek_beach_africa"
+    ],
+    [
+      "cretaceous_early_beach_afroamerica_red",
+      "cretaceous_early_creek_beach_afroamerica_red"
+    ],
+    [
+      "cretaceous_early_beach_afroamerica_rocky"
+    ],
+    [
+      "cretaceous_early_beach_asia",
+      "cretaceous_early_creek_beach_asia"
+    ],
+    [
+      "cretaceous_early_beach_asia_craggy",
+      "cretaceous_early_creek_beach_asia_craggy"
+    ],
+    [
+      "cretaceous_early_beach_asia_marsh",
+      "cretaceous_early_creek_beach_asia_marsh"
+    ],
+    [
+      "cretaceous_early_beach_australia_antarctica",
+      "cretaceous_early_creek_beach_australia_antarctica"
+    ],
+    [
+      "cretaceous_early_beach_australia_antarctica_inland_sea",
+      "cretaceous_early_creek_beach_australia_antarctica_inland_sea"
+    ],
+    [
+      "cretaceous_early_beach_australia_antarctica_muddy",
+      "cretaceous_early_creek_beach_australia_antarctica_muddy"
+    ],
+    [
+      "cretaceous_early_beach_europe_dry",
+      "cretaceous_early_creek_beach_europe_dry"
+    ],
+    [
+      "cretaceous_early_beach_europe_ferny",
+      "cretaceous_early_creek_beach_europe_ferny"
+    ],
+    [
+      "cretaceous_early_beach_europe_swamp",
+      "cretaceous_early_creek_beach_europe_swamp"
+    ],
+    [
+      "cretaceous_early_beach_namerica_cove",
+      "cretaceous_early_creek_beach_namerica_cove"
+    ],
+    [
+      "cretaceous_early_creek_europe_field",
+      "cretaceous_early_europe_field"
+    ],
+    [
+      "cretaceous_early_creek_europe_field_copse",
+      "cretaceous_early_europe_field_copse"
+    ],
+    [
+      "cretaceous_early_creek_europe_maquis",
+      "cretaceous_early_europe_maquis"
+    ],
+    [
+      "cretaceous_early_creek_namerica_shrubland",
+      "cretaceous_early_namerica_shrubland"
+    ],
+    [
+      "cretaceous_early_creek_namerica_shrubland_copse",
+      "cretaceous_early_namerica_shrubland_copse"
+    ],
+    [
+      "cretaceous_early_namerica_forest"
+    ],
+    [
+      "cretaceous_early_creek_north_america_braided",
+      "cretaceous_early_namerica"
+    ],
+    [
+      "cretaceous_early_creek_refugium",
+      "cretaceous_early_refugium"
+    ],
+    [
+      "cretaceous_early_creek_samerica_arid",
+      "cretaceous_early_samerica_arid",
+      "cretaceous_early_samerica_arid_spikes"
+    ],
+    [
+      "cretaceous_early_creek_samerica_flats",
+      "cretaceous_early_creek_samerica_flats_stream",
+      "cretaceous_early_samerica_flats"
+    ],
+    [
+      "cretaceous_early_creek_samerica_sandy_desert",
+      "cretaceous_early_samerica_sandy_desert",
+      "cretaceous_early_samerica_sandy_desert_spikes"
+    ],
+    [
+      "cretaceous_early_creek_shrubland",
+      "cretaceous_early_shrubland",
+      "cretaceous_early_shrubland_dunes"
+    ],
+    [
+      "cretaceous_early_creek_south_america_desert",
+      "cretaceous_early_samerica",
+      "cretaceous_early_samerica_desert_low",
+      "cretaceous_early_samerica_desert_spikes"
+    ],
+    [
+      "cretaceous_early_creek_south_america_patagonia",
+      "cretaceous_early_south_america_patagonia"
+    ],
+    [
+      "cretaceous_early_europe",
+      "cretaceous_early_ocean_shore_tethys_europe"
+    ],
+    [
+      "cretaceous_early_europe_swamp_lakes",
+      "cretaceous_early_europe_swamp_lakes_edge"
+    ],
+    [
+      "cretaceous_early_inland_sea_australia"
+    ],
+    [
+      "cretaceous_early_namerica_foothills"
+    ],
+    [
+      "cretaceous_early_namerica_lagoons"
+    ],
+    [
+      "cretaceous_early_namerica_mountains"
+    ],
+    [
+      "cretaceous_early_namerica_transition"
+    ],
+    [
+      "cretaceous_early_ocean",
+      "cretaceous_early_ocean_transition"
+    ],
+    [
+      "cretaceous_early_ocean_crags",
+      "cretaceous_early_ocean_crags_noroost"
+    ],
+    [
+      "cretaceous_early_ocean_shore_atlantic"
+    ],
+    [
+      "cretaceous_early_ocean_shore_atlantic_deep"
+    ],
+    [
+      "cretaceous_early_ocean_shore_pacific"
+    ],
+    [
+      "cretaceous_early_ocean_shore_southern"
+    ],
+    [
+      "cretaceous_early_ocean_shore_tethys"
+    ],
+    [
+      "cretaceous_early_ocean_shore_tethys_coral"
+    ],
+    [
+      "cretaceous_early_ocean_shore_tethys_rudist"
+    ],
+    [
+      "cretaceous_early_shrubland_oasis"
+    ],
+    [
+      "cretaceous_early_shrubland_springs"
+    ],
+    [
+      "cretaceous_early_south_america_creek_wide"
+    ],
+    [
+      "cretaceous_early_south_america_creek_wide_centre",
+      "cretaceous_early_south_america_creek_wide_rift"
+    ],
+    [
+      "cretaceous_early_yixian_highland"
+    ],
+    [
+      "cretaceous_early_yixian_lakes_a"
+    ],
+    [
+      "cretaceous_early_yixian_lakes_b"
+    ],
+    [
+      "cretaceous_early_yixian_lakes_dead"
+    ],
+    [
+      "cretaceous_early_yixian_mountains"
+    ]
+  ]
 }

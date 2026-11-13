@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:pseudarthron_raw"
-		},
-		"title": {
-			"translate": "advancements.pf_adv_book_pseudarthron.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_pseudarthron.description"
-		}
-	},
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_pseudarthron"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_pseudarthron"
+    }
+  }
 }

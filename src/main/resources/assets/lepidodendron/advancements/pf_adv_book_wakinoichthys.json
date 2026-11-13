@@ -1,20 +1,9 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:wakinoichthys_raw"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_book_wakinoichthys.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_book_wakinoichthys.description"
-        }
-    },
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-    "hidden": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "pf_book_wakinoichthys"
-        }
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_wakinoichthys"
     }
+  }
 }

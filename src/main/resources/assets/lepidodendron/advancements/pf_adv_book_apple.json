@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:apple_sapling"
-		 },
-		"title": {
-			"translate": "advancements.pf_adv_book_apple.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_apple.description"
-		}
-	},
- "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_apple"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_apple"
+    }
+  }
 }

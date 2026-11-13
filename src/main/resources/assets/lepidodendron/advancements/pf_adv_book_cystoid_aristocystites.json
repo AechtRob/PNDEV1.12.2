@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:cystoid_aristocystites"
-		 },
-		"title": {
-			"translate": "advancements.pf_adv_book_cystoid_aristocystites.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_cystoid_aristocystites.description"
-		}
-	},
- "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_cystoid_aristocystites"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_cystoid_aristocystites"
+    }
+  }
 }

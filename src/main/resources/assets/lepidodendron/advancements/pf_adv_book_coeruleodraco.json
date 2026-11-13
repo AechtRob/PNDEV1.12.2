@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:coeruleodraco_raw"
-		},
-		"title": {
-			"translate": "advancements.pf_adv_book_coeruleodraco.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_coeruleodraco.description"
-		}
-	},
-	"parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_coeruleodraco"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_coeruleodraco"
+    }
+  }
 }

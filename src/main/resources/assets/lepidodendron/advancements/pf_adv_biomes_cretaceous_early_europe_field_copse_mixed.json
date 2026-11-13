@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_cretaceous_early:1b}"
+    },
+    "title": {
+      "text": "Europe Woodland"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_cretaceous_early_checklist",
+  "criteria": {
+    "cretaceous_early_creek_europe_field_copse": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_europe_field_copse"
+      }
+    },
+    "cretaceous_early_europe_field_copse": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_europe_field_copse"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "cretaceous_early_creek_europe_field_copse",
+      "cretaceous_early_europe_field_copse"
+    ]
+  ]
+}

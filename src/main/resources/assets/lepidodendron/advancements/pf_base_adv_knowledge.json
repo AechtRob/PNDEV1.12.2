@@ -1,7 +1,7 @@
 {
-    "criteria": {
-        "tick": {
-            "trigger": "minecraft:tick"
-        }
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
     }
+  }
 }

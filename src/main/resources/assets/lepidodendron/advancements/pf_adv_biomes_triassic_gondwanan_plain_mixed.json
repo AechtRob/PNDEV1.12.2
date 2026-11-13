@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_triassic:1b}"
+    },
+    "title": {
+      "text": "Southern Moss Meadows"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_triassic_checklist",
+  "criteria": {
+    "triassic_gondwanan_plain_flat": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_gondwanan_plain_flat"
+      }
+    },
+    "triassic_gondwanan_plain": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_gondwanan_plain"
+      }
+    },
+    "triassic_creek_gondwanan_plain": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:triassic_creek_gondwanan_plain"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "triassic_gondwanan_plain_flat",
+      "triassic_gondwanan_plain",
+      "triassic_creek_gondwanan_plain"
+    ]
+  ]
+}

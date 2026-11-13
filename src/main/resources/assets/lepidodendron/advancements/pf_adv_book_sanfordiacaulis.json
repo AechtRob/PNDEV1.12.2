@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:sanfordiacaulis_sapling"
-		 },
-		"title": {
-			"translate": "advancements.pf_adv_book_sanfordiacaulis.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_sanfordiacaulis.description"
-		}
-	},
- "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_sanfordiacaulis"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_sanfordiacaulis"
+    }
+  }
 }

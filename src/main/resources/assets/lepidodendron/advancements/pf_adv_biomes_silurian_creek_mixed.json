@@ -1,0 +1,53 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_silurian:1b}"
+    },
+    "title": {
+      "text": "Inland Creek"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_silurian_checklist",
+  "criteria": {
+    "silurian_creek": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:silurian_creek"
+      }
+    },
+    "silurian_creek_cooksonia": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:silurian_creek_cooksonia"
+      }
+    },
+    "silurian_creek_sands": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:silurian_creek_sands"
+      }
+    },
+    "silurian_creek_silty_swamp": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:silurian_creek_silty_swamp"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "silurian_creek",
+      "silurian_creek_cooksonia",
+      "silurian_creek_sands",
+      "silurian_creek_silty_swamp"
+    ]
+  ]
+}

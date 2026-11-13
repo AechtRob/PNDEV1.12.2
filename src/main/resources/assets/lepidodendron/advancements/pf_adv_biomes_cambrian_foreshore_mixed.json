@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_cambrian:1b}"
+    },
+    "title": {
+      "text": "Silty Shore"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_cambrian_checklist",
+  "criteria": {
+    "cambrian_foreshore": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cambrian_foreshore"
+      }
+    },
+    "cambrian_foreshore_dry": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cambrian_foreshore_dry"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "cambrian_foreshore",
+      "cambrian_foreshore_dry"
+    ]
+  ]
+}

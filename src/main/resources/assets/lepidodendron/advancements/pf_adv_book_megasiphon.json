@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:megasiphon"
-		},
-		"title": {
-			"translate": "advancements.pf_adv_book_megasiphon.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_megasiphon.description"
-		}
-	},
-	"parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_megasiphon"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_megasiphon"
+    }
+  }
 }

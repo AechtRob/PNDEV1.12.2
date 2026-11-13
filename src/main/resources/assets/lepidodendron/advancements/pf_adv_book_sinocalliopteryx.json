@@ -1,20 +1,9 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:sinocalliopteryx_raw"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_book_sinocalliopteryx.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_book_sinocalliopteryx.description"
-        }
-    },
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-    "hidden": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "pf_book_sinocalliopteryx"
-        }
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_sinocalliopteryx"
     }
+  }
 }

@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:geosaurus_raw"
-		 },
-		"title": {
-			"translate": "advancements.pf_adv_book_geosaurus.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_geosaurus.description"
-		}
-	},
- "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_geosaurus"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_geosaurus"
+    }
+  }
 }

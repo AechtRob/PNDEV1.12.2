@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:sphenopteris"
-		 },
-		"title": {
-			"translate": "advancements.pf_adv_book_sphenopteris.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_sphenopteris.description"
-		}
-	},
- "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_sphenopteris"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_sphenopteris"
+    }
+  }
 }

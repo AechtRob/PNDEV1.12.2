@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_cretaceous_early:1b}"
+    },
+    "title": {
+      "text": "West Gondwana Africa Ruddy Savanna"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_cretaceous_early_checklist",
+  "criteria": {
+    "cretaceous_early_africa_savanna": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_africa_savanna"
+      }
+    },
+    "cretaceous_early_creek_africa_savanna": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cretaceous_early_creek_africa_savanna"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "cretaceous_early_africa_savanna",
+      "cretaceous_early_creek_africa_savanna"
+    ]
+  ]
+}

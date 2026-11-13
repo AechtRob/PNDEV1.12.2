@@ -1,20 +1,9 @@
 {
-	"display": {
-		"icon": {
-			"item": "lepidodendron:furcifolium"
-		 },
-		"title": {
-			"translate": "advancements.pf_adv_book_furcifolium.title"
-		},
-		"description": {
-			"translate": "advancements.pf_adv_book_furcifolium.description"
-		}
-	},
- "parent": "lepidodendron:pf_base_adv_knowledge",
-	"hidden": true,
-	"criteria": {
-		"pf_trigger": {
-			"trigger": "pf_book_furcifolium"
-		}
-	}
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_furcifolium"
+    }
+  }
 }

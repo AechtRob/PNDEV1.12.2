@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "lepidodendron:mob_bucket",
+      "nbt": "{logo_precambrian:1b}"
+    },
+    "title": {
+      "text": "Cryogenian Beach"
+    },
+    "description": {
+      "text": "Visit this biome or any associated variant to satisfy this requirement."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "lepidodendron:pf_adv_biomes_precambrian_checklist",
+  "criteria": {
+    "cryogenian_beach": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cryogenian_beach"
+      }
+    },
+    "cryogenian_ocean": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "lepidodendron:cryogenian_ocean"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "cryogenian_beach",
+      "cryogenian_ocean"
+    ]
+  ]
+}

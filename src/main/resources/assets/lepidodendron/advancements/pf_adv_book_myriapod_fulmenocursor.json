@@ -1,20 +1,9 @@
 {
-    "display": {
-        "icon": {
-            "item": "lepidodendron:myriapod_fulmenocursor_raw"
-        },
-        "title": {
-            "translate": "advancements.pf_adv_book_myriapod_fulmenocursor.title"
-        },
-        "description": {
-            "translate": "advancements.pf_adv_book_myriapod_fulmenocursor.description"
-        }
-    },
-    "parent": "lepidodendron:pf_base_adv_knowledge",
-    "hidden": true,
-    "criteria": {
-        "pf_trigger": {
-            "trigger": "pf_book_myriapod_fulmenocursor"
-        }
+  "parent": "lepidodendron:pf_base_adv_knowledge",
+  "hidden": true,
+  "criteria": {
+    "pf_trigger": {
+      "trigger": "pf_book_myriapod_fulmenocursor"
     }
+  }
 }
